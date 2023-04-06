@@ -1,6 +1,9 @@
+import IndexComp from "./comps/indexComp";
 const index = ()=>{
   return(
-    <h1 className="text-primary">hello there</h1>
+    <>
+    <IndexComp/>
+    </>
 
   );
 };
