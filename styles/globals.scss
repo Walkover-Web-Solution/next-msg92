@@ -1,21 +1,24 @@
 @import "import";
-
-nav{
-    height: 60px;
-
-    .msg91-logo-cont{
-        height: fit-content;
-        a{
-            height: fit-content;
-            width: fit-content;
-            .msg91-logo{
-                height: 40px!important;
-                width: fit-content!important; 
-            }
-        }
-        
-    }
+body {
+  font-size: 16px;
+  color: var(--black-color);
+  font-family: var(--c-body);
 }
-.w-nav-menu{
-    width:33%;
+nav {
+  height: 60px;
+
+  .msg91-logo-cont {
+    height: fit-content;
+    a {
+      height: fit-content;
+      width: fit-content;
+      .msg91-logo {
+        height: 40px !important;
+        width: fit-content !important;
+      }
+    }
+  }
+}
+.w-nav-menu {
+  width: 33%;
 }

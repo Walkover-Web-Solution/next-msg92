@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+// font-family: 'Plus Jakarta Sans', sans-serif;
+// font-family: 'Libre Baskerville', serif;
+
+:root{
+    // font family 
+    --c-head:"'Libre Baskerville', serif";
+    --c-body:"'Plus Jakarta Sans', sans-serif";
+
+    // font-size
+    --heading:clamp(2.125rem,4vw,4.5rem); //36px 52px
+    --sub-heading:clamp(1.75rem,3vw,2.5rem); //28px 40px
+    --small-heading:clamp(1.25rem,2.6vw,1.875rem); //20px 30px
+    --c-fs-1:clamp(1.25rem,2.6vw,1.875rem); //20px 30px
+    --c-fs-2:clamp(1rem,3vw,1.5rem); //16px 24px
+    --c-fs-3:clamp(1rem,1.5vw,1.25rem); //16px 20px
+    --c-fs-4:clamp(1rem,1.5vw,1rem); //16px 20px
+    --c-fs-5:clamp(0.875rem,1vw,0.8rem); //16px 20px
+
+    // colors
+    --primary-color: #1E75BA;
+    --whatsapp: #29A653;
+    --light-blue: #F0F7FD;
+    --black-color:#212528;
+    --white-color:#ffffff;
+    --c-light-grey: #ccc;
+    --c-grey:#6C6C6C;
+    --hello :#E18700;
+    --otp:#3A73B5;
+    --segmento:#E55CA1;
+    --campaign:#9C5CE5;
+    --sms-light: rgba(77, 160, 255, 0.16);
+    --email-light: rgba(204, 82, 41, 0.12);
+    --whatsapp-light: rgba(111, 202, 113, 0.16);
+    --telegram-light: rgba(37, 162, 224, 0.1);
+    --voice-light: rgba(105, 107, 239, 0.12);
+    --rcs-light:  rgba(56, 146, 224, 0.12);
+    --border-color: #ddd;
+
+    
+
+}

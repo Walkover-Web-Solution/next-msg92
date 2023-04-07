@@ -1,0 +1,45 @@
+//font sizes
+
+.c-heading {
+  font-size: var(--heading);
+  font-family: var(--c-head);
+}
+.sub-heading {
+  font-size: var(--sub-heading);
+}
+.small-heading {
+  font-size: (--small-heading);
+}
+.c-fs-1{
+    font-size: var(--c-fs-1);
+}
+.c-fs-2{
+    font-size: var(--c-fs-2);
+}
+.c-fs-3{
+    font-size: var(--c-fs-3);
+}
+.c-fs-4{
+    font-size: var(--c-fs-4);
+}
+.c-fs-5{
+    font-size: var(--c-fs-5);
+}
+
+
+// font weight
+.c-fw-t {
+    font-weight: 300!important;
+  }
+  .c-fw-r {
+    font-weight: 400!important;
+  }
+  .c-fw-m {
+    font-weight: 500!important;
+  }
+  .c-fw-sb {
+    font-weight: 600!important;
+  }
+  .c-fw-b {
+    font-weight: 700!important;
+  }
