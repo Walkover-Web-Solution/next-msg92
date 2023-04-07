@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
 // font-family: 'Plus Jakarta Sans', sans-serif;
 // font-family: 'Libre Baskerville', serif;
 
 :root{
     // font family 
-    --c-head:"'Libre Baskerville', serif";
-    --c-body:"'Plus Jakarta Sans', sans-serif";
+    --c-head:'Libre Baskerville', serif;
+    --c-body:'Plus Jakarta Sans', sans-serif;
 
     // font-size
-    --heading:clamp(2.125rem,4vw,4.5rem); //36px 52px
-    --sub-heading:clamp(1.75rem,3vw,2.5rem); //28px 40px
-    --small-heading:clamp(1.25rem,2.6vw,1.875rem); //20px 30px
-    --c-fs-1:clamp(1.25rem,2.6vw,1.875rem); //20px 30px
-    --c-fs-2:clamp(1rem,3vw,1.5rem); //16px 24px
-    --c-fs-3:clamp(1rem,1.5vw,1.25rem); //16px 20px
-    --c-fs-4:clamp(1rem,1.5vw,1rem); //16px 20px
-    --c-fs-5:clamp(0.875rem,1vw,0.8rem); //16px 20px
+    --heading:clamp(2.125rem,4vw,3rem); 
+    --sub-heading:clamp(1.75rem,3vw,2.5rem); 
+    --small-heading:clamp(1.25rem,2vw,1.5rem); 
+    --c-fs-1:clamp(1.25rem,2.6vw,1.875rem); 
+    --c-fs-2:clamp(1rem,3vw,1.5rem);
+    --c-fs-3:clamp(1rem,1.5vw,1.12rem); //18px
+    --c-fs-4:clamp(1rem,1.5vw,1rem); 
+    --c-fs-5:clamp(0.875rem,1vw,0.8rem); 
 
     // colors
     --primary-color: #1E75BA;

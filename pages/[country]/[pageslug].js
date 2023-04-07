@@ -1,31 +1,37 @@
 import data from "../content.json";
-import IndexComp from "../comps/indexComp";
+import IndexComp from "../comps/indexComponent";
+import ProductPageComp from "../comps/productPageComponent";
+import CodePageComponent from "../comps/codePageComponent";
 
 const mainpage = ({ pageData }) => {
-console.log(pageData)
+  console.log(pageData);
   var page = pageData?.pagename;
+  var code = pageData?.code;
+  var Dataa = pageData
+  console.log(Dataa);
   if (!pageData) {
-    console.log("No page data")
+    console.log("No page data");
     return (
       <div>
         <h1>404 - Page Not Found</h1>
         <p>The requested page was not found.</p>
       </div>
     );
-  } 
-  else if (page === "index") {
-      console.log("page index")
-      return (
-          <>
+  } else if (page === "index") {
+    console.log("page index");
+    return (
+      <>
         <IndexComp />
       </>
     );
-} 
-else {
-    console.log("page ",pageData.pagename)
+  } else {
+    console.log("page ", pageData.pagename);
     return (
-        <>
-        <h1>{pageData.head}</h1>
+      <>
+        <div>
+          <h1>Parent Component</h1>
+          <ProductPageComp pageData={Dataa} />
+        </div>
       </>
     );
   }

@@ -1,6 +1,6 @@
 //font sizes
 
-.c-heading {
+.heading {
   font-size: var(--heading);
   font-family: var(--c-head);
 }
@@ -8,7 +8,7 @@
   font-size: var(--sub-heading);
 }
 .small-heading {
-  font-size: (--small-heading);
+  font-size: var(--small-heading);
 }
 .c-fs-1{
     font-size: var(--c-fs-1);
