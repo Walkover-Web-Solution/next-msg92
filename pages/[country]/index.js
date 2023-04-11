@@ -1,5 +1,5 @@
 import data from "../content.json";
-import IndexComp from "../comps/indexComponent";
+import IndexComp from "@/components/comps/indexComponent";
 
 const mainpage = ({ pageData }) => {
   console.log(pageData);

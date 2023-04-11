@@ -1,7 +1,7 @@
 import data from "../content.json";
-import IndexComp from "../comps/indexComponent";
-import ProductPageComp from "../comps/productPageComponent";
-import CodePageComponent from "../comps/codePageComponent";
+import IndexComp from "@/components/comps/indexComponent";
+import ProductPageComp from "@/components/comps/productPageComponent";
+import CodePageComponent from "@/components/comps/codePageComponent";
 
 const mainpage = ({ pageData }) => {
   console.log(pageData);

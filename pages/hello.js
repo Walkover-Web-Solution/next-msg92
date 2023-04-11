@@ -1,6 +1,6 @@
 // Parent Component
 import React from 'react';
-import ProductPageComp from "./comps/productPageComponent";
+import ProductPageComp from "@/components/comps/productPageComponent";
 import data from "./content.json"; 
 const ParentComponent = () => {
   const helloData = data.global.hello; 

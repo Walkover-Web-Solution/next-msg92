@@ -1,4 +1,4 @@
-import IndexComp from "./comps/indexComponent";
+import IndexComp from "@/components/comps/indexComponent";
 const index = ()=>{
   return(
     <>
