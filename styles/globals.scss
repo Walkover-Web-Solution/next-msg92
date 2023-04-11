@@ -41,8 +41,17 @@ nav {
         position: relative;
         z-index: 1;
       }
+      .caimpaign-pro {
+        background-image: url(/img/campaign-pro.svg);
+      }
       .hello-pro {
         background-image: url(/img/hello-pro.svg);
+      }
+      .segmento-pro {
+        background-image: url(/img/segmento-pro.svg);
+      }
+      .otp-pro {
+        background-image: url(/img/otp-pro.svg);
       }
       .product-head-img {
         position: absolute;
@@ -71,11 +80,10 @@ nav {
     }
   }
 }
-.pro-btn{
+.pro-btn {
   width: 100%;
-
 }
-.pro-sec-ico{
+.pro-sec-ico {
   width: 40px;
   height: 40px;
 }

@@ -1,5 +1,11 @@
+//font family
+.c-head{
+  font-family: var(--c-head);
+}
+.c-body{
+  font-family: var(--c-body);
+}
 //font sizes
-
 .heading {
   font-size: var(--heading);
   font-family: var(--c-head);
