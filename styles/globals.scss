@@ -1,8 +1,11 @@
 @import "import";
-body{
-  font-size: 16px!important;
+body {
+  font-size: 16px !important;
   color: var(--black-color);
-  font-family: var(--c-body)!important;
+  font-family: var(--c-body) !important;
+}
+.section {
+  width: 100vw;
 }
 nav {
   height: 60px;
@@ -21,4 +24,58 @@ nav {
 }
 .w-nav-menu {
   width: 33%;
+}
+
+.product-sec {
+  height: 90vh;
+  .product-card {
+    width: 25%;
+    height: 100%;
+    .product-head {
+      position: relative;
+      width: 100%;
+      height: 70%;
+      background-color: aqua;
+      .product-head-text {
+        padding: 25px 0 0 25px;
+        position: relative;
+        z-index: 1;
+      }
+      .hello-pro {
+        background-image: url(/img/hello-pro.svg);
+      }
+      .product-head-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100% !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        img {
+          height: 100%;
+          width: 100% !important;
+        }
+      }
+    }
+    .pro-alt {
+      background-color: #2b2b2b !important;
+    }
+    .product-content {
+      background-color: #333333;
+      width: 100%;
+      height: 30%;
+    }
+  }
+}
+.pro-btn{
+  width: 100%;
+
+}
+.pro-sec-ico{
+  width: 40px;
+  height: 40px;
 }
