@@ -29,7 +29,7 @@ const indexComp = () => {
             </div>
             <div className="product-head-img caimpaign-pro"></div>
           </div>
-          <div className="product-content pro-alt p-3 d-flex flex-column justify-content-center gap-4">
+          <div className="product-content pro-alt p-4 d-flex flex-column justify-content-center gap-4">
             <p className="c-fs-3 text-white">
               Empower your employees, Support your customers.
             </p>
@@ -54,7 +54,7 @@ const indexComp = () => {
             </div>
             <div className="product-head-img hello-pro"></div>
           </div>
-          <div className="product-content  p-3 d-flex flex-column justify-content-center gap-4">
+          <div className="product-content  p-4 d-flex flex-column justify-content-center gap-4">
             <p className="c-fs-3 text-white">
               Boost audience engagement through smart Platform.
             </p>
@@ -79,7 +79,7 @@ const indexComp = () => {
             </div>
             <div className="product-head-img segmento-pro"></div>
           </div>
-          <div className="product-content pro-alt p-3 d-flex flex-column justify-content-center gap-4">
+          <div className="product-content pro-alt p-4 d-flex flex-column justify-content-center gap-4">
             <p className="c-fs-3 text-white">
               Segment your customers according to their action or event.{" "}
             </p>
@@ -104,7 +104,7 @@ const indexComp = () => {
             </div>
             <div className="product-head-img otp-pro"></div>
           </div>
-          <div className="product-content p-3 d-flex flex-column justify-content-center gap-4">
+          <div className="product-content p-4 d-flex flex-column justify-content-center gap-4">
             <p className="c-fs-3 text-white">
               Quick and reliable authentication by 2FA using multiple channels.
             </p>
@@ -224,6 +224,38 @@ const indexComp = () => {
             </span>
             <MdKeyboardArrowRight />
           </a>
+        </div>
+      </div>
+      <div className="section c-bg-grey stats-sec align-items-center">
+        <div className="container h-100 d-flex align-items-center">
+          <div className="col-3 d-flex flex-column gap-2">
+            <h2 className="c-fs-1 c-fw-b">2.5 Billion+</h2>
+            <h4 className="c-fs-3">
+              API calls
+              <br /> per month
+            </h4>
+          </div>
+          <div className="col-3 d-flex flex-column gap-2">
+            <h2 className="c-fs-1 c-fw-b">1.6 Billion+</h2>
+            <h4 className="c-fs-3">
+              SMS Sent
+              <br /> per month
+            </h4>
+          </div>
+          <div className="col-3 d-flex flex-column gap-2">
+            <h2 className="c-fs-1 c-fw-b">1 Billion+</h2>
+            <h4 className="c-fs-3">
+              OTP Sent
+              <br /> per month
+            </h4>
+          </div>
+          <div className="col-3 d-flex flex-column gap-2">
+            <h2 className="c-fs-1 c-fw-b">1 Billion+</h2>
+            <h4 className="c-fs-3">
+              Email Sent
+              <br /> per month
+            </h4>
+          </div>
         </div>
       </div>
     </>
