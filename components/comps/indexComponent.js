@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import TrustedBy from "@/components/trustedby";
+import Image from "next/image";
 const indexComp = () => {
   const router = useRouter();
   const currentPath = router.pathname;
@@ -30,7 +31,8 @@ const indexComp = () => {
           </div>
           <div className="product-content pro-alt p-3 d-flex flex-column justify-content-center gap-4">
             <p className="c-fs-3 text-white">
-            Empower your employees, Support your customers.</p>
+              Empower your employees, Support your customers.
+            </p>
             <a href="/campaign" target="">
               <button className="c-fs-3 pro-btn justify-content-between d-flex align-items-center px-3 py-2">
                 <span>
@@ -79,7 +81,8 @@ const indexComp = () => {
           </div>
           <div className="product-content pro-alt p-3 d-flex flex-column justify-content-center gap-4">
             <p className="c-fs-3 text-white">
-            Segment your customers according to their action or event.            </p>
+              Segment your customers according to their action or event.{" "}
+            </p>
             <a href="/segmento" target="">
               <button className="c-fs-3 pro-btn justify-content-between d-flex align-items-center px-3 py-2">
                 <span>
@@ -103,7 +106,7 @@ const indexComp = () => {
           </div>
           <div className="product-content p-3 d-flex flex-column justify-content-center gap-4">
             <p className="c-fs-3 text-white">
-            Quick and reliable authentication by 2FA using multiple channels.
+              Quick and reliable authentication by 2FA using multiple channels.
             </p>
             <a href="/otp" target="">
               <button className="c-fs-3 pro-btn justify-content-between d-flex align-items-center px-3 py-2">
@@ -115,6 +118,112 @@ const indexComp = () => {
               </button>
             </a>
           </div>
+        </div>
+      </div>
+      <div className="container my-5">
+        <h2 className="sub-heading c-head mb-2">Communication Channels</h2>
+        <p className="c-fs-2 w-75">
+          Empower conversations with best-in-class communication API.
+          Full-featured APIs for developers & businesses to connect and engage
+          their customers globally.
+        </p>
+        <div className=" mt-4 d-flex gap-5 flex-wrap">
+          <a
+            href="/sms"
+            className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
+          >
+            <span>
+              <Image
+                className="me-2"
+                src="./img/icon/sms.svg"
+                width={40}
+                height={40}
+                alt="cannels"
+              />
+              <span className="">SMS</span>
+            </span>
+            <MdKeyboardArrowRight />
+          </a>
+          <a
+            href="/email"
+            className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
+          >
+            <span>
+              <Image
+                className="me-2"
+                src="./img/icon/email.svg"
+                width={40}
+                height={40}
+                alt="cannels"
+              />
+              <span className="">Email</span>
+            </span>
+            <MdKeyboardArrowRight />
+          </a>
+          <a
+            href="/whatsapp"
+            className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
+          >
+            <span>
+              <Image
+                className="me-2"
+                src="./img/icon/whatsapp.svg"
+                width={40}
+                height={40}
+                alt="cannels"
+              />
+              <span className="">Whatsapp</span>
+            </span>
+            <MdKeyboardArrowRight />
+          </a>
+          <a
+            href="/telegram"
+            className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
+          >
+            <span>
+              <Image
+                className="me-2"
+                src="./img/icon/telegram.svg"
+                width={40}
+                height={40}
+                alt="telegram"
+              />
+              <span className="">Telegram</span>
+            </span>
+            <MdKeyboardArrowRight />
+          </a>
+          <a
+            href="/voice"
+            className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
+          >
+            <span>
+              <Image
+                className="me-2"
+                src="./img/icon/voice.svg"
+                width={40}
+                height={40}
+                alt="voice"
+              />
+              <span className="">Voice</span>
+            </span>
+            <MdKeyboardArrowRight />
+          </a>
+          <a
+            href="/rcs"
+            className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
+          >
+            <span>
+              <Image
+                className="me-2"
+                src="./img/icon/rcs.svg"
+                width={40}
+                height={40}
+                alt="rcs"
+              />
+              <span className="">RCS</span>
+            </span>
+            <MdKeyboardArrowRight />
+          </a>
         </div>
       </div>
     </>
