@@ -26,7 +26,7 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/hello"
+              href="/campaign"
             >
               <Image
                 src="/img/icon/campaign.svg"
@@ -146,6 +146,96 @@ const ProductMenu = () => {
               <h4 className="c-fs-2">WhatsApp</h4>
             </a>
           </div>
+        </div>
+        <div className="overlay-menu d-flex flex-wrap gap-3" id="integrationsmenu">
+        <div className="menu mt-4 d-flex flex-column ">
+            <a
+              className="d-flex gap-3 align-items-center product-menu-btn p-3"
+              href="/Shopify"
+            >
+              <Image
+                src="/img/integrations/shopify.svg"
+                width={40}
+                height={40}
+                alt="ico"
+              />
+              <h4 className="c-fs-2">Shopify</h4>
+            </a>
+            <a
+              className="d-flex gap-3 align-items-center product-menu-btn p-3"
+              href="/zapier"
+            >
+              <Image
+                src="/img/integrations/zapier.svg"
+                width={40}
+                height={40}
+                alt="ico"
+              />
+              <h4 className="c-fs-2">Zapier</h4>
+            </a>
+            <a
+              className="d-flex gap-3 align-items-center product-menu-btn p-3"
+              href="/hubspot"
+            >
+              <Image
+                src="/img/integrations/hubspot.svg"
+                width={40}
+                height={40}
+                alt="ico"
+              />
+              <h4 className="c-fs-2">Hubspot</h4>
+            </a>
+            <a
+              className="d-flex gap-3 align-items-center product-menu-btn p-3"
+              href="/freshworks"
+            >
+              <Image
+                src="/img/integrations/freshworks.svg"
+                width={40}
+                height={40}
+                alt="ico"
+              />
+              <h4 className="c-fs-2">Freshworks</h4>
+            </a>
+            <a
+              className="d-flex gap-3 align-items-center product-menu-btn p-3"
+              href="/google-sheets"
+            >
+              <Image
+                src="/img/integrations/google-sheets.svg"
+                width={40}
+                height={40}
+                alt="ico"
+              />
+              <h4 className="c-fs-2">Google Sheets</h4>
+            </a>
+            <a
+              className="d-flex gap-3 align-items-center product-menu-btn p-3"
+              href="/zoho"
+            >
+              <Image
+                src="/img/integrations/zoho.svg"
+                width={40}
+                height={40}
+                alt="ico"
+              />
+              <h4 className="c-fs-2">Zoho</h4>
+            </a>
+            <a
+              className="d-flex gap-3 align-items-center product-menu-btn p-3"
+              href="/clevertap"
+            >
+              <Image
+                src="/img/integrations/clevertap.svg"
+                width={40}
+                height={40}
+                alt="ico"
+              />
+              <h4 className="c-fs-2">Clevertap</h4>
+            </a>
+            
+          </div>
+
         </div>
       </div>
     </>

@@ -153,9 +153,11 @@ nav {
   }
 }
 #overlaymenucont{
+  position: relative;
   width: 60%;
   height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   z-index: 10;
   position:fixed;
   top: 0;
@@ -163,17 +165,30 @@ nav {
   padding-top: 60px;
   background-color: white;
   left: -100%;
-  transform: 0.3;
+  transition: 0.2s;
   &.active{
     left: 0;
   }
 }
 #productmenu{
-  // overflow: scroll;
+  position: absolute;
+  padding-top: 60px;
   width: 100%;
-
-
+  opacity: 0;
+  transition: 0.15s;
+  &.active{
+    opacity: 1;}
+  }
+  #integrationsmenu{
+  padding-top: 60px;
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  transition: 0.15s;
+  &.active{
+    opacity: 1;}
 }
+
 .menu{
   width: 370px;
   a{

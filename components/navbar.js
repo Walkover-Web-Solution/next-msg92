@@ -14,10 +14,20 @@ const navbar = () => {
   useEffect(() => {
     $("#product-link").on("mouseenter", function () {
       $("#overlaymenucont, #productmenu, #bgoverlay").addClass("active");
+      $("#integrationsmenu").removeClass("active");
       $("body").addClass("oh");
     });
+    $("#integrations-link").on("mouseenter", function () {
+      $("#overlaymenucont, #integrationsmenu, #bgoverlay").addClass("active");
+      $("#productmenu").removeClass("active");
+      $("body").addClass("oh");
+    });
+    $("#pricing-link").on("mouseenter", function () {
+      $("#overlaymenucont, #productmenu, #bgoverlay, #integrationsmenu").removeClass("active");
+      $("body").removeClass("oh");
+    });
     $("#bgoverlay").on("mouseenter", function () {
-      $("#overlaymenucont, #productmenu, #bgoverlay").removeClass("active");
+      $("#overlaymenucont, #productmenu, #bgoverlay, #integrationsmenu").removeClass("active");
       $("body").removeClass("oh");
     });
   }, []);
