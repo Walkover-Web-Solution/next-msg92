@@ -258,6 +258,125 @@ const indexComp = () => {
           </div>
         </div>
       </div>
+      <div className="container my-5 more-services-sec">
+        <h2 className="sub-heading c-head">More Services</h2>
+        <div className="d-flex my-5">
+          <div className="col-4 p-4 d-flex flex-column gap-3 b-right-1 more-services">
+            <div className="d-flex align-items-center">
+              <span className="me-3">
+                <Image
+                  src="./img/icon/shorturl.svg"
+                  width={36}
+                  height={36}
+                  alt="short-url"
+                />
+              </span>
+              <span className="c-fs-2 c-head">ShortURL</span>
+            </div>
+            <div className="">
+              <Image
+                className="more-services-img"
+                src="./img/short-url-img.svg"
+                width={336}
+                height={212}
+                alt="short-url-img"
+              />
+            </div>
+            <div className="">
+              <h4 className="mb-3 c-fs-3">Make a long story short</h4>
+              <p className="c-fs-4">
+                Track your success, one click at a time. Using our URL Shrtnr
+                App is great way to make looong, wild links into something more
+                manageable and memorable.
+              </p>
+            </div>
+            <a href="#">
+              <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-b text-dark">
+                <span>Learn more</span>
+                <MdKeyboardArrowRight />
+              </div>
+            </a>
+          </div>
+          <div className="col-4 p-4 d-flex flex-column gap-3 b-right-1 more-services">
+            <div className="d-flex align-items-center">
+              <span className="me-3">
+                <Image
+                  src="./img/icon/knowledgebase.svg"
+                  width={36}
+                  height={36}
+                  alt="knowledgebase"
+                />
+              </span>
+              <span className="c-fs-2 c-head">Knowledgebase</span>
+            </div>
+            <div className="">
+              <Image
+                className="more-services-img"
+                src="./img/knowledgebase-img.svg"
+                width={336}
+                height={212}
+                alt="knowledgebase-img"
+              />
+            </div>
+            <div className="">
+              <h4 className="mb-3 c-fs-3">
+                Manage your help docs and articles
+              </h4>
+              <p className="c-fs-4">
+                We also offer our easy FAQ feature where your customers aren’t
+                stuck with a question ever again, providing them with instant
+                answers.
+              </p>
+            </div>
+            <a href="#">
+              <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-b text-dark">
+                <span>Learn more</span>
+                <MdKeyboardArrowRight />
+              </div>
+            </a>
+          </div>
+          <div className="col-4 p-4 d-flex flex-column gap-3 more-services">
+            <div className="d-flex align-items-center">
+              <span className="me-3">
+                <Image
+                  src="./img/icon/filehosting.svg"
+                  width={36}
+                  height={36}
+                  alt="File Hosting"
+                />
+              </span>
+              <span className="c-fs-2 c-head">File Hosting</span>
+            </div>
+            <div className="">
+              <Image
+                className="more-services-img"
+                src="./img/file-hosting-img.svg"
+                width={336}
+                height={212}
+                alt="filehosting-img"
+              />
+            </div>
+            <div className="">
+              <h4 className="mb-3 c-fs-3">More storage, More possibilities</h4>
+              <p className="c-fs-4">
+                Track your success, one click at a time. Using our URL Shrtnr
+                App is great way to make looong, wild links into something more
+                manageable and memorable.
+              </p>
+            </div>
+            <a href="#">
+              <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-b text-dark">
+                <span>Learn more</span>
+                <MdKeyboardArrowRight />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="container my-5">
+        <h2 className="sub-heading">Our Clint Stories</h2>
+
+      </div>
     </>
   );
 };
