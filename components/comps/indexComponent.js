@@ -374,7 +374,7 @@ const indexComp = () => {
           </div>
         </div>
       </div>
-      <div className="container my-5 my-80">
+      <div className="container  my-80">
         <h2 className="sub-heading c-head">Our Clint Stories</h2>
         <div className="d-flex col-12 gap-4 my-4">
           <div className="col-6 c-hover ">
