@@ -1,0 +1,78 @@
+.nav-pills .nav-link{
+  color: var(--black-color) !important;
+  &.active{
+    background: var(--light-blue) !important;
+  }
+}
+#pricing-pills-tab{
+  .nav-item{
+    .nav-link{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 20px !important;
+      min-width: 120px;
+      img{
+        height: 30px;
+        display: block;
+      }
+    }    
+  }
+}
+.total-price{
+  background: var(--light-blue);
+  border-radius: var(--radius2);
+  .total{
+    color: var(--whatsapp);
+  }
+}
+.sms-range{
+  padding: 0 55px 0 35px;
+}
+.price-slab{
+  .slab{
+    .price{
+      font-size: 14px;
+      color: var(--c-grey);
+    }
+  }
+}
+.card-container{
+  .card{
+    height: 250px;
+    width: 250px  ;
+    justify-content: baseline;
+    .card-body{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}
+.card-popular{
+border: 2px solid var(--primary-color);
+box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.popular-chip{
+  position: relative;
+  top: 13px;
+  z-index: 3;
+  color:white;  
+  border-radius: 100px;
+  padding: 0.1rem 0.7rem;
+  background-color: var(--primary-color);
+  letter-spacing :1.6px ;
+  font-weight: 500;
+}
+.flex-gap > .card {
+  margin: 16px;
+}
+.text-green{
+  color:#29A653;
+}
+
+.price-card{
+  background: var(--light-blue) !important;
+}
