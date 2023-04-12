@@ -1,0 +1,13 @@
+.product-banner-wrp{
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+.product-page-logo{
+    height: 60px;
+}
+
+.product-page-img {
+    width: clamp(80%,80vw,100px);
+    box-shadow: 4px 0 42px rgba(0,0,0,.1), -4px -14px 42px rgba(0,0,0,.1);
+}

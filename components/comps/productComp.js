@@ -8,32 +8,34 @@ const ProductComponent = ({ pageData }) => {
   var i = 0;
   return (
     <div>
-      <div className="container text-center  overflow-hidden ">
-        <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
-          <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
-            <img src={pageData.icon} className="product-page-logo me-2" />
-            <h1 className="heading text-capitalize">{pageData.pagename}</h1>
-          </div>
+      <div className="product-banner-wrp">
+        <div className="container text-center overflow-hidden">
+          <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
+            <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
+              <img src={pageData.icon} className="product-page-logo me-2" />
+              <h1 className="heading text-capitalize">{pageData.pagename}</h1>
+            </div>
 
-          <p className="c-fs-4 text-uppercase col-otp c-ls-20 mx-auto">
-            {pageData.tagline}
-          </p>
-          <h2 className="small-heading p-3 w-md-75 w-100 mx-auto">
-            {pageData.heading}
-          </h2>
-          <a href="https://control.msg91.com/signup/" className="btn btn-primary btn-lg c-fs-2" >
-            Get started for Free
-          </a>
+            <p className="c-fs-4 text-uppercase col-otp c-ls-20 mx-auto">
+              {pageData.tagline}
+            </p>
+            <h2 className="small-heading p-3 w-md-75 w-100 mx-auto">
+              {pageData.heading}
+            </h2>
+            <a href="https://control.msg91.com/signup/" className="btn btn-primary btn-lg c-fs-2" >
+              Get started for Free
+            </a>
+          </div>
+            <TrustedBy />
+          <img
+            src={pageData.pageimg}
+            className="img-fluid product-page-img mx-auto"
+            alt="#"
+          />
         </div>
-          <TrustedBy />
-        <img
-          src={pageData.pageimg}
-          className="img-fluid product-page-img mx-auto"
-          alt="#"
-        />
       </div>
 
-      <div className={`c-bg-grey  px-sm-0 d-flex flex-column justify-content-center justift-content-sm-start section`}>
+      <div className={`px-sm-0 d-flex flex-column justify-content-center justift-content-sm-start section`}>
         <span className="container sub-heading c-ff-h  pt-4 pt-md-0">Features</span>
         {pageData?.features?.map((item, index) => {
           if(item?.content){
