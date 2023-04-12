@@ -22,7 +22,7 @@ const indexComp = () => {
         </a>
         <TrustedBy />
       </div>
-      <div className="section product-sec d-flex my-5">
+      <div className="section product-sec d-flex my-5 mt-80">
         <div className="product-card">
           <div className="product-head">
             <div className="product-head-text">
