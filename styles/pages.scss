@@ -1,7 +1,11 @@
 .product-banner-wrp{
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    &::after{
+        content: "";
+        height: 2px;
+        width: 100%;
+        display: block;        
+        background: radial-gradient(#777, white 70%);
+    }    
 }
 .product-page-logo{
     height: 60px;
