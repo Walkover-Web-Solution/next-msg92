@@ -7,7 +7,7 @@
       "head":"this is global index"
     },
     "hello":{
-      "code":"no",
+      "code": false,
       "icon": "/img/icon/hello.svg",
       "pagename":"hello",      
       "tagline": "Revolutionize customer support",
@@ -42,10 +42,467 @@
         }
       ]
     },
-    "camp":{
-      "code":"yes",
-      "pagename":"camp",
-      "head":"this is global camp"
+    "campaign": {
+      "code": false,
+      "icon": "/img/icon/campaign.svg",
+      "pagename":"Campaign",
+      "tagline": "Event Base automation",
+      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "pageimg":"/img/pageimg/campaign.svg",
+      "features": [
+        {
+          "img": "/img/feature/campaign-multi-channel-support.svg",
+          "heading": "Multi channel support",
+          "content": "Support your customers on their preferred channel. Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, WhatsApp and more. Meet your customers where they are."
+        },
+        {
+          "img": "/img/feature/campaign-draggable-flow.svg",
+          "heading": "Draggable Flow",
+          "content": "Drag and drop to create an omnichannel flow with ‘if-then’ scenarios. Choose when you need to initiate an SMS, email, or messaging conversation in a single workflow. Create a flow that is as simple or as complex as your business needs them to be. "
+        },
+        {
+          "img": "/img/feature/campaign-time-based-condition.svg",
+          "heading": "Time Based Condition",
+          "content": "Send perfectly timed automated messages. Build a thoughtful sending schedule with time-based conditions that control the time zone of when your campaigns are delivered. Support your customers at the right time."
+        },
+        {
+          "img": "/img/feature/campaign-api-based-conditions.svg",
+          "heading": "API based Conditions",
+          "content": "Get information instantly for real-time interactions. Call for data even when in mid of a flow by sending data to a third-party system or requesting data needed for your communication steps. Deliver real-time information to your customers. "
+        },
+        {
+          "img": "/img/feature/campaign-country-based-condition.svg",
+          "heading": "Contry Based Condition",
+          "content": "Country-Based Conditions Support your customers across the world. Create personalized and memorable experiences for your customer across countries, languages, content, channels, flows and more. Easily connect, customize and communicate. "
+        }
+      ],
+      "morefeatures": [
+        {"more": "Provide customer support via screen sharing on a single click"},
+        {"more": "Troubleshooting over video in seconds"},
+        {"more" : "Record agent performance for quality control"},
+        {"more": "Understand your customers emotions through sentiment analysis"},
+        {"more": "Solution for remote access and support"},
+        {"more": "Track campaign performance"}
+      ]
+    },
+    "segmento": {
+      "code": false,
+      "icon": "/img/icon/segmento.svg",
+      "pagename":"Segmento",
+      "pageimg":"/img/pageimg/segmento.png",
+      "tagline": "Revolutionize customer support",
+      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "features": [
+        {
+          "img": "/img/feature/segmento-create-filters-as-per-segments.svg",
+          "heading": "Create filters as per segment",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/segmento-automation-trigger.svg",
+          "heading": "Automation Trigger",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/segmento-automation-repeater.svg",
+          "heading": "Automation Repeater",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/segmento-open-api.svg",
+          "heading": "Open API",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        }
+      ],
+      "morefeatures": [
+        {"more": "Provide customer support via screen sharing on a single click"},
+        {"more": "Troubleshooting over video in seconds"},
+        {"more" : "Record agent performance for quality control"},
+        {"more": "Understand your customers emotions through sentiment analysis"},
+        {"more": "Solution for remote access and support"},
+        {"more": "Track segmento performance"}
+      ]
+    },
+    "otp": {
+      "code": false,
+      "pagename": "OTP",
+      "icon": "/img/icon/otp.svg",
+      "pageimg":"/img/pageimg/otp.png",
+      "tagline": "Instant Secure verification",
+      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication",
+      "features": [
+        {
+          "img": "/img/feature/otp-simple-login.svg",
+          "heading": "Simple Login",
+          "content": "Login with OTP is as simple as login with Gmail Give your users a fast, non-disruptive and simple authentication experience. Implement login with OTP by entering your mobile number or email address to receive OTP via SMS or email."
+        },
+        {
+          "img": "/img/feature/otp-inbuilt-ip-security.svg",
+          "heading": "Inbuilt IP Security",
+          "content": "Protect against fraud, hacks, validation, blocking Minimize fraud with an extra layer of security. The inbuilt security ensures that when a login is risky the flow does not allow the bad actor to login by viewing it as potentially fraudulent."
+        },
+        {
+          "img": "/img/feature/otp-support-multiple-channels.svg",
+          "heading": "Support multiple channels",
+          "content": "Build customer trust and increase conversion across multiple channels Authenticate your users on channels they prefer. We support multiple channels including SMS, email, Voice, WhatsApp giving businesses and users the flexibility they need to authenticate."
+        }
+      ],
+      "morefeatures": [
+        {"more": "Provide customer support via screen sharing on a single click"},
+        {"more": "Troubleshooting over video in seconds"},
+        {"more" : "Record agent performance for quality control"},
+        {"more": "Understand your customers emotions through sentiment analysis"},
+        {"more": "Solution for remote access and support"},
+        {"more": "Track otp performance"}
+      ]
+    },
+    "shorturl": {
+      "code": false,
+      "icon": "/img/icon/shorturl.svg",
+      "pagename": "ShortUrl",
+      "pageimg":"/img/pageimg/shorturl.svg",
+      "tagline": "Revolutionize customer support",
+      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "features": [
+        {
+          "img": "/img/feature/shorturl-no-code.svg",
+          "heading": "No Code",
+          "content": "No code and fewer credits makes it a smart link. Shorten your URL in real-time without putting in any code. Just paste your link and you have a smart link that is easy to share, saves you space and consumes fewer credit."
+        },
+        {
+          "img": "/img/feature/shorturl-number-wise-tracking.svg",
+          "heading": "Numberwise Tracking",
+          "content": "Gather statistics by monitoring the number of hits from your URL. Track the performance of your shortURL and the number of hits for each recipient. Know how many times the link has been clicked, where is it shared, and how is it driving traffic."
+        }
+      ],
+      "morefeatures": [
+        {"more": "Provide customer support via screen sharing on a single click"},
+        {"more": "Troubleshooting over video in seconds"},
+        {"more" : "Record agent performance for quality control"},
+        {"more": "Understand your customers emotions through sentiment analysis"},
+        {"more": "Solution for remote access and support"},
+        {"more": "Track shorturl performance"}
+      ]
+    },
+    "knowledgebase": {
+      "code": false,
+      "icon": "/img/icon/knowledgebase.svg",
+      "pagename": "KnowledgeBase",
+      "pageimg":"/img/pageimg/knowledgebase.svg",
+      "tagline": "Revolutionize customer support",
+      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "features": [
+        {
+          "img": "/img/feature/kb-wysiwyg-editor.svg",
+          "heading": "Multi channel Support",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/kb-seo-friendly.svg",
+          "heading": "Unlimited Agents",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/kb-whitelable.svg",
+          "heading": "Chatbot",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        }
+      ],
+      "morefeatures": [
+        {"more": "Provide customer support via screen sharing on a single click"},
+        {"more": "Troubleshooting over video in seconds"},
+        {"more" : "Record agent performance for quality control"},
+        {"more": "Understand your customers emotions through sentiment analysis"},
+        {"more": "Solution for remote access and support"},
+        {"more": "Track knowledgebase performance"}
+      ]
+    },
+    "files": {
+      "pageimg":"/img/pageimg/filehosting.svg",
+      "icon": "/img/icon/filehosting.svg",
+      "smallheading": "Revolutionize customer support",
+      "tagline": "Boost audience engagement through smart communication and on-time delivery.",
+      "features": [
+        {
+          "img": "/img/feature/one.svg",
+          "heading": "Multi channel Support",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/one.svg",
+          "heading": "Unlimited Agents",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        }
+      ],
+      "morefeatures": [
+        {"more": "Provide customer support via screen sharing on a single click"},
+        {"more": "Troubleshooting over video in seconds"},
+        {"more" : "Record agent performance for quality control"},
+        {"more": "Understand your customers emotions through sentiment analysis"},
+        {"more": "Solution for remote access and support"},
+        {"more": "Track filehosting performance"}
+      ]
+    },
+    "sms": {
+      "code": true,
+      "pagename": "SMS",
+      "icon": "/img/icon/sms.svg",
+      "tagline": "Revolutionize customer support",
+      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "features": [
+        {
+          "img": "/img/feature/one.svg",
+          "heading": "Multi channel Support",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/two.svg",
+          "heading": "Unlimited Agents",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
+          "heading": "Chatbot",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        }
+      ],
+      "morefeatures": [
+        {"more": "Provide customer support via screen sharing on a single click"},
+        {"more": "Troubleshooting over video in seconds"},
+        {"more" : "Record agent performance for quality control"},
+        {"more": "Understand your customers emotions through sentiment analysis"},
+        {"more": "Solution for remote access and support"},
+        {"more": "Track sms performance"}
+      ]
+    },
+  
+    "email": {
+      "code": true,
+      "pagename": "Email",
+      "icon": "/img/icon/email.svg",
+      "tagline": "Revolutionize customer support",
+      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "features": [
+        {
+          "img": "/img/feature/email-template-builder.svg",
+          "heading": "Multi channel Support",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/email-amp-emails.svg",
+          "heading": "Unlimited Agents",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/email-statistics.svg",
+          "heading": "Chatbot",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/email-smtp-restapi-support.svg",
+          "heading": "Analytics",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/email-validation.svg",
+          "heading": "Video Call / Screen Sharing",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        }
+      ],
+      "morefeatures": [
+        {"more": "Provide customer support via screen sharing on a single click"},
+        {"more": "Troubleshooting over video in seconds"},
+        {"more" : "Record agent performance for quality control"},
+        {"more": "Understand your customers emotions through sentiment analysis"},
+        {"more": "Solution for remote access and support"},
+        {"more": "Track email performance"}
+      ]
+    },
+    "voice": {
+      "code": true,
+      "pagename": "Voice",
+      "icon": "/img/icon/voice.svg",
+      "tagline": "Revolutionize customer support",
+      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "features": [
+        {
+          "img": "/img/feature/voice-direct-calling-from-hello.svg",
+          "heading": "Direct Calling From Hello",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/voice-ivr-flow.svg",
+          "heading": "Voice IVR Flow",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/voice-bulk-voice.svg",
+          "heading": "Bulk Voice",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
+          "heading": "Multiple Way to Upload File",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
+          "heading": "Bulk voice with IVR",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
+          "heading": "Real time connect with agent on user input on bulk call",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        }
+      ],
+      "morefeatures": [
+        {"more": "Provide customer support via screen sharing on a single click"},
+        {"more": "Troubleshooting over video in seconds"},
+        {"more" : "Record agent performance for quality control"},
+        {"more": "Understand your customers emotions through sentiment analysis"},
+        {"more": "Solution for remote access and support"},
+        {"more": "Track voice performance"}
+      ]
+    },
+    "whatsapp": {
+      "code": true,
+      "pagename": "WhatsApp",
+      "icon": "/img/icon/whatsapp.svg",
+      "tagline": "Revolutionize customer support",
+      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "features": [
+        {
+          "img": "/img/feature/whatsapp-support-base64.svg",
+          "heading": "Support Base64",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/whatsapp-2way-communication.svg",
+          "heading": "2way communication",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
+          "heading": "Manage template inside panel",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/whatsapp-analytics.svg",
+          "heading": "Analytics",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/whatsapp-export-logs.svg",
+          "heading": "Export Logs",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        }
+      ],
+      "morefeatures": [
+        {"more": "Provide customer support via screen sharing on a single click"},
+        {"more": "Troubleshooting over video in seconds"},
+        {"more" : "Record agent performance for quality control"},
+        {"more": "Understand your customers emotions through sentiment analysis"},
+        {"more": "Solution for remote access and support"},
+        {"more": "Track whatsapp performance"}
+      ]
+    },
+    "telegram": {
+      "pageimg":"/img/pageimg/telegram.svg",
+      "icon": "/img/icon/telegram.svg",
+      "smallheading": "Revolutionize customer support",
+      "tagline": "Boost audience engagement through smart communication and on-time delivery.",
+      "features": [
+        {
+          "img": "/img/feature/one.svg",
+          "heading": "Multi channel Support",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/two.svg",
+          "heading": "Unlimited Agents",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/three.svg",
+          "heading": "Chatbot",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        }
+      ],
+      "morefeatures": [
+        {"more": "Provide customer support via screen sharing on a single click"},
+        {"more": "Troubleshooting over video in seconds"},
+        {"more" : "Record agent performance for quality control"},
+        {"more": "Understand your customers emotions through sentiment analysis"},
+        {"more": "Solution for remote access and support"},
+        {"more": "Track telegram performance"}
+      ]
+    },
+    "rcs": {
+      "smallheading": "Revolutionize customer support",
+      "icon": "/img/icon/rcs.svg",
+      "tagline": "Boost audience engagement through smart communication and on-time delivery.",
+      "features": [
+        {
+          "img": "/img/feature/one.svg",
+          "heading": "Multi channel Support",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/one.svg",
+          "heading": "Unlimited Agents",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/one.svg",
+          "heading": "Chatbot",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/one.svg",
+          "heading": "Analytics",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        }
+      ],
+      "morefeatures": [
+        {"more": "Provide customer support via screen sharing on a single click"},
+        {"more": "Troubleshooting over video in seconds"},
+        {"more" : "Record agent performance for quality control"},
+        {"more": "Understand your customers emotions through sentiment analysis"},
+        {"more": "Solution for remote access and support"},
+        {"more": "Track rcs performance"}
+      ]
+    },  
+    "pushnotification": {
+      "pageimg":"/img/pageimg/pushnotification.svg",
+      "icon": "/img/icon/pushnotification.svg",
+      "smallheading": "Revolutionize customer support",
+      "tagline": "Boost audience engagement through smart communication and on-time delivery.",
+      "features": [
+        {
+          "img": "/img/feature/one.svg",
+          "heading": "Multi channel Support",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/one.svg",
+          "heading": "Unlimited Agents",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        },
+        {
+          "img": "/img/feature/one.svg",
+          "heading": "Chatbot",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        }
+      ],
+      "morefeatures": [
+        {"more": "Provide customer support via screen sharing on a single click"},
+        {"more": "Troubleshooting over video in seconds"},
+        {"more" : "Record agent performance for quality control"},
+        {"more": "Understand your customers emotions through sentiment analysis"},
+        {"more": "Solution for remote access and support"},
+        {"more": "Track pushnotification performance"}
+      ]
     }
   },
   "in":{

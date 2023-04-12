@@ -1,13 +1,13 @@
 // Parent Component
 import React from 'react';
-import ProductComponent from "@/components/comps/productComp";
+import ChannelComponent from '@/components/comps/channelComp';
 import json from "./content.json"; 
 
 const ParentComponent = () => {
-  const data = json.global.hello; 
+  const data = json.global.sms; 
   return (
     <>    
-      <ProductComponent pageData={data} />    
+      <ChannelComponent pageData={data} />    
     </>
   );
 };
