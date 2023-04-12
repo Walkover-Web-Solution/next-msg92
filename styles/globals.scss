@@ -7,7 +7,12 @@ body {
 .section {
   width: 100vw;
 }
+.c-hover{
+  &:hover{
+    box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.15);
 
+  }
+}
 nav {
   height: 60px;
 
@@ -103,7 +108,7 @@ nav {
   height: 70vh;
 }
 .b-right-1 {
-  border-right: 1px solid var(--c-grey);
+  border-right: 2px solid var(--c-light-grey);
 }
 .more-services {
   background-color: white;
@@ -112,4 +117,13 @@ nav {
     background-color: var(--c-light-grey);
     box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.15);
   }
+}
+//clinnt sroteis
+.milkbasket-clint-img{
+  width: 100%;
+  height: auto;
+}
+.secc-clint-img{
+  width: auto;
+  height: 100%;
 }

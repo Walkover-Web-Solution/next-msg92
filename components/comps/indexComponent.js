@@ -329,7 +329,7 @@ const indexComp = () => {
               </p>
             </div>
             <a href="#">
-              <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-b text-dark">
+              <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-sb text-dark">
                 <span>Learn more</span>
                 <MdKeyboardArrowRight />
               </div>
@@ -365,7 +365,7 @@ const indexComp = () => {
               </p>
             </div>
             <a href="#">
-              <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-b text-dark">
+              <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-sb text-dark">
                 <span>Learn more</span>
                 <MdKeyboardArrowRight />
               </div>
@@ -374,8 +374,76 @@ const indexComp = () => {
         </div>
       </div>
       <div className="container my-5">
-        <h2 className="sub-heading">Our Clint Stories</h2>
-
+        <h2 className="sub-heading c-head">Our Clint Stories</h2>
+        <div className="d-flex col-12 gap-4 my-4">
+          <div className="col-6 c-hover ">
+            <Image
+              className="milkbasket-clint-img "
+              src="/img/milkbasket-clint-img.png"
+              width={580}
+              height={314}
+              alt="milkbasket-clint-img"
+            />
+            <div className="c-fs-3 p-3">
+              <p className="pe-2">
+                Milkbasket sends regular updates to their customers’ via MSG91
+                multi-channel APIs.
+              </p>
+              <a
+                className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
+                href="/clint-stories/milkbasket"
+              >
+                <span className="me-3 ">Learn more</span>
+                <MdKeyboardArrowRight />
+              </a>
+            </div>
+          </div>
+          <div className="col-6 d-flex flex-column gap-4">
+            <div className="c-hover d-flex align-items-center">
+              <Image
+                className="secc-clint-img "
+                src="/img/unacademy-clint-img.png"
+                width={220}
+                height={220}
+                alt="secc-clint-img"
+              />
+              <div className="c-fs-3 p-3">
+                <p className="pe-2">
+                  Unacademy ensures seamless communication using SMS via MSG91.
+                </p>
+                <a
+                  className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
+                  href="/clint-stories/milkbasket"
+                >
+                  <span className="me-3 ">Learn more</span>
+                  <MdKeyboardArrowRight />
+                </a>
+              </div>
+            </div>
+            <div className="c-hover d-flex align-items-center">
+              <Image
+                className="secc-clint-img "
+                src="/img/ixigo-clint-img.png"
+                width={220}
+                height={220}
+                alt="secc-clint-img"
+              />
+              <div className="c-fs-3 p-3">
+                <p className="pe-2">
+                Ixigo ensures seamless communication using SMS via MSG91.
+                </p>
+                <a
+                  className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
+                  href="/clint-stories/milkbasket"
+                >
+                  <span className="me-3 ">Learn more</span>
+                  <MdKeyboardArrowRight />
+                </a>
+              </div>
+            </div>
+           
+          </div>
+        </div>
       </div>
     </>
   );
