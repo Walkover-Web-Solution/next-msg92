@@ -1,64 +1,102 @@
+import React from "react";
+import Footer from "@/components/footer";
+import Gdpr from "@/components/termsofuse/gdpr";
+import Link from "next/link";
 const gdpr = () => {
-    return (
-        <>
-            <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">GDPR</h2>
-                <span className="c-fs-4">
-                More than compliance; your trust, our responsibility.
-                    <div className="my-3"></div>
-                    GDPR is an opportunity to build a stronger data protection foundation. It is designed to give you more control over your personal data by simplifying the regulatory environment for business so you and your business can fully benefit from the digital economy.
-                    <div className="my-3"></div>
-                    Although GDPR has been implemented just some time back (May 2018), for MSG91 it has always been a part of the culture and practices. GDPR has not just been a compliance practice for us at MSG91 but it has always been about the trust our customers have garnered on us and the responsibility which lies with us to keep their data protected.
-                    <div className="my-3"></div>
-                    Here’s how MSG91 follows GDPR compliance
-                </span>
-            </div>
-            <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">You can always Opt-out</h2>
-                <span className="c-fs-4">
-                MSG91 always gives our customers the option to Opt-out at anytime. Be it our newsletters, or the demo, we always give our customers the option to opt-out from the beginning itself. Whether you subscribe for any of your services, opting out is always up to your choice.
-                </span>
-            </div>
-            <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">We offer you Erasability</h2>
-                <span className="c-fs-4">
-                MSG91 would erase the customer’s data whenever we are asked to do so. If you as a customer wants to be forgotten, then we take immediate action upon such requests to erase, transfer or modify the personal user data.
-                </span>
-            </div>
-            <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">We believe in fair practices</h2>
-                <span className="c-fs-4">
-                MSG91 adhere to fair practices, i.e. we ensure our operations are lawful and transparent to the behest of our customers. We sign due privacy agreements consisting of consent and data sharing processes, where we protect all your data and privacy diligently.
-                </span>
-            </div>
-            <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">We have a Singapore-based data center</h2>
-                <span className="c-fs-4">
-                To ensure that the operations go smoothly and the data remains well protected, we have our data center with AWS (Amazon Web Services), Singapore. This ensure smooth seamless operations even when the servers are down.
-                </span>
-            </div>
-            <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">Full Support Assistance whenever required</h2>
-                <span className="c-fs-4">
-                We offer an active 18*7 support for our customers. With our active and diligent support team, our customers get a complete assistance whenever they face any issues. Reach us on 1800-121-2911, or write us at <a href="https://msg91.com/cdn-cgi/l/email-protection"> [email protected]</a>
-                </span>
-            </div>
-            <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">We protect your Data Subjects</h2>
-                <span className="c-fs-4">
-                At MSG91 we not only protect your data, but also ensure security measures at different scales to protect your data subjects from breach. We are equally committed to secure your subject’s data as we do for you.
-                </span>
-            </div>
-            <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">We believe in Clear Communication</h2>
-                <span className="c-fs-4">
-                We believe in a clear communication, and this transparency reflects in our Terms and Conditions and Privacy Policy page. We write all the clauses in an easy to understand legible language without any *conditions apply in small print.
-                    <div className="my-3"></div>
-                    Our terms are aligned and subject to modification according to laws and guidelines by local government bodies like TRAI in India.
-            </span>
-            </div>
-        </>
+  return (
+    <>
+      <div className=" d-flex flex-column flex-md-row container terms-cont py-5">
+        <div className="d-flex  align-items-center d-block d-md-none">
+          <div className="dropdown " id="">
+            <button
+              className=" dropdown-toggle btn m-0 p-0 mb-4 c-fs-1  text-dark"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <label className=" c-fs-2">GDPR</label>
+            </button>
+            <ul className="dropdown-menu">
+              <li>
+                <Link href="/terms-of-use" className="dropdown-item c-fs-4">
+                  Terms
+                </Link>
+              </li>
+              <li>
+                <Link href="/startup-policy" className="dropdown-item c-fs-4">
+                  Startup Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="dropdown-item c-fs-4">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/gdpr" className="dropdown-item c-fs-4">
+                  GDPR
+                </Link>
+              </li>
+              <li>
+                <Link href="/refund-policy" className="dropdown-item c-fs-4">
+                  Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookie-policy" className="dropdown-item c-fs-4">
+                  Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/fair-using-picing"
+                  className="dropdown-item c-fs-4"
+                >
+                  Fair Pricing Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/no-spam" className="dropdown-item c-fs-4">
+                  No Spam
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-    );
+        <div className="gap-3 d-none d-md-flex flex-column  col-12 flex-wrap mb-3 col-md-4 col-lg-3 terms-nav">
+          <a href="/terms-of-use">
+            <span className="c-fs-3 text-black">Terms</span>
+          </a>
+          <a href="privacy-policy">
+            <span className="c-fs-3 text-black">Privacy Policy </span>
+          </a>
+          <a href="gdpr">
+            <span className="c-fs-3 text-primary">GDPR</span>
+          </a>
+          <a href="refund-policy">
+            <span className="c-fs-3 text-black">Refund Policy</span>
+          </a>
+          <a href="cookie-policy">
+            <span className="c-fs-3 text-black">Cookie Policy</span>
+          </a>
+          <a href="startup-policy">
+            <span className="c-fs-3 text-black">Startup Policy</span>
+          </a>
+          <a href="fair-pricing-policy">
+            <span className="c-fs-3 text-black">Fair Pricing Policy</span>
+          </a>
+          <a href="no-spam">
+            <span className="c-fs-3 text-black">No Spam</span>
+          </a>
+        </div>
+        <div className="col-12 col-md-8 col-lg-9 h-100">
+        <Gdpr />
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
 };
+
 export default gdpr;

@@ -228,7 +228,7 @@ const aboutUsComp = () => {
                     <div class="p-5 bg-white border-0 rounded-3">
                         <p className="c-fs-4 text-muted">MSG91 has helped us in delivering great customer experience through consistent communication!</p>
                         <div className="d-flex mt-4">
-                            <img src="../img/indialends.svg" className="product-page-logo w-100" />
+                            <img src="../img/indialends.svg" className="product-page-logo w-100 mt-3" />
                         </div>
                     </div>
                 </div>

@@ -1,38 +1,102 @@
-import TermsNav from "@/components/termsNav";
-
-const terms = ()=>{
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col-2">
-            <TermsNav />                        
-          </div>
-          <div className="col-10  terms-content">
-            <div className="mb-5">
-              <h2 className="c-fs-2 c-fw-m">Terms</h2>
-              <div className="c-fs-4">
-                Simple terms for a longterm relationship!
-                <div className="my-3"></div>
-                Our services consist of the platform, features and connectivity
-                that MSG91 provides to you.
-                <div className="my-3"></div>
-                This policy is w.e.f. Nov 7, 2012. Using our services? Keep em in
-                mind!
-                <div className="my-3"></div>
-                This policy is effective from Nov 07, 2012. Please read the
-                following important Terms of Service Agreement (the Agreement)
-                before accessing or using any of the various services (the
-                Services) made available to you (the client) by MSG91 through (MSG91).The use of services from (under Walkover Web Solutions Pvt. Ltd.)
-                [Hereafter may referred to as “MSG91”] constitutes agreement to
-                these terms. By accessing or using the Services, you acknowledge
-                that you have carefully read and understood whatever has been
-                listed, and you agree to be bound by these Terms.
-              </div>
-            </div>            
+import React from "react";
+import Footer from "@/components/footer";
+import Terms from "@/components/termsofuse/terms";
+import Link from "next/link";
+const termsofuse = () => {
+  return (
+    <>
+      <div className=" d-flex flex-column flex-md-row container terms-cont py-5">
+        <div className="d-flex  align-items-center d-block d-md-none">
+          <div className="dropdown " id="change-country">
+            <button
+              className=" dropdown-toggle btn m-0 p-0 mb-4 c-fs-1  text-dark"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <label className=" c-fs-2">Terms</label>
+            </button>
+            <ul className="dropdown-menu">
+              <li>
+                <Link href="/terms-of-use" className="dropdown-item c-fs-4">
+                  Terms
+                </Link>
+              </li>
+              <li>
+                <Link href="/startup-policy" className="dropdown-item c-fs-4">
+                  Startup Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="dropdown-item c-fs-4">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/gdpr" className="dropdown-item c-fs-4">
+                  GDPR
+                </Link>
+              </li>
+              <li>
+                <Link href="/refund-policy" className="dropdown-item c-fs-4">
+                  Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookie-policy" className="dropdown-item c-fs-4">
+                  Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/fair-using-picing"
+                  className="dropdown-item c-fs-4"
+                >
+                  Fair Pricing Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/no-spam" className="dropdown-item c-fs-4">
+                  No Spam
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
+
+        <div className="gap-3 d-none d-md-flex flex-column  col-12 flex-wrap mb-3 col-md-4 col-lg-3 terms-nav">
+          <a href="/terms-of-use">
+            <span className="c-fs-3 text-primary">Terms</span>
+          </a>
+          <a href="privacy-policy">
+            <span className="c-fs-3 text-black">Privacy Policy </span>
+          </a>
+          <a href="gdpr">
+            <span className="c-fs-3 text-black">GDPR</span>
+          </a>
+          <a href="refund-policy">
+            <span className="c-fs-3 text-black">Refund Policy</span>
+          </a>
+          <a href="cookie-policy">
+            <span className="c-fs-3 text-black">Cookie Policy</span>
+          </a>
+          <a href="startup-policy">
+            <span className="c-fs-3 text-black">Startup Policy</span>
+          </a>
+          <a href="fair-pricing-policy">
+            <span className="c-fs-3 text-black">Fair Pricing Policy</span>
+          </a>
+          <a href="no-spam">
+            <span className="c-fs-3 text-black">No Spam</span>
+          </a>
+        </div>
+        <div className="col-12 col-md-8 col-lg-9 h-100">
+          <Terms />
+        </div>
       </div>
-    );
+      <Footer />
+    </>
+  );
 };
 
-export default terms;
+export default termsofuse;

@@ -1,38 +1,102 @@
-const fairpricingpolicy = () => {
-    return (
-        <>
-            <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">Fair pricing policy</h2>
-                <p className="c-fs-4">
-                    We play fair!
-                    <div className="my-3"></div>
-                    Our purpose is to give you maximum value at the lowest price keeping us profitable and sustainable.
-                    <div className="my-3"></div>
-                    Fair Pricing Policy
-                    <div className="my-3"></div>
-                    to be honest, and open, providing our customers with reliable and high-quality services at a fair price, while also ensuring the sustainability of our business.
-                    <div className="my-3"></div>
-                    Our fair pricing policy promotes:
-                    <div className="my-3"></div>
-                    <strong>Cost-effective Solutions</strong> – Our pricing is derived from the factors responsible to produce optimum results for your money paid.
-                    <div className="my-3"></div>
-                    <strong>Long Term Relationships</strong> – We believe in building business relationships which can sustain over a long period of time leading to real partnerships rather than aiming for short term profiteering.
-                    <div className="my-3"></div>
-                    <strong>Buy with Confidence</strong> – We offer lifetime validity of our SMS so that a customer can avail the maximum usage worth the value for the amount paid.
-                    <div className="my-3"></div>
-                    <strong>Mutual Trust</strong> – We believe that your success will be our success and you have to trust us with our methods.
-                    <div className="my-3"></div>
-                    <strong>Supporting our Customers</strong> – We provide a 30-day money-back guarantee and all our prices are shown upfront. We do not try to fool you with any hidden charges.
-                    <div className="my-3"></div>
-                    <strong>Enhancing our Services</strong> – Our pricing is based on our cost plus a reasonable profit margin to allow for continued growth and development of our business, employees and future product enhancements.
-                    <div className="my-3"></div>
-                    Our driving philosophy is that if MSG91 remains profitable, competitive and customer-focused then our future and that of our customers will be secure and prosperous. We are committed to the success of our customers and believe that your hard work is as valuable as ours.
-                    <div className="my-3"></div>
-                    Our terms are aligned and subject to modification according to laws and guidelines by local government bodies like TRAI in India.
-                </p>
-            </div>
-        </>
+import React from "react";
+import Fairpricingpolicy from "@/components/termsofuse/fair-pricing-policy";
+import Footer from "@/components/footer";
+import Link from "next/link";
+const fairuse = () => {
+  return (
+    <>
+      <div className=" d-flex flex-column flex-md-row container terms-cont py-5">
+        <div className="d-flex  align-items-center d-block d-md-none">
+          <div className="dropdown " id="change-country">
+            <button
+              className=" dropdown-toggle btn m-0 p-0 mb-4 c-fs-1  text-dark"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <label className=" c-fs-2">Fair Using Policy</label>
+            </button>
+            <ul className="dropdown-menu">
+              <li>
+                <Link href="/terms-of-use" className="dropdown-item c-fs-4">
+                  Terms
+                </Link>
+              </li>
+              <li>
+                <Link href="/startup-policy" className="dropdown-item c-fs-4">
+                  Startup Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="dropdown-item c-fs-4">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/gdpr" className="dropdown-item c-fs-4">
+                  GDPR
+                </Link>
+              </li>
+              <li>
+                <Link href="/refund-policy" className="dropdown-item c-fs-4">
+                  Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookie-policy" className="dropdown-item c-fs-4">
+                  Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/fair-using-picing"
+                  className="dropdown-item c-fs-4"
+                >
+                  Fair Pricing Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/no-spam" className="dropdown-item c-fs-4">
+                  No Spam
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-    );
+        <div className="gap-3 d-none d-md-flex flex-column  col-12 flex-wrap mb-3 col-md-4 col-lg-3 terms-nav">
+          <a href="/terms-of-use">
+            <span className="c-fs-3 text-black">Terms</span>
+          </a>
+          <a href="privacy-policy">
+            <span className="c-fs-3 text-black">Privacy Policy </span>
+          </a>
+          <a href="gdpr">
+            <span className="c-fs-3 text-black">GDPR</span>
+          </a>
+          <a href="refund-policy">
+            <span className="c-fs-3 text-black">Refund Policy</span>
+          </a>
+          <a href="cookie-policy">
+            <span className="c-fs-3 text-black">Cookie Policy</span>
+          </a>
+          <a href="startup-policy">
+            <span className="c-fs-3 text-black">Startup Policy</span>
+          </a>
+          <a href="fair-pricing-policy">
+            <span className="c-fs-3 text-primary">Fair Pricing Policy</span>
+          </a>
+          <a href="no-spam">
+            <span className="c-fs-3 text-black">No Spam</span>
+          </a>
+        </div>
+        <div className="col-12 col-md-8 col-lg-9 h-100">
+        <Fairpricingpolicy />
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
 };
-export default fairpricingpolicy;
+
+export default fairuse;
