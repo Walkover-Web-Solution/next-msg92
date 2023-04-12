@@ -40,34 +40,16 @@ const Footer = () => {
                                 <a href="#" className="c-fs-5 mt-2 c-fw-t">
                                     RCS
                                 </a>
-                                {/* <a href={`${path}/virtual-number`} className="c-fs-5 mt-2 c-fw-t">
-                  Virtual Number
-                </a> */}
-                                {/* <a href="#" className="c-fs-5 mt-2 c-fw-t">
-                                    WhatsApp
-                                </a>
-                                <a href="#" className="c-fs-5 mt-2 c-fw-t">
-                                    Telegram
-                                </a>
-                                <a href="#" className="c-fs-5 mt-2 c-fw-t">
-                                    Push Notification
-                                </a> */}
-                                {/* <a href="#" className="c-fs-5 mt-2 c-fw-t">
-                  View All Channels
-                </a> */}
                             </div>
                         </div>
 
                         <div className="col-6 col-lg-2 mb-4">
                             <h4 className="c-fs-5 d-flex flex-column">Resources</h4>
                             <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
-                                {/* <a href="/industries" target="_blank" className="c-fs-5 mt-2 c-fw-t">
-                  Industries
-                </a> */}
                                 <a href="https://msg91.com/guide/" target="_blank" className="c-fs-5 mt-2 c-fw-t">
                                     Guide
                                 </a>
-                                <a href="#" className="c-fs-5 mt-2 c-fw-t">
+                                <a href="/case-studies" className="c-fs-5 mt-2 c-fw-t">
                                     Case Studies
                                 </a>
                                 <a href="https://msg91.com/help" target="_blank" className="c-fs-5 mt-2 c-fw-t">
@@ -85,25 +67,25 @@ const Footer = () => {
                         <div className="col-6 col-lg-2 mb-4">
                             <h4 className=" c-fs-5 d-flex flex-column">Discover</h4>
                             <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
-                                <a href="/comps/aboutUsComponent" className="c-fs-5 mt-2 c-fw-t">
+                                <a href="/about-us" className="c-fs-5 mt-2 c-fw-t">
                                     About Us
                                 </a>
-                                <a href="#" className="c-fs-5 mt-2 c-fw-t">
+                                <a href="/pricing" className="c-fs-5 mt-2 c-fw-t">
                                     Pricing
                                 </a>
-                                <a href="#" className="c-fs-5 mt-2 c-fw-t">
+                                <a href="/contact-us" className="c-fs-5 mt-2 c-fw-t">
                                     Contact Us
                                 </a>
-                                <a href="#" className="c-fs-5 mt-2 c-fw-t">
+                                <a href="/developers" className="c-fs-5 mt-2 c-fw-t">
                                     Developers
                                 </a>
-                                <a href="#" className="c-fs-5 mt-2 c-fw-t">
+                                <a href="/msg91-for-startups" className="c-fs-5 mt-2 c-fw-t">
                                     MSG91 For Startups
                                 </a>
-                                <a href="#" className="c-fs-5 mt-2 c-fw-t">
+                                <a href="/partners-and-integrations" className="c-fs-5 mt-2 c-fw-t">
                                     Partners and Integrations
                                 </a>
-                                <a href="#" className="c-fs-5 mt-2 c-fw-t">
+                                <a href="/become-a-partner" className="c-fs-5 mt-2 c-fw-t">
                                     Become a Partner
                                 </a>
                                 <a href="https://apply.workable.com/walkover/" target="_blank" className="c-fs-5 mt-2 c-fw-t">
@@ -168,31 +150,31 @@ const Footer = () => {
                                     Terms of use
                                 </a>
                                 <span className="f2-spacer"> | </span>
-                                <a href="#" className="c-fs-5 ">
+                                <a href="/terms-of-use" className="c-fs-5 ">
                                     Privacy Policy
                                 </a>
                                 <span className="f2-spacer"> | </span>
-                                <a href="#" className="c-fs-5 ">
+                                <a href="/gdpr" className="c-fs-5 ">
                                     GDPR
                                 </a>
                                 <span className="f2-spacer"> | </span>
-                                <a href="#" className="c-fs-5 ">
+                                <a href="/refund-policy" className="c-fs-5 ">
                                     Refund-Policy
                                 </a>
                                 <span className="f2-spacer"> | </span>
-                                <a href="#" className="c-fs-5 ">
+                                <a href="/no-spam" className="c-fs-5 ">
                                     No Spam
                                 </a>
                                 <span className="f2-spacer"> | </span>
-                                <a href="#" className="c-fs-5 ">
+                                <a href="/startup-policy" className="c-fs-5 ">
                                     Startup Policy
                                 </a>
                                 <span className="f2-spacer"> | </span>
-                                <a href="#" className="c-fs-5 ">
-                                    Developer Policy
+                                <a href="/fair-pricing-policy" className="c-fs-5 ">
+                                    Fair Pricing Policy
                                 </a>
                                 <span className="f2-spacer"> | </span>
-                                <a href="#" className="c-fs-5 ">
+                                <a href="/cookie-policy" className="c-fs-5 ">
                                     Cookie Policy
                                 </a>
                             </div>

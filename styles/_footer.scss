@@ -1,0 +1,67 @@
+.footer{
+  z-index: 100;
+  background-color: var(--black-color);
+  color: var(--c-light-grey);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--c-fs-5);
+  h4{
+    font-weight: bold;
+  }
+  a {
+    text-decoration: none;
+    color: var(--c-light-grey);
+    font-size: var(--c-fs-5);
+    &:hover {
+      color: var(--c-light-grey);
+      text-decoration: underline;
+    }
+
+  }
+}
+.full-line {
+  height: 250px;
+  border-left: 1px solid var(--c-grey);
+}
+
+.f-menu-cont {
+
+  width: 800px;
+  justify-content: space-between;
+}
+
+.c-col-one {
+  color: var(-grey-color);
+}
+
+.f-nav-link-cont {
+  gap: 8px;
+}
+
+.awesomness_1 {
+  background-color: #7f7b82;
+}
+
+.grey-cont {
+  background-color: #7f7b823a;
+}
+
+.footer2 {
+  background: #1d2023;  
+  .f2-spacer{
+    padding: 0 10px;
+  }
+}
+
+.copyright {
+  color: var(--c-grey)
+}
+
+// case-studies scss
+
+.casestudycard {
+  width: clamp(300px, 30vw, 400px);
+}
