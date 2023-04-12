@@ -2,7 +2,7 @@ import Image from "next/image";
 const TrustedBy = () => {
     return(
         <>
-        <div className="d-flex flex-column gap-3 mt-4">
+        <div className="d-flex flex-column gap-3 my-4">
             <span className="c-fs-3 ">Trusted by<span className="c-fw-sb"> 30,000+ </span>businesses</span>
             <div className="d-flex gap-3">
                 <Image src="./img/trusted/ixigo.svg" width="187" height="28" alt="trustimage"/>
