@@ -1,18 +1,10 @@
-import Header from "@/components/header";
-import Notification from "@/components/notification";
-import HeadTag from "../head";
-import TrustedSec from "@/components/trusted_by";
-import Image from "next/image";
-import Link from "next/link";
+
 import Footer from "@/components/footer";
-import FaqSection from "@/components/faq";
 
 const sankalp = () => {
   return (
     <>
-      <HeadTag />
-      <Notification />
-      <Header />
+
       <div className="container d-flex overflow-hidden bg-white py-5 flex-column flex-md-row mb-5 align-items-center">
         <div className="row col-12 col-md-5 d-flex">
           <div className="container border border-5 border-dark rounded-1 px-4 py-2">
