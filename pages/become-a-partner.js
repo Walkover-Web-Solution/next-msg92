@@ -31,7 +31,7 @@ const becomeApartner = () => {
             </div>
             <img
               className="c-w-pp p-4 ms-0 ms-sm-4"
-              src="/img/integration-partnership-img.png"
+              src="/img/integration-partnership-img.png" width="678" height="378"
             ></img>
           </div>
           <div className=" d-flex flex-column  flex-md-row-reverse justify-content-between align-items-center my-2 my-md-4 py-4">
@@ -46,7 +46,7 @@ const becomeApartner = () => {
             </div>
             <img
               className="c-w-pp p-4 me-0 me-sm-4"
-              src="/img/affiliated-partnership-img.png"
+              src="/img/affiliated-partnership-img.png" width="678" height="378"
             ></img>
           </div>
           <div className=" d-flex flex-column flex-md-row justify-content-between align-items-center my-2 my-md-4 py-4">
@@ -62,7 +62,7 @@ const becomeApartner = () => {
             </div>
             <img
               className="c-w-pp p-4 ms-0 ms-sm-4"
-              src="/img/consulation-partnership-img.png"
+              src="/img/consulation-partnership-img.png" width="678" height="378"
             ></img>
           </div>
           <div className=" d-flex flex-column  flex-md-row-reverse justify-content-between align-items-center my-2 my-md-4 py-4">
@@ -77,7 +77,7 @@ const becomeApartner = () => {
             </div>
             <img
               className="c-w-pp p-4 me-0 me-sm-4 "
-              src="/img/msg91-for-startups-img.png"
+              src="/img/msg91-for-startups-img.png" width="678" height="378"
             ></img>
           </div>
         </div>

@@ -146,11 +146,11 @@ const Footer = () => {
                     <div className="container">
                         <div className="d-flex justify-content-sm-between flex-column flex-lg-row">
                             <div className="mt-4 mt-lg-0 gap-3">
-                                <a href="#" className="c-fs-5 ">
+                                <a href="/terms-of-use" className="c-fs-5 ">
                                     Terms of use
                                 </a>
                                 <span className="f2-spacer"> | </span>
-                                <a href="/terms-of-use" className="c-fs-5 ">
+                                <a href="/privacy-policy" className="c-fs-5 ">
                                     Privacy Policy
                                 </a>
                                 <span className="f2-spacer"> | </span>

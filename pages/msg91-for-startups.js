@@ -16,7 +16,7 @@ const msg91ForStartups = () => {
         </div>
         <div className="col-12 col-md-6">
 
-        <img className="startup-home-img flip-vertical  " src="/img/startup-home-img.svg" />
+        <img className="startup-home-img flip-vertical  " src="/img/startup-home-img.svg" width="648" height="291"  />
         </div>
       </div>
       <section className="c-bg-grey p-5 text-center small-heading">
