@@ -34,11 +34,10 @@ const navbar = () => {
 
   return (
     <>
-      <ProductMenu />
       <Notification />
       <nav className="w-100 py-2 sticy align-items-center d-flex " id="navbar">
-        <div className="container d-flex align-items-center justify-content-between c-fs-4 c-fw-m">
-          <div className=" d-flex gap-5 w-nav-menu align-items-center justify-content-start ">
+        <div className="container relative d-flex align-items-center justify-content-between c-fs-4 c-fw-m">
+          <div className=" d-flex gap-5 w-nav-menu align-items-center justify-content-start nav-menu">
             <a className="text-dark" href="#" id="product-link">
               <span className="c-fs-4 c-fw-m">Products</span>
             </a>
@@ -50,7 +49,7 @@ const navbar = () => {
             </a>
           </div>
           <div className="msg91-logo-cont  align-items-center justify-content-center d-flex">
-            <a href="">
+            <a href="/">
               <img className="msg91-logo" src="/img/logo.svg" alt="MSG91" />
             </a>
           </div>
@@ -66,6 +65,7 @@ const navbar = () => {
           </div>
         </div>
       </nav>
+<ProductMenu />
     </>
   );
 };

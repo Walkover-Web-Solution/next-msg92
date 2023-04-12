@@ -10,21 +10,21 @@ body {
 .section {
   width: 100%;
 }
-.c-hover{
-  &:hover{
+.c-hover {
+  &:hover {
     box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.15);
-
   }
 }
-#navbar{
+#navbar {
   position: sticky;
   top: 0;
-  z-index: 12;
- background: white;
-
+  z-index: 20;
+  background: white;
+}
+.nav-menu {
+  z-index: 20;
 }
 nav {
- 
   height: 80px;
   .msg91-logo-cont {
     height: fit-content;
@@ -129,16 +129,16 @@ nav {
   }
 }
 //clinnt sroteis
-.milkbasket-clint-img{
+.milkbasket-clint-img {
   width: 100%;
   height: auto;
 }
-.secc-clint-img{
+.secc-clint-img {
   width: auto;
   height: 100%;
 }
 //productmenu
-#bgoverlay{
+#bgoverlay {
   position: fixed;
   top: 0;
   opacity: 0;
@@ -147,66 +147,65 @@ nav {
   height: 100vh;
   z-index: 9;
   background: rgba(82, 82, 82, 0.516);
-  &.active{
+  &.active {
     opacity: 1;
     display: block;
   }
 }
-#overlaymenucont{
+#overlaymenucont {
   position: relative;
   width: 60%;
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
   z-index: 10;
-  position:fixed;
+  position: fixed;
   top: 0;
   padding-left: 120px;
   padding-top: 60px;
   background-color: white;
   left: -100%;
   transition: 0.2s;
-  &.active{
+  &.active {
     left: 0;
   }
 }
-#productmenu{
+#productmenu {
   position: absolute;
   padding-top: 60px;
   width: 100%;
   opacity: 0;
   transition: 0.15s;
   z-index: 10;
-  &.active{
+  &.active {
     z-index: 11;
     opacity: 1;
   }
-  }
-  #integrationsmenu{
+}
+#integrationsmenu {
   padding-top: 60px;
   position: relative;
   width: 100%;
   opacity: 0;
   transition: 0.15s;
   z-index: 10;
-  &.active{
+  &.active {
     z-index: 11;
     opacity: 1;
   }
-  }
+}
 
-.menu{
+.menu {
   width: 370px;
-  a{
+  a {
     color: var(--c-grey);
   }
 }
-.product-menu-btn{
+.product-menu-btn {
   width: 100%;
   transition: 0.15s;
-  &:hover{
-    
-    color: var(--c-grey)!important;
+  &:hover {
+    color: var(--c-grey) !important;
     background-color: var(--c-light-grey);
   }
 }
@@ -214,9 +213,9 @@ nav {
 /* Overwrite the default to keep the scrollbar always visible */
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 7px;  
+  width: 7px;
   height: 7px;
-  overflow: overlay;  
+  overflow: overlay;
 }
 
 ::-webkit-scrollbar-track {
@@ -225,11 +224,11 @@ nav {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background-color: rgba(0,0,0,.5);
-  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 /* set button(top and bottom of the scrollbar) */
 body::-webkit-scrollbar-button {
-  display:none;
+  display: none;
 }
