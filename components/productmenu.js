@@ -2,7 +2,7 @@ import Image from "next/image";
 const ProductMenu = () => {
   return (
     <>
-      {/* <div className="bg-overlay" id="bgoverlay"></div> */}
+      <div className="bg-overlay" id="bgoverlay"></div>
       <div className="overlay-menu-cont " id="overlaymenucont">
         <div className="overlay-menu d-flex flex-wrap gap-3 " id="productmenu">
           <div className="menu mt-4 d-flex flex-column ">
