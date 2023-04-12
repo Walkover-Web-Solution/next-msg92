@@ -22,7 +22,7 @@ const indexComp = () => {
         </a>
         <TrustedBy />
       </div>
-      <div className="section product-sec d-flex my-5 mt-80">
+      <div className="section product-sec d-flex my-5 my-80">
         <div className="product-card">
           <div className="product-head">
             <div className="product-head-text">
@@ -121,7 +121,7 @@ const indexComp = () => {
           </div>
         </div>
       </div>
-      <div className="container my-5 mt-80">
+      <div className="container my-5 my-80">
         <h2 className="sub-heading c-head mb-2">Communication Channels</h2>
         <p className="c-fs-2 w-75">
           Empower conversations with best-in-class communication API.
@@ -227,7 +227,7 @@ const indexComp = () => {
           </a>
         </div>
       </div>
-      <div className="section c-bg-grey stats-sec align-items-center mt-80" >
+      <div className="section c-bg-grey stats-sec align-items-center my-80" >
         <div className="container h-100 d-flex align-items-center">
           <div className="col-3 d-flex flex-column gap-2">
             <h2 className="c-fs-1 c-fw-b">2.5 Billion+</h2>
@@ -259,7 +259,7 @@ const indexComp = () => {
           </div>
         </div>
       </div>
-      <div className="container my-5 more-services-sec mt-80">
+      <div className="container my-5 more-services-sec my-80">
         <h2 className="sub-heading c-head">More Services</h2>
         <div className="d-flex my-5">
           <div className="col-4 p-4 d-flex flex-column gap-3 b-right-1 more-services">
@@ -374,7 +374,7 @@ const indexComp = () => {
           </div>
         </div>
       </div>
-      <div className="container my-5 mt-80">
+      <div className="container my-5 my-80">
         <h2 className="sub-heading c-head">Our Clint Stories</h2>
         <div className="d-flex col-12 gap-4 my-4">
           <div className="col-6 c-hover ">
