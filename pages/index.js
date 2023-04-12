@@ -4,7 +4,7 @@ const index = ()=>{
   return(
     <>
     <IndexComp/>
-    <Footer/>
+    {/* <Footer/> */}
     </>
 
   );
