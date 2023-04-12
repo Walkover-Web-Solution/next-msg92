@@ -12,10 +12,10 @@
     --heading:clamp(2.125rem,4vw,3rem); 
     --sub-heading:clamp(1.75rem,3vw,2.5rem); 
     --small-heading:clamp(1.25rem,2vw,1.5rem); 
-    --c-fs-1:clamp(1.25rem,2.6vw,1.875rem); 
+    --c-fs-1:clamp(1.25rem,2.6vw,2rem); 
     --c-fs-2:clamp(1rem,3vw,1.5rem);
-    --c-fs-3:clamp(1rem,1.5vw,1.12rem); //18px
-    --c-fs-4:clamp(1rem,1.5vw,1rem); 
+    --c-fs-3:clamp(1rem,1.5vw,1.25rem); //20px
+    --c-fs-4:clamp(1rem,1.2vw,1.2rem); //18px
     --c-fs-5:clamp(0.875rem,1vw,0.8rem); 
 
     // colors
@@ -24,7 +24,7 @@
     --light-blue: #F0F7FD;
     --black-color:#212528;
     --white-color:#ffffff;
-    --c-light-grey: #ccc;
+    --c-light-grey: #f2f2f3;
     --c-grey:#6C6C6C;
     --hello :#E18700;
     --otp:#3A73B5;

@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "@/components/footer";
 import { MdKeyboardArrowRight, MdDone } from "react-icons/md";
-
+import { InlineWidget } from "react-calendly";
 const msg91ForStartups = () => {
   return (
     <>
