@@ -1,8 +1,31 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import $ from "jquery";
+
+import ProductMenu from "./productmenu";
+
 const navbar = () => {
+  const [showOverlay, setShowOverlay] = useState(false);
+
+  const toggleOverlay = () => {
+    setShowOverlay(true);
+  };
+
+  useEffect(() => {
+    $("#product-link").on("mouseenter", function () {
+      $("#overlaymenucont, #productmenu, #bgoverlay").addClass("active");
+      $("body").addClass("oh");
+    });
+    $("#bgoverlay").on("mouseenter", function () {
+      $("#overlaymenucont, #productmenu, #bgoverlay").removeClass("active");
+      $("body").removeClass("oh");
+    });
+  }, []);
+
   return (
     <>
-      <nav className="w-100 py-2 sticy">
+      <ProductMenu />
+      <nav className="w-100 py-2 sticy " id="navbar">
         <div className="container d-flex justify-content-between c-fs-4 c-fw-m">
           <div className=" d-flex gap-5 w-nav-menu align-items-center justify-content-start ">
             <a className="text-dark" href="#" id="product-link">
@@ -25,7 +48,9 @@ const navbar = () => {
               <span className="c-fs-4 c-fw-m text-dark">API Doc</span>
             </a>
             <a className="" href="/" id="signup-btn">
-              <button className="btn btn-dark   c-fs-4 c-fw-sb  px-3">SIGN UP</button>
+              <button className="btn btn-dark   c-fs-4 c-fw-sb  px-3">
+                SIGN UP
+              </button>
             </a>
           </div>
         </div>

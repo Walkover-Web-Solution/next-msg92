@@ -4,6 +4,9 @@ body {
   color: var(--black-color);
   font-family: var(--c-body) !important;
 }
+.oh {
+  overflow: hidden !important;
+}
 .section {
   width: 100vw;
 }
@@ -13,9 +16,16 @@ body {
 
   }
 }
-nav {
-  height: 60px;
+#navbar{
+  position: sticky;
+  top: 0;
+  z-index: 12;
+ background: white;
 
+}
+nav {
+ 
+  height: 60px;
   .msg91-logo-cont {
     height: fit-content;
     a {
@@ -126,4 +136,55 @@ nav {
 .secc-clint-img{
   width: auto;
   height: 100%;
+}
+//productmenu
+#bgoverlay{
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;
+  background: rgba(82, 82, 82, 0.516);
+  &.active{
+    opacity: 1;
+  }
+}
+#overlaymenucont{
+  width: 60%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  position:fixed;
+  top: 0;
+  padding-left: 120px;
+  padding-top: 60px;
+  background-color: white;
+  left: -100%;
+  transform: 0.3;
+  &.active{
+    left: 0;
+  }
+}
+#productmenu{
+  overflow: scroll;
+  width: 100%;
+
+
+}
+.menu{
+  width: 360px;
+  a{
+    color: var(--c-grey);
+  }
+}
+.product-menu-btn{
+  width: 100%;
+  transition: 0.15s;
+  &:hover{
+    
+    color: var(--c-grey)!important;
+    background-color: var(--c-light-grey);
+  }
+
 }
