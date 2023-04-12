@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { MdKeyboardArrowRight } from "react-icons/md";
+
 const ProductMenu = () => {
   return (
     <>
@@ -232,6 +234,14 @@ const ProductMenu = () => {
                 alt="ico"
               />
               <h4 className="c-fs-2">Clevertap</h4>
+            </a>
+            <a
+              className="d-flex gap-3 align-items-center btn   c-fs-3 c-fw-sb"
+              href="/partners-and-integrations"
+            >
+              <span>Explore More Plugins</span>
+              <MdKeyboardArrowRight/>
+
             </a>
             
           </div>
