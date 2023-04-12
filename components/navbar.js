@@ -1,8 +1,10 @@
 import Image from "next/image";
+import ProductMenu from "./productmenu";
 const navbar = () => {
   return (
     <>
-      <nav className="w-100 py-2 sticy">
+    <ProductMenu/>
+      <nav className="w-100 py-2 sticy " id="navbar">
         <div className="container d-flex justify-content-between c-fs-4 c-fw-m">
           <div className=" d-flex gap-5 w-nav-menu align-items-center justify-content-start ">
             <a className="text-dark" href="#" id="product-link">
