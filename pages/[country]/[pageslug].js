@@ -29,7 +29,6 @@ const mainpage = ({ pageData }) => {
     return (
       <>
         <div>
-          <h1>Parent Component</h1>
           <ProductComponent pageData={Dataa} />
         </div>
       </>

@@ -5,7 +5,6 @@ import PreFooter from '../preFooter';
 import TrustedBy from '../trustedby';
 
 const ProductComponent = ({ pageData }) => {
-  console.log('pageData', pageData); //);
   var i = 0;
   return (
     <div>
