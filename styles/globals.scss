@@ -4,6 +4,9 @@ body {
   color: var(--black-color);
   font-family: var(--c-body) !important;
 }
+.oh {
+  overflow: hidden !important;
+}
 .section {
   width: 100vw;
 }
@@ -135,15 +138,19 @@ nav {
   height: 100%;
 }
 //productmenu
-#bg-overlay{
+#bgoverlay{
   position: fixed;
   top: 0;
+  opacity: 0;
   width: 100vw;
   height: 100vh;
   z-index: 9;
   background: rgba(82, 82, 82, 0.516);
+  &.active{
+    opacity: 1;
+  }
 }
-#overlay-menu-cont{
+#overlaymenucont{
   width: 60%;
   height: 100vh;
   overflow: hidden;
@@ -153,8 +160,13 @@ nav {
   padding-left: 120px;
   padding-top: 60px;
   background-color: white;
+  left: -100%;
+  transform: 0.3;
+  &.active{
+    left: 0;
+  }
 }
-#product-menu{
+#productmenu{
   overflow: scroll;
   width: 100%;
 

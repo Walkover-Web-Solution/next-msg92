@@ -2,9 +2,9 @@ import Image from "next/image";
 const ProductMenu = () => {
   return (
     <>
-    <div className="bg-overlay" id="bg-overlay"></div>
-      <div className="overlay-menu-cont " id="overlay-menu-cont">
-        <div className="overlay-menu d-flex flex-wrap gap-3 " id="product-menu">
+      <div className="bg-overlay" id="bgoverlay"></div>
+      <div className="overlay-menu-cont " id="overlaymenucont">
+        <div className="overlay-menu d-flex flex-wrap gap-3 " id="productmenu">
           <div className="menu mt-4 d-flex flex-column ">
             <p className="c-fs-3 c-fw-sb text-grey text-uppercase ">
               Applications
@@ -101,20 +101,13 @@ const ProductMenu = () => {
             </a>
           </div>
           <div className="menu mt-4 d-flex flex-column ">
-            <p className="c-fs-3 c-fw-sb text-grey text-uppercase ">
-              Channels
-            </p>
+            <p className="c-fs-3 c-fw-sb text-grey text-uppercase ">Channels</p>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
               href="/sms"
             >
-              <Image
-                src="/img/icon/sms.svg"
-                width={40}
-                height={40}
-                alt="ico"
-              />
-                <h4 className="c-fs-2">SMS</h4>
+              <Image src="/img/icon/sms.svg" width={40} height={40} alt="ico" />
+              <h4 className="c-fs-2">SMS</h4>
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
@@ -126,7 +119,7 @@ const ProductMenu = () => {
                 height={40}
                 alt="ico"
               />
-                <h4 className="c-fs-2">Email</h4>
+              <h4 className="c-fs-2">Email</h4>
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
@@ -138,7 +131,7 @@ const ProductMenu = () => {
                 height={40}
                 alt="ico"
               />
-                <h4 className="c-fs-2">Voice</h4>
+              <h4 className="c-fs-2">Voice</h4>
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
@@ -150,7 +143,7 @@ const ProductMenu = () => {
                 height={40}
                 alt="ico"
               />
-                <h4 className="c-fs-2">WhatsApp</h4>
+              <h4 className="c-fs-2">WhatsApp</h4>
             </a>
           </div>
         </div>
