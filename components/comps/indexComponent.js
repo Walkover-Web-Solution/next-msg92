@@ -121,7 +121,7 @@ const indexComp = () => {
           </div>
         </div>
       </div>
-      <div className="container my-5">
+      <div className="container my-5 mt-80">
         <h2 className="sub-heading c-head mb-2">Communication Channels</h2>
         <p className="c-fs-2 w-75">
           Empower conversations with best-in-class communication API.
@@ -227,7 +227,7 @@ const indexComp = () => {
           </a>
         </div>
       </div>
-      <div className="section c-bg-grey stats-sec align-items-center">
+      <div className="section c-bg-grey stats-sec align-items-center mt-80" >
         <div className="container h-100 d-flex align-items-center">
           <div className="col-3 d-flex flex-column gap-2">
             <h2 className="c-fs-1 c-fw-b">2.5 Billion+</h2>
@@ -259,7 +259,7 @@ const indexComp = () => {
           </div>
         </div>
       </div>
-      <div className="container my-5 more-services-sec">
+      <div className="container my-5 more-services-sec mt-80">
         <h2 className="sub-heading c-head">More Services</h2>
         <div className="d-flex my-5">
           <div className="col-4 p-4 d-flex flex-column gap-3 b-right-1 more-services">
@@ -374,7 +374,7 @@ const indexComp = () => {
           </div>
         </div>
       </div>
-      <div className="container my-5">
+      <div className="container my-5 mt-80">
         <h2 className="sub-heading c-head">Our Clint Stories</h2>
         <div className="d-flex col-12 gap-4 my-4">
           <div className="col-6 c-hover ">
@@ -431,7 +431,7 @@ const indexComp = () => {
               />
               <div className="c-fs-3 p-3">
                 <p className="pe-2">
-                Ixigo ensures seamless communication using SMS via MSG91.
+                  Ixigo ensures seamless communication using SMS via MSG91.
                 </p>
                 <a
                   className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
@@ -442,11 +442,10 @@ const indexComp = () => {
                 </a>
               </div>
             </div>
-           
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
