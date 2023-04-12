@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import $ from "jquery";
-
 import ProductMenu from "./productmenu";
+import Notification from "./notification";
 
 const navbar = () => {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -25,8 +25,9 @@ const navbar = () => {
   return (
     <>
       <ProductMenu />
-      <nav className="w-100 py-2 sticy " id="navbar">
-        <div className="container d-flex justify-content-between c-fs-4 c-fw-m">
+      <Notification />
+      <nav className="w-100 py-2 sticy align-items-center d-flex " id="navbar">
+        <div className="container d-flex align-items-center justify-content-between c-fs-4 c-fw-m">
           <div className=" d-flex gap-5 w-nav-menu align-items-center justify-content-start ">
             <a className="text-dark" href="#" id="product-link">
               <span className="c-fs-4 c-fw-m">Products</span>
