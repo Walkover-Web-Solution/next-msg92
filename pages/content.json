@@ -8,8 +8,39 @@
     },
     "hello":{
       "code":"no",
-      "pagename":"hello",
-      "head":"this is global hello"
+      "icon": "/img/icon/hello.svg",
+      "pagename":"hello",      
+      "tagline": "Revolutionize customer support",
+      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "pageimg":"/img/pageimg/hello.png",
+      "features": [
+      
+        {
+          "img": "/img/feature/hello-unlimited-agents.svg",
+          "heading": "Unlimited Agents",
+          "content": "Unlimited free agents to power up your customer support. More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is no number attached to your number of customer support agents."
+        },
+        {
+          "img": "/img/feature/hello-chat-bot.svg",
+          "heading": "Chatbot",
+          "content": "Resolve customer queries round-the-clock across text and voice. Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents."
+        },
+        {
+          "img": "/img/feature/hello-analytics.svg",
+          "heading": "Analytics",
+          "content": "Analytics and reports to monitor your agent performance. Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support."
+        },
+        {
+          "img": "/img/feature/hello-video-call.svg",
+          "heading": "Video Call / Screen Sharing",
+          "content": "High-quality video calls wherever your customer is. Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue."
+        },
+        {
+          "img": "/img/feature/hello-workflow.svg",
+          "heading": "Workflow",
+          "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
+        }
+      ]
     },
     "camp":{
       "code":"yes",

@@ -1,7 +1,7 @@
 import data from "../content.json";
 import IndexComp from "@/components/comps/indexComponent";
-import ProductPageComp from "@/components/comps/productPageComponent";
-import CodePageComponent from "@/components/comps/codePageComponent";
+import ProductComponent from "@/components/comps/productComp";
+import ChannelComponent from "@/components/comps/channelComp";
 
 const mainpage = ({ pageData }) => {
   console.log(pageData);
@@ -30,7 +30,7 @@ const mainpage = ({ pageData }) => {
       <>
         <div>
           <h1>Parent Component</h1>
-          <ProductPageComp pageData={Dataa} />
+          <ProductComponent pageData={Dataa} />
         </div>
       </>
     );
