@@ -177,8 +177,8 @@ const ChannelComponent = ({ pageData }) => {
 
       </div>
 
-      <div className={`c-bg-grey  px-sm-0 d-flex flex-column justify-content-center justift-content-sm-start section`}>
-        <span className="container sub-heading c-ff-h  pt-4 pt-md-0">Features</span>        
+      <div className={` my-5  px-sm-0 d-flex flex-column justify-content-center justift-content-sm-start section`}>
+        <span className="container c-head sub-heading c-ff-h  pt-4 pt-md-0">Features</span>        
         {pageData?.features?.map((item, index) => {
           if(item?.content){
             i++;       
