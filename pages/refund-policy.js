@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "@/components/footer";
 import Link from "next/link";
 import Refundpolicy from "@/components/termsofuse/refund-policy";
 const refundpolicy = () => {
@@ -96,7 +95,6 @@ const refundpolicy = () => {
        
         </div>
       </div>
-      <Footer />
     </>
   );
 };

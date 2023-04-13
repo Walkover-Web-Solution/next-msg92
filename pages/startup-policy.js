@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "@/components/footer";
 import Link from "next/link";
 import Startuppolicy from "@/components/termsofuse/startup-policy";
 const termsofuse = () => {
@@ -94,7 +93,6 @@ const termsofuse = () => {
           <Startuppolicy />
         </div>
       </div>
-      <Footer className=""/>
     </>
   );
 };

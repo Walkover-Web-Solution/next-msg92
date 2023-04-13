@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "@/components/footer";
 import Link from "next/link";
 import Privacypolicy from "@/components/termsofuse/privacy-policy";
 
@@ -95,7 +94,7 @@ const privacypolicy = () => {
             <Privacypolicy />
         </div>
       </div>
-      <Footer />
+
     </>
   );
 };

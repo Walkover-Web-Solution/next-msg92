@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "@/components/footer";
 import { GrAndroid, GrApple } from "react-icons/gr"
 import {
     MdOutlinePeopleAlt,
@@ -157,7 +156,6 @@ const developers = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </>
     );
 };

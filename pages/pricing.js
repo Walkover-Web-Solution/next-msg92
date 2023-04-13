@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Footer from "@/components/footer";
 import Pricingemail from "@/components/pricing/pricing-email";
 import Pricingsms from "@/components/pricing/pricing-sms";
 import Pricingvoice from "@/components/pricing/pricing-voice";
@@ -202,7 +201,6 @@ const campaign = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "@/components/footer";
 import Nospam from "@/components/termsofuse/no-spam";
 import Link from "next/link";
 const nospam= () => {
@@ -94,7 +93,6 @@ const nospam= () => {
         <Nospam />
         </div>
       </div>
-      <Footer />
     </>
   );
 };

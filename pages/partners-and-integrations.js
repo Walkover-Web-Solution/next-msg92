@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "@/components/footer";
 import { MdOutlineCheck, MdArrowForward } from "react-icons/md";
 const partnersAndIntegrations = () => {
   return (
@@ -137,8 +136,6 @@ const partnersAndIntegrations = () => {
           Explore more partners <MdArrowForward />
         </a> */}
       </div>
-
-      <Footer />
     </>
   );
 };

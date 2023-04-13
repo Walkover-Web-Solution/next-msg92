@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "@/components/footer";
 import Cookiepolicy from "@/components/termsofuse/cookie-policy";
 import Link from "next/link";
 const cookiepolicy = () => {
@@ -94,7 +93,6 @@ const cookiepolicy = () => {
         <Cookiepolicy />
         </div>
       </div>
-      <Footer />
     </>
 
   )

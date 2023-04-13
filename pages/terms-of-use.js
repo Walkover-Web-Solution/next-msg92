@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "@/components/footer";
 import Terms from "@/components/termsofuse/terms";
 import Link from "next/link";
 const termsofuse = () => {
@@ -94,7 +93,6 @@ const termsofuse = () => {
           <Terms />
         </div>
       </div>
-      <Footer />
     </>
   );
 };

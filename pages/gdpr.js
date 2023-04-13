@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "@/components/footer";
 import Gdpr from "@/components/termsofuse/gdpr";
 import Link from "next/link";
 const gdpr = () => {
@@ -94,7 +93,6 @@ const gdpr = () => {
         <Gdpr />
         </div>
       </div>
-      <Footer />
     </>
   );
 };

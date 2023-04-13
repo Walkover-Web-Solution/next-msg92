@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "@/components/footer";
 import { MdOutlineEmail, MdAddCall } from "react-icons/md";
 import { InlineWidget } from "react-calendly";
 const contactus = () => {
@@ -132,8 +131,6 @@ const contactus = () => {
                 </div>
 
             </div>
-
-            <Footer />
         </>
     );
 };
