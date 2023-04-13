@@ -4,8 +4,6 @@ import TrustedBy from "@/components/trustedby";
 import Footer from "@/components/footer";
 import Image from "next/image";
 const indexComp = () => {
-  const router = useRouter();
-  const currentPath = router.pathname;
   return (
     <>
       <div className="container d-flex flex-column c-gap-1 align-items-center text-center mt-80">

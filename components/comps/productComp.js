@@ -4,7 +4,8 @@ import Footer from '../footer';
 import PreFooter from '../preFooter';
 import TrustedBy from '../trustedby';
 
-const ProductComponent = ({ pageData }) => {
+const ProductComponent = ({pageData, params }) => {
+  // console.log(params);  
   var i = 0;
   return (
     <div>
@@ -22,7 +23,7 @@ const ProductComponent = ({ pageData }) => {
             <h2 className="small-heading p-3 w-md-75 w-100 mx-auto">
               {pageData.heading}
             </h2>
-            <a href="https://control.msg91.com/signup/" className="btn btn-primary btn-lg c-fs-2" >
+            <a href="https://control.msg91.com/signup/" className="btn btn-dark btn-lg c-fs-2" >
               Get started for Free
             </a>
           </div>
@@ -73,3 +74,4 @@ const ProductComponent = ({ pageData }) => {
 };
 
 export default ProductComponent;
+

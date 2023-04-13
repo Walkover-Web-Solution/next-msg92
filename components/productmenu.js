@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-const ProductMenu = () => {
+
+const ProductMenu = ({path}) => {
   return (
     <>
       <div className="bg-overlay" id="bgoverlay"></div>
@@ -13,7 +14,7 @@ const ProductMenu = () => {
             </p>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/hello"
+              href={`${path}/hello`}
             >
               <Image
                 src="/img/icon/hello.svg"
@@ -28,7 +29,7 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/campaign"
+              href={`${path}/campaign`}
             >
               <Image
                 src="/img/icon/campaign.svg"
@@ -43,7 +44,7 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/segmento"
+              href={`${path}/segmento`}
             >
               <Image
                 src="/img/icon/segmento.svg"
@@ -58,7 +59,7 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/otp"
+              href={`${path}/otp`}
             >
               <Image src="/img/icon/otp.svg" width={40} height={40} alt="ico" />
               <div className="">
@@ -73,7 +74,7 @@ const ProductMenu = () => {
             </p>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/shorturl"
+              href={`${path}/shorturl`}
             >
               <Image
                 src="/img/icon/shorturl.svg"
@@ -88,7 +89,7 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/knowledgebase"
+              href={`${path}/knowledgebase`}
             >
               <Image
                 src="/img/icon/knowledgebase.svg"
@@ -106,14 +107,14 @@ const ProductMenu = () => {
             <p className="c-fs-3 c-fw-sb text-grey text-uppercase ">Channels</p>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/sms"
+              href={`${path}/sms`}
             >
               <Image src="/img/icon/sms.svg" width={40} height={40} alt="ico" />
               <h4 className="c-fs-2">SMS</h4>
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/email"
+              href={`${path}/email`}
             >
               <Image
                 src="/img/icon/email.svg"
@@ -125,7 +126,7 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/voice"
+              href={`${path}/voice`}
             >
               <Image
                 src="/img/icon/voice.svg"
@@ -137,7 +138,7 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/whatsapp"
+              href={`${path}/whatsapp`}
             >
               <Image
                 src="/img/icon/whatsapp.svg"
@@ -153,7 +154,8 @@ const ProductMenu = () => {
         <div className="menu mt-4 d-flex flex-column ">
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/Shopify"
+              href="https://apps.shopify.com/msg91"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/shopify.svg"
@@ -166,6 +168,7 @@ const ProductMenu = () => {
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
               href="/zapier"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/zapier.svg"
@@ -178,6 +181,7 @@ const ProductMenu = () => {
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
               href="/hubspot"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/hubspot.svg"
@@ -189,7 +193,8 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/freshworks"
+              href="https://www.freshworks.com/apps/freshworks_crm/msg91/"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/freshworks.svg"
@@ -201,7 +206,8 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/google-sheets"
+              href="https://msg91.com/help/how-to-send-sms-and-email-from-google-spreadsheet"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/google-sheets.svg"
@@ -213,7 +219,8 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/zoho"
+              href="https://www.zoho.com/en-in/flow/apps/msg91/integrations/"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/zoho.svg"
@@ -225,7 +232,8 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/clevertap"
+              href="https://docs.clevertap.com/docs/msg91"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/clevertap.svg"

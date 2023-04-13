@@ -23,8 +23,6 @@ const ChannelComponent = ({ pageData }) => {
   const php = snippet.convert("php");
   const python = snippet.convert("python");
   const ruby = snippet.convert("ruby");
-
-  console.log('pageData', pageData); //);
   return (
     <div>
       <div className="container text-center overflow-hidden">
@@ -40,7 +38,7 @@ const ChannelComponent = ({ pageData }) => {
           <h2 className="small-heading p-3 w-md-75 w-100 mx-auto">
             {pageData.heading}
           </h2>
-          <a href="https://control.msg91.com/signup/" className="btn btn-primary btn-lg c-fs-2" >
+          <a href="https://control.msg91.com/signup/" className="btn btn-dark btn-lg c-fs-2" >
             Get started for Free
           </a>
         </div>
