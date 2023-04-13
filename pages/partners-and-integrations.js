@@ -17,7 +17,7 @@ const partnersAndIntegrations = () => {
                   target="_blank"
                   href="https://control.msg91.com/signup/"
                 >
-          <button className="btn btn-primary btn-lg mt-3 c-fs-2" type="button">
+          <button className="btn btn-dark mt-3 c-fs-2" type="button">
             Get your API key
           </button>
           </a>
@@ -92,7 +92,7 @@ const partnersAndIntegrations = () => {
                 Up for creating one? Great!
                 <p className="c-fs-4 mt-2">We would be glad to add you too.</p>
                 <a href="/become-a-partner">
-                <button className="c-fs-3 btn btn-primary btn-sm mt-3">
+                <button className="c-fs-3 btn btn-dark btn-sm mt-3">
                  Become a partner
                 </button>
                 </a>

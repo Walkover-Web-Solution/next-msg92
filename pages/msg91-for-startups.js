@@ -12,7 +12,7 @@ const msg91ForStartups = () => {
             Get a complimentary communication API package for every product
             Startup.
           </p>
-          <a href="https://control.msg91.com/signup/" className="btn btn-primary c-fs-4 mt-2">Apply Now</a>
+          <a href="https://control.msg91.com/signup/" className="btn btn-dark c-fs-4 mt-2">Apply Now</a>
         </div>
         <div className="col-12 col-md-6">
 

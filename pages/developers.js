@@ -25,7 +25,7 @@ const developers = () => {
                         href="https://docs.msg91.com/reference/send-sms"
                     >
                         <button
-                            className="btn btn-primary btn-lg mt-3 c-fs-4"
+                            className="btn btn-dark btn-md mt-3 c-fs-4"
                             type="button"
                         >
                             Explore Documentation

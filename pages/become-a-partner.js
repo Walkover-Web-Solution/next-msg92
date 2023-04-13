@@ -10,7 +10,7 @@ const becomeApartner = () => {
         <p className="c-fs-2 mt-2 text-center w-100 w-md-50">
           Leverage your communication tactics with the MSG91 CPaaS solution
         </p>
-        <a href="#partnership-meet" className="btn btn-primary c-fs-3 mt-3 mb-5">Apply Now</a>
+        <a href="#partnership-meet" className="btn btn-dark c-fs-3 mt-3 mb-5">Apply Now</a>
         {/* <Trustedsec className="" /> */}
       </div>
       <section className="section pb-5">
