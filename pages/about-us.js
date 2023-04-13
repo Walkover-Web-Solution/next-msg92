@@ -205,7 +205,7 @@ const aboutUsComp = () => {
                     <div class="h-100 p-3 bg-white border-0 rounded-3">
                         <p className="c-fs-4 text-muted">MSG91 has been an extremely reliable communication service for us. Their OTP infra has been instrumental in reducing customer drop-outs. Great support too!</p>
                         <div className="d-flex">
-                            <img src="../img/about_Us/ixigo.svg" className="product-page-logo w-100" />
+                            <img src="../img/about_Us/ixigo.svg" className="ixigoss product-page-logo w-100" />
                         </div>
                     </div>
 
@@ -214,7 +214,7 @@ const aboutUsComp = () => {
                     <div class="p-3 bg-white border-0 rounded-3">
                         <p className="c-fs-4 text-muted">You guys have been instrumental in getting our customer connect via SMS trustworthy. Appreciate your technical support services as well. Quite responsive!</p>
                         <div className="d-flex">
-                            <img src="../img/about_Us/policy_Bazaar.svg" className="product-page-logo w-100" />
+                            <img src="../img/about_Us/policy_Bazaar.svg" className="policybazaarss product-page-logo w-100" />
                         </div>
                     </div>
                 </div>
@@ -222,7 +222,7 @@ const aboutUsComp = () => {
                     <div class="p-3 bg-white border-0 rounded-3">
                         <p className="c-fs-4 text-muted">MSG91 has helped us in delivering great customer experience through consistent communication!</p>
                         <div className="d-flex mt-4">
-                            <img src="../img/about_Us/indialends.svg" className="product-page-logo w-100 mt-2" />
+                            <img src="../img/about_Us/indialends.svg" className="indialendsss product-page-logo w-100 mt-1" />
                         </div>
                     </div>
                 </div>
