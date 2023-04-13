@@ -2,7 +2,7 @@ import Image from "next/image";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 
-const ProductMenu = () => {
+const ProductMenu = ({path}) => {
   return (
     <>
       <div className="bg-overlay" id="bgoverlay"></div>
@@ -14,7 +14,7 @@ const ProductMenu = () => {
             </p>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href='/hello'
+              href={`${path}/hello`}
             >
               <Image
                 src="/img/icon/hello.svg"
@@ -29,7 +29,7 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/campaign"
+              href={`${path}/campaign`}
             >
               <Image
                 src="/img/icon/campaign.svg"
@@ -44,7 +44,7 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/segmento"
+              href={`${path}/segmento`}
             >
               <Image
                 src="/img/icon/segmento.svg"
@@ -59,7 +59,7 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/otp"
+              href={`${path}/otp`}
             >
               <Image src="/img/icon/otp.svg" width={40} height={40} alt="ico" />
               <div className="">
@@ -74,7 +74,7 @@ const ProductMenu = () => {
             </p>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/shorturl"
+              href={`${path}/shorturl`}
             >
               <Image
                 src="/img/icon/shorturl.svg"
@@ -89,7 +89,7 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/knowledgebase"
+              href={`${path}/knowledgebase`}
             >
               <Image
                 src="/img/icon/knowledgebase.svg"
@@ -107,14 +107,14 @@ const ProductMenu = () => {
             <p className="c-fs-3 c-fw-sb text-grey text-uppercase ">Channels</p>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/sms"
+              href={`${path}/sms`}
             >
               <Image src="/img/icon/sms.svg" width={40} height={40} alt="ico" />
               <h4 className="c-fs-2">SMS</h4>
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/email"
+              href={`${path}/email`}
             >
               <Image
                 src="/img/icon/email.svg"
@@ -126,7 +126,7 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/voice"
+              href={`${path}/voice`}
             >
               <Image
                 src="/img/icon/voice.svg"
@@ -138,7 +138,7 @@ const ProductMenu = () => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/whatsapp"
+              href={`${path}/whatsapp`}
             >
               <Image
                 src="/img/icon/whatsapp.svg"
