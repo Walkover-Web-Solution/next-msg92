@@ -154,7 +154,8 @@ const ProductMenu = ({path}) => {
         <div className="menu mt-4 d-flex flex-column ">
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/Shopify"
+              href="https://apps.shopify.com/msg91"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/shopify.svg"
@@ -167,6 +168,7 @@ const ProductMenu = ({path}) => {
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
               href="/zapier"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/zapier.svg"
@@ -179,6 +181,7 @@ const ProductMenu = ({path}) => {
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
               href="/hubspot"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/hubspot.svg"
@@ -190,7 +193,8 @@ const ProductMenu = ({path}) => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/freshworks"
+              href="https://www.freshworks.com/apps/freshworks_crm/msg91/"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/freshworks.svg"
@@ -202,7 +206,8 @@ const ProductMenu = ({path}) => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/google-sheets"
+              href="https://msg91.com/help/how-to-send-sms-and-email-from-google-spreadsheet"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/google-sheets.svg"
@@ -214,7 +219,8 @@ const ProductMenu = ({path}) => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/zoho"
+              href="https://www.zoho.com/en-in/flow/apps/msg91/integrations/"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/zoho.svg"
@@ -226,7 +232,8 @@ const ProductMenu = ({path}) => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/clevertap"
+              href="https://docs.clevertap.com/docs/msg91"
+              target="_blank"
             >
               <Image
                 src="/img/integrations/clevertap.svg"
