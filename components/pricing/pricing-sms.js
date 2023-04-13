@@ -13,12 +13,18 @@ const pricingvoice = ({
   destinationCountry,
   setDestinationCountry
 }) => {
-  useEffect(() => {
-  }, [pricing]);
+  // useEffect(() => {
+  //   if(originCountry != null)
+  //   {
+  //     setOriginCountry(originCountry)
+  //     setDestinationCountry(destinationCountry)
+  //   }
+  // }, [pricing, originCountry, destinationCountry]);
   return (
     <>
-      <div className="g-3 d-flex justify-content-center col-lg-5 m-auto pb-5">
-        <Typeahead
+     <div>
+     { originCountry.length >= 1 && <div className="g-3 d-flex justify-content-center col-lg-5 m-auto pb-5">
+       <Typeahead
           id="originCountry"
           labelKey="country"
           onChange={(selected) => {            
@@ -27,6 +33,7 @@ const pricingvoice = ({
               fetchSMSData([], selected[0]?.country, destinationCountry);
           }}
           options={countries}
+          // value={originCountry}
           defaultInputValue={originCountry}
         />
 
@@ -44,7 +51,7 @@ const pricingvoice = ({
           defaultInputValue={destinationCountry}
         />
 
-      </div>
+      </div>}
       <div className="d-flex flex-wrap flex-gap justify-content-center w-100  card-container align-items-end">
         {pricing?.map((item, index) => {
           return (
@@ -94,6 +101,7 @@ const pricingvoice = ({
             </button>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

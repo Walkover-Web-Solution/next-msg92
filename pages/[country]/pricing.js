@@ -16,11 +16,10 @@ import countries from "@/data/countries.json";
 
 const campaign = () => {
   const router = useRouter()
-  var countryCode = router.query.country;  
-  var country = countryCode ? countries?.find(el => el.code === countryCode.toUpperCase()) : '';  
+  var countryCode = router.query.country;    
   var [pricing, setPricing] = useState([]);
-  var [originCountry, setOriginCountry] = useState(country.country)
-  var [destinationCountry, setDestinationCountry] = useState(country.country);
+  const [originCountry, setOriginCountry] = useState('')
+  const [destinationCountry, setDestinationCountry] = useState('');
   
   const amountArr = ['1259', '4000', '9000', '17000', '48000', '75000'];
   
@@ -62,11 +61,19 @@ const campaign = () => {
     setSubscriptionSegmento([...response.data.data])
     // console.log(response.data.data);
   };
-
   
+  const findCountry = async (code) => {
+    const response = await  countries?.find(el => el.code === "US");
+    setOriginCountry(response.country); 
+    setDestinationCountry(response.country);
+    fetchSMSData([], originCountry, destinationCountry)
+    console.log('868678', originCountry, destinationCountry);    
+  };
+
+   
   useEffect(() => {
-      console.log('country test', country, originCountry, destinationCountry);  
-      fetchSMSData([], originCountry, destinationCountry)
+    findCountry(countryCode);
+    
   }, []);
 
   return (
