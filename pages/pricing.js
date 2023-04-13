@@ -12,18 +12,6 @@ import Pricingrcs from "@/components/pricing/pricing-rcs";
 import axios from "axios";
 import { InlineWidget } from "react-calendly";
 
-/*
-  API to get subscription plans
-  URL: https://subscription.msg91.com/api/plans?currency=USD&ms_id=1
-  currency = USD, INR, GBP
-  ms_id = microservice id
-  [
-    { "id": 1, "name": "Email" },
-    { "id": 2, "name": "Segmento" },
-    { "id": 5, "name": "Whatsapp" },
-    { "id": 6, "name": "Voice" }
-  ]
-*/
 const campaign = () => {
 
   var [pricing, setPricing] = useState([]);
@@ -41,8 +29,8 @@ const campaign = () => {
     var newData = price
     amountArr.forEach(async function (item, index) {
       if (price.length <= amountArr.length) {  
-        const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${item}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
-        //const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${item}&currency=INR&originCountry=${origin}&destinationCountry=${destination}}`)
+        //const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${item}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
+        const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${item}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
         newData.push(response.data.data)
           setPricing([...newData])
       } 

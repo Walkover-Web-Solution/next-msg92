@@ -11,6 +11,7 @@ import Pricingcampaign from "@/components/pricing/pricing-campaign";
 import Pricingrcs from "@/components/pricing/pricing-rcs";
 import axios from "axios";
 import { InlineWidget } from "react-calendly";
+import { useRouter } from 'next/router'
 
 /*
   API to get subscription plans
@@ -25,6 +26,9 @@ import { InlineWidget } from "react-calendly";
   ]
 */
 const campaign = () => {
+
+  const router = useRouter()
+  console.log('router', router.query)
 
   var [pricing, setPricing] = useState([]);
   var [originCountry, setOriginCountry] = useState('INDIA');
@@ -41,8 +45,8 @@ const campaign = () => {
     var newData = price
     amountArr.forEach(async function (item, index) {
       if (price.length <= amountArr.length) {  
-        const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?price=${item}&currency=inr&originCountry=${origin}&destinationCountry=${destination}`)
-        //const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${item}&currency=INR&originCountry=${origin}&destinationCountry=${destination}}`)
+        //const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${item}&currency=inr&originCountry=${origin}&destinationCountry=${destination}`)
+        const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${item}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
         newData.push(response.data.data)
           setPricing([...newData])
       } 
