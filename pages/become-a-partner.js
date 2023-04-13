@@ -152,7 +152,7 @@ const becomeApartner = () => {
             </div>
           </div>
         </div>
-        <a className="mx-auto text-primary c-fs-4 c-fw-m py-5" href="/partnersAndIntegrations">
+        <a className="mx-auto text-primary c-fs-4 c-fw-m py-5" href="/partners-and-integrations">
           Explore more partners <MdArrowForward />
         </a>
       </div>

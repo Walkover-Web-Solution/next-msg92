@@ -23,7 +23,7 @@ const partnersAndIntegrations = () => {
           </a>
         </div>
       </div>
-      <section className="w-100 py-5 c-bg-grey">
+      <section className="w-100 py-5">
         <div className="text-center px-2 px-lg-0">
           <h2 className="sub-heading">
             MSG91 Add-ons for your preferred Platform
@@ -91,9 +91,11 @@ const partnersAndIntegrations = () => {
               <h3 className="small-heading">
                 Up for creating one? Great!
                 <p className="c-fs-4 mt-2">We would be glad to add you too.</p>
+                <a href="/become-a-partner">
                 <button className="c-fs-3 btn btn-primary btn-sm mt-3">
-                  Become a partner
+                 Become a partner
                 </button>
+                </a>
               </h3>
             </div>
           </div>
@@ -128,12 +130,12 @@ const partnersAndIntegrations = () => {
             </div>
           </div>
         </div>
-        <a
+        {/* <a
           className="mx-auto text-primary c-fs-4 c-fw-m mt-5"
           href="/partners-and-integrations"
         >
           Explore more partners <MdArrowForward />
-        </a>
+        </a> */}
       </div>
 
       <Footer />

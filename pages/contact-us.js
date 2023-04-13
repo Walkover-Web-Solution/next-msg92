@@ -5,9 +5,9 @@ import { InlineWidget } from "react-calendly";
 const contactus = () => {
     return (
         <>
-            <div className="container text-center px-4 col-xs-12 col-sm-10 col-md-10 mx-auto section">
+            <div className="container text-center px-4 col-xs-12 col-sm-10 col-md-10 mx-auto section py-3">
                 <ul
-                    className="d-flex justify-content-center nav nav-pills mb-3"
+                    className="d-flex justify-content-center nav nav-pills"
                     id="pills-tab"
                     role="tablist"
                 >
@@ -41,7 +41,7 @@ const contactus = () => {
                     </li>
                 </ul>
             </div>
-            <div className="d-none w-100 h-auto c-bg-grey py-4 flex-column  gap-4 gap-lg-0 flex-lg-row">
+            <div className="d-none w-100 h-auto py-4 flex-column  gap-4 gap-lg-0 flex-lg-row">
                 <div className="col-12 col-lg-4 d-flex flex-column flex-lg-column flex-sm-row align-items-center justify-content-center ">
                     <div className="w-100 d-flex flex-column align-items-center">
                         <span className="c-fs-1   rounded-circle social-circle justify-content-center align-items-center d-flex">
@@ -61,7 +61,7 @@ const contactus = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-100 h-auto c-bg-grey">
+            <div className="w-100 h-auto">
 
                 <div className="tab-content " id="pills-tabContent">
                     <div
@@ -70,7 +70,7 @@ const contactus = () => {
                         role="tabpanel"
                         aria-labelledby="pills-home-tab"
                     >
-                        <div className=" d-flex w-100 h-auto c-bg-grey py-4 flex-column  gap-4 gap-lg-0 flex-lg-row">
+                        <div className=" d-flex w-100 h-auto flex-column  gap-4 gap-lg-0 flex-lg-row pb-5">
                             <div className="col-12 col-lg-4 d-flex flex-column flex-lg-column flex-sm-row align-items-center justify-content-center ">
                                 <div className="w-100 d-flex flex-column align-items-center ">
                                     <h1 className="sub-heading pb-2">Contact Us</h1>
@@ -104,7 +104,7 @@ const contactus = () => {
                         role="tabpanel"
                         aria-labelledby="pills-profile-tab"
                     >
-                        <div className=" d-flex w-100 h-auto c-bg-grey py-4 flex-column  gap-4 gap-lg-0 flex-lg-row">
+                        <div className=" d-flex w-100 h-auto py-4 flex-column  gap-4 gap-lg-0 flex-lg-row">
                             <div className="col-12 col-lg-4 d-flex flex-column flex-lg-column flex-sm-row align-items-center justify-content-center ">
                                 <div className="w-100 d-flex flex-column align-items-center">
                                     <span className="c-fs-1   rounded-circle social-circle justify-content-center align-items-center d-flex">
@@ -123,7 +123,7 @@ const contactus = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="col-12 col-lg-8">
+                            <div className="col-12 col-lg-8 pb-5">
                                 <InlineWidget url="https://calendly.com/support--msg91" />
                             </div>
                         </div>

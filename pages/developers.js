@@ -33,7 +33,7 @@ const developers = () => {
                     </a>
                 </div>
             </div>
-            <section className="col-12 c-bg-grey py-5">
+            <section className="col-12 py-5">
                 <div className="container">
                     <h2 className="small-heading">
                         One API to revolutionalise the way developers integrate
@@ -59,7 +59,7 @@ const developers = () => {
                                 <span className="c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex py-2">
                                     <MdThumbUpOffAlt className="p-auto text-primary" />
                                 </span>
-                                <p className="w-100 c-fs-2 px-2 py-5 mt-n3 rounded text-center c-bg-grey">
+                                <p className="w-100 c-fs-2 px-2 py-5 mt-n3 rounded text-center">
                                     Engineered for reliability
                                 </p>
                             </div>
@@ -69,7 +69,7 @@ const developers = () => {
                                 <span className="c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex py-2">
                                     <MdOutlineChatBubbleOutline className="p-auto text-primary" />
                                 </span>
-                                <p className="w-100 c-fs-2 px-2 py-5 mt-n3 rounded text-center c-bg-grey">
+                                <p className="w-100 c-fs-2 px-2 py-5 mt-n3 rounded text-center">
                                     Communication addons
                                 </p>
                             </div>
@@ -79,7 +79,7 @@ const developers = () => {
                                 <span className="c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex py-2">
                                     <MdOutlinePeopleAlt className="p-auto text-primary" />
                                 </span>
-                                <p className="w-100 c-fs-2 px-2 py-5 mt-n3 rounded text-center c-bg-grey">
+                                <p className="w-100 c-fs-2 px-2 py-5 mt-n3 rounded text-center">
                                     Problem solvers at service
                                 </p>
                             </div>
@@ -87,7 +87,7 @@ const developers = () => {
                     </div>
                 </div>
             </div>
-            <section className="col-12 c-bg-grey py-5">
+            <section className="col-12 py-5">
                 <div className="col-11 col-md-10 col-lg-9 mx-auto">
                     <h2 className="small-heading">
                         Why MSG91 API is developer friendly for real?
