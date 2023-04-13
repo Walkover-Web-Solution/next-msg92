@@ -1,6 +1,5 @@
 import { InlineWidget } from "react-calendly";
 import React from "react";
-import Footer from "@/components/footer";
 import { MdDoneOutline, MdArrowForward } from "react-icons/md";
 const becomeApartner = () => {
   return (
@@ -156,7 +155,6 @@ const becomeApartner = () => {
           Explore more partners <MdArrowForward />
         </a>
       </div>
-      <Footer />
     </>
   );
 };

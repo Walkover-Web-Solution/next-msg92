@@ -1,6 +1,5 @@
 // Child Component
 import { React, useEffect } from 'react';
-import Footer from '../footer';
 import PreFooter from '../preFooter';
 import TrustedBy from '../trustedby';
 
@@ -208,7 +207,6 @@ const ChannelComponent = ({ pageData }) => {
 
       <PreFooter />
       
-      <Footer />
 
     </div>
   );

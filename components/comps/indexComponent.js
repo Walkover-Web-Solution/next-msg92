@@ -1,7 +1,5 @@
-import { useRouter } from "next/router";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import TrustedBy from "@/components/trustedby";
-import Footer from "@/components/footer";
 import Image from "next/image";
 const indexComp = () => {
   return (
@@ -443,7 +441,6 @@ const indexComp = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
