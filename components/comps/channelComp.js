@@ -6,7 +6,7 @@ import TrustedBy from '../trustedby';
 
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
-import snippetData from "../../pages/snippet.json"; 
+import snippetData from "@/pages/snippet.json"; 
 
 const ChannelComponent = ({ pageData }) => {  
   var HTTPSnippet = require("httpsnippet");

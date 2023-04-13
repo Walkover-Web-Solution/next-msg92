@@ -1,6 +1,6 @@
 import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
-import countries from "../../data/countries.json";
+import countries from "@/data/countries.json";
 import { Typeahead } from 'react-bootstrap-typeahead';
 
 const pricingotp = ({
