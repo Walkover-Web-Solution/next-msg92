@@ -11,8 +11,7 @@ import Pricingrcs from "@/components/pricing/pricing-rcs";
 import axios from "axios";
 import { InlineWidget } from "react-calendly";
 
-const campaign = () => {
-
+const campaign = () => {    
   var [pricing, setPricing] = useState([]);
   var [originCountry, setOriginCountry] = useState('INDIA');
   var [destinationCountry, setDestinationCountry] = useState('INDIA');
