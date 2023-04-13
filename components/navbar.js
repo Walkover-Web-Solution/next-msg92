@@ -40,7 +40,7 @@ const navbar = ({brawserPath}) => {
     <>
       <Notification />
       <nav className="w-100 py-2 sticy align-items-center d-flex " id="navbar">
-        <div className="container relative d-flex align-items-center justify-content-between c-fs-4 c-fw-m">
+        <div className="container relative d-flex align-items-center justify-content-between c-fs-4 c-fw-m nav-menu-cont">
           <div className=" d-flex gap-5 w-nav-menu align-items-center justify-content-start nav-menu">
             <a className="text-dark" href="#" id="product-link">
               <span className="c-fs-4 c-fw-m">Products</span>
