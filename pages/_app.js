@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  const brawserPath = router.asPath
+  const brawserPath = router.asPath;
 
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
