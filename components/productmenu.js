@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
+
 const ProductMenu = () => {
   return (
     <>
@@ -13,7 +14,7 @@ const ProductMenu = () => {
             </p>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href="/hello"
+              href='/hello'
             >
               <Image
                 src="/img/icon/hello.svg"

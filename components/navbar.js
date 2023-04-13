@@ -1,12 +1,15 @@
 import Image from "next/image";
+import { useRouter } from 'next/router'
 import { useEffect, useState } from "react";
 import $ from "jquery";
 import ProductMenu from "./productmenu";
 import Notification from "./notification";
 
-const navbar = () => {
+const navbar = ({brawserPath}) => {
+  // console.log(brawserPath)
+  var path = brawserPath.split("/")[1];
+  path = (path.length == 2) ? '/'+path : '';
   const [showOverlay, setShowOverlay] = useState(false);
-
   const toggleOverlay = () => {
     setShowOverlay(true);
   };
@@ -31,6 +34,7 @@ const navbar = () => {
       $("body").removeClass("oh");
     });
   }, []);
+  
 
   return (
     <>
@@ -44,12 +48,12 @@ const navbar = () => {
             <a className="text-dark" href="#" id="integrations-link">
               <span className="c-fs-4 c-fw-m">Integrations</span>
             </a>
-            <a className="text-dark" href="/pricing" id="pricing-link">
+            <a className="text-dark" href={`${path}/pricing`} id="pricing-link">
               <span className="c-fs-4 c-fw-m">Pricing</span>
             </a>
           </div>
           <div className="msg91-logo-cont  align-items-center justify-content-center d-flex">
-            <a href="/">
+            <a href={`${path}/`}>
               <img className="msg91-logo" src="/img/logo.svg" alt="MSG91" />
             </a>
           </div>
@@ -65,7 +69,7 @@ const navbar = () => {
           </div>
         </div>
       </nav>
-<ProductMenu />
+<ProductMenu path={path} />
     </>
   );
 };

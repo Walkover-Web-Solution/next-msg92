@@ -3,11 +3,12 @@ import IndexComp from "@/components/comps/indexComponent";
 import ProductComponent from "@/components/comps/productComp";
 import ChannelComponent from "@/components/comps/channelComp";
 
-const mainpage = ({ pageData }) => {
+const mainpage = ({ pageData,params }) => {
   // console.log(pageData);
   var page = pageData?.pagename;
   var code = pageData?.code;
   var Dataa = pageData
+  // console.log(params)
   // console.log(Dataa);
   if (!pageData) {
     // console.log("No page data");
@@ -29,7 +30,7 @@ const mainpage = ({ pageData }) => {
     return (
       <>
         <div>
-          <ProductComponent pageData={Dataa} />
+          <ProductComponent pageData={Dataa} params={params} />
         </div>
       </>
     );
@@ -74,7 +75,7 @@ export async function getStaticProps({ params }) {
   const pageData = countryData[pageslug] || null; // Update variable name to 'pageslug'
   return {
     props: {
-      pageData,
+      pageData,params,
     },
   };
 }

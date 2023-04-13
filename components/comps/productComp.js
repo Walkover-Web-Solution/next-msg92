@@ -4,7 +4,8 @@ import Footer from '../footer';
 import PreFooter from '../preFooter';
 import TrustedBy from '../trustedby';
 
-const ProductComponent = ({ pageData }) => {
+const ProductComponent = ({pageData, params }) => {
+  // console.log(params);  
   var i = 0;
   return (
     <div>
@@ -73,3 +74,4 @@ const ProductComponent = ({ pageData }) => {
 };
 
 export default ProductComponent;
+
