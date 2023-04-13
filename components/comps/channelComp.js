@@ -23,8 +23,6 @@ const ChannelComponent = ({ pageData }) => {
   const php = snippet.convert("php");
   const python = snippet.convert("python");
   const ruby = snippet.convert("ruby");
-
-  console.log('pageData', pageData); //);
   return (
     <div>
       <div className="container text-center overflow-hidden">
