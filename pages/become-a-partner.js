@@ -5,19 +5,19 @@ import { MdDoneOutline, MdArrowForward } from "react-icons/md";
 const becomeApartner = () => {
   return (
     <>
-      <div className="container text-center d-flex flex-column align-items-center justify-content-center pt-5 my-5">
+      <div className="container text-center d-flex flex-column align-items-center justify-content-center pt-5 my-3">
         <h1 className="heading ">MSG91 Partner Program</h1>
-        <p className="c-fs-1 mt-3 text-center w-100 w-md-50">
+        <p className="c-fs-2 mt-2 text-center w-100 w-md-50">
           Leverage your communication tactics with the MSG91 CPaaS solution
         </p>
         <a href="#partnership-meet" className="btn btn-primary c-fs-3 mt-3 mb-5">Apply Now</a>
         {/* <Trustedsec className="" /> */}
       </div>
-      <section className="section c-bg-grey">
+      <section className="section pb-5">
         <div className="container">
           <h2 className="sub-heading ps-3 ps-lg-0 pe-md-0">Partnership Solutions</h2>
-          <div className=" d-flex flex-column flex-md-row justify-content-between align-items-center my-2 my-md-4 py-2">
-            <div className=" c-w-pp p-3 p-md-0">
+          <div className=" d-flex flex-column flex-md-row justify-content-between align-items-center py-5">
+            <div className=" c-w-pp p-1 p-md-0">
               <h3 className=" c-fs-1 c-fw-m">
                 Integration / Add-on Partnership
               </h3>
@@ -30,12 +30,12 @@ const becomeApartner = () => {
               </p>
             </div>
             <img
-              className="c-w-pp p-4 ms-0 ms-sm-4"
-              src="/img/integration-partnership-img.png" width="678" height="378"
+              className="c-w-pp ms-0 ms-sm-4"
+              src="/img/integration-partnership-img.png" width="678" height="250"
             ></img>
           </div>
-          <div className=" d-flex flex-column  flex-md-row-reverse justify-content-between align-items-center my-2 my-md-4 py-4">
-            <div className=" c-w-pp p-3 p-md-0">
+          <div className=" d-flex flex-column flex-md-row-reverse justify-content-between align-items-center pb-5">
+            <div className=" c-w-pp p-1 p-md-0">
               <h3 className=" c-fs-1 c-fw-m">Affiliated Partnership</h3>
               <p className="c-fs-3">
                 Turn your referrals into recurring revenue with MSG91 for
@@ -45,12 +45,12 @@ const becomeApartner = () => {
               </p>
             </div>
             <img
-              className="c-w-pp p-4 me-0 me-sm-4"
-              src="/img/affiliated-partnership-img.png" width="678" height="378"
+              className="c-w-pp me-0 me-sm-4"
+              src="/img/affiliated-partnership-img.png" width="678" height="250"
             ></img>
           </div>
-          <div className=" d-flex flex-column flex-md-row justify-content-between align-items-center my-2 my-md-4 py-4">
-            <div className=" c-w-pp p-3 p-md-0">
+          <div className=" d-flex flex-column flex-md-row justify-content-between align-items-center pb-5">
+            <div className=" c-w-pp p-md-0">
               <h3 className=" c-fs-1 c-fw-m">Consultation Partnership</h3>
               <p className="c-fs-3">
                 We provide you with human resources list of expert team of
@@ -61,12 +61,12 @@ const becomeApartner = () => {
               </p>
             </div>
             <img
-              className="c-w-pp p-4 ms-0 ms-sm-4"
-              src="/img/consulation-partnership-img.png" width="678" height="378"
+              className="c-w-pp ms-0 ms-sm-4"
+              src="/img/consulation-partnership-img.png" width="678" height="250"
             ></img>
           </div>
-          <div className=" d-flex flex-column  flex-md-row-reverse justify-content-between align-items-center my-2 my-md-4 py-4">
-            <div className=" c-w-pp p-3 p-md-0 ">
+          <div className=" d-flex flex-column  flex-md-row-reverse justify-content-between align-items-center">
+            <div className=" c-w-pp p-md-0 ">
               <h3 className=" c-fs-1 c-fw-m">MSG91 For Startups</h3>
               <p className="c-fs-3">
                 If you are an Incubator, Accelerator, Venture Capital Fund,
@@ -76,16 +76,16 @@ const becomeApartner = () => {
               </p>
             </div>
             <img
-              className="c-w-pp p-4 me-0 me-sm-4 "
-              src="/img/msg91-for-startups-img.png" width="678" height="378"
+              className="c-w-pp me-0 me-sm-4 "
+              src="/img/msg91-for-startups-img.png" width="678" height="250"
             ></img>
           </div>
         </div>
       </section>
-      <div className="container d-flex p-5" id="partnership-meet">
+      <div className="container d-flex px-5 pb-5" id="partnership-meet">
         <InlineWidget url="https://calendly.com/partnership-msg91/discussion" styles={{width: '100%', height: '700px'}} />
       </div>
-      <section className="section c-bg-grey">
+      <section className="section">
         <div className="container d-flex flex-wrap">
           <div className="c-w-pp p-3 ">
             <MdDoneOutline className="c-fs-1 text-primary" />
@@ -125,7 +125,7 @@ const becomeApartner = () => {
           </div>
         </div>
       </section>
-      <div className="container d-flex flex-column py-5 ">
+      <div className="container d-flex flex-column py-3 ">
         <h2 className="sub-heading py-4 ps-3 pe-md-0">Hear from our Partners</h2>
         <div className="w-100 d-flex flex-wrap  h-100 p-3 pe-3 pe-md-4 our-partner">
           <div className=" c-w-pp  pe-0 pe-md-5 our-partner h-100">
@@ -140,7 +140,7 @@ const becomeApartner = () => {
               <p className="c-fs-3 c-fw-m">Prateek Agrawal</p>
             </div>
           </div>
-          <div className="c-w-pp mt-4 mt-md-0 h-100 ps-0 ps-md-4 our-partner ">
+          <div className="c-w-pp mt-4 mt-md-0 h-100 pe-0 pe-md-5 our-partner py-3 ">
             <img className="mt-3 " src="/img/rixyncs-img.png" />
             <div className=" d-flex flex-column justify-content-between">
               <p className="c-fs-3 my-3">
@@ -152,7 +152,7 @@ const becomeApartner = () => {
             </div>
           </div>
         </div>
-        <a className="mx-auto text-primary c-fs-4 c-fw-m mt-5" href="/partnersAndIntegrations">
+        <a className="mx-auto text-primary c-fs-4 c-fw-m py-5" href="/partnersAndIntegrations">
           Explore more partners <MdArrowForward />
         </a>
       </div>
