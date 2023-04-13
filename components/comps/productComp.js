@@ -64,11 +64,7 @@ const ProductComponent = ({pageData, params }) => {
           }
         })}
       </div>
-
       <PreFooter />
-      
-      <Footer />
-      
     </div>
   );
 };

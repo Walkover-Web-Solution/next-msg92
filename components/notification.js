@@ -34,54 +34,54 @@ const Notification = () =>{
                 className="text-dark"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-                ><span className="c-fs-4 d-flex align-items-center">{country}</span>
+                ><span className="c-fs-5 d-flex align-items-center">{country}</span>
                 </a>
                    <ul className="dropdown-menu">
                     <li>
-                     <a href="/" className="dropdown-item c-fs-4">
+                     <a href="/" className="dropdown-item c-fs-5">
                         Global
                       </a>
                     </li>
                     <li>
-                     <a href="/in" className="dropdown-item c-fs-4">
+                     <a href="/in" className="dropdown-item c-fs-5">
                         India
                       </a>
                     </li>
                     <li>
-                     <a href="/ae" className="dropdown-item c-fs-4">
+                     <a href="/ae" className="dropdown-item c-fs-5">
                         United Arab Emirates
                       </a>
                     </li>
                     <li>
-                     <a href="/ph" className="dropdown-item c-fs-4">
+                     <a href="/ph" className="dropdown-item c-fs-5">
                         Philippines
                       </a>
                     </li>
                     <li>
-                     <a href="/sg" className="dropdown-item c-fs-4">
+                     <a href="/sg" className="dropdown-item c-fs-5">
                         Singapore
                       </a>
                     </li>
                     <li>
-                     <a href="/es" className="dropdown-item c-fs-4">
+                     <a href="/es" className="dropdown-item c-fs-5">
                         Spain
                       </a>
                     </li>
                     <li>
-                     <a href="/uk" className="dropdown-item c-fs-4">
+                     <a href="/uk" className="dropdown-item c-fs-5">
                         United Kingdom
                       </a>
                     </li>
                     <li>
-                     <a href="/us" className="dropdown-item c-fs-4">
+                     <a href="/us" className="dropdown-item c-fs-5">
                         United States
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
-                <a href="/contact-us" className="text-dark"><span className="c-fs-4 d-flex align-items-center"><MdCall className="me-1"/>Support</span></a>
-                <a href="#" className="text-dark"><span className="c-fs-4 d-flex align-items-center">Log In</span></a>
+                <a href="/contact-us" className="text-dark"><span className="c-fs-5 d-flex align-items-center"><MdCall className="me-1"/>Contact</span></a>
+                <a href="#" className="text-dark"><span className="c-fs-5 d-flex align-items-center">Log In</span></a>
             </div>
             
         </div>
