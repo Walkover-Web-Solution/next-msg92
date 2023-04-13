@@ -101,10 +101,10 @@ const Footer = () => {
                                 </span>
                                 <div className="footer-social-a d-flex mt-3 justify-content-start justify-content-lg-end">
                                     <a href="https://play.google.com/store/apps/details?id=com.hellornapp" target="_blank" className="me-4">
-                                        <img src="../img/android.svg" width={20} height={23} alt="#" />
+                                        <img src="../img/icon/android.svg" width={20} height={23} alt="#" />
                                     </a>
                                     <a href="https://apps.apple.com/in/app/hello-by-msg91/id1635375551" target="_blank">
-                                        <img src="../img/apple.svg" width={20} height={24} alt="#" />
+                                        <img src="../img/icon/apple.svg" width={20} height={24} alt="#" />
                                     </a>
                                 </div>
                             </div>
@@ -115,7 +115,7 @@ const Footer = () => {
                                 <div className="footer-social-a d-flex mt-3 align-items-center justify-content-start justify-content-lg-end">
                                     <a href="https://www.facebook.com/msg91" target="_blank" className="me-4">
                                         <img
-                                            src="../img/facebook.svg"
+                                            src="../img/icon/facebook.svg"
                                             width={24}
                                             height={24}
                                             alt="#"
@@ -123,17 +123,17 @@ const Footer = () => {
                                     </a>
                                     <a href="https://www.linkedin.com/company/msg91/" target="_blank" className="me-4">
                                         <img
-                                            src="../img/linkedin.svg"
+                                            src="../img/icon/linkedin.svg"
                                             width={24}
                                             height={24}
                                             alt="#"
                                         />
                                     </a>
                                     <a href="https://twitter.com/msg91" target="_blank" className='me-4'>
-                                        <img src="../img/twitter.svg" width={24} height={24} alt="#" />
+                                        <img src="../img/icon/twitter.svg" width={24} height={24} alt="#" />
                                     </a>
                                     <a href="https://www.youtube.com/@WalkoverWS" target="_blank">
-                                        <img src="../img/youtube.svg" width={24} height={24} alt="#" />
+                                        <img src="../img/icon/youtube.svg" width={24} height={24} alt="#" />
                                     </a>
                                 </div>
                             </div>

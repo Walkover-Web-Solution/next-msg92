@@ -12,10 +12,10 @@ const developers = () => {
         <>
             <div className="container">
                 <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
-                    <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
+                    <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row py-3">
                         <h1 className="heading">Hello Developers</h1>
                     </div>
-                    <h2 className="c-fs-2 px-3 w-md-75 w-100 mx-auto">
+                    <h2 className="c-fs-2 px-3 w-md-75 w-100 mx-auto pb-2">
                         Integrate SMS, Email, Voice API with Java, PHP, HTTP Scripts. Build
                         apps, innovation and ideas for rapid growing business, or just
                         integrate for your team development.
@@ -56,7 +56,7 @@ const developers = () => {
                     <div className="col-12 col-lg-10  flex-column flex-md-row d-flex align-items-center my-4 justify-content-center gap-3 gap-lg-5 mx-auto">
                         <div className="developers-card">
                             <div className="w-100 d-flex flex-column align-items-center mt-4 mt-sm-0 mt-lg-4">
-                                <span className="c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex">
+                                <span className="c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex py-2">
                                     <MdThumbUpOffAlt className="p-auto text-primary" />
                                 </span>
                                 <p className="w-100 c-fs-2 px-2 py-5 mt-n3 rounded text-center c-bg-grey">
@@ -66,7 +66,7 @@ const developers = () => {
                         </div>
                         <div className="developers-card">
                             <div className="w-100 d-flex flex-column align-items-center mt-4 mt-sm-0 mt-lg-4">
-                                <span className="c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex">
+                                <span className="c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex py-2">
                                     <MdOutlineChatBubbleOutline className="p-auto text-primary" />
                                 </span>
                                 <p className="w-100 c-fs-2 px-2 py-5 mt-n3 rounded text-center c-bg-grey">
@@ -76,7 +76,7 @@ const developers = () => {
                         </div>
                         <div className="developers-card">
                             <div className="w-100 d-flex flex-column align-items-center mt-4 mt-sm-0 mt-lg-4">
-                                <span className="c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex">
+                                <span className="c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex py-2">
                                     <MdOutlinePeopleAlt className="p-auto text-primary" />
                                 </span>
                                 <p className="w-100 c-fs-2 px-2 py-5 mt-n3 rounded text-center c-bg-grey">
@@ -144,14 +144,14 @@ const developers = () => {
                 <p className="c-fs-3 col-12 col-md-9">Build real-time communications into your apps in a few minutes and a few lines of code.The SDKs seamlessly connect to MSG91 global infrastructure.</p>
                 <div className="col-4 justify-content-center gap-5 d-flex">
                     <div className="dev-page-ico ">
-                        <div className="mx-auto c-bg-grey d-flex justify-content-center align-items-center">
-                            <a href="https://play.google.com/store/apps/details?id=com.hellornapp"> <GrAndroid className="c-fs-1" /></a>
+                        <div className="mx-auto d-flex justify-content-center align-items-center">
+                            <a href="https://play.google.com/store/apps/details?id=com.hellornapp"> <GrAndroid className="c-fs-1" /> </a>
                         </div>
                         <p className="c-fs-2">Android</p>
                     </div>
                     <div className="dev-page-ico">
-                        <div className="mx-auto c-bg-grey d-flex justify-content-center align-items-center">
-                            <a href="https://apps.apple.com/in/app/msg91/id981827687"> <GrApple className="c-fs-1" /></a>
+                        <div className="mx-auto d-flex justify-content-center align-items-center">
+                            <a href="https://apps.apple.com/in/app/msg91/id981827687"> <GrApple className="c-fs-1" /> </a>
                         </div>
                         <p className="c-fs-2">iOS</p>
                     </div>

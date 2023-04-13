@@ -7,8 +7,8 @@ const msg91ForStartups = () => {
     <>
       <div className="container mt-md-5 my-md-0 my-5 d-flex flex-column-reverse flex-md-row justify-content-between">
         <div className="d-flex col-md-6 col-12 justify-content-center flex-column align-items-md-start me-md-5 me-0 mt-4 mt-md-0 text-center text-md-start align-items-center">
-          <h1 className="heading">Expand your Vision with us</h1>
-          <p className="c-fs-1">
+          <h1 className="heading">Expand your vision with us</h1>
+          <p className="c-fs-2 p-2">
             Get a complimentary communication API package for every product
             Startup.
           </p>
@@ -19,11 +19,11 @@ const msg91ForStartups = () => {
         <img className="startup-home-img flip-vertical  " src="/img/startup-home-img.svg" width="648" height="291"  />
         </div>
       </div>
-      <section className="c-bg-grey p-5 text-center small-heading">
+      <section className="c-bg-grey mt-5 mb-3 p-5 text-center small-heading">
         "Today we help you, tomorrow we can change the world together."
       </section>
-      <div className=" p-5 text-center justify-content-center">
-        <h3 className="sub-heading">
+      <div className=" p-2 text-center justify-content-center">
+        <h3 className="sub-heading mt-3">
           Grow your Startup with Robust Infrastructure
         </h3>
         <div className="d-flex flex-column flex-md-row gap-5 gap-md-0 my-5 align-items-center justify-content-center">
@@ -104,7 +104,7 @@ const msg91ForStartups = () => {
 
         </div>
       </section>
-      <div className="container px-3 px-md-auto">
+      <div className="container px-3 px-md-auto pb-5">
         <h2 className="sub-heading">
           Checklist to become a part of the program
         </h2>

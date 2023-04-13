@@ -7,9 +7,9 @@ const partnersAndIntegrations = () => {
       <div className="container text-center  overflow-hidden ">
         <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
           <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
-            <h1 className="heading">Integrations & Add-ons</h1>
+            <h1 className="heading py-3">Integrations & Add-ons</h1>
           </div>
-          <h2 className="small-heading px-3 w-md-75 w-100 mx-auto">
+          <h2 className="small-heading px-3 w-md-75 w-100 mx-auto pb-1">
             Add-ons that enable SMS notifications in your application with a
             single click.
           </h2>
@@ -28,7 +28,7 @@ const partnersAndIntegrations = () => {
           <h2 className="sub-heading">
             MSG91 Add-ons for your preferred Platform
           </h2>
-          <p className="c-fs-3">
+          <p className="c-fs-3 pt-2">
             Note – For paid plugins you will receive free credits, depending on
             the policy.
           </p>
@@ -50,7 +50,7 @@ const partnersAndIntegrations = () => {
           </h2>
           <div className="col-12 px-2 px-lg-0 text-start mt-5 d-flex flex-column flex-lg-row justify-content-between">
             <div className="col-12 col-lg-7">
-              <h3>Why Build MSG91 Plugins?</h3>
+              <h3 className="py-2">Why Build MSG91 Plugins?</h3>
               <div className="mt-2 mt-lg-0">
                 <span className="c-fs-2 text-green">
                   <MdOutlineCheck />
@@ -116,7 +116,7 @@ const partnersAndIntegrations = () => {
               <p className="c-fs-3 c-fw-m">Prateek Agrawal</p>
             </div>
           </div>
-          <div className="c-w-pp mt-4 mt-md-0 h-100 ps-0 ps-md-4 our-partner ">
+          <div className="c-w-pp mt-4 mt-md-0 h-100 pe-0 pe-md-5 our-partner pt-4 ">
             <img className="mt-3 " src="/img/rixyncs-img.png" />
             <div className=" d-flex flex-column justify-content-between">
               <p className="c-fs-3 my-3">
