@@ -1,6 +1,6 @@
 import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
-import countries from "@/data/content.json";
+import countries from "@/data/countries.json";
 import { Typeahead } from 'react-bootstrap-typeahead';
 
 const pricingvoice = ({
@@ -22,7 +22,6 @@ const pricingvoice = ({
           id="originCountry"
           labelKey="country"
           onChange={(selected) => {            
-            //setOriginCountry(selected[0]?.country);
             setPricing([])
             if (selected[0]?.country)
               fetchSMSData([], selected[0]?.country, destinationCountry);
@@ -37,7 +36,6 @@ const pricingvoice = ({
           id="destinationCountry"
           labelKey="country"
           onChange={(selected) => {            
-            //setDestinationCountry(selected[0]?.country);
             setPricing([])
             if (selected[0]?.country)
               fetchSMSData([], originCountry, selected[0]?.country);

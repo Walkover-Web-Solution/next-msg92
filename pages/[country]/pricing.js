@@ -12,27 +12,16 @@ import Pricingrcs from "@/components/pricing/pricing-rcs";
 import axios from "axios";
 import { InlineWidget } from "react-calendly";
 import { useRouter } from 'next/router'
+import countries from "@/data/countries.json";
 
-/*
-  API to get subscription plans
-  URL: https://subscription.msg91.com/api/plans?currency=USD&ms_id=1
-  currency = USD, INR, GBP
-  ms_id = microservice id
-  [
-    { "id": 1, "name": "Email" },
-    { "id": 2, "name": "Segmento" },
-    { "id": 5, "name": "Whatsapp" },
-    { "id": 6, "name": "Voice" }
-  ]
-*/
 const campaign = () => {
-
   const router = useRouter()
-  console.log('router', router.query)
-
+  var countryCode = router.query.country;  
+  var country = countryCode ? countries?.find(el => el.code === countryCode.toUpperCase()) : '';  
   var [pricing, setPricing] = useState([]);
-  var [originCountry, setOriginCountry] = useState('INDIA');
-  var [destinationCountry, setDestinationCountry] = useState('INDIA');
+  var [originCountry, setOriginCountry] = useState(country.country)
+  var [destinationCountry, setDestinationCountry] = useState(country.country);
+  
   const amountArr = ['1259', '4000', '9000', '17000', '48000', '75000'];
   
   var [subscriptionEmail, setSubscriptionEmail] = useState([]);
@@ -76,7 +65,8 @@ const campaign = () => {
 
   
   useEffect(() => {
-     fetchSMSData([], originCountry, destinationCountry)
+      console.log('country test', country, originCountry, destinationCountry);  
+      fetchSMSData([], originCountry, destinationCountry)
   }, []);
 
   return (
