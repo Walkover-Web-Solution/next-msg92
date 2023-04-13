@@ -36,7 +36,7 @@ const ProductComponent = ({pageData, params }) => {
         </div>
       </div>
 
-      <div className={`px-sm-0 d-flex flex-column justify-content-center justift-content-sm-start section mt-5`}>
+      <div className={`px-sm-0 d-flex flex-column justify-content-center justify-content-sm-start section mt-5`}>
         <span className="container sub-heading c-ff-h  pt-4 pt-md-0">Features</span>
         {pageData?.features?.map((item, index) => {
           if(item?.content){

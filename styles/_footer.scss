@@ -1,4 +1,4 @@
-.footer{
+.footer {
   z-index: 100;
   background-color: var(--black-color);
   color: var(--c-light-grey);
@@ -8,18 +8,16 @@
   align-items: center;
   justify-content: center;
   font-size: var(--c-fs-5);
-  h4{
+  h4 {
     font-weight: bold;
   }
-  a {
-    text-decoration: none;
-    color: var(--c-light-grey);
-    font-size: var(--c-fs-5);
-    &:hover {
-      color: var(--c-light-grey);
-      text-decoration: underline;
-    }
-
+}
+.c-link-underline {
+  
+  color: var(--c-light-grey);
+  &:hover {
+    color: #d4d4d4;
+    text-decoration: underline!important;
   }
 }
 .full-line {
@@ -28,7 +26,6 @@
 }
 
 .f-menu-cont {
-
   width: 800px;
   justify-content: space-between;
 }
@@ -50,14 +47,14 @@
 }
 
 .footer2 {
-  background: #1d2023;  
-  .f2-spacer{
+  background: #1d2023;
+  .f2-spacer {
     padding: 0 10px;
   }
 }
 
 .copyright {
-  color: var(--c-grey)
+  color: var(--c-grey);
 }
 
 // case-studies scss
