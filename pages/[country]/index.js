@@ -1,4 +1,4 @@
-import data from "../content.json";
+import data from "../../data/content.json";
 import IndexComp from "@/components/comps/indexComponent";
 
 const mainpage = ({ pageData }) => {
