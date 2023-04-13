@@ -21,8 +21,15 @@ body {
   z-index: 20;
   background: white;
 }
+.nav-menu-cont{
+  z-index: 21;
+  position: relative;
+
+}
 .nav-menu {
-  z-index: 20;
+  top: 0;
+  position: relative;
+  z-index: 24;
 }
 nav {
   height: 80px;
