@@ -1,6 +1,5 @@
 // Child Component
 import React from 'react';
-import Footer from '../footer';
 import PreFooter from '../preFooter';
 import TrustedBy from '../trustedby';
 
