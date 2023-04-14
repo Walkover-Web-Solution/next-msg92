@@ -67,9 +67,9 @@ const navbar = ({brawserPath}) => {
               </button>
             </a>
           </div>
+          <ProductMenu path={path} />
         </div>
       </nav>
-<ProductMenu path={path} />
     </>
   );
 };
