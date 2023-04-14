@@ -20,6 +20,7 @@ const pricingvoice = ({
   //     setDestinationCountry(destinationCountry)
   //   }
   // }, [pricing, originCountry, destinationCountry]);
+  // console.log(pricing,1324567382);
   return (
     <>
      <div>
