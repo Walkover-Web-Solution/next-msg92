@@ -61,16 +61,19 @@ const campaign = ({countryCode}) => {
   };
   
   const findCountry = async (code) => {    
+    // console.log("code",code)
     const response = await countries?.find(el => el.code === code);
-    console.log(code, response);
-    setOriginCountry(response.country); 
-    setDestinationCountry(response.country);
+    // console.log(code, response);
+
+    setOriginCountry(response?.country); 
+    setDestinationCountry(response?.country);
     fetchSMSData([], originCountry, destinationCountry)
-    console.log('868678', originCountry, destinationCountry);    
+    // console.log('868678', originCountry, destinationCountry);     
   };
 
    
   useEffect(() => {
+    // console.log(countryCode,98654);
     findCountry(countryCode);    
   }, [countryCode]);
 
