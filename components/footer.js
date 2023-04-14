@@ -14,13 +14,13 @@ const Footer = ({ path }) => {
                 <a href={`${path}/hello`} className="c-link-underline c-fs-5 mt-2 c-fw-t">
                   Hello
                 </a>
-                <a href={`${path}/hello`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
+                <a href={`${path}/segmento`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   Segmento
                 </a>
-                <a href="#" className=" c-link-underline c-fs-5 mt-2 c-fw-t">
+                <a href="{`${path}/campaign`}" className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   campaign
                 </a>
-                <a href="#" className=" c-link-underline c-fs-5 mt-2 c-fw-t">
+                <a href="{`${path}/otp`}" className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   OTP
                 </a>
               </div>
@@ -29,16 +29,16 @@ const Footer = ({ path }) => {
             <div className="col-6 col-lg-2 mb-4">
               <h4 className=" c-fs-5 d-flex flex-column">Channels</h4>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
-                <a href="#" className=" c-link-underline c-fs-5 mt-2 c-fw-t">
+                <a href="{`${path}/sms`}" className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   SMS
                 </a>
-                <a href="#" className=" c-link-underline c-fs-5 mt-2 c-fw-t">
+                <a href="{`${path}/email`}" className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   Email
                 </a>
-                <a href="#" className="c-link-underline c-fs-5 mt-2 c-fw-t">
+                <a href="{`${path}/voice`}" className="c-link-underline c-fs-5 mt-2 c-fw-t">
                   Voice
                 </a>
-                <a href="#" className=" c-link-underline c-fs-5 mt-2 c-fw-t">
+                <a href="{`${path}/hello`}rcs" className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   RCS
                 </a>
               </div>
