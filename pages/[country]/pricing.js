@@ -14,9 +14,7 @@ import { InlineWidget } from "react-calendly";
 import { useRouter } from 'next/router'
 import countries from "@/data/countries.json";
 
-const campaign = () => {
-  const router = useRouter()
-  var countryCode = router.query.country;    
+const campaign = ({countryCode}) => {  
   var [pricing, setPricing] = useState([]);
   const [originCountry, setOriginCountry] = useState('')
   const [destinationCountry, setDestinationCountry] = useState('');
@@ -62,8 +60,9 @@ const campaign = () => {
     // console.log(response.data.data);
   };
   
-  const findCountry = async (code) => {
-    const response = await  countries?.find(el => el.code === "US");
+  const findCountry = async (code) => {    
+    const response = await countries?.find(el => el.code === code);
+    console.log(code, response);
     setOriginCountry(response.country); 
     setDestinationCountry(response.country);
     fetchSMSData([], originCountry, destinationCountry)
@@ -72,9 +71,8 @@ const campaign = () => {
 
    
   useEffect(() => {
-    findCountry(countryCode);
-    
-  }, []);
+    findCountry(countryCode);    
+  }, [countryCode]);
 
   return (
     <>      
@@ -215,7 +213,6 @@ const campaign = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
