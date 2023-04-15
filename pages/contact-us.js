@@ -6,8 +6,9 @@ const contactus = () => {
         <>
             <div className="container text-center px-4 col-xs-12 col-sm-10 col-md-10 mx-auto  py-5">
                 <h1 className="sub-heading pb-5">Contact Us</h1>
-                <div className="d-flex justify-content-around">
-                    <div className="contact-card d-flex flex-column align-items-center justify-content-between shadow col-4 gap-5 px-3 py-5">
+                <div className="justify-content-around row gap-5">
+
+                    <div className="contact-card d-flex flex-column align-items-center justify-content-between shadow gap-5 px-3 py-5 border col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-10">
                         <h2>Sales</h2>
                         <div className="d-flex flex-column align-items-start gap-4">
                         <div className="d-flex  align-items-center">
@@ -29,8 +30,8 @@ const contactus = () => {
                         </div>
                         <button className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#sales-modal">Schedule a meeting</button>
                     </div>
-
-                    <div className="contact-card d-flex flex-column align-items-center justify-content-between shadow col-4 gap-5 px-3 py-5">
+                    
+                    <div className="contact-card d-flex flex-column align-items-center justify-content-between shadow gap-5 px-3 py-5 border col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-10">
                         <h2>Support</h2>
                         <div className="d-flex flex-column align-items-start gap-4">
                         <div className="d-flex  align-items-center">
