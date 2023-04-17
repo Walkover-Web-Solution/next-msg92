@@ -126,18 +126,6 @@ const ProductMenu = ({path}) => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
-              href={`${path}/voice`}
-            >
-              <Image
-                src="/img/icon/voice.svg"
-                width={40}
-                height={40}
-                alt="ico"
-              />
-              <h4 className="c-fs-2">Voice</h4>
-            </a>
-            <a
-              className="d-flex gap-3 align-items-center product-menu-btn p-3"
               href={`${path}/whatsapp`}
             >
               <Image
@@ -148,6 +136,18 @@ const ProductMenu = ({path}) => {
               />
               <h4 className="c-fs-2">WhatsApp</h4>
             </a>
+            <a
+              className="d-flex gap-3 align-items-center product-menu-btn p-3"
+              href={`${path}/voice`}
+            >
+              <Image
+                src="/img/icon/voice.svg"
+                width={40}
+                height={40}
+                alt="ico"
+              />
+              <h4 className="c-fs-2">Voice</h4>
+            </a>            
           </div>
         </div>
         <div className="overlay-menu d-flex flex-wrap gap-3" id="integrationsmenu">

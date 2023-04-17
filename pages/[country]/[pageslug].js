@@ -3,7 +3,7 @@ import IndexComp from "@/components/comps/indexComponent";
 import ProductComponent from "@/components/comps/productComp";
 import ChannelComponent from "@/components/comps/channelComp";
 
-const mainpage = ({ pageData,params }) => {
+const mainpage = ({ pageData, params }) => {
   // console.log(pageData);
   var page = pageData?.pagename;
   var code = pageData?.code;
@@ -22,7 +22,7 @@ const mainpage = ({ pageData,params }) => {
     // console.log("page index");
     return (
       <>
-        <IndexComp />
+        <IndexComp params={params}/>
       </>
     );
   } else {

@@ -9,7 +9,7 @@ const Footer = ({ path }) => {
         <div className="footer_Main_Content mt-4 mb-4 container">
           <div className="row justify-content-sm-between">
             <div className="col-6 col-lg-2 mb-4">
-              <h4 className="c-fs-5 d-flex flex-column">Our Products</h4>
+              <h4 className="c-fs-5 d-flex flex-column">Our products</h4>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a href={`${path}/hello`} className="c-link-underline c-fs-5 mt-2 c-fw-t">
                   Hello
@@ -18,7 +18,7 @@ const Footer = ({ path }) => {
                   Segmento
                 </a>
                 <a href={`${path}/campaign`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
-                  campaign
+                  Campaign
                 </a>
                 <a href={`${path}/otp`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   OTP
@@ -35,12 +35,12 @@ const Footer = ({ path }) => {
                 <a href={`${path}/email`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   Email
                 </a>
+                <a href={`${path}/whatsapp`}rcs className=" c-link-underline c-fs-5 mt-2 c-fw-t">
+                  WhatsApp
+                </a>
                 <a href={`${path}/voice`} className="c-link-underline c-fs-5 mt-2 c-fw-t">
                   Voice
-                </a>
-                <a href={`${path}/hello`}rcs className=" c-link-underline c-fs-5 mt-2 c-fw-t">
-                  RCS
-                </a>
+                </a>                
               </div>
             </div>
 
@@ -91,7 +91,7 @@ const Footer = ({ path }) => {
                   href="/about-us"
                   className="c-link-underline c-fs-5 mt-2 c-fw-t"
                 >
-                  About Us
+                  About us
                 </a>
                 <a
                   href="/pricing"
@@ -103,7 +103,7 @@ const Footer = ({ path }) => {
                   href="/contact-us"
                   className="c-link-underline c-fs-5 mt-2 c-fw-t"
                 >
-                  Contact Us
+                  Contact us
                 </a>
                 <a
                   href="/developers"
@@ -115,19 +115,19 @@ const Footer = ({ path }) => {
                   href="/msg91-for-startups"
                   className="c-link-underline c-fs-5 mt-2 c-fw-t"
                 >
-                  MSG91 For Startups
+                  MSG91 for startups
                 </a>
                 <a
                   href="/partners-and-integrations"
                   className="c-link-underline c-fs-5 mt-2 c-fw-t"
                 >
-                  Partners and Integrations
+                  Partners and integrations
                 </a>
                 <a
                   href="/become-a-partner"
                   className="c-link-underline c-fs-5 mt-2 c-fw-t"
                 >
-                  Become a Partner
+                  Become a partner
                 </a>
                 <a
                   href="https://apply.workable.com/walkover/"
@@ -172,7 +172,7 @@ const Footer = ({ path }) => {
               </div>
               <div className="footer-social-a-content col-6 col-lg-12 mt-lg-5">
                 <span className="footer-social-a-text c-fs-5 d-flex flex-column">
-                  Follow Us
+                  Follow us
                 </span>
                 <div className="footer-social-a d-flex mt-3 align-items-center justify-content-start justify-content-lg-end">
                   <a
@@ -234,7 +234,7 @@ const Footer = ({ path }) => {
                 </a>
                 <span className="f2-spacer"> | </span>
                 <a href="/privacy-policy" className="c-link-underline c-fs-5 ">
-                  Privacy Policy
+                  Privacy policy
                 </a>
                 <span className="f2-spacer"> | </span>
                 <a href="/gdpr" className="c-link-underline c-fs-5 ">
@@ -242,31 +242,31 @@ const Footer = ({ path }) => {
                 </a>
                 <span className="f2-spacer"> | </span>
                 <a href="/refund-policy" className="c-link-underline c-fs-5 ">
-                  Refund-Policy
+                  Refund policy
                 </a>
                 <span className="f2-spacer"> | </span>
                 <a href="/no-spam" className="c-link-underline c-fs-5 ">
-                  No Spam
+                  No spam
                 </a>
                 <span className="f2-spacer"> | </span>
                 <a href="/startup-policy" className="c-link-underline c-fs-5 ">
-                  Startup Policy
+                  Startup policy
                 </a>
                 <span className="f2-spacer"> | </span>
                 <a
                   href="/fair-pricing-policy"
                   className="c-link-underline c-fs-5 "
                 >
-                  Fair Pricing Policy
+                  Fair pricing policy
                 </a>
                 <span className="f2-spacer"> | </span>
                 <a href="/cookie-policy" className="c-link-underline c-fs-5 ">
-                  Cookie Policy
+                  Cookie policy
                 </a>
               </div>
               <div className="mt-4 mt-lg-0">
                 <span>
-                  A Product of{" "}
+                  A product of{" "}
                   <img
                     src="../img/walkover.svg"
                     width={20}

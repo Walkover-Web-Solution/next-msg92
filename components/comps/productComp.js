@@ -4,7 +4,7 @@ import PreFooter from '../preFooter';
 import TrustedBy from '../trustedby';
 
 const ProductComponent = ({pageData, params }) => {
-  // console.log(params);  
+  console.log('ProductComponent',params);  
   var i = 0;
   return (
     <div>
