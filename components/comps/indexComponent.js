@@ -14,7 +14,7 @@ const indexComp = ({params}) => {
         <h3 className="small-heading text-dark">
           Secure and robust APIs for SMS, Email, Voice, Authentication and more.
         </h3>        
-        <a href="https://control.msg91.com/signup/" className="btn btn-dark small-heading c-fw-sb ls-3 btn-lg">
+        <a href="https://control.msg91.com/signup/" target="_blank" className="btn btn-dark small-heading c-fw-sb ls-3 btn-lg">
           Get Started
         </a>        
         <TrustedBy />

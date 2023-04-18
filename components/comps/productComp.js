@@ -22,7 +22,7 @@ const ProductComponent = ({pageData, params }) => {
             <h2 className="small-heading p-3 w-md-75 w-100 mx-auto">
               {pageData.heading}
             </h2>
-            <a href="https://control.msg91.com/signup/" className="btn btn-dark btn-lg c-fs-2" >
+            <a href="https://control.msg91.com/signup/" target="_blank" className="btn btn-dark btn-lg c-fs-2" >
               Get started for Free
             </a>
           </div>
