@@ -1,23 +1,25 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 import TrustedBy from "@/components/trustedby";
 import Image from "next/image";
-const indexComp = () => {
+import PreFooter from '../preFooter';
+const indexComp = ({params}) => {
+  const path = params ? params?.country : '';
   return (
     <>
+    {console.log('index page params',params)}
       <div className="container d-flex flex-column c-gap-1 align-items-center text-center mt-80">
         <h1 className="heading text-dark col-10 col-xxl-8 col-xl-8 ">
-          Cloud Communication platform for all your ideas!
+          Cloud communication platform for all your ideas!
         </h1>
         <h3 className="small-heading text-dark">
           Secure and robust APIs for SMS, Email, Voice, Authentication and more.
-        </h3>
-        <a className="">
-          <button className="btn btn-dark small-heading c-fw-sb ls-3 btn-lg">
-            Get Started
-          </button>
-        </a>
+        </h3>        
+        <a href="https://control.msg91.com/signup/" className="btn btn-dark small-heading c-fw-sb ls-3 btn-lg">
+          Get Started
+        </a>        
         <TrustedBy />
       </div>
+      
       <div className="section product-sec d-flex my-5 my-80">
         <div className="product-card">
           <div className="product-head">
@@ -30,17 +32,15 @@ const indexComp = () => {
             <p className="c-fs-3 text-white">
               Empower your employees, Support your customers.
             </p>
-            <a href="/campaign" target="">
-              <button className="c-fs-3 pro-btn justify-content-between d-flex align-items-center px-3 py-2">
-                <span>
-                  <img
-                    src="./img/icon/campaign.svg"
-                    className="pro-sec-ico me-3"
-                  />
-                  <span className="">Campaign</span>
-                </span>
-                <MdKeyboardArrowRight />
-              </button>
+            <a href="/campaign" className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2">              
+              <span>
+                <img
+                  src="./img/icon/campaign.svg"
+                  className="pro-sec-ico me-3"
+                />
+                <span className="">Campaign</span>
+              </span>
+              <MdKeyboardArrowRight />              
             </a>
           </div>
         </div>
@@ -55,8 +55,7 @@ const indexComp = () => {
             <p className="c-fs-3 text-white">
               Boost audience engagement through smart Platform.
             </p>
-            <a href="/hello" target="">
-              <button className="c-fs-3 pro-btn justify-content-between d-flex align-items-center px-3 py-2">
+            <a href="/hello" className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2">              
                 <span>
                   <img
                     src="./img/icon/hello.svg"
@@ -64,8 +63,7 @@ const indexComp = () => {
                   />
                   <span className="">Hello</span>
                 </span>
-                <MdKeyboardArrowRight />
-              </button>
+                <MdKeyboardArrowRight />              
             </a>
           </div>
         </div>
@@ -80,17 +78,15 @@ const indexComp = () => {
             <p className="c-fs-3 text-white">
               Segment your customers according to their action or event.{" "}
             </p>
-            <a href="/segmento" target="">
-              <button className="c-fs-3 pro-btn justify-content-between d-flex align-items-center px-3 py-2">
-                <span>
-                  <img
-                    src="./img/icon/segmento.svg"
-                    className="pro-sec-ico me-3"
-                  />
-                  <span className="">Segmento</span>
-                </span>
-                <MdKeyboardArrowRight />
-              </button>
+            <a href="/segmento" className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2">              
+              <span>
+                <img
+                  src="./img/icon/segmento.svg"
+                  className="pro-sec-ico me-3"
+                />
+                <span className="">Segmento</span>
+              </span>
+              <MdKeyboardArrowRight />            
             </a>
           </div>
         </div>
@@ -105,18 +101,17 @@ const indexComp = () => {
             <p className="c-fs-3 text-white">
               Quick and reliable authentication by 2FA using multiple channels.
             </p>
-            <a href="/otp" target="">
-              <button className="c-fs-3 pro-btn justify-content-between d-flex align-items-center px-3 py-2">
-                <span>
-                  <img src="./img/icon/otp.svg" className="pro-sec-ico me-3" />
-                  <span className="">OTP</span>
-                </span>
-                <MdKeyboardArrowRight />
-              </button>
+            <a href="/otp" className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2">              
+              <span>
+                <img src="./img/icon/otp.svg" className="pro-sec-ico me-3" />
+                <span className="">OTP</span>
+              </span>
+              <MdKeyboardArrowRight />
             </a>
           </div>
         </div>
       </div>
+      
       <div className="container my-5 my-80">
         <h2 className="sub-heading c-head mb-2">Communication Channels</h2>
         <p className="c-fs-2 w-75">
@@ -129,7 +124,7 @@ const indexComp = () => {
             href="/sms"
             className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
           >
-            <span>
+            <div className="d-flex align-items-center">
               <Image
                 className="me-2"
                 src="./img/icon/sms.svg"
@@ -138,14 +133,14 @@ const indexComp = () => {
                 alt="cannels"
               />
               <span className="">SMS</span>
-            </span>
+            </div>
             <MdKeyboardArrowRight />
           </a>
           <a
             href="/email"
             className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
           >
-            <span>
+            <div className="d-flex align-items-center">
               <Image
                 className="me-2"
                 src="./img/icon/email.svg"
@@ -154,14 +149,14 @@ const indexComp = () => {
                 alt="cannels"
               />
               <span className="">Email</span>
-            </span>
+            </div>
             <MdKeyboardArrowRight />
           </a>
           <a
             href="/whatsapp"
             className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
           >
-            <span>
+            <div className="d-flex align-items-center">
               <Image
                 className="me-2"
                 src="./img/icon/whatsapp.svg"
@@ -170,14 +165,14 @@ const indexComp = () => {
                 alt="cannels"
               />
               <span className="">Whatsapp</span>
-            </span>
+            </div>
             <MdKeyboardArrowRight />
           </a>
-          <a
+          {/* <a
             href="/telegram"
             className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
           >
-            <span>
+            <div className="d-flex align-items-center">
               <Image
                 className="me-2"
                 src="./img/icon/telegram.svg"
@@ -186,14 +181,14 @@ const indexComp = () => {
                 alt="telegram"
               />
               <span className="">Telegram</span>
-            </span>
+            </div>
             <MdKeyboardArrowRight />
-          </a>
+          </a> */}
           <a
             href="/voice"
             className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
           >
-            <span>
+            <div className="d-flex align-items-center">
               <Image
                 className="me-2"
                 src="./img/icon/voice.svg"
@@ -202,14 +197,14 @@ const indexComp = () => {
                 alt="voice"
               />
               <span className="">Voice</span>
-            </span>
+            </div>
             <MdKeyboardArrowRight />
           </a>
-          <a
+          {/* <a
             href="/rcs"
             className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
           >
-            <span>
+            <div className="d-flex align-items-center">
               <Image
                 className="me-2"
                 src="./img/icon/rcs.svg"
@@ -218,11 +213,12 @@ const indexComp = () => {
                 alt="rcs"
               />
               <span className="">RCS</span>
-            </span>
+            </div>
             <MdKeyboardArrowRight />
-          </a>
+          </a> */}
         </div>
       </div>
+      
       <div className="section c-bg-grey stats-sec align-items-center my-80" >
         <div className="container h-100 d-flex align-items-center">
           <div className="col-3 d-flex flex-column gap-2">
@@ -255,6 +251,7 @@ const indexComp = () => {
           </div>
         </div>
       </div>
+      
       <div className="container my-5 more-services-sec my-80">
         <h2 className="sub-heading c-head">More Services</h2>
         <div className="d-flex my-5">
@@ -287,7 +284,7 @@ const indexComp = () => {
                 manageable and memorable.
               </p>
             </div>
-            <a href="#">
+            <a href={`${path}/shorturl`}>
               <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-b text-dark">
                 <span>Learn more</span>
                 <MdKeyboardArrowRight />
@@ -325,7 +322,7 @@ const indexComp = () => {
                 answers.
               </p>
             </div>
-            <a href="#">
+            <a href={`${path}/knowledgebase`}>
               <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-sb text-dark">
                 <span>Learn more</span>
                 <MdKeyboardArrowRight />
@@ -361,7 +358,7 @@ const indexComp = () => {
                 manageable and memorable.
               </p>
             </div>
-            <a href="#">
+            <a href="https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91">
               <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-sb text-dark">
                 <span>Learn more</span>
                 <MdKeyboardArrowRight />
@@ -370,16 +367,17 @@ const indexComp = () => {
           </div>
         </div>
       </div>
+      
       <div className="container  my-80">
-        <h2 className="sub-heading c-head">Our Clint Stories</h2>
+        <h2 className="sub-heading c-head">Our Client Stories</h2>
         <div className="d-flex col-12 gap-4 my-4">
           <div className="col-6 c-hover ">
             <Image
-              className="milkbasket-clint-img "
-              src="/img/milkbasket-clint-img.png"
+              className="milkbasket-client-img "
+              src="/img/milkbasket-client-img.png"
               width={580}
               height={314}
-              alt="milkbasket-clint-img"
+              alt="milkbasket-client-img"
             />
             <div className="c-fs-3 p-3">
               <p className="pe-2">
@@ -388,7 +386,7 @@ const indexComp = () => {
               </p>
               <a
                 className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
-                href="/clint-stories/milkbasket"
+                href="/case-studies/milkbasket"
               >
                 <span className="me-3 ">Learn more</span>
                 <MdKeyboardArrowRight />
@@ -398,11 +396,11 @@ const indexComp = () => {
           <div className="col-6 d-flex flex-column gap-4">
             <div className="c-hover d-flex align-items-center">
               <Image
-                className="secc-clint-img "
-                src="/img/unacademy-clint-img.png"
+                className="secc-client-img "
+                src="/img/unacademy-client-img.png"
                 width={220}
                 height={220}
-                alt="secc-clint-img"
+                alt="secc-client-img"
               />
               <div className="c-fs-3 p-3">
                 <p className="pe-2">
@@ -410,7 +408,7 @@ const indexComp = () => {
                 </p>
                 <a
                   className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
-                  href="/clint-stories/milkbasket"
+                  href="/case-studies/unacademy"
                 >
                   <span className="me-3 ">Learn more</span>
                   <MdKeyboardArrowRight />
@@ -419,11 +417,11 @@ const indexComp = () => {
             </div>
             <div className="c-hover d-flex align-items-center">
               <Image
-                className="secc-clint-img "
-                src="/img/ixigo-clint-img.png"
+                className="secc-client-img "
+                src="/img/ixigo-client-img.png"
                 width={220}
                 height={220}
-                alt="secc-clint-img"
+                alt="secc-client-img"
               />
               <div className="c-fs-3 p-3">
                 <p className="pe-2">
@@ -431,7 +429,7 @@ const indexComp = () => {
                 </p>
                 <a
                   className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
-                  href="/clint-stories/milkbasket"
+                  href="/case-studies/ixigo"
                 >
                   <span className="me-3 ">Learn more</span>
                   <MdKeyboardArrowRight />
@@ -441,6 +439,8 @@ const indexComp = () => {
           </div>
         </div>
       </div>
+
+      <PreFooter />
     </>
   );
 };

@@ -62,12 +62,10 @@ const navbar = ({brawserPath}) => {
           <div className=" d-flex gap-5 w-nav-menu align-items-center justify-content-end">
             <a className="" href="https://docs.msg91.com/reference/send-sms" target="_blank"id="apidocs-link">
               <span className="c-fs-4 c-fw-m text-dark">API Doc</span>
-            </a>
-            <a className="" href="https://control.msg91.com/signup/" id="signup-btn">
-              <button className="btn btn-dark   c-fs-4 c-fw-sb  px-3">
-                SIGN UP
-              </button>
-            </a>
+            </a>            
+            <a href="https://control.msg91.com/signup/" className="btn btn-dark c-fs-4 c-fw-sb px-3" id="signup-btn">
+              SIGN UP
+            </a>            
           </div>
           <ProductMenu path={path} />
         </div>
