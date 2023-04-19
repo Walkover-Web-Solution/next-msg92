@@ -4,7 +4,7 @@ import PreFooter from '../preFooter';
 import TrustedBy from '../trustedby';
 
 const ProductComponent = ({pageData, params }) => {
-  console.log('ProductComponent',params);  
+  console.log('ProductComponent',pageData);  
   var i = 0;
   return (
     <div>
@@ -13,17 +13,17 @@ const ProductComponent = ({pageData, params }) => {
           <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
             <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
               <img src={pageData.icon} className="product-page-logo me-2" />
-              <h1 className="heading text-capitalize">{pageData.pagename}</h1>
+              <h1 className={`heading ${pageData.pagename}-heading`}>{pageData.pagename}</h1>
             </div>
 
-            <p className="c-fs-4 text-uppercase col-otp c-ls-20 mx-auto">
+            <p className={`c-fs-4 text-uppercase col-otp c-ls-20 mx-auto mt-3 ${pageData.pagename}-dark`}>
               {pageData.tagline}
             </p>
-            <h2 className="small-heading p-3 w-md-75 w-100 mx-auto">
+            <h2 className="small-heading p-3 w-md-75 w-100 mx-auto fw-normal">
               {pageData.heading}
-            </h2>
-            <a href="https://control.msg91.com/signup/" target="_blank" className="btn btn-dark btn-lg c-fs-2" >
-              Get started for Free
+            </h2>            
+            <a href="https://control.msg91.com/signup/" className="btn btn-dark btn-lg c-fs-2 mt-3" >
+              Get started
             </a>
           </div>
             <TrustedBy />

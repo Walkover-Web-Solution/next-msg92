@@ -2,7 +2,8 @@ import link from "next/link";
 import { useRouter } from "next/router";
 
 const Footer = ({ path }) => {
-    
+  console.log('path', path);  
+  path = (path.length == 2) ? '/'+path : '';
   return (
     <>
       <div className="px-2 footer pt-5">
@@ -35,7 +36,7 @@ const Footer = ({ path }) => {
                 <a href={`${path}/email`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   Email
                 </a>
-                <a href={`${path}/whatsapp`}rcs className=" c-link-underline c-fs-5 mt-2 c-fw-t">
+                <a href={`${path}/whatsapp`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   WhatsApp
                 </a>
                 <a href={`${path}/voice`} className="c-link-underline c-fs-5 mt-2 c-fw-t">

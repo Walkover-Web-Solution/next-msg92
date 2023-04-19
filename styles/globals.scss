@@ -4,6 +4,9 @@ body {
   color: var(--black-color);
   font-family: var(--c-body) !important;
 }
+.c-ls-20{
+  letter-spacing: .2em;
+}
 .oh {
   overflow: hidden !important;
 }
@@ -294,4 +297,36 @@ body::-webkit-scrollbar-button {
   #productmenu, #integrationsmenu{
     width: 640px;
   }
+}
+
+/* Navigation */
+.nav-link:hover .nav-line, .nav-link.active .nav-line {
+  width: 100%;
+}
+.nav-line {
+  margin-top: 2px;
+  height: 3px;
+  width: 0;
+  background-color: var(--primary-color);
+  transition: .2s;
+}
+.menu-opt:hover {
+  color: var(--primary-color)!important;
+}
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* constant colors */
+.hello-dark{
+  color :#8C5D00;
+}
+.campaign-dark{
+  color :#5F388C;
+}
+.segmento-dark{
+  color :#80335A;
+}
+.otp-dark{
+  color :#1258A3;
 }

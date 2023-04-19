@@ -45,9 +45,9 @@
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"Campaign",
+      "pagename":"campaign",
       "tagline": "Event Base automation",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Connect conversations across channels and tools Deliver personalized, engaging and seamless experiences",
       "pageimg":"/img/pageimg/campaign.svg",
       "features": [
         {
@@ -88,7 +88,7 @@
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"Segmento",
+      "pagename":"segmento",
       "pageimg":"/img/pageimg/segmento.png",
       "tagline": "Revolutionize customer support",
       "heading": "Boost audience engagement through smart communication and on-time delivery.",
@@ -125,7 +125,7 @@
     },
     "otp": {
       "code": false,
-      "pagename": "OTP",
+      "pagename": "otp",
       "icon": "/img/icon/otp.svg",
       "pageimg":"/img/pageimg/otp.png",
       "tagline": "Instant Secure verification",
