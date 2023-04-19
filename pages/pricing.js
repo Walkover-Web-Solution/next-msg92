@@ -16,6 +16,8 @@ const campaign = () => {
   var [originCountry, setOriginCountry] = useState('INDIA');
   var [destinationCountry, setDestinationCountry] = useState('INDIA');
   const amountArr = ['1259', '4000', '9000', '17000', '48000', '75000'];
+  // Amount for SMS:1250, 3300, 5400, 10200, 20000, 76500, 154000
+  // Amount for OTP, 1250, 3300, 5400, 11400, 20000, 76500, 160000
 
   var [subscriptionEmail, setSubscriptionEmail] = useState([]);
   var [subscriptionVoice, setSubscriptionVoice] = useState([]);

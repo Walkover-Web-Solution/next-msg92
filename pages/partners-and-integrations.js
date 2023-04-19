@@ -34,7 +34,7 @@ const partnersAndIntegrations = () => {
         </div>
         <div className="container my-5 ">
           <iframe
-            class="airtable-embed elementor-container"
+            className="airtable-embed elementor-container"
             src="https://airtable.com/embed/shrYdNZpl7vaKdcvw?backgroundColor=red&viewControls=on"
             frameborder="0"
             onmousewheel=""

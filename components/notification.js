@@ -18,6 +18,17 @@ const Notification = () =>{
         var label = $(this).text();
         $("#change-country label").html(label);
       });
+
+      /* fetch('https://api.db-ip.com/v2/free/self')
+      .then(response => response.json())
+      .then(response => {
+          console.log('ip response',response);
+      })
+      .catch(error => {
+          // handle the error
+          console.log('error', error);
+      }); */
+
     }, []);
     return (
         <>
