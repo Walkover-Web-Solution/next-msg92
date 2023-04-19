@@ -177,12 +177,12 @@ const ChannelComponent = ({ pageData }) => {
       </div>
 
       <div className={` my-5  px-sm-0 d-flex flex-column justify-content-center justift-content-sm-start section`}>
-        <span className="container c-head sub-heading c-ff-h  pt-4 pt-md-0">Features</span>        
+        <span className="container c-head sub-heading  c-head pt-4 pt-md-0">Features</span>        
         {pageData?.features?.map((item, index) => {
           if(item?.content){
             i++;       
             return (
-              <div className={`container flex-column d-flex align-items-center justify-content-between  ${i%2 ? 'flex-md-row-reverse' : 'flex-md-row'}`}>
+              <div className={`container flex-column d-flex my-5 align-items-center justify-content-between  ${i%2 ? 'flex-md-row-reverse' : 'flex-md-row'}`}>
                 <div className="col-12 col-md-6 d-flex">
                 {item?.img &&
                   <img
