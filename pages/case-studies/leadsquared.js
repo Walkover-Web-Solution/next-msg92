@@ -75,7 +75,6 @@ const leadsquared = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets regular updates, information and notifications of ongoing offers via a secured channel, making the operations reliable and seamless, which results in a better rapport with the customer and increase in sales by more lead conversions.</span>     
       </div>
-      <Footer />
     </>
   );
 };

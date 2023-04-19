@@ -68,7 +68,6 @@ const indialends = () => {
 
 </span>     
       </div>
-      <Footer />
     </>
   );
 };

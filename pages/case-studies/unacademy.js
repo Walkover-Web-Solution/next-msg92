@@ -64,7 +64,6 @@ const azim_Premji = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the teachers gets details of vacancies via secured channel, making the operations reliable and seamless. Moreover, the updates of events and courses sent to students and teachers results in a better coordination and resulting a better network of teachers for better education.</span>
       </div>
-      <Footer />
     </>
   );
 };

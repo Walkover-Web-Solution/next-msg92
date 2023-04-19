@@ -66,7 +66,6 @@ const zing = () => {
 
 </span>     
       </div>
-      <Footer />
     </>
   );
 };

@@ -62,7 +62,6 @@ const razorpay = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets OTPs and payment links via a secured channel, making the operations secure, reliable and seamless, which results in a better rapport with the customer and increase in sales.</span>
       </div>
-      <Footer />
     </>
   );
 };

@@ -63,7 +63,6 @@ const mahindra = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets regular updates and reminders for every service related to their car via a secured channel, making the operations reliable and seamless. Moreover, the secured log in results in a better rapport with the customer and increase in sales.</span>
       </div>
-      <Footer />
     </>
   );
 };

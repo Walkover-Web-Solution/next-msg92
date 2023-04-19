@@ -61,7 +61,6 @@ const loco = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets OTPs on every login and also for changing the Paytm account making it secure via a secured channel, making the operations reliable and seamless, which results in a better rapport with the customer and increase in the number of users.</span>
       </div>
-      <Footer />
     </>
   );
 };

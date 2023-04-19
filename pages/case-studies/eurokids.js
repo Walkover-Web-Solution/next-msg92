@@ -65,7 +65,6 @@ const eurokids = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the parents get regular updates for their children’s ongoing school activities and other information via a secured channel, making the operations reliable and seamless, which results in a better rapport with the parents ensuring the betterment of their students.</span>
       </div>
-      <Footer />
     </>
   );
 };

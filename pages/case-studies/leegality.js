@@ -67,7 +67,6 @@ const leegality = () => {
 
 </span>
       </div>
-      <Footer />
     </>
   );
 };

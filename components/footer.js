@@ -2,8 +2,8 @@ import link from "next/link";
 import { useRouter } from "next/router";
 
 const Footer = ({ path }) => {
-  console.log('path', path);  
-  path = (path.length == 2) ? '/'+path : '';
+  console.log('pathf', path);  
+  path = (path?.length == 2)? '/'+path : '';
   return (
     <>
       <div className="px-2 footer pt-5">

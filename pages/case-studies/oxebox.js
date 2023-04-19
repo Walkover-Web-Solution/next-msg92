@@ -62,7 +62,6 @@ const oxebox = () => {
         <span className="c-fs-3">As a result, the customer gets verification code for verifying their registered mobile numbers. Thereby protecting the information and bill receipts within their user accounts via a secured channel, making the operations reliable and seamless. This results in a better rapport with the customer and increase in sales.
 </span>
       </div>
-      <Footer />
     </>
   );
 };

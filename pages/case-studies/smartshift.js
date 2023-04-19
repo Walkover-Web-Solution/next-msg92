@@ -62,7 +62,6 @@ const smartshift = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets regular updates for every event related to their shift via secured channel making the operations reliable and seamless. Moreover, the secured sign up strengthens bond with customers resulting in a better rapport with the customer and increase in sales.</span>
       </div>
-      <Footer />
     </>
   );
 };

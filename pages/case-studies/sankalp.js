@@ -64,7 +64,6 @@ const sankalp = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the patient gets details of blood banks or donors via secured channel, making the operations reliable and seamless. Moreover, the updates of camps and emergencies sent to donors results in a better coordination and resulting in timely procurement of required blood units saving lives.</span>
       </div>
-      <Footer />
     </>
   );
 };
