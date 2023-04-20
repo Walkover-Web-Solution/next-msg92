@@ -1,8 +1,8 @@
 import { MdDoneOutline, MdClose } from "react-icons/md";
 const pricinghello = () => {
   return <>
-  <div className=" d-flex col-10 col-lg-11 flex-md-row flex-column mx-auto border">
-    <div className=" col-12 col-md-8 col-xl-9  text-start p-4">
+  <div className="price-card hello d-flex col-10 col-lg-11 flex-md-row flex-column mx-auto border">
+    <div className="col-12 col-md-8 col-xl-9 text-start p-4 bg-white">
       <h3>Customer support Platform</h3>
       <div className="d-flex"><div className="c-fs-4 text-primary pe-2"><MdDoneOutline/></div><p className="c-fs-4">Integrate multiple channels on a single platform - Email, RCS, social media, call & more</p></div>
       <div className="d-flex mt-2"><div className="c-fs-4 text-primary pe-2"><MdDoneOutline/></div><p className="c-fs-4">Track, monitor, analyze agent performance</p></div>

@@ -1,8 +1,8 @@
 .nav-pills .nav-link{
   color: var(--black-color) !important;
   &.active{
-    background: var(--light-blue) !important;
-  }
+    background: var(--c-light-grey) !important;
+  }  
 }
 #pricing-pills-tab{
   .nav-item{
@@ -40,9 +40,9 @@
 .card-container{
   .card{
     height: 250px;
-    width: 250px  ;
-    justify-content: baseline;
+    width: 250px;
     .card-body{
+      padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -50,7 +50,7 @@
   }
 }
 .card-popular{
-border: 2px solid var(--primary-color);
+border: 2px solid var(--black-color) !important;
 box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -60,11 +60,12 @@ box-sizing: border-box;
   top: 13px;
   z-index: 3;
   color:white;  
-  border-radius: 100px;
+  border-radius: 100px;  
   padding: 0.1rem 0.7rem;
-  background-color: var(--primary-color);
+  background-color: var(--black-color);
   letter-spacing :1.6px ;
   font-weight: 500;
+  font-size: 16px;
 }
 .flex-gap > .card {
   margin: 16px;
@@ -74,5 +75,5 @@ box-sizing: border-box;
 }
 
 .price-card{
-  background: var(--light-blue) !important;
+  background: var(--c-light-grey) !important;  
 }
