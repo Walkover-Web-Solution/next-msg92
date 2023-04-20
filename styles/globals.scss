@@ -63,15 +63,19 @@ nav {
 }
 
 .product-sec {
-  height: clamp(600px,70vw,700px);
+  width: 100vw;
+  width: fit-content;
+}
+.pro-heading{
+  font-size: 30px;
 }
 .product-card {
-  width: 50%;
-  height: 100%;
+  width: 25%;
+  height: clamp(550px,60vw,850px);
   .product-head {
     position: relative;
     width: 100%;
-    min-height: 70%;
+    height: 70%;
     .product-head-text {
       padding: 25px 0 0 25px;
       position: relative;
@@ -116,14 +120,18 @@ nav {
   }
 }
 .pro-text{
-  font-size: clamp(14px,2vw,18px);
+  font-size: clamp(12px,2vw,18px);
 }
 .pro-btn {
   width: 100%;
+  height: 60px;
 }
 .pro-sec-ico {
   width: 40px;
   height: 40px;
+}
+.pro-btn-text{
+  font-size: var(--c-fs-3);
 }
 .chn-btn {
   width: 240px;
@@ -134,17 +142,82 @@ nav {
     box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.15);
   }
 }
-@media (max-width: 1200px) {
-  .product-sec {
-    height: clamp(500px,60vw,600px);
-  }
+@media (max-width: 1024px) {
   .product-card {
-    width: 50%;
-    height: 100%;
+    width: 25%;
+    height: clamp(500px,50vw,650px);
     .product-head {
       position: relative;
       width: 100%;
-      min-height: 65%;
+      height: 60%;
+      .product-head-text {
+        padding: 25px 0 0 25px;
+        position: relative;
+        z-index: 1;
+      }
+      .caimpaign-pro {
+        background-image: url(/img/campaign-pro.png);
+      }
+      .hello-pro {
+        background-image: url(/img/hello-pro.png);
+      }
+      .segmento-pro {
+        background-image: url(/img/segmento-pro.png);
+      }
+      .otp-pro {
+        background-image: url(/img/otp-pro.png);
+      }
+      .product-head-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100% !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        img {
+          height: 100%;
+          width: 100% !important;
+        }
+      }
+    }
+    .pro-alt {
+      background-color: #2b2b2b !important;
+    }
+    .product-content {
+      background-color: #333333;
+      width: 100%;   
+      height: 40%;   
+    }
+  }
+  .pro-text{
+    font-size: clamp(12px,4vw,16px);
+  }
+  .pro-btn {
+    width: 100%;
+  }
+  .pro-btn-text{
+    font-size:14px;
+
+  }
+  .pro-sec-ico {
+    width: clamp(20px,3vw,40px);
+    height: clamp(20px,3vw,40px);
+  }
+  
+
+}
+@media (max-width: 768px) {
+  .product-card {
+    width: 50%;
+    height: clamp(550px,100vw,650px);
+    .product-head {
+      position: relative;
+      width: 100%;
+      height: 65%;
       .product-head-text {
         padding: 25px 0 0 25px;
         position: relative;
@@ -189,10 +262,91 @@ nav {
     }
   }
   .pro-text{
-    font-size: clamp(12px,1vw,14px);
+    font-size: clamp(14px,12vw,18px);
   }
+  .pro-btn {
+    width: 100%;
+  }
+  .pro-btn-text{
+    font-size: clamp(14px,12vw,18px);
+
+  }
+  .pro-sec-ico {
+    width: clamp(20px,3vw,40px);
+    height: clamp(20px,3vw,40px);
+  }
+  
 
 }
+@media (max-width: 576px) {
+  .product-card {
+    width: 100%;
+    height: clamp(750px,100vw,850px);
+    .product-head {
+      position: relative;
+      width: 100%;
+      height: 65%;
+      .product-head-text {
+        padding: 25px 0 0 25px;
+        position: relative;
+        z-index: 1;
+      }
+      .caimpaign-pro {
+        background-image: url(/img/campaign-pro.png);
+      }
+      .hello-pro {
+        background-image: url(/img/hello-pro.png);
+      }
+      .segmento-pro {
+        background-image: url(/img/segmento-pro.png);
+      }
+      .otp-pro {
+        background-image: url(/img/otp-pro.png);
+      }
+      .product-head-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100% !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        img {
+          height: 100%;
+          width: 100% !important;
+        }
+      }
+    }
+    .pro-alt {
+      background-color: #2b2b2b !important;
+    }
+    .product-content {
+      background-color: #333333;
+      width: 100%;   
+      height: 35%;   
+    }
+  }
+  .pro-text{
+    font-size: clamp(18px,2vw,18px);
+  }
+  .pro-btn {
+    width: 100%;
+  }
+  .pro-btn-text{
+    font-size:18px;
+
+  }
+  .pro-sec-ico {
+    width: clamp(30px,5vw,40px);
+    height: clamp(40px,5vw,40px);
+  }
+  
+
+}
+
 .stats-sec {
   padding: 100px 0;
 }

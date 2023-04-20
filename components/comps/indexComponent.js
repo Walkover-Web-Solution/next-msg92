@@ -1,9 +1,9 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 import TrustedBy from "@/components/trustedby";
 import Image from "next/image";
-import PreFooter from '../preFooter';
-const indexComp = ({params}) => {
-  const path = params ? params?.country : '';
+import PreFooter from "../preFooter";
+const indexComp = ({ params }) => {
+  const path = params ? params?.country : "";
   return (
     <>
       <div className="container d-flex flex-column c-gap-1 align-items-center text-center mt-80">
@@ -12,109 +12,118 @@ const indexComp = ({params}) => {
         </h1>
         <h3 className="small-heading text-dark">
           Secure and robust APIs for SMS, Email, Voice, Authentication and more.
-        </h3>        
-        <a href="https://control.msg91.com/signup/" target="_blank" className="btn btn-dark small-heading c-fw-sb ls-3 btn-lg">
+        </h3>
+        <a
+          href="https://control.msg91.com/signup/"
+          target="_blank"
+          className="btn btn-dark small-heading c-fw-sb ls-3 btn-lg"
+        >
           Get Started
-        </a>        
+        </a>
         <TrustedBy />
       </div>
-      
-      <div className="section product-sec d-flex my-5 my-80">
-        <div className="col-6 d-flex">
+
+      <div className="section product-sec d-flex flex-wrap my-5 my-80">
         <div className="product-card">
           <div className="product-head">
             <div className="product-head-text">
-              <span className="small-heading c-head">Campaign</span>
+              <span className="pro-heading c-head">Campaign</span>
             </div>
             <div className="product-head-img caimpaign-pro"></div>
           </div>
-          <div className="product-content pro-alt p-4 d-flex flex-column justify-content-center gap-4">
+          <div className="product-content pro-alt p-4 d-flex flex-column justify-content-between gap-3">
             <p className="pro-text text-white">
               Empower your employees, Support your customers.
             </p>
-            <a href="/campaign" className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2">              
+            <a
+              href="/campaign"
+              className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2"
+            >
               <span>
                 <img
                   src="./img/icon/campaign.svg"
                   className="pro-sec-ico me-3"
                 />
-                <span className="c-fs-3">Campaign</span>
-              </span>
-              <MdKeyboardArrowRight />              
-            </a>
-          </div>
-        </div>
-        <div className="product-card">
-          <div className="product-head">
-            <div className="product-head-text">
-              <span className="small-heading c-head">Conversation</span>
-            </div>
-            <div className="product-head-img hello-pro"></div>
-          </div>
-          <div className="product-content  p-4 d-flex flex-column justify-content-center gap-4">
-            <p className="pro-text text-white">
-              Boost audience engagement through smart Platform.
-            </p>
-            <a href="/hello" className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2">              
-                <span>
-                  <img
-                    src="./img/icon/hello.svg"
-                    className="pro-sec-ico me-3"
-                  />
-                  <span className="c-fs-3">Hello</span>
-                </span>
-                <MdKeyboardArrowRight />              
-            </a>
-          </div>
-        </div>
-        </div>
-        <div className="col-6 d-flex">
-        <div className="product-card">
-          <div className="product-head">
-            <div className="product-head-text">
-              <span className="small-heading c-head">Segmentation</span>
-            </div>
-            <div className="product-head-img segmento-pro"></div>
-          </div>
-          <div className="product-content pro-alt p-4 d-flex flex-column justify-content-center gap-4">
-            <p className="pro-text text-white">
-              Segment your customers according to their action or event.{" "}
-            </p>
-            <a href="/segmento" className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2">              
-              <span>
-                <img
-                  src="./img/icon/segmento.svg"
-                  className="pro-sec-ico me-3"
-                />
-                <span className="c-fs-3">Segmento</span>
-              </span>
-              <MdKeyboardArrowRight />            
-            </a>
-          </div>
-        </div>
-        <div className="product-card">
-          <div className="product-head">
-            <div className="product-head-text">
-              <span className="small-heading c-head">OTP</span>
-            </div>
-            <div className="product-head-img otp-pro"></div>
-          </div>
-          <div className="product-content p-4 d-flex flex-column justify-content-center gap-4">
-            <p className="pro-text text-white">
-              Quick and reliable authentication by 2FA using multiple channels.
-            </p>
-            <a href="/otp" className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2">              
-              <span>
-                <img src="./img/icon/otp.svg" className="pro-sec-ico me-3" />
-                <span className="c-fs-3">OTP</span>
+                <span className="pro-btn-text">Campaign</span>
               </span>
               <MdKeyboardArrowRight />
             </a>
           </div>
         </div>
+        <div className="product-card">
+          <div className="product-head">
+            <div className="product-head-text">
+              <span className="pro-heading c-head">Conversation</span>
+            </div>
+            <div className="product-head-img hello-pro"></div>
+          </div>
+          <div className="product-content  p-4 d-flex flex-column justify-content-between gap-3">
+            <p className="pro-text text-white">
+            Segment your customers according to their action or event
+            </p>
+            <a
+              href="/hello"
+              className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2"
+            >
+              <span>
+                <img src="./img/icon/hello.svg" className="pro-sec-ico me-3" />
+                <span className="pro-btn-text">Hello</span>
+              </span>
+              <MdKeyboardArrowRight />
+            </a>
+          </div>
+        </div>
+        <div className="product-card">
+          <div className="product-head">
+            <div className="product-head-text">
+              <span className="pro-heading c-head">Segmentation</span>
+            </div>
+            <div className="product-head-img segmento-pro"></div>
+          </div>
+          <div className="product-content pro-alt p-4 d-flex flex-column justify-content-between gap-3">
+            <p className="pro-text text-white">
+              Segment your customers according to their action or event.{" "}
+            </p>
+            <a
+              href="/segmento"
+              className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2"
+            >
+              <span>
+                <img
+                  src="./img/icon/segmento.svg"
+                  className="pro-sec-ico me-3"
+                />
+                <span className="pro-btn-text">Segmento</span>
+              </span>
+              <MdKeyboardArrowRight />
+            </a>
+          </div>
+        </div>
+        <div className="product-card">
+          <div className="product-head">
+            <div className="product-head-text">
+              <span className="pro-heading c-head">OTP</span>
+            </div>
+            <div className="product-head-img otp-pro"></div>
+          </div>
+          <div className="product-content p-4 d-flex flex-column justify-content-between gap-3">
+            <p className="pro-text text-white">
+              Quick and reliable authentication by 2FA using multiple channels.
+            </p>
+            <a
+              href="/otp"
+              className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2"
+            >
+              <span>
+                <img src="./img/icon/otp.svg" className="pro-sec-ico me-3" />
+                <span className="pro-btn-text">OTP</span>
+              </span>
+              <MdKeyboardArrowRight />
+            </a>
+          </div>
         </div>
       </div>
-      
+
       <div className="container my-5 my-80">
         <h2 className="sub-heading c-head mb-2">Communication Channels</h2>
         <p className="c-fs-2 w-75">
@@ -221,8 +230,8 @@ const indexComp = ({params}) => {
           </a> */}
         </div>
       </div>
-      
-      <div className="section c-bg-grey stats-sec align-items-center my-80" >
+
+      <div className="section c-bg-grey stats-sec align-items-center my-80">
         <div className="container h-100 d-flex align-items-center">
           <div className="col-3 d-flex flex-column gap-2">
             <h2 className="c-fs-1 c-fw-b">2.5 Billion+</h2>
@@ -254,7 +263,7 @@ const indexComp = ({params}) => {
           </div>
         </div>
       </div>
-      
+
       <div className="container my-5 more-services-sec my-80">
         <h2 className="sub-heading c-head">More Services</h2>
         <div className="d-flex my-5">
@@ -370,7 +379,7 @@ const indexComp = ({params}) => {
           </div>
         </div>
       </div>
-      
+
       <div className="container  my-80">
         <h2 className="sub-heading c-head">Our Client Stories</h2>
         <div className="d-flex col-12 gap-4 my-4">
