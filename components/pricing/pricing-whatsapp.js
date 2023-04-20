@@ -41,10 +41,10 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp}) => {
               ?              
                 <div className="text-center d-flex flex-column mb-4 mb-sm-0 align-items-center ">
                   <div className="popular-chip c-fs-6">POPULAR</div>
-                  <div className="card-popular price-card card text-center mb-4 mb-sm-0 c-bg-grey">                  
+                  <div className="card-popular price-card whatsapp card text-center mb-4 mb-sm-0 c-bg-grey">                  
                     <div className="card-body">
                       <h3 className="c-fs-3">{item.name}</h3>
-                      <h5 className="c-fs-4 mt-2">
+                      <h5 className="mt-2 c-fs-2 text-green">
                         {symbol}
                         {(selectedMode === 'Monthly') ? item.plan_amounts[2]?.plan_amount : (selectedMode === 'Half yearly') ? item.plan_amounts[1]?.plan_amount : item.plan_amounts[0]?.plan_amount}
                         /
@@ -61,17 +61,17 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp}) => {
                         </span>
                         {item.plan_services[0].service_credit.free_credits} for Outbound calls
                       </div>                    
-                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-primary mt-2">
+                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                         Get Started
                       </a>
                     </div>
                   </div>
                 </div>
               :
-                <div className="card price-card border-0 text-center mb-4 mb-sm-0 c-bg-grey">                
+                <div className="card price-card whatsapp border-0 text-center mb-4 mb-sm-0 c-bg-grey">                
                   <div className="card-body">
                     <h3 className="c-fs-3">{item.name}</h3>
-                    <h5 className="c-fs-4 mt-2">
+                    <h5 className="mt-2 c-fs-2 text-green">
                       {symbol}
                       {(selectedMode === 'Monthly') ? item.plan_amounts[0]?.plan_amount : item.plan_amounts[1].plan_amount}
                       /
@@ -88,7 +88,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp}) => {
                       </span>
                       {item.plan_services[0].service_credit.service_credit_rates[0].free_credits} for for Whatsapp
                     </div>                    
-                    <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-primary mt-2">
+                    <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                       Get Started
                     </a>
                   </div>
@@ -98,11 +98,11 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp}) => {
             )
           }):''
       }
-        <div className="card price-card border-0 text-center mb-4 mb-sm-0 c-bg-grey">
+        <div className="card price-card whatsapp border-0 text-center mb-4 mb-sm-0 c-bg-grey">
           <div className="card-body">
             <h3 className="c-fs-3">CUSTOM</h3>                  
             <p className="c-fs-5">Talk to sales for a customized plan.</p>
-            <button data-bs-toggle="modal" data-bs-target="#custom-pricing-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-primary mt-2">
+            <button data-bs-toggle="modal" data-bs-target="#custom-pricing-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
               Talk to sales
             </button>
           </div>
