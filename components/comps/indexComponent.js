@@ -6,7 +6,6 @@ const indexComp = ({params}) => {
   const path = params ? params?.country : '';
   return (
     <>
-    {/* {console.log('index page params',params)} */}
       <div className="container d-flex flex-column c-gap-1 align-items-center text-center mt-80">
         <h1 className="heading text-dark col-10 col-xxl-8 col-xl-8 ">
           Cloud communication platform for all your ideas!
