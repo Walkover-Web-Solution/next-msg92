@@ -7,7 +7,7 @@ const indexComp = ({params}) => {
   return (
     <>
       <div className="container d-flex flex-column c-gap-1 align-items-center text-center mt-80">
-        <h1 className="heading text-dark col-10 col-xxl-8 col-xl-8 ">
+        <h1 className="heading text-dark col-md-10 col-12 col-xxl-8 col-xl-8 ">
           Cloud communication platform for all your ideas!
         </h1>
         <h3 className="small-heading text-dark">

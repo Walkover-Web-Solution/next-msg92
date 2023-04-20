@@ -9,9 +9,9 @@
     --c-body:'Plus Jakarta Sans', sans-serif;
 
     // font-size
-    --heading:clamp(2.125rem,4vw,3rem); 
+    --heading:clamp(1.5rem,4vw,3rem); //20px //48px
     --sub-heading:clamp(1.75rem,3vw,2.5rem); 
-    --small-heading:clamp(1.25rem,2vw,1.5rem); 
+    --small-heading:clamp(0.8rem,2vw,1.5rem); //14px //24px
     --c-fs-1:clamp(1.25rem,2.6vw,2rem); 
     --c-fs-2:clamp(1rem,3vw,1.5rem);
     --c-fs-3:clamp(1rem,1.5vw,1.25rem); //20px

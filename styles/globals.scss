@@ -261,15 +261,15 @@ body::-webkit-scrollbar-button {
  }
  .trustimage{
   height: 28px;
-  width: 187px;
+  width: fit-content;
  }
  .more-services-img{
   
  }
  @media only screen and (max-width: 1025px) {
   .trustimage{
-    height: 16px;
-    width: 107px;
+    height: 15px;
+    width: fit-content;
    }
 }
 
