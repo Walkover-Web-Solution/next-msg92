@@ -13,9 +13,9 @@ import { InlineWidget } from "react-calendly";
 
 const campaign = () => {
   var [pricing, setPricing] = useState([]);
-  var [originCountry, setOriginCountry] = useState('INDIA');
-  var [destinationCountry, setDestinationCountry] = useState('INDIA');
-  const amountArr = ['1259', '4000', '9000', '17000', '48000', '75000'];
+  var [originCountry, setOriginCountry] = useState('India');
+  var [destinationCountry, setDestinationCountry] = useState('India');
+  const amountArr = ['1250', '3300', '5400', '10200', '20000', '76500', '154000'];
   // Amount for SMS:1250, 3300, 5400, 10200, 20000, 76500, 154000
   // Amount for OTP, 1250, 3300, 5400, 11400, 20000, 76500, 160000
 
@@ -26,15 +26,16 @@ const campaign = () => {
   // let pricing = []
 
   const fetchSMSData = async (price, origin, destination) => {
-    var newData = price
-    amountArr.forEach(async function (item, index) {
+    var newData = [];
+    let i=0;
+    for(;i<amountArr.length;i++){
       if (price.length <= amountArr.length) {
         //const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${item}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
-        const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${item}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
+        const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
         newData.push(response.data.data)
-        setPricing([...newData])
       }
-    })
+    }
+    setPricing([...newData])
   };
 
   const fetchSubscriptionEmail = async (currency, msId) => {
@@ -60,69 +61,80 @@ const campaign = () => {
 
 
   useEffect(() => {
-    fetchSMSData([], originCountry, destinationCountry)
+    fetch('https://api.db-ip.com/v2/free/self')
+      .then(response => response.json())
+      .then(response => {
+        setOriginCountry(response?.countryName);
+        setDestinationCountry(response?.countryName);        
+        fetchSMSData([], originCountry, destinationCountry)
+        //console.log('ip response',response);
+      })
+      .catch(error => {
+          // handle the error
+          console.log('error', error);
+      });    
   }, []);
 
   return (
     <>
       <div className="container d-flex justify-content-center">
         <div className="text-center py-5">
-          <h1 className="sub-heading mb-5">
-            A plan for every business and budget, Find yours today!
+          <h1 className="sub-heading mb-5 heading">
+            A plan for every business and budget,<br/> Find yours today!
           </h1>
           <div className="c-fs-3">
             <div className="d-flex justify-content-center">
               <ul className="nav nav-pills c-fs-5 pb-5" id="pricing-pills-tab" role="tablist">
                 <li className="nav-item" role="presentation">
-                  <button onClick={() => { fetchSMSData([], 'INDIA', 'INDIA') }} className="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-sms" type="button" role="tab" aria-controls="pills-sms" aria-selected="true">
+                  <button onClick={() => { fetchSMSData([], originCountry, destinationCountry) }} className="nav-link sms active" data-bs-toggle="pill" data-bs-target="#pills-sms" type="button" role="tab" aria-controls="pills-sms" aria-selected="true">
                     <img src="/img/icon/sms.svg" alt="#" />
                     SMS
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button onClick={() => { fetchSubscriptionEmail('INR', '1') }} className="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-email" type="button" role="tab" aria-controls="pills-email" aria-selected="false">
+                  <button onClick={() => { fetchSubscriptionEmail('INR', '1') }} className="nav-link email" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-email" type="button" role="tab" aria-controls="pills-email" aria-selected="false">
                     <img src="/img/icon/email.svg" alt="#" />
                     Email
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button onClick={() => { fetchSubscriptionVoice('INR', '6') }} className="nav-link" data-bs-toggle="pill" data-bs-target="#pills-voice" type="button" role="tab" aria-controls="pills-voice" aria-selected="false">
+                  <button onClick={() => { fetchSubscriptionVoice('INR', '6') }} className="nav-link voice" data-bs-toggle="pill" data-bs-target="#pills-voice" type="button" role="tab" aria-controls="pills-voice" aria-selected="false">
                     <img src="/img/icon/voice.svg" alt="#" />
                     Voice
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button onClick={() => { fetchSubscriptionWhatsapp('INR', '5') }} className="nav-link" data-bs-toggle="pill" data-bs-target="#pills-whatsapp" type="button" role="tab" aria-controls="pills-whatsapp" aria-selected="false">
+                  <button onClick={() => { fetchSubscriptionWhatsapp('INR', '5') }} className="nav-link whatsapp" data-bs-toggle="pill" data-bs-target="#pills-whatsapp" type="button" role="tab" aria-controls="pills-whatsapp" aria-selected="false">
                     <img src="/img/icon/whatsapp.svg" alt="#" />
                     WhatsApp
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button className="nav-link" data-bs-toggle="pill" data-bs-target="#pills-rcs" type="button" role="tab" aria-controls="pills-rcs" aria-selected="false">
+                  <button className="nav-link rcs" data-bs-toggle="pill" data-bs-target="#pills-rcs" type="button" role="tab" aria-controls="pills-rcs" aria-selected="false">
                     <img src="/img/icon/rcs.svg" alt="#" />
                     RCS
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button onClick={() => { fetchSMSData([], 'INDIA', 'INDIA') }} className="nav-link" data-bs-toggle="pill" data-bs-target="#pills-otp" type="button" role="tab" aria-controls="pills-otp" aria-selected="false">
+                  <button onClick={() => { fetchSMSData([], originCountry, destinationCountry) }} className="nav-link otp" data-bs-toggle="pill" data-bs-target="#pills-otp" type="button" role="tab" aria-controls="pills-otp" aria-selected="false">
                     <img src="/img/icon/otp.svg" alt="#" />
                     OTP
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button className="nav-link" data-bs-toggle="pill" data-bs-target="#pills-hello" type="button" role="tab" aria-controls="pills-hello" aria-selected="false">
+                  <button className="nav-link hello" data-bs-toggle="pill" data-bs-target="#pills-hello" type="button" role="tab" aria-controls="pills-hello" aria-selected="false">
                     <img src="/img/icon/hello.svg" alt="#" />
                     Hello
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button onClick={() => { fetchSubscriptionSegmento('INR', '2') }} className="nav-link" data-bs-toggle="pill" data-bs-target="#pills-segmento" type="button" role="tab" aria-controls="pills-segmento" aria-selected="false">
+                  <button onClick={() => { fetchSubscriptionSegmento('INR', '2') }} className="nav-link segmento" data-bs-toggle="pill" data-bs-target="#pills-segmento" type="button" role="tab" aria-controls="pills-segmento" aria-selected="false">
                     <img src="/img/icon/segmento.svg" alt="#" />
                     Segmento
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button className="nav-link" data-bs-toggle="pill" data-bs-target="#pills-campaign" type="button" role="tab" aria-controls="pills-campaign" aria-selected="false">
+                  <button className="nav-link campaign" data-bs-toggle="pill" data-bs-target="#pills-campaign" type="button" role="tab" aria-controls="pills-campaign" aria-selected="false">
                     <img src="/img/icon/campaign.svg" alt="#" />
                     Campaign
                   </button>

@@ -9,13 +9,13 @@
     --c-body:'Plus Jakarta Sans', sans-serif;
 
     // font-size
-    --heading:clamp(2.125rem,4vw,3rem); 
+    --heading:clamp(1.5rem,4vw,3rem); //20px //48px
     --sub-heading:clamp(1.75rem,3vw,2.5rem); 
-    --small-heading:clamp(1.25rem,2vw,1.5rem); 
+    --small-heading:clamp(0.8rem,2vw,1.5rem); //14px //24px
     --c-fs-1:clamp(1.25rem,2.6vw,2rem); 
     --c-fs-2:clamp(1rem,3vw,1.5rem);
-    --c-fs-3:clamp(1rem,1.5vw,1.25rem); //20px
-    --c-fs-4:clamp(1rem,1.2vw,1.2rem); //18px
+    --c-fs-3:clamp(1.15rem,1.5vw,1.25rem); //20px //18px
+    --c-fs-4:clamp(1rem,1.2vw,1.15rem); //16px //18px
     --c-fs-5:clamp(0.875rem,1vw,0.8rem); 
 
     // colors
@@ -25,10 +25,7 @@
     --black-color:#212528;
     --white-color:#ffffff;
     --c-light-grey: #f2f2f3;
-    --c-grey:#6C6C6C;
-    --hello :#F2CA55;
-    --hello-dark :#8C5D00;
-    --hello-light :#FDF4E2;
+    --c-grey:#6C6C6C;    
     --otp:#3A73B5;
     --segmento:#E55CA1;
     --campaign:#9C5CE5;
@@ -39,7 +36,33 @@
     --voice-light: rgba(105, 107, 239, 0.12);
     --rcs-light:  rgba(56, 146, 224, 0.12);
     --border-color: #ddd;
-
     
-
+    /* product colors */
+    --sms :#1E75BA;
+    --sms-dark :#1258A3;
+    --sms-light :#E2F0FF;
+    --email :#CC5229;
+    --email-dark :#8C2E0E;
+    --email-light :#F9EAE5;
+    --voice :#696BEF;
+    --voice-dark :#3A3BA6;
+    --voice-light :#EDEDFD;
+    --whatsapp :#29A653;
+    --whatsapp-dark :#307368;
+    --whatsapp-light :#E8F7E8;
+    --rcs :#1A73E8;
+    --rcs-dark :#264D99;
+    --rcs-light :#D0DAE4;
+    --otp :#1E75BA;
+    --otp-dark :#1258A3;
+    --otp-light :#E2F0FF;
+    --hello :#F2CA55;
+    --hello-dark :#8C5D00;
+    --hello-light :#FDF4E2;
+    --segmento :#E55CA1;
+    --segmento-dark :#80335A;
+    --segmento-light :#E5D8DF;
+    --campaign :#AA50F6;
+    --campaign-dark :#5F388C;
+    --campaign-light :#F6EFFC;    
 }

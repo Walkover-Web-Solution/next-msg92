@@ -19,7 +19,7 @@ const pricingsegmento = ({subscriptionSegmento, fetchSubscriptionSegmento}) => {
     }
   };
   return <>
-  <div className="d-flex justify-content-center mb-4">
+      {/* <div className="d-flex justify-content-center mb-4">
         <select style={{width: 'fit-content'}} className="form-select me-4" aria-label="Default select example" onChange={(e)=>changeCurrency(e.target.value)}>
           <option value="INR">INR</option>
           <option value="USD">USD</option>
@@ -40,10 +40,10 @@ const pricingsegmento = ({subscriptionSegmento, fetchSubscriptionSegmento}) => {
               ?              
                 <div className="text-center d-flex flex-column mb-4 mb-sm-0 align-items-center ">
                   <div className="popular-chip c-fs-6">POPULAR</div>
-                  <div className="card-popular price-card card text-center mb-4 mb-sm-0 c-bg-grey">                  
+                  <div className="card-popular price-card segmento card text-center mb-4 mb-sm-0 c-bg-grey">                  
                     <div className="card-body">
                       <h3 className="c-fs-3">{item.name}</h3>
-                      <h5 className="c-fs-4 mt-2">
+                      <h5 className="c-fs-2 mt-2 text-green">
                         {symbol}
                         {(selectedMode === 'Monthly') ? item.plan_amounts[2]?.plan_amount : (selectedMode === 'Half yearly') ? item.plan_amounts[1]?.plan_amount : item.plan_amounts[0]?.plan_amount}
                         /
@@ -58,14 +58,14 @@ const pricingsegmento = ({subscriptionSegmento, fetchSubscriptionSegmento}) => {
                         </span>
                         {item.plan_services[0].service_credit.free_credits} for Outbound calls
                       </div>                    
-                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-primary mt-2">
+                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                         Get Started
                       </a>
                     </div>
                   </div>
                 </div>
               :
-                <div className="card price-card border-0 text-center mb-4 mb-sm-0 c-bg-grey">                
+                <div className="card price-card segmento border-0 text-center mb-4 mb-sm-0 c-bg-grey">                
                   <div className="card-body">
                     <h3 className="c-fs-3">{item.name}</h3>
                     <h5 className="c-fs-4 mt-2">
@@ -83,7 +83,7 @@ const pricingsegmento = ({subscriptionSegmento, fetchSubscriptionSegmento}) => {
                       </span>
                       {item.plan_services[0].service_credit.service_credit_rates[0].free_credits} for for Whatsapp
                     </div>                    
-                    <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-primary mt-2">
+                    <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                       Get Started
                     </a>
                   </div>
@@ -93,17 +93,21 @@ const pricingsegmento = ({subscriptionSegmento, fetchSubscriptionSegmento}) => {
             )
           }):''
       }
-        <div className="card price-card border-0 text-center mb-4 mb-sm-0 c-bg-grey">
+        <div className="card price-card segmento border-0 text-center mb-4 mb-sm-0 c-bg-grey">
           <div className="card-body">
             <h3 className="c-fs-3">CUSTOM</h3>                  
             <p className="c-fs-5">Talk to sales for a customized plan.</p>
-            <button data-bs-toggle="modal" data-bs-target="#custom-pricing-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-primary mt-2">
+            <button data-bs-toggle="modal" data-bs-target="#custom-pricing-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
               Talk to sales
             </button>
           </div>
         </div>
+      </div> */}
+      <div className="price-card rcs d-flex col-11 col-lg-10 flex-column mx-auto c-bg-grey p-4">
+      <h3 className="c-fs=3">Connect our support for the customized pricing.</h3>
+      <a href="/contact-us" className="btn btn-primary col-6 col-sm-5 col-md-3 mx-auto mt-3">Talk to an Expert</a>
       </div>
-    </>;
+    </>
 };
 
 export default pricingsegmento;

@@ -6,9 +6,8 @@ const indexComp = ({params}) => {
   const path = params ? params?.country : '';
   return (
     <>
-    {/* {console.log('index page params',params)} */}
       <div className="container d-flex flex-column c-gap-1 align-items-center text-center mt-80">
-        <h1 className="heading text-dark col-10 col-xxl-8 col-xl-8 ">
+        <h1 className="heading text-dark col-md-10 col-12 col-xxl-8 col-xl-8 ">
           Cloud communication platform for all your ideas!
         </h1>
         <h3 className="small-heading text-dark">
@@ -21,6 +20,7 @@ const indexComp = ({params}) => {
       </div>
       
       <div className="section product-sec d-flex my-5 my-80">
+        <div className="col-6 d-flex">
         <div className="product-card">
           <div className="product-head">
             <div className="product-head-text">
@@ -29,7 +29,7 @@ const indexComp = ({params}) => {
             <div className="product-head-img caimpaign-pro"></div>
           </div>
           <div className="product-content pro-alt p-4 d-flex flex-column justify-content-center gap-4">
-            <p className="c-fs-3 text-white">
+            <p className="pro-text text-white">
               Empower your employees, Support your customers.
             </p>
             <a href="/campaign" className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2">              
@@ -38,7 +38,7 @@ const indexComp = ({params}) => {
                   src="./img/icon/campaign.svg"
                   className="pro-sec-ico me-3"
                 />
-                <span className="">Campaign</span>
+                <span className="c-fs-3">Campaign</span>
               </span>
               <MdKeyboardArrowRight />              
             </a>
@@ -52,7 +52,7 @@ const indexComp = ({params}) => {
             <div className="product-head-img hello-pro"></div>
           </div>
           <div className="product-content  p-4 d-flex flex-column justify-content-center gap-4">
-            <p className="c-fs-3 text-white">
+            <p className="pro-text text-white">
               Boost audience engagement through smart Platform.
             </p>
             <a href="/hello" className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2">              
@@ -61,12 +61,14 @@ const indexComp = ({params}) => {
                     src="./img/icon/hello.svg"
                     className="pro-sec-ico me-3"
                   />
-                  <span className="">Hello</span>
+                  <span className="c-fs-3">Hello</span>
                 </span>
                 <MdKeyboardArrowRight />              
             </a>
           </div>
         </div>
+        </div>
+        <div className="col-6 d-flex">
         <div className="product-card">
           <div className="product-head">
             <div className="product-head-text">
@@ -75,7 +77,7 @@ const indexComp = ({params}) => {
             <div className="product-head-img segmento-pro"></div>
           </div>
           <div className="product-content pro-alt p-4 d-flex flex-column justify-content-center gap-4">
-            <p className="c-fs-3 text-white">
+            <p className="pro-text text-white">
               Segment your customers according to their action or event.{" "}
             </p>
             <a href="/segmento" className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2">              
@@ -84,7 +86,7 @@ const indexComp = ({params}) => {
                   src="./img/icon/segmento.svg"
                   className="pro-sec-ico me-3"
                 />
-                <span className="">Segmento</span>
+                <span className="c-fs-3">Segmento</span>
               </span>
               <MdKeyboardArrowRight />            
             </a>
@@ -98,17 +100,18 @@ const indexComp = ({params}) => {
             <div className="product-head-img otp-pro"></div>
           </div>
           <div className="product-content p-4 d-flex flex-column justify-content-center gap-4">
-            <p className="c-fs-3 text-white">
+            <p className="pro-text text-white">
               Quick and reliable authentication by 2FA using multiple channels.
             </p>
             <a href="/otp" className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2">              
               <span>
                 <img src="./img/icon/otp.svg" className="pro-sec-ico me-3" />
-                <span className="">OTP</span>
+                <span className="c-fs-3">OTP</span>
               </span>
               <MdKeyboardArrowRight />
             </a>
           </div>
+        </div>
         </div>
       </div>
       
