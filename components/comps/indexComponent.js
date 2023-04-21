@@ -419,7 +419,7 @@ const indexComp = ({ params }) => {
               </a>
             </div>
           </div>
-          <div className="col-12 col-sm-4  col-md-4 col-lg-6 d-flex flex-sm-column flex-row gap-2 gap-sm-3 gap-md-4">
+          <div className="col-12 col-sm-4 col-md-4 col-lg-6 d-flex flex-sm-column flex-row gap-2 gap-sm-3 gap-md-4">
             <div className="c-hover d-flex align-items-center col-6 col-sm-12">
               <Image
                 className="secc-client-img col-12 col-lg-4"
@@ -428,7 +428,7 @@ const indexComp = ({ params }) => {
                 height={220}
                 alt="secc-client-img"
               />
-              <div className=" d-none d-md-block c-fs-3 p-3">
+              <div className=" d-none d-lg-block c-fs-3 p-3">
                 <p className="pe-2">
                   Unacademy ensures seamless communication using SMS via MSG91.
                 </p>
@@ -449,7 +449,7 @@ const indexComp = ({ params }) => {
                 height={220}
                 alt="secc-client-img"
               />
-              <div className="d-none d-md-block c-fs-3 p-3">
+              <div className="d-none d-lg-block c-fs-3 p-3">
                 <p className="pe-2">
                   Ixigo ensures seamless communication using SMS via MSG91.
                 </p>

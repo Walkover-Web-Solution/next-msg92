@@ -83,8 +83,8 @@ const aboutUsComp = () => {
                         <div className="card shadow-sm">
                             <div><img src="/img/about_Us/ravi_dangi.png" className="card-img-top" alt="" /></div>
                             <div className="card-body">
-                                <p className="c-fs-3 c-fw-m card-text">Ravi Dangi</p>
-                                <p className="c-fs-4 card-text mt-2">Sales</p>
+                                <p className="c-fs-3 c-fw-m card-text">Ravi Dangi sbajjsggsd</p>
+                                <p className="c-fs-4 card-text mt-2">Founder &amp; CEO dhusih</p>
                                 <p className="c-fs-5 card-text mt-2">Mistakenly believed Engineer, he’s a sales buff.</p>
                             </div>
                         </div>
