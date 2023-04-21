@@ -61,7 +61,7 @@ const campaign = () => {
 
 
   useEffect(() => {
-    fetch('https://api.db-ip.com/v2/free/self')
+      fetch('https://api.db-ip.com/v2/free/self')
       .then(response => response.json())
       .then(response => {
         setOriginCountry(response?.countryName);
