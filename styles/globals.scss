@@ -67,7 +67,7 @@ nav {
   width: fit-content;
 }
 .pro-heading{
-  font-size: 30px;
+  font-size: clamp(20px,3vw,30px);
 }
 .product-card {
   width: 25%;
@@ -556,4 +556,9 @@ body::-webkit-scrollbar-button {
 }
 .otp-dark{
   color :#1258A3;
+}
+//
+.feature-img{
+  width: clamp(300px,50vw,600px);
+  height: auto;
 }

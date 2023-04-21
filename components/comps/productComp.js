@@ -41,12 +41,12 @@ const ProductComponent = ({pageData, params }) => {
           if(item?.content){
             i++;       
             return (
-              <div className={`container flex-column d-flex my-5 align-items-center justify-content-between  ${i%2 ? 'flex-md-row-reverse' : 'flex-md-row'}`}>
+              <div className={`container flex-column d-flex my-5 align-items-center justify-content-md-between justify-content-center  ${i%2 ? 'flex-md-row-reverse' : 'flex-md-row'}`}>
                 <div className="col-12 col-md-6 d-flex">
                 {item?.img &&
                   <img
                   src={item?.img}
-                  className="feature-img ms-auto"
+                  className="feature-img "
                 />
                 }                
                 </div>
