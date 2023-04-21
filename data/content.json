@@ -39,6 +39,11 @@
           "img": "/img/feature/hello-workflow.svg",
           "heading": "Workflow",
           "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
+        },
+        {
+          "img": "/img/feature/hello-screen-control.svg",
+          "heading": "Screen Control",
+          "content": "Control your customer’s screen from where you are Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
         }
       ]
     },
@@ -90,8 +95,8 @@
       "icon": "/img/icon/segmento.svg",
       "pagename":"segmento",
       "pageimg":"/img/pageimg/segmento.png",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "target based marketing",
+      "heading": "Personalize customer journeys with data segmentation Segment people based on their demographics, behaviour, interests and other characteristics.",
       "features": [
         {
           "img": "/img/feature/segmento-create-filters-as-per-segments.svg",
@@ -129,7 +134,7 @@
       "icon": "/img/icon/otp.svg",
       "pageimg":"/img/pageimg/otp.png",
       "tagline": "Instant Secure verification",
-      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication",
+      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication.",
       "features": [
         {
           "img": "/img/feature/otp-simple-login.svg",
@@ -161,8 +166,8 @@
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl",
       "pageimg":"/img/pageimg/shorturl.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Simplify your links",
+      "heading": "Customise, share and track smart links Optimise your complex links to create short, cleaner links that are easier to share.",
       "features": [
         {
           "img": "/img/feature/shorturl-no-code.svg",
@@ -189,7 +194,7 @@
       "icon": "/img/icon/knowledgebase.svg",
       "pagename": "KnowledgeBase",
       "pageimg":"/img/pageimg/knowledgebase.svg",
-      "tagline": "Revolutionize customer support",
+      "tagline": "streamline your Knowledge",
       "heading": "Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience",
       "features": [
         {
@@ -221,41 +226,41 @@
       "code": true,
       "pagename": "SMS",
       "icon": "/img/icon/sms.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Next level messaging",
+      "heading": "Engage your customers globally with quick, scalable and customizable messages Integrate our developer-friendly APIs to send and receive text messages. Our distributed carrier network and intelligent routing ensure highest delivery and lowest latency.",
       "features": [
         {
-          "img": "/img/feature/one.svg",
+          "img": "/img/feature/sms-intelligent-sms-routing.svg",
           "heading": "Intelligent SMS Routing",
           "content": "We find the most reliable route for every message. Your message is sent using your network telecom operator for fast delivery. Incase it fails, within fraction of seconds, we retry and deliver using other network operators."
         },
         {
-          "img": "/img/feature/two.svg",
+          "img": "/img/feature/sms-a-reliable-scalable-and-feature-rich-sms-api.svg",
           "heading": "A reliable, scalable and feature-rich SMS API",
           "content": "Integrate easily with our developer-friendly SMS API. Built for developers by developers, explore quick-start guides, code snippets, SDKs and more to smoothen the integration process. Available in all programming languages."
         },
         {
-          "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
+          "img": "/img/feature/sms-multi-lingual-support.svg",
           "heading": "Multi-lingual support",
           "content": "Converse with your audience in their local language. Take your engagement to the next level. Build customer confidence as you send messages in their regional or foreign language anywhere across the world."
         },
         {
-          "img": "/img/feature/two.svg",
+          "img": "/img/feature/sms-personalized-sms.svg",
           "heading": "Personalized SMS",
           "content": "Increase customer satisfaction with meaningful engagement. Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI."
         },
         {
-          "img": "/img/feature/two.svg",
+          "img": "/img/feature/sms-link-shortener.svg",
           "heading": "Link shortener",
           "content": "Transform long URL in a shorter, more readable link. Enable the deeply integrated link shortener to convert long URL to shorter links. Get detailed user report on clicks from mobile numbers, browser and IP."
         },
         {
-          "img": "/img/feature/two.svg",
+          "img": "/img/feature/sms-enhanced-analytics.svg",
           "heading": "Enhanced Analytics",
           "content": "Real-time graphical view for monitoring and troubleshooting. Optimize your SMS delivery, measure the effectiveness of your campaigns, improve ROI. Always know which messages customers have received and which are missed."
         },
         {
-          "img": "/img/feature/two.svg",
+          "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
           "heading": "Enjoy reliable, low latency delivery-worldwide",
           "content": "Reach 180+ countries reliably with localized senders. Our backend is optimized to process a very high volume of SMS. The automatic rerouting of global traffic in real-time helps us avoid outages and latency."
         }
@@ -273,8 +278,8 @@
       "code": true,
       "pagename": "Email",
       "icon": "/img/icon/email.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "smarter email strategy",
+      "heading": "Smart emails that land directly into the right inbox Make the most of these powerful touchpoints between your brand and your customers.",
       "features": [
         {
           "img": "/img/feature/email-template-builder.svg",
@@ -315,8 +320,8 @@
       "code": true,
       "pagename": "Voice",
       "icon": "/img/icon/voice.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "connect with confidence",
+      "heading": "Boost customer engagement and build trust Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
@@ -362,8 +367,8 @@
       "code": true,
       "pagename": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "dominate popular platforms",
+      "heading": "Drive better customer engagement outcomes Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
           "img": "/img/feature/whatsapp-support-base64.svg",
@@ -404,15 +409,16 @@
   "in":{
     "pagename": "index",
     "index":{
+      "code":"no",
       "pagename":"index",
-      "head":"this is india index"
+      "head":"this is global index"
     },
     "hello":{
       "code": false,
       "icon": "/img/icon/hello.svg",
       "pagename":"hello",      
       "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Never lose sight of what’s important Don’t just solve tickets, build customer relationships",
       "pageimg":"/img/pageimg/hello.png",
       "features": [
       
@@ -440,15 +446,20 @@
           "img": "/img/feature/hello-workflow.svg",
           "heading": "Workflow",
           "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
+        },
+        {
+          "img": "/img/feature/hello-screen-control.svg",
+          "heading": "Screen Control",
+          "content": "Control your customer’s screen from where you are Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
         }
       ]
     },
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"Campaign",
+      "pagename":"campaign",
       "tagline": "Event Base automation",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Connect conversations across channels and tools Deliver personalized, engaging and seamless experiences",
       "pageimg":"/img/pageimg/campaign.svg",
       "features": [
         {
@@ -489,30 +500,30 @@
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"Segmento",
+      "pagename":"segmento",
       "pageimg":"/img/pageimg/segmento.png",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "target based marketing",
+      "heading": "Personalize customer journeys with data segmentation Segment people based on their demographics, behaviour, interests and other characteristics.",
       "features": [
         {
           "img": "/img/feature/segmento-create-filters-as-per-segments.svg",
           "heading": "Create filters as per segment",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create a filtered list on your business phonebook. Tailor your marketing efforts by targeting people based on their requirements, traits or patterns by creating a particular filter on your phonebook."
         },
         {
           "img": "/img/feature/segmento-automation-trigger.svg",
           "heading": "Automation Trigger",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Trigger meaningful information for the filtered segments. Automate actions on the filters created based on the user’s action or input to deliver relevant and personalised messages for each group."
         },
         {
           "img": "/img/feature/segmento-automation-repeater.svg",
           "heading": "Automation Repeater",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the most relevant content at the most relevant time. Send auto messages to the same filter at time-based intervals through your audience’s preferred business communication channel."
         },
         {
           "img": "/img/feature/segmento-open-api.svg",
           "heading": "Open API",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Use API to get, create, update or delete contact. We provide APIs for every action, big or small, so that you can focus on what matters most- building your amazing product."
         }
       ],
       "morefeatures": [
@@ -526,11 +537,11 @@
     },
     "otp": {
       "code": false,
-      "pagename": "OTP",
+      "pagename": "otp",
       "icon": "/img/icon/otp.svg",
       "pageimg":"/img/pageimg/otp.png",
       "tagline": "Instant Secure verification",
-      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication",
+      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication.",
       "features": [
         {
           "img": "/img/feature/otp-simple-login.svg",
@@ -562,8 +573,8 @@
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl",
       "pageimg":"/img/pageimg/shorturl.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Simplify your links",
+      "heading": "Customise, share and track smart links Optimise your complex links to create short, cleaner links that are easier to share.",
       "features": [
         {
           "img": "/img/feature/shorturl-no-code.svg",
@@ -590,7 +601,7 @@
       "icon": "/img/icon/knowledgebase.svg",
       "pagename": "KnowledgeBase",
       "pageimg":"/img/pageimg/knowledgebase.svg",
-      "tagline": "Revolutionize customer support",
+      "tagline": "streamline your Knowledge",
       "heading": "Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience",
       "features": [
         {
@@ -622,23 +633,43 @@
       "code": true,
       "pagename": "SMS",
       "icon": "/img/icon/sms.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Next level messaging",
+      "heading": "Engage your customers globally with quick, scalable and customizable messages Integrate our developer-friendly APIs to send and receive text messages. Our distributed carrier network and intelligent routing ensure highest delivery and lowest latency.",
       "features": [
         {
-          "img": "/img/feature/one.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-intelligent-sms-routing.svg",
+          "heading": "Intelligent SMS Routing",
+          "content": "We find the most reliable route for every message. Your message is sent using your network telecom operator for fast delivery. Incase it fails, within fraction of seconds, we retry and deliver using other network operators."
         },
         {
-          "img": "/img/feature/two.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-a-reliable-scalable-and-feature-rich-sms-api.svg",
+          "heading": "A reliable, scalable and feature-rich SMS API",
+          "content": "Integrate easily with our developer-friendly SMS API. Built for developers by developers, explore quick-start guides, code snippets, SDKs and more to smoothen the integration process. Available in all programming languages."
+        },
+        {
+          "img": "/img/feature/sms-multi-lingual-support.svg",
+          "heading": "Multi-lingual support",
+          "content": "Converse with your audience in their local language. Take your engagement to the next level. Build customer confidence as you send messages in their regional or foreign language anywhere across the world."
+        },
+        {
+          "img": "/img/feature/sms-personalized-sms.svg",
+          "heading": "Personalized SMS",
+          "content": "Increase customer satisfaction with meaningful engagement. Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI."
+        },
+        {
+          "img": "/img/feature/sms-link-shortener.svg",
+          "heading": "Link shortener",
+          "content": "Transform long URL in a shorter, more readable link. Enable the deeply integrated link shortener to convert long URL to shorter links. Get detailed user report on clicks from mobile numbers, browser and IP."
+        },
+        {
+          "img": "/img/feature/sms-enhanced-analytics.svg",
+          "heading": "Enhanced Analytics",
+          "content": "Real-time graphical view for monitoring and troubleshooting. Optimize your SMS delivery, measure the effectiveness of your campaigns, improve ROI. Always know which messages customers have received and which are missed."
         },
         {
           "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Enjoy reliable, low latency delivery-worldwide",
+          "content": "Reach 180+ countries reliably with localized senders. Our backend is optimized to process a very high volume of SMS. The automatic rerouting of global traffic in real-time helps us avoid outages and latency."
         }
       ],
       "morefeatures": [
@@ -654,33 +685,33 @@
       "code": true,
       "pagename": "Email",
       "icon": "/img/icon/email.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "smarter email strategy",
+      "heading": "Smart emails that land directly into the right inbox Make the most of these powerful touchpoints between your brand and your customers.",
       "features": [
         {
           "img": "/img/feature/email-template-builder.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Template Builder",
+          "content": "Drag-and-drop to create the layout of your email. Customize your transactional emails using our no-code, drag-and-drop interface. Preview to see how your email will look when viewed on different devices."
         },
         {
           "img": "/img/feature/email-amp-emails.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "AMP Emails",
+          "content": "Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects."
         },
         {
           "img": "/img/feature/email-statistics.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Statistics",
+          "content": "Monitor and track every aspect of your email’s lifecycle. Get a graphical representation of the delivery rates, open rates, click-through rates, bounce rates, and spam to iterate and ensure you reach your customer's inbox."
         },
         {
           "img": "/img/feature/email-smtp-restapi-support.svg",
-          "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "SMTP/RestAPI support",
+          "content": "Integrate with our RESTful APIs and SMTP in minutes. Get your hands on our comprehensive documentation or connect with our support superheroes to easily integrate into your custom or third-party apps to start sending emails."
         },
         {
           "img": "/img/feature/email-validation.svg",
-          "heading": "Video Call / Screen Sharing",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Validation",
+          "content": "Positively impact the engagement and reputation of your brand. Deliver more messages to real contacts with our real-time API that detects and suppresses invalid email address with an accuracy rate of up to 85% to give you a clean list."
         }
       ],
       "morefeatures": [
@@ -696,38 +727,38 @@
       "code": true,
       "pagename": "Voice",
       "icon": "/img/icon/voice.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "connect with confidence",
+      "heading": "Boost customer engagement and build trust Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct Calling From Hello",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Skip the 2-way calling and directly call from browser. Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
-          "heading": "Voice IVR Flow",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "IVR Flow",
+          "content": "Modern IVR that makes customer interaction quick and hassle-free. Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Speak directly with your audience over a single call. Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Upload your audio message in multiple ways. Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Connect your voice call to the IVR. Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Direct your user to your support agent. Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
         }
       ],
       "morefeatures": [
@@ -743,33 +774,33 @@
       "code": true,
       "pagename": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "dominate popular platforms",
+      "heading": "Drive better customer engagement outcomes Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
           "img": "/img/feature/whatsapp-support-base64.svg",
           "heading": "Support Base64",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the body in JSON and leave the rest to us. No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
         },
         {
           "img": "/img/feature/whatsapp-2way-communication.svg",
           "heading": "2way communication",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Say hello to go on HELLO. Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
         },
         {
           "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
           "heading": "Manage template inside panel",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create and manage your templates right here. No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
         },
         {
           "img": "/img/feature/whatsapp-analytics.svg",
           "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get graphical insights into your business messages. Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
         },
         {
           "img": "/img/feature/whatsapp-export-logs.svg",
           "heading": "Export Logs",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get individual outbound and inbound messages logs. Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -785,15 +816,16 @@
   "ae":{
     "pagename": "index",
     "index":{
+      "code":"no",
       "pagename":"index",
-      "head":"this is ae index"
+      "head":"this is global index"
     },
     "hello":{
       "code": false,
       "icon": "/img/icon/hello.svg",
       "pagename":"hello",      
       "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Never lose sight of what’s important Don’t just solve tickets, build customer relationships",
       "pageimg":"/img/pageimg/hello.png",
       "features": [
       
@@ -821,15 +853,20 @@
           "img": "/img/feature/hello-workflow.svg",
           "heading": "Workflow",
           "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
+        },
+        {
+          "img": "/img/feature/hello-screen-control.svg",
+          "heading": "Screen Control",
+          "content": "Control your customer’s screen from where you are Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
         }
       ]
     },
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"Campaign",
+      "pagename":"campaign",
       "tagline": "Event Base automation",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Connect conversations across channels and tools Deliver personalized, engaging and seamless experiences",
       "pageimg":"/img/pageimg/campaign.svg",
       "features": [
         {
@@ -870,30 +907,30 @@
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"Segmento",
+      "pagename":"segmento",
       "pageimg":"/img/pageimg/segmento.png",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "target based marketing",
+      "heading": "Personalize customer journeys with data segmentation Segment people based on their demographics, behaviour, interests and other characteristics.",
       "features": [
         {
           "img": "/img/feature/segmento-create-filters-as-per-segments.svg",
           "heading": "Create filters as per segment",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create a filtered list on your business phonebook. Tailor your marketing efforts by targeting people based on their requirements, traits or patterns by creating a particular filter on your phonebook."
         },
         {
           "img": "/img/feature/segmento-automation-trigger.svg",
           "heading": "Automation Trigger",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Trigger meaningful information for the filtered segments. Automate actions on the filters created based on the user’s action or input to deliver relevant and personalised messages for each group."
         },
         {
           "img": "/img/feature/segmento-automation-repeater.svg",
           "heading": "Automation Repeater",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the most relevant content at the most relevant time. Send auto messages to the same filter at time-based intervals through your audience’s preferred business communication channel."
         },
         {
           "img": "/img/feature/segmento-open-api.svg",
           "heading": "Open API",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Use API to get, create, update or delete contact. We provide APIs for every action, big or small, so that you can focus on what matters most- building your amazing product."
         }
       ],
       "morefeatures": [
@@ -907,11 +944,11 @@
     },
     "otp": {
       "code": false,
-      "pagename": "OTP",
+      "pagename": "otp",
       "icon": "/img/icon/otp.svg",
       "pageimg":"/img/pageimg/otp.png",
       "tagline": "Instant Secure verification",
-      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication",
+      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication.",
       "features": [
         {
           "img": "/img/feature/otp-simple-login.svg",
@@ -943,8 +980,8 @@
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl",
       "pageimg":"/img/pageimg/shorturl.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Simplify your links",
+      "heading": "Customise, share and track smart links Optimise your complex links to create short, cleaner links that are easier to share.",
       "features": [
         {
           "img": "/img/feature/shorturl-no-code.svg",
@@ -971,7 +1008,7 @@
       "icon": "/img/icon/knowledgebase.svg",
       "pagename": "KnowledgeBase",
       "pageimg":"/img/pageimg/knowledgebase.svg",
-      "tagline": "Revolutionize customer support",
+      "tagline": "streamline your Knowledge",
       "heading": "Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience",
       "features": [
         {
@@ -1003,23 +1040,43 @@
       "code": true,
       "pagename": "SMS",
       "icon": "/img/icon/sms.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Next level messaging",
+      "heading": "Engage your customers globally with quick, scalable and customizable messages Integrate our developer-friendly APIs to send and receive text messages. Our distributed carrier network and intelligent routing ensure highest delivery and lowest latency.",
       "features": [
         {
-          "img": "/img/feature/one.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-intelligent-sms-routing.svg",
+          "heading": "Intelligent SMS Routing",
+          "content": "We find the most reliable route for every message. Your message is sent using your network telecom operator for fast delivery. Incase it fails, within fraction of seconds, we retry and deliver using other network operators."
         },
         {
-          "img": "/img/feature/two.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-a-reliable-scalable-and-feature-rich-sms-api.svg",
+          "heading": "A reliable, scalable and feature-rich SMS API",
+          "content": "Integrate easily with our developer-friendly SMS API. Built for developers by developers, explore quick-start guides, code snippets, SDKs and more to smoothen the integration process. Available in all programming languages."
+        },
+        {
+          "img": "/img/feature/sms-multi-lingual-support.svg",
+          "heading": "Multi-lingual support",
+          "content": "Converse with your audience in their local language. Take your engagement to the next level. Build customer confidence as you send messages in their regional or foreign language anywhere across the world."
+        },
+        {
+          "img": "/img/feature/sms-personalized-sms.svg",
+          "heading": "Personalized SMS",
+          "content": "Increase customer satisfaction with meaningful engagement. Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI."
+        },
+        {
+          "img": "/img/feature/sms-link-shortener.svg",
+          "heading": "Link shortener",
+          "content": "Transform long URL in a shorter, more readable link. Enable the deeply integrated link shortener to convert long URL to shorter links. Get detailed user report on clicks from mobile numbers, browser and IP."
+        },
+        {
+          "img": "/img/feature/sms-enhanced-analytics.svg",
+          "heading": "Enhanced Analytics",
+          "content": "Real-time graphical view for monitoring and troubleshooting. Optimize your SMS delivery, measure the effectiveness of your campaigns, improve ROI. Always know which messages customers have received and which are missed."
         },
         {
           "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Enjoy reliable, low latency delivery-worldwide",
+          "content": "Reach 180+ countries reliably with localized senders. Our backend is optimized to process a very high volume of SMS. The automatic rerouting of global traffic in real-time helps us avoid outages and latency."
         }
       ],
       "morefeatures": [
@@ -1035,33 +1092,33 @@
       "code": true,
       "pagename": "Email",
       "icon": "/img/icon/email.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "smarter email strategy",
+      "heading": "Smart emails that land directly into the right inbox Make the most of these powerful touchpoints between your brand and your customers.",
       "features": [
         {
           "img": "/img/feature/email-template-builder.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Template Builder",
+          "content": "Drag-and-drop to create the layout of your email. Customize your transactional emails using our no-code, drag-and-drop interface. Preview to see how your email will look when viewed on different devices."
         },
         {
           "img": "/img/feature/email-amp-emails.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "AMP Emails",
+          "content": "Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects."
         },
         {
           "img": "/img/feature/email-statistics.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Statistics",
+          "content": "Monitor and track every aspect of your email’s lifecycle. Get a graphical representation of the delivery rates, open rates, click-through rates, bounce rates, and spam to iterate and ensure you reach your customer's inbox."
         },
         {
           "img": "/img/feature/email-smtp-restapi-support.svg",
-          "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "SMTP/RestAPI support",
+          "content": "Integrate with our RESTful APIs and SMTP in minutes. Get your hands on our comprehensive documentation or connect with our support superheroes to easily integrate into your custom or third-party apps to start sending emails."
         },
         {
           "img": "/img/feature/email-validation.svg",
-          "heading": "Video Call / Screen Sharing",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Validation",
+          "content": "Positively impact the engagement and reputation of your brand. Deliver more messages to real contacts with our real-time API that detects and suppresses invalid email address with an accuracy rate of up to 85% to give you a clean list."
         }
       ],
       "morefeatures": [
@@ -1077,38 +1134,38 @@
       "code": true,
       "pagename": "Voice",
       "icon": "/img/icon/voice.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "connect with confidence",
+      "heading": "Boost customer engagement and build trust Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct Calling From Hello",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Skip the 2-way calling and directly call from browser. Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
-          "heading": "Voice IVR Flow",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "IVR Flow",
+          "content": "Modern IVR that makes customer interaction quick and hassle-free. Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Speak directly with your audience over a single call. Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Upload your audio message in multiple ways. Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Connect your voice call to the IVR. Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Direct your user to your support agent. Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
         }
       ],
       "morefeatures": [
@@ -1124,33 +1181,33 @@
       "code": true,
       "pagename": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "dominate popular platforms",
+      "heading": "Drive better customer engagement outcomes Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
           "img": "/img/feature/whatsapp-support-base64.svg",
           "heading": "Support Base64",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the body in JSON and leave the rest to us. No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
         },
         {
           "img": "/img/feature/whatsapp-2way-communication.svg",
           "heading": "2way communication",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Say hello to go on HELLO. Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
         },
         {
           "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
           "heading": "Manage template inside panel",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create and manage your templates right here. No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
         },
         {
           "img": "/img/feature/whatsapp-analytics.svg",
           "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get graphical insights into your business messages. Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
         },
         {
           "img": "/img/feature/whatsapp-export-logs.svg",
           "heading": "Export Logs",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get individual outbound and inbound messages logs. Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -1166,15 +1223,16 @@
   "es":{
     "pagename": "index",
     "index":{
+      "code":"no",
       "pagename":"index",
-      "head":"this is ae index"
+      "head":"this is global index"
     },
     "hello":{
       "code": false,
       "icon": "/img/icon/hello.svg",
       "pagename":"hello",      
       "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Never lose sight of what’s important Don’t just solve tickets, build customer relationships",
       "pageimg":"/img/pageimg/hello.png",
       "features": [
       
@@ -1202,15 +1260,20 @@
           "img": "/img/feature/hello-workflow.svg",
           "heading": "Workflow",
           "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
+        },
+        {
+          "img": "/img/feature/hello-screen-control.svg",
+          "heading": "Screen Control",
+          "content": "Control your customer’s screen from where you are Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
         }
       ]
     },
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"Campaign",
+      "pagename":"campaign",
       "tagline": "Event Base automation",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Connect conversations across channels and tools Deliver personalized, engaging and seamless experiences",
       "pageimg":"/img/pageimg/campaign.svg",
       "features": [
         {
@@ -1251,30 +1314,30 @@
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"Segmento",
+      "pagename":"segmento",
       "pageimg":"/img/pageimg/segmento.png",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "target based marketing",
+      "heading": "Personalize customer journeys with data segmentation Segment people based on their demographics, behaviour, interests and other characteristics.",
       "features": [
         {
           "img": "/img/feature/segmento-create-filters-as-per-segments.svg",
           "heading": "Create filters as per segment",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create a filtered list on your business phonebook. Tailor your marketing efforts by targeting people based on their requirements, traits or patterns by creating a particular filter on your phonebook."
         },
         {
           "img": "/img/feature/segmento-automation-trigger.svg",
           "heading": "Automation Trigger",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Trigger meaningful information for the filtered segments. Automate actions on the filters created based on the user’s action or input to deliver relevant and personalised messages for each group."
         },
         {
           "img": "/img/feature/segmento-automation-repeater.svg",
           "heading": "Automation Repeater",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the most relevant content at the most relevant time. Send auto messages to the same filter at time-based intervals through your audience’s preferred business communication channel."
         },
         {
           "img": "/img/feature/segmento-open-api.svg",
           "heading": "Open API",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Use API to get, create, update or delete contact. We provide APIs for every action, big or small, so that you can focus on what matters most- building your amazing product."
         }
       ],
       "morefeatures": [
@@ -1288,11 +1351,11 @@
     },
     "otp": {
       "code": false,
-      "pagename": "OTP",
+      "pagename": "otp",
       "icon": "/img/icon/otp.svg",
       "pageimg":"/img/pageimg/otp.png",
       "tagline": "Instant Secure verification",
-      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication",
+      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication.",
       "features": [
         {
           "img": "/img/feature/otp-simple-login.svg",
@@ -1324,8 +1387,8 @@
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl",
       "pageimg":"/img/pageimg/shorturl.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Simplify your links",
+      "heading": "Customise, share and track smart links Optimise your complex links to create short, cleaner links that are easier to share.",
       "features": [
         {
           "img": "/img/feature/shorturl-no-code.svg",
@@ -1352,7 +1415,7 @@
       "icon": "/img/icon/knowledgebase.svg",
       "pagename": "KnowledgeBase",
       "pageimg":"/img/pageimg/knowledgebase.svg",
-      "tagline": "Revolutionize customer support",
+      "tagline": "streamline your Knowledge",
       "heading": "Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience",
       "features": [
         {
@@ -1384,23 +1447,43 @@
       "code": true,
       "pagename": "SMS",
       "icon": "/img/icon/sms.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Next level messaging",
+      "heading": "Engage your customers globally with quick, scalable and customizable messages Integrate our developer-friendly APIs to send and receive text messages. Our distributed carrier network and intelligent routing ensure highest delivery and lowest latency.",
       "features": [
         {
-          "img": "/img/feature/one.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-intelligent-sms-routing.svg",
+          "heading": "Intelligent SMS Routing",
+          "content": "We find the most reliable route for every message. Your message is sent using your network telecom operator for fast delivery. Incase it fails, within fraction of seconds, we retry and deliver using other network operators."
         },
         {
-          "img": "/img/feature/two.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-a-reliable-scalable-and-feature-rich-sms-api.svg",
+          "heading": "A reliable, scalable and feature-rich SMS API",
+          "content": "Integrate easily with our developer-friendly SMS API. Built for developers by developers, explore quick-start guides, code snippets, SDKs and more to smoothen the integration process. Available in all programming languages."
+        },
+        {
+          "img": "/img/feature/sms-multi-lingual-support.svg",
+          "heading": "Multi-lingual support",
+          "content": "Converse with your audience in their local language. Take your engagement to the next level. Build customer confidence as you send messages in their regional or foreign language anywhere across the world."
+        },
+        {
+          "img": "/img/feature/sms-personalized-sms.svg",
+          "heading": "Personalized SMS",
+          "content": "Increase customer satisfaction with meaningful engagement. Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI."
+        },
+        {
+          "img": "/img/feature/sms-link-shortener.svg",
+          "heading": "Link shortener",
+          "content": "Transform long URL in a shorter, more readable link. Enable the deeply integrated link shortener to convert long URL to shorter links. Get detailed user report on clicks from mobile numbers, browser and IP."
+        },
+        {
+          "img": "/img/feature/sms-enhanced-analytics.svg",
+          "heading": "Enhanced Analytics",
+          "content": "Real-time graphical view for monitoring and troubleshooting. Optimize your SMS delivery, measure the effectiveness of your campaigns, improve ROI. Always know which messages customers have received and which are missed."
         },
         {
           "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Enjoy reliable, low latency delivery-worldwide",
+          "content": "Reach 180+ countries reliably with localized senders. Our backend is optimized to process a very high volume of SMS. The automatic rerouting of global traffic in real-time helps us avoid outages and latency."
         }
       ],
       "morefeatures": [
@@ -1416,33 +1499,33 @@
       "code": true,
       "pagename": "Email",
       "icon": "/img/icon/email.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "smarter email strategy",
+      "heading": "Smart emails that land directly into the right inbox Make the most of these powerful touchpoints between your brand and your customers.",
       "features": [
         {
           "img": "/img/feature/email-template-builder.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Template Builder",
+          "content": "Drag-and-drop to create the layout of your email. Customize your transactional emails using our no-code, drag-and-drop interface. Preview to see how your email will look when viewed on different devices."
         },
         {
           "img": "/img/feature/email-amp-emails.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "AMP Emails",
+          "content": "Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects."
         },
         {
           "img": "/img/feature/email-statistics.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Statistics",
+          "content": "Monitor and track every aspect of your email’s lifecycle. Get a graphical representation of the delivery rates, open rates, click-through rates, bounce rates, and spam to iterate and ensure you reach your customer's inbox."
         },
         {
           "img": "/img/feature/email-smtp-restapi-support.svg",
-          "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "SMTP/RestAPI support",
+          "content": "Integrate with our RESTful APIs and SMTP in minutes. Get your hands on our comprehensive documentation or connect with our support superheroes to easily integrate into your custom or third-party apps to start sending emails."
         },
         {
           "img": "/img/feature/email-validation.svg",
-          "heading": "Video Call / Screen Sharing",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Validation",
+          "content": "Positively impact the engagement and reputation of your brand. Deliver more messages to real contacts with our real-time API that detects and suppresses invalid email address with an accuracy rate of up to 85% to give you a clean list."
         }
       ],
       "morefeatures": [
@@ -1458,38 +1541,38 @@
       "code": true,
       "pagename": "Voice",
       "icon": "/img/icon/voice.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "connect with confidence",
+      "heading": "Boost customer engagement and build trust Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct Calling From Hello",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Skip the 2-way calling and directly call from browser. Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
-          "heading": "Voice IVR Flow",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "IVR Flow",
+          "content": "Modern IVR that makes customer interaction quick and hassle-free. Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Speak directly with your audience over a single call. Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Upload your audio message in multiple ways. Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Connect your voice call to the IVR. Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Direct your user to your support agent. Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
         }
       ],
       "morefeatures": [
@@ -1505,33 +1588,33 @@
       "code": true,
       "pagename": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "dominate popular platforms",
+      "heading": "Drive better customer engagement outcomes Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
           "img": "/img/feature/whatsapp-support-base64.svg",
           "heading": "Support Base64",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the body in JSON and leave the rest to us. No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
         },
         {
           "img": "/img/feature/whatsapp-2way-communication.svg",
           "heading": "2way communication",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Say hello to go on HELLO. Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
         },
         {
           "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
           "heading": "Manage template inside panel",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create and manage your templates right here. No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
         },
         {
           "img": "/img/feature/whatsapp-analytics.svg",
           "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get graphical insights into your business messages. Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
         },
         {
           "img": "/img/feature/whatsapp-export-logs.svg",
           "heading": "Export Logs",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get individual outbound and inbound messages logs. Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -1547,15 +1630,16 @@
   "ph":{
     "pagename": "index",
     "index":{
+      "code":"no",
       "pagename":"index",
-      "head":"this is ae index"
+      "head":"this is global index"
     },
     "hello":{
       "code": false,
       "icon": "/img/icon/hello.svg",
       "pagename":"hello",      
       "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Never lose sight of what’s important Don’t just solve tickets, build customer relationships",
       "pageimg":"/img/pageimg/hello.png",
       "features": [
       
@@ -1583,15 +1667,20 @@
           "img": "/img/feature/hello-workflow.svg",
           "heading": "Workflow",
           "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
+        },
+        {
+          "img": "/img/feature/hello-screen-control.svg",
+          "heading": "Screen Control",
+          "content": "Control your customer’s screen from where you are Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
         }
       ]
     },
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"Campaign",
+      "pagename":"campaign",
       "tagline": "Event Base automation",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Connect conversations across channels and tools Deliver personalized, engaging and seamless experiences",
       "pageimg":"/img/pageimg/campaign.svg",
       "features": [
         {
@@ -1632,30 +1721,30 @@
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"Segmento",
+      "pagename":"segmento",
       "pageimg":"/img/pageimg/segmento.png",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "target based marketing",
+      "heading": "Personalize customer journeys with data segmentation Segment people based on their demographics, behaviour, interests and other characteristics.",
       "features": [
         {
           "img": "/img/feature/segmento-create-filters-as-per-segments.svg",
           "heading": "Create filters as per segment",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create a filtered list on your business phonebook. Tailor your marketing efforts by targeting people based on their requirements, traits or patterns by creating a particular filter on your phonebook."
         },
         {
           "img": "/img/feature/segmento-automation-trigger.svg",
           "heading": "Automation Trigger",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Trigger meaningful information for the filtered segments. Automate actions on the filters created based on the user’s action or input to deliver relevant and personalised messages for each group."
         },
         {
           "img": "/img/feature/segmento-automation-repeater.svg",
           "heading": "Automation Repeater",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the most relevant content at the most relevant time. Send auto messages to the same filter at time-based intervals through your audience’s preferred business communication channel."
         },
         {
           "img": "/img/feature/segmento-open-api.svg",
           "heading": "Open API",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Use API to get, create, update or delete contact. We provide APIs for every action, big or small, so that you can focus on what matters most- building your amazing product."
         }
       ],
       "morefeatures": [
@@ -1669,11 +1758,11 @@
     },
     "otp": {
       "code": false,
-      "pagename": "OTP",
+      "pagename": "otp",
       "icon": "/img/icon/otp.svg",
       "pageimg":"/img/pageimg/otp.png",
       "tagline": "Instant Secure verification",
-      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication",
+      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication.",
       "features": [
         {
           "img": "/img/feature/otp-simple-login.svg",
@@ -1705,8 +1794,8 @@
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl",
       "pageimg":"/img/pageimg/shorturl.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Simplify your links",
+      "heading": "Customise, share and track smart links Optimise your complex links to create short, cleaner links that are easier to share.",
       "features": [
         {
           "img": "/img/feature/shorturl-no-code.svg",
@@ -1733,7 +1822,7 @@
       "icon": "/img/icon/knowledgebase.svg",
       "pagename": "KnowledgeBase",
       "pageimg":"/img/pageimg/knowledgebase.svg",
-      "tagline": "Revolutionize customer support",
+      "tagline": "streamline your Knowledge",
       "heading": "Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience",
       "features": [
         {
@@ -1765,23 +1854,43 @@
       "code": true,
       "pagename": "SMS",
       "icon": "/img/icon/sms.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Next level messaging",
+      "heading": "Engage your customers globally with quick, scalable and customizable messages Integrate our developer-friendly APIs to send and receive text messages. Our distributed carrier network and intelligent routing ensure highest delivery and lowest latency.",
       "features": [
         {
-          "img": "/img/feature/one.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-intelligent-sms-routing.svg",
+          "heading": "Intelligent SMS Routing",
+          "content": "We find the most reliable route for every message. Your message is sent using your network telecom operator for fast delivery. Incase it fails, within fraction of seconds, we retry and deliver using other network operators."
         },
         {
-          "img": "/img/feature/two.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-a-reliable-scalable-and-feature-rich-sms-api.svg",
+          "heading": "A reliable, scalable and feature-rich SMS API",
+          "content": "Integrate easily with our developer-friendly SMS API. Built for developers by developers, explore quick-start guides, code snippets, SDKs and more to smoothen the integration process. Available in all programming languages."
+        },
+        {
+          "img": "/img/feature/sms-multi-lingual-support.svg",
+          "heading": "Multi-lingual support",
+          "content": "Converse with your audience in their local language. Take your engagement to the next level. Build customer confidence as you send messages in their regional or foreign language anywhere across the world."
+        },
+        {
+          "img": "/img/feature/sms-personalized-sms.svg",
+          "heading": "Personalized SMS",
+          "content": "Increase customer satisfaction with meaningful engagement. Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI."
+        },
+        {
+          "img": "/img/feature/sms-link-shortener.svg",
+          "heading": "Link shortener",
+          "content": "Transform long URL in a shorter, more readable link. Enable the deeply integrated link shortener to convert long URL to shorter links. Get detailed user report on clicks from mobile numbers, browser and IP."
+        },
+        {
+          "img": "/img/feature/sms-enhanced-analytics.svg",
+          "heading": "Enhanced Analytics",
+          "content": "Real-time graphical view for monitoring and troubleshooting. Optimize your SMS delivery, measure the effectiveness of your campaigns, improve ROI. Always know which messages customers have received and which are missed."
         },
         {
           "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Enjoy reliable, low latency delivery-worldwide",
+          "content": "Reach 180+ countries reliably with localized senders. Our backend is optimized to process a very high volume of SMS. The automatic rerouting of global traffic in real-time helps us avoid outages and latency."
         }
       ],
       "morefeatures": [
@@ -1797,33 +1906,33 @@
       "code": true,
       "pagename": "Email",
       "icon": "/img/icon/email.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "smarter email strategy",
+      "heading": "Smart emails that land directly into the right inbox Make the most of these powerful touchpoints between your brand and your customers.",
       "features": [
         {
           "img": "/img/feature/email-template-builder.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Template Builder",
+          "content": "Drag-and-drop to create the layout of your email. Customize your transactional emails using our no-code, drag-and-drop interface. Preview to see how your email will look when viewed on different devices."
         },
         {
           "img": "/img/feature/email-amp-emails.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "AMP Emails",
+          "content": "Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects."
         },
         {
           "img": "/img/feature/email-statistics.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Statistics",
+          "content": "Monitor and track every aspect of your email’s lifecycle. Get a graphical representation of the delivery rates, open rates, click-through rates, bounce rates, and spam to iterate and ensure you reach your customer's inbox."
         },
         {
           "img": "/img/feature/email-smtp-restapi-support.svg",
-          "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "SMTP/RestAPI support",
+          "content": "Integrate with our RESTful APIs and SMTP in minutes. Get your hands on our comprehensive documentation or connect with our support superheroes to easily integrate into your custom or third-party apps to start sending emails."
         },
         {
           "img": "/img/feature/email-validation.svg",
-          "heading": "Video Call / Screen Sharing",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Validation",
+          "content": "Positively impact the engagement and reputation of your brand. Deliver more messages to real contacts with our real-time API that detects and suppresses invalid email address with an accuracy rate of up to 85% to give you a clean list."
         }
       ],
       "morefeatures": [
@@ -1839,38 +1948,38 @@
       "code": true,
       "pagename": "Voice",
       "icon": "/img/icon/voice.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "connect with confidence",
+      "heading": "Boost customer engagement and build trust Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct Calling From Hello",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Skip the 2-way calling and directly call from browser. Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
-          "heading": "Voice IVR Flow",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "IVR Flow",
+          "content": "Modern IVR that makes customer interaction quick and hassle-free. Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Speak directly with your audience over a single call. Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Upload your audio message in multiple ways. Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Connect your voice call to the IVR. Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Direct your user to your support agent. Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
         }
       ],
       "morefeatures": [
@@ -1886,33 +1995,33 @@
       "code": true,
       "pagename": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "dominate popular platforms",
+      "heading": "Drive better customer engagement outcomes Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
           "img": "/img/feature/whatsapp-support-base64.svg",
           "heading": "Support Base64",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the body in JSON and leave the rest to us. No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
         },
         {
           "img": "/img/feature/whatsapp-2way-communication.svg",
           "heading": "2way communication",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Say hello to go on HELLO. Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
         },
         {
           "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
           "heading": "Manage template inside panel",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create and manage your templates right here. No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
         },
         {
           "img": "/img/feature/whatsapp-analytics.svg",
           "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get graphical insights into your business messages. Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
         },
         {
           "img": "/img/feature/whatsapp-export-logs.svg",
           "heading": "Export Logs",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get individual outbound and inbound messages logs. Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -1928,15 +2037,16 @@
   "sg":{
     "pagename": "index",
     "index":{
+      "code":"no",
       "pagename":"index",
-      "head":"this is ae index"
+      "head":"this is global index"
     },
     "hello":{
       "code": false,
       "icon": "/img/icon/hello.svg",
       "pagename":"hello",      
       "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Never lose sight of what’s important Don’t just solve tickets, build customer relationships",
       "pageimg":"/img/pageimg/hello.png",
       "features": [
       
@@ -1964,15 +2074,20 @@
           "img": "/img/feature/hello-workflow.svg",
           "heading": "Workflow",
           "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
+        },
+        {
+          "img": "/img/feature/hello-screen-control.svg",
+          "heading": "Screen Control",
+          "content": "Control your customer’s screen from where you are Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
         }
       ]
     },
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"Campaign",
+      "pagename":"campaign",
       "tagline": "Event Base automation",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Connect conversations across channels and tools Deliver personalized, engaging and seamless experiences",
       "pageimg":"/img/pageimg/campaign.svg",
       "features": [
         {
@@ -2013,30 +2128,30 @@
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"Segmento",
+      "pagename":"segmento",
       "pageimg":"/img/pageimg/segmento.png",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "target based marketing",
+      "heading": "Personalize customer journeys with data segmentation Segment people based on their demographics, behaviour, interests and other characteristics.",
       "features": [
         {
           "img": "/img/feature/segmento-create-filters-as-per-segments.svg",
           "heading": "Create filters as per segment",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create a filtered list on your business phonebook. Tailor your marketing efforts by targeting people based on their requirements, traits or patterns by creating a particular filter on your phonebook."
         },
         {
           "img": "/img/feature/segmento-automation-trigger.svg",
           "heading": "Automation Trigger",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Trigger meaningful information for the filtered segments. Automate actions on the filters created based on the user’s action or input to deliver relevant and personalised messages for each group."
         },
         {
           "img": "/img/feature/segmento-automation-repeater.svg",
           "heading": "Automation Repeater",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the most relevant content at the most relevant time. Send auto messages to the same filter at time-based intervals through your audience’s preferred business communication channel."
         },
         {
           "img": "/img/feature/segmento-open-api.svg",
           "heading": "Open API",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Use API to get, create, update or delete contact. We provide APIs for every action, big or small, so that you can focus on what matters most- building your amazing product."
         }
       ],
       "morefeatures": [
@@ -2050,11 +2165,11 @@
     },
     "otp": {
       "code": false,
-      "pagename": "OTP",
+      "pagename": "otp",
       "icon": "/img/icon/otp.svg",
       "pageimg":"/img/pageimg/otp.png",
       "tagline": "Instant Secure verification",
-      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication",
+      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication.",
       "features": [
         {
           "img": "/img/feature/otp-simple-login.svg",
@@ -2086,8 +2201,8 @@
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl",
       "pageimg":"/img/pageimg/shorturl.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Simplify your links",
+      "heading": "Customise, share and track smart links Optimise your complex links to create short, cleaner links that are easier to share.",
       "features": [
         {
           "img": "/img/feature/shorturl-no-code.svg",
@@ -2114,7 +2229,7 @@
       "icon": "/img/icon/knowledgebase.svg",
       "pagename": "KnowledgeBase",
       "pageimg":"/img/pageimg/knowledgebase.svg",
-      "tagline": "Revolutionize customer support",
+      "tagline": "streamline your Knowledge",
       "heading": "Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience",
       "features": [
         {
@@ -2146,23 +2261,43 @@
       "code": true,
       "pagename": "SMS",
       "icon": "/img/icon/sms.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Next level messaging",
+      "heading": "Engage your customers globally with quick, scalable and customizable messages Integrate our developer-friendly APIs to send and receive text messages. Our distributed carrier network and intelligent routing ensure highest delivery and lowest latency.",
       "features": [
         {
-          "img": "/img/feature/one.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-intelligent-sms-routing.svg",
+          "heading": "Intelligent SMS Routing",
+          "content": "We find the most reliable route for every message. Your message is sent using your network telecom operator for fast delivery. Incase it fails, within fraction of seconds, we retry and deliver using other network operators."
         },
         {
-          "img": "/img/feature/two.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-a-reliable-scalable-and-feature-rich-sms-api.svg",
+          "heading": "A reliable, scalable and feature-rich SMS API",
+          "content": "Integrate easily with our developer-friendly SMS API. Built for developers by developers, explore quick-start guides, code snippets, SDKs and more to smoothen the integration process. Available in all programming languages."
+        },
+        {
+          "img": "/img/feature/sms-multi-lingual-support.svg",
+          "heading": "Multi-lingual support",
+          "content": "Converse with your audience in their local language. Take your engagement to the next level. Build customer confidence as you send messages in their regional or foreign language anywhere across the world."
+        },
+        {
+          "img": "/img/feature/sms-personalized-sms.svg",
+          "heading": "Personalized SMS",
+          "content": "Increase customer satisfaction with meaningful engagement. Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI."
+        },
+        {
+          "img": "/img/feature/sms-link-shortener.svg",
+          "heading": "Link shortener",
+          "content": "Transform long URL in a shorter, more readable link. Enable the deeply integrated link shortener to convert long URL to shorter links. Get detailed user report on clicks from mobile numbers, browser and IP."
+        },
+        {
+          "img": "/img/feature/sms-enhanced-analytics.svg",
+          "heading": "Enhanced Analytics",
+          "content": "Real-time graphical view for monitoring and troubleshooting. Optimize your SMS delivery, measure the effectiveness of your campaigns, improve ROI. Always know which messages customers have received and which are missed."
         },
         {
           "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Enjoy reliable, low latency delivery-worldwide",
+          "content": "Reach 180+ countries reliably with localized senders. Our backend is optimized to process a very high volume of SMS. The automatic rerouting of global traffic in real-time helps us avoid outages and latency."
         }
       ],
       "morefeatures": [
@@ -2178,33 +2313,33 @@
       "code": true,
       "pagename": "Email",
       "icon": "/img/icon/email.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "smarter email strategy",
+      "heading": "Smart emails that land directly into the right inbox Make the most of these powerful touchpoints between your brand and your customers.",
       "features": [
         {
           "img": "/img/feature/email-template-builder.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Template Builder",
+          "content": "Drag-and-drop to create the layout of your email. Customize your transactional emails using our no-code, drag-and-drop interface. Preview to see how your email will look when viewed on different devices."
         },
         {
           "img": "/img/feature/email-amp-emails.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "AMP Emails",
+          "content": "Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects."
         },
         {
           "img": "/img/feature/email-statistics.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Statistics",
+          "content": "Monitor and track every aspect of your email’s lifecycle. Get a graphical representation of the delivery rates, open rates, click-through rates, bounce rates, and spam to iterate and ensure you reach your customer's inbox."
         },
         {
           "img": "/img/feature/email-smtp-restapi-support.svg",
-          "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "SMTP/RestAPI support",
+          "content": "Integrate with our RESTful APIs and SMTP in minutes. Get your hands on our comprehensive documentation or connect with our support superheroes to easily integrate into your custom or third-party apps to start sending emails."
         },
         {
           "img": "/img/feature/email-validation.svg",
-          "heading": "Video Call / Screen Sharing",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Validation",
+          "content": "Positively impact the engagement and reputation of your brand. Deliver more messages to real contacts with our real-time API that detects and suppresses invalid email address with an accuracy rate of up to 85% to give you a clean list."
         }
       ],
       "morefeatures": [
@@ -2220,38 +2355,38 @@
       "code": true,
       "pagename": "Voice",
       "icon": "/img/icon/voice.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "connect with confidence",
+      "heading": "Boost customer engagement and build trust Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct Calling From Hello",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Skip the 2-way calling and directly call from browser. Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
-          "heading": "Voice IVR Flow",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "IVR Flow",
+          "content": "Modern IVR that makes customer interaction quick and hassle-free. Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Speak directly with your audience over a single call. Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Upload your audio message in multiple ways. Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Connect your voice call to the IVR. Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Direct your user to your support agent. Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
         }
       ],
       "morefeatures": [
@@ -2267,33 +2402,33 @@
       "code": true,
       "pagename": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "dominate popular platforms",
+      "heading": "Drive better customer engagement outcomes Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
           "img": "/img/feature/whatsapp-support-base64.svg",
           "heading": "Support Base64",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the body in JSON and leave the rest to us. No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
         },
         {
           "img": "/img/feature/whatsapp-2way-communication.svg",
           "heading": "2way communication",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Say hello to go on HELLO. Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
         },
         {
           "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
           "heading": "Manage template inside panel",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create and manage your templates right here. No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
         },
         {
           "img": "/img/feature/whatsapp-analytics.svg",
           "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get graphical insights into your business messages. Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
         },
         {
           "img": "/img/feature/whatsapp-export-logs.svg",
           "heading": "Export Logs",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get individual outbound and inbound messages logs. Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -2309,15 +2444,16 @@
   "uk":{
     "pagename": "index",
     "index":{
+      "code":"no",
       "pagename":"index",
-      "head":"this is ae index"
+      "head":"this is global index"
     },
     "hello":{
       "code": false,
       "icon": "/img/icon/hello.svg",
       "pagename":"hello",      
       "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Never lose sight of what’s important Don’t just solve tickets, build customer relationships",
       "pageimg":"/img/pageimg/hello.png",
       "features": [
       
@@ -2345,15 +2481,20 @@
           "img": "/img/feature/hello-workflow.svg",
           "heading": "Workflow",
           "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
+        },
+        {
+          "img": "/img/feature/hello-screen-control.svg",
+          "heading": "Screen Control",
+          "content": "Control your customer’s screen from where you are Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
         }
       ]
     },
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"Campaign",
+      "pagename":"campaign",
       "tagline": "Event Base automation",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Connect conversations across channels and tools Deliver personalized, engaging and seamless experiences",
       "pageimg":"/img/pageimg/campaign.svg",
       "features": [
         {
@@ -2394,30 +2535,30 @@
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"Segmento",
+      "pagename":"segmento",
       "pageimg":"/img/pageimg/segmento.png",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "target based marketing",
+      "heading": "Personalize customer journeys with data segmentation Segment people based on their demographics, behaviour, interests and other characteristics.",
       "features": [
         {
           "img": "/img/feature/segmento-create-filters-as-per-segments.svg",
           "heading": "Create filters as per segment",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create a filtered list on your business phonebook. Tailor your marketing efforts by targeting people based on their requirements, traits or patterns by creating a particular filter on your phonebook."
         },
         {
           "img": "/img/feature/segmento-automation-trigger.svg",
           "heading": "Automation Trigger",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Trigger meaningful information for the filtered segments. Automate actions on the filters created based on the user’s action or input to deliver relevant and personalised messages for each group."
         },
         {
           "img": "/img/feature/segmento-automation-repeater.svg",
           "heading": "Automation Repeater",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the most relevant content at the most relevant time. Send auto messages to the same filter at time-based intervals through your audience’s preferred business communication channel."
         },
         {
           "img": "/img/feature/segmento-open-api.svg",
           "heading": "Open API",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Use API to get, create, update or delete contact. We provide APIs for every action, big or small, so that you can focus on what matters most- building your amazing product."
         }
       ],
       "morefeatures": [
@@ -2431,11 +2572,11 @@
     },
     "otp": {
       "code": false,
-      "pagename": "OTP",
+      "pagename": "otp",
       "icon": "/img/icon/otp.svg",
       "pageimg":"/img/pageimg/otp.png",
       "tagline": "Instant Secure verification",
-      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication",
+      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication.",
       "features": [
         {
           "img": "/img/feature/otp-simple-login.svg",
@@ -2467,8 +2608,8 @@
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl",
       "pageimg":"/img/pageimg/shorturl.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Simplify your links",
+      "heading": "Customise, share and track smart links Optimise your complex links to create short, cleaner links that are easier to share.",
       "features": [
         {
           "img": "/img/feature/shorturl-no-code.svg",
@@ -2495,7 +2636,7 @@
       "icon": "/img/icon/knowledgebase.svg",
       "pagename": "KnowledgeBase",
       "pageimg":"/img/pageimg/knowledgebase.svg",
-      "tagline": "Revolutionize customer support",
+      "tagline": "streamline your Knowledge",
       "heading": "Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience",
       "features": [
         {
@@ -2527,23 +2668,43 @@
       "code": true,
       "pagename": "SMS",
       "icon": "/img/icon/sms.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Next level messaging",
+      "heading": "Engage your customers globally with quick, scalable and customizable messages Integrate our developer-friendly APIs to send and receive text messages. Our distributed carrier network and intelligent routing ensure highest delivery and lowest latency.",
       "features": [
         {
-          "img": "/img/feature/one.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-intelligent-sms-routing.svg",
+          "heading": "Intelligent SMS Routing",
+          "content": "We find the most reliable route for every message. Your message is sent using your network telecom operator for fast delivery. Incase it fails, within fraction of seconds, we retry and deliver using other network operators."
         },
         {
-          "img": "/img/feature/two.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-a-reliable-scalable-and-feature-rich-sms-api.svg",
+          "heading": "A reliable, scalable and feature-rich SMS API",
+          "content": "Integrate easily with our developer-friendly SMS API. Built for developers by developers, explore quick-start guides, code snippets, SDKs and more to smoothen the integration process. Available in all programming languages."
+        },
+        {
+          "img": "/img/feature/sms-multi-lingual-support.svg",
+          "heading": "Multi-lingual support",
+          "content": "Converse with your audience in their local language. Take your engagement to the next level. Build customer confidence as you send messages in their regional or foreign language anywhere across the world."
+        },
+        {
+          "img": "/img/feature/sms-personalized-sms.svg",
+          "heading": "Personalized SMS",
+          "content": "Increase customer satisfaction with meaningful engagement. Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI."
+        },
+        {
+          "img": "/img/feature/sms-link-shortener.svg",
+          "heading": "Link shortener",
+          "content": "Transform long URL in a shorter, more readable link. Enable the deeply integrated link shortener to convert long URL to shorter links. Get detailed user report on clicks from mobile numbers, browser and IP."
+        },
+        {
+          "img": "/img/feature/sms-enhanced-analytics.svg",
+          "heading": "Enhanced Analytics",
+          "content": "Real-time graphical view for monitoring and troubleshooting. Optimize your SMS delivery, measure the effectiveness of your campaigns, improve ROI. Always know which messages customers have received and which are missed."
         },
         {
           "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Enjoy reliable, low latency delivery-worldwide",
+          "content": "Reach 180+ countries reliably with localized senders. Our backend is optimized to process a very high volume of SMS. The automatic rerouting of global traffic in real-time helps us avoid outages and latency."
         }
       ],
       "morefeatures": [
@@ -2559,33 +2720,33 @@
       "code": true,
       "pagename": "Email",
       "icon": "/img/icon/email.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "smarter email strategy",
+      "heading": "Smart emails that land directly into the right inbox Make the most of these powerful touchpoints between your brand and your customers.",
       "features": [
         {
           "img": "/img/feature/email-template-builder.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Template Builder",
+          "content": "Drag-and-drop to create the layout of your email. Customize your transactional emails using our no-code, drag-and-drop interface. Preview to see how your email will look when viewed on different devices."
         },
         {
           "img": "/img/feature/email-amp-emails.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "AMP Emails",
+          "content": "Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects."
         },
         {
           "img": "/img/feature/email-statistics.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Statistics",
+          "content": "Monitor and track every aspect of your email’s lifecycle. Get a graphical representation of the delivery rates, open rates, click-through rates, bounce rates, and spam to iterate and ensure you reach your customer's inbox."
         },
         {
           "img": "/img/feature/email-smtp-restapi-support.svg",
-          "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "SMTP/RestAPI support",
+          "content": "Integrate with our RESTful APIs and SMTP in minutes. Get your hands on our comprehensive documentation or connect with our support superheroes to easily integrate into your custom or third-party apps to start sending emails."
         },
         {
           "img": "/img/feature/email-validation.svg",
-          "heading": "Video Call / Screen Sharing",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Validation",
+          "content": "Positively impact the engagement and reputation of your brand. Deliver more messages to real contacts with our real-time API that detects and suppresses invalid email address with an accuracy rate of up to 85% to give you a clean list."
         }
       ],
       "morefeatures": [
@@ -2601,38 +2762,38 @@
       "code": true,
       "pagename": "Voice",
       "icon": "/img/icon/voice.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "connect with confidence",
+      "heading": "Boost customer engagement and build trust Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct Calling From Hello",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Skip the 2-way calling and directly call from browser. Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
-          "heading": "Voice IVR Flow",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "IVR Flow",
+          "content": "Modern IVR that makes customer interaction quick and hassle-free. Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Speak directly with your audience over a single call. Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Upload your audio message in multiple ways. Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Connect your voice call to the IVR. Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Direct your user to your support agent. Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
         }
       ],
       "morefeatures": [
@@ -2648,33 +2809,33 @@
       "code": true,
       "pagename": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "dominate popular platforms",
+      "heading": "Drive better customer engagement outcomes Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
           "img": "/img/feature/whatsapp-support-base64.svg",
           "heading": "Support Base64",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the body in JSON and leave the rest to us. No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
         },
         {
           "img": "/img/feature/whatsapp-2way-communication.svg",
           "heading": "2way communication",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Say hello to go on HELLO. Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
         },
         {
           "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
           "heading": "Manage template inside panel",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create and manage your templates right here. No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
         },
         {
           "img": "/img/feature/whatsapp-analytics.svg",
           "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get graphical insights into your business messages. Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
         },
         {
           "img": "/img/feature/whatsapp-export-logs.svg",
           "heading": "Export Logs",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get individual outbound and inbound messages logs. Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -2690,15 +2851,16 @@
   "us":{
     "pagename": "index",
     "index":{
+      "code":"no",
       "pagename":"index",
-      "head":"this is ae index"
+      "head":"this is global index"
     },
     "hello":{
       "code": false,
       "icon": "/img/icon/hello.svg",
       "pagename":"hello",      
       "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Never lose sight of what’s important Don’t just solve tickets, build customer relationships",
       "pageimg":"/img/pageimg/hello.png",
       "features": [
       
@@ -2726,15 +2888,20 @@
           "img": "/img/feature/hello-workflow.svg",
           "heading": "Workflow",
           "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
+        },
+        {
+          "img": "/img/feature/hello-screen-control.svg",
+          "heading": "Screen Control",
+          "content": "Control your customer’s screen from where you are Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
         }
       ]
     },
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"Campaign",
+      "pagename":"campaign",
       "tagline": "Event Base automation",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "heading": "Connect conversations across channels and tools Deliver personalized, engaging and seamless experiences",
       "pageimg":"/img/pageimg/campaign.svg",
       "features": [
         {
@@ -2775,30 +2942,30 @@
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"Segmento",
+      "pagename":"segmento",
       "pageimg":"/img/pageimg/segmento.png",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "target based marketing",
+      "heading": "Personalize customer journeys with data segmentation Segment people based on their demographics, behaviour, interests and other characteristics.",
       "features": [
         {
           "img": "/img/feature/segmento-create-filters-as-per-segments.svg",
           "heading": "Create filters as per segment",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create a filtered list on your business phonebook. Tailor your marketing efforts by targeting people based on their requirements, traits or patterns by creating a particular filter on your phonebook."
         },
         {
           "img": "/img/feature/segmento-automation-trigger.svg",
           "heading": "Automation Trigger",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Trigger meaningful information for the filtered segments. Automate actions on the filters created based on the user’s action or input to deliver relevant and personalised messages for each group."
         },
         {
           "img": "/img/feature/segmento-automation-repeater.svg",
           "heading": "Automation Repeater",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the most relevant content at the most relevant time. Send auto messages to the same filter at time-based intervals through your audience’s preferred business communication channel."
         },
         {
           "img": "/img/feature/segmento-open-api.svg",
           "heading": "Open API",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Use API to get, create, update or delete contact. We provide APIs for every action, big or small, so that you can focus on what matters most- building your amazing product."
         }
       ],
       "morefeatures": [
@@ -2812,11 +2979,11 @@
     },
     "otp": {
       "code": false,
-      "pagename": "OTP",
+      "pagename": "otp",
       "icon": "/img/icon/otp.svg",
       "pageimg":"/img/pageimg/otp.png",
       "tagline": "Instant Secure verification",
-      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication",
+      "heading": "Simplest, quickest and most effective way to verify your users Build customer trust and enable business protection with two-factor authentication.",
       "features": [
         {
           "img": "/img/feature/otp-simple-login.svg",
@@ -2848,8 +3015,8 @@
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl",
       "pageimg":"/img/pageimg/shorturl.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Simplify your links",
+      "heading": "Customise, share and track smart links Optimise your complex links to create short, cleaner links that are easier to share.",
       "features": [
         {
           "img": "/img/feature/shorturl-no-code.svg",
@@ -2876,7 +3043,7 @@
       "icon": "/img/icon/knowledgebase.svg",
       "pagename": "KnowledgeBase",
       "pageimg":"/img/pageimg/knowledgebase.svg",
-      "tagline": "Revolutionize customer support",
+      "tagline": "streamline your Knowledge",
       "heading": "Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience",
       "features": [
         {
@@ -2908,23 +3075,43 @@
       "code": true,
       "pagename": "SMS",
       "icon": "/img/icon/sms.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "Next level messaging",
+      "heading": "Engage your customers globally with quick, scalable and customizable messages Integrate our developer-friendly APIs to send and receive text messages. Our distributed carrier network and intelligent routing ensure highest delivery and lowest latency.",
       "features": [
         {
-          "img": "/img/feature/one.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-intelligent-sms-routing.svg",
+          "heading": "Intelligent SMS Routing",
+          "content": "We find the most reliable route for every message. Your message is sent using your network telecom operator for fast delivery. Incase it fails, within fraction of seconds, we retry and deliver using other network operators."
         },
         {
-          "img": "/img/feature/two.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "img": "/img/feature/sms-a-reliable-scalable-and-feature-rich-sms-api.svg",
+          "heading": "A reliable, scalable and feature-rich SMS API",
+          "content": "Integrate easily with our developer-friendly SMS API. Built for developers by developers, explore quick-start guides, code snippets, SDKs and more to smoothen the integration process. Available in all programming languages."
+        },
+        {
+          "img": "/img/feature/sms-multi-lingual-support.svg",
+          "heading": "Multi-lingual support",
+          "content": "Converse with your audience in their local language. Take your engagement to the next level. Build customer confidence as you send messages in their regional or foreign language anywhere across the world."
+        },
+        {
+          "img": "/img/feature/sms-personalized-sms.svg",
+          "heading": "Personalized SMS",
+          "content": "Increase customer satisfaction with meaningful engagement. Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI."
+        },
+        {
+          "img": "/img/feature/sms-link-shortener.svg",
+          "heading": "Link shortener",
+          "content": "Transform long URL in a shorter, more readable link. Enable the deeply integrated link shortener to convert long URL to shorter links. Get detailed user report on clicks from mobile numbers, browser and IP."
+        },
+        {
+          "img": "/img/feature/sms-enhanced-analytics.svg",
+          "heading": "Enhanced Analytics",
+          "content": "Real-time graphical view for monitoring and troubleshooting. Optimize your SMS delivery, measure the effectiveness of your campaigns, improve ROI. Always know which messages customers have received and which are missed."
         },
         {
           "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Enjoy reliable, low latency delivery-worldwide",
+          "content": "Reach 180+ countries reliably with localized senders. Our backend is optimized to process a very high volume of SMS. The automatic rerouting of global traffic in real-time helps us avoid outages and latency."
         }
       ],
       "morefeatures": [
@@ -2940,33 +3127,33 @@
       "code": true,
       "pagename": "Email",
       "icon": "/img/icon/email.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "smarter email strategy",
+      "heading": "Smart emails that land directly into the right inbox Make the most of these powerful touchpoints between your brand and your customers.",
       "features": [
         {
           "img": "/img/feature/email-template-builder.svg",
-          "heading": "Multi channel Support",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Template Builder",
+          "content": "Drag-and-drop to create the layout of your email. Customize your transactional emails using our no-code, drag-and-drop interface. Preview to see how your email will look when viewed on different devices."
         },
         {
           "img": "/img/feature/email-amp-emails.svg",
-          "heading": "Unlimited Agents",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "AMP Emails",
+          "content": "Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects."
         },
         {
           "img": "/img/feature/email-statistics.svg",
-          "heading": "Chatbot",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Statistics",
+          "content": "Monitor and track every aspect of your email’s lifecycle. Get a graphical representation of the delivery rates, open rates, click-through rates, bounce rates, and spam to iterate and ensure you reach your customer's inbox."
         },
         {
           "img": "/img/feature/email-smtp-restapi-support.svg",
-          "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "SMTP/RestAPI support",
+          "content": "Integrate with our RESTful APIs and SMTP in minutes. Get your hands on our comprehensive documentation or connect with our support superheroes to easily integrate into your custom or third-party apps to start sending emails."
         },
         {
           "img": "/img/feature/email-validation.svg",
-          "heading": "Video Call / Screen Sharing",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "Email Validation",
+          "content": "Positively impact the engagement and reputation of your brand. Deliver more messages to real contacts with our real-time API that detects and suppresses invalid email address with an accuracy rate of up to 85% to give you a clean list."
         }
       ],
       "morefeatures": [
@@ -2982,38 +3169,38 @@
       "code": true,
       "pagename": "Voice",
       "icon": "/img/icon/voice.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "connect with confidence",
+      "heading": "Boost customer engagement and build trust Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct Calling From Hello",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Skip the 2-way calling and directly call from browser. Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
-          "heading": "Voice IVR Flow",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "heading": "IVR Flow",
+          "content": "Modern IVR that makes customer interaction quick and hassle-free. Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Speak directly with your audience over a single call. Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Upload your audio message in multiple ways. Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Connect your voice call to the IVR. Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Direct your user to your support agent. Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
         }
       ],
       "morefeatures": [
@@ -3029,33 +3216,33 @@
       "code": true,
       "pagename": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
-      "tagline": "Revolutionize customer support",
-      "heading": "Boost audience engagement through smart communication and on-time delivery.",
+      "tagline": "dominate popular platforms",
+      "heading": "Drive better customer engagement outcomes Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
           "img": "/img/feature/whatsapp-support-base64.svg",
           "heading": "Support Base64",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Send the body in JSON and leave the rest to us. No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
         },
         {
           "img": "/img/feature/whatsapp-2way-communication.svg",
           "heading": "2way communication",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Say hello to go on HELLO. Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
         },
         {
           "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
           "heading": "Manage template inside panel",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Create and manage your templates right here. No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
         },
         {
           "img": "/img/feature/whatsapp-analytics.svg",
           "heading": "Analytics",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get graphical insights into your business messages. Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
         },
         {
           "img": "/img/feature/whatsapp-export-logs.svg",
           "heading": "Export Logs",
-          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          "content": "Get individual outbound and inbound messages logs. Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
