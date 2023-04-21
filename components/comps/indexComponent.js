@@ -275,7 +275,7 @@ const indexComp = ({ params }) => {
       <div className="container my-5 more-services-sec my-80">
         <h2 className="sub-heading c-head">More Services</h2>
         <div className="d-flex my-5 flex-md-row flex-column">
-          <div className="col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1 more-services">
+        <a href={`${path}/shorturl`} className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services">
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
                 <span className="me-3">
@@ -307,15 +307,15 @@ const indexComp = ({ params }) => {
                   more manageable and memorable.
                 </p>
               </div>
-              <a href={`${path}/shorturl`}>
+              
                 <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-b text-dark">
                   <span>Learn more</span>
                   <MdKeyboardArrowRight />
                 </div>
-              </a>
             </div>
-          </div>
-          <div className="col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services">
+          </a>
+          
+          <a href={`${path}/knowledgebase`} className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services">
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
                 <span className="me-3">
@@ -349,15 +349,13 @@ const indexComp = ({ params }) => {
                   answers.
                 </p>
               </div>
-              <a href={`${path}/knowledgebase`}>
                 <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-sb text-dark">
                   <span>Learn more</span>
                   <MdKeyboardArrowRight />
                 </div>
-              </a>
             </div>
-          </div>
-          <div className="col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 more-services">
+              </a>
+              <a href="https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91" className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services">
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
                 <span className="me-3">
@@ -391,21 +389,23 @@ const indexComp = ({ params }) => {
                   more manageable and memorable.
                 </p>
               </div>
-              <a href="https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91">
+              
                 <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-sb text-dark">
                   <span>Learn more</span>
                   <MdKeyboardArrowRight />
                 </div>
-              </a>
+             
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
       <div className="container  my-80">
         <h2 className="sub-heading c-head">Our Client Stories</h2>
         <div className="d-flex col-12 flex-column flex-sm-row gap-4 my-4">
-          <div className="col-12 col-md-8 col-sm-8 col-lg-6 c-hover ">
+          <a 
+          href="/case-studies/milkbasket"
+          className="col-12 col-md-8 col-sm-8 col-lg-6 c-hover c-hover-bg-grey text-dark">
             <Image
               className="milkbasket-client-img "
               src="/img/milkbasket-client-img.png"
@@ -418,17 +418,19 @@ const indexComp = ({ params }) => {
                 Milkbasket sends regular updates to their customers’ via MSG91
                 multi-channel APIs.
               </p>
-              <a
+              <div
                 className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
-                href="/case-studies/milkbasket"
+                
               >
                 <span className="me-3 ">Learn more</span>
                 <MdKeyboardArrowRight />
-              </a>
+              </div>
             </div>
-          </div>
+          </a>
           <div className="col-12 col-sm-4 col-md-4 col-lg-6 d-flex flex-sm-column flex-row gap-2 gap-sm-3 gap-md-4">
-            <div className="c-hover d-flex align-items-center col-6 col-sm-12">
+            <a 
+            href="/case-studies/unacademy" 
+            className="c-hover d-flex align-items-center col-6 col-sm-12 c-hover-bg-grey text-dark">
               <Image
                 className="secc-client-img col-12 col-lg-4"
                 src="/img/unacademy-client-img.png"
@@ -440,16 +442,18 @@ const indexComp = ({ params }) => {
                 <p className="pe-2">
                   Unacademy ensures seamless communication using SMS via MSG91.
                 </p>
-                <a
+                <div
                   className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
-                  href="/case-studies/unacademy"
+                  
                 >
                   <span className="me-3 ">Learn more</span>
                   <MdKeyboardArrowRight />
-                </a>
+                </div>
               </div>
-            </div>
-            <div className="c-hover d-flex align-items-center col-6 col-sm-12">
+            </a>
+            <a 
+             href="/case-studies/ixigo"
+             className="c-hover d-flex align-items-center col-6 col-sm-12 c-hover-bg-grey text-dark">
               <Image
                 className="secc-client-img col-12 col-lg-4 "
                 src="/img/ixigo-client-img.png"
@@ -461,15 +465,15 @@ const indexComp = ({ params }) => {
                 <p className="pe-2">
                   Ixigo ensures seamless communication using SMS via MSG91.
                 </p>
-                <a
+                <div
                   className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
-                  href="/case-studies/ixigo"
+                 
                 >
                   <span className="me-3 ">Learn more</span>
                   <MdKeyboardArrowRight />
-                </a>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>

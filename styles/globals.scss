@@ -20,6 +20,13 @@ body {
   width: 100%;
   padding: 0 100px;
 }
+
+.c-hover-bg-grey{
+  &:hover{
+    background-color: var(--c-light-grey);
+
+  }
+}
 .c-hover {
   &:hover {
     box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.15);
