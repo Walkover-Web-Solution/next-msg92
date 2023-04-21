@@ -82,12 +82,13 @@ const navbar = ({ brawserPath }) => {
           </div>
           <div className=" d-flex gap-4 gap-lg-4 gap-xl-5 w-nav-menu align-items-center justify-content-end">
             <a
-              className=""
+              className="nav-link menu-opt text-dark"
               href="https://docs.msg91.com/reference/overview"
               target="_blank"
               id="apidocs-link"
             >
-              <span className="c-fs-4 c-fw-m text-dark">API Docs</span>
+              <span className="c-fs-4 c-fw-m ">API Docs</span>
+              <div className="nav-line"></div>
             </a>
             <a
               href="https://control.msg91.com/signup/"
