@@ -27,71 +27,71 @@ const aboutUsComp = () => {
           width='{1428}'
         />
       </div>
-      <div className='container-fluid d-lg-flex flex-row justify-content-center mt-5 p-4 paddingCss'>
+      <div className='container-fluid d-lg-flex flex-row justify-content-center p-5 paddingCss blackBg'>
         <h1 className='sub-heading'>
           Every brand offers its own culture, and this is what we offer you...
         </h1>
       </div>
       <div className='container p-5'>
         <div className='d-flex flex-column flex-sm-row centerText'>
-          <h1 className='sub-heading py-3 px-5 '>We believe in</h1>
+          <h1 className='sub-heading py-3 px-5  c-head'>We believe in</h1>
         </div>
       </div>
-      <div className='container row align-items-flex-start mx-auto g-5 pb-5'>
+      <div className='container row align-items-flex-start mx-auto g-5 pb-5  text-center'>
         <div className='col-lg-3 col-md-6 col-sm-12'>
           <div className='w-100 d-flex flex-column align-items-center'>
-            <span className='c-fs-1 rounded-circle social-circle justify-content-center align-items-center d-flex'>
+            <span className='c-fs-1 rounded-circle social-circle negativeMargin justify-content-center align-items-center d-flex  blackBg'>
               <img
                 src='/img/about_Us/user_thinking.svg'
-                width='100px'
-                height='35px'
+                width='95%'
+                height='95%'
               />
             </span>
-            <p className='c-fs-2 c-fw-b px-3 py-3 mt-n2 rounded w-75 text-center '>
-              Thinking like a Customer
-            </p>
+            <div className='alignMiddle cart'>
+              <p className='c-fs-2 c-fw-b px-6 py-4 mt-n2  w-95 text-center  centerText'>
+                Thinking like a Customer
+              </p>
+            </div>
           </div>
         </div>
         <div className='col-lg-3 col-md-6 col-sm-12'>
           <div className='w-100 d-flex flex-column align-items-center'>
-            <span className='c-fs-1 rounded-circle social-circle justify-content-center align-items-center d-flex'>
-              <img
-                src='/img/about_Us/star_our.svg'
-                width='100px'
-                height='35px'
-              />
+            <span className='c-fs-1 rounded-circle social-circle negativeMargin justify-content-center align-items-center d-flex blackBg'>
+              <img src='/img/about_Us/star_our.svg' width='95%' height='95%' />
             </span>
-            <p className='c-fs-2 c-fw-b px-3 py-3 mt-n2 rounded w-75 text-center '>
-              Our Magic Wand is Innovations
-            </p>
+            <div className='alignMiddle cart'>
+              <p className='c-fs-2 c-fw-b px-6 py-4 mt-n2  w-95 text-center '>
+                Our Magic Wand is Innovations
+              </p>
+            </div>
           </div>
         </div>
         <div className='col-lg-3 col-md-6 col-sm-12'>
           <div className='w-100 d-flex flex-column align-items-center'>
-            <span className='c-fs-1 rounded-circle social-circle justify-content-center align-items-center d-flex'>
+            <span className='c-fs-1 rounded-circle social-circle negativeMargin justify-content-center align-items-center d-flex  blackBg'>
               <img
                 src='/img/about_Us/trendingup_uplifting.svg'
-                width='100px'
-                height='35px'
+                width='95%'
+                height='95%'
               />
             </span>
-            <p className='c-fs-2 c-fw-b px-3 py-3 mt-n2 rounded w-75 text-center '>
-              Uplifting each other
-            </p>
+            <div className='alignMiddle cart'>
+              <p className='c-fs-2 c-fw-b px-6 py-4 mt-n2  w-95 text-center '>
+                Uplifting each other
+              </p>
+            </div>
           </div>
         </div>
-        <div className='col-lg-3 col-md-6 col-sm-12'>
+        <div className='col-lg-3 col-md-6 col-sm-12 '>
           <div className='w-100 d-flex flex-column align-items-center'>
-            <span className='c-fs-1 rounded-circle social-circle justify-content-center align-items-center d-flex'>
-              <img
-                src='/img/about_Us/feather_sustainability.svg'
-                width='100px'
-                height='35px'
-              />
+            <span className='c-fs-1 rounded-circle social-circle negativeMargin justify-content-center align-items-center d-flex  blackBg'>
+              <img src='/img/about_Us/feather_sustainability.svg' />
             </span>
-            <p className='c-fs-2 c-fw-b px-3 py-3 mt-n2 rounded w-75 text-center '>
-              Sustainability is Priority
-            </p>
+            <div className='alignMiddle cart'>
+              <p className='c-fs-2 c-fw-b px-6 py-4 mt-n2 w-95 text-center '>
+                Sustainability is Priority
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -99,14 +99,14 @@ const aboutUsComp = () => {
         <div className='d-flex justify-content-center align-items-center flex-column flex-sm-row paddingCss'>
           <h1 className='heading pb-3'>Our leadership team</h1>
         </div>
-        <h2 className='c-fs-2 c-ff-b c-fw-r mx-auto pb-3 paddingCss'>
+        <h2 className='c-fs-2 c-ff-b c-fw-r mx-auto pb-3 paddingCss container'>
           The abilities combined with the dedication of our team has resulted in
           making us the most loved &amp; innovative cloud communication
           platform.
         </h2>
       </div>
       <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mx-auto '>
-        <div className='row col-lg-8 col-md-9 mx-auto g-2 imgSpace'>
+        <div className='row col-lg-8 col-md-9 mx-auto g-2 imgSpace flexBetween'>
           <div className='col col-lg-4 col-sm-4 col-sm-12  px-5'>
             <div className='card shadow-sm'>
               <div>
@@ -117,11 +117,14 @@ const aboutUsComp = () => {
                 />
               </div>
               <div className='card-body'>
-                <p className='c-fs-3 c-fw-m card-text'>Pushpendra Agrawal</p>
-                <p className='c-fs-4 card-text mt-2'>Founder &amp; Advisor</p>
-                <p className='c-fs-5 card-text mt-2'>
-                  Pushpendra is a serial entrepreneur.
-                </p>
+                <div className='height'>
+                  <p className='c-fs-3 c-fw-m card-text'>Pushpendra Agrawal</p>
+                  <p className='c-fs-4 card-text mt-2'>Founder &amp; Advisor</p>
+
+                  <p className='c-fs-5 card-text mt-2'>
+                    Pushpendra is a serial entrepreneur.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -135,15 +138,18 @@ const aboutUsComp = () => {
                 />
               </div>
               <div className='card-body'>
-                <p className='c-fs-3 c-fw-m card-text'>Shubhendra Agrawal</p>
-                <p className='c-fs-4 card-text mt-2'>Founder &amp; CEO</p>
-                <p className='c-fs-5 card-text mt-2'>
-                  Shubhendra is an absolute Finance man.
-                </p>
+                <div className='height'>
+                  <p className='c-fs-3 c-fw-m card-text'>Shubhendra Agrawal</p>
+                  <p className='c-fs-4 card-text mt-2'>Founder &amp; CEO</p>
+
+                  <p className='c-fs-5 card-text mt-2'>
+                    Shubhendra is an absolute Finance man.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div className='col col-lg-4 col-sm-4 col-sm-12 px-5'>
+          <div className='col col-lg-4 col-sm-4 col-sm-12 px-5 '>
             <div className='card shadow-sm'>
               <div>
                 <img
@@ -153,11 +159,14 @@ const aboutUsComp = () => {
                 />
               </div>
               <div className='card-body'>
-                <p className='c-fs-3 c-fw-m card-text'>Ravi Dangi</p>
-                <p className='c-fs-4 card-text mt-2'>Sales</p>
-                <p className='c-fs-5 card-text mt-2'>
-                  Mistakenly believed Engineer, he’s a sales buff.
-                </p>
+                <div className='height'>
+                  <p className='c-fs-3 c-fw-m card-text'>Ravi Dangi</p>
+                  <p className='c-fs-4 card-text mt-2'>Sales</p>
+
+                  <p className='c-fs-5 card-text mt-2'>
+                    Mistakenly believed Engineer, he’s a sales buff.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -171,11 +180,14 @@ const aboutUsComp = () => {
                 />
               </div>
               <div className='card-body'>
-                <p className='c-fs-3 c-fw-m card-text'>Vipin Sharma</p>
-                <p className='c-fs-4 card-text mt-2'>Technology</p>
-                <p className='c-fs-5 card-text mt-2'>
-                  Mostly found in the gym or at the TT table.
-                </p>
+                <div className='height'>
+                  <p className='c-fs-3 c-fw-m card-text'>Vipin Sharma</p>
+                  <p className='c-fs-4 card-text mt-2'>Technology</p>
+
+                  <p className='c-fs-5 card-text mt-2'>
+                    Mostly found in the gym or at the TT table.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -189,11 +201,14 @@ const aboutUsComp = () => {
                 />
               </div>
               <div className='card-body'>
-                <p className='c-fs-3 c-fw-m card-text'>Alisha Chouhan</p>
-                <p className='c-fs-4 card-text mt-2'>Global Business</p>
-                <p className='c-fs-5 card-text mt-2'>
-                  Works hard, has fun, makes a difference.
-                </p>
+                <div className='height'>
+                  <p className='c-fs-3 c-fw-m card-text'>Alisha Chouhan</p>
+                  <p className='c-fs-4 card-text mt-2'>Global Business</p>
+
+                  <p className='c-fs-5 card-text mt-2'>
+                    Works hard, has fun, makes a difference.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -207,22 +222,25 @@ const aboutUsComp = () => {
                 />
               </div>
               <div className='card-body'>
-                <p className='c-fs-3 c-fw-m card-text'>Chinmay Daga</p>
-                <p className='c-fs-4 card-text mt-2'>Operations</p>
-                <p className='c-fs-5 card-text mt-2'>
-                  The Processes &amp; Partnerships pro.
-                </p>
+                <div className='height'>
+                  <p className='c-fs-3 c-fw-m card-text'>Chinmay Daga</p>
+                  <p className='c-fs-4 card-text mt-2'>Operations</p>
+
+                  <p className='c-fs-5 card-text mt-2'>
+                    The Processes &amp; Partnerships pro.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className='container text-center justify-content-center  m-5 mx-auto'>
-        <div className='d-flex justify-content-center align-items-center flex-column flex-sm-row paddingCss'>
-          <p className='c-fs-2 mx-auto pt-3'>
+        <div className='d-flex justify-content-center align-items-center container flex-column flex-sm-row paddingCss'>
+          <p className='c-fs-2 mx-auto p-5 lightBg bborder-0 '>
             Striving to fulfil our vision by hiring passionate people who are
             willing to push their benchmark, and of the industry, as well. Want
-            to join our vision? <strong>We’re</strong>{' '}
+            to join our vision? We’re{' '}
             <strong>
               <a
                 href='https://apply.workable.com/walkover/'
@@ -238,14 +256,14 @@ const aboutUsComp = () => {
       <div className='container col-md-12 col-md-12 col-sm-12 mx-auto py-4'>
         <div className='h-100 bg-white rounded-3'>
           <div className='d-lg-flex flex-row align-items-center justify-content-center'>
-            <div className='col-lg-6 text-lg-center order-lg-2 imgPadding'>
+            <div className='col-lg-6 text-lg-center order-lg-2  imgPadding'>
               <img
                 src='../img/about_Us/team_Image1.svg'
-                className='img-fluid col-lg-10'
+                className='img-fluid col-lg-10 bborder-0'
               />
             </div>
             <div className='container paddingCss'>
-              <h1 className='col-lg-12 col-md-12 col-sm-12 c-fw-b mb-4 teamStrength'>
+              <h1 className='col-lg-12 col-md-12 col-sm-12 c-fw-b mb-4 teamStrength c-head'>
                 Our Team is our Strength
               </h1>
               <span className='col-lg-6 col-md-6 col-sm-12 c-fs-2'>
@@ -257,12 +275,12 @@ const aboutUsComp = () => {
           </div>
         </div>
       </div>
-      <div className='container text-center justify-content-center mx-auto'>
+      {/* <div className='container text-center justify-content-center mx-auto'>
         <div className='d-flex justify-content-center align-items-center flex-column flex-sm-row'>
           <h1 className='heading mx-auto py-5  c-fw-b'>MSG91 today is</h1>
         </div>
-      </div>
-      <div className='container row mx-auto text-center py-3'>
+      </div> */}
+      {/* <div className='container row mx-auto text-center py-3'>
         <div className='col-lg-4 col-md-4 col-sm-12 px-1'>
           <div className='h-100 bg-white border-0 rounded-3'>
             <p className='text-primary c-fs-1 c-fw-b'>#1</p>
@@ -286,17 +304,17 @@ const aboutUsComp = () => {
             <p className='c-fs-3 c-fw-b'>Active users across the globe.</p>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className='container text-center justify-content-center mx-auto'>
         <div className='d-flex justify-content-center align-items-center flex-column flex-sm-row'>
-          <p className='col-lg-10 col-md-6 col-sm-12 sub-heading c-fw-b mx-auto py-5'>
+          <p className='col-lg-10 col-md-6 col-sm-12 sub-heading c-fw-b mx-auto py-5 c-head'>
             We are who, our Clients say we are!
           </p>
         </div>
       </div>
-      <div className='container row mx-auto text-center '>
+      <div className='container row mx-auto text-left '>
         <div className='col-lg-4 col-md-4 col-sm-12 px-2'>
-          <div className='h-100 p-3 bg-white border-0 rounded-3'>
+          <div className='h-100 p-3 bg-white border-0 rounded-3 '>
             <div className='d-flex'>
               <img
                 src='../img/about_Us/ixigo.svg'
