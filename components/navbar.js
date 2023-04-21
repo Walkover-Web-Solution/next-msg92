@@ -12,6 +12,7 @@ const navbar = ({ brawserPath }) => {
   var path = brawserPath.split("/")[1];
   path = path.length == 2 ? "/" + path : "";
   const [showOverlay, setShowOverlay] = useState(false);
+  const [show, setShow] = useState(false);
   const toggleOverlay = () => {
     setShowOverlay(true);
   };
@@ -44,7 +45,7 @@ const navbar = ({ brawserPath }) => {
   return (
     <>
       <Notification />
-      {/* <Mininav path={path}/> */}
+      {show && <Mininav path={path}/>}
       <nav className="w-100 py-2 sticy align-items-center d-flex " id="navbar">
         <div className="container relative d-none align-items-center d-md-flex justify-content-between c-fs-4 c-fw-m nav-menu-cont">
           <div className=" d-flex gap-4 gap-lg-4 gap-xl-5 w-nav-menu align-items-center justify-content-start nav-menu">
@@ -107,9 +108,9 @@ const navbar = ({ brawserPath }) => {
               <img className="msg91-logo" src="/img/logo.svg" alt="MSG91" />
             </a>
           </div>
-          <a href="/" className="text-dark">
-          <MdSegment className="c-fs-1"/>
-          </a>
+          {/* <a href="/" className="text-dark"> */}
+          <MdSegment className="c-fs-1" onClick={()=>{setShow(!show)}}/>
+          {/* </a> */}
         </div>
       </nav>
     </>
