@@ -42,14 +42,6 @@
   }
 }
 
-// @media screen and (min-width: 0px) and (max-width: 657px) {
-//   .cart {
-//     background-color: #f2f2f3;
-//     width: 200px;
-//     height: 80px;
-//   }
-// }
-
 .circleSize {
   width: '80px';
   height: '80px';
@@ -93,4 +85,33 @@
     width: 90%;
     padding: 20%;
   }
+}
+
+.developerCard {
+  background-color: #212528;
+  color: white;
+  height: 200px;
+  width: clamp(200px, 25vw, 400px);
+}
+
+.startUpCart{
+    height: 190px;
+    width: clamp(190px,25vw,320px);
+    background-color: #212528;
+  color: white;
+}
+
+.iconColor {
+  background-color: black;
+  color: white;
+}
+
+.devImgSize{
+    width: 60px;
+    height: 60px;
+}
+
+.startup-home-img{
+    height: 400px;
+    width: clamp(300px,25vw,320px);
 }

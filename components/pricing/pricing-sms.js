@@ -13,7 +13,7 @@ const pricingvoice = ({
   destinationCountry,
   setDestinationCountry
 }) => {
-  console.log('pricing', pricing);
+  //console.log('pricing', pricing);
   // useEffect(() => {
   //   if(originCountry != null)
   //   {

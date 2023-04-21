@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
-import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Mininav = ({ path }) => {
   return (
     <>
-        <div className="overlay-menu d-none flex-wrap gap-3 " id="productmenu">
+        <div className="overlay-menu d-flex flex-wrap gap-3 p-3 " id="mininav">
           <div className="menu mt-4 d-flex flex-column ">
             <p className="c-fs-3 c-fw-sb text-grey text-uppercase ">
               Applications

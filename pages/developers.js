@@ -20,7 +20,10 @@ const developers = () => {
             integrate for your team development.
           </h2>
           <a target='_blank' href='https://docs.msg91.com/reference/send-sms'>
-            <button className='btn btn-dark btn-md mt-3 c-fs-4 p-3' type='button'>
+            <button
+              className='btn btn-dark btn-md mt-3 c-fs-4 p-3'
+              type='button'
+            >
               Explore Documentation
             </button>
           </a>
@@ -44,45 +47,44 @@ const developers = () => {
         </div>
       </section>
       <div className='container my-5'>
-        <h2>We enable communication in your awesome products</h2>
+        <h2 className='text-center my-5'>
+          We enable communication in your awesome products
+        </h2>
         <div className='d-flex w-100'>
-          <div className='col-12 col-lg-10  flex-column flex-md-row d-flex align-items-center my-4 justify-content-center gap-3 gap-lg-5 mx-auto'>
-            <div className='developers-card'>
-              <div className='w-100 d-flex flex-column align-items-center mt-4 mt-sm-0 mt-lg-4'>
-                <span className='c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex py-2'>
-                  <MdThumbUpOffAlt className='p-auto text-primary' fontSize="large" />
-                </span>
-                <p className='w-100 c-fs-2 px-2 py-5 mt-n3 rounded text-center '>
-                  Engineered for reliability
-                </p>
-              </div>
+          <div className='col  flex-column flex-md-row  d-flex align-items-center my-4 justify-content-md-between justify-content-center gap-5 mx-auto'>
+            <div className='d-flex gap-2 align-items-center justify-content-center flex-column developers-card  developerCard p-4'>
+              <span>
+                <img
+                  src='/img/Developers/Dev_thumps.svg'
+                  className='devImgSize'
+                />
+              </span>
+              <p className='c-fs-3 text-center '>Engineered for reliability</p>
             </div>
-            <div className='developers-card'>
-              <div className='w-100 d-flex flex-column align-items-center mt-4 mt-sm-0 mt-lg-4'>
-                <span className='c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex py-2'>
-                  <MdOutlineChatBubbleOutline className='p-auto text-primary' />
-                </span>
-                <p className='w-100 c-fs-2 px-2 py-5 mt-n3 rounded text-center'>
-                  Communication addons
-                </p>
-              </div>
+            <div className=' d-flex gap-2 align-items-center justify-content-center flex-column developers-card  developerCard p-4'>
+              <span>
+                <img
+                  src='/img/Developers/Dev_coms.svg'
+                  className='devImgSize'
+                />
+              </span>
+              <p className='c-fs-3 text-center'>Communication addons</p>
             </div>
-            <div className='developers-card'>
-              <div className='w-100 d-flex flex-column align-items-center mt-4 mt-sm-0 mt-lg-4'>
-                <span className='c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex py-2'>
-                  <MdOutlinePeopleAlt className='p-auto text-primary' />
-                </span>
-                <p className='w-100 c-fs-2 px-2 py-5 mt-n3 rounded text-center'>
-                  Problem solvers at service
-                </p>
-              </div>
+            <div className=' d-flex gap-2 align-items-center justify-content-center flex-column developers-card  developerCard p-4'>
+              <span>
+                <img
+                  src='/img/Developers/Dev_users.svg'
+                  className='devImgSize'
+                />
+              </span>
+              <p className='c-fs-3 text-center'>Problem solvers at service</p>
             </div>
           </div>
         </div>
       </div>
       <section className='col-12 py-5'>
         <div className='col-11 col-md-10 col-lg-9 mx-auto'>
-          <h2 className='small-heading'>
+          <h2 className='small-heading '>
             Why MSG91 API is developer friendly for real?
           </h2>
           <div className='mt-5'>
@@ -144,7 +146,7 @@ const developers = () => {
             <div className='mx-auto d-flex justify-content-center align-items-center'>
               <a href='https://play.google.com/store/apps/details?id=com.hellornapp'>
                 {' '}
-                <GrAndroid className='c-fs-1' />{' '}
+                <GrAndroid className='heading iconColor p-1' />{' '}
               </a>
             </div>
             <p className='c-fs-2'>Android</p>
@@ -153,7 +155,7 @@ const developers = () => {
             <div className='mx-auto d-flex justify-content-center align-items-center'>
               <a href='https://apps.apple.com/in/app/msg91/id981827687'>
                 {' '}
-                <GrApple className='c-fs-1' />{' '}
+                <GrApple className='heading iconColor p-1' />{' '}
               </a>
             </div>
             <p className='c-fs-2'>iOS</p>
