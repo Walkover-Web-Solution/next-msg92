@@ -16,7 +16,7 @@ const indexComp = ({ params }) => {
         <a
           href="https://control.msg91.com/signup/"
           target="_blank"
-          className="btn btn-dark small-heading c-fw-sb ls-3 btn-lg"
+          className="btn btn-dark small-heading px-4 py-3 c-fw-sb ls-3 btn-lg"
         >
           Get Started
         </a>
