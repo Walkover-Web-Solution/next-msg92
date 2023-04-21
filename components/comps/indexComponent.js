@@ -131,10 +131,11 @@ const indexComp = ({ params }) => {
           Full-featured APIs for developers & businesses to connect and engage
           their customers globally.
         </p>
-        <div className=" mt-4 d-flex gap-5 flex-wrap">
+        <div className="row mt-4 row-gap-26">
+          <div className="col-3">
           <a
             href="/sms"
-            className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
+            className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
           >
             <div className="d-flex align-items-center">
               <Image
@@ -148,9 +149,11 @@ const indexComp = ({ params }) => {
             </div>
             <MdKeyboardArrowRight />
           </a>
+          </div>
+          <div className="col-3">
           <a
             href="/email"
-            className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
+            className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
           >
             <div className="d-flex align-items-center">
               <Image
@@ -164,9 +167,11 @@ const indexComp = ({ params }) => {
             </div>
             <MdKeyboardArrowRight />
           </a>
+          </div>
+          <div className="col-3">
           <a
             href="/whatsapp"
-            className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
+            className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
           >
             <div className="d-flex align-items-center">
               <Image
@@ -180,9 +185,10 @@ const indexComp = ({ params }) => {
             </div>
             <MdKeyboardArrowRight />
           </a>
+          </div>
           {/* <a
             href="/telegram"
-            className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
+            className="chn-btn col-3 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
           >
             <div className="d-flex align-items-center">
               <Image
@@ -196,9 +202,10 @@ const indexComp = ({ params }) => {
             </div>
             <MdKeyboardArrowRight />
           </a> */}
+          <div className="col-3">
           <a
             href="/voice"
-            className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
+            className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
           >
             <div className="d-flex align-items-center">
               <Image
@@ -212,9 +219,10 @@ const indexComp = ({ params }) => {
             </div>
             <MdKeyboardArrowRight />
           </a>
+          </div>
           {/* <a
             href="/rcs"
-            className="chn-btn d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
+            className="chn-btn col-3 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
           >
             <div className="d-flex align-items-center">
               <Image
