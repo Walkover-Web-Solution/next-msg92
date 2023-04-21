@@ -132,7 +132,7 @@ const indexComp = ({ params }) => {
           their customers globally.
         </p>
         <div className="row mt-4 row-gap-26">
-          <div className="col-3">
+          <div className="col-12 col-sm-6 col-md-3">
           <a
             href="/sms"
             className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
@@ -150,7 +150,7 @@ const indexComp = ({ params }) => {
             <MdKeyboardArrowRight />
           </a>
           </div>
-          <div className="col-3">
+          <div className="col-12 col-sm-6 col-md-3">
           <a
             href="/email"
             className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
@@ -168,7 +168,7 @@ const indexComp = ({ params }) => {
             <MdKeyboardArrowRight />
           </a>
           </div>
-          <div className="col-3">
+          <div className="col-12 col-sm-6 col-md-3">
           <a
             href="/whatsapp"
             className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
@@ -202,7 +202,7 @@ const indexComp = ({ params }) => {
             </div>
             <MdKeyboardArrowRight />
           </a> */}
-          <div className="col-3">
+          <div className="col-12 col-sm-6 col-md-3">
           <a
             href="/voice"
             className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
