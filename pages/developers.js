@@ -10,18 +10,18 @@ const developers = () => {
   return (
     <>
       <div className='container'>
-        <div className=' mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8'>
+        <div className=' mx-auto text-center justify-content-center py-2 py-md-5 col-12'>
           <div className='d-flex justify-content-center align-items-center flex-column flex-sm-row py-3'>
             <h1 className='heading'>Hello Developers</h1>
           </div>
-          <h2 className='c-fs-2 px-3 w-md-75 w-100 mx-auto pb-2'>
+          <h2 className='small-heading px-3 col-md-10 col-12 mx-auto pb-2'>
             Integrate SMS, Email, Voice API with Java, PHP, HTTP Scripts. Build
             apps, innovation and ideas for rapid growing business, or just
             integrate for your team development.
           </h2>
           <a target='_blank' href='https://docs.msg91.com/reference/send-sms'>
             <button
-              className='btn btn-dark btn-md mt-3 c-fs-4 p-3'
+              className='btn btn-dark small-heading px-3 py-2 mt-3 c-fw-sb px-md-4 py-md-3 ls-3 '
               type='button'
             >
               Explore Documentation
@@ -29,9 +29,8 @@ const developers = () => {
           </a>
         </div>
       </div>
-      <section className='col-12 py-5'>
-        <div className='container'>
-          <h2 className='small-heading'>
+        <div className='container my-80'>
+          <h2 className='c-head sub-heading'>
             One API to revolutionalise the way developers integrate
           </h2>
           <p className='c-fs-3 mt-2'>
@@ -45,12 +44,11 @@ const developers = () => {
             Just integrate and forget the rest of the challenges.
           </p>
         </div>
-      </section>
-      <div className='container my-5'>
-        <h2 className='text-center my-5'>
+      <div className='container my-80'>
+        <h2 className='c-head sub-heading'>
           We enable communication in your awesome products
         </h2>
-        <div className='d-flex w-100'>
+        <div className='d-flex w-100 mt-3'>
           <div className='col  flex-column flex-md-row  d-flex align-items-center my-4 justify-content-md-between justify-content-center gap-5 mx-auto'>
             <div className='d-flex gap-2 align-items-center justify-content-center flex-column developers-card  developerCard p-4'>
               <span>
@@ -82,12 +80,11 @@ const developers = () => {
           </div>
         </div>
       </div>
-      <section className='col-12 py-5'>
-        <div className='col-11 col-md-10 col-lg-9 mx-auto'>
-          <h2 className='small-heading '>
+        <div className='container my-80 '>
+          <h2 className='c-head sub-heading'>
             Why MSG91 API is developer friendly for real?
           </h2>
-          <div className='mt-5'>
+          <div className='mt-3'>
             <p className='c-fs-3 c-fw-b'>Powerful sending infrastructure</p>
             <p className='c-fs-3'>
               Easy API integration and a simple, HTTP or JSON/XML API enables
@@ -114,7 +111,6 @@ const developers = () => {
             </p>
           </div>
         </div>
-      </section>
       <div className='container d-flex flex-md-row  flex-column  justify-content-betweeen d-flex my-5 '>
         <div className='col-12 col-md-6 pe-0 pe-md-4 mb-4 mb-md-0 d-flex flex-column align-content-center justify-content-center'>
           <h2 className='small-heading'>
