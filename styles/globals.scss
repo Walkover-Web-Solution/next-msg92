@@ -72,10 +72,6 @@ nav {
   position: absolute;
   top: 100px;
 }
-
-.product-sec {
-  width: 100vw;  
-}
 .pro-heading {
   font-size: clamp(20px, 3vw, 30px);
 }
@@ -566,4 +562,11 @@ body::-webkit-scrollbar-button {
 .feature-img {
   width: clamp(300px, 50vw, 600px);
   height: auto;
+}
+
+/* channel code smaple */
+code[class*="language-"], pre[class*="language-"]{
+  white-space: break-spaces !important;
+  height: 500px;
+  margin: 0 80px;
 }

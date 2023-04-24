@@ -178,7 +178,7 @@ const ProductMenu = ({path}) => {
               />
               <h4 className="c-fs-2">Zapier</h4>
             </a>
-            <a
+            {/* <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
               href="/hubspot"
               target="_blank"
@@ -190,7 +190,7 @@ const ProductMenu = ({path}) => {
                 alt="ico"
               />
               <h4 className="c-fs-2">Hubspot</h4>
-            </a>
+            </a> */}
             <a
               className="d-flex gap-3 align-items-center product-menu-btn p-3"
               href="https://www.freshworks.com/apps/freshworks_crm/msg91/"
