@@ -38,7 +38,7 @@ const Notification = () =>{
                 {/* <button className="btn btn-success py-1 btn-sm c-fs-5 me-3">Update</button>
                 <p className="c-fs-5 c-fw-m">Elevate Your Experience. The New and Improved Version Awaits ;)</p> */}
             </div>
-            <div className="d-flex gap-5 align-items-center justify-content-end">
+            <div className="d-flex gap-3 align-items-center justify-content-end">
               <div className="dropdown d-flex d-flex  align-items-center" id="change-country"> 
                 <a href="#" 
                 className="align-items-center d-flex text-dark"
@@ -93,7 +93,7 @@ const Notification = () =>{
                 </ul>
               </div>
               <a href="/contact-us" className="text-dark"><span className="c-fs-5 d-flex align-items-center"><MdCall className="me-1"/>Contact</span></a>
-              <a href="#" className="text-dark"><span className="c-fs-5 d-flex align-items-center">LOG IN</span></a>
+              <a href="https://control.msg91.com/signin/" className="text-dark"><span className="c-fs-5 d-flex align-items-center">LOG IN</span></a>
             </div>
             
         </div>
