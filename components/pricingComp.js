@@ -29,6 +29,7 @@ const PricingComp = ({countryCode}) => {
 //   console.log(originCountry,destinationCountry ,"hello anshul");
   
     const fetchSMSData = async (price, origin, destination) => {
+      console.log('fetchSMSData', price, origin, destination);
       var newData = [];
       let i=0;
       for(;i<amountArr.length;i++){
@@ -77,20 +78,21 @@ const PricingComp = ({countryCode}) => {
 
    
   useEffect(() => {
-    // console.log(countryCode,98654);
-    //findCountry(countryCode);
-    fetch('https://api.db-ip.com/v2/free/self')
-      .then(response => response.json())
-      .then(response => {
-        setOriginCountry(response?.countryName);
-        setDestinationCountry(response?.countryName);        
-        fetchSMSData([], originCountry, destinationCountry)
-        //console.log('ip response',response);
-      })
-      .catch(error => {
-          // handle the error
-          console.log('error', error);
-      });
+    console.log(countryCode,98654);
+    findCountry(countryCode);
+    /* fetch('https://api.db-ip.com/v2/free/self')
+    .then(response => response.json())
+    .then(response => {
+      setOriginCountry(response?.countryName);
+      setDestinationCountry(response?.countryName);
+      console.log('free api', originCountry, destinationCountry, response?.countryName);
+      fetchSMSData([], originCountry, destinationCountry)
+      //console.log('ip response',response);
+    })
+    .catch(error => {
+        // handle the error
+        console.log('error', error);
+    }); */
   }, [countryCode]);
 
   return (

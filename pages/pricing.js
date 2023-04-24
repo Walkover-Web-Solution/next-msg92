@@ -26,6 +26,7 @@ const campaign = () => {
   // let pricing = []
 
   const fetchSMSData = async (price, origin, destination) => {
+    console.log('pricing.js fetchSMSData', price, origin, destination);
     var newData = [];
     let i=0;
     for(;i<amountArr.length;i++){
