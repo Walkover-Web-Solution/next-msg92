@@ -10,6 +10,7 @@ import Pricingcampaign from "@/components/pricing/pricing-campaign";
 import Pricingrcs from "@/components/pricing/pricing-rcs";
 import axios from "axios";
 import { InlineWidget } from "react-calendly";
+import countries from "@/data/countries.json";
 
 const campaign = () => {
   var [pricing, setPricing] = useState([]);
@@ -31,8 +32,8 @@ const campaign = () => {
     let i=0;
     for(;i<amountArr.length;i++){
       if (price.length <= amountArr.length) {
-        //const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
-        const response = await axios.get(`https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
+        const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
+        //const response = await axios.get(`https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
         //const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
         newData.push(response.data.data)
       }
@@ -61,20 +62,27 @@ const campaign = () => {
     // console.log(response.data.data);
   };
 
+  const findCountry = async (code) => {
+    const response = await countries?.find(el => el.code === code);
+    setOriginCountry(response?.country); 
+    setDestinationCountry(response?.country);
+    fetchSMSData(amountArr, response?.country, response?.country);
+  };
 
   useEffect(() => {
-      fetch('https://api.db-ip.com/v2/free/self')
-      .then(response => response.json())
-      .then(response => {
-        setOriginCountry(response?.countryName);
-        setDestinationCountry(response?.countryName);        
-        fetchSMSData([], originCountry, destinationCountry)
-        //console.log('ip response',response);
-      })
-      .catch(error => {
-          // handle the error
-          console.log('error', error);
-      });    
+    findCountry('US');
+    /* fetch('https://api.db-ip.com/v2/free/self')
+    .then(response => response.json())
+    .then(response => {
+      setOriginCountry(response?.countryName);
+      setDestinationCountry(response?.countryName);        
+      fetchSMSData([], originCountry, destinationCountry)
+      //console.log('ip response',response);
+    })
+    .catch(error => {
+        // handle the error
+        console.log('error', error);
+    }); */    
   }, []);
 
   return (
@@ -146,6 +154,7 @@ const campaign = () => {
 
             <div className="tab-content d-flex " id="pills-tabContent">
               <div className="tab-pane fade show active w-100" id="pills-sms" role="tabpanel" aria-labelledby="pills-sms-tab" tabIndex={0}>
+                {console.log('before pricinig sms', originCountry, destinationCountry)}
                 <Pricingsms
                   amountArr={amountArr}
                   pricing={pricing}

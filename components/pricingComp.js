@@ -66,19 +66,14 @@ const PricingComp = ({countryCode}) => {
   };
   
   const findCountry = async (code) => {
-    // console.log("code",code)
     const response = await countries?.find(el => el.code === code);
-    // console.log(code, response?.country);
-
     setOriginCountry(response?.country); 
     setDestinationCountry(response?.country);
     fetchSMSData(amountArr, response?.country, response?.country);
-    // console.log('868678sss', originCountry, destinationCountry);     
   };
 
    
   useEffect(() => {
-    console.log(countryCode,98654);
     findCountry(countryCode);
     /* fetch('https://api.db-ip.com/v2/free/self')
     .then(response => response.json())
