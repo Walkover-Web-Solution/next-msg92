@@ -38,7 +38,7 @@ const ChannelComponent = ({ pageData }) => {
             {pageData.heading}
           </h2>
           <a href="https://control.msg91.com/signup/" target="_blank" className="btn btn-dark btn-lg c-fs-2" >
-            Get started for Free
+            Get started
           </a>
         </div>
           <TrustedBy />

@@ -93,7 +93,7 @@ const Notification = () =>{
                 </ul>
               </div>
               <a href="/contact-us" className="text-dark"><span className="c-fs-5 d-flex align-items-center"><MdCall className="me-1"/>Contact</span></a>
-              <a href="https://control.msg91.com/signin/" className="text-dark"><span className="c-fs-5 d-flex align-items-center">LOG IN</span></a>
+              <a href="https://control.msg91.com/signin/" target="_blank" className="text-dark"><span className="c-fs-5 d-flex align-items-center">LOG IN</span></a>
             </div>
             
         </div>

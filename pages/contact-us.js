@@ -24,9 +24,9 @@ const contactus = ({path}) => {
 
                     <div className="contact-card d-flex flex-column align-items-center justify-content-between gap-5 px-3 py-5 col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-10">
                         <h2>Sales</h2>
-                        <div className="d-flex flex-column align-items-center gap-4">
+                        <div className="d-flex flex-column align-items-start gap-4">
                             <div className="d-flex align-items-center">
-                                <span className="c-fs-1   rounded-circle social-circle justify-content-center align-items-center d-flex">
+                                <span className="c-fs-1   justify-content-center align-items-center d-flex">
                                     <MdOutlineEmail className="p-auto c-fw-sb  " />
                                 </span>
                                 <a href="mailto:sales@msg91.com"  className="c-fs-2 ms-3 text-dark text-center bg-white">
@@ -34,7 +34,7 @@ const contactus = ({path}) => {
                                 </a>
                             </div>
                             <div className="d-flex  align-items-center">
-                                <span className="c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex">
+                                <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
                                     <MdCall className="p-auto  " />
                                 </span>
                                 <a href="tel:91987654321" className="c-fs-2 ms-3 text-dark text-center bg-white">
@@ -47,9 +47,9 @@ const contactus = ({path}) => {
                     
                     <div className="contact-card d-flex flex-column align-items-center justify-content-between gap-5 px-3 py-5 col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-10">
                         <h2>Support</h2>
-                        <div className="d-flex flex-column align-items-center gap-4">
+                        <div className="d-flex flex-column align-items-start gap-4">
                         <div className="d-flex  align-items-center">
-                            <span className="c-fs-1   rounded-circle social-circle justify-content-center align-items-center d-flex">
+                            <span className="c-fs-1  justify-content-center align-items-center d-flex">
                                 <MdOutlineEmail className="p-auto c-fw-sb  " />
                             </span>
                             <a href="mailto:support@msg91.com" className="c-fs-2 ms-3 text-dark text-center bg-white">
@@ -58,7 +58,7 @@ const contactus = ({path}) => {
                         </div>
                         
                         <div className="d-flex  align-items-center">
-                            <span className="c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex">
+                            <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
                                 <MdWhatsapp className="p-auto  " />
                             </span>
                             <a href="https://wa.me/918818888733" className="c-fs-2 text-dark ms-3 text-center bg-white">
@@ -67,7 +67,7 @@ const contactus = ({path}) => {
                         </div>
 
                         <div className="d-flex  align-items-center">
-                            <span className="c-fs-1 c-fw-b  rounded-circle social-circle justify-content-center align-items-center d-flex">
+                            <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
                                 <MdCall className="p-auto  " />
                             </span>
                             <a href="tel:918818888733" className="c-fs-2  ms-3 text-dark text-center bg-white">
