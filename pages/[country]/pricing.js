@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Campaign from "@/components/pricingComp";
+import PricingComp from "@/components/pricingComp";
 
 const pricingmain =()=>{
   const router = useRouter();
@@ -20,7 +20,7 @@ const pricingmain =()=>{
   // console.log(678, data);
   if(data!=='[COUNTRY]' && data.length!==0){
     return (
-      <Campaign countryCode={data}/>
+      <PricingComp countryCode={data}/>
   );
 }
 else{

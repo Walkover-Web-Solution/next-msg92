@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import countries from "@/data/countries.json";
 import { Typeahead } from 'react-bootstrap-typeahead';
 
-const pricingvoice = ({
+const Pricingsms = ({
   pricing,
   setPricing,
   amountArr,
@@ -107,4 +107,4 @@ const pricingvoice = ({
   );
 };
 
-export default pricingvoice;
+export default Pricingsms;

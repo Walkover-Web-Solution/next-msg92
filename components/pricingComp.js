@@ -14,7 +14,7 @@ import { InlineWidget } from "react-calendly";
 import { useRouter } from 'next/router'
 import countries from "@/data/countries.json";
 
-const campaign = ({countryCode}) => {
+const PricingComp = ({countryCode}) => {
     var [pricing, setPricing] = useState([]);
     const [originCountry, setOriginCountry] = useState('')
     const [destinationCountry, setDestinationCountry] = useState('');
@@ -236,4 +236,4 @@ const campaign = ({countryCode}) => {
   );
 };
 
-export default campaign;
+export default PricingComp;
