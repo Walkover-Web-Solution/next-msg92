@@ -4,13 +4,13 @@ import { InlineWidget } from 'react-calendly';
 const msg91ForStartups = () => {
   return (
     <>
-      <div className='container d-flex justify-content-center flex-column text-center my-5 gap-4 '>
+      <div className='container d-flex justify-content-center flex-column text-center my-5 gap-3 '>
         <div>
           <h1 className='heading'>Expand your vision with us</h1>
         </div>
 
         <div>
-          <p className='c-fs-2 p-2'>
+          <p className='small-heading p-2'>
             Get a complimentary communication API package for every product
             Startup.
           </p>
@@ -19,18 +19,18 @@ const msg91ForStartups = () => {
         <div>
           <a
             href='https://control.msg91.com/signup/'
-            className='btn btn-dark c-fs-4 mt-2'
+            className='btn btn-dark small-heading px-3 py-2 mt-3 c-fw-sb px-md-4 py-md-3 ls-3'
           >
             Apply Now
           </a>
         </div>
       </div>
 
-      <section className=' mt-5 mb-3 p-5 text-center small-heading'>
+      <section className='bg-dark p-5 text-white my-80 text-center small-heading'>
         "Today we help you, tomorrow we can change the world together."
       </section>
-      <div className=' p-2 text-center justify-content-center'>
-        <h3 className='sub-heading mt-3'>
+      <div className=' my-80 text-center justify-content-center'>
+        <h3 className='c-head sub-heading mt-3'>
           Grow your Startup with Robust Infrastructure
         </h3>
         <div className='container d-flex flex-column flex-md-row gap-5 gap-md-0 my-5 align-items-center justify-content-md-between justify-content-cenetr'>
@@ -63,7 +63,7 @@ const msg91ForStartups = () => {
         </div>
       </div>
       <div className='container px-3 px-md-auto'>
-        <h2 className='sub-heading'>Benifits of Startup Program</h2>
+        <h2 className='sub-heading c-head'>Benifits of Startup Program</h2>
         <div className='mt-2 '>
           <span className='c-fs-1 c-fw-b text-green'>
             <MdDone />
@@ -98,10 +98,10 @@ const msg91ForStartups = () => {
           </span>
         </div>
       </div>
-      <section className='my-5 py-5 '>
+      <section className='my-80 '>
         <div className='container px-3 px-md-auto'>
-          <h2 className='sub-heading py-3'>Our Collaborators</h2>
-          <p className='c-fs-4 w-100 pb-3 '>
+          <h2 className='sub-heading  c-head'>Our Collaborators</h2>
+          <p className='c-fs-3 col-12 col-md-10 mb-4 '>
             We’re proud to be associated with a growing set of Venture
             Capitalists, Accelerators,Incubators and Crowdfunding platforms
             across to inspire, identify and develop end-to-end solutions for
@@ -119,8 +119,8 @@ const msg91ForStartups = () => {
           />
         </div>
       </section>
-      <div className='container px-3 px-md-auto pb-5'>
-        <h2 className='sub-heading'>
+      <div className='container px-3 px-md-auto my-80'>
+        <h2 className='c-head sub-heading'>
           Checklist to become a part of the program
         </h2>
         <div className=' '>
