@@ -13,9 +13,13 @@ const pricingotp = ({
   destinationCountry,
   setDestinationCountry
 }) => {
-  /* useEffect(() => {
-    // fetchSMSData(pricing, originCountry, destinationCountry)
-  }, [pricing]); */
+  useEffect(() => {
+    if(originCountry != null)
+    {
+      setOriginCountry(originCountry)
+      setDestinationCountry(destinationCountry)
+    }
+  }, [pricing, originCountry, destinationCountry]);  
   return (
     <>
      <div>

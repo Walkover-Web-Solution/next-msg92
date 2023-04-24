@@ -27,7 +27,7 @@ const campaign = () => {
   // let pricing = []
 
   const fetchSMSData = async (price, origin, destination) => {
-    console.log('pricing.js fetchSMSData', price, origin, destination);
+    //console.log('pricing.js fetchSMSData', price, origin, destination);
     var newData = [];
     let i=0;
     for(;i<amountArr.length;i++){
@@ -37,6 +37,8 @@ const campaign = () => {
         //const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
         newData.push(response.data.data)
       }
+      if(origin != 'India')
+        break;      
     }
     setPricing([...newData])
   };
@@ -71,6 +73,8 @@ const campaign = () => {
 
   useEffect(() => {
     findCountry('US');
+    setOriginCountry('United States'); 
+    setDestinationCountry('United States');
     /* fetch('https://api.db-ip.com/v2/free/self')
     .then(response => response.json())
     .then(response => {

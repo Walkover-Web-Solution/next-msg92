@@ -12,16 +12,15 @@ const Pricingsms = ({
   setOriginCountry,
   destinationCountry,
   setDestinationCountry
-}) => {
-  //console.log('pricing', pricing);
-  // useEffect(() => {
-  //   if(originCountry != null)
-  //   {
-  //     setOriginCountry(originCountry)
-  //     setDestinationCountry(destinationCountry)
-  //   }
-  // }, [pricing, originCountry, destinationCountry]);
-  // console.log(pricing,1324567382);
+}) => {  
+  useEffect(() => {
+    //console.log('sms component', originCountry, destinationCountry);
+    if(originCountry != null)
+    {
+      setOriginCountry(originCountry)
+      setDestinationCountry(destinationCountry)
+    }
+  }, [pricing, originCountry, destinationCountry]);  
   return (
     <>
      <div>
@@ -77,6 +76,8 @@ const Pricingsms = ({
                     </div>
                   </div>
                   :
+                  originCountry == 'India'
+                  ?
                   <div className="card price-card sms border-0 text-center mb-4 mb-sm-0 c-bg-grey">
                     <div className="card-body">
                       <h3 className="c-fs-3">{item[4]?.totalNoOfSms} SMS</h3>
@@ -87,7 +88,19 @@ const Pricingsms = ({
                         Get Started
                       </a>
                     </div>
-                  </div>:""
+                  </div> 
+                  :
+                  <div className="card price-card sms border-0 text-center mb-4 mb-sm-0 c-bg-grey">
+                    <div className="card-body">
+                      <h3 className="c-fs-3">No of SMS</h3>
+                      <h5 className="c-fs-2 mt-2 text-green">${item[4]?.rate}/SMS</h5>
+                      <h2 className="c-fs-3 c-ff-b">-</h2>                      
+                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                        Get Started
+                      </a>
+                    </div>
+                  </div>                   
+                  : ""
               }              
             </div>
           );
