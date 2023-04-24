@@ -14,36 +14,33 @@ import { InlineWidget } from "react-calendly";
 import { useRouter } from 'next/router'
 import countries from "@/data/countries.json";
 
-const campaign = ({countryCode}) => {  
+const campaign = ({countryCode}) => {
     var [pricing, setPricing] = useState([]);
     const [originCountry, setOriginCountry] = useState('')
     const [destinationCountry, setDestinationCountry] = useState('');
     
-    const amountArr = ['1259', '4000', '9000', '17000', '48000', '75000'];
+    const amountArr = ['1250', '3300', '5400', '10200', '20000', '76500', '154000'];
     
     var [subscriptionEmail, setSubscriptionEmail] = useState([]);
-  var [subscriptionVoice, setSubscriptionVoice] = useState([]);
-  var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
-  var [subscriptionSegmento, setSubscriptionSegmento] = useState([]);
+    var [subscriptionVoice, setSubscriptionVoice] = useState([]);
+    var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
+    var [subscriptionSegmento, setSubscriptionSegmento] = useState([]);
   // let pricing = []
 //   console.log(originCountry,destinationCountry ,"hello anshul");
   
-  const fetchSMSData = async (price, origin, destination) => {
-    // console.log(price, origin, destination, "aa gya");
-    var newData = [];
-    if(origin.length!==0){
-
-        let i=0;
-        let n=price.length;
-        for(;i<n;i++){            
-            let response;
-            response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${price[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`);
-
-            newData.push(response.data.data)
-            setPricing([...newData])
+    const fetchSMSData = async (price, origin, destination) => {
+      var newData = [];
+      let i=0;
+      for(;i<amountArr.length;i++){
+        if (price.length <= amountArr.length) {
+          //const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${item}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
+          const response = await axios.get(`https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${item}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
+          //const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
+          newData.push(response.data.data)
         }
-        }
-  };
+      }
+      setPricing([...newData])
+    };
 //   console.log("pricing", pricing);
   
   const fetchSubscriptionEmail = async (currency, msId) => {
@@ -81,7 +78,19 @@ const campaign = ({countryCode}) => {
    
   useEffect(() => {
     // console.log(countryCode,98654);
-    findCountry(countryCode);    
+    //findCountry(countryCode);
+    fetch('https://api.db-ip.com/v2/free/self')
+      .then(response => response.json())
+      .then(response => {
+        setOriginCountry(response?.countryName);
+        setDestinationCountry(response?.countryName);        
+        fetchSMSData([], originCountry, destinationCountry)
+        //console.log('ip response',response);
+      })
+      .catch(error => {
+          // handle the error
+          console.log('error', error);
+      });
   }, [countryCode]);
 
   return (
