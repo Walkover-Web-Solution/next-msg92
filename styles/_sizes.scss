@@ -7,29 +7,29 @@
 }
 //font sizes
 .heading {
-  font-size: var(--heading);
-  font-family: var(--c-head);
+  font-size: var(--heading)!important;
+  font-family: var(--c-head)!important;
 }
 .sub-heading {
-  font-size: var(--sub-heading);
+  font-size: var(--sub-heading)!important;
 }
 .small-heading {
-  font-size: var(--small-heading);
+  font-size: var(--small-heading)!important;
 }
 .c-fs-1{
-    font-size: var(--c-fs-1);
+    font-size: var(--c-fs-1)!important;
 }
 .c-fs-2{
-    font-size: var(--c-fs-2);
+    font-size: var(--c-fs-2)!important;
 }
 .c-fs-3{
-    font-size: var(--c-fs-3);
+    font-size: var(--c-fs-3)!important;
 }
 .c-fs-4{
-    font-size: var(--c-fs-4);
+    font-size: var(--c-fs-4)!important;
 }
 .c-fs-5{
-    font-size: var(--c-fs-5);
+    font-size: var(--c-fs-5)!important;
 }
 
 

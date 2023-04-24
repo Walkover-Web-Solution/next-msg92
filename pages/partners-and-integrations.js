@@ -3,7 +3,7 @@ import { MdOutlineCheck, MdArrowForward } from "react-icons/md";
 const partnersAndIntegrations = () => {
   return (
     <>
-      <div className="container text-center  overflow-hidden ">
+      <div className="container text-center  ">
         <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
           <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
             <h1 className="heading py-3">Integrations & Add-ons</h1>
@@ -16,23 +16,23 @@ const partnersAndIntegrations = () => {
                   target="_blank"
                   href="https://control.msg91.com/signup/"
                 >
-          <button className="btn btn-dark mt-3 c-fs-2" type="button">
+          <button className="btn btn-dark small-heading px-3 py-2 mt-3 c-fw-sb px-md-4 py-md-3 ls-3" type="button">
             Get your API key
           </button>
           </a>
         </div>
       </div>
-      <section className="w-100 py-5">
-        <div className="text-center px-2 px-lg-0">
-          <h2 className="sub-heading">
+      <section className="container my-80">
+        <div className=" px-2 px-lg-0 text-center text-sm-start">
+          <h2 className="sub-heading c-head">
             MSG91 Add-ons for your preferred Platform
           </h2>
-          <p className="c-fs-3 pt-2">
+          <p className="c-fs-3 mt-2 mb-2">
             Note – For paid plugins you will receive free credits, depending on
             the policy.
           </p>
         </div>
-        <div className="container my-5 ">
+        <div className=" ">
           <iframe
             className="airtable-embed elementor-container"
             src="https://airtable.com/embed/shrYdNZpl7vaKdcvw?backgroundColor=red&viewControls=on"
@@ -43,13 +43,13 @@ const partnersAndIntegrations = () => {
           ></iframe>
         </div>
 
-        <div className="container mt-5 text-center">
-          <h2 className="small-heading">
+        <div className="container my-80 text-center">
+          <h2 className=" c-head sub-heading">
             Don’t see the Add-on or Plugin you are looking for?
           </h2>
           <div className="col-12 px-2 px-lg-0 text-start mt-5 d-flex flex-column flex-lg-row justify-content-between">
             <div className="col-12 col-lg-7">
-              <h3 className="py-2">Why Build MSG91 Plugins?</h3>
+              <h3 className="c-fs-2 c-head">Why Build MSG91 Plugins?</h3>
               <div className="mt-2 mt-lg-0">
                 <span className="c-fs-2 text-green">
                   <MdOutlineCheck />
@@ -100,8 +100,8 @@ const partnersAndIntegrations = () => {
           </div>
         </div>
       </section>
-      <div className="container d-flex flex-column py-5 ">
-        <h2 className="sub-heading py-4 ps-3 pe-md-0">
+      <div className="container d-flex flex-column my-80 ">
+        <h2 className="sub-heading c-head text-center text-sm-start">
           Hear from our Partners
         </h2>
         <div className="w-100 d-flex flex-wrap  h-100 p-3 pe-3 pe-md-4 our-partner">
