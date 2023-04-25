@@ -182,7 +182,7 @@ const ChannelComponent = ({ pageData }) => {
           if(item?.content){
             i++;       
             return (
-              <div className={`container flex-column d-flex my-5 align-items-center justify-content-between  ${i%2 ? 'flex-md-row-reverse' : 'flex-md-row'}`}>
+              <div key={`key-${index}`} className={`container flex-column d-flex my-5 align-items-center justify-content-between  ${i%2 ? 'flex-md-row-reverse' : 'flex-md-row'}`}>
                 <div className="col-12 col-md-6 d-flex">
                 {item?.img &&
                   <img

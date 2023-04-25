@@ -8,6 +8,7 @@ const mainpage = ({ pageData, params }) => {
   var page = pageData?.pagename;
   var code = pageData?.code;
   var Dataa = pageData
+  var channels = ['SMS','Email','WhatsApp','Voice'];
   // console.log(params)
   // console.log(Dataa);
   if (!pageData) {
@@ -19,21 +20,32 @@ const mainpage = ({ pageData, params }) => {
       </div>
     );
   } else if (page === "index") {
-    // console.log("page index");
+    //console.log("page index");
     return (
       <>
         <IndexComp params={params}/>
       </>
     );
   } else {
-    // console.log("page ", pageData.pagename);
-    return (
-      <>
-        <div>
-          <ProductComponent pageData={Dataa} params={params} />
-        </div>
-      </>
-    );
+    if(channels.includes(pageData.pagename)){
+      return (
+        <>
+          <div>
+            <ChannelComponent pageData={Dataa} />
+          </div>
+        </>
+      );
+    }
+    else{
+      return (
+        <>
+          <div>
+            <ProductComponent pageData={Dataa} params={params} />
+          </div>
+        </>
+      );
+    }
+    //console.log("page ", pageData.pagename);    
   }
 };
 
