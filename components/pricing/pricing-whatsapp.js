@@ -26,11 +26,11 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp}) => {
           <option value="USD">USD</option>
           <option value="GBP">GBP</option>
         </select>
-        <select style={{width: 'fit-content'}} className="form-select" aria-label="Default select example" onChange={(e)=>setSelectedMode(e.target.value)}>
+        {/* <select style={{width: 'fit-content'}} className="form-select" aria-label="Default select example" onChange={(e)=>setSelectedMode(e.target.value)}>
           <option value="Monthly">Monthly</option>
           <option value="Half yearly">Half Yearly</option>
           <option value="Yearly">Yearly</option>
-        </select>
+        </select> */}
       </div>
       <div className="d-flex flex-wrap flex-gap justify-content-center w-100  card-container align-items-end">
       {subscriptionWhatsapp?.length ?
