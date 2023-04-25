@@ -98,7 +98,7 @@ const campaign = () => {
           </h1>
           <div className="c-fs-3">
             <div className="d-flex justify-content-center">
-              <ul className="nav nav-pills c-fs-5 pb-5" id="pricing-pills-tab" role="tablist">
+              <ul className="nav nav-pills c-fs-5 pb-5 d-flex justify-content-center flex-coloumn" id="pricing-pills-tab" role="tablist">
                 <li className="nav-item" role="presentation">
                   <button onClick={() => { fetchSMSData([], originCountry, destinationCountry) }} className="nav-link sms active" data-bs-toggle="pill" data-bs-target="#pills-sms" type="button" role="tab" aria-controls="pills-sms" aria-selected="true">
                     <img src="/img/icon/sms.svg" alt="#" />
