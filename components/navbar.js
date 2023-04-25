@@ -97,7 +97,7 @@ const navbar = ({ brawserPath }) => {
               className="btn btn-dark c-fs-4 c-fw-sb px-3"
               id="signup-btn"
             >
-              SIGN UP
+              Sign Up
             </a>
           </div>
           <ProductMenu path={path} />
