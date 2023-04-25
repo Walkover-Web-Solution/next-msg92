@@ -18,27 +18,8 @@ const becomeApartner = () => {
         <div className='container'>
           <h2 className='sub-heading ps-3 ps-lg-0 pe-md-0  c-head '>
             Partnership Solutions
-          </h2>
-          <div className=' gap-4 d-flex flex-column flex-md-row justify-content-between align-items-center py-5'>
-            <div className=' c-w-pp p-1 p-md-0 col-12 col-md-6 '>
-              <h3 className=' c-fs-1 c-fw-m  c-head '>
-                Integration / Add-on Partnership
-              </h3>
-              <p className='c-fs-3'>
-                If you are a CRM solution, marketing platform, e-commerce
-                builder, or any other SaaS product, You can integrate MSG91 in
-                your platform to enable communication across channels like
-                WhatsApp, Text SMS, Email, Voice, RCS, Telegram etc from right
-                within. As an added perk, you will also be featured here.
-              </p>
-            </div>
-            <img
-              className=' mt-md-0 col-12 col-md-5 '
-              src='/img/integration-partnership-img.png'
-              
-            />
-          </div>
-          <div className=' d-flex flex-column flex-md-row-reverse justify-content-between align-items-center pb-5'>
+          </h2>          
+          <div className=' d-flex flex-column flex-md-row-reverse justify-content-between align-items-center py-5'>
             <div className=' c-w-pp p-1 p-md-0 col-12 col-md-6 '>
               <h3 className=' c-fs-1 c-fw-m  c-head '>
                 Affiliated Partnership
@@ -56,7 +37,7 @@ const becomeApartner = () => {
               
             ></img>
           </div>
-          <div className=' d-flex flex-column flex-md-row justify-content-between align-items-center pb-5'>
+          {/* <div className=' d-flex flex-column flex-md-row justify-content-between align-items-center pb-5'>
             <div className=' c-w-pp p-md-0  col-12 col-md-6 '>
               <h3 className=' c-fs-1 c-fw-m  c-head '>
                 Consultation Partnership
@@ -74,6 +55,25 @@ const becomeApartner = () => {
               src='/img/consulation-partnership-img.png'
              
             ></img>
+          </div> */}
+          <div className='gap-4 d-flex flex-column flex-md-row justify-content-between align-items-center pb-5'>
+            <div className=' c-w-pp p-1 p-md-0 col-12 col-md-6 '>
+              <h3 className=' c-fs-1 c-fw-m  c-head '>
+                Integration / Add-on Partnership
+              </h3>
+              <p className='c-fs-3'>
+                If you are a CRM solution, marketing platform, e-commerce
+                builder, or any other SaaS product, You can integrate MSG91 in
+                your platform to enable communication across channels like
+                WhatsApp, Text SMS, Email, Voice, RCS, Telegram etc from right
+                within. As an added perk, you will also be featured here.
+              </p>
+            </div>
+            <img
+              className=' mt-md-0 col-12 col-md-5 '
+              src='/img/integration-partnership-img.png'
+              
+            />
           </div>
           <div className=' mb-4 d-flex flex-column  flex-md-row-reverse justify-content-between align-items-center'>
             <div className=' c-w-pp p-md-0 col-12 col-md-6 '>
