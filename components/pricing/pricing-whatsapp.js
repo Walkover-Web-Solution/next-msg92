@@ -86,7 +86,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp}) => {
                       <span className="text-success c-fs-3">
                         <MdDone />
                       </span>
-                      {item.plan_services[0].service_credit.service_credit_rates[0].free_credits} for for Whatsapp
+                      {item.plan_services[0].service_credit.service_credit_rates[0].free_credits} for Whatsapp
                     </div>                    
                     <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                       Get Started

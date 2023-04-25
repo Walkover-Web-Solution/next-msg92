@@ -33,7 +33,7 @@ const indexComp = ({ params }) => {
           </div>
           <div className="product-content pro-alt p-4 d-flex flex-column justify-content-between gap-3">
             <p className="pro-text text-white">
-              Empower your employees, Support your customers.
+              Boost audience engagement through smart Platform.
             </p>
             <a
               href="/campaign"
@@ -59,7 +59,7 @@ const indexComp = ({ params }) => {
           </div>
           <div className="product-content  p-4 d-flex flex-column justify-content-between gap-3">
             <p className="pro-text text-white">
-              Segment your customers according to their action or event
+              Empower your employees, Support your customers.
             </p>
             <a
               href="/hello"
@@ -82,7 +82,7 @@ const indexComp = ({ params }) => {
           </div>
           <div className="product-content pro-alt p-4 d-flex flex-column justify-content-between gap-3">
             <p className="pro-text text-white">
-              Segment your customers according to their action or event.{" "}
+              Segment your customers according to their action or event.
             </p>
             <a
               href="/segmento"
@@ -384,9 +384,7 @@ const indexComp = ({ params }) => {
                   More storage, More possibilities
                 </h4>
                 <p className="c-fs-4">
-                  Track your success, one click at a time. Using our URL Shrtnr
-                  App is great way to make looong, wild links into something
-                  more manageable and memorable.
+                  Access your files from anywhere, anytime. We provide you with effortless file management at your fingertips, also making sure that your files are safe & secure.
                 </p>
               </div>
               
