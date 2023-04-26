@@ -12,10 +12,10 @@ import axios from "axios";
 import { InlineWidget } from "react-calendly";
 import countries from "@/data/countries.json";
 
-const campaign = () => {
+const Pricing = () => {
   var [pricing, setPricing] = useState([]);
-  var [originCountry, setOriginCountry] = useState('India');
-  var [destinationCountry, setDestinationCountry] = useState('India');
+  var [originCountry, setOriginCountry] = useState('United States');
+  var [destinationCountry, setDestinationCountry] = useState('United States');
   const amountArr = ['1250', '3300', '5400', '10200', '20000', '76500', '154000'];
   // Amount for SMS:1250, 3300, 5400, 10200, 20000, 76500, 154000
   // Amount for OTP, 1250, 3300, 5400, 11400, 20000, 76500, 160000
@@ -71,22 +71,17 @@ const campaign = () => {
     fetchSMSData(amountArr, response?.country, response?.country);
   };
 
-  useEffect(() => {
-    findCountry('US');
-    setOriginCountry('United States'); 
-    setDestinationCountry('United States');
-    /* fetch('https://api.db-ip.com/v2/free/self')
+  useEffect(() => {  
+    fetch('https://api.db-ip.com/v2/free/self')
     .then(response => response.json())
     .then(response => {
-      setOriginCountry(response?.countryName);
-      setDestinationCountry(response?.countryName);        
-      fetchSMSData([], originCountry, destinationCountry)
       //console.log('ip response',response);
+      findCountry(response.countryCode);
     })
     .catch(error => {
         // handle the error
         console.log('error', error);
-    }); */    
+    });    
   }, []);
 
   return (
@@ -233,4 +228,4 @@ const campaign = () => {
   );
 };
 
-export default campaign;
+export default Pricing;
