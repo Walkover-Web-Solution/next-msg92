@@ -3,8 +3,8 @@ import Script from "next/script";
 import metaData from "@/data/metadata.json"
 
 const Headcomp = (brawserPath) => {
-  console.log(brawserPath, "brawserPath")
-  const meta = metaData?.global
+  const meta = metaData[brawserPath.brawserPath]
+  console.log("meta", meta, brawserPath.brawserPath, metaData[brawserPath.brawserPath])
   let contry = brawserPath
   return (
     <>
@@ -19,8 +19,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NWZKLRJ');`,
           }}
         />
-        <title>{meta?.title}MSG91</title>
-        {/* <discription>{meta?.discription} MSG91</discription> */}
+        <title>{meta?.title}</title>        
+        <meta name="discription" content={meta?.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/fav.svg" />
       </Head>

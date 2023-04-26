@@ -1,12 +1,10 @@
 {
-    "global": {
-        "index": {
-            "title": "this is global title",
-            "description":"this is global description"
-        },
-        "hello": {
-            "title": "this is global title",
-            "description":"this is global description"
-        }
+    "/hello": {
+        "title": "Customer Support Platform for your Business by MSG91",
+        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+    },
+    "/in/hello": {
+        "title": "Customer Support Platform for your Business by MSG91",
+        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
     }
 }
