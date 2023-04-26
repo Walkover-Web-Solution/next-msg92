@@ -18,7 +18,7 @@ const msg91ForStartups = () => {
 
         <div>
           <a
-            href='https://control.msg91.com/signup/'
+            href='/startups-form/'
             className='btn btn-dark small-heading px-3 py-2 mt-3 c-fw-sb px-md-4 py-md-3 ls-3'
           >
             Apply Now

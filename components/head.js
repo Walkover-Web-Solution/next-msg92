@@ -4,7 +4,7 @@ import metaData from "@/data/metadata.json"
 
 const Headcomp = (brawserPath) => {
   const meta = metaData[brawserPath.brawserPath]
-  console.log("meta", meta, brawserPath.brawserPath, metaData[brawserPath.brawserPath])
+  //console.log("meta", meta, brawserPath.brawserPath, metaData[brawserPath.brawserPath])
   let contry = brawserPath
   return (
     <>
