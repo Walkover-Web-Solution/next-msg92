@@ -1,0 +1,12 @@
+{
+    "global": {
+        "index": {
+            "title": "this is global title",
+            "description":"this is global description"
+        },
+        "hello": {
+            "title": "this is global title",
+            "description":"this is global description"
+        }
+    }
+}
