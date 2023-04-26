@@ -1,4 +1,3 @@
-
 import data from "@/data/content.json";
 import IndexComp from "@/components/comps/indexComponent";
 import ProductComponent from "@/components/comps/productComp";

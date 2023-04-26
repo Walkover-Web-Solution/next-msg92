@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
   }, []);
     return (
       <>
-      <Headcomp />
+      <Headcomp brawserPath={brawserPath} />
       <Navbar brawserPath={brawserPath} />
       <Component {...pageProps} />
       <Footer path={path} />

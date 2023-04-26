@@ -1,7 +1,11 @@
 import Head from "next/head";
 import Script from "next/script";
+import metaData from "@/data/metadata.json"
 
-const Headcomp = () => {
+const Headcomp = (brawserPath) => {
+  console.log(brawserPath, "brawserPath")
+  const meta = metaData?.global
+  let contry = brawserPath
   return (
     <>
       <Head>
@@ -15,7 +19,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NWZKLRJ');`,
           }}
         />
-        <title>MSG91</title>
+        <title>{meta?.title}MSG91</title>
+        <discription>{meta?.discription} MSG91</discription>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/fav.svg" />
       </Head>
