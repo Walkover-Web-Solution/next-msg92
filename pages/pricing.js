@@ -14,8 +14,8 @@ import countries from "@/data/countries.json";
 
 const Pricing = () => {
   var [pricing, setPricing] = useState([]);
-  var [originCountry, setOriginCountry] = useState('United States');
-  var [destinationCountry, setDestinationCountry] = useState('United States');
+  var [originCountry, setOriginCountry] = useState('');
+  var [destinationCountry, setDestinationCountry] = useState('');
   const amountArr = ['1250', '3300', '5400', '10200', '20000', '76500', '154000'];
   // Amount for SMS:1250, 3300, 5400, 10200, 20000, 76500, 154000
   // Amount for OTP, 1250, 3300, 5400, 11400, 20000, 76500, 160000
@@ -28,6 +28,8 @@ const Pricing = () => {
 
   const fetchSMSData = async (price, origin, destination) => {
     //console.log('pricing.js fetchSMSData', price, origin, destination);
+    setOriginCountry(origin);
+    setDestinationCountry(destination);
     var newData = [];
     let i=0;
     for(;i<amountArr.length;i++){
@@ -66,11 +68,12 @@ const Pricing = () => {
 
   const findCountry = async (code) => {
     const response = await countries?.find(el => el.code === code);
+    console.log("dfghj",response?.country);
     setOriginCountry(response?.country); 
     setDestinationCountry(response?.country);
     fetchSMSData(amountArr, response?.country, response?.country);
   };
-
+console.log("kjhg",originCountry);
   useEffect(() => {  
     fetch('https://api.db-ip.com/v2/free/self')
     .then(response => response.json())

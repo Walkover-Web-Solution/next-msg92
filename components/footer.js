@@ -113,7 +113,7 @@ const Footer = ({ path }) => {
                   Developers
                 </a>
                 <a
-                  href="/msg91-for-startups"
+                  href="/startups"
                   className="c-link-underline c-fs-5 mt-2 c-fw-t"
                 >
                   MSG91 for startups

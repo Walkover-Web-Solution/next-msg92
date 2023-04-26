@@ -13,6 +13,8 @@ const Pricingsms = ({
   destinationCountry,
   setDestinationCountry
 }) => {  
+
+  console.log(4567,originCountry);
   useEffect(() => {
     console.log('sms component', originCountry, destinationCountry);
     if(originCountry != null)
