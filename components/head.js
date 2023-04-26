@@ -20,7 +20,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         <title>{meta?.title}MSG91</title>
-        <discription>{meta?.discription} MSG91</discription>
+        {/* <discription>{meta?.discription} MSG91</discription> */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/fav.svg" />
       </Head>
