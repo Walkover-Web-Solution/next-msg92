@@ -1,4 +1,39 @@
 {
+    "/pricing": {
+        "title": "API Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/in/pricing": {
+        "title": "API Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ae/pricing": {
+        "title": "API Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ph/pricing": {
+        "title": "API Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/sg/pricing": {
+        "title": "API Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/es/pricing": {
+        "title": "API Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/uk/pricing": {
+        "title": "API Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },    
+    "/us/pricing": {
+        "title": "API Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+
+    "Hello ******************************":{},
+
     "/hello": {
         "title": "Customer Support Platform for your Business by MSG91",
         "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
@@ -35,70 +70,374 @@
     "campaign ******************************":{},
 
     "/campaign": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "SMS Campaign",
+        "description":"Boost audience engagement through smart communication and on-time delivery. It's not only about communicating, it's about communicating with your users smartly and efficiently. Get Demo Reach your segmented customers across the world, Send your messages at the right moment! Features Automate sending messages under defined conditions Define different messaging parameters like time, region, number of.."
     },
     "/in/campaign": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "SMS Campaign",
+        "description":"Boost audience engagement through smart communication and on-time delivery. It's not only about communicating, it's about communicating with your users smartly and efficiently. Get Demo Reach your segmented customers across the world, Send your messages at the right moment! Features Automate sending messages under defined conditions Define different messaging parameters like time, region, number of.."
     },
     "/ae/campaign": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "SMS Campaign",
+        "description":"Boost audience engagement through smart communication and on-time delivery. It's not only about communicating, it's about communicating with your users smartly and efficiently. Get Demo Reach your segmented customers across the world, Send your messages at the right moment! Features Automate sending messages under defined conditions Define different messaging parameters like time, region, number of.."
     },
     "/ph/campaign": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "SMS Campaign",
+        "description":"Boost audience engagement through smart communication and on-time delivery. It's not only about communicating, it's about communicating with your users smartly and efficiently. Get Demo Reach your segmented customers across the world, Send your messages at the right moment! Features Automate sending messages under defined conditions Define different messaging parameters like time, region, number of.."
     },
     "/sg/campaign": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "SMS Campaign",
+        "description":"Boost audience engagement through smart communication and on-time delivery. It's not only about communicating, it's about communicating with your users smartly and efficiently. Get Demo Reach your segmented customers across the world, Send your messages at the right moment! Features Automate sending messages under defined conditions Define different messaging parameters like time, region, number of.."
     },
     "/es/campaign": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "SMS Campaign",
+        "description":"Boost audience engagement through smart communication and on-time delivery. It's not only about communicating, it's about communicating with your users smartly and efficiently. Get Demo Reach your segmented customers across the world, Send your messages at the right moment! Features Automate sending messages under defined conditions Define different messaging parameters like time, region, number of.."
     },
     "/uk/campaign": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "SMS Campaign",
+        "description":"Boost audience engagement through smart communication and on-time delivery. It's not only about communicating, it's about communicating with your users smartly and efficiently. Get Demo Reach your segmented customers across the world, Send your messages at the right moment! Features Automate sending messages under defined conditions Define different messaging parameters like time, region, number of.."
     },    
     "/us/campaign": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "SMS Campaign",
+        "description":"Boost audience engagement through smart communication and on-time delivery. It's not only about communicating, it's about communicating with your users smartly and efficiently. Get Demo Reach your segmented customers across the world, Send your messages at the right moment! Features Automate sending messages under defined conditions Define different messaging parameters like time, region, number of.."
     },
 
     "segmento ******************************":{},
     
     "/segmento": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "Customer Segmentation Software | MSG91",
+        "description":"Execute targeted marketing campaigns with the help of automated customer segmentation and targeted content. Try it out now."
     },
     "/in/segmento": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "Customer Segmentation Software | MSG91",
+        "description":"Execute targeted marketing campaigns with the help of automated customer segmentation and targeted content. Try it out now."
     },
     "/ae/segmento": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "Customer Segmentation Software | MSG91",
+        "description":"Execute targeted marketing campaigns with the help of automated customer segmentation and targeted content. Try it out now."
     },
     "/ph/segmento": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "Customer Segmentation Software | MSG91",
+        "description":"Execute targeted marketing campaigns with the help of automated customer segmentation and targeted content. Try it out now."
     },
     "/sg/segmento": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "Customer Segmentation Software | MSG91",
+        "description":"Execute targeted marketing campaigns with the help of automated customer segmentation and targeted content. Try it out now."
     },
     "/es/segmento": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "Customer Segmentation Software | MSG91",
+        "description":"Execute targeted marketing campaigns with the help of automated customer segmentation and targeted content. Try it out now."
     },
     "/uk/segmento": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "Customer Segmentation Software | MSG91",
+        "description":"Execute targeted marketing campaigns with the help of automated customer segmentation and targeted content. Try it out now."
     },    
     "/us/segmento": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "Customer Segmentation Software | MSG91",
+        "description":"Execute targeted marketing campaigns with the help of automated customer segmentation and targeted content. Try it out now."
+    },
+
+    "OTP ******************************":{},
+    
+    "/otp": {
+        "title": "Send OTP | OTP Service Providers India - MSG91 India",
+        "description":"Send OTP provides secure and reliable SMS API Integration that helps you easily send OTP to your users for 2 factor authentication."
+    },
+    "/in/otp": {
+        "title": "Send OTP | OTP Service Providers India - MSG91 India",
+        "description":"Send OTP provides secure and reliable SMS API Integration that helps you easily send OTP to your users for 2 factor authentication."
+    },
+    "/ae/otp": {
+        "title": "Send OTP | OTP Service Providers India - MSG91 India",
+        "description":"Send OTP provides secure and reliable SMS API Integration that helps you easily send OTP to your users for 2 factor authentication."
+    },
+    "/ph/otp": {
+        "title": "Send OTP | OTP Service Providers India - MSG91 India",
+        "description":"Send OTP provides secure and reliable SMS API Integration that helps you easily send OTP to your users for 2 factor authentication."
+    },
+    "/sg/otp": {
+        "title": "Send OTP | OTP Service Providers India - MSG91 India",
+        "description":"Send OTP provides secure and reliable SMS API Integration that helps you easily send OTP to your users for 2 factor authentication."
+    },
+    "/es/otp": {
+        "title": "Send OTP | OTP Service Providers India - MSG91 India",
+        "description":"Send OTP provides secure and reliable SMS API Integration that helps you easily send OTP to your users for 2 factor authentication."
+    },
+    "/uk/otp": {
+        "title": "Send OTP | OTP Service Providers India - MSG91 India",
+        "description":"Send OTP provides secure and reliable SMS API Integration that helps you easily send OTP to your users for 2 factor authentication."
+    },    
+    "/us/otp": {
+        "title": "Send OTP | OTP Service Providers India - MSG91 India",
+        "description":"Send OTP provides secure and reliable SMS API Integration that helps you easily send OTP to your users for 2 factor authentication."
+    },
+
+    "SMS ******************************":{},
+    
+    "/sms": {
+        "title": "Transactional SMS | Transactional SMS Provider in India - MSG91 India",
+        "description":"MSG91 is among the leading transactional SMS service providers in India. Empowering businesses with easy-to-integrate transactional SMS API to enhance customer satisfaction."
+    },
+    "/in/sms": {
+        "title": "Transactional SMS | Transactional SMS Provider in India - MSG91 India",
+        "description":"MSG91 is among the leading transactional SMS service providers in India. Empowering businesses with easy-to-integrate transactional SMS API to enhance customer satisfaction."
+    },
+    "/ae/sms": {
+        "title": "Transactional SMS | Transactional SMS Provider in India - MSG91 India",
+        "description":"MSG91 is among the leading transactional SMS service providers in India. Empowering businesses with easy-to-integrate transactional SMS API to enhance customer satisfaction."
+    },
+    "/ph/sms": {
+        "title": "Transactional SMS | Transactional SMS Provider in India - MSG91 India",
+        "description":"MSG91 is among the leading transactional SMS service providers in India. Empowering businesses with easy-to-integrate transactional SMS API to enhance customer satisfaction."
+    },
+    "/sg/sms": {
+        "title": "Transactional SMS | Transactional SMS Provider in India - MSG91 India",
+        "description":"MSG91 is among the leading transactional SMS service providers in India. Empowering businesses with easy-to-integrate transactional SMS API to enhance customer satisfaction."
+    },
+    "/es/sms": {
+        "title": "Transactional SMS | Transactional SMS Provider in India - MSG91 India",
+        "description":"MSG91 is among the leading transactional SMS service providers in India. Empowering businesses with easy-to-integrate transactional SMS API to enhance customer satisfaction."
+    },
+    "/uk/sms": {
+        "title": "Transactional SMS | Transactional SMS Provider in India - MSG91 India",
+        "description":"MSG91 is among the leading transactional SMS service providers in India. Empowering businesses with easy-to-integrate transactional SMS API to enhance customer satisfaction."
+    },    
+    "/us/sms": {
+        "title": "Transactional SMS | Transactional SMS Provider in India - MSG91 India",
+        "description":"MSG91 is among the leading transactional SMS service providers in India. Empowering businesses with easy-to-integrate transactional SMS API to enhance customer satisfaction."
+    },
+
+    "Email ******************************":{},
+    
+    "/email": {
+        "title": "Transactional Email | Transactional Email API - MSG91 India",
+        "description":"Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
+    },
+    "/in/email": {
+        "title": "Transactional Email | Transactional Email API - MSG91 India",
+        "description":"Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
+    },
+    "/ae/email": {
+        "title": "Transactional Email | Transactional Email API - MSG91 India",
+        "description":"Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
+    },
+    "/ph/email": {
+        "title": "Transactional Email | Transactional Email API - MSG91 India",
+        "description":"Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
+    },
+    "/sg/email": {
+        "title": "Transactional Email | Transactional Email API - MSG91 India",
+        "description":"Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
+    },
+    "/es/email": {
+        "title": "Transactional Email | Transactional Email API - MSG91 India",
+        "description":"Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
+    },
+    "/uk/email": {
+        "title": "Transactional Email | Transactional Email API - MSG91 India",
+        "description":"Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
+    },    
+    "/us/email": {
+        "title": "Transactional Email | Transactional Email API - MSG91 India",
+        "description":"Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
+    },
+    
+    "WhatsApp ******************************":{},
+    
+    "/whatsapp": {
+        "title": "WhatsApp API for businesses | MSG91",
+        "description":"Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred & reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now."
+    },
+    "/in/whatsapp": {
+        "title": "WhatsApp API for businesses | MSG91",
+        "description":"Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred & reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now."
+    },
+    "/ae/whatsapp": {
+        "title": "WhatsApp API for businesses | MSG91",
+        "description":"Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred & reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now."
+    },
+    "/ph/whatsapp": {
+        "title": "WhatsApp API for businesses | MSG91",
+        "description":"Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred & reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now."
+    },
+    "/sg/whatsapp": {
+        "title": "WhatsApp API for businesses | MSG91",
+        "description":"Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred & reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now."
+    },
+    "/es/whatsapp": {
+        "title": "WhatsApp API for businesses | MSG91",
+        "description":"Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred & reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now."
+    },
+    "/uk/whatsapp": {
+        "title": "WhatsApp API for businesses | MSG91",
+        "description":"Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred & reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now."
+    },    
+    "/us/whatsapp": {
+        "title": "WhatsApp API for businesses | MSG91",
+        "description":"Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred & reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now."
+    },
+    
+    "Voice ******************************":{},
+    
+    "/voice": {
+        "title": "Voice API for your Business | Voice Call API | MSG91 India",
+        "description":"MSG91 India provides voice call api's to your business which helps to engage your customers over voice with our virtual phone numbers, and voice APIs."
+    },
+    "/in/voice": {
+        "title": "Voice API for your Business | Voice Call API | MSG91 India",
+        "description":"MSG91 India provides voice call api's to your business which helps to engage your customers over voice with our virtual phone numbers, and voice APIs."
+    },
+    "/ae/voice": {
+        "title": "Voice API for your Business | Voice Call API | MSG91 India",
+        "description":"MSG91 India provides voice call api's to your business which helps to engage your customers over voice with our virtual phone numbers, and voice APIs."
+    },
+    "/ph/voice": {
+        "title": "Voice API for your Business | Voice Call API | MSG91 India",
+        "description":"MSG91 India provides voice call api's to your business which helps to engage your customers over voice with our virtual phone numbers, and voice APIs."
+    },
+    "/sg/voice": {
+        "title": "Voice API for your Business | Voice Call API | MSG91 India",
+        "description":"MSG91 India provides voice call api's to your business which helps to engage your customers over voice with our virtual phone numbers, and voice APIs."
+    },
+    "/es/voice": {
+        "title": "Voice API for your Business | Voice Call API | MSG91 India",
+        "description":"MSG91 India provides voice call api's to your business which helps to engage your customers over voice with our virtual phone numbers, and voice APIs."
+    },
+    "/uk/voice": {
+        "title": "Voice API for your Business | Voice Call API | MSG91 India",
+        "description":"MSG91 India provides voice call api's to your business which helps to engage your customers over voice with our virtual phone numbers, and voice APIs."
+    },    
+    "/us/voice": {
+        "title": "Voice API for your Business | Voice Call API | MSG91 India",
+        "description":"MSG91 India provides voice call api's to your business which helps to engage your customers over voice with our virtual phone numbers, and voice APIs."
+    },
+
+    "ShortURL ******************************":{},
+    
+    "/shorturl": {
+        "title": "ShortUrl",
+        "description":"Customised Links for Business Success Stand out with branded links that drive more clicks to improve conversion rates. Optimise smart links that can help you realise more revenues. Customising, tracking, managing, made easy. Get Demo Features Smart Links that magnify your conversions Enhance the deliverability of messages through our globally accepted best practices. Ensure improved..."
+    },
+    "/in/shorturl": {
+        "title": "ShortUrl",
+        "description":"Customised Links for Business Success Stand out with branded links that drive more clicks to improve conversion rates. Optimise smart links that can help you realise more revenues. Customising, tracking, managing, made easy. Get Demo Features Smart Links that magnify your conversions Enhance the deliverability of messages through our globally accepted best practices. Ensure improved..."
+    },
+    "/ae/shorturl": {
+        "title": "ShortUrl",
+        "description":"Customised Links for Business Success Stand out with branded links that drive more clicks to improve conversion rates. Optimise smart links that can help you realise more revenues. Customising, tracking, managing, made easy. Get Demo Features Smart Links that magnify your conversions Enhance the deliverability of messages through our globally accepted best practices. Ensure improved..."
+    },
+    "/ph/shorturl": {
+        "title": "ShortUrl",
+        "description":"Customised Links for Business Success Stand out with branded links that drive more clicks to improve conversion rates. Optimise smart links that can help you realise more revenues. Customising, tracking, managing, made easy. Get Demo Features Smart Links that magnify your conversions Enhance the deliverability of messages through our globally accepted best practices. Ensure improved..."
+    },
+    "/sg/shorturl": {
+        "title": "ShortUrl",
+        "description":"Customised Links for Business Success Stand out with branded links that drive more clicks to improve conversion rates. Optimise smart links that can help you realise more revenues. Customising, tracking, managing, made easy. Get Demo Features Smart Links that magnify your conversions Enhance the deliverability of messages through our globally accepted best practices. Ensure improved..."
+    },
+    "/es/shorturl": {
+        "title": "ShortUrl",
+        "description":"Customised Links for Business Success Stand out with branded links that drive more clicks to improve conversion rates. Optimise smart links that can help you realise more revenues. Customising, tracking, managing, made easy. Get Demo Features Smart Links that magnify your conversions Enhance the deliverability of messages through our globally accepted best practices. Ensure improved..."
+    },
+    "/uk/shorturl": {
+        "title": "ShortUrl",
+        "description":"Customised Links for Business Success Stand out with branded links that drive more clicks to improve conversion rates. Optimise smart links that can help you realise more revenues. Customising, tracking, managing, made easy. Get Demo Features Smart Links that magnify your conversions Enhance the deliverability of messages through our globally accepted best practices. Ensure improved..."
+    },    
+    "/us/shorturl": {
+        "title": "ShortUrl",
+        "description":"Customised Links for Business Success Stand out with branded links that drive more clicks to improve conversion rates. Optimise smart links that can help you realise more revenues. Customising, tracking, managing, made easy. Get Demo Features Smart Links that magnify your conversions Enhance the deliverability of messages through our globally accepted best practices. Ensure improved..."
+    },
+
+    "Knowledgebase ******************************":{},
+    
+    "/knowledgebase": {
+        "title": "Knowledgebase",
+        "description":"Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience"
+    },
+    "/in/knowledgebase": {
+        "title": "Knowledgebase",
+        "description":"Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience"
+    },
+    "/ae/knowledgebase": {
+        "title": "Knowledgebase",
+        "description":"Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience"
+    },
+    "/ph/knowledgebase": {
+        "title": "Knowledgebase",
+        "description":"Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience"
+    },
+    "/sg/knowledgebase": {
+        "title": "Knowledgebase",
+        "description":"Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience"
+    },
+    "/es/knowledgebase": {
+        "title": "Knowledgebase",
+        "description":"Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience"
+    },
+    "/uk/knowledgebase": {
+        "title": "Knowledgebase",
+        "description":"Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience"
+    },    
+    "/us/knowledgebase": {
+        "title": "Knowledgebase",
+        "description":"Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience"
+    },
+
+    "Single Pages ******************************":{},
+    
+    "/about-us": {
+        "title": "MSG91 - Our team, culture and happy clients.",
+        "description":"Empowering developers with communication APIs. Building modern communication tools and supporting ideas for startups and enterprises globally."
+    },        
+    "/contact-us": {
+        "title": "Contact Us - Reach out to Team MSG91!",
+        "description":"Questions? Comments? Suggestions? We love to hear them. Contact us and get support via phone, chat or on our email. MSG91 is here just for you!"
+    }, 
+    "/become-a-partner": {
+        "title": "MSG91 Partner Program | API Consultation - MSG91 India",
+        "description":"Looking for a long term partnership to boost your customer communication solutions? Our consultation and Integration Partnerships can help."
+    },
+    "/partners-and-integrations": {
+        "title": "Magento, WooCommerce, OpenCart, WordPress SMS addon plugin- MSG91",
+        "description":"Wordpress SMS plugin, WooCommerce SMS plugin, OpenCart SMS extension, Magento SMS extension, OpenCart SMS gateway to send unlimited SMS directly from website"
+    },
+    "/developers": {
+        "title": "Send SMS API | SMS API Integration in php - MSG91 India",
+        "description":"Revolutionary communication APIs designed with developers in mind. Read more."
+    },    
+    "/startups": {
+        "title": "MSG91 for Startups - upto 25,000 SMS per month for every Startup",
+        "description":"A startup for startups. Grow your startup with MSG91’s SMS for startups. First few transactional bulk SMS free every month. Spread this initiative and help startup."
+    },
+    "/terms-of-use": {
+        "title": "Terms",
+        "description":"Terms Privacy policy GDPR Refund policy Cookie policy Startup Policy Fair pricing policy No spam Terms Simple terms for a longterm relationship!Our services consist of the platform, features and connectivity that MSG91 provides to you. This policy is w.e.f. Nov 7, 2012.Using our services? Keep `em in mind!This policy is effective from Nov 07, 2012...."
+    },
+    "/privacy-policy": {
+        "title": "Privacy Policy of msg91.com",
+        "description":"Kindly read privacy policy of MSG91 before using its website or services. Information about cookies, web beacons used by msg91.com website."
+    },
+    "/gdpr": {
+        "title": "GDPR - More than just compliance at MSG91 | Customers' Privacy and Security",
+        "description":"GDPR has not just been a compliance practice for us at MSG91 but it has always been about the trust our customers have garnered on us and the responsibility which lies with us to keep their data protected. Know more!"
+    },
+    "/refund-policy": {
+        "title": "Refund policy",
+        "description":"Terms Privacy policy GDPR Refund policy Cookie policy Startup policy Fair pricing policy No spam Refund Policy We will refund your amount, but if someone tries to misuse, they’re legally bound.Account closing 1. The user may close his account at any time. Account closing means that the further use of services with the use of..."
+    },
+    "/cookie-policy": {
+        "title": "Cookie policy",
+        "description":"Cookie policy Terms Privacy policy GDPR Refund policy Cookie policy Startup policy Fair pricing policy No spam We love cookies…umm both kinds ;)Cookies are small pieces of information saved about you when you’re online, to help us track you as you browse. So say you go to the Regional SMS page to see how you..."
+    },
+    "/startup-policy": {
+        "title": "Startup Policy",
+        "description":"Terms Privacy policy GDPR Refund policy Cookie policy Startup policy Fair pricing policy No spam Startup policy We love Startups. After all, we too are a Startup!You grow, we grow! We have set the..."
+    },
+    "/fair-pricing-policy": {
+        "title": "Fair pricing policy",
+        "description":"Terms Privacy policy GDPR Refund policy Cookie policy Startup policy Fair pricing policy No spam Fair pricing policy We play fair!Our purpose is to give you maximum value at the lowest price keeping us profitable and sustainable.Fair Pricing Policy to be honest, and open, providing our customers with reliable and high-quality services at a fair..."
+    },
+    "/no-spam": {
+        "title": "No spam policy",
+        "description":"No spam policy Terms Privacy policy GDPR Refund policy Cookie policy Startup policy Fair pricing policy No spam We don’t SPAM and won’t accept anyone’s either!Any unsolicited, unexpected or unwanted SMS sent to the recipients in order to mislead them is considered SPAM by us. Also, if you send messages to unregistered users- SPAM. MSG91’s..."
     }
 }

@@ -103,19 +103,19 @@ const PricingComp = ({countryCode}) => {
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button onClick={()=>{fetchSubscriptionEmail('INR', '1')}} className="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-email" type="button" role="tab" aria-controls="pills-email" aria-selected="false">
+                  <button onClick={()=>{fetchSubscriptionEmail(currency, '1')}} className="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-email" type="button" role="tab" aria-controls="pills-email" aria-selected="false">
                   <img src="/img/icon/email.svg" alt="#" />
                     Email
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button onClick={()=>{fetchSubscriptionVoice('INR', '6')}} className="nav-link"  data-bs-toggle="pill" data-bs-target="#pills-voice" type="button" role="tab" aria-controls="pills-voice" aria-selected="false">
+                  <button onClick={()=>{fetchSubscriptionVoice(currency, '6')}} className="nav-link"  data-bs-toggle="pill" data-bs-target="#pills-voice" type="button" role="tab" aria-controls="pills-voice" aria-selected="false">
                     <img src="/img/icon/voice.svg" alt="#" />
                     Voice
                   </button>
                 </li>          
                 <li className="nav-item" role="presentation">
-                  <button onClick={()=>{fetchSubscriptionWhatsapp('INR', '5')}} className="nav-link"  data-bs-toggle="pill" data-bs-target="#pills-whatsapp" type="button" role="tab" aria-controls="pills-whatsapp" aria-selected="false">
+                  <button onClick={()=>{fetchSubscriptionWhatsapp(currency, '5')}} className="nav-link"  data-bs-toggle="pill" data-bs-target="#pills-whatsapp" type="button" role="tab" aria-controls="pills-whatsapp" aria-selected="false">
                     <img src="/img/icon/whatsapp.svg" alt="#" />
                     WhatsApp
                   </button>
@@ -139,7 +139,7 @@ const PricingComp = ({countryCode}) => {
                   </button>
                 </li>          
                 <li className="nav-item" role="presentation">
-                  <button onClick={()=>{fetchSubscriptionSegmento('INR', '2')}} className="nav-link"  data-bs-toggle="pill" data-bs-target="#pills-segmento" type="button" role="tab" aria-controls="pills-segmento" aria-selected="false">
+                  <button onClick={()=>{fetchSubscriptionSegmento(currency, '2')}} className="nav-link"  data-bs-toggle="pill" data-bs-target="#pills-segmento" type="button" role="tab" aria-controls="pills-segmento" aria-selected="false">
                     <img src="/img/icon/segmento.svg" alt="#" />
                     Segmento
                   </button>
