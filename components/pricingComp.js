@@ -15,12 +15,16 @@ import { useRouter } from 'next/router'
 import countries from "@/data/countries.json";
 
 const PricingComp = ({countryCode}) => {
+    //console.log('PricingComp countryCode', countryCode);
     var [pricing, setPricing] = useState([]);
     const [originCountry, setOriginCountry] = useState('')
     const [destinationCountry, setDestinationCountry] = useState('');
+    const [currency, setCurrency] = useState('$');
     
-    const amountArr = ['1250', '3300', '5400', '10200', '20000', '76500', '154000'];
-    
+    const amountArr = ['1250', '3300', '5400', '10200', '20000', '76500', '154000'];            
+    const inr = ['IN'];
+    const euro = ['SP'];
+
     var [subscriptionEmail, setSubscriptionEmail] = useState([]);
     var [subscriptionVoice, setSubscriptionVoice] = useState([]);
     var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
@@ -29,13 +33,12 @@ const PricingComp = ({countryCode}) => {
 //   console.log(originCountry,destinationCountry ,"hello anshul");
   
     const fetchSMSData = async (price, origin, destination) => {
-      console.log('fetchSMSData', price, origin, destination);
       var newData = [];
       let i=0;
       for(;i<amountArr.length;i++){
         if (price.length <= amountArr.length) {
-          //const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
-          const response = await axios.get(`https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
+          const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
+          //const response = await axios.get(`https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
           //const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
           newData.push(response.data.data)
         }
@@ -74,7 +77,16 @@ const PricingComp = ({countryCode}) => {
 
    
   useEffect(() => {
-    findCountry(countryCode);
+    findCountry(countryCode);    
+
+    if(inr.includes(countryCode)){
+      setCurrency('₹');
+    }else if(euro.includes(countryCode)){
+      setCurrency('£');
+    }else{
+      setCurrency('$');
+    }
+
     /* fetch('https://api.db-ip.com/v2/free/self')
     .then(response => response.json())
     .then(response => {
@@ -168,29 +180,32 @@ const PricingComp = ({countryCode}) => {
                 setOriginCountry={setOriginCountry}
                 destinationCountry={destinationCountry} 
                 setDestinationCountry={setDestinationCountry}
+                currency={currency}
                 />
               </div>
               <div className="tab-pane fade w-100" id="pills-email" role="tabpanel" aria-labelledby="pills-email-tab" tabIndex={0}>
                <Pricingemail
                subscriptionEmail={subscriptionEmail}
                fetchSubscriptionEmail={fetchSubscriptionEmail}
+               currency={currency}
                />
               </div>
               <div className="tab-pane fade w-100" id="pills-voice" role="tabpanel" aria-labelledby="pills-voice-tab" tabIndex={0}>
                 <Pricingvoice
                 subscriptionVoice={subscriptionVoice}
                 fetchSubscriptionVoice={fetchSubscriptionVoice}
+                currency={currency}
                 />
               </div>
               <div className="tab-pane fade w-100" id="pills-whatsapp" role="tabpanel" aria-labelledby="pills-whatsapp-tab" tabIndex={0}>
                 <Pricingwp
                 subscriptionWhatsapp={subscriptionWhatsapp}
                 fetchSubscriptionWhatsapp={fetchSubscriptionWhatsapp}
+                currency={currency}
                 />
               </div>
               <div className="tab-pane fade w-100" id="pills-rcs" role="tabpanel" aria-labelledby="pills-rcs-tab" tabIndex={0}>
-                <Pricingrcs/>
-              
+                <Pricingrcs/>              
               </div>
               <div className="tab-pane fade w-100" id="pills-otp" role="tabpanel" aria-labelledby="pills-otp-tab" tabIndex={0}>
                 <Pricingotp
@@ -202,6 +217,7 @@ const PricingComp = ({countryCode}) => {
                 setOriginCountry={setOriginCountry}
                 destinationCountry={destinationCountry} 
                 setDestinationCountry={setDestinationCountry}
+                currency={currency}
                 />
               </div>
               <div className="tab-pane fade w-100" id="pills-hello" role="tabpanel" aria-labelledby="pills-hello-tab" tabIndex={0}>
@@ -211,6 +227,7 @@ const PricingComp = ({countryCode}) => {
                 <Pricingsegmento
                 subscriptionSegmento={subscriptionSegmento}
                 fetchSubscriptionSegmento={fetchSubscriptionSegmento}
+                currency={currency}
                 />
               </div>
               <div className="tab-pane fade w-100" id="pills-campaign" role="tabpanel" aria-labelledby="pills-campaign-tab" tabIndex={0}>

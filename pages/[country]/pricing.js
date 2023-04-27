@@ -7,17 +7,16 @@ const pricingmain =()=>{
   var  brawserPath = router.asPath;
   var path = brawserPath.split("/")[1];
 
-  const getCountryCode = (a) => {
-    // console.log(a,87654);
+  const getCountryCode = () => {
     var countryCode = path?.toUpperCase();
     path = path.length == 2 ? "/" + path : "";
     if(countryCode ==='[COUNTRY]'){
-      return getCountryCode(a+1);
+      return getCountryCode();
     }
     return countryCode;
   } 
-  const data=getCountryCode(1);
-  // console.log(678, data);
+  const data=getCountryCode();
+  //console.log(678, data);
   if(data!=='[COUNTRY]' && data.length!==0){
     return (
       <PricingComp countryCode={data}/>

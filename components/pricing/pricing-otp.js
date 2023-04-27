@@ -11,7 +11,8 @@ const pricingotp = ({
   originCountry,
   setOriginCountry,
   destinationCountry,
-  setDestinationCountry
+  setDestinationCountry,
+  currency
 }) => {
   useEffect(() => {
     if(originCountry != null)
@@ -65,8 +66,8 @@ const pricingotp = ({
                     <div className="card price-card sms text-center card-popular mb-4 mb-sm-0 c-bg-grey">
                       <div className="card-body">
                         <h3 className="c-fs-3">{item[106]?.totalNoOfSms} SMS</h3>
-                        <h5 className="c-fs-2 text-green mt-2">₹{item[106]?.rate}/SMS</h5>
-                        <h2 className="c-fs-3 c-ff-b">₹{amountArr[index]} </h2>
+                        <h5 className="c-fs-2 text-green mt-2">{currency}{item[106]?.rate}/SMS</h5>
+                        <h2 className="c-fs-3 c-ff-b">{currency}{amountArr[index]} </h2>
                         <p className="c-fs-5">+18% GST</p>
                         <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                           Get Started
@@ -78,8 +79,8 @@ const pricingotp = ({
                   <div className="card price-card sms border-0 text-center mb-4 mb-sm-0 c-bg-grey">
                     <div className="card-body">
                       <h3 className="c-fs-3">{item[106]?.totalNoOfSms} SMS</h3>
-                      <h5 className="c-fs-2 mt-2 text-green">₹{item[106]?.rate}/SMS</h5>
-                      <h2 className="c-fs-3 c-ff-b">₹{amountArr[index]} </h2>
+                      <h5 className="c-fs-2 mt-2 text-green">{currency}{item[106]?.rate}/SMS</h5>
+                      <h2 className="c-fs-3 c-ff-b">{currency}{amountArr[index]} </h2>
                       <p className="c-fs-5">+18% GST</p>
                       <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                         Get Started

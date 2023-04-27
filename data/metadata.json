@@ -31,6 +31,9 @@
         "title": "Customer Support Platform for your Business by MSG91",
         "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
     },
+
+    "campaign ******************************":{},
+
     "/campaign": {
         "title": "Customer Support Platform for your Business by MSG91",
         "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
@@ -60,6 +63,41 @@
         "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
     },    
     "/us/campaign": {
+        "title": "Customer Support Platform for your Business by MSG91",
+        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+    },
+
+    "segmento ******************************":{},
+    
+    "/segmento": {
+        "title": "Customer Support Platform for your Business by MSG91",
+        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+    },
+    "/in/segmento": {
+        "title": "Customer Support Platform for your Business by MSG91",
+        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+    },
+    "/ae/segmento": {
+        "title": "Customer Support Platform for your Business by MSG91",
+        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+    },
+    "/ph/segmento": {
+        "title": "Customer Support Platform for your Business by MSG91",
+        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+    },
+    "/sg/segmento": {
+        "title": "Customer Support Platform for your Business by MSG91",
+        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+    },
+    "/es/segmento": {
+        "title": "Customer Support Platform for your Business by MSG91",
+        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+    },
+    "/uk/segmento": {
+        "title": "Customer Support Platform for your Business by MSG91",
+        "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+    },    
+    "/us/segmento": {
         "title": "Customer Support Platform for your Business by MSG91",
         "description":"Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
     }

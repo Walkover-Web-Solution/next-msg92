@@ -2,7 +2,6 @@ import link from "next/link";
 import { useRouter } from "next/router";
 
 const Footer = ({ path }) => {
-  console.log('pathf', path);  
   path = (path?.length == 2)? '/'+path : '';
   return (
     <>
