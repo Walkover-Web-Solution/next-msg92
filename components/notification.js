@@ -8,8 +8,8 @@ const Notification = () =>{
     var path = router.asPath.split("/")[1];
     var country = "Global";
     for (let x in countries) {
-      if (path.toUpperCase() === countries[x].code) {
-        country = countries[x].country;
+      if (path.toUpperCase() === countries[x].sortname) {
+        country = countries[x].name;
         break;
       }
     }
@@ -40,7 +40,7 @@ const Notification = () =>{
             </div>
             <div className="d-flex gap-4 align-items-center justify-content-end">
               <div className="dropdown d-flex d-flex  align-items-center" id="change-country"> 
-                <a href="#" 
+                <a href="javascript:void(0)" 
                 className="align-items-center d-flex text-dark"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -50,11 +50,11 @@ const Notification = () =>{
                   <MdExpandMore className="ms-1"/>
                 </a>
                 <ul className="dropdown-menu">
-                  {/* <li>
+                  <li>
                     <a href="/" className="dropdown-item c-fs-5">
                       Global
                     </a>
-                  </li> */}
+                  </li>
                   <li>
                     <a href="/in" className="dropdown-item c-fs-5">
                       India
