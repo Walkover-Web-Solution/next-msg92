@@ -40,7 +40,7 @@ const Pricing = () => {
         newData.push(response.data.data)
       }
       if(origin != 'India')
-        break;      
+        break;  
     }
     setPricing([...newData])
   };

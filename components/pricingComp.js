@@ -17,31 +17,39 @@ import countries from "@/data/countries.json";
 const PricingComp = ({countryCode}) => {
     //console.log('PricingComp countryCode', countryCode);
     var [pricing, setPricing] = useState([]);
-    const [originCountry, setOriginCountry] = useState('')
-    const [destinationCountry, setDestinationCountry] = useState('');
-    const [currency, setCurrency] = useState('$');
+    var [originCountry, setOriginCountry] = useState('')
+    var [destinationCountry, setDestinationCountry] = useState('');
+    var [currency, setCurrency] = useState('');
+    var [currencySymbol, setCurrencySymbol] = useState('');
     
-    const amountArr = ['1250', '3300', '5400', '10200', '20000', '76500', '154000'];            
-    const inr = ['IN'];
-    const euro = ['SP'];
+    var amountArr = ['1250', '3300', '5400', '10200', '20000', '76500', '154000'];
 
     var [subscriptionEmail, setSubscriptionEmail] = useState([]);
     var [subscriptionVoice, setSubscriptionVoice] = useState([]);
     var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
-    var [subscriptionSegmento, setSubscriptionSegmento] = useState([]);
-  // let pricing = []
-//   console.log(originCountry,destinationCountry ,"hello anshul");
+    var [subscriptionSegmento, setSubscriptionSegmento] = useState([]);  
   
-    const fetchSMSData = async (price, origin, destination) => {
+    const fetchSMSData = async (currency, origin, destination) => {
+      setCurrency(currency);
+      setOriginCountry(origin);
+      setDestinationCountry(destination);
+      console.log('fetchsmsdata', currency, origin, destination);
+      amountArr = (origin == 'India') ? amountArr : ['1000'];
+      if(currency == 'INR'){
+        setCurrencySymbol('₹');        
+      }else if(currency == 'GBP'){
+        setCurrencySymbol('£');        
+      }else{
+        setCurrencySymbol('$');        
+      }
+      
       var newData = [];
       let i=0;
       for(;i<amountArr.length;i++){
-        if (price.length <= amountArr.length) {
-          //const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
-          const response = await axios.get(`https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
-          //const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=INR&originCountry=${origin}&destinationCountry=${destination}`)
-          newData.push(response.data.data)
-        }
+        const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
+        //const response = await axios.get(`https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
+        //const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
+        newData.push(response.data.data)
       }
       setPricing([...newData])
     };
@@ -69,37 +77,13 @@ const PricingComp = ({countryCode}) => {
   };
   
   const findCountry = async (code) => {
-    const response = await countries?.find(el => el.code === code);
-    setOriginCountry(response?.country); 
-    setDestinationCountry(response?.country);
-    fetchSMSData(amountArr, response?.country, response?.country);
+    const response = await countries?.find(el => el.sortname === code);    
+    fetchSMSData(response?.currency, response?.name, response?.name);
   };
 
    
   useEffect(() => {
     findCountry(countryCode);    
-
-    if(inr.includes(countryCode)){
-      setCurrency('₹');
-    }else if(euro.includes(countryCode)){
-      setCurrency('£');
-    }else{
-      setCurrency('$');
-    }
-
-    /* fetch('https://api.db-ip.com/v2/free/self')
-    .then(response => response.json())
-    .then(response => {
-      setOriginCountry(response?.countryName);
-      setDestinationCountry(response?.countryName);
-      console.log('free api', originCountry, destinationCountry, response?.countryName);
-      fetchSMSData([], originCountry, destinationCountry)
-      //console.log('ip response',response);
-    })
-    .catch(error => {
-        // handle the error
-        console.log('error', error);
-    }); */
   }, [countryCode]);
 
   return (
@@ -113,7 +97,7 @@ const PricingComp = ({countryCode}) => {
             <div className="d-flex justify-content-center">
               <ul className="nav nav-pills c-fs-5 pb-5" id="pricing-pills-tab" role="tablist">
                 <li className="nav-item" role="presentation">
-                  <button onClick={()=>{fetchSMSData([],'INDIA','INDIA')}} className="nav-link active"  data-bs-toggle="pill" data-bs-target="#pills-sms" type="button" role="tab" aria-controls="pills-sms" aria-selected="true">
+                  <button onClick={()=>{fetchSMSData(currency, originCountry, destinationCountry)}} className="nav-link active"  data-bs-toggle="pill" data-bs-target="#pills-sms" type="button" role="tab" aria-controls="pills-sms" aria-selected="true">
                     <img src="/img/icon/sms.svg" alt="#" />
                     SMS
                   </button>
@@ -143,7 +127,7 @@ const PricingComp = ({countryCode}) => {
                   </button>
                 </li>          
                 <li className="nav-item" role="presentation">
-                  <button onClick={()=>{fetchSMSData([],'INDIA','INDIA')}} className="nav-link"  data-bs-toggle="pill" data-bs-target="#pills-otp" type="button" role="tab" aria-controls="pills-otp" aria-selected="false">
+                  <button onClick={()=>{fetchSMSData(currency, originCountry, destinationCountry)}} className="nav-link"  data-bs-toggle="pill" data-bs-target="#pills-otp" type="button" role="tab" aria-controls="pills-otp" aria-selected="false">
                     <img src="/img/icon/otp.svg" alt="#" />
                     OTP
                   </button>
@@ -181,6 +165,7 @@ const PricingComp = ({countryCode}) => {
                 destinationCountry={destinationCountry} 
                 setDestinationCountry={setDestinationCountry}
                 currency={currency}
+                currencySymbol={currencySymbol}
                 />
               </div>
               <div className="tab-pane fade w-100" id="pills-email" role="tabpanel" aria-labelledby="pills-email-tab" tabIndex={0}>
@@ -188,6 +173,7 @@ const PricingComp = ({countryCode}) => {
                subscriptionEmail={subscriptionEmail}
                fetchSubscriptionEmail={fetchSubscriptionEmail}
                currency={currency}
+                currencySymbol={currencySymbol}
                />
               </div>
               <div className="tab-pane fade w-100" id="pills-voice" role="tabpanel" aria-labelledby="pills-voice-tab" tabIndex={0}>
@@ -195,6 +181,7 @@ const PricingComp = ({countryCode}) => {
                 subscriptionVoice={subscriptionVoice}
                 fetchSubscriptionVoice={fetchSubscriptionVoice}
                 currency={currency}
+                setCurrencySymbol={setCurrencySymbol}
                 />
               </div>
               <div className="tab-pane fade w-100" id="pills-whatsapp" role="tabpanel" aria-labelledby="pills-whatsapp-tab" tabIndex={0}>
@@ -202,6 +189,7 @@ const PricingComp = ({countryCode}) => {
                 subscriptionWhatsapp={subscriptionWhatsapp}
                 fetchSubscriptionWhatsapp={fetchSubscriptionWhatsapp}
                 currency={currency}
+                currencySymbol={currencySymbol}
                 />
               </div>
               <div className="tab-pane fade w-100" id="pills-rcs" role="tabpanel" aria-labelledby="pills-rcs-tab" tabIndex={0}>
@@ -218,6 +206,7 @@ const PricingComp = ({countryCode}) => {
                 destinationCountry={destinationCountry} 
                 setDestinationCountry={setDestinationCountry}
                 currency={currency}
+                currencySymbol={currencySymbol}
                 />
               </div>
               <div className="tab-pane fade w-100" id="pills-hello" role="tabpanel" aria-labelledby="pills-hello-tab" tabIndex={0}>
@@ -228,6 +217,7 @@ const PricingComp = ({countryCode}) => {
                 subscriptionSegmento={subscriptionSegmento}
                 fetchSubscriptionSegmento={fetchSubscriptionSegmento}
                 currency={currency}
+                currencySymbol={currencySymbol}
                 />
               </div>
               <div className="tab-pane fade w-100" id="pills-campaign" role="tabpanel" aria-labelledby="pills-campaign-tab" tabIndex={0}>

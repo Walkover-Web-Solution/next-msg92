@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import countries from "@/data/countries.json";
 import { Typeahead } from 'react-bootstrap-typeahead';
 
-const pricingotp = ({
+const Pricingsms = ({
   pricing,
   setPricing,
   amountArr,
@@ -12,9 +12,12 @@ const pricingotp = ({
   setOriginCountry,
   destinationCountry,
   setDestinationCountry,
-  currency
-}) => {
+  currency,
+  currencySymbol
+}) => {  
+
   useEffect(() => {
+    //console.log('pricing-sms.js originCountry', originCountry);
     if(originCountry != null)
     {
       setOriginCountry(originCountry)
@@ -24,17 +27,16 @@ const pricingotp = ({
   return (
     <>
      <div>
-     { originCountry.length >= 1 && <div className="g-3 d-flex justify-content-center col-lg-5 m-auto pb-5">
+     { originCountry?.length >= 1 && <div className="g-3 d-flex justify-content-center col-lg-5 m-auto pb-5">
        <Typeahead
           id="originCountry"
-          labelKey="country"
+          labelKey="name"
           onChange={(selected) => {            
             setPricing([])
-            if (selected[0]?.country)
-              fetchSMSData([], selected[0]?.country, destinationCountry);
+            if (selected[0]?.name)
+              fetchSMSData(selected[0]?.currency , selected[0]?.name, destinationCountry);
           }}
           options={countries}
-          // value={originCountry}
           defaultInputValue={originCountry}
         />
 
@@ -42,11 +44,11 @@ const pricingotp = ({
 
         <Typeahead
           id="destinationCountry"
-          labelKey="country"
+          labelKey="name"
           onChange={(selected) => {            
             setPricing([])
-            if (selected[0]?.country)
-              fetchSMSData([], originCountry, selected[0]?.country);
+            if (selected[0]?.name)
+              fetchSMSData(currency, originCountry, selected[0]?.name);
           }}
           options={countries}
           defaultInputValue={destinationCountry}
@@ -55,7 +57,7 @@ const pricingotp = ({
       </div>}
       <div className="d-flex flex-wrap flex-gap gap-3 justify-content-center w-100  card-container align-items-end">
         {pricing?.map((item, index) => {
-          return (
+          return (            
             <div key={`sms-card-${index}`} className="mx-3">
 
               {amountArr[index] ?
@@ -66,27 +68,41 @@ const pricingotp = ({
                     <div className="card price-card sms text-center card-popular mb-4 mb-sm-0 c-bg-grey">
                       <div className="card-body">
                         <h3 className="c-fs-3">{item[106]?.totalNoOfSms} SMS</h3>
-                        <h5 className="c-fs-2 text-green mt-2">{currency}{item[106]?.rate}/SMS</h5>
-                        <h2 className="c-fs-3 c-ff-b">{currency}{amountArr[index]} </h2>
+                        <h5 className="c-fs-2 text-green mt-2">{currencySymbol}{item[106]?.rate}/SMS</h5>
+                        <h2 className="c-fs-3 c-ff-b">{currencySymbol}{amountArr[index]} </h2>
                         <p className="c-fs-5">+18% GST</p>
                         <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                           Get Started
                         </a>
                       </div>
                     </div>
-                  </div>
+                  </div>                  
                   :
+                  originCountry == 'India'
+                  ?
                   <div className="card price-card sms border-0 text-center mb-4 mb-sm-0 c-bg-grey">
                     <div className="card-body">
                       <h3 className="c-fs-3">{item[106]?.totalNoOfSms} SMS</h3>
-                      <h5 className="c-fs-2 mt-2 text-green">{currency}{item[106]?.rate}/SMS</h5>
-                      <h2 className="c-fs-3 c-ff-b">{currency}{amountArr[index]} </h2>
+                      <h5 className="c-fs-2 mt-2 text-green">{currencySymbol}{item[106]?.rate}/SMS</h5>
+                      <h2 className="c-fs-3 c-ff-b">{currencySymbol}{amountArr[index]} </h2>
                       <p className="c-fs-5">+18% GST</p>
                       <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                         Get Started
                       </a>
                     </div>
-                  </div>:""
+                  </div> 
+                  :
+                  <div className="card price-card sms border-0 text-center mb-4 mb-sm-0 c-bg-grey">
+                    <div className="card-body">
+                      <h3 className="c-fs-3">No of SMS</h3>
+                      <h5 className="c-fs-2 mt-2 text-green">{currencySymbol}{item[106]?.rate}/SMS</h5>
+                      <h2 className="c-fs-3 c-ff-b">-</h2>                      
+                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                        Get Started
+                      </a>
+                    </div>
+                  </div>                   
+                  : ""
               }              
             </div>
           );
@@ -106,4 +122,4 @@ const pricingotp = ({
   );
 };
 
-export default pricingotp;
+export default Pricingsms;
