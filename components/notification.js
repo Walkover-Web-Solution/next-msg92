@@ -50,11 +50,11 @@ const Notification = () =>{
                   <MdExpandMore className="ms-1"/>
                 </a>
                 <ul className="dropdown-menu">
-                  <li>
+                  {/* <li>
                     <a href="/" className="dropdown-item c-fs-5">
                       Global
                     </a>
-                  </li>
+                  </li> */}
                   <li>
                     <a href="/in" className="dropdown-item c-fs-5">
                       India
