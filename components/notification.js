@@ -40,7 +40,7 @@ const Notification = () =>{
             </div>
             <div className="d-flex gap-4 align-items-center justify-content-end">
               <div className="dropdown d-flex d-flex  align-items-center" id="change-country"> 
-                <a href="javascript:void(0)" 
+                <a href={undefined}
                 className="align-items-center d-flex text-dark"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"

@@ -51,7 +51,7 @@ const navbar = ({ brawserPath }) => {
           <div className=" d-flex gap-4 gap-lg-4 gap-xl-5 w-nav-menu align-items-center justify-content-start nav-menu">
             <a
               className="nav-link menu-opt text-dark"
-              href="#"
+              href={undefined}
               id="product-link"
             >
               <span className="c-fs-4 c-fw-m">Products</span>
@@ -59,7 +59,7 @@ const navbar = ({ brawserPath }) => {
             </a>
             <a
               className="nav-link menu-opt text-dark"
-              href="#"
+              href={undefined}
               id="integrations-link"
             >
               <span className="c-fs-4 c-fw-m">Integrations</span>
