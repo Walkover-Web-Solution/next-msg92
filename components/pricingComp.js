@@ -83,7 +83,8 @@ const PricingComp = ({countryCode}) => {
 
    
   useEffect(() => {
-    findCountry(countryCode);    
+    findCountry(countryCode);
+    console.log('countryCode', countryCode); 
   }, [countryCode]);
 
   return (
@@ -231,7 +232,13 @@ const PricingComp = ({countryCode}) => {
         <div className="modal-dialog modal-xl">
           <div className="modal-content">            
             <div className="modal-body">
-              <InlineWidget url="https://calendly.com/sales-msg91/pre-sales" styles={{height: '700px'}} />
+              {
+                (countryCode == 'IN')
+                ?
+                <InlineWidget url="https://calendly.com/sales-msg91/pre-sales" styles={{height: '700px'}} />
+                :
+                <InlineWidget url="https://calendly.com/msg91international/talktoexpert" styles={{height: '700px'}} />
+              }
             </div>            
           </div>
         </div>
