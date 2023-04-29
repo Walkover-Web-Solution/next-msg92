@@ -11,6 +11,7 @@ export default function App({ Component, pageProps }) {
   // const { slug } = router.query; 
   var  brawserPath = router.asPath;
   var path = brawserPath.split("/")[1];
+  const year = new Date().getFullYear();
 
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
@@ -20,7 +21,7 @@ export default function App({ Component, pageProps }) {
       <Headcomp brawserPath={brawserPath} />
       <Navbar brawserPath={brawserPath} />
       <Component {...pageProps} />
-      <Footer path={path} />
+      <Footer path={path} year={year} />
     </>
     );
 }

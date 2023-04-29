@@ -1,7 +1,7 @@
 import link from "next/link";
 import { useRouter } from "next/router";
 
-const Footer = ({ path }) => {
+const Footer = ({path, year}) => {  
   path = (path?.length == 2)? '/'+path : '';
   return (
     <>
@@ -284,7 +284,7 @@ const Footer = ({ path }) => {
               </div>
             </div>
             <div className="c-fs-7 copyright mt-3">
-              Copyright 2008-2020 MSG91 | All rights reserved.
+              Copyright 2008-{year} MSG91 | All rights reserved.
             </div>
           </div>
         </div>
@@ -294,3 +294,4 @@ const Footer = ({ path }) => {
 };
 
 export default Footer;
+
