@@ -77,6 +77,7 @@ const PricingComp = ({countryCode}) => {
   
   const findCountry = async (code) => {
     const response = await countries?.find(el => el.sortname === code);        
+    console.log('findCountry, response?.currency:', response?.currency);
     setCurrency(response?.currency);
     fetchSMSData(currency, response?.name, response?.name);
   };
