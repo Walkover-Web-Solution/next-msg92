@@ -81,7 +81,7 @@ const Notification = () =>{
                     </a>
                   </li>
                   <li>
-                    <a href="/uk" className="dropdown-item c-fs-5">
+                    <a href="/gb" className="dropdown-item c-fs-5">
                       United Kingdom
                     </a>
                   </li>
