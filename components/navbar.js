@@ -108,9 +108,10 @@ const navbar = ({ brawserPath }) => {
               <img className="msg91-logo" src="/img/logo.svg" alt="MSG91" />
             </a>
           </div>
-          {/* <a href="/" className="text-dark"> */}
-          <MdSegment className="c-fs-1" onClick={()=>{setShow(!show)}}/>
-          {/* </a> */}
+          <div style={{'height':'40px', 'width':'40px'}} className="d-flex justify-content-center align-items-center">
+            <MdSegment className="c-fs-1" onClick={()=>{setShow(!show)}}/>
+          </div>
+          
         </div>
       </nav>
     </>
