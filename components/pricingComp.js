@@ -29,12 +29,11 @@ const PricingComp = ({countryCode}) => {
     var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
     var [subscriptionSegmento, setSubscriptionSegmento] = useState([]);  
   
-    const fetchSMSData = async (currency, origin, destination) => {
-      setCurrency(currency);
+    const fetchSMSData = async (currency, origin, destination) => {      
       setOriginCountry(origin);
       setDestinationCountry(destination);
-      console.log('fetchsmsdata', currency, origin, destination);
-      amountArr = (origin == 'India') ? amountArr : ['1000'];
+      console.log('fetchsmsdata', currency, origin, destination, countryCode);
+      amountArr = (origin == 'India') ? amountArr : ['5000'];
       if(currency == 'INR'){
         setCurrencySymbol('₹');        
       }else if(currency == 'GBP'){
@@ -77,14 +76,14 @@ const PricingComp = ({countryCode}) => {
   };
   
   const findCountry = async (code) => {
-    const response = await countries?.find(el => el.sortname === code);    
-    fetchSMSData(response?.currency, response?.name, response?.name);
+    const response = await countries?.find(el => el.sortname === code);        
+    setCurrency(response?.currency);
+    fetchSMSData(currency, response?.name, response?.name);
   };
 
    
   useEffect(() => {
-    findCountry(countryCode);
-    console.log('countryCode', countryCode); 
+    findCountry(countryCode);    
   }, [countryCode]);
 
   return (
