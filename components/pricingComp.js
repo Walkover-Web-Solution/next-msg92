@@ -33,7 +33,7 @@ const PricingComp = ({countryCode}) => {
       setOriginCountry(origin);
       setDestinationCountry(destination);
       console.log('fetchsmsdata', currency, origin, destination, countryCode);
-      amountArr = (origin == 'India') ? amountArr : ['5000'];
+      amountArr = (origin == 'India') && (currency == 'INR') ? amountArr : ['5000'];
       if(currency == 'INR'){
         setCurrencySymbol('₹');        
       }else if(currency == 'GBP'){
