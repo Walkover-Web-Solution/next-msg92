@@ -610,3 +610,20 @@ code[class*="language-"], pre[class*="language-"]{
   height: 500px;
   margin: 0 80px;
 }
+
+/* typeahead */
+.rbt-aux{
+  position: absolute;
+  top:2px;
+  right:2px;
+  display: flex;
+  background: #fff;
+  .rbt-close-content, .visually-hidden{
+    display: none;
+  }
+  button{
+    font-size: 14px;
+    width: 26px;
+    height: 26px;
+  }
+}
