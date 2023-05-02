@@ -37,7 +37,8 @@ const Pricingsms = ({
               fetchSMSData(currency , selected[0]?.name, destinationCountry);
           }}
           options={countries}
-          defaultInputValue={originCountry}
+          clearButton
+          defaultSelected={[countries?.find(item => item.name === originCountry)]}
         />
 
         <div className="px-4">To</div>
@@ -51,7 +52,8 @@ const Pricingsms = ({
               fetchSMSData(currency, originCountry, selected[0]?.name);
           }}
           options={countries}
-          defaultInputValue={destinationCountry}
+          clearButton
+          defaultSelected={[countries?.find(item => item.name === originCountry)]}
         />
 
       </div>}
