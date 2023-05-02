@@ -17,12 +17,12 @@ const Pricingsms = ({
 }) => {  
 
   useEffect(() => {
-    //console.log('pricing-sms.js originCountry', originCountry);
+    /* console.log('pricing-sms.js currency', currency);
     if(originCountry != null)
     {
       setOriginCountry(originCountry)
       setDestinationCountry(destinationCountry)
-    }
+    } */
   }, [pricing, originCountry, destinationCountry]);  
   return (
     <>
@@ -31,13 +31,14 @@ const Pricingsms = ({
        <Typeahead
           id="originCountry"
           labelKey="name"
-          onChange={(selected) => {            
+          onChange={(selected) => {
             setPricing([])
             if (selected[0]?.name)
-              fetchSMSData(selected[0]?.currency , selected[0]?.name, destinationCountry);
+              fetchSMSData(currency , selected[0]?.name, destinationCountry);
           }}
           options={countries}
-          defaultInputValue={originCountry}
+          clearButton
+          defaultSelected={[countries?.find(item => item.name === originCountry)]}
         />
 
         <div className="px-4">To</div>
@@ -45,13 +46,14 @@ const Pricingsms = ({
         <Typeahead
           id="destinationCountry"
           labelKey="name"
-          onChange={(selected) => {            
+          onChange={(selected) => {
             setPricing([])
             if (selected[0]?.name)
               fetchSMSData(currency, originCountry, selected[0]?.name);
           }}
           options={countries}
-          defaultInputValue={destinationCountry}
+          clearButton
+          defaultSelected={[countries?.find(item => item.name === originCountry)]}
         />
 
       </div>}
