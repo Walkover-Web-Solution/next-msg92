@@ -40,7 +40,9 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
           subscriptionEmail?.map((item, index) => {
             return(
               <div key={`email-card-${index}`} className="mx-3">
-              {item.plan_amounts[0].plan_amount === 7500
+              { item.plan_amounts[0].plan_amount === 7500 || 
+                item.plan_amounts[0].plan_amount === 100 ||
+                item.plan_amounts[0].plan_amount === 75
               ?
                 <div className="text-center d-flex flex-column mb-4 mb-sm-0 align-items-center ">
                   <div className="popular-chip c-fs-6">POPULAR</div>
@@ -60,7 +62,7 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
                         <span className="text-success c-fs-3">
                           <MdDone />
                         </span>
-                        {item.plan_services[0].service_credit.free_credits} Emails
+                        {item.plan_services[0].service_credit.free_credits} Emails/Month
                       </div>
                       <div className="c-fs-5 ">                  
                           {
@@ -69,7 +71,7 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
                           : 
                           <span className="text-success c-fs-3"><MdDone /></span> 
                           }
-                        {item.plan_services[1].service_credit.free_credits} Email Verifications
+                        {item.plan_services[1].service_credit.free_credits} Email Verifications/Month
                       </div>
 
                       <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
@@ -95,7 +97,7 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
                       <span className="text-success c-fs-3">
                         <MdDone />
                       </span>
-                      {item.plan_services[0].service_credit.free_credits} Emails
+                      {item.plan_services[0].service_credit.free_credits} Emails/Month
                     </div>
                     <div className="c-fs-5 ">                  
                         {
@@ -104,7 +106,7 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
                         : 
                         <span className="text-success c-fs-3"><MdDone /></span> 
                         }
-                      {item.plan_services[1].service_credit.free_credits} Email Verifications
+                      {item.plan_services[1].service_credit.free_credits} Email Verifications/Month
                     </div>
 
                     <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">

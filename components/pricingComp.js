@@ -230,7 +230,10 @@ const PricingComp = ({countryCode}) => {
       </div>
       <div className="modal fade" id="custom-pricing-modal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-xl">
-          <div className="modal-content">            
+          <div className="modal-content">
+            <div className="modal-header">                        
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+            </div>
             <div className="modal-body">
               {
                 (countryCode == 'IN')
