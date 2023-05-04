@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import { MdOutlineEmail, MdCall, MdWhatsapp } from "react-icons/md";
 import { InlineWidget, PopupButton } from "react-calendly";
-const contactus = ({path}) => {
-    var [salesNumber, setSalesNumber] = useState('+91 88895 00704');
+const contactus = ({path}) => {    
+    var [countryName, setCountryName] = useState('');    
     useEffect(() => {
         fetch('https://api.db-ip.com/v2/free/self')
         .then(response => response.json())
         .then(response => {
-            console.log('CONTACT US', response);
-            if(response.countryName !== 'India'){
-                setSalesNumber('+65 31595004');
-            }
+            //console.log('CONTACT US', response);
+            setCountryName(response.countryName);
         })
         .catch(error => {            
             console.log('error', error);
@@ -33,14 +31,39 @@ const contactus = ({path}) => {
                                     sales@msg91.com
                                 </a>
                             </div>
-                            <div className="d-flex  align-items-center">
-                                <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
-                                    <MdCall className="p-auto  " />
-                                </span>
-                                <a href="tel:91987654321" className="c-fs-2 ms-3 text-dark text-center bg-white">
-                                    {salesNumber}
-                                </a>
-                            </div>
+                                {
+                                    (countryName && countryName !== 'India')
+                                    ?
+                                    <>
+                                        <div className="d-flex align-items-center">
+                                            <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
+                                                <MdCall className="p-auto" />
+                                            </span>
+                                            <a href="tel:+6531595004" className="c-fs-2 ms-3 text-dark text-center bg-white">
+                                                +65 31595004
+                                            </a>
+                                        </div>
+                                    </>
+                                    :
+                                    <>
+                                        <div className="d-flex align-items-center">
+                                            <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
+                                                <MdCall className="p-auto" />
+                                            </span>    
+                                            <a href="tel:+918889500704" className="c-fs-2 ms-3 text-dark text-center bg-white">
+                                                +91 88895 00704
+                                            </a>
+                                        </div>
+                                        <div className="d-flex align-items-center">
+                                            <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
+                                                <MdCall className="p-auto" />
+                                            </span>
+                                            <a href="tel:+917049088848" className="c-fs-2 ms-3 text-dark text-center bg-white">
+                                                +91 70490 88848
+                                            </a>
+                                        </div>
+                                    </>
+                                }
                         </div>
                         <button className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#sales-modal">Schedule a meeting</button>
                     </div>
@@ -57,7 +80,7 @@ const contactus = ({path}) => {
                             </a>
                         </div>
                         
-                        <div className="d-flex  align-items-center">
+                        <div className="d-flex align-items-center">
                             <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
                                 <MdWhatsapp className="p-auto  " />
                             </span>
