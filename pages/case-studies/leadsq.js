@@ -40,7 +40,7 @@ const leadsquared = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://www.leadsquared.com/">LeadSquared</a> is a lead conversion Marketing and CRM platform. With the vision to offer their customers with the best Marketing automated services, and to ensure the lead conversions happen efficiently, LeadSquared has been rigorously working on sending the various updates and information for their customer’s satisfaction.
+        <span className="c-fs-3"><a target="_blank" href="https://www.leadsquared.com/">LeadSquared</a> is a lead conversion Marketing and CRM platform. With the vision to offer their customers with the best Marketing automated services, and to ensure the lead conversions happen efficiently, LeadSquared has been rigorously working on sending the various updates and information for their customer’s satisfaction.
 
 </span>
       </div>
@@ -75,7 +75,10 @@ const leadsquared = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets regular updates, information and notifications of ongoing offers via a secured channel, making the operations reliable and seamless, which results in a better rapport with the customer and increase in sales by more lead conversions.</span>     
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

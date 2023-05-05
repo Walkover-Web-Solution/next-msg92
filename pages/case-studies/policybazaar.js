@@ -40,7 +40,7 @@ const policybazaar = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://www.policybazaar.com/">Policy Bazaar</a> is a finance based services, where they update their customers with offers and updates on various financial services. With the vision to help the customers get the due updates in time, Policy Bazaar has been rigorously working on the financial consulting services for the customer’s welfare.
+        <span className="c-fs-3"><a target="_blank" href="https://www.policybazaar.com/">Policy Bazaar</a> is a finance based services, where they update their customers with offers and updates on various financial services. With the vision to help the customers get the due updates in time, Policy Bazaar has been rigorously working on the financial consulting services for the customer’s welfare.
 
 </span>
       </div>
@@ -68,7 +68,10 @@ const policybazaar = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets regular updates for every event related to their financials via secured channel making the operations reliable and seamless resulting in a better rapport with the customer and increase in sales.</span>     
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

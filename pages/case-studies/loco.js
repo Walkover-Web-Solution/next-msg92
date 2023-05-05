@@ -39,7 +39,7 @@ const loco = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://play.google.com/store/apps/details?id=com.showtimeapp&hl=en">Loco</a>  is a live trivia game linked to Paytm account, where the users play a live quiz and receives the prize money into their Paytm accounts upon winning . With the vision to offer their customers with the best experience of live trivia game, and to ensure it happens securely, Loco has been working on it by sending the OTP upon login and Paytm account change for their customer’s satisfaction.</span>
+        <span className="c-fs-3"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.showtimeapp&hl=en">Loco</a>  is a live trivia game linked to Paytm account, where the users play a live quiz and receives the prize money into their Paytm accounts upon winning . With the vision to offer their customers with the best experience of live trivia game, and to ensure it happens securely, Loco has been working on it by sending the OTP upon login and Paytm account change for their customer’s satisfaction.</span>
       </div>
 
       <div className="container py-5">
@@ -61,7 +61,10 @@ const loco = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets OTPs on every login and also for changing the Paytm account making it secure via a secured channel, making the operations reliable and seamless, which results in a better rapport with the customer and increase in the number of users.</span>
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

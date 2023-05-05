@@ -40,7 +40,7 @@ const mahindra = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://www.withyouhamesha.com/default.aspx">Mahindra & Mahindra Automotive Division (AD)</a> is the automobile unit of the Mahindra Group. With the vision to help their customers manage their cars efficiently by their top-class car services, and to ensure it happens in time, Mahindra & Mahindra AD has been rigorously working on sending reminders and arranging best car services for their customer’s welfare.</span>
+        <span className="c-fs-3"><a target="_blank" href="https://www.withyouhamesha.com/default.aspx">Mahindra & Mahindra Automotive Division (AD)</a> is the automobile unit of the Mahindra Group. With the vision to help their customers manage their cars efficiently by their top-class car services, and to ensure it happens in time, Mahindra & Mahindra AD has been rigorously working on sending reminders and arranging best car services for their customer’s welfare.</span>
       </div>
 
       <div className="container py-5">
@@ -63,7 +63,10 @@ const mahindra = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets regular updates and reminders for every service related to their car via a secured channel, making the operations reliable and seamless. Moreover, the secured log in results in a better rapport with the customer and increase in sales.</span>
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

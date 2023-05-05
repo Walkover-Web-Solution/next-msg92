@@ -39,7 +39,7 @@ const azim_Premji = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://azimpremjifoundation.org/">Azim Premji Foundation</a> is an NGO which works in the fields of Education. With the vision to help people with proper education by conducting classes and creating awareness, Azim Premji Foundation has been rigorously working on coordinating with the teachers for social welfare.</span>
+        <span className="c-fs-3"><a target="_blank" href="https://azimpremjifoundation.org/">Azim Premji Foundation</a> is an NGO which works in the fields of Education. With the vision to help people with proper education by conducting classes and creating awareness, Azim Premji Foundation has been rigorously working on coordinating with the teachers for social welfare.</span>
       </div>
 
       <div className="container py-5">
@@ -62,7 +62,10 @@ const azim_Premji = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the teachers gets details of vacancies via secured channel, making the operations reliable and seamless. Moreover, the updates of events and courses sent to teachers results in a better coordination and resulting a better network of teachers for better education.</span>
       </div>
-    </>
+      <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

@@ -40,7 +40,7 @@ const talkcharge = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://milkbasket.com/">TalkCharge</a> is a recharge wallet and E-commerce platform. With the vision to offer their customers secured wallet, and to ensure it happens efficiently, TalkCharge has been rigorously working on sending the updates and information for their customers security and satisfaction.</span>
+        <span className="c-fs-3"><a target="_blank" href="https://milkbasket.com/">TalkCharge</a> is a recharge wallet and E-commerce platform. With the vision to offer their customers secured wallet, and to ensure it happens efficiently, TalkCharge has been rigorously working on sending the updates and information for their customers security and satisfaction.</span>
       </div>
 
       <div className="container py-5">
@@ -65,7 +65,10 @@ const talkcharge = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets updates SMS via a secured channel, making the operations secure, reliable and seamless, which results in a better rapport with the customer and increase in sales.</span>
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

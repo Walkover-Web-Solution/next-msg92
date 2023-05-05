@@ -41,7 +41,7 @@ const zing = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://www.zinghr.com/"> ZingHR </a> provides HR CRM services to various companies, where they communicate with the potential candidates. With the vision to help their clients get seamless services in hiring, ZingHR has been rigorously working on the operations to the behest of their clients.</span>
+        <span className="c-fs-3"><a target="_blank" href="https://www.zinghr.com/"> ZingHR </a> provides HR CRM services to various companies, where they communicate with the potential candidates. With the vision to help their clients get seamless services in hiring, ZingHR has been rigorously working on the operations to the behest of their clients.</span>
       </div>
 
       <div className="container py-5">
@@ -66,7 +66,10 @@ const zing = () => {
 
 </span>     
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

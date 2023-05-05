@@ -627,3 +627,23 @@ code[class*="language-"], pre[class*="language-"]{
     height: 26px;
   }
 }
+
+/* case study */
+.casestudycard{
+  color: var(--black-color);
+  &:hover{
+    color: var(--black-color);
+  }
+  .casestudycard-img{
+    height: 110px;
+    display: flex;
+    align-items: center;  
+    img{    
+      max-height: 80px;
+      max-width: 80%;
+    }
+  }
+  .lm{
+    color: var(--primary-color)
+  }
+}

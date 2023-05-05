@@ -40,7 +40,7 @@ const razorpay = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://razorpay.com/">Razorpay</a> is a payment gateway. With the vision to offer their customers secured payment gateways integrated with web and mobile applications. To ensure it happens efficiently, Razorpay has been rigorously working on sending the OTPs and payment links for their customers security and satisfaction.</span>
+        <span className="c-fs-3"><a target="_blank" href="https://razorpay.com/">Razorpay</a> is a payment gateway. With the vision to offer their customers secured payment gateways integrated with web and mobile applications. To ensure it happens efficiently, Razorpay has been rigorously working on sending the OTPs and payment links for their customers security and satisfaction.</span>
       </div>
 
       <div className="container py-5">
@@ -62,7 +62,10 @@ const razorpay = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets OTPs and payment links via a secured channel, making the operations secure, reliable and seamless, which results in a better rapport with the customer and increase in sales.</span>
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

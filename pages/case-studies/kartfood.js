@@ -40,7 +40,7 @@ const kartfood = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="http://kartfood.in/">KartFood</a> is a Kashmir based food delivery startup. With the vision to offer their customers with quality food at their doorsteps, and to ensure it happens efficiently, KartFood has been rigorously working on sending the updates for their customer’s satisfaction.</span>
+        <span className="c-fs-3"><a target="_blank" href="http://kartfood.in/">KartFood</a> is a Kashmir based food delivery startup. With the vision to offer their customers with quality food at their doorsteps, and to ensure it happens efficiently, KartFood has been rigorously working on sending the updates for their customer’s satisfaction.</span>
       </div>
 
       <div className="container py-5">
@@ -64,7 +64,10 @@ const kartfood = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets regular updates for their food orders and ongoing offers via a secured channel, making the operations reliable and seamless, which results in a better rapport with the customer and increase in sales.</span>
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

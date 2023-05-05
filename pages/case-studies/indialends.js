@@ -39,7 +39,7 @@ const indialends = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://indialends.com/"> Indialends </a>is a personal loan providing Fintech platform. With the vision to offer their customers a seamless loan approval, and to ensure it happens efficiently, Indialends has been rigorously working on sending the updates and information for their customers security and satisfaction.</span>
+        <span className="c-fs-3"><a target="_blank" href="https://indialends.com/"> Indialends </a>is a personal loan providing Fintech platform. With the vision to offer their customers a seamless loan approval, and to ensure it happens efficiently, Indialends has been rigorously working on sending the updates and information for their customers security and satisfaction.</span>
       </div>
 
       <div className="container py-5">
@@ -68,7 +68,10 @@ const indialends = () => {
 
 </span>     
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

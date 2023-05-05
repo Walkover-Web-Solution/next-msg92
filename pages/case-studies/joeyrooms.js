@@ -40,7 +40,7 @@ const joeyrooms = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://www.joeyrooms.com/">Joey Rooms</a> is an online platform where you can find PG and hostel accommodations on monthly and daily basis rental. With the vision to help their customers in finding the right and cost-effective accommodation in Hyderabad and Bangalore, Joey Rooms has been rigorously working on the providing better services for the customer’s welfare.
+        <span className="c-fs-3"><a target="_blank" href="https://www.joeyrooms.com/">Joey Rooms</a> is an online platform where you can find PG and hostel accommodations on monthly and daily basis rental. With the vision to help their customers in finding the right and cost-effective accommodation in Hyderabad and Bangalore, Joey Rooms has been rigorously working on the providing better services for the customer’s welfare.
 
 </span>
       </div>
@@ -67,7 +67,10 @@ const joeyrooms = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets regular updates for every event related to their accommodation hunting via a secured channel, making the operations reliable and seamless. Moreover, the OTP on login sent to the customers makes the account secured which results in a better rapport with the customer.</span>     
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

@@ -40,7 +40,7 @@ const leegality = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://www.leegality.com/">Leegality</a> is an online legal consultancy firm. With the vision to help their customers in legal matters like Aadhar e-signing, Leegality has been rigorously working on providing better services for the customer’s welfare.</span>
+        <span className="c-fs-3"><a target="_blank" href="https://www.leegality.com/">Leegality</a> is an online legal consultancy firm. With the vision to help their customers in legal matters like Aadhar e-signing, Leegality has been rigorously working on providing better services for the customer’s welfare.</span>
       </div>
 
       <div className="container py-5">
@@ -67,7 +67,10 @@ const leegality = () => {
 
 </span>
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

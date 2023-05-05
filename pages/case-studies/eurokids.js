@@ -40,7 +40,7 @@ const eurokids = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://play.google.com/store/apps/details?id=com.ionicframework.eurokids149799&hl=en_IN&pli=1">Euro Kids</a> is a chain of Schools and Pre-schools across different cities in India. With the vision to offer their students with quality education and ensure their safety and overall development, Euro Kids has been rigorously working on sending the students’ updates for their parent’s satisfaction.</span>
+        <span className="c-fs-3"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.ionicframework.eurokids149799&hl=en_IN&pli=1">Euro Kids</a> is a chain of Schools and Pre-schools across different cities in India. With the vision to offer their students with quality education and ensure their safety and overall development, Euro Kids has been rigorously working on sending the students’ updates for their parent’s satisfaction.</span>
       </div>
 
       <div className="container py-5">
@@ -65,7 +65,10 @@ const eurokids = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the parents get regular updates for their children’s ongoing school activities and other information via a secured channel, making the operations reliable and seamless, which results in a better rapport with the parents ensuring the betterment of their students.</span>
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

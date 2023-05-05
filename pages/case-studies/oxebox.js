@@ -40,7 +40,7 @@ const oxebox = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://www.oxebox.com/">OxeBox</a> is a Bengaluru based secured e-billing startup. With the vision to offer their customers with secured e-billing, OxeBox has been rigorously working on securing the OxeBox accounts for their customer’s satisfaction.</span>
+        <span className="c-fs-3"><a target="_blank" href="https://www.oxebox.com/">OxeBox</a> is a Bengaluru based secured e-billing startup. With the vision to offer their customers with secured e-billing, OxeBox has been rigorously working on securing the OxeBox accounts for their customer’s satisfaction.</span>
       </div>
 
       <div className="container py-5">
@@ -62,7 +62,10 @@ const oxebox = () => {
         <span className="c-fs-3">As a result, the customer gets verification code for verifying their registered mobile numbers. Thereby protecting the information and bill receipts within their user accounts via a secured channel, making the operations reliable and seamless. This results in a better rapport with the customer and increase in sales.
 </span>
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

@@ -374,7 +374,10 @@ const casestudycard = () => {
                 </div>
             </div>
 
-        </>
+        <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
     );
 };
 export default casestudycard;

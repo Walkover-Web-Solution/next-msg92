@@ -40,7 +40,7 @@ const sankalp = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://www.sankalpindia.net/">Sankalp India Foundation</a> is a Bengaluru based NGO which works in the fields of Blood Donation, Thalassemia cure and management . With the vision to help people requiring blood units with proper supply of blood by conducting blood donation camps and creating awareness, Sankalp India Foundation has been rigorously working on coordinating with the donors and patients for the their welfare.</span>
+        <span className="c-fs-3"><a target="_blank" href="https://www.sankalpindia.net/">Sankalp India Foundation</a> is a Bengaluru based NGO which works in the fields of Blood Donation, Thalassemia cure and management . With the vision to help people requiring blood units with proper supply of blood by conducting blood donation camps and creating awareness, Sankalp India Foundation has been rigorously working on coordinating with the donors and patients for the their welfare.</span>
       </div>
 
       <div className="container py-5">
@@ -64,7 +64,10 @@ const sankalp = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the patient gets details of blood banks or donors via secured channel, making the operations reliable and seamless. Moreover, the updates of camps and emergencies sent to donors results in a better coordination and resulting in timely procurement of required blood units saving lives.</span>
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

@@ -40,7 +40,7 @@ const blackbuck = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://www.blackbuck.com/">Blackbuck</a> is an online marketplace platform for freight where shippers and fleet operators can engage seamlessly. With the vision to make freight a seamless experience, and to ensure it happens efficiently, Blackbuck has been rigorously working on establishing a robust communication network for their customers’ satisfaction.</span>
+        <span className="c-fs-3"><a target="_blank" href="https://www.blackbuck.com/">Blackbuck</a> is an online marketplace platform for freight where shippers and fleet operators can engage seamlessly. With the vision to make freight a seamless experience, and to ensure it happens efficiently, Blackbuck has been rigorously working on establishing a robust communication network for their customers’ satisfaction.</span>
       </div>
 
       <div className="container py-5">
@@ -70,7 +70,10 @@ const blackbuck = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer, truck owners and drivers gets regular updates and ongoing offers via a secured channel, making the operations reliable and seamless, which results in a better rapport with the team and customers and thereby, increase in sales.</span>
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

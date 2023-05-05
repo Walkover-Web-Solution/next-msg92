@@ -39,7 +39,7 @@ const ixigo = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="hthttps://www.ixigo.com/">Ixigo</a> provides travel and hospitality based services, where they communicate information, offers and updates to their customers regularly. With the vision to help the customers get seamless travel and hospitality services in time, Ixigo has been rigorously working on the operations for the customer’s welfare.</span>
+        <span className="c-fs-3"><a target="_blank" href="hthttps://www.ixigo.com/">Ixigo</a> provides travel and hospitality based services, where they communicate information, offers and updates to their customers regularly. With the vision to help the customers get seamless travel and hospitality services in time, Ixigo has been rigorously working on the operations for the customer’s welfare.</span>
       </div>
 
       <div className="container py-5">
@@ -66,7 +66,10 @@ const ixigo = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets regular updates for every event related to their bookings via secured channel making the operations reliable and seamless resulting in a better rapport with the customer and increase in sales.</span>
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 

@@ -39,7 +39,7 @@ const barbequenation = () => {
 
       <div className="container py-5">
         <h1 className="c-fw-b mb-4">About</h1>
-        <span className="c-fs-3"><a href="https://www.barbequenation.com/">Barbeque Nation</a> is a Restaurant chain across different cities in India. With the vision to offer their customers with quality food with a good experience, and to ensure it happens efficiently, Barbeque Nation has been rigorously working on sending the booking updates for their customer’s satisfaction.</span>
+        <span className="c-fs-3"><a target="_blank" href="https://www.barbequenation.com/">Barbeque Nation</a> is a Restaurant chain across different cities in India. With the vision to offer their customers with quality food with a good experience, and to ensure it happens efficiently, Barbeque Nation has been rigorously working on sending the booking updates for their customer’s satisfaction.</span>
       </div>
 
       <div className="container py-5">
@@ -62,7 +62,10 @@ const barbequenation = () => {
         <h1 className="c-fw-b mb-4">Benefit</h1>
         <span className="c-fs-3">As a result, the customer gets regular updates for their reservations and ongoing offers via a secured channel, making the operations reliable and seamless, which results in a better rapport with the customer and increase in sales.</span>     
       </div>
-    </>
+    <div className="container py-5">
+<a href="/case-studies">Back</a>
+</div>
+</>
   );
 };
 
