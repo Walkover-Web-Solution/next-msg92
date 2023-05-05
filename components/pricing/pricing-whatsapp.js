@@ -1,23 +1,26 @@
 import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
-const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp}) => {
-  const [selectedMode, setSelectedMode] = useState("Monthly");
-  const [symbol, setSymbol] = useState("₹");
+import countries from "@/data/countries.json";
+
+const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, currencySymbol, oneTimeWtsAppFee}) => {
+  const [selectedMode, setSelectedMode] = useState("Monthly");  
+  const [onetime, setOnetime] = useState("");
   
-  const changeCurrency = (currency) => {    
+  const changeCurrency = (currency) => {
     fetchSubscriptionWhatsapp(currency, '5');
     switch (currency) {
-      case "INR":
-        setSymbol("₹");
+      case "INR":        
+        setOnetime('3000')
         break;
       case "USD":
-      setSymbol("$");
+      setOnetime('38')
         break;      
       case "GBP":
-        setSymbol("£");
+        setOnetime('32')
         break;
     }
   };
+
   return (
     <>
       <div className="d-flex justify-content-center mb-4">
@@ -45,7 +48,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp}) => {
                     <div className="card-body">
                       <h3 className="c-fs-3">{item.name}</h3>
                       <h5 className="mt-2 c-fs-2 text-green">
-                        {symbol}
+                        {currencySymbol}
                         {(selectedMode === 'Monthly') ? item.plan_amounts[2]?.plan_amount : (selectedMode === 'Half yearly') ? item.plan_amounts[1]?.plan_amount : item.plan_amounts[0]?.plan_amount}
                         /
                         {(selectedMode === 'Monthly') ? 'Month' : (selectedMode === 'Half yearly') ? 'Half yearly' : 'Yearly'}
@@ -72,7 +75,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp}) => {
                   <div className="card-body">
                     <h3 className="c-fs-3">{item.name}</h3>
                     <h5 className="mt-2 c-fs-2 text-green">
-                      {symbol}
+                      {currencySymbol}
                       {(selectedMode === 'Monthly') ? item.plan_amounts[0]?.plan_amount : item.plan_amounts[1].plan_amount}
                       /
                       {(selectedMode === 'Monthly') ? 'Monthly' : 'Yearly'}
@@ -86,7 +89,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp}) => {
                       <span className="text-success c-fs-3">
                         <MdDone />
                       </span>
-                      Free balance of {symbol} {item.plan_services[0].service_credit.service_credit_rates[0].free_credits}
+                      Free balance of {currencySymbol} {item.plan_services[0].service_credit.service_credit_rates[0].free_credits}
                     </div>                    
                     <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                       Get Started
@@ -107,6 +110,9 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp}) => {
             </button>
           </div>
         </div>
+      </div>
+      <div className="c-fs-5 mt-5">
+        MSG91 takes one time fee <strong>{currencySymbol}{oneTimeWtsAppFee}</strong> to set up your WhatsApp Business account.
       </div>
     </>
   );

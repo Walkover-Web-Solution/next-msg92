@@ -21,6 +21,7 @@ const PricingComp = ({countryCode}) => {
     var [destinationCountry, setDestinationCountry] = useState('');
     var [currency, setCurrency] = useState('');
     var [currencySymbol, setCurrencySymbol] = useState('');
+    var [oneTimeWtsAppFee, setOneTimeWtsAppFee] = useState('');
     
     var amountArr = ['1250', '3300', '5400', '10200', '20000', '76500', '154000'];
 
@@ -28,48 +29,57 @@ const PricingComp = ({countryCode}) => {
     var [subscriptionVoice, setSubscriptionVoice] = useState([]);
     var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
     var [subscriptionSegmento, setSubscriptionSegmento] = useState([]);  
-  
-    const fetchSMSData = async (currency, origin, destination) => {      
-      setOriginCountry(origin);
-      setDestinationCountry(destination);
-      console.log('fetchsmsdata', currency, origin, destination, countryCode);
-      amountArr = (origin == 'India') && (currency == 'INR') ? amountArr : ['5000'];
+
+    const changeCurrencySymbol = async (currency) => {      
       if(currency == 'INR'){
-        setCurrencySymbol('₹');        
+        setCurrencySymbol('₹');
+        setOneTimeWtsAppFee('3000 +GST')
       }else if(currency == 'GBP'){
+        setOneTimeWtsAppFee('35')
         setCurrencySymbol('£');        
       }else{
-        setCurrencySymbol('$');        
-      }
-      
+        setCurrencySymbol('$');
+        setOneTimeWtsAppFee('40')        
+      }            
+    };
+
+    const fetchSMSData = async (currency, origin, destination) => {
+      setOriginCountry(origin);
+      setDestinationCountry(destination);
+      //console.log('fetchsmsdata', currency, origin, destination, countryCode);
+      amountArr = (origin == 'India') && (currency == 'INR') ? amountArr : ['5000'];
+      changeCurrencySymbol(currency);
       var newData = [];
       let i=0;
       for(;i<amountArr.length;i++){
-        //const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
-        const response = await axios.get(`https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
+        const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
+        //const response = await axios.get(`https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
         //const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
         newData.push(response.data.data)
       }
       setPricing([...newData])
     };
-//   console.log("pricing", pricing);
-  
+        
   const fetchSubscriptionEmail = async (currency, msId) => {
+    changeCurrencySymbol(currency);
     const response = await axios.get(`https://subscription.msg91.com/api/plans?currency=${currency}&ms_id=${msId}`)    
     setSubscriptionEmail([...response.data.data])
     // console.log(response.data.data);
   };
   const fetchSubscriptionVoice = async (currency, msId) => {
+    changeCurrencySymbol(currency);
     const response = await axios.get(`https://subscription.msg91.com/api/plans?currency=${currency}&ms_id=${msId}`)    
     setSubscriptionVoice([...response.data.data])
     // console.log(response.data.data);
   };
   const fetchSubscriptionWhatsapp = async (currency, msId) => {
+    changeCurrencySymbol(currency);
     const response = await axios.get(`https://subscription.msg91.com/api/plans?currency=${currency}&ms_id=${msId}`)    
     setSubscriptionWhatsapp([...response.data.data])
     // console.log(response.data.data);
   };
   const fetchSubscriptionSegmento = async (currency, msId) => {
+    changeCurrencySymbol(currency);
     const response = await axios.get(`https://subscription.msg91.com/api/plans?currency=${currency}&ms_id=${msId}`)    
     setSubscriptionSegmento([...response.data.data])
     // console.log(response.data.data);
@@ -77,7 +87,7 @@ const PricingComp = ({countryCode}) => {
   
   const findCountry = async (code) => {
     const response = await countries?.find(el => el.sortname === code);        
-    console.log('findCountry, response?.currency:', response?.currency);
+    //console.log('findCountry, response?.currency:', response?.currency);
     setCurrency(response?.currency);
     fetchSMSData(response?.currency, response?.name, response?.name);
   };
@@ -191,6 +201,7 @@ const PricingComp = ({countryCode}) => {
                 fetchSubscriptionWhatsapp={fetchSubscriptionWhatsapp}
                 currency={currency}
                 currencySymbol={currencySymbol}
+                oneTimeWtsAppFee={oneTimeWtsAppFee}
                 />
               </div>
               <div className="tab-pane fade w-100" id="pills-rcs" role="tabpanel" aria-labelledby="pills-rcs-tab" tabIndex={0}>
