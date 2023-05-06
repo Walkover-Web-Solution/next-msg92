@@ -19,9 +19,14 @@ const ProductComponent = ({pageData, params }) => {
             <p className={`c-fs-4 text-uppercase col-otp c-ls-20 mx-auto mt-3 ${pageData.pagename}-dark`}>
               {pageData.tagline}
             </p>
-            <h2 className="small-heading p-3 w-md-75 w-100 mx-auto fw-normal">
-              {pageData.heading}
-            </h2>            
+            <div className="p-3">
+              <h2 className="small-heading w-md-75 w-100 mx-auto fw-normal">
+                {pageData.heading}
+              </h2>
+              <p className="small-heading w-md-75 w-100 mx-auto fw-normal">
+                {pageData.subheading}
+              </p>
+            </div>
             <a href="https://control.msg91.com/signup/" className="btn btn-dark btn-lg c-fs-2 mt-3" >
               Get started
             </a>
@@ -55,7 +60,7 @@ const ProductComponent = ({pageData, params }) => {
                     {item?.heading}
                   </span>
                   <span className="c-fs-3  mt-3">
-                    {item?.content}
+                    <span className='c-fw-b'>{item?.subheading}</span> {item?.content}
                   </span>
                 </div>
               </div> 

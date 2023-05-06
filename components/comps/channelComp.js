@@ -34,9 +34,14 @@ const ChannelComponent = ({ pageData }) => {
           <p className="c-fs-4 text-uppercase col-otp c-ls-20 mx-auto">
             {pageData.tagline}
           </p>
-          <h2 className="small-heading p-3 w-md-75 w-100 mx-auto">
-            {pageData.heading}
-          </h2>
+          <div className="p-3">
+              <h2 className="small-heading w-md-75 w-100 mx-auto fw-normal">
+                {pageData.heading}
+              </h2>
+              <p className="small-heading w-md-75 w-100 mx-auto fw-normal">
+                {pageData.subheading}
+              </p>
+            </div>
           <a href="https://control.msg91.com/signup/" target="_blank" className="btn btn-dark btn-lg c-fs-2" >
             Get started
           </a>
@@ -196,7 +201,7 @@ const ChannelComponent = ({ pageData }) => {
                     {item?.heading}
                   </span>
                   <span className="c-fs-3  mt-3">
-                    {item?.content}
+                    <span className='c-fw-b'>{item?.subheading}</span> {item?.content}
                   </span>
                 </div>
               </div> 
