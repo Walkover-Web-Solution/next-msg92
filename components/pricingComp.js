@@ -9,6 +9,7 @@ import Pricinghello from "@/components/pricing/pricing-hello";
 import Pricingsegmento from "@/components/pricing/pricing-segmento";
 import Pricingcampaign from "@/components/pricing/pricing-campaign";
 import Pricingrcs from "@/components/pricing/pricing-rcs";
+import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
 import axios from "axios";
 import { InlineWidget } from "react-calendly";
 import { useRouter } from 'next/router'
@@ -161,6 +162,12 @@ const PricingComp = ({countryCode}) => {
                     Campaign
                   </button>
                 </li>          
+                <li className="nav-item" role="presentation">
+                  <button className="nav-link"  data-bs-toggle="pill" data-bs-target="#pills-knowledgebase" type="button" role="tab" aria-controls="pills-campaign" aria-selected="false">
+                    <img src="/img/icon/knowledgebase.svg" alt="#" />
+                    KnowledgeBase
+                  </button>
+                </li>          
               </ul>
             </div>
 
@@ -179,6 +186,7 @@ const PricingComp = ({countryCode}) => {
                 currencySymbol={currencySymbol}
                 />
               </div>
+
               <div className="tab-pane fade w-100" id="pills-email" role="tabpanel" aria-labelledby="pills-email-tab" tabIndex={0}>
                <Pricingemail
                subscriptionEmail={subscriptionEmail}
@@ -187,6 +195,7 @@ const PricingComp = ({countryCode}) => {
                 currencySymbol={currencySymbol}
                />
               </div>
+
               <div className="tab-pane fade w-100" id="pills-voice" role="tabpanel" aria-labelledby="pills-voice-tab" tabIndex={0}>
                 <Pricingvoice
                 subscriptionVoice={subscriptionVoice}
@@ -195,6 +204,7 @@ const PricingComp = ({countryCode}) => {
                 setCurrencySymbol={setCurrencySymbol}
                 />
               </div>
+
               <div className="tab-pane fade w-100" id="pills-whatsapp" role="tabpanel" aria-labelledby="pills-whatsapp-tab" tabIndex={0}>
                 <Pricingwp
                 subscriptionWhatsapp={subscriptionWhatsapp}
@@ -204,9 +214,11 @@ const PricingComp = ({countryCode}) => {
                 oneTimeWtsAppFee={oneTimeWtsAppFee}
                 />
               </div>
+
               <div className="tab-pane fade w-100" id="pills-rcs" role="tabpanel" aria-labelledby="pills-rcs-tab" tabIndex={0}>
                 <Pricingrcs/>              
-              </div>
+              </div>     
+
               <div className="tab-pane fade w-100" id="pills-otp" role="tabpanel" aria-labelledby="pills-otp-tab" tabIndex={0}>
                 <Pricingotp
                 amountArr={amountArr} 
@@ -221,9 +233,11 @@ const PricingComp = ({countryCode}) => {
                 currencySymbol={currencySymbol}
                 />
               </div>
+
               <div className="tab-pane fade w-100" id="pills-hello" role="tabpanel" aria-labelledby="pills-hello-tab" tabIndex={0}>
                 <Pricinghello/>
               </div>
+              
               <div className="tab-pane fade w-100" id="pills-segmento" role="tabpanel" aria-labelledby="pills-segmento-tab" tabIndex={0}>
                 <Pricingsegmento
                 subscriptionSegmento={subscriptionSegmento}
@@ -232,8 +246,13 @@ const PricingComp = ({countryCode}) => {
                 currencySymbol={currencySymbol}
                 />
               </div>
+              
               <div className="tab-pane fade w-100" id="pills-campaign" role="tabpanel" aria-labelledby="pills-campaign-tab" tabIndex={0}>
                 <Pricingcampaign/>
+              </div>
+
+              <div className="tab-pane fade w-100" id="pills-knowledgebase" role="tabpanel" aria-labelledby="pills-knowledgebase-tab" tabIndex={0}>
+                <Pricingknowledgebase/>              
               </div>
             </div>
           </div>

@@ -49,6 +49,18 @@
     }
   }
 }
+.card-container{
+  .card.kb{
+    height: 350px;
+    width: 350px;
+    .card-body{
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}
 .card-popular{
 border: 2px solid var(--black-color) !important;
 box-sizing: border-box;
