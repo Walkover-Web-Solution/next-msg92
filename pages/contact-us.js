@@ -22,19 +22,19 @@ const contactus = ({path}) => {
 
                     <div className="contact-card d-flex flex-column align-items-center justify-content-between gap-5 px-3 py-5 col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-10">
                         <h2>Sales</h2>
-                        <div className="d-flex flex-column align-items-start gap-4">
-                            <div className="d-flex align-items-center">
-                                <span className="c-fs-1   justify-content-center align-items-center d-flex">
-                                    <MdOutlineEmail className="p-auto c-fw-sb  " />
-                                </span>
-                                <a href="mailto:sales@msg91.com"  className="c-fs-2 ms-3 text-dark text-center bg-white">
-                                    sales@msg91.com
-                                </a>
-                            </div>
+                        <div className="d-flex flex-column align-items-start gap-4">                            
                                 {
                                     (countryName && countryName !== 'India')
                                     ?
                                     <>
+                                        <div className="d-flex align-items-center">
+                                            <span className="c-fs-1   justify-content-center align-items-center d-flex">
+                                                <MdOutlineEmail className="p-auto c-fw-sb  " />
+                                            </span>
+                                            <a href="mailto:contact@msg91.com"  className="c-fs-2 ms-3 text-dark text-center bg-white">
+                                                contact@msg91.com
+                                            </a>
+                                        </div>
                                         <div className="d-flex align-items-center">
                                             <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
                                                 <MdCall className="p-auto" />
@@ -46,6 +46,14 @@ const contactus = ({path}) => {
                                     </>
                                     :
                                     <>
+                                        <div className="d-flex align-items-center">
+                                            <span className="c-fs-1   justify-content-center align-items-center d-flex">
+                                                <MdOutlineEmail className="p-auto c-fw-sb  " />
+                                            </span>
+                                            <a href="mailto:sales@msg91.com"  className="c-fs-2 ms-3 text-dark text-center bg-white">
+                                                sales@msg91.com
+                                            </a>
+                                        </div>
                                         <div className="d-flex align-items-center">
                                             <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
                                                 <MdCall className="p-auto" />
