@@ -80,55 +80,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice }) => {
   return (
     <>
       <div>
-        {showDiv ? (
-          <div className="">
-            <div className="onlyin my-5 d-flex col-3 mx-auto">
-              <div class="input-group mb-3">
-              {/* <span className=" arrow-search-btn">
-                  <MdAdd className="arrow-search" />
-                </span> */}
-                <input
-                  className="c-fs-3 form-control"
-                  type="text"
-                  placeholder="Enter Country Code"
-                  value={searchValue}
-                  onChange={(e) => setSearchValue(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                />
-                <span className=" btn btn-dark arrow-search-btn" onClick={handleSearch}>
-                  <MdKeyboardArrowRight className="arrow-search" />
-                </span>
-              </div>
-            </div>
-
-            {loading ? (
-              <div>Loading...</div>
-            ) : error ? (
-              <div>Error: {error}</div>
-            ) : data ? (
-              <div>
-                {data.data.rates.map((rateObj, index) => (
-                  <div key={index}>
-                    <p>Prefix: {rateObj.prefix}</p>
-                    <p>Rate: {rateObj.rate}</p>
-                    <hr />
-                  </div>
-                ))}
-              </div>
-            ) : null}
-            <div className="nonin price-card rcs d-flex col-11 col-lg-10 flex-column mx-auto c-bg-grey p-4">
-              <h3 className="c-fs=3">
-                Connect to our team for the customized pricing
-              </h3>
-              <a
-                href="/contact-us"
-                className="btn btn-outline-dark col-6 col-sm-5 col-md-3 mx-auto mt-3"
-              >
-                Talk to an Expert
-              </a>
-            </div>
-          </div>
-        ) : (
+      
           <div className="nonin price-card rcs d-flex col-11 col-lg-10 flex-column mx-auto c-bg-grey p-4">
             <h3 className="c-fs=3">
               Connect to our team for the customized pricing
@@ -140,7 +92,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice }) => {
               Talk to an Expert
             </a>
           </div>
-        )}
+        
       </div>
     </>
   );
