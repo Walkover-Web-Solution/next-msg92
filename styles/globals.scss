@@ -359,8 +359,7 @@ nav {
 .stats-sec {
   padding: 100px 0;
 }
-.more-services-sec {
-}
+
 .b-right-1 {
   border-right: 2px solid var(--c-light-grey);
 }
@@ -658,4 +657,15 @@ code[class*="language-"], pre[class*="language-"]{
   padding: 0;
   width: 3rem!important;
   height: 3rem!important;
+}
+.check-tie{
+  height: var(--c-fs-2);
+}
+.tei-feture-img{
+  width: clamp(400px,30vw,500px);
+}
+@media only screen and (max-width: 600px) {
+  .tei-feture-img {
+    width: clamp(300px,80vw,400px);
+  }
 }
