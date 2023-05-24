@@ -147,7 +147,8 @@ const contactus = ({path}) => {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
                         </div>          
                         <div className="modal-body">
-                            <InlineWidget url="https://calendly.com/support--msg91" styles={{height: '820px'}} />
+                            {/* <InlineWidget url="https://calendly.com/support--msg91" styles={{height: '820px'}} /> */}
+                            <InlineWidget url="https://calendly.com/d/y3n-29s-29h?hide_gdpr_banner=1" styles={{height: '820px'}} />
                         </div>                    
                     </div>
                 </div>
