@@ -16,12 +16,20 @@ const Tie = () => {
               Join this game-changing collaboration today!
             </h2>
           </div>
-          <a
-            href="https://control.msg91.com/signup/"
-            className="btn btn-dark btn-lg c-fs-2 mt-1"
-          >
-            Get started
-          </a>
+          <div className="mt-3 mt-xxl-0 d-flex flex-wrap justify-content-center gap-3">
+            <a
+              href="https://control.msg91.com/signup/"
+              className="btn px-4 py-3 btn-dark c-fs-4 "
+            >
+              Apply now for MSG91 services
+            </a>
+            <a
+              href="https://giddh.com/signup/"
+              className="btn px-4 py-3 btn-dark c-fs-4 "
+            >
+              Apply now for Giddh
+            </a>
+          </div>
         </div>
       </div>
 
@@ -38,26 +46,29 @@ const Tie = () => {
           </div>
           <div className="d-flex gap-2 ">
             <img src="./img/check-tie.svg" className="check-tie" />
-            <h4 className="c-fs-3"> 
-            Connect, engage and interact with your customers through omnichannel messaging.
+            <h4 className="c-fs-3">
+              Connect, engage and interact with your customers through
+              omnichannel messaging.
             </h4>
           </div>
           <div className="d-flex gap-2 ">
             <img src="./img/check-tie.svg" className="check-tie" />
             <h4 className="c-fs-3">
-            Automate your workflows for streamlined operations.
+              Automate your workflows for streamlined operations.
             </h4>
           </div>
           <div className="d-flex gap-2 ">
             <img src="./img/check-tie.svg" className="check-tie" />
             <h4 className="c-fs-3">
-            Measure your campaign performance with real-time tracking and analytics
+              Measure your campaign performance with real-time tracking and
+              analytics
             </h4>
           </div>
           <div className="d-flex gap-2 ">
             <img src="./img/check-tie.svg" className="check-tie" />
             <h4 className="c-fs-3">
-            Explore our comprehensive range of communication tools to cater to your business-specific needs
+              Explore our comprehensive range of communication tools to cater to
+              your business-specific needs
             </h4>
           </div>
         </div>
@@ -73,31 +84,35 @@ const Tie = () => {
           <div className="d-flex gap-2 ">
             <img src="./img/check-tie.svg" className="check-tie" />
             <h4 className="c-fs-3">
-              Complimentary subscription to the revolutionary accounting app Giddh.
-            </h4>
-          </div>
-          <div className="d-flex gap-2 ">
-            <img src="./img/check-tie.svg" className="check-tie" />
-            <h4 className="c-fs-3"> 
-            Invoicing, expense tracking and bank reconciliation made easy.
+              Complimentary subscription to the revolutionary accounting app
+              Giddh.
             </h4>
           </div>
           <div className="d-flex gap-2 ">
             <img src="./img/check-tie.svg" className="check-tie" />
             <h4 className="c-fs-3">
-            Take informed decisions based on real-time insights and financial reporting.
+              Invoicing, expense tracking and bank reconciliation made easy.
             </h4>
           </div>
           <div className="d-flex gap-2 ">
             <img src="./img/check-tie.svg" className="check-tie" />
             <h4 className="c-fs-3">
-            Integrates seamlessly with existing systems for efficient financial management.
+              Take informed decisions based on real-time insights and financial
+              reporting.
             </h4>
           </div>
           <div className="d-flex gap-2 ">
             <img src="./img/check-tie.svg" className="check-tie" />
             <h4 className="c-fs-3">
-            Simplify bookkeeping and gain complete control over your company's finances.
+              Integrates seamlessly with existing systems for efficient
+              financial management.
+            </h4>
+          </div>
+          <div className="d-flex gap-2 ">
+            <img src="./img/check-tie.svg" className="check-tie" />
+            <h4 className="c-fs-3">
+              Simplify bookkeeping and gain complete control over your company's
+              finances.
             </h4>
           </div>
         </div>
@@ -107,14 +122,26 @@ const Tie = () => {
         />
       </div>
       <div className="c-bg-grey py-5  d-flex flex-column justify-content-sm-center align-items-center">
-                <div className="py-4  container text-center d-md-flex justify-content-sm-between align-items-center flex-xl-row flex-lg-column flex-sm-column flex-md-column"> 
-                    <span className="pro-heading c-head">Unleash your potential with MSG91 x TiE</span>
-                    <div className="mt-3 mt-xxl-0 d-flex flex-wrap justify-content-center gap-3">
-                        <a href="https://control.msg91.com/signup/" className="btn px-4 py-3 btn-outline-dark c-fs-4 ">Apply now for MSG91 services</a>
-                        <a href="https://giddh.com/signup/" className="btn px-4 py-3 btn-outline-dark c-fs-4 ">Apply now for Giddh</a>
-                    </div>
-                </div>                          
-            </div>
+        <div className="py-4  container text-center d-md-flex justify-content-sm-between align-items-center flex-xl-row flex-lg-column flex-sm-column flex-md-column">
+          <span className="pro-heading c-head">
+            Unleash your potential with MSG91 x TiE
+          </span>
+          <div className="mt-3 mt-xxl-0 d-flex flex-wrap justify-content-center gap-3">
+            <a
+              href="https://control.msg91.com/signup/"
+              className="btn px-4 py-3 btn-dark c-fs-4 "
+            >
+              Apply now for MSG91 services
+            </a>
+            <a
+              href="https://giddh.com/signup/"
+              className="btn px-4 py-3 btn-dark c-fs-4 "
+            >
+              Apply now for Giddh
+            </a>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
