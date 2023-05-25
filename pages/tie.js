@@ -1,26 +1,77 @@
+import React, { useState } from "react";
+
 const Tie = () => {
+  const [verificationCode, setVerificationCode] = useState("");
+
+  const handleVerify = () => {
+    // Do something with the verificationCode
+    console.log(verificationCode);
+  };
+  
+
   return (
     <>
-<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
 
-<div className="modal fade" id="exampleModalCenter" tabIndex="99" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+<div className="modal fade" id="msg91TieVerification" tabIndex="99" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div className="modal-dialog modal-dialog-centered" role="document">
     <div className="modal-content">
       <div className="modal-header">
-        <h5 className="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 className="modal-title" id="exampleModalLongTitle">Verify your TiE ID :</h5>
         <button type="button" className="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div className="modal-body">
-        ...
+      <div
+        className="modal fade"
+        id="msg91TieVerification"
+        tabIndex="99"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLongTitle">
+                Verify your TiE ID:
+              </h5>
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              <input
+                type="text"
+                value={verificationCode}
+                onChange={(e) => setVerificationCode(e.target.value)}
+              />
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={handleVerify}
+              >
+                Verify
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-primary">Save changes</button>
-      </div>
+      
     </div>
   </div>
 </div>
@@ -40,18 +91,20 @@ const Tie = () => {
             </h2>
           </div>
           <div className="mt-3 mt-xxl-0 d-flex flex-wrap justify-content-center gap-3">
-            <a
-              href="https://control.msg91.com/signup/"
+            <button
+            data-toggle="modal" data-target="#msg91TieVerification"
+              // href="https://control.msg91.com/signup/"
               className="btn px-4 py-3 btn-dark c-fs-4 "
             >
               Apply now for MSG91 services
-            </a>
-            <a
-              href="https://giddh.com/signup/"
+            </button>
+            <button
+            data-toggle="modal" data-target="#exampleModalCenter"
+              // href="https://giddh.com/signup/"
               className="btn px-4 py-3 btn-dark c-fs-4 "
             >
               Apply now for Giddh
-            </a>
+            </button>
           </div>
         </div>
       </div>
