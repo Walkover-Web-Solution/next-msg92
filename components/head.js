@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Script from "next/script";
-import metaData from "@/data/metadata.json"
+import metaData from "@/data/metadata.json";
 
 const Headcomp = (brawserPath) => {
-  const meta = metaData[brawserPath.brawserPath]
+  const meta = metaData[brawserPath.brawserPath];
   //console.log("meta", meta, brawserPath.brawserPath, metaData[brawserPath.brawserPath])
-  let contry = brawserPath
+  let contry = brawserPath;
   return (
     <>
       <Head>
@@ -18,7 +18,13 @@ const Headcomp = (brawserPath) => {
             };`,
           }}
         />
-        <script type="text/javascript" onload="initChatWidget(helloConfig, 5000)" src="https://control.msg91.com/app/assets/widget/chat-widget.js"> </script> 
+        <script
+          type="text/javascript"
+          onload="initChatWidget(helloConfig, 5000)"
+          src="https://control.msg91.com/app/assets/widget/chat-widget.js"
+        >
+          {" "}
+        </script>
         <script
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -29,12 +35,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NWZKLRJ');`,
           }}
         />
-        <title>{meta?.title}</title>        
+        <title>{meta?.title}</title>
         <meta name="discription" content={meta?.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/fav.svg" />
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+          integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+          integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+          crossorigin="anonymous"
+        ></script>
       </Head>
-    </> 
+    </>
   );
 };
 export default Headcomp;
