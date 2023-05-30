@@ -4,8 +4,8 @@ import metaData from "@/data/metadata.json"
 
 const Headcomp = (brawserPath) => {
   const meta = metaData[brawserPath.brawserPath]
-  //console.log("meta", meta, brawserPath.brawserPath, metaData[brawserPath.brawserPath])
-  let contry = brawserPath
+  const homes = ['/', '/in', '/ae', '/ph', '/sg', '/es', '/gb', '/us'];
+  console.log("meta", brawserPath)  
   return (
     <>
       <Head>
@@ -33,6 +33,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <meta name="discription" content={meta?.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/fav.svg" />
+
+        {/* { homes.includes(brawserPath) && */}
+          <script type="application/ld+json" strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `{
+              "@context": "https://schema.org/",
+              "@type": "WebSite",
+              "name": "MSG91",
+              "url": "https://msg91.com${brawserPath.brawserPath}",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://msg91.com/in/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }`,
+          }}
+          />                      
+        {/* } */}
+        <link rel="canonical" href={`https://msg91.com${brawserPath.brawserPath}`} />
       </Head>
     </> 
   );
