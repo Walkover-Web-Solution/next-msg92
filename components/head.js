@@ -33,7 +33,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/fav.svg" />
 
-        { brawserPath == '/in' &&
+        { brawserPath.brawserPath == '/in' &&
           <script type="application/ld+json" strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `{
@@ -48,7 +48,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               }
             }`,
           }}
-          />                      
+          />
         }
         <link rel="canonical" href={`https://msg91.com${brawserPath.brawserPath}`} />
       </Head>
