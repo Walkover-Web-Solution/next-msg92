@@ -52,8 +52,8 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
       };
 
       const response = await fetch(
-        `https://testvoice.phone91.com/public/dialplans/1?page_size=${pagesize}&page_num=${page}&prefix=${searchValue}`,
-        //`https://control.msg91.com/api/v5/voice/public/dialplans/1?prefix=${searchValue}`,
+        //`https://testvoice.phone91.com/public/dialplans/1?page_size=${pagesize}&page_num=${page}&prefix=${searchValue}`,
+        `https://control.msg91.com/api/v5/voice/public/dialplans/1?page_size=${pagesize}&page_num=${page}&prefix=${searchValue}`,
         {
           headers: headers,
         }
