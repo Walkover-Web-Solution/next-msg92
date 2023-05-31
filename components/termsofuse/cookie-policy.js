@@ -2,7 +2,7 @@ const cookiepolicy = () => {
     return (
         <>
 <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">Cookie policy</h2>
+                <h1 className="c-fs-2 c-fw-m">Cookie policy</h1>
                 <span className="c-fs-4">
                 We love cookies…umm both kinds 😉
                     <div className="my-3"></div>
@@ -14,7 +14,7 @@ const cookiepolicy = () => {
                 </span>
             </div>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">What Is A Cookie?</h2>
+                <h1 className="c-fs-2 c-fw-m">What Is A Cookie?</h1>
                 <span className="c-fs-4">
                 A cookie is a piece of data contained in a small file stored in the web browser. It contains a string of letters and numbers called as identifiers that are sent by a web server to a web browser. Each time the browser requests a page from the server, the identifier is sent back to the server.
                     <div className="my-3"></div>
@@ -38,7 +38,7 @@ const cookiepolicy = () => {
                 </span>
             </div>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">We Use Cookies To:</h2>
+                <h1 className="c-fs-2 c-fw-m">We Use Cookies To:</h1>
                 <span className="c-fs-4">
                     <div className="my-3"></div>
                     <li>
@@ -68,7 +68,7 @@ const cookiepolicy = () => {
                 </span>
             </div>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">Information We Collect:</h2>
+                <h1 className="c-fs-2 c-fw-m">Information We Collect:</h1>
                 <span className="c-fs-4">
                 We collect certain data from you directly
                     <div className="my-3"></div>
@@ -128,7 +128,7 @@ const cookiepolicy = () => {
                 </span>
             </div>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">What Are My Privacy Options?</h2>
+                <h1 className="c-fs-2 c-fw-m">What Are My Privacy Options?</h1>
                 <span className="c-fs-4">
                 Most browsers automatically accept cookies, but you can change your browser settings to decline cookies by consulting your browser’s support articles. If you decide to decline cookies, please note that you may not be able to sign in, customize or use some interactive features on our website or panel.
                     <div className="my-3"></div>
@@ -138,7 +138,7 @@ const cookiepolicy = () => {
                 </span>
             </div>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">We Use Cookies To:</h2>
+                <h1 className="c-fs-2 c-fw-m">We Use Cookies To:</h1>
                 <span className="c-fs-4">
                 We may update this Cookie Policy from time to time. If we do, we’ll notify you by posting the policy on our site with a new effective date.
                     <div className="my-3"></div>

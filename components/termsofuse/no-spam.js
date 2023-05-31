@@ -2,7 +2,7 @@ const nospam = () => {
     return (
         <>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">No spam policy</h2>
+                <h1 className="c-fs-2 c-fw-m">No spam policy</h1>
                 <span className="c-fs-4">
                 We don’t SPAM and won’t accept anyone’s either!
                     <div className="my-3"></div>
@@ -10,7 +10,7 @@ const nospam = () => {
                 </span>
             </div>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">MSG91’s No-Spam Policy</h2>
+                <h1 className="c-fs-2 c-fw-m">MSG91’s No-Spam Policy</h1>
                 <span className="c-fs-4">
                 General conditions
                     <div className="my-3"></div>
