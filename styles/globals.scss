@@ -649,14 +649,13 @@ code[class*="language-"], pre[class*="language-"]{
     color: var(--primary-color)
   }
 }
-.arrow-search{
-  width: 3rem!important;
-  font-size: 50px;
+.arrow-search{  
+  font-size: 40px;
 }
 .arrow-search-btn{
   padding: 0;
-  width: 3rem!important;
-  height: 3rem!important;
+  border-top-right-radius: 0.375rem !important; 
+  border-bottom-right-radius: 0.375rem !important; 
 }
 .check-tie{
   height: var(--c-fs-2);

@@ -202,6 +202,7 @@ const PricingComp = ({countryCode}) => {
                 fetchSubscriptionVoice={fetchSubscriptionVoice}
                 currency={currency}
                 setCurrencySymbol={setCurrencySymbol}
+                countryCode={countryCode}
                 />
               </div>
 
