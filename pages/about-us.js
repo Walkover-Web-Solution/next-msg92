@@ -113,7 +113,7 @@ const aboutUsComp = () => {
                 <img
                   src='/img/about_Us/pushpendra_agrawal.jpg'
                   className='card-img-top'
-                  alt=''
+                  alt='Pushpendra Agrawal'
                 />
               </div>
               <div className='card-body'>
@@ -134,7 +134,7 @@ const aboutUsComp = () => {
                 <img
                   src='/img/about_Us/shubhendra_agrawal.png'
                   className='card-img-top'
-                  alt=''
+                  alt='Shubhendra Agrawal'
                 />
               </div>
               <div className='card-body'>
@@ -155,7 +155,7 @@ const aboutUsComp = () => {
                 <img
                   src='/img/about_Us/ravi_dangi.png'
                   className='card-img-top'
-                  alt=''
+                  alt='Ravi Dangi'
                 />
               </div>
               <div className='card-body'>
@@ -176,7 +176,7 @@ const aboutUsComp = () => {
                 <img
                   src='/img/about_Us/vipin_sharma.png'
                   className='card-img-top'
-                  alt=''
+                  alt='Vipin Sharma'
                 />
               </div>
               <div className='card-body'>
@@ -197,7 +197,7 @@ const aboutUsComp = () => {
                 <img
                   src='/img/about_Us/alisha_chouhan.png'
                   className='card-img-top'
-                  alt=''
+                  alt='Alisha Chouhan'
                 />
               </div>
               <div className='card-body'>
@@ -218,7 +218,7 @@ const aboutUsComp = () => {
                 <img
                   src='/img/about_Us/chinmay_daga.png'
                   className='card-img-top'
-                  alt=''
+                  alt='Chinmay Daga'
                 />
               </div>
               <div className='card-body'>
