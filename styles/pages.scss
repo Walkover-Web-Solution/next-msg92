@@ -24,3 +24,11 @@
     width: clamp(80%,80vw,100px);
     box-shadow: 4px 0 42px rgba(0,0,0,.1), -4px -14px 42px rgba(0,0,0,.1);
 }
+
+/* Tie */
+.tie-banner-card{
+    width: 400px;
+    min-height: 170px;    
+    background: var(--c-light-grey) !important;
+    border-radius: 8px !important;
+}

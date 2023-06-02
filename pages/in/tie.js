@@ -12,36 +12,54 @@ const Tie = () => {
   return (
     <>
       <div className="container text-center overflow-hidden">
-        <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
+        <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12">
           <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
             <h1 className="heading page-title">MSG91 x TiE</h1>
           </div>
 
           <div className="p-3">
-            <h2 className="small-heading w-md-75 w-100 mx-auto fw-normal">
-              Unlock the ₹20,000 wallet balance and the ₹4,000 Giddh app
-              subscription exclusively offered to TiE members.
-            </h2>
             <h2 className="small-heading w-md-75 w-100 mx-auto fw-normal mt-4">
-              Join this game-changing collaboration today!
+              Exclusively offered to TiE members only
             </h2>
-          </div>
-          <div className="mt-3 mt-xxl-0 d-flex flex-wrap justify-content-center gap-3">
-            <button
-            data-bs-toggle="modal" data-bs-target="#msg91TieVerification"
-              // href="https://control.msg91.com/signup/"
-              className="btn px-4 py-3 btn-dark c-fs-4 "
-            >
-              Apply now for MSG91 services
-            </button>
-            <button
-              data-bs-toggle="modal" data-bs-target="#msg91TieVerification"
-              // href="https://giddh.com/signup/"
-              className="btn px-4 py-3 btn-dark c-fs-4 "
-            >
-              Apply now for Giddh
-            </button>
-          </div>
+
+            <div className="d-flex justify-content-center flex-wrap mt-5" style={{'gap':'32px'}}>
+              
+              <div>
+                <div className="card tie-banner-card">
+                  <div className="card-body">
+                    <img src="/img/logo.svg" />
+                    <div className="my-3 c-fs-2">
+                      <strong>₹20,000</strong> wallet balance 
+                    </div>
+                    <button
+                      data-bs-toggle="modal" data-bs-target="#msg91TieVerification"              
+                        className="btn btn-dark c-fs-4 "
+                      >
+                        Apply
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <div className="card tie-banner-card" >
+                  <div className="card-body">
+                    <img src="/img/tie/giddh-logo.svg" style={{'margin-top':'15px'}}/>
+                    <div className="my-3 c-fs-2">
+                      <strong>₹4,000</strong> Giddh app subscription
+                    </div>
+                    <button
+                      data-bs-toggle="modal" data-bs-target="#msg91TieVerification"                  
+                      className="btn btn-dark c-fs-4 "
+                    >
+                      Apply
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>          
         </div>
       </div>
 
@@ -133,6 +151,20 @@ const Tie = () => {
           src="/img/tie/giddh.svg"
         />
       </div>
+      
+      <div className="d-flex gap-5 flex-lg-row-reverse flex-column-reverse justify-content-between align-items-center container my-5 py-5">
+        <div className="d-flex flex-column gap-4 ">
+          <h2 className="c-fs-1">Take your business to extraordinary heights with MSG91 x TiE</h2>
+
+          <div className="d-flex gap-2 ">            
+            <h4 className="c-fs-3">
+              Unlock the ₹20,000 wallet balance and the ₹4,000 Giddh app subscription exclusively offered to dTiE members. Take charge of your finances with real-time insights. Choose from SMS campaigns, email marketing, voice calls, WhatsApp messaging and more to amplify customer engagement and drive conversions with targeted messaging.
+            </h4>
+          </div>
+                    
+        </div>        
+      </div>
+      
       <div className="c-bg-grey py-5  d-flex flex-column justify-content-sm-center align-items-center">
         <div className="py-4  container text-center d-md-flex justify-content-sm-between align-items-center flex-xl-row flex-lg-column flex-sm-column flex-md-column">
           <span className="pro-heading c-head">
@@ -144,7 +176,7 @@ const Tie = () => {
               className="btn px-4 py-3 btn-dark c-fs-4 "
               data-bs-toggle="modal" data-bs-target="#msg91TieVerification"
             >
-              Apply now for MSG91 services
+              Apply now for MSG91
             </a>
             <a
               href="https://giddh.com/signup/"
