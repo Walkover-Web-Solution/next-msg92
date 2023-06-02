@@ -34,6 +34,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="icon" href="/fav.svg" />
 
         { brawserPath.brawserPath == '/in' &&
+          <>
           <script type="application/ld+json" strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `{
@@ -49,6 +50,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }`,
           }}
           />
+          
+          <script type="application/ld+json" strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `{
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "MSG91",
+              "url": "https://msg91.com/in",
+              "logo": "https://msg91.com/img/logo.svg",
+              "sameAs": [
+                "https://www.facebook.com/msg91",
+                "https://twitter.com/msg91",
+                "https://www.youtube.com/@WalkoverWS"
+              ]
+            }`,
+          }}
+          />
+          </>
         }
         <link rel="canonical" href={`https://msg91.com${brawserPath.brawserPath}`} />
       </Head>
