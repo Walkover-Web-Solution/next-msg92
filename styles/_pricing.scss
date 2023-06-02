@@ -89,3 +89,16 @@ box-sizing: border-box;
 .price-card{
   background: var(--c-light-grey) !important;  
 }
+
+.rate-table{
+  max-width: 500px;
+}
+.pagination{
+  .page-link{
+    cursor: pointer;
+  }
+}
+/* .onlyin{
+  position: sticky;
+  top: 80px;
+} */

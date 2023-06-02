@@ -2,7 +2,7 @@ const fairpricingpolicy = () => {
     return (
         <>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">Fair pricing policy</h2>
+                <h1 className="c-fs-2 c-fw-m">Fair pricing policy</h1>
                 <div className="c-fs-4">
                     We play fair!
                     <div className="my-3"></div>

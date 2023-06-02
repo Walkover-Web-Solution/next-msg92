@@ -3,7 +3,7 @@ const privacypolicy = ()=>{
         <>
         <div className="col-12  terms-content">
           <div className="mb-5">
-            <h2 className="c-fs-2 c-fw-m">Privacy policy</h2>
+            <h1 className="c-fs-2 c-fw-m">Privacy policy</h1>
             <span className="c-fs-4">
               Your privacy, our priority
               <div className="my-3"></div>
@@ -11,7 +11,7 @@ const privacypolicy = ()=>{
             </span>
           </div>
           <div className="mb-5">
-            <h2 className="c-fs-2 c-fw-m">Your information. Our responsibility.</h2>
+            <h1 className="c-fs-2 c-fw-m">Your information. Our responsibility.</h1>
             <span className="c-fs-4">
               At MSG91, Your privacy. On priority.
               <div className="my-3"></div>

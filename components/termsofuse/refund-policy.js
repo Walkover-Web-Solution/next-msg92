@@ -2,7 +2,7 @@ const refundpolicy = () => {
     return (
         <>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">Refund Policy</h2>
+                <h1 className="c-fs-2 c-fw-m">Refund Policy</h1>
                 <span className="c-fs-4">
                 We will refund your amount, but if someone tries to misuse, they’re legally bound.
                     <div className="my-3"></div>

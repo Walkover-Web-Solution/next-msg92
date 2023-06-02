@@ -3,7 +3,7 @@ const terms = () => {
         <>
             <div className="col-12  terms-content">
                 <div className="mb-5">
-                    <h2 className="c-fs-2 c-fw-m my-3">Terms</h2>
+                    <h1 className="c-fs-2 c-fw-m my-3">Terms</h1>
                     <div className="c-fs-4">
                         Simple terms for a longterm relationship!
                         <div className="my-3"></div>
@@ -23,7 +23,7 @@ const terms = () => {
                         listed, and you agree to be bound by these Terms.
                     </div>
                     <div className="my-5">
-                        <h2 className="c-fs-2 c-fw-m my-3">Cancellation Policy</h2>
+                        <h1 className="c-fs-2 c-fw-m my-3">Cancellation Policy</h1>
                         <span className="c-fs-4">
                             We are with you but if someone tries to misuse, here's hwo they will be legally bound.
                             <div className="my-3"></div>
@@ -46,7 +46,7 @@ const terms = () => {
                         </span>
                     </div>
                     <div className="my-5">
-                        <h2 className="c-fs-2 c-fw-m my-3">Use of Information Submitted</h2>
+                        <h1 className="c-fs-2 c-fw-m my-3">Use of Information Submitted</h1>
                         <span className="c-fs-4">
                             We need the correct information from you to serve you best.
                             <div className="my-3"></div>
@@ -70,7 +70,7 @@ const terms = () => {
                         </span>
                     </div>
                     <div className="my-5">
-                        <h2 className="c-fs-2 c-fw-m my-3">Service Usage</h2>
+                        <h1 className="c-fs-2 c-fw-m my-3">Service Usage</h1>
                         <span className="c-fs-4">
                             A legal agreement between us that lays out the terms and conditions for the use of all MSG91 services.
                             <div className="my-3"></div>
@@ -141,7 +141,7 @@ const terms = () => {
                         </span>
                     </div>
                     <div className="my-5">
-                        <h2 className="c-fs-2 c-fw-m my-3">Limitations of Liability Disclaimer</h2>
+                        <h1 className="c-fs-2 c-fw-m my-3">Limitations of Liability Disclaimer</h1>
                         <span className="c-fs-4">
                             Except for any of our explicit warranties and our obligations, we are offering our Services “as is.”
                             <div className="my-3"></div>
@@ -175,7 +175,7 @@ const terms = () => {
                         </span>
                     </div>
                     <div className="my-5">
-                        <h2 className="c-fs-2 c-fw-m my-3">Modification of Terms</h2>
+                        <h1 className="c-fs-2 c-fw-m my-3">Modification of Terms</h1>
                         <span className="c-fs-4">
                             Our terms are aligned and subject to modification according to laws and guidelines by local government bodies.
                             <div className="my-3"></div>
@@ -183,7 +183,7 @@ const terms = () => {
                         </span>
                     </div>
                     <div className="my-5">
-                        <h2 className="c-fs-2 c-fw-m my-3">Termination</h2>
+                        <h1 className="c-fs-2 c-fw-m my-3">Termination</h1>
                         <span className="c-fs-4">
                         Any breach can result in termination. You have equal rights.
                             <div className="my-3"></div>

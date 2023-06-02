@@ -2,7 +2,7 @@ const startuppolicy = () => {
     return (
         <>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">Startup policy</h2>
+                <h1 className="c-fs-2 c-fw-m">Startup policy</h1>
                 <div className="my-3 c-fs-4">
                     <strong>We love Startups. After all, we too are a Startup!</strong>
                     <div className="my-3"></div>
@@ -10,7 +10,7 @@ const startuppolicy = () => {
                 </div>
             </div>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">Terms and conditions acceptance</h2>
+                <h1 className="c-fs-2 c-fw-m">Terms and conditions acceptance</h1>
                 <div className="c-fs-4">
                     1. MSG91 renders ‘MSG91’ services on principles set out in this terms and conditions document.
                     <div className="my-3"></div>
@@ -26,7 +26,7 @@ const startuppolicy = () => {
                 </div>
             </div>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">Services description</h2>
+                <h1 className="c-fs-2 c-fw-m">Services description</h1>
                 <div className="c-fs-4">
                     1. All software, used by users in accordance with its application and purpose defined in these terms and conditions, available on <a href="https://msg91.com/startups/"> www.msg91.com/startups </a> and provided by MSG91 shall be deemed as service or product.
                     <div className="my-3"></div>
@@ -38,7 +38,7 @@ const startuppolicy = () => {
                 </div>
             </div>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">Access and the use of services</h2>
+                <h1 className="c-fs-2 c-fw-m">Access and the use of services</h1>
                 <div className="c-fs-4">
                     1. MSG91 services and products are exclusively designated for business use and must be used only in accordance with their purpose, application and their general characteristics.
                     <div className="my-3"></div>
@@ -74,7 +74,7 @@ const startuppolicy = () => {
                 </div>
             </div>
             <div className="mb-5">
-                <h2 className="c-fs-2 c-fw-m">Trademarks and copyright</h2>
+                <h1 className="c-fs-2 c-fw-m">Trademarks and copyright</h1>
                 <div className="c-fs-4">
                     1. “MSG91” is a trademark owned by MSG91 Software SA, registered in United States Patent and Trademark Office and is therefore subject to national as well as international protection.
                     <div className="my-3"></div>
