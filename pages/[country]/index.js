@@ -3,6 +3,7 @@ import IndexComp from "@/components/comps/indexComponent";
 
 const mainpage = ({ pageData, params }) => {
   var page = pageData?.pagename;
+  // console.log("pageData",pageData)
   if (!pageData) {
     return (
       <div>
@@ -14,7 +15,7 @@ const mainpage = ({ pageData, params }) => {
     //console.log("page index", params);
     return (
       <>
-        <IndexComp params={params} />
+        <IndexComp params={params} pageData={pageData} />
       </>
     );
   } else {

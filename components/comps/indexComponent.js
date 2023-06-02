@@ -2,13 +2,14 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import TrustedBy from "@/components/trustedby";
 import Image from "next/image";
 import PreFooter from "../preFooter";
-const indexComp = ({ params }) => {
+const indexComp = ({pageData, params}) => {
   const path = params ? params?.country : "";
+  console.log(pageData,"this is a country");
   return (
     <>
       <div className="container d-flex flex-column c-gap-1 align-items-center text-center mt-80">
         <h1 className="heading text-dark col-md-10 col-12 col-xxl-8 col-xl-8 ">
-          Cloud communication platform for all your ideas!
+          {pageData.headline}
         </h1>
         <h3 className="small-heading text-dark">
           Secure and robust APIs for SMS, Email, Voice, Authentication and more.
