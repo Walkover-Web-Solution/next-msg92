@@ -13,12 +13,12 @@ const termsofuse = () => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <label className=" c-fs-2">Terms</label>
+              <label className=" c-fs-2">Terms of use</label>
             </button>
             <ul className="dropdown-menu">
               <li>
                 <Link href="/terms-of-use" className="dropdown-item c-fs-4">
-                  Terms
+                  Terms of use
                 </Link>
               </li>
               <li>
@@ -65,7 +65,7 @@ const termsofuse = () => {
 
         <div className="gap-3 d-none d-md-flex flex-column  col-12 flex-wrap mb-3 col-md-4 col-lg-3 terms-nav">
           <a href="/terms-of-use">
-            <span className="c-fs-3 text-primary">Terms</span>
+            <span className="c-fs-3 text-primary">Terms of use</span>
           </a>
           <a href="privacy-policy">
             <span className="c-fs-3 text-black">Privacy Policy </span>

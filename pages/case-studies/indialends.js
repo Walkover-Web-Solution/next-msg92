@@ -38,17 +38,17 @@ const indialends = () => {
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">About</h1>
+        <h1 className="c-fw-b mb-4">Case Studies - India Lends</h1>
         <span className="c-fs-3"><a target="_blank" href="https://indialends.com/"> Indialends </a>is a personal loan providing Fintech platform. With the vision to offer their customers a seamless loan approval, and to ensure it happens efficiently, Indialends has been rigorously working on sending the updates and information for their customers security and satisfaction.</span>
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Problem</h1>
+        <h2 className="c-fw-b mb-4">Problem</h2>
         <span className="c-fs-3">A well-established communication channel with customers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a wide range of customer base without a robust and secure communication channel is a challenge. Thus to convey important information like vacancies, interview calls details and selection update to hire a strong workforce for the clients, a real-time communication channel targeting wide reach for mass audience (candidates) is required.</span>
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Solution</h1>
+        <h2 className="c-fw-b mb-4">Solution</h2>
         <span className="c-fs-3">Indialends is managing their operations by its website https://indialends.com and customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to build communication at different events such as</span>
         <ul>
           <li className="c-fs-3 mt-3">Sends <a href="#"> OTP on signup/registration </a> via SMS.</li>
@@ -63,7 +63,7 @@ const indialends = () => {
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Benefit</h1>
+        <h2 className="c-fw-b mb-4">Benefit</h2>
         <span className="c-fs-3">As a result, the customer gets updates SMS via a secured channel, making the operations secure, reliable and seamless, which results in a better rapport with the customer and increase in sales.
 
 </span>     

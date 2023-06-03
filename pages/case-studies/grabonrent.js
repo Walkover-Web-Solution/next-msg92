@@ -39,19 +39,19 @@ const grabonrent = () => {
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">About</h1>
+        <h1 className="c-fw-b mb-4">Case Studies - Grab on rent</h1>
         <span className="c-fs-3">GrabOnRent is an online rental services <a href="https://www.grabonrent.com/"> website </a> which rents different lifestyle products such as furniture, bike and other accessories across Mumbai, Bengaluru, Hyderabad and Gurugram. To ensure a seamless and efficient service on time, GrabOnRent has been rigorously working in sending the order updates and other important information for their customer’s satisfaction.
 
 </span>
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Problem</h1>
+        <h2 className="c-fw-b mb-4">Problem</h2>
         <span className="c-fs-3">GrabOnRent is managing their operations by its app and website http://www.grabonrent.com, while the customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to build communication at different events such as</span>
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Solution</h1>
+        <h2 className="c-fw-b mb-4">Solution</h2>
         <span className="c-fs-3">LeadSquared is managing their operations by its website https://www.leadsquared.com/ and customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to build communication at different events such as</span>
         <ul>
           <li className="c-fs-3 mt-3">For the  <a href="#"> Verification of GrabOnRent Account </a> , the customer receives a <a href="#"> Verification OTP SMS.</a></li>
@@ -66,7 +66,7 @@ const grabonrent = () => {
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Benefit</h1>
+        <h2 className="c-fw-b mb-4">Benefit</h2>
         <span className="c-fs-3">As a result, the customer gets regular updates for their orders and ongoing offers via a secured channel, making the operations reliable and seamless, which results in a better rapport with the customer and increase in sales.</span>     
       </div>
     <div className="container py-5">

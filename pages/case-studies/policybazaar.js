@@ -39,19 +39,19 @@ const policybazaar = () => {
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">About</h1>
+        <h1 className="c-fw-b mb-4">Case Studies - Policy Bazar</h1>
         <span className="c-fs-3"><a target="_blank" href="https://www.policybazaar.com/">Policy Bazaar</a> is a finance based services, where they update their customers with offers and updates on various financial services. With the vision to help the customers get the due updates in time, Policy Bazaar has been rigorously working on the financial consulting services for the customer’s welfare.
 
 </span>
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Problem</h1>
+        <h2 className="c-fw-b mb-4">Problem</h2>
         <span className="c-fs-3">A well-established communication channel with customers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a wide range of customer base without a robust and secure communication channel is a challenge. Thus to convey important information like booking details, offers and updates for building a strong customer relationship, a communication channel targeting wide reach for mass audience (customers) is required.</span>
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Solution</h1>
+        <h2 className="c-fw-b mb-4">Solution</h2>
         <span className="c-fs-3">Policy Bazaar is managing their operations and customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to built communication at different events such as:</span>
         <ul>
           <li className="c-fs-3 mt-3">Customer gets <a href="#">offer updates of various loans </a> via SMS.</li>
@@ -65,7 +65,7 @@ const policybazaar = () => {
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Benefit</h1>
+        <h2 className="c-fw-b mb-4">Benefit</h2>
         <span className="c-fs-3">As a result, the customer gets regular updates for every event related to their financials via secured channel making the operations reliable and seamless resulting in a better rapport with the customer and increase in sales.</span>     
       </div>
     <div className="container py-5">

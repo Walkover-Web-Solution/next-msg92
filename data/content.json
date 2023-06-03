@@ -4,7 +4,8 @@
     "index":{
       "code":"no",
       "pagename":"index",
-      "head":"this is global index"
+      "head":"this is global index",
+      "headline":"Cloud communication platform for all your ideas!"
     },
     "hello":{
       "code": false,

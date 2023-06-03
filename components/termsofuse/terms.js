@@ -3,7 +3,7 @@ const terms = () => {
         <>
             <div className="col-12  terms-content">
                 <div className="mb-5">
-                    <h1 className="c-fs-2 c-fw-m my-3">Terms</h1>
+                    <h1 className="c-fs-2 c-fw-m my-3">Terms of use</h1>
                     <div className="c-fs-4">
                         Simple terms for a longterm relationship!
                         <div className="my-3"></div>

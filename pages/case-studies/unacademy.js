@@ -39,18 +39,18 @@ const azim_Premji = () => {
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">About</h1>
+        <h1 className="c-fw-b mb-4">Case Studies - Unacademy</h1>
         <span className="c-fs-3">Unacademy is an e-learning platform that aims to build an online knowledge repository for multilingual education. The Bengaluru based edtech platform founded by Gaurav Munjal, Roman Saini and Hemesh Singh connects expert educators with students across cities looking for quality education.
 </span>
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Problem</h1>
+        <h2 className="c-fw-b mb-4">Problem</h2>
         <span className="c-fs-3">A well-established communication channel with teachers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a huge volunteer teachers’ base without a robust and secure communication channel is a challenge. Thus to convey important information like details of vacancies, events and courses for better educational network, a communication channel targeting wide reach for mass audience (teachers) is required.</span>
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Solution</h1>
+        <h2 className="c-fw-b mb-4">Solution</h2>
         <span className="c-fs-3">With a great team combination and an enthusiastic spirit, the two folks embarked on the big journey in the ed-tech space. The question now is what is so different about them and their product that it has picked up popularity amongst students, SMS is delivered to the students to build communication at different events such as</span>
         <ul>
           <li className="c-fs-3 mt-3"><strong> Accio tutors - </strong> Unacademy started as a pure marketplace. They attracted teachers with a value proposition based on earnings, work from home, and independence via SMS.</li>
@@ -61,7 +61,7 @@ const azim_Premji = () => {
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Benefit</h1>
+        <h2 className="c-fw-b mb-4">Benefit</h2>
         <span className="c-fs-3">As a result, the teachers gets details of vacancies via secured channel, making the operations reliable and seamless. Moreover, the updates of events and courses sent to students and teachers results in a better coordination and resulting a better network of teachers for better education.</span>
       </div>
     <div className="container py-5">

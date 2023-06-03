@@ -39,17 +39,17 @@ const zebpay = () => {
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">About</h1>
+        <h1 className="c-fw-b mb-4">Case Studies - Zebpay</h1>
         <span className="c-fs-3"><a target="_blank" href="https://zebpay.com/">Zebpay</a> is an app-enabled cryptocurrency exchange. With the vision to offer their customers with secured bitcoin transactions, and to ensure it happens efficiently, Zebpay has been rigorously working on sending the OTPs for their customers security and satisfaction.</span>
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Problem</h1>
+        <h2 className="c-fw-b mb-4">Problem</h2>
         <span className="c-fs-3">A well-established communication channel with customers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a wide range of customer base without a robust and secure communication channel is a challenge. Thus to convey important information like booking details, offers and updates for building a strong customer relationship, a communication channel targeting wide reach for mass audience (customers) is required.</span>
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Solution</h1>
+        <h2 className="c-fw-b mb-4">Solution</h2>
         <span className="c-fs-3">Zebpay is managing their operations by its website https://www.zebpay.com/ and customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to build communication at different events such as</span>
         <ul>
           <li className="c-fs-3 mt-3">Once the customer <a href="#">logins, </a>, the customer receives an <a href="#">OTP SMS.</a></li>
@@ -63,7 +63,7 @@ const zebpay = () => {
       </div>
 
       <div className="container py-5">
-        <h1 className="c-fw-b mb-4">Benefit</h1>
+        <h2 className="c-fw-b mb-4">Benefit</h2>
         <span className="c-fs-3">As a result, the customer gets OTPs and updates via a secured channel, making the operations secure, reliable and seamless, which results in a better rapport with the customer and increase in sales.</span>     
       </div>
     <div className="container py-5">
