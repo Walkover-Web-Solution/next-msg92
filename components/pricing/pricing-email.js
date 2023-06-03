@@ -76,8 +76,8 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
 
                       <div className="c-fs-5 ">
                         <strong>Extra</strong>
-                        <div>{symbol} {item.plan_services[0].service_credit.service_credit_rates[0].follow_up_rate} per Emails</div>                      
-                        <div>{symbol} {item.plan_services[1].service_credit.service_credit_rates[0].follow_up_rate} per Email Validations</div>
+                        <div>{symbol} {item.plan_services[0].service_credit.service_credit_rates[0].follow_up_rate} per Email</div>                      
+                        <div>{symbol} {item.plan_services[1].service_credit.service_credit_rates[0].follow_up_rate} per Email Validation</div>
                       </div>
 
                       <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
@@ -117,8 +117,8 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
                     
                     <div className="c-fs-5 ">
                         <strong>Extra</strong>
-                        <div>{symbol} {item.plan_services[0].service_credit.service_credit_rates[0].follow_up_rate} per Emails</div>                      
-                        <div>{symbol} {item.plan_services[1].service_credit.service_credit_rates[0].follow_up_rate} per Email Validations</div>
+                        <div>{symbol} {item.plan_services[0].service_credit.service_credit_rates[0].follow_up_rate} per Email</div>                      
+                        <div>{symbol} {item.plan_services[1].service_credit.service_credit_rates[0].follow_up_rate} per Email Validation</div>
                     </div>
 
                     <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
