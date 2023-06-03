@@ -52,8 +52,8 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
       };
 
       const response = await fetch(
-        `https://testvoice.phone91.com/public/dialplans/1?page_size=${pagesize}&page_num=${page}&prefix=${searchValue}`,
-        //`https://control.msg91.com/api/v5/voice/public/dialplans/1?prefix=${searchValue}`,
+        //`https://testvoice.phone91.com/public/dialplans/1?page_size=${pagesize}&page_num=${page}&prefix=${searchValue}`,
+        `https://voice.phone91.com/public/dialplans/8?page_size=${pagesize}&page_num=${page}&prefix=${searchValue}`,
         {
           headers: headers,
         }
@@ -62,14 +62,12 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
       if (response.ok) {
         const data = await response.json();
         setData(data);
-        const lenght = Math.ceil(data.data.count/pagesize)
-        console.log(lenght);
+        const lenght = Math.ceil(data.data.count/pagesize)        
         setPagination(lenght)
-        const d = Array.from({length: lenght}, (_, i) => i + 1)
-        console.log(d,123);
+        const d = Array.from({length: lenght}, (_, i) => i + 1)        
         setPaginationArray(d)
       } else {
-        throw new Error("Error fetching data");
+        throw new Error("Currently we only have plan for India(91)");
       }
     } catch (error) {
       setError(error.message);
@@ -96,6 +94,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
     <>
         {showDiv ? (
           <>
+            <label for="tie-id" className="fs-6 text-secondary mb-2">Enter Prefix, e.g. 91</label>
             <div className="onlyin mb-5 d-flex col-3 mx-auto">
               <div className="input-group mb-3">
               {/* <span className=" arrow-search-btn">
@@ -118,7 +117,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
             {loading ? (
               <div>Loading...</div>
             ) : error ? (
-              <div>Error: {error}</div>
+              <div className="mb-5">{error}</div>
             ) : data ? (
                 <div className="m-auto rate-table">
                   <table className="table">
