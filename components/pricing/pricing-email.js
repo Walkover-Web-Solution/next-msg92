@@ -21,7 +21,7 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
         break;
     }
   };
-
+  console.log('subscriptionEmail', subscriptionEmail);
   return (
     <>
     <div className="d-flex justify-content-center">
@@ -59,10 +59,10 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
                         {(item.plan_amounts[0].plan_amount === 0) ? '-' : '+18%GST'}
                       </p>
                       <div className="c-fs-5 mt-2">
-                        <span className="text-success c-fs-3">
+                        <span className="text-success">
                           <MdDone />
                         </span>
-                        {item.plan_services[0].service_credit.free_credits} Emails/Month
+                        {item.plan_services[0].service_credit.free_credits} Emails
                       </div>
                       <div className="c-fs-5 ">                  
                           {
@@ -71,7 +71,13 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
                           : 
                           <span className="text-success c-fs-3"><MdDone /></span> 
                           }
-                        {item.plan_services[1].service_credit.free_credits} Email Verifications/Month
+                        {item.plan_services[1].service_credit.free_credits} Email Validations
+                      </div>
+
+                      <div className="c-fs-5 ">
+                        <strong>Extra</strong>
+                        <div>{symbol} {item.plan_services[0].service_credit.service_credit_rates[0].follow_up_rate} per Emails</div>                      
+                        <div>{symbol} {item.plan_services[1].service_credit.service_credit_rates[0].follow_up_rate} per Email Validations</div>
                       </div>
 
                       <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
@@ -94,19 +100,25 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
                       {(item.plan_amounts[0].plan_amount === 0) ? '-' : '+18%GST'}
                     </p>
                     <div className="c-fs-5 mt-2">
-                      <span className="text-success c-fs-3">
+                      <span className="text-success">
                         <MdDone />
                       </span>
-                      {item.plan_services[0].service_credit.free_credits} Emails/Month
+                      {item.plan_services[0].service_credit.free_credits} Emails
                     </div>
                     <div className="c-fs-5 ">                  
                         {
                         (item.plan_amounts[0].plan_amount === 0) ? 
-                        <span className="text-danger c-fs-3"><MdClose /></span> 
+                        <span className="text-danger"><MdClose /></span> 
                         : 
-                        <span className="text-success c-fs-3"><MdDone /></span> 
+                        <span className="text-success"><MdDone /></span> 
                         }
-                      {item.plan_services[1].service_credit.free_credits} Email Verifications/Month
+                      {item.plan_services[1].service_credit.free_credits} Email Validations
+                    </div>
+                    
+                    <div className="c-fs-5 ">
+                        <strong>Extra</strong>
+                        <div>{symbol} {item.plan_services[0].service_credit.service_credit_rates[0].follow_up_rate} per Emails</div>                      
+                        <div>{symbol} {item.plan_services[1].service_credit.service_credit_rates[0].follow_up_rate} per Email Validations</div>
                     </div>
 
                     <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
