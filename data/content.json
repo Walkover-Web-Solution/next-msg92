@@ -370,7 +370,7 @@
     },
     "voice": {
       "code": true,
-      "pagename": "voice", 
+      "pagename": "Voice", 
       "pagetag":"Voice",
       "icon": "/img/icon/voice.svg",
       "tagline": "connect with confidence",
