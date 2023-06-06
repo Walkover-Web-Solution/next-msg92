@@ -28,7 +28,7 @@ const ChannelComponent = ({ pageData }) => {
         <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
           <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
             <img src={pageData.icon} className="product-page-logo me-2" />
-            <h1 className="heading text-capitalize">{pageData.pagename}</h1>
+            <h1 className={`heading page-title ${pageData.pagename}-heading`}>{pageData.pagetag}</h1>
           </div>
 
           <p className="c-fs-4 text-uppercase col-otp c-ls-20 mx-auto">
