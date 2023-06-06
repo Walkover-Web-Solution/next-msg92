@@ -60,7 +60,7 @@
       "code": false,
       "icon": "/img/icon/campaign.svg",
       "pagename":"campaign", 
-      "pagetag":"campaign",
+      "pagetag":"Create Campaign",
       "tagline": "Event Base automation",
       "heading": "Connect conversations across channels and tools",
       "subheading": "tools Deliver personalized, engaging and seamless experiences",
@@ -322,7 +322,7 @@
     "email": {
       "code": true,
       "pagename": "Email", 
-      "pagetag":"Email",
+      "pagetag":"Best email api",
       "icon": "/img/icon/email.svg",
       "tagline": "smarter email strategy",
       "heading": "Smart emails that land directly into the right inbox",
