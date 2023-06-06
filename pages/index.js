@@ -1,10 +1,11 @@
 import IndexComp from "@/components/comps/indexComponent";
-import json from "../data/content.json"; 
-const data = json.global.index;
+import data from "@/data/content.json";
+
 const index = ()=>{
+  const pageData = data?.global?.index
   return(
     <>
-    <IndexComp pageData={data} />
+    <IndexComp pageData={pageData}/>
     </>
 
   );
