@@ -668,3 +668,21 @@ code[class*="language-"], pre[class*="language-"]{
     width: clamp(300px,80vw,400px);
   }
 }
+
+.integrations-head{
+  width: 100%;
+  img{
+    // width: 80px;
+    height: 40px;
+  }
+}
+.check-int{
+  width: 25px;
+}
+
+.integration-head-cont{
+  // background-color: #ffe4b8;
+}
+.p-int{
+  padding: 0 90px;
+}
