@@ -1,15 +1,25 @@
+import data from "@/data/int.json";
+import { useRouter } from "next/router";
+
 const Zapier = () => {
+const router = useRouter();
+var browserPath = router.asPath;
+var path = browserPath.split("/")[2];
+console.log(path);
+var intData = data?.[path];
+console.log(intData);
+
   return (
     <>
       <div className="d-flex flex-column w-100 align-items-start gap-2 integration-head-cont py-1 container">
         <div className="integrations-head d-flex align-items-center">
           <img
-            src="/img/integrations/zaiper.png"
+            src={intData.logo}
             className="integrations-logo"
             alt="zapier"
           />
           <div className="ms-4 d-grid gap-2">
-          <h1 className="sub-heading text-dark ">Zapier Integration</h1>
+          <h1 className="sub-heading text-dark text-capitalize ">{path} Integration</h1>
           <h3 className="c-fs-3 text-dark">
             Streamline Your Engagement Workflows
           </h3>
