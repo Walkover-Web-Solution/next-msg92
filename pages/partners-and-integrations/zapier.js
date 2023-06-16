@@ -2,24 +2,24 @@ import data from "@/data/int.json";
 import { useRouter } from "next/router";
 
 const Zapier = () => {
-const router = useRouter();
-var browserPath = router.asPath;
-var intpage = browserPath.split("/")[2];
-console.log(intpage);
-var intData = data?.[intpage];
-console.log(intData);
+// const router = useRouter();
+// var browserPath = router.asPath;
+// var intpage = browserPath.split("/")[2];
+// console.log(intpage);
+// var intData = data?.[intpage];
+// console.log(intData);
 
   return (
     <>
       <div className="d-flex flex-column w-100 align-items-start gap-2 integration-head-cont py-1 container">
         <div className="integrations-head d-flex align-items-center">
           <img
-            src={intData.logo}
+            src="/img/integrations/zapier.png"
             className="integrations-logo"
             alt="zapier"
           />
           <div className="ms-4 d-grid gap-2">
-          <h1 className="sub-heading text-dark text-capitalize ">{intpage} Integration</h1>
+          <h1 className="sub-heading text-dark text-capitalize ">Zapier Integration</h1>
           <h3 className="c-fs-3 text-dark">
             Streamline Your Engagement Workflows
           </h3>
