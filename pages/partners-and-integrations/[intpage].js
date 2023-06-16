@@ -4,9 +4,9 @@ import { useRouter } from "next/router";
 const Zapier = () => {
 const router = useRouter();
 var browserPath = router.asPath;
-var path = browserPath.split("/")[2];
-console.log(path);
-var intData = data?.[path];
+var intpage = browserPath.split("/")[2];
+console.log(intpage);
+var intData = data?.[intpage];
 console.log(intData);
 
   return (
@@ -19,7 +19,7 @@ console.log(intData);
             alt="zapier"
           />
           <div className="ms-4 d-grid gap-2">
-          <h1 className="sub-heading text-dark text-capitalize ">{path} Integration</h1>
+          <h1 className="sub-heading text-dark text-capitalize ">{intpage} Integration</h1>
           <h3 className="c-fs-3 text-dark">
             Streamline Your Engagement Workflows
           </h3>
