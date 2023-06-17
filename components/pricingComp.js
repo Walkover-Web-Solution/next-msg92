@@ -121,7 +121,7 @@ const PricingComp = ({countryCode}) => {
                   </button>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <button onClick={()=>{fetchSubscriptionVoice(currency, '6')}} className="nav-link"  data-bs-toggle="pill" data-bs-target="#pills-voice" type="button" role="tab" aria-controls="pills-voice" aria-selected="false">
+                  <button className="nav-link"  data-bs-toggle="pill" data-bs-target="#pills-voice" type="button" role="tab" aria-controls="pills-voice" aria-selected="false">
                     <img src="/img/icon/voice.svg" alt="#" />
                     Voice
                   </button>

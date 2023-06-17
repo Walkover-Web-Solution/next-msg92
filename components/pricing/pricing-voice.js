@@ -11,6 +11,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
   const [pageNum, setPageNum] = useState(1);
   const [displayValue, setDisplayValue] = useState("");
   const [data, setData] = useState(null);
+  const [pulse, setPulse] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [paginationArray,setPaginationArray] = useState([]);
@@ -62,6 +63,8 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
       if (response.ok) {
         const data = await response.json();
         setData(data);
+        let getPulse = data.data.rates[0].billing.split("/");
+        setPulse(getPulse[0]);
         const lenght = Math.ceil(data.data.count/pagesize)        
         setPagination(lenght)
         const d = Array.from({length: lenght}, (_, i) => i + 1)        
@@ -124,7 +127,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
                     <thead>
                       <tr>                      
                         <th scope="col">Prefix</th>
-                        <th scope="col">Rate</th>                      
+                        <th scope="col">Rate <div className="c-fs-5">(Incoming/Outgoing)</div></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -137,7 +140,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
                     </tbody>                  
                   </table>
                   <div className="pb-5"></div>                  
-                  <div className="mb-5 d-flex">
+                  <div className="d-flex">
                     <ul className="pagination m-auto">
                       {pagination > 1 && 
                         paginationArray.map((num)=>{
@@ -150,7 +153,10 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
                         }           
                     </ul>
                   </div>
-                </div>
+                  <div>1 Pluse = {pulse} seconds</div>
+                  <div>Free incoming on web calls</div>
+                  <div className="mb-5">₹ 1000/month for each Caller ID</div>
+                </div>                
             ) : null}
             <div className="nonin price-card rcs d-flex col-11 col-lg-10 flex-column mx-auto c-bg-grey p-4">
               <h3 className="c-fs=3">

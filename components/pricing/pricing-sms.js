@@ -59,6 +59,7 @@ const Pricingsms = ({
         />
 
       </div>}
+      
       {originCountry == destinationCountry && originCountry != 'India' &&
         <div className="note mb-5 c-fs-5">
           To avail this local pricing, <a href="/contact-us">contact</a> our team for <strong>Sender Id</strong> registration.
