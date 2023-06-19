@@ -154,8 +154,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
                     </ul>
                   </div>
                   {/* <div>1 Pluse = {pulse} seconds</div> */}
-                  <div className="mb-5 c-fs-5">
-                    <div>Incoming/Outgoing - {rateObj.rate} INR/minute</div>
+                  <div className="mb-5 c-fs-5">                    
                     <div>Incoming calls on Web - <strong>Free</strong></div>
                   </div>                  
                 </div>                
