@@ -134,7 +134,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
                     {data.data.rates.map((rateObj, index) => (
                       <tr key={`rate-${index}`}>                    
                         <td>{rateObj.prefix}</td>
-                        <td>{rateObj.rate} <small>{data.data.currency_code}</small></td>
+                        <td>{rateObj.rate} <small>{data.data.currency_code}/Minute</small></td>
                       </tr>                    
                     ))}
                     </tbody>                  
@@ -155,7 +155,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
                   </div>
                   {/* <div>1 Pluse = {pulse} seconds</div> */}
                   <div className="mb-5 c-fs-5">
-                    <div>Incoming/Outgoing - 0.5 INR/minute</div>
+                    <div>Incoming/Outgoing - {rateObj.rate} INR/minute</div>
                     <div>Incoming calls on Web - <strong>Free</strong></div>
                   </div>                  
                 </div>                
