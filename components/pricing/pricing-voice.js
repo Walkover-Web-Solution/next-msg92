@@ -153,9 +153,11 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
                         }           
                     </ul>
                   </div>
-                  <div>1 Pluse = {pulse} seconds</div>
-                  <div>Free incoming on web calls</div>
-                  <div className="mb-5">₹ 1000/month for each Caller ID</div>
+                  {/* <div>1 Pluse = {pulse} seconds</div> */}
+                  <div className="mb-5 c-fs-5">
+                    <div>Incoming/Outgoing - 0.5 INR/minute</div>
+                    <div>Incoming calls on Web - <strong>Free</strong></div>
+                  </div>                  
                 </div>                
             ) : null}
             <div className="nonin price-card rcs d-flex col-11 col-lg-10 flex-column mx-auto c-bg-grey p-4">
@@ -172,7 +174,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
           </>
         ) : (
           <div className="nonin price-card rcs d-flex col-11 col-lg-10 flex-column mx-auto c-bg-grey p-4">
-            <h3 className="c-fs=3">
+            <h3 className="c-fs-3">
               Connect to our team for the customized pricing
             </h3>
             <a
