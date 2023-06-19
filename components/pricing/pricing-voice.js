@@ -139,6 +139,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
                     ))}
                     </tbody>                  
                   </table>
+                  
                   <div className="pb-5"></div>                  
                   <div className="d-flex">
                     <ul className="pagination m-auto">
