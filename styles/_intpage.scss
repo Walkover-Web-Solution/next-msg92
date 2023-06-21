@@ -1,0 +1,10 @@
+$int-page-head-prime-color:11%;
+
+.int-page-head{
+    background: linear-gradient(90deg, #FF7136 $int-page-head-prime-color,  rgba(242, 242, 243, 0.91995) $int-page-head-prime-color, #F2F2F3 100%);
+    div{
+        img{
+            width: 90px;
+        }
+    }
+}
