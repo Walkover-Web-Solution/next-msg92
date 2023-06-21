@@ -322,7 +322,7 @@
     "email": {
       "code": true,
       "pagename": "Email", 
-      "pagetag":"Email APIs",
+      "pagetag":"Email API",
       "icon": "/img/icon/email.svg",
       "tagline": "smarter email strategy",
       "heading": "Smart emails that land directly into the right inbox",
