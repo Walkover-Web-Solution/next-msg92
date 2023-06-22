@@ -1,6 +1,7 @@
 import data from "@/data/int.json";
 import { useRouter } from "next/router";
 import TrustedBy from "components/trustedby";
+import { MdDone } from "react-icons/md";
 
 const Zapier = () => {
   // const router = useRouter();
@@ -49,12 +50,90 @@ const Zapier = () => {
               </h2>
             </div>
           </div>
-          {/* <TrustedBy /> */}
-          <img src="\img\integrations\code-img-int.svg" className="img-fluid product-page-img mx-auto" alt="#" />
+          <img
+            src="\img\integrations\code-img-int.svg"
+            className="img-fluid product-page-img mx-auto"
+            alt="#"
+          />
         </div>
       </div>
-      <div>
-        
+      <div className="container d-flex flex-column justify-content-center my-5 py-4 text-center">
+        <h2 className="sub-heading c-head">
+          This powerful integration empowers businesses to
+        </h2>
+        <div className="row my-4 gap-5">
+          <div className=" d-flex col flex-column align-items-center  gap-2 p-5 int-feature-box ">
+            <MdDone className="sub-heading col-zapier" />
+            <h3>Automate engagement tasks</h3>
+          </div>
+          <div className=" d-flex col flex-column align-items-center  gap-2 p-5 int-feature-box ">
+            <MdDone className="sub-heading col-zapier" />
+            <h3>Streamline communication processes</h3>
+          </div>
+          <div className=" d-flex col flex-column align-items-center  gap-2 p-5 int-feature-box ">
+            <MdDone className="sub-heading col-zapier" />
+            <h3>Enhance Overall Efficiency</h3>
+          </div>
+        </div>
+      </div>
+      <div className="d-flex align-items-center text-center justify-content-center">
+        <TrustedBy />
+      </div>
+      <div className="c-bg-grey py-5  d-flex flex-column justify-content-sm-center align-items-center">
+        <div className="py-4  container text-center d-md-flex justify-content-sm-between align-items-center flex-xl-row flex-lg-column flex-sm-column flex-md-column">
+          <span className="pro-heading c-head">
+            Customize your workflow to fit your specific requirements
+          </span>
+          <div className="mt-3 mt-xxl-0 d-flex flex-wrap justify-content-center gap-3">
+            <a
+              href="/contact-us"
+              className="btn px-4 py-3 btn-outline-dark c-fs-4 "
+            >
+              Get The Plugin
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="container d-flex flex-column flex-sm-row align-items-center  gap-5 my-5">
+        <p className="c-fs-2">
+          Create custom triggers and actions that initiate messaging and
+          increase engagement based on specific events or conditions in
+          connected applications. 
+          <br/>
+          <br/>
+          Send order alerts and recover abandoned
+          checkouts via WhatsApp / SMS Create customer journeys with
+          multi-channel communication Update customers on critical events- New
+          Signups, Payment Confirmation, Send Invoice PDF
+        </p>
+        <img className="col-12 col-sm-6" src="\img\integrations\zapeir-graphics.svg" />
+      </div>
+      <div className="container my-5">
+        <h1 className="sub-heading c-head mb-3">
+          The MSG91 Zapier Plugin Offers
+        </h1>
+        <div className="d-flex align-items-center gap-2 my-3">
+          <MdDone className="c-fs-1 col-zapier" />
+          <p className="c-fs-2">A user-friendly interface</p>
+        </div>
+        <div className="d-flex align-items-center gap-2 my-3">
+          <MdDone className="c-fs-1 col-zapier" />
+          <p className="c-fs-2">Intuitive setup process</p>
+        </div>
+        <div className="d-flex align-items-center gap-2 my-3">
+          <MdDone className="c-fs-1 col-zapier" />
+          <p className="c-fs-2">Pre-build templates</p>
+        </div>
+      </div>
+      <div className="d-flex flex-column flex-md-row container align-items-center justify-content-between my-5">
+        <h2 className="c-head c-fs-1 col-12 col-md-8 text-center text-md-start">
+        Enhance your communication capabilities and automate your engagement tasks
+        </h2>
+        <a>
+          <button className="btn btn-dark btn-lg c-fs-2 my-4">
+          Get The MSG91 Zapier Plugin
+          </button>
+        </a>
       </div>
     </>
   );
