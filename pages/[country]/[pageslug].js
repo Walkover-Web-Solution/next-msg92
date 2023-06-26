@@ -3,7 +3,7 @@ import IndexComp from "@/components/comps/indexComponent";
 import ProductComponent from "@/components/comps/productComp";
 import ChannelComponent from "@/components/comps/channelComp";
 
-const mainpage = ({ pageData, params }) => {
+const mainpage = ({ pageData, params, path }) => {
   // console.log(pageData);
   var page = pageData?.pagename;
   var code = pageData?.code;
@@ -31,7 +31,7 @@ const mainpage = ({ pageData, params }) => {
       return (
         <>
           <div>
-            <ChannelComponent pageData={Dataa} />
+            <ChannelComponent pageData={Dataa} path={path}/>
           </div>
         </>
       );

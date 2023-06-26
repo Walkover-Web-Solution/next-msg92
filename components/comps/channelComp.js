@@ -2,12 +2,15 @@
 import { React, useEffect } from 'react';
 import PreFooter from '../preFooter';
 import TrustedBy from '../trustedby';
+import Insms from '../in-sms-extra';
 
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import snippetData from "@/pages/snippet.json"; 
 
-const ChannelComponent = ({ pageData }) => {  
+
+const ChannelComponent = ({ pageData, path }) => {  
+  console.log(path,"sss");
   var HTTPSnippet = require("httpsnippet");
   var i = 0;
   
@@ -209,10 +212,11 @@ const ChannelComponent = ({ pageData }) => {
           }
         })}
       </div>
-
+      {path}
+      {pageData.pagename}
+      {path === 'in' && pageData.pagename === 'SMS' && <Insms />}
+      {/* <Insms /> */}
       <PreFooter />
-      
-
     </div>
   );
 };
