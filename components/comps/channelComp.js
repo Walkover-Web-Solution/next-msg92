@@ -212,8 +212,6 @@ const ChannelComponent = ({ pageData, path }) => {
           }
         })}
       </div>
-      {path}
-      {pageData.pagename}
       {path === 'in' && pageData.pagename === 'SMS' && <Insms />}
       {/* <Insms /> */}
       <PreFooter />
