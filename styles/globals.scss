@@ -686,3 +686,13 @@ code[class*="language-"], pre[class*="language-"]{
 .p-int{
   padding: 0 90px;
 }
+
+.loading{
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div{
+    width: 300px;
+  }
+}
