@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MdCircle } from "react-icons/md";
 
 const Insms = () => {
-  console.log("voice from seo");
+  // console.log("voice from seo");
   const [showInsms, setShowInsms] = useState(false);
 
   const handleReadMore = () => {
