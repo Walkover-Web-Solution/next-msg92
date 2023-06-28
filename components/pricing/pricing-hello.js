@@ -21,7 +21,7 @@ const pricinghello = ({ countryCode }) => {
   return (
     <>
 
-<div className="price-card hello d-flex col-10 col-lg-11 flex-md-row flex-column mx-auto border">
+{/* <div className="price-card hello d-flex col-10 col-lg-11 flex-md-row flex-column mx-auto border">
     <div className="col-12 col-md-8 col-xl-9 text-start p-4 bg-white">
       <h3>Customer support Platform</h3>
       <div className="d-flex"><div className="c-fs-4 text-primary pe-2"><MdDoneOutline/></div><p className="c-fs-4">Integrate multiple channels on a single platform - Email, RCS, social media, call & more</p></div>
@@ -33,10 +33,10 @@ const pricinghello = ({ countryCode }) => {
       <p className="c-fs-4 mt-2">Pay only for the channels you use</p>
       <a href="https://control.msg91.com/signup/" target="_blank" className="btn btn-outline-dark mt-3 px-5">Get Started</a>
     </div>
-    </div>
+    </div> */}
 
 
-      {/* <div className="container border">
+      <div className="container border">
         <div className="column text-start">
           <div className="row c-head c-fs-3 py-2  border-bottom">
             <div className="col-4"></div>
@@ -345,7 +345,7 @@ const pricinghello = ({ countryCode }) => {
             prepaid and prorated. He has to pay for the inbox whenever he wants
             to create or enable an inbox
           </p>
-        </div> */}
+        </div>
     </>
   );
 };
