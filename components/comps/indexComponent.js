@@ -478,7 +478,7 @@ const indexComp = ({pageData, params}) => {
         </div>
       </div>
 
-      <Seo path={path} pageData={0} />
+      <Seo path={path} pageData={"index"} />
 
 
       <PreFooter />

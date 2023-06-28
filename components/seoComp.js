@@ -1,13 +1,53 @@
-import IndexSeoComp from "./seo/inIndex"
-import SmsSeoComp from "./seo/inSms"
-const seo = ({path,pageData})=>{
-    console.log(path,pageData)
-    // console.log(pageData)
-    return(
-        <>
-        <IndexSeoComp/>
-        <SmsSeoComp/>
-        </>
-    );
-}
+import IndexSeoComp from "./seo/inIndex";
+import SmsSeoComp from "./seo/inSms";
+import VoiceSeoComp from "./seo/inVoice";
+import CampaignSeoComp from "./seo/inCampaign";
+import EmailSeoComp from "./seo/inEmail";
+import HelloSeoComp from "./seo/inHello";
+import OtpSeoComp from "./seo/inOtp";
+
+const seo = ({ path, pageData }) => {
+  console.log(path, pageData);
+
+  let seoComponent = null;
+
+  if (path === "in") {
+    switch (pageData) {
+      case "index":
+        seoComponent = <IndexSeoComp />;
+        break;
+      case "0":
+        seoComponent = <IndexSeoComp />;
+        break;
+      case "SMS":
+        seoComponent = <SmsSeoComp />;
+        break;
+      case "voice":
+        seoComponent = <VoiceSeoComp />;
+        break;
+      case "campaign":
+        seoComponent = <CampaignSeoComp />;
+        break;
+      case "email":
+        seoComponent = <EmailSeoComp />;
+        break;
+      case "hello":
+        seoComponent = <HelloSeoComp />;
+        break;
+      case "otp":
+        seoComponent = <OtpSeoComp />;
+        break;
+      default:
+        <></>
+        break;
+    }
+  }
+
+  return (
+  <>
+  {seoComponent}
+  </>
+  );
+};
+
 export default seo;

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { MdCircle } from "react-icons/md";
 
 const Insms = () => {
+  console.log("sms from seo")
+
   const [showInsms, setShowInsms] = useState(false);
 
   const handleReadMore = () => {
@@ -12,744 +14,314 @@ const Insms = () => {
     <>
       <div className={`container my-5 ${showInsms ? "insms" : ""}`}>
         <h1 className="pro-heading c-head">
-        Welcome to MSG91: Your Trusted Cloud Communication Platform as a Service
+          Revolutionizing Business Communication: Empower Your Connectivity with
+          MSG91's SMS Services and API Solutions
         </h1>
         <p className="c-fs-3 mt-3">
-        Are you searching for a reliable and versatile cloud communication platform as a service? Look no further! At MSG91, we specialize in providing top-notch mobile cloud communication platforms in India. Whether you're a startup, small business, or a large enterprise, we have the perfect solution to enhance your business communication.
+          MSG91 is an SMS service provider that helps businesses improve their
+          communication. They offer transactional SMS services and a robust SMS
+          API for developers. With their services, businesses can engage with
+          clients and partners, send customizable messages globally, and benefit
+          from features like real-time campaign monitoring and multilingual
+          support. MSG91 also provides comprehensive support and cost-effective
+          solutions. They aim to transform business communication by enhancing
+          connectivity and engagement with customers.
         </p>
 
         {showInsms && (
           <div className="insms-soc c-fs-3">
-            <>
-  <p>&nbsp;</p>
-  
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          Our cloud based communication platform in India is designed to address
-          the unique needs of Indian businesses. With multiple communication
-          channels like SMS, voice, email, and instant messaging, shorturl and
-          many more so that you can reach your audience through their preferred
-          mode of communication. Our features include two-factor authentication,
-          personalized messaging, and scheduled campaigns in cloud communication
-          software for enhanced security and automation.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          We understand that businesses come in different sizes, so our scalable
-          and customizable solutions can adapt to your evolving needs. Plus, our
-          dedicated support team is available to assist you every step of the
-          way.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          Experience the difference with{" "}
-        </span>
-      </span>
-    </span>
-    <a href="https://msg91.com/in" style={{ textDecoration: "none" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#1155cc" }}>
-            <strong>
-              <u>MSG91</u>
-            </strong>
-          </span>
-        </span>
-      </span>
-    </a>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          . Join us today and unlock the full potential with our best business
-          communication platforms for your business in India.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <h2 style={{ textAlign: "justify" }}>
-    <span style={{ fontSize: "16pt" }}>
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>Cloud Communication- All You need to Know</strong>
-        </span>
-      </span>
-    </span>
-  </h2>
-  <p>&nbsp;</p>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          Cloud communication refers to using cloud-based technologies such as
-          cloud communication software to facilitate communication processes and
-          services. Instead of relying on traditional on-premises hardware and
-          infrastructure, cloud communication leverages the internet and cloud
-          computing's power to enable seamless and flexible communication.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          In cloud based communication platform in India, various channels, such
-          as voice, messaging, video, and email, are delivered through
-          cloud-based platforms and services. These platforms allow businesses
-          to engage with customers, employees, and stakeholders using multiple
-          communication channels, all managed and accessed through a centralized
-          cloud interface.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <h2 style={{ textAlign: "justify" }}>
-    <span style={{ fontSize: "16pt" }}>
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>What MSG91 Offers to the World?</strong>
-        </span>
-      </span>
-    </span>
-  </h2>
-  <p>&nbsp;</p>
-  <h3 style={{ textAlign: "justify" }}>
-    <span style={{ fontSize: "13.999999999999998pt" }}>
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>Cloud Communication Platform as a Service</strong>
-        </span>
-      </span>
-    </span>
-  </h3>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          We offer a comprehensive cloud communication platform as a service
-          (CPaaS) that empowers businesses to seamlessly integrate communication
-          functionalities into their applications, systems, or processes. With
-          our CPaaS, you can leverage the power of cloud-based communication
-          technologies to enhance customer engagement, improve team
-          collaboration, and streamline your communication workflows.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <h3 style={{ textAlign: "justify" }}>
-    <span style={{ fontSize: "13.999999999999998pt" }}>
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>Mobile Cloud Communication Platforms in India</strong>
-        </span>
-      </span>
-    </span>
-  </h3>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          As a leading provider of mobile cloud communication platforms in
-          India, we understand the unique needs and challenges faced by
-          businesses in the region. Our platform is designed to cater to the
-          diverse communication requirements of Indian businesses, offering
-          reliable and scalable solutions that can adapt to your evolving needs.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <h3 style={{ textAlign: "justify" }}>
-    <span style={{ fontSize: "13.999999999999998pt" }}>
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>Best Business Communication Platforms</strong>
-        </span>
-      </span>
-    </span>
-  </h3>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          We take pride in offering one of the{" "}
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>best business communication platforms </strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          available in the market. Our platform provides a wide range of
-          communication channels, including{" "}
-        </span>
-      </span>
-    </span>
-    <a href="https://msg91.com/in/campaign" style={{ textDecoration: "none" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#1155cc" }}>
-            <strong>
-              <u>campaign software</u>
-            </strong>
-          </span>
-        </span>
-      </span>
-    </a>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          , voice, email, instant messaging, and more, enabling you to engage
-          with your customers through their preferred channels. With advanced
-          features like two-factor authentication, OTP verification, and
-          personalized messaging, you can enhance the security and
-          personalization of your cloud communication software.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <h3 style={{ textAlign: "justify" }}>
-    <span style={{ fontSize: "13.999999999999998pt" }}>
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>Enterprise Cloud Communications Platform</strong>
-        </span>
-      </span>
-    </span>
-  </h3>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          For enterprises looking for a robust and secure cloud communication
-          platform as a service, MSG91 is the ideal choice. Our cloud based
-          communication platform in India offers scalable solutions that can
-          handle high volumes of communication, ensuring uninterrupted service
-          even during peak times. With comprehensive reporting and analytics,
-          you can gain valuable insights into your communication performance and
-          make data-driven decisions to optimize your business operations.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <h2 style={{ textAlign: "justify" }}>
-    <span style={{ fontSize: "16pt" }}>
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>Experience the Difference with MSG91</strong>
-        </span>
-      </span>
-    </span>
-  </h2>
-  <p>&nbsp;</p>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>Reliability</strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          : We understand the importance of reliable communication for your
-          business. Our best business communication platforms are built on
-          robust infrastructure, ensuring high availability and reliability. You
-          can trust that your communication channels will remain operational,
-          allowing you to connect with your customers and stakeholders without
-          interruptions. We prioritize the stability and performance of our
-          platform so that you can focus on your core business activities.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>Scalability:</strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          {" "}
-          Our platform grows with you as your business grows and evolves. We
-          understand that your communication needs may increase over time, and
-          our scalable cloud communication software can seamlessly accommodate
-          your expanding requirements. Whether you experience a surge in
-          communication volume or need to add new features, MSG91 can easily
-          scale up to meet your demands. Knowing that our mobile cloud
-          communication platforms in India can handle your growing business
-          communication needs, you can have peace of mind.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>Developer-Friendly APIs:</strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          {" "}
-          We believe in empowering businesses to integrate our communication
-          functionalities into their applications or systems effortlessly. Our
-          developer-friendly APIs (Application Programming Interfaces) are
-          designed to be user-friendly and well-documented, making it easier for
-          developers to integrate our communication capabilities into their
-          existing infrastructure. With our APIs, you can unlock the full
-          potential of our enterprise cloud communications platform and create
-          customized communication solutions that align with your unique
-          business requirements.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>Excellent Support:</strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          {" "}
-          At MSG91, we value the success of our clients, and that's why we
-          provide excellent support. Our dedicated support team is available
-          round the clock to assist you with any queries, concerns, or technical
-          issues you may encounter. We are committed to ensuring that you have a
-          smooth experience with our platform and that your communication needs
-          are met. Whether you need guidance on{" "}
-        </span>
-      </span>
-    </span>
-    <a href="https://msg91.com/in/hello" style={{ textDecoration: "none" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#1155cc" }}>
-            <strong>
-              <u>best customer support software</u>
-            </strong>
-          </span>
-        </span>
-      </span>
-    </a>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          {" "}
-          , platform integration, or troubleshooting support, our knowledgeable
-          and responsive support team is here to help you at every step.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          Don't let communication barriers hinder your business success. Choose
-          MSG91 as your trusted{" "}
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>cloud communication software</strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          {" "}
-          and unlock the true potential of seamless and efficient communication.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          Get started with MSG91 today and experience the power of a
-          comprehensive cloud communication platform designed to drive your
-          business forward.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <h2 style={{ marginRight: 6, textAlign: "justify" }}>
-    <span style={{ fontSize: "16pt" }}>
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>Our Vision Statement</strong>
-        </span>
-      </span>
-    </span>
-  </h2>
-  <p style={{ marginRight: 6, textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          At MSG91, our vision is to revolutionize business communication by
-          seamlessly connecting organizations with their customers, employees,
-          and stakeholders. We aim to be the global leader in{" "}
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>cloud communication platform as a service</strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          {" "}
-          provider to empower businesses of all sizes to drive exceptional
-          customer experiences and unlock their full potential.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <p style={{ marginRight: 6, textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          We are committed to continuous innovation, pushing boundaries to
-          deliver cutting-edge{" "}
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>cloud communication software</strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          {" "}
-          that cater to the evolving needs of businesses. Our comprehensive
-          platform integrates various communication channels and advanced
-          features, enabling businesses to create meaningful connections and
-          enhance operational efficiency.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <p style={{ marginRight: 6, textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          With scalability and reliability at the core of our vision, we strive
-          to provide businesses worldwide with the tools to achieve seamless
-          growth, improved customer engagement, and streamlined communication
-          processes. We foster a culture of excellence, delivering outstanding
-          customer support and driving technological advancements.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <p style={{ marginRight: 6, textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          As we work towards our vision, we aim to be recognized as the trusted
-          partner for businesses seeking transformative communication
-          experiences. By leveraging cloud-based technologies, we empower
-          businesses to thrive in the digital era and make a lasting impact on
-          how they connect and engage with their audiences.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <h2 style={{ marginRight: 6, textAlign: "justify" }}>
-    <span style={{ fontSize: "16pt" }}>
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>Frequently Asked Questions&nbsp;</strong>
-        </span>
-      </span>
-    </span>
-  </h2>
-  <p>&nbsp;</p>
-  <ul>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>How can MSG91 benefit my business?</strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ul>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          MSG91 offers numerous benefits for businesses, including improved
-          customer engagement, streamlined communication workflows, increased
-          operational efficiency, and enhanced brand reputation. Our platform
-          enables businesses to automate communication, personalize
-          interactions, and reach their target audience through their preferred
-          channels.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <ol start={2}>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>
-              What makes MSG91 different from other communication platforms?
-            </strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ol>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          MSG91 stands out due to its reliability, scalability, and versatility.
-          We specialize in providing{" "}
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>mobile cloud communication platforms in India</strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          , addressing the unique needs of businesses in this market. Our
-          platform offers advanced features, customizable solutions, and
-          exceptional customer support to help businesses achieve their
-          communication goals.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <ol start={3}>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>Is MSG91 suitable for businesses of all sizes?</strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ol>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          Yes, MSG91 caters to businesses of all sizes. Whether you're a
-          startup, small business, or large enterprise, our platform can be
-          tailored to meet your specific requirements. We offer scalable
-          solutions that can accommodate the communication needs of businesses
-          as they grow and expand.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <ol start={4}>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>Is MSG91 secure?</strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ol>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          Security is a top priority at MSG91. We implement industry-standard
-          protocols and encryption techniques to ensure the confidentiality and
-          integrity of your data. Our{" "}
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>enterprise cloud communications platform</strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          {" "}
-          offers features like two-factor authentication and OTP verification to
-          enhance security and protect sensitive information.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <ol start={5}>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>
-              Can I integrate MSG91 with my existing systems or applications?
-            </strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ol>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          Absolutely! MSG91 provides developer-friendly APIs and documentation,
-          making it easy to integrate our platform with your existing systems or
-          applications. Our APIs allow you to incorporate our communication
-          functionalities seamlessly, enabling you to automate communication and
-          streamline your workflows.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <ol start={6}>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>What level of support can I expect from MSG91?</strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ol>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          At MSG91, we pride ourselves on offering excellent customer support.
-          Our dedicated support team is available 24/7 to assist you with any
-          queries, technical issues, or guidance you may need. We strive to
-          ensure a smooth experience and help you make the most out of our
-          platform.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <ol start={7}>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>How do I get started with MSG91?</strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ol>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          Getting started with MSG91 is simple. You can visit our website and
-          sign up for an account. Once you have an account, you can explore our{" "}
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>cloud-based communication platform in India</strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          , access the documentation and APIs, and start integrating our
-          communication solutions into your business processes.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-</>
+            <p className="my-3">
+              In a world brimming with competition and countless market players,
+              businesses are constantly seeking innovative ways to forge
+              stronger connections with their partners and captivate their
+              target audience. The art of successful communication becomes the
+              secret element that distinguishes the winners in this changing
+              environment. You need a game-changer to escape the ordinary and
+              leave an incredible impression. Introducing MSG91, transactional
+              sms service provider, the force that will transform the way you
+              interact with your audience. Prepare to set off on a trip where
+              connectivity takes on a whole new meaning and creativity has no
+              limitations. Businesses may easily engage with clients and channel
+              partners by utilizing MSG91's robust SMS API for Developers,
+              revolutionizing their communication strategies.
+            </p>
+            <div>
+              <div className="my-3 pt-3">
+                <div className="d-flex align-items-center gap-2 my-2">
+                  <MdCircle className="c-fs-5" />
+                  <h3 className="c-head c-fs-3 ">
+                    Engage Your Customers Globally With Quick, Scalable, and
+                    Customizable Messages
+                  </h3>
+                </div>
+                <p className="c-fs-4">
+                  At MSG91, we understand the importance of reaching your
+                  customers effectively, no matter where they are. Our powerful
+                  transactional SMS API India services enable you to engage with
+                  your audience globally, ensuring your messages are delivered
+                  quickly and efficiently.
+                </p>
+              </div>
+              <div className="my-3 ">
+                <div className="d-flex align-items-center gap-2 my-2">
+                  <MdCircle className="c-fs-5" />
+                  <h3 className="c-head c-fs-3 ">
+                    Integrate Our Developer-Friendly Apis To Send And Receive
+                    Text Messages
+                  </h3>
+                </div>
+                <p className="c-fs-4">
+                  With our developer-friendly APIs, integrating SMS capabilities
+                  into your existing systems and applications is a breeze. Our
+                  robust transactional SMS API India provides seamless
+                  integration, allowing you to send and receive text messages
+                  effortlessly.
+                </p>
+              </div>
+              <div className="my-3 ">
+                <div className="d-flex align-items-center gap-2 my-2">
+                  <MdCircle className="c-fs-5" />
+                  <h3 className="c-head c-fs-3 ">
+                    Distributed Carrier Network & Intelligent Routing For
+                    Highest Delivery and Lowest Latency
+                  </h3>
+                </div>
+                <p className="c-fs-4">
+                  Being a transactional sms provider in India, we take pride in
+                  our extensive distributed carrier network and intelligent
+                  routing system, ensuring the highest message delivery level
+                  and the lowest latency possible. With a transactional SMS
+                  provider in India, you can trust that your messages will reach
+                  their intended recipients promptly and reliably.
+                </p>
+              </div>
+            </div>
+            <div>
+              <h2 className="c-head c-fs-1 mt-5">Our Dynamic SMS Solutions</h2>
+              <div className="my-3">
+                <h3 className="c-fs-3 c-head my-2">
+                  Seamless Information Dissemination:
+                </h3>
+                <p className="c-fs-4">
+                  With MSG91', a transactional SMS service provider, businesses
+                  can efficiently disseminate information to their target
+                  audience. We ensure swift delivery using your network operator
+                  and, if needed, seamlessly switch to alternate operators for
+                  successful transmission. This comprehensive approach enables
+                  businesses to involve borrowers, stakeholders, and customers
+                  worldwide, creating a full-circle communication experience.
+                  Notably, MSG91, an SMS API service provider online, transcends
+                  geographical boundaries, allowing businesses to connect with
+                  customers across countries effortlessly.
+                </p>
+              </div>
+              <div className="my-3">
+                <h3 className="c-fs-3 c-head my-2">Multimedia Capabilities:</h3>
+                <p className="c-fs-4">
+                  To enhance communication experiences, SMS API service
+                  providers online enable businesses to send text, videos,
+                  pictures, and GIFs via SMS. This comprehensive multimedia
+                  support ensures businesses effectively convey their message,
+                  incorporating visual elements that capture attention and
+                  enhance engagemen
+                </p>
+              </div>
+              <div className="my-3">
+                <h3 className="c-fs-3 c-head my-2">
+                  Real-time Campaign Monitoring:
+                </h3>
+                <p className="c-fs-4">
+                  MSG91's intuitive dashboard empowers businesses to monitor SMS
+                  campaigns in real time. Through the dashboard, businesses can
+                  track campaign performance, analyze message delivery, and
+                  measure the effectiveness of call-to-action (CTA) links. This
+                  real-time monitoring capability enables businesses to make
+                  data-driven decisions and optimize communication strategies
+                  for better results.
+                </p>
+              </div>
+              <div className="my-3">
+                <h3 className="c-fs-3 c-head my-2">Opt-in Flexibility:</h3>
+                <p className="c-fs-4">
+                  Respecting customers' preferences, MSG91 allows recipients to
+                  choose whether they wish to receive messages through our
+                  transactional SMS API India service or not. This approach
+                  ensures that customers are not inundated with irrelevant
+                  information, fostering a more personalized and engaging
+                  communication experience. Administrators can easily manage
+                  user-level preferences, ensuring compliance and enhancing
+                  customer satisfaction.
+                </p>
+              </div>
+              <div className="my-3">
+                <h3 className="c-fs-3 c-head my-2">
+                  Multilingual Support for Global Reach:
+                </h3>
+                <p className="c-fs-4">
+                  To facilitate global communication, MSG91 offers multilingual
+                  support, allowing businesses to reach customers in their
+                  preferred language. This feature promotes an inclusive and
+                  interactive interaction, breaking language barriers and
+                  fostering stronger connections with diverse audiences.
+                </p>
+              </div>
+              <div className="my-3">
+                <h3 className="c-fs-3 c-head my-2">Dedicated 24/7 Support:</h3>
+                <p className="c-fs-4">
+                  MSG91, being among the best transactional SMS providers in
+                  India understands the importance of reliable support, so we
+                  provide all clients and partners with round-the-clock
+                  assistance. Our dedicated support teams are always ready to
+                  promptly address queries or concerns, ensuring a seamless
+                  business experience.
+                </p>
+              </div>
+            </div>
+            <div>
+              <h2 className="c-head c-fs-1 mt-5">
+                Benefits of Online SMS API Service Provider
+              </h2>
+              <div className="my-3">
+                <h3 className="c-fs-3 c-head my-2">Ease of Access:</h3>
+                <p className="c-fs-4">
+                  As a transactional SMS provider in India, we offer a
+                  user-friendly platform that allows you to access and manage
+                  your SMS services conveniently from anywhere with an internet
+                  connection.
+                </p>
+              </div>
+              <div className="my-3">
+                <h3 className="c-fs-3 c-head my-2">Scalability:</h3>
+                <p className="c-fs-4">
+                  With SMS API service provider online, you can easily scale
+                  your messaging capabilities based on your business needs.
+                  Whether you're sending a few messages or running large-scale
+                  campaigns, our platform can handle it.
+                </p>
+              </div>
+              <div className="my-3">
+                <h3 className="c-fs-3 c-head my-2">Comprehensive Features:</h3>
+                <p className="c-fs-4">
+                  Enjoy a range of features and functionalities, including
+                  message scheduling, personalized messaging, delivery tracking,
+                  and reporting, empowering you to optimize your SMS campaigns.
+                </p>
+              </div>
+              <div className="my-3">
+                <h3 className="c-fs-3 c-head my-2">Cost-Effectiveness:</h3>
+                <p className="c-fs-4">
+                  By choosing an online SMS or voice API for business, you can
+                  benefit from cost savings compared to traditional
+                  communication channels. Pay only for the SMS credits you use
+                  without needing additional hardware or infrastructure.
+                </p>
+              </div>
+              <div className="my-3">
+                <h3 className="c-fs-3 c-head my-2">Enhanced Security:</h3>
+                <p className="c-fs-4">
+                  SMS-based authentication through SMS authentication API adds
+                  an extra layer of security by requiring users to have physical
+                  access to their registered mobile phones to receive the OTP.
+                </p>
+              </div>
+            </div>
+            <div>
+              <h2 className="c-head c-fs-1 mt-5">FAQs</h2>
 
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      How does an SMS API work?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      An SMS API for developers provides functions, methods, and
+                      endpoints to interact with an SMS gateway. Developers can
+                      request the API to send messages, retrieve delivery
+                      reports, manage contacts, and perform other SMS-related
+                      operations. The API handles the processing and delivery of
+                      the messages, ensuring seamless communication between the
+                      application and the recipients.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseTwo"
+                    >
+                      How can an SMS API be used for transactional messages?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      An SMS API can send transactional messages, such as order
+                      confirmations, appointment reminders, and account
+                      notifications. Developers can integrate the API into their
+                      systems to trigger automated messages based on specific
+                      events or conditions, ensuring timely and relevant
+                      customer communication.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseThree"
+                    >
+                      How does an SMS authentication API work?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      When a user initiates the authentication process the
+                      application or system generates a unique OTP or
+                      verification code. The API then sends this code to the
+                      user's generated mobile number via SMS. The user receives
+                      the SMS and enters the code into the application or
+                      system, which verifies its correctness. If the code
+                      matches, the user is granted access or completes the
+                      authentication process successfully. This is how SMS
+                      authentication API works.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         )}
         <button className="btn btn-dark mt-3" onClick={handleReadMore}>
