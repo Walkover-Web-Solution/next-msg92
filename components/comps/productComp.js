@@ -2,8 +2,11 @@
 import React from 'react';
 import PreFooter from '../preFooter';
 import TrustedBy from '../trustedby';
+import Seo from '../seoComp';
 
-const ProductComponent = ({pageData, params }) => {
+
+const ProductComponent = ({pageData, path }) => {
+  // console.log(pageData.pagename,"ss")
   // console.log('ProductComponent',pageData);  
   var i = 0;
   return (
@@ -68,6 +71,7 @@ const ProductComponent = ({pageData, params }) => {
           }
         })}
       </div>
+      <Seo path={path} pageData={pageData.pagename} />
       <PreFooter />
     </div>
   );

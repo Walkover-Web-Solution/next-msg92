@@ -2,6 +2,8 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import TrustedBy from "@/components/trustedby";
 import Image from "next/image";
 import PreFooter from "../preFooter";
+import Seo from '../seoComp';
+
 const indexComp = ({pageData, params}) => {
   const path = params ? params?.country : "";  
   return (
@@ -475,6 +477,9 @@ const indexComp = ({pageData, params}) => {
           </div>
         </div>
       </div>
+
+      <Seo path={path} pageData={0} />
+
 
       <PreFooter />
     </>

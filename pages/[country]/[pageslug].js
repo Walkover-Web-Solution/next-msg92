@@ -7,7 +7,7 @@ const mainpage = ({ pageData, params, path }) => {
   // console.log(pageData);
   var page = pageData?.pagename;
   var code = pageData?.code;
-  var Dataa = pageData
+  var Dataa = pageData;
   var channels = ['SMS','Email','WhatsApp','Voice'];
   // console.log(params)
   // console.log(Dataa);
@@ -40,7 +40,7 @@ const mainpage = ({ pageData, params, path }) => {
       return (
         <>
           <div>
-            <ProductComponent pageData={Dataa} params={params} />
+            <ProductComponent pageData={Dataa} path={path} />
           </div>
         </>
       );
