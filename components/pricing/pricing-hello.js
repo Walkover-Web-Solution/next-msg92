@@ -40,15 +40,15 @@ const pricinghello = ({ countryCode }) => {
         <div className="column text-start">
           <div className="row c-head c-fs-3 py-2  border-bottom">
             <div className="col-4"></div>
-            <div className="col">Free Plan</div>
-            <div className="col">Basic Plan</div>
-            <div className="col">Premium Plan</div>
+            <div className="col">Free</div>
+            <div className="col">Basic</div>
+            <div className="col">Premium</div>
           </div>
           <div className="row py-2  border-bottom">
             <div className="col-4"></div>
             <div className="col d-flex flex-column">
               <span className="c-fs-1 c-head text-green">Free</span>
-              <span className="c-fs-4 c-head">14 Days Trial Plan</span>
+              <span className="c-fs-4 c-head">(14 Days Trial)</span>
             </div>
             <div className="col d-flex flex-column gap-2">
               <span className="c-fs-1 c-head text-green">{basicprice}</span>
