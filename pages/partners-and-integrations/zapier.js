@@ -2,6 +2,7 @@ import data from "@/data/int.json";
 import { useRouter } from "next/router";
 import TrustedBy from "components/trustedby";
 import { MdDone } from "react-icons/md";
+import Head from "next/head";
 
 const Zapier = () => {
   // const router = useRouter();
@@ -13,6 +14,18 @@ const Zapier = () => {
 
   return (
     <>
+     <Head>
+        <script
+          type="module"
+          src="https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.esm.js"
+        ></script>
+        <link
+          rel="stylesheet"
+          href="https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.css"
+        />
+      </Head>
+
+
       <div className="int-page-head d-flex py-3">
         <div className="container d-flex align-items-center gap-4">
           <img src="\img\integrations\zapeir-logo.svg" />
@@ -125,6 +138,17 @@ const Zapier = () => {
           <p className="c-fs-2">Pre-build templates</p>
         </div>
       </div>
+      <div className="container mb-4">
+      <zapier-zap-templates
+        theme="light"
+        apps="msg91"
+        create-without-template="hide"
+        limit="10"
+        link-target="new-tab"
+        presentation="row"
+        use-this-zap="show"
+        ></zapier-zap-templates>
+        </div>
       <div className="d-flex flex-column flex-md-row container align-items-center justify-content-between my-5">
         <h2 className="c-head c-fs-1 col-12 col-md-8 text-center text-md-start">
         Enhance your communication capabilities and automate your engagement tasks
