@@ -1,23 +1,54 @@
-$int-page-head-prime-color:11%;
+:root {
+    --int-page-head-prime-color: 11%;
+    --zapier:#ff7136;
+    --firebase:#FFCC30;
+    --freshworks:#2AC89C;
+    --hubspot:#FF6C49;
+   
+  }
+  @mixin intpagecol{
+    &.zapier {
+        --int-page-color: var(--zapier);
+      }
+      
+      &.firebase {
+        --int-page-color: var(--firebase);
+      }
+      &.freshworks {
+        --int-page-color: var(--freshworks);
+      }
+      &.hubspot {
+        --int-page-color: var(--hubspot);
+      }
 
-.int-page-head{
-    background: linear-gradient(90deg, #FF7136 $int-page-head-prime-color,  rgba(242, 242, 243, 0.91995) $int-page-head-prime-color, #F2F2F3 100%);
-    div{
-        img{
-            width: 90px;
-        }
+  }
+  
+  .int-page-head {
+
+    @include intpagecol();
+  
+    background: linear-gradient(
+      90deg,
+      var(--int-page-color) var(--int-page-head-prime-color),
+      rgba(242, 242, 243, 0.91995) var(--int-page-head-prime-color),
+      #F2F2F3 100%
+    );
+  
+    div {
+      img {
+        width: 90px;
+      }
     }
-}
-
-.col-zapier{
-   color:  #FF7136;
-}
+  }
+  
+  .col-int {
+    @include intpagecol();
+    color: var(--int-page-color);
+  }
+  
 .int-feature-box{
     background-color: #F2F2F3;
     h3{
-
         font-size: 24px;
     }
-}
-.int-page-graphic{
 }

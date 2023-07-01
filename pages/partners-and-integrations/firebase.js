@@ -1,10 +1,7 @@
-import data from "@/data/int.json";
-import { useRouter } from "next/router";
 import TrustedBy from "components/trustedby";
 import { MdDone } from "react-icons/md";
-import Head from "next/head";
 
-const Zapier = () => {
+const IntPage = () => {
   // const router = useRouter();
   // var browserPath = router.asPath;
   // var intpage = browserPath.split("/")[2];
@@ -14,23 +11,11 @@ const Zapier = () => {
 
   return (
     <>
-     <Head>
-        <script
-          type="module"
-          src="https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.esm.js"
-        ></script>
-        <link
-          rel="stylesheet"
-          href="https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.css"
-        />
-      </Head>
-
-
-      <div className="int-page-head zapier d-flex py-3">
+      <div className="int-page-head firebase d-flex py-3">
         <div className="container d-flex align-items-center gap-4">
-          <img src="\img\integrations\zapeir-logo.svg" />
+          <img src="\img\integrations\firebase-logo.svg" />
           <div>
-            <h1 className="sub-heading">Zapier Integration</h1>
+            <h1 className="sub-heading">Firebase Integration</h1>
             <h4 className="c-fs-4 mt-2">
               Streamline Your Engagement Workflows
             </h4>
@@ -42,14 +27,12 @@ const Zapier = () => {
           <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
             <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
               <h1 className={`heading page-title`}>
-                Engage Effectively With Zapier
+                Engage Effectively With Firebase
               </h1>
             </div>
             <div className="p-3">
               <p className="c-fs-4 w-md-75 w-100 mx-auto fw-normal">
-                MSG91 can integrate with 5000+ apps via Zapier so you can
-                automate your business workflows and customer engagement with
-                ease, without embedding any code.
+              The MSG91 Firebase Plugin allows users to send messages from a collection of documents in real time. Automate your customer engagement with ease, send cost-effective SMS, schedule updates from Firebase, without embedding any code
               </p>
               <a
                 href="https://control.msg91.com/signup/"
@@ -58,8 +41,7 @@ const Zapier = () => {
                 Get The Plugin
               </a>
               <h2 className="c-fs-4 w-md-75 w-100 mx-auto fw-normal">
-                Effortlessly integrate SMS, Email, RCS, Voice, WhatsApp with
-                CRM, Project Management Tools, E-Commerce Platforms, and more.
+              Effortlessly integrate SMS, Email, RCS, Voice, WhatsApp with Firebase / Firestore
               </h2>
             </div>
           </div>
@@ -76,15 +58,15 @@ const Zapier = () => {
         </h2>
         <div className="row my-4 gap-5">
           <div className=" d-flex col flex-column align-items-center  gap-2 p-5 int-feature-box ">
-            <MdDone className="sub-heading col-int zapier" />
+            <MdDone className="sub-heading col-int firebase" />
             <h3>Automate engagement tasks</h3>
           </div>
           <div className=" d-flex col flex-column align-items-center  gap-2 p-5 int-feature-box ">
-            <MdDone className="sub-heading col-int zapier" />
+            <MdDone className="sub-heading col-int firebase" />
             <h3>Streamline communication processes</h3>
           </div>
           <div className=" d-flex col flex-column align-items-center  gap-2 p-5 int-feature-box ">
-            <MdDone className="sub-heading col-int zapier" />
+            <MdDone className="sub-heading col-int firebase" />
             <h3>Enhance Overall Efficiency</h3>
           </div>
         </div>
@@ -123,18 +105,18 @@ const Zapier = () => {
       </div>
       <div className="container my-5">
         <h1 className="sub-heading c-head mb-3">
-          The MSG91 Zapier Plugin Offers
+          The MSG91 Firebase Plugin Offers
         </h1>
         <div className="d-flex align-items-center gap-2 my-3">
-          <MdDone className="c-fs-1 col-int zapier" />
+          <MdDone className="c-fs-1 col-int firebase" />
           <p className="c-fs-2">A user-friendly interface</p>
         </div>
         <div className="d-flex align-items-center gap-2 my-3">
-          <MdDone className="c-fs-1 col-int zapier" />
+          <MdDone className="c-fs-1 col-int firebase" />
           <p className="c-fs-2">Intuitive setup process</p>
         </div>
         <div className="d-flex align-items-center gap-2 my-3">
-          <MdDone className="c-fs-1 col-int zapier" />
+          <MdDone className="c-fs-1 col-int firebase" />
           <p className="c-fs-2">Pre-build templates</p>
         </div>
       </div>
@@ -155,11 +137,11 @@ const Zapier = () => {
         </h2>
         <a>
           <button className="btn btn-dark btn-lg c-fs-2 my-4">
-          Get The MSG91 Zapier Plugin
+          Get The MSG91 Firebase Plugin
           </button>
         </a>
       </div>
     </>
   );
 };
-export default Zapier;
+export default IntPage;
