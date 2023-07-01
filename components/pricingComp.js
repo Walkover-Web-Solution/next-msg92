@@ -44,27 +44,24 @@ const PricingComp = ({ countryCode }) => {
     }
   };
 
-  const fetchSMSData = async (currency, origin, destination) => {
-    setOriginCountry(origin);
-    setDestinationCountry(destination);
-    //console.log('fetchsmsdata', currency, origin, destination, countryCode);
-    amountArr = origin == "India" && currency == "INR" ? amountArr : ["5000"];
-    changeCurrencySymbol(currency);
-    var newData = [];
-    let i = 0;
-    for (; i < amountArr.length; i++) {
-      const response = await axios.get(
-        `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-      );
-      // const response = await axios.get(
-      //   `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-      // );
-      //const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
-      newData.push(response.data.data);
-    }
-    setPricing([...newData]);
-  };
 
+    const fetchSMSData = async (currency, origin, destination) => {
+      setOriginCountry(origin);
+      setDestinationCountry(destination);
+      //console.log('fetchsmsdata', currency, origin, destination, countryCode);
+      amountArr = (origin == 'India') && (currency == 'INR') ? amountArr : ['5000'];
+      changeCurrencySymbol(currency);
+      var newData = [];
+      let i=0;
+      for(;i<amountArr.length;i++){
+        //const response = await axios.get(`https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
+        const response = await axios.get(`https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
+        //const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
+        newData.push(response.data.data)
+      }
+      setPricing([...newData])
+    };
+        
   const fetchSubscriptionEmail = async (currency, msId) => {
     changeCurrencySymbol(currency);
     const response = await axios.get(
@@ -99,14 +96,15 @@ const PricingComp = ({ countryCode }) => {
   };
 
   const findCountry = async (code) => {
-    const response = await countries?.find((el) => el.sortname === code);
-    //console.log('findCountry, response?.currency:', response?.currency);
+    const response = await countries?.find(el => el.sortname === code);        
+    //console.log('findCountry, response?.currency:', response?.currency, 'code', code);
     setCurrency(response?.currency);
     fetchSMSData(response?.currency, response?.name, response?.name);
   };
 
   useEffect(() => {
     findCountry(countryCode);
+    //console.log('useeffect', countryCode);
   }, [countryCode]);
 
   return (

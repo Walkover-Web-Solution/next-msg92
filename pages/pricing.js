@@ -15,8 +15,9 @@ const pricingmain = () => {
         console.log("error", error);
       });
   }, []);
-  console.log("ssss",code.length,"code");
-  if ( code.length == 0 && code !== "[COUNTRY]" ) {
+  console.log("ssss",code.length,"code", code);
+  if ( code.length !== 0 && code !== "[COUNTRY]" ) {
+    //console.log("rrrrrrrr",code.length,"code", code);
     return <PricingComp countryCode={code} />;
   } else {
     return (

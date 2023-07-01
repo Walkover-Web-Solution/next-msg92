@@ -24,7 +24,7 @@ const Pricingsms = ({
       setDestinationCountry(destinationCountry)
     } */
 
-    console.log(originCountry, destinationCountry);
+    // console.log(originCountry, destinationCountry);
   }, [pricing, originCountry, destinationCountry]);  
   return (
     <>

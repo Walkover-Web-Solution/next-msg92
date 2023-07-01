@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MdCircle } from "react-icons/md";
 
 const Insms = () => {
-  console.log("sms from seo")
+  // console.log("sms from seo")
 
   const [showInsms, setShowInsms] = useState(false);
 
@@ -37,7 +37,7 @@ const Insms = () => {
               target audience. The art of successful communication becomes the
               secret element that distinguishes the winners in this changing
               environment. You need a game-changer to escape the ordinary and
-              leave an incredible impression. Introducing MSG91, transactional
+              leave an incredible impression. Introducing <a href="https://msg91.com/" target="_blank">MSG91</a>, transactional
               sms service provider, the force that will transform the way you
               interact with your audience. Prepare to set off on a trip where
               connectivity takes on a whole new meaning and creativity has no
@@ -210,7 +210,7 @@ const Insms = () => {
               <div className="my-3">
                 <h3 className="c-fs-3 c-head my-2">Cost-Effectiveness:</h3>
                 <p className="c-fs-4">
-                  By choosing an online SMS or voice API for business, you can
+                  By choosing an online SMS or <a href="https://msg91.com/in/voice" target="_blank">voice API for business</a>, you can
                   benefit from cost savings compared to traditional
                   communication channels. Pay only for the SMS credits you use
                   without needing additional hardware or infrastructure.
