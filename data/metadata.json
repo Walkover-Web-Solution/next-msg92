@@ -474,5 +474,31 @@
     "/no-spam": {
         "title": "No spam policy",
         "description":"No spam policy Terms Privacy policy GDPR Refund policy Cookie policy Startup policy Fair pricing policy No spam We don’t SPAM and won’t accept anyone’s either!Any unsolicited, unexpected or unwanted SMS sent to the recipients in order to mislead them is considered SPAM by us. Also, if you send messages to unregistered users- SPAM. MSG91’s..."
+    },
+    "Integration Pages ******************************":{},
+    "/partners-and-integrations/zapier":{
+        "title": "Connect your app with Zapier | Intergrate with MSG91",
+        "description":"Zapier is a powerful automation tool that allows you to seamlessly integrate MSG91.With Zapier, you can automate your workflow and send whatsapp message,email and voice message that eliminate the need for manual intervention."
+
+    },
+    "/partners-and-integrations/firebase":{
+        "title": "Firebase Integration | Connect your apps with MSG91",
+        "description":"We help you to effortlessly integrate with Firebase, providing a no-code automation solution to streamline your workflows and automate text message,whatsapp and email. Connect with MSG91 now."
+
+    },
+    "/partners-and-integrations/freshworks":{
+        "title": "Automate your Message | Send SMS, Email and Whatsapp - MSG91",
+        "description":"You can now automate your message to the customer integrating with Freshworks. Connect them with text messgae, email or whatsapp and and increase your customer reach. Connect with MSG91 now."
+
+    },
+    "/partners-and-integrations/hubspot":{
+        "title": "Hubspot Intergration | Connect your apps with MSG91",
+        "description":"With Hubspot you can automate your workflows that connect your MSG91 account with other applications. Whether its sending transactional emails, send sms or updating contact information, we provide a flexible solution for automating for messaging tasks."
+
+    },
+    "/partners-and-integrations/tally":{
+        "title": "Send SMS | Transactional email Service Provider in India - MSG91",
+        "description":"Tally TDL add-on helps streamline your business processes by automating the communication workflow. Send important transaction sms, emails, voice messages and quick updates directly from tally. Connect with MSG91 now."
+
     }
 }
