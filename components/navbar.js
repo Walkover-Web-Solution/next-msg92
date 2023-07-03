@@ -3,7 +3,7 @@ import Mininav from "./mininav";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import $ from "jquery";
-import { MdSegment } from "react-icons/md";
+import { MdSegment,MdClose } from "react-icons/md";
 import ProductMenu from "./productmenu";
 import Notification from "./notification";
 
@@ -108,7 +108,8 @@ const navbar = ({ brawserPath }) => {
               <div className="nav-line"></div>
             </a>
           </div>
-          <div className="msg91-logo-cont  align-items-center justify-content-center d-flex">
+          
+          <div className="msg91-logo-cont  align-items-center justify-content-center d-flex" id="main-logo">
             <a href={`${path}/`}>
               <img className="msg91-logo" src="/img/logo.svg" alt="MSG91" />
             </a>
@@ -151,7 +152,7 @@ const navbar = ({ brawserPath }) => {
                 setShow(!show);hideNotification();handleClick();
               }}
               />
-            <MdSegment
+            <MdClose
               className="c-fs-1 two d-none z-mininav"
               id="mininav-tog-hidden"
               onClick={() => {
