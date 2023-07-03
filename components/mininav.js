@@ -7,8 +7,8 @@ const Mininav = ({ path }) => {
   
   return (
     <>
-      <div className="mininav" id="mininav">
-        <div className="overlay-menu d-flex flex-wrap gap-3 p-3 mininav-cont">
+      <div className="mininav container d-md-none d-block" id="mininav">
+        <div className="overlay-menu container d-flex flex-wrap gap-3 p-3 mininav-cont">
           <div className="menu mt-4 d-flex flex-column ">
             <p className="c-fs-3 c-fw-sb text-grey text-uppercase ">
               Applications

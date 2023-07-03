@@ -79,9 +79,10 @@ nav {
   top:0px;
   overflow-y: auto;
   background-color: white;
-  width: 100vw;
+  width: 100vw!important;
   height: 100vh;
   .mininav-cont{
+    width: 100%;
     top: 50px;
     position: relative;
     height: fit-content;

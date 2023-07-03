@@ -50,7 +50,7 @@ const navbar = ({ brawserPath }) => {
       $("body").removeClass("overflow-hidden");
       $("#mininav-tog-hidden").addClass("d-none");
       $("#mininav-tog-open").addClass("d-block");
-      $("#mininav-tog-hidden").removeClass("d-none");
+      $("#mininav-tog-open").removeClass("d-none");
     });
     
   }, []);
