@@ -13,10 +13,12 @@ const navbar = ({ brawserPath }) => {
   path = path.length == 2 ? "/" + path : "";
   const [showOverlay, setShowOverlay] = useState(false);
   const [show, setShow] = useState(false);
+  var mininav_notification = "d-block";
   const toggleOverlay = () => {
     setShowOverlay(true);
   };
 
+ 
   useEffect(() => {
     $("#product-link").on("mouseenter", function () {
       $("#overlaymenucont, #productmenu, #bgoverlay").addClass("active");
@@ -52,13 +54,30 @@ const navbar = ({ brawserPath }) => {
       $("#mininav-tog-open").addClass("d-block");
       $("#mininav-tog-open").removeClass("d-none");
     });
-    
   }, []);
+  var notification_class = "d-block";
+  function showNotification() {
+   var notification_class = "d-block";
+    console.log(notification_class,"sss");
+  }
+  function hideNotification() {
+    var notification_class = "d-none";
+    console.log(notification_class,"ss");
+  }
+  const [showInnerComponent, setShowInnerComponent] = useState(true);
 
+  const handleClick = () => {
+    setShowInnerComponent(!showInnerComponent);
+  };
   return (
     <>
+  <div className="d-block d-md-none">
+      {showInnerComponent && <Notification mininav={notification_class} />}
+    </div>    
+      {show && <Mininav path={path} />}
+      <div className="d-none d-md-block">
       <Notification />
-      {show && <Mininav path={path}/>}
+      </div>
       <nav className="w-100 py-2 sticy align-items-center d-flex " id="navbar">
         <div className="container relative d-none align-items-center d-md-flex justify-content-between c-fs-4 c-fw-m nav-menu-cont">
           <div className=" d-flex gap-4 gap-lg-4 gap-xl-5 w-nav-menu align-items-center justify-content-start nav-menu">
@@ -121,11 +140,25 @@ const navbar = ({ brawserPath }) => {
               <img className="msg91-logo" src="/img/logo.svg" alt="MSG91" />
             </a>
           </div>
-          <div style={{'height':'40px', 'width':'40px'}} className="d-flex justify-content-center align-items-center">
-            <MdSegment className="c-fs-1 one " id="mininav-tog-open" onClick={()=>{setShow(!show)}}/>
-            <MdSegment className="c-fs-1 two d-none z-mininav" id="mininav-tog-hidden" onClick={()=>{setShow(!show)}}/>
+          <div
+            style={{ height: "40px", width: "40px" }}
+            className="d-flex justify-content-center align-items-center"
+          >
+            <MdSegment
+              className="c-fs-1 one "
+              id="mininav-tog-open"
+              onClick={() => {
+                setShow(!show);hideNotification();handleClick();
+              }}
+              />
+            <MdSegment
+              className="c-fs-1 two d-none z-mininav"
+              id="mininav-tog-hidden"
+              onClick={() => {
+                setShow(!show);showNotification();handleClick();
+              }}
+            />
           </div>
-          
         </div>
       </nav>
     </>

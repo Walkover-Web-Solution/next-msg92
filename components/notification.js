@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import $ from "jquery";
 import { useRouter } from "next/router";
 import countries from "@/data/countries.json";
-const Notification = () =>{
+const Notification = (mininav) =>{
     const router = useRouter();
     var path = router.asPath.split("/")[1];
     var country = "Global";
@@ -30,6 +30,7 @@ const Notification = () =>{
       }); */
 
     }, []);
+    console.log(mininav,"hehhe")
     return (
         <>
         <div className="section b-bottom-1">
