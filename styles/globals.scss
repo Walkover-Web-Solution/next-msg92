@@ -53,6 +53,7 @@ body {
   z-index: 24;  
 }
 nav {
+  background: white;
   height: 80px;
   .msg91-logo-cont {
     height: fit-content;
@@ -69,11 +70,23 @@ nav {
 .w-nav-menu {
   width: 33%;
 }
-#mininav {
-  background-color: white;
-  z-index: 5;
+.z-mininav{
+  z-index: 101;
   position: absolute;
-  top: 100px;
+}
+.mininav{
+  position: fixed;
+  top:0px;
+  overflow-y: auto;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  .mininav-cont{
+    top: 50px;
+    position: relative;
+    height: fit-content;
+    margin-bottom: 100px;
+  }
 }
 .pro-heading {
   font-size: clamp(20px, 3vw, 30px);

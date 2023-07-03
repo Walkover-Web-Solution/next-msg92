@@ -40,6 +40,19 @@ const navbar = ({ brawserPath }) => {
       ).removeClass("active");
       $("body").removeClass("oh");
     });
+    $("#mininav-tog-open").on("click", function () {
+      $("body").addClass("overflow-hidden");
+      $("#mininav-tog-open").addClass("d-none");
+      $("#mininav-tog-hidden").addClass("d-block");
+      $("#mininav-tog-hidden").removeClass("d-none");
+    });
+    $("#mininav-tog-hidden").on("click", function () {
+      $("body").removeClass("overflow-hidden");
+      $("#mininav-tog-hidden").addClass("d-none");
+      $("#mininav-tog-open").addClass("d-block");
+      $("#mininav-tog-hidden").removeClass("d-none");
+    });
+    
   }, []);
 
   return (
@@ -109,7 +122,8 @@ const navbar = ({ brawserPath }) => {
             </a>
           </div>
           <div style={{'height':'40px', 'width':'40px'}} className="d-flex justify-content-center align-items-center">
-            <MdSegment className="c-fs-1" onClick={()=>{setShow(!show)}}/>
+            <MdSegment className="c-fs-1 one " id="mininav-tog-open" onClick={()=>{setShow(!show)}}/>
+            <MdSegment className="c-fs-1 two d-none z-mininav" id="mininav-tog-hidden" onClick={()=>{setShow(!show)}}/>
           </div>
           
         </div>

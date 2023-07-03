@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
+import $ from "jquery";
+
 
 const Mininav = ({ path }) => {
+  
   return (
     <>
-        <div className="overlay-menu d-flex flex-wrap gap-3 p-3 " id="mininav">
+      <div className="mininav" id="mininav">
+        <div className="overlay-menu d-flex flex-wrap gap-3 p-3 mininav-cont">
           <div className="menu mt-4 d-flex flex-column ">
             <p className="c-fs-3 c-fw-sb text-grey text-uppercase ">
               Applications
@@ -147,7 +151,7 @@ const Mininav = ({ path }) => {
             </a>
           </div>
         </div>
-      
+      </div>
     </>
   );
 };
