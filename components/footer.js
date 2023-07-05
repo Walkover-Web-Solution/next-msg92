@@ -151,7 +151,7 @@ const Footer = ({path, year}) => {
                     className="me-4"
                   >
                     <img
-                      src="../img/icon/android.svg"
+                      src="./img/icon/android.svg"
                       width={20}
                       height={23}
                       alt="#"
@@ -162,7 +162,7 @@ const Footer = ({path, year}) => {
                     target="_blank"
                   >
                     <img
-                      src="../img/icon/apple.svg"
+                      src="./img/icon/apple.svg"
                       width={20}
                       height={24}
                       alt="#"
@@ -181,7 +181,7 @@ const Footer = ({path, year}) => {
                     className="me-4"
                   >
                     <img
-                      src="../img/icon/facebook.svg"
+                      src="./img/icon/facebook.svg"
                       width={24}
                       height={24}
                       alt="#"
@@ -193,7 +193,7 @@ const Footer = ({path, year}) => {
                     className="me-4"
                   >
                     <img
-                      src="../img/icon/linkedin.svg"
+                      src="./img/icon/linkedin.svg"
                       width={24}
                       height={24}
                       alt="#"
@@ -205,7 +205,7 @@ const Footer = ({path, year}) => {
                     className="me-4"
                   >
                     <img
-                      src="../img/icon/twitter.svg"
+                      src="./img/icon/twitter.svg"
                       width={24}
                       height={24}
                       alt="#"
@@ -213,7 +213,7 @@ const Footer = ({path, year}) => {
                   </a>
                   <a href="https://www.youtube.com/@WalkoverWS" target="_blank">
                     <img
-                      src="../img/icon/youtube.svg"
+                      src="./img/icon/youtube.svg"
                       width={24}
                       height={24}
                       alt="#"
@@ -268,7 +268,7 @@ const Footer = ({path, year}) => {
                 <span>
                   A product of{" "}
                   <img
-                    src="../img/walkover.svg"
+                    src="./img/walkover.svg"
                     width={20}
                     height={20}
                     alt="#"
