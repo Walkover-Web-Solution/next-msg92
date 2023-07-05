@@ -1,7 +1,6 @@
 import React from "react";
 
 const CaseStudyCard = ({ caseStudies }) => {
-    console.log(caseStudies,"dss")
     var caseStudyData = caseStudies.caseStudies
     function tagLinkFun(tag) {
         const route = "/case-studies/tag/"
