@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
       <>
       <Headcomp brawserPath={brawserPath} />
       <Navbar brawserPath={brawserPath} />
-      <Component {...pageProps} path={path}/>
+      <Component {...pageProps} path={path} browserPath={brawserPath} />
       <Footer path={path} year={year} />
     </>
     );
