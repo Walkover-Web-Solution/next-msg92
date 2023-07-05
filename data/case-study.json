@@ -1,0 +1,40 @@
+{
+    "caseStudies": [
+      {
+        "heading": "Azim Premji Foundation informs teachers and trainers using SMS via MSG91",
+        "content": "Azim Premji Foundation is an NGO which works in the fields of Education. With the vision to help people with proper education by conducting classes and creating awareness, Azim Premji Foundation has been rigorously working on coordinating with the teachers for social welfare.",
+        "link": "./case-studies/azimpremji",
+        "img": "/img/azim-premji.png",
+        "tags": [
+          "NGO",
+          "Transaction SMS",
+          "Unicode"
+        ]
+      },
+      {
+        "heading": "Craypolar communicates with its customers using SMS via MSG91",
+        "content": "Craypolar provides CRM services to Gym and Fitness centres, where they communicate to their customers information, offers and updates regularly. With the vision to help the customers get seamless fitness services in time, Craypolar has been rigorously working on the operations for the customer’s welfare.",
+        "link": "./case-studies/crazypolar",
+        "img": "/img/crazypolar.png",
+        "tags": [
+          "CRM",
+          "Services",
+          "Startup",
+          "Transactional SMS"
+        ]
+      },
+      {
+        "heading": "Ixigo ensures seamless communication using SMS via MSG91",
+        "content": "Ixigo provides travel and hospitality based services, where they communicate information, offers and updates to their customers regularly. With the vision to help the customers get seamless travel and hospitality services in time, Ixigo has been rigorously working on the operations for the customer’s welfare.",
+        "link": "./case-studies/ixigo",
+        "img": "/img/ixigo.png",
+        "tags": [
+          "Food Travel and Hospitality",
+          "Promotional SMS",
+          "Services",
+          "Transactional SMS"
+        ]
+      }
+    ]
+  }
+  
