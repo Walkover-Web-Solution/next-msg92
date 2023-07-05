@@ -57,7 +57,7 @@ const casestudycard = () => {
                 </a>
 
 
-                <a href="./case-studies/milkbasket" className="casestudycard  mx-auto c-bg-grey d-flex gap-3 flex-column p-2">
+                <a  href="./case-studies/milkbasket" className="casestudycard  mx-auto c-bg-grey d-flex gap-3 flex-column p-2">
                     <div className=" casestudycard-img w-100 bg-white ">
                         <img className="ms-4" src="/img/milkbasket.png" />
                     </div>
