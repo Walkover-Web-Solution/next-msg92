@@ -6,6 +6,7 @@ const pricingmain =()=>{
   // const { slug } = router.query; 
   var  brawserPath = router.asPath;
   var path = brawserPath.split("/")[1];
+  var product = brawserPath.split("/")[3];
 
   const getCountryCode = () => {
     var countryCode = path?.toUpperCase();
@@ -17,9 +18,9 @@ const pricingmain =()=>{
   } 
   const data=getCountryCode();
   //console.log(678, data);
-  if(data!=='[COUNTRY]' && data.length!==0){
+  if(data!=='[COUNTRY]' && data.length!==0 && product!== "product"){
     return (
-      <PricingComp countryCode={data}/>
+      <PricingComp countryCode={data} product={product}/>
   );
 }
 else{

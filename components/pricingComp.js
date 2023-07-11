@@ -4,8 +4,20 @@ import { InlineWidget } from "react-calendly";
 import { useRouter } from "next/router";
 import countries from "@/data/countries.json";
 
-const PricingComp = ({ countryCode }) => {
+import Pricingemail from "@/components/pricing/pricing-email";
+import Pricingsms from "@/components/pricing/pricing-sms";
+import Pricingvoice from "@/components/pricing/pricing-voice";
+import Pricingotp from "@/components/pricing/pricing-otp";
+import Pricingwp from "@/components/pricing/pricing-whatsapp";
+import Pricinghello from "@/components/pricing/pricing-hello";
+import Pricingsegmento from "@/components/pricing/pricing-segmento";
+import Pricingcampaign from "@/components/pricing/pricing-campaign";
+import Pricingrcs from "@/components/pricing/pricing-rcs";
+import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
+
+const PricingComp = ({ countryCode, product }) => {
   //console.log('PricingComp countryCode', countryCode);
+  console.log("PricingComp product", product);
   var [pricing, setPricing] = useState([]);
   var [originCountry, setOriginCountry] = useState("");
   var [destinationCountry, setDestinationCountry] = useState("");
@@ -100,21 +112,29 @@ const PricingComp = ({ countryCode }) => {
   return (
     <>
       <div>
-        <div  className=" my-4 d-flex w-100 align-items-center justify-content-center flex-wrap" id="pricing-pills-tab">
-          <a href="sms" className="nav-item"
-          onClick={() => {
-            fetchSMSData(currency, originCountry, destinationCountry);
-          }}
+        <div
+          className=" my-4 d-flex w-100 align-items-center justify-content-center flex-wrap"
+          id="pricing-pills-tab"
+        >
+          <a
+            href="sms"
+            className="nav-item"
+            onClick={() => {
+              fetchSMSData(currency, originCountry, destinationCountry);
+            }}
           >
             <span className="nav-link active">
               <img src="/img/icon/sms.svg" alt="#" />
               SMS
             </span>
           </a>
-          <a href="email" className="nav-item" onClick={() => {
-                      fetchSubscriptionEmail(currency, "1");
-                    }}
-                    >
+          <a
+            href="email"
+            className="nav-item"
+            onClick={() => {
+              fetchSubscriptionEmail(currency, "1");
+            }}
+          >
             <span className="nav-link">
               <img src="/img/icon/email.svg" alt="#" />
               Email
@@ -126,10 +146,12 @@ const PricingComp = ({ countryCode }) => {
               Voice
             </span>
           </a>
-          <a href="whatsapp" className="nav-item"
-          onClick={() => {
-            fetchSubscriptionWhatsapp(currency, "5");
-          }}
+          <a
+            href="whatsapp"
+            className="nav-item"
+            onClick={() => {
+              fetchSubscriptionWhatsapp(currency, "5");
+            }}
           >
             <span className="nav-link">
               <img src="/img/icon/whatsapp.svg" alt="#" />
@@ -142,10 +164,12 @@ const PricingComp = ({ countryCode }) => {
               RCS
             </span>
           </a>
-          <a href="otp" className="nav-item"
-          onClick={() => {
-            fetchSMSData(currency, originCountry, destinationCountry);
-          }}
+          <a
+            href="otp"
+            className="nav-item"
+            onClick={() => {
+              fetchSMSData(currency, originCountry, destinationCountry);
+            }}
           >
             <span className="nav-link">
               <img src="/img/icon/otp.svg" alt="#" />
@@ -158,10 +182,12 @@ const PricingComp = ({ countryCode }) => {
               Hello
             </span>
           </a>
-          <a href="segmento" className="nav-item"
-           onClick={() => {
-            fetchSubscriptionSegmento(currency, "2");
-          }}
+          <a
+            href="segmento"
+            className="nav-item"
+            onClick={() => {
+              fetchSubscriptionSegmento(currency, "2");
+            }}
           >
             <span className="nav-link">
               <img src="/img/icon/segmento.svg" alt="#" />
@@ -181,6 +207,75 @@ const PricingComp = ({ countryCode }) => {
             </span>
           </a>
         </div>
+      </div>
+      <div className="my-5">
+        {product === "sms" && (
+          <Pricingsms
+            amountArr={amountArr}
+            pricing={pricing}
+            setPricing={setPricing}
+            fetchSMSData={fetchSMSData}
+            originCountry={originCountry}
+            setOriginCountry={setOriginCountry}
+            destinationCountry={destinationCountry}
+            setDestinationCountry={setDestinationCountry}
+            currency={currency}
+            currencySymbol={currencySymbol}
+          />
+        )}
+
+        {product === "email" && (
+          <Pricingemail
+            subscriptionEmail={subscriptionEmail}
+            fetchSubscriptionEmail={fetchSubscriptionEmail}
+            currency={currency}
+            currencySymbol={currencySymbol}
+          />
+        )}
+        {product === "voice" && (
+          <Pricingvoice
+            subscriptionVoice={subscriptionVoice}
+            fetchSubscriptionVoice={fetchSubscriptionVoice}
+            currency={currency}
+            setCurrencySymbol={setCurrencySymbol}
+            countryCode={countryCode}
+          />
+        )}
+        {product === "whatsapp" && (
+          <Pricingwp
+            subscriptionWhatsapp={subscriptionWhatsapp}
+            fetchSubscriptionWhatsapp={fetchSubscriptionWhatsapp}
+            currency={currency}
+            currencySymbol={currencySymbol}
+            oneTimeWtsAppFee={oneTimeWtsAppFee}
+          />
+        )}
+        {product === "rcs" && <Pricingrcs />}
+        {product === "otp" && (
+          <Pricingotp
+            amountArr={amountArr}
+            pricing={pricing}
+            setPricing={setPricing}
+            fetchSMSData={fetchSMSData}
+            originCountry={originCountry}
+            setOriginCountry={setOriginCountry}
+            destinationCountry={destinationCountry}
+            setDestinationCountry={setDestinationCountry}
+            currency={currency}
+            currencySymbol={currencySymbol}
+          />
+        )}
+        {product === "hello" && <Pricinghello countryCode={countryCode} />}
+        {product === "segmento" && (
+          <Pricingsegmento
+            subscriptionSegmento={subscriptionSegmento}
+            fetchSubscriptionSegmento={fetchSubscriptionSegmento}
+            currency={currency}
+            currencySymbol={currencySymbol}
+          />
+        )}
+        {product === "campaign" && <Pricingcampaign />}
+        {product === "knowledgebase" && <Pricingknowledgebase />}
       </div>
     </>
   );
