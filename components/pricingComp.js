@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { InlineWidget } from "react-calendly";
-import { useRouter } from "next/router";
 import countries from "@/data/countries.json";
+import $ from 'jquery';
 
 import Pricingemail from "@/components/pricing/pricing-email";
 import Pricingsms from "@/components/pricing/pricing-sms";
@@ -109,28 +108,31 @@ const PricingComp = ({ countryCode, product }) => {
     //console.log('useeffect', countryCode);
   }, [countryCode]);
 
+
   return (
     <>
       <div>
         <div
-          className=" my-4 d-flex w-100 align-items-center justify-content-center flex-wrap"
+          className=" my-4 d-flex w-100 gap-2 align-items-center justify-content-center flex-wrap"
           id="pricing-pills-tab"
         >
           <a
             href="sms"
-            className="nav-item"
+            className={`nav-item ${product === 'sms' ? 'active' : ''}`}
+            id="sms-btn"
             onClick={() => {
               fetchSMSData(currency, originCountry, destinationCountry);
             }}
           >
-            <span className="nav-link active">
+            <span className="nav-link ">
               <img src="/img/icon/sms.svg" alt="#" />
               SMS
             </span>
           </a>
           <a
             href="email"
-            className="nav-item"
+            className={`nav-item ${product === 'email' ? 'active' : ''}`}
+            id="email-btn"
             onClick={() => {
               fetchSubscriptionEmail(currency, "1");
             }}
@@ -140,7 +142,10 @@ const PricingComp = ({ countryCode, product }) => {
               Email
             </span>
           </a>
-          <a href="voice" className="nav-item">
+          <a href="voice" 
+           className={`nav-item ${product === 'voice' ? 'active' : ''}`}
+            id="voice-btn"
+            >
             <span className="nav-link">
               <img src="/img/icon/voice.svg" alt="#" />
               Voice
@@ -148,7 +153,8 @@ const PricingComp = ({ countryCode, product }) => {
           </a>
           <a
             href="whatsapp"
-            className="nav-item"
+            className={`nav-item ${product === 'whatsapp' ? 'active' : ''}`}
+            id="wp-btn"
             onClick={() => {
               fetchSubscriptionWhatsapp(currency, "5");
             }}
@@ -158,7 +164,10 @@ const PricingComp = ({ countryCode, product }) => {
               WhatsApp
             </span>
           </a>
-          <a href="rcs" className="nav-item">
+          <a href="rcs" 
+           className={`nav-item ${product === 'rcs' ? 'active' : ''}`}
+            id="rcs-btn"
+            >
             <span className="nav-link">
               <img src="/img/icon/rcs.svg" alt="#" />
               RCS
@@ -166,7 +175,8 @@ const PricingComp = ({ countryCode, product }) => {
           </a>
           <a
             href="otp"
-            className="nav-item"
+            className={`nav-item ${product === 'otp' ? 'active' : ''}`}
+            id="otp-btn"
             onClick={() => {
               fetchSMSData(currency, originCountry, destinationCountry);
             }}
@@ -176,7 +186,10 @@ const PricingComp = ({ countryCode, product }) => {
               OTP
             </span>
           </a>
-          <a href="hello" className="nav-item">
+          <a href="hello" 
+           className={`nav-item ${product === 'hello' ? 'active' : ''}`}
+            id="hello-btn"
+            >
             <span className="nav-link">
               <img src="/img/icon/hello.svg" alt="#" />
               Hello
@@ -184,7 +197,8 @@ const PricingComp = ({ countryCode, product }) => {
           </a>
           <a
             href="segmento"
-            className="nav-item"
+            className={`nav-item ${product === 'segmento' ? 'active' : ''}`}
+            id="segmento-btn"
             onClick={() => {
               fetchSubscriptionSegmento(currency, "2");
             }}
@@ -194,13 +208,19 @@ const PricingComp = ({ countryCode, product }) => {
               Segmento
             </span>
           </a>
-          <a href="campaign" className="nav-item">
+          <a href="campaign" 
+           className={`nav-item ${product === 'campaign' ? 'active' : ''}`}
+            id="campaign-btn"
+            >
             <span className="nav-link">
               <img src="/img/icon/campaign.svg" alt="#" />
               Campaign
             </span>
           </a>
-          <a href="knowledgebase" className="nav-item">
+          <a href="knowledgebase" 
+           className={`nav-item ${product === 'knowledgebase' ? 'active' : ''}`}
+            id="kb-btn"
+            >
             <span className="nav-link">
               <img src="/img/icon/knowledgebase.svg" alt="#" />
               KnowledgeBase
@@ -208,7 +228,7 @@ const PricingComp = ({ countryCode, product }) => {
           </a>
         </div>
       </div>
-      <div className="my-5">
+      <div className="my-5 text-center">
         {product === "sms" && (
           <Pricingsms
             amountArr={amountArr}
