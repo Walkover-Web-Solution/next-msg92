@@ -6,10 +6,6 @@ const CaseStudyCard = ({ caseStudies }) => {
     function tagLinkFun(tag) {
         const route = "/case-studies/tag/"
         const tagLinkVar= tag
-          .toLowerCase()
-          .replace(/ /g, "-")
-          .replace(/[^\w-]+/g, "")
-          .replace(/^-+|-+$/g, "");
         var tagLink = route+tagLinkVar
         return tagLink;
       }
@@ -45,14 +41,14 @@ const CaseStudyCard = ({ caseStudies }) => {
               <a key={index} href={caseStudy.link}><p className="btn btn-outline-dark py-1 px-2 c-fs-5 mb-3">Learn more</p></a>
             <div className=" d-flex flex-wrap gap-3 mt-auto">
               {caseStudy.tags.map((tag, index) => (
-                <a href={tagLinkFun(tag)}>
+                // <a href={tagLinkFun(tag)}>
                 <span
                   key={index}
                   className="btn btn-sm btn-dark c-fs-5"
                 >
                   {tag}
                 </span>
-                </a>
+                // </a>
               ))}
             </div>
           </div>
