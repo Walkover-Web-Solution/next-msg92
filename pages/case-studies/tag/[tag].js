@@ -1,8 +1,8 @@
 import React from "react";
 import Casestudycard from "@/components/case-study-indexComp";
 import CasestudydataAll from "@/data/case-study.json";
-const casestudycard = ({ browserPath }) => {
-  var path = browserPath.split("/")[3];
+const casestudycard = ({ browserPathCase }) => {
+  var path = browserPathCase.split("/")[3];
 
   if (path !== "[tag]") {
     var tagGroup = path;
