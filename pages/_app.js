@@ -10,10 +10,18 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
   // const { slug } = router.query; 
   var  brawserPath = router.asPath;
-  const pattern = /\/([^/?]+)/;
-  const result = brawserPath.match(pattern);
-  console.log (result);  
-  // brawserPath = result[0];
+  console.log(brawserPath,989898)
+  if (brawserPath === '/') {
+    brawserPath = brawserPath
+    console.log(brawserPath,982222)
+  }
+  else{
+    const pattern = /\/([^/?]+)/;
+    const result = brawserPath.match(pattern);
+    console.log (result);  
+    brawserPath = result[0];
+    console.log (brawserPath,8899)
+  }
   var path = brawserPath.split("/")[1];
   //console.log(brawserPath, path, router);
 
