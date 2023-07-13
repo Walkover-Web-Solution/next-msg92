@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import PricingComp from "@/components/pricingComp";
 import Loading from "@/components/loadingComp";
 
 const pricingmain = () => {
+  const router = useRouter();
+  var  brawserPath = router.asPath;
+  var product = brawserPath.split("/")[2];
+
+
   var [code, setCode] = useState("");
   useEffect(() => {
     fetch("https://api.db-ip.com/v2/free/self")
@@ -16,9 +22,9 @@ const pricingmain = () => {
       });
   }, []);
   console.log("ssss",code.length,"code", code);
-  if ( code.length !== 0 && code !== "[COUNTRY]" ) {
+  if ( code.length !== 0 && code !== "[COUNTRY]" && product!== "product") {
     console.log("rrrrrrrr",code.length,"code", code);
-    return <PricingComp countryCode={code} />;
+    return <PricingComp countryCode={code} product={product}/>;
   } else {
     return (
       <>
