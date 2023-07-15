@@ -41,16 +41,16 @@ const IntPage = () => {
               >
                 Get The Plugin
               </a>
-              <h2 className="c-fs-4 w-md-75 w-100 mx-auto fw-normal">
+              {/* <h2 className="c-fs-4 w-md-75 w-100 mx-auto fw-normal">
               Effortlessly integrate SMS, Email, RCS, Voice, WhatsApp with Customer Service, IT, CRM software and more. 
-              </h2>
+              </h2> */}
             </div>
           </div>
-          <img
+          {/* <img
             src="\img\integrations\code-img-int.svg"
             className="img-fluid product-page-img mx-auto"
             alt="#"
-          />
+          /> */}
         </div>
       </div>
       <div className="container d-flex flex-column justify-content-center my-5 py-4 text-center">
