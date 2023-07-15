@@ -39,7 +39,7 @@
         "description":"MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
     },
     "/in": {
-        "title": "Best Cloud Communication Platform in India | Enterprise Cloud Communications Platform - MSG91",
+        "title": "Best Cloud Communication Platform in India | Communication Platform as a Service - MSG91",
         "description":"MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
     },
     "/ae": {
@@ -109,8 +109,8 @@
         "description":"Boost audience engagement through smart communication and on-time delivery. It's not only about communicating, it's about communicating with your users smartly and efficiently. Get Demo Reach your segmented customers across the world, Send your messages at the right moment! Features Automate sending messages under defined conditions Define different messaging parameters like time, region, number of.."
     },
     "/in/campaign": {
-        "title": "Best Campaign Software | Promotional Text Messages in India -MSG91",
-        "description":"MSG91's SMS Marketing software helps businesses build and manage subscriber lists, send promotional sms, and automate customer engagement. Checkout the best campaign automation tools in India."
+        "title": "Best Campaign Software | Transactional Text Messages in India -MSG91",
+        "description":"MSG91s SMS Marketing software helps businesses build and manage subscriber lists, send transactional sms, and automate customer engagement. Checkout the best campaign automation tool in India."
     },
     "/ae/campaign": {
         "title": "SMS Campaign",
@@ -179,8 +179,8 @@
         "description":"Send OTP provides secure and reliable SMS API Integration that helps you easily send OTP to your users for 2 factor authentication."
     },
     "/in/otp": {
-        "title": "OTP Authentication Api | OTP SMS Service Provider in India - MSG91",
-        "description":"OTP Service Provider - Consume simple API’s and give secure OTP authentications and validations to your website and applications by using MSG91's best otp api service."
+        "title": "OTP Authentication API | OTP SMS Service Provider in India - MSG91",
+        "description":"OTP Service Provider - Consume simple API’s and give secure OTP with 2FA's and validations to your website and applications by using MSG91s best otp api service."
     },
     "/ae/otp": {
         "title": "Send OTP | OTP Service Providers India - MSG91 India",
@@ -215,7 +215,7 @@
     },
     "/in/sms": {
         "title": "Best SMS API For Developers | Transactional SMS Service - MSG91",
-        "description":"MSG91's SMS Marketing software helps businesses build and manage subscriber lists, send promotional sms, and automate customer engagement. Checkout the best campaign automation tools in India."
+        "description":"MSG91 is a bulk transactional sms service provider offering reliable business solutions, supporting both marketing campaigns and daily notifications. Start with a transactional sms api trial today."
     },
     "/ae/sms": {
         "title": "Transactional SMS | Transactional SMS Provider in India - MSG91 India",
@@ -250,7 +250,7 @@
     },
     "/in/email": {
         "title": "Transactional Email Services in India | Email Api Provider- MSG91",
-        "description":"Our best email api integration for application-driven emails gives you an easy way to automate your sending based on user actions. Send, receive, and track emails with MSG01's best email api service."
+        "description":"Our best email api integration for application-driven emails gives you an easy way to automate your sending based on user actions. Send, receive, and track emails with MSG91's best email api service."
     },
     "/ae/email": {
         "title": "Transactional Email | Transactional Email API - MSG91 India",
@@ -478,27 +478,27 @@
     "Integration Pages ******************************":{},
     "/partners-and-integrations/zapier":{
         "title": "Connect your app with Zapier | Intergrate with MSG91",
-        "description":"Zapier is a powerful automation tool that allows you to seamlessly integrate MSG91.With Zapier, you can automate your workflow and send whatsapp message,email and voice message that eliminate the need for manual intervention."
+        "description":"MSG91 is a robust communication platform that seamlessly integrates with Zapier, a powerful automation tool. By leveraging MSG91 through Zapier, you can streamline your workflow and automate processes, such as sending WhatsApp messages, emails, and voice messages. This eliminates the need for manual intervention and enhances your communication capabilities."
 
     },
     "/partners-and-integrations/firebase":{
         "title": "Firebase Integration | Connect your apps with MSG91",
-        "description":"We help you to effortlessly integrate with Firebase, providing a no-code automation solution to streamline your workflows and automate text message,whatsapp and email. Connect with MSG91 now."
+        "description":"Enhance your app's communication capabilities with seamless integration of MSG91 and Firebase. Send real-time notifications, SMS alerts, and engage users effectively. Unlock the power of MSG91 and Firebase integration to deliver an exceptional user experience and drive app success"
 
     },
     "/partners-and-integrations/freshworks":{
         "title": "Automate your Message | Send SMS, Email and Whatsapp - MSG91",
-        "description":"You can now automate your message to the customer integrating with Freshworks. Connect them with text messgae, email or whatsapp and and increase your customer reach. Connect with MSG91 now."
+        "description":"Supercharge your customer support and engagement with the powerful combination of MSG91 and Freshworks integration. Deliver timely notifications, automate customer interactions, and drive better user experiences. Experience the seamless synergy between MSG91 and Freshworks for enhanced business growth."
 
     },
     "/partners-and-integrations/hubspot":{
         "title": "Hubspot Intergration | Connect your apps with MSG91",
-        "description":"With Hubspot you can automate your workflows that connect your MSG91 account with other applications. Whether its sending transactional emails, send sms or updating contact information, we provide a flexible solution for automating for messaging tasks."
+        "description":"Unlock the true potential of your marketing and sales efforts with the seamless integration of MSG91 and Hubspot. Drive personalized communication, automate lead nurturing, and supercharge your customer engagement. Discover the winning combination of MSG91 and Hubspot integration for accelerated business growth and success."
 
     },
     "/partners-and-integrations/tally":{
         "title": "Send SMS | Transactional email Service Provider in India - MSG91",
-        "description":"Tally TDL add-on helps streamline your business processes by automating the communication workflow. Send important transaction sms, emails, voice messages and quick updates directly from tally. Connect with MSG91 now."
+        "description":"Boost your business efficiency with the seamless integration of MSG91 SMS services into Tally. Streamline communication, automate reminders, and enhance customer engagement. Discover the power of MSG91 and Tally integration today!"
 
     }
 }
