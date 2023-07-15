@@ -50,24 +50,20 @@ const Zapier = () => {
                 MSG91 can integrate with 5000+ apps via Zapier so you can
                 automate your business workflows and customer engagement with
                 ease, without embedding any code.
-              </p>
-              <a
-                href="https://control.msg91.com/signup/"
-                className="btn btn-dark btn-lg c-fs-2 my-4"
-              >
-                Get The Plugin
-              </a>
-              <h2 className="c-fs-4 w-md-75 w-100 mx-auto fw-normal">
-                Effortlessly integrate SMS, Email, RCS, Voice, WhatsApp with
-                CRM, Project Management Tools, E-Commerce Platforms, and more.
-              </h2>
+              </p>              
             </div>
           </div>
-          <img
-            src="\img\integrations\code-img-int.svg"
-            className="img-fluid product-page-img mx-auto"
-            alt="#"
-          />
+          <div className="container mb-4">
+      <zapier-zap-templates
+        theme="light"
+        apps="msg91"
+        create-without-template="hide"
+        limit="10"
+        link-target="new-tab"
+        presentation="row"
+        use-this-zap="show"
+        ></zapier-zap-templates>
+        </div>
         </div>
       </div>
       <div className="container d-flex flex-column justify-content-center my-5 py-4 text-center">
@@ -99,8 +95,9 @@ const Zapier = () => {
           </span>
           <div className="mt-3 mt-xxl-0 d-flex flex-wrap justify-content-center gap-3">
             <a
-              href="/contact-us"
+              href="https://zapier.com/apps/msg91/integrations"
               className="btn px-4 py-3 btn-outline-dark c-fs-4 "
+              target="_blank"
             >
               Get The Plugin
             </a>
@@ -137,27 +134,18 @@ const Zapier = () => {
           <MdDone className="c-fs-1 col-int zapier" />
           <p className="c-fs-2">Pre-build templates</p>
         </div>
-      </div>
-      <div className="container mb-4">
-      <zapier-zap-templates
-        theme="light"
-        apps="msg91"
-        create-without-template="hide"
-        limit="10"
-        link-target="new-tab"
-        presentation="row"
-        use-this-zap="show"
-        ></zapier-zap-templates>
-        </div>
+      </div>      
       <div className="d-flex flex-column flex-md-row container align-items-center justify-content-between my-5">
         <h2 className="c-head c-fs-1 col-12 col-md-8 text-center text-md-start">
         Enhance your communication capabilities and automate your engagement tasks
-        </h2>
-        <a>
-          <button className="btn btn-dark btn-lg c-fs-2 my-4">
-          Get The MSG91 Zapier Plugin
-          </button>
-        </a>
+        </h2>        
+          <a
+            href="https://zapier.com/apps/msg91/integrations"
+            className="btn btn-dark btn-lg c-fs-2 my-4"
+            target="_blank"
+          >
+            Get the MSG91 Zapier plugin
+          </a>
       </div>
     </>
   );

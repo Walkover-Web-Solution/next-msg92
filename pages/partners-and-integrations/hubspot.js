@@ -35,8 +35,9 @@ const IntPage = () => {
               The MSG91 HubSpot Plugin lets you integrate communication features into your HubSpot workflows. Automate and power up your business workflows and customer engagement with ease, without embedding any code
               </p>
               <a
-                href="https://control.msg91.com/signup/"
+                href="https://ecosystem.hubspot.com/marketplace/apps/marketing/live-chat/all-in-one-sms"
                 className="btn btn-dark btn-lg c-fs-2 my-4"
+                target="_blank"
               >
                 Get The Plugin
               </a>
@@ -81,8 +82,9 @@ const IntPage = () => {
           </span>
           <div className="mt-3 mt-xxl-0 d-flex flex-wrap justify-content-center gap-3">
             <a
-              href="/contact-us"
+              href="https://ecosystem.hubspot.com/marketplace/apps/marketing/live-chat/all-in-one-sms"
               className="btn px-4 py-3 btn-outline-dark c-fs-4 "
+              target="_blank"
             >
               Get The Plugin
             </a>
@@ -135,11 +137,13 @@ const IntPage = () => {
         <h2 className="c-head c-fs-1 col-12 col-md-8 text-center text-md-start">
         Enhance your communication capabilities and automate your engagement tasks
         </h2>
-        <a>
-          <button className="btn btn-dark btn-lg c-fs-2 my-4">
-          Get The MSG91 Hubspot Plugin
-          </button>
-        </a>
+        <a
+            href="https://ecosystem.hubspot.com/marketplace/apps/marketing/live-chat/all-in-one-sms"
+            className="btn btn-dark btn-lg c-fs-2 my-4"
+            target="_blank"
+          >
+            Get the MSG91 Hubspot plugin
+          </a>        
       </div>
     </>
   );
