@@ -182,7 +182,7 @@ const ProductMenu = ({path}) => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn py-3"
-              href={`${path}/partners-and-integrations/zapier`}
+              href={`/partners-and-integrations/zapier`}
             >
               <Image
                 src="/img/integrations/zapier.svg"
@@ -208,7 +208,7 @@ const ProductMenu = ({path}) => {
             </a> */}
             <a
               className="d-flex gap-3 align-items-center product-menu-btn py-3"
-              href={`${path}/partners-and-integrations/freshworks`}              
+              href={`/partners-and-integrations/freshworks`}              
             >
               <Image
                 src="/img/integrations/freshworks.svg"
@@ -221,7 +221,7 @@ const ProductMenu = ({path}) => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn py-3"
-              href={`${path}/partners-and-integrations/firebase`}              
+              href={`/partners-and-integrations/firebase`}              
             >
               <Image
                 src="/img/integrations/firebase-logo.svg"
@@ -233,7 +233,7 @@ const ProductMenu = ({path}) => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn py-3"
-              href={`${path}/partners-and-integrations/hubspot`}              
+              href={`/partners-and-integrations/hubspot`}              
             >
               <Image
                 src="/img/integrations/hubspot-logo.svg"

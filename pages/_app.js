@@ -21,6 +21,7 @@ export default function App({ Component, pageProps }) {
   }
   var path = brawserPath.split("/")[1];
   const year = new Date().getFullYear();
+  //console.log('path _app', path);
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
