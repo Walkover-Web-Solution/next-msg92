@@ -11,6 +11,7 @@ export default function App({ Component, pageProps }) {
   // const { slug } = router.query; 
   var  brawserPath = router.asPath;
   var brawserPathCase = brawserPath;
+  var brawserPathMeta = brawserPath;
   if (brawserPath === '/') {
     brawserPath = brawserPath
   }
@@ -27,7 +28,7 @@ export default function App({ Component, pageProps }) {
   }, []);
     return (
       <>
-      <Headcomp brawserPath={brawserPath} />
+      <Headcomp brawserPath={brawserPathMeta} />
       <Navbar brawserPath={brawserPath} />
       <Component {...pageProps} path={path} browserPath={brawserPath} browserPathCase={brawserPathCase}/>
       <Footer path={path} year={year} />
