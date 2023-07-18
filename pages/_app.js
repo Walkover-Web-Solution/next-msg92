@@ -12,13 +12,12 @@ export default function App({ Component, pageProps }) {
   var  brawserPath = router.asPath;
   var brawserPathCase = brawserPath;
   var brawserPathMeta = brawserPath;
-  if (brawserPath === '/') {
-    brawserPath = brawserPath
-  }
-  else{
+  //console.log('_app', brawserPath);
+  if (brawserPath !== '/') {
     const pattern = /\/([^/?]+)/;
     const result = brawserPath.match(pattern);
-    brawserPath = result[0];
+    //console.log('1', result,  brawserPath);
+    brawserPath = result ? result[0] : brawserPath;
   }
   var path = brawserPath.split("/")[1];
   const year = new Date().getFullYear();
