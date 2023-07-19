@@ -1,3 +1,6 @@
 /*
   X-Frame-Options: DENY
-  X-XSS-Protection: 1; mode=block
+  X-XSS-Protection: 1; mode=block  
+
+/*
+  Content-Security-Policy: frame-ancestors 'self' https://shopifytest.msg91.com https://secommerce.msg91.com
