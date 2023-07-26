@@ -23,9 +23,7 @@ const PricingComp = ({ countryCode, product }) => {
   var [currency, setCurrency] = useState("");
   var [currencySymbol, setCurrencySymbol] = useState("");
   var [oneTimeWtsAppFee, setOneTimeWtsAppFee] = useState("");
-
   var amountArr = ["1250", "3300", "5400", "10200", "20000", "76500", "154000"];
-
   var [subscriptionEmail, setSubscriptionEmail] = useState([]);
   var [subscriptionVoice, setSubscriptionVoice] = useState([]);
   var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
@@ -49,51 +47,55 @@ const PricingComp = ({ countryCode, product }) => {
     setDestinationCountry(destination);
     //console.log('fetchsmsdata', currency, origin, destination, countryCode);
     amountArr = origin == "India" && currency == "INR" ? amountArr : ["5000"];
+    console.log(amountArr,"aoutnarr")
     changeCurrencySymbol(currency);
-    var newData = [];
-    let i = 0;
-    for (; i < amountArr.length; i++) {
-      // const response = await axios.get(
-      //   `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-      // );
-      const response = await axios.get(`https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
-      //const response = await axios.get(`http://52.221.182.19/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`)
-      newData.push(response.data.data);
+    try {
+      const fetchRequests = amountArr.map(async (amount) => {
+        const response = await axios.get(
+          `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
+        );
+        console.log(response, "response");
+        return response.data.data;
+      });
+  
+      const newData = await Promise.all(fetchRequests);
+      setPricing([...newData]);
+    } catch (error) {
+      // Handle errors here
+      console.error("Error fetching pricing details:", error);
     }
-    setPricing([...newData]);
   };
 
-  const fetchSubscriptionEmail = async (currency, msId) => {
-    changeCurrencySymbol(currency);
-    const response = await axios.get(
-      `https://subscription.msg91.com/api/plans?currency=${currency}&ms_id=${msId}`
-    );
-    setSubscriptionEmail([...response.data.data]);
-    // console.log(response.data.data);
-  };
-  const fetchSubscriptionVoice = async (currency, msId) => {
-    changeCurrencySymbol(currency);
-    const response = await axios.get(
-      `https://subscription.msg91.com/api/plans?currency=${currency}&ms_id=${msId}`
-    );
-    setSubscriptionVoice([...response.data.data]);
-    // console.log(response.data.data);
-  };
-  const fetchSubscriptionWhatsapp = async (currency, msId) => {
-    changeCurrencySymbol(currency);
-    const response = await axios.get(
-      `https://subscription.msg91.com/api/plans?currency=${currency}&ms_id=${msId}`
-    );
-    setSubscriptionWhatsapp([...response.data.data]);
-    // console.log(response.data.data);
-  };
-  const fetchSubscriptionSegmento = async (currency, msId) => {
-    changeCurrencySymbol(currency);
-    const response = await axios.get(
-      `https://subscription.msg91.com/api/plans?currency=${currency}&ms_id=${msId}`
-    );
-    setSubscriptionSegmento([...response.data.data]);
-    // console.log(response.data.data);
+  const fetchSubscription = async (currency, msId,state) => {
+    try {
+      changeCurrencySymbol(currency);
+      const response = await axios.get(
+        `https://subscription.msg91.com/api/plans?currency=${currency}&ms_id=${msId}`
+      );
+      console.log(response,"reposne")
+      switch (state) {
+        case "subscriptionEmail":
+          setSubscriptionEmail([...response.data.data]);
+          break;
+        case "SubscriptionWhatsapp":
+          setSubscriptionWhatsapp([...response.data.data]);
+          break;
+          case "SubscriptionSegmento":
+            setSubscriptionSegmento([...response.data.data]);
+            break;
+          case "SubscriptionVoice":
+            setSubscriptionVoice([...response.data.data]);
+            break;
+          case "SubscriptionSegmento":
+            setSubscriptionSegmento([...response.data.data]);
+            break;
+        default:
+          break;
+      }
+      
+    } catch (error) {
+      throw new Error("Some error on server: " + error.message);
+    }
   };
 
   const findCountry = async (code) => {
@@ -134,7 +136,7 @@ const PricingComp = ({ countryCode, product }) => {
             className={`nav-item ${product === 'email' ? 'active' : ''}`}
             id="email-btn"
             onClick={() => {
-              fetchSubscriptionEmail(currency, "1");
+              fetchSubscription(currency, "1","subscriptionEmail");
             }}
           >
             <span className="nav-link">
@@ -156,7 +158,7 @@ const PricingComp = ({ countryCode, product }) => {
             className={`nav-item ${product === 'whatsapp' ? 'active' : ''}`}
             id="wp-btn"
             onClick={() => {
-              fetchSubscriptionWhatsapp(currency, "5");
+              fetchSubscription(currency, "5","SubscriptionWhatsapp");
             }}
           >
             <span className="nav-link">
@@ -200,7 +202,7 @@ const PricingComp = ({ countryCode, product }) => {
             className={`nav-item ${product === 'segmento' ? 'active' : ''}`}
             id="segmento-btn"
             onClick={() => {
-              fetchSubscriptionSegmento(currency, "2");
+              fetchSubscriptionSegmento(currency, "2","SubscriptionSegmento");
             }}
           >
             <span className="nav-link">
@@ -247,7 +249,7 @@ const PricingComp = ({ countryCode, product }) => {
         {product === "email" && (
           <Pricingemail
             subscriptionEmail={subscriptionEmail}
-            fetchSubscriptionEmail={fetchSubscriptionEmail}
+            fetchSubscriptionEmail={fetchSubscription}
             currency={currency}
             currencySymbol={currencySymbol}
           />
@@ -255,8 +257,9 @@ const PricingComp = ({ countryCode, product }) => {
         {product === "voice" && (
           <Pricingvoice
             subscriptionVoice={subscriptionVoice}
-            fetchSubscriptionVoice={fetchSubscriptionVoice}
+            fetchSubscriptionVoice={fetchSubscription}
             currency={currency}
+            state= {"SubscriptionVoice"}
             setCurrencySymbol={setCurrencySymbol}
             countryCode={countryCode}
           />
@@ -264,7 +267,7 @@ const PricingComp = ({ countryCode, product }) => {
         {product === "whatsapp" && (
           <Pricingwp
             subscriptionWhatsapp={subscriptionWhatsapp}
-            fetchSubscriptionWhatsapp={fetchSubscriptionWhatsapp}
+            fetchSubscriptionWhatsapp={fetchSubscription}
             currency={currency}
             currencySymbol={currencySymbol}
             oneTimeWtsAppFee={oneTimeWtsAppFee}
@@ -289,7 +292,7 @@ const PricingComp = ({ countryCode, product }) => {
         {product === "segmento" && (
           <Pricingsegmento
             subscriptionSegmento={subscriptionSegmento}
-            fetchSubscriptionSegmento={fetchSubscriptionSegmento}
+            fetchSubscriptionSegmento={fetchSubscription}
             currency={currency}
             currencySymbol={currencySymbol}
           />
