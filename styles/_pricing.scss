@@ -1,11 +1,14 @@
-.nav-pills .nav-link{
-  color: var(--black-color) !important;
-  &.active{
-    background: var(--c-light-grey) !important;
-  }  
-}
+
 #pricing-pills-tab{
+  .active{
+    background-color: var(--c-light-grey);
+  }    
   .nav-item{
+    color: var(--black-color);
+    border-radius: 6px;
+    &:hover{
+      background-color: var(--c-light-grey);
+    }    
     .nav-link{
       display: flex;
       flex-direction: column;
@@ -16,7 +19,11 @@
         height: 30px;
         display: block;
       }
-    }    
+       
+    }
+    .active{
+      background-color: var(--c-light-grey);
+    }
   }
 }
 .total-price{
