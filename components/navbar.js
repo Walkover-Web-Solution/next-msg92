@@ -101,7 +101,7 @@ const navbar = ({ brawserPath }) => {
               className={`nav-link menu-opt text-dark ${
                 brawserPath === "/pricing" ? "active" : ""
               }`}
-              href={`${path}/pricing`}
+              href={`${path}/pricing/sms`}
               id="pricing-link"
             >
               <span className="c-fs-4 c-fw-m">Pricing</span>

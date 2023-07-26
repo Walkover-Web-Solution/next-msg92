@@ -19,6 +19,10 @@
         height: 30px;
         display: block;
       }
+       
+    }
+    .active{
+      background-color: var(--c-light-grey);
     }
   }
 }
