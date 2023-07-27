@@ -17,10 +17,10 @@ const contactus = ({path}) => {
     return (
         <>
             <div className="container text-center px-4 col-xs-12 col-sm-10 col-md-10 mx-auto  py-5">
-                <h1 className="sub-heading pb-5">Contact Us</h1>
+                <h1 className="sub-heading pb-1 pb-md-5">Contact Us</h1>
                 <div className="justify-content-around row gap-5">
 
-                    <div className="contact-card d-flex flex-column align-items-center justify-content-between gap-5 px-3 py-5 col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-10">
+                    <div className="contact-card d-flex flex-column align-items-center justify-content-between gap-3 gap-md-5 px-3 py-2 py-md-4 col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-10">
                         <h2>Sales</h2>
                         <div className="d-flex flex-column align-items-start gap-4">                            
                                 {
@@ -76,7 +76,7 @@ const contactus = ({path}) => {
                         <button className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#sales-modal">Schedule a meeting</button>
                     </div>
                     
-                    <div className="contact-card d-flex flex-column align-items-center justify-content-between gap-5 px-3 py-5 col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-10">
+                    <div className="contact-card d-flex flex-column align-items-center justify-content-between gap-3 gap-md-5 px-3 py-2 py-md-4 col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-10">
                         <h2>Support</h2>
                         <div className="d-flex flex-column align-items-start gap-4">
                         <div className="d-flex  align-items-center">
