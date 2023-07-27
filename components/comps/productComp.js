@@ -49,7 +49,7 @@ const ProductComponent = ({pageData, path }) => {
           if(item?.content){
             i++;       
             return (
-              <div key={`f-${index}`} className={`container flex-column d-flex my-5 align-items-center justify-content-md-between justify-content-center  ${i%2 ? 'flex-md-row-reverse' : 'flex-md-row'}`}>
+              <div key={`f-${index}`} className={`container flex-column d-flex my-3 my-md-5 align-items-center justify-content-md-between justify-content-center  ${i%2 ? 'flex-md-row-reverse' : 'flex-md-row'}`}>
                 <div className="col-12 col-md-6 d-flex justify-content-center">
                 {item?.img &&
                   <img
