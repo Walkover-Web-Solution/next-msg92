@@ -23,7 +23,7 @@ const ProductComponent = ({pageData, path }) => {
               {pageData.tagline}
             </p>
             <div className="p-3">
-              <h2 className="small-heading w-md-75 w-100 mx-auto fw-normal">
+              <h2 className="small-heading w-md-75 w-100 mx-auto fw-normal mb-2">
                 {pageData.heading}
               </h2>
               <p className="small-heading w-md-75 w-100 mx-auto fw-normal">
