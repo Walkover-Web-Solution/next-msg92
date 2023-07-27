@@ -1,7 +1,7 @@
 import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 
-const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
+const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency}) => {
   const [selectedCurrency, setSelectedCurrency] = useState('INR');
   const [selectedMode, setSelectedMode] = useState("Monthly");
   const [symbol, setSymbol] = useState("₹");
@@ -21,7 +21,14 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
         break;
     }
   };
+  
+  const numberWithCommas = (x) => {
+    let nf = (currency === 'INR') ? new Intl.NumberFormat('en-IN') : new Intl.NumberFormat('en-US');    
+    return nf.format(x);
+  }
+
   console.log('subscriptionEmail', subscriptionEmail);
+
   return (
     <>
     <div className="d-flex justify-content-center">
@@ -62,19 +69,19 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
                         <span className="text-success">
                           <MdDone />
                         </span>
-                        {item.plan_services[0].service_credit.free_credits} Emails
+                        {numberWithCommas(item.plan_services[0].service_credit.free_credits)} Emails
                       </div>
                       <div className="c-fs-5 ">                  
                           {
                           (item.plan_amounts[0].plan_amount === 0) ? 
-                          <span className="text-danger c-fs-3"><MdClose /></span> 
+                          <span className="text-danger"><MdClose /></span> 
                           : 
-                          <span className="text-success c-fs-3"><MdDone /></span> 
+                          <span className="text-success"><MdDone /></span> 
                           }
-                        {item.plan_services[1].service_credit.free_credits} Email Validations
+                        {numberWithCommas(item.plan_services[1].service_credit.free_credits)} Email Validations
                       </div>
 
-                      <div className="c-fs-5 ">
+                      <div className="c-fs-5 mt-4">
                         <strong>Extra</strong>
                         <div>{symbol} {item.plan_services[0].service_credit.service_credit_rates[0].follow_up_rate} per Email</div>                      
                         <div>{symbol} {item.plan_services[1].service_credit.service_credit_rates[0].follow_up_rate} per Email Validation</div>
@@ -103,7 +110,7 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
                       <span className="text-success">
                         <MdDone />
                       </span>
-                      {item.plan_services[0].service_credit.free_credits} Emails
+                      {numberWithCommas(item.plan_services[0].service_credit.free_credits)} Emails
                     </div>
                     <div className="c-fs-5 ">                  
                         {
@@ -112,10 +119,10 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail}) => {
                         : 
                         <span className="text-success"><MdDone /></span> 
                         }
-                      {item.plan_services[1].service_credit.free_credits} Email Validations
+                      {numberWithCommas(item.plan_services[1].service_credit.free_credits)} Email Validations
                     </div>
                     
-                    <div className="c-fs-5 ">
+                    <div className="c-fs-5 mt-4">
                         <strong>Extra</strong>
                         <div>{symbol} {item.plan_services[0].service_credit.service_credit_rates[0].follow_up_rate} per Email</div>                      
                         <div>{symbol} {item.plan_services[1].service_credit.service_credit_rates[0].follow_up_rate} per Email Validation</div>

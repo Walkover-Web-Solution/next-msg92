@@ -182,8 +182,7 @@ const ProductMenu = ({path}) => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn py-3"
-              href="https://zapier.com/apps/msg91/integrations"
-              target="_blank"
+              href={`/partners-and-integrations/zapier`}
             >
               <Image
                 src="/img/integrations/zapier.svg"
@@ -209,8 +208,7 @@ const ProductMenu = ({path}) => {
             </a> */}
             <a
               className="d-flex gap-3 align-items-center product-menu-btn py-3"
-              href="https://www.freshworks.com/apps/freshworks_crm/msg91/"
-              target="_blank"
+              href={`/partners-and-integrations/freshworks`}              
             >
               <Image
                 src="/img/integrations/freshworks.svg"
@@ -220,6 +218,30 @@ const ProductMenu = ({path}) => {
               />
               <h4 className="c-fs-2">Freshworks</h4>
               
+            </a>
+            <a
+              className="d-flex gap-3 align-items-center product-menu-btn py-3"
+              href={`/partners-and-integrations/firebase`}              
+            >
+              <Image
+                src="/img/integrations/firebase-logo.svg"
+                width={40}
+                height={40}
+                alt="ico"
+              />
+              <h4 className="c-fs-2">Firebase</h4>              
+            </a>
+            <a
+              className="d-flex gap-3 align-items-center product-menu-btn py-3"
+              href={`/partners-and-integrations/hubspot`}              
+            >
+              <Image
+                src="/img/integrations/hubspot-logo.svg"
+                width={40}
+                height={40}
+                alt="ico"
+              />
+              <h4 className="c-fs-2">Hubspot</h4>              
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn py-3"
@@ -235,7 +257,7 @@ const ProductMenu = ({path}) => {
               <h4 className="c-fs-2">Google Sheets</h4>
               
             </a>
-            <a
+            {/* <a
               className="d-flex gap-3 align-items-center product-menu-btn py-3"
               href="https://www.zoho.com/en-in/flow/apps/msg91/integrations/"
               target="_blank"
@@ -262,7 +284,7 @@ const ProductMenu = ({path}) => {
               />
               <h4 className="c-fs-2">Clevertap</h4>
               
-            </a>
+            </a> */}
             <a
               className="d-flex gap-3 align-items-center mt-4"
               href="/partners-and-integrations"
