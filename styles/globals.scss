@@ -712,3 +712,10 @@ code[class*="language-"], pre[class*="language-"]{
     width: 300px;
   }
 }
+
+.c-text-link{
+  color: var(--black-color);
+  &:hover{
+    color: var(--primary-color);
+  }
+}

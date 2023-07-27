@@ -31,7 +31,7 @@ const contactus = ({path}) => {
                                             <span className="c-fs-1   justify-content-center align-items-center d-flex">
                                                 <MdOutlineEmail className="p-auto c-fw-sb  " />
                                             </span>
-                                            <a href="mailto:contact@msg91.com"  className="c-fs-2 ms-3 text-dark text-center bg-white">
+                                            <a href="mailto:contact@msg91.com"  className="c-fs-2 ms-3 c-text-link text-center bg-white">
                                                 contact@msg91.com
                                             </a>
                                         </div>
@@ -39,7 +39,7 @@ const contactus = ({path}) => {
                                             <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
                                                 <MdCall className="p-auto" />
                                             </span>
-                                            <a href="tel:+6531595004" className="c-fs-2 ms-3 text-dark text-center bg-white">
+                                            <a href="tel:+6531595004" className="c-fs-2 ms-3 c-text-link text-center bg-white">
                                                 +65 31595004
                                             </a>
                                         </div>
@@ -50,7 +50,7 @@ const contactus = ({path}) => {
                                             <span className="c-fs-1   justify-content-center align-items-center d-flex">
                                                 <MdOutlineEmail className="p-auto c-fw-sb  " />
                                             </span>
-                                            <a href="mailto:sales@msg91.com"  className="c-fs-2 ms-3 text-dark text-center bg-white">
+                                            <a href="mailto:sales@msg91.com"  className="c-fs-2 ms-3 c-text-link text-center bg-white">
                                                 sales@msg91.com
                                             </a>
                                         </div>
@@ -58,7 +58,7 @@ const contactus = ({path}) => {
                                             <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
                                                 <MdCall className="p-auto" />
                                             </span>    
-                                            <a href="tel:+918889500704" className="c-fs-2 ms-3 text-dark text-center bg-white">
+                                            <a href="tel:+918889500704" className="c-fs-2 ms-3 c-text-link text-center bg-white">
                                                 +91 88895 00704
                                             </a>
                                         </div>
@@ -66,7 +66,7 @@ const contactus = ({path}) => {
                                             <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
                                                 <MdCall className="p-auto" />
                                             </span>
-                                            <a href="tel:+917049088848" className="c-fs-2 ms-3 text-dark text-center bg-white">
+                                            <a href="tel:+917049088848" className="c-fs-2 ms-3 c-text-link text-center bg-white">
                                                 +91 70490 88848
                                             </a>
                                         </div>
@@ -83,7 +83,7 @@ const contactus = ({path}) => {
                             <span className="c-fs-1  justify-content-center align-items-center d-flex">
                                 <MdOutlineEmail className="p-auto c-fw-sb  " />
                             </span>
-                            <a href="mailto:support@msg91.com" className="c-fs-2 ms-3 text-dark text-center bg-white">
+                            <a href="mailto:support@msg91.com" className="c-fs-2 ms-3 c-text-link text-center bg-white ">
                                 support@msg91.com
                             </a>
                         </div>
@@ -92,7 +92,7 @@ const contactus = ({path}) => {
                             <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
                                 <MdWhatsapp className="p-auto  " />
                             </span>
-                            <a href="https://wa.me/918818888733" className="c-fs-2 text-dark ms-3 text-center bg-white">
+                            <a href="https://wa.me/918818888733" className="c-fs-2 c-text-link ms-3 text-center bg-white">
                                 +91 88188 88733                
                             </a>
                         </div>
@@ -101,7 +101,7 @@ const contactus = ({path}) => {
                             <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
                                 <MdCall className="p-auto  " />
                             </span>
-                            <a href="tel:918818888733" className="c-fs-2  ms-3 text-dark text-center bg-white">
+                            <a href="tel:918818888733" className="c-fs-2  ms-3 c-text-link text-center bg-white">
                                 +91 88188 88733
                             </a>
                         </div>
