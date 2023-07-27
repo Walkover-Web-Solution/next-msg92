@@ -20,7 +20,7 @@ const pricingmain =()=>{
   //console.log(678, data);
   if(data!=='[COUNTRY]' && data.length!==0 && product!== "product"){
     return (
-      <PricingComp countryCode={data} product={product}/>
+      <PricingComp countryCode={data} product={product} brawserPath={brawserPath}/>
   );
 }
 else{

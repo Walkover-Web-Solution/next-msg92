@@ -13,7 +13,27 @@ import Pricingsegmento from "@/components/pricing/pricing-segmento";
 import Pricingcampaign from "@/components/pricing/pricing-campaign";
 import Pricingrcs from "@/components/pricing/pricing-rcs";
 import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
-import Link from "next/link"; const PricingComp = ({ countryCode, product }) => {
+import Link from "next/link"; 
+
+const PricingComp = ({ countryCode, product, brawserPath }) => {
+  console.log("bbfbfbf", brawserPath)
+  var pathLength = brawserPath?.split("/")[1].length;
+  var pathLengthCond = true
+  if (pathLength === 2)
+  {
+    console.log("inside if ");
+    pathLengthCond = true;
+  }
+  else{
+    console.log("inside else");
+    pathLengthCond = false;
+  }
+
+  console.log("pathLength", pathLengthCond)
+
+
+
+
   //console.log('PricingComp countryCode', countryCode);
   console.log("PricingComp product", product);
   var [pricing, setPricing] = useState([]);
@@ -123,7 +143,7 @@ import Link from "next/link"; const PricingComp = ({ countryCode, product }) => 
         >
           {/* for sms */}
           <Link
-            href={"/"+countryCode.toLowerCase()+"/pricing/sms"}
+            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/sms":"/pricing/sms"}
             className={`nav-item ${product === 'sms' ? 'active' : ''}`}
             id="sms-btn"
             onClick={() => {
@@ -138,7 +158,7 @@ import Link from "next/link"; const PricingComp = ({ countryCode, product }) => 
           {/* for email */}
           <Link
             // href="/{}/pricing/email"
-            href={"/"+countryCode.toLowerCase()+"/pricing/email"}
+            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/email":"/pricing/email"}
             className={`nav-item ${product === 'email' ? 'active' : ''}`}
             id="email-btn"
             onClick={() => {
@@ -152,7 +172,7 @@ import Link from "next/link"; const PricingComp = ({ countryCode, product }) => 
           </Link>
           {/* for voice */}
           <Link
-            href={"/"+countryCode.toLowerCase()+"/pricing/voice"}
+            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/voice":"/pricing/voice"}
             className={`nav-item ${product === 'voice' ? 'active' : ''}`}
             id="voice-btn"
           >
@@ -164,7 +184,7 @@ import Link from "next/link"; const PricingComp = ({ countryCode, product }) => 
 
           {/* for whatsapp */}
           <Link
-            href={"/"+countryCode.toLowerCase()+"/pricing/whatsapp"}
+           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/whatsapp":"/pricing/whatsapp"}
             className={`nav-item ${product === 'whatsapp' ? 'active' : ''}`}
             id="wp-btn"
             onClick={() => {
@@ -178,7 +198,7 @@ import Link from "next/link"; const PricingComp = ({ countryCode, product }) => 
           </Link>
           {/* for RCS */}
           <Link
-          href={"/"+countryCode.toLowerCase()+"/pricing/rcs"}
+          href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/rcs":"/pricing/rcs"}
            className={`nav-item ${product === 'rcs' ? 'active' : ''}`}
             id="rcs-btn"
             >
@@ -188,7 +208,7 @@ import Link from "next/link"; const PricingComp = ({ countryCode, product }) => 
             </span>
           </Link>
           <Link
-           href={"/"+countryCode.toLowerCase()+"/pricing/otp"}
+           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/otp":"/pricing/otp"}
             className={`nav-item ${product === 'otp' ? 'active' : ''}`}
             id="otp-btn"
             onClick={() => {
@@ -201,7 +221,7 @@ import Link from "next/link"; const PricingComp = ({ countryCode, product }) => 
             </span>
           </Link>
           <Link
-           href={"/"+countryCode.toLowerCase()+"/pricing/hello"}
+           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/hello":"/pricing/hello"}
            className={`nav-item ${product === 'hello' ? 'active' : ''}`}
             id="hello-btn"
             >
@@ -211,7 +231,7 @@ import Link from "next/link"; const PricingComp = ({ countryCode, product }) => 
             </span>
           </Link>
           <Link
-            href={"/"+countryCode.toLowerCase()+"/pricing/segmento"}
+            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/segmento":"/pricing/segmento"}
             className={`nav-item ${product === 'segmento' ? 'active' : ''}`}
             id="segmento-btn"
             onClick={() => {
@@ -224,7 +244,7 @@ import Link from "next/link"; const PricingComp = ({ countryCode, product }) => 
             </span>
           </Link>
           <Link 
-           href={"/"+countryCode.toLowerCase()+"/pricing/campaign"}
+           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/campaign":"/pricing/campaign"}
            className={`nav-item ${product === 'campaign' ? 'active' : ''}`}
             id="campaign-btn"
             >
@@ -234,7 +254,7 @@ import Link from "next/link"; const PricingComp = ({ countryCode, product }) => 
             </span>
           </Link>
           <Link
-           href={"/"+countryCode.toLowerCase()+"/pricing/knowledgebase"}
+          href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/knowledgebase":"/pricing/knowledgebase"}
            className={`nav-item ${product === 'knowledgebase' ? 'active' : ''}`}
             id="kb-btn"
             >
