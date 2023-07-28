@@ -265,7 +265,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
           </Link>
         </div>
       </div>
-      <div className="my-5 text-center">
+      <div className="my-5 text-center container price-container">
         {product === "sms" && (
           <Pricingsms
             amountArr={amountArr}
