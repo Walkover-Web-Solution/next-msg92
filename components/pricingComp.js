@@ -73,7 +73,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     try {
       const fetchRequests = amountArr.map(async (amount) => {
         const response = await axios.get(
-          `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amountArr[i]}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
+          `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
           )
 
         // const response = await axios.get(
