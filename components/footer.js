@@ -265,7 +265,7 @@ const Footer = ({path, year}) => {
                 </a>
               </div>
               <div className="mt-4 mt-lg-0">
-                <span>
+                <span className="c-fs-5">
                   A product of{" "}
                   <img
                     src="/img/walkover.svg"

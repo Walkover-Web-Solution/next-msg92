@@ -30,6 +30,11 @@
 }
 .c-fs-5{
     font-size: var(--c-fs-5)!important;
+    @media(max-width:425px) {
+
+        word-spacing:8px;
+      
+    }
 }
 
 
@@ -49,3 +54,4 @@
   .c-fw-b {
     font-weight: 700!important;
   }
+

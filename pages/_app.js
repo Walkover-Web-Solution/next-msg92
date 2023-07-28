@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
   var  brawserPath = router.asPath;
   var brawserPathCase = brawserPath;
   var brawserPathMeta = brawserPath;
-  //console.log('_app', brawserPath);
+  console.log('_app', brawserPath);
   if (brawserPath !== '/') {
     const pattern = /\/([^/?]+)/;
     const result = brawserPath.match(pattern);

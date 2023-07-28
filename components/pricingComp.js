@@ -13,8 +13,27 @@ import Pricingsegmento from "@/components/pricing/pricing-segmento";
 import Pricingcampaign from "@/components/pricing/pricing-campaign";
 import Pricingrcs from "@/components/pricing/pricing-rcs";
 import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
+import Link from "next/link"; 
 
-const PricingComp = ({ countryCode, product }) => {
+const PricingComp = ({ countryCode, product, brawserPath }) => {
+  console.log("bbfbfbf", brawserPath)
+  var pathLength = brawserPath?.split("/")[1].length;
+  var pathLengthCond = true
+  if (pathLength === 2)
+  {
+    console.log("inside if ");
+    pathLengthCond = true;
+  }
+  else{
+    console.log("inside else");
+    pathLengthCond = false;
+  }
+
+  console.log("pathLength", pathLengthCond)
+
+
+
+
   //console.log('PricingComp countryCode', countryCode);
   console.log("PricingComp product", product);
   var [pricing, setPricing] = useState([]);
@@ -28,6 +47,7 @@ const PricingComp = ({ countryCode, product }) => {
   var [subscriptionVoice, setSubscriptionVoice] = useState([]);
   var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
   var [subscriptionSegmento, setSubscriptionSegmento] = useState([]);
+  
 
   const changeCurrencySymbol = async (currency) => {
     if (currency == "INR") {
@@ -46,6 +66,7 @@ const PricingComp = ({ countryCode, product }) => {
     setOriginCountry(origin);
     setDestinationCountry(destination);
     //console.log('fetchsmsdata', currency, origin, destination, countryCode);
+    // console.log("clicked in sms data for global");
     amountArr = origin == "India" && currency == "INR" ? amountArr : ["5000"];
     console.log(amountArr,"aoutnarr")
     changeCurrencySymbol(currency);
@@ -54,7 +75,7 @@ const PricingComp = ({ countryCode, product }) => {
         const response = await axios.get(
           `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
         );
-        console.log(response, "response");
+        console.log(response, "response in sms");
         return response.data.data;
       });
   
@@ -100,12 +121,15 @@ const PricingComp = ({ countryCode, product }) => {
 
   const findCountry = async (code) => {
     const response = await countries?.find((el) => el.sortname === code);
+
+    console.log(response, "response for find country");
     //console.log('findCountry, response?.currency:', response?.currency, 'code', code);
     setCurrency(response?.currency);
     fetchSMSData(response?.currency, response?.name, response?.name);
   };
 
   useEffect(() => {
+    // const selectedcountryCode =  countryCode|| defaultCountryCode
     findCountry(countryCode);
     //console.log('useeffect', countryCode);
   }, [countryCode]);
@@ -118,8 +142,9 @@ const PricingComp = ({ countryCode, product }) => {
           className=" my-4 d-flex w-100 gap-2 align-items-center justify-content-center flex-wrap"
           id="pricing-pills-tab"
         >
-          <a
-            href="sms"
+          {/* for sms */}
+          <Link
+            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/sms":"/pricing/sms"}
             className={`nav-item ${product === 'sms' ? 'active' : ''}`}
             id="sms-btn"
             onClick={() => {
@@ -130,9 +155,11 @@ const PricingComp = ({ countryCode, product }) => {
               <img src="/img/icon/sms.svg" alt="#" />
               SMS
             </span>
-          </a>
-          <a
-            href="email"
+          </Link>
+          {/* for email */}
+          <Link
+            // href="/{}/pricing/email"
+            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/email":"/pricing/email"}
             className={`nav-item ${product === 'email' ? 'active' : ''}`}
             id="email-btn"
             onClick={() => {
@@ -143,18 +170,22 @@ const PricingComp = ({ countryCode, product }) => {
               <img src="/img/icon/email.svg" alt="#" />
               Email
             </span>
-          </a>
-          <a href="voice" 
-           className={`nav-item ${product === 'voice' ? 'active' : ''}`}
+          </Link>
+          {/* for voice */}
+          <Link
+            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/voice":"/pricing/voice"}
+            className={`nav-item ${product === 'voice' ? 'active' : ''}`}
             id="voice-btn"
-            >
+          >
             <span className="nav-link">
               <img src="/img/icon/voice.svg" alt="#" />
               Voice
             </span>
-          </a>
-          <a
-            href="whatsapp"
+          </Link>
+
+          {/* for whatsapp */}
+          <Link
+           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/whatsapp":"/pricing/whatsapp"}
             className={`nav-item ${product === 'whatsapp' ? 'active' : ''}`}
             id="wp-btn"
             onClick={() => {
@@ -165,8 +196,10 @@ const PricingComp = ({ countryCode, product }) => {
               <img src="/img/icon/whatsapp.svg" alt="#" />
               WhatsApp
             </span>
-          </a>
-          <a href="rcs" 
+          </Link>
+          {/* for RCS */}
+          <Link
+          href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/rcs":"/pricing/rcs"}
            className={`nav-item ${product === 'rcs' ? 'active' : ''}`}
             id="rcs-btn"
             >
@@ -174,9 +207,9 @@ const PricingComp = ({ countryCode, product }) => {
               <img src="/img/icon/rcs.svg" alt="#" />
               RCS
             </span>
-          </a>
-          <a
-            href="otp"
+          </Link>
+          <Link
+           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/otp":"/pricing/otp"}
             className={`nav-item ${product === 'otp' ? 'active' : ''}`}
             id="otp-btn"
             onClick={() => {
@@ -187,8 +220,9 @@ const PricingComp = ({ countryCode, product }) => {
               <img src="/img/icon/otp.svg" alt="#" />
               OTP
             </span>
-          </a>
-          <a href="hello" 
+          </Link>
+          <Link
+           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/hello":"/pricing/hello"}
            className={`nav-item ${product === 'hello' ? 'active' : ''}`}
             id="hello-btn"
             >
@@ -196,21 +230,22 @@ const PricingComp = ({ countryCode, product }) => {
               <img src="/img/icon/hello.svg" alt="#" />
               Hello
             </span>
-          </a>
-          <a
-            href="segmento"
+          </Link>
+          <Link
+            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/segmento":"/pricing/segmento"}
             className={`nav-item ${product === 'segmento' ? 'active' : ''}`}
             id="segmento-btn"
             onClick={() => {
-              fetchSubscriptionSegmento(currency, "2","SubscriptionSegmento");
+              fetchSubscription(currency, "2","SubscriptionSegmento");
             }}
           >
             <span className="nav-link">
               <img src="/img/icon/segmento.svg" alt="#" />
               Segmento
             </span>
-          </a>
-          <a href="campaign" 
+          </Link>
+          <Link 
+           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/campaign":"/pricing/campaign"}
            className={`nav-item ${product === 'campaign' ? 'active' : ''}`}
             id="campaign-btn"
             >
@@ -218,8 +253,9 @@ const PricingComp = ({ countryCode, product }) => {
               <img src="/img/icon/campaign.svg" alt="#" />
               Campaign
             </span>
-          </a>
-          <a href="knowledgebase" 
+          </Link>
+          <Link
+          href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/knowledgebase":"/pricing/knowledgebase"}
            className={`nav-item ${product === 'knowledgebase' ? 'active' : ''}`}
             id="kb-btn"
             >
@@ -227,10 +263,10 @@ const PricingComp = ({ countryCode, product }) => {
               <img src="/img/icon/knowledgebase.svg" alt="#" />
               KnowledgeBase
             </span>
-          </a>
+          </Link>
         </div>
       </div>
-      <div className="my-5 text-center">
+      <div className="my-5 text-center container price-container">
         {product === "sms" && (
           <Pricingsms
             amountArr={amountArr}
