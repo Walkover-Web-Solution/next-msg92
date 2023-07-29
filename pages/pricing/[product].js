@@ -12,8 +12,19 @@ const PricingMain = () => {
     fetch("https://api.db-ip.com/v2/free/self")
       .then((response) => response.json())
       .then((response) => {
-        setCode(response.countryCode);
-        setLoading(false); // Set loading to false after fetching the data
+        // setCode(response?.countryCode);
+        if(response?.countryCode){
+          setCode(response.countryCode);
+          setLoading(false);// Set loading to false after fetching the data
+          console.log("inside useeffect ", response);
+          console.log("inside if", response?.countryCode);
+        }
+        else{
+          console.log("inside else for useEffect", response?.countryCode);
+          setCode('US')
+          setLoading(false);// Set loading to false after fetching the data
+          console.log("after setting code to US", code);
+        }
       })
       .catch((error) => {
         console.log("error", error);
