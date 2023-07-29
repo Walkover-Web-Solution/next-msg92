@@ -16,11 +16,8 @@ const PricingMain = () => {
         if(response?.countryCode){
           setCode(response.countryCode);
           setLoading(false);// Set loading to false after fetching the data
-          console.log("inside useeffect ", response);
-          console.log("inside if", response?.countryCode);
         }
         else{
-          console.log("inside else for useEffect", response?.countryCode);
           setCode('US')
           setLoading(false);// Set loading to false after fetching the data
           console.log("after setting code to US", code);
@@ -45,7 +42,7 @@ const PricingMain = () => {
     );
     }
     else{
-      console.log("rrrrrrrr", code.length, "code", code);
+      // console.log("rrrrrrrr", code.length, "code", code);
     return <PricingComp countryCode={code} product={product} brawserPath={brawserPath} />;
 
     }

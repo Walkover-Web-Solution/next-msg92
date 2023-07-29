@@ -6,6 +6,7 @@ import $ from "jquery";
 import { MdSegment,MdClose } from "react-icons/md";
 import ProductMenu from "./productmenu";
 import Notification from "./notification";
+import Link from "next/link";
 
 const navbar = ({ brawserPath }) => {
   // console.log('navbar.js', brawserPath)
@@ -97,7 +98,7 @@ const navbar = ({ brawserPath }) => {
               <span className="c-fs-4 c-fw-m">Integrations</span>
               <div className="nav-line"></div>
             </a>
-            <a
+            <Link
               className={`nav-link menu-opt text-dark ${
                 brawserPath === "/pricing" ? "active" : ""
               }`}
@@ -106,7 +107,7 @@ const navbar = ({ brawserPath }) => {
             >
               <span className="c-fs-4 c-fw-m">Pricing</span>
               <div className="nav-line"></div>
-            </a>
+            </Link>
           </div>
           
           <div className="msg91-logo-cont  align-items-center justify-content-center d-flex" id="main-logo">
@@ -115,7 +116,7 @@ const navbar = ({ brawserPath }) => {
             </a>
           </div>
           <div className=" d-flex gap-4 gap-lg-4 gap-xl-5 w-nav-menu align-items-center justify-content-end">
-            <a
+            <Link
               className="nav-link menu-opt text-dark"
               href="https://docs.msg91.com/reference/overview"
               target="_blank"
@@ -123,23 +124,23 @@ const navbar = ({ brawserPath }) => {
             >
               <span className="c-fs-4 c-fw-m ">API Docs</span>
               <div className="nav-line"></div>
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://control.msg91.com/signup/"
               target="_blank"
               className="btn btn-dark c-fs-4 c-fw-sb px-3"
               id="signup-btn"
             >
               Sign Up
-            </a>
+            </Link>
           </div>
           <ProductMenu path={path} />
         </div>
         <div className="container relative d-md-none d-flex align-items-center justify-content-between c-fs-4 c-fw-m nav-menu-cont">
           <div className="msg91-logo-cont  align-items-center justify-content-center d-flex">
-            <a href={`${path}/`}>
+            <Link href={`${path}/`}>
               <img className="msg91-logo" src="/img/logo.svg" alt="MSG91" />
-            </a>
+            </Link>
           </div>
           <div
             style={{ height: "40px", width: "40px" }}

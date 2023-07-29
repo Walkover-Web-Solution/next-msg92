@@ -1,6 +1,6 @@
 import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
-
+import Link from "next/link";
 const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency}) => {
   const [selectedCurrency, setSelectedCurrency] = useState('INR');
   const [selectedMode, setSelectedMode] = useState("Monthly");
@@ -26,8 +26,6 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency}) => 
     let nf = (currency === 'INR') ? new Intl.NumberFormat('en-IN') : new Intl.NumberFormat('en-US');    
     return nf.format(x);
   }
-
-  console.log('subscriptionEmail', subscriptionEmail);
 
   return (
     <>
@@ -128,9 +126,9 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency}) => 
                         <div>{symbol} {item.plan_services[1].service_credit.service_credit_rates[0].follow_up_rate} per Email Validation</div>
                     </div>
 
-                    <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                    <Link href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                       Get Started
-                    </a>
+                    </Link>
                   </div>
                 </div>
               }

@@ -63,27 +63,21 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
   };
 
   const fetchSMSData = async (currency, origin, destination) => {
-    console.log(";inside fetch sms data for otp")
     setOriginCountry(origin);
-    console.log("after setting origin", origin);
     setDestinationCountry(destination);
-    console.log("after setting destination country", destinationCountry);
-    console.log('fetchsmsdata', currency, origin, destination);
-    // console.log("clicked in sms data for global");
     amountArr = origin == "India" && currency == "INR" ? amountArr : ["5000"];
-    console.log(amountArr,"aoutnarr")
     changeCurrencySymbol(currency);
     try {
       const fetchRequests = amountArr.map(async (amount) => {
-        const response = await axios.get(
-          `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-          )
-
         // const response = await axios.get(
-        //   `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-        // );
+        //   `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
+        //   )
 
-        console.log(response, "response in sms");
+        const response = await axios.get(
+          `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
+        );
+
+        // console.log(response, "response in sms");
         return response.data.data;
       });
   
@@ -96,7 +90,6 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
   };
 
   const fetchSubscription = async (currency, msId,state) => {
-    console.log("currency in fetch subscription", currency, "msId ", msId, "state", state);
     try {
       changeCurrencySymbol(currency);
       const response = await axios.get(
@@ -130,21 +123,14 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
 
   const findCountry = async (code) => {
     const response = await countries?.find((el) => el.sortname === code);
-
-
-    console.log(response, "response for find country");
     //console.log('findCountry, response?.currency:', response?.currency, 'code', code);
     setCurrency(response?.currency);
-    console.log("after setting to currency", response?.currency);
     fetchSMSData(response?.currency, response?.name, response?.name);
-    console.log("after calling fetch sms data",response?.currency, response?.name, response?.name );
-    
   };
 
   useEffect(() => {
     // const selectedcountryCode =  countryCode|| defaultCountryCode
     findCountry(countryCode);
-    console.log("inside useEffect for find country", countryCode);
     //console.log('useeffect', countryCode);
   }, [countryCode]);
 
