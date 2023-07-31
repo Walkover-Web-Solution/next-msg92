@@ -106,7 +106,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
       throw new Error("Some error on server: " + error.message);
     }
   };
-
+  
   const findCountry = async (code) => {
     const response = await countries?.find((el) => el.sortname === code);
     setCurrency(response?.currency);
@@ -281,6 +281,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
 
         {product === "email" && (
           <Pricingemail
+          setSubscriptionEmail={setSubscriptionEmail}
             subscriptionEmail={subscriptionEmail}
             fetchSubscriptionEmail={fetchSubscription}
             currency={currency}

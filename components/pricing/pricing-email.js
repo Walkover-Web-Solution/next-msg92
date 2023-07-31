@@ -1,14 +1,20 @@
 import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency}) => {
+const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSubscriptionEmail}) => {
   const [selectedCurrency, setSelectedCurrency] = useState('INR');
   const [selectedMode, setSelectedMode] = useState("Monthly");
   const [symbol, setSymbol] = useState("₹");
   
-  const changeCurrency = (currency) => {
+  const changeCurrency = async(currency) => {
     setSelectedCurrency(currency);
-    fetchSubscriptionEmail(currency, '1');
+    try {
+      const response = await fetchSubscriptionEmail(currency, '1',"subscriptionEmail");
+
+    } catch (error) {
+      console.log(error.message,"erririr")
+    }
+    
     switch (currency) {
       case "INR":
         setSymbol("₹");
@@ -21,7 +27,7 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency}) => 
         break;
     }
   };
-  
+
   const numberWithCommas = (x) => {
     let nf = (currency === 'INR') ? new Intl.NumberFormat('en-IN') : new Intl.NumberFormat('en-US');    
     return nf.format(x);

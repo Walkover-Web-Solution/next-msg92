@@ -7,7 +7,7 @@ const pricingmain =()=>{
   var  brawserPath = router.asPath;
   var path = brawserPath.split("/")[1];
   var product = brawserPath.split("/")[3];
-
+  product = product.split("?")[0];
   const getCountryCode = () => {
     var countryCode = path?.toUpperCase();
     path = path.length == 2 ? "/" + path : "";
