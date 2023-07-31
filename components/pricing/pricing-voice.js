@@ -40,7 +40,6 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
   };
 
   const fetchData = async (page) => {
-    // console.log('fetch data page', page);
     setLoading(true);
     setError(null);
     setPageNum(page);

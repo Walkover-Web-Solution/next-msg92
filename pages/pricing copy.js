@@ -27,7 +27,6 @@ const Pricing = () => {
   // let pricing = []
 
   const fetchSMSData = async (price, origin, destination) => {
-    //console.log('pricing.js fetchSMSData', price, origin, destination);
     setOriginCountry(origin);
     setDestinationCountry(destination);
     var newData = [];

@@ -7,7 +7,6 @@ const contactus = ({path}) => {
         fetch('https://api.db-ip.com/v2/free/self')
         .then(response => response.json())
         .then(response => {
-            // console.log('CONTACT US', response);
             if(response.countryName !== 'India'){
                 setSalesNumber('+65 31595004');
             }

@@ -1,4 +1,5 @@
 import {MdDoneOutline} from "react-icons/md"
+import Link from "next/link";
 const pricinghello = ({ countryCode }) => {
   const notavailable = "/img/not-available-red.svg";
   const available = "/img/available-green.svg";
@@ -17,7 +18,6 @@ const pricinghello = ({ countryCode }) => {
     premiumprice = "$20";
     premiumRate = "$0.0091";
   }
-  // console.log(basicRate,countryCode)
   return (
     <>
 
@@ -31,7 +31,7 @@ const pricinghello = ({ countryCode }) => {
     <div className="c-bg-grey col-12 col-md-4 col-xl-3  p-4 text-start">
       <h3 className="c-fs-3">Access platform for FREE</h3>
       <p className="c-fs-4 mt-2">Pay only for the channels you use</p>
-      <a href="https://control.msg91.com/signup/" target="_blank" className="btn btn-outline-dark mt-3 px-5">Get Started</a>
+      <Link href="https://control.msg91.com/signup/" target="_blank" className="btn btn-outline-dark mt-3 px-5">Get Started</Link>
     </div>
     </div>
 
