@@ -31,6 +31,8 @@ const PricingMain = () => {
   const router = useRouter();
   var brawserPath = router.asPath;
   var product = brawserPath.split("/")[2];
+  product = product.split("?")[0];
+
 
   if (code.length !== 0 && code !== "[COUNTRY]" && product !== "product") {
    if (loading){
