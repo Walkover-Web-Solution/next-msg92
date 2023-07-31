@@ -18,7 +18,6 @@ const pricinghello = ({ countryCode }) => {
     premiumprice = "$20";
     premiumRate = "$0.0091";
   }
-  // console.log(basicRate,countryCode)
   return (
     <>
 

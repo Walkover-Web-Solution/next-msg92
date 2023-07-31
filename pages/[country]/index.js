@@ -3,7 +3,6 @@ import IndexComp from "@/components/comps/indexComponent";
 
 const mainpage = ({ pageData, params }) => {
   var page = pageData?.pagename;
-  // console.log("pageData",pageData)
   if (!pageData) {
     return (
       <div>
@@ -12,14 +11,12 @@ const mainpage = ({ pageData, params }) => {
       </div>
     );
   } else if (page === "index") {
-    //console.log("page index", params);
     return (
       <>
         <IndexComp params={params} pageData={pageData} />
       </>
     );
   } else {
-    // console.log("page ", pageData.pagename);
     return (
       <>
         <h1>{pageData.head}</h1>
@@ -53,7 +50,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   let { pageslug, country } = params; // Update variable name to 'pageslug'
-  //console.log('country index',params);
   if (country.length > 2 && pageslug == null) {
     pageslug = country;
     country = "global";
@@ -61,8 +57,6 @@ export async function getStaticProps({ params }) {
     pageslug = "index";
   }
   const countryData = data[country] || {};
-  // console.log("countryData", country);
-  // console.log("countryData", pageslug);
   const pageData = countryData[pageslug] || null; // Update variable name to 'pageslug'
   return {
     props: {

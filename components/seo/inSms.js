@@ -2,7 +2,6 @@ import { useState } from "react";
 import { MdCircle } from "react-icons/md";
 
 const Insms = () => {
-  // console.log("sms from seo")
 
   const [showInsms, setShowInsms] = useState(false);
 

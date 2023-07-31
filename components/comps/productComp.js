@@ -5,9 +5,7 @@ import TrustedBy from '../trustedby';
 import Seo from '../seoComp';
 
 
-const ProductComponent = ({pageData, path }) => {
-  // console.log(pageData.pagename,"ss")
-  // console.log('ProductComponent',pageData);  
+const ProductComponent = ({pageData, path }) => { 
   var i = 0;
   return (
     <div>

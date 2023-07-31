@@ -16,26 +16,15 @@ import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
 import Link from "next/link"; 
 
 const PricingComp = ({ countryCode, product, brawserPath }) => {
-  console.log("bbfbfbf", brawserPath)
   var pathLength = brawserPath?.split("/")[1].length;
   var pathLengthCond = true
   if (pathLength === 2)
   {
-    console.log("inside if ");
     pathLengthCond = true;
   }
   else{
-    console.log("inside else");
     pathLengthCond = false;
   }
-
-  console.log("pathLength", pathLengthCond)
-
-
-
-
-  //console.log('PricingComp countryCode', countryCode);
-  console.log("PricingComp product", product);
   var [pricing, setPricing] = useState([]);
   var [originCountry, setOriginCountry] = useState("");
   var [destinationCountry, setDestinationCountry] = useState("");
@@ -76,8 +65,6 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
         const response = await axios.get(
           `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
         );
-
-        // console.log(response, "response in sms");
         return response.data.data;
       });
   
@@ -95,7 +82,6 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
       const response = await axios.get(
         `https://subscription.msg91.com/api/plans?currency=${currency}&ms_id=${msId}`
       );
-      console.log(response,"reposne")
       switch (state) {
         case "subscriptionEmail":
           setSubscriptionEmail([...response.data.data]);
@@ -123,15 +109,12 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
 
   const findCountry = async (code) => {
     const response = await countries?.find((el) => el.sortname === code);
-    //console.log('findCountry, response?.currency:', response?.currency, 'code', code);
     setCurrency(response?.currency);
     fetchSMSData(response?.currency, response?.name, response?.name);
   };
 
   useEffect(() => {
-    // const selectedcountryCode =  countryCode|| defaultCountryCode
     findCountry(countryCode);
-    //console.log('useeffect', countryCode);
   }, [countryCode]);
 
 

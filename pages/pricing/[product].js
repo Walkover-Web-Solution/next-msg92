@@ -20,7 +20,6 @@ const PricingMain = () => {
         else{
           setCode('US')
           setLoading(false);// Set loading to false after fetching the data
-          console.log("after setting code to US", code);
         }
       })
       .catch((error) => {
@@ -42,7 +41,6 @@ const PricingMain = () => {
     );
     }
     else{
-      // console.log("rrrrrrrr", code.length, "code", code);
     return <PricingComp countryCode={code} product={product} brawserPath={brawserPath} />;
 
     }

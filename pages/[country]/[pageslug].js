@@ -4,15 +4,11 @@ import ProductComponent from "@/components/comps/productComp";
 import ChannelComponent from "@/components/comps/channelComp";
 
 const mainpage = ({ pageData, params, path }) => {
-  // console.log(pageData);
   var page = pageData?.pagename;
   var code = pageData?.code;
   var Dataa = pageData;
   var channels = ['SMS','Email','WhatsApp','Voice'];
-  // console.log(params)
-  // console.log(Dataa);
   if (!pageData) {
-    // console.log("No page data");
     return (
       <div>
         <h1>404 - Page Not Found</h1>
@@ -20,7 +16,6 @@ const mainpage = ({ pageData, params, path }) => {
       </div>
     );
   } else if (page === "index") {
-    //console.log("page index");
     return (
       <>
         <IndexComp params={params}/>
@@ -45,7 +40,6 @@ const mainpage = ({ pageData, params, path }) => {
         </>
       );
     }
-    //console.log("page ", pageData.pagename);    
   }
 };
 
@@ -74,7 +68,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   let { pageslug, country } = params; // Update variable name to 'pageslug'
-  // console.log(params);
   if (country.length > 2 && pageslug == null) {
     pageslug = country;
     country = "global";
@@ -82,8 +75,6 @@ export async function getStaticProps({ params }) {
     pageslug = "index";
   }
   const countryData = data[country] || {};
-  // console.log("countryData", country);
-  // console.log("countryData", pageslug);
   const pageData = countryData[pageslug] || null; // Update variable name to 'pageslug'
   return {
     props: {

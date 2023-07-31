@@ -9,7 +9,6 @@ import Notification from "./notification";
 import Link from "next/link";
 
 const navbar = ({ brawserPath }) => {
-  // console.log('navbar.js', brawserPath)
   var path = brawserPath.split("/")[1];
   path = path.length == 2 ? "/" + path : "";
   const [showOverlay, setShowOverlay] = useState(false);
@@ -59,11 +58,9 @@ const navbar = ({ brawserPath }) => {
   var notification_class = "d-block";
   function showNotification() {
    var notification_class = "d-block";
-    console.log(notification_class,"sss");
   }
   function hideNotification() {
     var notification_class = "d-none";
-    console.log(notification_class,"ss");
   }
   const [showInnerComponent, setShowInnerComponent] = useState(true);
 
