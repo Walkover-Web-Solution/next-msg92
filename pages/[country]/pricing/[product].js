@@ -8,12 +8,14 @@ const pricingmain =()=>{
   var path = brawserPath.split("/")[1];
   var product = brawserPath.split("/")[3];
   product = product.split("?")[0];
+  console.log(product, "product");
   const getCountryCode = () => {
     var countryCode = path?.toUpperCase();
     path = path.length == 2 ? "/" + path : "";
     if(countryCode ==='[COUNTRY]'){
       return getCountryCode();
     }
+    console.log(brawserPath, "countryCode");
     return countryCode;
   } 
   const data=getCountryCode();

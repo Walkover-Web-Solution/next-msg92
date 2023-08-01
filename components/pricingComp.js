@@ -16,7 +16,9 @@ import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
 import Link from "next/link"; 
 
 const PricingComp = ({ countryCode, product, brawserPath }) => {
+  console.log(brawserPath, "brawserPath");
   var pathLength = brawserPath?.split("/")[1].length;
+  console.log(product,"product")
   var pathLengthCond = true
   if (pathLength === 2)
   {
@@ -36,7 +38,9 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
   var [subscriptionVoice, setSubscriptionVoice] = useState([]);
   var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
   var [subscriptionSegmento, setSubscriptionSegmento] = useState([]);
-  
+  const[fetchCurrency, setfetchCurrency] = useState();
+  const [fetchMsId, setfetchMsId] = useState("");
+  const[states, setStates] = useState()
 
   const changeCurrencySymbol = async (currency) => {
     if (currency == "INR") {
@@ -58,13 +62,14 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     changeCurrencySymbol(currency);
     try {
       const fetchRequests = amountArr.map(async (amount) => {
-        const response = await axios.get(
-          `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-          )
-
         // const response = await axios.get(
-        //   `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-        // );
+        //   `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
+        //   )
+
+        const response = await axios.get(
+          `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
+        );
+        console.log(response,"response in sms");
         return response.data.data;
       });
   
@@ -76,7 +81,39 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     }
   };
 
+  useEffect(()=>{
+
+    const checkProduct = (currency, msId, states) => {
+      if(product === 'email'){
+        console.log("email", product);
+        setfetchCurrency(currency);
+        console.log(fetchCurrency, "currency in useeffect");
+        setStates(states)
+        console.log(states,"states in useeffect");
+        setfetchMsId("1")
+        console.log(fetchMsId, "msid in useeffect");
+        console.log("out of order");
+       }
+       else if(product === 'voice'){
+        console.log("voice", product);
+       }
+       else if(product === 'whatsapp'){
+        console.log("whatsapp", product);
+       }
+       else if(product === 'segmento'){
+        console.log("segmento", product);
+       } 
+      }
+      checkProduct(fetchCurrency, fetchMsId,states)
+  },[])
+
+  
+
+
+
+
   const fetchSubscription = async (currency, msId,state) => {
+    console.log("inside");
     try {
       changeCurrencySymbol(currency);
       const response = await axios.get(
@@ -85,6 +122,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
       switch (state) {
         case "subscriptionEmail":
           setSubscriptionEmail([...response.data.data]);
+          console.log(subscriptionEmail, "subscription email");
           break;
         case "SubscriptionWhatsapp":
           setSubscriptionWhatsapp([...response.data.data]);
@@ -95,9 +133,9 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
           case "SubscriptionVoice":
             setSubscriptionVoice([...response.data.data]);
             break;
-          case "SubscriptionSegmento":
-            setSubscriptionSegmento([...response.data.data]);
-            break;
+          // case "SubscriptionSegmento":
+          //   setSubscriptionSegmento([...response.data.data]);
+          //   break;
         default:
           break;
       }
@@ -149,7 +187,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
               fetchSubscription(currency, "1","subscriptionEmail");
             }}
           >
-            <span className="nav-link">
+            <span className="nav-link"> 
               <img src="/img/icon/email.svg" alt="#" />
               Email
             </span>
