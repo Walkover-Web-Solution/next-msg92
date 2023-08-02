@@ -10,10 +10,9 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
     setSelectedCurrency(currency);
     try {
       const response = await fetchSubscriptionEmail(currency, '1',"subscriptionEmail");
-      console.log(response, "response in email");
 
     } catch (error) {
-      console.log(error.message,"erririr")
+      console.log(error.message,"error")
     }
     
     switch (currency) {

@@ -16,9 +16,7 @@ import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
 import Link from "next/link"; 
 
 const PricingComp = ({ countryCode, product, brawserPath }) => {
-  console.log(brawserPath, "brawserPath");
   var pathLength = brawserPath?.split("/")[1].length;
-  console.log(product,"product")
   var pathLengthCond = true
   if (pathLength === 2)
   {
@@ -83,25 +81,6 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     fetchWhatsAppData(currency)
     }
   },[product, currency]);
-  // useEffect(()=>{
-  //   if(product == "email"){
-  //     setfetchCurrency(currency);
-  //     setfetchMsId("1");
-  //     setStates("subscriptionEmail");
-  //   }
-  //   else if(product === "whatsapp"){
-  //     setfetchCurrency(currency);
-  //     setfetchMsId("5");
-  //     setStates("SubscriptionWhatsapp");
-  //   }
-  //   else if(product === "segmento"){
-  //     setfetchCurrency(currency);
-  //     setfetchMsId("2");
-  //     setStates("SubscriptionSegmento");
-  //   }
-  //   fetchSubscription(fetchCurrency,fetchMsId,states)
-  //   console.log(fetchMsId,"msid after subscription", fetchCurrency,"msid after subscription");
-  // })
   const fetchSMSData = async (currency, origin, destination) => {
     setOriginCountry(origin);
     setDestinationCountry(destination);
@@ -116,7 +95,6 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
         // const response = await axios.get(
         //   `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
         // );
-        console.log(response,"response in sms");
         return response.data.data;
       });
   
@@ -128,8 +106,6 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     }
   };
   const fetchSubscription = async (currency, msId,state) => {
-    // checkProduct(currency, msId, state);
-    console.log("inside",msId,currency,state);
     try {
       changeCurrencySymbol(currency);
       const response = await axios.get(
@@ -138,7 +114,6 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
       switch (state) {
         case "subscriptionEmail":
           setSubscriptionEmail([...response.data.data]);
-          console.log(subscriptionEmail, "subscription email");
           break;
         case "SubscriptionWhatsapp":
           setSubscriptionWhatsapp([...response.data.data]);
@@ -181,8 +156,6 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
 
   useEffect(() => {
     findCountry(countryCode);
-    console.log(currency, "currency value in useEffect");
-    console.log(fetchCurrency, fetchMsId,states,"logged value for useEffect");
   }, [countryCode]);
 
 
