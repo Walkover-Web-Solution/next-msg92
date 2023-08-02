@@ -42,6 +42,9 @@ const Pricingsms = ({
           options={countries}
           clearButton
           defaultSelected={[countries?.find(item => item.name === originCountry)]}
+          inputProps={{
+            autoComplete: "off" /* Add the autoComplete attribute here */
+          }}
         />
 
         <div className="px-4">To</div>
@@ -58,6 +61,9 @@ const Pricingsms = ({
           options={countries}
           clearButton
           defaultSelected={[countries?.find(item => item.name === originCountry)]}
+          inputProps={{
+            autoComplete: "off" /* Add the autoComplete attribute here */
+          }}
         />
 
       </div>}
