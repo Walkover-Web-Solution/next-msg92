@@ -36,7 +36,9 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
   var [subscriptionVoice, setSubscriptionVoice] = useState([]);
   var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
   var [subscriptionSegmento, setSubscriptionSegmento] = useState([]);
-  
+  const[fetchCurrency, setfetchCurrency] = useState();
+  const [fetchMsId, setfetchMsId] = useState("");
+  const[states, setStates] = useState()
 
   const changeCurrencySymbol = async (currency) => {
     if (currency == "INR") {
@@ -50,7 +52,35 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
       setOneTimeWtsAppFee("40");
     }
   };
-
+  const fetchemailData =async()=>{
+    setfetchCurrency(currency);
+    setfetchMsId("1");
+    setStates("SubscriptionSegmento");
+    fetchSubscription(currency,"1","subscriptionEmail")
+  }
+  const fetchSegmentoData = async()=>{
+    setfetchCurrency(currency);
+    setfetchMsId("2");
+    setStates("SubscriptionSegmento");
+    fetchSubscription(currency,"2","SubscriptionSegmento")
+  }
+  const fetchWhatsAppData = async()=>{
+    setfetchCurrency(currency);
+    setfetchMsId("5");
+    setStates("SubscriptionWhatsapp");
+    fetchSubscription(currency,"5","SubscriptionWhatsapp")
+  }
+  useEffect(()=>{
+    if(product === "email"){
+      fetchemailData(currency)
+    }
+    else if(product === "segmento"){
+      fetchSegmentoData(currency)
+      }
+    else if(product === "whatsapp"){
+    fetchWhatsAppData(currency)
+    }
+  },[product, currency]);
   const fetchSMSData = async (currency, origin, destination) => {
     setOriginCountry(origin);
     setDestinationCountry(destination);
@@ -75,7 +105,6 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
       console.error("Error fetching pricing details:", error);
     }
   };
-
   const fetchSubscription = async (currency, msId,state) => {
     try {
       changeCurrencySymbol(currency);
@@ -95,15 +124,15 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
           case "SubscriptionVoice":
             setSubscriptionVoice([...response.data.data]);
             break;
-          case "SubscriptionSegmento":
-            setSubscriptionSegmento([...response.data.data]);
-            break;
+          // case "SubscriptionSegmento":
+          //   setSubscriptionSegmento([...response.data.data]);
+          //   break;
         default:
           break;
       }
       
     } catch (error) {
-      throw new Error("Some error on server: " + error.message);
+      // throw new Error("Some error on server: " + error.message);
     }
   };
   
@@ -111,7 +140,19 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     const response = await countries?.find((el) => el.sortname === code);
     setCurrency(response?.currency);
     fetchSMSData(response?.currency, response?.name, response?.name);
+
+    if(product === "email"){
+      fetchemailData(response?.currency);
+    }
+    else if(product === "segmento"){
+      fetchSegmentoData(response?.currency);
+    }
+    else if(product === "whatsapp"){
+      fetchWhatsAppData(response?.currency);
+    }
   };
+
+ 
 
   useEffect(() => {
     findCountry(countryCode);
@@ -149,7 +190,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
               fetchSubscription(currency, "1","subscriptionEmail");
             }}
           >
-            <span className="nav-link">
+            <span className="nav-link"> 
               <img src="/img/icon/email.svg" alt="#" />
               Email
             </span>

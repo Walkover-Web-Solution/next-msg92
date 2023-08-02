@@ -22,7 +22,8 @@ return (
         </div>
       </div>
       <div className="mx-3">
-        <div className="text-center d-flex flex-column mb-4 mb-sm-0 align-items-center ">          
+        <div className="text-center d-flex flex-column mb-4 mb-sm-0 align-items-center ">      
+        <div className="popular-chip c-fs-6">POPULAR</div>    
           <div className="card-popular price-card email card kb text-center mb-4 mb-sm-0 c-bg-grey">
             <div className="card-body">
               <h3 className="c-fs-3">Alpha</h3>
