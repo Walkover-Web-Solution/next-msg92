@@ -144,7 +144,8 @@ const navbar = ({ brawserPath }) => {
             className="d-flex justify-content-center align-items-center"
           >
             <MdSegment
-              className="c-fs-1 one "
+              className="one"
+              style={{fontSize: '32px'}}
               id="mininav-tog-open"
               onClick={() => {
                 setShow(!show);hideNotification();handleClick();
