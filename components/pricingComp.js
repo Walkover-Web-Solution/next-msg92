@@ -54,7 +54,25 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
       setOneTimeWtsAppFee("40");
     }
   };
-
+  
+  useEffect(()=>{
+    if(product == "email"){
+      setfetchCurrency(currency);
+      setfetchMsId("1");
+      setStates("subscriptionEmail");
+    }
+    else if(product === "whatsapp"){
+      setfetchCurrency(currency);
+      setfetchMsId("5");
+      setStates("SubscriptionWhatsapp");
+    }
+    else if(product === "segmento"){
+      setfetchCurrency(currency);
+      setfetchMsId("2");
+      setStates("SubscriptionSegmento");
+    }
+    fetchSubscription(fetchCurrency,fetchMsId,states)
+  },[brawserPath])
   const fetchSMSData = async (currency, origin, destination) => {
     setOriginCountry(origin);
     setDestinationCountry(destination);
@@ -81,39 +99,14 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     }
   };
 
-  useEffect(()=>{
-
-    const checkProduct = (currency, msId, states) => {
-      if(product === 'email'){
-        console.log("email", product);
-        setfetchCurrency(currency);
-        console.log(fetchCurrency, "currency in useeffect");
-        setStates(states)
-        console.log(states,"states in useeffect");
-        setfetchMsId("1")
-        console.log(fetchMsId, "msid in useeffect");
-        console.log("out of order");
-       }
-       else if(product === 'voice'){
-        console.log("voice", product);
-       }
-       else if(product === 'whatsapp'){
-        console.log("whatsapp", product);
-       }
-       else if(product === 'segmento'){
-        console.log("segmento", product);
-       } 
-      }
-      checkProduct(fetchCurrency, fetchMsId,states)
-  },[])
 
   
 
 
 
-
   const fetchSubscription = async (currency, msId,state) => {
-    console.log("inside");
+    // checkProduct(currency, msId, state);
+    console.log("inside",msId,currency,state);
     try {
       changeCurrencySymbol(currency);
       const response = await axios.get(
@@ -141,7 +134,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
       }
       
     } catch (error) {
-      throw new Error("Some error on server: " + error.message);
+      // throw new Error("Some error on server: " + error.message);
     }
   };
   
@@ -151,8 +144,12 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     fetchSMSData(response?.currency, response?.name, response?.name);
   };
 
+ 
+
   useEffect(() => {
     findCountry(countryCode);
+    console.log(currency, "currency value in useEffect");
+    console.log(fetchCurrency, fetchMsId,states,"logged value for useEffect");
   }, [countryCode]);
 
 
