@@ -176,7 +176,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             }}
           >
             <span className="nav-link ">
-              <img src="/img/icon/sms.svg" alt="#" />
+              <img src="/img/icon/sms.svg" alt="#" className="icon"/>
               SMS
             </span>
           </Link>
@@ -191,7 +191,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             }}
           >
             <span className="nav-link"> 
-              <img src="/img/icon/email.svg" alt="#" />
+              <img src="/img/icon/email.svg" alt="#" className="icon" />
               Email
             </span>
           </Link>
@@ -203,7 +203,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             id="voice-btn"
           >
             <span className="nav-link">
-              <img src="/img/icon/voice.svg" alt="#" />
+              <img src="/img/icon/voice.svg" alt="#" className="icon" />
               Voice
             </span>
           </Link>
@@ -218,7 +218,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             }}
           >
             <span className="nav-link">
-              <img src="/img/icon/whatsapp.svg" alt="#" />
+              <img src="/img/icon/whatsapp.svg" alt="#" className="icon" />
               WhatsApp
             </span>
           </Link>
@@ -230,7 +230,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             id="rcs-btn"
             >
             <span className="nav-link">
-              <img src="/img/icon/rcs.svg" alt="#" />
+              <img src="/img/icon/rcs.svg" alt="#" className="icon" />
               RCS
             </span>
           </Link>
@@ -245,7 +245,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             }}
           >
             <span className="nav-link">
-              <img src="/img/icon/otp.svg" alt="#" />
+              <img src="/img/icon/otp.svg" alt="#" className="icon"/>
               OTP
             </span>
           </Link>
@@ -257,7 +257,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             id="hello-btn"
             >
             <span className="nav-link">
-              <img src="/img/icon/hello.svg" alt="#" />
+              <img src="/img/icon/hello.svg" alt="#" className="icon" />
               Hello
             </span>
           </Link>
@@ -272,7 +272,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             }}
           >
             <span className="nav-link">
-              <img src="/img/icon/segmento.svg" alt="#" />
+              <img src="/img/icon/segmento.svg" alt="#" className="icon"/>
               Segmento
             </span>
           </Link>
@@ -284,7 +284,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             id="campaign-btn"
             >
             <span className="nav-link">
-              <img src="/img/icon/campaign.svg" alt="#" />
+              <img src="/img/icon/campaign.svg" alt="#" className="icon"/>
               Campaign
             </span>
           </Link>
@@ -296,7 +296,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             id="kb-btn"
             >
             <span className="nav-link">
-              <img src="/img/icon/knowledgebase.svg" alt="#" />
+              <img src="/img/icon/knowledgebase.svg" alt="#" className="icon" />
               KnowledgeBase
             </span>
           </Link>
