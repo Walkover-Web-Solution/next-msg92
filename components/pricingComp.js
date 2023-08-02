@@ -54,25 +54,54 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
       setOneTimeWtsAppFee("40");
     }
   };
-  
+  const fetchemailData =async()=>{
+    setfetchCurrency(currency);
+    setfetchMsId("1");
+    setStates("SubscriptionSegmento");
+    fetchSubscription(currency,"1","subscriptionEmail")
+  }
+  const fetchSegmentoData = async()=>{
+    setfetchCurrency(currency);
+    setfetchMsId("2");
+    setStates("SubscriptionSegmento");
+    fetchSubscription(currency,"2","SubscriptionSegmento")
+  }
+  const fetchWhatsAppData = async()=>{
+    setfetchCurrency(currency);
+    setfetchMsId("5");
+    setStates("SubscriptionWhatsapp");
+    fetchSubscription(currency,"5","SubscriptionWhatsapp")
+  }
   useEffect(()=>{
-    if(product == "email"){
-      setfetchCurrency(currency);
-      setfetchMsId("1");
-      setStates("subscriptionEmail");
-    }
-    else if(product === "whatsapp"){
-      setfetchCurrency(currency);
-      setfetchMsId("5");
-      setStates("SubscriptionWhatsapp");
+    if(product === "email"){
+      fetchemailData(currency)
     }
     else if(product === "segmento"){
-      setfetchCurrency(currency);
-      setfetchMsId("2");
-      setStates("SubscriptionSegmento");
+      fetchSegmentoData(currency)
+      }
+    else if(product === "whatsapp"){
+    fetchWhatsAppData(currency)
     }
-    fetchSubscription(fetchCurrency,fetchMsId,states)
-  },[brawserPath])
+  },[product, currency]);
+  // useEffect(()=>{
+  //   if(product == "email"){
+  //     setfetchCurrency(currency);
+  //     setfetchMsId("1");
+  //     setStates("subscriptionEmail");
+  //   }
+  //   else if(product === "whatsapp"){
+  //     setfetchCurrency(currency);
+  //     setfetchMsId("5");
+  //     setStates("SubscriptionWhatsapp");
+  //   }
+  //   else if(product === "segmento"){
+  //     setfetchCurrency(currency);
+  //     setfetchMsId("2");
+  //     setStates("SubscriptionSegmento");
+  //   }
+  //   fetchSubscription(fetchCurrency,fetchMsId,states)
+  //   console.log(fetchMsId,"msid after subscription", fetchCurrency,"msid after subscription");
+  // })
   const fetchSMSData = async (currency, origin, destination) => {
     setOriginCountry(origin);
     setDestinationCountry(destination);
@@ -80,13 +109,13 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     changeCurrencySymbol(currency);
     try {
       const fetchRequests = amountArr.map(async (amount) => {
-        // const response = await axios.get(
-        //   `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-        //   )
-
         const response = await axios.get(
-          `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-        );
+          `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
+          )
+
+        // const response = await axios.get(
+        //   `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
+        // );
         console.log(response,"response in sms");
         return response.data.data;
       });
@@ -98,12 +127,6 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
       console.error("Error fetching pricing details:", error);
     }
   };
-
-
-  
-
-
-
   const fetchSubscription = async (currency, msId,state) => {
     // checkProduct(currency, msId, state);
     console.log("inside",msId,currency,state);
@@ -142,6 +165,16 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     const response = await countries?.find((el) => el.sortname === code);
     setCurrency(response?.currency);
     fetchSMSData(response?.currency, response?.name, response?.name);
+
+    if(product === "email"){
+      fetchemailData(response?.currency);
+    }
+    else if(product === "segmento"){
+      fetchSegmentoData(response?.currency);
+    }
+    else if(product === "whatsapp"){
+      fetchWhatsAppData(response?.currency);
+    }
   };
 
  
