@@ -1,4 +1,5 @@
 /:country/about-us /about-us
+/:country/rich-communication-services /
 /pricing /pricing/sms
 /blog /guide
 blog.msg91.com  /guide
@@ -38,7 +39,6 @@ api.msg91.com/apidoc/voicesms/send-using-draft.php  https://docs.msg91.com/refer
 /blog/13-sms-marketing-tactics/ /guide
 /kenya/bulksms.php /sms
 /sg/our-partners/ /partners-and-integrations
-/ph/rich-communication-services/ /ph
 blog1.msg91.com/  https://msg91.com/guide
 # control.msg91.com/app
 # msg91.com/wp-content/uploads/2018/05/Customized-SMS.svg
@@ -321,7 +321,6 @@ test.panel.msg91.com/apidoc/reseller/forget-password.php https://docs.msg91.com/
 /blog/what-happened-at-mwc19/feed/ /guide
 /blog/home/ /guide
 signup.msg91.com/privacy https://control.msg91.com/signup/
-/sg/rich-communication-services/ /sg/sms
 /in/case-studies/tag/education  /case-studies/tag/education
 /blog/marketing-automation-at-scale-strategies-from-the-boardroom/ /guide
 support.msg91.com/users/37099082-himanshu-chawla /contact-us
@@ -537,7 +536,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /icon-ionic-ios-arrow-down/ /
 /in/startup-policy/ /startup-policy/
 /blog/tag/holiday-marketing/ /blog/tag/holiday-marketing/
-/uk/rich-communication-services/ /rich-communication-services/
 /case-studies/policy-bazaar/ /case-studies/policybazaar/
 /blog/tag/regional-sms/ /sms
 /msg91-for-startups /startups
@@ -549,7 +547,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /uk/regional-sms/ /sms
 /in/search?q=%7Bsearch_term_string%7D /in
 /[country] /
-/rich-communication-services/ /rich-communication-services/
 /sms-for-spreadsheets /sms
 /case-studies/azim-premji-foundation/amp/ /case-studies/azimpremji
 /in/case-studies/smart-shift/ /case-studies/smartshift
@@ -617,7 +614,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /uk/internet-messaging/ /whatsapp
 /sms-pricing/ /pricing
 /internal-communication/?utm_source=blog&utm_medium=int&utm_campaign=hrtech /whatsapp
-/ph/rich-communication-services/ /rich-communication-services/
 /sms-for-spreadsheets/functionalities/ /sms-for-spreadsheets/
 /blog/live-webinar-exploit-capabilities/amp/ /guide
 /developers-policy.php/ /developers
@@ -718,9 +714,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /in/clickpost/ /case-studies/clickpost/
 /es/startups/ /startups/
 /in/leadsquared/ /case-studies/leadsq
-/sg/rich-communication-services/ /rich-communication-services/
 /blog/author/pallavi/amp/page/page?nonamp=1 /guide
-/rich-communication-services/?__hstc=241134940.d9f92fa8eef68bbb7f3a5412b223a496.1602547200116.1602547200117.1602547200118.1&__hssc=241134940.1.1602547200119&__hsfp=2827025116 /rich-communication-services/?__hstc=241134940.d9f92fa8eef68bbb7f3a5412b223a496.1602547200116.1602547200117.1602547200118.1&__hssc=241134940.1.1602547200119&__hsfp=2827025116
 /in/case-studies/joey-rooms/?typeform-embed=popup-drawer /case-studies/joeyrooms
 /case-studies/joey-rooms/ /case-studies/joey-rooms/
 /gb/segmento /segmento
@@ -839,7 +833,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /in/sankalp-india-foundation/ /case-studies/sankalp
 /in/azim-premji-foundation/ /case-studies/azimpremji
 /partner-program /become-a-partner
-/ph/rich-communication-services /rich-communication-services
 /cdn-cgi/challenge-platform/h/g/scripts/cb/invisible.js?cb=75e04cadbbab5788 /
 /in/terms-of-use/ /terms-of-use/
 /blog/messaging-a-great-way-of-reminding-people/amp/ /guide
@@ -856,7 +849,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /blog/dont-ruin-your-marketing-strategy-by-missing-out-on-language-based-personalization/amp/ /guide/dont-ruin-your-marketing-strategy-by-missing-out-on-language-based-personalization/amp/
 /in/blackbuck/ /case-studies/blackbuck/
 /es/hello-features/ /hello
-/es/rich-communication-services/ /rich-communication-services/
 /us/case-studies/oxebox/amp/ /case-studies/oxebox
 /in/zebpay/ /case-studies/zebpay
 /es/voice-call-api/ /voice
@@ -876,7 +868,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /feed/?attachment_id=62 /
 /in/developers/ /developers/
 /leegality/ /case-studies/leegality/
-/rich-communication-services/?__hstc=241134940.2f3f33a24b44870ec4a577029c49e44b.1602547200083.1602547200084.1602547200085.1&__hssc=241134940.1.1602547200086&__hsfp=2827025116 /rich-communication-services/?__hstc=241134940.2f3f33a24b44870ec4a577029c49e44b.1602547200083.1602547200084.1602547200085.1&__hssc=241134940.1.1602547200086&__hsfp=2827025116
 /transactional-sms/?nonamp=1 /sms/
 /sg/hello-features/ /hello/
 /uk/transactional-email/ /email
@@ -885,7 +876,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /hello-features /hello
 /blog/restrictions-on-sms-mms-in-india/?nonamp=1 /guide/restrictions-on-sms-mms-in-india/
 /blog/15-must-use-tools-for-every-startup/amp /guide
-/us/rich-communication-services/ /rich-communication-services/
 /us/transactional-email/ /email/
 /es/sms-campaign/ /campaign/
 /hello/group-121/feed/ /hello/
@@ -908,7 +898,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /in/case-studies/tag/unicode /case-studies/tag/unicode
 /in/thank-you/ /thank-you/
 /cdn-cgi/challenge-platform/h/b/scripts/cb/invisible.js?cb=7770c6aa1db981ee /
-/in/rich-communication-services /rich-communication-services
 /send-msg-shape/?utm_source=rss&utm_medium=rss&utm_campaign=send-msg-shape /campaign
 /blog/part-i-no-one-ignores-this-engagement-medium-mobile-messaging/amp/ /guide
 /us/case-studies/category/startups/ /case-studies/tag/startup
@@ -963,7 +952,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /blog/13-easy-tactics-to-a-successful-mobile-marketing-campaign/amp/ /guide
 /blog/benefits-of-sms-solutions-to-the-agricultural-industry/ /guide/benefits-of-sms-solutions-to-the-agricultural-industry/
 /no-spam-policy/?__hstc=241134940.d9f92fa8eef68bbb7f3a5412b223a496.1602547200116.1602547200117.1602547200118.1&__hssc=241134940.1.1602547200119&__hsfp=2827025116 /no-spam-policy
-/us/rich-communication-services /rich-communication-services
 /blog/15-must-use-tools-for-every-startup/amp/?unapproved=2532& /guide
 /blog/your-otp-will-not-fail-come-what-may/amp/ /guide
 /blog/i-know-what-msg91-did-last-summer/amp/ /guide
@@ -978,7 +966,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /cdn-cgi/challenge-platform/h/g/scripts/cb/invisible.js?cb=7b710d4ca88e1261 /
 /void(0) /
 /void(0)/httpsmsg91.com/es/void(0) /
-/rich-communication-services /rich-communication-services
 /in/case-studies/tag/crm /case-studies/tag/crm
 /in/case-studies/tag/food-travel-and-hospitality /case-studies/tag/food-travel-and-hospitality
 /in/kartfood/ /case-studies/kartfood
@@ -1011,7 +998,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /in/header-bg/?utm_source=rss&utm_medium=rss&utm_campaign=header-bg /campaign
 /blog/market-segmentation-holiday-marketing-campaign/amp/ /guide
 /sms-for-developers/ /sms
-/es/rich-communication-services /rich-communication-services
 /in/contact-us/case-studies/ /case-studies/
 /in/contact-us/?__hstc=241134940.2f3f33a24b44870ec4a577029c49e44b.1602547200083.1602547200084.1602547200085.1&__hssc=241134940.1.1602547200086&__hsfp=2827025116 /contact-us
 /blog/world-cup-in-india-sms/amp/ /guide
@@ -1088,7 +1074,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /send-otp/?source=post_page--------------------------- /otp
 /send-otp/?utm_source=blog&utm_medium=int&utm_campaign=increasereader /otp/
 /send-otp /otp
-/in/rich-communication-services/ /rich-communication-services/
 /blog/category/sms-marketing-benefits/amp/ /guide
 /blog/a-hyderabad-based-startup-is-connecting-hostels-and-tenants-on-a-single-platform/amp/ /guide
 /blog/measure-your-sms-marketing-effectively-for-a-greater-roi/amp/ /guide
