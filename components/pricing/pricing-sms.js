@@ -33,6 +33,7 @@ const Pricingsms = ({
        <Typeahead
        className="w-100"
           id="originCountry"
+          placeholder="Origin Country"
           labelKey="name"
           onChange={(selected) => {
             setPricing([])
@@ -42,6 +43,9 @@ const Pricingsms = ({
           options={countries}
           clearButton
           defaultSelected={[countries?.find(item => item.name === originCountry)]}
+          inputProps={{
+            autoComplete: "off" /* Add the autoComplete attribute here */
+          }}
         />
 
         <div className="px-4">To</div>
@@ -50,6 +54,7 @@ const Pricingsms = ({
           id="destinationCountry"
        className="w-100"
 
+          placeholder="Destination Country"
           labelKey="name"
           onChange={(selected) => {
             setPricing([])
@@ -59,6 +64,9 @@ const Pricingsms = ({
           options={countries}
           clearButton
           defaultSelected={[countries?.find(item => item.name === originCountry)]}
+          inputProps={{
+            autoComplete: "off" /* Add the autoComplete attribute here */
+          }}
         />
 
       </div>}

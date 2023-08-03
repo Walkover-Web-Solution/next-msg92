@@ -16,9 +16,7 @@ import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
 import Link from "next/link"; 
 
 const PricingComp = ({ countryCode, product, brawserPath }) => {
-  console.log(brawserPath, "brawserPath");
   var pathLength = brawserPath?.split("/")[1].length;
-  console.log(product,"product")
   var pathLengthCond = true
   if (pathLength === 2)
   {
@@ -54,25 +52,35 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
       setOneTimeWtsAppFee("40");
     }
   };
-  
+  const fetchemailData =async()=>{
+    setfetchCurrency(currency);
+    setfetchMsId("1");
+    setStates("SubscriptionSegmento");
+    fetchSubscription(currency,"1","subscriptionEmail")
+  }
+  const fetchSegmentoData = async()=>{
+    setfetchCurrency(currency);
+    setfetchMsId("2");
+    setStates("SubscriptionSegmento");
+    fetchSubscription(currency,"2","SubscriptionSegmento")
+  }
+  const fetchWhatsAppData = async()=>{
+    setfetchCurrency(currency);
+    setfetchMsId("5");
+    setStates("SubscriptionWhatsapp");
+    fetchSubscription(currency,"5","SubscriptionWhatsapp")
+  }
   useEffect(()=>{
-    if(product == "email"){
-      setfetchCurrency(currency);
-      setfetchMsId("1");
-      setStates("subscriptionEmail");
-    }
-    else if(product === "whatsapp"){
-      setfetchCurrency(currency);
-      setfetchMsId("5");
-      setStates("SubscriptionWhatsapp");
+    if(product === "email"){
+      fetchemailData(currency)
     }
     else if(product === "segmento"){
-      setfetchCurrency(currency);
-      setfetchMsId("2");
-      setStates("SubscriptionSegmento");
+      fetchSegmentoData(currency)
+      }
+    else if(product === "whatsapp"){
+    fetchWhatsAppData(currency)
     }
-    fetchSubscription(fetchCurrency,fetchMsId,states)
-  },[brawserPath])
+  },[product, currency]);
   const fetchSMSData = async (currency, origin, destination) => {
     setOriginCountry(origin);
     setDestinationCountry(destination);
@@ -80,14 +88,13 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     changeCurrencySymbol(currency);
     try {
       const fetchRequests = amountArr.map(async (amount) => {
-        // const response = await axios.get(
-        //   `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-        //   )
-
         const response = await axios.get(
-          `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-        );
-        console.log(response,"response in sms");
+          `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
+          )
+
+        // const response = await axios.get(
+        //   `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
+        // );
         return response.data.data;
       });
   
@@ -98,15 +105,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
       console.error("Error fetching pricing details:", error);
     }
   };
-
-
-  
-
-
-
   const fetchSubscription = async (currency, msId,state) => {
-    // checkProduct(currency, msId, state);
-    console.log("inside",msId,currency,state);
     try {
       changeCurrencySymbol(currency);
       const response = await axios.get(
@@ -115,7 +114,6 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
       switch (state) {
         case "subscriptionEmail":
           setSubscriptionEmail([...response.data.data]);
-          console.log(subscriptionEmail, "subscription email");
           break;
         case "SubscriptionWhatsapp":
           setSubscriptionWhatsapp([...response.data.data]);
@@ -142,14 +140,22 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     const response = await countries?.find((el) => el.sortname === code);
     setCurrency(response?.currency);
     fetchSMSData(response?.currency, response?.name, response?.name);
+
+    if(product === "email"){
+      fetchemailData(response?.currency);
+    }
+    else if(product === "segmento"){
+      fetchSegmentoData(response?.currency);
+    }
+    else if(product === "whatsapp"){
+      fetchWhatsAppData(response?.currency);
+    }
   };
 
  
 
   useEffect(() => {
     findCountry(countryCode);
-    console.log(currency, "currency value in useEffect");
-    console.log(fetchCurrency, fetchMsId,states,"logged value for useEffect");
   }, [countryCode]);
 
 
@@ -170,7 +176,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             }}
           >
             <span className="nav-link ">
-              <img src="/img/icon/sms.svg" alt="#" />
+              <img src="/img/icon/sms.svg" alt="#" className="icon"/>
               SMS
             </span>
           </Link>
@@ -185,7 +191,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             }}
           >
             <span className="nav-link"> 
-              <img src="/img/icon/email.svg" alt="#" />
+              <img src="/img/icon/email.svg" alt="#" className="icon" />
               Email
             </span>
           </Link>
@@ -197,7 +203,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             id="voice-btn"
           >
             <span className="nav-link">
-              <img src="/img/icon/voice.svg" alt="#" />
+              <img src="/img/icon/voice.svg" alt="#" className="icon" />
               Voice
             </span>
           </Link>
@@ -212,7 +218,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             }}
           >
             <span className="nav-link">
-              <img src="/img/icon/whatsapp.svg" alt="#" />
+              <img src="/img/icon/whatsapp.svg" alt="#" className="icon" />
               WhatsApp
             </span>
           </Link>
@@ -224,7 +230,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             id="rcs-btn"
             >
             <span className="nav-link">
-              <img src="/img/icon/rcs.svg" alt="#" />
+              <img src="/img/icon/rcs.svg" alt="#" className="icon" />
               RCS
             </span>
           </Link>
@@ -239,7 +245,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             }}
           >
             <span className="nav-link">
-              <img src="/img/icon/otp.svg" alt="#" />
+              <img src="/img/icon/otp.svg" alt="#" className="icon"/>
               OTP
             </span>
           </Link>
@@ -251,7 +257,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             id="hello-btn"
             >
             <span className="nav-link">
-              <img src="/img/icon/hello.svg" alt="#" />
+              <img src="/img/icon/hello.svg" alt="#" className="icon" />
               Hello
             </span>
           </Link>
@@ -266,7 +272,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             }}
           >
             <span className="nav-link">
-              <img src="/img/icon/segmento.svg" alt="#" />
+              <img src="/img/icon/segmento.svg" alt="#" className="icon"/>
               Segmento
             </span>
           </Link>
@@ -278,7 +284,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             id="campaign-btn"
             >
             <span className="nav-link">
-              <img src="/img/icon/campaign.svg" alt="#" />
+              <img src="/img/icon/campaign.svg" alt="#" className="icon"/>
               Campaign
             </span>
           </Link>
@@ -290,7 +296,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             id="kb-btn"
             >
             <span className="nav-link">
-              <img src="/img/icon/knowledgebase.svg" alt="#" />
+              <img src="/img/icon/knowledgebase.svg" alt="#" className="icon" />
               KnowledgeBase
             </span>
           </Link>

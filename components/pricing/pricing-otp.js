@@ -30,6 +30,7 @@ const Pricingsms = ({
      { originCountry?.length >= 1 && <div className="g-3 d-flex justify-content-center col-lg-5 m-auto pb-5">
        <Typeahead
           id="originCountry"
+          placeholder="Origin Country"
           labelKey="name"
           onChange={(selected) => {
             setPricing([])
@@ -45,6 +46,7 @@ const Pricingsms = ({
 
         <Typeahead
           id="destinationCountry"
+          placeholder="Destination Country"
           labelKey="name"
           onChange={(selected) => {
             setPricing([])
