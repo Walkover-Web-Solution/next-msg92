@@ -29,8 +29,9 @@ const Pricingsms = ({
   return (
     <>
      <div>
-     { originCountry?.length >= 1 && <div className="g-3 d-flex justify-content-center col-lg-5 m-auto pb-5">
+     { originCountry?.length >= 1 && <div className="gap-3 d-flex flex-column flex-md-row   align-items-cnetre justify-content-center col-12 col-md-10 col-lg-7 m-auto pb-5">
        <Typeahead
+       className="w-100"
           id="originCountry"
           labelKey="name"
           onChange={(selected) => {
@@ -47,6 +48,8 @@ const Pricingsms = ({
 
         <Typeahead
           id="destinationCountry"
+       className="w-100"
+
           labelKey="name"
           onChange={(selected) => {
             setPricing([])
