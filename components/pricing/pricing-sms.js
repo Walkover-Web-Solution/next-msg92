@@ -51,6 +51,7 @@ const Pricingsms = ({
         <div className="px-4">To</div>
 
         <Typeahead
+       className="w-100"
           id="destinationCountry"
           placeholder="Destination Country"
           labelKey="name"
