@@ -1,5 +1,7 @@
+/:country/pricing/ /pricing/sms
 /:country/about-us /about-us
 /:country/rich-communication-services /
+/rich-communication-services/ /
 /pricing /pricing/sms
 /blog /guide
 blog.msg91.com  /guide
