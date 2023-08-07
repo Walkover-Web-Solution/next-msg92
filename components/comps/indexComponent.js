@@ -13,7 +13,7 @@ const indexComp = ({pageData, params}) => {
           {pageData?.headline}
         </h1>
         <h3 className="small-heading text-dark">
-          Secure and robust APIs for SMS, Email, Voice, Authentication and more.
+          Secure and robust APIs for SMS, Email, Voice, Authentication and more
         </h3>
         <a
           href="https://control.msg91.com/signup/"
@@ -104,7 +104,7 @@ const indexComp = ({pageData, params}) => {
         <div className="product-card">
           <div className="product-head">
             <div className="product-head-text">
-              <span className="pro-heading c-head">OTP</span>
+              <span className="pro-heading c-head">Authentication</span>
             </div>
             <div className="product-head-img otp-pro"></div>
           </div>
@@ -118,7 +118,7 @@ const indexComp = ({pageData, params}) => {
             >
               <span>
                 <img src="./img/icon/otp.svg" className="pro-sec-ico me-3" />
-                <span className="pro-btn-text">OTP</span>
+                <span className="pro-btn-text">Authentication</span>
               </span>
               <MdKeyboardArrowRight />
             </a>
@@ -129,9 +129,9 @@ const indexComp = ({pageData, params}) => {
       <div className="container my-5 my-80">
         <h2 className="sub-heading c-head mb-2">Communication Channels</h2>
         <p className="c-fs-2 col-12 col-md-11 col-lg-9">
-          Empower conversations with best-in-class communication API.
-          Full-featured APIs for developers & businesses to connect and engage
-          their customers globally.
+        Empower conversations with best-in-class communication API
+Full-featured APIs for developers and businesses to connect and engage your customers globally
+
         </p>
         <div className="row mt-4 row-gap-26">
           <div className="col-12 col-sm-6 col-md-3">
@@ -253,21 +253,21 @@ const indexComp = ({pageData, params}) => {
           <div className="col-12 col-sm-6 col-lg-3 d-flex flex-column gap-2 py-3 py-sm-5">
             <h2 className="c-fs-1 c-fw-b">1.6 Billion+</h2>
             <h4 className="c-fs-3">
-              SMS Sent
+              SMS sent
               <br /> per month
             </h4>
           </div>
           <div className="col-12 col-sm-6 col-lg-3 d-flex flex-column gap-2 py-3 py-sm-5">
             <h2 className="c-fs-1 c-fw-b">1 Billion+</h2>
             <h4 className="c-fs-3">
-              OTP Sent
+              OTP sent
               <br /> per month
             </h4>
           </div>
           <div className="col-12 col-sm-6 col-lg-3 d-flex flex-column gap-2 py-3 py-sm-5">
             <h2 className="c-fs-1 c-fw-b">1 Billion+</h2>
             <h4 className="c-fs-3">
-              Email Sent
+              Email sent
               <br /> per month
             </h4>
           </div>
@@ -275,7 +275,7 @@ const indexComp = ({pageData, params}) => {
       </div>
 
       <div className="container my-5 more-services-sec my-80">
-        <h2 className="sub-heading c-head">More Services</h2>
+        <h2 className="sub-heading c-head">Utilities</h2>
         <div className="d-flex my-5 flex-md-row flex-column">
         <a href={`${path}/shorturl`} className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services">
             <div className="d-flex flex-column gap-3">
@@ -302,11 +302,9 @@ const indexComp = ({pageData, params}) => {
             </div>
             <div className="d-flex flex-column gap-3 justify-content-between  h-100">
               <div className="">
-                <h4 className="mb-3 c-fs-3">Make a long story short</h4>
+                <h4 className="mb-3 c-fs-3">Make your long URLs short</h4>
                 <p className="c-fs-4">
-                  Track your success, one click at a time. Using our URL Shrtnr
-                  App is great way to make looong, wild links into something
-                  more manageable and memorable.
+                Automatically shortens URL and tracks your success, one click at a time. Turn your long, messy links into short, memorable branded links
                 </p>
               </div>
               
@@ -328,7 +326,7 @@ const indexComp = ({pageData, params}) => {
                     alt="knowledgebase"
                   />
                 </span>
-                <span className="c-fs-2 c-head">Knowledgebase</span>
+                <span className="c-fs-2 c-head">KnowledgeBase</span>
               </div>
               <div className="">
                 <Image
@@ -343,12 +341,10 @@ const indexComp = ({pageData, params}) => {
             <div className="d-flex flex-column gap-3 justify-content-between h-100">
               <div className="">
                 <h4 className="mb-3 c-fs-3">
-                  Manage your help docs and articles
+                Manage your help docs and articles
                 </h4>
                 <p className="c-fs-4">
-                  We also offer our easy FAQ feature where your customers aren’t
-                  stuck with a question ever again, providing them with instant
-                  answers.
+                Do not let your customers wait for simple solutions. Give them instant access to the self-service library of information.
                 </p>
               </div>
                 <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-sb text-dark">
@@ -383,10 +379,10 @@ const indexComp = ({pageData, params}) => {
             <div className="d-flex flex-column gap-3 justify-content-between h-100">
               <div className="">
                 <h4 className="mb-3 c-fs-3">
-                  More storage, More possibilities
+                Simple and secured file storage 
                 </h4>
                 <p className="c-fs-4">
-                  Access your files from anywhere, anytime. We provide you with effortless file management at your fingertips, also making sure that your files are safe & secure.
+                A central hub for online file storage, sharing and syncing. Store all your files safely using powerful, reliable and easy-to-use cloud storage.
                 </p>
               </div>
               
@@ -401,7 +397,8 @@ const indexComp = ({pageData, params}) => {
       </div>
 
       <div className="container  my-80">
-        <h2 className="sub-heading c-head">Our Client Stories</h2>
+        <h2 className="sub-heading c-head">Customer Success</h2>
+        <h3 className="small-heading c-head">Powered by MSG91</h3>
         <div className="d-flex col-12 flex-column flex-sm-row gap-4 my-4">
           <a 
           href="/case-studies/milkbasket"
@@ -415,8 +412,7 @@ const indexComp = ({pageData, params}) => {
             />
             <div className="c-fs-3 p-3 d-none d-sm-block">
               <p className="pe-2 ">
-                Milkbasket sends regular updates to their customers’ via MSG91
-                multi-channel APIs.
+              Milkbasket sends regular updates to its customers by offering proactive support and recommendations
               </p>
               <div
                 className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
@@ -440,7 +436,7 @@ const indexComp = ({pageData, params}) => {
               />
               <div className=" d-none d-lg-block c-fs-3 p-3">
                 <p className="pe-2">
-                  Unacademy ensures seamless communication using SMS via MSG91.
+                Unacademy using omnichannel keeps its audience engaged and nurtured with personalised campaigns
                 </p>
                 <div
                   className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
@@ -463,7 +459,7 @@ const indexComp = ({pageData, params}) => {
               />
               <div className="d-none d-lg-block c-fs-3 p-3">
                 <p className="pe-2">
-                  Ixigo ensures seamless communication using SMS via MSG91.
+                Ixigo engages and updates its audience through multichannel communication across messaging, email and WhatsApp
                 </p>
                 <div
                   className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"

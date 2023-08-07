@@ -91,7 +91,7 @@ nav {
   }
 }
 .pro-heading {
-  font-size: clamp(20px, 3vw, 30px);
+  font-size: clamp(18px, 3vw, 28px);
 }
 .product-card {
   width: 25%;
@@ -651,10 +651,7 @@ code[class*="language-"], pre[class*="language-"]{
   width: clamp(300px, 30vw, 400px);
   outline: #e8e8e8 1px solid;
   background-color: white;
-  &:hover{
-    
-
-  }
+  
   .casestudycard-img{
     height: 110px;
     display: flex;
