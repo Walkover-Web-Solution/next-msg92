@@ -500,5 +500,369 @@
         "title": "Send SMS | Transactional email Service Provider in India - MSG91",
         "description":"Boost your business efficiency with the seamless integration of MSG91 SMS services into Tally. Streamline communication, automate reminders, and enhance customer engagement. Discover the power of MSG91 and Tally integration today!"
 
+    },
+    "commentin":{
+        "comment":"in country"
+    },
+    
+    "/in/pricing/sms":{
+        "title": "SMS Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/in/pricing/email":{
+        "title": "Email Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional Email, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/in/pricing/voice":{
+        "title": "Voice Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional Voice, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/in/pricing/whatsapp":{
+        "title": "WhatsApp Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional WhatsApp, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/in/pricing/rcs":{
+        "title": "RCS Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional RCS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/in/pricing/otp":{
+        "title": "OTP Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional OTP, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/in/pricing/hello":{
+        "title": "Hello Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional Hello, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/in/pricing/segmento":{
+        "title": "Segmento Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional Segmento, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/in/pricing/campaign":{
+        "title": "Campaign Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional Campaign, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/in/pricing/knowledgebase":{
+        "title": "KnowledgeBase Pricing in India | MSG91",
+        "description":"Avail robust and powerful services in India like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+
+    "commentae":{
+        "comment":"ae country"
+    },
+
+  
+    "/ae/pricing/sms":{
+        "title": "SMS Pricing in United Arab Emirates | MSG91",
+        "description":"Avail robust and powerful services in United Arab Emirates like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ae/pricing/email":{
+        "title": "Email Pricing in United Arab Emirates | MSG91",
+        "description":"Avail robust and powerful services in United Arab Emirates like transactional Email, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ae/pricing/voice":{
+        "title": "Voice Pricing in United Arab Emirates | MSG91",
+        "description":"Avail robust and powerful services in United Arab Emirates like transactional Voice, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ae/pricing/whatsapp":{
+        "title": "WhatsApp Pricing in United Arab Emirates | MSG91",
+        "description":"Avail robust and powerful services in United Arab Emirates like transactional WhatsApp, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ae/pricing/rcs":{
+        "title": "RCS Pricing in United Arab Emirates | MSG91",
+        "description":"Avail robust and powerful services in United Arab Emirates like transactional RCS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ae/pricing/otp":{
+        "title": "OTP Pricing in United Arab Emirates | MSG91",
+        "description":"Avail robust and powerful services in United Arab Emirates like transactional OTP, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ae/pricing/hello":{
+        "title": "Hello Pricing in United Arab Emirates | MSG91",
+        "description":"Avail robust and powerful services in United Arab Emirates like transactional Hello, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ae/pricing/segmento":{
+        "title": "Segmento Pricing in United Arab Emirates | MSG91",
+        "description":"Avail robust and powerful services in United Arab Emirates like transactional Segmento, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ae/pricing/campaign":{
+        "title": "Campaign Pricing in United Arab Emirates | MSG91",
+        "description":"Avail robust and powerful services in United Arab Emirates like transactional Campaign, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ae/pricing/knowledgebase":{
+        "title": "KnowledgeBase Pricing in United Arab Emirates | MSG91",
+        "description":"Avail robust and powerful services in United Arab Emirates like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+
+    "commentph":{
+        "comment":"ph country"
+    },
+
+    
+    "/ph/pricing/sms":{
+        "title": "SMS Pricing in Philippines | MSG91",
+        "description":"Avail robust and powerful services in Philippines like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ph/pricing/email":{
+        "title": "Email Pricing in Philippines | MSG91",
+        "description":"Avail robust and powerful services in Philippines like transactional Email, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ph/pricing/voice":{
+        "title": "Voice Pricing in Philippines | MSG91",
+        "description":"Avail robust and powerful services in Philippines like transactional Voice, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ph/pricing/whatsapp":{
+        "title": "WhatsApp Pricing in Philippines | MSG91",
+        "description":"Avail robust and powerful services in Philippines like transactional WhatsApp, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ph/pricing/rcs":{
+        "title": "RCS Pricing in Philippines | MSG91",
+        "description":"Avail robust and powerful services in Philippines like transactional RCS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ph/pricing/otp":{
+        "title": "OTP Pricing in Philippines | MSG91",
+        "description":"Avail robust and powerful services in Philippines like transactional OTP, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ph/pricing/hello":{
+        "title": "Hello Pricing in Philippines | MSG91",
+        "description":"Avail robust and powerful services in Philippines like transactional Hello, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ph/pricing/segmento":{
+        "title": "Segmento Pricing in Philippines | MSG91",
+        "description":"Avail robust and powerful services in Philippines like transactional Segmento, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ph/pricing/campaign":{
+        "title": "Campaign Pricing in Philippines | MSG91",
+        "description":"Avail robust and powerful services in Philippines like transactional Campaign, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ph/pricing/knowledgebase":{
+        "title": "KnowledgeBase Pricing in Philippines | MSG91",
+        "description":"Avail robust and powerful services in Philippines like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    
+   
+    "commentsg":{
+        "comment":"sg country"
+    },
+      
+    "/sg/pricing/sms":{
+        "title": "SMS Pricing in Singapore | MSG91",
+        "description":"Avail robust and powerful services in Singapore like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/sg/pricing/email":{
+        "title": "Email Pricing in Singapore | MSG91",
+        "description":"Avail robust and powerful services in Singapore like transactional Email, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/sg/pricing/voice":{
+        "title": "Voice Pricing in Singapore | MSG91",
+        "description":"Avail robust and powerful services in Singapore like transactional Voice, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/sg/pricing/whatsapp":{
+        "title": "WhatsApp Pricing in Singapore | MSG91",
+        "description":"Avail robust and powerful services in Singapore like transactional WhatsApp, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/sg/pricing/rcs":{
+        "title": "RCS Pricing in Singapore | MSG91",
+        "description":"Avail robust and powerful services in Singapore like transactional RCS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/sg/pricing/otp":{
+        "title": "OTP Pricing in Singapore | MSG91",
+        "description":"Avail robust and powerful services in Singapore like transactional OTP, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/sg/pricing/hello":{
+        "title": "Hello Pricing in Singapore | MSG91",
+        "description":"Avail robust and powerful services in Singapore like transactional Hello, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/sg/pricing/segmento":{
+        "title": "Segmento Pricing in Singapore | MSG91",
+        "description":"Avail robust and powerful services in Singapore like transactional Segmento, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/sg/pricing/campaign":{
+        "title": "Campaign Pricing in Singapore | MSG91",
+        "description":"Avail robust and powerful services in Singapore like transactional Campaign, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/sg/pricing/knowledgebase":{
+        "title": "KnowledgeBase Pricing in Singapore | MSG91",
+        "description":"Avail robust and powerful services in Singapore like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+
+    "commentes":{
+        "comment":"es country"
+    },
+     
+    "/es/pricing/sms":{
+        "title": "SMS Pricing in Spain | MSG91",
+        "description":"Avail robust and powerful services in Spain like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/es/pricing/email":{
+        "title": "Email Pricing in Spain | MSG91",
+        "description":"Avail robust and powerful services in Spain like transactional Email, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/es/pricing/voice":{
+        "title": "Voice Pricing in Spain | MSG91",
+        "description":"Avail robust and powerful services in Spain like transactional Voice, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/es/pricing/whatsapp":{
+        "title": "WhatsApp Pricing in Spain | MSG91",
+        "description":"Avail robust and powerful services in Spain like transactional WhatsApp, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/es/pricing/rcs":{
+        "title": "RCS Pricing in Spain | MSG91",
+        "description":"Avail robust and powerful services in Spain like transactional RCS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/es/pricing/otp":{
+        "title": "OTP Pricing in Spain | MSG91",
+        "description":"Avail robust and powerful services in Spain like transactional OTP, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/es/pricing/hello":{
+        "title": "Hello Pricing in Spain | MSG91",
+        "description":"Avail robust and powerful services in Spain like transactional Hello, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/es/pricing/segmento":{
+        "title": "Segmento Pricing in Spain | MSG91",
+        "description":"Avail robust and powerful services in Spain like transactional Segmento, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/es/pricing/campaign":{
+        "title": "Campaign Pricing in Spain | MSG91",
+        "description":"Avail robust and powerful services in Spain like transactional Campaign, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/es/pricing/knowledgebase":{
+        "title": "KnowledgeBase Pricing in Spain | MSG91",
+        "description":"Avail robust and powerful services in Spain like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+   
+
+    "commentgb":{
+        "comment":"gb country"
+    },
+     
+    "/gb/pricing/sms":{
+        "title": "SMS Pricing in United Kingdom | MSG91",
+        "description":"Avail robust and powerful services in United Kingdom like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/gb/pricing/email":{
+        "title": "Email Pricing in United Kingdom | MSG91",
+        "description":"Avail robust and powerful services in United Kingdom like transactional Email, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/gb/pricing/voice":{
+        "title": "Voice Pricing in United Kingdom | MSG91",
+        "description":"Avail robust and powerful services in United Kingdom like transactional Voice, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/gb/pricing/whatsapp":{
+        "title": "WhatsApp Pricing in United Kingdom | MSG91",
+        "description":"Avail robust and powerful services in United Kingdom like transactional WhatsApp, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/gb/pricing/rcs":{
+        "title": "RCS Pricing in United Kingdom | MSG91",
+        "description":"Avail robust and powerful services in United Kingdom like transactional RCS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/gb/pricing/otp":{
+        "title": "OTP Pricing in United Kingdom | MSG91",
+        "description":"Avail robust and powerful services in United Kingdom like transactional OTP, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/gb/pricing/hello":{
+        "title": "Hello Pricing in United Kingdom | MSG91",
+        "description":"Avail robust and powerful services in United Kingdom like transactional Hello, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/gb/pricing/segmento":{
+        "title": "Segmento Pricing in United Kingdom | MSG91",
+        "description":"Avail robust and powerful services in United Kingdom like transactional Segmento, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/gb/pricing/campaign":{
+        "title": "Campaign Pricing in United Kingdom | MSG91",
+        "description":"Avail robust and powerful services in United Kingdom like transactional Campaign, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/gb/pricing/knowledgebase":{
+        "title": "KnowledgeBase Pricing in United Kingdom | MSG91",
+        "description":"Avail robust and powerful services in United Kingdom like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+
+
+
+    "commentus":{
+        "comment":"us country"
+    },
+     
+    "/us/pricing/sms":{
+        "title": "SMS Pricing in United States | MSG91",
+        "description":"Avail robust and powerful services in United States like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/us/pricing/email":{
+        "title": "Email Pricing in United States | MSG91",
+        "description":"Avail robust and powerful services in United States like transactional Email, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/us/pricing/voice":{
+        "title": "Voice Pricing in United States | MSG91",
+        "description":"Avail robust and powerful services in United States like transactional Voice, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/us/pricing/whatsapp":{
+        "title": "WhatsApp Pricing in United States | MSG91",
+        "description":"Avail robust and powerful services in United States like transactional WhatsApp, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/us/pricing/rcs":{
+        "title": "RCS Pricing in United States | MSG91",
+        "description":"Avail robust and powerful services in United States like transactional RCS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/us/pricing/otp":{
+        "title": "OTP Pricing in United States | MSG91",
+        "description":"Avail robust and powerful services in United States like transactional OTP, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/us/pricing/hello":{
+        "title": "Hello Pricing in United States | MSG91",
+        "description":"Avail robust and powerful services in United States like transactional Hello, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/us/pricing/segmento":{
+        "title": "Segmento Pricing in United States | MSG91",
+        "description":"Avail robust and powerful services in United States like transactional Segmento, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/us/pricing/campaign":{
+        "title": "Campaign Pricing in United States | MSG91",
+        "description":"Avail robust and powerful services in United States like transactional Campaign, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/us/pricing/knowledgebase":{
+        "title": "KnowledgeBase Pricing in United States | MSG91",
+        "description":"Avail robust and powerful services in United States like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+
+    "commentglobal":{
+        "comment":"global"
+    },
+    "/pricing/sms":{
+        "title": "SMS Pricing | MSG91",
+        "description":"Avail robust and powerful services like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/pricing/email":{
+        "title": "Email Pricing | MSG91",
+        "description":"Avail robust and powerful services like transactional Email, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/pricing/voice":{
+        "title": "Voice Pricing  | MSG91",
+        "description":"Avail robust and powerful services like transactional Voice, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/pricing/whatsapp":{
+        "title": "WhatsApp Pricing | MSG91",
+        "description":"Avail robust and powerful services like transactional WhatsApp, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/pricing/rcs":{
+        "title": "RCS Pricing | MSG91",
+        "description":"Avail robust and powerful services like transactional RCS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/pricing/otp":{
+        "title": "OTP Pricing | MSG91",
+        "description":"Avail robust and powerful services like transactional OTP, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/pricing/hello":{
+        "title": "Hello Pricing | MSG91",
+        "description":"Avail robust and powerful services like transactional Hello, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/pricing/segmento":{
+        "title": "Segmento Pricing | MSG91",
+        "description":"Avail robust and powerful services like transactional Segmento, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/pricing/campaign":{
+        "title": "Campaign Pricing | MSG91",
+        "description":"Avail robust and powerful services like transactional Campaign, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/pricing/knowledgebase":{
+        "title": "KnowledgeBase Pricing | MSG91",
+        "description":"Avail robust and powerful services like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
     }
 }
