@@ -3,9 +3,26 @@ import React from 'react';
 import PreFooter from '../preFooter';
 import TrustedBy from '../trustedby';
 import Seo from '../seoComp';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 
-const ProductComponent = ({pageData, path }) => { 
+const ProductComponent = ({pageData, path, webhookData }) => { 
+  let results = [];
+  webhookData?.forEach((data, index) => {
+   if(data.fld2ul6mu === "Knowledgebase"){
+    console.log("inside if");
+    results.push(
+      <div key={index}>
+        -{data.fldm95n8s}
+      </div>,
+    );
+   }
+   else{
+    console.log("inside else")
+   }
+  });
+
+  console.log(webhookData, "pageData inside Product");
   var i = 0;
   return (
     <div>
@@ -13,19 +30,19 @@ const ProductComponent = ({pageData, path }) => {
         <div className="container text-center overflow-hidden">
           <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
             <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
-              <img src={pageData.icon} className="product-page-logo me-2" />
-              <h1 className={`heading page-title ${pageData.pagename}-heading`}>{pageData.pagetag}</h1>
+              <img src={pageData?.icon} className="product-page-logo me-2" />
+              <h1 className={`heading page-title ${pageData?.pagename}-heading`}>{pageData?.pagetag}</h1>
             </div>
 
-            <p className={`c-fs-4 text-uppercase col-otp c-ls-20 mx-auto mt-3 ${pageData.pagename}-dark`}>
-              {pageData.tagline}
+            <p className={`c-fs-4 text-uppercase col-otp c-ls-20 mx-auto mt-3 ${pageData?.pagename}-dark`}>
+              {pageData?.tagline}
             </p>
             <div className="p-3">
               <h2 className="small-heading w-md-75 w-100 mx-auto fw-normal mb-2">
-                {pageData.heading}
+                {pageData?.heading}
               </h2>
               <p className="small-heading w-md-75 w-100 mx-auto fw-normal">
-                {pageData.subheading}
+                {pageData?.subheading}
               </p>
             </div>
             <a href="https://control.msg91.com/signup/" className="btn btn-dark btn-lg c-fs-2 mt-3" >
@@ -34,7 +51,7 @@ const ProductComponent = ({pageData, path }) => {
           </div>
             <TrustedBy />
           <img
-            src={pageData.pageimg}
+            src={pageData?.pageimg}
             className="img-fluid product-page-img mx-auto"
             alt="#"
           />
@@ -69,7 +86,25 @@ const ProductComponent = ({pageData, path }) => {
           }
         })}
       </div>
-      <Seo path={path} pageData={pageData.pagename} />
+      <div className="container">
+        <div className= "d-flex align-items-between align-items-center">
+          <div className='d-flex col-6 flex-column p-2 m-2 feature'>
+          <h4 className = 'p-2 more-feature'>More Features</h4>
+        {results?.map((data,index)=>{
+          console.log(data,"feature");
+          
+          return (<p className=' m-2 px-sm-0 col-12 '>{data}</p>)
+        })} 
+        </div>
+        <div className='col-5 '>
+          <div className='d-flex gap-3 p-4 m-3 req-feature-cont justify-content-end align-items-center'>
+          <h2 className='c-fs-3 c-head me-text'>Looking for me ?</h2>
+          <button className='w-90 p-2 btn'>Request a Feature <AiOutlineArrowRight /></button>
+          </div>
+        </div>
+        </div>
+      </div>
+      <Seo path={path} pageData={pageData?.pagename} />
       <PreFooter />
     </div>
   );
