@@ -223,4 +223,16 @@ $light-skyblue: #e0f0fe;
   }
 }
 
+
+.login-icon-cont{
+  .entry__right_section__container__entry_with--btn-with-text{
+    max-width: 124px;
+  }
+  button:not(.entry__right_section__container__entry_with--btn-with-text){
+    max-width: 58px;
+  }
+}
+.entry__right_section__container__entry_button{
+  color: var(--white-color);
+}
 // ================================= LOGIN PAGE SCSS CODE======================END=============================

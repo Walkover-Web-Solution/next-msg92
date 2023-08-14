@@ -30,7 +30,7 @@ const logIn = () => {
               <div className="entry__right_section__container__entry_with mb-4">
                 <span className="d-inline-block mt-3 p-2 mb-3">Login with</span>
   
-                <div className="d-flex align-items-center flex-wrap " style={{gap: "16px"}}>
+                <div className="d-flex align-items-center flex-wrap login-icon-cont" style={{gap: "16px"}}>
                   <button className="entry__right_section__container__entry_with--btn-with-text" style={{border: "1px solid var(--primary-light-theme, #1E75BA)"}}>
                     <img
                       src="/img/tie/google-logo.svg"
@@ -69,7 +69,7 @@ const logIn = () => {
   
               <span className="d-block line_on_right c-fs-6 mb-4">or</span>
   
-              <button className="entry__right_section__container__entry_button mb-4">
+              <button className="c-col-white entry__right_section__container__entry_button mb-4">
                 Login with OTP
               </button>
   

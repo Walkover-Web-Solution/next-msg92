@@ -50,7 +50,7 @@ import {
           <div className="entry__right_section col-xl-9 col-lg-8 col-md-7 col-sm-12 col-12">
             <div className="container entry__right_section__container">
               {/* STEP #1 */}
-              <div className="entry__right_section__container--step entry__right_section__container--active">
+              <div className="entry__right_section__container--step ">
                 <div className="d-none entry__right_section__container--logo-visible-in-small">
                   <img
                     src="/images/msgOriginalsvg.png"
@@ -146,7 +146,7 @@ import {
 
 
               {/* STEP #2 */}
-              <div className="entry__right_section__container--step ">
+              <div className="entry__right_section__container--step entry__right_section__container--active">
                 <div className="d-none entry__right_section__container--logo-visible-in-small">
                   <img
                     src="/images/msgOriginalsvg.png"
