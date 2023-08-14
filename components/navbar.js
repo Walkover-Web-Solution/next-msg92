@@ -123,7 +123,8 @@ const navbar = ({ brawserPath }) => {
               <div className="nav-line"></div>
             </Link>
             <Link
-              href="https://control.msg91.com/signup/"
+              // href="https://control.msg91.com/signup/"
+              href="/signup"
               target="_blank"
               className="btn btn-dark c-fs-4 c-fw-sb px-3"
               id="signup-btn"
