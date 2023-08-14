@@ -127,14 +127,16 @@ $font-weight-500: var(--c-fw-500);
               position: relative;
             }
             
-            .custom-input-label {
-              position: absolute;
-              top: 18em; /* Adjust this value to control the distance */
-              left: 64em;
-              background-color: white;
-              padding: 0 0.2em;
-              font-size: 0.8em;
-              z-index: 1;
+            .input-email{
+              position: relative;
+              &__lable{
+                font-size: 11px;
+                transform: translate(10px, -50%);
+                position: absolute;
+                z-index: 1;
+                padding: 3px 5px;
+                background-color: var(--white-color);
+              }
             }
             
             .custom-input-label small {
@@ -329,13 +331,7 @@ $font-weight-500: var(--c-fw-500);
             }
             
             .custom-input-label {
-              position: absolute;
-              top: 18em; /* Adjust this value to control the distance */
-              left: 36em;
-              background-color: white;
-              padding: 0 0.2em;
-              font-size: 0.8em;
-              z-index: 1;
+            
             }
             
             .custom-input-label small {
@@ -430,13 +426,7 @@ $font-weight-500: var(--c-fw-500);
             }
             
             .custom-input-label {
-              position: absolute;
-              top: 18em; /* Adjust this value to control the distance */
-              left: 38em;
-              background-color: white;
-              padding: 0 0.2em;
-              font-size: 0.8em;
-              z-index: 1;
+              
             }
             
             .custom-input-label small {
@@ -533,13 +523,7 @@ $font-weight-500: var(--c-fw-500);
             }
             
             .custom-input-label {
-              position: absolute;
-              top: 20.5em; /* Adjust this value to control the distance */
-              left: 2em;
-              background-color: white;
-              padding: 0 0.2em;
-              font-size: 0.8em;
-              z-index: 1;
+           
             }
             
             .custom-input-label small {
