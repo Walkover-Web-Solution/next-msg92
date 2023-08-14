@@ -6,6 +6,7 @@ import {
     MdCheckCircleOutline,
   } from "react-icons/md";
   const signUp = () => {
+    console.log("inside signup page");
     return (
       <>
         <section className="entry signup d-flex">

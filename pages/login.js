@@ -1,4 +1,5 @@
 const logIn = () => {
+  console.log("inside login page");
     return (
       <>
         <section className="entry d-flex  ">
