@@ -4,7 +4,7 @@ import { MDXRemote } from 'next-mdx-remote';
 export default function Post({ source }) {
   return (
     <div className="wrapper">
-      <MDXRemote {...source} components={components} />
+      <MDXRemote {...source} />
     </div>
   );
 }
