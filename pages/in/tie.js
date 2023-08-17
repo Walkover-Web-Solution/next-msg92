@@ -5,7 +5,6 @@ const Tie = () => {
 
   const handleVerify = () => {
     // Do something with the verificationCode
-    console.log(verificationCode);
   };
   
 

@@ -16,7 +16,6 @@ export default function App({ Component, pageProps }) {
   const trimmedPath =  brawserPath.split("?")[0];
   var brawserPathCase = brawserPath;
   var brawserPathMeta = brawserPath;
-  console.log("brawserPath: " + brawserPath);
   if (brawserPath !== '/') {
     const pattern = /\/([^/?]+)/;
     const result = brawserPath.match(pattern);
@@ -24,7 +23,6 @@ export default function App({ Component, pageProps }) {
     
   }
   var path = brawserPath.split("/")[1];
-  console.log(path, "path");
   const year = new Date().getFullYear();
   // useEffect(() => {
   //   require("bootstrap/dist/js/bootstrap.bundle.min.js");
