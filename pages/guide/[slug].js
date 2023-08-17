@@ -1,8 +1,6 @@
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
  
-const components = { Heading };
- 
 export default function Post({ source }) {
   return (
     <div className="wrapper">
