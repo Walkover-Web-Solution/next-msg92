@@ -9,7 +9,7 @@ export default function Post({ source }) {
   );
 }
  
-export async function getStaticProps() {
+export async function getStaticProps({}) {
   // MDX text - can be from a local file, database, anywhere
   const source = 'Some **mdx** text, with a component';
   const mdxSource = await serialize(source);
