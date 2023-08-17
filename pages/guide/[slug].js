@@ -13,7 +13,6 @@ import yaml from "js-yaml";
 // import InstagramEmbed from "react-instagram-embed";
 // import YouTube from "react-youtube";
 // import { TwitterTweetEmbed } from "react-twitter-embed";
-import { hydrate } from 'next-mdx-remote/hydrate';
 
 var source = MdxRemote.Source;
 //const components = { InstagramEmbed, YouTube, TwitterTweetEmbed };
