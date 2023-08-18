@@ -1,6 +1,6 @@
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
-import fs from "fs";
+import * as fs from "fs";
 import { fetchPostContent } from '../../components/lib/posts';
 
 // import Test from '../components/test'
