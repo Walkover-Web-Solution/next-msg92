@@ -580,4 +580,9 @@ $font-weight-500: var(--c-fw-500);
     }
   }
 }
+
+.elert-otp-message{
+  position: absolute;
+  transform: translatey(-50px);
+}
 // ================================= SIGN-UP PAGE SCSS CODE======================END=============================

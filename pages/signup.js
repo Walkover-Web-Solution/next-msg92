@@ -286,6 +286,7 @@ class SignUp extends React.Component {
                   sendOtp={this.sendOtp}
                   EMAIL_REGEX={EMAIL_REGEX}
                   setStep={this.setStep}
+                  verifyOtp={this.verifyOtp}
                 />
               </div>
 

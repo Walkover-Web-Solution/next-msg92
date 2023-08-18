@@ -98,7 +98,7 @@ class StepTwo extends React.Component {
                     />
                     <button
                       className="custom-signup-btn"
-                      onClick={() => this.retryOtp("0000", false)}
+                      onClick={() => this.props.verifyOtp("0000", false)}
                     >
                       Verify
                     </button>
@@ -115,7 +115,7 @@ class StepTwo extends React.Component {
           </div>
           {this.state?.emailOTPData?.message ? (
             <p
-              className="col-success c-fs-6 c-fw-500 my-4"
+              className="col-success c-fs-6 c-fw-500 my-4 elert-otp-message"
               style={{ color: "var(--whats-app-green, #29A653)" }}
             >
               {this.state?.emailOTPData?.message}
@@ -175,7 +175,12 @@ class StepTwo extends React.Component {
                       placeholder="*"
                       maxLength="1"
                     />
-                    <button className="custom-signup-btn">Verify</button>
+                    <button
+                      className="custom-signup-btn"
+                      onClick={() => this.props.verifyOtp("0000", false)}
+                    >
+                      Verify
+                    </button>
                   </div>
 
                   <p className="col-dark mt-3 c-fs-6 p-2">
