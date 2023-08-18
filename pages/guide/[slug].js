@@ -8,7 +8,6 @@ import { fetchPostContent } from '../../components/lib/posts';
 // const components = { Test }
 
 const slugToPostContent = (postContents => {
-  // console.log("inside slugToPostContent")
   console.log(postContents, "post contents");
  
     let hash = {}
@@ -18,14 +17,11 @@ const slugToPostContent = (postContents => {
       fullPath = data.fullPath
     })
     postContents?.forEach(it => hash[it.slug] = it)
-    console.log(hash, "hash");
     return hash;
   })(fetchPostContent());
   // const d = fetchPostContent()
 
   const postContent = fetchPostContent();
-  // console.log(fullPath, "full path");
-  console.log(postContent, "post content in fetch post content");
 export default function TestPage({ source }) {
   return (
     <div className="wrapper">
@@ -49,10 +45,8 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps(slug) {
-  console.log(slug, "slugggg");
   const slugData = slug.params.slug;
     const source = fs.readFileSync(slugToPostContent[slugData]?.fullPath, "utf8");
-    console.log(source, "source in slug");
   // MDX text - can be from a local file, database, anywhere
   const mdxSource = await serialize(source)
   return { props: { source: mdxSource } }
