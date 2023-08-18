@@ -582,6 +582,7 @@ $font-weight-500: var(--c-fw-500);
 }
 
 .elert-otp-message{
+  color: var(--col-elert);
   position: absolute;
   transform: translatey(-50px);
 }

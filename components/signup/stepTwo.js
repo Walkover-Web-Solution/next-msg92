@@ -88,8 +88,8 @@ class StepTwo extends React.Component {
           </div>
           {this.state?.emailOTPData?.message ? (
             <p
-              className="col-success c-fs-6 c-fw-500 my-4 elert-otp-message"
-              style={{ color: "var(--whats-app-green, #29A653)" }}
+              className=" c-fs-6 c-fw-500 my-4 elert-otp-message"
+             
             >
               {this.state?.emailOTPData?.message}
             </p>
