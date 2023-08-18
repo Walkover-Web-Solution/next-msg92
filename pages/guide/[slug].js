@@ -17,9 +17,9 @@ const slugToPostContent = (postContents => {
       console.log(data.fullPath,"map data full");
       fullPath = data.fullPath
     })
-    // postContents?.forEach(it => hash[it.slug] = it)
-    // console.log(hash, "hash");
-    return fullPath;
+    postContents?.forEach(it => hash[it.slug] = it)
+    console.log(hash, "hash");
+    return hash;
   })(fetchPostContent());
   // const d = fetchPostContent()
 
@@ -36,7 +36,7 @@ export default function TestPage({ source }) {
 
 export async function getStaticPaths() {
   // const paths = [];
-  const paths = fetchPostContent().map(it => "/guide/" + "test-blog");
+  const paths = fetchPostContent().map(it => "/guide/" + it.slug);
   console.log(paths, "paths");
       // paths.push({
       //   params: {
@@ -51,19 +51,8 @@ export async function getStaticPaths() {
 export async function getStaticProps(slug) {
   console.log(slug, "slugggg");
   const slugData = slug.params.slug;
-  // console.log(slug, "big slug");
-    // console.log('slug in slug file',JSON.stringify(slug.params.slug));
-    console.log(slugData, "-------------------------------");
-  //  const slugPath = JSON.stringify(params.params.slug);
-  //  console.log(slugPath, "slug path");
-  //  const fullPath = 'mastering-the-art-of-effective-communication-unveiling-the-secrets-to-successful-sms-campaigns-for-engaging-audiences'
-    // const source = fs.readFileSync(slugToPostContent[slugData]?.fullPath, "utf8");
-    // const source = fs.readFileSync(slugToPostContent[slugData]?.fupath, "utf8");
-
-    // const source = fs.readFileSync("/Users/anshdubey/Downloads/msg91-next/next-msg92/_posts/blog/test-blog.mdx", "utf8");
-    const source = fs.readFileSync(fullPath, "utf8");
+    const source = fs.readFileSync(slugToPostContent[slugData]?.fullPath, "utf8");
     console.log(source, "source in slug");
-    // const source = "hello"
   // MDX text - can be from a local file, database, anywhere
   const mdxSource = await serialize(source)
   return { props: { source: mdxSource } }

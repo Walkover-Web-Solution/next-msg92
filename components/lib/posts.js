@@ -45,10 +45,10 @@ function fetchPostContent() {
 
       const slug = fileName.replace(/\.mdx$/, "");
 
-      // console.log(slug, "slug in post");
-      // console.log(matterData.slug, "matterData.slug in post");
+      console.log(slug, "slug in post");
+      console.log(matterData, "matterData.slug in post");
       
-      if ("test-blog" !== slug) {
+      if (matterData.slug !== slug) {
         throw new Error("slug field not match with the path of its content source");
       }
 
@@ -74,9 +74,10 @@ function countPosts(tag) {
 }
 
 function listPostContent(page, limit, tag) {
+  console.log(page, limit, tag,"list function called");
   return fetchPostContent()
-    .filter((it) => !tag || (it.tags && it.tags.includes(tag)))
-    .slice((page - 1) * limit, page * limit);
+//     .filter((it) => !tag || (it.tags && it.tags.includes(tag)))
+//     .slice((page - 1) * limit, page * limit);
 }
 
 module.exports = {
