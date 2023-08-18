@@ -48,16 +48,13 @@ class StepTwo extends React.Component {
             <div className="d-flex flex-wrap p-0">
               <div className="step_input_wrapper__left col-xl-6 col-lg-12">
                 <div className="d-flex step_input_wrapper__mobile_veiw">
-                  <div className="input-email">
-                    <label className="input-email__lable">Email</label>
                     <input
                       type="email"
-                      className="form-control custom-input-group"
+                      className="form-control "
                       id="emailIdentifier"
                       placeholder="Email Address"
                       onChange={(e) => this.setEmailAddress(e.target.value)}
                     />
-                  </div>
                   <span className="position-relative">
                     <MdCheckCircle className="icon-success otp_verified_icon" />
                   </span>
@@ -211,7 +208,7 @@ class StepTwo extends React.Component {
             <div>
               <button
                 className="me-3 btn back_btn"
-                onClick={() => this.setStep(1)}
+                onClick={() => this.props.setStep(1)}
               >
                 {" "}
                 <MdKeyboardArrowLeft />
@@ -219,7 +216,7 @@ class StepTwo extends React.Component {
               </button>
               <button
                 className=" next_btn col-white"
-                onClick={() => this.setStep(3)}
+                onClick={() => this.props.setStep(3)}
               >
                 {" "}
                 Next <MdKeyboardArrowRight />

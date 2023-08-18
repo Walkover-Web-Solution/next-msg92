@@ -9,6 +9,7 @@ import {
 
 import StepOne from "@/components/signup/stepOne";
 import StepTwo from "@/components/signup/stepTwo";
+import StepThree from "@/components/signup/stepThree";
 
 const MOBILE_REGEX = /^[+]?[0-9]+$/;
 const EMAIL_REGEX =
@@ -50,33 +51,33 @@ class SignUp extends React.Component {
         mobile: null,
       },
     };
-    this.setStep = this.setStep.bind(this);
-    this.setState= this.setState.bind(this)
+    // this.setStep = this.setStep.bind(this);
+    // this.setState= this.setState.bind(this)
   }
-  
+
   componentDidMount() {
     this.otpWidgetSetup();
   }
-  
-  setStep(step) {
+
+  setStep = (step) => {
     this.setState({
       activeStep: step,
     });
-  }
+  };
 
   finalSubmit() {
     console.log("signup with company setup");
   }
 
-  signupByGitHubAccount() {
+  signupByGitHubAccount = () => {
+    console.log(this.state.env, "enc");
     // https://ramya-bala221190.medium.com/simple-example-to-implement-oauth2-using-angular-and-node-in-4-steps-b1f6b7bbf2b5
     // https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/differences-between-github-apps-and-oauth-apps
     // POST https://github.com/login/oauth/access_token?client_id={CLIENT_ID}&client_secret={CLIENT_SECRET}&code=${CODE}
     // GET https://api.github.com/user with access token in Bearer Authorization
     location.href = `https://github.com/login/oauth/authorize?client_id=${this.state.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${this.state.env.redirectURL}/signup?github=true`;
-    console.log("hello eyeh")
-
-  }
+    console.log("hello eyeh");
+  };
 
   otpWidgetSetup() {
     const head = document.getElementsByTagName("head")[0];
@@ -104,30 +105,30 @@ class SignUp extends React.Component {
     head.appendChild(otpWidgetScript);
   }
 
-  setMobileNumber(mobile) {
-    this.setState= this.setState.bind(this);
+  setMobileNumber = (mobile) => {
+    this.setState = this.setState.bind(this);
     let error = !new RegExp(MOBILE_REGEX).test(mobile);
     this.setState({
       smsOTPData: {
         ...this.state?.smsOTPData,
         status: error && mobile?.length ? false : true,
-        message: error && mobile?.length ? 'Enter valid number.' : null
+        message: error && mobile?.length ? "Enter valid number." : null,
       },
     });
-  }
+  };
 
-  setEmailAddress(email) {
+  setEmailAddress = (email) => {
     let error = !new RegExp(EMAIL_REGEX).test(email);
-      this.setState({
-        emailOTPData: {
-          ...this.state?.emailOTPData,
-          status: error && email?.length ? false : true,
-          message: error && email?.length ? 'Enter valid email.' : null
-        },
-      });
-  }
+    this.setState({
+      emailOTPData: {
+        ...this.state?.emailOTPData,
+        status: error && email?.length ? false : true,
+        message: error && email?.length ? "Enter valid email." : null,
+      },
+    });
+  };
 
-  sendOtp(notByEmail) {
+  sendOtp = (notByEmail) => {
     let identifier = document.getElementById("emailIdentifier").value;
     if (notByEmail) {
       identifier = document.getElementById("contactIdentifier").value;
@@ -183,7 +184,7 @@ class SignUp extends React.Component {
         }
       }
     );
-  }
+  };
 
   retryOtp(retryBy, notByEmail) {
     let requestId = this.state.emailOTPData?.requestId;
@@ -265,7 +266,10 @@ class SignUp extends React.Component {
                     : ""
                 }`}
               >
-                <StepOne signupByGitHubAccount={this.signupByGitHubAccount} setStep={this.setStep}/>
+                <StepOne
+                  signupByGitHubAccount={this.signupByGitHubAccount}
+                  setStep={this.setStep}
+                />
               </div>
 
               {/* STEP #2 */}
@@ -276,7 +280,13 @@ class SignUp extends React.Component {
                     : ""
                 }`}
               >
-               <StepTwo setEmailAddress={this.setEmailAddress} setMobileNumber={this.setMobileNumber} sendOtp={this.sendOtp} EMAIL_REGEX={EMAIL_REGEX}/>
+                <StepTwo
+                  setEmailAddress={this.setEmailAddress}
+                  setMobileNumber={this.setMobileNumber}
+                  sendOtp={this.sendOtp}
+                  EMAIL_REGEX={EMAIL_REGEX}
+                  setStep={this.setStep}
+                />
               </div>
 
               {/* STEP #3 */}
@@ -287,209 +297,10 @@ class SignUp extends React.Component {
                     : ""
                 }`}
               >
-                <div className="d-none entry__right_section__container--logo-visible-in-small">
-                  <img
-                    src="/images/msgOriginalsvg.png"
-                    width="auto"
-                    height="40px"
-                    alt="Msg91-logo"
-                    className=""
-                  />
-                </div>
-                <h1>Create an account</h1>
-                <div className="entry__right_section__container__step_one entry__right_section__container__step_two mt-5">
-                  <div className="step_status_bar d-flex justify-content-between align-items-center ps-0">
-                    <div className="col-success">
-                      <MdCheckCircle className="step_status_bar--invisible-on-md" />{" "}
-                      Verify email & mobile number
-                    </div>
-                    <span className="step_status_bar__line step_status_bar--invisible-on-md"></span>
-                    <div className="step_status_bar--invisible-on-md">
-                      <MdCheckCircleOutline className="icon_enter_details me-1" />
-                      <MdCheckCircle className="visible_on_success me-1" />
-                      Enter details
-                    </div>
-                  </div>
-
-                  <p className="redirect-text mt-5">Redirecting...</p>
-
-                  <div className="row px-0 step_two_wrapper mt-4">
-                    <div className="col-xxl-6 col-xl-8 col-lg-10">
-                      <div className="row g-4">
-                        <div className="col-12">
-                          <div className="step_two_wrapper__toggle_button">
-                            <button className="step_two_wrapper__toggle_button__left">
-                              Company/Developer
-                            </button>
-                            <button className="step_two_wrapper__toggle_button__right">
-                              Personal use
-                            </button>
-                          </div>
-                        </div>
-
-                        <div className="col-lg-6">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="First Name"
-                          />
-                        </div>
-                        <div className="col-lg-6">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Last Name"
-                          />
-                        </div>
-
-                        <div className="col-12 step_two_wrapper--personal-form">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="How are you going to use this?"
-                          />
-                        </div>
-
-                        <div className="col-lg-6  step_two_wrapper--company-form">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Company Name"
-                          />
-                        </div>
-                        <div className="col-lg-6  step_two_wrapper--company-form">
-                          <select
-                            autoComplete="on"
-                            className="form-select"
-                            aria-label="Default Industry Type"
-                          >
-                            <option defaultValue>Industry Type</option>
-                            <option value="">option 1</option>
-                            <option value="">option 2</option>
-                            <option value="">option 3</option>
-                          </select>
-                        </div>
-
-                        <div className="col-12 step_two_wrapper--company-form">
-                          <select
-                            autoComplete="on"
-                            className="form-select"
-                            aria-label="Default Industry Type"
-                          >
-                            <option defaultValue>Service Needed</option>
-                            <option value="">option 1</option>
-                            <option value="">option 2</option>
-                            <option value="">option 3</option>
-                          </select>
-                        </div>
-
-                        <div className="col-lg-6  step_two_wrapper--company-form">
-                          <select
-                            autoComplete="on"
-                            className="form-select"
-                            aria-label="Default Industry Type"
-                          >
-                            <option defaultValue>Country</option>
-                            <option value="">option 1</option>
-                            <option value="">option 2</option>
-                            <option value="">option 3</option>
-                          </select>
-                        </div>
-                        <div className="col-lg-6  step_two_wrapper--company-form">
-                          <select
-                            autoComplete="on"
-                            className="form-select"
-                            aria-label="Default Industry Type"
-                          >
-                            <option defaultValue>State/Province</option>
-                            <option value="">option 1</option>
-                            <option value="">option 2</option>
-                            <option value="">option 3</option>
-                          </select>
-                        </div>
-
-                        <div className="col-lg-6  step_two_wrapper--company-form">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Pincode"
-                          />
-                        </div>
-                        <div className="col-lg-6  step_two_wrapper--company-form">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="City"
-                          />
-                        </div>
-
-                        <div className="col-12 step_two_wrapper--company-form">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Address"
-                          />
-                        </div>
-                        <div className="col-12 step_two_wrapper--company-form">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="GST number"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-12">
-                        <div className="form-check my-4 pb-2">
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value="true"
-                            id="termsCheckBox"
-                          />
-                          {/* <label
-                            className="form-check-label c-fs-6 c-fw-500 ps-0"
-                            htmlFor="termsCheckBox"
-                          >
-                            I agree to the{" "}
-                            <span className="col-primary">Terms of Service </span>{" "}
-                            and
-                            <p className="col-primary"><a>Privacy Policy</a></p>
-                          </label> */}
-                          <p
-                            className="form-check-label c-fs-6 c-fw-500 ps-0"
-                            htmlFor="termsCheckBox"
-                          >
-                            I agree to the
-                            {/* <a href="#" className="col-primary p-2">
-                              Terms and Service
-                            </a>{" "}
-                            and{" "}
-                            <a href="#" className="col-primary p-2">
-                              Privacy Policy
-                            </a> */}
-                          </p>
-                        </div>
-                        <div>
-                          <button
-                            className="me-3 back_btn"
-                            onClick={() => this.setStep(2)}
-                          >
-                            <MdKeyboardArrowLeft />
-                            Back
-                          </button>
-                          <button
-                            className="next_btn col-white"
-                            onClick={() => this.finalSubmit()}
-                          >
-                            Next <MdKeyboardArrowRight />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <StepThree
+                  setStep={this.setStep}
+                  finalSubmit={this.finalSubmit}
+                />
               </div>
             </div>
           </div>
