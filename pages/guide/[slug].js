@@ -19,7 +19,7 @@ const slugToPostContent = (postContents => {
   })(fetchPostContent());
   // const d = fetchPostContent()
 
-  const postContent = fetchPostContent();
+  // const postContent = fetchPostContent();
 export default function TestPage({ source }) {
   return (
     <div className="wrapper">
