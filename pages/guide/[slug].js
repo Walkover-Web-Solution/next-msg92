@@ -8,12 +8,10 @@ import { fetchPostContent } from '../../components/lib/posts';
 // const components = { Test }
 
 const slugToPostContent = (postContents => {
-  console.log(postContents, "post contents");
  
     let hash = {}
     let fullPath = {}
     postContents.map((data)=>{
-      console.log(data.fullPath,"map data full");
       fullPath = data.fullPath
     })
     postContents?.forEach(it => hash[it.slug] = it)
@@ -33,7 +31,6 @@ export default function TestPage({ source }) {
 export async function getStaticPaths() {
   // const paths = [];
   const paths = fetchPostContent().map(it => "/guide/" + it.slug);
-  console.log(paths, "paths");
       // paths.push({
       //   params: {
       //     slug: "mastering-the-art-of-effective-communication-unveiling-the-secrets-to-successful-sms-campaigns-for-engaging-audiences"          
