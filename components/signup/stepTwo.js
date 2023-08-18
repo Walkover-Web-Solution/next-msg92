@@ -6,6 +6,8 @@ import {
     MdCheckCircleOutline,
   } from "react-icons/md";
 
+import Otpinput from "./comps/otpInput";
+
 class StepTwo extends React.Component {
     setEmailAddress(email) {
         let error = !new RegExp(this.props.EMAIL_REGEX).test(email);
@@ -18,6 +20,8 @@ class StepTwo extends React.Component {
           });
       }
   render() {
+    
+
     return (
       <>
         <div className="d-none entry__right_section__container--logo-visible-in-small">
@@ -70,46 +74,15 @@ class StepTwo extends React.Component {
                 </div>
               </div>
               <div className="step_input_wrapper__right col-xl-6 col-lg-12">
-                <div className="d-flex flex-column">
-                  <div className="d-flex">
-                    <input
-                      type="text"
-                      className="form-control otp_input"
-                      placeholder="*"
-                      maxLength="1"
-                    />
-                    <input
-                      type="text"
-                      className="form-control otp_input"
-                      placeholder="*"
-                      maxLength="1"
-                    />
-                    <input
-                      type="text"
-                      className="form-control otp_input"
-                      placeholder="*"
-                      maxLength="1"
-                    />
-                    <input
-                      type="text"
-                      className="form-control otp_input"
-                      placeholder="*"
-                      maxLength="1"
-                    />
-                    <button
-                      className="custom-signup-btn"
-                      onClick={() => this.props.verifyOtp("0000", false)}
-                    >
-                      Verify
-                    </button>
-                  </div>
-                  <p className="col-dark mt-3 c-fs-6">
+              <div className="d-flex flex-column">
+                <Otpinput tag="email" verifyOtp={this.props.verifyOtp}/>
+                <p className="col-dark mt-3 c-fs-6">
                     Resend on{" "}
                     <a href="#" className="col-primary c-fw-600 p-3">
                       Email
                     </a>
                   </p>
-                </div>
+              </div>
               </div>
             </div>
           </div>
@@ -150,39 +123,7 @@ class StepTwo extends React.Component {
               </div>
               <div className="step_input_wrapper__right col-xl-6 col-lg-12">
                 <div className="d-flex flex-column">
-                  <div className="d-flex">
-                    <input
-                      type="text"
-                      className="form-control otp_input"
-                      placeholder="*"
-                      maxLength="1"
-                    />
-                    <input
-                      type="text"
-                      className="form-control otp_input"
-                      placeholder="*"
-                      maxLength="1"
-                    />
-                    <input
-                      type="text"
-                      className="form-control otp_input"
-                      placeholder="*"
-                      maxLength="1"
-                    />
-                    <input
-                      type="text"
-                      className="form-control otp_input"
-                      placeholder="*"
-                      maxLength="1"
-                    />
-                    <button
-                      className="custom-signup-btn"
-                      onClick={() => this.props.verifyOtp("0000", false)}
-                    >
-                      Verify
-                    </button>
-                  </div>
-
+                <Otpinput tag="sms" verifyOtp={this.props.verifyOtp}/>
                   <p className="col-dark mt-3 c-fs-6 p-2">
                     Resend on{" "}
                     <a href="#" className="col-primary c-fw-600 p-3">

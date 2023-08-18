@@ -55,7 +55,7 @@ class SignUp extends React.Component {
     // this.setState= this.setState.bind(this)
   }
 
-  componentDidMount() {
+  componentDidMount =() => {
     this.otpWidgetSetup();
   }
 
@@ -65,7 +65,7 @@ class SignUp extends React.Component {
     });
   };
 
-  finalSubmit() {
+  finalSubmit=()=> {
     console.log("signup with company setup");
   }
 
@@ -79,7 +79,7 @@ class SignUp extends React.Component {
     console.log("hello eyeh");
   };
 
-  otpWidgetSetup() {
+  otpWidgetSetup=()=> {
     const head = document.getElementsByTagName("head")[0];
     const currentTimestamp = new Date().getTime();
     const otpWidgetScript = document.createElement("script");
@@ -200,7 +200,7 @@ class SignUp extends React.Component {
     );
   }
 
-  verifyOtp(otp, notByEmail) {
+  verifyOtp = (otp, notByEmail)=> {
     let requestId = this.state.emailOTPData?.requestId;
     if (notByEmail) {
       requestId = this.state.smsOTPData?.requestId;
