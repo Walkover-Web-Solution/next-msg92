@@ -3,7 +3,6 @@ import Link from "next/link";
 import { parseISO } from "date-fns";
 
 export default function PostItem({ post }) {
-    console.log(post,"99999")
   return (
     <a href={"/guide/" + post.slug}>{post.title}
       

@@ -9,7 +9,6 @@ export default function PostList({ posts, tags, pagination }) {
     <div className={"container"}>
       <div className={"posts"}>
         <ul className={"post-list"}>
-            <li>post item</li>
           {posts?.map((it, i) => (
             
             <li key={i}>
@@ -27,9 +26,9 @@ export default function PostList({ posts, tags, pagination }) {
         /> */}
       </div>
       <ul className={"categories"}>
-        <li>hello in list</li>
       </ul>
-      <style jsx>{`
+      <style jsx>
+        {`
         .container {
           display: flex;
           margin: 0 auto;
