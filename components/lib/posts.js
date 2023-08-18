@@ -7,7 +7,7 @@ const path = require("path");
 const yaml = require("js-yaml");
 const { readdirSync, readFileSync } = require("fs");
 
-const postsDirectory = path.join(process.cwd(), "public/blog");
+const postsDirectory = path.join(process.cwd(), "_posts/blog");
 console.log(postsDirectory, "Blog directory");
 let postCache;
 console.log(postCache, "Cache");
