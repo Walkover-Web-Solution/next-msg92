@@ -7,6 +7,9 @@ import {
   MdCheckCircleOutline,
 } from "react-icons/md";
 
+import StepOne from "@/components/signup/stepOne";
+import StepTwo from "@/components/signup/stepTwo";
+
 const MOBILE_REGEX = /^[+]?[0-9]+$/;
 const EMAIL_REGEX =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -47,12 +50,14 @@ class SignUp extends React.Component {
         mobile: null,
       },
     };
+    this.setStep = this.setStep.bind(this)
+    this.setState= this.setState.bind(this)
   }
-
+  
   componentDidMount() {
     this.otpWidgetSetup();
   }
-
+  
   setStep(step) {
     this.setState({
       activeStep: step,
@@ -69,6 +74,8 @@ class SignUp extends React.Component {
     // POST https://github.com/login/oauth/access_token?client_id={CLIENT_ID}&client_secret={CLIENT_SECRET}&code=${CODE}
     // GET https://api.github.com/user with access token in Bearer Authorization
     location.href = `https://github.com/login/oauth/authorize?client_id=${this.state.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${this.state.env.redirectURL}/signup?github=true`;
+    console.log("hello eyeh")
+
   }
 
   otpWidgetSetup() {
@@ -257,127 +264,7 @@ class SignUp extends React.Component {
                     : ""
                 }`}
               >
-                <div className="d-none entry__right_section__container--logo-visible-in-small">
-                  <img
-                    src="/images/msgOriginalsvg.png"
-                    width="auto"
-                    height="40px"
-                    alt="MSG91 Logo"
-                    className=""
-                  />
-                </div>
-                <h1>Create an account</h1>
-                <div className="entry__right_section__container__entry_with d-flex mb-4 me-4">
-                  {/* <div className="signup_with__left pe-4">
-                    <span className="d-inline-block mb-4">Sign up with</span>
-
-                    <div className="d-flex align-items-center">
-                      <button
-                        className="entry__right_section__container__entry_with--btn-with-text me-3"
-                        style={{
-                          border:
-                            "1px solid var(--primary-light-theme, #1E75BA)",
-                        }}
-                      >
-                        <img
-                          src="/img/tie/google-logo.svg"
-                          width="24px"
-                          height="24px"
-                          alt="Google Icon"
-                        />
-                        <span>Google</span>
-                      </button>
-                      <button
-                        className="me-3"
-                        style={{
-                          border:
-                            "1px solid var(--primary-light-theme, #1E75BA)",
-                          background: "var(--light-white-bg, #FFF);",
-                        }}
-                      >
-                        <img
-                          src="/img/microsoft-svg.svg"
-                          width="24px"
-                          height="24px"
-                          alt="Microsoft Icon"
-                        />
-                      </button>
-                      <button style={{ border: "1px solid #D94C44" }}>
-                        <img
-                          src="/img/icon-zogo.svg"
-                          width="24px"
-                          height="24px"
-                          alt="Zogo Icon"
-                        />
-                      </button>
-                    </div>
-                  </div> */}
-
-                  <div className="signup_with__right mt-2">
-                    <span className="d-inline-block mb-4">
-                      Are you a developer?
-                    </span>
-
-                    <div className="d-flex align-items-center">
-                      <button
-                        className="me-3"
-                        style={{ border: "1px solid #000" }}
-                        onClick={() => this.signupByGitHubAccount()}
-                      >
-                        <img
-                          src="/img/icon-github.svg"
-                          width="24px"
-                          height="24px"
-                          alt="Github Icon"
-                        />
-                      </button>
-                      {/* <button
-                        className="me-3"
-                        style={{
-                          border: "1px solid #E24329",
-                          background: "var(--light-white-bg, #FFF)",
-                        }}
-                      >
-                        <img
-                          src="/img/icon-gitlab.svg"
-                          width="24px"
-                          height="24px"
-                          alt="Gitlab Icon"
-                        />
-                      </button>
-                      <button
-                        style={{
-                          border: "1px solid #2684FF",
-                          background: "1px solid #2684FF",
-                        }}
-                      >
-                        <img
-                          src="/img/icon-group.svg"
-                          width="24px"
-                          height="24px"
-                          alt="Group icon"
-                        />
-                      </button> */}
-                    </div>
-                  </div>
-                </div>
-
-                <span className="d-block line_on_right c-fs-6 mb-4">or</span>
-
-                <button
-                  className="entry__right_section__container__entry_button mb-4"
-                  onClick={() => this.setStep(2)}
-                >
-                  Sign up with Email
-                  <MdKeyboardArrowRight />
-                </button>
-
-                <p className="c-fs-6 mb-4">
-                  If you already have an account,{" "}
-                  <a href="/login" className="text_blue">
-                    Login
-                  </a>
-                </p>
+                <StepOne signupByGitHubAccount={this.signupByGitHubAccount} setStep={this.setStep}/>
               </div>
 
               {/* STEP #2 */}
@@ -388,224 +275,7 @@ class SignUp extends React.Component {
                     : ""
                 }`}
               >
-                <div className="d-none entry__right_section__container--logo-visible-in-small">
-                  <img
-                    src="/images/msgOriginalsvg.png"
-                    width="auto"
-                    height="40px"
-                    alt="MSG91 Logo"
-                    className=""
-                  />
-                </div>
-                <h1>Create an account</h1>
-                <div className="entry__right_section__container__step_one mt-5">
-                  <div className="step_status_bar d-flex justify-content-between align-items-center ps-0">
-                    <div>
-                      <MdCheckCircle className="step_status_bar--invisible-on-md" />{" "}
-                      Verify email & mobile number
-                    </div>
-                    <span className="step_status_bar__line step_status_bar--invisible-on-md"></span>
-                    <div className="step_status_bar--invisible-on-md">
-                      <MdCheckCircleOutline /> Enter details
-                    </div>
-                  </div>
-                  <div className="row mx-0 px-0 step_input_wrapper mt-4">
-                    <label htmlFor="email" className="mb-3 ps-0">
-                      Verify email
-                    </label>
-                    <div className="d-flex flex-wrap p-0">
-                      <div className="step_input_wrapper__left col-xl-6 col-lg-12">
-                        <div className="d-flex step_input_wrapper__mobile_veiw">
-                          <div className="input-email">
-                            <label className="input-email__lable">Email</label>
-                            <input
-                              type="email"
-                              className="form-control custom-input-group"
-                              id="emailIdentifier"
-                              placeholder="Email Address"
-                              onChange={(e) => this.setEmailAddress(e.target.value)}
-                            />
-                          </div>
-                          <span className="position-relative">
-                            <MdCheckCircle className="icon-success otp_verified_icon" />
-                          </span>
-                          <button
-                            className="custom-signup-btn"
-                            onClick={() => this.sendOtp(false)}
-                          >
-                            Get OTP
-                          </button>
-                          <button className="btn custom-signup-btn d-none">
-                            Change Email
-                          </button>
-                        </div>
-                      </div>
-                      <div className="step_input_wrapper__right col-xl-6 col-lg-12">
-                        <div className="d-flex flex-column">
-                          <div className="d-flex">
-                            <input
-                              type="text"
-                              className="form-control otp_input"
-                              placeholder="*"
-                              maxLength="1"
-                            />
-                            <input
-                              type="text"
-                              className="form-control otp_input"
-                              placeholder="*"
-                              maxLength="1"
-                            />
-                            <input
-                              type="text"
-                              className="form-control otp_input"
-                              placeholder="*"
-                              maxLength="1"
-                            />
-                            <input
-                              type="text"
-                              className="form-control otp_input"
-                              placeholder="*"
-                              maxLength="1"
-                            />
-                            <button
-                              className="custom-signup-btn"
-                              onClick={() => this.retryOtp("0000", false)}
-                            >
-                              Verify
-                            </button>
-                          </div>
-                          <p className="col-dark mt-3 c-fs-6">
-                            Resend on{" "}
-                            <a href="#" className="col-primary c-fw-600 p-3">
-                              Email
-                            </a>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {this.state?.emailOTPData?.message ? (
-                    <p
-                      className="col-success c-fs-6 c-fw-500 my-4"
-                      style={{ color: "var(--whats-app-green, #29A653)" }}
-                    >
-                      {this.state?.emailOTPData?.message}
-                    </p>
-                  ) : null}
-
-                  <div className="row mx-0 px-0 step_input_wrapper mt-4 mb-5">
-                    <label htmlFor="contact" className="mb-3 ps-0">
-                      Verify Mobile number
-                    </label>
-                    <div className="d-flex flex-wrap p-0">
-                      <div className="step_input_wrapper__left col-xl-6 col-lg-12">
-                        <div className="d-flex step_input_wrapper__mobile_veiw">
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="contactIdentifier"
-                            placeholder="Mobile number"
-                            onChange={(e) => this.setMobileNumber(e.target.value)}
-                          />
-
-                          <span className="position-relative">
-                            <MdCheckCircle className="icon-success otp_verified_icon" />
-                          </span>
-                          <button
-                            className="custom-signup-btn"
-                            onClick={() => this.sendOtp(true)}
-                          >
-                            Get OTP
-                          </button>
-                        </div>
-                      </div>
-                      <div className="step_input_wrapper__right col-xl-6 col-lg-12">
-                        <div className="d-flex flex-column">
-                          <div className="d-flex">
-                            <input
-                              type="text"
-                              className="form-control otp_input"
-                              placeholder="*"
-                              maxLength="1"
-                            />
-                            <input
-                              type="text"
-                              className="form-control otp_input"
-                              placeholder="*"
-                              maxLength="1"
-                            />
-                            <input
-                              type="text"
-                              className="form-control otp_input"
-                              placeholder="*"
-                              maxLength="1"
-                            />
-                            <input
-                              type="text"
-                              className="form-control otp_input"
-                              placeholder="*"
-                              maxLength="1"
-                            />
-                            <button className="custom-signup-btn">
-                              Verify
-                            </button>
-                          </div>
-
-                          <p className="col-dark mt-3 c-fs-6 p-2">
-                            Resend on{" "}
-                            <a href="#" className="col-primary c-fw-600 p-3">
-                              Text
-                            </a>
-                            or{" "}
-                            <a href="#" className="col-primary c-fw-600 p-3">
-                              WhatsApp
-                            </a>
-                            or{" "}
-                            <a href="#" className="col-primary c-fw-600 p-3">
-                              Email
-                            </a>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* {this.state?.smsOTPData?.mobile ? (
-                    <p
-                      className="col-success c-fs-6 c-fw-500 my-4"
-                      style={{ color: "var(--whats-app-green, #29A653)" }}
-                    >
-                      The OTP has been successfully sent to number.
-                    </p>
-                  ) : null} */}
-                  {this.state?.smsOTPData?.message ? (
-                    <p
-                      className="col-success c-fs-6 c-fw-500 my-4"
-                      style={{ color: "var(--whats-app-green, #29A653)" }}
-                    >
-                      {this.state?.smsOTPData?.message}
-                    </p>
-                  ) : null}
-                  <div className="row">
-                    <div>
-                      <button
-                        className="me-3 btn back_btn"
-                        onClick={() => this.setStep(1)}
-                      >
-                        {" "}
-                        <MdKeyboardArrowLeft />
-                        Back
-                      </button>
-                      <button
-                        className=" next_btn col-white"
-                        onClick={() => this.setStep(3)}
-                      >
-                        {" "}
-                        Next <MdKeyboardArrowRight />
-                      </button>
-                    </div>
-                  </div>
-                </div>
+               <StepTwo setEmailAddress={this.setEmailAddress} sendOtp={this.sendOtp}/>
               </div>
 
               {/* STEP #3 */}
