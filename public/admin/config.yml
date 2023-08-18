@@ -21,7 +21,6 @@ collections:
     identifier_field: slug
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime", required: false}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}      
