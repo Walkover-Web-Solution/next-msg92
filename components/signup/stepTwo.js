@@ -8,7 +8,7 @@ import {
 
 class StepTwo extends React.Component {
     setEmailAddress(email) {
-        let error = !new RegExp(EMAIL_REGEX).test(email);
+        let error = !new RegExp(this.props.EMAIL_REGEX).test(email);
           this.setState({
             emailOTPData: {
               ...this.state?.emailOTPData,
@@ -137,7 +137,7 @@ class StepTwo extends React.Component {
                     className="form-control"
                     id="contactIdentifier"
                     placeholder="Mobile number"
-                    onChange={(e) => this.setMobileNumber(e.target.value)}
+                    onChange={(e) => this.props.setMobileNumber(e.target.value)}
                   />
 
                   <span className="position-relative">
@@ -145,7 +145,7 @@ class StepTwo extends React.Component {
                   </span>
                   <button
                     className="custom-signup-btn"
-                    onClick={() => this.sendOtp(true)}
+                    onClick={() => this.props.sendOtp(true)}
                   >
                     Get OTP
                   </button>

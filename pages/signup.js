@@ -50,7 +50,7 @@ class SignUp extends React.Component {
         mobile: null,
       },
     };
-    this.setStep = this.setStep.bind(this)
+    this.setStep = this.setStep.bind(this);
     this.setState= this.setState.bind(this)
   }
   
@@ -105,6 +105,7 @@ class SignUp extends React.Component {
   }
 
   setMobileNumber(mobile) {
+    this.setState= this.setState.bind(this);
     let error = !new RegExp(MOBILE_REGEX).test(mobile);
     this.setState({
       smsOTPData: {
@@ -275,7 +276,7 @@ class SignUp extends React.Component {
                     : ""
                 }`}
               >
-               <StepTwo setEmailAddress={this.setEmailAddress} sendOtp={this.sendOtp}/>
+               <StepTwo setEmailAddress={this.setEmailAddress} setMobileNumber={this.setMobileNumber} sendOtp={this.sendOtp} EMAIL_REGEX={EMAIL_REGEX}/>
               </div>
 
               {/* STEP #3 */}
