@@ -35,7 +35,7 @@ export default function TestPage({ source , title, author, date}) {
 
 export async function getStaticPaths() {
   // const paths = [];
-  const paths = fetchPostContent().map(it => "/guide/" + it.slug);
+  const paths = fetchPostContent().map(it => "/guide/" + it.staticPath);
       // paths.push({
       //   params: {
       //     slug: "mastering-the-art-of-effective-communication-unveiling-the-secrets-to-successful-sms-campaigns-for-engaging-audiences"          
