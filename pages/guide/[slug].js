@@ -4,8 +4,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import * as fs from "fs";
 import { fetchPostContent } from '../../components/lib/posts';
 import yaml  from "js-yaml";
-// const markdownIt = require('markdown-it')();
-import markdownIt from 'markdown-it';
+
 import matter from 'gray-matter';
 // const components = { Test }
 
