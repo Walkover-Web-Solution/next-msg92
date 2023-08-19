@@ -4,7 +4,7 @@ import { parseISO } from "date-fns";
 
 export default function PostItem({ post }) {
   return (
-    <a href={"/guide/" + post.slug}>{post.title}
+    <a href={"/guide/" + post.slug}>
       
         <Date date={parseISO(post.date)} />
         <h2>{post.title}</h2>
