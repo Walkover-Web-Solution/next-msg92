@@ -8,12 +8,11 @@ const yaml = require("js-yaml");
 const { readdirSync, readFileSync } = require("fs");
 
 const postsDirectory = path.join(process.cwd(), "_posts/blog");
-console.log(postsDirectory, "Blog directory");
+// console.log(postsDirectory, "Blog directory");
 let postCache;
-console.log(postCache, "Cache");
+// console.log(postCache, "Cache");
 function fetchPostContent() {
-  if (postCache) {
-    debugger
+  if (postCache) {    
     return postCache;
   }
 //   else{
@@ -38,15 +37,16 @@ function fetchPostContent() {
       });
       const matterData = matterResult?.data;
       matterData.fullPath = fullPath;
-
+      matterData.staticPath = fileName.split('.')[0];
+      
       // console.log(JSON.stringify(fullPath), "full path");
-
+      
       //const slug = fileName.replace(/\.mdx$/, "");
-
+      
       /* if (matterData.slug !== slug) {
         throw new Error("slug field not match with the path of its content source");
       } */
-
+      console.log('matterData', matterData);
       return matterData;
     });
 
