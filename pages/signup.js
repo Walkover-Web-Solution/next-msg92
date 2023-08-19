@@ -200,28 +200,43 @@ class SignUp extends React.Component {
     );
   }
 
-  verifyOtp = (otp, notByEmail)=> {
+  verifyOtp = (otp, notByEmail) => {
     let requestId = this.state.emailOTPData?.requestId;
     if (notByEmail) {
       requestId = this.state.smsOTPData?.requestId;
     }
+    
     window.verifyOtp(
       otp,
-      (data) => console.log("OTP verified: ", data),
+      (data) => {
+        console.log("OTP verified: ", data);
+  
+        // Store the 'data' value in the component's state
+        this.setState({
+          otpVerificationData: data,
+        });
+      },
       (error) => console.log(error),
       requestId
     );
   }
 
   render() {
-    return (
+    var verificationData = this.state.otpVerificationData;
+    // var verificationStatus = verificationData?.type
+
+  
+  
+  return (
       <>
         <section className="entry signup d-flex">
+
+        <pre>{JSON.stringify(this.state.otpVerificationData, null, 2)}</pre>
           <div className="entry__left_section col-xl-4 col-lg-5 col-md-5">
             <img
               src="/images/msgOriginalsvg.png"
               className="entry__left_section__brand_logo"
-            />
+              />
             <div className="entry__left_section__details pe-5">
               <div className="container">
                 <h1 className="c-fs-3 mb-4">
@@ -253,6 +268,7 @@ class SignUp extends React.Component {
                 <p>
                   Trusted by<span> 30000+ </span>startups and enterprises
                 </p>
+              <p>{verificationData}</p>
               </div>
             </div>
           </div>
