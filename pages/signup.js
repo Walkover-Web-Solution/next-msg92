@@ -1,22 +1,11 @@
 import React from "react";
 import {
-  MdKeyboardArrowRight,
-  MdKeyboardArrowLeft,
-  MdDone,
-  MdCheckCircle,
-  MdCheckCircleOutline,
+  MdDone
 } from "react-icons/md";
 
 import StepOne from "@/components/signup/stepOne";
 import StepTwo from "@/components/signup/stepTwo";
 import StepThree from "@/components/signup/stepThree";
-
-const OTPRetryModes = {
-  Sms: '11',
-  Voice: '4',
-  Email: '3',
-  Whatsapp: '12',
-}
 
 const MOBILE_REGEX = /^[+]?[0-9]+$/;
 const EMAIL_REGEX =
@@ -26,20 +15,22 @@ class SignUp extends React.Component {
   constructor(props) {
     super(props);
 
+    let queryParams = this.getQueryParamsDeatils(this.props?.browserPathCase);
+
     this.state = {
-      activeStep: 1,
-      // activeStep: query.get("code") ? 2 : 1,
-      // signupByGitHub: query.get("github") ? true : false,
-      // githubCode: query.get("code"),
+      activeStep: queryParams?.["code"] ? 2 : 1,
+      signupByGitHub: queryParams?.["github"] ? true : false,
+      githubCode: queryParams?.["code"],
+      githubState: queryParams?.["state"],
       emailOTPData: {
         email: null,
       },
       smsOTPData: {
         mobile: null,
       },
+      widgetData: null,
+      allowedRetry: null
     };
-    // this.setStep = this.setStep.bind(this);
-    // this.setState= this.setState.bind(this)
   }
 
   componentDidMount = () => {
@@ -65,7 +56,8 @@ class SignUp extends React.Component {
   }
 
   signupByGitHubAccount() {
-    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${process.env.redirectURL}/login?github=true`;
+    let state = Math.floor(100000000 + Math.random() * 900000000);
+    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${process.env.redirectURL}/login?github=true&state=${state}`;
   }
 
   otpWidgetSetup = () => {
@@ -75,7 +67,6 @@ class SignUp extends React.Component {
     otpWidgetScript.type = "text/javascript";
     otpWidgetScript.src = `${process.env.widgetscript}?v=${currentTimestamp}`;
     otpWidgetScript.onload = () => {
-      console.log("widget loaded");
       const configuration = {
         widgetId: process.env.OTPWidgetToken,
         tokenAuth: process.env.widgetAuthToken,
@@ -90,6 +81,21 @@ class SignUp extends React.Component {
         exposeMethods: true,
       };
       window.initSendOTP(configuration);
+      const widgetDataInterval = setInterval(() => {
+        let widgetData = window.getWidgetData();
+        if (widgetData) {
+          this.setState({
+            widgetData: window.getWidgetData(),
+            allowedRetry: {
+              email: widgetData?.processes?.filter(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Email),
+              whatsApp: widgetData?.processes?.filter(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Whatsapp),
+              voice: widgetData?.processes?.filter(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Voice),
+              sms: widgetData?.processes?.filter(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Sms),
+            }
+          })
+          clearInterval(widgetDataInterval)
+        }
+      }, 1000);
     };
     head.appendChild(otpWidgetScript);
   }
@@ -176,9 +182,9 @@ class SignUp extends React.Component {
   };
 
   retryOtp(retryBy, notByEmail) {
-    let requestId = this.state.emailOTPData?.requestId;
+    let requestId = this.state?.emailOTPData?.requestId;
     if (notByEmail) {
-      requestId = this.state.smsOTPData?.requestId;
+      requestId = this.state?.smsOTPData?.requestId;
     }
     console.log(requestId);
     window.retryOtp(
@@ -208,6 +214,20 @@ class SignUp extends React.Component {
       (error) => console.log(error),
       requestId
     );
+  }
+
+  getQueryParamsDeatils(url) {
+    let params = (url || '').split('?')?.[1];
+    if (params) {
+      let paramsKeyValue = params.split('&');
+      let userData = {};
+      for (let keyValue of paramsKeyValue) {
+        let data = keyValue.split('=');
+        userData[data[0]] = data[1];
+      }
+      return userData;
+    }
+    return null;
   }
 
   render() {
@@ -290,6 +310,9 @@ class SignUp extends React.Component {
                   EMAIL_REGEX={EMAIL_REGEX}
                   setStep={this.setStep}
                   verifyOtp={this.verifyOtp}
+                  widgetData={this.state.widgetData}
+                  allowedRetry={this.state.allowedRetry}
+                  retryOtp={this.retryOtp}
                 />
               </div>
 

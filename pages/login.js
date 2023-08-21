@@ -9,6 +9,14 @@ class logIn extends React.Component {
         this.state = {
             loginInProgress: false
         };
+
+        let queryParams = this.getQueryParamsDeatils(this.props?.browserPathCase);
+        if (queryParams) {
+            if (queryParams?.github === 'true') {
+                const url = process.env.API_BASE_URL + "/api/v5/nexus/githubLogin";
+                // this.hitLoginAPI(url, { code: queryParams?.code, state: queryParams?.state });
+            }
+        }
     }
 
     componentDidMount() {
@@ -21,11 +29,8 @@ class logIn extends React.Component {
         const currentTimestamp = new Date().getTime();
         const otpWidgetScript = document.createElement("script");
         otpWidgetScript.type = "text/javascript";
-        console.log(process.env.widgetscript, process.env.OTPWidgetToken);
         otpWidgetScript.src = `${process.env.widgetscript}?v=${currentTimestamp}`;
-        otpWidgetScript.onload = () => {
-            console.log("loaded");
-        };
+        otpWidgetScript.onload = () => { };
         head.appendChild(otpWidgetScript);
     };
 
@@ -37,16 +42,17 @@ class logIn extends React.Component {
                 // Widget config success response
                 try {
                     const url = process.env.API_BASE_URL + "/api/v5/nexus/emailLogin";
-                    const requestOptions = {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ code: data.message })
-                    };
-                    fetch(url, requestOptions)
-                        .then(response => response.json())
-                        .then(result => {
-                            this.loginCompleted()
-                        });
+                    this.hitLoginAPI(url, { code: data.message });
+                    // const requestOptions = {
+                    //     method: 'POST',
+                    //     headers: { 'Content-Type': 'application/json' },
+                    //     body: JSON.stringify({ code: data.message })
+                    // };
+                    // fetch(url, requestOptions)
+                    //     .then(response => response.json())
+                    //     .then(result => {
+                    //         this.loginCompleted()
+                    //     });
                 } catch (error) {
                     loginFailed(error);
                 }
@@ -67,7 +73,8 @@ class logIn extends React.Component {
 
     // Github Login
     loginWithGitHubAccount() {
-        location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${process.env.redirectURL}/login?github=true`;
+        let state = Math.floor(100000000 + Math.random() * 900000000);
+        location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${process.env.redirectURL}/login?github=true&state=${state}`;
     }
 
     // Google Login
@@ -84,12 +91,44 @@ class logIn extends React.Component {
         console.log(response);
     };
 
+    hitLoginAPI(url, payload) {
+        location.href = url + `?code=${payload?.code}`;
+        // const requestOptions = {
+        //     method: 'GET',
+        //     headers: { 'Content-Type': 'application/json' }
+        // };
+        // fetch(url + `?code=${payload?.code}`, requestOptions)
+        //     .then(response => response.json())
+        //     .then(result => {
+        //         if(result?.hasError) {
+
+        //         } else {
+        //             console.log('here', result);
+        //             this.loginCompleted();
+        //         }
+        //     });
+    }
+
     loginCompleted() {
         location.href = process.env.API_BASE_URL + '/hello-new/'
     }
 
     loginFailed(error) {
         console.log(error);
+    }
+
+    getQueryParamsDeatils(url) {
+        let params = (url || '').split('?')?.[1];
+        if (params) {
+            let paramsKeyValue = params.split('&');
+            let userData = {};
+            for (let keyValue of paramsKeyValue) {
+                let data = keyValue.split('=');
+                userData[data[0]] = data[1];
+            }
+            return userData;
+        }
+        return null;
     }
 
     render() {
