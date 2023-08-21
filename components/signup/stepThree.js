@@ -267,13 +267,13 @@ class StepThree extends React.Component {
                   </p>
                 </div>
                 <div>
-                  <button
+                  {/* <button
                     className="me-3 back_btn"
                     onClick={() => this.props.setStep(2)}
                   >
                     <MdKeyboardArrowLeft />
                     Back
-                  </button>
+                  </button> */}
                   <button
                     className="next_btn col-white"
                     type="button"

@@ -1,27 +1,38 @@
 import React from "react";
 import {
-    MdKeyboardArrowRight,
-    MdKeyboardArrowLeft,
-    MdCheckCircle,
-    MdCheckCircleOutline,
-  } from "react-icons/md";
+  MdKeyboardArrowRight,
+  MdKeyboardArrowLeft,
+  MdCheckCircle,
+  MdCheckCircleOutline,
+} from "react-icons/md";
 
 import Otpinput from "./comps/otpInput";
 
-class StepTwo extends React.Component {
-    setEmailAddress(email) {
-        let error = !new RegExp(this.props.EMAIL_REGEX).test(email);
-          this.setState({
-            emailOTPData: {
-              ...this.state?.emailOTPData,
-              status: error && email?.length ? false : true,
-              message: error && email?.length ? 'Enter valid email.' : null
-            },
-          });
-      }
-  render() {
-    
+const OTPRetryModes = {
+  Sms: '11',
+  Voice: '4',
+  Email: '3',
+  Whatsapp: '12',
+}
 
+class StepTwo extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  setEmailAddress(email) {
+    let error = !new RegExp(this.props.EMAIL_REGEX).test(email);
+    this.setState({
+      emailOTPData: {
+        ...this.state?.emailOTPData,
+        status: error && email?.length ? false : true,
+        message: error && email?.length ? 'Enter valid email.' : null
+      },
+    });
+  }
+
+  render() {
     return (
       <>
         <div className="d-none entry__right_section__container--logo-visible-in-small">
@@ -52,13 +63,13 @@ class StepTwo extends React.Component {
             <div className="d-flex flex-wrap p-0">
               <div className="step_input_wrapper__left col-xl-6 col-lg-12">
                 <div className="d-flex step_input_wrapper__mobile_veiw">
-                    <input
-                      type="email"
-                      className="form-control "
-                      id="emailIdentifier"
-                      placeholder="Email Address"
-                      onChange={(e) => this.setEmailAddress(e.target.value)}
-                    />
+                  <input
+                    type="email"
+                    className="form-control "
+                    id="emailIdentifier"
+                    placeholder="Email Address"
+                    onChange={(e) => this.setEmailAddress(e.target.value)}
+                  />
                   <span className="position-relative">
                     <MdCheckCircle className="icon-success otp_verified_icon" />
                   </span>
@@ -74,22 +85,23 @@ class StepTwo extends React.Component {
                 </div>
               </div>
               <div className="step_input_wrapper__right col-xl-6 col-lg-12">
-              <div className="d-flex flex-column">
-                <Otpinput tag="email" verifyOtp={this.props.verifyOtp}/>
-                <p className="col-dark mt-3 c-fs-6">
+                <div className="d-flex flex-column">
+                  <Otpinput tag="email" verifyOtp={this.props.verifyOtp} otpLength={this.props.widgetData?.otpLength} />
+                  {this.props.allowedRetry?.email ? <p className="col-dark mt-3 c-fs-6">
                     Resend on{" "}
-                    <a href="#" className="col-primary c-fw-600 p-3">
+                    <a href="javascript:void(0)"
+                      onClick={() => this.props.retryOtp(OTPRetryModes.Email, false)} className="col-primary c-fw-600 p-3">
                       Email
                     </a>
-                  </p>
-              </div>
+                  </p> : null}
+                </div>
               </div>
             </div>
           </div>
           {this.state?.emailOTPData?.message ? (
             <p
               className=" c-fs-6 c-fw-500 my-4 elert-otp-message"
-             
+
             >
               {this.state?.emailOTPData?.message}
             </p>
@@ -123,20 +135,23 @@ class StepTwo extends React.Component {
               </div>
               <div className="step_input_wrapper__right col-xl-6 col-lg-12">
                 <div className="d-flex flex-column">
-                <Otpinput tag="sms" verifyOtp={this.props.verifyOtp}/>
+                  <Otpinput tag="sms" verifyOtp={this.props.verifyOtp} otpLength={this.props.widgetData?.otpLength} />
                   <p className="col-dark mt-3 c-fs-6 p-2">
                     Resend on{" "}
-                    <a href="#" className="col-primary c-fw-600 p-3">
+                    {this.props.allowedRetry?.sms ? <a href="javascript:void(0)" onClick={() => this.props.retryOtp(OTPRetryModes.Sms, true)} className="col-primary c-fw-600 p-3">
                       Text
-                    </a>
-                    or{" "}
-                    <a href="#" className="col-primary c-fw-600 p-3">
-                      WhatsApp
-                    </a>
-                    or{" "}
-                    <a href="#" className="col-primary c-fw-600 p-3">
-                      Email
-                    </a>
+                    </a> : null}
+                    {this.props.allowedRetry?.whatsApp ? <span>
+                      <span>or{" "}</span>
+                      <a href="javascript:void(0)" onClick={() => this.props.retryOtp(OTPRetryModes.Whatsapp, true)} className="col-primary c-fw-600 p-3">
+                        WhatsApp
+                      </a>
+                    </span> : null}
+                    {this.props.allowedRetry?.voice ? <span>
+                      <span>or{" "}</span>
+                      <a href="javascript:void(0)" onClick={() => this.props.retryOtp(OTPRetryModes.Voice, true)} className="col-primary c-fw-600 p-3">
+                        Voice
+                      </a></span> : null}
                   </p>
                 </div>
               </div>
