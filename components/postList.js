@@ -1,10 +1,13 @@
 import React from "react";
 import PostItem from "./postItem";
-// import TagLink from "./TagLink";
-// import Pagination from "./Pagination";
+// import TagLink from "./tagLink";
+import Pagination from "./pagination";
+// import TagButton from "./tagButton";
 
 export default function PostList({ posts, tags, pagination }) {
-    console.log(posts, "12345 postlist");
+    // console.log(tags, "tags 87");
+    // console.log(pagination, "pagination in post list");
+    // console.log(posts.length,"postlist in post list");
   return (
     <div className={"container"}>
       <div className={"posts"}>
@@ -16,14 +19,14 @@ export default function PostList({ posts, tags, pagination }) {
             </li>
           ))}
         </ul>
-        {/* <Pagination
+        <Pagination
           current={pagination.current}
           pages={pagination.pages}
           link={{
-            href: (page) => (page === 1 ? "/posts" : "/posts/page/[page]"),
-            as: (page) => (page === 1 ? null : "/posts/page/" + page),
+            href: (page) => (page === 1 ? "/guide" : "/guide/page/[page]"),
+            as: (page) => (page === 1 ? null : "/guide/page/" + page),
           }}
-        /> */}
+        />
       </div>
       <ul className={"categories"}>
       </ul>      

@@ -4,7 +4,6 @@ import { MDXRemote } from 'next-mdx-remote'
 import * as fs from "fs";
 import { fetchPostContent } from '../../components/lib/posts';
 import yaml  from "js-yaml";
-
 import matter from 'gray-matter';
 // const components = { Test }
 
@@ -18,9 +17,6 @@ const slugToPostContent = (postContents => {
     postContents?.forEach(it => hash[it.slug] = it)
     return hash;
   })(fetchPostContent());
-  // const d = fetchPostContent()
-
-  // const postContent = fetchPostContent();  
 export default function TestPage({ source , title, author, date}) {
   return (
     <div className="wrapper container blog-container">
@@ -63,6 +59,7 @@ export async function getStaticProps(slug) {
     const content = matterResult?.content;
     var date = new Date(matterResult?.data?.date);
     date = date.toDateString();
+    // const tags = matterResult?.data?.tags;
     // console.log(matterResult?.content,"matterResult?.data?");
     // console.log(content,"content00");
   // MDX text - can be from a local file, database, anywhere

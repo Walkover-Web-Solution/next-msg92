@@ -1,13 +1,16 @@
 
 
 import { listPostContent, countPosts } from '../../components/lib/posts'
-// import { listTags } from "../../lib/tags";
+// import { getTag, listTags } from "../../components/lib/tags";
 import Layout from "../../components/layout";
 import PostList from "../../components/postList";
-// import config from "../../lib/config";
-import Head from "next/head";
-
+import config from "../../components/lib/config";
+// import Head from "next/head";
+// const tags = listTags;
+// console.log(tags, "67");
 export default function Index({ posts, tags, pagination }) {
+console.log(pagination, "index")
+console.log(tags, "index-tags");
 
   const url = "/guide";
   const title = "All posts";
@@ -19,11 +22,12 @@ export default function Index({ posts, tags, pagination }) {
 }
 
 export async function getStaticProps() {
-  const posts = listPostContent(1);
+  const posts = listPostContent(1,config.posts_per_page);
   // const tags = listTags();
+  // console.log(tags, "static-tags");
   const pagination = {
     current: 1,
-    pages: Math.ceil(countPosts() / "10"),
+    pages: Math.ceil(countPosts() / config.posts_per_page),
   };
   return {
     props: {
