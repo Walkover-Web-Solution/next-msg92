@@ -41,8 +41,8 @@ function fetchPostContent() {
       
       // console.log(JSON.stringify(fullPath), "full path");
 
-      // const slug = fileName.replace(/\.mdx$/, "");
-      fileName.replace(/\.mdx$/, "");
+      const slug = fileName.replace(/\.mdx$/, "");
+      // fileName.replace(/\.mdx$/, "");
       // if (matterData.slug !== slug) {
       //   throw new Error("slug field not match with the path of its content source");
       // }
@@ -68,8 +68,8 @@ function countPosts(tag) {
 
 function listPostContent(page, limit, tag) {
   return fetchPostContent()
-  //     .filter((it) => !tag || (it.tags && it.tags.includes(tag)))
-  //     .slice((page - 1) * limit, page * limit);
+      .filter((it) => !tag || (it.tags && it.tags.includes(tag)))
+      .slice((page - 1) * limit, page * limit);
 }
 
 module.exports = {
