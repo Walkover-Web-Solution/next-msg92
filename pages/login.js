@@ -1,4 +1,5 @@
 import React from "react";
+import { GoogleLogin } from "react-google-login";
 
 class logIn extends React.Component {
 
@@ -14,6 +15,7 @@ class logIn extends React.Component {
         this.otpWidgetSetup();
     }
 
+    // Widget Login
     otpWidgetSetup = () => {
         const head = document.getElementsByTagName("head")[0];
         const currentTimestamp = new Date().getTime();
@@ -43,8 +45,7 @@ class logIn extends React.Component {
                     fetch(url, requestOptions)
                         .then(response => response.json())
                         .then(result => {
-                            console.log(result);
-                            // this.loginCompleted()
+                            this.loginCompleted()
                         });
                 } catch (error) {
                     loginFailed(error);
@@ -58,8 +59,33 @@ class logIn extends React.Component {
         window.initSendOTP(configuration);
     }
 
+    // Zoho Login
+    loginWithZoho() {
+        location.href = `https://accounts.zoho.com/oauth/v2/auth?client_id=${process.env.zohoClientId
+            }&response_type=token&scope=AaaServer.profile.Read&redirect_uri=${process.env.redirectURL}/login?loginWithZoho=true`;
+    }
+
+    // Github Login
+    loginWithGitHubAccount() {
+        location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${process.env.redirectURL}/login?github=true`;
+    }
+
+    // Google Login
+    responseGoogleSuccess = (response) => {
+        let userInfo = {
+            name: response.profileObj.name,
+            emailId: response.profileObj.email,
+        };
+        console.log(response);
+        this.setState({ userInfo, isLoggedIn: true });
+    };
+
+    responseGoogleError = (response) => {
+        console.log(response);
+    };
+
     loginCompleted() {
-        location.href = process.env.API_BASE_URL + '/app/'
+        location.href = process.env.API_BASE_URL + '/hello-new/'
     }
 
     loginFailed(error) {
@@ -101,7 +127,19 @@ class logIn extends React.Component {
                                     className="d-flex align-items-center flex-wrap login-icon-cont"
                                     style={{ gap: "16px" }}
                                 >
-                                    <button
+                                    <GoogleLogin
+                                        className="entry__right_section__container__entry_with--btn-with-text"
+                                        style={{
+                                            border: "1px solid var(--primary-light-theme, #1E75BA)",
+                                        }}
+                                        clientId="6ee6d0268be4aab8c594"
+                                        buttonText="Google"
+                                        onSuccess={this.responseGoogleSuccess}
+                                        onFailure={this.responseGoogleError}
+                                        isSignedIn={true}
+                                        cookiePolicy={"single_host_origin"}
+                                    />
+                                    {/* <button
                                         className="entry__right_section__container__entry_with--btn-with-text"
                                         style={{
                                             border: "1px solid var(--primary-light-theme, #1E75BA)",
@@ -109,7 +147,7 @@ class logIn extends React.Component {
                                     >
                                         <img src="/img/tie/google-logo.svg" alt="Google Icon" />
                                         <span>Google</span>
-                                    </button>
+                                    </button> */}
                                     <button
                                         style={{
                                             border: "1px solid var(--primary-light-theme, #1E75BA)",
@@ -118,7 +156,7 @@ class logIn extends React.Component {
                                     >
                                         <img src="/img/microsoft-svg.svg" />
                                     </button>
-                                    <button style={{ border: "1px solid #D94C44" }}>
+                                    <button style={{ border: "1px solid #D94C44" }} onClick={() => this.loginWithZoho()}>
                                         <img src="/img/icon-zogo.svg" />
                                     </button>
                                     <button
@@ -126,6 +164,7 @@ class logIn extends React.Component {
                                             border: "1px solid #000",
                                             background: "var(--light-white-bg, #FFF)",
                                         }}
+                                        onClick={() => this.loginWithGitHubAccount()}
                                     >
                                         <img src="/img/icon-github.svg" />
                                     </button>
