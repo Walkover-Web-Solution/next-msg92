@@ -9,11 +9,10 @@ export default function PostList({ posts, tags, pagination }) {
     // console.log(pagination, "pagination in post list");
     // console.log(posts.length,"postlist in post list");
   return (
-    <div className={"container"}>
+    <div className={"container blog-home-container"}>
       <div className={"posts"}>
         <ul className={"post-list"}>
-          {posts?.map((it, i) => (
-            
+          {posts?.map((it, i) => (            
             <li key={i}>
               <PostItem post={it} />
             </li>

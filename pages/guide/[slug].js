@@ -5,6 +5,7 @@ import * as fs from "fs";
 import { fetchPostContent } from '../../components/lib/posts';
 import yaml  from "js-yaml";
 import matter from 'gray-matter';
+import { format, formatISO } from "date-fns";
 // const components = { Test }
 
 const slugToPostContent = (postContents => {
@@ -58,7 +59,7 @@ export async function getStaticProps(slug) {
     const author = matterResult?.data?.author;
     const content = matterResult?.content;
     var date = new Date(matterResult?.data?.date);
-    date = date.toDateString();
+    date = format(date, "LLLL d, yyyy")
     // const tags = matterResult?.data?.tags;
     // console.log(matterResult?.content,"matterResult?.data?");
     // console.log(content,"content00");
