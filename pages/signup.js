@@ -1,11 +1,18 @@
 import React from "react";
 import {
-  MdDone
+  MdDone,
 } from "react-icons/md";
 
 import StepOne from "@/components/signup/stepOne";
 import StepTwo from "@/components/signup/stepTwo";
 import StepThree from "@/components/signup/stepThree";
+
+const OTPRetryModes = {
+  Sms: '11',
+  Voice: '4',
+  Email: '3',
+  Whatsapp: '12',
+}
 
 const MOBILE_REGEX = /^[+]?[0-9]+$/;
 const EMAIL_REGEX =
