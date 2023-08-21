@@ -23,11 +23,14 @@ const slugToPostContent = (postContents => {
   // const postContent = fetchPostContent();  
 export default function TestPage({ source , title, author, date}) {
   return (
-    <div className="wrapper">
-      <h1>{title}</h1>
-      <h6>{author}</h6>
-      <p>{date}</p>
-      <MDXRemote {...source} />
+    <div className="wrapper container blog-container">
+      <div className='blog-header'>
+        <div>{author}, {date}</div>        
+        <h1>{title}</h1>
+      </div>
+      <div className="content">
+        <MDXRemote {...source} />
+      </div>
     </div>
   )
 }
@@ -57,8 +60,9 @@ export async function getStaticProps(slug) {
 
     const title = matterResult?.data?.title;
     const author = matterResult?.data?.author;
-    const date = matterResult?.data?.date;
     const content = matterResult?.content;
+    var date = new Date(matterResult?.data?.date);
+    date = date.toDateString();
     // console.log(matterResult?.content,"matterResult?.data?");
     // console.log(content,"content00");
   // MDX text - can be from a local file, database, anywhere
