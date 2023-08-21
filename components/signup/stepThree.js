@@ -1,4 +1,7 @@
 import React from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Component } from "react";
 import {
   MdKeyboardArrowRight,
   MdKeyboardArrowLeft,
@@ -7,7 +10,71 @@ import {
 } from "react-icons/md";
 
 class StepThree extends React.Component {
-  render() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      formData: {
+        firstName: "",
+        lastName: "",
+        howToUse: "",
+        companyName: "",
+        industryType: "",
+        serviceNeeded: "",
+        country: "",
+        stateProvince: "",
+        pincode: "",
+        city: "",
+        address: "",
+        gstNumber: "",
+        agreeToTerms: false,
+        
+      },
+      countryNames :{}
+
+    };
+
+  }
+
+  handleInputChange = (event) => {
+    const { name, value, type, checked } = event.target;
+    this.setState((prevState) => ({
+      formData: {
+        ...prevState.formData,
+        [name]: type === "checkbox" ? checked : value,
+      },
+    }));
+  };
+
+  finalSubmit = () => {
+    const formDataJson = JSON.stringify(this.state.formData);
+    console.log(formDataJson);
+  };
+
+  getCountries = async () => {
+    const response =  await axios.get(
+       "https://test.msg91.com/api/v5/web/getCountries",
+       {
+         headers: {
+           Cookie:
+             "HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D",
+         },
+       }
+     );
+     return response;
+   };
+   componentDidMount() {
+    this.getCountries()
+      .then(response => {
+        this.setState({ countryNames: response.data });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+   
+   render() {
+   
+    console.log (this.countryNames,333)
     return (
       <>
         <div className="d-none entry__right_section__container--logo-visible-in-small">
@@ -35,26 +102,17 @@ class StepThree extends React.Component {
           </div>
 
           <p className="redirect-text mt-5">Redirecting...</p>
-
-          <div className="row px-0 step_two_wrapper mt-4">
+          <form className="row px-0 step_two_wrapper mt-4">
             <div className="col-xxl-6 col-xl-8 col-lg-10">
               <div className="row g-4">
-                <div className="col-12">
-                  <div className="step_two_wrapper__toggle_button">
-                    <button className="step_two_wrapper__toggle_button__left">
-                      Company/Developer
-                    </button>
-                    <button className="step_two_wrapper__toggle_button__right">
-                      Personal use
-                    </button>
-                  </div>
-                </div>
-
                 <div className="col-lg-6">
                   <input
                     type="text"
                     className="form-control"
                     placeholder="First Name"
+                    name="firstName"
+                    value={this.state.formData.firstName}
+                    onChange={this.handleInputChange}
                   />
                 </div>
                 <div className="col-lg-6">
@@ -62,22 +120,29 @@ class StepThree extends React.Component {
                     type="text"
                     className="form-control"
                     placeholder="Last Name"
+                    name="lastName"
+                    value={this.state.formData.lastName}
+                    onChange={this.handleInputChange}
                   />
                 </div>
-
                 <div className="col-12 step_two_wrapper--personal-form">
                   <input
                     type="text"
                     className="form-control"
                     placeholder="How are you going to use this?"
+                    name="howToUse"
+                    value={this.state.formData.howToUse}
+                    onChange={this.handleInputChange}
                   />
                 </div>
-
                 <div className="col-lg-6  step_two_wrapper--company-form">
                   <input
                     type="text"
                     className="form-control"
                     placeholder="Company Name"
+                    name="companyName"
+                    value={this.state.formData.companyName}
+                    onChange={this.handleInputChange}
                   />
                 </div>
                 <div className="col-lg-6  step_two_wrapper--company-form">
@@ -85,57 +150,69 @@ class StepThree extends React.Component {
                     autoComplete="on"
                     className="form-select"
                     aria-label="Default Industry Type"
+                    name="industryType"
+                    value={this.state.formData.industryType}
+                    onChange={this.handleInputChange}
                   >
-                    <option defaultValue>Industry Type</option>
-                    <option value="">option 1</option>
-                    <option value="">option 2</option>
-                    <option value="">option 3</option>
+                    <option value="">Industry Type</option>
+                    <option value="option1">option 1</option>
+                    <option value="option2">option 2</option>
+                    <option value="option3">option 3</option>
                   </select>
                 </div>
-
                 <div className="col-12 step_two_wrapper--company-form">
                   <select
                     autoComplete="on"
                     className="form-select"
-                    aria-label="Default Industry Type"
+                    aria-label="Default Service Needed"
+                    name="serviceNeeded"
+                    value={this.state.formData.serviceNeeded}
+                    onChange={this.handleInputChange}
                   >
-                    <option defaultValue>Service Needed</option>
-                    <option value="">option 1</option>
-                    <option value="">option 2</option>
-                    <option value="">option 3</option>
+                    <option value="">Service Needed</option>
+                    <option value="option1">option 1</option>
+                    <option value="option2">option 2</option>
+                    <option value="option3">option 3</option>
                   </select>
                 </div>
-
-                <div className="col-lg-6  step_two_wrapper--company-form">
+                <div className="col-6 step_two_wrapper--company-form">
                   <select
                     autoComplete="on"
                     className="form-select"
-                    aria-label="Default Industry Type"
+                    aria-label="Default Country"
+                    name="country"
+                    value={this.state.formData.country}
+                    onChange={this.handleInputChange}
                   >
-                    <option defaultValue>Country</option>
-                    <option value="">option 1</option>
-                    <option value="">option 2</option>
-                    <option value="">option 3</option>
+                    <option value="">Country</option>
+                    <option value="option1">option 1</option>
+                    <option value="option2">option 2</option>
+                    <option value="option3">option 3</option>
                   </select>
                 </div>
-                <div className="col-lg-6  step_two_wrapper--company-form">
+                <div className="col-6 step_two_wrapper--company-form">
                   <select
                     autoComplete="on"
                     className="form-select"
-                    aria-label="Default Industry Type"
+                    aria-label="Default State/Province"
+                    name="stateProvince"
+                    value={this.state.formData.stateProvince}
+                    onChange={this.handleInputChange}
                   >
-                    <option defaultValue>State/Province</option>
-                    <option value="">option 1</option>
-                    <option value="">option 2</option>
-                    <option value="">option 3</option>
+                    <option value="">State/Province</option>
+                    <option value="option1">option 1</option>
+                    <option value="option2">option 2</option>
+                    <option value="option3">option 3</option>
                   </select>
                 </div>
-
                 <div className="col-lg-6  step_two_wrapper--company-form">
                   <input
                     type="text"
                     className="form-control"
                     placeholder="Pincode"
+                    name="pincode"
+                    value={this.state.formData.pincode}
+                    onChange={this.handleInputChange}
                   />
                 </div>
                 <div className="col-lg-6  step_two_wrapper--company-form">
@@ -143,14 +220,19 @@ class StepThree extends React.Component {
                     type="text"
                     className="form-control"
                     placeholder="City"
+                    name="city"
+                    value={this.state.formData.city}
+                    onChange={this.handleInputChange}
                   />
                 </div>
-
                 <div className="col-12 step_two_wrapper--company-form">
                   <input
                     type="text"
                     className="form-control"
                     placeholder="Address"
+                    name="address"
+                    value={this.state.formData.address}
+                    onChange={this.handleInputChange}
                   />
                 </div>
                 <div className="col-12 step_two_wrapper--company-form">
@@ -158,6 +240,9 @@ class StepThree extends React.Component {
                     type="text"
                     className="form-control"
                     placeholder="GST number"
+                    name="gstNumber"
+                    value={this.state.formData.gstNumber}
+                    onChange={this.handleInputChange}
                   />
                 </div>
               </div>
@@ -170,12 +255,15 @@ class StepThree extends React.Component {
                     type="checkbox"
                     value="true"
                     id="termsCheckBox"
+                    name="agreeToTerms"
+                    checked={this.state.formData.agreeToTerms}
+                    onChange={this.handleInputChange}
                   />
                   <p
                     className="form-check-label c-fs-6 c-fw-500 ps-0"
                     htmlFor="termsCheckBox"
                   >
-                    I agree to the
+                    I agree to the terms and conditions
                   </p>
                 </div>
                 <div>
@@ -188,17 +276,19 @@ class StepThree extends React.Component {
                   </button>
                   <button
                     className="next_btn col-white"
-                    onClick={() => this.props.finalSubmit()}
+                    type="button"
+                    onClick={this.finalSubmit}
                   >
                     Next <MdKeyboardArrowRight />
                   </button>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </>
     );
   }
 }
+
 export default StepThree;
