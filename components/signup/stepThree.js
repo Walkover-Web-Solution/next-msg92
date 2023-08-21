@@ -27,12 +27,9 @@ class StepThree extends React.Component {
         address: "",
         gstNumber: "",
         agreeToTerms: false,
-        
       },
-      countryNames :{}
-
+      countryNames: [],
     };
-
   }
 
   handleInputChange = (event) => {
@@ -51,30 +48,29 @@ class StepThree extends React.Component {
   };
 
   getCountries = async () => {
-    const response =  await axios.get(
-       "https://test.msg91.com/api/v5/web/getCountries",
-       {
-         headers: {
-           Cookie:
-             "HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D",
-         },
-       }
-     );
-     return response;
-   };
-   componentDidMount() {
+    const response = await axios.get(
+      "https://test.msg91.com/api/v5/web/getCountries",
+      {
+        headers: {
+          Cookie:
+            "HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D",
+        },
+      }
+    );
+    return response;
+  };
+
+  componentDidMount() {
     this.getCountries()
-      .then(response => {
-        this.setState({ countryNames: response.data });
+      .then((response) => {
+        this.setState({ countryNames: response.data.data });
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
   }
-   
-   render() {
-   
-    console.log (this.countryNames,333)
+
+  render() {
     return (
       <>
         <div className="d-none entry__right_section__container--logo-visible-in-small">
@@ -100,7 +96,6 @@ class StepThree extends React.Component {
               Enter details
             </div>
           </div>
-
           <p className="redirect-text mt-5">Redirecting...</p>
           <form className="row px-0 step_two_wrapper mt-4">
             <div className="col-xxl-6 col-xl-8 col-lg-10">
@@ -185,9 +180,9 @@ class StepThree extends React.Component {
                     onChange={this.handleInputChange}
                   >
                     <option value="">Country</option>
-                    <option value="option1">option 1</option>
-                    <option value="option2">option 2</option>
-                    <option value="option3">option 3</option>
+                    {this.state.countryNames.map((country) => (
+                      <option key={country.id} value={country.countryCode}>{country.name}</option>
+                    ))}
                   </select>
                 </div>
                 <div className="col-6 step_two_wrapper--company-form">
