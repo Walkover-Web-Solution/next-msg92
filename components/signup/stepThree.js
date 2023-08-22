@@ -69,8 +69,30 @@ class StepThree extends React.Component {
         console.error(error);
       });
   }
+  fetchDataBasedOnCountry = async (selectedCountry) => {
+    try {
+      const response = await axios.get(
+        "https://test.msg91.com/api/v5/web/getStatesByCountryId/53",
+        {
+          headers: {
+            Cookie:
+              "HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D",
+          },
+        }
+      );
+      this.setState({ countryData: response.data });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.formData.country !== this.state.formData.country) {
+      this.fetchDataBasedOnCountry(this.state.formData.country);
+    }
+  }
 
   render() {
+    console.log(this.state.countryData?.data, "ss");
     return (
       <>
         <div className="d-none entry__right_section__container--logo-visible-in-small">
@@ -103,7 +125,7 @@ class StepThree extends React.Component {
                 <div className="col-lg-6">
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control" 
                     placeholder="First Name"
                     name="firstName"
                     value={this.state.formData.firstName}
@@ -181,7 +203,9 @@ class StepThree extends React.Component {
                   >
                     <option value="">Country</option>
                     {this.state.countryNames.map((country) => (
-                      <option key={country.id} value={country.countryCode}>{country.name}</option>
+                      <option key={country.id} value={country.countryCode}>
+                        {country.name}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -195,9 +219,15 @@ class StepThree extends React.Component {
                     onChange={this.handleInputChange}
                   >
                     <option value="">State/Province</option>
-                    <option value="option1">option 1</option>
-                    <option value="option2">option 2</option>
-                    <option value="option3">option 3</option>
+
+                    <option value="">Country</option>
+                    {this.state.countryData
+                      ? this.state.countryData?.data.map((country) => (
+                          <option key={country.id} value={country.countryCode}>
+                            {country.name}
+                          </option>
+                        ))
+                      : null}
                   </select>
                 </div>
                 <div className="col-lg-6  step_two_wrapper--company-form">
