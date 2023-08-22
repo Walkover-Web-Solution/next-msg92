@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }) {
   var brawserPathCase = brawserPath;
   var brawserPathMeta = brawserPath;
   if (brawserPath !== '/') {
-    const pattern = /\/([^/?]+)/;
+    const pattern = /\/([^/?#]+)/;
     const result = brawserPath.match(pattern);
     brawserPath = result ? result[0] : brawserPath;
     
