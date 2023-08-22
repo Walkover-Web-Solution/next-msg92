@@ -8,9 +8,10 @@ import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+  var showNavbar= false ;
   // const [login, setlogin] = useState(true)
   // const [signup, setSignup] = useState(true)
-  const [showNavbar, setShowNavbar] = useState(true)
+  // const [showNavbar, setShowNavbar] = useState(true)
   // const { slug } = router.query; 
   var  brawserPath = router.asPath;
   const trimmedPath =  brawserPath.split("?")[0];
@@ -30,16 +31,21 @@ export default function App({ Component, pageProps }) {
   //     setShowNavbar(false)
   //   }
   // }, [brawserPath]);
+  console.log(brawserPath);
+  if (brawserPath !== '/login' && brawserPath !== '/signup'){
+    showNavbar = true;
 
-  useEffect(() => {
+  }
+
+  // useEffect(() => {
 
     // Check if the trimmedPath starts with "/login" or "/signup"
-    if (trimmedPath.startsWith('/login') || trimmedPath.startsWith('/signup')) {
-      setShowNavbar(false);
-    } else {
-      setShowNavbar(true);
-    }
-  }, [trimmedPath]);
+  //   if (trimmedPath.startsWith('/login') || trimmedPath.startsWith('/signup')) {
+  //     setShowNavbar(false);
+  //   } else {
+  //     setShowNavbar(true);
+  //   }
+  // }, [trimmedPath]);
     return (
       <>
       <Headcomp brawserPath={brawserPathMeta} />
