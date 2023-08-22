@@ -1,13 +1,14 @@
 import { serialize } from 'next-mdx-remote/serialize'
-
+// import images from '../../images/uploads'
 import { MDXRemote } from 'next-mdx-remote'
 import * as fs from "fs";
 import { fetchPostContent } from '../../components/lib/posts';
 import yaml  from "js-yaml";
 import matter from 'gray-matter';
 import Head from 'next/head';
+import { format } from "date-fns";
 // const components = { Test }
-
+// const images = require('../../images
 const slugToPostContent = (postContents => {
  
     let hash = {}
@@ -18,18 +19,22 @@ const slugToPostContent = (postContents => {
     postContents?.forEach(it => hash[it.slug] = it)
     return hash;
   })(fetchPostContent());
-export default function TestPage({ source , title, author, date}) {
+export default function TestPage({ source , title, author, date,thumbnailImage}) {
   return (
     <>
     <Head>
-    <title>{title}</title>
+      <title>{title}</title>
     </Head>
-    <div className="wrapper">
-      <h1>{title}</h1>
-      <h6>{author}</h6>
-      <p>{date}</p>
-      {/* <p>{tags}</p> */}
-      <MDXRemote {...source} />
+    <div className="wrapper container blog-container">
+      <div className='blog-header'>
+        <div>{author}, {date}</div>        
+        <h1>{title}</h1>
+        {thumbnailImage !=="" && <img className="" src={thumbnailImage} alt={author} />}
+      </div>
+      <div className="content">
+        <MDXRemote {...source} />
+      </div>
+
     </div>
     </>
   )
@@ -58,17 +63,20 @@ export async function getStaticProps(slug) {
       },
     });
 
+    console.log( matterResult, "matter Result ")
+    const thumbnailImage = matterResult?.data?.thumbnail;
     const title = matterResult?.data?.title;
     const author = matterResult?.data?.author;
-    const date = matterResult?.data?.date;
     const content = matterResult?.content;
+    var date = new Date(matterResult?.data?.date);
+    date = format(date, "LLLL d, yyyy")
+    console.log(thumbnailImage, "thumbnailImage");
     // const tags = matterResult?.data?.tags;
-    
     // console.log(matterResult?.content,"matterResult?.data?");
     // console.log(content,"content00");
   // MDX text - can be from a local file, database, anywhere
   const mdxSource = await serialize(content)
   // const mdxSource = await renderToString(content, { scope: matterResult });
   // console.log(mdxSource,"generated");
-  return { props: { source: mdxSource, title: title, author: author, date: date} }
+  return { props: { source: mdxSource || "", title: title || "", author: author || "", date: date, thumbnailImage:thumbnailImage || ""} }
 }
