@@ -5,6 +5,7 @@ import * as fs from "fs";
 import { fetchPostContent } from '../../components/lib/posts';
 import yaml  from "js-yaml";
 import matter from 'gray-matter';
+import Head from 'next/head';
 // const components = { Test }
 
 const slugToPostContent = (postContents => {
@@ -19,6 +20,10 @@ const slugToPostContent = (postContents => {
   })(fetchPostContent());
 export default function TestPage({ source , title, author, date}) {
   return (
+    <>
+    <Head>
+    <title>{title}</title>
+    </Head>
     <div className="wrapper">
       <h1>{title}</h1>
       <h6>{author}</h6>
@@ -26,6 +31,7 @@ export default function TestPage({ source , title, author, date}) {
       {/* <p>{tags}</p> */}
       <MDXRemote {...source} />
     </div>
+    </>
   )
 }
 

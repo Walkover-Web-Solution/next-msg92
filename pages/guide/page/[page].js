@@ -7,10 +7,7 @@ import PostList from "../../../components/postList";
 import config from "../../../components/lib/config";
 // import TagPostList from '@/components/tagPostList';
 // import Head from "next/head";
-// const post_per_page = 5;
 export default function Index({ posts, tags, pagination }) {
-console.log(pagination, "index")
-console.log(tags, "index-tags");
   const url = "/guide";
   const title = "All posts";
   return (
@@ -27,7 +24,7 @@ export async function getStaticProps({params}) {
   // const tags = listTags();
   // console.log(tags, "static-tags");
   const pagination = {
-    current: 1,
+    current: page,
     pages: Math.ceil(countPosts() / config.posts_per_page),
   };
   return {

@@ -9,8 +9,6 @@ import config from "../../components/lib/config";
 // const tags = listTags;
 // console.log(tags, "67");
 export default function Index({ posts, tags, pagination }) {
-console.log(pagination, "index")
-console.log(tags, "index-tags");
 
   const url = "/guide";
   const title = "All posts";

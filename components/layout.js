@@ -2,7 +2,6 @@
 // import Navigation from "./Navigation";
 
 export default function Layout({ children }) {
-    console.log(children,"0000");
   return (
     <div className="root">
       {/* <Head>

@@ -2,10 +2,7 @@ import { generatePagination } from './lib/pagination'
 import Link from "next/link";
 
 function Pagination({ current, pages, link }) {
-  console.log(current, "current");
-  console.log(pages,"pages in  current");
    const pagination = generatePagination(current, pages);
-  console.log(pagination,  "345");
   return (
     <ul>
       {pagination.map((it, i) => (

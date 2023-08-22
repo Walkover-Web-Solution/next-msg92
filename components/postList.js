@@ -5,9 +5,6 @@ import Pagination from "./pagination";
 // import TagButton from "./tagButton";
 
 export default function PostList({ posts, tags, pagination }) {
-    // console.log(tags, "tags 87");
-    // console.log(pagination, "pagination in post list");
-    // console.log(posts.length,"postlist in post list");
   return (
     <div className={"container"}>
       <div className={"posts"}>
