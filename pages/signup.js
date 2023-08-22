@@ -25,7 +25,7 @@ class SignUp extends React.Component {
     let queryParams = this.getQueryParamsDeatils(this.props?.browserPathCase);
 
     this.state = {
-      activeStep: queryParams?.["code"] ? 2 : 1,
+      activeStep: queryParams?.["code"] ? 2 : 3,
       signupByGitHub: queryParams?.["github"] ? true : false,
       githubCode: queryParams?.["code"],
       githubState: queryParams?.["state"],

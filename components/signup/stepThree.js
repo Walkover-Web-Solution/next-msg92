@@ -49,7 +49,7 @@ class StepThree extends React.Component {
 
   getCountries = async () => {
     const response = await axios.get(
-      "https://test.msg91.com/api/v5/web/getCountries",
+      `${process.env.API_BASE_URL}/api/v5/web/getCountries`,
       {
         headers: {
           Cookie:
@@ -70,9 +70,10 @@ class StepThree extends React.Component {
       });
   }
   fetchDataBasedOnCountry = async (selectedCountry) => {
+    console.log(selectedCountry);
     try {
       const response = await axios.get(
-        "https://test.msg91.com/api/v5/web/getStatesByCountryId/53",
+        `${process.env.API_BASE_URL}/api/v5/web/getStatesByCountryId/${selectedCountry}`,
         {
           headers: {
             Cookie:
@@ -122,10 +123,21 @@ class StepThree extends React.Component {
           <form className="row px-0 step_two_wrapper mt-4">
             <div className="col-xxl-6 col-xl-8 col-lg-10">
               <div className="row g-4">
+                {/* <div className="col-12">
+                  <div className="step_two_wrapper__toggle_button">
+                    <button className="step_two_wrapper__toggle_button__left">
+                      Company/Developer
+                    </button>
+                    <button className="step_two_wrapper__toggle_button__right">
+                      Personal use
+                    </button>
+                  </div>
+                </div> */}
+
                 <div className="col-lg-6">
                   <input
                     type="text"
-                    className="form-control" 
+                    className="form-control"
                     placeholder="First Name"
                     name="firstName"
                     value={this.state.formData.firstName}
@@ -201,12 +213,14 @@ class StepThree extends React.Component {
                     value={this.state.formData.country}
                     onChange={this.handleInputChange}
                   >
-                    <option value="">Country</option>
                     {this.state.countryNames.map((country) => (
-                      <option key={country.id} value={country.countryCode}>
+                      <option key={country.id} value={country.id}>
                         {country.name}
                       </option>
                     ))}
+                    <option key='other' value='other'>
+                      Other
+                    </option>
                   </select>
                 </div>
                 <div className="col-6 step_two_wrapper--company-form">
@@ -223,10 +237,10 @@ class StepThree extends React.Component {
                     <option value="">Country</option>
                     {this.state.countryData
                       ? this.state.countryData?.data.map((country) => (
-                          <option key={country.id} value={country.countryCode}>
-                            {country.name}
-                          </option>
-                        ))
+                        <option key={country.id} value={country.countryCode}>
+                          {country.name}
+                        </option>
+                      ))
                       : null}
                   </select>
                 </div>
