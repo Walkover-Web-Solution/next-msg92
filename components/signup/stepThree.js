@@ -70,7 +70,7 @@ class StepThree extends React.Component {
       });
   }
   fetchDataBasedOnCountry = async (selectedCountry) => {
-    console.log(selectedCountry);
+    // console.log(selectedCountry);
     try {
       const response = await axios.get(
         `${process.env.API_BASE_URL}/api/v5/web/getStatesByCountryId/${selectedCountry}`,
@@ -86,14 +86,39 @@ class StepThree extends React.Component {
       console.error(error);
     }
   };
+  fetchDataBasedOnState = async (selectedstateProvince) => {
+    // console.log(selectedstateProvince);
+    try {
+      const response = await axios.get(
+        `${process.env.API_BASE_URL}/api/v5/web/getCitiesByStateId/${selectedstateProvince}`,
+        {
+          headers: {
+            Cookie:
+              "HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D",
+          },
+        }
+      );
+      this.setState({ stateData: response.data });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
   componentDidUpdate(prevProps, prevState) {
     if (prevState.formData.country !== this.state.formData.country) {
+      // Country has changed, fetch data based on the country
       this.fetchDataBasedOnCountry(this.state.formData.country);
+    }
+
+    if (prevState.formData.stateProvince !== this.state.formData.stateProvince) {
+      // State/Province has changed, fetch data based on the state
+      this.fetchDataBasedOnState(this.state.formData.stateProvince);
     }
   }
 
   render() {
-    console.log(this.state.countryData?.data, "ss");
+    // console.log(this.state.countryData?.data, "ss");
+    // console.log(this.state.stateData?.data, "sss");
     return (
       <>
         <div className="d-none entry__right_section__container--logo-visible-in-small">
@@ -213,12 +238,13 @@ class StepThree extends React.Component {
                     value={this.state.formData.country}
                     onChange={this.handleInputChange}
                   >
+                    <option value="">Country</option>
                     {this.state.countryNames.map((country) => (
                       <option key={country.id} value={country.id}>
                         {country.name}
                       </option>
                     ))}
-                    <option key='other' value='other'>
+                    <option key="other" value="other">
                       Other
                     </option>
                   </select>
@@ -233,14 +259,12 @@ class StepThree extends React.Component {
                     onChange={this.handleInputChange}
                   >
                     <option value="">State/Province</option>
-
-                    <option value="">Country</option>
                     {this.state.countryData
                       ? this.state.countryData?.data.map((country) => (
-                        <option key={country.id} value={country.countryCode}>
-                          {country.name}
-                        </option>
-                      ))
+                          <option key={country.id} value={country.id}>
+                            {country.name}
+                          </option>
+                        ))
                       : null}
                   </select>
                 </div>
@@ -255,14 +279,24 @@ class StepThree extends React.Component {
                   />
                 </div>
                 <div className="col-lg-6  step_two_wrapper--company-form">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="City"
+                  <select
+                    autoComplete="on"
+                    className="form-select"
+                    aria-label="Default State/Province"
                     name="city"
                     value={this.state.formData.city}
                     onChange={this.handleInputChange}
-                  />
+                  >
+                    <option value="">City</option>
+                    {this.state.countryData
+                      ? this.state.stateData?.data.map((country) => (
+                          <option key={country.id} value={country.countryCode}>
+                            {country.name}
+                          </option>
+                        ))
+                      : null}
+                    <option value="other">Other</option>
+                  </select>
                 </div>
                 <div className="col-12 step_two_wrapper--company-form">
                   <input
