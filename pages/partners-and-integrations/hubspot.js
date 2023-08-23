@@ -15,7 +15,7 @@ const IntPage = () => {
         <div className="container d-flex align-items-center gap-4">
           <img src="\img\integrations\hubspot-logo.svg" />
           <div>
-            <h1 className="sub-heading">hubspot Integration</h1>
+            <h1 className="sub-heading">HubSpot Integration</h1>
             <h4 className="c-fs-4 mt-2">
               Streamline Your Engagement Workflows
             </h4>
