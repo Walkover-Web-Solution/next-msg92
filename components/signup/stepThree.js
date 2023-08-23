@@ -116,6 +116,89 @@ class StepThree extends React.Component {
     }
   }
 
+  //validation 
+  validateFirstName = () => {
+    const { firstName } = this.state.formData;
+    
+    // Regular expression to match names that contain only letters (no numbers or spaces)
+    const nameRegex = /^[A-Za-z]+$/;
+  
+    if (firstName.trim() === '') {
+      return 'First Name is required';
+    } else if (!nameRegex.test(firstName)) {
+      return 'First Name should only contain letters';
+    }
+  
+    return '';
+  };
+  validateLastName = () => {
+    const { lastName } = this.state.formData;
+    
+    // Regular expression to match names that contain only letters (no numbers or spaces)
+    const nameRegex = /^[A-Za-z]+$/;
+  
+    if (lastName.trim() === '') {
+      return 'Last Name is required';
+    } else if (!nameRegex.test(lastName)) {
+      return 'Last Name should only contain letters';
+    }
+  
+    return '';
+  };
+  
+  
+  validateLastName = () => {
+    const { lastName } = this.state.formData;
+    if (lastName.trim() === '') {
+      return 'Last Name is required';
+    }
+    return '';
+  };
+  validateGSTNumber = () => {
+    const { gstNumber } = this.state.formData;
+    const gstRegex = /^[\dA-Z]{15}$/;
+    if (!gstRegex.test(gstNumber)) {
+      return 'Invalid GST Number';
+    }
+    return '';
+  };
+  validatePincode = () => {
+    const { pincode } = this.state.formData;
+    const pincodeRegex = /^\d{6}$/;
+  
+    if (!pincodeRegex.test(pincode)) {
+      return 'Pincode must be a 6-digit number';
+    }
+    return '';
+  };
+  
+  finalSubmit = () => {
+
+    const firstNameError = this.validateFirstName();
+    const lastNameError = this.validateLastName();
+    const gstNumberError = this.validateGSTNumber();
+    const pincodeError = this.validatePincode();
+
+    if (firstNameError || lastNameError || gstNumberError /* add more */) {
+      this.setState((prevState) => ({
+        formData: {
+          ...prevState.formData,
+          firstNameError,
+          lastNameError,
+          gstNumberError,
+          pincodeError,
+          // Add more error fields for other inputs
+        },
+      }));
+    } else {
+
+      const formDataJson = JSON.stringify(this.state.formData);
+      console.log(formDataJson);
+
+    }
+  };
+
+
   render() {
     // console.log(this.state.countryData?.data, "ss");
     // console.log(this.state.stateData?.data, "sss");
@@ -162,7 +245,7 @@ class StepThree extends React.Component {
                 <div className="col-lg-6">
                   <input
                     type="text"
-                    className="form-control"
+                    className={this.state.formData.firstNameError ?'form-control input-error-display':'form-control'}
                     placeholder="First Name"
                     name="firstName"
                     value={this.state.formData.firstName}
@@ -172,7 +255,7 @@ class StepThree extends React.Component {
                 <div className="col-lg-6">
                   <input
                     type="text"
-                    className="form-control"
+                    className={this.state.formData.lastNameError ?'form-control input-error-display':'form-control'}
                     placeholder="Last Name"
                     name="lastName"
                     value={this.state.formData.lastName}
@@ -271,7 +354,7 @@ class StepThree extends React.Component {
                 <div className="col-lg-6  step_two_wrapper--company-form">
                   <input
                     type="text"
-                    className="form-control"
+                    className={this.state.formData.validatePincode ?'form-control input-error-display':'form-control'}
                     placeholder="Pincode"
                     name="pincode"
                     value={this.state.formData.pincode}
@@ -311,7 +394,7 @@ class StepThree extends React.Component {
                 <div className="col-12 step_two_wrapper--company-form">
                   <input
                     type="text"
-                    className="form-control"
+                    className={this.state.formData.gstNumberError ?'form-control input-error-display':'form-control'}
                     placeholder="GST number"
                     name="gstNumber"
                     value={this.state.formData.gstNumber}
@@ -355,6 +438,7 @@ class StepThree extends React.Component {
                     Next <MdKeyboardArrowRight />
                   </button>
                 </div>
+                
               </div>
             </div>
           </form>
