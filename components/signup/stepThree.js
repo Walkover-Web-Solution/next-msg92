@@ -24,9 +24,17 @@ class StepThree extends React.Component {
         stateProvince: "",
         pincode: "",
         city: "",
+        otherCity:"",
         address: "",
         gstNumber: "",
         agreeToTerms: false,
+      },
+      formErrorData: {
+        firstNameError:"",
+        lastNameError:"",
+        gstNumberError:"",
+        pincodeError:"",
+        // Add more error fields for other inputs
       },
       countryNames: [],
     };
@@ -181,8 +189,8 @@ class StepThree extends React.Component {
 
     if (firstNameError || lastNameError || gstNumberError /* add more */) {
       this.setState((prevState) => ({
-        formData: {
-          ...prevState.formData,
+        formErrorData: {
+          ...prevState.formErrorData,
           firstNameError,
           lastNameError,
           gstNumberError,
@@ -245,7 +253,7 @@ class StepThree extends React.Component {
                 <div className="col-lg-6">
                   <input
                     type="text"
-                    className={this.state.formData.firstNameError ?'form-control input-error-display':'form-control'}
+                    className={this.state.formErrorData.firstNameError ?'form-control input-error-display':'form-control'}
                     placeholder="First Name"
                     name="firstName"
                     value={this.state.formData.firstName}
@@ -255,7 +263,7 @@ class StepThree extends React.Component {
                 <div className="col-lg-6">
                   <input
                     type="text"
-                    className={this.state.formData.lastNameError ?'form-control input-error-display':'form-control'}
+                    className={this.state.formErrorData.lastNameError ?'form-control input-error-display':'form-control'}
                     placeholder="Last Name"
                     name="lastName"
                     value={this.state.formData.lastName}
@@ -343,9 +351,9 @@ class StepThree extends React.Component {
                   >
                     <option value="">State/Province</option>
                     {this.state.countryData
-                      ? this.state.countryData?.data.map((country) => (
-                          <option key={country.id} value={country.id}>
-                            {country.name}
+                      ? this.state.countryData?.data.map((stateProvince) => (
+                          <option key={stateProvince.id} value={stateProvince.id}>
+                            {stateProvince.name}
                           </option>
                         ))
                       : null}
@@ -354,7 +362,7 @@ class StepThree extends React.Component {
                 <div className="col-lg-6  step_two_wrapper--company-form">
                   <input
                     type="text"
-                    className={this.state.formData.validatePincode ?'form-control input-error-display':'form-control'}
+                    className={this.state.formErrorData.validatePincode ?'form-control input-error-display':'form-control'}
                     placeholder="Pincode"
                     name="pincode"
                     value={this.state.formData.pincode}
@@ -372,15 +380,27 @@ class StepThree extends React.Component {
                   >
                     <option value="">City</option>
                     {this.state.countryData
-                      ? this.state.stateData?.data.map((country) => (
-                          <option key={country.id} value={country.countryCode}>
-                            {country.name}
+                      ? this.state.stateData?.data.map((city) => (
+                          <option key={city.id} value={city.countryCode}>
+                            {city.name}
                           </option>
                         ))
                       : null}
                     <option value="other">Other</option>
                   </select>
                 </div>
+                {this.state.formData.city =="other"&&
+                 <div className="col-12 step_two_wrapper--company-form">
+                 <input
+                   type="text"
+                   className="form-control"
+                   placeholder="Enter your city"
+                   name="otherCity"
+                   value={this.state.formData.otherCity}
+                   onChange={this.handleInputChange}
+                 />
+               </div>
+                }
                 <div className="col-12 step_two_wrapper--company-form">
                   <input
                     type="text"
@@ -394,7 +414,7 @@ class StepThree extends React.Component {
                 <div className="col-12 step_two_wrapper--company-form">
                   <input
                     type="text"
-                    className={this.state.formData.gstNumberError ?'form-control input-error-display':'form-control'}
+                    className={this.state.formErrorData.gstNumberError ?'form-control input-error-display':'form-control'}
                     placeholder="GST number"
                     name="gstNumber"
                     value={this.state.formData.gstNumber}
