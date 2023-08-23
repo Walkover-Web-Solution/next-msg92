@@ -8,16 +8,14 @@
         grid-column-gap: 24px;
         grid-row-gap: 24px;
         justify-items: stretch;
-        li{
+        .blog-card{
             -webkit-box-shadow: 0 3px 5px 0 rgba(0,1,1,.1);
             box-shadow: 0 3px 5px 0 rgba(0,1,1,.1);
             background: #FFF;
             border-radius: 8px;
             padding: 24px;
             list-style: none;
-            a{
-                color: #333;                
-            }
+            color: #333;                            
             .title{
                 font-size: 24px;
                 font-weight: 600;
@@ -44,8 +42,11 @@
     .blog-header{
         margin-bottom: 40px;
     }
-    .content{
+    .body{
         font-family: var(--c-head);
         font-size: var(--c-fs-3);
+        img{
+            max-width: 100%;
+        }
     }
 }

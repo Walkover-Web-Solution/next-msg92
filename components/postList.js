@@ -8,13 +8,11 @@ export default function PostList({ posts, tags, pagination }) {
   return (
     <div className={"container blog-home-container"}>
       <div className={"posts"}>
-        <ul className={"post-list"}>
-          {posts?.map((it, i) => (            
-            <li key={i}>
-              <PostItem post={it} />
-            </li>
+        <div className={"post-list"}>
+          {posts?.map((it, i) => (                        
+              <PostItem key={i} post={it} />            
           ))}
-        </ul>
+        </div>
         <Pagination
           current={pagination.current}
           pages={pagination.pages}

@@ -33,21 +33,22 @@ export default function TestPage({ source , title, author, date,thumbnailImage})
     <Head>
       <title>{title}</title>
     </Head>
-    <div className="wrapper container blog-container">
-      <div className='blog-header'>
+    <div className="wrapper container blog-container">      
+      <a href='javascript:void(0)' onClick={handleClick} >Back</a>
+      <div className='blog-header mt-4'>
         <div>{author}, {date}</div>        
         <h1>{title}</h1>
         {thumbnailImage !=="" && <img className="" src={thumbnailImage} alt={author} />}
       </div>
-      <div className="content">
+      <div className="body">
         <MDXRemote {...source} />
       </div>
 
-      <button className="btn btn-dark mt-3" onClick={handleClick} >Back to Blogs</button>
+      <button className="btn btn-dark mt-3" onClick={handleClick} >Back</button>
       <footer>
-      <div className={"social-list"}> 
+      {/* <div className={"social-list"}> 
         <SocialList date ={date}/>
-      </div>
+      </div> */}
       </footer>
     </div>
     </>
