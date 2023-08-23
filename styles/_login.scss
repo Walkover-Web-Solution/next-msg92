@@ -1,0 +1,238 @@
+// COLOR VARIBALES
+$color-primary: var(--col-primary);
+$color-white: var(--col-white);
+$dark-grey: #212528;
+$light-silver: #d5d9dc;
+$light-skyblue: #e0f0fe;
+
+// ================================= LOGIN PAGE SCSS CODE=====================START============================
+.entry {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  gap: 16px;
+
+  &__left_section {
+    background-color: $light-skyblue;
+    position: relative;
+
+    img {
+      position: absolute;
+    }
+    &__banner {
+      top: 22%;
+      width: 424px;
+      height: 449px;
+    }
+    &__brand_logo {
+      top: 80px;
+      left: 40px;
+      width: 124px;
+      height: 40px;
+    }
+  }
+  &__right_section {
+    &__container {
+      &.container {
+        padding-top: 70px;
+        padding-bottom: 40px;
+        padding-left: 80px !important;
+      }
+
+      h1 {
+        color: $dark-grey;
+        margin-bottom: 24px;
+        font-size: 24px;
+        font-family: "Libre Baskerville";
+      }
+      &__entry_with {
+        img{
+          width: 24px;
+          height: 24px;
+        }
+        button {
+          border-radius: 4px;
+          display: flex;
+          height: 40px;
+          padding: 0px 16px !important;
+          justify-content: center;
+          align-items: center;
+          gap: 8px;
+          // border: 1px solid $color-primary;
+          // border-radius: 4px;
+          font-weight: 500;
+          color: $color-primary;
+          background-color: $color-white;
+        }
+        &--btn-with-text {
+          padding: 0px 16px;
+        }
+      }
+
+      .line_on_right {
+        position: relative;
+        margin-bottom: 24px;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 28px;
+          display: block;
+          width: 420px;
+          border-top: 1px solid $light-silver;
+          top: 12px;
+        }
+      }
+      &__entry_button {
+        height: 40px;
+        width: auto;
+        padding: 0px 16px;
+        color: $color-white;
+        border-radius: 4px;
+        // background-color: $color-primary;
+        border: 1px solid $color-primary;
+        background: var(--primary-light-theme, #1E75BA);
+      }
+      .text_blue {
+        color: var(--primary-light-theme, #1E75BA);
+      }
+    }
+  }
+}
+// @media (max-width: 767px) {
+//   .entry {
+//     flex-direction: column-reverse;
+//     &__left_section {
+//       &__brand_logo {
+//         display: none;
+//       }
+//       img {
+//         position: unset !important;
+//         margin: 1rem 0;
+//         padding-right: 0px !important;
+//       }
+//     }
+//     &__right_section {
+//       &__container {
+//         &.container {
+//           margin: 2rem auto;
+//           max-width: 350px;
+//           padding-top: 0 !important;
+//           display: flex;
+//           flex-direction: column;
+//           align-items: flex-start;
+//           justify-content: flex-start;
+//           // .entry__right_section__container__entry_with{
+//           //   flex-direction: column;
+//           // }
+//         }
+
+//         button {
+//           gap: 8px;
+//           // width: 100%;
+//           // margin-bottom: 8px;
+//         }
+
+//         .line_on_right {
+//           &::after {
+//             width: 220px;
+//           }
+//         }
+//         &--logo-visible-in-small {
+//           &.d-none {
+//             display: block !important;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// ... (previous code)
+
+@media (max-width: 767px) {
+  .entry {
+    flex-direction: column-reverse;
+
+    &__left_section {
+      &__brand_logo {
+        display: none;
+      }
+      img {
+        position: unset !important;
+        margin: 1rem 0;
+        padding-right: 0px !important;
+      }
+    }
+
+    &__right_section {
+      &__container {
+        &.container {
+          margin: 2rem auto;
+          max-width: 350px;
+          padding-top: 0 !important;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+
+        .line_on_right {
+          &::after {
+            width: 220px;
+          }
+        }
+
+        &--logo-visible-in-small {
+          &.d-none {
+            display: block !important;
+          }
+        }
+
+        // Adding styles for the button layout in mobile view
+        .entry__right_section__container__entry_with {
+          display: flex;
+          align-items: flex-start;
+          align-content: flex-start;
+          flex-wrap: wrap;
+          gap: 8px;
+          width: 100%;
+
+          button {
+            display: flex;
+            // flex-direction: column;
+            width: calc(80% - 4px); // 3 buttons in one line with spacing
+            margin-bottom: 8px;
+            // width: 40px;
+            padding: 10px !important;
+            img{
+            width: 24px;
+            height: 24px;
+            }
+          }
+          &--btn-with-text {
+            padding: 0px 16px;
+          }
+        }
+
+        &__entry_button {
+          width: 100%; // Full width for "Login" button
+        }
+      }
+    }
+  }
+}
+
+
+.login-icon-cont{
+  .entry__right_section__container__entry_with--btn-with-text{
+    max-width: 124px;
+  }
+  button:not(.entry__right_section__container__entry_with--btn-with-text){
+    max-width: 58px;
+  }
+}
+.entry__right_section__container__entry_button{
+  color: var(--white-color);
+}
+// ================================= LOGIN PAGE SCSS CODE======================END=============================
