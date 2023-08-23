@@ -9,16 +9,19 @@ import {
 import Otpinput from "./comps/otpInput";
 
 const OTPRetryModes = {
-  Sms: '11',
-  Voice: '4',
-  Email: '3',
-  Whatsapp: '12',
-}
+  Sms: "11",
+  Voice: "4",
+  Email: "3",
+  Whatsapp: "12",
+};
 
 class StepTwo extends React.Component {
-
   constructor(props) {
     super(props);
+    this.state={
+      otpSendStatus:true
+
+    }
   }
 
   setEmailAddress(email) {
@@ -27,12 +30,20 @@ class StepTwo extends React.Component {
       emailOTPData: {
         ...this.state?.emailOTPData,
         status: error && email?.length ? false : true,
-        message: error && email?.length ? 'Enter valid email.' : null
+        message: error && email?.length ? "Enter valid email." : null,
       },
     });
   }
-
+  setOtpSendStatus = () => {
+    this.setState((prevState) => ({
+      otpSendStatus: !prevState.otpSendStatus,
+    }));
+  };
+  
   render() {
+    const otpVerificationData  = this.props;
+    // console.log(this.state.otpSendStatus)
+    console.log(this.props.otpVerificationData)
     return (
       <>
         <div className="d-none entry__right_section__container--logo-visible-in-small">
@@ -63,19 +74,39 @@ class StepTwo extends React.Component {
             <div className="d-flex flex-wrap p-0">
               <div className="step_input_wrapper__left col-xl-6 col-lg-12">
                 <div className="d-flex step_input_wrapper__mobile_veiw">
-                  <input
-                    type="email"
-                    className="form-control "
-                    id="emailIdentifier"
-                    placeholder="Email Address"
-                    onChange={(e) => this.setEmailAddress(e.target.value)}
-                  />
-                  <span className="position-relative">
+                  <div className="d-flex flex-column gap-2 w-100">
+                  <div className=" w-100 d-flex">
+                    <input
+                      type="email"
+                      className="form-control "
+                      id="emailIdentifier"
+                      placeholder="Email Address"
+                      onChange={(e) => this.setEmailAddress(e.target.value)}
+                    />
+                    <span className="position-relative">
                     <MdCheckCircle className="icon-success otp_verified_icon" />
                   </span>
+                  </div>
+                    <div className=" elert-otp-message">
+                      {this.state?.emailOTPData?.message ? (
+                        <p className="c-fs-5  ">
+                          {this.state?.emailOTPData?.message}
+                        </p>
+                      ) : null}
+                       {this.props?.otpVerificationData?.type == "success" ?(
+                        <p className="c-fs-5">
+                          Otp Send Successfully
+                        </p>
+                      ) : null}
+
+                    </div>
+                  </div>
+                  
                   <button
                     className="custom-signup-btn"
-                    onClick={() => this.props.sendOtp(false)}
+                    onClick={() => {
+                      this.props.sendOtp(false);
+                    }}
                   >
                     Get OTP
                   </button>
@@ -86,27 +117,29 @@ class StepTwo extends React.Component {
               </div>
               <div className="step_input_wrapper__right col-xl-6 col-lg-12">
                 <div className="d-flex flex-column">
-                  <Otpinput tag="email" verifyOtp={this.props.verifyOtp} otpLength={this.props.widgetData?.otpLength} />
-                  {this.props.allowedRetry?.email ? <p className="col-dark mt-3 c-fs-6">
-                    Resend on{" "}
-                    <a href="javascript:void(0)"
-                      onClick={() => this.props.retryOtp(OTPRetryModes.Email, false)} className="col-primary c-fw-600 p-3">
-                      Email
-                    </a>
-                  </p> : null}
+                  <Otpinput
+                    tag="email"
+                    verifyOtp={this.props.verifyOtp}
+                    otpLength={this.props.widgetData?.otpLength}
+                  />
+                  {this.props.allowedRetry?.email ? (
+                    <p className="col-dark mt-3 c-fs-6">
+                      Resend on{" "}
+                      <a
+                        href="javascript:void(0)"
+                        onClick={() =>
+                          this.props.retryOtp(OTPRetryModes.Email, false)
+                        }
+                        className="col-primary c-fw-600 p-3"
+                      >
+                        Email
+                      </a>
+                    </p>
+                  ) : null}
                 </div>
               </div>
             </div>
           </div>
-          {this.state?.emailOTPData?.message ? (
-            <p
-              className=" c-fs-6 c-fw-500 my-4 elert-otp-message"
-
-            >
-              {this.state?.emailOTPData?.message}
-            </p>
-          ) : null}
-
           <div className="row mx-0 px-0 step_input_wrapper mt-4 mb-5">
             <label htmlFor="contact" className="mb-3 ps-0">
               Verify Mobile number
@@ -135,23 +168,52 @@ class StepTwo extends React.Component {
               </div>
               <div className="step_input_wrapper__right col-xl-6 col-lg-12">
                 <div className="d-flex flex-column">
-                  <Otpinput tag="sms" verifyOtp={this.props.verifyOtp} otpLength={this.props.widgetData?.otpLength} />
+                  <Otpinput
+                    tag="sms"
+                    verifyOtp={this.props.verifyOtp}
+                    otpLength={this.props.widgetData?.otpLength}
+                  />
                   <p className="col-dark mt-3 c-fs-6 p-2">
                     Resend on{" "}
-                    {this.props.allowedRetry?.sms ? <a href="javascript:void(0)" onClick={() => this.props.retryOtp(OTPRetryModes.Sms, true)} className="col-primary c-fw-600 p-3">
-                      Text
-                    </a> : null}
-                    {this.props.allowedRetry?.whatsApp ? <span>
-                      <span>or{" "}</span>
-                      <a href="javascript:void(0)" onClick={() => this.props.retryOtp(OTPRetryModes.Whatsapp, true)} className="col-primary c-fw-600 p-3">
-                        WhatsApp
+                    {this.props.allowedRetry?.sms ? (
+                      <a
+                        href="javascript:void(0)"
+                        onClick={() =>
+                          this.props.retryOtp(OTPRetryModes.Sms, true)
+                        }
+                        className="col-primary c-fw-600 p-3"
+                      >
+                        Text
                       </a>
-                    </span> : null}
-                    {this.props.allowedRetry?.voice ? <span>
-                      <span>or{" "}</span>
-                      <a href="javascript:void(0)" onClick={() => this.props.retryOtp(OTPRetryModes.Voice, true)} className="col-primary c-fw-600 p-3">
-                        Voice
-                      </a></span> : null}
+                    ) : null}
+                    {this.props.allowedRetry?.whatsApp ? (
+                      <span>
+                        <span>or </span>
+                        <a
+                          href="javascript:void(0)"
+                          onClick={() =>
+                            this.props.retryOtp(OTPRetryModes.Whatsapp, true)
+                          }
+                          className="col-primary c-fw-600 p-3"
+                        >
+                          WhatsApp
+                        </a>
+                      </span>
+                    ) : null}
+                    {this.props.allowedRetry?.voice ? (
+                      <span>
+                        <span>or </span>
+                        <a
+                          href="javascript:void(0)"
+                          onClick={() =>
+                            this.props.retryOtp(OTPRetryModes.Voice, true)
+                          }
+                          className="col-primary c-fw-600 p-3"
+                        >
+                          Voice
+                        </a>
+                      </span>
+                    ) : null}
                   </p>
                 </div>
               </div>

@@ -115,12 +115,7 @@ $font-weight-500: var(--c-fw-500);
           }
           &__left,
           &__right {
-            .otp_verified_icon {
-              font-size: 18px;
-              position: absolute;
-              top: 25%;
-              right: 8px;
-            }
+            
           }
 
             .custom-input-group {
@@ -300,6 +295,12 @@ $font-weight-500: var(--c-fw-500);
     }
   }
 }
+.otp_verified_icon {
+  font-size: 18px;
+  position: absolute;
+  top: 25%;
+  right: 8px;
+}
 @media (max-width: 1199px) {
   .entry {
     &__right_section {
@@ -410,9 +411,7 @@ $font-weight-500: var(--c-fw-500);
             }
             &__mobile_veiw {
               flex-direction: column;
-              .otp_verified_icon {
-                top: -28px !important;
-              }
+              
               button {
                 &.btn {
                   margin-left: 0 !important;
@@ -507,9 +506,7 @@ $font-weight-500: var(--c-fw-500);
             }
             &__mobile_veiw {
               flex-direction: column;
-              .otp_verified_icon {
-                top: -28px !important;
-              }
+              
               button {
                 &.btn {
                   margin-left: 0 !important;
@@ -583,7 +580,8 @@ $font-weight-500: var(--c-fw-500);
 
 .elert-otp-message{
   color: var(--col-elert);
-  position: absolute;
-  transform: translatey(-50px);
+  height: 20px;
+  // position: absolute;
+  // transform: translatey(-50px);
 }
 // ================================= SIGN-UP PAGE SCSS CODE======================END=============================

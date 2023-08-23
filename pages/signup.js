@@ -25,7 +25,7 @@ class SignUp extends React.Component {
     let queryParams = this.getQueryParamsDeatils(this.props?.browserPathCase);
 
     this.state = {
-      activeStep: queryParams?.["code"] ? 2 : 3,
+      activeStep: queryParams?.["code"] ? 2 : 1,
       signupByGitHub: queryParams?.["github"] ? true : false,
       githubCode: queryParams?.["code"],
       githubState: queryParams?.["state"],
@@ -207,12 +207,12 @@ class SignUp extends React.Component {
     if (notByEmail) {
       requestId = this.state.smsOTPData?.requestId;
     }
-
+  
     window.verifyOtp(
       otp,
       (data) => {
         console.log("OTP verified: ", data);
-
+  
         // Store the 'data' value in the component's state
         this.setState({
           otpVerificationData: data,
@@ -238,12 +238,8 @@ class SignUp extends React.Component {
   }
 
   render() {
-    var verificationData = this.state.otpVerificationData;
-    // var verificationStatus = verificationData?.type
-
-
-
-    return (
+    console.log(this.state.otpVerificationData)
+        return (
       <>
         <section className="entry signup d-flex">
 
@@ -284,7 +280,6 @@ class SignUp extends React.Component {
                 <p>
                   Trusted by<span> 30000+ </span>startups and enterprises
                 </p>
-                <p>{verificationData}</p>
               </div>
             </div>
           </div>
@@ -302,6 +297,7 @@ class SignUp extends React.Component {
                   setStep={this.setStep}
                 />
               </div>
+              <p>{this.state.otpVerificationData} hello</p>
 
               {/* STEP #2 */}
               <div
@@ -320,6 +316,8 @@ class SignUp extends React.Component {
                   widgetData={this.state.widgetData}
                   allowedRetry={this.state.allowedRetry}
                   retryOtp={this.retryOtp}
+                  otpVerificationData={this.state.otpVerificationData}
+
                 />
               </div>
 
