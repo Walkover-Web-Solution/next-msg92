@@ -1,5 +1,4 @@
 import { serialize } from 'next-mdx-remote/serialize'
-// import images from '../../images/uploads'
 import { MDXRemote } from 'next-mdx-remote'
 import * as fs from "fs";
 import { fetchPostContent } from '../../components/lib/posts';
@@ -7,8 +6,10 @@ import yaml  from "js-yaml";
 import matter from 'gray-matter';
 import Head from 'next/head';
 import { format } from "date-fns";
+import { useRouter } from 'next/router';
+import { SocialList } from '@/components/socialList';
 // const components = { Test }
-// const images = require('../../images
+
 const slugToPostContent = (postContents => {
  
     let hash = {}
@@ -20,21 +21,35 @@ const slugToPostContent = (postContents => {
     return hash;
   })(fetchPostContent());
 export default function TestPage({ source , title, author, date,thumbnailImage}) {
+
+  const router  = useRouter();
+
+
+  const handleClick = () =>{
+    router.push('/guide');
+  }
   return (
     <>
     <Head>
       <title>{title}</title>
     </Head>
-    <div className="wrapper container blog-container">
-      <div className='blog-header'>
+    <div className="wrapper container blog-container">      
+      <a href='javascript:void(0)' onClick={handleClick} >Back</a>
+      <div className='blog-header mt-4'>
         <div>{author}, {date}</div>        
         <h1>{title}</h1>
         {thumbnailImage !=="" && <img className="" src={thumbnailImage} alt={author} />}
       </div>
-      <div className="content">
+      <div className="body">
         <MDXRemote {...source} />
       </div>
 
+      <button className="btn btn-dark mt-3" onClick={handleClick} >Back</button>
+      <footer>
+      {/* <div className={"social-list"}> 
+        <SocialList date ={date}/>
+      </div> */}
+      </footer>
     </div>
     </>
   )
@@ -62,15 +77,14 @@ export async function getStaticProps(slug) {
         // engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
       },
     });
-
-    console.log( matterResult, "matter Result ")
+    // console.log(matterResult, "Matter Result");
     const thumbnailImage = matterResult?.data?.thumbnail;
+    // const youtube = matterResult?.data?.youtube;
     const title = matterResult?.data?.title;
     const author = matterResult?.data?.author;
     const content = matterResult?.content;
     var date = new Date(matterResult?.data?.date);
     date = format(date, "LLLL d, yyyy")
-    console.log(thumbnailImage, "thumbnailImage");
     // const tags = matterResult?.data?.tags;
     // console.log(matterResult?.content,"matterResult?.data?");
     // console.log(content,"content00");

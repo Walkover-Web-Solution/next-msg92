@@ -241,7 +241,7 @@ const ProductMenu = ({path}) => {
                 height={40}
                 alt="ico"
               />
-              <h4 className="c-fs-2">Hubspot</h4>              
+              <h4 className="c-fs-2">HubSpot</h4>              
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn py-3"
