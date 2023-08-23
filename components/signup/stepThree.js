@@ -139,6 +139,7 @@ class StepThree extends React.Component {
   
     return '';
   };
+  
   validateLastName = () => {
     const { lastName } = this.state.formData;
     
@@ -155,13 +156,6 @@ class StepThree extends React.Component {
   };
   
   
-  validateLastName = () => {
-    const { lastName } = this.state.formData;
-    if (lastName.trim() === '') {
-      return 'Last Name is required';
-    }
-    return '';
-  };
   validateGSTNumber = () => {
     const { gstNumber } = this.state.formData;
     const gstRegex = /^[\dA-Z]{15}$/;
@@ -250,7 +244,7 @@ class StepThree extends React.Component {
                   </div>
                 </div> */}
 
-                <div className="col-lg-6">
+                <div className="col-lg-6 form-input-with-error">
                   <input
                     type="text"
                     className={this.state.formErrorData.firstNameError ?'form-control input-error-display':'form-control'}
@@ -259,8 +253,9 @@ class StepThree extends React.Component {
                     value={this.state.formData.firstName}
                     onChange={this.handleInputChange}
                   />
+                  <div className="text-danger input-error-message c-fs-6">{this.state.formErrorData.firstNameError}</div>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-6 form-input-with-error">
                   <input
                     type="text"
                     className={this.state.formErrorData.lastNameError ?'form-control input-error-display':'form-control'}
@@ -269,6 +264,7 @@ class StepThree extends React.Component {
                     value={this.state.formData.lastName}
                     onChange={this.handleInputChange}
                   />
+                  <div className="text-danger input-error-message c-fs-6">{this.state.formErrorData.lastNameError}</div>
                 </div>
                 <div className="col-12 step_two_wrapper--personal-form">
                   <input
@@ -359,15 +355,17 @@ class StepThree extends React.Component {
                       : null}
                   </select>
                 </div>
-                <div className="col-lg-6  step_two_wrapper--company-form">
+                <div className="col-lg-6  step_two_wrapper--company-form form-input-with-error">
                   <input
                     type="text"
-                    className={this.state.formErrorData.validatePincode ?'form-control input-error-display':'form-control'}
+                    className={this.state.formErrorData.pincodeError ?'form-control input-error-display':'form-control'}
                     placeholder="Pincode"
                     name="pincode"
                     value={this.state.formData.pincode}
                     onChange={this.handleInputChange}
                   />
+                  <div className="text-danger input-error-message c-fs-6">{this.state.formErrorData.pincodeError}</div>
+
                 </div>
                 <div className="col-lg-6  step_two_wrapper--company-form">
                   <select
@@ -411,7 +409,7 @@ class StepThree extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </div>
-                <div className="col-12 step_two_wrapper--company-form">
+                <div className="col-12 step_two_wrapper--company-form form-input-with-error">
                   <input
                     type="text"
                     className={this.state.formErrorData.gstNumberError ?'form-control input-error-display':'form-control'}
@@ -420,6 +418,8 @@ class StepThree extends React.Component {
                     value={this.state.formData.gstNumber}
                     onChange={this.handleInputChange}
                   />
+                  <div className="text-danger input-error-message c-fs-6">{this.state.formErrorData.gstNumberError}</div>
+
                 </div>
               </div>
             </div>

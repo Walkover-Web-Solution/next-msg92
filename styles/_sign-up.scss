@@ -584,6 +584,14 @@ $font-weight-500: var(--c-fw-500);
   // position: absolute;
   // transform: translatey(-50px);
 }
+.form-input-with-error{
+  position: relative;
+}
+.input-error-message{
+  position: absolute;
+  top: 40px;
+  font-size: 12px;
+}
 
 .input-error-display{
   border-color: red!important;
