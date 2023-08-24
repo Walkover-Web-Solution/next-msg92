@@ -1,5 +1,5 @@
 import React from "react";
-import { GoogleLogin } from "react-google-login";
+// import { GoogleLogin } from "react-google-login";
 import { MdCall, MdEmail } from "react-icons/md";
 
 class logIn extends React.Component {
@@ -147,7 +147,7 @@ class logIn extends React.Component {
                   className="d-flex align-items-center flex-wrap login-icon-cont"
                   style={{ gap: "16px" }}
                 >
-                  <GoogleLogin
+                  {/* <GoogleLogin
                     className="entry__right_section__container__entry_with--btn-with-text"
                     style={{
                       border: "1px solid var(--primary-light-theme, #1E75BA)",
@@ -158,7 +158,7 @@ class logIn extends React.Component {
                     onFailure={this.responseGoogleError}
                     isSignedIn={true}
                     cookiePolicy={"single_host_origin"}
-                  />
+                  /> */}
                   {/* <button
                                         className="entry__right_section__container__entry_with--btn-with-text"
                                         style={{
