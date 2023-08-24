@@ -4,6 +4,7 @@ import { parseISO } from "date-fns";
 
 
 export default function PostItem({ post }) {  
+  console.log(post, "post in postItem 78");
   /* function calculateReadTime(articleText, wordsPerMinute = 200) {
     // Count the number of words in the article
     const words = articleText.match(/\w+/g);

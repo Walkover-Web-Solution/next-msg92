@@ -8,6 +8,7 @@ import Head from 'next/head';
 import { format } from "date-fns";
 import { useRouter } from 'next/router';
 import { SocialList } from '@/components/socialList';
+import TagButton from '@/components/tagButton';
 // const components = { Test }
 
 const slugToPostContent = (postContents => {
@@ -20,8 +21,8 @@ const slugToPostContent = (postContents => {
     postContents?.forEach(it => hash[it.slug] = it)
     return hash;
   })(fetchPostContent());
-export default function TestPage({ source , title, author, date,thumbnailImage}) {
-
+export default function TestPage({ source , title, author, date,thumbnailImage, tags}) {
+console.log(tags, "tags in slug");
   const router  = useRouter();
 
 
@@ -45,6 +46,14 @@ export default function TestPage({ source , title, author, date,thumbnailImage})
       </div>
 
       <button className="btn btn-dark mt-3" onClick={handleClick} >Back</button>
+      <div>
+      {tags.map((it, i) => (
+       <li key={i}>
+        <TagButton tag={tags}/>
+        </li>
+        ))}
+      </div>
+      
       <footer>
       {/* <div className={"social-list"}> 
         <SocialList date ={date}/>
@@ -69,6 +78,7 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps(slug) {
+  console.log(slug, "static props")
   const slugData = slug.params.slug;
     const source = fs.readFileSync(slugToPostContent[slugData]?.fullPath, "utf8");
     const matterResult = matter(source, {
@@ -80,6 +90,8 @@ export async function getStaticProps(slug) {
     // console.log(matterResult, "Matter Result");
     const thumbnailImage = matterResult?.data?.thumbnail;
     // const youtube = matterResult?.data?.youtube;
+    const tags = matterResult?.data?.tags;
+    console.log(tags, "tags in matteraResult");
     const title = matterResult?.data?.title;
     const author = matterResult?.data?.author;
     const content = matterResult?.content;
@@ -92,5 +104,5 @@ export async function getStaticProps(slug) {
   const mdxSource = await serialize(content)
   // const mdxSource = await renderToString(content, { scope: matterResult });
   // console.log(mdxSource,"generated");
-  return { props: { source: mdxSource || "", title: title || "", author: author || "", date: date, thumbnailImage:thumbnailImage || ""} }
+  return { props: { source: mdxSource || "", title: title || "", author: author || "", date: date, thumbnailImage:thumbnailImage || "", tags: tags || ""} }
 }
