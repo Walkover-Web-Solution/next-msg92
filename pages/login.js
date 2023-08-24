@@ -1,6 +1,7 @@
 import React from "react";
-// import { GoogleLogin } from "react-google-login";
+import { GoogleOAuthProvider, GoogleLogin, useGoogleLogin } from '@react-oauth/google';
 import { MdCall, MdEmail } from "react-icons/md";
+import GoogleLoginButton from "@/components/signup/googleLogin";
 
 class logIn extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class logIn extends React.Component {
     this.state = {
       loginInProgress: false,
       showContactonLogin: false,
+      googleCLientId: process.env.GOOGLE_CLIENT_ID
     };
 
     let queryParams = this.getQueryParamsDeatils(this.props?.browserPathCase);
@@ -30,27 +32,23 @@ class logIn extends React.Component {
     const currentTimestamp = new Date().getTime();
     const otpWidgetScript = document.createElement("script");
     otpWidgetScript.type = "text/javascript";
-    otpWidgetScript.src = `${process.env.widgetscript}?v=${currentTimestamp}`;
-    otpWidgetScript.onload = () => {};
+    otpWidgetScript.src = `${process.env.WIDGET_SCRIPT}?v=${currentTimestamp}`;
+    otpWidgetScript.onload = () => { };
     head.appendChild(otpWidgetScript);
   };
 
   initOTPWidget() {
     const configuration = {
-      widgetId: process.env.OTPWidgetToken,
-      tokenAuth: process.env.widgetAuthToken,
+      widgetId: process.env.OTP_WIDGET_TOKEN,
+      tokenAuth: process.env.WIDGET_AUTH_TOKEN,
       success: (data) => {
         // Widget config success response
         try {
           const url = process.env.API_BASE_URL + "/api/v5/nexus/emailLogin";
           this.hitLoginAPI(url, { code: data.message });
         } catch (error) {
-          loginFailed(error);
+          this.loginFailed(error);
         }
-      },
-      failure: (error) => {
-        // Widget config failure response
-        loginFailed(error);
       },
     };
     window.initSendOTP(configuration);
@@ -58,35 +56,52 @@ class logIn extends React.Component {
 
   // Zoho Login
   loginWithZoho() {
-    location.href = `https://accounts.zoho.com/oauth/v2/auth?client_id=${process.env.zohoClientId}&response_type=token&scope=AaaServer.profile.Read&redirect_uri=${process.env.redirectURL}/login?loginWithZoho=true`;
+    location.href = `https://accounts.zoho.com/oauth/v2/auth?client_id=${process.env.zohoClientId}&response_type=token&scope=AaaServer.profile.Read&redirect_uri=${process.env.REDIRECT_URL}/login?loginWithZoho=true`;
   }
 
   // Github Login
   loginWithGitHubAccount() {
     let state = Math.floor(100000000 + Math.random() * 900000000);
-    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${process.env.redirectURL}/login?github=true&state=${state}`;
+    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/login?github=true&state=${state}`;
   }
 
   // Google Login
-  responseGoogleSuccess = (response) => {
-    let userInfo = {
-      name: response.profileObj.name,
-      emailId: response.profileObj.email,
-    };
+  googleLogin = (response) => {
     console.log(response);
-    this.setState({ userInfo, isLoggedIn: true });
-  };
-
-  responseGoogleError = (response) => {
-    console.log(response);
+    if (response) {
+      const url = process.env.API_BASE_URL + "/api/v5/nexus/googleLogin";
+      this.hitLoginAPI(url, { code: response.code });
+    }
   };
 
   hitLoginAPI(url, payload) {
-    location.href = url + `?code=${payload?.code}`;
+    // location.href = url + `?code=${payload?.code}`;
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    };
+    fetch(url, requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        console.log(result);
+        if (!result?.hasError) {
+          this.loginCompleted(url, payload);
+        }
+      });
   }
 
   loginCompleted() {
-    location.href = process.env.API_BASE_URL + "/hello-new/";
+    // location.href = process.env.API_BASE_URL + "/hello-new/";
+    // document.cookie = "HELLO_APP_HASH=TkUzZG1rdXVNK3ErZW01QlhlRnRMWmoyTmVIMTJld0VaQ3NKb0ljWkdCST0%3D; expires=Fri, 25-Aug-2023 07:25:25 GMT; Max-Age=86400;domain=https://*.msg91.com; path=/";
+    // document.cookie = "PHPSESSID=ir13s78m2k8jctesa7dn6ob2di; expires=Sun, 03-Sep-2023 07:25:24 GMT; Max-Age=864000;domain=https://*.msg91.com; path=/; secure; HttpOnly; SameSite=None";
+    // document.cookie = "PROXY_APP_HASH=M2VpWDlpUGtxRTNXeGtxMURUbFpxWUlEVzJ2QThQNzJiV2MwNUl1clJsYz0%3D; expires=Thu, 31-Aug-2023 07:25:25 GMT; Max-Age=604800;domain=https://*.msg91.com; path=/";
+
+    let loginWindow = window.open(url + `?code=${payload?.code}`, 'Authenticate', "height=400,width=400");
+    setTimeout(() => {
+      loginWindow.close();
+      location.href = process.env.API_BASE_URL + "/hello-new/"
+    }, 1000);
   }
 
   loginFailed(error) {
@@ -106,6 +121,7 @@ class logIn extends React.Component {
     }
     return null;
   }
+
   setShowContactonLogin = () => {
     this.setState((prevState) => ({
       showContactonLogin: !prevState.showContactonLogin,
@@ -147,32 +163,17 @@ class logIn extends React.Component {
                   className="d-flex align-items-center flex-wrap login-icon-cont"
                   style={{ gap: "16px" }}
                 >
-                  {/* <GoogleLogin
-                    className="entry__right_section__container__entry_with--btn-with-text"
-                    style={{
-                      border: "1px solid var(--primary-light-theme, #1E75BA)",
-                    }}
-                    clientId="6ee6d0268be4aab8c594"
-                    buttonText="Google"
-                    onSuccess={this.responseGoogleSuccess}
-                    onFailure={this.responseGoogleError}
-                    isSignedIn={true}
-                    cookiePolicy={"single_host_origin"}
-                  /> */}
-                  {/* <button
-                                        className="entry__right_section__container__entry_with--btn-with-text"
-                                        style={{
-                                            border: "1px solid var(--primary-light-theme, #1E75BA)",
-                                        }}
-                                    >
-                                        <img src="/img/tie/google-logo.svg" alt="Google Icon" />
-                                        <span>Google</span>
-                                    </button> */}
+                  <GoogleOAuthProvider
+                    clientId={`${process.env.GOOGLE_CLIENT_ID}`}
+                  >
+                    <GoogleLoginButton googleLoginResponse={this.googleLogin}/>
+                  </GoogleOAuthProvider>
                   <button
                     style={{
                       border: "1px solid var(--primary-light-theme, #1E75BA)",
                       background: "var(--light-white-bg, #FFF)",
                     }}
+                    onClick={() => googleLogin()}
                   >
                     <img src="/img/microsoft-svg.svg" />
                   </button>
@@ -204,7 +205,7 @@ class logIn extends React.Component {
               </button>
 
 
-              <p className="c-fs-6 mb-3">
+              <p className="c-fs-6 mb-3 cursor-pointer">
                 Trouble logging in ?{" "}
 
                 <span
@@ -212,11 +213,11 @@ class logIn extends React.Component {
                     this.setShowContactonLogin
                   }
                   className="text_blue"
-                  >
+                >
                   Click here
                 </span>
-                  </p>
-                {/* https://control.msg91.com/signin/ */}
+              </p>
+              {/* https://control.msg91.com/signin/ */}
               <div
                 className={
                   this.state.showContactonLogin
