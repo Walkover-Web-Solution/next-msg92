@@ -31,7 +31,7 @@ class logIn extends React.Component {
     const otpWidgetScript = document.createElement("script");
     otpWidgetScript.type = "text/javascript";
     otpWidgetScript.src = `${process.env.widgetscript}?v=${currentTimestamp}`;
-    otpWidgetScript.onload = () => {};
+    otpWidgetScript.onload = () => { };
     head.appendChild(otpWidgetScript);
   };
 
@@ -45,12 +45,8 @@ class logIn extends React.Component {
           const url = process.env.API_BASE_URL + "/api/v5/nexus/emailLogin";
           this.hitLoginAPI(url, { code: data.message });
         } catch (error) {
-          loginFailed(error);
+          this.loginFailed(error);
         }
-      },
-      failure: (error) => {
-        // Widget config failure response
-        loginFailed(error);
       },
     };
     window.initSendOTP(configuration);
@@ -82,7 +78,18 @@ class logIn extends React.Component {
   };
 
   hitLoginAPI(url, payload) {
-    location.href = url + `?code=${payload?.code}`;
+    // location.href = url + `?code=${payload?.code}`;
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    };
+    fetch(url, requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        console.log(result);
+        this.loginCompleted()
+      });
   }
 
   loginCompleted() {
@@ -212,11 +219,11 @@ class logIn extends React.Component {
                     this.setShowContactonLogin
                   }
                   className="text_blue"
-                  >
+                >
                   Click here
                 </span>
-                  </p>
-                {/* https://control.msg91.com/signin/ */}
+              </p>
+              {/* https://control.msg91.com/signin/ */}
               <div
                 className={
                   this.state.showContactonLogin
