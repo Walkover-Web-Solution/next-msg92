@@ -7,6 +7,7 @@
 blog.msg91.com  /guide
 /in/transactional-sms/  /in/sms/
 /in/virtual-number/ /in/voice/
+https://docs.msg91.com/p/tf9GTextN/e/tWCcnGyFqX/MSG91 https://docs.msg91.com/reference/send-sms
 /communications-api/ https://docs.msg91.com/reference/send-sms
 api.msg91.com/apidoc/voicesms/send-using-draft.php  https://docs.msg91.com/reference/send-sms
 /in/welcome/  /in
@@ -46,7 +47,8 @@ blog1.msg91.com/  https://msg91.com/guide
 # msg91.com/wp-content/uploads/2018/05/Customized-SMS.svg
 /sg/send-otp/ /sg/otp
 # msg91.com/blog/wp-content/uploads/2018/01/Tips-for-effective-SMS-marketing.png
-/longcode /numbers
+/longcode /voice
+/numbers /voice
 /blog/market-segmentation-holiday-marketing-campaign/ /guide
 /transactional-sms/in/ /in/sms
 # msg91.com/wp-content/uploads/2018/05/excel-plugin-v-2.0.zip
@@ -509,7 +511,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /in/android/ /hello
 /group-16911/ /
 /in/case-studies/tag/ngo/ /case-studies/tag/ngo/
-/us/virtual-number/ /numbers
+/us/virtual-number/ /voice
 /in/partners-and-integrations/hubspot /partners-and-integrations/hubspot
 /in/partners-and-integrations/freshworks /partners-and-integrations/freshworks
 /in/partners-and-integrations/zapier /partners-and-integrations/zapier
@@ -627,7 +629,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /cdn-cgi/challenge-platform/h/b/scripts/cb/invisible.js?cb=7a814d754d952340 /
 /one-api /campaign
 /blog/category/msg91-for-stock-markets/amp/ /guide
-/sg/virtual-number/ /number
+/sg/virtual-number/ /voice
 /addons_platform_shape-2/ /partners-and-integrations
 /in/send-otp/?source=post_page--------------------------- /otp/
 /sms-campaign/?utm_source=blog&utm_medium=int&utm_campaign=holiday /camapign
@@ -707,7 +709,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /blog/tips-tricks-to-successful-business-texting/amp/ /guide
 /es/privacy-policy/ /privacy-policy/
 /blog/build-killer-customer-relationships-with-5-communication-touchpoint/amp/ /guide
-/uk/virtual-number/ /number
+/uk/virtual-number/ /voice
 /blog/why-email-marketing-can-be-tedious-for-you/ /guide/why-email-marketing-can-be-tedious-for-you/
 /blog/uncover-detailed-information-tracking-sms/amp/ /guide
 /blog/blending-sms-solutions-with-hotel-industry-2/?nonamp=1 /guide/blending-sms-solutions-with-hotel-industry-2/
@@ -827,7 +829,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /case-studies/tag/unicode/feed/ /case-studies/tag/unicode
 /wp-content/plugins/swe-country-code-field-gf-add-on/js/swe_gf_countrycode_script.js?ver=1358234478 /
 /blog/know-the-secrets-to-increase-readership/amp/?utm_source=organic&utm_medium=fb&utm_campaign=increasereader /guide
-/virtual-number/ /number
+/virtual-number/ /voice
 /blog/amp/page/9/ /guide
 /es/send-otp/ /otp/
 /case-studies/barbeque-nation/feed/ /case-studies/barbequenation
@@ -894,7 +896,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /guide/rich-communication-service-rcs/in/ /
 /case-studies/mahindra-saboro /case-studies/mahindra
 /us/one-api/ /campaign
-/es/virtual-number/ /number
+/es/virtual-number/ /voice
 /blog/new-and-improved-bulk-sms-apis-at-your-service/amp /guide
 /blog/mobile/steps-to-integrate-msg91s-sms-apis-in-busy-software/ /guide
 /in/case-studies/tag/unicode /case-studies/tag/unicode
@@ -920,7 +922,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /gb/ /
 /blog/tag/mobile-messaging/amp/ /guide
 /blog/know-the-secrets-to-increase-readership/?utm_source=organic&utm_medium=blog&utm_campaign=retarget /guide/know-the-secrets-to-increase-readership/?utm_source=organic&utm_medium=blog&utm_campaign=retarget
-/blog/tag/long-code/ /numbers
+/blog/tag/long-code/ /guide
 /blog/tag/unicode/ /case-studies/tag/unicode
 /blog/know-the-secrets-to-increase-readership/?nonamp=1 /guide/know-the-secrets-to-increase-readership/?utm_source=organic&utm_medium=blog&utm_campaign=retarget
 /blog/?s=%7Bsearch_term_string%7D /guide
@@ -985,8 +987,8 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /otp-verification-api-india /otp
 /bulk-sms-hyderabad/ /sms
 /us/case-studies/craypolar/ /case-studies/crazypolar
-/virtual-number/?__hstc=241134940.2f3f33a24b44870ec4a577029c49e44b.1602547200083.1602547200084.1602547200085.1&__hssc=241134940.1.1602547200086&__hsfp=2827025116 /number
-/virtual-number/?__hstc=266761681.96ba8174c9c582d74ed5dd84502bfbeb.1451001600102.1451001600103.1451001600104.1&__hssc=266761681.1.1451001600105&__hsfp=1119992871 /number
+/virtual-number/?__hstc=241134940.2f3f33a24b44870ec4a577029c49e44b.1602547200083.1602547200084.1602547200085.1&__hssc=241134940.1.1602547200086&__hsfp=2827025116 /voice
+/virtual-number/?__hstc=266761681.96ba8174c9c582d74ed5dd84502bfbeb.1451001600102.1451001600103.1451001600104.1&__hssc=266761681.1.1451001600105&__hsfp=1119992871 /voice
 /mahindra-mahindra-automotive-division/ /case-studies/mahindra
 /in/about-us/path-26421/ /about-us/
 /voice-call-api/?__hstc=241134940.2f3f33a24b44870ec4a577029c49e44b.1602547200083.1602547200084.1602547200085.1&__hssc=241134940.1.1602547200086&__hsfp=2827025116 /voice
@@ -1004,7 +1006,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /in/contact-us/?__hstc=241134940.2f3f33a24b44870ec4a577029c49e44b.1602547200083.1602547200084.1602547200085.1&__hssc=241134940.1.1602547200086&__hsfp=2827025116 /contact-us
 /blog/world-cup-in-india-sms/amp/ /guide
 /sms-for-spreadsheets?typeform-embed=popup-drawer /sms
-/virtual-number/?__hstc=241134940.d9f92fa8eef68bbb7f3a5412b223a496.1602547200116.1602547200117.1602547200118.1&__hssc=241134940.1.1602547200119&__hsfp=2827025116 /number
+/virtual-number/?__hstc=241134940.d9f92fa8eef68bbb7f3a5412b223a496.1602547200116.1602547200117.1602547200118.1&__hssc=241134940.1.1602547200119&__hsfp=2827025116 /voice
 /case-studies/joey-rooms/?utm_source=rss&utm_medium=rss&utm_campaign=joey-rooms&amp /case-studies/joeyrooms
 /voice-call-api/?__hstc=241134940.d9f92fa8eef68bbb7f3a5412b223a496.1602547200116.1602547200117.1602547200118.1&__hssc=241134940.1.1602547200119&__hsfp=2827025116 /voice
 /in/path-181-2/ /
@@ -1022,7 +1024,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /in/case-studies/tag/otp /case-studies/tag/otp
 /xmlrpc.php /
 /blog/15-must-use-tools-for-every-startup/?nonamp=1 /guide
-/virtual-number// /number
+/virtual-number// /voice
 /guide/tag/otp/amp /case-studies/tag/otp
 /case-studies/tag/otp /case-studies/tag/otp
 /case-studies/tag/otp/ /case-studies/tag/otp/
@@ -1031,7 +1033,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /uk/voice /voice
 /blog/skandal-bokep-online/?nonamp=1 /guide
 /sms-campaign// /campaign/
-/ph/virtual-number/ /number
+/ph/virtual-number/ /voice
 /sms-campaign /campaign
 /sms-for-spreadsheets/?typeform-embed=popup-drawer /sms-for-spreadsheets/
 /cdn-cgi/challenge-platform/h/b/scripts/cb/invisible.js?cb=7ada0fbbdc2947a8 /
@@ -1097,7 +1099,11 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /cdn-cgi/challenge-platform/h/g/scripts/cb/invisible.js?cb=7b904611efd54624 /
 /cdn-cgi/challenge-platform/h/g/scripts/cb/invisible.js?cb=7b92e1132cb43ac4 /
 /cdn-cgi/challenge-platform/h/g/scripts/cb/invisible.js?cb=7b92ed2818403ab4 /
-/ /
 /guide/tag/msg91-update/fair-pricing-policy/ /fair-pricing-policy/
 /guide/in/ /guide/
 /guide/tag/bulk-sms/ /sms/
+/author/admin/ /
+/author/* /guide
+https://guide.msg91.com/why-you-should-send-sms-online/www.msg91.com /guide/why-you-should-send-sms-online
+https://guide.msg91.com/steps-for-dlt-process-registration/msg91.com/contact-us/ /guide/steps-for-dlt-process-registration
+/blog/* /guide
