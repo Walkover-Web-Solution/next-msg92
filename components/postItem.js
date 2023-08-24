@@ -18,7 +18,8 @@ export default function PostItem({ post }) {
   return (      
     <a className="blog-card" href={"/guide/" + post.slug}>      
         <Date date={parseISO(post.date)} />
-        <div className="title">{post.title}</div>
+       {post?.thumbnail !== "" && <img src = {post?.thumbnail} />}
+        <div className="title">{post?.title}</div>
     </a>
   );
 }
