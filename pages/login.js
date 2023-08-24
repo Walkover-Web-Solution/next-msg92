@@ -17,7 +17,11 @@ class logIn extends React.Component {
     if (queryParams) {
       if (queryParams?.github === "true") {
         const url = process.env.API_BASE_URL + "/api/v5/nexus/githubLogin";
-        // this.hitLoginAPI(url, { code: queryParams?.code, state: queryParams?.state });
+        this.hitLoginAPI(url, { code: queryParams?.code, state: queryParams?.state });
+      }
+      if (queryParams?.loginWithZoho === "true") {
+        const url = process.env.API_BASE_URL + "/api/v5/nexus/zohoLogin";
+        this.hitLoginAPI(url, { code: queryParams?.code, state: queryParams?.state });
       }
     }
   }
@@ -56,13 +60,13 @@ class logIn extends React.Component {
 
   // Zoho Login
   loginWithZoho() {
-    location.href = `https://accounts.zoho.com/oauth/v2/auth?client_id=${process.env.zohoClientId}&response_type=token&scope=AaaServer.profile.Read&redirect_uri=${process.env.REDIRECT_URL}/login?loginWithZoho=true`;
+    location.href = `https://accounts.zoho.com/oauth/v2/auth?client_id=${process.env.ZOHO_CLIENT_ID}&response_type=token&scope=AaaServer.profile.Read&redirect_uri=${process.env.REDIRECT_URL}/login?loginWithZoho=true`;
   }
 
   // Github Login
   loginWithGitHubAccount() {
     let state = Math.floor(100000000 + Math.random() * 900000000);
-    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/login?github=true&state=${state}`;
+    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/login?github=true&state=${state}`;
   }
 
   // Google Login
@@ -75,7 +79,6 @@ class logIn extends React.Component {
   };
 
   hitLoginAPI(url, payload) {
-    // location.href = url + `?code=${payload?.code}`;
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -86,22 +89,9 @@ class logIn extends React.Component {
       .then(result => {
         console.log(result);
         if (!result?.hasError) {
-          this.loginCompleted(url, payload);
+          location.href = process.env.API_BASE_URL + "/hello-new/"
         }
       });
-  }
-
-  loginCompleted() {
-    // location.href = process.env.API_BASE_URL + "/hello-new/";
-    // document.cookie = "HELLO_APP_HASH=TkUzZG1rdXVNK3ErZW01QlhlRnRMWmoyTmVIMTJld0VaQ3NKb0ljWkdCST0%3D; expires=Fri, 25-Aug-2023 07:25:25 GMT; Max-Age=86400;domain=https://*.msg91.com; path=/";
-    // document.cookie = "PHPSESSID=ir13s78m2k8jctesa7dn6ob2di; expires=Sun, 03-Sep-2023 07:25:24 GMT; Max-Age=864000;domain=https://*.msg91.com; path=/; secure; HttpOnly; SameSite=None";
-    // document.cookie = "PROXY_APP_HASH=M2VpWDlpUGtxRTNXeGtxMURUbFpxWUlEVzJ2QThQNzJiV2MwNUl1clJsYz0%3D; expires=Thu, 31-Aug-2023 07:25:25 GMT; Max-Age=604800;domain=https://*.msg91.com; path=/";
-
-    let loginWindow = window.open(url + `?code=${payload?.code}`, 'Authenticate', "height=400,width=400");
-    setTimeout(() => {
-      loginWindow.close();
-      location.href = process.env.API_BASE_URL + "/hello-new/"
-    }, 1000);
   }
 
   loginFailed(error) {

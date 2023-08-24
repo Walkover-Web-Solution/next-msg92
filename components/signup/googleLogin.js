@@ -5,6 +5,8 @@ const GoogleLoginButton = (props) => {
   const login = useGoogleLogin({
     onSuccess: tokenResponse => props.googleLoginResponse(tokenResponse),
     flow: 'auth-code',
+    redirect_uri: 'https://test.msg91.com/action_layer.php?action=601',
+    access_type: "offline"
   });
 
   return (
