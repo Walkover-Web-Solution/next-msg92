@@ -28,8 +28,8 @@ const nextConfig = {
     msalClientId: "164d09e1-531c-427d-9358-9d1347c74170",
     msalTenantId: "f8cdef31-a31e-4b4a-93e4-5f571e91255a",
     redirectURL: "http://localhost:9999",
-    OTPWidgetToken: "3366766c6f67373339303538",
-    widgetAuthToken: "278060TvhhI9M8s64ce1109P1",
+    OTPWidgetToken: "3368786b6e36333136333432",
+    widgetAuthToken: "278060Tm142IWI2aSL64e6ef96P1",
     widgetscript:
       "https://test.msg91.com/hello-new/assets/otp-provider/otp-provider.js",
   },
