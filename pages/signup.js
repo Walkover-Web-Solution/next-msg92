@@ -25,7 +25,7 @@ class SignUp extends React.Component {
     let queryParams = this.getQueryParamsDeatils(this.props?.browserPathCase);
 
     this.state = {
-      activeStep: queryParams?.["code"] ? 2 : 1,
+      activeStep: queryParams?.["code"] ? 2 : 2,
       signupByGitHub: queryParams?.["github"] ? true : false,
       githubCode: queryParams?.["code"],
       githubState: queryParams?.["state"],
@@ -64,7 +64,7 @@ class SignUp extends React.Component {
 
   signupByGitHubAccount() {
     let state = Math.floor(100000000 + Math.random() * 900000000);
-    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/login?github=true&state=${state}`;
+    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/login?github=true&state=${state}`;
   }
 
   otpWidgetSetup = () => {
@@ -132,68 +132,23 @@ class SignUp extends React.Component {
 
   sendOtp = (notByEmail) => {
     let identifier = document.getElementById("emailIdentifier").value;
-    if (notByEmail) {
-      identifier = document.getElementById("contactIdentifier").value;
-      if (!new RegExp(MOBILE_REGEX).test(identifier)) {
-        alert("mobile error");
-        return;
-      }
-    } else {
-      if (!new RegExp(EMAIL_REGEX).test(identifier)) {
-        alert("emeil error");
-        return;
-      }
-    }
-
     window.sendOtp(
       identifier,
       (data) => {
         console.log("OTP verified: ", data);
-        if (this.notByEmail) {
-          this.setState({
-            smsOTPData: {
-              ...this.state?.smsOTPData,
-              mobile: identifier,
-              requestId: data?.message,
-            },
-          });
+        if (notByEmail) {
+          this.setState({ smsRequestId: data?.message });
         } else {
-          this.setState({
-            emailOTPData: {
-              ...this.state?.emailOTPData,
-              requestId: data?.message,
-              email: identifier,
-            },
-          });
+          this.setState({ emailRequestId: data?.message });
         }
       },
       (error) => {
         console.log(error);
-        if (this.notByEmail) {
-          this.setState({
-            smsOTPData: {
-              ...this.state?.smsOTPData,
-              error: error?.message,
-            },
-          });
-        } else {
-          this.setState({
-            emailOTPData: {
-              ...this.state?.emailOTPData,
-              error: error?.message,
-            },
-          });
-        }
       }
     );
   };
 
-  retryOtp(retryBy, notByEmail) {
-    let requestId = this.state?.emailOTPData?.requestId;
-    if (notByEmail) {
-      requestId = this.state?.smsOTPData?.requestId;
-    }
-    console.log(requestId);
+  retryOtp(retryBy, requestId) {
     window.retryOtp(
       retryBy,
       (data) => console.log("OTP verified: ", data),
@@ -207,16 +162,21 @@ class SignUp extends React.Component {
     if (notByEmail) {
       requestId = this.state.smsOTPData?.requestId;
     }
-  
+
     window.verifyOtp(
       otp,
       (data) => {
         console.log("OTP verified: ", data);
-  
         // Store the 'data' value in the component's state
-        this.setState({
-          otpVerificationData: data,
-        });
+        if (notByEmail) {
+          this.setState({
+            emailAccessToken: data.message,
+          });
+        } else {
+          this.setState({
+            smsAccessToken: data.message,
+          });
+        }
       },
       (error) => console.log(error),
       requestId
@@ -238,12 +198,10 @@ class SignUp extends React.Component {
   }
 
   render() {
-    console.log(this.state.otpVerificationData)
-        return (
+    console.log(this.state)
+    return (
       <>
         <section className="entry signup d-flex">
-
-          <pre>{JSON.stringify(this.state.otpVerificationData, null, 2)}</pre>
           <div className="entry__left_section col-xl-4 col-lg-5 col-md-5">
             <img
               src="/images/msgOriginalsvg.png"
@@ -297,7 +255,6 @@ class SignUp extends React.Component {
                   setStep={this.setStep}
                 />
               </div>
-              <p>{this.state.otpVerificationData}</p>
 
               {/* STEP #2 */}
               <div
@@ -317,7 +274,8 @@ class SignUp extends React.Component {
                   allowedRetry={this.state.allowedRetry}
                   retryOtp={this.retryOtp}
                   otpVerificationData={this.state.otpVerificationData}
-
+                  smsRequestId={this.state?.smsRequestId}
+                  emailRequestId={this.state?.emailRequestId}
                 />
               </div>
 

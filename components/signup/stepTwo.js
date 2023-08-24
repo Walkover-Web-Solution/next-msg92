@@ -20,7 +20,6 @@ class StepTwo extends React.Component {
     super(props);
     this.state={
       otpSendStatus:true
-
     }
   }
 
@@ -105,7 +104,7 @@ class StepTwo extends React.Component {
                   <button
                     className="custom-signup-btn"
                     onClick={() => {
-                      this.props.sendOtp(false);
+                      this.props.sendOtp(this.props.emailRequestId);
                     }}
                   >
                     Get OTP
@@ -128,7 +127,7 @@ class StepTwo extends React.Component {
                       <a
                         href="javascript:void(0)"
                         onClick={() =>
-                          this.props.retryOtp(OTPRetryModes.Email, false)
+                          this.props.retryOtp(OTPRetryModes.Email, this.props.emailRequestId)
                         }
                         className="col-primary c-fw-600 p-3"
                       >
@@ -160,7 +159,7 @@ class StepTwo extends React.Component {
                   </span>
                   <button
                     className="custom-signup-btn"
-                    onClick={() => this.props.sendOtp(true)}
+                    onClick={() => this.props.sendOtp(this.props.smsRequestId)}
                   >
                     Get OTP
                   </button>
@@ -179,7 +178,7 @@ class StepTwo extends React.Component {
                       <a
                         href="javascript:void(0)"
                         onClick={() =>
-                          this.props.retryOtp(OTPRetryModes.Sms, true)
+                          this.props.retryOtp(OTPRetryModes.Sms, this.props.smsRequestId)
                         }
                         className="col-primary c-fw-600 p-3"
                       >
@@ -192,7 +191,7 @@ class StepTwo extends React.Component {
                         <a
                           href="javascript:void(0)"
                           onClick={() =>
-                            this.props.retryOtp(OTPRetryModes.Whatsapp, true)
+                            this.props.retryOtp(OTPRetryModes.Whatsapp, this.props.smsRequestId)
                           }
                           className="col-primary c-fw-600 p-3"
                         >
@@ -206,7 +205,7 @@ class StepTwo extends React.Component {
                         <a
                           href="javascript:void(0)"
                           onClick={() =>
-                            this.props.retryOtp(OTPRetryModes.Voice, true)
+                            this.props.retryOtp(OTPRetryModes.Voice, this.props.smsRequestId)
                           }
                           className="col-primary c-fw-600 p-3"
                         >

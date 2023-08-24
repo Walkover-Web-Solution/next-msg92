@@ -66,6 +66,7 @@ class logIn extends React.Component {
   // Github Login
   loginWithGitHubAccount() {
     let state = Math.floor(100000000 + Math.random() * 900000000);
+    console.log(state);
     location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/login?github=true&state=${state}`;
   }
 
