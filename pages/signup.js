@@ -64,7 +64,7 @@ class SignUp extends React.Component {
 
   signupByGitHubAccount() {
     let state = Math.floor(100000000 + Math.random() * 900000000);
-    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${process.env.redirectURL}/login?github=true&state=${state}`;
+    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/login?github=true&state=${state}`;
   }
 
   otpWidgetSetup = () => {
@@ -72,11 +72,11 @@ class SignUp extends React.Component {
     const currentTimestamp = new Date().getTime();
     const otpWidgetScript = document.createElement("script");
     otpWidgetScript.type = "text/javascript";
-    otpWidgetScript.src = `${process.env.widgetscript}?v=${currentTimestamp}`;
+    otpWidgetScript.src = `${process.env.WIDGET_SCRIPT}?v=${currentTimestamp}`;
     otpWidgetScript.onload = () => {
       const configuration = {
-        widgetId: process.env.OTPWidgetToken,
-        tokenAuth: process.env.widgetAuthToken,
+        widgetId: process.env.OTP_WIDGET_TOKEN,
+        tokenAuth: process.env.WIDGET_AUTH_TOKEN,
         success: (data) => {
           // Widget config success response
           // console.log(data);
@@ -297,7 +297,7 @@ class SignUp extends React.Component {
                   setStep={this.setStep}
                 />
               </div>
-              <p>{this.state.otpVerificationData} hello</p>
+              <p>{this.state.otpVerificationData}</p>
 
               {/* STEP #2 */}
               <div
