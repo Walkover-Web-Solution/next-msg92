@@ -21,7 +21,6 @@
     "react-bootstrap-typeahead": "^6.0.2",
     "react-calendly": "^4.1.1",
     "react-dom": "18.2.0",
-    "react-google-login": "^5.2.2",
     "react-icon": "^1.0.0",
     "react-icons": "^4.8.0",
     "sass": "^1.60.0"
