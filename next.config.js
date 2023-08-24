@@ -1,26 +1,18 @@
 /** @type {import('next').NextConfig} */
-// module.exports = {
-//   // Can be safely removed in newer versions of Next.js
-//   webpack(config) {
-//     config.resolve.fallback = {
-//       // if you miss it, all the other options in fallback, specified
-//       // by next.js will be dropped.
-//       ...config.resolve.fallback,  
-//       fs: false, // the solution
-//     };
-//     return config;
-//   },
-// };
-const nextConfig = {
-  reactStrictMode: false,
-  resolve: {
-    fallback: {
+module.exports = {
+  // Can be safely removed in newer versions of Next.js
+  webpack(config) {
+    config.resolve.fallback = {
       // if you miss it, all the other options in fallback, specified
       // by next.js will be dropped.
-      ...nextConfig.resolve.fallback,  
+      ...config.resolve.fallback,  
       fs: false, // the solution
-    }
+    };
+    return config;
   },
+};
+const nextConfig = {
+  reactStrictMode: false,
   env: {
     API_BASE_URL: 'https://test.msg91.com',
     firebaseConfig: {
