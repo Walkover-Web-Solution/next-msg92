@@ -12,7 +12,7 @@ const Headcomp = (brawserPath) => {
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `var helloConfig = {
-              widgetToken: "1d31e",
+              widgetToken: "4532e",
               hide_launcher: false
             };`,
           }}
@@ -20,7 +20,7 @@ const Headcomp = (brawserPath) => {
         <script
           type="text/javascript"
           onload="initChatWidget(helloConfig, 5000)"
-          src="https://control.msg91.com/app/assets/widget/chat-widget.js"
+          src="https://test.msg91.com/hello-new/assets/widget/chat-widget.js"
         >
           {" "}
         </script>
