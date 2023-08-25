@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  MdDone,
-} from "react-icons/md";
-
+import { MdDone } from "react-icons/md";
 import StepOne from "@/components/signup/stepOne";
 import StepTwo from "@/components/signup/stepTwo";
 import StepThree from "@/components/signup/stepThree";
@@ -13,7 +10,6 @@ const OTPRetryModes = {
   Email: '3',
   Whatsapp: '12',
 }
-
 const MOBILE_REGEX = /^[+]?[0-9]+$/;
 const EMAIL_REGEX =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -29,12 +25,6 @@ class SignUp extends React.Component {
       signupByGitHub: queryParams?.["github"] ? true : false,
       githubCode: queryParams?.["code"],
       githubState: queryParams?.["state"],
-      emailOTPData: {
-        email: null,
-      },
-      smsOTPData: {
-        mobile: null,
-      },
       widgetData: null,
       allowedRetry: null
     };
@@ -50,17 +40,17 @@ class SignUp extends React.Component {
     });
   };
 
-  finalSubmit = () => {
-    console.log("signup with company setup");
-  }
+  // finalSubmit = () => {
+  //   console.log("signup with company setup");
+  // }
 
-  signUpCompleted() {
-    location.href = process.env.API_BASE_URL + '/hello-new/'
-  }
+  // signUpCompleted() {
+  //   location.href = process.env.API_BASE_URL + '/hello-new/'
+  // }
 
-  signUpFailed(error) {
-    console.log(error);
-  }
+  // signUpFailed(error) {
+  //   console.log(error);
+  // }
 
   signupByGitHubAccount() {
     let state = Math.floor(100000000 + Math.random() * 900000000);
@@ -107,78 +97,86 @@ class SignUp extends React.Component {
     head.appendChild(otpWidgetScript);
   }
 
-  setMobileNumber = (mobile) => {
-    this.setState = this.setState.bind(this);
-    let error = !new RegExp(MOBILE_REGEX).test(mobile);
-    this.setState({
-      smsOTPData: {
-        ...this.state?.smsOTPData,
-        status: error && mobile?.length ? false : true,
-        message: error && mobile?.length ? "Enter valid number." : null,
-      },
-    });
-  };
+  identifierChange = (notByEmail) => {
+    if (notByEmail) {
+      this.setState({ smsIdentifier: null });
+      return;
+    }
+    if (!notByEmail) {
+      this.setState({ emailIdentifier: null });
+      return;
+    }
+  }
 
-  setEmailAddress = (email) => {
-    let error = !new RegExp(EMAIL_REGEX).test(email);
-    this.setState({
-      emailOTPData: {
-        ...this.state?.emailOTPData,
-        status: error && email?.length ? false : true,
-        message: error && email?.length ? "Enter valid email." : null,
-      },
-    });
-  };
-
-  sendOtp = (notByEmail) => {
-    let identifier = document.getElementById("emailIdentifier").value;
+  sendOtp = (identifier, notByEmail) => {
+    if (!new RegExp(EMAIL_REGEX).test(identifier) && !notByEmail) {
+      this.setState({ emailIdentifierError: 'Enter valid email.' });
+      return;
+    }
+    if (!new RegExp(MOBILE_REGEX).test(identifier) && notByEmail) {
+      this.setState({ smsIdentifierError: 'Enter valid mobile.' });
+      return;
+    }
     window.sendOtp(
       identifier,
       (data) => {
-        console.log("OTP verified: ", data);
         if (notByEmail) {
-          this.setState({ smsRequestId: data?.message });
+          this.setState({ smsRequestId: data?.message, smsIdentifier: identifier, smsSuccessMessage: 'OTP sent successfully.' });
         } else {
-          this.setState({ emailRequestId: data?.message });
+          this.setState({ emailRequestId: data?.message, emailIdentifier: identifier, emailSuccessMessage: 'OTP sent successfully.' });
         }
       },
       (error) => {
-        console.log(error);
+        this.setState({
+          smsIdentifierError: notByEmail ? error?.message : this.state?.smsIdentifierError,
+          emailIdentifierError: !notByEmail ? error?.message : this.state?.emailIdentifierError
+        });
       }
     );
   };
 
-  retryOtp(retryBy, requestId) {
+  retryOtp(retryBy, requestId, notByEmail) {
     window.retryOtp(
       retryBy,
-      (data) => console.log("OTP verified: ", data),
-      (error) => console.log(error),
+      (data) => {
+        if (notByEmail) {
+          this.setState({ smsSuccessMessage: 'OTP resent successfully.' });
+        } else {
+          this.setState({ emailSuccessMessage: 'OTP resent successfully.' });
+        }
+      },
+      (error) => {
+        this.setState({
+          smsIdentifierError: notByEmail ? error?.message : this.state?.smsIdentifierError,
+          emailIdentifierError: !notByEmail ? error?.message : this.state?.emailIdentifierError
+        });
+      },
       requestId
     );
   }
 
-  verifyOtp = (otp, notByEmail) => {
-    let requestId = this.state.emailOTPData?.requestId;
-    if (notByEmail) {
-      requestId = this.state.smsOTPData?.requestId;
-    }
-
+  verifyOtp = (otp, requestId, notByEmail) => {
     window.verifyOtp(
       otp,
       (data) => {
-        console.log("OTP verified: ", data);
-        // Store the 'data' value in the component's state
-        if (notByEmail) {
+        if (!notByEmail) {
           this.setState({
             emailAccessToken: data.message,
+            smsSuccessMessage: 'Email verified.'
           });
         } else {
           this.setState({
             smsAccessToken: data.message,
+            smsSuccessMessage: 'Mobile verified.'
           });
         }
       },
-      (error) => console.log(error),
+      (error) => {
+        this.setState({
+          smsIdentifierError: notByEmail ? error?.message : this.state?.smsIdentifierError,
+          emailIdentifierError: !notByEmail ? error?.message : this.state?.emailIdentifierError
+        });
+      },
       requestId
     );
   }
@@ -195,6 +193,10 @@ class SignUp extends React.Component {
       return userData;
     }
     return null;
+  }
+
+  validateUserForCompany = () => {
+    
   }
 
   render() {
@@ -264,18 +266,25 @@ class SignUp extends React.Component {
                   }`}
               >
                 <StepTwo
-                  setEmailAddress={this.setEmailAddress}
-                  setMobileNumber={this.setMobileNumber}
                   sendOtp={this.sendOtp}
-                  EMAIL_REGEX={EMAIL_REGEX}
                   setStep={this.setStep}
                   verifyOtp={this.verifyOtp}
                   widgetData={this.state.widgetData}
                   allowedRetry={this.state.allowedRetry}
                   retryOtp={this.retryOtp}
-                  otpVerificationData={this.state.otpVerificationData}
+                  validateUserForCompany={this.validateUserForCompany}
+                  identifierChange={this.identifierChange}
+                  OTPRetryModes={OTPRetryModes}
                   smsRequestId={this.state?.smsRequestId}
                   emailRequestId={this.state?.emailRequestId}
+                  invalidMobile={this.state?.smsIdentifierError}
+                  invalidEmail={this.state?.emailIdentifierError}
+                  smsIdentifier={this.state?.smsIdentifier}
+                  emailIdentifier={this.state?.emailIdentifier}
+                  smsSuccessMessage={this.state?.smsSuccessMessage}
+                  emailSuccessMessage={this.state?.emailSuccessMessage}
+                  smsAccessToken={this.state?.smsAccessToken}
+                  emailAccessToken={this.state?.emailAccessToken}
                 />
               </div>
 
