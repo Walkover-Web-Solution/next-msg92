@@ -21,6 +21,20 @@ export default function App({ Component, pageProps }) {
   const year = new Date().getFullYear();
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
+    
+    function setCookie(name, value, days) {
+      const expirationDate = new Date();
+      expirationDate.setDate(expirationDate.getDate() + days);
+    
+      const cookieValue = encodeURIComponent(value) + (days ? '; expires=' + expirationDate.toUTCString() : '');
+      document.cookie = name + '=' + cookieValue + '; path=/';
+    }
+    
+    if(window.location.search){
+      // Set a cookie that expires after one month
+      setCookie('msg91_query', window.location.search, 30);      
+    }
+
   }, []);
     return (
       <>
