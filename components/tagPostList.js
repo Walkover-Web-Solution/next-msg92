@@ -23,7 +23,7 @@ console.log("inside tagPostList");
         current={pagination.current}
         pages={pagination.pages}
         link={{
-          href: () => "/guide/tags/[slug]",
+          href: () => "/guide/tags/[tag]",
           as: (page) =>
             page === 1
               ? "/guide/tags/" + tag

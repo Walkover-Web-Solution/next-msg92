@@ -27,6 +27,7 @@
     "react-dom": "18.2.0",
     "react-icon": "^1.0.0",
     "react-icons": "^4.8.0",
+    "react-youtube": "^10.1.0",
     "sass": "^1.60.0"
   }
 }

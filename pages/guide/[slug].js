@@ -7,12 +7,16 @@ import matter from 'gray-matter';
 import Head from 'next/head';
 import { format } from "date-fns";
 import { useRouter } from 'next/router';
-import { SocialList } from '@/components/socialList';
+import  {getTag} from '@/components/lib/tags'
+// import { SocialList } from '@/components/socialList';
 import TagButton from '@/components/tagButton';
+import YouTube from 'react-youtube';
 // const components = { Test }
-
+const component = { YouTube };
+// console.log(component, "component");
 const slugToPostContent = (postContents => {
  
+  
     let hash = {}
     let fullPath = {}
     postContents.map((data)=>{
@@ -23,6 +27,9 @@ const slugToPostContent = (postContents => {
   })(fetchPostContent());
 export default function TestPage({ source , title, author, date,thumbnailImage, tags}) {
 console.log(tags, "tags in slug");
+tags.map((it , i)=>{
+console.log(it, "console");
+})
   const router  = useRouter();
 
 
@@ -42,16 +49,24 @@ console.log(tags, "tags in slug");
         {thumbnailImage !=="" && <img className="" src={thumbnailImage} alt={author} />}
       </div>
       <div className="body">
-        <MDXRemote {...source} />
+        <MDXRemote {...source} components={component}/>
       </div>
 
       <button className="btn btn-dark mt-3" onClick={handleClick} >Back</button>
       <div>
-      {tags.map((it, i) => (
+      {/* {tags.map((it, i) => (
        <li key={i}>
         <TagButton tag={tags}/>
         </li>
-        ))}
+        ))} */}
+
+      <ul className={"tag-list"}>
+            {tags.map((it, i) => (
+              <li key={i}>
+                <TagButton tag={getTag(it)} />
+              </li>
+            ))}
+      </ul>
       </div>
       
       <footer>
@@ -87,7 +102,6 @@ export async function getStaticProps(slug) {
         // engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
       },
     });
-    // console.log(matterResult, "Matter Result");
     const thumbnailImage = matterResult?.data?.thumbnail;
     // const youtube = matterResult?.data?.youtube;
     const tags = matterResult?.data?.tags;

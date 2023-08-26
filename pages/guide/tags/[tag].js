@@ -24,7 +24,7 @@ export default function Index({ posts, tag, pagination, page }) {
   );
 }
 
-async function getStaticProps({ params }) {
+export async function getStaticProps({ params }) {
     console.log(params, "params");
   const queries = params.slug;
   const [slug, page] = [queries[0], queries[1]];
@@ -52,11 +52,12 @@ async function getStaticProps({ params }) {
   };
 }
 
-async function getStaticPaths() {
+export async function getStaticPaths() {
 
   console.log("inside get static paths, please");
   const paths = listTags().flatMap((tag) => {
     const pages = Math.ceil(countPosts(tag.slug) / config.posts_per_page);
+    console.log(pages, "pages in tag slug");
     return Array.from(Array(pages).keys()).map((page) =>
       page === 0
         ? {
@@ -67,6 +68,7 @@ async function getStaticPaths() {
           }
     );
   });
+  console.log(paths, "path in tags slug")
   return {
     paths: paths,
     fallback: false,
