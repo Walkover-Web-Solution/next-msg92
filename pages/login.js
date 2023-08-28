@@ -196,14 +196,14 @@ class logIn extends React.Component {
               </button>
 
 
-              <p className="c-fs-6 mb-3 cursor-pointer">
+              <p className="c-fs-6 mb-3">
                 Trouble logging in ?{" "}
 
                 <span
                   onClick={
                     this.setShowContactonLogin
                   }
-                  className="text_blue"
+                  className="text_blue cursor-pointer"
                 >
                   Click here
                 </span>

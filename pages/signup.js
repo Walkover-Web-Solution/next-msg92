@@ -17,16 +17,21 @@ const EMAIL_REGEX =
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
+    this.sendOtp = this.sendOtp.bind(this);
+    this.retryOtp = this.retryOtp.bind(this);
+    this.verifyOtp = this.verifyOtp.bind(this);
 
     let queryParams = this.getQueryParamsDeatils(this.props?.browserPathCase);
 
     this.state = {
-      activeStep: queryParams?.["code"] ? 2 : 2,
+      activeStep: queryParams?.["code"] ? 2 : 3,
       signupByGitHub: queryParams?.["github"] ? true : false,
       githubCode: queryParams?.["code"],
       githubState: queryParams?.["state"],
       widgetData: null,
-      allowedRetry: null
+      allowedRetry: null,
+      emailAccessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXF1ZXN0SWQiOiIzMzY4NDI2ZDU3MzQzMTMyMzAzOTM1MzkiLCJjb21wYW55SWQiOiIyNzgwNjAifQ.3SFWD3Fno-u66MqWHozVSFRoKLooITaWpZeKEbyLuYI',
+      smsAccessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXF1ZXN0SWQiOiIzMzY4NDI2ZDU4NTUzOTMzMzMzNTM0MzEiLCJjb21wYW55SWQiOiIyNzgwNjAifQ.fsfPCEu9su7SVQrfNnFGxGbqIyvZn6D0HJKCt2WVO6M'
     };
   }
 
@@ -39,10 +44,6 @@ class SignUp extends React.Component {
       activeStep: step,
     });
   };
-
-  // finalSubmit = () => {
-  //   console.log("signup with company setup");
-  // }
 
   // signUpCompleted() {
   //   location.href = process.env.API_BASE_URL + '/hello-new/'
@@ -84,10 +85,10 @@ class SignUp extends React.Component {
           this.setState({
             widgetData: window.getWidgetData(),
             allowedRetry: {
-              email: widgetData?.processes?.filter(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Email),
-              whatsApp: widgetData?.processes?.filter(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Whatsapp),
-              voice: widgetData?.processes?.filter(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Voice),
-              sms: widgetData?.processes?.filter(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Sms),
+              email: widgetData?.processes?.find(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Email),
+              whatsApp: widgetData?.processes?.find(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Whatsapp),
+              voice: widgetData?.processes?.find(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Voice),
+              sms: widgetData?.processes?.find(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Sms),
             }
           })
           clearInterval(widgetDataInterval)
@@ -136,6 +137,7 @@ class SignUp extends React.Component {
   };
 
   retryOtp(retryBy, requestId, notByEmail) {
+    console.log(retryBy)
     window.retryOtp(
       retryBy,
       (data) => {
@@ -196,11 +198,80 @@ class SignUp extends React.Component {
   }
 
   validateUserForCompany = () => {
-    
+    const url = process.env.API_BASE_URL + "/api/v5/nexus/validateEmailSignUp";
+    let payload = {
+      "emailToken": this.state.emailAccessToken,
+      "mobileToken": this.state.smsAccessToken,
+      "utm_term": "utm_term",
+      "utm_medium": "utm_medium",
+      "utm_source": "utm_source",
+      "utm_campaign": "utm_campaign",
+      "utm_content": "utm_content",
+      "utm_matchtype": "utm_matchtype",
+      "ad": "ad",
+      "adposition": "adposition",
+      "reference": "reference",
+      "source": "msg91"
+    }
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    };
+    fetch(url, requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        if (!result?.hasError) {
+          if (result?.nextStep) {
+            location.href = process.env.API_BASE_URL + "/app/"
+          } else {
+            this.setStep(3);
+          }
+        }
+      });
+  }
+
+  finalSubmit = (data) => {
+    console.log("signup with company setup", data);
+    const url = process.env.API_BASE_URL + "/api/v5/nexus/finalRegister";
+    let payload = {
+      "companyDetails": {
+        "industry": industryType,
+        "state": "Madhya Pradesh",
+        "cityId": "2229",
+        "customCity": "",
+        "country": "India",
+        "city": city,
+        "zipcode": pincode,
+        "address": address,
+        "gstNo": gstNumber,
+        "countryId": country,
+        "stateId": stateProvince,
+        "companyName": companyName,
+        "service": serviceNeeded
+      },
+      "userDetails": {
+        "firstName": firstName,
+        "lastName": lastName
+      },
+      "acceptInviteForCompanies": []
+    }
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    };
+    fetch(url, requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        if (!result?.hasError) {
+          location.href = process.env.API_BASE_URL + "/app/"
+        }
+      });
   }
 
   render() {
-    console.log(this.state)
     return (
       <>
         <section className="entry signup d-flex">
