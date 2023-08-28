@@ -24,14 +24,14 @@ class SignUp extends React.Component {
     let queryParams = this.getQueryParamsDeatils(this.props?.browserPathCase);
 
     this.state = {
-      activeStep: queryParams?.["code"] ? 2 : 3,
+      activeStep: queryParams?.["code"] ? 2 : 1,
       signupByGitHub: queryParams?.["github"] ? true : false,
       githubCode: queryParams?.["code"],
       githubState: queryParams?.["state"],
       widgetData: null,
       allowedRetry: null,
-      emailAccessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXF1ZXN0SWQiOiIzMzY4NDI2ZDU3MzQzMTMyMzAzOTM1MzkiLCJjb21wYW55SWQiOiIyNzgwNjAifQ.3SFWD3Fno-u66MqWHozVSFRoKLooITaWpZeKEbyLuYI',
-      smsAccessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXF1ZXN0SWQiOiIzMzY4NDI2ZDU4NTUzOTMzMzMzNTM0MzEiLCJjb21wYW55SWQiOiIyNzgwNjAifQ.fsfPCEu9su7SVQrfNnFGxGbqIyvZn6D0HJKCt2WVO6M'
+      emailAccessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXF1ZXN0SWQiOiIzMzY4NDI3MjMwNzkzNTM2MzkzNjMzMzUiLCJjb21wYW55SWQiOiIyNzgwNjAifQ.XijCnjR2LCX0axNA5d3392Jl1wvUqAv8uKcHw-uXc14',
+      smsAccessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXF1ZXN0SWQiOiIzMzY4NDI3MjZhNzczMDM0MzgzMDMwMzMiLCJjb21wYW55SWQiOiIyNzgwNjAifQ.3PkND0OBhsMt7FgH121EI_DrI3eNwYijm1uDZW3X20E'
     };
   }
 
@@ -44,14 +44,6 @@ class SignUp extends React.Component {
       activeStep: step,
     });
   };
-
-  // signUpCompleted() {
-  //   location.href = process.env.API_BASE_URL + '/hello-new/'
-  // }
-
-  // signUpFailed(error) {
-  //   console.log(error);
-  // }
 
   signupByGitHubAccount() {
     let state = Math.floor(100000000 + Math.random() * 900000000);
@@ -68,14 +60,8 @@ class SignUp extends React.Component {
       const configuration = {
         widgetId: process.env.OTP_WIDGET_TOKEN,
         tokenAuth: process.env.WIDGET_AUTH_TOKEN,
-        success: (data) => {
-          // Widget config success response
-          // console.log(data);
-        },
-        failure: (error) => {
-          // Widget config failure response
-          // console.log(error);
-        },
+        success: (data) => {},
+        failure: (error) => {},
         exposeMethods: true,
       };
       window.initSendOTP(configuration);
@@ -137,7 +123,6 @@ class SignUp extends React.Component {
   };
 
   retryOtp(retryBy, requestId, notByEmail) {
-    console.log(retryBy)
     window.retryOtp(
       retryBy,
       (data) => {
@@ -164,7 +149,7 @@ class SignUp extends React.Component {
         if (!notByEmail) {
           this.setState({
             emailAccessToken: data.message,
-            smsSuccessMessage: 'Email verified.'
+            emailSuccessMessage: 'Email verified.'
           });
         } else {
           this.setState({
@@ -222,53 +207,54 @@ class SignUp extends React.Component {
       .then(response => response.json())
       .then(result => {
         if (!result?.hasError) {
-          if (result?.nextStep) {
-            location.href = process.env.API_BASE_URL + "/app/"
-          } else {
+          if (result?.data?.nextStep === "createNewCompany") {
             this.setStep(3);
+          } else {
+            location.href = process.env.API_BASE_URL + "/app/"
           }
         }
       });
   }
 
   finalSubmit = (data) => {
-    console.log("signup with company setup", data);
     const url = process.env.API_BASE_URL + "/api/v5/nexus/finalRegister";
     let payload = {
       "companyDetails": {
-        "industry": industryType,
-        "state": "Madhya Pradesh",
-        "cityId": "2229",
-        "customCity": "",
-        "country": "India",
-        "city": city,
-        "zipcode": pincode,
-        "address": address,
-        "gstNo": gstNumber,
-        "countryId": country,
-        "stateId": stateProvince,
-        "companyName": companyName,
-        "service": serviceNeeded
+        "industry": data?.industryType,
+        "state": data?.stateName,
+        "cityId": data?.cityId,
+        "customCity": data?.otherCity,
+        "country": data?.countryName,
+        "city": data?.city,
+        "zipcode": data?.pincode,
+        "address": data?.address,
+        "gstNo": data?.gstNumber,
+        "countryId": data?.country,
+        "stateId": data?.stateProvince,
+        "companyName": data?.companyName,
+        "service": data?.serviceNeeded
       },
       "userDetails": {
-        "firstName": firstName,
-        "lastName": lastName
+        "firstName": data?.firstName,
+        "lastName": data?.lastName
       },
       "acceptInviteForCompanies": []
     }
 
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    };
-    fetch(url, requestOptions)
-      .then(response => response.json())
-      .then(result => {
-        if (!result?.hasError) {
-          location.href = process.env.API_BASE_URL + "/app/"
-        }
-      });
+    console.log(payload);
+
+    // const requestOptions = {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(payload)
+    // };
+    // fetch(url, requestOptions)
+    //   .then(response => response.json())
+    //   .then(result => {
+    //     if (!result?.hasError) {
+    //       location.href = process.env.API_BASE_URL + "/app/"
+    //     }
+    //   });
   }
 
   render() {

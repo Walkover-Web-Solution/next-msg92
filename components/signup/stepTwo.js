@@ -66,31 +66,32 @@ class StepTwo extends React.Component {
                   </button>
                 </div>
               </div>
-              <div className="step_input_wrapper__right col-xl-6 col-lg-12">
-                {this.props?.emailIdentifier ? <div className="d-flex flex-column">
-                  <Otpinput
-                    tag="email"
-                    verifyOtp={this.props.verifyOtp}
-                    otpLength={this.props.widgetData?.otpLength}
-                    requestId={this.props.emailRequestId}
-                    notByEmail={false}
-                  />
-                  {this.props.allowedRetry?.email ? (
-                    <p className="col-dark mt-3 c-fs-6">
-                      Resend on{" "}
-                      <a
-                        href="javascript:void(0)"
-                        onClick={() =>
-                          this.props.retryOtp(this.props.OTPRetryModes.Email, this.props.emailRequestId, false)
-                        }
-                        className="col-primary c-fw-600 p-3"
-                      >
-                        Email
-                      </a>
-                    </p>
-                  ) : null}
+              {this.props?.emailIdentifier ?
+                <div className="step_input_wrapper__right col-xl-6 col-lg-12">
+                  <div className="d-flex flex-column">
+                    <Otpinput
+                      tag="email"
+                      verifyOtp={this.props.verifyOtp}
+                      otpLength={this.props.widgetData?.otpLength}
+                      requestId={this.props.emailRequestId}
+                      notByEmail={false}
+                    />
+                    {this.props.allowedRetry?.email ? (
+                      <p className="col-dark mt-3 c-fs-6">
+                        Resend on{" "}
+                        <a
+                          href={undefined}
+                          onClick={() =>
+                            this.props.retryOtp(this.props.OTPRetryModes.Email, this.props.emailRequestId, false)
+                          }
+                          className="col-primary c-fw-600 p-3 cursor-pointer"
+                        >
+                          Email
+                        </a>
+                      </p>
+                    ) : null}
+                  </div>
                 </div> : null}
-              </div>
             </div>
           </div>
           <div className="row mx-0 px-0 step_input_wrapper mt-4 mb-5">
@@ -119,8 +120,8 @@ class StepTwo extends React.Component {
                   </button>
                 </div>
               </div>
-              <div className="step_input_wrapper__right col-xl-6 col-lg-12">
-                {this.props?.smsIdentifier ? <div className="d-flex flex-column">
+              {this.props?.smsIdentifier ? <div className="step_input_wrapper__right col-xl-6 col-lg-12">
+                <div className="d-flex flex-column">
                   <Otpinput
                     tag="sms"
                     verifyOtp={this.props.verifyOtp}
@@ -132,11 +133,11 @@ class StepTwo extends React.Component {
                     Resend on{" "}
                     {this.props.allowedRetry?.sms ? (
                       <a
-                        href="javascript:void(0)"
+                        href={undefined}
                         onClick={() =>
                           this.props.retryOtp(this.props.OTPRetryModes.Sms, this.props.smsRequestId, true)
                         }
-                        className="col-primary c-fw-600 p-3"
+                        className="col-primary c-fw-600 p-3 cursor-pointer"
                       >
                         Text
                       </a>
@@ -145,11 +146,11 @@ class StepTwo extends React.Component {
                       <span>
                         <span>or </span>
                         <a
-                          href="javascript:void(0)"
+                          href={undefined}
                           onClick={() =>
                             this.props.retryOtp(this.props.OTPRetryModes.Whatsapp, this.props.smsRequestId, true)
                           }
-                          className="col-primary c-fw-600 p-3"
+                          className="col-primary c-fw-600 p-3 cursor-pointer"
                         >
                           WhatsApp
                         </a>
@@ -159,19 +160,19 @@ class StepTwo extends React.Component {
                       <span>
                         <span>or </span>
                         <a
-                          href="javascript:void(0)"
+                          href={undefined}
                           onClick={() =>
                             this.props.retryOtp(this.props.OTPRetryModes.Voice, this.props.smsRequestId, true)
                           }
-                          className="col-primary c-fw-600 p-3"
+                          className="col-primary c-fw-600 p-3 cursor-pointer"
                         >
                           Voice
                         </a>
                       </span>
                     ) : null}
                   </p>
-                </div> : null}
-              </div>
+                </div>
+              </div> : null}
             </div>
           </div>
           {this.props?.emailIdentifier ? (
@@ -179,7 +180,7 @@ class StepTwo extends React.Component {
               className="col-success c-fs-6 c-fw-500 my-4"
               style={{ color: "var(--whats-app-green, #29A653)" }}
             >
-              {this.props?.emailIdentifier}
+              {this.props?.emailSuccessMessage}
             </p>
           ) : null}
           {this.props?.smsIdentifier ? (
@@ -187,7 +188,7 @@ class StepTwo extends React.Component {
               className="col-success c-fs-6 c-fw-500 my-4"
               style={{ color: "var(--whats-app-green, #29A653)" }}
             >
-              {this.props?.smsIdentifier}
+              {this.props?.smsSuccessMessage}
             </p>
           ) : null}
           {this.props?.invalidEmail ? (

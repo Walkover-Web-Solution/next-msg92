@@ -148,10 +148,9 @@ class logIn extends React.Component {
               </div>
               <h1>Welcome back!</h1>
               <div className="entry__right_section__container__entry_with mb-4">
-                <span className="d-inline-block mt-3 p-2 mb-3">Login with</span>
-
-                <div
-                  className="d-flex align-items-center flex-wrap login-icon-cont"
+                <span className="d-inline-block mt-3">Login with</span>
+                {/* <div
+                  className="d-flex align-items-center flex-wrap login-icon-cont mt-3"
                   style={{ gap: "16px" }}
                 >
                   <GoogleOAuthProvider
@@ -183,10 +182,10 @@ class logIn extends React.Component {
                   >
                     <img src="/img/icon-github.svg" />
                   </button>
-                </div>
+                </div> */}
               </div>
 
-              <span className="d-block line_on_right c-fs-6 mb-4">or</span>
+              {/* <span className="d-block line_on_right c-fs-6 mb-4">or</span> */}
 
               <button
                 className="c-col-white entry__right_section__container__entry_button mb-4"
