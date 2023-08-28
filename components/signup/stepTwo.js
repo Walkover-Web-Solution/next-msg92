@@ -175,7 +175,7 @@ class StepTwo extends React.Component {
               </div> : null}
             </div>
           </div>
-          {this.props?.emailIdentifier ? (
+          {this.props?.emailIdentifier && !this.props?.invalidEmail ? (
             <p
               className="col-success c-fs-6 c-fw-500 my-4"
               style={{ color: "var(--whats-app-green, #29A653)" }}
@@ -183,7 +183,7 @@ class StepTwo extends React.Component {
               {this.props?.emailSuccessMessage}
             </p>
           ) : null}
-          {this.props?.smsIdentifier ? (
+          {this.props?.smsIdentifier && !this.props?.invalidMobile ? (
             <p
               className="col-success c-fs-6 c-fw-500 my-4"
               style={{ color: "var(--whats-app-green, #29A653)" }}
