@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  MdDone,
-} from "react-icons/md";
-
+import { MdDone } from "react-icons/md";
 import StepOne from "@/components/signup/stepOne";
 import StepTwo from "@/components/signup/stepTwo";
 import StepThree from "@/components/signup/stepThree";
@@ -13,7 +10,6 @@ const OTPRetryModes = {
   Email: '3',
   Whatsapp: '12',
 }
-
 const MOBILE_REGEX = /^[+]?[0-9]+$/;
 const EMAIL_REGEX =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -21,6 +17,9 @@ const EMAIL_REGEX =
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
+    this.sendOtp = this.sendOtp.bind(this);
+    this.retryOtp = this.retryOtp.bind(this);
+    this.verifyOtp = this.verifyOtp.bind(this);
 
     let queryParams = this.getQueryParamsDeatils(this.props?.browserPathCase);
 
@@ -29,14 +28,10 @@ class SignUp extends React.Component {
       signupByGitHub: queryParams?.["github"] ? true : false,
       githubCode: queryParams?.["code"],
       githubState: queryParams?.["state"],
-      emailOTPData: {
-        email: null,
-      },
-      smsOTPData: {
-        mobile: null,
-      },
       widgetData: null,
-      allowedRetry: null
+      allowedRetry: null,
+      emailAccessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXF1ZXN0SWQiOiIzMzY4NDI3MjMwNzkzNTM2MzkzNjMzMzUiLCJjb21wYW55SWQiOiIyNzgwNjAifQ.XijCnjR2LCX0axNA5d3392Jl1wvUqAv8uKcHw-uXc14',
+      smsAccessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXF1ZXN0SWQiOiIzMzY4NDI3MjZhNzczMDM0MzgzMDMwMzMiLCJjb21wYW55SWQiOiIyNzgwNjAifQ.3PkND0OBhsMt7FgH121EI_DrI3eNwYijm1uDZW3X20E'
     };
   }
 
@@ -50,21 +45,9 @@ class SignUp extends React.Component {
     });
   };
 
-  finalSubmit = () => {
-    console.log("signup with company setup");
-  }
-
-  signUpCompleted() {
-    location.href = process.env.API_BASE_URL + '/hello-new/'
-  }
-
-  signUpFailed(error) {
-    console.log(error);
-  }
-
   signupByGitHubAccount() {
     let state = Math.floor(100000000 + Math.random() * 900000000);
-    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.githubClientId}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/login?github=true&state=${state}`;
+    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/login?github=true&state=${state}`;
   }
 
   otpWidgetSetup = () => {
@@ -77,14 +60,8 @@ class SignUp extends React.Component {
       const configuration = {
         widgetId: process.env.OTP_WIDGET_TOKEN,
         tokenAuth: process.env.WIDGET_AUTH_TOKEN,
-        success: (data) => {
-          // Widget config success response
-          // console.log(data);
-        },
-        failure: (error) => {
-          // Widget config failure response
-          // console.log(error);
-        },
+        success: (data) => {},
+        failure: (error) => {},
         exposeMethods: true,
       };
       window.initSendOTP(configuration);
@@ -94,10 +71,10 @@ class SignUp extends React.Component {
           this.setState({
             widgetData: window.getWidgetData(),
             allowedRetry: {
-              email: widgetData?.processes?.filter(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Email),
-              whatsApp: widgetData?.processes?.filter(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Whatsapp),
-              voice: widgetData?.processes?.filter(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Voice),
-              sms: widgetData?.processes?.filter(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Sms),
+              email: widgetData?.processes?.find(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Email),
+              whatsApp: widgetData?.processes?.find(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Whatsapp),
+              voice: widgetData?.processes?.find(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Voice),
+              sms: widgetData?.processes?.find(e => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Sms),
             }
           })
           clearInterval(widgetDataInterval)
@@ -107,118 +84,86 @@ class SignUp extends React.Component {
     head.appendChild(otpWidgetScript);
   }
 
-  setMobileNumber = (mobile) => {
-    this.setState = this.setState.bind(this);
-    let error = !new RegExp(MOBILE_REGEX).test(mobile);
-    this.setState({
-      smsOTPData: {
-        ...this.state?.smsOTPData,
-        status: error && mobile?.length ? false : true,
-        message: error && mobile?.length ? "Enter valid number." : null,
-      },
-    });
-  };
-
-  setEmailAddress = (email) => {
-    let error = !new RegExp(EMAIL_REGEX).test(email);
-    this.setState({
-      emailOTPData: {
-        ...this.state?.emailOTPData,
-        status: error && email?.length ? false : true,
-        message: error && email?.length ? "Enter valid email." : null,
-      },
-    });
-  };
-
-  sendOtp = (notByEmail) => {
-    let identifier = document.getElementById("emailIdentifier").value;
+  identifierChange = (notByEmail) => {
     if (notByEmail) {
-      identifier = document.getElementById("contactIdentifier").value;
-      if (!new RegExp(MOBILE_REGEX).test(identifier)) {
-        alert("mobile error");
-        return;
-      }
-    } else {
-      if (!new RegExp(EMAIL_REGEX).test(identifier)) {
-        alert("emeil error");
-        return;
-      }
+      this.setState({ smsIdentifier: null });
+      return;
     }
+    if (!notByEmail) {
+      this.setState({ emailIdentifier: null });
+      return;
+    }
+  }
 
+  sendOtp = (identifier, notByEmail) => {
+    if (!new RegExp(EMAIL_REGEX).test(identifier) && !notByEmail) {
+      this.setState({ emailIdentifierError: 'Enter valid email.' });
+      return;
+    }
+    if (!new RegExp(MOBILE_REGEX).test(identifier) && notByEmail) {
+      this.setState({ smsIdentifierError: 'Enter valid mobile.' });
+      return;
+    }
     window.sendOtp(
       identifier,
       (data) => {
-        console.log("OTP verified: ", data);
-        if (this.notByEmail) {
-          this.setState({
-            smsOTPData: {
-              ...this.state?.smsOTPData,
-              mobile: identifier,
-              requestId: data?.message,
-            },
-          });
+        if (notByEmail) {
+          this.setState({ smsRequestId: data?.message, smsIdentifier: identifier, smsSuccessMessage: 'OTP sent successfully.' });
         } else {
-          this.setState({
-            emailOTPData: {
-              ...this.state?.emailOTPData,
-              requestId: data?.message,
-              email: identifier,
-            },
-          });
+          this.setState({ emailRequestId: data?.message, emailIdentifier: identifier, emailSuccessMessage: 'OTP sent successfully.' });
         }
       },
       (error) => {
-        console.log(error);
-        if (this.notByEmail) {
-          this.setState({
-            smsOTPData: {
-              ...this.state?.smsOTPData,
-              error: error?.message,
-            },
-          });
-        } else {
-          this.setState({
-            emailOTPData: {
-              ...this.state?.emailOTPData,
-              error: error?.message,
-            },
-          });
-        }
+        this.setState({
+          smsIdentifierError: notByEmail ? error?.message : this.state?.smsIdentifierError,
+          emailIdentifierError: !notByEmail ? error?.message : this.state?.emailIdentifierError
+        });
       }
     );
   };
 
-  retryOtp(retryBy, notByEmail) {
-    let requestId = this.state?.emailOTPData?.requestId;
-    if (notByEmail) {
-      requestId = this.state?.smsOTPData?.requestId;
-    }
-    console.log(requestId);
+  retryOtp(retryBy, requestId, notByEmail) {
     window.retryOtp(
       retryBy,
-      (data) => console.log("OTP verified: ", data),
-      (error) => console.log(error),
+      (data) => {
+        if (notByEmail) {
+          this.setState({ smsSuccessMessage: 'OTP resent successfully.' });
+        } else {
+          this.setState({ emailSuccessMessage: 'OTP resent successfully.' });
+        }
+      },
+      (error) => {
+        this.setState({
+          smsIdentifierError: notByEmail ? error?.message : this.state?.smsIdentifierError,
+          emailIdentifierError: !notByEmail ? error?.message : this.state?.emailIdentifierError
+        });
+      },
       requestId
     );
   }
 
-  verifyOtp = (otp, notByEmail) => {
-    let requestId = this.state.emailOTPData?.requestId;
-    if (notByEmail) {
-      requestId = this.state.smsOTPData?.requestId;
-    }
-  
+  verifyOtp = (otp, requestId, notByEmail) => {
     window.verifyOtp(
       otp,
       (data) => {
-        console.log("OTP verified: ", data);
-  
-        // Store the 'data' value in the component's state
+        if (!notByEmail) {
+          this.setState({
+            emailAccessToken: data.message,
+            emailSuccessMessage: 'Email verified.'
+          });
+        } else {
+          this.setState({
+            smsAccessToken: data.message,
+            smsSuccessMessage: 'Mobile verified.'
+          });
+        }
+      },
+      (error) => {
         this.setState({
-          otpVerificationData: data,
+          smsIdentifierError: notByEmail ? error?.message : this.state?.smsIdentifierError,
+          emailIdentifierError: !notByEmail ? error?.message : this.state?.emailIdentifierError
         });
       },
-      (error) => console.log(error),
       requestId
     );
   }
@@ -237,13 +182,85 @@ class SignUp extends React.Component {
     return null;
   }
 
+  validateUserForCompany = () => {
+    const url = process.env.API_BASE_URL + "/api/v5/nexus/validateEmailSignUp";
+    let payload = {
+      "emailToken": this.state.emailAccessToken,
+      "mobileToken": this.state.smsAccessToken,
+      "utm_term": "utm_term",
+      "utm_medium": "utm_medium",
+      "utm_source": "utm_source",
+      "utm_campaign": "utm_campaign",
+      "utm_content": "utm_content",
+      "utm_matchtype": "utm_matchtype",
+      "ad": "ad",
+      "adposition": "adposition",
+      "reference": "reference",
+      "source": "msg91"
+    }
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    };
+    fetch(url, requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        if (!result?.hasError) {
+          if (result?.data?.nextStep === "createNewCompany") {
+            this.setStep(3);
+          } else {
+            location.href = process.env.API_BASE_URL + "/app/"
+          }
+        }
+      });
+  }
+
+  finalSubmit = (data) => {
+    const url = process.env.API_BASE_URL + "/api/v5/nexus/finalRegister";
+    let payload = {
+      "companyDetails": {
+        "industry": data?.industryType,
+        "state": data?.stateName,
+        "cityId": data?.cityId,
+        "customCity": data?.otherCity,
+        "country": data?.countryName,
+        "city": data?.city,
+        "zipcode": data?.pincode,
+        "address": data?.address,
+        "gstNo": data?.gstNumber,
+        "countryId": data?.country,
+        "stateId": data?.stateProvince,
+        "companyName": data?.companyName,
+        "service": data?.serviceNeeded
+      },
+      "userDetails": {
+        "firstName": data?.firstName,
+        "lastName": data?.lastName
+      },
+      "acceptInviteForCompanies": []
+    }
+
+    console.log(payload);
+
+    // const requestOptions = {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(payload)
+    // };
+    // fetch(url, requestOptions)
+    //   .then(response => response.json())
+    //   .then(result => {
+    //     if (!result?.hasError) {
+    //       location.href = process.env.API_BASE_URL + "/app/"
+    //     }
+    //   });
+  }
+
   render() {
-    console.log(this.state.otpVerificationData)
-        return (
+    return (
       <>
         <section className="entry signup d-flex">
-
-          <pre>{JSON.stringify(this.state.otpVerificationData, null, 2)}</pre>
           <div className="entry__left_section col-xl-4 col-lg-5 col-md-5">
             <img
               src="/images/msgOriginalsvg.png"
@@ -297,7 +314,6 @@ class SignUp extends React.Component {
                   setStep={this.setStep}
                 />
               </div>
-              <p>{this.state.otpVerificationData}</p>
 
               {/* STEP #2 */}
               <div
@@ -307,17 +323,25 @@ class SignUp extends React.Component {
                   }`}
               >
                 <StepTwo
-                  setEmailAddress={this.setEmailAddress}
-                  setMobileNumber={this.setMobileNumber}
                   sendOtp={this.sendOtp}
-                  EMAIL_REGEX={EMAIL_REGEX}
                   setStep={this.setStep}
                   verifyOtp={this.verifyOtp}
                   widgetData={this.state.widgetData}
                   allowedRetry={this.state.allowedRetry}
                   retryOtp={this.retryOtp}
-                  otpVerificationData={this.state.otpVerificationData}
-
+                  validateUserForCompany={this.validateUserForCompany}
+                  identifierChange={this.identifierChange}
+                  OTPRetryModes={OTPRetryModes}
+                  smsRequestId={this.state?.smsRequestId}
+                  emailRequestId={this.state?.emailRequestId}
+                  invalidMobile={this.state?.smsIdentifierError}
+                  invalidEmail={this.state?.emailIdentifierError}
+                  smsIdentifier={this.state?.smsIdentifier}
+                  emailIdentifier={this.state?.emailIdentifier}
+                  smsSuccessMessage={this.state?.smsSuccessMessage}
+                  emailSuccessMessage={this.state?.emailSuccessMessage}
+                  smsAccessToken={this.state?.smsAccessToken}
+                  emailAccessToken={this.state?.emailAccessToken}
                 />
               </div>
 

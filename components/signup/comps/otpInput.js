@@ -32,7 +32,7 @@ class Otpinput extends React.Component {
           <button
             className="custom-signup-btn"
             onClick={() => {
-              this.props.verifyOtp(valOtp, false), console.log(valOtp);
+              this.props.verifyOtp(valOtp, this.props.requestId, this.props.notByEmail);
             }}
           >
             Verify

@@ -5,45 +5,15 @@ import {
   MdCheckCircle,
   MdCheckCircleOutline,
 } from "react-icons/md";
-
 import Otpinput from "./comps/otpInput";
 
-const OTPRetryModes = {
-  Sms: "11",
-  Voice: "4",
-  Email: "3",
-  Whatsapp: "12",
-};
 
 class StepTwo extends React.Component {
   constructor(props) {
     super(props);
-    this.state={
-      otpSendStatus:true
-
-    }
   }
 
-  setEmailAddress(email) {
-    let error = !new RegExp(this.props.EMAIL_REGEX).test(email);
-    this.setState({
-      emailOTPData: {
-        ...this.state?.emailOTPData,
-        status: error && email?.length ? false : true,
-        message: error && email?.length ? "Enter valid email." : null,
-      },
-    });
-  }
-  setOtpSendStatus = () => {
-    this.setState((prevState) => ({
-      otpSendStatus: !prevState.otpSendStatus,
-    }));
-  };
-  
   render() {
-    const otpVerificationData  = this.props;
-    // console.log(this.state.otpSendStatus)
-    console.log(this.props.otpVerificationData)
     return (
       <>
         <div className="d-none entry__right_section__container--logo-visible-in-small">
@@ -74,39 +44,20 @@ class StepTwo extends React.Component {
             <div className="d-flex flex-wrap p-0">
               <div className="step_input_wrapper__left col-xl-6 col-lg-12">
                 <div className="d-flex step_input_wrapper__mobile_veiw">
-                  <div className="d-flex flex-column gap-2 w-100">
-                  <div className=" w-100 d-flex">
-                    <input
-                      type="email"
-                      className="form-control "
-                      id="emailIdentifier"
-                      placeholder="Email Address"
-                      onChange={(e) => this.setEmailAddress(e.target.value)}
-                    />
-                    <span className="position-relative">
+                  <input
+                    type="email"
+                    className="form-control "
+                    id="emailIdentifier"
+                    placeholder="Email Address"
+                    onChange={(e) => this.props.identifierChange(false)}
+                  />
+                  <span className="position-relative">
                     <MdCheckCircle className="icon-success otp_verified_icon" />
                   </span>
-                  </div>
-                    <div className=" elert-otp-message">
-                      {this.state?.emailOTPData?.message ? (
-                        <p className="c-fs-5  ">
-                          {this.state?.emailOTPData?.message}
-                        </p>
-                      ) : null}
-                       {this.props?.otpVerificationData?.type == "success" ?(
-                        <p className="c-fs-5">
-                          Otp Send Successfully
-                        </p>
-                      ) : null}
-
-                    </div>
-                  </div>
-                  
                   <button
                     className="custom-signup-btn"
-                    onClick={() => {
-                      this.props.sendOtp(false);
-                    }}
+                    onClick={() =>
+                      this.props.sendOtp(document.getElementById("emailIdentifier").value, false)}
                   >
                     Get OTP
                   </button>
@@ -115,29 +66,32 @@ class StepTwo extends React.Component {
                   </button>
                 </div>
               </div>
-              <div className="step_input_wrapper__right col-xl-6 col-lg-12">
-                <div className="d-flex flex-column">
-                  <Otpinput
-                    tag="email"
-                    verifyOtp={this.props.verifyOtp}
-                    otpLength={this.props.widgetData?.otpLength}
-                  />
-                  {this.props.allowedRetry?.email ? (
-                    <p className="col-dark mt-3 c-fs-6">
-                      Resend on{" "}
-                      <a
-                        href="javascript:void(0)"
-                        onClick={() =>
-                          this.props.retryOtp(OTPRetryModes.Email, false)
-                        }
-                        className="col-primary c-fw-600 p-3"
-                      >
-                        Email
-                      </a>
-                    </p>
-                  ) : null}
-                </div>
-              </div>
+              {this.props?.emailIdentifier ?
+                <div className="step_input_wrapper__right col-xl-6 col-lg-12">
+                  <div className="d-flex flex-column">
+                    <Otpinput
+                      tag="email"
+                      verifyOtp={this.props.verifyOtp}
+                      otpLength={this.props.widgetData?.otpLength}
+                      requestId={this.props.emailRequestId}
+                      notByEmail={false}
+                    />
+                    {this.props.allowedRetry?.email ? (
+                      <p className="col-dark mt-3 c-fs-6">
+                        Resend on{" "}
+                        <a
+                          href={undefined}
+                          onClick={() =>
+                            this.props.retryOtp(this.props.OTPRetryModes.Email, this.props.emailRequestId, false)
+                          }
+                          className="col-primary c-fw-600 p-3 cursor-pointer"
+                        >
+                          Email
+                        </a>
+                      </p>
+                    ) : null}
+                  </div>
+                </div> : null}
             </div>
           </div>
           <div className="row mx-0 px-0 step_input_wrapper mt-4 mb-5">
@@ -152,7 +106,7 @@ class StepTwo extends React.Component {
                     className="form-control"
                     id="contactIdentifier"
                     placeholder="Mobile number"
-                    onChange={(e) => this.props.setMobileNumber(e.target.value)}
+                    onChange={(e) => this.props.identifierChange(true)}
                   />
 
                   <span className="position-relative">
@@ -160,28 +114,30 @@ class StepTwo extends React.Component {
                   </span>
                   <button
                     className="custom-signup-btn"
-                    onClick={() => this.props.sendOtp(true)}
+                    onClick={() => this.props.sendOtp(document.getElementById("contactIdentifier").value, true)}
                   >
                     Get OTP
                   </button>
                 </div>
               </div>
-              <div className="step_input_wrapper__right col-xl-6 col-lg-12">
+              {this.props?.smsIdentifier ? <div className="step_input_wrapper__right col-xl-6 col-lg-12">
                 <div className="d-flex flex-column">
                   <Otpinput
                     tag="sms"
                     verifyOtp={this.props.verifyOtp}
                     otpLength={this.props.widgetData?.otpLength}
+                    requestId={this.props.smsRequestId}
+                    notByEmail={true}
                   />
                   <p className="col-dark mt-3 c-fs-6 p-2">
                     Resend on{" "}
                     {this.props.allowedRetry?.sms ? (
                       <a
-                        href="javascript:void(0)"
+                        href={undefined}
                         onClick={() =>
-                          this.props.retryOtp(OTPRetryModes.Sms, true)
+                          this.props.retryOtp(this.props.OTPRetryModes.Sms, this.props.smsRequestId, true)
                         }
-                        className="col-primary c-fw-600 p-3"
+                        className="col-primary c-fw-600 p-3 cursor-pointer"
                       >
                         Text
                       </a>
@@ -190,11 +146,11 @@ class StepTwo extends React.Component {
                       <span>
                         <span>or </span>
                         <a
-                          href="javascript:void(0)"
+                          href={undefined}
                           onClick={() =>
-                            this.props.retryOtp(OTPRetryModes.Whatsapp, true)
+                            this.props.retryOtp(this.props.OTPRetryModes.Whatsapp, this.props.smsRequestId, true)
                           }
-                          className="col-primary c-fw-600 p-3"
+                          className="col-primary c-fw-600 p-3 cursor-pointer"
                         >
                           WhatsApp
                         </a>
@@ -204,11 +160,11 @@ class StepTwo extends React.Component {
                       <span>
                         <span>or </span>
                         <a
-                          href="javascript:void(0)"
+                          href={undefined}
                           onClick={() =>
-                            this.props.retryOtp(OTPRetryModes.Voice, true)
+                            this.props.retryOtp(this.props.OTPRetryModes.Voice, this.props.smsRequestId, true)
                           }
-                          className="col-primary c-fw-600 p-3"
+                          className="col-primary c-fw-600 p-3 cursor-pointer"
                         >
                           Voice
                         </a>
@@ -216,15 +172,39 @@ class StepTwo extends React.Component {
                     ) : null}
                   </p>
                 </div>
-              </div>
+              </div> : null}
             </div>
           </div>
-          {this.state?.smsOTPData?.message ? (
+          {this.props?.emailIdentifier && !this.props?.invalidEmail ? (
             <p
               className="col-success c-fs-6 c-fw-500 my-4"
               style={{ color: "var(--whats-app-green, #29A653)" }}
             >
-              {this.state?.smsOTPData?.message}
+              {this.props?.emailSuccessMessage}
+            </p>
+          ) : null}
+          {this.props?.smsIdentifier && !this.props?.invalidMobile ? (
+            <p
+              className="col-success c-fs-6 c-fw-500 my-4"
+              style={{ color: "var(--whats-app-green, #29A653)" }}
+            >
+              {this.props?.smsSuccessMessage}
+            </p>
+          ) : null}
+          {this.props?.invalidEmail ? (
+            <p
+              className="col-success c-fs-6 c-fw-500 my-4"
+              style={{ color: "var(--whats-app-green, #29A653)" }}
+            >
+              {this.props?.invalidEmail}
+            </p>
+          ) : null}
+          {this.props?.invalidMobile ? (
+            <p
+              className="col-success c-fs-6 c-fw-500 my-4"
+              style={{ color: "var(--whats-app-green, #29A653)" }}
+            >
+              {this.props?.invalidMobile}
             </p>
           ) : null}
           <div className="row">
@@ -237,13 +217,17 @@ class StepTwo extends React.Component {
                 <MdKeyboardArrowLeft />
                 Back
               </button>
-              <button
-                className=" next_btn col-white"
-                onClick={() => this.props.setStep(3)}
-              >
-                {" "}
-                Next <MdKeyboardArrowRight />
-              </button>
+              {
+                this.props?.smsAccessToken && this.props?.emailAccessToken ?
+                  <button
+                    className=" next_btn col-white"
+                    onClick={() => this.props.validateUserForCompany()}
+                  >
+                    {" "}
+                    Next <MdKeyboardArrowRight />
+                  </button>
+                  : null
+              }
             </div>
           </div>
         </div>
