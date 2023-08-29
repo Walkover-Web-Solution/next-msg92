@@ -41,7 +41,7 @@ class logIn extends React.Component {
     head.appendChild(otpWidgetScript);
   };
 
-  initOTPWidget() {
+  initOTPWidget(redirection) {
     const configuration = {
       widgetId: process.env.OTP_WIDGET_TOKEN,
       tokenAuth: process.env.WIDGET_AUTH_TOKEN,
@@ -49,7 +49,7 @@ class logIn extends React.Component {
         // Widget config success response
         try {
           const url = process.env.API_BASE_URL + "/api/v5/nexus/emailLogin";
-          this.hitLoginAPI(url, { code: data.message });
+          this.hitLoginAPI(url, { code: data.message }, redirection);
         } catch (error) {
           this.loginFailed(error);
         }
@@ -66,6 +66,7 @@ class logIn extends React.Component {
   // Github Login
   loginWithGitHubAccount() {
     let state = Math.floor(100000000 + Math.random() * 900000000);
+    console.log(state);
     location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/login?github=true&state=${state}`;
   }
 
@@ -78,7 +79,7 @@ class logIn extends React.Component {
     }
   };
 
-  hitLoginAPI(url, payload) {
+  hitLoginAPI(url, payload, redirection) {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -88,7 +89,7 @@ class logIn extends React.Component {
       .then(response => response.json())
       .then(result => {
         console.log(result);
-        if (!result?.hasError) {
+        if (!result?.hasError && redirection) {
           location.href = process.env.API_BASE_URL + "/hello-new/"
         }
       });
@@ -147,10 +148,9 @@ class logIn extends React.Component {
               </div>
               <h1>Welcome back!</h1>
               <div className="entry__right_section__container__entry_with mb-4">
-                <span className="d-inline-block mt-3 p-2 mb-3">Login with</span>
-
-                <div
-                  className="d-flex align-items-center flex-wrap login-icon-cont"
+                <span className="d-inline-block mt-3">Login with</span>
+                {/* <div
+                  className="d-flex align-items-center flex-wrap login-icon-cont mt-3"
                   style={{ gap: "16px" }}
                 >
                   <GoogleOAuthProvider
@@ -182,27 +182,34 @@ class logIn extends React.Component {
                   >
                     <img src="/img/icon-github.svg" />
                   </button>
-                </div>
+                </div> */}
               </div>
 
-              <span className="d-block line_on_right c-fs-6 mb-4">or</span>
+              {/* <span className="d-block line_on_right c-fs-6 mb-4">or</span> */}
 
               <button
                 className="c-col-white entry__right_section__container__entry_button mb-4"
-                onClick={() => this.initOTPWidget()}
+                onClick={() => this.initOTPWidget(true)}
               >
                 Login with OTP
               </button>
 
+              <button
+                className="c-col-white entry__right_section__container__entry_button mb-4"
+                onClick={() => this.initOTPWidget(false)}
+              >
+                Login with OTP without redirection for test
+              </button>
 
-              <p className="c-fs-6 mb-3 cursor-pointer">
+
+              <p className="c-fs-6 mb-3">
                 Trouble logging in ?{" "}
 
                 <span
                   onClick={
                     this.setShowContactonLogin
                   }
-                  className="text_blue"
+                  className="text_blue cursor-pointer"
                 >
                   Click here
                 </span>

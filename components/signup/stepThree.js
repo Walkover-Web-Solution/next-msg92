@@ -21,19 +21,22 @@ class StepThree extends React.Component {
         industryType: "",
         serviceNeeded: "",
         country: "",
+        countryName: "",
         stateProvince: "",
+        stateName: "",
         pincode: "",
         city: "",
-        otherCity:"",
+        cityId: "",
+        otherCity: "",
         address: "",
         gstNumber: "",
         agreeToTerms: false,
       },
       formErrorData: {
-        firstNameError:"",
-        lastNameError:"",
-        gstNumberError:"",
-        pincodeError:"",
+        firstNameError: "",
+        lastNameError: "",
+        gstNumberError: "",
+        pincodeError: "",
         // Add more error fields for other inputs
       },
       countryNames: [],
@@ -48,11 +51,6 @@ class StepThree extends React.Component {
         [name]: type === "checkbox" ? checked : value,
       },
     }));
-  };
-
-  finalSubmit = () => {
-    const formDataJson = JSON.stringify(this.state.formData);
-    console.log(formDataJson);
   };
 
   getCountries = async () => {
@@ -111,7 +109,7 @@ class StepThree extends React.Component {
       console.error(error);
     }
   };
-  
+
   componentDidUpdate(prevProps, prevState) {
     if (prevState.formData.country !== this.state.formData.country) {
       // Country has changed, fetch data based on the country
@@ -127,35 +125,35 @@ class StepThree extends React.Component {
   //validation 
   validateFirstName = () => {
     const { firstName } = this.state.formData;
-    
+
     // Regular expression to match names that contain only letters (no numbers or spaces)
     const nameRegex = /^[A-Za-z]+$/;
-  
+
     if (firstName.trim() === '') {
       return 'First Name is required';
     } else if (!nameRegex.test(firstName)) {
       return 'First Name should only contain letters';
     }
-  
+
     return '';
   };
-  
+
   validateLastName = () => {
     const { lastName } = this.state.formData;
-    
+
     // Regular expression to match names that contain only letters (no numbers or spaces)
     const nameRegex = /^[A-Za-z]+$/;
-  
+
     if (lastName.trim() === '') {
       return 'Last Name is required';
     } else if (!nameRegex.test(lastName)) {
       return 'Last Name should only contain letters';
     }
-  
+
     return '';
   };
-  
-  
+
+
   validateGSTNumber = () => {
     const { gstNumber } = this.state.formData;
     const gstRegex = /^[\dA-Z]{15}$/;
@@ -167,15 +165,14 @@ class StepThree extends React.Component {
   validatePincode = () => {
     const { pincode } = this.state.formData;
     const pincodeRegex = /^\d{6}$/;
-  
+
     if (!pincodeRegex.test(pincode)) {
       return 'Pincode must be a 6-digit number';
     }
     return '';
   };
-  
-  finalSubmit = () => {
 
+  finalSubmit = () => {
     const firstNameError = this.validateFirstName();
     const lastNameError = this.validateLastName();
     const gstNumberError = this.validateGSTNumber();
@@ -193,10 +190,7 @@ class StepThree extends React.Component {
         },
       }));
     } else {
-
-      const formDataJson = JSON.stringify(this.state.formData);
-      console.log(formDataJson);
-
+      this.props.finalSubmit(this.state.formData);
     }
   };
 
@@ -247,7 +241,7 @@ class StepThree extends React.Component {
                 <div className="col-lg-6 form-input-with-error">
                   <input
                     type="text"
-                    className={this.state.formErrorData.firstNameError ?'form-control input-error-display':'form-control'}
+                    className={this.state.formErrorData.firstNameError ? 'form-control input-error-display' : 'form-control'}
                     placeholder="First Name"
                     name="firstName"
                     value={this.state.formData.firstName}
@@ -258,7 +252,7 @@ class StepThree extends React.Component {
                 <div className="col-lg-6 form-input-with-error">
                   <input
                     type="text"
-                    className={this.state.formErrorData.lastNameError ?'form-control input-error-display':'form-control'}
+                    className={this.state.formErrorData.lastNameError ? 'form-control input-error-display' : 'form-control'}
                     placeholder="Last Name"
                     name="lastName"
                     value={this.state.formData.lastName}
@@ -348,17 +342,17 @@ class StepThree extends React.Component {
                     <option value="">State/Province</option>
                     {this.state.countryData
                       ? this.state.countryData?.data.map((stateProvince) => (
-                          <option key={stateProvince.id} value={stateProvince.id}>
-                            {stateProvince.name}
-                          </option>
-                        ))
+                        <option key={stateProvince.id} value={stateProvince.id}>
+                          {stateProvince.name}
+                        </option>
+                      ))
                       : null}
                   </select>
                 </div>
                 <div className="col-lg-6  step_two_wrapper--company-form form-input-with-error">
                   <input
                     type="text"
-                    className={this.state.formErrorData.pincodeError ?'form-control input-error-display':'form-control'}
+                    className={this.state.formErrorData.pincodeError ? 'form-control input-error-display' : 'form-control'}
                     placeholder="Pincode"
                     name="pincode"
                     value={this.state.formData.pincode}
@@ -379,25 +373,25 @@ class StepThree extends React.Component {
                     <option value="">City</option>
                     {this.state.countryData
                       ? this.state.stateData?.data.map((city) => (
-                          <option key={city.id} value={city.countryCode}>
-                            {city.name}
-                          </option>
-                        ))
+                        <option key={city.id} value={city.countryCode}>
+                          {city.name}
+                        </option>
+                      ))
                       : null}
                     <option value="other">Other</option>
                   </select>
                 </div>
-                {this.state.formData.city =="other"&&
-                 <div className="col-12 step_two_wrapper--company-form">
-                 <input
-                   type="text"
-                   className="form-control"
-                   placeholder="Enter your city"
-                   name="otherCity"
-                   value={this.state.formData.otherCity}
-                   onChange={this.handleInputChange}
-                 />
-               </div>
+                {this.state.formData.city == "other" &&
+                  <div className="col-12 step_two_wrapper--company-form">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Enter your city"
+                      name="otherCity"
+                      value={this.state.formData.otherCity}
+                      onChange={this.handleInputChange}
+                    />
+                  </div>
                 }
                 <div className="col-12 step_two_wrapper--company-form">
                   <input
@@ -412,7 +406,7 @@ class StepThree extends React.Component {
                 <div className="col-12 step_two_wrapper--company-form form-input-with-error">
                   <input
                     type="text"
-                    className={this.state.formErrorData.gstNumberError ?'form-control input-error-display':'form-control'}
+                    className={this.state.formErrorData.gstNumberError ? 'form-control input-error-display' : 'form-control'}
                     placeholder="GST number"
                     name="gstNumber"
                     value={this.state.formData.gstNumber}
@@ -458,7 +452,7 @@ class StepThree extends React.Component {
                     Next <MdKeyboardArrowRight />
                   </button>
                 </div>
-                
+
               </div>
             </div>
           </form>

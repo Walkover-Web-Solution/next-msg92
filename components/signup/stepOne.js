@@ -16,7 +16,7 @@ class StepOne extends React.Component {
         </div>
         <h1>Create an account</h1>
         <div className="entry__right_section__container__entry_with d-flex mb-4 me-4">
-          <div className="signup_with__right mt-2">
+          {/* <div className="signup_with__right mt-2">
             <span className="d-inline-block mb-4">Are you a developer?</span>
 
             <div className="d-flex align-items-center">
@@ -33,10 +33,10 @@ class StepOne extends React.Component {
                 />
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
 
-        <span className="d-block line_on_right c-fs-6 mb-4">or</span>
+        {/* <span className="d-block line_on_right c-fs-6 mb-4">or</span> */}
 
         <button
           className="entry__right_section__container__entry_button mb-4"
