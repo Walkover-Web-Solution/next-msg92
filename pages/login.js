@@ -41,7 +41,7 @@ class logIn extends React.Component {
     head.appendChild(otpWidgetScript);
   };
 
-  initOTPWidget() {
+  initOTPWidget(redirection) {
     const configuration = {
       widgetId: process.env.OTP_WIDGET_TOKEN,
       tokenAuth: process.env.WIDGET_AUTH_TOKEN,
@@ -49,7 +49,7 @@ class logIn extends React.Component {
         // Widget config success response
         try {
           const url = process.env.API_BASE_URL + "/api/v5/nexus/emailLogin";
-          this.hitLoginAPI(url, { code: data.message });
+          this.hitLoginAPI(url, { code: data.message }, redirection);
         } catch (error) {
           this.loginFailed(error);
         }
@@ -79,7 +79,7 @@ class logIn extends React.Component {
     }
   };
 
-  hitLoginAPI(url, payload) {
+  hitLoginAPI(url, payload, redirection) {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -89,7 +89,7 @@ class logIn extends React.Component {
       .then(response => response.json())
       .then(result => {
         console.log(result);
-        if (!result?.hasError) {
+        if (!result?.hasError && redirection) {
           location.href = process.env.API_BASE_URL + "/hello-new/"
         }
       });
@@ -189,9 +189,16 @@ class logIn extends React.Component {
 
               <button
                 className="c-col-white entry__right_section__container__entry_button mb-4"
-                onClick={() => this.initOTPWidget()}
+                onClick={() => this.initOTPWidget(true)}
               >
                 Login with OTP
+              </button>
+
+              <button
+                className="c-col-white entry__right_section__container__entry_button mb-4"
+                onClick={() => this.initOTPWidget(false)}
+              >
+                Login with OTP without redirection for test
               </button>
 
 
