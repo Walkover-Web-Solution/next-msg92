@@ -22,50 +22,28 @@
     }
   </script>
 
-  <script>
-
-    const previewStyles = `
-      html,
-      body {
-        color: #444;
-        font-size: 14px;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+<script>
+  CMS.registerEditorComponent({
+    id: "youtube",
+    label: "Youtube",
+    fields: [{name: 'id', label: 'Youtube Video URL'}],
+   
+    
+    
+    fromBlock: function(match) {
+      return {
+        id: match[1]
       }
-
-      body {
-        padding: 20px;
-      }
-
-      h1 {
-        margin-top: 20px;
-        color: #666;
-        font-weight: bold;
-        font-size: 32px;
-      }
-
-      img {
-        max-width: 100%;
-      }
-    `;
-    CMS.registerEditorComponent({
-      id: "youtube",
-      label: "Youtube",
-      fields: [{name: 'id', label: 'Youtube Video ID'}],
-      pattern: /^{{<\s?youtube (\S+)\s?>}}/,
-      fromBlock: function(match) {
-        return {
-          id: match[1]
-        };
-      },
-      toBlock: function(obj) {
-        return '{{< youtube ' + obj.id + ' >}}';
-      },
-      toPreview: function(obj) {
-        return (
-          '<img src="http://img.youtube.com/vi/' + obj.id + '/maxresdefault.jpg" alt="Youtube Video"/>'
-        );
-      }
-    });
-  </script>
+    },  
+    toBlock: function(obj) {    
+      return '<ReactPlayer url="' + obj.id + '" controls={true} />';
+    },
+    toPreview: function(obj) {
+      return (
+        '<video width="320" height="240" controls> <source src= "http://img.youtube.com/vi/' + obj.id + '/maxresdefault.jpg" "> </video>'
+      );
+    }
+  });
+</script>
 </body>
 </html>
