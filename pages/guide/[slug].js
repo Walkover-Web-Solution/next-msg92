@@ -7,12 +7,11 @@ import matter from 'gray-matter';
 import Head from 'next/head';
 import { format } from "date-fns";
 import { useRouter } from 'next/router';
-import  {getTag} from '@/components/lib/tags'
 // import { SocialList } from '@/components/socialList';
-import TagButton from '@/components/tagButton';
-import YouTube from 'react-youtube';
+import dynamic from 'next/dynamic'
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 // const components = { Test }
-const component = { YouTube };
+const component = { ReactPlayer };
 // console.log(component, "component");
 const slugToPostContent = (postContents => {
  
@@ -25,11 +24,7 @@ const slugToPostContent = (postContents => {
     postContents?.forEach(it => hash[it.slug] = it)
     return hash;
   })(fetchPostContent());
-export default function TestPage({ source , title, author, date,thumbnailImage, tags}) {
-console.log(tags, "tags in slug");
-tags.map((it , i)=>{
-console.log(it, "console");
-})
+export default function TestPage({ source , title, author, date,thumbnailImage}) {
   const router  = useRouter();
 
 
@@ -53,22 +48,6 @@ console.log(it, "console");
       </div>
 
       <button className="btn btn-dark mt-3" onClick={handleClick} >Back</button>
-      <div>
-      {/* {tags.map((it, i) => (
-       <li key={i}>
-        <TagButton tag={tags}/>
-        </li>
-        ))} */}
-
-      <ul className={"tag-list"}>
-            {tags.map((it, i) => (
-              <li key={i}>
-                <TagButton tag={getTag(it)} />
-              </li>
-            ))}
-      </ul>
-      </div>
-      
       <footer>
       {/* <div className={"social-list"}> 
         <SocialList date ={date}/>
@@ -93,7 +72,6 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps(slug) {
-  console.log(slug, "static props")
   const slugData = slug.params.slug;
     const source = fs.readFileSync(slugToPostContent[slugData]?.fullPath, "utf8");
     const matterResult = matter(source, {
@@ -103,20 +81,13 @@ export async function getStaticProps(slug) {
       },
     });
     const thumbnailImage = matterResult?.data?.thumbnail;
-    // const youtube = matterResult?.data?.youtube;
-    const tags = matterResult?.data?.tags;
-    console.log(tags, "tags in matteraResult");
     const title = matterResult?.data?.title;
     const author = matterResult?.data?.author;
     const content = matterResult?.content;
     var date = new Date(matterResult?.data?.date);
     date = format(date, "LLLL d, yyyy")
-    // const tags = matterResult?.data?.tags;
-    // console.log(matterResult?.content,"matterResult?.data?");
-    // console.log(content,"content00");
-  // MDX text - can be from a local file, database, anywhere
   const mdxSource = await serialize(content)
   // const mdxSource = await renderToString(content, { scope: matterResult });
   // console.log(mdxSource,"generated");
-  return { props: { source: mdxSource || "", title: title || "", author: author || "", date: date, thumbnailImage:thumbnailImage || "", tags: tags || ""} }
+  return { props: { source: mdxSource || "", title: title || "", author: author || "", date: date, thumbnailImage:thumbnailImage || ""} }
 }

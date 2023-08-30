@@ -1,11 +1,9 @@
 import React from "react";
 import PostItem from "./postItem";
-import TagLink from "./tagLink";
 import Pagination from "./pagination";
 // import TagButton from "./tagButton";
 
 export default function PostList({ posts, tags, pagination }) {
-  console.log(tags, "tasg in postList");
   return (
     <div className={"container blog-home-container"}>
       <div className={"posts"}>
