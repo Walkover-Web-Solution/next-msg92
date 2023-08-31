@@ -9,7 +9,7 @@ const nextConfig = {
     msalClientId: "164d09e1-531c-427d-9358-9d1347c74170",
     msalTenantId: "f8cdef31-a31e-4b4a-93e4-5f571e91255a",
     REDIRECT_URL: "http://localhost:9999",
-    OTP_WIDGET_TOKEN: "336843745072363038383330",
+    OTP_WIDGET_TOKEN: "336843706257323937383634",
     WIDGET_AUTH_TOKEN: "278060T5b78OzKKr964edc975P1",
     WIDGET_SCRIPT:
       "https://test.msg91.com/hello-new/assets/otp-provider/otp-provider.js",

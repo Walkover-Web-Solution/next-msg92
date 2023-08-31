@@ -1,7 +1,5 @@
 import React from "react";
-import { GoogleOAuthProvider, GoogleLogin, useGoogleLogin } from '@react-oauth/google';
 import { MdCall, MdEmail } from "react-icons/md";
-import GoogleLoginButton from "@/components/signup/googleLogin";
 
 class logIn extends React.Component {
   constructor(props) {
@@ -89,6 +87,9 @@ class logIn extends React.Component {
       .then(response => response.json())
       .then(result => {
         console.log(result);
+        document.cookie = `HELLO_APP_HASH=${result?.sessionDetails?.HELLO_APP_HASH_COOKIE}; path=/; domain=.msg91.com`;
+        document.cookie = `PROXY_APP_HASH=${result?.sessionDetails?.PROXY_APP_HASH_COOKIE}; path=/; domain=.msg91.com`;
+        document.cookie = `PHPSESSID=${result?.sessionDetails?.sessionID}; path=/; domain=.msg91.com`;
         if (!result?.hasError && redirection) {
           location.href = process.env.API_BASE_URL + "/hello-new/"
         }
