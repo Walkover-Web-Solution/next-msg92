@@ -86,10 +86,10 @@ class logIn extends React.Component {
     fetch(url, requestOptions)
       .then(response => response.json())
       .then(result => {
-        console.log(result);
-        document.cookie = `HELLO_APP_HASH=${result?.sessionDetails?.HELLO_APP_HASH_COOKIE}; path=/; domain=.msg91.com`;
-        document.cookie = `PROXY_APP_HASH=${result?.sessionDetails?.PROXY_APP_HASH_COOKIE}; path=/; domain=.msg91.com`;
-        document.cookie = `PHPSESSID=${result?.sessionDetails?.sessionID}; path=/; domain=.msg91.com`;
+        console.log(result.data);
+        document.cookie = `HELLO_APP_HASH=${result?.data?.sessionDetails?.HELLO_APP_HASH_COOKIE}; path=/; domain=.msg91.com`;
+        document.cookie = `PROXY_APP_HASH=${result?.data?.sessionDetails?.PROXY_APP_HASH_COOKIE}; path=/; domain=.msg91.com`;
+        document.cookie = `PHPSESSID=${result?.data?.sessionDetails?.sessionID}; path=/; domain=.msg91.com`;
         if (!result?.hasError && redirection) {
           location.href = process.env.API_BASE_URL + "/hello-new/"
         }
