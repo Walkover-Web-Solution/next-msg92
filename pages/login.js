@@ -1,5 +1,8 @@
+import GoogleLoginButton from "@/components/signup/googleLogin";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import React from "react";
 import { MdCall, MdEmail } from "react-icons/md";
+import { getQueryParamsDeatils } from "@/components/utils";
 
 class logIn extends React.Component {
   constructor(props) {
@@ -8,18 +11,23 @@ class logIn extends React.Component {
     this.state = {
       loginInProgress: false,
       showContactonLogin: false,
-      googleCLientId: process.env.GOOGLE_CLIENT_ID
     };
 
-    let queryParams = this.getQueryParamsDeatils(this.props?.browserPathCase);
+    let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
     if (queryParams) {
-      if (queryParams?.github === "true") {
+      if (queryParams?.githublogin === "true") {
         const url = process.env.API_BASE_URL + "/api/v5/nexus/githubLogin";
         this.hitLoginAPI(url, { code: queryParams?.code, state: queryParams?.state });
       }
-      if (queryParams?.loginWithZoho === "true") {
+      if (queryParams?.loginWithZoho.includes("true")) {
+        let paramsKeyValue = this.props?.browserPathCase.split("#")[1].split("&");
+        let userData = {};
+        for (let keyValue of paramsKeyValue) {
+          let data = keyValue.split("=");
+          userData[data[0]] = data[1];
+        }
         const url = process.env.API_BASE_URL + "/api/v5/nexus/zohoLogin";
-        this.hitLoginAPI(url, { code: queryParams?.code, state: queryParams?.state });
+        this.hitLoginAPI(url, userData);
       }
     }
   }
@@ -61,13 +69,6 @@ class logIn extends React.Component {
     location.href = `https://accounts.zoho.com/oauth/v2/auth?client_id=${process.env.ZOHO_CLIENT_ID}&response_type=token&scope=AaaServer.profile.Read&redirect_uri=${process.env.REDIRECT_URL}/login?loginWithZoho=true`;
   }
 
-  // Github Login
-  loginWithGitHubAccount() {
-    let state = Math.floor(100000000 + Math.random() * 900000000);
-    console.log(state);
-    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/login?github=true&state=${state}`;
-  }
-
   // Google Login
   googleLogin = (response) => {
     console.log(response);
@@ -86,33 +87,18 @@ class logIn extends React.Component {
     fetch(url, requestOptions)
       .then(response => response.json())
       .then(result => {
-        console.log(result.data);
-        for(let key in result?.data?.sessionDetails) {
+        for (let key in result?.data?.sessionDetails) {
           document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
-          console.log(`${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`);
+          document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
         }
         if (!result?.hasError && redirection) {
-          location.href = process.env.API_BASE_URL + "/hello-new/"
+          location.href = process.env.SUCCESS_REDIRECTION_URL
         }
       });
   }
 
   loginFailed(error) {
     console.log(error);
-  }
-
-  getQueryParamsDeatils(url) {
-    let params = (url || "").split("?")?.[1];
-    if (params) {
-      let paramsKeyValue = params.split("&");
-      let userData = {};
-      for (let keyValue of paramsKeyValue) {
-        let data = keyValue.split("=");
-        userData[data[0]] = data[1];
-      }
-      return userData;
-    }
-    return null;
   }
 
   setShowContactonLogin = () => {
@@ -151,16 +137,16 @@ class logIn extends React.Component {
               <h1>Welcome back!</h1>
               <div className="entry__right_section__container__entry_with mb-4">
                 <span className="d-inline-block mt-3">Login with</span>
-                {/* <div
+                <div
                   className="d-flex align-items-center flex-wrap login-icon-cont mt-3"
                   style={{ gap: "16px" }}
                 >
                   <GoogleOAuthProvider
                     clientId={`${process.env.GOOGLE_CLIENT_ID}`}
                   >
-                    <GoogleLoginButton googleLoginResponse={this.googleLogin}/>
+                    <GoogleLoginButton googleLoginResponse={this.googleLogin} />
                   </GoogleOAuthProvider>
-                  <button
+                  {/* <button
                     style={{
                       border: "1px solid var(--primary-light-theme, #1E75BA)",
                       background: "var(--light-white-bg, #FFF)",
@@ -168,26 +154,29 @@ class logIn extends React.Component {
                     onClick={() => googleLogin()}
                   >
                     <img src="/img/microsoft-svg.svg" />
-                  </button>
+                  </button> */}
                   <button
                     style={{ border: "1px solid #D94C44" }}
                     onClick={() => this.loginWithZoho()}
                   >
                     <img src="/img/icon-zogo.svg" />
                   </button>
-                  <button
-                    style={{
-                      border: "1px solid #000",
-                      background: "var(--light-white-bg, #FFF)",
-                    }}
-                    onClick={() => this.loginWithGitHubAccount()}
-                  >
-                    <img src="/img/icon-github.svg" />
-                  </button>
-                </div> */}
+
+                  {/* onClick={() => this.loginWithGitHubAccount()} */}
+                  <a href="/github-auth?login=true">
+                    <button
+                      style={{
+                        border: "1px solid #000",
+                        background: "var(--light-white-bg, #FFF)",
+                      }}
+                    >
+                      <img src="/img/icon-github.svg" />
+                    </button>
+                  </a>
+                </div>
               </div>
 
-              {/* <span className="d-block line_on_right c-fs-6 mb-4">or</span> */}
+              <span className="d-block line_on_right c-fs-6 mb-4">or</span>
 
               <button
                 className="c-col-white entry__right_section__container__entry_button mb-4"
@@ -196,12 +185,12 @@ class logIn extends React.Component {
                 Login with OTP
               </button>
 
-              <button
+              {/* <button
                 className="c-col-white entry__right_section__container__entry_button mb-4"
                 onClick={() => this.initOTPWidget(false)}
               >
                 Login with OTP without redirection for test
-              </button>
+              </button> */}
 
 
               <p className="c-fs-6 mb-3">

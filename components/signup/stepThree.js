@@ -75,8 +75,9 @@ class StepThree extends React.Component {
         console.error(error);
       });
   }
+
   fetchDataBasedOnCountry = async (selectedCountry) => {
-    // console.log(selectedCountry);
+    let countryName = this.state.countryNames.find(e => +e.id === +this.state.formData.country)?.name;
     try {
       const response = await axios.get(
         `${process.env.API_BASE_URL}/api/v5/web/getStatesByCountryId/${selectedCountry}`,
@@ -87,13 +88,18 @@ class StepThree extends React.Component {
           },
         }
       );
-      this.setState({ countryData: response.data });
+      this.setState({
+        countryData: response.data, formData: {
+          ...this.state.formData,
+          countryName
+        }
+      });
     } catch (error) {
       console.error(error);
     }
   };
+
   fetchDataBasedOnState = async (selectedstateProvince) => {
-    // console.log(selectedstateProvince);
     try {
       const response = await axios.get(
         `${process.env.API_BASE_URL}/api/v5/web/getCitiesByStateId/${selectedstateProvince}`,
@@ -125,34 +131,27 @@ class StepThree extends React.Component {
   //validation 
   validateFirstName = () => {
     const { firstName } = this.state.formData;
-
     // Regular expression to match names that contain only letters (no numbers or spaces)
     const nameRegex = /^[A-Za-z]+$/;
-
     if (firstName.trim() === '') {
       return 'First Name is required';
     } else if (!nameRegex.test(firstName)) {
       return 'First Name should only contain letters';
     }
-
     return '';
   };
 
   validateLastName = () => {
     const { lastName } = this.state.formData;
-
     // Regular expression to match names that contain only letters (no numbers or spaces)
     const nameRegex = /^[A-Za-z]+$/;
-
     if (lastName.trim() === '') {
       return 'Last Name is required';
     } else if (!nameRegex.test(lastName)) {
       return 'Last Name should only contain letters';
     }
-
     return '';
   };
-
 
   validateGSTNumber = () => {
     const { gstNumber } = this.state.formData;
@@ -162,6 +161,7 @@ class StepThree extends React.Component {
     }
     return '';
   };
+
   validatePincode = () => {
     const { pincode } = this.state.formData;
     const pincodeRegex = /^\d{6}$/;
@@ -196,8 +196,6 @@ class StepThree extends React.Component {
 
 
   render() {
-    // console.log(this.state.countryData?.data, "ss");
-    // console.log(this.state.stateData?.data, "sss");
     return (
       <>
         <div className="d-none entry__right_section__container--logo-visible-in-small">
