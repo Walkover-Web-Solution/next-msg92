@@ -77,7 +77,7 @@ class StepThree extends React.Component {
   }
 
   fetchDataBasedOnCountry = async (selectedCountry) => {
-    // console.log(selectedCountry);
+    let countryName = this.state.countryNames.find(e => +e.id === +this.state.formData.country)?.name;
     try {
       const response = await axios.get(
         `${process.env.API_BASE_URL}/api/v5/web/getStatesByCountryId/${selectedCountry}`,
@@ -88,7 +88,12 @@ class StepThree extends React.Component {
           },
         }
       );
-      this.setState({ countryData: response.data });
+      this.setState({
+        countryData: response.data, formData: {
+          ...this.state.formData,
+          countryName
+        }
+      });
     } catch (error) {
       console.error(error);
     }
