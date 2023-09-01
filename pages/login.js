@@ -19,9 +19,15 @@ class logIn extends React.Component {
         const url = process.env.API_BASE_URL + "/api/v5/nexus/githubLogin";
         this.hitLoginAPI(url, { code: queryParams?.code, state: queryParams?.state });
       }
-      if (queryParams?.loginWithZoho === "true") {
+      if (queryParams?.loginWithZoho.includes("true")) {
+        let paramsKeyValue = this.props?.browserPathCase.split("#")[1].split("&");
+        let userData = {};
+        for (let keyValue of paramsKeyValue) {
+          let data = keyValue.split("=");
+          userData[data[0]] = data[1];
+        }
         const url = process.env.API_BASE_URL + "/api/v5/nexus/zohoLogin";
-        this.hitLoginAPI(url, { code: queryParams?.code, state: queryParams?.state });
+        this.hitLoginAPI(url, userData);
       }
     }
   }
@@ -149,12 +155,12 @@ class logIn extends React.Component {
                   >
                     <img src="/img/microsoft-svg.svg" />
                   </button> */}
-                  {/* <button
+                  <button
                     style={{ border: "1px solid #D94C44" }}
                     onClick={() => this.loginWithZoho()}
                   >
                     <img src="/img/icon-zogo.svg" />
-                  </button> */}
+                  </button>
 
                   {/* onClick={() => this.loginWithGitHubAccount()} */}
                   <a href="/github-auth?login=true">

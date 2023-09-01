@@ -8,8 +8,8 @@ const nextConfig = {
     GITHUB_CLIENT_ID: "6ee6d0268be4aab8c594",
     msalClientId: "164d09e1-531c-427d-9358-9d1347c74170",
     msalTenantId: "f8cdef31-a31e-4b4a-93e4-5f571e91255a",
-    REDIRECT_URL: "http://localhost:9999",
-    // REDIRECT_URL: "https://web.msg91.com",
+    // REDIRECT_URL: "http://localhost:9999",
+    REDIRECT_URL: "https://web.msg91.com",
     OTP_WIDGET_TOKEN: "336843706257323937383634",
     WIDGET_AUTH_TOKEN: "278060T5b78OzKKr964edc975P1",
     WIDGET_SCRIPT:
