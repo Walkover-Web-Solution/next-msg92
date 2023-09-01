@@ -8,16 +8,16 @@ import ProductMenu from "./productmenu";
 import Notification from "./notification";
 import Link from "next/link";
 
-const navbar = ({ brawserPath }) => {
+const navbar = ({ brawserPath }) => {  
   var path = brawserPath.split("/")[1];
+  //product = ['sms', 'email', 'voice', 'whatsapp', '']
   path = path.length == 2 ? "/" + path : "";
   const [showOverlay, setShowOverlay] = useState(false);
   const [show, setShow] = useState(false);
   var mininav_notification = "d-block";
   const toggleOverlay = () => {
     setShowOverlay(true);
-  };
-
+  };  
  
   useEffect(() => {
     $("#product-link").on("mouseenter", function () {

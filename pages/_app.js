@@ -12,6 +12,8 @@ export default function App({ Component, pageProps }) {
   var  brawserPath = router.asPath;
   var brawserPathCase = brawserPath;
   var brawserPathMeta = brawserPath;
+  //var product = router.query.product;
+  
   if (brawserPath !== '/') {
     const pattern = /\/([^/?]+)/;
     const result = brawserPath.match(pattern);
@@ -59,7 +61,8 @@ export default function App({ Component, pageProps }) {
     // Loop through the anchor tags
     for (var i = 0; i < anchorTags.length; i++) {
       var href = anchorTags[i].getAttribute("href"); // Get the current href value
-      if (href) {        
+      var query = getCookie('msg91_query');
+      if (href && query) {
         anchorTags[i].setAttribute("href", href + getCookie('msg91_query'));
       }
     }
