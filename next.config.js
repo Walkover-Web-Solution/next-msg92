@@ -4,8 +4,8 @@ const nextConfig = {
   env: {
     API_BASE_URL: 'https://test.msg91.com',
     GOOGLE_CLIENT_ID: "944172403132-77c4il77pvt6p4hm293gimbhh3av5l7d.apps.googleusercontent.com",
-    ZOHO_CLIENT_ID: "1000.TULN05SRMPWS74404W4PL31U0GA46H",
-    GITHUB_CLIENT_ID: "6ee6d0268be4aab8c594",
+    ZOHO_CLIENT_ID: "1000.XHM7U16ACCWKUUZBTESH8DVM8AKSWT",
+    GITHUB_CLIENT_ID: "b7432f8d5a708e33b3b0",
     MSAL_CLIENT_ID: '164d09e1-531c-427d-9358-9d1347c74170',
     MSAL_TENANT_ID: 'f8cdef31-a31e-4b4a-93e4-5f571e91255a',
     // REDIRECT_URL: "http://localhost:9999",

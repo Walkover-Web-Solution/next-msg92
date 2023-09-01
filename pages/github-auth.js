@@ -4,7 +4,9 @@ import { getQueryParamsDeatils, getQueryStringFromObject } from "@/components/ut
 class githubLogin extends React.Component {
     constructor(props) {
         super(props);
+    }
 
+    componentDidMount() {
         let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
         if (queryParams) {
             if (queryParams?.login === "true") {

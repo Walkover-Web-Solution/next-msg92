@@ -17,7 +17,9 @@ class logIn extends React.Component {
       showContactonLogin: false,
       msalInstance: new PublicClientApplication(msalConfig)
     };
+  }
 
+  componentDidMount() {
     let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
     if (queryParams) {
       if (queryParams?.githublogin === "true") {
@@ -32,13 +34,11 @@ class logIn extends React.Component {
           userData[data[0]] = data[1];
         }
         const url = process.env.API_BASE_URL + "/api/v5/nexus/zohoLogin";
-        this.hitLoginAPI(url, userData);
+        this.hitLoginAPI(url, { ...userData, code: userData?.access_token });
       }
+    } else {
+      this.otpWidgetSetup();
     }
-  }
-
-  componentDidMount() {
-    this.otpWidgetSetup();
   }
 
   // Widget Login
@@ -52,7 +52,7 @@ class logIn extends React.Component {
     head.appendChild(otpWidgetScript);
   };
 
-  initOTPWidget(redirection) {
+  initOTPWidget() {
     const configuration = {
       widgetId: process.env.OTP_WIDGET_TOKEN,
       tokenAuth: process.env.WIDGET_AUTH_TOKEN,
@@ -60,7 +60,7 @@ class logIn extends React.Component {
         // Widget config success response
         try {
           const url = process.env.API_BASE_URL + "/api/v5/nexus/emailLogin";
-          this.hitLoginAPI(url, { code: data.message }, redirection);
+          this.hitLoginAPI(url, { code: data.message });
         } catch (error) {
           this.loginFailed(error);
         }
@@ -83,7 +83,7 @@ class logIn extends React.Component {
     }
   };
 
-  hitLoginAPI(url, payload, redirection) {
+  hitLoginAPI(url, payload) {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -96,7 +96,7 @@ class logIn extends React.Component {
           document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
           document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
         }
-        if (!result?.hasError && redirection) {
+        if (!result?.hasError) {
           location.href = process.env.SUCCESS_REDIRECTION_URL
         }
       });
@@ -183,15 +183,6 @@ class logIn extends React.Component {
               >
                 Login with OTP
               </button>
-
-              {/* <button
-                className="c-col-white entry__right_section__container__entry_button mb-4"
-                onClick={() => this.initOTPWidget(false)}
-              >
-                Login with OTP without redirection for test
-              </button> */}
-
-
               <p className="c-fs-6 mb-3">
                 Trouble logging in ?{" "}
 
