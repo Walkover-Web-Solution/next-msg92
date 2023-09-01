@@ -125,7 +125,7 @@ const navbar = ({ brawserPath }) => {
             <Link
               href="https://control.msg91.com/signup/"
               target="_blank"
-              className="btn btn-dark c-fs-4 c-fw-sb px-3"
+              className="btn btn-dark c-fs-4 c-fw-sb px-3 utm"
               id="signup-btn"
             >
               Sign Up
