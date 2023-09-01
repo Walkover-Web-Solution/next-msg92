@@ -3,6 +3,7 @@ import { MdDone } from "react-icons/md";
 import StepOne from "@/components/signup/stepOne";
 import StepTwo from "@/components/signup/stepTwo";
 import StepThree from "@/components/signup/stepThree";
+import { getQueryParamsDeatils } from "@/components/utils";
 
 const OTPRetryModes = {
   Sms: '11',
@@ -21,11 +22,11 @@ class SignUp extends React.Component {
     this.retryOtp = this.retryOtp.bind(this);
     this.verifyOtp = this.verifyOtp.bind(this);
 
-    let queryParams = this.getQueryParamsDeatils(this.props?.browserPathCase);
+    let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
 
     this.state = {
       activeStep: queryParams?.["code"] ? 2 : 1,
-      signupByGitHub: queryParams?.["github"] ? true : false,
+      signupByGitHub: queryParams?.["githubsignup"] ? true : false,
       githubCode: queryParams?.["code"],
       githubState: queryParams?.["state"],
       widgetData: null,
@@ -45,11 +46,6 @@ class SignUp extends React.Component {
     });
   };
 
-  signupByGitHubAccount() {
-    let state = Math.floor(100000000 + Math.random() * 900000000);
-    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/login?github=true&state=${state}`;
-  }
-
   otpWidgetSetup = () => {
     const head = document.getElementsByTagName("head")[0];
     const currentTimestamp = new Date().getTime();
@@ -60,8 +56,8 @@ class SignUp extends React.Component {
       const configuration = {
         widgetId: process.env.OTP_WIDGET_TOKEN,
         tokenAuth: process.env.WIDGET_AUTH_TOKEN,
-        success: (data) => {},
-        failure: (error) => {},
+        success: (data) => { },
+        failure: (error) => { },
         exposeMethods: true,
       };
       window.initSendOTP(configuration);
@@ -168,24 +164,9 @@ class SignUp extends React.Component {
     );
   }
 
-  getQueryParamsDeatils(url) {
-    let params = (url || '').split('?')?.[1];
-    if (params) {
-      let paramsKeyValue = params.split('&');
-      let userData = {};
-      for (let keyValue of paramsKeyValue) {
-        let data = keyValue.split('=');
-        userData[data[0]] = data[1];
-      }
-      return userData;
-    }
-    return null;
-  }
-
   validateUserForCompany = () => {
-    const url = process.env.API_BASE_URL + "/api/v5/nexus/validateEmailSignUp";
+    let url = process.env.API_BASE_URL + "/api/v5/nexus/validateEmailSignUp";
     let payload = {
-      "emailToken": this.state.emailAccessToken,
       "mobileToken": this.state.smsAccessToken,
       "utm_term": "utm_term",
       "utm_medium": "utm_medium",
@@ -198,6 +179,13 @@ class SignUp extends React.Component {
       "reference": "reference",
       "source": "msg91"
     }
+    if (this.state.githubCode && this.state.signupByGitHub) {
+      payload['code'] = this.state.githubCode;
+      payload['state'] = this.state.githubState;
+      url = process.env.API_BASE_URL + "/api/v5/nexus/validateGithubSignUp";
+    } else {
+      payload['emailToken'] = this.state.emailAccessToken;
+    }
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -206,11 +194,16 @@ class SignUp extends React.Component {
     fetch(url, requestOptions)
       .then(response => response.json())
       .then(result => {
+        for (let key in result?.data?.sessionDetails) {
+          document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
+          document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
+        }
+        this.setState({ sessionDetails: result?.data?.sessionDetails });
         if (!result?.hasError) {
           if (result?.data?.nextStep === "createNewCompany") {
             this.setStep(3);
           } else {
-            location.href = process.env.API_BASE_URL + "/app/"
+            location.href = process.env.SUCCESS_REDIRECTION_URL;
           }
         }
       });
@@ -245,15 +238,17 @@ class SignUp extends React.Component {
 
     // const requestOptions = {
     //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
+    //   headers: { 'Content-Type': 'application/json', 'PHPSESSID': this.state.sessionDetails?.PHPSESSID },
     //   body: JSON.stringify(payload)
     // };
     // fetch(url, requestOptions)
     //   .then(response => response.json())
     //   .then(result => {
-    //     if (!result?.hasError) {
-    //       location.href = process.env.API_BASE_URL + "/app/"
+    //     for (let key in result?.data?.sessionDetails) {
+    //       document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
+    //       document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
     //     }
+    //     location.href = process.env.SUCCESS_REDIRECTION_URL;
     //   });
   }
 
@@ -342,6 +337,7 @@ class SignUp extends React.Component {
                   emailSuccessMessage={this.state?.emailSuccessMessage}
                   smsAccessToken={this.state?.smsAccessToken}
                   emailAccessToken={this.state?.emailAccessToken}
+                  signupByGitHub={this.state?.signupByGitHub}
                 />
               </div>
 

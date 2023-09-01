@@ -11,7 +11,7 @@ class githubLogin extends React.Component {
                 this.loginWithGitHubAccount(true);
             }
             if (queryParams?.signup === "true") {
-                this.loginWithGitHubAccount(true);
+                this.loginWithGitHubAccount(false);
             }
             if (queryParams?.githublogin === "true") {
                 let queryValue = getQueryStringFromObject(queryParams);
@@ -34,7 +34,7 @@ class githubLogin extends React.Component {
         return (
             <>
                 <section>
-                    <button
+                    {/* <button
                         style={{
                             border: "1px solid #000",
                             background: "var(--light-white-bg, #FFF)",
@@ -42,7 +42,7 @@ class githubLogin extends React.Component {
                         onClick={() => this.loginWithGitHubAccount()}
                     >
                         <img src="/img/icon-github.svg" />
-                    </button>
+                    </button> */}
                 </section>
             </>
         );

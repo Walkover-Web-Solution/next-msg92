@@ -44,26 +44,27 @@ class StepTwo extends React.Component {
             <div className="d-flex flex-wrap p-0">
               <div className="step_input_wrapper__left col-xl-6 col-lg-12">
                 <div className="d-flex step_input_wrapper__mobile_veiw">
-                  <input
-                    type="email"
-                    className="form-control "
-                    id="emailIdentifier"
-                    placeholder="Email Address"
-                    onChange={(e) => this.props.identifierChange(false)}
-                  />
+                  {this.props?.signupByGitHub ? <p>Email Verified</p> :
+                    <input
+                      type="email"
+                      className="form-control "
+                      id="emailIdentifier"
+                      placeholder="Email Address"
+                      onChange={(e) => this.props.identifierChange(false)}
+                    />}
                   <span className="position-relative">
                     <MdCheckCircle className="icon-success otp_verified_icon" />
                   </span>
-                  <button
-                    className="custom-signup-btn"
-                    onClick={() =>
-                      this.props.sendOtp(document.getElementById("emailIdentifier").value, false)}
-                  >
-                    Get OTP
-                  </button>
-                  <button className="btn custom-signup-btn d-none">
-                    Change Email
-                  </button>
+                  {this.props?.signupByGitHub ?
+                    <button className="btn custom-signup-btn d-none">
+                      Change Email
+                    </button> : <button
+                      className="custom-signup-btn"
+                      onClick={() =>
+                        this.props.sendOtp(document.getElementById("emailIdentifier").value, false)}
+                    >
+                      Get OTP
+                    </button>}
                 </div>
               </div>
               {this.props?.emailIdentifier ?

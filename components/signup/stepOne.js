@@ -16,27 +16,29 @@ class StepOne extends React.Component {
         </div>
         <h1>Create an account</h1>
         <div className="entry__right_section__container__entry_with d-flex mb-4 me-4">
-          {/* <div className="signup_with__right mt-2">
+          <div className="signup_with__right mt-2">
             <span className="d-inline-block mb-4">Are you a developer?</span>
 
             <div className="d-flex align-items-center">
-              <button
-                className="me-3"
-                style={{ border: "1px solid #000" }}
-                onClick={() => this.props.signupByGitHubAccount()}
-              >
-                <img
-                  src="/img/icon-github.svg"
-                  width="24px"
-                  height="24px"
-                  alt="Github Icon"
-                />
-              </button>
+              <a href="/github-auth?signup=true">
+                <button
+                  className="me-3"
+                  style={{ border: "1px solid #000" }}
+                  onClick={() => this.props.signupByGitHubAccount()}
+                >
+                  <img
+                    src="/img/icon-github.svg"
+                    width="24px"
+                    height="24px"
+                    alt="Github Icon"
+                  />
+                </button>
+              </a>
             </div>
-          </div> */}
+          </div>
         </div>
 
-        {/* <span className="d-block line_on_right c-fs-6 mb-4">or</span> */}
+        <span className="d-block line_on_right c-fs-6 mb-4">or</span>
 
         <button
           className="entry__right_section__container__entry_button mb-4"
