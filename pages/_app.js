@@ -32,7 +32,12 @@ export default function App({ Component, pageProps }) {
     
     if(window.location.search){
       // Set a cookie that expires after one month
-      setCookie('msg91_query', window.location.search, 30);      
+      setCookie('msg91_query', window.location.search, 30);
+      const q = window.location.search.substring(1);
+      const params = JSON.parse('{"' + decodeURI(q.replace(/&/g, "\",\"").replace(/=/g,"\":\"")) + '"}');      
+      for(let param in params){        
+        setCookie(param, params[param], 30);
+      };
     }
 
   }, []);
