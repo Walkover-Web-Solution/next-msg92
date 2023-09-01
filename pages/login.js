@@ -1,8 +1,12 @@
 import GoogleLoginButton from "@/components/signup/googleLogin";
+import MsalLogin from "@/components/signup/msalLogin";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import React from "react";
 import { MdCall, MdEmail } from "react-icons/md";
 import { getQueryParamsDeatils } from "@/components/utils";
+import { PublicClientApplication } from '@azure/msal-browser';
+import { msalConfig } from "@/components/msalAuthConfig";
+import { MsalProvider } from '@azure/msal-react';
 
 class logIn extends React.Component {
   constructor(props) {
@@ -11,6 +15,7 @@ class logIn extends React.Component {
     this.state = {
       loginInProgress: false,
       showContactonLogin: false,
+      msalInstance: new PublicClientApplication(msalConfig)
     };
 
     let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
@@ -146,15 +151,9 @@ class logIn extends React.Component {
                   >
                     <GoogleLoginButton googleLoginResponse={this.googleLogin} />
                   </GoogleOAuthProvider>
-                  {/* <button
-                    style={{
-                      border: "1px solid var(--primary-light-theme, #1E75BA)",
-                      background: "var(--light-white-bg, #FFF)",
-                    }}
-                    onClick={() => googleLogin()}
-                  >
-                    <img src="/img/microsoft-svg.svg" />
-                  </button> */}
+                  <MsalProvider instance={this.state.msalInstance}>
+                    <MsalLogin />
+                  </MsalProvider>
                   <button
                     style={{ border: "1px solid #D94C44" }}
                     onClick={() => this.loginWithZoho()}
