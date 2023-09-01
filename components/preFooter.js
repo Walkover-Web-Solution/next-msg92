@@ -7,7 +7,7 @@ const PreFooter =()=>{
                     <div className="mt-3 mt-xxl-0 d-flex flex-wrap justify-content-center gap-3">
                         <a href="/contact-us" className="btn px-3 py-2 btn-outline-dark c-fs-4 ">Contact sales</a>
                         <a href="/pricing" className="btn px-3 py-2 btn-outline-dark c-fs-4 ">Pricing</a>
-                        <a href="https://control.msg91.com/signup/" className="btn px-3 py-2 btn-dark c-fs-4 "> Get started</a>
+                        <a href="https://control.msg91.com/signup/" className="btn px-3 py-2 btn-dark c-fs-4 utm"> Get started</a>
                     </div>
                 </div>                          
             </div>

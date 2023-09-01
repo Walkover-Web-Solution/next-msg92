@@ -46,8 +46,8 @@ export default function App({ Component, pageProps }) {
       return null; // Return null if the cookie is not found
     }
     
-    if(window.location.search){
-      // Set a cookie that expires after one month
+    const search = window.location.search;
+    if(search.includes("utm_")){      
       setCookie('msg91_query', window.location.search, 30);
       const q = window.location.search;
     }
