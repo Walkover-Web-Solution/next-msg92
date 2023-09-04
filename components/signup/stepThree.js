@@ -155,7 +155,7 @@ class StepThree extends React.Component {
 
   validateGSTNumber = () => {
     const { gstNumber } = this.state.formData;
-    const gstRegex = /\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}/;
+    const gstRegex = /^\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}$/;
     if (!gstRegex.test(gstNumber)) {
       return 'Invalid GST Number';
     }
