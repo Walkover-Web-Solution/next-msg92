@@ -6,7 +6,8 @@
     "dev": "next dev -p 9999",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format:code": "npx prettier --write --ignore-unknown ."
   },
   "dependencies": {
     "@azure/msal-browser": "^3.0.2",
