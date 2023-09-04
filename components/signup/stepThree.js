@@ -164,7 +164,7 @@ class StepThree extends React.Component {
 
   validatePincode = () => {
     const { pincode } = this.state.formData;
-    const pincodeRegex = /^\d{6}$/;
+    const pincodeRegex = /^[0-9 A-Z a-z -]{4,11}$/;
 
     if (!pincodeRegex.test(pincode)) {
       return 'Pincode must be a 6-digit number';
