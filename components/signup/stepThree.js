@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Component } from 'react';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft, MdCheckCircle, MdCheckCircleOutline } from 'react-icons/md';
-import { Collapse } from 'bootstrap';
+import { Collapse } from 'react-bootstrap';
 
 class StepThree extends React.Component {
     constructor(props) {
