@@ -2,7 +2,30 @@
   "tags":[
     {"slug": "MSG91API","name": "MSG91API"},
     {"slug": "MarketingCommunication", "name": "MarketingCommunication"},
-    {"slug": "MSG91", "name": "MSG91"}
+    {"slug": "MSG91", "name": "MSG91"},
+    {"slug": "CloudCommunication", "name": "CloudCommunication"},
+    {"slug": "CustomerEngagement", "name": "CustomerEngagement"},
+    {"slug": "BestPractices", "name": "BestPractices"},
+    {"slug": "MSG91forEducation", "name": "MSG91forEducation"},
+    {"slug": "CustomerExperience", "name": "CustomerExperience"},
+    {"slug": "AI", "name": "AI"},
+    {"slug": "TransactionalEmail", "name": "TransactionalEmail"},
+    {"slug": "TechnologyUpdates", "name": "TechnologyUpdates"},
+    {"slug": "Top Blogs", "name": "Top Blogs"},
+    {"slug": "SendOTP", "name": "SendOTP"},
+    {"slug": "SendOTP2.0", "name": "SendOTP2.0"},
+    {"slug": "MSG91Features", "name": "MSG91Features"},
+    {"slug": "CPaaS", "name": "CPaaS"},
+    {"slug": "MSG91APIviaSocket", "name": "MSG91APIviaSocket"},
+    {"slug": "Addons&Plugins", "name": "Addons&Plugins"},
+    {"slug": "CustomerSegmentation", "name": "CustomerSegmentation"},
+    {"slug": "MSG91Webinar", "name": "MSG91Webinar"},
+    {"slug": "MSG91Update", "name": "MSG91Update"},
+    {"slug": "MSG91forTravel", "name": "MSG91forTravel"},
+    {"slug": "NumberMasking", "name": "NumberMasking"},
+    {"slug": "TransactionalSMS", "name": "TransactionalSMS"},
+    {"slug": "2fa", "name": "2fa"},
+    {"slug": "ProgrammableSMS", "name": "ProgrammableSMS"}
   ]
  
 }
