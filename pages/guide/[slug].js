@@ -7,8 +7,12 @@ import matter from 'gray-matter';
 import Head from 'next/head';
 import { format } from "date-fns";
 import { useRouter } from 'next/router';
+import  {getTag} from '@/components/lib/tags'
+// import { SocialList } from '@/components/socialList';
+import TagButton from '@/components/tagButton';
 // import { SocialList } from '@/components/socialList';
 import dynamic from 'next/dynamic'
+import TagPostList from '@/components/tagPostList';
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 // const components = { Test }
 const component = { ReactPlayer };
@@ -24,12 +28,13 @@ const slugToPostContent = (postContents => {
     postContents?.forEach(it => hash[it.slug] = it)
     return hash;
   })(fetchPostContent());
-export default function TestPage({ source , title, author, date,thumbnailImage}) {
+export default function TestPage({ source , title, author, date,thumbnailImage, tags}) {
+  console.log(tags, "tags in testPage");
   const router  = useRouter();
 
 
   const handleClick = () =>{
-    router.push('/guide');
+    router.back();
   }
   return (
     <>
@@ -52,6 +57,15 @@ export default function TestPage({ source , title, author, date,thumbnailImage})
       {/* <div className={"social-list"}> 
         <SocialList date ={date}/>
       </div> */}
+      <div>
+      <ul className={"tag-list"}>
+            {tags !=="" && tags?.map((it, i) => (
+              <li key={i}>
+                <TagButton tag={getTag(it)} />
+              </li>
+            ))}
+          </ul>
+      </div>
       </footer>
     </div>
     </>
@@ -66,6 +80,7 @@ export async function getStaticPaths() {
       //     slug: "mastering-the-art-of-effective-communication-unveiling-the-secrets-to-successful-sms-campaigns-for-engaging-audiences"          
       //   },
       // });    
+      console.log(paths, "path in slug");
   return {
     paths,
     fallback: false,
@@ -84,10 +99,12 @@ export async function getStaticProps(slug) {
     const title = matterResult?.data?.title;
     const author = matterResult?.data?.author;
     const content = matterResult?.content;
+    const tags = matterResult?.data?.tags;
+    console.log(tags, "tags in thumbnail");
     var date = new Date(matterResult?.data?.date);
     date = format(date, "LLLL d, yyyy")
   const mdxSource = await serialize(content)
   // const mdxSource = await renderToString(content, { scope: matterResult });
   // console.log(mdxSource,"generated");
-  return { props: { source: mdxSource || "", title: title || "", author: author || "", date: date, thumbnailImage:thumbnailImage || ""} }
+  return { props: { source: mdxSource || "", title: title || "", author: author || "", date: date, thumbnailImage:thumbnailImage || "", tags: tags || ""} }
 }
