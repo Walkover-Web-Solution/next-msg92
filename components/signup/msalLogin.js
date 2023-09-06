@@ -2,12 +2,14 @@ import { useMsal } from '@azure/msal-react';
 import React, { useState } from 'react';
 import { loginRequest } from "@/components/msalAuthConfig";
 
-function MsalLogin() {
+function MsalLogin(props) {
     const { instance } = useMsal();
 
     function msalLogin() {
         // https://codesandbox.io/s/ms-identity-javascript-react-spa-il6zk
-        instance.loginPopup(loginRequest).catch(e => {
+        instance.loginPopup(loginRequest).then((data) => {
+            props.msalLoginResponse(data);
+        }).catch(e => {
             console.log(e);
         });
     }
