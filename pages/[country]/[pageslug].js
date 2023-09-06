@@ -3,7 +3,7 @@ import IndexComp from "@/components/comps/indexComponent";
 import ProductComponent from "@/components/comps/productComp";
 import ChannelComponent from "@/components/comps/channelComp";
 
-const mainpage = ({ pageData, params, path, webhookData }) => {
+const mainpage = ({ pageData, params, path }) => {  
   var page = pageData?.pagename;
   var code = pageData?.code;
   var Dataa = pageData;
@@ -35,7 +35,7 @@ const mainpage = ({ pageData, params, path, webhookData }) => {
       return (
         <>
           <div>
-            <ProductComponent pageData={Dataa} path={path} webhookData={webhookData} />
+            <ProductComponent pageData={Dataa} path={path} />
           </div>
         </>
       );
@@ -78,7 +78,7 @@ export async function getStaticProps({ params }) {
   const countryData = data[country] || {};
   const pageData = countryData[pageslug] || null; // Update variable name to 'pageslug'
 
-  try {
+  /* try {
     // prompt through webhook with help of axios
     const axios = require("axios");
     const options = {
@@ -99,12 +99,11 @@ export async function getStaticProps({ params }) {
   } catch (error) {
     console.log("inside CATCH webhook function");
     console.log("error: ", error);
-  }
+  } */
   return {
     props: {
       pageData,
-      params,
-      webhookData
+      params      
     },
   };
 }

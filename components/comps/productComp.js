@@ -6,7 +6,7 @@ import Seo from '../seoComp';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 
 
-const ProductComponent = ({pageData, path, webhookData }) => {
+const ProductComponent = ({pageData, path, webhookData=null }) => {
   var i = 0;
   return (
     <div>
