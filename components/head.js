@@ -21,9 +21,7 @@ const Headcomp = (brawserPath) => {
           type="text/javascript"
           onload="initChatWidget(helloConfig, 5000)"
           src="https://control.msg91.com/app/assets/widget/chat-widget.js"
-        >
-          {" "}
-        </script>
+        />         
         <script
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
