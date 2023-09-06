@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: false,
   env: {
     API_BASE_URL: 'https://test.msg91.com',
-    GOOGLE_CLIENT_ID: "944172403132-77c4il77pvt6p4hm293gimbhh3av5l7d.apps.googleusercontent.com",
+    GOOGLE_CLIENT_ID: "467164479375-7gh8a9joi6isk7qbfj4tj1p3srqo66m5.apps.googleusercontent.com",
     ZOHO_CLIENT_ID: "1000.XHM7U16ACCWKUUZBTESH8DVM8AKSWT",
     GITHUB_CLIENT_ID: "b7432f8d5a708e33b3b0",
     MSAL_CLIENT_ID: '164d09e1-531c-427d-9358-9d1347c74170',
