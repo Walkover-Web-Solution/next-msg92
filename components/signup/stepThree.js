@@ -63,7 +63,7 @@ class StepThree extends React.Component {
                 Cookie: 'HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D',
             },
         });
-        this.setState({ stateData: response.data });
+        return response;
     };
     fetchIndustry = async () => {
         const response = await axios.get(`${process.env.API_BASE_URL}/api/v5/web/getIndustry`, {
@@ -71,20 +71,20 @@ class StepThree extends React.Component {
                 Cookie: 'HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D',
             },
         });
-        this.setState({ stateData: response.data });
+        return response;
     };
 
     componentDidMount() {
         this.fetchServices()
             .then((response) => {
-                this.setState({ services: response });
+                this.setState({ services: response.data.data });
             })
             .catch((error) => {
                 console.error(error);
             });
         this.fetchIndustry()
             .then((response) => {
-                this.setState({ industries: response });
+                this.setState({ industries: response.data.data });
             })
             .catch((error) => {
                 console.error(error);
@@ -123,6 +123,8 @@ class StepThree extends React.Component {
     };
 
     fetchDataBasedOnState = async (selectedstateProvince) => {
+        // let stateName = this.state.countryData.find((e) => +e.id === +this.state.formData.selectedstateProvince)?.id;
+
         try {
             const response = await axios.get(
                 `${process.env.API_BASE_URL}/api/v5/web/getCitiesByStateId/${selectedstateProvince}`,
@@ -132,7 +134,14 @@ class StepThree extends React.Component {
                     },
                 }
             );
-            this.setState({ stateData: response.data });
+            this.setState({ 
+                stateData: response.data,
+                // formData: {
+                //     ...this.state.formData,
+                //     stateName,
+                // },
+
+            });
         } catch (error) {
             console.error(error);
         }
@@ -217,7 +226,6 @@ class StepThree extends React.Component {
     };
 
     render() {
-        // console.log(this.state.countryNames)
         return (
             <>
                 <div className="d-none entry__right_section__container--logo-visible-in-small">
@@ -240,16 +248,6 @@ class StepThree extends React.Component {
                     <form className="row px-0 step_two_wrapper mt-4">
                         <div className="col-xxl-6 col-xl-8 col-lg-10">
                             <div className="row g-4">
-                                {/* <div className="col-12">
-                  <div className="step_two_wrapper__toggle_button">
-                    <button className="step_two_wrapper__toggle_button__left">
-                      Company/Developer
-                    </button>
-                    <button className="step_two_wrapper__toggle_button__right">
-                      Personal use
-                    </button>
-                  </div>
-                </div> */}
 
                                 <div className="col-lg-6 form-input-with-error">
                                     <input
@@ -315,9 +313,18 @@ class StepThree extends React.Component {
                                         onChange={this.handleInputChange}
                                     >
                                         <option value="">Industry Type</option>
-                                        <option value="option1">option 1</option>
-                                        <option value="option2">option 2</option>
-                                        <option value="option3">option 3</option>
+                                        {this.state.industries && Object.keys(this.state.industries).length > 0 && (
+                                            <>
+                                                {Object.keys(this.state.industries).map((key) => (
+                                                    <option
+                                                        key={this.state.industries[key].id}
+                                                        value={this.state.industries[key].name}
+                                                    >
+                                                        {this.state.industries[key].name}
+                                                    </option>
+                                                ))}
+                                            </>
+                                        )}
                                     </select>
                                 </div>
                                 <div className="col-12 step_two_wrapper--company-form">
@@ -330,6 +337,15 @@ class StepThree extends React.Component {
                                         onChange={this.handleInputChange}
                                     >
                                         <option value="">Service Needed</option>
+                                        {this.state.services && Object.keys(this.state.services).length > 0 && (
+                                            <>
+                                                {Object.keys(this.state.services).map((key) => (
+                                                    <option key={key} value={key}>
+                                                        {this.state.services[key]}
+                                                    </option>
+                                                ))}
+                                            </>
+                                        )}
                                     </select>
                                 </div>
                                 <div className="col-6 step_two_wrapper--company-form">
