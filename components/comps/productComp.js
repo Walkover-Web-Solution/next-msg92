@@ -6,7 +6,8 @@ import Seo from '../seoComp';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 
 
-const ProductComponent = ({pageData, path, webhookData }) => {   
+const ProductComponent = ({pageData, path, webhookData }) => {
+  console.log('path', pageData?.pagename);
   var i = 0;
   return (
     <div>
@@ -70,28 +71,30 @@ const ProductComponent = ({pageData, path, webhookData }) => {
           }
         })}
       </div>
-      <div className="container mb-5">
-        <div className="mb-5">
-          <h4 className='more-feature mb-3'>More Features</h4>
-          {webhookData?.map((data,index)=>{      
-            if(data?.service === "Knowledgebase" && data?.availability === "Available"){
-              return (
-                <div key={index} className='mb-1'>
-                  - {data?.feature}
-                </div>
-              )
-            }
-          })}
-        </div>
-        
-        <div className='col-6 '>
-          <div className='d-flex gap-3 p-4 req-feature-cont justify-content-between align-items-center'>
-          <h2 className='c-fs-3 c-head me-text'>Looking for me ?</h2>
-          <button className='w-90 p-2 btn'>Request a Feature <AiOutlineArrowRight /></button>
+      {pageData?.pagename === 'KnowledgeBase' &&        
+        <div className="container mb-5">
+          <div className="mb-5">
+            <h4 className='more-feature mb-3'>More Features</h4>
+            {webhookData?.map((data,index)=>{      
+              if(data?.service === "Knowledgebase" && data?.availability === "Available"){
+                return (
+                  <div key={index} className='mb-1'>
+                    - {data?.feature}
+                  </div>
+                )
+              }
+            })}
           </div>
+          
+          <div className='col-6 '>
+            <div className='d-flex gap-3 p-4 req-feature-cont justify-content-between align-items-center'>
+            <h2 className='c-fs-3 c-head me-text'>Looking for me ?</h2>
+            <button className='w-90 p-2 btn'>Request a Feature <AiOutlineArrowRight /></button>
+            </div>
+          </div>
+          
         </div>
-        
-      </div>
+      }
       <Seo path={path} pageData={pageData?.pagename} />
       <PreFooter />
     </div>
