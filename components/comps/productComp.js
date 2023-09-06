@@ -7,7 +7,6 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 
 
 const ProductComponent = ({pageData, path, webhookData }) => {
-  console.log('path', pageData?.pagename);
   var i = 0;
   return (
     <div>
