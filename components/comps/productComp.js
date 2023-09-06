@@ -9,20 +9,17 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 const ProductComponent = ({pageData, path, webhookData }) => { 
   let results = [];
   webhookData?.forEach((data, index) => {
-   if(data.fld2ul6mu === "Knowledgebase"){
-    console.log("inside if");
+   if(data?.service === "Knowledgebase" && data?.availability === "Available"){
     results.push(
       <div key={index}>
-        -{data.fldm95n8s}
+        -{data?.feature}
       </div>,
     );
    }
    else{
-    console.log("inside else")
+    console.log("no data");
    }
   });
-
-  console.log(webhookData, "pageData inside Product");
   var i = 0;
   return (
     <div>

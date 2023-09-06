@@ -9,7 +9,6 @@ const ParentComponent = () => {
  const fetchData = async ()=>{
   try {
       // prompt through webhook with help of axios
-      console.log("inside webhook function");
       const axios = require("axios");
       const options = {
           //url of webhook
@@ -22,11 +21,9 @@ const ParentComponent = () => {
 
           //data to be posted curl_command and api_description
       };
-      console.log(options, "options");
 
       //response of axios taking through webhook
       const response = await axios(options);
-      console.log("AXIOS RESPONSE :", response);
       setResponseData(response);
     } catch (error) {
       console.log("error: ", error);
