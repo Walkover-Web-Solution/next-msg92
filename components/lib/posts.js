@@ -57,14 +57,12 @@ function fetchPostContent() {
 }
 
 function countPosts(tag) {
-  console.log("inside count posts function", tag);
   return fetchPostContent().filter(
     (it) => !tag || (it.tags && it.tags.includes(tag))
   ).length;
 }
 
 function listPostContent(page, limit, tag) {
-  console.log("inside listPostContent", tag, limit,page);
   return fetchPostContent()
       .filter((it) => !tag || (it.tags && it.tags.includes(tag)))
       .slice((page - 1) * limit, page * limit);

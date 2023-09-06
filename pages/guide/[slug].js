@@ -25,11 +25,19 @@ const slugToPostContent = (postContents => {
     postContents.map((data)=>{
       fullPath = data.fullPath
     })
-    postContents?.forEach(it => hash[it.slug] = it)
+    postContents?.forEach(it => {hash[it.slug] = it 
+      let slug = it.slug
+      const test = /\s/.test(it.slug)
+     if(test){
+     slug = slug.replace(/ /g, "-")
+     it.slug = slug;
+     hash[it.slug] = it
+  }
+    })
     return hash;
   })(fetchPostContent());
 export default function TestPage({ source , title, author, date,thumbnailImage, tags}) {
-  console.log(tags, "tags in testPage");
+  // console.log(tags, "tags in testPage");
   const router  = useRouter();
 
 
