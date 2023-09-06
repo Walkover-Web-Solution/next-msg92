@@ -194,16 +194,16 @@ class SignUp extends React.Component {
     fetch(url, requestOptions)
       .then(response => response.json())
       .then(result => {
-        for (let key in result?.data?.sessionDetails) {
-          document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
-          document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
-        }
+        // for (let key in result?.data?.sessionDetails) {
+        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
+        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
+        // }
         this.setState({ sessionDetails: result?.data?.sessionDetails });
         if (!result?.hasError) {
           if (result?.data?.nextStep === "createNewCompany") {
             this.setStep(3);
           } else {
-            location.href = process.env.SUCCESS_REDIRECTION_URL;
+            location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', result?.data?.sessionDetails?.PHPSESSID);
           }
         }
       });
@@ -231,25 +231,26 @@ class SignUp extends React.Component {
         "firstName": data?.firstName,
         "lastName": data?.lastName
       },
-      "acceptInviteForCompanies": []
+      "acceptInviteForCompanies": [],
+      "session": this.state?.sessionDetails?.PHPSESSID
     }
 
     console.log(payload);
 
-    // const requestOptions = {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json', 'PHPSESSID': this.state.sessionDetails?.PHPSESSID },
-    //   body: JSON.stringify(payload)
-    // };
-    // fetch(url, requestOptions)
-    //   .then(response => response.json())
-    //   .then(result => {
-    //     for (let key in result?.data?.sessionDetails) {
-    //       document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
-    //       document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
-    //     }
-    //     location.href = process.env.SUCCESS_REDIRECTION_URL;
-    //   });
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    };
+    fetch(url, requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        // for (let key in result?.data?.sessionDetails) {
+        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
+        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
+        // }
+        location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', result?.data?.sessionDetails?.PHPSESSID ?? this.state?.sessionDetails?.PHPSESSID);
+      });
   }
 
   render() {
