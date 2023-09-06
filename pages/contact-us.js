@@ -57,8 +57,8 @@ const contactus = ({path}) => {
                                             <span className="c-fs-1 c-fw-b  justify-content-center align-items-center d-flex">
                                                 <MdCall className="p-auto" />
                                             </span>    
-                                            <a href="tel:+918889500704" className="c-fs-2 ms-3 c-text-link text-center bg-white">
-                                                +91 88895 00704
+                                            <a href="tel:+918889378605" className="c-fs-2 ms-3 c-text-link text-center bg-white">
+                                                +91 88893 78605
                                             </a>
                                         </div>
                                         <div className="d-flex align-items-center">

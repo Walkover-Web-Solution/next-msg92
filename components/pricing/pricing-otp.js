@@ -82,7 +82,7 @@ const Pricingsms = ({
                         <h5 className="c-fs-2 text-green mt-2">{currencySymbol}{item[106]?.rate}/SMS</h5>
                         <h2 className="c-fs-3 c-ff-b">{currencySymbol}{amountArr[index]} </h2>
                         <p className="c-fs-5">+18% GST</p>
-                        <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                        <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                           Get Started
                         </a>
                       </div>
@@ -97,7 +97,7 @@ const Pricingsms = ({
                       <h5 className="c-fs-2 mt-2 text-green">{currencySymbol}{item[106]?.rate}/SMS</h5>
                       <h2 className="c-fs-3 c-ff-b">{currencySymbol}{amountArr[index]} </h2>
                       <p className="c-fs-5">+18% GST</p>
-                      <Link href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                      <Link href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                         Get Started
                       </Link>
                     </div>
@@ -108,7 +108,7 @@ const Pricingsms = ({
                       <h3 className="c-fs-3">SMS Pricing</h3>
                       <h5 className="c-fs-2 mt-2 text-green">{currencySymbol}{item[106]?.rate}/SMS</h5>
                       <h2 className="c-fs-3 c-ff-b">-</h2>                      
-                      <Link href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                      <Link href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                         Get Started
                       </Link>
                     </div>

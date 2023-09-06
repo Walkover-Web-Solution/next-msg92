@@ -31,7 +31,7 @@ const pricinghello = ({ countryCode }) => {
     <div className="c-bg-grey col-12 col-md-4 col-xl-3  p-4 text-start">
       <h3 className="c-fs-3">Access platform for FREE</h3>
       <p className="c-fs-4 mt-2">Pay only for the channels you use</p>
-      <Link href="https://control.msg91.com/signup/" target="_blank" className="btn btn-outline-dark mt-3 px-5">Get Started</Link>
+      <Link href="https://control.msg91.com/signup/" target="_blank" className="btn btn-outline-dark mt-3 px-5 utm">Get Started</Link>
     </div>
     </div>
 

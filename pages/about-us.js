@@ -227,7 +227,7 @@ const aboutUsComp = () => {
                   <p className='c-fs-4 card-text mt-2'>Operations</p>
 
                   <p className='c-fs-5 card-text mt-2'>
-                    The Processes &amp; Partnerships pro.
+                  The processes & partnerships pro.
                   </p>
                 </div>
               </div>

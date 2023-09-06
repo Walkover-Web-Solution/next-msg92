@@ -18,7 +18,7 @@ const CaseStudyCard = ({ caseStudies }) => {
       <div className="container text-center justify-content-center p-5">
         <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
           <h1 className="heading">
-            Customer Stories of businesses successfully using MSG91 APIs
+            Customer success stories of businesses successfully using MSG91 APIs
           </h1>
         </div>
         <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">

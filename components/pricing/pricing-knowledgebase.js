@@ -14,7 +14,7 @@ return (
             <Link
               href="https://control.msg91.com/signup/"
               target="_blank"
-              className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2"
+              className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm"
             >
               Get Started
             </Link>
@@ -37,7 +37,7 @@ return (
               <Link
                 href="https://control.msg91.com/signup/"
                 target="_blank"
-                className="c-fs-5 btn btn-sm w-100 btn-dark mt-2"
+                className="c-fs-5 btn btn-sm w-100 btn-dark mt-2 utm"
               >
                 Get Started
               </Link>

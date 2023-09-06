@@ -8,16 +8,16 @@ import ProductMenu from "./productmenu";
 import Notification from "./notification";
 import Link from "next/link";
 
-const navbar = ({ brawserPath }) => {
+const navbar = ({ brawserPath }) => {  
   var path = brawserPath.split("/")[1];
+  //product = ['sms', 'email', 'voice', 'whatsapp', '']
   path = path.length == 2 ? "/" + path : "";
   const [showOverlay, setShowOverlay] = useState(false);
   const [show, setShow] = useState(false);
   var mininav_notification = "d-block";
   const toggleOverlay = () => {
     setShowOverlay(true);
-  };
-
+  };  
  
   useEffect(() => {
     $("#product-link").on("mouseenter", function () {
@@ -125,7 +125,7 @@ const navbar = ({ brawserPath }) => {
             <Link
               href="https://control.msg91.com/signup/"
               target="_blank"
-              className="btn btn-dark c-fs-4 c-fw-sb px-3"
+              className="btn btn-dark c-fs-4 c-fw-sb px-3 utm"
               id="signup-btn"
             >
               Sign Up
@@ -144,7 +144,8 @@ const navbar = ({ brawserPath }) => {
             className="d-flex justify-content-center align-items-center"
           >
             <MdSegment
-              className="c-fs-1 one "
+              className="one"
+              style={{fontSize: '32px'}}
               id="mininav-tog-open"
               onClick={() => {
                 setShow(!show);hideNotification();handleClick();
