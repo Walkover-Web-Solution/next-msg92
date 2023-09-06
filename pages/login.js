@@ -24,7 +24,7 @@ class logIn extends React.Component {
     if (queryParams) {
       if (queryParams?.githublogin === "true") {
         const url = process.env.API_BASE_URL + "/api/v5/nexus/githubLogin";
-        this.hitLoginAPI(url, { code: queryParams?.code, state: queryParams?.state });
+        this.hitLoginAPI(url, { code: queryParams?.code, state: queryParams?.state, redirectUrl: process.env.REDIRECT_URL });
       }
       if (queryParams?.loginWithZoho.includes("true")) {
         let paramsKeyValue = this.props?.browserPathCase.split("#")[1].split("&");
@@ -34,7 +34,7 @@ class logIn extends React.Component {
           userData[data[0]] = data[1];
         }
         const url = process.env.API_BASE_URL + "/api/v5/nexus/zohoLogin";
-        this.hitLoginAPI(url, { ...userData, code: userData?.access_token });
+        this.hitLoginAPI(url, { ...userData, code: userData?.access_token, redirectUrl: process.env.REDIRECT_URL });
       }
     } else {
       this.otpWidgetSetup();
@@ -79,7 +79,7 @@ class logIn extends React.Component {
     console.log(response);
     if (response) {
       const url = process.env.API_BASE_URL + "/api/v5/nexus/googleLogin";
-      this.hitLoginAPI(url, { code: response.code });
+      this.hitLoginAPI(url, { code: response.code, redirectUrl: process.env.REDIRECT_URL });
     }
   };
 
@@ -92,12 +92,12 @@ class logIn extends React.Component {
     fetch(url, requestOptions)
       .then(response => response.json())
       .then(result => {
-        for (let key in result?.data?.sessionDetails) {
-          document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
-          document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
-        }
+        // for (let key in result?.data?.sessionDetails) {
+        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
+        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
+        // }
         if (!result?.hasError) {
-          location.href = process.env.SUCCESS_REDIRECTION_URL
+          location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', result?.data?.sessionDetails?.PHPSESSID)
         }
       });
   }

@@ -26,7 +26,7 @@ const nextConfig = {
     WIDGET_AUTH_TOKEN: "278060T5b78OzKKr964edc975P1",
     WIDGET_SCRIPT:
       "https://test.msg91.com/hello-new/assets/otp-provider/otp-provider.js",
-    SUCCESS_REDIRECTION_URL: 'https://test.msg91.com/hello-new/',
+    SUCCESS_REDIRECTION_URL: 'https://test.msg91.com/api/nexusRedirection.php?session=:session',
   },
 };
 
