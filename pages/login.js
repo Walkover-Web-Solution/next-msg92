@@ -151,15 +151,15 @@ class logIn extends React.Component {
                   >
                     <GoogleLoginButton googleLoginResponse={this.googleLogin} />
                   </GoogleOAuthProvider>
-                  <MsalProvider instance={this.state.msalInstance}>
+                  {/* <MsalProvider instance={this.state.msalInstance}>
                     <MsalLogin />
-                  </MsalProvider>
-                  <button
+                  </MsalProvider> */}
+                  {/* <button
                     style={{ border: "1px solid #D94C44" }}
                     onClick={() => this.loginWithZoho()}
                   >
                     <img src="/img/icon-zogo.svg" />
-                  </button>
+                  </button> */}
 
                   {/* onClick={() => this.loginWithGitHubAccount()} */}
                   <a href="/github-auth?login=true">
@@ -224,9 +224,9 @@ class logIn extends React.Component {
                 </div>
               </div>
 
-              <a href="/signup" className="c-fs-6 text_blue pt-4">
+              {/* <a href="/signup" className="c-fs-6 text_blue pt-4">
                 Create new account
-              </a>
+              </a> */}
             </div>
           </div>
         </section>
