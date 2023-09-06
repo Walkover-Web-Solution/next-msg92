@@ -3,10 +3,8 @@ import React, { useEffect, useState } from 'react';
 import ProductComponent from "@/components/comps/productComp";
 import json from "../data/content.json"; 
 
-const ParentComponent = () => {
- const [responseData, setResponseData] = useState("");
- useEffect(()=>{
- const fetchData = async ()=>{
+export async function getStaticProps() {
+  
   try {
       // prompt through webhook with help of axios
       const axios = require("axios");
@@ -23,17 +21,22 @@ const ParentComponent = () => {
       };
 
       //response of axios taking through webhook
-      const response = await axios(options);
-      setResponseData(response);
+      const data = await axios(options);
+      var webhookData = data.data.rows;
     } catch (error) {
-      console.log("error: ", error);
       console.log("inside CATCH webhook function");
-    }
+      console.log("error: ", error);
+    }    
+  //console.log('webhookData', webhookData);
+  return {
+    props: {
+      webhookData   
+    },
+  };
 }
-  fetchData();
-},[]);
-  const data = json.global.knowledgebase; 
-  const webhookData = responseData.data?.rows
+
+const ParentComponent = ({webhookData}) => {  
+  const data = json.global.knowledgebase;   
   return (
     <>    
       <ProductComponent pageData={data} webhookData={webhookData} />    

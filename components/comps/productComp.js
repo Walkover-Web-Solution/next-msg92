@@ -6,20 +6,7 @@ import Seo from '../seoComp';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 
 
-const ProductComponent = ({pageData, path, webhookData }) => { 
-  let results = [];
-  webhookData?.forEach((data, index) => {
-   if(data?.service === "Knowledgebase" && data?.availability === "Available"){
-    results.push(
-      <div key={index}>
-        -{data?.feature}
-      </div>,
-    );
-   }
-   else{
-    console.log("no data");
-   }
-  });
+const ProductComponent = ({pageData, path, webhookData }) => {   
   var i = 0;
   return (
     <div>
@@ -83,23 +70,27 @@ const ProductComponent = ({pageData, path, webhookData }) => {
           }
         })}
       </div>
-      <div className="container">
-        <div className= "d-flex align-items-between align-items-center">
-          <div className='d-flex col-6 flex-column p-2 m-2 feature'>
-          <h4 className = 'p-2 more-feature'>More Features</h4>
-        {results?.map((data,index)=>{
-          console.log(data,"feature");
-          
-          return (<p className=' m-2 px-sm-0 col-12 '>{data}</p>)
-        })} 
+      <div className="container mb-5">
+        <div className="mb-5">
+          <h4 className='more-feature mb-3'>More Features</h4>
+          {webhookData?.map((data,index)=>{      
+            if(data?.service === "Knowledgebase" && data?.availability === "Available"){
+              return (
+                <div key={index} className='mb-1'>
+                  - {data?.feature}
+                </div>
+              )
+            }
+          })}
         </div>
-        <div className='col-5 '>
-          <div className='d-flex gap-3 p-4 m-3 req-feature-cont justify-content-end align-items-center'>
+        
+        <div className='col-6 '>
+          <div className='d-flex gap-3 p-4 req-feature-cont justify-content-between align-items-center'>
           <h2 className='c-fs-3 c-head me-text'>Looking for me ?</h2>
           <button className='w-90 p-2 btn'>Request a Feature <AiOutlineArrowRight /></button>
           </div>
         </div>
-        </div>
+        
       </div>
       <Seo path={path} pageData={pageData?.pagename} />
       <PreFooter />
