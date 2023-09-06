@@ -1,8 +1,6 @@
 import Link from "next/link";
 import TagContent  from "./lib/tags";
 export default function TagButton({ tag }) {
-  console.log(tag, "tag button");
-  console.log(TagContent, "tag content");
 //   const tagMain = JSON.stringify(tag)
 //   const tagContent = tagMain?.split("'")[1];
 //   const tagggggg = tagContent?.split("#")[1];

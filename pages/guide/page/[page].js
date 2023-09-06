@@ -1,14 +1,12 @@
 
 
 import { listPostContent, countPosts } from '../../../components/lib/posts'
-import { getTag, listTags } from '@/components/lib/tags';
+import {listTags } from '@/components/lib/tags';
 import Layout from "../../../components/layout";
 import PostList from "../../../components/postList";
 import config from "../../../components/lib/config";
-import TagPostList from '@/components/tagPostList';
 // import Head from "next/head";
 export default function Index({ posts, tags, pagination }) {
-  console.log(tags, "tags in page");
   const url = "/guide";
   const title = "All posts";
   return (

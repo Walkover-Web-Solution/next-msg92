@@ -3,7 +3,7 @@
 
 export default function Layout({ children }) {
   return (
-    <div className="root">      
+    <div className="blog-root">      
       <main>{children}</main>      
     </div>
   );

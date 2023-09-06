@@ -1,13 +1,23 @@
 import Date from "./date";
-import Link from "next/link";
 import { parseISO } from "date-fns";
+import { MdDateRange } from "react-icons/md";
 
-
-export default function PostItem({ post }) {  
+export default function PostItem({ post }) {
   let slugg = post.slug
   const test = /\s/.test(post.slug)
-  if(test){
+  if (test) {
     var navigate = slugg.replace(/ /g, "-")
+  }
+
+  function getBlogStyle(titleText) {
+    let textLength = titleText.length;
+    let wordLength = titleText.split(" ").length;
+
+    if (wordLength > 8 || textLength > 48) {
+      return " blog-card--large";
+    } else {
+      return " blog-card--small";
+    }
   }
   /* function calculateReadTime(articleText, wordsPerMinute = 200) {
     // Count the number of words in the article
@@ -20,11 +30,36 @@ export default function PostItem({ post }) {
     return readTimeMinutes;
   }    
   const readTime = calculateReadTime(article); */
-  return (      
-    <a className="blog-card" href={"/guide/" +  (test ? navigate : post.slug) }>      
-        <Date date={parseISO(post.date)} />
-       {post?.thumbnail !== "" && <img src = {post?.thumbnail} />}
-        <div className="title">{post?.title}</div>
+  return (
+    <a href={"/guide/" + (test ? navigate : post.slug)} className={
+      "blog-card" +
+      (post.thumbnail ? " bg-dark" : " bg-light") +
+      getBlogStyle(post.title)
+    }
+    style={{
+      backgroundImage: post.thumbnail
+        ? 'url("' + post.thumbnail + '")'
+        : "none",
+    }}
+    >
+      <div className="blog-card__content">
+        <div className="blog-card-body">
+        <h2 className="title">{post?.title}</h2>
+        <p className="content">{post?.description}</p>
+      </div>
+      <div className="blog-card-footer">
+          <div className="blog-card-tags">
+            {post?.category?.map((category, idx) => (
+              <span className="bg-tags" key={idx}>
+                {category}
+              </span>
+            ))}
+          </div>
+          <span>
+            <MdDateRange /> <Date date={parseISO(post.date)} />
+          </span>
+        </div>
+      </div>
     </a>
   );
 }

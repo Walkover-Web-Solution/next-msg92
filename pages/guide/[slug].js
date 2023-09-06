@@ -8,15 +8,15 @@ import Head from 'next/head';
 import { format } from "date-fns";
 import { useRouter } from 'next/router';
 import  {getTag} from '@/components/lib/tags'
-// import { SocialList } from '@/components/socialList';
+
 import TagButton from '@/components/tagButton';
-// import { SocialList } from '@/components/socialList';
+import { MdKeyboardArrowLeft } from "react-icons/md";
 import dynamic from 'next/dynamic'
 import TagPostList from '@/components/tagPostList';
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
-// const components = { Test }
+
 const component = { ReactPlayer };
-// console.log(component, "component");
+
 const slugToPostContent = (postContents => {
  
   
@@ -50,7 +50,7 @@ export default function TestPage({ source , title, author, date,thumbnailImage, 
       <title>{title}</title>
     </Head>
     <div className="wrapper container blog-container">      
-      <a href='javascript:void(0)' onClick={handleClick} >Back</a>
+      <a className='mb-3 d-inline-block btn blog-container__back-btn' href='javascript:void(0)' onClick={handleClick} > <MdKeyboardArrowLeft />Back</a>
       <div className='blog-header mt-4'>
         <div>{author}, {date}</div>        
         <h1>{title}</h1>
@@ -88,7 +88,6 @@ export async function getStaticPaths() {
       //     slug: "mastering-the-art-of-effective-communication-unveiling-the-secrets-to-successful-sms-campaigns-for-engaging-audiences"          
       //   },
       // });    
-      console.log(paths, "path in slug");
   return {
     paths,
     fallback: false,
@@ -108,7 +107,6 @@ export async function getStaticProps(slug) {
     const author = matterResult?.data?.author;
     const content = matterResult?.content;
     const tags = matterResult?.data?.tags;
-    console.log(tags, "tags in thumbnail");
     var date = new Date(matterResult?.data?.date);
     date = format(date, "LLLL d, yyyy")
   const mdxSource = await serialize(content)
