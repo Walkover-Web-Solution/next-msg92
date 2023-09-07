@@ -21,8 +21,9 @@ export default function App({ Component, pageProps }) {
     browserPath = result ? result[0] : browserPath;    
   }
   var path = browserPath.split("/")[1];
-  const products = ['/sms', '/email', '/voice', '/whatsapp', '/rcs', '/otp', '/hello', '/segmento', '/campaign', '/knowledgebase']
-  var pricingPath = (products.includes(browserPath)) ? `/pricing${browserPath}` : `/pricing/sms`;
+  const products = ['/sms', '/email', '/voice', '/whatsapp', '/rcs', '/otp', '/hello', '/segmento', '/campaign', '/knowledgebase']  
+  var pageSlug = Object.keys(router.query).length ? `/${router.query.pageslug}` : browserPath
+  var pricingPath = (products.includes(pageSlug)) ? `/pricing${pageSlug}` : `/pricing/sms`;
 
   const year = new Date().getFullYear();
   useEffect(() => {
