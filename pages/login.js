@@ -83,6 +83,13 @@ class logIn extends React.Component {
     }
   };
 
+  outlookLogin = (response) => {
+    if (response) {
+      const url = process.env.API_BASE_URL + "/api/v5/nexus/outlookLogin";
+      this.hitLoginAPI(url, { code: response.accessToken, redirectUrl: process.env.REDIRECT_URL });
+    }
+  };
+
   hitLoginAPI(url, payload) {
     const requestOptions = {
       method: 'POST',
@@ -152,7 +159,7 @@ class logIn extends React.Component {
                     <GoogleLoginButton googleLoginResponse={this.googleLogin} />
                   </GoogleOAuthProvider>
                   {/* <MsalProvider instance={this.state.msalInstance}>
-                    <MsalLogin />
+                    <MsalLogin msalLoginResponse={this.outlookLogin}/>
                   </MsalProvider> */}
                   {/* <button
                     style={{ border: "1px solid #D94C44" }}
