@@ -1,6 +1,7 @@
 import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import countries from "@/data/countries.json";
+import { setUtm } from "../pricingComp";
 
 const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, currencySymbol, oneTimeWtsAppFee}) => {
   const [selectedMode, setSelectedMode] = useState("Monthly");  
@@ -20,6 +21,10 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, c
         break;
     }
   };
+
+  useEffect(() => {    
+    setUtm();
+  }, []);  
 
   return (
     <>

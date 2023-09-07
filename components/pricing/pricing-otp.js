@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import countries from "@/data/countries.json";
 import { Typeahead } from 'react-bootstrap-typeahead';
 import Link from "next/link";
+import { setUtm } from "../pricingComp";
 const Pricingsms = ({
   pricing,
   setPricing,
@@ -23,6 +24,7 @@ const Pricingsms = ({
       setOriginCountry(originCountry)
       setDestinationCountry(destinationCountry)
     } */
+    setUtm();
   }, [pricing, originCountry, destinationCountry]);  
   return (
     <>

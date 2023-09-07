@@ -1,5 +1,10 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { setUtm } from "../pricingComp";
 const pricingknowledgebase = () => {
+useEffect(() => {    
+  setUtm();
+}, []);  
 return (
   <>
     <div className="d-flex flex-wrap flex-gap gap-3 justify-content-center w-100  card-container align-items-end">      

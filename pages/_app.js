@@ -10,17 +10,20 @@ import Script from 'next/script'
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   // const { slug } = router.query; 
-  var  brawserPath = router.asPath;
-  var brawserPathCase = brawserPath;
-  var brawserPathMeta = brawserPath;
+  var  browserPath = router.asPath;
+  var browserPathCase = browserPath;
+  var browserPathMeta = browserPath;  
   //var product = router.query.product;
   
-  if (brawserPath !== '/') {
+  if (browserPath !== '/') {
     const pattern = /\/([^/?]+)/;
-    const result = brawserPath.match(pattern);
-    brawserPath = result ? result[0] : brawserPath;
+    const result = browserPath.match(pattern);
+    browserPath = result ? result[0] : browserPath;    
   }
-  var path = brawserPath.split("/")[1];
+  var path = browserPath.split("/")[1];
+  const products = ['/sms', '/email', '/voice', '/whatsapp', '/rcs', '/otp', '/hello', '/segmento', '/campaign', '/knowledgebase']
+  var pricingPath = (products.includes(browserPath)) ? `/pricing${browserPath}` : `/pricing/sms`;
+
   const year = new Date().getFullYear();
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
@@ -51,20 +54,17 @@ export default function App({ Component, pageProps }) {
     
     const search = window.location.search;
     if(search.includes("utm_")){      
-      setCookie('msg91_query', window.location.search, 30);
-      const q = window.location.search;
+      setCookie('msg91_query', search, 30);      
     }
     
     // Get all anchor tags in the document using querySelectorAll
-    var anchorTags = document.querySelectorAll(".utm");
-    var queryString = window.location.search;
-    
+    var anchorTags = document.querySelectorAll(".utm");        
     // Loop through the anchor tags
     for (var i = 0; i < anchorTags.length; i++) {
       var href = anchorTags[i].getAttribute("href"); // Get the current href value
       var query = getCookie('msg91_query');
       if (href && query) {
-        anchorTags[i].setAttribute("href", href + getCookie('msg91_query'));
+        anchorTags[i].setAttribute("href", href + query);
       }
     }
 
@@ -98,7 +98,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
 
-        { brawserPath.brawserPath == '/in' &&
+        { browserPath.browserPath == '/in' &&
           <>
           <Script type="application/ld+json" strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -106,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               "@context": "https://schema.org/",
               "@type": "WebSite",
               "name": "MSG91",
-              "url": "https://msg91.com${brawserPath.brawserPath}",
+              "url": "https://msg91.com${browserPath.browserPath}",
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": "https://msg91.com/in/search?q={search_term_string}",
@@ -134,9 +134,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
           </>
         }
-        <Headcomp brawserPath={brawserPathMeta} />
-        <Navbar brawserPath={brawserPath} />
-        <Component {...pageProps} path={path} browserPath={brawserPath} browserPathCase={brawserPathCase}/>
+        <Headcomp browserPath={browserPathMeta} />
+        <Navbar browserPath={browserPath} pricingPath={pricingPath} />
+        <Component 
+        {...pageProps} 
+        path={path} 
+        browserPath={browserPath} 
+        browserPathCase={browserPathCase} 
+        pricingPath={pricingPath}
+        />
         <Footer path={path} year={year} />
     </>
     );

@@ -35,11 +35,11 @@ export async function getStaticProps() {
   };
 }
 
-const ParentComponent = ({webhookData}) => {  
+const ParentComponent = ({webhookData, pricingPath}) => {  
   const data = json.global.knowledgebase;   
   return (
     <>    
-      <ProductComponent pageData={data} webhookData={webhookData} />    
+      <ProductComponent pageData={data} webhookData={webhookData} pricingPath={pricingPath} />    
     </>
   );
 };

@@ -2,6 +2,7 @@ import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import countries from "@/data/countries.json";
 import { Typeahead } from 'react-bootstrap-typeahead';
+import { setUtm } from "../pricingComp";
 
 const Pricingsms = ({
   pricing,
@@ -25,6 +26,10 @@ const Pricingsms = ({
     } */
 
     // console.log(originCountry, destinationCountry);
+    // Get all anchor tags in the document using querySelectorAll
+
+    setUtm();
+
   }, [pricing, originCountry, destinationCountry]);  
   return (
     <>
