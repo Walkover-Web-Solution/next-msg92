@@ -253,7 +253,9 @@ class SignUp extends React.Component {
         //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
         //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
         // }
-        location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', result?.data?.sessionDetails?.PHPSESSID ?? this.state?.sessionDetails?.PHPSESSID);
+        if(result?.status === 'success') {
+          location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', result?.data?.sessionDetails?.PHPSESSID ?? this.state?.sessionDetails?.PHPSESSID);
+        }
       });
   }
 
