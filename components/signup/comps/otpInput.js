@@ -2,7 +2,6 @@ import React from "react";
 class Otpinput extends React.Component {
   render() {
     let otpLength = Array.from({ length: this.props.otpLength }, (_, index) => index + 1)
-    var valOtp = "";
     return (
       <>
         <div className="d-flex">
@@ -14,17 +13,28 @@ class Otpinput extends React.Component {
               maxLength="1"
               key={x}
               id={this.props.tag + x}
-              onChange={(e) => {
-                // document.getElementById(x).target.value=e.target.value;
-                valOtp += e.target.value;
-                if (e.target.value !== undefined && e.target.value !== "") {
-                  if (x <= this.props.otpLength - 1) {
-                    document.getElementById(this.props.tag + (x + 1)).focus();
-                  } else {
-                    document.getElementById(this.props.tag + this.props.otpLength).focus();
-                  }
+              onKeyDown={(event) => {
+                const integerRegex = /[0-9]{1}/;
+                if (integerRegex.test(event.key)) {
+                    if (x < this.props.otpLength) {
+                        const inputEle = document.getElementById(this.props.tag + (x + 1));
+                        if (event.target.value) {
+                            inputEle.value = event.key;
+                        }
+                        setTimeout(() => {
+                            inputEle.focus();
+                        });
+                    }
+                } else if (event.key === 'Backspace') {
+                    if (!event.target.value && x > 1) {
+                        const inputEle = document.getElementById(this.props.tag + (x - 1));
+                        inputEle.value = '';
+                        setTimeout(() => {
+                            inputEle.focus();
+                        });
+                    }
                 } else {
-                  document.getElementById(this.props.tag + x).focus();
+                    event.preventDefault();
                 }
               }}
             />
@@ -32,7 +42,13 @@ class Otpinput extends React.Component {
           <button
             className="custom-signup-btn"
             onClick={() => {
-              this.props.verifyOtp(valOtp, this.props.requestId, this.props.notByEmail);
+              let valOtp = '';
+              for (let i = 1; i <= +this.props.otpLength; i++) {
+                  valOtp += document.getElementById(this.props.tag + i).value;
+              }
+              if (valOtp?.length === +this.props.otpLength) {
+                  this.props.verifyOtp(valOtp, this.props.requestId, this.props.notByEmail);
+              }
             }}
           >
             Verify
