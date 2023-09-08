@@ -201,11 +201,14 @@ class SignUp extends React.Component {
         console.log(result);
         this.setState({ sessionDetails: result?.data?.sessionDetails });
         if (!result?.hasError) {
-          if (result?.data?.nextStep === "createNewCompany") {
-            this.setStep(3);
-          } else {
-            // location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', result?.data?.sessionDetails?.PHPSESSID);
-          }
+            if (result?.data?.data?.nextStep === 'createNewCompany') {
+                this.setStep(3);
+            } else if (result?.data?.data?.nextStep === 'loginIntoExistingAccount') {
+                location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(
+                    ':session',
+                    result?.data?.sessionDetails?.PHPSESSID
+                );
+            }
         }
       });
   }
