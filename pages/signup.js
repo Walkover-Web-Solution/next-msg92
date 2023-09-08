@@ -198,12 +198,13 @@ class SignUp extends React.Component {
         //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
         //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
         // }
+        console.log(result);
         this.setState({ sessionDetails: result?.data?.sessionDetails });
         if (!result?.hasError) {
           if (result?.data?.nextStep === "createNewCompany") {
             this.setStep(3);
           } else {
-            location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', result?.data?.sessionDetails?.PHPSESSID);
+            // location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', result?.data?.sessionDetails?.PHPSESSID);
           }
         }
       });
