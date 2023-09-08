@@ -21,13 +21,6 @@ export default function PostList({ posts, tags, pagination }) {
             as: (page) => (page === 1 ? null : "/guide/page/" + page),
           }}
         />
-        {/* <ul className={"categories"}>
-        {tags.map((it, i) => (
-          <li key={i}>
-            <TagLink tag={it} />
-          </li> 
-        ))}
-      </ul> */}
       </div>
     </div>
     </div>

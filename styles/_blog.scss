@@ -120,7 +120,7 @@
   
             .blog-card-body {
               .title {
-                margin-top: 6px;
+                margin-top: 6px !important;
                 font-size: var(--c-fs-4);
                 font-weight: var(--c-fw-600);
               }

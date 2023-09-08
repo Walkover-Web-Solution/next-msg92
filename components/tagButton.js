@@ -1,17 +1,8 @@
 import Link from "next/link";
 import TagContent  from "./lib/tags";
 export default function TagButton({ tag }) {
-//   const tagMain = JSON.stringify(tag)
-//   const tagContent = tagMain?.split("'")[1];
-//   const tagggggg = tagContent?.split("#")[1];
-//   console.log(tagggggg, "taggggggg");
-//   console.log(tagContent, "tag content");
-//   console.log(tagMain?.split("#")[1], "tag main");
   return (
     <>
-      {/* <Link legacyBehavior href="/guide/tags/[tags]" as={`/guide/tags/${tag}`}>
-       <a>{tag}</a>
-      </Link> */}
       <Link legacyBehavior href={"/guide/tags/[[...slug]]"} as={`/guide/tags/${tag}`}>
         <a>{tag}</a>
       </Link>

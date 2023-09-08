@@ -12,7 +12,6 @@ import  {getTag} from '@/components/lib/tags'
 import TagButton from '@/components/tagButton';
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import dynamic from 'next/dynamic'
-import TagPostList from '@/components/tagPostList';
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 const component = { ReactPlayer };
@@ -25,19 +24,10 @@ const slugToPostContent = (postContents => {
     postContents.map((data)=>{
       fullPath = data.fullPath
     })
-    postContents?.forEach(it => {hash[it.slug] = it 
-      let slug = it.slug
-      const test = /\s/.test(it.slug)
-     if(test){
-     slug = slug.replace(/ /g, "-")
-     it.slug = slug;
-     hash[it.slug] = it
-  }
-    })
+    postContents?.forEach(it => hash[it.slug] = it)
     return hash;
   })(fetchPostContent());
 export default function TestPage({ source , title, author, date,thumbnailImage, tags}) {
-  // console.log(tags, "tags in testPage");
   const router  = useRouter();
 
 
@@ -60,11 +50,8 @@ export default function TestPage({ source , title, author, date,thumbnailImage, 
         <MDXRemote {...source} components={component}/>
       </div>
 
-      <button className="btn btn-dark mt-3" onClick={handleClick} >Back</button>
+      <button className="btn blog-container__back-btn mt-3" onClick={handleClick} >Back</button>
       <footer>
-      {/* <div className={"social-list"}> 
-        <SocialList date ={date}/>
-      </div> */}
       <div>
       <ul className={"tag-list"}>
             {tags !=="" && tags?.map((it, i) => (
@@ -110,7 +97,5 @@ export async function getStaticProps(slug) {
     var date = new Date(matterResult?.data?.date);
     date = format(date, "LLLL d, yyyy")
   const mdxSource = await serialize(content)
-  // const mdxSource = await renderToString(content, { scope: matterResult });
-  // console.log(mdxSource,"generated");
   return { props: { source: mdxSource || "", title: title || "", author: author || "", date: date, thumbnailImage:thumbnailImage || "", tags: tags || ""} }
 }

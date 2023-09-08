@@ -3,8 +3,6 @@ import PostItem from "./postItem";
 import Pagination from "./pagination";
 
 export default function TagPostList({ posts, tag, pagination }) {
-console.log("inside tagPostList");
-  console.log("tag in tag post list", tag)
   return (
 
     <div className={"container"}>

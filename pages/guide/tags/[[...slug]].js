@@ -15,10 +15,6 @@ export default function Index({ posts, tag, pagination, page }) {
    router.back();
  }
 
-  console.log(posts[0].title, "post in Index page");
-  console.log(tag, "tag in Index page");
-  console.log(pagination, "pagination in Index page");
-  console.log(page,"page in Index page");
   // const relatedPost = posts.map((data)=>{
 //     <a className="blog-card" href={"/guide/" + post.slug}>      
 //     <Date date={parseISO(post.date)} />
@@ -34,7 +30,6 @@ export default function Index({ posts, tag, pagination, page }) {
       <div className={"posts"}>
       <div className={"post-list"}>
       {posts.map((data)=>{
-        console.log(data.title,"what");
         return(<div className="blog-card"><a href={`/guide/${data.slug}`}>{data.title}{data?.thumbnail !== "" && <img src = {data?.thumbnail} />}</a></div>)
       })}
      {/* <TagPostList posts={posts} tag={tag} pagination={pagination} /> */}

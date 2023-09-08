@@ -3,11 +3,6 @@ import { parseISO } from "date-fns";
 import { MdDateRange } from "react-icons/md";
 
 export default function PostItem({ post }) {
-  let slugg = post.slug
-  const test = /\s/.test(post.slug)
-  if (test) {
-    var navigate = slugg.replace(/ /g, "-")
-  }
 
   function getBlogStyle(titleText) {
     let textLength = titleText.length;
@@ -31,7 +26,8 @@ export default function PostItem({ post }) {
   }    
   const readTime = calculateReadTime(article); */
   return (
-    <a href={"/guide/" + (test ? navigate : post.slug)} className={
+    <a href={"/guide/" + post.slug} 
+    className={
       "blog-card" +
       (post.thumbnail ? " bg-dark" : " bg-light") +
       getBlogStyle(post.title)
@@ -49,7 +45,7 @@ export default function PostItem({ post }) {
       </div>
       <div className="blog-card-footer">
           <div className="blog-card-tags">
-            {post?.category?.map((category, idx) => (
+            {post?.tags!== "" && post?.tags?.map((category, idx) => (
               <span className="bg-tags" key={idx}>
                 {category}
               </span>
