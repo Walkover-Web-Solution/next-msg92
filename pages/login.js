@@ -26,7 +26,7 @@ class logIn extends React.Component {
         const url = process.env.API_BASE_URL + "/api/v5/nexus/githubLogin";
         this.hitLoginAPI(url, { code: queryParams?.code, state: queryParams?.state, redirectUrl: process.env.REDIRECT_URL });
       }
-      if (queryParams?.loginWithZoho.includes("true")) {
+      if (queryParams?.loginWithZoho?.includes("true")) {
         let paramsKeyValue = this.props?.browserPathCase.split("#")[1].split("&");
         let userData = {};
         for (let keyValue of paramsKeyValue) {
@@ -35,6 +35,10 @@ class logIn extends React.Component {
         }
         const url = process.env.API_BASE_URL + "/api/v5/nexus/zohoLogin";
         this.hitLoginAPI(url, { ...userData, code: userData?.access_token, redirectUrl: process.env.REDIRECT_URL });
+      }
+      if (queryParams?.loginWithOutlook?.includes('true')) {
+          const url = process.env.API_BASE_URL + '/api/v5/nexus/outlookLogin';
+          this.hitLoginAPI(url, { code: queryParams?.code, redirectUrl: process.env.REDIRECT_URL+'/login' });
       }
     } else {
       this.otpWidgetSetup();
@@ -83,12 +87,10 @@ class logIn extends React.Component {
     }
   };
 
-  outlookLogin = (response) => {
-    if (response) {
-      const url = process.env.API_BASE_URL + "/api/v5/nexus/outlookLogin";
-      this.hitLoginAPI(url, { code: response.accessToken, redirectUrl: process.env.REDIRECT_URL });
-    }
-  };
+   // Outlook Login
+   loginWithOutlook() {
+    location.href = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&client_id=${process.env.MSAL_CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}/login?loginWithOutlook=true&scope=User.Read`;
+  }
 
   hitLoginAPI(url, payload) {
     const requestOptions = {
@@ -161,6 +163,15 @@ class logIn extends React.Component {
                   {/* <MsalProvider instance={this.state.msalInstance}>
                     <MsalLogin msalLoginResponse={this.outlookLogin}/>
                   </MsalProvider> */}
+                  <button
+                     style={{
+                      border: "1px solid var(--primary-light-theme, #1E75BA)",
+                      background: "var(--light-white-bg, #FFF)",
+                  }}
+                    onClick={() => this.loginWithOutlook()}
+                  >
+                    <img src="/img/microsoft-svg.svg" />
+                  </button>
                   {/* <button
                     style={{ border: "1px solid #D94C44" }}
                     onClick={() => this.loginWithZoho()}
