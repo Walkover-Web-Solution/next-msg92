@@ -38,7 +38,7 @@ class logIn extends React.Component {
       }
       if (queryParams?.loginWithOutlook?.includes('true')) {
           const url = process.env.API_BASE_URL + '/api/v5/nexus/outlookLogin';
-          this.hitLoginAPI(url, { code: queryParams?.code, redirectUrl: process.env.REDIRECT_URL+'/login' });
+          this.hitLoginAPI(url, { code: queryParams?.code, redirectUrl: process.env.REDIRECT_URL+'/outlook-token' });
       }
     } else {
       this.otpWidgetSetup();
@@ -89,7 +89,7 @@ class logIn extends React.Component {
 
    // Outlook Login
    loginWithOutlook() {
-    location.href = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&client_id=${process.env.MSAL_CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}/login?loginWithOutlook=true&scope=User.Read`;
+    location.href = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&client_id=${process.env.MSAL_CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}/outlook-token&scope=User.Read`;
   }
 
   hitLoginAPI(url, payload) {

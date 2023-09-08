@@ -140,7 +140,7 @@ class SignUp extends React.Component {
 
   verifyOtp = (otp, requestId, notByEmail) => {
     window.verifyOtp(
-      otp,
+      `${otp}`,
       (data) => {
         if (!notByEmail) {
           this.setState({
