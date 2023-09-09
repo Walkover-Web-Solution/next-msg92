@@ -38,6 +38,4 @@ ToastMessage.propTypes = {
   type: PropTypes.string.isRequired
 };
 
-ToastMessage.dismiss = toast.dismiss;
-
 export default ToastMessage;
