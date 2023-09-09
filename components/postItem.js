@@ -1,10 +1,11 @@
 import Date from "./date";
 import { parseISO } from "date-fns";
 import React from "react";
-import toast from './../components/Toast/toast'
-import { ToastContainer } from "react-toastify";
+import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 export default function PostItem({ post }) {  
+  const[content, setContent] =useState(true);
   // const notify = React.useCallback((type, message) => {
   //   toast({ type, message });
   // }, []);
@@ -19,28 +20,23 @@ export default function PostItem({ post }) {
     return readTimeMinutes;
   }    
   const readTime = calculateReadTime(article); */
+  function showToaster(message, type) {
+    toast.dismiss();
+    toast(message, { type: type });
+}
+const number = 2
+if(number >5){
+  console.log("inside if ")
+  setContent(!content);
+}
   return (      
     <>
-      {/* <ToastContainer
-        position="top-right"
-        autoClose={8000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        draggable={false}
-        pauseOnVisibilityChange
-        closeOnClick
-        pauseOnHover
-      /> */}
     <a className="blog-card" href={"/guide/" + post.slug}>      
         <Date date={parseISO(post.date)} />
         <div className="title">{post.title}
         </div>
     </a>
-    {/* <div onClick={() => notify("success","sucess")} className="message">
-        <p>Success Message</p>
-    </div>
-    <button onClick={() => notify("error", "Error!")} className="message">click error
-      </button> */}
+    {content && <button className="message" onClick={()=>showToaster("sucess")}>click me</button>}
     </>
   );
 
