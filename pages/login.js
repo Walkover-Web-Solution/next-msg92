@@ -22,14 +22,10 @@ class logIn extends React.Component {
         this.hitLoginAPI(url, { code: queryParams?.code, state: queryParams?.state, redirectUrl: process.env.REDIRECT_URL });
       }
       if (queryParams?.loginWithZoho?.includes("true")) {
-        let paramsKeyValue = this.props?.browserPathCase.split("#")[1].split("&");
-        let userData = {};
-        for (let keyValue of paramsKeyValue) {
-          let data = keyValue.split("=");
-          userData[data[0]] = data[1];
-        }
+        const request = {...queryParams};
+        delete request.loginWithZoho
         const url = process.env.API_BASE_URL + "/api/v5/nexus/zohoLogin";
-        this.hitLoginAPI(url, { ...userData, code: userData?.access_token, redirectUrl: process.env.REDIRECT_URL });
+        this.hitLoginAPI(url, {...request, redirectUrl: process.env.REDIRECT_URL+'/login?loginWithZoho=true' });
       }
       if (queryParams?.loginWithOutlook?.includes('true')) {
           const url = process.env.API_BASE_URL + '/api/v5/nexus/outlookLogin';
@@ -70,7 +66,7 @@ class logIn extends React.Component {
 
   // Zoho Login
   loginWithZoho() {
-    location.href = `https://accounts.zoho.com/oauth/v2/auth?client_id=${process.env.ZOHO_CLIENT_ID}&response_type=token&scope=AaaServer.profile.Read&redirect_uri=${process.env.REDIRECT_URL}/login?loginWithZoho=true`;
+    location.href = `https://accounts.zoho.com/oauth/v2/auth?response_type=code&client_id=${process.env.ZOHO_CLIENT_ID}&scope=aaaserver.profile.READ&redirect_uri=${process.env.REDIRECT_URL}/login?loginWithZoho=true`;
   }
 
   // Google Login
@@ -164,12 +160,12 @@ class logIn extends React.Component {
                   >
                     <img src="/img/microsoft-svg.svg" />
                   </button>
-                  {/* <button
+                  <button
                     style={{ border: "1px solid #D94C44" }}
                     onClick={() => this.loginWithZoho()}
                   >
                     <img src="/img/icon-zogo.svg" />
-                  </button> */}
+                  </button>
 
                   {/* onClick={() => this.loginWithGitHubAccount()} */}
                   <a href="/github-auth?login=true">
