@@ -242,9 +242,9 @@ class logIn extends React.Component {
                 </div>
               </div>
 
-              {/* <a href="/signup" className="c-fs-6 text_blue pt-4">
+              <a href="/signup" className="c-fs-6 text_blue pt-4">
                 Create new account
-              </a> */}
+              </a>
             </div>
           </div>
         </section>

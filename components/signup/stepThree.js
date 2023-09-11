@@ -100,7 +100,7 @@ class StepThree extends React.Component {
     }
 
     fetchDataBasedOnCountry = async (selectedCountry) => {
-        let countryName = this.state.countryNames.find((e) => +e.id === +this.state.formData.country)?.name;
+        const countryName = this.state.countryNames.find((e) => +e.id === +this.state.formData.country)?.name;
         try {
             const response = await axios.get(
                 `${process.env.API_BASE_URL}/api/v5/web/getStatesByCountryId/${selectedCountry}`,
@@ -123,8 +123,7 @@ class StepThree extends React.Component {
     };
 
     fetchDataBasedOnState = async (selectedstateProvince) => {
-        // let stateName = this.state.countryData.find((e) => +e.id === +this.state.formData.selectedstateProvince)?.id;
-
+        const stateName = this.state?.countryData?.data?.find((e) => +e.id === +selectedstateProvince)?.name;
         try {
             const response = await axios.get(
                 `${process.env.API_BASE_URL}/api/v5/web/getCitiesByStateId/${selectedstateProvince}`,
@@ -134,17 +133,26 @@ class StepThree extends React.Component {
                     },
                 }
             );
-            this.setState({ 
+            this.setState({
                 stateData: response.data,
-                // formData: {
-                //     ...this.state.formData,
-                //     stateName,
-                // },
-
+                formData: {
+                    ...this.state.formData,
+                    stateName,
+                },
             });
         } catch (error) {
             console.error(error);
         }
+    };
+
+    setCityIdByCityName = (selectedCityName) => {
+        const cityId = this.state?.stateData?.data?.find((e) => e.name === selectedCityName)?.id;
+        this.setState((prevState) => ({
+            formData: {
+                ...prevState.formData,
+                cityId,
+            },
+        }));
     };
 
     componentDidUpdate(prevProps, prevState) {
@@ -248,7 +256,6 @@ class StepThree extends React.Component {
                     <form className="row px-0 step_two_wrapper mt-4">
                         <div className="col-xxl-6 col-xl-8 col-lg-10">
                             <div className="row g-4">
-
                                 <div className="col-lg-6 form-input-with-error">
                                     <input
                                         type="text"
@@ -315,12 +322,9 @@ class StepThree extends React.Component {
                                         <option value="">Industry Type</option>
                                         {this.state.industries && Object.keys(this.state.industries).length > 0 && (
                                             <>
-                                                {Object.keys(this.state.industries).map((key) => (
-                                                    <option
-                                                        key={this.state.industries[key].id}
-                                                        value={this.state.industries[key].name}
-                                                    >
-                                                        {this.state.industries[key].name}
+                                                {this.state.industries.map((obj) => (
+                                                    <option key={obj.id} value={obj.name}>
+                                                        {obj.name}
                                                     </option>
                                                 ))}
                                             </>
@@ -339,9 +343,9 @@ class StepThree extends React.Component {
                                         <option value="">Service Needed</option>
                                         {this.state.services && Object.keys(this.state.services).length > 0 && (
                                             <>
-                                                {Object.keys(this.state.services).map((key) => (
-                                                    <option key={key} value={key}>
-                                                        {this.state.services[key]}
+                                                {Object.entries(this.state.services).map(([id, name]) => (
+                                                    <option key={id} value={name}>
+                                                        {name}
                                                     </option>
                                                 ))}
                                             </>
@@ -411,12 +415,15 @@ class StepThree extends React.Component {
                                         aria-label="Default State/Province"
                                         name="city"
                                         value={this.state.formData.city}
-                                        onChange={this.handleInputChange}
+                                        onChange={(event) => {
+                                            this.handleInputChange(event);
+                                            this.setCityIdByCityName(event?.target?.value);
+                                        }}
                                     >
                                         <option value="">City</option>
                                         {this.state.countryData
                                             ? this.state.stateData?.data.map((city) => (
-                                                  <option key={city.id} value={city.countryCode}>
+                                                  <option key={city.id} value={city.name}>
                                                       {city.name}
                                                   </option>
                                               ))
