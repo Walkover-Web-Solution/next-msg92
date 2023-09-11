@@ -7,7 +7,6 @@ const nextConfig = {
         ZOHO_CLIENT_ID: '1000.XHM7U16ACCWKUUZBTESH8DVM8AKSWT',
         GITHUB_CLIENT_ID: 'b7432f8d5a708e33b3b0',
         MSAL_CLIENT_ID: '164d09e1-531c-427d-9358-9d1347c74170',
-        MSAL_TENANT_ID: 'f8cdef31-a31e-4b4a-93e4-5f571e91255a',
         // REDIRECT_URL: "http://localhost:9999",
         REDIRECT_URL: 'https://web.msg91.com',
         OTP_WIDGET_TOKEN: '3369686f7437333034383435',
