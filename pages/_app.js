@@ -6,6 +6,7 @@ import Headcomp from '@/components/head';
 import { useEffect } from "react";
 import { useRouter } from 'next/router';
 import Script from 'next/script';
+import Toastify from "@/components/toast";
 
 export default function App({ Component, pageProps }) {
     const router = useRouter();
@@ -163,6 +164,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 pricingPath={pricingPath}
             />
             {showNavbar && <Footer path={path} year={year} />}
+            <Toastify />
         </>
     );
 }
