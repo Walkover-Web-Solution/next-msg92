@@ -1,12 +1,11 @@
-const Layout = require("../../../components/layout");
-const TagPostList = require("../../../components/tagPostList");
+
 const config = require('../../../components/lib/config');
 const { countPosts, listPostContent } = require("../../../components/lib/posts");
 const { getTag, listTags } = require("../../../components/lib/tags");
 import Pagination from "@/components/pagination";
-import Link from "next/link";
+import PostItem from "../../../components/postItem";
 import { useRouter } from "next/router";
-
+import { MdKeyboardArrowLeft } from "react-icons/md";
 export default function Index({ posts, tag, pagination, page }) {
  const router  = useRouter();
 
@@ -25,15 +24,15 @@ export default function Index({ posts, tag, pagination, page }) {
   const url = `/guide/tags/${tag}` + (page ? `/${page}` : "");
 //   const title = tag.name; 
   return (
-  
-    <div className={"container blog-home-container"}>
-      <div className={"posts"}>
-      <div className={"post-list"}>
-      {posts.map((data)=>{
-        return(<div className="blog-card"><a href={`/guide/${data.slug}`}>{data.title}{data?.thumbnail !== "" && <img src = {data?.thumbnail} />}</a></div>)
-      })}
-     {/* <TagPostList posts={posts} tag={tag} pagination={pagination} /> */}
-     <Pagination
+<div className="blog">
+<div className={"container blog-home-container"}>
+  <div className={"posts"}>
+    <div className={"post-list"}>
+      {posts?.map((it, i) => (                        
+          <PostItem key={i} post={it} />            
+      ))}
+    </div>
+    <Pagination
         current={pagination.current}
         pages={pagination.pages}
         link={{
@@ -44,12 +43,12 @@ export default function Index({ posts, tag, pagination, page }) {
               : `/guide/tags/${tag}/${page}`,
         }}
       />
-     </div>
-      </div>
-     <div>
-      <button onClick={handleClick}>Back</button>
-     </div>
-      </div>
+  </div>
+  <div>
+   <button className="btn btn-dark" onClick={handleClick} ><MdKeyboardArrowLeft />Back</button>
+  </div>
+</div>
+</div>
   );
 }
 

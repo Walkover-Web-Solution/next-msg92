@@ -50,7 +50,7 @@ export default function TestPage({ source , title, author, date,thumbnailImage, 
         <MDXRemote {...source} components={component}/>
       </div>
 
-      <button className="btn blog-container__back-btn mt-3" onClick={handleClick} >Back</button>
+      <button className="btn blog-container__back-btn mt-3" onClick={handleClick} ><MdKeyboardArrowLeft />Back</button>
       <footer>
       <div>
       <ul className={"tag-list"}>
