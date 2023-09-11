@@ -1,6 +1,7 @@
 import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import countries from "@/data/countries.json";
+import { setUtm } from "../pricingComp";
 
 const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, currencySymbol, oneTimeWtsAppFee}) => {
   const [selectedMode, setSelectedMode] = useState("Monthly");  
@@ -20,6 +21,10 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, c
         break;
     }
   };
+
+  useEffect(() => {    
+    setUtm();
+  }, []);  
 
   return (
     <>
@@ -64,7 +69,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, c
                         </span>
                         {item.plan_services[0].service_credit.free_credits} for Outbound calls
                       </div>                    
-                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                         Get Started
                       </a>
                     </div>
@@ -91,7 +96,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, c
                       </span>
                       Free balance of {currencySymbol} {item.plan_services[0].service_credit.service_credit_rates[0].free_credits}
                     </div>                    
-                    <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                    <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                       Get Started
                     </a>
                   </div>

@@ -8,16 +8,16 @@ import ProductMenu from "./productmenu";
 import Notification from "./notification";
 import Link from "next/link";
 
-const navbar = ({ brawserPath }) => {
-  var path = brawserPath.split("/")[1];
-  path = path.length == 2 ? "/" + path : "";
+const navbar = ({ browserPath, pricingPath }) => {  
+  var path = browserPath.split("/")[1];
+  path = path.length == 2 ? "/" + path : "";  
+  
   const [showOverlay, setShowOverlay] = useState(false);
   const [show, setShow] = useState(false);
   var mininav_notification = "d-block";
   const toggleOverlay = () => {
     setShowOverlay(true);
-  };
-
+  };  
  
   useEffect(() => {
     $("#product-link").on("mouseenter", function () {
@@ -95,16 +95,16 @@ const navbar = ({ brawserPath }) => {
               <span className="c-fs-4 c-fw-m">Integrations</span>
               <div className="nav-line"></div>
             </a>
-            <Link
+            { browserPath !== '/shorturl' && <Link
               className={`nav-link menu-opt text-dark ${
-                brawserPath === "/pricing" ? "active" : ""
+                browserPath === "/pricing" ? "active" : ""
               }`}
-              href={`${path}/pricing/sms`}
+              href={pricingPath}
               id="pricing-link"
-            >
+            >              
               <span className="c-fs-4 c-fw-m">Pricing</span>
               <div className="nav-line"></div>
-            </Link>
+            </Link> }
           </div>
           
           <div className="msg91-logo-cont  align-items-center justify-content-center d-flex" id="main-logo">
@@ -126,7 +126,7 @@ const navbar = ({ brawserPath }) => {
               // href="https://control.msg91.com/signup/"
               href="/signup"
               target="_blank"
-              className="btn btn-dark c-fs-4 c-fw-sb px-3"
+              className="btn btn-dark c-fs-4 c-fw-sb px-3 utm"
               id="signup-btn"
             >
               Sign Up

@@ -1,12 +1,8 @@
 import GoogleLoginButton from "@/components/signup/googleLogin";
-import MsalLogin from "@/components/signup/msalLogin";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import React from "react";
 import { MdCall, MdEmail } from "react-icons/md";
 import { getQueryParamsDeatils } from "@/components/utils";
-import { PublicClientApplication } from '@azure/msal-browser';
-import { msalConfig } from "@/components/msalAuthConfig";
-import { MsalProvider } from '@azure/msal-react';
 
 class logIn extends React.Component {
   constructor(props) {
@@ -15,7 +11,6 @@ class logIn extends React.Component {
     this.state = {
       loginInProgress: false,
       showContactonLogin: false,
-      msalInstance: new PublicClientApplication(msalConfig)
     };
   }
 
@@ -160,9 +155,6 @@ class logIn extends React.Component {
                   >
                     <GoogleLoginButton googleLoginResponse={this.googleLogin} />
                   </GoogleOAuthProvider>
-                  {/* <MsalProvider instance={this.state.msalInstance}>
-                    <MsalLogin msalLoginResponse={this.outlookLogin}/>
-                  </MsalProvider> */}
                   <button
                      style={{
                       border: "1px solid var(--primary-light-theme, #1E75BA)",
