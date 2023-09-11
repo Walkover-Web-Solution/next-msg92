@@ -322,12 +322,9 @@ class StepThree extends React.Component {
                                         <option value="">Industry Type</option>
                                         {this.state.industries && Object.keys(this.state.industries).length > 0 && (
                                             <>
-                                                {Object.keys(this.state.industries).map((key) => (
-                                                    <option
-                                                        key={this.state.industries[key].id}
-                                                        value={this.state.industries[key].name}
-                                                    >
-                                                        {this.state.industries[key].name}
+                                                {this.state.industries.map((obj) => (
+                                                    <option key={obj.id} value={obj.name}>
+                                                        {obj.name}
                                                     </option>
                                                 ))}
                                             </>
@@ -346,9 +343,9 @@ class StepThree extends React.Component {
                                         <option value="">Service Needed</option>
                                         {this.state.services && Object.keys(this.state.services).length > 0 && (
                                             <>
-                                                {Object.keys(this.state.services).map((key) => (
-                                                    <option key={key} value={key}>
-                                                        {this.state.services[key]}
+                                                {Object.entries(this.state.services).map(([id, name]) => (
+                                                    <option key={id} value={name}>
+                                                        {name}
                                                     </option>
                                                 ))}
                                             </>
