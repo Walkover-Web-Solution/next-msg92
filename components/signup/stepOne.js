@@ -15,7 +15,7 @@ class StepOne extends React.Component {
           />
         </div>
         <h1>Create an account</h1>
-        <div className="entry__right_section__container__entry_with d-flex mb-4 me-4">
+        {/* <div className="entry__right_section__container__entry_with d-flex mb-4 me-4">
           <div className="signup_with__right mt-2">
             <span className="d-inline-block mb-4">Are you a developer?</span>
 
@@ -38,10 +38,10 @@ class StepOne extends React.Component {
           </div>
         </div>
 
-        <span className="d-block line_on_right c-fs-6 mb-4">or</span>
+        <span className="d-block line_on_right c-fs-6 mb-0">or</span> */}
 
         <button
-          className="entry__right_section__container__entry_button mb-4"
+          className="entry__right_section__container__entry_button my-4"
           onClick={() => this.props.setStep(2)}
         >
           Sign up with Email
