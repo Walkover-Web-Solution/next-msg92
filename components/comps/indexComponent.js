@@ -18,7 +18,7 @@ const indexComp = ({pageData, params}) => {
         <a
           href="https://control.msg91.com/signup/"
           target="_blank"
-          className="btn btn-dark small-heading px-3 py-2 mt-3 c-fw-sb px-md-4 py-md-3 ls-3 "
+          className="btn btn-dark small-heading px-3 py-2 mt-3 c-fw-sb px-md-4 py-md-3 ls-3 utm"
         >
           Get Started
         </a>
@@ -55,7 +55,7 @@ const indexComp = ({pageData, params}) => {
         <div className="product-card">
           <div className="product-head">
             <div className="product-head-text">
-              <span className="pro-heading c-head">Conversation</span>
+              <span className="pro-heading c-head">Contact center</span>
             </div>
             <div className="product-head-img hello-pro"></div>
           </div>
@@ -78,7 +78,7 @@ const indexComp = ({pageData, params}) => {
         <div className="product-card">
           <div className="product-head">
             <div className="product-head-text">
-              <span className="pro-heading c-head">Segmentation</span>
+              <span className="pro-heading c-head">Customer data platform</span>
             </div>
             <div className="product-head-img segmento-pro"></div>
           </div>

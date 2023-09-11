@@ -15,7 +15,7 @@ const IntPage = () => {
         <div className="container d-flex align-items-center gap-4">
           <img src="\img\integrations\hubspot-logo.svg" />
           <div>
-            <h1 className="sub-heading">hubspot Integration</h1>
+            <h1 className="sub-heading">HubSpot Integration</h1>
             <h4 className="c-fs-4 mt-2">
               Streamline Your Engagement Workflows
             </h4>
@@ -27,7 +27,7 @@ const IntPage = () => {
           <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
             <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
               <h1 className={`heading page-title`}>
-                Engage Effectively With Hubspot
+                Engage Effectively With HubSpot
               </h1>
             </div>
             <div className="p-3">
@@ -35,7 +35,7 @@ const IntPage = () => {
               The MSG91 HubSpot Plugin lets you integrate communication features into your HubSpot workflows. Automate and power up your business workflows and customer engagement with ease, without embedding any code
               </p>
               <a
-                href="https://ecosystem.hubspot.com/marketplace/apps/marketing/live-chat/all-in-one-sms"
+                href="https://msg91.com/help/MSG91/hubspot-integration-with-msg91"
                 className="btn btn-dark btn-lg c-fs-2 my-4"
                 target="_blank"
               >
@@ -107,7 +107,7 @@ const IntPage = () => {
       </div>
       <div className="container my-5">
         <h1 className="sub-heading c-head mb-3">
-          The MSG91 Hubspot Plugin Offers
+          The MSG91 HubSpot Plugin Offers
         </h1>
         <div className="d-flex align-items-center gap-2 my-3">
           <MdDone className="c-fs-1 col-int hubspot" />
@@ -138,11 +138,11 @@ const IntPage = () => {
         Enhance your communication capabilities and automate your engagement tasks
         </h2>
         <a
-            href="https://ecosystem.hubspot.com/marketplace/apps/marketing/live-chat/all-in-one-sms"
+            href="https://msg91.com/help/MSG91/hubspot-integration-with-msg91"
             className="btn btn-dark btn-lg c-fs-2 my-4"
             target="_blank"
           >
-            Get the MSG91 Hubspot plugin
+            Get the MSG91 HubSpot plugin
           </a>        
       </div>
     </>

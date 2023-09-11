@@ -15,6 +15,36 @@ import Pricingrcs from "@/components/pricing/pricing-rcs";
 import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
 import Link from "next/link"; 
 
+export function setUtm(){
+  function getCookie(cookieName) {
+    var name = cookieName + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var cookieArray = decodedCookie.split(';');
+  
+    for (var i = 0; i < cookieArray.length; i++) {
+      var cookie = cookieArray[i];
+      while (cookie.charAt(0) === ' ') {
+        cookie = cookie.substring(1);
+      }
+      if (cookie.indexOf(name) === 0) {
+        return cookie.substring(name.length, cookie.length);
+      }
+    }
+    return null; // Return null if the cookie is not found
+  }
+
+  // Get all anchor tags in the document using querySelectorAll
+  var anchorTags = document.querySelectorAll(".utm");
+  // Loop through the anchor tags
+  for (var i = 0; i < anchorTags.length; i++) {
+    var href = anchorTags[i].getAttribute("href"); // Get the current href value
+    var query = getCookie('msg91_query');
+    if (href && query) {
+      anchorTags[i].setAttribute("href", href + query);
+    }
+  }
+}
+
 const PricingComp = ({ countryCode, product, brawserPath }) => {
   var pathLength = brawserPath?.split("/")[1].length;
   var pathLengthCond = true
@@ -92,9 +122,9 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
           `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
           )
 
-        // const response = await axios.get(
-        //   `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-        // );
+        /* const response = await axios.get(
+          `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
+        ); */
         return response.data.data;
       });
   
@@ -150,12 +180,10 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     else if(product === "whatsapp"){
       fetchWhatsAppData(response?.currency);
     }
-  };
-
- 
+  };  
 
   useEffect(() => {
-    findCountry(countryCode);
+    findCountry(countryCode);    
   }, [countryCode]);
 
 
