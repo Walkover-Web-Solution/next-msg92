@@ -2,6 +2,7 @@ import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import countries from "@/data/countries.json";
 import { Typeahead } from 'react-bootstrap-typeahead';
+import { setUtm } from "../pricingComp";
 
 const Pricingsms = ({
   pricing,
@@ -25,12 +26,17 @@ const Pricingsms = ({
     } */
 
     // console.log(originCountry, destinationCountry);
+    // Get all anchor tags in the document using querySelectorAll
+
+    setUtm();
+
   }, [pricing, originCountry, destinationCountry]);  
   return (
     <>
      <div>
-     { originCountry?.length >= 1 && <div className="g-3 d-flex justify-content-center col-lg-5 m-auto pb-5">
+     { originCountry?.length >= 1 && <div className="gap-3 d-flex flex-column flex-md-row   align-items-cnetre justify-content-center col-12 col-md-10 col-lg-7 m-auto pb-5">
        <Typeahead
+       className="w-100"
           id="originCountry"
           placeholder="Origin Country"
           labelKey="name"
@@ -50,6 +56,7 @@ const Pricingsms = ({
         <div className="px-4">To</div>
 
         <Typeahead
+       className="w-100"
           id="destinationCountry"
           placeholder="Destination Country"
           labelKey="name"
@@ -61,9 +68,6 @@ const Pricingsms = ({
           options={countries}
           clearButton
           defaultSelected={[countries?.find(item => item.name === originCountry)]}
-          inputProps={{
-            autoComplete: "off" /* Add the autoComplete attribute here */
-          }}
         />
 
       </div>}
@@ -91,7 +95,7 @@ const Pricingsms = ({
                         <h5 className="c-fs-2 text-green mt-2">{currencySymbol}{item[4]?.rate}/SMS</h5>
                         <h2 className="c-fs-3 c-ff-b">{currencySymbol}{amountArr[index]} </h2>
                         <p className="c-fs-5">+18% GST</p>
-                        <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                        <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                           Get Started
                         </a>
                       </div>
@@ -106,7 +110,7 @@ const Pricingsms = ({
                       <h5 className="c-fs-2 mt-2 text-green">{currencySymbol}{item[4]?.rate}/SMS</h5>
                       <h2 className="c-fs-3 c-ff-b">{currencySymbol}{amountArr[index]} </h2>
                       <p className="c-fs-5">+18% GST</p>
-                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                         Get Started
                       </a>
                     </div>
@@ -117,7 +121,7 @@ const Pricingsms = ({
                       <h3 className="c-fs-3">SMS Pricing</h3>
                       <h5 className="c-fs-2 mt-2 text-green">{currencySymbol}{item[4]?.rate}/SMS</h5>
                       <h2 className="c-fs-3 c-ff-b">-</h2>                      
-                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                         Get Started
                       </a>
                     </div>
