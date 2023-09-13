@@ -3,7 +3,7 @@ import { MdDone } from "react-icons/md";
 import StepOne from "@/components/signup/stepOne";
 import StepTwo from "@/components/signup/stepTwo";
 import StepThree from "@/components/signup/stepThree";
-import { getQueryParamsDeatils } from "@/components/utils";
+import { getCookie, getQueryParamsDeatils } from "@/components/utils";
 
 const OTPRetryModes = {
   Sms: '11',
@@ -165,20 +165,27 @@ class SignUp extends React.Component {
   }
 
   validateUserForCompany = () => {
-    let url = process.env.API_BASE_URL + "/api/v5/nexus/validateEmailSignUp";
+    let url = process.env.API_BASE_URL + '/api/v5/nexus/validateEmailSignUp';
+    const utmObj = Object.fromEntries(
+        getCookie('msg91_query')
+            ?.replace('?', '')
+            ?.split('&')
+            ?.map((v) => v.split('=')) ?? []
+    );
     let payload = {
-      "mobileToken": this.state.smsAccessToken,
-      "utm_term": "utm_term",
-      "utm_medium": "utm_medium",
-      "utm_source": "utm_source",
-      "utm_campaign": "utm_campaign",
-      "utm_content": "utm_content",
-      "utm_matchtype": "utm_matchtype",
-      "ad": "ad",
-      "adposition": "adposition",
-      "reference": "reference",
-      "source": "msg91"
-    }
+        'mobileToken': this.state.smsAccessToken,
+        ...utmObj
+        // "utm_term": "utm_term",
+        // "utm_medium": "utm_medium",
+        // "utm_source": "utm_source",
+        // "utm_campaign": "utm_campaign",
+        // "utm_content": "utm_content",
+        // "utm_matchtype": "utm_matchtype",
+        // "ad": "ad",
+        // "adposition": "adposition",
+        // "reference": "reference",
+        // "source": "msg91"
+    };
     if (this.state.githubCode && this.state.signupByGitHub) {
       payload['code'] = this.state.githubCode;
       payload['state'] = this.state.githubState;
