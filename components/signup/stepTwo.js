@@ -145,7 +145,7 @@ class StepTwo extends React.Component {
                     ) : null}
                     {this.props.allowedRetry?.whatsApp ? (
                       <span>
-                        <span>or </span>
+                        {this.props.allowedRetry?.sms && <span>or </span>}
                         <a
                           href={undefined}
                           onClick={() =>
@@ -159,7 +159,7 @@ class StepTwo extends React.Component {
                     ) : null}
                     {this.props.allowedRetry?.voice ? (
                       <span>
-                        <span>or </span>
+                        {(this.props.allowedRetry?.sms || this.props.allowedRetry?.whatsApp) && <span>or </span>}
                         <a
                           href={undefined}
                           onClick={() =>
