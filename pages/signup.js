@@ -4,6 +4,7 @@ import StepOne from "@/components/signup/stepOne";
 import StepTwo from "@/components/signup/stepTwo";
 import StepThree from "@/components/signup/stepThree";
 import { getCookie, getQueryParamsDeatils, setCookie } from "@/components/utils";
+import { toast } from 'react-toastify';
 
 const OTPRetryModes = {
   Sms: '11',
@@ -93,12 +94,12 @@ class SignUp extends React.Component {
 
   sendOtp = (identifier, notByEmail) => {
     if (!new RegExp(EMAIL_REGEX).test(identifier) && !notByEmail) {
-      this.setState({ emailIdentifierError: 'Enter valid email.' });
-      return;
+        toast.error('Invalid email address.');
+        return;
     }
     if (!new RegExp(MOBILE_REGEX).test(identifier) && notByEmail) {
-      this.setState({ smsIdentifierError: 'Enter valid mobile.' });
-      return;
+        toast.error('Invalid mobile number.');
+        return;
     }
     window.sendOtp(
       identifier,
@@ -110,57 +111,48 @@ class SignUp extends React.Component {
         }
       },
       (error) => {
-        this.setState({
-          smsIdentifierError: notByEmail ? error?.message : this.state?.smsIdentifierError,
-          emailIdentifierError: !notByEmail ? error?.message : this.state?.emailIdentifierError
-        });
+        toast.error(error?.message);
       }
     );
   };
 
   retryOtp(retryBy, requestId, notByEmail) {
     window.retryOtp(
-      retryBy,
-      (data) => {
-        if (notByEmail) {
-          this.setState({ smsSuccessMessage: 'OTP resent successfully.' });
-        } else {
-          this.setState({ emailSuccessMessage: 'OTP resent successfully.' });
-        }
-      },
-      (error) => {
-        this.setState({
-          smsIdentifierError: notByEmail ? error?.message : this.state?.smsIdentifierError,
-          emailIdentifierError: !notByEmail ? error?.message : this.state?.emailIdentifierError
-        });
-      },
-      requestId
+        retryBy,
+        (data) => {
+            if (notByEmail) {
+                this.setState({ smsSuccessMessage: 'OTP resent successfully.' });
+            } else {
+                this.setState({ emailSuccessMessage: 'OTP resent successfully.' });
+            }
+        },
+        (error) => {
+            toast.error(error?.message);
+        },
+        requestId
     );
   }
 
   verifyOtp = (otp, requestId, notByEmail) => {
     window.verifyOtp(
-      `${otp}`,
-      (data) => {
-        if (!notByEmail) {
-          this.setState({
-            emailAccessToken: data.message,
-            emailSuccessMessage: 'Email verified.'
-          });
-        } else {
-          this.setState({
-            smsAccessToken: data.message,
-            smsSuccessMessage: 'Mobile verified.'
-          });
-        }
-      },
-      (error) => {
-        this.setState({
-          smsIdentifierError: notByEmail ? error?.message : this.state?.smsIdentifierError,
-          emailIdentifierError: !notByEmail ? error?.message : this.state?.emailIdentifierError
-        });
-      },
-      requestId
+        `${otp}`,
+        (data) => {
+            if (!notByEmail) {
+                this.setState({
+                    emailAccessToken: data.message,
+                    emailSuccessMessage: 'Email verified.',
+                });
+            } else {
+                this.setState({
+                    smsAccessToken: data.message,
+                    smsSuccessMessage: 'Mobile verified.',
+                });
+            }
+        },
+        (error) => {
+            toast.error(error?.message);
+        },
+        requestId
     );
   }
 
@@ -344,8 +336,6 @@ class SignUp extends React.Component {
                   OTPRetryModes={OTPRetryModes}
                   smsRequestId={this.state?.smsRequestId}
                   emailRequestId={this.state?.emailRequestId}
-                  invalidMobile={this.state?.smsIdentifierError}
-                  invalidEmail={this.state?.emailIdentifierError}
                   smsIdentifier={this.state?.smsIdentifier}
                   emailIdentifier={this.state?.emailIdentifier}
                   smsSuccessMessage={this.state?.smsSuccessMessage}

@@ -3,6 +3,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import React from "react";
 import { MdCall, MdEmail } from "react-icons/md";
 import { getQueryParamsDeatils, setCookie, getCookie } from "@/components/utils";
+import { toast } from 'react-toastify';
 
 class logIn extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class logIn extends React.Component {
     }
     try {
         const url = process.env.API_BASE_URL + '/api/v5/nexus/checkSession';
-        this.hitLoginAPI(url, { session: getCookie('sessionId') });
+        this.hitLoginAPI(url, { session: getCookie('sessionId') }, false);
     } catch (error) {
         console.log('No Session Found');
     }
@@ -89,7 +90,7 @@ class logIn extends React.Component {
     location.href = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&client_id=${process.env.MSAL_CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}/outlook-token&scope=User.Read`;
   }
 
-  hitLoginAPI(url, payload) {
+  hitLoginAPI(url, payload, showError = true) {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -104,6 +105,8 @@ class logIn extends React.Component {
         }
         if (!result?.hasError) {
           location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', sessionId)
+        } else if (showError){
+          toast.error(result?.errors?.[0]);
         }
       });
   }
