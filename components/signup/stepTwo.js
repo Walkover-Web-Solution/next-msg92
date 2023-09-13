@@ -66,6 +66,14 @@ class StepTwo extends React.Component {
                       Get OTP
                     </button>}
                 </div>
+                {this.props?.emailIdentifier && this.props?.emailSuccessMessage ? (
+                  <p
+                    className="col-success c-fs-6 c-fw-500 mt-3"
+                    style={{ color: "var(--whats-app-green, #29A653)" }}
+                  >
+                    {this.props?.emailSuccessMessage}
+                  </p>
+                ) : null}
               </div>
               {this.props?.emailIdentifier ?
                 <div className="step_input_wrapper__right col-xl-6 col-lg-12">
@@ -78,7 +86,7 @@ class StepTwo extends React.Component {
                       notByEmail={false}
                     />
                     {this.props.allowedRetry?.email ? (
-                      <p className="col-dark mt-3 c-fs-6">
+                      <p className="col-dark my-3 c-fs-6">
                         Resend on{" "}
                         <a
                           href={undefined}
@@ -95,7 +103,7 @@ class StepTwo extends React.Component {
                 </div> : null}
             </div>
           </div>
-          <div className="row mx-0 px-0 step_input_wrapper mt-4 mb-5">
+          <div className="row mx-0 px-0 step_input_wrapper mt-4">
             <label htmlFor="contact" className="mb-3 ps-0">
               Verify Mobile number
             </label>
@@ -120,6 +128,14 @@ class StepTwo extends React.Component {
                     Get OTP
                   </button>
                 </div>
+                {this.props?.smsIdentifier && this.props?.smsSuccessMessage ? (
+                  <p
+                    className="col-success c-fs-6 c-fw-500 mt-3"
+                    style={{ color: "var(--whats-app-green, #29A653)" }}
+                  >
+                    {this.props?.smsSuccessMessage}
+                  </p>
+                ) : null}
               </div>
               {this.props?.smsIdentifier ? <div className="step_input_wrapper__right col-xl-6 col-lg-12">
                 <div className="d-flex flex-column">
@@ -130,7 +146,7 @@ class StepTwo extends React.Component {
                     requestId={this.props.smsRequestId}
                     notByEmail={true}
                   />
-                  <p className="col-dark mt-3 c-fs-6 p-2">
+                  <p className="col-dark my-3 c-fs-6 p-2">
                     Resend on{" "}
                     {this.props.allowedRetry?.sms ? (
                       <a
@@ -176,39 +192,7 @@ class StepTwo extends React.Component {
               </div> : null}
             </div>
           </div>
-          {this.props?.emailIdentifier && !this.props?.invalidEmail ? (
-            <p
-              className="col-success c-fs-6 c-fw-500 my-4"
-              style={{ color: "var(--whats-app-green, #29A653)" }}
-            >
-              {this.props?.emailSuccessMessage}
-            </p>
-          ) : null}
-          {this.props?.smsIdentifier && !this.props?.invalidMobile ? (
-            <p
-              className="col-success c-fs-6 c-fw-500 my-4"
-              style={{ color: "var(--whats-app-green, #29A653)" }}
-            >
-              {this.props?.smsSuccessMessage}
-            </p>
-          ) : null}
-          {this.props?.invalidEmail ? (
-            <p
-              className="col-success c-fs-6 c-fw-500 my-4"
-              style={{ color: "var(--whats-app-green, #29A653)" }}
-            >
-              {this.props?.invalidEmail}
-            </p>
-          ) : null}
-          {this.props?.invalidMobile ? (
-            <p
-              className="col-success c-fs-6 c-fw-500 my-4"
-              style={{ color: "var(--whats-app-green, #29A653)" }}
-            >
-              {this.props?.invalidMobile}
-            </p>
-          ) : null}
-          <div className="row">
+          <div className="row mt-5">
             <div>
               <button
                 className="me-3 btn back_btn"
