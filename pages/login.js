@@ -106,7 +106,7 @@ class logIn extends React.Component {
         if (!result?.hasError) {
           location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', sessionId)
         } else if (showError){
-          toast.error(result?.errors?.[0]);
+          toast.error(result?.errors?.[0] ?? result?.errors);
         }
       });
   }

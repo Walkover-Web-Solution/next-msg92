@@ -32,8 +32,8 @@ class SignUp extends React.Component {
       githubState: queryParams?.["state"],
       widgetData: null,
       allowedRetry: null,
-      emailAccessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXF1ZXN0SWQiOiIzMzY4NDI3MjMwNzkzNTM2MzkzNjMzMzUiLCJjb21wYW55SWQiOiIyNzgwNjAifQ.XijCnjR2LCX0axNA5d3392Jl1wvUqAv8uKcHw-uXc14',
-      smsAccessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXF1ZXN0SWQiOiIzMzY4NDI3MjZhNzczMDM0MzgzMDMwMzMiLCJjb21wYW55SWQiOiIyNzgwNjAifQ.3PkND0OBhsMt7FgH121EI_DrI3eNwYijm1uDZW3X20E'
+      emailAccessToken: null,
+      smsAccessToken: null,
     };
   }
 
@@ -157,6 +157,10 @@ class SignUp extends React.Component {
   }
 
   validateUserForCompany = () => {
+    if (!this.state.smsAccessToken || !this.state.emailAccessToken) {
+        toast.error('Email and Mobile should be verified.');
+        return;
+    }
     let url = process.env.API_BASE_URL + '/api/v5/nexus/validateEmailSignUp';
     const utmObj = Object.fromEntries(
         getCookie('msg91_query')
@@ -205,6 +209,8 @@ class SignUp extends React.Component {
                     result?.data?.sessionDetails?.PHPSESSID
                 );
             }
+        } else {
+          toast.error(result?.errors?.[0] ?? result?.errors);
         }
       });
   }
@@ -253,8 +259,10 @@ class SignUp extends React.Component {
       .then(response => response.json())
       .then(result => {
         this.setSession(result);
-        if(result?.status === 'success') {
-          location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', result?.data?.sessionDetails?.PHPSESSID ?? this.state?.sessionDetails?.PHPSESSID);
+        if (!result?.hasError) {
+          location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', getCookie('sessionId'));
+        } else {
+          toast.error(result?.errors?.[0] ?? result?.errors);
         }
       });
   }
