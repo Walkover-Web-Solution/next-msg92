@@ -6,7 +6,7 @@ const Toastify = () => {
     return (
         <ToastContainer
         position="top-right"
-        autoClose={8000}
+        autoClose={3000}
         // transition={Slide}
         hideProgressBar={false}
         newestOnTop={false}

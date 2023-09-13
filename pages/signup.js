@@ -3,7 +3,8 @@ import { MdDone } from "react-icons/md";
 import StepOne from "@/components/signup/stepOne";
 import StepTwo from "@/components/signup/stepTwo";
 import StepThree from "@/components/signup/stepThree";
-import { getQueryParamsDeatils } from "@/components/utils";
+import { getCookie, getQueryParamsDeatils, setCookie } from "@/components/utils";
+import { toast } from 'react-toastify';
 
 const OTPRetryModes = {
   Sms: '11',
@@ -31,8 +32,8 @@ class SignUp extends React.Component {
       githubState: queryParams?.["state"],
       widgetData: null,
       allowedRetry: null,
-      emailAccessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXF1ZXN0SWQiOiIzMzY4NDI3MjMwNzkzNTM2MzkzNjMzMzUiLCJjb21wYW55SWQiOiIyNzgwNjAifQ.XijCnjR2LCX0axNA5d3392Jl1wvUqAv8uKcHw-uXc14',
-      smsAccessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXF1ZXN0SWQiOiIzMzY4NDI3MjZhNzczMDM0MzgzMDMwMzMiLCJjb21wYW55SWQiOiIyNzgwNjAifQ.3PkND0OBhsMt7FgH121EI_DrI3eNwYijm1uDZW3X20E'
+      emailAccessToken: null,
+      smsAccessToken: null,
     };
   }
 
@@ -93,12 +94,12 @@ class SignUp extends React.Component {
 
   sendOtp = (identifier, notByEmail) => {
     if (!new RegExp(EMAIL_REGEX).test(identifier) && !notByEmail) {
-      this.setState({ emailIdentifierError: 'Enter valid email.' });
-      return;
+        toast.error('Invalid email address.');
+        return;
     }
     if (!new RegExp(MOBILE_REGEX).test(identifier) && notByEmail) {
-      this.setState({ smsIdentifierError: 'Enter valid mobile.' });
-      return;
+        toast.error('Invalid mobile number.');
+        return;
     }
     window.sendOtp(
       identifier,
@@ -110,75 +111,78 @@ class SignUp extends React.Component {
         }
       },
       (error) => {
-        this.setState({
-          smsIdentifierError: notByEmail ? error?.message : this.state?.smsIdentifierError,
-          emailIdentifierError: !notByEmail ? error?.message : this.state?.emailIdentifierError
-        });
+        toast.error(error?.message);
       }
     );
   };
 
   retryOtp(retryBy, requestId, notByEmail) {
     window.retryOtp(
-      retryBy,
-      (data) => {
-        if (notByEmail) {
-          this.setState({ smsSuccessMessage: 'OTP resent successfully.' });
-        } else {
-          this.setState({ emailSuccessMessage: 'OTP resent successfully.' });
-        }
-      },
-      (error) => {
-        this.setState({
-          smsIdentifierError: notByEmail ? error?.message : this.state?.smsIdentifierError,
-          emailIdentifierError: !notByEmail ? error?.message : this.state?.emailIdentifierError
-        });
-      },
-      requestId
+        retryBy,
+        (data) => {
+            if (notByEmail) {
+                this.setState({ smsSuccessMessage: 'OTP resent successfully.' });
+            } else {
+                this.setState({ emailSuccessMessage: 'OTP resent successfully.' });
+            }
+        },
+        (error) => {
+            toast.error(error?.message);
+        },
+        requestId
     );
   }
 
   verifyOtp = (otp, requestId, notByEmail) => {
     window.verifyOtp(
-      `${otp}`,
-      (data) => {
-        if (!notByEmail) {
-          this.setState({
-            emailAccessToken: data.message,
-            emailSuccessMessage: 'Email verified.'
-          });
-        } else {
-          this.setState({
-            smsAccessToken: data.message,
-            smsSuccessMessage: 'Mobile verified.'
-          });
-        }
-      },
-      (error) => {
-        this.setState({
-          smsIdentifierError: notByEmail ? error?.message : this.state?.smsIdentifierError,
-          emailIdentifierError: !notByEmail ? error?.message : this.state?.emailIdentifierError
-        });
-      },
-      requestId
+        `${otp}`,
+        (data) => {
+            if (!notByEmail) {
+                this.setState({
+                    emailAccessToken: data.message,
+                    emailSuccessMessage: 'Email verified.',
+                });
+            } else {
+                this.setState({
+                    smsAccessToken: data.message,
+                    smsSuccessMessage: 'Mobile verified.',
+                });
+            }
+        },
+        (error) => {
+            toast.error(error?.message);
+        },
+        requestId
     );
   }
 
   validateUserForCompany = () => {
-    let url = process.env.API_BASE_URL + "/api/v5/nexus/validateEmailSignUp";
-    let payload = {
-      "mobileToken": this.state.smsAccessToken,
-      "utm_term": "utm_term",
-      "utm_medium": "utm_medium",
-      "utm_source": "utm_source",
-      "utm_campaign": "utm_campaign",
-      "utm_content": "utm_content",
-      "utm_matchtype": "utm_matchtype",
-      "ad": "ad",
-      "adposition": "adposition",
-      "reference": "reference",
-      "source": "msg91"
+    if (!this.state.smsAccessToken || !this.state.emailAccessToken) {
+        toast.error('Email and Mobile should be verified.');
+        return;
     }
+    let url = process.env.API_BASE_URL + '/api/v5/nexus/validateEmailSignUp';
+    const utmObj = Object.fromEntries(
+        getCookie('msg91_query')
+            ?.replace('?', '')
+            ?.split('&')
+            ?.map((v) => v.split('=')) ?? []
+    );
+    const payload = {
+        'session': getCookie('sessionId'),
+        'mobileToken': this.state.smsAccessToken,
+        ...utmObj,
+        // "utm_term": "utm_term",
+        // "utm_medium": "utm_medium",
+        // "utm_source": "utm_source",
+        // "utm_campaign": "utm_campaign",
+        // "utm_content": "utm_content",
+        // "utm_matchtype": "utm_matchtype",
+        // "ad": "ad",
+        // "adposition": "adposition",
+        // "reference": "reference",
+        // "source": "msg91"
+    };
     if (this.state.githubCode && this.state.signupByGitHub) {
       payload['code'] = this.state.githubCode;
       payload['state'] = this.state.githubState;
@@ -194,11 +198,7 @@ class SignUp extends React.Component {
     fetch(url, requestOptions)
       .then(response => response.json())
       .then(result => {
-        // for (let key in result?.data?.sessionDetails) {
-        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
-        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
-        // }
-        console.log(result);
+        this.setSession(result);
         this.setState({ sessionDetails: result?.data?.sessionDetails });
         if (!result?.hasError) {
             if (result?.data?.data?.nextStep === 'createNewCompany') {
@@ -209,13 +209,22 @@ class SignUp extends React.Component {
                     result?.data?.sessionDetails?.PHPSESSID
                 );
             }
+        } else {
+          toast.error(result?.errors?.[0] ?? result?.errors);
         }
       });
   }
 
+  setSession = (result) => {
+    const sessionId = result?.data?.sessionDetails?.PHPSESSID;
+    if (sessionId) {
+        setCookie('sessionId', sessionId, 30);
+    }
+  }
+
   finalSubmit = (data) => {
     const url = process.env.API_BASE_URL + "/api/v5/nexus/finalRegister";
-    let payload = {
+    const payload = {
       "companyDetails": {
         "industry": data?.industryType,
         "state": data?.stateName,
@@ -236,7 +245,7 @@ class SignUp extends React.Component {
         "lastName": data?.lastName
       },
       "acceptInviteForCompanies": [],
-      "session": this.state?.sessionDetails?.PHPSESSID
+      "session": getCookie('sessionId'),
     }
 
     console.log(payload);
@@ -249,12 +258,11 @@ class SignUp extends React.Component {
     fetch(url, requestOptions)
       .then(response => response.json())
       .then(result => {
-        // for (let key in result?.data?.sessionDetails) {
-        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
-        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
-        // }
-        if(result?.status === 'success') {
-          location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', result?.data?.sessionDetails?.PHPSESSID ?? this.state?.sessionDetails?.PHPSESSID);
+        this.setSession(result);
+        if (!result?.hasError) {
+          location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', getCookie('sessionId'));
+        } else {
+          toast.error(result?.errors?.[0] ?? result?.errors);
         }
       });
   }
@@ -336,8 +344,6 @@ class SignUp extends React.Component {
                   OTPRetryModes={OTPRetryModes}
                   smsRequestId={this.state?.smsRequestId}
                   emailRequestId={this.state?.emailRequestId}
-                  invalidMobile={this.state?.smsIdentifierError}
-                  invalidEmail={this.state?.emailIdentifierError}
                   smsIdentifier={this.state?.smsIdentifier}
                   emailIdentifier={this.state?.emailIdentifier}
                   smsSuccessMessage={this.state?.smsSuccessMessage}

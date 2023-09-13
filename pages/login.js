@@ -2,7 +2,8 @@ import GoogleLoginButton from "@/components/signup/googleLogin";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import React from "react";
 import { MdCall, MdEmail } from "react-icons/md";
-import { getQueryParamsDeatils } from "@/components/utils";
+import { getQueryParamsDeatils, setCookie, getCookie } from "@/components/utils";
+import { toast } from 'react-toastify';
 
 class logIn extends React.Component {
   constructor(props) {
@@ -33,6 +34,12 @@ class logIn extends React.Component {
       }
     } else {
       this.otpWidgetSetup();
+    }
+    try {
+        const url = process.env.API_BASE_URL + '/api/v5/nexus/checkSession';
+        this.hitLoginAPI(url, { session: getCookie('sessionId') }, false);
+    } catch (error) {
+        console.log('No Session Found');
     }
   }
 
@@ -83,7 +90,7 @@ class logIn extends React.Component {
     location.href = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&client_id=${process.env.MSAL_CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}/outlook-token&scope=User.Read`;
   }
 
-  hitLoginAPI(url, payload) {
+  hitLoginAPI(url, payload, showError = true) {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -92,12 +99,14 @@ class logIn extends React.Component {
     fetch(url, requestOptions)
       .then(response => response.json())
       .then(result => {
-        // for (let key in result?.data?.sessionDetails) {
-        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
-        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
-        // }
+        const sessionId = result?.data?.sessionDetails?.PHPSESSID;
+        if (sessionId) {
+            setCookie('sessionId', sessionId, 30);
+        }
         if (!result?.hasError) {
-          location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', result?.data?.sessionDetails?.PHPSESSID)
+          location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', sessionId)
+        } else if (showError){
+          toast.error(result?.errors?.[0] ?? result?.errors);
         }
       });
   }

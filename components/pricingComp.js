@@ -14,25 +14,9 @@ import Pricingcampaign from "@/components/pricing/pricing-campaign";
 import Pricingrcs from "@/components/pricing/pricing-rcs";
 import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
 import Link from "next/link"; 
+import { getCookie } from "@/components/utils";
 
 export function setUtm(){
-  function getCookie(cookieName) {
-    var name = cookieName + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var cookieArray = decodedCookie.split(';');
-  
-    for (var i = 0; i < cookieArray.length; i++) {
-      var cookie = cookieArray[i];
-      while (cookie.charAt(0) === ' ') {
-        cookie = cookie.substring(1);
-      }
-      if (cookie.indexOf(name) === 0) {
-        return cookie.substring(name.length, cookie.length);
-      }
-    }
-    return null; // Return null if the cookie is not found
-  }
-
   // Get all anchor tags in the document using querySelectorAll
   var anchorTags = document.querySelectorAll(".utm");
   // Loop through the anchor tags
