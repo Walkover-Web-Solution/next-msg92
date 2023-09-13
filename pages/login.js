@@ -2,7 +2,7 @@ import GoogleLoginButton from "@/components/signup/googleLogin";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import React from "react";
 import { MdCall, MdEmail } from "react-icons/md";
-import { getQueryParamsDeatils } from "@/components/utils";
+import { getQueryParamsDeatils, setCookie, getCookie } from "@/components/utils";
 
 class logIn extends React.Component {
   constructor(props) {
@@ -33,6 +33,12 @@ class logIn extends React.Component {
       }
     } else {
       this.otpWidgetSetup();
+    }
+    try {
+        const url = process.env.API_BASE_URL + '/api/v5/nexus/checkSession';
+        this.hitLoginAPI(url, { session: getCookie('sessionId') });
+    } catch (error) {
+        console.log('No Session Found');
     }
   }
 
@@ -92,12 +98,12 @@ class logIn extends React.Component {
     fetch(url, requestOptions)
       .then(response => response.json())
       .then(result => {
-        // for (let key in result?.data?.sessionDetails) {
-        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
-        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
-        // }
+        const sessionId = result?.data?.sessionDetails?.PHPSESSID;
+        if (sessionId) {
+            setCookie('sessionId', sessionId, 30);
+        }
         if (!result?.hasError) {
-          location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', result?.data?.sessionDetails?.PHPSESSID)
+          location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', sessionId)
         }
       });
   }

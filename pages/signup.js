@@ -3,7 +3,7 @@ import { MdDone } from "react-icons/md";
 import StepOne from "@/components/signup/stepOne";
 import StepTwo from "@/components/signup/stepTwo";
 import StepThree from "@/components/signup/stepThree";
-import { getCookie, getQueryParamsDeatils } from "@/components/utils";
+import { getCookie, getQueryParamsDeatils, setCookie } from "@/components/utils";
 
 const OTPRetryModes = {
   Sms: '11',
@@ -172,9 +172,10 @@ class SignUp extends React.Component {
             ?.split('&')
             ?.map((v) => v.split('=')) ?? []
     );
-    let payload = {
+    const payload = {
+        'session': getCookie('sessionId'),
         'mobileToken': this.state.smsAccessToken,
-        ...utmObj
+        ...utmObj,
         // "utm_term": "utm_term",
         // "utm_medium": "utm_medium",
         // "utm_source": "utm_source",
@@ -201,11 +202,7 @@ class SignUp extends React.Component {
     fetch(url, requestOptions)
       .then(response => response.json())
       .then(result => {
-        // for (let key in result?.data?.sessionDetails) {
-        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
-        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
-        // }
-        console.log(result);
+        this.setSession(result);
         this.setState({ sessionDetails: result?.data?.sessionDetails });
         if (!result?.hasError) {
             if (result?.data?.data?.nextStep === 'createNewCompany') {
@@ -220,9 +217,16 @@ class SignUp extends React.Component {
       });
   }
 
+  setSession = (result) => {
+    const sessionId = result?.data?.sessionDetails?.PHPSESSID;
+    if (sessionId) {
+        setCookie('sessionId', sessionId, 30);
+    }
+  }
+
   finalSubmit = (data) => {
     const url = process.env.API_BASE_URL + "/api/v5/nexus/finalRegister";
-    let payload = {
+    const payload = {
       "companyDetails": {
         "industry": data?.industryType,
         "state": data?.stateName,
@@ -243,7 +247,7 @@ class SignUp extends React.Component {
         "lastName": data?.lastName
       },
       "acceptInviteForCompanies": [],
-      "session": this.state?.sessionDetails?.PHPSESSID
+      "session": getCookie('sessionId'),
     }
 
     console.log(payload);
@@ -256,10 +260,7 @@ class SignUp extends React.Component {
     fetch(url, requestOptions)
       .then(response => response.json())
       .then(result => {
-        // for (let key in result?.data?.sessionDetails) {
-        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=.msg91.com`;
-        //   document.cookie = `${key}=${result?.data?.sessionDetails?.[key]}; path=/; domain=test.msg91.com`;
-        // }
+        this.setSession(result);
         if(result?.status === 'success') {
           location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', result?.data?.sessionDetails?.PHPSESSID ?? this.state?.sessionDetails?.PHPSESSID);
         }
