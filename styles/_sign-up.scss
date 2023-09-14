@@ -46,8 +46,6 @@ $font-weight-500: var(--c-fw-500);
   }
   &__right_section {
     &__container {
-        max-height: 100vh;
-        overflow-x: auto;
       &__entry_with {
         .signup_with__left {
           border-right: 1px solid $light-silver;

@@ -9,7 +9,6 @@ $light-skyblue: #e0f0fe;
 .entry {
   &__left_section {
     background-color: $light-skyblue;
-    position: relative;
     .img {
       padding-top: 70px;      
     }
@@ -24,6 +23,7 @@ $light-skyblue: #e0f0fe;
     }
   }
   &__right_section {
+    height: 100vh;
     &__container {
       &.container {
         padding-top: 70px;
@@ -76,7 +76,7 @@ $light-skyblue: #e0f0fe;
       }
       &__entry_button {
         height: 40px;
-        width: auto;
+        width: fit-content;
         padding: 0px 16px;
         color: $color-white;
         border-radius: 4px;
@@ -90,56 +90,12 @@ $light-skyblue: #e0f0fe;
     }
   }
 }
-// @media (max-width: 767px) {
-//   .entry {
-//     flex-direction: column-reverse;
-//     &__left_section {
-//       &__brand_logo {
-//         display: none;
-//       }
-//       img {
-//         position: unset !important;
-//         margin: 1rem 0;
-//         padding-right: 0px !important;
-//       }
-//     }
-//     &__right_section {
-//       &__container {
-//         &.container {
-//           margin: 2rem auto;
-//           max-width: 350px;
-//           padding-top: 0 !important;
-//           display: flex;
-//           flex-direction: column;
-//           align-items: flex-start;
-//           justify-content: flex-start;
-//           // .entry__right_section__container__entry_with{
-//           //   flex-direction: column;
-//           // }
-//         }
 
-//         button {
-//           gap: 8px;
-//           // width: 100%;
-//           // margin-bottom: 8px;
-//         }
+//newcodebypiyusssssh
+.logindetails{
 
-//         .line_on_right {
-//           &::after {
-//             width: 220px;
-//           }
-//         }
-//         &--logo-visible-in-small {
-//           &.d-none {
-//             display: block !important;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+}
 
-// ... (previous code)
 
 @media (max-width: 767px) {
   .entry {
@@ -206,9 +162,7 @@ $light-skyblue: #e0f0fe;
           }
         }
 
-        &__entry_button {
-          width: 100%; // Full width for "Login" button
-        }
+       
       }
     }
   }
