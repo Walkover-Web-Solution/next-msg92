@@ -124,16 +124,16 @@ class logIn extends React.Component {
   render() {
     return (
       <>
-        <section className="entry d-flex  ">
-          <div className="entry__left_section col-xl-3 col-lg-5 col-md-5">
-            <img
-              src="/images/msgOriginalsvg.png"
-              className="entry__left_section__brand_logo"
-            />
-            <div className="container">
+        <section className="entry d-flex h-100">
+          <div className="entry__left_section col-xl-3 col-lg-4 col-md-5">
+            <div className="img">
+              <img
+                src="/images/msgOriginalsvg.png"
+                className="entry__left_section__brand_logo"
+              />
               <img
                 src="/img/tie/login-page-left-section-banner.svg"
-                className="entry__left_section__banner pe-4 img-fluid"
+                className="entry__left_section__banner img-fluid"
               />
             </div>
           </div>

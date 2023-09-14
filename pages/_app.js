@@ -40,7 +40,7 @@ export default function App({ Component, pageProps }) {
     var pricingPath = products.includes(pageSlug) ? `/pricing${pageSlug}` : `/pricing/sms`;
 
     const year = new Date().getFullYear();
-    if (browserPath !== '/login' && browserPath !== '/signup' && browserPath !== '/github-auth') {
+    if (browserPath !== '/signin' && browserPath !== '/signup' && browserPath !== '/github-auth') {
         showNavbar = true;
     }
 
