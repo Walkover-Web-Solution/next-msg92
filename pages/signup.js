@@ -26,7 +26,7 @@ class SignUp extends React.Component {
     let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
 
     this.state = {
-      activeStep: queryParams?.["code"] ? 2 : 1,
+      activeStep: queryParams?.["code"] ? 2 : 3,
       signupByGitHub: queryParams?.["githubsignup"] ? true : false,
       githubCode: queryParams?.["code"],
       githubState: queryParams?.["state"],
@@ -271,13 +271,13 @@ class SignUp extends React.Component {
     return (
       <>
         <section className="entry signup d-flex">
-          <div className="entry__left_section col-xl-4 col-lg-5 col-md-5">
+          <div className=" p-2 p-sm-3  p-md-4  p-lg-5 entry__left_section col-xl-4 col-lg-5 col-md-5">
             <img
               src="/images/msgOriginalsvg.png"
               className="entry__left_section__brand_logo"
             />
-            <div className="entry__left_section__details pe-5">
-              <div className="container">
+            <div className="entry__left_section__details mt-4">
+              <div className="">
                 <h1 className="c-fs-3 mb-4">
                   Signup to avail a complete suite of MSG91 products
                 </h1>
@@ -311,7 +311,7 @@ class SignUp extends React.Component {
             </div>
           </div>
           <div className="entry__right_section col-xl-8 col-lg-7 col-md-7 col-sm-12 col-12">
-            <div className="container entry__right_section__container">
+            <div className="p-2 p-sm-3  p-md-4  p-lg-5 entry__right_section__container">
               {/* STEP #1 */}
               <div
                 className={`entry__right_section__container--step ${this.state.activeStep === 1

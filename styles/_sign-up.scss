@@ -15,9 +15,6 @@ $font-weight-500: var(--c-fw-500);
 .entry {
   &__left_section {
     &__details {
-      margin-top: 160px;
-      margin-left: 30px !important;
-
       h1 {
         line-height: 36px;
         font-family: "Libre Baskerville";
