@@ -31,8 +31,8 @@ const PricingMain = () => {
   }, []);
 
   const router = useRouter();
-  var brawserPath = router.asPath;
-  var product = brawserPath.split("/")[2];
+  var browserPath = router.asPath;
+  var product = browserPath.split("/")[2];
   product = product.split("?")[0];
 
 
@@ -45,7 +45,7 @@ const PricingMain = () => {
     );
     }
     else{
-    return <PricingComp countryCode={code} product={product} brawserPath={brawserPath} />;
+    return <PricingComp countryCode={code} product={product} browserPath={browserPath} />;
 
     }
   } 
