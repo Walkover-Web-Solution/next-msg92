@@ -176,7 +176,7 @@
   }
   .blog-container {
     margin: 80px 0;
-  
+    max-width: 800px !important;
     h1 {
       font-weight: 700;
       margin-bottom: 16px !important;
@@ -197,6 +197,9 @@
   
     .blog-header {
       margin-bottom: 40px;
+      img{
+        width: 100%;
+      }
     }
   
     &__back-btn {
@@ -205,13 +208,12 @@
     }
   
     .body {
+      font-size: var(--c-fs-3);
+      font-family: var(--c-head);
       ul {
         list-style: initial !important;
-      }
-  
-      p {
-        font-size: var(--c-fs-5);
-      }
+        padding-left: 18px;
+      }        
   
       h2 {
         font-size: var(--c-fs-3);
