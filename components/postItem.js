@@ -7,7 +7,7 @@ export default function PostItem({ post }) {
   function getBlogStyle(titleText) {
     let textLength = titleText.length;
     let wordLength = titleText.split(" ").length;
-    console.log('titetext', textLength, wordLength)
+    //console.log('titetext', textLength, wordLength)
 
     if (wordLength > 8 || textLength > 48) {
       return " blog-card--large";
