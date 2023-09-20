@@ -26,6 +26,8 @@ const PricingMain = () => {
         console.log("error", error);
         setLoading(false); // Set loading to false in case of an error
       });
+
+      
   }, []);
 
   const router = useRouter();

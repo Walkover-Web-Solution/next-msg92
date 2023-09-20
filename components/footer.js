@@ -1,7 +1,7 @@
 import link from "next/link";
 import { useRouter } from "next/router";
 
-const Footer = ({path, year}) => {  
+const Footer = ({path, year}) => {    
   path = (path?.length == 2)? '/'+path : '';
   return (
     <>
@@ -94,7 +94,7 @@ const Footer = ({path, year}) => {
                   About us
                 </a>
                 <a
-                  href="/pricing"
+                  href="/pricing/sms"
                   className="c-link-underline c-fs-5 mt-2 c-fw-t"
                 >
                   Pricing

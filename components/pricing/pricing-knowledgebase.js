@@ -1,5 +1,10 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { setUtm } from "../pricingComp";
 const pricingknowledgebase = () => {
+useEffect(() => {    
+  setUtm();
+}, []);  
 return (
   <>
     <div className="d-flex flex-wrap flex-gap gap-3 justify-content-center w-100  card-container align-items-end">      
@@ -14,7 +19,7 @@ return (
             <Link
               href="https://control.msg91.com/signup/"
               target="_blank"
-              className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2"
+              className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm"
             >
               Get Started
             </Link>
@@ -23,8 +28,8 @@ return (
       </div>
       <div className="mx-3">
         <div className="text-center d-flex flex-column mb-4 mb-sm-0 align-items-center ">      
-        <div className="popular-chip c-fs-6">POPULAR</div>    
-          <div className="card-popular price-card email card kb text-center mb-4 mb-sm-0 c-bg-grey">
+          {/* <div className="popular-chip c-fs-6">POPULAR</div> */}    
+          <div className="price-card email card kb text-center mb-4 mb-sm-0 c-bg-grey border-0">
             <div className="card-body">
               <h3 className="c-fs-3">Alpha</h3>
               <h5 className="mt-2 c-fs-2">$50/Month</h5>
@@ -37,7 +42,7 @@ return (
               <Link
                 href="https://control.msg91.com/signup/"
                 target="_blank"
-                className="c-fs-5 btn btn-sm w-100 btn-dark mt-2"
+                className="c-fs-5 btn btn-sm w-100 btn-dark mt-2 utm"
               >
                 Get Started
               </Link>

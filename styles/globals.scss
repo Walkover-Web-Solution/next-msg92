@@ -1,4 +1,5 @@
 @import "import";
+
 body {
   font-size: 16px !important;
   color: var(--black-color);
@@ -504,11 +505,10 @@ nav {
 }
 
 /* Overwrite the default to keep the scrollbar always visible */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 7px;
-  height: 7px;
-  overflow: overlay;
+  height: 7px;  
 }
 
 ::-webkit-scrollbar-track {
@@ -521,10 +521,10 @@ nav {
   -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
-/* set button(top and bottom of the scrollbar) */
+
 body::-webkit-scrollbar-button {
   display: none;
-}
+} */
 /* about-us page scss */
 .ixigoss {
   height: 120px;
@@ -714,5 +714,32 @@ code[class*="language-"], pre[class*="language-"]{
   color: var(--black-color);
   &:hover{
     color: var(--primary-color);
+  }
+}
+
+
+//prefooter
+.feature{
+.more-feature{
+  margin-bottom: 24px !important;
+}
+}
+.req-feature-cont{
+  font-family: var(--c-body) !important;
+  background-color: var(--light-blue);
+  border-radius: 5px !important;
+  .me-text{
+    padding-left: 20px !important;
+  }
+  button{
+    border: 2px solid var( --otp);
+    border-radius: 5px;
+    color: var( --otp);
+  }
+  @media only screen and (max-width: 700px) {
+    button{
+       background-color: #000;
+      width: 200px !important;
+    }
   }
 }
