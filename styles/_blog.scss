@@ -8,7 +8,7 @@
     .blog-home-container {
       padding-bottom: 46px;
       .post-list {
-        padding: 100px 24px 46px 24px;
+        padding: 100px 24px 46px;
         display: grid;
         height: auto !important;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -25,7 +25,7 @@
           box-shadow: 0 3px 5px 0 rgba(0, 1, 1, 0.1);
           overflow: hidden;
           position: relative;
-          color: var(--col-white);
+          color: var(--white-color);
           background-size: cover;
           background-position: center center;
   
@@ -57,7 +57,7 @@
           &.bg-light {
             color: #333;
             .blog-card__content {
-              background: var(--col-white);
+              background: var(--white-color);
               &::before {
                 display: none;
               }
@@ -70,10 +70,10 @@
           }
   
           &.bg-dark {
-            color: var(--col-white) !important;
+            color: var(--white-color) !important;
             .blog-card-footer {
               span {
-                color: var(--col-white);
+                color: var(--white-color);
               }
             }
           }
@@ -160,7 +160,7 @@
               font-size: 18px;
   
               &.active {
-                color: var(--col-white);
+                color: var(--white-color);
                 background-color: #000;
                 padding: 0px 7px;
                 border-radius: 3px;
@@ -201,7 +201,7 @@
   
     &__back-btn {
       background-color: var(--col-primary) !important;
-      color: var(--col-white) !important;
+      color: var(--white-color) !important;
     }
   
     .body {
