@@ -3,18 +3,14 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { setUtm } from "../pricingComp";
 const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSubscriptionEmail}) => {
-  console.log(currency, "currency in currency");
-  console.log(subscriptionEmail, "subscriptionEmail");
   const [selectedCurrency, setSelectedCurrency] = useState('INR');
   const [selectedMode, setSelectedMode] = useState("Monthly");
   const [symbol, setSymbol] = useState("₹");
   
   const changeCurrency = async(currency) => {
-    console.log(currency, "change currency");
     setSelectedCurrency(currency);
     try {
       const response = await fetchSubscriptionEmail(currency, '1',"subscriptionEmail");
-      console.log(response, "response from api")
 
     } catch (error) {
       console.log(error.message,"error")

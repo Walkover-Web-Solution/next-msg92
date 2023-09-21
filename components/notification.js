@@ -30,7 +30,6 @@ const Notification = (mininav) =>{
       }); */
 
     }, []);
-    // console.log(mininav,"hehhe")
     return (
         <>
         <div className="section b-bottom-1">

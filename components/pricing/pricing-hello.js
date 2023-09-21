@@ -1,11 +1,8 @@
 import {MdDoneOutline} from "react-icons/md"
 import { MdDone, MdClose } from "react-icons/md";
-import Link from "next/link";
 import {useEffect, useState } from "react";
 import { setUtm } from "../pricingComp";
 const pricinghello = ({subscriptionHello, fetchSubscriptionHello,countryCode , currency}) => {
-  console.log(currency, "currency");
-  console.log(subscriptionHello, "subscriptionHello");
   const [symbol, setSymbol] = useState("₹");
   const [selectedMode, setSelectedMode] = useState("Monthly");
   const [selectedCurrency, setSelectedCurrency] = useState('INR');
@@ -29,12 +26,10 @@ const pricinghello = ({subscriptionHello, fetchSubscriptionHello,countryCode , c
   }
   
     const changeCurrency = async(currency) => {
-      console.log(currency, "change currency");
       setSelectedCurrency(currency);
       
       try {
         const response = await fetchSubscriptionHello(currency, '7',"subscriptionHello");
-        console.log(response, "response from hello api");
   
       } catch (error) {
         console.log(error.message,"error")
