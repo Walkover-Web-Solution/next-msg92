@@ -85,14 +85,14 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
   const fetchemailData =async()=>{
     setfetchCurrency(currency);
     setfetchMsId("1");
-    setStates("SubscriptionSegmento");
+    setStates("subscriptionEmail");
     fetchSubscription(currency,"1","subscriptionEmail")
   }
   const fetchSegmentoData = async()=>{
     setfetchCurrency(currency);
     setfetchMsId("2");
-    setStates("SubscriptionSegmento");
-    fetchSubscription(currency,"2","SubscriptionSegmento")
+    setStates("subscriptionSegmento");
+    fetchSubscription(currency,"2","subscriptionSegmento")
   }
   const fetchHelloData = async()=>{
     setfetchCurrency(currency);
@@ -158,7 +158,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
         case "SubscriptionWhatsapp":
           setSubscriptionWhatsapp([...response.data.data]);
           break;
-          case "SubscriptionSegmento":
+          case "subscriptionSegmento":
             setSubscriptionSegmento([...response.data.data]);
             break;
           case "SubscriptionVoice":
@@ -312,7 +312,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             className={`nav-item ${product === 'segmento' ? 'active' : ''}`}
             id="segmento-btn"
             onClick={() => {
-              fetchSubscription(currency, "2","SubscriptionSegmento");
+              fetchSubscription(currency, "2","subscriptionSegmento");
             }}
           >
             <span className="nav-link">
@@ -421,6 +421,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
         {product === "segmento" && (
           <Pricingsegmento
             subscriptionSegmento={subscriptionSegmento}
+            setSubscriptionSegmento={setSubscriptionSegmento}
             fetchSubscriptionSegmento={fetchSubscription}
             currency={currency}
             state= {"subscriptionSegmento"}
