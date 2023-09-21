@@ -8,7 +8,7 @@ body {
 .c-ls-20 {
   letter-spacing: 0.2em;
 }
-.cp{
+.cp {
   cursor: pointer;
 }
 .oh {
@@ -51,7 +51,10 @@ body {
 .nav-menu {
   top: 0;
   position: relative;
-  z-index: 24;  
+  z-index: 24;
+}
+.cursor-pointer {
+  cursor: pointer;
 }
 nav {
   background: white;
@@ -71,19 +74,19 @@ nav {
 .w-nav-menu {
   width: 33%;
 }
-.z-mininav{
+.z-mininav {
   z-index: 101;
   position: absolute;
 }
-.mininav{
+.mininav {
   position: fixed;
   z-index: 10;
-  top:0px;
+  top: 0px;
   overflow-y: auto;
   background-color: white;
-  width: 100vw!important;
+  width: 100vw !important;
   height: 100vh;
-  .mininav-cont{
+  .mininav-cont {
     width: 100%;
     top: 50px;
     position: relative;
@@ -426,11 +429,11 @@ nav {
     left: 0;
     width: 50%;
   }
-  &::before{
+  &::before {
     display: block;
     content: "";
     position: fixed;
-    background:#fff;
+    background: #fff;
     top: 0px;
     height: 110px;
     width: 100%;
@@ -469,31 +472,31 @@ nav {
 .product-menu-btn {
   width: fit-content;
   transition: 0.15s;
-  position: relative;  
+  position: relative;
   &:hover {
-    color: var(--c-grey) !important;    
-    &::before{
+    color: var(--c-grey) !important;
+    &::before {
       opacity: 1;
-      animation: slide1 0.2s ease-in-out forwards;      
+      animation: slide1 0.2s ease-in-out forwards;
     }
-  }    
-  &:before{    
-    position:absolute;
-    display:block;
+  }
+  &:before {
+    position: absolute;
+    display: block;
     opacity: 0;
-    content:"";
-    color:#000;
+    content: "";
+    color: #000;
     width: 8px;
     height: 8px;
-    border-bottom:solid 2px;
-    border-right:solid 2px;
-    top:50%;
-    right: 0;    
+    border-bottom: solid 2px;
+    border-right: solid 2px;
+    top: 50%;
+    right: 0;
   }
 }
 
 @keyframes slide1 {
-  0%{
+  0% {
     transform: translate(0, 0) rotate(-45deg);
     opacity: 0;
   }
@@ -622,23 +625,25 @@ body::-webkit-scrollbar-button {
 }
 
 /* channel code smaple */
-code[class*="language-"], pre[class*="language-"]{
+code[class*="language-"],
+pre[class*="language-"] {
   white-space: break-spaces !important;
   height: 500px;
   margin: 0 80px;
 }
 
 /* typeahead */
-.rbt-aux{
+.rbt-aux {
   position: absolute;
-  top:2px;
-  right:2px;
+  top: 2px;
+  right: 2px;
   display: flex;
   background: #fff;
-  .rbt-close-content, .visually-hidden{
+  .rbt-close-content,
+  .visually-hidden {
     display: none;
   }
-  button{
+  button {
     font-size: 14px;
     width: 26px;
     height: 26px;
@@ -646,7 +651,7 @@ code[class*="language-"], pre[class*="language-"]{
 }
 
 /* case study */
-.casestudycard{
+.casestudycard {
   color: var(--black-color);
   width: clamp(300px, 30vw, 400px);
   outline: #e8e8e8 1px solid;
@@ -655,64 +660,64 @@ code[class*="language-"], pre[class*="language-"]{
   .casestudycard-img{
     height: 110px;
     display: flex;
-    align-items: center;  
-    img{    
+    align-items: center;
+    img {
       max-height: 80px;
       max-width: 80%;
     }
   }
-  .lm{
-    color: var(--primary-color)
+  .lm {
+    color: var(--primary-color);
   }
 }
-.arrow-search{  
+.arrow-search {
   font-size: 40px;
 }
-.arrow-search-btn{
+.arrow-search-btn {
   padding: 0;
-  border-top-right-radius: 0.375rem !important; 
-  border-bottom-right-radius: 0.375rem !important; 
+  border-top-right-radius: 0.375rem !important;
+  border-bottom-right-radius: 0.375rem !important;
 }
-.check-tie{
+.check-tie {
   height: var(--c-fs-2);
 }
-.tei-feture-img{
-  width: clamp(400px,30vw,500px);
+.tei-feture-img {
+  width: clamp(400px, 30vw, 500px);
 }
 @media only screen and (max-width: 600px) {
   .tei-feture-img {
-    width: clamp(300px,80vw,400px);
+    width: clamp(300px, 80vw, 400px);
   }
 }
 
-.integrations-head{
+.integrations-head {
   width: 100%;
-  img{
+  img {
     // width: 80px;
     height: 40px;
   }
 }
-.check-int{
+.check-int {
   width: 25px;
 }
 
-.p-int{
+.p-int {
   padding: 0 90px;
 }
 
-.loading{
+.loading {
   height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  div{
+  div {
     width: 300px;
   }
 }
 
-.c-text-link{
+.c-text-link {
   color: var(--black-color);
-  &:hover{
+  &:hover {
     color: var(--primary-color);
   }
 }
@@ -742,4 +747,16 @@ code[class*="language-"], pre[class*="language-"]{
       width: 200px !important;
     }
   }
+}
+.message {
+  cursor: pointer;
+  font: 15px Helvetica, Arial, sans-serif;
+  background: #eee;
+  padding: 20px;
+  text-align: center;
+  transition: 100ms ease-in background;
+  margin: 10px;
+}
+.message:hover {
+  background: #ccc;
 }
