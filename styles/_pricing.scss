@@ -47,7 +47,7 @@
 .card-container{
   .card{
     min-height: 250px;
-    width: 250px;
+    width: 280px;
     .card-body{
       padding: 24px;
       display: flex;
@@ -86,9 +86,9 @@ box-sizing: border-box;
   font-weight: 500;
   font-size: 16px;
 }
-.flex-gap > .card {
+/* .flex-gap > .card {
   margin: 16px;
-}
+} */
 .text-green{
   color:#29A653;
 }

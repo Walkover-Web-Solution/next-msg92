@@ -68,15 +68,15 @@ return (
         <option value="Yearly">Yearly</option>
       </select> */}
     </div>
-      <div className="d-flex flex-wrap flex-gap gap-3 justify-content-center w-100  card-container align-items-end">
+      <div className="d-flex flex-wrap flex-gap gap-3 justify-content-center w-100  card-container align-items-start mt-5">
         {subscriptionHello?.length ?
           subscriptionHello?.map((item, index) => {
             return(
               <div key={`email-card-${index}`} className="mx-3">
-                <div className="text-center d-flex flex-column mb-4 mb-sm-0 align-items-center ">
+                <div className=" d-flex flex-column mb-4 mb-sm-0 align-items-center ">
                   {/* <div className="popular-chip c-fs-6">POPULAR</div> */}
-                   <div className=" price-card email card text-center mb-4 mb-sm-0 c-bg-grey">                  
-                    <div className="card-body">
+                   <div className=" price-card email card  mb-4 mb-sm-0 c-bg-grey border-0">                  
+                    <div className="card-body text-center">
                       <h3 className="c-fs-3">{item.name}</h3>
                       <h5 className="mt-2 c-fs-2 text-green">
                         {symbol}
@@ -87,8 +87,8 @@ return (
                       <p className="c-fs-5"> 
                         {(item.plan_amounts[0]?.plan_amount === 0) ? '-' : '+18%GST'}
                       </p>
-                      <div className="c-fs-5 mt-2">
-                        <span className="text-success">
+                      <div className="c-fs-6 mt-2 text-start">
+                        <span className="text-success me-2">
                           <MdDone />
                         </span>
                         {numberWithCommas(item.plan_services[0].service_credit.free_credits)} free Credits
@@ -98,7 +98,7 @@ return (
                               feature = feature.replace(/_/g, " ");
                               return (
                                 <p>
-                                  <span className="text-success">
+                                  <span className="text-success me-2">
                                     <MdDone />
                                   </span>
                                   {feature}
@@ -106,15 +106,15 @@ return (
                               );
                             }
                           })}
-                      </div>
-                      <div className="c-fs-5 ">                  
-                          {
-                          (item.plan_amounts[0].plan_amount === 0) ? 
-                          <span className="text-danger"><MdClose /></span> 
-                          : 
-                          <span className="text-success"><MdDone /></span> 
-                          }
-                          {numberWithCommas(item.plan_services[1].service_credit.free_credits)} Hello Chats
+                        <div className="c-fs-6">                  
+                            {
+                            (item.plan_amounts[0].plan_amount === 0) ? 
+                            <span className="text-danger me-2"><MdClose /></span> 
+                            : 
+                            <span className="text-success me-2"><MdDone /></span> 
+                            }
+                            {numberWithCommas(item.plan_services[1].service_credit.free_credits)} Hello Chats
+                        </div>
                       </div>
 
                       {item.postpaid_allowed &&
@@ -135,32 +135,34 @@ return (
             )
           }):''
         }
-        <div className="card price-card email border-0 text-center mb-4 mb-sm-0 c-bg-grey">
-          <div className="card-body">
-            <h3 className="c-fs-3">CUSTOM</h3>                  
-            <p className="c-fs-5">Talk to sales for a customized plan.</p>
-            <button data-bs-toggle="modal" data-bs-target="#custom-pricing-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
-              Talk to sales
-            </button>
+        <div className="mx-3">
+          <div className="card price-card email border-0  mb-4 mb-sm-0 c-bg-grey">
+            <div className="card-body">
+              <h3 className="c-fs-3">CUSTOM</h3>                  
+              <p className="c-fs-5">Talk to sales for a customized plan.</p>
+              <button data-bs-toggle="modal" data-bs-target="#custom-pricing-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                Talk to sales
+              </button>
+            </div>
           </div>
         </div>
         
       </div>
 
+      {/* <div className="price-card hello d-flex col-10 col-lg-11 flex-md-row flex-column mx-auto border">
+        <div className="col-12 col-md-8 col-xl-9 text-start p-4 bg-white">
+          <h3>Customer support Platform</h3>
+          <div className="d-flex"><div className="c-fs-4 text-primary pe-2"><MdDoneOutline/></div><p className="c-fs-4">Integrate multiple channels on a single platform - Email, RCS, social media, call & more</p></div>
+          <div className="d-flex mt-2"><div className="c-fs-4 text-primary pe-2"><MdDoneOutline/></div><p className="c-fs-4">Track, monitor, analyze agent performance</p></div>
+          <div className="d-flex mt-2"><div className="c-fs-4 text-primary pe-2"><MdDoneOutline/></div><p className="c-fs-4">18*7 free customer support</p></div>
+        </div>
+        <div className="c-bg-grey col-12 col-md-4 col-xl-3  p-4 text-start">
+          <h3 className="c-fs-3">Access platform for FREE</h3>
+          <p className="c-fs-4 mt-2">Pay only for the channels you use</p>
+          <a href="https://control.msg91.com/signup/" target="_blank" className="btn btn-outline-dark mt-3 px-5">Get Started</a>
+        </div>
+      </div> */}
 
-
-
-     <div className="col-12 col-md-8 col-xl-9 text-start p-4 bg-white ">
-      <h3>Customer support Platform</h3>
-      <div className="d-flex"><div className="c-fs-4 text-primary pe-2"><MdDoneOutline/></div><p className="c-fs-4">Integrate multiple channels on a single platform - Email, RCS, social media, call & more</p></div>
-      <div className="d-flex mt-2"><div className="c-fs-4 text-primary pe-2"><MdDoneOutline/></div><p className="c-fs-4">Track, monitor, analyze agent performance</p></div>
-      <div className="d-flex mt-2"><div className="c-fs-4 text-primary pe-2"><MdDoneOutline/></div><p className="c-fs-4">18*7 free customer support</p></div>
-     </div>
-     {/* <div className="c-bg-grey col-12 col-md-4 col-xl-3  p-4 text-start">
-      <h3 className="c-fs-3">Access platform for FREE</h3>
-      <p className="c-fs-4 mt-2">Pay only for the channels you use</p>
-      <Link href="https://control.msg91.com/signup/" target="_blank" className="btn btn-outline-dark mt-3 px-5 utm">Get Started</Link>
-     </div> */}
     </>
   );
 };
