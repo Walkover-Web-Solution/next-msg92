@@ -68,10 +68,10 @@ return (
         <option value="USD">USD</option>
         <option value="GBP">GBP</option>
       </select>
-      <select style={{width: 'fit-content'}} className="form-select" aria-label="Default select example" onChange={(e)=>setSelectedMode(e.target.value)}>
+      {/* <select style={{width: 'fit-content'}} className="form-select" aria-label="Default select example" onChange={(e)=>setSelectedMode(e.target.value)}>
         <option value="Monthly">Monthly</option>
         <option value="Yearly">Yearly</option>
-      </select>
+      </select> */}
     </div>
       <div className="d-flex flex-wrap flex-gap gap-3 justify-content-center w-100  card-container align-items-end">
         {subscriptionHello?.length ?
@@ -97,7 +97,6 @@ return (
                           <MdDone />
                         </span>
                         {numberWithCommas(item.plan_services[0].service_credit.free_credits)} free Credits
-                        {/* {item?.plan_services[0]?.service_credit?.free_credits}  */}
                         {item.show_features && item.planFeatures.map((data) => {
                             if (data.is_visible === 1) {
                               var feature = data?.feature?.key;
