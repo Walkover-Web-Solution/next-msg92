@@ -2,10 +2,12 @@ import Head from "next/head";
 import metaData from "@/data/metadata.json";
 
 const Headcomp = (browserPath) => {
-  const meta = metaData[browserPath.browserPath];
-  console.log('', JSON.stringify(browserPath));
-  console.log('meta',meta);
-  let contry = browserPath;
+  const list = ['in','ae','ph','sg','es','gb','us']
+  const meta = metaData[browserPath.browserPath];    
+  const country = browserPath.browserPath.split('/')[1];
+  if(list.includes(country)){
+    var hreflang = `en-${country.toUpperCase()}`
+  }
   return (
     <>
       <Head>                
@@ -18,15 +20,9 @@ const Headcomp = (browserPath) => {
         <link rel="canonical" href={`https://msg91.com${browserPath.browserPath}`} />
         
         <link rel="alternate" hreflang="x-default" href="https://msg91.com" />
-        <link rel="alternate" hreflang="en-GB" href="https://msg91.com/uk" />
-        <link rel="alternate" hreflang="en-AE" href="https://msg91.com/ae" />
-        <link rel="alternate" hreflang="en-IN" href="https://msg91.com/in" />
-        <link rel="alternate" hreflang="en-US" href="https://msg91.com/us" />
-        <link rel="alternate" hreflang="en-PH" href="https://msg91.com/ph" />
-        <link rel="alternate" hreflang="en-SG" href="https://msg91.com/sg" />
-        <link rel="alternate" hreflang="es-ES" href="https://msg91.com/es" />
-        <link rel="alternate" hreflang="en-GB" href="https://msg91.com/uk" />
-        <link rel="alternate" hreflang="en-US" href="https://msg91.com/us" />
+        {country && 
+          <link rel="alternate" hreflang={hreflang} href={`https://msg91.com/${country}`} />
+        }
       </Head>
     </>
   );
