@@ -105,6 +105,9 @@ box-sizing: border-box;
     cursor: pointer;
   }
 }
+.feature-list p {
+  text-transform: capitalize;
+}
 /* .onlyin{
   position: sticky;
   top: 80px;

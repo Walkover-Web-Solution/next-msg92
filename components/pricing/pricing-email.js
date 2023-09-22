@@ -71,8 +71,8 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
                         /
                         {(selectedMode === 'Monthly') ? 'Month' : 'Yearly'}
                       </h5>
-                      <p className="c-fs-5"> 
-                        {(item.plan_amounts[0].plan_amount === 0) ? '-' : '+18%GST'}
+                      <p className="c-fs-5">
+                        {symbol === '₹' && item.plan_amounts[0]?.plan_amount === 0 ? '+18%GST' : '' || symbol === '₹' && item.plan_amounts[0]?.plan_amount !== 0 ? '+18%GST' : '' }
                       </p>
                       <div className="c-fs-5 mt-2">
                         <span className="text-success">

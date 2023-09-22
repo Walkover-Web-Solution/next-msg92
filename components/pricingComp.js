@@ -80,7 +80,6 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
   }
   const fetchHelloData = async()=>{
     setfetchCurrency(currency);
-    console.log(currency,"Fetching");
     setfetchMsId("7");
     setStates("SubscriptionHello");
     fetchSubscription(currency,"7","subscriptionHello")
