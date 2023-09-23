@@ -101,10 +101,10 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                       </p>
                       <div className="c-fs-6 mb-2 mt-2 text-start feature-list">
                         {/* <span className="text-success me-2">
-                           <MdDone />
-                          </span> */}
+                                                        <MdDone />
+                                                        </span> */}
                         <div className="c-fs-6 mb-2 mt-2 ">
-                         
+                          <p className="c-fs-4 mb-2 mt-2">Included</p>
                           <div>
                             <div>
                               {' '}
@@ -112,14 +112,14 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                                 item.plan_services[0].service_credit
                                   .service_credit_rates[0].free_credits
                               }{' '}
-                              Included Inbox{' '}
+                              {item.plan_services[0].service_credit.service.name}{' '}
                             </div>
                             <div>
                               {
                                 item.plan_services[1].service_credit
                                   .service_credit_rates[0].free_credits
                               }{' '}
-                              Included Monthly Active Tickets
+                              {item.plan_services[1].service_credit.service.name}
                             </div>
                           </div>
                         </div>
@@ -143,28 +143,28 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                             }
                           })}
                         {/* <div className="c-fs-6">                  
-                            {
-                            (item.plan_amounts[0].plan_amount === 0) ? 
-                            <span className="text-danger me-2"><MdClose /></span> 
-                            : 
-                            <span className="text-success me-2"><MdDone /></span> 
-                            }
-                            {numberWithCommas(item.plan_services[1].service_credit.free_credits)} Hello Chats
-                        </div> */}
+                           {
+                           (item.plan_amounts[0].plan_amount === 0) ? 
+                             <span className="text-danger me-2"><MdClose /></span> 
+                                 : 
+                               <span className="text-success me-2"><MdDone /></span> 
+                                 }
+                                  {numberWithCommas(item.plan_services[1].service_credit.free_credits)} Hello Chats
+                                  </div> */}
                       </div>
 
                       {item.postpaid_allowed && (
                         <div className="c-fs-6 mt-4">
                           <strong>Extra</strong>
                           <div>
-                            Inbox @ {symbol}
+                            {item.plan_services[0].service_credit.service.name} @ {symbol}
                             {
                               item.plan_services[0].service_credit
                                 .service_credit_rates[0].follow_up_rate
                             }
                           </div>
                           <div>
-                            Monthly Active Tickets @ {symbol}{' '}
+                            {item.plan_services[1].service_credit.service.name} @ {symbol}{' '}
                             {
                               item.plan_services[1].service_credit
                                 .service_credit_rates[0].follow_up_rate
