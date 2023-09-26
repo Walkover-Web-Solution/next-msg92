@@ -50,18 +50,24 @@ export default function TestPage({ source , title, author, date,thumbnailImage, 
         <MDXRemote {...source} components={component}/>
       </div>
 
-      <button className="btn blog-container__back-btn mt-3" onClick={handleClick} ><MdKeyboardArrowLeft />Back</button>
-      <footer>
-      <div>
-      <ul className={"tag-list"}>
-            {tags !=="" && tags?.map((it, i) => (
-              <li key={i}>
-                <TagButton tag={getTag(it)} />
-              </li>
-            ))}
-          </ul>
-      </div>
-      </footer>
+      <footer className="pt-3">
+          <div className="blog-card-tags">
+            <ul className="blog-page-tags d-flex gap-3 ps-0 mb-1">
+              {tags !== "" &&
+                tags?.map((it, i) => (
+                  <li key={i}>
+                    <TagButton tag={getTag(it)} />
+                  </li>
+                ))}
+            </ul>
+          </div>
+          <button
+            className="btn blog-container__back-btn mt-3"
+            onClick={handleClick}
+          >
+            <MdKeyboardArrowLeft /> Back
+          </button>
+        </footer>
     </div>
     </>
   )
