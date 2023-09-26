@@ -103,8 +103,9 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                         {/* <span className="text-success me-2">
                                                         <MdDone />
                                                         </span> */}
+                                                        <hr style={{borderColor: "#999"}}></hr>
                         <div className="c-fs-6 mb-2 mt-2 ">
-                          <p className="c-fs-4 mb-2 mt-2">Included</p>
+                          <strong className="c-fs-6 mb-2 mt-2">Included</strong>
                           <div>
                             <div>
                               {' '}
@@ -154,7 +155,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                       </div>
 
                       {item.postpaid_allowed && (
-                        <div className="c-fs-6 mt-4">
+                        <div className="c-fs-6 mb-2 mt-2 text-start feature-list">
                           <strong>Extra</strong>
                           <div>
                             {item.plan_services[0].service_credit.service.name} @ {symbol}
