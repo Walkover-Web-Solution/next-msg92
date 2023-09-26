@@ -175,7 +175,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                         </div>
                       )}
                       <a
-                        href="https://control.msg91.com/login/"
+                        href="https://control.msg91.com/signup/"
                         target="_blank"
                         className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm"
                       >
