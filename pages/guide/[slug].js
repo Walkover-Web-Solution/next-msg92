@@ -40,7 +40,7 @@ export default function TestPage({ source , title, author, date,thumbnailImage, 
       <title>{title}</title>
     </Head>
     <div className="wrapper container blog-container">      
-      <a className='mb-3 d-inline-block btn blog-container__back-btn' href='javascript:void(0)' onClick={handleClick} > <MdKeyboardArrowLeft />Back</a>
+      <a className='mb-3 d-inline-block btn btn-dark' href='#' onClick={handleClick} > <MdKeyboardArrowLeft />Back</a>
       <div className='blog-header mt-4'>
         <div>{author}, {date}</div>        
         <h1>{title}</h1>
