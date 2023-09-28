@@ -1,0 +1,73 @@
+.iwer {
+    position: relative;
+    pointer-events: auto;
+    opacity: 1;
+    scale: 1;
+    background-color: white;
+    z-index: 16000160 !important;
+    width: 360px;
+    border-radius: 32px;
+    border: 2px solid #1D1D1B;    
+    padding: 32px 32px 16px;
+    min-height: 279px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    transform-origin: right bottom;
+    transition: scale 150ms ease-in, opacity 250ms ease-in;
+}
+#qrcode{
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='4' stroke-dasharray='100' stroke-dashoffset='50' stroke-linecap='square'/%3e%3c/svg%3e");
+    width: 200px;
+    height: 200px;
+    padding: 25px;
+}
+.wq-link-display-box{
+    padding: 10px !important;
+    border: 2px solid #222;    
+    font-size: 13px;
+}
+#wq-copy-btn, #wq-copy-code{
+    border: 2px solid #222;    
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 14px;
+    color: #222;
+    padding: 11px 14px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;    
+}
+
+.wq-action-btn-group button svg, .wq-action-btn-group a svg {
+    fill: #222;
+    height: 18px;
+    margin-right: 10px;
+    transition: all 0.5s ease 0s;
+}
+#downloadBtn{
+    border: 2px solid #222;    
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 14px;
+    color: #222;
+    padding: 11px 14px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;    
+}
+
+.wa-widget-sen-button {
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    right: 0;
+    bottom: -65px;        
+    z-index: 999;
+    text-align: center;    
+    right: 0px;
+}
+.wa-widget-sen-button img{
+    width: 50px;
+}
