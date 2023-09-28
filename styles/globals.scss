@@ -622,10 +622,11 @@ body::-webkit-scrollbar-button {
 }
 
 /* channel code smaple */
-code[class*="language-"], pre[class*="language-"]{
-  white-space: break-spaces !important;
-  height: 500px;
-  margin: 0 80px;
+#pills-tabContent{
+  code[class*="language-"], pre[class*="language-"]{
+    white-space: break-spaces !important;
+    height: 500px;
+  }
 }
 
 /* typeahead */
