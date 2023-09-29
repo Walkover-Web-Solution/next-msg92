@@ -26,6 +26,21 @@ async function CreateWhatsappChatWidget(
     enabled: false,
   }
 ) {
+  if(typeof QRCode === 'undefined'){
+    var qrScript = document.createElement("script");
+    qrScript.src = "https://msg91.com/js/qrcode.js";
+    qrScript.onload = function() {
+      var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width: 150,
+        height: 150,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+      });
+      qrcode.makeCode(`https://wa.me/${option.brandSetting.phoneNumber.replace(/\+/g,'')}?text=${option.brandSetting.messageText ? option.brandSetting.messageText : ''}`);
+    };
+    document.body.appendChild(qrScript);
+  }
+
   if (option.enabled == false) {
     return;
   }
@@ -120,15 +135,12 @@ async function CreateWhatsappChatWidget(
                  <div class='wa-chat-box-content-chat-welcome'>
                       ${option.brandSetting.welcomeText.replace(/\n/g, '<br/>')}
                  </div>
-    
+                 <div id="qrcode"></div>
+                 <div>Scan this QR code to initiate a WhatsApp chat with us.</div> 
                  <a
                     role="button"
                     target="_blank"
-                    href="https://api.whatsapp.com/send?phone=${option.brandSetting.phoneNumber.replace(
-        /\+/g,
-        ''
-      )}&text=${option.brandSetting.messageText ? option.brandSetting.messageText : ''
-      }"
+                    href="https://wa.me/${option.brandSetting.phoneNumber.replace(/\+/g,'')}?text=${option.brandSetting.messageText ? option.brandSetting.messageText : ''}"
                     title="WhatsApp" class="wa-chat-box-content-send-btn">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block">
                             <path
@@ -207,14 +219,20 @@ async function CreateWhatsappChatWidget(
 
   }
 
-  var styles = `
-          @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400&display=swap');
-  
+  var styles = `          
+          #qrcode {
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxyZWN0IHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIGZpbGw9J25vbmUnIHN0cm9rZT0nIzMzMycgc3Ryb2tlLXdpZHRoPSc0JyBzdHJva2UtZGFzaGFycmF5PScxMDAnIHN0cm9rZS1kYXNob2Zmc2V0PSc1MCcgc3Ryb2tlLWxpbmVjYXA9J3NxdWFyZScvPjwvc3ZnPg==);
+            width: 200px;
+            height: 200px;
+            padding: 25px;
+            box-sizing: border-box;
+          }
           #whatsapp-chat-widget{
-              display: ${option.enabled ? 'block' : 'none'}
+            display: ${option.enabled ? 'block' : 'none'};
+            font-family: sans-serif !important;
           }
           .wa-chat-box-content-send-btn-text{
-              font-family: 'Outfit', sans-serif !important;
+              font-family: sans-serif !important;
               font-weight: 500;
               font-size: 16px;
               line-height: 20px;
@@ -238,7 +256,7 @@ async function CreateWhatsappChatWidget(
               opacity: 1 !important;
           }
           .wa-chat-box-content-chat-welcome{        
-              font-family: 'Outfit', sans-serif !important;
+              font-family: sans-serif !important;
               font-size: 20px;
               line-height: 150%;
               color: #000000;
@@ -251,7 +269,8 @@ async function CreateWhatsappChatWidget(
               background-color: white;
               z-index: 16000160 !important;              
               margin-bottom: 72px;
-              min-width: 320px;
+              min-width: 200px;
+              max-width: 300px;
               position: fixed !important;
               bottom: ${option.chatButtonSetting.marginBottom}px !important;
               ${option.chatButtonSetting.position == 'left'
@@ -266,7 +285,6 @@ async function CreateWhatsappChatWidget(
               flex-direction: column;
               justify-content: space-between;
               gap: 12px;
-
               pointer-events: none;
               opacity: 0;
               scale: 0;
@@ -314,7 +332,7 @@ async function CreateWhatsappChatWidget(
               justify-content: center;
               align-items: center;
               gap: 3px;
-              font-family: 'Outfit', sans-serif !important;
+              font-family: sans-serif !important;
               font-size: 12px;
               line-height: 18px;
               color: #999999;
@@ -357,7 +375,7 @@ async function CreateWhatsappChatWidget(
               order: ${option.chatButtonSetting.position == 'left' ? '0' : '1'};
           }
           .wa-chat-bubble-text{
-             font-family: 'Outfit', sans-serif !important;
+             font-family: sans-serif !important;
              background: #FFFFFF;
              border: 1px solid #363636;
              box-shadow: 2px 3px 0px ${option.chatButtonSetting.backgroundColor};
