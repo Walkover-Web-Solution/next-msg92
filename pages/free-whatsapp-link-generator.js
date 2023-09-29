@@ -196,7 +196,7 @@ var options = {
             </div>
             <a
               href="#generate"
-              className="btn btn-dark btn-lg c-fs-2 mt-3 utm"
+              className="btn btn-dark btn-lg c-fs-2 mt-3"
             >
               Generate
             </a>
