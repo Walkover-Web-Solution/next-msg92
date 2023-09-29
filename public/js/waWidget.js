@@ -6,18 +6,18 @@ async function CreateWhatsappChatWidget(
       borderRadius: '25',
       brandImg: 'https://msg91.com/img/icon/walink-whatsapp.svg',
       brandImgData: null,
-      brandName: 'WATI',
+      brandName: 'MSG91',
       brandSubTitle: '',
       ctaText: 'Chat with us',
-      welcomeText: 'I have some questions about Wati, \ncan you help?',
-      messageText: 'I’ve some questions about Wati, can you help?',
+      welcomeText: 'I have some questions about MSG91, \ncan you help?',
+      messageText: 'I’ve some questions about MSG91, can you help?',
       phoneNumber: '85252859384',
     },
     chatButtonSetting: {
       backgroundColor: '#25D366',
       borderRadius: '25',
       ctaText: 'Chat with us',
-      ctaIconWATI: true,
+      ctaIconMSG: true,
       marginLeft: '0',
       marginRight: '20',
       marginBottom: '20',
@@ -36,7 +36,7 @@ async function CreateWhatsappChatWidget(
     option.chatButtonSetting.marginRight = '20';
   }
   var css = document.createElement('STYLE');
-  var defaultSvg = option.chatButtonSetting.ctaIconWATI
+  var defaultSvg = option.chatButtonSetting.ctaIconMSG
     ? `<svg id="wa-widget-svg" width="40" height="40" viewBox="0 0 40 40" fill="none" style="pointer-events: none"
           xmlns="http://www.w3.org/2000/svg">
           <rect width="40" height="40" rx="20" fill="#25D366"/>
@@ -91,7 +91,7 @@ async function CreateWhatsappChatWidget(
                     ${defaultSvg}
                     <svg id="wa-widget-opened-svg" width="23" height="13" viewBox="0 0 23 13" fill="none" style="pointer-events: none"
                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.20001 1.7334L11.6154 11.1488L21.0308 1.7334" stroke="#ffffff" stroke-width="2" stroke-linecap="square"/>
+                        <path d="M2.20001 1.7334L11.6154 11.1488L21.0308 1.7334" stroke="#000" stroke-width="2" stroke-linecap="square"/>
                     </svg>
                 </div>
             </div>`
@@ -305,7 +305,7 @@ async function CreateWhatsappChatWidget(
               justify-content: center;
           }
           .wa-widget-send-button-clicked {
-            border: 1px solid #363636;
+            border: 2px solid #363636;
           }
           .wa-chat-box-poweredby{
               margin-left: auto;

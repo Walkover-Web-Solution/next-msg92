@@ -74,12 +74,19 @@
 .wa-widget-sen-button {
     pointer-events: none;
     position: absolute;
-    display: block;
+    display: flex;
     right: 0;
     bottom: -65px;        
     z-index: 999;
     text-align: center;    
     right: 0px;
+    background: #25D366;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #222;    
 }
 .wa-widget-sen-button img{
     width: 50px;
