@@ -116,29 +116,38 @@ const ParentComponent = ({ pricingPath }) => {
         element.click();
         document.body.removeChild(element);
       }
-
+/* 
+{
+    brandSetting: {
+      brandImg: 'https://msg91.com/img/icon/walink-whatsapp.svg',                        
+      welcomeText: 'I have some questions about MSG91, \ncan you help?',
+      messageText: 'I’ve some questions about MSG91, can you help?',
+      phoneNumber: '85252859384',
+    },
+    chatButtonSetting: {
+      backgroundColor: '#25D366',      
+      ctaText: 'Chat with us',
+      ctaIconMSG: true,
+      marginLeft: '0',
+      marginRight: '20',
+      marginBottom: '20',
+      position: 'right',
+    },
+    enabled: true,
+  }
+   */
       function widgetCode(barndImage, welcomeText, preFilledMsg, mobile) {
         var html = `&lt;script&gt;
 var options = {
   brandSetting: {
-    autoShow: true,
-    backgroundColor: "#24d366", // only for old version
-    borderRadius: "25", // only for old version
     brandImg: "${barndImage}",
-    brandImgData: null,
-    brandName: "MSG91", // only for old version
-    brandSubTitle: "", // only for old version
-    ctaText: 'Chat with us',
     welcomeText: \`${welcomeText}\`, 
     messageText: \`${preFilledMsg}\`,
     phoneNumber: "${mobile}",
-    autoShow: false,
   },
   chatButtonSetting: {
     backgroundColor: "#24d366", //now is used as Brand Color
-    borderRadius: "25",//only for old version
     ctaText: 'Chat with us',
-    ctaIconMSG: true, //new property for chosen icon (MSG91 - true, whatsApp - false)
     marginLeft: "0",
     marginRight: "20",
     marginBottom: "20",
