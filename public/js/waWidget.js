@@ -1,31 +1,26 @@
 async function CreateWhatsappChatWidget(
   option = {
     brandSetting: {
-      autoShow: true,
-      backgroundColor: '#25D366',
-      borderRadius: '25',
-      brandImg: 'https://msg91.com/img/icon/walink-whatsapp.svg',
-      brandImgData: null,
-      brandName: 'MSG91',
-      brandSubTitle: '',
-      ctaText: 'Chat with us',
+      brandImg: 'https://msg91.com/img/icon/walink-whatsapp.svg',                        
       welcomeText: 'I have some questions about MSG91, \ncan you help?',
       messageText: 'I’ve some questions about MSG91, can you help?',
       phoneNumber: '85252859384',
     },
     chatButtonSetting: {
-      backgroundColor: '#25D366',
-      borderRadius: '25',
+      backgroundColor: '#25D366',      
       ctaText: 'Chat with us',
-      ctaIconMSG: true,
       marginLeft: '0',
       marginRight: '20',
       marginBottom: '20',
       position: 'right',
     },
-    enabled: false,
+    enabled: true,
   }
-) {
+) {  
+
+  if (option.enabled == false) {
+    return;
+  }
   if(typeof QRCode === 'undefined'){
     var qrScript = document.createElement("script");
     qrScript.src = "https://msg91.com/js/qrcode.js";
@@ -40,10 +35,6 @@ async function CreateWhatsappChatWidget(
     };
     document.body.appendChild(qrScript);
   }
-
-  if (option.enabled == false) {
-    return;
-  }
   if (!option.chatButtonSetting.position) {
     option.chatButtonSetting.position = 'right';
     option.chatButtonSetting.marginBottom = '20';
@@ -51,20 +42,7 @@ async function CreateWhatsappChatWidget(
     option.chatButtonSetting.marginRight = '20';
   }
   var css = document.createElement('STYLE');
-  var defaultSvg = option.chatButtonSetting.ctaIconMSG
-    ? `<svg id="wa-widget-svg" width="40" height="40" viewBox="0 0 40 40" fill="none" style="pointer-events: none"
-          xmlns="http://www.w3.org/2000/svg">
-          <rect width="40" height="40" rx="20" fill="#25D366"/>
-<g clip-path="url(#clip0_4111_2821)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M28.5031 11.485C26.2473 9.23878 23.2471 8.00114 20.0504 8C13.4634 8 8.10256 13.3307 8.10027 19.883C8.09913 21.9776 8.64976 24.0221 9.69546 25.8239L8 31.9825L14.3349 30.33C16.0802 31.2771 18.0455 31.7756 20.0453 31.7762H20.0504C26.6363 31.7762 31.9977 26.445 32 19.8927C32.0011 16.7171 30.7595 13.7318 28.5031 11.4856V11.485ZM20.0504 29.7693H20.0464C18.2644 29.7688 16.5163 29.2924 14.991 28.3926L14.6283 28.1784L10.8689 29.159L11.8722 25.5139L11.6362 25.1401C10.642 23.5674 10.1166 21.7497 10.1177 19.8836C10.12 14.4378 14.5756 10.0069 20.0545 10.0069C22.7073 10.008 25.201 11.0366 27.0763 12.9039C28.9517 14.7706 29.9837 17.2527 29.9825 19.8915C29.9802 25.3379 25.5247 29.7688 20.0504 29.7688V29.7693ZM25.4983 22.372C25.1998 22.2232 23.7319 21.5052 23.4579 21.4061C23.1841 21.3069 22.9853 21.2574 22.7864 21.5548C22.5876 21.8523 22.0152 22.5213 21.841 22.719C21.6668 22.9173 21.4926 22.9418 21.1941 22.793C20.8956 22.6443 19.9335 22.3309 18.7927 21.3195C17.9052 20.532 17.3058 19.5599 17.1317 19.2624C16.9575 18.965 17.1133 18.8043 17.2623 18.6567C17.3963 18.5234 17.5608 18.3097 17.7103 18.1365C17.8599 17.9632 17.9092 17.8391 18.0089 17.6413C18.1086 17.443 18.0587 17.2698 17.9843 17.1211C17.9097 16.9724 17.3127 15.5107 17.0635 14.9164C16.8211 14.3375 16.5747 14.4162 16.3919 14.4065C16.2177 14.3979 16.0189 14.3962 15.8195 14.3962C15.6201 14.3962 15.2969 14.4703 15.0231 14.7677C14.7492 15.0651 13.9779 15.7837 13.9779 17.2447C13.9779 18.7057 15.0477 20.1183 15.1973 20.3166C15.3468 20.5149 17.3029 23.5139 20.2979 24.8005C21.0102 25.1065 21.5665 25.2894 22.0003 25.4262C22.7154 25.6524 23.3663 25.6205 23.8808 25.5441C24.4544 25.4587 25.6473 24.8256 25.896 24.1321C26.1447 23.4386 26.1447 22.8437 26.0702 22.7201C25.9957 22.5964 25.7963 22.5218 25.4978 22.3731L25.4983 22.372Z" fill="white"/>
-</g>
-<defs>
-<clipPath id="clip0_4111_2821">
-<rect width="24" height="24" fill="white" transform="translate(8 8)"/>
-</clipPath>
-</defs>
-      </svg>`
-    : `<svg id="wa-widget-svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events: none">
+  var defaultSvg = `<svg id="wa-widget-svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events: none">
           <g clip-path="url(#clip0_1029_374)">
               <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M23.7881 4.06584C21.1709 1.44525 17.69 0.00132957 13.9811 0C6.33875 0 0.118997 6.21909 0.116338 13.8635C0.115008 16.3072 0.75387 18.6925 1.96711 20.7946L0 27.9796L7.34989 26.0517C9.37482 27.1566 11.655 27.7383 13.9752 27.739H13.9811C21.6222 27.739 27.8427 21.5192 27.8453 13.8748C27.8466 10.17 26.406 6.6871 23.7881 4.06651V4.06584ZM13.9811 25.3975H13.9765C11.909 25.3969 9.88075 24.8411 8.1111 23.7914L7.69027 23.5415L3.3286 24.6856L4.49264 20.4329L4.21874 19.9968C3.06533 18.162 2.45572 16.0413 2.45705 13.8642C2.45971 7.51078 7.6291 2.34138 13.9858 2.34138C17.0638 2.34271 19.957 3.54266 22.1328 5.72117C24.3086 7.89902 25.5059 10.7949 25.5046 13.8735C25.5019 20.2275 20.3326 25.3969 13.9811 25.3969V25.3975ZM20.3019 16.7673C19.9556 16.5938 18.2524 15.7561 17.9346 15.6405C17.6169 15.5248 17.3862 15.467 17.1555 15.814C16.9248 16.161 16.2607 16.9415 16.0586 17.1721C15.8565 17.4035 15.6544 17.4321 15.308 17.2585C14.9617 17.085 13.8455 16.7194 12.522 15.5394C11.4922 14.6206 10.7968 13.4866 10.5948 13.1395C10.3926 12.7925 10.5735 12.605 10.7463 12.4329C10.9018 12.2773 11.0926 12.028 11.2661 11.8259C11.4397 11.6238 11.4969 11.4789 11.6125 11.2482C11.7282 11.0168 11.6704 10.8148 11.584 10.6412C11.4975 10.4677 10.8048 8.76253 10.5156 8.06918C10.2344 7.39377 9.94858 7.48551 9.7365 7.47421C9.53439 7.46424 9.30373 7.46225 9.07239 7.46225C8.84104 7.46225 8.46605 7.54867 8.14831 7.89569C7.83056 8.24267 6.93573 9.08097 6.93573 10.7855C6.93573 12.49 8.17693 14.1381 8.35042 14.3694C8.52391 14.6008 10.7935 18.0995 14.2683 19.6006C15.0947 19.9576 15.7402 20.171 16.2434 20.3306C17.0731 20.5945 17.8283 20.5573 18.4252 20.4682C19.0907 20.3685 20.4748 19.6299 20.7633 18.8208C21.0518 18.0117 21.0518 17.3177 20.9654 17.1734C20.879 17.0292 20.6477 16.9421 20.3013 16.7686L20.3019 16.7673Z"
@@ -169,22 +147,9 @@ async function CreateWhatsappChatWidget(
             </div>
             `
     );
-    if (option.brandSetting.autoShow) {
-      document.querySelector('.wa-chat-box').classList.add('wa-chat-box-visible');
-      document.querySelector('#wa-widget-svg').style.display = 'none';
-      document.querySelector('#wa-widget-opened-svg').style.display = 'block';
-      document.querySelector('.wa-chat-bubble').style.display = 'none';
-      document
-        .querySelector('.wa-widget-send-button')
-        .classList.add('wa-widget-send-button-clicked');
-    } else {
-      document.querySelector('.wa-chat-box').classList.remove('wa-chat-box-visible');
-      document.querySelector('#wa-widget-svg').style.display = 'block';
-      document.querySelector('#wa-widget-opened-svg').style.display = 'none';
-      document.querySelector('.wa-chat-bubble').style.cssText = '';
-    }
+    
+    document.querySelector('#wa-widget-opened-svg').style.display = 'none';
     document.querySelector('#whatsapp-chat-widget').addEventListener('click', function (event) {
-      console.log('event', event);
       if (
         event.target.classList.contains('wa-widget-send-button') &&
         event.target.classList.contains('wa-widget-send-button-clicked')
