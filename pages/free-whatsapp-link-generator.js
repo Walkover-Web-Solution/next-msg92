@@ -344,7 +344,7 @@ var options = {
           <div className="col-md-6" id="widget-preview" style={{display: 'none'}}>
             <h4 className="d-flex align-items-center">
               <span className="">Widget preview</span>
-              <button id="edit" type="button" class="btn btn-link">Edit</button>
+              <button id="edit" type="button" className="btn btn-link">Edit</button>
             </h4>
             <div id="wq-generated-output" className="d-flex align-items-center mb-3">
               <div className="wq-link-display-box me-2">https://wa.me/WhatsApp number?text=Pre-Filled Message</div>
@@ -580,7 +580,7 @@ var options = {
                     <span>Copy code</span>
                 </button>
               </div>
-              <code id="widget-code" class="language-javascript">                  
+              <code id="widget-code" className="language-javascript">                  
               </code>
             </pre>
           </div>
