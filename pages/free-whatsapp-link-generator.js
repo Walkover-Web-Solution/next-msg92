@@ -50,7 +50,7 @@ const ParentComponent = ({ pricingPath }) => {
           $("#whatsappChatWidgetStartChat").attr("href", wp_end_url);
           $("#dataBox").val(wp_end_url);
           $(".wq-link-display-box").html(wp_end_url);
-
+          $("#whatsappChatWidgetBrandImagePreview").attr('src', (wp_brand) ? wp_brand : 'https://msg91.com/img/icon/walink-whatsapp.svg')
           makeQrCode();          
           widgetCode(wp_brand, wp_welcome, wp_message, wp_number);            
         }
@@ -138,7 +138,7 @@ var options = {
     backgroundColor: "#00E785", //now is used as Brand Color
     borderRadius: "25",//only for old version
     ctaText: '',
-    ctaIconWATI: true, //new property for chosen icon (WATI - true, whatsApp - false)
+    ctaIconMSG: true, //new property for chosen icon (MSG91 - true, whatsApp - false)
     marginLeft: "0",
     marginRight: "20",
     marginBottom: "20",
@@ -403,11 +403,9 @@ var options = {
                   <div
                     id="whatsappChatWidgetHeaderPreview"
                     style={{                      
-                      backgroundColor: "#fff",                      
-                      borderRadius: "25px",                                            
+                      backgroundColor: "#fff",
                       height: '50px',
-                      width: '50px',
-                      boxShadow: "rgba(0, 0, 0, 0.4) 2px 2px 6px",
+                      width: '50px',                      
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center'
@@ -418,11 +416,11 @@ var options = {
                       id="whatsappChatWidgetBrandImagePreview"
                       alt="Brand Image"
                       style={{                        
-                        height: '24px'
+                        height: '100%'
                       }}
                     />
                     {/* <div style="margin-left: 20px;">
-                                      <div id="whatsappChatWidgetBrandPreview" style="font-size: 16px; font-weight: 700;">WATI</div>
+                                      <div id="whatsappChatWidgetBrandPreview" style="font-size: 16px; font-weight: 700;">MSG91</div>
                                       <div id="whatsappChatWidgetBrandSubTitlePreview" style="font-size: 13px; line-height: 18px; margin-top: 4px;color:#000;">Typically replies within a day</div>
                                   </div> */}
                   </div>
@@ -436,7 +434,7 @@ var options = {
                         borderRadius: 10,
                       }}
                     >
-                      {/* <div id="whatsappChatWidgetBrandPreview2" style="font-size: 13px; font-weight: 700; line-height: 18px; color: rgba(0, 0, 0, 0.4);">WATI</div> */}
+                      {/* <div id="whatsappChatWidgetBrandPreview2" style="font-size: 13px; font-weight: 700; line-height: 18px; color: rgba(0, 0, 0, 0.4);">MSG91</div> */}
                       <div
                         id="whatsappChatWidgetWelcomeTextPreview"
                         style={{
@@ -526,10 +524,22 @@ var options = {
                     <img src="https://msg91.com/img/poweredby.svg" />
                   </div>
                   <div className="wa-widget-sen-button">
-                    <img
-                      src="/img/icon/walink-whatsapp.svg"
-                      className="product-page-logo me-2"
+                  <svg
+                    id="wa-widget-opened-svg"
+                    width={23}
+                    height={13}
+                    viewBox="0 0 23 13"
+                    fill="none"
+                    style={{ pointerEvents: "none", display: "block" }}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.20001 1.7334L11.6154 11.1488L21.0308 1.7334"
+                      stroke="#000"
+                      strokeWidth={2}
+                      strokeLinecap="square"
                     />
+                  </svg>
                   </div>
                 </div>
               </div>
