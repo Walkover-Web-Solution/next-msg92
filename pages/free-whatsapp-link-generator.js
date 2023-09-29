@@ -122,22 +122,22 @@ const ParentComponent = ({ pricingPath }) => {
 var options = {
   brandSetting: {
     autoShow: true,
-    backgroundColor: "#0a6114", // only for old version
+    backgroundColor: "#24d366", // only for old version
     borderRadius: "25", // only for old version
     brandImg: "${barndImage}",
     brandImgData: null,
     brandName: "MSG91", // only for old version
     brandSubTitle: "", // only for old version
-    ctaText: '',
+    ctaText: 'Chat with us',
     welcomeText: \`${welcomeText}\`, 
     messageText: \`${preFilledMsg}\`,
     phoneNumber: "${mobile}",
     autoShow: false,
   },
   chatButtonSetting: {
-    backgroundColor: "#00E785", //now is used as Brand Color
+    backgroundColor: "#24d366", //now is used as Brand Color
     borderRadius: "25",//only for old version
-    ctaText: '',
+    ctaText: 'Chat with us',
     ctaIconMSG: true, //new property for chosen icon (MSG91 - true, whatsApp - false)
     marginLeft: "0",
     marginRight: "20",
