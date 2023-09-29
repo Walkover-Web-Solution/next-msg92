@@ -181,8 +181,8 @@ var options = {
                 src="/img/icon/whatsapp.svg"
                 className="product-page-logo me-2"
               />
-              <h1 className="heading page-title hello-heading">
-                free-whatsapp-link-generator
+              <h1 className="heading hello-heading">
+                Free WhatsApp link generator
               </h1>
             </div>
             <p className="c-fs-4 text-uppercase col-otp c-ls-20 mx-auto mt-3 hello-dark">
