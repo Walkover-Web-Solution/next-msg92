@@ -2,9 +2,9 @@ async function CreateWhatsappChatWidget(
   option = {
     brandSetting: {
       autoShow: true,
-      backgroundColor: '#0a6114',
+      backgroundColor: '#25D366',
       borderRadius: '25',
-      brandImg: 'https://cdn.clare.ai/wati/images/WATI_logo_square_2.png',
+      brandImg: 'https://msg91.com/img/icon/walink-whatsapp.svg',
       brandImgData: null,
       brandName: 'WATI',
       brandSubTitle: '',
@@ -14,7 +14,7 @@ async function CreateWhatsappChatWidget(
       phoneNumber: '85252859384',
     },
     chatButtonSetting: {
-      backgroundColor: '#00E785',
+      backgroundColor: '#25D366',
       borderRadius: '25',
       ctaText: 'Chat with us',
       ctaIconWATI: true,
@@ -37,17 +37,17 @@ async function CreateWhatsappChatWidget(
   }
   var css = document.createElement('STYLE');
   var defaultSvg = option.chatButtonSetting.ctaIconWATI
-    ? `<svg id="wa-widget-svg" width="28" height="26" viewBox="0 0 28 26" fill="none" style="pointer-events: none"
+    ? `<svg id="wa-widget-svg" width="40" height="40" viewBox="0 0 40 40" fill="none" style="pointer-events: none"
           xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_152_73)">
-              <path d="M8.12905 20.1329H16.3847L21.3186 25.0623V20.1329H23.4264C25.9412 20.1329 27.9979 18.0762 27.9979 15.5615V9.06899C27.9979 6.55426 25.9412 4.49756 23.4264 4.49756H8.12905C5.61432 4.49756 3.55762 6.55426 3.55762 9.06899V15.5615C3.55762 18.0762 5.61432 20.1329 8.12905 20.1329Z" fill="white"/>
-              <path d="M18.6548 23.6548L13.3496 18.3541H5.46081C2.45025 18.3541 0 15.9038 0 12.8933V6.39856C0 3.38799 2.45025 0.937744 5.46081 0.937744H20.7582C23.7688 0.937744 26.219 3.38799 26.219 6.39856V12.8911C26.219 15.9016 23.7688 18.3519 20.7582 18.3519H18.6504V16.5731H20.7582C22.7882 16.5731 24.4402 14.9211 24.4402 12.8911V6.39856C24.4402 4.36854 22.7882 2.71651 20.7582 2.71651H5.46081C3.43079 2.71651 1.77877 4.36854 1.77877 6.39856V12.8911C1.77877 14.9211 3.43079 16.5731 5.46081 16.5731H14.0856L18.6704 21.1534L18.6548 23.6526V23.6548Z" fill="#1D1D1B"/>
-          </g>
-          <defs>
-              <clipPath id="clip0_152_73">
-                  <rect width="28" height="24.1245" fill="white" transform="translate(0 0.937744)"/>
-              </clipPath>
-          </defs>
+          <rect width="40" height="40" rx="20" fill="#25D366"/>
+<g clip-path="url(#clip0_4111_2821)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M28.5031 11.485C26.2473 9.23878 23.2471 8.00114 20.0504 8C13.4634 8 8.10256 13.3307 8.10027 19.883C8.09913 21.9776 8.64976 24.0221 9.69546 25.8239L8 31.9825L14.3349 30.33C16.0802 31.2771 18.0455 31.7756 20.0453 31.7762H20.0504C26.6363 31.7762 31.9977 26.445 32 19.8927C32.0011 16.7171 30.7595 13.7318 28.5031 11.4856V11.485ZM20.0504 29.7693H20.0464C18.2644 29.7688 16.5163 29.2924 14.991 28.3926L14.6283 28.1784L10.8689 29.159L11.8722 25.5139L11.6362 25.1401C10.642 23.5674 10.1166 21.7497 10.1177 19.8836C10.12 14.4378 14.5756 10.0069 20.0545 10.0069C22.7073 10.008 25.201 11.0366 27.0763 12.9039C28.9517 14.7706 29.9837 17.2527 29.9825 19.8915C29.9802 25.3379 25.5247 29.7688 20.0504 29.7688V29.7693ZM25.4983 22.372C25.1998 22.2232 23.7319 21.5052 23.4579 21.4061C23.1841 21.3069 22.9853 21.2574 22.7864 21.5548C22.5876 21.8523 22.0152 22.5213 21.841 22.719C21.6668 22.9173 21.4926 22.9418 21.1941 22.793C20.8956 22.6443 19.9335 22.3309 18.7927 21.3195C17.9052 20.532 17.3058 19.5599 17.1317 19.2624C16.9575 18.965 17.1133 18.8043 17.2623 18.6567C17.3963 18.5234 17.5608 18.3097 17.7103 18.1365C17.8599 17.9632 17.9092 17.8391 18.0089 17.6413C18.1086 17.443 18.0587 17.2698 17.9843 17.1211C17.9097 16.9724 17.3127 15.5107 17.0635 14.9164C16.8211 14.3375 16.5747 14.4162 16.3919 14.4065C16.2177 14.3979 16.0189 14.3962 15.8195 14.3962C15.6201 14.3962 15.2969 14.4703 15.0231 14.7677C14.7492 15.0651 13.9779 15.7837 13.9779 17.2447C13.9779 18.7057 15.0477 20.1183 15.1973 20.3166C15.3468 20.5149 17.3029 23.5139 20.2979 24.8005C21.0102 25.1065 21.5665 25.2894 22.0003 25.4262C22.7154 25.6524 23.3663 25.6205 23.8808 25.5441C24.4544 25.4587 25.6473 24.8256 25.896 24.1321C26.1447 23.4386 26.1447 22.8437 26.0702 22.7201C25.9957 22.5964 25.7963 22.5218 25.4978 22.3731L25.4983 22.372Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_4111_2821">
+<rect width="24" height="24" fill="white" transform="translate(8 8)"/>
+</clipPath>
+</defs>
       </svg>`
     : `<svg id="wa-widget-svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events: none">
           <g clip-path="url(#clip0_1029_374)">
@@ -91,7 +91,7 @@ async function CreateWhatsappChatWidget(
                     ${defaultSvg}
                     <svg id="wa-widget-opened-svg" width="23" height="13" viewBox="0 0 23 13" fill="none" style="pointer-events: none"
                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.20001 1.7334L11.6154 11.1488L21.0308 1.7334" stroke="#363636" stroke-width="2" stroke-linecap="square"/>
+                        <path d="M2.20001 1.7334L11.6154 11.1488L21.0308 1.7334" stroke="#ffffff" stroke-width="2" stroke-linecap="square"/>
                     </svg>
                 </div>
             </div>`
@@ -114,7 +114,7 @@ async function CreateWhatsappChatWidget(
       'beforeend',
       `<div class='wa-chat-box'>
                  <img class='wa-chat-box-brand'
-                    onError='this.src= "https://cdn.clare.ai/wati/images/WATI_logo_square_2.png";' 
+                    onError='this.src= "https://msg91.com/img/icon/walink-whatsapp.svg";' 
                     src='${option.brandSetting.brandImg}'/> 
     
                  <div class='wa-chat-box-content-chat-welcome'>
@@ -141,7 +141,7 @@ async function CreateWhatsappChatWidget(
                                 d="M20.314 3.44995C18.2979 1.43114 15.6165 0.214135 12.7696 0.0256927C9.92272 -0.16275 7.10439 0.690221 4.83975 2.42568C2.57511 4.16114 1.01862 6.66071 0.46029 9.45869C-0.0980434 12.2567 0.37986 15.1622 1.80496 17.6339L0.136719 23.7268L6.37072 22.0922C8.09496 23.0312 10.027 23.5232 11.9903 23.5233H11.9954C14.3211 23.5235 16.5946 22.834 18.5285 21.5422C20.4624 20.2503 21.9699 18.414 22.8603 16.2655C23.7506 14.117 23.984 11.7527 23.5307 9.47156C23.0775 7.19043 21.9581 5.09491 20.314 3.44995ZM11.9954 21.5378H11.9927C10.2423 21.5379 8.52396 21.0674 7.01776 20.1755L6.66064 19.9639L2.96032 20.9337L3.94792 17.327L3.71536 16.9574C2.56347 15.1217 2.05427 12.9553 2.2678 10.7987C2.48133 8.64215 3.40549 6.61767 4.89499 5.04356C6.3845 3.46944 8.35488 2.43495 10.4964 2.1027C12.6379 1.77046 14.8291 2.15931 16.7255 3.20812C18.622 4.25693 20.1161 5.90623 20.973 7.89674C21.83 9.88725 22.0011 12.1061 21.4596 14.2045C20.918 16.3029 19.6945 18.1618 17.9813 19.489C16.2682 20.8162 14.1625 21.5365 11.9954 21.5366V21.5378Z"
                                 fill="white" />
                         </svg>
-                        <span class="wa-chat-box-content-send-btn-text">${option.brandSetting.ctaText
+                        <span class="wa-chat-box-content-send-btn-text">${option.chatButtonSetting.ctaText
       }</span>
                         <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: auto; display: block;">
                           <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -149,11 +149,10 @@ async function CreateWhatsappChatWidget(
                   </a>
               
     
-                <div class='wa-chat-box-poweredby'>
-                    <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block">
-                      <path d="M3 15V9H0L5 0V6H8L3 15Z" fill="#999999" />
-                    </svg>
-                    Powered by <a href="https://www.wati.io/?utm_source=shopify&utm_medium=chat_widget&utm_campaign=shopify_widget" target="_blank" class="wa-chat-box-poweredby-link">wati.io</a>
+                <div class='wa-chat-box-poweredby'>                    
+                    <a href="https://msg91.com" target="_blank" class="wa-chat-box-poweredby-link">
+                      <img src="https://msg91.com/img/poweredby.svg">
+                    </a>
                 </div>
             </div>
             `
@@ -222,8 +221,7 @@ async function CreateWhatsappChatWidget(
               color: #FFFFFF !important;
           }
           .wa-chat-box-content-send-btn{
-              background-color: #1D1D1B !important;
-              box-shadow: 4px 4px 0px ${option.chatButtonSetting.backgroundColor};
+              background-color: #1D1D1B !important;              
               border-radius: 8px;
               text-decoration: none;
               cursor: pointer;
@@ -232,7 +230,6 @@ async function CreateWhatsappChatWidget(
               align-items: center;
               gap: 14px;
               padding: 16px 20px;
-
               border-width: initial;
               border-style: none;
               border-color: initial;
@@ -248,17 +245,12 @@ async function CreateWhatsappChatWidget(
           }
           .wa-chat-box-brand{
               width: 52px;
-              height: 52px;
-              border: 1px solid #363636;
-              box-shadow: 0px 2px 240px rgba(0, 0, 0, 0.04);
-              border-radius: 100px;
-              background-color: ${option.chatButtonSetting.backgroundColor};
+              height: 52px;              
           }
           .wa-chat-box{
               background-color: white;
-              z-index: 16000160 !important;
-              margin-bottom: 106px;
-              margin-bottom: 92px;
+              z-index: 16000160 !important;              
+              margin-bottom: 72px;
               min-width: 320px;
               position: fixed !important;
               bottom: ${option.chatButtonSetting.marginBottom}px !important;
@@ -267,8 +259,7 @@ async function CreateWhatsappChatWidget(
       : 'right : ' + option.chatButtonSetting.marginRight + 'px'
     };
               border-radius: 32px;
-              border: 2px solid #363636;
-              box-shadow: 4px 6px 0px ${option.chatButtonSetting.backgroundColor};
+              border: 2px solid #363636;            
               padding: 32px 32px 16px;
               min-height: 279px;
               display: flex;
@@ -297,9 +288,8 @@ async function CreateWhatsappChatWidget(
               z-index: 16000160 !important;
               bottom: 0 !important;
               text-align: center !important;
-              height: 52px;
-              min-width: 52px;
-              border: ${option.chatButtonSetting.ctaIconWATI ? '1px' : '0'} solid #363636;
+              height: 50px;
+              min-width: 50px;              
               border-radius: 100px;
               visibility: visible;
               transition: none !important;
@@ -340,7 +330,7 @@ async function CreateWhatsappChatWidget(
           }
   
           .wa-chat-bubble{
-              display: ${option.chatButtonSetting.ctaText ? 'flex' : 'none'};
+              display: none;
               align-items: center;
               gap: 8px;
               z-index: 16000160 !important;
@@ -380,34 +370,7 @@ async function CreateWhatsappChatWidget(
              color: #202020;
              cursor: pointer;
           }
-          .wa-chat-box::before {
-             content: '';
-             position: absolute;
-             top: 100%;
-             ${option.chatButtonSetting.position == 'left' ? 'left' : 'right'}: 29px;
-             width: 0;
-             height: 0;
-             border-width: 0 0px 30px 30px;
-             border-color: transparent transparent white transparent;
-             border-style: solid;
-             transform: rotate(${option.chatButtonSetting.position == 'left' ? '180' : '270'}deg);
-             z-index: 1;
-          }
-          .wa-chat-box::after {
-             content: '';
-             position: absolute;
-             top: 100%;
-             ${option.chatButtonSetting.position == 'left' ? 'left' : 'right'}: 27px;
-             width: 0;
-             height: 0;
-             border-width: 0px 0px 34px 34px;
-             border-color: transparent transparent black transparent;
-             border-style: solid;
-             border-radius: 2px;
-             filter: drop-shadow(${option.chatButtonSetting.position == 'left' ? '-5px -2px 0px' : '-2px 5px 0px'
-    } ${option.chatButtonSetting.backgroundColor});
-             transform: rotate(${option.chatButtonSetting.position == 'left' ? '180' : '270'}deg);
-          }
+          
   
           @media only screen and (max-width: 600px) {
               .wa-chat-box

@@ -3,8 +3,7 @@
     pointer-events: auto;
     opacity: 1;
     scale: 1;
-    background-color: white;
-    z-index: 16000160 !important;
+    background-color: white;    
     width: 360px;
     border-radius: 32px;
     border: 2px solid #1D1D1B;    
@@ -23,12 +22,8 @@
     height: 200px;
     padding: 25px;
 }
-.wq-link-display-box{
-    padding: 10px !important;
-    border: 2px solid #222;    
-    font-size: 13px;
-}
-#wq-copy-btn, #wq-copy-code{
+
+#wq-copy-btn{
     border: 2px solid #222;    
     font-weight: 500;
     font-size: 13px;
@@ -39,7 +34,25 @@
     cursor: pointer;
     transition: all 0.5s ease 0s;    
 }
-
+#wq-copy-code{
+    border: 2px solid #fff;    
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 14px;
+    color: #fff;
+    padding: 11px 14px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;    
+}
+.wq-copy-code{    
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+#wq-copy-code svg{
+    fill: #fff !important;
+}
 .wq-action-btn-group button svg, .wq-action-btn-group a svg {
     fill: #222;
     height: 18px;
@@ -70,4 +83,9 @@
 }
 .wa-widget-sen-button img{
     width: 50px;
+}
+
+.preview-bg{
+    padding: 24px;
+    background: #f5f5f5;
 }

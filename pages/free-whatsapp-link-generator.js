@@ -16,13 +16,19 @@ const ParentComponent = ({ pricingPath }) => {
         event.preventDefault();
         var elementText = $("#whatsappChatWidgetStartChat").attr("href");
         navigator.clipboard.writeText(elementText);
-        $(".wq-copied").show();
+        $(this).find('span').text('Copied!');
       });
       
       $("#wq-copy-code").on("click", function (event) {
         event.preventDefault();
         var elementText = $("#widget-code").text();
-        navigator.clipboard.writeText(elementText);        
+        navigator.clipboard.writeText(elementText);
+        $(this).find('span').text('Copied!')
+      });
+      
+      $("#edit").on("click", function () {
+        $("#widget-dummy-preview, #widget-form").show();
+        $("#widget-preview, #widget-code-wrp").hide();
       });
 
       $(".wq-create-link-btn").on("click", function (event) {
@@ -39,6 +45,8 @@ const ParentComponent = ({ pricingPath }) => {
           var wp_end_url = `https://wa.me/${wp_number}?text=${encodeURIComponent(
             wp_message
           )}`;
+          $("#widget-dummy-preview").hide();
+          $("#widget-preview").show();
           $("#whatsappChatWidgetStartChat").attr("href", wp_end_url);
           $("#dataBox").val(wp_end_url);
           $(".wq-link-display-box").html(wp_end_url);
@@ -110,7 +118,7 @@ const ParentComponent = ({ pricingPath }) => {
       }
 
       function widgetCode(barndImage, welcomeText, preFilledMsg, mobile) {
-        var html = `          
+        var html = `&lt;script&gt;
 var options = {
   brandSetting: {
     autoShow: true,
@@ -120,16 +128,16 @@ var options = {
     brandImgData: null,
     brandName: "MSG91", // only for old version
     brandSubTitle: "", // only for old version
-    ctaText: trsntext,
-    welcomeText: "${welcomeText}", 
-    messageText: "${preFilledMsg}",
+    ctaText: '',
+    welcomeText: \`${welcomeText}\`, 
+    messageText: \`${preFilledMsg}\`,
     phoneNumber: "${mobile}",
     autoShow: false,
   },
   chatButtonSetting: {
     backgroundColor: "#00E785", //now is used as Brand Color
     borderRadius: "25",//only for old version
-    ctaText: trsntext,
+    ctaText: '',
     ctaIconWATI: true, //new property for chosen icon (WATI - true, whatsApp - false)
     marginLeft: "0",
     marginRight: "20",
@@ -139,10 +147,11 @@ var options = {
   enabled: true,
   isNewChatWidget: true // new property to switch between old and new widget 
 }
+&lt;/script&gt;
 &lt;script type="text/javascript" onload="CreateWhatsappChatWidget(options)" src="https://msg91.com/js/waWidget.js"\&gt; &lt;/script&gt;`;
         
           $("#widget-code").html(html);        
-          hljs.highlightAll();
+          hljs.highlightAll();          
           $("#widget-code-wrp").show();
           $("#widget-form").hide();
       }
@@ -153,7 +162,7 @@ var options = {
       <script type="text/javascript" src="/js/qrcode.js" defer></script>
       <script type="text/javascript" src="/js/jquery.min.js"></script>
       <script src="/js/highlight.min.js"></script>
-      <link rel="stylesheet" href="/monokai.min.css" />
+      <link rel="stylesheet" href="/atom-one-dark.min.css" />
       <link rel="stylesheet" href="/walink.css" />
       <div className="product-banner-wrp">
         <div className="container text-center overflow-hidden">
@@ -177,10 +186,10 @@ var options = {
               </p>
             </div>
             <a
-              href="https://control.msg91.com/signup/?a=a&b=b&utm_=c"
+              href="#generate"
               className="btn btn-dark btn-lg c-fs-2 mt-3 utm"
             >
-              Get started for FREE
+              Generate
             </a>
           </div>
           <img
@@ -229,7 +238,7 @@ var options = {
         </div>
       </div>
 
-      <div className="container px-4 py-5" id="featured-3">
+      <div className="container px-4 py-5" id="generate">
         <h3 className="sub-heading c-head pt-4 pt-md-0">
           Create QR Code/Widget/Link
         </h3>
@@ -325,16 +334,66 @@ var options = {
             </form>
           </div>
 
-          <div className="col-md-6" id="widget-preview">            
+          <div className="col-md-6" id="widget-dummy-preview">            
               <h4 className="d-flex justify-content-between align-items-center mb-3">
                 <span className="">Widget preview</span>
               </h4>
-              {/* <img src="/img/widget-preview.svg" className="" /> */}
+              <img src="/img/widget-preview.svg" className="" />
+          </div>
 
+          <div className="col-md-6" id="widget-preview" style={{display: 'none'}}>
+            <h4 className="d-flex align-items-center">
+              <span className="">Widget preview</span>
+              <button id="edit" type="button" class="btn btn-link">Edit</button>
+            </h4>
+            <div id="wq-generated-output" className="d-flex align-items-center mb-3">
+              <div className="wq-link-display-box me-2">https://wa.me/WhatsApp number?text=Pre-Filled Message</div>
+            </div>
+            <div className="preview-bg">              
+              <div className="wq-action-btn-group d-flex justify-content-between mb-4">
+                <button className="wq-action-btn" id="wq-copy-btn">
+                  <svg
+                    version="1.1"
+                    id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 330 330"
+                    style={{ enableBackground: "new 0 0 330 330" }}
+                    xmlSpace="preserve"
+                  >
+                    <g>
+                      <path
+                        d="M35,270h45v45c0,8.284,6.716,15,15,15h200c8.284,0,15-6.716,15-15V75c0-8.284-6.716-15-15-15h-45V15
+                            c0-8.284-6.716-15-15-15H35c-8.284,0-15,6.716-15,15v240C20,263.284,26.716,270,35,270z M280,300H110V90h170V300z M50,30h170v30H95
+                            c-8.284,0-15,6.716-15,15v165H50V30z"
+                      />
+                      
+                    </g>
+                  </svg>
+                  <span>Copy Link</span>
+                </button>
+                <button className="downloadBtn" id="downloadBtn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={20}
+                    height={20}
+                    viewBox="0 0 20 20"
+                  >
+                    <title>download</title>
+                    <path d="M17 12v5H3v-5H1v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5z" />
+                    <path d="M10 15l5-6h-4V1H9v8H5l5 6z" />
+                  </svg>
+                  Download QR Code
+                </button>
+                <input type="text" id="dataBox" style={{ display: "none" }} />
+                                
+              </div>
               <div
               className="col s8 adjustbxflex mb-5"
               style={{ justifyContent: "center" }}
-            >
+              >
               <div
                 className="whatsappchat-settings-componen"
                 id="whatsappChatWidgetPreview"
@@ -355,7 +414,7 @@ var options = {
                     }}
                   >
                     <img
-                      src="/img/msg91-icon-blue.svg"
+                      src="https://msg91.com/img/icon/hello.svg"
                       id="whatsappChatWidgetBrandImagePreview"
                       alt="Brand Image"
                       style={{                        
@@ -464,10 +523,7 @@ var options = {
                     </a>
                   </div>
                   <div className="img text-center space_btm">
-                    <img
-                      alt="Wati"
-                      src="https://www.wati.io/wp-content/uploads/2023/04/wati-powered.svg"
-                    />
+                    <img src="https://msg91.com/img/poweredby.svg" />
                   </div>
                   <div className="wa-widget-sen-button">
                     <img
@@ -477,64 +533,19 @@ var options = {
                   </div>
                 </div>
               </div>
+              </div>            
             </div>
-            <div style={{marginTop: '80px'}}></div>            
-            <div id="wq-generated-output" className="d-flex align-items-center mb-5">
-              <div className="wq-link-display-box me-2">https://wa.me/WhatsApp number?text=Pre-Filled Message</div>              
-              <div className="wq-action-btn-group">
-                <input type="text" id="dataBox" style={{ display: "none" }} />
-                <button className="wq-action-btn" id="wq-copy-btn">
-                  <svg
-                    version="1.1"
-                    id="Capa_1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    x="0px"
-                    y="0px"
-                    viewBox="0 0 330 330"
-                    style={{ enableBackground: "new 0 0 330 330" }}
-                    xmlSpace="preserve"
-                  >
-                    <g>
-                      <path
-                        d="M35,270h45v45c0,8.284,6.716,15,15,15h200c8.284,0,15-6.716,15-15V75c0-8.284-6.716-15-15-15h-45V15
-                            c0-8.284-6.716-15-15-15H35c-8.284,0-15,6.716-15,15v240C20,263.284,26.716,270,35,270z M280,300H110V90h170V300z M50,30h170v30H95
-                            c-8.284,0-15,6.716-15,15v165H50V30z"
-                      />
-                      
-                    </g>
-                  </svg>
-                  Copy Link
-                </button>
-              </div>
-              <p className="wq-copied ms-3" style={{ display: "none" }}>
-                Copied!
-              </p>
-            </div>
-            
-            <div className="wq-action-btn-group">
-              <button className="downloadBtn" id="downloadBtn">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={20}
-                  height={20}
-                  viewBox="0 0 20 20"
-                >
-                  <title>download</title>
-                  <path d="M17 12v5H3v-5H1v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5z" />
-                  <path d="M10 15l5-6h-4V1H9v8H5l5 6z" />
-                </svg>
-                Download QR Code
-              </button>
-            </div>            
           </div>
 
           <div className="col-md-6" id="widget-code-wrp" style={{display: 'none'}}>
             <div className="d-flex justify-content-between align-items-center">
-              <h4 className="d-flex mb-3">
-                <span>Copy and paste this code before the tag on every page of your website.</span>
-              </h4>
-              <div className="wq-action-btn-group">
+              <h4 className="d-flex" style={{lineHeight:'38px'}}>
+                <span>Widget code snipet</span>
+              </h4>                            
+            </div>            
+            <p className="mb-3">Copy and paste this code on every page of your website.</p>
+            <pre style={{position:'relative'}}>
+            <div className="wq-action-btn-group wq-copy-code">
                 <button className="wq-action-btn" id="wq-copy-code">
                     <svg
                       version="1.1"
@@ -556,12 +567,10 @@ var options = {
                         
                       </g>
                     </svg>
-                    Copy code
+                    <span>Copy code</span>
                 </button>
               </div>
-            </div>            
-            <pre>
-              <code id="widget-code">                  
+              <code id="widget-code" class="language-javascript">                  
               </code>
             </pre>
           </div>
