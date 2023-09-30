@@ -28,7 +28,7 @@ export default function Index({ posts, tag, pagination, page }) {
     <>
        <Head>
         <title>{tag}</title>
-        <meta property="og:title" content={`Explore our collection of articles tagged under ${tag} at GIDHH -The Best Accounting Software. Discover insightful content, tips, and resources related to ${tag}.`} key="title" />
+        <meta property="og:title" content={`Explore our collection of articles tagged under ${tag} at MSG91 -The Best Cloud Communication Platform. Discover insightful content, tips, and resources related to ${tag}.`} key="title" />
       </Head>
 <div className="blog">
 <div className={"container blog-home-container"}>
