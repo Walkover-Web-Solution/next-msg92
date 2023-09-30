@@ -5,27 +5,21 @@ import { setUtm } from '../pricingComp';
 import { ListGroup } from 'react-bootstrap';
 import Link from 'next/link';
 const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, currency }) => {
+  var plans = [];
+  for (let i = 0; i < subscriptionHello.length; i++) {
+    plans[i] = {};
+    plans[i].channels = [];
+    const subscription = subscriptionHello[i].planFeatures.map((data, index) => {
+      if(data.is_visible === 1){
+      if (data.feature.key.includes("support_channel")) {
+        plans[i].channels.push(data.feature.name);
+      }
+    }
+    })
+  }
   const [symbol, setSymbol] = useState('₹');
   const [selectedMode, setSelectedMode] = useState('Monthly');
   const [selectedCurrency, setSelectedCurrency] = useState('INR');
-
-  const notavailable = '/img/not-available-red.svg';
-  const available = '/img/available-green.svg';
-  let basicprice = '0';
-  let basicRate = '0';
-  let premiumprice = '0';
-  let premiumRate = '0';
-  if (countryCode == 'IN') {
-    basicprice = '₹500';
-    basicRate = '₹0.50';
-    premiumprice = '₹1000';
-    premiumRate = '₹0.75';
-  } else {
-    basicprice = '$10';
-    basicRate = '$0.0061';
-    premiumprice = '$20';
-    premiumRate = '$0.0091';
-  }
 
   const changeCurrency = async (currency) => {
     setSelectedCurrency(currency);
@@ -47,10 +41,6 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
         setSymbol('£');
         break;
     }
-  };
-  const numberWithCommas = (x) => {
-    let nf = currency === 'INR' ? new Intl.NumberFormat('en-IN') : new Intl.NumberFormat('en-US');
-    return nf.format(x);
   };
   useEffect(() => {
     setUtm();
@@ -100,10 +90,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                             : ''}
                       </p>
                       <div className="c-fs-6 mb-2 mt-2 text-start feature-list">
-                        {/* <span className="text-success me-2">
-                                                        <MdDone />
-                                                        </span> */}
-                                                        <hr style={{borderColor: "#999"}}></hr>
+                        <hr style={{ borderColor: "#999" }}></hr>
                         <div className="c-fs-6 mb-2 mt-2 ">
                           <strong className="c-fs-6 mb-2 mt-2">Included</strong>
                           <div>
@@ -129,29 +116,48 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                         </div>
 
                         {item.show_features &&
-                          item.planFeatures.map((data, index) => {
-                            if (data.is_visible === 1) {
-                              var feature = data?.feature?.key;
-                              feature = feature.replace(/_/g, ' ');
+                          item.planFeatures
+                            .filter((data) => data.is_visible === 1)
+                            .sort((a, b) => {
+                              const featureA = a?.feature?.key?.replace(/_/g, ' ');
+                              const featureB = b?.feature?.key?.replace(/_/g, ' ');
+                              return featureA.localeCompare(featureB);
+                            })
+                            .map((data, index) => {
+                              const feature = data?.feature?.key?.replace(/_/g, ' ');
+                              let groupSupportChannel = false
+                              if (feature.includes("support channel")) {
+                                groupSupportChannel = true
+                              }
                               return (
-                                <p key={`data-${index}`}>
-                                  <span className="text-green me-2">
-                                    <MdDone />
-                                  </span>
-                                  {feature}
-                                </p>
+                                <>
+                                  <div key={`data-${index}`}>
+                                    {!groupSupportChannel &&
+                                      <p>
+                                        <span className="text-green me-2">
+                                          <MdDone />
+                                        </span>
+                                        {feature}
+                                      </p>
+                                    }
+                                  </div>
+                                </>
                               );
-                            }
-                          })}
-                        {/* <div className="c-fs-6">                  
-                           {
-                           (item.plan_amounts[0].plan_amount === 0) ? 
-                             <span className="text-danger me-2"><MdClose /></span> 
-                                 : 
-                               <span className="text-success me-2"><MdDone /></span> 
-                                 }
-                                  {numberWithCommas(item.plan_services[1].service_credit.free_credits)} Hello Chats
-                                  </div> */}
+                            })}
+
+                        <div className="c-fs-6 mb-2"> <span className="text-green me-2">
+                          <MdDone />
+                        </span> Supported Channels
+                          <ul className='mt-1' style={{marginLeft: "12px"}}>
+                            {plans[index].channels.map((data, index) => {
+                              return (
+                                <li key={`data-${index}`}>
+                                  {data}
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
                       </div>
 
                       {item.postpaid_allowed && (
@@ -175,7 +181,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                         </div>
                       )}
                       <a
-                        href="https://control.msg91.com/login/"
+                        href="https://control.msg91.com/signup/"
                         target="_blank"
                         className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm"
                       >
