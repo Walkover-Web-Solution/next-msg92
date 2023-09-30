@@ -22,9 +22,9 @@ collections:
     fields: # The fields for each document, usually in front matter      
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Slug", name: "slug", widget: "hidden", default: "slug"}
-      - {label: "Author", name: "author", widget: "select", multiple: false, options: ["Team MSG91"]}
+      - {label: "Author", name: "author", widget: "select", multiple: false, options: ["Team msg91"]}
       - {label: "Publish Date", name: "date", widget: "datetime", required: false}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}     
-      - {label: "Tags", name: "tags", widget: "select", multiple: true, options: ["MSG91-API", "Marketing-Communication", "MSG91","Cloud-Communication", "Customer-Engagement", "Best-Practices", "MSG91-for-Education", "Customer-Experience", "AI", "Transactional-Email", "Technology-Updates", "Top-Blogs","Send-OTP-2.0", "MSG91-Features", "CPaaS","MSG91-API-viaSocket", "Addons-&-Plugins", "Customer-Segmentation","MSG91-Webinar", "MSG91-Update", "MSG91-for-Travel","Number-Masking",Send-OTP, "Transactional-SMS", "2fa","Programmable-SMS"], required: false}
+      - {label: "Tags", name: "tags", widget: "select", multiple: true, options: ["knowledgebase","msg91-api", "marketing-communication", "msg91","cloud-communication", "customer-engagement", "best-practices", "msg91-for-education", "customer-experience", "ai", "transactional-email", "technology-updates", "top-blogs","send-otp-2.0", "msg91-features", "cpaas","msg91-api-viasocket", "addons-&-plugins", "customer-segmentation","msg91-webinar", "msg91-update", "msg91-for-travel","number-masking",send-otp, "transactional-sms", "2fa","programmable-sms"], required: false}
       - {label: "Short Description", name: "description", widget: "string", required: true}
       - {label: "Body", name: "body", widget: "markdown"}

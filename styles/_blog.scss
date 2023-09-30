@@ -1,14 +1,14 @@
 .blog {
     background-repeat: no-repeat;
-    background: url('./../public/images/blog-background.jpg');
+    background: url('./../public/images/pexels-j-lee-6825703.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
   
     .blog-home-container {
-      padding-bottom: 46px;
+      padding: 100px 24px 46px 24px;
       .post-list {
-        padding: 100px 24px 46px;
+        padding:46px;
         display: grid;
         height: auto !important;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -204,7 +204,7 @@
     }
   
     &__back-btn {
-      background-color: var(--col-primary) !important;
+      background-color: var(--primary-color) !important;
       color: var(--white-color) !important;
     }
     .blog-page-tags {
