@@ -9,13 +9,12 @@ import "prismjs/themes/prism-tomorrow.css";
 import snippetData from "@/pages/snippet.json"; 
 
 
-const ChannelComponent = ({ pageData, path }) => {  
-  
+const ChannelComponent = ({ pageData, path, pricingPath }) => {    
   var HTTPSnippet = require("httpsnippet");
   var i = 0;
   
   useEffect(() => {
-    Prism.highlightAll();
+    Prism.highlightAll();    
   }, []);
 
   const snippet = new HTTPSnippet(snippetData[pageData.pagename]);
@@ -212,10 +211,7 @@ const ChannelComponent = ({ pageData, path }) => {
           }
         })}
       </div>
-      <Seo path={path} pageData={pageData.pagename} />
-
-      {/* {path === 'in' && pageData.pagename === 'SMS' && <InIndex />} */}
-      {/* <Insms /> */}
+      <Seo path={path} pageData={pageData.pagename} />      
       <PreFooter />
     </div>
   );

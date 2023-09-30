@@ -1,11 +1,20 @@
 import Date from "./date";
 import { parseISO } from "date-fns";
-import React from "react";
-import { toast } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
-export default function PostItem({ post }) {  
-  const[content, setContent] =useState(true);
+import { MdDateRange } from "react-icons/md";
+
+export default function PostItem({ post }) {
+
+  function getBlogStyle(titleText) {
+    let textLength = titleText.length;
+    let wordLength = titleText.split(" ").length;
+    //console.log('titetext', textLength, wordLength)
+
+    if (wordLength > 8 || textLength > 48) {
+      return " blog-card--large";
+    } else {
+      return " blog-card--small";
+    }
+  }
   /* function calculateReadTime(articleText, wordsPerMinute = 200) {
     // Count the number of words in the article
     const words = articleText.match(/\w+/g);
@@ -17,21 +26,38 @@ export default function PostItem({ post }) {
     return readTimeMinutes;
   }    
   const readTime = calculateReadTime(article); */
-//   function showToaster(message, type) {
-//     toast.dismiss();
-//     toast(message, { type: type });
-// }
-// const number = 2
-// if(number >5){
-//   console.log("inside if ")
-//   setContent(!content);
-// }
-  return (      
+  return (
     <>
-    <a className="blog-card" href={"/guide/" + post.slug}>      
-        <Date date={parseISO(post.date)} />
-        <div className="title">{post.title}
+    <a href={"/guide/" + post.slug} 
+    className={
+      "blog-card" +
+      (post.thumbnail ? " bg-dark" : " bg-light") +
+      getBlogStyle(post.title)
+    }
+    style={{
+      backgroundImage: post.thumbnail
+        ? 'url("' + post.thumbnail + '")'
+        : "none",
+    }}
+    >
+      <div className="blog-card__content">
+        <div className="blog-card-body">
+        <h2 className="title">{post?.title}</h2>
+        <p className="content">{post?.description}</p>
+      </div>
+      <div className="blog-card-footer">
+          <div className="blog-card-tags">
+            {post?.tags!== "" && post?.tags?.map((category, idx) => (
+              <span className="bg-tags" key={idx}>
+                {category}
+              </span>
+            ))}
+          </div>
+          <span>
+            <MdDateRange /> <Date date={parseISO(post.date)} />
+          </span>
         </div>
+      </div>
     </a>
     {/* {content && <button className="message" onClick={()=>showToaster("not valid ", "error")}>click me</button>} */}
     </>
