@@ -8,6 +8,7 @@ const mainpage = ({ pageData, params, path, pricingPath }) => {
   var code = pageData?.code;
   var Dataa = pageData;
   var channels = ['SMS','Email','WhatsApp','Voice'];
+  
   if (!pageData) {
     return (
       <div>
@@ -22,11 +23,11 @@ const mainpage = ({ pageData, params, path, pricingPath }) => {
       </>
     );
   } else {
-    if(channels.includes(pageData.pagename)){
+    if(channels.includes(pageData?.pagename)){      
       return (
         <>
-          <div>
-            <ChannelComponent pageData={Dataa} path={path}/>
+          <div>            
+            <ChannelComponent pageData={Dataa} path={path} pricingPath={pricingPath} />
           </div>
         </>
       );
