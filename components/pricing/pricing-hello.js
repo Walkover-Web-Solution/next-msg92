@@ -62,14 +62,14 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                     <option value="Yearly">Yearly</option>
                   </select> */}
       </div>
-      <div className="d-flex flex-wrap flex-gap gap-3 justify-content-center w-100  card-container align-items-start mt-5">
+      <div className="d-flex flex-wrap flex-gap gap-3 w-100  card-container mt-5">
         {subscriptionHello?.length
           ? subscriptionHello?.map((item, index) => {
             return (
               <div key={`email-card-${index}`} className="mx-3">
-                <div className=" d-flex flex-column mb-4 mb-sm-0 align-items-center ">
+                <div className="d-flex h-100 align-items-start">
                   {/* <div className="popular-chip c-fs-6">POPULAR</div> */}
-                  <div className=" price-card email card  mb-4 mb-sm-0 c-bg-grey border-0">
+                  <div className="price-card email card  mb-4 mb-sm-0 c-bg-grey border-0 h-100">
                     <div className="card-body text-center">
                       <h3 className="c-fs-3">{item.name}</h3>
                       <h5 className="mt-2 c-fs-2 text-green">
@@ -81,13 +81,20 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                       </h5>
                       <p className="c-fs-5">
                         {symbol === '₹' && item.plan_amounts[0]?.plan_amount === 0
-                          ? ''
+                          ? '-'
                           : '' ||
                             (symbol === '₹' && item.plan_amounts[0]?.plan_amount !== 0)
                             ? '+18%GST'
                             : ''}
                       </p>
-                      <div className="c-fs-6 mb-2 mt-2 text-start feature-list">
+                      <a
+                        href="https://control.msg91.com/signup/"
+                        target="_blank"
+                        className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-4 utm"
+                      >
+                        Get Started
+                      </a>
+                      <div className="c-fs-6 mt-2 text-start feature-list">
                         <hr style={{ borderColor: "#999" }}></hr>
                         <div className="c-fs-6 mb-2 mt-2 ">
                           <strong className="c-fs-6 mb-2 mt-2">Included</strong>
@@ -145,8 +152,8 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
 
                         <div className="c-fs-6 mb-2"> <span className="text-green me-2">
                           <MdDone />
-                        </span> Supported Channels
-                          <ul className='mt-1' style={{marginLeft: "12px"}}>
+                        </span>Supported Channels
+                          <ul className='mt-1 mb-1' style={{marginLeft: "7px"}}>
                             {plans[index].channels.map((data, index) => {
                               return (
                                 <li key={`data-${index}`}>
@@ -159,32 +166,26 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                       </div>
 
                       {item.postpaid_allowed && (
-                        <div className="c-fs-6 mb-2 mt-2 text-start feature-list">
+                        <div className="c-fs-6 text-start feature-list">
                           <strong>Extra</strong>
                           <div>
-                            {item.plan_services[0].service_credit.service.name} - {symbol}{' '}
-                            {
+                            {symbol}{
                               item.plan_services[0].service_credit
                                 .service_credit_rates[0].follow_up_rate
-                            }
+                            }/
+                            {item.plan_services[0].service_credit.service.name}
                           </div>
-                          <div>
-                            {item.plan_services[1].service_credit.service.name} - {symbol}{' '}
+                          <div>                            
+                            <div></div>
+                            {symbol}
                             {
                               item.plan_services[1].service_credit
                                 .service_credit_rates[0].follow_up_rate
-                            }{' '}
-                            /per ticket
+                            }
+                            /ticket
                           </div>
                         </div>
-                      )}
-                      <a
-                        href="https://control.msg91.com/signup/"
-                        target="_blank"
-                        className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm"
-                      >
-                        Get Started
-                      </a>
+                      )}                      
                     </div>
                   </div>
                 </div>
@@ -194,7 +195,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
           : ''}
         <div className="mx-3">
           <div className="card price-card email border-0  mb-4 mb-sm-0 c-bg-grey">
-            <div className="card-body">
+            <div className="card-body justify-content-between">
               <h3 className="c-fs-3">CUSTOM</h3>
               <p className="c-fs-5">Talk to sales for a customized plan.</p>
               <Link

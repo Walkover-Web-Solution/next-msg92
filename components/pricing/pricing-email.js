@@ -148,7 +148,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
           }) : ''
         }
         <div className="card price-card email border-0 text-center mb-4 mb-sm-0 c-bg-grey">
-          <div className="card-body">
+          <div className="card-body justify-content-between">
             <h3 className="c-fs-3">CUSTOM</h3>
             <p className="c-fs-5">Talk to sales for a customized plan.</p>
             <Link
