@@ -4,9 +4,12 @@ import metaData from "@/data/metadata.json";
 const Headcomp = (browserPath) => {
   const list = ['in','ae','ph','sg','es','gb','us']
   const meta = metaData[browserPath.browserPath];    
+  console.log(meta, "meta data");
   const country = browserPath.browserPath.split('/')[1];
+  console.log(country, 'country ');
   if(list.includes(country)){
     var hreflang = `en-${country.toUpperCase()}`
+    console.log(hreflang, "href lang");
   }
   return (
     <>
