@@ -600,7 +600,6 @@ var options = {
             </pre>
           </div>
         </div>
-
         <div>
               <h2 className="c-head c-fs-1 mt-5 mb-2">FAQs</h2>
 
