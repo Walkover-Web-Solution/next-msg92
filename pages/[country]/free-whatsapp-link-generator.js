@@ -1,7 +1,6 @@
 // Parent Component
 import React, { useEffect } from "react";
 import PreFooter from "@/components/preFooter";
-import Head from "next/head";
 const ParentComponent = ({ pricingPath }) => {
   //const data = json.global.hello;
   useEffect(() => {
@@ -168,12 +167,6 @@ var options = {
   });
   return (
     <>
-     <Head>
-    {/* <title>Free WhatsApp Link generator </title> */}
-    <meta name="description" content="Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!  - MSG91 -Best online cloud communication platform"/>
-    <meta property="og:title" content="WhatsApp Link Generator" />
-    <meta property="og:url" content="URL of your WhatsApp link generator webpage" />
-    </Head>
       <script type="text/javascript" src="/js/qrcode.js" defer></script>
       <script type="text/javascript" src="/js/jquery.min.js"></script>
       <script src="/js/highlight.min.js"></script>

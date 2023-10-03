@@ -17,7 +17,7 @@ const pricingmain =()=>{
     return countryCode;
   } 
   const data=getCountryCode();
-  if(data!=='[COUNTRY]' && data.length!==0 && product!== "product"){
+  if(data!=='[COUNTRY]' && data.length!==0 && product!== "product" && product!== "[product]"){
     return (
       <PricingComp countryCode={data} product={product} browserPath={browserPath}/>
   );

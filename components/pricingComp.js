@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import countries from "@/data/countries.json";
 import $ from 'jquery';
-
+// import Head from "next/head";
 import Pricingemail from "@/components/pricing/pricing-email";
 import Pricingsms from "@/components/pricing/pricing-sms";
 import Pricingvoice from "@/components/pricing/pricing-voice";
@@ -189,6 +189,16 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
 
   return (
     <>
+    {/* <Head>                 */}
+        {/* <link rel="canonical" href={`https://msg91.com${browserPath}`} /> */}
+        
+        
+        {/* <link rel="alternate" hreflang="x-default" href="https://msg91.com" /> */}
+        {/* <link rel="alternate" hreflang={hreflang} href={`https://msg91.com/${country}`} /> */}
+        {/* {country && 
+          <link rel="alternate" hreflang={hreflang} href={`https://msg91.com/${country}`} />
+        } */}
+      {/* </Head> */}
       <div>
         <div
           className=" my-4 d-flex w-100 gap-2 align-items-center justify-content-center flex-wrap"
