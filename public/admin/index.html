@@ -21,5 +21,37 @@
       });
     }
   </script>
+
+<script>
+  
+  CMS.registerEventListener({
+    name: 'preSave',
+    handler: ({ entry }) => {
+      var slugData = entry.get('data')._root.entries[2][1];
+      slugData = slugData.replace(/[^\w\s]/gi, '')
+      slugData = slugData.trim().toLowerCase().replace(/\s+/g,"-");
+      return entry.get('data').set('slug', slugData);
+    },
+  });
+
+  CMS.registerEditorComponent({
+    id: "youtube",
+    label: "Youtube",
+    fields: [{name: 'id', label: 'Youtube Video URL'}],           
+    fromBlock: function(match) {
+      return {
+        id: match[1]
+      }
+    },  
+    toBlock: function(obj) {    
+      return '<ReactPlayer url="' + obj.id + '" controls={true} />';
+    },
+    toPreview: function(obj) {
+      return (
+        '<video width="320" height="240" controls> <source src= "http://img.youtube.com/vi/' + obj.id + '/maxresdefault.jpg" "> </video>'
+      );
+    }
+  });
+</script>
 </body>
 </html>

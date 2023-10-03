@@ -28,8 +28,8 @@ export function setUtm(){
   }
 }
 
-const PricingComp = ({ countryCode, product, brawserPath }) => {
-  var pathLength = brawserPath?.split("/")[1].length;
+const PricingComp = ({ countryCode, product, browserPath }) => {
+  var pathLength = browserPath?.split("/")[1].length;
   var pathLengthCond = true
   if (pathLength === 2)
   {
