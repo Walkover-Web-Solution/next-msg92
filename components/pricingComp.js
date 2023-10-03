@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import countries from "@/data/countries.json";
-import $ from 'jquery';
 
 import Pricingemail from "@/components/pricing/pricing-email";
 import Pricingsms from "@/components/pricing/pricing-sms";
@@ -14,25 +13,9 @@ import Pricingcampaign from "@/components/pricing/pricing-campaign";
 import Pricingrcs from "@/components/pricing/pricing-rcs";
 import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
 import Link from "next/link"; 
+import { getCookie } from "@/components/utils";
 
 export function setUtm(){
-  function getCookie(cookieName) {
-    var name = cookieName + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var cookieArray = decodedCookie.split(';');
-  
-    for (var i = 0; i < cookieArray.length; i++) {
-      var cookie = cookieArray[i];
-      while (cookie.charAt(0) === ' ') {
-        cookie = cookie.substring(1);
-      }
-      if (cookie.indexOf(name) === 0) {
-        return cookie.substring(name.length, cookie.length);
-      }
-    }
-    return null; // Return null if the cookie is not found
-  }
-
   // Get all anchor tags in the document using querySelectorAll
   var anchorTags = document.querySelectorAll(".utm");
   // Loop through the anchor tags
@@ -66,6 +49,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
   var [subscriptionVoice, setSubscriptionVoice] = useState([]);
   var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
   var [subscriptionSegmento, setSubscriptionSegmento] = useState([]);
+  var [subscriptionHello, setSubscriptionHello] = useState([]);
   const[fetchCurrency, setfetchCurrency] = useState();
   const [fetchMsId, setfetchMsId] = useState("");
   const[states, setStates] = useState()
@@ -85,14 +69,20 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
   const fetchemailData =async()=>{
     setfetchCurrency(currency);
     setfetchMsId("1");
-    setStates("SubscriptionSegmento");
+    setStates("subscriptionEmail");
     fetchSubscription(currency,"1","subscriptionEmail")
   }
   const fetchSegmentoData = async()=>{
     setfetchCurrency(currency);
     setfetchMsId("2");
-    setStates("SubscriptionSegmento");
-    fetchSubscription(currency,"2","SubscriptionSegmento")
+    setStates("subscriptionSegmento");
+    fetchSubscription(currency,"2","subscriptionSegmento")
+  }
+  const fetchHelloData = async()=>{
+    setfetchCurrency(currency);
+    setfetchMsId("7");
+    setStates("SubscriptionHello");
+    fetchSubscription(currency,"7","subscriptionHello")
   }
   const fetchWhatsAppData = async()=>{
     setfetchCurrency(currency);
@@ -110,6 +100,9 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
     else if(product === "whatsapp"){
     fetchWhatsAppData(currency)
     }
+    else if(product === "hello"){
+      fetchHelloData(currency)
+      }
   },[product, currency]);
   const fetchSMSData = async (currency, origin, destination) => {
     setOriginCountry(origin);
@@ -148,15 +141,15 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
         case "SubscriptionWhatsapp":
           setSubscriptionWhatsapp([...response.data.data]);
           break;
-          case "SubscriptionSegmento":
+          case "subscriptionSegmento":
             setSubscriptionSegmento([...response.data.data]);
             break;
           case "SubscriptionVoice":
             setSubscriptionVoice([...response.data.data]);
             break;
-          // case "SubscriptionSegmento":
-          //   setSubscriptionSegmento([...response.data.data]);
-          //   break;
+          case "subscriptionHello":
+            setSubscriptionHello([...response.data.data]);
+            break;
         default:
           break;
       }
@@ -179,6 +172,9 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
     }
     else if(product === "whatsapp"){
       fetchWhatsAppData(response?.currency);
+    }
+    else if(product === "hello"){
+      fetchHelloData(response?.currency);
     }
   };  
 
@@ -282,7 +278,10 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
           <Link
            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/hello":"/pricing/hello"}
            className={`nav-item ${product === 'hello' ? 'active' : ''}`}
-            id="hello-btn"
+           id="hello-btn"
+           onClick={()=>{
+            fetchSubscription(currency, "7","subscriptionHello");
+           }}
             >
             <span className="nav-link">
               <img src="/img/icon/hello.svg" alt="#" className="icon" />
@@ -296,7 +295,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
             className={`nav-item ${product === 'segmento' ? 'active' : ''}`}
             id="segmento-btn"
             onClick={() => {
-              fetchSubscription(currency, "2","SubscriptionSegmento");
+              fetchSubscription(currency, "2","subscriptionSegmento");
             }}
           >
             <span className="nav-link">
@@ -391,12 +390,26 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
             currencySymbol={currencySymbol}
           />
         )}
-        {product === "hello" && <Pricinghello countryCode={countryCode} />}
+        {product === "hello" && (
+        <Pricinghello
+           setSubscriptionHello={setSubscriptionHello}
+            subscriptionHello={subscriptionHello}
+            fetchSubscriptionHello={fetchSubscription}
+            currency={currency}
+            state= {"SubscriptionHello"}
+            setCurrencySymbol={setCurrencySymbol}
+            countryCode={countryCode}
+          />
+        )}       
         {product === "segmento" && (
           <Pricingsegmento
             subscriptionSegmento={subscriptionSegmento}
+            setSubscriptionSegmento={setSubscriptionSegmento}
             fetchSubscriptionSegmento={fetchSubscription}
             currency={currency}
+            state= {"subscriptionSegmento"}
+            setCurrencySymbol={setCurrencySymbol}
+            countryCode={countryCode}
             currencySymbol={currencySymbol}
           />
         )}
