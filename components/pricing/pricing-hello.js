@@ -1,8 +1,6 @@
-import { MdDoneOutline } from 'react-icons/md';
-import { MdDone, MdClose } from 'react-icons/md';
+import { MdDone } from 'react-icons/md';
 import { useEffect, useState } from 'react';
 import { setUtm } from '../pricingComp';
-import { ListGroup } from 'react-bootstrap';
 import Link from 'next/link';
 const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, currency }) => {
   var plans = [];
@@ -164,14 +162,14 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                         <div className="c-fs-6 mb-2 mt-2 text-start feature-list">
                           <strong>Extra</strong>
                           <div>
-                            {item.plan_services[0].service_credit.service.name} @ {symbol}
+                            {item.plan_services[0].service_credit.service.name} - {symbol}{' '}
                             {
                               item.plan_services[0].service_credit
                                 .service_credit_rates[0].follow_up_rate
                             }
                           </div>
                           <div>
-                            {item.plan_services[1].service_credit.service.name} @ {symbol}{' '}
+                            {item.plan_services[1].service_credit.service.name} - {symbol}{' '}
                             {
                               item.plan_services[1].service_credit
                                 .service_credit_rates[0].follow_up_rate
