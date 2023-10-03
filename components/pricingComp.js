@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import countries from "@/data/countries.json";
 import $ from 'jquery';
-// import Head from "next/head";
 import Pricingemail from "@/components/pricing/pricing-email";
 import Pricingsms from "@/components/pricing/pricing-sms";
 import Pricingvoice from "@/components/pricing/pricing-voice";
