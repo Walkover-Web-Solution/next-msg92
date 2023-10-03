@@ -169,7 +169,7 @@ var options = {
   return (
     <>
      <Head>
-    <title>Free WhatsApp Link generator </title>
+    {/* <title>Free WhatsApp Link generator </title> */}
     <meta name="description" content="Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!  - MSG91 -Best online cloud communication platform"/>
     <meta property="og:title" content="WhatsApp Link Generator" />
     <meta property="og:url" content="URL of your WhatsApp link generator webpage" />
@@ -725,9 +725,9 @@ var options = {
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div class="accordion-body">
-                    You can generate a WhatsApp link by appending the phone number (including the country code) to 
+                    You can generate a WhatsApp link by appending the phone number to 
                     the WhatsApp URL: https://wa.me/phonenumbers. For example, to create a link for 
-                    the number +1234567890, the URL would be https://wa.me/1234567890.
+                    the number 1234567890, the URL would be https://wa.me/1234567890.
                     </div>
                   </div>
                 </div>
