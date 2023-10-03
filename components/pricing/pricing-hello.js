@@ -136,16 +136,16 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                               }
                               return (
                                 <>
-                                  <div key={`data-${index}`}>
-                                    {!groupSupportChannel &&
-                                      <p>
-                                        <span className="text-green me-2">
-                                          <MdDone />
-                                        </span>
-                                        {feature}
-                                      </p>
-                                    }
-                                  </div>
+                                  {!groupSupportChannel &&
+                                    <div key={`data-${index}`}>
+                                        <p>
+                                          <span className="text-green me-2">
+                                            <MdDone />
+                                          </span>
+                                          {feature}
+                                        </p>
+                                    </div>
+                                  }
                                 </>
                               );
                             })}
