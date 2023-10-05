@@ -141,7 +141,7 @@ const Pricingsms = ({
                 <p className="c-fs-5">Talk to sales for a customized plan.</p>
                 <button 
                 style={{borderColor: 'white', color: 'white'}}
-                data-bs-toggle="modal" data-bs-target="#custom-pricing-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                   Talk to sales
                 </button>
               </div>
@@ -151,7 +151,7 @@ const Pricingsms = ({
               <div className="card-body justify-content-between">
                 <h3 className="c-fs-3">CUSTOM</h3>                
                 <p className="c-fs-5">Talk to sales for a customized plan.</p>
-                <button data-bs-toggle="modal" data-bs-target="#custom-pricing-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                   Talk to sales
                 </button>
               </div>
