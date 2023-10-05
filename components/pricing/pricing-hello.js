@@ -2,19 +2,28 @@ import { MdDone } from 'react-icons/md';
 import { useEffect, useState } from 'react';
 import { setUtm } from '../pricingComp';
 import Link from 'next/link';
-const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, currency }) => {
+const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, currency }) => {  
   var plans = [];
+  var tempFeaturesArray = [];  
   for (let i = 0; i < subscriptionHello.length; i++) {
     plans[i] = {};
     plans[i].channels = [];
+    plans[i].features = [];
     const subscription = subscriptionHello[i].planFeatures.map((data, index) => {
-      if(data.is_visible === 1){
-      if (data.feature.key.includes("support_channel")) {
-        plans[i].channels.push(data.feature.name);
+      if(data.is_visible === 1 && subscriptionHello[i].show_features){
+        if (data.feature.key.includes("support_channel")) {
+          plans[i].channels.push(data.feature.name);
+        }
+        else{          
+          if(!tempFeaturesArray.includes(data.feature.name)){
+            tempFeaturesArray.push(data.feature.name);
+            plans[i].features.push(data.feature.name);
+          }          
+        }
       }
-    }
     })
   }
+  
   const [symbol, setSymbol] = useState('₹');
   const [selectedMode, setSelectedMode] = useState('Monthly');
   const [selectedCurrency, setSelectedCurrency] = useState('INR');
@@ -64,7 +73,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
       </div>
       <div className="d-flex flex-wrap flex-gap gap-3 w-100  card-container mt-5">
         {subscriptionHello?.length
-          ? subscriptionHello?.map((item, index) => {
+          ? subscriptionHello?.map((item, index) => {            
             return (
               <div key={`email-card-${index}`} className="mx-3">
                 <div className="d-flex h-100 align-items-start">
@@ -117,10 +126,17 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                           </div>
                         </div>
                         <div className="c-fs-4 mb-2 mt-2 ">
-                          <p>Features</p>
+                          <p>Features</p>                          
                         </div>
-
-                        {item.show_features &&
+                        {index > 0 &&                        
+                            <div>
+                              <span className="text-green me-2">
+                                <MdDone />
+                              </span>
+                              <strong> All {subscriptionHello[index-1].name} Plan Features</strong>
+                            </div>
+                        }
+                        { /* item.show_features &&
                           item.planFeatures
                             .filter((data) => data.is_visible === 1)
                             .sort((a, b) => {
@@ -148,21 +164,38 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, countryCode, 
                                   }
                                 </>
                               );
-                            })}
-
-                        <div className="c-fs-6 mb-2"> <span className="text-green me-2">
-                          <MdDone />
-                        </span>Supported Channels
-                          <ul className='mt-1 mb-1' style={{marginLeft: "7px"}}>
-                            {plans[index].channels.map((data, index) => {
+                            }) */
+                            plans[index].features && 
+                            plans[index].features
+                            .map((data, index) => {                              
                               return (
-                                <li key={`data-${index}`}>
-                                  {data}
-                                </li>
+                                <div key={`data-${index}`}>
+                                    <p>
+                                      <span className="text-green me-2">
+                                        <MdDone />
+                                      </span>
+                                      {data}
+                                    </p>
+                                </div>                                  
                               );
-                            })}
-                          </ul>
-                        </div>
+                            })
+                          }
+
+                        {index === 0 &&
+                          <div className="c-fs-6 mb-2"> 
+                            <span className="text-green me-2"><MdDone /></span> Supported Channels
+                            <ul className='mt-1 mb-1' style={{marginLeft: "7px"}}>
+                              {plans[index].channels.map((data, index) => {
+                                return (
+                                  <li key={`data-${index}`}>
+                                    {data}
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          </div>
+                        }
+
                       </div>
 
                       {item.postpaid_allowed && (

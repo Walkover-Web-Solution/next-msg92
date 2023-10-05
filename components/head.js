@@ -2,20 +2,28 @@ import Head from "next/head";
 import metaData from "@/data/metadata.json";
 
 const Headcomp = (browserPath , browserPathMeta) => {
-  const list = ['in','ae','ph','sg','es','gb','us']
-  const meta = metaData[browserPath.browserPath];
-//   const meta = {
-//     "title": "Free Whatsapp Link generator| MSG91 - India",
-//     "description":"Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
-// }
-  const country = browserPath.browserPath.split('/')[1];
-  const generator = browserPath?.browserPath?.split('/')[2];
-  if(list.includes(country)){
-    var hreflang = `en-${country.toUpperCase()}`
+  const countryList = ['in','ae','ph','sg','es','gb','us']
+  const meta = metaData[browserPath.browserPath];  
+  const split = browserPath.browserPath.split('/');
+  var country = null;  
+  var page = null;
+  var hreflang = null;
+  
+  console.log(split, split[0], split[1]);
+  
+  if(split.length === 2){
+    country = split[1].length === 2 ? split[1] : '';
+    page = split[1].length !== 2 ? split[1] : '';
   }
-  if(generator === 'free-whatsapp-link-generator'){
-    var generator_true = true;
+  if(browserPath.browserPath.split('/').length === 3){
+    country = split[1].length === 2 ? split[1] : '';
+    page = split[2].length !== 2 ? split[2] : '';
+  }  
+
+  if(countryList.includes(country)){
+    hreflang = `en-${country.toUpperCase()}`
   }
+  console.log('country', country, 'page', page, 'hreflang', hreflang);  
 //   console.log(browserPath.browserPath,222)
 //   var path = browserPath.browserPath.split("/")[1];
 //   var product = browserPath.browserPath.split("/")[3];
@@ -39,17 +47,12 @@ const Headcomp = (browserPath , browserPathMeta) => {
         <meta name="description" content={meta?.description} />
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no"/>
         <meta name="google-site-verification" content="RfcBy_Lv1Ao1j0eP8UlMjJ44ik5_1YDKsRQSNFr9jEQ" />
-        <link rel="icon" href="/fav.svg" />        
-        {generator_true 
-        ? <link rel="canonical" href={`https://msg91.com/free-whatsapp-link-generator`} /> 
-        : <link rel="canonical" href={`https://msg91.com${browserPath.browserPath}`} />
+        <link rel="icon" href="/fav.svg" />                
+        <link rel="canonical" href={`https://msg91.com${browserPath.browserPath}`} />
+        <link rel="alternate" hreflang="x-default" href={`https://msg91.com/${page}`} />
+        { hreflang &&
+          <link rel="alternate" hreflang={hreflang} href={`https://msg91.com${browserPath.browserPath}`} />      
         }
-        
-        <link rel="alternate" hreflang="x-default" href="https://msg91.com" />
-        {/* <link rel="alternate" hreflang={hreflang} href={`https://msg91.com/${country}`} /> */}
-         {country && 
-           <link rel="alternate" hreflang={hreflang} href={`https://msg91.com/${country}`} />
-        } 
       </Head>
     </>
   );
