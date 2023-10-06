@@ -8,9 +8,8 @@ import { useRouter } from "next/router";
 import Script from 'next/script'
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter();
-  // const { slug } = router.query; 
-  var  browserPath = router.asPath;
+  const router = useRouter();  
+  var  browserPath = router.asPath;  
   var browserPathCase = browserPath;
   var browserPathMeta = browserPath;  
   //var product = router.query.product;
@@ -148,3 +147,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </>
     );
 }
+
+App.getInitialProps = async ({ asPath }) => {
+  return {
+    asPath,
+  };
+};
