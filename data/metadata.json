@@ -866,8 +866,6 @@
         "description":"Avail robust and powerful services like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
     },
 
-
-
     "LinkGenrator ******************************":{},
     
     "/free-whatsapp-link-generator": {
@@ -901,5 +899,92 @@
     "/us/free-whatsapp-link-generator": {
         "title": "Free Whatsapp Link generator | MSG91 - United States",
         "description":"Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
+    },
+    
+    "case-studies -----------------------":{},
+    "/case-studies": {
+        "title": "Customer success stories: Businesses Thrive with MSG91 API Integration"
+    },
+    "/case-studies/azimpremji": {
+        "title": "Azim Premji Foundation: Informing Teachers and Trainers via SMS API | MSG91"
+    },
+    "/case-studies/crazypolar": {
+        "title": "Craypolar: Communicating with Customers via SMS API | MSG91"
+    },
+    "/case-studies/ixigo": {
+        "title": "Ixigo: Ensuring Seamless Communication via SMS API | MSG91"
+    },
+    "/case-studies/milkbasket": {
+        "title": "Milkbasket: Sending Regular Updates to Customers via SMS API | MSG91"
+    },
+    "/case-studies/talkCharge": {
+        "title": "TalkCharge: Updating Customers Regularly via SMS API | MSG91"
+    },
+    "/case-studies/razorpay": {
+        "title": "Razorpay: Ensuring Customer Security via SMS API | MSG91"
+    },
+    "/case-studies/zebpay": {
+        "title": "Zebpay: Ensuring Customer Security via SMS API | MSG91"
+    },
+    "/case-studies/eurokids": {
+        "title": "Eurokids: Updating Parents on School Activities via SMS API | MSG91"
+    },
+    "/case-studies/blackbuck": {
+        "title": "Blackbuck: Conducting Seamless Operations via SMS Communication | MSG91"
+    },
+    "/case-studies/barbequenation": {
+        "title": "Barbeque Nation: Updating Customers on Orders via SMS API | MSG91"
+    },
+    "/case-studies/policybazaar": {
+        "title": "Policy Bazaar: Updating Customers via SMS Messaging | MSG91"
+    },
+    "/case-studies/joeyrooms": {
+        "title": "Joey Rooms: Keeping Clients Updated with SMS Notifications | MSG91"
+    },
+    "/case-studies/leadsq": {
+        "title": "LeadSquared: Updating Clients' Customers Across Industries with SMS | MSG91"
+    },
+    "/case-studies/letsshave": {
+        "title": "LetsShave: Updating Customers on Orders and Offers via SMS Messaging | MSG91"
+    },
+    "/case-studies/grabonrent": {
+        "title": "GrabOnRent: Updating Customers on Orders and Offers via SMS Messaging | MSG91"
+    },
+    "/case-studies/kartfood": {
+        "title": "KartFood: Updating Customers on Orders via SMS Messaging | MSG91"
+    },
+    "/case-studies/sankalp": {
+        "title": "Sankalp India Foundation: Informing Blood Donors and Recipients with SMS | MSG91"
+    },
+    "/case-studies/leegality": {
+        "title": "Leegality: Keeping Clients Updated with SMS Messaging | MSG91"
+    },
+    "/case-studies/oxebox": {
+        "title": "OxeBox: Securing Customer Accounts via SMS for Enhanced Security | MSG91"
+    },
+    "/case-studies/loco": {
+        "title": "Loco: Safeguarding Customer Accounts with OTP SMS for Enhanced Security | MSG91"
+    },
+    "/case-studies/technovision": {
+        "title": "Technovision: Keeping Customers Informed about Offers via SMS | MSG91"
+    },
+    "/case-studies/mahindra": {
+        "title": "Mahindra & Mahindra Automotive Division: Keeping Customers Informed via SMS | MSG91"
+    },
+    "/case-studies/clickpost": {
+        "title": "ClickPost: Keeping Customers Informed about Orders via SMS | MSG91"
+    },
+    "/case-studies/smartshift": {
+        "title": "Smart Shift: Ensuring a Hassle-Free Shift with SMS Notifications | MSG91"
+    },
+    "/case-studies/saboro": {
+        "title": "Mahindra Saboro: Sending Order Updates to Customers via SMS | MSG91"
+    },
+    "/case-studies/zing": {
+        "title": "ZingHR: Communicating with Potential Candidates via SMS Messaging | MSG91"
+    },
+    "/case-studies/indialends": {
+        "title": "IndiaLends: Ensuring Seamless Operations for Customers with MSG91"
     }
+    
 }

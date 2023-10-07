@@ -148,6 +148,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     );
 }
 
+/* 
+getInitialProps solves serverside rendering in pricing page 
+without getInitialProps it was giving path: '/pricing/[product]' 
+with getInitialProps it returns path: '/pricing/hello'
+*/
 App.getInitialProps = async ({ asPath }) => {
   return {
     asPath,

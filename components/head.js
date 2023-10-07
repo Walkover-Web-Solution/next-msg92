@@ -4,7 +4,7 @@ import metaData from "@/data/metadata.json";
 const Headcomp = (browserPath , browserPathMeta) => {
   const countryList = ['in','ae','ph','sg','es','gb','us']
   const meta = metaData[browserPath.browserPath];  
-  
+  //console.log('browserPath.browserPath', browserPath.browserPath);
   const split = browserPath.browserPath.split('/');
   var country = null;  
   var page = null;
