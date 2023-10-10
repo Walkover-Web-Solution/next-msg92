@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import $ from "jquery";
 import { useRouter } from "next/router";
 import countries from "@/data/countries.json";
+import { getCookie, setCookie } from "@/components/utils";
+
 const Notification = (mininav) =>{
     const router = useRouter();
     var path = router.asPath.split("/")[1];
@@ -16,7 +18,9 @@ const Notification = (mininav) =>{
     useEffect(() => {
       $("#change-country a").on("click", function () {
         var label = $(this).text();
-        $("#change-country label").html(label);
+        $("#change-country label").html(label);        
+        var cc = $(this).attr('href').substring(1);
+        setCookie('country_code', cc, 30);
       });
 
       /* fetch('https://api.db-ip.com/v2/free/self')
@@ -30,17 +34,16 @@ const Notification = (mininav) =>{
       }); */
 
     }, []);
-    // console.log(mininav,"hehhe")
     return (
         <>
-        <div className="section b-bottom-1">
+        <div className="section b-bottom-1 ashish">
         <div className="container d-flex align-items-center justify-content-between notification">
             <div className="my-2 d-flex align-items-center">
                 {/* <button className="btn btn-success py-1 btn-sm c-fs-5 me-3">Update</button>
                 <p className="c-fs-5 c-fw-m">Elevate Your Experience. The New and Improved Version Awaits ;)</p> */}
             </div>
             <div className="d-flex gap-4 align-items-center justify-content-end">
-              <div className="dropdown d-flex d-flex  align-items-center" id="change-country"> 
+              <div className="dropdown d-flex d-flex  align-items-center"> 
                 <a href={undefined}
                 className="align-items-center d-flex text-dark cp"
                 data-bs-toggle="dropdown"
@@ -50,7 +53,7 @@ const Notification = (mininav) =>{
                   <span className="c-fs-5 d-flex align-items-center">{country}</span>
                   <MdExpandMore className="ms-1"/>
                 </a>
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu" id="change-country">
                   <li>
                     <a href="/" className="dropdown-item c-fs-5">
                       Global

@@ -6,13 +6,14 @@ import Headcomp from "@/components/head";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Script from 'next/script'
+import { getCookie, setCookie } from "@/components/utils";
+import $ from "jquery";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();  
   var  browserPath = router.asPath;  
   var browserPathCase = browserPath;
-  var browserPathMeta = browserPath;  
-  //var product = router.query.product;
+  var browserPathMeta = browserPath;
   
   if (browserPath !== '/') {
     const pattern = /\/([^/?]+)/;
@@ -20,41 +21,32 @@ export default function App({ Component, pageProps }) {
     browserPath = result ? result[0] : browserPath;    
   }
   var path = browserPath.split("/")[1];
-  const products = ['/sms', '/email', '/voice', '/whatsapp', '/rcs', '/otp', '/hello', '/segmento', '/campaign', '/knowledgebase']  
+  const products = [
+    '/sms', 
+    '/email', 
+    '/voice', 
+    '/whatsapp', 
+    '/rcs', 
+    '/otp', 
+    '/hello', 
+    '/segmento', 
+    '/campaign', 
+    '/knowledgebase', 
+    '/free-whatsapp-link-generator', 
+    '/pricing',
+    '/pricing/sms',
+    '/shorturl',
+  ]  
   var pageSlug = Object.keys(router.query).length ? `/${router.query.pageslug}` : browserPath
   var pricingPath = (products.includes(pageSlug)) ? `/pricing${pageSlug}` : `/pricing/sms`;
 
   const year = new Date().getFullYear();
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
-                
-    function setCookie(name, value, days) {
-      const expirationDate = new Date();
-      expirationDate.setDate(expirationDate.getDate() + days);    
-      const cookieValue = encodeURIComponent(value) + (days ? '; expires=' + expirationDate.toUTCString() : '');
-      document.cookie = name + '=' + cookieValue + '; path=/';
-    }
-
-    function getCookie(cookieName) {
-      var name = cookieName + "=";
-      var decodedCookie = decodeURIComponent(document.cookie);
-      var cookieArray = decodedCookie.split(';');
-    
-      for (var i = 0; i < cookieArray.length; i++) {
-        var cookie = cookieArray[i];
-        while (cookie.charAt(0) === ' ') {
-          cookie = cookie.substring(1);
-        }
-        if (cookie.indexOf(name) === 0) {
-          return cookie.substring(name.length, cookie.length);
-        }
-      }
-      return null; // Return null if the cookie is not found
-    }
     
     const search = window.location.search;
     if(search.includes("utm_")){      
-      setCookie('msg91_query', search, 30);      
+      setCookie('msg91_query', search, 30);
     }
     
     // Get all anchor tags in the document using querySelectorAll
@@ -67,7 +59,33 @@ export default function App({ Component, pageProps }) {
         anchorTags[i].setAttribute("href", href + query);
       }
     }
-
+    
+    const countryList = ['in','ae','ph','sg','es','gb','us']
+    /* const split = window.location.href.split('/');
+    if(split.length === 2){
+      country = split[1].length === 2 ? split[1] : '';
+    }
+    if(browserPath.browserPath.split('/').length === 3){
+      country = split[1].length === 2 ? split[1] : '';      
+    } */
+    
+    var cc = getCookie('country_code');    
+    if(!cc && countryList.includes(path)){
+      setCookie('country_code', path, 30);
+    }
+    
+    $("a").on("click", function (event) {
+      event.preventDefault();
+      var href =  $(this).attr('href');
+      if(href !== undefined){
+        if(products.includes(href) && cc){          
+          window.location.href = '/'+ cc + href;
+        }
+        else{
+          window.location.href = href;
+        }
+      }
+    });
 
   }, []);
     return (
