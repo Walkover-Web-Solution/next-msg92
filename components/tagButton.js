@@ -4,7 +4,7 @@ export default function TagButton({ tag }) {
   return (
     <>
       <Link legacyBehavior href={"/guide/tags/[[...slug]]"} as={`/guide/tags/${tag}`}>
-        <a>{tag}</a>
+        {tag}
       </Link>
       <style jsx>{`
         a {

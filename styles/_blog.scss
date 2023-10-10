@@ -224,4 +224,25 @@
       }
     }
   }
+
+  .tag-list{
+    display: block;
+    padding: 16px 0;
+    li{
+      margin-right: 8px;
+      display: inline-block;
+      height: auto;
+      line-height: 10px;
+      padding: 8px 16px;
+      vertical-align: top;
+      margin-bottom: 2px;
+      font-size: 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      background-color: #dddddd;
+      a{
+        color: #000 !important;
+      }
+    }    
+  }
   

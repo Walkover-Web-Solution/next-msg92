@@ -3,18 +3,19 @@
     {
       "heading": "Azim Premji Foundation informs teachers and trainers using SMS via MSG91",
       "content": "Azim Premji Foundation is an NGO which works in the fields of Education. With the vision to help people with proper education by conducting classes and creating awareness, Azim Premji Foundation has been rigorously working on coordinating with the teachers for social welfare.",
-      "link": "./case-studies/azimpremji",
+      "link": "/case-studies/azimpremji",
       "img": "/img/azim-premji.png",
       "tags": [
         "NGO",
         "Transaction SMS",
-        "Unicode"
+        "Unicode",
+        "Education"
       ]
     },
     {
       "heading": "Craypolar communicates with its customers using SMS via MSG91",
       "content": "Craypolar provides CRM services to Gym and Fitness centres, where they communicate to their customers information, offers and updates regularly. With the vision to help the customers get seamless fitness services in time, Craypolar has been rigorously working on the operations for the customer’s welfare.",
-      "link": "./case-studies/crazypolar",
+      "link": "/case-studies/crazypolar",
       "img": "/img/crazypolar.png",
       "tags": [
         "CRM",
@@ -26,10 +27,10 @@
     {
       "heading": "Ixigo ensures seamless communication using SMS via MSG91",
       "content": "Ixigo provides travel and hospitality based services, where they communicate information, offers and updates to their customers regularly. With the vision to help the customers get seamless travel and hospitality services in time, Ixigo has been rigorously working on the operations for the customer’s welfare.",
-      "link": "./case-studies/ixigo",
+      "link": "/case-studies/ixigo",
       "img": "/img/ixigo.png",
       "tags": [
-        "Food Travel and Hospitality",
+        "Food, Travel and Hospitality",
         "Promotional SMS",
         "Services",
         "Transactional SMS"
@@ -45,7 +46,7 @@
         "Startup",
         "Transactional SMS"
       ],
-      "link": "./case-studies/milkbasket",
+      "link": "/case-studies/milkbasket",
       "img": "/img/milkbasket.png"
     },
     {
@@ -57,7 +58,7 @@
         "Startup",
         "Transactional SMS"
       ],
-      "link": "./case-studies/talkcharge",
+      "link": "/case-studies/talkcharge",
       "img": "/img/talkcharge_1.png"
     },
     {
@@ -68,7 +69,7 @@
         "OTP",
         "Startup"
       ],
-      "link": "./case-studies/razorpay",
+      "link": "/case-studies/razorpay",
       "img": "/img/razorpay.png"
     },
     {
@@ -79,7 +80,7 @@
         "OTP",
         "Startup"
       ],
-      "link": "./case-studies/zebpay",
+      "link": "/case-studies/zebpay",
       "img": "/img/Zebpay.png"
     },
     {
@@ -90,7 +91,7 @@
         "Services",
         "Transactional SMS"
       ],
-      "link": "./case-studies/eurokids",
+      "link": "/case-studies/eurokids",
       "img": "/img/eurokids.png"
     },
     {
@@ -102,18 +103,18 @@
         "Startup",
         "Transactional SMS"
       ],
-      "link": "./case-studies/blackbuck",
+      "link": "/case-studies/blackbuck",
       "img": "/img/blackbuck.png"
     },
     {
       "heading": "Barbeque Nation updates customers of their orders via MSG91",
       "content": "Barbeque Nation is a Restaurant chain across different cities in India. With the vision to offer their customers with quality food with a good experience, and to ensure it happens efficiently, Barbeque Nation has been rigorously working on sending the booking updates for their customer’s satisfaction.",
       "tags": [
-        "Food Travel and Hospitality",
+        "Food, Travel and Hospitality",
         "Services",
         "Transactional SMS"
       ],
-      "link": "./case-studies/barbequenation",
+      "link": "/case-studies/barbequenation",
       "img": "/img/barbequenation.png"
     },
     {
@@ -124,19 +125,19 @@
         "Promotional SMS",
         "Transactional SMS"
       ],
-      "link": "./case-studies/policybazaar",
+      "link": "/case-studies/policybazaar",
       "img": "/img/Policybazaar.png"
     },
     {
       "heading": "Joey Rooms keeps their clients updated with SMS via MSG91",
       "content": "Joey Rooms is an online platform where you can find PG and hostel accommodations on a monthly and daily basis rental. With the vision to help their customers find the right and cost-effective accommodation in Hyderabad and Bangalore, Joey Rooms has been rigorously working on providing better services for customer welfare.",
       "tags": [
-        "Food Travel and Hospitality",
+        "Food, Travel and Hospitality",
         "Services",
         "Startup",
         "Transactional SMS"
       ],
-      "link": "./case-studies/joeyrooms",
+      "link": "/case-studies/joeyrooms",
       "img": "/img/joeyrooms.png"
     },
     {
@@ -147,7 +148,7 @@
         "Services",
         "Transactional SMS"
       ],
-      "link": "./case-studies/leadsq",
+      "link": "/case-studies/leadsq",
       "img": "/img/leadsq.jpg"
     },
     {
@@ -158,7 +159,7 @@
         "Startup",
         "Transactional SMS"
       ],
-      "link": "./case-studies/letsshave",
+      "link": "/case-studies/letsshave",
       "img": "/img/letsshave.png"
     },
     {
@@ -170,19 +171,19 @@
         "Startup",
         "Transactional SMS"
       ],
-      "link": "./case-studies/grabonrent",
+      "link": "/case-studies/grabonrent",
       "img": "/img/Grabonrent.png"
     },
     {
       "heading": "KartFood updates customers of their orders via MSG91",
       "content": "KartFood is a Kashmir based food delivery startup. With the vision to offer their customers with quality food at their doorsteps, and to ensure it happens efficiently, KartFood has been rigorously working on sending the updates for their customer’s satisfaction.",
       "tags": [
-        "Food Travel and Hospitality",
+        "Food, Travel and Hospitality",
         "Services",
         "Startup",
         "Transactional SMS"
       ],
-      "link": "./case-studies/kartfood",
+      "link": "/case-studies/kartfood",
       "img": "/img/kartfood.png"
     },
     {
@@ -192,7 +193,7 @@
         "NGO",
         "Transactional SMS"
       ],
-      "link": "./case-studies/sankalp",
+      "link": "/case-studies/sankalp",
       "img": "/img/sankalp.png"
     },
     {
@@ -204,7 +205,7 @@
         "Startup",
         "Transactional SMS"
       ],
-      "link": "./case-studies/leegality",
+      "link": "/case-studies/leegality",
       "img": "/img/Leegality.png"
     },
     {
@@ -215,7 +216,7 @@
         "Services",
         "Startup"
       ],
-      "link": "./case-studies/oxebox",
+      "link": "/case-studies/oxebox",
       "img": "/img/Oxebox.png"
     },
     {
@@ -226,7 +227,7 @@
         "Startup",
         "Trivia Game"
       ],
-      "link": "./case-studies/loco",
+      "link": "/case-studies/loco",
       "img": "/img/loco.png"
     },
     {
@@ -237,7 +238,7 @@
         "Startup",
         "Transactional SMS"
       ],
-      "link": "./case-studies/technovision",
+      "link": "/case-studies/technovision",
       "img": "/img/Technovision.png"
     },
     {
@@ -249,7 +250,7 @@
         "Services",
         "Transactional SMS"
       ],
-      "link": "./case-studies/mahindra",
+      "link": "/case-studies/mahindra",
       "img": "/img/Mahindra.png"
     },
     {
@@ -261,7 +262,7 @@
         "Startup",
         "Transactional SMS"
       ],
-      "link": "./case-studies/clickpost",
+      "link": "/case-studies/clickpost",
       "img": "/img/Clickpost.png"
     },
     {
@@ -273,7 +274,7 @@
         "Startup",
         "Transactional SMS"
       ],
-      "link": "./case-studies/smartshift",
+      "link": "/case-studies/smartshift",
       "img": "/img/Smartshift.png"
     },
     {
@@ -284,7 +285,7 @@
         "OTP",
         "Transaction SMS"
       ],
-      "link": "./case-studies/saboro",
+      "link": "/case-studies/saboro",
       "img": "/img/Saboro.jpg"
     },
     {
@@ -296,7 +297,7 @@
         "Startup",
         "Transactional SMS"
       ],
-      "link": "./case-studies/zing",
+      "link": "/case-studies/zing",
       "img": "/img/zing.png"
     },
     {
@@ -309,7 +310,7 @@
         "Services",
         "Transactional SMS"
       ],
-      "link": "./case-studies/indialends",
+      "link": "/case-studies/indialends",
       "img": "/img/indialends.png"
     }
   ]

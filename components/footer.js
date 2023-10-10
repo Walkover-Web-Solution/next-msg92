@@ -59,7 +59,7 @@ const Footer = ({path, year}) => {
               <h4 className="c-fs-5 d-flex flex-column mt-5">Resources</h4>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a
-                  href="https://msg91.com/guide/"
+                  href="/guide"
                   target="_blank"
                   className="c-link-underline c-fs-5 mt-2 c-fw-t"
                 >
