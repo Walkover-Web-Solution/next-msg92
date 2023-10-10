@@ -21,17 +21,7 @@ const Notification = (mininav) =>{
         $("#change-country label").html(label);        
         var cc = $(this).attr('href').substring(1);
         setCookie('country_code', cc, 30);
-      });
-
-      /* fetch('https://api.db-ip.com/v2/free/self')
-      .then(response => response.json())
-      .then(response => {
-          console.log('ip response',response);
-      })
-      .catch(error => {
-          // handle the error
-          console.log('error', error);
-      }); */
+      });      
 
     }, []);
     return (
@@ -55,7 +45,7 @@ const Notification = (mininav) =>{
                 </a>
                 <ul className="dropdown-menu" id="change-country">
                   <li>
-                    <a href="/" className="dropdown-item c-fs-5">
+                    <a href="/?" className="dropdown-item c-fs-5">
                       Global
                     </a>
                   </li>

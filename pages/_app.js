@@ -8,7 +8,6 @@ import { useRouter } from "next/router";
 import Script from 'next/script'
 import { getCookie, setCookie } from "@/components/utils";
 import $ from "jquery";
-
 export default function App({ Component, pageProps }) {
   const router = useRouter();  
   var  browserPath = router.asPath;  
@@ -21,6 +20,7 @@ export default function App({ Component, pageProps }) {
     browserPath = result ? result[0] : browserPath;    
   }
   var path = browserPath.split("/")[1];
+  
   const products = [
     '/sms', 
     '/email', 
@@ -60,25 +60,18 @@ export default function App({ Component, pageProps }) {
       }
     }
     
-    const countryList = ['in','ae','ph','sg','es','gb','us']
-    /* const split = window.location.href.split('/');
-    if(split.length === 2){
-      country = split[1].length === 2 ? split[1] : '';
-    }
-    if(browserPath.browserPath.split('/').length === 3){
-      country = split[1].length === 2 ? split[1] : '';      
-    } */
+    const countryList = ['in','ae','ph','sg','es','gb','us','?']    
     
     var cc = getCookie('country_code');    
     if(!cc && countryList.includes(path)){
       setCookie('country_code', path, 30);
     }
-    
     $("a").on("click", function (event) {
       event.preventDefault();
-      var href =  $(this).attr('href');
+      var href =  $(this).attr('href');      
       if(href !== undefined){
-        if(products.includes(href) && cc){          
+        if(cc === '?' && href === '/') href = '/?'; 
+        if(products.includes(href) && cc && cc !== '?'){          
           window.location.href = '/'+ cc + href;
         }
         else{
