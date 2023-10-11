@@ -223,7 +223,12 @@ const Insms = () => {
                 </p>
               </div>
             </div>
-            <div>
+          </div>
+        )}
+        <button className="btn btn-dark mt-3" onClick={handleReadMore}>
+          {showInsms ? "Read Less" : "Read More"}
+        </button>
+        <div>
               <h2 className="c-head c-fs-1 mt-5">FAQs</h2>
 
               <div className="accordion accordion-flush" id="accordionFlushExample">
@@ -319,12 +324,7 @@ const Insms = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        )}
-        <button className="btn btn-dark mt-3" onClick={handleReadMore}>
-          {showInsms ? "Read Less" : "Read More"}
-        </button>
+        </div>
       </div>
     </>
   );

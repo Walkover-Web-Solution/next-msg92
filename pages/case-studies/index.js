@@ -5,8 +5,7 @@ const casestudycard = () => {
 
     return (
         <>
-        <Casestudycard caseStudies={Casestudydata}/>
-        hii
+            <Casestudycard caseStudies={Casestudydata}/>        
         </>
     );
 };

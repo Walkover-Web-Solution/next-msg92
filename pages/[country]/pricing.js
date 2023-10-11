@@ -4,8 +4,8 @@ import PricingComp from "@/components/pricingComp";
 const pricingmain =()=>{
   const router = useRouter();
   // const { slug } = router.query; 
-  var  brawserPath = router.asPath;
-  var path = brawserPath.split("/")[1];
+  var  browserPath = router.asPath;
+  var path = browserPath.split("/")[1];
 
   const getCountryCode = () => {
     var countryCode = path?.toUpperCase();

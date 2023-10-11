@@ -1,7 +1,3 @@
-// const fs = require("fs");
-// import fs from "fs";
-// const fsPromises = require("fs").promises;
-const fsPromise = require("fs").promises;
 const matter = require("gray-matter");
 const path = require("path");
 const yaml = require("js-yaml");
@@ -9,15 +5,11 @@ const { readdirSync, readFileSync } = require("fs");
 
 const postsDirectory = path.join(process.cwd(), "_posts/blog");
 let postCache;
-// console.log(postCache, "Cache");
 function fetchPostContent() {
   if (postCache) {    
 
     return postCache;
   }
-//   else{
-  //     console.log("hello post cache in else");
-  //   }
   
   const fileNames = readdirSync(postsDirectory, { withFileTypes: false });
 
@@ -38,8 +30,6 @@ function fetchPostContent() {
       const matterData = matterResult?.data;
       matterData.fullPath = fullPath;
       matterData.staticPath = fileName.split('.')[0];
-      
-      // console.log(JSON.stringify(fullPath), "full path");
 
       const slug = fileName.replace(/\.mdx$/, "");
       // fileName.replace(/\.mdx$/, "");

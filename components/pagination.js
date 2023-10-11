@@ -4,7 +4,7 @@ import Link from "next/link";
 function Pagination({ current, pages, link }) {
    const pagination = generatePagination(current, pages);
   return (
-    <ul>
+    <ul className='pagination-padding'>
       {pagination.map((it, i) => (
         <li key={i}>
           {it.excerpt ? (

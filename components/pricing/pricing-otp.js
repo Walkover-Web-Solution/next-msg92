@@ -79,7 +79,7 @@ const Pricingsms = ({
                   <div className="text-center d-flex flex-column mb-4 mb-sm-0 align-items-center">
                     <div className="popular-chip c-fs-6">POPULAR</div>
                     <div className="card price-card sms text-center card-popular mb-4 mb-sm-0 c-bg-grey">
-                      <div className="card-body">
+                      <div className="card-body justify-content-between">
                         <h3 className="c-fs-3">{item[106]?.totalNoOfSms} SMS</h3>
                         <h5 className="c-fs-2 text-green mt-2">{currencySymbol}{item[106]?.rate}/SMS</h5>
                         <h2 className="c-fs-3 c-ff-b">{currencySymbol}{amountArr[index]} </h2>
@@ -94,7 +94,7 @@ const Pricingsms = ({
                   originCountry == 'India'
                   ?
                   <div className="card price-card sms border-0 text-center mb-4 mb-sm-0 c-bg-grey">
-                    <div className="card-body">
+                    <div className="card-body justify-content-between">
                       <h3 className="c-fs-3">{item[106]?.totalNoOfSms} SMS</h3>
                       <h5 className="c-fs-2 mt-2 text-green">{currencySymbol}{item[106]?.rate}/SMS</h5>
                       <h2 className="c-fs-3 c-ff-b">{currencySymbol}{amountArr[index]} </h2>
@@ -106,7 +106,7 @@ const Pricingsms = ({
                   </div> 
                   :
                   <div className="card price-card sms border-0 text-center mb-4 mb-sm-0 c-bg-grey">
-                    <div className="card-body">
+                    <div className="card-body justify-content-between">
                       <h3 className="c-fs-3">SMS Pricing</h3>
                       <h5 className="c-fs-2 mt-2 text-green">{currencySymbol}{item[106]?.rate}/SMS</h5>
                       <h2 className="c-fs-3 c-ff-b">-</h2>                      
@@ -121,10 +121,10 @@ const Pricingsms = ({
           );
         })}
         <div className="card price-card sms border-0 text-center mb-4 mb-sm-0 c-bg-grey">
-          <div className="card-body">
+          <div className="card-body justify-content-between">
             <h3 className="c-fs-3">CUSTOM</h3>                  
             <p className="c-fs-5">Talk to sales for a customized plan.</p>
-            <button data-bs-toggle="modal" data-bs-target="#custom-pricing-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+            <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
               Talk to sales
             </button>
           </div>

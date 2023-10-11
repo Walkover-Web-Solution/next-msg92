@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import countries from "@/data/countries.json";
-import $ from 'jquery';
-
 import Pricingemail from "@/components/pricing/pricing-email";
 import Pricingsms from "@/components/pricing/pricing-sms";
 import Pricingvoice from "@/components/pricing/pricing-voice";
@@ -29,8 +27,8 @@ export function setUtm(){
   }
 }
 
-const PricingComp = ({ countryCode, product, brawserPath }) => {
-  var pathLength = brawserPath?.split("/")[1].length;
+const PricingComp = ({ countryCode, product, browserPath }) => {
+  var pathLength = browserPath?.split("/")[1].length;
   var pathLengthCond = true
   if (pathLength === 2)
   {
@@ -50,6 +48,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
   var [subscriptionVoice, setSubscriptionVoice] = useState([]);
   var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
   var [subscriptionSegmento, setSubscriptionSegmento] = useState([]);
+  var [subscriptionHello, setSubscriptionHello] = useState([]);
   const[fetchCurrency, setfetchCurrency] = useState();
   const [fetchMsId, setfetchMsId] = useState("");
   const[states, setStates] = useState()
@@ -69,14 +68,20 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
   const fetchemailData =async()=>{
     setfetchCurrency(currency);
     setfetchMsId("1");
-    setStates("SubscriptionSegmento");
+    setStates("subscriptionEmail");
     fetchSubscription(currency,"1","subscriptionEmail")
   }
   const fetchSegmentoData = async()=>{
     setfetchCurrency(currency);
     setfetchMsId("2");
-    setStates("SubscriptionSegmento");
-    fetchSubscription(currency,"2","SubscriptionSegmento")
+    setStates("subscriptionSegmento");
+    fetchSubscription(currency,"2","subscriptionSegmento")
+  }
+  const fetchHelloData = async()=>{
+    setfetchCurrency(currency);
+    setfetchMsId("7");
+    setStates("SubscriptionHello");
+    fetchSubscription(currency,"7","subscriptionHello")
   }
   const fetchWhatsAppData = async()=>{
     setfetchCurrency(currency);
@@ -94,6 +99,9 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     else if(product === "whatsapp"){
     fetchWhatsAppData(currency)
     }
+    else if(product === "hello"){
+      fetchHelloData(currency)
+      }
   },[product, currency]);
   const fetchSMSData = async (currency, origin, destination) => {
     setOriginCountry(origin);
@@ -132,15 +140,15 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
         case "SubscriptionWhatsapp":
           setSubscriptionWhatsapp([...response.data.data]);
           break;
-          case "SubscriptionSegmento":
+          case "subscriptionSegmento":
             setSubscriptionSegmento([...response.data.data]);
             break;
           case "SubscriptionVoice":
             setSubscriptionVoice([...response.data.data]);
             break;
-          // case "SubscriptionSegmento":
-          //   setSubscriptionSegmento([...response.data.data]);
-          //   break;
+          case "subscriptionHello":
+            setSubscriptionHello([...response.data.data]);
+            break;
         default:
           break;
       }
@@ -164,6 +172,9 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
     else if(product === "whatsapp"){
       fetchWhatsAppData(response?.currency);
     }
+    else if(product === "hello"){
+      fetchHelloData(response?.currency);
+    }
   };  
 
   useEffect(() => {
@@ -173,6 +184,14 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
 
   return (
     <>
+      {/* <Head>                
+        <link rel="canonical" href={`https://msg91.com${browserPath}`} />                
+        <link rel="alternate" hreflang="x-default" href="https://msg91.com" />
+        <link rel="alternate" hreflang={hreflang} href={`https://msg91.com/${country}`} />
+        {country && 
+          <link rel="alternate" hreflang={hreflang} href={`https://msg91.com/${country}`} />
+        }
+      </Head> */}
       <div>
         <div
           className=" my-4 d-flex w-100 gap-2 align-items-center justify-content-center flex-wrap"
@@ -266,7 +285,10 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
           <Link
            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/hello":"/pricing/hello"}
            className={`nav-item ${product === 'hello' ? 'active' : ''}`}
-            id="hello-btn"
+           id="hello-btn"
+           onClick={()=>{
+            fetchSubscription(currency, "7","subscriptionHello");
+           }}
             >
             <span className="nav-link">
               <img src="/img/icon/hello.svg" alt="#" className="icon" />
@@ -280,7 +302,7 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             className={`nav-item ${product === 'segmento' ? 'active' : ''}`}
             id="segmento-btn"
             onClick={() => {
-              fetchSubscription(currency, "2","SubscriptionSegmento");
+              fetchSubscription(currency, "2","subscriptionSegmento");
             }}
           >
             <span className="nav-link">
@@ -375,12 +397,26 @@ const PricingComp = ({ countryCode, product, brawserPath }) => {
             currencySymbol={currencySymbol}
           />
         )}
-        {product === "hello" && <Pricinghello countryCode={countryCode} />}
+        {product === "hello" && (
+        <Pricinghello
+           setSubscriptionHello={setSubscriptionHello}
+            subscriptionHello={subscriptionHello}
+            fetchSubscriptionHello={fetchSubscription}
+            currency={currency}
+            state= {"SubscriptionHello"}
+            setCurrencySymbol={setCurrencySymbol}
+            countryCode={countryCode}
+          />
+        )}       
         {product === "segmento" && (
           <Pricingsegmento
             subscriptionSegmento={subscriptionSegmento}
+            setSubscriptionSegmento={setSubscriptionSegmento}
             fetchSubscriptionSegmento={fetchSubscription}
             currency={currency}
+            state= {"subscriptionSegmento"}
+            setCurrencySymbol={setCurrencySymbol}
+            countryCode={countryCode}
             currencySymbol={currencySymbol}
           />
         )}
