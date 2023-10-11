@@ -27,7 +27,7 @@ export default function Index({ posts, tag, pagination, page }) {
   return (
     <>
        <Head>
-        <title>{tag}</title>
+        <title>{tag} | MSG91 Guide</title>
         <meta property="og:title" content={`Explore our collection of articles tagged under ${tag} at MSG91 -The Best Cloud Communication Platform. Discover insightful content, tips, and resources related to ${tag}.`} key="title" />
       </Head>
 <div className="blog">

@@ -1,5 +1,5 @@
 
-
+import Head from 'next/head';
 import { listPostContent, countPosts } from '../../components/lib/posts'
 import { getTag, listTags } from "../../components/lib/tags";
 import Layout from "../../components/layout";
@@ -9,9 +9,14 @@ export default function Index({ posts, tags, pagination }) {
   const url = "/guide";
   const title = "All posts";
   return (
+    <>
+    <Head>
+      <title>MSG91 Guide</title>
+    </Head>
     <Layout>
       <PostList posts={posts} tags={tags} pagination={pagination} />
     </Layout>
+    </>
   );
 }
 

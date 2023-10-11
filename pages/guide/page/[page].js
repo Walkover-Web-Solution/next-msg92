@@ -5,15 +5,22 @@ import {listTags } from '@/components/lib/tags';
 import Layout from "../../../components/layout";
 import PostList from "../../../components/postList";
 import config from "../../../components/lib/config";
+import Head from 'next/head';
 // import Head from "next/head";
 export default function Index({ posts, tags, pagination }) {
   const url = "/guide";
   const title = "All posts";
   return (
+    <>
+     <Head>
+      <title>Page {pagination.current} | MSG91 Guide </title>
+    </Head>
     <Layout>
       <PostList posts={posts} tags={tags} pagination={pagination} />
       {/* <TagPostList post ={posts} tags={tags} pagination={pagination} /> */}
     </Layout>
+    </>
+      
   );
 } 
 
