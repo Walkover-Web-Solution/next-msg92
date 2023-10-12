@@ -2,6 +2,11 @@
 .ico-green {
     color: var(--success-color);
 }
+.progress-line {
+    width: 100px;
+    height: 1px;
+    background-color: var(--c-grey);
+}
 
 //signup main */
 .signup {
@@ -35,13 +40,40 @@
 
 //signup stepone */
 .step-one {
-  max-width: 451px;
+    max-width: 451px;
     &__break {
         &__line {
             display: block;
             height: 1px;
             width: 100%;
             background-color: var(--c-light-grey);
+        }
+    }
+}
+
+//signup steptwo */
+.otp-input {
+    max-width: 40px;
+}
+
+.ver-email-main {
+    &__input {
+        position: relative;
+        &__check {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+.ver-input {
+    @media (max-width: 400px) {
+        flex-direction: column;
+    }
+    &__input {
+        @media (max-width: 400px) {
+            width: 100%;
         }
     }
 }
