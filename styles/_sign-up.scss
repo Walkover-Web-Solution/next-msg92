@@ -7,6 +7,9 @@
     height: 1px;
     background-color: var(--c-grey);
 }
+.progress-line {
+  background-color: var(--success-color);
+}
 
 //signup main */
 .signup {
@@ -76,4 +79,10 @@
             width: 100%;
         }
     }
+}
+
+.step-three{
+  &__main{
+    max-width: 460px;
+  }
 }

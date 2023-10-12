@@ -236,27 +236,25 @@ class StepThree extends React.Component {
     render() {
         return (
             <>
-                <div className="d-none entry__right_section__container--logo-visible-in-small">
-                    <img src="/images/msgOriginalsvg.png" width="auto" height="40px" alt="Msg91-logo" className="" />
-                </div>
-                <h1>Create an account</h1>
-                <div className="entry__right_section__container__step_one entry__right_section__container__step_two mt-5">
-                    <div className="step_status_bar d-flex justify-content-between align-items-center ps-0">
-                        <div className="col-success">
-                            <MdCheckCircle className="step_status_bar--invisible-on-md" /> Verify email & mobile number
+                <div className="trep-three d-flex flex-column gap-3">
+                    <div className="step-three__progress d-flex align-items-center gap-3 ">
+                        <div className="ico-green align-items-center gap-1 c-fs-5 d-none d-lg-flex">
+                            <MdCheckCircle
+                                className="ico-green"
+                            />{' '}
+                            Verify email & mobile number
                         </div>
-                        <span className="step_status_bar__line step_status_bar--invisible-on-md"></span>
-                        <div className="step_status_bar--invisible-on-md">
-                            <MdCheckCircleOutline className="icon_enter_details me-1" />
-                            <MdCheckCircle className="visible_on_success me-1" />
+                        <span className="progress-line line-green d-none d-lg-block "></span>
+                        <div className="d-flex  align-items-center gap-1 c-fs-5 ">
+                            <MdCheckCircle className="" />
                             Enter details
                         </div>
                     </div>
-                    <p className="redirect-text mt-5">Redirecting...</p>
-                    <form className="row px-0 step_two_wrapper mt-4">
-                        <div className="col-xxl-6 col-xl-8 col-lg-10">
-                            <div className="row g-4">
-                                <div className="col-lg-6 form-input-with-error">
+                    <p className="step-three__reddirect">Redirecting...</p>
+                    <form className="step-three__main ">
+                        <div className="detail-form d-flex flex-column gap-3">
+                            <div className="d-flex gap-3 flex-column  flex-lg-row detail-form__group">
+                                <div className="w-100 form-input-with-error">
                                     <input
                                         type="text"
                                         className={
@@ -273,7 +271,7 @@ class StepThree extends React.Component {
                                         {this.state.formErrorData.firstNameError}
                                     </div>
                                 </div>
-                                <div className="col-lg-6 form-input-with-error">
+                                <div className="w-100 form-input-with-error">
                                     <input
                                         type="text"
                                         className={
@@ -290,69 +288,72 @@ class StepThree extends React.Component {
                                         {this.state.formErrorData.lastNameError}
                                     </div>
                                 </div>
-                                <div className="col-12 step_two_wrapper--personal-form">
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        placeholder="How are you going to use this?"
-                                        name="howToUse"
-                                        value={this.state.formData.howToUse}
-                                        onChange={this.handleInputChange}
-                                    />
-                                </div>
-                                <div className="col-lg-6  step_two_wrapper--company-form">
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        placeholder="Company Name"
-                                        name="companyName"
-                                        value={this.state.formData.companyName}
-                                        onChange={this.handleInputChange}
-                                    />
-                                </div>
-                                <div className="col-lg-6  step_two_wrapper--company-form">
-                                    <select
-                                        autoComplete="on"
-                                        className="form-select"
-                                        aria-label="Default Industry Type"
-                                        name="industryType"
-                                        value={this.state.formData.industryType}
-                                        onChange={this.handleInputChange}
-                                    >
-                                        <option value="">Industry Type</option>
-                                        {this.state.industries && Object.keys(this.state.industries).length > 0 && (
-                                            <>
-                                                {this.state.industries.map((obj) => (
-                                                    <option key={obj.id} value={obj.name}>
-                                                        {obj.name}
-                                                    </option>
-                                                ))}
-                                            </>
-                                        )}
-                                    </select>
-                                </div>
-                                <div className="col-12 step_two_wrapper--company-form">
-                                    <select
-                                        autoComplete="on"
-                                        className="form-select"
-                                        aria-label="Default Service Needed"
-                                        name="serviceNeeded"
-                                        value={this.state.formData.serviceNeeded}
-                                        onChange={this.handleInputChange}
-                                    >
-                                        <option value="">Service Needed</option>
-                                        {this.state.services && Object.keys(this.state.services).length > 0 && (
-                                            <>
-                                                {Object.entries(this.state.services).map(([id, name]) => (
-                                                    <option key={id} value={name}>
-                                                        {name}
-                                                    </option>
-                                                ))}
-                                            </>
-                                        )}
-                                    </select>
-                                </div>
-                                <div className="col-6 step_two_wrapper--company-form">
+                            </div>
+                            <div className="col-12">
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="How are you going to use this?"
+                                    name="howToUse"
+                                    value={this.state.formData.howToUse}
+                                    onChange={this.handleInputChange}
+                                />
+                            </div>
+                            
+                            <div className="col-12">
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Company Name"
+                                    name="companyName"
+                                    value={this.state.formData.companyName}
+                                    onChange={this.handleInputChange}
+                                />
+                            </div>
+                            <div className="col-12">
+                                <select
+                                    autoComplete="on"
+                                    className="form-select"
+                                    aria-label="Default Industry Type"
+                                    name="industryType"
+                                    value={this.state.formData.industryType}
+                                    onChange={this.handleInputChange}
+                                >
+                                    <option value="">Industry Type</option>
+                                    {this.state.industries && Object.keys(this.state.industries).length > 0 && (
+                                        <>
+                                            {this.state.industries.map((obj) => (
+                                                <option key={obj.id} value={obj.name}>
+                                                    {obj.name}
+                                                </option>
+                                            ))}
+                                        </>
+                                    )}
+                                </select>
+                            </div>
+                            <div className="col-12">
+                                <select
+                                    autoComplete="on"
+                                    className="form-select"
+                                    aria-label="Default Service Needed"
+                                    name="serviceNeeded"
+                                    value={this.state.formData.serviceNeeded}
+                                    onChange={this.handleInputChange}
+                                >
+                                    <option value="">Service Needed</option>
+                                    {this.state.services && Object.keys(this.state.services).length > 0 && (
+                                        <>
+                                            {Object.entries(this.state.services).map(([id, name]) => (
+                                                <option key={id} value={name}>
+                                                    {name}
+                                                </option>
+                                            ))}
+                                        </>
+                                    )}
+                                </select>
+                            </div>
+                            <div className="d-flex gap-3 flex-column flex-lg-row detail-form__group">
+                                <div className="w-100">
                                     <select
                                         autoComplete="on"
                                         className="form-select"
@@ -372,7 +373,7 @@ class StepThree extends React.Component {
                                         </option>
                                     </select>
                                 </div>
-                                <div className="col-6 step_two_wrapper--company-form">
+                                <div className="w-100">
                                     <select
                                         autoComplete="on"
                                         className="form-select"
@@ -391,7 +392,9 @@ class StepThree extends React.Component {
                                             : null}
                                     </select>
                                 </div>
-                                <div className="col-lg-6  step_two_wrapper--company-form form-input-with-error">
+                            </div>
+                            <div className="d-flex gap-3 flex-column flex-lg-row detail-form__group">
+                                <div className="w-100 form-input-with-error">
                                     <input
                                         type="text"
                                         className={
@@ -408,7 +411,7 @@ class StepThree extends React.Component {
                                         {this.state.formErrorData.pincodeError}
                                     </div>
                                 </div>
-                                <div className="col-lg-6  step_two_wrapper--company-form">
+                                <div className="w-100">
                                     <select
                                         autoComplete="on"
                                         className="form-select"
@@ -431,44 +434,44 @@ class StepThree extends React.Component {
                                         <option value="other">Other</option>
                                     </select>
                                 </div>
-                                {this.state.formData.city == 'other' && (
-                                    <div className="col-12 step_two_wrapper--company-form">
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            placeholder="Enter your city"
-                                            name="otherCity"
-                                            value={this.state.formData.otherCity}
-                                            onChange={this.handleInputChange}
-                                        />
-                                    </div>
-                                )}
-                                <div className="col-12 step_two_wrapper--company-form">
+                            </div>
+                            {this.state.formData.city == 'other' && (
+                                <div className="col-12">
                                     <input
                                         type="text"
                                         className="form-control"
-                                        placeholder="Address"
-                                        name="address"
-                                        value={this.state.formData.address}
+                                        placeholder="Enter your city"
+                                        name="otherCity"
+                                        value={this.state.formData.otherCity}
                                         onChange={this.handleInputChange}
                                     />
                                 </div>
-                                <div className="col-12 step_two_wrapper--company-form form-input-with-error">
-                                    <input
-                                        type="text"
-                                        className={
-                                            this.state.formErrorData.gstNumberError
-                                                ? 'form-control input-error-display'
-                                                : 'form-control'
-                                        }
-                                        placeholder="GST number"
-                                        name="gstNumber"
-                                        value={this.state.formData.gstNumber}
-                                        onChange={this.handleInputChange}
-                                    />
-                                    <div className="text-danger input-error-message c-fs-6">
-                                        {this.state.formErrorData.gstNumberError}
-                                    </div>
+                            )}
+                            <div className="col-12">
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Address"
+                                    name="address"
+                                    value={this.state.formData.address}
+                                    onChange={this.handleInputChange}
+                                />
+                            </div>
+                            <div className="col-12 form-input-with-error">
+                                <input
+                                    type="text"
+                                    className={
+                                        this.state.formErrorData.gstNumberError
+                                            ? 'form-control input-error-display'
+                                            : 'form-control'
+                                    }
+                                    placeholder="GST number"
+                                    name="gstNumber"
+                                    value={this.state.formData.gstNumber}
+                                    onChange={this.handleInputChange}
+                                />
+                                <div className="text-danger input-error-message c-fs-6">
+                                    {this.state.formErrorData.gstNumberError}
                                 </div>
                             </div>
                         </div>
@@ -489,14 +492,7 @@ class StepThree extends React.Component {
                                     </p>
                                 </div>
                                 <div>
-                                    {/* <button
-                    className="me-3 back_btn"
-                    onClick={() => this.props.setStep(2)}
-                  >
-                    <MdKeyboardArrowLeft />
-                    Back
-                  </button> */}
-                                    <button className="next_btn col-white" type="button" onClick={this.finalSubmit}>
+                                    <button className="btn btn-outline-dark" type="button" onClick={this.finalSubmit}>
                                         Next <MdKeyboardArrowRight />
                                     </button>
                                 </div>
