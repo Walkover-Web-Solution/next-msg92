@@ -2,6 +2,8 @@
 .ico-green {
     color: var(--success-color);
 }
+
+//signup main */
 .signup {
     min-height: 100vh;
     &__left {
@@ -27,6 +29,19 @@
         }
         @media (max-width: 767px) {
             flex-grow: 0;
+        }
+    }
+}
+
+//signup stepone */
+.step-one {
+  max-width: 451px;
+    &__break {
+        &__line {
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: var(--c-light-grey);
         }
     }
 }

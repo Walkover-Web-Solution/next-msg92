@@ -20,6 +20,7 @@
     --c-fw-600: 600;
 
     // colors
+   
     --primary-color: #1E75BA;
     --primary-light:#E2F0FF;
     --whatsapp: #29A653;
@@ -70,4 +71,10 @@
     --campaign-light :#F6EFFC;    
 
     --col-elert : #FF2400;
+
 }
+    $primary: #1E75BA;
+
+$theme-colors: (
+    "primary": $primary   ,
+  );
