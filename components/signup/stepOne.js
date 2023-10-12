@@ -5,16 +5,7 @@ class StepOne extends React.Component {
   render() {
     return (
       <>
-        <div className="d-none entry__right_section__container--logo-visible-in-small">
-          <img
-            src="/images/msgOriginalsvg.png"
-            width="auto"
-            height="40px"
-            alt="MSG91 Logo"
-            className=""
-          />
-        </div>
-        <h1>Create an account</h1>
+       
         <div className="entry__right_section__container__entry_with d-flex mb-4 me-4">
           <div className="signup_with__right mt-2">
             <span className="d-inline-block mb-4">Are you a developer?</span>
