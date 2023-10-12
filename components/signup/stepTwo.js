@@ -44,7 +44,7 @@ class StepTwo extends React.Component {
                                             />
                                         )}
                                         <span className="position-relative">
-                                            <MdCheckCircle className="icon-success otp_verified_icon" />
+                                        {this.props?.emailAccessToken && <MdCheckCircle className="icon-success otp_verified_icon" />}
                                         </span>
                                     </div>
                                     {this.props?.signupByGitHub ? (
@@ -123,7 +123,7 @@ class StepTwo extends React.Component {
                                     />
 
                                     <span className="position-relative">
-                                        <MdCheckCircle className="icon-success otp_verified_icon" />
+                                        {this.props?.smsAccessToken && <MdCheckCircle className="icon-success otp_verified_icon" />}
                                     </span>
                                     </div>
                                     <button
