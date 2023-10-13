@@ -27,7 +27,7 @@ class SignUp extends React.Component {
         let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
 
         this.state = {
-            activeStep: queryParams?.['code'] ? 2 : 2,
+            activeStep: queryParams?.['code'] ? 2 : 1,
             signupByGitHub: queryParams?.['githubsignup'] ? true : false,
             githubCode: queryParams?.['code'],
             githubState: queryParams?.['state'],
@@ -225,6 +225,9 @@ class SignUp extends React.Component {
                             ':session',
                             result?.data?.sessionDetails?.PHPSESSID
                         );
+                    } else if (result?.data?.data?.nextStep === 'hasInvitations') {
+                        this.setState({ invitations: result?.data?.data?.invitations });
+                        this.setStep(3);
                     }
                 } else {
                     toast.error(result?.errors?.[0] ?? result?.errors);
@@ -239,29 +242,31 @@ class SignUp extends React.Component {
         }
     };
 
-    finalSubmit = (data) => {
+    finalSubmit = (data, createCompany) => {
         const url = process.env.API_BASE_URL + '/api/v5/nexus/finalRegister';
         const payload = {
-            'companyDetails': {
-                'industry': data?.industryType,
-                'state': data?.stateName,
-                'cityId': data?.cityId,
-                'customCity': data?.otherCity,
-                'country': data?.countryName,
-                'city': data?.city,
-                'zipcode': data?.pincode,
-                'address': data?.address,
-                'gstNo': data?.gstNumber,
-                'countryId': data?.country,
-                'stateId': data?.stateProvince,
-                'companyName': data?.companyName,
-                'service': data?.serviceNeeded,
-            },
+            'companyDetails': createCompany
+                ? {
+                      'industry': data?.industryType,
+                      'state': data?.stateName,
+                      'cityId': data?.cityId,
+                      'customCity': data?.otherCity,
+                      'country': data?.countryName,
+                      'city': data?.city,
+                      'zipcode': data?.pincode,
+                      'address': data?.address,
+                      'gstNo': data?.gstNumber,
+                      'countryId': data?.country,
+                      'stateId': data?.stateProvince,
+                      'companyName': data?.companyName,
+                      'service': data?.serviceNeeded,
+                  }
+                : {},
             'userDetails': {
                 'firstName': data?.firstName,
                 'lastName': data?.lastName,
             },
-            'acceptInviteForCompanies': [],
+            'acceptInviteForCompanies': data.acceptInviteForCompanies,
             'session': getCookie('sessionId'),
         };
 
@@ -288,7 +293,6 @@ class SignUp extends React.Component {
         return (
             <>
                 <section className="signup d-flex flex-column flex-md-row-reverse ">
-                    
                     <div className="signup__right p-3 p-md-5 d-flex gap-4 flex-column ">
                         <img src="/images/msgOriginalsvg.png" className="signup__right__logo d-block d-md-none" />
                         <h1 className="signup__right__heading c-fs-2 heading d-block d-md-none">
@@ -324,14 +328,14 @@ class SignUp extends React.Component {
                                     signupByGitHub={this.state?.signupByGitHub}
                                 />
                             )}
-                            {/* STEP #3.1 */}
-                            {this.state.activeStep === 4 && (
-                                <StepThreeOne />
-                            )}
 
                             {/* STEP #3 */}
                             {this.state.activeStep === 3 && (
-                                <StepThree setStep={this.setStep} finalSubmit={this.finalSubmit} />
+                                <StepThree
+                                    invitations={this.state.invitations}
+                                    setStep={this.setStep}
+                                    finalSubmit={this.finalSubmit}
+                                />
                             )}
                         </div>
                     </div>
