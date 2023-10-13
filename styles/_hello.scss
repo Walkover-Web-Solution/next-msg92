@@ -99,6 +99,9 @@
     }
     .price-card{
         box-shadow: 8px 8px #000;
+        .btn{
+            box-shadow: 8px 8px #F4FF80;
+        }
     }
 }
 
@@ -112,6 +115,7 @@
     font-weight: bold;
     animation: marquee 15s linear infinite;
     display: flex;
+    
     span{
         margin: 0 24px;
         display: inline-block;
@@ -177,13 +181,11 @@
     }   
 }
 @media (min-width: 576px) and (max-width: 767px){
-    .hero-img-wrp{     
-        img{
-            top: 0;
-        }   
-        &:after{
-            display: none;
-        }
+    .hero-img-wrp{
+        display: none;
+    } 
+    .hero-img-mobile-wrp{
+        display: block;
     }   
 }
 @media (max-width: 575px){

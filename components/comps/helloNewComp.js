@@ -27,6 +27,7 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
   const [selectedMode, setSelectedMode] = useState('Monthly');
   const [subscriptionHello, setSubscriptionHello] = useState(''); // Initialize subscriptionHello state
   useEffect(()=>{
+    
     const fetchData = async () => {
       const data = await fetchSubscription(currencyChange);
       setSubscriptionHello(data)
@@ -76,9 +77,9 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
     <>
       <div className="container overflow-hidden">
         <div className='row'>
-          <div className="py-2 py-md-5 col-12 col-sm-6">
+          <div className="py-2 py-md-5 col-12 col-sm-12 col-md-6 col-lg-6">
             <div className="intro">INTRODUCING</div>
-            <div className="d-flex align-items-center flex-column flex-sm-row">
+            <div className="d-flex flex-sm-row">
               <h1 className={`heading-plus page-title ${pageData?.pagename}-heading c-fw-b`}>
                 <img src={pageData?.icon} className="product-page-logo me-2" />
                 <span className="hello">Hello</span>
@@ -122,8 +123,8 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
         </div>
       </div>
 
-      <div className="discover py-3 py-md-5">
-        <div className="container">
+      <div className="discover py-5 py-md-5">
+        <div className="container py-4">
           <h3 className='c-fs-1 c-fw-b'>Discover the Powerhouse Communication Solution </h3>
           <div className='c-fs-2 mt-3'>
             When it comes to revolutionizing communication, look no further than HELLO by MSG91.
@@ -158,7 +159,7 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
         </div>
       </div>
 
-      <div className={`px-sm-0 d-flex flex-column justify-content-center justify-content-sm-start section hello-new-features`}>        
+      <div className={`px-sm-0 d-flex flex-column justify-content-center justify-content-sm-start section hello-new-features py-5`}>        
         {pageData?.features?.map((item, index) => {          
           if(item?.content){
             i++;            
@@ -204,35 +205,36 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
             With HELLO, you're not just communicating – you're connecting, engaging, and thriving. Embrace the future of communication today.
           </div>                            
         </div>
-
-        <div className="marquee mt-5 mb-5">
-          <span className="yellow">Connect</span>
-          <span className="purple">Engage</span>
-          <span className="blue">Thrive</span>          
-          <span className="yellow">Connect</span>
-          <span className="purple">Engage</span>
-          <span className="blue">Thrive</span>          
-          <span className="yellow">Connect</span>
-          <span className="purple">Engage</span>
-          <span className="blue">Thrive</span>          
-          <span className="yellow">Connect</span>
-          <span className="purple">Engage</span>
-          <span className="blue">Thrive</span>          
-          <span className="yellow">Connect</span>
-          <span className="purple">Engage</span>
-          <span className="blue">Thrive</span>          
-          <span className="yellow">Connect</span>
-          <span className="purple">Engage</span>
-          <span className="blue">Thrive</span>          
-          <span className="yellow">Connect</span>
-          <span className="purple">Engage</span>
-          <span className="blue">Thrive</span>          
-          <span className="yellow">Connect</span>
-          <span className="purple">Engage</span>
-          <span className="blue">Thrive</span>          
-          <span className="yellow">Connect</span>
-          <span className="purple">Engage</span>
-          <span className="blue">Thrive</span>          
+        <div style={{'width':'100vw', overflow:'hidden'}}>
+          <div className="marquee mt-5 mb-5">
+            <span className="yellow">Connect</span>
+            <span className="purple">Engage</span>
+            <span className="blue">Thrive</span>          
+            <span className="yellow">Connect</span>
+            <span className="purple">Engage</span>
+            <span className="blue">Thrive</span>          
+            <span className="yellow">Connect</span>
+            <span className="purple">Engage</span>
+            <span className="blue">Thrive</span>          
+            <span className="yellow">Connect</span>
+            <span className="purple">Engage</span>
+            <span className="blue">Thrive</span>          
+            <span className="yellow">Connect</span>
+            <span className="purple">Engage</span>
+            <span className="blue">Thrive</span>          
+            <span className="yellow">Connect</span>
+            <span className="purple">Engage</span>
+            <span className="blue">Thrive</span>          
+            <span className="yellow">Connect</span>
+            <span className="purple">Engage</span>
+            <span className="blue">Thrive</span>          
+            <span className="yellow">Connect</span>
+            <span className="purple">Engage</span>
+            <span className="blue">Thrive</span>          
+            <span className="yellow">Connect</span>
+            <span className="purple">Engage</span>
+            <span className="blue">Thrive</span>          
+          </div>
         </div>
         
         <div className="container">          
@@ -258,7 +260,7 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
         <div className='container'>
           <div className="d-flex align-items-center justify-content-between px-3">
             <div className='c-fs-1 c-fw-b ts2-white'>
-              A plan for every business and budget, Find yours today!
+              A plan for every business and budget, <br></br>Find yours today!
             </div>
             <select
               style={{ width: 'fit-content' }}
@@ -291,7 +293,7 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
                           <a
                             href="https://control.msg91.com/signup/"
                             target="_blank"
-                            className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-4 utm"
+                            className="c-fs-5 btn w-100 btn-outline-dark mt-4 utm"
                           >
                             Get Started
                           </a>
@@ -325,7 +327,7 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
                                   <span className="text-green me-2">
                                     <MdDone />
                                   </span>
-                                  <strong> All {subscriptionHello[index-1].name} Plan Features</strong>
+                                  <strong>All {subscriptionHello[index-1].name} Plan Features</strong>
                                 </div>
                             }
                             {
@@ -363,7 +365,7 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
                           </div>
 
                           {item.postpaid_allowed && (
-                            <div className="c-fs-6 text-start feature-list mt-3">
+                            <div className="c-fs-6 text-start feature-list mt-3 ms-4">
                               <span>Extra</span>
                               <div>
                                 {symbol}{
@@ -408,10 +410,10 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
             </div> */}
           </div>
           
-          <div className='px-3 mt-5'>
-            <div className='price-card d-flex align-items-center p-4 justify-content-between'>
-              <div className="c-fs-2">For a personalised plan to meet your custom need.</div>
-              <a href="/contact-us" className="btn btn-outline-dark btn-lg c-fs-2 utm get-started-hello" >
+          <div className='px-3 mt-5 mb-4'>
+            <div className='price-card p-4 d-flex flex-wrap align-items-center'>
+              <div className="c-fs-2 col-12 col-md-8 col-lg-8">For a personalised plan to meet your custom need.</div>
+              <a href="/contact-us" className="btn btn-outline-dark btn-lg c-fs-2 utm get-started-hello col-12 col-md-4 col-lg-4" >
                 CONTACT SALES
               </a>
             </div>
@@ -419,8 +421,7 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
 
         </div>
       </div>
-      <Seo path={path} pageData={pageData?.pagename} />
-      <PreFooter pricingPath={pricingPath}/>
+      
     </>
   );
 };
