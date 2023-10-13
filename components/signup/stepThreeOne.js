@@ -47,7 +47,7 @@ const StepThreeOne = () => {
                     </div>
                 </div>
                 <div>
-                    <button className="btn btn-dark">Create new compony</button>
+                    <button className="btn btn-login-prime">Create new compony</button>
                 </div>
             </div>
         </>

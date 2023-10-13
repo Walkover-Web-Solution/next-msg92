@@ -15,13 +15,13 @@ class StepTwo extends React.Component {
                         <div className="d-flex align-items-center gap-1 c-fs-5">
                             <MdCheckCircle
                                 className={
-                                    this.props?.smsAccessToken && this.props?.emailAccessToken ? 'ico-green' : ''
+                                    this.props?.smsAccessToken && this.props?.emailAccessToken ? 'ico-green' : 'ico-grey'
                                 }
                             />{' '}
                             Verify email & mobile number
                         </div>
-                        <span className="progress-line d-none d-md-block"></span>
-                        <div className="d-md-flex align-items-center gap-1 c-fs-5 d-none">
+                        <span className="progress-line__none progress-line   d-none d-lg-block"></span>
+                        <div className="d-lg-flex align-items-center gap-1 c-fs-5 d-none ico-grey">
                             <MdCheckCircleOutline /> Enter details
                         </div>
                     </div>
@@ -29,8 +29,8 @@ class StepTwo extends React.Component {
                         <label htmlFor="email" className="step-two__email__lable">
                             Verify email
                         </label>
-                        <div className="ver-email d-grid gap-3">
-                            <div className="ver-email__main">
+                        <div className="ver-email d-flex gap-3 align-items-top ">
+                            <div className="ver-email__main w-100 py-2">
                                 <div className="ver-email-main d-flex gap-3 ver-input ">
                                     <div className="ver-email-main__input col ver-input__input ">
                                         {this.props?.signupByGitHub ? (
@@ -53,7 +53,7 @@ class StepTwo extends React.Component {
                                     ) : (
                                         <button
                                             className={`ver-email-main__btn btn    ${
-                                                this.props?.emailIdentifier ? 'btn-light disabled' : 'btn-outline-dark'
+                                                this.props?.emailIdentifier ? 'btn-light disabled' : 'btn-login-prime-o'
                                             }`}
                                             onClick={() =>
                                                 this.props.sendOtp(
@@ -73,7 +73,9 @@ class StepTwo extends React.Component {
                                 ) : null}
                             </div>
                             {this.props?.emailIdentifier ? (
-                                <div className="ver-email__otp">
+                                <>
+                            <span className='hor-line'></span>
+                                <div className="ver-email__otp w-100 py-2">
                                     <div className="d-flex flex-column">
                                         <Otpinput
                                             tag="email"
@@ -102,15 +104,16 @@ class StepTwo extends React.Component {
                                         ) : null}
                                     </div>
                                 </div>
-                            ) : null}
+                                </>
+                             ) : null}
                         </div>
                     </div>
                     <div className="step-two__phone  w-100  d-grid gap-2">
                         <label htmlFor="contact" className="step-two__phone__lable">
                             Verify Mobile number
                         </label>
-                        <div className="ver-phone d-grid gap-3">
-                            <div className="ver-phone__main">
+                        <div className="ver-phone d-flex gap-3 align-items-top">
+                            <div className="ver-phone__main w-100">
                                 <div className="ver-phone-main d-flex gap-3 ver-input">
                                     <div className="ver-phone-main__input col ver-input__input">
                                         <input
@@ -122,12 +125,14 @@ class StepTwo extends React.Component {
                                         />
 
                                         <span className="ver-phone-main__input__check">
-                                            {this.props?.smsAccessToken && <MdCheckCircle className="ico-green" />}
+                                            {this.props?.smsAccessToken && 
+                                            <MdCheckCircle className="ico-green" />
+                                            }
                                         </span>
                                     </div>
                                     <button
                                         className={`ver-email-main__btn btn    ${
-                                            this.props?.smsIdentifier ? 'btn-light disabled' : 'btn-outline-dark'
+                                            this.props?.smsIdentifier ? 'btn-light disabled' : 'btn-login-prime-o'
                                         }`}
                                         onClick={() =>
                                             this.props.sendOtp(document.getElementById('contactIdentifier').value, true)
@@ -141,8 +146,13 @@ class StepTwo extends React.Component {
                                     <p className="ver-email-message mt-2 ico-green">{this.props?.smsSuccessMessage}</p>
                                 ) : null}
                             </div>
+                           
+
                             {this.props?.smsIdentifier ? (
-                                <div className="ver-email__otp">
+                            <>
+                            <span className='hor-line'></span>
+                         
+                                <div className="ver-email__otp w-100">
                                     <div className="d-flex flex-column">
                                         <Otpinput
                                             tag="sms"
@@ -208,18 +218,19 @@ class StepTwo extends React.Component {
                                         </p>
                                     </div>
                                 </div>
-                            ) : null}
+                                </>
+                             ) : null}
                         </div>
                     </div>
                     <div className="row ">
                         <div>
-                            <button className="me-3 btn btn-outline-dark" onClick={() => this.props.setStep(1)}>
+                            <button className="me-3 btn btn-login-prime-o" onClick={() => this.props.setStep(1)}>
                                 {' '}
                                 <MdKeyboardArrowLeft />
                                 Back
                             </button>
                             {this.props?.smsAccessToken && this.props?.emailAccessToken ? (
-                                <button className=" btn btn-dark" onClick={() => this.props.validateUserForCompany()}>
+                                <button className=" btn btn-login-prime" onClick={() => this.props.validateUserForCompany()}>
                                     {' '}
                                     Next <MdKeyboardArrowRight />
                                 </button>

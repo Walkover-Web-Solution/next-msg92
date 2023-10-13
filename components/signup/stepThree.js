@@ -246,7 +246,7 @@ class StepThree extends React.Component {
                         </div>
                         <span className="progress-line line-green d-none d-lg-block "></span>
                         <div className="d-flex  align-items-center gap-1 c-fs-5 ">
-                            <MdCheckCircle className="" />
+                            <MdCheckCircle className="ico-grey" />
                             Enter details
                         </div>
                     </div>
@@ -492,7 +492,7 @@ class StepThree extends React.Component {
                                     </p>
                                 </div>
                                 <div>
-                                    <button className="btn btn-outline-dark" type="button" onClick={this.finalSubmit}>
+                                    <button className="btn btn-login-prime-o" type="button" onClick={this.finalSubmit}>
                                         Next <MdKeyboardArrowRight />
                                     </button>
                                 </div>

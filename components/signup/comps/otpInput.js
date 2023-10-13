@@ -42,7 +42,7 @@ class Otpinput extends React.Component {
                         ))}
                     </div>
                     <button
-                        className="btn btn-dark"
+                        className="btn btn-login-prime-o"
                         onClick={() => {
                             let valOtp = '';
                             for (let i = 1; i <= +this.props.otpLength; i++) {
