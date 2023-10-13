@@ -28,7 +28,7 @@ class StepOne extends React.Component {
                     </div>
                     <p className="step-one__login">
                         If you already have an account,{' '}
-                        <a href="/login" >
+                        <a href="/signin" >
                             Login
                         </a>
                     </p>
