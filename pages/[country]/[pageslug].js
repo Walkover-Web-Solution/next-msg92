@@ -1,14 +1,15 @@
 import data from "@/data/content.json";
 import IndexComp from "@/components/comps/indexComponent";
 import ProductComponent from "@/components/comps/productComp";
+import HelloNewComponent from "@/components/comps/helloNewComp";
 import ChannelComponent from "@/components/comps/channelComp";
 
 const mainpage = ({ pageData, params, path, pricingPath }) => {  
-  var page = pageData?.pagename;
-  var code = pageData?.code;
+  var page = pageData?.pagename;  
   var Dataa = pageData;
   var channels = ['SMS','Email','WhatsApp','Voice'];
-  
+  var helloNewCountries = ['us','ae','es'];
+  console.log('pageData', params);
   if (!pageData) {
     return (
       <div>
@@ -33,13 +34,23 @@ const mainpage = ({ pageData, params, path, pricingPath }) => {
       );
     }
     else{
-      return (
-        <>
-          <div>
-            <ProductComponent pageData={Dataa} path={path} pricingPath={pricingPath} />
-          </div>
-        </>
-      );
+      if(helloNewCountries.includes(params?.country) && params?.pageslug === 'hello'){
+        return (
+          <>        
+            <div>
+              <HelloNewComponent pageData={Dataa} path={path} pricingPath={pricingPath} />
+            </div>
+          </>
+        );
+      } else {
+        return (
+          <>        
+            <div>
+              <ProductComponent pageData={Dataa} path={path} pricingPath={pricingPath} />
+            </div>
+          </>
+        );
+      }
     }
   }
 };

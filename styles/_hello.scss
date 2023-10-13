@@ -1,0 +1,93 @@
+.heading-plus{
+    .product-page-logo{
+        height: 64px;
+    }
+    font-size: 64px;    
+    .hello{
+        text-transform: uppercase;
+        text-shadow: 4px 4px #F2CA55;
+    }
+    .ai-fueled{
+        text-shadow: 4px 4px #26D9D9;
+        position: relative;
+        &::after{
+            content: "";
+            display: block;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: -40px;
+            right: -70px;
+            background: url(/images/hello/magic.svg);            
+        }
+    }
+}
+.hero-img-wrp{
+    img{
+        position: relative;
+        z-index: 9;
+    }
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 184px;
+        height: 437px;
+        width: 10000%;
+        background-color: #f699ff;
+        clip-path: polygon(.08% 0, 100% 0, 100% 100%, 0% 100%);
+        transform: translate(160px, 0);
+    }
+}
+.get-started-hello{
+    box-shadow: 8px 8px #F4FF80;
+    padding: 8px 24px !important;
+}
+.discover{
+    background: #F4FF80;
+    img{
+        height: 64px;
+    }
+}
+.hello-new-features{
+    background: #212528;    
+    .hnf{
+        background: #fff;
+    }
+    .container{
+        padding: 40px 40px;
+    }
+    .container:nth-child(1),.container:nth-child(4){       
+        box-shadow: 16px 16px #F4FF80 !important;        
+    }    
+    .container:nth-child(2),.container:nth-child(5){       
+        box-shadow: 16px 16px #F699FF !important;        
+    }    
+    .container:nth-child(3),.container:nth-child(6){       
+        box-shadow: 16px 16px #26D9D9 !important;        
+    }    
+}
+
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+.marquee{
+    font-size: var(--c-fs-1);
+    text-transform: uppercase;
+    font-weight: bold;
+    animation: marquee 15s linear infinite;
+    span{
+        margin: 0 24px;
+        display: inline-block;
+    }    
+    .yellow{       
+        text-shadow: 4px 4px #F4FF80 !important;        
+    }    
+    .purple{       
+        text-shadow: 4px 4px #F699FF !important;        
+    }    
+    .blue{       
+        text-shadow: 4px 4px #26D9D9 !important;        
+    }
+}
