@@ -19,18 +19,20 @@ class StepOne extends React.Component {
                             </a>
                         </div>
                     </div>
-                    <span className="step-one__break c-fs-5 d-flex align-items-center gap-3">or<span className='step-one__break__line'></span></span>
+                    <span className="step-one__break c-fs-5 d-flex align-items-center gap-3">
+                        or<span className="step-one__break__line"></span>
+                    </span>
                     <div className="step-one__nondev">
-                        <button className="step-one__nondev__withemail btn btn-login-prime" onClick={() => this.props.setStep(2)}>
+                        <button
+                            className="step-one__nondev__withemail btn btn-login-prime"
+                            onClick={() => this.props.setStep(2)}
+                        >
                             Sign up with Email
                             <MdKeyboardArrowRight />
                         </button>
                     </div>
                     <p className="step-one__login">
-                        If you already have an account,{' '}
-                        <a href="/signin" >
-                            Login
-                        </a>
+                        If you already have an account, <a href="/signin">Login</a>
                     </p>
                 </div>
             </>

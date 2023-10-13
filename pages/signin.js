@@ -136,68 +136,78 @@ class logIn extends React.Component {
             <>
                 <section className="signin d-flex flex-column flex-md-row-reverse">
                     <div className="signin__right  ">
-                        <div className='sigin__wrapper  d-flex gap-4 flex-column '>
-                        <div className="signin__right__logo d-block d-md-none">
-                            <img src="/images/msgOriginalsvg.png" alt="MSG91" className="w-100" />
-                        </div>
-                        <h1 className="signin__right__title c-fs-2 heading">Welcome back!</h1>
-                        <div className="signin__right__dev devlogin d-grid gap-2">
-                            <span className="devlogin__title c-fs-5">Login with</span>
-                            <div className="devlogin__btn d-flex gap-3 flex-wrap">
-                                <GoogleOAuthProvider clientId={`${process.env.GOOGLE_CLIENT_ID}`}>
-                                    <GoogleLoginButton googleLoginResponse={this.googleLogin}  className='devlogin__btn__google'/>
-                                </GoogleOAuthProvider>
-                                <button onClick={() => this.loginWithOutlook()} className='devlogin__btn__btn btn rounded'>
-                                    <img src="/img/microsoft-svg.svg" />
-                                </button>
-                                <button onClick={() => this.loginWithZoho()}
-                                className='devlogin__btn__btn btn rounded'>
-                                    <img src="/img/icon-zogo.svg" />
-                                </button>
-
-                                {/* onClick={() => this.loginWithGitHubAccount()} */}
-                                <a href="/github-auth?login=true">
-                                    <button className='devlogin__btn__btn btn rounded'>
-                                        <img src="/img/icon-github.svg" />
+                        <div className="sigin__wrapper  d-flex gap-4 flex-column ">
+                            <div className="signin__right__logo d-block d-md-none">
+                                <img src="/images/msgOriginalsvg.png" alt="MSG91" className="w-100" />
+                            </div>
+                            <h1 className="signin__right__title c-fs-2 heading">Welcome back!</h1>
+                            <div className="signin__right__dev devlogin d-grid gap-2">
+                                <span className="devlogin__title c-fs-5">Login with</span>
+                                <div className="devlogin__btn d-flex gap-3 flex-wrap">
+                                    <GoogleOAuthProvider clientId={`${process.env.GOOGLE_CLIENT_ID}`}>
+                                        <GoogleLoginButton
+                                            googleLoginResponse={this.googleLogin}
+                                            className="devlogin__btn__google"
+                                        />
+                                    </GoogleOAuthProvider>
+                                    <button
+                                        onClick={() => this.loginWithOutlook()}
+                                        className="devlogin__btn__btn btn rounded"
+                                    >
+                                        <img src="/img/microsoft-svg.svg" />
                                     </button>
-                                </a>
+                                    <button
+                                        onClick={() => this.loginWithZoho()}
+                                        className="devlogin__btn__btn btn rounded"
+                                    >
+                                        <img src="/img/icon-zogo.svg" />
+                                    </button>
+
+                                    {/* onClick={() => this.loginWithGitHubAccount()} */}
+                                    <a href="/github-auth?login=true">
+                                        <button className="devlogin__btn__btn btn rounded">
+                                            <img src="/img/icon-github.svg" />
+                                        </button>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
 
-                        <span className="step-one__break c-fs-5 d-flex align-items-center gap-3">or<span className='step-one__break__line'></span></span>
-
-                        <button
-                            className="signin__right__login btn btn-login-prime"
-                            onClick={() => this.initOTPWidget(true)}
-                        >
-                            Login with OTP
-                        </button>
-                        <p className="">
-                            Trouble logging in ?{' '}
-                            <span onClick={this.setShowContactonLogin} className="text-link">
-                                Click here
+                            <span className="step-one__break c-fs-5 d-flex align-items-center gap-3">
+                                or<span className="step-one__break__line"></span>
                             </span>
-                        </p>
-                        {/* https://control.msg91.com/signin/ */}
-                        <div className={`d-grid gap-2 ${this.state.showContactonLogin ? 'd-block' : 'd-none'}`}>
-                            <div className="d-flex align-items-center gap-2">
-                                <MdCall />
-                                <a className="text-link" href="/contact-us">
-                                    Talk to an Expert
-                                </a>
-                            </div>
-                            <div className="d-flex align-items-center gap-2">
-                                <MdEmail />
-                                <a className="text-link" href="mailto:support@msg91.com">
-                                    support@msg91.com
-                                </a>
-                            </div>
-                        </div>
 
-                        <a href="/signup" className="text-link">
-                            Create new account
-                        </a>
-                    </div>
+                            <button
+                                className="signin__right__login btn btn-login-prime"
+                                onClick={() => this.initOTPWidget(true)}
+                            >
+                                Login with OTP
+                            </button>
+                            <p className="">
+                                Trouble logging in ?{' '}
+                                <span onClick={this.setShowContactonLogin} className="text-link">
+                                    Click here
+                                </span>
+                            </p>
+                            {/* https://control.msg91.com/signin/ */}
+                            <div className={`d-grid gap-2 ${this.state.showContactonLogin ? 'd-block' : 'd-none'}`}>
+                                <div className="d-flex align-items-center gap-2">
+                                    <MdCall />
+                                    <a className="text-link" href="/contact-us">
+                                        Talk to an Expert
+                                    </a>
+                                </div>
+                                <div className="d-flex align-items-center gap-2">
+                                    <MdEmail />
+                                    <a className="text-link" href="mailto:support@msg91.com">
+                                        support@msg91.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            <a href="/signup" className="text-link">
+                                Create new account
+                            </a>
+                        </div>
                     </div>
                     <div className="signin__left d-none d-md-block">
                         <img src="/images/msgOriginalsvg.png" className="signin__left__logo" />

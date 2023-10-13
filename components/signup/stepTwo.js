@@ -15,7 +15,9 @@ class StepTwo extends React.Component {
                         <div className="d-flex align-items-center gap-1 c-fs-5">
                             <MdCheckCircle
                                 className={
-                                    this.props?.smsAccessToken && this.props?.emailAccessToken ? 'ico-green' : 'ico-grey'
+                                    this.props?.smsAccessToken && this.props?.emailAccessToken
+                                        ? 'ico-green'
+                                        : 'ico-grey'
                                 }
                             />{' '}
                             Verify email & mobile number
@@ -74,38 +76,38 @@ class StepTwo extends React.Component {
                             </div>
                             {this.props?.emailIdentifier ? (
                                 <>
-                            <span className='hor-line'></span>
-                                <div className="ver-email__otp w-100 py-2">
-                                    <div className="d-flex flex-column">
-                                        <Otpinput
-                                            tag="email"
-                                            verifyOtp={this.props.verifyOtp}
-                                            otpLength={this.props.widgetData?.otpLength}
-                                            requestId={this.props.emailRequestId}
-                                            notByEmail={false}
-                                        />
-                                        {this.props.allowedRetry?.email ? (
-                                            <p className="col-dark my-3 c-fs-6">
-                                                Resend on{' '}
-                                                <a
-                                                    href={undefined}
-                                                    onClick={() =>
-                                                        this.props.retryOtp(
-                                                            this.props.OTPRetryModes.Email,
-                                                            this.props.emailRequestId,
-                                                            false
-                                                        )
-                                                    }
-                                                    className="col-primary c-fw-600 p-3 cursor-pointer"
-                                                >
-                                                    Email
-                                                </a>
-                                            </p>
-                                        ) : null}
+                                    <span className="hor-line"></span>
+                                    <div className="ver-email__otp w-100 py-2">
+                                        <div className="d-flex flex-column">
+                                            <Otpinput
+                                                tag="email"
+                                                verifyOtp={this.props.verifyOtp}
+                                                otpLength={this.props.widgetData?.otpLength}
+                                                requestId={this.props.emailRequestId}
+                                                notByEmail={false}
+                                            />
+                                            {this.props.allowedRetry?.email ? (
+                                                <p className="col-dark my-3 c-fs-6">
+                                                    Resend on{' '}
+                                                    <a
+                                                        href={undefined}
+                                                        onClick={() =>
+                                                            this.props.retryOtp(
+                                                                this.props.OTPRetryModes.Email,
+                                                                this.props.emailRequestId,
+                                                                false
+                                                            )
+                                                        }
+                                                        className="col-primary c-fw-600 p-3 cursor-pointer"
+                                                    >
+                                                        Email
+                                                    </a>
+                                                </p>
+                                            ) : null}
+                                        </div>
                                     </div>
-                                </div>
                                 </>
-                             ) : null}
+                            ) : null}
                         </div>
                     </div>
                     <div className="step-two__phone  w-100  d-grid gap-2">
@@ -125,9 +127,7 @@ class StepTwo extends React.Component {
                                         />
 
                                         <span className="ver-phone-main__input__check">
-                                            {this.props?.smsAccessToken && 
-                                            <MdCheckCircle className="ico-green" />
-                                            }
+                                            {this.props?.smsAccessToken && <MdCheckCircle className="ico-green" />}
                                         </span>
                                     </div>
                                     <button
@@ -146,80 +146,79 @@ class StepTwo extends React.Component {
                                     <p className="ver-email-message mt-2 ico-green">{this.props?.smsSuccessMessage}</p>
                                 ) : null}
                             </div>
-                           
 
                             {this.props?.smsIdentifier ? (
-                            <>
-                            <span className='hor-line'></span>
-                         
-                                <div className="ver-email__otp w-100">
-                                    <div className="d-flex flex-column">
-                                        <Otpinput
-                                            tag="sms"
-                                            verifyOtp={this.props.verifyOtp}
-                                            otpLength={this.props.widgetData?.otpLength}
-                                            requestId={this.props.smsRequestId}
-                                            notByEmail={true}
-                                        />
-                                        <p className="col-dark my-3 c-fs-6 p-2">
-                                            Resend on{' '}
-                                            {this.props.allowedRetry?.sms ? (
-                                                <a
-                                                    href={undefined}
-                                                    onClick={() =>
-                                                        this.props.retryOtp(
-                                                            this.props.OTPRetryModes.Sms,
-                                                            this.props.smsRequestId,
-                                                            true
-                                                        )
-                                                    }
-                                                    className="col-primary c-fw-600 p-3 cursor-pointer"
-                                                >
-                                                    Text
-                                                </a>
-                                            ) : null}
-                                            {this.props.allowedRetry?.whatsApp ? (
-                                                <span>
-                                                    {this.props.allowedRetry?.sms && <span>or </span>}
+                                <>
+                                    <span className="hor-line"></span>
+
+                                    <div className="ver-email__otp w-100">
+                                        <div className="d-flex flex-column">
+                                            <Otpinput
+                                                tag="sms"
+                                                verifyOtp={this.props.verifyOtp}
+                                                otpLength={this.props.widgetData?.otpLength}
+                                                requestId={this.props.smsRequestId}
+                                                notByEmail={true}
+                                            />
+                                            <p className="col-dark my-3 c-fs-6 p-2">
+                                                Resend on{' '}
+                                                {this.props.allowedRetry?.sms ? (
                                                     <a
                                                         href={undefined}
                                                         onClick={() =>
                                                             this.props.retryOtp(
-                                                                this.props.OTPRetryModes.Whatsapp,
+                                                                this.props.OTPRetryModes.Sms,
                                                                 this.props.smsRequestId,
                                                                 true
                                                             )
                                                         }
                                                         className="col-primary c-fw-600 p-3 cursor-pointer"
                                                     >
-                                                        WhatsApp
+                                                        Text
                                                     </a>
-                                                </span>
-                                            ) : null}
-                                            {this.props.allowedRetry?.voice ? (
-                                                <span>
-                                                    {(this.props.allowedRetry?.sms ||
-                                                        this.props.allowedRetry?.whatsApp) && <span>or </span>}
-                                                    <a
-                                                        href={undefined}
-                                                        onClick={() =>
-                                                            this.props.retryOtp(
-                                                                this.props.OTPRetryModes.Voice,
-                                                                this.props.smsRequestId,
-                                                                true
-                                                            )
-                                                        }
-                                                        className="col-primary c-fw-600 p-3 cursor-pointer"
-                                                    >
-                                                        Voice
-                                                    </a>
-                                                </span>
-                                            ) : null}
-                                        </p>
+                                                ) : null}
+                                                {this.props.allowedRetry?.whatsApp ? (
+                                                    <span>
+                                                        {this.props.allowedRetry?.sms && <span>or </span>}
+                                                        <a
+                                                            href={undefined}
+                                                            onClick={() =>
+                                                                this.props.retryOtp(
+                                                                    this.props.OTPRetryModes.Whatsapp,
+                                                                    this.props.smsRequestId,
+                                                                    true
+                                                                )
+                                                            }
+                                                            className="col-primary c-fw-600 p-3 cursor-pointer"
+                                                        >
+                                                            WhatsApp
+                                                        </a>
+                                                    </span>
+                                                ) : null}
+                                                {this.props.allowedRetry?.voice ? (
+                                                    <span>
+                                                        {(this.props.allowedRetry?.sms ||
+                                                            this.props.allowedRetry?.whatsApp) && <span>or </span>}
+                                                        <a
+                                                            href={undefined}
+                                                            onClick={() =>
+                                                                this.props.retryOtp(
+                                                                    this.props.OTPRetryModes.Voice,
+                                                                    this.props.smsRequestId,
+                                                                    true
+                                                                )
+                                                            }
+                                                            className="col-primary c-fw-600 p-3 cursor-pointer"
+                                                        >
+                                                            Voice
+                                                        </a>
+                                                    </span>
+                                                ) : null}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
                                 </>
-                             ) : null}
+                            ) : null}
                         </div>
                     </div>
                     <div className="row ">
@@ -230,7 +229,10 @@ class StepTwo extends React.Component {
                                 Back
                             </button>
                             {this.props?.smsAccessToken && this.props?.emailAccessToken ? (
-                                <button className=" btn btn-login-prime" onClick={() => this.props.validateUserForCompany()}>
+                                <button
+                                    className=" btn btn-login-prime"
+                                    onClick={() => this.props.validateUserForCompany()}
+                                >
                                     {' '}
                                     Next <MdKeyboardArrowRight />
                                 </button>
