@@ -16,7 +16,7 @@ const indexComp = ({pageData, params}) => {
           Secure and robust APIs for SMS, Email, Voice, Authentication and more
         </h3>
         <a
-          href="https://control.msg91.com/signup/"
+          href="/signup"
           target="_blank"
           className="btn btn-dark small-heading px-3 py-2 mt-3 c-fw-sb px-md-4 py-md-3 ls-3 utm"
         >

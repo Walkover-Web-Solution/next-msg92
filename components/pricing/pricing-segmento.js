@@ -58,7 +58,7 @@ const pricingsegmento = ({subscriptionSegmento, fetchSubscriptionSegmento}) => {
                         </span>
                         {item.plan_services[0].service_credit.free_credits} for Outbound calls
                       </div>                    
-                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                      <a href="/signup?service=segmento" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                         Get Started
                       </a>
                     </div>
@@ -83,7 +83,7 @@ const pricingsegmento = ({subscriptionSegmento, fetchSubscriptionSegmento}) => {
                       </span>
                       {item.plan_services[0].service_credit.service_credit_rates[0].free_credits} for Whatsapp
                     </div>                    
-                    <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+                    <a href="/signup?service=segmento" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
                       Get Started
                     </a>
                   </div>
