@@ -8,7 +8,7 @@
     background-color: var(--c-grey);
 }
 .progress-line {
-  background-color: var(--success-color);
+    background-color: var(--success-color);
 }
 
 //signup main */
@@ -55,6 +55,9 @@
 }
 
 //signup steptwo */
+.step-two {
+    max-width: 590px;
+}
 .otp-input {
     max-width: 40px;
 }
@@ -81,8 +84,18 @@
     }
 }
 
-.step-three{
-  &__main{
-    max-width: 460px;
-  }
+.step-three {
+    &__main {
+        max-width: 560px;
+    }
+}
+
+.step-threeone{
+    max-width: 560px;
+}
+.btn-accept{
+    background-color: #E8F7E8 !important;
+}
+.btn-reject{
+    background-color:#F9EAE5 !important;
 }

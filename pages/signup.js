@@ -3,6 +3,7 @@ import { MdDone } from 'react-icons/md';
 import StepOne from '@/components/signup/stepOne';
 import StepTwo from '@/components/signup/stepTwo';
 import StepThree from '@/components/signup/stepThree';
+import StepThreeOne from '@/components/signup/stepThreeOne';
 import { getCookie, getQueryParamsDeatils, setCookie } from '@/components/utils';
 import { toast } from 'react-toastify';
 
@@ -26,7 +27,7 @@ class SignUp extends React.Component {
         let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
 
         this.state = {
-            activeStep: queryParams?.['code'] ? 2 : 3,
+            activeStep: queryParams?.['code'] ? 2 : 4,
             signupByGitHub: queryParams?.['githubsignup'] ? true : false,
             githubCode: queryParams?.['code'],
             githubState: queryParams?.['state'],
@@ -322,6 +323,10 @@ class SignUp extends React.Component {
                                     emailAccessToken={this.state?.emailAccessToken}
                                     signupByGitHub={this.state?.signupByGitHub}
                                 />
+                            )}
+                            {/* STEP #3.1 */}
+                            {this.state.activeStep === 4 && (
+                                <StepThreeOne />
                             )}
 
                             {/* STEP #3 */}
