@@ -1,7 +1,6 @@
 // Parent Component
 import React, { useEffect } from "react";
 import PreFooter from "@/components/preFooter";
-import Head from "next/head";
 const ParentComponent = ({ pricingPath }) => {
   //const data = json.global.hello;
   useEffect(() => {
@@ -168,12 +167,6 @@ var options = {
   });
   return (
     <>
-     <Head>
-    <title>Free WhatsApp Link generator </title>
-    <meta name="description" content="Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!  - MSG91 -Best online cloud communication platform"/>
-    <meta property="og:title" content="WhatsApp Link Generator" />
-    <meta property="og:url" content="URL of your WhatsApp link generator webpage" />
-    </Head>
       <script type="text/javascript" src="/js/qrcode.js" defer></script>
       <script type="text/javascript" src="/js/jquery.min.js"></script>
       <script src="/js/highlight.min.js"></script>
@@ -604,11 +597,11 @@ var options = {
         <div>
               <h2 className="c-head c-fs-1 mt-5 mb-2">FAQs</h2>
 
-              <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne">
+              <div className="accordion accordion-flush" id="accordionFlushExample">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingOne">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseOne"
@@ -620,21 +613,21 @@ var options = {
                   </h2>
                   <div
                     id="flush-collapseOne"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingOne"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                     WhatsApp links use a specific URL format that,
                     when clicked, opens the WhatsApp app on a user's 
                     device and starts a chat with the provided phone number or message.
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingTwo">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingTwo">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseTwo"
@@ -646,20 +639,20 @@ var options = {
                   </h2>
                   <div
                     id="flush-collapseTwo"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingTwo"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                     Yes, MSG91 WhatsApp link generators allow you to add a prefilled message 
                     along with the phone number.
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingThree">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingThree">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseThree"
@@ -671,20 +664,20 @@ var options = {
                   </h2>
                   <div
                     id="flush-collapseThree"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingThree"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                     Yes, WhatsApp link generators can create links for both personal and business accounts. 
                     Business accounts often have additional features suitable for customer interactions.
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingFour">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingFour">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseFour"
@@ -696,20 +689,20 @@ var options = {
                   </h2>
                   <div
                     id="flush-collapseFour"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingFour"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                     Yes, WhatsApp links work across different platforms, including iOS, Android, 
                     and web browsers, ensuring a seamless experience for users regardless of their device.
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingFive">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingFive">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseFive"
@@ -721,11 +714,11 @@ var options = {
                   </h2>
                   <div
                     id="flush-collapseFive"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingFive"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                     You can generate a WhatsApp link by appending the phone number (including the country code) to 
                     the WhatsApp URL: https://wa.me/phonenumbers. For example, to create a link for 
                     the number +1234567890, the URL would be https://wa.me/1234567890.

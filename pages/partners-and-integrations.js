@@ -12,13 +12,13 @@ const partnersAndIntegrations = () => {
             Add-ons that enable SMS notifications in your application with a
             single click.
           </h2>
-          <a
-                  target="_blank"
-                  href="https://control.msg91.com/signup/"
-                >
-          <button className="btn btn-dark small-heading px-3 py-2 mt-3 c-fw-sb px-md-4 py-md-3 ls-3" type="button">
-            Get your API key
-          </button>
+          <a target="_blank" href="/signup">
+              <button
+                  className="btn btn-dark small-heading px-3 py-2 mt-3 c-fw-sb px-md-4 py-md-3 ls-3"
+                  type="button"
+              >
+                  Get your API key
+              </button>
           </a>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { MdOutlineEmail, MdCall, MdWhatsapp } from "react-icons/md";
-import { InlineWidget, PopupButton } from "react-calendly";
 const contactus = ({path}) => {    
     var [countryName, setCountryName] = useState('');    
     useEffect(() => {
@@ -111,47 +110,7 @@ const contactus = ({path}) => {
 
                 </div>
                 
-            </div>
-
-            <div
-                className="modal fade"
-                id="sales-modal"
-                tabIndex={-1}
-                aria-labelledby="Schedule a meeting"
-                aria-hidden="true"
-            >
-                <div className="modal-dialog modal-xl">
-                    <div className="modal-content">
-                        <div className="modal-header">                        
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-                        </div>
-        
-                        <div className="modal-body">
-                            <InlineWidget url="https://calendly.com/sales-msg91/pre-sales" styles={{height: '660px'}} />
-                        </div>                    
-                    </div>
-                </div>
-            </div>
-            
-            <div
-                className="modal fade"
-                id="support-modal"
-                tabIndex={-1}
-                aria-labelledby="Schedule a meeting"
-                aria-hidden="true"
-            >
-                <div className="modal-dialog modal-xl">
-                    <div className="modal-content">
-                        <div className="modal-header">                        
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-                        </div>          
-                        <div className="modal-body">
-                            {/* <InlineWidget url="https://calendly.com/support--msg91" styles={{height: '820px'}} /> */}
-                            <InlineWidget url="https://calendly.com/d/y3n-29s-29h?hide_gdpr_banner=1" styles={{height: '820px'}} />
-                        </div>                    
-                    </div>
-                </div>
-            </div>
+            </div>            
         </>
     );
 };

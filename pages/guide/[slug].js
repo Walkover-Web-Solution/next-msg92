@@ -38,9 +38,10 @@ export default function TestPage({ source , title, author, date,thumbnailImage, 
     <>
     <Head>
       <title>{title}</title>
+      <meta property="og:title" content={`Explore the world of ${title} Through our blog and stay informed about the latest developments, expert insights, and valuable tips that matter most. visit at MSG91 -The Best Cloud Communication Platform.`} key="title" />
     </Head>
     <div className="wrapper container blog-container">      
-      <a className='mb-3 d-inline-block btn btn-dark' href='#' onClick={handleClick} > <MdKeyboardArrowLeft />Back</a>
+      <a className='mb-3 d-inline-block btn btn-dark' onClick={handleClick} > <MdKeyboardArrowLeft />Back</a>
       <div className='blog-header mt-4'>
         <div>{author}, {date}</div>        
         <h1>{title}</h1>
@@ -49,19 +50,15 @@ export default function TestPage({ source , title, author, date,thumbnailImage, 
       <div className="body">
         <MDXRemote {...source} components={component}/>
       </div>
-
-      <button className="btn btn-dark mt-3" onClick={handleClick} ><MdKeyboardArrowLeft />Back</button>
-      <footer>
-      <div>
       <ul className={"tag-list"}>
-            {tags !=="" && tags?.map((it, i) => (
-              <li key={i}>
-                <TagButton tag={getTag(it)} />
-              </li>
-            ))}
-          </ul>
-      </div>
-      </footer>
+        {tags !=="" && tags?.map((it, i) => (
+          <li key={i} className="bg-tags">
+            <TagButton tag={getTag(it)} />
+          </li>
+        ))}
+      </ul>
+      
+      <button className="btn btn-dark mt-3" onClick={handleClick} ><MdKeyboardArrowLeft />Back</button>
     </div>
     </>
   )

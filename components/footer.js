@@ -1,7 +1,7 @@
 import link from "next/link";
 import { useRouter } from "next/router";
-
-const Footer = ({path, year}) => {    
+import { InlineWidget, PopupButton } from "react-calendly";
+const Footer = ({path, year}) => {  
   path = (path?.length == 2)? '/'+path : '';
   return (
     <>
@@ -25,7 +25,7 @@ const Footer = ({path, year}) => {
                 </a>
               </div>
 
-              <h4 className="c-fs-5 d-flex flex-column mt-5">Our products</h4>
+              <h4 className="c-fs-5 d-flex flex-column mt-5">Utilities</h4>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a href={`${path}/shorturl`} className="c-link-underline c-fs-5 mt-2 c-fw-t">
                   Shorturl
@@ -59,7 +59,7 @@ const Footer = ({path, year}) => {
               <h4 className="c-fs-5 d-flex flex-column mt-5">Resources</h4>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a
-                  href="https://msg91.com/guide/"
+                  href="/guide"
                   target="_blank"
                   className="c-link-underline c-fs-5 mt-2 c-fw-t"
                 >
@@ -301,6 +301,47 @@ const Footer = ({path, year}) => {
           </div>
         </div>
       </div>
+
+      <div
+                className="modal fade"
+                id="sales-modal"
+                tabIndex={-1}
+                aria-labelledby="Schedule a meeting"
+                aria-hidden="true"
+            >
+                <div className="modal-dialog modal-xl">
+                    <div className="modal-content">
+                        <div className="modal-header">                        
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                        </div>
+        
+                        <div className="modal-body">
+                            <InlineWidget url="https://calendly.com/sales-msg91/pre-sales" styles={{height: '660px'}} />
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+            
+            <div
+                className="modal fade"
+                id="support-modal"
+                tabIndex={-1}
+                aria-labelledby="Schedule a meeting"
+                aria-hidden="true"
+            >
+                <div className="modal-dialog modal-xl">
+                    <div className="modal-content">
+                        <div className="modal-header">                        
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                        </div>          
+                        <div className="modal-body">
+                            {/* <InlineWidget url="https://calendly.com/support--msg91" styles={{height: '820px'}} /> */}
+                            <InlineWidget url="https://calendly.com/d/y3n-29s-29h?hide_gdpr_banner=1" styles={{height: '820px'}} />
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+
     </>
   );
 };

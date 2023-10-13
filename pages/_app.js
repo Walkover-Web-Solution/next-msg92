@@ -3,20 +3,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import Headcomp from '@/components/head';
-import { useEffect } from "react";
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
-import Toastify from "@/components/toast";
-import { getCookie, setCookie } from "@/components/utils";
-
+import Toastify from '@/components/toast';
+import { getCookie, setCookie } from '@/components/utils';
+import $ from 'jquery';
 export default function App({ Component, pageProps }) {
     const router = useRouter();
     var showNavbar = false;
-    // const { slug } = router.query;
     var browserPath = router.asPath;
     var browserPathCase = browserPath;
     var browserPathMeta = browserPath;
-    //var product = router.query.product;
 
     if (browserPath !== '/') {
         const pattern = /\/([^/?]+)/;
@@ -24,6 +22,7 @@ export default function App({ Component, pageProps }) {
         browserPath = result ? result[0] : browserPath;
     }
     var path = browserPath.split('/')[1];
+
     const products = [
         '/sms',
         '/email',
@@ -35,22 +34,60 @@ export default function App({ Component, pageProps }) {
         '/segmento',
         '/campaign',
         '/knowledgebase',
+        '/free-whatsapp-link-generator',
+        '/pricing',
+        '/pricing/sms',
+        '/shorturl',
     ];
     var pageSlug = Object.keys(router.query).length ? `/${router.query.pageslug}` : browserPath;
     var pricingPath = products.includes(pageSlug) ? `/pricing${pageSlug}` : `/pricing/sms`;
 
+    if (browserPath !== '/') {
+        const pattern = /\/([^/?]+)/;
+        const result = browserPath.match(pattern);
+        browserPath = result ? result[0] : browserPath;
+    }
     const year = new Date().getFullYear();
-    if (browserPath !== '/login' && browserPath !== '/signup' && browserPath !== '/github-auth') {
+    if (browserPath !== '/signin' && browserPath !== '/signup' && browserPath !== '/github-auth') {
         showNavbar = true;
     }
-
     useEffect(() => {
         require('bootstrap/dist/js/bootstrap.bundle.min.js');
-        
+
         const search = window.location.search;
         if (search.includes('utm_')) {
             setCookie('msg91_query', search, 30);
         }
+
+        // Get all anchor tags in the document using querySelectorAll
+        var anchorTags = document.querySelectorAll('.utm');
+        // Loop through the anchor tags
+        for (var i = 0; i < anchorTags.length; i++) {
+            var href = anchorTags[i].getAttribute('href'); // Get the current href value
+            var query = getCookie('msg91_query');
+            if (href && query) {
+                anchorTags[i].setAttribute('href', href + query);
+            }
+        }
+
+        const countryList = ['in', 'ae', 'ph', 'sg', 'es', 'gb', 'us', '?'];
+
+        var cc = getCookie('country_code');
+        if (!cc && countryList.includes(path)) {
+            setCookie('country_code', path, 30);
+        }
+        $('a').on('click', function (event) {
+            event.preventDefault();
+            var href = $(this).attr('href');
+            if (href !== undefined) {
+                if (cc === '?' && href === '/') href = '/?';
+                if (products.includes(href) && cc && cc !== '?') {
+                    window.location.href = '/' + cc + href;
+                } else {
+                    window.location.href = href;
+                }
+            }
+        });
 
         // Get all anchor tags in the document using querySelectorAll
         var anchorTags = document.querySelectorAll('.utm');
@@ -80,7 +117,7 @@ export default function App({ Component, pageProps }) {
                 src="https://control.msg91.com/app/assets/widget/chat-widget.js"
             />
 
-        {/* <Script
+            {/* <Script
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -145,3 +182,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </>
     );
 }
+
+/* 
+getInitialProps solves serverside rendering in pricing page 
+without getInitialProps it was giving path: '/pricing/[product]' 
+with getInitialProps it returns path: '/pricing/hello'
+*/
+App.getInitialProps = async ({ asPath }) => {
+    return {
+        asPath,
+    };
+};

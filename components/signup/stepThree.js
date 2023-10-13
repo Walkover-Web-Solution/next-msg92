@@ -1,9 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
-import { Component } from 'react';
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft, MdCheckCircle, MdCheckCircleOutline } from 'react-icons/md';
-import { Collapse } from 'react-bootstrap';
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft, MdCheckCircle, MdCancel } from 'react-icons/md';
+import { toast } from 'react-toastify';
+import Select from 'react-select';
 
 class StepThree extends React.Component {
     constructor(props) {
@@ -15,7 +14,7 @@ class StepThree extends React.Component {
                 howToUse: '',
                 companyName: '',
                 industryType: '',
-                serviceNeeded: '',
+                serviceNeeded: [],
                 country: '',
                 countryName: '',
                 stateProvince: '',
@@ -27,6 +26,7 @@ class StepThree extends React.Component {
                 address: '',
                 gstNumber: '',
                 agreeToTerms: false,
+                acceptInviteForCompanies: [],
             },
             formErrorData: {
                 firstNameError: '',
@@ -35,6 +35,10 @@ class StepThree extends React.Component {
                 pincodeError: '',
                 // Add more error fields for other inputs
             },
+            invitationRender: true,
+            defaultServiceNeeded: null,
+            serviceRender: true,
+            createCompany: !props.invitations,
             countryNames: [],
         };
     }
@@ -77,7 +81,22 @@ class StepThree extends React.Component {
     componentDidMount() {
         this.fetchServices()
             .then((response) => {
-                this.setState({ services: response.data.data });
+                let services = response.data.data;
+                this.setState({ services });
+                if (this.props?.preselectedService) {
+                    Object.entries(services).find(([key, value]) => {
+                        if (value.toLowerCase().includes(this.props?.preselectedService.toLowerCase())) {
+                            this.setState({
+                                defaultServiceNeeded: [{ value: +key, label: value }],
+                                serviceRender: false,
+                            });
+                            setTimeout(() => {
+                                this.setState({ serviceRender: true });
+                            }, 1);
+                            return true;
+                        }
+                    });
+                }
             })
             .catch((error) => {
                 console.error(error);
@@ -216,8 +235,7 @@ class StepThree extends React.Component {
         const lastNameError = this.validateLastName();
         const gstNumberError = this.validateGSTNumber();
         const pincodeError = this.validatePincode();
-
-        if (firstNameError || lastNameError || gstNumberError /* add more */) {
+        if (this.state.createCompany) {
             this.setState((prevState) => ({
                 formErrorData: {
                     ...prevState.formErrorData,
@@ -228,79 +246,147 @@ class StepThree extends React.Component {
                     // Add more error fields for other inputs
                 },
             }));
-        } else {
-            this.props.finalSubmit(this.state.formData);
         }
+        if (!(this.state.createCompany && (firstNameError || lastNameError || gstNumberError))) {
+            if (
+                this.props.invitations &&
+                !this.state.createCompany &&
+                !this.state.formData.acceptInviteForCompanies.length
+            ) {
+                toast.error('Accept atleast one invitation or create a new company');
+            } else {
+                this.props.finalSubmit(this.state.formData, this.state.createCompany);
+            }
+        }
+    };
+
+    handleInvitationSelection = () => {
+        this.setState({ invitationRender: false });
+        setTimeout(() => {
+            this.setState({ invitationRender: true });
+        }, 1);
     };
 
     render() {
         return (
             <>
-                <div className="d-none entry__right_section__container--logo-visible-in-small">
-                    <img src="/images/msgOriginalsvg.png" width="auto" height="40px" alt="Msg91-logo" className="" />
-                </div>
-                <h1>Create an account</h1>
-                <div className="entry__right_section__container__step_one entry__right_section__container__step_two mt-5">
-                    <div className="step_status_bar d-flex justify-content-between align-items-center ps-0">
-                        <div className="col-success">
-                            <MdCheckCircle className="step_status_bar--invisible-on-md" /> Verify email & mobile number
+                <div className="trep-three d-flex flex-column gap-3">
+                    <div className="step-three__progress d-flex align-items-center gap-3 ">
+                        <div className="ico-green align-items-center gap-1 c-fs-5 d-none d-lg-flex">
+                            <MdCheckCircle className="ico-green" /> Verify email & mobile number
                         </div>
-                        <span className="step_status_bar__line step_status_bar--invisible-on-md"></span>
-                        <div className="step_status_bar--invisible-on-md">
-                            <MdCheckCircleOutline className="icon_enter_details me-1" />
-                            <MdCheckCircle className="visible_on_success me-1" />
+                        <span className="progress-line line-green d-none d-lg-block "></span>
+                        <div className="d-flex  align-items-center gap-1 c-fs-5 ">
+                            <MdCheckCircle className="ico-grey" />
                             Enter details
                         </div>
                     </div>
-                    <p className="redirect-text mt-5">Redirecting...</p>
-                    <form className="row px-0 step_two_wrapper mt-4">
-                        <div className="col-xxl-6 col-xl-8 col-lg-10">
-                            <div className="row g-4">
-                                <div className="col-lg-6 form-input-with-error">
-                                    <input
-                                        type="text"
-                                        className={
-                                            this.state.formErrorData.firstNameError
-                                                ? 'form-control input-error-display'
-                                                : 'form-control'
-                                        }
-                                        placeholder="First Name"
-                                        name="firstName"
-                                        value={this.state.formData.firstName}
-                                        onChange={this.handleInputChange}
-                                    />
-                                    <div className="text-danger input-error-message c-fs-6">
-                                        {this.state.formErrorData.firstNameError}
-                                    </div>
-                                </div>
-                                <div className="col-lg-6 form-input-with-error">
-                                    <input
-                                        type="text"
-                                        className={
-                                            this.state.formErrorData.lastNameError
-                                                ? 'form-control input-error-display'
-                                                : 'form-control'
-                                        }
-                                        placeholder="Last Name"
-                                        name="lastName"
-                                        value={this.state.formData.lastName}
-                                        onChange={this.handleInputChange}
-                                    />
-                                    <div className="text-danger input-error-message c-fs-6">
-                                        {this.state.formErrorData.lastNameError}
-                                    </div>
-                                </div>
-                                <div className="col-12 step_two_wrapper--personal-form">
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        placeholder="How are you going to use this?"
-                                        name="howToUse"
-                                        value={this.state.formData.howToUse}
-                                        onChange={this.handleInputChange}
-                                    />
-                                </div>
-                                <div className="col-lg-6  step_two_wrapper--company-form">
+                    {/* <p className="step-three__reddirect">Redirecting...</p> */}
+                    <div className="d-flex gap-3 flex-column  flex-lg-row detail-form__group step-three__main">
+                        <div className="w-100 form-input-with-error">
+                            <input
+                                type="text"
+                                className={
+                                    this.state.formErrorData.firstNameError
+                                        ? 'form-control input-error-display'
+                                        : 'form-control'
+                                }
+                                placeholder="First Name"
+                                name="firstName"
+                                value={this.state.formData.firstName}
+                                onChange={this.handleInputChange}
+                            />
+                            <div className="text-danger input-error-message c-fs-6">
+                                {this.state.formErrorData.firstNameError}
+                            </div>
+                        </div>
+                        <div className="w-100 form-input-with-error">
+                            <input
+                                type="text"
+                                className={
+                                    this.state.formErrorData.lastNameError
+                                        ? 'form-control input-error-display'
+                                        : 'form-control'
+                                }
+                                placeholder="Last Name"
+                                name="lastName"
+                                value={this.state.formData.lastName}
+                                onChange={this.handleInputChange}
+                            />
+                            <div className="text-danger input-error-message c-fs-6">
+                                {this.state.formErrorData.lastNameError}
+                            </div>
+                        </div>
+                    </div>
+                    {this.props.invitations && (
+                        <div className="d-grid gap-4 my-2">
+                            {this.state.invitationRender &&
+                                Object.values(this.props.invitations).map((value) => {
+                                    return (
+                                        <div className="d-flex flex-wrap gap-3 align-items-center">
+                                            <p>
+                                                You are invited to join <span class="c-fw-sb">{value.companyName}</span>
+                                            </p>
+                                            {(value?.accept === null || value?.accept === undefined) && (
+                                                <div className="d-flex gap-3 align-items-center">
+                                                    <button
+                                                        className="btn btn-sm btn-accept rounded"
+                                                        onClick={() => {
+                                                            value.accept = true;
+                                                            this.state.formData.acceptInviteForCompanies.push(
+                                                                value.companyId
+                                                            );
+                                                            this.handleInvitationSelection();
+                                                        }}
+                                                    >
+                                                        Accept
+                                                    </button>
+                                                    <button
+                                                        className="btn btn-sm btn-reject rounded"
+                                                        onClick={() => {
+                                                            value.accept = false;
+                                                            this.handleInvitationSelection();
+                                                        }}
+                                                    >
+                                                        Reject
+                                                    </button>
+                                                </div>
+                                            )}
+                                            {value?.accept === true && <MdCheckCircle className="ico-green" />}
+                                            {value?.accept === false && <MdCancel className="ico-red" />}
+                                            {}
+                                        </div>
+                                    );
+                                })}
+                        </div>
+                    )}
+                    {this.props?.invitations && !this.state.createCompany && (
+                        <div>
+                            <button
+                                className="btn btn-login-prime-o"
+                                onClick={() => this.setState({ createCompany: true })}
+                            >
+                                {' '}
+                                Create New Company
+                            </button>
+                        </div>
+                    )}
+                    {this.props?.invitations && this.state.createCompany && (
+                        <div class="d-flex justify-content-between step-three__main">
+                            <span class="c-fs-3 c-fw-500"> Create Company </span>
+                            <button
+                                className="btn c-fs-6 c-fw-r"
+                                onClick={() => this.setState({ createCompany: false })}
+                            >
+                                {' '}
+                                Cancel
+                            </button>
+                        </div>
+                    )}
+                    {this.state.createCompany && (
+                        <form className="step-three__main">
+                            <div className="detail-form d-flex flex-column gap-3">
+                                <div className="col-12">
                                     <input
                                         type="text"
                                         className="form-control"
@@ -310,7 +396,7 @@ class StepThree extends React.Component {
                                         onChange={this.handleInputChange}
                                     />
                                 </div>
-                                <div className="col-lg-6  step_two_wrapper--company-form">
+                                <div className="col-12">
                                     <select
                                         autoComplete="on"
                                         className="form-select"
@@ -331,108 +417,113 @@ class StepThree extends React.Component {
                                         )}
                                     </select>
                                 </div>
-                                <div className="col-12 step_two_wrapper--company-form">
-                                    <select
-                                        autoComplete="on"
-                                        className="form-select"
-                                        aria-label="Default Service Needed"
-                                        name="serviceNeeded"
-                                        value={this.state.formData.serviceNeeded}
-                                        onChange={this.handleInputChange}
-                                    >
-                                        <option value="">Service Needed</option>
-                                        {this.state.services && Object.keys(this.state.services).length > 0 && (
-                                            <>
-                                                {Object.entries(this.state.services).map(([id, name]) => (
-                                                    <option key={id} value={name}>
-                                                        {name}
-                                                    </option>
-                                                ))}
-                                            </>
-                                        )}
-                                    </select>
+                                <div className="col-12">
+                                    {this.state.serviceRender && (
+                                        <Select
+                                            isMulti
+                                            isClearable
+                                            instanceId={'serviceNeeded'}
+                                            defaultValue={this.state.defaultServiceNeeded}
+                                            onChange={(value) =>
+                                                this.setState({ serviceNeeded: value.map((obj) => obj.value) })
+                                            }
+                                            placeholder="Select Service Needed"
+                                            options={
+                                                this.state.services
+                                                    ? Object.entries(this.state.services).map(([key, value]) => ({
+                                                          value: +key,
+                                                          label: value,
+                                                      }))
+                                                    : []
+                                            }
+                                        />
+                                    )}
                                 </div>
-                                <div className="col-6 step_two_wrapper--company-form">
-                                    <select
-                                        autoComplete="on"
-                                        className="form-select"
-                                        aria-label="Default Country"
-                                        name="country"
-                                        value={this.state.formData.country}
-                                        onChange={this.handleInputChange}
-                                    >
-                                        <option value="">Country</option>
-                                        {this.state.countryNames.map((country) => (
-                                            <option key={country.id} value={country.id}>
-                                                {country.name}
+                                <div className="d-flex gap-3 flex-column flex-lg-row detail-form__group">
+                                    <div className="w-100">
+                                        <select
+                                            autoComplete="on"
+                                            className="form-select"
+                                            aria-label="Default Country"
+                                            name="country"
+                                            value={this.state.formData.country}
+                                            onChange={this.handleInputChange}
+                                        >
+                                            <option value="">Country</option>
+                                            {this.state.countryNames.map((country) => (
+                                                <option key={country.id} value={country.id}>
+                                                    {country.name}
+                                                </option>
+                                            ))}
+                                            <option key="other" value="other">
+                                                Other
                                             </option>
-                                        ))}
-                                        <option key="other" value="other">
-                                            Other
-                                        </option>
-                                    </select>
-                                </div>
-                                <div className="col-6 step_two_wrapper--company-form">
-                                    <select
-                                        autoComplete="on"
-                                        className="form-select"
-                                        aria-label="Default State/Province"
-                                        name="stateProvince"
-                                        value={this.state.formData.stateProvince}
-                                        onChange={this.handleInputChange}
-                                    >
-                                        <option value="">State/Province</option>
-                                        {this.state.countryData
-                                            ? this.state.countryData?.data.map((stateProvince) => (
-                                                  <option key={stateProvince.id} value={stateProvince.id}>
-                                                      {stateProvince.name}
-                                                  </option>
-                                              ))
-                                            : null}
-                                    </select>
-                                </div>
-                                <div className="col-lg-6  step_two_wrapper--company-form form-input-with-error">
-                                    <input
-                                        type="text"
-                                        className={
-                                            this.state.formErrorData.pincodeError
-                                                ? 'form-control input-error-display'
-                                                : 'form-control'
-                                        }
-                                        placeholder="Pincode"
-                                        name="pincode"
-                                        value={this.state.formData.pincode}
-                                        onChange={this.handleInputChange}
-                                    />
-                                    <div className="text-danger input-error-message c-fs-6">
-                                        {this.state.formErrorData.pincodeError}
+                                        </select>
+                                    </div>
+                                    <div className="w-100">
+                                        <select
+                                            autoComplete="on"
+                                            className="form-select"
+                                            aria-label="Default State/Province"
+                                            name="stateProvince"
+                                            value={this.state.formData.stateProvince}
+                                            onChange={this.handleInputChange}
+                                        >
+                                            <option value="">State/Province</option>
+                                            {this.state.countryData
+                                                ? this.state.countryData?.data.map((stateProvince) => (
+                                                      <option key={stateProvince.id} value={stateProvince.id}>
+                                                          {stateProvince.name}
+                                                      </option>
+                                                  ))
+                                                : null}
+                                        </select>
                                     </div>
                                 </div>
-                                <div className="col-lg-6  step_two_wrapper--company-form">
-                                    <select
-                                        autoComplete="on"
-                                        className="form-select"
-                                        aria-label="Default State/Province"
-                                        name="city"
-                                        value={this.state.formData.city}
-                                        onChange={(event) => {
-                                            this.handleInputChange(event);
-                                            this.setCityIdByCityName(event?.target?.value);
-                                        }}
-                                    >
-                                        <option value="">City</option>
-                                        {this.state.countryData
-                                            ? this.state.stateData?.data.map((city) => (
-                                                  <option key={city.id} value={city.name}>
-                                                      {city.name}
-                                                  </option>
-                                              ))
-                                            : null}
-                                        <option value="other">Other</option>
-                                    </select>
+                                <div className="d-flex gap-3 flex-column flex-lg-row detail-form__group">
+                                    <div className="w-100 form-input-with-error">
+                                        <input
+                                            type="text"
+                                            className={
+                                                this.state.formErrorData.pincodeError
+                                                    ? 'form-control input-error-display'
+                                                    : 'form-control'
+                                            }
+                                            placeholder="Pincode"
+                                            name="pincode"
+                                            value={this.state.formData.pincode}
+                                            onChange={this.handleInputChange}
+                                        />
+                                        <div className="text-danger input-error-message c-fs-6">
+                                            {this.state.formErrorData.pincodeError}
+                                        </div>
+                                    </div>
+                                    <div className="w-100">
+                                        <select
+                                            autoComplete="on"
+                                            className="form-select"
+                                            aria-label="Default State/Province"
+                                            name="city"
+                                            value={this.state.formData.city}
+                                            onChange={(event) => {
+                                                this.handleInputChange(event);
+                                                this.setCityIdByCityName(event?.target?.value);
+                                            }}
+                                        >
+                                            <option value="">City</option>
+                                            {this.state.countryData
+                                                ? this.state.stateData?.data.map((city) => (
+                                                      <option key={city.id} value={city.name}>
+                                                          {city.name}
+                                                      </option>
+                                                  ))
+                                                : null}
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 {this.state.formData.city == 'other' && (
-                                    <div className="col-12 step_two_wrapper--company-form">
+                                    <div className="col-12">
                                         <input
                                             type="text"
                                             className="form-control"
@@ -443,7 +534,7 @@ class StepThree extends React.Component {
                                         />
                                     </div>
                                 )}
-                                <div className="col-12 step_two_wrapper--company-form">
+                                <div className="col-12">
                                     <input
                                         type="text"
                                         className="form-control"
@@ -453,7 +544,7 @@ class StepThree extends React.Component {
                                         onChange={this.handleInputChange}
                                     />
                                 </div>
-                                <div className="col-12 step_two_wrapper--company-form form-input-with-error">
+                                <div className="col-12 form-input-with-error">
                                     <input
                                         type="text"
                                         className={
@@ -470,39 +561,52 @@ class StepThree extends React.Component {
                                         {this.state.formErrorData.gstNumberError}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="form-check my-4 pb-2">
+                                <div className="col-12">
                                     <input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        value="true"
-                                        id="termsCheckBox"
-                                        name="agreeToTerms"
-                                        checked={this.state.formData.agreeToTerms}
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="How are you going to use this?"
+                                        name="howToUse"
+                                        value={this.state.formData.howToUse}
                                         onChange={this.handleInputChange}
                                     />
-                                    <p className="form-check-label c-fs-6 c-fw-500 ps-0" htmlFor="termsCheckBox">
-                                        I agree to the terms and conditions
-                                    </p>
-                                </div>
-                                <div>
-                                    {/* <button
-                    className="me-3 back_btn"
-                    onClick={() => this.props.setStep(2)}
-                  >
-                    <MdKeyboardArrowLeft />
-                    Back
-                  </button> */}
-                                    <button className="next_btn col-white" type="button" onClick={this.finalSubmit}>
-                                        Next <MdKeyboardArrowRight />
-                                    </button>
                                 </div>
                             </div>
+                        </form>
+                    )}
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="form-check my-2 pb-2">
+                                <input
+                                    className="form-check-input"
+                                    type="checkbox"
+                                    value="true"
+                                    id="termsCheckBox"
+                                    name="agreeToTerms"
+                                    checked={this.state.formData.agreeToTerms}
+                                    onChange={this.handleInputChange}
+                                />
+                                <p className="form-check-label c-fs-6 c-fw-500 ps-0" htmlFor="termsCheckBox">
+                                    I agree to the terms and conditions
+                                </p>
+                            </div>
+                            <div className="d-flex mt-3">
+                                <button className="me-3 btn btn-login-secondary" onClick={() => this.props.setStep(2)}>
+                                    {' '}
+                                    <MdKeyboardArrowLeft />
+                                    Back
+                                </button>
+                                <button
+                                    className="btn btn-login-prime"
+                                    type="button"
+                                    onClick={this.finalSubmit}
+                                    disabled={!this.state.formData.agreeToTerms}
+                                >
+                                    Next <MdKeyboardArrowRight />
+                                </button>
+                            </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </>
         );

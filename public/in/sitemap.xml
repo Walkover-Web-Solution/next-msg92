@@ -2098,12 +2098,7 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://msg91.com/guide/author/vaishali/</loc>
-  <lastmod>2023-05-13T07:52:41+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://msg91.com/guide/tag/best-practices/</loc>
+  <loc>https://msg91.com/guide/tags/best-practices/</loc>
   <lastmod>2023-05-13T07:52:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>
@@ -2113,27 +2108,27 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://msg91.com/guide/tag/top-blogs/</loc>
+  <loc>https://msg91.com/guide/tags/top-blogs/</loc>
   <lastmod>2023-05-13T07:52:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://msg91.com/guide/tag/2fa/</loc>
+  <loc>https://msg91.com/guide/tags/2fa/</loc>
   <lastmod>2023-05-13T07:52:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://msg91.com/guide/tag/addons-plugins/</loc>
+  <loc>https://msg91.com/guide/tags/addons-plugins/</loc>
   <lastmod>2023-05-13T07:52:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://msg91.com/guide/tag/ai/</loc>
+  <loc>https://msg91.com/guide/tags/ai/</loc>
   <lastmod>2023-05-13T07:52:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://msg91.com/guide/tag/cloud-communication/</loc>
+  <loc>https://msg91.com/guide/tags/cloud-communication/</loc>
   <lastmod>2023-05-13T07:52:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>
@@ -2148,37 +2143,27 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://msg91.com/guide/author/admin/</loc>
-  <lastmod>2023-05-13T07:52:41+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>https://msg91.com/guide/why-does-your-business-need-two-factor-authentication/</loc>
   <lastmod>2023-05-13T07:52:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://msg91.com/guide/tag/sendotp/</loc>
+  <loc>https://msg91.com/guide/tags/send-otp/</loc>
   <lastmod>2023-05-13T07:52:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://msg91.com/guide/tag/transactional-sms/</loc>
+  <loc>https://msg91.com/guide/tags/transactional-sms/</loc>
   <lastmod>2023-05-13T07:52:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://msg91.com/guide/tag/cpaas/</loc>
+  <loc>https://msg91.com/guide/tags/cpaas/</loc>
   <lastmod>2023-05-13T07:52:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://msg91.com/guide/how-to-grow-your-revenue-with-transactional-sms/</loc>
-  <lastmod>2023-05-13T07:52:41+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://msg91.com/guide/author/tejeshwani/</loc>
   <lastmod>2023-05-13T07:52:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>
@@ -2203,7 +2188,7 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://msg91.com/guide/tag/sendotp-2-0/</loc>
+  <loc>https://msg91.com/guide/tags/sendotp-2-0/</loc>
   <lastmod>2023-05-13T07:52:41+00:00</lastmod>
   <priority>0.64</priority>
 </url>

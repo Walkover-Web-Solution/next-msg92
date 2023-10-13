@@ -606,376 +606,269 @@ const Insms = () => {
                   </span>
                 </li>
               </ul>
-              <p>&nbsp;</p>
-              <h2 style={{ textAlign: "justify" }}>
-                <span style={{ fontSize: "16pt" }}>
-                  <span  >
-                    <span  className="mt-4">
-                      <strong>Frequently Asked Questions</strong>
-                    </span>
-                  </span>
-                </span>
-              </h2>
-              <p>
-                <br />
-                &nbsp;
-              </p>
-              <ol>
-                <li style={{ listStyleType: "decimal" }}>
-                  <span  >
-                    <span  >
-                      <span  className="mt-4">
-                        <strong>What is an SMS campaign?</strong>
-                      </span>
-                    </span>
-                  </span>
-                </li>
-              </ol>
-              <p style={{ textAlign: "justify" }}>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      An SMS campaign is a targeted marketing strategy that
-                      utilizes text messages to reach and engage with a specific
-                      audience. It involves sending promotional messages,
-                      updates, offers, reminders, and other relevant content
-                      directly to recipients' mobile devices.
-                    </span>
-                  </span>
-                </span>
-              </p>
-              <p>&nbsp;</p>
-              <ol start={2}>
-                <li style={{ listStyleType: "decimal" }}>
-                  <span  >
-                    <span  >
-                      <span  className="mt-4">
-                        <strong>How does an SMS campaign work?</strong>
-                      </span>
-                    </span>
-                  </span>
-                </li>
-              </ol>
-              <p style={{ textAlign: "justify" }}>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      To run an SMS campaign, you create compelling messages,
-                      define your target audience, and leverage the{" "}
-                    </span>
-                  </span>
-                </span>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      <strong>best campaign software</strong>
-                    </span>
-                  </span>
-                </span>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      {" "}
-                      platform like MSG91. The{" "}
-                    </span>
-                  </span>
-                </span>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      <strong>marketing SMS software</strong>
-                    </span>
-                  </span>
-                </span>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      {" "}
-                      helps you manage contacts, schedule message delivery,
-                      track campaign performance, and analyze valuable insights
-                      for better results.
-                    </span>
-                  </span>
-                </span>
-              </p>
-              <p>&nbsp;</p>
-              <ol start={3}>
-                <li style={{ listStyleType: "decimal" }}>
-                  <span  >
-                    <span  >
-                      <span  className="mt-4">
-                        <strong>
-                          What are the benefits of using SMS campaigns?
-                        </strong>
-                      </span>
-                    </span>
-                  </span>
-                </li>
-              </ol>
-              <p style={{ textAlign: "justify" }}>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">Having </span>
-                  </span>
-                </span>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      <strong>campaign automation tools</strong>
-                    </span>
-                  </span>
-                </span>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      {" "}
-                      for SMS campaigns offer numerous benefits, such as high
-                      open rates, instant message delivery, wide reach,
-                      cost-effectiveness, personalization opportunities,
-                      increased engagement, improved customer relationships, and
-                      the ability to drive conversions.
-                    </span>
-                  </span>
-                </span>
-              </p>
-              <p>&nbsp;</p>
-              <ol start={4}>
-                <li style={{ listStyleType: "decimal" }}>
-                  <span  >
-                    <span  >
-                      <span  className="mt-4">
-                        <strong>
-                          How can MSG91 help with my SMS campaigns?
-                        </strong>
-                      </span>
-                    </span>
-                  </span>
-                </li>
-              </ol>
-              <p style={{ textAlign: "justify" }}>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      MSG91 provides a comprehensive platform with powerful
-                      features for{" "}
-                    </span>
-                  </span>
-                </span>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      <strong>best text campaigns</strong>
-                    </span>
-                  </span>
-                </span>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      . It offers automation tools, personalized messaging
-                      capabilities, seamless integration options, reliable
-                      delivery, detailed analytics, and dedicated customer
-                      support to enhance your campaign effectiveness.
-                    </span>
-                  </span>
-                </span>
-              </p>
-              <p>&nbsp;</p>
-              <ol start={5}>
-                <li style={{ listStyleType: "decimal" }}>
-                  <span  >
-                    <span  >
-                      <span  className="mt-4">
-                        <strong>
-                          Can I personalize my SMS campaigns with MSG91?
-                        </strong>
-                      </span>
-                    </span>
-                  </span>
-                </li>
-              </ol>
-              <p style={{ textAlign: "justify" }}>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      Absolutely! MSG91 enables you to personalize your
-                    </span>
-                  </span>
-                </span>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      <strong> promotional text messages in India</strong>
-                    </span>
-                  </span>
-                </span>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      {" "}
-                      by incorporating recipient names, customizing message
-                      content, segmenting your audience based on demographics or
-                      preferences, and delivering targeted messages that
-                      resonate with individual recipients.
-                    </span>
-                  </span>
-                </span>
-              </p>
-              <p>&nbsp;</p>
-              <ol start={6}>
-                <li style={{ listStyleType: "decimal" }}>
-                  <span  >
-                    <span  >
-                      <span  className="mt-4">
-                        <strong>
-                          Are there any restrictions on sending SMS campaigns?
-                        </strong>
-                      </span>
-                    </span>
-                  </span>
-                </li>
-              </ol>
-              <p style={{ textAlign: "justify" }}>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      Yes, there are certain restrictions and compliance
-                      requirements that vary by country and region. These
-                      include obtaining proper consent from recipients, adhering
-                      to opt-out options, and complying with local regulations
-                      for messaging frequency, content, and sender
-                      identification.
-                    </span>
-                  </span>
-                </span>
-              </p>
-              <p>&nbsp;</p>
-              <ol start={7}>
-                <li style={{ listStyleType: "decimal" }}>
-                  <span  >
-                    <span  >
-                      <span  className="mt-4">
-                        <strong>
-                          How can I measure the success of my SMS campaigns?
-                        </strong>
-                      </span>
-                    </span>
-                  </span>
-                </li>
-              </ol>
-              <p style={{ textAlign: "justify" }}>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      With MSG91's analytics and reporting features, you can
-                      track key metrics like open rates, click-through rates,
-                      conversion rates, and overall campaign performance. These
-                      insights allow you to assess the effectiveness of your
-                      campaigns, make data-driven decisions, and optimize future
-                      strategies.
-                    </span>
-                  </span>
-                </span>
-              </p>
-              <p>&nbsp;</p>
-              <ol start={8}>
-                <li style={{ listStyleType: "decimal" }}>
-                  <span  >
-                    <span  >
-                      <span  className="mt-4">
-                        <strong>
-                          Is MSG91 secure and reliable for sending SMS
-                          campaigns?
-                        </strong>
-                      </span>
-                    </span>
-                  </span>
-                </li>
-              </ol>
-              <p style={{ textAlign: "justify" }}>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      Yes, MSG91 prioritizes data security and reliability. We
-                      employ robust measures to safeguard your information and
-                      ensure secure message delivery. Additionally, our
-                      partnerships with leading telecom operators ensure
-                      reliable SMS delivery to recipients.
-                    </span>
-                  </span>
-                </span>
-              </p>
-              <p>&nbsp;</p>
-              <ol start={9}>
-                <li style={{ listStyleType: "decimal" }}>
-                  <span  >
-                    <span  >
-                      <span  className="mt-4">
-                        <strong>
-                          Can I integrate MSG91 with my existing systems?
-                        </strong>
-                      </span>
-                    </span>
-                  </span>
-                </li>
-              </ol>
-              <p style={{ textAlign: "justify" }}>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      Absolutely! MSG91 offers seamless integration options with
-                      various CRM, e-commerce, and marketing tools. This allows
-                      you to leverage your existing systems and data, enhancing
-                      the efficiency and effectiveness of your SMS campaigns.
-                    </span>
-                  </span>
-                </span>
-              </p>
-              <p>&nbsp;</p>
-              <ol start={10}>
-                <li style={{ listStyleType: "decimal" }}>
-                  <span  >
-                    <span  >
-                      <span  className="mt-4">
-                        <strong>
-                          How can I get started with SMS campaigns using MSG91?
-                        </strong>
-                      </span>
-                    </span>
-                  </span>
-                </li>
-              </ol>
-              <p>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      To get started, visit the MSG91 website and explore our{" "}
-                    </span>
-                  </span>
-                </span>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      <strong>marketing SMS software</strong>
-                    </span>
-                  </span>
-                </span>
-                <span  >
-                  <span  >
-                    <span  className="mt-4">
-                      . Sign up for an account, familiarize yourself with the
-                      platform's features, create compelling messages, define
-                      your target audience, and launch your SMS campaigns to
-                      connect with your customers and drive success.
-                    </span>
-                  </span>
-                </span>
-              </p>
             </>
           </div>
         )}
         <button className="btn btn-dark mt-3" onClick={handleReadMore}>
           {showInsms ? "Read Less" : "Read More"}
         </button>
+
+        <div>
+              <h2 className="c-head c-fs-1 mt-5">FAQs</h2>
+
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      What is an SMS campaign?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                    An SMS campaign is a targeted marketing strategy that utilizes text messages to reach and engage with a specific audience. It involves sending promotional messages, updates, offers, reminders, and other relevant content directly to recipients' mobile devices.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseTwo"
+                    >
+                      How does an SMS campaign work?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                    To run an SMS campaign, you create compelling messages, define your target audience, and leverage the best campaign software platform like MSG91. The marketing SMS software helps you manage contacts, schedule message delivery, track campaign performance, and analyze valuable insights for better results.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseThree"
+                    >
+                      What are the benefits of using SMS campaigns?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                    Having campaign automation tools for SMS campaigns offer numerous benefits, such as high open rates, instant message delivery, wide reach, cost-effectiveness, personalization opportunities, increased engagement, improved customer relationships, and the ability to drive conversions.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingFour">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseFour"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseFour"
+                    >
+                      How can MSG91 help with my SMS campaigns?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseFour"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingFour"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                    MSG91 provides a comprehensive platform with powerful features for best text campaigns. It offers automation tools, personalized messaging capabilities, seamless integration options, reliable delivery, detailed analytics, and dedicated customer support to enhance your campaign effectiveness.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingFive">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseFive"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseFive"
+                    >
+                      Can I personalize my SMS campaigns with MSG91?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseFive"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingFive"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                    Absolutely! MSG91 enables you to personalize your promotional text messages in India by incorporating recipient names, customizing message content, segmenting your audience based on demographics or preferences, and delivering targeted messages that resonate with individual recipients.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingSix">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseSix"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseSix"
+                    >
+                      Are there any restrictions on sending SMS campaigns?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseSix"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingSix"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                    Yes, there are certain restrictions and compliance requirements that vary by country and region. These include obtaining proper consent from recipients, adhering to opt-out options, and complying with local regulations for messaging frequency, content, and sender identification.
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingSeven">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseSeven"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseSeven"
+                    >
+                     How can I measure the success of my SMS campaigns?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseSeven"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingSeven"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                    With MSG91's analytics and reporting features, you can track key metrics like open rates, click-through rates, conversion rates, and overall campaign performance. These insights allow you to assess the effectiveness of your campaigns, make data-driven decisions, and optimize future strategies.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingEight">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseEight"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseEight"
+                    >
+                      Is MSG91 secure and reliable for sending SMS campaigns?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseEight"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingEight"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                    Yes, MSG91 prioritizes data security and reliability. We employ robust measures to safeguard your information and ensure secure message delivery. Additionally, our partnerships with leading telecom operators ensure reliable SMS delivery to recipients.
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingNine">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseNine"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseNine"
+                    >
+                      Can I integrate MSG91 with my existing systems?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseNine"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingNine"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                    Absolutely! MSG91 offers seamless integration options with various CRM, e-commerce, and marketing tools. This allows you to leverage your existing systems and data, enhancing the efficiency and effectiveness of your SMS campaigns.
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTen">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTen"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseTen"
+                    >
+                      How can I get started with SMS campaigns using MSG91?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseTen"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingTen"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                    To get started, visit the MSG91 website and explore our marketing SMS software. Sign up for an account, familiarize yourself with the platform's features, create compelling messages, define your target audience, and launch your SMS campaigns to connect with your customers and drive success.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
       </div>
     </>
   );
