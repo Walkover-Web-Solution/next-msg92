@@ -1,3 +1,6 @@
+.hero-img-mobile-wrp{
+    display: none;
+}
 .heading-plus{
     .product-page-logo{
         height: 64px;
@@ -78,6 +81,7 @@
     text-transform: uppercase;
     font-weight: bold;
     animation: marquee 15s linear infinite;
+    display: flex;
     span{
         margin: 0 24px;
         display: inline-block;
@@ -168,12 +172,10 @@
             }
         }
     }
-    .hero-img-wrp{     
-        img{
-            top: 0;
-        }   
-        &:after{
-            display: none;
-        }
+    .hero-img-wrp{
+        display: none;
+    } 
+    .hero-img-mobile-wrp{
+        display: block;
     } 
 }

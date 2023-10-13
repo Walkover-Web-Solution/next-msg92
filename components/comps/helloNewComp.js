@@ -79,7 +79,7 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
       <div className="container overflow-hidden">
         <div className='row'>
           <div className="py-2 py-md-5 col-12 col-sm-6">
-            <div class="intro">INTRODUCING</div>
+            <div className="intro">INTRODUCING</div>
             <div className="d-flex align-items-center flex-column flex-sm-row">
               <h1 className={`heading-plus page-title ${pageData?.pagename}-heading c-fw-b`}>
                 <img src={pageData?.icon} className="product-page-logo me-2" />
@@ -89,6 +89,14 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
                 <br></br>
                 <span>Conversational HUB</span>
               </h1>
+            </div>
+
+            <div className='hero-img-mobile-wrp mt-3'>
+              <img
+                src="/images/hello/hero.svg"
+                className="img-fluid mx-auto"
+                alt="#"
+              />
             </div>
 
             <p className={`c-fs-4 text-uppercase col-otp c-ls-20 mx-auto mt-5 ${pageData?.pagename}-dark`}>
@@ -192,6 +200,24 @@ const HelloNewComponent = ({pageData, path, pricingPath}) => {
         </div>
 
         <div className="marquee mt-3">
+          <span className="yellow">Connect</span>
+          <span className="purple">Engage</span>
+          <span className="blue">Thrive</span>          
+          <span className="yellow">Connect</span>
+          <span className="purple">Engage</span>
+          <span className="blue">Thrive</span>          
+          <span className="yellow">Connect</span>
+          <span className="purple">Engage</span>
+          <span className="blue">Thrive</span>          
+          <span className="yellow">Connect</span>
+          <span className="purple">Engage</span>
+          <span className="blue">Thrive</span>          
+          <span className="yellow">Connect</span>
+          <span className="purple">Engage</span>
+          <span className="blue">Thrive</span>          
+          <span className="yellow">Connect</span>
+          <span className="purple">Engage</span>
+          <span className="blue">Thrive</span>          
           <span className="yellow">Connect</span>
           <span className="purple">Engage</span>
           <span className="blue">Thrive</span>          
