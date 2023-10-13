@@ -1,12 +1,78 @@
 // Child Component
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PreFooter from '../preFooter';
-import TrustedByOtherThanIndia from '../TrustedByOtherThanIndia';
+import TrustedByOtherThanIndia from '../trustedByOtherThanIndia';
 import Seo from '../seoComp';
+import axios from "axios";
+import { setUtm } from '../pricingComp';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import { MdDone } from 'react-icons/md';
 
 
-const HelloNewComponent = ({pageData, path, webhookData=null, pricingPath}) => {
+const HelloNewComponent = ({pageData, path, pricingPath}) => {
+  const fetchSubscription = async (currencyChange) =>{
+  var response = ''
+    
+    try{
+      const response = await axios.get(
+      `https://subscription.msg91.com/api/plans?currency=${currencyChange}&ms_id=7`
+    );
+    setSubscriptionHello(response.data.data)
+    // return subscriptionHello;
+    }
+    catch(error){
+      console.log(error,"error");
+    }
+  }
+  const [symbol, setSymbol] = useState('$');
+  const [currencyChange, setCurrency] = useState('USD');
+  const [selectedMode, setSelectedMode] = useState('Monthly');
+  const [subscriptionHello, setSubscriptionHello] = useState(''); // Initialize subscriptionHello state
+  useEffect(()=>{
+    const fetchData = async () => {
+      const data = await fetchSubscription(currencyChange);
+      setSubscriptionHello(data)
+    };
+    fetchData();
+  },[])
+  var plans = [];
+  var tempFeaturesArray = [];  
+  for (let i = 0; i < subscriptionHello?.length; i++) {
+    plans[i] = {};
+    plans[i].channels = [];
+    plans[i].features = [];
+    const subscription = subscriptionHello[i]?.planFeatures?.map((data, index) => {
+      if(data.is_visible === 1 && subscriptionHello[i]?.show_features){
+        if (data.feature.key.includes("support_channel")) {
+          plans[i].channels.push(data.feature.name);
+        }
+        else{          
+          if(!tempFeaturesArray.includes(data.feature.name)){
+            tempFeaturesArray.push(data.feature.name);
+            plans[i].features.push(data.feature.name);
+          }          
+        }
+      }
+    })
+  }
+  const changeCurrency = async (currency) => {
+    setCurrency(currency);
+    fetchSubscription(currency)
+    switch (currency) {
+      case 'USD':
+        setSymbol('$');
+        setCurrency('USD');
+        break;
+      case 'GBP':
+        setSymbol('£');
+        setCurrency('GBP');
+        break;
+    }
+  };
+  useEffect(() => {
+    setUtm();
+    fetchSubscription(currencyChange)
+  }, []);
   var i = 0;
   return (
     <>
@@ -136,6 +202,183 @@ const HelloNewComponent = ({pageData, path, webhookData=null, pricingPath}) => {
           <span className="purple">Engage</span>
           <span className="blue">Thrive</span>          
         </div>
+
+      <div className="d-flex justify-content-center">
+        <select
+          style={{ width: 'fit-content' }}
+          className="form-select me-4"
+          aria-label="Default select example"
+          onChange={(e) => changeCurrency(e.target.value)}
+        >
+          <option value="USD">USD</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </div>
+      <div className="d-flex flex-wrap flex-gap gap-3 w-100  card-container mt-5 justify-content-center">
+        {subscriptionHello?.length
+          ? subscriptionHello?.map((item, index) => {            
+            return (
+              <div key={`email-card-${index}`} className="mx-3">
+                <div className="d-flex h-100 align-items-start">
+                  {/* <div className="popular-chip c-fs-6">POPULAR</div> */}
+                  <div className="price-card email card  mb-4 mb-sm-0 c-bg-grey border-0 h-100">
+                    <div className="card-body text-center">
+                      <h3 className="c-fs-3">{item.name}</h3>
+                      <h5 className="mt-2 c-fs-2 text-green">
+                        {symbol}
+                        {selectedMode === 'Monthly'
+                          ? item?.plan_amounts[0]?.plan_amount
+                          : item?.plan_amounts[1]?.plan_amount}
+                        /{selectedMode === 'Monthly' ? 'Month' : 'Yearly'}
+                      </h5>
+                      <a
+                        href="https://control.msg91.com/signup/"
+                        target="_blank"
+                        className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-4 utm"
+                      >
+                        Get Started
+                      </a>
+                      <div className="c-fs-6 mt-2 text-start feature-list">
+                        <hr style={{ borderColor: "#999" }}></hr>
+                        <div className="c-fs-6 mb-2 mt-2 ">
+                          <strong className="c-fs-6 mb-2 mt-2">Included</strong>
+                          <div>
+                            <div>
+                              {' '}
+                              {
+                                item.plan_services[0].service_credit
+                                  .service_credit_rates[0].free_credits
+                              }{' '}
+                              {item.plan_services[0].service_credit.service.name}{' '}
+                            </div>
+                            <div>
+                              {
+                                item.plan_services[1].service_credit
+                                  .service_credit_rates[0].free_credits
+                              }{' '}
+                              {item.plan_services[1].service_credit.service.name}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="c-fs-4 mb-2 mt-2 ">
+                          <p>Features</p>                          
+                        </div>
+                        {index > 0 &&                        
+                            <div>
+                              <span className="text-green me-2">
+                                <MdDone />
+                              </span>
+                              <strong> All {subscriptionHello[index-1].name} Plan Features</strong>
+                            </div>
+                        }
+                        { /* item.show_features &&
+                          item.planFeatures
+                            .filter((data) => data.is_visible === 1)
+                            .sort((a, b) => {
+                              const featureA = a?.feature?.key?.replace(/_/g, ' ');
+                              const featureB = b?.feature?.key?.replace(/_/g, ' ');
+                              return featureA.localeCompare(featureB);
+                            })
+                            .map((data, index) => {
+                              const feature = data?.feature?.key?.replace(/_/g, ' ');
+                              let groupSupportChannel = false
+                              if (feature.includes("support channel")) {
+                                groupSupportChannel = true
+                              }
+                              return (
+                                <>
+                                  {!groupSupportChannel &&
+                                    <div key={`data-${index}`}>
+                                        <p>
+                                          <span className="text-green me-2">
+                                            <MdDone />
+                                          </span>
+                                          {feature}
+                                        </p>
+                                    </div>
+                                  }
+                                </>
+                              );
+                            }) */
+                            plans[index].features && 
+                            plans[index].features
+                            .map((data, index) => {                              
+                              return (
+                                <div key={`data-${index}`}>
+                                    <p>
+                                      <span className="text-green me-2">
+                                        <MdDone />
+                                      </span>
+                                      {data}
+                                    </p>
+                                </div>                                  
+                              );
+                            })
+                          }
+
+                        {index === 0 &&
+                          <div className="c-fs-6 mb-2"> 
+                            <span className="text-green me-2"><MdDone /></span> Supported Channels
+                            <ul className='mt-1 mb-1' style={{marginLeft: "7px"}}>
+                              {plans[index].channels.map((data, index) => {
+                                return (
+                                  <li key={`data-${index}`}>
+                                    {data}
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          </div>
+                        }
+
+                      </div>
+
+                      {item.postpaid_allowed && (
+                        <div className="c-fs-6 text-start feature-list">
+                          <strong>Extra</strong>
+                          <div>
+                            {symbol}{
+                              item.plan_services[0].service_credit
+                                .service_credit_rates[0].follow_up_rate
+                            }/
+                            {item.plan_services[0].service_credit.service.name}
+                          </div>
+                          <div>                            
+                            <div></div>
+                            {symbol}
+                            {
+                              item.plan_services[1].service_credit
+                                .service_credit_rates[0].follow_up_rate
+                            }
+                            /ticket
+                          </div>
+                        </div>
+                      )}                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })
+          : ''}
+        {/* <div className="mx-3">
+          <div className="card price-card email border-0  mb-4 mb-sm-0 c-bg-grey">
+            <div className="card-body justify-content-between">
+              <h3 className="c-fs-3">CUSTOM</h3>
+              <p className="c-fs-5">Talk to sales for a customized plan.</p>
+              <Link
+                data-bs-toggle="modal#"
+                data-bs-target="#sales-modal"
+                className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2"
+                href="/contact-us"
+              >
+                Talk to sales
+              </Link>
+            </div>
+          </div>
+        </div> */}
+      </div>
+
 
         <div className="container">          
           <div className='c-fs-2 mt-3'>

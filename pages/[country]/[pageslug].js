@@ -9,7 +9,6 @@ const mainpage = ({ pageData, params, path, pricingPath }) => {
   var Dataa = pageData;
   var channels = ['SMS','Email','WhatsApp','Voice'];
   var helloNewCountries = ['us','ae','es'];
-  console.log('pageData', params);
   if (!pageData) {
     return (
       <div>
