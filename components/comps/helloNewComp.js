@@ -13,7 +13,7 @@ const HelloNewComponent = ({pageData, path, webhookData=null, pricingPath}) => {
       <div className="container overflow-hidden">
         <div className='row'>
           <div className="py-2 py-md-5 col-12 col-sm-6">
-            <div>INTRODUCTING</div>
+            <div class="intro">INTRODUCING</div>
             <div className="d-flex align-items-center flex-column flex-sm-row">
               <h1 className={`heading-plus page-title ${pageData?.pagename}-heading c-fw-b`}>
                 <img src={pageData?.icon} className="product-page-logo me-2" />
@@ -26,11 +26,11 @@ const HelloNewComponent = ({pageData, path, webhookData=null, pricingPath}) => {
             </div>
 
             <p className={`c-fs-4 text-uppercase col-otp c-ls-20 mx-auto mt-5 ${pageData?.pagename}-dark`}>
-              Boosting customer satisfaction
+              {pageData?.tagline}
             </p>
             
             <h2 className="small-heading w-md-75 w-100 mx-auto fw-normal mt-2">
-              Seamlessly merging chat, email, call and video to resolve customer queries.
+              {pageData?.subheading}
             </h2>                
             
             <a href="https://control.msg91.com/signup/" className="btn btn-dark btn-lg c-fs-2 mt-5 utm get-started-hello" >
@@ -38,12 +38,14 @@ const HelloNewComponent = ({pageData, path, webhookData=null, pricingPath}) => {
             </a>
             <TrustedByOtherThanIndia />
           </div>
-          <div className='col-12 col-sm-6 hero-img-wrp'>
-            <img
-              src="/images/hello/hero.svg"
-              className="img-fluid mx-auto"
-              alt="#"
-            />
+          <div className='col-12 col-md-6 col-sm-12 order-sm-0'>
+            <div className='hero-img-wrp'>
+              <img
+                src="/images/hello/hero.svg"
+                className="img-fluid mx-auto"
+                alt="#"
+              />
+            </div>
           </div>
         </div>
       </div>
