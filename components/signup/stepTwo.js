@@ -44,6 +44,7 @@ class StepTwo extends React.Component {
                                                 id="emailIdentifier"
                                                 placeholder="Email Address"
                                                 onChange={(e) => this.props.identifierChange(false)}
+                                                disabled={this.props?.emailAccessToken}
                                             />
                                         )}
                                         <span className="ver-email-main__input__check">
@@ -52,6 +53,13 @@ class StepTwo extends React.Component {
                                     </div>
                                     {this.props?.signupByGitHub ? (
                                         <button className="">Change Email</button>
+                                    ) : this.props?.emailAccessToken ? (
+                                        <button
+                                            className="ver-email-main__btn btn  btn-login-prime-o"
+                                            onClick={(e) => this.props.identifierChange(false)}
+                                        >
+                                            Change Email
+                                        </button>
                                     ) : (
                                         <button
                                             className={`ver-email-main__btn btn    ${
@@ -74,7 +82,7 @@ class StepTwo extends React.Component {
                                     </p>
                                 ) : null}
                             </div>
-                            {this.props?.emailIdentifier ? (
+                            {this.props?.emailIdentifier && !this.props?.emailAccessToken ? (
                                 <>
                                     <span className="hor-line"></span>
                                     <div className="ver-email__otp w-100 py-2">
@@ -124,22 +132,35 @@ class StepTwo extends React.Component {
                                             id="contactIdentifier"
                                             placeholder="Mobile number"
                                             onChange={(e) => this.props.identifierChange(true)}
+                                            disabled={this.props?.smsAccessToken}
                                         />
 
                                         <span className="ver-phone-main__input__check">
                                             {this.props?.smsAccessToken && <MdCheckCircle className="ico-green" />}
                                         </span>
                                     </div>
-                                    <button
-                                        className={`ver-email-main__btn btn    ${
-                                            this.props?.smsIdentifier ? 'btn-light disabled' : 'btn-login-prime-o'
-                                        }`}
-                                        onClick={() =>
-                                            this.props.sendOtp(document.getElementById('contactIdentifier').value, true)
-                                        }
-                                    >
-                                        Get OTP
-                                    </button>
+                                    {this.props?.smsAccessToken ? (
+                                        <button
+                                            className="ver-mobile-main__btn btn  btn-login-prime-o"
+                                            onClick={(e) => this.props.identifierChange(true)}
+                                        >
+                                            Change Mobile
+                                        </button>
+                                    ) : (
+                                        <button
+                                            className={`ver-mobile-main__btn btn ${
+                                                this.props?.smsIdentifier ? 'btn-light disabled' : 'btn-login-prime-o'
+                                            }`}
+                                            onClick={() =>
+                                                this.props.sendOtp(
+                                                    document.getElementById('contactIdentifier').value,
+                                                    true
+                                                )
+                                            }
+                                        >
+                                            Get OTP
+                                        </button>
+                                    )}
                                 </div>
 
                                 {this.props?.smsIdentifier && this.props?.smsSuccessMessage ? (
@@ -147,7 +168,7 @@ class StepTwo extends React.Component {
                                 ) : null}
                             </div>
 
-                            {this.props?.smsIdentifier ? (
+                            {this.props?.smsIdentifier && !this.props?.smsAccessToken ? (
                                 <>
                                     <span className="hor-line"></span>
 
