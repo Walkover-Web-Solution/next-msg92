@@ -11,10 +11,7 @@ const GoogleLoginButton = (props) => {
 
   return (
     <button
-      className="entry__right_section__container__entry_with--btn-with-text"
-      style={{
-        border: "1px solid var(--primary-light-theme, #1E75BA)",
-      }}
+      className="btn rounded google-login"
       onClick={() => login()}
     >
       <img src="/img/tie/google-logo.svg" alt="Google Icon" />

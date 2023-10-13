@@ -293,7 +293,8 @@ class SignUp extends React.Component {
         return (
             <>
                 <section className="signup d-flex flex-column flex-md-row-reverse ">
-                    <div className="signup__right p-3 p-md-5 d-flex gap-4 flex-column ">
+                    
+                    <div className="signup__right d-flex gap-4 flex-column ">
                         <img src="/images/msgOriginalsvg.png" className="signup__right__logo d-block d-md-none" />
                         <h1 className="signup__right__heading c-fs-2 heading d-block d-md-none">
                             Signup to avail a complete suite of MSG91 products
@@ -339,7 +340,7 @@ class SignUp extends React.Component {
                             )}
                         </div>
                     </div>
-                    <div className="signup__left p-3 p-md-5 d-flex gap-4 flex-column">
+                    <div className="signup__left  d-flex gap-4 flex-column">
                         <img src="/images/msgOriginalsvg.png" className="signup__left__logo d-none d-md-block" />
                         <h1 className="signup__left__heading c-fs-2 heading d-none d-md-block">
                             Signup to avail a complete suite of MSG91 products
