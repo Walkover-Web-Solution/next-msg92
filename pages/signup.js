@@ -3,7 +3,6 @@ import { MdDone } from 'react-icons/md';
 import StepOne from '@/components/signup/stepOne';
 import StepTwo from '@/components/signup/stepTwo';
 import StepThree from '@/components/signup/stepThree';
-import StepThreeOne from '@/components/signup/stepThreeOne';
 import { getCookie, getQueryParamsDeatils, setCookie } from '@/components/utils';
 import { toast } from 'react-toastify';
 
