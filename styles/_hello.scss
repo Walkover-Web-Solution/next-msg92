@@ -1,3 +1,15 @@
+.ts2-white{
+    text-shadow: 2px 2px #fff;
+}
+.ts2-blue{
+    text-shadow: 2px 2px #26D9D9;
+}
+.ts2-purple{
+    text-shadow: 2px 2px #f699ff;
+}
+.ts2-yellow{
+    text-shadow: 2px 2px #F4FF80;
+}
 .hero-img-mobile-wrp{
     display: none;
 }
@@ -61,15 +73,33 @@
     .container{
         padding: 40px 40px;
     }
-    .container:nth-child(1),.container:nth-child(4){       
-        box-shadow: 16px 16px #F4FF80 !important;        
-    }    
-    .container:nth-child(2),.container:nth-child(5){       
-        box-shadow: 16px 16px #F699FF !important;        
-    }    
-    .container:nth-child(3),.container:nth-child(6){       
-        box-shadow: 16px 16px #26D9D9 !important;        
-    }    
+    .yellow{
+        box-shadow: 16px 16px #F4FF80 !important;
+        .head{
+            text-shadow: 2px 2px #F4FF80;
+        }
+    }
+    .purple{
+        box-shadow: 16px 16px #F699FF !important;
+        .head{
+            text-shadow: 2px 2px #F699FF;
+        }
+    }
+    .blue{
+        box-shadow: 16px 16px #26D9D9 !important;
+        .head{
+            text-shadow: 2px 2px #26D9D9;
+        }
+    }
+}
+.pricing-new-hello-wrp{
+    background: #26D9D9;
+    .form-select{
+        display: inline-block !important;
+    }
+    .price-card{
+        box-shadow: 8px 8px #000;
+    }
 }
 
 @keyframes marquee {
