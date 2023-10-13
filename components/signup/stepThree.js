@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { MdKeyboardArrowRight, MdCheckCircle, MdCancel } from 'react-icons/md';
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft, MdCheckCircle, MdCancel } from 'react-icons/md';
 import { toast } from 'react-toastify';
 import Select from 'react-select';
 
@@ -590,9 +590,14 @@ class StepThree extends React.Component {
                                     I agree to the terms and conditions
                                 </p>
                             </div>
-                            <div>
+                            <div className="d-flex mt-3">
+                                <button className="me-3 btn btn-login-secondary" onClick={() => this.props.setStep(2)}>
+                                    {' '}
+                                    <MdKeyboardArrowLeft />
+                                    Back
+                                </button>
                                 <button
-                                    className="btn btn-login-prime mt-2"
+                                    className="btn btn-login-prime"
                                     type="button"
                                     onClick={this.finalSubmit}
                                     disabled={!this.state.formData.agreeToTerms}

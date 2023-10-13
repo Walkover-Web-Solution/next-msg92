@@ -242,9 +242,9 @@ class StepTwo extends React.Component {
                             ) : null}
                         </div>
                     </div>
-                    <div className="row ">
+                    <div className="row">
                         <div>
-                            <button className="me-3 btn btn-login-prime-o" onClick={() => this.props.setStep(1)}>
+                            <button className="me-3 btn btn-login-secondary" onClick={() => this.props.setStep(1)}>
                                 {' '}
                                 <MdKeyboardArrowLeft />
                                 Back
