@@ -5,6 +5,7 @@ import StepTwo from '@/components/signup/stepTwo';
 import StepThree from '@/components/signup/stepThree';
 import { getCookie, getQueryParamsDeatils, setCookie } from '@/components/utils';
 import { toast } from 'react-toastify';
+import { MdCheckCircle } from 'react-icons/md';
 
 const OTPRetryModes = {
     Sms: '11',
@@ -286,7 +287,13 @@ class SignUp extends React.Component {
             .then((result) => {
                 this.setSession(result);
                 if (!result?.hasError) {
-                    location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', getCookie('sessionId'));
+                    this.setStep(4);
+                    setTimeout(() => {
+                        location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(
+                            ':session',
+                            getCookie('sessionId')
+                        );
+                    }, 10);
                 } else {
                     toast.error(result?.errors?.[0] ?? result?.errors);
                 }
@@ -302,7 +309,14 @@ class SignUp extends React.Component {
                         <h1 className="signup__right__heading c-fs-2 heading d-block d-md-none">
                             Signup to avail a complete suite of MSG91 products
                         </h1>
-                        <h1 className="signup__right__heading c-fs-2 heading ">Create an account</h1>
+                        {this.state.activeStep === 4 ? (
+                            <h1 className="signup__right__heading c-fs-2 heading text-green">
+                                Account created Successfully!
+                            </h1>
+                        ) : (
+                            <h1 className="signup__right__heading c-fs-2 heading ">Create an account</h1>
+                        )}
+
                         <div className="signup__right__main">
                             {/* STEP #1 */}
                             {this.state.activeStep === 1 && (
@@ -341,6 +355,21 @@ class SignUp extends React.Component {
                                     setStep={this.setStep}
                                     finalSubmit={this.finalSubmit}
                                 />
+                            )}
+                            {this.state.activeStep === 4 && (
+                                <div className="trep-three d-flex flex-column gap-3">
+                                    <div className="step-three__progress d-flex align-items-center gap-3 ">
+                                        <div className="text-green align-items-center gap-1 c-fs-5 d-none d-lg-flex">
+                                            <MdCheckCircle className="ico-green" /> Verify email & mobile number
+                                        </div>
+                                        <span className="progress-line line-green d-none d-lg-block "></span>
+                                        <div className="text-green d-flex align-items-center gap-1 c-fs-5 ">
+                                            <MdCheckCircle className="ico-green" />
+                                            Enter details
+                                        </div>
+                                    </div>
+                                    <p className="step-three__reddirect">Redirecting...</p>
+                                </div>
                             )}
                         </div>
                     </div>
