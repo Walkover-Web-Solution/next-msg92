@@ -34,11 +34,16 @@ class SignUp extends React.Component {
             allowedRetry: null,
             emailAccessToken: null,
             smsAccessToken: null,
+            preselectedService: null,
         };
     }
 
     componentDidMount = () => {
         this.otpWidgetSetup();
+        const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
+        if (queryParams?.service) {
+            this.setState({ preselectedService: queryParams.service });
+        }
     };
 
     setStep = (step) => {
@@ -292,7 +297,6 @@ class SignUp extends React.Component {
         return (
             <>
                 <section className="signup d-flex flex-column flex-md-row-reverse ">
-                    
                     <div className="signup__right d-flex gap-4 flex-column ">
                         <img src="/images/msgOriginalsvg.png" className="signup__right__logo d-block d-md-none" />
                         <h1 className="signup__right__heading c-fs-2 heading d-block d-md-none">
@@ -333,6 +337,7 @@ class SignUp extends React.Component {
                             {this.state.activeStep === 3 && (
                                 <StepThree
                                     invitations={this.state.invitations}
+                                    preselectedService={this.state.preselectedService}
                                     setStep={this.setStep}
                                     finalSubmit={this.finalSubmit}
                                 />

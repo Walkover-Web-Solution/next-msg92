@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { MdKeyboardArrowRight, MdCheckCircle, MdCancel } from 'react-icons/md';
 import { toast } from 'react-toastify';
+import Select from 'react-select';
 
 class StepThree extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class StepThree extends React.Component {
                 howToUse: '',
                 companyName: '',
                 industryType: '',
-                serviceNeeded: '',
+                serviceNeeded: [],
                 country: '',
                 countryName: '',
                 stateProvince: '',
@@ -35,6 +36,8 @@ class StepThree extends React.Component {
                 // Add more error fields for other inputs
             },
             invitationRender: true,
+            defaultServiceNeeded: null,
+            serviceRender: true,
             createCompany: !props.invitations,
             countryNames: [],
         };
@@ -78,7 +81,22 @@ class StepThree extends React.Component {
     componentDidMount() {
         this.fetchServices()
             .then((response) => {
-                this.setState({ services: response.data.data });
+                let services = response.data.data;
+                this.setState({ services });
+                if (this.props?.preselectedService) {
+                    Object.entries(services).find(([key, value]) => {
+                        if (value.toLowerCase().includes(this.props?.preselectedService.toLowerCase())) {
+                            this.setState({
+                                defaultServiceNeeded: [{ value: +key, label: value }],
+                                serviceRender: false,
+                            });
+                            setTimeout(() => {
+                                this.setState({ serviceRender: true });
+                            }, 1);
+                            return true;
+                        }
+                    });
+                }
             })
             .catch((error) => {
                 console.error(error);
@@ -300,46 +318,48 @@ class StepThree extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="d-grid gap-4 my-2">
-                        {this.state.invitationRender &&
-                            Object.values(this.props.invitations).map((value) => {
-                                return (
-                                    <div className="d-flex flex-wrap gap-3 align-items-center">
-                                        <p>
-                                            You are invited to join <span class="c-fw-sb">{value.companyName}</span>
-                                        </p>
-                                        {(value?.accept === null || value?.accept === undefined) && (
-                                            <div className="d-flex gap-3 align-items-center">
-                                                <button
-                                                    className="btn btn-sm btn-accept rounded"
-                                                    onClick={() => {
-                                                        value.accept = true;
-                                                        this.state.formData.acceptInviteForCompanies.push(
-                                                            value.companyId
-                                                        );
-                                                        this.handleInvitationSelection();
-                                                    }}
-                                                >
-                                                    Accept
-                                                </button>
-                                                <button
-                                                    className="btn btn-sm btn-reject rounded"
-                                                    onClick={() => {
-                                                        value.accept = false;
-                                                        this.handleInvitationSelection();
-                                                    }}
-                                                >
-                                                    Reject
-                                                </button>
-                                            </div>
-                                        )}
-                                        {value?.accept === true && <MdCheckCircle className="ico-green" />}
-                                        {value?.accept === false && <MdCancel className="ico-red" />}
-                                        {}
-                                    </div>
-                                );
-                            })}
-                    </div>
+                    {this.props.invitations && (
+                        <div className="d-grid gap-4 my-2">
+                            {this.state.invitationRender &&
+                                Object.values(this.props.invitations).map((value) => {
+                                    return (
+                                        <div className="d-flex flex-wrap gap-3 align-items-center">
+                                            <p>
+                                                You are invited to join <span class="c-fw-sb">{value.companyName}</span>
+                                            </p>
+                                            {(value?.accept === null || value?.accept === undefined) && (
+                                                <div className="d-flex gap-3 align-items-center">
+                                                    <button
+                                                        className="btn btn-sm btn-accept rounded"
+                                                        onClick={() => {
+                                                            value.accept = true;
+                                                            this.state.formData.acceptInviteForCompanies.push(
+                                                                value.companyId
+                                                            );
+                                                            this.handleInvitationSelection();
+                                                        }}
+                                                    >
+                                                        Accept
+                                                    </button>
+                                                    <button
+                                                        className="btn btn-sm btn-reject rounded"
+                                                        onClick={() => {
+                                                            value.accept = false;
+                                                            this.handleInvitationSelection();
+                                                        }}
+                                                    >
+                                                        Reject
+                                                    </button>
+                                                </div>
+                                            )}
+                                            {value?.accept === true && <MdCheckCircle className="ico-green" />}
+                                            {value?.accept === false && <MdCancel className="ico-red" />}
+                                            {}
+                                        </div>
+                                    );
+                                })}
+                        </div>
+                    )}
                     {this.props?.invitations && !this.state.createCompany && (
                         <div>
                             <button
@@ -398,25 +418,26 @@ class StepThree extends React.Component {
                                     </select>
                                 </div>
                                 <div className="col-12">
-                                    <select
-                                        autoComplete="on"
-                                        className="form-select"
-                                        aria-label="Default Service Needed"
-                                        name="serviceNeeded"
-                                        value={this.state.formData.serviceNeeded}
-                                        onChange={this.handleInputChange}
-                                    >
-                                        <option value="">Service Needed</option>
-                                        {this.state.services && Object.keys(this.state.services).length > 0 && (
-                                            <>
-                                                {Object.entries(this.state.services).map(([id, name]) => (
-                                                    <option key={id} value={name}>
-                                                        {name}
-                                                    </option>
-                                                ))}
-                                            </>
-                                        )}
-                                    </select>
+                                    {this.state.serviceRender && (
+                                        <Select
+                                            isMulti
+                                            isClearable
+                                            instanceId={'serviceNeeded'}
+                                            defaultValue={this.state.defaultServiceNeeded}
+                                            onChange={(value) =>
+                                                this.setState({ serviceNeeded: value.map((obj) => obj.value) })
+                                            }
+                                            placeholder="Select Service Needed"
+                                            options={
+                                                this.state.services
+                                                    ? Object.entries(this.state.services).map(([key, value]) => ({
+                                                          value: +key,
+                                                          label: value,
+                                                      }))
+                                                    : []
+                                            }
+                                        />
+                                    )}
                                 </div>
                                 <div className="d-flex gap-3 flex-column flex-lg-row detail-form__group">
                                     <div className="w-100">
