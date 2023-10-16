@@ -443,6 +443,10 @@
         "title": "MSG91 for Startups - upto 25,000 SMS per month for every Startup",
         "description":"A startup for startups. Grow your startup with MSG91’s SMS for startups. First few transactional bulk SMS free every month. Spread this initiative and help startup."
     },
+    "/startups-form": {
+        "title": "MSG91 Startups form",
+        "description":"Shared about you and your business is up to date and accurate at the time of submission"
+    },
     "/terms-of-use": {
         "title": "Terms",
         "description":"Terms Privacy policy GDPR Refund policy Cookie policy Startup Policy Fair pricing policy No spam Terms Simple terms for a longterm relationship!Our services consist of the platform, features and connectivity that MSG91 provides to you. This policy is w.e.f. Nov 7, 2012.Using our services? Keep `em in mind!This policy is effective from Nov 07, 2012...."
@@ -985,6 +989,9 @@
     },
     "/case-studies/indialends": {
         "title": "IndiaLends: Ensuring Seamless Operations for Customers with MSG91"
+    },
+    "case-studies/unacademy": {
+        "title": "Unacademy: Making Learning and Teaching Easy with MSG91"
     },
 
     "case-studies-tags -----------------------":{},
