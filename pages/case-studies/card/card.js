@@ -15,6 +15,7 @@ const casestudycard = () => {
                         <span className="text-white bg-black c-fs-5 py-1 px-2">NGO</span>
                         <span className="text-white bg-black c-fs-5 py-1 px-2">Transaction SMS</span>
                         <span className="text-white bg-black c-fs-5 py-1 px-2">Unicode</span>
+                        <span className="text-white bg-black c-fs-5 py-1 px-2">Education</span>
                     </div>
                 </div>
 

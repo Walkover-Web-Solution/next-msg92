@@ -1,179 +1,177 @@
 // Parent Component
 import React, { useEffect } from "react";
 import PreFooter from "@/components/preFooter";
-import Head from "next/head";
 const ParentComponent = ({ pricingPath }) => {
-  //const data = json.global.hello;
+  //const data = json.global.hello;  
   useEffect(() => {
-    var qrcode = new QRCode(document.getElementById("qrcode"), {
-      width: 150,
-      height: 150,
-      colorDark: "#000000",
-      colorLight: "#ffffff",
-    });
-    $(function () {
-      $("#wq-copy-btn").on("click", function (event) {
-        event.preventDefault();
-        var elementText = $("#whatsappChatWidgetStartChat").attr("href");
-        navigator.clipboard.writeText(elementText);
-        $(this).find('span').text('Copied!');
+    var hasChild = document.getElementById("qrcode").hasChildNodes();
+    
+    if(!hasChild) {
+      var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width: 150,
+        height: 150,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
       });
       
-      $("#wq-copy-code").on("click", function (event) {
-        event.preventDefault();
-        var elementText = $("#widget-code").text();
-        navigator.clipboard.writeText(elementText);
-        $(this).find('span').text('Copied!')
-      });
-      
-      $("#edit").on("click", function () {
-        $("#widget-dummy-preview, #widget-form").show();
-        $("#widget-preview, #widget-code-wrp").hide();
-      });
-
-      $(".wq-create-link-btn").on("click", function (event) {
-        event.preventDefault();
-        var wp_number = $("#wqinputphone").val();
-        var wp_message = $("#wqinputtext").val();
-        var wp_welcome = $("#whatsappChatWidgetWelcomeText").val();
-        var wp_brand = $("#whatsappChatWidgetBrandImage").val();
+      $(function () {
+        $("#wq-copy-btn").on("click", function (event) {
+          event.preventDefault();
+          var elementText = $("#whatsappChatWidgetStartChat").attr("href");
+          navigator.clipboard.writeText(elementText);
+          $(this).find('span').text('Copied!');
+        });
         
-        // Example usage
-        if (wp_number == "") {
-          alert("Please enter a phone number.");
-        } else {
-          var wp_end_url = `https://wa.me/${wp_number}?text=${encodeURIComponent(
-            wp_message
-          )}`;
-          $("#widget-dummy-preview").hide();
-          $("#widget-preview").show();
-          $("#whatsappChatWidgetStartChat").attr("href", wp_end_url);
-          $("#dataBox").val(wp_end_url);
-          $(".wq-link-display-box").html(wp_end_url);
-          $("#whatsappChatWidgetBrandImagePreview").attr('src', (wp_brand) ? wp_brand : 'https://msg91.com/img/icon/walink-whatsapp.svg')
-          makeQrCode();          
-          widgetCode(wp_brand, wp_welcome, wp_message, wp_number);            
+        $("#wq-copy-code").on("click", function (event) {
+          event.preventDefault();
+          var elementText = $("#widget-code").text();
+          navigator.clipboard.writeText(elementText);
+          $(this).find('span').text('Copied!')
+        });
+        
+        $("#edit").on("click", function () {
+          $("#widget-dummy-preview, #widget-form").show();
+          $("#widget-preview, #widget-code-wrp").hide();
+        });
+  
+        $(".wq-create-link-btn").on("click", function (event) {
+          event.preventDefault();
+          var wp_number = $("#wqinputphone").val();
+          var wp_message = $("#wqinputtext").val();
+          var wp_welcome = $("#whatsappChatWidgetWelcomeText").val();
+          var wp_brand = $("#whatsappChatWidgetBrandImage").val();
+          
+          // Example usage
+          if (wp_number == "") {
+            alert("Please enter a phone number.");
+          } else {
+            var wp_end_url = `https://wa.me/${wp_number}?text=${encodeURIComponent(
+              wp_message
+            )}`;
+            $("#widget-dummy-preview").hide();
+            $("#widget-preview").show();
+            $("#whatsappChatWidgetStartChat").attr("href", wp_end_url);
+            $("#dataBox").val(wp_end_url);
+            $(".wq-link-display-box").html(wp_end_url);
+            $("#whatsappChatWidgetBrandImagePreview").attr('src', (wp_brand) ? wp_brand : 'https://msg91.com/img/icon/walink-whatsapp.svg')
+            makeQrCode();          
+            widgetCode(wp_brand, wp_welcome, wp_message, wp_number);            
+          }
+        });
+  
+        const downloadBtn = document.getElementById("downloadBtn");
+        const qrcode1 = document.getElementById("qrcode");
+        const toHideClassName = "hide";
+        function makeQrCode() {
+          var elText = document.getElementById("dataBox");
+          if (!elText.value) {
+            alert("Input a text");
+            elText.focus();
+            return;
+          }        
+          qrcode.makeCode(elText.value);
         }
-      });
-
-      const downloadBtn = document.getElementById("downloadBtn");
-      const qrcode1 = document.getElementById("qrcode");
-      const toHideClassName = "hide";
-      function makeQrCode() {
-        var elText = document.getElementById("dataBox");
-        if (!elText.value) {
-          alert("Input a text");
-          elText.focus();
-          return;
+  
+        downloadBtn.onclick = function (e) {
+          e.preventDefault();
+          // Image tag
+          const img = qrcode1.getElementsByTagName("img")[0];
+  
+          // Canvas tag
+          const canvas = qrcode1.getElementsByTagName("canvas")[0];
+  
+          // Padding to QRCode
+          const padding = 40;
+  
+          // Adding padding to width and height
+          canvas.width = canvas.width + padding;
+          canvas.height = canvas.height + padding;
+  
+          // Canvas context
+          const context = canvas.getContext("2d");
+          // Clearing previous content
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          // Making the background white
+          context.fillStyle = "#ffffff";
+          context.fillRect(0, 0, canvas.width, canvas.height);
+          // Adding the image of QRCode
+          // x and y are padding / 2
+          context.drawImage(img, padding / 2, padding / 2);
+  
+          // Getting base64 url
+          const image = canvas.toDataURL("image/png", 1);
+          const filename = "WhatsApp-QR-code-" + Date.now() + ".png";
+          downloadImage(image, filename);
+          //reset height and width
+          canvas.width = 150;
+          canvas.height = 150;
+        };
+  
+        function downloadImage(image, filename) {
+          console.log(image);
+          console.log(filename);
+          // Creating hidden <a> tag to download
+          var element = document.createElement("a");
+          element.setAttribute("href", image);
+          element.setAttribute("download", filename);
+          element.setAttribute("class", toHideClassName);
+          document.body.appendChild(element);
+          element.click();
+          document.body.removeChild(element);
         }
-        qrcode.makeCode(elText.value);
-      }
-
-      downloadBtn.onclick = function (e) {
-        e.preventDefault();
-        // Image tag
-        const img = qrcode1.getElementsByTagName("img")[0];
-
-        // Canvas tag
-        const canvas = qrcode1.getElementsByTagName("canvas")[0];
-
-        // Padding to QRCode
-        const padding = 40;
-
-        // Adding padding to width and height
-        canvas.width = canvas.width + padding;
-        canvas.height = canvas.height + padding;
-
-        // Canvas context
-        const context = canvas.getContext("2d");
-        // Clearing previous content
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        // Making the background white
-        context.fillStyle = "#ffffff";
-        context.fillRect(0, 0, canvas.width, canvas.height);
-        // Adding the image of QRCode
-        // x and y are padding / 2
-        context.drawImage(img, padding / 2, padding / 2);
-
-        // Getting base64 url
-        const image = canvas.toDataURL("image/png", 1);
-        const filename = "WhatsApp-QR-code-" + Date.now() + ".png";
-        downloadImage(image, filename);
-        //reset height and width
-        canvas.width = 150;
-        canvas.height = 150;
-      };
-
-      function downloadImage(image, filename) {
-        console.log(image);
-        console.log(filename);
-        // Creating hidden <a> tag to download
-        var element = document.createElement("a");
-        element.setAttribute("href", image);
-        element.setAttribute("download", filename);
-        element.setAttribute("class", toHideClassName);
-        document.body.appendChild(element);
-        element.click();
-        document.body.removeChild(element);
-      }
-/* 
-{
+    /* 
+    {
+      brandSetting: {
+        brandImg: 'https://msg91.com/img/icon/walink-whatsapp.svg',                        
+        welcomeText: 'I have some questions about MSG91, \ncan you help?',
+        messageText: 'I’ve some questions about MSG91, can you help?',
+        phoneNumber: '85252859384',
+      },
+      chatButtonSetting: {
+        backgroundColor: '#25D366',      
+        ctaText: 'Chat with us',
+        ctaIconMSG: true,
+        marginLeft: '0',
+        marginRight: '20',
+        marginBottom: '20',
+        position: 'right',
+      },
+      enabled: true,
+    }
+      */
+        function widgetCode(barndImage, welcomeText, preFilledMsg, mobile) {
+          var html = `&lt;script&gt;
+    var options = {
     brandSetting: {
-      brandImg: 'https://msg91.com/img/icon/walink-whatsapp.svg',                        
-      welcomeText: 'I have some questions about MSG91, \ncan you help?',
-      messageText: 'I’ve some questions about MSG91, can you help?',
-      phoneNumber: '85252859384',
+      brandImg: "${barndImage}",
+      welcomeText: \`${welcomeText}\`, 
+      messageText: \`${preFilledMsg}\`,
+      phoneNumber: "${mobile}",
     },
     chatButtonSetting: {
-      backgroundColor: '#25D366',      
+      backgroundColor: "#24d366", //now is used as Brand Color
       ctaText: 'Chat with us',
-      ctaIconMSG: true,
-      marginLeft: '0',
-      marginRight: '20',
-      marginBottom: '20',
-      position: 'right',
+      marginLeft: "0",
+      marginRight: "20",
+      marginBottom: "20",
+      position: "right",
     },
     enabled: true,
-  }
-   */
-      function widgetCode(barndImage, welcomeText, preFilledMsg, mobile) {
-        var html = `&lt;script&gt;
-var options = {
-  brandSetting: {
-    brandImg: "${barndImage}",
-    welcomeText: \`${welcomeText}\`, 
-    messageText: \`${preFilledMsg}\`,
-    phoneNumber: "${mobile}",
-  },
-  chatButtonSetting: {
-    backgroundColor: "#24d366", //now is used as Brand Color
-    ctaText: 'Chat with us',
-    marginLeft: "0",
-    marginRight: "20",
-    marginBottom: "20",
-    position: "right",
-  },
-  enabled: true,
-  isNewChatWidget: true // new property to switch between old and new widget 
-}
-&lt;/script&gt;
-&lt;script type="text/javascript" onload="CreateWhatsappChatWidget(options)" src="https://msg91.com/js/waWidget.js"\&gt; &lt;/script&gt;`;
-        
-          $("#widget-code").html(html);        
-          hljs.highlightAll();          
-          $("#widget-code-wrp").show();
-          $("#widget-form").hide();
-      }
-    });
+    isNewChatWidget: true // new property to switch between old and new widget 
+    }
+    &lt;/script&gt;
+    &lt;script type="text/javascript" onload="CreateWhatsappChatWidget(options)" src="https://msg91.com/js/waWidget.js"\&gt; &lt;/script&gt;`;
+          
+            $("#widget-code").html(html);        
+            hljs.highlightAll();          
+            $("#widget-code-wrp").show();
+            $("#widget-form").hide();
+        }
+      });    
+    }    
   });
   return (
     <>
-     <Head>
-    <title>Free WhatsApp Link generator </title>
-    <meta name="description" content="Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!  - MSG91 -Best online cloud communication platform"/>
-    <meta property="og:title" content="WhatsApp Link Generator" />
-    <meta property="og:url" content="URL of your WhatsApp link generator webpage" />
-    </Head>
       <script type="text/javascript" src="/js/qrcode.js" defer></script>
       <script type="text/javascript" src="/js/jquery.min.js"></script>
       <script src="/js/highlight.min.js"></script>
@@ -603,11 +601,11 @@ var options = {
         <div>
               <h2 className="c-head c-fs-1 mt-5 mb-2">FAQs</h2>
 
-              <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne">
+              <div className="accordion accordion-flush" id="accordionFlushExample">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingOne">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseOne"
@@ -619,21 +617,21 @@ var options = {
                   </h2>
                   <div
                     id="flush-collapseOne"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingOne"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                     WhatsApp links use a specific URL format that,
                     when clicked, opens the WhatsApp app on a user's 
                     device and starts a chat with the provided phone number or message.
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingTwo">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingTwo">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseTwo"
@@ -645,20 +643,20 @@ var options = {
                   </h2>
                   <div
                     id="flush-collapseTwo"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingTwo"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                     Yes, MSG91 WhatsApp link generators allow you to add a prefilled message 
                     along with the phone number.
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingThree">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingThree">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseThree"
@@ -670,20 +668,20 @@ var options = {
                   </h2>
                   <div
                     id="flush-collapseThree"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingThree"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                     Yes, WhatsApp link generators can create links for both personal and business accounts. 
                     Business accounts often have additional features suitable for customer interactions.
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingFour">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingFour">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseFour"
@@ -695,20 +693,20 @@ var options = {
                   </h2>
                   <div
                     id="flush-collapseFour"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingFour"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
+                    <div className="accordion-body">
                     Yes, WhatsApp links work across different platforms, including iOS, Android, 
                     and web browsers, ensuring a seamless experience for users regardless of their device.
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingFive">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="flush-headingFive">
                     <button
-                      class="accordion-button collapsed"
+                      className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush-collapseFive"
@@ -720,14 +718,14 @@ var options = {
                   </h2>
                   <div
                     id="flush-collapseFive"
-                    class="accordion-collapse collapse"
+                    className="accordion-collapse collapse"
                     aria-labelledby="flush-headingFive"
                     data-bs-parent="#accordionFlushExample"
                   >
-                    <div class="accordion-body">
-                    You can generate a WhatsApp link by appending the phone number (including the country code) to 
+                    <div className="accordion-body">
+                    You can generate a WhatsApp link by appending the phone number to 
                     the WhatsApp URL: https://wa.me/phonenumbers. For example, to create a link for 
-                    the number +1234567890, the URL would be https://wa.me/1234567890.
+                    the number 1234567890, the URL would be https://wa.me/1234567890.
                     </div>
                   </div>
                 </div>

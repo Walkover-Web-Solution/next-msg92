@@ -1,14 +1,14 @@
 .blog {
     background-repeat: no-repeat;
-    background: url('./../public/images/blog-background.jpg');
+    background: url('./../public/images/pexels-j-lee-6825703.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
   
     .blog-home-container {
-      padding-bottom: 46px;
+      padding: 100px 24px 46px 24px;
       .post-list {
-        padding: 100px 24px 46px;
+        padding:46px;
         display: grid;
         height: auto !important;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -105,15 +105,16 @@
               margin-bottom: 10px;
               span {
                 margin-right: 8px;
+                margin-bottom: 4px;
                 display: inline-block;
                 height: auto;
                 line-height: 10px;
                 padding: 7px 11px 6px;
                 vertical-align: top;
-                margin-bottom: 2px;
                 font-size: 10px;
                 border-radius: 20px;
                 color: #000 !important;
+                background-color: #dddddd;
                 text-transform: uppercase;
               }
             }
@@ -203,8 +204,24 @@
     }
   
     &__back-btn {
-      background-color: var(--col-primary) !important;
+      background-color: var(--primary-color) !important;
       color: var(--white-color) !important;
+    }
+    .blog-page-tags {
+   
+      li{
+        a{
+          line-height: 10px;
+          margin-bottom: 4px;
+          padding: 7px 11px 6px;
+          vertical-align: top;
+          font-size: 10px;
+          border-radius: 20px;
+          color: #000 !important;
+          background-color: #dddddd;
+          text-transform: uppercase;
+        }
+      }
     }
   
     .body {
@@ -223,5 +240,26 @@
         max-width: 100%;
       }
     }
+  }
+
+  .tag-list{
+    display: block;
+    padding: 16px 0;
+    li{
+      margin-right: 8px;
+      display: inline-block;
+      height: auto;
+      line-height: 10px;
+      padding: 8px 16px;
+      vertical-align: top;
+      margin-bottom: 2px;
+      font-size: 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      background-color: #dddddd;
+      a{
+        color: #000 !important;
+      }
+    }    
   }
   

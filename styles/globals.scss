@@ -1,9 +1,17 @@
 @import "import";
-
+html,body,#__next{
+  height: 100%;
+}
+next-route-announcer{
+  p{
+    height: 0 !important;
+  }
+}
 body {
   font-size: 16px !important;
   color: var(--black-color);
   font-family: var(--c-body) !important;
+  overflow-x: hidden;
 }
 .c-ls-20 {
   letter-spacing: 0.2em;
@@ -16,6 +24,9 @@ body {
 }
 .heading {
   font-family: var(--c-head);
+}
+.heading-plus {
+  font-family: var(--c-body);
 }
 .section {
   width: 100%;
@@ -724,8 +735,8 @@ pre[class*="language-"] {
 
 .c-text-link {
   color: var(--black-color);
-  &:hover {
-    color: var(--primary-color);
+  &:hover{
+    color: var(--primary-color);  
   }
 }
 

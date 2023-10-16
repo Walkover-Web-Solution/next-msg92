@@ -49,7 +49,7 @@ const privacypolicy = () => {
               </li>
               <li>
                 <Link
-                  href="/fair-using-picing"
+                  href="/fair-pricing-policy"
                   className="dropdown-item c-fs-4"
                 >
                   Fair Pricing Policy

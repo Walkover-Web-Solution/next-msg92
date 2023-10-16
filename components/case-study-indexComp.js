@@ -29,7 +29,7 @@ const CaseStudyCard = ({ caseStudies }) => {
       </div>
       <div className="container d-flex flex-wrap gap-5 py-5">
         {caseStudyData.map((caseStudy, index) => (
-          <div className="casestudycard  mx-auto  p-3 d-flex gap-3 flex-column">
+          <div key={`cs-${index}`} className="casestudycard  mx-auto  p-3 d-flex gap-3 flex-column">
             <div className="casestudycard-img w-100 bg-white">
               <img
                 className=""
@@ -41,17 +41,16 @@ const CaseStudyCard = ({ caseStudies }) => {
               {caseStudy.heading}
             </h3>
             <p className=" c-fs-4">{caseStudy.content}</p>
-              <a key={index} href={caseStudy.link}><p className="btn btn-outline-dark py-1 px-2 c-fs-5 mb-3">Learn more</p></a>
+            <a href={caseStudy.link}><p className="btn btn-outline-dark py-1 px-2 c-fs-5 mb-3">Learn more</p></a>
             <div className=" d-flex flex-wrap gap-3 mt-auto">
               {caseStudy.tags.map((tag, index) => (
-                <a href={tagLinkFun(tag)}>
-                <span
-                  key={index}
+                <a key={`tag-${index}`} href={tagLinkFun(tag)}>
+                <span                  
                   className="btn btn-sm btn-dark c-fs-5"
                 >
                   {tag}
                 </span>
-               </a>
+              </a>
               ))}
             </div>
           </div>

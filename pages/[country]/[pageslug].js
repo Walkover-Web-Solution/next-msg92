@@ -1,14 +1,14 @@
 import data from "@/data/content.json";
 import IndexComp from "@/components/comps/indexComponent";
 import ProductComponent from "@/components/comps/productComp";
+import HelloNewComponent from "@/components/comps/helloNewComp";
 import ChannelComponent from "@/components/comps/channelComp";
 
 const mainpage = ({ pageData, params, path, pricingPath }) => {  
-  var page = pageData?.pagename;
-  var code = pageData?.code;
+  var page = pageData?.pagename;  
   var Dataa = pageData;
   var channels = ['SMS','Email','WhatsApp','Voice'];
-  
+  var helloNewCountries = ['us','ae','es'];
   if (!pageData) {
     return (
       <div>
@@ -33,13 +33,23 @@ const mainpage = ({ pageData, params, path, pricingPath }) => {
       );
     }
     else{
-      return (
-        <>
-          <div>
-            <ProductComponent pageData={Dataa} path={path} pricingPath={pricingPath} />
-          </div>
-        </>
-      );
+      if(helloNewCountries.includes(params?.country) && params?.pageslug === 'hello'){
+        return (
+          <>        
+            <div>
+              <HelloNewComponent pageData={Dataa} path={path} pricingPath={pricingPath} />
+            </div>
+          </>
+        );
+      } else {
+        return (
+          <>        
+            <div>
+              <ProductComponent pageData={Dataa} path={path} pricingPath={pricingPath} />
+            </div>
+          </>
+        );
+      }
     }
   }
 };
@@ -78,29 +88,6 @@ export async function getStaticProps({ params }) {
   }
   const countryData = data[country] || {};
   const pageData = countryData[pageslug] || null; // Update variable name to 'pageslug'
-
-  /* try {
-    // prompt through webhook with help of axios
-    const axios = require("axios");
-    const options = {
-        //url of webhook
-        url: "https://flow.sokt.io/func/8BCaBdmk150G",
-        headers: {
-            "Content-Type": "application/json",
-            "auth-key":"key2zQoVDAbhH7G",
-        },
-        method: "GET",
-
-        //data to be posted curl_command and api_description
-    };
-
-    //response of axios taking through webhook
-    const data = await axios(options);
-    var webhookData = data.data.rows;
-  } catch (error) {
-    console.log("inside CATCH webhook function");
-    console.log("error: ", error);
-  } */
   return {
     props: {
       pageData,

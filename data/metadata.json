@@ -864,5 +864,175 @@
     "/pricing/knowledgebase":{
         "title": "KnowledgeBase Pricing | MSG91",
         "description":"Avail robust and powerful services like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+
+    "LinkGenrator ******************************":{},
+    
+    "/free-whatsapp-link-generator": {
+        "title": "WhatsApp API for businesses | MSG91",
+        "description":"Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
+    },
+    "/in/free-whatsapp-link-generator": {
+        "title": "Free Whatsapp Link generator| MSG91 - India",
+        "description":"Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
+    },
+    "/ae/free-whatsapp-link-generator": {
+        "title": "Free Whatsapp Link generator | MSG91 - United Arab Emirates",
+        "description":"Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
+    },
+    "/ph/free-whatsapp-link-generator": {
+        "title": "Free Whatsapp Link generator in India | MSG91 - Philippines",
+        "description":"Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
+    },
+    "/sg/free-whatsapp-link-generator": {
+        "title": "Free Whatsapp Link generator | MSG91 - Singapore",
+        "description":"Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
+    },
+    "/es/free-whatsapp-link-generator": {
+        "title": "Free Whatsapp Link generator | MSG91 - Spain",
+        "description":"Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
+    },
+    "/gb/free-whatsapp-link-generator": {
+        "title": "Free Whatsapp Link generator | MSG91 - United Kingdom",
+        "description":"Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
+    },    
+    "/us/free-whatsapp-link-generator": {
+        "title": "Free Whatsapp Link generator | MSG91 - United States",
+        "description":"Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
+    },
+    
+    "case-studies -----------------------":{},
+    "/case-studies": {
+        "title": "Customer success stories: Businesses Thrive with MSG91 API Integration"
+    },
+    "/case-studies/azimpremji": {
+        "title": "Azim Premji Foundation: Informing Teachers and Trainers via  API | MSG91"
+    },
+    "/case-studies/crazypolar": {
+        "title": "Craypolar: Communicating with Customers via  API | MSG91"
+    },
+    "/case-studies/ixigo": {
+        "title": "Ixigo: Ensuring Seamless Communication via API | MSG91"
+    },
+    "/case-studies/milkbasket": {
+        "title": "Milkbasket: Sending Regular Updates to Customers via API | MSG91"
+    },
+    "/case-studies/talkCharge": {
+        "title": "TalkCharge: Updating Customers Regularly via API | MSG91"
+    },
+    "/case-studies/razorpay": {
+        "title": "Razorpay: Ensuring Customer Security via API | MSG91"
+    },
+    "/case-studies/zebpay": {
+        "title": "Zebpay: Ensuring Customer Security via API | MSG91"
+    },
+    "/case-studies/eurokids": {
+        "title": "Eurokids: Updating Parents on School Activities via API | MSG91"
+    },
+    "/case-studies/blackbuck": {
+        "title": "Blackbuck: Conducting Seamless Operations via Communication | MSG91"
+    },
+    "/case-studies/barbequenation": {
+        "title": "Barbeque Nation: Updating Customers on Orders via API | MSG91"
+    },
+    "/case-studies/policybazaar": {
+        "title": "Policy Bazaar: Updating Customers via Messaging | MSG91"
+    },
+    "/case-studies/joeyrooms": {
+        "title": "Joey Rooms: Keeping Clients Updated with Notifications | MSG91"
+    },
+    "/case-studies/leadsq": {
+        "title": "LeadSquared: Updating Clients' Customers Across Industries with | MSG91"
+    },
+    "/case-studies/letsshave": {
+        "title": "LetsShave: Updating Customers on Orders and Offers via Messaging | MSG91"
+    },
+    "/case-studies/grabonrent": {
+        "title": "GrabOnRent: Updating Customers on Orders and Offers via Messaging | MSG91"
+    },
+    "/case-studies/kartfood": {
+        "title": "KartFood: Updating Customers on Orders via Messaging | MSG91"
+    },
+    "/case-studies/sankalp": {
+        "title": "Sankalp India Foundation: Informing Blood Donors and Recipients with | MSG91"
+    },
+    "/case-studies/leegality": {
+        "title": "Leegality: Keeping Clients Updated with Messaging | MSG91"
+    },
+    "/case-studies/oxebox": {
+        "title": "OxeBox: Securing Customer Accounts via for Enhanced Security | MSG91"
+    },
+    "/case-studies/loco": {
+        "title": "Loco: Safeguarding Customer Accounts with OTP for Enhanced Security | MSG91"
+    },
+    "/case-studies/technovision": {
+        "title": "Technovision: Keeping Customers Informed about Offers via | MSG91"
+    },
+    "/case-studies/mahindra": {
+        "title": "Mahindra & Mahindra Automotive Division: Keeping Customers Informed via | MSG91"
+    },
+    "/case-studies/clickpost": {
+        "title": "ClickPost: Keeping Customers Informed about Orders via | MSG91"
+    },
+    "/case-studies/smartshift": {
+        "title": "Smart Shift: Ensuring a Hassle-Free Shift with Notifications | MSG91"
+    },
+    "/case-studies/saboro": {
+        "title": "Mahindra Saboro: Sending Order Updates to Customers via | MSG91"
+    },
+    "/case-studies/zing": {
+        "title": "ZingHR: Communicating with Potential Candidates via Messaging | MSG91"
+    },
+    "/case-studies/indialends": {
+        "title": "IndiaLends: Ensuring Seamless Operations for Customers with MSG91"
+    },
+
+    "case-studies-tags -----------------------":{},
+
+    "/case-studies/tag/ngo": {
+        "title": "NGO's Case Studies | MSG91"
+    },
+    "/case-studies/tag/transaction-sms": {
+        "title": "Transaction SMS Case Studies | MSG91"
+    },
+    "/case-studies/tag/unicode": {
+        "title": "Unicode Case Studies | MSG91"
+    },
+    "/case-studies/tag/services": {
+        "title": "Services Case Studies | MSG91"
+    },
+    "/case-studies/tag/startup": {
+        "title": "Startup Case Studies | MSG91"
+    },
+    "/case-studies/tag/food-travel-and-hospitality": {
+        "title": "Food, Travel and Hospitality Case Studies | MSG91"
+    },
+    "/case-studies/tag/promotional-sms": {
+        "title": "Promotional SMS Case Studies | MSG91"
+    },    
+    "/case-studies/tag/e-commerce": {
+        "title": "E-commerce Case Studies | MSG91"
+    },
+    "/case-studies/tag/otp": {
+        "title": "OTP Case Studies | MSG91"
+    },
+    "/case-studies/tag/fintech": {
+        "title": "Fintech Case Studies | MSG91"
+    },
+    "/case-studies/tag/education": {
+        "title": "Education Case Studies | MSG91"
+    },
+    "/case-studies/tag/logistics": {
+        "title": "Logistics Case Studies | MSG91"
+    },    
+    "/case-studies/tag/crm": {
+        "title": "CRM Case Studies | MSG91"
+    },
+    "/case-studies/tag/trivia-game": {
+        "title": "Trivia Game Case Studies | MSG91"
+    },
+    "/case-studies/tag/automobile": {
+        "title": "Automobile Case Studies | MSG91"
     }
+    
 }

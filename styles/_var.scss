@@ -18,9 +18,12 @@
     --c-fs-4:clamp(0.8rem,1.2vw,1.15rem); //16px //18px
     --c-fs-5:clamp(0.875rem,1vw,1rem); //14-16     
     --c-fs-6:clamp(0.75rem,1vw,0.875rem); //12-14     
+    --c-fw-600: 600;
 
     // colors
+   
     --primary-color: #1E75BA;
+    --primary-light:#E2F0FF;
     --whatsapp: #29A653;
     --light-blue: #F0F7FD;
     --black-color:#212528;
@@ -37,6 +40,7 @@
     --voice-light: rgba(105, 107, 239, 0.12);
     --rcs-light:  rgba(56, 146, 224, 0.12);
     --border-color: #ddd;
+    --success-color:#28a745;
     
     /* product colors */
     --sms :#1E75BA;
@@ -68,4 +72,10 @@
     --campaign-light :#F6EFFC;    
 
     --col-elert : #FF2400;
+
 }
+    $primary: #1E75BA;
+
+$theme-colors: (
+    "primary": $primary   ,
+  );

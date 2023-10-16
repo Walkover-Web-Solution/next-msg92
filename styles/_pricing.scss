@@ -52,7 +52,6 @@
       padding: 24px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
     }
   }
 }
@@ -95,6 +94,7 @@ box-sizing: border-box;
 
 .price-card{
   background: var(--c-light-grey) !important;  
+  text-transform: capitalize;
 }
 
 .rate-table{
@@ -108,6 +108,7 @@ box-sizing: border-box;
 .feature-list p {
   text-transform: capitalize;
 }
+ 
 /* .onlyin{
   position: sticky;
   top: 80px;

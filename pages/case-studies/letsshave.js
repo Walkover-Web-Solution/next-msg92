@@ -32,7 +32,7 @@ const letsshave = () => {
         <div className="row col-md-8 col-sm-12 d-flex px-5 ms-3">
           <div className="container p-5">
             <div className="py-5">
-              <h5 className="sub-heading py-5">JLetsShave updates customers of their orders and offers with SMS via MSG91</h5>
+              <h5 className="sub-heading py-5">LetsShave updates customers of their orders and offers with SMS via MSG91</h5>
             </div>
           </div>
         </div>

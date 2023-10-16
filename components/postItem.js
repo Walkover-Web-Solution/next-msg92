@@ -5,9 +5,8 @@ import { MdDateRange } from "react-icons/md";
 export default function PostItem({ post }) {
 
   function getBlogStyle(titleText) {
-    let textLength = titleText.length;
-    let wordLength = titleText.split(" ").length;
-    //console.log('titetext', textLength, wordLength)
+    let textLength = titleText?.length;
+    let wordLength = titleText?.split(" ").length;
 
     if (wordLength > 8 || textLength > 48) {
       return " blog-card--large";
@@ -27,22 +26,23 @@ export default function PostItem({ post }) {
   }    
   const readTime = calculateReadTime(article); */
   return (
-    <a href={"/guide/" + post.slug} 
+    <a href={"/guide/" + post?.slug} 
     className={
       "blog-card" +
       (post.thumbnail ? " bg-dark" : " bg-light") +
-      getBlogStyle(post.title)
+      getBlogStyle(post?.title)
     }
     style={{
       backgroundImage: post.thumbnail
-        ? 'url("' + post.thumbnail + '")'
+        ? 'url("' + post?.thumbnail + '")'
         : "none",
     }}
     >
       <div className="blog-card__content">
         <div className="blog-card-body">
         <h2 className="title">{post?.title}</h2>
-        <p className="content">{post?.description}</p>
+
+        <p className="content mt-2">{post?.description}</p>
       </div>
       <div className="blog-card-footer">
           <div className="blog-card-tags">

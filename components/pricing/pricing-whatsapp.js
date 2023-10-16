@@ -69,7 +69,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, c
                         </span>
                         {item.plan_services[0].service_credit.free_credits} for Outbound calls
                       </div>                    
-                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
+                      <a href="/signup?service=whatsapp" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                         Get Started
                       </a>
                     </div>
@@ -77,7 +77,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, c
                 </div>
               :
                 <div className="card price-card whatsapp border-0 text-center mb-4 mb-sm-0 c-bg-grey">                
-                  <div className="card-body">
+                  <div className="card-body justify-content-between">
                     <h3 className="c-fs-3">{item.name}</h3>
                     <h5 className="mt-2 c-fs-2 text-green">
                       {currencySymbol}
@@ -96,7 +96,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, c
                       </span>
                       Free balance of {currencySymbol} {item.plan_services[0].service_credit.service_credit_rates[0].free_credits}
                     </div>                    
-                    <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
+                    <a href="/signup?service=whatsapp" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                       Get Started
                     </a>
                   </div>
@@ -107,7 +107,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, c
           }):''
       }
         <div className="card price-card whatsapp border-0 text-center mb-4 mb-sm-0 c-bg-grey">
-          <div className="card-body">
+          <div className="card-body justify-content-between">
             <h3 className="c-fs-3">CUSTOM</h3>                  
             <p className="c-fs-5">Talk to sales for a customized plan.</p>
             <Link

@@ -137,9 +137,9 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                         <div>{symbol} {item.plan_services[1].service_credit.service_credit_rates[0].follow_up_rate} per Email Validation</div>
                       </div>
 
-                      <Link href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
+                      <ignu href="/signup?service=email" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                         Get Started
-                      </Link>
+                      </ignu>
                     </div>
                   </div>
                 }
@@ -148,17 +148,12 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
           }) : ''
         }
         <div className="card price-card email border-0 text-center mb-4 mb-sm-0 c-bg-grey">
-          <div className="card-body">
-            <h3 className="c-fs-3">CUSTOM</h3>
+          <div className="card-body justify-content-between">
+            <h3 className="c-fs-3">CUSTOM</h3>                  
             <p className="c-fs-5">Talk to sales for a customized plan.</p>
-            <Link
-                data-bs-toggle="modal#"
-                data-bs-target="#custom-pricing-modal"
-                className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2"
-                href="/contact-us"
-              >
-                Talk to sales
-              </Link>
+            <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+              Talk to sales
+            </button>
           </div>
         </div>
 
