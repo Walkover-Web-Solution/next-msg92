@@ -146,7 +146,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
                         paginationArray.map((num)=>{
                           return(
                             <li className={`page-item ${ pageNum === num ? 'active' : ''}`} key={`page-${num}`} onClick={()=>fetchData(num)}>
-                              <a class="page-link">{num}</a>
+                              <a className="page-link">{num}</a>
                             </li>  
                           )
                         })
