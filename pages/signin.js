@@ -17,31 +17,28 @@ class logIn extends React.Component {
 
     componentDidMount() {
         let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
-        if (queryParams) {
-            if (queryParams?.githublogin === 'true') {
-                const url = process.env.API_BASE_URL + '/api/v5/nexus/githubLogin';
-                this.hitLoginAPI(url, {
-                    code: queryParams?.code,
-                    state: queryParams?.state,
-                    redirectUrl: process.env.REDIRECT_URL,
-                });
-            }
-            if (queryParams?.loginWithZoho?.includes('true')) {
-                const request = { ...queryParams };
-                delete request.loginWithZoho;
-                const url = process.env.API_BASE_URL + '/api/v5/nexus/zohoLogin';
-                this.hitLoginAPI(url, {
-                    ...request,
-                    redirectUrl: process.env.REDIRECT_URL + '/signin?loginWithZoho=true',
-                });
-            }
-            if (queryParams?.loginWithOutlook?.includes('true')) {
-                const url = process.env.API_BASE_URL + '/api/v5/nexus/outlookLogin';
-                this.hitLoginAPI(url, {
-                    code: queryParams?.code,
-                    redirectUrl: process.env.REDIRECT_URL + '/outlook-token',
-                });
-            }
+
+        if (queryParams?.githublogin === 'true') {
+            const url = process.env.API_BASE_URL + '/api/v5/nexus/githubLogin';
+            this.hitLoginAPI(url, {
+                code: queryParams?.code,
+                state: queryParams?.state,
+                redirectUrl: process.env.REDIRECT_URL,
+            });
+        } else if (queryParams?.loginWithZoho?.includes('true')) {
+            const request = { ...queryParams };
+            delete request.loginWithZoho;
+            const url = process.env.API_BASE_URL + '/api/v5/nexus/zohoLogin';
+            this.hitLoginAPI(url, {
+                ...request,
+                redirectUrl: process.env.REDIRECT_URL + '/signin?loginWithZoho=true',
+            });
+        } else if (queryParams?.loginWithOutlook?.includes('true')) {
+            const url = process.env.API_BASE_URL + '/api/v5/nexus/outlookLogin';
+            this.hitLoginAPI(url, {
+                code: queryParams?.code,
+                redirectUrl: process.env.REDIRECT_URL + '/outlook-token',
+            });
         } else {
             this.otpWidgetSetup();
         }
@@ -68,7 +65,7 @@ class logIn extends React.Component {
         const configuration = {
             widgetId: process.env.OTP_WIDGET_TOKEN,
             tokenAuth: process.env.WIDGET_AUTH_TOKEN,
-            hideMethod: 'mobile', 
+            hideMethod: 'mobile',
             success: (data) => {
                 // Widget config success response
                 try {
