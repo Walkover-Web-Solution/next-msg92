@@ -32,7 +32,7 @@ class logIn extends React.Component {
                 const url = process.env.API_BASE_URL + '/api/v5/nexus/zohoLogin';
                 this.hitLoginAPI(url, {
                     ...request,
-                    redirectUrl: process.env.REDIRECT_URL + '/login?loginWithZoho=true',
+                    redirectUrl: process.env.REDIRECT_URL + '/signin?loginWithZoho=true',
                 });
             }
             if (queryParams?.loginWithOutlook?.includes('true')) {
@@ -68,6 +68,7 @@ class logIn extends React.Component {
         const configuration = {
             widgetId: process.env.OTP_WIDGET_TOKEN,
             tokenAuth: process.env.WIDGET_AUTH_TOKEN,
+            hideMethod: 'mobile', 
             success: (data) => {
                 // Widget config success response
                 try {
@@ -83,7 +84,7 @@ class logIn extends React.Component {
 
     // Zoho Login
     loginWithZoho() {
-        location.href = `https://accounts.zoho.com/oauth/v2/auth?response_type=code&client_id=${process.env.ZOHO_CLIENT_ID}&scope=aaaserver.profile.READ&redirect_uri=${process.env.REDIRECT_URL}/login?loginWithZoho=true`;
+        location.href = `https://accounts.zoho.com/oauth/v2/auth?response_type=code&client_id=${process.env.ZOHO_CLIENT_ID}&scope=aaaserver.profile.READ&redirect_uri=${process.env.REDIRECT_URL}/signin?loginWithZoho=true`;
     }
 
     // Google Login
