@@ -68,6 +68,7 @@ class logIn extends React.Component {
         const configuration = {
             widgetId: process.env.OTP_WIDGET_TOKEN,
             tokenAuth: process.env.WIDGET_AUTH_TOKEN,
+            hideMethod: 'mobile', 
             success: (data) => {
                 // Widget config success response
                 try {
