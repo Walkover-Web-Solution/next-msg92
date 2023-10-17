@@ -378,7 +378,7 @@ class SignUp extends React.Component {
                         <h1 className="signup__left__heading c-fs-2 heading d-none d-md-block c-fw-r">
                             Signup to avail a complete suite of MSG91 products
                         </h1>
-                        <p className="signup__left__que c-fs-6">What can you build with MSG91?</p>
+                        <p className="signup__left__que c-fs-8">What can you build with MSG91?</p>
                         <div className="signup__left__features d-grid gap-2">
                             <ul className="list-unstyled d-grid gap-3 c-fs-4">
                                 <li className="d-flex align-items-center gap-2 c-fs-7">
@@ -403,7 +403,7 @@ class SignUp extends React.Component {
                                 </li>
                             </ul>
                         </div>
-                        <p className="signup__left__que c-fs-6 c-fw-m">Trusted by 30000+ startups and enterprises</p>
+                        <p className="signup__left__que c-fs-8 c-fw-m">Trusted by 30000+ startups and enterprises</p>
                     </div>
                 </section>
             </>

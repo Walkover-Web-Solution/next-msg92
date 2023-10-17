@@ -586,7 +586,7 @@ class StepThree extends React.Component {
                                     checked={this.state.formData.agreeToTerms}
                                     onChange={this.handleInputChange}
                                 />
-                                <p className="form-check-label c-fs-6 c-fw-500 ps-0" htmlFor="termsCheckBox">
+                                <p className="form-check-label c-fs-8 c-fw-500 ps-0" htmlFor="termsCheckBox">
                                     I agree to the <a href={undefined}>Terms of Service</a> and  <a href={undefined}>Privacy Policy</a>
                                 </p>
                             </div>
