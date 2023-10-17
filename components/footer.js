@@ -54,6 +54,9 @@ const Footer = ({path, year}) => {
                 <a href={`${path}/voice`} className="c-link-underline c-fs-5 mt-2 c-fw-t">
                   Voice
                 </a>                
+                <a href={`${path}/numbers`} className="c-link-underline c-fs-5 mt-2 c-fw-t">
+                  Numbers
+                </a>                
               </div>
 
               <h4 className="c-fs-5 d-flex flex-column mt-5">Resources</h4>

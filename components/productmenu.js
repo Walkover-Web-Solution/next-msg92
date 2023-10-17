@@ -124,6 +124,19 @@ const ProductMenu = ({path}) => {
               <h4 className="c-fs-2">Voice</h4>
               
             </a>            
+            <a
+              className="d-flex gap-3 align-items-center product-menu-btn py-3"
+              href={`${path}/numbers`}
+            >
+              <Image
+                src="/img/icon/numbers.svg"
+                width={40}
+                height={40}
+                alt="ico"
+              />
+              <h4 className="c-fs-2">Numbers</h4>
+              
+            </a>            
           </div>
 
           <div className="menu mt-4 d-flex flex-column">

@@ -477,6 +477,59 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
       ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }
+      ]
     }
   },
   "in":{
@@ -956,6 +1009,59 @@
         {"more": "Understand your customers emotions through sentiment analysis"},
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
+      ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }
       ]
     }
   },
@@ -1443,6 +1549,59 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
       ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }
+      ]
     }
   },
   "es":{
@@ -1929,6 +2088,59 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
       ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }
+      ]
     }
   },
   "ph":{
@@ -2409,6 +2621,59 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
       ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }
+      ]
     }
   },
   "sg":{
@@ -2887,6 +3152,59 @@
         {"more": "Understand your customers emotions through sentiment analysis"},
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
+      ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }
       ]
     }
   },
@@ -3367,6 +3685,59 @@
         {"more": "Understand your customers emotions through sentiment analysis"},
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
+      ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }
       ]
     }
   },
@@ -3853,6 +4224,59 @@
         {"more": "Understand your customers emotions through sentiment analysis"},
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
+      ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }
       ]
     }
   }

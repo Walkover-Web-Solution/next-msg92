@@ -11,19 +11,23 @@ import snippetData from "@/pages/snippet.json";
 
 const ChannelComponent = ({ pageData, path, pricingPath }) => {    
   var HTTPSnippet = require("httpsnippet");
-  var i = 0;
+  var i = 0;  
   
   useEffect(() => {
-    Prism.highlightAll();    
+    if(pageData?.pagename !== 'Numbers'){
+      Prism.highlightAll();    
+    }
   }, []);
 
+  
   const snippet = new HTTPSnippet(snippetData[pageData.pagename]);
-
   const node = snippet.convert("node");
   const cURL = snippet.convert("shell", "curl");
   const php = snippet.convert("php");
   const python = snippet.convert("python");
   const ruby = snippet.convert("ruby");
+  
+
   return (
     <div>
       <div className="container text-center overflow-hidden">
@@ -49,137 +53,138 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
           </a>
         </div>
           <TrustedBy />
-        
-        <div className="code-wrp">
-          <ul
-            className="nav nav-pills mb-3 justify-content-center"
-            id="pills-tab"
-            role="tablist"
-          >
-            <li className="nav-item" role="presentation">
-              <button
-                className="nav-link active btn-sm"
-                id="pills-cURL-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-cURL"
-                type="button"
-                role="tab"
-                aria-controls="pills-cURL"
-                aria-selected="true"
-              >
-                cURL
-              </button>
-            </li>
-            <li className="nav-item" role="presentation">
-              <button
-                className="nav-link"
-                id="pills-node-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-node"
-                type="button"
-                role="tab"
-                aria-controls="pills-node"
-                aria-selected="false"
-              >
-                Node
-              </button>
-            </li>
-            <li className="nav-item" role="presentation">
-              <button
-                className="nav-link"
-                id="pills-php-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-php"
-                type="button"
-                role="tab"
-                aria-controls="pills-php"
-                aria-selected="false"
-              >
-                PHP
-              </button>
-            </li>
-            <li className="nav-item" role="presentation">
-              <button
-                className="nav-link"
-                id="pills-ruby-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-ruby"
-                type="button"
-                role="tab"
-                aria-controls="pills-ruby"
-                aria-selected="false"
-              >
-                Ruby
-              </button>
-            </li>
-            <li className="nav-item" role="presentation">
-              <button
-                className="nav-link"
-                id="pills-python-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-python"
-                type="button"
-                role="tab"
-                aria-controls="pills-python"
-                aria-selected="false"
-              >
-                Python
-              </button>
-            </li>
-          </ul>
-          <div className="tab-content" id="pills-tabContent">
-            <div
-              className="tab-pane fade show active"
-              id="pills-cURL"
-              role="tabpanel"
-              aria-labelledby="pills-cURL-tab"
+        {pageData?.pagename !== 'Numbers' &&
+          <div className="code-wrp">
+            <ul
+              className="nav nav-pills mb-3 justify-content-center"
+              id="pills-tab"
+              role="tablist"
             >
-              <pre>
-                <code className={`language-javascript`}>{cURL}</code>
-              </pre>
-            </div>
-            <div
-              className="tab-pane fade"
-              id="pills-node"
-              role="tabpanel"
-              aria-labelledby="pills-node-tab"
-            >
-              <pre>
-                <code className={`language-javascript`}>{node}</code>
-              </pre>
-            </div>
-            <div
-              className="tab-pane fade"
-              id="pills-php"
-              role="tabpanel"
-              aria-labelledby="pills-php-tab"
-            >
-              <pre>
-                <code className={`language-javascript`}>{php}</code>
-              </pre>
-            </div>
-            <div
-              className="tab-pane fade"
-              id="pills-ruby"
-              role="tabpanel"
-              aria-labelledby="pills-ruby-tab"
-            >
-              <pre>
-                <code className={`language-javascript`}>{ruby}</code>
-              </pre>
-            </div>
-            <div
-              className="tab-pane fade"
-              id="pills-python"
-              role="tabpanel"
-              aria-labelledby="pills-python-tab"
-            >
-              <pre>
-                <code className={`language-javascript`}>{python}</code>
-              </pre>
+              <li className="nav-item" role="presentation">
+                <button
+                  className="nav-link active btn-sm"
+                  id="pills-cURL-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-cURL"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-cURL"
+                  aria-selected="true"
+                >
+                  cURL
+                </button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button
+                  className="nav-link"
+                  id="pills-node-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-node"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-node"
+                  aria-selected="false"
+                >
+                  Node
+                </button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button
+                  className="nav-link"
+                  id="pills-php-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-php"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-php"
+                  aria-selected="false"
+                >
+                  PHP
+                </button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button
+                  className="nav-link"
+                  id="pills-ruby-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-ruby"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-ruby"
+                  aria-selected="false"
+                >
+                  Ruby
+                </button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button
+                  className="nav-link"
+                  id="pills-python-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-python"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-python"
+                  aria-selected="false"
+                >
+                  Python
+                </button>
+              </li>
+            </ul>
+            <div className="tab-content" id="pills-tabContent">
+              <div
+                className="tab-pane fade show active"
+                id="pills-cURL"
+                role="tabpanel"
+                aria-labelledby="pills-cURL-tab"
+              >
+                <pre>
+                  <code className={`language-javascript`}>{cURL}</code>
+                </pre>
+              </div>
+              <div
+                className="tab-pane fade"
+                id="pills-node"
+                role="tabpanel"
+                aria-labelledby="pills-node-tab"
+              >
+                <pre>
+                  <code className={`language-javascript`}>{node}</code>
+                </pre>
+              </div>
+              <div
+                className="tab-pane fade"
+                id="pills-php"
+                role="tabpanel"
+                aria-labelledby="pills-php-tab"
+              >
+                <pre>
+                  <code className={`language-javascript`}>{php}</code>
+                </pre>
+              </div>
+              <div
+                className="tab-pane fade"
+                id="pills-ruby"
+                role="tabpanel"
+                aria-labelledby="pills-ruby-tab"
+              >
+                <pre>
+                  <code className={`language-javascript`}>{ruby}</code>
+                </pre>
+              </div>
+              <div
+                className="tab-pane fade"
+                id="pills-python"
+                role="tabpanel"
+                aria-labelledby="pills-python-tab"
+              >
+                <pre>
+                  <code className={`language-javascript`}>{python}</code>
+                </pre>
+              </div>
             </div>
           </div>
-        </div>
+        }
 
       </div>
 
