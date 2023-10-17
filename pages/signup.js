@@ -375,7 +375,7 @@ class SignUp extends React.Component {
                     </div>
                     <div className="signup__left d-lg-flex d-md-flex gap-4 flex-column">
                         <img src="/images/msgOriginalsvg.png" className="signup__left__logo d-none d-md-block" />
-                        <h1 className="signup__left__heading c-fs-2 heading d-none d-md-block c-fw-b">
+                        <h1 className="signup__left__heading c-fs-2 heading d-none d-md-block c-fw-r">
                             Signup to avail a complete suite of MSG91 products
                         </h1>
                         <p className="signup__left__que c-fs-6">What can you build with MSG91?</p>

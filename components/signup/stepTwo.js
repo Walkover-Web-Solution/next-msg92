@@ -28,7 +28,7 @@ class StepTwo extends React.Component {
                         </div>
                     </div>
                     <div className="step-two__email w-100  d-grid gap-2">
-                        <label htmlFor="email" className="step-two__email__lable">
+                        <label htmlFor="email" className="step-two__email__lable c-fw-m">
                             Verify email
                         </label>
                         <div className="ver-email d-flex gap-4 align-items-top ">
@@ -40,7 +40,7 @@ class StepTwo extends React.Component {
                                         ) : (
                                             <input
                                                 type="email"
-                                                className="form-control w-100"
+                                                className="form-control w-100 c-fs-7"
                                                 id="emailIdentifier"
                                                 placeholder="Email Address"
                                                 onChange={(e) => this.props.identifierChange(false)}
@@ -106,7 +106,7 @@ class StepTwo extends React.Component {
                                                                 false
                                                             )
                                                         }
-                                                        className="col-primary c-fw-600 p-3 cursor-pointer"
+                                                        className="col-primary c-fw-600 p-3 cursor-pointer text-underline"
                                                     >
                                                         Email
                                                     </a>
@@ -119,7 +119,7 @@ class StepTwo extends React.Component {
                         </div>
                     </div>
                     <div className="step-two__phone  w-100  d-grid gap-2">
-                        <label htmlFor="contact" className="step-two__phone__lable">
+                        <label htmlFor="contact" className="step-two__phone__lable c-fw-m">
                             Verify Mobile number
                         </label>
                         <div className="ver-phone d-flex gap-4 align-items-top">
@@ -128,7 +128,7 @@ class StepTwo extends React.Component {
                                     <div className="ver-phone-main__input col ver-input__input">
                                         <input
                                             type="text"
-                                            className="form-control w-100"
+                                            className="form-control w-100 c-fs-7"
                                             id="contactIdentifier"
                                             placeholder="Mobile number"
                                             onChange={(e) => this.props.identifierChange(true)}
@@ -193,7 +193,7 @@ class StepTwo extends React.Component {
                                                                 true
                                                             )
                                                         }
-                                                        className="col-primary c-fw-600 p-3 cursor-pointer"
+                                                        className="col-primary c-fw-600 p-3 cursor-pointer text-underline"
                                                     >
                                                         Text
                                                     </a>
@@ -210,7 +210,7 @@ class StepTwo extends React.Component {
                                                                     true
                                                                 )
                                                             }
-                                                            className="col-primary c-fw-600 p-3 cursor-pointer"
+                                                            className="col-primary c-fw-600 p-3 cursor-pointer text-underline"
                                                         >
                                                             WhatsApp
                                                         </a>
@@ -229,7 +229,7 @@ class StepTwo extends React.Component {
                                                                     true
                                                                 )
                                                             }
-                                                            className="col-primary c-fw-600 p-3 cursor-pointer"
+                                                            className="col-primary c-fw-600 p-3 cursor-pointer text-underline"
                                                         >
                                                             Voice
                                                         </a>

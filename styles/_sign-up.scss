@@ -30,6 +30,9 @@
     svg {
         margin-left: 10px;
     }
+    &:hover{
+        background-color: var(--primary-hover-color) !important;
+    }
 }
 .btn-login-prime-o{
     border-radius: 4px !important;
@@ -88,6 +91,11 @@
         }
         &__heading{
             line-height: 36px;
+        }
+        @media (max-width: 768px) {
+            &__features{
+                margin-top: 24px;
+            }
         }
     }
     &__right {
@@ -258,4 +266,9 @@
 }
 .btn-reject{
     background-color:#F9EAE5 !important;
+}
+.text-underline {
+    &:hover {
+        text-decoration: underline !important;
+    }
 }
