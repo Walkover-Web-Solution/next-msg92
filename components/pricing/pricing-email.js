@@ -2,10 +2,25 @@ import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { setUtm } from "../pricingComp";
-const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSubscriptionEmail}) => {
-  const [selectedCurrency, setSelectedCurrency] = useState('INR');
+const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSubscriptionEmail, countryCode}) => {
+  var change
+  var changeSymbol
+  if(countryCode === 'US' || countryCode === 'AE' ||  countryCode === 'SG' || countryCode === 'PH'){
+    change = 'USD'
+    changeSymbol = '$'
+  }
+  else if(countryCode === 'GB' || countryCode === 'ES'){
+    change = 'GBP'
+    changeSymbol = '£'
+  }
+  else if (countryCode === 'IN'){
+    change = 'INR'
+    changeSymbol = '₹'
+  }
+  // ph,global
+  const [selectedCurrency, setSelectedCurrency] = useState(change);
   const [selectedMode, setSelectedMode] = useState("Monthly");
-  const [symbol, setSymbol] = useState("₹");
+  const [symbol, setSymbol] = useState(changeSymbol);
   
   const changeCurrency = async(currency) => {
     setSelectedCurrency(currency);
@@ -41,11 +56,13 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
   return (
     <>
     <div className="d-flex justify-content-center">
-      <select style={{width: 'fit-content'}} className="form-select me-4" aria-label="Default select example" onChange={(e)=>changeCurrency(e.target.value)}>
-        <option value="INR">INR</option>
-        <option value="USD">USD</option>
-        <option value="GBP">GBP</option>
-      </select>
+    <select style={{width: 'fit-content'}} className="form-select me-4" aria-label="Default select example" value={selectedCurrency} onChange={(e)=>changeCurrency(e.target.value)}>
+    <>
+      <option value="INR">INR</option>
+      <option value="USD">USD</option>
+      <option value="GBP">GBP</option>
+    </>
+</select>
       <select style={{width: 'fit-content'}} className="form-select" aria-label="Default select example" onChange={(e)=>setSelectedMode(e.target.value)}>
         <option value="Monthly">Monthly</option>
         <option value="Yearly">Yearly</option>
