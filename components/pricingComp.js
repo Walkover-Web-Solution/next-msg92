@@ -361,6 +361,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
             fetchSubscriptionEmail={fetchSubscription}
             currency={currency}
             currencySymbol={currencySymbol}
+            countryCode={countryCode}
           />
         )}
         {product === "voice" && (
@@ -380,6 +381,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
             currency={currency}
             currencySymbol={currencySymbol}
             oneTimeWtsAppFee={oneTimeWtsAppFee}
+            countryCode={countryCode}
           />
         )}
         {product === "rcs" && <Pricingrcs />}
