@@ -158,7 +158,7 @@ class logIn extends React.Component {
                                     </button>
                                     <button
                                         onClick={() => this.loginWithZoho()}
-                                        className="devlogin__btn__btn btn rounded"
+                                        className="devlogin__btn__btn btn rounded zogo-btn"
                                     >
                                         <img src="/img/icon-zogo.svg" />
                                     </button>

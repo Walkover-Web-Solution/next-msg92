@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 // font-family: 'Plus Jakarta Sans', sans-serif;
 // font-family: 'Libre Baskerville', serif;
 
 :root{
     // font family 
     --c-head:'Libre Baskerville', serif;
-    --c-body:'Plus Jakarta Sans', sans-serif;
+    --c-body:'Inter', sans-serif;
 
     // font-size
     --heading:clamp(1.5rem,4vw,3rem); //20px //48px
@@ -17,6 +17,8 @@
     --c-fs-3:clamp(1.15rem,1.5vw,1.25rem); //20px //18px
     --c-fs-4:clamp(0.8rem,1.2vw,1.15rem); //16px //18px
     --c-fs-5:clamp(0.875rem,1vw,1rem); 
+    --c-fs-6:clamp(1rem,1vw,1rem); //16px
+    --c-fs-7:clamp(0.88rem,1vw,0.88rem); //14px
     --c-fw-600: 600;
 
     // colors
@@ -28,6 +30,8 @@
     --black-color:#212528;
     --white-color:#ffffff;    
     --c-light-grey: #f2f2f3;
+    --c-light-grey-border: #d5d9dc;
+    --c-dark-grey: #8F9396;
     --c-grey:#6C6C6C;    
     --otp:#3A73B5;
     --segmento:#E55CA1;

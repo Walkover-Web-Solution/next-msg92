@@ -576,7 +576,7 @@ class StepThree extends React.Component {
                     )}
                     <div className="row">
                         <div className="col-12">
-                            <div className="form-check my-2 pb-2">
+                            <div className="form-check my-2 d-flex align-items-center gap-2">
                                 <input
                                     className="form-check-input"
                                     type="checkbox"
@@ -587,17 +587,17 @@ class StepThree extends React.Component {
                                     onChange={this.handleInputChange}
                                 />
                                 <p className="form-check-label c-fs-6 c-fw-500 ps-0" htmlFor="termsCheckBox">
-                                    I agree to the terms and conditions
+                                    I agree to the <a href={undefined}>Terms of Service</a> and  <a href={undefined}>Privacy Policy</a>
                                 </p>
                             </div>
                             <div className="d-flex mt-3">
-                                <button className="me-3 btn btn-login-secondary" onClick={() => this.props.setStep(2)}>
+                                <button className="me-3 btn btn-login-secondary c-fs-7" onClick={() => this.props.setStep(2)}>
                                     {' '}
                                     <MdKeyboardArrowLeft />
                                     Back
                                 </button>
                                 <button
-                                    className="btn btn-login-prime"
+                                    className="btn btn-login-prime c-fs-7"
                                     type="button"
                                     onClick={this.finalSubmit}
                                     disabled={!this.state.formData.agreeToTerms}

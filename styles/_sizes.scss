@@ -34,7 +34,12 @@
         word-spacing: 8px;
     }
 }
-
+.c-fs-6 {
+    font-size: var(--c-fs-6) !important;
+}
+.c-fs-7 {
+    font-size: var(--c-fs-7) !important;
+}
 // font weight
 .c-fw-t {
     font-weight: 300 !important;

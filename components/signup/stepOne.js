@@ -5,8 +5,8 @@ class StepOne extends React.Component {
     render() {
         return (
             <>
-                <div className="step-one d-grid gap-3">
-                    <div className="stepone__dev d-grid gap-2">
+                <div className="step-one d-grid">
+                    <div className="stepone__dev d-grid gap-3">
                         <p className="stepone__dev__que c-fs-5 ">Are you a developer?</p>
                         <div className="stepone__dev__icons">
                             <a href="/github-auth?signup=true">
