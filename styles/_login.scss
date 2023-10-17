@@ -11,7 +11,7 @@
         overflow: hidden;
         &__img {
             position: absolute;
-            left: -30px;
+            left: -1px;
             top: 156px;
         }
         &__logo {
@@ -40,16 +40,39 @@
 }
 .google-login {
     border: 1px solid var(--primary-color) !important;
+    display: flex !important;
+    min-width: 120px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    padding: 6px 16px !important;
+    span{
+        color: var(--primary-color);
+    }
 }
-.devlogin__btn {
-    &__btn {
-        border: 1px solid var(--primary-color) !important;
-        border-radius: 4px;
-        padding: 0 !important;
-        width: 40px;
-        height: 40px;
+.social-btn {
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex !important;
+    img{
+        width: 24px;
+    }
+    &.zogo-btn {
+        border-color: var(--border-alert-color) !important;
+        img{
+            width: 16px;
+        }
+    }
+    &.git-btn {
+        border-color: var(--black-border-color) !important;
     }
 }
 .text-link {
     color: var(--primary-color);
+    cursor: pointer;
 }

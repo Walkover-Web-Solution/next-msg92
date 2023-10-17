@@ -5,13 +5,13 @@ class StepOne extends React.Component {
     render() {
         return (
             <>
-                <div className="step-one d-grid gap-3">
-                    <div className="stepone__dev d-grid gap-2">
-                        <p className="stepone__dev__que c-fs-5 ">Are you a developer?</p>
+                <div className="step-one d-grid">
+                    <div className="stepone__dev d-grid gap-3">
+                        <p className="stepone__dev__que c-fs-7 ">Are you a developer?</p>
                         <div className="stepone__dev__icons">
                             <a href="/github-auth?signup=true">
                                 <button
-                                    className="product-btn btn rounded border border-dark"
+                                    className="product-btn btn rounded border border-dark social-btn"
                                     onClick={() => this.props.signupByGitHubAccount()}
                                 >
                                     <img src="/img/icon-github.svg" alt="Github" />
@@ -24,7 +24,7 @@ class StepOne extends React.Component {
                     </span>
                     <div className="step-one__nondev">
                         <button
-                            className="step-one__nondev__withemail btn btn-login-prime"
+                            className="step-one__nondev__withemail btn btn-login-prime c-fs-7"
                             onClick={() => this.props.setStep(2)}
                         >
                             Sign up with Email
@@ -32,7 +32,7 @@ class StepOne extends React.Component {
                         </button>
                     </div>
                     <p className="step-one__login">
-                        If you already have an account, <a href="/signin">Login</a>
+                        If you already have an account, <a href="/signin" className='text-underline'>Login</a>
                     </p>
                 </div>
             </>

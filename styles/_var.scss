@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 // font-family: 'Plus Jakarta Sans', sans-serif;
 // font-family: 'Libre Baskerville', serif;
 
 :root{
     // font family 
     --c-head:'Libre Baskerville', serif;
-    --c-body:'Plus Jakarta Sans', sans-serif;
+    --c-body:'Inter', sans-serif;
 
     // font-size
     --heading:clamp(1.5rem,4vw,3rem); //20px //48px
@@ -18,17 +18,22 @@
     --c-fs-4:clamp(0.8rem,1.2vw,1.15rem); //16px //18px
     --c-fs-5:clamp(0.875rem,1vw,1rem); //14-16     
     --c-fs-6:clamp(0.75rem,1vw,0.875rem); //12-14     
+    --c-fs-7:clamp(0.88rem,1vw,0.88rem); //14px
+    --c-fs-8:clamp(1rem,1vw,1rem); //16px
     --c-fw-600: 600;
 
     // colors
    
     --primary-color: #1E75BA;
+    --primary-hover-color: #11578f;
     --primary-light:#E2F0FF;
     --whatsapp: #29A653;
     --light-blue: #F0F7FD;
     --black-color:#212528;
     --white-color:#ffffff;    
     --c-light-grey: #f2f2f3;
+    --c-light-grey-border: #d5d9dc;
+    --c-dark-grey: #8F9396;
     --c-grey:#6C6C6C;    
     --otp:#3A73B5;
     --segmento:#E55CA1;
@@ -41,6 +46,8 @@
     --rcs-light:  rgba(56, 146, 224, 0.12);
     --border-color: #ddd;
     --success-color:#28a745;
+    --border-alert-color:#d94c44;
+    --black-border-color:#000000;
     
     /* product colors */
     --sms :#1E75BA;

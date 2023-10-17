@@ -139,7 +139,7 @@ class logIn extends React.Component {
                                 <img src="/images/msgOriginalsvg.png" alt="MSG91" className="w-100" />
                             </div>
                             <h1 className="signin__right__title c-fs-2 heading">Welcome back!</h1>
-                            <div className="signin__right__dev devlogin d-grid gap-2">
+                            <div className="signin__right__dev devlogin d-grid gap-3">
                                 <span className="devlogin__title c-fs-5">Login with</span>
                                 <div className="devlogin__btn d-flex gap-3 flex-wrap">
                                     <GoogleOAuthProvider clientId={`${process.env.GOOGLE_CLIENT_ID}`}>
@@ -150,20 +150,20 @@ class logIn extends React.Component {
                                     </GoogleOAuthProvider>
                                     <button
                                         onClick={() => this.loginWithOutlook()}
-                                        className="devlogin__btn__btn btn rounded"
+                                        className="devlogin__btn__btn btn rounded social-btn"
                                     >
                                         <img src="/img/microsoft-svg.svg" />
                                     </button>
                                     <button
                                         onClick={() => this.loginWithZoho()}
-                                        className="devlogin__btn__btn btn rounded"
+                                        className="devlogin__btn__btn btn rounded zogo-btn social-btn"
                                     >
                                         <img src="/img/icon-zogo.svg" />
                                     </button>
 
                                     {/* onClick={() => this.loginWithGitHubAccount()} */}
                                     <a href="/github-auth?login=true">
-                                        <button className="devlogin__btn__btn btn rounded">
+                                        <button className="devlogin__btn__btn btn rounded git-btn social-btn">
                                             <img src="/img/icon-github.svg" />
                                         </button>
                                     </a>
@@ -175,14 +175,14 @@ class logIn extends React.Component {
                             </span>
 
                             <button
-                                className="signin__right__login btn btn-login-prime"
+                                className="signin__right__login btn btn-login-prime c-fs-7"
                                 onClick={() => this.initOTPWidget(true)}
                             >
                                 Login with OTP
                             </button>
                             <p className="">
                                 Trouble logging in ?{' '}
-                                <span onClick={this.setShowContactonLogin} className="text-link">
+                                <span onClick={this.setShowContactonLogin} className="text-link text-underline">
                                     Click here
                                 </span>
                             </p>
@@ -190,19 +190,19 @@ class logIn extends React.Component {
                             <div className={`d-grid gap-2 ${this.state.showContactonLogin ? 'd-block' : 'd-none'}`}>
                                 <div className="d-flex align-items-center gap-2">
                                     <MdCall />
-                                    <a className="text-link" href="/contact-us">
+                                    <a className="text-link text-underline" href="/contact-us">
                                         Talk to an Expert
                                     </a>
                                 </div>
                                 <div className="d-flex align-items-center gap-2">
                                     <MdEmail />
-                                    <a className="text-link" href="mailto:support@msg91.com">
+                                    <a className="text-link text-underline" href="mailto:support@msg91.com">
                                         support@msg91.com
                                     </a>
                                 </div>
                             </div>
 
-                            <a href="/signup" className="text-link">
+                            <a href="/signup" className="text-link text-underline">
                                 Create new account
                             </a>
                         </div>
