@@ -959,49 +959,54 @@
     "hello":{
       "code": false,
       "icon": "/img/icon/hello.svg",
-      "pagename":"hello", 
-      "pagetag":"hello",
-      "tagline": "Revolutionize customer support",
-      "heading": "Never lose sight of what’s important",
-      "subheading": "Don’t just solve tickets, build customer relationships",
+      "pagename":"hello",    
+      "pagetag":"HELLO An AI-Fueled Conversational HUB",
+      "tagline": "BOOSTING CUSTOMER SATISFACTION",
+      "heading": "",
+      "subheading": "Seamlessly merging chat, email, call and video to resolve customer queries.",
       "pageimg":"/img/pageimg/hello.png",
       "features": [
-      
         {
-          "img": "/img/feature/hello-unlimited-agents.svg",
+          "icon": "/images/hello/icon-ai-enabled-chat.svg",
+          "img": "/images/hello/ai-enabled-chat.svg",
+          "heading": "AI-Enabled Chatbot",
+          "subheading": "Say hello to the future of customer engagement.",
+          "content": "Our AI-powered chatbot is your 24/7 virtual assistant, ready to engage with your customers, answer queries, and guide them seamlessly through their journey. Say goodbye to wait times and hello to instant, intelligent responses. Can be easily switched to Human agent when required."
+        },
+        {
+          "icon": "/images/hello/icon-unlimited-agents.svg",
+          "img": "/images/hello/unlimited-agents.svg",
           "heading": "Unlimited Agents",
-          "subheading": "Unlimited free agents to power up your customer support.",
-          "content": "More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is no number attached to your number of customer support agents."
+          "subheading": "Your team is limitless, and so are the possibilities with HELLO.",
+          "content": "We offer the flexibility of unlimited agents, ensuring that your entire workforce can collaborate, assist, and provide exceptional service to your customers, no matter the scale of your operations."
         },
         {
-          "img": "/img/feature/hello-chat-bot.svg",
-          "heading": "Chatbot",
-          "subheading": "Resolve customer queries round-the-clock across text and voice.",
-          "content": "Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents."
+          "icon": "/images/hello/icon-workflow.svg",
+          "img": "/images/hello/workflow.svg",
+          "heading": "Workflow Management",
+          "subheading": "Streamline your operations like never before with our intuitive workflow management.",
+          "content": "From lead generation to order processing, HELLO ensures that every step of your customer interaction is organized, efficient, and tailored to your unique processes."
         },
         {
-          "img": "/img/feature/hello-analytics.svg",
+          "icon": "/images/hello/icon-video-call.svg",
+          "img": "/images/hello/video-call.svg",
+          "heading": "Video Call",
+          "subheading": "Sometimes words aren't enough.",
+          "content": "With HELLO's video call and screen sharing capabilities, bridge the gap between face-to-face meetings and virtual interactions. Whether you're diagnosing a medical condition or demonstrating a product, our features enable clear, real-time communication."
+        },
+        {
+          "icon": "/images/hello/icon-analytics.svg",
+          "img": "/images/hello/analytics.svg",
           "heading": "Analytics",
-          "subheading": "Analytics and reports to monitor your agent performance.",
-          "content": "Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support."
+          "subheading": "Data-driven decisions are the backbone of success. ",
+          "content": "HELLO's advanced analytics provide you with insightful metrics to understand customer behavior, agent performance, and trends. Harness this knowledge to refine your strategies and create impactful customer experiences."
         },
         {
-          "img": "/img/feature/hello-video-call.svg",
-          "heading": "Video Call / Screen Sharing",
-          "subheading": "High-quality video calls wherever your customer is.",
-          "content": "Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue."
-        },
-        {
-          "img": "/img/feature/hello-workflow.svg",
-          "heading": "Workflow",
-          "subheading": "Automatically assign conversations to a team or a dedicated agent.",
-          "content": "Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
-        },
-        {
-          "img": "/img/feature/hello-screen-control.svg",
-          "heading": "Screen Control",
-          "subheading": "Control your customer’s screen from where you are",
-          "content": "Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
+          "icon": "/images/hello/icon-screen-sharing.svg",
+          "img": "/images/hello/screen-sharing.svg",
+          "heading": "Screen Sharing/Control",
+          "subheading": "Take control of the conversation like never before.",
+          "content": "With screen control, assist your customers by navigating their screens, resolving issues efficiently, and ensuring that they get the most out of your services. It's a level of support that truly stands out."
         }
       ]
     },
@@ -1434,49 +1439,54 @@
     "hello":{
       "code": false,
       "icon": "/img/icon/hello.svg",
-      "pagename":"hello",
-      "pagetag":"hello",
-      "tagline": "Revolutionize customer support",
-      "heading": "Never lose sight of what’s important",
-      "subheading": "Don’t just solve tickets, build customer relationships",
+      "pagename":"hello",    
+      "pagetag":"HELLO An AI-Fueled Conversational HUB",
+      "tagline": "BOOSTING CUSTOMER SATISFACTION",
+      "heading": "",
+      "subheading": "Seamlessly merging chat, email, call and video to resolve customer queries.",
       "pageimg":"/img/pageimg/hello.png",
       "features": [
-      
         {
-          "img": "/img/feature/hello-unlimited-agents.svg",
+          "icon": "/images/hello/icon-ai-enabled-chat.svg",
+          "img": "/images/hello/ai-enabled-chat.svg",
+          "heading": "AI-Enabled Chatbot",
+          "subheading": "Say hello to the future of customer engagement.",
+          "content": "Our AI-powered chatbot is your 24/7 virtual assistant, ready to engage with your customers, answer queries, and guide them seamlessly through their journey. Say goodbye to wait times and hello to instant, intelligent responses. Can be easily switched to Human agent when required."
+        },
+        {
+          "icon": "/images/hello/icon-unlimited-agents.svg",
+          "img": "/images/hello/unlimited-agents.svg",
           "heading": "Unlimited Agents",
-          "subheading": "Unlimited free agents to power up your customer support.",
-          "content": "More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is no number attached to your number of customer support agents."
+          "subheading": "Your team is limitless, and so are the possibilities with HELLO.",
+          "content": "We offer the flexibility of unlimited agents, ensuring that your entire workforce can collaborate, assist, and provide exceptional service to your customers, no matter the scale of your operations."
         },
         {
-          "img": "/img/feature/hello-chat-bot.svg",
-          "heading": "Chatbot",
-          "subheading": "Resolve customer queries round-the-clock across text and voice.",
-          "content": "Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents."
+          "icon": "/images/hello/icon-workflow.svg",
+          "img": "/images/hello/workflow.svg",
+          "heading": "Workflow Management",
+          "subheading": "Streamline your operations like never before with our intuitive workflow management.",
+          "content": "From lead generation to order processing, HELLO ensures that every step of your customer interaction is organized, efficient, and tailored to your unique processes."
         },
         {
-          "img": "/img/feature/hello-analytics.svg",
+          "icon": "/images/hello/icon-video-call.svg",
+          "img": "/images/hello/video-call.svg",
+          "heading": "Video Call",
+          "subheading": "Sometimes words aren't enough.",
+          "content": "With HELLO's video call and screen sharing capabilities, bridge the gap between face-to-face meetings and virtual interactions. Whether you're diagnosing a medical condition or demonstrating a product, our features enable clear, real-time communication."
+        },
+        {
+          "icon": "/images/hello/icon-analytics.svg",
+          "img": "/images/hello/analytics.svg",
           "heading": "Analytics",
-          "subheading": "Analytics and reports to monitor your agent performance.",
-          "content": "Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support."
+          "subheading": "Data-driven decisions are the backbone of success. ",
+          "content": "HELLO's advanced analytics provide you with insightful metrics to understand customer behavior, agent performance, and trends. Harness this knowledge to refine your strategies and create impactful customer experiences."
         },
         {
-          "img": "/img/feature/hello-video-call.svg",
-          "heading": "Video Call / Screen Sharing",
-          "subheading": "High-quality video calls wherever your customer is.",
-          "content": "Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue."
-        },
-        {
-          "img": "/img/feature/hello-workflow.svg",
-          "heading": "Workflow",
-          "subheading": "Automatically assign conversations to a team or a dedicated agent.",
-          "content": "Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
-        },
-        {
-          "img": "/img/feature/hello-screen-control.svg",
-          "heading": "Screen Control",
-          "subheading": "Control your customer’s screen from where you are",
-          "content": "Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
+          "icon": "/images/hello/icon-screen-sharing.svg",
+          "img": "/images/hello/screen-sharing.svg",
+          "heading": "Screen Sharing/Control",
+          "subheading": "Take control of the conversation like never before.",
+          "content": "With screen control, assist your customers by navigating their screens, resolving issues efficiently, and ensuring that they get the most out of your services. It's a level of support that truly stands out."
         }
       ]
     },
@@ -3334,48 +3344,53 @@
       "code": false,
       "icon": "/img/icon/hello.svg",
       "pagename":"hello",    
-      "pagetag":"customer support platform",
-      "tagline": "Revolutionize customer support",
-      "heading": "Never lose sight of what’s important",
-      "subheading": "Don’t just solve tickets, build customer relationships",
+      "pagetag":"HELLO An AI-Fueled Conversational HUB",
+      "tagline": "BOOSTING CUSTOMER SATISFACTION",
+      "heading": "",
+      "subheading": "Seamlessly merging chat, email, call and video to resolve customer queries.",
       "pageimg":"/img/pageimg/hello.png",
       "features": [
-      
         {
-          "img": "/img/feature/hello-unlimited-agents.svg",
+          "icon": "/images/hello/icon-ai-enabled-chat.svg",
+          "img": "/images/hello/ai-enabled-chat.svg",
+          "heading": "AI-Enabled Chatbot",
+          "subheading": "Say hello to the future of customer engagement.",
+          "content": "Our AI-powered chatbot is your 24/7 virtual assistant, ready to engage with your customers, answer queries, and guide them seamlessly through their journey. Say goodbye to wait times and hello to instant, intelligent responses. Can be easily switched to Human agent when required."
+        },
+        {
+          "icon": "/images/hello/icon-unlimited-agents.svg",
+          "img": "/images/hello/unlimited-agents.svg",
           "heading": "Unlimited Agents",
-          "subheading": "Unlimited free agents to power up your customer support.",
-          "content": "More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is no number attached to your number of customer support agents."
+          "subheading": "Your team is limitless, and so are the possibilities with HELLO.",
+          "content": "We offer the flexibility of unlimited agents, ensuring that your entire workforce can collaborate, assist, and provide exceptional service to your customers, no matter the scale of your operations."
         },
         {
-          "img": "/img/feature/hello-chat-bot.svg",
-          "heading": "Chatbot",
-          "subheading": "Resolve customer queries round-the-clock across text and voice.",
-          "content": "Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents."
+          "icon": "/images/hello/icon-workflow.svg",
+          "img": "/images/hello/workflow.svg",
+          "heading": "Workflow Management",
+          "subheading": "Streamline your operations like never before with our intuitive workflow management.",
+          "content": "From lead generation to order processing, HELLO ensures that every step of your customer interaction is organized, efficient, and tailored to your unique processes."
         },
         {
-          "img": "/img/feature/hello-analytics.svg",
+          "icon": "/images/hello/icon-video-call.svg",
+          "img": "/images/hello/video-call.svg",
+          "heading": "Video Call",
+          "subheading": "Sometimes words aren't enough.",
+          "content": "With HELLO's video call and screen sharing capabilities, bridge the gap between face-to-face meetings and virtual interactions. Whether you're diagnosing a medical condition or demonstrating a product, our features enable clear, real-time communication."
+        },
+        {
+          "icon": "/images/hello/icon-analytics.svg",
+          "img": "/images/hello/analytics.svg",
           "heading": "Analytics",
-          "subheading": "Analytics and reports to monitor your agent performance.",
-          "content": "Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support."
+          "subheading": "Data-driven decisions are the backbone of success. ",
+          "content": "HELLO's advanced analytics provide you with insightful metrics to understand customer behavior, agent performance, and trends. Harness this knowledge to refine your strategies and create impactful customer experiences."
         },
         {
-          "img": "/img/feature/hello-video-call.svg",
-          "heading": "Video Call / Screen Sharing",
-          "subheading": "High-quality video calls wherever your customer is.",
-          "content": "Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue."
-        },
-        {
-          "img": "/img/feature/hello-workflow.svg",
-          "heading": "Workflow",
-          "subheading": "Automatically assign conversations to a team or a dedicated agent.",
-          "content": "Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
-        },
-        {
-          "img": "/img/feature/hello-screen-control.svg",
-          "heading": "Screen Control",
-          "subheading": "Control your customer’s screen from where you are",
-          "content": "Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
+          "icon": "/images/hello/icon-screen-sharing.svg",
+          "img": "/images/hello/screen-sharing.svg",
+          "heading": "Screen Sharing/Control",
+          "subheading": "Take control of the conversation like never before.",
+          "content": "With screen control, assist your customers by navigating their screens, resolving issues efficiently, and ensuring that they get the most out of your services. It's a level of support that truly stands out."
         }
       ]
     },
