@@ -150,20 +150,20 @@ class logIn extends React.Component {
                                     </GoogleOAuthProvider>
                                     <button
                                         onClick={() => this.loginWithOutlook()}
-                                        className="devlogin__btn__btn btn rounded social-btn"
+                                        className="devlogin__btn__btn btn rounded social-btn d-flex justify-content-center align-items-center"
                                     >
                                         <img src="/img/microsoft-svg.svg" />
                                     </button>
                                     <button
                                         onClick={() => this.loginWithZoho()}
-                                        className="devlogin__btn__btn btn rounded zogo-btn social-btn"
+                                        className="devlogin__btn__btn btn rounded zogo-btn social-btn d-flex justify-content-center align-items-center"
                                     >
                                         <img src="/img/icon-zogo.svg" />
                                     </button>
 
                                     {/* onClick={() => this.loginWithGitHubAccount()} */}
                                     <a href="/github-auth?login=true">
-                                        <button className="devlogin__btn__btn btn rounded git-btn social-btn">
+                                        <button className="devlogin__btn__btn btn rounded git-btn social-btn d-flex justify-content-center align-items-center">
                                             <img src="/img/icon-github.svg" />
                                         </button>
                                     </a>
