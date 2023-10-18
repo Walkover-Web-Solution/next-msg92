@@ -282,7 +282,7 @@ class StepThree extends React.Component {
                         </div>
                     </div>
                     {/* <p className="step-three__reddirect">Redirecting...</p> */}
-                    <div className="d-flex gap-3 flex-column  flex-lg-row detail-form__group step-three__main">
+                    <div className="d-flex gap-3 flex-column  flex-lg-row detail-form__group step-three__main mt-3">
                         <div className="w-100 form-input-with-error">
                             <input
                                 type="text"
@@ -576,7 +576,7 @@ class StepThree extends React.Component {
                     )}
                     <div className="row">
                         <div className="col-12">
-                            <div className="form-check my-2 pb-2">
+                            <div className="form-check my-2 d-flex align-items-center gap-2">
                                 <input
                                     className="form-check-input"
                                     type="checkbox"
@@ -586,18 +586,18 @@ class StepThree extends React.Component {
                                     checked={this.state.formData.agreeToTerms}
                                     onChange={this.handleInputChange}
                                 />
-                                <p className="form-check-label c-fs-6 c-fw-500 ps-0" htmlFor="termsCheckBox">
-                                    I agree to the terms and conditions
+                                <p className="form-check-label c-fs-8 c-fw-500 ps-0" htmlFor="termsCheckBox">
+                                    I agree to the <a href="https://msg91.com/terms-of-use" target='_blank' className='cp'>terms of use</a>
                                 </p>
                             </div>
                             <div className="d-flex mt-3">
-                                <button className="me-3 btn btn-login-secondary" onClick={() => this.props.setStep(2)}>
+                                <button className="me-3 btn btn-login-secondary c-fs-7" onClick={() => this.props.setStep(2)}>
                                     {' '}
                                     <MdKeyboardArrowLeft />
                                     Back
                                 </button>
                                 <button
-                                    className="btn btn-login-prime"
+                                    className="btn btn-login-prime c-fs-7"
                                     type="button"
                                     onClick={this.finalSubmit}
                                     disabled={!this.state.formData.agreeToTerms}

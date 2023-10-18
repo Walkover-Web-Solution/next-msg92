@@ -6,14 +6,14 @@
     color: var(--col-elert);
 }
 .progress-line {
-    width: 100px;
-    height: 1px;
+    width: 46px;
+    height: 2px;
     background-color: var(--c-grey);
 }
 .progress-line {
     background-color: var(--success-color);
     &__none{
-    background-color: var(--c-grey);
+    background-color: var(--c-dark-grey);
 
     }
 }
@@ -21,11 +21,27 @@
     border-radius: 4px !important;
     color: #ffff!important;
     background-color: var(--primary-color)!important;
+    min-width: 82px;
+    padding: 10px 16px !important;
+    height: 40px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    svg {
+        margin-left: 10px;
+    }
+    &:hover{
+        background-color: var(--primary-hover-color) !important;
+    }
 }
 .btn-login-prime-o{
     border-radius: 4px !important;
     border:1px solid var(--primary-color)!important;
-    color: var(--primary-color)!important;;
+    color: var(--primary-color)!important;
+    padding: 6px 16px !important;
+    &:hover{
+        background-color: #1e75ba1a !important;
+    }
     // background-color: var(--primary-color)!important;
 }
 
@@ -33,6 +49,12 @@
     border-radius: 4px !important;
     color: var(--black-color) !important;
     background-color: var(--c-light-grey)!important;
+    min-width: 83px;
+    height: 40px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
 }
 
 .ico-grey{
@@ -41,7 +63,7 @@
 .hor-line{
     width: 1px ;
     height: 100px;
-    background-color: var(--c-grey);
+    background-color: var(--c-light-grey-border);
 }
 
 //signup main */
@@ -67,9 +89,20 @@
         &__logo {
             width: 124px;
         }
+        &__heading{
+            line-height: 36px;
+        }
+        @media (max-width: 768px) {
+            &__features{
+                margin-top: 24px;
+            }
+        }
     }
     &__right {
         padding: 80px 80px 0 80px;
+        &__heading{
+            line-height: 36px;
+        }
         @media (max-width: 767px) {
             padding: 24px 24px 24px;
             }
@@ -87,26 +120,65 @@
 //signup stepone */
 .step-one {
     max-width: 451px;
+    gap: 1.50rem;
     &__break {
         &__line {
             display: block;
             height: 1px;
             width: 100%;
-            background-color: var(--c-light-grey);
+            background-color: var(--c-light-grey-border);
+        }
+    }
+    &__login {
+        margin-top: 20px;
+        a {
+            color: var(--primary-color) !important;
         }
     }
 }
 
 //signup steptwo */
 .step-two {
-    
+    &__progress {
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+    }
 }
 .otp-input {
     max-width: 40px;
+    height: 40px;
+    text-align: center;
 }
 
+@media (max-width: 399px) {
+    .ver-email, 
+    .ver-phone, 
+    .ver-email__main, 
+    .ver-phone__main  {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .ver-email, 
+    .ver-phone {
+        flex-wrap: wrap;
+        .hor-line {
+            display: none;
+        }
+    }
+}
 .ver-email-main {
     max-width: 500px;
+    width: 455px;
+    @media (max-width: 480px) {
+        width: 355px;
+    }
+    @media (max-width: 399px) {
+        width: 100%;
+    }
+    
     &__input {
         position: relative;
         &__check {
@@ -115,13 +187,36 @@
             top: 50%;
             transform: translateY(-50%);
         }
+        // .form-control {
+        //     width: 300px;
+        // }
+    }
+    &__btn{
+        &.disabled{
+            font-size: 14px !important;
+            padding: 10px 16px !important;
+            height: 40px;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 .ver-phone-main {
     max-width: 500px;
+    width: 455px;
+    @media (max-width: 480px) {
+        width: 355px;
+    }
+    @media (max-width: 399px) {
+        width: 100%;
+    }
 
     &__input {
         position: relative;
+        // .form-control {
+        //     width: 300px;
+        // }
         &__check {
             position: absolute;
             right: 10px;
@@ -135,6 +230,10 @@
         flex-direction: column;
     }
     &__input {
+        .otp-input{
+            padding: 5px !important;
+            min-width: 40px;
+        }
         @media (max-width: 400px) {
             width: 100%;
         }
@@ -146,7 +245,19 @@
         max-width: 560px;
     }
 }
-
+.form-check {
+    .form-check-label {
+        a{
+            color: var(--primary-color) !important;
+        }
+    }
+    @media (max-width: 380px) {
+        .form-check-input {
+            width: 20px;
+        }
+    }
+    
+}
 .step-threeone{
     max-width: 560px;
 }
@@ -155,4 +266,14 @@
 }
 .btn-reject{
     background-color:#F9EAE5 !important;
+}
+.text-hover-underline {
+    &:hover {
+        text-decoration: underline !important;
+    }
+}
+.col-dark {
+    a{
+        color: var(--primary-color);
+    }
 }

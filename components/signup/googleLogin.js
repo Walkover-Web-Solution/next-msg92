@@ -10,7 +10,7 @@ const GoogleLoginButton = (props) => {
     });
 
     return (
-        <button className="btn rounded google-login" onClick={() => login()}>
+        <button className="btn rounded google-login d-flex justify-content-center align-items-center" onClick={() => login()}>
             <img src="/img/tie/google-logo.svg" alt="Google Icon" />
             <span>Google</span>
         </button>
