@@ -140,9 +140,17 @@
 //signup steptwo */
 .step-two {
     &__progress {
+        .form_step {
+            color: var(--black-color);
+        }
         svg {
             width: 18px;
             height: 18px;
+        }
+        @media (max-width: 768px) {
+            svg {
+                display: none;
+            }
         }
     }
 }
@@ -243,6 +251,13 @@
 .step-three {
     &__main {
         max-width: 560px;
+    }
+    &__progress {
+        @media (max-width: 768px) {
+            svg {
+                display: none;
+            }
+        }
     }
 }
 .form-check {

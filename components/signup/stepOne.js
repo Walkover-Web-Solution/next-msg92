@@ -11,7 +11,7 @@ class StepOne extends React.Component {
                         <div className="stepone__dev__icons">
                             <a href="/github-auth?signup=true">
                                 <button
-                                    className="product-btn btn rounded border border-dark social-btn"
+                                    className="product-btn btn rounded border border-dark social-btn d-flex justify-content-center align-items-center"
                                     onClick={() => this.props.signupByGitHubAccount()}
                                 >
                                     <img src="/img/icon-github.svg" alt="Github" />
