@@ -282,7 +282,7 @@ class StepThree extends React.Component {
                         </div>
                     </div>
                     {/* <p className="step-three__reddirect">Redirecting...</p> */}
-                    <div className="d-flex gap-3 flex-column  flex-lg-row detail-form__group step-three__main">
+                    <div className="d-flex gap-3 flex-column  flex-lg-row detail-form__group step-three__main mt-3">
                         <div className="w-100 form-input-with-error">
                             <input
                                 type="text"
@@ -587,7 +587,7 @@ class StepThree extends React.Component {
                                     onChange={this.handleInputChange}
                                 />
                                 <p className="form-check-label c-fs-8 c-fw-500 ps-0" htmlFor="termsCheckBox">
-                                    I agree to the <a href={undefined}>Terms of Service</a> and  <a href={undefined}>Privacy Policy</a>
+                                    I agree to the <a href={undefined} className='cp'>Terms of Service</a> and  <a href={undefined} className='cp'>Privacy Policy</a>
                                 </p>
                             </div>
                             <div className="d-flex mt-3">

@@ -19,7 +19,7 @@ class StepOne extends React.Component {
                             </a>
                         </div>
                     </div>
-                    <span className="step-one__break c-fs-5 d-flex align-items-center gap-3">
+                    <span className="step-one__break c-fs-7 d-flex align-items-center gap-3">
                         or<span className="step-one__break__line"></span>
                     </span>
                     <div className="step-one__nondev">
@@ -31,8 +31,8 @@ class StepOne extends React.Component {
                             <MdKeyboardArrowRight />
                         </button>
                     </div>
-                    <p className="step-one__login">
-                        If you already have an account, <a href="/signin" className='text-underline'>Login</a>
+                    <p className="step-one__login c-text c-fs-7">
+                        If you already have an account, <a href="/signin" className='text-hover-underline'>Login</a>
                     </p>
                 </div>
             </>

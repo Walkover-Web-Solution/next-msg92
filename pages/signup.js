@@ -27,7 +27,7 @@ class SignUp extends React.Component {
         let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
 
         this.state = {
-            activeStep: queryParams?.['code'] ? 2 : 1,
+            activeStep: queryParams?.['code'] ? 2 : 3,
             signupByGitHub: queryParams?.['githubsignup'] ? true : false,
             githubCode: queryParams?.['code'],
             githubState: queryParams?.['state'],
@@ -317,7 +317,7 @@ class SignUp extends React.Component {
                             <h1 className="signup__right__heading c-fs-2 heading ">Create an account</h1>
                         )}
 
-                        <div className="signup__right__main">
+                        <div className="signup__right__main c-text">
                             {/* STEP #1 */}
                             {this.state.activeStep === 1 && (
                                 <StepOne signupByGitHubAccount={this.signupByGitHubAccount} setStep={this.setStep} />
@@ -368,7 +368,7 @@ class SignUp extends React.Component {
                                             Enter details
                                         </div>
                                     </div>
-                                    <p className="step-three__reddirect c-fw-m">Redirecting...</p>
+                                    <p className="step-three__reddirect c-fw-m c-fs-7">Redirecting...</p>
                                 </div>
                             )}
                         </div>

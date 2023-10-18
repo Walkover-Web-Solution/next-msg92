@@ -267,8 +267,13 @@
 .btn-reject{
     background-color:#F9EAE5 !important;
 }
-.text-underline {
+.text-hover-underline {
     &:hover {
         text-decoration: underline !important;
+    }
+}
+.col-dark {
+    a{
+        color: var(--primary-color);
     }
 }
