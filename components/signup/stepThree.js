@@ -271,12 +271,12 @@ class StepThree extends React.Component {
         return (
             <>
                 <div className="trep-three d-flex flex-column gap-3">
-                    <div className="step-three__progress d-flex align-items-center gap-3 ">
-                        <div className="ico-green align-items-center gap-1 c-fs-5 d-none d-lg-flex">
+                    <div className="step-three__progress d-flex align-items-center gap-4">
+                        <div className="ico-green align-items-center gap-1 c-fs-7 d-none d-lg-flex">
                             <MdCheckCircle className="ico-green" /> Verify email & mobile number
                         </div>
                         <span className="progress-line line-green d-none d-lg-block "></span>
-                        <div className="d-flex  align-items-center gap-1 c-fs-5 ">
+                        <div className="d-flex  align-items-center gap-1 c-fs-7 ">
                             <MdCheckCircle className="ico-grey" />
                             Enter details
                         </div>
@@ -586,7 +586,7 @@ class StepThree extends React.Component {
                                     checked={this.state.formData.agreeToTerms}
                                     onChange={this.handleInputChange}
                                 />
-                                <p className="form-check-label c-fs-8 c-fw-500 ps-0" htmlFor="termsCheckBox">
+                                <p className="form-check-label c-fs-7 c-fw-500 ps-0" htmlFor="termsCheckBox">
                                     I agree to the <a href="https://msg91.com/terms-of-use" target='_blank' className='cp'>terms of use</a>
                                 </p>
                             </div>

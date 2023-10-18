@@ -12,7 +12,7 @@ class StepTwo extends React.Component {
             <>
                 <div className="step-two d-grid gap-4">
                     <div className="step-two__progress d-flex align-items-center gap-4">
-                        <div className="d-flex align-items-center gap-1 c-fs-7">
+                        <div className="d-flex align-items-center gap-1 c-fs-7 form_step">
                             <MdCheckCircle
                                 className={
                                     this.props?.smsAccessToken && this.props?.emailAccessToken
@@ -23,7 +23,7 @@ class StepTwo extends React.Component {
                             Verify email & mobile number
                         </div>
                         <span className="progress-line__none progress-line d-none d-lg-block"></span>
-                        <div className="d-lg-flex align-items-center gap-1 c-fs-7 d-none ico-grey">
+                        <div className="d-lg-flex align-items-center gap-1 c-fs-7 d-none ico-grey form_step">
                             <MdCheckCircleOutline /> Enter details
                         </div>
                     </div>
