@@ -28,7 +28,7 @@ class StepTwo extends React.Component {
                         </div>
                     </div>
                     <div className="step-two__email w-100  d-grid gap-2">
-                        <label htmlFor="email" className="step-two__email__lable c-fw-m">
+                        <label htmlFor="email" className="step-two__email__lable c-fw-m c-fs-7">
                             Verify email
                         </label>
                         <div className="ver-email d-flex gap-4 align-items-top ">
@@ -77,7 +77,7 @@ class StepTwo extends React.Component {
                                     )}
                                 </div>
                                 {this.props?.emailIdentifier && this.props?.emailSuccessMessage ? (
-                                    <p className="ver-email-message mt-2 ico-green">
+                                    <p className="ver-email-message mt-2 ico-green c-fs-7">
                                         {this.props?.emailSuccessMessage}
                                     </p>
                                 ) : null}
@@ -95,7 +95,7 @@ class StepTwo extends React.Component {
                                                 notByEmail={false}
                                             />
                                             {this.props.allowedRetry?.email ? (
-                                                <p className="col-dark my-3 c-fs-6">
+                                                <p className="col-dark my-3 c-fs-9 ">
                                                     Resend on{' '}
                                                     <a
                                                         href={undefined}
@@ -106,7 +106,7 @@ class StepTwo extends React.Component {
                                                                 false
                                                             )
                                                         }
-                                                        className="col-primary c-fw-600 p-3 cursor-pointer text-underline"
+                                                        className="col-primary c-fw-m p-3 cursor-pointer text-hover-underline"
                                                     >
                                                         Email
                                                     </a>
@@ -119,7 +119,7 @@ class StepTwo extends React.Component {
                         </div>
                     </div>
                     <div className="step-two__phone  w-100  d-grid gap-2">
-                        <label htmlFor="contact" className="step-two__phone__lable c-fw-m">
+                        <label htmlFor="contact" className="step-two__phone__lable c-fw-m c-fs-7">
                             Verify Mobile number
                         </label>
                         <div className="ver-phone d-flex gap-4 align-items-top">
@@ -164,7 +164,7 @@ class StepTwo extends React.Component {
                                 </div>
 
                                 {this.props?.smsIdentifier && this.props?.smsSuccessMessage ? (
-                                    <p className="ver-email-message mt-2 ico-green">{this.props?.smsSuccessMessage}</p>
+                                    <p className="ver-email-message mt-2 ico-green c-fs-7">{this.props?.smsSuccessMessage}</p>
                                 ) : null}
                             </div>
 
@@ -181,7 +181,7 @@ class StepTwo extends React.Component {
                                                 requestId={this.props.smsRequestId}
                                                 notByEmail={true}
                                             />
-                                            <p className="col-dark my-3 c-fs-6 p-2">
+                                            <p className="col-dark my-3 c-fs-9 p-2">
                                                 Resend on{' '}
                                                 {this.props.allowedRetry?.sms ? (
                                                     <a
@@ -193,7 +193,7 @@ class StepTwo extends React.Component {
                                                                 true
                                                             )
                                                         }
-                                                        className="col-primary c-fw-600 p-3 cursor-pointer text-underline"
+                                                        className="col-primary c-fw-600 p-3 cursor-pointer text-hover-underline"
                                                     >
                                                         Text
                                                     </a>
@@ -210,7 +210,7 @@ class StepTwo extends React.Component {
                                                                     true
                                                                 )
                                                             }
-                                                            className="col-primary c-fw-600 p-3 cursor-pointer text-underline"
+                                                            className="col-primary c-fw-600 p-3 cursor-pointer text-hover-underline"
                                                         >
                                                             WhatsApp
                                                         </a>
@@ -229,7 +229,7 @@ class StepTwo extends React.Component {
                                                                     true
                                                                 )
                                                             }
-                                                            className="col-primary c-fw-600 p-3 cursor-pointer text-underline"
+                                                            className="col-primary c-fw-600 p-3 cursor-pointer text-hover-underline c-fw-m"
                                                         >
                                                             Voice
                                                         </a>
@@ -244,7 +244,7 @@ class StepTwo extends React.Component {
                     </div>
                     <div className="row">
                         <div>
-                            <button className="me-3 btn btn-login-secondary" onClick={() => this.props.setStep(1)}>
+                            <button className="me-3 btn btn-login-secondary c-fs-7" onClick={() => this.props.setStep(1)}>
                                 {' '}
                                 <MdKeyboardArrowLeft />
                                 Back

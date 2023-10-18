@@ -5,6 +5,9 @@
 .c-body {
     font-family: var(--c-body);
 }
+.c-text {
+    font-family: var(--c-text) !important;
+}
 //font sizes
 .heading {
     font-size: var(--heading) !important;
@@ -36,6 +39,9 @@
 }
 .c-fs-6 {
     font-size: var(--c-fs-6) !important;
+    @media(max-width:425px) {
+        word-spacing:8px;      
+    }
 }
 .c-fs-7 {
     font-size: var(--c-fs-7) !important;
@@ -43,6 +49,10 @@
 .c-fs-8 {
     font-size: var(--c-fs-8) !important;
 }
+.c-fs-9 {
+    font-size: var(--c-fs-9) !important;
+}
+
 // font weight
 .c-fw-t {
     font-weight: 300 !important;

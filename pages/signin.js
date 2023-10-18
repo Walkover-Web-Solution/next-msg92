@@ -132,7 +132,7 @@ class logIn extends React.Component {
     render() {
         return (
             <>
-                <section className="signin d-flex flex-column flex-md-row-reverse">
+                <section className="signin d-flex flex-column flex-md-row-reverse c-text c-fs-7">
                     <div className="signin__right  ">
                         <div className="sigin__wrapper  d-flex gap-4 flex-column ">
                             <div className="signin__right__logo d-block d-md-none">
@@ -140,7 +140,7 @@ class logIn extends React.Component {
                             </div>
                             <h1 className="signin__right__title c-fs-2 heading">Welcome back!</h1>
                             <div className="signin__right__dev devlogin d-grid gap-3">
-                                <span className="devlogin__title c-fs-5">Login with</span>
+                                <span className="devlogin__title c-fs-7 c-text">Login with</span>
                                 <div className="devlogin__btn d-flex gap-3 flex-wrap">
                                     <GoogleOAuthProvider clientId={`${process.env.GOOGLE_CLIENT_ID}`}>
                                         <GoogleLoginButton
@@ -170,7 +170,7 @@ class logIn extends React.Component {
                                 </div>
                             </div>
 
-                            <span className="step-one__break c-fs-5 d-flex align-items-center gap-3">
+                            <span className="step-one__break c-fs-7 d-flex align-items-center gap-3">
                                 or<span className="step-one__break__line"></span>
                             </span>
 
@@ -182,7 +182,7 @@ class logIn extends React.Component {
                             </button>
                             <p className="">
                                 Trouble logging in ?{' '}
-                                <span onClick={this.setShowContactonLogin} className="text-link text-underline">
+                                <span onClick={this.setShowContactonLogin} className="text-link text-hover-underline">
                                     Click here
                                 </span>
                             </p>
@@ -190,19 +190,19 @@ class logIn extends React.Component {
                             <div className={`d-grid gap-2 ${this.state.showContactonLogin ? 'd-block' : 'd-none'}`}>
                                 <div className="d-flex align-items-center gap-2">
                                     <MdCall />
-                                    <a className="text-link text-underline" href="/contact-us">
+                                    <a className="text-link text-hover-underline" href="/contact-us">
                                         Talk to an Expert
                                     </a>
                                 </div>
                                 <div className="d-flex align-items-center gap-2">
                                     <MdEmail />
-                                    <a className="text-link text-underline" href="mailto:support@msg91.com">
+                                    <a className="text-link text-hover-underline" href="mailto:support@msg91.com">
                                         support@msg91.com
                                     </a>
                                 </div>
                             </div>
 
-                            <a href="/signup" className="text-link text-underline">
+                            <a href="/signup" className="text-link text-hover-underline">
                                 Create new account
                             </a>
                         </div>
