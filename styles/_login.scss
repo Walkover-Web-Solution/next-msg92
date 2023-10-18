@@ -40,11 +40,8 @@
 }
 .google-login {
     border: 1px solid var(--primary-color) !important;
-    display: flex !important;
     min-width: 120px;
     height: 40px;
-    justify-content: center;
-    align-items: center;
     column-gap: 8px;
     padding: 6px 16px !important;
     span{
@@ -56,9 +53,6 @@
     border-radius: 4px;
     width: 40px;
     height: 40px;
-    justify-content: center;
-    align-items: center;
-    display: flex !important;
     img{
         width: 24px;
     }
