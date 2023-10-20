@@ -5,6 +5,10 @@ import Otpinput from './comps/otpInput';
 class StepTwo extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            emailIdentifier: props.emailIdentifier || '',
+            smsIdentifier: props.smsIdentifier || '',
+        };
     }
 
     render() {
@@ -43,7 +47,8 @@ class StepTwo extends React.Component {
                                                 className="form-control w-100 c-fs-7"
                                                 id="emailIdentifier"
                                                 placeholder="Email Address"
-                                                onChange={(e) => this.props.identifierChange(false)}
+                                                defaultValue={this.state.emailIdentifier}
+                                                onInput={(e) => this.props.identifierChange(false)}
                                                 disabled={this.props?.emailAccessToken}
                                             />
                                         )}
@@ -131,7 +136,8 @@ class StepTwo extends React.Component {
                                             className="form-control w-100 c-fs-7"
                                             id="contactIdentifier"
                                             placeholder="Mobile number"
-                                            onChange={(e) => this.props.identifierChange(true)}
+                                            defaultValue={this.state.smsIdentifier}
+                                            onInput={(e) => this.props.identifierChange(true)}
                                             disabled={this.props?.smsAccessToken}
                                         />
 
@@ -164,7 +170,9 @@ class StepTwo extends React.Component {
                                 </div>
 
                                 {this.props?.smsIdentifier && this.props?.smsSuccessMessage ? (
-                                    <p className="ver-email-message mt-2 ico-green c-fs-7">{this.props?.smsSuccessMessage}</p>
+                                    <p className="ver-email-message mt-2 ico-green c-fs-7">
+                                        {this.props?.smsSuccessMessage}
+                                    </p>
                                 ) : null}
                             </div>
 
@@ -244,20 +252,22 @@ class StepTwo extends React.Component {
                     </div>
                     <div className="row">
                         <div>
-                            <button className="me-3 btn btn-login-secondary c-fs-7" onClick={() => this.props.setStep(1)}>
+                            <button
+                                className="me-3 btn btn-login-secondary c-fs-7"
+                                onClick={() => this.props.setStep(1)}
+                            >
                                 {' '}
                                 <MdKeyboardArrowLeft />
                                 Back
                             </button>
-                            {this.props?.smsAccessToken && this.props?.emailAccessToken ? (
-                                <button
-                                    className=" btn btn-login-prime"
-                                    onClick={() => this.props.validateUserForCompany()}
-                                >
-                                    {' '}
-                                    Next <MdKeyboardArrowRight />
-                                </button>
-                            ) : null}
+                            <button
+                                className=" btn btn-login-prime"
+                                onClick={() => this.props?.smsAccessToken && this.props?.emailAccessToken && this.props.validateUserForCompany()}
+                                disabled={!this.props?.smsAccessToken || !this.props?.emailAccessToken}
+                            >
+                                {' '}
+                                Next <MdKeyboardArrowRight />
+                            </button>
                         </div>
                     </div>
                 </div>
