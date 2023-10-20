@@ -11,7 +11,6 @@ class StepThree extends React.Component {
             formData: {
                 firstName: '',
                 lastName: '',
-                howToUse: '',
                 companyName: '',
                 industryType: '',
                 serviceNeeded: [],
@@ -33,6 +32,14 @@ class StepThree extends React.Component {
                 lastNameError: '',
                 gstNumberError: '',
                 pincodeError: '',
+                companyNameError: '',
+                industryTypeError: '',
+                serviceNeededError: '',
+                countryError: '',
+                stateError: '',
+                cityError: '',
+                otherCityError: '',
+                addressError: '',
                 // Add more error fields for other inputs
             },
             invitationRender: true,
@@ -212,9 +219,9 @@ class StepThree extends React.Component {
     };
 
     validateGSTNumber = () => {
-        const { gstNumber } = this.state.formData;
+        const { gstNumber, countryName } = this.state.formData;
         const gstRegex = /^\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}$/;
-        if (!gstRegex.test(gstNumber)) {
+        if (countryName?.toLowerCase()?.includes('india') && gstNumber && !gstRegex.test(gstNumber)) {
             return 'Invalid GST Number';
         }
         return '';
@@ -223,31 +230,48 @@ class StepThree extends React.Component {
     validatePincode = () => {
         const { pincode } = this.state.formData;
         const pincodeRegex = /^[0-9 A-Z a-z -]{4,11}$/;
-
+        if (!pincode) {
+            return 'Pincode is required';
+        }
         if (!pincodeRegex.test(pincode)) {
-            return 'Pincode must be a 6-digit number';
+            return 'Pincode must be a valid';
+        }
+        return '';
+    };
+
+    validateRequired = (fieldName, label) => {
+        const fieldValue = this.state.formData?.[fieldName];
+        if (fieldValue?.trim()?.length === 0) {
+            return label + ' is required';
         }
         return '';
     };
 
     finalSubmit = () => {
-        const firstNameError = this.validateFirstName();
-        const lastNameError = this.validateLastName();
-        const gstNumberError = this.validateGSTNumber();
-        const pincodeError = this.validatePincode();
+        const errors = {
+            firstNameError: this.validateFirstName(),
+            lastNameError: this.validateLastName(),
+            gstNumberError: this.validateGSTNumber(),
+            pincodeError: this.validatePincode(),
+            companyNameError: this.validateRequired('companyName', 'Company Name'),
+            industryTypeError: this.validateRequired('industryType', 'Industry Type'),
+            serviceNeededError:
+                this.state.formData.serviceNeeded?.length === 0 ? 'Need to select atleast one service' : '',
+            countryError: this.validateRequired('country', 'Country'),
+            stateError: this.validateRequired('stateName', 'State'),
+            cityError: this.validateRequired('city', 'City'),
+            otherCityError: this.state.formData.city === 'other' ? this.validateRequired('otherCity', 'City') : '',
+            addressError: this.validateRequired('address', 'Address'),
+        };
         if (this.state.createCompany) {
             this.setState((prevState) => ({
                 formErrorData: {
                     ...prevState.formErrorData,
-                    firstNameError,
-                    lastNameError,
-                    gstNumberError,
-                    pincodeError,
-                    // Add more error fields for other inputs
+                    ...errors,
                 },
             }));
         }
-        if (!(this.state.createCompany && (firstNameError || lastNameError || gstNumberError))) {
+        if (!(this.state.createCompany && Object.values(errors).find((error) => Boolean(error)))) {
             if (
                 this.props.invitations &&
                 !this.state.createCompany &&
@@ -296,7 +320,7 @@ class StepThree extends React.Component {
                                 value={this.state.formData.firstName}
                                 onChange={this.handleInputChange}
                             />
-                            <div className="text-danger input-error-message c-fs-6">
+                            <div className="text-danger input-error-message c-fs-7">
                                 {this.state.formErrorData.firstNameError}
                             </div>
                         </div>
@@ -313,7 +337,7 @@ class StepThree extends React.Component {
                                 value={this.state.formData.lastName}
                                 onChange={this.handleInputChange}
                             />
-                            <div className="text-danger input-error-message c-fs-6">
+                            <div className="text-danger input-error-message c-fs-7">
                                 {this.state.formErrorData.lastNameError}
                             </div>
                         </div>
@@ -386,7 +410,7 @@ class StepThree extends React.Component {
                     {this.state.createCompany && (
                         <form className="step-three__main">
                             <div className="detail-form d-flex flex-column gap-3">
-                                <div className="col-12">
+                                <div className="col-12 form-input-with-error">
                                     <input
                                         type="text"
                                         className="form-control"
@@ -395,8 +419,11 @@ class StepThree extends React.Component {
                                         value={this.state.formData.companyName}
                                         onChange={this.handleInputChange}
                                     />
+                                    <div className="text-danger input-error-message c-fs-7">
+                                        {this.state.formErrorData.companyNameError}
+                                    </div>
                                 </div>
-                                <div className="col-12">
+                                <div className="col-12 form-input-with-error">
                                     <select
                                         autoComplete="on"
                                         className="form-select"
@@ -416,8 +443,11 @@ class StepThree extends React.Component {
                                             </>
                                         )}
                                     </select>
+                                    <div className="text-danger input-error-message c-fs-7">
+                                        {this.state.formErrorData.industryTypeError}
+                                    </div>
                                 </div>
-                                <div className="col-12">
+                                <div className="col-12 form-input-with-error">
                                     {this.state.serviceRender && (
                                         <Select
                                             isMulti
@@ -425,7 +455,12 @@ class StepThree extends React.Component {
                                             instanceId={'serviceNeeded'}
                                             defaultValue={this.state.defaultServiceNeeded}
                                             onChange={(value) =>
-                                                this.setState({ serviceNeeded: value.map((obj) => obj.value) })
+                                                this.setState((prevState) => ({
+                                                    formData: {
+                                                        ...prevState.formData,
+                                                        serviceNeeded: value.map((obj) => obj.value),
+                                                    },
+                                                }))
                                             }
                                             placeholder="Select Service Needed"
                                             options={
@@ -438,9 +473,12 @@ class StepThree extends React.Component {
                                             }
                                         />
                                     )}
+                                    <div className="text-danger input-error-message c-fs-7">
+                                        {this.state.formErrorData.serviceNeededError}
+                                    </div>
                                 </div>
                                 <div className="d-flex gap-3 flex-column flex-lg-row detail-form__group">
-                                    <div className="w-100">
+                                    <div className="w-100 form-input-with-error">
                                         <select
                                             autoComplete="on"
                                             className="form-select"
@@ -459,8 +497,11 @@ class StepThree extends React.Component {
                                                 Other
                                             </option>
                                         </select>
+                                        <div className="text-danger input-error-message c-fs-7">
+                                            {this.state.formErrorData.countryError}
+                                        </div>
                                     </div>
-                                    <div className="w-100">
+                                    <div className="w-100 form-input-with-error">
                                         <select
                                             autoComplete="on"
                                             className="form-select"
@@ -478,6 +519,9 @@ class StepThree extends React.Component {
                                                   ))
                                                 : null}
                                         </select>
+                                        <div className="text-danger input-error-message c-fs-7">
+                                            {this.state.formErrorData.stateError}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="d-flex gap-3 flex-column flex-lg-row detail-form__group">
@@ -494,15 +538,15 @@ class StepThree extends React.Component {
                                             value={this.state.formData.pincode}
                                             onChange={this.handleInputChange}
                                         />
-                                        <div className="text-danger input-error-message c-fs-6">
+                                        <div className="text-danger input-error-message c-fs-7">
                                             {this.state.formErrorData.pincodeError}
                                         </div>
                                     </div>
-                                    <div className="w-100">
+                                    <div className="w-100 form-input-with-error">
                                         <select
                                             autoComplete="on"
                                             className="form-select"
-                                            aria-label="Default State/Province"
+                                            aria-label="Default City"
                                             name="city"
                                             value={this.state.formData.city}
                                             onChange={(event) => {
@@ -520,10 +564,13 @@ class StepThree extends React.Component {
                                                 : null}
                                             <option value="other">Other</option>
                                         </select>
+                                        <div className="text-danger input-error-message c-fs-7">
+                                            {this.state.formErrorData.cityError}
+                                        </div>
                                     </div>
                                 </div>
                                 {this.state.formData.city == 'other' && (
-                                    <div className="col-12">
+                                    <div className="col-12  form-input-with-error">
                                         <input
                                             type="text"
                                             className="form-control"
@@ -532,9 +579,12 @@ class StepThree extends React.Component {
                                             value={this.state.formData.otherCity}
                                             onChange={this.handleInputChange}
                                         />
+                                        <div className="text-danger input-error-message c-fs-7">
+                                            {this.state.formErrorData.otherCityError}
+                                        </div>
                                     </div>
                                 )}
-                                <div className="col-12">
+                                <div className="col-12 form-input-with-error">
                                     <input
                                         type="text"
                                         className="form-control"
@@ -543,25 +593,30 @@ class StepThree extends React.Component {
                                         value={this.state.formData.address}
                                         onChange={this.handleInputChange}
                                     />
-                                </div>
-                                <div className="col-12 form-input-with-error">
-                                    <input
-                                        type="text"
-                                        className={
-                                            this.state.formErrorData.gstNumberError
-                                                ? 'form-control input-error-display'
-                                                : 'form-control'
-                                        }
-                                        placeholder="GST number"
-                                        name="gstNumber"
-                                        value={this.state.formData.gstNumber}
-                                        onChange={this.handleInputChange}
-                                    />
-                                    <div className="text-danger input-error-message c-fs-6">
-                                        {this.state.formErrorData.gstNumberError}
+                                    <div className="text-danger input-error-message c-fs-7">
+                                        {this.state.formErrorData.addressError}
                                     </div>
                                 </div>
-                                <div className="col-12">
+                                {this.state.formData.countryName?.toLowerCase()?.includes('india') && (
+                                    <div className="col-12 form-input-with-error">
+                                        <input
+                                            type="text"
+                                            className={
+                                                this.state.formErrorData.gstNumberError
+                                                    ? 'form-control input-error-display'
+                                                    : 'form-control'
+                                            }
+                                            placeholder="GST number"
+                                            name="gstNumber"
+                                            value={this.state.formData.gstNumber}
+                                            onChange={this.handleInputChange}
+                                        />
+                                        <div className="text-danger input-error-message c-fs-7">
+                                            {this.state.formErrorData.gstNumberError}
+                                        </div>
+                                    </div>
+                                )}
+                                {/* <div className="col-12">
                                     <input
                                         type="text"
                                         className="form-control"
@@ -570,7 +625,7 @@ class StepThree extends React.Component {
                                         value={this.state.formData.howToUse}
                                         onChange={this.handleInputChange}
                                     />
-                                </div>
+                                </div> */}
                             </div>
                         </form>
                     )}
@@ -587,11 +642,17 @@ class StepThree extends React.Component {
                                     onChange={this.handleInputChange}
                                 />
                                 <p className="form-check-label c-fs-7 c-fw-500 ps-0" htmlFor="termsCheckBox">
-                                    I agree to the <a href="https://msg91.com/terms-of-use" target='_blank' className='cp'>terms of use</a>
+                                    I agree to the{' '}
+                                    <a href="https://msg91.com/terms-of-use" target="_blank" className="cp">
+                                        terms of use
+                                    </a>
                                 </p>
                             </div>
                             <div className="d-flex mt-3">
-                                <button className="me-3 btn btn-login-secondary c-fs-7" onClick={() => this.props.setStep(2)}>
+                                <button
+                                    className="me-3 btn btn-login-secondary c-fs-7"
+                                    onClick={() => this.props.setStep(2)}
+                                >
                                     {' '}
                                     <MdKeyboardArrowLeft />
                                     Back
