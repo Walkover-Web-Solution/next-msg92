@@ -22,7 +22,7 @@ export async function getStaticProps() {
 
       //response of axios taking through webhook
       const data = await axios(options);
-      var webhookData = data.data.rows;
+      var webhookData = data.data.rows || null;
     } catch (error) {
       console.log("inside CATCH webhook function");
       console.log("error: ", error);
