@@ -56,7 +56,7 @@ class SignUp extends React.Component {
             fetch(url, requestOptions)
                 .then((response) => response?.json())
                 .then((result) => {
-                    if (result?.data?.loggedIn) {
+                    if (result?.status === 'success') {
                         location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', payload.session);
                     }
                 });
