@@ -44,7 +44,19 @@ class logIn extends React.Component {
         }
         try {
             const url = process.env.API_BASE_URL + '/api/v5/nexus/checkSession';
-            this.hitLoginAPI(url, { session: getCookie('sessionId') }, false);
+            const payload = { session: getCookie('sessionId') };
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            };
+            fetch(url, requestOptions)
+                .then((response) => response?.json())
+                .then((result) => {
+                    if (result?.data?.loggedIn) {
+                        location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', payload.session);
+                    }
+                });
         } catch (error) {
             console.log('No Session Found');
         }
