@@ -8,7 +8,7 @@ class StepThree extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            formData: {
+            formData: props?.formData || {
                 firstName: '',
                 lastName: '',
                 companyName: '',
@@ -90,7 +90,8 @@ class StepThree extends React.Component {
             .then((response) => {
                 let services = response.data.data;
                 this.setState({ services });
-                if (this.props?.preselectedService) {
+                const formDataServices = this.state.formData.serviceNeeded;
+                if (!formDataServices.length && this.props?.preselectedService) {
                     Object.entries(services).find(([key, value]) => {
                         if (value.toLowerCase().includes(this.props?.preselectedService.toLowerCase())) {
                             this.setState({
@@ -103,6 +104,20 @@ class StepThree extends React.Component {
                             return true;
                         }
                     });
+                } else if (formDataServices.length) {
+                    const defaultServiceNeeded = [];
+                    Object.entries(services).forEach(([key, value]) => {
+                        if (formDataServices.includes(+key)) {
+                            defaultServiceNeeded.push({ value: +key, label: value });
+                        }
+                    });
+                    this.setState({
+                        defaultServiceNeeded,
+                        serviceRender: false,
+                    });
+                    setTimeout(() => {
+                        this.setState({ serviceRender: true });
+                    }, 1);
                 }
             })
             .catch((error) => {
