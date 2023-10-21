@@ -144,13 +144,13 @@ class SignUp extends React.Component {
                     this.setState({
                         smsRequestId: data?.message,
                         smsIdentifier: identifier,
-                        smsSuccessMessage: 'OTP sent successfully.',
+                        smsSuccessMessage: 'OTP has been successfully sent to',
                     });
                 } else {
                     this.setState({
                         emailRequestId: data?.message,
                         emailIdentifier: identifier,
-                        emailSuccessMessage: 'OTP sent successfully.',
+                        emailSuccessMessage: 'OTP has been successfully sent to',
                     });
                 }
             },
@@ -271,6 +271,7 @@ class SignUp extends React.Component {
 
     finalSubmit = (data, createCompany) => {
         const url = process.env.API_BASE_URL + '/api/v5/nexus/finalRegister';
+        this.setState({ thirdStepData: data });
         const payload = {
             'companyDetails': createCompany
                 ? {
@@ -326,9 +327,9 @@ class SignUp extends React.Component {
         return (
             <>
                 <section className="signup d-flex flex-column flex-md-row-reverse ">
-                    <div className="signup__right d-flex gap-lg-4 gap-2 flex-column ">
+                    <div className="signup__right d-flex gap-4 flex-column ">
                         <img src="/images/msgOriginalsvg.png" className="signup__right__logo d-block d-md-none" />
-                        <h1 className="signup__right__heading c-fs-2 heading d-none d-md-none">
+                        <h1 className="signup__right__heading c-fs-2 mobile-heading d-md-none">
                             Signup to avail a complete suite of MSG91 products
                         </h1>
                         {this.state.activeStep === 4 ? (
@@ -376,56 +377,57 @@ class SignUp extends React.Component {
                                     preselectedService={this.state.preselectedService}
                                     setStep={this.setStep}
                                     finalSubmit={this.finalSubmit}
+                                    formData={this.state?.thirdStepData}
                                 />
                             )}
                             {this.state.activeStep === 4 && (
                                 <div className="trep-three d-flex flex-column gap-lg-3 gap-0">
-                                    <div className="step-three__progress d-flex align-items-center gap-3 ">
-                                        <div className="text-green align-items-center gap-2 c-fs-7 d-none d-lg-flex">
-                                            <MdCheckCircle className="ico-green" /> Verify email & mobile number
+                                    <div className="step-three__progress d-flex align-items-center gap-2">
+                                        <div className="text-green align-items-center gap-2 c-fs-7 d-lg-flex">
+                                            <MdCheckCircle className="ico-green svg-icon" /> Verify email & mobile number
                                         </div>
-                                        <span className="progress-line line-green d-none d-lg-block "></span>
-                                        <div className="text-green d-lg-flex d-none align-items-center gap-2 c-fs-7 ">
-                                            <MdCheckCircle className="ico-green" />
-                                            Enter details
+                                        <span className="progress-line line-green d-lg-block "></span>
+                                        <div className="text-green d-flex align-items-center gap-2 c-fs-7 ">
+                                            <MdCheckCircle className="ico-green svg-icon" />
+                                             <span>Enter details</span>
                                         </div>
                                     </div>
-                                    <p className="step-three__reddirect c-fw-m c-fs-7">Redirecting...</p>
+                                    <p className="step-three__reddirect c-fw-m c-fs-7 mt-3">Redirecting...</p>
                                 </div>
                             )}
                         </div>
                     </div>
-                    <div className="signup__left d-lg-flex d-md-flex gap-4 flex-column">
+                    <div className={`${this.state.activeStep !== 1 ? "signup__left d-lg-flex d-md-flex gap-4 flex-column hide-on-step1-mobile" : "signup__left d-lg-flex d-md-flex gap-4 flex-column"}`}>
                         <img src="/images/msgOriginalsvg.png" className="signup__left__logo d-none d-md-block" />
                         <h1 className="signup__left__heading c-fs-2 heading d-none d-md-block c-fw-r">
                             Signup to avail a complete suite of MSG91 products
                         </h1>
-                        <p className="signup__left__que c-fs-8">What can you build with MSG91?</p>
+                        <p className="signup__left__que c-fs-8 fw-medium c-text">What can you build with MSG91?</p>
                         <div className="signup__left__features d-grid gap-2">
                             <ul className="list-unstyled d-grid gap-3 c-fs-4">
-                                <li className="d-flex align-items-center gap-2 c-fs-7">
-                                    <MdDone className="ico-green" />
+                                <li className="d-flex align-items-center gap-2 c-fs-7 c-text">
+                                    <MdDone className="icon-done ico-primary" />
                                     Programmable SMS
                                 </li>
-                                <li className="d-flex align-items-center gap-2 c-fs-7">
-                                    <MdDone className="ico-green" />
+                                <li className="d-flex align-items-center gap-2 c-fs-7 c-text">
+                                    <MdDone className="icon-done ico-primary" />
                                     Customer Contact Center
                                 </li>
-                                <li className="d-flex align-items-center gap-2 c-fs-7">
-                                    <MdDone className="ico-green" />
+                                <li className="d-flex align-items-center gap-2 c-fs-7 c-text">
+                                    <MdDone className="icon-done ico-primary" />
                                     Virtual Number
                                 </li>
-                                <li className="d-flex align-items-center gap-2 c-fs-7">
-                                    <MdDone className="ico-green" />
+                                <li className="d-flex align-items-center gap-2 c-fs-7 c-text">
+                                    <MdDone className="icon-done ico-primary" />
                                     Automated user segmentation
                                 </li>
-                                <li className="d-flex align-items-center gap-2 c-fs-7">
-                                    <MdDone className="ico-green" />
+                                <li className="d-flex align-items-center gap-2 c-fs-7 c-text">
+                                    <MdDone className="icon-done ico-primary" />
                                     OTP invisible verification
                                 </li>
                             </ul>
                         </div>
-                        <p className="signup__left__que c-fs-8 c-fw-m">Trusted by 30000+ startups and enterprises</p>
+                        <p className="signup__left__que c-fs-8 c-text">Trusted by <span className="fw-medium">30000+</span> startups and enterprises</p>
                     </div>
                 </section>
             </>

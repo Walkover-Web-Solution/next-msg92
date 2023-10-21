@@ -8,7 +8,7 @@ class StepThree extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            formData: {
+            formData: props?.formData || {
                 firstName: '',
                 lastName: '',
                 companyName: '',
@@ -90,7 +90,8 @@ class StepThree extends React.Component {
             .then((response) => {
                 let services = response.data.data;
                 this.setState({ services });
-                if (this.props?.preselectedService) {
+                const formDataServices = this.state.formData.serviceNeeded;
+                if (!formDataServices.length && this.props?.preselectedService) {
                     Object.entries(services).find(([key, value]) => {
                         if (value.toLowerCase().includes(this.props?.preselectedService.toLowerCase())) {
                             this.setState({
@@ -103,6 +104,20 @@ class StepThree extends React.Component {
                             return true;
                         }
                     });
+                } else if (formDataServices.length) {
+                    const defaultServiceNeeded = [];
+                    Object.entries(services).forEach(([key, value]) => {
+                        if (formDataServices.includes(+key)) {
+                            defaultServiceNeeded.push({ value: +key, label: value });
+                        }
+                    });
+                    this.setState({
+                        defaultServiceNeeded,
+                        serviceRender: false,
+                    });
+                    setTimeout(() => {
+                        this.setState({ serviceRender: true });
+                    }, 1);
                 }
             })
             .catch((error) => {
@@ -294,14 +309,14 @@ class StepThree extends React.Component {
     render() {
         return (
             <>
-                <div className="trep-three d-flex flex-column gap-3">
+                <div className="trep-three d-flex flex-column gap-4">
                     <div className="step-three__progress d-flex align-items-center gap-4">
-                        <div className="ico-green align-items-center gap-1 c-fs-7 d-none d-lg-flex">
-                            <MdCheckCircle className="ico-green" /> Verify email & mobile number
+                        <div className="ico-green align-items-center gap-2 c-fs-7 d-lg-flex">
+                            <MdCheckCircle className="ico-green svg-icon"/> Verify email & mobile number
                         </div>
-                        <span className="progress-line line-green d-none d-lg-block "></span>
-                        <div className="d-flex  align-items-center gap-1 c-fs-7 ">
-                            <MdCheckCircle className="ico-grey" />
+                        <span className="progress-line line-green d-lg-block "></span>
+                        <div className="d-flex  align-items-center gap-2 c-fs-7 ">
+                            <MdCheckCircle className="ico-grey svg-icon"/>
                             Enter details
                         </div>
                     </div>
@@ -348,8 +363,8 @@ class StepThree extends React.Component {
                                 Object.values(this.props.invitations).map((value) => {
                                     return (
                                         <div className="d-flex flex-wrap gap-3 align-items-center">
-                                            <p>
-                                                You are invited to join <span class="c-fw-sb">{value.companyName}</span>
+                                            <p className="invitation-banner">
+                                                You are invited to join <span className="c-fw-sb">{value.companyName}</span>
                                             </p>
                                             {(value?.accept === null || value?.accept === undefined) && (
                                                 <div className="d-flex gap-3 align-items-center">
@@ -376,9 +391,8 @@ class StepThree extends React.Component {
                                                     </button>
                                                 </div>
                                             )}
-                                            {value?.accept === true && <MdCheckCircle className="ico-green" />}
-                                            {value?.accept === false && <MdCancel className="ico-red" />}
-                                            {}
+                                            {value?.accept === true && <MdCheckCircle className="ico-green svg-icon" />}
+                                            {value?.accept === false && <MdCancel className="ico-red svg-icon"/>}
                                         </div>
                                     );
                                 })}
@@ -387,7 +401,7 @@ class StepThree extends React.Component {
                     {this.props?.invitations && !this.state.createCompany && (
                         <div>
                             <button
-                                className="btn btn-login-prime-o"
+                                className="btn btn-login-prime-o create-company-btn"
                                 onClick={() => this.setState({ createCompany: true })}
                             >
                                 {' '}
@@ -396,10 +410,10 @@ class StepThree extends React.Component {
                         </div>
                     )}
                     {this.props?.invitations && this.state.createCompany && (
-                        <div class="d-flex justify-content-between step-three__main">
-                            <span class="c-fs-3 c-fw-500"> Create Company </span>
+                        <div className="d-flex align-items-center justify-content-between step-three__main">
+                            <span className="c-fs-5 fw-medium"> Create Company </span>
                             <button
-                                className="btn c-fs-6 c-fw-r"
+                                className="btn c-fs-6 c-fw-r btn-default"
                                 onClick={() => this.setState({ createCompany: false })}
                             >
                                 {' '}
@@ -409,7 +423,7 @@ class StepThree extends React.Component {
                     )}
                     {this.state.createCompany && (
                         <form className="step-three__main">
-                            <div className="detail-form d-flex flex-column gap-3">
+                            <div className="detail-form d-flex flex-column gap-4">
                                 <div className="col-12 form-input-with-error">
                                     <input
                                         type="text"
@@ -471,6 +485,7 @@ class StepThree extends React.Component {
                                                       }))
                                                     : []
                                             }
+                                            className='chip-list-select'
                                         />
                                     )}
                                     <div className="text-danger input-error-message c-fs-7">
@@ -643,14 +658,14 @@ class StepThree extends React.Component {
                                 />
                                 <p className="form-check-label c-fs-7 c-fw-500 ps-0" htmlFor="termsCheckBox">
                                     I agree to the{' '}
-                                    <a href="https://msg91.com/terms-of-use" target="_blank" className="cp">
+                                    <a href="https://msg91.com/terms-of-use" target="_blank" className="cp text-hover-underline">
                                         terms of use
                                     </a>
                                 </p>
                             </div>
-                            <div className="d-flex mt-3">
+                            <div className="d-flex gap-3 mt-4">
                                 <button
-                                    className="me-3 btn btn-login-secondary c-fs-7"
+                                    className="btn btn-login-secondary c-fs-7"
                                     onClick={() => this.props.setStep(2)}
                                 >
                                     {' '}
