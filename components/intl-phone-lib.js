@@ -21,7 +21,6 @@ class MobileInputComponent extends React.Component {
                     id="init-contact"
                     placeholder="Mobile Number"
                     onInput={(event) => {
-                        console.log(event.target.value);
                         const isValid = this.props?.required
                             ? intlClass?.isRequiredValidNumber
                             : intlClass?.isValidNumber;
@@ -48,6 +47,19 @@ var INTL_INPUT_OPTION = {
     autoHideDialCode: false,
     separateDialCode: false,
     initialCountry: 'auto',
+    geoIpLookup: function (callback) {
+        fetch('https://api.db-ip.com/v2/free/self')
+            .then(function (res) {
+                return res.json();
+            })
+            .then(function (data) {
+                callback(data?.countryCode?.toLowerCase() || 'in');
+            })
+            .catch(function () {
+                callback('in');
+            });
+    },
+    formatOnDisplay: false,
 };
 
 var PHONE_NUMBER_REGEX = /^[0-9-+()\/\\ ]+$/;
