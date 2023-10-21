@@ -387,7 +387,7 @@ help.msg91.com/article/212-sendotp https://msg91.com/help/MSG91/what-is-sendotp-
 test.panel.msg91.com/apidoc/reseller/add-clients.php https://docs.msg91.com/reference/send-sms
 /guide/tag/startup-success-story/ /guide
 /blog/how-does-sms-gateway-work/feed/ /guide
-/ph/case-studies/leadsquared/feed /case-studies/leadsq
+/ph/case-studies/leadsquared/feed /case-studies/leadsquared
 /blog/tag/mwc-barcelona/feed/ /guide
 /blog/tag/sms/ /guide
 /guide/a-journey-from-sms-to-communication-megacorp/ /guide
@@ -667,7 +667,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /in/smart-shift/case-studies/ /case-studies/smartshift
 /sg/voice-call-api/ /voice
 /case-studies/policy-bazaar/feed/ /case-studies/policybazaar
-/leadsquared/?typeform-embed=popup-drawer /case-studies/leadsq
 /blog/tag/server-side-app/amp/ /guide
 /in/startups/?utm_source=startup-banner&ref=schooltime /startups/?utm_source=startup-banner&ref=schooltime
 /no-spam-policy/ /no-spam-policy/
@@ -716,7 +715,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /in/terms-of-use/?__hstc=241134940.2f3f33a24b44870ec4a577029c49e44b.1602547200083.1602547200084.1602547200085.1&__hssc=241134940.1.1602547200086&__hsfp=2827025116 /terms-of-use/
 /in/clickpost/ /case-studies/clickpost/
 /es/startups/ /startups/
-/in/leadsquared/ /case-studies/leadsq
+/in/leadsquared/ /case-studies/leadsquared
 /blog/author/pallavi/amp/page/page?nonamp=1 /guide
 /in/case-studies/joey-rooms/?typeform-embed=popup-drawer /case-studies/joeyrooms
 /case-studies/joey-rooms/ /case-studies/joey-rooms/
@@ -751,7 +750,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /ph/case-studies/ /case-studies/
 /terms/ /terms-of-use
 /blog/category/msg91-for-startups/amp /guide
-/case-studies/leadsquared/feed/ /case-studies/leadsq
+/case-studies/leadsquared/feed/ /case-studies/leadsquared
 /in/talkcharge/ /case-studies/talkcharge
 /best-bulk-sms-service-provider-in-india/ /sms
 /us/hello-features/ /us/hello
@@ -760,7 +759,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /blog/woocommerce-sms-extension/?nonamp=1 /guide
 /us/internet-messaging/ /whatsapp
 /blog/tag/woocommerce/amp/ /guide
-/case-studies/leadsquared /case-studies/leadsq
 /blog/sms-marketing-in-comparison-with-multiple-advertising-campaigns/?nonamp=1 /guide/sms-marketing-in-comparison-with-multiple-advertising-campaigns/?nonamp=1
 /case-studies/mahindra-mahindra-automotive-division /case-studies/mahindra
 /blog/good-news-for-our-direct-white-label-sms-resellership/feed/ /guide
@@ -1066,7 +1064,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /cdn-cgi/challenge-platform/h/g/scripts/cb/invisible.js?cb=7b822cf69e210bd9 /
 /transactional-email/?typeform-embed=popup-drawer /email
 /case-studies/zinghr/ /case-studies/zing
-/case-studies/joeyrooms /case-studies/joeyrooms
 /transactional-sms/?utm_source=blog&utm_medium=int&utm_campaign=dnc /sms/
 /transactional-sms /sms
 /void(0)/ /
