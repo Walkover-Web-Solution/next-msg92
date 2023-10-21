@@ -45,6 +45,24 @@ class SignUp extends React.Component {
         if (queryParams?.service) {
             this.setState({ preselectedService: queryParams.service });
         }
+        try {
+            const url = process.env.API_BASE_URL + '/api/v5/nexus/checkSession';
+            const payload = { session: getCookie('sessionId') };
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            };
+            fetch(url, requestOptions)
+                .then((response) => response?.json())
+                .then((result) => {
+                    if (result?.data?.loggedIn) {
+                        location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', payload.session);
+                    }
+                });
+        } catch (error) {
+            console.log('No Session Found');
+        }
     };
 
     setStep = (step) => {
@@ -97,11 +115,15 @@ class SignUp extends React.Component {
 
     identifierChange = (notByEmail) => {
         if (notByEmail) {
-            this.setState({ smsIdentifier: null, smsAccessToken: null });
+            if (this.state.smsIdentifier || this.state.smsAccessToken) {
+                this.setState({ smsIdentifier: null, smsAccessToken: null });
+            }
             return;
         }
         if (!notByEmail) {
-            this.setState({ emailIdentifier: null, emailAccessToken: null });
+            if (this.state.emailIdentifier || this.state.emailAccessToken) {
+                this.setState({ emailIdentifier: null, emailAccessToken: null });
+            }
             return;
         }
     };
@@ -218,11 +240,11 @@ class SignUp extends React.Component {
             body: JSON.stringify(payload),
         };
         fetch(url, requestOptions)
-            .then((response) => response.json())
+            .then((response) => response?.json())
             .then((result) => {
                 this.setSession(result);
                 this.setState({ sessionDetails: result?.data?.sessionDetails });
-                if (!result?.hasError) {
+                if (result?.status === 'success') {
                     if (result?.data?.data?.nextStep === 'createNewCompany') {
                         this.setStep(3);
                     } else if (result?.data?.data?.nextStep === 'loginIntoExistingAccount') {
@@ -234,7 +256,7 @@ class SignUp extends React.Component {
                         this.setState({ invitations: result?.data?.data?.invitations });
                         this.setStep(3);
                     }
-                } else {
+                } else if (result?.hasError) {
                     toast.error(result?.errors?.[0] ?? result?.errors);
                 }
             });
@@ -283,18 +305,18 @@ class SignUp extends React.Component {
             body: JSON.stringify(payload),
         };
         fetch(url, requestOptions)
-            .then((response) => response.json())
+            .then((response) => response?.json())
             .then((result) => {
                 this.setSession(result);
-                if (!result?.hasError) {
+                if (result?.status === 'success') {
                     this.setStep(4);
                     setTimeout(() => {
                         location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(
                             ':session',
-                            getCookie('sessionId')
+                            result?.data?.sessionDetails?.PHPSESSID
                         );
                     }, 10);
-                } else {
+                } else if (result?.hasError) {
                     toast.error(result?.errors?.[0] ?? result?.errors);
                 }
             });

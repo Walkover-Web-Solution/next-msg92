@@ -1,6 +1,11 @@
 import React from 'react';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft, MdCheckCircle, MdCheckCircleOutline } from 'react-icons/md';
 import Otpinput from './comps/otpInput';
+import MobileInputComponent from '@/components/intl-phone-lib';
+import { toast } from 'react-toastify';
+
+var smsIdentifier = '';
+var mobileInvalid = false;
 
 class StepTwo extends React.Component {
     constructor(props) {
@@ -9,6 +14,7 @@ class StepTwo extends React.Component {
             emailIdentifier: props.emailIdentifier || '',
             smsIdentifier: props.smsIdentifier || '',
         };
+        smsIdentifier = this.state.smsIdentifier;
     }
 
     render() {
@@ -131,15 +137,16 @@ class StepTwo extends React.Component {
                             <div className="ver-phone__main">
                                 <div className="ver-phone-main d-flex gap-3 ver-input">
                                     <div className="ver-phone-main__input col ver-input__input">
-                                        <input
-                                            type="text"
-                                            className="form-control w-100 c-fs-7"
-                                            id="contactIdentifier"
-                                            placeholder="Mobile number"
-                                            defaultValue={this.state.smsIdentifier}
-                                            onInput={(e) => this.props.identifierChange(true)}
+                                        <MobileInputComponent
+                                            onInput={(event) => {
+                                                smsIdentifier = event?.replace('+', '');
+                                                this.props.identifierChange(true);
+                                            }}
+                                            required={true}
                                             disabled={this.props?.smsAccessToken}
-                                        />
+                                            defaultValue={smsIdentifier ? '+' + smsIdentifier : ''}
+                                            setInvalid={(event) => (mobileInvalid = event)}
+                                        ></MobileInputComponent>
 
                                         <span className="ver-phone-main__input__check">
                                             {this.props?.smsAccessToken && <MdCheckCircle className="ico-green" />}
@@ -158,10 +165,9 @@ class StepTwo extends React.Component {
                                                 this.props?.smsIdentifier ? 'btn-light disabled' : 'btn-login-prime-o'
                                             }`}
                                             onClick={() =>
-                                                this.props.sendOtp(
-                                                    document.getElementById('contactIdentifier').value,
-                                                    true
-                                                )
+                                                mobileInvalid
+                                                    ? toast.error('Invalid mobile number.')
+                                                    : this.props.sendOtp(smsIdentifier, true)
                                             }
                                         >
                                             Get OTP
@@ -262,7 +268,11 @@ class StepTwo extends React.Component {
                             </button>
                             <button
                                 className=" btn btn-login-prime"
-                                onClick={() => this.props?.smsAccessToken && this.props?.emailAccessToken && this.props.validateUserForCompany()}
+                                onClick={() =>
+                                    this.props?.smsAccessToken &&
+                                    this.props?.emailAccessToken &&
+                                    this.props.validateUserForCompany()
+                                }
                                 disabled={!this.props?.smsAccessToken || !this.props?.emailAccessToken}
                             >
                                 {' '}
