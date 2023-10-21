@@ -115,11 +115,15 @@ class SignUp extends React.Component {
 
     identifierChange = (notByEmail) => {
         if (notByEmail) {
-            this.setState({ smsIdentifier: null, smsAccessToken: null });
+            if (this.state.smsIdentifier || this.state.smsAccessToken) {
+                this.setState({ smsIdentifier: null, smsAccessToken: null });
+            }
             return;
         }
         if (!notByEmail) {
-            this.setState({ emailIdentifier: null, emailAccessToken: null });
+            if (this.state.emailIdentifier || this.state.emailAccessToken) {
+                this.setState({ emailIdentifier: null, emailAccessToken: null });
+            }
             return;
         }
     };
