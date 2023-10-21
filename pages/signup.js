@@ -271,6 +271,7 @@ class SignUp extends React.Component {
 
     finalSubmit = (data, createCompany) => {
         const url = process.env.API_BASE_URL + '/api/v5/nexus/finalRegister';
+        this.setState({ thirdStepData: data });
         const payload = {
             'companyDetails': createCompany
                 ? {
@@ -376,6 +377,7 @@ class SignUp extends React.Component {
                                     preselectedService={this.state.preselectedService}
                                     setStep={this.setStep}
                                     finalSubmit={this.finalSubmit}
+                                    formData={this.state?.thirdStepData}
                                 />
                             )}
                             {this.state.activeStep === 4 && (
