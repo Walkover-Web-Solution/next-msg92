@@ -19,10 +19,10 @@ const privacypolicy = ()=>{
               <div className="my-3"></div>
               Data Processing Ownership
               <div className="my-3"></div>
-              MSG91 via 506 C.S. Naidu Arcade, Indore.
-              <div className="my-3"></div>
-              <a href="https://msg91.com/cdn-cgi/l/email-protection#62111712120d1016220f11055b534c090b0c1116034c010e0d1706">[email protected]</a>
-              <div className="my-3"></div>
+              Walkover Web Solutions Pvt Ltd,<br></br>
+              405-406, CAPTAIN C.S.NAYUDU ARCADE,<br></br>
+              OLD PALASIA ROAD, INDORE, Madhya Pradesh
+              <div className="my-3"></div>            
               Types of Data Collected
               <div className="my-3"></div>
               Among the Data that this Application may collect, there are: Cookie, Browsing and usage Data, First Name, Phone number, Country and Email.
