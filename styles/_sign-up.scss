@@ -402,9 +402,9 @@
     }
 }
 
-.hide-on-step1-mobile {
+.hide-on-mobile {
     @media (max-width: 768px) {
-        display: none;
+        display: none !important;
     }
 }
 

@@ -311,10 +311,10 @@ class StepThree extends React.Component {
             <>
                 <div className="trep-three d-flex flex-column gap-4">
                     <div className="step-three__progress d-flex align-items-center gap-4">
-                        <div className="ico-green align-items-center gap-2 c-fs-7 d-lg-flex hide-on-step1-mobile">
+                        <div className="ico-green align-items-center gap-2 c-fs-7 d-lg-flex hide-on-mobile">
                             <MdCheckCircle className="ico-green svg-icon"/> Verify email & mobile number
                         </div>
-                        <span className="progress-line line-green d-lg-block hide-on-step1-mobile"></span>
+                        <span className="progress-line line-green d-lg-block hide-on-mobile"></span>
                         <div className="d-flex  align-items-center gap-2 c-fs-7 ">
                             <MdCheckCircle className="ico-grey svg-icon"/>
                             Enter details

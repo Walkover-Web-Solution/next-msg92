@@ -330,10 +330,10 @@ class SignUp extends React.Component {
                     <div className="signup__right d-flex gap-4 flex-column ">
                         <img src="/images/msgOriginalsvg.png" className="signup__right__logo d-block d-md-none" />
                         {this.state.activeStep === 1 && (
-                                <h1 className="signup__right__heading c-fs-2 mobile-heading d-md-none">
-                                    Signup to avail a complete suite of MSG91 products
-                                </h1>
-                            )}
+                            <h1 className="signup__right__heading c-fs-2 mobile-heading d-md-none">
+                                Signup to avail a complete suite of MSG91 products
+                            </h1>
+                        )}
                         {this.state.activeStep === 4 ? (
                             <h1 className="signup__right__heading c-fs-2 heading text-green mt-3">
                                 Account created Successfully!
@@ -384,15 +384,17 @@ class SignUp extends React.Component {
                             )}
                             {this.state.activeStep === 4 && (
                                 <div className="trep-three d-flex flex-column gap-lg-3 gap-0">
-                                    <div className="step-three__progress d-flex align-items-center gap-2">
-                                        <div className="text-green align-items-center gap-2 c-fs-7 d-lg-flex">
-                                            <MdCheckCircle className="ico-green svg-icon" /> Verify email & mobile
-                                            number
-                                        </div>
-                                        <span className="progress-line line-green d-lg-block "></span>
-                                        <div className="text-green d-flex align-items-center gap-2 c-fs-7 ">
-                                            <MdCheckCircle className="ico-green svg-icon" />
-                                            <span>Enter details</span>
+                                    <div className="hide-on-mobile">
+                                        <div className="step-three__progress d-flex align-items-center gap-2">
+                                            <div className="text-green align-items-center gap-2 c-fs-7 d-lg-flex">
+                                                <MdCheckCircle className="ico-green svg-icon" /> Verify email & mobile
+                                                number
+                                            </div>
+                                            <span className="progress-line line-green d-lg-block"></span>
+                                            <div className="text-green d-flex align-items-center gap-2 c-fs-7">
+                                                <MdCheckCircle className="ico-green svg-icon" />
+                                                <span>Enter details</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <p className="step-three__reddirect c-fw-m c-fs-7 mt-3">Redirecting...</p>
@@ -403,7 +405,7 @@ class SignUp extends React.Component {
                     <div
                         className={`${
                             this.state.activeStep !== 1
-                                ? 'signup__left d-lg-flex d-md-flex gap-4 flex-column hide-on-step1-mobile'
+                                ? 'signup__left d-lg-flex d-md-flex gap-4 flex-column hide-on-mobile'
                                 : 'signup__left d-lg-flex d-md-flex gap-4 flex-column'
                         }`}
                     >
