@@ -11,8 +11,7 @@ const msg91ForStartups = () => {
 
         <div>
           <p className='small-heading p-2'>
-            Get a complimentary communication API package for every product
-            Startup.
+            Get a complimentary communication API package tailored to meet your needs
           </p>
         </div>
 
@@ -27,7 +26,7 @@ const msg91ForStartups = () => {
       </div>
 
       <section className='bg-dark p-5 text-white my-80 text-center small-heading'>
-        "Today we help you, tomorrow we can change the world together."
+        Today we help you, tomorrow we can change the world together
       </section>
       <div className=' my-80 text-center justify-content-center'>
         <h3 className='c-head sub-heading mt-3'>
@@ -37,7 +36,7 @@ const msg91ForStartups = () => {
           <div className='signup-cont startUpCart  p-3 d-flex flex-column align-items-center justify-content-center'>
             <span className='c-fs-2 c-fw-sb'>Sign up</span>
             <p className='c-fs-4 mt-2'>
-              Sign up with your official email ID and integrate MSG91 API.
+              Sign up with your official email ID and integrate MSG91 API
             </p>
           </div>
 
@@ -47,7 +46,7 @@ const msg91ForStartups = () => {
           <div className='signup-cont startUpCart p-4 d-flex flex-column align-items-center justify-content-center'>
             <span className='c-fs-2 c-fw-sb'>Apply</span>
             <p className='c-fs-4 mt-2'>
-              If you fulfill criteria, you can apply for the startup program.
+              If you fulfill criteria, you can apply for the startup program
             </p>
           </div>
 
@@ -57,19 +56,19 @@ const msg91ForStartups = () => {
           <div className='signup-cont startUpCart p-4 d-flex flex-column align-items-center justify-content-center'>
             <span className='c-fs-2 c-fw-sb'>Enjoy</span>
             <p className='c-fs-4 mt-2'>
-              You are good to go to avail the benifits.
+              You are good to go to avail the benifits
             </p>
           </div>
         </div>
       </div>
       <div className='container px-3 px-md-auto'>
-        <h2 className='sub-heading c-head'>Benifits of Startup Program</h2>
+        <h2 className='sub-heading c-head'>Benefits of Startup Program</h2>
         <div className='mt-2 '>
           <span className='c-fs-1 c-fw-b text-green'>
             <MdDone />
           </span>
           <span className='c-fs-4 ms-2'>
-            25000 SMS credits every months for 6 months.
+            25000 SMS credits every month for 6 months.
           </span>
         </div>
         <div className='mt-2 '>
@@ -77,7 +76,7 @@ const msg91ForStartups = () => {
             <MdDone />
           </span>
           <span className='c-fs-4 ms-2'>
-            Can be used for OTP, Transactional SMS, Emails.
+            Can be used for OTP, Transactional/Promotional SMS, Emails, WhatsApp or Voice
           </span>
         </div>
         <div className=' mt-2'>
@@ -85,8 +84,7 @@ const msg91ForStartups = () => {
             <MdDone />
           </span>
           <span className='c-fs-4 ms-2'>
-            Leverage our Cloud contact center HELLO and Customer Segmentation
-            product.
+            Leverage our Cloud contact center <b>HELLO</b>, Contact Management tool <b>SEGMENTO</b>, Event Based Automation tool <b>CAMPAIGN</b> and FAQ software <b>KNOWLEDGEBASE</b> to drive your sales
           </span>
         </div>
         <div className='mt-2 '>
@@ -94,7 +92,7 @@ const msg91ForStartups = () => {
             <MdDone />
           </span>
           <span className='c-fs-4 ms-2'>
-            Get support from our Superherose to integrate scalable APIs.
+            Get support from our Superheroes to integrate scalable APIs.
           </span>
         </div>
       </div>
@@ -103,7 +101,7 @@ const msg91ForStartups = () => {
           <h2 className='sub-heading  c-head'>Our Collaborators</h2>
           <p className='c-fs-3 col-12 col-md-10 mb-4 '>
             We’re proud to be associated with a growing set of Venture
-            Capitalists, Accelerators,Incubators and Crowdfunding platforms
+            Capitalists, Accelerators, Incubators and Crowdfunding platforms
             across to inspire, identify and develop end-to-end solutions for
             businesses to discover and engage.
           </p>
