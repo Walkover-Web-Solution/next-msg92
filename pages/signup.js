@@ -357,9 +357,7 @@ class SignUp extends React.Component {
 
                         <div className="signup__right__main c-text">
                             {/* STEP #1 */}
-                            {this.state.activeStep === 1 && (
-                                <StepOne signupByGitHubAccount={this.signupByGitHubAccount} setStep={this.setStep} />
-                            )}
+                            {this.state.activeStep === 1 && <StepOne setStep={this.setStep} />}
 
                             {/* STEP #2 */}
                             {this.state.activeStep === 2 && (
