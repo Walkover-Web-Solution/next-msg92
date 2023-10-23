@@ -75,6 +75,7 @@ class SignUp extends React.Component {
                 signupByGitHub: false,
                 githubCode: null,
                 githubState: null,
+                thirdStepData: null,
             });
         }
         this.setState({
