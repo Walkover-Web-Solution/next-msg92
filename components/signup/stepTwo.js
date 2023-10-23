@@ -165,7 +165,7 @@ class StepTwo extends React.Component {
                                             className="ver-mobile-main__btn btn  btn-login-prime-o c-fw-m c-fs-7"
                                             onClick={(e) => this.props.identifierChange(true)}
                                         >
-                                            Change Mobile
+                                            Change Mobile Number
                                         </button>
                                     ) : (
                                         <button
