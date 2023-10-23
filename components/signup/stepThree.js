@@ -311,17 +311,17 @@ class StepThree extends React.Component {
             <>
                 <div className="trep-three d-flex flex-column gap-4">
                     <div className="step-three__progress d-flex align-items-center gap-4">
-                        <div className="ico-green align-items-center gap-2 c-fs-7 d-lg-flex">
+                        <div className="ico-green align-items-center gap-2 c-fs-7 d-lg-flex hide-on-step1-mobile">
                             <MdCheckCircle className="ico-green svg-icon"/> Verify email & mobile number
                         </div>
-                        <span className="progress-line line-green d-lg-block "></span>
+                        <span className="progress-line line-green d-lg-block hide-on-step1-mobile"></span>
                         <div className="d-flex  align-items-center gap-2 c-fs-7 ">
                             <MdCheckCircle className="ico-grey svg-icon"/>
                             Enter details
                         </div>
                     </div>
                     {/* <p className="step-three__reddirect">Redirecting...</p> */}
-                    <div className="d-flex gap-3 flex-column  flex-lg-row detail-form__group step-three__main mt-3">
+                    <div className="d-flex gap-4 flex-column  flex-lg-row detail-form__group step-three__main mt-3">
                         <div className="w-100 form-input-with-error">
                             <input
                                 type="text"
@@ -362,12 +362,12 @@ class StepThree extends React.Component {
                             {this.state.invitationRender &&
                                 Object.values(this.props.invitations).map((value) => {
                                     return (
-                                        <div className="d-flex flex-wrap gap-3 align-items-center">
+                                        <div className="d-flex flex-wrap gap-4 align-items-center">
                                             <p className="invitation-banner">
                                                 You are invited to join <span className="c-fw-sb">{value.companyName}</span>
                                             </p>
                                             {(value?.accept === null || value?.accept === undefined) && (
-                                                <div className="d-flex gap-3 align-items-center">
+                                                <div className="d-flex gap-4 align-items-center">
                                                     <button
                                                         className="btn btn-sm btn-accept rounded"
                                                         onClick={() => {
@@ -492,7 +492,7 @@ class StepThree extends React.Component {
                                         {this.state.formErrorData.serviceNeededError}
                                     </div>
                                 </div>
-                                <div className="d-flex gap-3 flex-column flex-lg-row detail-form__group">
+                                <div className="d-flex gap-4 flex-column flex-lg-row detail-form__group">
                                     <div className="w-100 form-input-with-error">
                                         <select
                                             autoComplete="on"
@@ -539,7 +539,7 @@ class StepThree extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="d-flex gap-3 flex-column flex-lg-row detail-form__group">
+                                <div className="d-flex gap-4 flex-column flex-lg-row detail-form__group">
                                     <div className="w-100 form-input-with-error">
                                         <input
                                             type="text"

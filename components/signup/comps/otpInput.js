@@ -5,7 +5,7 @@ class Otpinput extends React.Component {
         return (
             <>
                 <div className="d-flex gap-3 ver-input">
-                    <div className="d-flex gap-2 ver-input__input">
+                    <div className="d-flex gap-3 ver-input__input">
                         {otpLength.map((x) => (
                             <input
                                 type="text"

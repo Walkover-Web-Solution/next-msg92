@@ -232,6 +232,9 @@
         .hor-line {
             display: none;
         }
+        .ver-email__otp{
+            width: 100%;
+        }
     }
 }
 @media (max-width: 1300px) {
@@ -283,8 +286,8 @@
 .ver-phone-main {
     // max-width: 500px;
     // width: 355px;
-    .form-control {
-        padding-right: 1.7rem;
+    .form-control, .ver-input__input {
+        // padding-right: 1.7rem;
         width: 250px;
         @media (max-width: 991px) {
             width: 100%;
@@ -309,8 +312,11 @@
             transform: translateY(-50%);
         }
     }
-    .ver-mobile-main__ntb {
+    .ver-mobile-main__btn {
         white-space: nowrap;
+        @media (max-width: 768px) {
+            height: 40px;
+        }
     }
 }
 .ver-input {
