@@ -13,7 +13,7 @@ const IntPage = () => {
     <>
       <div className="int-page-head freshworks d-flex py-3">
         <div className="container d-flex align-items-center gap-4">
-          <img src="\img\integrations\freshworks-logo.svg" />
+          <img src="/img/integrations/freshworks-logo.svg" />
           <div>
             <h1 className="sub-heading">Freshworks Integration</h1>
             <h4 className="c-fs-4 mt-2">
@@ -47,7 +47,7 @@ const IntPage = () => {
             </div>
           </div>
           {/* <img
-            src="\img\integrations\code-img-int.svg"
+            src="/img/integrations/code-img-int.svg"
             className="img-fluid product-page-img mx-auto"
             alt="#"
           /> */}
@@ -103,7 +103,7 @@ const IntPage = () => {
           multi-channel communication Update customers on critical events- New
           Signups, Payment Confirmation, Send Invoice PDF
         </p>
-        <img className="col-12 col-sm-6" src="\img\integrations\zapeir-graphics.svg" />
+        <img className="col-12 col-sm-6" src="/img/integrations/zapeir-graphics.svg" />
       </div>
       <div className="container my-5">
         <h1 className="sub-heading c-head mb-3">
