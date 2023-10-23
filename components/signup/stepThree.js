@@ -486,6 +486,7 @@ class StepThree extends React.Component {
                                                     : []
                                             }
                                             className='chip-list-select'
+                                            classNamePrefix="signup_react_select"
                                         />
                                     )}
                                     <div className="text-danger input-error-message c-fs-7">
