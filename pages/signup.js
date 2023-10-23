@@ -66,6 +66,17 @@ class SignUp extends React.Component {
     };
 
     setStep = (step) => {
+        if (step === 1) {
+            this.setState({
+                emailIdentifier: null,
+                emailAccessToken: null,
+                smsIdentifier: null,
+                smsAccessToken: null,
+                signupByGitHub: false,
+                githubCode: null,
+                githubState: null,
+            });
+        }
         this.setState({
             activeStep: step,
         });
@@ -119,10 +130,12 @@ class SignUp extends React.Component {
                 this.setState({ smsIdentifier: null, smsAccessToken: null });
             }
             return;
-        }
-        if (!notByEmail) {
+        } else {
             if (this.state.emailIdentifier || this.state.emailAccessToken) {
                 this.setState({ emailIdentifier: null, emailAccessToken: null });
+            }
+            if (this.state.signupByGitHub) {
+                this.setState({ signupByGitHub: false, githubCode: null, githubState: null });
             }
             return;
         }
@@ -344,9 +357,7 @@ class SignUp extends React.Component {
 
                         <div className="signup__right__main c-text">
                             {/* STEP #1 */}
-                            {this.state.activeStep === 1 && (
-                                <StepOne signupByGitHubAccount={this.signupByGitHubAccount} setStep={this.setStep} />
-                            )}
+                            {this.state.activeStep === 1 && <StepOne setStep={this.setStep} />}
 
                             {/* STEP #2 */}
                             {this.state.activeStep === 2 && (
