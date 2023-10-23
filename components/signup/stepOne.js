@@ -10,10 +10,7 @@ class StepOne extends React.Component {
                         <p className="stepone__dev__que c-fs-7 ">Are you a developer?</p>
                         <div className="stepone__dev__icons">
                             <a href="/github-auth?signup=true">
-                                <button
-                                    className="product-btn btn rounded border border-dark social-btn d-flex justify-content-center align-items-center"
-                                    onClick={() => this.props.signupByGitHubAccount()}
-                                >
+                                <button className="product-btn btn rounded border border-dark social-btn d-flex justify-content-center align-items-center">
                                     <img src="/img/icon-github.svg" alt="Github" />
                                 </button>
                             </a>
@@ -32,7 +29,10 @@ class StepOne extends React.Component {
                         </button>
                     </div>
                     <p className="step-one__login c-text c-fs-7">
-                        If you already have an account, <a href="/signin" className='text-hover-underline'>Login</a>
+                        If you already have an account,{' '}
+                        <a href="/signin" className="text-hover-underline">
+                            Login
+                        </a>
                     </p>
                 </div>
             </>
