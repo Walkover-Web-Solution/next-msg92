@@ -311,17 +311,17 @@ class StepThree extends React.Component {
             <>
                 <div className="trep-three d-flex flex-column gap-4">
                     <div className="step-three__progress d-flex align-items-center gap-4">
-                        <div className="ico-green align-items-center gap-2 c-fs-7 d-lg-flex">
+                        <div className="ico-green align-items-center gap-2 c-fs-7 d-lg-flex hide-on-step1-mobile">
                             <MdCheckCircle className="ico-green svg-icon"/> Verify email & mobile number
                         </div>
-                        <span className="progress-line line-green d-lg-block "></span>
+                        <span className="progress-line line-green d-lg-block hide-on-step1-mobile"></span>
                         <div className="d-flex  align-items-center gap-2 c-fs-7 ">
                             <MdCheckCircle className="ico-grey svg-icon"/>
                             Enter details
                         </div>
                     </div>
                     {/* <p className="step-three__reddirect">Redirecting...</p> */}
-                    <div className="d-flex gap-3 flex-column  flex-lg-row detail-form__group step-three__main mt-3">
+                    <div className="d-flex gap-4 flex-column  flex-lg-row detail-form__group step-three__main mt-3">
                         <div className="w-100 form-input-with-error">
                             <input
                                 type="text"
@@ -330,7 +330,7 @@ class StepThree extends React.Component {
                                         ? 'form-control input-error-display'
                                         : 'form-control'
                                 }
-                                placeholder="First Name"
+                                placeholder="First Name*"
                                 name="firstName"
                                 value={this.state.formData.firstName}
                                 onChange={this.handleInputChange}
@@ -347,7 +347,7 @@ class StepThree extends React.Component {
                                         ? 'form-control input-error-display'
                                         : 'form-control'
                                 }
-                                placeholder="Last Name"
+                                placeholder="Last Name*"
                                 name="lastName"
                                 value={this.state.formData.lastName}
                                 onChange={this.handleInputChange}
@@ -362,12 +362,12 @@ class StepThree extends React.Component {
                             {this.state.invitationRender &&
                                 Object.values(this.props.invitations).map((value) => {
                                     return (
-                                        <div className="d-flex flex-wrap gap-3 align-items-center">
+                                        <div className="d-flex flex-wrap gap-4 align-items-center">
                                             <p className="invitation-banner">
                                                 You are invited to join <span className="c-fw-sb">{value.companyName}</span>
                                             </p>
                                             {(value?.accept === null || value?.accept === undefined) && (
-                                                <div className="d-flex gap-3 align-items-center">
+                                                <div className="d-flex gap-4 align-items-center">
                                                     <button
                                                         className="btn btn-sm btn-accept rounded"
                                                         onClick={() => {
@@ -428,7 +428,7 @@ class StepThree extends React.Component {
                                     <input
                                         type="text"
                                         className="form-control"
-                                        placeholder="Company Name"
+                                        placeholder="Company Name*"
                                         name="companyName"
                                         value={this.state.formData.companyName}
                                         onChange={this.handleInputChange}
@@ -446,7 +446,7 @@ class StepThree extends React.Component {
                                         value={this.state.formData.industryType}
                                         onChange={this.handleInputChange}
                                     >
-                                        <option value="">Industry Type</option>
+                                        <option value="" >Select Industry Type*</option>
                                         {this.state.industries && Object.keys(this.state.industries).length > 0 && (
                                             <>
                                                 {this.state.industries.map((obj) => (
@@ -476,7 +476,7 @@ class StepThree extends React.Component {
                                                     },
                                                 }))
                                             }
-                                            placeholder="Select Service Needed"
+                                            placeholder="Select Service Needed*"
                                             options={
                                                 this.state.services
                                                     ? Object.entries(this.state.services).map(([key, value]) => ({
@@ -486,13 +486,14 @@ class StepThree extends React.Component {
                                                     : []
                                             }
                                             className='chip-list-select'
+                                            classNamePrefix="signup_react_select"
                                         />
                                     )}
                                     <div className="text-danger input-error-message c-fs-7">
                                         {this.state.formErrorData.serviceNeededError}
                                     </div>
                                 </div>
-                                <div className="d-flex gap-3 flex-column flex-lg-row detail-form__group">
+                                <div className="d-flex gap-4 flex-column flex-lg-row detail-form__group">
                                     <div className="w-100 form-input-with-error">
                                         <select
                                             autoComplete="on"
@@ -502,7 +503,7 @@ class StepThree extends React.Component {
                                             value={this.state.formData.country}
                                             onChange={this.handleInputChange}
                                         >
-                                            <option value="">Country</option>
+                                            <option value="">Select Country*</option>
                                             {this.state.countryNames.map((country) => (
                                                 <option key={country.id} value={country.id}>
                                                     {country.name}
@@ -525,7 +526,7 @@ class StepThree extends React.Component {
                                             value={this.state.formData.stateProvince}
                                             onChange={this.handleInputChange}
                                         >
-                                            <option value="">State/Province</option>
+                                            <option value="">Select State/Province*</option>
                                             {this.state.countryData
                                                 ? this.state.countryData?.data.map((stateProvince) => (
                                                       <option key={stateProvince.id} value={stateProvince.id}>
@@ -539,7 +540,7 @@ class StepThree extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="d-flex gap-3 flex-column flex-lg-row detail-form__group">
+                                <div className="d-flex gap-4 flex-column flex-lg-row detail-form__group">
                                     <div className="w-100 form-input-with-error">
                                         <input
                                             type="text"
@@ -548,7 +549,7 @@ class StepThree extends React.Component {
                                                     ? 'form-control input-error-display'
                                                     : 'form-control'
                                             }
-                                            placeholder="Pincode"
+                                            placeholder="Pincode*"
                                             name="pincode"
                                             value={this.state.formData.pincode}
                                             onChange={this.handleInputChange}
@@ -569,7 +570,7 @@ class StepThree extends React.Component {
                                                 this.setCityIdByCityName(event?.target?.value);
                                             }}
                                         >
-                                            <option value="">City</option>
+                                            <option value="">Select City*</option>
                                             {this.state.countryData
                                                 ? this.state.stateData?.data.map((city) => (
                                                       <option key={city.id} value={city.name}>
@@ -589,7 +590,7 @@ class StepThree extends React.Component {
                                         <input
                                             type="text"
                                             className="form-control"
-                                            placeholder="Enter your city"
+                                            placeholder="Enter your city*"
                                             name="otherCity"
                                             value={this.state.formData.otherCity}
                                             onChange={this.handleInputChange}
@@ -603,7 +604,7 @@ class StepThree extends React.Component {
                                     <input
                                         type="text"
                                         className="form-control"
-                                        placeholder="Address"
+                                        placeholder="Address*"
                                         name="address"
                                         value={this.state.formData.address}
                                         onChange={this.handleInputChange}
@@ -621,7 +622,7 @@ class StepThree extends React.Component {
                                                     ? 'form-control input-error-display'
                                                     : 'form-control'
                                             }
-                                            placeholder="GST number"
+                                            placeholder="GST number*"
                                             name="gstNumber"
                                             value={this.state.formData.gstNumber}
                                             onChange={this.handleInputChange}
@@ -631,16 +632,6 @@ class StepThree extends React.Component {
                                         </div>
                                     </div>
                                 )}
-                                {/* <div className="col-12">
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        placeholder="How are you going to use this?"
-                                        name="howToUse"
-                                        value={this.state.formData.howToUse}
-                                        onChange={this.handleInputChange}
-                                    />
-                                </div> */}
                             </div>
                         </form>
                     )}

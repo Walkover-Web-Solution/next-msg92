@@ -52,7 +52,7 @@ class StepTwo extends React.Component {
                                                 type="email"
                                                 className="form-control c-fs-7"
                                                 id="emailIdentifier"
-                                                placeholder="Email Address"
+                                                placeholder="Email Address*"
                                                 defaultValue={this.state.emailIdentifier}
                                                 onInput={(e) => this.props.identifierChange(false)}
                                                 disabled={this.props?.emailAccessToken}
@@ -153,6 +153,7 @@ class StepTwo extends React.Component {
                                             disabled={this.props?.smsAccessToken}
                                             defaultValue={smsIdentifier ? '+' + smsIdentifier : ''}
                                             setInvalid={(event) => (mobileInvalid = event)}
+                                            placeholder="Mobile Number*"
                                         ></MobileInputComponent>
 
                                         <span className="ver-phone-main__input__check">
@@ -164,7 +165,7 @@ class StepTwo extends React.Component {
                                             className="ver-mobile-main__btn btn  btn-login-prime-o c-fw-m c-fs-7"
                                             onClick={(e) => this.props.identifierChange(true)}
                                         >
-                                            Change Mobile
+                                            Change Mobile Number
                                         </button>
                                     ) : (
                                         <button

@@ -19,7 +19,7 @@ class MobileInputComponent extends React.Component {
                     className="w-100"
                     type="text"
                     id="init-contact"
-                    placeholder="Mobile Number"
+                    placeholder={this.props.placeholder}
                     onInput={(event) => {
                         const isValid = this.props?.required
                             ? intlClass?.isRequiredValidNumber

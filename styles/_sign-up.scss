@@ -62,14 +62,14 @@
     // background-color: var(--primary-color)!important;
 }
 
-.create-company-btn{
-    background-color: #E2F0FF !important;
-    border-color: #E2F0FF !important;
+.create-company-btn {
+    background-color: #e2f0ff !important;
+    border-color: #e2f0ff !important;
     font-size: 14px !important;
     font-weight: 500 !important;
     height: 40px;
-    &:hover{
-        background-color: rgba(77, 160, 255, .32) !important;
+    &:hover {
+        background-color: rgba(77, 160, 255, 0.32) !important;
     }
 }
 
@@ -166,9 +166,14 @@
         @media (max-width: 767px) {
             flex-grow: 0;
         }
-        .form-control, .form-select, .chip-list-select{
+        .form-control,
+        .form-select,
+        .chip-list-select {
             font-size: 0.875rem;
             min-height: 40px;
+            .signup_react_select__control {
+                min-height: 40px !important;
+            }
         }
     }
 }
@@ -232,6 +237,9 @@
         .hor-line {
             display: none;
         }
+        .ver-email__otp {
+            width: 100%;
+        }
     }
 }
 @media (max-width: 1300px) {
@@ -283,8 +291,9 @@
 .ver-phone-main {
     // max-width: 500px;
     // width: 355px;
-    .form-control {
-        padding-right: 1.7rem;
+    .form-control,
+    .ver-input__input {
+        // padding-right: 1.7rem;
         width: 250px;
         @media (max-width: 991px) {
             width: 100%;
@@ -309,8 +318,11 @@
             transform: translateY(-50%);
         }
     }
-    .ver-mobile-main__ntb {
+    .ver-mobile-main__btn {
         white-space: nowrap;
+        @media (max-width: 768px) {
+            height: 40px;
+        }
     }
 }
 .ver-input {
@@ -356,14 +368,14 @@
     max-width: 560px;
 }
 .btn-accept {
-    background: #E8F7E8 !important;
+    background: #e8f7e8 !important;
     color: #307368 !important;
     font-size: 12px !important;
     font-weight: 500 !important;
 }
 .btn-reject {
-    background: #CC52291F !important;
-    color: #8C2E0E !important;
+    background: #cc52291f !important;
+    color: #8c2e0e !important;
     font-size: 12px !important;
     font-weight: 500 !important;
 }
@@ -378,48 +390,50 @@
     }
 }
 
-.ver-phone__main, .ver-email__main {
+.ver-phone__main,
+.ver-email__main {
     @media (max-width: 575px) {
-        width:100%;
-        .ver-phone-main, .ver-email-main {
+        width: 100%;
+        .ver-phone-main,
+        .ver-email-main {
             flex-direction: column;
             width: 100%;
         }
     }
 }
 
-.hide-on-step1-mobile{
+.hide-on-step1-mobile {
     @media (max-width: 768px) {
         display: none;
     }
 }
 
-
-.trep-three{
-    .invitation-banner{
-        font-size:14px;
-        color: #3F4346;
-
+.trep-three {
+    .invitation-banner {
+        font-size: 14px;
+        color: #3f4346;
     }
 }
 
-.svg-icon{
+.svg-icon {
     width: 20px;
     height: 20px;
 }
 
-.btn-default{
+.btn-default {
     font-size: 14px !important;
     border-radius: 4px !important;
-    &:hover{
+    &:hover {
         background-color: var(--c-light-grey) !important;
     }
 }
 
-.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+.btn.disabled,
+.btn:disabled,
+fieldset:disabled .btn {
     opacity: 0.5;
 }
 
-.iti--allow-dropdown{
+.iti--allow-dropdown {
     margin-bottom: 0px !important;
 }
