@@ -956,7 +956,7 @@
     "/case-studies/milkbasket": {
         "title": "Milkbasket: Sending Regular Updates to Customers via API | MSG91"
     },
-    "/case-studies/talkCharge": {
+    "/case-studies/talkcharge": {
         "title": "TalkCharge: Updating Customers Regularly via API | MSG91"
     },
     "/case-studies/razorpay": {
@@ -1023,10 +1023,13 @@
         "title": "ZingHR: Communicating with Potential Candidates via Messaging | MSG91"
     },
     "/case-studies/indialends": {
-        "title": "IndiaLends: Ensuring Seamless Operations for Customers with MSG91"
+        "title": "IndiaLends: Ensuring Seamless Operations for Customers with | MSG91"
     },
-    "case-studies/unacademy": {
-        "title": "Unacademy: Making Learning and Teaching Easy with MSG91"
+    "/case-studies/unacademy": {
+        "title": "Unacademy: Making Learning and Teaching Easy with | MSG91"
+    },
+    "/case-studies/leadsquared": {
+        "title": "Leadsquared: Ensuring Sales Execution with | MSG91"
     },
 
     "case-studies-tags -----------------------":{},
@@ -1075,6 +1078,9 @@
     },
     "/case-studies/tag/automobile": {
         "title": "Automobile Case Studies | MSG91"
+    },
+    "/case-studies/tag/transactional-sms": {
+        "title": "Transactional-SMS Case Studies | MSG91"
     }
     
 }
