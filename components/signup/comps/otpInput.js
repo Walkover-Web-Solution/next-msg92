@@ -31,30 +31,33 @@ class Otpinput extends React.Component {
                                         event.preventDefault();
                                     }
                                 }}
-                                // onKeyDown={(event) => {
-                                //     const integerRegex = /[0-9]{1}/;
-                                //     if (integerRegex.test(event.key)) {
-                                //         if (x < this.props.otpLength) {
-                                //             const inputEle = document.getElementById(this.props.tag + (x + 1));
-                                //             if (event.target.value) {
-                                //                 inputEle.value = event.key;
-                                //             }
-                                //             setTimeout(() => {
-                                //                 inputEle.focus();
-                                //             });
-                                //         }
-                                //     } else if (event.key === 'Backspace') {
-                                //         if (!event.target.value && x > 1) {
-                                //             const inputEle = document.getElementById(this.props.tag + (x - 1));
-                                //             inputEle.value = '';
-                                //             setTimeout(() => {
-                                //                 inputEle.focus();
-                                //             });
-                                //         }
-                                //     } else {
-                                //         event.preventDefault();
-                                //     }
-                                // }}
+                                onKeyDown={(event) => {
+                                    if (event.ctrlKey||event.metaKey) {
+                                        return false;
+                                    }
+                                    const integerRegex = /[0-9]{1}/;
+                                    if (integerRegex.test(event.key)) {
+                                        if (x < this.props.otpLength) {
+                                            const inputEle = document.getElementById(this.props.tag + (x + 1));
+                                            if (event.target.value) {
+                                                inputEle.value = event.key;
+                                            }
+                                            setTimeout(() => {
+                                                inputEle.focus();
+                                            });
+                                        }
+                                    } else if (event.key === 'Backspace') {
+                                        if (!event.target.value && x > 1) {
+                                            const inputEle = document.getElementById(this.props.tag + (x - 1));
+                                            inputEle.value = '';
+                                            setTimeout(() => {
+                                                inputEle.focus();
+                                            });
+                                        }
+                                    } else {
+                                        event.preventDefault();
+                                    }
+                                }}
                             />
                         ))}
                     </div>
