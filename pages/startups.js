@@ -68,7 +68,7 @@ const msg91ForStartups = () => {
             <MdDone />
           </span>
           <span className='c-fs-4 ms-2'>
-            25000 SMS credits every month for 6 months.
+            25000 SMS credits every month for 6 months
           </span>
         </div>
         <div className='mt-2 '>
@@ -92,7 +92,7 @@ const msg91ForStartups = () => {
             <MdDone />
           </span>
           <span className='c-fs-4 ms-2'>
-            Get support from our Superheroes to integrate scalable APIs.
+            Get support from our Superheroes to integrate scalable APIs
           </span>
         </div>
       </div>
