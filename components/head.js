@@ -4,12 +4,11 @@ import metaData from "@/data/metadata.json";
 const Headcomp = (browserPath , browserPathMeta) => {
   const countryList = ['in','ae','ph','sg','es','gb','us']
   const path = browserPath.browserPath.split('?')[0];
-  const meta = metaData[path];  
-  // console.log('browserPath.browserPath', browserPath.browserPath, meta);
+  var meta = (metaData[path]) ? metaData[path] : {'title':'','description':''};    
   const split = browserPath.browserPath.split('/');
-  var country = null;  
-  var page = null;
-  var hreflang = null;
+  var country = '';  
+  var page = browserPath.browserPath;
+  var hreflang = 'en';
   
   if(split.length === 2){
     country = split[1].length === 2 ? split[1] : '';
@@ -18,13 +17,15 @@ const Headcomp = (browserPath , browserPathMeta) => {
   if(browserPath.browserPath.split('/').length === 3){
     country = split[1].length === 2 ? split[1] : '';
     page = split[1].length === 2 ? split[2] : `${split[1]}/${split[2]}`;
-  }      
-
+  }  
+  
   if(countryList.includes(country)){
     hreflang = `en-${country.toUpperCase()}`
   }
-  //console.log('country', country, 'page', page, 'hreflang', hreflang);  
-
+  
+  /* if(meta === '' && path.includes("guide")){
+    meta.title = 'MSG91 Guide'
+  } */
   return (
     <>
       <Head>                
@@ -35,7 +36,7 @@ const Headcomp = (browserPath , browserPathMeta) => {
         <link rel="icon" href="/fav.svg" />                
         <link rel="canonical" href={`https://msg91.com${browserPath.browserPath}`} />
         <link rel="alternate" hrefLang="x-default" href={`https://msg91.com/${page}`} />
-        { hreflang &&
+        { countryList.includes(country) &&
           <link rel="alternate" hrefLang={hreflang} href={`https://msg91.com${browserPath.browserPath}`} />      
         }
       </Head>
