@@ -26,6 +26,7 @@ class StepThree extends React.Component {
                 gstNumber: '',
                 agreeToTerms: false,
                 acceptInviteForCompanies: [],
+                rejectInviteForCompanies: [],
             },
             formErrorData: {
                 firstNameError: '',
@@ -384,6 +385,9 @@ class StepThree extends React.Component {
                                                         className="btn btn-sm btn-reject rounded"
                                                         onClick={() => {
                                                             value.accept = false;
+                                                            this.state.formData.rejectInviteForCompanies.push(
+                                                                value.companyId
+                                                            );
                                                             this.handleInvitationSelection();
                                                         }}
                                                     >
