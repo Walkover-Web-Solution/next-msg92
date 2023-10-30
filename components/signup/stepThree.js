@@ -622,7 +622,7 @@ class StepThree extends React.Component {
                                                     ? 'form-control input-error-display'
                                                     : 'form-control'
                                             }
-                                            placeholder="GST number*"
+                                            placeholder="GST number"
                                             name="gstNumber"
                                             value={this.state.formData.gstNumber}
                                             onChange={this.handleInputChange}
