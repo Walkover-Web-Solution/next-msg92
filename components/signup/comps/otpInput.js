@@ -11,10 +11,30 @@ class Otpinput extends React.Component {
                                 type="text"
                                 className="form-control otp-input"
                                 placeholder="*"
+                                autoComplete="off"
                                 maxLength="1"
                                 key={x}
                                 id={this.props.tag + x}
+                                onPaste={(event) => {
+                                    const pastedData = (event.clipboardData || window.clipboardData)?.getData('Text');
+                                    if(+pastedData && pastedData?.trim()?.length === +this.props.otpLength) {
+                                        for (let i = 1; i <= +this.props.otpLength; i++) {
+                                           const inputEle = document.getElementById(this.props.tag + i);
+                                           if(inputEle) {
+                                            inputEle.value = +pastedData.charAt(i-1)
+                                            if(i === +this.props.otpLength){
+                                                inputEle.focus();
+                                            }
+                                           }
+                                        }
+                                    } else {
+                                        event.preventDefault();
+                                    }
+                                }}
                                 onKeyDown={(event) => {
+                                    if (event.ctrlKey||event.metaKey) {
+                                        return false;
+                                    }
                                     const integerRegex = /[0-9]{1}/;
                                     if (integerRegex.test(event.key)) {
                                         if (x < this.props.otpLength) {

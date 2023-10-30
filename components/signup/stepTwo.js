@@ -43,16 +43,18 @@ class StepTwo extends React.Component {
                         </label>
                         <div className="ver-email d-flex gap-4 align-items-top flex-wrap">
                             <div className="ver-email__main">
-                                <div className="ver-email-main d-flex gap-3 ver-input">
+                                <div className="ver-email-main d-flex align-items-center gap-3 ver-input">
                                     <div className="ver-email-main__input col ver-input__input ">
                                         {this.props?.signupByGitHub ? (
-                                            <p>Email Verified</p>
+                                            <div className="d-flex align-items-center gap-1 c-fs-7 text-green">
+                                                Email Verified <MdCheckCircle className="ico-green" />
+                                            </div>
                                         ) : (
                                             <input
                                                 type="email"
                                                 className="form-control c-fs-7"
                                                 id="emailIdentifier"
-                                                placeholder="Email Address"
+                                                placeholder="Email Address*"
                                                 defaultValue={this.state.emailIdentifier}
                                                 onInput={(e) => this.props.identifierChange(false)}
                                                 disabled={this.props?.emailAccessToken}
@@ -62,14 +64,12 @@ class StepTwo extends React.Component {
                                             {this.props?.emailAccessToken && <MdCheckCircle className="ico-green" />}
                                         </span>
                                     </div>
-                                    {this.props?.signupByGitHub ? (
-                                        <button className="c-fw-m c-fs-7">Change Email</button>
-                                    ) : this.props?.emailAccessToken ? (
+                                    {this.props?.emailAccessToken || this.props?.signupByGitHub ? (
                                         <button
                                             className="ver-email-main__btn btn  btn-login-prime-o c-fw-m c-fs-7"
                                             onClick={(e) => this.props.identifierChange(false)}
                                         >
-                                            Change Email
+                                            Change{ this.props?.signupByGitHub ? '' : '/Re-verify'} Email
                                         </button>
                                     ) : (
                                         <button
@@ -143,7 +143,7 @@ class StepTwo extends React.Component {
                         <div className="ver-phone d-flex gap-4 align-items-top flex-wrap">
                             <div className="ver-phone__main">
                                 <div className="ver-phone-main d-flex gap-3 ver-input">
-                                    <div className="ver-phone-main__input col ver-input__input">
+                                    <div className={'ver-phone-main__input col ver-input__input' + (this.props?.smsAccessToken ? ' pointer-none': '')}>
                                         <MobileInputComponent
                                             onInput={(event) => {
                                                 smsIdentifier = event?.replace('+', '');
@@ -153,6 +153,7 @@ class StepTwo extends React.Component {
                                             disabled={this.props?.smsAccessToken}
                                             defaultValue={smsIdentifier ? '+' + smsIdentifier : ''}
                                             setInvalid={(event) => (mobileInvalid = event)}
+                                            placeholder="Mobile Number*"
                                         ></MobileInputComponent>
 
                                         <span className="ver-phone-main__input__check">
@@ -164,7 +165,7 @@ class StepTwo extends React.Component {
                                             className="ver-mobile-main__btn btn  btn-login-prime-o c-fw-m c-fs-7"
                                             onClick={(e) => this.props.identifierChange(true)}
                                         >
-                                            Change Mobile Number
+                                            Change/Re-verify Mobile Number
                                         </button>
                                     ) : (
                                         <button

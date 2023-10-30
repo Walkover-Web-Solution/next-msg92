@@ -19,7 +19,7 @@ class MobileInputComponent extends React.Component {
                     className="w-100"
                     type="text"
                     id="init-contact"
-                    placeholder="Mobile Number"
+                    placeholder={this.props.placeholder}
                     onInput={(event) => {
                         const isValid = this.props?.required
                             ? intlClass?.isRequiredValidNumber
@@ -30,7 +30,7 @@ class MobileInputComponent extends React.Component {
                             this.props?.onInput(intlClass.phoneNumber);
                         }
                         this.props?.setInvalid && this.props?.setInvalid(!isValid);
-                        setTimeout(() => document.getElementById('init-contact').focus(), 500);
+                        setTimeout(() => document.getElementById('init-contact').focus(), 100);
                     }}
                     defaultValue={this.props?.defaultValue}
                     disabled={this.props?.disabled}
