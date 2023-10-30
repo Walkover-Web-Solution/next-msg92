@@ -309,6 +309,7 @@ class SignUp extends React.Component {
                 'lastName': data?.lastName,
             },
             'acceptInviteForCompanies': data.acceptInviteForCompanies,
+            'rejectInviteForCompanies': data.rejectInviteForCompanies,
             'session': getCookie('sessionId'),
         };
 
