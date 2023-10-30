@@ -42,13 +42,8 @@ export default function App({ Component, pageProps }) {
     var pageSlug = Object.keys(router.query).length ? `/${router.query.pageslug}` : browserPath;
     var pricingPath = products.includes(pageSlug) ? `/pricing${pageSlug}` : `/pricing/sms`;
 
-    if (browserPath !== '/') {
-        const pattern = /\/([^/?]+)/;
-        const result = browserPath.match(pattern);
-        browserPath = result ? result[0] : browserPath;
-    }
     const year = new Date().getFullYear();
-    if (browserPath !== '/signin' && browserPath !== '/signup' && browserPath !== '/github-auth') {
+    if (!['/signin', '/signup', '/github-auth', '/github-auth-token', '/outlook-token'].includes(browserPath)) {
         showNavbar = true;
     }
     useEffect(() => {

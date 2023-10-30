@@ -26,6 +26,7 @@ class StepThree extends React.Component {
                 gstNumber: '',
                 agreeToTerms: false,
                 acceptInviteForCompanies: [],
+                rejectInviteForCompanies: [],
             },
             formErrorData: {
                 firstNameError: '',
@@ -262,10 +263,21 @@ class StepThree extends React.Component {
         return '';
     };
 
+    validateMinMax = (fieldName,label, min, max) => {
+        const fieldValue = this.state.formData?.[fieldName];
+        if(min !== null && min !== undefined && +min && fieldValue?.length < min) {
+            return `${label} must be more than ${min} characters`;
+        }
+        if(max !== null && max !== undefined && +max && fieldValue?.length > max) {
+            return `${label} should be less than ${max} characters`;
+        }
+        return '';
+    };
+
     finalSubmit = () => {
         const errors = {
-            firstNameError: this.validateFirstName(),
-            lastNameError: this.validateLastName(),
+            firstNameError: this.validateFirstName() || this.validateMinMax('firstName', 'First Name', null, 50),
+            lastNameError: this.validateLastName() || this.validateMinMax('lastName', 'Last Name', null, 50),
             gstNumberError: this.validateGSTNumber(),
             pincodeError: this.validatePincode(),
             companyNameError: this.validateRequired('companyName', 'Company Name'),
@@ -276,7 +288,7 @@ class StepThree extends React.Component {
             stateError: this.validateRequired('stateName', 'State'),
             cityError: this.validateRequired('city', 'City'),
             otherCityError: this.state.formData.city === 'other' ? this.validateRequired('otherCity', 'City') : '',
-            addressError: this.validateRequired('address', 'Address'),
+            addressError: this.validateRequired('address', 'Address') || this.validateMinMax('address', 'Address', 5, 100),
         };
         if (this.state.createCompany) {
             this.setState((prevState) => ({
@@ -312,11 +324,11 @@ class StepThree extends React.Component {
                 <div className="trep-three d-flex flex-column gap-4">
                     <div className="step-three__progress d-flex align-items-center gap-4">
                         <div className="ico-green align-items-center gap-2 c-fs-7 d-lg-flex hide-on-mobile">
-                            <MdCheckCircle className="ico-green svg-icon"/> Verify email & mobile number
+                            <MdCheckCircle className="ico-green svg-icon" /> Verify email & mobile number
                         </div>
                         <span className="progress-line line-green d-lg-block hide-on-mobile"></span>
                         <div className="d-flex  align-items-center gap-2 c-fs-7 ">
-                            <MdCheckCircle className="ico-grey svg-icon"/>
+                            <MdCheckCircle className="ico-grey svg-icon" />
                             Enter details
                         </div>
                     </div>
@@ -364,7 +376,8 @@ class StepThree extends React.Component {
                                     return (
                                         <div className="d-flex flex-wrap gap-4 align-items-center">
                                             <p className="invitation-banner">
-                                                You are invited to join <span className="c-fw-sb">{value.companyName}</span>
+                                                You are invited to join{' '}
+                                                <span className="c-fw-sb">{value.companyName}</span>
                                             </p>
                                             {(value?.accept === null || value?.accept === undefined) && (
                                                 <div className="d-flex gap-4 align-items-center">
@@ -384,6 +397,9 @@ class StepThree extends React.Component {
                                                         className="btn btn-sm btn-reject rounded"
                                                         onClick={() => {
                                                             value.accept = false;
+                                                            this.state.formData.rejectInviteForCompanies.push(
+                                                                value.companyId
+                                                            );
                                                             this.handleInvitationSelection();
                                                         }}
                                                     >
@@ -392,7 +408,7 @@ class StepThree extends React.Component {
                                                 </div>
                                             )}
                                             {value?.accept === true && <MdCheckCircle className="ico-green svg-icon" />}
-                                            {value?.accept === false && <MdCancel className="ico-red svg-icon"/>}
+                                            {value?.accept === false && <MdCancel className="ico-red svg-icon" />}
                                         </div>
                                     );
                                 })}
@@ -446,7 +462,7 @@ class StepThree extends React.Component {
                                         value={this.state.formData.industryType}
                                         onChange={this.handleInputChange}
                                     >
-                                        <option value="" >Select Industry Type*</option>
+                                        <option value="">Select Industry Type*</option>
                                         {this.state.industries && Object.keys(this.state.industries).length > 0 && (
                                             <>
                                                 {this.state.industries.map((obj) => (
@@ -485,7 +501,7 @@ class StepThree extends React.Component {
                                                       }))
                                                     : []
                                             }
-                                            className='chip-list-select'
+                                            className="chip-list-select"
                                             classNamePrefix="signup_react_select"
                                         />
                                     )}
@@ -622,7 +638,7 @@ class StepThree extends React.Component {
                                                     ? 'form-control input-error-display'
                                                     : 'form-control'
                                             }
-                                            placeholder="GST number*"
+                                            placeholder="GST number"
                                             name="gstNumber"
                                             value={this.state.formData.gstNumber}
                                             onChange={this.handleInputChange}
@@ -649,7 +665,11 @@ class StepThree extends React.Component {
                                 />
                                 <p className="form-check-label c-fs-7 c-fw-500 ps-0" htmlFor="termsCheckBox">
                                     I agree to the{' '}
-                                    <a href="https://msg91.com/terms-of-use" target="_blank" className="cp text-hover-underline">
+                                    <a
+                                        href="https://msg91.com/terms-of-use"
+                                        target="_blank"
+                                        className="cp text-hover-underline"
+                                    >
                                         terms of use
                                     </a>
                                 </p>

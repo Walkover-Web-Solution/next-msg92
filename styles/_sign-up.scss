@@ -296,6 +296,7 @@
         // padding-right: 1.7rem;
         width: 250px;
         @media (max-width: 991px) {
+            min-width: 250px;
             width: 100%;
         }
     }
@@ -326,7 +327,7 @@
     }
 }
 .ver-input {
-    @media (max-width: 400px) {
+    @media (max-width: 460px) {
         flex-direction: column;
     }
     &__input {

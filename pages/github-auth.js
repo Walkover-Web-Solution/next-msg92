@@ -1,5 +1,5 @@
-import React from "react";
-import { getQueryParamsDeatils, getQueryStringFromObject } from "@/components/utils";
+import React from 'react';
+import { getQueryParamsDeatils, getQueryStringFromObject } from '@/components/utils';
 
 class githubLogin extends React.Component {
     constructor(props) {
@@ -9,17 +9,17 @@ class githubLogin extends React.Component {
     componentDidMount() {
         let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
         if (queryParams) {
-            if (queryParams?.login === "true") {
+            if (queryParams?.login === 'true') {
                 this.loginWithGitHubAccount(true);
             }
-            if (queryParams?.signup === "true") {
+            if (queryParams?.signup === 'true') {
                 this.loginWithGitHubAccount(false);
             }
-            if (queryParams?.githublogin === "true") {
+            if (queryParams?.githublogin === 'true') {
                 let queryValue = getQueryStringFromObject(queryParams);
                 location.href = `${process.env.REDIRECT_URL}/signin?${queryValue}`;
             }
-            if (queryParams?.githubsignup === "true") {
+            if (queryParams?.githubsignup === 'true') {
                 let queryValue = getQueryStringFromObject(queryParams);
                 location.href = `${process.env.REDIRECT_URL}/signup?${queryValue}`;
             }
@@ -35,17 +35,7 @@ class githubLogin extends React.Component {
     render() {
         return (
             <>
-                <section>
-                    {/* <button
-                        style={{
-                            border: "1px solid #000",
-                            background: "var(--light-white-bg, #FFF)",
-                        }}
-                        onClick={() => this.loginWithGitHubAccount()}
-                    >
-                        <img src="/img/icon-github.svg" />
-                    </button> */}
-                </section>
+                <section>Redirecting...</section>
             </>
         );
     }
