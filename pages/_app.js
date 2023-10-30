@@ -43,9 +43,9 @@ export default function App({ Component, pageProps }) {
   var pricingPath = (products.includes(pageSlug)) ? `/pricing${pageSlug}` : `/pricing/sms`;
 
   const year = new Date().getFullYear();
-  if (browserPath !== '/signin' && browserPath !== '/signup' && browserPath !== '/github-auth') {
+  if (!['/signin', '/signup', '/github-auth', '/github-auth-token', '/outlook-token'].includes(browserPath)) {
     showNavbar = true;
-  }
+}
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
     
