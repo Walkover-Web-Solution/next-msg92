@@ -277,7 +277,7 @@ class StepTwo extends React.Component {
                                     this.props?.emailAccessToken &&
                                     this.props.validateUserForCompany()
                                 }
-                                disabled={!this.props?.smsAccessToken || !this.props?.emailAccessToken}
+                                disabled={!this.props?.smsAccessToken || (!this.props?.emailAccessToken && !this.props?.signupByGitHub)}
                             >
                                 {' '}
                                 Next <MdKeyboardArrowRight />
