@@ -43,7 +43,7 @@ class StepTwo extends React.Component {
                         </label>
                         <div className="ver-email d-flex gap-4 align-items-top flex-wrap">
                             <div className="ver-email__main">
-                                <div className="ver-email-main d-flex align-items-center gap-3 ver-input">
+                                <div className="ver-email-main d-flex gap-3 ver-input">
                                     <div className="ver-email-main__input col ver-input__input ">
                                         {this.props?.signupByGitHub ? (
                                             <div className="d-flex align-items-center gap-1 c-fs-7 text-green">
@@ -142,7 +142,7 @@ class StepTwo extends React.Component {
                         </label>
                         <div className="ver-phone d-flex gap-4 align-items-top flex-wrap">
                             <div className="ver-phone__main">
-                                <div className="ver-phone-main d-flex gap-3 ver-input">
+                                <div className="ver-phone-main d-flex gap-3 ver-input flex-wrap">
                                     <div className={'ver-phone-main__input col ver-input__input' + (this.props?.smsAccessToken ? ' pointer-none': '')}>
                                         <MobileInputComponent
                                             onInput={(event) => {
