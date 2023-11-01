@@ -26,8 +26,13 @@ class logIn extends React.Component {
                 redirectUrl: process.env.REDIRECT_URL,
             });
         } else if (queryParams?.loginWithZoho?.includes('true')) {
-            const request = { ...queryParams };
+            const request = {
+                ...queryParams,
+                accountsServer: decodeURIComponent(queryParams['accounts-server'] || ''),
+            };
             delete request.loginWithZoho;
+            delete request['accounts-server'];
+
             const url = process.env.API_BASE_URL + '/api/v5/nexus/zohoLogin';
             this.hitLoginAPI(url, {
                 ...request,
@@ -128,7 +133,8 @@ class logIn extends React.Component {
                 } else if (showError) {
                     toast.error(result?.errors?.[0] ?? result?.errors);
                 }
-            });
+            })
+            .catch((err) => console.error(err));
     }
 
     loginFailed(error) {
