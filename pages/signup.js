@@ -77,6 +77,17 @@ class SignUp extends React.Component {
                 githubState: null,
                 thirdStepData: null,
             });
+        } else if (step === 2) {
+            if (this.state?.signupByGitHub && !this.state?.githubCode) {
+                this.setStep(1);
+            }
+        } else if (step === 3) {
+            this.setState({
+                emailAccessToken: null,
+                smsAccessToken: null,
+                githubCode: null,
+                githubState: null,
+            });
         }
         this.setState({
             activeStep: step,
