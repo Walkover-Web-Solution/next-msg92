@@ -206,9 +206,9 @@ Marketing</li>
           <strong>Contact Information</strong>
           <p>If you have any questions or comments about this Privacy Policy or feel that we are not abiding by the terms of this Privacy Policy, please contact our Privacy Agent in any of the following ways:</p>
           <ol>
-            <li>By emailing us at hello@msg91.com</li>
-            <li>By postal mail:
-              Walkover Web Solutions Pvt Ltd<br></br>
+            <li>By emailing us at <a href="mailto:hello@msg91.com">hello@msg91.com</a></li>
+            <li>By postal mail:<br></br>
+              <strong>Walkover Web Solutions Pvt Ltd</strong><br></br>
               405-406, CAPTAIN C.S.NAYUDU ARCADE,<br></br>
               OLD PALASIA ROAD, INDORE, Madhya Pradesh<br></br>
               Last Updated: This Privacy Policy was last updated on 2nd November 2021.
