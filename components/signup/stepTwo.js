@@ -11,8 +11,8 @@ class StepTwo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            emailIdentifier: props.emailIdentifier || '',
-            smsIdentifier: props.smsIdentifier || '',
+            emailIdentifier: props.emailIdentifierBackup || '',
+            smsIdentifier: props.smsIdentifierBackup || '',
         };
         smsIdentifier = this.state.smsIdentifier;
     }
@@ -279,12 +279,12 @@ class StepTwo extends React.Component {
                                 className="btn btn-login-prime c-fs-7"
                                 onClick={() =>
                                     this.props?.smsAccessToken &&
-                                    this.props?.emailAccessToken &&
+                                    (this.props?.emailAccessToken || this.props?.githubCode) &&
                                     this.props.validateUserForCompany()
                                 }
                                 disabled={
                                     !this.props?.smsAccessToken ||
-                                    (!this.props?.emailAccessToken && !this.props?.signupByGitHub)
+                                    (!this.props?.emailAccessToken && !this.props?.githubCode)
                                 }
                             >
                                 {' '}
