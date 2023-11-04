@@ -11,8 +11,8 @@ class StepTwo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            emailIdentifier: props.emailIdentifier || '',
-            smsIdentifier: props.smsIdentifier || '',
+            emailIdentifier: props.emailIdentifierBackup || '',
+            smsIdentifier: props.smsIdentifierBackup || '',
         };
         smsIdentifier = this.state.smsIdentifier;
     }

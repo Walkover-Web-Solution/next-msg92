@@ -87,6 +87,12 @@ class SignUp extends React.Component {
                 smsAccessToken: null,
                 githubCode: null,
                 githubState: null,
+                smsSuccessMessage: null,
+                emailSuccessMessage: null,
+                smsIdentifierBackup: this.state.smsIdentifier || '',
+                emailIdentifierBackup: this.state.emailIdentifier || '',
+                smsIdentifier: null,
+                emailIdentifier: null,
             });
         }
         this.setState({
@@ -393,6 +399,8 @@ class SignUp extends React.Component {
                                     smsAccessToken={this.state?.smsAccessToken}
                                     emailAccessToken={this.state?.emailAccessToken}
                                     signupByGitHub={this.state?.signupByGitHub}
+                                    smsIdentifierBackup={this.state?.smsIdentifierBackup}
+                                    emailIdentifierBackup={this.state?.emailIdentifierBackup}
                                 />
                             )}
 
