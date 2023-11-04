@@ -208,7 +208,7 @@ Marketing</li>
           <ol>
             <li>By emailing us at <a href="mailto:hello@msg91.com">hello@msg91.com</a></li>
             <li>By postal mail:<br></br>
-              <strong>Walkover Web Solutions Pvt Ltd</strong><br></br>
+              <div className="c-fw-m">Walkover Web Solutions Pvt Ltd</div>
               405-406, CAPTAIN C.S.NAYUDU ARCADE,<br></br>
               OLD PALASIA ROAD, INDORE, Madhya Pradesh<br></br>
               Last Updated: This Privacy Policy was last updated on 2nd November 2021.
