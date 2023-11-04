@@ -76,10 +76,12 @@ class SignUp extends React.Component {
                 githubCode: null,
                 githubState: null,
                 thirdStepData: null,
+                smsIdentifierBackup: null,
+                emailIdentifierBackup: null,
             });
         } else if (step === 2) {
             if (this.state?.signupByGitHub && !this.state?.githubCode) {
-                this.setStep(1);
+                return this.setStep(1);
             }
         } else if (step === 3) {
             this.setState({
@@ -399,6 +401,7 @@ class SignUp extends React.Component {
                                     smsAccessToken={this.state?.smsAccessToken}
                                     emailAccessToken={this.state?.emailAccessToken}
                                     signupByGitHub={this.state?.signupByGitHub}
+                                    githubCode={this.state?.githubCode}
                                     smsIdentifierBackup={this.state?.smsIdentifierBackup}
                                     emailIdentifierBackup={this.state?.emailIdentifierBackup}
                                 />
