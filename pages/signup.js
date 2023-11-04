@@ -308,10 +308,10 @@ class SignUp extends React.Component {
                 ? {
                       'industry': data?.industryType,
                       'state': data?.stateName,
-                      'cityId': data?.cityId,
+                      'cityId': data?.cityId || "0",
                       'customCity': data?.otherCity,
                       'country': data?.countryName,
-                      'city': data?.city,
+                      'city': data?.city === "other" ? "" : data?.city,
                       'zipcode': data?.pincode,
                       'address': data?.address,
                       'gstNo': data?.gstNumber,
