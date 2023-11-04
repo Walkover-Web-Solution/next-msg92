@@ -234,7 +234,7 @@ class SignUp extends React.Component {
     };
 
     validateUserForCompany = () => {
-        if (!this.state.smsAccessToken || !this.state.emailAccessToken) {
+        if (!this.state.smsAccessToken || (!this.state.emailAccessToken && !this.state?.githubCode)) {
             toast.error('Email and Mobile should be verified.');
             return;
         }
