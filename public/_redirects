@@ -449,6 +449,7 @@ help.msg91.com/category/183-whmcs https://msg91.com/help/MSG91/whmcs-plugin-for-
 support.msg91.com/forums/146824-msg91-feature-and-idea-suggestion-forum/suggestions/4147856-batch-or-campaign-name-field-to-create-a-batch-nam /contact-us
 help.msg91.com/article/357-the-header-is-approved-still-not-receiving-sms-with-it https://msg91.com/help/MSG91/what-is-a-sender-id
 control.msg91.com/signup.php /signup
+/signup /signup 200!
 /developers/get-started.php https://msg91.com/developers
 test.panel.msg91.com/apidoc/sendotp/verify-otp.php https://msg91.com/otp
 /one-api /campaign
