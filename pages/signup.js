@@ -294,16 +294,16 @@ class SignUp extends React.Component {
 
     finalSubmit = (data, createCompany) => {
         const url = process.env.API_BASE_URL + '/api/v5/nexus/finalRegister';
-        this.setState({ thirdStepData: data });
+        this.setState({ thirdStepData: { ...data, acceptInviteForCompanies: [], rejectInviteForCompanies: [] } });
         const payload = {
             'companyDetails': createCompany
                 ? {
                       'industry': data?.industryType,
                       'state': data?.stateName,
-                      'cityId': data?.cityId || "0",
+                      'cityId': data?.cityId || '0',
                       'customCity': data?.otherCity,
                       'country': data?.countryName,
-                      'city': data?.city === "other" ? "" : data?.city,
+                      'city': data?.city === 'other' ? '' : data?.city,
                       'zipcode': data?.pincode,
                       'address': data?.address,
                       'gstNo': data?.gstNumber,
