@@ -194,6 +194,10 @@ class SignUp extends React.Component {
                 }
             },
             (error) => {
+                // retry count excceded
+                if (error?.code === 704) {
+                    this.setState({ [notByEmail ? 'hideMobileRetry' : 'hideEmailRetry']: true });
+                }
                 toast.error(error?.message);
             },
             requestId
@@ -394,6 +398,8 @@ class SignUp extends React.Component {
                                     githubCode={this.state?.githubCode}
                                     smsIdentifierBackup={this.state?.smsIdentifierBackup}
                                     emailIdentifierBackup={this.state?.emailIdentifierBackup}
+                                    hideMobileRetry={this.state?.hideMobileRetry}
+                                    hideEmailRetry={this.state?.hideEmailRetry}
                                 />
                             )}
 
