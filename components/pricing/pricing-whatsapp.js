@@ -1,7 +1,7 @@
 import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import countries from "@/data/countries.json";
-import { setUtm } from "../pricingComp";
+import { setUtm } from "@/components/utils";
 import Link from "next/link";
 const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, currencySymbol, oneTimeWtsAppFee}) => {
   const [selectedMode, setSelectedMode] = useState("Monthly");  
