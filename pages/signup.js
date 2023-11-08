@@ -67,8 +67,20 @@ class SignUp extends React.Component {
 
     setStep = (step) => {
         if (step === 1) {
-            window.location.href = '/signup';
-            return;
+            this.setState({
+                emailIdentifier: null,
+                emailAccessToken: null,
+                smsIdentifier: null,
+                smsAccessToken: null,
+                signupByGitHub: false,
+                githubCode: null,
+                githubState: null,
+                thirdStepData: null,
+                smsIdentifierBackup: null,
+                emailIdentifierBackup: null,
+                hideMobileRetry: null,
+                hideEmailRetry: null,
+            });
         } else if (step === 2) {
             if (this.state?.signupByGitHub && !this.state?.githubCode) {
                 return this.setStep(1);
@@ -168,12 +180,14 @@ class SignUp extends React.Component {
                         smsRequestId: data?.message,
                         smsIdentifier: identifier,
                         smsSuccessMessage: 'OTP has been successfully sent to',
+                        hideMobileRetry: null,
                     });
                 } else {
                     this.setState({
                         emailRequestId: data?.message,
                         emailIdentifier: identifier,
                         emailSuccessMessage: 'OTP has been successfully sent to',
+                        hideEmailRetry: null,
                     });
                 }
             },
