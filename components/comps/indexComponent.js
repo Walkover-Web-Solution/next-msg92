@@ -8,7 +8,9 @@ const indexComp = ({pageData, params}) => {
   const path = params ? params?.country : "";  
   return (
     <>
-      <div className="container d-flex flex-column c-gap-1 align-items-center text-center mt-80">
+      <div className="container d-flex flex-column mt-80">
+        <div className="d-flex">
+        <div>
         <h1 className="heading text-dark col-md-10 col-12 col-xxl-8 col-xl-8 ">
           {pageData?.headline}
         </h1>
@@ -23,9 +25,12 @@ const indexComp = ({pageData, params}) => {
           Get Started
         </a>
         <TrustedBy />
+        </div>
+        <div>img</div>
+        </div>
       </div>
 
-      <div className="section product-sec d-flex flex-wrap my-5 my-80">
+      <div className="section product-sec my-5 justify-content-center">
         <div className="product-card">
           <div className="product-head">
             <div className="product-head-text">

@@ -22,7 +22,10 @@ body {
   font-family: var(--c-body);
 }
 .section {
-  width: 100%;
+  // width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .section-x {
   width: 100%;
@@ -99,28 +102,34 @@ nav {
   font-size: clamp(18px, 3vw, 28px);
 }
 .product-card {
-  width: 25%;
-  height: clamp(550px, 60vw, 850px);
+  width: 40%;
+  height: Hug(300px);
+  gap: 40px !important;
+  // height: clamp(550px, 60vw, 850px);
   .product-head {
     position: relative;
     width: 100%;
-    height: 70%;
+    height: 20%;
     .product-head-text {
       padding: 25px 0 0 25px;
       position: relative;
       z-index: 1;
     }
     .caimpaign-pro {
-      background-image: url(/img/campaign-pro.webp);
+      // background-image: url(/img/campaign-pro.webp);
+      background-color: #5f388c;
     }
     .hello-pro {
-      background-image: url(/img/hello-pro.webp);
+      // background-image: url(/img/hello-pro.webp);
+      background-color: #1258a3;
     }
     .segmento-pro {
-      background-image: url(/img/segmento-pro.webp);
+      // background-image: url(/img/segmento-pro.webp);
+      background-color: #8c5d00;
     }
     .otp-pro {
-      background-image: url(/img/otp-pro.webp);
+      // background-image: url(/img/otp-pro.webp);
+      background-color: #b27f7f;
     }
     .product-head-img {
       position: absolute;
