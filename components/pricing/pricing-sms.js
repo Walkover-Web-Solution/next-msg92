@@ -2,7 +2,7 @@ import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import countries from "@/data/countries.json";
 import { Typeahead } from 'react-bootstrap-typeahead';
-import { setUtm } from "../pricingComp";
+import { setUtm } from "@/components/utils";
 
 const Pricingsms = ({
   pricing,

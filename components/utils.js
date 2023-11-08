@@ -53,3 +53,33 @@ export function loginWithGitHubAccount(loginProcess) {
   let otherParams = loginProcess ? `githublogin=true` : `githubsignup=true`;
   location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/github-auth-token?${otherParams}&state=${state}`;
 }
+
+export function setUtm() {
+    // Get all anchor tags in the document using querySelectorAll
+    var anchorTags = document.querySelectorAll('.utm');
+    // Loop through the anchor tags
+    var utmParams = Object.fromEntries(
+        getCookie('msg91_query')
+            ?.replace('?', '')
+            ?.split('&')
+            ?.map((v) => v.split('=')) ?? []
+    );
+    for (var i = 0; i < anchorTags.length; i++) {
+        let href = anchorTags[i].getAttribute('href'); // Get the current href value
+
+        let params = {};
+        const url = href?.split('?');
+        if (url[1]) {
+            params = Object.fromEntries(url[1]?.split('&')?.map((v) => v.split('=')) ?? []);
+        }
+
+        Object.assign(params, utmParams);
+        const query = Object.entries(params)
+            ?.map(([k, v]) => `${k}=${v}`)
+            .join('&');
+
+        if (href && query) {
+            anchorTags[i].setAttribute('href', url[0] + (query ? '?' + query : ''));
+        }
+    }
+}

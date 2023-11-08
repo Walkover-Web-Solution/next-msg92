@@ -12,20 +12,6 @@ import Pricingcampaign from "@/components/pricing/pricing-campaign";
 import Pricingrcs from "@/components/pricing/pricing-rcs";
 import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
 import Link from "next/link"; 
-import { getCookie } from "@/components/utils";
-
-export function setUtm(){
-  // Get all anchor tags in the document using querySelectorAll
-  var anchorTags = document.querySelectorAll(".utm");
-  // Loop through the anchor tags
-  for (var i = 0; i < anchorTags.length; i++) {
-    var href = anchorTags[i].getAttribute("href"); // Get the current href value
-    var query = getCookie('msg91_query');
-    if (href && query) {
-      anchorTags[i].setAttribute("href", href + query);
-    }
-  }
-}
 
 const PricingComp = ({ countryCode, product, browserPath }) => {
   var pathLength = browserPath?.split("/")[1].length;

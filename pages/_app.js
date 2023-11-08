@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Script from 'next/script'
 import Toastify from "@/components/toast";
-import { getCookie, setCookie } from "@/components/utils";
+import { getCookie, setCookie, setUtm } from "@/components/utils";
 import $ from "jquery";
 export default function App({ Component, pageProps }) {
   const router = useRouter();  
@@ -50,21 +50,14 @@ export default function App({ Component, pageProps }) {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
     
     const search = window.location.search;
-    if(search.includes("utm_")){      
-      setCookie('msg91_query', search, 30);
+    if (search.includes('utm_')) {
+        setCookie('msg91_query', search.replace(/service=\w+&?/,''), 30);
+    } else if (!getCookie('msg91_query')) {
+        setCookie('msg91_query', '?utm_source=msg91Website&source=msg91', 30);
     }
     
-    // Get all anchor tags in the document using querySelectorAll
-    var anchorTags = document.querySelectorAll(".utm");        
-    // Loop through the anchor tags
-    for (var i = 0; i < anchorTags.length; i++) {
-      var href = anchorTags[i].getAttribute("href"); // Get the current href value
-      var query = getCookie('msg91_query');
-      if (href && query) {
-        anchorTags[i].setAttribute("href", href + query);
-      }
-    }
-    
+    setUtm();
+
     const countryList = ['in','ae','ph','sg','es','gb','us','?']    
     
     var cc = getCookie('country_code');    
@@ -85,16 +78,6 @@ export default function App({ Component, pageProps }) {
       }
     });
 
-        // Get all anchor tags in the document using querySelectorAll
-        var anchorTags = document.querySelectorAll('.utm');
-        // Loop through the anchor tags
-        for (var i = 0; i < anchorTags.length; i++) {
-            var href = anchorTags[i].getAttribute('href'); // Get the current href value
-            var query = getCookie('msg91_query');
-            if (href && query) {
-                anchorTags[i].setAttribute('href', href + query);
-            }
-        }
     }, []);
     return (
         <>
