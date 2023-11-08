@@ -2,7 +2,7 @@ import GoogleLoginButton from '@/components/signup/googleLogin';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import React from 'react';
 import { MdCall, MdEmail } from 'react-icons/md';
-import { getQueryParamsDeatils, setCookie, getCookie } from '@/components/utils';
+import { getQueryParamsDeatils, setCookie, getCookie, loginWithGitHubAccount } from '@/components/utils';
 import { toast } from 'react-toastify';
 
 class logIn extends React.Component {
@@ -101,6 +101,10 @@ class logIn extends React.Component {
         location.href = `https://accounts.zoho.com/oauth/v2/auth?response_type=code&client_id=${process.env.ZOHO_CLIENT_ID}&scope=aaaserver.profile.READ&redirect_uri=${process.env.REDIRECT_URL}/signin?loginWithZoho=true`;
     }
 
+    loginWithGitHub = () => {
+        loginWithGitHubAccount(true);
+    };
+
     // Google Login
     googleLogin = (response) => {
         console.log(response);
@@ -179,8 +183,7 @@ class logIn extends React.Component {
                                         <img src="/img/icon-zogo.svg" />
                                     </button>
 
-                                    {/* onClick={() => this.loginWithGitHubAccount()} */}
-                                    <a href="/github-auth?login=true">
+                                    <a href={undefined} onClick={() => this.loginWithGitHub()}>
                                         <button className="devlogin__btn__btn btn rounded git-btn social-btn d-flex justify-content-center align-items-center">
                                             <img src="/img/icon-github.svg" />
                                         </button>

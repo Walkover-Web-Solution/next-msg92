@@ -1,7 +1,13 @@
 import React from 'react';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import { loginWithGitHubAccount } from '@/components/utils';
+
 
 class StepOne extends React.Component {
+
+    signupWithGitHub = () => {
+        loginWithGitHubAccount(false);
+    };
     render() {
         return (
             <>
@@ -9,7 +15,7 @@ class StepOne extends React.Component {
                     <div className="stepone__dev d-grid gap-3">
                         <p className="stepone__dev__que c-fs-7 ">Are you a developer?</p>
                         <div className="stepone__dev__icons">
-                            <a href="/github-auth?signup=true">
+                            <a href={undefined} onClick={() => this.signupWithGitHub()}>
                                 <button className="product-btn btn rounded border border-dark social-btn d-flex justify-content-center align-items-center">
                                     <img src="/img/icon-github.svg" alt="Github" />
                                 </button>
