@@ -389,32 +389,34 @@ class SignUp extends React.Component {
                             {this.state.activeStep === 1 && <StepOne setStep={this.setStep} />}
 
                             {/* STEP #2 */}
-                            {this.state.activeStep === 2 && (
-                                <StepTwo
-                                    sendOtp={this.sendOtp}
-                                    setStep={this.setStep}
-                                    verifyOtp={this.verifyOtp}
-                                    widgetData={this.state.widgetData}
-                                    allowedRetry={this.state.allowedRetry}
-                                    retryOtp={this.retryOtp}
-                                    validateUserForCompany={this.validateUserForCompany}
-                                    identifierChange={this.identifierChange}
-                                    OTPRetryModes={OTPRetryModes}
-                                    smsRequestId={this.state?.smsRequestId}
-                                    emailRequestId={this.state?.emailRequestId}
-                                    smsIdentifier={this.state?.smsIdentifier}
-                                    emailIdentifier={this.state?.emailIdentifier}
-                                    smsSuccessMessage={this.state?.smsSuccessMessage}
-                                    emailSuccessMessage={this.state?.emailSuccessMessage}
-                                    smsAccessToken={this.state?.smsAccessToken}
-                                    emailAccessToken={this.state?.emailAccessToken}
-                                    signupByGitHub={this.state?.signupByGitHub}
-                                    githubCode={this.state?.githubCode}
-                                    smsIdentifierBackup={this.state?.smsIdentifierBackup}
-                                    emailIdentifierBackup={this.state?.emailIdentifierBackup}
-                                    hideMobileRetry={this.state?.hideMobileRetry}
-                                    hideEmailRetry={this.state?.hideEmailRetry}
-                                />
+                            {(this.state.activeStep === 2 || this.state.activeStep === 1) && (
+                                <div className={this.state.activeStep !== 2 ? 'd-none' : ''}>
+                                    <StepTwo
+                                        sendOtp={this.sendOtp}
+                                        setStep={this.setStep}
+                                        verifyOtp={this.verifyOtp}
+                                        widgetData={this.state.widgetData}
+                                        allowedRetry={this.state.allowedRetry}
+                                        retryOtp={this.retryOtp}
+                                        validateUserForCompany={this.validateUserForCompany}
+                                        identifierChange={this.identifierChange}
+                                        OTPRetryModes={OTPRetryModes}
+                                        smsRequestId={this.state?.smsRequestId}
+                                        emailRequestId={this.state?.emailRequestId}
+                                        smsIdentifier={this.state?.smsIdentifier}
+                                        emailIdentifier={this.state?.emailIdentifier}
+                                        smsSuccessMessage={this.state?.smsSuccessMessage}
+                                        emailSuccessMessage={this.state?.emailSuccessMessage}
+                                        smsAccessToken={this.state?.smsAccessToken}
+                                        emailAccessToken={this.state?.emailAccessToken}
+                                        signupByGitHub={this.state?.signupByGitHub}
+                                        githubCode={this.state?.githubCode}
+                                        smsIdentifierBackup={this.state?.smsIdentifierBackup}
+                                        emailIdentifierBackup={this.state?.emailIdentifierBackup}
+                                        hideMobileRetry={this.state?.hideMobileRetry}
+                                        hideEmailRetry={this.state?.hideEmailRetry}
+                                    />
+                                </div>
                             )}
 
                             {/* STEP #3 */}
