@@ -6,17 +6,19 @@ var changeFlagZIndexInterval;
 class MobileInputComponent extends React.Component {
     render() {
         setTimeout(() => {
-            const parentDom = document.querySelector('body');
-            const input = document.getElementById('init-contact');
-            const customCssStyleURL = `${process.env.REDIRECT_URL}/intl-tel-input-custom.css`;
-            if (input) {
-                intlClass = new IntlPhoneLib(input, parentDom, customCssStyleURL, this.props?.defaultValue);
+            if (typeof document !== 'undefined') {
+                const parentDom = document.querySelector('body');
+                const input = document.getElementById('init-contact');
+                const customCssStyleURL = `${process.env.REDIRECT_URL}/intl-tel-input-custom.css`;
+                if (input) {
+                    intlClass = new IntlPhoneLib(input, parentDom, customCssStyleURL, this.props?.defaultValue);
+                }
             }
         }, 50);
         return (
             <>
                 <input
-                    className="w-100"
+                    className="w-100 form-control"
                     type="text"
                     id="init-contact"
                     placeholder={this.props.placeholder}
