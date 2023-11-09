@@ -8,190 +8,201 @@ const indexComp = ({pageData, params}) => {
   const path = params ? params?.country : "";  
   return (
     <>
-      <div className="container d-flex flex-column mt-80">
-        <div className="d-flex">
-        <div>
-        <h1 className="heading text-dark col-md-10 col-12 col-xxl-8 col-xl-8 ">
-          {pageData?.headline}
-        </h1>
-        <h3 className="small-heading text-dark">
-          Secure and robust APIs for SMS, Email, Voice, Authentication and more
-        </h3>
-        <a
-          href="https://control.msg91.com/signup/"
-          target="_blank"
-          className="btn btn-dark small-heading px-3 py-2 mt-3 c-fw-sb px-md-4 py-md-3 ls-3 utm"
-        >
-          Get Started
-        </a>
-        <TrustedBy />
-        </div>
-        <div>img</div>
+      <div className="container section-y">
+        <div className="row">
+          <div className="col-12 col-sm-12 col-md-7 col-lg-7 d-flex flex-column gap-4 align-items-start hero-left">
+            <div className="home-pre-heading c-fs-3 uc">
+              customer solution platform
+            </div>
+            <h1 className="heading text-dark c-fw-xb">
+              {pageData?.headline}
+            </h1>
+            <h2 className="small-heading text-dark">
+              Secure and robust APIs for SMS, Email, Voice, Authentication and
+              more
+            </h2>
+            <a
+              href="https://control.msg91.com/signup/"
+              target="_blank"
+              className="btn btn-dark px-3 py-2 mt-3 px-md-4 py-md-3 ls-3 utm"
+            >
+              Get Started
+            </a>
+            <TrustedBy />
+          </div>
+          <div className="col-12 col-md-5 col-lg-5 col-sm-12 order-sm-0 hero-right">
+            <img
+              src="./img/home/banner.webp"
+              className="hero-img"
+            />
+          </div>
         </div>
       </div>
+      
+      <div className="bg-light section-y">        
+        <div className="container">
+          <div className="row">
+            <div className="col-xxl-6 col-xl-6 col-lg-6">
+              <a href="/hello" className="product-card hello-card flex-row text-dark mb-4">          
+                <div className="row">
+                  <div className="d-flex flex-column gap-3 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
+                    <img src="./img/icon/hello.svg" className="pro-sec-ico" />            
+                    <div className="pre-heading c-fs-5">Contact center</div>
+                    <div className="pro-heading small-heading">Hello</div>
+                    <div className="product-content c-fs-4">                
+                      Empower your employees, Support your customers.                
+                    </div>
+                    <div
+                      className="justify-content-between d-flex align-items-center"
+                    >
+                      <div className="pro-btn-text">Learn more</div>
+                      <MdKeyboardArrowRight />
+                    </div>
+                  </div>
+                  <div className="product-img d-flex justify-content-end col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
+                    <img src="./img/home/chats.svg" />
+                  </div>          
+                </div>
+              </a>
+            </div>
+            
+            <div className="col-xxl-6 col-xl-6 col-lg-6">
+              <a href="/campaign" className="product-card campaign-card flex-row text-dark mb-4">
+                <div className="row">
+                  <div className="d-flex flex-column gap-3 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
+                    <img src="./img/icon/campaign.svg" className="pro-sec-ico" />            
+                    <div className="pre-heading c-fs-5">Event Based Automation</div>
+                    <div className="pro-heading small-heading">Campaign</div>
+                    <div className="product-content c-fs-4">                
+                      Boost audience engagement through smart Platform.
+                    </div>
+                    <div                  
+                      className="justify-content-between d-flex align-items-center"
+                    >
+                      <div className="pro-btn-text">Learn more</div>
+                      <MdKeyboardArrowRight />
+                    </div>
+                  </div>
+                  <div className="product-img d-flex justify-content-end col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
+                    <img src="./img/home/campaign.svg" />
+                  </div>                      
+                </div>
+              </a>
+            </div>            
+          </div>
 
-      <div className="section product-sec my-5 justify-content-center">
-        <div className="product-card">
-          <div className="product-head">
-            <div className="product-head-text">
-              <span className="pro-heading c-head">Campaign</span>
+          <div className="row">
+            <div className="col-xxl-6 col-xl-6 col-lg-6">
+              <a href="/segmento" className="product-card segmento-card flex-row text-dark mb-4">          
+                <div className="row">
+                  <div className="d-flex flex-column gap-3 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
+                    <img src="./img/icon/segmento.svg" className="pro-sec-ico" />            
+                    <div className="pre-heading c-fs-5">Customer data platform</div>
+                    <div className="pro-heading small-heading">Segmento</div>
+                    <div className="product-content c-fs-4">                
+                      Customer segmentation by their actions or events.
+                    </div>
+                    <div
+                      className="justify-content-between d-flex align-items-center"
+                    >
+                      <div className="pro-btn-text">Learn more</div>
+                      <MdKeyboardArrowRight />
+                    </div>
+                  </div>
+                  <div className="product-img col d-flex justify-content-end">
+                    <img src="./img/home/segmento.webp" />
+                  </div>          
+                </div>
+              </a>
             </div>
-            <div className="product-head-img caimpaign-pro"></div>
-          </div>
-          <div className="product-content pro-alt p-4 d-flex flex-column justify-content-between gap-3">
-            <p className="pro-text text-white">
-              Boost audience engagement through smart Platform.
-            </p>
-            <a
-              href="/campaign"
-              className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2"
-            >
-              <span>
-                <img
-                  src="./img/icon/campaign.svg"
-                  className="pro-sec-ico me-3"
-                />
-                <span className="pro-btn-text">Campaign</span>
-              </span>
-              <MdKeyboardArrowRight />
-            </a>
-          </div>
-        </div>
-        <div className="product-card">
-          <div className="product-head">
-            <div className="product-head-text">
-              <span className="pro-heading c-head">Contact center</span>
-            </div>
-            <div className="product-head-img hello-pro"></div>
-          </div>
-          <div className="product-content  p-4 d-flex flex-column justify-content-between gap-3">
-            <p className="pro-text text-white">
-              Empower your employees, Support your customers.
-            </p>
-            <a
-              href="/hello"
-              className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2"
-            >
-              <span>
-                <img src="./img/icon/hello.svg" className="pro-sec-ico me-3" />
-                <span className="pro-btn-text">Hello</span>
-              </span>
-              <MdKeyboardArrowRight />
-            </a>
-          </div>
-        </div>
-        <div className="product-card">
-          <div className="product-head">
-            <div className="product-head-text">
-              <span className="pro-heading c-head">Customer data platform</span>
-            </div>
-            <div className="product-head-img segmento-pro"></div>
-          </div>
-          <div className="product-content pro-alt p-4 d-flex flex-column justify-content-between gap-3">
-            <p className="pro-text text-white">
-              Segment your customers according to their action or event.
-            </p>
-            <a
-              href="/segmento"
-              className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2"
-            >
-              <span>
-                <img
-                  src="./img/icon/segmento.svg"
-                  className="pro-sec-ico me-3"
-                />
-                <span className="pro-btn-text">Segmento</span>
-              </span>
-              <MdKeyboardArrowRight />
-            </a>
-          </div>
-        </div>
-        <div className="product-card">
-          <div className="product-head">
-            <div className="product-head-text">
-              <span className="pro-heading c-head">Authentication</span>
-            </div>
-            <div className="product-head-img otp-pro"></div>
-          </div>
-          <div className="product-content p-4 d-flex flex-column justify-content-between gap-3">
-            <p className="pro-text text-white">
-              Quick and reliable authentication by 2FA using multiple channels.
-            </p>
-            <a
-              href="/otp"
-              className="c-fs-3 btn btn-light pro-btn justify-content-between d-flex align-items-center px-3 py-2"
-            >
-              <span>
-                <img src="./img/icon/otp.svg" className="pro-sec-ico me-3" />
-                <span className="pro-btn-text">Authentication</span>
-              </span>
-              <MdKeyboardArrowRight />
-            </a>
-          </div>
+            <div className="col-xxl-6 col-xl-6 col-lg-6">
+              <a href="/otp" className="product-card otp-card flex-row text-dark mb-4">
+                <div className="row">
+                  <div className="d-flex flex-column gap-3 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
+                    <img src="./img/icon/otp.svg" className="pro-sec-ico" />            
+                    <div className="pre-heading c-fs-5">INSTANT SECURE VERIFICATION</div>
+                    <div className="pro-heading small-heading">OTP</div>
+                    <div className="product-content c-fs-4">                
+                      Quick and reliable multichannel OTP verification 
+                    </div>
+                    <div                  
+                      className="justify-content-between d-flex align-items-center"
+                    >
+                      <div className="pro-btn-text">Learn more</div>
+                      <MdKeyboardArrowRight />
+                    </div>
+                  </div>
+                  <div className="product-img col d-flex justify-content-end">
+                    <img src="./img/home/otp.png" />
+                  </div>                      
+                </div>
+              </a>
+            </div>            
+          </div>        
         </div>
       </div>
 
       <div className="container my-5 my-80">
         <h2 className="sub-heading c-head mb-2">Communication Channels</h2>
         <p className="c-fs-2 col-12 col-md-11 col-lg-9">
-        Empower conversations with best-in-class communication API
-Full-featured APIs for developers and businesses to connect and engage your customers globally
-
+          Empower conversations with best-in-class communication API
+          Full-featured APIs for developers and businesses to connect and engage
+          your customers globally
         </p>
         <div className="row mt-4 row-gap-26">
           <div className="col-12 col-sm-6 col-md-3">
-          <a
-            href="/sms"
-            className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
-          >
-            <div className="d-flex align-items-center">
-              <Image
-                className="me-2"
-                src="./img/icon/sms.svg"
-                width={40}
-                height={40}
-                alt="cannels"
-              />
-              <span className="">SMS</span>
-            </div>
-            <MdKeyboardArrowRight />
-          </a>
+            <a
+              href="/sms"
+              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2 bg-light"
+            >
+              <div className="d-flex align-items-center">
+                <Image
+                  className="me-2"
+                  src="./img/icon/sms.svg"
+                  width={40}
+                  height={40}
+                  alt="cannels"
+                />
+                <span className="">SMS</span>
+              </div>
+              <MdKeyboardArrowRight />
+            </a>
           </div>
           <div className="col-12 col-sm-6 col-md-3">
-          <a
-            href="/email"
-            className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
-          >
-            <div className="d-flex align-items-center">
-              <Image
-                className="me-2"
-                src="./img/icon/email.svg"
-                width={40}
-                height={40}
-                alt="cannels"
-              />
-              <span className="">Email</span>
-            </div>
-            <MdKeyboardArrowRight />
-          </a>
+            <a
+              href="/email"
+              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2 bg-light"
+            >
+              <div className="d-flex align-items-center">
+                <Image
+                  className="me-2"
+                  src="./img/icon/email.svg"
+                  width={40}
+                  height={40}
+                  alt="cannels"
+                />
+                <span className="">Email</span>
+              </div>
+              <MdKeyboardArrowRight />
+            </a>
           </div>
           <div className="col-12 col-sm-6 col-md-3">
-          <a
-            href="/whatsapp"
-            className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
-          >
-            <div className="d-flex align-items-center">
-              <Image
-                className="me-2"
-                src="./img/icon/whatsapp.svg"
-                width={40}
-                height={40}
-                alt="cannels"
-              />
-              <span className="">Whatsapp</span>
-            </div>
-            <MdKeyboardArrowRight />
-          </a>
+            <a
+              href="/whatsapp"
+              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2 bg-light"
+            >
+              <div className="d-flex align-items-center">
+                <Image
+                  className="me-2"
+                  src="./img/icon/whatsapp.svg"
+                  width={40}
+                  height={40}
+                  alt="cannels"
+                />
+                <span className="">Whatsapp</span>
+              </div>
+              <MdKeyboardArrowRight />
+            </a>
           </div>
           {/* <a
             href="/telegram"
@@ -210,22 +221,22 @@ Full-featured APIs for developers and businesses to connect and engage your cust
             <MdKeyboardArrowRight />
           </a> */}
           <div className="col-12 col-sm-6 col-md-3">
-          <a
-            href="/voice"
-            className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
-          >
-            <div className="d-flex align-items-center">
-              <Image
-                className="me-2"
-                src="./img/icon/voice.svg"
-                width={40}
-                height={40}
-                alt="voice"
-              />
-              <span className="">Voice</span>
-            </div>
-            <MdKeyboardArrowRight />
-          </a>
+            <a
+              href="/voice"
+              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2 bg-light"
+            >
+              <div className="d-flex align-items-center">
+                <Image
+                  className="me-2"
+                  src="./img/icon/voice.svg"
+                  width={40}
+                  height={40}
+                  alt="voice"
+                />
+                <span className="">Voice</span>
+              </div>
+              <MdKeyboardArrowRight />
+            </a>
           </div>
           {/* <a
             href="/rcs"
@@ -282,7 +293,10 @@ Full-featured APIs for developers and businesses to connect and engage your cust
       <div className="container my-5 more-services-sec my-80">
         <h2 className="sub-heading c-head">Utilities</h2>
         <div className="d-flex my-5 flex-md-row flex-column">
-        <a href={`${path}/shorturl`} className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services">
+          <a
+            href={`${path}/shorturl`}
+            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services"
+          >
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
                 <span className="me-3">
@@ -309,18 +323,23 @@ Full-featured APIs for developers and businesses to connect and engage your cust
               <div className="">
                 <h4 className="mb-3 c-fs-3">Make your long URLs short</h4>
                 <p className="c-fs-4">
-                Automatically shortens URL and tracks your success, one click at a time. Turn your long, messy links into short, memorable branded links
+                  Automatically shortens URL and tracks your success, one click
+                  at a time. Turn your long, messy links into short, memorable
+                  branded links
                 </p>
               </div>
-              
-                <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-b text-dark">
-                  <span>Learn more</span>
-                  <MdKeyboardArrowRight />
-                </div>
+
+              <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-b text-dark">
+                <span>Learn more</span>
+                <MdKeyboardArrowRight />
+              </div>
             </div>
           </a>
-          
-          <a href={`${path}/knowledgebase`} className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services">
+
+          <a
+            href={`${path}/knowledgebase`}
+            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services"
+          >
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
                 <span className="me-3">
@@ -346,19 +365,23 @@ Full-featured APIs for developers and businesses to connect and engage your cust
             <div className="d-flex flex-column gap-3 justify-content-between h-100">
               <div className="">
                 <h4 className="mb-3 c-fs-3">
-                Manage your help docs and articles
+                  Manage your help docs and articles
                 </h4>
                 <p className="c-fs-4">
-                Do not let your customers wait for simple solutions. Give them instant access to the self-service library of information.
+                  Do not let your customers wait for simple solutions. Give them
+                  instant access to the self-service library of information.
                 </p>
               </div>
-                <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-sb text-dark">
-                  <span>Learn more</span>
-                  <MdKeyboardArrowRight />
-                </div>
+              <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-sb text-dark">
+                <span>Learn more</span>
+                <MdKeyboardArrowRight />
+              </div>
             </div>
-              </a>
-              <a href="https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91" className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services">
+          </a>
+          <a
+            href="https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91"
+            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services"
+          >
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
                 <span className="me-3">
@@ -383,19 +406,18 @@ Full-featured APIs for developers and businesses to connect and engage your cust
             </div>
             <div className="d-flex flex-column gap-3 justify-content-between h-100">
               <div className="">
-                <h4 className="mb-3 c-fs-3">
-                Simple and secured file storage 
-                </h4>
+                <h4 className="mb-3 c-fs-3">Simple and secured file storage</h4>
                 <p className="c-fs-4">
-                A central hub for online file storage, sharing and syncing. Store all your files safely using powerful, reliable and easy-to-use cloud storage.
+                  A central hub for online file storage, sharing and syncing.
+                  Store all your files safely using powerful, reliable and
+                  easy-to-use cloud storage.
                 </p>
               </div>
-              
-                <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-sb text-dark">
-                  <span>Learn more</span>
-                  <MdKeyboardArrowRight />
-                </div>
-             
+
+              <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-sb text-dark">
+                <span>Learn more</span>
+                <MdKeyboardArrowRight />
+              </div>
             </div>
           </a>
         </div>
@@ -405,9 +427,10 @@ Full-featured APIs for developers and businesses to connect and engage your cust
         <h2 className="sub-heading c-head">Customer Success</h2>
         <h3 className="small-heading c-head">Powered by MSG91</h3>
         <div className="d-flex col-12 flex-column flex-sm-row gap-4 my-4">
-          <a 
-          href="/case-studies/milkbasket"
-          className="col-12 col-md-8 col-sm-8 col-lg-6 c-hover c-hover-bg-grey text-dark">
+          <a
+            href="/case-studies/milkbasket"
+            className="col-12 col-md-8 col-sm-8 col-lg-6 c-hover c-hover-bg-grey text-dark"
+          >
             <Image
               className="milkbasket-client-img "
               src="/img/milkbasket-client-img.png"
@@ -417,21 +440,20 @@ Full-featured APIs for developers and businesses to connect and engage your cust
             />
             <div className="c-fs-3 p-3 d-none d-sm-block">
               <p className="pe-2 ">
-              Milkbasket sends regular updates to its customers by offering proactive support and recommendations
+                Milkbasket sends regular updates to its customers by offering
+                proactive support and recommendations
               </p>
-              <div
-                className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
-                
-              >
+              <div className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3">
                 <span className="me-3 ">Learn more</span>
                 <MdKeyboardArrowRight />
               </div>
             </div>
           </a>
           <div className="col-12 col-sm-4 col-md-4 col-lg-6 d-flex flex-sm-column flex-row gap-2 gap-sm-3 gap-md-4">
-            <a 
-            href="/case-studies/unacademy" 
-            className="c-hover d-flex align-items-center col-6 col-sm-12 c-hover-bg-grey text-dark">
+            <a
+              href="/case-studies/unacademy"
+              className="c-hover d-flex align-items-center col-6 col-sm-12 c-hover-bg-grey text-dark"
+            >
               <Image
                 className="secc-client-img col-12 col-lg-4"
                 src="/img/unacademy-client-img.png"
@@ -441,20 +463,19 @@ Full-featured APIs for developers and businesses to connect and engage your cust
               />
               <div className=" d-none d-lg-block c-fs-3 p-3">
                 <p className="pe-2">
-                Unacademy using omnichannel keeps its audience engaged and nurtured with personalised campaigns
+                  Unacademy using omnichannel keeps its audience engaged and
+                  nurtured with personalised campaigns
                 </p>
-                <div
-                  className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
-                  
-                >
+                <div className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3">
                   <span className="me-3 ">Learn more</span>
                   <MdKeyboardArrowRight />
                 </div>
               </div>
             </a>
-            <a 
-             href="/case-studies/ixigo"
-             className="c-hover d-flex align-items-center col-6 col-sm-12 c-hover-bg-grey text-dark">
+            <a
+              href="/case-studies/ixigo"
+              className="c-hover d-flex align-items-center col-6 col-sm-12 c-hover-bg-grey text-dark"
+            >
               <Image
                 className="secc-client-img col-12 col-lg-4 "
                 src="/img/ixigo-client-img.png"
@@ -464,12 +485,10 @@ Full-featured APIs for developers and businesses to connect and engage your cust
               />
               <div className="d-none d-lg-block c-fs-3 p-3">
                 <p className="pe-2">
-                Ixigo engages and updates its audience through multichannel communication across messaging, email and WhatsApp
+                  Ixigo engages and updates its audience through multichannel
+                  communication across messaging, email and WhatsApp
                 </p>
-                <div
-                  className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3"
-                 
-                >
+                <div className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3">
                   <span className="me-3 ">Learn more</span>
                   <MdKeyboardArrowRight />
                 </div>
@@ -480,7 +499,6 @@ Full-featured APIs for developers and businesses to connect and engage your cust
       </div>
 
       <Seo path={path} pageData={"index"} />
-
 
       <PreFooter />
     </>
