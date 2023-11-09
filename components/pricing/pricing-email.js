@@ -1,7 +1,7 @@
 import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { setUtm } from "../pricingComp";
+import { setUtm } from "@/components/utils";
 const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, setSubscriptionEmail }) => {
   const [selectedCurrency, setSelectedCurrency] = useState('INR');
   const [selectedMode, setSelectedMode] = useState("Monthly");
