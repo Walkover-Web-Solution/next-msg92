@@ -148,6 +148,7 @@ nav {
       max-width: 270px;
       width: 100%;
       height: fit-content;
+      margin-right: -24px;
     }
   }  
   &.hello-card{
@@ -179,6 +180,12 @@ nav {
   }
   &:hover{    
     box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.chn-btn{
+  .description{
+    
   }
 }
 

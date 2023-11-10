@@ -150,12 +150,12 @@ const indexComp = ({pageData, params}) => {
           your customers globally
         </p>
         <div className="row mt-4 row-gap-26">
-          <div className="col-12 col-sm-6 col-md-3">
+          <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
             <a
               href="/sms"
-              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2 bg-light"
+              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
             >
-              <div className="d-flex align-items-center">
+              <div className="d-flex flex-column gap-3">
                 <Image
                   className="me-2"
                   src="./img/icon/sms.svg"
@@ -163,17 +163,23 @@ const indexComp = ({pageData, params}) => {
                   height={40}
                   alt="cannels"
                 />
-                <span className="">SMS</span>
+                <span className="c-fw-b">SMS</span>
+                <div className="description c-fs-3">
+                  Transform your global communication with MSG91's reliable SMS services & APIs. Engage, analyze, and connect effortlessly on a global scale
+                </div>
+                <div className="justify-content-between d-flex align-items-center c-fs-2">
+                  <div className="pro-btn-text">Learn more</div>
+                  <MdKeyboardArrowRight />
+                </div>
               </div>
-              <MdKeyboardArrowRight />
             </a>
           </div>
-          <div className="col-12 col-sm-6 col-md-3">
+          <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
             <a
               href="/email"
-              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2 bg-light"
+              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
             >
-              <div className="d-flex align-items-center">
+              <div className="d-flex flex-column gap-3">
                 <Image
                   className="me-2"
                   src="./img/icon/email.svg"
@@ -181,17 +187,24 @@ const indexComp = ({pageData, params}) => {
                   height={40}
                   alt="cannels"
                 />
-                <span className="">Email</span>
+                <span className="c-fw-b">Email</span>
+                <div className="description c-fs-3">
+                  Enhance email outreach with templates, AMP, stats, SMTP/API, and validation for effective customer engagement
+                </div>
+                <div className="justify-content-between d-flex align-items-center c-fs-2">
+                  <div className="pro-btn-text">Learn more</div>
+                  <MdKeyboardArrowRight />
+                </div>
               </div>
-              <MdKeyboardArrowRight />
             </a>
           </div>
-          <div className="col-12 col-sm-6 col-md-3">
+          
+          <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
             <a
               href="/whatsapp"
-              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2 bg-light"
+              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
             >
-              <div className="d-flex align-items-center">
+              <div className="d-flex flex-column gap-3">
                 <Image
                   className="me-2"
                   src="./img/icon/whatsapp.svg"
@@ -199,61 +212,69 @@ const indexComp = ({pageData, params}) => {
                   height={40}
                   alt="cannels"
                 />
-                <span className="">Whatsapp</span>
+                <span className="c-fw-b">WhatsApp</span>
+                <div className="description c-fs-3">
+                  Improve interaction on WhatsApp with Base64 support, two-way communication, template management, analytics, and message logs
+                </div>
+                <div className="justify-content-between d-flex align-items-center c-fs-2">
+                  <div className="pro-btn-text">Learn more</div>
+                  <MdKeyboardArrowRight />
+                </div>
               </div>
-              <MdKeyboardArrowRight />
             </a>
           </div>
-          {/* <a
-            href="/telegram"
-            className="chn-btn col-3 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
-          >
-            <div className="d-flex align-items-center">
-              <Image
-                className="me-2"
-                src="./img/icon/telegram.svg"
-                width={40}
-                height={40}
-                alt="telegram"
-              />
-              <span className="">Telegram</span>
-            </div>
-            <MdKeyboardArrowRight />
-          </a> */}
-          <div className="col-12 col-sm-6 col-md-3">
+
+          
+        
+          <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
             <a
               href="/voice"
-              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2 bg-light"
+              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
             >
-              <div className="d-flex align-items-center">
+              <div className="d-flex flex-column gap-3">
                 <Image
                   className="me-2"
                   src="./img/icon/voice.svg"
                   width={40}
                   height={40}
-                  alt="voice"
+                  alt="cannels"
                 />
-                <span className="">Voice</span>
+                <span className="c-fw-b">Voice</span>
+                <div className="description c-fs-3">
+                  Enhance customer engagement with real-time calls, Call Monitoring, browser calling, advanced IVR, bulk voice messaging, and real-time agent connections
+                </div>
+                <div className="justify-content-between d-flex align-items-center c-fs-2">
+                  <div className="pro-btn-text">Learn more</div>
+                  <MdKeyboardArrowRight />
+                </div>
               </div>
-              <MdKeyboardArrowRight />
             </a>
           </div>
-          {/* <a
-            href="/rcs"
-            className="chn-btn col-3 d-flex align-items-center justify-content-between p-3 text-dark c-fs-2"
-          >
-            <div className="d-flex align-items-center">
-              <Image
-                className="me-2"
-                src="./img/icon/rcs.svg"
-                width={40}
-                height={40}
-                alt="rcs"
-              />
-              <span className="">RCS</span>
-            </div>
-            <MdKeyboardArrowRight />
-          </a> */}
+
+          <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <a
+              href="/numbers"
+              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
+            >
+              <div className="d-flex flex-column gap-3">
+                <Image
+                  className="me-2"
+                  src="./img/icon/numbers.svg"
+                  width={40}
+                  height={40}
+                  alt="cannels"
+                />
+                <span className="c-fw-b">Numbers</span>
+                <div className="description c-fs-3">
+                  Unlock global markets with cost-efficient virtual numbers. Enhance engagement with missed call services, keyword messaging, surveys, and auto responses
+                </div>
+                <div className="justify-content-between d-flex align-items-center c-fs-2">
+                  <div className="pro-btn-text">Learn more</div>
+                  <MdKeyboardArrowRight />
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
 
