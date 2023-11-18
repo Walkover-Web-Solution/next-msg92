@@ -20,6 +20,7 @@ const navbar = ({ browserPath, pricingPath,pageSlug }) => {
     '/hello': 'Hello', 
     '/segmento': 'Segmento', 
     '/campaign': 'Campaign', 
+    '/shorturl': 'URL Shortener', 
     '/knowledgebase': 'KnowledgeBase', 
   }
   var title = products[pageSlug];
@@ -94,11 +95,21 @@ const navbar = ({ browserPath, pricingPath,pageSlug }) => {
         <div className="container relative d-none align-items-center d-md-flex justify-content-between c-fs-4 c-fw-m nav-menu-cont">
           <div className=" d-flex gap-4 gap-lg-4 gap-xl-5 w-nav-menu align-items-center justify-content-start nav-menu">
             <a
-              className="nav-link menu-opt text-dark"
+              className={`nav-link menu-opt text-dark ${title ? 'active' : ''}`}
               href={undefined}
               id="product-link"
             >
-             <span className="c-fs-4 c-fw-m">{title ? title: "Products"}</span>
+              <div className="c-fs-4 c-fw-m">
+                {
+                title 
+                ? 
+                <div className="d-flex align-items-center gap-2">
+                  <img width="24" height="24" data-nimg="1" src={`/img/icon/${title.toLowerCase().replace(/ +/g, "")}.svg`} />
+                  {title}
+                </div>
+                : "Products"
+                }
+              </div>
               <div className="nav-line"></div>
             </a>
             <a

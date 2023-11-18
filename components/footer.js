@@ -28,7 +28,7 @@ const Footer = ({path, year}) => {
               <h4 className="c-fs-5 d-flex flex-column mt-5">Utilities</h4>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a href={`${path}/shorturl`} className="c-link-underline c-fs-5 mt-2 c-fw-t">
-                  Shorturl
+                  URL Shortener
                 </a>
                 <a href={`${path}/knowledgebase`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   KnowledgeBase
