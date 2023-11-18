@@ -154,7 +154,7 @@ const ProductMenu = ({path}) => {
                 alt="ico"
               />
               <div className="">
-                <h4 className="c-fs-2">Shorturl</h4>
+                <h4 className="c-fs-2">URL Shortener</h4>
                 <p className="c-fs-5">Cutomise and Track URL's</p>
               </div>
               
