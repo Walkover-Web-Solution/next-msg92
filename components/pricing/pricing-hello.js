@@ -242,14 +242,9 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
             <div className="card-body justify-content-between">
               <h3 className="c-fs-3">CUSTOM</h3>
               <p className="c-fs-5">Talk to sales for a customized plan.</p>
-              <Link
-                data-bs-toggle="modal#"
-                data-bs-target="#sales-modal"
-                className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2"
-                href="/contact-us"
-              >
+              <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-4 btn btn-outline-dark mt-2">
                 Talk to sales
-              </Link>
+              </button>              
             </div>
           </div>
         </div>
