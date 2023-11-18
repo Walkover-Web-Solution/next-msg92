@@ -8,9 +8,23 @@ import ProductMenu from "./productmenu";
 import Notification from "./notification";
 import Link from "next/link";
 
-const navbar = ({ browserPath, pricingPath }) => {  
+const navbar = ({ browserPath, pricingPath,pageSlug }) => {  
+   const products = {
+    '/sms': 'SMS',
+    '/email': 'Email', 
+    '/voice': 'Voice', 
+    '/whatsapp': 'WhatsApp', 
+    '/rcs' : 'RCS', 
+    '/otp': 'OTP', 
+    '/numbers': 'Numbers', 
+    '/hello': 'Hello', 
+    '/segmento': 'Segmento', 
+    '/campaign': 'Campaign', 
+    '/knowledgebase': 'KnowledgeBase', 
+  }
+  var title = products[pageSlug];
   var path = browserPath.split("/")[1];
-  path = path.length == 2 ? "/" + path : "";  
+  path = path.length === 2 ? "/" + path : "";  
   
   const [showOverlay, setShowOverlay] = useState(false);
   const [show, setShow] = useState(false);
@@ -84,7 +98,7 @@ const navbar = ({ browserPath, pricingPath }) => {
               href={undefined}
               id="product-link"
             >
-              <span className="c-fs-4 c-fw-m">Products</span>
+             <span className="c-fs-4 c-fw-m">{title ? title: "Products"}</span>
               <div className="nav-line"></div>
             </a>
             <a

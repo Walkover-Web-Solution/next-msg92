@@ -29,6 +29,7 @@ export default function App({ Component, pageProps }) {
     '/rcs', 
     '/otp', 
     '/hello', 
+    '/numbers',
     '/segmento', 
     '/campaign', 
     '/knowledgebase', 
@@ -146,7 +147,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </>
         }
         <Headcomp browserPath={browserPathMeta} />
-        <Navbar browserPath={browserPath} pricingPath={pricingPath} />
+        <Navbar browserPath={browserPath} pricingPath={pricingPath} appPath={browserPathMeta} pageSlug = {pageSlug} />
         <Component 
         {...pageProps} 
         path={path} 
