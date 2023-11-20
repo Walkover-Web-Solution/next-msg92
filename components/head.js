@@ -7,16 +7,16 @@ const Headcomp = (browserPath , browserPathMeta) => {
   var meta = (metaData[path]) ? metaData[path] : {'title':'','description':''};    
   const split = browserPath.browserPath.split('/');
   var country = '';  
-  var page = browserPath.browserPath;
+  var page = '';
   var hreflang = 'en';
   
-  if(split.length === 2){
+  if(split.length === 2 && split[1].length){
     country = split[1].length === 2 ? split[1] : '';
-    page = split[1].length !== 2 ? split[1] : '';
+    page = split[1].length !== 2 ? `/${split[1]}` : `/${country}`;
   }
-  if(browserPath.browserPath.split('/').length === 3){
+  if(split.length === 3){
     country = split[1].length === 2 ? split[1] : '';
-    page = split[1].length === 2 ? split[2] : `${split[1]}/${split[2]}`;
+    page = split[1].length === 2 ? `/${country}/${split[2]}` : `/${country}/${split[2]}`;
   }  
   
   if(countryList.includes(country)){
@@ -34,10 +34,10 @@ const Headcomp = (browserPath , browserPathMeta) => {
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no"/>
         <meta name="google-site-verification" content="RfcBy_Lv1Ao1j0eP8UlMjJ44ik5_1YDKsRQSNFr9jEQ" />
         <link rel="icon" href="/fav.svg" />                
-        <link rel="canonical" href={`https://msg91.com${browserPath.browserPath}`} />
-        <link rel="alternate" hrefLang="x-default" href={`https://msg91.com/${page}`} />        
+        <link rel="canonical" href={`https://msg91.com${page}`} />
+        <link rel="alternate" hrefLang="x-default" href={`https://msg91.com${page}`} />
         { countryList.includes(country) &&
-          <link rel="alternate" hrefLang={hreflang} href={`https://msg91.com/${page}`} />      
+          <link rel="alternate" hrefLang={hreflang} href={`https://msg91.com${page}`} />      
         }
       </Head>
     </>

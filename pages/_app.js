@@ -13,7 +13,6 @@ export default function App({ Component, pageProps }) {
   var  browserPath = router.asPath;  
   var browserPathCase = browserPath;
   var browserPathMeta = browserPath;
-  
   if (browserPath !== '/') {
     const pattern = /\/([^/?]+)/;
     const result = browserPath.match(pattern);
