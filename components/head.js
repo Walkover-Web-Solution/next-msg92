@@ -13,10 +13,12 @@ const Headcomp = (browserPath , browserPathMeta) => {
   if(split.length === 2 && split[1].length){
     country = split[1].length === 2 ? split[1] : '';
     page = split[1].length !== 2 ? `/${split[1]}` : `/${country}`;
+    //console.log('1', country, page)
   }
   if(split.length === 3){
     country = split[1].length === 2 ? split[1] : '';
-    page = split[1].length === 2 ? `/${country}/${split[2]}` : `/${country}/${split[2]}`;
+    page = split[1].length === 2 ? `/${country}/${split[2]}` : `/${split[2]}`;
+    //console.log('2', country, page)
   }  
   
   if(countryList.includes(country)){
