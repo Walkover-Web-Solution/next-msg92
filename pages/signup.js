@@ -301,7 +301,7 @@ class SignUp extends React.Component {
                     toast.error(result?.errors?.[0] ?? result?.errors);
                     if (this.state.signupByGitHub) {
                         setTimeout(() => {
-                            this.setState(1);
+                            this.setStep(1);
                         }, 200);
                     }
                 }
