@@ -10,15 +10,22 @@ const Headcomp = (browserPath , browserPathMeta) => {
   var page = '';
   var hreflang = 'en';
   
+  //console.log('split', split);
+  
   if(split.length === 2 && split[1].length){
     country = split[1].length === 2 ? split[1] : '';
     page = split[1].length !== 2 ? `/${split[1]}` : `/${country}`;
     //console.log('1', country, page)
   }
+  
   if(split.length === 3){
     country = split[1].length === 2 ? split[1] : '';
-    page = split[1].length === 2 ? `/${country}/${split[2]}` : `/${split[2]}`;
-    //console.log('2', country, page)
+    page = split[1].length === 2 ? `/${country}/${split[2]}` : `/${split[1]}/${split[2]}`;
+    //console.log('2', country, page, split)
+  }  
+  
+  if(split.length === 4){    
+    page = `/${split[1]}/${split[2]}/${split[3]}`;
   }  
   
   if(countryList.includes(country)){
