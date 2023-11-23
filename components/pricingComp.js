@@ -316,7 +316,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
           </Link>
           
            {/* link for knowledgebase */}
-          <Link
+          {/* <Link
           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/knowledgebase":"/pricing/knowledgebase"}
            className={`nav-item ${product === 'knowledgebase' ? 'active' : ''}`}
             id="kb-btn"
@@ -325,7 +325,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
               <img src="/img/icon/knowledgebase.svg" alt="#" className="icon" />
               KnowledgeBase
             </span>
-          </Link>
+          </Link> */}
 
 
         </div>
