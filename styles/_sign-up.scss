@@ -32,7 +32,7 @@
         }
     }
 }
-.btn-login-prime {
+.btn-dark-o{
     border-radius: 4px !important;    
     border: 1px solid #747775 !important;
     background-color: #fff;    
@@ -66,6 +66,27 @@
         }
     }
 }
+
+.btn-login-prime {
+    border-radius: 4px !important;
+    color: #ffff !important;
+    background-color: var(--primary-color) !important;
+    min-width: 82px;
+    padding: 10px 16px !important;
+    height: 40px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    svg {
+        margin-left: 4px;
+        width: 18px;
+        height: 18px;
+    }
+    &:hover {
+        background-color: var(--primary-hover-color) !important;
+    }
+}
+
 .btn-login-prime-o {
     border-radius: 4px !important;
     border: 1px solid var(--primary-color) !important;

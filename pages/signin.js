@@ -196,7 +196,7 @@ class logIn extends React.Component {
                             </span>
 
                             <button
-                                className="signin__right__login btn btn-login-prime c-fs-7"
+                                className="signin__right__login btn btn-dark-o c-fs-7"
                                 onClick={() => this.initOTPWidget(true)}
                             >
                                 Login with OTP
