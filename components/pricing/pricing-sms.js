@@ -120,7 +120,7 @@ const Pricingsms = ({
                     <div className="card-body justify-content-between">
                       <h3 className="c-fs-3">SMS Pricing</h3>
                       <h5 className="c-fs-2 mt-2 text-green">{currencySymbol}{item[4]?.rate}/SMS</h5>
-                      <h2 className="c-fs-3 c-ff-b">-</h2>                      
+                      <h2 className="c-fs-3 c-ff-b"></h2>                      
                       <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                         Get Started
                       </a>
