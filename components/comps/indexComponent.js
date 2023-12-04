@@ -11,7 +11,7 @@ const indexComp = ({pageData, params}) => {
       <div className="container section-y">
         <div className="row">
           <div className="col-12 col-sm-12 col-md-7 col-lg-7 d-flex flex-column gap-4 align-items-start hero-left">
-            <div className="home-pre-heading c-fs-3 uc">
+            <div className="home-pre-heading c-fs-4 uc">
               customer solution platform
             </div>
             <h1 className="heading text-dark c-fw-xb">
