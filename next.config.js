@@ -1,10 +1,24 @@
 /** @type {import('next').NextConfig} */
 
-var customEnvConfig = require('dotenv')?.config()?.parsed || {};
 
 const nextConfig = {
     reactStrictMode: false,
-    env: customEnvConfig,
+    env: {
+        // URLS
+        API_BASE_URL: process.env.API_BASE_URL,
+        REDIRECT_URL: process.env.REDIRECT_URL,
+
+        // CLIENT IDS 
+        GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+        ZOHO_CLIENT_ID: process.env.ZOHO_CLIENT_ID,
+        GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
+        MSAL_CLIENT_ID: process.env.MSAL_CLIENT_ID,
+
+        //WIDGET CONFIG
+        OTP_WIDGET_TOKEN: process.env.OTP_WIDGET_TOKEN,
+        WIDGET_AUTH_TOKEN: process.env.WIDGET_AUTH_TOKEN,
+        WIDGET_SCRIPT: process.env.WIDGET_SCRIPT,
+    },
 
     // Can be safely removed in newer versions of Next.js
     webpack(config) {
