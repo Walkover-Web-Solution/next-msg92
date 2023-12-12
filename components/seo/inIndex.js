@@ -516,238 +516,6 @@ const Insms = () => {
       </span>
     </span>
   </p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <h2 style={{ marginRight: 6, textAlign: "justify" }}>
-    <span style={{ fontSize: "16pt" }}>
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>Frequently Asked Questions&nbsp;</strong>
-        </span>
-      </span>
-    </span>
-  </h2>
-  <p>&nbsp;</p>
-  <ul>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>How can MSG91 benefit my business?</strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ul>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          MSG91 offers numerous benefits for businesses, including improved
-          customer engagement, streamlined communication workflows, increased
-          operational efficiency, and enhanced brand reputation. Our platform
-          enables businesses to automate communication, personalize
-          interactions, and reach their target audience through their preferred
-          channels.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <ol start={2}>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>
-              What makes MSG91 different from other communication platforms?
-            </strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ol>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          MSG91 stands out due to its reliability, scalability, and versatility.
-          We specialize in providing{" "}
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>mobile cloud communication platforms in India</strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          , addressing the unique needs of businesses in this market. Our
-          platform offers advanced features, customizable solutions, and
-          exceptional customer support to help businesses achieve their
-          communication goals.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <ol start={3}>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>Is MSG91 suitable for businesses of all sizes?</strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ol>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          Yes, MSG91 caters to businesses of all sizes. Whether you're a
-          startup, small business, or large enterprise, our platform can be
-          tailored to meet your specific requirements. We offer scalable
-          solutions that can accommodate the communication needs of businesses
-          as they grow and expand.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <ol start={4}>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>Is MSG91 secure?</strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ol>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          Security is a top priority at MSG91. We implement industry-standard
-          protocols and encryption techniques to ensure the confidentiality and
-          integrity of your data. Our{" "}
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>enterprise cloud communications platform</strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          {" "}
-          offers features like two-factor authentication and OTP verification to
-          enhance security and protect sensitive information.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <ol start={5}>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>
-              Can I integrate MSG91 with my existing systems or applications?
-            </strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ol>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          Absolutely! MSG91 provides developer-friendly APIs and documentation,
-          making it easy to integrate our platform with your existing systems or
-          applications. Our APIs allow you to incorporate our communication
-          functionalities seamlessly, enabling you to automate communication and
-          streamline your workflows.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <ol start={6}>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>What level of support can I expect from MSG91?</strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ol>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          At MSG91, we pride ourselves on offering excellent customer support.
-          Our dedicated support team is available 24/7 to assist you with any
-          queries, technical issues, or guidance you may need. We strive to
-          ensure a smooth experience and help you make the most out of our
-          platform.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
-  <ol start={7}>
-    <li style={{ listStyleType: "decimal" }}>
-      <span  >
-        <span >
-          <span style={{ color: "#000000" }}>
-            <strong>How do I get started with MSG91?</strong>
-          </span>
-        </span>
-      </span>
-    </li>
-  </ol>
-  <p style={{ textAlign: "justify" }}>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          Getting started with MSG91 is simple. You can visit our website and
-          sign up for an account. Once you have an account, you can explore our{" "}
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          <strong>cloud-based communication platform in India</strong>
-        </span>
-      </span>
-    </span>
-    <span  >
-      <span >
-        <span style={{ color: "#000000" }}>
-          , access the documentation and APIs, and start integrating our
-          communication solutions into your business processes.
-        </span>
-      </span>
-    </span>
-  </p>
-  <p>&nbsp;</p>
 </>
 
           </div>
@@ -755,6 +523,207 @@ const Insms = () => {
         <button className="btn btn-dark mt-3" onClick={handleReadMore}>
           {showInsms ? "Read Less" : "Read More"}
         </button>
+        <div>
+              <h2 className="c-head c-fs-1 mt-5">FAQs</h2>
+
+              <div className="accordion accordion-flush" id="accordionFlushExample">
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingOne">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseOne"
+        aria-expanded="false"
+        aria-controls="flush-collapseOne"
+      >
+        How can MSG91 benefit my business?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseOne"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingOne"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+      MSG91 offers numerous benefits for businesses, including improved
+          customer engagement, streamlined communication workflows, increased
+          operational efficiency, and enhanced brand reputation. Our platform
+          enables businesses to automate communication, personalize
+          interactions, and reach their target audience through their preferred
+          channels.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingTwo">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseTwo"
+        aria-expanded="false"
+        aria-controls="flush-collapseTwo"
+      >
+        What makes MSG91 different from other communication platforms?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseTwo"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingTwo"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+      MSG91 stands out due to its reliability, scalability, and versatility.
+          We specialize in providing mobile cloud communication platforms in India , addressing the unique needs of businesses in this market. Our
+          platform offers advanced features, customizable solutions, and
+          exceptional customer support to help businesses achieve their
+          communication goals.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingThree">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseThree"
+        aria-expanded="false"
+        aria-controls="flush-collapseThree"
+      >
+        Is MSG91 suitable for businesses of all sizes?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseThree"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingThree"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+      Yes, MSG91 caters to businesses of all sizes. Whether you're a
+          startup, small business, or large enterprise, our platform can be
+          tailored to meet your specific requirements. We offer scalable
+          solutions that can accommodate the communication needs of businesses
+          as they grow and expand.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingFour">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseFour"
+        aria-expanded="false"
+        aria-controls="flush-collapseFour"
+      >
+        Is MSG91 secure?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseFour"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingFour"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+      Security is a top priority at MSG91. We implement industry-standard
+          protocols and encryption techniques to ensure the confidentiality and
+          integrity of your data. Our enterprise cloud communications platform offers features like two-factor authentication and OTP verification to
+          enhance security and protect sensitive information.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingFive">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseFive"
+        aria-expanded="false"
+        aria-controls="flush-collapseFive"
+      >
+        Can I integrate MSG91 with my existing systems or applications?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseFive"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingFive"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+      Absolutely! MSG91 provides developer-friendly APIs and documentation,
+          making it easy to integrate our platform with your existing systems or
+          applications. Our APIs allow you to incorporate our communication
+          functionalities seamlessly, enabling you to automate communication and
+          streamline your workflows.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingSix">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseSix"
+        aria-expanded="false"
+        aria-controls="flush-collapseSix"
+      >
+        What level of support can I expect from MSG91?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseSix"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingSix"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+      At MSG91, we pride ourselves on offering excellent customer support.
+          Our dedicated support team is available 24/7 to assist you with any
+          queries, technical issues, or guidance you may need. We strive to
+          ensure a smooth experience and help you make the most out of our
+          platform.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingSeven">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseSeven"
+        aria-expanded="false"
+        aria-controls="flush-collapseSeven"
+      >
+        How do I get started with MSG91?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseSeven"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingSeven"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+      Getting started with MSG91 is simple. You can visit our website and
+          sign up for an account. Once you have an account, you can explore our cloud-based communication platform in India , access the documentation and APIs, and start integrating our
+          communication solutions into your business processes.
+      </div>
+    </div>
+  </div>
+</div>
+
+         </div>
       </div>
     </>
   );

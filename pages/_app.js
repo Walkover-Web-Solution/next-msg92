@@ -24,21 +24,21 @@ export default function App({ Component, pageProps }) {
     var path = browserPath.split('/')[1];
 
     const products = [
-        '/sms',
-        '/email',
-        '/voice',
-        '/whatsapp',
-        '/rcs',
-        '/otp',
-        '/hello',
-        '/segmento',
-        '/campaign',
-        '/knowledgebase',
-        '/free-whatsapp-link-generator',
+        '/sms', 
+        '/email', 
+        '/voice', 
+        '/whatsapp', 
+        '/rcs', 
+        '/otp', 
+        '/hello', 
+        '/numbers',
+        '/segmento', 
+        '/campaign',    
+        '/free-whatsapp-link-generator', 
         '/pricing',
         '/pricing/sms',
         '/shorturl',
-    ];
+      ];
     var pageSlug = Object.keys(router.query).length ? `/${router.query.pageslug}` : browserPath;
     var pricingPath = products.includes(pageSlug) ? `/pricing${pageSlug}` : `/pricing/sms`;
 
@@ -142,22 +142,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "https://www.youtube.com/@WalkoverWS"
               ]
             }`,
-                        }}
-                    />
-                </>
-            )}
-            <Headcomp browserPath={browserPathMeta} />
-            {showNavbar && <Navbar browserPath={browserPath} pricingPath={pricingPath} />}
-            <Component
-                {...pageProps}
-                path={path}
-                browserPath={browserPath}
-                browserPathCase={browserPathCase}
-                pricingPath={pricingPath}
-            />
-            {showNavbar && <Footer path={path} year={year} />}
-            <Toastify />
-        </>
+          }}
+          />
+          </>
+        )}
+        <Headcomp browserPath={browserPathMeta} />
+        {showNavbar && <Navbar browserPath={browserPath} pricingPath={pricingPath} appPath={browserPathMeta} pageSlug = {pageSlug} /> }
+        <Component 
+        {...pageProps} 
+        path={path} 
+        browserPath={browserPath} 
+        browserPathCase={browserPathCase} 
+        pricingPath={pricingPath}
+        />
+        {showNavbar && <Footer path={path} year={year} /> }
+    </>
     );
 }
 

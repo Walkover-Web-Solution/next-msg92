@@ -169,15 +169,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
 
 
   return (
-    <>
-      {/* <Head>                
-        <link rel="canonical" href={`https://msg91.com${browserPath}`} />                
-        <link rel="alternate" hreflang="x-default" href="https://msg91.com" />
-        <link rel="alternate" hreflang={hreflang} href={`https://msg91.com/${country}`} />
-        {country && 
-          <link rel="alternate" hreflang={hreflang} href={`https://msg91.com/${country}`} />
-        }
-      </Head> */}
+    <>      
       <div>
         <div
           className=" my-4 d-flex w-100 gap-2 align-items-center justify-content-center flex-wrap"
@@ -310,7 +302,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
           </Link>
           
            {/* link for knowledgebase */}
-          <Link
+          {/* <Link
           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/knowledgebase":"/pricing/knowledgebase"}
            className={`nav-item ${product === 'knowledgebase' ? 'active' : ''}`}
             id="kb-btn"
@@ -319,7 +311,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
               <img src="/img/icon/knowledgebase.svg" alt="#" className="icon" />
               KnowledgeBase
             </span>
-          </Link>
+          </Link> */}
 
 
         </div>
@@ -347,6 +339,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
             fetchSubscriptionEmail={fetchSubscription}
             currency={currency}
             currencySymbol={currencySymbol}
+            countryCode={countryCode}
           />
         )}
         {product === "voice" && (
@@ -366,6 +359,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
             currency={currency}
             currencySymbol={currencySymbol}
             oneTimeWtsAppFee={oneTimeWtsAppFee}
+            countryCode={countryCode}
           />
         )}
         {product === "rcs" && <Pricingrcs />}

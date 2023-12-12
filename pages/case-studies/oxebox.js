@@ -9,7 +9,7 @@ const oxebox = () => {
         <div className="row col-12 col-md-5 d-flex">
           <div className="container border border-5 border-dark rounded-1 px-4 py-2">
             <div className="mb-3">
-              <img src="../img/Onebox.png"></img>
+              <img src="/img/Oxebox.png"></img>
             </div>
             <span className="c-fs-3 c-fw-b c-col-grey">Industry</span>
             <div className="mb-4">

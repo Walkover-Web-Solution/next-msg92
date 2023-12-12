@@ -142,5 +142,41 @@
             }
         ]
       }
+  },
+  "Numbers": {
+    "log": {
+        "version": "1.2",
+        "entries": [
+            {
+                "request": {
+                    "method": "POST",
+                    "url": "https://control.msg91.com/api/v5/whatsapp/whatsapp-outbound-message/",
+                    "httpVersion": "HTTP/1.1",
+                    "cookies": [],
+                    "headers": [
+                        {
+                            "name": "Authkey",
+                            "value": "<authkey>"
+                        },
+                        {
+                            "name": "accept",
+                            "value": "application/json"
+                        },
+                        {
+                            "name": "content-type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "queryString": [],
+                    "headersSize": -1,
+                    "bodySize": -1,
+                    "postData": {
+                        "mimeType": "application/json",
+                        "text": "\n{\"integrated_number\":\"Intergated WhatsApp Number, with country code\",\"recipient_number\":\"Mobile Number\",\"content_type\":\"text\",\"text\":\"Message Content\"}\n"
+                    }
+                }
+            }
+        ]
+      }
   }
 }
