@@ -7,6 +7,8 @@ import { getCookie, getQueryParamsDeatils, setCookie } from '@/components/utils'
 import { toast } from 'react-toastify';
 import { MdCheckCircle } from 'react-icons/md';
 
+const SUCCESS_REDIRECTION_URL =  process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
+
 const OTPRetryModes = {
     Sms: '11',
     Voice: '4',
@@ -57,7 +59,7 @@ class SignUp extends React.Component {
                 .then((response) => response?.json())
                 .then((result) => {
                     if (result?.status === 'success') {
-                        location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', payload.session);
+                        location.href = SUCCESS_REDIRECTION_URL?.replace(':session', payload.session);
                     }
                 });
         } catch (error) {
@@ -289,7 +291,7 @@ class SignUp extends React.Component {
                     if (result?.data?.data?.nextStep === 'createNewCompany') {
                         this.setStep(3);
                     } else if (result?.data?.data?.nextStep === 'loginIntoExistingAccount') {
-                        location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(
+                        location.href = SUCCESS_REDIRECTION_URL?.replace(
                             ':session',
                             result?.data?.sessionDetails?.PHPSESSID
                         );
@@ -359,7 +361,7 @@ class SignUp extends React.Component {
                 if (result?.status === 'success') {
                     this.setStep(4);
                     setTimeout(() => {
-                        location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(
+                        location.href = SUCCESS_REDIRECTION_URL?.replace(
                             ':session',
                             result?.data?.sessionDetails?.PHPSESSID
                         );
