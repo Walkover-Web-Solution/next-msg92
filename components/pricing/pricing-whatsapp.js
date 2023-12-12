@@ -1,22 +1,41 @@
-import { MdDone, MdClose } from "react-icons/md";
+import { MdDone } from "react-icons/md";
 import { useEffect, useState } from "react";
-import countries from "@/data/countries.json";
 import { setUtm } from "@/components/utils";
 
-const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, currencySymbol, oneTimeWtsAppFee}) => {
+const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsAppFee,countryCode}) => {
+  var change
+  var changeSymbol
+  if(countryCode === 'US' || countryCode === 'AE' ||  countryCode === 'SG' || countryCode === 'PH'){
+    change = 'USD'
+    changeSymbol = '$'
+  }
+  else if(countryCode === 'GB' || countryCode === 'ES'){
+    change = 'GBP'
+    changeSymbol = '£'
+  }
+  else if (countryCode === 'IN'){
+    change = 'INR'
+    changeSymbol = '₹'
+  }
   const [selectedMode, setSelectedMode] = useState("Monthly");  
+  const [selectedCurrency, setSelectedCurrency] = useState(change);
   const [onetime, setOnetime] = useState("");
+  const [symbol, setSymbol] = useState(changeSymbol);
   
   const changeCurrency = (currency) => {
+    setSelectedCurrency(currency);
     fetchSubscriptionWhatsapp(currency, '5');
     switch (currency) {
-      case "INR":        
+      case "INR":      
+        setSymbol('₹');  
         setOnetime('3000')
         break;
       case "USD":
-      setOnetime('38')
+        setSymbol('$');
+        setOnetime('38')
         break;      
       case "GBP":
+        setSymbol('£');
         setOnetime('32')
         break;
     }
@@ -29,7 +48,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, c
   return (
     <>
       <div className="d-flex justify-content-center mb-4">
-        <select style={{width: 'fit-content'}} className="form-select me-4" aria-label="Default select example" onChange={(e)=>changeCurrency(e.target.value)}>
+        <select style={{width: 'fit-content'}} className="form-select me-4" aria-label="Default select example" value={selectedCurrency} onChange={(e)=>changeCurrency(e.target.value)}>
           <option value="INR">INR</option>
           <option value="USD">USD</option>
           <option value="GBP">GBP</option>
@@ -53,7 +72,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, c
                     <div className="card-body">
                       <h3 className="c-fs-3">{item.name}</h3>
                       <h5 className="mt-2 c-fs-2 text-green">
-                        {currencySymbol}
+                        {symbol}
                         {(selectedMode === 'Monthly') ? item.plan_amounts[2]?.plan_amount : (selectedMode === 'Half yearly') ? item.plan_amounts[1]?.plan_amount : item.plan_amounts[0]?.plan_amount}
                         /
                         {(selectedMode === 'Monthly') ? 'Month' : (selectedMode === 'Half yearly') ? 'Half yearly' : 'Yearly'}
@@ -80,7 +99,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, c
                   <div className="card-body justify-content-between">
                     <h3 className="c-fs-3">{item.name}</h3>
                     <h5 className="mt-2 c-fs-2 text-green">
-                      {currencySymbol}
+                      {symbol}
                       {(selectedMode === 'Monthly') ? item.plan_amounts[0]?.plan_amount : item.plan_amounts[1].plan_amount}
                       /
                       {(selectedMode === 'Monthly') ? 'Monthly' : 'Yearly'}
@@ -94,7 +113,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, c
                       <span className="text-success c-fs-3">
                         <MdDone />
                       </span>
-                      Free balance of {currencySymbol} {item.plan_services[0].service_credit.service_credit_rates[0].free_credits}
+                      Free balance of {symbol} {item.plan_services[0].service_credit.service_credit_rates[0].free_credits}
                     </div>                    
                     <a href="/signup?service=whatsapp" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                       Get Started
@@ -110,14 +129,14 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, currency, c
           <div className="card-body justify-content-between">
             <h3 className="c-fs-3">CUSTOM</h3>                  
             <p className="c-fs-5">Talk to sales for a customized plan.</p>
-            <button data-bs-toggle="modal" data-bs-target="#custom-pricing-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+            <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
               Talk to sales
             </button>
           </div>
         </div>
       </div>
       <div className="c-fs-5 mt-5">
-        MSG91 takes one time fee <strong>{currencySymbol}{oneTimeWtsAppFee}</strong> to set up your WhatsApp Business account.
+        MSG91 takes one time fee <strong>{symbol}{oneTimeWtsAppFee}</strong> to set up your WhatsApp Business account.
       </div>
     </>
   );

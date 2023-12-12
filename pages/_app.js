@@ -15,7 +15,6 @@ export default function App({ Component, pageProps }) {
   var  browserPath = router.asPath;  
   var browserPathCase = browserPath;
   var browserPathMeta = browserPath;
-  
   if (browserPath !== '/') {
     const pattern = /\/([^/?]+)/;
     const result = browserPath.match(pattern);
@@ -31,9 +30,9 @@ export default function App({ Component, pageProps }) {
     '/rcs', 
     '/otp', 
     '/hello', 
+    '/numbers',
     '/segmento', 
-    '/campaign', 
-    '/knowledgebase', 
+    '/campaign',    
     '/free-whatsapp-link-generator', 
     '/pricing',
     '/pricing/sms',
@@ -143,22 +142,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "https://www.youtube.com/@WalkoverWS"
               ]
             }`,
-                        }}
-                    />
-                </>
-            )}
-            <Headcomp browserPath={browserPathMeta} />
-            {showNavbar && <Navbar browserPath={browserPath} pricingPath={pricingPath} />}
-            <Component
-                {...pageProps}
-                path={path}
-                browserPath={browserPath}
-                browserPathCase={browserPathCase}
-                pricingPath={pricingPath}
-            />
-            {showNavbar && <Footer path={path} year={year} />}
-            <Toastify />
-        </>
+          }}
+          />
+          </>
+        )}
+        <Headcomp browserPath={browserPathMeta} />
+        {showNavbar && <Navbar browserPath={browserPath} pricingPath={pricingPath} appPath={browserPathMeta} pageSlug = {pageSlug} /> }
+        <Component 
+        {...pageProps} 
+        path={path} 
+        browserPath={browserPath} 
+        browserPathCase={browserPathCase} 
+        pricingPath={pricingPath}
+        />
+        {showNavbar && <Footer path={path} year={year} /> }
+    </>
     );
 }
 

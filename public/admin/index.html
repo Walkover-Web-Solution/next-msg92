@@ -23,7 +23,6 @@
   </script>
 
 <script>
-  
   CMS.registerEventListener({
     name: 'preSave',
     handler: ({ entry }) => {
@@ -33,7 +32,9 @@
       return entry.get('data').set('slug', slugData);
     },
   });
+</script>
 
+<script>
   CMS.registerEditorComponent({
     id: "youtube",
     label: "Youtube",

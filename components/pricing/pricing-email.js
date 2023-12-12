@@ -2,10 +2,25 @@ import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { setUtm } from "@/components/utils";
-const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSubscriptionEmail}) => {
-  const [selectedCurrency, setSelectedCurrency] = useState('INR');
+const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSubscriptionEmail, countryCode}) => {
+  var change
+  var changeSymbol
+  if(countryCode === 'US' || countryCode === 'AE' ||  countryCode === 'SG' || countryCode === 'PH'){
+    change = 'USD'
+    changeSymbol = '$'
+  }
+  else if(countryCode === 'GB' || countryCode === 'ES'){
+    change = 'GBP'
+    changeSymbol = '£'
+  }
+  else if (countryCode === 'IN'){
+    change = 'INR'
+    changeSymbol = '₹'
+  }
+  // ph,global
+  const [selectedCurrency, setSelectedCurrency] = useState(change);
   const [selectedMode, setSelectedMode] = useState("Monthly");
-  const [symbol, setSymbol] = useState("₹");
+  const [symbol, setSymbol] = useState(changeSymbol);
   
   const changeCurrency = async(currency) => {
     setSelectedCurrency(currency);
@@ -41,11 +56,13 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
   return (
     <>
     <div className="d-flex justify-content-center">
-      <select style={{width: 'fit-content'}} className="form-select me-4" aria-label="Default select example" onChange={(e)=>changeCurrency(e.target.value)}>
-        <option value="INR">INR</option>
-        <option value="USD">USD</option>
-        <option value="GBP">GBP</option>
-      </select>
+    <select style={{width: 'fit-content'}} className="form-select me-4" aria-label="Default select example" value={selectedCurrency} onChange={(e)=>changeCurrency(e.target.value)}>
+    <>
+      <option value="INR">INR</option>
+      <option value="USD">USD</option>
+      <option value="GBP">GBP</option>
+    </>
+</select>
       <select style={{width: 'fit-content'}} className="form-select" aria-label="Default select example" onChange={(e)=>setSelectedMode(e.target.value)}>
         <option value="Monthly">Monthly</option>
         <option value="Yearly">Yearly</option>
@@ -71,8 +88,13 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
                         /
                         {(selectedMode === 'Monthly') ? 'Month' : 'Yearly'}
                       </h5>
-                      <p className="c-fs-5"> 
-                        {(item.plan_amounts[0].plan_amount === 0) ? '-' : '+18%GST'}
+                      <p className="c-fs-5">
+                        {symbol === '₹' && item.plan_amounts[0]?.plan_amount === 0
+                          ? '-'
+                          : '' ||
+                            (symbol === '₹' && item.plan_amounts[0]?.plan_amount !== 0)
+                            ? '+18%GST'
+                            : ''}
                       </p>
                       <div className="c-fs-5 mt-2">
                         <span className="text-success">
@@ -112,9 +134,14 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
                       /
                       {(selectedMode === 'Monthly') ? 'Month' : 'Yearly'}
                     </h5>
-                    <p className="c-fs-5"> 
-                      {(item.plan_amounts[0].plan_amount === 0) ? '-' : '+18%GST'}
-                    </p>
+                    <p className="c-fs-5">
+                        {symbol === '₹' && item.plan_amounts[0]?.plan_amount === 0
+                          ? '-'
+                          : '' ||
+                            (symbol === '₹' && item.plan_amounts[0]?.plan_amount !== 0)
+                            ? '+18%GST'
+                            : ''}
+                      </p>
                     <div className="c-fs-5 mt-2">
                       <span className="text-success">
                         <MdDone />
@@ -151,7 +178,7 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
           <div className="card-body justify-content-between">
             <h3 className="c-fs-3">CUSTOM</h3>                  
             <p className="c-fs-5">Talk to sales for a customized plan.</p>
-            <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
+            <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-4 btn btn-sm w-100 btn-outline-dark mt-2">
               Talk to sales
             </button>
           </div>

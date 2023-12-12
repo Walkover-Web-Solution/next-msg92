@@ -919,161 +919,152 @@ const Insms = () => {
         <div>
               <h2 className="c-head c-fs-1 mt-5">FAQs</h2>
 
-              <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseOne"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseOne"
-                    >
-                      Can the software handle high volumes of customer
-                        inquiries during peak times?
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseOne"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingOne"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                    Yes! Our customer service tools for small businesses are designed to handle high volumes of customer inquiries
-                      without compromising performance. It is scalable and
-                      capable of meeting your needs even during peak times,
-                      ensuring a smooth and uninterrupted customer support
-                      experience.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingTwo">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseTwo"
-                    >
-                      Does the software provide real-time analytics and
-                        insights into customer support performance?
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseTwo"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingTwo"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                    Yes, our customer support software offers real-time
-                      analytics and reporting capabilities. You can access
-                      comprehensive insights into key support metrics such as
-                      response times, resolution rates, customer satisfaction
-                      scores, and agent performance. These analytics empower you
-                      to make data-driven decisions and continuously improve
-                      your support operations.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingThree">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseThree"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseThree"
-                    >
-                      Can you provide information about the pricing of your
-                        customer support software solutions?
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseThree"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingThree"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                    At MSG91, we understand the importance of offering
-                      affordable and competitive pricing for our customer
-                      support software solutions. We offer flexible pricing
-                      plans tailored to meet the needs and budgets of businesses
-                      of all sizes. To get detailed pricing information
-                      customized to your specific requirements, please contact
-                      our team.
-                    </div>
-                  </div>
-                </div>
+              <div className="accordion accordion-flush" id="accordionFlushExample">
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingOne">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseOne"
+        aria-expanded="false"
+        aria-controls="flush-collapseOne"
+      >
+        Can the software handle high volumes of customer inquiries during peak
+        times?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseOne"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingOne"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+        Yes! Our customer service tools for small businesses are designed to
+        handle high volumes of customer inquiries without compromising
+        performance. It is scalable and capable of meeting your needs even
+        during peak times, ensuring a smooth and uninterrupted customer support
+        experience.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingTwo">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseTwo"
+        aria-expanded="false"
+        aria-controls="flush-collapseTwo"
+      >
+        Does the software provide real-time analytics and insights into customer
+        support performance?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseTwo"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingTwo"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+        Yes, our customer support software offers real-time analytics and
+        reporting capabilities. You can access comprehensive insights into key
+        support metrics such as response times, resolution rates, customer
+        satisfaction scores, and agent performance. These analytics empower you
+        to make data-driven decisions and continuously improve your support
+        operations.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingThree">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseThree"
+        aria-expanded="false"
+        aria-controls="flush-collapseThree"
+      >
+        Can you provide information about the pricing of your customer support
+        software solutions?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseThree"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingThree"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+        At MSG91, we understand the importance of offering affordable and
+        competitive pricing for our customer support software solutions. We
+        offer flexible pricing plans tailored to meet the needs and budgets of
+        businesses of all sizes. To get detailed pricing information customized
+        to your specific requirements, please contact our team.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingFour">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseFour"
+        aria-expanded="false"
+        aria-controls="flush-collapseFour"
+      >
+        Is MSG91's customer support software cloud-based or on-premises?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseFour"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingFour"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+        MSG91's customer support software is cloud-based, which offers numerous
+        advantages such as easy accessibility, scalability, and automatic
+        updates. You can access the software securely from anywhere with an
+        internet connection without the need for managing hardware or
+        infrastructure.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingFive">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseFive"
+        aria-expanded="false"
+        aria-controls="flush-collapseFive"
+      >
+        What is CRM integration with customer support software?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseFive"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingFive"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+        CRM integration with customer support software refers to synchronizing
+        and sharing customer data and interaction history between the two
+        systems. It allows customer support teams to directly access relevant
+        customer information from the CRM within the customer support software.
+      </div>
+    </div>
+  </div>
+</div>
 
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingFour">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseFour"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseFour"
-                    >
-                     Is MSG91's customer support software cloud-based or
-                        on-premises?
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseFour"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingFour"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                    MSG91's customer support software is cloud-based, which
-                      offers numerous advantages such as easy accessibility,
-                      scalability, and automatic updates. You can access the
-                      software securely from anywhere with an internet
-                      connection without the need for managing hardware or
-                      infrastructure.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingFive">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseFive"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseFive"
-                    >
-                      What is CRM integration with customer support
-                        software?
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseFive"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingFive"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                    CRM integration with customer support software refers to
-                      synchronizing and sharing customer data and interaction
-                      history between the two systems. It allows customer
-                      support teams to directly access relevant customer
-                      information from the CRM within the customer support
-                      software.
-                    </div>
-                  </div>
-                </div>
-              </div>
          </div>
       </div>
     </>

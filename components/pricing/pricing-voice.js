@@ -146,7 +146,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
                         paginationArray.map((num)=>{
                           return(
                             <li className={`page-item ${ pageNum === num ? 'active' : ''}`} key={`page-${num}`} onClick={()=>fetchData(num)}>
-                              <a class="page-link">{num}</a>
+                              <a className="page-link">{num}</a>
                             </li>  
                           )
                         })
@@ -159,29 +159,23 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
                   </div>                  
                 </div>                
             ) : null}
-            <div className="nonin price-card rcs d-flex col-11 col-lg-10 flex-column mx-auto c-bg-grey p-4">
+            <div className="nonin price-card rcs d-flex col-11 col-lg-10 flex-column mx-auto c-bg-grey p-4 gap-3 align-items-center">
               <h3 className="c-fs=3">
                 Connect to our team for the customized pricing
               </h3>
-              <a
-                href="/contact-us"
-                className="btn btn-outline-dark col-6 col-sm-5 col-md-3 mx-auto mt-3"
-              >
+              <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-4 btn btn-outline-dark mt-2">
                 Talk to an Expert
-              </a>
+            </button>
             </div>
           </>
         ) : (
-          <div className="nonin price-card rcs d-flex col-11 col-lg-10 flex-column mx-auto c-bg-grey p-4">
+          <div className="nonin price-card rcs d-flex col-6 col-lg-6 flex-column mx-auto c-bg-grey p-4 gap-3 align-items-center">
             <h3 className="c-fs-3">
               Connect to our team for the customized pricing
             </h3>
-            <a
-              href="/contact-us"
-              className="btn btn-outline-dark col-6 col-sm-5 col-md-3 mx-auto mt-3"
-            >
+            <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-4 btn btn-outline-dark mt-2">
               Talk to an Expert
-            </a>
+            </button>
           </div>
         )}
     </>

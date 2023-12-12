@@ -1,3 +1,22 @@
+/help/MSG91/how-can-i-contact-support-1662013940663017 https://msg91.com/help/MSG91/how-can-i-contact-support
+/help/what-are-the-reasons-behind-a-failed-message-1659173851030689 https://msg91.com/help/what-are-the-reasons-behind-a-failed-message
+/help/how-can-i-get-the-delivery-reports-on-my-webhook-url-1659178557776347 /help/how-can-i-get-the-delivery-reports-on-my-webhook-url
+/help/what-is-a-virtual-number-or-longcode-what-is-keyword-and-inbox-balance-1659610186896604 /help/what-is-a-virtual-number-or-longcode-what-is-keyword-and-inbox-balance
+/help/country-wise-sms-and-sender-id-rules-1659183160966439 /help/country-wise-sms-and-sender-id-rules
+/help/what-is-a-csv-file-1659183366949397 /help/what-is-a-csv-file
+/help/what-is-a-request-id-and-where-can-i-get-it-165960994844369 /help/what-is-a-request-id-and-where-can-i-get-it
+/help/MSG91/how-to-create-a-template-for-whatsapp-1683687466388572 /help/MSG91/how-to-create-a-template-for-whatsapp
+/help/what-are-the-reasons-behind-a-failed-message-1659173851030689 /help/what-are-the-reasons-behind-a-failed-message
+/help/dlt-header-registration-process-manual-vilpower /help/dlt-header-registration-process-manual-pingconnect
+/help/how-can-i-contact-support-1662013940663017 /help/how-can-i-contact-support
+/help/what-is-a-csv-file-1659183366949397 /help/what-is-a-csv-file
+/help/MSG91/how-to-run-a-campaign-from-segmento /help/MSG91/how-to-run-campaign-from-segmento
+/help/what-is-a-request-id-and-where-can-i-get-it-165960994844369 /help/what-is-a-request-id-and-where-can-i-get-it
+/help/MSG91/what-are-the-reason-for-error-codes-received-under-the-api-failed-1659611351899114 /help/MSG91/what-are-the-reason-for-error-codes-received-under-the-api-failed
+
+/pricing/shorturl /shorturl
+/pricing/free-whatsapp-link-generator  /free-whatsapp-link-generator
+
 /:country/pricing/ /pricing/sms
 /:country/about-us /about-us
 /:country/rich-communication-services /
@@ -48,8 +67,6 @@ blog1.msg91.com/  https://msg91.com/guide
 /sg/send-otp/ /sg/otp
 # msg91.com/blog/wp-content/uploads/2018/01/Tips-for-effective-SMS-marketing.png
 /longcode /voice
-/numbers /voice
-/number /voice
 /blog/market-segmentation-holiday-marketing-campaign/ /guide
 /transactional-sms/in/ /in/sms
 # msg91.com/wp-content/uploads/2018/05/excel-plugin-v-2.0.zip
@@ -389,7 +406,7 @@ help.msg91.com/article/212-sendotp https://msg91.com/help/MSG91/what-is-sendotp-
 test.panel.msg91.com/apidoc/reseller/add-clients.php https://docs.msg91.com/reference/send-sms
 /guide/tag/startup-success-story/ /guide
 /blog/how-does-sms-gateway-work/feed/ /guide
-/ph/case-studies/leadsquared/feed /case-studies/leadsq
+/ph/case-studies/leadsquared/feed /case-studies/leadsquared
 /blog/tag/mwc-barcelona/feed/ /guide
 /blog/tag/sms/ /guide
 /guide/a-journey-from-sms-to-communication-megacorp/ /guide
@@ -668,7 +685,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /in/smart-shift/case-studies/ /case-studies/smartshift
 /sg/voice-call-api/ /voice
 /case-studies/policy-bazaar/feed/ /case-studies/policybazaar
-/leadsquared/?typeform-embed=popup-drawer /case-studies/leadsq
 /blog/tag/server-side-app/amp/ /guide
 /in/startups/?utm_source=startup-banner&ref=schooltime /startups/?utm_source=startup-banner&ref=schooltime
 /no-spam-policy/ /no-spam-policy/
@@ -717,7 +733,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /in/terms-of-use/?__hstc=241134940.2f3f33a24b44870ec4a577029c49e44b.1602547200083.1602547200084.1602547200085.1&__hssc=241134940.1.1602547200086&__hsfp=2827025116 /terms-of-use/
 /in/clickpost/ /case-studies/clickpost/
 /es/startups/ /startups/
-/in/leadsquared/ /case-studies/leadsq
+/in/leadsquared/ /case-studies/leadsquared
 /blog/author/pallavi/amp/page/page?nonamp=1 /guide
 /in/case-studies/joey-rooms/?typeform-embed=popup-drawer /case-studies/joeyrooms
 /case-studies/joey-rooms/ /case-studies/joey-rooms/
@@ -752,7 +768,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /ph/case-studies/ /case-studies/
 /terms/ /terms-of-use
 /blog/category/msg91-for-startups/amp /guide
-/case-studies/leadsquared/feed/ /case-studies/leadsq
+/case-studies/leadsquared/feed/ /case-studies/leadsquared
 /in/talkcharge/ /case-studies/talkcharge
 /best-bulk-sms-service-provider-in-india/ /sms
 /us/hello-features/ /us/hello
@@ -761,7 +777,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /blog/woocommerce-sms-extension/?nonamp=1 /guide
 /us/internet-messaging/ /whatsapp
 /blog/tag/woocommerce/amp/ /guide
-/case-studies/leadsquared /case-studies/leadsq
 /blog/sms-marketing-in-comparison-with-multiple-advertising-campaigns/?nonamp=1 /guide/sms-marketing-in-comparison-with-multiple-advertising-campaigns/?nonamp=1
 /case-studies/mahindra-mahindra-automotive-division /case-studies/mahindra
 /blog/good-news-for-our-direct-white-label-sms-resellership/feed/ /guide
@@ -1026,8 +1041,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /blog/15-must-use-tools-for-every-startup/?nonamp=1 /guide
 /virtual-number/ /voice
 /guide/tag/otp/amp /case-studies/tag/otp
-/case-studies/tag/otp /case-studies/tag/otp
-/case-studies/tag/otp/ /case-studies/tag/otp/
 /blog/tag/otp-api/ /case-studies/tag/otp
 /tag/otp/ /case-studies/tag/otp
 /uk/voice /voice
@@ -1069,7 +1082,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /cdn-cgi/challenge-platform/h/g/scripts/cb/invisible.js?cb=7b822cf69e210bd9 /
 /transactional-email/?typeform-embed=popup-drawer /email
 /case-studies/zinghr/ /case-studies/zing
-/case-studies/joeyrooms /case-studies/joeyrooms
 /transactional-sms/?utm_source=blog&utm_medium=int&utm_campaign=dnc /sms/
 /transactional-sms /sms
 /void(0)/ /
@@ -1107,17 +1119,8 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 https://guide.msg91.com/why-you-should-send-sms-online/www.msg91.com /guide/why-you-should-send-sms-online
 https://guide.msg91.com/steps-for-dlt-process-registration/msg91.com/contact-us/ /guide/steps-for-dlt-process-registration
 /blog/* /guide
-
+/null /
 /guide/content/restriction-on-bulk-sms-mms.pdf/ /guide/restrictions-on-sms-mms-in-india
 /features-of-bulk-sms.php?ref=guide.msg91.com /guide/bulk-messaging-empowering-colleges-and-universities-ways-and-ideas
 /ixigo/?ref=guide.msg91.com /case-studies/ixigo
 /sms-in-education?ref=guide.msg91.com /guide/fusion-of-sms-marketing-with-education-industry
-
-/help/MSG91/how-can-i-contact-support-1662013940663017 https://msg91.com/help/MSG91/how-can-i-contact-support
-/help/what-are-the-reasons-behind-a-failed-message-1659173851030689 https://msg91.com/help/what-are-the-reasons-behind-a-failed-message
-/help/how-can-i-get-the-delivery-reports-on-my-webhook-url-1659178557776347 /help/how-can-i-get-the-delivery-reports-on-my-webhook-url
-/help/what-is-a-virtual-number-or-longcode-what-is-keyword-and-inbox-balance-1659610186896604 /help/what-is-a-virtual-number-or-longcode-what-is-keyword-and-inbox-balance
-/help/country-wise-sms-and-sender-id-rules-1659183160966439 /help/country-wise-sms-and-sender-id-rules
-/help/what-is-a-csv-file-1659183366949397 /help/what-is-a-csv-file
-/help/what-is-a-request-id-and-where-can-i-get-it-165960994844369 /help/what-is-a-request-id-and-where-can-i-get-it
-/help/MSG91/how-to-create-a-template-for-whatsapp-1683687466388572 /help/MSG91/how-to-create-a-template-for-whatsapp

@@ -5,7 +5,7 @@
       "code":"no",
       "pagename":"index",
       "head":"this is global index",
-      "headline":"Cloud communication platform for all your ideas!"
+      "headline":"Connect with your customers via multiple channels"
     },
     "hello":{
       "code": false,
@@ -192,7 +192,7 @@
       "code": false,
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl", 
-      "pagetag":"shorturl",
+      "pagetag":"URL Shortener",
       "pageimg":"/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
@@ -378,6 +378,12 @@
       "subheading": "Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
+          "img": "/img/feature/voice-call-monitoring.svg",
+          "heading": "Call Monitoring",
+          "subheading": "Introducing the next-level communication experience with our all-new Call Monitoring features",
+          "content": "We're putting you in the driver's seat of your conversations with callers. These robust features give you greater control and insight during your calls, ensuring enhanced communication and customer satisfaction. Call spying: your secret weapon for quality assurance! Call barging: real-time support, is just a click away! Call whispering: guidance at your fingertips!"
+        },
+        {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct calling from browser",
           "subheading": "Skip the 2-way calling and directly call from browser.",
@@ -470,6 +476,77 @@
         {"more": "Understand your customers emotions through sentiment analysis"},
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
+      ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-global-market-entry-with-numbers.svg",
+          "heading": "Global Market Entry with Numbers: Expanding Your Presence",
+          "subheading": "",
+          "content": "Numbers offer an effective strategy for businesses seeking to broaden their reach in the market. These numbers facilitate the creation of a local connection by acquiring a phone number, streamlining communication with customers and associates. By leveraging numbers, businesses can establish trust, enhance accessibility, bridge geographic divides, all while projecting a professional image and optimizing cost-effectiveness. This approach is especially beneficial for international enterprises looking to seize opportunities in the diverse and competitive market."
+        },
+        {
+          "img": "/img/feature/numbers-cost-efficiency.svg",
+          "heading": "Cost Efficiency",
+          "subheading": "",
+          "content": "Numbers in present a cost-effective alternative to traditional phone lines. They require fewer upfront expenses, minimize maintenance costs, and eliminate the need for physical infrastructure, making them a financially efficient choice for businesses of all scales in the market."
+        },
+        {
+          "img": "/img/feature/numbers-missed-call-services.svg",
+          "heading": "Missed Call Services",
+          "subheading": "",
+          "content": "A number of virtual number providers offer functionalities like missed call alerts and notifications, enabling businesses to promptly engage with customers who were unable to establish contact. This feature enhances customer communication and responsiveness within the market."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }        
       ]
     }
   },
@@ -666,7 +743,7 @@
       "code": false,
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl", 
-      "pagetag":"shorturl",
+      "pagetag":"URL Shortener",
       "pageimg":"/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
@@ -702,7 +779,7 @@
       "pageimg":"/img/pageimg/knowledgebase.svg",
       "tagline": "Empower Customers with Self-Service Options",
       "heading": "Knowledge base is the backbone for good customer support",
-      "subheading": "Get all essential features of knowledge base software at nominal price",
+      "subheading": "Get all essential features of KnowledgeBase software",
       "features": [
         {
           "img": "/img/feature/kb-wysiwyg-editor.svg",
@@ -852,40 +929,46 @@
       "subheading": "Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
+          "img": "/img/feature/voice-call-monitoring.svg",
+          "heading": "Call Monitoring",
+          "subheading": "Introducing the next-level communication experience with our all-new Call Monitoring features",
+          "content": "We're putting you in the driver's seat of your conversations. These robust features give you greater control and insight during your calls, ensuring enhanced communication and customer satisfaction. Call spying: your secret weapon for quality assurance! Call barging: real-time support, is just a click away! Call whispering: guidance at your fingertips!"
+        },
+        {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct calling from browser",
           "subheading": "Skip the 2-way calling and directly call from browser.",
-          "content": "Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
+          "content": "Enhance customer experience and save your agent's calling time in India. Seamlessly connect two phone numbers without putting one on hold, ensuring efficient customer conversations."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
           "heading": "IVR Flow",
-          "subheading": "Modern IVR that makes customer interaction quick and hassle-free.",
-          "content": "Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
+          "subheading": "Modern IVR for streamlined customer interactions in India",
+          "content": "Experience a cutting-edge IVR system in India that simplifies customer engagement. This smart IVR offers more than just query resolution. You can create time-based or agent-based settings and record personalized messages for a hassle-free experience."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "subheading": "Speak directly with your audience over a single call.",
-          "content": "Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
+          "subheading": "Engage with your audience in India through a single call",
+          "content": "Effectively communicate with your audience by recording and broadcasting voice messages in India. A ringing phone call is hard to ignore, making this a powerful way to convey your messages."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "subheading": "Upload your audio message in multiple ways.",
-          "content": "Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
+          "subheading": "Various ways to upload your audio message in India",
+          "content": "Optimize customer interaction with personalized voice messages in India. Record messages for bulk voice calls or IVR menus using text-to-speech, browser mic, or phone calls."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "subheading": "Connect your voice call to the IVR.",
-          "content": "Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
+          "subheading": "Connect your voice calls to the IVR in India",
+          "content": "Extend your reach by sending bulk voice messages and collecting responses in India. Record your messages and transmit them to your customers using an IVR system."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "subheading": "Direct your user to your support agent.",
-          "content": "Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
+          "subheading": "Direct users to your support agents in India",
+          "content": "Elevate the customer experience in India by offering real-time support. Connect users to your customer support agents based on their input during bulk calls."
         }
       ],
       "morefeatures": [
@@ -944,6 +1027,77 @@
         {"more": "Understand your customers emotions through sentiment analysis"},
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
+      ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-global-market-entry-with-numbers.svg",
+          "heading": "Global Market Entry with Numbers: Empowering Your Business in India",
+          "subheading": "",
+          "content": "Empowering Your Business in India Numbers provide a seamless gateway for businesses aiming to expand their reach in India's dynamic market. These numbers enable companies to establish a local presence by acquiring an Indian phone number, simplifying connections with Indian customers and partners. By using India-based virtual numbers, businesses can foster trust, improve accessibility, and bridge geographical gaps, all while projecting professionalism and cost-effectiveness in their interactions. This approach is particularly valuable for international companies looking to unlock opportunities in the vibrant Indian market."
+        },
+        {
+          "img": "/img/feature/numbers-cost-efficiency.svg",
+          "heading": "Cost Efficiency",
+          "subheading": "",
+          "content": "Numbers in India offer a more budget-friendly alternative compared to traditional landlines. They entail lower setup costs, reduced maintenance expenses, and eliminate the need for physical infrastructure, delivering a cost-effective solution for businesses of all sizes operating in the Indian market."
+        },
+        {
+          "img": "/img/feature/numbers-missed-call-services.svg",
+          "heading": "Missed Call Services",
+          "subheading": "",
+          "content": "Certain virtual number providers include features like missed call alerts and notifications, allowing Indian businesses to swiftly respond to customers who couldn't connect with them. This feature helps in providing timely assistance and enhancing customer engagement in the Indian market."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }        
       ]
     }
   },
@@ -965,7 +1119,7 @@
       "heading": "",
       "subheading": "Seamlessly merging chat, email, call and video to resolve customer queries.",
       "pageimg":"/img/pageimg/hello.png",
-      "features": [
+      "features": [        
         {
           "icon": "/images/hello/icon-ai-enabled-chat.svg",
           "img": "/images/hello/ai-enabled-chat.svg",
@@ -1146,7 +1300,7 @@
       "code": false,
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl", 
-      "pagetag":"shorturl",
+      "pagetag":"URL Shortener",
       "pageimg":"/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
@@ -1332,40 +1486,46 @@
       "subheading": "Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
+          "img": "/img/feature/voice-call-monitoring.svg",
+          "heading": "Call Monitoring",
+          "subheading": "Introducing the next-level communication experience with our innovative Call Monitoring features",
+          "content": "We're empowering you to take charge of your conversations. These powerful features provide unmatched control and insights during your calls, ensuring superior communication and exceptional customer satisfaction in UAE. Call spying: your ultimate tool for quality assurance for UAE customers! Call barging: instant real-time support, just a click away! Call whispering: expert guidance right at your fingertips!"
+        },
+        {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct calling from browser",
-          "subheading": "Skip the 2-way calling and directly call from browser.",
-          "content": "Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
+          "subheading": "Streamlined Browser-Based Calling for Direct Engagement",
+          "content": "Enhance customer experience and optimize agent time with direct browser-based calls in the UAE. Efficiently connect two phone numbers without the need for one to wait, ensuring seamless customer interactions."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
           "heading": "IVR Flow",
-          "subheading": "Modern IVR that makes customer interaction quick and hassle-free.",
-          "content": "Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
+          "subheading": "Modern IVR for Efficient Customer Engagement in the UAE",
+          "content": "Experience a state-of-the-art IVR system designed for the UAE, simplifying customer interactions. This intelligent IVR goes beyond query resolution, allowing you to configure time-based or agent-based settings and record customized messages for a hassle-free experience."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "subheading": "Speak directly with your audience over a single call.",
-          "content": "Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
+          "subheading": "Engage with Your UAE Audience through Single Calls",
+          "content": "Effortlessly reach your UAE audience by recording and broadcasting voice messages. A ringing phone call is highly effective in conveying your message and is difficult to overlook."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "subheading": "Upload your audio message in multiple ways.",
-          "content": "Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
+          "subheading": "Multiple Options for Uploading Your Audio Messages in the UAE",
+          "content": "Enhance customer engagement with personalized voice messages tailored for the UAE market. Record messages for bulk voice calls or IVR menus using text-to-speech, browser microphone, or phone calls."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "subheading": "Connect your voice call to the IVR.",
-          "content": "Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
+          "subheading": "Integrate Voice Calls with the UAE IVR",
+          "content": "Extend your communication reach by sending bulk voice messages and gathering responses in the UAE. Record your messages and transmit them to customers using an IVR system."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "subheading": "Direct your user to your support agent.",
-          "content": "Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
+          "subheading": "Direct Users to Your UAE Support Agents",
+          "content": "Take the customer experience to the next level in the UAE by providing real-time support. Connect users with your customer support agents based on their input during bulk calls."
         }
       ],
       "morefeatures": [
@@ -1424,6 +1584,77 @@
         {"more": "Understand your customers emotions through sentiment analysis"},
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
+      ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-global-market-entry-with-numbers.svg",
+          "heading": "Global Market Entry with Numbers: Empowering Your Business in the UAE",
+          "subheading": "",
+          "content": "Virtual numbers offer businesses a strategic gateway to enter and expand in the United Arab Emirates (UAE). These numbers allow companies to establish a local presence in the UAE, facilitating seamless communication with UAE-based customers and partners. By obtaining UAE virtual numbers, businesses enhance accessibility, trust, and professionalism while managing costs efficiently. This approach is particularly advantageous for international companies seeking to tap into the prosperous opportunities within the UAE market."
+        },
+        {
+          "img": "/img/feature/numbers-cost-efficiency.svg",
+          "heading": "Cost Efficiency",
+          "subheading": "",
+          "content": "Budget-Friendly Solution: In the UAE, virtual numbers provide a cost-effective choice in comparison to conventional telephone lines. They come with reduced initial setup expenses, lower maintenance costs, and eliminate the necessity for physical infrastructure, making them a financially prudent option for businesses in the UAE market."
+        },
+        {
+          "img": "/img/feature/numbers-missed-call-services.svg",
+          "heading": "Missed Call Services",
+          "subheading": "",
+          "content": "Missed Call Services: Some virtual number providers offer features such as missed call alerts and notifications, enabling UAE-based businesses to promptly engage with customers who were unable to establish contact. This feature supports timely customer interaction and strengthens customer relations in the UAE market."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }        
       ]
     }
   },
@@ -1445,7 +1676,7 @@
       "heading": "",
       "subheading": "Seamlessly merging chat, email, call and video to resolve customer queries.",
       "pageimg":"/img/pageimg/hello.png",
-      "features": [
+      "features": [        
         {
           "icon": "/images/hello/icon-ai-enabled-chat.svg",
           "img": "/images/hello/ai-enabled-chat.svg",
@@ -1626,7 +1857,7 @@
       "code": false,
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl", 
-      "pagetag":"shorturl",
+      "pagetag":"URL Shortener",
       "pageimg":"/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
@@ -1812,40 +2043,46 @@
       "subheading": "Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
+          "img": "/img/feature/voice-call-monitoring.svg",
+          "heading": "Call Monitoring",
+          "subheading": "Introducing the next-level communication experience with our all-new Call Monitoring features",
+          "content": "We're putting you in control of your conversations. These powerful features offer you increased oversight and insight during your calls, guaranteeing improved communication and satisfying customers of Spain. Call spying: your hidden gem for quality assurance! Call barging: instantaneous support, just a tap away! Call whispering: guidance at your fingertips!"
+        },
+        {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct calling from browser",
           "subheading": "Skip the 2-way calling and directly call from browser.",
-          "content": "Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
+          "content": "Boost agent efficiency and elevate customer experiences. Seamlessly connect two phone numbers without putting one on hold, starting a seamless conversation with your customers."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
           "heading": "IVR Flow",
-          "subheading": "Modern IVR that makes customer interaction quick and hassle-free.",
-          "content": "Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
+          "subheading": "Modern IVR technology for streamlined interactions in Spain",
+          "content": "Our intelligent IVR system offers more than just query resolution. In addition to standard features, you can configure time-based or agent-based settings and even record custom messages."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "subheading": "Speak directly with your audience over a single call.",
-          "content": "Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
+          "subheading": "Directly engage with your Spanish audience with a single call",
+          "content": "Effortlessly broadcast your voice message to hundreds and thousands of customers in one go. A ringing phone call is hard to ignore, making it an effective way to convey your message."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "subheading": "Upload your audio message in multiple ways.",
-          "content": "Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
+          "subheading": "Various ways to upload your audio message",
+          "content": "Enhance customer interactions with personalized voice messages. Record your message for bulk voice calls or IVR menus using text-to-speech, your browser's microphone, or a phone call."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "subheading": "Connect your voice call to the IVR.",
-          "content": "Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
+          "subheading": "Connect your voice call to the IVR",
+          "content": "Not only can you send bulk voice messages, but you can also receive responses from your users. Record the message you want to convey and send it to your customers using an IVR."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "subheading": "Direct your user to your support agent.",
-          "content": "Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
+          "subheading": "Guide your users to your support agents",
+          "content": "Enhance the customer experience by providing real-time support and connecting your users to customer support agents based on their bulk call input in Spain."
         }
       ],
       "morefeatures": [
@@ -1905,6 +2142,79 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
       ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-global-market-entry-with-numbers.svg",
+          "heading": "Global Market Expansion with Numbers: Enhancing Your Reach in Spain",
+          "subheading": "",
+          "content":"Numbers offer a strategic solution for businesses seeking to extend their global footprint in the Spanish market. They empower companies to acquire local Spanish phone numbers, facilitating easy access and connectivity with customers and partners in Spain. This localized approach enhances trust, accessibility, and professionalism while optimizing cost-effectiveness in business communications. For international companies, utilizing numbers in Spain opens doors to new opportunities and market growth."
+
+        },
+        {
+          "img": "/img/feature/numbers-cost-efficiency.svg",
+          "heading": "Cost Efficiency",
+          "subheading": "",
+          "content": "Cost Efficiency in Spain: Numbers present a cost-effective solution, offering businesses in Spain a budget-friendly option that minimizes setup expenses and reduces maintenance costs. With no reliance on physical infrastructure, numbers in Spain are a cost-efficient choice for companies seeking affordable communication solutions."
+
+        },
+        {
+          "img": "/img/feature/numbers-missed-call-services.svg",
+          "heading": "Missed Call Services",
+          "subheading": "",
+          "content": "Missed Call Services: Some virtual number providers offer functionalities like missed call alerts and notifications, enabling Spanish businesses to respond promptly to customers who may have been unable to reach them. This service aids in providing timely support and fostering customer engagement in the Spanish market."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }        
+      ]
     }
   },
   "ph":{
@@ -1925,8 +2235,7 @@
       "heading": "Never lose sight of what’s important",
       "subheading": "Don’t just solve tickets, build customer relationships",
       "pageimg":"/img/pageimg/hello.png",
-      "features": [
-      
+      "features": [        
         {
           "img": "/img/feature/hello-unlimited-agents.svg",
           "heading": "Unlimited Agents",
@@ -2101,7 +2410,7 @@
       "code": false,
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl", 
-      "pagetag":"shorturl",
+      "pagetag":"URL Shortener",
       "pageimg":"/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
@@ -2287,40 +2596,46 @@
       "subheading": "Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
+          "img": "/img/feature/voice-call-monitoring.svg",
+          "heading": "Call Monitoring",
+          "subheading": "Introducing the enhanced communication experience of the future with our innovative Call Monitoring features",
+          "content": "We're empowering you to take the reins of your conversations. These powerful functionalities offer you increased control and deeper insights during your calls, ensuring improved communication and customer delight. Call spying (eavesdropping): your covert tool for quality assurance! Call barging (intrusion): real-time assistance, just a tap away! Call whispering: guidance right at your fingertips!"
+        },
+        {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct calling from browser",
           "subheading": "Skip the 2-way calling and directly call from browser.",
-          "content": "Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
+          "content": "Save your agent's calling time and enhance the customer experience, Easily connect two phone numbers without placing one on hold, initiating efficient customer conversations."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
           "heading": "IVR Flow",
-          "subheading": "Modern IVR that makes customer interaction quick and hassle-free.",
-          "content": "Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
+          "subheading": "Experience a cutting-edge IVR designed for swift, hassle-free customer interactions",
+          "content": "Our smart IVR system goes beyond query resolution. It allows you to customize settings based on time or agent availability and offers voice message recording."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "subheading": "Speak directly with your audience over a single call.",
-          "content": "Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
+          "subheading": "Engage directly with your audience through a single call",
+          "content": "Record your voice message and broadcast important information to hundreds and thousands of customers at once. A ringing phone call is hard to ignore, making it a powerful communication tool."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "subheading": "Upload your audio message in multiple ways.",
-          "content": "Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
+          "subheading": "Upload your personalized audio message in multiple ways",
+          "content": "Amplify customer engagement with voice messages. Record your message for bulk voice calls or IVR menus using text-to-speech, your browser's microphone, or a phone call."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "subheading": "Connect your voice call to the IVR.",
-          "content": "Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
+          "subheading": "Seamlessly connect voice calls to an IVR",
+          "content": "Extend your reach by not only sending bulk voice messages but also gathering user responses through an IVR."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "subheading": "Direct your user to your support agent.",
-          "content": "Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
+          "subheading": "Efficiently direct users to your support agents",
+          "content": "Elevate the customer experience by offering real-time support and connecting users to customer support agents based on their bulk call input. Your Philippines-based support team is ready to assist you."
         }
       ],
       "morefeatures": [
@@ -2380,6 +2695,77 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
       ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-global-market-entry-with-numbers.svg",
+          "heading": "Global Market Expansion via Numbers: Connecting with the Philippines",
+          "subheading": "",
+          "content": "Numbers are a strategic tool for businesses seeking to broaden their horizons and effectively enter the Philippines market. By securing local Philippine phone numbers, companies can effortlessly establish a strong local presence, facilitating seamless connections with Filipino clients and associates. This approach streamlines accessibility, boosts credibility, and minimizes the geographical divide, offering a professional, cost-efficient, and impactful strategy for global market expansion into the Philippines."
+        },
+        {
+          "img": "/img/feature/numbers-cost-efficiency.svg",
+          "heading": "Cost Efficiency",
+          "subheading": "",
+          "content": "Numbers in the Philippines present a budget-friendly alternative to conventional phone lines, with reduced setup expenses and maintenance costs. These numbers eliminate the need for physical infrastructure, making them a cost-efficient choice for businesses operating in the Philippine market."
+        },
+        {
+          "img": "/img/feature/numbers-missed-call-services.svg",
+          "heading": "Missed Call Services",
+          "subheading": "",
+          "content": "Missed Call Services: Several virtual number providers offer features such as missed call notifications, enabling businesses in the Philippines to promptly address customers who were unable to make contact. This functionality enhances customer engagement and responsiveness in the Philippine market."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }        
+      ]
     }
   },
   "sg":{
@@ -2399,8 +2785,7 @@
       "heading": "Never lose sight of what’s important",
       "subheading": "Don’t just solve tickets, build customer relationships",
       "pageimg":"/img/pageimg/hello.png",
-      "features": [
-      
+      "features": [        
         {
           "img": "/img/feature/hello-unlimited-agents.svg",
           "heading": "Unlimited Agents",
@@ -2575,7 +2960,7 @@
       "code": false,
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl", 
-      "pagetag":"shorturl",
+      "pagetag":"URL Shortener",
       "pageimg":"/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
@@ -2761,40 +3146,46 @@
       "subheading": "Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
+          "img": "/img/feature/voice-call-monitoring.svg",
+          "heading": "Call Monitoring",
+          "subheading": "Introducing the next-level communication experience with our all-new Call Monitoring features",
+          "content": "We're putting you in control of your conversations like never before. These powerful features provide you with greater control and insight during your calls, ensuring improved communication and customer satisfaction call spying (snooping): your hidden asset for quality assurance! Call barging: real-time assistance, is just a click away! Call whispering: guidance at your fingertips!"
+        },
+        {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct calling from browser",
-          "subheading": "Skip the 2-way calling and directly call from browser.",
-          "content": "Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
+          "subheading": "Skip 2-Way Calling and Make Direct Browser Calls in Singapore",
+          "content": "Streamline your agent's calling process and elevate customer experience. Connect two phone numbers without the need to put one on hold, initiating a seamless customer conversation."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
           "heading": "IVR Flow",
-          "subheading": "Modern IVR that makes customer interaction quick and hassle-free.",
-          "content": "Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
+          "subheading": "Modern IVR Enhancing Customer Interaction in Singapore",
+          "content": "Experience a sophisticated IVR system that prioritizes efficiency and convenience. Beyond query resolution, our Smart IVR offers customizable time-based or agent-based settings, and allows you to record personalized messages."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "subheading": "Speak directly with your audience over a single call.",
-          "content": "Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
+          "subheading": "Engage Your Singaporean Audience with Direct Voice Communication",
+          "content": "Broadcast your voice messages to hundreds and thousands of Singaporean customers at once. A ringing phone call is hard to ignore, ensuring your message gets heard."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "subheading": "Upload your audio message in multiple ways.",
-          "content": "Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
+          "subheading": "Multiple Methods to Upload Your Audio Messages in Singapore",
+          "content": "Enhance customer engagement with personalized voice messages in Singapore. Record messages for bulk voice calls or IVR menus through text-to-speech, your browser's microphone, or a direct phone call."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "subheading": "Connect your voice call to the IVR.",
-          "content": "Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
+          "subheading": "Connect Your Voice Calls to IVR for Interactive Engagement in Singapore",
+          "content": "Not only can you send bulk voice messages, but you can also gather responses from your users in Singapore. Record the message you wish to convey and deliver it to your customers using an IVR."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "subheading": "Direct your user to your support agent.",
-          "content": "Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
+          "subheading": "Direct Users to Your Support Agents in Singapore",
+          "content": "Take your customer experience to the next level by providing real-time support when connecting users to your customer support agents in Singapore, based on their input during bulk calls."
         }
       ],
       "morefeatures": [
@@ -2854,6 +3245,80 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
       ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-global-market-entry-with-numbers.svg",
+          "heading": "Global Market Entry with Numbers: Unlocking Opportunities in Singapore",
+          "subheading": "",
+          "content": "Virtual numbers serve as a powerful tool for businesses seeking to expand their global presence into Singapore's vibrant market. By obtaining a Singaporean virtual number, companies can effortlessly establish a local identity, making it convenient for customers and partners in Singapore to get in touch. These numbers not only enhance accessibility but also convey professionalism and cost-effectiveness in communications, all of which are essential for businesses looking to thrive in the dynamic Singaporean business landscape."
+
+        },
+        {
+          "img": "/img/feature/numbers-cost-efficiency.svg",
+          "heading": "Cost Efficiency",
+          "subheading": "",
+          "content": "Numbers in Singapore provide a cost-efficient alternative to conventional phone lines. They come with minimal setup expenses, reduced operational costs, and eliminate the necessity for physical infrastructure, making them a cost-effective solution for businesses of all sizes operating in the Singaporean market."
+
+
+        },
+        {
+          "img": "/img/feature/numbers-missed-call-services.svg",
+          "heading": "Missed Call Services",
+          "subheading": "",
+          "content": "Some virtual number providers offer features such as missed call alerts and notifications, enabling businesses in Singapore to promptly address customers who were unable to make contact. This feature facilitates responsive customer engagement and support in the Singaporean market."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }        
+      ]
     }
   },
   "gb":{
@@ -2874,8 +3339,7 @@
       "heading": "Never lose sight of what’s important",
       "subheading": "Don’t just solve tickets, build customer relationships",
       "pageimg":"/img/pageimg/hello.png",
-      "features": [
-      
+      "features": [        
         {
           "img": "/img/feature/hello-unlimited-agents.svg",
           "heading": "Unlimited Agents",
@@ -3050,7 +3514,7 @@
       "code": false,
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl", 
-      "pagetag":"shorturl",
+      "pagetag":"URL Shortener",
       "pageimg":"/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
@@ -3236,40 +3700,46 @@
       "subheading": "Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
+          "img": "/img/feature/voice-call-monitoring.svg",
+          "heading": "Call Monitoring",
+          "subheading": "Introducing the next-level communication experience with our brand-new Call Monitoring features",
+          "content": "We're giving you the reins of your conversations with UK callers. These robust features provide you with enhanced control and insight during your calls, ensuring improved communication and customer satisfaction. Call spying: your confidential tool for quality assurance for UK customers!  Call barging: real-time support, is just a click away! Call whispering: guidance at your fingertips!"
+        },
+        {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct calling from browser",
-          "subheading": "Skip the 2-way calling and directly call from browser.",
-          "content": "Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
+          "subheading": "Skip Traditional Calls and Dial Directly from Your Browser",
+          "content": "Enhance customer experiences while saving your agent's valuable time. Easily connect two phone numbers without placing one on hold, providing a seamless customer conversation experience."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
           "heading": "IVR Flow",
-          "subheading": "Modern IVR that makes customer interaction quick and hassle-free.",
-          "content": "Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
+          "subheading": "Modern IVR for Streamlined Customer Interaction in the UK",
+          "content": "Our sophisticated IVR system is designed to expedite customer interactions, going beyond query resolution. You can tailor settings based on time or agent availability, and even record personalized messages."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "subheading": "Speak directly with your audience over a single call.",
-          "content": "Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
+          "subheading": "Direct Voice Communication with Your UK Audience",
+          "content": "Effortlessly deliver your message to hundreds and thousands of customers with a single voice call. A ringing phone is hard to ignore, making it an effective way to reach your UK audience."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "subheading": "Upload your audio message in multiple ways.",
-          "content": "Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
+          "subheading": "Versatile Audio Message Upload Options",
+          "content": "Amplify your customer interactions in the UK with personalized voice messages. Record your messages for bulk voice calls or IVR menus using text-to-speech, your browser's microphone, or a traditional phone call."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "subheading": "Connect your voice call to the IVR.",
-          "content": "Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
+          "subheading": "Seamlessly Connect Your Voice Calls to IVR in the UK",
+          "content": "Don't just send bulk voice messages; gather valuable feedback from your UK users. Record the message you want to convey and deliver it to your UK customers using our IVR system."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "subheading": "Direct your user to your support agent.",
-          "content": "Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
+          "subheading": "Offer Real-Time Support to Your UK Users",
+          "content": "Elevate the customer experience by providing immediate support when connecting your UK users to your customer support agents based on their bulk call input."
         }
       ],
       "morefeatures": [
@@ -3328,6 +3798,77 @@
         {"more": "Understand your customers emotions through sentiment analysis"},
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
+      ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-global-market-entry-with-numbers.svg",
+          "heading": "Global Market Entry with Numbers: Expanding Your Presence in the UK",
+          "subheading": "",
+          "content": "Numbers offer an effective strategy for businesses seeking to broaden their reach in the UK market. These numbers facilitate the creation of a local connection by acquiring a UK phone number, streamlining communication with British customers and associates. By leveraging UK-based numbers, businesses can establish trust, enhance accessibility, bridge geographic divides, all while projecting a professional image and optimizing cost-effectiveness. This approach is especially beneficial for international enterprises looking to seize opportunities in the diverse and competitive UK market."
+        },
+        {
+          "img": "/img/feature/numbers-cost-efficiency.svg",
+          "heading": "Cost Efficiency",
+          "subheading": "",
+          "content": "Numbers in the UK present a cost-effective alternative to traditional phone lines. They require fewer upfront expenses, minimize maintenance costs, and eliminate the need for physical infrastructure, making them a financially efficient choice for businesses of all scales in the UK market."
+        },
+        {
+          "img": "/img/feature/numbers-missed-call-services.svg",
+          "heading": "Missed Call Services",
+          "subheading": "",
+          "content": "A number of virtual number providers offer functionalities like missed call alerts and notifications, enabling UK businesses to promptly engage with customers who were unable to establish contact. This feature enhances customer communication and responsiveness within the UK market."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }        
       ]
     }
   },
@@ -3530,7 +4071,7 @@
       "code": false,
       "icon": "/img/icon/shorturl.svg",
       "pagename": "ShortUrl", 
-      "pagetag":"shorturl",
+      "pagetag":"URL Shortener",
       "pageimg":"/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
@@ -3716,40 +4257,46 @@
       "subheading": "Start real-time conversations with crystal clear audio, low latency and deeper insights.",
       "features": [
         {
+          "img": "/img/feature/voice-call-monitoring.svg",
+          "heading": "Call Monitoring",
+          "subheading": "Introducing the next-level communication experience with our all-new Call Monitoring features",
+          "content": "We're putting you in the driver's seat of your conversations with US callers. These robust features give you greater control and insight during your calls, ensuring enhanced communication and US customer satisfaction. Call spying: your secret weapon for US quality assurance! Call barging: real-time support, is just a click away! Call whispering: guidance at your fingertips!"
+        },
+        {
           "img": "/img/feature/voice-direct-calling-from-hello.svg",
           "heading": "Direct calling from browser",
-          "subheading": "Skip the 2-way calling and directly call from browser.",
-          "content": "Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
+          "subheading": "Seamless Browser-Based Calling for Effortless Communication",
+          "content": "Enhance customer experience and reduce agent call time in the USA with direct browser-based calls. Connect two phone numbers smoothly, ensuring productive customer interactions."
         },
         {
           "img": "/img/feature/voice-ivr-flow.svg",
           "heading": "IVR Flow",
-          "subheading": "Modern IVR that makes customer interaction quick and hassle-free.",
-          "content": "Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
+          "subheading": "Modern IVR for Streamlined Customer Engagement in the USA",
+          "content": "Experience a cutting-edge IVR system tailored for the USA, simplifying customer interactions. This intelligent IVR goes beyond query resolution, allowing you to configure time-based or agent-based settings and record personalized messages for a frictionless experience."
         },
         {
           "img": "/img/feature/voice-bulk-voice.svg",
           "heading": "Bulk Voice",
-          "subheading": "Speak directly with your audience over a single call.",
-          "content": "Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
+          "subheading": "Engage with Your USA Audience via Single Calls",
+          "content": "Effectively connect with your USA audience by recording and broadcasting voice messages. A ringing phone call is a highly effective way to convey your message, ensuring it's hard to overlook."
         },
         {
           "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
           "heading": "Multiple Way to Upload File",
-          "subheading": "Upload your audio message in multiple ways.",
-          "content": "Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
+          "subheading": "Diverse Methods for Uploading Your Audio Messages in the USA",
+          "content": "Optimize customer interaction in the USA with personalized voice messages. Record messages for bulk voice calls or IVR menus using text-to-speech, browser microphone, or phone calls."
         },
         {
           "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
           "heading": "Bulk voice with IVR",
-          "subheading": "Connect your voice call to the IVR.",
-          "content": "Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
+          "subheading": "Integrate Voice Calls with the USA IVR",
+          "content": "Extend your reach by sending bulk voice messages and collecting responses in the USA. Record your messages and transmit them to your customers using an IVR system."
         },
         {
           "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
           "heading": "Real time connect with agent on user input on bulk call",
-          "subheading": "Direct your user to your support agent.",
-          "content": "Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
+          "subheading": "Direct Users to Your USA Support Agents",
+          "content": "Elevate the customer experience in the USA by providing real-time support. Connect users with your customer support agents based on their input during bulk calls."
         }
       ],
       "morefeatures": [
@@ -3808,6 +4355,77 @@
         {"more": "Understand your customers emotions through sentiment analysis"},
         {"more": "Solution for remote access and support"},
         {"more": "Track whatsapp performance"}
+      ]
+    },
+    "numbers": {
+      "code": true,
+      "pagename": "Numbers", 
+      "pagetag":"numbers",
+      "icon": "/img/icon/numbers.svg",
+      "tagline": "Unlock the Power of Virtual Numbers",
+      "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      "subheading": "",
+      "features": [
+        {
+          "img": "/img/feature/numbers-missed-call-services.svg",
+          "heading": "Unlocking Global Markets with Numbers: Expanding Reach in the US",
+          "subheading": "",
+          "content": "Numbers open doors for businesses seeking to break into the American market. They offer the means to acquire a local US phone number, facilitating seamless connections with customers and collaborators in the USA. These virtual numbers enhance accessibility, projecting professionalism, and streamlining communication, all while offering cost-effective solutions for global expansion. This approach is invaluable for international companies aiming to tap into the thriving US market."
+        },
+        {
+          "img": "/img/feature/numbers-cost-efficiency.svg",
+          "heading": "Cost Efficiency",
+          "subheading": "",
+          "content": "Numbers open doors for businesses seeking to break into the American market. They offer the means to acquire a local US phone number, facilitating seamless connections with customers and collaborators in the USA. These virtual numbers enhance accessibility, projecting professionalism, and streamlining communication, all while offering cost-effective solutions for global expansion. This approach is invaluable for international companies aiming to tap into the thriving US market."
+        },
+        {
+          "img": "/img/feature/numbers-missed-call-services.svg",
+          "heading": "Missed Call Services",
+          "subheading": "",
+          "content": "Some virtual number providers offer functionalities such as missed call alerts and notifications, enabling U.S. businesses to promptly address customers who were unable to make contact. This feature aids in delivering timely support and boosting customer interaction in the American market."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+          "heading": "Keyword Specific Messaging",
+          "subheading": "You can choose a unique keyword for your business or campaign",
+          "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+        },
+        {
+          "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+          "heading": "Keyword Independent Messaging",
+          "subheading": "In addition to keywords",
+          "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+        },
+        {
+          "img": "/img/feature/numbers-pre-formatted-questions.svg",
+          "heading": "Pre-formatted Set of Questions",
+          "subheading": "",
+          "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+        },
+        {
+          "img": "/img/feature/numbers-online-survey.svg",
+          "heading": "Online Surveys",
+          "subheading": "",
+          "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+        },
+        {
+          "img": "/img/feature/numbers-lead-generation.svg",
+          "heading": "Lead Generation",
+          "subheading": "",
+          "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+        },
+        {
+          "img": "/img/feature/numbers-auto-responses.svg",
+          "heading": "Create Auto Responses",
+          "subheading": "",
+          "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+        },
+        {
+          "img": "/img/feature/numbers-integration.svg",
+          "heading": "Integration into Web Applications",
+          "subheading": "",
+          "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+        }        
       ]
     }
   }
