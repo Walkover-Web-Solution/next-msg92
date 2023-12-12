@@ -6,20 +6,21 @@
 
 :root{
     // font family 
-    --c-head:'Libre Baskerville', serif;
+    //--c-head:'Libre Baskerville', serif;
+    --c-head:'Plus Jakarta Sans', sans-serif;
     --c-body:'Plus Jakarta Sans', sans-serif;
     --c-text:'Inter', sans-serif;
 
     // font-size
-    --heading:clamp(1.5rem,4vw,3rem); //20px //48px
-    --sub-heading:clamp(1.75rem,3vw,2.5rem); 
-    --small-heading:clamp(1rem,3vw,1.8rem); //14px //24px
-    --c-fs-1:clamp(1.25rem,2.6vw,2rem); 
-    --c-fs-2:clamp(1.2rem,2vw,1.5rem);//16px //24px
-    --c-fs-3:clamp(1.15rem,1.5vw,1.25rem); //20px //18px
-    --c-fs-4:clamp(0.8rem,1.2vw,1.15rem); //16px //18px
-    --c-fs-5:clamp(0.875rem,1vw,1rem); //14-16     
-    --c-fs-6:clamp(0.75rem,1vw,0.875rem); //12-14     
+    --heading: clamp(2rem, 3vw + 1rem, 3rem); //32-48
+    --sub-heading:clamp(1.5rem, 2vw + 1rem, 2rem); //24-32
+    --small-heading:clamp(1.25rem, 1vw + 1rem, 1.75rem); //20-28
+
+    --c-fs-1:clamp(1.25rem,2.6vw,2rem);//20px - 32px 
+    --c-fs-2:clamp(1.2rem,2vw,1.5rem);//16px - 24px
+    --c-fs-3:clamp(1.15rem,1.5vw,1.25rem);//20px - 18px
+    --c-fs-4:clamp(0.875rem, 2vw + 0.25rem, 1.25rem);//14px - 20px
+    --c-fs-5:clamp(0.875rem,1vw,1rem);// 14px
     --c-fs-7:clamp(0.88rem,1vw,0.88rem); //14px
     --c-fs-8:clamp(1rem,1vw,1rem); //16px
     --c-fs-9:clamp(0.75rem,1vw,0.75rem); //12px
@@ -76,7 +77,7 @@
     --hello-light :#FDF4E2;
     --segmento :#E55CA1;
     --segmento-dark :#80335A;
-    --segmento-light :#E5D8DF;
+    --segmento-light :#FCEFF6;
     --campaign :#AA50F6;
     --campaign-dark :#5F388C;
     --campaign-light :#F6EFFC;    

@@ -60,11 +60,7 @@ const terms = () => {
                             <div className="my-3"></div>
                             In case of any changes in personal information, users can modify the details by logging in using their existing Email ID and password. Go to the profile page in your account and modify what so ever you wish to.
                             <div className="my-3"></div>
-                            Our services are present to make lives of people easy. Users choose MSG91 by their own will without any force or pressure imposed by the team MSG91. If any user, at any point of time, wants to opt-out of future communications with MSG91 team, can do so by send email.
-                            <div className="my-3"></div>
-                            We’re sorry to see you go, hopefully we will see you back one day.
-                            <div className="my-3"></div>
-                            Please send us your email address at <a href="https://msg91.com/cdn-cgi/l/email-protection"> [email protected] </a> unsubscribe from the list.
+                            Our services are present to make lives of people easy. Users choose MSG91 by their own will without any force or pressure imposed by the team MSG91. If any user, at any point of time, wants to opt-out of future communications with MSG91 team, can do so.
                             <div className="my-3"></div>
                             You will receive an confirmation email your unsubscription, just to make sure this is not an accident or somebody else tries to unsubscribe you.
                         </span>

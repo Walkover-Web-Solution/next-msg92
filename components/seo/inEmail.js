@@ -229,218 +229,212 @@ const Insms = () => {
         <div>
               <h2 className="c-head c-fs-1 mt-5">FAQs</h2>
 
-              <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingOne">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseOne"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseOne"
-                    >
-                      What is a transactional email API?
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseOne"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingOne"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                      Transactional email API platform in India allows developers to integrate and automate
-                      sending transactional emails from their applications or
-                      systems. It provides a convenient and efficient way to
-                      deliver meaningful, personalized emails such as order
-                      confirmations, account notifications, password resets, and
-                      more.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingTwo">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseTwo"
-                    >
-                      How does a transactional email API service benefit
-                      developers?
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseTwo"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingTwo"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                      Transactional email API services offer several benefits
-                      for developers, including:
-                      <ul>
-                        <li>
-                        Simplified integration: Developers can easily integrate the API into their
-                        existing applications or systems using comprehensive API
-                        documentation and sample code.
-                        </li>
-                        <li>
-                          Streamlined email delivery: The API handles the complex email delivery process,
-                        ensuring reliable and efficient transmission to
-                        recipients' inboxes.
-                        </li>
-                        <li>
-                          Customization and personalization: Developers can dynamically generate email content,
-                        personalize messages, and include attachments as needed,
-                        providing a tailored user experience.
-                        </li>
-                        <li>
-                          Real-time tracking and analytics: The API enables developers to track email delivery and
-                        monitor open rates, click-through rates, and other
-                        metrics, empowering them to optimize email campaigns.
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingThree">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseThree"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseThree"
-                    >
-                      Why should I choose a transactional email API service
-                      for my business?
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseThree"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingThree"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                      Using a transactional email API service offers several
-                      advantages, including:
-                      <ul>
-                        <li>
-                          Reliable delivery : API services employ robust infrastructure and industry
-                      best practices to ensure that your transactional emails
-                      reach their intended recipients promptly and reliably.
-                        </li>
-                        <li>
-                          Scalability: As your business grows, API services can handle high email
-                      volumes without compromising performance, ensuring a
-                      seamless experience for your customers.
-                        </li>
-                        <li>
-                          Cost-effectiveness: Transactional email API services often offer flexible
-                      pricing plans that allow you to pay only for the emails
-                      you send, making it a cost-effective solution for
-                      businesses of all sizes.
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  </div>
-                  <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingFour">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseFour"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseFour"
-                    >
-                      Is transactional email API delivery available in
-                        India?
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseFour"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingFour"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                      Yes, transactional email API delivery is available in
-                      India. At MSG91, we specialize in providing a{" "}designed specifically for businesses in India. Our robust
-                      infrastructure ensures efficient and reliable delivery to
-                      Indian recipients, helping you effectively engage with
-                      your customers.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingFive">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseFive"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseFive"
-                    >
-                      How secure is the transactional email API service?
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseFive"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingFive"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                      At MSG91, we prioritize the security of your transactional
-                      email communications. Our API service utilizes
-                      industry-standard security protocols, encryption, and
-                      authentication mechanisms to safeguard your data.
-                      Additionally, we adhere to strict data privacy
-                      regulations, ensuring that your sensitive information
-                      remains protected.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="flush-headingSix">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseSix"
-                      aria-expanded="false"
-                      aria-controls="flush-collapseSix"
-                    >
-                      Can I track the performance of my transactional
-                        emails?
-                    </button>
-                  </h2>
-                  <div
-                    id="flush-collapseSix"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingSix"
-                    data-bs-parent="#accordionFlushExample"
-                  >
-                    <div class="accordion-body">
-                      Sure! Our transactional email API gateway provides comprehensive tracking and analytics features.
-                      You can monitor your emails' delivery status and track
-                      real-time open rates, click-through rates, and other key
-                      metrics. These insights help you evaluate the
-                      effectiveness of your email campaigns and make data-driven
-                      decisions to improve customer engagement.
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div className="accordion accordion-flush" id="accordionFlushExample">
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingOne">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseOne"
+        aria-expanded="false"
+        aria-controls="flush-collapseOne"
+      >
+        What is a transactional email API?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseOne"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingOne"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+        Transactional email API platform in India allows developers to integrate
+        and automate sending transactional emails from their applications or
+        systems. It provides a convenient and efficient way to deliver
+        meaningful, personalized emails such as order confirmations, account
+        notifications, password resets, and more.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingTwo">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseTwo"
+        aria-expanded="false"
+        aria-controls="flush-collapseTwo"
+      >
+        How does a transactional email API service benefit developers?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseTwo"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingTwo"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+        Transactional email API services offer several benefits for developers,
+        including:
+        <ul>
+          <li>
+            Simplified integration: Developers can easily integrate the API into
+            their existing applications or systems using comprehensive API
+            documentation and sample code.
+          </li>
+          <li>
+            Streamlined email delivery: The API handles the complex email
+            delivery process, ensuring reliable and efficient transmission to
+            recipients' inboxes.
+          </li>
+          <li>
+            Customization and personalization: Developers can dynamically
+            generate email content, personalize messages, and include
+            attachments as needed, providing a tailored user experience.
+          </li>
+          <li>
+            Real-time tracking and analytics: The API enables developers to
+            track email delivery and monitor open rates, click-through rates,
+            and other metrics, empowering them to optimize email campaigns.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingThree">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseThree"
+        aria-expanded="false"
+        aria-controls="flush-collapseThree"
+      >
+        Why should I choose a transactional email API service for my business?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseThree"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingThree"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+        Using a transactional email API service offers several advantages,
+        including:
+        <ul>
+          <li>
+            Reliable delivery : API services employ robust infrastructure and
+            industry best practices to ensure that your transactional emails
+            reach their intended recipients promptly and reliably.
+          </li>
+          <li>
+            Scalability: As your business grows, API services can handle high
+            email volumes without compromising performance, ensuring a seamless
+            experience for your customers.
+          </li>
+          <li>
+            Cost-effectiveness: Transactional email API services often offer
+            flexible pricing plans that allow you to pay only for the emails you
+            send, making it a cost-effective solution for businesses of all
+            sizes.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingFour">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseFour"
+        aria-expanded="false"
+        aria-controls="flush-collapseFour"
+      >
+        Is transactional email API delivery available in India?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseFour"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingFour"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+        Yes, transactional email API delivery is available in India. At MSG91,
+        we specialize in providing a{"{"}" "{"}"}designed specifically for
+        businesses in India. Our robust infrastructure ensures efficient and
+        reliable delivery to Indian recipients, helping you effectively engage
+        with your customers.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingFive">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseFive"
+        aria-expanded="false"
+        aria-controls="flush-collapseFive"
+      >
+        How secure is the transactional email API service?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseFive"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingFive"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+        At MSG91, we prioritize the security of your transactional email
+        communications. Our API service utilizes industry-standard security
+        protocols, encryption, and authentication mechanisms to safeguard your
+        data. Additionally, we adhere to strict data privacy regulations,
+        ensuring that your sensitive information remains protected.
+      </div>
+    </div>
+  </div>
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="flush-headingSix">
+      <button
+        className="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseSix"
+        aria-expanded="false"
+        aria-controls="flush-collapseSix"
+      >
+        Can I track the performance of my transactional emails?
+      </button>
+    </h2>
+    <div
+      id="flush-collapseSix"
+      className="accordion-collapse collapse"
+      aria-labelledby="flush-headingSix"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div className="accordion-body">
+        Sure! Our transactional email API gateway provides comprehensive
+        tracking and analytics features. You can monitor your emails' delivery
+        status and track real-time open rates, click-through rates, and other
+        key metrics. These insights help you evaluate the effectiveness of your
+        email campaigns and make data-driven decisions to improve customer
+        engagement.
+      </div>
+    </div>
+  </div>
+</div>
+
          </div>
          </div>
     </>

@@ -8,9 +8,24 @@ import ProductMenu from "./productmenu";
 import Notification from "./notification";
 import Link from "next/link";
 
-const navbar = ({ browserPath, pricingPath }) => {  
+const navbar = ({ browserPath, pricingPath,pageSlug }) => {  
+   const products = {
+    '/sms': 'SMS',
+    '/email': 'Email', 
+    '/voice': 'Voice', 
+    '/whatsapp': 'WhatsApp', 
+    '/rcs' : 'RCS', 
+    '/otp': 'OTP', 
+    '/numbers': 'Numbers', 
+    '/hello': 'Hello', 
+    '/segmento': 'Segmento', 
+    '/campaign': 'Campaign', 
+    '/shorturl': 'URL Shortener', 
+    '/knowledgebase': 'KnowledgeBase', 
+  }
+  var title = products[pageSlug];
   var path = browserPath.split("/")[1];
-  path = path.length == 2 ? "/" + path : "";  
+  path = path.length === 2 ? "/" + path : "";  
   
   const [showOverlay, setShowOverlay] = useState(false);
   const [show, setShow] = useState(false);
@@ -80,11 +95,21 @@ const navbar = ({ browserPath, pricingPath }) => {
         <div className="container relative d-none align-items-center d-md-flex justify-content-between c-fs-4 c-fw-m nav-menu-cont">
           <div className=" d-flex gap-4 gap-lg-4 gap-xl-5 w-nav-menu align-items-center justify-content-start nav-menu">
             <a
-              className="nav-link menu-opt text-dark"
+              className={`nav-link menu-opt text-dark ${title ? 'active' : ''}`}
               href={undefined}
               id="product-link"
             >
-              <span className="c-fs-4 c-fw-m">Products</span>
+              <div className="c-fs-4 c-fw-m">
+                {
+                title 
+                ? 
+                <div className="d-flex align-items-center gap-2">
+                  <img width="24" height="24" data-nimg="1" src={`/img/icon/${title.toLowerCase().replace(/ +/g, "")}.svg`} />
+                  {title}
+                </div>
+                : "Products"
+                }
+              </div>
               <div className="nav-line"></div>
             </a>
             <a

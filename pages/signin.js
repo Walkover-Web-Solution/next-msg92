@@ -5,6 +5,8 @@ import { MdCall, MdEmail } from 'react-icons/md';
 import { getQueryParamsDeatils, setCookie, getCookie, loginWithGitHubAccount } from '@/components/utils';
 import { toast } from 'react-toastify';
 
+const SUCCESS_REDIRECTION_URL =  process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
+
 class logIn extends React.Component {
     constructor(props) {
         super(props);
@@ -59,7 +61,7 @@ class logIn extends React.Component {
                 .then((response) => response?.json())
                 .then((result) => {
                     if (result?.status === 'success') {
-                        location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', payload.session);
+                        location.href = SUCCESS_REDIRECTION_URL?.replace(':session', payload.session);
                     }
                 });
         } catch (error) {
@@ -133,7 +135,7 @@ class logIn extends React.Component {
                     setCookie('sessionId', sessionId, 30);
                 }
                 if (!result?.hasError) {
-                    location.href = process.env.SUCCESS_REDIRECTION_URL?.replace(':session', sessionId);
+                    location.href = SUCCESS_REDIRECTION_URL?.replace(':session', sessionId);
                 } else if (showError) {
                     toast.error(result?.errors?.[0] ?? result?.errors);
                 }

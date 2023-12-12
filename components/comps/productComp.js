@@ -12,7 +12,7 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
     <div>
       <div className="product-banner-wrp">
         <div className="container text-center overflow-hidden">
-          <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
+          <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">            
             <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
               <img src={pageData?.icon} className="product-page-logo me-2" />
               <h1 className={`heading page-title ${pageData?.pagename}-heading`}>{pageData?.pagetag}</h1>
@@ -30,7 +30,8 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
               </p>
             </div>
             <a href={`/signup?service=${pageData.pagename}`} className="btn btn-dark btn-lg c-fs-2 mt-3 utm" >
-              Get started for FREE
+              {pageData.pagename === 'KnowledgeBase' && <span className='d-flex'>Get started <mark className='highlight ms-2'>FREE forever</mark></span>}
+              {pageData.pagename !== 'KnowledgeBase' && <span>Get started for FREE</span>}
             </a>
           </div>
             <TrustedBy />
@@ -95,7 +96,7 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
         </div>
       }
       <Seo path={path} pageData={pageData?.pagename} />
-      <PreFooter pricingPath={pricingPath}/>
+      <PreFooter pricingPath={pricingPath} pageName={pageData?.pagename}/>
     </div>
   );
 };
