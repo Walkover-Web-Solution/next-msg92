@@ -91,7 +91,7 @@ class logIn extends React.Component {
                     const url = process.env.API_BASE_URL + '/api/v5/nexus/emailLogin';
                     this.hitLoginAPI(url, { code: data.message });
                 } catch (error) {
-                    this.loginFailed(error);
+                    console.log(error);
                 }
             },
         };
@@ -109,7 +109,6 @@ class logIn extends React.Component {
 
     // Google Login
     googleLogin = (response) => {
-        console.log(response);
         if (response) {
             const url = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
             this.hitLoginAPI(url, { code: response.code, redirectUrl: process.env.REDIRECT_URL });
@@ -141,10 +140,6 @@ class logIn extends React.Component {
                 }
             })
             .catch((err) => console.error(err));
-    }
-
-    loginFailed(error) {
-        console.log(error);
     }
 
     setShowContactonLogin = () => {
