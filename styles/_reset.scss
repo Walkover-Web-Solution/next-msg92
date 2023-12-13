@@ -1,6 +1,5 @@
 a{
     text-decoration: none!important;
-    color: var(--black-color) ;
 }
 h1,h2,h3,h4,h5,h6,p{
     padding: 0px!important;
@@ -21,4 +20,14 @@ h1,h2,h3,h4,h5,h6,p{
   .bborder-0{
     border-radius: 0px !important;
   }
-
+  .form-control, 
+  .form-select, 
+  .form-check-input {
+    &:focus{
+      box-shadow: none !important;
+    }
+    &:checked {
+      background-color: var(--primary-color) !important;
+      border-color: var(--primary-color) !important;
+    }
+  }

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "@react-oauth/google": "^0.11.1",
     "axios": "^1.3.4",
     "bootstrap": "^5.2.3",
     "console_comment": "^1.0.2",
@@ -23,12 +24,15 @@
     "next-mdx-remote": "^4.4.1",
     "prismjs": "^1.29.0",
     "react": "18.2.0",
+    "react-bootstrap": "^2.8.0",
     "react-bootstrap-typeahead": "^6.0.2",
     "react-calendly": "^4.1.1",
     "react-dom": "18.2.0",
     "react-icon": "^1.0.0",
     "react-icons": "^4.8.0",
     "react-player": "^2.12.0",
+    "react-select": "^5.7.7",
+    "react-toastify": "^9.1.3",
     "react-youtube": "^10.1.0",
     "sass": "^1.60.0"
   }

@@ -1,6 +1,6 @@
 import { MdDone } from "react-icons/md";
 import { useEffect, useState } from "react";
-import { setUtm } from "../pricingComp";
+import { setUtm } from "@/components/utils";
 
 const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsAppFee,countryCode}) => {
   var change
@@ -88,7 +88,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsA
                         </span>
                         {item.plan_services[0].service_credit.free_credits} for Outbound calls
                       </div>                    
-                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
+                      <a href="/signup?service=whatsapp" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                         Get Started
                       </a>
                     </div>
@@ -115,7 +115,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsA
                       </span>
                       Free balance of {symbol} {item.plan_services[0].service_credit.service_credit_rates[0].free_credits}
                     </div>                    
-                    <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
+                    <a href="/signup?service=whatsapp" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                       Get Started
                     </a>
                   </div>
