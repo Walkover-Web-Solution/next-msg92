@@ -2,17 +2,21 @@
 const nextConfig = {
     reactStrictMode: false,
     env: {
-        API_BASE_URL: 'https://test.msg91.com',
+        // URLS
+        API_BASE_URL: 'https://control.msg91.com',
+        REDIRECT_URL: 'https://msg91.com',
+        SUCCESS_REDIRECTION_URL: 'https://control.msg91.com/api/nexusRedirection.php?session=:session',
+
+        // CLIENT IDS 
         GOOGLE_CLIENT_ID: '944172403132-77c4il77pvt6p4hm293gimbhh3av5l7d.apps.googleusercontent.com',
-        ZOHO_CLIENT_ID: '1000.TULN05SRMPWS74404W4PL31U0GA46H',
-        GITHUB_CLIENT_ID: 'b7432f8d5a708e33b3b0',
-        MSAL_CLIENT_ID: '164d09e1-531c-427d-9358-9d1347c74170',
-        // REDIRECT_URL: "http://localhost:9999",
-        REDIRECT_URL: 'https://web.msg91.com',
-        OTP_WIDGET_TOKEN: '33696f6f306b393636323236',
-        WIDGET_AUTH_TOKEN: '278060TdDLqSOupgl6533ad44P1',
-        WIDGET_SCRIPT: 'https://test.msg91.com/hello-new/assets/otp-provider/otp-provider.js',
-        SUCCESS_REDIRECTION_URL: 'https://test.msg91.com/api/nexusRedirection.php?session=:session',
+        ZOHO_CLIENT_ID: '1000.3Z50ZGWPHHPV04474N57J7EZHVJCBH',
+        GITHUB_CLIENT_ID: '9a9249259e5a41d58af0',
+        MSAL_CLIENT_ID: '2a40ac9c-22ee-45a9-ab5b-e9af860a4cde',
+
+        // WIDGET CONFIG
+        OTP_WIDGET_TOKEN: '336c676d7537343338383336',
+        WIDGET_AUTH_TOKEN: '125TtMrV40q6Sq6576e46fP1',
+        WIDGET_SCRIPT: 'https://control.msg91.com/app/assets/otp-provider/otp-provider.js',
     },
     // Can be safely removed in newer versions of Next.js
 
