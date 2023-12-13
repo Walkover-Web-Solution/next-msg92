@@ -58,8 +58,6 @@ export default function PostItem({ post }) {
         </div>
       </div>
     </a>
-    {/* {content && <button className="message" onClick={()=>showToaster("not valid ", "error")}>click me</button>} */}
-    </>
   );
 
 }
