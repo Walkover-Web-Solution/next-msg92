@@ -1,0 +1,81 @@
+.signin {
+    min-height: 100vh;
+    &__left {
+        position: relative;
+        padding: 80px 40px 0 40px;
+        @media (max-width: 767px) {
+        padding: 24px 24px 24px;
+        }
+        background-color: var(--primary-light);
+        width: 420px !important;
+        overflow: hidden;
+        &__img {
+            position: absolute;
+            left: -1px;
+            top: 156px;
+        }
+        &__logo {
+            width: 124px;
+        }
+    }
+    &__right {
+        padding: 80px 80px 0 80px;
+        @media (max-width: 767px) {
+          padding: 24px 24px 24px;
+          }
+        flex-grow: 1;
+        &__logo {
+            width: 124px;
+            @media (max-width: 767px) {
+                width: 99.2px;
+            }
+        }
+        &__login {
+            width: fit-content;
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+        }
+        @media (max-width: 767px) {
+            flex-grow: 0;
+        }
+        &__title{
+            font-size: 1.5rem !important;
+        }
+    }
+}
+.sigin__wrapper {
+    max-width: 460px;
+}
+.google-login {
+    border: 1px solid var(--primary-color) !important;
+    min-width: 120px;
+    height: 40px;
+    column-gap: 8px;
+    padding: 6px 16px !important;
+    span{
+        color: var(--primary-color);
+    }
+}
+.social-btn {
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    img{
+        width: 24px;
+    }
+    &.zogo-btn {
+        border-color: var(--border-alert-color) !important;
+        img{
+            width: 16px;
+        }
+    }
+    &.git-btn {
+        border-color: var(--black-border-color) !important;
+    }
+}
+.text-link {
+    color: var(--primary-color);
+    cursor: pointer;
+}

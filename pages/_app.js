@@ -1,15 +1,17 @@
-import "@/styles/globals.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-import Headcomp from "@/components/head";
+import '@/styles/globals.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from '@/components/navbar';
+import Footer from '@/components/footer';
+import Headcomp from '@/components/head';
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Script from 'next/script'
-import { getCookie, setCookie } from "@/components/utils";
+import Toastify from "@/components/toast";
+import { getCookie, setCookie, setUtm } from "@/components/utils";
 import $ from "jquery";
 export default function App({ Component, pageProps }) {
   const router = useRouter();  
+  var showNavbar = false;
   var  browserPath = router.asPath;  
   var browserPathCase = browserPath;
   var browserPathMeta = browserPath;
@@ -40,25 +42,21 @@ export default function App({ Component, pageProps }) {
   var pricingPath = (products.includes(pageSlug)) ? `/pricing${pageSlug}` : `/pricing/sms`;
 
   const year = new Date().getFullYear();
+  if (!['/signin', '/signup', '/github-auth', '/github-auth-token', '/outlook-token'].includes(browserPath)) {
+    showNavbar = true;
+}
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
     
     const search = window.location.search;
-    if(search.includes("utm_")){      
-      setCookie('msg91_query', search, 30);
+    if (search.includes('utm_')) {
+        setCookie('msg91_query', search.replace(/service=\w+&?/,''), 30);
+    } else if (!getCookie('msg91_query')) {
+        setCookie('msg91_query', '?utm_source=msg91Website&source=msg91', 30);
     }
     
-    // Get all anchor tags in the document using querySelectorAll
-    var anchorTags = document.querySelectorAll(".utm");        
-    // Loop through the anchor tags
-    for (var i = 0; i < anchorTags.length; i++) {
-      var href = anchorTags[i].getAttribute("href"); // Get the current href value
-      var query = getCookie('msg91_query');
-      if (href && query) {
-        anchorTags[i].setAttribute("href", href + query);
-      }
-    }
-    
+    setUtm();
+
     const countryList = ['in','ae','ph','sg','es','gb','us','?']    
     
     var cc = getCookie('country_code');    
@@ -79,23 +77,23 @@ export default function App({ Component, pageProps }) {
       }
     });
 
-  }, []);
+    }, []);
     return (
-      <>
-        <Script
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `var helloConfig = {
+        <>
+            <Script
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                    __html: `var helloConfig = {
               widgetToken: "1d31e",
               hide_launcher: false
             };`,
-          }}
-        />
+                }}
+            />
 
-        <Script          
-          onload="initChatWidget(helloConfig, 5000)"
-          src="https://control.msg91.com/app/assets/widget/chat-widget.js"
-        />
+            <Script
+                onload="initChatWidget(helloConfig, 5000)"
+                src="https://control.msg91.com/app/assets/widget/chat-widget.js"
+            />
 
         <Script
           strategy="afterInteractive"
@@ -108,11 +106,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
 
-        { browserPath.browserPath == '/in' &&
-          <>
-          <Script type="application/ld+json" strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `{
+            {browserPath.browserPath == '/in' && (
+                <>
+                    <Script
+                        type="application/ld+json"
+                        strategy="afterInteractive"
+                        dangerouslySetInnerHTML={{
+                            __html: `{
               "@context": "https://schema.org/",
               "@type": "WebSite",
               "name": "MSG91",
@@ -123,12 +123,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "query-input": "required name=search_term_string"
               }
             }`,
-          }}
-          />
-          
-          <Script type="application/ld+json" strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `{
+                        }}
+                    />
+
+                    <Script
+                        type="application/ld+json"
+                        strategy="afterInteractive"
+                        dangerouslySetInnerHTML={{
+                            __html: `{
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "MSG91",
@@ -143,9 +145,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
           />
           </>
-        }
+        )}
         <Headcomp browserPath={browserPathMeta} />
-        <Navbar browserPath={browserPath} pricingPath={pricingPath} appPath={browserPathMeta} pageSlug = {pageSlug} />
+        {showNavbar && <Navbar browserPath={browserPath} pricingPath={pricingPath} appPath={browserPathMeta} pageSlug = {pageSlug} /> }
         <Component 
         {...pageProps} 
         path={path} 
@@ -153,7 +155,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         browserPathCase={browserPathCase} 
         pricingPath={pricingPath}
         />
-        <Footer path={path} year={year} />
+        {showNavbar && <Footer path={path} year={year} /> }
     </>
     );
 }

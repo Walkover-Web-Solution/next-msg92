@@ -134,7 +134,7 @@ support.msg91.com/users/41006711-sagarvaishnav/filters/comments /
 /sg/case-studies/clickpost/feed /sg
 /ph/refund-policy/ /refund-policy
 # control.msg91.com/signupmrashidalig
-support.msg91.com/knowledgebase/articles/45809-do-you-provide-unicode-sms /help 
+support.msg91.com/knowledgebase/articles/45809-do-you-provide-unicode-sms /help
 /power-users-guide-sms-marketing-services/ /sms
 support.msg91.com/users/22135843-subbu/filters/comments /help
 /guide/tag/bulk-sms-api/ /guide
@@ -194,7 +194,7 @@ api.msg91.com/apidoc/sendotp/SendOTP.postman_collection.json  https://docs.msg91
 /blog/sms-the-new-marketing-gateway-for-wordpress/feed/ /guide
 /channel/transactional-sms/ /sms
 support.msg91.com/users/37630083/filters/ /help
-signup.msg91.com/longcode https://control.msg91.com/signup/
+signup.msg91.com/longcode /signup
 /blog/category/strategic-acquisition/ /guide
 /sg/our-partners/+91%2090168-44472%E2%80%8B /partners-and-integrations
 /blog/tag/ndnc/feed/ /guide
@@ -262,7 +262,7 @@ test.panel.msg91.com/apidoc/virtual/virtual-number-balance.php  https://docs.msg
 /blog/tag/integrated-marketing/feed/ /guide
 /guide/magento-sms-extension-for-msg91-by-magecomp/ /guide
 /blog/tag/bulk-sms-gateways/ /guide
-signup.msg91.com/partner-program https://control.msg91.com/signup/
+signup.msg91.com/partner-program /signup
 /blog/tag/schools/feed/ /guide
 /tag/startup/ /
 /sg/case-studies/sankalp-india-foundation/feed /case-studies/sankalp
@@ -296,16 +296,16 @@ support.msg91.com/forums/146824-msg91-feature-and-idea-suggestion-forum/filters/
 test.panel.msg91.com/apidoc/reseller/error-code-reseller.php  https://docs.msg91.com/reference/send-sms
 /blog/tag/sms-lifecycle/ /guide
 /us/case-studies/joey-rooms/feed /case-studies/joeyrooms
-signup.msg91.com/features/ https://control.msg91.com/signup/
+signup.msg91.com/features/ /signup
 /guide/top-wordpress-plugins-to-send-sms-using-msg91/ /guide
-control.msg91.com/signupEngbabu https://control.msg91.com/signup/
-/blog/tag/sms-marketing-for-business/feed/ https://control.msg91.com/signup/
+control.msg91.com/signupEngbabu /signup
+/blog/tag/sms-marketing-for-business/feed/ /signup
 # msg91.com/gb/hello
 /blog/tag/bulk-sms/page/1/ /guide
 /blog/tag/customer-retention/feed/ /guide
 /blog/category/benefits-of-bulk-sms/ /guide
 /es/case-studies/tag/crm /case-studies/tag/crm
-signup.msg91.com/internal-communication/ https://control.msg91.com/signup/
+signup.msg91.com/internal-communication/ /signup
 /blog/tag/socket/ /guide
 /guide/tag/marketing-insights/ /guide
 /blog/how-msg91-can-help-you-when-the-wedding-bells-ring/feed/ /guide
@@ -326,7 +326,7 @@ signup.msg91.com/internal-communication/ https://control.msg91.com/signup/
 /ph/our-partners/+91%2090168-44472%E2%80%8B /partners-and-integrations
 /ph/case-studies/mahindra-saboro/feed /case-studies/mahindra
 /blog/tag/voicebots/ /guide
-/signup?source=iamai https://control.msg91.com/signup/
+/signup?source=iamai /signup
 /ph/case-studies/tag/automobile/feed  /case-studies/tag/automobile
 /blog/tag/text-to-speech/ /guide
 /blog/author/pushpendra/feed/ /guide
@@ -342,7 +342,7 @@ test.panel.msg91.com/apidoc/reseller/forget-password.php https://docs.msg91.com/
 /ph/case-studies/sankalp-india-foundation /case-studies/sankalp
 /blog/what-happened-at-mwc19/feed/ /guide
 /blog/home/ /guide
-signup.msg91.com/privacy https://control.msg91.com/signup/
+signup.msg91.com/privacy /signup
 /in/case-studies/tag/education  /case-studies/tag/education
 /blog/marketing-automation-at-scale-strategies-from-the-boardroom/ /guide
 support.msg91.com/users/37099082-himanshu-chawla /contact-us
@@ -373,12 +373,12 @@ help.msg91.com/article/159-module-for-number-verification-2fa /help
 /ph/privacy-policy/ /privacy-policy
 /us/case-studies/ixigo/feed /case-studies/ixigo
 /blog/category/webinar/feed/ /guide
-control.msg91.com/signupjerryabs https://control.msg91.com/signup/
+control.msg91.com/signupjerryabs /signup
 /blog/tag/sms-api/feed/ /guide
 /in/fair-pricing-policy/ /fair-pricing-policy
 /blog/tag/post-sales/feed/ /guide
 /guide/tag/smshare/ /guide
-signup.msg91.com/startups/policy https://control.msg91.com/signup/
+signup.msg91.com/startups/policy /signup
 # msg91.com/gb/shorturl
 /guide/tag/saas-marketing/ /guide
 /es/case-studies/tag/e-commerce/feed  /case-studies/tag/e-commerce
@@ -465,7 +465,7 @@ help.msg91.com/category/183-whmcs https://msg91.com/help/MSG91/whmcs-plugin-for-
 /guide/tag/startups-india/ /guide
 support.msg91.com/forums/146824-msg91-feature-and-idea-suggestion-forum/suggestions/4147856-batch-or-campaign-name-field-to-create-a-batch-nam /contact-us
 help.msg91.com/article/357-the-header-is-approved-still-not-receiving-sms-with-it https://msg91.com/help/MSG91/what-is-a-sender-id
-control.msg91.com/signup.php https://control.msg91.com/signup/
+control.msg91.com/signup.php /signup
 /developers/get-started.php https://msg91.com/developers
 test.panel.msg91.com/apidoc/sendotp/verify-otp.php https://msg91.com/otp
 /one-api /campaign
@@ -541,7 +541,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /startups-policy/ /startup-policy/
 /in/case-studies/leegality/?typeform-embed=popup-drawer /case-studies/leegality/
 /case-studies/smart-shift/ /case-studies/smartshift
-/signin https://control.msg91.com/signin/
 /check-icon-3/ /
 /reseller /
 /blog/tag/local-language/amp/ /guide
