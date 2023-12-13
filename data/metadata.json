@@ -536,9 +536,8 @@
 
     },
     "/partners-and-integrations/tally":{
-        "title": "Send SMS | Transactional email Service Provider - MSG91",
-        "description":"Boost your business efficiency with the seamless integration of MSG91 SMS services into Tally. Streamline communication, automate reminders, and enhance customer engagement. Discover the power of MSG91 and Tally integration today!"
-
+        "title": "Tally Intergration | Experience Tally Prime - MSG91",
+        "description":"Automate invoice delivery via WhatsApp and Email, ensuring timely communication. Effortlessly send SMS and Voice messages for voucher creations and updations"
     },
     "commentin":{
         "comment":"in country"
