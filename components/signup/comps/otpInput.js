@@ -13,6 +13,9 @@ function setValueInInputs(value, tag, otpLength) {
                 }
             }
         }
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -70,14 +73,31 @@ class Otpinput extends React.Component {
                                             inputEle.value = '';
                                             setTimeout(() => {
                                                 inputEle.focus();
-                                            });
+                                            }, 20);
                                         }
                                     } else {
                                         event?.preventDefault();
                                         setTimeout(() => {
                                             const inputEle = document.getElementById(this.props.tag + x);
                                             if (integerRegex.test(inputEle?.value)) {
-                                                setValueInInputs(inputEle?.value, this.props.tag, this.props.otpLength);
+                                                if (
+                                                    !setValueInInputs(
+                                                        inputEle?.value,
+                                                        this.props.tag,
+                                                        this.props.otpLength
+                                                    )
+                                                ) {
+                                                    if (inputEle?.value?.length > 1) {
+                                                        const nextInputEle = document.getElementById(
+                                                            this.props.tag + (x + 1)
+                                                        );
+                                                        if(nextInputEle) {
+                                                            nextInputEle.value = inputEle.value?.slice(1);
+                                                            nextInputEle.focus();
+                                                        }
+                                                        inputEle.value = inputEle.value?.slice(0, 1);
+                                                    }
+                                                }
                                             } else {
                                                 inputEle.value = '';
                                             }
