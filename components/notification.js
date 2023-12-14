@@ -87,8 +87,8 @@ const Notification = (mininav) =>{
                 </ul>
               </div>
               <a href="/contact-us" className="text-dark"><span className="c-fs-5 d-flex align-items-center"><MdCall className="me-1"/>Contact</span></a>
-              {/* <a href="https://control.msg91.com/signin/" target="_blank" className="text-dark utm"><span className="c-fs-5 d-flex align-items-center"><MdLogin className="me-1"/>Login</span></a> */}
-              <a href="/signin" target="_blank" className="text-dark utm"><span className="c-fs-5 d-flex align-items-center"><MdLogin className="me-1"/>Login</span></a>
+              <a href="https://control.msg91.com/signin/" target="_blank" className="text-dark utm"><span className="c-fs-5 d-flex align-items-center"><MdLogin className="me-1"/>Login</span></a>
+              {/* <a href="/signin" target="_blank" className="text-dark utm"><span className="c-fs-5 d-flex align-items-center"><MdLogin className="me-1"/>Login</span></a> */}
             </div>
             
         </div>
