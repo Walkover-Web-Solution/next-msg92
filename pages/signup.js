@@ -347,8 +347,6 @@ class SignUp extends React.Component {
             'session': getCookie('sessionId'),
         };
 
-        console.log(payload);
-
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

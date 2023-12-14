@@ -196,6 +196,20 @@ const ProductMenu = ({path}) => {
             </a>
             <a
               className="d-flex gap-3 align-items-center product-menu-btn py-3"
+              href={`/partners-and-integrations/tally`}
+              target="_blank"
+            >
+              <Image
+                src="/img/integrations/tally.jpeg"
+                width={40}
+                height={40}
+                alt="ico"
+              />
+              <h4 className="c-fs-2">Tally </h4>
+              
+            </a>
+            <a
+              className="d-flex gap-3 align-items-center product-menu-btn py-3"
               href={`/partners-and-integrations/zapier`}
             >
               <Image
