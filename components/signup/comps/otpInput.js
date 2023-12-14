@@ -1,4 +1,21 @@
 import React from 'react';
+
+const integerRegex = /^(?!\.)\d+$/;
+
+function setValueInInputs(value, tag, otpLength) {
+    if (value?.trim()?.length === +otpLength) {
+        for (let i = 1; i <= +otpLength; i++) {
+            const inputEle = document.getElementById(tag + i);
+            if (inputEle) {
+                inputEle.value = +value.charAt(i - 1);
+                if (i === +otpLength) {
+                    inputEle.focus();
+                }
+            }
+        }
+    }
+}
+
 class Otpinput extends React.Component {
     render() {
         let otpLength = Array.from({ length: this.props.otpLength }, (_, index) => index + 1);
@@ -8,34 +25,27 @@ class Otpinput extends React.Component {
                     <div className="d-flex gap-3 ver-input__input">
                         {otpLength.map((x) => (
                             <input
-                                type="text"
+                                type="number"
+                                inputmode="numeric"
                                 className="form-control otp-input"
                                 placeholder="*"
                                 autoComplete="off"
-                                maxLength="1"
+                                min="0"
+                                max="9"
                                 key={x}
                                 id={this.props.tag + x}
                                 onPaste={(event) => {
                                     const pastedData = (event.clipboardData || window.clipboardData)?.getData('Text');
-                                    if(+pastedData && pastedData?.trim()?.length === +this.props.otpLength) {
-                                        for (let i = 1; i <= +this.props.otpLength; i++) {
-                                           const inputEle = document.getElementById(this.props.tag + i);
-                                           if(inputEle) {
-                                            inputEle.value = +pastedData.charAt(i-1)
-                                            if(i === +this.props.otpLength){
-                                                inputEle.focus();
-                                            }
-                                           }
-                                        }
-                                    } else {
-                                        event.preventDefault();
+                                    if (integerRegex.test(pastedData)) {
+                                        setValueInInputs(pastedData, this.props.tag, this.props.otpLength);
                                     }
+                                    event?.preventDefault();
                                 }}
                                 onKeyDown={(event) => {
-                                    if (event.ctrlKey||event.metaKey) {
+                                    if (event.ctrlKey || event.metaKey) {
                                         return false;
                                     }
-                                    const integerRegex = /[0-9]{1}/;
+
                                     if (integerRegex.test(event.key)) {
                                         if (x < this.props.otpLength) {
                                             const inputEle = document.getElementById(this.props.tag + (x + 1));
@@ -44,8 +54,16 @@ class Otpinput extends React.Component {
                                             }
                                             setTimeout(() => {
                                                 inputEle.focus();
-                                            });
+                                            }, 20);
+                                        } else if (x === +this.props.otpLength && event.target.value) {
+                                            event.preventDefault();
                                         }
+                                        setTimeout(() => {
+                                            const inputEle = document.getElementById(this.props.tag + x);
+                                            if (inputEle?.value?.length > 1) {
+                                                inputEle.value = inputEle.value?.slice(0, 1);
+                                            }
+                                        }, 20);
                                     } else if (event.key === 'Backspace') {
                                         if (!event.target.value && x > 1) {
                                             const inputEle = document.getElementById(this.props.tag + (x - 1));
@@ -55,7 +73,15 @@ class Otpinput extends React.Component {
                                             });
                                         }
                                     } else {
-                                        event.preventDefault();
+                                        event?.preventDefault();
+                                        setTimeout(() => {
+                                            const inputEle = document.getElementById(this.props.tag + x);
+                                            if (integerRegex.test(inputEle?.value)) {
+                                                setValueInInputs(inputEle?.value, this.props.tag, this.props.otpLength);
+                                            } else {
+                                                inputEle.value = '';
+                                            }
+                                        }, 20);
                                     }
                                 }}
                             />
