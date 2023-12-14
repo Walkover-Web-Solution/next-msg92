@@ -91,20 +91,12 @@ const IntPage = () => {
           </div>
         </div>
       </div>
-      <div className="container d-flex flex-column flex-sm-row align-items-center  gap-5 my-5">
+      {/* <div className="container d-flex flex-column flex-sm-row align-items-center  gap-5 my-5">
         <p className="c-fs-2">
-          Create custom triggers and actions that initiate messaging and
-          increase engagement based on specific events or conditions in
-          connected applications. 
-          <br/>
-          <br/>
-          Send order alerts and recover abandoned
-          checkouts via WhatsApp / SMS Create customer journeys with
-          multi-channel communication Update customers on critical events- New
-          Signups, Payment Confirmation, Send Invoice PDF
+          Supercharge your Tally Prime experience with the MSG91 Tally Prime Plugin, unlocking unparalleled communication and automation capabilities. Save time, enhance communication, and gain precise control over financial transactions for streamlined invoicing and ledger management today.
         </p>
         <img className="col-12 col-sm-6" src="/img/integrations/zapeir-graphics.svg" />
-      </div>
+      </div> */}
       <div className="container my-5">
         <h1 className="sub-heading c-head mb-3">
         The MSG91 Tally Prime Plugin Offers
