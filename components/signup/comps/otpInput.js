@@ -29,7 +29,7 @@ class Otpinput extends React.Component {
                         {otpLength.map((x) => (
                             <input
                                 type="number"
-                                inputmode="numeric"
+                                inputMode="numeric"
                                 className="form-control otp-input"
                                 placeholder="*"
                                 autoComplete="off"

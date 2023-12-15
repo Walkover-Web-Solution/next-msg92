@@ -6,6 +6,11 @@ class RetryOtp extends React.Component {
         this.state = { timer: 0 };
     }
 
+    componentDidMount() {
+        this.setState({ timer: 1 });
+        this.startTimer();
+    }
+
     startTimer() {
         if (interval) {
             clearInterval(interval);

@@ -83,6 +83,7 @@ class StepTwo extends React.Component {
                                                     false
                                                 )
                                             }
+                                            disabled={this.props?.isLoading}
                                         >
                                             Get OTP
                                         </button>
@@ -173,6 +174,7 @@ class StepTwo extends React.Component {
                                                     ? toast.error('Invalid mobile number.')
                                                     : this.props.sendOtp(smsIdentifier, true)
                                             }
+                                            disabled={this.props?.isLoading}
                                         >
                                             Get OTP
                                         </button>
@@ -228,7 +230,8 @@ class StepTwo extends React.Component {
                                 }
                                 disabled={
                                     !this.props?.smsAccessToken ||
-                                    (!this.props?.emailAccessToken && !this.props?.githubCode)
+                                    (!this.props?.emailAccessToken && !this.props?.githubCode) ||
+                                    this.props?.isLoading
                                 }
                             >
                                 {' '}
