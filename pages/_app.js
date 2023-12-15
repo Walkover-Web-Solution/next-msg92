@@ -10,14 +10,20 @@ import { getCookie, setCookie } from "@/components/utils";
 import $ from "jquery";
 export default function App({ Component, pageProps }) {
   const router = useRouter();  
-  var  browserPath = router.asPath;  
+  var  browserPath = router.asPath;    
   var browserPathCase = browserPath;
   var browserPathMeta = browserPath;
+  
+  if(browserPath.includes('partners-and-integrations')){
+    var plugin = browserPath.split("/")[2];    
+  }
+
   if (browserPath !== '/') {
     const pattern = /\/([^/?]+)/;
-    const result = browserPath.match(pattern);
-    browserPath = result ? result[0] : browserPath;    
+    const result = browserPath.match(pattern);    
+    browserPath = result ? result[0] : browserPath;
   }
+  
   var path = browserPath.split("/")[1];
   
   const products = [
@@ -36,6 +42,7 @@ export default function App({ Component, pageProps }) {
     '/pricing/sms',
     '/shorturl',
   ]  
+
   var pageSlug = Object.keys(router.query).length ? `/${router.query.pageslug}` : browserPath
   var pricingPath = (products.includes(pageSlug)) ? `/pricing${pageSlug}` : `/pricing/sms`;
 
@@ -44,8 +51,13 @@ export default function App({ Component, pageProps }) {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
     
     const search = window.location.search;
-    if(search.includes("utm_")){      
+    if(search.includes("utm_")){
       setCookie('msg91_query', search, 30);
+    }
+    else{
+      if(plugin){
+        setCookie('msg91_query', `?utm_campaign=tigerplugin&utm_source=${plugin}&utm_medium=website`, 30);
+      }
     }
     
     // Get all anchor tags in the document using querySelectorAll

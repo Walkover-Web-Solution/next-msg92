@@ -41,6 +41,7 @@ const IntPage = () => {
               >
                 Get The Plugin
               </a>
+              <button className="btn btn-outling-dark c-fs-2 ms-3" data-bs-toggle="modal" data-bs-target="#plugin-modal">Schedule a meeting</button>
               {/* <h2 className="c-fs-4 w-md-75 w-100 mx-auto fw-normal">
               Effortlessly integrate SMS, Email, RCS, Voice, WhatsApp with Firebase / Firestore
               </h2> */}
