@@ -298,6 +298,7 @@ class SignUp extends React.Component {
                     if (result?.data?.data?.nextStep === 'createNewCompany') {
                         this.setStep(3);
                     } else if (result?.data?.data?.nextStep === 'loginIntoExistingAccount') {
+                        this.setState({ isLoading: true });
                         location.href = SUCCESS_REDIRECTION_URL?.replace(
                             ':session',
                             result?.data?.sessionDetails?.PHPSESSID
@@ -314,7 +315,8 @@ class SignUp extends React.Component {
                         }, 200);
                     }
                 }
-            }).catch((err) => {
+            })
+            .catch((err) => {
                 this.setState({ isLoading: false });
                 console.error(err);
             });
@@ -379,10 +381,11 @@ class SignUp extends React.Component {
                 } else if (result?.hasError) {
                     toast.error(result?.errors?.[0] ?? result?.errors);
                 }
-            }).catch((err) => {
+            })
+            .catch((err) => {
                 this.setState({ isLoading: false });
                 console.error(err);
-            });;
+            });
     };
 
     render() {
