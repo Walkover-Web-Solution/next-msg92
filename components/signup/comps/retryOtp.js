@@ -1,9 +1,8 @@
 import React from 'react';
-var interval;
 class RetryOtp extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { timer: 0 };
+        this.state = { timer: 0, interval: null };
     }
 
     componentDidMount() {
@@ -12,18 +11,20 @@ class RetryOtp extends React.Component {
     }
 
     startTimer() {
-        if (interval) {
-            clearInterval(interval);
+        if (this.state.interval) {
+            clearInterval(this.state.interval);
         }
-        interval = setInterval(() => {
-            this.setState({ timer: 1 });
-            if (this.state.timer >= 35) {
-                this.setState({ timer: 0 });
-                clearInterval(interval);
-            } else {
-                this.setState({ timer: this.state.timer + 1 });
-            }
-        }, 1000);
+        this.setState({
+            interval: setInterval(() => {
+                this.setState({ timer: 1 });
+                if (this.state.timer >= 35) {
+                    this.setState({ timer: 0 });
+                    clearInterval(this.state.interval);
+                } else {
+                    this.setState({ timer: this.state.timer + 1 });
+                }
+            }, 1000),
+        });
     }
 
     render() {
