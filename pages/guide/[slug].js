@@ -27,7 +27,7 @@ const slugToPostContent = (postContents => {
     postContents?.forEach(it => hash[it.slug] = it)
     return hash;
   })(fetchPostContent());
-export default function TestPage({ source , title, author, date,thumbnailImage, tags}) {
+export default function TestPage({ source , title, description, author, date,thumbnailImage, tags}) {
   const router  = useRouter();
 
 
@@ -38,6 +38,7 @@ export default function TestPage({ source , title, author, date,thumbnailImage, 
     <>
     <Head>
       <title>{title}</title>
+      <meta name="description" content={description}></meta>
       <meta property="og:title" content={`Explore the world of ${title} Through our blog and stay informed about the latest developments, expert insights, and valuable tips that matter most. visit at MSG91 -The Best Cloud Communication Platform.`} key="title" />
     </Head>
     <div className="wrapper container blog-container">      
@@ -88,11 +89,12 @@ export async function getStaticProps(slug) {
     });
     const thumbnailImage = matterResult?.data?.thumbnail;
     const title = matterResult?.data?.title;
+    const description = matterResult?.data?.description;
     const author = matterResult?.data?.author;
     const content = matterResult?.content;
     const tags = matterResult?.data?.tags;
     var date = new Date(matterResult?.data?.date);
     date = format(date, "LLLL d, yyyy")
   const mdxSource = await serialize(content)
-  return { props: { source: mdxSource || "", title: title || "", author: author || "", date: date, thumbnailImage:thumbnailImage || "", tags: tags || ""} }
+  return { props: { source: mdxSource || "", title: title || "", description: description || "", author: author || "", date: date, thumbnailImage:thumbnailImage || "", tags: tags || ""} }
 }
