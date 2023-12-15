@@ -7,7 +7,7 @@ import { getCookie, getQueryParamsDeatils, setCookie } from '@/components/utils'
 import { toast } from 'react-toastify';
 import { MdCheckCircle } from 'react-icons/md';
 
-const SUCCESS_REDIRECTION_URL =  process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
+const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 
 const OTPRetryModes = {
     Sms: '11',
@@ -38,6 +38,7 @@ class SignUp extends React.Component {
             emailAccessToken: null,
             smsAccessToken: null,
             preselectedService: null,
+            isLoading: false,
         };
     }
 
@@ -82,6 +83,7 @@ class SignUp extends React.Component {
                 emailIdentifierBackup: null,
                 hideMobileRetry: null,
                 hideEmailRetry: null,
+                isLoading: false,
             });
         } else if (step === 2) {
             if (this.state?.signupByGitHub && !this.state?.githubCode) {
@@ -174,6 +176,7 @@ class SignUp extends React.Component {
             toast.error('Invalid mobile number.');
             return;
         }
+        this.setState({ isLoading: true });
         window.sendOtp(
             identifier,
             (data) => {
@@ -183,6 +186,7 @@ class SignUp extends React.Component {
                         smsIdentifier: identifier,
                         smsSuccessMessage: 'OTP has been successfully sent to',
                         hideMobileRetry: null,
+                        isLoading: false,
                     });
                 } else {
                     this.setState({
@@ -190,11 +194,13 @@ class SignUp extends React.Component {
                         emailIdentifier: identifier,
                         emailSuccessMessage: 'OTP has been successfully sent to',
                         hideEmailRetry: null,
+                        isLoading: false,
                     });
                 }
             },
             (error) => {
                 toast.error(error?.message);
+                this.setState({ isLoading: false });
             }
         );
     };
@@ -282,15 +288,17 @@ class SignUp extends React.Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
         };
+        this.setState({ isLoading: true });
         fetch(url, requestOptions)
             .then((response) => response?.json())
             .then((result) => {
                 this.setSession(result);
-                this.setState({ sessionDetails: result?.data?.sessionDetails });
+                this.setState({ sessionDetails: result?.data?.sessionDetails, isLoading: false });
                 if (result?.status === 'success') {
                     if (result?.data?.data?.nextStep === 'createNewCompany') {
                         this.setStep(3);
                     } else if (result?.data?.data?.nextStep === 'loginIntoExistingAccount') {
+                        this.setState({ isLoading: true });
                         location.href = SUCCESS_REDIRECTION_URL?.replace(
                             ':session',
                             result?.data?.sessionDetails?.PHPSESSID
@@ -307,6 +315,10 @@ class SignUp extends React.Component {
                         }, 200);
                     }
                 }
+            })
+            .catch((err) => {
+                this.setState({ isLoading: false });
+                console.error(err);
             });
     };
 
@@ -352,9 +364,11 @@ class SignUp extends React.Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
         };
+        this.setState({ isLoading: true });
         fetch(url, requestOptions)
             .then((response) => response?.json())
             .then((result) => {
+                this.setState({ isLoading: false });
                 this.setSession(result);
                 if (result?.status === 'success') {
                     this.setStep(4);
@@ -367,6 +381,10 @@ class SignUp extends React.Component {
                 } else if (result?.hasError) {
                     toast.error(result?.errors?.[0] ?? result?.errors);
                 }
+            })
+            .catch((err) => {
+                this.setState({ isLoading: false });
+                console.error(err);
             });
     };
 
@@ -420,6 +438,7 @@ class SignUp extends React.Component {
                                         emailIdentifierBackup={this.state?.emailIdentifierBackup}
                                         hideMobileRetry={this.state?.hideMobileRetry}
                                         hideEmailRetry={this.state?.hideEmailRetry}
+                                        isLoading={this.state?.isLoading}
                                     />
                                 </div>
                             )}
@@ -432,6 +451,7 @@ class SignUp extends React.Component {
                                     setStep={this.setStep}
                                     finalSubmit={this.finalSubmit}
                                     formData={this.state?.thirdStepData}
+                                    isLoading={this.state?.isLoading}
                                 />
                             )}
                             {this.state.activeStep === 4 && (

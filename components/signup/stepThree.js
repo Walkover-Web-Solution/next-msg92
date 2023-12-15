@@ -687,7 +687,7 @@ class StepThree extends React.Component {
                                     className="btn btn-login-prime c-fs-7"
                                     type="button"
                                     onClick={this.finalSubmit}
-                                    disabled={!this.state.formData.agreeToTerms}
+                                    disabled={!this.state.formData.agreeToTerms || this.props?.isLoading}
                                 >
                                     Next <MdKeyboardArrowRight />
                                 </button>
