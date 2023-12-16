@@ -92,12 +92,12 @@ const IntPage = () => {
           </div>
         </div>
       </div>
-      {/* <div className="container d-flex flex-column flex-sm-row align-items-center  gap-5 my-5">
+      <div className="container d-flex flex-column flex-sm-row align-items-center  gap-5 my-5">
         <p className="c-fs-2">
           Supercharge your Tally Prime experience with the MSG91 Tally Prime Plugin, unlocking unparalleled communication and automation capabilities. Save time, enhance communication, and gain precise control over financial transactions for streamlined invoicing and ledger management today.
         </p>
-        <img className="col-12 col-sm-6" src="/img/integrations/zapeir-graphics.svg" />
-      </div> */}
+        <img className="col-12 col-sm-6" src="/img/integrations/tally-graphics.svg" />
+      </div>
       <div className="container my-5">
         <h1 className="sub-heading c-head mb-3">
         The MSG91 Tally Prime Plugin Offers
