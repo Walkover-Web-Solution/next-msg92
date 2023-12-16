@@ -17,7 +17,7 @@ const IntPage = () => {
           <div>
             <h1 className="sub-heading">Tally Integration</h1>
             <h4 className="c-fs-4 mt-2">
-              Streamline Your Engagement Workflows
+              Send invoices and recover dues
             </h4>
           </div>
         </div>
@@ -32,7 +32,7 @@ const IntPage = () => {
             </div>
             <div className="p-3">
               <p className="c-fs-4 w-md-75 w-100 mx-auto fw-normal">
-                Revolutionize your Tally experience with MSG91's plugin - Automate invoice delivery via WhatsApp and Email, ensuring timely communication. Effortlessly send SMS and Voice messages for voucher creations and updations. Gain a competitive edge by sharing ledgers with customers, facilitating swift resolution of outstanding payments. Simplify and streamline your financial processes with our cutting-edge integration.
+                Automate invoice delivery via WhatsApp and Email, ensuring timely communication. Effortlessly send SMS and Voice messages for voucher creations and updations. Gain a competitive edge by sharing ledgers with customers, facilitating swift resolution of outstanding payments. Simplify and streamline your financial processes with our cutting-edge integration.
               </p>
               <a
                 href="https://msg91.com/help/MSG91/integrate-tally-with-msg91"
