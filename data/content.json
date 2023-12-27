@@ -815,26 +815,32 @@
       "pagetag":"SMS",
       "icon": "/img/icon/sms.svg",
       "tagline": "Next level messaging",
-      "heading": "Engage your customers globally with quick, scalable and customizable messages",
-      "subheading": "Integrate our developer-friendly APIs to send and receive text messages. Our distributed carrier network and intelligent routing ensure highest delivery and lowest latency.",
+      "heading": "Reach your customers globally with quick, scalable, and customizable message",
+      "subheading": "Integrate our developer-friendly SMS API to send and receive text messages. Our distributed carrier network and intelligent routing ensure the highest delivery and lowest latency.",
       "features": [
         {
           "img": "/img/feature/sms-intelligent-sms-routing.svg",
-          "heading": "Intelligent SMS Routing",
-          "subheading": "We find the most reliable route for every message.",
-          "content": "Your message is sent using your network telecom operator for fast delivery. Incase it fails, within fraction of seconds, we retry and deliver using other network operators."
+          "heading": "Intelligent SMS Retry Algorithm",
+          "subheading": "",
+          "content": "Our SMS API service finds the most reliable and quickest telecom route for every message you send. In case the SMS fails, our algorithm retries it within a fraction of a second and delivers your messages using another telecom route."
         },
         {
           "img": "/img/feature/sms-a-reliable-scalable-and-feature-rich-sms-api.svg",
-          "heading": "A reliable, scalable and feature-rich SMS API",
-          "subheading": "Integrate easily with our developer-friendly SMS API.",
-          "content": "Built for developers by developers, explore quick-start guides, code snippets, SDKs and more to smoothen the integration process. Available in all programming languages."
+          "heading": "Reliable, Scalable, and Feature-Rich SMS API",
+          "subheading": "",
+          "content": "Available in all programming languages, integration with our SMS API for developers is quick, easy, and seamless. Built for developers by developers, explore quick-start guides, code snippets, SDKs, and more."
+        },
+        {
+          "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
+          "heading": "Enjoy Low Latency Delivery-Worldwide",
+          "subheading": "",
+          "content": "Reach 210+ countries reliably with localized telecom operators. The automatic rerouting of global traffic in real-time helps us avoid outages and latency."
         },
         {
           "img": "/img/feature/sms-multi-lingual-support.svg",
-          "heading": "Multi-lingual support",
-          "subheading": "Converse with your audience in their local language.",
-          "content": "Take your engagement to the next level. Build customer confidence as you send messages in their regional or foreign language anywhere across the world."
+          "heading": "Multi-Lingual Support",
+          "subheading": "",
+          "content": "Converse with your audience in their local language and take your customer engagement to the next level. Build customer confidence as you send messages in their regional language anywhere across the world."
         },
         {
           "img": "/img/feature/sms-personalized-sms.svg",
@@ -844,22 +850,17 @@
         },
         {
           "img": "/img/feature/sms-link-shortener.svg",
-          "heading": "Link shortener",
-          "subheading": "Transform long URL in a shorter, more readable link.",
-          "content": "Enable the deeply integrated link shortener to convert long URL to shorter links. Get detailed user report on clicks from mobile numbers, browser and IP."
+          "heading": "Link Shortener",
+          "subheading": "Transform a long URL into a shorter, more readable link.",
+          "content": "Enable the deeply integrated link shortener to convert long URLs to shorter links. Get a detailed user report on clicks with mobile numbers, browser, and IP."
         },
         {
           "img": "/img/feature/sms-enhanced-analytics.svg",
           "heading": "Enhanced Analytics",
           "subheading": "Real-time graphical view for monitoring and troubleshooting.",
-          "content": "Optimize your SMS delivery, measure the effectiveness of your campaigns, improve ROI. Always know which messages customers have received and which are missed."
-        },
-        {
-          "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
-          "heading": "Enjoy reliable, low latency delivery-worldwide",
-          "subheading": "Reach 180+ countries reliably with localized senders.",
-          "content": "Our backend is optimized to process a very high volume of SMS. The automatic rerouting of global traffic in real-time helps us avoid outages and latency."
+          "content": "Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed."
         }
+        
       ],
       "morefeatures": [
         {"more": "Provide customer support via screen sharing on a single click"},

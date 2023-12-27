@@ -5,7 +5,8 @@ import TrustedBy from '../trustedby';
 import Seo from '../seoComp';
 
 import Prism from "prismjs";
-import "prismjs/themes/prism-tomorrow.css";
+//import "prismjs/themes/prism-tomorrow.css";
+import "prismjs/themes/prism-twilight.css";
 import snippetData from "@/pages/snippet.json"; 
 
 
@@ -41,10 +42,10 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
             {pageData.tagline}
           </p>
           <div className="p-3">
-              <h2 className="small-heading c-fw-b  w-md-75 w-100 mx-auto fw-normal mb-2">
+              <h2 className="sub-heading c-fw-xb  w-md-75 w-100 mx-auto mb-2">
                 {pageData.heading}
               </h2>
-              <p className="small-heading w-md-75 w-100 mx-auto fw-normal">
+              <p className="c-fs-4 w-md-75 w-100 mx-auto fw-normal">
                 {pageData.subheading}
               </p>
             </div>
