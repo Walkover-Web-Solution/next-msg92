@@ -3,7 +3,7 @@ const TrustedBy = () => {
     return(
         <>
         <div className="d-flex flex-column gap-3 my-md-5 my-2">
-            <span className="c-fs-3 ">Trusted by<span className="c-fw-sb"> 30,000+ </span>businesses</span>
+            <span className="c-fs-3 ">Trusted by<span className="c-fw-sb"> 30,000+ </span>global businesses</span>
             <div className="d-flex gap-4 gap-md-5 flex-wrap align-items-center">
                 <Image className="trustimage " src="/img/trusted/razorpay.svg" width="187" height="28" alt="Razorpay" title="Razorpay"/>
                 <Image className="trustimage " src="/img/trusted/xiaomi.svg" width="187" height="28" alt="Xiaomi" title="Xiaomi"/>
