@@ -1,5 +1,5 @@
 // Child Component
-import { React, useEffect } from 'react';
+import { React, useEffect, useState } from 'react';
 import PreFooter from '../preFooter';
 import TrustedBy from '../trustedby';
 import Seo from '../seoComp';
@@ -11,8 +11,9 @@ import snippetData from "@/pages/snippet.json";
 
 
 const ChannelComponent = ({ pageData, path, pricingPath }) => {    
-  var HTTPSnippet = require("httpsnippet");
+  var HTTPSnippet = require("httpsnippet");  
   var i = 0;
+  const [isCopied, setIsCopied] = useState(false);
   const handleSearch = () => {
     setDisplayValue(searchValue);
     fetchData(1);
@@ -21,9 +22,18 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
   useEffect(() => {
     if(pageData?.pagename !== 'Numbers'){
       Prism.highlightAll();
-    }    
+    }
   }, []);
 
+  const copyText = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 5000);    
+    } catch (err) {
+      console.error('Failed to Copy: ', err);
+    }
+  };
   
   const snippet = new HTTPSnippet(snippetData[pageData.pagename]);
   const node = snippet.convert("node");
@@ -53,14 +63,14 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                 {pageData.subheading}
               </p>
             </div>
-          <a href="https://control.msg91.com/signup/" target="_blank" className="btn btn-dark btn-lg c-fs-2 utm" >
+          <a href={`/signup?service=${pageData.pagename}`} target="_blank" className="btn btn-dark btn-lg c-fs-2 utm" >
             Get started
           </a>
         </div>
-          <TrustedBy />
+          <TrustedBy align={'center'} />
         {pageData?.pagename !== 'Numbers' &&
-          <div className='d-flex justify-content-center'>
-            <div className="code-wrp">
+          <div className='row justify-content-center'>
+            <div className="code-wrp col-lg-8 col-md-8 col-10">
               <ul
                 className="nav nav-pills justify-content-around"
                 id="pills-tab"
@@ -143,7 +153,11 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                   id="pills-cURL"
                   role="tabpanel"
                   aria-labelledby="pills-cURL-tab"
-                >                  
+                >
+                  <button className='copy-code btn btn-dark' onClick={() => copyText(cURL)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#999" d="M15 1H4c-1.1 0-2 .9-2 2v13c0 .55.45 1 1 1s1-.45 1-1V4c0-.55.45-1 1-1h10c.55 0 1-.45 1-1s-.45-1-1-1zm4 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1z"/></svg>
+                    {isCopied ? 'Copied!' : 'Copy'}
+                  </button>                  
                   <pre>
                     <code className={`language-javascript`}>{cURL}</code>
                   </pre>
@@ -154,26 +168,40 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                   role="tabpanel"
                   aria-labelledby="pills-node-tab"
                 >
+                  <button className='copy-code btn btn-dark' onClick={() => copyText(node)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#999" d="M15 1H4c-1.1 0-2 .9-2 2v13c0 .55.45 1 1 1s1-.45 1-1V4c0-.55.45-1 1-1h10c.55 0 1-.45 1-1s-.45-1-1-1zm4 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1z"/></svg>
+                    {isCopied ? 'Copied!' : 'Copy'}
+                  </button>
                   <pre>
                     <code className={`language-javascript`}>{node}</code>
                   </pre>
                 </div>
+
                 <div
                   className="tab-pane fade"
                   id="pills-php"
                   role="tabpanel"
                   aria-labelledby="pills-php-tab"
                 >
+                  <button className='copy-code btn btn-dark' onClick={() => copyText(php)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#999" d="M15 1H4c-1.1 0-2 .9-2 2v13c0 .55.45 1 1 1s1-.45 1-1V4c0-.55.45-1 1-1h10c.55 0 1-.45 1-1s-.45-1-1-1zm4 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1z"/></svg>
+                    {isCopied ? 'Copied!' : 'Copy'}
+                  </button>
                   <pre>
                     <code className={`language-javascript`}>{php}</code>
                   </pre>
                 </div>
+
                 <div
                   className="tab-pane fade"
                   id="pills-ruby"
                   role="tabpanel"
                   aria-labelledby="pills-ruby-tab"
                 >
+                  <button className='copy-code btn btn-dark' onClick={() => copyText(ruby)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#999" d="M15 1H4c-1.1 0-2 .9-2 2v13c0 .55.45 1 1 1s1-.45 1-1V4c0-.55.45-1 1-1h10c.55 0 1-.45 1-1s-.45-1-1-1zm4 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1z"/></svg>
+                    {isCopied ? 'Copied!' : 'Copy'}
+                  </button>
                   <pre>
                     <code className={`language-javascript`}>{ruby}</code>
                   </pre>
@@ -184,6 +212,10 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                   role="tabpanel"
                   aria-labelledby="pills-python-tab"
                 >
+                  <button className='copy-code btn btn-dark' onClick={() => copyText(python)}>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="#999" d="M15 1H4c-1.1 0-2 .9-2 2v13c0 .55.45 1 1 1s1-.45 1-1V4c0-.55.45-1 1-1h10c.55 0 1-.45 1-1s-.45-1-1-1zm4 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1z"/></svg>
+                    {isCopied ? 'Copied!' : 'Copy'}
+                  </button>
                   <pre>
                     <code className={`language-javascript`}>{python}</code>
                   </pre>
