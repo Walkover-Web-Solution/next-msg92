@@ -29,7 +29,7 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
                 {pageData?.subheading}
               </p>
             </div>
-            <a href="https://control.msg91.com/signup/" className="btn btn-dark btn-lg c-fs-2 mt-3 utm" >
+            <a href={`/signup?service=${pageData.pagename}`} className="btn btn-dark btn-lg c-fs-2 mt-3 utm" >
               {pageData.pagename === 'KnowledgeBase' && <span className='d-flex'>Get started <mark className='highlight ms-2'>FREE forever</mark></span>}
               {pageData.pagename !== 'KnowledgeBase' && <span>Get started for FREE</span>}
             </a>
