@@ -1,10 +1,10 @@
 import Image from "next/image";
-const TrustedBy = () => {
+const TrustedBy = ({align=null}) => {
     return(
         <>
-        <div className="d-flex flex-column gap-3 my-md-5 my-2">
+        <div className={`d-flex flex-column gap-3 my-md-5 my-2`}>
             <span className="c-fs-3 ">Trusted by<span className="c-fw-sb"> 30,000+ </span>global businesses</span>
-            <div className="d-flex gap-4 gap-md-5 flex-wrap align-items-center">
+            <div className={`d-flex gap-4 gap-md-5 flex-wrap align-items-center ${align == 'center' ? 'justify-content-center' : 'justify-content-start'}`}>
                 <Image className="trustimage " src="/img/trusted/razorpay.svg" width="187" height="28" alt="Razorpay" title="Razorpay"/>
                 <Image className="trustimage " src="/img/trusted/xiaomi.svg" width="187" height="28" alt="Xiaomi" title="Xiaomi"/>
                 <Image className="trustimage " src="/img/trusted/unacademy.svg" width="187" height="28" alt="Unacademy" title="Unacademy"/>
