@@ -1,23 +1,14 @@
 import { MdDone, MdClose, MdKeyboardArrowRight,MdAdd } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { Typeahead } from 'react-bootstrap-typeahead';
+//import countries from "@/data/countries-tmp.json";
+import axios from 'axios';
 
-const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }) => {
-  const [selectedMode, setSelectedMode] = useState("Monthly");
-  const [symbol, setSymbol] = useState("₹");
-  const [searchValue, setSearchValue] = useState("91");
-  const [pagination, setPagination] = useState(0);
-  const [pagesize, setPagesize] = useState(25);
-  const [pageNum, setPageNum] = useState(1);
-  const [displayValue, setDisplayValue] = useState("");
-  const [data, setData] = useState(null);
-  const [pulse, setPulse] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [paginationArray,setPaginationArray] = useState([]);
-
-  const changeCurrency = (currency) => {
-    fetchSubscriptionVoice(currency, "6");
+const PricingCalls = ({ countryCode }) => {
+  const [countries, setCountries] = useState();
+  const [price, setPrice] = useState();
+  /* const changeCurrency = (currency) => {  
     switch (currency) {
       case "INR":
         setSymbol("₹");
@@ -32,152 +23,112 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
         setSymbol("₹");
         break;
     }
-  };
+  }; */
 
-  const handleSearch = () => {
-    setDisplayValue(searchValue);
-    fetchData(1);
+  const fetchCountries = async () => {
+    const response = await axios.get(`https://testvoice.phone91.com/public/country/`, {
+      headers: {
+        withCredentials: false
+      },
+    });
+    //console.log('setCountries', response.data);
+    setCountries(response.data);    
   };
-
-  const fetchData = async (page) => {
-    setLoading(true);
-    setError(null);
-    setPageNum(page);
-    try {
-      const headers = {
-        Authorization: {
-          authkey: process.env.Authorization_authkey,
+  
+  const fetchPrice = async (cid) => {
+    console.log('fetchPrice1',cid, cid.length);
+    if(cid){
+      const response = await axios.get(`https://testvoice.phone91.com/public/pricing/?cid=${cid}&dialplan_id=244`, {
+        headers: {
+          withCredentials: false
         },
-        // other headers if required
-      };
-
-      const response = await fetch(
-        //`https://testvoice.phone91.com/public/dialplans/1?page_size=${pagesize}&page_num=${page}&prefix=${searchValue}`,
-        `https://voice.phone91.com/public/dialplans/8?page_size=${pagesize}&page_num=${page}&prefix=${searchValue}`,
-        {
-          headers: headers,
-        }
-      );
-
-      if (response.ok) {
-        const data = await response.json();
-        setData(data);
-        let getPulse = data.data.rates[0].billing.split("/");
-        setPulse(getPulse[0]);
-        const lenght = Math.ceil(data.data.count/pagesize)        
-        setPagination(lenght)
-        const d = Array.from({length: lenght}, (_, i) => i + 1)        
-        setPaginationArray(d)
-      } else {
-        throw new Error("Currently we only have plan for India(91)");
-      }
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
+      });    
+      setPrice(response.data);    
+      console.log('fetchPrice',cid, response.data);
     }
   };
-  var maindata = 0;
-  maindata = JSON.stringify(data, null, 2);
-  const router = useRouter();
-  const showDiv = router.asPath.includes("/in");
-  const handleKeyDown = (event) => {
-    if (event.keyCode === 13) {
-      // Perform search operation
-      handleSearch();
-    }
-  };
-
+  
   useEffect(() => {
-    fetchData(1);    
+    fetchCountries();    
   }, [countryCode]);
 
   return (
     <>
-        {showDiv ? (
-          <>
-            <label for="tie-id" className="fs-6 text-secondary mb-2">Enter Prefix, e.g. 91</label>
-            <div className="onlyin mb-5 d-flex col-3 mx-auto">
-              <div className="input-group mb-3">
-              {/* <span className=" arrow-search-btn">
-                  <MdAdd className="arrow-search" />
-                </span> */}
-                <input
-                  className="c-fs-3 form-control"
-                  type="text"
-                  placeholder="Enter Country Code"
-                  value={searchValue}
-                  onChange={(e) => setSearchValue(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                />
-                <span className=" btn btn-dark arrow-search-btn" onClick={handleSearch}>
-                  <MdKeyboardArrowRight className="arrow-search" />
-                </span>
-              </div>
-            </div>
+      <div className="row justify-content-center">
+        <div className="col-lg-4">          
+          <Typeahead
+            id="country"
+            placeholder="Country"
+            labelKey="name"
+            onChange={(selected) => {
+              if(selected.length){
+                console.log('on change', selected, selected.length, selected[0].id);
+                fetchPrice(selected[0].id)
+              }
+            }}
+            options={countries}
+            clearButton
+            /* defaultSelected={[countries?.find(item => item.country_code === countryCode)]} */
+          />
+        </div>        
+      </div>      
 
-            {loading ? (
-              <div>Loading...</div>
-            ) : error ? (
-              <div className="mb-5">{error}</div>
-            ) : data ? (
-                <div className="m-auto rate-table">
-                  <table className="table">
-                    <thead>
-                      <tr>                      
-                        <th scope="col">Prefix</th>
-                        <th scope="col">Rate <div className="c-fs-5">(Incoming/Outgoing)</div></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    {data.data.rates.map((rateObj, index) => (
-                      <tr key={`rate-${index}`}>                    
-                        <td>{rateObj.prefix}</td>
-                        <td>{rateObj.rate} <small>{data.data.currency_code}/Minute</small></td>
-                      </tr>                    
-                    ))}
-                    </tbody>                  
-                  </table>
-                  
-                  <div className="pb-5"></div>                  
-                  <div className="d-flex">
-                    <ul className="pagination m-auto">
-                      {pagination > 1 && 
-                        paginationArray.map((num)=>{
-                          return(
-                            <li className={`page-item ${ pageNum === num ? 'active' : ''}`} key={`page-${num}`} onClick={()=>fetchData(num)}>
-                              <a className="page-link">{num}</a>
-                            </li>  
-                          )
-                        })
-                        }           
-                    </ul>
-                  </div>
-                  {/* <div>1 Pluse = {pulse} seconds</div> */}
-                  <div className="mb-5 c-fs-5">                    
-                    <div>Incoming calls on Web - <strong>Free</strong></div>
-                  </div>                  
-                </div>                
-            ) : null}
-            <div className="nonin price-card rcs d-flex col-11 col-lg-10 flex-column mx-auto c-bg-grey p-4 gap-3 align-items-center">
-              <h3 className="c-fs=3">
-                Connect to our team for the customized pricing
-              </h3>
-              <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-4 btn btn-outline-dark mt-2">
-                Talk to an Expert
-            </button>
+      {price && (
+        <div>
+            <div>Outgoing call charges/min</div>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Network</th>
+                  <th>International rates</th>
+                  <th>Local rates</th>
+                </tr>
+              </thead>
+              <tbody>
+                {price.data.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.network}</td>
+                    <td>{`${item.international_rates_min} - ${item.international_rates_max}`}</td>
+                    <td>{`${item.local_rates_min} - ${item.local_rates_max}`}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            
+            <div>
+              <a href="">Click here</a> to download the detailed network and prefix wise pricing sheet.
             </div>
-          </>
-        ) : (
-          <div className="nonin price-card rcs d-flex col-6 col-lg-6 flex-column mx-auto c-bg-grey p-4 gap-3 align-items-center">
-            <h3 className="c-fs-3">
-              Connect to our team for the customized pricing
-            </h3>
-            <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-4 btn btn-outline-dark mt-2">
-              Talk to an Expert
-            </button>
-          </div>
-        )}
+            
+            <div>
+              Add-On Services
+            </div>
+            
+            <div>
+              <ul>
+                <li>Call recording</li>
+                <li>Call monitoring</li>
+                <li>Analytics</li>
+              </ul>
+              <ul>
+                <li>Call recording</li>
+                <li>Call monitoring</li>
+                <li>Analytics</li>
+              </ul>
+            </div>
+            
+            <div>All the Add-On Services are FREE of cost.</div>
+            
+            <div>
+              *<strong>International rate</strong>: calls are routed through premium A-Z routes and CLI can be any valid number. Calls without a CLI, with invalid CLI, with manipulated CLI, with CLI originated from unidentified, closed or unallocated prefix ranges, with CLI not in E.164 format, with CLI not matching ITU standards might be blocked or charged at the highest price.
+            </div>
+            <div>
+              *<strong>Origin Based Rate</strong>: calls originating in any country of the European Economic Area will be charged 
+            </div>
+            <div>
+              *<strong>Local Rate</strong>: calls are routed through local operators’ in-country network. Only numbers on your MSG91 account can be used.
+            </div>
+        </div>
+      )}
     </>
   );
 };
