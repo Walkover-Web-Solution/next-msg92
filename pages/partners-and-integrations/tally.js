@@ -27,12 +27,12 @@ const IntPage = () => {
           <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
             <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
               <h1 className={`heading page-title`}>
-                Revolutionize Your Tally Experience with MSG91 Tally Prime Plugin!
+                Send Invoices on Whatsapp and Email via Tally
               </h1>
             </div>
             <div className="p-3">
               <p className="c-fs-4 w-md-75 w-100 mx-auto fw-normal">
-                Automate invoice delivery via WhatsApp and Email, ensuring timely communication. Effortlessly send SMS and Voice messages for voucher creations and updations. Gain a competitive edge by sharing ledgers with customers, facilitating swift resolution of outstanding payments. Simplify and streamline your financial processes with our cutting-edge integration.
+                Automate your financial processes effortlessly with Tally. Streamline invoicing, effortlessly share ledgers, and efficiently recover outstanding amounts, all within the Tally platform.
               </p>
               <a
                 href="https://msg91.com/help/MSG91/integrate-tally-with-msg91"
