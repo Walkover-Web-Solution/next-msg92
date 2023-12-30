@@ -17,7 +17,7 @@ const IntPage = () => {
           <div>
             <h1 className="sub-heading">Tally Integration</h1>
             <h4 className="c-fs-4 mt-2">
-              Streamline Your Engagement Workflows
+              Send invoices and recover dues
             </h4>
           </div>
         </div>
@@ -27,12 +27,12 @@ const IntPage = () => {
           <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
             <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
               <h1 className={`heading page-title`}>
-                Revolutionize Your Tally Experience with MSG91 Tally Prime Plugin!
+                Send Invoices on Whatsapp and Email via Tally
               </h1>
             </div>
             <div className="p-3">
               <p className="c-fs-4 w-md-75 w-100 mx-auto fw-normal">
-                Revolutionize your Tally experience with MSG91's plugin - Automate invoice delivery via WhatsApp and Email, ensuring timely communication. Effortlessly send SMS and Voice messages for voucher creations and updations. Gain a competitive edge by sharing ledgers with customers, facilitating swift resolution of outstanding payments. Simplify and streamline your financial processes with our cutting-edge integration.
+                Automate your financial processes effortlessly with Tally. Streamline invoicing, effortlessly share ledgers, and efficiently recover outstanding amounts, all within the Tally platform.
               </p>
               <a
                 href="https://msg91.com/help/MSG91/integrate-tally-with-msg91"
@@ -41,6 +41,7 @@ const IntPage = () => {
               >
                 Get The Plugin
               </a>
+              <button className="btn btn-outling-dark c-fs-2 ms-3" data-bs-toggle="modal" data-bs-target="#plugin-modal">Schedule a meeting</button>
               {/* <h2 className="c-fs-4 w-md-75 w-100 mx-auto fw-normal">
               Effortlessly integrate SMS, Email, RCS, Voice, WhatsApp with Firebase / Firestore
               </h2> */}
@@ -91,12 +92,12 @@ const IntPage = () => {
           </div>
         </div>
       </div>
-      {/* <div className="container d-flex flex-column flex-sm-row align-items-center  gap-5 my-5">
+      <div className="container d-flex flex-column flex-sm-row align-items-center  gap-5 my-5">
         <p className="c-fs-2">
           Supercharge your Tally Prime experience with the MSG91 Tally Prime Plugin, unlocking unparalleled communication and automation capabilities. Save time, enhance communication, and gain precise control over financial transactions for streamlined invoicing and ledger management today.
         </p>
-        <img className="col-12 col-sm-6" src="/img/integrations/zapeir-graphics.svg" />
-      </div> */}
+        <img className="col-12 col-sm-6" src="/img/integrations/tally-graphics.svg" />
+      </div>
       <div className="container my-5">
         <h1 className="sub-heading c-head mb-3">
         The MSG91 Tally Prime Plugin Offers

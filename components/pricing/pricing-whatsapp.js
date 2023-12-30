@@ -97,23 +97,24 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsA
               :
                 <div className="card price-card whatsapp border-0 text-center mb-4 mb-sm-0 c-bg-grey">                
                   <div className="card-body justify-content-between">
-                    <h3 className="c-fs-3">{item.name}</h3>
+                    {/* <h3 className="c-fs-3">{item.name}</h3> */}
                     <h5 className="mt-2 c-fs-2 text-green">
                       {symbol}
                       {(selectedMode === 'Monthly') ? item.plan_amounts[0]?.plan_amount : item.plan_amounts[1].plan_amount}
-                      /
-                      {(selectedMode === 'Monthly') ? 'Monthly' : 'Yearly'}
+                      {/* /
+                      {(selectedMode === 'Monthly') ? 'Monthly' : 'Yearly'} */}
                     </h5>
                     <p className="c-fs-5">+</p>
                     <a href="https://developers.facebook.com/docs/whatsapp/pricing" target="_blank" className="c-fs-5">WhatsApp Pricing</a>
-                    <p className="c-fs-5"> 
-                      {(item.plan_amounts[0]?.plan_amount === 0) ? '' : '+18%GST'}
+                    <p className="c-fs-5">+</p>
+                    <p className="c-fs-5">                      
+                      {(selectedCurrency === 'INR') ? 'GST' : 'Taxes'}
                     </p>
                     <div className="c-fs-5 mt-2">
-                      <span className="text-success c-fs-3">
+                      {/* <span className="text-success c-fs-3">
                         <MdDone />
                       </span>
-                      Free balance of {symbol} {item.plan_services[0].service_credit.service_credit_rates[0].free_credits}
+                      Free balance of {symbol} {item.plan_services[0].service_credit.service_credit_rates[0].free_credits} */}
                     </div>                    
                     <a href="/signup?service=whatsapp" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
                       Get Started
@@ -125,7 +126,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsA
             )
           }):''
       }
-        <div className="card price-card whatsapp border-0 text-center mb-4 mb-sm-0 c-bg-grey">
+        {/* <div className="card price-card whatsapp border-0 text-center mb-4 mb-sm-0 c-bg-grey">
           <div className="card-body justify-content-between">
             <h3 className="c-fs-3">CUSTOM</h3>                  
             <p className="c-fs-5">Talk to sales for a customized plan.</p>
@@ -133,10 +134,11 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsA
               Talk to sales
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="c-fs-5 mt-5">
-        MSG91 takes one time fee <strong>{symbol}{oneTimeWtsAppFee}</strong> to set up your WhatsApp Business account.
+        {/* MSG91 takes one time fee <strong>{symbol}{oneTimeWtsAppFee}</strong> to set up your WhatsApp Business account. */}
+        Since we do not impose any service charge, <strong>{(selectedCurrency === 'INR') ? 'GST' : 'Taxes'}</strong> will be applied to WhatsApp pricing        
       </div>
     </>
   );
