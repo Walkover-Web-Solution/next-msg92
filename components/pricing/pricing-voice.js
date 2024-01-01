@@ -74,58 +74,61 @@ const PricingCalls = ({ countryCode }) => {
       </div>      
 
       {price && (
-        <div>
-            <div>Outgoing call charges/min</div>
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Network</th>
-                  <th>International rates</th>
-                  <th>Local rates</th>
-                </tr>
-              </thead>
-              <tbody>
-                {price.data.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.network}</td>
-                    <td>{`${item.international_rates_min} - ${item.international_rates_max}`}</td>
-                    <td>{`${item.local_rates_min} - ${item.local_rates_max}`}</td>
+        <div className="voice-price-table">
+            
+            <div className="d-flex flex-column justify-content-center py-3">
+              <div className="mb-2">Outgoing call charges/min</div>
+              <table className="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Network</th>
+                    <th>International rates</th>
+                    <th>Local rates</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {price.data.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item.network}</td>
+                      <td>{`${item.international_rates_min} - ${item.international_rates_max}`}</td>
+                      <td>{`${item.local_rates_min} - ${item.local_rates_max}`}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
             
             <div>
               <a href="">Click here</a> to download the detailed network and prefix wise pricing sheet.
             </div>
             
-            <div>
-              Add-On Services
+            <div className="d-flex justify-content-center">
+              <div className="add-on-services my-5 w-auto">
+                <strong>Add-On Services</strong>
+                  <div className="d-flex justify-content-center services">
+                    <ul className="me-5">
+                      <li>Call recording</li>
+                      <li>Call monitoring</li>
+                      <li>Analytics</li>
+                    </ul>
+                    <ul className="">
+                      <li>Call recording</li>
+                      <li>Call monitoring</li>
+                      <li>Analytics</li>
+                    </ul>
+                  </div>
+                <div>All the Add-On Services are FREE of cost.</div>
+              </div>
             </div>
             
-            <div>
-              <ul>
-                <li>Call recording</li>
-                <li>Call monitoring</li>
-                <li>Analytics</li>
-              </ul>
-              <ul>
-                <li>Call recording</li>
-                <li>Call monitoring</li>
-                <li>Analytics</li>
-              </ul>
-            </div>
-            
-            <div>All the Add-On Services are FREE of cost.</div>
-            
-            <div>
-              *<strong>International rate</strong>: calls are routed through premium A-Z routes and CLI can be any valid number. Calls without a CLI, with invalid CLI, with manipulated CLI, with CLI originated from unidentified, closed or unallocated prefix ranges, with CLI not in E.164 format, with CLI not matching ITU standards might be blocked or charged at the highest price.
-            </div>
-            <div>
-              *<strong>Origin Based Rate</strong>: calls originating in any country of the European Economic Area will be charged 
-            </div>
-            <div>
-              *<strong>Local Rate</strong>: calls are routed through local operators’ in-country network. Only numbers on your MSG91 account can be used.
+            <div className="d-flex justify-content-center">
+              <div className="notes w-75">
+                *<strong>International rate</strong>: calls are routed through premium A-Z routes and CLI can be any valid number. Calls without a CLI, with invalid CLI, with manipulated CLI, with CLI originated from unidentified, closed or unallocated prefix ranges, with CLI not in E.164 format, with CLI not matching ITU standards might be blocked or charged at the highest price.            
+                <br></br>
+                *<strong>Origin Based Rate</strong>: calls originating in any country of the European Economic Area will be charged             
+                <br></br>
+                *<strong>Local Rate</strong>: calls are routed through local operators’ in-country network. Only numbers on your MSG91 account can be used.
+              </div>
             </div>
         </div>
       )}

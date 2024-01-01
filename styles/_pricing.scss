@@ -138,3 +138,17 @@ box-sizing: border-box;
     background-color: #29A653;
   }
 }
+
+.voice-price-table{
+  .add-on-services{
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--bs-border-color);
+    ul{      
+      text-align: left;
+    }
+  }
+  .notes{
+    text-align: left;
+  }
+}
