@@ -169,19 +169,19 @@ class logIn extends React.Component {
                                     </GoogleOAuthProvider>
                                     <button
                                         onClick={() => this.loginWithOutlook()}
-                                        className="devlogin__btn__btn btn rounded social-btn d-flex justify-content-center align-items-center"
+                                        className="devlogin__btn__btn d-flex justify-content-center align-items-center"
                                     >
                                         <img src="/img/microsoft-svg.svg" />
                                     </button>
                                     <button
                                         onClick={() => this.loginWithZoho()}
-                                        className="devlogin__btn__btn btn rounded zogo-btn social-btn d-flex justify-content-center align-items-center"
+                                        className="devlogin__btn__btn d-flex justify-content-center align-items-center"
                                     >
                                         <img src="/img/icon-zogo.svg" />
                                     </button>
 
                                     <a href={undefined} onClick={() => this.loginWithGitHub()}>
-                                        <button className="devlogin__btn__btn btn rounded git-btn social-btn d-flex justify-content-center align-items-center">
+                                        <button className="devlogin__btn__btn d-flex justify-content-center align-items-center">
                                             <img src="/img/icon-github.svg" />
                                         </button>
                                     </a>
@@ -193,7 +193,7 @@ class logIn extends React.Component {
                             </span>
 
                             <button
-                                className="signin__right__login btn btn-login-prime c-fs-7"
+                                className="signin__right__login btn btn-dark-o c-fs-7"
                                 onClick={() => this.initOTPWidget(true)}
                             >
                                 Login with OTP
