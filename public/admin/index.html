@@ -22,13 +22,31 @@
     }
   </script>
 
-<script>
+<!-- <script>
   CMS.registerEventListener({
     name: 'preSave',
     handler: ({ entry }) => {
       var slugData = entry.get('data')._root.entries[2][1];
       slugData = slugData.replace(/[^\w\s]/gi, '')
       slugData = slugData.trim().toLowerCase().replace(/\s+/g,"-");
+      return entry.get('data').set('slug', slugData);
+    },
+  });
+</script> -->
+
+<script>
+  CMS.registerEventListener({
+    name: 'preSave',
+    handler: ({ entry }) => {
+      var slugData = entry.get('data')._root.entries[2][1];
+      if (/^\w{3} \w{3} \d{1,2} \d{4} \d{1,2}:\d{1,2}:\d{1,2} GMT[+-]\d{1,4} \(.+\)$/.test(slugData)) {
+        // Format matches Thu Dec 21 2023 15:30:35 GMT+0530 (India Standard Time)
+        slugData = entry.get('data')._root.entries[1][1];
+      } else {
+        // Format doesn't match, proceed with the original slugData
+        slugData = slugData.replace(/[^\w\s]/gi, '');
+        slugData = slugData.trim().toLowerCase().replace(/\s+/g, "-");
+      }
       return entry.get('data').set('slug', slugData);
     },
   });

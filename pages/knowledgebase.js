@@ -6,7 +6,7 @@ import json from "../data/content.json";
 export async function getStaticProps() {
   
   try {
-      // prompt through webhook with help of axios
+      /* // prompt through webhook with help of axios
       const axios = require("axios");
       const options = {
           //url of webhook
@@ -22,7 +22,8 @@ export async function getStaticProps() {
 
       //response of axios taking through webhook
       const data = await axios(options);
-      var webhookData = data.data.rows || null;
+      var webhookData = data.data.rows; */
+      var webhookData = null;
     } catch (error) {
       console.log("inside CATCH webhook function");
       console.log("error: ", error);
