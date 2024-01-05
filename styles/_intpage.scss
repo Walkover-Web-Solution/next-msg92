@@ -47,6 +47,13 @@
       }
     }
   }
+  .tally-video{
+    video{
+      border-radius: 16px;
+      overflow: none;
+      border: 1px solid #ddd;
+    }
+  }
   
   .col-int {
     @include intpagecol();

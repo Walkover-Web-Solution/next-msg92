@@ -1,13 +1,24 @@
 import TrustedBy from "components/trustedby";
 import { MdDone } from "react-icons/md";
+import React, { useRef } from 'react';
 
 const IntPage = () => {
+  const videoRef = useRef();
   // const router = useRouter();
   // var browserPath = router.asPath;
   // var intpage = browserPath.split("/")[2];
   // console.log(intpage);
   // var intData = data?.[intpage];
   // console.log(intData);
+
+  const handleVideoClick = () => {
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      videoRef.current.controls = true;
+    } else {
+      videoRef.current.pause();
+    }
+  };
 
   return (
     <>
@@ -52,6 +63,17 @@ const IntPage = () => {
             className="img-fluid product-page-img mx-auto"
             alt="#"
           /> */}
+        </div>
+      </div>
+      <div className="product-banner-wrp">
+        <div className="d-flex justify-content-center tally-video my-5">
+          <video
+            ref={videoRef}
+            onClick={handleVideoClick}
+            height={600} preload="none" poster="https://storage.googleapis.com/production-file-system/293020/gkacnbuk">
+            <source src="https://storage.googleapis.com/production-file-system/293020/yzeokyfz" type="video/mp4" />        
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
       <div className="container d-flex flex-column justify-content-center my-5 py-4 text-center">
