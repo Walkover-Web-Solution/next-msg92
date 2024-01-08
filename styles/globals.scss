@@ -20,7 +20,7 @@ body {
   background-color: #d1fa00 !important;
 }
 .bg-light{
-  background: #FAFAFA;
+  background: var(--light-grey-bg);
 }
 .pr{
   position: relative;

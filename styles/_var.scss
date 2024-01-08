@@ -19,7 +19,12 @@
     --c-fs-3:clamp(1.15rem,1.5vw,1.25rem);//20px - 18px
     --c-fs-4:clamp(0.875rem, 2vw + 0.25rem, 1.25rem);//14px - 20px
     --c-fs-5:clamp(0.875rem,1vw,1rem);// 14px
+
+    
     --c-fw-600: 600;
+    --c-fw-400: 400;
+    --c-fw-500: 500;
+
 
     // colors
     --primary-color: #1E75BA;
@@ -39,6 +44,7 @@
     --voice-light: rgba(105, 107, 239, 0.12);
     --rcs-light:  rgba(56, 146, 224, 0.12);
     --border-color: #ddd;
+    --light-grey-bg: #FAFAFA;
     
     /* product colors */
     --sms :#1E75BA;

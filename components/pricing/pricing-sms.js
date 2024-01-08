@@ -34,9 +34,10 @@ const Pricingsms = ({
   return (
     <>
      <div>
-     { originCountry?.length >= 1 && <div className="gap-3 d-flex flex-column flex-md-row   align-items-cnetre justify-content-center col-12 col-md-10 col-lg-7 m-auto pb-5">
+     { originCountry?.length >= 1 && <div className="gap-3 w-100 d-flex flex-column text-start flex-md-row align-items-center justify-content-start col-12 col-md-10 col-lg-7 pb-5">
+      <span className="Send-sms fw-bold">Send SMS from</span>
        <Typeahead
-       className="w-100"
+       className="w-25"
           id="originCountry"
           placeholder="Origin Country"
           labelKey="name"
@@ -53,10 +54,10 @@ const Pricingsms = ({
           }}
         />
 
-        <div className="px-4">To</div>
+        <div>To</div>
 
         <Typeahead
-       className="w-100"
+       className="w-25"
           id="destinationCountry"
           placeholder="Destination Country"
           labelKey="name"

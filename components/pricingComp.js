@@ -11,16 +11,16 @@ import Pricingsegmento from "@/components/pricing/pricing-segmento";
 import Pricingcampaign from "@/components/pricing/pricing-campaign";
 import Pricingrcs from "@/components/pricing/pricing-rcs";
 import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
-import Link from "next/link"; 
+import Link from "next/link";
 import { getCookie } from "@/components/utils";
 
-export function setUtm(){
+export function setUtm() {
   // Get all anchor tags in the document using querySelectorAll
   var anchorTags = document.querySelectorAll(".utm");
   // Loop through the anchor tags
   for (var i = 0; i < anchorTags.length; i++) {
     var href = anchorTags[i].getAttribute("href"); // Get the current href value
-    var query = getCookie('msg91_query');
+    var query = getCookie("msg91_query");
     if (href && query) {
       anchorTags[i].setAttribute("href", href + query);
     }
@@ -29,12 +29,10 @@ export function setUtm(){
 
 const PricingComp = ({ countryCode, product, browserPath }) => {
   var pathLength = browserPath?.split("/")[1].length;
-  var pathLengthCond = true
-  if (pathLength === 2)
-  {
+  var pathLengthCond = true;
+  if (pathLength === 2) {
     pathLengthCond = true;
-  }
-  else{
+  } else {
     pathLengthCond = false;
   }
   var [pricing, setPricing] = useState([]);
@@ -49,9 +47,9 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
   var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
   var [subscriptionSegmento, setSubscriptionSegmento] = useState([]);
   var [subscriptionHello, setSubscriptionHello] = useState([]);
-  const[fetchCurrency, setfetchCurrency] = useState();
+  const [fetchCurrency, setfetchCurrency] = useState();
   const [fetchMsId, setfetchMsId] = useState("");
-  const[states, setStates] = useState()
+  const [states, setStates] = useState();
 
   const changeCurrencySymbol = async (currency) => {
     if (currency == "INR") {
@@ -65,44 +63,41 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
       setOneTimeWtsAppFee("40");
     }
   };
-  const fetchemailData =async()=>{
+  const fetchemailData = async () => {
     setfetchCurrency(currency);
     setfetchMsId("1");
     setStates("subscriptionEmail");
-    fetchSubscription(currency,"1","subscriptionEmail")
-  }
-  const fetchSegmentoData = async()=>{
+    fetchSubscription(currency, "1", "subscriptionEmail");
+  };
+  const fetchSegmentoData = async () => {
     setfetchCurrency(currency);
     setfetchMsId("2");
     setStates("subscriptionSegmento");
-    fetchSubscription(currency,"2","subscriptionSegmento")
-  }
-  const fetchHelloData = async()=>{
+    fetchSubscription(currency, "2", "subscriptionSegmento");
+  };
+  const fetchHelloData = async () => {
     setfetchCurrency(currency);
     setfetchMsId("7");
     setStates("SubscriptionHello");
-    fetchSubscription(currency,"7","subscriptionHello")
-  }
-  const fetchWhatsAppData = async()=>{
+    fetchSubscription(currency, "7", "subscriptionHello");
+  };
+  const fetchWhatsAppData = async () => {
     setfetchCurrency(currency);
     setfetchMsId("5");
     setStates("SubscriptionWhatsapp");
-    fetchSubscription(currency,"5","SubscriptionWhatsapp")
-  }
-  useEffect(()=>{
-    if(product === "email"){
-      fetchemailData(currency)
+    fetchSubscription(currency, "5", "SubscriptionWhatsapp");
+  };
+  useEffect(() => {
+    if (product === "email") {
+      fetchemailData(currency);
+    } else if (product === "segmento") {
+      fetchSegmentoData(currency);
+    } else if (product === "whatsapp") {
+      fetchWhatsAppData(currency);
+    } else if (product === "hello") {
+      fetchHelloData(currency);
     }
-    else if(product === "segmento"){
-      fetchSegmentoData(currency)
-      }
-    else if(product === "whatsapp"){
-    fetchWhatsAppData(currency)
-    }
-    else if(product === "hello"){
-      fetchHelloData(currency)
-      }
-  },[product, currency]);
+  }, [product, currency]);
   const fetchSMSData = async (currency, origin, destination) => {
     setOriginCountry(origin);
     setDestinationCountry(destination);
@@ -110,16 +105,16 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
     changeCurrencySymbol(currency);
     try {
       const fetchRequests = amountArr.map(async (amount) => {
-        const response = await axios.get(
-          `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-          )
+        // const response = await axios.get(
+        //   `https://api.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
+        //   )
 
-        /* const response = await axios.get(
+        const response = await axios.get(
           `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
-        ); */
+        );
         return response.data.data;
       });
-  
+
       const newData = await Promise.all(fetchRequests);
       setPricing([...newData]);
     } catch (error) {
@@ -127,7 +122,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
       console.error("Error fetching pricing details:", error);
     }
   };
-  const fetchSubscription = async (currency, msId,state) => {
+  const fetchSubscription = async (currency, msId, state) => {
     try {
       changeCurrencySymbol(currency);
       const response = await axios.get(
@@ -140,182 +135,229 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
         case "SubscriptionWhatsapp":
           setSubscriptionWhatsapp([...response.data.data]);
           break;
-          case "subscriptionSegmento":
-            setSubscriptionSegmento([...response.data.data]);
-            break;
-          case "SubscriptionVoice":
-            setSubscriptionVoice([...response.data.data]);
-            break;
-          case "subscriptionHello":
-            setSubscriptionHello([...response.data.data]);
-            break;
+        case "subscriptionSegmento":
+          setSubscriptionSegmento([...response.data.data]);
+          break;
+        case "SubscriptionVoice":
+          setSubscriptionVoice([...response.data.data]);
+          break;
+        case "subscriptionHello":
+          setSubscriptionHello([...response.data.data]);
+          break;
         default:
           break;
       }
-      
     } catch (error) {
       // throw new Error("Some error on server: " + error.message);
     }
   };
-  
+
   const findCountry = async (code) => {
     const response = await countries?.find((el) => el.sortname === code);
     setCurrency(response?.currency);
     fetchSMSData(response?.currency, response?.name, response?.name);
 
-    if(product === "email"){
+    if (product === "email") {
       fetchemailData(response?.currency);
-    }
-    else if(product === "segmento"){
+    } else if (product === "segmento") {
       fetchSegmentoData(response?.currency);
-    }
-    else if(product === "whatsapp"){
+    } else if (product === "whatsapp") {
       fetchWhatsAppData(response?.currency);
-    }
-    else if(product === "hello"){
+    } else if (product === "hello") {
       fetchHelloData(response?.currency);
     }
-  };  
+  };
 
   useEffect(() => {
-    findCountry(countryCode);    
+    findCountry(countryCode);
   }, [countryCode]);
 
-
   return (
-    <>      
-      <div>
+    <>
+      <div className="container-fluid main-container m-0 d-flex ">
         <div
-          className=" my-4 d-flex w-100 gap-2 align-items-center justify-content-center flex-wrap"
+          className="d-flex flex-column gap-2 align-items-start"
           id="pricing-pills-tab"
         >
+          <h1 className="fw-bold fs-6">Application</h1>
+
+          {/* link for hello */}
+          <Link
+            href={
+              pathLengthCond
+                ? "/" + countryCode.toLowerCase() + "/pricing/hello"
+                : "/pricing/hello"
+            }
+            className={`nav-item ${product === "hello" ? "active" : ""}`}
+            id="hello-btn"
+            onClick={() => {
+              fetchSubscription(currency, "7", "subscriptionHello");
+            }}
+          >
+            <span className="nav-link d-flex flex-column align-items-start justify-content-center">
+              <span className="fw-bold">
+                <img src="/img/icon/hello.svg" alt="#" className="icon" />
+                Hello
+              </span>
+              <span className="base">Contact center</span>
+            </span>
+          </Link>
+
+          {/* link for campaign */}
+          <Link
+            href={
+              pathLengthCond
+                ? "/" + countryCode.toLowerCase() + "/pricing/campaign"
+                : "/pricing/campaign"
+            }
+            className={`nav-item ${product === "campaign" ? "active" : ""}`}
+            id="campaign-btn"
+          >
+            <span className="nav-link d-flex flex-column align-items-start justify-content-center">
+              <span className="fw-bold">
+                <img src="/img/icon/campaign.svg" alt="#" className="icon" />
+                Campaign
+              </span>
+              <span className="base">Event-bassed automation</span>
+            </span>
+          </Link>
+
+          {/* link for segmento */}
+          <Link
+            href={
+              pathLengthCond
+                ? "/" + countryCode.toLowerCase() + "/pricing/segmento"
+                : "/pricing/segmento"
+            }
+            className={`nav-item ${product === "segmento" ? "active" : ""}`}
+            id="segmento-btn"
+            onClick={() => {
+              fetchSubscription(currency, "2", "subscriptionSegmento");
+            }}
+          >
+            <span className="nav-link d-flex flex-column align-items-start justify-content-center">
+              <span className="fw-bold">
+                <img src="/img/icon/segmento.svg" alt="#" className="icon" />
+                Segmento
+              </span>
+              <span className="base">Contact management</span>
+            </span>
+          </Link>
+
+          {/* for OTP */}
+          <Link
+            href={
+              pathLengthCond
+                ? "/" + countryCode.toLowerCase() + "/pricing/rcs"
+                : "/pricing/rcs"
+            }
+            className={`nav-item ${product === "rcs" ? "active" : ""}`}
+            id="rcs-btn"
+          >
+            <span className="nav-link d-flex flex-column align-items-start justify-content-center">
+              <span className="fw-bold">
+                <img src="/img/icon/otp.svg" alt="#" className="icon" />
+                OTP
+              </span>
+              <span className="base">OTP widget SDK</span>
+            </span>
+          </Link>
+
+          <span className="side-bar-heading fw-bold p-2">Channels</span>
+
           {/* for sms */}
           <Link
-            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/sms":"/pricing/sms"}
-            className={`nav-item ${product === 'sms' ? 'active' : ''}`}
+            href={
+              pathLengthCond
+                ? "/" + countryCode.toLowerCase() + "/pricing/sms"
+                : "/pricing/sms"
+            }
+            className={`nav-item ${product === "sms" ? "active" : ""}`}
             id="sms-btn"
             onClick={() => {
               fetchSMSData(currency, originCountry, destinationCountry);
             }}
           >
-            <span className="nav-link ">
-              <img src="/img/icon/sms.svg" alt="#" className="icon"/>
+            <span className="nav-link fw-bold">
+              <img src="/img/icon/sms.svg" alt="#" className="icon" />
               SMS
             </span>
           </Link>
 
-          {/* for email */}
+          {/* link for Send otp */}
           <Link
-            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/email":"/pricing/email"}
-            className={`nav-item ${product === 'email' ? 'active' : ''}`}
-            id="email-btn"
-            onClick={() => {
-              fetchSubscription(currency, "1","subscriptionEmail");
-            }}
-          >
-            <span className="nav-link"> 
-              <img src="/img/icon/email.svg" alt="#" className="icon" />
-              Email
-            </span>
-          </Link>
-
-          {/* for voice */}
-          <Link
-            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/voice":"/pricing/voice"}
-            className={`nav-item ${product === 'voice' ? 'active' : ''}`}
-            id="voice-btn"
-          >
-            <span className="nav-link">
-              <img src="/img/icon/voice.svg" alt="#" className="icon" />
-              Voice
-            </span>
-          </Link>
-
-          {/* for whatsapp */}
-          <Link
-           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/whatsapp":"/pricing/whatsapp"}
-            className={`nav-item ${product === 'whatsapp' ? 'active' : ''}`}
-            id="wp-btn"
-            onClick={() => {
-              fetchSubscription(currency, "5","SubscriptionWhatsapp");
-            }}
-          >
-            <span className="nav-link">
-              <img src="/img/icon/whatsapp.svg" alt="#" className="icon" />
-              WhatsApp
-            </span>
-          </Link>
-
-          {/* for RCS */}
-          <Link
-          href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/rcs":"/pricing/rcs"}
-           className={`nav-item ${product === 'rcs' ? 'active' : ''}`}
-            id="rcs-btn"
-            >
-            <span className="nav-link">
-              <img src="/img/icon/rcs.svg" alt="#" className="icon" />
-              RCS
-            </span>
-          </Link>
-
-          {/* link for otp */}
-          <Link
-           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/otp":"/pricing/otp"}
-            className={`nav-item ${product === 'otp' ? 'active' : ''}`}
+            href={
+              pathLengthCond
+                ? "/" + countryCode.toLowerCase() + "/pricing/otp"
+                : "/pricing/otp"
+            }
+            className={`nav-item ${product === "otp" ? "active" : ""}`}
             id="otp-btn"
             onClick={() => {
               fetchSMSData(currency, originCountry, destinationCountry);
             }}
           >
-            <span className="nav-link">
-              <img src="/img/icon/otp.svg" alt="#" className="icon"/>
-              OTP
+            <span className="nav-link fw-bold">
+              <img src="/img/icon/otp.svg" alt="#" className="icon" />
+              Send OTP
             </span>
           </Link>
 
-           {/* link for hello */}
+          {/* for email */}
           <Link
-           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/hello":"/pricing/hello"}
-           className={`nav-item ${product === 'hello' ? 'active' : ''}`}
-           id="hello-btn"
-           onClick={()=>{
-            fetchSubscription(currency, "7","subscriptionHello");
-           }}
-            >
-            <span className="nav-link">
-              <img src="/img/icon/hello.svg" alt="#" className="icon" />
-              Hello
-            </span>
-          </Link>
-
-           {/* link for segmento */}
-          <Link
-            href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/segmento":"/pricing/segmento"}
-            className={`nav-item ${product === 'segmento' ? 'active' : ''}`}
-            id="segmento-btn"
+            href={
+              pathLengthCond
+                ? "/" + countryCode.toLowerCase() + "/pricing/email"
+                : "/pricing/email"
+            }
+            className={`nav-item ${product === "email" ? "active" : ""}`}
+            id="email-btn"
             onClick={() => {
-              fetchSubscription(currency, "2","subscriptionSegmento");
+              fetchSubscription(currency, "1", "subscriptionEmail");
             }}
           >
-            <span className="nav-link">
-              <img src="/img/icon/segmento.svg" alt="#" className="icon"/>
-              Segmento
+            <span className="nav-link fw-bold">
+              <img src="/img/icon/email.svg" alt="#" className="icon" />
+              Email
             </span>
           </Link>
 
-           {/* link for campaign */}
-          <Link 
-           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/campaign":"/pricing/campaign"}
-           className={`nav-item ${product === 'campaign' ? 'active' : ''}`}
-            id="campaign-btn"
-            >
-            <span className="nav-link">
-              <img src="/img/icon/campaign.svg" alt="#" className="icon"/>
-              Campaign
+          {/* for whatsapp */}
+          <Link
+            href={
+              pathLengthCond
+                ? "/" + countryCode.toLowerCase() + "/pricing/whatsapp"
+                : "/pricing/whatsapp"
+            }
+            className={`nav-item ${product === "whatsapp" ? "active" : ""}`}
+            id="wp-btn"
+            onClick={() => {
+              fetchSubscription(currency, "5", "SubscriptionWhatsapp");
+            }}
+          >
+            <span className="nav-link fw-bold">
+              <img src="/img/icon/whatsapp.svg" alt="#" className="icon" />
+              WhatsApp
             </span>
           </Link>
-          
-           {/* link for knowledgebase */}
+
+          {/* for voice */}
+          <Link
+            href={
+              pathLengthCond
+                ? "/" + countryCode.toLowerCase() + "/pricing/voice"
+                : "/pricing/voice"
+            }
+            className={`nav-item ${product === "voice" ? "active" : ""}`}
+            id="voice-btn"
+          >
+            <span className="nav-link fw-bold">
+              <img src="/img/icon/voice.svg" alt="#" className="icon" />
+              Voice
+            </span>
+          </Link>
+
+          {/* link for knowledgebase */}
           {/* <Link
           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/knowledgebase":"/pricing/knowledgebase"}
            className={`nav-item ${product === 'knowledgebase' ? 'active' : ''}`}
@@ -326,96 +368,288 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
               KnowledgeBase
             </span>
           </Link> */}
+        </div>
+        <div className="container price-container">
+          {product === "sms" && (
+            <Pricingsms
+              amountArr={amountArr}
+              pricing={pricing}
+              setPricing={setPricing}
+              fetchSMSData={fetchSMSData}
+              originCountry={originCountry}
+              setOriginCountry={setOriginCountry}
+              destinationCountry={destinationCountry}
+              setDestinationCountry={setDestinationCountry}
+              currency={currency}
+              currencySymbol={currencySymbol}
+            />
+          )}
 
-
+          {product === "email" && (
+            <Pricingemail
+              setSubscriptionEmail={setSubscriptionEmail}
+              subscriptionEmail={subscriptionEmail}
+              fetchSubscriptionEmail={fetchSubscription}
+              currency={currency}
+              currencySymbol={currencySymbol}
+              countryCode={countryCode}
+            />
+          )}
+          {product === "voice" && (
+            <Pricingvoice
+              subscriptionVoice={subscriptionVoice}
+              fetchSubscriptionVoice={fetchSubscription}
+              currency={currency}
+              state={"SubscriptionVoice"}
+              setCurrencySymbol={setCurrencySymbol}
+              countryCode={countryCode}
+            />
+          )}
+          {product === "whatsapp" && (
+            <Pricingwp
+              subscriptionWhatsapp={subscriptionWhatsapp}
+              fetchSubscriptionWhatsapp={fetchSubscription}
+              currency={currency}
+              currencySymbol={currencySymbol}
+              oneTimeWtsAppFee={oneTimeWtsAppFee}
+              countryCode={countryCode}
+            />
+          )}
+          {product === "rcs" && <Pricingrcs />}
+          {product === "otp" && (
+            <Pricingotp
+              amountArr={amountArr}
+              pricing={pricing}
+              setPricing={setPricing}
+              fetchSMSData={fetchSMSData}
+              originCountry={originCountry}
+              setOriginCountry={setOriginCountry}
+              destinationCountry={destinationCountry}
+              setDestinationCountry={setDestinationCountry}
+              currency={currency}
+              currencySymbol={currencySymbol}
+            />
+          )}
+          {product === "hello" && (
+            <Pricinghello
+              setSubscriptionHello={setSubscriptionHello}
+              subscriptionHello={subscriptionHello}
+              fetchSubscriptionHello={fetchSubscription}
+              currency={currency}
+              state={"SubscriptionHello"}
+              setCurrencySymbol={setCurrencySymbol}
+              countryCode={countryCode}
+            />
+          )}
+          {product === "segmento" && (
+            <Pricingsegmento
+              subscriptionSegmento={subscriptionSegmento}
+              setSubscriptionSegmento={setSubscriptionSegmento}
+              fetchSubscriptionSegmento={fetchSubscription}
+              currency={currency}
+              state={"subscriptionSegmento"}
+              setCurrencySymbol={setCurrencySymbol}
+              countryCode={countryCode}
+              currencySymbol={currencySymbol}
+            />
+          )}
+          {product === "campaign" && <Pricingcampaign />}
+          {product === "knowledgebase" && <Pricingknowledgebase />}
         </div>
       </div>
-      <div className="my-5 text-center container price-container">
-        {product === "sms" && (
-          <Pricingsms
-            amountArr={amountArr}
-            pricing={pricing}
-            setPricing={setPricing}
-            fetchSMSData={fetchSMSData}
-            originCountry={originCountry}
-            setOriginCountry={setOriginCountry}
-            destinationCountry={destinationCountry}
-            setDestinationCountry={setDestinationCountry}
-            currency={currency}
-            currencySymbol={currencySymbol}
-          />
-        )}
-
-        {product === "email" && (
-          <Pricingemail
-          setSubscriptionEmail={setSubscriptionEmail}
-            subscriptionEmail={subscriptionEmail}
-            fetchSubscriptionEmail={fetchSubscription}
-            currency={currency}
-            currencySymbol={currencySymbol}
-            countryCode={countryCode}
-          />
-        )}
-        {product === "voice" && (
-          <Pricingvoice
-            subscriptionVoice={subscriptionVoice}
-            fetchSubscriptionVoice={fetchSubscription}
-            currency={currency}
-            state= {"SubscriptionVoice"}
-            setCurrencySymbol={setCurrencySymbol}
-            countryCode={countryCode}
-          />
-        )}
-        {product === "whatsapp" && (
-          <Pricingwp
-            subscriptionWhatsapp={subscriptionWhatsapp}
-            fetchSubscriptionWhatsapp={fetchSubscription}
-            currency={currency}
-            currencySymbol={currencySymbol}
-            oneTimeWtsAppFee={oneTimeWtsAppFee}
-            countryCode={countryCode}
-          />
-        )}
-        {product === "rcs" && <Pricingrcs />}
-        {product === "otp" && (
-          <Pricingotp
-            amountArr={amountArr}
-            pricing={pricing}
-            setPricing={setPricing}
-            fetchSMSData={fetchSMSData}
-            originCountry={originCountry}
-            setOriginCountry={setOriginCountry}
-            destinationCountry={destinationCountry}
-            setDestinationCountry={setDestinationCountry}
-            currency={currency}
-            currencySymbol={currencySymbol}
-          />
-        )}
-        {product === "hello" && (
-        <Pricinghello
-           setSubscriptionHello={setSubscriptionHello}
-            subscriptionHello={subscriptionHello}
-            fetchSubscriptionHello={fetchSubscription}
-            currency={currency}
-            state= {"SubscriptionHello"}
-            setCurrencySymbol={setCurrencySymbol}
-            countryCode={countryCode}
-          />
-        )}       
-        {product === "segmento" && (
-          <Pricingsegmento
-            subscriptionSegmento={subscriptionSegmento}
-            setSubscriptionSegmento={setSubscriptionSegmento}
-            fetchSubscriptionSegmento={fetchSubscription}
-            currency={currency}
-            state= {"subscriptionSegmento"}
-            setCurrencySymbol={setCurrencySymbol}
-            countryCode={countryCode}
-            currencySymbol={currencySymbol}
-          />
-        )}
-        {product === "campaign" && <Pricingcampaign />}
-        {product === "knowledgebase" && <Pricingknowledgebase />}
+      <div className="Frequently-Questions container-fluid bg-white">
+        <strong className="sub-heading">Frequently Asked Questions</strong>
+        <div className="accordion mt-4" id="accordionPanelsStayOpenExample">
+          <div className="accordion-item">
+            <h2 className="accordion-header">
+              <button
+                className="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne"
+                aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseOne"
+              >
+                How can MSG91 benefit my business?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseOne"
+              className="accordion-collapse collapse show"
+            >
+              <div className="accordion-body">
+                MSG91 offers numerous benefits for businesses, including
+                improved customer engagement, streamlined communication
+                workflows, increased operational efficiency, and enhanced brand
+                reputation. Our platform enables businesses to automate
+                communication, personalize interactions, and reach their target
+                audience through their preferred channels.
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTwo"
+              >
+                What makes MSG91 different from other communication platforms?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseTwo"
+              className="accordion-collapse collapse"
+            >
+              <div className="accordion-body">
+                MSG91 offers numerous benefits for businesses, including
+                improved customer engagement, streamlined communication
+                workflows, increased operational efficiency, and enhanced brand
+                reputation. Our platform enables businesses to automate
+                communication, personalize interactions, and reach their target
+                audience through their preferred channels.
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree"
+              >
+                Is MSG91 suitable for businesses of all sizes?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseThree"
+              className="accordion-collapse collapse"
+            >
+              <div className="accordion-body">
+                MSG91 offers numerous benefits for businesses, including
+                improved customer engagement, streamlined communication
+                workflows, increased operational efficiency, and enhanced brand
+                reputation. Our platform enables businesses to automate
+                communication, personalize interactions, and reach their target
+                audience through their preferred channels.
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree"
+              >
+                Is MSG91 secure?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseThree"
+              className="accordion-collapse collapse"
+            >
+              <div className="accordion-body">
+                MSG91 offers numerous benefits for businesses, including
+                improved customer engagement, streamlined communication
+                workflows, increased operational efficiency, and enhanced brand
+                reputation. Our platform enables businesses to automate
+                communication, personalize interactions, and reach their target
+                audience through their preferred channels.
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree"
+              >
+                Can I integrate MSG91 with my existing systems or applications?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseThree"
+              className="accordion-collapse collapse"
+            >
+              <div className="accordion-body">
+                MSG91 offers numerous benefits for businesses, including
+                improved customer engagement, streamlined communication
+                workflows, increased operational efficiency, and enhanced brand
+                reputation. Our platform enables businesses to automate
+                communication, personalize interactions, and reach their target
+                audience through their preferred channels.
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree"
+              >
+                What level of support can I expect from MSG91?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseThree"
+              className="accordion-collapse collapse"
+            >
+              <div className="accordion-body">
+                MSG91 offers numerous benefits for businesses, including
+                improved customer engagement, streamlined communication
+                workflows, increased operational efficiency, and enhanced brand
+                reputation. Our platform enables businesses to automate
+                communication, personalize interactions, and reach their target
+                audience through their preferred channels.
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree"
+              >
+                How do I get started with MSG91?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseThree"
+              className="accordion-collapse collapse"
+            >
+              <div className="accordion-body">
+                MSG91 offers numerous benefits for businesses, including
+                improved customer engagement, streamlined communication
+                workflows, increased operational efficiency, and enhanced brand
+                reputation. Our platform enables businesses to automate
+                communication, personalize interactions, and reach their target
+                audience through their preferred channels.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
