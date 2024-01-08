@@ -10,7 +10,6 @@ const pricinghello = ({
 }) => {
   var change;
   var changeSymbol;
-  console.log(subscriptionHello, "dddd");
   if (
     countryCode === "US" ||
     countryCode === "AE" ||
@@ -83,7 +82,6 @@ const pricinghello = ({
   return (
     <>
       <div className="w-100 card-container d-flex flex-wrap gap-4">
-        {console.log(subscriptionHello, 222)}
         {subscriptionHello?.length
           ? subscriptionHello?.map((item, index) => {
               return (
@@ -155,7 +153,6 @@ const pricinghello = ({
                       </div>
                       <div className="c-fs-6 ">
                         <h4 className="c-fs-4 mb-2 c-fw-sb">Features</h4>
-                        {console.log(item?.plan_features[index], 322323)}
                         {item?.plan_features?.map((data, index) => {
                           if (data.is_visible) {
                             return (
