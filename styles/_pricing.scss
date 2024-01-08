@@ -1,11 +1,9 @@
 .main-container {
   background: var(--light-grey-bg);
-  padding: 0 112px 0 112px !important;
 }
 
   #pricing-pills-tab{
-    padding-top: 40px;
-    padding-right: 27px;
+    
     .side-bar-heading {
       font-size: 18px;
 
@@ -78,10 +76,9 @@
     }
   }
   .card-container{
-    gap: 40px;
     .card{
       min-height: 250px;
-      width: 300px;
+      width:300px;
       .card-body{
         padding: 24px;
         display: flex;
@@ -184,7 +181,6 @@
 
   .price-container{
     min-height: 100px;
-    padding: 40px;
   }
   @media (max-width: 600px) {
     .nav-link{
@@ -208,3 +204,6 @@
     }
   }
 
+.prcing-check{
+  width: 20px;
+}

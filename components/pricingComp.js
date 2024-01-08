@@ -114,6 +114,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
         );
         return response.data.data;
       });
+      
 
       const newData = await Promise.all(fetchRequests);
       setPricing([...newData]);
@@ -171,194 +172,207 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
   useEffect(() => {
     findCountry(countryCode);
   }, [countryCode]);
-
+  const productPricingData = {
+    hello: {
+      productName: "hello",
+      des: "Contact center",
+      onclick: `fetchSubscription(currency, "7", "subscriptionHello")`,
+    },
+    campaign: {
+      productName: "campaign",
+      des: "Event-bassed automation",
+      onclick: `fetchSubscription(currency, "7", "subscriptionHello")`,
+    },
+  };
   return (
     <>
-      <div className="container-fluid main-container m-0 d-flex ">
-        <div
-          className="d-flex flex-column gap-2 align-items-start"
-          id="pricing-pills-tab"
-        >
-          <h1 className="fw-bold fs-6">Application</h1>
-
-          {/* link for hello */}
-          <Link
-            href={
-              pathLengthCond
-                ? "/" + countryCode.toLowerCase() + "/pricing/hello"
-                : "/pricing/hello"
-            }
-            className={`nav-item ${product === "hello" ? "active" : ""}`}
-            id="hello-btn"
-            onClick={() => {
-              fetchSubscription(currency, "7", "subscriptionHello");
-            }}
+      <div className=" main-container  ">
+        <div className="container p-4 d-flex gap-4 flex-column flex-sm-row">
+          <div
+            className=" d-flex flex-column gap-2 align-items-start"
+            id="pricing-pills-tab"
           >
-            <span className="nav-link d-flex flex-column align-items-start justify-content-center">
-              <span className="fw-bold">
-                <img src="/img/icon/hello.svg" alt="#" className="icon" />
-                Hello
+            <h1 className="fw-bold fs-6">Application</h1>
+
+            {/* link for hello */}
+            <Link
+              href={
+                pathLengthCond
+                  ? "/" + countryCode.toLowerCase() + "/pricing/hello"
+                  : "/pricing/hello"
+              }
+              className={`nav-item ${product === "hello" ? "active" : ""}`}
+              id="hello-btn"
+              onClick={() => {
+                productPricingData.hello.onclick;
+                console.log(productPricingData.hello.onclick)
+              }}
+            >
+              <span className="nav-link d-flex flex-column align-items-start justify-content-center">
+                <span className="fw-bold">
+                  <img src="/img/icon/hello.svg" alt="#" className="icon" />
+                  Hello
+                </span>
+                <span className="base">Contact center</span>
               </span>
-              <span className="base">Contact center</span>
-            </span>
-          </Link>
+            </Link>
 
-          {/* link for campaign */}
-          <Link
-            href={
-              pathLengthCond
-                ? "/" + countryCode.toLowerCase() + "/pricing/campaign"
-                : "/pricing/campaign"
-            }
-            className={`nav-item ${product === "campaign" ? "active" : ""}`}
-            id="campaign-btn"
-          >
-            <span className="nav-link d-flex flex-column align-items-start justify-content-center">
-              <span className="fw-bold">
-                <img src="/img/icon/campaign.svg" alt="#" className="icon" />
-                Campaign
+            {/* link for campaign */}
+            <Link
+              href={
+                pathLengthCond
+                  ? "/" + countryCode.toLowerCase() + "/pricing/campaign"
+                  : "/pricing/campaign"
+              }
+              className={`nav-item ${product === "campaign" ? "active" : ""}`}
+              id="campaign-btn"
+            >
+              <span className="nav-link d-flex flex-column align-items-start justify-content-center">
+                <span className="fw-bold">
+                  <img src="/img/icon/campaign.svg" alt="#" className="icon" />
+                  Campaign
+                </span>
+                <span className="base">Event-bassed automation</span>
               </span>
-              <span className="base">Event-bassed automation</span>
-            </span>
-          </Link>
+            </Link>
 
-          {/* link for segmento */}
-          <Link
-            href={
-              pathLengthCond
-                ? "/" + countryCode.toLowerCase() + "/pricing/segmento"
-                : "/pricing/segmento"
-            }
-            className={`nav-item ${product === "segmento" ? "active" : ""}`}
-            id="segmento-btn"
-            onClick={() => {
-              fetchSubscription(currency, "2", "subscriptionSegmento");
-            }}
-          >
-            <span className="nav-link d-flex flex-column align-items-start justify-content-center">
-              <span className="fw-bold">
-                <img src="/img/icon/segmento.svg" alt="#" className="icon" />
-                Segmento
+            {/* link for segmento */}
+            <Link
+              href={
+                pathLengthCond
+                  ? "/" + countryCode.toLowerCase() + "/pricing/segmento"
+                  : "/pricing/segmento"
+              }
+              className={`nav-item ${product === "segmento" ? "active" : ""}`}
+              id="segmento-btn"
+              onClick={() => {
+                fetchSubscription(currency, "2", "subscriptionSegmento");
+              }}
+            >
+              <span className="nav-link d-flex flex-column align-items-start justify-content-center">
+                <span className="fw-bold">
+                  <img src="/img/icon/segmento.svg" alt="#" className="icon" />
+                  Segmento
+                </span>
+                <span className="base">Contact management</span>
               </span>
-              <span className="base">Contact management</span>
-            </span>
-          </Link>
+            </Link>
 
-          {/* for OTP */}
-          <Link
-            href={
-              pathLengthCond
-                ? "/" + countryCode.toLowerCase() + "/pricing/rcs"
-                : "/pricing/rcs"
-            }
-            className={`nav-item ${product === "rcs" ? "active" : ""}`}
-            id="rcs-btn"
-          >
-            <span className="nav-link d-flex flex-column align-items-start justify-content-center">
-              <span className="fw-bold">
+            {/* for OTP */}
+            <Link
+              href={
+                pathLengthCond
+                  ? "/" + countryCode.toLowerCase() + "/pricing/rcs"
+                  : "/pricing/rcs"
+              }
+              className={`nav-item ${product === "rcs" ? "active" : ""}`}
+              id="rcs-btn"
+            >
+              <span className="nav-link d-flex flex-column align-items-start justify-content-center">
+                <span className="fw-bold">
+                  <img src="/img/icon/otp.svg" alt="#" className="icon" />
+                  OTP
+                </span>
+                <span className="base">OTP widget SDK</span>
+              </span>
+            </Link>
+
+            <span className="side-bar-heading fw-bold p-2">Channels</span>
+
+            {/* for sms */}
+            <Link
+              href={
+                pathLengthCond
+                  ? "/" + countryCode.toLowerCase() + "/pricing/sms"
+                  : "/pricing/sms"
+              }
+              className={`nav-item ${product === "sms" ? "active" : ""}`}
+              id="sms-btn"
+              onClick={() => {
+                fetchSMSData(currency, originCountry, destinationCountry);
+              }}
+            >
+              <span className="nav-link fw-bold">
+                <img src="/img/icon/sms.svg" alt="#" className="icon" />
+                SMS
+              </span>
+            </Link>
+
+            {/* link for Send otp */}
+            <Link
+              href={
+                pathLengthCond
+                  ? "/" + countryCode.toLowerCase() + "/pricing/otp"
+                  : "/pricing/otp"
+              }
+              className={`nav-item ${product === "otp" ? "active" : ""}`}
+              id="otp-btn"
+              onClick={() => {
+                fetchSMSData(currency, originCountry, destinationCountry);
+              }}
+            >
+              <span className="nav-link fw-bold">
                 <img src="/img/icon/otp.svg" alt="#" className="icon" />
-                OTP
+                Send OTP
               </span>
-              <span className="base">OTP widget SDK</span>
-            </span>
-          </Link>
+            </Link>
 
-          <span className="side-bar-heading fw-bold p-2">Channels</span>
+            {/* for email */}
+            <Link
+              href={
+                pathLengthCond
+                  ? "/" + countryCode.toLowerCase() + "/pricing/email"
+                  : "/pricing/email"
+              }
+              className={`nav-item ${product === "email" ? "active" : ""}`}
+              id="email-btn"
+              onClick={() => {
+                fetchSubscription(currency, "1", "subscriptionEmail");
+              }}
+            >
+              <span className="nav-link fw-bold">
+                <img src="/img/icon/email.svg" alt="#" className="icon" />
+                Email
+              </span>
+            </Link>
 
-          {/* for sms */}
-          <Link
-            href={
-              pathLengthCond
-                ? "/" + countryCode.toLowerCase() + "/pricing/sms"
-                : "/pricing/sms"
-            }
-            className={`nav-item ${product === "sms" ? "active" : ""}`}
-            id="sms-btn"
-            onClick={() => {
-              fetchSMSData(currency, originCountry, destinationCountry);
-            }}
-          >
-            <span className="nav-link fw-bold">
-              <img src="/img/icon/sms.svg" alt="#" className="icon" />
-              SMS
-            </span>
-          </Link>
+            {/* for whatsapp */}
+            <Link
+              href={
+                pathLengthCond
+                  ? "/" + countryCode.toLowerCase() + "/pricing/whatsapp"
+                  : "/pricing/whatsapp"
+              }
+              className={`nav-item ${product === "whatsapp" ? "active" : ""}`}
+              id="wp-btn"
+              onClick={() => {
+                fetchSubscription(currency, "5", "SubscriptionWhatsapp");
+              }}
+            >
+              <span className="nav-link fw-bold">
+                <img src="/img/icon/whatsapp.svg" alt="#" className="icon" />
+                WhatsApp
+              </span>
+            </Link>
 
-          {/* link for Send otp */}
-          <Link
-            href={
-              pathLengthCond
-                ? "/" + countryCode.toLowerCase() + "/pricing/otp"
-                : "/pricing/otp"
-            }
-            className={`nav-item ${product === "otp" ? "active" : ""}`}
-            id="otp-btn"
-            onClick={() => {
-              fetchSMSData(currency, originCountry, destinationCountry);
-            }}
-          >
-            <span className="nav-link fw-bold">
-              <img src="/img/icon/otp.svg" alt="#" className="icon" />
-              Send OTP
-            </span>
-          </Link>
+            {/* for voice */}
+            <Link
+              href={
+                pathLengthCond
+                  ? "/" + countryCode.toLowerCase() + "/pricing/voice"
+                  : "/pricing/voice"
+              }
+              className={`nav-item ${product === "voice" ? "active" : ""}`}
+              id="voice-btn"
+            >
+              <span className="nav-link fw-bold">
+                <img src="/img/icon/voice.svg" alt="#" className="icon" />
+                Voice
+              </span>
+            </Link>
 
-          {/* for email */}
-          <Link
-            href={
-              pathLengthCond
-                ? "/" + countryCode.toLowerCase() + "/pricing/email"
-                : "/pricing/email"
-            }
-            className={`nav-item ${product === "email" ? "active" : ""}`}
-            id="email-btn"
-            onClick={() => {
-              fetchSubscription(currency, "1", "subscriptionEmail");
-            }}
-          >
-            <span className="nav-link fw-bold">
-              <img src="/img/icon/email.svg" alt="#" className="icon" />
-              Email
-            </span>
-          </Link>
-
-          {/* for whatsapp */}
-          <Link
-            href={
-              pathLengthCond
-                ? "/" + countryCode.toLowerCase() + "/pricing/whatsapp"
-                : "/pricing/whatsapp"
-            }
-            className={`nav-item ${product === "whatsapp" ? "active" : ""}`}
-            id="wp-btn"
-            onClick={() => {
-              fetchSubscription(currency, "5", "SubscriptionWhatsapp");
-            }}
-          >
-            <span className="nav-link fw-bold">
-              <img src="/img/icon/whatsapp.svg" alt="#" className="icon" />
-              WhatsApp
-            </span>
-          </Link>
-
-          {/* for voice */}
-          <Link
-            href={
-              pathLengthCond
-                ? "/" + countryCode.toLowerCase() + "/pricing/voice"
-                : "/pricing/voice"
-            }
-            className={`nav-item ${product === "voice" ? "active" : ""}`}
-            id="voice-btn"
-          >
-            <span className="nav-link fw-bold">
-              <img src="/img/icon/voice.svg" alt="#" className="icon" />
-              Voice
-            </span>
-          </Link>
-
-          {/* link for knowledgebase */}
-          {/* <Link
+            {/* link for knowledgebase */}
+            {/* <Link
           href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/knowledgebase":"/pricing/knowledgebase"}
            className={`nav-item ${product === 'knowledgebase' ? 'active' : ''}`}
             id="kb-btn"
@@ -368,284 +382,286 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
               KnowledgeBase
             </span>
           </Link> */}
-        </div>
-        <div className="container price-container">
-          {product === "sms" && (
-            <Pricingsms
-              amountArr={amountArr}
-              pricing={pricing}
-              setPricing={setPricing}
-              fetchSMSData={fetchSMSData}
-              originCountry={originCountry}
-              setOriginCountry={setOriginCountry}
-              destinationCountry={destinationCountry}
-              setDestinationCountry={setDestinationCountry}
-              currency={currency}
-              currencySymbol={currencySymbol}
-            />
-          )}
+          </div>
+          <div className=" price-container ">
+            {product === "sms" && (
+              <Pricingsms
+                amountArr={amountArr}
+                pricing={pricing}
+                setPricing={setPricing}
+                fetchSMSData={fetchSMSData}
+                originCountry={originCountry}
+                setOriginCountry={setOriginCountry}
+                destinationCountry={destinationCountry}
+                setDestinationCountry={setDestinationCountry}
+                currency={currency}
+                currencySymbol={currencySymbol}
+              />
+            )}
 
-          {product === "email" && (
-            <Pricingemail
-              setSubscriptionEmail={setSubscriptionEmail}
-              subscriptionEmail={subscriptionEmail}
-              fetchSubscriptionEmail={fetchSubscription}
-              currency={currency}
-              currencySymbol={currencySymbol}
-              countryCode={countryCode}
-            />
-          )}
-          {product === "voice" && (
-            <Pricingvoice
-              subscriptionVoice={subscriptionVoice}
-              fetchSubscriptionVoice={fetchSubscription}
-              currency={currency}
-              state={"SubscriptionVoice"}
-              setCurrencySymbol={setCurrencySymbol}
-              countryCode={countryCode}
-            />
-          )}
-          {product === "whatsapp" && (
-            <Pricingwp
-              subscriptionWhatsapp={subscriptionWhatsapp}
-              fetchSubscriptionWhatsapp={fetchSubscription}
-              currency={currency}
-              currencySymbol={currencySymbol}
-              oneTimeWtsAppFee={oneTimeWtsAppFee}
-              countryCode={countryCode}
-            />
-          )}
-          {product === "rcs" && <Pricingrcs />}
-          {product === "otp" && (
-            <Pricingotp
-              amountArr={amountArr}
-              pricing={pricing}
-              setPricing={setPricing}
-              fetchSMSData={fetchSMSData}
-              originCountry={originCountry}
-              setOriginCountry={setOriginCountry}
-              destinationCountry={destinationCountry}
-              setDestinationCountry={setDestinationCountry}
-              currency={currency}
-              currencySymbol={currencySymbol}
-            />
-          )}
-          {product === "hello" && (
-            <Pricinghello
-              setSubscriptionHello={setSubscriptionHello}
-              subscriptionHello={subscriptionHello}
-              fetchSubscriptionHello={fetchSubscription}
-              currency={currency}
-              state={"SubscriptionHello"}
-              setCurrencySymbol={setCurrencySymbol}
-              countryCode={countryCode}
-            />
-          )}
-          {product === "segmento" && (
-            <Pricingsegmento
-              subscriptionSegmento={subscriptionSegmento}
-              setSubscriptionSegmento={setSubscriptionSegmento}
-              fetchSubscriptionSegmento={fetchSubscription}
-              currency={currency}
-              state={"subscriptionSegmento"}
-              setCurrencySymbol={setCurrencySymbol}
-              countryCode={countryCode}
-              currencySymbol={currencySymbol}
-            />
-          )}
-          {product === "campaign" && <Pricingcampaign />}
-          {product === "knowledgebase" && <Pricingknowledgebase />}
+            {product === "email" && (
+              <Pricingemail
+                setSubscriptionEmail={setSubscriptionEmail}
+                subscriptionEmail={subscriptionEmail}
+                fetchSubscriptionEmail={fetchSubscription}
+                currency={currency}
+                currencySymbol={currencySymbol}
+                countryCode={countryCode}
+              />
+            )}
+            {product === "voice" && (
+              <Pricingvoice
+                subscriptionVoice={subscriptionVoice}
+                fetchSubscriptionVoice={fetchSubscription}
+                currency={currency}
+                state={"SubscriptionVoice"}
+                setCurrencySymbol={setCurrencySymbol}
+                countryCode={countryCode}
+              />
+            )}
+            {product === "whatsapp" && (
+              <Pricingwp
+                subscriptionWhatsapp={subscriptionWhatsapp}
+                fetchSubscriptionWhatsapp={fetchSubscription}
+                currency={currency}
+                currencySymbol={currencySymbol}
+                oneTimeWtsAppFee={oneTimeWtsAppFee}
+                countryCode={countryCode}
+              />
+            )}
+            {product === "rcs" && <Pricingrcs />}
+            {product === "otp" && (
+              <Pricingotp
+                amountArr={amountArr}
+                pricing={pricing}
+                setPricing={setPricing}
+                fetchSMSData={fetchSMSData}
+                originCountry={originCountry}
+                setOriginCountry={setOriginCountry}
+                destinationCountry={destinationCountry}
+                setDestinationCountry={setDestinationCountry}
+                currency={currency}
+                currencySymbol={currencySymbol}
+              />
+            )}
+            {product === "hello" && (
+              <Pricinghello
+                setSubscriptionHello={setSubscriptionHello}
+                subscriptionHello={subscriptionHello}
+                fetchSubscriptionHello={fetchSubscription}
+                currency={currency}
+                state={"SubscriptionHello"}
+                setCurrencySymbol={setCurrencySymbol}
+                countryCode={countryCode}
+              />
+            )}
+            {product === "segmento" && (
+              <Pricingsegmento
+                subscriptionSegmento={subscriptionSegmento}
+                setSubscriptionSegmento={setSubscriptionSegmento}
+                fetchSubscriptionSegmento={fetchSubscription}
+                currency={currency}
+                state={"subscriptionSegmento"}
+                setCurrencySymbol={setCurrencySymbol}
+                countryCode={countryCode}
+                currencySymbol={currencySymbol}
+              />
+            )}
+            {product === "campaign" && <Pricingcampaign />}
+            {product === "knowledgebase" && <Pricingknowledgebase />}
+          </div>
         </div>
-      </div>
-      <div className="Frequently-Questions container-fluid bg-white">
-        <strong className="sub-heading">Frequently Asked Questions</strong>
-        <div className="accordion mt-4" id="accordionPanelsStayOpenExample">
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseOne"
-                aria-expanded="true"
-                aria-controls="panelsStayOpen-collapseOne"
+        <div className="Frequently-Questions container-fluid bg-white">
+          <strong className="sub-heading">Frequently Asked Questions</strong>
+          <div className="accordion mt-4" id="accordionPanelsStayOpenExample">
+            <div className="accordion-item">
+              <h2 className="accordion-header">
+                <button
+                  className="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne"
+                  aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne"
+                >
+                  How can MSG91 benefit my business?
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseOne"
+                className="accordion-collapse collapse show"
               >
-                How can MSG91 benefit my business?
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseOne"
-              className="accordion-collapse collapse show"
-            >
-              <div className="accordion-body">
-                MSG91 offers numerous benefits for businesses, including
-                improved customer engagement, streamlined communication
-                workflows, increased operational efficiency, and enhanced brand
-                reputation. Our platform enables businesses to automate
-                communication, personalize interactions, and reach their target
-                audience through their preferred channels.
+                <div className="accordion-body">
+                  MSG91 offers numerous benefits for businesses, including
+                  improved customer engagement, streamlined communication
+                  workflows, increased operational efficiency, and enhanced
+                  brand reputation. Our platform enables businesses to automate
+                  communication, personalize interactions, and reach their
+                  target audience through their preferred channels.
+                </div>
               </div>
             </div>
-          </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseTwo"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseTwo"
+            <div className="accordion-item">
+              <h2 className="accordion-header">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseTwo"
+                >
+                  What makes MSG91 different from other communication platforms?
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseTwo"
+                className="accordion-collapse collapse"
               >
-                What makes MSG91 different from other communication platforms?
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseTwo"
-              className="accordion-collapse collapse"
-            >
-              <div className="accordion-body">
-                MSG91 offers numerous benefits for businesses, including
-                improved customer engagement, streamlined communication
-                workflows, increased operational efficiency, and enhanced brand
-                reputation. Our platform enables businesses to automate
-                communication, personalize interactions, and reach their target
-                audience through their preferred channels.
+                <div className="accordion-body">
+                  MSG91 offers numerous benefits for businesses, including
+                  improved customer engagement, streamlined communication
+                  workflows, increased operational efficiency, and enhanced
+                  brand reputation. Our platform enables businesses to automate
+                  communication, personalize interactions, and reach their
+                  target audience through their preferred channels.
+                </div>
               </div>
             </div>
-          </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseThree"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseThree"
+            <div className="accordion-item">
+              <h2 className="accordion-header">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseThree"
+                >
+                  Is MSG91 suitable for businesses of all sizes?
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseThree"
+                className="accordion-collapse collapse"
               >
-                Is MSG91 suitable for businesses of all sizes?
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseThree"
-              className="accordion-collapse collapse"
-            >
-              <div className="accordion-body">
-                MSG91 offers numerous benefits for businesses, including
-                improved customer engagement, streamlined communication
-                workflows, increased operational efficiency, and enhanced brand
-                reputation. Our platform enables businesses to automate
-                communication, personalize interactions, and reach their target
-                audience through their preferred channels.
+                <div className="accordion-body">
+                  MSG91 offers numerous benefits for businesses, including
+                  improved customer engagement, streamlined communication
+                  workflows, increased operational efficiency, and enhanced
+                  brand reputation. Our platform enables businesses to automate
+                  communication, personalize interactions, and reach their
+                  target audience through their preferred channels.
+                </div>
               </div>
             </div>
-          </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseThree"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseThree"
+            <div className="accordion-item">
+              <h2 className="accordion-header">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseThree"
+                >
+                  Is MSG91 secure?
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseThree"
+                className="accordion-collapse collapse"
               >
-                Is MSG91 secure?
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseThree"
-              className="accordion-collapse collapse"
-            >
-              <div className="accordion-body">
-                MSG91 offers numerous benefits for businesses, including
-                improved customer engagement, streamlined communication
-                workflows, increased operational efficiency, and enhanced brand
-                reputation. Our platform enables businesses to automate
-                communication, personalize interactions, and reach their target
-                audience through their preferred channels.
+                <div className="accordion-body">
+                  MSG91 offers numerous benefits for businesses, including
+                  improved customer engagement, streamlined communication
+                  workflows, increased operational efficiency, and enhanced
+                  brand reputation. Our platform enables businesses to automate
+                  communication, personalize interactions, and reach their
+                  target audience through their preferred channels.
+                </div>
               </div>
             </div>
-          </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseThree"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseThree"
+            <div className="accordion-item">
+              <h2 className="accordion-header">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseThree"
+                >
+                  Can I integrate MSG91 with my existing systems or
+                  applications?
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseThree"
+                className="accordion-collapse collapse"
               >
-                Can I integrate MSG91 with my existing systems or applications?
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseThree"
-              className="accordion-collapse collapse"
-            >
-              <div className="accordion-body">
-                MSG91 offers numerous benefits for businesses, including
-                improved customer engagement, streamlined communication
-                workflows, increased operational efficiency, and enhanced brand
-                reputation. Our platform enables businesses to automate
-                communication, personalize interactions, and reach their target
-                audience through their preferred channels.
+                <div className="accordion-body">
+                  MSG91 offers numerous benefits for businesses, including
+                  improved customer engagement, streamlined communication
+                  workflows, increased operational efficiency, and enhanced
+                  brand reputation. Our platform enables businesses to automate
+                  communication, personalize interactions, and reach their
+                  target audience through their preferred channels.
+                </div>
               </div>
             </div>
-          </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseThree"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseThree"
+            <div className="accordion-item">
+              <h2 className="accordion-header">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseThree"
+                >
+                  What level of support can I expect from MSG91?
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseThree"
+                className="accordion-collapse collapse"
               >
-                What level of support can I expect from MSG91?
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseThree"
-              className="accordion-collapse collapse"
-            >
-              <div className="accordion-body">
-                MSG91 offers numerous benefits for businesses, including
-                improved customer engagement, streamlined communication
-                workflows, increased operational efficiency, and enhanced brand
-                reputation. Our platform enables businesses to automate
-                communication, personalize interactions, and reach their target
-                audience through their preferred channels.
+                <div className="accordion-body">
+                  MSG91 offers numerous benefits for businesses, including
+                  improved customer engagement, streamlined communication
+                  workflows, increased operational efficiency, and enhanced
+                  brand reputation. Our platform enables businesses to automate
+                  communication, personalize interactions, and reach their
+                  target audience through their preferred channels.
+                </div>
               </div>
             </div>
-          </div>
-          <div className="accordion-item">
-            <h2 className="accordion-header">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseThree"
-                aria-expanded="false"
-                aria-controls="panelsStayOpen-collapseThree"
+            <div className="accordion-item">
+              <h2 className="accordion-header">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseThree"
+                >
+                  How do I get started with MSG91?
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseThree"
+                className="accordion-collapse collapse"
               >
-                How do I get started with MSG91?
-              </button>
-            </h2>
-            <div
-              id="panelsStayOpen-collapseThree"
-              className="accordion-collapse collapse"
-            >
-              <div className="accordion-body">
-                MSG91 offers numerous benefits for businesses, including
-                improved customer engagement, streamlined communication
-                workflows, increased operational efficiency, and enhanced brand
-                reputation. Our platform enables businesses to automate
-                communication, personalize interactions, and reach their target
-                audience through their preferred channels.
+                <div className="accordion-body">
+                  MSG91 offers numerous benefits for businesses, including
+                  improved customer engagement, streamlined communication
+                  workflows, increased operational efficiency, and enhanced
+                  brand reputation. Our platform enables businesses to automate
+                  communication, personalize interactions, and reach their
+                  target audience through their preferred channels.
+                </div>
               </div>
             </div>
           </div>
