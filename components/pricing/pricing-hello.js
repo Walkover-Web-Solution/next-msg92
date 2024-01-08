@@ -95,19 +95,21 @@ const pricinghello = ({
                   <div className="price-card email card c-bg-grey border-0 h-100">
                     <div className="card-body bg-white p-3 gap-3  rounded-3">
                       <div className="d-flex  align-items-center justify-content-between">
-                        <h3 className="text-start fw-bold fs-4">{item.name}</h3>
-                        <span className="popular-plan-tag border border-2 border-dark px-3 py-1 c-fs-5 c-fw-600 rounded-5">
-                          Popular
-                        </span>
+                        <h3 className="text-start c-fw-sb fs-4">{item.name}</h3>
+                        {item?.name === "Premium" && (
+                          <span className="popular-plan-tag border border-1 border-dark c-fw-sb rounded-5">
+                            Popular
+                          </span>
+                        )}
                       </div>
-                      <h5 className=" c-fs-2">
+                      <h5 className=" c-fs-2 text-lowercase ">
                         <span className="text-green c-fs-1">
                           {symbol}
                           {selectedMode === "Monthly"
                             ? item?.plan_amounts[0]?.plan_amount
                             : item?.plan_amounts[1]?.plan_amount}
                         </span>
-                        /{selectedMode === "Monthly" ? "Month" : "Yearly"}
+                        per {selectedMode === "Monthly" ? "month" : "yearly"}
                       </h5>
                       <p className="c-fs-5">
                         {symbol === "₹" &&
@@ -122,13 +124,17 @@ const pricinghello = ({
                       <a
                         href="https://control.msg91.com/signup/"
                         target="_blank"
-                        className="btn btn-sm w-50 btn-outline-dark utm rounded-1 fw-bold  border border-2 border-dark px-3"
+                        className={`${
+                          item?.name === "Premium"
+                            ? "btn-dark"
+                            : "btn-outline-dark"
+                        }  btn btn-sm w-50 rounded-1 border border-2 border-dark px-3 `}
                       >
                         Get Started
                       </a>
                       <hr style={{ borderColor: "#999" }}></hr>
                       <div className="c-fs-6  ">
-                        <h4 className="c-fs-4 ">Included</h4>
+                        <h4 className="c-fs-4 c-fw-sb">Included</h4>
                         <div className="c-fw-400 mt-2">
                           <div>
                             {" "}
@@ -148,7 +154,7 @@ const pricinghello = ({
                         </div>
                       </div>
                       <div className="c-fs-6 ">
-                        <h4 className="c-fs-4 mb-2">Features</h4>
+                        <h4 className="c-fs-4 mb-2 c-fw-sb">Features</h4>
                         {console.log(item?.plan_features[index], 322323)}
                         {item?.plan_features?.map((data, index) => {
                           if (data.is_visible) {
@@ -163,7 +169,7 @@ const pricinghello = ({
                         })}
                       </div>
                       <div className="c-fs-6 text-start feature-list">
-                        <h4 className="c-fs-4 mb-2">Extra</h4>
+                        <h4 className="c-fs-4 mb-2 c-fw-sb">Extra</h4>
                         {item?.postpaid_allowed ? (
                           <>
                             <div className="text-lowercase">
@@ -179,7 +185,8 @@ const pricinghello = ({
                                 {
                                   item?.plan_services[0]?.service_credit
                                     ?.service?.name
-                                }/month
+                                }
+                                /month
                               </span>
                             </div>
                             <div className="text-lowercase">
@@ -221,7 +228,7 @@ const pricinghello = ({
         </span>
         <button
           type="button"
-          className="btn btn-outline-dark mt-2 mb-4 c-fs-4 border border-dark border-2 rounded-1 px-3"
+          className="btn btn-outline-dark mt-2 mb-4 c-fs-5 border border-dark border-2 rounded-1 px-3 py-1"
         >
           Talk to Sales
         </button>

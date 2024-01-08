@@ -85,8 +85,9 @@
         flex-direction: column;
 
         .popular-plan-tag{
-          top: 12px;
-          right: 24px;
+         padding: 5px 12px;
+          font-size: 12px;
+          font-weight: 500;
         }
       }
     }
