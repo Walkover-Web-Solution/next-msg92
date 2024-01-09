@@ -28,7 +28,7 @@ const Pricingsms = ({
   }, [pricing, originCountry, destinationCountry]);  
   return (
     <>
-     <div>
+     {/* <div>
      { originCountry?.length >= 1 && <div className="g-3 d-flex justify-content-center col-lg-5 m-auto pb-5">
        <Typeahead
           id="originCountry"
@@ -130,6 +130,113 @@ const Pricingsms = ({
           </div>
         </div>
       </div>
+      </div> */}
+      
+      <div>
+        {originCountry?.length >= 1 && (
+          <div className="gap-3 w-100 d-flex flex-column text-start flex-md-row align-items-center justify-content-start col-12 col-md-10 col-lg-7 pb-4">
+            <span className="Send-sms fw-bold">Send OTP from</span>
+            <Typeahead
+              className="w-25"
+              id="originCountry"
+              placeholder="Origin Country"
+              labelKey="name"
+              onChange={(selected) => {
+                setPricing([]);
+                if (selected[0]?.name)
+                  fetchSMSData(currency, selected[0]?.name, destinationCountry);
+              }}
+              options={countries}
+              clearButton
+              defaultSelected={[
+                countries?.find((item) => item.name === originCountry),
+              ]}
+              inputProps={{
+                autoComplete: "off" /* Add the autoComplete attribute here */,
+              }}
+            />
+
+            <div>To</div>
+
+            <Typeahead
+              className="w-25"
+              id="destinationCountry"
+              placeholder="Destination Country"
+              labelKey="name"
+              onChange={(selected) => {
+                setPricing([]);
+                if (selected[0]?.name)
+                  fetchSMSData(currency, originCountry, selected[0]?.name);
+              }}
+              options={countries}
+              clearButton
+              defaultSelected={[
+                countries?.find((item) => item.name === originCountry),
+              ]}
+            />
+          </div>
+        )}
+         <div className="d-flex flex-column gap-3 align-items center mt-3">
+
+<div className="text-center text-dark">Number of SMS</div>
+
+<div className="progress-value-wrapper d-flex">
+  <div className="progress-range-value text-start">0</div>
+  <div className="progress-range-value text-start">15,000</div>
+  <div className="progress-range-value text-start">25,000</div>
+  <div className="progress-range-value text-start">50,000</div>
+  <div className="progress-range-value text-start">100,000</div>
+  <div className="progress-range-value text-start">400,00</div>
+  <div className="progress-range-value text-start">800,000</div>
+</div>
+
+<div className="d-flex progress-range-wrapper position-relative">
+  <div className="progress-indicator" style={{ width: "15%" }}></div>
+
+  <div className="progress-range"></div>
+  <div className="progress-range"></div>
+  <div className="progress-range"></div>
+  <div className="progress-range"></div>
+  <div className="progress-range"></div>
+  <div className="progress-range"></div>
+  <div className="progress-range"></div>
+</div>
+
+<div className="progress-value-wrapper d-flex">
+  <div className="progress-range-value">₹0.25</div>
+  <div className="progress-range-value">₹0.22</div>
+  <div className="progress-range-value">₹0.20</div>
+  <div className="progress-range-value">₹0.19</div>
+  <div className="progress-range-value">₹0.18</div>
+  <div className="progress-range-value">₹0.17</div>
+  <div className="progress-range-value">₹0.16</div>
+</div>
+<div className="text-center text-dark">Cost per SMS</div>
+</div>
+        <div className="d-flex align-items-end mt-4 mb-3">
+          <span className="c-fs-1 text-dark fw-bold">20,000</span>
+          <span className="c-fs-2 c-fw-500 text-dark">OTPs for</span>
+          <span className="c-fs-1 text-green fw-bold">₹4,400</span>
+          <span className="c-fs-2 c-fw-500 text-dark">+18%GST at</span>
+          <span className="c-fs-1 text-green fw-bold">₹0.22</span>
+          <span className="c-fs-2 c-fw-500 text-dark">per sms</span>
+        </div>
+        <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-4 btn btn-dark rounded-1 py-2 px-3 mt-4 mb-3">
+        Get Started
+      </button>
+      <div className="talk-to-sales mt-4">
+          <span className="personalized d-block c-fs-4">
+            Connect with our team for a personalized plan to meet your needs.
+          </span>
+          <button type="button" className="btn btn-outline-dark mt-2 mb-4 border border-dark border-2 rounded-1 fw-semibold px-3">
+            Talk to Sales
+          </button>
+          <br />
+          <a className="mt-3" href="#">
+            <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
+            Know more about SendOTP
+          </a>
+        </div>
       </div>
     </>
   );

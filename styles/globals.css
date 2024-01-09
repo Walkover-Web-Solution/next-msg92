@@ -36,6 +36,7 @@ h1, h2, h3, h4, h5, h6, p {
   --c-fs-3:clamp(1.15rem,1.5vw,1.25rem);
   --c-fs-4:clamp(0.875rem, 2vw + 0.25rem, 1.25rem);
   --c-fs-5:clamp(0.875rem,1vw,1rem);
+  --c-fs-6:14px;
   --c-fw-600: 600;
   --c-fw-400: 400;
   --c-fw-500: 500;
@@ -236,12 +237,16 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: var(--c-light-grey);
 }
 
+.c-fw-500 {
+  font-weight: 500;
+}
+
 .link {
-  color: #1E75BA;
+  color: #1e75ba;
   font-weight: 500;
 }
 .link span {
-  border-bottom: 2px solid #1E75BA;
+  border-bottom: 2px solid #1e75ba;
 }
 
 .Frequently-Questions {
@@ -254,6 +259,57 @@ h1, h2, h3, h4, h5, h6, p {
 .Frequently-Questions .accordion-item .accordion-body {
   font-size: 18px !important;
   font-family: 400 !important;
+}
+
+.progress-value-wrapper {
+  width: 100%;
+}
+.progress-value-wrapper .progress-range-value {
+  flex: 1 0 0px;
+}
+.progress-value-wrapper .progress-range-value:not(:first-child) {
+  transform: translateX(-50%);
+  text-align: center !important;
+}
+
+.progress-range-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 2px solid;
+  background: linear-gradient(90deg, rgba(41, 166, 83, 0) 0%, #29a653 100%);
+}
+.progress-range-wrapper .progress-range {
+  height: 24px;
+  flex: 1 0 auto;
+  position: relative;
+  border-right: 2px solid;
+}
+.progress-range-wrapper .progress-range:first-child {
+  border-radius: 15px 0 0 15px;
+}
+.progress-range-wrapper .progress-range:last-child {
+  border-radius: 0 15px 15px 0;
+}
+.progress-range-wrapper .progress-indicator {
+  width: 37px;
+  background-color: #307378;
+  position: absolute;
+  left: 0;
+  height: 24px;
+  border-radius: 15px 0 0 15px;
+}
+.progress-range-wrapper .progress-indicator::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url(/img/icon/rectangle.svg);
+  background-size: contain;
+  position: absolute;
+  right: -11px;
+  top: -1px;
+  z-index: 2;
 }
 
 .total-price {
@@ -299,7 +355,12 @@ h1, h2, h3, h4, h5, h6, p {
   justify-content: space-between;
 }
 
-.talk-to-sales {
+.header .option {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.talk-to-sales .personalized {
   font-weight: 500;
 }
 
@@ -328,7 +389,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .text-green {
-  color: #29A653;
+  color: #29a653;
   font-size: 16px;
 }
 
@@ -353,9 +414,9 @@ h1, h2, h3, h4, h5, h6, p {
   margin-top: 8px !important;
 }
 .price-card .link {
-  color: #1E75BA;
+  color: #1e75ba;
   font-weight: 500;
-  border-bottom: 2px solid #1E75BA;
+  border-bottom: 2px solid #1e75ba;
   margin-top: 16px !important;
 }
 
@@ -368,9 +429,9 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /* .onlyin{
-  position: sticky;
-  top: 80px;
-} */
+    position: sticky;
+    top: 80px;
+  } */
 .price-container {
   min-height: 100px;
   padding: 40px;
@@ -393,7 +454,7 @@ h1, h2, h3, h4, h5, h6, p {
     width: 24px;
   }
   .selection {
-    background-color: #29A653;
+    background-color: #29a653;
   }
 }
 .page-title {

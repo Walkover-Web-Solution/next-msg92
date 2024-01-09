@@ -55,7 +55,7 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
 
   return (
     <>
-    <div className="d-flex justify-content-center">
+    {/* <div className="d-flex justify-content-center">
     <select style={{width: 'fit-content'}} className="form-select me-4" aria-label="Default select example" value={selectedCurrency} onChange={(e)=>changeCurrency(e.target.value)}>
     <>
       <option value="INR">INR</option>
@@ -67,8 +67,19 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
         <option value="Monthly">Monthly</option>
         <option value="Yearly">Yearly</option>
       </select>
+    </div> */}
+    <div className="header d-flex justify-content-between">
+      <span className="d-flex">
+      <h6 className="option bg-white p-2 border rounded-start">Monthly</h6>
+      <h6 className="option bg-white p-2 border rounded-end">Yearly (20% off)</h6>
+      </span>
+      <span className="d-flex">
+      <h6 className="option bg-white p-2 border rounded-start">INR</h6>
+      <h6 className="option bg-white p-2 border c-fs-6">USD</h6>
+      <h6 className="option bg-white p-2 border rounded-end">GBP</h6> 
+      </span>
     </div>
-      <div className="d-flex flex-wrap flex-gap gap-3 justify-content-center w-100  card-container align-items-end">
+      {/* <div className=" gap-3 justify-content-center w-100  card-container align-items-end">
         {subscriptionEmail?.length ?
           subscriptionEmail?.map((item, index) => {
             return(
@@ -77,10 +88,10 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
                 item.plan_amounts[0].plan_amount === 100 ||
                 item.plan_amounts[0].plan_amount === 75
               ?
-                <div className="text-center d-flex flex-column mb-4 mb-sm-0 align-items-center ">
+                <div className="text-center flex-column mb-4 mb-sm-0 align-items-center">
                   <div className="popular-chip c-fs-6">POPULAR</div>
                   <div className="card-popular price-card email card text-center mb-4 mb-sm-0 c-bg-grey">                  
-                    <div className="card-body">
+                    <div className="card-body w-100">
                       <h3 className="c-fs-3">{item.name}</h3>
                       <h5 className="mt-2 c-fs-2 text-green">
                         {symbol}
@@ -126,7 +137,7 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
                 </div>  
               :
                 <div className="card price-card email border-0 text-center mb-4 mb-sm-0 c-bg-grey">                
-                  <div className="card-body">
+                  <div className="card-body w-100">
                     <h3 className="c-fs-3">{item.name}</h3>
                     <h5 className="mt-2 c-fs-2 text-green">
                       {symbol}
@@ -174,6 +185,111 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
             )
           }):''
         }
+        <div className="card price-card email border-0 text-center mb-4 mb-sm-0 c-bg-grey">
+          <div className="card-body justify-content-between">
+            <h3 className="c-fs-3">CUSTOM</h3>                  
+            <p className="c-fs-5">Talk to sales for a customized plan.</p>
+            <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-4 btn btn-sm w-100 btn-outline-dark mt-2">
+              Talk to sales
+            </button>
+          </div>
+        </div>
+        
+      </div> */}
+
+
+<div className=" gap-3 justify-content-center w-100  card-container align-items-end">
+        
+            
+              <div className="mx-3">              
+                <div className="text-center flex-column mb-4 mb-sm-0 align-items-center">
+                  <div className="popular-chip c-fs-6">POPULAR</div>
+                  <div className="card-popular price-card email card text-center mb-4 mb-sm-0 c-bg-grey">                  
+                    <div className="card-body w-100">
+                      <h3 className="c-fs-3">Free</h3>
+                      <h5 className="mt-2 c-fs-2 text-green">
+                        ₹500/Month
+                      </h5>
+                      <p className="c-fs-5">
+                         +18%GST
+                      </p>
+                      <div className="c-fs-5 mt-2">
+                        <span className="text-success">
+                          <MdDone />
+                        </span>
+                        2000 Emails
+                      </div>
+                      <div className="c-fs-5 ">                 
+                          <span className="text-success"><MdDone /></span> 
+                        200 Email Validations
+                      </div>
+                      <div className="c-fs-5 ">       
+                         <span className="text-danger"><MdClose /></span> 
+                       200 Email Validations
+                     </div>
+
+                      <div className="c-fs-5 mt-4">
+                        <strong>Extra</strong>
+                        <div className="c-fs-5 ">                 
+                          <span className="text-success"><MdDone /></span> 
+                        200 Email Validations
+                      </div>
+                      <div className="c-fs-5 ">       
+                         <span className="text-danger"><MdClose /></span> 
+                       200 Email Validations
+                     </div>
+                      </div>
+
+                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
+                        Get Started
+                      </a>
+                    </div>
+                  </div>
+                </div>  
+              
+                <div className="card price-card email border-0 text-center mb-4 mb-sm-0 c-bg-grey">                
+                  <div className="card-body w-100">
+                    <h3 className="c-fs-3">Free</h3>
+                    <h5 className="mt-2 c-fs-2 text-green">
+                      dklsljd
+                    </h5>
+                    <p className="c-fs-5">
+                      +18%GST
+                      </p>
+                    <div className="c-fs-5 mt-2">
+                      <span className="text-success">
+                        <MdDone />
+                      </span>
+                      Emails
+                    </div>
+                    <div className="c-fs-5 ">                 
+                          <span className="text-success"><MdDone /></span> 
+                        200 Email Validations
+                      </div>
+                      <div className="c-fs-5 ">       
+                         <span className="text-danger"><MdClose /></span> 
+                       200 Email Validations
+                     </div>
+                    
+                    <div className="c-fs-5 mt-4">
+                        <strong>Extra</strong>
+                        <div className="c-fs-5 ">                 
+                          <span className="text-success"><MdDone /></span> 
+                        200 Email Validations
+                      </div>
+                      <div className="c-fs-5 ">       
+                         <span className="text-danger"><MdClose /></span> 
+                       200 Email Validations
+                     </div>
+                    </div>
+
+                    <Link href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
+                      Get Started
+                    </Link>
+                  </div>
+                </div>              
+              </div>
+            
         <div className="card price-card email border-0 text-center mb-4 mb-sm-0 c-bg-grey">
           <div className="card-body justify-content-between">
             <h3 className="c-fs-3">CUSTOM</h3>                  

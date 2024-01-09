@@ -1,7 +1,7 @@
 import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import countries from "@/data/countries.json";
-import { Typeahead } from 'react-bootstrap-typeahead';
+import { Typeahead } from "react-bootstrap-typeahead";
 import { setUtm } from "../pricingComp";
 
 const Pricingsms = ({
@@ -14,9 +14,8 @@ const Pricingsms = ({
   destinationCountry,
   setDestinationCountry,
   currency,
-  currencySymbol
-}) => {  
-
+  currencySymbol,
+}) => {
   useEffect(() => {
     /* console.log('pricing-sms.js currency', currency);
     if(originCountry != null)
@@ -29,58 +28,62 @@ const Pricingsms = ({
     // Get all anchor tags in the document using querySelectorAll
 
     setUtm();
-
-  }, [pricing, originCountry, destinationCountry]);  
+  }, [pricing, originCountry, destinationCountry]);
   return (
     <>
-     <div>
-     { originCountry?.length >= 1 && <div className="gap-3 w-100 d-flex flex-column text-start flex-md-row align-items-center justify-content-start col-12 col-md-10 col-lg-7 pb-5">
-      <span className="Send-sms fw-bold">Send SMS from</span>
-       <Typeahead
-       className="w-25"
-          id="originCountry"
-          placeholder="Origin Country"
-          labelKey="name"
-          onChange={(selected) => {
-            setPricing([])
-            if (selected[0]?.name)
-              fetchSMSData(currency , selected[0]?.name, destinationCountry);
-          }}
-          options={countries}
-          clearButton
-          defaultSelected={[countries?.find(item => item.name === originCountry)]}
-          inputProps={{
-            autoComplete: "off" /* Add the autoComplete attribute here */
-          }}
-        />
+      <div>
+        {originCountry?.length >= 1 && (
+          <div className="gap-3 w-100 d-flex flex-column text-start flex-md-row align-items-center justify-content-start col-12 col-md-10 col-lg-7 pb-4">
+            <span className="Send-sms fw-bold">Send SMS from</span>
+            <Typeahead
+              className="w-25"
+              id="originCountry"
+              placeholder="Origin Country"
+              labelKey="name"
+              onChange={(selected) => {
+                setPricing([]);
+                if (selected[0]?.name)
+                  fetchSMSData(currency, selected[0]?.name, destinationCountry);
+              }}
+              options={countries}
+              clearButton
+              defaultSelected={[
+                countries?.find((item) => item.name === originCountry),
+              ]}
+              inputProps={{
+                autoComplete: "off" /* Add the autoComplete attribute here */,
+              }}
+            />
 
-        <div>To</div>
+            <div>To</div>
 
-        <Typeahead
-       className="w-25"
-          id="destinationCountry"
-          placeholder="Destination Country"
-          labelKey="name"
-          onChange={(selected) => {
-            setPricing([])
-            if (selected[0]?.name)
-              fetchSMSData(currency, originCountry, selected[0]?.name);
-          }}
-          options={countries}
-          clearButton
-          defaultSelected={[countries?.find(item => item.name === originCountry)]}
-        />
+            <Typeahead
+              className="w-25"
+              id="destinationCountry"
+              placeholder="Destination Country"
+              labelKey="name"
+              onChange={(selected) => {
+                setPricing([]);
+                if (selected[0]?.name)
+                  fetchSMSData(currency, originCountry, selected[0]?.name);
+              }}
+              options={countries}
+              clearButton
+              defaultSelected={[
+                countries?.find((item) => item.name === originCountry),
+              ]}
+            />
+          </div>
+        )}
 
-      </div>}
-      
-      {originCountry == destinationCountry && originCountry != 'India' &&
+        {/* {originCountry == destinationCountry && originCountry != 'India' &&
         <div className="note mb-5 c-fs-5">
           To avail this local pricing, <a href="/contact-us">contact</a> our team for <strong>Sender Id</strong> registration.
         </div>
-      }
+        }
 
 
-      <div className="d-flex flex-wrap flex-gap gap-3 justify-content-center w-100  card-container align-items-end">
+        <div className="d-flex flex-wrap flex-gap gap-3 justify-content-center w-100  card-container align-items-end">
         {pricing?.map((item, index) => {
           return (            
             <div key={`sms-card-${index}`} className="mx-3">
@@ -156,10 +159,81 @@ const Pricingsms = ({
                   Talk to sales
                 </button>
               </div>
-            </div>
-        }
+            </div> */}
+        {/* } */}
 
-      </div>      
+        {/* </div>       */}
+
+        <div className="d-flex flex-column gap-3 align-items center mt-3">
+
+          <div className="text-center text-dark">Number of SMS</div>
+
+          <div className="progress-value-wrapper d-flex">
+            <div className="progress-range-value text-start">0</div>
+            <div className="progress-range-value text-start">16,500</div>
+            <div className="progress-range-value text-start">30,000</div>
+            <div className="progress-range-value text-start">60,000</div>
+            <div className="progress-range-value text-start">150,000</div>
+            <div className="progress-range-value text-start">450,00</div>
+            <div className="progress-range-value text-start">900,000</div>
+          </div>
+
+          <div className="d-flex progress-range-wrapper position-relative">
+            <div className="progress-indicator" style={{ width: "15%" }}></div>
+
+            <div className="progress-range"></div>
+            <div className="progress-range"></div>
+            <div className="progress-range"></div>
+            <div className="progress-range"></div>
+            <div className="progress-range"></div>
+            <div className="progress-range"></div>
+            <div className="progress-range"></div>
+          </div>
+
+          <div className="progress-value-wrapper d-flex">
+            <div className="progress-range-value">₹0.20</div>
+            <div className="progress-range-value">₹0.25</div>
+            <div className="progress-range-value">₹0.19</div>
+            <div className="progress-range-value">₹0.18</div>
+            <div className="progress-range-value">₹0.17</div>
+            <div className="progress-range-value">₹0.16</div>
+            <div className="progress-range-value">₹0.15</div>
+          </div>
+          <div className="text-center text-dark">Cost per SMS</div>
+        </div>
+        <div className="d-flex align-items-end mt-4 mb-3">
+          <span className="c-fs-1 text-dark fw-bold">20,000</span>
+          <span className="c-fs-2 c-fw-500 text-dark">sms for</span>
+          <span className="c-fs-1 text-green fw-bold">₹4,000</span>
+          <span className="c-fs-2 c-fw-500 text-dark">+18%GST at</span>
+          <span className="c-fs-1 text-green fw-bold">₹0.20</span>
+          <span className="c-fs-2 c-fw-500 text-dark">per sms</span>
+        </div>
+        <button
+          data-bs-toggle="modal"
+          data-bs-target="#sales-modal"
+          className="c-fs-4 btn btn-dark rounded-1 py-2 px-3 mt-4 mb-3"
+        >
+          Get Started
+        </button>
+        <div className="talk-to-sales mt-4">
+          <span className="personalized d-block c-fs-4">
+            Connect with our team for a personalized pricing and get up to{" "}
+            <span className="text-green c-fs-4 fw-medium">₹0.13</span> per SMS
+            to meet your needs.
+          </span>
+          <button
+            type="button"
+            className="btn btn-outline-dark mt-2 mb-4 border border-dark border-2 rounded-1 fw-semibold px-3"
+          >
+            Talk to Sales
+          </button>
+          <br />
+          <a className="mt-3" href="#">
+            <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
+            Know more about SMS
+          </a>
+        </div>
       </div>
     </>
   );

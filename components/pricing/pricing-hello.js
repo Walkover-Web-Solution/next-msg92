@@ -304,7 +304,7 @@ const pricinghello = ({
           <span className="talk-to-sales d-block c-fs-4">
             Connect with our team for a personalized plan to meet your needs.
           </span>
-          <button type="button" className="btn btn-outline-dark mt-2 mb-4 c-fs-4 border border-dark border-2 rounded-1 px-3">
+          <button type="button" className="btn btn-outline-dark mt-2 mb-4 fw-semibold border border-dark border-2 rounded-1 px-3">
             Talk to Sales
           </button>
           <br />
