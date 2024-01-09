@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import countries from "@/data/countries.json";
@@ -114,7 +115,6 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
         );
         return response.data.data;
       });
-      
 
       const newData = await Promise.all(fetchRequests);
       setPricing([...newData]);
@@ -172,18 +172,64 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
   useEffect(() => {
     findCountry(countryCode);
   }, [countryCode]);
-  const productPricingData = {
-    hello: {
-      productName: "hello",
-      des: "Contact center",
-      onclick: `fetchSubscription(currency, "7", "subscriptionHello")`,
+  const productPricingData = [
+    {
+      type: "heading",
+      heading: "Applications",
     },
-    campaign: {
-      productName: "campaign",
+    {
+      product: "hello",
+      productName: "Hello",
+      des: "Contact Center",
+      onclick: () => fetchSubscription(currency, "7", "subscriptionHello"),
+    },
+    {
+      product: "campaign",
+      productName: "Campaign",
       des: "Event-bassed automation",
-      onclick: `fetchSubscription(currency, "7", "subscriptionHello")`,
+      onclick: () => fetchSubscription(currency, "7", "subscriptionHello"),
     },
-  };
+    {
+      product: "segmento",
+      productName: "Segmento",
+      des: "Contact management",
+      onclick: () => fetchSubscription(currency, "2", "subscriptionSegmento"),
+    },
+    {
+      product: "rcs",
+      productName: "RCS",
+      des: "OTP widget SDK",
+    },
+    {
+      type: "heading",
+      heading: "Channels",
+    },
+    {
+      product: "sms",
+      productName: "SMS",
+      onclick: () => fetchSMSData(currency, originCountry, destinationCountry),
+    },
+    {
+      product: "otp",
+      productName: "OTP",
+      onclick: () => fetchSMSData(currency, originCountry, destinationCountry),
+    },
+    {
+      product: "email",
+      productName: "Email",
+      onclick: () => fetchSubscription(currency, "1", "subscriptionEmail"),
+    },
+    {
+      product: "whatsApp",
+      productName: "WhatsApp",
+      onclick: () => fetchSubscription(currency, "5", "SubscriptionWhatsapp"),
+    },
+    {
+      product: "voice",
+      productName: "Voice",
+    },
+    
+  ];
   return (
     <>
       <div className=" main-container  ">
@@ -192,196 +238,44 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
             className=" d-flex flex-column gap-2 align-items-start"
             id="pricing-pills-tab"
           >
-            <h1 className="fw-bold fs-6">Application</h1>
-
-            {/* link for hello */}
-            <Link
-              href={
-                pathLengthCond
-                  ? "/" + countryCode.toLowerCase() + "/pricing/hello"
-                  : "/pricing/hello"
-              }
-              className={`nav-item ${product === "hello" ? "active" : ""}`}
-              id="hello-btn"
-              onClick={() => {
-                productPricingData.hello.onclick;
-                console.log(productPricingData.hello.onclick)
-              }}
-            >
-              <span className="nav-link d-flex flex-column align-items-start justify-content-center">
-                <span className="fw-bold">
-                  <img src="/img/icon/hello.svg" alt="#" className="icon" />
-                  Hello
-                </span>
-                <span className="base">Contact center</span>
-              </span>
-            </Link>
-
-            {/* link for campaign */}
-            <Link
-              href={
-                pathLengthCond
-                  ? "/" + countryCode.toLowerCase() + "/pricing/campaign"
-                  : "/pricing/campaign"
-              }
-              className={`nav-item ${product === "campaign" ? "active" : ""}`}
-              id="campaign-btn"
-            >
-              <span className="nav-link d-flex flex-column align-items-start justify-content-center">
-                <span className="fw-bold">
-                  <img src="/img/icon/campaign.svg" alt="#" className="icon" />
-                  Campaign
-                </span>
-                <span className="base">Event-bassed automation</span>
-              </span>
-            </Link>
-
-            {/* link for segmento */}
-            <Link
-              href={
-                pathLengthCond
-                  ? "/" + countryCode.toLowerCase() + "/pricing/segmento"
-                  : "/pricing/segmento"
-              }
-              className={`nav-item ${product === "segmento" ? "active" : ""}`}
-              id="segmento-btn"
-              onClick={() => {
-                fetchSubscription(currency, "2", "subscriptionSegmento");
-              }}
-            >
-              <span className="nav-link d-flex flex-column align-items-start justify-content-center">
-                <span className="fw-bold">
-                  <img src="/img/icon/segmento.svg" alt="#" className="icon" />
-                  Segmento
-                </span>
-                <span className="base">Contact management</span>
-              </span>
-            </Link>
-
-            {/* for OTP */}
-            <Link
-              href={
-                pathLengthCond
-                  ? "/" + countryCode.toLowerCase() + "/pricing/rcs"
-                  : "/pricing/rcs"
-              }
-              className={`nav-item ${product === "rcs" ? "active" : ""}`}
-              id="rcs-btn"
-            >
-              <span className="nav-link d-flex flex-column align-items-start justify-content-center">
-                <span className="fw-bold">
-                  <img src="/img/icon/otp.svg" alt="#" className="icon" />
-                  OTP
-                </span>
-                <span className="base">OTP widget SDK</span>
-              </span>
-            </Link>
-
-            <span className="side-bar-heading fw-bold p-2">Channels</span>
-
-            {/* for sms */}
-            <Link
-              href={
-                pathLengthCond
-                  ? "/" + countryCode.toLowerCase() + "/pricing/sms"
-                  : "/pricing/sms"
-              }
-              className={`nav-item ${product === "sms" ? "active" : ""}`}
-              id="sms-btn"
-              onClick={() => {
-                fetchSMSData(currency, originCountry, destinationCountry);
-              }}
-            >
-              <span className="nav-link fw-bold">
-                <img src="/img/icon/sms.svg" alt="#" className="icon" />
-                SMS
-              </span>
-            </Link>
-
-            {/* link for Send otp */}
-            <Link
-              href={
-                pathLengthCond
-                  ? "/" + countryCode.toLowerCase() + "/pricing/otp"
-                  : "/pricing/otp"
-              }
-              className={`nav-item ${product === "otp" ? "active" : ""}`}
-              id="otp-btn"
-              onClick={() => {
-                fetchSMSData(currency, originCountry, destinationCountry);
-              }}
-            >
-              <span className="nav-link fw-bold">
-                <img src="/img/icon/otp.svg" alt="#" className="icon" />
-                Send OTP
-              </span>
-            </Link>
-
-            {/* for email */}
-            <Link
-              href={
-                pathLengthCond
-                  ? "/" + countryCode.toLowerCase() + "/pricing/email"
-                  : "/pricing/email"
-              }
-              className={`nav-item ${product === "email" ? "active" : ""}`}
-              id="email-btn"
-              onClick={() => {
-                fetchSubscription(currency, "1", "subscriptionEmail");
-              }}
-            >
-              <span className="nav-link fw-bold">
-                <img src="/img/icon/email.svg" alt="#" className="icon" />
-                Email
-              </span>
-            </Link>
-
-            {/* for whatsapp */}
-            <Link
-              href={
-                pathLengthCond
-                  ? "/" + countryCode.toLowerCase() + "/pricing/whatsapp"
-                  : "/pricing/whatsapp"
-              }
-              className={`nav-item ${product === "whatsapp" ? "active" : ""}`}
-              id="wp-btn"
-              onClick={() => {
-                fetchSubscription(currency, "5", "SubscriptionWhatsapp");
-              }}
-            >
-              <span className="nav-link fw-bold">
-                <img src="/img/icon/whatsapp.svg" alt="#" className="icon" />
-                WhatsApp
-              </span>
-            </Link>
-
-            {/* for voice */}
-            <Link
-              href={
-                pathLengthCond
-                  ? "/" + countryCode.toLowerCase() + "/pricing/voice"
-                  : "/pricing/voice"
-              }
-              className={`nav-item ${product === "voice" ? "active" : ""}`}
-              id="voice-btn"
-            >
-              <span className="nav-link fw-bold">
-                <img src="/img/icon/voice.svg" alt="#" className="icon" />
-                Voice
-              </span>
-            </Link>
-
-            {/* link for knowledgebase */}
-            {/* <Link
-          href={pathLengthCond ? "/"+countryCode.toLowerCase()+"/pricing/knowledgebase":"/pricing/knowledgebase"}
-           className={`nav-item ${product === 'knowledgebase' ? 'active' : ''}`}
-            id="kb-btn"
-            >
-            <span className="nav-link">
-              <img src="/img/icon/knowledgebase.svg" alt="#" className="icon" />
-              KnowledgeBase
-            </span>
-          </Link> */}
+            {productPricingData.map((productData, index) =>
+              productData.type === "heading" ? (
+                <h1 className="fw-bold fs-6">{productData.heading}</h1>
+              ) : (
+                <Link
+                  key={index}
+                  href={
+                    pathLengthCond
+                      ? `/${countryCode.toLowerCase()}/pricing/${
+                          productData?.product
+                        }`
+                      : `/pricing/${productData?.product}`
+                  }
+                  className={`nav-item ${
+                    product === productData?.product ? "active" : ""
+                  }`}
+                  id={`${productData?.product}-btn`}
+                  onClick={() => {
+                    if (productData?.onclick) {
+                      // Execute the onclick function if it exists
+                      productData?.onclick();
+                    }
+                  }}
+                >
+                  <span className="nav-link d-flex flex-column align-items-start justify-content-center">
+                    <span className="fw-bold text-capitalize">
+                      <img
+                        src={`/img/icon/${productData?.product}.svg`}
+                        alt={productData?.product}
+                        className="icon"
+                      />
+                      {productData?.productName}
+                    </span>
+                    <span className="base">{productData?.des}</span>
+                  </span>
+                </Link>
+              )
+            )}
           </div>
           <div className=" price-container ">
             {product === "sms" && (
@@ -671,4 +565,4 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
   );
 };
 
-export default PricingComp;
+export default React.memo(PricingComp);
