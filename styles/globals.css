@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6, p {
   --c-fs-1:clamp(1.25rem,2.6vw,2rem);
   --c-fs-2:clamp(1.2rem,2vw,1.5rem);
   --c-fs-3:clamp(1.15rem,1.5vw,1.25rem);
-  --c-fs-4:clamp(0.875rem, 2vw + 0.25rem, 1.25rem);
+  --c-fs-4:clamp(0.875rem, 2vw + 0.25rem, 1.15rem);
   --c-fs-5:clamp(0.875rem,1vw,1rem);
   --c-fs-6:14px;
   --c-fw-600: 600;

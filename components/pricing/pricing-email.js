@@ -2,42 +2,54 @@ import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { setUtm } from "../pricingComp";
-const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSubscriptionEmail, countryCode}) => {
-  var change
-  var changeSymbol
-  if(countryCode === 'US' || countryCode === 'AE' ||  countryCode === 'SG' || countryCode === 'PH'){
-    change = 'USD'
-    changeSymbol = '$'
-  }
-  else if(countryCode === 'GB' || countryCode === 'ES'){
-    change = 'GBP'
-    changeSymbol = '£'
-  }
-  else if (countryCode === 'IN'){
-    change = 'INR'
-    changeSymbol = '₹'
+const pricingemail = ({
+  subscriptionEmail,
+  fetchSubscriptionEmail,
+  currency,
+  setSubscriptionEmail,
+  countryCode,
+}) => {
+  var change;
+  var changeSymbol;
+  if (
+    countryCode === "US" ||
+    countryCode === "AE" ||
+    countryCode === "SG" ||
+    countryCode === "PH"
+  ) {
+    change = "USD";
+    changeSymbol = "$";
+  } else if (countryCode === "GB" || countryCode === "ES") {
+    change = "GBP";
+    changeSymbol = "£";
+  } else if (countryCode === "IN") {
+    change = "INR";
+    changeSymbol = "₹";
   }
   // ph,global
   const [selectedCurrency, setSelectedCurrency] = useState(change);
   const [selectedMode, setSelectedMode] = useState("Monthly");
   const [symbol, setSymbol] = useState(changeSymbol);
-  
-  const changeCurrency = async(currency) => {
+
+  const changeCurrency = async (currency) => {
     setSelectedCurrency(currency);
     try {
-      const response = await fetchSubscriptionEmail(currency, '1',"subscriptionEmail");
-
+      const response = await fetchSubscriptionEmail(
+        currency,
+        "1",
+        "subscriptionEmail"
+      );
     } catch (error) {
-      console.log(error.message,"error")
+      console.log(error.message, "error");
     }
-    
+
     switch (currency) {
       case "INR":
         setSymbol("₹");
         break;
       case "USD":
-      setSymbol("$");
-        break;      
+        setSymbol("$");
+        break;
       case "GBP":
         setSymbol("£");
         break;
@@ -45,17 +57,20 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
   };
 
   const numberWithCommas = (x) => {
-    let nf = (currency === 'INR') ? new Intl.NumberFormat('en-IN') : new Intl.NumberFormat('en-US');    
+    let nf =
+      currency === "INR"
+        ? new Intl.NumberFormat("en-IN")
+        : new Intl.NumberFormat("en-US");
     return nf.format(x);
-  }
+  };
 
-  useEffect(() => {    
+  useEffect(() => {
     setUtm();
-  }, []);  
+  }, []);
 
   return (
     <>
-    {/* <div className="d-flex justify-content-center">
+      {/* <div className="d-flex justify-content-center">
     <select style={{width: 'fit-content'}} className="form-select me-4" aria-label="Default select example" value={selectedCurrency} onChange={(e)=>changeCurrency(e.target.value)}>
     <>
       <option value="INR">INR</option>
@@ -68,17 +83,19 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
         <option value="Yearly">Yearly</option>
       </select>
     </div> */}
-    <div className="header d-flex justify-content-between">
-      <span className="d-flex">
-      <h6 className="option bg-white p-2 border rounded-start">Monthly</h6>
-      <h6 className="option bg-white p-2 border rounded-end">Yearly (20% off)</h6>
-      </span>
-      <span className="d-flex">
-      <h6 className="option bg-white p-2 border rounded-start">INR</h6>
-      <h6 className="option bg-white p-2 border c-fs-6">USD</h6>
-      <h6 className="option bg-white p-2 border rounded-end">GBP</h6> 
-      </span>
-    </div>
+      <div className="header d-flex justify-content-between">
+        <span className="d-flex">
+          <h6 className="option bg-white p-2 border rounded-start">Monthly</h6>
+          <h6 className="option bg-white p-2 border rounded-end">
+            Yearly (20% off)
+          </h6>
+        </span>
+        <span className="d-flex">
+          <h6 className="option bg-white p-2 border rounded-start">INR</h6>
+          <h6 className="option bg-white p-2 border c-fs-6">USD</h6>
+          <h6 className="option bg-white p-2 border rounded-end">GBP</h6>
+        </span>
+      </div>
       {/* <div className=" gap-3 justify-content-center w-100  card-container align-items-end">
         {subscriptionEmail?.length ?
           subscriptionEmail?.map((item, index) => {
@@ -197,110 +214,176 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
         
       </div> */}
 
-
-<div className=" gap-3 justify-content-center w-100  card-container align-items-end">
+      
         
-            
-              <div className="mx-3">              
-                <div className="text-center flex-column mb-4 mb-sm-0 align-items-center">
-                  <div className="popular-chip c-fs-6">POPULAR</div>
-                  <div className="card-popular price-card email card text-center mb-4 mb-sm-0 c-bg-grey">                  
-                    <div className="card-body w-100">
-                      <h3 className="c-fs-3">Free</h3>
-                      <h5 className="mt-2 c-fs-2 text-green">
-                        ₹500/Month
-                      </h5>
-                      <p className="c-fs-5">
-                         +18%GST
-                      </p>
-                      <div className="c-fs-5 mt-2">
-                        <span className="text-success">
-                          <MdDone />
-                        </span>
-                        2000 Emails
-                      </div>
-                      <div className="c-fs-5 ">                 
-                          <span className="text-success"><MdDone /></span> 
-                        200 Email Validations
-                      </div>
-                      <div className="c-fs-5 ">       
-                         <span className="text-danger"><MdClose /></span> 
-                       200 Email Validations
-                     </div>
+          <div className="d-flex p-4 justify-content-between bg-white w-100 ">
+            <div className="">
+              <h3 className="fs-4 fw-semibold">Free</h3>
+              <div className="d-flex align-items-end">
+              <h5 className="mt-2 c-fs-1 fw-bold text-green ">₹0</h5>
+                <span className="text-dark fs-4 fw-medium">per month</span>
+                </div>
+            </div>
 
-                      <div className="c-fs-5 mt-4">
-                        <strong>Extra</strong>
-                        <div className="c-fs-5 ">                 
-                          <span className="text-success"><MdDone /></span> 
-                        200 Email Validations
-                      </div>
-                      <div className="c-fs-5 ">       
-                         <span className="text-danger"><MdClose /></span> 
-                       200 Email Validations
-                     </div>
-                      </div>
-
-                      <a href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
-                        Get Started
-                      </a>
-                    </div>
-                  </div>
-                </div>  
-              
-                <div className="card price-card email border-0 text-center mb-4 mb-sm-0 c-bg-grey">                
-                  <div className="card-body w-100">
-                    <h3 className="c-fs-3">Free</h3>
-                    <h5 className="mt-2 c-fs-2 text-green">
-                      dklsljd
-                    </h5>
-                    <p className="c-fs-5">
-                      +18%GST
-                      </p>
-                    <div className="c-fs-5 mt-2">
-                      <span className="text-success">
-                        <MdDone />
-                      </span>
-                      Emails
-                    </div>
-                    <div className="c-fs-5 ">                 
-                          <span className="text-success"><MdDone /></span> 
-                        200 Email Validations
-                      </div>
-                      <div className="c-fs-5 ">       
-                         <span className="text-danger"><MdClose /></span> 
-                       200 Email Validations
-                     </div>
-                    
-                    <div className="c-fs-5 mt-4">
-                        <strong>Extra</strong>
-                        <div className="c-fs-5 ">                 
-                          <span className="text-success"><MdDone /></span> 
-                        200 Email Validations
-                      </div>
-                      <div className="c-fs-5 ">       
-                         <span className="text-danger"><MdClose /></span> 
-                       200 Email Validations
-                     </div>
-                    </div>
-
-                    <Link href="https://control.msg91.com/signup/" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
-                      Get Started
-                    </Link>
-                  </div>
-                </div>              
+            <div>
+              <h3 className="c-fs-4 fw-semibold">Included</h3>
+              <div className="c-fs-5 ">
+                <span className="text-success">
+                  <MdDone />
+                </span>
+                5,000 Email Validations
               </div>
-            
+              <div className="c-fs-5 ">
+                <span className="text-danger">
+                  <MdClose />
+                </span>
+                No Email Validations
+              </div>
+            </div>
+
+            <div>
+              <h3 className="c-fs-4 fw-semibold">Extra @</h3>
+              <div className="c-fs-5 ">
+                <span className="text-success">
+                  <MdDone />
+                </span>
+                ₹0.035/Email
+              </div>
+              <div className="c-fs-5 ">
+                <span className="text-success">
+                  <MdDone />
+                </span>
+                ₹0.035/EmailValidations
+              </div>
+            </div>
+
+            <a
+              href="https://control.msg91.com/signup/"
+              target="_blank"
+              className="d-flex align-items-end"
+            >
+           <button type="button" class="btn btn-outline-dark rounded-1">Get Started</button>   
+            </a>
+          </div>
+        
+        
+        <div className="text-center flex-column mb-4 mb-sm-0 align-items-center">
+          <div className="popular-chip c-fs-6">POPULAR</div>
+          <div className="card-popular price-card email card text-center mb-4 mb-sm-0 c-bg-grey">
+            <div className="card-body w-100">
+              <h3 className="c-fs-3">Free</h3>
+              <h5 className="mt-2 c-fs-2 text-green">₹500/Month</h5>
+              <p className="c-fs-5">+18%GST</p>
+              <div className="c-fs-5 mt-2">
+                <span className="text-success">
+                  <MdDone />
+                </span>
+                2000 Emails
+              </div>
+              <div className="c-fs-5 ">
+                <span className="text-success">
+                  <MdDone />
+                </span>
+                200 Email Validations
+              </div>
+              <div className="c-fs-5 ">
+                <span className="text-danger">
+                  <MdClose />
+                </span>
+                200 Email Validations
+              </div>
+
+              <div className="c-fs-5 mt-4">
+                <strong>Extra</strong>
+                <div className="c-fs-5 ">
+                  <span className="text-success">
+                    <MdDone />
+                  </span>
+                  200 Email Validations
+                </div>
+                <div className="c-fs-5 ">
+                  <span className="text-danger">
+                    <MdClose />
+                  </span>
+                  200 Email Validations
+                </div>
+              </div>
+
+              <a
+                href="https://control.msg91.com/signup/"
+                target="_blank"
+                className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="card price-card email border-0 text-center mb-4 mb-sm-0 c-bg-grey">
+          <div className="card-body w-100">
+            <h3 className="c-fs-3"></h3>
+            <h5 className="mt-2 c-fs-2 text-green">dklsljd</h5>
+            <p className="c-fs-5">+18%GST</p>
+            <div className="c-fs-5 mt-2">
+              <span className="text-success">
+                <MdDone />
+              </span>
+              Emails
+            </div>
+            <div className="c-fs-5 ">
+              <span className="text-success">
+                <MdDone />
+              </span>
+              200 Email Validations
+            </div>
+            <div className="c-fs-5 ">
+              <span className="text-danger">
+                <MdClose />
+              </span>
+              200 Email Validations
+            </div>
+
+            <div className="c-fs-5 mt-4">
+              <strong>Extra</strong>
+              <div className="c-fs-5 ">
+                <span className="text-success">
+                  <MdDone />
+                </span>
+                200 Email Validations
+              </div>
+              <div className="c-fs-5 ">
+                <span className="text-danger">
+                  <MdClose />
+                </span>
+                200 Email Validations
+              </div>
+            </div>
+
+            <Link
+              href="https://control.msg91.com/signup/"
+              target="_blank"
+              className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm"
+            >
+              Get Started
+            </Link>
+          </div>
+        </div>
+
         <div className="card price-card email border-0 text-center mb-4 mb-sm-0 c-bg-grey">
           <div className="card-body justify-content-between">
-            <h3 className="c-fs-3">CUSTOM</h3>                  
+            <h3 className="c-fs-3">CUSTOM</h3>
             <p className="c-fs-5">Talk to sales for a customized plan.</p>
-            <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-4 btn btn-sm w-100 btn-outline-dark mt-2">
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#sales-modal"
+              className="c-fs-4 btn btn-sm w-100 btn-outline-dark mt-2"
+            >
               Talk to sales
             </button>
           </div>
         </div>
-        
-      </div>
+      
     </>
   );
 };
