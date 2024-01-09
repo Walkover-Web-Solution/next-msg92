@@ -14,6 +14,7 @@ import Pricingrcs from "@/components/pricing/pricing-rcs";
 import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
 import Link from "next/link";
 import { getCookie } from "@/components/utils";
+import { MdExpandMore } from "react-icons/md";
 
 export function setUtm() {
   // Get all anchor tags in the document using querySelectorAll
@@ -228,14 +229,76 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
       product: "voice",
       productName: "Voice",
     },
-    
   ];
   return (
     <>
       <div className=" main-container  ">
-        <div className="container p-4 d-flex gap-4 flex-column flex-sm-row">
+        <div className="container p-4 d-flex gap-4 flex-column flex-md-row">
+          <div className="dropdown d-flex d-md-none align-items-center  w-75 px-2 py-1 br-2">
+            <a
+              href="#"
+              className="w-100 gap-2 align-items-center d-flex text-dark "
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <div className=" d-flex align-items-center gap-1">
+                <img
+                  src={`/img/icon/${product}.svg`}
+                  alt={product}
+                  className="icon-drop"
+                />
+                <span className="c-fs-5 c-fw-m text-capitalize">{product}</span>
+              </div>
+
+              <MdExpandMore />
+            </a>
+            <ul className="dropdown-menu">
+              {productPricingData.map((productData, index) =>
+                productData.type === "heading" ? (
+                  <li className="c-fw-m c-fs-5 mt-2 p-2">
+                    {productData.heading}
+                  </li>
+                ) : (
+                  <li>
+                    <Link
+                      key={index}
+                      href={
+                        pathLengthCond
+                          ? `/${countryCode.toLowerCase()}/pricing/${
+                              productData?.product
+                            }`
+                          : `/pricing/${productData?.product}`
+                      }
+                      className={`dropdown-item  w-100 ${
+                        product === productData?.product ? "active" : ""
+                      }`}
+                      id={`${productData?.product}-btn`}
+                      onClick={() => {
+                        if (productData?.onclick) {
+                          productData?.onclick();
+                        }
+                      }}
+                    >
+                      <span className="nav-link d-flex flex-column align-items-start justify-content-center">
+                        <div className="d-flex align-items-center gap-1">
+                          <img
+                            src={`/img/icon/${productData?.product}.svg`}
+                            alt={productData?.product}
+                            className="icon-drop"
+                          />
+                          <span className="c-fs-5 c-fw-m text-capitalize">
+                            {productData?.productName}
+                          </span>
+                        </div>
+                      </span>
+                    </Link>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
           <div
-            className=" d-flex flex-column gap-2 align-items-start"
+            className=" d-none d-md-flex flex-column gap-2 align-items-start"
             id="pricing-pills-tab"
           >
             {productPricingData.map((productData, index) =>
@@ -264,14 +327,14 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                 >
                   <span className="nav-link d-flex flex-column align-items-start justify-content-center">
                     <div className="d-flex align-items-center">
-                    <img
+                      <img
                         src={`/img/icon/${productData?.product}.svg`}
                         alt={productData?.product}
                         className="icon"
                       />
-                    <span className="c-fs-4 c-fw-m text-capitalize">
-                      {productData?.productName}
-                    </span>
+                      <span className="c-fs-4 c-fw-m text-capitalize">
+                        {productData?.productName}
+                      </span>
                     </div>
                     <span className="base">{productData?.des}</span>
                   </span>
