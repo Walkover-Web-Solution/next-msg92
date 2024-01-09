@@ -37,6 +37,7 @@ h1, h2, h3, h4, h5, h6, p {
   --c-fs-4:clamp(0.875rem, 2vw + 0.25rem, 1.15rem);
   --c-fs-5:clamp(0.875rem,1vw,1rem);
   --c-fs-6:14px;
+  --c-fs-7:12px;
   --c-fw-600: 600;
   --c-fw-400: 400;
   --c-fw-500: 500;
@@ -58,6 +59,7 @@ h1, h2, h3, h4, h5, h6, p {
   --rcs-light: rgba(56, 146, 224, 0.12);
   --border-color: #ddd;
   --light-grey-bg: #FAFAFA;
+  --primary-light-color:#1E75BA;
   /* product colors */
   --sms:#1E75BA;
   --sms-dark:#1258A3;
@@ -134,6 +136,14 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+.c-fs-6 {
+  font-size: var(--c-fs-6) !important;
+}
+
+.c-fs-7 {
+  font-size: var(--c-fs-7) !important;
+}
+
 .c-fw-t {
   font-weight: 300 !important;
 }
@@ -200,12 +210,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 .main-container {
   background: var(--light-grey-bg);
-  padding: 0 112px 0 112px !important;
 }
 
 #pricing-pills-tab {
-  padding-top: 40px;
-  padding-right: 27px;
+  width: 180px;
 }
 #pricing-pills-tab .side-bar-heading {
   font-size: 18px;
@@ -355,11 +363,6 @@ h1, h2, h3, h4, h5, h6, p {
   justify-content: space-between;
 }
 
-.header .option {
-  font-size: 14px;
-  font-weight: 500;
-}
-
 .talk-to-sales .personalized {
   font-weight: 500;
 }
@@ -414,7 +417,60 @@ h1, h2, h3, h4, h5, h6, p {
   margin-top: 8px !important;
 }
 .price-card .link {
-  color: #1e75ba;
+  color: #1E75BA;
+  font-weight: 500;
+}
+.price-card .link span {
+  border-bottom: 2px solid #1E75BA;
+}
+.price-card .Frequently-Questions {
+  padding: 80px 120px 80px 120px !important;
+}
+.price-card .Frequently-Questions .accordion-item .accordion-button {
+  font-size: 20px !important;
+  font-weight: 500 !important;
+}
+.price-card .Frequently-Questions .accordion-item .accordion-body {
+  font-size: 18px !important;
+  font-family: 400 !important;
+}
+.price-card .total-price {
+  background: var(--light-blue);
+  border-radius: var(--radius2);
+}
+.price-card .total-price .total {
+  color: var(--whatsapp);
+}
+.price-card .sms-range {
+  padding: 0 55px 0 35px;
+}
+.price-card .price-slab .slab .price {
+  font-size: 14px;
+  color: var(--c-grey);
+}
+.price-card .card-container .card {
+  min-height: 250px;
+  width: 300px;
+}
+.price-card .card-container .card .card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.price-card .card-container .card .card-body .popular-plan-tag {
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.price-card .card-container .card.kb {
+  height: 350px;
+  width: 350px;
+}
+.price-card .card-container .card.kb .card-body {
+  display: flex;
+  justify-content: space-between;
+}
+.price-card .talk-to-sales {
   font-weight: 500;
   border-bottom: 2px solid #1e75ba;
   margin-top: 16px !important;
@@ -432,9 +488,19 @@ h1, h2, h3, h4, h5, h6, p {
     position: sticky;
     top: 80px;
   } */
+.card-wrapper {
+  gap: 40px;
+}
+.card-wrapper .card-price {
+  width: 284px;
+  height: 470px;
+}
+
 .price-container {
   min-height: 100px;
-  padding: 40px;
+  padding-left: 40px;
+  padding-top: 15px;
+  padding-right: 40px;
 }
 
 @media (max-width: 600px) {
@@ -450,13 +516,56 @@ h1, h2, h3, h4, h5, h6, p {
     height: 20px;
     display: block;
   }
+  .nav-link img .price-container {
+    min-height: 100px;
+  }
+}
+@media (max-width: 600px) and (max-width: 600px) {
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px !important;
+    min-width: 64px !important;
+    font-size: 10px !important;
+  }
+  .nav-link img {
+    height: 20px;
+    display: block;
+  }
   .nav-link .icon {
     width: 24px;
   }
+  .icon {
+    width: 24px;
+  }
+}
+@media (max-width: 600px) {
   .selection {
     background-color: #29a653;
   }
 }
+.prcing-check {
+  width: 20px;
+}
+
+.icon-drop {
+  width: 24px;
+}
+
+.click-hear {
+  color: #1E75BA;
+  border-bottom: 1px solid #1E75BA;
+}
+
+.table tr th, .table tr td {
+  padding: 16px 24px;
+}
+.table tr th:nth-child(even), .table tr td:nth-child(even) {
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+
 .page-title {
   text-transform: capitalize;
 }
