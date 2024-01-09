@@ -220,7 +220,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
       onclick: () => fetchSubscription(currency, "1", "subscriptionEmail"),
     },
     {
-      product: "whatsApp",
+      product: "whatsapp",
       productName: "WhatsApp",
       onclick: () => fetchSubscription(currency, "5", "SubscriptionWhatsapp"),
     },
