@@ -240,7 +240,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
           >
             {productPricingData.map((productData, index) =>
               productData.type === "heading" ? (
-                <h1 className="fw-bold fs-6">{productData.heading}</h1>
+                <h1 className="c-fw-m fs-6 mt-2 p-2">{productData.heading}</h1>
               ) : (
                 <Link
                   key={index}
@@ -251,7 +251,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                         }`
                       : `/pricing/${productData?.product}`
                   }
-                  className={`nav-item ${
+                  className={`nav-item w-100 ${
                     product === productData?.product ? "active" : ""
                   }`}
                   id={`${productData?.product}-btn`}
@@ -263,14 +263,16 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                   }}
                 >
                   <span className="nav-link d-flex flex-column align-items-start justify-content-center">
-                    <span className="fw-bold text-capitalize">
-                      <img
+                    <div className="d-flex align-items-center">
+                    <img
                         src={`/img/icon/${productData?.product}.svg`}
                         alt={productData?.product}
                         className="icon"
                       />
+                    <span className="c-fs-4 c-fw-m text-capitalize">
                       {productData?.productName}
                     </span>
+                    </div>
                     <span className="base">{productData?.des}</span>
                   </span>
                 </Link>
