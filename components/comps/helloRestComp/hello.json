@@ -1,0 +1,48 @@
+{
+    "product": "hello",
+    "trustedData": {
+        "headings": "Support 15+ channels & platforms",
+        "trustedImgs": [
+            "facebook",
+            "gmail",
+            "googlechat",
+            "instagram",
+            "outlook",
+            "sms",
+            "telegram",
+            "twitter",
+            "voice",
+            "whatsapp",
+            "zoho"
+        ],
+        "moreText": "and more ..."
+    },
+    "features": [
+        {
+            "name": "Unlimited Agents",
+            "des": "Unlimited free agents to power up your customer support. More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is nonumber attached to your number of customer support agents"
+        },
+        {
+            "name": "Chatbot",
+            "des": "Resolve customer queries round-the-clock across text and voice. Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents."
+        },
+      
+        {
+            "name": "Screen Control",
+            "des": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
+        },
+        {
+            "name": "Video Call / Screen Sharing",
+            "des": "High-quality video calls wherever your customer is. Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue."
+        },
+        {
+            "name": "Workflow",
+            "des": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
+        },
+        {
+            "name": "Analytics",
+            "des": "Analytics and reports to monitor your agent performance. Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support."
+        }
+        
+    ]
+}

@@ -1,14 +1,14 @@
 import styles from "./productFeature.module.scss";
 import ProductFeatureCard from "./productFeatureCard";
-export default function ProductFeatures() {
-  const cardContents = ["hello", "hello", "hello"];
+export default function ProductFeatures(featureData) {
+  const features = featureData.featureData
 
   return (
     <>
       <div className={`${styles.productFeatures} bg-lightgrey`}>
         <div className="container py-5 ">
           <div className={`${styles.cards} row gap-3 gap-md-5 p-2`}>
-            {cardContents.map((content, index) => (
+            {features.map((content, index) => (
               <div
                 key={index}
                 className={`${styles.card} card ${
@@ -19,22 +19,20 @@ export default function ProductFeatures() {
                   index % 3 === 2 ? "col-12 col-md-5 me-auto" : "col"} d-grid gap-2`}>
                     <img
                       className={`${styles.cardicon}`}
-                      src="./img/pages/hello/unlimited-agents-ico.svg"
+                      src={`./img/pages/hello/${content?.name.toLowerCase().replace(/\/| /g, '-')}-ico.svg`}
+                      alt={`${content?.name}-ico`} 
                     />
                     <h4 className={`${styles.cardheading} c-fs-3`}>
-                      Unlimited Agents
+                     {content?.name}
                     </h4>
 
                   <p className={`${styles.cardcontent}  c-fs-4`}>
-                    Unlimited free agents to power up your customer support.
-                    More agents mean continuous engagement, more tickets
-                    resolved and better customer support on offer. There is no
-                    number attached to your number of customer support agents.
+                   {content?.des}
                   </p>
                 </div>
                 <img
                   className={`${styles.cardimg} `}
-                  src="./img/pages/hello/unlimited-agents-img.svg"
+                  src={`./img/pages/hello/${content?.name.toLowerCase().replace(/\/| /g, '-')}-img.svg`}  alt={content?.name} 
                 />
               </div>
             ))}

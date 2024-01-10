@@ -1,15 +1,17 @@
 import ProductFeatures from "@/components/productFeatures/productFeature";
 import style from "./helloRestComp.module.scss";
+import productData from "./hello.json"
+import TrusedSection from "@/components/trustedSection/trustedSection";
 const HelloRestComp = () => {
   return (
     <>
       {
         <div className={` ${style.hello}`}>
-          <div className={`${style.hero} container d-flex  my-5 `}>
+          <div className={`${style.hero} container d-flex flex-column flex-lg-row gap-4 my-5 `}>
             <div
-              className={`${style.hero__content} d-flex flex-column justify-content-center gap-4 col-12 col-md-6`}
+              className={`${style.hero__content} d-flex flex-column justify-content-center gap-3 gap-lg-5 col-12 col-lg-6`}
             >
-              <div className="d-flex flex-column gap-1">
+              <div className="d-flex flex-column gap-2">
                 <div
                   className={`${style.heroCont__product} d-flex align-items-center gap-2 c-fs-2`}
                 >
@@ -34,29 +36,14 @@ const HelloRestComp = () => {
               <button className="btn btn-ft btn-dark rounded-1 c-fs-4">
                 Get Started
               </button>
-              <div className="d-flex flex-column gap-4">
-                <p className="c-fs-4">Support 15+ channels & platforms</p>
-                <div className="d-flex flex-wrap gap-4 w-100">
-                  <img src="./img/platforms/gmail.svg" />
-                  <img src="./img/platforms/facebook.svg" />
-                  <img src="./img/platforms/whatsapp.svg" />
-                  <img src="./img/platforms/instagram.svg" />
-                  <img src="./img/platforms/telegram.svg" />
-                  <img src="./img/platforms/twitter.svg" />
-                  <img src="./img/platforms/googlechat.svg" />
-                  <img src="./img/platforms/zoho.svg" />
-                  <img src="./img/platforms/outlook.svg" />
-                  <img src="./img/platforms/sms.svg" />
-                  <img src="./img/platforms/voice.svg" />
-                  <span>and more..</span>
-                </div>
-              </div>
+              {productData?.trustedData &&  <TrusedSection trustedData={productData?.trustedData}/>}
+             
             </div>
-            <div className={`${style.heroimg} d-none d-md-block`}>
-              <img src="./img/hello-hero-img.svg" />
+            <div className={`${style.heroimg} d-none d-sm-block`}>
+              <img src="./img/pages/hello/heroimg.svg" />
             </div>
           </div>
-          <ProductFeatures />
+          <ProductFeatures featureData={productData?.features} />
           
         </div>
       }
