@@ -95,7 +95,7 @@ const pricinghello = ({
                       <div className="d-flex  align-items-center justify-content-between">
                         <h3 className="text-start c-fw-sb fs-4">{item.name}</h3>
                         {item?.name === "Premium" && (
-                          <span className="popular-plan-tag border border-1 border-dark c-fw-sb rounded-5">
+                          <span className="popular-plan-tag border border-1 border-dark c-fw-sb rounded-5 px-3">
                             Popular
                           </span>
                         )}

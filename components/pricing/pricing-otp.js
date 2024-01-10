@@ -211,7 +211,7 @@ const Pricingsms = ({
   <div className="progress-range-value c-fw-m">₹0.17</div>
   <div className="progress-range-value c-fw-m">₹0.16</div>
 </div>
-<div className="text-center text-dark">Cost per SMS</div>
+<div className="text-center text-dark c-fw-m">Cost per SMS</div>
 </div>
         <div className="d-flex align-items-end mt-4 mb-3">
           <span className="c-fs-1 text-dark fw-bold">20,000 </span>

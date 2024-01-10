@@ -36,8 +36,8 @@ const Pricingsms = ({
           <div className="gap-3 w-100 d-flex flex-column text-start flex-md-row align-items-center justify-content-start col-12 col-md-10 col-lg-7 pb-4">
             <span className="Send-sms c-fw-m">Send SMS from</span>
             <Typeahead
-              className="w-25 c-fs-6"
-              id="originCountry c-fs-6"
+              className="w-25"
+              id="originCountry"
               
               placeholder="Origin Country"
               labelKey="name"
