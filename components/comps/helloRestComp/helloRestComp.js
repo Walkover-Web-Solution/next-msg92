@@ -3,7 +3,10 @@ import style from "./helloRestComp.module.scss";
 import productData from "./hello.json";
 import TrusedSection from "@/components/trustedSection/trustedSection";
 import FaqSection from "@/components/faqSection/faqSection";
-const HelloRestComp = () => {
+import Seo from "@/components/seoComp";
+import GetStartedSection from "@/components/getStartedSection/getStartedSection";
+const HelloRestComp = ({pageData, path, webhookData=null, pricingPath }) => {
+
   return (
     <>
       {
@@ -48,8 +51,8 @@ const HelloRestComp = () => {
             </div>
           </div>
           <ProductFeatures featureData={productData?.features} />
-          <FaqSection faqData ={productData?.faq}/>
-        
+          <FaqSection faqData={productData?.faq} />
+          <GetStartedSection pricingPath={pricingPath}/>
         </div>
       }
     </>
