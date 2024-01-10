@@ -2,7 +2,7 @@ import { MdDone } from 'react-icons/md';
 import { useEffect, useState } from 'react';
 import { setUtm } from '../pricingComp';
 import Link from 'next/link';
-const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, countryCode }) => {  
+const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, countryCode }) => {
   var change
   var changeSymbol
   if(countryCode === 'US' || countryCode === 'AE' ||  countryCode === 'SG' || countryCode === 'PH'){
@@ -22,11 +22,13 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
   const [symbol, setSymbol] = useState(changeSymbol);
   var plans = [];
   var tempFeaturesArray = [];  
+  
   for (let i = 0; i < subscriptionHello.length; i++) {
+    console.log('subscriptionHello', subscriptionHello);
     plans[i] = {};
     plans[i].channels = [];
-    plans[i].features = [];
-    const subscription = subscriptionHello[i].planFeatures.map((data, index) => {
+    plans[i].features = [];    
+    const subscription = subscriptionHello[i].plan_features.map((data, index) => {
       if(data.is_visible === 1 && subscriptionHello[i].show_features){
         if (data.feature.key.includes("support_channel")) {
           plans[i].channels.push(data.feature.name);
