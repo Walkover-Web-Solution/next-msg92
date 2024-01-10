@@ -1,11 +1,8 @@
 .main-container {
   background: var(--light-grey-bg);
-  padding: 0 112px 0 112px !important;
 }
 
 #pricing-pills-tab {
-  padding-top: 40px;
-  padding-right: 27px;
   .side-bar-heading {
     font-size: 18px;
   }
@@ -220,12 +217,125 @@ $border-width: 2px;
     }
   }
   .link {
-    color: #1e75ba;
-    font-weight: 500;
-    border-bottom: 2px solid #1e75ba;
-    margin-top: 16px !important;
+    color:#1E75BA;
+    font-weight:500;
+    
+    span {
+      border-bottom:2px solid #1E75BA;
+    }
   }
-}
+  .Frequently-Questions {
+    padding: 80px 120px 80px 120px !important;
+    .accordion-item {
+
+      .accordion-button {
+        font-size: 20px !important;
+        font-weight: 500 !important;
+      }
+      .accordion-body {
+        font-size: 18px !important;
+        font-family: 400 !important;
+      }
+    }
+  }
+  .total-price{
+    background: var(--light-blue);
+    border-radius: var(--radius2);
+    .total{
+      color: var(--whatsapp);
+    }
+  }
+  .sms-range{
+    padding: 0 55px 0 35px;
+  }
+  .price-slab{
+    .slab{
+      .price{
+        font-size: 14px;
+        color: var(--c-grey);
+      }
+    }
+  }
+  .card-container{
+    .card{
+      min-height: 250px;
+      width:300px;
+      .card-body{
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+
+        .popular-plan-tag{
+         padding: 5px 12px;
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .card-container{
+  
+    .card.kb{
+      height: 350px;
+      width: 350px;
+      .card-body{
+        // background: white;
+        display: flex;
+
+        justify-content: space-between;
+
+      }
+    }
+  }
+  .talk-to-sales {
+    font-weight: 500;
+  }
+  .card-popular{
+  border: 2px solid var(--black-color) !important;
+  box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+  }
+  .popular-chip{
+    position: relative;
+    top: 13px;
+    z-index: 3;
+    color:white;
+    border-radius: 100px;
+    padding: 0.1rem 0.7rem;
+    background-color: var(--black-color);
+    letter-spacing :1.6px ;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .flex-gap > .card {
+    margin: 16px;
+  }
+  .text-green{
+    color:#29A653;
+    font-size: 16px;
+  }
+
+  .price-card{
+    background: var(--c-light-grey) !important;
+    margin-bottom: 36px;
+    }
+    .card-write {
+      font-weight: 500;
+      .tds {
+        font-weight: 500;
+        margin-top: 8px !important;
+      }
+    }
+      .link {
+    color:#1E75BA;
+    font-weight:500;
+    border-bottom:2px solid #1E75BA;
+    margin-top: 16px !important;
+      }
+    
+  
+ 
 
 .rate-table {
   max-width: 500px;
@@ -241,21 +351,25 @@ $border-width: 2px;
     top: 80px;
   } */
 
-.price-container {
-  min-height: 100px;
-  padding: 40px;
-}
-@media (max-width: 600px) {
-  .nav-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4px !important;
-    min-width: 64px !important;
-    font-size: 10px !important;
-    img {
-      height: 20px;
-      display: block;
+  .price-container{
+    min-height: 100px;
+  }
+  @media (max-width: 600px) {
+    .nav-link{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4px !important;
+      min-width: 64px !important;
+      font-size: 10px !important;
+      img{
+        height: 20px;
+        display: block;
+      }
+      .icon{
+        width: 24px;
+      }
+
     }
     .icon {
       width: 24px;
@@ -264,4 +378,11 @@ $border-width: 2px;
   .selection {
     background-color: #29a653;
   }
+}
+
+.prcing-check{
+  width: 20px;
+}
+.icon-drop{
+  width: 24px;
 }
