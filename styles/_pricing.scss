@@ -285,11 +285,60 @@ $border-width: 2px;
   }
   .talk-to-sales {
     font-weight: 500;
+<<<<<<< HEAD
     border-bottom: 2px solid #1e75ba;
     margin-top: 16px !important;
       
     
   }
+=======
+  }
+  .card-popular{
+  border: 2px solid var(--black-color) !important;
+  box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+  }
+  .popular-chip{
+    position: relative;
+    top: 13px;
+    z-index: 3;
+    color:white;
+    border-radius: 100px;
+    padding: 0.1rem 0.7rem;
+    background-color: var(--black-color);
+    letter-spacing :1.6px ;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .flex-gap > .card {
+    margin: 16px;
+  }
+  .text-green{
+    color:#29A653;
+    font-size: 16px;
+  }
+
+  .price-card{
+    background: var(--c-light-grey) !important;
+    margin-bottom: 36px;
+    }
+    .card-write {
+      font-weight: 500;
+      .tds {
+        font-weight: 500;
+        margin-top: 8px !important;
+      }
+    }
+      .link {
+    color:#1E75BA;
+    font-weight:500;
+    border-bottom:2px solid #1E75BA;
+    margin-top: 16px !important;
+      }
+    
+  
+>>>>>>> 90765f9c8bde329f9737348a43e3236216642f03
  
 
   .rate-table{
@@ -385,7 +434,7 @@ $border-width: 2px;
       td{
         border-bottom: unset !important;
       }
-    }
+    }}
 }
 .connect-personalized {
   .link{
@@ -412,3 +461,7 @@ $border-width: 2px;
       }
 }
 
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 90765f9c8bde329f9737348a43e3236216642f03
