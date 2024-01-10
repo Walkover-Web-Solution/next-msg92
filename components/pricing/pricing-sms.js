@@ -34,10 +34,10 @@ const Pricingsms = ({
       <div>
         {originCountry?.length >= 1 && (
           <div className="gap-3 w-100 d-flex flex-column text-start flex-md-row align-items-center justify-content-start col-12 col-md-10 col-lg-7 pb-4">
-            <span className="Send-sms fw-bold">Send SMS from</span>
+            <span className="Send-sms c-fw-m">Send SMS from</span>
             <Typeahead
-              className="w-25"
-              id="originCountry"
+              className="w-25 c-fs-6"
+              id="originCountry c-fs-6"
               
               placeholder="Origin Country"
               labelKey="name"
@@ -56,7 +56,7 @@ const Pricingsms = ({
               }}
             />
 
-            <div>To</div>
+            <div className="c-fw-m">To</div>
 
             <Typeahead
               className="w-25"
@@ -167,16 +167,16 @@ const Pricingsms = ({
 
         <div className="d-flex flex-column gap-3 align-items center mt-3">
 
-          <div className="text-center text-dark">Number of SMS</div>
+          <div className="text-center text-dark c-fw-m">Number of SMS</div>
 
           <div className="progress-value-wrapper d-flex">
-            <div className="progress-range-value text-start">0</div>
-            <div className="progress-range-value text-start">16,500</div>
-            <div className="progress-range-value text-start">30,000</div>
-            <div className="progress-range-value text-start">60,000</div>
-            <div className="progress-range-value text-start">150,000</div>
-            <div className="progress-range-value text-start">450,00</div>
-            <div className="progress-range-value text-start">900,000</div>
+            <div className="progress-range-value text-start c-fw-m">0</div>
+            <div className="progress-range-value text-start c-fw-m">16,500</div>
+            <div className="progress-range-value text-start c-fw-m">30,000</div>
+            <div className="progress-range-value text-start c-fw-m">60,000</div>
+            <div className="progress-range-value text-start c-fw-m">150,000</div>
+            <div className="progress-range-value text-start c-fw-m">450,00</div>
+            <div className="progress-range-value text-start c-fw-m">900,000</div>
           </div>
 
           <div className="d-flex progress-range-wrapper position-relative">
@@ -192,18 +192,18 @@ const Pricingsms = ({
           </div>
 
           <div className="progress-value-wrapper d-flex">
-            <div className="progress-range-value">₹0.20</div>
-            <div className="progress-range-value">₹0.25</div>
-            <div className="progress-range-value">₹0.19</div>
-            <div className="progress-range-value">₹0.18</div>
-            <div className="progress-range-value">₹0.17</div>
-            <div className="progress-range-value">₹0.16</div>
-            <div className="progress-range-value">₹0.15</div>
+            <div className="progress-range-value c-fw-m">₹0.20</div>
+            <div className="progress-range-value c-fw-m">₹0.25</div>
+            <div className="progress-range-value c-fw-m">₹0.19</div>
+            <div className="progress-range-value c-fw-m">₹0.18</div>
+            <div className="progress-range-value c-fw-m">₹0.17</div>
+            <div className="progress-range-value c-fw-m">₹0.16</div>
+            <div className="progress-range-value c-fw-m">₹0.15</div>
           </div>
-          <div className="text-center text-dark">Cost per SMS</div>
+          <div className="text-center text-dark c-fw-m">Cost per SMS</div>
         </div>
         <div className="d-flex align-items-end mt-4 mb-3">
-          <span className="c-fs-1 text-dark fw-bold">20,000</span>
+          <span className="c-fs-1 text-dark fw-bold">20,000 </span>
           <span className="c-fs-2 c-fw-500 text-dark">sms for</span>
           <span className="c-fs-1 text-green fw-bold">₹4,000</span>
           <span className="c-fs-2 c-fw-500 text-dark">+18%GST at</span>
@@ -217,7 +217,7 @@ const Pricingsms = ({
         >
           Get Started
         </button>
-        <div className="talk-to-sales mt-4">
+        <div className="talk-to-sales connect-personalized mt-4">
           <span className="personalized d-block c-fs-4">
             Connect with our team for a personalized pricing and get up to{" "}
             <span className="text-green c-fs-4 fw-medium">₹0.13</span> per SMS
@@ -232,7 +232,7 @@ const Pricingsms = ({
           <br />
           <a className="mt-3" href="#">
             <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
-            Know more about SMS
+            <span className="link">Know more about SMS</span>
           </a>
         </div>
       </div>

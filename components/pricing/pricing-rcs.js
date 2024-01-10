@@ -10,9 +10,9 @@ const pricingrcs = () => {
       </button>
       {/* <a href="/contact-us" className="btn btn-outline-dark col-6 col-sm-5 col-md-3 mx-auto mt-3">Talk to an Expert</a> */}
     </div>
-    <a href="#"> 
+    <a className="link" href="#"> 
             <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
-            Know more about OTP widget SDK
+            <span>Know more about RCS</span>
           </a>
   </>;
 };

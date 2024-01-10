@@ -48,15 +48,15 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsA
   return (
     <>
       <div className="price-card whatsapp bg-white p-4">
-      <h3 className="text-start fw-bold fs-4 text-green">Zero <span className="text-dark d-inline mb-3">markup on meta price</span></h3>
-     <a className="link" href="#">Check meta pricing</a>
+      <h3 className="text-start fw-bold fs-4 text-green">Zero <span className="text-dark d-inline">markup on meta price</span></h3>
+     <a className="link d-block mt-3" href="#">Check meta pricing</a>
       <h3 className="tds c-fs-4">TDS and GST excluded.</h3>
       <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-4 btn btn-dark rounded-1 py-2 px-3 mt-3">
         Get Started
       </button>
       {/* <a href="/contact-us" className="btn btn-outline-dark col-6 col-sm-5 col-md-3 mx-auto mt-3">Talk to an Expert</a> */}
     </div>
-    <a className="link border-bottom" href="#"> 
+    <a className="link" href="#"> 
             <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
             <span>Know more about WhatsApp</span>
           </a> 

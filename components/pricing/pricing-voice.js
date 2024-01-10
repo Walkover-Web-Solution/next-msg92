@@ -183,28 +183,50 @@ const PricingCalls = ({
 
       <div>
         <div className="header d-flex justify-content-between mb-4">
+          <div class="input-group justify-content-between w-25 border border-2 rounded-1 bg-white">
+            <input
+              type="text"
+              class="border border-0 ps-3"
+              aria-label="Text input with dropdown button"
+            />
+            <button
+              class="btn bg-white border border-0 dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            ></button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" href="#">
+                  INR
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  GBP
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  USD
+                </a>
+              </li>
+            </ul>
+          </div>
           <span className="d-flex">
-            <h6 className="text-Secondary bg-white p-2 border rounded-start c-fs-6">
-              Monthly
-            </h6>
-            <h6 className="text-Secondary bg-white p-2 border rounded-end c-fs-6">
-              Yearly (20% off)
-            </h6>
-          </span>
-          <span className="d-flex">
-            <h6 className="text-Secondary bg-white p-2 border rounded-start c-fs-6">
+            <h6 className="active country text-Secondary cursor-pointer bg-white d-flex align-items-center p-2 border round-start c-fs-6">
               INR
             </h6>
-            <h6 className="text-Secondary bg-white p-2 border c-fs-6">USD</h6>
-            <h6 className="text-Secondary bg-white p-2 border rounded-end c-fs-6">
+            <h6 className="country text-Secondary cursor-pointer bg-white d-flex align-items-center p-2 border c-fs-6">USD</h6>
+            <h6 className="country text-Secondary cursor-pointer bg-white d-flex align-items-center p-2 border round-end c-fs-6">
               GBP
             </h6>
           </span>
         </div>
 
-        <h4 className="c-fs-4 fw-semibold">Outgoing call charges/min</h4>
+        <h4 className="c-fs-4 fw-semibold mt-3">Outgoing call charges/min</h4>
 
-        <table className="table border border-dark rounded-2 mt-3 overflow-hidden">
+        <table className="table border border-dark rounded-2 my-3 overflow-hidden">
           <thead>
             <tr>
               <th className="border-bottom border-dark">Recipient’s Network</th>
@@ -250,51 +272,89 @@ const PricingCalls = ({
             </tr>
           </tbody>
         </table>
-      </div>
 
-      <div className="mb-4">
-        <span className="c-fw-m click-hear">Click here</span>
-        <span className="c-fw-m">
-          {" "}
-          to download the detailed network and prefix wise pricing sheet.
-        </span>
-      </div>
+        <div className="mb-4">
+          <span className="c-fw-m click-hear cursor-pointer">Click here</span>
+          <span className="c-fw-m">
+            {" "}
+            to download the detailed network and prefix wise pricing sheet.
+          </span>
+        </div>
 
-      <div className="services w-100 rounded-2 bg-white p-4 mt-3">
-        <strong className="c-fs-4 fw-semibold">Add-on services</strong>
-        <div className="row">
-          <div className="col-6">
-            <div className="my-2 c-fs-5">
-              <span className="text-success me-2 c-fs-3">
-                <MdDone />
-              </span>
-              Call Recording
+        <div className="services w-100 rounded-2 bg-white p-4 my-3">
+          <strong className="c-fs-4 fw-semibold">Add-on services</strong>
+          <div className="row">
+            <div className="col-6">
+              <div className="my-2 c-fs-5">
+                <span className="text-success me-2 c-fs-3">
+                  <MdDone />
+                </span>
+                Call Recording
+              </div>
+              <div>
+                <span className="text-success me-2 c-fs-3">
+                  <MdDone />
+                </span>
+                Analytics
+              </div>
             </div>
-            <div>
-              <span className="text-success me-2 c-fs-3">
-                <MdDone />
-              </span>
-              Analytics
+            <div className="col-6">
+              <div className="my-2">
+                <span className="text-success me-2 c-fs-3">
+                  <MdDone />
+                </span>
+                Call Recording
+              </div>
+              <div>
+                <span className="text-success me-2 c-fs-3">
+                  <MdDone />
+                </span>
+                Add...
+              </div>
             </div>
           </div>
-          <div className="col-6">
-            <div className="my-2">
-              <span className="text-success me-2 c-fs-3">
-                <MdDone />
-              </span>
-              Call Recording
-            </div>
-            <div>
-              <span className="text-success me-2 c-fs-3">
-                <MdDone />
-              </span>
-              Add...
-            </div>
+          <div className="c-fw-m mt-3">
+            All the Add-On Services are
+            <span className="text-green c-fw-m"> FREE</span> of cost
           </div>
         </div>
-        <div className="c-fw-m mt-3">
-          All the Add-On Services are
-          <span className="text-green c-fw-m"> FREE</span> of cost
+
+        <button type="button" class="btn btn-dark fw-semibold my-4 rounded-1">
+          Get Started
+        </button>
+        <div>
+          <span className="fw-semibold my-3">International rate:</span>
+          <span>
+            Calls are routed through premium A-Z routes and CLI can be any valid
+            number. Calls without a CLI, with invalid CLI, with manipulated CLI,
+            with CLI originated from unidentified, closed or unallocated prefix
+            ranges, with CLI not in E.164 format, with CLI not matching ITU
+            standards might be blocked or charged at the highest price.
+          </span>
+        </div>
+        <div>
+          <span className="fw-semibold mb-3">Local Rate:</span>
+          <span>
+            {" "}
+            Calls are routed through local operators’ in-country network. Only
+            numbers on your MSG91 account can be used.
+          </span>
+        </div>
+        <div className="connect-personalized my-4">
+          <span className="talk-to-sales d-block c-fs-4 fw-medium">
+            Connect with our team for a personalized plan to meet your needs.
+          </span>
+          <button
+            type="button"
+            className="btn btn-outline-dark mt-3 mb-4 fw-semibold border border-dark border-2 rounded-1 px-3 py-1"
+          >
+            Talk to Sales
+          </button>
+          <br />
+          <a href="#">
+            <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
+            <span className="link">Know more about Voice</span>
+          </a>
         </div>
       </div>
     </>

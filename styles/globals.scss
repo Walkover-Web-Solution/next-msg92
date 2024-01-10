@@ -604,9 +604,14 @@ body::-webkit-scrollbar-button {
     display: none;
   }
   button {
-    font-size: 14px;
+    font-size: 9px;
     width: 26px;
     height: 26px;
+  }
+}
+.rbt {
+  input{
+    font-size: 14px;
   }
 }
 

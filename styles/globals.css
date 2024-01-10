@@ -254,7 +254,7 @@ h1, h2, h3, h4, h5, h6, p {
   font-weight: 500;
 }
 .link span {
-  border-bottom: 2px solid #1e75ba;
+  border-bottom: 1px solid #1e75ba;
 }
 
 .Frequently-Questions {
@@ -492,8 +492,7 @@ h1, h2, h3, h4, h5, h6, p {
   gap: 40px;
 }
 .card-wrapper .card-price {
-  width: 284px;
-  height: 470px;
+  flex-grow: 1;
 }
 
 .price-container {
@@ -558,12 +557,40 @@ h1, h2, h3, h4, h5, h6, p {
   border-bottom: 1px solid #1E75BA;
 }
 
+.table {
+  border-spacing: 0;
+  border-collapse: separate;
+}
 .table tr th, .table tr td {
   padding: 16px 24px;
 }
 .table tr th:nth-child(even), .table tr td:nth-child(even) {
   border-left: 1px solid;
   border-right: 1px solid;
+}
+.table tr td {
+  border-bottom: unset !important;
+}
+
+.connect-personalized .link {
+  color: #1E75BA;
+  border-bottom: 1px solid #1E75BA;
+}
+
+.header input {
+  outline: none;
+}
+.header .country {
+  width: 43px;
+}
+.header .country.round-start {
+  border-radius: 4px 0 0 4px;
+}
+.header .country.round-end {
+  border-radius: 0 4px 0 4px;
+}
+.header .active {
+  background-color: rgba(77, 160, 255, 0.1254901961) !important;
 }
 
 .page-title {
@@ -1931,9 +1958,13 @@ body::-webkit-scrollbar-button {
   display: none;
 }
 .rbt-aux button {
-  font-size: 14px;
+  font-size: 9px;
   width: 26px;
   height: 26px;
+}
+
+.rbt input {
+  font-size: 14px;
 }
 
 /* case study */

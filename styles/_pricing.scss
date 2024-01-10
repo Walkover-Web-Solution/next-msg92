@@ -43,7 +43,7 @@
   font-weight: 500;
 
   span {
-    border-bottom: 2px solid #1e75ba;
+    border-bottom: 1px solid #1e75ba;
   }
 }
 .Frequently-Questions {
@@ -384,6 +384,30 @@ $border-width: 2px;
         border-bottom: unset !important;
       }
     }
+}
+.connect-personalized {
+  .link{
+    color:#1E75BA;
+    border-bottom:1px solid #1E75BA;
+  }
+}
+.header{
+  input{
+    outline: none;
+     }
+     .country {
+      width: 43px;
+      &.round-start{
+        border-radius: 4px 0 0 4px;
+      }
+      &.round-end{
+        border-radius: 0 4px 0 4px;
+      }
+
+     }
+     .active {
+      background-color: #4da0ff20 !important;
+      }
 }
 
   

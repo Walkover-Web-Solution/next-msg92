@@ -85,19 +85,19 @@ const pricingemail = ({
     </div> */}
       <div className="header d-flex justify-content-between mb-4">
         <span className="d-flex">
-          <h6 className="text-Secondary bg-white p-2 border rounded-start c-fs-6">
+          <h6 className="active text-Secondary bg-white p-2 border rounded-start c-fs-6 cursor-pointer">
             Monthly
           </h6>
-          <h6 className="text-Secondary bg-white p-2 border rounded-end c-fs-6">
+          <h6 className="text-Secondary bg-white p-2 border rounded-end c-fs-6 cursor-pointer">
             Yearly (20% off)
           </h6>
         </span>
         <span className="d-flex">
-          <h6 className="text-Secondary bg-white p-2 border rounded-start c-fs-6">
+          <h6 className="active text-Secondary bg-white p-2 border rounded-start c-fs-6 cursor-pointer">
             INR
           </h6>
-          <h6 className="text-Secondary bg-white p-2 border c-fs-6">USD</h6>
-          <h6 className="text-Secondary bg-white p-2 border rounded-end c-fs-6">
+          <h6 className="text-Secondary bg-white p-2 border c-fs-6 cursor-pointer">USD</h6>
+          <h6 className="text-Secondary bg-white p-2 border rounded-end c-fs-6 cursor-pointer">
             GBP
           </h6>
         </span>
@@ -417,7 +417,7 @@ const pricingemail = ({
           </div>
         </div>
       </div>
-      <div className="my-4">
+      <div className="connect-personalized my-4">
         <span className="talk-to-sales d-block c-fs-4 fw-medium">
           Connect with our team for a personalized plan to meet your needs.
         </span>
@@ -428,9 +428,9 @@ const pricingemail = ({
           Talk to Sales
         </button>
         <br />
-        <a href="#">
+        <a className="mt-3" href="#">
           <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
-          Know more about Email
+          <span className="link">Know more about Email</span>
         </a>
       </div>
     </>

@@ -209,7 +209,7 @@ const Tie = () => {
               <label for="tie-id" className="form-label">Enter TiE ID</label>
               <input
                 type="text"
-                className="form-control"
+                className="form-control "
                 value={verificationCode}
                 id="tie-id"
                 onChange={(e) => setVerificationCode(e.target.value)}
