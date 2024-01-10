@@ -56,7 +56,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsA
       </button>
       {/* <a href="/contact-us" className="btn btn-outline-dark col-6 col-sm-5 col-md-3 mx-auto mt-3">Talk to an Expert</a> */}
     </div>
-    <a className="link border-bottom" href="#"> 
+    <a className="link" href="#"> 
             <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
             <span>Know more about WhatsApp</span>
           </a> 

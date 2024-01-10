@@ -342,7 +342,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
               )
             )}
           </div>
-          <div className=" price-container ">
+          <div className=" price-container w-100">
             {product === "sms" && (
               <Pricingsms
                 amountArr={amountArr}

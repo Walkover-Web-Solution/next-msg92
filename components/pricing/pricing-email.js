@@ -2,42 +2,54 @@ import { MdDone, MdClose } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { setUtm } from "../pricingComp";
-const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSubscriptionEmail, countryCode}) => {
-  var change
-  var changeSymbol
-  if(countryCode === 'US' || countryCode === 'AE' ||  countryCode === 'SG' || countryCode === 'PH'){
-    change = 'USD'
-    changeSymbol = '$'
-  }
-  else if(countryCode === 'GB' || countryCode === 'ES'){
-    change = 'GBP'
-    changeSymbol = '£'
-  }
-  else if (countryCode === 'IN'){
-    change = 'INR'
-    changeSymbol = '₹'
+const pricingemail = ({
+  subscriptionEmail,
+  fetchSubscriptionEmail,
+  currency,
+  setSubscriptionEmail,
+  countryCode,
+}) => {
+  var change;
+  var changeSymbol;
+  if (
+    countryCode === "US" ||
+    countryCode === "AE" ||
+    countryCode === "SG" ||
+    countryCode === "PH"
+  ) {
+    change = "USD";
+    changeSymbol = "$";
+  } else if (countryCode === "GB" || countryCode === "ES") {
+    change = "GBP";
+    changeSymbol = "£";
+  } else if (countryCode === "IN") {
+    change = "INR";
+    changeSymbol = "₹";
   }
   // ph,global
   const [selectedCurrency, setSelectedCurrency] = useState(change);
   const [selectedMode, setSelectedMode] = useState("Monthly");
   const [symbol, setSymbol] = useState(changeSymbol);
-  
-  const changeCurrency = async(currency) => {
+
+  const changeCurrency = async (currency) => {
     setSelectedCurrency(currency);
     try {
-      const response = await fetchSubscriptionEmail(currency, '1',"subscriptionEmail");
-
+      const response = await fetchSubscriptionEmail(
+        currency,
+        "1",
+        "subscriptionEmail"
+      );
     } catch (error) {
-      console.log(error.message,"error")
+      console.log(error.message, "error");
     }
-    
+
     switch (currency) {
       case "INR":
         setSymbol("₹");
         break;
       case "USD":
-      setSymbol("$");
-        break;      
+        setSymbol("$");
+        break;
       case "GBP":
         setSymbol("£");
         break;
@@ -45,17 +57,20 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
   };
 
   const numberWithCommas = (x) => {
-    let nf = (currency === 'INR') ? new Intl.NumberFormat('en-IN') : new Intl.NumberFormat('en-US');    
+    let nf =
+      currency === "INR"
+        ? new Intl.NumberFormat("en-IN")
+        : new Intl.NumberFormat("en-US");
     return nf.format(x);
-  }
+  };
 
-  useEffect(() => {    
+  useEffect(() => {
     setUtm();
-  }, []);  
+  }, []);
 
   return (
     <>
-    <div className="d-flex justify-content-center">
+      {/* <div className="d-flex justify-content-center">
     <select style={{width: 'fit-content'}} className="form-select me-4" aria-label="Default select example" value={selectedCurrency} onChange={(e)=>changeCurrency(e.target.value)}>
     <>
       <option value="INR">INR</option>
@@ -67,8 +82,27 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
         <option value="Monthly">Monthly</option>
         <option value="Yearly">Yearly</option>
       </select>
-    </div>
-      <div className="d-flex flex-wrap flex-gap gap-3 justify-content-center w-100  card-container align-items-end">
+    </div> */}
+      <div className="header d-flex justify-content-between mb-4">
+        <span className="d-flex">
+          <h6 className="active text-Secondary bg-white p-2 border rounded-start c-fs-6 cursor-pointer">
+            Monthly
+          </h6>
+          <h6 className="text-Secondary bg-white p-2 border rounded-end c-fs-6 cursor-pointer">
+            Yearly (20% off)
+          </h6>
+        </span>
+        <span className="d-flex">
+          <h6 className="active text-Secondary bg-white p-2 border rounded-start c-fs-6 cursor-pointer">
+            INR
+          </h6>
+          <h6 className="text-Secondary bg-white p-2 border c-fs-6 cursor-pointer">USD</h6>
+          <h6 className="text-Secondary bg-white p-2 border rounded-end c-fs-6 cursor-pointer">
+            GBP
+          </h6>
+        </span>
+      </div>
+      {/* <div className=" gap-3 justify-content-center w-100  card-container align-items-end">
         {subscriptionEmail?.length ?
           subscriptionEmail?.map((item, index) => {
             return(
@@ -77,10 +111,10 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
                 item.plan_amounts[0].plan_amount === 100 ||
                 item.plan_amounts[0].plan_amount === 75
               ?
-                <div className="text-center d-flex flex-column mb-4 mb-sm-0 align-items-center ">
+                <div className="text-center flex-column mb-4 mb-sm-0 align-items-center">
                   <div className="popular-chip c-fs-6">POPULAR</div>
                   <div className="card-popular price-card email card text-center mb-4 mb-sm-0 c-bg-grey">                  
-                    <div className="card-body">
+                    <div className="card-body w-100">
                       <h3 className="c-fs-3">{item.name}</h3>
                       <h5 className="mt-2 c-fs-2 text-green">
                         {symbol}
@@ -126,7 +160,7 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
                 </div>  
               :
                 <div className="card price-card email border-0 text-center mb-4 mb-sm-0 c-bg-grey">                
-                  <div className="card-body">
+                  <div className="card-body w-100">
                     <h3 className="c-fs-3">{item.name}</h3>
                     <h5 className="mt-2 c-fs-2 text-green">
                       {symbol}
@@ -184,6 +218,220 @@ const pricingemail = ({subscriptionEmail, fetchSubscriptionEmail, currency,setSu
           </div>
         </div>
         
+      </div> */}
+
+      <div className="d-flex p-4 justify-content-between bg-white w-100 rounded-2 mt-3">
+        <div>
+          <h3 className="fs-4 fw-semibold">Free</h3>
+          <div className="d-flex align-items-end">
+            <h5 className="mt-2 c-fs-1 fw-bold text-green ">₹0</h5>
+            <span className="text-dark fs-4 fw-medium">per month</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 className="c-fs-4 fw-semibold">Included</h3>
+          <div className="c-fs-5 ">
+            <span className="text-success">
+              <MdDone />
+            </span>
+            5,000 Email Validations
+          </div>
+          <div className="c-fs-5 ">
+            <span className="text-danger">
+              <MdClose />
+            </span>
+            No Email Validations
+          </div>
+        </div>
+
+        <div>
+          <h3 className="c-fs-4 fw-semibold">Extra @</h3>
+          <div className="c-fs-5 ">
+            <span className="text-success">
+              <MdDone />
+            </span>
+            ₹0.035/Email
+          </div>
+          <div className="c-fs-5 ">
+            <span className="text-success">
+              <MdDone />
+            </span>
+            ₹0.035/EmailValidations
+          </div>
+        </div>
+
+        <a
+          href="https://control.msg91.com/signup/"
+          target="_blank"
+          className="d-flex align-items-end"
+        >
+          <button
+            type="button"
+            class="btn btn-outline-dark rounded-1 fw-semibold"
+          >
+            Get Started
+          </button>
+        </a>
+      </div>
+
+      <div className="card-wrapper d-flex w-100 py-4">
+        <div className="card-price p-4 bg-white rounded-2">
+          <h3 className="fs-4 fw-semibold">Starter</h3>
+          <div className="d-flex align-items-end mt-4">
+            <h5 className="c-fs-1 fw-bold text-green ">₹2,000</h5>
+            <span className="text-dark fs-4 fw-medium">per month</span>
+          </div>
+          <span>+18% GST</span>
+          <a
+            href="https://control.msg91.com/signup/"
+            target="_blank"
+            className="d-flex align-items-end py-4 border-bottom border-2"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-dark rounded-1 fw-semibold"
+            >
+              Get Started
+            </button>
+          </a>
+          <h3 className="c-fs-4 fw-semibold mt-4">Included</h3>
+          <div className="c-fs-5 ">
+            <span className="text-success">
+              <MdDone />
+            </span>
+            100,000 Email
+          </div>
+          <div className="c-fs-5 ">
+            <span className="text-danger">
+              <MdDone />
+            </span>
+            100 EmailValidations
+          </div>
+          <h3 className="c-fs-4 fw-semibold mt-4">Extra @</h3>
+          <div className="c-fs-5 ">
+            <span className="text-success">
+              <MdDone />
+            </span>
+            ₹0.020/Email
+          </div>
+          <div className="c-fs-5 ">
+            <span className="text-success">
+              <MdDone />
+            </span>
+            ₹0.025/EmailValidations
+          </div>
+        </div>
+
+        <div className="card-price p-4 bg-white rounded-2">
+          <h3 className="fs-4 fw-semibold">Basic</h3>
+          <div className="d-flex align-items-end mt-4">
+            <h5 className="c-fs-1 fw-bold text-green ">₹4,600</h5>
+            <span className="text-dark fs-4 fw-medium">per month</span>
+          </div>
+          <span>+18% GST</span>
+          <a
+            href="https://control.msg91.com/signup/"
+            target="_blank"
+            className="d-flex align-items-end py-4 border-bottom border-2"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-dark rounded-1 fw-semibold"
+            >
+              Get Started
+            </button>
+          </a>
+          <h3 className="c-fs-4 fw-semibold mt-4">Included</h3>
+          <div className="c-fs-5 ">
+            <span className="text-success">
+              <MdDone />
+            </span>
+            250,000 Email
+          </div>
+          <div className="c-fs-5 ">
+            <span className="text-danger">
+              <MdDone />
+            </span>
+            3,000 EmailValidations
+          </div>
+          <h3 className="c-fs-4 fw-semibold mt-4">Extra @</h3>
+          <div className="c-fs-5 ">
+            <span className="text-success">
+              <MdDone />
+            </span>
+            ₹0.015/Email
+          </div>
+          <div className="c-fs-5 ">
+            <span className="text-success">
+              <MdDone />
+            </span>
+            ₹0.02/EmailValidations
+          </div>
+        </div>
+
+        <div className="card-price p-4 bg-white rounded-2">
+          <div className="d-flex justify-content-between">
+            <h3 className="fs-4 fw-semibold">Alpha</h3>
+            <span className="tex-center px-2 pt-1 c-fs-7 c-fw-m border border-dark rounded-4">Popular</span>
+          </div>
+          <div className="d-flex align-items-end mt-4">
+            <h5 className="c-fs-1 fw-bold text-green ">₹7,500</h5>
+            <span className="text-dark fs-4 fw-medium">per month</span>
+          </div>
+          <span>+18% GST</span>
+          <a
+            href="https://control.msg91.com/signup/"
+            target="_blank"
+            className="d-flex align-items-end py-4 border-bottom border-2"
+          >
+            <button type="button" class="btn btn-dark rounded-1 fw-semibold">
+              Get Started
+            </button>
+          </a>
+          <h3 className="c-fs-4 fw-semibold mt-4">Included</h3>
+          <div className="c-fs-5 ">
+            <span className="text-success">
+              <MdDone />
+            </span>
+            500,000 Email
+          </div>
+          <div className="c-fs-5 ">
+            <span className="text-danger">
+              <MdDone />
+            </span>
+            5,000 EmailValidations
+          </div>
+          <h3 className="c-fs-4 fw-semibold mt-4">Extra @</h3>
+          <div className="c-fs-5 ">
+            <span className="text-success">
+              <MdDone />
+            </span>
+            ₹0.010/Email
+          </div>
+          <div className="c-fs-5 ">
+            <span className="text-success">
+              <MdDone />
+            </span>
+            ₹0.015/EmailValidations
+          </div>
+        </div>
+      </div>
+      <div className="connect-personalized my-4">
+        <span className="talk-to-sales d-block c-fs-4 fw-medium">
+          Connect with our team for a personalized plan to meet your needs.
+        </span>
+        <button
+          type="button"
+          className="btn btn-outline-dark mt-3 mb-4 fw-semibold border border-dark border-2 rounded-1 px-3 py-1"
+        >
+          Talk to Sales
+        </button>
+        <br />
+        <a className="mt-3" href="#">
+          <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
+          <span className="link">Know more about Email</span>
+        </a>
       </div>
     </>
   );
