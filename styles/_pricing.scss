@@ -287,17 +287,19 @@ $border-width: 2px;
     font-weight: 500;
     border-bottom: 2px solid #1e75ba;
     margin-top: 16px !important;
+      
+    
   }
-}
+ 
 
-.rate-table {
-  max-width: 500px;
-}
-.pagination {
-  .page-link {
-    cursor: pointer;
+  .rate-table{
+    max-width: 500px;
   }
-}
+  .pagination{
+    .page-link{
+      cursor: pointer;
+    }
+  }
 
 /* .onlyin{
     position: sticky;
@@ -410,4 +412,3 @@ $border-width: 2px;
       }
 }
 
-  

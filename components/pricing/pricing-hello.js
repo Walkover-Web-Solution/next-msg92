@@ -87,11 +87,11 @@ const pricinghello = ({
               return (
                 <div
                   key={`email-card-${index}`}
-                  className="d-flex h-100 align-items-start"
+                  className="d-flex h-100 align-items-start "
                 >
                   {/* <div className="popular-chip c-fs-6">POPULAR</div> */}
-                  <div className="price-card email card c-bg-grey border-0 h-100">
-                    <div className="card-body bg-white p-3 gap-3  rounded-3">
+                  <div className="price-card email card rounded-2 border-0 h-100">
+                    <div className="card-body bg-white p-3 gap-3 rounded-2  ">
                       <div className="d-flex  align-items-center justify-content-between">
                         <h3 className="text-start c-fw-sb fs-4">{item.name}</h3>
                         {item?.name === "Premium" && (
