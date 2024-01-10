@@ -1,13 +1,16 @@
 import ProductFeatures from "@/components/productFeatures/productFeature";
 import style from "./helloRestComp.module.scss";
-import productData from "./hello.json"
+import productData from "./hello.json";
 import TrusedSection from "@/components/trustedSection/trustedSection";
+import FaqSection from "@/components/faqSection/faqSection";
 const HelloRestComp = () => {
   return (
     <>
       {
         <div className={` ${style.hello}`}>
-          <div className={`${style.hero} container d-flex flex-column flex-lg-row gap-4 my-5 `}>
+          <div
+            className={`${style.hero} container d-flex flex-column flex-lg-row gap-4 my-5 `}
+          >
             <div
               className={`${style.hero__content} d-flex flex-column justify-content-center gap-3 gap-lg-5 col-12 col-lg-6`}
             >
@@ -36,15 +39,17 @@ const HelloRestComp = () => {
               <button className="btn btn-ft btn-dark rounded-1 c-fs-4">
                 Get Started
               </button>
-              {productData?.trustedData &&  <TrusedSection trustedData={productData?.trustedData}/>}
-             
+              {productData?.trustedData && (
+                <TrusedSection trustedData={productData?.trustedData} />
+              )}
             </div>
             <div className={`${style.heroimg} d-none d-sm-block`}>
               <img src="./img/pages/hello/heroimg.svg" />
             </div>
           </div>
           <ProductFeatures featureData={productData?.features} />
-          
+          <FaqSection faqData ={productData?.faq}/>
+        
         </div>
       }
     </>
