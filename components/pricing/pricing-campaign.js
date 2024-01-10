@@ -9,9 +9,9 @@ const pricingcampaign = () => {
         Get Started
       </button>      
     </div>
-    <a href="#"> 
+    <a className="link" href="#"> 
             <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
-            Know more about compaign
+            <span>Know more about Campaign</span>
           </a>
   </>;
 };

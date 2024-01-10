@@ -219,7 +219,7 @@ const pricinghello = ({
             })
           : ""}
       </div>
-      <div className="my-4">
+      <div className="my-4 connect-personalized">
         <span className="talk-to-sales d-block c-fs-4">
           Connect with our team for a personalized plan to meet your needs.
         </span>
@@ -232,7 +232,7 @@ const pricinghello = ({
         <br />
         <a href="#">
           <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
-          Know more about Hello
+          <span className="link">Know more about Hello</span>
         </a>
       </div>
     </>
