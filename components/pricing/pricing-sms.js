@@ -168,6 +168,8 @@ const Pricingsms = ({
         <div className="d-flex flex-column gap-3 align-items center mt-3">
 
           <div className="text-center text-dark c-fw-m">Number of SMS</div>
+          
+          
 
           <div className="progress-value-wrapper d-flex">
             <div className="progress-range-value text-start c-fw-m">0</div>
@@ -179,8 +181,9 @@ const Pricingsms = ({
             <div className="progress-range-value text-start c-fw-m">900,000</div>
           </div>
 
-          <div className="d-flex progress-range-wrapper position-relative">
-            <div className="progress-indicator" style={{ width: "15%" }}></div>
+          <div className="d-flex progress-range-wrapper number--label position-relative">
+          <label for="progress-indicator" class="number--label">0</label>
+            <div className="progress-indicator" style={{ width: "15%" }} type="range" id="input-slider" min="0" max="100" step="1" value="0">
 
             <div className="progress-range"></div>
             <div className="progress-range"></div>
@@ -189,6 +192,7 @@ const Pricingsms = ({
             <div className="progress-range"></div>
             <div className="progress-range"></div>
             <div className="progress-range"></div>
+          </div>
           </div>
 
           <div className="progress-value-wrapper d-flex">
@@ -213,7 +217,7 @@ const Pricingsms = ({
         <button
           data-bs-toggle="modal"
           data-bs-target="#sales-modal"
-          className="c-fs-4 btn btn-dark rounded-1 py-2 px-3 mt-4 mb-3"
+          className="fw-semibold btn btn-dark rounded-1 py-2 px-3 mt-4 mb-3"
         >
           Get Started
         </button>
@@ -239,5 +243,6 @@ const Pricingsms = ({
     </>
   );
 };
+
 
 export default Pricingsms;

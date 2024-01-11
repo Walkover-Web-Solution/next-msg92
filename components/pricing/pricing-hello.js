@@ -87,15 +87,15 @@ const pricinghello = ({
               return (
                 <div
                   key={`email-card-${index}`}
-                  className="d-flex h-100 align-items-start "
-                >
+                  className="card d-flex align-items-start rounded-2 border-0 bg-white p-4 "
+                 >
                   {/* <div className="popular-chip c-fs-6">POPULAR</div> */}
-                  <div className="price-card email card rounded-2 border-0 h-100">
-                    <div className="card-body bg-white p-3 gap-3 rounded-2  ">
-                      <div className="d-flex  align-items-center justify-content-between">
+                  
+                    
+                      <div className="d-flex align-items-center justify-content-between">
                         <h3 className="text-start c-fw-sb fs-4">{item.name}</h3>
                         {item?.name === "Premium" && (
-                          <span className="popular-plan-tag border border-1 border-dark c-fw-sb rounded-5 px-3">
+                          <span className="popular-plan-tag border border-1 border-dark c-fw-sb rounded-5 px-3 m-auto">
                             Popular
                           </span>
                         )}
@@ -126,7 +126,7 @@ const pricinghello = ({
                           item?.name === "Premium"
                             ? "btn-dark"
                             : "btn-outline-dark"
-                        }  btn btn-sm w-50 rounded-1 border border-2 border-dark px-3 `}
+                        }  btn fw-semibold rounded-1 border border-2 border-dark px-3 `}
                       >
                         Get Started
                       </a>
@@ -151,7 +151,7 @@ const pricinghello = ({
                           </div>
                         </div>
                       </div>
-                      <div className="c-fs-6 ">
+                      <div className="c-fs-6 mt-4">
                         <h4 className="c-fs-4 mb-2 c-fw-sb">Features</h4>
                         {item?.plan_features?.map((data, index) => {
                           if (data.is_visible) {
@@ -165,7 +165,7 @@ const pricinghello = ({
                           return null; // Don't render anything if data.id is not "0"
                         })}
                       </div>
-                      <div className="c-fs-6 text-start feature-list">
+                      <div className="c-fs-6 text-start feature-list mt-4">
                         <h4 className="c-fs-4 mb-2 c-fw-sb">Extra</h4>
                         {item?.postpaid_allowed ? (
                           <>
@@ -212,8 +212,8 @@ const pricinghello = ({
                           </>
                         )}
                       </div>
-                    </div>
-                  </div>
+                    
+                  
                 </div>
               );
             })

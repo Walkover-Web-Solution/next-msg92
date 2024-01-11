@@ -221,7 +221,7 @@ const Pricingsms = ({
           <span className="c-fs-1 text-green fw-bold">₹0.22</span>
           <span className="c-fs-2 c-fw-500 text-dark">per sms</span>
         </div>
-        <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-4 btn btn-dark rounded-1 py-2 px-3 mt-4 mb-3">
+        <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="fw-semibold btn btn-dark rounded-1 py-2 px-3 mt-4 mb-3">
         Get Started
       </button>
       <div className="talk-to-sales connect-personalized mt-4">

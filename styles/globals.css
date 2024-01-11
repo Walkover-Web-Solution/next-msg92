@@ -252,12 +252,13 @@ h1, h2, h3, h4, h5, h6, p {
   flex-grow: 1;
 }
 
-.link {
-  color: #1e75ba;
-  font-weight: 500;
+.more-about {
+  color: #1e75ba !important;
+  font-weight: 500 !important;
 }
-.link span {
-  border-bottom: 1px solid #1e75ba;
+.more-about span {
+  border-bottom: 1px solid #1e75ba !important;
+  font-weight: 500 !important;
 }
 
 .Frequently-Questions {
@@ -345,16 +346,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .card-container .card {
   min-height: 250px;
-  width: 300px;
 }
 .card-container .card .card-body {
   padding: 24px;
   display: flex;
   flex-direction: column;
-}
-.card-container .card .card-body .popular-plan-tag {
-  top: 12px;
-  right: 24px;
 }
 
 .card-container .card.kb {
@@ -421,14 +417,6 @@ h1, h2, h3, h4, h5, h6, p {
   margin-top: 8px !important;
 }
 
-.link {
-  color: #1e75ba;
-  font-weight: 500;
-}
-.link span {
-  border-bottom: 2px solid #1e75ba;
-}
-
 .Frequently-Questions {
   padding: 80px 120px 80px 120px !important;
 }
@@ -462,12 +450,7 @@ h1, h2, h3, h4, h5, h6, p {
   min-height: 250px;
   width: 300px;
 }
-.card-container .card .card-body {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-}
-.card-container .card .card-body .popular-plan-tag {
+.card-container .card .popular-plan-tag {
   padding: 5px 12px;
   font-size: 12px;
   font-weight: 500;

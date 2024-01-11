@@ -41,12 +41,13 @@
   }
 }
 
-.link {
-  color: #1e75ba;
-  font-weight: 500;
+.more-about {
+  color: #1e75ba !important;
+  font-weight: 500 !important;
 
   span {
-    border-bottom: 1px solid #1e75ba;
+    border-bottom: 1px solid #1e75ba !important;
+   font-weight: 500 !important;
   }
 }
 .Frequently-Questions {
@@ -138,16 +139,12 @@ $border-width: 2px;
   gap: 40px;
   .card {
     min-height: 250px;
-    width: 300px;
-    .card-body {
+       .card-body {
       padding: 24px;
       display: flex;
       flex-direction: column;
 
-      .popular-plan-tag {
-        top: 12px;
-        right: 24px;
-      }
+   
     }
   }
 }
@@ -216,14 +213,7 @@ $border-width: 2px;
       margin-top: 8px !important;
     }
   }
-  .link {
-    color: #1e75ba;
-    font-weight: 500;
-
-    span {
-      border-bottom: 2px solid #1e75ba;
-    }
-  }
+  
   .Frequently-Questions {
     padding: 80px 120px 80px 120px !important;
     .accordion-item {
@@ -256,20 +246,17 @@ $border-width: 2px;
     }
   }
   .card-container {
+    
     .card {
       min-height: 250px;
       width: 300px;
-      .card-body {
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-
+      
         .popular-plan-tag {
           padding: 5px 12px;
           font-size: 12px;
           font-weight: 500;
         }
-      }
+      
     }
   }
   .card-container {
