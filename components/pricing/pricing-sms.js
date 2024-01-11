@@ -182,8 +182,8 @@ const Pricingsms = ({
           </div>
 
           <div className="d-flex progress-range-wrapper number--label position-relative">
-          <label for="progress-indicator" class="number--label">0</label>
-            <div className="progress-indicator" style={{ width: "15%" }} type="range" id="input-slider" min="0" max="100" step="1" value="0">
+          
+            <div className="progress-indicator" style={{ width: "18%" }} ></div>
 
             <div className="progress-range"></div>
             <div className="progress-range"></div>
@@ -193,7 +193,7 @@ const Pricingsms = ({
             <div className="progress-range"></div>
             <div className="progress-range"></div>
           </div>
-          </div>
+          
 
           <div className="progress-value-wrapper d-flex">
             <div className="progress-range-value c-fw-m">₹0.20</div>
