@@ -1,5 +1,32 @@
 {
     "product": "hello",
+    "heroData":{
+        "global":{
+            "tagline":"REVOLUTIONIZE CUSTOMER SUPPORT",
+            "heading":"Customer Service Software",
+            "sub":"Never lose sight of what’s important. Don’t just solve tickets, build customer relationships"
+        },
+        "in":{
+            "tagline":"customer support software",
+            "heading":"AI-powered Contact Center",
+            "sub":"Never lose sight of what's important. Don't just solve tickets, build customer relationships"
+        },
+        "sg":{
+            "tagline":"REVOLUTIONIZE CUSTOMER SUPPORT",
+            "heading":"Customer Service Software",
+            "sub":"Never lose sight of what’s important. Don’t just solve tickets, build customer relationships"
+        },
+        "gb":{
+            "tagline":"REVOLUTIONIZE CUSTOMER SUPPORT",
+            "heading":"Hello",
+            "sub":"Never lose sight of what’s important. Don’t just solve tickets, build customer relationships"
+        },
+        "ph":{
+            "tagline":"REVOLUTIONIZE CUSTOMER SUPPORT",
+            "heading":"Hello",
+            "sub":"Never lose sight of what’s important. Don’t just solve tickets, build customer relationships"
+        }
+    },
     "trustedData": {
         "headings": "Support 15+ channels & platforms",
         "trustedImgs": [
@@ -56,9 +83,5 @@
             "que": "Can the software handle high volumes of customer inquiries during peak times?",
             "des":"Yes! Our customer service tools for small businesses are designed to handle high volumes of customer inquiries without compromising performance. It is scalable and capable of meeting your needs even during peak times, ensuring a smooth and uninterrupted customer support experience."
         }
-    ],
-    "blog":{
-        "heading":"Eliminating Mediocre Customer Service",
-        "des":"MSG91, the best customer support software, is designed with a range of sophisticated programs to assist organizations in delivering exceptional support and guidance to their customers. We offer a centralized system where customer support representatives can manage, prioritize, address, and ultimately take care of multiple employee or customer requests. Customer service software, however, consists of more than simply a ticketing system; it also consists of several customer service tools for small businesses to assist in providing impressive customer service."
-    }
+    ]
 }
