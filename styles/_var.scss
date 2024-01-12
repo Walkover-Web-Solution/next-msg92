@@ -20,11 +20,15 @@
     --c-fs-2:clamp(1.2rem,2vw,1.5rem);//16px - 24px
     --c-fs-3:clamp(1.15rem,1.5vw,1.25rem);//20px - 18px
     --c-fs-4:clamp(0.875rem, 2vw + 0.25rem, 1.25rem);//14px - 20px
+    --c-fs-6:14px;
     --c-fs-5:clamp(0.875rem,1vw,1rem);// 14px
     --c-fs-7:clamp(0.88rem,1vw,0.88rem); //14px
     --c-fs-8:clamp(1rem,1vw,1rem); //16px
     --c-fs-9:clamp(0.75rem,1vw,0.75rem); //12px
     --c-fw-600: 600;
+    --c-fw-400: 400;
+    --c-fw-500: 500;
+
 
     // colors
    
@@ -52,6 +56,8 @@
     --success-color:#28a745;
     --border-alert-color:#d94c44;
     --black-border-color:#000000;
+    --light-grey-bg: #FAFAFA;
+    --primary-light-color:#1E75BA;
     
     /* product colors */
     --sms :#1E75BA;
