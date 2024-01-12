@@ -21,61 +21,57 @@ const Pricingotp = ({
   useEffect(() => {
     setUtm();
   }, [pricing, originCountry, destinationCountry]);
-
-  //fetching slider value
-
-  const [sliderValue, setSliderValue] = useState(50);
-
+  const [sliderValue, setSliderValue] = useState(25);
   useEffect(() => {
-    const slider = document.getElementById("pricingDrag");
-    const handleChange = (evt) => {
-      setSliderValue(evt.detail.value);
-    };
-    slider.addEventListener("change", handleChange);
-    slider.value = 25;
-    return () => {
-      slider.removeEventListener("change", handleChange);
-    };
+    if (pricing.length > 2) {
+      const slider = document.getElementById("pricingDrag");
+      const handleChange = (evt) => {
+        setSliderValue(evt.detail.value);
+      };
+      slider.addEventListener("change", handleChange);
+      slider.value = sliderValue;
+      return () => {
+        slider.removeEventListener("change", handleChange);
+      };
+    }
   }, []);
-
-  //calculating pricing
-
-  let arrayOfPrices = amountArr.slice();
-
-  arrayOfPrices.unshift("0");
-
   let noOfOtp = 0,
     pricingOTP = 0,
     ratePerOTP = 0;
 
-  const lenAmountArr = amountArr.length;
-  const widthOfSection = 100 / lenAmountArr;
-  const noOfSection = Math.floor(sliderValue / widthOfSection);
-  if (pricing[0]) {
-    if (pricing[noOfSection]) {
-      ratePerOTP = pricing[noOfSection][19]?.rate;
-    } else {
-      ratePerOTP = pricing[noOfSection - 1][19]?.rate;
-    }
+  if (pricing[0] && pricing.length > 2) {
+    console.log(3323);
+    let arrayOfPrices = amountArr.slice();
+    arrayOfPrices.unshift("0");
 
-    const rangeInSection =
-      lenAmountArr * (sliderValue - widthOfSection * noOfSection);
-    const noOfExtraOTP =
-      ((arrayOfPrices[noOfSection + 1] - arrayOfPrices[noOfSection]) *
-        rangeInSection) /
-      100;
+    const lenAmountArr = amountArr.length;
+    const widthOfSection = 100 / lenAmountArr;
+    const noOfSection = Math.floor(sliderValue / widthOfSection);
+    if (pricing[0]) {
+      if (pricing[noOfSection]) {
+        ratePerOTP = pricing[noOfSection][19]?.rate;
+      } else {
+        ratePerOTP = pricing[noOfSection - 1][19]?.rate;
+      }
+
+      const rangeInSection =
+        lenAmountArr * (sliderValue - widthOfSection * noOfSection);
+      const noOfExtraOTP =
+        ((arrayOfPrices[noOfSection + 1] - arrayOfPrices[noOfSection]) *
+          rangeInSection) /
+        100;
       noOfOtp = Number(arrayOfPrices[noOfSection]) + Math.floor(noOfExtraOTP);
+    }
+    if (sliderValue == 100) {
+      noOfOtp = Number(arrayOfPrices[noOfSection]);
+    }
+    let pricingSMSstr = noOfOtp * ratePerOTP;
+    if (countryCode === "IN") {
+      pricingOTP = pricingSMSstr.toLocaleString("en-IN");
+    } else {
+      pricingOTP = pricingSMSstr.toLocaleString(undefined);
+    }
   }
-  if (sliderValue == 100) {
-    noOfOtp = Number(arrayOfPrices[noOfSection]);
-  }
-  let pricingSMSstr = noOfOtp * ratePerOTP;
-  if (countryCode === "IN") {
-    pricingOTP = pricingSMSstr.toLocaleString("en-IN");
-  } else {
-    pricingOTP = pricingSMSstr.toLocaleString(undefined);
-  }
-
   return (
     <>
       <div>
@@ -128,65 +124,90 @@ const Pricingotp = ({
             </div>
           </div>
         )}
-
-        <div className="d-flex flex-column gap-3 align-items center mt-3">
-          <div className="text-center text-dark c-fw-m">Number of otp</div>
-
-          <div className=" d-none d-md-flex">
-            {amountArr.map((amount, index) => {
-              return (
-                <div className="text-end col c-fs-5" key={index}>
-                  {amount}
-                </div>
-              );
-            })}
-          </div>
-          <div className="d-flex d-md-none">
-            <div className="text-start col c-fs-5">0</div>
-            <div className="text-end col c-fs-5">
-              {amountArr[lenAmountArr - 1]}
-            </div>
-          </div>
-
+        {pricing[0] && (
           <>
-            <Script src="https://cdn.jsdelivr.net/npm/toolcool-range-slider/dist/toolcool-range-slider.min.js" />
-            <tc-range-slider
-              id="pricingDrag"
-              slider-width="100%"
-              slider-height="20px"
-              generate-labels="true"
-              slider-bg="#C3E6CE"
-              slider-bg-fill="#307368"
-              slider-bg-hover="#69C086"
-            />
-          </>
-          <div className="d-none d-md-flex">
-            {pricing.map((data, index) => {
-              return (
-                <div className="text-end col c-fs-5" key={index}>
-                  {currencySymbol}
-                  {data[19]?.rate}
+            {pricing.length > 2 ? (
+              <>
+                <div className="d-flex flex-column gap-3 align-items center mt-3">
+                  <div className="text-center text-dark c-fw-m">
+                    Number of OTP
+                  </div>
+                  <div className=" d-none d-md-flex">
+                    {amountArr.map((amount, index) => {
+                      return (
+                        <div className="text-end col c-fs-5" key={index}>
+                          {amount}
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className="d-flex d-md-none">
+                    <div className="text-start col c-fs-5">0</div>
+                    <div className="text-end col c-fs-5">
+                      {amountArr[amountArr.length - 1]}
+                    </div>
+                  </div>
+
+                  <>
+                    <Script src="https://cdn.jsdelivr.net/npm/toolcool-range-slider/dist/toolcool-range-slider.min.js" />
+                    <tc-range-slider
+                      id="pricingDrag"
+                      slider-width="100%"
+                      slider-height="20px"
+                      generate-labels="true"
+                      slider-bg="#C3E6CE"
+                      slider-bg-fill="#307368"
+                      slider-bg-hover="#69C086"
+                    />
+                  </>
+                  <div className="d-none d-md-flex">
+                    {pricing.map((data, index) => {
+                      return (
+                        <div className="text-end col c-fs-5" key={index}>
+                          {currencySymbol}
+                          {data[19]?.rate}
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className="text-center text-dark c-fw-m">
+                    Cost per OTP
+                  </div>
                 </div>
-              );
-            })}
-          </div>
-          <div className="text-center text-dark c-fw-m">Cost per OTP</div>
-        </div>
-        <div className="d-flex align-items-end mt-4 mb-3">
-          <p className="c-fs-2 c-fw-500">
-            <span className="c-fs-1 fw-bold">
-              {noOfOtp.toLocaleString("en-IN")}
-            </span>
-            <span className="c-fs-1 text-green fw-bold"></span>
-            OTP for{" "}
-            <span className="c-fs-1 text-green fw-bold">
-              {pricingOTP}{" "}
-            </span>{" "}
-            +18%GST at{" "}
-            <span className="c-fs-1 text-green fw-bold">{ratePerOTP}</span>
-            per OTP{" "}
-          </p>
-        </div>
+                <div className="d-flex align-items-end mt-4 mb-3">
+                  <p className="c-fs-2 c-fw-500">
+                    <span className="c-fs-1 fw-bold">
+                      {noOfOtp.toLocaleString("en-IN")}
+                    </span>
+                    <span className="c-fs-1 text-green fw-bold"></span>
+                    OTP for{" "}
+                    <span className="c-fs-1 text-green fw-bold">
+                      {pricingOTP}{" "}
+                    </span>{" "}
+                    +18%GST at{" "}
+                    <span className="c-fs-1 text-green fw-bold">
+                      {ratePerOTP}
+                    </span>
+                    per OTP{" "}
+                  </p>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="content-fit bg-white btn-ft d-flex flex-column gap-5 p-4 border-2 mt-4 align-items-center">
+                  <h3 className="c-fs-4">SMS Pricing</h3>
+                  <h3 className="text-green c-fs-2">
+                    {currencySymbol}
+                    {pricing[0][4].rate}per SMS
+                  </h3>
+                  <button className="btn btn-outline-dark px-5">
+                    Get Started
+                  </button>
+                </div>
+              </>
+            )}
+          </>
+        )}
         <button
           data-bs-toggle="modal"
           data-bs-target="#sales-modal"

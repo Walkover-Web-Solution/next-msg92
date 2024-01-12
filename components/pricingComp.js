@@ -230,6 +230,8 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
       productName: "Voice",
     },
   ];
+  console.log(pricing);
+
   return (
     <>
       <div className=" main-container  ">
