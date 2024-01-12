@@ -59,4 +59,5 @@ export default function PostItem({ post }) {
       </div>
     </a>
   );
+
 }
