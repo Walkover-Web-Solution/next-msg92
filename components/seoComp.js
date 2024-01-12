@@ -6,7 +6,7 @@ import EmailSeoComp from "./seo/inEmail";
 import HelloSeoComp from "./seo/inHello";
 import OtpSeoComp from "./seo/inOtp";
 
-const seo = ({ path, pageData }) => {
+const Seo = ({ path, pageData }) => {
 
   let seoComponent = null;
 
@@ -44,9 +44,10 @@ const seo = ({ path, pageData }) => {
 
   return (
   <>
+  
   {seoComponent}
   </>
   );
 };
 
-export default seo;
+export default Seo;
