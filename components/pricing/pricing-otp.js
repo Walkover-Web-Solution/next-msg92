@@ -40,7 +40,6 @@ const Pricingotp = ({
     ratePerOTP = 0;
 
   if (pricing[0] && pricing.length > 2) {
-    console.log(3323);
     let arrayOfPrices = amountArr.slice();
     arrayOfPrices.unshift("0");
 

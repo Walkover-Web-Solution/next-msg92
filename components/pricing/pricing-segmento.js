@@ -105,12 +105,12 @@ const pricingsegmento = ({subscriptionSegmento, fetchSubscriptionSegmento}) => {
       </div> */}
       <div className="price-card rcs bg-white rounded-2 p-4">
       <h3 className="text-start fw-bold c-fs-1 text-green">Free</h3>
-      <h3 className="card-write c-fs-4 my-3">You can store user information for free using Segmento..</h3>
-      <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="btn btn-sm btn-dark rounded-1  mt-2">
+      <h3 className="card-write c-fs-3 my-3 c-fw-m">You can store user information for free using Segmento.</h3>
+      <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="fw-semibold btn btn-dark rounded-1 py-2 px-3 mt-2">
         Get Started
       </button>         
       </div>
-      <a className="link" href="#"> 
+      <a className="more-about" href="#"> 
             <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
             <span>Know more about Segmento</span>
           </a>

@@ -186,8 +186,9 @@ const PricingCalls = ({
           <div class="input-group justify-content-between w-25 border border-2 rounded-1 bg-white">
             <input
               type="text"
-              class="border border-0 ps-3"
+              class="border border-0 ps-3 c-fs-6"
               aria-label="Text input with dropdown button"
+              value="India"
             />
             <button
               class="btn bg-white border border-0 dropdown-toggle"
