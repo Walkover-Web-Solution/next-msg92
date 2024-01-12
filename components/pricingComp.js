@@ -230,6 +230,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
       productName: "Voice",
     },
   ];
+
   return (
     <>
       <div className=" main-container  ">
@@ -354,6 +355,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                 destinationCountry={destinationCountry}
                 setDestinationCountry={setDestinationCountry}
                 currency={currency}
+                countryCode = {countryCode}
                 currencySymbol={currencySymbol}
               />
             )}
@@ -430,7 +432,8 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
             {product === "knowledgebase" && <Pricingknowledgebase />}
           </div>
         </div>
-        <div className="Frequently-Questions container-fluid bg-white">
+        <div className="bg-white">
+        <div className="container Frequently-Questions py-5">
           <strong className="sub-heading">Frequently Asked Questions</strong>
           <div className="accordion mt-4" id="accordionPanelsStayOpenExample">
             <div className="accordion-item">
@@ -624,6 +627,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </>
