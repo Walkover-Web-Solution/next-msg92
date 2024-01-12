@@ -48,16 +48,13 @@ const Pricingsms = ({
     pricingSMS = 0,
     ratePerSms = 0;
 
-  console.log(sliderValue);
   const lenAmountArr = amountArr.length;
   const widthOfSection = 100 / lenAmountArr;
   const noOfSection = Math.floor(sliderValue / widthOfSection);
   if (pricing[0]) {
     if (pricing[noOfSection]) {
-      console.log("object");
       ratePerSms = pricing[noOfSection][4]?.rate;
     } else {
-      console.log("hello");
       ratePerSms = pricing[noOfSection - 1][4]?.rate;
     }
 
@@ -83,47 +80,52 @@ const Pricingsms = ({
     <>
       <div>
         {originCountry?.length >= 1 && (
-          <div className="gap-3 w-100 d-flex flex-column text-start flex-md-row align-items-center justify-content-start col-12 col-md-10 col-lg-7 pb-4">
-            <span className="Send-sms c-fw-m">Send SMS from</span>
-            
-            <Typeahead
-              className="col c-fs-6"
-              id="originCountry c-fs-6"
-              placeholder="Origin Country"
-              labelKey="name"
-              onChange={(selected) => {
-                setPricing([]);
-                if (selected[0]?.name)
-                  fetchSMSData(currency, selected[0]?.name, destinationCountry);
-              }}
-              options={countries}
-              clearButton
-              defaultSelected={[
-                countries?.find((item) => item.name === originCountry),
-              ]}
-              inputProps={{
-                autoComplete: "off" /* Add the autoComplete attribute here */,
-              }}
-            />
+          <div className="d-flex flex-column flex-lg-row align-items-center  gap-4 ">
+            <span className="Send-sms c-fw-m ">Send SMS from</span>
+            <div className="gap-3 col d-flex flex-column text-start flex-md-row align-items-center justify-content-start col-12 col-md-10 col-lg-7">
+              <Typeahead
+                className="col c-fs-6"
+                id="originCountry c-fs-6"
+                placeholder="Origin Country"
+                labelKey="name"
+                onChange={(selected) => {
+                  setPricing([]);
+                  if (selected[0]?.name)
+                    fetchSMSData(
+                      currency,
+                      selected[0]?.name,
+                      destinationCountry
+                    );
+                }}
+                options={countries}
+                clearButton
+                defaultSelected={[
+                  countries?.find((item) => item.name === originCountry),
+                ]}
+                inputProps={{
+                  autoComplete: "off" /* Add the autoComplete attribute here */,
+                }}
+              />
 
-            <div className="c-fw-m">To</div>
+              <div className="c-fw-m">To</div>
 
-            <Typeahead
-              className="col"
-              id="destinationCountry"
-              placeholder="Destination Country"
-              labelKey="name"
-              onChange={(selected) => {
-                setPricing([]);
-                if (selected[0]?.name)
-                  fetchSMSData(currency, originCountry, selected[0]?.name);
-              }}
-              options={countries}
-              clearButton
-              defaultSelected={[
-                countries?.find((item) => item.name === originCountry),
-              ]}
-            />
+              <Typeahead
+                className="col"
+                id="destinationCountry"
+                placeholder="Destination Country"
+                labelKey="name"
+                onChange={(selected) => {
+                  setPricing([]);
+                  if (selected[0]?.name)
+                    fetchSMSData(currency, originCountry, selected[0]?.name);
+                }}
+                options={countries}
+                clearButton
+                defaultSelected={[
+                  countries?.find((item) => item.name === originCountry),
+                ]}
+              />
+            </div>
           </div>
         )}
 
@@ -139,9 +141,11 @@ const Pricingsms = ({
               );
             })}
           </div>
-          <div className="d-flex">
+          <div className="d-flex d-md-none">
             <div className="text-start col c-fs-5">0</div>
-            <div className="text-end col c-fs-5">{amountArr[lenAmountArr-1]}</div>
+            <div className="text-end col c-fs-5">
+              {amountArr[lenAmountArr - 1]}
+            </div>
           </div>
 
           <>

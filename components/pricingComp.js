@@ -114,7 +114,6 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
         const response = await axios.get(
           `https://test.msg91.com/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
         );
-        console.log(response.data.data,424224);
         return response.data.data;
       });
 
@@ -231,7 +230,6 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
       productName: "Voice",
     },
   ];
-  console.log(pricing, "hello");
   return (
     <>
       <div className=" main-container  ">
