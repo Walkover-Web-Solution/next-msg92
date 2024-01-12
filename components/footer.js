@@ -151,6 +151,13 @@ const Footer = ({path, year}) => {
                 >
                   Career
                 </a>
+                <a
+                  href="/certificates"
+                  target="_blank"
+                  className="c-link-underline c-fs-5 mt-2 c-fw-t"
+                >
+                  Career
+                </a>
               </div>
             </div>
 
