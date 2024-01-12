@@ -221,7 +221,6 @@ max-width: 100%;
   }
   
   .Frequently-Questions {
-    padding: 80px 120px 80px 120px !important;
     .accordion-item {
       .accordion-button {
         font-size: 20px !important;
@@ -340,9 +339,7 @@ max-width: 100%;
 
   .price-container {
     min-height: 100px;
-    padding-left: 40px;
-    padding-top: 15px;
-    padding-right: 40px;
+
   }
   @media (max-width: 600px) {
     .nav-link {

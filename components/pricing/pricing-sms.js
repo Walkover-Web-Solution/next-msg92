@@ -21,12 +21,13 @@ const Pricingsms = ({
   useEffect(() => {
     setUtm();
   }, [pricing, originCountry, destinationCountry]);
-  const [sliderValue, setSliderValue] = useState(25);
+  const [sliderValue, setSliderValue] = useState(50);
   useEffect(() => {
-    if (pricing.length > 2) {
+    if (pricing[0] && pricing.length > 2) {
       const slider = document.getElementById("pricingDrag");
       const handleChange = (evt) => {
         setSliderValue(evt.detail.value);
+        console.log(evt.detail.value);
       };
       slider.addEventListener("change", handleChange);
       slider.value = sliderValue;

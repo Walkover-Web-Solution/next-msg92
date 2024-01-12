@@ -21,7 +21,7 @@ const Pricingotp = ({
   useEffect(() => {
     setUtm();
   }, [pricing, originCountry, destinationCountry]);
-  const [sliderValue, setSliderValue] = useState(25);
+  const [sliderValue, setSliderValue] = useState(50);
   useEffect(() => {
     if (pricing.length > 2) {
       const slider = document.getElementById("pricingDrag");
