@@ -156,7 +156,7 @@ const Footer = ({path, year}) => {
                   target="_blank"
                   className="c-link-underline c-fs-5 mt-2 c-fw-t"
                 >
-                  Career
+                  Certificates
                 </a>
               </div>
             </div>
