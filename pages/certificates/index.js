@@ -18,11 +18,11 @@ export default function Certificates() {
                     <h2 className='c-fs-1 c-fw-sb'>Certificates</h2>
                     <div className="d-grid gap-2 mb-5">
                         <h4 className='c-fs-2'>CASA</h4>
-                        <embed src="/pdf/casa.pdf#view=FitH" type="application/pdf" width="100%" height="700px"></embed>
+                        <embed src="/pdf/casa.pdf#view=FitH" type="application/pdf" width="100%" height="800px"></embed>
                     </div>
                     <div className="d-grid gap-2">
                         <h4 className='c-fs-2'>ISO</h4>
-                        <embed src="/pdf/iso.pdf#view=FitH" type="application/pdf" width="100%" height="700px"></embed>
+                        <embed src="/pdf/iso.pdf#view=FitH" type="application/pdf" width="100%" height="800px"></embed>
                     </div>
                 </div>
                 </div>
