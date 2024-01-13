@@ -8,7 +8,8 @@ export default function Certificates() {
                     <h2 className="  mx-auto fw-bold heading mb-2 col-11 col-md-8">
                         Certified for Unparalleled Reliability and Security.{' '}
                     </h2>
-                    <button className="btn btn-dark btn-ft c-fs-2 rounded-1">Get The Plugin</button>
+                    <a href="https://control.msg91.com/signup/" className="btn btn-ft btn-dark rounded-1 c-fs-4">Get Started</a>
+
                     <TrustedBy />
                 </div>
                 <div className="bg-lightgrey py-3 py-md-5">

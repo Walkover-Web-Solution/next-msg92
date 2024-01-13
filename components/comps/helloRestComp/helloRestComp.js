@@ -33,7 +33,7 @@ const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }
                                     {productData?.heroData[path]?.sub}
                                 </p>
                             </div>
-                            <button className="btn btn-ft btn-dark rounded-1 c-fs-4">Get Started</button>
+                            <a href="https://control.msg91.com/signup/" className="btn btn-ft btn-dark rounded-1 c-fs-4">Get Started</a>
                             {productData?.trustedData && <TrusedSection trustedData={productData?.trustedData} />}
                         </div>
                         <div className={`${style.heroimg} d-none d-sm-block`}>
