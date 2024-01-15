@@ -1,6 +1,5 @@
 import { MdDone, MdClose } from 'react-icons/md';
-import { useEffect, useState } from 'react';
-import Script from 'next/script';
+import { useEffect, useState, useRef, use } from 'react';
 import countries from '@/data/countries.json';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import { setUtm } from '@/components/utils';
@@ -21,20 +20,22 @@ const Pricingsms = ({
     useEffect(() => {
         setUtm();
     }, [pricing, originCountry, destinationCountry]);
+
     const [sliderValue, setSliderValue] = useState(47);
-    useEffect(() => {
-        if (pricing[0] && pricing.length > 2) {
-            const slider = document.getElementById('pricingDrag');
-            const handleChange = (evt) => {
-                setSliderValue(evt.detail.value);
-            };
-            slider.addEventListener('change', handleChange);
-            slider.value = sliderValue;
-            return () => {
-                slider.removeEventListener('change', handleChange);
-            };
-        }
-    }, [sliderValue]);
+    // useEffect(() => {
+    //     if (pricing[0] && pricing.length > 2) {
+    //         const slider = document.getElementById('pricingDrag');
+    //         const handleChange = (evt) => {
+    //             setSliderValue(evt.detail.value);
+    //         };
+    //         slider.addEventListener('change', handleChange);
+    //         slider.value = sliderValue;
+    //         return () => {
+    //             slider.removeEventListener('change', handleChange);
+    //         };
+    //     }
+    // }, []);
+
     let noOfsms = 0,
         pricingsms = 0,
         ratePersms = 0;
@@ -130,18 +131,15 @@ const Pricingsms = ({
                                         <div className="text-end col c-fs-5">{amountArr[amountArr.length - 1]}</div>
                                     </div>
 
-                                    <>
-                                        <Script src="https://cdn.jsdelivr.net/npm/toolcool-range-slider/dist/toolcool-range-slider.min.js" />
-                                        <tc-range-slider
-                                            id="pricingDrag"
-                                            slider-width="100%"
-                                            slider-height="20px"
-                                            generate-labels="true"
-                                            slider-bg="#C3E6CE"
-                                            slider-bg-fill="#307368"
-                                            slider-bg-hover="#69C086"
-                                        />
-                                    </>
+                                    <input
+                                    className='slider'
+                                        type="range"
+                                        min="1"
+                                        max="100"
+                                        value={sliderValue}
+                                        onChange={(e) => setSliderValue(e.target.value)}
+                                    />
+
                                     <div className="d-none d-md-flex">
                                         {pricing.map((data, index) => {
                                             return (
