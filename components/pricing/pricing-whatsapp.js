@@ -45,8 +45,8 @@ const pricingwp = ({ subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWts
 
     return (
         <>
-            <div className="price-card whatsapp bg-white p-4 row align-items-center">
-                <div className="col-lg-10 col-12 order-1 order-sm-2 order-md-2">
+            <div className="price-card whatsapp d-flex flex-sm-row flex-column  bg-white p-4 gap-4 justify-content-between align-items-center">
+                <div className=" ">
                     <h3 className="text-start fw-bold fs-4 text-green mb-3">
                         Zero <span className="text-dark ">margin on meta price</span>
                     </h3>
@@ -57,13 +57,13 @@ const pricingwp = ({ subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWts
                     <button
                         data-bs-toggle="modal"
                         data-bs-target="#sales-modal"
-                        className="fw-semibold btn btn-dark rounded-1 py-2 px-3 mt-3"
+                        className=" btn btn-dark rounded-1  mt-3"
                     >
                         Get Started
                     </button>
                     {/* <a href="/contact-us" className="btn btn-outline-dark col-6 col-sm-5 col-md-3 mx-auto mt-3">Talk to an Expert</a> */}
                 </div>
-                <div className="col-lg-2 col-12 order-lg-2 order-sm-1 order-md-1">
+                <div className=" ">
                     <img src={`/img/icon/whatsapp-black.svg`} />
                 </div>
             </div>
