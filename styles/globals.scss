@@ -20,7 +20,7 @@ body {
   background-color: #d1fa00 !important;
 }
 .bg-light{
-  background: #FAFAFA;
+  background: var(--light-grey-bg);
 }
 .pr{
   position: relative;
@@ -604,9 +604,14 @@ body::-webkit-scrollbar-button {
     display: none;
   }
   button {
-    font-size: 14px;
+    font-size: 9px;
     width: 26px;
     height: 26px;
+  }
+}
+.rbt {
+  input{
+    font-size: 14px;
   }
 }
 
@@ -719,4 +724,8 @@ body::-webkit-scrollbar-button {
 }
 .message:hover {
   background: #ccc;
+}
+
+.pointer-shape{
+  width: 30px !important;
 }

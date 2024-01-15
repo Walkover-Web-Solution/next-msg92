@@ -80,7 +80,7 @@ async function CreateWhatsappChatWidget(
     document.body.insertAdjacentHTML(
       'beforeend',
       `<div id="whatsapp-chat-widget">
-                <div class="wa-widget-send-button">
+                <div className="wa-widget-send-button">
                     ${defaultSvg}
                     <svg id="wa-widget-opened-svg" width="23" height="13" viewBox="0 0 23 13" fill="none" style="pointer-events: none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -92,13 +92,13 @@ async function CreateWhatsappChatWidget(
     document.querySelector('#whatsapp-chat-widget')?.insertAdjacentHTML(
       'beforeend',
       `<div class='wa-chat-bubble'>
-                <div class="wa-chat-bubble-close-button">
+                <div className="wa-chat-bubble-close-button">
                     <svg width="12" height="13" viewBox="0 0 12 13" fill="none" style="pointer-events: none; display: block;"
                      xmlns="http://www.w3.org/2000/svg">
                      <path d="M3.6001 4.1001L8.4001 8.9001M3.6001 8.9001L8.4001 4.1001" stroke="white" stroke-width="1.33333"/>
                     </svg>
                 </div>
-                 <div class="wa-chat-bubble-text">
+                 <div className="wa-chat-bubble-text">
                      ${option.chatButtonSetting.ctaText}
                 </div>
             </div>`
@@ -119,7 +119,7 @@ async function CreateWhatsappChatWidget(
                     role="button"
                     target="_blank"
                     href="https://wa.me/${option.brandSetting.phoneNumber.replace(/\+/g,'')}?text=${option.brandSetting.messageText ? option.brandSetting.messageText : ''}"
-                    title="WhatsApp" class="wa-chat-box-content-send-btn">
+                    title="WhatsApp" className="wa-chat-box-content-send-btn">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block">
                             <path
                                 d="M20.4115 3.48832C18.3715 1.44747 15.6592 0.217606 12.7798 0.0277473C9.90046 -0.162111 7.0502 0.700979 4.75984 2.4563C2.46948 4.21162 0.895133 6.73951 0.329958 9.56926C-0.235217 12.399 0.247308 15.3377 1.68768 17.8382L0 24.0006L6.30648 22.347C8.05076 23.2969 10.0052 23.7946 11.9914 23.7947H11.9964C14.3489 23.7945 16.6486 23.0969 18.6047 21.7899C20.5609 20.483 22.0856 18.6255 22.9862 16.4522C23.8869 14.2788 24.123 11.8873 23.6647 9.57981C23.2064 7.27233 22.0743 5.15252 20.4115 3.48832ZM11.9964 21.7862H11.9926C10.2218 21.7863 8.48364 21.3103 6.96 20.4081L6.5988 20.194L2.856 21.1751L3.85512 17.5271L3.61968 17.1532C2.45438 15.2963 1.93921 13.1048 2.15515 10.9232C2.37109 8.74163 3.3059 6.69365 4.81262 5.10125C6.31934 3.50884 8.31253 2.4623 10.4789 2.12614C12.6452 1.78999 14.8618 2.18328 16.7802 3.2442C18.6987 4.30511 20.2102 5.97349 21.0771 7.98705C21.944 10.0006 22.1172 12.2452 21.5694 14.3679C21.0216 16.4906 19.784 18.3711 18.051 19.7138C16.318 21.0564 14.1879 21.7851 11.9957 21.7852L11.9964 21.7862Z"
@@ -131,7 +131,7 @@ async function CreateWhatsappChatWidget(
                                 d="M20.314 3.44995C18.2979 1.43114 15.6165 0.214135 12.7696 0.0256927C9.92272 -0.16275 7.10439 0.690221 4.83975 2.42568C2.57511 4.16114 1.01862 6.66071 0.46029 9.45869C-0.0980434 12.2567 0.37986 15.1622 1.80496 17.6339L0.136719 23.7268L6.37072 22.0922C8.09496 23.0312 10.027 23.5232 11.9903 23.5233H11.9954C14.3211 23.5235 16.5946 22.834 18.5285 21.5422C20.4624 20.2503 21.9699 18.414 22.8603 16.2655C23.7506 14.117 23.984 11.7527 23.5307 9.47156C23.0775 7.19043 21.9581 5.09491 20.314 3.44995ZM11.9954 21.5378H11.9927C10.2423 21.5379 8.52396 21.0674 7.01776 20.1755L6.66064 19.9639L2.96032 20.9337L3.94792 17.327L3.71536 16.9574C2.56347 15.1217 2.05427 12.9553 2.2678 10.7987C2.48133 8.64215 3.40549 6.61767 4.89499 5.04356C6.3845 3.46944 8.35488 2.43495 10.4964 2.1027C12.6379 1.77046 14.8291 2.15931 16.7255 3.20812C18.622 4.25693 20.1161 5.90623 20.973 7.89674C21.83 9.88725 22.0011 12.1061 21.4596 14.2045C20.918 16.3029 19.6945 18.1618 17.9813 19.489C16.2682 20.8162 14.1625 21.5365 11.9954 21.5366V21.5378Z"
                                 fill="white" />
                         </svg>
-                        <span class="wa-chat-box-content-send-btn-text">${option.chatButtonSetting.ctaText
+                        <span className="wa-chat-box-content-send-btn-text">${option.chatButtonSetting.ctaText
       }</span>
                         <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: auto; display: block;">
                           <path d="M1 1L7 7L1 13" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -140,7 +140,7 @@ async function CreateWhatsappChatWidget(
               
     
                 <div class='wa-chat-box-poweredby'>                    
-                    <a href="https://msg91.com" target="_blank" class="wa-chat-box-poweredby-link">
+                    <a href="https://msg91.com" target="_blank" className="wa-chat-box-poweredby-link">
                       <img src="https://msg91.com/img/poweredby.svg">
                     </a>
                 </div>
