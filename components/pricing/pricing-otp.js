@@ -164,7 +164,7 @@ const Pricingotp = ({
                 <button
                     data-bs-toggle="modal"
                     data-bs-target="#sales-modal"
-                    className="c-fs-4 btn btn-dark rounded-1 py-2 px-3 mt-4 mb-3"
+                    className=" btn btn-dark rounded-1 py-2 px-3 mt-4 mb-3"
                 >
                     Get Started
                 </button>
