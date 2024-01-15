@@ -27,7 +27,6 @@ const Pricingsms = ({
       const slider = document.getElementById("pricingDrag");
       const handleChange = (evt) => {
         setSliderValue(evt.detail.value);
-        console.log(evt.detail.value);
       };
       slider.addEventListener("change", handleChange);
       slider.value = sliderValue;
@@ -41,7 +40,6 @@ const Pricingsms = ({
     ratePersms = 0;
 
   if (pricing[0] && pricing.length > 2) {
-    console.log(3323);
     let arrayOfPrices = amountArr.slice();
     arrayOfPrices.unshift("0");
 
