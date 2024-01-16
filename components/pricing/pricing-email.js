@@ -2,6 +2,8 @@ import { MdDone, MdClose } from 'react-icons/md';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { setUtm } from '@/components/utils';
+import faqData from '@/data/faq.json';
+
 const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, setSubscriptionEmail, countryCode }) => {
     var change;
     var changeSymbol;

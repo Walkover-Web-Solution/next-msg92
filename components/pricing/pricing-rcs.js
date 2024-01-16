@@ -1,3 +1,4 @@
+import faqData from '@/data/faq.json';
 
 const pricingrcs = () => {
   return <>
