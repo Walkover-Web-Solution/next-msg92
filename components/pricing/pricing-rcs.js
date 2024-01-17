@@ -1,5 +1,7 @@
 import faqData from '@/data/faq.json';
 
+import FaqSection from '../faqSection/faqSection';
+
 const pricingrcs = () => {
   return <>
     <div className="price-card rcs bg-white p-4 rounded-2">
@@ -15,6 +17,7 @@ const pricingrcs = () => {
             <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
             <span>Know more about RCS</span>
           </a>
+          <FaqSection faqData={faqData?.otp}/>
   </>;
 };
 

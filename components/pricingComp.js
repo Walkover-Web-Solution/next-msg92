@@ -418,7 +418,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
             {product === "knowledgebase" && <Pricingknowledgebase />}
           </div>
         </div>
-        <div className="bg-white">
+        {/* <div className="bg-white">
         <div className="container Frequently-Questions py-5">
           <strong className="sub-heading">Frequently Asked Questions</strong>
           <div className="accordion mt-4" id="accordionPanelsStayOpenExample">
@@ -614,7 +614,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
             </div>
           </div>
         </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
