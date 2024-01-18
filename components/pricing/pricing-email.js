@@ -284,7 +284,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                     <span className="link">Know more about Email</span>
                 </a>
             </div>
-            <FaqSection faqData={faqData?.otp}/>
+            <FaqSection faqData={faqData?.email}/>
         </>
     );
 };
