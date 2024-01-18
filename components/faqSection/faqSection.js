@@ -1,5 +1,6 @@
 export default function FaqSection(faqData) {
     const faqs = faqData?.faqData
+    
     return (
       <>
         <div className="container my-5 d-grid gap-4">
