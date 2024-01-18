@@ -4,11 +4,12 @@ import Image from "next/image";
 import PreFooter from "../preFooter";
 import Seo from '../seoComp';
 
+
 const indexComp = ({pageData, params}) => {
   const path = params ? params?.country : "";  
   return (
     <>
-      <div className="container section-y">
+      <div className="container bg-gray-100 section-y">
         <div className="row">
           <div className="col-12 col-sm-12 col-md-7 col-lg-7 d-flex flex-column gap-4 align-items-start hero-left">
             <div className="home-pre-heading c-fs-4 uc">
@@ -24,7 +25,7 @@ const indexComp = ({pageData, params}) => {
             <a
               href="https://control.msg91.com/signup/"
               target="_blank"
-              className="btn btn-dark px-3 py-2 mt-3 px-md-4 py-md-3 ls-3 utm"
+              className="btn btn-dark px-3 py-1 mt-3 px-md-4 py-md-2 ls-3 utm rounded-1"
             >
               Get Started
             </a>
@@ -143,7 +144,7 @@ const indexComp = ({pageData, params}) => {
       </div>
 
       <div className="container my-5 my-80">
-        <h2 className="sub-heading c-head mb-2">Communication Channels</h2>
+        <h2 className="sub-heading c-head mb-2 fw-bold">Communication Channels</h2>
         <p className="c-fs-2 col-12 col-md-11 col-lg-9">
           Empower conversations with best-in-class communication API
           Full-featured APIs for developers and businesses to connect and engage
@@ -153,7 +154,7 @@ const indexComp = ({pageData, params}) => {
           <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
             <a
               href="/sms"
-              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
+              className="product-card chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
             >
               <div className="d-flex flex-column gap-3">
                 <Image
@@ -177,7 +178,7 @@ const indexComp = ({pageData, params}) => {
           <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
             <a
               href="/email"
-              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
+              className="product-card chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
             >
               <div className="d-flex flex-column gap-3">
                 <Image
@@ -202,7 +203,7 @@ const indexComp = ({pageData, params}) => {
           <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
             <a
               href="/whatsapp"
-              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
+              className="product-card chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
             >
               <div className="d-flex flex-column gap-3">
                 <Image
@@ -229,7 +230,7 @@ const indexComp = ({pageData, params}) => {
           <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
             <a
               href="/voice"
-              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
+              className="product-card chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
             >
               <div className="d-flex flex-column gap-3">
                 <Image
@@ -254,7 +255,7 @@ const indexComp = ({pageData, params}) => {
           <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
             <a
               href="/numbers"
-              className="chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
+              className="product-card chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
             >
               <div className="d-flex flex-column gap-3">
                 <Image
@@ -272,7 +273,7 @@ const indexComp = ({pageData, params}) => {
                   <div className="pro-btn-text">Learn more</div>
                   <MdKeyboardArrowRight />
                 </div>
-              </div>
+              </div>rounded-2
             </a>
           </div>
         </div>
@@ -312,11 +313,11 @@ const indexComp = ({pageData, params}) => {
       </div>
 
       <div className="container my-5 more-services-sec my-80">
-        <h2 className="sub-heading c-head">Utilities</h2>
-        <div className="d-flex my-5 flex-md-row flex-column">
+        <h2 className="sub-heading c-head fw-bold">More services</h2>
+        <div className="d-flex my-5 flex-md-row flex-column gap-5">
           <a
             href={`${path}/shorturl`}
-            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services"
+            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 rounded-2 more-services"
           >
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
@@ -328,7 +329,7 @@ const indexComp = ({pageData, params}) => {
                     alt="short-url"
                   />
                 </span>
-                <span className="c-fs-2 c-head">ShortURL</span>
+                <span className="c-fs-2 c-head fw-bold">URL Shortner</span>
               </div>
               <div className="">
                 <Image
@@ -342,7 +343,7 @@ const indexComp = ({pageData, params}) => {
             </div>
             <div className="d-flex flex-column gap-3 justify-content-between  h-100">
               <div className="">
-                <h4 className="mb-3 c-fs-3">Make your long URLs short</h4>
+                <h4 className="mb-3 c-fs-3 fw-medium">Make your long URLs short</h4>
                 <p className="c-fs-4">
                   Automatically shortens URL and tracks your success, one click
                   at a time. Turn your long, messy links into short, memorable
@@ -350,8 +351,8 @@ const indexComp = ({pageData, params}) => {
                 </p>
               </div>
 
-              <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-b text-dark">
-                <span>Learn more</span>
+              <div className="d-flex align-items-center c-fs-3 c-fw-b text-dark">
+              <span className="fw-semibold me-4">Learn more</span>
                 <MdKeyboardArrowRight />
               </div>
             </div>
@@ -359,7 +360,7 @@ const indexComp = ({pageData, params}) => {
 
           <a
             href={`${path}/knowledgebase`}
-            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services"
+            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 rounded-2 more-services"
           >
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
@@ -371,7 +372,7 @@ const indexComp = ({pageData, params}) => {
                     alt="knowledgebase"
                   />
                 </span>
-                <span className="c-fs-2 c-head">KnowledgeBase</span>
+                <span className="c-fs-2 c-head fw-bold">KnowledgeBase App</span>
               </div>
               <div className="">
                 <Image
@@ -385,7 +386,7 @@ const indexComp = ({pageData, params}) => {
             </div>
             <div className="d-flex flex-column gap-3 justify-content-between h-100">
               <div className="">
-                <h4 className="mb-3 c-fs-3">
+                <h4 className="mb-3 c-fs-3 fw-medium">
                   Manage your help docs and articles
                 </h4>
                 <p className="c-fs-4">
@@ -393,15 +394,15 @@ const indexComp = ({pageData, params}) => {
                   instant access to the self-service library of information.
                 </p>
               </div>
-              <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-sb text-dark">
-                <span>Learn more</span>
+              <div className="d-flex align-items-center c-fs-3 c-fw-sb text-dark">
+              <span className="fw-semibold me-4">Learn more</span>
                 <MdKeyboardArrowRight />
               </div>
             </div>
           </a>
           <a
             href="https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91"
-            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 b-right-1  more-services"
+            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 rounded-2 more-services"
           >
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
@@ -413,7 +414,7 @@ const indexComp = ({pageData, params}) => {
                     alt="File Hosting"
                   />
                 </span>
-                <span className="c-fs-2 c-head">File Hosting</span>
+                <span className="c-fs-2 c-head fw-bold">File Hosting</span>
               </div>
               <div className="">
                 <Image
@@ -427,7 +428,7 @@ const indexComp = ({pageData, params}) => {
             </div>
             <div className="d-flex flex-column gap-3 justify-content-between h-100">
               <div className="">
-                <h4 className="mb-3 c-fs-3">Simple and secured file storage</h4>
+                <h4 className="mb-3 c-fs-3 fw-medium">Simple and secured file storage</h4>
                 <p className="c-fs-4">
                   A central hub for online file storage, sharing and syncing.
                   Store all your files safely using powerful, reliable and
@@ -435,25 +436,25 @@ const indexComp = ({pageData, params}) => {
                 </p>
               </div>
 
-              <div className="d-flex align-items-center justify-content-between c-fs-3 c-fw-sb text-dark">
-                <span>Learn more</span>
+              <div className="d-flex align-items-center c-fs-3 c-fw-sb text-dark">
+                <span className="fw-semibold me-4">Learn more</span>
                 <MdKeyboardArrowRight />
               </div>
             </div>
           </a>
         </div>
       </div>
-
-      <div className="container  my-80">
-        <h2 className="sub-heading c-head">Customer Success</h2>
-        <h3 className="small-heading c-head">Powered by MSG91</h3>
+     <div className="bg-light py-5">
+      <div className="container  ">
+        <h2 className="sub-heading c-head fw-bold">Customer Success Powered by MSG91</h2>
+        
         <div className="d-flex col-12 flex-column flex-sm-row gap-4 my-4">
           <a
             href="/case-studies/milkbasket"
-            className="col-12 col-md-8 col-sm-8 col-lg-6 c-hover c-hover-bg-grey text-dark"
+            className="col-12 col-md-8 col-sm-8 col-lg-6 c-hover c-hover bg-white text-dark rounded-2"
           >
             <Image
-              className="milkbasket-client-img "
+              className="milkbasket-client-img rounded-top"
               src="/img/milkbasket-client-img.png"
               width={580}
               height={314}
@@ -464,8 +465,8 @@ const indexComp = ({pageData, params}) => {
                 Milkbasket sends regular updates to its customers by offering
                 proactive support and recommendations
               </p>
-              <div className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3">
-                <span className="me-3 ">Learn more</span>
+              <div className="d-flex align-items-center justify-content-between text-dark c-fw-sb mt-3">
+                <span className="fw-semibold">Learn more</span>
                 <MdKeyboardArrowRight />
               </div>
             </div>
@@ -473,10 +474,10 @@ const indexComp = ({pageData, params}) => {
           <div className="col-12 col-sm-4 col-md-4 col-lg-6 d-flex flex-sm-column flex-row gap-2 gap-sm-3 gap-md-4">
             <a
               href="/case-studies/unacademy"
-              className="c-hover d-flex align-items-center col-6 col-sm-12 c-hover-bg-grey text-dark"
+              className="c-hover d-flex align-items-center col-6 col-sm-12 c-hover bg-white text-dark rounded-2"
             >
               <Image
-                className="secc-client-img col-12 col-lg-4"
+                className="secc-client-img col-12 col-lg-4 rounded-start"
                 src="/img/unacademy-client-img.png"
                 width={220}
                 height={220}
@@ -488,17 +489,17 @@ const indexComp = ({pageData, params}) => {
                   nurtured with personalised campaigns
                 </p>
                 <div className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3">
-                  <span className="me-3 ">Learn more</span>
+                  <span className="me-3 fw-semibold">Learn more</span>
                   <MdKeyboardArrowRight />
                 </div>
               </div>
             </a>
             <a
               href="/case-studies/ixigo"
-              className="c-hover d-flex align-items-center col-6 col-sm-12 c-hover-bg-grey text-dark"
+              className="c-hover d-flex align-items-center col-6 col-sm-12 c-hover bg-white text-dark rounded-2"
             >
               <Image
-                className="secc-client-img col-12 col-lg-4 "
+                className="secc-client-img col-12 col-lg-4 rounded-start"
                 src="/img/ixigo-client-img.png"
                 width={220}
                 height={220}
@@ -510,7 +511,7 @@ const indexComp = ({pageData, params}) => {
                   communication across messaging, email and WhatsApp
                 </p>
                 <div className="d-flex align-items-center justify-content-start text-dark c-fw-sb mt-3">
-                  <span className="me-3 ">Learn more</span>
+                  <span className="me-3 fw-semibold">Learn more</span>
                   <MdKeyboardArrowRight />
                 </div>
               </div>
@@ -518,7 +519,9 @@ const indexComp = ({pageData, params}) => {
           </div>
         </div>
       </div>
-
+      </div>
+      
+      
       <Seo path={path} pageData={"index"} />
 
       <PreFooter />
