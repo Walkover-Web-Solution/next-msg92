@@ -3,6 +3,8 @@ import TrustedBy from "@/components/trustedby";
 import Image from "next/image";
 import PreFooter from "../preFooter";
 import Seo from '../seoComp';
+import FaqSection from "../faqSection/faqSection";
+import  faqData  from '@/data/indexfaq.json';
 
 
 const indexComp = ({pageData, params}) => {
@@ -521,6 +523,7 @@ const indexComp = ({pageData, params}) => {
       </div>
       </div>
       
+      <FaqSection faqData={faqData?.main}/>
       
       <Seo path={path} pageData={"index"} />
 

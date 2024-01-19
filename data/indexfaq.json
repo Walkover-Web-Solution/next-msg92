@@ -2,23 +2,23 @@
     "main": [
         {
             "que": "How can MSG91 benefit my business?",
-            "ans": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+            "des": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
         },
         {
             "que": "What makes MSG91 different from other communication platforms?",
-            "ans": "MSG91 stands out due to its reliability, scalability, and versatility. We specialize in providing mobile cloud communication platforms in India , addressing the unique needs of businesses in this market. Our platform offers advanced features, customizable solutions, and exceptional customer support to help businesses achieve their communication goals."
+            "des": "MSG91 stands out due to its reliability, scalability, and versatility. We specialize in providing mobile cloud communication platforms in India , addressing the unique needs of businesses in this market. Our platform offers advanced features, customizable solutions, and exceptional customer support to help businesses achieve their communication goals."
         },
         {
             "que": "Is MSG91 suitable for businesses of all sizes?",
-            "ans": "Yes, MSG91 caters to businesses of all sizes. Whether you're a startup, small business, or large enterprise, our platform can be tailored to meet your specific requirements. We offer scalable solutions that can accommodate the communication needs of businesses as they grow and expand."
+            "des": "Yes, MSG91 caters to businesses of all sizes. Whether you're a startup, small business, or large enterprise, our platform can be tailored to meet your specific requirements. We offer scalable solutions that can accommodate the communication needs of businesses as they grow and expand."
         },
         {
             "que": "Is MSG91 secure?",
-            "ans": "Security is a top priority at MSG91. We implement industry-standard protocols and encryption techniques to ensure the confidentiality and integrity of your data. Our enterprise cloud communications platform offers features like two-factor authentication and OTP verification to enhance security and protect sensitive information."
+            "des": "Security is a top priority at MSG91. We implement industry-standard protocols and encryption techniques to ensure the confidentiality and integrity of your data. Our enterprise cloud communications platform offers features like two-factor authentication and OTP verification to enhance security and protect sensitive information."
         },
         {
             "que": "Can I integrate MSG91 with my existing systems or applications?",
-            "ans": "Absolutely! MSG91 provides developer-friendly APIs and documentation, making it easy to integrate our platform with your existing systems or applications. Our APIs allow you to incorporate our communication functionalities seamlessly, enabling you to automate communication and streamline your workflows."
+            "des": "Absolutely! MSG91 provides developer-friendly APIs and documentation, making it easy to integrate our platform with your existing systems or applications. Our APIs allow you to incorporate our communication functionalities seamlessly, enabling you to automate communication and streamline your workflows."
         }
     ]
 }

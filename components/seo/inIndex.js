@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { MdCircle } from "react-icons/md";
 // import faqData from '@/data/';
-import faqdata from '../../data/indexfaq.json'
-import IndexFaqSection from "../indexFaq/indexFaq";
+
 const Insms = () => {
   const [showInsms, setShowInsms] = useState(false);
 
@@ -15,7 +14,6 @@ const Insms = () => {
    
     
       <div className={`container my-5 ${showInsms ? "insms" : ""}`}>
-      <IndexFaqSection faqData={faqdata?.main}/>
         <h1 className="pro-heading c-head mt-3">
           Welcome to MSG91: Your Trusted Cloud Communication Platform as a
           Service
