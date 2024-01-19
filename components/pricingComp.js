@@ -392,8 +392,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
           />
         )}
         {product === "hello" && (
-        <Pricinghello
-           setSubscriptionHello={setSubscriptionHello}
+        <Pricinghello           
             subscriptionHello={subscriptionHello}
             fetchSubscriptionHello={fetchSubscription}
             currency={currency}
