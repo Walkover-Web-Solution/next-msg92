@@ -275,14 +275,14 @@ const indexComp = ({pageData, params}) => {
                   <div className="pro-btn-text">Learn more</div>
                   <MdKeyboardArrowRight />
                 </div>
-              </div>rounded-2
+              </div>
             </a>
           </div>
         </div>
       </div>
 
-      <div className="section c-bg-grey stats-sec align-items-center my-80">
-        <div className="container h-100 d-flex flex-wrap text-center text-sm-start  align-items-center">
+      <div className="section bg-light stats-sec align-items-center my-80">
+        <div className="container h-100 d-flex flex-wrap text-lg-center text-start  align-items-center">
           <div className="col-12 col-sm-6 col-lg-3 d-flex flex-column  gap-2 py-3 py-sm-5">
             <h2 className="c-fs-1 c-fw-b">2.5 Billion+</h2>
             <h4 className="c-fs-3">
@@ -448,21 +448,21 @@ const indexComp = ({pageData, params}) => {
       </div>
      <div className="bg-light py-5">
       <div className="container  ">
-        <h2 className="sub-heading c-head fw-bold">Customer Success Powered by MSG91</h2>
+        <h2 className="sub-heading c-head fw-bold mb-4">Customer Success Powered by MSG91</h2>
         
-        <div className="d-flex col-12 flex-column flex-sm-row gap-4 my-4">
+        <div className="img-wapper d-flex flex-lg-row flex-column gap-4 m-0 p-0">
           <a
             href="/case-studies/milkbasket"
-            className="col-12 col-md-8 col-sm-8 col-lg-6 c-hover c-hover bg-white text-dark rounded-2"
+            className="col-12 col-lg-6 c-hover c-hover bg-white text-dark rounded-2 p-0"
           >
             <Image
-              className="milkbasket-client-img rounded-top"
+              className="milkbasket-client-img"
               src="/img/milkbasket-client-img.png"
               width={580}
               height={314}
               alt="milkbasket-client-img"
             />
-            <div className="c-fs-3 p-3 d-none d-sm-block">
+            <div className="c-fs-3 p-3">
               <p className="pe-2 ">
                 Milkbasket sends regular updates to its customers by offering
                 proactive support and recommendations
@@ -473,19 +473,28 @@ const indexComp = ({pageData, params}) => {
               </div>
             </div>
           </a>
-          <div className="col-12 col-sm-4 col-md-4 col-lg-6 d-flex flex-sm-column flex-row gap-2 gap-sm-3 gap-md-4">
+          <div className="col-12 col-lg-6 row gap-4 gap-sm-3 gap-md-4 m-0 p-0 ">
             <a
               href="/case-studies/unacademy"
-              className="c-hover d-flex align-items-center col-6 col-sm-12 c-hover bg-white text-dark rounded-2"
+              className="c-hover d-flex align-items-center flex-lg-row flex-column c-hover bg-white text-dark rounded-2 p-0"
             >
+              
               <Image
-                className="secc-client-img col-12 col-lg-4 rounded-start"
+                className="secc-client-img rounded-start d-none d-lg-block"
                 src="/img/unacademy-client-img.png"
                 width={220}
                 height={220}
                 alt="secc-client-img"
               />
-              <div className=" d-none d-lg-block c-fs-3 p-3">
+              <Image
+              className="milkbasket-client-img d-lg-none d-sm-block"
+              src="/img/milkbasket-client-img.png"
+              width={580}
+              height={314}
+              alt="milkbasket-client-img"
+            />
+              
+              <div className="c-fs-3 p-3">
                 <p className="pe-2">
                   Unacademy using omnichannel keeps its audience engaged and
                   nurtured with personalised campaigns
@@ -498,16 +507,24 @@ const indexComp = ({pageData, params}) => {
             </a>
             <a
               href="/case-studies/ixigo"
-              className="c-hover d-flex align-items-center col-6 col-sm-12 c-hover bg-white text-dark rounded-2"
+              className="c-hover d-flex align-items-center flex-lg-row flex-column c-hover bg-white text-dark rounded-2 p-0"
             >
+             
               <Image
-                className="secc-client-img col-12 col-lg-4 rounded-start"
+                className="secc-client-img rounded-start d-none d-lg-block"
                 src="/img/ixigo-client-img.png"
                 width={220}
                 height={220}
                 alt="secc-client-img"
               />
-              <div className="d-none d-lg-block c-fs-3 p-3">
+              <Image
+              className="milkbasket-client-img d-lg-none d-md-block"
+              src="/img/milkbasket-client-img.png"
+              width={580}
+              height={314}
+              alt="milkbasket-client-img"
+            />
+              <div className="c-fs-3 p-3">
                 <p className="pe-2">
                   Ixigo engages and updates its audience through multichannel
                   communication across messaging, email and WhatsApp
