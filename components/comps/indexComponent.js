@@ -5,7 +5,7 @@ import PreFooter from "../preFooter";
 import Seo from '../seoComp';
 import FaqSection from "../faqSection/faqSection";
 import  faqData  from '@/data/indexfaq.json';
-
+import { MdEast } from "react-icons/md";
 
 const indexComp = ({pageData, params}) => {
   const path = params ? params?.country : "";  
@@ -469,7 +469,7 @@ const indexComp = ({pageData, params}) => {
               </p>
               <div className="d-flex align-items-center justify-content-between text-dark c-fw-sb mt-3">
                 <span className="fw-semibold">Learn more</span>
-                <MdKeyboardArrowRight />
+                <span className="fs-4"><MdEast /></span>
               </div>
             </div>
           </a>
