@@ -316,7 +316,7 @@ const indexComp = ({pageData, params}) => {
 
       <div className="container my-5 more-services-sec my-80">
         <h2 className="sub-heading c-head fw-bold">More services</h2>
-        <div className="d-flex my-5 flex-md-row flex-column gap-5">
+        <div className="d-flex my-5 flex-md-row flex-column gap-4">
           <a
             href={`${path}/shorturl`}
             className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 rounded-2 more-services"
@@ -453,48 +453,41 @@ const indexComp = ({pageData, params}) => {
         <div className="img-wapper d-flex flex-lg-row flex-column gap-4 m-0 p-0">
           <a
             href="/case-studies/milkbasket"
-            className="col-12 col-lg-6 c-hover c-hover bg-white text-dark rounded-2 p-0"
+            className="col-12 col-lg-6 col-md-12 c-hover c-hover bg-white text-dark rounded-2 p-0 overflow-hidden"
           >
-            <Image
-              className="milkbasket-client-img"
-              src="/img/milkbasket-client-img.png"
-              width={580}
-              height={314}
+            <div className="milkbasket-client-img d-flex justify-content-center align-items-center">
+            <img
+              src="/img/milkbasket-logo.png"
+              className="w-50 h-25"
+             
               alt="milkbasket-client-img"
             />
+            </div>
             <div className="c-fs-3 p-3">
               <p className="pe-2 ">
                 Milkbasket sends regular updates to its customers by offering
                 proactive support and recommendations
               </p>
-              <div className="d-flex align-items-center justify-content-between text-dark c-fw-sb mt-3">
+              <div className="d-flex justify-content-between text-dark c-fw-sb mt-3">
                 <span className="fw-semibold">Learn more</span>
                 <span className="fs-4"><MdEast /></span>
               </div>
             </div>
           </a>
-          <div className="col-12 col-lg-6 row gap-4 gap-sm-3 gap-md-4 m-0 p-0 ">
+          <div className="col-12 col-lg-6 col-md-12 row gap-4 gap-sm-3 gap-md-4 m-0 p-0 h-100 ">
             <a
               href="/case-studies/unacademy"
-              className="c-hover d-flex align-items-center flex-lg-row flex-column c-hover bg-white text-dark rounded-2 p-0"
+              className="c-hover d-flex align-items-center flex-lg-row flex-column c-hover bg-white text-dark rounded-2 overflow-hidden p-0 h-50"
             >
-              
-              <Image
-                className="secc-client-img rounded-start d-none d-lg-block"
-                src="/img/unacademy-client-img.png"
-                width={220}
-                height={220}
+              <div className="secc-client-img d-flex justify-content-center align-items-center col-12 col-lg-4">
+              <img
+                className="h-50"
+                src="/img/unacademy-logo.png"
                 alt="secc-client-img"
               />
-              <Image
-              className="milkbasket-client-img d-lg-none d-sm-block"
-              src="/img/milkbasket-client-img.png"
-              width={580}
-              height={314}
-              alt="milkbasket-client-img"
-            />
+              </div>
               
-              <div className="c-fs-3 p-3">
+              <div className="c-fs-3 p-3 col-12 col-lg-8">
                 <p className="pe-2">
                   Unacademy using omnichannel keeps its audience engaged and
                   nurtured with personalised campaigns
@@ -507,24 +500,17 @@ const indexComp = ({pageData, params}) => {
             </a>
             <a
               href="/case-studies/ixigo"
-              className="c-hover d-flex align-items-center flex-lg-row flex-column c-hover bg-white text-dark rounded-2 p-0"
+              className="c-hover d-flex align-items-center flex-lg-row flex-column c-hover bg-white text-dark rounded-2 overflow-hidden p-0"
             >
-             
-              <Image
-                className="secc-client-img rounded-start d-none d-lg-block"
-                src="/img/ixigo-client-img.png"
-                width={220}
-                height={220}
+             <div className="sec-client-img d-flex justify-content-center align-items-center col-12 col-lg-4">
+              <img
+                 className="h-25"
+                src="/img/ixigo-logo.png"
+                
                 alt="secc-client-img"
               />
-              <Image
-              className="milkbasket-client-img d-lg-none d-md-block"
-              src="/img/milkbasket-client-img.png"
-              width={580}
-              height={314}
-              alt="milkbasket-client-img"
-            />
-              <div className="c-fs-3 p-3">
+             </div>
+              <div className="c-fs-3 p-3 col-12 col-lg-8">
                 <p className="pe-2">
                   Ixigo engages and updates its audience through multichannel
                   communication across messaging, email and WhatsApp
