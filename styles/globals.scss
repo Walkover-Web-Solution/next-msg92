@@ -110,22 +110,7 @@ nav {
   z-index: 101;
   position: absolute;
 }
-.mininav {
-  position: fixed;
-  z-index: 10;
-  top: 0px;
-  overflow-y: auto;
-  background-color: white;
-  width: 100vw !important;
-  height: 100vh;
-  .mininav-cont {
-    width: 100%;
-    top: 50px;
-    position: relative;
-    height: fit-content;
-    margin-bottom: 100px;
-  }
-}
+
 .pro-heading {
   font-size: clamp(18px, 3vw, 28px);
 }
@@ -351,17 +336,7 @@ nav {
     z-index: 99;
   }
 }
-#productmenu {
-  position: absolute;
-  padding-top: 60px;
-  opacity: 0;
-  transition: 0.15s;
-  z-index: 10;
-  &.active {
-    z-index: 11;
-    opacity: 1;
-  }
-}
+
 #integrationsmenu {
   padding-top: 60px;
   position: relative;
@@ -380,31 +355,7 @@ nav {
     color: var(--c-grey);
   }
 }
-.product-menu-btn {
-  width: fit-content;
-  transition: 0.15s;
-  position: relative;
-  &:hover {
-    color: var(--c-grey) !important;
-    &::before {
-      opacity: 1;
-      animation: slide1 0.2s ease-in-out forwards;
-    }
-  }
-  &:before {
-    position: absolute;
-    display: block;
-    opacity: 0;
-    content: "";
-    color: #000;
-    width: 8px;
-    height: 8px;
-    border-bottom: solid 2px;
-    border-right: solid 2px;
-    top: 50%;
-    right: 0;
-  }
-}
+
 
 @keyframes slide1 {
   0% {
