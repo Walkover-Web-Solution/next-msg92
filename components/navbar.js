@@ -134,7 +134,7 @@ const navbar = ({ browserPath, pricingPath,pageSlug }) => {
           
           <div className="msg91-logo-cont  align-items-center justify-content-center d-flex" id="main-logo">
             <a href={`${path}/`}>
-              <img className="msg91-logo" src="/img/logo.svg" alt="MSG91" />
+              <img className="msg91-logo ms-5 ps-5" src="/img/logo.svg" alt="MSG91" />
             </a>
           </div>
           <div className=" d-flex gap-4 gap-lg-4 gap-xl-5 w-nav-menu align-items-center justify-content-end">
