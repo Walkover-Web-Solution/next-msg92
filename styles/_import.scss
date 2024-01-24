@@ -10,8 +10,12 @@
 @import 'intpage';
 @import 'blog';
 @import 'hello';
-@import "products";
-// 
 
-@import './utilities/colors'
+// utilities
+
+@import './utilities/colors';
+
+
+//pages
+@import "products";
 
