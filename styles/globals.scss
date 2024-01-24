@@ -294,22 +294,126 @@ nav {
   border-right: 2px solid var(--c-light-grey);
 }
 .more-services {
-  background-color: white;
+  background-color:#fafafa;
   transition: 0.15s;
-  &:hover {
-    background-color: var(--c-light-grey);
+  // flex-grow: 1;
+    &:hover {
+   
     box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.15);
   }
 }
 //clinnt sroteis
+
+// .img-wapper {
+//   img {
+//     @media screen and (max-width: 556px) {
+//     aspect-ratio:4/3;
+//     }
+//   }
+// }
 .milkbasket-client-img {
-  width: 100%;
-  height: auto;
-}
+  background-image:url(../public/img/milkbasket-bg.png);
+  width:auto;
+  min-height: 314px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  @media screen and (max-width: 576px) {
+    min-height:220px;
+    width: 100%;
+   }
+ }
 .secc-client-img {
-  width: auto;
-  height: 100%;
+  background-image:url(../public/img/unacademy-bg.png);
+  width:220px;
+  height:220px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  @media screen and (max-width: 1200px) {
+    
+    min-width:180px;
+    min-height: 180px;
+
+   }
+  @media screen and (max-width: 992px) {
+     min-height: 314px;
+   width: 100%;
+  }
+
+  @media screen and (max-width: 576px) {
+    min-height:160px;
+    width: 100%;
+   }
 }
+
+
+.sec-client-img {
+  background-image:url(../public/img/ixigo-bg.png);
+  width:220px;
+  height: 220px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media screen and (max-width: 1200px) {
+  
+  min-width:180px;
+  min-height: 180px;
+ }
+  @media screen and (max-width: 992px) {
+   min-height: 314px;
+   width: 100%;
+  }
+
+  @media screen and (max-width: 576px) {
+    min-height:160px;
+    width: 100%;
+   }
+}
+
+
+// .secc-client {
+//   background-image:url(../public/img/unacademy-client-img.png);
+//   width: 100%;
+//   min-width:220px;
+//   height:100%;
+//   min-height: 300px;
+//   height:100%;
+  
+//   background-position: 50% 50%;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   @media screen and (max-width: 992px) {
+//     min-height: 260px;
+//     border-radius: 8px 8px 0 0 !important;
+    
+//   }
+// }
+// .sec-client {
+//   background-image:url(../public/img/ixigo-client-img.png);
+//   width: 100%;
+//   min-width:220px;
+//   height:100%;
+//   min-height: 300px;
+  
+  
+//   background-position: 50% 50%;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   @media screen and (max-width: 992px) {
+//     min-height: 260px;
+//     border-radius: 8px 8px 0 0 !important;
+    
+//   }
+//   @media screen and (max-width: 556px) {
+//     height: 160px !important;
+//     border-radius: 8px 8px 0 0;
+    
+//   }
+// }
+
 //productmenu
 #bgoverlay {
   position: fixed;
