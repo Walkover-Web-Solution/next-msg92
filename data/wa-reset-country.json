@@ -1,0 +1,493 @@
+[
+    {
+        "Markets": "Rest of Africa",
+        "ChildMarkets": [
+            {
+                "Markets": "Algeria",
+                "calling_code": "213"
+            },
+            {
+                "Markets": "Angola",
+                "calling_code": "244"
+            },
+            {
+                "Markets": "Benin",
+                "calling_code": "229"
+            },
+            {
+                "Markets": "Botswana",
+                "calling_code": "267"
+            },
+            {
+                "Markets": "Burkina Faso",
+                "calling_code": "226"
+            },
+            {
+                "Markets": "Burundi",
+                "calling_code": "257"
+            },
+            {
+                "Markets": "Cameroon",
+                "calling_code": "237"
+            },
+            {
+                "Markets": "Chad",
+                "calling_code": "235"
+            },
+            {
+                "Markets": "Republic of the Congo (Brazzaville)",
+                "calling_code": "242"
+            },
+            {
+                "Markets": "Eritrea",
+                "calling_code": "291"
+            },
+            {
+                "Markets": "Ethiopia",
+                "calling_code": "251"
+            },
+            {
+                "Markets": "Gabon",
+                "calling_code": "241"
+            },
+            {
+                "Markets": "Gambia",
+                "calling_code": "220"
+            },
+            {
+                "Markets": "Ghana",
+                "calling_code": "233"
+            },
+            {
+                "Markets": "Guinea-Bissau",
+                "calling_code": "245"
+            },
+            {
+                "Markets": "Ivory Coast",
+                "calling_code": "225"
+            },
+            {
+                "Markets": "Kenya",
+                "calling_code": "254"
+            },
+            {
+                "Markets": "Lesotho",
+                "calling_code": "266"
+            },
+            {
+                "Markets": "Liberia",
+                "calling_code": "231"
+            },
+            {
+                "Markets": "Libya",
+                "calling_code": "218"
+            },
+            {
+                "Markets": "Madagascar",
+                "calling_code": "261"
+            },
+            {
+                "Markets": "Malawi",
+                "calling_code": "265"
+            },
+            {
+                "Markets": "Mali",
+                "calling_code": "223"
+            },
+            {
+                "Markets": "Mauritania",
+                "calling_code": "222"
+            },
+            {
+                "Markets": "Morocco",
+                "calling_code": "212"
+            },
+            {
+                "Markets": "Mozambique",
+                "calling_code": "258"
+            },
+            {
+                "Markets": "Namibia",
+                "calling_code": "264"
+            },
+            {
+                "Markets": "Niger",
+                "calling_code": "227"
+            },
+            {
+                "Markets": "Rwanda",
+                "calling_code": "250"
+            },
+            {
+                "Markets": "Senegal",
+                "calling_code": "221"
+            },
+            {
+                "Markets": "Sierra Leone",
+                "calling_code": "232"
+            },
+            {
+                "Markets": "Somalia",
+                "calling_code": "252"
+            },
+            {
+                "Markets": "South Sudan",
+                "calling_code": "211"
+            },
+            {
+                "Markets": "Sudan",
+                "calling_code": "249"
+            },
+            {
+                "Markets": "Swaziland",
+                "calling_code": "268"
+            },
+            {
+                "Markets": "Tanzania",
+                "calling_code": "255"
+            },
+            {
+                "Markets": "Togo",
+                "calling_code": "228"
+            },
+            {
+                "Markets": "Tunisia",
+                "calling_code": "216"
+            },
+            {
+                "Markets": "Uganda",
+                "calling_code": "256"
+            },
+            {
+                "Markets": "Zambia",
+                "calling_code": "260"
+            }
+        ]
+    },
+    {
+        "Markets": "Rest of Asia Pacific",
+        "ChildMarkets": [
+            {
+                "Markets": "Afghanistan",
+                "calling_code": "93"
+            },
+            {
+                "Markets": "Australia",
+                "calling_code": "61"
+            },
+            {
+                "Markets": "Bangladesh",
+                "calling_code": "880"
+            },
+            {
+                "Markets": "Cambodia",
+                "calling_code": "855"
+            },
+            {
+                "Markets": "China",
+                "calling_code": "86"
+            },
+            {
+                "Markets": "Hong Kong",
+                "calling_code": "852"
+            },
+            {
+                "Markets": "Japan",
+                "calling_code": "81"
+            },
+            {
+                "Markets": "Laos",
+                "calling_code": "856"
+            },
+            {
+                "Markets": "Mongolia",
+                "calling_code": "976"
+            },
+            {
+                "Markets": "Nepal",
+                "calling_code": "977"
+            },
+            {
+                "Markets": "New Zealand",
+                "calling_code": "64"
+            },
+            {
+                "Markets": "Papua New Guinea",
+                "calling_code": "675"
+            },
+            {
+                "Markets": "Philippines",
+                "calling_code": "63"
+            },
+            {
+                "Markets": "Singapore",
+                "calling_code": "65"
+            },
+            {
+                "Markets": "Sri Lanka",
+                "calling_code": "94"
+            },
+            {
+                "Markets": "Taiwan",
+                "calling_code": "886"
+            },
+            {
+                "Markets": "Tajikistan",
+                "calling_code": "992"
+            },
+            {
+                "Markets": "Thailand",
+                "calling_code": "66"
+            },
+            {
+                "Markets": "Turkmenistan",
+                "calling_code": "993"
+            },
+            {
+                "Markets": "Uzbekistan",
+                "calling_code": "998"
+            },
+            {
+                "Markets": "Vietnam",
+                "calling_code": "84"
+            }
+        ]
+    },
+    {
+        "Markets": "Rest of Central & Eastern Europe",
+        "ChildMarkets": [
+            {
+                "Markets": "Albania",
+                "calling_code": "355"
+            },
+            {
+                "Markets": "Armenia",
+                "calling_code": "374"
+            },
+            {
+                "Markets": "Azerbaijan",
+                "calling_code": "994"
+            },
+            {
+                "Markets": "Belarus",
+                "calling_code": "375"
+            },
+            {
+                "Markets": "Bulgaria",
+                "calling_code": "359"
+            },
+            {
+                "Markets": "Croatia",
+                "calling_code": "385"
+            },
+            {
+                "Markets": "Czech Republic",
+                "calling_code": "420"
+            },
+            {
+                "Markets": "Georgia",
+                "calling_code": "995"
+            },
+            {
+                "Markets": "Greece",
+                "calling_code": "30"
+            },
+            {
+                "Markets": "Hungary",
+                "calling_code": "36"
+            },
+            {
+                "Markets": "Latvia",
+                "calling_code": "371"
+            },
+            {
+                "Markets": "Lithuania",
+                "calling_code": "370"
+            },
+            {
+                "Markets": "Moldova",
+                "calling_code": "373"
+            },
+            {
+                "Markets": "North Macedonia",
+                "calling_code": "389"
+            },
+            {
+                "Markets": "Poland",
+                "calling_code": "48"
+            },
+            {
+                "Markets": "Romania",
+                "calling_code": "40"
+            },
+            {
+                "Markets": "Serbia",
+                "calling_code": "381"
+            },
+            {
+                "Markets": "Slovakia",
+                "calling_code": "421"
+            },
+            {
+                "Markets": "Slovenia",
+                "calling_code": "386"
+            },
+            {
+                "Markets": "Ukraine",
+                "calling_code": "380"
+            }
+        ]
+    },
+    {
+        "Markets": "Rest of Western Europe",
+        "ChildMarkets": [
+            {
+                "Markets": "Austria",
+                "calling_code": "43"
+            },
+            {
+                "Markets": "Belgium",
+                "calling_code": "32"
+            },
+            {
+                "Markets": "Denmark",
+                "calling_code": "45"
+            },
+            {
+                "Markets": "Finland",
+                "calling_code": "358"
+            },
+            {
+                "Markets": "Ireland",
+                "calling_code": "353"
+            },
+            {
+                "Markets": "Norway",
+                "calling_code": "47"
+            },
+            {
+                "Markets": "Portugal",
+                "calling_code": "351"
+            },
+            {
+                "Markets": "Sweden",
+                "calling_code": "46"
+            },
+            {
+                "Markets": "Switzerland",
+                "calling_code": "41"
+            }
+        ]
+    },
+    {
+        "Markets": "Rest of Latin America",
+        "ChildMarkets": [
+            {
+                "Markets": "Bolivia",
+                "calling_code": "591"
+            },
+            {
+                "Markets": "Costa Rica",
+                "calling_code": "506"
+            },
+            {
+                "Markets": "Dominican Republic",
+                "calling_code": "1 (809, 829, 849)"
+            },
+            {
+                "Markets": "Ecuador",
+                "calling_code": "593"
+            },
+            {
+                "Markets": "El Salvador",
+                "calling_code": "503"
+            },
+            {
+                "Markets": "Guatemala",
+                "calling_code": "502"
+            },
+            {
+                "Markets": "Haiti",
+                "calling_code": "509"
+            },
+            {
+                "Markets": "Honduras",
+                "calling_code": "504"
+            },
+            {
+                "Markets": "Jamaica",
+                "calling_code": "1 (658, 876)"
+            },
+            {
+                "Markets": "Nicaragua",
+                "calling_code": "505"
+            },
+            {
+                "Markets": "Panama",
+                "calling_code": "507"
+            },
+            {
+                "Markets": "Paraguay",
+                "calling_code": "595"
+            },
+            {
+                "Markets": "Puerto Rico",
+                "calling_code": "1 (787, 939)"
+            },
+            {
+                "Markets": "Uruguay",
+                "calling_code": "598"
+            },
+            {
+                "Markets": "Venezuela",
+                "calling_code": "58"
+            }
+        ]
+    },
+    {
+        "Markets": "Rest of Middle East",
+        "ChildMarkets": [
+            {
+                "Markets": "Bahrain",
+                "calling_code": "973"
+            },
+            {
+                "Markets": "Iraq",
+                "calling_code": "964"
+            },
+            {
+                "Markets": "Jordan",
+                "calling_code": "962"
+            },
+            {
+                "Markets": "Kuwait",
+                "calling_code": "965"
+            },
+            {
+                "Markets": "Lebanon",
+                "calling_code": "961"
+            },
+            {
+                "Markets": "Oman",
+                "calling_code": "968"
+            },
+            {
+                "Markets": "Qatar",
+                "calling_code": "974"
+            },
+            {
+                "Markets": "Yemen",
+                "calling_code": "967"
+            }
+        ]
+    },
+    {
+        "Markets": "Other",
+        "ChildMarkets": [
+            {
+                "Markets": "All other countries",
+                "calling_code": "Varies by country"
+            }
+        ]
+    }
+]
