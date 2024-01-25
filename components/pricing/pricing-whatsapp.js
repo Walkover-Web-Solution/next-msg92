@@ -1,6 +1,8 @@
 import { MdDone } from "react-icons/md";
 import { useEffect, useState } from "react";
+import Papa from 'papaparse';
 import { setUtm } from "../pricingComp";
+import CsvData from '@/data/pricing-wp.csv'
 
 const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsAppFee,countryCode}) => {
   var change
@@ -21,6 +23,7 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsA
   const [selectedCurrency, setSelectedCurrency] = useState(change);
   const [onetime, setOnetime] = useState("");
   const [symbol, setSymbol] = useState(changeSymbol);
+  const [tableData, setTableData] = useState([]);
   
   const changeCurrency = (currency) => {
     setSelectedCurrency(currency);
@@ -45,6 +48,15 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsA
     setUtm();
   }, []);  
 
+parseCsv(CsvData)
+  const parseCsv = (file) => {
+    Papa.parse(file, {
+        complete: (result) => {
+            setTableData(result.data);
+        },
+        header: true
+    });
+};
   return (
     <>
       <div className="d-flex justify-content-center mb-4">
