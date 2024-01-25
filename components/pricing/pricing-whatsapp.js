@@ -1,8 +1,8 @@
 import { MdDone } from "react-icons/md";
 import { useEffect, useState } from "react";
-import Papa from 'papaparse';
 import { setUtm } from "../pricingComp";
-import CsvData from '@/data/pricing-wp.csv'
+
+import inr from "@/data/wa-inr.json";
 
 const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsAppFee,countryCode}) => {
   var change
@@ -43,20 +43,11 @@ const pricingwp = ({subscriptionWhatsapp, fetchSubscriptionWhatsapp, oneTimeWtsA
         break;
     }
   };
-
   useEffect(() => {    
+    setTableData(inr);    
     setUtm();
   }, []);  
 
-parseCsv(CsvData)
-  const parseCsv = (file) => {
-    Papa.parse(file, {
-        complete: (result) => {
-            setTableData(result.data);
-        },
-        header: true
-    });
-};
   return (
     <>
       <div className="d-flex justify-content-center mb-4">
@@ -147,6 +138,13 @@ parseCsv(CsvData)
             </button>
           </div>
         </div> */}
+      </div>
+      <div>
+        {tableData.map((item, index) => (
+          <div key={index}>
+            <h3>{item.Market}</h3>
+          </div>
+        ))}
       </div>
       <div className="c-fs-5 mt-5">
         {/* MSG91 takes one time fee <strong>{symbol}{oneTimeWtsAppFee}</strong> to set up your WhatsApp Business account. */}

@@ -1,0 +1,258 @@
+[
+  {
+    "Market": "Argentina",
+    "Currency": "£",
+    "Marketing": 0.0445,
+    "Utility": 0.0294,
+    "Authentication": 0.0264,
+    "Service": 0.0228
+  },
+  {
+    "Market": "Brazil",
+    "Currency": "£",
+    "Marketing": 0.0451,
+    "Utility": 0.0253,
+    "Authentication": 0.0227,
+    "Service": 0.0216
+  },
+  {
+    "Market": "Chile",
+    "Currency": "£",
+    "Marketing": 0.0641,
+    "Utility": 0.0423,
+    "Authentication": 0.038,
+    "Service": 0.0327
+  },
+  {
+    "Market": "Colombia",
+    "Currency": "£",
+    "Marketing": 0.009,
+    "Utility": 0.0061,
+    "Authentication": 0.0055,
+    "Service": 0.0043
+  },
+  {
+    "Market": "Egypt",
+    "Currency": "£",
+    "Marketing": 0.0774,
+    "Utility": 0.0496,
+    "Authentication": 0.0446,
+    "Service": 0.0464
+  },
+  {
+    "Market": "France",
+    "Currency": "£",
+    "Marketing": 0.1033,
+    "Utility": 0.0554,
+    "Authentication": 0.0499,
+    "Service": 0.062
+  },
+  {
+    "Market": "Germany",
+    "Currency": "£",
+    "Marketing": 0.0985,
+    "Utility": 0.0616,
+    "Authentication": 0.0554,
+    "Service": 0.0591
+  },
+  {
+    "Market": "India",
+    "Currency": "£",
+    "Marketing": 0.0072,
+    "Utility": 0.0031,
+    "Authentication": "n/a",
+    "Service": 0.0029
+  },
+  {
+    "Market": "Indonesia",
+    "Currency": "£",
+    "Marketing": 0.0297,
+    "Utility": 0.0144,
+    "Authentication": 0.0216,
+    "Service": 0.0137
+  },
+  {
+    "Market": "Israel",
+    "Currency": "£",
+    "Marketing": 0.0254,
+    "Utility": 0.0135,
+    "Authentication": 0.0122,
+    "Service": 0.013
+  },
+  {
+    "Market": "Italy",
+    "Currency": "£",
+    "Marketing": 0.0498,
+    "Utility": 0.0302,
+    "Authentication": 0.0272,
+    "Service": 0.0278
+  },
+  {
+    "Market": "Malaysia",
+    "Currency": "£",
+    "Marketing": 0.062,
+    "Utility": 0.0144,
+    "Authentication": 0.013,
+    "Service": 0.0158
+  },
+  {
+    "Market": "Mexico",
+    "Currency": "£",
+    "Marketing": 0.0315,
+    "Utility": 0.0192,
+    "Authentication": 0.0173,
+    "Service": 0.0075
+  },
+  {
+    "Market": "Netherlands",
+    "Currency": "£",
+    "Marketing": 0.1152,
+    "Utility": 0.0577,
+    "Authentication": 0.0519,
+    "Service": 0.0643
+  },
+  {
+    "Market": "Nigeria",
+    "Currency": "£",
+    "Marketing": 0.0372,
+    "Utility": 0.023,
+    "Authentication": 0.0207,
+    "Service": 0.0223
+  },
+  {
+    "Market": "Pakistan",
+    "Currency": "£",
+    "Marketing": 0.0341,
+    "Utility": 0.0182,
+    "Authentication": 0.0164,
+    "Service": 0.0102
+  },
+  {
+    "Market": "Peru",
+    "Currency": "£",
+    "Marketing": 0.0507,
+    "Utility": 0.0302,
+    "Authentication": 0.0272,
+    "Service": 0.0129
+  },
+  {
+    "Market": "Russia",
+    "Currency": "£",
+    "Marketing": 0.0578,
+    "Utility": 0.0344,
+    "Authentication": 0.031,
+    "Service": 0.0287
+  },
+  {
+    "Market": "Saudi Arabia",
+    "Currency": "£",
+    "Marketing": 0.0292,
+    "Utility": 0.0181,
+    "Authentication": 0.0163,
+    "Service": 0.014
+  },
+  {
+    "Market": "South Africa",
+    "Currency": "£",
+    "Marketing": 0.0273,
+    "Utility": 0.0144,
+    "Authentication": 0.013,
+    "Service": 0.0121
+  },
+  {
+    "Market": "Spain",
+    "Currency": "£",
+    "Marketing": 0.0443,
+    "Utility": 0.0274,
+    "Authentication": 0.0246,
+    "Service": 0.0266
+  },
+  {
+    "Market": "Turkey",
+    "Currency": "£",
+    "Marketing": 0.0078,
+    "Utility": 0.0067,
+    "Authentication": 0.006,
+    "Service": 0.0022
+  },
+  {
+    "Market": "United Arab Emirates",
+    "Currency": "£",
+    "Marketing": 0.0245,
+    "Utility": 0.0143,
+    "Authentication": 0.0128,
+    "Service": 0.0137
+  },
+  {
+    "Market": "United Kingdom",
+    "Currency": "£",
+    "Marketing": 0.0509,
+    "Utility": 0.0287,
+    "Authentication": 0.0259,
+    "Service": 0.028
+  },
+  {
+    "Market": "North America",
+    "Currency": "£",
+    "Marketing": 0.018,
+    "Utility": 0.0108,
+    "Authentication": 0.0097,
+    "Service": 0.0064
+  },
+  {
+    "Market": "Rest of Africa",
+    "Currency": "£",
+    "Marketing": 0.0162,
+    "Utility": 0.0115,
+    "Authentication": 0.0104,
+    "Service": 0.0261
+  },
+  {
+    "Market": "Rest of Asia Pacific",
+    "Currency": "£",
+    "Marketing": 0.0528,
+    "Utility": 0.034,
+    "Authentication": 0.0306,
+    "Service": 0.0161
+  },
+  {
+    "Market": "Rest of Central & Eastern Europe",
+    "Currency": "£",
+    "Marketing": 0.062,
+    "Utility": 0.0446,
+    "Authentication": 0.0402,
+    "Service": 0.0181
+  },
+  {
+    "Market": "Rest of Latin America",
+    "Currency": "£",
+    "Marketing": 0.0534,
+    "Utility": 0.0356,
+    "Authentication": 0.0321,
+    "Service": 0.0305
+  },
+  {
+    "Market": "Rest of Middle East",
+    "Currency": "£",
+    "Marketing": 0.0246,
+    "Utility": 0.0143,
+    "Authentication": 0.0128,
+    "Service": 0.0157
+  },
+  {
+    "Market": "Rest of Western Europe",
+    "Currency": "£",
+    "Marketing": 0.0427,
+    "Utility": 0.0303,
+    "Authentication": 0.0273,
+    "Service": 0.0286
+  },
+  {
+    "Market": "Other",
+    "Currency": "£",
+    "Marketing": 0.0435,
+    "Utility": 0.0244,
+    "Authentication": 0.0219,
+    "Service": 0.0104
+  }
+]
