@@ -1,5 +1,6 @@
 export default function FaqSection(faqData) {
   const faqs = faqData?.faqData;
+  
   return (
     <>
       <div className="container my-5 d-grid gap-4">
@@ -12,7 +13,7 @@ export default function FaqSection(faqData) {
               <div class="accordion-item">
                 <h2 class="accordion-header" id={`heading${index}`}>
                   <button
-                    class="accordion-button c-fs-3"
+                    class="accordion-button fs-5 fw-medium"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target={`#collapse${index}`}

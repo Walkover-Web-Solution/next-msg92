@@ -196,11 +196,11 @@ const Footer = ({path, year}) => {
                 <span className="footer-social-a-text c-fs-5 d-flex flex-column">
                   Follow us
                 </span>
-                <div className="footer-social-a d-flex mt-3 align-items-center justify-content-start justify-content-lg-end">
+                <div className="footer-social-a d-flex mt-3 align-items-start justify-content-between justify-content-lg-end">
                   <a
                     href="https://www.facebook.com/msg91"
                     target="_blank"
-                    className="me-4"
+                    className="me-3"
                   >
                     <img
                       src="/img/icon/facebook.svg"
@@ -212,7 +212,7 @@ const Footer = ({path, year}) => {
                   <a
                     href="https://www.linkedin.com/company/msg91/"
                     target="_blank"
-                    className="me-4"
+                    className="me-3"
                   >
                     <img
                       src="/img/icon/linkedin.svg"
@@ -224,7 +224,7 @@ const Footer = ({path, year}) => {
                   <a
                     href="https://twitter.com/msg91"
                     target="_blank"
-                    className="me-4"
+                    className="me-3"
                   >
                     <img
                       src="/img/icon/twitter.svg"
@@ -242,6 +242,10 @@ const Footer = ({path, year}) => {
                     />
                   </a>
                 </div>
+              </div>
+              <div className="mt-5">
+                <div className="c-fw-b">Address</div>
+                71-75 Shelton Street, Covent Garden, London, England, WC2H 9JQ
               </div>
             </div>
           </div>
@@ -370,7 +374,6 @@ const Footer = ({path, year}) => {
                     </div>
                 </div>
             </div>
-
     </>
   );
 };
