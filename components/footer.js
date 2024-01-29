@@ -236,10 +236,6 @@ const Footer = ({path, year}) => {
                   </a>
                 </div>
               </div>
-              <div className="mt-5">
-                <div className="c-fw-b">Address</div>
-                71-75 Shelton Street, Covent Garden, London, England, WC2H 9JQ
-              </div>
             </div>
           </div>
         </div>
