@@ -10,14 +10,14 @@ export default function FaqSection(faqData) {
             {
             }
             return (
-              <div class="accordion-item">
-                <h2 class="accordion-header" id={`heading${index}`}>
+              <div class="accordion-item border-bottom border-start-0 border-end-0">
+                <h2 class="accordion-header active" id={`heading${index}`}>
                   <button
-                    class="accordion-button fs-5 fw-medium"
+                    class="accordion-button  color-blue fs-5 c-fw-m"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target={`#collapse${index}`}
-                    aria-expanded="true"
+                    aria-expanded="false"
                     aria-controls={`collapse${index}`}
                   >
                     {data?.que}
@@ -25,7 +25,7 @@ export default function FaqSection(faqData) {
                 </h2>
                 <div
                   id={`collapse${index}`}
-                  class={`accordion-collapse collapse ${
+                  class={`accordion-collapse border border-start border-end collapse ${
                     index == 0 ? "show" : ""
                   }`}
                   aria-labelledby={`heading${index}`}

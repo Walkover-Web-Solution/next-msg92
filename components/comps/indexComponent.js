@@ -316,10 +316,10 @@ const indexComp = ({pageData, params}) => {
 
       <div className="container my-5 more-services-sec my-80">
         <h2 className="sub-heading c-head fw-bold">More services</h2>
-        <div className="d-flex my-5 flex-md-row flex-column gap-4">
+        <div className="d-flex my-5 flex-lg-row flex-column gap-4">
           <a
             href={`${path}/shorturl`}
-            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 rounded-2 more-services"
+            className=" text-dark col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-4 d-flex flex-column flex-sm-row flex-md-row flex-lg-column gap-3 rounded-2 more-services"
           >
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
@@ -331,11 +331,11 @@ const indexComp = ({pageData, params}) => {
                     alt="short-url"
                   />
                 </span>
-                <span className="c-fs-2 c-head fw-bold">URL Shortner</span>
+                <span className="heading c-head fw-bold">URL Shortner</span>
               </div>
               <div className="">
                 <Image
-                  className="more-services-img"
+                  className="more-services-img col-12"
                   src="./img/short-url-img.svg"
                   width={336}
                   height={212}
@@ -362,7 +362,7 @@ const indexComp = ({pageData, params}) => {
 
           <a
             href={`${path}/knowledgebase`}
-            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 rounded-2 more-services"
+            className=" text-dark col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-4 d-flex flex-column flex-sm-row flex-md-row flex-lg-column gap-3 rounded-2 more-services"
           >
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
@@ -374,11 +374,11 @@ const indexComp = ({pageData, params}) => {
                     alt="knowledgebase"
                   />
                 </span>
-                <span className="c-fs-2 c-head fw-bold">KnowledgeBase App</span>
+                <span className="heading c-head fw-bold">KnowledgeBase App</span>
               </div>
               <div className="">
                 <Image
-                  className="more-services-img"
+                  className="more-service-img"
                   src="./img/knowledgebase-img.svg"
                   width={336}
                   height={212}
@@ -404,7 +404,7 @@ const indexComp = ({pageData, params}) => {
           </a>
           <a
             href="https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91"
-            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 rounded-2 more-services"
+            className=" text-dark col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-4 d-flex flex-column flex-sm-row flex-md-row flex-lg-column gap-3 rounded-2 more-services"
           >
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
@@ -416,11 +416,11 @@ const indexComp = ({pageData, params}) => {
                     alt="File Hosting"
                   />
                 </span>
-                <span className="c-fs-2 c-head fw-bold">File Hosting</span>
+                <span className="heading c-head fw-bold">File Hosting</span>
               </div>
               <div className="">
                 <Image
-                  className="more-services-img"
+                  className="more-services-img col-12"
                   src="./img/file-hosting-img.svg"
                   width={336}
                   height={212}
