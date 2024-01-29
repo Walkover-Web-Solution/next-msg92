@@ -117,16 +117,19 @@ const pricingwp = ({ countryCode }) => {
           <tbody>
             {tableData.map((item, index) => (
               <>
-                {item.Market.startsWith("Rest") ? (
+                {item.Market.startsWith("Rest") || item.Market.startsWith("Other") ? (
                   <tr>
                     <td
+             
                       data-bs-toggle="modal"
                       data-bs-target={`#${item.Market.replace(
                         / /g,
                         "-"
                       )}-market`}
                     >
+                      <span className="wa-pricing-link">
                       {item?.Market}
+                      </span>
                       <div
                         class="modal fade"
                         id={`${item.Market.replace(/ /g, "-")}-market`}
@@ -165,8 +168,7 @@ const pricingwp = ({ countryCode }) => {
                                   {restData
                                     .find(
                                       (data) => data.Markets === item.Market
-                                    )
-                                    .ChildMarkets.map((child, index) => {
+                                    )?.ChildMarkets.map((child, index) => {
                                       return (
                                         <>
                                           <tr key={index}>
