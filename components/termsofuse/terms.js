@@ -131,7 +131,7 @@ const terms = () => {
                             <div className="my-3"></div>
                             13. You shall indemnify and reimburse TEAM MSG91 all liabilities, costs, losses and damages, in case of any claim brought against TEAM MSG91 from any third party due to breach of contract.
                             <div className="my-3"></div>
-                            14. You shall in no way raise questions concerning our price policy since it is liable to change with due amendments in the Government, TRAI or Telecom Operators rules and regulations.
+                            14. You shall in no way raise questions concerning our price policy since it is liable to change with due amendments in the Government, TRAI or Telecom Operators' rules and regulations, or for any other reasons.
                             <div className="my-3"></div>
                             15. Your wallet balance or credits will be lapsed if you keep your account inactive for one year of time.
                         </span>
@@ -189,7 +189,7 @@ const terms = () => {
                             <div className="my-3"></div>
                             You are also free to terminate or cancel this agreement at any time, and for any reason. For such termination or cancellation to be effective however, you must inform us in writing through Email. You will still be under the responsibilities of this agreement for the duration that you used the service and you will cease to have access to the use of any credits that may exist in your account.
                             <div className="my-3"></div>
-                            Our terms and conditions as well as the prices are subject to change from time to time according to TRAI rules and regulations.
+                            Our terms and conditions as well as the prices are subject to change from time to time according to TRAI rules and regulations, or for any other reasons.
                             <div className="my-3"></div>
                             These Services are operated and provided by:
                             <div className="my-3"></div>
@@ -202,6 +202,7 @@ const terms = () => {
                             Email: <a href="https://msg91.com/cdn-cgi/l/email-protection#2a595f5a5a45585e6a47594d131b04414344595e4b044946455f4e"> [email protected] </a>
                             <div className="my-3"></div>
                             If you have any questions concerning these Terms, feel free to contact team MSG91.
+                         
                         </span>
                     </div>
                 </div>
