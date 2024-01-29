@@ -453,9 +453,9 @@ const indexComp = ({pageData, params}) => {
         <div className="img-wapper d-flex flex-lg-row flex-column gap-4 m-0 p-0">
           <a
             href="/case-studies/milkbasket"
-            className="col-12 col-lg-6 col-md-12 c-hover c-hover bg-white text-dark rounded-2 p-0 overflow-hidden"
+            className="col-12 col-lg-6 col-md-12 c-hover c-hover d-flex flex-lg-column flex-md-row flex-column bg-white text-dark rounded-2 p-0 overflow-hidden"
           >
-            <div className="milkbasket-client-img d-flex justify-content-center align-items-center">
+            <div className="milkbasket-client-img d-flex justify-content-center align-items-center col-12 col-lg-12 col-md-4">
             <img
               src="/img/milkbasket-logo.png"
               className="w-50 h-25"
@@ -463,7 +463,7 @@ const indexComp = ({pageData, params}) => {
               alt="milkbasket-client-img"
             />
             </div>
-            <div className="c-fs-3 p-3">
+            <div className="c-fs-3 p-3 col-12 col-lg-12 col-md-8">
               <p className="pe-2 ">
                 Milkbasket sends regular updates to its customers by offering
                 proactive support and recommendations
@@ -477,9 +477,9 @@ const indexComp = ({pageData, params}) => {
           <div className="col-12 col-lg-6 col-md-12 row gap-4 gap-sm-3 gap-md-4 m-0 p-0 h-100 ">
             <a
               href="/case-studies/unacademy"
-              className="c-hover d-flex align-items-center flex-lg-row flex-column c-hover bg-white text-dark rounded-2 overflow-hidden p-0 h-50"
+              className="c-hover d-flex align-items-start flex-lg-row flex-md-row flex-column c-hover bg-white text-dark rounded-2 overflow-hidden p-0 h-50"
             >
-              <div className="secc-client-img d-flex justify-content-center align-items-center col-12 col-lg-4">
+              <div className="secc-client-img d-flex justify-content-center align-items-center col-12 col-md-4 col-lg-4">
               <img
                 className="h-50"
                 src="/img/unacademy-logo.png"
@@ -500,9 +500,9 @@ const indexComp = ({pageData, params}) => {
             </a>
             <a
               href="/case-studies/ixigo"
-              className="c-hover d-flex align-items-center flex-lg-row flex-column c-hover bg-white text-dark rounded-2 overflow-hidden p-0"
+              className="c-hover d-flex align-items-start flex-lg-row flex-md-row flex-column c-hover bg-white text-dark rounded-2 overflow-hidden p-0"
             >
-             <div className="sec-client-img d-flex justify-content-center align-items-center col-12 col-lg-4">
+             <div className="sec-client-img d-flex justify-content-center align-items-center col-12 col-md-4 col-lg-4">
               <img
                  className="h-25"
                 src="/img/ixigo-logo.png"
