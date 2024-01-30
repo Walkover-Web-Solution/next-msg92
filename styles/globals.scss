@@ -284,7 +284,10 @@ body {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  
+  @media screen and (max-width: 992px) {
+    min-height: 220px;
+  width: 100%;
+ }
   @media screen and (max-width: 576px) {
     min-height:220px;
     width: 100%;
@@ -305,7 +308,7 @@ body {
 
    }
   @media screen and (max-width: 992px) {
-     min-height: 314px;
+     min-height: 220px;
    width: 100%;
   }
 
@@ -329,7 +332,7 @@ body {
   min-height: 180px;
  }
   @media screen and (max-width: 992px) {
-   min-height: 314px;
+   min-height: 220px;
    width: 100%;
   }
 
