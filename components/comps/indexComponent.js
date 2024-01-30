@@ -458,7 +458,7 @@ const indexComp = ({pageData, params}) => {
             <div className="milkbasket-client-img d-flex justify-content-center align-items-center col-12 col-lg-12 col-md-4">
             <img
               src="/img/milkbasket-logo.png"
-              className="w-50 h-25"
+              className="h-25 "
              
               alt="milkbasket-client-img"
             />
