@@ -363,7 +363,6 @@ const Footer = ({path, year}) => {
                     </div>
                 </div>
             </div>
-
     </>
   );
 };

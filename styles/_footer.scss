@@ -13,11 +13,10 @@
   }
 
 .c-link-underline {
-  
   color: var(--c-light-grey);
   &:hover {
-    color: #d4d4d4;
-    text-decoration: underline!important;
+    color: var(--white-color);
+    text-decoration: underline !important;
   }
 }
 .full-line {
@@ -60,4 +59,3 @@
 }
 
 // case-studies scss
-

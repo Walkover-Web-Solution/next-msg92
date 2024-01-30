@@ -156,8 +156,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
           </>
         }
-        <Headcomp browserPath={browserPathMeta} />
-        <Navbar browserPath={browserPath} pricingPath={pricingPath} appPath={browserPathMeta} pageSlug = {pageSlug} />
+        <Headcomp browserPath={browserPathMeta}  />
+        <Navbar browserPath={browserPath} pricingPath={pricingPath} appPath={browserPathMeta} pageSlug = {pageSlug}/>
         <Component 
         {...pageProps} 
         path={path} 

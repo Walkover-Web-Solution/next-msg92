@@ -254,6 +254,19 @@ body {
    
     box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.15);
   }
+  .heading {
+    font-size: 28px !important;
+    @media screen and (max-width: 1400px) {
+      font-size: 24px !important;
+    }
+    @media screen and (max-width: 1200px) {
+      font-size: 20px !important;
+    }
+    @media screen and (max-width: 996px) {
+      font-size: 20px !important;
+    }
+  }
+  
 }
 //clinnt sroteis
 
@@ -271,7 +284,10 @@ body {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  
+  @media screen and (max-width: 992px) {
+    min-height: 220px;
+  width: 100%;
+ }
   @media screen and (max-width: 576px) {
     min-height:220px;
     width: 100%;
@@ -292,7 +308,7 @@ body {
 
    }
   @media screen and (max-width: 992px) {
-     min-height: 314px;
+     min-height: 220px;
    width: 100%;
   }
 
@@ -316,7 +332,7 @@ body {
   min-height: 180px;
  }
   @media screen and (max-width: 992px) {
-   min-height: 314px;
+   min-height: 220px;
    width: 100%;
   }
 
@@ -480,6 +496,15 @@ body::-webkit-scrollbar-button {
 }
 .more-services-img {
   width: 100%;
+}
+.more-service-img {
+  width: 100%;
+  @media only screen and (max-width: 992px) {
+    width: 75%;
+  }
+  @media only screen and (max-width: 576px) {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 1025px) {
   .trustimage {

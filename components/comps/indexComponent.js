@@ -316,10 +316,10 @@ const indexComp = ({pageData, params}) => {
 
       <div className="container my-5 more-services-sec my-80">
         <h2 className="sub-heading c-head fw-bold">More services</h2>
-        <div className="d-flex my-5 flex-md-row flex-column gap-4">
+        <div className="d-flex my-5 flex-lg-row flex-column gap-4">
           <a
             href={`${path}/shorturl`}
-            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 rounded-2 more-services"
+            className=" text-dark col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-4 d-flex flex-column flex-sm-row flex-md-row flex-lg-column gap-3 rounded-2 more-services"
           >
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
@@ -331,11 +331,11 @@ const indexComp = ({pageData, params}) => {
                     alt="short-url"
                   />
                 </span>
-                <span className="c-fs-2 c-head fw-bold">URL Shortner</span>
+                <span className="heading c-head fw-bold">URL Shortner</span>
               </div>
               <div className="">
                 <Image
-                  className="more-services-img"
+                  className="more-services-img col-12"
                   src="./img/short-url-img.svg"
                   width={336}
                   height={212}
@@ -362,7 +362,7 @@ const indexComp = ({pageData, params}) => {
 
           <a
             href={`${path}/knowledgebase`}
-            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 rounded-2 more-services"
+            className=" text-dark col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-4 d-flex flex-column flex-sm-row flex-md-row flex-lg-column gap-3 rounded-2 more-services"
           >
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
@@ -374,11 +374,11 @@ const indexComp = ({pageData, params}) => {
                     alt="knowledgebase"
                   />
                 </span>
-                <span className="c-fs-2 c-head fw-bold">KnowledgeBase App</span>
+                <span className="heading c-head fw-bold">KnowledgeBase App</span>
               </div>
               <div className="">
                 <Image
-                  className="more-services-img"
+                  className="more-service-img"
                   src="./img/knowledgebase-img.svg"
                   width={336}
                   height={212}
@@ -404,7 +404,7 @@ const indexComp = ({pageData, params}) => {
           </a>
           <a
             href="https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91"
-            className=" text-dark col-12 col-md-4 p-4 d-flex flex-column flex-sm-row flex-md-column gap-3 rounded-2 more-services"
+            className=" text-dark col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-4 d-flex flex-column flex-sm-row flex-md-row flex-lg-column gap-3 rounded-2 more-services"
           >
             <div className="d-flex flex-column gap-3">
               <div className="d-flex align-items-center">
@@ -416,11 +416,11 @@ const indexComp = ({pageData, params}) => {
                     alt="File Hosting"
                   />
                 </span>
-                <span className="c-fs-2 c-head fw-bold">File Hosting</span>
+                <span className="heading c-head fw-bold">File Hosting</span>
               </div>
               <div className="">
                 <Image
-                  className="more-services-img"
+                  className="more-services-img col-12"
                   src="./img/file-hosting-img.svg"
                   width={336}
                   height={212}
@@ -453,17 +453,17 @@ const indexComp = ({pageData, params}) => {
         <div className="img-wapper d-flex flex-lg-row flex-column gap-4 m-0 p-0">
           <a
             href="/case-studies/milkbasket"
-            className="col-12 col-lg-6 col-md-12 c-hover c-hover bg-white text-dark rounded-2 p-0 overflow-hidden"
+            className="col-12 col-lg-6 col-md-12 c-hover c-hover d-flex flex-lg-column flex-md-row flex-column bg-white text-dark rounded-2 p-0 overflow-hidden"
           >
-            <div className="milkbasket-client-img d-flex justify-content-center align-items-center">
+            <div className="milkbasket-client-img d-flex justify-content-center align-items-center col-12 col-lg-12 col-md-4">
             <img
               src="/img/milkbasket-logo.png"
-              className="w-50 h-25"
+              className="h-25 "
              
               alt="milkbasket-client-img"
             />
             </div>
-            <div className="c-fs-3 p-3">
+            <div className="c-fs-3 p-3 col-12 col-lg-12 col-md-8">
               <p className="pe-2 ">
                 Milkbasket sends regular updates to its customers by offering
                 proactive support and recommendations
@@ -477,9 +477,9 @@ const indexComp = ({pageData, params}) => {
           <div className="col-12 col-lg-6 col-md-12 row gap-4 gap-sm-3 gap-md-4 m-0 p-0 h-100 ">
             <a
               href="/case-studies/unacademy"
-              className="c-hover d-flex align-items-center flex-lg-row flex-column c-hover bg-white text-dark rounded-2 overflow-hidden p-0 h-50"
+              className="c-hover d-flex align-items-start flex-lg-row flex-md-row flex-column c-hover bg-white text-dark rounded-2 overflow-hidden p-0 h-50"
             >
-              <div className="secc-client-img d-flex justify-content-center align-items-center col-12 col-lg-4">
+              <div className="secc-client-img d-flex justify-content-center align-items-center col-12 col-md-4 col-lg-4">
               <img
                 className="h-50"
                 src="/img/unacademy-logo.png"
@@ -500,9 +500,9 @@ const indexComp = ({pageData, params}) => {
             </a>
             <a
               href="/case-studies/ixigo"
-              className="c-hover d-flex align-items-center flex-lg-row flex-column c-hover bg-white text-dark rounded-2 overflow-hidden p-0"
+              className="c-hover d-flex align-items-start flex-lg-row flex-md-row flex-column c-hover bg-white text-dark rounded-2 overflow-hidden p-0"
             >
-             <div className="sec-client-img d-flex justify-content-center align-items-center col-12 col-lg-4">
+             <div className="sec-client-img d-flex justify-content-center align-items-center col-12 col-md-4 col-lg-4">
               <img
                  className="h-25"
                 src="/img/ixigo-logo.png"
