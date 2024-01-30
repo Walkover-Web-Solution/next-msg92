@@ -1,0 +1,14 @@
+.accordion-button {
+    
+    
+    &:not(.collapsed) {
+        color: #1E75BA !important;
+        box-shadow: none !important;
+        border-left: 1px solid lightgray !important;
+        border-right: 1px solid lightgray !important;
+        outline: none !important;
+      
+      
+    }
+}
+
