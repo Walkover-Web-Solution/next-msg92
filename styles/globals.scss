@@ -499,6 +499,9 @@ body::-webkit-scrollbar-button {
   @media only screen and (max-width: 992px) {
     width: 75%;
   }
+  @media only screen and (max-width: 576px) {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 1025px) {
   .trustimage {
