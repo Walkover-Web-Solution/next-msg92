@@ -95,7 +95,7 @@ const Notification = () => {
               </span>
             </a>
             <a
-              href="https://control.msg91.com/signin/"
+              href="/signin"
               target="_blank"
               className="text-dark utm"
             >

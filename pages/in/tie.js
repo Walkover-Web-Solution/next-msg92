@@ -5,7 +5,6 @@ const Tie = () => {
 
   const handleVerify = () => {
     // Do something with the verificationCode
-    console.log(verificationCode);
   };
   
 
@@ -172,7 +171,7 @@ const Tie = () => {
           </span>
           <div className="mt-3 mt-xxl-0 d-flex flex-wrap justify-content-center gap-3">
             <a
-              href="https://control.msg91.com/signup/"
+              href="/signup"
               className="btn px-4 py-3 btn-dark c-fs-4 "
               data-bs-toggle="modal" data-bs-target="#msg91TieVerification"
             >

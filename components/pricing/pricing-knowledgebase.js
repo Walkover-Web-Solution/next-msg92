@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { setUtm } from "../pricingComp";
+import { setUtm } from "@/components/utils";
 const pricingknowledgebase = () => {
 useEffect(() => {    
   setUtm();
@@ -17,7 +17,7 @@ return (
                 This plan is free of cost and offers limited but <a href="/knowledgebase" target="_blank">all necessary features</a> to make your customer KnowledgeBase live. 
             </div>
             <Link
-              href="https://control.msg91.com/signup/"
+              href="/signup?service=knowledgebase"
               target="_blank"
               className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm"
             >
@@ -40,7 +40,7 @@ return (
                 Unlock all premium/nice to have/ luxury features, Explore all features <Link href="/knowledgebase" target="_blank">here</Link>
                 </div>
               <Link
-                href="https://control.msg91.com/signup/"
+               href="/signup?service=knowledgebase"
                 target="_blank"
                 className="c-fs-5 btn btn-sm w-100 btn-dark mt-2 utm"
               >
