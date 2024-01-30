@@ -11,7 +11,7 @@ const Notification = () => {
     var cookie = getCookie("country_code");
     for (let x in countries) {
       path = cookie;
-      if (path.toUpperCase() === countries[x].sortname) {
+      if (path?.toUpperCase() === countries[x].sortname) {
         setCountry(countries[x].name);
         break;
       }
