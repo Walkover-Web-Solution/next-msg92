@@ -1,6 +1,6 @@
 import { MdDone } from 'react-icons/md';
 import { useEffect, useState } from 'react';
-import { setUtm } from '../pricingComp';
+import { setUtm } from "@/components/utils";
 import Link from 'next/link';
 const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, countryCode }) => {
   var change
@@ -110,7 +110,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                             : ''}
                       </p>
                       <a
-                        href="https://control.msg91.com/signup/"
+                        href="/signup?service=hello"
                         target="_blank"
                         className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-4 utm"
                       >
@@ -262,7 +262,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
         <div className="c-bg-grey col-12 col-md-4 col-xl-3  p-4 text-start">
           <h3 className="c-fs-3">Access platform for FREE</h3>
           <p className="c-fs-4 mt-2">Pay only for the channels you use</p>
-          <a href="https://control.msg91.com/signup/" target="_blank" className="btn btn-outline-dark mt-3 px-5">Get Started</a>
+          <a href="/signup?service=hello" target="_blank" className="btn btn-outline-dark mt-3 px-5">Get Started</a>
         </div>
       </div> */}
     </>

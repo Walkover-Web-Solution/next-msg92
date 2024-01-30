@@ -7,7 +7,6 @@ import HelloSeoComp from "./seo/inHello";
 import OtpSeoComp from "./seo/inOtp";
 
 const Seo = ({ path, pageData }) => {
-  console.log(path, pageData);
 
   let seoComponent = null;
 

@@ -4,7 +4,7 @@ import PreFooter from '../preFooter';
 import TrustedByOtherThanIndia from '../trustedByOtherThanIndia';
 import Seo from '../seoComp';
 import axios from "axios";
-import { setUtm } from '../pricingComp';
+import { setUtm } from "@/components/utils";
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { MdDone } from 'react-icons/md';
 

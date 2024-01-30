@@ -12,7 +12,7 @@ const PreFooter =({pricingPath, pageName})=>{
                                 <a href={pricingPath} className="btn px-3 py-2 btn-outline-dark c-fs-4 ">Pricing</a>
                             </>
                         }                        
-                        <a href="https://control.msg91.com/signup/" className="btn px-3 py-2 btn-dark c-fs-4 utm"> Get started</a>
+                        <a href="/signup" className="btn px-3 py-2 btn-dark c-fs-4 utm"> Get started</a>
                     </div>
                 </div>                          
             </div> */}
