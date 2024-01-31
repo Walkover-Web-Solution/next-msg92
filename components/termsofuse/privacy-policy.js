@@ -138,6 +138,8 @@ Marketing</li>
           <p>You can update, correct, or delete your Account information and preferences at any time by accessing your Account settings page on the Service. Please note that while any changes you make will be instantly or reasonably reflected in active user databases, we may retain all information you submit for purposes such as backups, archiving, fraud and abuse prevention, analytics, compliance with legal obligations, or where we reasonably believe we have a legitimate reason to do so.</p>
           <p>If you choose not to share certain Personal Data with us, it may impact our ability to provide you with some of the features and functionality of the Service.</p>
           
+          <p>We will be sending you informative and promotional notifications related to our services via SMS, Emails, WhatsApp.</p>
+          
           <p>Navigation Information</p>
           <p>You can opt out of the collection of navigation information about your visit to the Site by Google Analytics using the Google Analytics Opt-out feature.</p>
           
