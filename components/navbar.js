@@ -150,7 +150,7 @@ const navbar = ({ browserPath, pricingPath,pageSlug ,cc}) => {
             <Link
               href="https://control.msg91.com/signup/"
               target="_blank"
-              className="btn btn-dark c-fs-4 c-fw-sb px-3 utm"
+              className="btn btn-dark c-fs-4 c-fw-sb px-3 utm rounded-1"
               id="signup-btn"
             >
               Sign Up
