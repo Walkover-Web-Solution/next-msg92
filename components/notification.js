@@ -4,21 +4,30 @@ import $ from "jquery";
 import countries from "@/data/countries.json";
 import { getCookie, setCookie } from "@/components/utils";
 
-const Notification = () => {
+const Notification = ({path}) => {
   const [country, setCountry] = useState("Global");
-  var path;
+  //console.log('notification', path);
+  path = path?.substring(1);
   useEffect(() => {
-    var cookie = getCookie("country_code");
+    //var cookie = getCookie("country_code");
     for (let x in countries) {
-      path = cookie;
       if (path?.toUpperCase() === countries[x].sortname) {
-        setCountry(countries[x].name);
+        setCountry(countries[x].name); 
         break;
       }
     }
+    const countryList = ['in','ae','ph','sg','es','gb','us','?']    
+    
+    if(countryList.includes(path)){
+      setCookie('country_code', path, 30);
+    } 
+    /* else {
+      document.cookie = `country_code=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    } */
+
     $("#change-country a").on("click", function () {
       var label = $(this).text();
-      $("#change-country label").html(label);
+      setCountry(label);       
       var cc = $(this).attr("href").substring(1);
       setCookie("country_code", cc, 30);
     });
