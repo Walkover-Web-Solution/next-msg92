@@ -12,7 +12,7 @@ import $ from "jquery";
 export default function App({ Component, pageProps }) {
   const router = useRouter();  
   var showNavbar = false;
-  var  browserPath = router.asPath;  
+  var browserPath = router.asPath;  
   var browserPathCase = browserPath;
   var browserPathMeta = browserPath;
   
@@ -68,10 +68,11 @@ export default function App({ Component, pageProps }) {
 
     const countryList = ['in','ae','ph','sg','es','gb','us','?']    
     
-    var cc = getCookie('country_code');    
-    if(!cc && countryList.includes(path)){
+    if(countryList.includes(path)){
       setCookie('country_code', path, 30);
     }
+    var cc = getCookie('country_code');
+    //console.log('app', cc);
     $("a").on("click", function (event) {
       event.preventDefault();
       var href =  $(this).attr('href');      
@@ -155,8 +156,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
           </>
         )}
-        <Headcomp browserPath={browserPathMeta} />
-        {showNavbar && <Navbar browserPath={browserPath} pricingPath={pricingPath} appPath={browserPathMeta} pageSlug = {pageSlug} /> }
+        <Headcomp browserPath={browserPathMeta} />        
+        {showNavbar && <Navbar browserPath={browserPath} pricingPath={pricingPath} appPath={browserPathMeta} pageSlug={pageSlug} /> }
         <Component 
         {...pageProps} 
         path={path} 
