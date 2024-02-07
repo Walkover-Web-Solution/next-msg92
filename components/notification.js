@@ -6,10 +6,10 @@ import { getCookie, setCookie } from "@/components/utils";
 
 const Notification = ({path}) => {
   const [country, setCountry] = useState("Global");
-  //console.log('notification', path);
   path = path?.substring(1);
-  useEffect(() => {
-    //var cookie = getCookie("country_code");
+  useEffect(() => {    
+    //console.log('path', path);
+    path = path ? path : getCookie("country_code");    
     for (let x in countries) {
       if (path?.toUpperCase() === countries[x].sortname) {
         setCountry(countries[x].name); 

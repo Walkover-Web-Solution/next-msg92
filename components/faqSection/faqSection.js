@@ -5,15 +5,15 @@ export default function FaqSection(faqData) {
     <>
       <div className="container my-5 d-grid gap-4">
         <h2 className="c-fs-1">Frequently Asked Questions</h2>
-        <div class="accordion" id="accordionExample">
+        <div className="accordion" id="accordionExample">
           {faqs.map((data, index) => {
             {
             }
             return (
-              <div class="accordion-item  border-start-0 border-end-0">
-                <h2 class="accordion-header" id={`heading${index}`}>
+              <div className="accordion-item  border-start-0 border-end-0" key={`heading${index}`}>
+                <h2 className="accordion-header" id={`heading${index}`}>
                   <button
-                    class="accordion-button collapsed c-fs-3 c-fw-m"
+                    className="accordion-button collapsed c-fs-3 c-fw-m"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target={`#collapse${index}`}
@@ -25,12 +25,12 @@ export default function FaqSection(faqData) {
                 </h2>
                 <div
                   id={`collapse${index}`}
-                  class={`accordion-collapse border border-start-1 border-end-1 collapse 
+                  className={`accordion-collapse border border-start-1 border-end-1 collapse 
                   `}
                   aria-labelledby={`heading${index}`}
                   data-bs-parent="#accordionExample"
                 >
-                  <div class="accordion-body c-fs-4">{data?.des}</div>
+                  <div className="accordion-body c-fs-4">{data?.des}</div>
                 </div>
               </div>
             );
