@@ -38,7 +38,7 @@ const HelloNewComponent = ({ pageData, path, pricingPath }) => {
         plans[i] = {};
         plans[i].channels = [];
         plans[i].features = [];
-        const subscription = subscriptionHello[i]?.planFeatures?.map((data, index) => {
+        const subscription = subscriptionHello[i]?.plan_features?.map((data, index) => {
             if (data.is_visible === 1 && subscriptionHello[i]?.show_features) {
                 if (data.feature.key.includes('support_channel')) {
                     plans[i].channels.push(data.feature.name);
@@ -270,6 +270,8 @@ const HelloNewComponent = ({ pageData, path, pricingPath }) => {
                     </div>
 
                     <div className="d-flex flex-wrap flex-gap gap-5 w-100  card-container mt-5 justify-content-center">
+                {console.log(subscriptionHello)}
+
                         {subscriptionHello?.length
                             ? subscriptionHello?.map((item, index) => {
                                   return (
