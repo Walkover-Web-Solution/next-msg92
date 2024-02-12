@@ -45,9 +45,12 @@ const Headcomp = (browserPath , browserPathMeta) => {
         <link rel="icon" href="/fav.svg" />                
         <link rel="canonical" href={`https://msg91.com${page}`} />
         <link rel="alternate" hrefLang="x-default" href={`https://msg91.com${page}`} />
-        { countryList.includes(country) &&
+        {/* { countryList.includes(country) &&
           <link rel="alternate" hrefLang={hreflang} href={`https://msg91.com${page}`} />      
-        }
+        } */}
+        {countryList.map((country) => (
+          <link key={country} rel="alternate" hrefLang={`en-${country.toUpperCase()}`} href={`https://msg91.com/${country}${page}`} />
+        ))}
       </Head>
     </>
   );
