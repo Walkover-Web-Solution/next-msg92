@@ -7,6 +7,7 @@ const Headcomp = (browserPath , browserPathMeta) => {
   var meta = (metaData[path]) ? metaData[path] : {'title':'','description':''};    
   const split = browserPath.browserPath.split('/');
   var country = '';  
+  var pagePath = '';
   var page = '';
   var hreflang = 'en';
   
@@ -14,18 +15,23 @@ const Headcomp = (browserPath , browserPathMeta) => {
   
   if(split.length === 2 && split[1].length){
     country = split[1].length === 2 ? split[1] : '';
-    page = split[1].length !== 2 ? `/${split[1]}` : `/${country}`;
-    //console.log('1', country, page)
+    pagePath = split[1].length !== 2 ? `/${split[1]}` : `/${country}`;
+    page = split[1]
+    //console.log('1', country, pagePath)
   }
   
   if(split.length === 3){
     country = split[1].length === 2 ? split[1] : '';
-    page = split[1].length === 2 ? `/${country}/${split[2]}` : `/${split[1]}/${split[2]}`;
-    //console.log('2', country, page, split)
+    pagePath = split[1].length === 2 ? `/${country}/${split[2]}` : `/${split[1]}/${split[2]}`;
+    page = split[2].length === 2 ? split[2] : `${split[1]}/${split[2]}`;
+    //console.log('2', country, pagePath, split)
   }  
   
-  if(split.length === 4){    
-    page = `/${split[1]}/${split[2]}/${split[3]}`;
+  if(split.length === 4){
+    country = split[1];
+    pagePath = `/${split[1]}/${split[2]}/${split[3]}`;
+    page = `${split[2]}/${split[3]}`;
+    //console.log('3', country, pagePath, split)
   }  
   
   if(countryList.includes(country)){
@@ -43,14 +49,13 @@ const Headcomp = (browserPath , browserPathMeta) => {
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no"/>
         <meta name="google-site-verification" content="RfcBy_Lv1Ao1j0eP8UlMjJ44ik5_1YDKsRQSNFr9jEQ" />
         <link rel="icon" href="/fav.svg" />                
-        <link rel="canonical" href={`https://msg91.com${page}`} />
-        <link rel="alternate" hrefLang="x-default" href={`https://msg91.com${page}`} />
-        {/* { countryList.includes(country) &&
-          <link rel="alternate" hrefLang={hreflang} href={`https://msg91.com${page}`} />      
-        } */}
-        {countryList.map((country) => (
-          <link key={country} rel="alternate" hrefLang={`en-${country.toUpperCase()}`} href={`https://msg91.com/${country}${page}`} />
-        ))}
+        <link rel="canonical" href={`https://msg91.com${pagePath}`} />
+        <link rel="alternate" hrefLang="x-default" href={`https://msg91.com/${page}`} />        
+        {country &&
+          countryList.map((country) => (
+            <link key={country} rel="alternate" hrefLang={`en-${country.toUpperCase()}`} href={`https://msg91.com/${country}/${page}`} />
+          ))
+        }
       </Head>
     </>
   );
