@@ -614,7 +614,7 @@ const Insms = () => {
         </button>
 
         <div>
-  <h2 classname="c-head c-fs-1 mt-5">FAQs</h2>
+  <h2 className="c-head c-fs-1 mt-5">FAQs</h2>
   <div className="accordion accordion-flush" id="accordionFlushExample">
     <div className="accordion-item">
       <h2 className="accordion-header" id="flush-headingOne">
