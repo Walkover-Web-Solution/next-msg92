@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MdCircle } from "react-icons/md";
+import { MdExpandMore } from "react-icons/md";
 
 const Insms = () => {
   const [showInsms, setShowInsms] = useState(false);
@@ -913,10 +914,13 @@ const Insms = () => {
             </>
           </div>
         )}
-        <button className="btn btn-dark mt-3" onClick={handleReadMore}>
+       <button className="border border-0 bg-transparent ps-0 mt-3 c-fs-3 fw-semibold shadow-none" onClick={handleReadMore}>
           {showInsms ? "Read Less" : "Read More"}
+          <span className="ms-4 fs-4">
+            <MdExpandMore />
+          </span>
         </button>
-        <div>
+        {/* <div>
               <h2 className="c-head c-fs-1 mt-5">FAQs</h2>
 
               <div className="accordion accordion-flush" id="accordionFlushExample">
@@ -1065,7 +1069,7 @@ const Insms = () => {
   </div>
 </div>
 
-         </div>
+         </div> */}
       </div>
     </>
   );

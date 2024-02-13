@@ -1,0 +1,41 @@
+{
+    "sms": [
+        {
+            "que": "How does an SMS API work?",
+            "des": "An SMS API for developers provides functions, methods, and endpoints to interact with an SMS gateway. Developers can request the API to send messages, retrieve delivery reports, manage contacts, and perform other SMS-related operations. The API handles the processing and delivery of the messages, ensuring seamless communication between the application and the recipients."
+        },
+        {
+            "que": "How can an SMS API be used for transactional messages?",
+            "des": "An SMS API can send transactional messages, such as order confirmations, appointment reminders, and account notifications. Developers can integrate the API into their systems to trigger automated messages based on specific events or conditions, ensuring timely and relevant customer communication."
+        },
+        {
+            "que": "How does an SMS authentication API work?",
+            "des": "When a user initiates the authentication process the application or system generates a unique OTP or verification code. The API then sends this code to the user's generated mobile number via SMS. The user receives the SMS and enters the code into the application or system, which verifies its correctness. If the code matches, the user is granted access or completes the authentication process successfully. This is how SMS authentication API works."
+        }
+    ],
+    "email": [
+        {
+            "que": "What is a transactional email API?",
+            "des": "Transactional email API platform in India allows developers to integrate and automate sending transactional emails from their applications or systems. It provides a convenient and efficient way to deliver meaningful, personalized emails such as order confirmations, account notifications, password resets, and more."
+        },
+        {
+            "que": "How does a transactional email API service benefit developers?",
+            "des": "Transactional email API services offer several benefits for developers, including: <ul><li>Simplified integration: Developers can easily integrate the API into their existing applications or systems using comprehensive API documentation and sample code.</li><li>Streamlined email delivery: The API handles the complex email delivery process, ensuring reliable and efficient transmission to recipients' inboxes.</li><li>Customization and personalization: Developers can dynamically generate email content, personalize messages, and include attachments as needed, providing a tailored user experience.</li><li>Real-time tracking and analytics: The API enables developers to track email delivery and monitor open rates, click-through rates, and other metrics, empowering them to optimize email campaigns.</li></ul>"
+        },
+        {
+            "que": "Why should I choose a transactional email API service for my business?",
+            "des": "Using a transactional email API service offers several advantages, including: <ul><li>Reliable delivery : API services employ robust infrastructure and industry best practices to ensure that your transactional emails reach their intended recipients promptly and reliably.</li><li>Scalability: As your business grows, API services can handle high email volumes without compromising performance, ensuring a seamless experience for your customers.</li><li>Cost-effectiveness: Transactional email API services often offer flexible pricing plans that allow you to pay only for the emails you send, making it a cost-effective solution for businesses of all sizes.</li></ul>"
+        },
+        {
+            "que": "Is transactional email API delivery available in India?",
+            "des": "Yes, transactional email API delivery is available in India. At MSG91, we specialize in providing a{} designed specifically for businesses in India. Our robust infrastructure ensures efficient and reliable delivery to Indian recipients, helping you effectively engage with your customers."
+        },
+        {
+            "que": "How secure is the transactional email API service?",
+            "des": "At MSG91, we prioritize the security of your transactional email communications. Our API service utilizes industry-standard security protocols, encryption, and authentication mechanisms to safeguard your data. Additionally, we adhere to strict data privacy regulations, ensuring that your sensitive information remains protected."
+        },{
+            "que": "Can I track the performance of my transactional emails?",
+            "des": "Sure! Our transactional email API gateway provides comprehensive tracking and analytics features. You can monitor your emails' delivery status and track real-time open rates, click-through rates, and other key metrics. These insights help you evaluate the effectiveness of your email campaigns and make data-driven decisions to improve customer engagement."
+        }
+    ]
+}

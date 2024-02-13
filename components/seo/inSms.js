@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { MdCircle } from "react-icons/md";
-
+import { MdExpandMore } from "react-icons/md";
+import FaqSection from '@/components/faqSection/faqSection';
+import productData from '../../data/channel-comp.json';
 const Insms = () => {
 
   const [showInsms, setShowInsms] = useState(false);
@@ -226,103 +228,107 @@ const Insms = () => {
             </div>
           </div>
         )}
-        <button className="btn btn-dark mt-3" onClick={handleReadMore}>
+        <button className="border border-0 bg-transparent ps-0 mt-3 c-fs-3 fw-semibold shadow-none" onClick={handleReadMore}>
           {showInsms ? "Read Less" : "Read More"}
+          <span className="ms-4 fs-4">
+            <MdExpandMore />
+          </span>
         </button>
-         <div>
-              <h2 className="c-head c-fs-1 mt-5">FAQs</h2>
+        <FaqSection faqData={productData?.sms} />
+        {/* <div>
+          <h2 className="c-head c-fs-1 mt-5">FAQs</h2>
 
-              <div className="accordion accordion-flush" id="accordionFlushExample">
-  <div className="accordion-item">
-    <h2 className="accordion-header" id="flush-headingOne">
-      <button
-        className="accordion-button collapsed"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#flush-collapseOne"
-        aria-expanded="false"
-        aria-controls="flush-collapseOne"
-      >
-        How does an SMS API work?
-      </button>
-    </h2>
-    <div
-      id="flush-collapseOne"
-      className="accordion-collapse collapse"
-      aria-labelledby="flush-headingOne"
-      data-bs-parent="#accordionFlushExample"
-    >
-      <div className="accordion-body">
-        An SMS API for developers provides functions, methods, and endpoints to
-        interact with an SMS gateway. Developers can request the API to send
-        messages, retrieve delivery reports, manage contacts, and perform other
-        SMS-related operations. The API handles the processing and delivery of
-        the messages, ensuring seamless communication between the application
-        and the recipients.
-      </div>
-    </div>
-  </div>
-  <div className="accordion-item">
-    <h2 className="accordion-header" id="flush-headingTwo">
-      <button
-        className="accordion-button collapsed"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#flush-collapseTwo"
-        aria-expanded="false"
-        aria-controls="flush-collapseTwo"
-      >
-        How can an SMS API be used for transactional messages?
-      </button>
-    </h2>
-    <div
-      id="flush-collapseTwo"
-      className="accordion-collapse collapse"
-      aria-labelledby="flush-headingTwo"
-      data-bs-parent="#accordionFlushExample"
-    >
-      <div className="accordion-body">
-        An SMS API can send transactional messages, such as order confirmations,
-        appointment reminders, and account notifications. Developers can
-        integrate the API into their systems to trigger automated messages based
-        on specific events or conditions, ensuring timely and relevant customer
-        communication.
-      </div>
-    </div>
-  </div>
-  <div className="accordion-item">
-    <h2 className="accordion-header" id="flush-headingThree">
-      <button
-        className="accordion-button collapsed"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#flush-collapseThree"
-        aria-expanded="false"
-        aria-controls="flush-collapseThree"
-      >
-        How does an SMS authentication API work?
-      </button>
-    </h2>
-    <div
-      id="flush-collapseThree"
-      className="accordion-collapse collapse"
-      aria-labelledby="flush-headingThree"
-      data-bs-parent="#accordionFlushExample"
-    >
-      <div className="accordion-body">
-        When a user initiates the authentication process the application or
-        system generates a unique OTP or verification code. The API then sends
-        this code to the user's generated mobile number via SMS. The user
-        receives the SMS and enters the code into the application or system,
-        which verifies its correctness. If the code matches, the user is granted
-        access or completes the authentication process successfully. This is how
-        SMS authentication API works.
-      </div>
-    </div>
-  </div>
-</div>
-
+          <div className="accordion accordion-flush" id="accordionFlushExample">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="flush-headingOne">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                  How does an SMS API work?
+                </button>
+              </h2>
+              <div
+                id="flush-collapseOne"
+                className="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div className="accordion-body">
+                  An SMS API for developers provides functions, methods, and endpoints to
+                  interact with an SMS gateway. Developers can request the API to send
+                  messages, retrieve delivery reports, manage contacts, and perform other
+                  SMS-related operations. The API handles the processing and delivery of
+                  the messages, ensuring seamless communication between the application
+                  and the recipients.
+                </div>
+              </div>
             </div>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="flush-headingTwo">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseTwo"
+                >
+                  How can an SMS API be used for transactional messages?
+                </button>
+              </h2>
+              <div
+                id="flush-collapseTwo"
+                className="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div className="accordion-body">
+                  An SMS API can send transactional messages, such as order confirmations,
+                  appointment reminders, and account notifications. Developers can
+                  integrate the API into their systems to trigger automated messages based
+                  on specific events or conditions, ensuring timely and relevant customer
+                  communication.
+                </div>
+              </div>
+            </div>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="flush-headingThree">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseThree"
+                >
+                  How does an SMS authentication API work?
+                </button>
+              </h2>
+              <div
+                id="flush-collapseThree"
+                className="accordion-collapse collapse"
+                aria-labelledby="flush-headingThree"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div className="accordion-body">
+                  When a user initiates the authentication process the application or
+                  system generates a unique OTP or verification code. The API then sends
+                  this code to the user's generated mobile number via SMS. The user
+                  receives the SMS and enters the code into the application or system,
+                  which verifies its correctness. If the code matches, the user is granted
+                  access or completes the authentication process successfully. This is how
+                  SMS authentication API works.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div> */}
       </div>
     </>
   );

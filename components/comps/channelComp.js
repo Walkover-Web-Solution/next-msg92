@@ -63,7 +63,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                 {pageData.subheading}
               </p>
             </div>
-          <a href={`/signup?service=${pageData.pagename}`} target="_blank" className="btn btn-dark btn-lg c-fs-2 utm" >
+          <a href={`/signup?service=${pageData.pagename}`} target="_blank" className="btn btn-dark btn-lg c-fs-2 utm rounded-1" >
             Get started
           </a>
         </div>

@@ -76,12 +76,19 @@
             "des":"Yes! Our customer service tools for small businesses are designed to handle high volumes of customer inquiries without compromising performance. It is scalable and capable of meeting your needs even during peak times, ensuring a smooth and uninterrupted customer support experience."
         },
         {
-            "que": "Can the software handle high volumes of customer inquiries during peak times?",
-            "des":"Yes! Our customer service tools for small businesses are designed to handle high volumes of customer inquiries without compromising performance. It is scalable and capable of meeting your needs even during peak times, ensuring a smooth and uninterrupted customer support experience."
+            "que": "Does the software provide real-time analytics and insights into customer support performance?",
+            "des":"Yes, our customer support software offers real-time analytics and reporting capabilities. You can access comprehensive insights into key support metrics such as response times, resolution rates, customer satisfaction scores, and agent performance. These analytics empower you to make data-driven decisions and continuously improve your support operations."
         },
         {
-            "que": "Can the software handle high volumes of customer inquiries during peak times?",
-            "des":"Yes! Our customer service tools for small businesses are designed to handle high volumes of customer inquiries without compromising performance. It is scalable and capable of meeting your needs even during peak times, ensuring a smooth and uninterrupted customer support experience."
+            "que": "Can you provide information about the pricing of your customer support software solutions?",
+            "des":"At MSG91, we understand the importance of offering affordable and competitive pricing for our customer support software solutions. We offer flexible pricing plans tailored to meet the needs and budgets of businesses of all sizes. To get detailed pricing information customized to your specific requirements, please contact our team."
+        },{
+            "que": "Is MSG91's customer support software cloud-based or on-premises?",
+            "des":"MSG91's customer support software is cloud-based, which offers numerous advantages such as easy accessibility, scalability, and automatic updates. You can access the software securely from anywhere with an internet connection without the need for managing hardware or infrastructure."
+        },
+        {
+            "que": "What is CRM integration with customer support software?",
+            "des":"CRM integration with customer support software refers to synchronizing and sharing customer data and interaction history between the two systems. It allows customer support teams to directly access relevant customer information from the CRM within the customer support software."
         }
     ]
 }

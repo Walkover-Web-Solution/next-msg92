@@ -29,8 +29,8 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
                 {pageData?.subheading}
               </p>
             </div>
-            <a href={`/signup?service=${pageData.pagename}`} className="btn btn-dark btn-lg c-fs-2 mt-3 utm" >
-              {pageData.pagename === 'KnowledgeBase' && <span className='d-flex'>Get started <mark className='highlight ms-2'>FREE forever</mark></span>}
+            <a href={`/signup?service=${pageData.pagename}`} className="btn btn-dark btn-lg c-fs-2 mt-3 utm rounded-1" >
+              {pageData.pagename === 'KnowledgeBase' && <span className='d-flex'>Get started <mark className='highlight ms-2 rounded-1'>FREE forever</mark></span>}
               {pageData.pagename !== 'KnowledgeBase' && <span>Get started for FREE</span>}
             </a>
           </div>
@@ -95,6 +95,7 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
           
         </div>
       }
+       
       <Seo path={path} pageData={pageData?.pagename} />
       <PreFooter pricingPath={pricingPath} pageName={pageData?.pagename}/>
     </div>

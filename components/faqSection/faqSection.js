@@ -30,7 +30,7 @@ export default function FaqSection(faqData) {
                   aria-labelledby={`heading${index}`}
                   data-bs-parent="#accordionExample"
                 >
-                  <div className="accordion-body c-fs-4">{data?.des}</div>
+                  <div className="accordion-body c-fs-4" dangerouslySetInnerHTML={{__html: data?.des,}}></div>
                 </div>
               </div>
             );
