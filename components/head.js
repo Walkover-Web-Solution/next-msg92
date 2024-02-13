@@ -17,21 +17,21 @@ const Headcomp = (browserPath , browserPathMeta) => {
     country = split[1].length === 2 ? split[1] : '';
     pagePath = split[1].length !== 2 ? `/${split[1]}` : `/${country}`;
     page = split[1].length === 2 ? '' : `/${split[1]}`;
-    console.log('1', country, pagePath, page)
+    //console.log('1', 'country:', country, 'pagePath:', pagePath, 'page:', page)
   }
   
   if(split.length === 3){
     country = split[1].length === 2 ? split[1] : '';
     pagePath = split[1].length === 2 ? `/${country}/${split[2]}` : `/${split[1]}/${split[2]}`;
     page = split[2].length === 2 ? split[2] : `/${split[2]}`;
-    console.log('2', country, pagePath, page)
+    //console.log('2', 'country:', country, 'pagePath:',pagePath, 'page:', page)
   }  
   
   if(split.length === 4){
-    country = split[1];
+    country = split[1].length === 2 ? split[1] : '';
     pagePath = `/${split[1]}/${split[2]}/${split[3]}`;
     page = `/${split[2]}/${split[3]}`;
-    console.log('3', country, pagePath, page)
+    //console.log('3', 'country:', country, 'pagePath:', pagePath, 'page:', page)
   }  
   
   if(countryList.includes(country)){
@@ -50,7 +50,12 @@ const Headcomp = (browserPath , browserPathMeta) => {
         <meta name="google-site-verification" content="RfcBy_Lv1Ao1j0eP8UlMjJ44ik5_1YDKsRQSNFr9jEQ" />
         <link rel="icon" href="/fav.svg" />                
         <link rel="canonical" href={`https://msg91.com${pagePath}`} />
-        <link rel="alternate" hrefLang="x-default" href={`https://msg91.com${page}`} />        
+        {country ? (
+          <link rel="alternate" hrefLang="x-default" href={`https://msg91.com${page}`} />
+        ) : (
+          <link rel="alternate" hrefLang="x-default" href={`https://msg91.com${pagePath}`} />
+        )}
+                
         {country &&
           countryList.map((country) => (
             <link key={country} rel="alternate" hrefLang={`en-${country.toUpperCase()}`} href={`https://msg91.com/${country}${page}`} />
