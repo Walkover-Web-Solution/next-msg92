@@ -6,9 +6,8 @@ import FaqSection from '@/components/faqSection/faqSection';
 import Seo from '@/components/seoComp';
 import GetStartedSection from '@/components/getStartedSection/getStartedSection';
 const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }) => {
-    if (page === 'global') {
-        path = page;
-    }
+    
+    path = path === undefined ? 'global' : path;
 
     return (
         <>

@@ -17,21 +17,21 @@ const Headcomp = (browserPath , browserPathMeta) => {
     country = split[1].length === 2 ? split[1] : '';
     pagePath = split[1].length !== 2 ? `/${split[1]}` : `/${country}`;
     page = split[1].length === 2 ? '' : `/${split[1]}`;
-    console.log('1', country, pagePath, page)
+    //console.log('1', country, pagePath, page)
   }
   
   if(split.length === 3){
     country = split[1].length === 2 ? split[1] : '';
     pagePath = split[1].length === 2 ? `/${country}/${split[2]}` : `/${split[1]}/${split[2]}`;
     page = split[2].length === 2 ? split[2] : `/${split[2]}`;
-    console.log('2', country, pagePath, page)
+    //console.log('2', country, pagePath, page)
   }  
   
   if(split.length === 4){
     country = split[1];
     pagePath = `/${split[1]}/${split[2]}/${split[3]}`;
     page = `/${split[2]}/${split[3]}`;
-    console.log('3', country, pagePath, page)
+    //console.log('3', country, pagePath, page)
   }  
   
   if(countryList.includes(country)){
