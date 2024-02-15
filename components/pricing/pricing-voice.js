@@ -2,6 +2,11 @@ import { MdDone, MdClose, MdKeyboardArrowRight, MdAdd } from 'react-icons/md';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import CIDData from '@/data/countriesWIthCID.json';
+import faqData from '@/data/faq.json';
+import FaqSection from '../faqSection/faqSection';
+
+
+
 
 const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }) => {
     const [selectedMode, setSelectedMode] = useState('Monthly');
@@ -119,6 +124,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
                     </a>
                 </div>
             </div>
+            <FaqSection faqData={faqData?.voice}/>
         </>
     );
 };

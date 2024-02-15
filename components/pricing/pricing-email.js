@@ -2,6 +2,9 @@ import { MdDone, MdClose } from 'react-icons/md';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { setUtm } from '@/components/utils';
+import faqData from '@/data/faq.json';
+import FaqSection from '../faqSection/faqSection';
+
 const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, setSubscriptionEmail, countryCode }) => {
     var change;
     var changeSymbol;
@@ -281,6 +284,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                     <span className="link">Know more about Email</span>
                 </a>
             </div>
+            <FaqSection faqData={faqData?.email}/>
         </>
     );
 };

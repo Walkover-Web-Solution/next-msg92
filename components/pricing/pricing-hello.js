@@ -2,6 +2,9 @@ import { MdDone, MdClose } from 'react-icons/md';
 import { useEffect, useState } from 'react';
 import { setUtm } from '@/components/utils';
 import Link from 'next/link';
+import faqData from '@/data/faq.json';
+import FaqSection from '../faqSection/faqSection';
+
 const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, countryCode }) => {
     var change;
     var changeSymbol;
@@ -227,6 +230,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                     <span className="link">Know more about Hello</span>
                 </a>
             </div>
+            <FaqSection faqData={faqData?.hello}/>
         </>
     );
 };

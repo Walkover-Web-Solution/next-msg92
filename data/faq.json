@@ -1,0 +1,103 @@
+{
+    "otp": [
+        {
+            "que": "What is the pricing of the OTP Widget?",
+            "des": "The pricing of the OTP Widget is primarily determined by the volume of OTPs sent and the specific channels utilized, including SMS, Voice, Email, and WhatsApp. Charges are incurred based on the quantity of OTPs sent through each respective channel."
+        },
+        {
+            "que": "Is there a fixed monthly subscription fee for using the OTP Widget?",
+            "des": " No, there is no monthly subscription fee associated with the OTP Widget."
+        },
+        {
+            "que": "Are there different pricing plans available based on usage levels?",
+            "des": "Yes, different pricing plans are available based on usage, and if you have a substantial volume, we can customize the pricing to suit your needs."
+        },
+        {
+            "que": "How is the pricing structured for Voice OTPs?",
+            "des": "Voice OTPs may have a separate pricing structure, often based on factors such as the number of voice calls made, and whether a global or local caller ID is used."
+        },
+        {
+            "que": "Are there any additional charges for using advanced security features, such as Google Captcha validation?",
+            "des": "While some providers may charge additional fees for features like Google Captcha validation to boost OTP Widget security, we do not impose any additional charges for captcha validation."
+        },
+        {
+            "que": "Can I get a customized pricing plan based on my specific business needs?",
+            "des": "Many service providers offer customized pricing plans for businesses with unique requirements. Contact the sales team to discuss your needs and explore tailored pricing options."
+        },
+        {
+            "que": "Are there any hidden fees or charges that I should be aware of? dsd",
+            "des": ":No, there are no hidden additional charges for the widget, except for the actual sending of OTPs through any channel. To send OTPs, you simply need to subscribe or add balance to your account"
+        },
+        {
+            "que": "Is there a trial period or demo available for the testing of otp widget ?",
+            "des": "We do not offer a trial period or demo for testing the widget. However, you can add funds to your wallet with a low amount for testing purposes."
+        }
+
+    ],
+    "email": [
+        {
+            "que": "Do I get 5000 free emails only once or every month?",
+            "des": "With the free plan subscription, you will receive 5000 free emails every month."
+        },
+        {
+            "que": "I purchased the starter plan and received 100,000 emails for a month. What if my email traffic exceeds 100,000 in a month?",
+            "des": "In the starter plan, you get 100,000 emails and 100 email validations. If you send more than 100,000 emails in a month, you will be charged an additional 0.02/- per email. Additionally, if you perform more than 100 email validations, you will be charged 0.25/- per validation. This amount will be deducted from your MSG91 wallet. The Extra section in every email plans displays this information."
+        },
+        {
+            "que": "In the plan I bought, there are two limits: a Monthly Spending Limit and a Postpaid Billing Limit. Could you explain the difference between them and how they're used?",
+            "des": "You, as the user, can set the monthly spending limit, while the postpaid billing limit can only be set by the MSG91. If you have exhausted the emails and validations allotted according to your subscribed plan and wish to send more emails or validate additional email IDs, MSG91 will deduct the excess usage amount from your wallet when you reach 90% of your postpaid billing limit. After this deduction, your postpaid billing limit will reset to the default. If your consumption continues and reaches 90% of your postpaid billing limit again, another deduction will occur from your wallet. In this situation, the total maximum deduction aligns with the monthly spending limit you've set."
+        },
+        {
+            "que": "I am a free plan user, and I don't get any email validations in it. How can I use validations?",
+            "des": "If you want to go beyond the benefits provided in any plan, check the extra section of that plan for details. To use email validation in the free plan, you'll need to pay 0.35 per email validation, which will be deducted from your MSG91 wallet."
+        },
+        {
+            "que": "I subscribed to the starter plan, which should give me 1 Lac emails at 2000/-. However, after subscribing, I noticed that the deducted amount was less than 2000, and I received fewer than 1 Lac emails.",
+            "des": "For further assistance or to discuss custom pricing plans, please reach out to our support team at [support@email.com]. Yes, we do offer volume-based discounts for high call volumes. Contact our sales team for personalized solutions."
+        }
+    ],
+    "voice": [
+        {
+            "que": "How can I get in touch for further assistance or custom pricing plans, and are there any volume-based discounts for high call volumes?",
+            "des": "With the free plan subscription, you will receive 5000 free emails every month."
+        },
+        {
+            "que": "Do the listed prices include taxes or additional fees?",
+            "des": "The listed prices for our voice services are exclusive of taxes and additional fees. Taxes and fees, if applicable, will be clearly communicated during the billing process."
+        },
+        {
+            "que": "Is there a difference in pricing for landline and mobile numbers?",
+            "des": "Our pricing structure may vary based on the destination type, including landline and mobile numbers. Please refer to our pricing page or contact our sales team for specific details."
+        },
+        {
+            "que": "Inbound calls are free on the Hello panel. If I take a call on a mobile phone, how will it be charged?",
+            "des": "While inbound calls on the Hello panel are free, taking a call on a mobile phone will be subject to the applicable outbound call rates as per our pricing. Check our pricing details for specific rates."
+        },
+        {
+            "que": "Difference between local and international prices?",
+            "des": "Local and international call prices differ based on the destination. Local calls typically refer to calls within the same country, while international calls involve calls to numbers outside the country. Refer to our pricing page for detailed information on local and international rates."
+        }
+    ],
+    "hello": [
+        {
+            "que": "How to subscribe to your Hello Plan.",
+            "des": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
+        },
+        {
+            "que": "Are there any charges for AI Chat Bot?",
+            "des": "No, There are no charges for Chat Bot, we are only charged for basic and premium plans. You can use the chat bot in a free plan till 150 tickets in Hello, after that you have to upgrade your hello plan. Basically we are providing the chat Bot free for Trial purposes. You can use this Chat Bot in Whatsapp, Instagram, Chat Widget on your Website, Facebook and so on. So test the Chat Bot Now."
+        },
+        {
+            "que": " Are there any extra charges for Instagram/ Facebook Inbox?",
+            "des": "You can use inboxes that are available in your Hello Plan for Instagram or Whatsapp. The number of inboxes assigned in each plan. Free Plan- 2 inboxes Basic Plan- 2 inboxes Premium Plan- 3 inboxes But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each.In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox."
+        },
+        {
+            "que": "What are the charges for tickets and extra tickets in Hello?",
+            "des": "We are providing monthly tickets with each plan and in case they ends you can also use extra tickets which you pay in postpaid billing. Here are the number of tickets assigned in each plan: Free Plan- 150 tickets/monthly Basic Plan- 1000 tickets/monthly Premium Plan- 2000 tickets/monthly Extra Charges for each tickets in different plan: Free Plan- there is no option for more tickets in free plans as you have to upgrade the Hello Plan to Basic or Premium as per your choice. Basic Plan-0.5 per tickets Premium Plan- 0.75 per tickets"
+        },
+        {
+            "que": " Can I customize the Hello Plan?",
+            "des": "Yes, you can have a customized plan for hello. Click on the link to schedule the meeting with the sales heads."
+        }
+    ]
+}
