@@ -6,6 +6,7 @@ const Headcomp = (browserPath, browserPathMeta) => {
     const countryList = ['in', 'ae', 'ph', 'sg', 'es', 'gb', 'us'];
     const exptns = {
         'gbl': [
+            'contact-us',
             'blog',
             'partners-and-integrations',
             'about-us',
@@ -24,6 +25,8 @@ const Headcomp = (browserPath, browserPathMeta) => {
             'no-spam',
             'login',
             'signup',
+            'signin',
+            'guide'
         ],
     };
 
