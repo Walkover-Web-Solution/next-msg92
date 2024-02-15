@@ -6,24 +6,24 @@ const Headcomp = (browserPath, browserPathMeta) => {
     const countryList = ['in', 'ae', 'ph', 'sg', 'es', 'gb', 'us'];
     const exptns = {
         'gbl': [
-            '/blog',
-            '/partners-and-integrations',
-            '/about-us',
-            '/developers',
-            '/startups',
-            '/become-a-partner',
-            '/certificates',
-            '/case-studies',
-            '/terms-of-use',
-            '/privacy-policy',
-            '/gdpr',
-            '/refund-policy',
-            '/cookie-policy',
-            '/startup-policy',
-            '/fair-pricing-policy',
-            '/no-spam',
-            '/login',
-            '/signup',
+            'blog',
+            'partners-and-integrations',
+            'about-us',
+            'developers',
+            'startups',
+            'become-a-partner',
+            'certificates',
+            'case-studies',
+            'terms-of-use',
+            'privacy-policy',
+            'gdpr',
+            'refund-policy',
+            'cookie-policy',
+            'startup-policy',
+            'fair-pricing-policy',
+            'no-spam',
+            'login',
+            'signup',
         ],
     };
 
@@ -39,7 +39,7 @@ const Headcomp = (browserPath, browserPathMeta) => {
         } else {
             pathPage = '/' + pathArr[1];
             pathCountry = '';
-            isOnlyGlobal = exptns.gbl.includes(pathPage);
+            isOnlyGlobal = exptns.gbl.includes(pathArr[1]);
         }
     } else {
         if (countryList.includes(pathArr[1])) {
@@ -48,7 +48,7 @@ const Headcomp = (browserPath, browserPathMeta) => {
         } else {
             pathPage = '/' + pathArr.slice(1).join('/');
             pathCountry = '';
-            isOnlyGlobal = exptns.gbl.includes(pathPage);
+            isOnlyGlobal = exptns.gbl.includes(pathArr[1]);
         }
     }
 
