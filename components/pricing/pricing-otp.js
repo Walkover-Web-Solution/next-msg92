@@ -28,7 +28,7 @@ const Pricingotp = ({
 
     if (pricing[0] && pricing.length > 2) {
         let arrayOfPrices = amountArr.slice();
-        arrayOfPrices.unshift('0');
+        arrayOfPrices.unshift('-94');
 
         const lenAmountArr = amountArr.length;
         const widthOfSection = 100 / lenAmountArr;

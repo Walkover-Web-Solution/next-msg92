@@ -42,7 +42,7 @@ const Pricingsms = ({
 
     if (pricing[0] && pricing.length > 2) {
         let arrayOfPrices = amountArr.slice();
-        arrayOfPrices.unshift('0');
+        arrayOfPrices.unshift('-94');
 
         const lenAmountArr = amountArr.length;
         const widthOfSection = 100 / lenAmountArr;
@@ -132,7 +132,7 @@ const Pricingsms = ({
                                     </div>
 
                                     <input
-                                    className='slider'
+                                        className="slider"
                                         type="range"
                                         min="1"
                                         max="100"
