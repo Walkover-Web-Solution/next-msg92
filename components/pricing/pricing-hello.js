@@ -21,27 +21,6 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
     const [selectedCurrency, setSelectedCurrency] = useState(change);
     const [selectedMode, setSelectedMode] = useState('Monthly');
     const [symbol, setSymbol] = useState(changeSymbol);
-    // var plans = [];
-    // var tempFeaturesArray = [];
-    // for (let i = 0; i < subscriptionHello.length; i++) {
-    //   plans[i] = {};
-    //   plans[i].channels = [];
-    //   plans[i].features = [];
-    //   const subscription = subscriptionHello[i].planFeatures.map(
-    //     (data, index) => {
-    //       if (data.is_visible === 1 && subscriptionHello[i].show_features) {
-    //         if (data.feature.key.includes("support_channel")) {
-    //           plans[i].channels.push(data.feature.name);
-    //         } else {
-    //           if (!tempFeaturesArray.includes(data.feature.name)) {
-    //             tempFeaturesArray.push(data.feature.name);
-    //             plans[i].features.push(data.feature.name);
-    //           }
-    //         }
-    //       }
-    //     }
-    //   );
-    // }
 
     const changeCurrency = async (currency) => {
         setSelectedCurrency(currency);
@@ -71,13 +50,38 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
 
     return (
         <>
+            {symbol === '₹' && (
+                <div className="header d-flex  gap-3 justify-content-between flex-wrap mx-4">
+                    <span className="d-flex">
+                        <h6
+                            className={` ${
+                                selectedMode === 'Monthly' ? 'active' : null
+                            }  text-Secondary bg-white p-2 border rounded-start c-fs-6 cursor-pointer`}
+                            onClick={() => setSelectedMode('Monthly')}
+                        >
+                            Monthly
+                        </h6>
+                        <h6
+                            className={` ${
+                                selectedMode === 'Yearly' ? 'active' : null
+                            }  text-Secondary bg-white p-2 border rounded-end c-fs-6 cursor-pointer`}
+                            onClick={() => setSelectedMode('Yearly')}
+                        >
+                            Yearly (20% off)
+                        </h6>
+                    </span>
+                </div>
+            )}
+
             <div className="w-100 card-container d-flex flex-wrap gap-4">
                 {subscriptionHello?.length
                     ? subscriptionHello?.map((item, index) => {
                           return (
                               <div
                                   key={`email-card-${index}`}
-                                  className={`card d-flex align-items-start rounded-2 bg-white p-4  gap-3 ${item?.name === 'Premium' ? "border-2": "border-0"}`}
+                                  className={`card d-flex align-items-start rounded-2 bg-white p-4  gap-3 ${
+                                      item?.name === 'Premium' ? 'border-2' : 'border-0'
+                                  }`}
                               >
                                   <div className=" w-100 d-flex align-items-center justify-content-between">
                                       <h3 className="text-start c-fw-sb fs-4">{item.name}</h3>
@@ -87,14 +91,23 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                                           </span>
                                       )}
                                   </div>
-                                  <h5 className=" c-fs-2 text-lowercase ">
-                                      <span className="text-green c-fs-1">
-                                          {symbol}
-                                          {selectedMode === 'Monthly'
-                                              ? item?.plan_amounts[0]?.plan_amount
-                                              : item?.plan_amounts[1]?.plan_amount}
-                                      </span>
-                                      per {selectedMode === 'Monthly' ? 'month' : 'yearly'}
+                                  <h5 className="mt-2 c-fs-2 text-green">
+                                      {symbol}
+
+                                      {symbol === '₹' && (
+                                          <>
+                                              {selectedMode === 'Monthly'
+                                                  ? item?.plan_amounts[0]?.plan_amount + ' per Month'
+                                                  : item?.plan_amounts[3]?.plan_amount}
+                                              {selectedMode !== 'Monthly' && (
+                                                  <>
+                                                      {!item?.plan_amounts[3]?.plan_amount ? '0 per Year' : ' per Year'}
+                                                  </>
+                                              )}
+                                          </>
+                                      )}
+                                      {symbol === '$' && item?.plan_amounts[1]?.plan_amount + ' per Month'}
+                                      {symbol === '£' && item?.plan_amounts[2]?.plan_amount + ' per Month'}
                                   </h5>
                                   <p className="c-fs-5">
                                       {symbol === '₹' && item.plan_amounts[0]?.plan_amount === 0
@@ -175,11 +188,16 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                                                   <span>
                                                       {' '}
                                                       {symbol}
-                                                      {
-                                                          item?.plan_services[0]?.service_credit
-                                                              ?.service_credit_rates[0]?.follow_up_rate
-                                                      }
-                                                      / {item?.plan_services[0]?.service_credit?.service?.name}
+                                                          {symbol === '₹' &&
+                                                              item.plan_services[0].service_credit
+                                                                  .service_credit_rates[0].follow_up_rate}
+                                                          {symbol === '$' &&
+                                                              item.plan_services[0].service_credit
+                                                                  .service_credit_rates[1].follow_up_rate}
+                                                          {symbol === '£' &&
+                                                              item.plan_services[0].service_credit
+                                                                  .service_credit_rates[2].follow_up_rate}
+                                                          /{item.plan_services[0].service_credit.service.name}
                                                       /month
                                                   </span>
                                               </div>
@@ -188,10 +206,15 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                                                   <span>
                                                       {' '}
                                                       {symbol}
-                                                      {
-                                                          item.plan_services[1].service_credit.service_credit_rates[0]
-                                                              .follow_up_rate
-                                                      }
+                                                          {symbol === '₹' &&
+                                                              item.plan_services[1].service_credit
+                                                                  .service_credit_rates[0].follow_up_rate}
+                                                          {symbol === '$' &&
+                                                              item.plan_services[1].service_credit
+                                                                  .service_credit_rates[1].follow_up_rate}
+                                                          {symbol === '£' &&
+                                                              item.plan_services[1].service_credit
+                                                                  .service_credit_rates[2].follow_up_rate}
                                                       /ticket/month
                                                   </span>
                                               </div>
@@ -230,7 +253,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                     <span className="link">Know more about Hello</span>
                 </a>
             </div>
-            <FaqSection faqData={faqData?.hello}/>
+            <FaqSection faqData={faqData?.hello} />
         </>
     );
 };

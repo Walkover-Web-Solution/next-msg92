@@ -25,12 +25,12 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
 
     const changeCurrency = async (currency) => {
         setSelectedCurrency(currency);
-        try {
-            const response = await fetchSubscriptionEmail(currency, '1', 'subscriptionEmail');
-            console.log(response);
-        } catch (error) {
-            console.log(error.message, 'error');
-        }
+        // try {
+        //     const response = await fetchSubscriptionEmail(currency, '1', 'subscriptionEmail');
+        //     console.log(response);
+        // } catch (error) {
+        //     console.log(error.message, 'error');
+        // }
 
         switch (currency) {
             case 'INR':
@@ -75,7 +75,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                         Yearly (20% off)
                     </h6>
                 </span>
-                <span className="d-flex">
+                {/* <span className="d-flex">
                     <h6
                         className={`${
                             symbol === '₹' ? 'active' : null
@@ -100,21 +100,122 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                     >
                         GBP
                     </h6>
-                </span>
+                </span> */}
             </div>
 
             <div className="card-wrapper row d-flex w-100 py-4">
-                {subscriptionEmail.map((item, index) => {
-                    return (
-                        <>
-                            {item.name === 'Free' ? (
-                                <div
-                                    key={`email-card-${index}`}
-                                    className={`${
-                                        item.name === 'Alpha' ? 'border-2' : 'border-0'
-                                    } d-flex flex-column flex-lg-row justify-content-between card-price   p-4 bg-white rounded-2 col-lg-12`}
-                                >
-                                    <div>
+                {subscriptionEmail &&
+                    subscriptionEmail.map((item, index) => {
+                        return (
+                            <>
+                                {item.name === 'Free' ? (
+                                    <div
+                                        key={`email-card-${index}`}
+                                        className={`${
+                                            item.name === 'Alpha' ? 'border-2' : 'border-0'
+                                        } d-flex flex-column flex-lg-row justify-content-between card-price   p-4 bg-white rounded-2 col-lg-12`}
+                                    >
+                                        <div>
+                                            <div className="d-flex justify-content-between">
+                                                <h3 className="fs-4 fw-semibold">{item.name}</h3>
+                                                {item.name === 'Alpha' && (
+                                                    <span className="tex-center px-2 pt-1 c-fs-7 c-fw-m border border-dark rounded-4">
+                                                        Popular
+                                                    </span>
+                                                )}
+                                            </div>
+                                            <div className="d-flex  mt-4 flex-wrap">
+                                                <h5 className="c-fs-1 fw-bold text-green ">
+                                                    {symbol}
+
+                                                    {symbol === '₹' && (
+                                                        <>
+                                                            {selectedMode === 'Monthly'
+                                                                ? item?.plan_amounts[0]?.plan_amount
+                                                                : item?.plan_amounts[1]?.plan_amount}
+                                                        </>
+                                                    )}
+                                                    {symbol === '$' && (
+                                                        <>
+                                                            {selectedMode === 'Monthly'
+                                                                ? item?.plan_amounts[2]?.plan_amount
+                                                                : item?.plan_amounts[3]?.plan_amount}
+                                                        </>
+                                                    )}
+                                                    {symbol === '£' && (
+                                                        <>
+                                                            {selectedMode === 'Monthly'
+                                                                ? item?.plan_amounts[4]?.plan_amount
+                                                                : item?.plan_amounts[5]?.plan_amount}
+                                                        </>
+                                                    )}
+                                                </h5>
+                                                <span className="text-dark ms-1 mt-auto fw-medium ">
+                                                    per {selectedMode === 'Monthly' ? 'month' : 'year'}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <a
+                                            href="https://control.msg91.com/signup/"
+                                            target="_blank"
+                                            className="d-block d-lg-none align-items-end py-4 border-bottom border-2"
+                                        >
+                                            <button type="button" class="btn btn-outline-dark rounded-1 fw-semibold">
+                                                Get Started
+                                            </button>
+                                        </a>
+                                        <div>
+                                            {' '}
+                                            <h3 className="c-fs-4 fw-semibold mt-4">Included</h3>
+                                            <div className="c-fs-5 ">
+                                                <span className="text-success prcing-check me-1">
+                                                    <MdDone />
+                                                </span>
+                                                {numberWithCommas(item.plan_services[0].service_credit.free_credits)}{' '}
+                                                Emails
+                                            </div>
+                                            <div className="c-fs-5 ">
+                                                <span className="text-danger prcing-check me-1">
+                                                    <MdClose />
+                                                </span>
+                                                No Email Validations
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h3 className="c-fs-4 fw-semibold mt-4">Extra @</h3>
+                                            <div className="c-fs-5 ">
+                                                <span className="text-danger prcing-check me-1">
+                                                    <MdClose />
+                                                </span>
+                                                No Email
+                                            </div>
+                                            <div className="c-fs-5 ">
+                                                <span className="text-danger prcing-check me-1">
+                                                    <MdClose />
+                                                </span>
+                                                No Email Validation
+                                            </div>
+                                        </div>
+                                        <a
+                                            href="https://control.msg91.com/signup/"
+                                            target="_blank"
+                                            className="mt-auto d-lg-block d-none"
+                                        >
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-dark rounded-1 fw-semibold mt-4"
+                                            >
+                                                Get Started
+                                            </button>
+                                        </a>
+                                    </div>
+                                ) : (
+                                    <div
+                                        key={`email-card-${index}`}
+                                        className={`${
+                                            item.name === 'Alpha' ? 'border-2' : 'border-0'
+                                        } card-price card  p-4 bg-white rounded-2 col-lg`}
+                                    >
                                         <div className="d-flex justify-content-between">
                                             <h3 className="fs-4 fw-semibold">{item.name}</h3>
                                             {item.name === 'Alpha' && (
@@ -123,150 +224,117 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                                 </span>
                                             )}
                                         </div>
-                                        <div className="d-flex  mt-4 flex-wrap">
+                                        <div className="d-flex align-items-end mt-4 flex-wrap">
                                             <h5 className="c-fs-1 fw-bold text-green ">
                                                 {' '}
                                                 {symbol}
-                                                {selectedMode === 'Monthly'
-                                                    ? item.plan_amounts[0].plan_amount
-                                                    : item.plan_amounts[1].plan_amount}
+                                                {symbol === '₹' && (
+                                                    <>
+                                                        {selectedMode === 'Monthly'
+                                                            ? item?.plan_amounts[0]?.plan_amount
+                                                            : item?.plan_amounts[1]?.plan_amount}
+                                                    </>
+                                                )}
+                                                {symbol === '$' && (
+                                                    <>
+                                                        {selectedMode === 'Monthly'
+                                                            ? item?.plan_amounts[2]?.plan_amount
+                                                            : item?.plan_amounts[3]?.plan_amount}
+                                                    </>
+                                                )}
+                                                {symbol === '£' && (
+                                                    <>
+                                                        {selectedMode === 'Monthly'
+                                                            ? item?.plan_amounts[4]?.plan_amount
+                                                            : item?.plan_amounts[5]?.plan_amount}
+                                                    </>
+                                                )}
                                             </h5>
-                                            <span className="text-dark ms-1 mt-auto fw-medium ">
+                                            <span className="text-dark ms-1 fw-medium ">
                                                 per {selectedMode === 'Monthly' ? 'month' : 'year'}
                                             </span>
                                         </div>
-                                    </div>
-                                    <a
-                                        href="https://control.msg91.com/signup/"
-                                        target="_blank"
-                                        className="d-block d-lg-none align-items-end py-4 border-bottom border-2"
-                                    >
-                                        <button type="button" class="btn btn-outline-dark rounded-1 fw-semibold">
-                                            Get Started
-                                        </button>
-                                    </a>
-                                    <div>
-                                        {' '}
+                                        <span>
+                                            {' '}
+                                            {symbol === '₹' && item.plan_amounts[0]?.plan_amount === 0
+                                                ? '-'
+                                                : '' || (symbol === '₹' && item.plan_amounts[0]?.plan_amount !== 0)
+                                                ? '+18%GST'
+                                                : ''}
+                                        </span>
+                                        <a
+                                            href="https://control.msg91.com/signup/"
+                                            target="_blank"
+                                            className="d-flex align-items-end py-4 border-bottom border-2"
+                                        >
+                                            <button
+                                                type="button"
+                                                class={`${
+                                                    item.name === 'Alpha' ? 'btn-dark' : 'btn-outline-dark'
+                                                } btn  rounded-1 fw-semibold `}
+                                            >
+                                                Get Started
+                                            </button>
+                                        </a>
                                         <h3 className="c-fs-4 fw-semibold mt-4">Included</h3>
                                         <div className="c-fs-5 ">
                                             <span className="text-success prcing-check me-1">
                                                 <MdDone />
-                                            </span>
-                                            {numberWithCommas(item.plan_services[0].service_credit.free_credits)} Emails
+                                            </span>{' '}
+                                            {numberWithCommas(
+                                                item.plan_services[0].service_credit.service_credit_rates[2]
+                                                    .free_credits
+                                            )}{' '}
+                                            {item.plan_services[0].service_credit.service.name}{' '}
                                         </div>
                                         <div className="c-fs-5 ">
-                                            <span className="text-danger prcing-check me-1">
-                                                <MdClose />
+                                            <span className="text-success prcing-check me-1">
+                                                <MdDone />
                                             </span>
-                                            No Email Validations
+                                            {numberWithCommas(
+                                                item.plan_services[1].service_credit.service_credit_rates[0]
+                                                    .free_credits
+                                            )}{' '}
+                                            {item.plan_services[1].service_credit.service.name}
                                         </div>
-                                    </div>
-                                    <div>
                                         <h3 className="c-fs-4 fw-semibold mt-4">Extra @</h3>
                                         <div className="c-fs-5 ">
-                                            <span className="text-danger prcing-check me-1">
-                                                <MdClose />
+                                            <span className="text-success prcing-check me-1">
+                                                <MdDone />
                                             </span>
-                                            No Email
+                                            {symbol} {symbol}
+                                            {symbol === '₹' &&
+                                                item.plan_services[0].service_credit.service_credit_rates[0]
+                                                    .follow_up_rate}
+                                            {symbol === '$' &&
+                                                item.plan_services[0].service_credit.service_credit_rates[1]
+                                                    .follow_up_rate}
+                                            {symbol === '£' &&
+                                                item.plan_services[0].service_credit.service_credit_rates[2]
+                                                    .follow_up_rate}
+                                            {' per'} {item.plan_services[0].service_credit.service.name}
                                         </div>
                                         <div className="c-fs-5 ">
-                                            <span className="text-danger prcing-check me-1">
-                                                <MdClose />
+                                            <span className="text-success prcing-check me-1">
+                                                <MdDone />
                                             </span>
-                                            No Email Validation
+                                            {symbol}{' '}
+                                            {symbol === '₹' &&
+                                                item.plan_services[1].service_credit.service_credit_rates[0]
+                                                    .follow_up_rate}
+                                            {symbol === '$' &&
+                                                item.plan_services[1].service_credit.service_credit_rates[1]
+                                                    .follow_up_rate}
+                                            {symbol === '£' &&
+                                                item.plan_services[1].service_credit.service_credit_rates[2]
+                                                    .follow_up_rate}{' '}
+                                            per Email Validation
                                         </div>
                                     </div>
-                                    <a href="https://control.msg91.com/signup/" target="_blank" className="mt-auto d-lg-block d-none">
-                                        <button type="button" class="btn btn-outline-dark rounded-1 fw-semibold mt-4">
-                                            Get Started
-                                        </button>
-                                    </a>
-                                </div>
-                            ) : (
-                                <div
-                                    key={`email-card-${index}`}
-                                    className={`${
-                                        item.name === 'Alpha' ? 'border-2' : 'border-0'
-                                    } card-price card  p-4 bg-white rounded-2 col-lg`}
-                                >
-                                    <div className="d-flex justify-content-between">
-                                        <h3 className="fs-4 fw-semibold">{item.name}</h3>
-                                        {item.name === 'Alpha' && (
-                                            <span className="tex-center px-2 pt-1 c-fs-7 c-fw-m border border-dark rounded-4">
-                                                Popular
-                                            </span>
-                                        )}
-                                    </div>
-                                    <div className="d-flex align-items-end mt-4 flex-wrap">
-                                        <h5 className="c-fs-1 fw-bold text-green ">
-                                            {' '}
-                                            {symbol}
-                                            {selectedMode === 'Monthly'
-                                                ? item.plan_amounts[0].plan_amount
-                                                : item.plan_amounts[1].plan_amount}
-                                        </h5>
-                                        <span className="text-dark ms-1 fw-medium ">
-                                            per {selectedMode === 'Monthly' ? 'month' : 'year'}
-                                        </span>
-                                    </div>
-                                    <span>
-                                        {' '}
-                                        {symbol === '₹' && item.plan_amounts[0]?.plan_amount === 0
-                                            ? '-'
-                                            : '' || (symbol === '₹' && item.plan_amounts[0]?.plan_amount !== 0)
-                                            ? '+18%GST'
-                                            : ''}
-                                    </span>
-                                    <a
-                                        href="https://control.msg91.com/signup/"
-                                        target="_blank"
-                                        className="d-flex align-items-end py-4 border-bottom border-2"
-                                    >
-                                        <button
-                                            type="button"
-                                            class={`${
-                                                item.name === 'Alpha' ? 'btn-dark' : 'btn-outline-dark'
-                                            } btn  rounded-1 fw-semibold `}
-                                        >
-                                            Get Started
-                                        </button>
-                                    </a>
-                                    <h3 className="c-fs-4 fw-semibold mt-4">Included</h3>
-                                    <div className="c-fs-5 ">
-                                        <span className="text-success prcing-check me-1">
-                                            <MdDone />
-                                        </span>
-                                        {numberWithCommas(item.plan_services[0].service_credit.free_credits)} Emails
-                                    </div>
-                                    <div className="c-fs-5 ">
-                                        <span className="text-success prcing-check me-1">
-                                            <MdDone />
-                                        </span>
-                                        {numberWithCommas(item.plan_services[1].service_credit.free_credits)} Email
-                                        Validations
-                                    </div>
-                                    <h3 className="c-fs-4 fw-semibold mt-4">Extra @</h3>
-                                    <div className="c-fs-5 ">
-                                        <span className="text-success prcing-check me-1">
-                                            <MdDone />
-                                        </span>
-                                        {symbol}{' '}
-                                        {item.plan_services[0].service_credit.service_credit_rates[0].follow_up_rate}{' '}
-                                        per Email
-                                    </div>
-                                    <div className="c-fs-5 ">
-                                        <span className="text-success prcing-check me-1">
-                                            <MdDone />
-                                        </span>
-                                        {symbol}{' '}
-                                        {item.plan_services[1].service_credit.service_credit_rates[0].follow_up_rate}{' '}
-                                        per Email Validation
-                                    </div>
-                                </div>
-                            )}
-                        </>
-                    );
-                })}
+                                )}
+                            </>
+                        );
+                    })}
             </div>
             <div className="connect-personalized my-4">
                 <span className="talk-to-sales d-block c-fs-4 fw-medium">
@@ -284,7 +352,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                     <span className="link">Know more about Email</span>
                 </a>
             </div>
-            <FaqSection faqData={faqData?.email}/>
+            <FaqSection faqData={faqData?.email} />
         </>
     );
 };
