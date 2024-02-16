@@ -22,6 +22,7 @@
     "js-yaml": "^4.0.0",
     "next": "13.2.4",
     "next-mdx-remote": "^4.4.1",
+    "nextjs-current-url": "^1.0.3",
     "prismjs": "^1.29.0",
     "react": "18.2.0",
     "react-bootstrap": "^2.8.0",
