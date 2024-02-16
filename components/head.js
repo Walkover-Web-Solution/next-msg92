@@ -26,7 +26,8 @@ const Headcomp = (browserPath, browserPathMeta) => {
             'login',
             'signup',
             'signin',
-            'guide'
+            'guide',
+            "startups-form"
         ],
     };
 
@@ -40,7 +41,11 @@ const Headcomp = (browserPath, browserPathMeta) => {
             pathPage = '';
             pathCountry = '/' + pathArr[1];
         } else {
-            pathPage = '/' + pathArr[1];
+            if (pathArr[1]) {
+                pathPage = '/' + pathArr[1];
+            } else {
+                pathPage = '';
+            }
             pathCountry = '';
             isOnlyGlobal = exptns.gbl.includes(pathArr[1]);
         }
@@ -71,7 +76,7 @@ const Headcomp = (browserPath, browserPathMeta) => {
                 {!isOnlyGlobal && (
                     <>
                         <link rel="alternate" hrefLang="en-IN" href={`https://msg91.com/in${pathPage}`} />
-                        <link rel="alternate" hrefLang="en-GB" href={`https://msg91.com/uk${pathPage}`} />
+                        <link rel="alternate" hrefLang="en-GB" href={`https://msg91.com/gb${pathPage}`} />
                         <link rel="alternate" hrefLang="en-PH" href={`https://msg91.com/ph${pathPage}`} />
                         <link rel="alternate" hrefLang="en-SG" href={`https://msg91.com/sg${pathPage}`} />
                         <link rel="alternate" hrefLang="en-ES" href={`https://msg91.com/es${pathPage}`} />
