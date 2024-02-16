@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import metaData from '@/data/metadata.json';
+import { useUrl } from 'nextjs-current-url';
 
 const Headcomp = (browserPath, browserPathMeta) => {
-    // console.log('🚀 ~ Headcomp ~ browserPath:', browserPath);
+
+
     const countryList = ['in', 'ae', 'ph', 'sg', 'es', 'gb', 'us'];
     const exptns = {
         'gbl': [
@@ -71,6 +73,13 @@ const Headcomp = (browserPath, browserPathMeta) => {
                 />
                 <meta name="google-site-verification" content="RfcBy_Lv1Ao1j0eP8UlMjJ44ik5_1YDKsRQSNFr9jEQ" />
                 <link rel="icon" href="/fav.svg" />
+                {process.env.ENVIRONMENT === 'test' && (
+                    <>
+                        <meta name="robots" content="noindex" />
+                        <meta name="googlebot" content="noindex" />
+                        <meta name="robots" content="noindex,nofollow" />
+                    </>
+                )}
                 <link rel="canonical" href={`https://msg91.com${pathPage}`} />
                 <link rel="alternate" hrefLang="x-default" href={`https://msg91.com${pathPage}`} />
                 {!isOnlyGlobal && (
