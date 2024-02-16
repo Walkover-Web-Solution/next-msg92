@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import metaData from '@/data/metadata.json';
-import { useUrl } from 'nextjs-current-url';
 
 const Headcomp = (browserPath, browserPathMeta) => {
 
