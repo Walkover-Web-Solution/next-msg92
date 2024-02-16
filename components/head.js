@@ -2,8 +2,6 @@ import Head from 'next/head';
 import metaData from '@/data/metadata.json';
 
 const Headcomp = (browserPath, browserPathMeta) => {
-
-
     const countryList = ['in', 'ae', 'ph', 'sg', 'es', 'gb', 'us'];
     const exptns = {
         'gbl': [
@@ -28,7 +26,7 @@ const Headcomp = (browserPath, browserPathMeta) => {
             'signup',
             'signin',
             'guide',
-            "startups-form"
+            'startups-form',
         ],
     };
 
@@ -74,9 +72,9 @@ const Headcomp = (browserPath, browserPathMeta) => {
                 <link rel="icon" href="/fav.svg" />
                 {process.env.ENVIRONMENT === 'test' && (
                     <>
-                        <meta name="robots" content="noindex" />
-                        <meta name="googlebot" content="noindex" />
                         <meta name="robots" content="noindex,nofollow" />
+                        <meta name="googlebot" content="noindex,nofollow" />
+                        <meta name="bingbot" content="noindex,nofollow" />
                     </>
                 )}
                 <link rel="canonical" href={`https://msg91.com${pathPage}`} />
