@@ -21,6 +21,9 @@ const nextConfig = {
         OTP_WIDGET_TOKEN: getEnvValue('OTP_WIDGET_TOKEN'),
         WIDGET_AUTH_TOKEN: getEnvValue('WIDGET_AUTH_TOKEN'),
         WIDGET_SCRIPT: getEnvValue('WIDGET_SCRIPT'),
+
+        // ENVIRONMENT CONFIG
+        ENVIRONMENT: getEnvValue('ENVIRONMENT'),
     },
 
     // Can be safely removed in newer versions of Next.js
