@@ -1,84 +1,31 @@
-import { MdDone, MdClose, MdKeyboardArrowRight, MdAdd } from 'react-icons/md';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import CIDData from '@/data/countriesWIthCID.json';
+import countries from '@/data/countries.json';
+
 import faqData from '@/data/faq.json';
 import FaqSection from '../faqSection/faqSection';
+import { Typeahead } from 'react-bootstrap-typeahead';
 
-
-
-
-const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }) => {
-    const [selectedMode, setSelectedMode] = useState('Monthly');
-    const [symbol, setSymbol] = useState('₹');
-    const [searchValue, setSearchValue] = useState('91');
-    const [pagination, setPagination] = useState(0);
-    const [pagesize, setPagesize] = useState(25);
-    const [pageNum, setPageNum] = useState(1);
-    const [displayValue, setDisplayValue] = useState('');
+const PricingCalls = ({ countryCode }) => {
     const [data, setData] = useState(null);
-    const [pulse, setPulse] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [paginationArray, setPaginationArray] = useState([]);
-    const [cIDCode, setCIDCode] = useState(91);
-
-    const changeCurrency = (currency) => {
-        fetchSubscriptionVoice(currency, '6');
-        switch (currency) {
-            case 'INR':
-                setSymbol('₹');
-                break;
-            case 'USD':
-                setSymbol('$');
-                break;
-            case 'GBP':
-                setSymbol('£');
-                break;
-            default:
-                setSymbol('₹');
-                break;
-        }
-    };
-
-    const handleSearch = () => {
-        setDisplayValue(searchValue);
-        fetchData(1);
-    };
-    const cidData = CIDData.find((country) => country.code === cIDCode);
-    const countryName = cidData.name;
-
-    const fetchData = async (page) => {
+    const [selectedCountry, setSelectedCountry] = useState([]);
+    const [dialPlan, setDialPlan] = useState();
+    const [countryData, setCountryData] = useState();
+    const [currencyCode, setCurrencyCode] = useState();
+    const [symbol, setSymbol] = useState();
+    useEffect(() => {
+        setSelectedCountry(countries.find((country) => country.sortname === countryCode));
+        setCurrencyCode(countries.find((selectedCountry) => selectedCountry?.sortname === countryCode)?.currency);
+    }, []);
+    const fetchCountryData = async () => {
         setLoading(true);
-        setError(null);
-        setPageNum(page);
         try {
-            const headers = {
-                Authorization: {
-                    authkey: process.env.Authorization_authkey,
-                },
-                // other headers if required
-            };
-
-            const response = await fetch(
-                //`https://testvoice.phone91.com/public/dialplans/1?page_size=${pagesize}&page_num=${page}&prefix=${searchValue}`,
-                // `https://voice.phone91.com/public/dialplans/8?page_size=${pagesize}&page_num=${page}&prefix=${searchValue}`,
-                // `https://testvoice.phone91.com/public/pricing/?cid=${cid}&dialplan_id=244`,
-                `https://testvoice.phone91.com/public/pricing/?cid=509&dialplan_id=244`,
-                {
-                    headers: headers,
-                }
-            );
+            const response = await fetch(`https://testvoice.phone91.com/public/country/`);
 
             if (response.ok) {
                 const data = await response.json();
-                setData(data);
-                let getPulse = data.data.rates[0].billing.split('/');
-                setPulse(getPulse[0]);
-                const lenght = Math.ceil(data.data.count / pagesize);
-                setPagination(lenght);
-                const d = Array.from({ length: lenght }, (_, i) => i + 1);
-                setPaginationArray(d);
+                setCountryData(data);
             } else {
                 throw new Error('Currently we only have plan for India(91)');
             }
@@ -88,43 +35,123 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
             setLoading(false);
         }
     };
-    var maindata = 0;
-    maindata = JSON.stringify(data, null, 2);
-    const router = useRouter();
-    const showDiv = router.asPath.includes('/in');
-    const handleKeyDown = (event) => {
-        if (event.keyCode === 13) {
-            // Perform search operation
-            handleSearch();
+    useEffect(() => {
+        if (selectedCountry) {
+            console.log('🚀 ~ useEffect ~ selectedCountry:', selectedCountry);
+
+            if (selectedCountry.currency === 'GBP') {
+                setSymbol('£');
+            } else if (selectedCountry.currency === 'INR') {
+                setSymbol('₹');
+            } else {
+                setSymbol('$');
+            }
+            fetchCountryData();
+        }
+    }, [selectedCountry]);
+    useEffect(() => {
+        if (currencyCode) {
+            fetchDialPlan(currencyCode);
+        }
+    }, [currencyCode]);
+
+    const fetchDialPlan = async (currencyCode) => {
+        setLoading(true);
+        try {
+            const response = await fetch(
+                `https://testvoice.phone91.com/public/dialplanPricing/?currency=${currencyCode}`
+            );
+
+            if (response.ok) {
+                const data = await response.json();
+
+                setDialPlan(data?.data.dialplan_id);
+            } else {
+                throw new Error('Currently we only have plan for India(91)');
+            }
+        } catch (error) {
+            setError(error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+    useEffect(() => {
+        if ((dialPlan, selectedCountry)) {
+            fetchData(selectedCountry, dialPlan);
+        }
+    }, [dialPlan, selectedCountry]);
+
+    const fetchData = async (selectedCountry, dialPlan) => {
+        setLoading(true);
+
+        try {
+            const response = await fetch(
+                `https://testvoice.phone91.com/public/pricing/?cid=${selectedCountry?.id}&dialplan_id=${dialPlan}`
+            );
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log(data, selectedCountry, dialPlan);
+                setData(data);
+            } else {
+                throw new Error('Currently we only have plan for India(91)');
+            }
+        } catch (error) {
+            setError(error.message);
+        } finally {
+            setLoading(false);
         }
     };
 
-    useEffect(() => {
-        fetchData(1);
-    }, [countryCode]);
-    console.log(data);
-
     return (
         <>
-            <div>
-                <div className="connect-personalized my-4">
-                    <span className="talk-to-sales d-block c-fs-4 fw-medium">
-                        Connect with our team for a personalized plan to meet your needs.
-                    </span>
-                    <button
-                        type="button"
-                        className="btn btn-outline-dark mt-3 mb-4 fw-semibold border border-dark border-2 rounded-1 px-3 py-1"
-                    >
-                        Talk to Sales
-                    </button>
-                    <br />
-                    <a href="#">
-                        <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
-                        <span className="link">Know more about Voice</span>
-                    </a>
-                </div>
+            <div className="col-3">
+                {countryData && (
+                    <Typeahead
+                        className="col"
+                        id="country"
+                        placeholder={selectedCountry?.name}
+                        labelKey="name"
+                        onChange={(selected) => {
+                            setSelectedCountry(selected[0]);
+
+                            setCurrencyCode(countries.find((country) => country.name === selected[0].name).currency);
+                        }}
+                        options={countryData}
+                        clearButton={false}
+                    />
+                )}
             </div>
-            <FaqSection faqData={faqData?.voice}/>
+            <table className="table border border-dark rounded-2 my-3 overflow-hidden">
+                <thead>
+                    <tr>
+                        <th className="border-bottom border-dark">Recipient’s Network</th>
+                        <th className="border-bottom border-dark">Local rates</th>
+                        <th className="border-bottom border-dark">International rates</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data?.data &&
+                        data?.data.map((data, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{data?.network}</td>
+                                    <td>
+                                        {symbol}
+                                        {data?.local_rates_min} - {symbol}
+                                        {data?.local_rates_max}{' '}
+                                    </td>
+                                    <td>
+                                        {symbol} {data?.international_rates_min} - {symbol}
+                                        {data?.international_rates_max}{' '}
+                                    </td>
+                                </tr>
+                            );
+                        })}
+                </tbody>
+            </table>
+
+            <FaqSection faqData={faqData?.voice} />
         </>
     );
 };

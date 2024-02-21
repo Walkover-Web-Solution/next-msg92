@@ -161,6 +161,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Component 
         {...pageProps} 
         path={path} 
+        
         browserPath={browserPath} 
         browserPathCase={browserPathCase} 
         pricingPath={pricingPath}
