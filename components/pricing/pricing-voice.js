@@ -14,15 +14,21 @@ const PricingCalls = ({ countryCode }) => {
     const [countryData, setCountryData] = useState();
     const [currencyCode, setCurrencyCode] = useState();
     const [symbol, setSymbol] = useState();
+
+    //set intial states
     useEffect(() => {
-        setSelectedCountry(countries.find((country) => country.sortname === countryCode));
+        setSelectedCountry(selectedCountry.find((country) => country.sortname === countryCode));
         setCurrencyCode(countries.find((selectedCountry) => selectedCountry?.sortname === countryCode)?.currency);
     }, []);
+
+    //fetch Counties
+    useEffect(() => {
+        fetchCountryData();
+    }, [selectedCountry]);
     const fetchCountryData = async () => {
         setLoading(true);
         try {
             const response = await fetch(`https://testvoice.phone91.com/public/country/`);
-
             if (response.ok) {
                 const data = await response.json();
                 setCountryData(data);
@@ -35,33 +41,26 @@ const PricingCalls = ({ countryCode }) => {
             setLoading(false);
         }
     };
-    useEffect(() => {
-        if (selectedCountry) {
-            console.log('🚀 ~ useEffect ~ selectedCountry:', selectedCountry);
 
-            if (selectedCountry.currency === 'GBP') {
+    //fetch dialPlan and set corrency
+    useEffect(() => {
+        if (currencyCode) {
+            fetchDialPlan(currencyCode);
+            if (currencyCode === 'GBP') {
                 setSymbol('£');
-            } else if (selectedCountry.currency === 'INR') {
+            } else if (currencyCode === 'INR') {
                 setSymbol('₹');
             } else {
                 setSymbol('$');
             }
-            fetchCountryData();
-        }
-    }, [selectedCountry]);
-    useEffect(() => {
-        if (currencyCode) {
-            fetchDialPlan(currencyCode);
         }
     }, [currencyCode]);
-
     const fetchDialPlan = async (currencyCode) => {
         setLoading(true);
         try {
             const response = await fetch(
                 `https://testvoice.phone91.com/public/dialplanPricing/?currency=${currencyCode}`
             );
-
             if (response.ok) {
                 const data = await response.json();
 
@@ -75,6 +74,8 @@ const PricingCalls = ({ countryCode }) => {
             setLoading(false);
         }
     };
+
+    //fetch pricing data
     useEffect(() => {
         if ((dialPlan, selectedCountry)) {
             fetchData(selectedCountry, dialPlan);
@@ -83,15 +84,12 @@ const PricingCalls = ({ countryCode }) => {
 
     const fetchData = async (selectedCountry, dialPlan) => {
         setLoading(true);
-
         try {
             const response = await fetch(
                 `https://testvoice.phone91.com/public/pricing/?cid=${selectedCountry?.id}&dialplan_id=${dialPlan}`
             );
-
             if (response.ok) {
                 const data = await response.json();
-                console.log(data, selectedCountry, dialPlan);
                 setData(data);
             } else {
                 throw new Error('Currently we only have plan for India(91)');
@@ -107,19 +105,28 @@ const PricingCalls = ({ countryCode }) => {
         <>
             <div className="col-3">
                 {countryData && (
-                    <Typeahead
-                        className="col"
-                        id="country"
-                        placeholder={selectedCountry?.name}
-                        labelKey="name"
-                        onChange={(selected) => {
-                            setSelectedCountry(selected[0]);
+                    <>
+                        <Typeahead
+                            className="col c-fs-6"
+                            id="country"
+                            placeholder="Origin Country"
+                            labelKey="name"
+                            options={countryData}
+                            clearButton
+                            inputProps={{
+                                autoComplete: 'off',
+                            }}
+                            onChange={(selected) => {
+                                if (selected[0]) {
+                                    setSelectedCountry(selected[0]);
 
-                            setCurrencyCode(countries.find((country) => country.name === selected[0].name).currency);
-                        }}
-                        options={countryData}
-                        clearButton={false}
-                    />
+                                    setCurrencyCode(
+                                        countries.find((country) => country.name === selected[0]?.name)?.currency
+                                    );
+                                }
+                            }}
+                        />
+                    </>
                 )}
             </div>
             <table className="table border border-dark rounded-2 my-3 overflow-hidden">
@@ -131,7 +138,7 @@ const PricingCalls = ({ countryCode }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data?.data &&
+                    {data &&
                         data?.data.map((data, index) => {
                             return (
                                 <tr key={index}>
