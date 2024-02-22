@@ -17,14 +17,21 @@ const PricingCalls = ({ countryCode }) => {
 
     //set intial states
     useEffect(() => {
-        setSelectedCountry(selectedCountry.find((country) => country.sortname === countryCode));
-        setCurrencyCode(countries.find((selectedCountry) => selectedCountry?.sortname === countryCode)?.currency);
-    }, []);
+        if (countryData?.length > 0) {
+            setSelectedCountry(countryData.find((country) => country.country_code === countryCode));
+        }
+    }, [countryData ]);
+
+    useEffect(() => {
+        if (selectedCountry) {
+            setCurrencyCode(countries.find((country) => country.sortname === selectedCountry?.country_code)?.currency);
+        }
+    }, [selectedCountry, countries]);
 
     //fetch Counties
     useEffect(() => {
         fetchCountryData();
-    }, [selectedCountry]);
+    }, []);
     const fetchCountryData = async () => {
         setLoading(true);
         try {
@@ -109,7 +116,7 @@ const PricingCalls = ({ countryCode }) => {
                         <Typeahead
                             className="col c-fs-6"
                             id="country"
-                            placeholder="Origin Country"
+                            placeholder={selectedCountry?.name}
                             labelKey="name"
                             options={countryData}
                             clearButton
