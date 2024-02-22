@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import countries from '@/data/countries.json';
+import countries from '@/data/countriesWIthCID.json';
 
 import faqData from '@/data/faq.json';
 import FaqSection from '../faqSection/faqSection';

@@ -17,11 +17,20 @@ const Pricingsms = ({
     currencySymbol,
     countryCode,
 }) => {
+    const [sliderValue, setSliderValue] = useState(47);
+    const [pricingEnv, setPricingEnv] = useState(106);
     useEffect(() => {
         setUtm();
-    }, [pricing, originCountry, destinationCountry]);
 
-    const [sliderValue, setSliderValue] = useState(47);
+    }, [pricing, originCountry, destinationCountry]);
+    useEffect(() => {
+        if(process.env.PRICING_URL === 'https://test.msg91.com'){
+            setPricingEnv(19)
+        }
+
+    },[]);
+
+
     // useEffect(() => {
     //     if (pricing[0] && pricing.length > 2) {
     //         const slider = document.getElementById('pricingDrag');
@@ -49,9 +58,9 @@ const Pricingsms = ({
         const noOfSection = Math.floor(sliderValue / widthOfSection);
         if (pricing[0]) {
             if (pricing[noOfSection]) {
-                ratePersms = pricing[noOfSection][106]?.rate;
+                ratePersms = pricing[noOfSection][pricingEnv]?.rate;
             } else {
-                ratePersms = pricing[noOfSection - 1][106]?.rate;
+                ratePersms = pricing[noOfSection - 1][pricingEnv]?.rate;
             }
 
             const rangeInSection = lenAmountArr * (sliderValue - widthOfSection * noOfSection);
@@ -145,7 +154,7 @@ const Pricingsms = ({
                                             return (
                                                 <div className="text-end col c-fs-5" key={index}>
                                                     {currencySymbol}
-                                                    {data[106]?.rate}
+                                                    {data[pricingEnv]?.rate}
                                                 </div>
                                             );
                                         })}
@@ -164,7 +173,7 @@ const Pricingsms = ({
                             </>
                         ) : (
                             <>
-                                <div className="content-fit bg-white btn-ft d-flex flex-column gap-5 p-4 border-2 mt-4 align-items-center">
+                                <div className="content-fit bg-white btn-ft d-flex flex-column border rounded gap-5 p-4 border-2 mt-4 align-items-center">
                                     <h3 className="c-fs-4">SMS Pricing</h3>
                                     <h3 className="text-green c-fs-2">
                                         {currencySymbol}
