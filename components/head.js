@@ -28,7 +28,8 @@ const Headcomp = (browserPath, browserPathMeta) => {
             'signup',
             'signin',
             'guide',
-            "startups-form"
+            "startups-form",
+            "thank-you"
         ],
     };
 
