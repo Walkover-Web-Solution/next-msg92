@@ -49,9 +49,9 @@ const Pricingsms = ({
         const noOfSection = Math.floor(sliderValue / widthOfSection);
         if (pricing[0]) {
             if (pricing[noOfSection]) {
-                ratePersms = pricing[noOfSection][19]?.rate;
+                ratePersms = pricing[noOfSection][106]?.rate;
             } else {
-                ratePersms = pricing[noOfSection - 1][19]?.rate;
+                ratePersms = pricing[noOfSection - 1][106]?.rate;
             }
 
             const rangeInSection = lenAmountArr * (sliderValue - widthOfSection * noOfSection);
@@ -111,7 +111,7 @@ const Pricingsms = ({
                         </div>
                     </div>
                 )}
-                {pricing[0] && (
+                {pricing[0]  && (
                     <>
                         {pricing.length > 2 ? (
                             <>
