@@ -10,6 +10,7 @@ const nextConfig = {
         // URLS
         API_BASE_URL: getEnvValue('API_BASE_URL'),
         REDIRECT_URL: getEnvValue('REDIRECT_URL'),
+        PRICING_URL:getEnvValue('PRICING_URL'),
 
         // CLIENT IDS
         GOOGLE_CLIENT_ID: getEnvValue('GOOGLE_CLIENT_ID'),

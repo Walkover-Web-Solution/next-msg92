@@ -72,7 +72,7 @@ const Headcomp = (browserPath, browserPathMeta) => {
                 />
                 <meta name="google-site-verification" content="RfcBy_Lv1Ao1j0eP8UlMjJ44ik5_1YDKsRQSNFr9jEQ" />
                 <link rel="icon" href="/fav.svg" />
-                {process.env.ENVIRONMENT === 'test' && (
+                {process.env.ENVIRONMENT === 'prod' && (
                     <>
                         <meta name="robots" content="noindex" />
                         <meta name="googlebot" content="noindex" />
