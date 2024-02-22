@@ -145,7 +145,7 @@ const Pricingsms = ({
                                             return (
                                                 <div className="text-end col c-fs-5" key={index}>
                                                     {currencySymbol}
-                                                    {data[19]?.rate}
+                                                    {data[106]?.rate}
                                                 </div>
                                             );
                                         })}
