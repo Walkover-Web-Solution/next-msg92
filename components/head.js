@@ -80,7 +80,7 @@ const Headcomp = (browserPath, browserPathMeta) => {
                         <meta name="robots" content="noindex,nofollow" />
                     </>
                 )}
-                <link rel="canonical" href={`https://msg91.com${pathPage}`} />
+                <link rel="canonical" href={`https://msg91.com${pathArrRaw[0]}`} />
                 <link rel="alternate" hrefLang="x-default" href={`https://msg91.com${pathPage}`} />
                 {!isOnlyGlobal && (
                     <>
