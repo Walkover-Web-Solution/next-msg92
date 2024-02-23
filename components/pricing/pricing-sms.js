@@ -18,14 +18,14 @@ const Pricingsms = ({
     countryCode,
 }) => {
     const [sliderValue, setSliderValue] = useState(47);
-    const [pricingEnv, setPricingEnv] = useState(106);
+    const [pricingEnv, setPricingEnv] = useState(4);
     useEffect(() => {
         setUtm();
 
     }, [pricing, originCountry, destinationCountry]);
     useEffect(() => {
         if(process.env.PRICING_URL === 'https://test.msg91.com'){
-            setPricingEnv(19)
+            setPricingEnv(4)
         }
 
     },[]);
