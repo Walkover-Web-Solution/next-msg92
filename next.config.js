@@ -23,8 +23,7 @@ const nextConfig = {
         WIDGET_AUTH_TOKEN: getEnvValue('WIDGET_AUTH_TOKEN'),
         WIDGET_SCRIPT: getEnvValue('WIDGET_SCRIPT'),
 
-        // ENVIRONMENT CONFIG
-        ENVIRONMENT: getEnvValue('ENVIRONMENT'),
+
     },
 
     // Can be safely removed in newer versions of Next.js
