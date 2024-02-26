@@ -75,7 +75,7 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
       {pageData?.pagename === 'KnowledgeBase' &&        
         <div className="container mb-5">
           <div className="mb-5">
-            <h4 className='more-feature mb-3'>More Features</h4>
+            <h2 className='more-feature mb-3'>More Features</h2>
             {webhookData?.map((data,index)=>{      
               if(data?.service === "Knowledgebase" && data?.availability === "Available"){
                 return (
