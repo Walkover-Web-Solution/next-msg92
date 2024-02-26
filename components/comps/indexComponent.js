@@ -34,6 +34,7 @@ const indexComp = ({pageData, params}) => {
             <img
               src="./img/home/banner.webp"
               className="hero-img"
+              alt="msg91 banner image"
             />
           </div>
         </div>
@@ -46,7 +47,7 @@ const indexComp = ({pageData, params}) => {
               <a href="/hello" className="product-card hello-card flex-row text-dark mb-4">          
                 <div className="row">
                   <div className="d-flex flex-column gap-3 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
-                    <img src="./img/icon/hello.svg" className="pro-sec-ico" />            
+                    <img src="./img/icon/hello.svg" className="pro-sec-ico" alt="hello icon"/>            
                     <div className="pre-heading c-fs-5">Contact center</div>
                     <div className="pro-heading small-heading">Hello</div>
                     <div className="product-content c-fs-4">                
@@ -60,7 +61,7 @@ const indexComp = ({pageData, params}) => {
                     </div>
                   </div>
                   <div className="product-img d-flex justify-content-end col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
-                    <img src="./img/home/chats.svg" />
+                    <img src="./img/home/chats.svg" alt="chats image"/>
                   </div>          
                 </div>
               </a>
@@ -70,7 +71,7 @@ const indexComp = ({pageData, params}) => {
               <a href="/campaign" className="product-card campaign-card flex-row text-dark mb-4">
                 <div className="row">
                   <div className="d-flex flex-column gap-3 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
-                    <img src="./img/icon/campaign.svg" className="pro-sec-ico" />            
+                    <img src="./img/icon/campaign.svg" className="pro-sec-ico" alt="campaign icon"/>            
                     <div className="pre-heading c-fs-5">Event Based Automation</div>
                     <div className="pro-heading small-heading">Campaign</div>
                     <div className="product-content c-fs-4">                
@@ -84,7 +85,7 @@ const indexComp = ({pageData, params}) => {
                     </div>
                   </div>
                   <div className="product-img d-flex justify-content-end col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
-                    <img src="./img/home/campaign.svg" />
+                    <img src="./img/home/campaign.svg" alt="campaign image"/>
                   </div>                      
                 </div>
               </a>
@@ -96,7 +97,7 @@ const indexComp = ({pageData, params}) => {
               <a href="/segmento" className="product-card segmento-card flex-row text-dark mb-4">          
                 <div className="row">
                   <div className="d-flex flex-column gap-3 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
-                    <img src="./img/icon/segmento.svg" className="pro-sec-ico" />            
+                    <img src="./img/icon/segmento.svg" className="pro-sec-ico" alt="segmento icon"/>            
                     <div className="pre-heading c-fs-5">Customer data platform</div>
                     <div className="pro-heading small-heading">Segmento</div>
                     <div className="product-content c-fs-4">                
@@ -110,7 +111,7 @@ const indexComp = ({pageData, params}) => {
                     </div>
                   </div>
                   <div className="product-img col d-flex justify-content-end">
-                    <img src="./img/home/segmento.webp" />
+                    <img src="./img/home/segmento.webp" alt="segmento image"/>
                   </div>          
                 </div>
               </a>
@@ -119,7 +120,7 @@ const indexComp = ({pageData, params}) => {
               <a href="/otp" className="product-card otp-card flex-row text-dark mb-4">
                 <div className="row">
                   <div className="d-flex flex-column gap-3 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
-                    <img src="./img/icon/otp.svg" className="pro-sec-ico" />            
+                    <img src="./img/icon/otp.svg" className="pro-sec-ico" alt="otp icon"/>            
                     <div className="pre-heading c-fs-5">INSTANT SECURE VERIFICATION</div>
                     <div className="pro-heading small-heading">OTP</div>
                     <div className="product-content c-fs-4">                
@@ -133,7 +134,7 @@ const indexComp = ({pageData, params}) => {
                     </div>
                   </div>
                   <div className="product-img col d-flex justify-content-end">
-                    <img src="./img/home/otp.png" />
+                    <img src="./img/home/otp.png" alt="otp image"/>
                   </div>                      
                 </div>
               </a>
@@ -282,31 +283,31 @@ const indexComp = ({pageData, params}) => {
         <div className="container h-100 d-flex flex-wrap text-center text-sm-start  align-items-center">
           <div className="col-12 col-sm-6 col-lg-3 d-flex flex-column  gap-2 py-3 py-sm-5">
             <h2 className="c-fs-1 c-fw-b">2.5 Billion+</h2>
-            <h4 className="c-fs-3">
+            <span className="c-fs-3">
               API calls
               <br /> per month
-            </h4>
+            </span>
           </div>
           <div className="col-12 col-sm-6 col-lg-3 d-flex flex-column gap-2 py-3 py-sm-5">
             <h2 className="c-fs-1 c-fw-b">1.6 Billion+</h2>
-            <h4 className="c-fs-3">
+            <span className="c-fs-3">
               SMS sent
               <br /> per month
-            </h4>
+            </span>
           </div>
           <div className="col-12 col-sm-6 col-lg-3 d-flex flex-column gap-2 py-3 py-sm-5">
             <h2 className="c-fs-1 c-fw-b">1 Billion+</h2>
-            <h4 className="c-fs-3">
+            <span className="c-fs-3">
               OTP sent
               <br /> per month
-            </h4>
+            </span>
           </div>
           <div className="col-12 col-sm-6 col-lg-3 d-flex flex-column gap-2 py-3 py-sm-5">
             <h2 className="c-fs-1 c-fw-b">1 Billion+</h2>
-            <h4 className="c-fs-3">
+            <span className="c-fs-3">
               Email sent
               <br /> per month
-            </h4>
+            </span>
           </div>
         </div>
       </div>
@@ -342,7 +343,7 @@ const indexComp = ({pageData, params}) => {
             </div>
             <div className="d-flex flex-column gap-3 justify-content-between  h-100">
               <div className="">
-                <h4 className="mb-3 c-fs-3">Make your long URLs short</h4>
+                <span className="mb-3 c-fs-2">Make your long URLs short</span>
                 <p className="c-fs-4">
                   Automatically shortens URL and tracks your success, one click
                   at a time. Turn your long, messy links into short, memorable
@@ -385,9 +386,9 @@ const indexComp = ({pageData, params}) => {
             </div>
             <div className="d-flex flex-column gap-3 justify-content-between h-100">
               <div className="">
-                <h4 className="mb-3 c-fs-3">
+                <span className="mb-3 c-fs-3">
                   Manage your help docs and articles
-                </h4>
+                </span>
                 <p className="c-fs-4">
                   Do not let your customers wait for simple solutions. Give them
                   instant access to the self-service library of information.
@@ -427,7 +428,7 @@ const indexComp = ({pageData, params}) => {
             </div>
             <div className="d-flex flex-column gap-3 justify-content-between h-100">
               <div className="">
-                <h4 className="mb-3 c-fs-3">Simple and secured file storage</h4>
+                <span className="mb-3 c-fs-3">Simple and secured file storage</span>
                 <p className="c-fs-4">
                   A central hub for online file storage, sharing and syncing.
                   Store all your files safely using powerful, reliable and

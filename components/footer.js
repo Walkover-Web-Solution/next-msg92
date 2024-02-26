@@ -298,7 +298,7 @@ const Footer = ({path, year}) => {
                 </span>
               </div>
             </div>
-            <div className="c-fs-7 copyright mt-3">
+            <div className="c-fs-7 copyright mt-3 text-white">
               Copyright 2008-{year} MSG91 | All rights reserved.
             </div>
           </div>
