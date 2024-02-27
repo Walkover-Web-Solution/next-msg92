@@ -105,7 +105,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
                 title 
                 ? 
                 <div className="d-flex align-items-center gap-2">
-                  <img width="24" height="24" data-nimg="1" src={`/img/icon/${title.toLowerCase().replace(/ +/g, "")}.svg`} alt="hero icon"/>
+                  <img width="24" height="24" data-nimg="1" src={`/img/icon/${title.toLowerCase().replace(/ +/g, "")}.svg`}/>
                   {title}
                 </div>
                 : "Products"
