@@ -13,12 +13,12 @@ const IntPage = () => {
     <>
       <div className="int-page-head hubspot d-flex py-3">
         <div className="container d-flex align-items-center gap-4">
-          <img src="/img/integrations/hubspot-logo.svg" />
+          <img src="/img/integrations/hubspot-logo.svg" alt="hubspot logo"/>
           <div>
             <h1 className="sub-heading">HubSpot Integration</h1>
-            <h4 className="c-fs-4 mt-2">
+            <h2 className="c-fs-4 mt-2">
               Streamline Your Engagement Workflows
-            </h4>
+            </h2>
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@ const IntPage = () => {
           multi-channel communication Update customers on critical events- New
           Signups, Payment Confirmation, Send Invoice PDF
         </p>
-        <img className="col-12 col-sm-6" src="/img/integrations/zapeir-graphics.svg" />
+        <img className="col-12 col-sm-6" src="/img/integrations/zapeir-graphics.svg" alt="zapeir graphics image"/>
       </div>
       <div className="container my-5">
         <h1 className="sub-heading c-head mb-3">
