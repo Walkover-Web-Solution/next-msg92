@@ -24,12 +24,12 @@ const IntPage = () => {
     <>
       <div className="int-page-head tally d-flex py-3">
         <div className="container d-flex align-items-center gap-4">
-          <img src="/img/integrations/tally_logo_white.svg" className="logo" />
+          <img src="/img/integrations/tally_logo_white.svg" className="logo" alt="tally logo"/>
           <div>
             <h1 className="sub-heading">Tally Integration</h1>
-            <h4 className="c-fs-4 mt-2">
+            <h2 className="c-fs-4 mt-2">
               Send invoices and recover dues
-            </h4>
+            </h2>
           </div>
         </div>
       </div>
@@ -71,7 +71,8 @@ const IntPage = () => {
             ref={videoRef}
             onClick={handleVideoClick}
             height={600} preload="none" poster="https://storage.googleapis.com/production-file-system/293020/gkacnbuk">
-            <source src="https://storage.googleapis.com/production-file-system/293020/yzeokyfz" type="video/mp4" />        
+            <source src="https://storage.googleapis.com/production-file-system/293020/yzeokyfz" type="video/mp4" /> 
+            <track kind="captions" srclang="en" label="english_captions"/>       
             Your browser does not support the video tag.
           </video>
         </div>
@@ -118,7 +119,7 @@ const IntPage = () => {
         <p className="c-fs-2">
           Supercharge your Tally Prime experience with the MSG91 Tally Prime Plugin, unlocking unparalleled communication and automation capabilities. Save time, enhance communication, and gain precise control over financial transactions for streamlined invoicing and ledger management today.
         </p>
-        <img className="col-12 col-sm-6" src="/img/integrations/tally-graphics.svg" />
+        <img className="col-12 col-sm-6" src="/img/integrations/tally-graphics.svg" alt="tally-graphics image"/>
       </div>
       <div className="container my-5">
         <h1 className="sub-heading c-head mb-3">
