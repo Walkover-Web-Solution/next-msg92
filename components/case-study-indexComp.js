@@ -37,9 +37,9 @@ const CaseStudyCard = ({ caseStudies }) => {
                 alt={caseStudy.heading}
               />
             </div>
-            <h3 className="small-heading text-truncate ">
+            <h2 className="small-heading text-truncate ">
               {caseStudy.heading}
-            </h3>
+            </h2>
             <p className=" c-fs-4">{caseStudy.content}</p>
             <a href={caseStudy.link}><p className="btn btn-outline-dark py-1 px-2 c-fs-5 mb-3">Learn more</p></a>
             <div className=" d-flex flex-wrap gap-3 mt-auto">
