@@ -478,6 +478,10 @@
         "title": "MSG91 for Startups - upto 25,000 SMS per month for every Startup",
         "description":"A startup for startups. Grow your startup with MSG91’s SMS for startups. First few transactional bulk SMS free every month. Spread this initiative and help startup."
     },
+    "/certificates": {
+        "title": "MSG91 for certificates ",
+        "description":"A startup for startups. Grow your startup with MSG91’s SMS for startups. First few transactional bulk SMS free every month. Spread this initiative and help startup."
+    },
     "/startups-form": {
         "title": "MSG91 Startups form",
         "description":"Shared about you and your business is up to date and accurate at the time of submission"
