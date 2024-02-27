@@ -105,10 +105,10 @@ const msg91ForStartups = () => {
             across to inspire, identify and develop end-to-end solutions for
             businesses to discover and engage.
           </p>
-          <img
+          <iframe
             className='airtable-embed'
             src='https://airtable.com/embed/shrMAxbTEzIuHmC2j?backgroundColor=cyan&viewControls=on'
-            alt='airtable-embed'
+            title='airtable-embed'
             style={{
               background: 'transparent',
               border: '1px solid #ccc',
