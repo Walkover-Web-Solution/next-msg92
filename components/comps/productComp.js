@@ -14,7 +14,7 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
         <div className="container text-center overflow-hidden">
           <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">            
             <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
-              <img src={pageData?.icon} className="product-page-logo me-2" />
+              <img src={pageData?.icon} className="product-page-logo me-2" alt='product page logo'/>
               <h1 className={`heading page-title ${pageData?.pagename}-heading`}>{pageData?.pagetag}</h1>
             </div>
 
@@ -38,7 +38,7 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
           <img
             src={pageData?.pageimg}
             className="img-fluid product-page-img mx-auto"
-            alt="#"
+            alt="product image"
           />
         </div>
       </div>
@@ -55,6 +55,7 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
                   <img
                   src={item?.img}
                   className="feature-img "
+                  alt='feature image'
                 />
                 }                
                 </div>
@@ -74,7 +75,7 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
       {pageData?.pagename === 'KnowledgeBase' &&        
         <div className="container mb-5">
           <div className="mb-5">
-            <h4 className='more-feature mb-3'>More Features</h4>
+            <h2 className='more-feature mb-3'>More Features</h2>
             {webhookData?.map((data,index)=>{      
               if(data?.service === "Knowledgebase" && data?.availability === "Available"){
                 return (
