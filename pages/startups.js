@@ -29,9 +29,9 @@ const msg91ForStartups = () => {
         Today we help you, tomorrow we can change the world together
       </section>
       <div className=' my-80 text-center justify-content-center'>
-        <h3 className='c-head sub-heading mt-3'>
+        <h2 className='c-head sub-heading mt-3'>
           Grow your Startup with Robust Infrastructure
-        </h3>
+        </h2>
         <div className='container d-flex flex-column flex-md-row gap-5 gap-md-0 my-5 align-items-center justify-content-md-between justify-content-cenetr'>
           <div className='signup-cont startUpCart  p-3 d-flex flex-column align-items-center justify-content-center'>
             <span className='c-fs-2 c-fw-sb'>Sign up</span>
@@ -105,9 +105,10 @@ const msg91ForStartups = () => {
             across to inspire, identify and develop end-to-end solutions for
             businesses to discover and engage.
           </p>
-          <iframe
+          <img
             className='airtable-embed'
             src='https://airtable.com/embed/shrMAxbTEzIuHmC2j?backgroundColor=cyan&viewControls=on'
+            alt='airtable-embed'
             style={{
               background: 'transparent',
               border: '1px solid #ccc',
