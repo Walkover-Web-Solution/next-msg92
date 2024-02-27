@@ -38,7 +38,7 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
           <img
             src={pageData?.pageimg}
             className="img-fluid product-page-img mx-auto"
-            alt="fluid image"
+            alt="product image"
           />
         </div>
       </div>
