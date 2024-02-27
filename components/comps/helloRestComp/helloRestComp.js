@@ -19,7 +19,7 @@ const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }
                         >
                             <div className="d-flex flex-column gap-2">
                                 <div className={`${style.heroCont__product} d-flex align-items-center gap-2 c-fs-2`}>
-                                    <img className="product-icon" src="/img/icon/hello.svg" alt="hello" />
+                                    <img className="product-icon" src="/img/icon/hello.svg" alt="hello icon" />
                                     <span className="product-name text-capitalize">{productData?.product}</span>
                                 </div>
                                 <span className={`${style.heroCont__tagline} c-fs-3`}>
@@ -36,7 +36,7 @@ const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }
                             {productData?.trustedData && <TrusedSection trustedData={productData?.trustedData} />}
                         </div>
                         <div className={`${style.heroimg} d-none d-sm-block`}>
-                            <img src="/img/pages/hello/heroimg.svg" />
+                            <img src="/img/pages/hello/heroimg.svg" alt='hello hero image'/>
                         </div>
                     </div>
                     <ProductFeatures featureData={productData?.features} />
