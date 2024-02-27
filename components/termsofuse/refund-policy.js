@@ -30,6 +30,7 @@ const refundpolicy = () => {
                     <div className="my-3"></div>
                     4. MSG91 shall bear no liability in particular for:
                     <div className="my-3"></div>
+                    <ul>
                     <li>
                     Phrases and entries added to the network in connection with the use of offered services and products,
                     </li>
@@ -54,6 +55,7 @@ const refundpolicy = () => {
                     <li>
                     MSG91 is not responsible for the damage suffered by the user as a result of a bot attack or phishing due to third-party.
                     </li>
+                    </ul>
                     <div className="my-3"></div>
                     Privacy Policy
                     <div className="my-3"></div>

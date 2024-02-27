@@ -41,6 +41,7 @@ const cookiepolicy = () => {
                 <h1 className="c-fs-2 c-fw-m">We Use Cookies To:</h1>
                 <span className="c-fs-4">
                     <div className="my-3"></div>
+                    <ul>
                     <li>
                     Validate the authenticity of person/s attempting to gain access to user account.
                     </li>
@@ -65,6 +66,7 @@ const cookiepolicy = () => {
                     <li>
                     Remember the settings and other choices you’ve made at our website.
                     </li>
+                    </ul>
                 </span>
             </div>
             <div className="mb-5">
@@ -72,24 +74,29 @@ const cookiepolicy = () => {
                 <span className="c-fs-4">
                 We collect certain data from you directly
                     <div className="my-3"></div>
+                    <ul>
                     <li>
                     The information you enter yourself
                     </li>
                     <li>
                     Data from third-party platforms you connect with MSG91
                     </li>
+                    </ul>
                     <div className="my-3"></div>
                     We also collect some data automatically
                     <div className="my-3"></div>
+                    <ul>
                     <li>
                     Information about your device
                     </li>
                     <li>
                     What parts of our Services you interact with
                     </li>
+                    </ul>
                     <div className="my-3"></div>
                     In addition to personal information, certain anonymous information about your visit is automatically captured when you visit the Site. This information includes:
                     <div className="my-3"></div>
+                    <ul>
                     <li>
                     The name of the Internet service provider (ISP) and the Internet Protocol (IP) address through
                     </li>
@@ -111,11 +118,13 @@ const cookiepolicy = () => {
                     <li>
                     We also may use your IP address to determine the organization that you are affiliated with.
                     </li>
+                    </ul>
                     <div className="my-3"></div>
                     This anonymous information is used to help improve our Site, analyze trends and administer the Site.
                     <div className="my-3"></div>
                     We may monitor your interactions with the Site to maintain your information with your Site profile.
                     <div className="my-3"></div>
+                    <ul>
                     <li>
                     Pages you visit
                     </li>
@@ -125,6 +134,7 @@ const cookiepolicy = () => {
                     <li>
                     Comments you make
                     </li>
+                    </ul>
                 </span>
             </div>
             <div className="mb-5">
