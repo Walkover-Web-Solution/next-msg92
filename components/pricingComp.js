@@ -163,24 +163,28 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
         },
         {
             product: 'hello',
+            productDes: 'hello logo',
             productName: 'Hello',
             des: 'Contact Center',
             onclick: () => fetchSubscription(currency, '7', 'subscriptionHello'),
         },
         {
             product: 'campaign',
+            productDes: 'campaign logo',
             productName: 'Campaign',
             des: 'Event-bassed automation',
             onclick: () => fetchSubscription(currency, '7', 'subscriptionHello'),
         },
         {
             product: 'segmento',
+            productDes: 'segmento logo',
             productName: 'Segmento',
             des: 'Contact management',
             onclick: () => fetchSubscription(currency, '2', 'subscriptionSegmento'),
         },
         {
             product: 'otpwidget',
+            productDes: 'otpwidget logo',
             productName: 'OTP',
             des: 'OTP widget SDK',
         },
@@ -190,37 +194,43 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
         },
         {
             product: 'sms',
+            productDes: 'sms logo',
             productName: 'SMS',
             onclick: () => fetchSMSData(currency, originCountry, destinationCountry),
         },
         {
             product: 'otp',
+            productDes: 'otp logo',
             productName: 'SendOTP',
             onclick: () => fetchSMSData(currency, originCountry, destinationCountry),
         },
         {
             product: 'email',
+            productDes: 'email logo',
             productName: 'Email',
             onclick: () => fetchSubscription(currency, '1', 'subscriptionEmail'),
         },
         {
             product: 'whatsapp',
+            productDes: 'whatsapp logo',
             productName: 'WhatsApp',
             onclick: () => fetchSubscription(currency, '5', 'SubscriptionWhatsapp'),
         },
         {
             product: 'voice',
+            productDes: 'voice logo',
             productName: 'Voice',
         },
         {
             product: 'rcs',
+            productDes: 'rcs logo',
             productName: 'RCS',
         },
     ];
 
     return (
         <>
-            <div className=" main-container  ">
+            <div className="main-container  ">
                 <div className="container p-4 d-flex gap-4 flex-column flex-md-row">
                     <div className="dropdown d-flex d-md-none align-items-center  w-75 px-2 py-1 br-2">
                         <a
@@ -263,7 +273,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                                                 <div className="d-flex align-items-center gap-1">
                                                     <img
                                                         src={`/img/icon/${productData?.product}.svg`}
-                                                        alt={productData?.product}
+                                                        alt={productData?.productDes}
                                                         className="icon-drop"
                                                     />
                                                     <span className="c-fs-5 c-fw-m text-capitalize">
@@ -289,7 +299,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                                             ? `/${countryCode.toLowerCase()}/pricing/${productData?.product}`
                                             : `/pricing/${productData?.product}`
                                     }
-                                    className={`nav-item w-100 ${product === productData?.product ? 'active' : ''}`}
+                                    className={`nav-item w-100 ${product === productData?.product? 'active' : ''}`}
                                     id={`${productData?.product}-btn`}
                                     onClick={() => {
                                         if (productData?.onclick) {
@@ -302,7 +312,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                                         <div className="d-flex align-items-center">
                                             <img
                                                 src={`/img/icon/${productData?.product}.svg`}
-                                                alt={productData?.product}
+                                                alt={productData?.productDes}
                                                 className="icon"
                                             />
                                             <span className="c-fs-4 c-fw-m text-capitalize">
