@@ -147,6 +147,7 @@ const Pricingsms = ({
                                         max="100"
                                         value={sliderValue}
                                         onChange={(e) => setSliderValue(e.target.value)}
+                                        aria-label="Slider"
                                     />
 
                                     <div className="d-none d-md-flex">
@@ -195,7 +196,7 @@ const Pricingsms = ({
                 <div className="talk-to-sales connect-personalized mt-4">
                     <span className="personalized d-block c-fs-4">
                         Connect with our team for a personalized pricing and get up to{' '}
-                        <span className="text-green c-fs-4 fw-medium">₹0.13</span> per SMS to meet your needs.
+                        <span className="text-green c-fs-3 fw-bold">₹0.13</span> per SMS to meet your needs.
                     </span>
                     <button
                         type="button"

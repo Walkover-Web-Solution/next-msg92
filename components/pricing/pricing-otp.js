@@ -135,6 +135,7 @@ const Pricingotp = ({
                                         max="100"
                                         value={sliderValue}
                                         onChange={(e) => setSliderValue(e.target.value)}
+                                        aria-label="Slider"
                                     />
                                     <div className="d-none d-md-flex">
                                         {pricing.map((data, index) => {
