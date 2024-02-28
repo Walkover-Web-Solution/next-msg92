@@ -58,22 +58,22 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
         <>
             <div className="header d-flex  gap-3 justify-content-between flex-wrap mb-4">
                 <span className="d-flex">
-                    <h6
+                    <h2
                         className={` ${
                             selectedMode === 'Monthly' ? 'active' : null
                         }  text-Secondary bg-white p-2 border rounded-start c-fs-6 cursor-pointer`}
                         onClick={() => setSelectedMode('Monthly')}
                     >
                         Monthly
-                    </h6>
-                    <h6
+                    </h2>
+                    <h2
                         className={` ${
                             selectedMode === 'Yearly' ? 'active' : null
                         }  text-Secondary bg-white p-2 border rounded-end c-fs-6 cursor-pointer`}
                         onClick={() => setSelectedMode('Yearly')}
                     >
                         Yearly (20% off)
-                    </h6>
+                    </h2>
                 </span>
                 {/* <span className="d-flex">
                     <h6
@@ -125,7 +125,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                                 )}
                                             </div>
                                             <div className="d-flex  mt-4 flex-wrap">
-                                                <h5 className="c-fs-1 fw-bold text-green ">
+                                                <h3 className="c-fs-1 fw-bold text-green ">
                                                     {symbol}
 
                                                     {symbol === '₹' && (
@@ -149,7 +149,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                                                 : item?.plan_amounts[5]?.plan_amount}
                                                         </>
                                                     )}
-                                                </h5>
+                                                </h3>
                                                 <span className="text-dark ms-1 mt-auto fw-medium ">
                                                     per {selectedMode === 'Monthly' ? 'month' : 'year'}
                                                 </span>
@@ -225,7 +225,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                             )}
                                         </div>
                                         <div className="d-flex align-items-end mt-4 flex-wrap">
-                                            <h5 className="c-fs-1 fw-bold text-green ">
+                                            <h2 className="c-fs-1 fw-bold text-green ">
                                                 {' '}
                                                 {symbol}
                                                 {symbol === '₹' && (
@@ -249,7 +249,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                                             : item?.plan_amounts[5]?.plan_amount}
                                                     </>
                                                 )}
-                                            </h5>
+                                            </h2>
                                             <span className="text-dark ms-1 fw-medium ">
                                                 per {selectedMode === 'Monthly' ? 'month' : 'year'}
                                             </span>

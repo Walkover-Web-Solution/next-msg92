@@ -587,6 +587,10 @@
         "title": "KnowledgeBase Pricing in India | MSG91-India",
         "description":"Avail robust and powerful services in India like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
     },
+    "/in/pricing/otpwidget":{
+        "title": "otpwidget Pricing in India | MSG91-India",
+        "description":"Avail robust and powerful services in India like transactional otpwidget, communication APIs and more at affordable prices. Check out the pricing now."
+    },
 
     "commentae":{
         "comment":"ae country"
@@ -632,6 +636,10 @@
     "/ae/pricing/knowledgebase":{
         "title": "KnowledgeBase Pricing in United Arab Emirates | MSG91-United Arab Emirates",
         "description":"Avail robust and powerful services in United Arab Emirates like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/ae/pricing/otpwidget":{
+        "title": "otpwidget Pricing in United Arab Emirates | MSG91-United Arab Emirates",
+        "description":"Avail robust and powerful services in United Arab Emirates like transactional otpwidget, communication APIs and more at affordable prices. Check out the pricing now."
     },
 
     "commentph":{
@@ -679,6 +687,10 @@
         "title": "KnowledgeBase Pricing in Philippines | MSG91-Philippines",
         "description":"Avail robust and powerful services in Philippines like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
     },
+    "/ph/pricing/otpwidget":{
+        "title": "otpwidget Pricing in Philippines | MSG91-Philippines",
+        "description":"Avail robust and powerful services in Philippines like transactional otpwidget, communication APIs and more at affordable prices. Check out the pricing now."
+    },
     
    
     "commentsg":{
@@ -725,6 +737,10 @@
         "title": "KnowledgeBase Pricing in Singapore | MSG91-Singapore",
         "description":"Avail robust and powerful services in Singapore like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
     },
+    "/sg/pricing/otpwidget":{
+        "title": "otpwidget Pricing in Singapore | MSG91-Singapore",
+        "description":"Avail robust and powerful services in Singapore like transactional otpwidget, communication APIs and more at affordable prices. Check out the pricing now."
+    },
 
     "commentes":{
         "comment":"es country"
@@ -769,6 +785,10 @@
     "/es/pricing/knowledgebase":{
         "title": "KnowledgeBase Pricing in Spain | MSG91-Spain",
         "description":"Avail robust and powerful services in Spain like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/es/pricing/otpwidget":{
+        "title": "otpwidget Pricing in Spain | MSG91-Spain",
+        "description":"Avail robust and powerful services in Spain like transactional otpwidget, communication APIs and more at affordable prices. Check out the pricing now."
     },
    
 
@@ -815,6 +835,10 @@
     "/gb/pricing/knowledgebase":{
         "title": "KnowledgeBase Pricing in United Kingdom | MSG91-United Kingdom",
         "description":"Avail robust and powerful services in United Kingdom like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/gb/pricing/otpwidget":{
+        "title": "otpwidget Pricing in United Kingdom | MSG91-United Kingdom",
+        "description":"Avail robust and powerful services in United Kingdom like transactional otpwidget, communication APIs and more at affordable prices. Check out the pricing now."
     },
 
 
@@ -863,6 +887,10 @@
         "title": "KnowledgeBase Pricing in United States | MSG91-United States",
         "description":"Avail robust and powerful services in United States like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
     },
+    "/us/pricing/otpwidget":{
+        "title": "otpwidget Pricing in United States | MSG91-United States",
+        "description":"Avail robust and powerful services in United States like transactional otpwidget, communication APIs and more at affordable prices. Check out the pricing now."
+    },
 
     "commentglobal":{
         "comment":"global"
@@ -906,6 +934,10 @@
     "/pricing/knowledgebase":{
         "title": "KnowledgeBase Pricing | MSG91",
         "description":"Avail robust and powerful services like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/pricing/otpwidget":{
+        "title": "OtpWidget Pricing | MSG91",
+        "description":"Avail robust and powerful services like transactional otpwidget, communication APIs and more at affordable prices. Check out the pricing now."
     },
 
     "LinkGenrator ******************************":{},

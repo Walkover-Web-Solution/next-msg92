@@ -53,22 +53,22 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
             {symbol === '₹' && (
                 <div className="header d-flex  gap-3 justify-content-between flex-wrap mx-4">
                     <span className="d-flex">
-                        <h6
+                        <h2
                             className={` ${
                                 selectedMode === 'Monthly' ? 'active' : null
                             }  text-Secondary bg-white p-2 border rounded-start c-fs-6 cursor-pointer`}
                             onClick={() => setSelectedMode('Monthly')}
                         >
                             Monthly
-                        </h6>
-                        <h6
+                        </h2>
+                        <h3
                             className={` ${
                                 selectedMode === 'Yearly' ? 'active' : null
                             }  text-Secondary bg-white p-2 border rounded-end c-fs-6 cursor-pointer`}
                             onClick={() => setSelectedMode('Yearly')}
                         >
                             Yearly (20% off)
-                        </h6>
+                        </h3>
                     </span>
                 </div>
             )}
@@ -91,7 +91,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                                           </span>
                                       )}
                                   </div>
-                                  <h5 className="mt-2 c-fs-2 text-green">
+                                  <h3 className="mt-2 c-fs-2 text-green">
                                       {symbol}
 
                                       {symbol === '₹' && (
@@ -108,7 +108,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                                       )}
                                       {symbol === '$' && item?.plan_amounts[1]?.plan_amount + ' per Month'}
                                       {symbol === '£' && item?.plan_amounts[2]?.plan_amount + ' per Month'}
-                                  </h5>
+                                  </h3>
                                   <p className="c-fs-5">
                                       {symbol === '₹' && item.plan_amounts[0]?.plan_amount === 0
                                           ? '-'
