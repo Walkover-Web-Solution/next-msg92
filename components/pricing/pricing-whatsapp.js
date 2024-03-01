@@ -92,6 +92,36 @@ const pricingwp = ({ countryCode }) => {
           <option value="Yearly">Yearly</option>
         </select> */}
       </div>
+
+
+      <div className="price-card whatsapp d-flex flex-sm-row flex-column rounded-1 col-xl-12 col-lg-11 col-md-10 bg-white p-4 gap-4 justify-content-between align-items-sm-center mb-0">
+        <div className=" ">
+          <h3 className="text-start fw-bolder fs-2 text-green mb-3">
+            Zero <span className="text-dark ">margin on meta price</span>
+          </h3>
+          <a className="link" href="#">
+            Check meta pricing
+          </a>
+          <h3 className="tds fw-medium c-fs-4 mt-2 d-block">TDS and GST excluded.</h3>
+          <button
+            data-bs-toggle="modal"
+            data-bs-target="#sales-modal"
+            className=" btn btn-dark rounded-1 fw-semibold mt-3"
+          >
+            Get Started
+          </button>
+          {/* <a href="/contact-us" className="btn btn-outline-dark col-6 col-sm-5 col-md-3 mx-auto mt-3">Talk to an Expert</a> */}
+        </div>
+        <div className=" ">
+          <img src={`/img/icon/whatsapp-black.svg`} />
+        </div>
+      </div>
+
+
+
+
+
+
       <div className="d-flex container gap-3 flex-column text-start">
         <div className="c-fs-5 mt-5">
           {/* MSG91 takes one time fee <strong>{symbol}{oneTimeWtsAppFee}</strong> to set up your WhatsApp Business account. */}
@@ -117,7 +147,7 @@ const pricingwp = ({ countryCode }) => {
                 {item.Market.startsWith("Rest") || item.Market.startsWith("Other") ? (
                   <tr>
                     <td
-             
+
                       data-bs-toggle="modal"
                       data-bs-target={`#${item.Market.replace(
                         / /g,
@@ -125,7 +155,7 @@ const pricingwp = ({ countryCode }) => {
                       )}-market`}
                     >
                       <span className="wa-pricing-link">
-                      {item?.Market}
+                        {item?.Market}
                       </span>
                       <div
                         class="modal fade"
@@ -202,6 +232,10 @@ const pricingwp = ({ countryCode }) => {
             ))}
           </tbody>
         </table>
+        <a className="more-about" href="#">
+          <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
+          <span>Know more about WhatsApp</span>
+        </a>
       </div>
     </>
   );
