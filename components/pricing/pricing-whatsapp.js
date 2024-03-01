@@ -71,7 +71,7 @@ const pricingwp = ({ countryCode }) => {
 
   return (
     <>
-      <div className="d-flex justify-content-center mb-4">
+      {/* <div className="d-flex justify-content-center mb-4">
         <select
           style={{ width: "fit-content" }}
           className="form-select me-4"
@@ -85,13 +85,13 @@ const pricingwp = ({ countryCode }) => {
           <option value="AUD">AUD</option>
           <option value="EUR">EUR</option>
           <option value="IDR">IDR</option>
-        </select>
+        </select> */}
         {/* <select style={{width: 'fit-content'}} className="form-select" aria-label="Default select example" onChange={(e)=>setSelectedMode(e.target.value)}>
           <option value="Monthly">Monthly</option>
           <option value="Half yearly">Half Yearly</option>
           <option value="Yearly">Yearly</option>
         </select> */}
-      </div>
+      {/* </div> */}
 
 
       <div className="price-card whatsapp d-flex flex-sm-row flex-column rounded-1 col-xl-12 col-lg-11 col-md-10 bg-white p-4 gap-4 justify-content-between align-items-sm-center mb-0">
