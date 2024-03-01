@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import countries from '@/data/countriesWIthCID.json';
-
+import { MdDone, MdClose, MdKeyboardArrowRight, MdAdd } from "react-icons/md";
 import faqData from '@/data/faq.json';
 import FaqSection from '../faqSection/faqSection';
 import { Typeahead } from 'react-bootstrap-typeahead';
@@ -136,6 +136,7 @@ const PricingCalls = ({ countryCode }) => {
                     </>
                 )}
             </div>
+            <h4 className="c-fs-4 fw-semibold mt-3">Outgoing call charges/min</h4>
             <table className="table border border-dark rounded-2 my-3 overflow-hidden">
                 <thead>
                     <tr>
@@ -164,6 +165,89 @@ const PricingCalls = ({ countryCode }) => {
                         })}
                 </tbody>
             </table>
+             <div className="pb-3">
+          <span className="c-fw-m click-hear cursor-pointer">Click here</span>
+          <span className="c-fw-m">
+            {" "}
+            to download the detailed network and prefix wise pricing sheet.
+          </span>
+        </div>
+
+        <div className="services w-100 rounded-2 bg-white p-4 my-4">
+          <strong className="c-fs-4 fw-semibold">Add-on services</strong>
+          <div className="row">
+            <div className="col-6">
+              <div className="my-2 c-fs-5">
+                <span className="text-success me-2 c-fs-3">
+                  <MdDone />
+                </span>
+                Call Recording
+              </div>
+              <div>
+                <span className="text-success me-2 c-fs-3">
+                  <MdDone />
+                </span>
+                Analytics
+              </div>
+            </div>
+            <div className="col-6">
+              <div className="my-2">
+                <span className="text-success me-2 c-fs-3">
+                  <MdDone />
+                </span>
+                Call Recording
+              </div>
+              <div>
+                <span className="text-success me-2 c-fs-3">
+                  <MdDone />
+                </span>
+                Add...
+              </div>
+            </div>
+          </div>
+          <div className="c-fw-m mt-3">
+            All the Add-On Services are
+            <span className="text-green c-fw-m"> FREE</span> of cost
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-dark fw-semibold my-4 rounded-1">
+          Get Started
+        </button>
+        <div>
+          <span className="fw-semibold my-3">International rate:</span>
+          <span>
+            Calls are routed through premium A-Z routes and CLI can be any valid
+            number. Calls without a CLI, with invalid CLI, with manipulated CLI,
+            with CLI originated from unidentified, closed or unallocated prefix
+            ranges, with CLI not in E.164 format, with CLI not matching ITU
+            standards might be blocked or charged at the highest price.
+          </span>
+        </div>
+        <div>
+          <span className="fw-semibold mb-3">Local Rate:</span>
+          <span>
+            {" "}
+            Calls are routed through local operators’ in-country network. Only
+            numbers on your MSG91 account can be used.
+          </span>
+        </div>
+        <div className="connect-personalized my-4">
+          <span className="talk-to-sales d-block c-fs-4 fw-medium">
+            Connect with our team for a personalized plan to meet your needs.
+          </span>
+          <button
+            type="button"
+            className="btn btn-outline-dark mt-3 mb-4 fw-semibold border border-dark border rounded-1 px-3 py-1"
+          >
+            Talk to Sales
+          </button>
+          <br />
+          <a href="#">
+            <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
+            <span className="link">Know more about Voice</span>
+          </a>
+        </div>
 
             <FaqSection faqData={faqData?.voice} />
         </>
