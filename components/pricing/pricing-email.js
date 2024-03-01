@@ -113,7 +113,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                         key={`email-card-${index}`}
                                         className={`${
                                             item.name === 'Alpha' ? 'border-2' : 'border-0'
-                                        } d-flex flex-column flex-lg-row justify-content-between card-price   p-4 bg-white rounded-2 col-lg-12`}
+                                        } d-flex flex-column flex-lg-row justify-content-between card-price align-items-end align-items-lg-end p-4 bg-white rounded-2 col-lg-12`}
                                     >
                                         <div>
                                             <div className="d-flex justify-content-between">
@@ -197,24 +197,19 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                             </div>
                                         </div>
                                         <a
-                                            href="https://control.msg91.com/signup/"
+                                            href="/signup?service=Email"
                                             target="_blank"
-                                            className="mt-auto d-lg-block d-none"
+                                            className={`btn btn-outline-dark fw-semibold rounded-1 border border-dark px-3`}
                                         >
-                                            <button
-                                                type="button"
-                                                class="btn btn-outline-dark rounded-1 fw-semibold mt-4"
-                                            >
-                                                Get Started
-                                            </button>
+                                            Get Started
                                         </a>
                                     </div>
                                 ) : (
                                     <div
                                         key={`email-card-${index}`}
                                         className={`${
-                                            item.name === 'Alpha' ? 'border-2' : 'border-0'
-                                        } card-price card  p-4 bg-white rounded-2 col-lg`}
+                                            item.name === 'Alpha' ? 'border-black' : 'border-0'
+                                        } card-price card  p-4 bg-white rounded-2 col-lg align-items-start`}
                                     >
                                         <div className="d-flex justify-content-between">
                                             <h3 className="fs-4 fw-semibold">{item.name}</h3>
@@ -263,19 +258,14 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                                 : ''}
                                         </span>
                                         <a
-                                            href="https://control.msg91.com/signup/"
-                                            target="_blank"
-                                            className="d-flex align-items-end py-4 border-bottom border-2"
+                                            href="/signup?service=Email"
+                                            target="_blank"                                            
+                                            className={`${
+                                                item.name === 'Alpha' ? 'btn-dark' : 'btn-outline-dark'
+                                            } btn fw-semibold rounded-1 border border-dark px-3 mt-4`}
                                         >
-                                            <button
-                                                type="button"
-                                                class={`${
-                                                    item.name === 'Alpha' ? 'btn-dark' : 'btn-outline-dark'
-                                                } btn  rounded-1 fw-semibold `}
-                                            >
-                                                Get Started
-                                            </button>
-                                        </a>
+                                            Get Started
+                                        </a>                                        
                                         <h3 className="c-fs-4 fw-semibold mt-4">Included</h3>
                                         <div className="c-fs-5 ">
                                             <span className="text-success prcing-check me-1">
@@ -342,14 +332,16 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                 </span>
                 <button
                     type="button"
-                    className="btn btn-outline-dark mt-3 mb-4 fw-semibold border border-dark border-2 rounded-1 px-3 py-1"
+                    data-bs-toggle="modal"
+                    data-bs-target="#sales-modal"
+                    className="btn btn-outline-dark mt-2 mb-4 c-fs-5 border border-dark rounded-1 px-3 py-1"
                 >
                     Talk to Sales
                 </button>
                 <br />
-                <a className="mt-3" href="#">
-                    <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
-                    <span className="link">Know more about Email</span>
+                <a className="more-about" href="/email"> 
+                    <img src="/img/icon/link.svg" alt="Know more" className="icon me-2" />
+                    <span>Know more about Email</span>
                 </a>
             </div>
             <FaqSection faqData={faqData?.email} />

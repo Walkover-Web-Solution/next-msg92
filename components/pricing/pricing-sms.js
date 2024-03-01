@@ -21,15 +21,12 @@ const Pricingsms = ({
     const [pricingEnv, setPricingEnv] = useState(4);
     useEffect(() => {
         setUtm();
-
     }, [pricing, originCountry, destinationCountry]);
     useEffect(() => {
-        if(process.env.PRICING_URL === 'https://test.msg91.com'){
-            setPricingEnv(4)
+        if (process.env.PRICING_URL === 'https://test.msg91.com') {
+            setPricingEnv(4);
         }
-
-    },[]);
-
+    }, []);
 
     // useEffect(() => {
     //     if (pricing[0] && pricing.length > 2) {
@@ -120,7 +117,7 @@ const Pricingsms = ({
                         </div>
                     </div>
                 )}
-                {pricing[0]  && (
+                {pricing[0] && (
                     <>
                         {pricing.length > 2 ? (
                             <>
@@ -164,12 +161,26 @@ const Pricingsms = ({
                                 <div className="d-flex align-items-end mt-4 mb-3">
                                     <p className="c-fs-2 c-fw-500">
                                         <span className="c-fs-1 fw-bold">{noOfsms.toLocaleString('en-IN')}</span>
-                                        <span className="c-fs-1 text-green fw-bold"></span>
-                                        SMS for <span className="c-fs-1 text-green fw-bold">{pricingsms} </span> +18%GST
-                                        at <span className="c-fs-1 text-green fw-bold">{ratePersms}</span>
+                                        SMS for{' '}
+                                        <span className="c-fs-1 text-green fw-bold">
+                                            {currencySymbol}
+                                            {pricingsms}{' '}
+                                        </span>{' '}
+                                        +18%GST at{' '}
+                                        <span className="c-fs-1 text-green fw-bold">
+                                            {currencySymbol}
+                                            {ratePersms}
+                                        </span>
                                         per SMS{' '}
                                     </p>
                                 </div>
+                                <button
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#sales-modal"
+                                    className="fw-semibold btn btn-dark rounded-1 py-2 px-3 mt-4 mb-3"
+                                >
+                                    Get Started
+                                </button>
                             </>
                         ) : (
                             <>
@@ -179,34 +190,42 @@ const Pricingsms = ({
                                         {currencySymbol}
                                         {pricing[0][4].rate}per SMS
                                     </h3>
-                                    <button className="btn btn-outline-dark px-5">Get Started</button>
+                                    <a
+                                        href="/signup?service=SMS"
+                                        target="_blank"
+                                        className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3`}
+                                    >
+                                        Get Started
+                                    </a>                                    
                                 </div>
                             </>
                         )}
                     </>
                 )}
-                <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#sales-modal"
-                    className="fw-semibold btn btn-dark rounded-1 py-2 px-3 mt-4 mb-3"
-                >
-                    Get Started
-                </button>
+
                 <div className="talk-to-sales connect-personalized mt-4">
                     <span className="personalized d-block c-fs-4">
-                        Connect with our team for a personalized pricing and get up to{' '}
-                        <span className="text-green c-fs-4 fw-medium">₹0.13</span> per SMS to meet your needs.
+                        Connect with our team for a personalized pricing
+                        {originCountry === 'India' && (
+                            <>
+                                {' '}
+                                and get up to <span className="text-green c-fs-4 fw-medium"> ₹0.13</span> per SMS to
+                                meet your needs.{' '}
+                            </>
+                        )}
                     </span>
                     <button
                         type="button"
-                        className="btn btn-outline-dark mt-2 mb-4 border border-dark border-2 rounded-1 fw-semibold px-3"
+                        data-bs-toggle="modal"
+                        data-bs-target="#sales-modal"
+                        className="btn btn-outline-dark mt-2 mb-4 c-fs-5 border border-dark rounded-1 px-3 py-1"
                     >
                         Talk to Sales
                     </button>
                     <br />
-                    <a className="mt-3" href="#">
-                        <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
-                        <span className="link">Know more about SMS</span>
+                    <a className="more-about" href="/sms"> 
+                        <img src="/img/icon/link.svg" alt="Know more" className="icon me-2" />
+                        <span>Know more about SMS</span>
                     </a>
                 </div>
             </div>

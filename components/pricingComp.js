@@ -87,7 +87,9 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
             fetchHelloData(currency);
         }
     }, [product, currency]);
+
     const fetchSMSData = async (currency, origin, destination) => {
+        console.log('fetchSMSData', currency, origin, destination);
         setOriginCountry(origin);
         setDestinationCountry(destination);
         amountArr = origin == 'India' && currency == 'INR' ? amountArr : ['5000'];
@@ -107,6 +109,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
             console.error('Error fetching pricing details:', error);
         }
     };
+    
     const fetchSubscription = async (currency, msId, state) => {
         try {
             changeCurrencySymbol(currency);
@@ -138,7 +141,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
     };
 
     const findCountry = async (code) => {
-        const response = await countries?.find((el) => el.sortname === code);
+        const response = await countries?.find((el) => el.sortname === code);        
         setCurrency(response?.currency);
         fetchSMSData(response?.currency, response?.name, response?.name);
 

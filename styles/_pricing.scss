@@ -1,9 +1,9 @@
 .main-container {
-    background: var(--light-grey-bg);
+    background: var(--c-light-grey);
 }
 
 #pricing-pills-tab {
-    width: 180px;
+    width: 300px;
     .side-bar-heading {
         font-size: 18px;
     }
@@ -188,8 +188,7 @@ $border-width: 2px;
 }
 
 .price-card {
-    background: var(--c-light-grey) !important;
-    text-transform: capitalize;
+    background: var(--c-light-grey) !important;    
     margin-bottom: 36px;
     .text-green {
         font-size: 32px !important;
