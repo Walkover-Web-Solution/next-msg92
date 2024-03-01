@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import countries from '@/data/countriesWIthCID.json';
-import { MdDone, MdClose, MdKeyboardArrowRight, MdAdd } from "react-icons/md";
+import { MdDone} from "react-icons/md";
 import faqData from '@/data/faq.json';
 import FaqSection from '../faqSection/faqSection';
 import { Typeahead } from 'react-bootstrap-typeahead';
@@ -195,13 +195,13 @@ const PricingCalls = ({ countryCode }) => {
                 <span className="text-success me-2 c-fs-3">
                   <MdDone />
                 </span>
-                Call Recording
+                Call Monitoring
               </div>
               <div>
                 <span className="text-success me-2 c-fs-3">
                   <MdDone />
                 </span>
-                Add...
+                Number Masking
               </div>
             </div>
           </div>
@@ -211,10 +211,12 @@ const PricingCalls = ({ countryCode }) => {
           </div>
         </div>
 
-        <button type="button" class="btn btn-dark fw-semibold my-4 rounded-1">
+        <a type="button" class="btn btn-dark fw-semibold my-4 rounded-1"
+         href="/signup?service=voice"
+         target="_blank">
           Get Started
-        </button>
-        <div>
+        </a>
+        <div className='mt-3'>
           <span className="fw-semibold my-3">International rate:</span>
           <span>
             Calls are routed through premium A-Z routes and CLI can be any valid
@@ -224,7 +226,7 @@ const PricingCalls = ({ countryCode }) => {
             standards might be blocked or charged at the highest price.
           </span>
         </div>
-        <div>
+        <div className='mt-3'>
           <span className="fw-semibold mb-3">Local Rate:</span>
           <span>
             {" "}
@@ -238,12 +240,13 @@ const PricingCalls = ({ countryCode }) => {
           </span>
           <button
             type="button"
-            className="btn btn-outline-dark mt-3 mb-4 fw-semibold border border-dark border rounded-1 px-3 py-1"
+            data-bs-toggle="modal" data-bs-target="#sales-modal"
+            className="btn btn-outline-dark mt-3 mb-5 fw-semibold border border-dark border rounded-1 px-3 py-1"
           >
             Talk to Sales
           </button>
           <br />
-          <a href="#">
+          <a className='mt-3' href="#">
             <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
             <span className="link">Know more about Voice</span>
           </a>

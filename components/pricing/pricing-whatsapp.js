@@ -99,17 +99,13 @@ const pricingwp = ({ countryCode }) => {
           <h3 className="text-start fw-bolder fs-2 text-green mb-3">
             Zero <span className="text-dark ">margin on meta price</span>
           </h3>
-          <a className="link" href="#">
-            Check meta pricing
-          </a>
+  
           <h3 className="tds fw-medium c-fs-4 mt-2 d-block">TDS and GST excluded.</h3>
-          <button
-            data-bs-toggle="modal"
-            data-bs-target="#sales-modal"
-            className=" btn btn-dark rounded-1 fw-semibold mt-3"
-          >
-            Get Started
-          </button>
+          <a type="button" class="btn btn-dark fw-semibold my-3 rounded-1"
+         href="/signup?service=whatsapp"
+         target="_blank">
+          Get Started
+        </a>
           {/* <a href="/contact-us" className="btn btn-outline-dark col-6 col-sm-5 col-md-3 mx-auto mt-3">Talk to an Expert</a> */}
         </div>
         <div className=" ">
