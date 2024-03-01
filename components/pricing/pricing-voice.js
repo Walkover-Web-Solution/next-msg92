@@ -107,7 +107,10 @@ const PricingCalls = ({ countryCode }) => {
             setLoading(false);
         }
     };
-
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "watting";
+      }
+// myFunction();
     return (
         <>
             <div className="col-3">
@@ -166,11 +169,11 @@ const PricingCalls = ({ countryCode }) => {
                 </tbody>
             </table>
              <div className="pb-3">
-          <span className="c-fw-m click-hear cursor-pointer">Click here</span>
           <span className="c-fw-m">
-            {" "}
             to download the detailed network and prefix wise pricing sheet.
+            {" "}
           </span>
+          <a onClick={myFunction} id="demo" className="c-fw-m click-hear cursor-pointer">Export</a>
         </div>
 
         <div className="services w-100 rounded-2 bg-white p-4 my-4">
