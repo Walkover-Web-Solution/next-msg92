@@ -4,16 +4,20 @@ import { MdDone} from "react-icons/md";
 import faqData from '@/data/faq.json';
 import FaqSection from '../faqSection/faqSection';
 import { Typeahead } from 'react-bootstrap-typeahead';
+import axios from 'axios';
 
 const PricingCalls = ({ countryCode }) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [loadingExport, setLoadingExport] = useState(false);
     const [error, setError] = useState(null);
     const [selectedCountry, setSelectedCountry] = useState([]);
     const [dialPlan, setDialPlan] = useState();
     const [countryData, setCountryData] = useState();
     const [currencyCode, setCurrencyCode] = useState();
     const [symbol, setSymbol] = useState();
+    const [exportClicked, setExportClicked] = useState(false);
+    const [download, setDownload] = useState(false);
 
     //set intial states
     useEffect(() => {
@@ -98,7 +102,9 @@ const PricingCalls = ({ countryCode }) => {
             if (response.ok) {
                 const data = await response.json();
                 setData(data);
+        setLoading(false);
             } else {
+                setLoading(false);
                 throw new Error('Currently we only have plan for India(91)');
             }
         } catch (error) {
@@ -107,10 +113,22 @@ const PricingCalls = ({ countryCode }) => {
             setLoading(false);
         }
     };
-    function myFunction() {
-        document.getElementById("demo").innerHTML = "watting";
+    async function myFunction() {
+      setExportClicked(true);
+      setLoadingExport(true);
+  
+      try {
+          const response = await axios.get('https://testvoice.phone91.com/public/pricing/?cid=139&dialplan_id=269');
+          console.log(response, "response");
+          setDownload(true)
+      } catch (error) {
+          console.log(e, "error in my function");
+      } finally {
+        setLoadingExport(false);
+          setExportClicked(false);
       }
-// myFunction();
+  }
+
     return (
         <>
             <div className="col-3">
@@ -168,12 +186,28 @@ const PricingCalls = ({ countryCode }) => {
                         })}
                 </tbody>
             </table>
-             <div className="pb-3">
+             {/* <div className="pb-3">
           <span className="c-fw-m">
             to download the detailed network and prefix wise pricing sheet.
             {" "}
           </span>
+{loading?  <button onClick={myFunction} id="demo" className="c-fw-m click-hear cursor-pointer">Export</button> : <button>Download</button>}
           <a onClick={myFunction} id="demo" className="c-fw-m click-hear cursor-pointer">Export</a>
+        </div> */}
+
+<div className="pb-3">
+            <span className="c-fw-m">
+                to download the detailed network and prefix wise pricing sheet.
+            </span>
+            {exportClicked ? (
+                loading ? (
+                    <a className="c-fw-m click-hear cursor-pointer">Waiting</a>
+                ) : (
+                    <a onClick={myFunction} className="c-fw-m click-hear cursor-pointer">Download</a>
+                )
+            ) : (
+                <a onClick={myFunction} className="c-fw-m click-hear cursor-pointer">Export</a>
+            )}
         </div>
 
         <div className="services w-100 rounded-2 bg-white p-4 my-4">
