@@ -27,19 +27,14 @@
 /blog /guide
 blog.msg91.com  /guide
 /in/transactional-sms/  /in/sms/
-/in/virtual-number/ /in/voice/
-https://docs.msg91.com/p/tf9GTextN/e/tWCcnGyFqX/MSG91 https://docs.msg91.com/reference/send-sms
-/communications-api/ https://docs.msg91.com/reference/send-sms
-api.msg91.com/apidoc/voicesms/send-using-draft.php  https://docs.msg91.com/reference/send-sms
+/in/virtual-number/ /in/voice
 /in/welcome/  /in
 /us/one-api/  /us/campaign
 /sg/one-api/ /sg/campaign
-/in/developers/ https://docs.msg91.com/reference/send-sms
 /in/verified-sms/ /in/sms
 /us/send-otp/ /us/otp
 /in/case-studies/ /case-studies/
 /in/contact-us/ /contact-us
-/in/voice-call-api/ https://docs.msg91.com/p/tf9GTextN/e/jpzHDPS0Ygq/MSG91
 # msg91.com/wp-content/uploads/2018/05/reseller-mock6.svg
 /in/talkcharge/ /in/pricing
 # /blog/chatbots-and-business-communication/
@@ -58,7 +53,6 @@ api.msg91.com/apidoc/voicesms/send-using-draft.php  https://docs.msg91.com/refer
 /sg/hello-features/ /sg/hello
 /views-126.html /
 /in/our-partners/ /partners-and-integrations
-/sg/voice-call-api/ https://docs.msg91.com/reference/send-voice-sms
 # checkdnd.msg91.com/features/ working fine
 /blog/13-sms-marketing-tactics/ /guide
 /kenya/bulksms.php /sms
@@ -77,7 +71,6 @@ blog1.msg91.com/  https://msg91.com/guide
 /blog/are-you-violating-trai-sms-regulations/ /guide
 # docs.msg91.com/collection/msg91-api-integration/5/send-sms/T1HW8R1O
 # msg91.com/images/add-ons/sc2.png
-/voice-call-api https://docs.msg91.com/reference/send-voice-sms
 /sg/regional-sms/ /sg/sms
 /in/loco/ /
 /sms-for-developers%22  /
@@ -85,7 +78,6 @@ blog1.msg91.com/  https://msg91.com/guide
 /blog/world-cup-fever-in-india/ /guide
 /us/case-studies/ /case-studies
 # msg91.com/wp-content/uploads/2020/07/msg91_logo.svg
-/sms-for-developers:  https://docs.msg91.com/reference/send-sms
 /in/about-us/ /about-us
 /us/transactional-sms/ /us/sms
 # msg91.com/blog/wp-content/uploads/2018/09/Cityfone_Reg_Advertorial_Aug2018_Main.jpg
@@ -183,7 +175,6 @@ support.msg91.com/users/39515833-chris  /contact-us
 /es/case-studies/zinghr /case-studies/zinghr
 /blog/msg91-your-communication-partner/feed/  /guide
 # test.panel.msg91.com/apidoc/samplecode/MSG91.postman_collection.json
-api.msg91.com/apidoc/sendotp/SendOTP.postman_collection.json  https://docs.msg91.com/reference/send-sms
 /blog/blending-sms-solutions-with-hotel-industry/ /guide
 /blog/5-exclusive-ways-to-create-a-brand-in-2013/feed/ /guide
 /blog/tag/unicode/ /guide
@@ -220,11 +211,9 @@ help.msg91.com/article/247-how-to-add-domain-for-sending-transactional-emails /h
 /sg/guide/rich-communication-service-rcs/ /sg/sms
 /ph/case-studies/mahindra-mahindra-automotive-division  /case-studies/mahindra
 /blog/tag/semrush/ /guide
-test.panel.msg91.com/apidoc/phonebook/error-code-phonebook.php https://docs.msg91.com/reference/send-sms
 /blog/merry-christmas-to-the-ardent-customers-of-msg-91/feed/ /guide
 /guide/tag/work-culture/ /guide
 /blog/stock-markets-where-secured-speed-is-the-key/feed/ /guide
-test.panel.msg91.com/apidoc/reseller/view-account-expiry-date.php https://docs.msg91.com/reference/send-sms
 /blog/tag/pre-sales/ /guide
 /blog/msg91-initiates-dialogue-on-iot-in-an-enriching-conclave/feed/ /guide
 /blog/tag/woocommerce/ /guide
@@ -237,7 +226,6 @@ test.panel.msg91.com/apidoc/reseller/view-account-expiry-date.php https://docs.m
 /404-error/ /
 /blog/tag/voice/ /guide
 /blog/tag/bulk-sms-api/ /guide
-test.panel.msg91.com/apidoc/virtual/virtual-number-balance.php  https://docs.msg91.com/reference/send-sms
 /blog/tag/cricket-mania/feed/ /guide
 /welcome/ /
 /blog/long-code-service-everything-you-wanted-to-know/amp /guide
@@ -295,7 +283,6 @@ help.msg91.com/article/104-how-to-get-bulk-sms-free-every-month-will-i-get-free-
 support.msg91.com/forums/146824-msg91-feature-and-idea-suggestion-forum/filters/my_ideas /contact-us
 /blog/delivering-remarkable-hospitality-service-by-breaking-the-taboo-of-micro-stay/feed/ /guide
 /blog/integrated-marketing-communication-strategy-part-three/feed/ /guide
-test.panel.msg91.com/apidoc/reseller/error-code-reseller.php  https://docs.msg91.com/reference/send-sms
 /blog/tag/sms-lifecycle/ /guide
 /us/case-studies/joey-rooms/feed /case-studies/joeyrooms
 signup.msg91.com/features/ /signup
@@ -339,7 +326,6 @@ signup.msg91.com/internal-communication/ /signup
 /in/gdpr/case-studies/  /gdpr
 /blog/msg91-for-magento-a-new-gift-from-our-pouch-for-the-e-commerce-platform/ /guide
 /blog/tag/content-marketing/feed/ /guide
-test.panel.msg91.com/apidoc/reseller/forget-password.php https://docs.msg91.com/reference/send-sms
 /es/case-studies/zinghr/feed /case-studies/zing
 /ph/case-studies/sankalp-india-foundation /case-studies/sankalp
 /blog/what-happened-at-mwc19/feed/ /guide
@@ -365,7 +351,6 @@ support.msg91.com/knowledgebase/articles/45812-what-is-voice-broadcasting /help
 /blog/saas-marketing-excite-your-customers/feed/ /guide
 /blog/home/page/9/ /guide
 /milkbasket/ /case-studies/milkbasket
-support.msg91.com/knowledgebase/articles/45832-do-you-provide-voice-api- https://docs.msg91.com/reference/send-voice-sms
 /developers-policy.php/ /terms-of-use
 /case-studies/cargo-exchange/ /case-studies
 help.msg91.com/article/159-module-for-number-verification-2fa /help
@@ -405,7 +390,6 @@ help.msg91.com/article/212-sendotp https://msg91.com/help/MSG91/what-is-sendotp-
 # msg91.com/case-studies/tag/promotional-sms
 /blog/i-know-what-msg91-did-last-summer/ /guide
 /blog/tag/marketing-strategy/feed/ /guide
-test.panel.msg91.com/apidoc/reseller/add-clients.php https://docs.msg91.com/reference/send-sms
 /guide/tag/startup-success-story/ /guide
 /blog/how-does-sms-gateway-work/feed/ /guide
 /ph/case-studies/leadsquared/feed /case-studies/leadsquared
@@ -446,7 +430,6 @@ support.msg91.com/users/46659352-ravi-paliwal /contact-us
 /why-get-user-consent-before-sending-sms/ /
 support.msg91.com/forums/146824-msg91-feature-and-idea-suggestion-forum/suggestions/4528506-downloading-excel-reports-by-filtering-with-date /contact-us
 /blog/tag/rcs/ /guide
-docs.msg91.com/p/tf9GTextN/e/FkKgriy4-U_/MSG91 https://docs.msg91.com/reference/send-sms
 /blog/tag/php-7/feed/ /guide
 /guide/tag/customer-satisfaction/ /guide
 /case-studies/zinghr/feed /case-studies/zing
@@ -1126,3 +1109,58 @@ https://guide.msg91.com/steps-for-dlt-process-registration/msg91.com/contact-us/
 /features-of-bulk-sms.php?ref=guide.msg91.com /guide/bulk-messaging-empowering-colleges-and-universities-ways-and-ideas
 /ixigo/?ref=guide.msg91.com /case-studies/ixigo
 /sms-in-education?ref=guide.msg91.com /guide/fusion-of-sms-marketing-with-education-industry
+
+#docs redirections
+https://docs.msg91.com/reference/overview https://docs.msg91.com/overview
+	
+https://docs.msg91.com/reference/run-campaign https://docs.msg91.com/campaign/run-campaign
+	
+https://docs.msg91.com/reference/send-sms https://docs.msg91.com/sms/send-sms
+https://docs.msg91.com/reference/add-flow https://docs.msg91.com/sms/add-flow
+https://docs.msg91.com/reference/add-template-version https://docs.msg91.com/sms/add-template-version
+https://docs.msg91.com/reference/get-template-versions https://docs.msg91.com/sms/get-template-versions
+https://docs.msg91.com/reference/mark-default https://docs.msg91.com/sms/mark-default
+https://docs.msg91.com/reference/sms-logs https://docs.msg91.com/sms/sms-logs
+https://docs.msg91.com/reference/sms-analytics https://docs.msg91.com/sms/sms-analytics
+	
+https://docs.msg91.com/reference/sendotp https://docs.msg91.com/otp/sendotp
+https://docs.msg91.com/reference/verify-otp https://docs.msg91.com/otp/verify-otp
+https://docs.msg91.com/reference/resend-otp https://docs.msg91.com/otp/resend-otp
+https://docs.msg91.com/reference/edit-otp-template https://docs.msg91.com/otp/edit-otp-template
+https://docs.msg91.com/reference/otp-analytics https://docs.msg91.com/otp/otp-analytics
+		
+https://docs.msg91.com/reference/email-validation https://docs.msg91.com/email/email-validation
+https://docs.msg91.com/reference/send-email https://docs.msg91.com/email/send-email
+https://docs.msg91.com/reference/create-new-template https://docs.msg91.com/email/create-new-template
+https://docs.msg91.com/reference/template-css-inliner https://docs.msg91.com/email/template-css-inliner
+	
+https://docs.msg91.com/reference/template-bulk https://docs.msg91.com/whatsapp/template-bulk
+https://docs.msg91.com/reference/send-message-in-text https://docs.msg91.com/whatsapp/send-message-in-text
+https://docs.msg91.com/reference/to-fetch-whatsapp-number https://docs.msg91.com/whatsapp/to-fetch-whatsapp-number
+https://docs.msg91.com/reference/get-templates https://docs.msg91.com/whatsapp/get-templates
+https://docs.msg91.com/reference/interactive-whatsapp-buttons https://docs.msg91.com/whatsapp/interactive-whatsapp-buttons
+https://docs.msg91.com/reference/interactive-whatsapp-list	
+https://docs.msg91.com/reference/single-product-catalog https://docs.msg91.com/whatsapp/single-product-catalog
+https://docs.msg91.com/reference/multiple-product-catalog https://docs.msg91.com/whatsapp/multiple-product-catalog
+	
+https://docs.msg91.com/reference/createupdate-contact https://docs.msg91.com/segmento/createupdate-contact
+https://docs.msg91.com/reference/filtersearch-contact https://docs.msg91.com/segmento/filtersearch-contact
+https://docs.msg91.com/reference/delete-bulk-contacts https://docs.msg91.com/segmento/delete-bulk-contacts
+https://docs.msg91.com/reference/get-phonebook-fields https://docs.msg91.com/segmento/get-phonebook-fields
+	
+https://docs.msg91.com/reference/send-voice-sms https://docs.msg91.com/voice/send-voice-sms
+https://docs.msg91.com/reference/execute-an-ivr-flow-to-a-number https://docs.msg91.com/voice/execute-an-ivr-flow-to-a-number
+https://docs.msg91.com/reference/click-to-call https://docs.msg91.com/voice/click-to-call
+	
+https://docs.msg91.com/reference/rcs-bulk-calendar-event https://docs.msg91.com/rcs-bulk-message/rcs-bulk-calendar-event
+https://docs.msg91.com/reference/rcs-bulk-carousel https://docs.msg91.com/rcs-bulk-message/rcs-bulk-carousel
+https://docs.msg91.com/reference/rcs-bulk-dial https://docs.msg91.com/rcs-bulk-message/rcs-bulk-dial
+https://docs.msg91.com/reference/rcs-bulk-media https://docs.msg91.com/rcs-bulk-message/rcs-bulk-media
+https://docs.msg91.com/reference/rcs-bulk-open-url https://docs.msg91.com/rcs-bulk-message/rcs-bulk-open-url
+https://docs.msg91.com/reference/rcs-bulk-text https://docs.msg91.com/rcs-bulk-message/rcs-bulk-text
+https://docs.msg91.com/reference/rcs-bulk-rich-card https://docs.msg91.com/rcs-bulk-message/rcs-bulk-rich-card
+https://docs.msg91.com/reference/rcs-bulk-share-location https://docs.msg91.com/rcs-bulk-message/rcs-bulk-share-location
+https://docs.msg91.com/reference/rcs-bulk-suggested-replies https://docs.msg91.com/rcs-bulk-message/rcs-bulk-suggested-replies
+https://docs.msg91.com/reference/rcs-bulk-template https://docs.msg91.com/rcs-bulk-message/rcs-bulk-template
+https://docs.msg91.com/reference/rcs-bulk-text https://docs.msg91.com/rcs-bulk-message/rcs-bulk-text
+https://docs.msg91.com/reference/rcs-bulk-view-location https://docs.msg91.com/rcs-bulk-message/rcs-bulk-view-location
