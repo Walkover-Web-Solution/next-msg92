@@ -211,7 +211,7 @@ const PricingCalls = ({ countryCode }) => {
           </div>
         </div>
 
-        <a type="button" class="btn btn-dark fw-semibold my-4 rounded-1"
+        <a type="button" className="btn btn-dark fw-semibold my-4 rounded-1"
          href="/signup?service=voice"
          target="_blank">
           Get Started
