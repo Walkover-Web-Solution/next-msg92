@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import countries from '@/data/countriesWIthCID.json';
-import { MdDone} from "react-icons/md";
+import { MdDone } from 'react-icons/md';
 import faqData from '@/data/faq.json';
 import FaqSection from '../faqSection/faqSection';
 import { Typeahead } from 'react-bootstrap-typeahead';
@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const PricingCalls = ({ countryCode }) => {
     const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
     const [loadingExport, setLoadingExport] = useState(false);
     const [error, setError] = useState(null);
     const [selectedCountry, setSelectedCountry] = useState([]);
@@ -24,7 +24,7 @@ const PricingCalls = ({ countryCode }) => {
         if (countryData?.length > 0) {
             setSelectedCountry(countryData.find((country) => country.country_code === countryCode));
         }
-    }, [countryData ]);
+    }, [countryData]);
 
     useEffect(() => {
         if (selectedCountry) {
@@ -86,6 +86,8 @@ const PricingCalls = ({ countryCode }) => {
         }
     };
 
+    
+
     //fetch pricing data
     useEffect(() => {
         if ((dialPlan, selectedCountry)) {
@@ -102,9 +104,7 @@ const PricingCalls = ({ countryCode }) => {
             if (response.ok) {
                 const data = await response.json();
                 setData(data);
-        setLoading(false);
             } else {
-                setLoading(false);
                 throw new Error('Currently we only have plan for India(91)');
             }
         } catch (error) {
@@ -113,22 +113,29 @@ const PricingCalls = ({ countryCode }) => {
             setLoading(false);
         }
     };
-    async function myFunction() {
-      setExportClicked(true);
-      setLoadingExport(true);
-  
-      try {
-          const response = await axios.get('https://testvoice.phone91.com/public/pricing/?cid=139&dialplan_id=269');
-          console.log(response, "response");
-          setDownload(true)
-      } catch (error) {
-          console.log(e, "error in my function");
-      } finally {
-        setLoadingExport(false);
-          setExportClicked(false);
-      }
-  }
+    async function exportPricing() {
+        setExportClicked(true);
+        setLoadingExport(true);
 
+        try {
+            const response = await axios.get('https://testvoice.phone91.com/public/pricing/?cid=139&dialplan_id=269');
+            console.log(response, 'response');
+            if(response){
+                setLoadingExport(false);
+                setDownload(true);
+            }
+        } catch (e) {
+            console.log(e, 'error in my function');
+        } finally {
+            setLoadingExport(false);
+        }
+    }
+
+    function downloadResponse(data) {
+        console.log(data);
+    }
+
+    // exportPricing();
     return (
         <>
             <div className="col-3">
@@ -186,108 +193,121 @@ const PricingCalls = ({ countryCode }) => {
                         })}
                 </tbody>
             </table>
-             {/* <div className="pb-3">
+            {/* <div className="pb-3">
           <span className="c-fw-m">
             to download the detailed network and prefix wise pricing sheet.
             {" "}
           </span>
-{loading?  <button onClick={myFunction} id="demo" className="c-fw-m click-hear cursor-pointer">Export</button> : <button>Download</button>}
-          <a onClick={myFunction} id="demo" className="c-fw-m click-hear cursor-pointer">Export</a>
+{loading?  <button onClick={exportPricing} id="demo" className="c-fw-m click-hear cursor-pointer">Export</button> : <button>Download</button>}
+          <a onClick={exportPricing} id="demo" className="c-fw-m click-hear cursor-pointer">Export</a>
         </div> */}
 
-<div className="pb-3">
-            <span className="c-fw-m">
-                to download the detailed network and prefix wise pricing sheet.
-            </span>
-            {exportClicked ? (
-                loading ? (
-                    <a className="c-fw-m click-hear cursor-pointer">Waiting</a>
-                ) : (
-                    <a onClick={myFunction} className="c-fw-m click-hear cursor-pointer">Download</a>
-                )
-            ) : (
-                <a onClick={myFunction} className="c-fw-m click-hear cursor-pointer">Export</a>
-            )}
-        </div>
+            <div className="pb-3">
+                <span className="c-fw-m">to download the detailed network and prefix wise pricing sheet.</span>
+                { 
+                    exportClicked && loadingExport && (
+                        <button className="c-fw-m click-hear cursor-pointer">
+                            Waiting
+                        </button>
+                )}
+                { exportClicked && download && !loadingExport && (
+                    <button onClick={downloadResponse} className="c-fw-m click-hear cursor-pointer">
+                        Download
+                    </button>
+                )}
+                {
+                    !download && !loadingExport && (
+                        <button onClick={exportPricing} className="c-fw-m click-hear cursor-pointer">
+                        Export
+                    </button>
+                    )
+                }
 
-        <div className="services w-100 rounded-2 bg-white p-4 my-4">
-          <strong className="c-fs-4 fw-semibold">Add-on services</strong>
-          <div className="row">
-            <div className="col-6">
-              <div className="my-2 c-fs-5">
-                <span className="text-success me-2 c-fs-3">
-                  <MdDone />
-                </span>
-                Call Recording
-              </div>
-              <div>
-                <span className="text-success me-2 c-fs-3">
-                  <MdDone />
-                </span>
-                Analytics
-              </div>
+               
+                
             </div>
-            <div className="col-6">
-              <div className="my-2">
-                <span className="text-success me-2 c-fs-3">
-                  <MdDone />
-                </span>
-                Call Monitoring
-              </div>
-              <div>
-                <span className="text-success me-2 c-fs-3">
-                  <MdDone />
-                </span>
-                Number Masking
-              </div>
-            </div>
-          </div>
-          <div className="c-fw-m mt-3">
-            All the Add-On Services are
-            <span className="text-green c-fw-m"> FREE</span> of cost
-          </div>
-        </div>
 
-        <a type="button" className="btn btn-dark fw-semibold my-4 rounded-1"
-         href="/signup?service=voice"
-         target="_blank">
-          Get Started
-        </a>
-        <div className='mt-3'>
-          <span className="fw-semibold my-3">International rate:</span>
-          <span>
-            Calls are routed through premium A-Z routes and CLI can be any valid
-            number. Calls without a CLI, with invalid CLI, with manipulated CLI,
-            with CLI originated from unidentified, closed or unallocated prefix
-            ranges, with CLI not in E.164 format, with CLI not matching ITU
-            standards might be blocked or charged at the highest price.
-          </span>
-        </div>
-        <div className='mt-3'>
-          <span className="fw-semibold mb-3">Local Rate:</span>
-          <span>
-            {" "}
-            Calls are routed through local operators’ in-country network. Only
-            numbers on your MSG91 account can be used.
-          </span>
-        </div>
-        <div className="connect-personalized my-4">
-          <span className="talk-to-sales d-block c-fs-4 fw-medium">
-            Connect with our team for a personalized plan to meet your needs.
-          </span>
-          <button
-            type="button"
-            data-bs-toggle="modal" data-bs-target="#sales-modal"
-            className="btn btn-outline-dark mt-3 mb-5 fw-semibold border border-dark border rounded-1 px-3 py-1"
-          >
-            Talk to Sales
-          </button>
-          <br />
-          <a className='mt-3' href="#">
-            <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
-            <span className="link">Know more about Voice</span>
-          </a>
-        </div>
+            <div className="services w-100 rounded-2 bg-white p-4 my-4">
+                <strong className="c-fs-4 fw-semibold">Add-on services</strong>
+                <div className="row">
+                    <div className="col-6">
+                        <div className="my-2 c-fs-5">
+                            <span className="text-success me-2 c-fs-3">
+                                <MdDone />
+                            </span>
+                            Call Recording
+                        </div>
+                        <div>
+                            <span className="text-success me-2 c-fs-3">
+                                <MdDone />
+                            </span>
+                            Analytics
+                        </div>
+                    </div>
+                    <div className="col-6">
+                        <div className="my-2">
+                            <span className="text-success me-2 c-fs-3">
+                                <MdDone />
+                            </span>
+                            Call Monitoring
+                        </div>
+                        <div>
+                            <span className="text-success me-2 c-fs-3">
+                                <MdDone />
+                            </span>
+                            Number Masking
+                        </div>
+                    </div>
+                </div>
+                <div className="c-fw-m mt-3">
+                    All the Add-On Services are
+                    <span className="text-green c-fw-m"> FREE</span> of cost
+                </div>
+            </div>
+
+            <a
+                type="button"
+                className="btn btn-dark fw-semibold my-4 rounded-1"
+                href="/signup?service=voice"
+                target="_blank"
+            >
+                Get Started
+            </a>
+            <div className="mt-3">
+                <span className="fw-semibold my-3">International rate:</span>
+                <span>
+                    Calls are routed through premium A-Z routes and CLI can be any valid number. Calls without a CLI,
+                    with invalid CLI, with manipulated CLI, with CLI originated from unidentified, closed or unallocated
+                    prefix ranges, with CLI not in E.164 format, with CLI not matching ITU standards might be blocked or
+                    charged at the highest price.
+                </span>
+            </div>
+            <div className="mt-3">
+                <span className="fw-semibold mb-3">Local Rate:</span>
+                <span>
+                    {' '}
+                    Calls are routed through local operators’ in-country network. Only numbers on your MSG91 account can
+                    be used.
+                </span>
+            </div>
+            <div className="connect-personalized my-4">
+                <span className="talk-to-sales d-block c-fs-4 fw-medium">
+                    Connect with our team for a personalized plan to meet your needs.
+                </span>
+                <button
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#sales-modal"
+                    className="btn btn-outline-dark mt-3 mb-5 fw-semibold border border-dark border rounded-1 px-3 py-1"
+                >
+                    Talk to Sales
+                </button>
+                <br />
+                <a className="mt-3" href="#">
+                    <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
+                    <span className="link">Know more about Voice</span>
+                </a>
+            </div>
 
             <FaqSection faqData={faqData?.voice} />
         </>
