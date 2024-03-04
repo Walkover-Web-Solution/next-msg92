@@ -45,7 +45,7 @@ const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }
                     </div>
                     <ProductFeatures featureData={productData?.features} />
                     <div className="container">
-                        <FaqSection faqData={faqData?.main} />
+                        <FaqSection faqData={productData?.faq} />
                     </div>
                     <Seo path={path} pageData={productData?.product} />
 
