@@ -174,13 +174,13 @@ const Pricingsms = ({
                                         per SMS{' '}
                                     </p>
                                 </div>
-                                <button
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#sales-modal"
-                                    className="fw-semibold btn btn-dark rounded-1 py-2 px-3 mt-4 mb-3"
+                                <a
+                                    href="/signup?service=SMS"
+                                    target="_blank"
+                                    className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3`}
                                 >
                                     Get Started
-                                </button>
+                                </a>
                             </>
                         ) : (
                             <>
@@ -196,7 +196,7 @@ const Pricingsms = ({
                                         className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3`}
                                     >
                                         Get Started
-                                    </a>                                    
+                                    </a>
                                 </div>
                             </>
                         )}
@@ -223,7 +223,7 @@ const Pricingsms = ({
                         Talk to Sales
                     </button>
                     <br />
-                    <a className="more-about" href="/sms"> 
+                    <a className="more-about" href="/sms">
                         <img src="/img/icon/link.svg" alt="Know more" className="icon me-2" />
                         <span>Know more about SMS</span>
                     </a>

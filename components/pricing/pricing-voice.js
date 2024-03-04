@@ -5,10 +5,11 @@ import faqData from '@/data/faq.json';
 import FaqSection from '../faqSection/faqSection';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import axios from 'axios';
+import Link from 'next/link';
 
 const PricingCalls = ({ countryCode }) => {
     const [data, setData] = useState(null);
-    // const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [loadingExport, setLoadingExport] = useState(false);
     const [error, setError] = useState(null);
     const [selectedCountry, setSelectedCountry] = useState([]);
@@ -18,6 +19,7 @@ const PricingCalls = ({ countryCode }) => {
     const [symbol, setSymbol] = useState();
     const [exportClicked, setExportClicked] = useState(false);
     const [download, setDownload] = useState(false);
+    const [downloadExport, setDownloadExport] = useState();
 
     //set intial states
     useEffect(() => {
@@ -86,8 +88,6 @@ const PricingCalls = ({ countryCode }) => {
         }
     };
 
-    
-
     //fetch pricing data
     useEffect(() => {
         if ((dialPlan, selectedCountry)) {
@@ -118,11 +118,14 @@ const PricingCalls = ({ countryCode }) => {
         setLoadingExport(true);
 
         try {
-            const response = await axios.get('https://testvoice.phone91.com/public/pricing/?cid=139&dialplan_id=269');
+            const response = await axios.get(
+                'https://testvoice.phone91.com/public/pricing/?cid=139&dialplan_id=269&export=1'
+            );
             console.log(response, 'response');
-            if(response){
+            if (response) {
                 setLoadingExport(false);
                 setDownload(true);
+                setDownloadExport(response);
             }
         } catch (e) {
             console.log(e, 'error in my function');
@@ -131,11 +134,6 @@ const PricingCalls = ({ countryCode }) => {
         }
     }
 
-    function downloadResponse(data) {
-        console.log(data);
-    }
-
-    // exportPricing();
     return (
         <>
             <div className="col-3">
@@ -185,46 +183,38 @@ const PricingCalls = ({ countryCode }) => {
                                         {data?.local_rates_max}{' '}
                                     </td>
                                     <td>
-                                        {symbol} {data?.international_rates_min} - {symbol}
-                                        {data?.international_rates_max}{' '}
+                                        {data?.international_rates_min && (
+                                            <>
+                                                {symbol} {data?.international_rates_min}
+                                            </>
+                                        )}
+                                        -
+                                        {data?.international_rates_max && (
+                                            <>
+                                                {symbol}
+                                                {data?.international_rates_max}
+                                            </>
+                                        )}
                                     </td>
                                 </tr>
                             );
                         })}
                 </tbody>
             </table>
-            {/* <div className="pb-3">
-          <span className="c-fw-m">
-            to download the detailed network and prefix wise pricing sheet.
-            {" "}
-          </span>
-{loading?  <button onClick={exportPricing} id="demo" className="c-fw-m click-hear cursor-pointer">Export</button> : <button>Download</button>}
-          <a onClick={exportPricing} id="demo" className="c-fw-m click-hear cursor-pointer">Export</a>
-        </div> */}
 
             <div className="pb-3">
-                <span className="c-fw-m">to download the detailed network and prefix wise pricing sheet.</span>
-                { 
-                    exportClicked && loadingExport && (
-                        <button className="c-fw-m click-hear cursor-pointer">
-                            Waiting
-                        </button>
+                <span className="c-fw-m">To download the detailed network and prefix wise pricing sheet.</span>
+                {exportClicked && loadingExport && <span className="">Waiting...</span>}
+                {exportClicked && download && !loadingExport && (
+                    <Link className="text-link" href={downloadExport?.data?.data?.url}>
+                        <u>Download</u>
+                    </Link>
                 )}
-                { exportClicked && download && !loadingExport && (
-                    <button onClick={downloadResponse} className="c-fw-m click-hear cursor-pointer">
-                        Download
+                {!download && !loadingExport && (
+                    <button onClick={exportPricing} className="c-fw-m p-0 border-0 text-link text-underline">
+                        <u>Export</u>
                     </button>
                 )}
-                {
-                    !download && !loadingExport && (
-                        <button onClick={exportPricing} className="c-fw-m click-hear cursor-pointer">
-                        Export
-                    </button>
-                    )
-                }
-
-               
-                
             </div>
 
             <div className="services w-100 rounded-2 bg-white p-4 my-4">
