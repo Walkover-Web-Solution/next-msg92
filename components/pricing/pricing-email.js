@@ -294,7 +294,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                                 <span className="text-success prcing-check me-1">
                                                     <MdDone />
                                                 </span>
-                                                {symbol} {symbol}
+                                                {symbol} {' '}
                                                 {symbol === '₹' &&
                                                     item.plan_services[0].service_credit.service_credit_rates[0]
                                                         .follow_up_rate}
