@@ -1,26 +1,32 @@
 import { useEffect, useState } from 'react';
 import countries from '@/data/countriesWIthCID.json';
-
+import { MdDone } from 'react-icons/md';
 import faqData from '@/data/faq.json';
 import FaqSection from '../faqSection/faqSection';
 import { Typeahead } from 'react-bootstrap-typeahead';
+import axios from 'axios';
+import Link from 'next/link';
 
 const PricingCalls = ({ countryCode }) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [loadingExport, setLoadingExport] = useState(false);
     const [error, setError] = useState(null);
     const [selectedCountry, setSelectedCountry] = useState([]);
     const [dialPlan, setDialPlan] = useState();
     const [countryData, setCountryData] = useState();
     const [currencyCode, setCurrencyCode] = useState();
     const [symbol, setSymbol] = useState();
+    const [exportClicked, setExportClicked] = useState(false);
+    const [download, setDownload] = useState(false);
+    const [downloadExport, setDownloadExport] = useState();
 
     //set intial states
     useEffect(() => {
         if (countryData?.length > 0) {
             setSelectedCountry(countryData.find((country) => country.country_code === countryCode));
         }
-    }, [countryData ]);
+    }, [countryData]);
 
     useEffect(() => {
         if (selectedCountry) {
@@ -107,6 +113,26 @@ const PricingCalls = ({ countryCode }) => {
             setLoading(false);
         }
     };
+    async function exportPricing() {
+        setExportClicked(true);
+        setLoadingExport(true);
+
+        try {
+            const response = await axios.get(
+                'https://testvoice.phone91.com/public/pricing/?cid=139&dialplan_id=269&export=1'
+            );
+            console.log(response, 'response');
+            if (response) {
+                setLoadingExport(false);
+                setDownload(true);
+                setDownloadExport(response);
+            }
+        } catch (e) {
+            console.log(e, 'error in my function');
+        } finally {
+            setLoadingExport(false);
+        }
+    }
 
     return (
         <>
@@ -136,6 +162,7 @@ const PricingCalls = ({ countryCode }) => {
                     </>
                 )}
             </div>
+            <h4 className="c-fs-4 fw-semibold mt-3">Outgoing call charges/min</h4>
             <table className="table border border-dark rounded-2 my-3 overflow-hidden">
                 <thead>
                     <tr>
@@ -156,14 +183,121 @@ const PricingCalls = ({ countryCode }) => {
                                         {data?.local_rates_max}{' '}
                                     </td>
                                     <td>
-                                        {symbol} {data?.international_rates_min} - {symbol}
-                                        {data?.international_rates_max}{' '}
+                                        {data?.international_rates_min && (
+                                            <>
+                                                {symbol} {data?.international_rates_min}
+                                            </>
+                                        )}
+                                        -
+                                        {data?.international_rates_max && (
+                                            <>
+                                                {symbol}
+                                                {data?.international_rates_max}
+                                            </>
+                                        )}
                                     </td>
                                 </tr>
                             );
                         })}
                 </tbody>
             </table>
+
+            <div className="pb-3">
+                <span className="c-fw-m">To download the detailed network and prefix wise pricing sheet.</span>
+                {exportClicked && loadingExport && <span className="">Waiting...</span>}
+                {exportClicked && download && !loadingExport && (
+                    <Link className="text-link" href={downloadExport?.data?.data?.url}>
+                        <u>Download</u>
+                    </Link>
+                )}
+                {!download && !loadingExport && (
+                    <button onClick={exportPricing} className="c-fw-m p-0 border-0 text-link text-underline">
+                        <u>Export</u>
+                    </button>
+                )}
+            </div>
+
+            <div className="services w-100 rounded-2 bg-white p-4 my-4">
+                <strong className="c-fs-4 fw-semibold">Add-on services</strong>
+                <div className="row">
+                    <div className="col-6">
+                        <div className="my-2 c-fs-5">
+                            <span className="text-success me-2 c-fs-3">
+                                <MdDone />
+                            </span>
+                            Call Recording
+                        </div>
+                        <div>
+                            <span className="text-success me-2 c-fs-3">
+                                <MdDone />
+                            </span>
+                            Analytics
+                        </div>
+                    </div>
+                    <div className="col-6">
+                        <div className="my-2">
+                            <span className="text-success me-2 c-fs-3">
+                                <MdDone />
+                            </span>
+                            Call Monitoring
+                        </div>
+                        <div>
+                            <span className="text-success me-2 c-fs-3">
+                                <MdDone />
+                            </span>
+                            Number Masking
+                        </div>
+                    </div>
+                </div>
+                <div className="c-fw-m mt-3">
+                    All the Add-On Services are
+                    <span className="text-green c-fw-m"> FREE</span> of cost
+                </div>
+            </div>
+
+            <a
+                type="button"
+                className="btn btn-dark fw-semibold my-4 rounded-1"
+                href="/signup?service=voice"
+                target="_blank"
+            >
+                Get Started
+            </a>
+            <div className="mt-3">
+                <span className="fw-semibold my-3">International rate:</span>
+                <span>
+                    Calls are routed through premium A-Z routes and CLI can be any valid number. Calls without a CLI,
+                    with invalid CLI, with manipulated CLI, with CLI originated from unidentified, closed or unallocated
+                    prefix ranges, with CLI not in E.164 format, with CLI not matching ITU standards might be blocked or
+                    charged at the highest price.
+                </span>
+            </div>
+            <div className="mt-3">
+                <span className="fw-semibold mb-3">Local Rate:</span>
+                <span>
+                    {' '}
+                    Calls are routed through local operators’ in-country network. Only numbers on your MSG91 account can
+                    be used.
+                </span>
+            </div>
+            <div className="connect-personalized my-4">
+                <span className="talk-to-sales d-block c-fs-4 fw-medium">
+                    Connect with our team for a personalized plan to meet your needs.
+                </span>
+                <button
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#sales-modal"
+                    className="btn btn-outline-dark mt-3 mb-5 fw-semibold border border-dark border rounded-1 px-3 py-1"
+                >
+                    Talk to Sales
+                </button>
+                <br />
+                <a className="mt-3" href="#">
+                    <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
+                    <span className="link">Know more about Voice</span>
+                </a>
+            </div>
 
             <FaqSection faqData={faqData?.voice} />
         </>

@@ -152,7 +152,7 @@ const Pricingotp = ({
                                     <p className="c-fs-2 c-fw-500">
                                         <span className="c-fs-1 fw-bold">{noOfOtp.toLocaleString('en-IN')}</span>
                                         <span className="c-fs-1 text-green fw-bold"></span>
-                                        OTP for <span className="c-fs-1 text-green fw-bold">{pricingOTP} </span> +18%GST
+                                        OTP for <span className="c-fs-1 text-green fw-bold">                {currencySymbol} {pricingOTP} </span> +18%GST
                                         at <span className="c-fs-1 text-green fw-bold">{ratePerOTP}</span>
                                         per OTP{' '}
                                     </p>
@@ -172,27 +172,29 @@ const Pricingotp = ({
                         )}
                     </>
                 )}
-                <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#sales-modal"
-                    className=" btn btn-dark rounded-1 py-2 px-3 mt-4 mb-3"
+                <a
+                    href="/signup?service=SendOTP"
+                    target="_blank"
+                    className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3`}
                 >
                     Get Started
-                </button>
+                </a>
                 <div className="talk-to-sales connect-personalized mt-4">
                     <span className="personalized d-block c-fs-4">
                         Connect with our team for a personalized pricing and get up to meet your needs.
                     </span>
                     <button
                         type="button"
-                        className="btn btn-outline-dark mt-2 mb-4 border border-dark border-2 rounded-1 fw-semibold px-3"
+                        data-bs-toggle="modal"
+                        data-bs-target="#sales-modal"
+                        className="btn btn-outline-dark mt-2 mb-4 c-fs-5 border border-dark rounded-1 px-3 py-1"
                     >
                         Talk to Sales
                     </button>
                     <br />
-                    <a className="mt-3" href="#">
-                        <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
-                        <span className="link">Know more about OTP</span>
+                    <a className="more-about" href="/otp"> 
+                        <img src="/img/icon/link.svg" alt="Know more" className="icon me-2" />
+                        <span>Know more about SendOTP</span>
                     </a>
                 </div>
             </div>

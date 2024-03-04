@@ -6,7 +6,6 @@ import FaqSection from '@/components/faqSection/faqSection';
 import Seo from '@/components/seoComp';
 import GetStartedSection from '@/components/getStartedSection/getStartedSection';
 const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }) => {
-    
     path = path === undefined ? 'global' : path;
 
     return (
@@ -32,7 +31,12 @@ const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }
                                     {productData?.heroData[path]?.sub}
                                 </p>
                             </div>
-                            <a href="https://control.msg91.com/signup/" className="btn btn-ft btn-dark rounded-1 c-fs-4">Get Started</a>
+                            <a
+                                href="https://control.msg91.com/signup/"
+                                className="btn btn-ft btn-dark rounded-1 c-fs-4"
+                            >
+                                Get Started
+                            </a>
                             {productData?.trustedData && <TrusedSection trustedData={productData?.trustedData} />}
                         </div>
                         <div className={`${style.heroimg} d-none d-sm-block`}>
@@ -40,7 +44,9 @@ const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }
                         </div>
                     </div>
                     <ProductFeatures featureData={productData?.features} />
-                    <FaqSection faqData={productData?.faq} />
+                    <div className="container">
+                        <FaqSection faqData={productData?.faq} />
+                    </div>
                     <Seo path={path} pageData={productData?.product} />
 
                     <GetStartedSection pricingPath={pricingPath} />
