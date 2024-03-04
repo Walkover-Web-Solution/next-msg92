@@ -28,11 +28,11 @@ const Pricingotp = ({
 
     }, [pricing, originCountry, destinationCountry]);
     useEffect(() => {
-        if(process.env.PRICING_URL === 'https://test.msg91.com'){
+        if (process.env.PRICING_URL === 'https://test.msg91.com') {
             setPricingEnv(19)
         }
 
-    },[]);
+    }, []);
     let noOfOtp = 0,
         pricingOTP = 0,
         ratePerOTP = 0;
@@ -152,7 +152,7 @@ const Pricingotp = ({
                                     <p className="c-fs-2 c-fw-500">
                                         <span className="c-fs-1 fw-bold">{noOfOtp.toLocaleString('en-IN')}</span>
                                         <span className="c-fs-1 text-green fw-bold"></span>
-                                        OTP for <span className="c-fs-1 text-green fw-bold">                {currencySymbol} {pricingOTP} </span> +18%GST
+                                        {' '}OTP for <span className="c-fs-1 text-green fw-bold">                {currencySymbol} {pricingOTP} </span> +18%GST
                                         at <span className="c-fs-1 text-green fw-bold">{ratePerOTP}</span>
                                         per OTP{' '}
                                     </p>
@@ -192,7 +192,7 @@ const Pricingotp = ({
                         Talk to Sales
                     </button>
                     <br />
-                    <a className="more-about" href="/otp"> 
+                    <a className="more-about" href="/otp">
                         <img src="/img/icon/link.svg" alt="Know more" className="icon me-2" />
                         <span>Know more about SendOTP</span>
                     </a>

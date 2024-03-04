@@ -239,10 +239,10 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
 
                             <MdExpandMore />
                         </a>
-                        <ul className="dropdown-menu">
+                        <ul className="dropdown-menu pt-0">
                             {productPricingData.map((productData, index) =>
                                 productData.type === 'heading' ? (
-                                    <li className="c-fw-m c-fs-5 mt-2 p-2">{productData.heading}</li>
+                                    <li className="c-fw-m c-fs-5  p-2">{productData.heading}</li>
                                 ) : (
                                     <li>
                                         <Link
@@ -280,10 +280,10 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                             )}
                         </ul>
                     </div>
-                    <div className=" d-none d-md-flex flex-column gap-2 align-items-start" id="pricing-pills-tab">
+                    <div className=" d-none d-md-flex flex-column gap-2 align-items-start mt-4" id="pricing-pills-tab">
                         {productPricingData.map((productData, index) =>
                             productData.type === 'heading' ? (
-                                <h1 className="c-fw-m fs-6 mt-2 p-2">{productData.heading}</h1>
+                                <h1 className="c-fw-m fs-6  p-2">{productData.heading}</h1>
                             ) : (
                                 <Link
                                     key={index}
