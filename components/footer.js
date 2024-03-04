@@ -82,7 +82,7 @@ const Footer = ({path, year}) => {
                   FAQ
                 </a>
                 <a
-                  href="https://docs.msg91.com/reference/send-sms"
+                  href="https://docs.msg91.com/overview"
                   target="_blank"
                   className=" c-link-underline c-fs-5 mt-2 c-fw-t"
                 >

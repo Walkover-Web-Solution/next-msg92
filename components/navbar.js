@@ -141,7 +141,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
           <div className=" d-flex gap-4 gap-lg-4 gap-xl-5 w-nav-menu align-items-center justify-content-end">
             <Link
               className="nav-link menu-opt text-dark"
-              href="https://docs.msg91.com/reference/overview"
+              href="https://docs.msg91.com/overview"
               target="_blank"
               id="apidocs-link"
             >
