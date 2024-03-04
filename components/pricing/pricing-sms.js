@@ -161,7 +161,7 @@ const Pricingsms = ({
                                 <div className="d-flex align-items-end mt-4 mb-3">
                                     <p className="c-fs-2 c-fw-500">
                                         <span className="c-fs-1 fw-bold">{noOfsms.toLocaleString('en-IN')}</span>
-                                        SMS for{' '}
+                                        {' '}SMS for{' '}
                                         <span className="c-fs-1 text-green fw-bold">
                                             {currencySymbol}
                                             {pricingsms}{' '}

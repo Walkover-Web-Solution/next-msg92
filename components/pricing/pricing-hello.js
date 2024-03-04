@@ -91,7 +91,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                                           </span>
                                       )}
                                   </div>
-                                  <h5 className="mt-2 c-fs-2 text-green">
+                                  <h5 className="mt-2 c-fs-2 text-green fw-bold">
                                       {symbol}
 
                                       {symbol === '₹' && (

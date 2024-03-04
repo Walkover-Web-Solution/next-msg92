@@ -18,7 +18,7 @@ const pricingOtpWidget = () => {
     </div>
     <a className="more-about" href="/otp"> 
       <img src="/img/icon/link.svg" alt="Know more" className="icon me-2" />
-      <span>Know more about OTP</span>
+      <span>Know more about OTP widget/SDK</span>
     </a>
           <FaqSection faqData={faqData?.otp}/>
   </>;
