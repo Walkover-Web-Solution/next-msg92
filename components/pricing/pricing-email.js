@@ -106,6 +106,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
             <div className="card-wrapper row d-flex w-100 py-4">
                 {subscriptionEmail &&
                     subscriptionEmail.map((item, index) => {
+                        console.log(item);
                         return (
                             <>
                                 {item.name === 'Free' ? (
@@ -160,42 +161,96 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                             </button>
                                         </a>
                                         <div className="d-flex d-lg-none border-bottom w-100 "></div>
-                                        <div className='d-flex flex-column gap-2'>
-                                            {' '}
-                                            <h3 className="c-fs-4 fw-semibold mt-4">Included</h3>
+                                        <div className="d-flex flex-column gap-2">
+                                            <h3 className="c-fs-4 fw-semibold ">Included</h3>
                                             <div className="c-fs-5 ">
-                                                <span className="text-success prcing-check me-1">
-                                                    <MdDone />
-                                                </span>
-                                                {numberWithCommas(item.plan_services[0].service_credit.free_credits)}{' '}
-                                                Emails
+                                                {item.plan_services[0].service_credit.service_credit_rates[2]
+                                                    .free_credits == 0 ? (
+                                                    <span className="text-danger prcing-check me-1">
+                                                        <MdClose />
+                                                    </span>
+                                                ) : (
+                                                    <span className="text-success prcing-check me-1">
+                                                        <MdDone />
+                                                    </span>
+                                                )}{' '}
+                                                {numberWithCommas(
+                                                    item.plan_services[0].service_credit.service_credit_rates[2]
+                                                        .free_credits
+                                                )}{' '}
+                                                {item.plan_services[0].service_credit.service.name}{' '}
                                             </div>
                                             <div className="c-fs-5 ">
-                                                <span className="text-danger prcing-check me-1">
-                                                    <MdClose />
-                                                </span>
-                                                No Email Validations
+                                                {item.plan_services[1].service_credit.service_credit_rates[0]
+                                                    .free_credits == 0 ? (
+                                                    <span className="text-danger prcing-check me-1">
+                                                        <MdClose />
+                                                    </span>
+                                                ) : (
+                                                    <span className="text-success prcing-check me-1">
+                                                        <MdDone />
+                                                    </span>
+                                                )}
+                                                {numberWithCommas(
+                                                    item.plan_services[1].service_credit.service_credit_rates[0]
+                                                        .free_credits
+                                                )}{' '}
+                                                {item.plan_services[1].service_credit.service.name}
                                             </div>
                                         </div>
-                                        <div className='d-flex flex-column gap-2'>
-                                            <h3 className="c-fs-4 fw-semibold mt-4">Extra @</h3>
+                                        <div className="d-flex flex-column gap-2">
+                                            <h3 className="c-fs-4 fw-semibold ">Extra @</h3>
                                             <div className="c-fs-5 ">
-                                                <span className="text-danger prcing-check me-1">
-                                                    <MdClose />
-                                                </span>
-                                                No Email
+                                                {item.plan_services[0].service_credit.service_credit_rates[0]
+                                                    .follow_up_rate == 0 ? (
+                                                    <span className="text-danger prcing-check me-1">
+                                                        <MdClose />
+                                                    </span>
+                                                ) : (
+                                                    <span className="text-success prcing-check me-1">
+                                                        <MdDone />
+                                                    </span>
+                                                )}
+                                                {symbol}{' '}
+                                                {symbol === '₹' &&
+                                                    item.plan_services[0].service_credit.service_credit_rates[0]
+                                                        .follow_up_rate}
+                                                {symbol === '$' &&
+                                                    item.plan_services[0].service_credit.service_credit_rates[1]
+                                                        .follow_up_rate}
+                                                {symbol === '£' &&
+                                                    item.plan_services[0].service_credit.service_credit_rates[2]
+                                                        .follow_up_rate}
+                                                {' per'} {item.plan_services[0].service_credit.service.name}
                                             </div>
                                             <div className="c-fs-5 ">
-                                                <span className="text-danger prcing-check me-1">
-                                                    <MdClose />
-                                                </span>
-                                                No Email Validation
+                                                {item.plan_services[1].service_credit.service_credit_rates[0]
+                                                    .follow_up_rate == 0 ? (
+                                                    <span className="text-danger prcing-check me-1">
+                                                        <MdClose />
+                                                    </span>
+                                                ) : (
+                                                    <span className="text-success prcing-check me-1">
+                                                        <MdDone />
+                                                    </span>
+                                                )}
+                                                {symbol}{' '}
+                                                {symbol === '₹' &&
+                                                    item.plan_services[1].service_credit.service_credit_rates[0]
+                                                        .follow_up_rate}
+                                                {symbol === '$' &&
+                                                    item.plan_services[1].service_credit.service_credit_rates[1]
+                                                        .follow_up_rate}
+                                                {symbol === '£' &&
+                                                    item.plan_services[1].service_credit.service_credit_rates[2]
+                                                        .follow_up_rate}{' '}
+                                                per Email Validation
                                             </div>
                                         </div>
                                         <a
                                             href="/signup?service=Email"
                                             target="_blank"
-                                            className='btn btn-outline-dark fw-semibold rounded-1 border border-dark px-3 d-lg-flex d-none'
+                                            className="btn btn-outline-dark fw-semibold rounded-1 border border-dark px-3 d-lg-flex d-none"
                                         >
                                             Get Started
                                         </a>
@@ -265,62 +320,159 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                             Get Started
                                         </a>
                                         <div className="border-bottom w-100 "></div>
-                                        <div className='d-flex flex-column gap-2'>
+                                        <div className="d-flex flex-column gap-2">
                                             <h3 className="c-fs-4 fw-semibold ">Included</h3>
                                             <div className="c-fs-5 ">
-                                                <span className="text-success prcing-check me-1">
-                                                    <MdDone />
-                                                </span>{' '}
-                                                {numberWithCommas(
-                                                    item.plan_services[0].service_credit.service_credit_rates[2]
-                                                        .free_credits
-                                                )}{' '}
+                                                {(() => {
+                                                    let i;
+                                                    switch (symbol) {
+                                                        case '₹':
+                                                            i = 0;
+                                                            break;
+                                                        case '$':
+                                                            i = 1;
+                                                            break;
+                                                        case '£':
+                                                            i = 2;
+                                                            break;
+                                                        default:
+                                                            return null;
+                                                    }
+                                                    const freeCredits =
+                                                        item.plan_services[0].service_credit.service_credit_rates[i]
+                                                            .free_credits;
+                                                    return freeCredits === 0 ? (
+                                                        <>
+                                                            <span className="text-danger prcing-check me-1">
+                                                                <MdClose />
+                                                            </span>
+                                                            No
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <span className="text-success prcing-check me-1">
+                                                                <MdDone />
+                                                            </span>
+                                                            {numberWithCommas(freeCredits)}
+                                                        </>
+                                                    );
+                                                })()}{' '}
                                                 {item.plan_services[0].service_credit.service.name}{' '}
                                             </div>
                                             <div className="c-fs-5 ">
-                                                <span className="text-success prcing-check me-1">
-                                                    <MdDone />
-                                                </span>
-                                                {numberWithCommas(
-                                                    item.plan_services[1].service_credit.service_credit_rates[0]
-                                                        .free_credits
-                                                )}{' '}
-                                                {item.plan_services[1].service_credit.service.name}
+                                                {(() => {
+                                                    let i;
+                                                    switch (symbol) {
+                                                        case '₹':
+                                                            i = 0;
+                                                            break;
+                                                        case '$':
+                                                            i = 1;
+                                                            break;
+                                                        case '£':
+                                                            i = 2;
+                                                            break;
+                                                        default:
+                                                            return null;
+                                                    }
+                                                    const freeCredits =
+                                                        item.plan_services[1].service_credit.service_credit_rates[i]
+                                                            .free_credits;
+                                                    return freeCredits === 0 ? (
+                                                        <>
+                                                            <span className="text-danger prcing-check me-1">
+                                                                <MdClose />
+                                                            </span>
+                                                            No
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <span className="text-success prcing-check me-1">
+                                                                <MdDone />
+                                                            </span>
+                                                            {numberWithCommas(freeCredits)}
+                                                        </>
+                                                    );
+                                                })()}{' '}
+                                                {item.plan_services[1].service_credit.service.name}{' '}
                                             </div>
                                         </div>
-                                        <div className='d-flex flex-column gap-2'>
+                                        <div className="d-flex flex-column gap-2">
                                             <h3 className="c-fs-4 fw-semibold ">Extra @</h3>
                                             <div className="c-fs-5 ">
-                                                <span className="text-success prcing-check me-1">
-                                                    <MdDone />
-                                                </span>
-                                                {symbol} {' '}
-                                                {symbol === '₹' &&
-                                                    item.plan_services[0].service_credit.service_credit_rates[0]
-                                                        .follow_up_rate}
-                                                {symbol === '$' &&
-                                                    item.plan_services[0].service_credit.service_credit_rates[1]
-                                                        .follow_up_rate}
-                                                {symbol === '£' &&
-                                                    item.plan_services[0].service_credit.service_credit_rates[2]
-                                                        .follow_up_rate}
+                                                {(() => {
+                                                    let i;
+                                                    switch (symbol) {
+                                                        case '₹':
+                                                            i = 0;
+                                                            break;
+                                                        case '$':
+                                                            i = 1;
+                                                            break;
+                                                        case '£':
+                                                            i = 2;
+                                                            break;
+                                                        default:
+                                                            return null;
+                                                    }
+                                                    const freeCredits =
+                                                        item.plan_services[0].service_credit.service_credit_rates[i]
+                                                            .follow_up_rate;
+                                                    return freeCredits === 0 ? (
+                                                        <>
+                                                            <span className="text-danger prcing-check me-1">
+                                                                <MdClose />
+                                                            </span>
+                                                            No
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <span className="text-success prcing-check me-1">
+                                                                <MdDone />
+                                                            </span>
+                                                            {symbol} {numberWithCommas(freeCredits)}
+                                                        </>
+                                                    );
+                                                })()}
                                                 {' per'} {item.plan_services[0].service_credit.service.name}
                                             </div>
+
                                             <div className="c-fs-5 ">
-                                                <span className="text-success prcing-check me-1">
-                                                    <MdDone />
-                                                </span>
-                                                {symbol}{' '}
-                                                {symbol === '₹' &&
-                                                    item.plan_services[1].service_credit.service_credit_rates[0]
-                                                        .follow_up_rate}
-                                                {symbol === '$' &&
-                                                    item.plan_services[1].service_credit.service_credit_rates[1]
-                                                        .follow_up_rate}
-                                                {symbol === '£' &&
-                                                    item.plan_services[1].service_credit.service_credit_rates[2]
-                                                        .follow_up_rate}{' '}
-                                                per Email Validation
+                                                {(() => {
+                                                    let i;
+                                                    switch (symbol) {
+                                                        case '₹':
+                                                            i = 0;
+                                                            break;
+                                                        case '$':
+                                                            i = 1;
+                                                            break;
+                                                        case '£':
+                                                            i = 2;
+                                                            break;
+                                                        default:
+                                                            return null;
+                                                    }
+                                                    const freeCredits =
+                                                        item.plan_services[1].service_credit.service_credit_rates[i]
+                                                            .follow_up_rate;
+                                                    return freeCredits === 0 ? (
+                                                        <>
+                                                            <span className="text-danger prcing-check me-1">
+                                                                <MdClose />
+                                                            </span>
+                                                            No
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <span className="text-success prcing-check me-1">
+                                                                <MdDone />
+                                                            </span>
+                                                            {symbol} {numberWithCommas(freeCredits)}
+                                                        </>
+                                                    );
+                                                })()}
+                                                {' per'} {item.plan_services[1].service_credit.service.name}
                                             </div>
                                         </div>
                                     </div>
