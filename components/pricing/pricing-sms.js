@@ -19,6 +19,7 @@ const Pricingsms = ({
 }) => {
     const [sliderValue, setSliderValue] = useState(47);
     const [pricingEnv, setPricingEnv] = useState(4);
+    const [totalNoOfSmsArray, setTotalNoOfSmsArray] = useState([]);
     useEffect(() => {
         setUtm();
     }, [pricing, originCountry, destinationCountry]);
@@ -28,29 +29,21 @@ const Pricingsms = ({
         }
     }, []);
 
-    // useEffect(() => {
-    //     if (pricing[0] && pricing.length > 2) {
-    //         const slider = document.getElementById('pricingDrag');
-    //         const handleChange = (evt) => {
-    //             setSliderValue(evt.detail.value);
-    //         };
-    //         slider.addEventListener('change', handleChange);
-    //         slider.value = sliderValue;
-    //         return () => {
-    //             slider.removeEventListener('change', handleChange);
-    //         };
-    //     }
-    // }, []);
+    useEffect(() => {
+        if (pricing.length > 0) {
+            setTotalNoOfSmsArray(pricing.map((item) => item[pricingEnv]['totalNoOfSms']).sort((a, b) => a - b));
+        }
+    }, [pricing]);
 
     let noOfsms = 0,
         pricingsms = 0,
         ratePersms = 0;
 
     if (pricing[0] && pricing.length > 2) {
-        let arrayOfPrices = amountArr.slice();
-        arrayOfPrices.unshift('-94');
+        let arrayOfPrices = totalNoOfSmsArray.slice();
+        arrayOfPrices.unshift('-36');
 
-        const lenAmountArr = amountArr.length;
+        const lenAmountArr = totalNoOfSmsArray.length;
         const widthOfSection = 100 / lenAmountArr;
         const noOfSection = Math.floor(sliderValue / widthOfSection);
         if (pricing[0]) {
@@ -121,10 +114,10 @@ const Pricingsms = ({
                     <>
                         {pricing.length > 2 ? (
                             <>
-                                <div className="d-flex flex-column gap-3 align-items center mt-3">
+                                <div className="d-flex flex-column gap-3 align-items center mt-3 p-4 bg-white rounded ">
                                     <div className="text-center text-dark c-fw-m">Number of SMS</div>
                                     <div className=" d-none d-md-flex">
-                                        {amountArr.map((amount, index) => {
+                                        {totalNoOfSmsArray.map((amount, index) => {
                                             return (
                                                 <div className="text-end col c-fs-5" key={index}>
                                                     {amount}
@@ -134,7 +127,9 @@ const Pricingsms = ({
                                     </div>
                                     <div className="d-flex d-md-none">
                                         <div className="text-start col c-fs-5">0</div>
-                                        <div className="text-end col c-fs-5">{amountArr[amountArr.length - 1]}</div>
+                                        <div className="text-end col c-fs-5">
+                                            {totalNoOfSmsArray[totalNoOfSmsArray.length - 1]}
+                                        </div>
                                     </div>
 
                                     <input
@@ -160,8 +155,8 @@ const Pricingsms = ({
                                 </div>
                                 <div className="d-flex align-items-end mt-4 mb-3">
                                     <p className="c-fs-2 c-fw-500">
-                                        <span className="c-fs-1 fw-bold">{noOfsms.toLocaleString('en-IN')}</span>
-                                        {' '}SMS for{' '}
+                                        <span className="c-fs-1 fw-bold">{noOfsms.toLocaleString('en-IN')}</span> SMS
+                                        for{' '}
                                         <span className="c-fs-1 text-green fw-bold">
                                             {currencySymbol}
                                             {pricingsms}{' '}
@@ -193,7 +188,7 @@ const Pricingsms = ({
                                     <a
                                         href="/signup?service=SMS"
                                         target="_blank"
-                                        className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3`}
+                                        className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3 btn-ft`}
                                     >
                                         Get Started
                                     </a>

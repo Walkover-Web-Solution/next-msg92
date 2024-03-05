@@ -133,7 +133,6 @@ const PricingCalls = ({ countryCode }) => {
             setLoadingExport(false);
         }
     }
-
     return (
         <>
             <div className="col-3">
@@ -142,17 +141,17 @@ const PricingCalls = ({ countryCode }) => {
                         <Typeahead
                             className="col c-fs-6"
                             id="country"
-                            placeholder={selectedCountry?.name}
+                            placeholder='Select a country'
                             labelKey="name"
                             options={countryData}
                             clearButton
                             inputProps={{
                                 autoComplete: 'off',
                             }}
+  
                             onChange={(selected) => {
                                 if (selected[0]) {
                                     setSelectedCountry(selected[0]);
-
                                     setCurrencyCode(
                                         countries.find((country) => country.name === selected[0]?.name)?.currency
                                     );

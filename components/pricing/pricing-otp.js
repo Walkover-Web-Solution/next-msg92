@@ -23,6 +23,8 @@ const Pricingotp = ({
     }, [pricing, originCountry, destinationCountry]);
     const [sliderValue, setSliderValue] = useState(47);
     const [pricingEnv, setPricingEnv] = useState(106);
+    const [totalNoOfSmsArray, setTotalNoOfSmsArray] = useState([]);
+
     useEffect(() => {
         setUtm();
 
@@ -33,15 +35,23 @@ const Pricingotp = ({
         }
 
     }, []);
+
+    useEffect(() => {
+        if (pricing.length > 0) {
+            setTotalNoOfSmsArray(pricing.map((item) => item[pricingEnv]['totalNoOfSms']).sort((a, b) => a - b));
+        }
+    }, [pricing]);
+
+
     let noOfOtp = 0,
         pricingOTP = 0,
         ratePerOTP = 0;
 
     if (pricing[0] && pricing.length > 2) {
-        let arrayOfPrices = amountArr.slice();
-        arrayOfPrices.unshift('-94');
+        let arrayOfPrices = totalNoOfSmsArray.slice();
+        arrayOfPrices.unshift('-36');
 
-        const lenAmountArr = amountArr.length;
+        const lenAmountArr = totalNoOfSmsArray.length;
         const widthOfSection = 100 / lenAmountArr;
         const noOfSection = Math.floor(sliderValue / widthOfSection);
         if (pricing[0]) {
@@ -67,7 +77,7 @@ const Pricingotp = ({
     }
     return (
         <>
-            <div>
+            <div className='d-flex flex-column gap-5'>
                 {originCountry?.length >= 1 && (
                     <div className="d-flex flex-column flex-lg-row align-items-center  gap-4 ">
                         <span className="Send-otp c-fw-m ">Send OTP from</span>
@@ -112,10 +122,10 @@ const Pricingotp = ({
                     <>
                         {pricing.length > 2 ? (
                             <>
-                                <div className="d-flex flex-column gap-3 align-items center mt-3">
+                                <div className="d-flex flex-column gap-3 align-items center p-4 bg-white rounded">
                                     <div className="text-center text-dark c-fw-m">Number of OTP</div>
                                     <div className=" d-none d-md-flex">
-                                        {amountArr.map((amount, index) => {
+                                        {totalNoOfSmsArray.map((amount, index) => {
                                             return (
                                                 <div className="text-end col c-fs-5" key={index}>
                                                     {amount}
@@ -125,7 +135,7 @@ const Pricingotp = ({
                                     </div>
                                     <div className="d-flex d-md-none">
                                         <div className="text-start col c-fs-5">0</div>
-                                        <div className="text-end col c-fs-5">{amountArr[amountArr.length - 1]}</div>
+                                        <div className="text-end col c-fs-5">{totalNoOfSmsArray[totalNoOfSmsArray.length - 1]}</div>
                                     </div>
 
                                     <input
@@ -148,7 +158,7 @@ const Pricingotp = ({
                                     </div>
                                     <div className="text-center text-dark c-fw-m">Cost per OTP</div>
                                 </div>
-                                <div className="d-flex align-items-end mt-4 mb-3">
+                                <div className="d-flex align-items-end ">
                                     <p className="c-fs-2 c-fw-500">
                                         <span className="c-fs-1 fw-bold">{noOfOtp.toLocaleString('en-IN')}</span>
                                         <span className="c-fs-1 text-green fw-bold"></span>
@@ -160,7 +170,7 @@ const Pricingotp = ({
                             </>
                         ) : (
                             <>
-                                <div className="content-fit bg-white btn-ft d-flex flex-column gap-5 border rounded p-4 border-2 mt-4 align-items-center">
+                                <div className="content-fit bg-white btn-ft d-flex flex-column gap-5 border rounded p-4 border-2 align-items-center">
                                     <h3 className="c-fs-4">SMS Pricing</h3>
                                     <h3 className="text-green c-fs-2">
                                         {currencySymbol}
@@ -175,11 +185,11 @@ const Pricingotp = ({
                 <a
                     href="/signup?service=SendOTP"
                     target="_blank"
-                    className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3`}
+                    className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3 btn-ft `}
                 >
                     Get Started
                 </a>
-                <div className="talk-to-sales connect-personalized mt-4">
+                <div className="talk-to-sales connect-personalized ">
                     <span className="personalized d-block c-fs-4">
                         Connect with our team for a personalized pricing and get up to meet your needs.
                     </span>
