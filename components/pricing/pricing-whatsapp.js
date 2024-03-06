@@ -228,7 +228,7 @@ const pricingwp = ({ countryCode }) => {
             ))}
           </tbody>
         </table>
-        <a className="more-about" href="#">
+        <a className="more-about" href="/whatsapp">
           <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
           <span>Know more about WhatsApp</span>
         </a>

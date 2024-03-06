@@ -19,7 +19,7 @@ const PricingCalls = ({ countryCode }) => {
     const [symbol, setSymbol] = useState();
     const [exportClicked, setExportClicked] = useState(false);
     const [download, setDownload] = useState(false);
-    const [downloadExport, setDownloadExport] = useState();
+    const apiUrl = 'https://testvoice.phone91.com'
 
     //set intial states
     useEffect(() => {
@@ -29,6 +29,7 @@ const PricingCalls = ({ countryCode }) => {
     }, [countryData]);
 
     useEffect(() => {
+        setDownload(false);
         if (selectedCountry) {
             setCurrencyCode(countries.find((country) => country.sortname === selectedCountry?.country_code)?.currency);
         }
@@ -41,7 +42,7 @@ const PricingCalls = ({ countryCode }) => {
     const fetchCountryData = async () => {
         setLoading(true);
         try {
-            const response = await fetch(`https://testvoice.phone91.com/public/country/`);
+            const response = await fetch(`${apiUrl}/public/country/`);
             if (response.ok) {
                 const data = await response.json();
                 setCountryData(data);
@@ -72,7 +73,7 @@ const PricingCalls = ({ countryCode }) => {
         setLoading(true);
         try {
             const response = await fetch(
-                `https://testvoice.phone91.com/public/dialplanPricing/?currency=${currencyCode}`
+                `${apiUrl}/public/dialplanPricing/?currency=${currencyCode}`
             );
             if (response.ok) {
                 const data = await response.json();
@@ -97,9 +98,10 @@ const PricingCalls = ({ countryCode }) => {
 
     const fetchData = async (selectedCountry, dialPlan) => {
         setLoading(true);
+
         try {
             const response = await fetch(
-                `https://testvoice.phone91.com/public/pricing/?cid=${selectedCountry?.id}&dialplan_id=${dialPlan}`
+                `${apiUrl}/public/pricing/?cid=${selectedCountry?.id}&dialplan_id=${dialPlan}`
             );
             if (response.ok) {
                 const data = await response.json();
@@ -119,13 +121,14 @@ const PricingCalls = ({ countryCode }) => {
 
         try {
             const response = await axios.get(
-                'https://testvoice.phone91.com/public/pricing/?cid=139&dialplan_id=269&export=1'
+                `${apiUrl}/public/pricing/?cid=${selectedCountry?.id}&dialplan_id=${dialPlan}&export=1`
             );
-            console.log(response, 'response');
             if (response) {
                 setLoadingExport(false);
                 setDownload(true);
-                setDownloadExport(response);
+                if(response?.data?.data?.url) {
+                    window.location.href = response.data.data.url;
+                }
             }
         } catch (e) {
             console.log(e, 'error in my function');
@@ -133,7 +136,16 @@ const PricingCalls = ({ countryCode }) => {
             setLoadingExport(false);
         }
     }
+    const [defaultSelectedCountry, setDefaultSelectedCountry] = useState([]);
 
+    useEffect(() => {
+        if (countryData && selectedCountry) {
+            const defaultCountry = countryData.find((item) => item.name === selectedCountry.name);
+            if (defaultCountry) {
+                setDefaultSelectedCountry([defaultCountry]);
+            }
+        }
+    }, [countryData, selectedCountry]);
     return (
         <>
             <div className="col-3">
@@ -142,17 +154,17 @@ const PricingCalls = ({ countryCode }) => {
                         <Typeahead
                             className="col c-fs-6"
                             id="country"
-                            placeholder={selectedCountry?.name}
+                            placeholder="Select a country"
                             labelKey="name"
                             options={countryData}
                             clearButton
+                            {...(selectedCountry ? { defaultSelected: defaultSelectedCountry } : {})}
                             inputProps={{
                                 autoComplete: 'off',
                             }}
                             onChange={(selected) => {
                                 if (selected[0]) {
                                     setSelectedCountry(selected[0]);
-
                                     setCurrencyCode(
                                         countries.find((country) => country.name === selected[0]?.name)?.currency
                                     );
@@ -162,60 +174,59 @@ const PricingCalls = ({ countryCode }) => {
                     </>
                 )}
             </div>
-            <h4 className="c-fs-4 fw-semibold mt-3">Outgoing call charges/min</h4>
-            <table className="table border border-dark rounded-2 my-3 overflow-hidden">
-                <thead>
-                    <tr>
-                        <th className="border-bottom border-dark">Recipient’s Network</th>
-                        <th className="border-bottom border-dark">Local rates</th>
-                        <th className="border-bottom border-dark">International rates</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data &&
-                        data?.data.map((data, index) => {
-                            return (
-                                <tr key={index}>
-                                    <td>{data?.network}</td>
-                                    <td>
-                                        {symbol}
-                                        {data?.local_rates_min} - {symbol}
-                                        {data?.local_rates_max}{' '}
-                                    </td>
-                                    <td>
-                                        {data?.international_rates_min && (
-                                            <>
-                                                {symbol} {data?.international_rates_min}
-                                            </>
-                                        )}
-                                        -
-                                        {data?.international_rates_max && (
-                                            <>
+            {data?.data?.length > 0 && (
+                <div>
+                    <h4 className="c-fs-4 fw-semibold mt-3">Outgoing call charges/min</h4>
+                    <table className="table border border-dark rounded-2 my-3 overflow-hidden">
+                        <thead>
+                            <tr>
+                                <th className="border-bottom border-dark">Recipient’s Network</th>
+                                <th className="border-bottom border-dark">Local rates</th>
+                                <th className="border-bottom border-dark">International rates</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data &&
+                                data?.data.map((data, index) => {
+                                    return (
+                                        <tr key={index}>
+                                            <td>{data?.network}</td>
+                                            <td>
                                                 {symbol}
-                                                {data?.international_rates_max}
-                                            </>
-                                        )}
-                                    </td>
-                                </tr>
-                            );
-                        })}
-                </tbody>
-            </table>
-
-            <div className="pb-3">
-                <span className="c-fw-m">To download the detailed network and prefix wise pricing sheet.</span>
-                {exportClicked && loadingExport && <span className="">Waiting...</span>}
-                {exportClicked && download && !loadingExport && (
-                    <Link className="text-link" href={downloadExport?.data?.data?.url}>
-                        <u>Download</u>
-                    </Link>
-                )}
-                {!download && !loadingExport && (
-                    <button onClick={exportPricing} className="c-fw-m p-0 border-0 text-link text-underline">
-                        <u>Export</u>
-                    </button>
-                )}
-            </div>
+                                                {data?.local_rates_min} - {symbol}
+                                                {data?.local_rates_max}{' '}
+                                            </td>
+                                            <td>
+                                                {data?.international_rates_min && (
+                                                    <>
+                                                        {symbol} {data?.international_rates_min}
+                                                    </>
+                                                )}
+                                                -
+                                                {data?.international_rates_max && (
+                                                    <>
+                                                        {symbol}
+                                                        {data?.international_rates_max}
+                                                    </>
+                                                )}
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
+                        </tbody>
+                    </table>
+                    <div className="pb-3">
+                        <span className="c-fw-m">To download the detailed network and prefix wise pricing sheet. </span>
+                        {!loadingExport && (
+                            <button onClick={exportPricing} className="c-fw-m p-0 border-0 text-link text-underline">
+                                <u>Export</u>
+                            </button>
+                        )}
+                         { loadingExport && <span className="">Waiting...</span>}
+                
+                    </div>
+                </div>
+            )}
 
             <div className="services w-100 rounded-2 bg-white p-4 my-4">
                 <strong className="c-fs-4 fw-semibold">Add-on services</strong>
@@ -254,32 +265,36 @@ const PricingCalls = ({ countryCode }) => {
                     <span className="text-green c-fw-m"> FREE</span> of cost
                 </div>
             </div>
+            {data?.data?.length > 0 && (
+                <>
+                    <a
+                        type="button"
+                        className="btn btn-dark fw-semibold my-4 rounded-1"
+                        href="/signup?service=voice"
+                        target="_blank"
+                    >
+                        Get Started
+                    </a>
+                    <div className="mt-3">
+                        <span className="fw-semibold my-3">International rate:</span>
+                        <span>
+                            Calls are routed through premium A-Z routes and CLI can be any valid number. Calls without a
+                            CLI, with invalid CLI, with manipulated CLI, with CLI originated from unidentified, closed
+                            or unallocated prefix ranges, with CLI not in E.164 format, with CLI not matching ITU
+                            standards might be blocked or charged at the highest price.
+                        </span>
+                    </div>
+                    <div className="mt-3">
+                        <span className="fw-semibold mb-3">Local Rate:</span>
+                        <span>
+                            {' '}
+                            Calls are routed through local operators’ in-country network. Only numbers on your MSG91
+                            account can be used.
+                        </span>
+                    </div>
+                </>
+            )}
 
-            <a
-                type="button"
-                className="btn btn-dark fw-semibold my-4 rounded-1"
-                href="/signup?service=voice"
-                target="_blank"
-            >
-                Get Started
-            </a>
-            <div className="mt-3">
-                <span className="fw-semibold my-3">International rate:</span>
-                <span>
-                    Calls are routed through premium A-Z routes and CLI can be any valid number. Calls without a CLI,
-                    with invalid CLI, with manipulated CLI, with CLI originated from unidentified, closed or unallocated
-                    prefix ranges, with CLI not in E.164 format, with CLI not matching ITU standards might be blocked or
-                    charged at the highest price.
-                </span>
-            </div>
-            <div className="mt-3">
-                <span className="fw-semibold mb-3">Local Rate:</span>
-                <span>
-                    {' '}
-                    Calls are routed through local operators’ in-country network. Only numbers on your MSG91 account can
-                    be used.
-                </span>
-            </div>
             <div className="connect-personalized my-4">
                 <span className="talk-to-sales d-block c-fs-4 fw-medium">
                     Connect with our team for a personalized plan to meet your needs.
@@ -293,7 +308,7 @@ const PricingCalls = ({ countryCode }) => {
                     Talk to Sales
                 </button>
                 <br />
-                <a className="mt-3" href="#">
+                <a className="mt-3" href="/voice">
                     <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
                     <span className="link">Know more about Voice</span>
                 </a>

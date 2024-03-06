@@ -89,7 +89,6 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
     }, [product, currency]);
 
     const fetchSMSData = async (currency, origin, destination) => {
-        console.log('fetchSMSData', currency, origin, destination);
         setOriginCountry(origin);
         setDestinationCountry(destination);
         amountArr = origin == 'India' && currency == 'INR' ? amountArr : ['5000'];
@@ -224,7 +223,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
     return (
         <>
             <div className=" main-container  ">
-                <div className="container p-4 d-flex gap-4 flex-column flex-md-row">
+                <div className="container  d-flex gap-4 flex-column flex-md-row">
                     <div className="dropdown d-flex d-md-none align-items-center  w-75 px-2 py-1 br-2">
                         <a
                             href="#"
@@ -242,7 +241,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                         <ul className="dropdown-menu pt-0">
                             {productPricingData.map((productData, index) =>
                                 productData.type === 'heading' ? (
-                                    <li className="c-fw-m c-fs-5  p-2">{productData.heading}</li>
+                                    <li className="c-fw-m c-fs-5  ">{productData.heading}</li>
                                 ) : (
                                     <li>
                                         <Link
@@ -280,10 +279,10 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                             )}
                         </ul>
                     </div>
-                    <div className=" d-none d-md-flex flex-column gap-2 align-items-start mt-4" id="pricing-pills-tab">
+                    <div className=" d-none d-md-flex flex-column gap-2 align-items-start py-4" id="pricing-pills-tab">
                         {productPricingData.map((productData, index) =>
                             productData.type === 'heading' ? (
-                                <h1 className="c-fw-m fs-6  p-2">{productData.heading}</h1>
+                                <h1 className="c-fw-m fs-6  ">{productData.heading}</h1>
                             ) : (
                                 <Link
                                     key={index}
@@ -318,7 +317,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                             )
                         )}
                     </div>
-                    <div className=" price-container w-100">
+                    <div className=" price-container w-100 p-4">
                         {product === 'sms' && (
                             <Pricingsms
                                 amountArr={amountArr}
