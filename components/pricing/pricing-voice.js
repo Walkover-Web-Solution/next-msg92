@@ -19,7 +19,6 @@ const PricingCalls = ({ countryCode }) => {
     const [symbol, setSymbol] = useState();
     const [exportClicked, setExportClicked] = useState(false);
     const [download, setDownload] = useState(false);
-    const [downloadExport, setDownloadExport] = useState();
     const apiUrl = 'https://testvoice.phone91.com'
 
     //set intial states
@@ -31,7 +30,6 @@ const PricingCalls = ({ countryCode }) => {
 
     useEffect(() => {
         setDownload(false);
-        setDownloadExport();
         if (selectedCountry) {
             setCurrencyCode(countries.find((country) => country.sortname === selectedCountry?.country_code)?.currency);
         }
@@ -128,7 +126,9 @@ const PricingCalls = ({ countryCode }) => {
             if (response) {
                 setLoadingExport(false);
                 setDownload(true);
-                setDownloadExport(response);
+                if(response?.data?.data?.url) {
+                    window.location.href = response.data.data.url;
+                }
             }
         } catch (e) {
             console.log(e, 'error in my function');
@@ -216,18 +216,14 @@ const PricingCalls = ({ countryCode }) => {
                         </tbody>
                     </table>
                     <div className="pb-3">
-                        <span className="c-fw-m">To download the detailed network and prefix wise pricing sheet.</span>
-                        {exportClicked && loadingExport && <span className="">Waiting...</span>}
-                        {exportClicked && download && !loadingExport && (
-                            <Link className="text-link" href={downloadExport?.data?.data?.url}>
-                                <u>Download</u>
-                            </Link>
-                        )}
-                        {!download && !loadingExport && (
+                        <span className="c-fw-m">To download the detailed network and prefix wise pricing sheet. </span>
+                        {!loadingExport && (
                             <button onClick={exportPricing} className="c-fw-m p-0 border-0 text-link text-underline">
                                 <u>Export</u>
                             </button>
                         )}
+                         { loadingExport && <span className="">Waiting...</span>}
+                
                     </div>
                 </div>
             )}
