@@ -27,21 +27,18 @@ const Pricingotp = ({
 
     useEffect(() => {
         setUtm();
-
     }, [pricing, originCountry, destinationCountry]);
     useEffect(() => {
         if (process.env.PRICING_URL === 'https://test.msg91.com') {
-            setPricingEnv(19)
+            setPricingEnv(19);
         }
-
     }, []);
 
     useEffect(() => {
-        if (pricing.length > 0) {
+        if (pricing.length > 0 && pricing[0]?.[pricingEnv]) {
             setTotalNoOfSmsArray(pricing.map((item) => item[pricingEnv]['totalNoOfSms']).sort((a, b) => a - b));
         }
     }, [pricing]);
-
 
     let noOfOtp = 0,
         pricingOTP = 0,
@@ -77,7 +74,7 @@ const Pricingotp = ({
     }
     return (
         <>
-            <div className='d-flex flex-column gap-5'>
+            <div className="d-flex flex-column gap-5">
                 {originCountry?.length >= 1 && (
                     <div className="d-flex flex-column flex-lg-row align-items-center  gap-4 ">
                         <span className="Send-otp c-fw-m ">Send OTP from</span>
@@ -135,7 +132,9 @@ const Pricingotp = ({
                                     </div>
                                     <div className="d-flex d-md-none">
                                         <div className="text-start col c-fs-5">0</div>
-                                        <div className="text-end col c-fs-5">{totalNoOfSmsArray[totalNoOfSmsArray.length - 1]}</div>
+                                        <div className="text-end col c-fs-5">
+                                            {totalNoOfSmsArray[totalNoOfSmsArray.length - 1]}
+                                        </div>
                                     </div>
 
                                     <input
@@ -161,34 +160,40 @@ const Pricingotp = ({
                                 <div className="d-flex align-items-end ">
                                     <p className="c-fs-2 c-fw-500">
                                         <span className="c-fs-1 fw-bold">{noOfOtp.toLocaleString('en-IN')}</span>
-                                        <span className="c-fs-1 text-green fw-bold"></span>
-                                        {' '}OTPs for <span className="c-fs-1 text-green fw-bold">                {currencySymbol} {pricingOTP} </span> +18%GST
-                                        at <span className="c-fs-1 text-green fw-bold">{ratePerOTP}</span>
+                                        <span className="c-fs-1 text-green fw-bold"></span> OTPs for{' '}
+                                        <span className="c-fs-1 text-green fw-bold">
+                                            {' '}
+                                            {currencySymbol} {pricingOTP}{' '}
+                                        </span>{' '}
+                                        +18%GST at <span className="c-fs-1 text-green fw-bold">{ratePerOTP}</span>
                                         per OTP{' '}
                                     </p>
                                 </div>
+                                <a
+                                    href="/signup?service=SendOTP"
+                                    target="_blank"
+                                    className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3 btn-ft `}
+                                >
+                                    Get Started
+                                </a>
                             </>
                         ) : (
                             <>
-                                <div className="content-fit bg-white btn-ft d-flex flex-column gap-5 border rounded p-4 border-2 align-items-center">
-                                    <h3 className="c-fs-4">SMS Pricing</h3>
-                                    <h3 className="text-green c-fs-2">
-                                        {currencySymbol}
-                                        {pricing[0][4].rate}per SMS
-                                    </h3>
-                                    <button className="btn btn-outline-dark px-5">Get Started</button>
-                                </div>
+                                {pricing[0][pricingEnv]?.rate && (
+                                    <div className="content-fit bg-white btn-ft d-flex flex-column gap-5 border rounded p-4 border-2 align-items-center">
+                                        <h3 className="c-fs-4">SMS Pricing</h3>
+                                        <h3 className="text-green c-fs-2">
+                                            {currencySymbol}
+                                            {pricing[0][pricingEnv]?.rate}per SMS
+                                        </h3>
+                                        <button className="btn btn-dark px-5">Get Started</button>
+                                    </div>
+                                )}
                             </>
                         )}
                     </>
                 )}
-                <a
-                    href="/signup?service=SendOTP"
-                    target="_blank"
-                    className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3 btn-ft `}
-                >
-                    Get Started
-                </a>
+
                 <div className="talk-to-sales connect-personalized ">
                     <span className="personalized d-block c-fs-4">
                         Connect with our team for a personalized pricing and get up to meet your needs.

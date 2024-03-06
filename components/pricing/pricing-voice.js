@@ -100,6 +100,7 @@ const PricingCalls = ({ countryCode }) => {
 
     const fetchData = async (selectedCountry, dialPlan) => {
         setLoading(true);
+
         try {
             const response = await fetch(
                 `${apiUrl}/public/pricing/?cid=${selectedCountry?.id}&dialplan_id=${dialPlan}`

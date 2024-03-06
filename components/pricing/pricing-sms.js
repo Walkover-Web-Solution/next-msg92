@@ -179,20 +179,22 @@ const Pricingsms = ({
                             </>
                         ) : (
                             <>
-                                <div className="content-fit bg-white btn-ft d-flex flex-column border rounded gap-5 p-4 border-2 mt-4 align-items-center">
-                                    <h3 className="c-fs-4">SMS Pricing</h3>
-                                    <h3 className="text-green c-fs-2">
-                                        {currencySymbol}
-                                        {pricing[0][4].rate}per SMS
-                                    </h3>
-                                    <a
-                                        href="/signup?service=SMS"
-                                        target="_blank"
-                                        className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3 btn-ft`}
-                                    >
-                                        Get Started
-                                    </a>
-                                </div>
+                                {pricing[0][pricingEnv].rate && (
+                                    <div className="content-fit bg-white btn-ft d-flex flex-column border rounded gap-5 p-4 border-2 mt-4 align-items-center">
+                                        <h3 className="c-fs-4">SMS Pricing</h3>
+                                        <h3 className="text-green c-fs-2">
+                                            {currencySymbol}
+                                            {pricing[0][pricingEnv].rate}per SMS
+                                        </h3>
+                                        <a
+                                            href="/signup?service=SMS"
+                                            target="_blank"
+                                            className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3 btn-ft`}
+                                        >
+                                            Get Started
+                                        </a>
+                                    </div>
+                                )}
                             </>
                         )}
                     </>
