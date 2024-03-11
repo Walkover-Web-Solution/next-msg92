@@ -19,7 +19,7 @@ const PricingCalls = ({ countryCode }) => {
     const [symbol, setSymbol] = useState();
     const [exportClicked, setExportClicked] = useState(false);
     const [download, setDownload] = useState(false);
-    const apiUrl = 'https://testvoice.phone91.com'
+    const apiUrl = 'https://testvoice.phone91.com';
 
     //set intial states
     useEffect(() => {
@@ -72,9 +72,7 @@ const PricingCalls = ({ countryCode }) => {
     const fetchDialPlan = async (currencyCode) => {
         setLoading(true);
         try {
-            const response = await fetch(
-                `${apiUrl}/public/dialplanPricing/?currency=${currencyCode}`
-            );
+            const response = await fetch(`${apiUrl}/public/dialplanPricing/?currency=${currencyCode}`);
             if (response.ok) {
                 const data = await response.json();
 
@@ -126,7 +124,7 @@ const PricingCalls = ({ countryCode }) => {
             if (response) {
                 setLoadingExport(false);
                 setDownload(true);
-                if(response?.data?.data?.url) {
+                if (response?.data?.data?.url) {
                     window.location.href = response.data.data.url;
                 }
             }
@@ -222,8 +220,7 @@ const PricingCalls = ({ countryCode }) => {
                                 <u>Export</u>
                             </button>
                         )}
-                         { loadingExport && <span className="">Waiting...</span>}
-                
+                        {loadingExport && <span className="">Waiting...</span>}
                     </div>
                 </div>
             )}

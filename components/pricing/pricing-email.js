@@ -106,7 +106,6 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
             <div className="card-wrapper row d-flex w-100 py-4">
                 {subscriptionEmail &&
                     subscriptionEmail.map((item, index) => {
-                        console.log(item);
                         return (
                             <>
                                 {item.name === 'Free' ? (
@@ -418,7 +417,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                                     const freeCredits =
                                                         item.plan_services[0].service_credit.service_credit_rates[i]
                                                             .follow_up_rate;
-                                                    return freeCredits === 0 ? (
+                                                    return freeCredits == 0 ? (
                                                         <>
                                                             <span className="text-danger prcing-check me-1">
                                                                 <MdClose />
@@ -430,7 +429,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                                             <span className="text-success prcing-check me-1">
                                                                 <MdDone />
                                                             </span>
-                                                            {symbol} {numberWithCommas(freeCredits)}
+                                                            {symbol} {freeCredits} 
                                                         </>
                                                     );
                                                 })()}
@@ -456,7 +455,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                                     const freeCredits =
                                                         item.plan_services[1].service_credit.service_credit_rates[i]
                                                             .follow_up_rate;
-                                                    return freeCredits === 0 ? (
+                                                    return freeCredits == 0 ? (
                                                         <>
                                                             <span className="text-danger prcing-check me-1">
                                                                 <MdClose />
@@ -468,7 +467,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
                                                             <span className="text-success prcing-check me-1">
                                                                 <MdDone />
                                                             </span>
-                                                            {symbol} {numberWithCommas(freeCredits)}
+                                                            {symbol} {freeCredits}
                                                         </>
                                                     );
                                                 })()}
