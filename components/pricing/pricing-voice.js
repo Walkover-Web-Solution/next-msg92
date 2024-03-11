@@ -190,9 +190,17 @@ const PricingCalls = ({ countryCode }) => {
                                         <tr key={index}>
                                             <td>{data?.network}</td>
                                             <td>
-                                                {symbol}
-                                                {data?.local_rates_min} - {symbol}
-                                                {data?.local_rates_max}{' '}
+                                            {data?.local_rates_max && (
+                                                    <>
+                                                        {symbol}
+                                                        {data?.local_rates_max}
+                                                    </>
+                                                )} -    {data?.local_rates_max && (
+                                                    <>
+                                                        {symbol}
+                                                        {data?.local_rates_max}
+                                                    </>
+                                                )}
                                             </td>
                                             <td>
                                                 {data?.international_rates_min && (
