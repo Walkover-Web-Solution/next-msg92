@@ -147,7 +147,7 @@ const PricingCalls = ({ countryCode }) => {
     const [open, setOpen] = useState(false);
     return (
         <>
-            <div className="col-3">
+            {/* <div className="col-3">
                 {countryData && (
                     <>
                         <Typeahead
@@ -310,7 +310,7 @@ const PricingCalls = ({ countryCode }) => {
                         </span>
                     </div>
                 </>
-            )}
+            )} */}
 
             <div className="connect-personalized my-4">
                 <span className="talk-to-sales d-block c-fs-4 fw-medium">
