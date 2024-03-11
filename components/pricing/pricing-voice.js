@@ -150,13 +150,14 @@ const PricingCalls = ({ countryCode }) => {
                 {countryData && (
                     <>
                         <Typeahead
+                            key={defaultSelectedCountry.length > 0 ? 'hasDefault' : 'noDefault'}
                             className="col c-fs-6"
                             id="country"
                             placeholder="Select a country"
                             labelKey="name"
                             options={countryData}
                             clearButton
-                            {...(selectedCountry ? { defaultSelected: defaultSelectedCountry } : {})}
+                            defaultSelected={defaultSelectedCountry}
                             inputProps={{
                                 autoComplete: 'off',
                             }}
@@ -190,12 +191,14 @@ const PricingCalls = ({ countryCode }) => {
                                         <tr key={index}>
                                             <td>{data?.network}</td>
                                             <td>
-                                            {data?.local_rates_max && (
+                                                {data?.local_rates_max && (
                                                     <>
                                                         {symbol}
                                                         {data?.local_rates_max}
                                                     </>
-                                                )} -    {data?.local_rates_max && (
+                                                )}{' '}
+                                                -{' '}
+                                                {data?.local_rates_max && (
                                                     <>
                                                         {symbol}
                                                         {data?.local_rates_max}
