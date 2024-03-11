@@ -144,6 +144,7 @@ const PricingCalls = ({ countryCode }) => {
             }
         }
     }, [countryData, selectedCountry]);
+    const [open, setOpen] = useState(false);
     return (
         <>
             <div className="col-3">
@@ -154,6 +155,13 @@ const PricingCalls = ({ countryCode }) => {
                             className="col c-fs-6"
                             id="country"
                             placeholder="Select a country"
+                            open={open}
+                            onInputChange={(e) => {
+                                setOpen(true);
+                            }}
+                            onFocus={(e) => {
+                                setOpen(true);
+                            }}
                             labelKey="name"
                             options={countryData}
                             clearButton
@@ -162,6 +170,7 @@ const PricingCalls = ({ countryCode }) => {
                                 autoComplete: 'off',
                             }}
                             onChange={(selected) => {
+                                setOpen(false);
                                 if (selected[0]) {
                                     setSelectedCountry(selected[0]);
                                     setCurrencyCode(
