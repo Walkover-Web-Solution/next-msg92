@@ -3,7 +3,7 @@ export default function FaqSection(faqData) {
   
   return (
     <>
-      <div className="container my-5 d-grid gap-4">
+      <div className=" my-5 d-grid gap-4">
         <h2 className="c-fs-1">Frequently Asked Questions</h2>
         <div className="accordion" id="accordionExample">
           {faqs.map((data, index) => {

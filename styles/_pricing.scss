@@ -1,9 +1,9 @@
 .main-container {
-    background: var(--light-grey-bg);
+    background: var(--c-light-grey);
 }
 
 #pricing-pills-tab {
-    width: 180px;
+    width: 300px;
     .side-bar-heading {
         font-size: 18px;
     }
@@ -14,7 +14,7 @@
         color: var(--black-color);
         border-radius: 6px;
         &:hover {
-            background-color: var(--c-light-grey);
+            background-color: #4da0ff20;
         }
         .nav-link {
             padding: 8px 0 8px 12px;
@@ -36,8 +36,7 @@
 }
 .card-wrapper {
     gap: 40px !important;
-    .card-price {
-    }
+   
 }
 
 .more-about {
@@ -188,12 +187,11 @@ $border-width: 2px;
 }
 
 .price-card {
-    background: var(--c-light-grey) !important;
-    text-transform: capitalize;
+    background: var(--c-light-grey) !important;    
     margin-bottom: 36px;
     .text-green {
-        font-size: 32px !important;
-        font-weight: 700 !important;
+        // font-size: 32px !important;
+        // font-weight: 700 !important;
 
         .text-dark {
             font-size: 24px !important;

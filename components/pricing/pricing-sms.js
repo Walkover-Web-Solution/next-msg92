@@ -19,41 +19,31 @@ const Pricingsms = ({
 }) => {
     const [sliderValue, setSliderValue] = useState(47);
     const [pricingEnv, setPricingEnv] = useState(4);
+    const [totalNoOfSmsArray, setTotalNoOfSmsArray] = useState([]);
     useEffect(() => {
         setUtm();
-
     }, [pricing, originCountry, destinationCountry]);
     useEffect(() => {
-        if(process.env.PRICING_URL === 'https://test.msg91.com'){
-            setPricingEnv(4)
+        if (process.env.PRICING_URL === 'https://test.msg91.com') {
+            setPricingEnv(4);
         }
+    }, []);
 
-    },[]);
-
-
-    // useEffect(() => {
-    //     if (pricing[0] && pricing.length > 2) {
-    //         const slider = document.getElementById('pricingDrag');
-    //         const handleChange = (evt) => {
-    //             setSliderValue(evt.detail.value);
-    //         };
-    //         slider.addEventListener('change', handleChange);
-    //         slider.value = sliderValue;
-    //         return () => {
-    //             slider.removeEventListener('change', handleChange);
-    //         };
-    //     }
-    // }, []);
+    useEffect(() => {
+        if (pricing.length > 0) {
+            setTotalNoOfSmsArray(pricing.map((item) => item[pricingEnv]['totalNoOfSms']).sort((a, b) => a - b));
+        }
+    }, [pricing]);
 
     let noOfsms = 0,
         pricingsms = 0,
         ratePersms = 0;
 
     if (pricing[0] && pricing.length > 2) {
-        let arrayOfPrices = amountArr.slice();
-        arrayOfPrices.unshift('-94');
+        let arrayOfPrices = totalNoOfSmsArray.slice();
+        arrayOfPrices.unshift('-36');
 
-        const lenAmountArr = amountArr.length;
+        const lenAmountArr = totalNoOfSmsArray.length;
         const widthOfSection = 100 / lenAmountArr;
         const noOfSection = Math.floor(sliderValue / widthOfSection);
         if (pricing[0]) {
@@ -120,14 +110,14 @@ const Pricingsms = ({
                         </div>
                     </div>
                 )}
-                {pricing[0]  && (
+                {pricing[0] && (
                     <>
                         {pricing.length > 2 ? (
                             <>
-                                <div className="d-flex flex-column gap-3 align-items center mt-3">
+                                <div className="d-flex flex-column gap-3 align-items center mt-3 p-4 bg-white rounded ">
                                     <div className="text-center text-dark c-fw-m">Number of SMS</div>
                                     <div className=" d-none d-md-flex">
-                                        {amountArr.map((amount, index) => {
+                                        {totalNoOfSmsArray.map((amount, index) => {
                                             return (
                                                 <div className="text-end col c-fs-5" key={index}>
                                                     {amount}
@@ -137,7 +127,9 @@ const Pricingsms = ({
                                     </div>
                                     <div className="d-flex d-md-none">
                                         <div className="text-start col c-fs-5">0</div>
-                                        <div className="text-end col c-fs-5">{amountArr[amountArr.length - 1]}</div>
+                                        <div className="text-end col c-fs-5">
+                                            {totalNoOfSmsArray[totalNoOfSmsArray.length - 1]}
+                                        </div>
                                     </div>
 
                                     <input
@@ -163,50 +155,74 @@ const Pricingsms = ({
                                 </div>
                                 <div className="d-flex align-items-end mt-4 mb-3">
                                     <p className="c-fs-2 c-fw-500">
-                                        <span className="c-fs-1 fw-bold">{noOfsms.toLocaleString('en-IN')}</span>
-                                        <span className="c-fs-1 text-green fw-bold"></span>
-                                        SMS for <span className="c-fs-1 text-green fw-bold">{pricingsms} </span> +18%GST
-                                        at <span className="c-fs-1 text-green fw-bold">{ratePersms}</span>
+                                        <span className="c-fs-1 fw-bold">{noOfsms.toLocaleString('en-IN')}</span> SMS
+                                        for{' '}
+                                        <span className="c-fs-1 text-green fw-bold">
+                                            {currencySymbol}
+                                            {pricingsms}{' '}
+                                        </span>{' '}
+                                        +18%GST at{' '}
+                                        <span className="c-fs-1 text-green fw-bold">
+                                            {currencySymbol}
+                                            {ratePersms}
+                                        </span>
                                         per SMS{' '}
                                     </p>
                                 </div>
+                                <a
+                                    href="/signup?service=SMS"
+                                    target="_blank"
+                                    className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3`}
+                                >
+                                    Get Started
+                                </a>
                             </>
                         ) : (
                             <>
-                                <div className="content-fit bg-white btn-ft d-flex flex-column border rounded gap-5 p-4 border-2 mt-4 align-items-center">
-                                    <h3 className="c-fs-4">SMS Pricing</h3>
-                                    <h3 className="text-green c-fs-2">
-                                        {currencySymbol}
-                                        {pricing[0][4].rate}per SMS
-                                    </h3>
-                                    <button className="btn btn-outline-dark px-5">Get Started</button>
-                                </div>
+                                {pricing[0][pricingEnv].rate && (
+                                    <div className="content-fit bg-white btn-ft d-flex flex-column border rounded gap-5 p-4 border-2 mt-4 align-items-center">
+                                        <h3 className="c-fs-4">SMS Pricing</h3>
+                                        <h3 className="text-green c-fs-2">
+                                            {currencySymbol}
+                                            {pricing[0][pricingEnv].rate}per SMS
+                                        </h3>
+                                        <a
+                                            href="/signup?service=SMS"
+                                            target="_blank"
+                                            className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3 btn-ft`}
+                                        >
+                                            Get Started
+                                        </a>
+                                    </div>
+                                )}
                             </>
                         )}
                     </>
                 )}
-                <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#sales-modal"
-                    className="fw-semibold btn btn-dark rounded-1 py-2 px-3 mt-4 mb-3"
-                >
-                    Get Started
-                </button>
+
                 <div className="talk-to-sales connect-personalized mt-4">
                     <span className="personalized d-block c-fs-4">
-                        Connect with our team for a personalized pricing and get up to{' '}
-                        <span className="text-green c-fs-4 fw-medium">₹0.13</span> per SMS to meet your needs.
+                        Connect with our team for a personalized pricing
+                        {originCountry === 'India' && (
+                            <>
+                                {' '}
+                                and get up to <span className="text-green c-fs-4 fw-medium"> ₹0.13</span> per SMS to
+                                meet your needs.{' '}
+                            </>
+                        )}
                     </span>
                     <button
                         type="button"
-                        className="btn btn-outline-dark mt-2 mb-4 border border-dark border-2 rounded-1 fw-semibold px-3"
+                        data-bs-toggle="modal"
+                        data-bs-target="#sales-modal"
+                        className="btn btn-outline-dark mt-2 mb-4 c-fs-5 border border-dark rounded-1 px-3 py-1"
                     >
                         Talk to Sales
                     </button>
                     <br />
-                    <a className="mt-3" href="#">
-                        <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
-                        <span className="link">Know more about SMS</span>
+                    <a className="more-about" href="/sms">
+                        <img src="/img/icon/link.svg" alt="Know more" className="icon me-2" />
+                        <span>Know more about SMS</span>
                     </a>
                 </div>
             </div>

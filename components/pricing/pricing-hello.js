@@ -51,7 +51,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
     return (
         <>
             {symbol === '₹' && (
-                <div className="header d-flex  gap-3 justify-content-between flex-wrap mx-4">
+                <div className="header d-flex  gap-3 justify-content-between flex-wrap my-4">
                     <span className="d-flex">
                         <h6
                             className={` ${
@@ -80,7 +80,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                               <div
                                   key={`email-card-${index}`}
                                   className={`card d-flex align-items-start rounded-2 bg-white p-4  gap-3 ${
-                                      item?.name === 'Premium' ? 'border-2' : 'border-0'
+                                      item?.name === 'Premium' ? 'border-black' : 'border-0'
                                   }`}
                               >
                                   <div className=" w-100 d-flex align-items-center justify-content-between">
@@ -91,7 +91,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                                           </span>
                                       )}
                                   </div>
-                                  <h5 className="mt-2 c-fs-2 text-green">
+                                  <h5 className="mt-2 c-fs-2 text-green fw-bold">
                                       {symbol}
 
                                       {symbol === '₹' && (
@@ -121,7 +121,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                                       target="_blank"
                                       className={`${
                                           item?.name === 'Premium' ? 'btn-dark' : 'btn-outline-dark'
-                                      }  btn fw-semibold rounded-1 border border-2 border-dark px-3 btn-sm`}
+                                      }  btn fw-semibold rounded-1 border border-dark px-3 btn-sm`}
                                   >
                                       Get Started
                                   </a>
@@ -240,16 +240,17 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
             <div className="my-4 connect-personalized">
                 <span className="talk-to-sales d-block c-fs-4">
                     Connect with our team for a personalized plan to meet your needs.
-                </span>
+                </span>                     
                 <button
                     type="button"
-                    className="btn btn-outline-dark mt-2 mb-4 c-fs-5 border border-dark border-2 rounded-1 px-3 py-1"
+                    data-bs-toggle="modal" data-bs-target="#sales-modal"
+                    className="btn btn-outline-dark mt-2 mb-4 c-fs-5 border border-dark rounded-1 px-3 py-1"
                 >
                     Talk to Sales
                 </button>
                 <br />
-                <a href="#">
-                    <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
+                <a href="/hello">
+                    <img src="/img/icon/link.svg" alt="Know more" className="icon me-2" />
                     <span className="link">Know more about Hello</span>
                 </a>
             </div>
