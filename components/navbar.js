@@ -7,6 +7,7 @@ import { MdSegment,MdClose } from "react-icons/md";
 import ProductMenu from "./productmenu";
 import Notification from "./notification";
 import Link from "next/link";
+import { getCookie } from "./utils";
 
 const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
   //console.log('navbar', browserPath, pricingPath, appPath, pageSlug);
@@ -29,6 +30,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
   path = path.length === 2 ? "/" + path : "";  
   
   const [showOverlay, setShowOverlay] = useState(false);
+  const [countryCode, setCountryCode] = useState('');
   const [show, setShow] = useState(false);
   var mininav_notification = "d-block";
   const toggleOverlay = () => {
@@ -70,6 +72,8 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
       $("#mininav-tog-open").addClass("d-block");
       $("#mininav-tog-open").removeClass("d-none");
     });
+    var countryCodee = getCookie('country_code');
+    setCountryCode(countryCodee)
   }, []);
   var notification_class = "d-block";
   function showNotification() {
@@ -125,8 +129,8 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
               className={`nav-link menu-opt text-dark ${
                 browserPath === "/pricing" ? "active" : ""
               }`}
-              href={pricingPath}
-              id="pricing-link"
+              href={countryCode ?"/" + countryCode + pricingPath : pricingPath}
+              id="pricing-link" 
             >              
               <span className="c-fs-4 c-fw-m">Pricing</span>
               <div className="nav-line"></div>

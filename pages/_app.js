@@ -44,7 +44,6 @@ export default function App({ Component, pageProps }) {
     '/pricing/sms',
     '/shorturl',
   ]  
-
   var pageSlug = Object.keys(router.query).length ? `/${router.query.pageslug}` : browserPath
   var pricingPath = (products.includes(pageSlug)) ? `/pricing${pageSlug}` : `/pricing/sms`;
 
@@ -53,6 +52,7 @@ export default function App({ Component, pageProps }) {
     showNavbar = true;
 }
   useEffect(() => {
+    console.log(pricingPath);
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
     
     const search = window.location.search;
