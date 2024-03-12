@@ -46,7 +46,6 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
     useEffect(() => {
         setUtm();
     }, []);
-    console.log(subscriptionHello);
 
     return (
         <>

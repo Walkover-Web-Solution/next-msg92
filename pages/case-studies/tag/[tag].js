@@ -1,5 +1,5 @@
 import React from "react";
-import Casestudycard from "@/case-study-indexComp";
+import Casestudycard from "@/components/case-study-indexComp";
 import CasestudydataAll from "@/data/case-study.json";
 const casestudycard = ({ browserPathCase }) => {
   var path = browserPathCase.split("/")[3];

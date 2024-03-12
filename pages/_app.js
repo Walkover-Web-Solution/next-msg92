@@ -52,7 +52,6 @@ export default function App({ Component, pageProps }) {
     showNavbar = true;
 }
   useEffect(() => {
-    console.log(pricingPath);
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
     
     const search = window.location.search;
