@@ -1,167 +1,233 @@
-import { MdDone, MdClose } from "react-icons/md";
-import { useEffect, useState } from "react";
-import countries from "@/data/countries.json";
+import { MdDone, MdClose } from 'react-icons/md';
+import { useEffect, useState, useRef, use } from 'react';
+import countries from '@/data/countries.json';
 import { Typeahead } from 'react-bootstrap-typeahead';
-import { setUtm } from "@/components/utils";
+import { setUtm } from '@/components/utils';
 
 const Pricingsms = ({
-  pricing,
-  setPricing,
-  amountArr,
-  fetchSMSData,
-  originCountry,
-  setOriginCountry,
-  destinationCountry,
-  setDestinationCountry,
-  currency,
-  currencySymbol
-}) => {  
-
-  useEffect(() => {
-    /* console.log('pricing-sms.js currency', currency);
-    if(originCountry != null)
-    {
-      setOriginCountry(originCountry)
-      setDestinationCountry(destinationCountry)
-    } */
-
-    // console.log(originCountry, destinationCountry);
-    // Get all anchor tags in the document using querySelectorAll
-
-    setUtm();
-
-  }, [pricing, originCountry, destinationCountry]);  
-  return (
-    <>
-     <div>
-     { originCountry?.length >= 1 && <div className="gap-3 d-flex flex-column flex-md-row   align-items-cnetre justify-content-center col-12 col-md-10 col-lg-7 m-auto pb-5">
-       <Typeahead
-       className="w-100"
-          id="originCountry"
-          placeholder="Origin Country"
-          labelKey="name"
-          onChange={(selected) => {
-            setPricing([])
-            if (selected[0]?.name)
-              fetchSMSData(currency , selected[0]?.name, destinationCountry);
-          }}
-          options={countries}
-          clearButton
-          defaultSelected={[countries?.find(item => item.name === originCountry)]}
-          inputProps={{
-            autoComplete: "off" /* Add the autoComplete attribute here */
-          }}
-        />
-
-        <div className="px-4">To</div>
-
-        <Typeahead
-       className="w-100"
-          id="destinationCountry"
-          placeholder="Destination Country"
-          labelKey="name"
-          onChange={(selected) => {
-            setPricing([])
-            if (selected[0]?.name)
-              fetchSMSData(currency, originCountry, selected[0]?.name);
-          }}
-          options={countries}
-          clearButton
-          defaultSelected={[countries?.find(item => item.name === originCountry)]}
-        />
-
-      </div>}
-      
-      {originCountry == destinationCountry && originCountry != 'India' &&
-        <div className="note mb-5 c-fs-5">
-          To avail this local pricing, <a href="/contact-us">contact</a> our team for <strong>Sender Id</strong> registration.
-        </div>
-      }
-
-
-      <div className="d-flex flex-wrap flex-gap gap-3 justify-content-center w-100  card-container align-items-end">
-        {pricing?.map((item, index) => {
-          return (            
-            <div key={`sms-card-${index}`} className="mx-3">
-
-              {amountArr[index] ?
-                amountArr[index] === '76500'
-                  ?
-                  <div className="text-center d-flex flex-column mb-4 mb-sm-0 align-items-center">
-                    <div className="popular-chip c-fs-6">POPULAR</div>
-                    <div className="card price-card sms text-center card-popular mb-4 mb-sm-0 c-bg-grey">
-                      <div className="card-body justify-content-between">
-                        <h3 className="c-fs-3">{item[4]?.totalNoOfSms} SMS</h3>
-                        <h5 className="c-fs-2 text-green mt-2">{currencySymbol}{item[4]?.rate}/SMS</h5>
-                        <h2 className="c-fs-3 c-ff-b">{currencySymbol}{amountArr[index]} </h2>
-                        <p className="c-fs-5">+18% GST</p>
-                        <a href="/signup?service=sms" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
-                          Get Started
-                        </a>
-                      </div>
-                    </div>
-                  </div>                  
-                  :
-                  originCountry == 'India'
-                  ?
-                  <div className="card price-card sms border-0 text-center mb-4 mb-sm-0 c-bg-grey">
-                    <div className="card-body justify-content-between">
-                      <h3 className="c-fs-3">{item[4]?.totalNoOfSms} SMS</h3>
-                      <h5 className="c-fs-2 mt-2 text-green">{currencySymbol}{item[4]?.rate}/SMS</h5>
-                      <h2 className="c-fs-3 c-ff-b">{currencySymbol}{amountArr[index]} </h2>
-                      <p className="c-fs-5">+18% GST</p>
-                      <a href="/signup?service=sms" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
-                        Get Started
-                      </a>
-                    </div>
-                  </div> 
-                  :
-                  <div className="card price-card sms border-0 text-center mb-4 mb-sm-0 c-bg-grey">
-                    <div className="card-body justify-content-between">
-                      <h3 className="c-fs-3">SMS Pricing</h3>
-                      <h5 className="c-fs-2 mt-2 text-green">{currencySymbol}{item[4]?.rate}/SMS</h5>
-                      <h2 className="c-fs-3 c-ff-b"></h2>                      
-                      <a href="/signup?service=sms" target="_blank" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2 utm">
-                        Get Started
-                      </a>
-                    </div>
-                  </div>                   
-                  : ""
-              }              
-            </div>
-          );
-        })}
-
-        {originCountry == 'India' 
-          ?         
-            <div className="card sms border-0 text-center mb-4 mb-sm-0" style={{backgroundColor: '#212528', color: 'white'}}>
-              <div className="card-body justify-content-between">
-                <h3 className="c-fs-3">CUSTOM</h3>
-                <h5 className="c-fs-2 mt-2 text-green">₹0.13/SMS</h5>
-                <p className="c-fs-5">Talk to sales for a customized plan.</p>
-                <button 
-                style={{borderColor: 'white', color: 'white'}}
-                data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
-                  Talk to sales
-                </button>
-              </div>
-            </div>
-          : 
-            <div className="card price-card sms border-0 text-center mb-4 mb-sm-0 c-bg-grey">
-              <div className="card-body justify-content-between">
-                <h3 className="c-fs-3">CUSTOM</h3>                
-                <p className="c-fs-5">Talk to sales for a customized plan.</p>
-                <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="c-fs-5 btn btn-sm w-100 btn-outline-dark mt-2">
-                  Talk to sales
-                </button>
-              </div>
-            </div>
+    pricing,
+    setPricing,
+    amountArr,
+    fetchSMSData,
+    originCountry,
+    setOriginCountry,
+    destinationCountry,
+    setDestinationCountry,
+    currency,
+    currencySymbol,
+    countryCode,
+}) => {
+    const [sliderValue, setSliderValue] = useState(47);
+    const [pricingEnv, setPricingEnv] = useState(4);
+    const [totalNoOfSmsArray, setTotalNoOfSmsArray] = useState([]);
+    useEffect(() => {
+        setUtm();
+    }, [pricing, originCountry, destinationCountry]);
+    useEffect(() => {
+        if (process.env.PRICING_URL === 'https://test.msg91.com') {
+            setPricingEnv(4);
         }
+    }, []);
 
-      </div>      
-      </div>
-    </>
-  );
+    useEffect(() => {
+        if (pricing.length > 0) {
+            setTotalNoOfSmsArray(pricing.map((item) => item[pricingEnv]['totalNoOfSms']).sort((a, b) => a - b));
+        }
+    }, [pricing]);
+
+    let noOfsms = 0,
+        pricingsms = 0,
+        ratePersms = 0;
+
+    if (pricing[0] && pricing.length > 2) {
+        let arrayOfPrices = totalNoOfSmsArray.slice();
+        arrayOfPrices.unshift('-36');
+
+        const lenAmountArr = totalNoOfSmsArray.length;
+        const widthOfSection = 100 / lenAmountArr;
+        const noOfSection = Math.floor(sliderValue / widthOfSection);
+        if (pricing[0]) {
+            if (pricing[noOfSection]) {
+                ratePersms = pricing[noOfSection][pricingEnv]?.rate;
+            } else {
+                ratePersms = pricing[noOfSection - 1][pricingEnv]?.rate;
+            }
+
+            const rangeInSection = lenAmountArr * (sliderValue - widthOfSection * noOfSection);
+            const noOfExtrasms = ((arrayOfPrices[noOfSection + 1] - arrayOfPrices[noOfSection]) * rangeInSection) / 100;
+            noOfsms = Number(arrayOfPrices[noOfSection]) + Math.floor(noOfExtrasms);
+        }
+        if (sliderValue == 100) {
+            noOfsms = Number(arrayOfPrices[noOfSection]);
+        }
+        let pricingSMSstr = noOfsms * ratePersms;
+        if (countryCode === 'IN') {
+            pricingsms = pricingSMSstr.toLocaleString('en-IN');
+        } else {
+            pricingsms = pricingSMSstr.toLocaleString(undefined);
+        }
+    }
+    return (
+        <>
+            <div>
+                {originCountry?.length >= 1 && (
+                    <div className="d-flex flex-column flex-lg-row align-items-center  gap-4 ">
+                        <span className="Send-sms c-fw-m ">Send SMS from</span>
+                        <div className="gap-3 col d-flex flex-column text-start flex-md-row align-items-center justify-content-start col-12 col-md-10 col-lg-7">
+                            <Typeahead
+                                className="col c-fs-6"
+                                id="originCountry c-fs-6"
+                                placeholder="Origin Country"
+                                labelKey="name"
+                                onChange={(selected) => {
+                                    setPricing([]);
+                                    if (selected[0]?.name)
+                                        fetchSMSData(currency, selected[0]?.name, destinationCountry);
+                                }}
+                                options={countries}
+                                clearButton
+                                defaultSelected={[countries?.find((item) => item.name === originCountry)]}
+                                inputProps={{
+                                    autoComplete: 'off' /* Add the autoComplete attribute here */,
+                                }}
+                            />
+
+                            <div className="c-fw-m">To</div>
+
+                            <Typeahead
+                                className="col"
+                                id="destinationCountry"
+                                placeholder="Destination Country"
+                                labelKey="name"
+                                onChange={(selected) => {
+                                    setPricing([]);
+                                    if (selected[0]?.name) fetchSMSData(currency, originCountry, selected[0]?.name);
+                                }}
+                                options={countries}
+                                clearButton
+                                defaultSelected={[countries?.find((item) => item.name === originCountry)]}
+                            />
+                        </div>
+                    </div>
+                )}
+                {pricing[0] && (
+                    <>
+                        {pricing.length > 2 ? (
+                            <>
+                                <div className="d-flex flex-column gap-3 align-items center mt-3 p-4 bg-white rounded ">
+                                    <div className="text-center text-dark c-fw-m">Number of SMS</div>
+                                    <div className=" d-none d-md-flex">
+                                        {totalNoOfSmsArray.map((amount, index) => {
+                                            return (
+                                                <div className="text-end col c-fs-5" key={index}>
+                                                    {amount}
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                    <div className="d-flex d-md-none">
+                                        <div className="text-start col c-fs-5">0</div>
+                                        <div className="text-end col c-fs-5">
+                                            {totalNoOfSmsArray[totalNoOfSmsArray.length - 1]}
+                                        </div>
+                                    </div>
+
+                                    <input
+                                        className="slider"
+                                        type="range"
+                                        min="1"
+                                        max="100"
+                                        value={sliderValue}
+                                        onChange={(e) => setSliderValue(e.target.value)}
+                                    />
+
+                                    <div className="d-none d-md-flex">
+                                        {pricing.map((data, index) => {
+                                            return (
+                                                <div className="text-end col c-fs-5" key={index}>
+                                                    {currencySymbol}
+                                                    {data[pricingEnv]?.rate}
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                    <div className="text-center text-dark c-fw-m">Cost per SMS</div>
+                                </div>
+                                <div className="d-flex align-items-end mt-4 mb-3">
+                                    <p className="c-fs-2 c-fw-500">
+                                        <span className="c-fs-1 fw-bold">{noOfsms.toLocaleString('en-IN')}</span> SMS
+                                        for{' '}
+                                        <span className="c-fs-1 text-green fw-bold">
+                                            {currencySymbol}
+                                            {pricingsms}{' '}
+                                        </span>{' '}
+                                        +18%GST at{' '}
+                                        <span className="c-fs-1 text-green fw-bold">
+                                            {currencySymbol}
+                                            {ratePersms}
+                                        </span>
+                                        per SMS{' '}
+                                    </p>
+                                </div>
+                                <a
+                                    href="/signup?service=SMS"
+                                    target="_blank"
+                                    className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3`}
+                                >
+                                    Get Started
+                                </a>
+                            </>
+                        ) : (
+                            <>
+                                {pricing[0][pricingEnv].rate && (
+                                    <div className="content-fit bg-white btn-ft d-flex flex-column border rounded gap-5 p-4 border-2 mt-4 align-items-center">
+                                        <h3 className="c-fs-4">SMS Pricing</h3>
+                                        <h3 className="text-green c-fs-2">
+                                            {currencySymbol}
+                                            {pricing[0][pricingEnv].rate}per SMS
+                                        </h3>
+                                        <a
+                                            href="/signup?service=SMS"
+                                            target="_blank"
+                                            className={`btn btn-dark fw-semibold rounded-1 border border-2 border-dark px-3 btn-ft`}
+                                        >
+                                            Get Started
+                                        </a>
+                                    </div>
+                                )}
+                            </>
+                        )}
+                    </>
+                )}
+
+                <div className="talk-to-sales connect-personalized mt-4">
+                    <span className="personalized d-block c-fs-4">
+                        Connect with our team for a personalized pricing
+                        {originCountry === 'India' && (
+                            <>
+                                {' '}
+                                and get up to <span className="text-green c-fs-4 fw-medium"> ₹0.13</span> per SMS to
+                                meet your needs.{' '}
+                            </>
+                        )}
+                    </span>
+                    <button
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#sales-modal"
+                        className="btn btn-outline-dark mt-2 mb-4 c-fs-5 border border-dark rounded-1 px-3 py-1"
+                    >
+                        Talk to Sales
+                    </button>
+                    <br />
+                    <a className="more-about" href="/sms">
+                        <img src="/img/icon/link.svg" alt="Know more" className="icon me-2" />
+                        <span>Know more about SMS</span>
+                    </a>
+                </div>
+            </div>
+        </>
+    );
 };
 
 export default Pricingsms;

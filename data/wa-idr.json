@@ -1,0 +1,258 @@
+[
+  {
+    "Market": "Argentina",
+    "Currency": "Rp",
+    "Marketing": 881.95,
+    "Utility": 582.26,
+    "Authentication": 523.57,
+    "Service": 450.4
+  },
+  {
+    "Market": "Brazil",
+    "Currency": "Rp",
+    "Marketing": 891.98,
+    "Utility": 499.51,
+    "Authentication": 449.56,
+    "Service": 428.15
+  },
+  {
+    "Market": "Chile",
+    "Currency": "Rp",
+    "Marketing": "1,268.36",
+    "Utility": 836.06,
+    "Authentication": 752.45,
+    "Service": 648.02
+  },
+  {
+    "Market": "Colombia",
+    "Currency": "Rp",
+    "Marketing": 178.4,
+    "Utility": 121.31,
+    "Authentication": 109.18,
+    "Service": 85.63
+  },
+  {
+    "Market": "Egypt",
+    "Currency": "Rp",
+    "Marketing": "1,531.53",
+    "Utility": 980.58,
+    "Authentication": 882.52,
+    "Service": 918.92
+  },
+  {
+    "Market": "France",
+    "Currency": "Rp",
+    "Marketing": "2,044.30",
+    "Utility": "1,096.38",
+    "Authentication": 986.75,
+    "Service": "1,226.58"
+  },
+  {
+    "Market": "Germany",
+    "Currency": "Rp",
+    "Marketing": "1,948.66",
+    "Utility": "1,217.73",
+    "Authentication": "1,096.45",
+    "Service": "1,169.20"
+  },
+  {
+    "Market": "India",
+    "Currency": "Rp",
+    "Marketing": 141.45,
+    "Utility": 60.01,
+    "Authentication": "N/A",
+    "Service": 56.58
+  },
+  {
+    "Market": "Indonesia",
+    "Currency": "Rp",
+    "Marketing": 586.33,
+    "Utility": 285.32,
+    "Authentication": 427.97,
+    "Service": 270.48
+  },
+  {
+    "Market": "Israel",
+    "Currency": "Rp",
+    "Marketing": 503.79,
+    "Utility": 268.31,
+    "Authentication": 240.83,
+    "Service": 256.89
+  },
+  {
+    "Market": "Italy",
+    "Currency": "Rp",
+    "Marketing": 985.56,
+    "Utility": 599.04,
+    "Authentication": 539.13,
+    "Service": 550.26
+  },
+  {
+    "Market": "Malaysia",
+    "Currency": "Rp",
+    "Marketing": "1,227.49",
+    "Utility": 285.46,
+    "Authentication": 256.92,
+    "Service": 313.44
+  },
+  {
+    "Market": "Mexico",
+    "Currency": "Rp",
+    "Marketing": 621.91,
+    "Utility": 379.42,
+    "Authentication": 341.48,
+    "Service": 149.34
+  },
+  {
+    "Market": "Netherlands",
+    "Currency": "Rp",
+    "Marketing": "2,279.80",
+    "Utility": "1,142.04",
+    "Authentication": "1,027.84",
+    "Service": "1,271.94"
+  },
+  {
+    "Market": "Nigeria",
+    "Currency": "Rp",
+    "Marketing": 737.05,
+    "Utility": 455.66,
+    "Authentication": 410.09,
+    "Service": 442.23
+  },
+  {
+    "Market": "Pakistan",
+    "Currency": "Rp",
+    "Marketing": 675.37,
+    "Utility": 361.24,
+    "Authentication": 325.12,
+    "Service": 202.61
+  },
+  {
+    "Market": "Peru",
+    "Currency": "Rp",
+    "Marketing": "1,003.55",
+    "Utility": 598.13,
+    "Authentication": 537.94,
+    "Service": 256.1
+  },
+  {
+    "Market": "Russia",
+    "Currency": "Rp",
+    "Marketing": "1,144.36",
+    "Utility": 680.62,
+    "Authentication": 612.56,
+    "Service": 567.61
+  },
+  {
+    "Market": "Saudi Arabia",
+    "Currency": "Rp",
+    "Marketing": 578.82,
+    "Utility": 359.27,
+    "Authentication": 322.84,
+    "Service": 278.01
+  },
+  {
+    "Market": "South Africa",
+    "Currency": "Rp",
+    "Marketing": 541.75,
+    "Utility": 285.89,
+    "Authentication": 257.3,
+    "Service": 240.14
+  },
+  {
+    "Market": "Spain",
+    "Currency": "Rp",
+    "Marketing": 877.11,
+    "Utility": 541.95,
+    "Authentication": 487.76,
+    "Service": 526.27
+  },
+  {
+    "Market": "Turkey",
+    "Currency": "Rp",
+    "Marketing": 155.56,
+    "Utility": 132.73,
+    "Authentication": 118.81,
+    "Service": 42.81
+  },
+  {
+    "Market": "United Arab Emirates",
+    "Currency": "Rp",
+    "Marketing": 485.33,
+    "Utility": 282.63,
+    "Authentication": 253.78,
+    "Service": 270.64
+  },
+  {
+    "Market": "United Kingdom",
+    "Currency": "Rp",
+    "Marketing": "1,006.01",
+    "Utility": 567.93,
+    "Authentication": 511.14,
+    "Service": 553.95
+  },
+  {
+    "Market": "North America",
+    "Currency": "Rp",
+    "Marketing": 356.6,
+    "Utility": 213.96,
+    "Authentication": 192.56,
+    "Service": 125.81
+  },
+  {
+    "Market": "Rest of Africa",
+    "Currency": "Rp",
+    "Marketing": 321.24,
+    "Utility": 228.44,
+    "Authentication": 205.6,
+    "Service": 517.41
+  },
+  {
+    "Market": "Rest of Asia Pacific",
+    "Currency": "Rp",
+    "Marketing": "1,044.97",
+    "Utility": 673.81,
+    "Authentication": 606.05,
+    "Service": 319.06
+  },
+  {
+    "Market": "Rest of Central and Eastern Europe",
+    "Currency": "Rp",
+    "Marketing": "1,226.72",
+    "Utility": 882.95,
+    "Authentication": 794.66,
+    "Service": 357.32
+  },
+  {
+    "Market": "Rest of Latin America",
+    "Currency": "Rp",
+    "Marketing": "1,055.54",
+    "Utility": 704.64,
+    "Authentication": 634.44,
+    "Service": 604.23
+  },
+  {
+    "Market": "Rest of Middle East",
+    "Currency": "Rp",
+    "Marketing": 486.68,
+    "Utility": 282.59,
+    "Authentication": 253.74,
+    "Service": 311.27
+  },
+  {
+    "Market": "Rest of Western Europe",
+    "Currency": "Rp",
+    "Marketing": 844.68,
+    "Utility": 599.26,
+    "Authentication": 539.34,
+    "Service": 566.73
+  },
+  {
+    "Market": "Other",
+    "Currency": "Rp",
+    "Marketing": 861.62,
+    "Utility": 482.16,
+    "Authentication": 434.08,
+    "Service": 206.7
+  }
+]

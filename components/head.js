@@ -2,8 +2,6 @@ import Head from 'next/head';
 import metaData from '@/data/metadata.json';
 
 const Headcomp = (browserPath, browserPathMeta) => {
-
-
     const countryList = ['in', 'ae', 'ph', 'sg', 'es', 'gb', 'us'];
     const exptns = {
         'gbl': [
@@ -73,11 +71,11 @@ const Headcomp = (browserPath, browserPathMeta) => {
                 />
                 <meta name="google-site-verification" content="RfcBy_Lv1Ao1j0eP8UlMjJ44ik5_1YDKsRQSNFr9jEQ" />
                 <link rel="icon" href="/fav.svg" />
-                {process.env.REDIRECT_UR === ' https://web.msg91.com' && (
+                {process.env.REDIRECT_URL === 'https://web.msg91.com' && (
                     <>
-                        <meta name="robots" content="noindex" />
-                        <meta name="googlebot" content="noindex" />
                         <meta name="robots" content="noindex,nofollow" />
+                        <meta name="googlebot" content="noindex,nofollow" />
+                        <meta name="bingbot" content="noindex,nofollow" />
                     </>
                 )}
                 <link rel="canonical" href={`https://msg91.com${pathArrRaw[0]}`} />

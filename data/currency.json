@@ -1,0 +1,1484 @@
+[
+    {
+      "sortname": "AF",
+      "name": "Afghanistan",
+      "code": 93,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "AL",
+      "name": "Albania",
+      "code": 355,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "DZ",
+      "name": "Algeria",
+      "code": 213,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "AD",
+      "name": "Andorra",
+      "code": 376,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "AO",
+      "name": "Angola",
+      "code": 244,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "AR",
+      "name": "Argentina",
+      "code": 54,
+      "currency": "USD"
+    },
+    {
+      "sortname": "AM",
+      "name": "Armenia",
+      "code": 374,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "AW",
+      "name": "Aruba",
+      "code": 297,
+      "currency": "USD"
+    },
+    {
+      "sortname": "AU",
+      "name": "Australia",
+      "code": 61,
+      "currency": "USD"
+    },
+    {
+      "sortname": "AT",
+      "name": "Austria",
+      "code": 43,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "AZ",
+      "name": "Azerbaijan",
+      "code": 994,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "BH",
+      "name": "Bahrain",
+      "code": 973,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "BD",
+      "name": "Bangladesh",
+      "code": 880,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "BY",
+      "name": "Belarus",
+      "code": 375,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "BE",
+      "name": "Belgium",
+      "code": 32,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "BZ",
+      "name": "Belize",
+      "code": 501,
+      "currency": "USD"
+    },
+    {
+      "sortname": "BJ",
+      "name": "Benin",
+      "code": 229,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "BT",
+      "name": "Bhutan",
+      "code": 975,
+      "currency": "INR"
+    },
+    {
+      "sortname": "BO",
+      "name": "Bolivia",
+      "code": 591,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "BA",
+      "name": "Bosnia and Herzegovina",
+      "code": 387,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "BW",
+      "name": "Botswana",
+      "code": 267,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "BR",
+      "name": "Brazil",
+      "code": 55,
+      "currency": "USD"
+    },
+    {
+      "sortname": "BN",
+      "name": "Brunei",
+      "code": 673,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "BG",
+      "name": "Bulgaria",
+      "code": 359,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "BF",
+      "name": "Burkina Faso",
+      "code": 226,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "BI",
+      "name": "Burundi",
+      "code": 257,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "KH",
+      "name": "Cambodia",
+      "code": 855,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "CM",
+      "name": "Cameroon",
+      "code": 237,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "CV",
+      "name": "Cape Verde",
+      "code": 238,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "CF",
+      "name": "Central African Republic",
+      "code": 236,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "TD",
+      "name": "Chad",
+      "code": 235,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "CL",
+      "name": "Chile",
+      "code": 56,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "CN",
+      "name": "China",
+      "code": 86,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "CO",
+      "name": "Colombia",
+      "code": 57,
+      "currency": "USD"
+    },
+    {
+      "sortname": "KM",
+      "name": "Comoros",
+      "code": 269,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "CK",
+      "name": "Cook Islands",
+      "code": 682,
+      "currency": "USD"
+    },
+    {
+      "sortname": "CR",
+      "name": "Costa Rica",
+      "code": 506,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "HR",
+      "name": "Croatia",
+      "code": 385,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "CU",
+      "name": "Cuba",
+      "code": 53,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "CY",
+      "name": "Cyprus",
+      "code": 357,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "CZ",
+      "name": "Czech Republic",
+      "code": 420,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "CG",
+      "name": "Democratic Republic of the Congo",
+      "code": 243,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "DK",
+      "name": "Denmark",
+      "code": 45,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "TL",
+      "name": "East Timor",
+      "code": 670,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "EC",
+      "name": "Ecuador",
+      "code": 593,
+      "currency": "USD"
+    },
+    {
+      "sortname": "EG",
+      "name": "Egypt",
+      "code": 20,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "SV",
+      "name": "El Salvador",
+      "code": 503,
+      "currency": "USD"
+    },
+    {
+      "sortname": "GQ",
+      "name": "Equatorial Guinea",
+      "code": 240,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "EE",
+      "name": "Estonia",
+      "code": 372,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "ET",
+      "name": "Ethiopia",
+      "code": 251,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "FK",
+      "name": "Falkland Islands",
+      "code": 500,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "FO",
+      "name": "Faroe Islands",
+      "code": 298,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "FM",
+      "name": "Federated States of Micronesia",
+      "code": 691,
+      "currency": "USD"
+    },
+    {
+      "sortname": "FJ",
+      "name": "Fiji Islands",
+      "code": 679,
+      "currency": "USD"
+    },
+    {
+      "sortname": "FI",
+      "name": "Finland",
+      "code": 358,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "FR",
+      "name": "France",
+      "code": 33,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "GF",
+      "name": "French Guiana",
+      "code": 594,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "PF",
+      "name": "French Polynesia",
+      "code": 689,
+      "currency": "USD"
+    },
+    {
+      "sortname": "GA",
+      "name": "Gabon",
+      "code": 241,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "GE",
+      "name": "Georgia",
+      "code": 995,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "DE",
+      "name": "Germany",
+      "code": 49,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "GH",
+      "name": "Ghana",
+      "code": 233,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "GI",
+      "name": "Gibraltar",
+      "code": 350,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "GR",
+      "name": "Greece",
+      "code": 30,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "GL",
+      "name": "Greenland",
+      "code": 299,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "GP",
+      "name": "Guadeloupe",
+      "code": 590,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "GT",
+      "name": "Guatemala",
+      "code": 502,
+      "currency": "USD"
+    },
+    {
+      "sortname": "GN",
+      "name": "Guinea",
+      "code": 224,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "GW",
+      "name": "Guinea-Bissau",
+      "code": 245,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "GY",
+      "name": "Guyana",
+      "code": 592,
+      "currency": "USD"
+    },
+    {
+      "sortname": "HT",
+      "name": "Haiti",
+      "code": 509,
+      "currency": "USD"
+    },
+    {
+      "sortname": "HN",
+      "name": "Honduras",
+      "code": 504,
+      "currency": "USD"
+    },
+    {
+      "sortname": "HK",
+      "name": "Hong Kong",
+      "code": 852,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "HU",
+      "name": "Hungary",
+      "code": 36,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "IS",
+      "name": "Iceland",
+      "code": 354,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "IN",
+      "name": "India",
+      "code": 91,
+      "currency": "INR"
+    },
+    {
+      "sortname": "ID",
+      "name": "Indonesia",
+      "code": 62,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "IR",
+      "name": "Iran",
+      "code": 98,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "IQ",
+      "name": "Iraq",
+      "code": 964,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "IE",
+      "name": "Ireland",
+      "code": 353,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "IL",
+      "name": "Israel",
+      "code": 972,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "IT",
+      "name": "Italy",
+      "code": 39,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "JP",
+      "name": "Japan",
+      "code": 81,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "JO",
+      "name": "Jordan",
+      "code": 962,
+      "currency": "USD"
+    },
+    {
+      "sortname": "KE",
+      "name": "Kenya",
+      "code": 254,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "KI",
+      "name": "Kiribati",
+      "code": 686,
+      "currency": "USD"
+    },
+    {
+      "sortname": "KW",
+      "name": "Kuwait",
+      "code": 965,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "KG",
+      "name": "Kyrgyzstan",
+      "code": 996,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "LA",
+      "name": "Laos",
+      "code": 856,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "LV",
+      "name": "Latvia",
+      "code": 371,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "LB",
+      "name": "Lebanon",
+      "code": 961,
+      "currency": "USD"
+    },
+    {
+      "sortname": "LS",
+      "name": "Lesotho",
+      "code": 266,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "LR",
+      "name": "Liberia",
+      "code": 231,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "LY",
+      "name": "Libya",
+      "code": 218,
+      "currency": "USD"
+    },
+    {
+      "sortname": "LI",
+      "name": "Liechtenstein",
+      "code": 423,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "LT",
+      "name": "Lithuania",
+      "code": 370,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "LU",
+      "name": "Luxembourg",
+      "code": 352,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MO",
+      "name": "Macau",
+      "code": 853,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MK",
+      "name": "Macedonia",
+      "code": 389,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MG",
+      "name": "Madagascar",
+      "code": 261,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MW",
+      "name": "Malawi",
+      "code": 265,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MY",
+      "name": "Malaysia",
+      "code": 60,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MV",
+      "name": "Maldives",
+      "code": 960,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "ML",
+      "name": "Mali",
+      "code": 223,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MT",
+      "name": "Malta",
+      "code": 356,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MH",
+      "name": "Marshall Islands",
+      "code": 692,
+      "currency": "USD"
+    },
+    {
+      "sortname": "MQ",
+      "name": "Martinique",
+      "code": 596,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MR",
+      "name": "Mauritania",
+      "code": 222,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MU",
+      "name": "Mauritius",
+      "code": 230,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MX",
+      "name": "Mexico",
+      "code": 52,
+      "currency": "USD"
+    },
+    {
+      "sortname": "MD",
+      "name": "Moldova",
+      "code": 373,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MC",
+      "name": "Monaco",
+      "code": 377,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MN",
+      "name": "Mongolia",
+      "code": 976,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "ME",
+      "name": "Montenegro",
+      "code": 382,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MA",
+      "name": "Morocco",
+      "code": 212,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MZ",
+      "name": "Mozambique",
+      "code": 258,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "MM",
+      "name": "Myanmar",
+      "code": 95,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "NA",
+      "name": "Namibia",
+      "code": 264,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "NR",
+      "name": "Nauru",
+      "code": 674,
+      "currency": "USD"
+    },
+    {
+      "sortname": "NP",
+      "name": "Nepal",
+      "code": 977,
+      "currency": "INR"
+    },
+    {
+      "sortname": "NL",
+      "name": "Netherlands",
+      "code": 31,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "NC",
+      "name": "New Caledonia",
+      "code": 687,
+      "currency": "USD"
+    },
+    {
+      "sortname": "NZ",
+      "name": "New Zealand",
+      "code": 64,
+      "currency": "USD"
+    },
+    {
+      "sortname": "NI",
+      "name": "Nicaragua",
+      "code": 505,
+      "currency": "USD"
+    },
+    {
+      "sortname": "NE",
+      "name": "Niger",
+      "code": 227,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "NG",
+      "name": "Nigeria",
+      "code": 234,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "NU",
+      "name": "Niue",
+      "code": 683,
+      "currency": "USD"
+    },
+    {
+      "sortname": "NF",
+      "name": "Norfolk Island",
+      "code": 672,
+      "currency": "USD"
+    },
+    {
+      "sortname": "KP",
+      "name": "North Korea",
+      "code": 850,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "NO",
+      "name": "Norway",
+      "code": 47,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "OM",
+      "name": "Oman",
+      "code": 968,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "PK",
+      "name": "Pakistan",
+      "code": 92,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "PW",
+      "name": "Palau",
+      "code": 680,
+      "currency": "USD"
+    },
+    {
+      "sortname": "PA",
+      "name": "Panama",
+      "code": 507,
+      "currency": "USD"
+    },
+    {
+      "sortname": "PG",
+      "name": "Papua New Guinea",
+      "code": 675,
+      "currency": "USD"
+    },
+    {
+      "sortname": "PY",
+      "name": "Paraguay",
+      "code": 595,
+      "currency": "USD"
+    },
+    {
+      "sortname": "PE",
+      "name": "Peru",
+      "code": 51,
+      "currency": "USD"
+    },
+    {
+      "sortname": "PH",
+      "name": "Philippines",
+      "code": 63,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "PL",
+      "name": "Poland",
+      "code": 48,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "PT",
+      "name": "Portugal",
+      "code": 351,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "QA",
+      "name": "Qatar",
+      "code": 974,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "RO",
+      "name": "Romania",
+      "code": 40,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "RU",
+      "name": "Russian Federation",
+      "code": 7,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "RW",
+      "name": "Rwanda",
+      "code": 250,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "PM",
+      "name": "Saint Pierre and Miquelon",
+      "code": 508,
+      "currency": "USD"
+    },
+    {
+      "sortname": "WS",
+      "name": "Samoa",
+      "code": 685,
+      "currency": "USD"
+    },
+    {
+      "sortname": "ST",
+      "name": "Sao Tome and Principe",
+      "code": 239,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "SA",
+      "name": "Saudi Arabia",
+      "code": 966,
+      "currency": "USD"
+    },
+    {
+      "sortname": "SN",
+      "name": "Senegal",
+      "code": 221,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "RS",
+      "name": "Serbia",
+      "code": 381,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "SC",
+      "name": "Seychelles",
+      "code": 248,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "SL",
+      "name": "Sierra Leone",
+      "code": 232,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "SG",
+      "name": "Singapore",
+      "code": 65,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "SK",
+      "name": "Slovakia",
+      "code": 421,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "SI",
+      "name": "Slovenia",
+      "code": 386,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "SB",
+      "name": "Solomon Islands",
+      "code": 677,
+      "currency": "USD"
+    },
+    {
+      "sortname": "SO",
+      "name": "Somalia",
+      "code": 252,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "ZA",
+      "name": "South Africa",
+      "code": 27,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "KR",
+      "name": "South Korea",
+      "code": 82,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "SS",
+      "name": "South Sudan",
+      "code": 211,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "ES",
+      "name": "Spain",
+      "code": 34,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "LK",
+      "name": "Sri Lanka",
+      "code": 94,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "SD",
+      "name": "Sudan",
+      "code": 249,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "SR",
+      "name": "Suriname",
+      "code": 597,
+      "currency": "USD"
+    },
+    {
+      "sortname": "SZ",
+      "name": "Swaziland",
+      "code": 268,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "SE",
+      "name": "Sweden",
+      "code": 46,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "CH",
+      "name": "Switzerland",
+      "code": 41,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "SY",
+      "name": "Syria",
+      "code": 963,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "TW",
+      "name": "Taiwan",
+      "code": 886,
+      "currency": "USD"
+    },
+    {
+      "sortname": "TJ",
+      "name": "Tajikistan",
+      "code": 992,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "TZ",
+      "name": "Tanzania",
+      "code": 255,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "TH",
+      "name": "Thailand",
+      "code": 66,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "TG",
+      "name": "Togo",
+      "code": 228,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "TK",
+      "name": "Tokelau",
+      "code": 690,
+      "currency": "USD"
+    },
+    {
+      "sortname": "TO",
+      "name": "Tonga",
+      "code": 676,
+      "currency": "USD"
+    },
+    {
+      "sortname": "TN",
+      "name": "Tunisia",
+      "code": 216,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "TR",
+      "name": "Turkey",
+      "code": 90,
+      "currency": "USD"
+    },
+    {
+      "sortname": "TM",
+      "name": "Turkmenistan",
+      "code": 993,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "TV",
+      "name": "Tuvalu",
+      "code": 688,
+      "currency": "USD"
+    },
+    {
+      "sortname": "UG",
+      "name": "Uganda",
+      "code": 256,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "UA",
+      "name": "Ukraine",
+      "code": 380,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "AE",
+      "name": "United Arab Emirates",
+      "code": 971,
+      "currency": "USD"
+    },
+    {
+      "sortname": "GB",
+      "name": "United Kingdom and Region",
+      "code": 44,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "US",
+      "name": "United States and Canada Region",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "UY",
+      "name": "Uruguay",
+      "code": 598,
+      "currency": "USD"
+    },
+    {
+      "sortname": "UZ",
+      "name": "Uzbekistan",
+      "code": 998,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "VU",
+      "name": "Vanuatu",
+      "code": 678,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "VE",
+      "name": "Venezuela",
+      "code": 58,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "VN",
+      "name": "Vietnam",
+      "code": 84,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "WF",
+      "name": "Wallis And Futuna Islands",
+      "code": 681,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "YE",
+      "name": "Yemen",
+      "code": 967,
+      "currency": "USD"
+    },
+    {
+      "sortname": "ZM",
+      "name": "Zambia",
+      "code": 260,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "ZW",
+      "name": "Zimbabwe",
+      "code": 263,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "AS",
+      "name": "American Samoa",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "AI",
+      "name": "Anguilla",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "AQ",
+      "name": "Antarctica",
+      "code": 672,
+      "currency": "USD"
+    },
+    {
+      "sortname": "AG",
+      "name": "Antigua And Barbuda",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "BS",
+      "name": "Bahamas The",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "BB",
+      "name": "Barbados",
+      "code": 1246,
+      "currency": "USD"
+    },
+    {
+      "sortname": "BM",
+      "name": "Bermuda",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "BV",
+      "name": "Bouvet Island",
+      "code": 47,
+      "currency": "USD"
+    },
+    {
+      "sortname": "IO",
+      "name": "British Indian Ocean Territory",
+      "code": 44,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "CA",
+      "name": "Canada",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "KY",
+      "name": "Cayman Islands",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "CX",
+      "name": "Christmas Island",
+      "code": 61,
+      "currency": "USD"
+    },
+    {
+      "sortname": "CC",
+      "name": "Cocos (Keeling) Islands",
+      "code": 61,
+      "currency": "USD"
+    },
+    {
+      "sortname": "CG",
+      "name": "Congo",
+      "code": 242,
+      "currency": "USD"
+    },
+    {
+      "sortname": "CI",
+      "name": "Cote dIvoire",
+      "code": 225,
+      "currency": "USD"
+    },
+    {
+      "sortname": "DJ",
+      "name": "Djibouti",
+      "code": 253,
+      "currency": "USD"
+    },
+    {
+      "sortname": "DM",
+      "name": "Dominica",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "DO",
+      "name": "Dominican Republic",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "ER",
+      "name": "Eritrea",
+      "code": 291,
+      "currency": "USD"
+    },
+    {
+      "sortname": "XA",
+      "name": "External Territories of Australia",
+      "code": 672,
+      "currency": "USD"
+    },
+    {
+      "sortname": "TF",
+      "name": "French Southern Territories",
+      "code": 262,
+      "currency": "USD"
+    },
+    {
+      "sortname": "GM",
+      "name": "Gambia The",
+      "code": 220,
+      "currency": "USD"
+    },
+    {
+      "sortname": "GD",
+      "name": "Grenada",
+      "code": 1473,
+      "currency": "USD"
+    },
+    {
+      "sortname": "GU",
+      "name": "Guam",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "XU",
+      "name": "Guernsey and Alderney",
+      "code": 44,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "HM",
+      "name": "Heard and McDonald Islands",
+      "code": 672,
+      "currency": "USD"
+    },
+    {
+      "sortname": "JM",
+      "name": "Jamaica",
+      "code": 1876,
+      "currency": "USD"
+    },
+    {
+      "sortname": "JE",
+      "name": "Jersey",
+      "code": 44,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "KZ",
+      "name": "Kazakhstan",
+      "code": 7,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "IM",
+      "name": "Man (Isle of)",
+      "code": 44,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "YT",
+      "name": "Mayotte",
+      "code": 262,
+      "currency": "USD"
+    },
+    {
+      "sortname": "FM",
+      "name": "Micronesia",
+      "code": 691,
+      "currency": "USD"
+    },
+    {
+      "sortname": "MS",
+      "name": "Montserrat",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "MP",
+      "name": "Northern Mariana Islands",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "PS",
+      "name": "Palestinian Territory Occupied",
+      "code": 970,
+      "currency": "USD"
+    },
+    {
+      "sortname": "PN",
+      "name": "Pitcairn Island",
+      "code": 64,
+      "currency": "USD"
+    },
+    {
+      "sortname": "PR",
+      "name": "Puerto Rico",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "RE",
+      "name": "Reunion",
+      "code": 262,
+      "currency": "USD"
+    },
+    {
+      "sortname": "SH",
+      "name": "Saint Helena",
+      "code": 290,
+      "currency": "USD"
+    },
+    {
+      "sortname": "KN",
+      "name": "Saint Kitts And Nevis",
+      "code": 1869,
+      "currency": "USD"
+    },
+    {
+      "sortname": "LC",
+      "name": "Saint Lucia",
+      "code": 1758,
+      "currency": "USD"
+    },
+    {
+      "sortname": "VC",
+      "name": "Saint Vincent And The Grenadines",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "SM",
+      "name": "San Marino",
+      "code": 378,
+      "currency": "USD"
+    },
+    {
+      "sortname": "XG",
+      "name": "Smaller Territories of the UK",
+      "code": 44,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "GS",
+      "name": "South Georgia",
+      "code": 995,
+      "currency": "USD"
+    },
+    {
+      "sortname": "SJ",
+      "name": "Svalbard And Jan Mayen Islands",
+      "code": 47,
+      "currency": "USD"
+    },
+    {
+      "sortname": "TT",
+      "name": "Trinidad And Tobago",
+      "code": 1868,
+      "currency": "USD"
+    },
+    {
+      "sortname": "TC",
+      "name": "Turks And Caicos Islands",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "VA",
+      "name": "Vatican City State (Holy See)",
+      "code": 379,
+      "currency": "USD"
+    },
+    {
+      "sortname": "VG",
+      "name": "Virgin Islands (British)",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "VI",
+      "name": "Virgin Islands (US)",
+      "code": 1,
+      "currency": "USD"
+    },
+    {
+      "sortname": "EH",
+      "name": "Western Sahara",
+      "code": 212,
+      "currency": "GBP"
+    },
+    {
+      "sortname": "YU",
+      "name": "Yugoslavia",
+      "code": 38,
+      "currency": "USD"
+    },
+    {
+      "sortname": "XK",
+      "name": "Kosovo",
+      "code": 383,
+      "currency": "GBP"
+    }
+  ]

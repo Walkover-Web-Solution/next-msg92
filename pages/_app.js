@@ -44,7 +44,6 @@ export default function App({ Component, pageProps }) {
     '/pricing/sms',
     '/shorturl',
   ]  
-
   var pageSlug = Object.keys(router.query).length ? `/${router.query.pageslug}` : browserPath
   var pricingPath = (products.includes(pageSlug)) ? `/pricing${pageSlug}` : `/pricing/sms`;
 
@@ -161,6 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Component 
         {...pageProps} 
         path={path} 
+        
         browserPath={browserPath} 
         browserPathCase={browserPathCase} 
         pricingPath={pricingPath}
