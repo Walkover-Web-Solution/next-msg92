@@ -34,7 +34,7 @@ const becomeApartner = () => {
             <img
               className='m-3 col-12 col-md-5 mt-md-0 '
               src='/img/affiliated-partnership-img.png'
-              
+              alt='affiliated partnership image'
             ></img>
           </div>
           {/* <div className=' d-flex flex-column flex-md-row justify-content-between align-items-center pb-5'>
@@ -72,7 +72,7 @@ const becomeApartner = () => {
             <img
               className=' mt-md-0 col-12 col-md-5 '
               src='/img/integration-partnership-img.png'
-              
+              alt='integration partnership image'
             />
           </div>
           <div className=' mb-4 d-flex flex-column  flex-md-row-reverse justify-content-between align-items-center'>
@@ -88,7 +88,7 @@ const becomeApartner = () => {
             <img
               className='m-3 col-12 col-md-5 mt-3 mt-md-0'
               src='/img/msg91-for-startups-img.png'
-              
+              alt='msg91 for startups image'
             ></img>
           </div>
         </div>
@@ -145,7 +145,7 @@ const becomeApartner = () => {
         </h2>
         <div className='w-100 d-flex flex-wrap  h-100 p-3 pe-3 pe-md-4 our-partner'>
           <div className=' c-w-pp  pe-0 pe-md-5 our-partner h-100'>
-            <img className='mt-3' src='/img/the-weeky-img.png' />
+            <img className='mt-3' src='/img/the-weeky-img.png' alt='weeky image'/>
             <div className='d-flex flex-column'>
               <p className='c-fs-3 my-3'>
                 Our long standing Partnership with MSG91 has been very
@@ -157,7 +157,7 @@ const becomeApartner = () => {
             </div>
           </div>
           <div className='c-w-pp mt-4 mt-md-0 h-100 pe-0 pe-md-5 our-partner py-3 '>
-            <img className='mt-3 ' src='/img/rixyncs-img.png' />
+            <img className='mt-3 ' src='/img/rixyncs-img.png' alt='rixyncs image'/>
             <div className=' d-flex flex-column justify-content-between'>
               <p className='c-fs-3 my-3'>
                 We are happy partnering with MSG91, the team has been prompt in

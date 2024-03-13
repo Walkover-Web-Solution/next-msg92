@@ -253,7 +253,7 @@ const pricingsegmento = ({subscriptionSegmento, fetchSubscriptionSegmento}) => {
         </div>
       </div> */}
       <div className="price-card rcs bg-white rounded-2 p-4">
-      <h3 className="text-start fw-bold c-fs-1 text-green">Free</h3>
+      <h2 className="text-start fw-bold c-fs-1 text-green">Free</h2>
       <h3 className="card-write c-fs-3 my-3 c-fw-m">You can store user information for free using Segmento.</h3>
       <a
         href="/signup?service=segmento"

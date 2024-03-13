@@ -78,7 +78,7 @@ const HelloNewComponent = ({ pageData, path, pricingPath }) => {
                         <div className="intro">INTRODUCING</div>
                         <div className="d-flex flex-sm-row">
                             <h1 className={`heading-plus page-title ${pageData?.pagename}-heading c-fw-b`}>
-                                <img src={pageData?.icon} className="product-page-logo me-2" />
+                                <img src={pageData?.icon} className="product-page-logo me-2" alt='product page logo'/>
                                 <span className="hello">Hello</span>
                                 <br></br>
                                 An <span className="ai-fueled">AI-Fueled</span>
@@ -88,7 +88,7 @@ const HelloNewComponent = ({ pageData, path, pricingPath }) => {
                         </div>
 
                         <div className="hero-img-mobile-wrp mt-3">
-                            <img src="/images/hello/hero.svg" className="img-fluid mx-auto" alt="#" />
+                            <img src="/images/hello/hero.svg" className="img-fluid mx-auto" alt="hero icon" />
                         </div>
 
                         <p className={`c-fs-4 text-uppercase col-otp c-ls-20 mx-auto mt-5 ${pageData?.pagename}-dark`}>
@@ -107,7 +107,7 @@ const HelloNewComponent = ({ pageData, path, pricingPath }) => {
                     </div>
                     <div className="col-12 col-md-6 col-sm-12 order-sm-0">
                         <div className="hero-img-wrp">
-                            <img src="/images/hello/hero.svg" className="img-fluid mx-auto" alt="#" />
+                            <img src="/images/hello/hero.svg" className="img-fluid mx-auto" alt="hero image" />
                         </div>
                     </div>
                 </div>
@@ -125,21 +125,21 @@ const HelloNewComponent = ({ pageData, path, pricingPath }) => {
                     </div>
                     <div className="d-flex flex-wrap text-center text-sm-start  align-items-center">
                         <h2 className="col-12 col-sm-6 col-lg-6 d-flex align-items-center my-4 gap-3 c-fs-2 c-fw-b">
-                            <img src="/images/hello/e-commerce.svg" />
+                            <img src="/images/hello/e-commerce.svg" alt='E-commerce logo'/>
                             E-commerce
                         </h2>
 
                         <h2 className="col-12 col-sm-6 col-lg-6 d-flex align-items-center my-4 gap-3 c-fs-2 c-fw-b">
-                            <img src="/images/hello/fintech.svg" />
+                            <img src="/images/hello/fintech.svg" alt='Fintech'/>
                             Fintech
                         </h2>
 
                         <h2 className="col-12 col-sm-6 col-lg-6 d-flex align-items-center my-4 gap-3 c-fs-2 c-fw-b">
-                            <img src="/images/hello/care.svg" />
+                            <img src="/images/hello/care.svg" alt='Healthcare'/>
                             Healthcare
                         </h2>
                         <h2 className="col-12 col-sm-6 col-lg-6 d-flex align-items-center my-4 gap-3 c-fs-2 c-fw-b">
-                            <img src="/images/hello/tech.svg" />
+                            <img src="/images/hello/tech.svg" alt='Technology'/>
                             Technology
                         </h2>
                     </div>
@@ -166,11 +166,11 @@ const HelloNewComponent = ({ pageData, path, pricingPath }) => {
                                 }`}
                             >
                                 <div className="col-12 col-md-6 d-flex justify-content-center">
-                                    {item?.img && <img src={item?.img} className="feature-img " />}
+                                    {item?.img && <img src={item?.img} className="feature-img " alt='feature img'/>}
                                 </div>
                                 <div className="col-12 col-md-5 d-flex flex-column ">
                                     {item?.icon && (
-                                        <img src={item?.icon} style={{ width: '72px' }} className="feature-img mb-3" />
+                                        <img src={item?.icon} style={{ width: '72px' }} className="feature-img mb-3" alt='feature img'/>
                                     )}
                                     <span className="c-fs-2 c-fw-b head">{item?.heading}</span>
                                     <span className="c-fs-3  mt-3">
@@ -281,7 +281,7 @@ const HelloNewComponent = ({ pageData, path, pricingPath }) => {
                                               <div className="price-card email card  mb-4 mb-sm-0 c-bg-grey border-0 h-100 flex-fill">
                                                   <div className="card-body text-center">
                                                       <h3 className="c-fs-3">{item.name}</h3>
-                                                      <h5 className="mt-2 c-fs-2 text-green">
+                                                      <h2 className="mt-2 c-fs-2 text-green">
                                                           {symbol}
 
                                                           {symbol === '₹' && (
@@ -302,7 +302,7 @@ const HelloNewComponent = ({ pageData, path, pricingPath }) => {
                                                               item?.plan_amounts[1]?.plan_amount + '/Month'}
                                                           {symbol === '£' &&
                                                               item?.plan_amounts[2]?.plan_amount + '/Month'}
-                                                      </h5>
+                                                      </h2>
                                                       <p className="c-fs-5">
                                                           {symbol === '₹' && item.plan_amounts[0]?.plan_amount === 0
                                                               ? '-'
