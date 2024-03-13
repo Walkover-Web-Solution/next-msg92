@@ -55,6 +55,7 @@ const developers = () => {
                 <img
                   src='/img/Developers/Dev_thumps.svg'
                   className='devImgSize'
+                  alt='Dev thumps logo'
                 />
               </span>
               <p className='c-fs-3 text-center '>Engineered for reliability</p>
@@ -64,6 +65,7 @@ const developers = () => {
                 <img
                   src='/img/Developers/Dev_coms.svg'
                   className='devImgSize'
+                  alt='Dev coms logo'
                 />
               </span>
               <p className='c-fs-3 text-center'>Communication addons</p>
@@ -73,6 +75,7 @@ const developers = () => {
                 <img
                   src='/img/Developers/Dev_users.svg'
                   className='devImgSize'
+                  alt='Dev users logo'
                 />
               </span>
               <p className='c-fs-3 text-center'>Problem solvers at service</p>
@@ -140,7 +143,7 @@ const developers = () => {
         <div className='col-4 justify-content-center gap-5 d-flex'>
           <div className='dev-page-ico '>
             <div className='mx-auto d-flex justify-content-center align-items-center'>
-              <a href='https://play.google.com/store/apps/details?id=com.hellornapp'>
+              <a href='https://play.google.com/store/apps/details?id=com.hellornapp' aria-label="Android image">
                 {' '}
                 <GrAndroid className='heading iconColor p-1' />{' '}
               </a>
@@ -149,7 +152,7 @@ const developers = () => {
           </div>
           <div className='dev-page-ico'>
             <div className='mx-auto d-flex justify-content-center align-items-center'>
-              <a href='https://apps.apple.com/in/app/msg91/id981827687'>
+              <a href='https://apps.apple.com/in/app/msg91/id981827687' aria-label="iso image">
                 {' '}
                 <GrApple className='heading iconColor p-1' />{' '}
               </a>

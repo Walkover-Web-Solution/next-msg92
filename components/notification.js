@@ -47,6 +47,7 @@ const Notification = ({path}) => {
                 className="align-items-center d-flex text-dark cp"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                role="button"
               >
                 <MdLanguage className="me-1" />
                 <span className="c-fs-5 d-flex align-items-center">

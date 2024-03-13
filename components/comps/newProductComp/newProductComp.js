@@ -1,25 +1,25 @@
 import ProductFeatures from '@/components/productFeatures/productFeature';
-import style from './helloRestComp.module.scss';
-import productData from './hello.json';
+import style from './newProductComp.module.scss';
 import TrusedSection from '@/components/trustedSection/trustedSection';
 import FaqSection from '@/components/faqSection/faqSection';
 import Seo from '@/components/seoComp';
 import GetStartedSection from '@/components/getStartedSection/getStartedSection';
-const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }) => {
+const NewProductComp = ({ productData, path, pricingPath }) => {
     path = path === undefined ? 'global' : path;
-
     return (
         <>
             {
-                <div className={` ${style.hello}`}>
+                <div className={` ${style.product}`}>
                     <div className={`${style.hero} container d-flex flex-column flex-lg-row gap-4 my-5 `}>
                         <div
                             className={`${style.hero__content} d-flex flex-column justify-content-center gap-3 gap-lg-5 col-12 col-lg-6`}
                         >
                             <div className="d-flex flex-column gap-2">
                                 <div className={`${style.heroCont__product} d-flex align-items-center gap-2 c-fs-2`}>
-                                    <img className="product-icon" src="/img/icon/hello.svg" alt="hello icon" />
-                                    <span className="product-name text-capitalize">{productData?.product}</span>
+                                    <img className="product-icon" src="/img/icon/hello.svg" alt="hello" />
+                                    {productData?.product && (
+                                        <span className="product-name text-capitalize">{productData?.product}</span>
+                                    )}
                                 </div>
                                 <span className={`${style.heroCont__tagline} c-fs-3`}>
                                     {productData?.heroData[path]?.tagline}
@@ -40,14 +40,16 @@ const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }
                             {productData?.trustedData && <TrusedSection trustedData={productData?.trustedData} />}
                         </div>
                         <div className={`${style.heroimg} d-none d-sm-block`}>
-                            <img src="/img/pages/hello/heroimg.svg" alt='hello hero image'/>
+                            <img src="/img/pages/hello/heroimg.svg" />
                         </div>
                     </div>
-                    <ProductFeatures featureData={productData?.features} />
-                    <div className="container">
-                        <FaqSection faqData={productData?.faq} />
-                    </div>
-                    <Seo path={path} pageData={productData?.product} />
+                    {productData?.features && <ProductFeatures featureData={productData?.features} />}
+                    {productData?.faq && (
+                        <div className="container">
+                            <FaqSection faqData={productData?.faq} />
+                        </div>
+                    )}
+                    {productData?.product && <Seo path={path} pageData={productData?.product} />}
 
                     <GetStartedSection pricingPath={pricingPath} />
                 </div>
@@ -55,4 +57,4 @@ const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }
         </>
     );
 };
-export default HelloRestComp;
+export default NewProductComp;

@@ -84,6 +84,7 @@ const terms = () => {
                             <div className="my-3"></div>
                             5. You accept that the service is provided for professional use only and you agree not to use it to :
                             <div className="my-3"></div>
+                            <ul>
                             <li>
                                 Promote alcohol, music, dancing, dating, gambling or deception.
                             </li>
@@ -114,6 +115,7 @@ const terms = () => {
                             <li>
                                 Interfere with others use and enjoyment of the service.
                             </li>
+                            </ul>
                             <div className="my-3"></div>
                             6. You acknowledge that TEAM MSG91 delivers SMS’s via major telecom operators and can therefore only influence the delivery transmission of SMS within the technical constraints imposed. SMS’s submitted via Internet will be transferred to mobile network providers, provided that the recipient’s phone is switched on and doesn’t have a full memory and is located in an area covered by its subscribed mobile network provider. You acknowledge that, depending on the recipient’s mobile provider service, it may not be possible to transmit the SMS to the recipient successfully.
                             <div className="my-3"></div>
@@ -141,6 +143,7 @@ const terms = () => {
                         <span className="c-fs-4">
                             Except for any of our explicit warranties and our obligations, we are offering our Services “as is.”
                             <div className="my-3"></div>
+                            <ul>
                             <li>
                                 Whilst we will take all reasonable steps to deliver your messages to the recipients as fast as possible, we cannot commit to, or guarantee, a specific delivery time. Such times depend on various network and system-related factors among the various entities involved in the transportation of your messages across the cellular mobile networks.
                             </li>
@@ -168,6 +171,7 @@ const terms = () => {
                             <li>
                                 Not withstanding anything to the contrary contained herein, the provisions outlined above are for the benefit of Team MSG91 and its affiliates, agents, content providers and service providers and each shall have the right to assert and enforce such provisions directly on its own behalf.
                             </li>
+                            </ul>
                         </span>
                     </div>
                     <div className="my-5">
