@@ -17,7 +17,7 @@ const Pricingsms = ({
     currencySymbol,
     countryCode,
 }) => {
-    const [sliderValue, setSliderValue] = useState(47);
+    const [sliderValue, setSliderValue] = useState(0);
     const [pricingEnv, setPricingEnv] = useState(4);
     const [totalNoOfSmsArray, setTotalNoOfSmsArray] = useState([]);
     useEffect(() => {
@@ -31,7 +31,9 @@ const Pricingsms = ({
 
     useEffect(() => {
         if (pricing.length > 0) {
-            setTotalNoOfSmsArray(pricing.map((item) => item[pricingEnv]['totalNoOfSms']).sort((a, b) => a - b));
+            //setTotalNoOfSmsArray(pricing.map((item) => item[pricingEnv]['totalNoOfSms']).sort((a, b) => a - b));
+            setTotalNoOfSmsArray(pricing.sort((a, b) => a[pricingEnv].totalNoOfSms - b[pricingEnv].totalNoOfSms));
+            
         }
     }, [pricing]);
 
@@ -66,7 +68,14 @@ const Pricingsms = ({
         } else {
             pricingsms = pricingSMSstr.toLocaleString(undefined);
         }
+
+        noOfsms = totalNoOfSmsArray[sliderValue][pricingEnv].totalNoOfSms;
+        ratePersms = totalNoOfSmsArray[sliderValue][pricingEnv].rate;
+        pricingsms = noOfsms * rate;
     }
+    
+    console.log('totalNoOfSmsArray', totalNoOfSmsArray, sliderValue);
+    
     return (
         <>
             <div>
@@ -117,22 +126,23 @@ const Pricingsms = ({
                                 <div className="d-flex flex-column gap-3 align-items center mt-3 p-4 bg-white rounded ">
                                     <div className="text-center text-dark c-fw-m">Number of SMS</div>
                                     <div className=" d-none d-md-flex">
-                                        {totalNoOfSmsArray.map((amount, index) => {
+                                        {totalNoOfSmsArray.map((item, index) => {
                                             return (
                                                 <div className="text-end col c-fs-5" key={index}>
-                                                    {amount}
+                                                    {item[pricingEnv].totalNoOfSms}
                                                 </div>
                                             );
                                         })}
                                     </div>
-                                    <div className="d-flex d-md-none">
+
+                                    {/* <div className="d-flex d-md-none">
                                         <div className="text-start col c-fs-5">0</div>
                                         <div className="text-end col c-fs-5">
                                             {totalNoOfSmsArray[totalNoOfSmsArray.length - 1]}
                                         </div>
-                                    </div>
+                                    </div> */}
 
-                                    <input
+                                    {/* <input
                                         className="slider"
                                         type="range"
                                         min="1"
@@ -140,14 +150,24 @@ const Pricingsms = ({
                                         value={sliderValue}
                                         onChange={(e) => setSliderValue(e.target.value)}
                                         aria-label="Slider"
-                                    />
+                                    /> */}
+                                    <input
+                                        className="slider"
+                                        type="range"
+                                        min="0"
+                                        max={totalNoOfSmsArray.length-1}
+                                        step="1"
+                                        value={sliderValue}
+                                        onChange={(e) => setSliderValue(e.target.value)}
+                                        aria-label="Slider"
+                                    />                                     
 
                                     <div className="d-none d-md-flex">
-                                        {pricing.map((data, index) => {
+                                        {totalNoOfSmsArray.map((item, index) => {
                                             return (
                                                 <div className="text-end col c-fs-5" key={index}>
                                                     {currencySymbol}
-                                                    {data[pricingEnv]?.rate}
+                                                    {item[pricingEnv]?.rate}
                                                 </div>
                                             );
                                         })}
