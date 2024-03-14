@@ -250,11 +250,13 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                         <ul className="dropdown-menu p-2">
                             {productPricingData.map((productData, index) =>
                                 productData.type === 'heading' ? (
-                                    <li className="c-fw-m c-fs-5  ">{productData.heading}</li>
+                                    <li className="c-fw-m c-fs-5 "
+                                      key={index} 
+                                      >{productData.heading}</li>
                                 ) : (
-                                    <li>
+                                    <li   key={index}>
                                         <Link
-                                            key={index}
+                                          
                                             href={
                                                 pathLengthCond
                                                     ? `/${countryCode.toLowerCase()}/pricing/${productData?.product}`
@@ -291,7 +293,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                     <div className=" d-none d-md-flex flex-column gap-2 align-items-start py-4" id="pricing-pills-tab">
                         {productPricingData.map((productData, index) =>
                             productData.type === 'heading' ? (
-                                <h1 className="c-fw-m fs-6  ">{productData.heading}</h1>
+                                <h1 className="c-fw-m fs-6  "         key={index}>{productData.heading}</h1>
                             ) : (
                                 <Link
                                     key={index}
