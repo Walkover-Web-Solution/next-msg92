@@ -20,6 +20,7 @@ const Pricingsms = ({
     const [sliderValue, setSliderValue] = useState(0);
     const [pricingEnv, setPricingEnv] = useState(4);
     const [totalNoOfSmsArray, setTotalNoOfSmsArray] = useState([]);
+    console.log('pricing-----------',pricing);
     useEffect(() => {
         setUtm();
     }, [pricing, originCountry, destinationCountry]);
@@ -68,13 +69,14 @@ const Pricingsms = ({
         } else {
             pricingsms = pricingSMSstr.toLocaleString(undefined);
         }
-
-        noOfsms = totalNoOfSmsArray[sliderValue][pricingEnv].totalNoOfSms;
-        ratePersms = totalNoOfSmsArray[sliderValue][pricingEnv].rate;
-        pricingsms = noOfsms * rate;
+        
+        //console.log('sliderValue, pricingEnv', sliderValue, pricingEnv, );
+        noOfsms = totalNoOfSmsArray[sliderValue][4]?.totalNoOfSms;
+        ratePersms = totalNoOfSmsArray[sliderValue][4].rate;
+        pricingsms = noOfsms * ratePersms;
+        console.log('---------------------', noOfsms, ratePersms, pricingsms);
     }
     
-    console.log('totalNoOfSmsArray', totalNoOfSmsArray, sliderValue);
     
     return (
         <>
