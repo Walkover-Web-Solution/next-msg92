@@ -233,11 +233,10 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
     return (
         <>
             <div className="main-container  ">
-                <div className="container p-4 d-flex gap-4 flex-column flex-md-row">
-                    <div className="dropdown d-flex d-md-none align-items-center  w-75 px-2 py-1 br-2">
-                        <a
-                            href="#"
-                            className="w-100 gap-2 align-items-center d-flex text-dark "
+                <div className="container p-md-4 p-2 d-flex gap-4 flex-column flex-md-row">
+                    <div className="dropdown d-flex d-md-none align-items-center   w-75 px-2 py-1 br-2">
+                        <button
+                            className="w-100 gap-2 align-items-center d-flex text-dark border-0 outline-none "
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
                         >
@@ -247,8 +246,8 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                             </div>
 
                             <MdExpandMore />
-                        </a>
-                        <ul className="dropdown-menu pt-0">
+                        </button>
+                        <ul className="dropdown-menu p-2">
                             {productPricingData.map((productData, index) =>
                                 productData.type === 'heading' ? (
                                     <li className="c-fw-m c-fs-5  ">{productData.heading}</li>
@@ -327,7 +326,7 @@ const PricingComp = ({ countryCode, product, browserPath }) => {
                             )
                         )}
                     </div>
-                    <div className=" price-container w-100 p-4">
+                    <div className=" price-container w-100 p-md-4 p-1">
                         {product === 'sms' && (
                             <Pricingsms
                                 amountArr={amountArr}
