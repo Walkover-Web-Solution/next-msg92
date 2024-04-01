@@ -120,7 +120,7 @@ export default function SubProductComp() {
                     <button className="btn btn-dark btn-lg rounded-1 btn-ft">Get started</button>
                 </div>
                 <Image
-                    src="/img/pageimg/whatapp-chatbot.svg"
+                    src="/img/pageimg/whatapp-chatbot.png"
                     width={1080}
                     height={1080}
                     className="col-md-6 col-12 h-auto"
