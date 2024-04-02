@@ -37,7 +37,7 @@ const Footer = ({path, year}) => {
                   Free WhatsApp link generator
                 </a>
                 <a href={`${path}/whatsapp/chatbot`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
-                 WhatsApp Chatbot
+                 WhatsApp Chatbot 
                 </a>
               </div>
             </div>
