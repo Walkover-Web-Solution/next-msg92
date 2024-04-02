@@ -80,11 +80,17 @@ const Headcomp = (browserPath) => {
                 <link rel="canonical" href={`https://msg91.com${pathArrRaw[0]}`} />
                 
                 
-                {!isOnlyGlobal && (
+                {!isOnlyGlobal && pathCountry && (
                     <>
-                        <link rel="alternate" hrefLang={`en-${pathArr[1].toUpperCase()}`} href={`https://msg91.com/${pathArr[1]}${pathPage}`} />
+                        <link rel="alternate" hrefLang={`en-${pathArr[1].toUpperCase()}`} href={`https://msg91.com${pathCountry}${pathPage}`} />
                     </>
                 )}
+                {isOnlyGlobal || !pathCountry && (
+                    <>
+                        <link rel="alternate" hrefLang='en' href={`https://msg91.com${pathPage}`} />
+                    </>
+                )}
+             
             </Head>
         </>
     );
