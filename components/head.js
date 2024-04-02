@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import metaData from '@/data/metadata.json';
 
-const Headcomp = (browserPath, browserPathMeta) => {
+const Headcomp = (browserPath) => {
     const countryList = ['in', 'ae', 'ph', 'sg', 'es', 'gb', 'us'];
     const exptns = {
         'gbl': [
@@ -59,7 +59,6 @@ const Headcomp = (browserPath, browserPathMeta) => {
             isOnlyGlobal = exptns.gbl.includes(pathArr[1]);
         }
     }
-
     return (
         <>
             <Head>
@@ -79,17 +78,19 @@ const Headcomp = (browserPath, browserPathMeta) => {
                     </>
                 )}
                 <link rel="canonical" href={`https://msg91.com${pathArrRaw[0]}`} />
-                <link rel="alternate" hrefLang="x-default" href={`https://msg91.com${pathPage}`} />
-                {!isOnlyGlobal && (
+                
+                
+                {!isOnlyGlobal && pathCountry && (
                     <>
-                        <link rel="alternate" hrefLang="en-IN" href={`https://msg91.com/in${pathPage}`} />
-                        <link rel="alternate" hrefLang="en-GB" href={`https://msg91.com/gb${pathPage}`} />
-                        <link rel="alternate" hrefLang="en-PH" href={`https://msg91.com/ph${pathPage}`} />
-                        <link rel="alternate" hrefLang="en-SG" href={`https://msg91.com/sg${pathPage}`} />
-                        <link rel="alternate" hrefLang="en-ES" href={`https://msg91.com/es${pathPage}`} />
-                        <link rel="alternate" hrefLang="en-US" href={`https://msg91.com/us${pathPage}`} />
+                        <link rel="alternate" hrefLang={`en-${pathArr[1].toUpperCase()}`} href={`https://msg91.com${pathCountry}${pathPage}`} />
                     </>
                 )}
+                {isOnlyGlobal || !pathCountry && (
+                    <>
+                        <link rel="alternate" hrefLang='en' href={`https://msg91.com${pathPage}`} />
+                    </>
+                )}
+             
             </Head>
         </>
     );

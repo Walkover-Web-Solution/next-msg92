@@ -36,7 +36,6 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
   const toggleOverlay = () => {
     setShowOverlay(true);
   };  
- console.log(countryCode);
   useEffect(() => {
     $("#product-link").on("mouseenter", function () {
       $("#overlaymenucont, #productmenu, #bgoverlay").addClass("active");
