@@ -9,7 +9,7 @@ const Footer = ({path, year}) => {
         <div className="footer_Main_Content mt-4 mb-4 container">
           <div className="row justify-content-sm-between">
             <div className="col-6 col-lg-4 mb-4">
-              <h4 className="c-fs-5 d-flex flex-column">Our products</h4>
+              <h1 className="c-fs-5 d-flex flex-column">Our products</h1>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a href={`${path}/hello`} className="c-link-underline c-fs-5 mt-2 c-fw-t">
                   Hello
@@ -25,7 +25,7 @@ const Footer = ({path, year}) => {
                 </a>
               </div>
 
-              <h4 className="c-fs-5 d-flex flex-column mt-5">Utilities</h4>
+              <h1 className="c-fs-5 d-flex flex-column mt-5">Utilities</h1>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a href={`${path}/shorturl`} className="c-link-underline c-fs-5 mt-2 c-fw-t">
                   URL Shortener
@@ -36,11 +36,14 @@ const Footer = ({path, year}) => {
                 <a href={`${path}/free-whatsapp-link-generator`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   Free WhatsApp link generator
                 </a>
+                <a href={`${path}/whatsapp/chatbot`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
+                 WhatsApp Chatbot
+                </a>
               </div>
             </div>
 
             <div className="col-6 col-lg-3 mb-4">
-              <h4 className=" c-fs-5 d-flex flex-column">Channels</h4>
+              <h1 className=" c-fs-5 d-flex flex-column">Channels</h1>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a href={`${path}/sms`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   SMS
@@ -59,7 +62,7 @@ const Footer = ({path, year}) => {
                 </a>                
               </div>
 
-              <h4 className="c-fs-5 d-flex flex-column mt-5">Resources</h4>
+              <h1 className="c-fs-5 d-flex flex-column mt-5">Resources</h1>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a
                   href="/guide"
@@ -100,7 +103,7 @@ const Footer = ({path, year}) => {
             </div>            
 
             <div className="col-6 col-lg-3 mb-4">
-              <h4 className=" c-fs-5 d-flex flex-column">Discover</h4>
+              <h1 className=" c-fs-5 d-flex flex-column">Discover</h1>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a
                   href="/about-us"
@@ -305,7 +308,7 @@ const Footer = ({path, year}) => {
                 </span>
               </div>
             </div>
-            <div className="c-fs-7 copyright mt-3">
+            <div className="c-fs-7 copyright mt-3 text-white">
               Copyright 2008-{year} MSG91 | All rights reserved.
             </div>
           </div>

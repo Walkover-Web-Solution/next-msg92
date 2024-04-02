@@ -25,6 +25,7 @@ const aboutUsComp = () => {
           className='img-fluid'
           height='{729}'
           width='{1428}'
+          alt='walkoverteam image'
         />
       </div>
       <div className='container-fluid d-lg-flex flex-row justify-content-center p-5 paddingCss blackBg'>
@@ -45,6 +46,7 @@ const aboutUsComp = () => {
                 src='/img/about_Us/user_thinking.svg'
                 width='95%'
                 height='95%'
+                alt='user thinking logo'
               />
             </span>
             <div className='alignMiddle cart'>
@@ -57,7 +59,7 @@ const aboutUsComp = () => {
         <div className='col-lg-3 col-md-6 col-sm-12'>
           <div className='w-100 d-flex flex-column align-items-center'>
             <span className='c-fs-1 rounded-circle social-circle negativeMargin justify-content-center align-items-center d-flex blackBg'>
-              <img src='/img/about_Us/star_our.svg' width='95%' height='95%' />
+              <img src='/img/about_Us/star_our.svg' width='95%' height='95%' alt='star our logo'/>
             </span>
             <div className='alignMiddle cart'>
               <p className='c-fs-2 c-fw-b px-6 py-4 mt-n2  w-95 text-center '>
@@ -73,6 +75,7 @@ const aboutUsComp = () => {
                 src='/img/about_Us/trendingup_uplifting.svg'
                 width='95%'
                 height='95%'
+                alt='trendingup uplifting logo'
               />
             </span>
             <div className='alignMiddle cart'>
@@ -85,7 +88,7 @@ const aboutUsComp = () => {
         <div className='col-lg-3 col-md-6 col-sm-12 '>
           <div className='w-100 d-flex flex-column align-items-center'>
             <span className='c-fs-1 rounded-circle social-circle negativeMargin justify-content-center align-items-center d-flex  blackBg'>
-              <img src='/img/about_Us/feather_sustainability.svg' />
+              <img src='/img/about_Us/feather_sustainability.svg' alt='feather sustainability logo'/>
             </span>
             <div className='alignMiddle cart'>
               <p className='c-fs-2 c-fw-b px-6 py-4 mt-n2 w-95 text-center '>
@@ -260,6 +263,7 @@ const aboutUsComp = () => {
               <img
                 src='../img/about_Us/team_Image1.svg'
                 className='img-fluid col-lg-10 bborder-0'
+                alt='team Image'
               />
             </div>
             <div className='container paddingCss'>
@@ -319,6 +323,7 @@ const aboutUsComp = () => {
               <img
                 src='../img/about_Us/ixigo.svg'
                 className='ixigoss product-page-logo w-100'
+                alt='ixigo logo'
               />
             </div>
             <p className='c-fs-4 text-muted'>
@@ -334,6 +339,7 @@ const aboutUsComp = () => {
               <img
                 src='../img/about_Us/policy_Bazaar.svg'
                 className='policybazaarss product-page-logo w-100'
+                alt='policy Bazaar logo'
               />
             </div>
             <p className='c-fs-4 text-muted'>
@@ -349,6 +355,7 @@ const aboutUsComp = () => {
               <img
                 src='../img/about_Us/indialends.svg'
                 className='indialendsss product-page-logo w-100'
+                alt='indialends logo'
               />
             </div>
             <p className='c-fs-4 text-muted'>

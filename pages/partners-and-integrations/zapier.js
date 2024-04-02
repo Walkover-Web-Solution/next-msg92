@@ -14,7 +14,7 @@ const Zapier = () => {
 
   return (
     <>
-     <Head>
+      <Head>
         <script
           type="module"
           src="https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.esm.js"
@@ -28,12 +28,12 @@ const Zapier = () => {
 
       <div className="int-page-head zapier d-flex py-3">
         <div className="container d-flex align-items-center gap-4">
-          <img src="/img/integrations/zapeir-logo.svg" />
+          <img src="/img/integrations/zapeir-logo.svg" alt="zapeir logo" />
           <div>
             <h1 className="sub-heading">Zapier Integration</h1>
-            <h4 className="c-fs-4 mt-2">
+            <h2 className="c-fs-4 mt-2">
               Streamline Your Engagement Workflows
-            </h4>
+            </h2>
           </div>
         </div>
       </div>
@@ -50,20 +50,20 @@ const Zapier = () => {
                 MSG91 can integrate with 5000+ apps via Zapier so you can
                 automate your business workflows and customer engagement with
                 ease, without embedding any code.
-              </p>              
+              </p>
             </div>
           </div>
           <div className="container mb-4">
-      <zapier-zap-templates
-        theme="light"
-        apps="msg91"
-        create-without-template="hide"
-        limit="10"
-        link-target="new-tab"
-        presentation="row"
-        use-this-zap="show"
-        ></zapier-zap-templates>
-        </div>
+            <zapier-zap-templates
+              theme="light"
+              apps="msg91"
+              create-without-template="hide"
+              limit="10"
+              link-target="new-tab"
+              presentation="row"
+              use-this-zap="show"
+            ></zapier-zap-templates>
+          </div>
         </div>
       </div>
       <div className="container d-flex flex-column justify-content-center my-5 py-4 text-center">
@@ -108,15 +108,15 @@ const Zapier = () => {
         <p className="c-fs-2">
           Create custom triggers and actions that initiate messaging and
           increase engagement based on specific events or conditions in
-          connected applications. 
-          <br/>
-          <br/>
+          connected applications.
+          <br />
+          <br />
           Send order alerts and recover abandoned
           checkouts via WhatsApp / SMS Create customer journeys with
           multi-channel communication Update customers on critical events- New
           Signups, Payment Confirmation, Send Invoice PDF
         </p>
-        <img className="col-12 col-sm-6" src="/img/integrations/zapeir-graphics.svg" />
+        <img className="col-12 col-sm-6" src="/img/integrations/zapeir-graphics.svg" alt="zapeir-graphics image" />
       </div>
       <div className="container my-5">
         <h1 className="sub-heading c-head mb-3">
@@ -134,18 +134,18 @@ const Zapier = () => {
           <MdDone className="c-fs-1 col-int zapier" />
           <p className="c-fs-2">Pre-build templates</p>
         </div>
-      </div>      
+      </div>
       <div className="d-flex flex-column flex-md-row container align-items-center justify-content-between my-5">
         <h2 className="c-head c-fs-1 col-12 col-md-8 text-center text-md-start">
-        Enhance your communication capabilities and automate your engagement tasks
-        </h2>        
-          <a
-            href="https://zapier.com/apps/msg91/integrations"
-            className="btn btn-dark btn-lg c-fs-2 my-4"
-            target="_blank"
-          >
-            Get the MSG91 Zapier plugin
-          </a>
+          Enhance your communication capabilities and automate your engagement tasks
+        </h2>
+        <a
+          href="https://zapier.com/apps/msg91/integrations"
+          className="btn btn-dark btn-lg c-fs-2 my-4"
+          target="_blank"
+        >
+          Get the MSG91 Zapier plugin
+        </a>
       </div>
     </>
   );

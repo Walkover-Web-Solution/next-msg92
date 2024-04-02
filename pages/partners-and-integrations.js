@@ -36,6 +36,7 @@ const partnersAndIntegrations = () => {
           <iframe
             className="airtable-embed elementor-container"
             src="https://airtable.com/embed/shrYdNZpl7vaKdcvw?backgroundColor=red&viewControls=on"
+            title='airtable-embed'
             frameborder="0"
             onmousewheel=""
             width="100%"
@@ -106,7 +107,7 @@ const partnersAndIntegrations = () => {
         </h2>
         <div className="w-100 d-flex flex-wrap  h-100 p-3 pe-3 pe-md-4 our-partner">
           <div className=" c-w-pp  pe-0 pe-md-5 our-partner h-100">
-            <img className="mt-3" src="/img/the-weeky-img.png" />
+            <img className="mt-3" src="/img/the-weeky-img.png" alt="weeky logo"/>
             <div className="d-flex flex-column">
               <p className="c-fs-3 my-3">
                 Our long standing Partnership with MSG91 has been very
@@ -118,7 +119,7 @@ const partnersAndIntegrations = () => {
             </div>
           </div>
           <div className="c-w-pp mt-4 mt-md-0 h-100 pe-0 pe-md-5 our-partner pt-4 ">
-            <img className="mt-3 " src="/img/rixyncs-img.png" />
+            <img className="mt-3 " src="/img/rixyncs-img.png" alt="rixyncs logo"/>
             <div className=" d-flex flex-column justify-content-between">
               <p className="c-fs-3 my-3">
                 We are happy partnering with MSG91, the team has been prompt in

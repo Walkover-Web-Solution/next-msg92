@@ -17,9 +17,10 @@ const Pricingsms = ({
     currencySymbol,
     countryCode,
 }) => {
-    const [sliderValue, setSliderValue] = useState(47);
+    const [sliderValue, setSliderValue] = useState(0);
     const [pricingEnv, setPricingEnv] = useState(4);
     const [totalNoOfSmsArray, setTotalNoOfSmsArray] = useState([]);
+
     useEffect(() => {
         setUtm();
     }, [pricing, originCountry, destinationCountry]);
@@ -31,7 +32,8 @@ const Pricingsms = ({
 
     useEffect(() => {
         if (pricing.length > 0) {
-            setTotalNoOfSmsArray(pricing.map((item) => item[pricingEnv]['totalNoOfSms']).sort((a, b) => a - b));
+            //setTotalNoOfSmsArray(pricing.map((item) => item[pricingEnv]['totalNoOfSms']).sort((a, b) => a - b));
+            setTotalNoOfSmsArray(pricing.sort((a, b) => a[pricingEnv].totalNoOfSms - b[pricingEnv].totalNoOfSms));
         }
     }, [pricing]);
 
@@ -66,7 +68,17 @@ const Pricingsms = ({
         } else {
             pricingsms = pricingSMSstr.toLocaleString(undefined);
         }
+
+        
+        if (totalNoOfSmsArray.length > 0) {
+            noOfsms = totalNoOfSmsArray[sliderValue][pricingEnv]?.totalNoOfSms;
+            ratePersms = totalNoOfSmsArray[sliderValue][pricingEnv].rate;
+            pricingsms = noOfsms * ratePersms;
+        }
+
+        // console.log('---------------------', noOfsms, ratePersms, pricingsms);
     }
+
     return (
         <>
             <div>
@@ -114,44 +126,42 @@ const Pricingsms = ({
                     <>
                         {pricing.length > 2 ? (
                             <>
-                                <div className="d-flex flex-column gap-3 align-items center mt-3 p-4 bg-white rounded ">
-                                    <div className="text-center text-dark c-fw-m">Number of SMS</div>
-                                    <div className=" d-none d-md-flex">
-                                        {totalNoOfSmsArray.map((amount, index) => {
+                                <div className="d-flex flex-column gap-4 align-items center mt-3 p-4 bg-white rounded ">
+                                    <div className="d-none d-lg-block text-center text-dark c-fw-m">Number of SMS</div>
+                                    <div className=" d-none d-lg-flex">
+                                        {totalNoOfSmsArray.map((item, index) => {
                                             return (
-                                                <div className="text-end col c-fs-5" key={index}>
-                                                    {amount}
+                                                <div className="text-center col c-fs-5" key={index}>
+                                                    {item[pricingEnv].totalNoOfSms}
                                                 </div>
                                             );
                                         })}
                                     </div>
-                                    <div className="d-flex d-md-none">
-                                        <div className="text-start col c-fs-5">0</div>
-                                        <div className="text-end col c-fs-5">
-                                            {totalNoOfSmsArray[totalNoOfSmsArray.length - 1]}
-                                        </div>
+
+                                    <div className="input-slider-padding">
+                                        <input
+                                            className="slider"
+                                            type="range"
+                                            min="0"
+                                            max={totalNoOfSmsArray.length - 1}
+                                            step="1"
+                                            value={sliderValue}
+                                            onChange={(e) => setSliderValue(e.target.value)}
+                                            aria-label="Slider"
+                                        />
                                     </div>
 
-                                    <input
-                                        className="slider"
-                                        type="range"
-                                        min="1"
-                                        max="100"
-                                        value={sliderValue}
-                                        onChange={(e) => setSliderValue(e.target.value)}
-                                    />
-
-                                    <div className="d-none d-md-flex">
-                                        {pricing.map((data, index) => {
+                                    <div className="d-none d-lg-flex">
+                                        {totalNoOfSmsArray.map((item, index) => {
                                             return (
-                                                <div className="text-end col c-fs-5" key={index}>
+                                                <div className="text-center col c-fs-5" key={index}>
                                                     {currencySymbol}
-                                                    {data[pricingEnv]?.rate}
+                                                    {item[pricingEnv]?.rate}
                                                 </div>
                                             );
                                         })}
                                     </div>
-                                    <div className="text-center text-dark c-fw-m">Cost per SMS</div>
+                                    <div className="text-center text-dark c-fw-m d-none d-lg-block">Cost per SMS</div>
                                 </div>
                                 <div className="d-flex align-items-end mt-4 mb-3">
                                     <p className="c-fs-2 c-fw-500">

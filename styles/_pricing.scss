@@ -36,7 +36,6 @@
 }
 .card-wrapper {
     gap: 40px !important;
-   
 }
 
 .more-about {
@@ -187,7 +186,7 @@ $border-width: 2px;
 }
 
 .price-card {
-    background: var(--c-light-grey) !important;    
+    background: var(--c-light-grey) !important;
     margin-bottom: 36px;
     .text-green {
         // font-size: 32px !important;
@@ -458,11 +457,21 @@ $border-width: 2px;
     box-shadow: -1207px 0 0 1200px #307368;
 }
 
-.cursor-pointer{
-  cursor: pointer;
+.cursor-pointer {
+    cursor: pointer;
 }
 
-.wa-pricing-link{
-  text-decoration: underline !important;
-  cursor: pointer !important;;
+.wa-pricing-link {
+    text-decoration: underline !important;
+    cursor: pointer !important;
+}
+
+.input-slider-padding {
+    padding: 0 56px;
+    @media only screen and (max-width: 1025px) {
+        padding: 0 32px;
+    }
+    @media only screen and (max-width: 780px) {
+        padding: 0 0px;
+    }
 }

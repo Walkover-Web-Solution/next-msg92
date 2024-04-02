@@ -184,6 +184,8 @@ const ParentComponent = ({ pricingPath }) => {
               <img
                 src="/img/icon/whatsapp.svg"
                 className="product-page-logo me-2"
+                alt="whatsapp logo"
+
               />
               <h1 className="heading hello-heading">
                 Free WhatsApp link generator
@@ -214,13 +216,13 @@ const ParentComponent = ({ pricingPath }) => {
       </div>
 
       <div className="container px-4 py-5" id="featured-3">
-        <h3 className="sub-heading c-head pt-4 pt-md-0">
+        <h2 className="sub-heading c-head pt-4 pt-md-0">
           3 steps to creating a QR code/Widget/Link
-        </h3>
+        </h2>
         <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-              <img src="/img/icon/dialpad.svg" className="" />
+              <img src="/img/icon/dialpad.svg" className="" alt="dialpad logo"/>
             </div>
             <h3 className="c-fs-2 c-fw-b">Step1</h3>
             <p className="c-fs-3  mt-3">
@@ -230,7 +232,7 @@ const ParentComponent = ({ pricingPath }) => {
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-              <img src="/img/icon/dashboard_customize.svg" className="" />
+              <img src="/img/icon/dashboard_customize.svg" className="" alt="dashboard customize logo"/>
             </div>
             <h3 className="c-fs-2 c-fw-b ">Step2</h3>
             <p className="c-fs-3  mt-3">
@@ -240,7 +242,7 @@ const ParentComponent = ({ pricingPath }) => {
           </div>
           <div className="feature col">
             <div className="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-              <img src="/img/icon/auto_awesome.svg" className="" />
+              <img src="/img/icon/auto_awesome.svg" className="" alt="auto awesome logo"/>
             </div>
             <h3 className="c-fs-2 c-fw-b ">Step3</h3>
             <p className="c-fs-3  mt-3">
@@ -351,7 +353,7 @@ const ParentComponent = ({ pricingPath }) => {
               <h4 className="d-flex justify-content-between align-items-center mb-3">
                 <span className="">Widget preview</span>
               </h4>
-              <img src="/img/widget-preview.svg" className="" />
+              <img src="/img/widget-preview.svg" className="" alt="widget preview logo"/>
           </div>
 
           <div className="col-md-6" id="widget-preview" style={{display: 'none'}}>
