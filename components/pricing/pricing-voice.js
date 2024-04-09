@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
-import countries from '@/data/countriesWIthCID.json';
-import { MdDone } from 'react-icons/md';
-import faqData from '@/data/faq.json';
-import FaqSection from '../faqSection/faqSection';
-import { Typeahead } from 'react-bootstrap-typeahead';
-import axios from 'axios';
-import Link from 'next/link';
+import { useEffect, useState } from "react";
+import countries from "@/data/countriesWIthCID.json";
+import { MdDone } from "react-icons/md";
+import faqData from "@/data/faq.json";
+import FaqSection from "../faqSection/faqSection";
+import { Typeahead } from "react-bootstrap-typeahead";
+import axios from "axios";
+import Link from "next/link";
 
-const PricingCalls = ({ countryCode }) => {
+const PricingCalls = ({ countryCode, currency }) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [loadingExport, setLoadingExport] = useState(false);
@@ -17,9 +17,7 @@ const PricingCalls = ({ countryCode }) => {
     const [countryData, setCountryData] = useState();
     const [currencyCode, setCurrencyCode] = useState();
     const [symbol, setSymbol] = useState();
-    const [exportClicked, setExportClicked] = useState(false);
-    const [download, setDownload] = useState(false);
-    const apiUrl = 'https://testvoice.phone91.com';
+    const apiUrl = "https://voice.phone91.com";
 
     //set intial states
     useEffect(() => {
@@ -29,9 +27,18 @@ const PricingCalls = ({ countryCode }) => {
     }, [countryData]);
 
     useEffect(() => {
-        setDownload(false);
         if (selectedCountry) {
-            setCurrencyCode(countries.find((country) => country.sortname === selectedCountry?.country_code)?.currency);
+
+            // const preferredCurrency = countries.find(
+            //     (country) => country.sortname === selectedCountry?.country_code
+            // )?.currency;
+            if (currency === "GBP") {
+                setCurrencyCode("USD");
+            } else if (currency === "INR" && selectedCountry?.name !== "India") {
+                setCurrencyCode("USD");
+            } else {
+                setCurrencyCode(currency);
+            }
         }
     }, [selectedCountry, countries]);
 
@@ -47,7 +54,7 @@ const PricingCalls = ({ countryCode }) => {
                 const data = await response.json();
                 setCountryData(data);
             } else {
-                throw new Error('Currently we only have plan for India(91)');
+                throw new Error("Currently we only have plan for India(91)");
             }
         } catch (error) {
             setError(error.message);
@@ -59,13 +66,14 @@ const PricingCalls = ({ countryCode }) => {
     //fetch dialPlan and set corrency
     useEffect(() => {
         if (currencyCode) {
+            console.log("🚀 ~ useEffect ~ currencyCode:", currencyCode)
             fetchDialPlan(currencyCode);
-            if (currencyCode === 'GBP') {
-                setSymbol('£');
-            } else if (currencyCode === 'INR') {
-                setSymbol('₹');
+            if (currencyCode === "GBP") {
+                setSymbol("£");
+            } else if (currencyCode === "INR") {
+                setSymbol("₹");
             } else {
-                setSymbol('$');
+                setSymbol("$");
             }
         }
     }, [currencyCode]);
@@ -78,7 +86,7 @@ const PricingCalls = ({ countryCode }) => {
 
                 setDialPlan(data?.data.dialplan_id);
             } else {
-                throw new Error('Currently we only have plan for India(91)');
+                throw new Error("Currently we only have plan for India(91)");
             }
         } catch (error) {
             setError(error.message);
@@ -105,7 +113,7 @@ const PricingCalls = ({ countryCode }) => {
                 const data = await response.json();
                 setData(data);
             } else {
-                throw new Error('Currently we only have plan for India(91)');
+                throw new Error("Currently we only have plan for India(91)");
             }
         } catch (error) {
             setError(error.message);
@@ -114,7 +122,6 @@ const PricingCalls = ({ countryCode }) => {
         }
     };
     async function exportPricing() {
-        setExportClicked(true);
         setLoadingExport(true);
 
         try {
@@ -123,13 +130,12 @@ const PricingCalls = ({ countryCode }) => {
             );
             if (response) {
                 setLoadingExport(false);
-                setDownload(true);
                 if (response?.data?.data?.url) {
                     window.location.href = response.data.data.url;
                 }
             }
         } catch (e) {
-            console.log(e, 'error in my function');
+            console.log(e, "error in my function");
         } finally {
             setLoadingExport(false);
         }
@@ -147,11 +153,11 @@ const PricingCalls = ({ countryCode }) => {
     const [open, setOpen] = useState(false);
     return (
         <>
-            {/* <div className="col-3">
+            <div className="col-3">
                 {countryData && (
                     <>
                         <Typeahead
-                            key={defaultSelectedCountry.length > 0 ? 'hasDefault' : 'noDefault'}
+                            key={defaultSelectedCountry.length > 0 ? "hasDefault" : "noDefault"}
                             className="col c-fs-6"
                             id="country"
                             placeholder="Select a country"
@@ -167,7 +173,7 @@ const PricingCalls = ({ countryCode }) => {
                             clearButton
                             defaultSelected={defaultSelectedCountry}
                             inputProps={{
-                                autoComplete: 'off',
+                                autoComplete: "off",
                             }}
                             onChange={(selected) => {
                                 setOpen(false);
@@ -205,8 +211,8 @@ const PricingCalls = ({ countryCode }) => {
                                                         {symbol}
                                                         {data?.local_rates_max}
                                                     </>
-                                                )}{' '}
-                                                -{' '}
+                                                )}{" "}
+                                                -{" "}
                                                 {data?.local_rates_max && (
                                                     <>
                                                         {symbol}
@@ -304,13 +310,13 @@ const PricingCalls = ({ countryCode }) => {
                     <div className="mt-3">
                         <span className="fw-semibold mb-3">Local Rate:</span>
                         <span>
-                            {' '}
+                            {" "}
                             Calls are routed through local operators’ in-country network. Only numbers on your MSG91
                             account can be used.
                         </span>
                     </div>
                 </>
-            )} */}
+            )}
 
             <div className="connect-personalized my-4">
                 <span className="talk-to-sales d-block c-fs-4 fw-medium">
