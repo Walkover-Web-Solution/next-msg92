@@ -28,7 +28,6 @@ const PricingCalls = ({ countryCode, currency }) => {
 
     useEffect(() => {
         if (selectedCountry) {
-
             // const preferredCurrency = countries.find(
             //     (country) => country.sortname === selectedCountry?.country_code
             // )?.currency;
@@ -66,7 +65,7 @@ const PricingCalls = ({ countryCode, currency }) => {
     //fetch dialPlan and set corrency
     useEffect(() => {
         if (currencyCode) {
-            console.log("🚀 ~ useEffect ~ currencyCode:", currencyCode)
+            console.log("🚀 ~ useEffect ~ currencyCode:", currencyCode);
             fetchDialPlan(currencyCode);
             if (currencyCode === "GBP") {
                 setSymbol("£");
@@ -206,17 +205,21 @@ const PricingCalls = ({ countryCode, currency }) => {
                                         <tr key={index}>
                                             <td>{data?.network}</td>
                                             <td>
-                                                {data?.local_rates_max && (
+                                                {data?.local_rates_min && (
                                                     <>
                                                         {symbol}
-                                                        {data?.local_rates_max}
+                                                        {data?.local_rates_min}
                                                     </>
                                                 )}{" "}
-                                                -{" "}
-                                                {data?.local_rates_max && (
+                                                {data?.local_rates_min !== data?.local_rates_max && (
                                                     <>
-                                                        {symbol}
-                                                        {data?.local_rates_max}
+                                                        -{" "}
+                                                        {data?.local_rates_max && (
+                                                            <>
+                                                                {symbol}
+                                                                {data?.local_rates_max}
+                                                            </>
+                                                        )}
                                                     </>
                                                 )}
                                             </td>
@@ -226,11 +229,15 @@ const PricingCalls = ({ countryCode, currency }) => {
                                                         {symbol} {data?.international_rates_min}
                                                     </>
                                                 )}
-                                                -
-                                                {data?.international_rates_max && (
+                                                {data?.international_rates_min !== data?.international_rates_max && (
                                                     <>
-                                                        {symbol}
-                                                        {data?.international_rates_max}
+                                                        -{" "}
+                                                        {data?.international_rates_max && (
+                                                            <>
+                                                                {symbol}
+                                                                {data?.international_rates_max}
+                                                            </>
+                                                        )}
                                                     </>
                                                 )}
                                             </td>
