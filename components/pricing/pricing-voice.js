@@ -210,9 +210,10 @@ const PricingCalls = ({ countryCode, currency }) => {
                                                         {symbol}
                                                         {data?.local_rates_min}
                                                     </>
-                                                )}{" "}
+                                                )}
                                                 {data?.local_rates_min !== data?.local_rates_max && (
                                                     <>
+                                                        {" "}
                                                         -{" "}
                                                         {data?.local_rates_max && (
                                                             <>
@@ -222,6 +223,7 @@ const PricingCalls = ({ countryCode, currency }) => {
                                                         )}
                                                     </>
                                                 )}
+                                                {!data?.local_rates_min && !data?.local_rates_max && <>-</>}
                                             </td>
                                             <td>
                                                 {data?.international_rates_min && (
@@ -231,6 +233,7 @@ const PricingCalls = ({ countryCode, currency }) => {
                                                 )}
                                                 {data?.international_rates_min !== data?.international_rates_max && (
                                                     <>
+                                                        {" "}
                                                         -{" "}
                                                         {data?.international_rates_max && (
                                                             <>
@@ -239,6 +242,9 @@ const PricingCalls = ({ countryCode, currency }) => {
                                                             </>
                                                         )}
                                                     </>
+                                                )}
+                                                {!data?.international_rates_min && !data?.international_rates_max && (
+                                                    <>-</>
                                                 )}
                                             </td>
                                         </tr>
