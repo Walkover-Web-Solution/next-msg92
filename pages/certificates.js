@@ -6,8 +6,8 @@ export default function Certificates() {
     return (
         <>
             <div className="">
-                <div className="container text-center d-flex flex-column gap-3 align-items-center ">
-                    <h2 className="  mx-auto fw-bold heading mb-2 col-11 col-md-8">
+                <div className="container text-center d-flex flex-column gap-3 align-items-center py-3 py-md-5 ">
+                    <h2 className="  mx-auto fw-bold heading my-2 col-11 col-md-8">
                         Certified for Unparalleled Reliability and Security.{" "}
                     </h2>
                     <a href="https://control.msg91.com/signup/" className="btn btn-ft btn-dark rounded-1 c-fs-4">
