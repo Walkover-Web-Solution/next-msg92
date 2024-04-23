@@ -178,7 +178,7 @@ const ProductMenu = ({path}) => {
           </div>
 
         </div>
-        <div className="overlay-menu d-flex flex-wrap gap-3" id="integrationsmenu">
+        <div className="overlay-menu d-flex flex-wrap gap-3 annoucmentbar" id="integrationsmenu">
         <div className="menu mt-4 d-flex flex-column ">
             <a
               className="d-flex gap-3 align-items-center product-menu-btn py-3"
