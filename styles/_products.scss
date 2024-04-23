@@ -17,9 +17,12 @@
   z-index: 10;
   top: 0px;
   overflow-y: auto;
-  background-color: var(--black-color);
+  background-color: var(--white-color);
   width: 100vw !important;
   height: 100vh;
+  &.annoucmentbar{
+    padding-top: 100px!important;
+  }
   .mininav-cont {
     width: 100%;
     top: 50px;

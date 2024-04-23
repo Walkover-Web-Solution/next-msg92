@@ -10,8 +10,8 @@ export default function AnnoucmentBar(){
                 <span className="c-fs-3 c-fw-b text-white">
                 Join our webinar on 17th May
                 </span>
-                <span className="text-white c-fs-5">
-                Mastering E-commerce with WhatsApp Campaigns that Convert -<a className='text-white c-fw-b' href="https://forms.gle/BdwLVFbSfuNpuBje8"> Register Now </a>and get benefits worth INR 25,000.
+                <span className="text-white-800 c-fs-5">
+                Mastering E-commerce with WhatsApp Campaigns that Convert -<a className='text-white c-fw-b text-decoration-underline' href="https://forms.gle/2Er1hw4GYkupmebb8"> Register Now </a>and get benefits worth INR 25,000.
                 </span>
             </div>
         </div>
