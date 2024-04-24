@@ -1,0 +1,752 @@
+{
+    "pagename": "index",
+    "index": {
+        "code": "no",
+        "pagename": "index",
+        "pagetag": "customer service software",
+        "headline": "Connect with your customers via multiple channels",
+        "subheading": "Secure and robust APIs for SMS, Email, Voice, Authentication and more",
+        "getStarted": "Get started",
+        "products": {
+            "buttonname": "Lean more",
+            "content": [
+                {
+                    "name": "Hello",
+                    "tag": "contact center",
+                    "subheading": "Empower your employees, Support your customers.",
+                    "img": "chats.svg"
+                },
+                {
+                    "name": "Campaign",
+                    "tag": "Event Based Automation",
+                    "subheading": "Boost audience engagement through smart Platform.",
+                    "img": "campaign.svg"
+                },
+                {
+                    "name": "Segmento",
+                    "tag": "Customer data platform",
+                    "subheading": "Customer segmentation by their actions or events.",
+                    "img": "segmento.webp"
+                },
+                {
+                    "name": "OTP",
+                    "tag": "INSTANT SECURE VERIFICATION",
+                    "subheading": "Quick and reliable multichannel OTP verification.",
+                    "img": "otp.svg"
+                }
+            ]
+        },
+        "channels": {
+            "heading": "Communication Channels",
+            "subheading": "Empower conversations with best-in-class communication API Full-featured APIs for developers and businesses to connect and engage your customers globally",
+            "buttonname": "Lean more",
+            "content": [
+                {
+                    "name": "SMS",
+                    "description": "Transform your global communication with MSG91's reliable SMS services & APIs. Engage, analyze, and connect effortlessly on a global scale"
+                },
+                {
+                    "name": "Email",
+                    "description": "Enhance email outreach with templates, AMP, stats, SMTP/API, and validation for effective customer engagement"
+                },
+                {
+                    "name": "WhatsApp",
+                    "description": "Improve interaction on WhatsApp with Base64 support, two-way communication, template management, analytics, and message logs"
+                },
+                {
+                    "name": "Voice",
+                    "description": "Enhance customer engagement with real-time calls, Call Monitoring, browser calling, advanced IVR, bulk voice messaging, and real-time agent connections"
+                },
+                {
+                    "name": "Numbers",
+                    "description": "Unlock global markets with cost-efficient virtual numbers. Enhance engagement with missed call services, keyword messaging, surveys, and auto responses"
+                }
+            ]
+        },
+        "stats": {
+            "each": "per month",
+            "content": [
+                {
+                    "count": "2.5 Billion+",
+                    "name": "API calls"
+                },
+                {
+                    "count": "1.6 Billion+",
+                    "name": "SMS sent"
+                },
+                {
+                    "count": "1 Billion+",
+                    "name": "OTP sent"
+                },
+                {
+                    "count": "1 Billion+",
+                    "name": "Email sent"
+                }
+            ]
+        },
+        "services":{
+            "heading": "Communication Channels",
+            "buttonname": "Lean more",
+            "content":[
+                {
+                    "name": "URL Shortener",
+                    "heading": "URL Shortener",
+                    "img":"",
+                    "slug": "shorturl",
+                    "description": "Transform your global communication with MSG91's reliable SMS services & APIs. Engage, analyze, and connect effortlessly on a global scale"
+
+                }
+            ]
+
+        }
+    },
+    "hello": {
+        "code": false,
+        "icon": "/img/icon/hello.svg",
+        "pagename": "hello",
+        "pagetag": "customer service software",
+        "tagline": "Revolutionize customer support",
+        "heading": "Never lose sight of what’s important",
+        "subheading": "Don’t just solve tickets, build customer relationships",
+        "pageimg": "/img/pageimg/hello.png",
+        "features": [
+            {
+                "img": "/img/feature/hello-unlimited-agents.svg",
+                "heading": "Unlimited Agents",
+                "subheading": "Unlimited free agents to power up your customer support.",
+                "content": "More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is no number attached to your number of customer support agents."
+            },
+            {
+                "img": "/img/feature/hello-chat-bot.svg",
+                "heading": "Chatbot",
+                "subheading": "Resolve customer queries round-the-clock across text and voice.",
+                "content": "Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents."
+            },
+            {
+                "img": "/img/feature/hello-analytics.svg",
+                "heading": "Analytics",
+                "subheading": "Analytics and reports to monitor your agent performance.",
+                "content": "Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support."
+            },
+            {
+                "img": "/img/feature/hello-video-call.svg",
+                "heading": "Video Call / Screen Sharing",
+                "subheading": "High-quality video calls wherever your customer is.",
+                "content": "Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue."
+            },
+            {
+                "img": "/img/feature/hello-workflow.svg",
+                "heading": "Workflow",
+                "subheading": "Automatically assign conversations to a team or a dedicated agent.",
+                "content": "Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
+            },
+            {
+                "img": "/img/feature/hello-screen-control.svg",
+                "heading": "Screen Control",
+                "subheading": "Control your customer’s screen from where you are",
+                "content": "Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
+            }
+        ]
+    },
+    "campaign": {
+        "code": false,
+        "icon": "/img/icon/campaign.svg",
+        "pagename": "campaign",
+        "pagetag": "Create Campaign",
+        "tagline": "Event Base automation",
+        "heading": "Connect conversations across Channels and tools.",
+        "subheading": "Deliver personalized, engaging and seamless experiences.",
+        "pageimg": "/img/pageimg/campaign.svg",
+        "features": [
+            {
+                "img": "/img/feature/campaign-multi-channel-support.svg",
+                "heading": "Multi channel support",
+                "subheading": "Support your customers on their preferred channel.",
+                "content": "Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, WhatsApp and more. Meet your customers where they are."
+            },
+            {
+                "img": "/img/feature/campaign-draggable-flow.svg",
+                "heading": "Draggable Flow",
+                "subheading": "Drag and drop to create an omnichannel flow with ‘if-then’ scenarios.",
+                "content": "Choose when you need to initiate an SMS, email, or messaging conversation in a single workflow. Create a flow that is as simple or as complex as your business needs them to be. "
+            },
+            {
+                "img": "/img/feature/campaign-time-based-condition.svg",
+                "heading": "Time Based Condition",
+                "subheading": "Send perfectly timed automated messages.",
+                "content": "Build a thoughtful sending schedule with time-based conditions that control the time zone of when your campaigns are delivered. Support your customers at the right time."
+            },
+            {
+                "img": "/img/feature/campaign-api-based-conditions.svg",
+                "heading": "API based Conditions",
+                "subheading": "Get information instantly for real-time interactions.",
+                "content": "Call for data even when in mid of a flow by sending data to a third-party system or requesting data needed for your communication steps. Deliver real-time information to your customers. "
+            },
+            {
+                "img": "/img/feature/campaign-country-based-condition.svg",
+                "heading": "Contry Based Condition",
+                "subheading": "Support your customers across the world.",
+                "content": "Create personalized and memorable experiences for your customer across countries, languages, content, channels, flows and more. Easily connect, customize and communicate. "
+            }
+        ],
+        "morefeatures": [
+            {
+                "more": "Provide customer support via screen sharing on a single click"
+            },
+            {
+                "more": "Troubleshooting over video in seconds"
+            },
+            {
+                "more": "Record agent performance for quality control"
+            },
+            {
+                "more": "Understand your customers emotions through sentiment analysis"
+            },
+            {
+                "more": "Solution for remote access and support"
+            },
+            {
+                "more": "Track campaign performance"
+            }
+        ]
+    },
+    "segmento": {
+        "code": false,
+        "icon": "/img/icon/segmento.svg",
+        "pagename": "segmento",
+        "pagetag": "segmento",
+        "pageimg": "/img/pageimg/segmento.svg",
+        "tagline": "target based marketing",
+        "heading": "Personalize customer journeys with Data segmentation.",
+        "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
+        "features": [
+            {
+                "img": "/img/feature/segmento-create-filters-as-per-segments.svg",
+                "heading": "Create filters as per segment",
+                "subheading": "Create a filtered list on your business phonebook.",
+                "content": "Tailor your marketing efforts by targeting people based on their requirements, traits or patterns by creating a particular filter on your phonebook."
+            },
+            {
+                "img": "/img/feature/segmento-automation-trigger.svg",
+                "heading": "Automation Trigger",
+                "subheading": "Trigger meaningful information for the filtered segments.",
+                "content": "Automate actions on the filters created based on the user’s action or input to deliver relevant and personalised messages for each group."
+            },
+            {
+                "img": "/img/feature/segmento-automation-repeater.svg",
+                "heading": "Automation Repeater",
+                "subheading": "Send the most relevant content at the most relevant time.",
+                "content": "Send auto messages to the same filter at time-based intervals through your audience’s preferred business communication channel."
+            },
+            {
+                "img": "/img/feature/segmento-open-api.svg",
+                "heading": "Open API",
+                "subheading": "Use API to get, create, update or delete contact.",
+                "content": "We provide APIs for every action, big or small, so that you can focus on what matters most- building your amazing product."
+            }
+        ],
+        "morefeatures": [
+            {
+                "more": "Provide customer support via screen sharing on a single click"
+            },
+            {
+                "more": "Troubleshooting over video in seconds"
+            },
+            {
+                "more": "Record agent performance for quality control"
+            },
+            {
+                "more": "Understand your customers emotions through sentiment analysis"
+            },
+            {
+                "more": "Solution for remote access and support"
+            },
+            {
+                "more": "Track segmento performance"
+            }
+        ]
+    },
+    "otp": {
+        "code": false,
+        "pagename": "otp",
+        "pagetag": "otp",
+        "icon": "/img/icon/otp.svg",
+        "pageimg": "/img/pageimg/otp.svg",
+        "tagline": "Instant Secure verification",
+        "heading": "Simplest, quickest and most effective way to verify your users",
+        "subheading": "Build customer trust and enable business protection with two-factor authentication.",
+        "features": [
+            {
+                "img": "/img/feature/otp-simple-login.svg",
+                "heading": "Simple as Login With Google",
+                "subheading": "Login with OTP is as simple as login with Gmail",
+                "content": "Give your users a fast, non-disruptive and simple authentication experience. Implement login with OTP by entering your mobile number or email address to receive OTP via SMS or email."
+            },
+            {
+                "img": "/img/feature/otp-inbuilt-ip-security.svg",
+                "heading": "Inbuilt IP Security",
+                "subheading": "Protect against fraud, hacks, validation, blocking",
+                "content": "Minimize fraud with an extra layer of security. The inbuilt security ensures that when a login is risky the flow does not allow the bad actor to login by viewing it as potentially fraudulent."
+            },
+            {
+                "img": "/img/feature/otp-support-multiple-channels.svg",
+                "heading": "Support multiple channels",
+                "subheading": "Build customer trust and increase conversion across multiple channels",
+                "content": "Authenticate your users on channels they prefer. We support multiple channels including SMS, email, Voice, WhatsApp giving businesses and users the flexibility they need to authenticate."
+            }
+        ],
+        "morefeatures": [
+            {
+                "more": "Provide customer support via screen sharing on a single click"
+            },
+            {
+                "more": "Troubleshooting over video in seconds"
+            },
+            {
+                "more": "Record agent performance for quality control"
+            },
+            {
+                "more": "Understand your customers emotions through sentiment analysis"
+            },
+            {
+                "more": "Solution for remote access and support"
+            },
+            {
+                "more": "Track otp performance"
+            }
+        ]
+    },
+    "shorturl": {
+        "code": false,
+        "icon": "/img/icon/shorturl.svg",
+        "pagename": "ShortUrl",
+        "pagetag": "URL Shortener",
+        "pageimg": "/img/pageimg/shorturl.svg",
+        "tagline": "Simplify your links",
+        "heading": "Customise, share and track smart links",
+        "subheading": "Optimise your complex links to create short, cleaner links that are easier to share.",
+        "features": [
+            {
+                "img": "/img/feature/shorturl-no-code.svg",
+                "heading": "No Code",
+                "subheading": "No code and fewer credits makes it a smart link.",
+                "content": "Shorten your URL in real-time without putting in any code. Just paste your link and you have a smart link that is easy to share, saves you space and consumes fewer credit."
+            },
+            {
+                "img": "/img/feature/shorturl-number-wise-tracking.svg",
+                "heading": "Numberwise Tracking",
+                "subheading": "Gather statistics by monitoring the number of hits from your URL.",
+                "content": "Track the performance of your shortURL and the number of hits for each recipient. Know how many times the link has been clicked, where is it shared, and how is it driving traffic."
+            }
+        ],
+        "morefeatures": [
+            {
+                "more": "Provide customer support via screen sharing on a single click"
+            },
+            {
+                "more": "Troubleshooting over video in seconds"
+            },
+            {
+                "more": "Record agent performance for quality control"
+            },
+            {
+                "more": "Understand your customers emotions through sentiment analysis"
+            },
+            {
+                "more": "Solution for remote access and support"
+            },
+            {
+                "more": "Track shorturl performance"
+            }
+        ]
+    },
+    "knowledgebase": {
+        "code": false,
+        "icon": "/img/icon/knowledgebase.svg",
+        "pagename": "KnowledgeBase",
+        "pagetag": "KnowledgeBase",
+        "pageimg": "/img/pageimg/knowledgebase.svg",
+        "tagline": "Empower Customers with Self-Service Options",
+        "heading": "Knowledge base is the backbone for good customer support",
+        "subheading": "Get all essential features of knowledge base software at nominal price",
+        "features": [
+            {
+                "img": "/img/feature/kb-wysiwyg-editor.svg",
+                "heading": "WYSIWYG editor",
+                "subheading": "Easily create or edit your knowledge base articles",
+                "content": "Quickly create your articles with the what you see is what you get content editor. It is as simple to use as if you were using a Word Processor or HTML Editor."
+            },
+            {
+                "img": "/img/feature/kb-seo-friendly.svg",
+                "heading": "SEO friendly (Subfolder and subdomain both support)",
+                "subheading": "An SEO-friendly optimized knowledge base",
+                "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."
+            },
+            {
+                "img": "/img/feature/kb-whitelable.svg",
+                "heading": "Whitelabel",
+                "subheading": "It works on your branding and not ours",
+                "content": "Your users view your knowledge base under your branding on your website. Our whitelabel services ensure there’s no indication of it being powered by MSG91."
+            }
+        ],
+        "morefeatures": [
+            {
+                "more": "Provide customer support via screen sharing on a single click"
+            },
+            {
+                "more": "Troubleshooting over video in seconds"
+            },
+            {
+                "more": "Record agent performance for quality control"
+            },
+            {
+                "more": "Understand your customers emotions through sentiment analysis"
+            },
+            {
+                "more": "Solution for remote access and support"
+            },
+            {
+                "more": "Track knowledgebase performance"
+            }
+        ]
+    },
+    "sms": {
+        "code": true,
+        "pagename": "SMS",
+        "pagetag": "SMS",
+        "icon": "/img/icon/sms.svg",
+        "tagline": "Next level messaging",
+        "heading": "Engage your customers globally with quick, scalable and customizable messages",
+        "subheading": "Integrate our developer-friendly APIs to send and receive text messages. Our distributed carrier network and intelligent routing ensure highest delivery and lowest latency.",
+        "features": [
+            {
+                "img": "/img/feature/sms-intelligent-sms-routing.svg",
+                "heading": "Intelligent SMS Retry Algorithm",
+                "subheading": "",
+                "content": "Our SMS API service finds the most reliable and quickest telecom route for every message you send. In case the SMS fails, our algorithm retries it within a fraction of a second and delivers your messages using another telecom route."
+            },
+            {
+                "img": "/img/feature/sms-a-reliable-scalable-and-feature-rich-sms-api.svg",
+                "heading": "Reliable, Scalable, and Feature-Rich SMS API",
+                "subheading": "",
+                "content": "Available in all programming languages, integration with our SMS API for developers is quick, easy, and seamless. Built for developers by developers, explore quick-start guides, code snippets, SDKs, and more."
+            },
+            {
+                "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
+                "heading": "Enjoy Low Latency Delivery-Worldwide",
+                "subheading": "",
+                "content": "Reach 210+ countries reliably with localized telecom operators. The automatic rerouting of global traffic in real-time helps us avoid outages and latency."
+            },
+            {
+                "img": "/img/feature/sms-multi-lingual-support.svg",
+                "heading": "Multi-Lingual Support",
+                "subheading": "",
+                "content": "Converse with your audience in their local language and take your customer engagement to the next level. Build customer confidence as you send messages in their regional language anywhere across the world."
+            },
+            {
+                "img": "/img/feature/sms-personalized-sms.svg",
+                "heading": "Personalized SMS",
+                "subheading": "Increase customer satisfaction with meaningful engagement.",
+                "content": "Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI."
+            },
+            {
+                "img": "/img/feature/sms-link-shortener.svg",
+                "heading": "Link Shortener",
+                "subheading": "Transform a long URL into a shorter, more readable link.",
+                "content": "Enable the deeply integrated link shortener to convert long URLs to shorter links. Get a detailed user report on clicks with mobile numbers, browser, and IP."
+            },
+            {
+                "img": "/img/feature/sms-enhanced-analytics.svg",
+                "heading": "Enhanced Analytics",
+                "subheading": "Real-time graphical view for monitoring and troubleshooting.",
+                "content": "Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed."
+            }
+        ],
+        "morefeatures": [
+            {
+                "more": "Provide customer support via screen sharing on a single click"
+            },
+            {
+                "more": "Troubleshooting over video in seconds"
+            },
+            {
+                "more": "Record agent performance for quality control"
+            },
+            {
+                "more": "Understand your customers emotions through sentiment analysis"
+            },
+            {
+                "more": "Solution for remote access and support"
+            },
+            {
+                "more": "Track sms performance"
+            }
+        ]
+    },
+    "email": {
+        "code": true,
+        "pagename": "Email",
+        "pagetag": "Email API",
+        "icon": "/img/icon/email.svg",
+        "tagline": "smarter email strategy",
+        "heading": "Smart emails that land directly into the right inbox",
+        "subheading": "Make the most of these powerful touchpoints between your brand and your customers.",
+        "features": [
+            {
+                "img": "/img/feature/email-template-builder.svg",
+                "heading": "Email Template Builder",
+                "subheading": "Drag-and-drop to create the layout of your email.",
+                "content": "Customize your transactional emails using our no-code, drag-and-drop interface. Preview to see how your email will look when viewed on different devices."
+            },
+            {
+                "img": "/img/feature/email-amp-emails.svg",
+                "heading": "AMP Emails",
+                "subheading": "Rich interactive emails to increase user engagement.",
+                "content": "Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects."
+            },
+            {
+                "img": "/img/feature/email-statistics.svg",
+                "heading": "Statistics",
+                "subheading": "Monitor and track every aspect of your email’s lifecycle.",
+                "content": "Get a graphical representation of the delivery rates, open rates, click-through rates, bounce rates, and spam to iterate and ensure you reach your customer's inbox."
+            },
+            {
+                "img": "/img/feature/email-smtp-restapi-support.svg",
+                "heading": "SMTP/RestAPI support",
+                "subheading": "Integrate with our RESTful APIs and SMTP in minutes.",
+                "content": "Integrate with our RESTful APIs and SMTP in minutes. Get your hands on our comprehensive documentation or connect with our support superheroes to easily integrate into your custom or third-party apps to start sending emails."
+            },
+            {
+                "img": "/img/feature/email-validation.svg",
+                "heading": "Email Validation",
+                "subheading": "Positively impact the engagement and reputation of your brand.",
+                "content": "Deliver more messages to real contacts with our real-time API that detects and suppresses invalid email address with an accuracy rate of up to 85% to give you a clean list."
+            }
+        ],
+        "morefeatures": [
+            {
+                "more": "Provide customer support via screen sharing on a single click"
+            },
+            {
+                "more": "Troubleshooting over video in seconds"
+            },
+            {
+                "more": "Record agent performance for quality control"
+            },
+            {
+                "more": "Understand your customers emotions through sentiment analysis"
+            },
+            {
+                "more": "Solution for remote access and support"
+            },
+            {
+                "more": "Track email performance"
+            }
+        ]
+    },
+    "voice": {
+        "code": true,
+        "pagename": "Voice",
+        "pagetag": "Voice",
+        "icon": "/img/icon/voice.svg",
+        "tagline": "connect with confidence",
+        "heading": "Boost customer engagement and build trust",
+        "subheading": "Start real-time conversations with crystal clear audio, low latency and deeper insights.",
+        "features": [
+            {
+                "img": "/img/feature/voice-call-monitoring.svg",
+                "heading": "Call Monitoring",
+                "subheading": "Introducing the next-level communication experience with our all-new Call Monitoring features",
+                "content": "We're putting you in the driver's seat of your conversations with callers. These robust features give you greater control and insight during your calls, ensuring enhanced communication and customer satisfaction. Call spying: your secret weapon for quality assurance! Call barging: real-time support, is just a click away! Call whispering: guidance at your fingertips!"
+            },
+            {
+                "img": "/img/feature/voice-direct-calling-from-hello.svg",
+                "heading": "Direct calling from browser",
+                "subheading": "Skip the 2-way calling and directly call from browser.",
+                "content": "Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation."
+            },
+            {
+                "img": "/img/feature/voice-ivr-flow.svg",
+                "heading": "IVR Flow",
+                "subheading": "Modern IVR that makes customer interaction quick and hassle-free.",
+                "content": "Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message."
+            },
+            {
+                "img": "/img/feature/voice-bulk-voice.svg",
+                "heading": "Bulk Voice",
+                "subheading": "Speak directly with your audience over a single call.",
+                "content": "Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore."
+            },
+            {
+                "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
+                "heading": "Multiple Way to Upload File",
+                "subheading": "Upload your audio message in multiple ways.",
+                "content": "Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call."
+            },
+            {
+                "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
+                "heading": "Bulk voice with IVR",
+                "subheading": "Connect your voice call to the IVR.",
+                "content": "Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR."
+            },
+            {
+                "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
+                "heading": "Real time connect with agent on user input on bulk call",
+                "subheading": "Direct your user to your support agent.",
+                "content": "Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input."
+            }
+        ],
+        "morefeatures": [
+            {
+                "more": "Provide customer support via screen sharing on a single click"
+            },
+            {
+                "more": "Troubleshooting over video in seconds"
+            },
+            {
+                "more": "Record agent performance for quality control"
+            },
+            {
+                "more": "Understand your customers emotions through sentiment analysis"
+            },
+            {
+                "more": "Solution for remote access and support"
+            },
+            {
+                "more": "Track voice performance"
+            }
+        ]
+    },
+    "whatsapp": {
+        "code": true,
+        "pagename": "WhatsApp",
+        "pagetag": "WhatsApp",
+        "icon": "/img/icon/whatsapp.svg",
+        "tagline": "dominate popular platforms",
+        "heading": "Drive better customer engagement outcomes",
+        "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
+        "features": [
+            {
+                "img": "/img/feature/whatsapp-support-base64.svg",
+                "heading": "Support Base64",
+                "subheading": "Send the body in JSON and leave the rest to us.",
+                "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+            },
+            {
+                "img": "/img/feature/whatsapp-2way-communication.svg",
+                "heading": "2way communication",
+                "subheading": "Say hello to go on HELLO.",
+                "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+            },
+            {
+                "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
+                "heading": "Manage template inside panel",
+                "subheading": "Create and manage your templates right here.",
+                "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+            },
+            {
+                "img": "/img/feature/whatsapp-analytics.svg",
+                "heading": "Analytics",
+                "subheading": "Get graphical insights into your business messages.",
+                "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+            },
+            {
+                "img": "/img/feature/whatsapp-export-logs.svg",
+                "heading": "Export Logs",
+                "subheading": "Get individual outbound and inbound messages logs.",
+                "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
+            }
+        ],
+        "morefeatures": [
+            {
+                "more": "Provide customer support via screen sharing on a single click"
+            },
+            {
+                "more": "Troubleshooting over video in seconds"
+            },
+            {
+                "more": "Record agent performance for quality control"
+            },
+            {
+                "more": "Understand your customers emotions through sentiment analysis"
+            },
+            {
+                "more": "Solution for remote access and support"
+            },
+            {
+                "more": "Track whatsapp performance"
+            }
+        ]
+    },
+    "numbers": {
+        "code": true,
+        "pagename": "Numbers",
+        "pagetag": "numbers",
+        "icon": "/img/icon/numbers.svg",
+        "tagline": "Unlock the Power of Virtual Numbers",
+        "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+        "subheading": "",
+        "features": [
+            {
+                "img": "/img/feature/numbers-global-market-entry-with-numbers.svg",
+                "heading": "Global Market Entry with Numbers: Expanding Your Presence",
+                "subheading": "",
+                "content": "Numbers offer an effective strategy for businesses seeking to broaden their reach in the market. These numbers facilitate the creation of a local connection by acquiring a phone number, streamlining communication with customers and associates. By leveraging numbers, businesses can establish trust, enhance accessibility, bridge geographic divides, all while projecting a professional image and optimizing cost-effectiveness. This approach is especially beneficial for international enterprises looking to seize opportunities in the diverse and competitive market."
+            },
+            {
+                "img": "/img/feature/numbers-cost-efficiency.svg",
+                "heading": "Cost Efficiency",
+                "subheading": "",
+                "content": "Numbers in present a cost-effective alternative to traditional phone lines. They require fewer upfront expenses, minimize maintenance costs, and eliminate the need for physical infrastructure, making them a financially efficient choice for businesses of all scales in the market."
+            },
+            {
+                "img": "/img/feature/numbers-missed-call-services.svg",
+                "heading": "Missed Call Services",
+                "subheading": "",
+                "content": "A number of virtual number providers offer functionalities like missed call alerts and notifications, enabling businesses to promptly engage with customers who were unable to establish contact. This feature enhances customer communication and responsiveness within the market."
+            },
+            {
+                "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+                "heading": "Keyword Specific Messaging",
+                "subheading": "You can choose a unique keyword for your business or campaign",
+                "content": "When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication."
+            },
+            {
+                "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+                "heading": "Keyword Independent Messaging",
+                "subheading": "In addition to keywords",
+                "content": "you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords."
+            },
+            {
+                "img": "/img/feature/numbers-pre-formatted-questions.svg",
+                "heading": "Pre-formatted Set of Questions",
+                "subheading": "",
+                "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format."
+            },
+            {
+                "img": "/img/feature/numbers-online-survey.svg",
+                "heading": "Online Surveys",
+                "subheading": "",
+                "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease."
+            },
+            {
+                "img": "/img/feature/numbers-lead-generation.svg",
+                "heading": "Lead Generation",
+                "subheading": "",
+                "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base."
+            },
+            {
+                "img": "/img/feature/numbers-auto-responses.svg",
+                "heading": "Create Auto Responses",
+                "subheading": "",
+                "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users."
+            },
+            {
+                "img": "/img/feature/numbers-integration.svg",
+                "heading": "Integration into Web Applications",
+                "subheading": "",
+                "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
+            }
+        ]
+    }
+}

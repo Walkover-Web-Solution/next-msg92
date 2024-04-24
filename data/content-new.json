@@ -13,8 +13,16 @@
           "subheading": "Empower your employees, Support your customers."
         },
         "campaign": {
-          "tag": "contact center",
-          "subheading": "Empower your employees, Support your customers."
+          "tag": "Event Based Automation",
+          "subheading": "Boost audience engagement through smart Platform."
+        },
+        "segmento": {
+          "tag": "Customer data platform",
+          "subheading": "Customer segmentation by their actions or events."
+        },
+        "otp": {
+          "tag": "INSTANT SECURE VERIFICATION",
+          "subheading": "Quick and reliable multichannel OTP verification."
         }
       }
     },
