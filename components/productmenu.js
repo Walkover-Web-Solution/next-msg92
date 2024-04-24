@@ -7,9 +7,9 @@ const ProductMenu = ({path}) => {
     <>
       <div className="bg-overlay" id="bgoverlay"></div>
       <div className="overlay-menu-cont d-flex justify-content-end" id="overlaymenucont">
-        <div className="overlay-menu d-flex flex-wrap gap-5 " id="productmenu">
+        <div className="overlay-menu d-flex flex-wrap gap-5 annoucmentbar" id="productmenu">
           
-          <div className="menu mt-4 d-flex flex-column">
+          <div className="menu mt-4 d-flex flex-column ">
             <p className="c-fs-3 c-fw-sb text-grey text-uppercase ">
               Applications
             </p>
@@ -178,7 +178,7 @@ const ProductMenu = ({path}) => {
           </div>
 
         </div>
-        <div className="overlay-menu d-flex flex-wrap gap-3" id="integrationsmenu">
+        <div className="overlay-menu d-flex flex-wrap gap-3 annoucmentbar" id="integrationsmenu">
         <div className="menu mt-4 d-flex flex-column ">
             <a
               className="d-flex gap-3 align-items-center product-menu-btn py-3"

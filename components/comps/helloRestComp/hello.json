@@ -72,16 +72,24 @@
     ],
     "faq": [
         {
-            "que": "Can the software handle high volumes of customer inquiries during peak times?",
-            "des":"Yes! Our customer service tools for small businesses are designed to handle high volumes of customer inquiries without compromising performance. It is scalable and capable of meeting your needs even during peak times, ensuring a smooth and uninterrupted customer support experience."
+            "que": "How to subscribe to your Hello Plan.",
+            "des":"In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. <br/>You can directly subscribe to the plan from the website itself. There go to Hello Service click on Get Started, fill in the necessary details, and subscribe to the plan."
         },
         {
-            "que": "Can the software handle high volumes of customer inquiries during peak times?",
-            "des":"Yes! Our customer service tools for small businesses are designed to handle high volumes of customer inquiries without compromising performance. It is scalable and capable of meeting your needs even during peak times, ensuring a smooth and uninterrupted customer support experience."
+            "que": "Are there any charges for AI chatbots?",
+            "des":"No, there are no charges for Chat Bot, we are only charged for basic and premium plans. You can use the chatbot in a free plan till 50 tickets in Hello, after that you have to upgrade your Hello plan. Basically, we are providing the chatbot free for Trial purposes.<br> You can use this Chat Bot in WhatsApp, Instagram, Chat Widget on your Website, Facebook and so on. So test the Chat Bot Now."
         },
         {
-            "que": "Can the software handle high volumes of customer inquiries during peak times?",
-            "des":"Yes! Our customer service tools for small businesses are designed to handle high volumes of customer inquiries without compromising performance. It is scalable and capable of meeting your needs even during peak times, ensuring a smooth and uninterrupted customer support experience."
+            "que": "Are there any extra charges for Instagram/ Facebook  Inbox?",
+            "des":"<p>You can use inboxes that are available in your Hello Plan for Instagram or Whatsapp. The number of inboxes assigned in each plan.</p> <ul> <li><strong>Free Plan-</strong> 2 inboxes</li> <li><strong>Basic Plan-</strong> 2 inboxes</li> <li><strong>Premium Plan-</strong> 3 inboxes</li> </ul> <p>But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each.</p> <p>In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox.</p>"
+        },
+        {
+            "que": "What are the charges for tickets and extra tickets in Hello?",
+            "des":"<p>We are providing monthly tickets with each plan and in case they end, you can also use extra tickets which you pay in postpaid billing. Here are the number of tickets assigned in each plan:</p> <ul> <li><strong>Free Plan-</strong> 150 tickets/monthly</li> <li><strong>Basic Plan-</strong> 1000 tickets/monthly</li> <li><strong>Premium Plan-</strong> 2000 tickets/monthly</li> </ul> <p>Extra Charges for each ticket in different plans:</p> <ul> <li><strong>Free Plan-</strong> There is no option for more tickets in free plans as you have to upgrade the Hello Plan to Basic or Premium as per your choice.</li> <li><strong>Basic Plan-</strong> ₹0.5 per ticket</li> <li><strong>Premium Plan-</strong> ₹0.75 per ticket</li> </ul>"
+        },
+        {
+            "que": "Can I customize the Hello Plan?",
+            "des":"Yes, you can have a customized plan for hello. Click on  the link to<a href='/contact-us' target='_blank'> schedule the meeting</a> with the sales heads. "
         }
     ]
 }

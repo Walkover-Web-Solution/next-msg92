@@ -434,6 +434,9 @@ body {
     z-index: 11;
     opacity: 1;
   }
+  &.annoucmentbar{
+    padding-top: 130px!important;
+  }
 }
 
 .menu {
@@ -765,4 +768,11 @@ body::-webkit-scrollbar-button {
 }
 .message:hover {
   background: #ccc;
+}
+
+.annoucment-bar{
+  background: linear-gradient(90deg, #1258A3 0%, #1E75BA 100%);
+}
+.productmenu-top{
+  padding-top: 80px;
 }
