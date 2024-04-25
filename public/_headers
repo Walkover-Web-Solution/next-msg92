@@ -1,7 +1,7 @@
 /*
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block  
-  Content-Security-Policy: frame-ancestors 'none'; child-src 'self'
+  Content-Security-Policy: frame-ancestors 'none';
   
 /*
   X-Frame-Options: ALLOW-FROM https://shopifytest.msg91.com
