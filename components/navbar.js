@@ -8,7 +8,7 @@ import ProductMenu from "./productmenu";
 import Notification from "./notification";
 import Link from "next/link";
 import { getCookie } from "./utils";
-import AnnoucmentBar from "./annoucmentBar/annoucmentBar";
+import AnnoucmentBar from "./annoucmentBar/AnnouncementBar";
 
 const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
   //console.log('navbar', browserPath, pricingPath, appPath, pageSlug);

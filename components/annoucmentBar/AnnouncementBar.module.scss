@@ -1,0 +1,28 @@
+.announcement {
+    transition: transform 1s ease, opacity 1s ease; /* Smooth transition with easing */
+    position: absolute; /* Needed for proper transitions */
+    transform: translateY(100%); /* Default position (hidden below) */
+    opacity: 0; /* Default invisible */
+  }
+  
+  .show {
+    transform: translateY(0); /* Slide in to visible position */
+    opacity: 1; /* Set opacity to visible */
+    display: flex; /* Display is needed to ensure visibility */
+  }
+  
+  .hide {
+    transform: translateY(-100%); /* Slide out of view */
+    opacity: 0; /* Set opacity to invisible */
+    display: flex; /* Maintain flex layout to ensure proper transitioning */
+    transition: transform 1s ease, opacity 1s ease; /* Transition needs to match the initial state */
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  
+  .flex-column {
+    flex-direction: column; /* Stack vertically */
+  }
+  
