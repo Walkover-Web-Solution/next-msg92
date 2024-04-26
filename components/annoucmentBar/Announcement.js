@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./AnnouncementBar.module.scss"; // Using CSS Modules
+import Link from "next/link";
 
 export default function Announcement({ imageSrc, title, description, linkText, linkHref, isVisible }) {
     return (
@@ -15,12 +16,13 @@ export default function Announcement({ imageSrc, title, description, linkText, l
                 <span className="c-fs-3 c-fw-b text-white">{title}</span>
                 <span className="text-white-800 c-fs-5">
                     {description}{" "}
-                    <a
+                    <Link
                         className="text-white c-fw-b text-decoration-underline"
                         href={linkHref}
+                        target="_blank"
                     >
                         {linkText}
-                    </a>
+                    </Link>
                 </span>
             </div>
         </div>
