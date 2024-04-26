@@ -41,18 +41,22 @@
 .text-white-800 {
     color: #eaeaea !important;
 }
-.announcement-bar{
-    display: flex;
-    align-items: center;
-    position: relative;
-    height: 80px;
+.announcement-bar-cont {
+    background: linear-gradient(90deg, #1258a3 0%, #1e75ba 100%);
     overflow: hidden;
+}
+.announcement-bar {
+    height: 80px;
+    transition: 200ms all ease-in;
     @media only screen and (max-width: 1024px) {
-        height: 100px;
-        
+        height: 120px;
     }
     @media only screen and (max-width: 460px) {
-        height: 110px;
-        
+        height: 160px;
     }
+
+}
+
+.icon-h-ann {
+    height: 14px;
 }
