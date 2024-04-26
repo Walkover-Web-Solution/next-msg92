@@ -1,0 +1,15 @@
+.announcement {
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 80px;
+
+    @media only screen and (max-width: 1024px) {
+        height: 120px;
+    }
+    @media only screen and (max-width: 460px) {
+        height: 160px;
+    }
+}
+

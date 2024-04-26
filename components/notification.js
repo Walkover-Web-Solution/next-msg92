@@ -34,7 +34,7 @@ const Notification = ({path}) => {
   }, []);
   return (
     <>
-      <div className="section b-bottom-1 ashish">
+      <div className="section b-bottom-1">
         <div className="container d-flex align-items-center justify-content-between notification">
           <div className="my-2 d-flex align-items-center">
             {/* <button className="btn btn-success py-1 btn-sm c-fs-5 me-3">Update</button>
