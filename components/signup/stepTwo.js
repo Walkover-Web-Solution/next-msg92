@@ -238,7 +238,7 @@ class StepTwo extends React.Component {
                             <option value="recommended_by_friend">Recommended by friend or colleague</option>
                             <option value="social_media">Social Media</option>
                             <option value="blog">Blog or Publication</option>
-                            <option value="advertisment">Advertisment</option>
+                            <option value="advertisement">Advertisement</option>
                             <option value="event">Event</option>
                         </select>
                     </div>
