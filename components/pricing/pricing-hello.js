@@ -76,330 +76,187 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                           return (
                               <>
                                   {item?.plan_amounts?.map((ammount, i) => {
-                                    if(ammount?.currency?.symbol === symbol && ammount?.plan_type?.name === selectedMode)
-                                
-                                      return (
-                                          <>
-                                              {
-                                                  <div
-                                                      key={`email-card-${index}`}
-                                                      className={`card d-flex align-items-start rounded-2 bg-white p-4  gap-3 ${
-                                                          item?.name === "Premium" ? "border-black" : "border-0"
-                                                      }`}
-                                                  >
-                                                      <div className=" w-100 d-flex align-items-center justify-content-between">
-                                                          <h3 className="text-start c-fw-sb fs-4">{item.name}</h3>
-                                                          {item?.name === "Premium" && (
-                                                              <span className="popular-plan-tag border border-1 border-dark c-fw-sb rounded-5 px-3 m-auto">
-                                                                  Popular
-                                                              </span>
-                                                          )}
-                                                      </div>
-                                                      <h3 className="mt-2 c-fs-2 text-green">
-                                                          {symbol}
-                                                          {ammount.plan_amount} {ammount?.plan_type?.name}
-                                                      </h3>
-                                                      <p className="c-fs-5">
-                                                          {symbol === "₹" && item.plan_amounts[0]?.plan_amount === 0
-                                                              ? "-"
-                                                              : "" ||
-                                                                (symbol === "₹" &&
-                                                                    item.plan_amounts[0]?.plan_amount !== 0)
-                                                              ? "+18%GST"
-                                                              : ""}
-                                                      </p>
-                                                      <a
-                                                          href="/signup?service=hello"
-                                                          target="_blank"
-                                                          className={`${
-                                                              item?.name === "Premium" ? "btn-dark" : "btn-outline-dark"
-                                                          }  btn fw-semibold rounded-1 border border-dark px-3 btn-sm`}
+                                      if (
+                                          ammount?.currency?.symbol === symbol &&
+                                          ammount?.plan_type?.name === selectedMode
+                                      )
+                                          return (
+                                              <>
+                                                  {
+                                                      <div
+                                                          key={`email-card-${index}`}
+                                                          className={`card d-flex align-items-start rounded-2 bg-white p-4  gap-3 ${
+                                                              item?.name === "Premium" ? "border-black" : "border-0"
+                                                          }`}
                                                       >
-                                                          Get Started
-                                                      </a>
-                                                      <hr className="w-100" style={{ borderColor: "#0009" }}></hr>
-                                                      <div className="c-fs-6  ">
-                                                          <h4 className="c-fs-4 c-fw-sb">Included</h4>
-                                                          <div className="c-fw-400 mt-2 d-flex flex-column gap-2">
-                                                              <div>
-                                                                  {" "}
-                                                                  {
-                                                                      item.plan_services[0].service_credit
-                                                                          .service_credit_rates[0].free_credits
-                                                                  }{" "}
-                                                                  {item.plan_services[0].service_credit.service.name}{" "}
-                                                                  {selectedMode !== "Monthly" ? "/month" : ""}
-                                                              </div>
-                                                              <div>
-                                                                  {
-                                                                      item.plan_services[1].service_credit
-                                                                          .service_credit_rates[0].free_credits
-                                                                  }{" "}
-                                                                  {item.plan_services[1].service_credit.service.name}
-                                                                  {selectedMode !== "Monthly" ? "/month" : ""}
-                                                                  {}
+                                                          <div className=" w-100 d-flex align-items-center justify-content-between">
+                                                              <h3 className="text-start c-fw-sb fs-4">{item.name}</h3>
+                                                              {item?.name === "Premium" && (
+                                                                  <span className="popular-plan-tag border border-1 border-dark c-fw-sb rounded-5 px-3 m-auto">
+                                                                      Popular
+                                                                  </span>
+                                                              )}
+                                                          </div>
+                                                          <h3 className="mt-2 c-fs-2 text-green">
+                                                              {symbol}
+                                                              {ammount.plan_amount} {ammount?.plan_type?.name}
+                                                          </h3>
+                                                          <p className="c-fs-5">
+                                                              {symbol === "₹" && item.plan_amounts[0]?.plan_amount === 0
+                                                                  ? "-"
+                                                                  : "" ||
+                                                                    (symbol === "₹" &&
+                                                                        item.plan_amounts[0]?.plan_amount !== 0)
+                                                                  ? "+18%GST"
+                                                                  : ""}
+                                                          </p>
+                                                          <a
+                                                              href="/signup?service=hello"
+                                                              target="_blank"
+                                                              className={`${
+                                                                  item?.name === "Premium"
+                                                                      ? "btn-dark"
+                                                                      : "btn-outline-dark"
+                                                              }  btn fw-semibold rounded-1 border border-dark px-3 btn-sm`}
+                                                          >
+                                                              Get Started
+                                                          </a>
+                                                          <hr className="w-100" style={{ borderColor: "#0009" }}></hr>
+                                                          <div className="c-fs-6  ">
+                                                              <h4 className="c-fs-4 c-fw-sb">Included</h4>
+                                                              <div className="c-fw-400 mt-2 d-flex flex-column gap-2">
+                                                                  <div>
+                                                                      {" "}
+                                                                      {
+                                                                          item.plan_services[0].service_credit
+                                                                              .service_credit_rates[0].free_credits
+                                                                      }{" "}
+                                                                      {
+                                                                          item.plan_services[0].service_credit.service
+                                                                              .name
+                                                                      }{" "}
+                                                                      {selectedMode !== "Monthly" ? "/month" : ""}
+                                                                  </div>
+                                                                  <div>
+                                                                      {
+                                                                          item.plan_services[1].service_credit
+                                                                              .service_credit_rates[0].free_credits
+                                                                      }{" "}
+                                                                      {
+                                                                          item.plan_services[1].service_credit.service
+                                                                              .name
+                                                                      }
+                                                                      {selectedMode !== "Monthly" ? "/month" : ""}
+                                                                      {}
+                                                                  </div>
                                                               </div>
                                                           </div>
-                                                      </div>
-                                                      <div className="c-fs-6 mt-4">
-                                                          <h4 className="c-fs-4 mb-2 c-fw-sb">Features</h4>
-                                                          {item?.plan_features?.map((data, index) => {
-                                                              if (data.is_visible) {
-                                                                  return (
-                                                                      <div key={`data-${index}`}>
-                                                                          {data.feature.is_included ? (
-                                                                              <MdDone className="text-green me-2 prcing-check" />
-                                                                          ) : (
-                                                                              <MdClose className="text-danger me-2 prcing-check" />
-                                                                          )}
-                                                                          <span>{data?.feature?.name}</span>
+                                                          <div className="c-fs-6 mt-4">
+                                                              <h4 className="c-fs-4 mb-2 c-fw-sb">Features</h4>
+                                                              {item?.plan_features?.map((data, index) => {
+                                                                  if (data.is_visible) {
+                                                                      return (
+                                                                          <div key={`data-${index}`}>
+                                                                              {data.feature.is_included ? (
+                                                                                  <MdDone className="text-green me-2 prcing-check" />
+                                                                              ) : (
+                                                                                  <MdClose className="text-danger me-2 prcing-check" />
+                                                                              )}
+                                                                              <span>{data?.feature?.name}</span>
+                                                                          </div>
+                                                                      );
+                                                                  } else {
+                                                                      return (
+                                                                          <>
+                                                                              {!data.feature.is_included && (
+                                                                                  <div key={`data-${index}`}>
+                                                                                      {data.feature.is_included ? (
+                                                                                          <MdDone className="text-green me-2 prcing-check" />
+                                                                                      ) : (
+                                                                                          <MdClose className="text-danger me-2 prcing-check" />
+                                                                                      )}
+                                                                                      <span>{data?.feature?.name}</span>
+                                                                                  </div>
+                                                                              )}
+                                                                          </>
+                                                                      );
+                                                                  }
+                                                                  return null;
+                                                              })}
+                                                          </div>
+                                                          <div className="c-fs-6 text-start feature-list mt-4">
+                                                              <h4 className="c-fs-4 mb-2 c-fw-sb">Extra</h4>
+                                                              {item?.postpaid_allowed ? (
+                                                                  <>
+                                                                      <div className="text-lowercase">
+                                                                          <MdDone className="text-success me-2 prcing-check" />
+                                                                          <span>
+                                                                              {" "}
+                                                                              {symbol}
+                                                                              {symbol === "₹" &&
+                                                                                  item.plan_services[0].service_credit
+                                                                                      .service_credit_rates[0]
+                                                                                      .follow_up_rate}
+                                                                              {symbol === "$" &&
+                                                                                  item.plan_services[0].service_credit
+                                                                                      .service_credit_rates[1]
+                                                                                      .follow_up_rate}
+                                                                              {symbol === "£" &&
+                                                                                  item.plan_services[0].service_credit
+                                                                                      .service_credit_rates[2]
+                                                                                      .follow_up_rate}
+                                                                              /
+                                                                              {
+                                                                                  item.plan_services[0].service_credit
+                                                                                      .service.name
+                                                                              }
+                                                                              {selectedMode !== "Monthly"
+                                                                                  ? "/month"
+                                                                                  : ""}
+                                                                          </span>
                                                                       </div>
-                                                                  );
-                                                              } else {
-                                                                  return (
-                                                                      <>
-                                                                          {!data.feature.is_included && (
-                                                                              <div key={`data-${index}`}>
-                                                                                  {data.feature.is_included ? (
-                                                                                      <MdDone className="text-green me-2 prcing-check" />
-                                                                                  ) : (
-                                                                                      <MdClose className="text-danger me-2 prcing-check" />
-                                                                                  )}
-                                                                                  <span>{data?.feature?.name}</span>
-                                                                              </div>
-                                                                          )}
-                                                                      </>
-                                                                  );
-                                                              }
-                                                              return null;
-                                                          })}
+                                                                      <div className="text-lowercase">
+                                                                          <MdDone className="text-success me-2 prcing-check" />
+                                                                          <span>
+                                                                              {" "}
+                                                                              {symbol}
+                                                                              {symbol === "₹" &&
+                                                                                  item.plan_services[1].service_credit
+                                                                                      .service_credit_rates[0]
+                                                                                      .follow_up_rate}
+                                                                              {symbol === "$" &&
+                                                                                  item.plan_services[1].service_credit
+                                                                                      .service_credit_rates[1]
+                                                                                      .follow_up_rate}
+                                                                              {symbol === "£" &&
+                                                                                  item.plan_services[1].service_credit
+                                                                                      .service_credit_rates[2]
+                                                                                      .follow_up_rate}
+                                                                              /ticket
+                                                                              {selectedMode !== "Monthly"
+                                                                                  ? "/month"
+                                                                                  : ""}
+                                                                          </span>
+                                                                      </div>
+                                                                  </>
+                                                              ) : (
+                                                                  <>
+                                                                      <div className="text-lowercase">
+                                                                          <MdClose className="text-danger me-2 prcing-check" />
+                                                                          <span>inbox/month</span>
+                                                                      </div>
+                                                                      <div className="text-lowercase">
+                                                                          <MdClose className="text-danger me-2 prcing-check" />
+                                                                          <span>tickets/month</span>
+                                                                      </div>
+                                                                  </>
+                                                              )}
+                                                          </div>
                                                       </div>
-                                                      <div className="c-fs-6 text-start feature-list mt-4">
-                                                          <h4 className="c-fs-4 mb-2 c-fw-sb">Extra</h4>
-                                                          {item?.postpaid_allowed ? (
-                                                              <>
-                                                                  <div className="text-lowercase">
-                                                                      <MdDone className="text-success me-2 prcing-check" />
-                                                                      <span>
-                                                                          {" "}
-                                                                          {symbol}
-                                                                          {symbol === "₹" &&
-                                                                              item.plan_services[0].service_credit
-                                                                                  .service_credit_rates[0]
-                                                                                  .follow_up_rate}
-                                                                          {symbol === "$" &&
-                                                                              item.plan_services[0].service_credit
-                                                                                  .service_credit_rates[1]
-                                                                                  .follow_up_rate}
-                                                                          {symbol === "£" &&
-                                                                              item.plan_services[0].service_credit
-                                                                                  .service_credit_rates[2]
-                                                                                  .follow_up_rate}
-                                                                          /
-                                                                          {
-                                                                              item.plan_services[0].service_credit
-                                                                                  .service.name
-                                                                          }
-                                                                          {selectedMode !== "Monthly" ? "/month" : ""}
-                                                                      </span>
-                                                                  </div>
-                                                                  <div className="text-lowercase">
-                                                                      <MdDone className="text-success me-2 prcing-check" />
-                                                                      <span>
-                                                                          {" "}
-                                                                          {symbol}
-                                                                          {symbol === "₹" &&
-                                                                              item.plan_services[1].service_credit
-                                                                                  .service_credit_rates[0]
-                                                                                  .follow_up_rate}
-                                                                          {symbol === "$" &&
-                                                                              item.plan_services[1].service_credit
-                                                                                  .service_credit_rates[1]
-                                                                                  .follow_up_rate}
-                                                                          {symbol === "£" &&
-                                                                              item.plan_services[1].service_credit
-                                                                                  .service_credit_rates[2]
-                                                                                  .follow_up_rate}
-                                                                          /ticket
-                                                                          {selectedMode !== "Monthly" ? "/month" : ""}
-                                                                      </span>
-                                                                  </div>
-                                                              </>
-                                                          ) : (
-                                                              <>
-                                                                  <div className="text-lowercase">
-                                                                      <MdClose className="text-danger me-2 prcing-check" />
-                                                                      <span>inbox/month</span>
-                                                                  </div>
-                                                                  <div className="text-lowercase">
-                                                                      <MdClose className="text-danger me-2 prcing-check" />
-                                                                      <span>tickets/month</span>
-                                                                  </div>
-                                                              </>
-                                                          )}
-                                                      </div>
-                                                  </div>
-                                              }
-                                          </>
-                                      );
+                                                  }
+                                              </>
+                                          );
                                   })}
-
-                                  {/* <div
-                                      key={`email-card-${index}`}
-                                      className={`card d-flex align-items-start rounded-2 bg-white p-4  gap-3 ${
-                                          item?.name === "Premium" ? "border-black" : "border-0"
-                                      }`}
-                                  >
-                                      <div className=" w-100 d-flex align-items-center justify-content-between">
-                                          <h3 className="text-start c-fw-sb fs-4">{item.name}</h3>
-                                          {item?.name === "Premium" && (
-                                              <span className="popular-plan-tag border border-1 border-dark c-fw-sb rounded-5 px-3 m-auto">
-                                                  Popular
-                                              </span>
-                                          )}
-                                      </div>
-                                      <h3 className="mt-2 c-fs-2 text-green">
-                                          {symbol}
-                                          {item?.plan_amounts?.map((ammount, i) => {
-                                              if (
-                                                  ammount?.currency?.symbol === symbol &&
-                                                  ammount?.plan_type?.name === selectedMode
-                                              ) {
-                                                  return (
-                                                      <>
-                                                          {ammount.plan_amount} {ammount?.plan_type?.name}
-                                                      </>
-                                                  );
-                                              }
-                                          })}
-                                      </h3>
-                                      <p className="c-fs-5">
-                                          {symbol === "₹" && item.plan_amounts[0]?.plan_amount === 0
-                                              ? "-"
-                                              : "" || (symbol === "₹" && item.plan_amounts[0]?.plan_amount !== 0)
-                                              ? "+18%GST"
-                                              : ""}
-                                      </p>
-                                      <a
-                                          href="/signup?service=hello"
-                                          target="_blank"
-                                          className={`${
-                                              item?.name === "Premium" ? "btn-dark" : "btn-outline-dark"
-                                          }  btn fw-semibold rounded-1 border border-dark px-3 btn-sm`}
-                                      >
-                                          Get Started
-                                      </a>
-                                      <hr className="w-100" style={{ borderColor: "#0009" }}></hr>
-                                      <div className="c-fs-6  ">
-                                          <h4 className="c-fs-4 c-fw-sb">Included</h4>
-                                          <div className="c-fw-400 mt-2 d-flex flex-column gap-2">
-                                              <div>
-                                                  {" "}
-                                                  {
-                                                      item.plan_services[0].service_credit.service_credit_rates[0]
-                                                          .free_credits
-                                                  }{" "}
-                                                  {item.plan_services[0].service_credit.service.name}{" "}
-                                                  {selectedMode !== "Monthly" ? "/month" : ""}
-                                              </div>
-                                              <div>
-                                                  {
-                                                      item.plan_services[1].service_credit.service_credit_rates[0]
-                                                          .free_credits
-                                                  }{" "}
-                                                  {item.plan_services[1].service_credit.service.name}
-                                                  {selectedMode !== "Monthly" ? "/month" : ""}
-                                                  {}
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div className="c-fs-6 mt-4">
-                                          <h4 className="c-fs-4 mb-2 c-fw-sb">Features</h4>
-                                          {item?.plan_features?.map((data, index) => {
-                                              if (data.is_visible) {
-                                                  return (
-                                                      <div key={`data-${index}`}>
-                                                          {data.feature.is_included ? (
-                                                              <MdDone className="text-green me-2 prcing-check" />
-                                                          ) : (
-                                                              <MdClose className="text-danger me-2 prcing-check" />
-                                                          )}
-                                                          <span>{data?.feature?.name}</span>
-                                                      </div>
-                                                  );
-                                              } else {
-                                                  return (
-                                                      <>
-                                                          {!data.feature.is_included && (
-                                                              <div key={`data-${index}`}>
-                                                                  {data.feature.is_included ? (
-                                                                      <MdDone className="text-green me-2 prcing-check" />
-                                                                  ) : (
-                                                                      <MdClose className="text-danger me-2 prcing-check" />
-                                                                  )}
-                                                                  <span>{data?.feature?.name}</span>
-                                                              </div>
-                                                          )}
-                                                      </>
-                                                  );
-                                              }
-                                              return null;
-                                          })}
-                                      </div>
-                                      <div className="c-fs-6 text-start feature-list mt-4">
-                                          <h4 className="c-fs-4 mb-2 c-fw-sb">Extra</h4>
-                                          {item?.postpaid_allowed ? (
-                                              <>
-                                                  <div className="text-lowercase">
-                                                      <MdDone className="text-success me-2 prcing-check" />
-                                                      <span>
-                                                          {" "}
-                                                          {symbol}
-                                                          {symbol === "₹" &&
-                                                              item.plan_services[0].service_credit
-                                                                  .service_credit_rates[0].follow_up_rate}
-                                                          {symbol === "$" &&
-                                                              item.plan_services[0].service_credit
-                                                                  .service_credit_rates[1].follow_up_rate}
-                                                          {symbol === "£" &&
-                                                              item.plan_services[0].service_credit
-                                                                  .service_credit_rates[2].follow_up_rate}
-                                                          /{item.plan_services[0].service_credit.service.name}
-                                                          {selectedMode !== "Monthly" ? "/month" : ""}
-                                                      </span>
-                                                  </div>
-                                                  <div className="text-lowercase">
-                                                      <MdDone className="text-success me-2 prcing-check" />
-                                                      <span>
-                                                          {" "}
-                                                          {symbol}
-                                                          {symbol === "₹" &&
-                                                              item.plan_services[1].service_credit
-                                                                  .service_credit_rates[0].follow_up_rate}
-                                                          {symbol === "$" &&
-                                                              item.plan_services[1].service_credit
-                                                                  .service_credit_rates[1].follow_up_rate}
-                                                          {symbol === "£" &&
-                                                              item.plan_services[1].service_credit
-                                                                  .service_credit_rates[2].follow_up_rate}
-                                                          /ticket{selectedMode !== "Monthly" ? "/month" : ""}
-                                                      </span>
-                                                  </div>
-                                              </>
-                                          ) : (
-                                              <>
-                                                  <div className="text-lowercase">
-                                                      <MdClose className="text-danger me-2 prcing-check" />
-                                                      <span>inbox/month</span>
-                                                  </div>
-                                                  <div className="text-lowercase">
-                                                      <MdClose className="text-danger me-2 prcing-check" />
-                                                      <span>tickets/month</span>
-                                                  </div>
-                                              </>
-                                          )}
-                                      </div>
-                                  </div> */}
                               </>
                           );
                       })
