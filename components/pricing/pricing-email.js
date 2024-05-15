@@ -266,8 +266,8 @@ const pricingemail = ({ subscriptionEmail,  currency, countryCode }) => {
                                                         </a>
                                                         <div className="border-bottom w-100 "></div>
                                                         <div className="d-flex flex-column gap-2">
-                                                            <h3 className="c-fs-4 fw-semibold ">Included</h3>
-                                                            <div className="c-fs-5 ">
+                                                            <h3 className="c-fs-5 fw-semibold ">Included</h3>
+                                                            <div className="c-fs-7 ">
                                                                 {(() => {
                                                                     let i;
                                                                     switch (symbol) {
@@ -305,7 +305,7 @@ const pricingemail = ({ subscriptionEmail,  currency, countryCode }) => {
                                                                 {item.plan_services[0].service_credit.service.name}
                                                                 {selectedMode !== "Monthly" ? "/month" : ""}
                                                             </div>
-                                                            <div className="c-fs-5 ">
+                                                            <div className="c-fs-7 ">
                                                                 {(() => {
                                                                     let i;
                                                                     switch (symbol) {
@@ -345,8 +345,8 @@ const pricingemail = ({ subscriptionEmail,  currency, countryCode }) => {
                                                             </div>
                                                         </div>
                                                         <div className="d-flex flex-column gap-2">
-                                                            <h3 className="c-fs-4 fw-semibold ">Extra @</h3>
-                                                            <div className="c-fs-5 ">
+                                                            <h3 className="c-fs-5 fw-semibold ">Extra @</h3>
+                                                            <div className="c-fs-7 ">
                                                                 {(() => {
                                                                     let i;
                                                                     switch (symbol) {
@@ -385,7 +385,7 @@ const pricingemail = ({ subscriptionEmail,  currency, countryCode }) => {
                                                                 {item.plan_services[0].service_credit.service.name}
                                                             </div>
 
-                                                            <div className="c-fs-5 ">
+                                                            <div className="c-fs-7 ">
                                                                 {(() => {
                                                                     let i;
                                                                     switch (symbol) {
