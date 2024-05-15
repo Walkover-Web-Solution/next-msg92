@@ -8,6 +8,7 @@ import Prism from "prismjs";
 //import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/themes/prism-twilight.css";
 import snippetData from "@/pages/snippet.json"; 
+import { InlineWidget } from "react-calendly";
 
 
 const ChannelComponent = ({ pageData, path, pricingPath }) => {    
@@ -66,6 +67,10 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
           <a href={`/signup?service=${pageData.pagename}`} target="_blank" className="btn btn-dark btn-lg c-fs-2 utm" >
             Get started
           </a>
+
+          {pageData.pagename === 'WhatsApp' && (
+            <button className="btn btn-lg btn-outline-dark c-fs-2 ms-4" data-bs-toggle="modal" data-bs-target="#whatsapp-meeting">Schedule a meeting</button>            
+          )}
         </div>
           <TrustedBy align={'center'} />
         {pageData?.pagename !== 'Numbers' &&
@@ -257,7 +262,27 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
         })}
       </div>
       <Seo path={path} pageData={pageData.pagename} />      
-      <PreFooter />
+      <PreFooter />   
+      <div>
+      <div
+          className="modal fade"
+          id="whatsapp-meeting"
+          tabIndex={-1}
+          aria-labelledby="Schedule a meeting"
+          aria-hidden="true"
+          >
+          <div className="modal-dialog modal-xl">
+              <div className="modal-content">
+                  <div className="modal-header">                        
+                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                  </div>          
+                  <div className="modal-body">                      
+                      <InlineWidget url="https://calendly.com/msg91-whatsapp/15-min-meeting?back=1&month=2024-05" styles={{height: '820px'}} />
+                  </div>                    
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
