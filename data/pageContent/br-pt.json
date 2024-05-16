@@ -1,0 +1,166 @@
+{
+    "pages": {
+        "index": {
+            "tagline": "CUSTOMER SOLUTION PLATFORM",
+            "heading": "Cloud Communication Platform",
+            "subheading": "Secure and robust APIs for SMS, Email, Voice, Authentication and more",
+            "btn": "Get Started",
+            "img": "./assets/img/pages/index/banner.webp",
+            "products": {
+                "learnMore": "Learn more",
+                "content": [
+                    {
+                        "slug": "hello",
+                        "name": "Hello",
+                        "tagline": "Contact center",
+                        "description": "Empower your employees, Support your customers."
+                    },
+                    {
+                        "slug": "campaign",
+                        "name": "Campaign",
+                        "tagline": "Event Based Automation",
+                        "description": "Boost audience engagement through smart Platform."
+                    },
+                    {
+                        "slug": "segmento",
+                        "name": "Segmento",
+                        "tagline": "Customer data platform",
+                        "description": "Customer segmentation by their actions or events."
+                    },
+                    {
+                        "slug": "otp",
+                        "name": "OTP",
+                        "tagline": "INSTANT SECURE VERIFICATION",
+                        "description": "Quick and reliable multichannel OTP verification"
+                    }
+                ]
+            },
+            "chnnels": {
+                "heading": "Communication Channels",
+                "subheading": "Empower conversations with best-in-class communication API Full-featured APIs for developers and businesses to connect and engage your customers globally",
+                "learnmore": "Learn more",
+                "content": [
+                    {
+                        "slug": "sms",
+                        "name": "Hello",
+                        "description": "Empower your employees, Support your customers."
+                    },
+                    {
+                        "slug": "email",
+                        "name": "Hello",
+                        "description": "Empower your employees, Support your customers."
+                    },
+                    {
+                        "slug": "whatsapp",
+                        "name": "Hello",
+                        "description": "Empower your employees, Support your customers."
+                    },
+                    {
+                        "slug": "voice",
+                        "name": "Hello",
+                        "description": "Empower your employees, Support your customers."
+                    },
+                    {
+                        "slug": "numbers",
+                        "name": "Hello",
+                        "description": "Empower your employees, Support your customers."
+                    }
+                ]
+            },
+            "stats": [
+                {
+                    "stats": "2.5 Billon+",
+                    "name": "API calls",
+                    "each": "per month"
+                },
+                {
+                    "stats": "2.5 Billon+",
+                    "name": "API calls",
+                    "each": "per month"
+                },
+                {
+                    "stats": "2.5 Billon+",
+                    "name": "API calls",
+                    "each": "per month"
+                },
+                {
+                    "stats": "2.5 Billon+",
+                    "name": "API calls",
+                    "each": "per month"
+                }
+            ],
+            "services": {
+                "heading": "More services",
+                "learnmoe": "Learn more",
+                "content": [
+                    {
+                        "slug": "url-shortner",
+                        "name": "URL Shortner",
+                        "heading": "Make your long URLs short",
+                        "description": "Automatically shortens URL and tracks your success, one click at a time. Turn your long, messy links into short, memorable branded links"
+                    },
+                    {
+                        "slug": "url-shortner",
+                        "name": "URL Shortner",
+                        "heading": "Make your long URLs short",
+                        "description": "Automatically shortens URL and tracks your success, one click at a time. Turn your long, messy links into short, memorable branded links"
+                    },
+                    {
+                        "slug": "url-shortner",
+                        "name": "URL Shortner",
+                        "heading": "Make your long URLs short",
+                        "description": "Automatically shortens URL and tracks your success, one click at a time. Turn your long, messy links into short, memorable branded links"
+                    }
+                ]
+            },
+            "customer-stories": {
+                "heading": "Customer Success Powered by MSG91",
+                "learnmore": "Learn more",
+                "content": [
+                    {
+                        "slug": "milkbasket",
+                        "description": "Milkbasket sends regular updates to it's customers ...",
+                        "link": "http://localhost:9999/case-studies/milkbasket"
+                    },
+                    {
+                        "slug": "milkbasket",
+                        "description": "Milkbasket sends regular updates to it's customers ...",
+                        "link": "http://localhost:9999/case-studies/milkbasket"
+                    },
+                    {
+                        "slug": "milkbasket",
+                        "description": "Milkbasket sends regular updates to it's customers ...",
+                        "link": "http://localhost:9999/case-studies/milkbasket"
+                    }
+                ]
+            },
+            "faq": {
+                "heading": "Frequently Asked Questions",
+                "content": [
+                    {
+                        "que": "How can MSG91 benifits my business?",
+                        "des": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+                    },
+                    {
+                        "que": "How can MSG91 benifits my business?",
+                        "des": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+                    },
+                    {
+                        "que": "How can MSG91 benifits my business?",
+                        "des": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+                    },
+                    {
+                        "que": "How can MSG91 benifits my business?",
+                        "des": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+                    },
+                    {
+                        "que": "How can MSG91 benifits my business?",
+                        "des": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+                    }
+                ]
+            }
+        },
+        
+    },
+    "components": {}
+}
