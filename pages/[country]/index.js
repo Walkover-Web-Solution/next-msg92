@@ -1,7 +1,8 @@
 import data from "@/data/content.json";
 import IndexComp from "@/components/comps/indexComponent";
+import availableCountries from '@/data/available-countries.json';
 
-const mainpage = ({ pageData, params }) => {
+const mainpage = ({ pageData, params, countryList }) => {  
   var page = pageData?.pagename;
   if (!pageData) {
     return (
@@ -50,14 +51,14 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   let { pageslug, country } = params; // Update variable name to 'pageslug'
-  if (country.length > 2 && pageslug == null) {
-    pageslug = country;
+  
+  if (!Object.keys(availableCountries).includes(country)) {
     country = "global";
-  } else if (country.length == 2 && pageslug == null) {
-    pageslug = "index";
-  }
+  } 
+    
   const countryData = data[country] || {};
   const pageData = countryData[pageslug] || null; // Update variable name to 'pageslug'
+  
   return {
     props: {
       pageData,

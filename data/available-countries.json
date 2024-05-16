@@ -1,0 +1,72 @@
+{
+    "Global": {
+        "sortname": "",
+        "name": "Global",
+        "code": 0,
+        "language": "English",
+        "currency": "USD"
+    },
+    "in": {
+        "sortname": "IN",
+        "name": "India",
+        "code": 91,
+        "language": "English",
+        "currency": "INR"
+    },
+    "br-en": {
+        "sortname": "BR",
+        "name": "Brazil",
+        "code": 55,
+        "language": "English",
+        "currency": "USD"
+    },
+    "br-pt": {
+        "sortname": "BR",
+        "name": "Brazil",
+        "code": 55,
+        "language": "Portuguese",
+        "currency": "USD"
+    },    
+    "ph": {
+        "sortname": "PH",
+        "name": "Philippines",
+        "code": 63,
+        "language": "English",
+        "currency": "GBP"
+    },    
+    "sg": {
+        "sortname": "SG",
+        "name": "Singapore",
+        "code": 65,
+        "language": "English",
+        "currency": "GBP"
+    },    
+    "es": {
+        "sortname": "ES",
+        "name": "Spain",
+        "code": 34,
+        "language": "English",
+        "currency": "GBP"
+    },
+    "ae": {
+        "sortname": "AE",
+        "name": "United Arab Emirates",
+        "code": 971,
+        "language": "English",
+        "currency": "USD"
+    },    
+    "gb": {
+        "sortname": "GB",
+        "name": "United Kingdom",
+        "code": 55,
+        "language": "English",
+        "currency": "GBP"
+    },
+    "us": {
+        "sortname": "GB",
+        "name": "United Kingdom",
+        "code": 55,
+        "language": "English",
+        "currency": "GBP"
+    }
+}

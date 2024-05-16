@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 import Script from 'next/script'
 import Toastify from "@/components/toast";
 import { getCookie, setCookie, setUtm } from "@/components/utils";
+import availableCountries from '@/data/available-countries.json';
+
 import $ from "jquery";
 export default function App({ Component, pageProps }) {
   const router = useRouter();  
@@ -16,6 +18,8 @@ export default function App({ Component, pageProps }) {
   var browserPathCase = browserPath;
   var browserPathMeta = browserPath;
   
+  const countryList = availableCountries;
+
   if(browserPath.includes('partners-and-integrations')){
     var plugin = browserPath.split("/")[2];    
   }
@@ -63,11 +67,9 @@ export default function App({ Component, pageProps }) {
       setCookie('msg91_query', '?utm_source=msg91Website&source=msg91', 30);
     }
     
-    setUtm();
-
-    const countryList = ['in','ae','ph','sg','es','gb','us','?']    
+    setUtm();    
     
-    if(countryList.includes(path)){
+    if(Object.keys(availableCountries).includes(path)){
       setCookie('country_code', path, 30);
     }
     var cc = getCookie('country_code');
@@ -159,11 +161,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {showNavbar && <Navbar browserPath={browserPath} pricingPath={pricingPath} appPath={browserPathMeta} pageSlug={pageSlug} /> }
         <Component 
         {...pageProps} 
-        path={path} 
-        
+        path={path}         
         browserPath={browserPath} 
         browserPathCase={browserPathCase} 
-        pricingPath={pricingPath}
+        pricingPath={pricingPath}        
         />
         {showNavbar && <Footer path={path} year={year} /> }
         <Toastify />
