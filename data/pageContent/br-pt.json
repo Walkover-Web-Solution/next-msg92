@@ -160,7 +160,74 @@
                 ]
             }
         },
-        
+        "campaign": {
+            "name": "Campaign",
+            "slug": "campaign",
+            "tagline": "EVENT BASE AUTOMATION",
+            "heading": "Connect conversations across Channels and tools.",
+            "subheading": "Deliver personalized, engaging and seamless experiences.",
+            "btn-text": "Get started for Free",
+            "features": {
+                "heading": "Features",
+                "content": [
+                    {
+                        "slug": "multi-channel-support",
+                        "heading": "Multi channel support",
+                        "description": "Support your customers on their preferred channel. Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, WhatsApp and more. Meet your customers where they are.",
+                        "link": ""
+                    },
+                    {
+                        "slug": "multi-channel-support",
+                        "heading": "Multi channel support",
+                        "description": "Support your customers on their preferred channel. Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, WhatsApp and more. Meet your customers where they are.",
+                        "link": ""
+                    },
+                    {
+                        "slug": "multi-channel-support",
+                        "heading": "Multi channel support",
+                        "description": "Support your customers on their preferred channel. Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, WhatsApp and more. Meet your customers where they are.",
+                        "link": ""
+                    },
+                    {
+                        "slug": "multi-channel-support",
+                        "heading": "Multi channel support",
+                        "description": "Support your customers on their preferred channel. Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, WhatsApp and more. Meet your customers where they are.",
+                        "link": ""
+                    },
+                    {
+                        "slug": "multi-channel-support",
+                        "heading": "Multi channel support",
+                        "description": "Support your customers on their preferred channel. Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, WhatsApp and more. Meet your customers where they are.",
+                        "link": ""
+                    }
+                ]
+            },
+            "faq": {
+                "heading": "Frequently Asked Questions",
+                "content": [
+                    {
+                        "que": "How can MSG91 benifits my business?",
+                        "des": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+                    },
+                    {
+                        "que": "How can MSG91 benifits my business?",
+                        "des": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+                    },
+                    {
+                        "que": "How can MSG91 benifits my business?",
+                        "des": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+                    },
+                    {
+                        "que": "How can MSG91 benifits my business?",
+                        "des": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+                    },
+                    {
+                        "que": "How can MSG91 benifits my business?",
+                        "des": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+                    }
+                ]
+            }
+        }
     },
     "components": {}
 }
