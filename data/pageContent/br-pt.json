@@ -7,7 +7,7 @@
             "btn": "Get Started",
             "img": "./assets/img/pages/index/banner.webp",
             "products": {
-                "learnMore": "Learn more",
+                "learnmore": "Learn more",
                 "content": [
                     {
                         "slug": "hello",
