@@ -171,42 +171,42 @@
             "subheading": "Não apenas resolva tickets, construa relacionamentos com os clientes",
             "pageimg": "/img/pageimg/hello.png",
             "features": [
-              {
-                "img": "/img/feature/hello-unlimited-agents.svg",
-                "heading": "Agentes Ilimitados",
-                "subheading": "Agentes gratuitos ilimitados para fortalecer seu suporte ao cliente.",
-                "content": "Mais agentes significam engajamento contínuo, mais tickets resolvidos e melhor suporte ao cliente oferecido. Não há número limitado para seus agentes de suporte ao cliente."
-              },
-              {
-                "img": "/img/feature/hello-chat-bot.svg",
-                "heading": "Chatbot",
-                "subheading": "Resolva consultas de clientes 24 horas por dia, 7 dias por semana, em texto e voz.",
-                "content": "Deixe o chatbot lidar com consultas simples e repetitivas que não exigem as habilidades interpessoais e a experiência de seus agentes e, quando necessário, envolva agentes ao vivo de forma tranquila."
-              },
-              {
-                "img": "/img/feature/hello-analytics.svg",
-                "heading": "Análises",
-                "subheading": "Análises e relatórios para monitorar o desempenho do seu agente.",
-                "content": "Obtenha insights acionáveis profundos para oferecer um suporte excepcional e alcançar seus objetivos. Os relatórios de análise fáceis de analisar ajudarão seus agentes a aprimorar o suporte ao cliente."
-              },
-              {
-                "img": "/img/feature/hello-video-call.svg",
-                "heading": "Videochamada / Compartilhamento de Tela",
-                "subheading": "Videochamadas de alta qualidade onde quer que seu cliente esteja.",
-                "content": "Faça uma videochamada com seu cliente para navegar na tela do cliente. Tome controle da reunião enquanto seu cliente compartilha a tela para mostrar informações ou levantar uma questão."
-              },
-              {
-                "img": "/img/feature/hello-workflow.svg",
-                "heading": "Fluxo de Trabalho",
-                "subheading": "Atribua automaticamente conversas a uma equipe ou a um agente dedicado.",
-                "content": "Comece com nosso Fluxo de Trabalho existente ou configure seu Fluxo de Trabalho personalizado com base nas necessidades de suporte do seu negócio."
-              },
-              {
-                "img": "/img/feature/hello-screen-control.svg",
-                "heading": "Controle de Tela",
-                "subheading": "Controle a tela do seu cliente de onde você estiver",
-                "content": "Trabalhe na tela remota como se você estivesse realmente lá. Assim que você obtiver acesso, obtenha controle total da tela, mouse e teclado do seu cliente para resolver problemas rapidamente."
-              }
+                {
+                    "img": "/img/feature/hello-unlimited-agents.svg",
+                    "heading": "Agentes Ilimitados",
+                    "subheading": "Agentes gratuitos ilimitados para fortalecer seu suporte ao cliente.",
+                    "content": "Mais agentes significam engajamento contínuo, mais tickets resolvidos e melhor suporte ao cliente oferecido. Não há número limitado para seus agentes de suporte ao cliente."
+                },
+                {
+                    "img": "/img/feature/hello-chat-bot.svg",
+                    "heading": "Chatbot",
+                    "subheading": "Resolva consultas de clientes 24 horas por dia, 7 dias por semana, em texto e voz.",
+                    "content": "Deixe o chatbot lidar com consultas simples e repetitivas que não exigem as habilidades interpessoais e a experiência de seus agentes e, quando necessário, envolva agentes ao vivo de forma tranquila."
+                },
+                {
+                    "img": "/img/feature/hello-analytics.svg",
+                    "heading": "Análises",
+                    "subheading": "Análises e relatórios para monitorar o desempenho do seu agente.",
+                    "content": "Obtenha insights acionáveis profundos para oferecer um suporte excepcional e alcançar seus objetivos. Os relatórios de análise fáceis de analisar ajudarão seus agentes a aprimorar o suporte ao cliente."
+                },
+                {
+                    "img": "/img/feature/hello-video-call.svg",
+                    "heading": "Videochamada / Compartilhamento de Tela",
+                    "subheading": "Videochamadas de alta qualidade onde quer que seu cliente esteja.",
+                    "content": "Faça uma videochamada com seu cliente para navegar na tela do cliente. Tome controle da reunião enquanto seu cliente compartilha a tela para mostrar informações ou levantar uma questão."
+                },
+                {
+                    "img": "/img/feature/hello-workflow.svg",
+                    "heading": "Fluxo de Trabalho",
+                    "subheading": "Atribua automaticamente conversas a uma equipe ou a um agente dedicado.",
+                    "content": "Comece com nosso Fluxo de Trabalho existente ou configure seu Fluxo de Trabalho personalizado com base nas necessidades de suporte do seu negócio."
+                },
+                {
+                    "img": "/img/feature/hello-screen-control.svg",
+                    "heading": "Controle de Tela",
+                    "subheading": "Controle a tela do seu cliente de onde você estiver",
+                    "content": "Trabalhe na tela remota como se você estivesse realmente lá. Assim que você obtiver acesso, obtenha controle total da tela, mouse e teclado do seu cliente para resolver problemas rapidamente."
+                }
             ]
         },
         "campaign": {
@@ -262,53 +262,53 @@
             "btn-text": "Comece gratuitamente",
             "icon": "/img/icon/segmento.svg",
             "features": {
-              "heading": "Recursos",
-              "content": [
-                {
-                  "img": "/img/feature/segmento-create-filters-as-per-segments.svg",
-                  "heading": "Crie filtros por segmento",
-                  "subheading": "Crie uma lista filtrada no seu catálogo de endereços comercial.",
-                  "content": "Adapte seus esforços de marketing segmentando pessoas com base em seus requisitos, traços ou padrões criando um filtro específico no seu catálogo de endereços."
-                },
-                {
-                  "img": "/img/feature/segmento-automation-trigger.svg",
-                  "heading": "Gatilho de automação",
-                  "subheading": "Acione informações relevantes para os segmentos filtrados.",
-                  "content": "Automatize ações nos filtros criados com base na ação ou entrada do usuário para entregar mensagens relevantes e personalizadas para cada grupo."
-                },
-                {
-                  "img": "/img/feature/segmento-automation-repeater.svg",
-                  "heading": "Repetidor de automação",
-                  "subheading": "Envie o conteúdo mais relevante no momento mais relevante.",
-                  "content": "Envie mensagens automáticas para o mesmo filtro em intervalos baseados em tempo através do canal de comunicação comercial preferido do seu público."
-                },
-                {
-                  "img": "/img/feature/segmento-open-api.svg",
-                  "heading": "API aberta",
-                  "subheading": "Use API para obter, criar, atualizar ou excluir contatos.",
-                  "content": "Fornecemos APIs para todas as ações, grandes ou pequenas, para que você possa se concentrar no que mais importa - construir seu produto incrível."
-                }
-              ],
-              "morefeatures": [
-                {
-                  "more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"
-                },
-                {
-                  "more": "Resolução de problemas por vídeo em segundos"
-                },
-                {
-                  "more": "Grave o desempenho do agente para controle de qualidade"
-                },
-                {
-                  "more": "Entenda as emoções de seus clientes por meio da análise de sentimentos"
-                },
-                {
-                  "more": "Solução para acesso remoto e suporte"
-                },
-                {
-                  "more": "Acompanhe o desempenho do segmento"
-                }
-              ]
+                "heading": "Recursos",
+                "content": [
+                    {
+                        "img": "/img/feature/segmento-create-filters-as-per-segments.svg",
+                        "heading": "Crie filtros por segmento",
+                        "subheading": "Crie uma lista filtrada no seu catálogo de endereços comercial.",
+                        "content": "Adapte seus esforços de marketing segmentando pessoas com base em seus requisitos, traços ou padrões criando um filtro específico no seu catálogo de endereços."
+                    },
+                    {
+                        "img": "/img/feature/segmento-automation-trigger.svg",
+                        "heading": "Gatilho de automação",
+                        "subheading": "Acione informações relevantes para os segmentos filtrados.",
+                        "content": "Automatize ações nos filtros criados com base na ação ou entrada do usuário para entregar mensagens relevantes e personalizadas para cada grupo."
+                    },
+                    {
+                        "img": "/img/feature/segmento-automation-repeater.svg",
+                        "heading": "Repetidor de automação",
+                        "subheading": "Envie o conteúdo mais relevante no momento mais relevante.",
+                        "content": "Envie mensagens automáticas para o mesmo filtro em intervalos baseados em tempo através do canal de comunicação comercial preferido do seu público."
+                    },
+                    {
+                        "img": "/img/feature/segmento-open-api.svg",
+                        "heading": "API aberta",
+                        "subheading": "Use API para obter, criar, atualizar ou excluir contatos.",
+                        "content": "Fornecemos APIs para todas as ações, grandes ou pequenas, para que você possa se concentrar no que mais importa - construir seu produto incrível."
+                    }
+                ],
+                "morefeatures": [
+                    {
+                        "more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"
+                    },
+                    {
+                        "more": "Resolução de problemas por vídeo em segundos"
+                    },
+                    {
+                        "more": "Grave o desempenho do agente para controle de qualidade"
+                    },
+                    {
+                        "more": "Entenda as emoções de seus clientes por meio da análise de sentimentos"
+                    },
+                    {
+                        "more": "Solução para acesso remoto e suporte"
+                    },
+                    {
+                        "more": "Acompanhe o desempenho do segmento"
+                    }
+                ]
             }
         },
         "otp": {
@@ -320,35 +320,47 @@
             "btn-text": "Get started for Free",
             "icon": "/img/icon/otp.svg",
             "features": {
-              "heading": "Características",
-              "content": [
-                {
-                  "img": "/img/feature/otp-simple-login.svg",
-                  "heading": "Tão simples quanto Login com Google",
-                  "subheading": "Login com OTP é tão simples quanto login com Gmail",
-                  "content": "Dê aos seus usuários uma experiência de autenticação rápida, não disruptiva e simples. Implemente login com OTP inserindo seu número de celular ou endereço de e-mail para receber OTP via SMS ou e-mail."
-                },
-                {
-                  "img": "/img/feature/otp-inbuilt-ip-security.svg",
-                  "heading": "Segurança IP Integrada",
-                  "subheading": "Proteção contra fraudes, hacks, validação, bloqueio",
-                  "content": "Minimize fraudes com uma camada extra de segurança. A segurança integrada garante que, quando um login é arriscado, o fluxo não permite que o ator mal-intencionado faça login, visualizando-o como potencialmente fraudulento."
-                },
-                {
-                  "img": "/img/feature/otp-support-multiple-channels.svg",
-                  "heading": "Suporte a múltiplos canais",
-                  "subheading": "Construa confiança com o cliente e aumente a conversão em vários canais",
-                  "content": "Autentique seus usuários nos canais que eles preferem. Suportamos vários canais, incluindo SMS, e-mail, voz, WhatsApp, dando às empresas e usuários a flexibilidade de que precisam para autenticar."
-                }
-              ],
-              "morefeatures": [
-                {"more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"},
-                {"more": "Resolução de problemas por vídeo em segundos"},
-                {"more": "Grave o desempenho do agente para controle de qualidade"},
-                {"more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"},
-                {"more": "Solução para acesso remoto e suporte"},
-                {"more": "Acompanhe o desempenho do OTP"}
-              ]
+                "heading": "Características",
+                "content": [
+                    {
+                        "img": "/img/feature/otp-simple-login.svg",
+                        "heading": "Tão simples quanto Login com Google",
+                        "subheading": "Login com OTP é tão simples quanto login com Gmail",
+                        "content": "Dê aos seus usuários uma experiência de autenticação rápida, não disruptiva e simples. Implemente login com OTP inserindo seu número de celular ou endereço de e-mail para receber OTP via SMS ou e-mail."
+                    },
+                    {
+                        "img": "/img/feature/otp-inbuilt-ip-security.svg",
+                        "heading": "Segurança IP Integrada",
+                        "subheading": "Proteção contra fraudes, hacks, validação, bloqueio",
+                        "content": "Minimize fraudes com uma camada extra de segurança. A segurança integrada garante que, quando um login é arriscado, o fluxo não permite que o ator mal-intencionado faça login, visualizando-o como potencialmente fraudulento."
+                    },
+                    {
+                        "img": "/img/feature/otp-support-multiple-channels.svg",
+                        "heading": "Suporte a múltiplos canais",
+                        "subheading": "Construa confiança com o cliente e aumente a conversão em vários canais",
+                        "content": "Autentique seus usuários nos canais que eles preferem. Suportamos vários canais, incluindo SMS, e-mail, voz, WhatsApp, dando às empresas e usuários a flexibilidade de que precisam para autenticar."
+                    }
+                ],
+                "morefeatures": [
+                    {
+                        "more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"
+                    },
+                    {
+                        "more": "Resolução de problemas por vídeo em segundos"
+                    },
+                    {
+                        "more": "Grave o desempenho do agente para controle de qualidade"
+                    },
+                    {
+                        "more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"
+                    },
+                    {
+                        "more": "Solução para acesso remoto e suporte"
+                    },
+                    {
+                        "more": "Acompanhe o desempenho do OTP"
+                    }
+                ]
             }
         },
         "shorturl": {
@@ -360,29 +372,41 @@
             "btn-text": "Get started for Free",
             "icon": "/img/icon/shorturl.svg",
             "features": {
-              "heading": "Características",
-              "content": [
-                {
-                  "img": "/img/feature/shorturl-no-code.svg",
-                  "heading": "Sem Código",
-                  "subheading": "Sem código e menos créditos tornam-no um link inteligente.",
-                  "content": "Encurte seu URL em tempo real sem inserir qualquer código. Basta colar seu link e você terá um link inteligente que é fácil de compartilhar, economiza espaço e consome menos créditos."
-                },
-                {
-                  "img": "/img/feature/shorturl-number-wise-tracking.svg",
-                  "heading": "Rastreamento Numérico",
-                  "subheading": "Reúna estatísticas monitorando o número de acessos do seu URL.",
-                  "content": "Acompanhe o desempenho do seu shortURL e o número de acessos para cada destinatário. Saiba quantas vezes o link foi clicado, onde foi compartilhado e como está direcionando o tráfego."
-                }
-              ],
-              "morefeatures": [
-                {"more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"},
-                {"more": "Resolução de problemas por vídeo em segundos"},
-                {"more": "Grave o desempenho do agente para controle de qualidade"},
-                {"more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"},
-                {"more": "Solução para acesso remoto e suporte"},
-                {"more": "Acompanhe o desempenho do shortURL"}
-              ]
+                "heading": "Características",
+                "content": [
+                    {
+                        "img": "/img/feature/shorturl-no-code.svg",
+                        "heading": "Sem Código",
+                        "subheading": "Sem código e menos créditos tornam-no um link inteligente.",
+                        "content": "Encurte seu URL em tempo real sem inserir qualquer código. Basta colar seu link e você terá um link inteligente que é fácil de compartilhar, economiza espaço e consome menos créditos."
+                    },
+                    {
+                        "img": "/img/feature/shorturl-number-wise-tracking.svg",
+                        "heading": "Rastreamento Numérico",
+                        "subheading": "Reúna estatísticas monitorando o número de acessos do seu URL.",
+                        "content": "Acompanhe o desempenho do seu shortURL e o número de acessos para cada destinatário. Saiba quantas vezes o link foi clicado, onde foi compartilhado e como está direcionando o tráfego."
+                    }
+                ],
+                "morefeatures": [
+                    {
+                        "more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"
+                    },
+                    {
+                        "more": "Resolução de problemas por vídeo em segundos"
+                    },
+                    {
+                        "more": "Grave o desempenho do agente para controle de qualidade"
+                    },
+                    {
+                        "more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"
+                    },
+                    {
+                        "more": "Solução para acesso remoto e suporte"
+                    },
+                    {
+                        "more": "Acompanhe o desempenho do shortURL"
+                    }
+                ]
             }
         },
         "knowledgebase": {
@@ -394,35 +418,47 @@
             "btn-text": "Get started for Free",
             "icon": "/img/icon/knowledgebase.svg",
             "features": {
-              "heading": "Características",
-              "content": [
-                {
-                  "img": "/img/feature/kb-wysiwyg-editor.svg",
-                  "heading": "Editor WYSIWYG",
-                  "subheading": "Crie ou edite facilmente seus artigos da base de conhecimento",
-                  "content": "Crie rapidamente seus artigos com o editor de conteúdo 'o que você vê é o que você obtém'. É tão simples de usar quanto um processador de texto ou editor HTML."
-                },
-                {
-                  "img": "/img/feature/kb-seo-friendly.svg",
-                  "heading": "Amigável para SEO (Suporta subpasta e subdomínio)",
-                  "subheading": "Uma base de conhecimento otimizada e amigável para SEO",
-                  "content": "Sua base de conhecimento é executada em seu próprio domínio e não em um subdomínio, para que os algoritmos a tratem como seu site, dando a ela a mesma importância que suas outras páginas da web."
-                },
-                {
-                  "img": "/img/feature/kb-whitelable.svg",
-                  "heading": "Whitelabel",
-                  "subheading": "Funciona com sua marca e não com a nossa",
-                  "content": "Seus usuários visualizam sua base de conhecimento com sua marca em seu site. Nossos serviços de whitelabel garantem que não haja indicação de que é alimentado pela MSG91."
-                }
-              ],
-              "morefeatures": [
-                {"more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"},
-                {"more": "Resolução de problemas por vídeo em segundos"},
-                {"more": "Grave o desempenho do agente para controle de qualidade"},
-                {"more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"},
-                {"more": "Solução para acesso remoto e suporte"},
-                {"more": "Acompanhe o desempenho da base de conhecimento"}
-              ]
+                "heading": "Características",
+                "content": [
+                    {
+                        "img": "/img/feature/kb-wysiwyg-editor.svg",
+                        "heading": "Editor WYSIWYG",
+                        "subheading": "Crie ou edite facilmente seus artigos da base de conhecimento",
+                        "content": "Crie rapidamente seus artigos com o editor de conteúdo 'o que você vê é o que você obtém'. É tão simples de usar quanto um processador de texto ou editor HTML."
+                    },
+                    {
+                        "img": "/img/feature/kb-seo-friendly.svg",
+                        "heading": "Amigável para SEO (Suporta subpasta e subdomínio)",
+                        "subheading": "Uma base de conhecimento otimizada e amigável para SEO",
+                        "content": "Sua base de conhecimento é executada em seu próprio domínio e não em um subdomínio, para que os algoritmos a tratem como seu site, dando a ela a mesma importância que suas outras páginas da web."
+                    },
+                    {
+                        "img": "/img/feature/kb-whitelable.svg",
+                        "heading": "Whitelabel",
+                        "subheading": "Funciona com sua marca e não com a nossa",
+                        "content": "Seus usuários visualizam sua base de conhecimento com sua marca em seu site. Nossos serviços de whitelabel garantem que não haja indicação de que é alimentado pela MSG91."
+                    }
+                ],
+                "morefeatures": [
+                    {
+                        "more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"
+                    },
+                    {
+                        "more": "Resolução de problemas por vídeo em segundos"
+                    },
+                    {
+                        "more": "Grave o desempenho do agente para controle de qualidade"
+                    },
+                    {
+                        "more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"
+                    },
+                    {
+                        "more": "Solução para acesso remoto e suporte"
+                    },
+                    {
+                        "more": "Acompanhe o desempenho da base de conhecimento"
+                    }
+                ]
             }
         },
         "sms": {
@@ -434,59 +470,71 @@
             "btn-text": "Get started for Free",
             "icon": "/img/icon/sms.svg",
             "features": {
-              "heading": "Características",
-              "content": [
-                {
-                  "img": "/img/feature/sms-intelligent-sms-routing.svg",
-                  "heading": "Algoritmo Inteligente de Retentativa de SMS",
-                  "subheading": "",
-                  "content": "Nosso serviço de API de SMS encontra a rota de telecom mais confiável e rápida para cada mensagem que você envia. Caso o SMS falhe, nosso algoritmo tenta novamente em uma fração de segundo e entrega suas mensagens usando outra rota de telecom."
-                },
-                {
-                  "img": "/img/feature/sms-a-reliable-scalable-and-feature-rich-sms-api.svg",
-                  "heading": "API de SMS Confiável, Escalável e Rica em Recursos",
-                  "subheading": "",
-                  "content": "Disponível em todas as linguagens de programação, a integração com nossa API de SMS para desenvolvedores é rápida, fácil e perfeita. Desenvolvida por desenvolvedores para desenvolvedores, explore guias de início rápido, trechos de código, SDKs e mais."
-                },
-                {
-                  "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
-                  "heading": "Desfrute de Entrega com Baixa Latência - Mundial",
-                  "subheading": "",
-                  "content": "Alcance mais de 210 países de forma confiável com operadoras de telecom locais. O redirecionamento automático do tráfego global em tempo real nos ajuda a evitar falhas e latência."
-                },
-                {
-                  "img": "/img/feature/sms-multi-lingual-support.svg",
-                  "heading": "Suporte Multilíngue",
-                  "subheading": "",
-                  "content": "Converse com seu público em seu idioma local e leve o engajamento com o cliente para o próximo nível. Construa a confiança do cliente ao enviar mensagens em seu idioma regional em qualquer lugar do mundo."
-                },
-                {
-                  "img": "/img/feature/sms-personalized-sms.svg",
-                  "heading": "SMS Personalizado",
-                  "subheading": "Aumente a satisfação do cliente com um engajamento significativo.",
-                  "content": "Não apenas interaja com os clientes, crie experiências personalizadas adicionando características às suas mensagens. Aproveite o poder da personalização para aumentar seu ROI."
-                },
-                {
-                  "img": "/img/feature/sms-link-shortener.svg",
-                  "heading": "Encurtador de Links",
-                  "subheading": "Transforme uma URL longa em um link mais curto e legível.",
-                  "content": "Habilite o encurtador de links profundamente integrado para converter URLs longas em links mais curtos. Obtenha um relatório detalhado de usuários sobre cliques com números de celular, navegador e IP."
-                },
-                {
-                  "img": "/img/feature/sms-enhanced-analytics.svg",
-                  "heading": "Análise Aprimorada",
-                  "subheading": "Visualização gráfica em tempo real para monitoramento e solução de problemas.",
-                  "content": "Otimize a entrega de seus SMS, meça a eficácia de suas campanhas e melhore o ROI. Esteja sempre a par de quais mensagens os clientes receberam e quais foram perdidas."
-                }
-              ],
-              "morefeatures": [
-                {"more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"},
-                {"more": "Resolução de problemas por vídeo em segundos"},
-                {"more": "Grave o desempenho do agente para controle de qualidade"},
-                {"more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"},
-                {"more": "Solução para acesso remoto e suporte"},
-                {"more": "Acompanhe o desempenho do SMS"}
-              ]
+                "heading": "Características",
+                "content": [
+                    {
+                        "img": "/img/feature/sms-intelligent-sms-routing.svg",
+                        "heading": "Algoritmo Inteligente de Retentativa de SMS",
+                        "subheading": "",
+                        "content": "Nosso serviço de API de SMS encontra a rota de telecom mais confiável e rápida para cada mensagem que você envia. Caso o SMS falhe, nosso algoritmo tenta novamente em uma fração de segundo e entrega suas mensagens usando outra rota de telecom."
+                    },
+                    {
+                        "img": "/img/feature/sms-a-reliable-scalable-and-feature-rich-sms-api.svg",
+                        "heading": "API de SMS Confiável, Escalável e Rica em Recursos",
+                        "subheading": "",
+                        "content": "Disponível em todas as linguagens de programação, a integração com nossa API de SMS para desenvolvedores é rápida, fácil e perfeita. Desenvolvida por desenvolvedores para desenvolvedores, explore guias de início rápido, trechos de código, SDKs e mais."
+                    },
+                    {
+                        "img": "/img/feature/sms-enjoy-reliable-low-latency-delivery-worldwide.svg",
+                        "heading": "Desfrute de Entrega com Baixa Latência - Mundial",
+                        "subheading": "",
+                        "content": "Alcance mais de 210 países de forma confiável com operadoras de telecom locais. O redirecionamento automático do tráfego global em tempo real nos ajuda a evitar falhas e latência."
+                    },
+                    {
+                        "img": "/img/feature/sms-multi-lingual-support.svg",
+                        "heading": "Suporte Multilíngue",
+                        "subheading": "",
+                        "content": "Converse com seu público em seu idioma local e leve o engajamento com o cliente para o próximo nível. Construa a confiança do cliente ao enviar mensagens em seu idioma regional em qualquer lugar do mundo."
+                    },
+                    {
+                        "img": "/img/feature/sms-personalized-sms.svg",
+                        "heading": "SMS Personalizado",
+                        "subheading": "Aumente a satisfação do cliente com um engajamento significativo.",
+                        "content": "Não apenas interaja com os clientes, crie experiências personalizadas adicionando características às suas mensagens. Aproveite o poder da personalização para aumentar seu ROI."
+                    },
+                    {
+                        "img": "/img/feature/sms-link-shortener.svg",
+                        "heading": "Encurtador de Links",
+                        "subheading": "Transforme uma URL longa em um link mais curto e legível.",
+                        "content": "Habilite o encurtador de links profundamente integrado para converter URLs longas em links mais curtos. Obtenha um relatório detalhado de usuários sobre cliques com números de celular, navegador e IP."
+                    },
+                    {
+                        "img": "/img/feature/sms-enhanced-analytics.svg",
+                        "heading": "Análise Aprimorada",
+                        "subheading": "Visualização gráfica em tempo real para monitoramento e solução de problemas.",
+                        "content": "Otimize a entrega de seus SMS, meça a eficácia de suas campanhas e melhore o ROI. Esteja sempre a par de quais mensagens os clientes receberam e quais foram perdidas."
+                    }
+                ],
+                "morefeatures": [
+                    {
+                        "more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"
+                    },
+                    {
+                        "more": "Resolução de problemas por vídeo em segundos"
+                    },
+                    {
+                        "more": "Grave o desempenho do agente para controle de qualidade"
+                    },
+                    {
+                        "more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"
+                    },
+                    {
+                        "more": "Solução para acesso remoto e suporte"
+                    },
+                    {
+                        "more": "Acompanhe o desempenho do SMS"
+                    }
+                ]
             }
         },
         "email": {
@@ -498,47 +546,59 @@
             "btn-text": "Get started for Free",
             "icon": "/img/icon/email.svg",
             "features": {
-              "heading": "Características",
-              "content": [
-                {
-                  "img": "/img/feature/email-template-builder.svg",
-                  "heading": "Construtor de Modelos de Email",
-                  "subheading": "Arraste e solte para criar o layout do seu email.",
-                  "content": "Personalize seus emails transacionais usando nossa interface sem código, de arrastar e soltar. Visualize para ver como seu email aparecerá quando visualizado em diferentes dispositivos."
-                },
-                {
-                  "img": "/img/feature/email-amp-emails.svg",
-                  "heading": "Emails AMP",
-                  "subheading": "Emails interativos ricos para aumentar o engajamento do usuário.",
-                  "content": "Emails interativos ricos para aumentar o engajamento do usuário. Seus clientes podem interagir dinamicamente com sua mensagem diretamente no email para realizar tarefas e CTAs com menos etapas e sem redirecionamentos."
-                },
-                {
-                  "img": "/img/feature/email-statistics.svg",
-                  "heading": "Estatísticas",
-                  "subheading": "Monitore e acompanhe todos os aspectos do ciclo de vida do seu email.",
-                  "content": "Obtenha uma representação gráfica das taxas de entrega, taxas de abertura, taxas de cliques, taxas de rejeição e spam para iterar e garantir que você chegue à caixa de entrada do seu cliente."
-                },
-                {
-                  "img": "/img/feature/email-smtp-restapi-support.svg",
-                  "heading": "Suporte SMTP/RestAPI",
-                  "subheading": "Integre com nossas APIs RESTful e SMTP em minutos.",
-                  "content": "Integre com nossas APIs RESTful e SMTP em minutos. Tenha acesso à nossa documentação abrangente ou conecte-se com nossos heróis de suporte para integrar facilmente em seus aplicativos personalizados ou de terceiros para começar a enviar emails."
-                },
-                {
-                  "img": "/img/feature/email-validation.svg",
-                  "heading": "Validação de Email",
-                  "subheading": "Impacte positivamente o engajamento e a reputação da sua marca.",
-                  "content": "Envie mais mensagens para contatos reais com nossa API em tempo real que detecta e suprime endereços de email inválidos com uma taxa de precisão de até 85% para fornecer uma lista limpa."
-                }
-              ],
-              "morefeatures": [
-                {"more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"},
-                {"more": "Resolução de problemas por vídeo em segundos"},
-                {"more": "Grave o desempenho do agente para controle de qualidade"},
-                {"more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"},
-                {"more": "Solução para acesso remoto e suporte"},
-                {"more": "Acompanhe o desempenho do email"}
-              ]
+                "heading": "Características",
+                "content": [
+                    {
+                        "img": "/img/feature/email-template-builder.svg",
+                        "heading": "Construtor de Modelos de Email",
+                        "subheading": "Arraste e solte para criar o layout do seu email.",
+                        "content": "Personalize seus emails transacionais usando nossa interface sem código, de arrastar e soltar. Visualize para ver como seu email aparecerá quando visualizado em diferentes dispositivos."
+                    },
+                    {
+                        "img": "/img/feature/email-amp-emails.svg",
+                        "heading": "Emails AMP",
+                        "subheading": "Emails interativos ricos para aumentar o engajamento do usuário.",
+                        "content": "Emails interativos ricos para aumentar o engajamento do usuário. Seus clientes podem interagir dinamicamente com sua mensagem diretamente no email para realizar tarefas e CTAs com menos etapas e sem redirecionamentos."
+                    },
+                    {
+                        "img": "/img/feature/email-statistics.svg",
+                        "heading": "Estatísticas",
+                        "subheading": "Monitore e acompanhe todos os aspectos do ciclo de vida do seu email.",
+                        "content": "Obtenha uma representação gráfica das taxas de entrega, taxas de abertura, taxas de cliques, taxas de rejeição e spam para iterar e garantir que você chegue à caixa de entrada do seu cliente."
+                    },
+                    {
+                        "img": "/img/feature/email-smtp-restapi-support.svg",
+                        "heading": "Suporte SMTP/RestAPI",
+                        "subheading": "Integre com nossas APIs RESTful e SMTP em minutos.",
+                        "content": "Integre com nossas APIs RESTful e SMTP em minutos. Tenha acesso à nossa documentação abrangente ou conecte-se com nossos heróis de suporte para integrar facilmente em seus aplicativos personalizados ou de terceiros para começar a enviar emails."
+                    },
+                    {
+                        "img": "/img/feature/email-validation.svg",
+                        "heading": "Validação de Email",
+                        "subheading": "Impacte positivamente o engajamento e a reputação da sua marca.",
+                        "content": "Envie mais mensagens para contatos reais com nossa API em tempo real que detecta e suprime endereços de email inválidos com uma taxa de precisão de até 85% para fornecer uma lista limpa."
+                    }
+                ],
+                "morefeatures": [
+                    {
+                        "more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"
+                    },
+                    {
+                        "more": "Resolução de problemas por vídeo em segundos"
+                    },
+                    {
+                        "more": "Grave o desempenho do agente para controle de qualidade"
+                    },
+                    {
+                        "more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"
+                    },
+                    {
+                        "more": "Solução para acesso remoto e suporte"
+                    },
+                    {
+                        "more": "Acompanhe o desempenho do email"
+                    }
+                ]
             }
         },
         "voice": {
@@ -550,59 +610,71 @@
             "btn-text": "Get started for Free",
             "icon": "/img/icon/voice.svg",
             "features": {
-              "heading": "Características",
-              "content": [
-                {
-                  "img": "/img/feature/voice-call-monitoring.svg",
-                  "heading": "Monitoramento de Chamadas",
-                  "subheading": "Apresentando a experiência de comunicação de próximo nível com nossos novos recursos de Monitoramento de Chamadas",
-                  "content": "Estamos colocando você no controle de suas conversas com os chamadores. Esses recursos robustos oferecem maior controle e percepção durante suas chamadas, garantindo uma comunicação aprimorada e satisfação do cliente. Espionagem de chamadas: sua arma secreta para garantia de qualidade! Intervenção em chamadas: suporte em tempo real, a apenas um clique de distância! Sussurro de chamadas: orientação ao seu alcance!"
-                },
-                {
-                  "img": "/img/feature/voice-direct-calling-from-hello.svg",
-                  "heading": "Chamada direta do navegador",
-                  "subheading": "Pule a chamada bidirecional e ligue diretamente do navegador.",
-                  "content": "Economize o tempo de chamada do seu agente e melhore a experiência do cliente. Conecte facilmente dois números de telefone sem manter um em espera para iniciar uma conversa com o cliente."
-                },
-                {
-                  "img": "/img/feature/voice-ivr-flow.svg",
-                  "heading": "Fluxo IVR",
-                  "subheading": "IVR moderno que torna a interação do cliente rápida e sem complicações.",
-                  "content": "Sistema IVR inteligente que oferece mais do que apenas resolver consultas. Além do habitual, você pode criar uma configuração baseada em tempo ou agente e até mesmo gravar uma mensagem."
-                },
-                {
-                  "img": "/img/feature/voice-bulk-voice.svg",
-                  "heading": "Voz em Massa",
-                  "subheading": "Fale diretamente com seu público em uma única chamada.",
-                  "content": "Grave sua mensagem de voz e envie a mensagem que deseja transmitir para centenas e milhares de clientes de uma só vez. Uma chamada telefônica geralmente é difícil de ignorar."
-                },
-                {
-                  "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
-                  "heading": "Múltiplas maneiras de carregar arquivo",
-                  "subheading": "Carregue sua mensagem de áudio de várias maneiras.",
-                  "content": "Amplifique sua interação com o cliente com uma mensagem de voz personalizada. Grave sua mensagem para chamada de voz em massa ou menu IVR através de texto para fala, microfone do navegador ou chamada telefônica."
-                },
-                {
-                  "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
-                  "heading": "Voz em massa com IVR",
-                  "subheading": "Conecte sua chamada de voz ao IVR.",
-                  "content": "Não apenas envie uma mensagem de voz em massa, mas também receba uma resposta de seus usuários. Grave a mensagem que você gostaria de transmitir e envie-a para seus clientes usando um IVR."
-                },
-                {
-                  "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
-                  "heading": "Conexão em tempo real com agente na entrada do usuário em chamada em massa",
-                  "subheading": "Direcione seu usuário para seu agente de suporte.",
-                  "content": "Melhore a experiência do cliente oferecendo suporte em tempo real quando você conecta seus usuários aos seus agentes de suporte ao cliente com base na entrada de chamada em massa."
-                }
-              ],
-              "morefeatures": [
-                {"more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"},
-                {"more": "Resolução de problemas por vídeo em segundos"},
-                {"more": "Grave o desempenho do agente para controle de qualidade"},
-                {"more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"},
-                {"more": "Solução para acesso remoto e suporte"},
-                {"more": "Acompanhe o desempenho do Voice"}
-              ]
+                "heading": "Características",
+                "content": [
+                    {
+                        "img": "/img/feature/voice-call-monitoring.svg",
+                        "heading": "Monitoramento de Chamadas",
+                        "subheading": "Apresentando a experiência de comunicação de próximo nível com nossos novos recursos de Monitoramento de Chamadas",
+                        "content": "Estamos colocando você no controle de suas conversas com os chamadores. Esses recursos robustos oferecem maior controle e percepção durante suas chamadas, garantindo uma comunicação aprimorada e satisfação do cliente. Espionagem de chamadas: sua arma secreta para garantia de qualidade! Intervenção em chamadas: suporte em tempo real, a apenas um clique de distância! Sussurro de chamadas: orientação ao seu alcance!"
+                    },
+                    {
+                        "img": "/img/feature/voice-direct-calling-from-hello.svg",
+                        "heading": "Chamada direta do navegador",
+                        "subheading": "Pule a chamada bidirecional e ligue diretamente do navegador.",
+                        "content": "Economize o tempo de chamada do seu agente e melhore a experiência do cliente. Conecte facilmente dois números de telefone sem manter um em espera para iniciar uma conversa com o cliente."
+                    },
+                    {
+                        "img": "/img/feature/voice-ivr-flow.svg",
+                        "heading": "Fluxo IVR",
+                        "subheading": "IVR moderno que torna a interação do cliente rápida e sem complicações.",
+                        "content": "Sistema IVR inteligente que oferece mais do que apenas resolver consultas. Além do habitual, você pode criar uma configuração baseada em tempo ou agente e até mesmo gravar uma mensagem."
+                    },
+                    {
+                        "img": "/img/feature/voice-bulk-voice.svg",
+                        "heading": "Voz em Massa",
+                        "subheading": "Fale diretamente com seu público em uma única chamada.",
+                        "content": "Grave sua mensagem de voz e envie a mensagem que deseja transmitir para centenas e milhares de clientes de uma só vez. Uma chamada telefônica geralmente é difícil de ignorar."
+                    },
+                    {
+                        "img": "/img/feature/voice-multiple-way-to-upload-file.svg",
+                        "heading": "Múltiplas maneiras de carregar arquivo",
+                        "subheading": "Carregue sua mensagem de áudio de várias maneiras.",
+                        "content": "Amplifique sua interação com o cliente com uma mensagem de voz personalizada. Grave sua mensagem para chamada de voz em massa ou menu IVR através de texto para fala, microfone do navegador ou chamada telefônica."
+                    },
+                    {
+                        "img": "/img/feature/voice-bulk-voice-with-ivr.svg",
+                        "heading": "Voz em massa com IVR",
+                        "subheading": "Conecte sua chamada de voz ao IVR.",
+                        "content": "Não apenas envie uma mensagem de voz em massa, mas também receba uma resposta de seus usuários. Grave a mensagem que você gostaria de transmitir e envie-a para seus clientes usando um IVR."
+                    },
+                    {
+                        "img": "/img/feature/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg",
+                        "heading": "Conexão em tempo real com agente na entrada do usuário em chamada em massa",
+                        "subheading": "Direcione seu usuário para seu agente de suporte.",
+                        "content": "Melhore a experiência do cliente oferecendo suporte em tempo real quando você conecta seus usuários aos seus agentes de suporte ao cliente com base na entrada de chamada em massa."
+                    }
+                ],
+                "morefeatures": [
+                    {
+                        "more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"
+                    },
+                    {
+                        "more": "Resolução de problemas por vídeo em segundos"
+                    },
+                    {
+                        "more": "Grave o desempenho do agente para controle de qualidade"
+                    },
+                    {
+                        "more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"
+                    },
+                    {
+                        "more": "Solução para acesso remoto e suporte"
+                    },
+                    {
+                        "more": "Acompanhe o desempenho do Voice"
+                    }
+                ]
             }
         },
         "whatsapp": {
@@ -614,47 +686,59 @@
             "btn-text": "Get started for Free",
             "icon": "/img/icon/whatsapp.svg",
             "features": {
-              "heading": "Características",
-              "content": [
-                {
-                  "img": "/img/feature/whatsapp-support-base64.svg",
-                  "heading": "Suporte a Base64",
-                  "subheading": "Envie o corpo em JSON e deixe o resto conosco.",
-                  "content": "Não é necessário criar uma URL ou fazer o upload do seu arquivo, pois você pode enviar diretamente o corpo JSON e ele será convertido automaticamente em formato Base64 e enviado via WhatsApp."
-                },
-                {
-                  "img": "/img/feature/whatsapp-2way-communication.svg",
-                  "heading": "Comunicação bidirecional",
-                  "subheading": "Diga olá para continuar no HELLO.",
-                  "content": "Dê ao seu cliente a plataforma certa para continuar a conversa. Assim que ele responder, ele será levado diretamente para o HELLO para iniciar uma comunicação bidirecional com sua empresa."
-                },
-                {
-                  "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
-                  "heading": "Gerencie o template dentro do painel",
-                  "subheading": "Crie e gerencie seus templates aqui mesmo.",
-                  "content": "Não é necessário trocar de plataforma para criar seu template. Você pode criar os templates, gerenciá-los e verificar o status deles aqui mesmo, sem acessar o Facebook."
-                },
-                {
-                  "img": "/img/feature/whatsapp-analytics.svg",
-                  "heading": "Análise",
-                  "subheading": "Obtenha insights gráficos sobre as mensagens da sua empresa.",
-                  "content": "Analise e melhore a comunicação da sua empresa com as métricas certas. Obtenha um relatório gráfico sobre o número de mensagens enviadas, entregues, conversas e muito mais."
-                },
-                {
-                  "img": "/img/feature/whatsapp-export-logs.svg",
-                  "heading": "Exportar Logs",
-                  "subheading": "Obtenha logs individuais de mensagens enviadas e recebidas.",
-                  "content": "Exporte os logs para uma melhor visualização e insights. Obtenha detalhes de todas as mensagens enviadas e recebidas e das conversas que sua empresa teve com seus clientes."
-                }
-              ],
-              "morefeatures": [
-                {"more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"},
-                {"more": "Resolução de problemas por vídeo em segundos"},
-                {"more": "Grave o desempenho do agente para controle de qualidade"},
-                {"more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"},
-                {"more": "Solução para acesso remoto e suporte"},
-                {"more": "Acompanhe o desempenho do WhatsApp"}
-              ]
+                "heading": "Características",
+                "content": [
+                    {
+                        "img": "/img/feature/whatsapp-support-base64.svg",
+                        "heading": "Suporte a Base64",
+                        "subheading": "Envie o corpo em JSON e deixe o resto conosco.",
+                        "content": "Não é necessário criar uma URL ou fazer o upload do seu arquivo, pois você pode enviar diretamente o corpo JSON e ele será convertido automaticamente em formato Base64 e enviado via WhatsApp."
+                    },
+                    {
+                        "img": "/img/feature/whatsapp-2way-communication.svg",
+                        "heading": "Comunicação bidirecional",
+                        "subheading": "Diga olá para continuar no HELLO.",
+                        "content": "Dê ao seu cliente a plataforma certa para continuar a conversa. Assim que ele responder, ele será levado diretamente para o HELLO para iniciar uma comunicação bidirecional com sua empresa."
+                    },
+                    {
+                        "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
+                        "heading": "Gerencie o template dentro do painel",
+                        "subheading": "Crie e gerencie seus templates aqui mesmo.",
+                        "content": "Não é necessário trocar de plataforma para criar seu template. Você pode criar os templates, gerenciá-los e verificar o status deles aqui mesmo, sem acessar o Facebook."
+                    },
+                    {
+                        "img": "/img/feature/whatsapp-analytics.svg",
+                        "heading": "Análise",
+                        "subheading": "Obtenha insights gráficos sobre as mensagens da sua empresa.",
+                        "content": "Analise e melhore a comunicação da sua empresa com as métricas certas. Obtenha um relatório gráfico sobre o número de mensagens enviadas, entregues, conversas e muito mais."
+                    },
+                    {
+                        "img": "/img/feature/whatsapp-export-logs.svg",
+                        "heading": "Exportar Logs",
+                        "subheading": "Obtenha logs individuais de mensagens enviadas e recebidas.",
+                        "content": "Exporte os logs para uma melhor visualização e insights. Obtenha detalhes de todas as mensagens enviadas e recebidas e das conversas que sua empresa teve com seus clientes."
+                    }
+                ],
+                "morefeatures": [
+                    {
+                        "more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"
+                    },
+                    {
+                        "more": "Resolução de problemas por vídeo em segundos"
+                    },
+                    {
+                        "more": "Grave o desempenho do agente para controle de qualidade"
+                    },
+                    {
+                        "more": "Entenda as emoções dos seus clientes por meio da análise de sentimentos"
+                    },
+                    {
+                        "more": "Solução para acesso remoto e suporte"
+                    },
+                    {
+                        "more": "Acompanhe o desempenho do WhatsApp"
+                    }
+                ]
             }
         },
         "numbers": {
@@ -666,71 +750,193 @@
             "btn-text": "Get started for Free",
             "icon": "/img/icon/numbers.svg",
             "features": {
-              "heading": "Características",
-              "content": [
-                {
-                  "img": "/img/feature/numbers-global-market-entry-with-numbers.svg",
-                  "heading": "Entrada no Mercado Global com Números: Expandindo sua Presença",
-                  "subheading": "",
-                  "content": "Os números oferecem uma estratégia eficaz para empresas que buscam ampliar seu alcance no mercado. Esses números facilitam a criação de uma conexão local ao adquirir um número de telefone, simplificando a comunicação com clientes e associados. Ao aproveitar os números, as empresas podem estabelecer confiança, melhorar a acessibilidade, superar divisões geográficas, tudo enquanto projetam uma imagem profissional e otimizam a relação custo-benefício. Essa abordagem é especialmente benéfica para empresas internacionais que buscam oportunidades no mercado diversificado e competitivo."
-                },
-                {
-                  "img": "/img/feature/numbers-cost-efficiency.svg",
-                  "heading": "Eficiência de Custo",
-                  "subheading": "",
-                  "content": "Os números apresentam uma alternativa econômica às linhas telefônicas tradicionais. Eles exigem menos despesas iniciais, minimizam os custos de manutenção e eliminam a necessidade de infraestrutura física, tornando-os uma escolha financeiramente eficiente para empresas de todos os portes no mercado."
-                },
-                {
-                  "img": "/img/feature/numbers-missed-call-services.svg",
-                  "heading": "Serviços de Chamada Perdida",
-                  "subheading": "",
-                  "content": "Vários provedores de números virtuais oferecem funcionalidades como alertas e notificações de chamadas perdidas, permitindo que as empresas se comuniquem prontamente com os clientes que não conseguiram estabelecer contato. Esse recurso aprimora a comunicação e a capacidade de resposta do cliente no mercado."
-                },
-                {
-                  "img": "/img/feature/numbers-keyword-specific-messaging.svg",
-                  "heading": "Mensagens Específicas por Palavra-chave",
-                  "subheading": "Você pode escolher uma palavra-chave exclusiva para sua empresa ou campanha",
-                  "content": "Quando os usuários enviam um SMS começando com sua palavra-chave escolhida para seu código longo dedicado ou compartilhado, você pode receber essas mensagens. Esse recurso permite uma comunicação personalizada e específica ao contexto."
-                },
-                {
-                  "img": "/img/feature/numbers-keyword-independent-messaging.svg",
-                  "heading": "Mensagens Independentes de Palavra-chave",
-                  "subheading": "Além das palavras-chave",
-                  "content": "você pode receber mensagens sem palavras-chave específicas. Isso amplia suas opções de comunicação, permitindo que os usuários entrem em contato com você sem a necessidade de palavras-chave predefinidas."
-                },
-                {
-                  "img": "/img/feature/numbers-pre-formatted-questions.svg",
-                  "heading": "Conjunto de Perguntas Pré-formatadas",
-                  "subheading": "",
-                  "content": "Você pode configurar um conjunto de perguntas pré-formatadas para enviar ao seu público. Isso é particularmente útil para realizar pesquisas, questionários ou coletar informações específicas em um formato estruturado."
-                },
-                {
-                  "img": "/img/feature/numbers-online-survey.svg",
-                  "heading": "Pesquisas Online",
-                  "subheading": "",
-                  "content": "Use nosso serviço Numbers para criar e conduzir pesquisas online. Colete insights e feedbacks valiosos do seu público com facilidade."
-                },
-                {
-                  "img": "/img/feature/numbers-lead-generation.svg",
-                  "heading": "Geração de Leads",
-                  "subheading": "",
-                  "content": "Engaje na geração de leads permitindo que clientes potenciais entrem em contato com você por SMS. Colete detalhes de contato e consultas, ajudando você a expandir sua base de clientes."
-                },
-                {
-                  "img": "/img/feature/numbers-auto-responses.svg",
-                  "heading": "Crie Respostas Automáticas",
-                  "subheading": "",
-                  "content": "Você tem a opção de configurar respostas automáticas para as mensagens que receber. Personalize essas respostas para fornecer feedback ou informações imediatas aos seus usuários."
-                },
-                {
-                  "img": "/img/feature/numbers-integration.svg",
-                  "heading": "Integração em Aplicações Web",
-                  "subheading": "",
-                  "content": "Integre perfeitamente os Números na sua aplicação web ou software. Isso permite estender as capacidades do seu software e melhorar a comunicação com o usuário."
-                }
-              ]
+                "heading": "Características",
+                "content": [
+                    {
+                        "img": "/img/feature/numbers-global-market-entry-with-numbers.svg",
+                        "heading": "Entrada no Mercado Global com Números: Expandindo sua Presença",
+                        "subheading": "",
+                        "content": "Os números oferecem uma estratégia eficaz para empresas que buscam ampliar seu alcance no mercado. Esses números facilitam a criação de uma conexão local ao adquirir um número de telefone, simplificando a comunicação com clientes e associados. Ao aproveitar os números, as empresas podem estabelecer confiança, melhorar a acessibilidade, superar divisões geográficas, tudo enquanto projetam uma imagem profissional e otimizam a relação custo-benefício. Essa abordagem é especialmente benéfica para empresas internacionais que buscam oportunidades no mercado diversificado e competitivo."
+                    },
+                    {
+                        "img": "/img/feature/numbers-cost-efficiency.svg",
+                        "heading": "Eficiência de Custo",
+                        "subheading": "",
+                        "content": "Os números apresentam uma alternativa econômica às linhas telefônicas tradicionais. Eles exigem menos despesas iniciais, minimizam os custos de manutenção e eliminam a necessidade de infraestrutura física, tornando-os uma escolha financeiramente eficiente para empresas de todos os portes no mercado."
+                    },
+                    {
+                        "img": "/img/feature/numbers-missed-call-services.svg",
+                        "heading": "Serviços de Chamada Perdida",
+                        "subheading": "",
+                        "content": "Vários provedores de números virtuais oferecem funcionalidades como alertas e notificações de chamadas perdidas, permitindo que as empresas se comuniquem prontamente com os clientes que não conseguiram estabelecer contato. Esse recurso aprimora a comunicação e a capacidade de resposta do cliente no mercado."
+                    },
+                    {
+                        "img": "/img/feature/numbers-keyword-specific-messaging.svg",
+                        "heading": "Mensagens Específicas por Palavra-chave",
+                        "subheading": "Você pode escolher uma palavra-chave exclusiva para sua empresa ou campanha",
+                        "content": "Quando os usuários enviam um SMS começando com sua palavra-chave escolhida para seu código longo dedicado ou compartilhado, você pode receber essas mensagens. Esse recurso permite uma comunicação personalizada e específica ao contexto."
+                    },
+                    {
+                        "img": "/img/feature/numbers-keyword-independent-messaging.svg",
+                        "heading": "Mensagens Independentes de Palavra-chave",
+                        "subheading": "Além das palavras-chave",
+                        "content": "você pode receber mensagens sem palavras-chave específicas. Isso amplia suas opções de comunicação, permitindo que os usuários entrem em contato com você sem a necessidade de palavras-chave predefinidas."
+                    },
+                    {
+                        "img": "/img/feature/numbers-pre-formatted-questions.svg",
+                        "heading": "Conjunto de Perguntas Pré-formatadas",
+                        "subheading": "",
+                        "content": "Você pode configurar um conjunto de perguntas pré-formatadas para enviar ao seu público. Isso é particularmente útil para realizar pesquisas, questionários ou coletar informações específicas em um formato estruturado."
+                    },
+                    {
+                        "img": "/img/feature/numbers-online-survey.svg",
+                        "heading": "Pesquisas Online",
+                        "subheading": "",
+                        "content": "Use nosso serviço Numbers para criar e conduzir pesquisas online. Colete insights e feedbacks valiosos do seu público com facilidade."
+                    },
+                    {
+                        "img": "/img/feature/numbers-lead-generation.svg",
+                        "heading": "Geração de Leads",
+                        "subheading": "",
+                        "content": "Engaje na geração de leads permitindo que clientes potenciais entrem em contato com você por SMS. Colete detalhes de contato e consultas, ajudando você a expandir sua base de clientes."
+                    },
+                    {
+                        "img": "/img/feature/numbers-auto-responses.svg",
+                        "heading": "Crie Respostas Automáticas",
+                        "subheading": "",
+                        "content": "Você tem a opção de configurar respostas automáticas para as mensagens que receber. Personalize essas respostas para fornecer feedback ou informações imediatas aos seus usuários."
+                    },
+                    {
+                        "img": "/img/feature/numbers-integration.svg",
+                        "heading": "Integração em Aplicações Web",
+                        "subheading": "",
+                        "content": "Integre perfeitamente os Números na sua aplicação web ou software. Isso permite estender as capacidades do seu software e melhorar a comunicação com o usuário."
+                    }
+                ]
             }
         }
     },
-    "components": {}
+    "components": {
+        "navabr": {
+            "menu": {
+                "products": "Products",
+                "integrations": "Integrations",
+                "pricing": "Pricing",
+                "api": "API Docs",
+                "signup": "Sign Up"
+            },
+            "products": {
+                "applications": {
+                    "heading": "Applications",
+                    "content": [
+                        {
+                            "slug": "hello",
+                            "name": "Hello",
+                            "description": "Ticketing and Chat"
+                        },
+                        {
+                            "slug": "hello",
+                            "name": "Hello",
+                            "description": "Ticketing and Chat"
+                        },
+                        {
+                            "slug": "hello",
+                            "name": "Hello",
+                            "description": "Ticketing and Chat"
+                        },
+                        {
+                            "slug": "hello",
+                            "name": "Hello",
+                            "description": "Ticketing and Chat"
+                        },
+                        {
+                            "slug": "hello",
+                            "name": "Hello",
+                            "description": "Ticketing and Chat"
+                        }
+                    ]
+                },
+                "channels": {
+                    "heading": "Channels",
+                    "content": [
+                        {
+                            "slug": "hello",
+                            "name": "Hello"
+                        },
+                        {
+                            "slug": "hello",
+                            "name": "Hello"
+                        },
+                        {
+                            "slug": "hello",
+                            "name": "Hello"
+                        },
+                        {
+                            "slug": "hello",
+                            "name": "Hello"
+                        },
+                        {
+                            "slug": "hello",
+                            "name": "Hello"
+                        }
+                    ]
+                },
+                "utilities": {
+                    "heading": "Utilities",
+                    "content": [
+                        {
+                            "slug": "hello",
+                            "name": "Hello",
+                            "description": "Ticketing and Chat"
+                        },
+                        {
+                            "slug": "hello",
+                            "name": "Hello",
+                            "description": "Ticketing and Chat"
+                        },
+                        {
+                            "slug": "hello",
+                            "name": "Hello",
+                            "description": "Ticketing and Chat"
+                        },
+                        {
+                            "slug": "hello",
+                            "name": "Hello",
+                            "description": "Ticketing and Chat"
+                        },
+                        {
+                            "slug": "hello",
+                            "name": "Hello",
+                            "description": "Ticketing and Chat"
+                        }
+                    ]
+                }
+            },
+            "integrations": {
+                "morebtn": "Explore More Plugins",
+                "content": [
+                    {
+                        "slug": "shopify",
+                        "name": "Shopify"
+                    },
+                    {
+                        "slug": "shopify",
+                        "name": "Shopify"
+                    },
+                    {
+                        "slug": "shopify",
+                        "name": "Shopify"
+                    },
+                    {
+                        "slug": "shopify",
+                        "name": "Shopify"
+                    },
+                    {
+                        "slug": "google-sheets",
+                        "name": "Google Sheets"
+                    }
+                ]
+            }
+        }
+    }
 }
