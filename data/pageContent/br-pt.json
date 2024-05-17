@@ -167,7 +167,7 @@
             "tagline": "Automação Baseada em Eventos",
             "heading": "Conecte conversas através de canais e ferramentas.",
             "subheading": "Ofereça experiências personalizadas, envolventes e contínuas.",
-            "btn-text": "Get started for Free",
+            "btntext": "Get started for Free",
             "icon": "/img/icon/campaign.svg",
             "features": {
                 "heading": "Features",
@@ -201,26 +201,6 @@
                         "heading": "Condição Baseada em País",
                         "subheading": "Apoie seus clientes em todo o mundo.",
                         "content": "Crie experiências personalizadas e memoráveis para seus clientes em vários países, idiomas, conteúdos, canais, fluxos e mais. Conecte, personalize e comunique-se facilmente."
-                    }
-                ],
-                "morefeatures": [
-                    {
-                        "more": "Forneça suporte ao cliente via compartilhamento de tela com um único clique"
-                    },
-                    {
-                        "more": "Resolução de problemas por vídeo em segundos"
-                    },
-                    {
-                        "more": "Grave o desempenho do agente para controle de qualidade"
-                    },
-                    {
-                        "more": "Entenda as emoções de seus clientes por meio da análise de sentimentos"
-                    },
-                    {
-                        "more": "Solução para acesso remoto e suporte"
-                    },
-                    {
-                        "more": "Acompanhe o desempenho da campanha"
                     }
                 ]
             }
