@@ -7,52 +7,51 @@
       "head":"this is global index",
       "headline":"Connect with your customers via multiple channels"
     },
-    "hello":{
+    "hello": {
       "code": false,
       "icon": "/img/icon/hello.svg",
-      "pagename":"hello",      
-      "pagetag":"customer service software",
-      "tagline": "Revolutionize customer support",
-      "heading": "Never lose sight of what’s important",
-      "subheading": "Don’t just solve tickets, build customer relationships",
-      "pageimg":"/img/pageimg/hello.png",
+      "pagename": "hello",
+      "pagetag": "software de atendimento ao cliente",
+      "tagline": "Revolucione o suporte ao cliente",
+      "heading": "Nunca perca de vista o que é importante",
+      "subheading": "Não resolva apenas tickets, construa relacionamentos com clientes",
+      "pageimg": "/img/pageimg/hello.png",
       "features": [
-      
         {
           "img": "/img/feature/hello-unlimited-agents.svg",
-          "heading": "Unlimited Agents",
-          "subheading": "Unlimited free agents to power up your customer support.",
-          "content": "More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is no number attached to your number of customer support agents."
+          "heading": "Agentes Ilimitados",
+          "subheading": "Agentes gratuitos ilimitados para impulsionar seu suporte ao cliente.",
+          "content": "Mais agentes significam engajamento contínuo, mais tickets resolvidos e melhor suporte ao cliente oferecido. Não há um número limite para a quantidade de agentes de suporte ao cliente."
         },
         {
           "img": "/img/feature/hello-chat-bot.svg",
           "heading": "Chatbot",
-          "subheading": "Resolve customer queries round-the-clock across text and voice.",
-          "content": "Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents."
+          "subheading": "Resolva consultas de clientes a qualquer hora, em texto e voz.",
+          "content": "Deixe o chatbot lidar com consultas simples e repetitivas que não exigem as habilidades sociais e a experiência de seus agentes e, quando necessário, inclua agentes ao vivo de maneira transparente."
         },
         {
           "img": "/img/feature/hello-analytics.svg",
-          "heading": "Analytics",
-          "subheading": "Analytics and reports to monitor your agent performance.",
-          "content": "Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support."
+          "heading": "Análise",
+          "subheading": "Análises e relatórios para monitorar o desempenho de seus agentes.",
+          "content": "Obtenha insights profundos e acionáveis para oferecer suporte excepcional e alcançar seus objetivos. Os relatórios de análise fáceis de analisar ajudarão seus agentes a aumentar seu suporte ao cliente."
         },
         {
           "img": "/img/feature/hello-video-call.svg",
-          "heading": "Video Call / Screen Sharing",
-          "subheading": "High-quality video calls wherever your customer is.",
-          "content": "Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue."
+          "heading": "Chamada de Vídeo / Compartilhamento de Tela",
+          "subheading": "Chamadas de vídeo de alta qualidade onde quer que seu cliente esteja.",
+          "content": "Faça uma chamada de vídeo com seu cliente para navegar juntos na tela do cliente. Assuma o controle da reunião enquanto seu cliente compartilha a tela para mostrar informações ou levantar um problema."
         },
         {
           "img": "/img/feature/hello-workflow.svg",
-          "heading": "Workflow",
-          "subheading": "Automatically assign conversations to a team or a dedicated agent.",
-          "content": "Get started with our existing Workflow or set up your customised Workflow based on your business support needs."
+          "heading": "Fluxo de Trabalho",
+          "subheading": "Atribua automaticamente conversas a uma equipe ou um agente dedicado.",
+          "content": "Comece com nosso Fluxo de Trabalho existente ou configure seu Fluxo de Trabalho personalizado com base nas necessidades de suporte do seu negócio."
         },
         {
           "img": "/img/feature/hello-screen-control.svg",
-          "heading": "Screen Control",
-          "subheading": "Control your customer’s screen from where you are",
-          "content": "Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues."
+          "heading": "Controle de Tela",
+          "subheading": "Controle a tela do seu cliente de onde você estiver",
+          "content": "Trabalhe na tela remota como se você realmente estivesse lá. Uma vez que você obtenha acesso, tenha controle total da tela, mouse e teclado do seu cliente para resolver rapidamente os problemas."
         }
       ]
     },
