@@ -89,15 +89,14 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
   };
   return (
     <>
-  <div className="d-block d-md-none">
+    {/* <div className="d-block d-md-none">
       {showInnerComponent && <Notification mininav={notification_class} />}
       <AnnoucmentBar/>
-    </div>    
+    </div>     */}
       {show && <Mininav path={path} />}
       <div className="d-none d-md-block">
         <Notification path={path}/>
-        <AnnoucmentBar/>
-
+        {/* <AnnoucmentBar/> */}
       </div>
       <nav className="w-100 py-2 sticy align-items-center d-flex " id="navbar">
         <div className="container relative d-none align-items-center d-md-flex justify-content-between c-fs-4 c-fw-m nav-menu-cont">
