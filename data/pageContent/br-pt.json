@@ -835,24 +835,19 @@
                             "description": "Ticketing and Chat"
                         },
                         {
-                            "slug": "hello",
-                            "name": "Hello",
-                            "description": "Ticketing and Chat"
+                            "slug": "campaign",
+                            "name": "Campaign",
+                            "description": "Event Based Automation"
                         },
                         {
-                            "slug": "hello",
-                            "name": "Hello",
-                            "description": "Ticketing and Chat"
+                            "slug": "segmento",
+                            "name": "Segmento",
+                            "description": "Contact Managment"
                         },
                         {
-                            "slug": "hello",
-                            "name": "Hello",
-                            "description": "Ticketing and Chat"
-                        },
-                        {
-                            "slug": "hello",
-                            "name": "Hello",
-                            "description": "Ticketing and Chat"
+                            "slug": "otp",
+                            "name": "OTP",
+                            "description": "Simplified OTP Platform"
                         }
                     ]
                 },
@@ -860,24 +855,24 @@
                     "heading": "Channels",
                     "content": [
                         {
-                            "slug": "hello",
-                            "name": "Hello"
+                            "slug": "sms",
+                            "name": "SMS"
                         },
                         {
-                            "slug": "hello",
-                            "name": "Hello"
+                            "slug": "email",
+                            "name": "Email"
                         },
                         {
-                            "slug": "hello",
-                            "name": "Hello"
+                            "slug": "whatsapp",
+                            "name": "WhatsApp"
                         },
                         {
-                            "slug": "hello",
-                            "name": "Hello"
+                            "slug": "voice",
+                            "name": "Voice"
                         },
                         {
-                            "slug": "hello",
-                            "name": "Hello"
+                            "slug": "numbers",
+                            "name": "Numbers"
                         }
                     ]
                 },
@@ -885,29 +880,14 @@
                     "heading": "Utilities",
                     "content": [
                         {
-                            "slug": "hello",
-                            "name": "Hello",
-                            "description": "Ticketing and Chat"
+                            "slug": "shortenerurl",
+                            "name": "URL Shortener",
+                            "description": "Cutomise and Track URL's"
                         },
                         {
-                            "slug": "hello",
-                            "name": "Hello",
-                            "description": "Ticketing and Chat"
-                        },
-                        {
-                            "slug": "hello",
-                            "name": "Hello",
-                            "description": "Ticketing and Chat"
-                        },
-                        {
-                            "slug": "hello",
-                            "name": "Hello",
-                            "description": "Ticketing and Chat"
-                        },
-                        {
-                            "slug": "hello",
-                            "name": "Hello",
-                            "description": "Ticketing and Chat"
+                            "slug": "knowledgeBase",
+                            "name": "KnowledgeBase",
+                            "description": "Manage Help Docs and Guides"
                         }
                     ]
                 }
@@ -917,15 +897,20 @@
                 "content": [
                     {
                         "slug": "shopify",
-                        "name": "Shopify"
+                        "name": "Shopify",
+                        "link": "https://apps.shopify.com/msg91"
                     },
                     {
-                        "slug": "shopify",
-                        "name": "Shopify"
+                        "slug": "tally",
+                        "name": "Tally",
+                        "link": "https://msg91.com/partners-and-integrations/tally"
+                        
                     },
                     {
-                        "slug": "shopify",
-                        "name": "Shopify"
+                        "slug": "zapier",
+                        "name": "Zapier",
+                        "link": "https://msg91.com/partners-and-integrations/zapier"
+
                     },
                     {
                         "slug": "shopify",
