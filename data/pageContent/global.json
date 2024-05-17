@@ -849,45 +849,45 @@
     },
     "components": {
         "navbar": {
-            "notification":{
-                "contact":"Contato",
-                "login":"Login"
+            "notification": {
+                "contact": "Contact",
+                "login": "Login"
             },
             "menu": {
-                "products": "Produtos",
-                "integrations": "Integrações",
-                "pricing": "Preços",
-                "api": "Documentos da API",
-                "signup": "Inscrever-se"
+                "products": "Products",
+                "integrations": "Integrations",
+                "pricing": "Pricing",
+                "api": "API Documentation",
+                "signup": "Sign Up"
             },
             "products": {
                 "applications": {
-                    "heading": "Aplicações",
+                    "heading": "Applications",
                     "content": [
                         {
                             "slug": "hello",
                             "name": "Hello",
-                            "description": "Bilheteria e Chat"
+                            "description": "Ticketing and Chat"
                         },
                         {
                             "slug": "campaign",
                             "name": "Campaign",
-                            "description": "Automação Baseada em Eventos"
+                            "description": "Event-Based Automation"
                         },
                         {
                             "slug": "segmento",
-                            "name": "Segmento",
-                            "description": "Gestão de Contatos"
+                            "name": "Segment",
+                            "description": "Contact Management"
                         },
                         {
                             "slug": "otp",
                             "name": "OTP",
-                            "description": "Plataforma Simplificada de OTP"
+                            "description": "Simplified OTP Platform"
                         }
                     ]
                 },
                 "channels": {
-                    "heading": "Canais",
+                    "heading": "Channels",
                     "content": [
                         {
                             "slug": "sms",
@@ -903,32 +903,32 @@
                         },
                         {
                             "slug": "voice",
-                            "name": "Voz"
+                            "name": "Voice"
                         },
                         {
                             "slug": "numbers",
-                            "name": "Números"
+                            "name": "Numbers"
                         }
                     ]
                 },
                 "utilities": {
-                    "heading": "Utilitários",
+                    "heading": "Utilities",
                     "content": [
                         {
                             "slug": "shortenerurl",
-                            "name": "Encurtador de URL",
-                            "description": "Personalize e Rastreie URLs"
+                            "name": "URL Shortener",
+                            "description": "Customize and Track URLs"
                         },
                         {
                             "slug": "knowledgeBase",
-                            "name": "Base de Conhecimento",
-                            "description": "Gerencie Documentos de Ajuda e Guias"
+                            "name": "Knowledge Base",
+                            "description": "Manage Help Documents and Guides"
                         }
                     ]
                 }
             },
             "integrations": {
-                "morebtn": "Explorar Mais Plugins",
+                "morebtn": "Explore More Plugins",
                 "content": [
                     {
                         "slug": "shopify",
@@ -967,7 +967,7 @@
                     },
                     {
                         "slug": "",
-                        "name": "Explorar Mais Plugins",
+                        "name": "Explore More Plugins",
                         "link": "https://msg91.com/partners-and-integrations"
                     }
                 ]
@@ -975,7 +975,7 @@
         },
         "footer": {
             "applications": {
-                "heading": "Nossos produtos",
+                "heading": "Our Products",
                 "content": [
                     {
                         "slug": "hello",
@@ -983,7 +983,7 @@
                     },
                     {
                         "slug": "segmento",
-                        "name": "Segmento"
+                        "name": "Segment"
                     },
                     {
                         "slug": "campaign",
@@ -996,7 +996,7 @@
                 ]
             },
             "channels": {
-                "heading": "Canais",
+                "heading": "Channels",
                 "content": [
                     {
                         "slug": "sms",
@@ -1012,32 +1012,32 @@
                     },
                     {
                         "slug": "voice",
-                        "name": "Voz"
+                        "name": "Voice"
                     },
                     {
                         "slug": "numbers",
-                        "name": "Números"
+                        "name": "Numbers"
                     }
                 ]
             },
             "utilities": {
-                "heading": "Utilitários",
+                "heading": "Utilities",
                 "content": [
                     {
                         "slug": "shorturl",
-                        "name": "Encurtador de URL"
+                        "name": "URL Shortener"
                     },
                     {
                         "slug": "knowledgebase",
-                        "name": "Base de Conhecimento"
+                        "name": "Knowledge Base"
                     },
                     {
                         "slug": "free-whatsapp-link-generator",
-                        "name": "Gerador de Link do WhatsApp Gratuito"
+                        "name": "Free WhatsApp Link Generator"
                     },
                     {
                         "slug": "whatsapp/chatbot",
-                        "name": "Chatbot do WhatsApp"
+                        "name": "WhatsApp Chatbot"
                     }
                 ]
             }

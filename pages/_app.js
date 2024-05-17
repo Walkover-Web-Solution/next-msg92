@@ -17,9 +17,7 @@ export default function App({ Component, pageProps }) {
     var browserPath = router.asPath;
 
     var rawPathArray = browserPath.split("?");
-    var pathArray = rawPathArray[0].split("/");
-    console.log("🚀 ~ App ~ pathArray:", pathArray);
-    console.log("🚀 ~ App ~ rawPathArray:", rawPathArray);
+    var pathArray = rawPathArray[0].split("/");    
 
     var browserPathCase = browserPath;
     var browserPathMeta = browserPath;

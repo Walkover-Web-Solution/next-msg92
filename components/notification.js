@@ -4,7 +4,7 @@ import $ from "jquery";
 import countries from "@/data/countries.json";
 import { getCookie, setCookie } from "@/components/utils";
 
-const Notification = ({path}) => {
+const Notification = ({path, compData}) => {
   const [country, setCountry] = useState("Global");
   path = path?.substring(1);
   useEffect(() => {    
@@ -67,6 +67,11 @@ const Notification = ({path}) => {
                   </a>
                 </li>
                 <li>
+                  <a href="/br-pt" className="dropdown-item c-fs-5">
+                    Brazil
+                  </a>
+                </li>
+                <li>
                   <a href="/ae" className="dropdown-item c-fs-5">
                     United Arab Emirates
                   </a>
@@ -101,7 +106,7 @@ const Notification = ({path}) => {
             <a href="/contact-us" className="text-dark">
               <span className="c-fs-5 d-flex align-items-center">
                 <MdCall className="me-1" />
-                Contact
+                {compData.components.navbar.notification.contact}
               </span>
             </a>
             <a
@@ -111,7 +116,7 @@ const Notification = ({path}) => {
             >
               <span className="c-fs-5 d-flex align-items-center">
                 <MdLogin className="me-1" />
-                Login
+                {compData.components.navbar.notification.login}
               </span>
             </a>
           </div>

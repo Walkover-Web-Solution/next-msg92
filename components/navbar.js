@@ -8,11 +8,13 @@ import ProductMenu from "./productmenu";
 import Notification from "./notification";
 import Link from "next/link";
 import { getCookie } from "./utils";
-import AnnoucmentBar from "./annoucmentBar/AnnouncementBar";
-import content from '@/data/pageContent/br-pt.json'
+//import AnnoucmentBar from "./annoucmentBar/AnnouncementBar";
+import content from '@/data/pageContent/br-pt.json';
+import contentGlobal from '@/data/pageContent/global.json';
 
 const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
-  const compData = content.components.navabr
+  console.log('navbar', browserPath, pricingPath, appPath, pageSlug);
+  const compData = browserPath === '/br-pt' ? content.components.navbar : contentGlobal.components.navbar; 
    const products = {
     '/sms': 'SMS',
     '/email': 'Email', 
@@ -90,15 +92,14 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
   };
   return (
     <>
-  <div className="d-block d-md-none">
+    {/* <div className="d-block d-md-none">
       {showInnerComponent && <Notification mininav={notification_class} />}
       <AnnoucmentBar/>
-    </div>    
+    </div> */}    
       {show && <Mininav path={path} />}
       <div className="d-none d-md-block">
-        <Notification path={path}/>
-        <AnnoucmentBar/>
-
+        <Notification path={path} compData={compData}/>
+        {/* <AnnoucmentBar/> */}
       </div>
       <nav className="w-100 py-2 sticy align-items-center d-flex " id="navbar">
         <div className="container relative d-none align-items-center d-md-flex justify-content-between c-fs-4 c-fw-m nav-menu-cont">
