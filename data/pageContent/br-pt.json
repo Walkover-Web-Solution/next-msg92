@@ -91,10 +91,10 @@
             ],
             "services": {
                 "heading": "More services",
-                "learnmoe": "Learn more",
+                "learnmore": "Learn more",
                 "content": [
                     {
-                        "slug": "url-shortner",
+                        "slug": "shorturl",
                         "name": "URL Shortner",
                         "heading": "Make your long URLs short",
                         "description": "Automatically shortens URL and tracks your success, one click at a time. Turn your long, messy links into short, memorable branded links"
@@ -114,7 +114,7 @@
                     }
                 ]
             },
-            "customer-stories": {
+            "customerstories": {
                 "heading": "Customer Success Powered by MSG91",
                 "learnmore": "Learn more",
                 "content": [
