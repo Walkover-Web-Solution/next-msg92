@@ -937,6 +937,93 @@
                     }
                 ]
             }
+        },
+        "footer": {
+            "applications": {
+                "heading": "Applications",
+                "content": [
+                    {
+                        "slug": "hello",
+                        "name": "Hello",
+                        "description": "Ticketing and Chat"
+                    },
+                    {
+                        "slug": "hello",
+                        "name": "Hello",
+                        "description": "Ticketing and Chat"
+                    },
+                    {
+                        "slug": "hello",
+                        "name": "Hello",
+                        "description": "Ticketing and Chat"
+                    },
+                    {
+                        "slug": "hello",
+                        "name": "Hello",
+                        "description": "Ticketing and Chat"
+                    },
+                    {
+                        "slug": "hello",
+                        "name": "Hello",
+                        "description": "Ticketing and Chat"
+                    }
+                ]
+            },
+            "channels": {
+                "heading": "Channels",
+                "content": [
+                    {
+                        "slug": "hello",
+                        "name": "Hello"
+                    },
+                    {
+                        "slug": "hello",
+                        "name": "Hello"
+                    },
+                    {
+                        "slug": "hello",
+                        "name": "Hello"
+                    },
+                    {
+                        "slug": "hello",
+                        "name": "Hello"
+                    },
+                    {
+                        "slug": "hello",
+                        "name": "Hello"
+                    }
+                ]
+            },
+            "utilities": {
+                "heading": "Utilities",
+                "content": [
+                    {
+                        "slug": "hello",
+                        "name": "Hello",
+                        "description": "Ticketing and Chat"
+                    },
+                    {
+                        "slug": "hello",
+                        "name": "Hello",
+                        "description": "Ticketing and Chat"
+                    },
+                    {
+                        "slug": "hello",
+                        "name": "Hello",
+                        "description": "Ticketing and Chat"
+                    },
+                    {
+                        "slug": "hello",
+                        "name": "Hello",
+                        "description": "Ticketing and Chat"
+                    },
+                    {
+                        "slug": "hello",
+                        "name": "Hello",
+                        "description": "Ticketing and Chat"
+                    }
+                ]
+            }
         }
     }
 }
