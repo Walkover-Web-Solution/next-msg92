@@ -818,194 +818,196 @@
     },
     "components": {
         "navabr": {
-          "menu": {
-            "products": "Produtos",
-            "integrations": "Integrações",
-            "pricing": "Preços",
-            "api": "Documentos da API",
-            "signup": "Inscrever-se"
-          },
-          "products": {
-            "applications": {
-              "heading": "Aplicações",
-              "content": [
-                {
-                  "slug": "hello",
-                  "name": "Hello",
-                  "description": "Bilheteria e Chat"
-                },
-                {
-                  "slug": "campaign",
-                  "name": "Campaign",
-                  "description": "Automação Baseada em Eventos"
-                },
-                {
-                  "slug": "segmento",
-                  "name": "Segmento",
-                  "description": "Gestão de Contatos"
-                },
-                {
-                  "slug": "otp",
-                  "name": "OTP",
-                  "description": "Plataforma Simplificada de OTP"
-                }
-              ]
+            "menu": {
+                "products": "Products",
+                "integrations": "Integrations",
+                "pricing": "Pricing",
+                "api": "API Docs",
+                "signup": "Sign Up"
             },
-            "channels": {
-              "heading": "Canais",
-              "content": [
-                {
-                  "slug": "sms",
-                  "name": "SMS"
+            "products": {
+                "applications": {
+                    "heading": "Applications",
+                    "content": [
+                        {
+                            "slug": "hello",
+                            "name": "Hello",
+                            "description": "Ticketing and Chat"
+                        },
+                        {
+                            "slug": "campaign",
+                            "name": "Campaign",
+                            "description": "Event Based Automation"
+                        },
+                        {
+                            "slug": "segmento",
+                            "name": "Segmento",
+                            "description": "Contact Managment"
+                        },
+                        {
+                            "slug": "otp",
+                            "name": "OTP",
+                            "description": "Simplified OTP Platform"
+                        }
+                    ]
                 },
-                {
-                  "slug": "email",
-                  "name": "Email"
+                "channels": {
+                    "heading": "Channels",
+                    "content": [
+                        {
+                            "slug": "sms",
+                            "name": "SMS"
+                        },
+                        {
+                            "slug": "email",
+                            "name": "Email"
+                        },
+                        {
+                            "slug": "whatsapp",
+                            "name": "WhatsApp"
+                        },
+                        {
+                            "slug": "voice",
+                            "name": "Voice"
+                        },
+                        {
+                            "slug": "numbers",
+                            "name": "Numbers"
+                        }
+                    ]
                 },
-                {
-                  "slug": "whatsapp",
-                  "name": "WhatsApp"
-                },
-                {
-                  "slug": "voice",
-                  "name": "Voz"
-                },
-                {
-                  "slug": "numbers",
-                  "name": "Números"
+                "utilities": {
+                    "heading": "Utilities",
+                    "content": [
+                        {
+                            "slug": "shortenerurl",
+                            "name": "URL Shortener",
+                            "description": "Cutomise and Track URL's"
+                        },
+                        {
+                            "slug": "knowledgeBase",
+                            "name": "KnowledgeBase",
+                            "description": "Manage Help Docs and Guides"
+                        }
+                    ]
                 }
-              ]
             },
-            "utilities": {
-              "heading": "Utilitários",
-              "content": [
-                {
-                  "slug": "shortenerurl",
-                  "name": "Encurtador de URL",
-                  "description": "Personalize e Rastreie URLs"
-                },
-                {
-                  "slug": "knowledgeBase",
-                  "name": "Base de Conhecimento",
-                  "description": "Gerencie Documentos de Ajuda e Guias"
-                }
-              ]
+            "integrations": {
+                "morebtn": "Explore More Plugins",
+                "content": [
+                    {
+                        "slug": "shopify",
+                        "name": "Shopify",
+                        "link": "https://apps.shopify.com/msg91"
+                    },
+                    {
+                        "slug": "tally",
+                        "name": "Tally",
+                        "link": "https://msg91.com/partners-and-integrations/tally"
+                        
+                    },
+                    {
+                        "slug": "zapier",
+                        "name": "Zapier",
+                        "link": "https://msg91.com/partners-and-integrations/zapier"
+                        
+                    },
+                    {
+                        "slug": "freshworks",
+                        "name": "Freshworks",
+                        "link": "https://msg91.com/partners-and-integrations/freshworks"
+                    },
+                    {
+                        "slug": "firebase",
+                        "name": "Firebase",
+                        "link": "https://msg91.com/partners-and-integrations/firebase"
+                    },
+                    {
+                        "slug": "hubspot",
+                        "name": "HubSpot",
+                        "link": "https://msg91.com/partners-and-integrations/hubspot"
+                    },
+                    {
+                        "slug": "googlesheets",
+                        "name": "Google Sheets",
+                        "link": "https://msg91.com/help/how-to-send-sms-and-email-from-google-spreadsheet"
+                    },
+                    {
+                        "slug": "",
+                        "name": "Explore More Plugins",
+                        "link": "https://msg91.com/partners-and-integrations"
+                    }
+                ]
             }
-          },
-          "integrations": {
-            "morebtn": "Explorar Mais Plugins",
-            "content": [
-              {
-                "slug": "shopify",
-                "name": "Shopify",
-                "link": "https://apps.shopify.com/msg91"
-              },
-              {
-                "slug": "tally",
-                "name": "Tally",
-                "link": "https://msg91.com/partners-and-integrations/tally"
-              },
-              {
-                "slug": "zapier",
-                "name": "Zapier",
-                "link": "https://msg91.com/partners-and-integrations/zapier"
-              },
-              {
-                "slug": "freshworks",
-                "name": "Freshworks",
-                "link": "https://msg91.com/partners-and-integrations/freshworks"
-              },
-              {
-                "slug": "firebase",
-                "name": "Firebase",
-                "link": "https://msg91.com/partners-and-integrations/firebase"
-              },
-              {
-                "slug": "hubspot",
-                "name": "HubSpot",
-                "link": "https://msg91.com/partners-and-integrations/hubspot"
-              },
-              {
-                "slug": "googlesheets",
-                "name": "Google Sheets",
-                "link": "https://msg91.com/help/how-to-send-sms-and-email-from-google-spreadsheet"
-              },
-              {
-                "slug": "",
-                "name": "Explorar Mais Plugins",
-                "link": "https://msg91.com/partners-and-integrations"
-              }
-            ]
-          }
         },
         "footer": {
-          "applications": {
-            "heading": "Nossos produtos",
-            "content": [
-              {
-                "slug": "hello",
-                "name": "Hello"
-              },
-              {
-                "slug": "segmento",
-                "name": "Segmento"
-              },
-              {
-                "slug": "campaign",
-                "name": "Campaign"
-              },
-              {
-                "slug": "otp",
-                "name": "OTP"
-              }
-            ]
-          },
-          "channels": {
-            "heading": "Canais",
-            "content": [
-              {
-                "slug": "sms",
-                "name": "SMS"
-              },
-              {
-                "slug": "email",
-                "name": "Email"
-              },
-              {
-                "slug": "whatsapp",
-                "name": "WhatsApp"
-              },
-              {
-                "slug": "voice",
-                "name": "Voz"
-              },
-              {
-                "slug": "numbers",
-                "name": "Números"
-              }
-            ]
-          },
-          "utilities": {
-            "heading": "Utilitários",
-            "content": [
-              {
-                "slug": "shorturl",
-                "name": "Encurtador de URL"
-              },
-              {
-                "slug": "knowledgebase",
-                "name": "Base de Conhecimento"
-              },
-              {
-                "slug": "free-whatsapp-link-generator",
-                "name": "Gerador de Link do WhatsApp Gratuito"
-              },
-              {
-                "slug": "whatsapp/chatbot",
-                "name": "Chatbot do WhatsApp"
-              }
-            ]
-          }
+            "applications": {
+                "heading": "Our products",
+                "content": [
+                    {
+                        "slug": "hello",
+                        "name": "Hello"                        
+                    },
+                    {
+                        "slug": "segmento",
+                        "name": "Segmento"
+                    },
+                    {
+                        "slug": "campaign",
+                        "name": "Campaign"
+                    },
+                    {
+                        "slug": "otp",
+                        "name": "OTP"
+                    }
+                ]
+            },
+            "channels": {
+                "heading": "Channels",
+                "content": [
+                    {
+                        "slug": "sms",
+                        "name": "SMS"
+                    },
+                    {
+                        "slug": "email",
+                        "name": "Email"
+                    },
+                    {
+                        "slug": "whatsapp",
+                        "name": "WhatsApp"
+                    },
+                    {
+                        "slug": "voice",
+                        "name": "Voice"
+                    },
+                    {
+                        "slug": "numbers",
+                        "name": "Numbers"
+                    }
+                ]
+            },
+            "utilities": {
+                "heading": "Utilities",
+                "content": [
+                    {
+                        "slug": "shorturl",
+                        "name": "URL Shortener"
+                    },
+                    {
+                        "slug": "knowledgebase",
+                        "name": "KnowledgeBase"
+                    },
+                    {
+                        "slug": "free-whatsapp-link-generator",
+                        "name": "Free WhatsApp link generator"
+                    },
+                    {
+                        "slug": "whatsapp/chatbot",
+                        "name": "WhatsApp Chatbot"
+                    }
+                ]
+            }
         }
-      }
+    }
 }
