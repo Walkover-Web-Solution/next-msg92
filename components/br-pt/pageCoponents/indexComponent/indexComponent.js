@@ -4,8 +4,9 @@ import style from "./indexComponent.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import FaqSection from "@/components/faqSection/faqSection";
+import GetStartedSection from "@/components/getStartedSection/getStartedSection";
 
-export default function IndexComponent({ pageData }) {
+export default function IndexComponent({ pageData, pathArray }) {
     return (
         <>
             <div className="container bg-gray-100 section-y">
@@ -261,6 +262,11 @@ export default function IndexComponent({ pageData }) {
                 <div className="container">
                     <FaqSection faqData={pageData?.faq?.content} faq={pageData?.faq} />
                 </div>
+            )}
+                 {pageData?.faq?.content.length > 0 && (
+                
+                    <GetStartedSection pathArray={pathArray} />
+               
             )}
         </>
     );

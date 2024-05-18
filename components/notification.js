@@ -5,7 +5,6 @@ import countries from "@/data/countries.json";
 import { getCookie, setCookie } from "@/components/utils";
 
 const Notification = ({ path, compData }) => {
-    console.log("🚀 ~ Notification ~ compData:", compData);
     const [country, setCountry] = useState("Global");
     path = path?.substring(1);
     useEffect(() => {

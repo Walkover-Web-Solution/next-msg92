@@ -6,7 +6,6 @@ import "prismjs/themes/prism-twilight.css";
 import snippetData from "./codeComponent.json";
 
 export default function CodeComponent({ pageData }) {
-    console.log("🚀 ~ ChannelComponent ~ pageData:", pageData);
     var HTTPSnippet = require("httpsnippet");
     var i = 0;
     const [isCopied, setIsCopied] = useState(false);

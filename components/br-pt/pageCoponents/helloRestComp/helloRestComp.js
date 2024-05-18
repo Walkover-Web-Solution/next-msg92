@@ -5,7 +5,6 @@ import FaqSection from "@/components/faqSection/faqSection";
 import Seo from "@/components/seoComp";
 import GetStartedSection from "@/components/getStartedSection/getStartedSection";
 const HelloRestComp = ({ path, pricingPath, pageData }) => {
-    console.log("🚀 ~ HelloRestComp ~ pageData:", pageData);
     path = "br-pt";
 
     return (

@@ -2,7 +2,6 @@ import CodeComponent from "@/components/codeComponent/codeComponent";
 import TrustedBy from "@/components/trustedby";
 
 export default function productComponent({ pageData, pathArray }) {
-   console.log("🚀 ~ productComponent ~ pathArray:", pathArray)
    
     var i = 0;
     return (
