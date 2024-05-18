@@ -4,7 +4,7 @@ import TrusedSection from "@/components/trustedSection/trustedSection";
 import FaqSection from "@/components/faqSection/faqSection";
 import Seo from "@/components/seoComp";
 import GetStartedSection from "@/components/getStartedSection/getStartedSection";
-const HelloRestComp = ({ path, pricingPath, pageData }) => {
+const HelloRestComp = ({ path, pricingPath, pageData, pathArray }) => {
     path = "br-pt";
 
     return (
@@ -45,7 +45,7 @@ const HelloRestComp = ({ path, pricingPath, pageData }) => {
                         <FaqSection faqData={pageData?.faq} />
                     </div>
 
-                    <GetStartedSection pricingPath={pricingPath} />
+                    <GetStartedSection pricingPath={pricingPath} pathArray={pathArray} />
                 </div>
             }
         </>
