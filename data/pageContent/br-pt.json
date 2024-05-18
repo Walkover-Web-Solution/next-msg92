@@ -922,12 +922,12 @@
                     "content": [
                         {
                             "slug": "shortenerurl",
-                            "name": "Encurtador de URL",
+                            "name": "URL Shortner",
                             "description": "Personalize e Rastreie URLs"
                         },
                         {
                             "slug": "knowledgeBase",
-                            "name": "Base de Conhecimento",
+                            "name": "knowledgeBase",
                             "description": "Gerencie Documentos de Ajuda e Guias"
                         }
                     ]
