@@ -258,15 +258,11 @@ export default function IndexComponent({ pageData, pathArray }) {
                     </div>
                 </div>
             )}
+            <GetStartedSection pathArray={pathArray} />
             {pageData?.faq?.content.length > 0 && (
                 <div className="container">
                     <FaqSection faqData={pageData?.faq?.content} faq={pageData?.faq} />
                 </div>
-            )}
-                 {pageData?.faq?.content.length > 0 && (
-                
-                    <GetStartedSection pathArray={pathArray} />
-               
             )}
         </>
     );

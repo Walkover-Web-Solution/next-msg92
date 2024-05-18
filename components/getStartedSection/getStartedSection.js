@@ -4,8 +4,13 @@ export default function GetStartedSection({ pricingPath, pathArray }) {
     if (pathArray && pathArray.length > 0) {
         compData = data[pathArray[1]];
     }
+    else{
+      compData = {}
+    }
+    console.log("🚀 ~ GetStartedSection ~ compData:", compData)
     return (
         <>
+        
             <div className="c-bg-grey p-5">
                 <div className="container d-flex flex-column flex-md-row gap-4 align-items-center justify-content-between">
                     <span className=" c-fs-3 c-fw-b">
