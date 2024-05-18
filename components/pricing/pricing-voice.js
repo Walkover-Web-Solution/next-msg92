@@ -65,7 +65,6 @@ const PricingCalls = ({ countryCode, currency }) => {
     //fetch dialPlan and set corrency
     useEffect(() => {
         if (currencyCode) {
-            console.log("🚀 ~ useEffect ~ currencyCode:", currencyCode);
             fetchDialPlan(currencyCode);
             if (currencyCode === "GBP") {
                 setSymbol("£");

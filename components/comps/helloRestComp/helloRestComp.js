@@ -7,7 +7,7 @@ import Seo from '@/components/seoComp';
 import GetStartedSection from '@/components/getStartedSection/getStartedSection';
 const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }) => {
     path = path === undefined ? 'global' : path;
-
+    console.log('pagedata hello rest page ---------------------',  path);
     return (
         <>
             {

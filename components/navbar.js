@@ -8,10 +8,13 @@ import ProductMenu from "./productmenu";
 import Notification from "./notification";
 import Link from "next/link";
 import { getCookie } from "./utils";
-import AnnoucmentBar from "./annoucmentBar/AnnouncementBar";
+//import AnnoucmentBar from "./annoucmentBar/AnnouncementBar";
+import content from '@/data/pageContent/br-pt.json';
+import contentGlobal from '@/data/pageContent/global.json';
 
-const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
-  //console.log('navbar', browserPath, pricingPath, appPath, pageSlug);
+const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
+  console.log('navbar', browserPath, pricingPath, appPath, pageSlug);
+  const compData = browserPath === '/br-pt' ? content.components.navbar : contentGlobal.components.navbar; 
    const products = {
     '/sms': 'SMS',
     '/email': 'Email', 
@@ -89,15 +92,14 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
   };
   return (
     <>
-  <div className="d-block d-md-none">
+    {/* <div className="d-block d-md-none">
       {showInnerComponent && <Notification mininav={notification_class} />}
       <AnnoucmentBar/>
-    </div>    
+    </div> */}    
       {show && <Mininav path={path} />}
       <div className="d-none d-md-block">
-        <Notification path={path}/>
-        <AnnoucmentBar/>
-
+        <Notification path={path} compData={compData} pathArray={pathArray} />
+        {/* <AnnoucmentBar/> */}
       </div>
       <nav className="w-100 py-2 sticy align-items-center d-flex " id="navbar">
         <div className="container relative d-none align-items-center d-md-flex justify-content-between c-fs-4 c-fw-m nav-menu-cont">
@@ -115,7 +117,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
                   <img width="24" height="24" data-nimg="1" src={`/img/icon/${title.toLowerCase().replace(/ +/g, "")}.svg`} alt="products icon"/>
                   {title}
                 </div>
-                : "Products"
+                : `${compData?.menu?.products || 'Products'}`
                 }
               </div>
               <div className="nav-line"></div>
@@ -126,7 +128,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
               id="integrations-link"
             >
               
-              <span className="c-fs-4 c-fw-m">Integrations</span>
+              <span className="c-fs-4 c-fw-m">{`${compData?.menu?.integrations || 'Integrations'}`}</span>
               <div className="nav-line"></div>
             </a>
             { browserPath !== '/shorturl' && <Link
@@ -136,7 +138,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
               href={countryCode && countryCode !== '?' ? "/" + countryCode + pricingPath : pricingPath}
               id="pricing-link" 
             >              
-              <span className="c-fs-4 c-fw-m">Pricing</span>
+              <span className="c-fs-4 c-fw-m">{`${compData?.menu?.pricing || 'Pricing'}`}</span>
               <div className="nav-line"></div>
             </Link> }
           </div>
@@ -153,7 +155,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
               target="_blank"
               id="apidocs-link"
             >
-              <span className="c-fs-4 c-fw-m ">API Docs</span>
+              <span className="c-fs-4 c-fw-m ">{`${compData?.menu?.api || 'API Docs'}`}</span>
               <div className="nav-line"></div>
             </Link>
             <Link
@@ -163,10 +165,10 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
               className="btn btn-dark c-fs-4 c-fw-sb px-3 utm"
               id="signup-btn"
             >
-              Sign Up
+            {`${compData?.menu?.signup || 'Sign Up'}`}
             </Link>
           </div>
-          <ProductMenu path={path} />
+          <ProductMenu path={path} compData={compData} />
         </div>
         <div className="container relative d-md-none d-flex align-items-center justify-content-between c-fs-4 c-fw-m nav-menu-cont">
           <div className="msg91-logo-cont  align-items-center justify-content-center d-flex">
