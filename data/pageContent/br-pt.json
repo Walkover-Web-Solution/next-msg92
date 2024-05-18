@@ -94,7 +94,7 @@
                 "learnmore": "Saiba mais",
                 "content": [
                     {
-                        "slug": "url-shortner",
+                        "slug": "shorturl",
                         "name": "Encurtador de URL",
                         "heading": "Faça seus URLs longos ficarem curtos",
                         "description": "Encurta automaticamente URLs e rastreia seu sucesso, um clique de cada vez. Transforme seus links longos e bagunçados em links curtos e memoráveis com sua marca"
@@ -246,37 +246,37 @@
             "tagline": "Automação Baseada em Eventos",
             "heading": "Conecte conversas através de canais e ferramentas.",
             "subheading": "Ofereça experiências personalizadas, envolventes e contínuas.",
-            "btntext": "Get started for Free",
+            "btntext": "Comece gratuitamente",
             "icon": "/img/icon/campaign.svg",
             "features": {
                 "heading": "Features",
                 "content": [
                     {
-                        "img": "/assets/img/pages/campaign/feature/campaign-multi-channel-support.svg",
+                        "img": "/assets/img/pages/campaign/features/campaign-multi-channel-support.svg",
                         "heading": "Suporte Multicanal",
                         "subheading": "Apoie seus clientes no canal de sua preferência.",
                         "content": "Proporcione uma melhor experiência de suporte aos seus clientes através de seu canal preferido - SMS, Email, Voz, Notificação Push, WhatsApp e mais. Encontre seus clientes onde eles estão."
                     },
                     {
-                        "img": "/assets/img/pages/campaign/feature/campaign-draggable-flow.svg",
+                        "img": "/assets/img/pages/campaign/features/campaign-draggable-flow.svg",
                         "heading": "Fluxo Arrastável",
                         "subheading": "Arraste e solte para criar um fluxo omnichannel com cenários 'se-então'.",
                         "content": "Escolha quando você precisa iniciar uma conversa por SMS, email ou mensagem em um único fluxo de trabalho. Crie um fluxo que seja tão simples ou complexo quanto as necessidades do seu negócio."
                     },
                     {
-                        "img": "/assets/img/pages/campaign/feature/campaign-time-based-condition.svg",
+                        "img": "/assets/img/pages/campaign/features/campaign-time-based-condition.svg",
                         "heading": "Condição Baseada em Tempo",
                         "subheading": "Envie mensagens automáticas perfeitamente cronometradas.",
                         "content": "Crie um cronograma de envio cuidadoso com condições baseadas em tempo que controlam o fuso horário de quando suas campanhas são entregues. Apoie seus clientes no momento certo."
                     },
                     {
-                        "img": "/assets/img/pages/campaign/feature/campaign-api-based-conditions.svg",
+                        "img": "/assets/img/pages/campaign/features/campaign-api-based-conditions.svg",
                         "heading": "Condições Baseadas em API",
                         "subheading": "Obtenha informações instantaneamente para interações em tempo real.",
                         "content": "Solicite dados mesmo no meio de um fluxo, enviando dados para um sistema de terceiros ou solicitando dados necessários para seus passos de comunicação. Entregue informações em tempo real para seus clientes."
                     },
                     {
-                        "img": "/assets/img/pages/campaign/feature/campaign-country-based-condition.svg",
+                        "img": "/assets/img/pages/campaign/features/campaign-country-based-condition.svg",
                         "heading": "Condição Baseada em País",
                         "subheading": "Apoie seus clientes em todo o mundo.",
                         "content": "Crie experiências personalizadas e memoráveis para seus clientes em vários países, idiomas, conteúdos, canais, fluxos e mais. Conecte, personalize e comunique-se facilmente."
@@ -290,31 +290,31 @@
             "tagline": "Marketing baseado em alvos",
             "heading": "Personalize as jornadas dos clientes com segmentação de dados.",
             "subheading": "Segmente pessoas com base em seus dados demográficos, comportamento, interesses e outras características.",
-            "btn-text": "Comece gratuitamente",
+            "btntext": "Comece gratuitamente",
             "icon": "/img/icon/segmento.svg",
             "features": {
                 "heading": "Recursos",
                 "content": [
                     {
-                        "img": "/img/feature/segmento-create-filters-as-per-segments.svg",
+                        "img": "/assets/img/pages/segmento/features/segmento-create-filters-as-per-segments.svg",
                         "heading": "Crie filtros por segmento",
                         "subheading": "Crie uma lista filtrada no seu catálogo de endereços comercial.",
                         "content": "Adapte seus esforços de marketing segmentando pessoas com base em seus requisitos, traços ou padrões criando um filtro específico no seu catálogo de endereços."
                     },
                     {
-                        "img": "/img/feature/segmento-automation-trigger.svg",
+                        "img": "/assets/img/pages/segmento/features/segmento-automation-trigger.svg",
                         "heading": "Gatilho de automação",
                         "subheading": "Acione informações relevantes para os segmentos filtrados.",
                         "content": "Automatize ações nos filtros criados com base na ação ou entrada do usuário para entregar mensagens relevantes e personalizadas para cada grupo."
                     },
                     {
-                        "img": "/img/feature/segmento-automation-repeater.svg",
+                        "img": "/assets/img/pages/segmento/features/segmento-automation-repeater.svg",
                         "heading": "Repetidor de automação",
                         "subheading": "Envie o conteúdo mais relevante no momento mais relevante.",
                         "content": "Envie mensagens automáticas para o mesmo filtro em intervalos baseados em tempo através do canal de comunicação comercial preferido do seu público."
                     },
                     {
-                        "img": "/img/feature/segmento-open-api.svg",
+                        "img": "/assets/img/pages/segmento/features/segmento-open-api.svg",
                         "heading": "API aberta",
                         "subheading": "Use API para obter, criar, atualizar ou excluir contatos.",
                         "content": "Fornecemos APIs para todas as ações, grandes ou pequenas, para que você possa se concentrar no que mais importa - construir seu produto incrível."
@@ -348,25 +348,25 @@
             "tagline": "Verificação instantânea e segura",
             "heading": "A forma mais simples, rápida e eficaz de verificar seus usuários",
             "subheading": "Construa confiança com o cliente e proteja o seu negócio com autenticação de dois fatores.",
-            "btn-text": "Get started for Free",
+            "btntext": "Comece gratuitamente",
             "icon": "/img/icon/otp.svg",
             "features": {
                 "heading": "Características",
                 "content": [
                     {
-                        "img": "/img/feature/otp-simple-login.svg",
+                        "img": "/assets/img/pages/otp/features/otp-simple-login.svg",
                         "heading": "Tão simples quanto Login com Google",
                         "subheading": "Login com OTP é tão simples quanto login com Gmail",
                         "content": "Dê aos seus usuários uma experiência de autenticação rápida, não disruptiva e simples. Implemente login com OTP inserindo seu número de celular ou endereço de e-mail para receber OTP via SMS ou e-mail."
                     },
                     {
-                        "img": "/img/feature/otp-inbuilt-ip-security.svg",
+                        "img": "/assets/img/pages/otp/features/otp-inbuilt-ip-security.svg",
                         "heading": "Segurança IP Integrada",
                         "subheading": "Proteção contra fraudes, hacks, validação, bloqueio",
                         "content": "Minimize fraudes com uma camada extra de segurança. A segurança integrada garante que, quando um login é arriscado, o fluxo não permite que o ator mal-intencionado faça login, visualizando-o como potencialmente fraudulento."
                     },
                     {
-                        "img": "/img/feature/otp-support-multiple-channels.svg",
+                        "img": "/assets/img/pages/otp/features/otp-support-multiple-channels.svg",
                         "heading": "Suporte a múltiplos canais",
                         "subheading": "Construa confiança com o cliente e aumente a conversão em vários canais",
                         "content": "Autentique seus usuários nos canais que eles preferem. Suportamos vários canais, incluindo SMS, e-mail, voz, WhatsApp, dando às empresas e usuários a flexibilidade de que precisam para autenticar."
@@ -400,7 +400,7 @@
             "tagline": "Simplifique seus links",
             "heading": "Personalize, compartilhe e acompanhe links inteligentes",
             "subheading": "Otimize seus links complexos para criar links curtos e mais limpos que são mais fáceis de compartilhar.",
-            "btn-text": "Get started for Free",
+            "btntext": "Comece gratuitamente",
             "icon": "/img/icon/shorturl.svg",
             "features": {
                 "heading": "Características",
@@ -446,25 +446,25 @@
             "tagline": "Capacite os Clientes com Opções de Autoatendimento",
             "heading": "A base de conhecimento é a espinha dorsal de um bom suporte ao cliente",
             "subheading": "Obtenha todos os recursos essenciais do software de base de conhecimento a um preço nominal",
-            "btn-text": "Get started for Free",
+            "btntext": "Comece gratuitamente",
             "icon": "/img/icon/knowledgebase.svg",
             "features": {
                 "heading": "Características",
                 "content": [
                     {
-                        "img": "/img/feature/kb-wysiwyg-editor.svg",
+                        "img": "/assets/img/pages/knowledgebase/features/kb-wysiwyg-editor.svg",
                         "heading": "Editor WYSIWYG",
                         "subheading": "Crie ou edite facilmente seus artigos da base de conhecimento",
                         "content": "Crie rapidamente seus artigos com o editor de conteúdo 'o que você vê é o que você obtém'. É tão simples de usar quanto um processador de texto ou editor HTML."
                     },
                     {
-                        "img": "/img/feature/kb-seo-friendly.svg",
+                        "img": "/assets/img/pages/knowledgebase/features/kb-seo-friendly.svg",
                         "heading": "Amigável para SEO (Suporta subpasta e subdomínio)",
                         "subheading": "Uma base de conhecimento otimizada e amigável para SEO",
                         "content": "Sua base de conhecimento é executada em seu próprio domínio e não em um subdomínio, para que os algoritmos a tratem como seu site, dando a ela a mesma importância que suas outras páginas da web."
                     },
                     {
-                        "img": "/img/feature/kb-whitelable.svg",
+                        "img": "/assets/img/pages/knowledgebase/features/kb-whitelable.svg",
                         "heading": "Whitelabel",
                         "subheading": "Funciona com sua marca e não com a nossa",
                         "content": "Seus usuários visualizam sua base de conhecimento com sua marca em seu site. Nossos serviços de whitelabel garantem que não haja indicação de que é alimentado pela MSG91."
@@ -498,7 +498,7 @@
             "tagline": "Mensagens de próximo nível",
             "heading": "Engaje seus clientes globalmente com mensagens rápidas, escaláveis e personalizáveis",
             "subheading": "Integre nossas APIs amigáveis para desenvolvedores para enviar e receber mensagens de texto. Nossa rede distribuída de operadoras e roteamento inteligente garantem a maior entrega e menor latência.",
-            "btn-text": "Get started for Free",
+            "btntext": "Get started for Free",
             "icon": "/img/icon/sms.svg",
             "features": {
                 "heading": "Características",
@@ -574,7 +574,7 @@
             "tagline": "estratégia de email mais inteligente",
             "heading": "Emails inteligentes que chegam diretamente na caixa de entrada certa",
             "subheading": "Aproveite ao máximo esses pontos de contato poderosos entre sua marca e seus clientes.",
-            "btn-text": "Get started for Free",
+            "btntext": "Get started for Free",
             "icon": "/img/icon/email.svg",
             "features": {
                 "heading": "Características",
@@ -638,7 +638,7 @@
             "tagline": "conecte-se com confiança",
             "heading": "Aumente o engajamento do cliente e construa confiança",
             "subheading": "Inicie conversas em tempo real com áudio cristalino, baixa latência e insights mais profundos.",
-            "btn-text": "Get started for Free",
+            "btntext": "Get started for Free",
             "icon": "/img/icon/voice.svg",
             "features": {
                 "heading": "Características",
@@ -714,7 +714,7 @@
             "tagline": "domine as plataformas populares",
             "heading": "Impulsione melhores resultados de engajamento do cliente",
             "subheading": "Encontre seus clientes onde eles já estão, na plataforma com mais de 2 bilhões de usuários.",
-            "btn-text": "Get started for Free",
+            "btntext": "Get started for Free",
             "icon": "/img/icon/whatsapp.svg",
             "features": {
                 "heading": "Características",
@@ -778,7 +778,7 @@
             "tagline": "Desbloqueie o Poder dos Números Virtuais",
             "heading": "Receba, Responda e Personalize SMS com Long Codes, para o Máximo Engajamento e Comunicação!",
             "subheading": "",
-            "btn-text": "Get started for Free",
+            "btntext": "Get started for Free",
             "icon": "/img/icon/numbers.svg",
             "features": {
                 "heading": "Características",
