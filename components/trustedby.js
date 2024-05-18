@@ -3,9 +3,9 @@ const TrustedBy = ({ align = null, pathArray }) => {
     return (
         <>
             <div className={`d-flex flex-column gap-3 my-md-5 my-2`}>
-                {pathArray && pathArray.length > 1 && pathArray[1] === "br-pt" ? (
+                {pathArray && pathArray[1] === "br-pt" ? (
                     <span className="c-fs-3 ">
-                       Confiado por<span className="c-fw-sb"> 30.000+ </span>negócios globais
+                        Confiado por<span className="c-fw-sb"> 30.000+ </span>negócios globais
                     </span>
                 ) : (
                     <span className="c-fs-3 ">
@@ -79,4 +79,5 @@ const TrustedBy = ({ align = null, pathArray }) => {
         </>
     );
 };
+
 export default TrustedBy;

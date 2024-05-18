@@ -68,6 +68,7 @@ export default function productComponent({ pageData, pathArray }) {
                     }
                 })}
             </div>
+            {pageData?.features?.morefeatures && <h1>hee</h1>}
             <GetStartedSection pathArray={pathArray} />
         </>
     );

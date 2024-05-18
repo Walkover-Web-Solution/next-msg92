@@ -1,10 +1,11 @@
-import { MdLanguage, MdCall, MdExpandMore, MdLogin } from "react-icons/md";
+import { MdLanguage, MdCall, MdExpandMore, MdLogin, MdGTranslate } from "react-icons/md";
 import React, { useEffect, useState } from "react";
 import $ from "jquery";
 import countries from "@/data/countries.json";
 import { getCookie, setCookie } from "@/components/utils";
 
-const Notification = ({ path, compData }) => {
+const Notification = ({ path, compData, pathArray }) => {
+    console.log("🚀 ~ Notification ~ browserPath:", pathArray);
     const [country, setCountry] = useState("Global");
     path = path?.substring(1);
     useEffect(() => {
@@ -37,10 +38,38 @@ const Notification = ({ path, compData }) => {
             <div className="section b-bottom-1">
                 <div className="container d-flex align-items-center justify-content-between notification">
                     <div className="my-2 d-flex align-items-center">
-                        {/* <button className="btn btn-success py-1 btn-sm c-fs-5 me-3">Update</button>
-                <p className="c-fs-5 c-fw-m">Elevate Your Experience. The New and Improved Version Awaits ;)</p> */}
                     </div>
                     <div className="d-flex gap-4 align-items-center justify-content-end">
+                        {(pathArray[1] === "br" || pathArray[1] === "br-pt") && (
+                            <div className="dropdown d-flex align-items-center">
+                                <a
+                                    href={undefined}
+                                    className="align-items-center d-flex text-dark cp"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    role="button"
+                                >
+                                    <MdGTranslate className="me-1" />
+                                    <span className="c-fs-5 d-flex align-items-center">
+                                        {pathArray[1] === "br" ? "English" : "Portuguese"}{" "}
+                                    </span>
+                                    <MdExpandMore className="ms-1" />
+                                </a>
+                                <ul className="dropdown-menu" id="change-country">
+                                    <li>
+                                        <a href="/br" className="dropdown-item c-fs-5">
+                                            English
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/br-pt" className="dropdown-item c-fs-5">
+                                            Portuguese
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        )}
+
                         <div className="dropdown d-flex d-flex  align-items-center">
                             <a
                                 href={undefined}

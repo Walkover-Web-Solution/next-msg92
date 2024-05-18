@@ -7,7 +7,6 @@ export default function GetStartedSection({ pricingPath, pathArray }) {
     else{
       compData = {}
     }
-    console.log("🚀 ~ GetStartedSection ~ compData:", compData)
     return (
         <>
         

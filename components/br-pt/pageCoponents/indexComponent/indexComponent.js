@@ -28,7 +28,7 @@ export default function IndexComponent({ pageData, pathArray }) {
                                 {`${pageData?.btn}`}
                             </a>
                         )}
-                        <TrustedBy />
+                        <TrustedBy pathArray={pathArray} />
                     </div>
                     {pageData?.img && (
                         <div className="col-12 col-md-5 col-lg-5 col-sm-12 order-sm-0 hero-right">

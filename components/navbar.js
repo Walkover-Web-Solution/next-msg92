@@ -12,7 +12,7 @@ import { getCookie } from "./utils";
 import content from '@/data/pageContent/br-pt.json';
 import contentGlobal from '@/data/pageContent/global.json';
 
-const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
+const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
   console.log('navbar', browserPath, pricingPath, appPath, pageSlug);
   const compData = browserPath === '/br-pt' ? content.components.navbar : contentGlobal.components.navbar; 
    const products = {
@@ -98,7 +98,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug}) => {
     </div> */}    
       {show && <Mininav path={path} />}
       <div className="d-none d-md-block">
-        <Notification path={path} compData={compData}/>
+        <Notification path={path} compData={compData} pathArray={pathArray} />
         {/* <AnnoucmentBar/> */}
       </div>
       <nav className="w-100 py-2 sticy align-items-center d-flex " id="navbar">
