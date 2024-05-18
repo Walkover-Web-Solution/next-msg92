@@ -57,12 +57,12 @@
                     },
                     {
                         "slug": "voice",
-                        "name": "Voz",
+                        "name": "Voice",
                         "description": "Aumente o engajamento do cliente com chamadas em tempo real, monitoramento de chamadas, chamadas pelo navegador, IVR avançado, mensagens de voz em massa e conexões de agente em tempo real"
                     },
                     {
                         "slug": "numbers",
-                        "name": "Números",
+                        "name": "Numbers",
                         "description": "Desbloqueie mercados globais com números virtuais econômicos. Aumente o engajamento com serviços de chamadas perdidas, mensagens de palavras-chave, pesquisas e respostas automáticas"
                     }
                 ]
@@ -166,7 +166,8 @@
             "heroData": {
                 "tagline": "REVOLUCIONE O SUPORTE AO CLIENTE",
                 "heading": "Software de Atendimento ao Cliente",
-                "sub": "Nunca perca de vista o que é importante. Não resolva apenas tickets, construa relacionamentos com clientes"
+                "sub": "Nunca perca de vista o que é importante. Não resolva apenas tickets, construa relacionamentos com clientes",
+                "btntext":"Iniciar"
             },
             "trustedData": {
                 "headings": "Suporte a mais de 15 canais e plataformas",
@@ -249,7 +250,7 @@
             "btntext": "Comece gratuitamente",
             "icon": "/img/icon/campaign.svg",
             "features": {
-                "heading": "Features",
+                "heading": "Características",
                 "content": [
                     {
                         "img": "/assets/img/pages/campaign/features/campaign-multi-channel-support.svg",
@@ -293,7 +294,7 @@
             "btntext": "Comece gratuitamente",
             "icon": "/img/icon/segmento.svg",
             "features": {
-                "heading": "Recursos",
+                "heading": "Características",
                 "content": [
                     {
                         "img": "/assets/img/pages/segmento/features/segmento-create-filters-as-per-segments.svg",
@@ -495,10 +496,11 @@
         "sms": {
             "name": "SMS",
             "slug": "sms",
+            "code":true,
             "tagline": "Mensagens de próximo nível",
             "heading": "Engaje seus clientes globalmente com mensagens rápidas, escaláveis e personalizáveis",
             "subheading": "Integre nossas APIs amigáveis para desenvolvedores para enviar e receber mensagens de texto. Nossa rede distribuída de operadoras e roteamento inteligente garantem a maior entrega e menor latência.",
-            "btntext": "Get started for Free",
+            "btntext": "Comece gratuitamente",
             "icon": "/img/icon/sms.svg",
             "features": {
                 "heading": "Características",
@@ -571,10 +573,11 @@
         "email": {
             "name": "Email",
             "slug": "email",
+            "code":true,
             "tagline": "estratégia de email mais inteligente",
             "heading": "Emails inteligentes que chegam diretamente na caixa de entrada certa",
             "subheading": "Aproveite ao máximo esses pontos de contato poderosos entre sua marca e seus clientes.",
-            "btntext": "Get started for Free",
+            "btntext": "Comece gratuitamente",
             "icon": "/img/icon/email.svg",
             "features": {
                 "heading": "Características",
@@ -635,10 +638,11 @@
         "voice": {
             "name": "Voice",
             "slug": "voice",
+            "code":true,
             "tagline": "conecte-se com confiança",
             "heading": "Aumente o engajamento do cliente e construa confiança",
             "subheading": "Inicie conversas em tempo real com áudio cristalino, baixa latência e insights mais profundos.",
-            "btntext": "Get started for Free",
+            "btntext": "Comece gratuitamente",
             "icon": "/img/icon/voice.svg",
             "features": {
                 "heading": "Características",
@@ -711,10 +715,11 @@
         "whatsapp": {
             "name": "WhatsApp",
             "slug": "whatsapp",
+            "code":true,
             "tagline": "domine as plataformas populares",
             "heading": "Impulsione melhores resultados de engajamento do cliente",
             "subheading": "Encontre seus clientes onde eles já estão, na plataforma com mais de 2 bilhões de usuários.",
-            "btntext": "Get started for Free",
+            "btntext": "Comece gratuitamente",
             "icon": "/img/icon/whatsapp.svg",
             "features": {
                 "heading": "Características",
@@ -775,10 +780,11 @@
         "numbers": {
             "name": "Numbers",
             "slug": "numbers",
+            "code":true,
             "tagline": "Desbloqueie o Poder dos Números Virtuais",
             "heading": "Receba, Responda e Personalize SMS com Long Codes, para o Máximo Engajamento e Comunicação!",
             "subheading": "",
-            "btntext": "Get started for Free",
+            "btntext": "Comece gratuitamente",
             "icon": "/img/icon/numbers.svg",
             "features": {
                 "heading": "Características",
@@ -903,11 +909,11 @@
                         },
                         {
                             "slug": "voice",
-                            "name": "Voz"
+                            "name": "Voice"
                         },
                         {
                             "slug": "numbers",
-                            "name": "Números"
+                            "name": "Numbers"
                         }
                     ]
                 },

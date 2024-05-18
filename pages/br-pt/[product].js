@@ -5,7 +5,7 @@ export default function campaign({ pathArray, path }) {
         const pageData = content?.pages[pathArray[2]];
         return (
             <>
-                <ProductComponent pageData={pageData} />
+                <ProductComponent pageData={pageData} pathArray={pathArray} />
             </>
         );
     }

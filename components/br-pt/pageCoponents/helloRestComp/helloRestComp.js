@@ -1,13 +1,13 @@
-import ProductFeatures from '@/components/productFeatures/productFeature';
-import style from './helloRestComp.module.scss';
-import TrusedSection from '@/components/trustedSection/trustedSection';
-import FaqSection from '@/components/faqSection/faqSection';
-import Seo from '@/components/seoComp';
-import GetStartedSection from '@/components/getStartedSection/getStartedSection';
-const HelloRestComp = ({  path,  pricingPath, pageData }) => {
-    console.log("🚀 ~ HelloRestComp ~ data:", pageData)
-    path = 'br-pt'
-   
+import ProductFeatures from "@/components/productFeatures/productFeature";
+import style from "./helloRestComp.module.scss";
+import TrusedSection from "@/components/trustedSection/trustedSection";
+import FaqSection from "@/components/faqSection/faqSection";
+import Seo from "@/components/seoComp";
+import GetStartedSection from "@/components/getStartedSection/getStartedSection";
+const HelloRestComp = ({ path, pricingPath, pageData }) => {
+    console.log("🚀 ~ HelloRestComp ~ pageData:", pageData);
+    path = "br-pt";
+
     return (
         <>
             {
@@ -24,9 +24,7 @@ const HelloRestComp = ({  path,  pricingPath, pageData }) => {
                                 <span className={`${style.heroCont__tagline} c-fs-3`}>
                                     {pageData?.heroData?.tagline}
                                 </span>
-                                <p className={`${style.heroCont__heading} c-fw-b`}>
-                                    {pageData?.heroData?.heading}
-                                </p>
+                                <p className={`${style.heroCont__heading} c-fw-b`}>{pageData?.heroData?.heading}</p>
                                 <p className={`${style.heroCont__subheading} c-fs-2 c-fw-m`}>
                                     {pageData?.heroData?.sub}
                                 </p>
@@ -35,19 +33,18 @@ const HelloRestComp = ({  path,  pricingPath, pageData }) => {
                                 href="https://control.msg91.com/signup/"
                                 className="btn btn-ft btn-dark rounded-1 c-fs-4"
                             >
-                                Get Started
+                                {pageData?.heroData?.btntext}
                             </a>
                             {pageData?.trustedData && <TrusedSection trustedData={pageData?.trustedData} />}
                         </div>
                         <div className={`${style.heroimg} d-none d-sm-block`}>
-                            <img src="/img/pages/hello/heroimg.svg" alt='hello hero image'/>
+                            <img src="/img/pages/hello/heroimg.svg" alt="hello hero image" />
                         </div>
                     </div>
                     <ProductFeatures featureData={pageData?.features} />
                     <div className="container">
                         <FaqSection faqData={pageData?.faq} />
                     </div>
-                  
 
                     <GetStartedSection pricingPath={pricingPath} />
                 </div>
