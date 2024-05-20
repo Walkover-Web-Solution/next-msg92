@@ -72,7 +72,7 @@ export default function IndexComponent({ pageData, pathArray }) {
                                                     </div>
                                                     <div className="product-img d-flex justify-content-end col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
                                                         <img
-                                                            src={`./assets/img/pages/index/products/product-${product?.slug}.svg`}
+                                                            src={`./assets/img/pages/brpt/index/products/product-${product?.slug}.svg`}
                                                             alt={`${product?.name}`}
                                                         />
                                                     </div>
@@ -169,7 +169,7 @@ export default function IndexComponent({ pageData, pathArray }) {
                                         <div className="">
                                             <Image
                                                 className="more-services-img col-12"
-                                                src="./img/short-url-img.svg"
+                                                src={`./assets/img/pages/brpt/index/services/${service?.slug}.svg`}
                                                 width={336}
                                                 height={212}
                                                 alt="short-url-img"

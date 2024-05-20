@@ -36,8 +36,8 @@ const HelloRestComp = ({ path, pricingPath, pageData, pathArray }) => {
                             </a>
                             {pageData?.trustedData && <TrusedSection trustedData={pageData?.trustedData} />}
                         </div>
-                        <div className={`${style.heroimg} d-none d-sm-block`}>
-                            <img src="/img/pages/hello/heroimg.svg" alt="hello hero image" />
+                        <div className={`${style.heroimg} d-none d-sm-block`}>                            
+                            <img src="/assets/img/pages/brpt/hello/banner.webp" alt="hello hero image" />
                         </div>
                     </div>
                     <ProductFeatures featureData={pageData?.features} />
