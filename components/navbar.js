@@ -95,7 +95,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
     {/* <div className="d-block d-md-none">
       {showInnerComponent && <Notification mininav={notification_class} />}
       <AnnoucmentBar/>
-    </div> */}    
+    </div>     */}
       {show && <Mininav path={path} />}
       <div className="d-none d-md-block">
         <Notification path={path} compData={compData} pathArray={pathArray} />
