@@ -1,1027 +1,1027 @@
 [
   {
     "name": "Afghanistan",
-    "sortname": "AF",
+    "shortname": "AF",
     "currency": "GBP"
   },
   {
     "name": "Albania",
-    "sortname": "AL",
+    "shortname": "AL",
     "currency": "GBP"
   },
   {
     "name": "Algeria",
-    "sortname": "DZ",
+    "shortname": "DZ",
     "currency": "GBP"
   },
   {
     "name": "Andorra",
-    "sortname": "AD",
+    "shortname": "AD",
     "currency": "GBP"
   },
   {
     "name": "Angola",
-    "sortname": "AO",
+    "shortname": "AO",
     "currency": "GBP"
   },
   {
     "name": "Antigua and Barbuda",
-    "sortname": "AG",
+    "shortname": "AG",
     "currency": "USD"
   },
   {
     "name": "Argentina",
-    "sortname": "AR",
+    "shortname": "AR",
     "currency": "USD"
   },
   {
     "name": "Armenia",
-    "sortname": "AM",
+    "shortname": "AM",
     "currency": "GBP"
   },
   {
     "name": "Aruba",
-    "sortname": "AW",
+    "shortname": "AW",
     "currency": "USD"
   },
   {
     "name": "Australia",
-    "sortname": "AU",
+    "shortname": "AU",
     "currency": "USD"
   },
   {
     "name": "Austria",
-    "sortname": "AT",
+    "shortname": "AT",
     "currency": "GBP"
   },
   {
     "name": "Azerbaijan",
-    "sortname": "AZ",
+    "shortname": "AZ",
     "currency": "GBP"
   },
   {
     "name": "Bahamas",
-    "sortname": "BS",
+    "shortname": "BS",
     "currency": "USD"
   },
   {
     "name": "Bahrain",
-    "sortname": "BH",
+    "shortname": "BH",
     "currency": "GBP"
   },
   {
     "name": "Bangladesh",
-    "sortname": "BD",
+    "shortname": "BD",
     "currency": "GBP"
   },
   {
     "name": "Barbados",
-    "sortname": "BB",
+    "shortname": "BB",
     "currency": "USD"
   },
   {
     "name": "Belarus",
-    "sortname": "BY",
+    "shortname": "BY",
     "currency": "GBP"
   },
   {
     "name": "Belgium",
-    "sortname": "BE",
+    "shortname": "BE",
     "currency": "GBP"
   },
   {
     "name": "Belize",
-    "sortname": "BZ",
+    "shortname": "BZ",
     "currency": "USD"
   },
   {
     "name": "Benin",
-    "sortname": "BJ",
+    "shortname": "BJ",
     "currency": "GBP"
   },
   {
     "name": "Bermuda",
-    "sortname": "BM",
+    "shortname": "BM",
     "currency": "USD"
   },
   {
     "name": "Bhutan",
-    "sortname": "BT",
+    "shortname": "BT",
     "currency": "INR"
   },
   {
     "name": "Bolivia",
-    "sortname": "BO",
+    "shortname": "BO",
     "currency": "GBP"
   },
   {
     "name": "Bosnia and Herzegovina",
-    "sortname": "BA",
+    "shortname": "BA",
     "currency": "GBP"
   },
   {
     "name": "Botswana",
-    "sortname": "BW",
+    "shortname": "BW",
     "currency": "GBP"
   },
   {
     "name": "Brazil",
-    "sortname": "BR",
+    "shortname": "BR",
     "currency": "USD"
   },
   {
     "name": "Brunei",
-    "sortname": "BN",
+    "shortname": "BN",
     "currency": "GBP"
   },
   {
     "name": "Bulgaria",
-    "sortname": "BG",
+    "shortname": "BG",
     "currency": "GBP"
   },
   {
     "name": "Burkina Faso",
-    "sortname": "BF",
+    "shortname": "BF",
     "currency": "GBP"
   },
   {
     "name": "Burundi",
-    "sortname": "BI",
+    "shortname": "BI",
     "currency": "GBP"
   },
   {
     "name": "Cambodia",
-    "sortname": "KH",
+    "shortname": "KH",
     "currency": "GBP"
   },
   {
     "name": "Cameroon",
-    "sortname": "CM",
+    "shortname": "CM",
     "currency": "GBP"
   },
   {
     "name": "Canada",
-    "sortname": "CA",
+    "shortname": "CA",
     "currency": "USD"
   },
   {
     "name": "Cape Verde",
-    "sortname": "CV",
+    "shortname": "CV",
     "currency": "GBP"
   },
   {
     "name": "Cayman Islands",
-    "sortname": "KY",
+    "shortname": "KY",
     "currency": "USD"
   },
   {
     "name": "Central African Republic",
-    "sortname": "CF",
+    "shortname": "CF",
     "currency": "GBP"
   },
   {
     "name": "Chad Republic",
-    "sortname": "TD",
+    "shortname": "TD",
     "currency": "GBP"
   },
   {
     "name": "Chile",
-    "sortname": "CL",
+    "shortname": "CL",
     "currency": "GBP"
   },
   {
     "name": "China",
-    "sortname": "CN",
+    "shortname": "CN",
     "currency": "GBP"
   },
   {
     "name": "Colombia",
-    "sortname": "CO",
+    "shortname": "CO",
     "currency": "USD"
   },
   {
     "name": "Comoros",
-    "sortname": "KM",
+    "shortname": "KM",
     "currency": "GBP"
   },
   {
     "name": "Congo",
-    "sortname": "CG",
+    "shortname": "CG",
     "currency": "USD"
   },
   {
     "name": "Congo Democratic",
-    "sortname": "CG",
+    "shortname": "CG",
     "currency": "GBP"
   },
   {
     "name": "Cook Islands",
-    "sortname": "CK",
+    "shortname": "CK",
     "currency": "USD"
   },
   {
     "name": "Costa Rica",
-    "sortname": "CR",
+    "shortname": "CR",
     "currency": "GBP"
   },
   {
     "name": "Cote divoire",
-    "sortname": "CI",
+    "shortname": "CI",
     "currency": "USD"
   },
   {
     "name": "Croatia",
-    "sortname": "HR",
+    "shortname": "HR",
     "currency": "GBP"
   },
   {
     "name": "Cuba",
-    "sortname": "CU",
+    "shortname": "CU",
     "currency": "GBP"
   },
   {
     "name": "Cyprus",
-    "sortname": "CY",
+    "shortname": "CY",
     "currency": "GBP"
   },
   {
     "name": "Czech Republic",
-    "sortname": "CZ",
+    "shortname": "CZ",
     "currency": "GBP"
   },
   {
     "name": "Denmark",
-    "sortname": "DK",
+    "shortname": "DK",
     "currency": "GBP"
   },
   {
     "name": "Djibouti Republic",
-    "sortname": "DJ",
+    "shortname": "DJ",
     "currency": "USD"
   },
   {
     "name": "Dominican Republic",
-    "sortname": "DO",
+    "shortname": "DO",
     "currency": "USD"
   },
   {
     "name": "Ecuador",
-    "sortname": "EC",
+    "shortname": "EC",
     "currency": "USD"
   },
   {
     "name": "Egypt",
-    "sortname": "EG",
+    "shortname": "EG",
     "currency": "GBP"
   },
   {
     "name": "El Salvador",
-    "sortname": "SV",
+    "shortname": "SV",
     "currency": "USD"
   },
   {
     "name": "Equatorial Guinea",
-    "sortname": "GQ",
+    "shortname": "GQ",
     "currency": "GBP"
   },
   {
     "name": "Estonia",
-    "sortname": "EE",
+    "shortname": "EE",
     "currency": "GBP"
   },
   {
     "name": "Ethiopia",
-    "sortname": "ET",
+    "shortname": "ET",
     "currency": "GBP"
   },
   {
     "name": "Falkland Islands",
-    "sortname": "FK",
+    "shortname": "FK",
     "currency": "GBP"
   },
   {
     "name": "Faroe Islands",
-    "sortname": "FO",
+    "shortname": "FO",
     "currency": "GBP"
   },
   {
     "name": "Fiji",
-    "sortname": "FJ",
+    "shortname": "FJ",
     "currency": "USD"
   },
   {
     "name": "Finland",
-    "sortname": "FI",
+    "shortname": "FI",
     "currency": "GBP"
   },
   {
     "name": "France",
-    "sortname": "FR",
+    "shortname": "FR",
     "currency": "GBP"
   },
   {
     "name": "French Guiana",
-    "sortname": "GF",
+    "shortname": "GF",
     "currency": "GBP"
   },
   {
     "name": "French Polynesia",
-    "sortname": "PF",
+    "shortname": "PF",
     "currency": "USD"
   },
   {
     "name": "Gabon",
-    "sortname": "GA",
+    "shortname": "GA",
     "currency": "GBP"
   },
   {
     "name": "Gambia",
-    "sortname": "GM",
+    "shortname": "GM",
     "currency": "USD"
   },
   {
     "name": "Georgia",
-    "sortname": "GE",
+    "shortname": "GE",
     "currency": "GBP"
   },
   {
     "name": "Germany",
-    "sortname": "DE",
+    "shortname": "DE",
     "currency": "GBP"
   },
   {
     "name": "Ghana",
-    "sortname": "GH",
+    "shortname": "GH",
     "currency": "GBP"
   },
   {
     "name": "Gibraltar",
-    "sortname": "GI",
+    "shortname": "GI",
     "currency": "GBP"
   },
   {
     "name": "Greece",
-    "sortname": "GR",
+    "shortname": "GR",
     "currency": "GBP"
   },
   {
     "name": "Greenland",
-    "sortname": "GL",
+    "shortname": "GL",
     "currency": "GBP"
   },
   {
     "name": "Grenada",
-    "sortname": "GD",
+    "shortname": "GD",
     "currency": "USD"
   },
   {
     "name": "Guadeloupe",
-    "sortname": "GP",
+    "shortname": "GP",
     "currency": "GBP"
   },
   {
     "name": "Guam",
-    "sortname": "GU",
+    "shortname": "GU",
     "currency": "USD"
   },
   {
     "name": "Guatemala",
-    "sortname": "GT",
+    "shortname": "GT",
     "currency": "USD"
   },
   {
     "name": "Guernsey",
-    "sortname": "XU",
+    "shortname": "XU",
     "currency": "GBP"
   },
   {
     "name": "Guinea",
-    "sortname": "GN",
+    "shortname": "GN",
     "currency": "GBP"
   },
   {
     "name": "Guinea-Bissau",
-    "sortname": "GW",
+    "shortname": "GW",
     "currency": "GBP"
   },
   {
     "name": "Guyana",
-    "sortname": "GY",
+    "shortname": "GY",
     "currency": "USD"
   },
   {
     "name": "Haiti",
-    "sortname": "HT",
+    "shortname": "HT",
     "currency": "USD"
   },
   {
     "name": "Honduras",
-    "sortname": "HN",
+    "shortname": "HN",
     "currency": "USD"
   },
   {
     "name": "Hong Kong",
-    "sortname": "HK",
+    "shortname": "HK",
     "currency": "GBP"
   },
   {
     "name": "Hungary",
-    "sortname": "HU",
+    "shortname": "HU",
     "currency": "GBP"
   },
   {
     "name": "Iceland",
-    "sortname": "IS",
+    "shortname": "IS",
     "currency": "GBP"
   },
   {
     "name": "India",
-    "sortname": "IN",
+    "shortname": "IN",
     "currency": "INR"
   },
   {
     "name": "Indonesia",
-    "sortname": "ID",
+    "shortname": "ID",
     "currency": "GBP"
   },
   {
     "name": "Iran",
-    "sortname": "IR",
+    "shortname": "IR",
     "currency": "GBP"
   },
   {
     "name": "Iraq",
-    "sortname": "IQ",
+    "shortname": "IQ",
     "currency": "GBP"
   },
   {
     "name": "Ireland",
-    "sortname": "IE",
+    "shortname": "IE",
     "currency": "GBP"
   },
   {
     "name": "Isle of Man",
-    "sortname": "IM",
+    "shortname": "IM",
     "currency": "GBP"
   },
   {
     "name": "Israel",
-    "sortname": "IL",
+    "shortname": "IL",
     "currency": "GBP"
   },
   {
     "name": "Italy",
-    "sortname": "IT",
+    "shortname": "IT",
     "currency": "GBP"
   },
   {
     "name": "Jamaica",
-    "sortname": "JM",
+    "shortname": "JM",
     "currency": "USD"
   },
   {
     "name": "Japan",
-    "sortname": "JP",
+    "shortname": "JP",
     "currency": "GBP"
   },
   {
     "name": "Jersey",
-    "sortname": "JE",
+    "shortname": "JE",
     "currency": "GBP"
   },
   {
     "name": "Jordan",
-    "sortname": "JO",
+    "shortname": "JO",
     "currency": "USD"
   },
   {
     "name": "Kazakhstan",
-    "sortname": "KZ",
+    "shortname": "KZ",
     "currency": "GBP"
   },
   {
     "name": "Kenya",
-    "sortname": "KE",
+    "shortname": "KE",
     "currency": "GBP"
   },
   {
     "name": "Kuwait",
-    "sortname": "KW",
+    "shortname": "KW",
     "currency": "GBP"
   },
   {
     "name": "Kyrgyzstan",
-    "sortname": "KG",
+    "shortname": "KG",
     "currency": "GBP"
   },
   {
     "name": "Latvia",
-    "sortname": "LV",
+    "shortname": "LV",
     "currency": "GBP"
   },
   {
     "name": "Lebanon",
-    "sortname": "LB",
+    "shortname": "LB",
     "currency": "USD"
   },
   {
     "name": "Lesotho",
-    "sortname": "LS",
+    "shortname": "LS",
     "currency": "GBP"
   },
   {
     "name": "Liberia",
-    "sortname": "LR",
+    "shortname": "LR",
     "currency": "GBP"
   },
   {
     "name": "Libya",
-    "sortname": "LY",
+    "shortname": "LY",
     "currency": "USD"
   },
   {
     "name": "Liechtenstein",
-    "sortname": "LI",
+    "shortname": "LI",
     "currency": "GBP"
   },
   {
     "name": "Lithuania",
-    "sortname": "LT",
+    "shortname": "LT",
     "currency": "GBP"
   },
   {
     "name": "Luxembourg",
-    "sortname": "LU",
+    "shortname": "LU",
     "currency": "GBP"
   },
   {
     "name": "Macau",
-    "sortname": "MO",
+    "shortname": "MO",
     "currency": "GBP"
   },
   {
     "name": "Madagascar",
-    "sortname": "MG",
+    "shortname": "MG",
     "currency": "GBP"
   },
   {
     "name": "Malawi",
-    "sortname": "MW",
+    "shortname": "MW",
     "currency": "GBP"
   },
   {
     "name": "Malaysia",
-    "sortname": "MY",
+    "shortname": "MY",
     "currency": "GBP"
   },
   {
     "name": "Maldives",
-    "sortname": "MV",
+    "shortname": "MV",
     "currency": "GBP"
   },
   {
     "name": "Mali",
-    "sortname": "ML",
+    "shortname": "ML",
     "currency": "GBP"
   },
   {
     "name": "Malta",
-    "sortname": "MT",
+    "shortname": "MT",
     "currency": "GBP"
   },
   {
     "name": "Martinique",
-    "sortname": "MQ",
+    "shortname": "MQ",
     "currency": "GBP"
   },
   {
     "name": "Mauritania",
-    "sortname": "MR",
+    "shortname": "MR",
     "currency": "GBP"
   },
   {
     "name": "Mauritius",
-    "sortname": "MU",
+    "shortname": "MU",
     "currency": "GBP"
   },
   {
     "name": "Mexico",
-    "sortname": "MX",
+    "shortname": "MX",
     "currency": "USD"
   },
   {
     "name": "Moldova",
-    "sortname": "MD",
+    "shortname": "MD",
     "currency": "GBP"
   },
   {
     "name": "Monaco",
-    "sortname": "MC",
+    "shortname": "MC",
     "currency": "GBP"
   },
   {
     "name": "Mongolia",
-    "sortname": "MN",
+    "shortname": "MN",
     "currency": "GBP"
   },
   {
     "name": "Montenegro",
-    "sortname": "ME",
+    "shortname": "ME",
     "currency": "GBP"
   },
   {
     "name": "Morocco",
-    "sortname": "MA",
+    "shortname": "MA",
     "currency": "GBP"
   },
   {
     "name": "Mozambique",
-    "sortname": "MZ",
+    "shortname": "MZ",
     "currency": "GBP"
   },
   {
     "name": "Myanmar",
-    "sortname": "MM",
+    "shortname": "MM",
     "currency": "GBP"
   },
   {
     "name": "Namibia",
-    "sortname": "NA",
+    "shortname": "NA",
     "currency": "GBP"
   },
   {
     "name": "Nauru",
-    "sortname": "NR",
+    "shortname": "NR",
     "currency": "USD"
   },
   {
     "name": "Nepal",
-    "sortname": "NP",
+    "shortname": "NP",
     "currency": "INR"
   },
   {
     "name": "Netherlands",
-    "sortname": "NL",
+    "shortname": "NL",
     "currency": "GBP"
   },
   {
     "name": "New Caledonia",
-    "sortname": "NC",
+    "shortname": "NC",
     "currency": "USD"
   },
   {
     "name": "New Zealand",
-    "sortname": "NZ",
+    "shortname": "NZ",
     "currency": "USD"
   },
   {
     "name": "Nicaragua",
-    "sortname": "NI",
+    "shortname": "NI",
     "currency": "USD"
   },
   {
     "name": "Niger",
-    "sortname": "NE",
+    "shortname": "NE",
     "currency": "GBP"
   },
   {
     "name": "Nigeria",
-    "sortname": "NG",
+    "shortname": "NG",
     "currency": "GBP"
   },
   {
     "name": "Norfolk Island",
-    "sortname": "NF",
+    "shortname": "NF",
     "currency": "USD"
   },
   {
     "name": "North Macedonia",
-    "sortname": "MK",
+    "shortname": "MK",
     "currency": "GBP"
   },
   {
     "name": "Norway",
-    "sortname": "NO",
+    "shortname": "NO",
     "currency": "GBP"
   },
   {
     "name": "Oman",
-    "sortname": "OM",
+    "shortname": "OM",
     "currency": "GBP"
   },
   {
     "name": "Pakistan",
-    "sortname": "PK",
+    "shortname": "PK",
     "currency": "GBP"
   },
   {
     "name": "Palau",
-    "sortname": "PW",
+    "shortname": "PW",
     "currency": "USD"
   },
   {
     "name": "Palestinian Territory",
-    "sortname": "PS",
+    "shortname": "PS",
     "currency": "USD"
   },
   {
     "name": "Panama",
-    "sortname": "PA",
+    "shortname": "PA",
     "currency": "USD"
   },
   {
     "name": "Papua New Guinea",
-    "sortname": "PG",
+    "shortname": "PG",
     "currency": "USD"
   },
   {
     "name": "Paraguay",
-    "sortname": "PY",
+    "shortname": "PY",
     "currency": "USD"
   },
   {
     "name": "Peru",
-    "sortname": "PE",
+    "shortname": "PE",
     "currency": "USD"
   },
   {
     "name": "Philippines",
-    "sortname": "PH",
+    "shortname": "PH",
     "currency": "GBP"
   },
   {
     "name": "Poland",
-    "sortname": "PL",
+    "shortname": "PL",
     "currency": "GBP"
   },
   {
     "name": "Portugal",
-    "sortname": "PT",
+    "shortname": "PT",
     "currency": "GBP"
   },
   {
     "name": "Qatar",
-    "sortname": "QA",
+    "shortname": "QA",
     "currency": "GBP"
   },
   {
     "name": "Reunion",
-    "sortname": "RE",
+    "shortname": "RE",
     "currency": "USD"
   },
   {
     "name": "Romania",
-    "sortname": "RO",
+    "shortname": "RO",
     "currency": "GBP"
   },
   {
     "name": "Russia",
-    "sortname": "RU",
+    "shortname": "RU",
     "currency": "GBP"
   },
   {
     "name": "Rwanda",
-    "sortname": "RW",
+    "shortname": "RW",
     "currency": "GBP"
   },
   {
     "name": "Saint Kitts and Nevis",
-    "sortname": "KN",
+    "shortname": "KN",
     "currency": "USD"
   },
   {
     "name": "Saint Lucia",
-    "sortname": "LC",
+    "shortname": "LC",
     "currency": "USD"
   },
   {
     "name": "Samoa",
-    "sortname": "WS",
+    "shortname": "WS",
     "currency": "USD"
   },
   {
     "name": "Saudi Arabia",
-    "sortname": "SA",
+    "shortname": "SA",
     "currency": "USD"
   },
   {
     "name": "Senegal",
-    "sortname": "SN",
+    "shortname": "SN",
     "currency": "GBP"
   },
   {
     "name": "Serbia",
-    "sortname": "RS",
+    "shortname": "RS",
     "currency": "GBP"
   },
   {
     "name": "Seychelles",
-    "sortname": "SC",
+    "shortname": "SC",
     "currency": "GBP"
   },
   {
     "name": "Sierra Leone",
-    "sortname": "SL",
+    "shortname": "SL",
     "currency": "GBP"
   },
   {
     "name": "Singapore",
-    "sortname": "SG",
+    "shortname": "SG",
     "currency": "GBP"
   },
   {
     "name": "Sint Maarten",
-    "sortname": "SX",
+    "shortname": "SX",
     "currency": "GBP"
   },
   {
     "name": "Slovakia",
-    "sortname": "SK",
+    "shortname": "SK",
     "currency": "GBP"
   },
   {
     "name": "Slovenia",
-    "sortname": "SI",
+    "shortname": "SI",
     "currency": "GBP"
   },
   {
     "name": "Solomon Islands",
-    "sortname": "SB",
+    "shortname": "SB",
     "currency": "USD"
   },
   {
     "name": "Somalia",
-    "sortname": "SO",
+    "shortname": "SO",
     "currency": "GBP"
   },
   {
     "name": "South Africa",
-    "sortname": "ZA",
+    "shortname": "ZA",
     "currency": "GBP"
   },
   {
     "name": "South Korea",
-    "sortname": "KR",
+    "shortname": "KR",
     "currency": "GBP"
   },
   {
     "name": "South Sudan",
-    "sortname": "SS",
+    "shortname": "SS",
     "currency": "GBP"
   },
   {
     "name": "Spain",
-    "sortname": "ES",
+    "shortname": "ES",
     "currency": "GBP"
   },
   {
     "name": "Sri Lanka",
-    "sortname": "LK",
+    "shortname": "LK",
     "currency": "GBP"
   },
   {
     "name": "Sudan",
-    "sortname": "SD",
+    "shortname": "SD",
     "currency": "GBP"
   },
   {
     "name": "Suriname",
-    "sortname": "SR",
+    "shortname": "SR",
     "currency": "USD"
   },
   {
     "name": "Sweden",
-    "sortname": "SE",
+    "shortname": "SE",
     "currency": "GBP"
   },
   {
     "name": "Switzerland",
-    "sortname": "CH",
+    "shortname": "CH",
     "currency": "GBP"
   },
   {
     "name": "Syria",
-    "sortname": "SY",
+    "shortname": "SY",
     "currency": "GBP"
   },
   {
     "name": "Taiwan",
-    "sortname": "TW",
+    "shortname": "TW",
     "currency": "USD"
   },
   {
     "name": "Tajikistan",
-    "sortname": "TJ",
+    "shortname": "TJ",
     "currency": "GBP"
   },
   {
     "name": "Tanzania",
-    "sortname": "TZ",
+    "shortname": "TZ",
     "currency": "GBP"
   },
   {
     "name": "Thailand",
-    "sortname": "TH",
+    "shortname": "TH",
     "currency": "GBP"
   },
   {
     "name": "Timor-Leste",
-    "sortname": "TL",
+    "shortname": "TL",
     "currency": "GBP"
   },
   {
     "name": "Togo",
-    "sortname": "TG",
+    "shortname": "TG",
     "currency": "GBP"
   },
   {
     "name": "Tonga",
-    "sortname": "TO",
+    "shortname": "TO",
     "currency": "USD"
   },
   {
     "name": "Trinidad and Tobago",
-    "sortname": "TT",
+    "shortname": "TT",
     "currency": "USD"
   },
   {
     "name": "Tunisia",
-    "sortname": "TN",
+    "shortname": "TN",
     "currency": "GBP"
   },
   {
     "name": "Turkey",
-    "sortname": "TR",
+    "shortname": "TR",
     "currency": "USD"
   },
   {
     "name": "Turkmenistan",
-    "sortname": "TM",
+    "shortname": "TM",
     "currency": "GBP"
   },
   {
     "name": "Uganda",
-    "sortname": "UG",
+    "shortname": "UG",
     "currency": "GBP"
   },
   {
     "name": "Ukraine",
-    "sortname": "UA",
+    "shortname": "UA",
     "currency": "GBP"
   },
   {
     "name": "United Arab Emirates",
-    "sortname": "AE",
+    "shortname": "AE",
     "currency": "USD"
   },
   {
     "name": "United Kingdom",
-    "sortname": "GB",
+    "shortname": "GB",
     "currency": "GBP"
   },
   {
     "name": "United States",
-    "sortname": "US",
+    "shortname": "US",
     "currency": "USD"
   },
   {
     "name": "Uruguay",
-    "sortname": "UY",
+    "shortname": "UY",
     "currency": "USD"
   },
   {
     "name": "Uzbekistan",
-    "sortname": "UZ",
+    "shortname": "UZ",
     "currency": "GBP"
   },
   {
     "name": "Vanuatu",
-    "sortname": "VU",
+    "shortname": "VU",
     "currency": "GBP"
   },
   {
     "name": "Venezuela",
-    "sortname": "VE",
+    "shortname": "VE",
     "currency": "GBP"
   },
   {
     "name": "Vietnam",
-    "sortname": "VN",
+    "shortname": "VN",
     "currency": "GBP"
   },
   {
     "name": "Yemen",
-    "sortname": "YE",
+    "shortname": "YE",
     "currency": "USD"
   },
   {
     "name": "Zambia",
-    "sortname": "ZM",
+    "shortname": "ZM",
     "currency": "GBP"
   },
   {
     "name": "Zimbabwe",
-    "sortname": "ZW",
+    "shortname": "ZW",
     "currency": "GBP"
   }
 ]

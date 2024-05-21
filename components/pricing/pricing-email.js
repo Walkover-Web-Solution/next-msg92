@@ -8,7 +8,7 @@ import FaqSection from '../faqSection/faqSection';
 const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, setSubscriptionEmail, countryCode }) => {
     var change;
     var changeSymbol;
-    if (countryCode === 'US' || countryCode === 'AE' || countryCode === 'SG' || countryCode === 'PH') {
+    if (countryCode === 'US' || countryCode === 'AE' || countryCode === 'SG' || countryCode === 'PH' || countryCode === 'BR') {
         change = 'USD';
         changeSymbol = '$';
     } else if (countryCode === 'GB' || countryCode === 'ES') {
@@ -17,6 +17,10 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
     } else if (countryCode === 'IN') {
         change = 'INR';
         changeSymbol = '₹';
+    }
+    else {
+        change = 'USD';
+        changeSymbol = '$';
     }
     // ph,global
     const [selectedCurrency, setSelectedCurrency] = useState(change);

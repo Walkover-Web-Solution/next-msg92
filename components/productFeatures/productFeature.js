@@ -18,7 +18,7 @@ export default function ProductFeatures(featureData) {
                   index % 3 === 2 ? "col-12 col-md-5 me-auto" : "col"} d-grid gap-2`}>
                     <img
                       className={`${styles.cardicon}`}
-                      src={`/img/pages/hello/${content?.name.toLowerCase().replace(/\/| /g, '-')}-ico.svg`}
+                      src={content?.slug ? `/img/pages/hello/${content?.slug}-ico.svg` : `/img/pages/hello/${content?.name.toLowerCase().replace(/\/| /g, '-')}-ico.svg`}
                       alt={`${content?.name}-ico`} 
                     />
                     <h4 className={`${styles.cardheading} c-fs-2`}>
@@ -31,7 +31,7 @@ export default function ProductFeatures(featureData) {
                 </div>
                 <img
                   className={`${styles.cardimg} `}
-                  src={`/img/pages/hello/${content?.name.toLowerCase().replace(/\/| /g, '-')}-img.svg`}  alt={content?.name} 
+                  src={content?.slug ? `/assets/img/pages/brpt/hello/${content?.slug}.svg` : `/img/pages/hello/${content?.name.toLowerCase().replace(/\/| /g, '-')}-img.svg`}
                 />
               </div>
             ))}

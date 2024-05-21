@@ -9,6 +9,7 @@ import Prism from "prismjs";
 import "prismjs/themes/prism-twilight.css";
 import snippetData from "@/pages/snippet.json"; 
 import { InlineWidget } from "react-calendly";
+import GetStartedSection from '../getStartedSection/getStartedSection';
 
 
 const ChannelComponent = ({ pageData, path, pricingPath }) => {    
@@ -262,7 +263,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
         })}
       </div>
       <Seo path={path} pageData={pageData.pagename} />      
-      <PreFooter />   
+      <GetStartedSection/>
       <div>
       <div
           className="modal fade"

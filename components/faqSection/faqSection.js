@@ -1,10 +1,10 @@
-export default function FaqSection(faqData) {
-  const faqs = faqData?.faqData;
+export default function FaqSection({faqData, faq}) {
+  const faqs = faqData;
   
   return (
     <>
       <div className=" my-5 d-grid gap-4">
-        <h2 className="c-fs-1">Frequently Asked Questions</h2>
+        <h2 className="c-fs-1">{ faq?.heading || `Frequently Asked Questions`}</h2>
         <div className="accordion" id="accordionExample">
           {faqs.map((data, index) => {
             {

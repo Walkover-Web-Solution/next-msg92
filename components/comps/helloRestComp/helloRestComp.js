@@ -7,7 +7,7 @@ import Seo from '@/components/seoComp';
 import GetStartedSection from '@/components/getStartedSection/getStartedSection';
 const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }) => {
     path = path === undefined ? 'global' : path;
-
+    console.log('pagedata hello rest page ---------------------',  path);
     return (
         <>
             {
@@ -40,7 +40,7 @@ const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }
                             {productData?.trustedData && <TrusedSection trustedData={productData?.trustedData} />}
                         </div>
                         <div className={`${style.heroimg} d-none d-sm-block`}>
-                            <img src="/img/pages/hello/heroimg.svg" alt='hello hero image'/>
+                            <img src="/img/pages/hello/heroimg.webp" alt='hello hero image'/>
                         </div>
                     </div>
                     <ProductFeatures featureData={productData?.features} />

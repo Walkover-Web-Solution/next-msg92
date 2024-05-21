@@ -4,6 +4,7 @@ import ProductComponent from '@/components/comps/productComp';
 import HelloNewComponent from '@/components/comps/helloNewComp';
 import ChannelComponent from '@/components/comps/channelComp';
 import HelloRestComp from '@/components/comps/helloRestComp/helloRestComp';
+import availableCountries from '@/data/available-countries.json';
 
 const mainpage = ({ pageData, params, path, pricingPath }) => {
     var page = pageData?.pagename;
@@ -42,12 +43,13 @@ const mainpage = ({ pageData, params, path, pricingPath }) => {
                     </>
                 );
             } else {
+                
                 return (
                     <>
                         <div>
                             {params?.pageslug === 'hello' ? (
                                 <HelloRestComp pageData={Dataa} path={path} pricingPath={pricingPath} />
-                            ) : (
+                            ) : ( 
                                 <ProductComponent pageData={Dataa} path={path} pricingPath={pricingPath} />
                             )}
                         </div>
@@ -83,15 +85,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    let { pageslug, country } = params; // Update variable name to 'pageslug'
-    if (country.length > 2 && pageslug == null) {
-        pageslug = country;
-        country = 'global';
-    } else if (country.length == 2 && pageslug == null) {
-        pageslug = 'index';
+    let { pageslug, country } = params; // Update variable name to 'pageslug'    
+    
+    if (!Object.keys(availableCountries).includes(country)) {        
+        country = "global";
     }
+    
     const countryData = data[country] || {};
     const pageData = countryData[pageslug] || null; // Update variable name to 'pageslug'
+    
     return {
         props: {
             pageData,

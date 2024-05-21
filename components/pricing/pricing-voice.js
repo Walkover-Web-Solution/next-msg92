@@ -29,7 +29,7 @@ const PricingCalls = ({ countryCode, currency }) => {
     useEffect(() => {
         if (selectedCountry) {
             // const preferredCurrency = countries.find(
-            //     (country) => country.sortname === selectedCountry?.country_code
+            //     (country) => country.shortname === selectedCountry?.country_code
             // )?.currency;
             if (currency === "GBP") {
                 setCurrencyCode("USD");
@@ -65,7 +65,6 @@ const PricingCalls = ({ countryCode, currency }) => {
     //fetch dialPlan and set corrency
     useEffect(() => {
         if (currencyCode) {
-            console.log("🚀 ~ useEffect ~ currencyCode:", currencyCode);
             fetchDialPlan(currencyCode);
             if (currencyCode === "GBP") {
                 setSymbol("£");
