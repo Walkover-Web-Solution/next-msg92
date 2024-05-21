@@ -35,7 +35,7 @@ export default function productComponent({ pageData, pathArray }) {
                         <CodeComponent pageData={pageData} />
                     ) : (
                         <img
-                            src={`/assets/img/pages/${pageData?.slug}/banner-${pageData?.slug}.svg`}
+                            src={`/assets/img/pages/brpt/${pageData?.slug}/banner-${pageData?.slug}.webp`}
                             className="img-fluid product-page-img mx-auto"
                             alt="product image"
                         />

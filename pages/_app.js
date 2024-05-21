@@ -77,7 +77,7 @@ export default function App({ Component, pageProps }) {
             setCookie("country_code", path, 30);
         }
         var cc = getCookie("country_code");
-        //console.log('app', cc);
+        
         $("a").on("click", function (event) {
             event.preventDefault();
             var href = $(this).attr("href");

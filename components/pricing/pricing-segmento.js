@@ -4,13 +4,10 @@
 // import {useEffect, useState } from "react";
 // import { setUtm } from "../pricingComp";
 // const pricingsegmento = ({subscriptionSegmento, fetchSubscriptionSegmento,countryCode , currency}) => {
-//   console.log(currency, "currency");
-//   console.log(subscriptionSegmento, "subscriptionSegmento");
 //   const [symbol, setSymbol] = useState("₹");
 //   const [selectedMode, setSelectedMode] = useState("Monthly");
 //   const [selectedCurrency, setSelectedCurrency] = useState('INR');
 //     const changeCurrency = async(currency) => {
-//       console.log(currency, "change currency");
 //       setSelectedCurrency(currency);
       
 //       try {
