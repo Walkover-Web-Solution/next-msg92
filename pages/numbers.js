@@ -4,7 +4,7 @@ import ChannelComponent from '@/components/comps/channelComp';
 import json from "../data/content.json"; 
 
 const ParentComponent = ({pricingPath}) => {
-  //console.log('json', json);
+  
   const data = json.global.numbers;  
   return (
     <>    

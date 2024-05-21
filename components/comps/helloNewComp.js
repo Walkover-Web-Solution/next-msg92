@@ -270,7 +270,7 @@ const HelloNewComponent = ({ pageData, path, pricingPath }) => {
                     </div>
 
                     <div className="d-flex flex-wrap flex-gap gap-5 w-100  card-container mt-5 justify-content-center">
-                {console.log(subscriptionHello)}
+                
 
                         {subscriptionHello?.length
                             ? subscriptionHello?.map((item, index) => {
