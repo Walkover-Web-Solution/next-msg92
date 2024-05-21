@@ -2,6 +2,7 @@ import { MdLanguage, MdCall, MdExpandMore, MdLogin, MdGTranslate } from "react-i
 import React, { useEffect, useState } from "react";
 import $ from "jquery";
 import countries from "@/data/countries.json";
+import availableCountries from "@/data/available-countries.json";
 import { getCookie, setCookie } from "@/components/utils";
 
 const Notification = ({ path, compData, pathArray }) => {
@@ -10,20 +11,16 @@ const Notification = ({ path, compData, pathArray }) => {
     useEffect(() => {
         //console.log('path', path);
         path = path ? path : getCookie("country_code");
-        for (let x in countries) {
-            if (path?.toUpperCase() === countries[x].sortname) {
-                setCountry(countries[x].name);
+        for (let x in availableCountries) {
+            //console.log('availableCountries[x].shortname', availableCountries[x].shortname);
+            if (path?.toUpperCase() === availableCountries[x].shortname) {
+
+                setCountry(availableCountries[x].name);
+                setCookie("country_code", availableCountries[x].shortname.toLowerCase(), 30);
                 break;
             }
-        }
-        const countryList = ["in", "ae", "ph", "sg", "es", "gb", "us", "?"];
-
-        if (countryList.includes(path)) {
-            setCookie("country_code", path, 30);
-        }
-        /* else {
-      document.cookie = `country_code=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-    } */
+        }        
+        
 
         $("#change-country a").on("click", function () {
             var label = $(this).text();

@@ -136,7 +136,7 @@ const PricingComp = ({ countryCode, product, browserPath , pathArray }) => {
     };
 
     const findCountry = async (code) => {
-        const response = await countries?.find((el) => el.sortname === code);
+        const response = await countries?.find((el) => el.shortname === code);
         setCurrency(response?.currency);
         fetchSMSData(response?.currency, response?.name, response?.name);
 
