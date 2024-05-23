@@ -6,26 +6,23 @@ import availableCountries from "@/data/available-countries.json";
 import { getCookie, setCookie } from "@/components/utils";
 
 const Notification = ({ path, compData, pathArray }) => {
-    const [country, setCountry] = useState("Global");
-    path = path?.substring(1);
-    useEffect(() => {        
-        path = path ? path : getCookie("country_code");
-        for (let x in availableCountries) {            
+    const [country, setCountry] = useState('');
+    const [language, setLanguage] = useState("English");
+    
+    useEffect(() => {
+        path = path ? path : getCookie("country_code");        
+        let lang = path === 'br' ? 'English' : 'Portuguese';
+        setLanguage(lang);
+        
+        for (let x in availableCountries) {
             if (path?.toUpperCase() === availableCountries[x].shortname) {
-
+                console.log('availableCountries[x].name', availableCountries[x].name);
                 setCountry(availableCountries[x].name);
                 setCookie("country_code", availableCountries[x].shortname.toLowerCase(), 30);
                 break;
             }
         }        
         
-
-        $("#change-country a").on("click", function () {
-            var label = $(this).text();
-            setCountry(label);
-            var cc = $(this).attr("href").substring(1);
-            setCookie("country_code", cc, 30);
-        });
     }, []);
     return (
         <>
@@ -45,11 +42,11 @@ const Notification = ({ path, compData, pathArray }) => {
                                 >
                                     <MdGTranslate className="me-1" />
                                     <span className="c-fs-5 d-flex align-items-center">
-                                        {pathArray[1] === "br" ? "English" : "Portuguese"}{" "}
+                                        {language}
                                     </span>
                                     <MdExpandMore className="ms-1" />
                                 </a>
-                                <ul className="dropdown-menu" id="change-country">
+                                <ul className="dropdown-menu" >
                                     <li>
                                         <a href="/br" className="dropdown-item c-fs-5">
                                             English

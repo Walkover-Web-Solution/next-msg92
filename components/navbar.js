@@ -30,7 +30,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
   }
   var title = products[pageSlug];
   var path = browserPath.split("/")[1];
-  path = path.length === 2 ? "/" + path : "";  
+  //path = path.length === 2 ? "/" + path : "";  
   
   const [showOverlay, setShowOverlay] = useState(false);
   const [countryCode, setCountryCode] = useState('');
