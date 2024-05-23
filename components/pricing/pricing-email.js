@@ -29,12 +29,7 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
 
     const changeCurrency = async (currency) => {
         setSelectedCurrency(currency);
-        // try {
-        //     const response = await fetchSubscriptionEmail(currency, '1', 'subscriptionEmail');
-        //     console.log(response);
-        // } catch (error) {
-        //     console.log(error.message, 'error');
-        // }
+        
 
         switch (currency) {
             case 'INR':

@@ -103,9 +103,7 @@ const ParentComponent = ({ pricingPath }) => {
         canvas.height = 150;
       };
 
-      function downloadImage(image, filename) {
-        console.log(image);
-        console.log(filename);
+      function downloadImage(image, filename) {      
         // Creating hidden <a> tag to download
         var element = document.createElement("a");
         element.setAttribute("href", image);
