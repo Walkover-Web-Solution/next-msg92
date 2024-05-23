@@ -7,8 +7,7 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 
 
 const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
-  var i = 0;
-  
+  var i = 0;  
   return (
     <div>
       <div className="product-banner-wrp">

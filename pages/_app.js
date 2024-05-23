@@ -76,8 +76,8 @@ export default function App({ Component, pageProps }) {
         if (Object.keys(availableCountries).includes(path)) {
             setCookie("country_code", path, 30);
         }
-        var cc = getCookie("country_code");        
-        //console.log('app', cc);
+        var cc = getCookie("country_code");
+        
         $("a").on("click", function (event) {
             event.preventDefault();
             var href = $(this).attr("href");

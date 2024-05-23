@@ -7,9 +7,9 @@ const IntPage = () => {
   // const router = useRouter();
   // var browserPath = router.asPath;
   // var intpage = browserPath.split("/")[2];
-  // console.log(intpage);
+  
   // var intData = data?.[intpage];
-  // console.log(intData);
+  
 
   const handleVideoClick = () => {
     if (videoRef.current.paused) {

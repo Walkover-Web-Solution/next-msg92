@@ -6,15 +6,11 @@ import availableCountries from "@/data/available-countries.json";
 import { getCookie, setCookie } from "@/components/utils";
 
 const Notification = ({ path, compData, pathArray }) => {
-    const [country, setCountry] = useState('');
-    const [language, setLanguage] = useState("English");
-    
-    useEffect(() => {
-        path = path ? path : getCookie("country_code");        
-        let lang = path === 'br' ? 'English' : 'Portuguese';
-        setLanguage(lang);
-        
-        for (let x in availableCountries) {
+    const [country, setCountry] = useState("Global");
+    path = path?.substring(1);
+    useEffect(() => {        
+        path = path ? path : getCookie("country_code");
+        for (let x in availableCountries) {            
             if (path?.toUpperCase() === availableCountries[x].shortname) {
                 console.log('availableCountries[x].name', availableCountries[x].name);
                 setCountry(availableCountries[x].name);

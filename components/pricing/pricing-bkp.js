@@ -97,7 +97,7 @@ const PricingCalls = ({ subscriptionVoice, fetchSubscriptionVoice, countryCode }
     useEffect(() => {
         fetchData(1);
     }, [countryCode]);
-    console.log(data);
+    
 
     return (
         <>
