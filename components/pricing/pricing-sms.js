@@ -76,7 +76,7 @@ const Pricingsms = ({
             pricingsms = noOfsms * ratePersms;
         }
 
-        // console.log('---------------------', noOfsms, ratePersms, pricingsms);
+
     }
 
     return (

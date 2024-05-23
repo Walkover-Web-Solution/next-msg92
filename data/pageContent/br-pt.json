@@ -453,19 +453,19 @@
                 "heading": "Características",
                 "content": [
                     {
-                        "img": "/assets/img/pages/knowledgebase/features/kb-wysiwyg-editor.svg",
+                        "img": "/assets/img/pages/brpt/knowledgebase/knowledgebase-wysiwyg-editor.svg",
                         "heading": "Editor WYSIWYG",
                         "subheading": "Crie ou edite facilmente seus artigos da base de conhecimento",
                         "content": "Crie rapidamente seus artigos com o editor de conteúdo 'o que você vê é o que você obtém'. É tão simples de usar quanto um processador de texto ou editor HTML."
                     },
                     {
-                        "img": "/assets/img/pages/knowledgebase/features/kb-seo-friendly.svg",
+                        "img": "/assets/img/pages/brpt/knowledgebase/knowledgebase-seo-friendly.svg",
                         "heading": "Amigável para SEO (Suporta subpasta e subdomínio)",
                         "subheading": "Uma base de conhecimento otimizada e amigável para SEO",
                         "content": "Sua base de conhecimento é executada em seu próprio domínio e não em um subdomínio, para que os algoritmos a tratem como seu site, dando a ela a mesma importância que suas outras páginas da web."
                     },
                     {
-                        "img": "/assets/img/pages/knowledgebase/features/kb-whitelable.svg",
+                        "img": "/assets/img/pages/brpt/knowledgebase/knowledgebase-whitelable.svg",
                         "heading": "Whitelabel",
                         "subheading": "Funciona com sua marca e não com a nossa",
                         "content": "Seus usuários visualizam sua base de conhecimento com sua marca em seu site. Nossos serviços de whitelabel garantem que não haja indicação de que é alimentado pela MSG91."

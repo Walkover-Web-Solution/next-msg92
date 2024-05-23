@@ -13,7 +13,7 @@ import content from '@/data/pageContent/br-pt.json';
 import contentGlobal from '@/data/pageContent/global.json';
 
 const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
-  console.log('navbar', browserPath, pricingPath, appPath, pageSlug);
+
   const compData = browserPath === '/br-pt' ? content.components.navbar : contentGlobal.components.navbar; 
    const products = {
     '/sms': 'SMS',
