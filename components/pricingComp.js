@@ -16,8 +16,7 @@ import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
 import Link from "next/link";
 import { MdExpandMore } from "react-icons/md";
 
-const PricingComp = ({ countryCode, product, browserPath , pathArray }) => {
-
+const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
     var availCont = ["US", "UK", "IN", "BR", "SG", "AE", "PH", "ES"];
     var pathLengthCond = availCont.includes(countryCode);
     var [pricing, setPricing] = useState([]);
@@ -109,8 +108,9 @@ const PricingComp = ({ countryCode, product, browserPath , pathArray }) => {
         try {
             changeCurrencySymbol(currency);
             const response = await axios.get(
-                `https://subscription.msg91.com/api/plans?currency=${currency}&ms_id=${msId}`
+                `${process.env.SUBSCRIPTION_PRICING_URL}/plans?currency=${currency}&ms_id=${msId}`
             );
+
             switch (state) {
                 case "subscriptionEmail":
                     setSubscriptionEmail([...response.data.data]);
