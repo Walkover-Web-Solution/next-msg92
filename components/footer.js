@@ -378,4 +378,3 @@ const Footer = ({path, year}) => {
 };
 
 export default Footer;
-
