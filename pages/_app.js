@@ -35,6 +35,7 @@ export default function App({ Component, pageProps }) {
     }
 
     var path = browserPath.split("/")[1];
+    console.log("🚀 ~ App ~ path:", path)
 
     const products = [
         "/sms",

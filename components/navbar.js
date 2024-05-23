@@ -143,7 +143,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
           </div>
           
           <div className="msg91-logo-cont  align-items-center justify-content-center d-flex" id="main-logo">
-            <a href={`${path}/`}>
+            <a href={`/${path}/`}>
               <img className="msg91-logo ms-5 ps-5" src="/img/logo.svg" alt="MSG91" />
             </a>
           </div>
@@ -171,7 +171,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
         </div>
         <div className="container relative d-md-none d-flex align-items-center justify-content-between c-fs-4 c-fw-m nav-menu-cont">
           <div className="msg91-logo-cont  align-items-center justify-content-center d-flex">
-            <Link href={`${path}/`}>
+            <Link href={`/${path}/`}>
               <img className="msg91-logo" src="/img/logo.svg" alt="MSG91" />
             </Link>
           </div>
