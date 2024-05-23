@@ -2,7 +2,6 @@ import Image from "next/image";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 const ProductMenu = ({ path, compData }) => {
-console.log("🚀 ~ ProductMenu ~ path:", path)
 
     return (
         <>
