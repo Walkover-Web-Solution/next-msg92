@@ -3,7 +3,7 @@
         "index": {
             "tagline": "PLATAFORMA DE SOLUÇÕES PARA CLIENTES",
             "heading": "Plataforma de Comunicação em Nuvem",
-            "subheading": "APIs seguras e robustas para SMS, Email, Voz, Autenticação e mais",
+            "subheading": "APIs seguras e robustas para SMS, Email, Voice, Autenticação e mais",
             "btn": "Começar",
             "img": "./assets/img/pages/brpt/index/banner.webp",
             "products": {
@@ -17,7 +17,7 @@
                     },
                     {
                         "slug": "campaign",
-                        "name": "Campanha",
+                        "name": "Campaign",
                         "tagline": "Automação baseada em eventos",
                         "description": "Aumente o engajamento do público através de uma plataforma inteligente."
                     },
