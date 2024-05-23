@@ -1,6 +1,6 @@
 {
-    "Global": {
-        "shortname": "",
+    "?": {
+        "shortname": "?",
         "name": "Global",
         "code": 0,
         "language": "English",
@@ -63,10 +63,10 @@
         "currency": "GBP"
     },
     "us": {
-        "shortname": "GB",
-        "name": "United Kingdom",
+        "shortname": "US",
+        "name": "United States",
         "code": 55,
         "language": "English",
-        "currency": "GBP"
+        "currency": "USD"
     }
 }

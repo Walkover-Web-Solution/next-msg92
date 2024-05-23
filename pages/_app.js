@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Headcomp from "@/components/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import Toastify from "@/components/toast";
@@ -72,11 +72,11 @@ export default function App({ Component, pageProps }) {
         }
 
         setUtm();
-
+        
         if (Object.keys(availableCountries).includes(path)) {
             setCookie("country_code", path, 30);
         }
-        var cc = getCookie("country_code");
+        var cc = getCookie("country_code");        
         //console.log('app', cc);
         $("a").on("click", function (event) {
             event.preventDefault();
@@ -166,7 +166,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     pricingPath={pricingPath}
                     appPath={browserPathMeta}
                     pageSlug={pageSlug}
-                    pathArray={pathArray}
+                    pathArray={pathArray}                    
                 />
             )}
             <Component

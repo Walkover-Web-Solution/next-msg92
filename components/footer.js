@@ -309,7 +309,7 @@ const Footer = ({path, year}) => {
               </div>
             </div>
             <div className="c-fs-7 copyright mt-3 text-white">
-              Copyright 2008-{year} MSG91 | All rights reserved.
+              Copyright 2008-{year}, Superheroes, Inc. | All rights reserved.
             </div>
           </div>
         </div>
