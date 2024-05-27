@@ -135,7 +135,7 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
             <div className="d-flex flex-column gap-3">
                 <span className="text-start c-fw-sb fs-4">{plan?.name}</span>
 
-                <span className="mt-2 c-fs-2 text-green">
+                <span className="mt-2 c-fs-2 c-fw-sb text-green">
                     {planAmount?.currency?.symbol}
                     {planAmount?.plan_amount} {selectedMode}
                 </span>
@@ -201,7 +201,7 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
             {/* Features */}
             {/* Extras */}
             <div className="d-flex flex-column gap-2">
-                <h4 class="c-fs-4 c-fw-sb">Extra</h4>
+                <h4 class="c-fs-4 c-fw-sb">Extra @</h4>
                 <div className="d-flex flex-column">
                     {plan?.plan_services?.length &&
                         plan?.plan_services?.map((service, index) => {
