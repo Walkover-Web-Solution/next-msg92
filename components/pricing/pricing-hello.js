@@ -86,8 +86,18 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                             <>
                                 {plan?.plan_amounts?.length &&
                                     plan?.plan_amounts?.map((planAmount, index) => {
-                                        console.log("card: " + planAmount);
-                                        return <HelloPricingCard plan={plan} planAmount={planAmount} />
+                                        if (
+                                            planAmount?.currency?.short_name === currency &&
+                                            planAmount?.plan_type?.name === selectedMode
+                                        )
+                                            return (
+                                                <HelloPricingCard
+                                                    plan={plan}
+                                                    planAmount={planAmount}
+                                                    currency={currency}
+                                                    selectedMode={selectedMode}
+                                                />
+                                            );
                                     })}
                             </>
                         );
@@ -119,8 +129,116 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
 
 export default pricinghello;
 
-export function HelloPricingCard(data) {
-    return <div>
-        
-    </div>
+export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
+    return (
+        <div className="card d-flex align-items-start rounded-2 bg-white p-4  gap-3 border-0">
+            <div className="d-flex flex-column gap-3">
+                <span className="text-start c-fw-sb fs-4">{plan?.name}</span>
+
+                <span className="mt-2 c-fs-2 text-green">
+                    {planAmount?.currency?.symbol}
+                    {planAmount?.plan_amount} {selectedMode}
+                </span>
+                <span className="c-fs-5"> {planAmount?.currency?.short_name === "INR" ? "+18% GST" : "-"}</span>
+                <Link href={"/signup?service=hello"}>
+                    <button className="btn btn-outline-dark rounded-md">Get Started</button>
+                </Link>
+            </div>
+            <hr className="w-100" style={{ borderColor: "rgba(0, 0, 0, 0.6)" }} />
+
+            {/* Included */}
+            <div className="d-flex flex-column gap-2">
+                <h4 class="c-fs-4 c-fw-sb">Included</h4>
+                <div className="d-flex flex-column">
+                    {plan?.plan_services?.length &&
+                        plan?.plan_services?.map((service, index) => {
+                            return (
+                                <>
+                                    {service?.service_credit?.service_credit_rates?.length &&
+                                        service?.service_credit?.service_credit_rates?.map((rate, i) => {
+                                            if (rate?.currency?.short_name === currency)
+                                                return (
+                                                    <span>
+                                                        {service?.service_credit?.service_credit_rates[0]?.free_credits}{" "}
+                                                        {service?.service_credit?.service?.name}/month
+                                                    </span>
+                                                );
+                                        })}
+                                </>
+                            );
+                        })}
+                </div>
+            </div>
+            {/* Included */}
+            {/* Features */}
+            <div className="d-flex flex-column gap-2">
+                <h4 class="c-fs-4 c-fw-sb">Features</h4>
+                <div className="d-flex flex-column">
+                    {plan?.plan_features?.length &&
+                        plan?.plan_features?.map((feature, i) => {
+                            if (feature?.is_visible) {
+                                return (
+                                    <span>
+                                        {feature?.feature?.is_included ? (
+                                            <MdDone className="text-green me-2 prcing-check" />
+                                        ) : (
+                                            <MdClose className="text-danger me-2 prcing-check" />
+                                        )}
+                                        {feature?.feature?.name}
+                                    </span>
+                                );
+                            } else if (!feature?.feature?.is_included) {
+                                return (
+                                    <span>
+                                        <MdClose className="text-danger me-2 prcing-check" />
+                                        {feature?.feature?.name}
+                                    </span>
+                                );
+                            }
+                        })}
+                </div>
+            </div>
+            {/* Features */}
+            {/* Extras */}
+            <div className="d-flex flex-column gap-2">
+                <h4 class="c-fs-4 c-fw-sb">Extra</h4>
+                <div className="d-flex flex-column">
+                    {plan?.plan_services?.length &&
+                        plan?.plan_services?.map((service, index) => {
+                            return (
+                                <>
+                                    {service?.service_credit?.service_credit_rates?.length &&
+                                        service?.service_credit?.service_credit_rates?.map((rate, i) => {
+                                            if (rate?.currency?.short_name === currency)
+                                                return (
+                                                    <span>
+                                                        {plan?.postpaid_allowed ? (
+                                                            <>
+                                                                <MdDone className="text-green me-2 prcing-check" />
+                                                                {rate?.currency?.symbol}
+                                                                {rate?.follow_up_rate}/
+                                                                {service?.service_credit?.service?.name}
+                                                                {service?.service_credit?.service?.is_rental
+                                                                    ? "/month"
+                                                                    : ""}
+                                                            </>
+                                                        ) : (
+                                                            <>
+                                                                <MdClose className="text-danger me-2 prcing-check" />
+                                                                {"No Extra "} {service?.service_credit?.service?.name}
+                                                            </>
+                                                        )}
+                                                    </span>
+                                                );
+                                        })}
+                                </>
+                            );
+                        })}
+                </div>
+            </div>
+            {/* Extras */}
+
+            <div></div>
+        </div>
+    );
 }
