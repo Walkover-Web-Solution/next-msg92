@@ -105,33 +105,35 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
     };
 
     const fetchSubscription = async (currency, msId, state) => {
-        try {
-            changeCurrencySymbol(currency);
-            const response = await axios.get(
-                `${process.env.SUBSCRIPTION_PRICING_URL}/plans?currency=${currency}&ms_id=${msId}`
-            );
+        if (currency && msId) {
+            try {
+                changeCurrencySymbol(currency);
+                const response = await axios.get(
+                    `${process.env.SUBSCRIPTION_PRICING_URL}/plans?currency=${currency}&ms_id=${msId}`
+                );
 
-            switch (state) {
-                case "subscriptionEmail":
-                    setSubscriptionEmail([...response.data.data]);
-                    break;
-                case "SubscriptionWhatsapp":
-                    setSubscriptionWhatsapp([...response.data.data]);
-                    break;
-                case "subscriptionSegmento":
-                    setSubscriptionSegmento([...response.data.data]);
-                    break;
-                case "SubscriptionVoice":
-                    setSubscriptionVoice([...response.data.data]);
-                    break;
-                case "subscriptionHello":
-                    setSubscriptionHello([...response.data.data]);
-                    break;
-                default:
-                    break;
+                switch (state) {
+                    case "subscriptionEmail":
+                        setSubscriptionEmail([...response.data.data]);
+                        break;
+                    case "SubscriptionWhatsapp":
+                        setSubscriptionWhatsapp([...response.data.data]);
+                        break;
+                    case "subscriptionSegmento":
+                        setSubscriptionSegmento([...response.data.data]);
+                        break;
+                    case "SubscriptionVoice":
+                        setSubscriptionVoice([...response.data.data]);
+                        break;
+                    case "subscriptionHello":
+                        setSubscriptionHello([...response.data.data]);
+                        break;
+                    default:
+                        break;
+                }
+            } catch (error) {
+                throw new Error("Some error on server: " + error.message);
             }
-        } catch (error) {
-            // throw new Error("Some error on server: " + error.message);
         }
     };
 
