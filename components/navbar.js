@@ -29,8 +29,9 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
     '/knowledgebase': 'KnowledgeBase', 
   }
   var title = products[pageSlug];
-  var path = browserPath.split("/")[1];
-  //path = path.length === 2 ? "/" + path : "";  
+  var path = browserPath.split("/")[1];  
+  
+  path = path.length === 2 ||  path.length === 'br-pt' ? "/" + path : "";  
   
   const [showOverlay, setShowOverlay] = useState(false);
   const [countryCode, setCountryCode] = useState('');

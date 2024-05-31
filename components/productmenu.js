@@ -13,7 +13,7 @@ const ProductMenu = ({ path, compData }) => {
                             {`${compData?.products?.applications?.heading || "Applications"}`}
                         </p>
 
-                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`/${path}/hello`}>
+                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/hello`}>
                             <Image src="/img/icon/hello.svg" width={40} height={40} alt="ico" />
                             <div className="">
                                 <h4 className="c-fs-2">{`${
@@ -27,7 +27,7 @@ const ProductMenu = ({ path, compData }) => {
                                 </p>
                             </div>
                         </a>
-                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`/${path}/campaign`}>
+                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/campaign`}>
                             <Image src="/img/icon/campaign.svg" width={40} height={40} alt="ico" />
                             <div className="">
                                 <h4 className="c-fs-2">{`${
@@ -41,7 +41,7 @@ const ProductMenu = ({ path, compData }) => {
                                 </p>
                             </div>
                         </a>
-                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`/${path}/segmento`}>
+                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/segmento`}>
                             <Image src="/img/icon/segmento.svg" width={40} height={40} alt="ico" />
                             <div className="">
                                 <h4 className="c-fs-2">{`${
@@ -55,7 +55,7 @@ const ProductMenu = ({ path, compData }) => {
                                 </p>
                             </div>
                         </a>
-                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`/${path}/otp`}>
+                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/otp`}>
                             <Image src="/img/icon/otp.svg" width={40} height={40} alt="ico" />
                             <div className="">
                                 <h4 className="c-fs-2">{`${
@@ -75,26 +75,26 @@ const ProductMenu = ({ path, compData }) => {
                         <p className="c-fs-3 c-fw-sb text-grey text-uppercase ">
                             {`${compData?.products?.channels?.heading || "Channels"}`}
                         </p>
-                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`/${path}/sms`}>
+                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/sms`}>
                             <Image src="/img/icon/sms.svg" width={40} height={40} alt="ico" />
                             <h4 className="c-fs-2">{`${compData?.products?.channels?.content[0]?.name || "SMS"}`}</h4>
                         </a>
 
-                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`/${path}/email`}>
+                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/email`}>
                             <Image src="/img/icon/email.svg" width={40} height={40} alt="ico" />
                             <h4 className="c-fs-2">{`${compData?.products?.channels?.content[1]?.name || "Email"}`}</h4>
                         </a>
-                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`/${path}/whatsapp`}>
+                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/whatsapp`}>
                             <Image src="/img/icon/whatsapp.svg" width={40} height={40} alt="ico" />
                             <h4 className="c-fs-2">{`${
                                 compData?.products?.channels?.content[2]?.name || "WhatsApp"
                             }`}</h4>
                         </a>
-                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`/${path}/voice`}>
+                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/voice`}>
                             <Image src="/img/icon/voice.svg" width={40} height={40} alt="ico" />
                             <h4 className="c-fs-2">{`${compData?.products?.channels?.content[3]?.name || "Voice"}`}</h4>
                         </a>
-                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`/${path}/numbers`}>
+                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/numbers`}>
                             <Image src="/img/icon/numbers.svg" width={40} height={40} alt="ico" />
                             <h4 className="c-fs-2">{`${
                                 compData?.products?.channels?.content[4]?.name || "Numbers"
@@ -106,7 +106,7 @@ const ProductMenu = ({ path, compData }) => {
                         <p className="c-fs-3 c-fw-sb text-grey text-uppercase ">{`${
                             compData?.products?.utilities?.heading || "Utilities"
                         }`}</p>
-                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`/${path}/shorturl`}>
+                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/shorturl`}>
                             <Image src="/img/icon/shorturl.svg" width={40} height={40} alt="ico" />
                             <div className="">
                                 <h4 className="c-fs-2">{`${
@@ -119,7 +119,7 @@ const ProductMenu = ({ path, compData }) => {
                         </a>
                         <a
                             className="d-flex gap-3 align-items-center product-menu-btn py-3"
-                            href={`/${path}/knowledgebase`}
+                            href={`${path}/knowledgebase`}
                         >
                             <Image src="/img/icon/knowledgebase.svg" width={40} height={40} alt="ico" />
                             <div className="">
