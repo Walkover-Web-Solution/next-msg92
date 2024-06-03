@@ -44,7 +44,6 @@ function fetchPostContent() {
 }
 
 function countPosts(tag) {
-    console.log("🚀 ~ countPosts ~ tag:", tag)
     return fetchPostContent().filter((it) => !tag || (it.tags && it.tags.includes(tag))).length;
 }
 

@@ -3,7 +3,6 @@ import Link from "next/link";
 
 function Pagination({ current, pages, rawPath, tag, page }) {
     const pagination = generatePagination(current, pages);
-    console.log("🚀 ~ PostList ~ rawPath:", rawPath);
     return (
         <ul className="pagination-padding">
             {pagination.map((it, i) => (
