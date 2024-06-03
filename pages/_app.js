@@ -15,6 +15,9 @@ export default function App({ Component, pageProps }) {
     const router = useRouter();
     var showNavbar = false;
     var browserPath = router.asPath;
+    const rawPath = router.asPath
+
+    
 
     var rawPathArray = browserPath.split("?");
     var pathArray = rawPathArray[0].split("/");    
@@ -91,6 +94,8 @@ export default function App({ Component, pageProps }) {
             }
         });
     }, []);
+
+
     return (
         <>
             <Script
@@ -176,6 +181,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 browserPathCase={browserPathCase}
                 pricingPath={pricingPath}
                 pathArray={pathArray}
+                rawPath={rawPath}
             />
             {showNavbar && <Footer path={path} year={year} />}
             <Toastify />
