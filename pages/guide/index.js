@@ -18,7 +18,7 @@ export default function Index({ posts, tags, pagination, rawPath, tag, page }) {
         </>
     );
 }
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
     const { query } = context;
     const tag = query?.tags ? query.tags : null;
     const page = query?.page ? query.page : null;
