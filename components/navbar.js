@@ -12,8 +12,7 @@ import { getCookie } from "./utils";
 import content from '@/data/pageContent/br-pt.json';
 import contentGlobal from '@/data/pageContent/global.json';
 
-const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
-  console.log('navbar', browserPath, pricingPath, appPath, pageSlug);
+const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {  
   const compData = browserPath === '/br-pt' ? content.components.navbar : contentGlobal.components.navbar; 
    const products = {
     '/sms': 'SMS',
@@ -31,7 +30,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
   }
   var title = products[pageSlug];
   var path = browserPath.split("/")[1];
-  path = path.length === 2 ? "/" + path : "";  
+  //path = path.length === 2 ? "/" + path : "";  
   
   const [showOverlay, setShowOverlay] = useState(false);
   const [countryCode, setCountryCode] = useState('');
@@ -95,7 +94,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
     {/* <div className="d-block d-md-none">
       {showInnerComponent && <Notification mininav={notification_class} />}
       <AnnoucmentBar/>
-    </div> */}    
+    </div>     */}
       {show && <Mininav path={path} />}
       <div className="d-none d-md-block">
         <Notification path={path} compData={compData} pathArray={pathArray} />

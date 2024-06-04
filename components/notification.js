@@ -2,36 +2,27 @@ import { MdLanguage, MdCall, MdExpandMore, MdLogin, MdGTranslate } from "react-i
 import React, { useEffect, useState } from "react";
 import $ from "jquery";
 import countries from "@/data/countries.json";
+import availableCountries from "@/data/available-countries.json";
 import { getCookie, setCookie } from "@/components/utils";
 
 const Notification = ({ path, compData, pathArray }) => {
-    console.log("🚀 ~ Notification ~ browserPath:", pathArray);
-    const [country, setCountry] = useState("Global");
-    path = path?.substring(1);
+    const [country, setCountry] = useState('');
+    const [language, setLanguage] = useState("English");
+    
     useEffect(() => {
-        //console.log('path', path);
-        path = path ? path : getCookie("country_code");
-        for (let x in countries) {
-            if (path?.toUpperCase() === countries[x].sortname) {
-                setCountry(countries[x].name);
+        path = path ? path : getCookie("country_code");        
+        let lang = path === 'br' ? 'English' : 'Portuguese';
+        setLanguage(lang);
+        
+        for (let x in availableCountries) {
+            if (path?.toUpperCase() === availableCountries[x].shortname) {
+                console.log('availableCountries[x].name', availableCountries[x].name);
+                setCountry(availableCountries[x].name);
+                setCookie("country_code", availableCountries[x].shortname.toLowerCase(), 30);
                 break;
             }
-        }
-        const countryList = ["in", "ae", "ph", "sg", "es", "gb", "us", "?"];
-
-        if (countryList.includes(path)) {
-            setCookie("country_code", path, 30);
-        }
-        /* else {
-      document.cookie = `country_code=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-    } */
-
-        $("#change-country a").on("click", function () {
-            var label = $(this).text();
-            setCountry(label);
-            var cc = $(this).attr("href").substring(1);
-            setCookie("country_code", cc, 30);
-        });
+        }        
+        
     }, []);
     return (
         <>
@@ -51,11 +42,11 @@ const Notification = ({ path, compData, pathArray }) => {
                                 >
                                     <MdGTranslate className="me-1" />
                                     <span className="c-fs-5 d-flex align-items-center">
-                                        {pathArray[1] === "br" ? "English" : "Portuguese"}{" "}
+                                        {language}
                                     </span>
                                     <MdExpandMore className="ms-1" />
                                 </a>
-                                <ul className="dropdown-menu" id="change-country">
+                                <ul className="dropdown-menu" >
                                     <li>
                                         <a href="/br" className="dropdown-item c-fs-5">
                                             English

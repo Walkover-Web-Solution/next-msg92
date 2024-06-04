@@ -31,7 +31,7 @@ export default function ProductFeatures(featureData) {
                 </div>
                 <img
                   className={`${styles.cardimg} `}
-                  src={content?.slug ? `/img/pages/hello/${content?.slug}-img.svg` : `/img/pages/hello/${content?.name.toLowerCase().replace(/\/| /g, '-')}-img.svg`}
+                  src={content?.slug ? `/assets/img/pages/brpt/hello/${content?.slug}.svg` : `/img/pages/hello/${content?.name.toLowerCase().replace(/\/| /g, '-')}-img.svg`}
                 />
               </div>
             ))}

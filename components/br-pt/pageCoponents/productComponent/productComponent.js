@@ -10,7 +10,7 @@ export default function productComponent({ pageData, pathArray }) {
                 <div className="container text-center overflow-hidden">
                     <div className=" mx-auto text-center justify-content-center py-2 py-md-5 col-12 col-sm-8">
                         <div className="d-flex justify-content-center align-items-center flex-column flex-sm-row">
-                            <img src={pageData?.icon} className="product-page-logo me-2" alt="product page logo" />
+                            <img src={`/assets/img/icons/products/${pageData?.slug}.svg`} className="product-page-logo me-2" alt="product page logo" />
                             <h1 className={`heading page-title ${pageData?.slug}-heading`}>{pageData?.name}</h1>
                         </div>
 
@@ -35,7 +35,7 @@ export default function productComponent({ pageData, pathArray }) {
                         <CodeComponent pageData={pageData} />
                     ) : (
                         <img
-                            src={`/assets/img/pages/${pageData?.slug}/banner-${pageData?.slug}.svg`}
+                            src={`/assets/img/pages/brpt/${pageData?.slug}/banner-${pageData?.slug}.webp`}
                             className="img-fluid product-page-img mx-auto"
                             alt="product image"
                         />

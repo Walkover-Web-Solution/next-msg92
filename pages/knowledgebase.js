@@ -28,7 +28,7 @@ export async function getStaticProps() {
       console.log("inside CATCH webhook function");
       console.log("error: ", error);
     }    
-  //console.log('webhookData', webhookData);
+  
   return {
     props: {
       webhookData   

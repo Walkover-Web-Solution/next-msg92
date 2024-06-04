@@ -15,7 +15,8 @@ const pricingwp = ({ countryCode }) => {
     countryCode === "US" ||
     countryCode === "AE" ||
     countryCode === "SG" ||
-    countryCode === "PH"
+    countryCode === "PH" ||
+    countryCode === "BR"
   ) {
     change = "USD";
     changeSymbol = "$";

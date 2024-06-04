@@ -7,10 +7,8 @@ import Head from "next/head";
 const Zapier = () => {
   // const router = useRouter();
   // var browserPath = router.asPath;
-  // var intpage = browserPath.split("/")[2];
-  // console.log(intpage);
-  // var intData = data?.[intpage];
-  // console.log(intData);
+  // var intpage = browserPath.split("/")[2];  
+  // var intData = data?.[intpage];  
 
   return (
     <>
