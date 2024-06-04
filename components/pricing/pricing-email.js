@@ -6,7 +6,6 @@ import faqData from "@/data/faq.json";
 import FaqSection from "../faqSection/faqSection";
 
 const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, setSubscriptionEmail, countryCode }) => {
-    console.log("🚀 ~ pricingemail ~ subscriptionEmail:", subscriptionEmail)
     var change;
     var changeSymbol;
     if (
@@ -149,7 +148,10 @@ export function EmailPricingCardFree({ plan, planAmount, currency, selectedMode 
                     <h3 className="fs-4 fw-semibold">{plan?.name}</h3>
                     <span className="text-dark mt-auto fw-medium">
                         {" "}
-                        <span className="c-fs-1 fw-bold text-green ">{planAmount?.currency?.symbol} {planAmount?.plan_amount} </span>{selectedMode}
+                        <span className="c-fs-1 fw-bold text-green ">
+                            {planAmount?.currency?.symbol} {planAmount?.plan_amount}{" "}
+                        </span>
+                        {selectedMode}
                     </span>
 
                     <a
@@ -241,18 +243,28 @@ export function EmailPricingCardFree({ plan, planAmount, currency, selectedMode 
 export function EmailPricingCard({ plan, planAmount, currency, selectedMode }) {
     return (
         <>
-            <div className="p-4 bg-white rounded-2  d-flex flex-column gap-4   ">
-                <div className="d-flex flex-column gap-2">
-                    <h3 className="fs-4 fw-semibold">{plan?.name}</h3>
+            <div className="p-4 bg-white rounded-2  d-flex flex-column gap-4 w-100 overflow-hidden   ">
+                <div className="d-flex flex-column gap-2 w-100">
+                    <div className="d-flex flex-wrap gap-2 populartag_cont w-100">
+                        <h3 className="fs-4 fw-semibold email_plan_name w-100">{plan?.name}</h3>
+                        {plan && plan?.most_popular && (
+                            <span className="populartag_tag border border-1 border-dark c-fw-sb rounded-5 px-3 btn-ft ms-auto">
+                                Popular
+                            </span>
+                        )}
+                    </div>
                     <span className="text-dark mt-auto fw-medium">
                         {" "}
-                        <span className="c-fs-1 fw-bold text-green ">{planAmount?.currency?.symbol} {planAmount?.plan_amount} </span>{selectedMode}
+                        <span className="c-fs-1 fw-bold text-green ">
+                            {planAmount?.currency?.symbol} {planAmount?.plan_amount}{" "}
+                        </span>
+                        {selectedMode}
                     </span>
 
                     <a
                         href="/signup?service=Email"
                         target="_blank"
-                        className="btn btn-outline-dark fw-semibold rounded-1 border border-dark px-3  d-flex btn-ft mt-auto"
+                        className={`btn ${plan?.most_popular ? 'btn-dark':'btn-outline-dark'} mt-2 rounded-md btn-ft`}
                     >
                         Get Started
                     </a>
@@ -324,7 +336,6 @@ export function EmailPricingCard({ plan, planAmount, currency, selectedMode }) {
                     </div>
                 </div>
                 {/* Extras */}
-          
             </div>
         </>
     );

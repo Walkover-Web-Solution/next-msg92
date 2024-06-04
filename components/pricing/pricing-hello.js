@@ -82,6 +82,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
             <div className="w-100 card-container d-flex flex-wrap gap-4">
                 {subscriptionHello?.length &&
                     subscriptionHello?.map((plan) => {
+                        console.log("🚀 ~ subscriptionHello?.map ~ plan:", plan);
                         return (
                             <>
                                 {plan?.plan_amounts?.length &&
@@ -131,9 +132,20 @@ export default pricinghello;
 
 export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
     return (
-        <div className="card d-flex align-items-start rounded-2 bg-white p-4  gap-3 border-0">
-            <div className="d-flex flex-column gap-3">
-                <span className="text-start c-fw-sb fs-4">{plan?.name}</span>
+        <div
+            className={`card d-flex align-items-start rounded-2 bg-white p-4  gap-3 ${
+                plan?.most_popular ? "border-2" : "border-0"
+            }`}
+        >
+            <div className="d-flex flex-column gap-3 w-100">
+                <div className="d-flex flex-wrap gap-2 populartag_cont w-100">
+                    <h3 className="fs-4 fw-semibold email_plan_name w-100">{plan?.name}</h3>
+                    {plan && plan?.most_popular && (
+                        <span className="populartag_tag border border-1 border-dark c-fw-sb rounded-5 px-3 btn-ft ms-auto">
+                            Popular
+                        </span>
+                    )}
+                </div>
 
                 <span className="mt-2 c-fs-2 c-fw-sb text-green">
                     {planAmount?.currency?.symbol}
@@ -141,7 +153,7 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
                 </span>
                 <span className="c-fs-5"> {planAmount?.currency?.short_name === "INR" ? "+18% GST" : "-"}</span>
                 <Link href={"/signup?service=hello"}>
-                    <button className="btn btn-outline-dark rounded-md">Get Started</button>
+                    <button className={`btn ${plan?.most_popular ? 'btn-dark':'btn-outline-dark'}  rounded-md`}>Get Started</button>
                 </Link>
             </div>
             <hr className="w-100" style={{ borderColor: "rgba(0, 0, 0, 0.6)" }} />
