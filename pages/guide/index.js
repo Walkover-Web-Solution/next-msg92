@@ -18,6 +18,7 @@ export default function Index({ posts, tags, pagination, rawPath, tag, page }) {
         </>
     );
 }
+
 export async function getServerSideProps(context) {
     const { query } = context;
     const tag = query?.tags ? query.tags : null;
