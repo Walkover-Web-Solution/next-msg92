@@ -16,8 +16,7 @@ import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
 import Link from "next/link";
 import { MdExpandMore } from "react-icons/md";
 
-const PricingComp = ({ countryCode, product, browserPath , pathArray }) => {
-
+const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
     var availCont = ["US", "UK", "IN", "BR", "SG", "AE", "PH", "ES"];
     var pathLengthCond = availCont.includes(countryCode);
     var [pricing, setPricing] = useState([]);
@@ -106,32 +105,35 @@ const PricingComp = ({ countryCode, product, browserPath , pathArray }) => {
     };
 
     const fetchSubscription = async (currency, msId, state) => {
-        try {
-            changeCurrencySymbol(currency);
-            const response = await axios.get(
-                `https://subscription.msg91.com/api/plans?currency=${currency}&ms_id=${msId}`
-            );
-            switch (state) {
-                case "subscriptionEmail":
-                    setSubscriptionEmail([...response.data.data]);
-                    break;
-                case "SubscriptionWhatsapp":
-                    setSubscriptionWhatsapp([...response.data.data]);
-                    break;
-                case "subscriptionSegmento":
-                    setSubscriptionSegmento([...response.data.data]);
-                    break;
-                case "SubscriptionVoice":
-                    setSubscriptionVoice([...response.data.data]);
-                    break;
-                case "subscriptionHello":
-                    setSubscriptionHello([...response.data.data]);
-                    break;
-                default:
-                    break;
+        if (currency && msId) {
+            try {
+                changeCurrencySymbol(currency);
+                const response = await axios.get(
+                    `${process.env.SUBSCRIPTION_PRICING_URL}/plans?currency=${currency}&ms_id=${msId}`
+                );
+
+                switch (state) {
+                    case "subscriptionEmail":
+                        setSubscriptionEmail([...response.data.data]);
+                        break;
+                    case "SubscriptionWhatsapp":
+                        setSubscriptionWhatsapp([...response.data.data]);
+                        break;
+                    case "subscriptionSegmento":
+                        setSubscriptionSegmento([...response.data.data]);
+                        break;
+                    case "SubscriptionVoice":
+                        setSubscriptionVoice([...response.data.data]);
+                        break;
+                    case "subscriptionHello":
+                        setSubscriptionHello([...response.data.data]);
+                        break;
+                    default:
+                        break;
+                }
+            } catch (error) {
+                throw new Error("Some error on server: " + error.message);
             }
-        } catch (error) {
-            // throw new Error("Some error on server: " + error.message);
         }
     };
 
