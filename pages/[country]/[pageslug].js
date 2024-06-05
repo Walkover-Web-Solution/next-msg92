@@ -21,7 +21,7 @@ const mainpage = ({ pageData, params, path, pricingPath }) => {
     } else if (page === 'index') {
         return (
             <>
-                <IndexComp params={params} />
+                <IndexComp params={params} pricingPath={pricingPath} />
             </>
         );
     } else {

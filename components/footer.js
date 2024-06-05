@@ -1,8 +1,7 @@
 import link from "next/link";
 import { useRouter } from "next/router";
 import { InlineWidget, PopupButton } from "react-calendly";
-const Footer = ({path, year}) => {  
-  path = (path?.length === 2 ||  path?.length === 'br-pt') ? "/" + path : "";  
+const Footer = ({path, year}) => {    
   return (
     <>
       <div className="px-2 footer pt-5">

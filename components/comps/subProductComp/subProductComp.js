@@ -14,7 +14,8 @@ import {
 import React, { useState } from 'react';
 import PreFooter from '@/components/preFooter';
 
-export default function SubProductComp() {
+export default function SubProductComp({path}) {
+    console.log('path', path);
     const [learnMore, setLearnMore] = useState();
     const icons = {
         MdBolt: MdBolt,
@@ -47,7 +48,7 @@ export default function SubProductComp() {
             name: 'Streamline Responses to FAQs ',
             icon: 'MdHelpOutline',
             description:
-                'WhatsApp Chatbots swiftly address frequently asked questions by leveraging the WhatsApp Business API to save businesses time and resources.',
+                `WhatsApp Chatbots swiftly address frequently asked questions by leveraging the <a href="${path}/whatsapp">WhatsApp Business API</a> to save businesses time and resources.`,
         },
         {
             name: 'Elevate Customer Support',
@@ -139,7 +140,7 @@ export default function SubProductComp() {
                                     {renderIcon(feature.icon, 'feature_icon')}
                                 </div>
                                 <h3 className="c-fs-2">{feature.name}</h3>
-                                <p>{feature.description}</p>
+                                <p dangerouslySetInnerHTML={{ __html: feature.description }}></p>
                             </div>
                         ))}
                     </div>

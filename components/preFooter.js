@@ -17,7 +17,7 @@ const PreFooter =({pricingPath, pageName})=>{
                 </div>                          
             </div> */}
 
-<GetStartedSection/>
+<GetStartedSection pricingPath={pricingPath} />
         </>
     );
 };

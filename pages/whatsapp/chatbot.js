@@ -1,9 +1,9 @@
 import SubProductComp from "@/components/comps/subProductComp/subProductComp";
 
-const WhatsAppChatBot = () => {
+const WhatsAppChatBot = ({path}) => {
     return(
         <>
-        <SubProductComp/>
+        <SubProductComp path={path}/>
         </>
     )
 }

@@ -8,20 +8,32 @@ import { getCookie, setCookie } from "@/components/utils";
 const Notification = ({ path, compData, pathArray }) => {
     const [country, setCountry] = useState('');
     const [language, setLanguage] = useState("English");
-    
     useEffect(() => {
-        path = path ? path : getCookie("country_code");        
+        path = path ? path : getCookie("country_code");
+        
+        if (path?.startsWith('/')) {
+            path = path.substring(1);
+        }
+        
+        
         let lang = path === 'br' ? 'English' : 'Portuguese';
+        
         setLanguage(lang);
+        
+        
+        if(!country){
+            setCountry('Global');
+        }
         
         for (let x in availableCountries) {
             if (path?.toUpperCase() === availableCountries[x].shortname) {
-                console.log('availableCountries[x].name', availableCountries[x].name);
                 setCountry(availableCountries[x].name);
                 setCookie("country_code", availableCountries[x].shortname.toLowerCase(), 30);
                 break;
             }
         }        
+
+
         
     }, []);
     return (

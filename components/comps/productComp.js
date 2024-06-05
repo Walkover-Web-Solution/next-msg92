@@ -64,7 +64,8 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
                     {item?.heading}
                   </span>
                   <span className="c-fs-3  mt-3">
-                    <span className='c-fw-b'>{item?.subheading}</span> {item?.content}
+                    <span className='c-fw-b'>{item?.subheading}</span> 
+                    <span dangerouslySetInnerHTML={{ __html: item?.content }}></span>                    
                   </span>
                 </div>
               </div> 

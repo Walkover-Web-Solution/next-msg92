@@ -1,5 +1,6 @@
 import data from "@/data/compContent/getStartedComp.json";
 export default function GetStartedSection({ pricingPath, pathArray }) {
+    
     let compData = {};
     if (pathArray && pathArray.length > 0) {
         compData = data[pathArray[1]];
@@ -19,9 +20,11 @@ export default function GetStartedSection({ pricingPath, pathArray }) {
                         <a href="/contact-us" className="btn btn-ft px-3 py-2 btn-outline-dark c-fs-4 col ">
                             {compData?.content?.contactsales || "Contact sales"}
                         </a>
-                        <a href={pricingPath} className="btn btn-ft px-3 py-2 btn-outline-dark c-fs-4 col">
-                            {compData?.content?.pricing || "Pricing"}
-                        </a>
+                        {pricingPath && (
+                          <a href={pricingPath} className="btn btn-ft px-3 py-2 btn-outline-dark c-fs-4 col">
+                              {compData?.content?.pricing || "Pricing"}
+                          </a>
+                        )}
                         <a
                             href="https://control.msg91.com/signup/"
                             className="btn btn-ft px-3 py-2 btn-dark c-fs-4 utm col-12 col-md w-100"
