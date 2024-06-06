@@ -288,7 +288,7 @@ const Footer = ({path, year}) => {
                   Cookie policy
                 </a>
               </div>
-              <div className="mt-4 mt-lg-0">
+              {/* <div className="mt-4 mt-lg-0">
                 <span className="c-fs-5">
                   A product of{" "}
                   <img
@@ -305,7 +305,7 @@ const Footer = ({path, year}) => {
                     Walkover
                   </a>
                 </span>
-              </div>
+              </div> */}
             </div>
             <div className="c-fs-7 copyright mt-3 text-white">
               {/* Copyright 2008-{year}, Superheroes, Inc. | All rights reserved. */}
