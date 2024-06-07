@@ -1174,7 +1174,7 @@
           "img": "/img/feature/campaign-multi-channel-support.svg",
           "heading": "Multi channel support",
           "subheading": "Support your customers on their preferred channel.",
-          "content": "Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, WhatsApp and more. Meet your customers where they are."
+          "content": "Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, <a href='/in/whatsapp'>WhatsApp</a> and more. Meet your customers where they are."
         },
         {
           "img": "/img/feature/campaign-draggable-flow.svg",
@@ -1280,7 +1280,7 @@
           "img": "/img/feature/otp-support-multiple-channels.svg",
           "heading": "Support multiple channels",
           "subheading": "Build customer trust and increase conversion across multiple channels",
-          "content": "Authenticate your users on channels they prefer. We support multiple channels including SMS, email, Voice, WhatsApp giving businesses and users the flexibility they need to authenticate."
+          "content": "Authenticate your users on channels they prefer. We support multiple channels including SMS, email, Voice, <a href='/in/whatsapp'>WhatsApp</a> giving businesses and users the flexibility they need to authenticate."
         }
       ],
       "morefeatures": [
@@ -4508,7 +4508,7 @@
           "img": "/img/feature/campaign-multi-channel-support.svg",
           "heading": "Multi channel support",
           "subheading": "Support your customers on their preferred channel.",
-          "content": "Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, WhatsApp and more. Meet your customers where they are."
+          "content": "Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, <a href='/whatsapp'>WhatsApp</a>WhatsApp</a> and more. Meet your customers where they are."
         },
         {
           "img": "/img/feature/campaign-draggable-flow.svg",
@@ -4614,7 +4614,7 @@
           "img": "/img/feature/otp-support-multiple-channels.svg",
           "heading": "Support multiple channels",
           "subheading": "Build customer trust and increase conversion across multiple channels",
-          "content": "Authenticate your users on channels they prefer. We support multiple channels including SMS, email, Voice, WhatsApp giving businesses and users the flexibility they need to authenticate."
+          "content": "Authenticate your users on channels they prefer. We support multiple channels including SMS, email, Voice, <a href='/in/whatsapp'>WhatsApp</a> giving businesses and users the flexibility they need to authenticate."
         }
       ],
       "morefeatures": [

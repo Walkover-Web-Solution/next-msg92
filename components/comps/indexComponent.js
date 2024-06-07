@@ -7,7 +7,7 @@ import FaqSection from '../faqSection/faqSection';
 import faqData from '@/data/indexfaq.json';
 import { MdEast } from 'react-icons/md';
 
-const indexComp = ({ pageData, params }) => {
+const indexComp = ({ pageData, params, pricingPath }) => {
     const path = params ? params?.country : '';
     return (
         <>
@@ -485,7 +485,7 @@ const indexComp = ({ pageData, params }) => {
 
             <Seo path={path} pageData={'index'} />
 
-            <PreFooter />
+            <PreFooter pricingPath={pricingPath} />
         </>
     );
 };

@@ -293,17 +293,30 @@ class SignUp extends React.Component {
             .then((response) => response?.json())
             .then((result) => {
                 this.setSession(result);
-                this.setState({ sessionDetails: result?.data?.sessionDetails, isLoading: false });
-                if (result?.status === 'success') {
-                    if (result?.data?.data?.nextStep === 'createNewCompany') {
+                this.setState({
+                    sessionDetails: result?.data?.sessionDetails,
+                    isLoading: false,
+                    emailAccessToken: null,
+                    smsAccessToken: null,
+                    githubCode: null,
+                    githubState: null,
+                    smsSuccessMessage: null,
+                    emailSuccessMessage: null,
+                    smsIdentifierBackup: this.state.smsIdentifier || "",
+                    emailIdentifierBackup: this.state.emailIdentifier || "",
+                    smsIdentifier: null,
+                    emailIdentifier: null,
+                });
+                if (result?.status === "success") {
+                    if (result?.data?.data?.nextStep === "createNewCompany") {
                         this.setStep(3);
-                    } else if (result?.data?.data?.nextStep === 'loginIntoExistingAccount') {
+                    } else if (result?.data?.data?.nextStep === "loginIntoExistingAccount") {
                         this.setState({ isLoading: true });
                         location.href = SUCCESS_REDIRECTION_URL?.replace(
-                            ':session',
+                            ":session",
                             result?.data?.sessionDetails?.PHPSESSID
                         );
-                    } else if (result?.data?.data?.nextStep === 'hasInvitations') {
+                    } else if (result?.data?.data?.nextStep === "hasInvitations") {
                         this.setState({ invitations: result?.data?.data?.invitations });
                         this.setStep(3);
                     }
@@ -317,7 +330,19 @@ class SignUp extends React.Component {
                 }
             })
             .catch((err) => {
-                this.setState({ isLoading: false });
+                this.setState({
+                    isLoading: false,
+                    emailAccessToken: null,
+                    smsAccessToken: null,
+                    githubCode: null,
+                    githubState: null,
+                    smsSuccessMessage: null,
+                    emailSuccessMessage: null,
+                    smsIdentifierBackup: this.state.smsIdentifier || "",
+                    emailIdentifierBackup: this.state.emailIdentifier || "",
+                    smsIdentifier: null,
+                    emailIdentifier: null,
+                });
                 console.error(err);
             });
     };

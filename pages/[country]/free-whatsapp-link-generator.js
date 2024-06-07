@@ -1,8 +1,9 @@
 // Parent Component
 import React, { useEffect } from "react";
 import PreFooter from "@/components/preFooter";
-const ParentComponent = ({ pricingPath }) => {
+const ParentComponent = ({ pricingPath, path }) => {
   //const data = json.global.hello;  
+  console.log('path', path);
   useEffect(() => {
     var hasChild = document.getElementById("qrcode").hasChildNodes();
     
@@ -649,8 +650,7 @@ const ParentComponent = ({ pricingPath }) => {
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div className="accordion-body">
-                    Yes, MSG91 WhatsApp link generators allow you to add a prefilled message 
-                    along with the phone number.
+                    Yes, absolutely. When utilizing the <a href={`${path}/whatsapp`}>WhatsApp API</a>, you can include a pre-filled message along with the phone number in the link. Services like MSG91 offer WhatsApp link generators that allow you to easily create these links.                    
                     </div>
                   </div>
                 </div>

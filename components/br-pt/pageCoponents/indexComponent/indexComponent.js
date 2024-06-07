@@ -6,7 +6,7 @@ import Image from "next/image";
 import FaqSection from "@/components/faqSection/faqSection";
 import GetStartedSection from "@/components/getStartedSection/getStartedSection";
 
-export default function IndexComponent({ pageData, pathArray }) {
+export default function IndexComponent({ pageData, pricingPath, pathArray}) {
     return (
         <>
             <div className="container bg-gray-100 section-y">
@@ -258,7 +258,7 @@ export default function IndexComponent({ pageData, pathArray }) {
                     </div>
                 </div>
             )}
-            <GetStartedSection pathArray={pathArray} />
+            <GetStartedSection pricingPath={pricingPath} pathArray={pathArray} />
             {pageData?.faq?.content.length > 0 && (
                 <div className="container">
                     <FaqSection faqData={pageData?.faq?.content} faq={pageData?.faq} />

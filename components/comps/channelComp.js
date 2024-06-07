@@ -263,7 +263,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
         })}
       </div>
       <Seo path={path} pageData={pageData.pagename} />      
-      <GetStartedSection/>
+      <GetStartedSection pricingPath={pricingPath} />
       <div>
       <div
           className="modal fade"

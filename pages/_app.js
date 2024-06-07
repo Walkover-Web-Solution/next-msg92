@@ -15,6 +15,9 @@ export default function App({ Component, pageProps }) {
     const router = useRouter();
     var showNavbar = false;
     var browserPath = router.asPath;
+    const rawPath = router.asPath
+
+    
 
     var rawPathArray = browserPath.split("?");
     var pathArray = rawPathArray[0].split("/");    
@@ -34,7 +37,9 @@ export default function App({ Component, pageProps }) {
         browserPath = result ? result[0] : browserPath;
     }
 
-    var path = browserPath.split("/")[1];
+    var path = browserPath.split("/")[1];    
+    path = (path?.length === 2 ||  path === 'br-pt' || path === '?') ? `/${path}` : "";
+    
 
     const products = [
         "/sms",
@@ -54,7 +59,7 @@ export default function App({ Component, pageProps }) {
     ];
     var pageSlug = Object.keys(router.query).length ? `/${router.query.pageslug}` : browserPath;
     var pricingPath = products.includes(pageSlug) ? `/pricing${pageSlug}` : `/pricing/hello`;
-
+    
     const year = new Date().getFullYear();
     if (!["/signin", "/signup", "/github-auth", "/github-auth-token", "/outlook-token"].includes(browserPath)) {
         showNavbar = true;
@@ -74,6 +79,7 @@ export default function App({ Component, pageProps }) {
         setUtm();
         
         if (Object.keys(availableCountries).includes(path)) {
+            //console.log('_app.js:80',  path);
             setCookie("country_code", path, 30);
         }
         var cc = getCookie("country_code");
@@ -91,6 +97,8 @@ export default function App({ Component, pageProps }) {
             }
         });
     }, []);
+
+
     return (
         <>
             <Script
@@ -164,7 +172,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <Navbar
                     browserPath={browserPath}
                     pricingPath={pricingPath}
-                    appPath={browserPathMeta}
+                    path={path}
                     pageSlug={pageSlug}
                     pathArray={pathArray}                    
                 />
@@ -176,6 +184,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 browserPathCase={browserPathCase}
                 pricingPath={pricingPath}
                 pathArray={pathArray}
+                rawPath={rawPath}
             />
             {showNavbar && <Footer path={path} year={year} />}
             <Toastify />

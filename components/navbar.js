@@ -12,8 +12,11 @@ import { getCookie } from "./utils";
 import content from '@/data/pageContent/br-pt.json';
 import contentGlobal from '@/data/pageContent/global.json';
 
-const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {  
-  const compData = browserPath === '/br-pt' ? content.components.navbar : contentGlobal.components.navbar; 
+const navbar = ({ browserPath, pricingPath, path, pageSlug, pathArray}) => {    
+  
+  const compData = browserPath === '/br-pt' ? content.components.navbar : contentGlobal.components.navbar;  
+  const home = path.length === 3 || path === '/br-pt' ? path : '/';
+
    const products = {
     '/sms': 'SMS',
     '/email': 'Email', 
@@ -29,8 +32,6 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
     '/knowledgebase': 'KnowledgeBase', 
   }
   var title = products[pageSlug];
-  var path = browserPath.split("/")[1];
-  //path = path.length === 2 ? "/" + path : "";  
   
   const [showOverlay, setShowOverlay] = useState(false);
   const [countryCode, setCountryCode] = useState('');
@@ -143,7 +144,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
           </div>
           
           <div className="msg91-logo-cont  align-items-center justify-content-center d-flex" id="main-logo">
-            <a href={`${path}/`}>
+            <a href={`${home}`}>
               <img className="msg91-logo ms-5 ps-5" src="/img/logo.svg" alt="MSG91" />
             </a>
           </div>
@@ -171,7 +172,7 @@ const navbar = ({ browserPath, pricingPath, appPath, pageSlug, pathArray}) => {
         </div>
         <div className="container relative d-md-none d-flex align-items-center justify-content-between c-fs-4 c-fw-m nav-menu-cont">
           <div className="msg91-logo-cont  align-items-center justify-content-center d-flex">
-            <Link href={`${path}/`}>
+            <Link href={`${home}`}>
               <img className="msg91-logo" src="/img/logo.svg" alt="MSG91" />
             </Link>
           </div>

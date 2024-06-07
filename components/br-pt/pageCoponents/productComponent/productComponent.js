@@ -2,7 +2,7 @@ import CodeComponent from "@/components/codeComponent/codeComponent";
 import GetStartedSection from "@/components/getStartedSection/getStartedSection";
 import TrustedBy from "@/components/trustedby";
 
-export default function productComponent({ pageData, pathArray }) {
+export default function productComponent({ pageData, pathArray, pricingPath }) {
     var i = 0;
     return (
         <>
@@ -69,7 +69,7 @@ export default function productComponent({ pageData, pathArray }) {
                 })}
             </div>
 
-            <GetStartedSection pathArray={pathArray} />
+            <GetStartedSection pricingPath={pricingPath} pathArray={pathArray} />
         </>
     );
 }

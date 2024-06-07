@@ -1,8 +1,7 @@
 import link from "next/link";
 import { useRouter } from "next/router";
 import { InlineWidget, PopupButton } from "react-calendly";
-const Footer = ({path, year}) => {  
-  path = (path?.length == 2)? '/'+path : '';
+const Footer = ({path, year}) => {    
   return (
     <>
       <div className="px-2 footer pt-5">
@@ -289,7 +288,7 @@ const Footer = ({path, year}) => {
                   Cookie policy
                 </a>
               </div>
-              <div className="mt-4 mt-lg-0">
+              {/* <div className="mt-4 mt-lg-0">
                 <span className="c-fs-5">
                   A product of{" "}
                   <img
@@ -306,10 +305,11 @@ const Footer = ({path, year}) => {
                     Walkover
                   </a>
                 </span>
-              </div>
+              </div> */}
             </div>
             <div className="c-fs-7 copyright mt-3 text-white">
-              Copyright 2008-{year}, Superheroes, Inc. | All rights reserved.
+              {/* Copyright 2008-{year}, Superheroes, Inc. | All rights reserved. */}
+              Copyright 2008-{year}, MSG91 Ltd. | All rights reserved.              
             </div>
           </div>
         </div>
