@@ -440,34 +440,40 @@
       "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
-          "img": "/img/feature/whatsapp-support-base64.svg",
-          "heading": "Support Base64",
-          "subheading": "Send the body in JSON and leave the rest to us.",
-          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+          "img": "/img/feature/whatsapp-chatBot.svg",
+          "heading": "Whatsapp ChatBot",
+          "subheading": "",
+          "content": "A WhatsApp chatbot automates customer interactions with pre-programmed responses and workflows. It can handle common queries, schedule appointments, track your order, offer customer support, and work 24/7. Chatbots use keywords and quick replies to engage customers and can escalate complex issues to human agents, ensuring a seamless experience."
         },
         {
-          "img": "/img/feature/whatsapp-2way-communication.svg",
-          "heading": "2way communication",
-          "subheading": "Say hello to go on HELLO.",
-          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+          "img": "/img/feature/whatsapp-integrations.svg",
+          "heading": "Whatsapp Integrations",
+          "subheading": "",
+          "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and more."
         },
         {
-          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
-          "heading": "Manage template inside panel",
-          "subheading": "Create and manage your templates right here.",
-          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+          "img": "/img/feature/whatsapp-zero-charg-on-click.svg",
+          "heading": "Zero Charge on Click to WhatsApp Ads",
+          "subheading": "",
+          "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget-Friendly."
         },
         {
-          "img": "/img/feature/whatsapp-analytics.svg",
-          "heading": "Analytics",
-          "subheading": "Get graphical insights into your business messages.",
-          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+          "img": "/img/feature/whatsapp-catalog.svg",
+          "heading": "Whatsapp Catalog",
+          "subheading": "",
+          "content": "WhatsApp's catalog feature lets businesses showcase products and services within the app. It serves as a digital storefront, allowing customers to browse, view details, and make inquiries without leaving WhatsApp. Businesses can organize items, include images, prices, and descriptions, and update inventory in real time, making it easier for customers to explore and shop."
         },
         {
-          "img": "/img/feature/whatsapp-export-logs.svg",
-          "heading": "Export Logs",
-          "subheading": "Get individual outbound and inbound messages logs.",
-          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
+          "img": "/img/feature/whatsapp-campaign.svg",
+          "heading": "Broadcast / Campaign",
+          "subheading": "",
+          "content": "WhatsApp's broadcast lets you send the same message to multiple contacts at once, ideal for updates and announcements. Campaigns, available in the WhatsApp Business API, enable targeted marketing with automated, personalized messages. Both help businesses reach more people efficiently."
+        },
+        {
+          "img": "/img/feature/whatsapp-click-counts.svg",
+          "heading": "Click Counts",
+          "subheading": "",
+          "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
         }
       ],
       "morefeatures": [
@@ -992,34 +998,40 @@
       "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
-          "img": "/img/feature/whatsapp-support-base64.svg",
-          "heading": "Support Base64",
-          "subheading": "Send the body in JSON and leave the rest to us.",
-          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+          "img": "/img/feature/whatsapp-chatBot.svg",
+          "heading": "Whatsapp ChatBot",
+          "subheading": "",
+          "content": "A WhatsApp chatbot automates customer interactions with pre-programmed responses and workflows. It can handle common queries, schedule appointments, track your order, offer customer support, and work 24/7. Chatbots use keywords and quick replies to engage customers and can escalate complex issues to human agents, ensuring a seamless experience."
         },
         {
-          "img": "/img/feature/whatsapp-2way-communication.svg",
-          "heading": "2way communication",
-          "subheading": "Say hello to go on HELLO.",
-          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+          "img": "/img/feature/whatsapp-integrations.svg",
+          "heading": "Whatsapp Integrations",
+          "subheading": "",
+          "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and more."
         },
         {
-          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
-          "heading": "Manage template inside panel",
-          "subheading": "Create and manage your templates right here.",
-          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+          "img": "/img/feature/whatsapp-zero-charg-on-click.svg",
+          "heading": "Zero Charge on Click to WhatsApp Ads",
+          "subheading": "",
+          "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget-Friendly."
         },
         {
-          "img": "/img/feature/whatsapp-analytics.svg",
-          "heading": "Analytics",
-          "subheading": "Get graphical insights into your business messages.",
-          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+          "img": "/img/feature/whatsapp-catalog.svg",
+          "heading": "Whatsapp Catalog",
+          "subheading": "",
+          "content": "WhatsApp's catalog feature lets businesses showcase products and services within the app. It serves as a digital storefront, allowing customers to browse, view details, and make inquiries without leaving WhatsApp. Businesses can organize items, include images, prices, and descriptions, and update inventory in real time, making it easier for customers to explore and shop."
         },
         {
-          "img": "/img/feature/whatsapp-export-logs.svg",
-          "heading": "Export Logs",
-          "subheading": "Get individual outbound and inbound messages logs.",
-          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
+          "img": "/img/feature/whatsapp-campaign.svg",
+          "heading": "Broadcast / Campaign",
+          "subheading": "",
+          "content": "WhatsApp's broadcast lets you send the same message to multiple contacts at once, ideal for updates and announcements. Campaigns, available in the WhatsApp Business API, enable targeted marketing with automated, personalized messages. Both help businesses reach more people efficiently."
+        },
+        {
+          "img": "/img/feature/whatsapp-click-counts.svg",
+          "heading": "Click Counts",
+          "subheading": "",
+          "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
         }
       ],
       "morefeatures": [
@@ -1544,34 +1556,40 @@
       "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
-          "img": "/img/feature/whatsapp-support-base64.svg",
-          "heading": "Support Base64",
-          "subheading": "Send the body in JSON and leave the rest to us.",
-          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+          "img": "/img/feature/whatsapp-chatBot.svg",
+          "heading": "Whatsapp ChatBot",
+          "subheading": "",
+          "content": "Automated interactions on the messaging platform, providing instant responses, handling customer inquiries, and performing tasks such as customer support, order tracking,place order and providing information. It enhances customer service efficiency and availability."
         },
         {
-          "img": "/img/feature/whatsapp-2way-communication.svg",
-          "heading": "2way communication",
-          "subheading": "Say hello to go on HELLO.",
-          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+          "img": "/img/feature/whatsapp-integrations.svg",
+          "heading": "Whatsapp Integrations",
+          "subheading": "",
+          "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and more."
         },
         {
-          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
-          "heading": "Manage template inside panel",
-          "subheading": "Create and manage your templates right here.",
-          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+          "img": "/img/feature/whatsapp-zero-charg-on-click.svg",
+          "heading": "Zero Charge on Click to WhatsApp Ads",
+          "subheading": "",
+          "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget-Friendly."
         },
         {
-          "img": "/img/feature/whatsapp-analytics.svg",
-          "heading": "Analytics",
-          "subheading": "Get graphical insights into your business messages.",
-          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+          "img": "/img/feature/whatsapp-catalog.svg",
+          "heading": "Whatsapp Catalog",
+          "subheading": "",
+          "content": "WhatsApp's catalog feature lets businesses showcase products and services within the app. It serves as a digital storefront, allowing customers to browse, view details, and make inquiries without leaving WhatsApp. Businesses can organize items, include images, prices, and descriptions, and update inventory in real time, making it easier for customers to explore and shop."
         },
         {
-          "img": "/img/feature/whatsapp-export-logs.svg",
-          "heading": "Export Logs",
-          "subheading": "Get individual outbound and inbound messages logs.",
-          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
+          "img": "/img/feature/whatsapp-campaign.svg",
+          "heading": "Broadcast / Campaign",
+          "subheading": "",
+          "content": "WhatsApp's broadcast lets you send the same message to multiple contacts at once, ideal for updates and announcements. Campaigns, available in the WhatsApp Business API, enable targeted marketing with automated, personalized messages. Both help businesses reach more people efficiently."
+        },
+        {
+          "img": "/img/feature/whatsapp-click-counts.svg",
+          "heading": "Click Counts",
+          "subheading": "",
+          "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
         }
       ],
       "morefeatures": [
@@ -2102,34 +2120,40 @@
       "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
-          "img": "/img/feature/whatsapp-support-base64.svg",
-          "heading": "Support Base64",
-          "subheading": "Send the body in JSON and leave the rest to us.",
-          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+          "img": "/img/feature/whatsapp-chatBot.svg",
+          "heading": "Whatsapp ChatBot",
+          "subheading": "",
+          "content": "A WhatsApp chatbot automates customer interactions with pre-programmed responses and workflows. It can handle common queries, schedule appointments, track your order, offer customer support, and work 24/7. Chatbots use keywords and quick replies to engage customers and can escalate complex issues to human agents, ensuring a seamless experience."
         },
         {
-          "img": "/img/feature/whatsapp-2way-communication.svg",
-          "heading": "2way communication",
-          "subheading": "Say hello to go on HELLO.",
-          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+          "img": "/img/feature/whatsapp-integrations.svg",
+          "heading": "Whatsapp Integrations",
+          "subheading": "",
+          "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and more."
         },
         {
-          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
-          "heading": "Manage template inside panel",
-          "subheading": "Create and manage your templates right here.",
-          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+          "img": "/img/feature/whatsapp-zero-charg-on-click.svg",
+          "heading": "Zero Charge on Click to WhatsApp Ads",
+          "subheading": "",
+          "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget-Friendly."
         },
         {
-          "img": "/img/feature/whatsapp-analytics.svg",
-          "heading": "Analytics",
-          "subheading": "Get graphical insights into your business messages.",
-          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+          "img": "/img/feature/whatsapp-catalog.svg",
+          "heading": "Whatsapp Catalog",
+          "subheading": "",
+          "content": "WhatsApp's catalog feature lets businesses showcase products and services within the app. It serves as a digital storefront, allowing customers to browse, view details, and make inquiries without leaving WhatsApp. Businesses can organize items, include images, prices, and descriptions, and update inventory in real time, making it easier for customers to explore and shop."
         },
         {
-          "img": "/img/feature/whatsapp-export-logs.svg",
-          "heading": "Export Logs",
-          "subheading": "Get individual outbound and inbound messages logs.",
-          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
+          "img": "/img/feature/whatsapp-campaign.svg",
+          "heading": "Broadcast / Campaign",
+          "subheading": "",
+          "content": "WhatsApp's broadcast lets you send the same message to multiple contacts at once, ideal for updates and announcements. Campaigns, available in the WhatsApp Business API, enable targeted marketing with automated, personalized messages. Both help businesses reach more people efficiently."
+        },
+        {
+          "img": "/img/feature/whatsapp-click-counts.svg",
+          "heading": "Click Counts",
+          "subheading": "",
+          "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
         }
       ],
       "morefeatures": [
@@ -2660,34 +2684,40 @@
       "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
-          "img": "/img/feature/whatsapp-support-base64.svg",
-          "heading": "Support Base64",
-          "subheading": "Send the body in JSON and leave the rest to us.",
-          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+          "img": "/img/feature/whatsapp-chatBot.svg",
+          "heading": "Whatsapp ChatBot",
+          "subheading": "",
+          "content": "A WhatsApp chatbot automates customer interactions with pre-programmed responses and workflows. It can handle common queries, schedule appointments, track your order, offer customer support, and work 24/7. Chatbots use keywords and quick replies to engage customers and can escalate complex issues to human agents, ensuring a seamless experience."
         },
         {
-          "img": "/img/feature/whatsapp-2way-communication.svg",
-          "heading": "2way communication",
-          "subheading": "Say hello to go on HELLO.",
-          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+          "img": "/img/feature/whatsapp-integrations.svg",
+          "heading": "Whatsapp Integrations",
+          "subheading": "",
+          "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and more."
         },
         {
-          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
-          "heading": "Manage template inside panel",
-          "subheading": "Create and manage your templates right here.",
-          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+          "img": "/img/feature/whatsapp-zero-charg-on-click.svg",
+          "heading": "Zero Charge on Click to WhatsApp Ads",
+          "subheading": "",
+          "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget-Friendly."
         },
         {
-          "img": "/img/feature/whatsapp-analytics.svg",
-          "heading": "Analytics",
-          "subheading": "Get graphical insights into your business messages.",
-          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+          "img": "/img/feature/whatsapp-catalog.svg",
+          "heading": "Whatsapp Catalog",
+          "subheading": "",
+          "content": "WhatsApp's catalog feature lets businesses showcase products and services within the app. It serves as a digital storefront, allowing customers to browse, view details, and make inquiries without leaving WhatsApp. Businesses can organize items, include images, prices, and descriptions, and update inventory in real time, making it easier for customers to explore and shop."
         },
         {
-          "img": "/img/feature/whatsapp-export-logs.svg",
-          "heading": "Export Logs",
-          "subheading": "Get individual outbound and inbound messages logs.",
-          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
+          "img": "/img/feature/whatsapp-campaign.svg",
+          "heading": "Broadcast / Campaign",
+          "subheading": "",
+          "content": "WhatsApp's broadcast lets you send the same message to multiple contacts at once, ideal for updates and announcements. Campaigns, available in the WhatsApp Business API, enable targeted marketing with automated, personalized messages. Both help businesses reach more people efficiently."
+        },
+        {
+          "img": "/img/feature/whatsapp-click-counts.svg",
+          "heading": "Click Counts",
+          "subheading": "",
+          "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
         }
       ],
       "morefeatures": [
@@ -3214,34 +3244,40 @@
       "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
-          "img": "/img/feature/whatsapp-support-base64.svg",
-          "heading": "Support Base64",
-          "subheading": "Send the body in JSON and leave the rest to us.",
-          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+          "img": "/img/feature/whatsapp-chatBot.svg",
+          "heading": "Whatsapp ChatBot",
+          "subheading": "",
+          "content": "A WhatsApp chatbot automates customer interactions with pre-programmed responses and workflows. It can handle common queries, schedule appointments, track your order, offer customer support, and work 24/7. Chatbots use keywords and quick replies to engage customers and can escalate complex issues to human agents, ensuring a seamless experience."
         },
         {
-          "img": "/img/feature/whatsapp-2way-communication.svg",
-          "heading": "2way communication",
-          "subheading": "Say hello to go on HELLO.",
-          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+          "img": "/img/feature/whatsapp-integrations.svg",
+          "heading": "Whatsapp Integrations",
+          "subheading": "",
+          "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and more."
         },
         {
-          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
-          "heading": "Manage template inside panel",
-          "subheading": "Create and manage your templates right here.",
-          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+          "img": "/img/feature/whatsapp-zero-charg-on-click.svg",
+          "heading": "Zero Charge on Click to WhatsApp Ads",
+          "subheading": "",
+          "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget-Friendly."
         },
         {
-          "img": "/img/feature/whatsapp-analytics.svg",
-          "heading": "Analytics",
-          "subheading": "Get graphical insights into your business messages.",
-          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+          "img": "/img/feature/whatsapp-catalog.svg",
+          "heading": "Whatsapp Catalog",
+          "subheading": "",
+          "content": "WhatsApp's catalog feature lets businesses showcase products and services within the app. It serves as a digital storefront, allowing customers to browse, view details, and make inquiries without leaving WhatsApp. Businesses can organize items, include images, prices, and descriptions, and update inventory in real time, making it easier for customers to explore and shop."
         },
         {
-          "img": "/img/feature/whatsapp-export-logs.svg",
-          "heading": "Export Logs",
-          "subheading": "Get individual outbound and inbound messages logs.",
-          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
+          "img": "/img/feature/whatsapp-campaign.svg",
+          "heading": "Broadcast / Campaign",
+          "subheading": "",
+          "content": "WhatsApp's broadcast lets you send the same message to multiple contacts at once, ideal for updates and announcements. Campaigns, available in the WhatsApp Business API, enable targeted marketing with automated, personalized messages. Both help businesses reach more people efficiently."
+        },
+        {
+          "img": "/img/feature/whatsapp-click-counts.svg",
+          "heading": "Click Counts",
+          "subheading": "",
+          "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
         }
       ],
       "morefeatures": [
@@ -3765,34 +3801,40 @@
       "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
-          "img": "/img/feature/whatsapp-support-base64.svg",
-          "heading": "Support Base64",
-          "subheading": "Send the body in JSON and leave the rest to us.",
-          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+          "img": "/img/feature/whatsapp-chatBot.svg",
+          "heading": "Whatsapp ChatBot",
+          "subheading": "",
+          "content": "A WhatsApp chatbot automates customer interactions with pre-programmed responses and workflows. It can handle common queries, schedule appointments, track your order, offer customer support, and work 24/7. Chatbots use keywords and quick replies to engage customers and can escalate complex issues to human agents, ensuring a seamless experience."
         },
         {
-          "img": "/img/feature/whatsapp-2way-communication.svg",
-          "heading": "2way communication",
-          "subheading": "Say hello to go on HELLO.",
-          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+          "img": "/img/feature/whatsapp-integrations.svg",
+          "heading": "Whatsapp Integrations",
+          "subheading": "",
+          "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and more."
         },
         {
-          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
-          "heading": "Manage template inside panel",
-          "subheading": "Create and manage your templates right here.",
-          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+          "img": "/img/feature/whatsapp-zero-charg-on-click.svg",
+          "heading": "Zero Charge on Click to WhatsApp Ads",
+          "subheading": "",
+          "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget-Friendly."
         },
         {
-          "img": "/img/feature/whatsapp-analytics.svg",
-          "heading": "Analytics",
-          "subheading": "Get graphical insights into your business messages.",
-          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+          "img": "/img/feature/whatsapp-catalog.svg",
+          "heading": "Whatsapp Catalog",
+          "subheading": "",
+          "content": "WhatsApp's catalog feature lets businesses showcase products and services within the app. It serves as a digital storefront, allowing customers to browse, view details, and make inquiries without leaving WhatsApp. Businesses can organize items, include images, prices, and descriptions, and update inventory in real time, making it easier for customers to explore and shop."
         },
         {
-          "img": "/img/feature/whatsapp-export-logs.svg",
-          "heading": "Export Logs",
-          "subheading": "Get individual outbound and inbound messages logs.",
-          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
+          "img": "/img/feature/whatsapp-campaign.svg",
+          "heading": "Broadcast / Campaign",
+          "subheading": "",
+          "content": "WhatsApp's broadcast lets you send the same message to multiple contacts at once, ideal for updates and announcements. Campaigns, available in the WhatsApp Business API, enable targeted marketing with automated, personalized messages. Both help businesses reach more people efficiently."
+        },
+        {
+          "img": "/img/feature/whatsapp-click-counts.svg",
+          "heading": "Click Counts",
+          "subheading": "",
+          "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
         }
       ],
       "morefeatures": [
@@ -4320,34 +4362,40 @@
       "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
-          "img": "/img/feature/whatsapp-support-base64.svg",
-          "heading": "Support Base64",
-          "subheading": "Send the body in JSON and leave the rest to us.",
-          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+          "img": "/img/feature/whatsapp-chatBot.svg",
+          "heading": "Whatsapp ChatBot",
+          "subheading": "",
+          "content": "A WhatsApp chatbot automates customer interactions with pre-programmed responses and workflows. It can handle common queries, schedule appointments, track your order, offer customer support, and work 24/7. Chatbots use keywords and quick replies to engage customers and can escalate complex issues to human agents, ensuring a seamless experience."
         },
         {
-          "img": "/img/feature/whatsapp-2way-communication.svg",
-          "heading": "2way communication",
-          "subheading": "Say hello to go on HELLO.",
-          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+          "img": "/img/feature/whatsapp-integrations.svg",
+          "heading": "Whatsapp Integrations",
+          "subheading": "",
+          "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and more."
         },
         {
-          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
-          "heading": "Manage template inside panel",
-          "subheading": "Create and manage your templates right here.",
-          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+          "img": "/img/feature/whatsapp-zero-charg-on-click.svg",
+          "heading": "Zero Charge on Click to WhatsApp Ads",
+          "subheading": "",
+          "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget-Friendly."
         },
         {
-          "img": "/img/feature/whatsapp-analytics.svg",
-          "heading": "Analytics",
-          "subheading": "Get graphical insights into your business messages.",
-          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+          "img": "/img/feature/whatsapp-catalog.svg",
+          "heading": "Whatsapp Catalog",
+          "subheading": "",
+          "content": "WhatsApp's catalog feature lets businesses showcase products and services within the app. It serves as a digital storefront, allowing customers to browse, view details, and make inquiries without leaving WhatsApp. Businesses can organize items, include images, prices, and descriptions, and update inventory in real time, making it easier for customers to explore and shop."
         },
         {
-          "img": "/img/feature/whatsapp-export-logs.svg",
-          "heading": "Export Logs",
-          "subheading": "Get individual outbound and inbound messages logs.",
-          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
+          "img": "/img/feature/whatsapp-campaign.svg",
+          "heading": "Broadcast / Campaign",
+          "subheading": "",
+          "content": "WhatsApp's broadcast lets you send the same message to multiple contacts at once, ideal for updates and announcements. Campaigns, available in the WhatsApp Business API, enable targeted marketing with automated, personalized messages. Both help businesses reach more people efficiently."
+        },
+        {
+          "img": "/img/feature/whatsapp-click-counts.svg",
+          "heading": "Click Counts",
+          "subheading": "",
+          "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
         }
       ],
       "morefeatures": [
@@ -4878,34 +4926,40 @@
       "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
       "features": [
         {
-          "img": "/img/feature/whatsapp-support-base64.svg",
-          "heading": "Support Base64",
-          "subheading": "Send the body in JSON and leave the rest to us.",
-          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+          "img": "/img/feature/whatsapp-chatBot.svg",
+          "heading": "Whatsapp ChatBot",
+          "subheading": "",
+          "content": "A WhatsApp chatbot automates customer interactions with pre-programmed responses and workflows. It can handle common queries, schedule appointments, track your order, offer customer support, and work 24/7. Chatbots use keywords and quick replies to engage customers and can escalate complex issues to human agents, ensuring a seamless experience."
         },
         {
-          "img": "/img/feature/whatsapp-2way-communication.svg",
-          "heading": "2way communication",
-          "subheading": "Say hello to go on HELLO.",
-          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+          "img": "/img/feature/whatsapp-integrations.svg",
+          "heading": "Whatsapp Integrations",
+          "subheading": "",
+          "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and more."
         },
         {
-          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
-          "heading": "Manage template inside panel",
-          "subheading": "Create and manage your templates right here.",
-          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+          "img": "/img/feature/whatsapp-zero-charg-on-click.svg",
+          "heading": "Zero Charge on Click to WhatsApp Ads",
+          "subheading": "",
+          "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget-Friendly."
         },
         {
-          "img": "/img/feature/whatsapp-analytics.svg",
-          "heading": "Analytics",
-          "subheading": "Get graphical insights into your business messages.",
-          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+          "img": "/img/feature/whatsapp-catalog.svg",
+          "heading": "Whatsapp Catalog",
+          "subheading": "",
+          "content": "WhatsApp's catalog feature lets businesses showcase products and services within the app. It serves as a digital storefront, allowing customers to browse, view details, and make inquiries without leaving WhatsApp. Businesses can organize items, include images, prices, and descriptions, and update inventory in real time, making it easier for customers to explore and shop."
         },
         {
-          "img": "/img/feature/whatsapp-export-logs.svg",
-          "heading": "Export Logs",
-          "subheading": "Get individual outbound and inbound messages logs.",
-          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
+          "img": "/img/feature/whatsapp-campaign.svg",
+          "heading": "Broadcast / Campaign",
+          "subheading": "",
+          "content": "WhatsApp's broadcast lets you send the same message to multiple contacts at once, ideal for updates and announcements. Campaigns, available in the WhatsApp Business API, enable targeted marketing with automated, personalized messages. Both help businesses reach more people efficiently."
+        },
+        {
+          "img": "/img/feature/whatsapp-click-counts.svg",
+          "heading": "Click Counts",
+          "subheading": "",
+          "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
         }
       ],
       "morefeatures": [

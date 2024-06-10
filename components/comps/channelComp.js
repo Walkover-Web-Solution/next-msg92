@@ -73,7 +73,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
             <button className="btn btn-lg btn-outline-dark c-fs-2 ms-4" data-bs-toggle="modal" data-bs-target="#whatsapp-meeting">Schedule a meeting</button>            
           )}
         </div>
-          <TrustedBy align={'center'} />
+          
         {pageData?.pagename !== 'Numbers' &&
           <div className='row justify-content-center'>
             <div className="code-wrp col-lg-8 col-md-8 col-10">
@@ -262,8 +262,14 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
           }
         })}
       </div>
+      
+
       <Seo path={path} pageData={pageData.pagename} />      
+
       <GetStartedSection pricingPath={pricingPath} />
+      
+      <TrustedBy align={'center'} />
+      
       <div>
       <div
           className="modal fade"
