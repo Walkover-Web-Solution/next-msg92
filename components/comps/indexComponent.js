@@ -29,7 +29,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                         <TrustedBy />
                     </div>
                     <div className="col-12 col-md-5 col-lg-5 col-sm-12 order-sm-0 hero-right">
-                        <img src="./img/home/banner.webp" className="hero-img" alt='girl using all the channels' />
+                        <img src="/img/home/banner.webp" className="hero-img" alt='girl using all the channels' />
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                             <a href="/hello" className="product-card hello-card flex-row text-dark mb-4">
                                 <div className="row">
                                     <div className="d-flex flex-column gap-3 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
-                                        <img src="./img/icon/hello.svg" className="pro-sec-ico" alt='hello icon' />
+                                        <img src="/img/icon/hello.svg" className="pro-sec-ico" alt='hello icon' />
                                         <div className="pre-heading c-fs-5">Contact center</div>
                                         <div className="pro-heading small-heading">Hello</div>
                                         <div className="product-content c-fs-4">
@@ -53,7 +53,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                                         </div>
                                     </div>
                                     <div className="product-img d-flex justify-content-end col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
-                                        <img src="./img/home/chats.svg" alt='hello chats' />
+                                        <img src="/img/home/chats.svg" alt='hello chats' />
                                     </div>
                                 </div>
                             </a>
@@ -63,7 +63,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                             <a href="/campaign" className="product-card campaign-card flex-row text-dark mb-4">
                                 <div className="row">
                                     <div className="d-flex flex-column gap-3 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
-                                        <img src="./img/icon/campaign.svg" className="pro-sec-ico" alt='campaign icon' />
+                                        <img src="/img/icon/campaign.svg" className="pro-sec-ico" alt='campaign icon' />
                                         <div className="pre-heading c-fs-5">Event Based Automation</div>
                                         <div className="pro-heading small-heading">Campaign</div>
                                         <div className="product-content c-fs-4">
@@ -75,7 +75,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                                         </div>
                                     </div>
                                     <div className="product-img d-flex justify-content-end col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
-                                        <img src="./img/home/campaign.svg" alt='campaign flow' />
+                                        <img src="/img/home/campaign.svg" alt='campaign flow' />
                                     </div>
                                 </div>
                             </a>
@@ -87,7 +87,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                             <a href="/segmento" className="product-card segmento-card flex-row text-dark mb-4">
                                 <div className="row">
                                     <div className="d-flex flex-column gap-3 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
-                                        <img src="./img/icon/segmento.svg" className="pro-sec-ico" alt='segmento icon' />
+                                        <img src="/img/icon/segmento.svg" className="pro-sec-ico" alt='segmento icon' />
                                         <div className="pre-heading c-fs-5">Customer data platform</div>
                                         <div className="pro-heading small-heading">Segmento</div>
                                         <div className="product-content c-fs-4">
@@ -99,7 +99,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                                         </div>
                                     </div>
                                     <div className="product-img col d-flex justify-content-end">
-                                        <img src="./img/home/segmento.webp" alt='segmento image' />
+                                        <img src="/img/home/segmento.webp" alt='segmento image' />
                                     </div>
                                 </div>
                             </a>
@@ -108,7 +108,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                             <a href="/otp" className="product-card otp-card flex-row text-dark mb-4">
                                 <div className="row">
                                     <div className="d-flex flex-column gap-3 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 align-items-start">
-                                        <img src="./img/icon/otp.svg" className="pro-sec-ico" alt='otp icon' />
+                                        <img src="/img/icon/otp.svg" className="pro-sec-ico" alt='otp icon' />
                                         <div className="pre-heading c-fs-5">INSTANT SECURE VERIFICATION</div>
                                         <div className="pro-heading small-heading">OTP</div>
                                         <div className="product-content c-fs-4">
@@ -120,7 +120,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                                         </div>
                                     </div>
                                     <div className="product-img col d-flex justify-content-end">
-                                        <img src="./img/home/otp.png"  alt='opt security image'/>
+                                        <img src="/img/home/otp.png"  alt='opt security image'/>
                                     </div>
                                 </div>
                             </a>
@@ -142,7 +142,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                             className="product-card chn-btn w-100 h-100 d-flex align-items-center justify-content-between p-4 text-dark c-fs-2 bg-light"
                         >
                             <div className="d-flex flex-column gap-3">
-                                <Image className="me-2" src="./img/icon/sms.svg" width={40} height={40} alt="cannels" />
+                                <Image className="me-2" src="/img/icon/sms.svg" width={40} height={40} alt="cannels" />
                                 <span className="c-fw-b">SMS</span>
                                 <div className="description c-fs-3">
                                     Transform your global communication with MSG91's reliable SMS services & APIs.
@@ -163,7 +163,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                             <div className="d-flex flex-column gap-3">
                                 <Image
                                     className="me-2"
-                                    src="./img/icon/email.svg"
+                                    src="/img/icon/email.svg"
                                     width={40}
                                     height={40}
                                     alt="cannels"
@@ -189,7 +189,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                             <div className="d-flex flex-column gap-3">
                                 <Image
                                     className="me-2"
-                                    src="./img/icon/whatsapp.svg"
+                                    src="/img/icon/whatsapp.svg"
                                     width={40}
                                     height={40}
                                     alt="cannels"
@@ -215,7 +215,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                             <div className="d-flex flex-column gap-3">
                                 <Image
                                     className="me-2"
-                                    src="./img/icon/voice.svg"
+                                    src="/img/icon/voice.svg"
                                     width={40}
                                     height={40}
                                     alt="cannels"
@@ -241,7 +241,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                             <div className="d-flex flex-column gap-3">
                                 <Image
                                     className="me-2"
-                                    src="./img/icon/numbers.svg"
+                                    src="/img/icon/numbers.svg"
                                     width={40}
                                     height={40}
                                     alt="cannels"
@@ -304,14 +304,14 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                         <div className="d-flex flex-column gap-3">
                             <div className="d-flex align-items-center">
                                 <span className="me-3">
-                                    <Image src="./img/icon/shorturl.svg" width={36} height={36} alt="short-url" />
+                                    <Image src="/img/icon/shorturl.svg" width={36} height={36} alt="short-url" />
                                 </span>
                                 <span className="heading c-head fw-bold">URL Shortner</span>
                             </div>
                             <div className="">
                                 <Image
                                     className="more-services-img col-12"
-                                    src="./img/short-url-img.svg"
+                                    src="/img/short-url-img.svg"
                                     width={336}
                                     height={212}
                                     alt="short-url-img"
@@ -342,7 +342,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                             <div className="d-flex align-items-center">
                                 <span className="me-3">
                                     <Image
-                                        src="./img/icon/knowledgebase.svg"
+                                        src="/img/icon/knowledgebase.svg"
                                         width={36}
                                         height={36}
                                         alt="knowledgebase"
@@ -353,7 +353,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                             <div className="">
                                 <Image
                                     className="more-service-img"
-                                    src="./img/knowledgebase-img.svg"
+                                    src="/img/knowledgebase-img.svg"
                                     width={336}
                                     height={212}
                                     alt="knowledgebase-img"
@@ -381,14 +381,14 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                         <div className="d-flex flex-column gap-3">
                             <div className="d-flex align-items-center">
                                 <span className="me-3">
-                                    <Image src="./img/icon/filehosting.svg" width={36} height={36} alt="File Hosting" />
+                                    <Image src="/img/icon/filehosting.svg" width={36} height={36} alt="File Hosting" />
                                 </span>
                                 <span className="heading c-head fw-bold">File Hosting</span>
                             </div>
                             <div className="">
                                 <Image
                                     className="more-services-img col-12"
-                                    src="./img/file-hosting-img.svg"
+                                    src="/img/file-hosting-img.svg"
                                     width={336}
                                     height={212}
                                     alt="filehosting-img"
