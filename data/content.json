@@ -474,6 +474,36 @@
           "heading": "Click Counts",
           "subheading": "",
           "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
+        },
+        {
+          "img": "/img/feature/whatsapp-support-base64.svg",
+          "heading": "Support Base64",
+          "subheading": "Send the body in JSON and leave the rest to us.",
+          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+        },
+        {
+          "img": "/img/feature/whatsapp-2way-communication.svg",
+          "heading": "2way communication",
+          "subheading": "Say hello to go on HELLO.",
+          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+        },
+        {
+          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
+          "heading": "Manage template inside panel",
+          "subheading": "Create and manage your templates right here.",
+          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+        },
+        {
+          "img": "/img/feature/whatsapp-analytics.svg",
+          "heading": "Analytics",
+          "subheading": "Get graphical insights into your business messages.",
+          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+        },
+        {
+          "img": "/img/feature/whatsapp-export-logs.svg",
+          "heading": "Export Logs",
+          "subheading": "Get individual outbound and inbound messages logs.",
+          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -1032,6 +1062,36 @@
           "heading": "Click Counts",
           "subheading": "",
           "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
+        },
+        {
+          "img": "/img/feature/whatsapp-support-base64.svg",
+          "heading": "Support Base64",
+          "subheading": "Send the body in JSON and leave the rest to us.",
+          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+        },
+        {
+          "img": "/img/feature/whatsapp-2way-communication.svg",
+          "heading": "2way communication",
+          "subheading": "Say hello to go on HELLO.",
+          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+        },
+        {
+          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
+          "heading": "Manage template inside panel",
+          "subheading": "Create and manage your templates right here.",
+          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+        },
+        {
+          "img": "/img/feature/whatsapp-analytics.svg",
+          "heading": "Analytics",
+          "subheading": "Get graphical insights into your business messages.",
+          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+        },
+        {
+          "img": "/img/feature/whatsapp-export-logs.svg",
+          "heading": "Export Logs",
+          "subheading": "Get individual outbound and inbound messages logs.",
+          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -1590,6 +1650,36 @@
           "heading": "Click Counts",
           "subheading": "",
           "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
+        },
+        {
+          "img": "/img/feature/whatsapp-support-base64.svg",
+          "heading": "Support Base64",
+          "subheading": "Send the body in JSON and leave the rest to us.",
+          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+        },
+        {
+          "img": "/img/feature/whatsapp-2way-communication.svg",
+          "heading": "2way communication",
+          "subheading": "Say hello to go on HELLO.",
+          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+        },
+        {
+          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
+          "heading": "Manage template inside panel",
+          "subheading": "Create and manage your templates right here.",
+          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+        },
+        {
+          "img": "/img/feature/whatsapp-analytics.svg",
+          "heading": "Analytics",
+          "subheading": "Get graphical insights into your business messages.",
+          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+        },
+        {
+          "img": "/img/feature/whatsapp-export-logs.svg",
+          "heading": "Export Logs",
+          "subheading": "Get individual outbound and inbound messages logs.",
+          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -2154,6 +2244,36 @@
           "heading": "Click Counts",
           "subheading": "",
           "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
+        },
+        {
+          "img": "/img/feature/whatsapp-support-base64.svg",
+          "heading": "Support Base64",
+          "subheading": "Send the body in JSON and leave the rest to us.",
+          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+        },
+        {
+          "img": "/img/feature/whatsapp-2way-communication.svg",
+          "heading": "2way communication",
+          "subheading": "Say hello to go on HELLO.",
+          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+        },
+        {
+          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
+          "heading": "Manage template inside panel",
+          "subheading": "Create and manage your templates right here.",
+          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+        },
+        {
+          "img": "/img/feature/whatsapp-analytics.svg",
+          "heading": "Analytics",
+          "subheading": "Get graphical insights into your business messages.",
+          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+        },
+        {
+          "img": "/img/feature/whatsapp-export-logs.svg",
+          "heading": "Export Logs",
+          "subheading": "Get individual outbound and inbound messages logs.",
+          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -2718,6 +2838,36 @@
           "heading": "Click Counts",
           "subheading": "",
           "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
+        },
+        {
+          "img": "/img/feature/whatsapp-support-base64.svg",
+          "heading": "Support Base64",
+          "subheading": "Send the body in JSON and leave the rest to us.",
+          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+        },
+        {
+          "img": "/img/feature/whatsapp-2way-communication.svg",
+          "heading": "2way communication",
+          "subheading": "Say hello to go on HELLO.",
+          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+        },
+        {
+          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
+          "heading": "Manage template inside panel",
+          "subheading": "Create and manage your templates right here.",
+          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+        },
+        {
+          "img": "/img/feature/whatsapp-analytics.svg",
+          "heading": "Analytics",
+          "subheading": "Get graphical insights into your business messages.",
+          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+        },
+        {
+          "img": "/img/feature/whatsapp-export-logs.svg",
+          "heading": "Export Logs",
+          "subheading": "Get individual outbound and inbound messages logs.",
+          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -3278,6 +3428,36 @@
           "heading": "Click Counts",
           "subheading": "",
           "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
+        },
+        {
+          "img": "/img/feature/whatsapp-support-base64.svg",
+          "heading": "Support Base64",
+          "subheading": "Send the body in JSON and leave the rest to us.",
+          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+        },
+        {
+          "img": "/img/feature/whatsapp-2way-communication.svg",
+          "heading": "2way communication",
+          "subheading": "Say hello to go on HELLO.",
+          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+        },
+        {
+          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
+          "heading": "Manage template inside panel",
+          "subheading": "Create and manage your templates right here.",
+          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+        },
+        {
+          "img": "/img/feature/whatsapp-analytics.svg",
+          "heading": "Analytics",
+          "subheading": "Get graphical insights into your business messages.",
+          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+        },
+        {
+          "img": "/img/feature/whatsapp-export-logs.svg",
+          "heading": "Export Logs",
+          "subheading": "Get individual outbound and inbound messages logs.",
+          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -3835,6 +4015,36 @@
           "heading": "Click Counts",
           "subheading": "",
           "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
+        },
+        {
+          "img": "/img/feature/whatsapp-support-base64.svg",
+          "heading": "Support Base64",
+          "subheading": "Send the body in JSON and leave the rest to us.",
+          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+        },
+        {
+          "img": "/img/feature/whatsapp-2way-communication.svg",
+          "heading": "2way communication",
+          "subheading": "Say hello to go on HELLO.",
+          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+        },
+        {
+          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
+          "heading": "Manage template inside panel",
+          "subheading": "Create and manage your templates right here.",
+          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+        },
+        {
+          "img": "/img/feature/whatsapp-analytics.svg",
+          "heading": "Analytics",
+          "subheading": "Get graphical insights into your business messages.",
+          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+        },
+        {
+          "img": "/img/feature/whatsapp-export-logs.svg",
+          "heading": "Export Logs",
+          "subheading": "Get individual outbound and inbound messages logs.",
+          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -4396,6 +4606,36 @@
           "heading": "Click Counts",
           "subheading": "",
           "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
+        },
+        {
+          "img": "/img/feature/whatsapp-support-base64.svg",
+          "heading": "Support Base64",
+          "subheading": "Send the body in JSON and leave the rest to us.",
+          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+        },
+        {
+          "img": "/img/feature/whatsapp-2way-communication.svg",
+          "heading": "2way communication",
+          "subheading": "Say hello to go on HELLO.",
+          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+        },
+        {
+          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
+          "heading": "Manage template inside panel",
+          "subheading": "Create and manage your templates right here.",
+          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+        },
+        {
+          "img": "/img/feature/whatsapp-analytics.svg",
+          "heading": "Analytics",
+          "subheading": "Get graphical insights into your business messages.",
+          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+        },
+        {
+          "img": "/img/feature/whatsapp-export-logs.svg",
+          "heading": "Export Logs",
+          "subheading": "Get individual outbound and inbound messages logs.",
+          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
@@ -4960,6 +5200,36 @@
           "heading": "Click Counts",
           "subheading": "",
           "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook."
+        },
+        {
+          "img": "/img/feature/whatsapp-support-base64.svg",
+          "heading": "Support Base64",
+          "subheading": "Send the body in JSON and leave the rest to us.",
+          "content": "No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp."
+        },
+        {
+          "img": "/img/feature/whatsapp-2way-communication.svg",
+          "heading": "2way communication",
+          "subheading": "Say hello to go on HELLO.",
+          "content": "Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business."
+        },
+        {
+          "img": "/img/feature/whatsapp-manage-template-inside-panel.svg",
+          "heading": "Manage template inside panel",
+          "subheading": "Create and manage your templates right here.",
+          "content": "No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook."
+        },
+        {
+          "img": "/img/feature/whatsapp-analytics.svg",
+          "heading": "Analytics",
+          "subheading": "Get graphical insights into your business messages.",
+          "content": "Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more."
+        },
+        {
+          "img": "/img/feature/whatsapp-export-logs.svg",
+          "heading": "Export Logs",
+          "subheading": "Get individual outbound and inbound messages logs.",
+          "content": "Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers."
         }
       ],
       "morefeatures": [
