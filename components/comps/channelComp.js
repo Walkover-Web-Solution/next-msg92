@@ -54,10 +54,10 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
             <h1 className={`heading page-title ${pageData.pagename}-heading`}>{pageData.pagetag}</h1>
           </div>
 
-          <p className="c-fs-4 text-uppercase col-otp c-ls-20 mx-auto">
+          <p className="text-uppercase col-otp c-ls-20 mx-auto">
             {pageData.tagline}
           </p>
-          <div className="p-3">
+          <div className="py-5">
               <h2 className="sub-heading c-fw-xb  w-md-75 w-100 mx-auto mb-2">
                 {pageData.heading}
               </h2>
@@ -234,7 +234,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
       </div>
 
       <div className={` my-5  px-sm-0 d-flex flex-column justify-content-center justift-content-sm-start section`}>
-        <span className="container c-head sub-heading  c-head pt-4 pt-md-0">Features</span>        
+        <span className="container c-head sub-heading  c-head pt-4 pt-md-0 c-fw-b">Features</span>        
         {pageData?.features?.map((item, index) => {
           if(item?.content){
             i++;       

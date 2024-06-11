@@ -14,7 +14,7 @@ export default function productComponent({ pageData, pathArray, pricingPath }) {
                             <h1 className={`heading page-title ${pageData?.slug}-heading`}>{pageData?.name}</h1>
                         </div>
 
-                        <p className={`c-fs-4 text-uppercase col-otp c-ls-20 mx-auto mt-3 ${pageData?.slug}-dark`}>
+                        <p className={`text-uppercase col-otp c-ls-20 mx-auto mt-3 ${pageData?.slug}-dark`}>
                             {pageData?.tagline}
                         </p>
                         <div className="p-3">

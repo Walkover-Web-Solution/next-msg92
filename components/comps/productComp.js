@@ -18,7 +18,7 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
               <h1 className={`heading page-title ${pageData?.pagename}-heading`}>{pageData?.pagetag}</h1>
             </div>
 
-            <p className={`c-fs-4 text-uppercase col-otp c-ls-20 mx-auto mt-3 ${pageData?.pagename}-dark`}>
+            <p className={`text-uppercase col-otp c-ls-20 mx-auto mt-3 ${pageData?.pagename}-dark`}>
               {pageData?.tagline}
             </p>
             <div className="p-3">
@@ -44,7 +44,7 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
       </div>
 
       <div className={`px-sm-0 d-flex flex-column justify-content-center justify-content-sm-start section mt-5`}>
-        <span className="container sub-heading c-head   pt-4 pt-md-0">Features</span>
+        <span className="container sub-heading c-head   pt-4 pt-md-0 c-fw-b">Features</span>
         {pageData?.features?.map((item, index) => {
           if(item?.content){
             i++;       
