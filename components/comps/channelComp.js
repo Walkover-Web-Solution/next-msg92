@@ -307,7 +307,8 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                                 <div className="col-12 col-md-5 d-flex flex-column mt-3">
                                     <span className="c-fs-2 c-fw-b ">{item?.heading}</span>
                                     <span className="c-fs-3  mt-1">
-                                        <span className="c-fw-b">{item?.subheading}</span> {item?.content}
+                                        <span className="c-fw-b">{item?.subheading}</span>
+                                        <span dangerouslySetInnerHTML={{ __html: item?.content }}></span>
                                     </span>
                                 </div>
                             </div>
