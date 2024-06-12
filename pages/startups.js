@@ -61,41 +61,67 @@ const msg91ForStartups = () => {
           </div>
         </div>
       </div>
+      
       <div className='container px-3 px-md-auto'>
-        <h2 className='sub-heading c-head'>Benefits of Startup Program</h2>
+        <h2 className='sub-heading c-head'>Benefits Offered in the form of Startup Balance</h2>
+        <p className='mt-3'>Startup Balance can be used in either of the following ways: </p>
         <div className='mt-2 '>
           <span className='c-fs-1 c-fw-b text-green'>
             <MdDone />
           </span>
           <span className='c-fs-4 ms-2'>
-            25000 SMS credits every month for 6 months
+            25,000 SMS credits per month for a duration of 6 months.
           </span>
         </div>
+        
         <div className='mt-2 '>
           <span className='c-fs-1 c-fw-b text-green'>
             <MdDone />
           </span>
           <span className='c-fs-4 ms-2'>
-            Can be used for OTP, Transactional/Promotional SMS, Emails, WhatsApp or Voice
+            4,00,000 Emails as well as 4000 Email Verifications per month for a duration of 6 months.
           </span>
         </div>
+        
+        <div className='mt-2 '>
+          <span className='c-fs-1 c-fw-b text-green'>
+            <MdDone />
+          </span>
+          <span className='c-fs-4 ms-2'>
+            Upto 10,000 WhatsApp Sessions(depending on the type of template) per month for a duration of 6 months.
+          </span>
+        </div>
+        
+        <div className='mt-2 '>
+          <span className='c-fs-1 c-fw-b text-green'>
+            <MdDone />
+          </span>
+          <span className='c-fs-4 ms-2'>
+            25,000 OTP verification SMS credits per month for a duration of 6 months
+          </span>
+        </div>
+                
         <div className=' mt-2'>
           <span className='c-fs-1 c-fw-b text-green'>
             <MdDone />
           </span>
           <span className='c-fs-4 ms-2'>
-            Leverage our Cloud contact center <b>HELLO</b>, Contact Management tool <b>SEGMENTO</b>, Event Based Automation tool <b>CAMPAIGN</b> and FAQ software <b>KNOWLEDGEBASE</b> to drive your sales
+            Access to Cloud Contact Center/Ticket Management Platform <a href='https://msg91.com/hello'>HELLO</a>, Data Management & WareHouse Application <a href='https://msg91.com/segmento'>SEGMENTO</a>, Flow Automation Application <a href='https://msg91.com/campaign'>CAMPAIGN</a>, MSG91’s FAQ software <a href='https://msg91.com/knowledgebase'>KnowledgeBase</a>.
           </span>
-        </div>
-        <div className='mt-2 '>
-          <span className='c-fs-1 c-fw-b text-green'>
-            <MdDone />
-          </span>
-          <span className='c-fs-4 ms-2'>
-            Get support from our Superheroes to integrate scalable APIs
-          </span>
-        </div>
+        </div>        
+
+        <p className='mt-4 c-fw-b'>Eligibility and Terms:</p>
+        <ul>
+          <li>All credits should be utilised for transactional messaging only.</li>
+          <li>Only applicable for New MSG91 users.</li>
+          <li>Registered email should be a private domain email (gmail/yahoo/outlook etc will be auto-rejected).</li>
+          <li>Startup should be associated with one of our collaborators.</li>
+          <li>Startup has to add MSG91's Startup Badge on their website with tagline - "Communication Partner".</li>
+        </ul>
+
       </div>
+
+
       <section className='my-80 '>
         <div className='container px-3 px-md-auto'>
           <h2 className='sub-heading  c-head'>Our Collaborators</h2>
