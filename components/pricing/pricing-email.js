@@ -243,7 +243,11 @@ export function EmailPricingCardFree({ plan, planAmount, currency, selectedMode 
 export function EmailPricingCard({ plan, planAmount, currency, selectedMode }) {
     return (
         <>
-            <div className="p-4 bg-white rounded-2  d-flex flex-column gap-4 w-100 overflow-hidden   ">
+            <div
+                className={`card d-flex align-items-start rounded-2 bg-white p-4  gap-3 ${
+                    plan?.most_popular ? "border-2" : "border-0"
+                }`}
+            >
                 <div className="d-flex flex-column gap-2 w-100">
                     <div className="d-flex flex-wrap gap-2 populartag_cont w-100">
                         <h3 className="fs-4 fw-semibold email_plan_name w-100">{plan?.name}</h3>
@@ -264,7 +268,7 @@ export function EmailPricingCard({ plan, planAmount, currency, selectedMode }) {
                     <a
                         href="/signup?service=Email"
                         target="_blank"
-                        className={`btn ${plan?.most_popular ? 'btn-dark':'btn-outline-dark'} mt-2 rounded-md btn-ft`}
+                        className={`btn ${plan?.most_popular ? "btn-dark" : "btn-outline-dark"} mt-2 rounded-md btn-ft`}
                     >
                         Get Started
                     </a>
