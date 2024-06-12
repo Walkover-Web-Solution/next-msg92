@@ -13,7 +13,7 @@ const config = {
         keyword: "React"
       }
     ],
-    posts_per_page: 25,
+    posts_per_page: 6,
     twitter_account: "@my-account",
     github_account: "wutali"
   };

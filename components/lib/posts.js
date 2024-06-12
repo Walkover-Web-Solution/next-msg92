@@ -51,15 +51,13 @@ function fetchPostContent() {
 }
 
 function countPosts(tag) {
-  return fetchPostContent().filter(
-    (it) => !tag || (it.tags && it.tags.includes(tag))
-  ).length;
+  return fetchPostContent().length;
 }
 
-function listPostContent(page, limit, tag) {
+function listPostContent() {
   return fetchPostContent()
-      .filter((it) => !tag || (it.tags && it.tags.includes(tag)))
-      .slice((page - 1) * limit, page * limit);
+      // .filter((it) => !tag || (it.tags && it.tags.includes(tag)))
+
 }
 
 module.exports = {
