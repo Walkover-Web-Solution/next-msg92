@@ -64,7 +64,7 @@ const msg91ForStartups = () => {
       
       <div className='container px-3 px-md-auto'>
         <h2 className='sub-heading c-head'>Benefits Offered in the form of Startup Balance</h2>
-        <p className='mt-3'>Startup Balance can be used in either of the following ways: </p>
+        <p className='mt-3 c-fs-3'>Startup Balance can be used in either of the following ways: </p>
         <div className='mt-2 '>
           <span className='c-fs-1 c-fw-b text-green'>
             <MdDone />
@@ -110,13 +110,13 @@ const msg91ForStartups = () => {
           </span>
         </div>        
 
-        <p className='mt-4 c-fw-b'>Eligibility and Terms:</p>
+        <p className='mt-5 sub-heading  c-head'>Eligibility and Terms:</p>
         <ul>
-          <li>All credits should be utilised for transactional messaging only.</li>
-          <li>Only applicable for New MSG91 users.</li>
-          <li>Registered email should be a private domain email (gmail/yahoo/outlook etc will be auto-rejected).</li>
-          <li>Startup should be associated with one of our collaborators.</li>
-          <li>Startup has to add MSG91's Startup Badge on their website with tagline - "Communication Partner".</li>
+          <li className='c-fs-4 ms-2 mt-2'>All credits should be utilised for transactional messaging only.</li>
+          <li className='c-fs-4 ms-2 mt-2'>Only applicable for New MSG91 users.</li>
+          <li className='c-fs-4 ms-2 mt-2'>Registered email should be a private domain email (gmail/yahoo/outlook etc will be auto-rejected).</li>
+          <li className='c-fs-4 ms-2 mt-2'>Startup should be associated with one of our collaborators.</li>
+          <li className='c-fs-4 ms-2 mt-2'>Startup has to add MSG91's Startup Badge on their website with tagline - "Communication Partner".</li>
         </ul>
 
       </div>
@@ -125,7 +125,7 @@ const msg91ForStartups = () => {
       <section className='my-80 '>
         <div className='container px-3 px-md-auto'>
           <h2 className='sub-heading  c-head'>Our Collaborators</h2>
-          <p className='c-fs-3 col-12 col-md-10 mb-4 '>
+          <p className='c-fs-4 col-12 col-md-10 mb-4 mt-2 '>
             We’re proud to be associated with a growing set of Venture
             Capitalists, Accelerators, Incubators and Crowdfunding platforms
             across to inspire, identify and develop end-to-end solutions for
