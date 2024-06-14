@@ -110,13 +110,13 @@ const msg91ForStartups = () => {
           </span>
         </div>        
 
-        <p className='mt-4 c-fw-b'>Eligibility and Terms:</p>
+        <p className='mt-5 sub-heading  c-head'>Eligibility and Terms:</p>
         <ul>
-          <li>All credits should be utilised for transactional messaging only.</li>
-          <li>Only applicable for New MSG91 users.</li>
-          <li>Registered email should be a private domain email (gmail/yahoo/outlook etc will be auto-rejected).</li>
-          <li>Startup should be associated with one of our collaborators.</li>
-          <li>Startup has to add MSG91's Startup Badge on their website with tagline - "Communication Partner".</li>
+          <li className='c-fs-4 ms-2 mt-2'>All credits should be utilised for transactional messaging only.</li>
+          <li className='c-fs-4 ms-2 mt-2'>Only applicable for New MSG91 users.</li>
+          <li className='c-fs-4 ms-2 mt-2'>Registered email should be a private domain email (gmail/yahoo/outlook etc will be auto-rejected).</li>
+          <li className='c-fs-4 ms-2 mt-2'>Startup should be associated with one of our collaborators.</li>
+          <li className='c-fs-4 ms-2 mt-2'>Startup has to add MSG91's Startup Badge on their website with tagline - "Communication Partner".</li>
         </ul>
 
       </div>
