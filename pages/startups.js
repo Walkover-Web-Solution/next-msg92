@@ -64,7 +64,7 @@ const msg91ForStartups = () => {
       
       <div className='container px-3 px-md-auto'>
         <h2 className='sub-heading c-head'>Benefits Offered in the form of Startup Balance</h2>
-        <p className='mt-3'>Startup Balance can be used in either of the following ways: </p>
+        <p className='mt-3 c-fs-3'>Startup Balance can be used in either of the following ways: </p>
         <div className='mt-2 '>
           <span className='c-fs-1 c-fw-b text-green'>
             <MdDone />
@@ -125,7 +125,7 @@ const msg91ForStartups = () => {
       <section className='my-80 '>
         <div className='container px-3 px-md-auto'>
           <h2 className='sub-heading  c-head'>Our Collaborators</h2>
-          <p className='c-fs-3 col-12 col-md-10 mb-4 '>
+          <p className='c-fs-4 col-12 col-md-10 mb-4 mt-2 '>
             We’re proud to be associated with a growing set of Venture
             Capitalists, Accelerators, Incubators and Crowdfunding platforms
             across to inspire, identify and develop end-to-end solutions for
