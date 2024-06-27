@@ -1,5 +1,11 @@
-
+import IndexComp from "@/components/indexComp/indexComp";
 
 export default function Home() {
-  return <main>NEXT-MSG92</main>;
+  return (
+    <>
+      <main>
+        <IndexComp />
+      </main>
+    </>
+  );
 }
