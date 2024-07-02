@@ -319,6 +319,44 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track sms performance"}
       ]
+    },
+    "rcs": {
+      "code": true,
+      "pagename": "RCS", 
+      "pagetag":"RCS",
+      "icon": "/img/icon/rcs.svg",
+      "tagline": "Rich Communication Services",
+      "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+      "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
+      "features": [
+        {
+          "img": "/img/feature/rcs-communications-branding.svg",
+          "heading": "Corporate Communications with Branding",
+          "subheading": "Distinguish by branding",
+          "content": "Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers."
+        },
+        {
+          "img": "/img/feature/rcs-multimedia-interactions.svg",
+          "heading": "Provide Multimedia Interactions",
+          "subheading": "Communication through visual representation",
+          "content": "Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions."
+        },
+        {
+          "img": "/img/feature/rcs-boost-sales.svg",
+          "heading": "Boost Sales Through Interactive Conversations",
+          "subheading": "",
+          "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions."
+        },
+        {
+          "img": "/img/feature/rcs-customer-trust.svg",
+          "heading": "Enhanced Customer Trust",
+          "subheading": "Understand your customers' habits",
+          "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
+        }        
+      ],
+      "morefeatures": [
+        {"more": "0"}
+      ]
     },  
     "email": {
       "code": true,
@@ -907,7 +945,45 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track sms performance"}
       ]
-    },  
+    },
+    "rcs": {
+      "code": true,
+      "pagename": "RCS", 
+      "pagetag":"RCS",
+      "icon": "/img/icon/rcs.svg",
+      "tagline": "Rich Communication Services",
+      "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+      "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
+      "features": [
+        {
+          "img": "/img/feature/rcs-communications-branding.svg",
+          "heading": "Corporate Communications with Branding",
+          "subheading": "Distinguish by branding",
+          "content": "Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers."
+        },
+        {
+          "img": "/img/feature/rcs-multimedia-interactions.svg",
+          "heading": "Provide Multimedia Interactions",
+          "subheading": "Communication through visual representation",
+          "content": "Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions."
+        },
+        {
+          "img": "/img/feature/rcs-boost-sales.svg",
+          "heading": "Boost Sales Through Interactive Conversations",
+          "subheading": "",
+          "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions."
+        },
+        {
+          "img": "/img/feature/rcs-customer-trust.svg",
+          "heading": "Enhanced Customer Trust",
+          "subheading": "Understand your customers' habits",
+          "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
+        }        
+      ],
+      "morefeatures": [
+        {"more": "0"}
+      ]
+    },
     "email": {
       "code": true,
       "pagename": "Email", 
@@ -1494,6 +1570,44 @@
         {"more": "Understand your customers emotions through sentiment analysis"},
         {"more": "Solution for remote access and support"},
         {"more": "Track sms performance"}
+      ]
+    },  
+    "rcs": {
+      "code": true,
+      "pagename": "RCS", 
+      "pagetag":"RCS",
+      "icon": "/img/icon/rcs.svg",
+      "tagline": "Rich Communication Services",
+      "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+      "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
+      "features": [
+        {
+          "img": "/img/feature/rcs-communications-branding.svg",
+          "heading": "Corporate Communications with Branding",
+          "subheading": "Distinguish by branding",
+          "content": "Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers."
+        },
+        {
+          "img": "/img/feature/rcs-multimedia-interactions.svg",
+          "heading": "Provide Multimedia Interactions",
+          "subheading": "Communication through visual representation",
+          "content": "Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions."
+        },
+        {
+          "img": "/img/feature/rcs-boost-sales.svg",
+          "heading": "Boost Sales Through Interactive Conversations",
+          "subheading": "",
+          "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions."
+        },
+        {
+          "img": "/img/feature/rcs-customer-trust.svg",
+          "heading": "Enhanced Customer Trust",
+          "subheading": "Understand your customers' habits",
+          "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
+        }        
+      ],
+      "morefeatures": [
+        {"more": "0"}
       ]
     },  
     "email": {
@@ -2089,7 +2203,45 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track sms performance"}
       ]
-    },  
+    },
+    "rcs": {
+      "code": true,
+      "pagename": "RCS", 
+      "pagetag":"RCS",
+      "icon": "/img/icon/rcs.svg",
+      "tagline": "Rich Communication Services",
+      "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+      "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
+      "features": [
+        {
+          "img": "/img/feature/rcs-communications-branding.svg",
+          "heading": "Corporate Communications with Branding",
+          "subheading": "Distinguish by branding",
+          "content": "Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers."
+        },
+        {
+          "img": "/img/feature/rcs-multimedia-interactions.svg",
+          "heading": "Provide Multimedia Interactions",
+          "subheading": "Communication through visual representation",
+          "content": "Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions."
+        },
+        {
+          "img": "/img/feature/rcs-boost-sales.svg",
+          "heading": "Boost Sales Through Interactive Conversations",
+          "subheading": "",
+          "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions."
+        },
+        {
+          "img": "/img/feature/rcs-customer-trust.svg",
+          "heading": "Enhanced Customer Trust",
+          "subheading": "Understand your customers' habits",
+          "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
+        }        
+      ],
+      "morefeatures": [
+        {"more": "0"}
+      ]
+    },
     "email": {
       "code": true,
       "pagename": "Email", 
@@ -2683,7 +2835,45 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track sms performance"}
       ]
-    },  
+    },
+    "rcs": {
+      "code": true,
+      "pagename": "RCS", 
+      "pagetag":"RCS",
+      "icon": "/img/icon/rcs.svg",
+      "tagline": "Rich Communication Services",
+      "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+      "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
+      "features": [
+        {
+          "img": "/img/feature/rcs-communications-branding.svg",
+          "heading": "Corporate Communications with Branding",
+          "subheading": "Distinguish by branding",
+          "content": "Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers."
+        },
+        {
+          "img": "/img/feature/rcs-multimedia-interactions.svg",
+          "heading": "Provide Multimedia Interactions",
+          "subheading": "Communication through visual representation",
+          "content": "Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions."
+        },
+        {
+          "img": "/img/feature/rcs-boost-sales.svg",
+          "heading": "Boost Sales Through Interactive Conversations",
+          "subheading": "",
+          "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions."
+        },
+        {
+          "img": "/img/feature/rcs-customer-trust.svg",
+          "heading": "Enhanced Customer Trust",
+          "subheading": "Understand your customers' habits",
+          "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
+        }        
+      ],
+      "morefeatures": [
+        {"more": "0"}
+      ]
+    },
     "email": {
       "code": true,
       "pagename": "Email", 
@@ -3273,7 +3463,45 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track sms performance"}
       ]
-    },  
+    },
+    "rcs": {
+      "code": true,
+      "pagename": "RCS", 
+      "pagetag":"RCS",
+      "icon": "/img/icon/rcs.svg",
+      "tagline": "Rich Communication Services",
+      "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+      "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
+      "features": [
+        {
+          "img": "/img/feature/rcs-communications-branding.svg",
+          "heading": "Corporate Communications with Branding",
+          "subheading": "Distinguish by branding",
+          "content": "Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers."
+        },
+        {
+          "img": "/img/feature/rcs-multimedia-interactions.svg",
+          "heading": "Provide Multimedia Interactions",
+          "subheading": "Communication through visual representation",
+          "content": "Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions."
+        },
+        {
+          "img": "/img/feature/rcs-boost-sales.svg",
+          "heading": "Boost Sales Through Interactive Conversations",
+          "subheading": "",
+          "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions."
+        },
+        {
+          "img": "/img/feature/rcs-customer-trust.svg",
+          "heading": "Enhanced Customer Trust",
+          "subheading": "Understand your customers' habits",
+          "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
+        }        
+      ],
+      "morefeatures": [
+        {"more": "0"}
+      ]
+    }, 
     "email": {
       "code": true,
       "pagename": "Email", 
@@ -3860,7 +4088,45 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track sms performance"}
       ]
-    },  
+    },
+    "rcs": {
+      "code": true,
+      "pagename": "RCS", 
+      "pagetag":"RCS",
+      "icon": "/img/icon/rcs.svg",
+      "tagline": "Rich Communication Services",
+      "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+      "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
+      "features": [
+        {
+          "img": "/img/feature/rcs-communications-branding.svg",
+          "heading": "Corporate Communications with Branding",
+          "subheading": "Distinguish by branding",
+          "content": "Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers."
+        },
+        {
+          "img": "/img/feature/rcs-multimedia-interactions.svg",
+          "heading": "Provide Multimedia Interactions",
+          "subheading": "Communication through visual representation",
+          "content": "Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions."
+        },
+        {
+          "img": "/img/feature/rcs-boost-sales.svg",
+          "heading": "Boost Sales Through Interactive Conversations",
+          "subheading": "",
+          "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions."
+        },
+        {
+          "img": "/img/feature/rcs-customer-trust.svg",
+          "heading": "Enhanced Customer Trust",
+          "subheading": "Understand your customers' habits",
+          "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
+        }        
+      ],
+      "morefeatures": [
+        {"more": "0"}
+      ]
+    }, 
     "email": {
       "code": true,
       "pagename": "Email", 
@@ -4451,7 +4717,45 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track sms performance"}
       ]
-    },  
+    },
+    "rcs": {
+      "code": true,
+      "pagename": "RCS", 
+      "pagetag":"RCS",
+      "icon": "/img/icon/rcs.svg",
+      "tagline": "Rich Communication Services",
+      "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+      "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
+      "features": [
+        {
+          "img": "/img/feature/rcs-communications-branding.svg",
+          "heading": "Corporate Communications with Branding",
+          "subheading": "Distinguish by branding",
+          "content": "Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers."
+        },
+        {
+          "img": "/img/feature/rcs-multimedia-interactions.svg",
+          "heading": "Provide Multimedia Interactions",
+          "subheading": "Communication through visual representation",
+          "content": "Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions."
+        },
+        {
+          "img": "/img/feature/rcs-boost-sales.svg",
+          "heading": "Boost Sales Through Interactive Conversations",
+          "subheading": "",
+          "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions."
+        },
+        {
+          "img": "/img/feature/rcs-customer-trust.svg",
+          "heading": "Enhanced Customer Trust",
+          "subheading": "Understand your customers' habits",
+          "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
+        }        
+      ],
+      "morefeatures": [
+        {"more": "0"}
+      ]
+    },
     "email": {
       "code": true,
       "pagename": "Email", 
@@ -5045,7 +5349,45 @@
         {"more": "Solution for remote access and support"},
         {"more": "Track sms performance"}
       ]
-    },  
+    },
+    "rcs": {
+      "code": true,
+      "pagename": "RCS", 
+      "pagetag":"RCS",
+      "icon": "/img/icon/rcs.svg",
+      "tagline": "Rich Communication Services",
+      "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+      "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
+      "features": [
+        {
+          "img": "/img/feature/rcs-communications-branding.svg",
+          "heading": "Corporate Communications with Branding",
+          "subheading": "Distinguish by branding",
+          "content": "Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers."
+        },
+        {
+          "img": "/img/feature/rcs-multimedia-interactions.svg",
+          "heading": "Provide Multimedia Interactions",
+          "subheading": "Communication through visual representation",
+          "content": "Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions."
+        },
+        {
+          "img": "/img/feature/rcs-boost-sales.svg",
+          "heading": "Boost Sales Through Interactive Conversations",
+          "subheading": "",
+          "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions."
+        },
+        {
+          "img": "/img/feature/rcs-customer-trust.svg",
+          "heading": "Enhanced Customer Trust",
+          "subheading": "Understand your customers' habits",
+          "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
+        }        
+      ],
+      "morefeatures": [
+        {"more": "0"}
+      ]
+    },
     "email": {
       "code": true,
       "pagename": "Email", 

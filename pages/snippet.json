@@ -35,6 +35,41 @@
       ]
     }
   },
+  "RCS": {
+    "log": {
+      "version": "1.2",
+      "entries": [
+        {
+          "request": {
+            "method": "POST",
+            "url": "https://control.msg91.com/api/v5/rcs/send-rcs-message/bulk/",
+            "httpVersion": "HTTP/1.1",
+            "cookies": [],
+            "headers": [
+              {
+                "name": "authkey",
+                "value": "<authkey>"
+              },
+              {
+                "name": "accept",
+                "value": "application/json"
+              },
+              {
+                "name": "content-type",
+                "value": "application/json"
+              }
+            ],
+            "queryString": [],
+            "headersSize": -1,
+            "bodySize": -1,
+            "postData": {
+              "mimeType": "application/json",
+              "text": "{\"customer_numbers\":[\"918818888761\",\"918818888763\"],\"project_id\":\"{{project_id}}\",\"function_name\":\"text_message\",\"text\":\"rcs test\"}"
+            }}
+        }
+      ]
+    }
+  },
   "Email": {
     "log": {
       "version": "1.2",
