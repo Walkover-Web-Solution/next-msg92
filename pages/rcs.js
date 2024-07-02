@@ -4,7 +4,7 @@ import ChannelComponent from '@/components/comps/channelComp';
 import json from "../data/content.json"; 
 
 const ParentComponent = ({pricingPath}) => {
-  const data = json.global.sms; 
+  const data = json.global.rcs; 
   return (
     <>    
       <ChannelComponent pageData={data} pricingPath={pricingPath}/>    
