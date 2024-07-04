@@ -1,6 +1,28 @@
 import { InlineWidget } from 'react-calendly';
 import React from 'react';
 import { MdDoneOutline, MdArrowForward } from 'react-icons/md';
+
+export async function getStaticProps() {    
+  let data = null;
+  try {
+      const response = await axios.get("https://api.airtable.com/v0/appxLAuNWLqf7kh4j/STARTUP%20PAGE%20-%20WEBSITE%20DISPLAY?maxRecords=3&view=Grid%20view", {
+          headers: {
+              Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
+          },
+      });
+      data = response.data;
+      //console.log('getStaticProps', data);
+  } catch (error) {
+      console.error("There was an error fetching the data!", error);
+  }
+  
+  return {
+      props: {
+          data
+      },
+  };
+}
+
 const becomeApartner = () => {
   return (
     <>
