@@ -3,10 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { MdOutlineCheck, MdArrowForward } from "react-icons/md";
-const partnersAndIntegrations = () => {
-    const [data, setData] = useState(null);
+const partnersAndIntegrations = ({data}) => {
+    //console.log('partnersAndIntegrations', data);
+    //const [data, setData] = useState(null);
 
-    useEffect(() => {
+    /* useEffect(() => {
         axios
             .get("https://api.airtable.com/v0/apprWVB91nVC9dqoS/tblkIzJ6ITtAwQXXx", {
                 headers: {
@@ -19,7 +20,7 @@ const partnersAndIntegrations = () => {
             .catch((error) => {
                 console.error("There was an error fetching the data!", error);
             });
-    }, []);
+    }, []); */
     return (
         <>
             <div className="container text-center  ">
@@ -53,7 +54,6 @@ const partnersAndIntegrations = () => {
                             {data.records.map((record) => {
                                 if (record?.fields?.Link) {
                                     return (
-                                        <>
                                             <a
                                                 target="_blank"
                                                 href={record?.fields?.Link}
@@ -76,7 +76,6 @@ const partnersAndIntegrations = () => {
                                                     By: {record.fields["Developed by"]}
                                                 </span>
                                             </a>
-                                        </>
                                     );
                                 }
                             })}
@@ -168,4 +167,25 @@ const partnersAndIntegrations = () => {
         </>
     );
 };
+export async function getStaticProps() {    
+    let data = null;
+    try {
+        const response = await axios.get("https://api.airtable.com/v0/apprWVB91nVC9dqoS/tblkIzJ6ITtAwQXXx", {
+            headers: {
+                Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
+            },
+        });
+        data = response.data;
+        //console.log('getStaticProps', data);
+    } catch (error) {
+        console.error("There was an error fetching the data!", error);
+    }
+    
+    return {
+        props: {
+            data
+        },
+    };
+}
+
 export default partnersAndIntegrations;
