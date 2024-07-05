@@ -9,7 +9,7 @@ import availableCountries from '@/data/available-countries.json';
 const mainpage = ({ pageData, params, path, pricingPath }) => {
     var page = pageData?.pagename;
     var Dataa = pageData;
-    var channels = ['SMS', 'Email', 'WhatsApp', 'Voice', 'Numbers'];
+    var channels = ['SMS', 'RCS', 'Email', 'WhatsApp', 'Voice', 'Numbers'];
     var helloNewCountries = ['us', 'ae', 'es'];
     if (!pageData) {
         return (

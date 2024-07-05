@@ -75,29 +75,35 @@ const ProductMenu = ({ path, compData }) => {
                         <p className="c-fs-3 c-fw-sb text-grey text-uppercase ">
                             {`${compData?.products?.channels?.heading || "Channels"}`}
                         </p>
+                        
                         <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/sms`}>
                             <Image src="/img/icon/sms.svg" width={40} height={40} alt="ico" />
                             <h4 className="c-fs-2">{`${compData?.products?.channels?.content[0]?.name || "SMS"}`}</h4>
                         </a>
+                        
+                        <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/rcs`}>
+                            <Image src="/img/icon/rcs.svg" width={40} height={40} alt="ico" />
+                            <h4 className="c-fs-2">{`${compData?.products?.channels?.content[1]?.name || "RCS"}`}</h4>
+                        </a>
 
                         <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/email`}>
                             <Image src="/img/icon/email.svg" width={40} height={40} alt="ico" />
-                            <h4 className="c-fs-2">{`${compData?.products?.channels?.content[1]?.name || "Email"}`}</h4>
+                            <h4 className="c-fs-2">{`${compData?.products?.channels?.content[2]?.name || "Email"}`}</h4>
                         </a>
                         <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/whatsapp`}>
                             <Image src="/img/icon/whatsapp.svg" width={40} height={40} alt="ico" />
                             <h4 className="c-fs-2">{`${
-                                compData?.products?.channels?.content[2]?.name || "WhatsApp"
+                                compData?.products?.channels?.content[3]?.name || "WhatsApp"
                             }`}</h4>
                         </a>
                         <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/voice`}>
                             <Image src="/img/icon/voice.svg" width={40} height={40} alt="ico" />
-                            <h4 className="c-fs-2">{`${compData?.products?.channels?.content[3]?.name || "Voice"}`}</h4>
+                            <h4 className="c-fs-2">{`${compData?.products?.channels?.content[4]?.name || "Voice"}`}</h4>
                         </a>
                         <a className="d-flex gap-3 align-items-center product-menu-btn py-3" href={`${path}/numbers`}>
                             <Image src="/img/icon/numbers.svg" width={40} height={40} alt="ico" />
                             <h4 className="c-fs-2">{`${
-                                compData?.products?.channels?.content[4]?.name || "Numbers"
+                                compData?.products?.channels?.content[5]?.name || "Numbers"
                             }`}</h4>
                         </a>
                     </div>

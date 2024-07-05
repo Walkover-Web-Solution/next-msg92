@@ -568,6 +568,48 @@
                 ]
             }
         },
+        "rcs": {
+            "name": "RCS", 
+            "slug":"rcs",
+            "code": true,
+            "tagline": "Serviços de Comunicação Enriquecida",
+            "heading": "Engaje os clientes na caixa de entrada SMS, entregando mensagens ricas e interativas usando RCS",
+            "subheading": "RCS é um canal de mensagens integrado que permite às empresas engajar os clientes por meio de conversas ricas, imersivas e bidirecionais",
+            "btntext": "Comece gratuitamente",
+            "icon": "/img/icon/rcs.svg",
+            "features": {
+                "heading":"Características",
+                "content": [
+                    {
+                        "img": "/img/feature/rcs-communications-branding.svg",
+                        "heading": "Comunicações Corporativas com Branding",
+                        "subheading": "Destaque-se pela marca",
+                        "content": "Aumente a visibilidade da sua marca na caixa de entrada SMS usando um ID de remetente distinto e logotipo. Utilize uma interface visualmente atraente para engajar efetivamente os clientes."
+                    },
+                    {
+                        "img": "/img/feature/rcs-multimedia-interactions.svg",
+                        "heading": "Forneça Interações Multimídia",
+                        "subheading": "Comunicação por meio de representação visual",
+                        "content": "Aprimore a comunicação da sua marca entregando RCS que constrói confiança. Incorpore seu logotipo, nome da marca, vídeos, imagens e carrosséis em suas mensagens para aumentar as conversões."
+                    },
+                    {
+                        "img": "/img/feature/rcs-boost-sales.svg",
+                        "heading": "Aumente as Vendas por Meio de Conversas Interativas",
+                        "subheading": "",
+                        "content": "Crie uma experiência de conversa envolvente com imagens, vídeos, carrosséis e botões de ação interativos. Destaque-se dos concorrentes enviando mensagens RCS envolventes e confiáveis que impulsionam conversões."
+                    },
+                    {
+                        "img": "/img/feature/rcs-customer-trust.svg",
+                        "heading": "Confiança Aprimorada do Cliente",
+                        "subheading": "Entenda os hábitos dos seus clientes",
+                        "content": "Personalize sua comunicação e construa relacionamentos duradouros que promovam a lealdade. Utilize IDs de remetente verificados e badged pela Google para taxas de resposta mais altas e maior confiança e credibilidade."
+                    }        
+                ]
+            },
+            "morefeatures": [
+              {"more": "0"}
+            ]
+        },
         "email": {
             "name": "Email",
             "slug": "email",
@@ -892,6 +934,10 @@
                         {
                             "slug": "sms",
                             "name": "SMS"
+                        },
+                        {
+                            "slug": "rcs",
+                            "name": "RCS"
                         },
                         {
                             "slug": "email",

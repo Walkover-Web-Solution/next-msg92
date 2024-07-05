@@ -23,6 +23,9 @@ const nextConfig = {
         OTP_WIDGET_TOKEN: getEnvValue("OTP_WIDGET_TOKEN"),
         WIDGET_AUTH_TOKEN: getEnvValue("WIDGET_AUTH_TOKEN"),
         WIDGET_SCRIPT: getEnvValue("WIDGET_SCRIPT"),
+
+        //INTEGRATIONS CONFIG
+        AIRTABLE_API_KEY: getEnvValue("AIRTABLE_API_KEY"),
     },
 
     // Can be safely removed in newer versions of Next.js

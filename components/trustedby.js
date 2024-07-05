@@ -2,7 +2,9 @@ import Image from "next/image";
 const TrustedBy = ({ align = null, pathArray }) => {
     return (
         <>
-            <div className={`d-flex flex-column gap-3 my-md-5 my-2`}>
+            <div className={`d-flex flex-column gap-3 my-md-5 my-2 ${
+                        align == "center" ? "align-items-center" : "align-items-start"
+                    }`}>
                 {pathArray && pathArray[1] === "br-pt" ? (
                     <span className="c-fs-3 ">
                         Confiado por<span className="c-fw-sb"> 30.000+ </span>negócios globais

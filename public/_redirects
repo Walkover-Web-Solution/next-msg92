@@ -610,7 +610,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /tag/food-travel-and-hospitality/ /case-studies/tag/food-travel-and-hospitality
 /blog/so-whats-new-in-msg91/amp/ /guide
 /us/case-studies/indialends/?utm_source=rss&utm_medium=rss&utm_campaign=indialends&amp /case-studies/indialends
-/Login; /https://control.msg91.com/signin/
+/Login; https://control.msg91.com/signin/
 /ph/startups-form/ /startups
 /gb/whatsapp /whatsapp
 /check_circle/ /
@@ -1098,7 +1098,7 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /cdn-cgi/challenge-platform/h/g/scripts/cb/invisible.js?cb=7b92ed2818403ab4 /
 /guide/tag/msg91-update/fair-pricing-policy/ /fair-pricing-policy/
 /guide/in/ /guide/
-/guide/tag/bulk-sms/ /sms/
+/guide/tag/bulk-sms/ /sms
 /author/admin/ /
 /author/* /guide
 https://guide.msg91.com/why-you-should-send-sms-online/www.msg91.com /guide/why-you-should-send-sms-online

@@ -1,8 +1,8 @@
-import { MdDone, MdClose } from 'react-icons/md';
-import { useEffect, useState, useRef, use } from 'react';
-import countries from '@/data/countries.json';
-import { Typeahead } from 'react-bootstrap-typeahead';
-import { setUtm } from '@/components/utils';
+import { MdDone, MdClose } from "react-icons/md";
+import { useEffect, useState, useRef, use } from "react";
+import countries from "@/data/countries.json";
+import { Typeahead } from "react-bootstrap-typeahead";
+import { setUtm } from "@/components/utils";
 
 const Pricingsms = ({
     pricing,
@@ -25,7 +25,7 @@ const Pricingsms = ({
         setUtm();
     }, [pricing, originCountry, destinationCountry]);
     useEffect(() => {
-        if (process.env.PRICING_URL === 'https://test.msg91.com') {
+        if (process.env.PRICING_URL === "https://test.msg91.com") {
             setPricingEnv(19);
         }
     }, []);
@@ -42,7 +42,7 @@ const Pricingsms = ({
 
     if (pricing[0] && pricing.length > 2) {
         let arrayOfPrices = totalNoOfSmsArray.slice();
-        arrayOfPrices.unshift('-36');
+        arrayOfPrices.unshift("-36");
 
         const lenAmountArr = totalNoOfSmsArray.length;
         const widthOfSection = 100 / lenAmountArr;
@@ -62,21 +62,29 @@ const Pricingsms = ({
             noOfsms = Number(arrayOfPrices[noOfSection]);
         }
         let pricingSMSstr = noOfsms * ratePersms;
-        if (countryCode === 'IN') {
-            pricingsms = pricingSMSstr.toLocaleString('en-IN');
+        if (countryCode === "IN") {
+            pricingsms = pricingSMSstr.toLocaleString("en-IN");
         } else {
             pricingsms = pricingSMSstr.toLocaleString(undefined);
         }
 
-        
         if (totalNoOfSmsArray.length > 0) {
             noOfsms = totalNoOfSmsArray[sliderValue][pricingEnv]?.totalNoOfSms;
             ratePersms = totalNoOfSmsArray[sliderValue][pricingEnv].rate;
             pricingsms = noOfsms * ratePersms;
         }
-
-        
     }
+    const contvertToLocal = (number) => {
+        if (currencySymbol === "₹") {
+            {
+                return Number(number).toLocaleString("en-IN");
+            }
+        } else {
+            {
+                return Number(number).toLocaleString("en-US");
+            }
+        }
+    };
 
     return (
         <>
@@ -99,7 +107,7 @@ const Pricingsms = ({
                                 clearButton
                                 defaultSelected={[countries?.find((item) => item.name === originCountry)]}
                                 inputProps={{
-                                    autoComplete: 'off' /* Add the autoComplete attribute here */,
+                                    autoComplete: "off" /* Add the autoComplete attribute here */,
                                 }}
                             />
 
@@ -131,7 +139,7 @@ const Pricingsms = ({
                                         {totalNoOfSmsArray.map((item, index) => {
                                             return (
                                                 <div className="text-center col c-fs-5" key={index}>
-                                                    {item[pricingEnv].totalNoOfSms}
+                                                    {contvertToLocal(item[pricingEnv].totalNoOfSms)}
                                                 </div>
                                             );
                                         })}
@@ -164,18 +172,24 @@ const Pricingsms = ({
                                 </div>
                                 <div className="d-flex align-items-end mt-4 mb-3">
                                     <p className="c-fs-2 c-fw-500">
-                                        <span className="c-fs-1 fw-bold">{noOfsms.toLocaleString('en-IN')}</span> SMS
-                                        for{' '}
+                                        <span className="c-fs-1 fw-bold">{contvertToLocal(noOfsms)}</span> SMS for{" "}
                                         <span className="c-fs-1 text-green fw-bold">
                                             {currencySymbol}
-                                            {pricingsms}{' '}
-                                        </span>{' '}
-                                        +18%GST at{' '}
+                                            {contvertToLocal(
+                                                (Number(pricingsms) % 1 === 0
+                                                    ? Number(pricingsms)
+                                                    : Number(pricingsms).toFixed(1)
+                                                )
+                                                    .toString()
+                                                    .replace(/\.0$/, "")
+                                            )}
+                                        </span>{" "}
+                                        {currencySymbol === "₹" && "+18 % GST"} at{" "}
                                         <span className="c-fs-1 text-green fw-bold">
                                             {currencySymbol}
                                             {ratePersms}
                                         </span>
-                                        per SMS{' '}
+                                        per SMS{" "}
                                     </p>
                                 </div>
                                 <a
@@ -211,8 +225,7 @@ const Pricingsms = ({
 
                 <div className="talk-to-sales connect-personalized mt-4">
                     <span className="personalized d-block c-fs-4">
-                        Connect with our team for a personalized pricing to meet your needs.{' '}
-                  
+                        Connect with our team for a personalized pricing to meet your needs.{" "}
                     </span>
                     <button
                         type="button"
