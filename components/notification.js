@@ -5,11 +5,12 @@ import countries from "@/data/countries.json";
 import availableCountries from "@/data/available-countries.json";
 import { getCookie, setCookie } from "@/components/utils";
 
+const baseUrl = process.env.API_BASE_URL;
+
 const Notification = ({ path, compData, pathArray }) => {
     const [country, setCountry] = useState('');
     const [language, setLanguage] = useState("English");
     
-    const baseUrl = process.env.API_BASE_URL;
 
     useEffect(() => {
         path = path ? path : getCookie("country_code");
