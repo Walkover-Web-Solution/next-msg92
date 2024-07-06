@@ -7,6 +7,7 @@ import { getCookie, setCookie } from "@/components/utils";
 
 const baseUrl = process.env.API_BASE_URL;
 
+
 const Notification = ({ path, compData, pathArray }) => {
     const [country, setCountry] = useState('');
     const [language, setLanguage] = useState("English");
