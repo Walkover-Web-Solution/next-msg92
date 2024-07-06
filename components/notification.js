@@ -5,7 +5,7 @@ import countries from "@/data/countries.json";
 import availableCountries from "@/data/available-countries.json";
 import { getCookie, setCookie } from "@/components/utils";
 
-const baseUrl = process.env.API_BASE_URL;
+const baseUrl = process.env.LOGIN_URL;
 
 
 const Notification = ({ path, compData, pathArray }) => {
@@ -144,7 +144,7 @@ const Notification = ({ path, compData, pathArray }) => {
                                 {compData?.notification?.contact}
                             </span>
                         </a>
-                        <a href={`${process.env.BASE_URL}/signin/`} target="_blank" className="text-dark utm">
+                        <a href={`${process.env.LOGIN_URL}/signin/`} target="_blank" className="text-dark utm">
                             <span className="c-fs-5 d-flex align-items-center">
                                 <MdLogin className="me-1" />
                                 {compData?.notification.login}
