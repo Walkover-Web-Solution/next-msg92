@@ -5,9 +5,13 @@ import countries from "@/data/countries.json";
 import availableCountries from "@/data/available-countries.json";
 import { getCookie, setCookie } from "@/components/utils";
 
+const baseUrl = process.env.API_BASE_URL;
+
 const Notification = ({ path, compData, pathArray }) => {
     const [country, setCountry] = useState('');
     const [language, setLanguage] = useState("English");
+    
+
     useEffect(() => {
         path = path ? path : getCookie("country_code");
         
@@ -139,7 +143,7 @@ const Notification = ({ path, compData, pathArray }) => {
                                 {compData?.notification?.contact}
                             </span>
                         </a>
-                        <a href="https://control.msg91.com/signin/" target="_blank" className="text-dark utm">
+                        <a href={`${process.env.BASE_URL}/signin/`} target="_blank" className="text-dark utm">
                             <span className="c-fs-5 d-flex align-items-center">
                                 <MdLogin className="me-1" />
                                 {compData?.notification.login}
