@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { MdOutlineEmail, MdCall, MdWhatsapp } from "react-icons/md";
 import { InlineWidget, PopupButton } from "react-calendly";
+
+const baseUrl = process.env.LOGIN_URL;
+
 const contactus = ({path}) => {
     var [salesNumber, setSalesNumber] = useState('+91 88895 00704');
     
-    const baseUrl = process.env.API_BASE_URL;
 
     useEffect(() => {
         fetch('https://api.db-ip.com/v2/free/self')
