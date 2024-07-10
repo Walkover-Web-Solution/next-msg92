@@ -19,7 +19,8 @@ export default function Certificates() {
                 <div className="bg-lightgrey py-3 py-md-5">
                     <div className="container">
                         <h2 className="c-fs-1 c-fw-sb mb-4">Certificates</h2>
-                        <div className=" d-flex gap-5">
+                        
+                        <div className="d-flex gap-5">
                             <div className="col d-flex flex-column gap-4">
                                 <h3 className="c-fs-2">CASA</h3>
                                 <a href="/pdf/casa.pdf" target="_blank">
@@ -48,6 +49,37 @@ export default function Certificates() {
                                 </a>
                             </div>
                         </div>
+                        
+                        <div className="d-flex gap-5 mt-4">
+                            <div className="col d-flex flex-column gap-4">
+                                <h3 className="c-fs-2">SOC2</h3>
+                                <a href="/pdf/soc2.pdf" target="_blank">
+                                    <Image
+                                        src="/images/certificate_soc.png"
+                                        width={1080}
+                                        height={1080}
+                                        className="w-100 h-auto"
+                                        alt="casa certificate"
+                                    />
+                                </a>
+                            </div>
+                            <div className="col d-flex flex-column gap-4">
+                                {/* <h3 className="c-fs-2">ISO</h3>
+                                <a
+                                    href="/pdf/iso.pdf"
+                                    target="_blank"
+                                >
+                                    <Image
+                                        src="/images/certificate_iso.png"
+                                        width={1080}
+                                        height={1080}
+                                        className="w-100 h-auto"
+                                        alt="casa certificate"
+                                    />
+                                </a> */}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
