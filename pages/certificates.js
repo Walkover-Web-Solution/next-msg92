@@ -52,7 +52,7 @@ export default function Certificates() {
                         
                         <div className="d-flex gap-5 mt-4">
                             <div className="col d-flex flex-column gap-4">
-                                <h3 className="c-fs-2">SOC2</h3>
+                                <h3 className="c-fs-2">SOC 2 Type 2</h3>
                                 <a href="/pdf/soc2.pdf" target="_blank">
                                     <Image
                                         src="/images/certificate_soc.png"
