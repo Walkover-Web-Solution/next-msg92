@@ -1409,7 +1409,7 @@
       "icon": "/img/icon/otp.svg",
       "pageimg":"/img/pageimg/otp.svg",
       "tagline": "Instant Secure verification",
-      "heading": "Simplest, quickest and most effective way to verify your users",
+      "heading": "Verify users quickly and effectively via SMS, WhatsApp Auth, email, or voice.",
       "subheading": "Build customer trust and enable business protection with two-factor authentication.",
       "features": [
         {
