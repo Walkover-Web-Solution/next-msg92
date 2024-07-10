@@ -16,6 +16,16 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light", "dark", "cupcake"],
+    themes: [
+      {
+        msg91: {
+          primary: "#212528",
+          secondary: "#E2F0FF",
+          accent: "#1E75BA",
+          neutral: "#FAFAFA",
+          "base-100": "#FFFFFF",
+        },
+      },
+    ],
   },
 };
