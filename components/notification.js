@@ -10,10 +10,9 @@ const baseUrl = process.env.LOGIN_URL;
 const Notification = ({ path, compData, pathArray }) => {
     const [country, setCountry] = useState("");
     const [language, setLanguage] = useState("English");
-    const currentPage = pathArray.length > 2 ? '/'+pathArray[2] : '';
+    const currentPage = pathArray.length > 2 ? '/'+pathArray[2] : '/'+pathArray[1];
     
     useEffect(() => {
-        //path = path ? path : getCookie("country_code");
         
         if (path?.startsWith('/')) {
             path = path.substring(1);
@@ -78,7 +77,7 @@ const Notification = ({ path, compData, pathArray }) => {
                                 aria-expanded="false"
                                 role="button"
                             >
-                                {path === "/?" ? (
+                                {path === "/?" || path === "/" || path === ""  ? (
                                     <MdLanguage className="me-1" />
                                 ) : (
                                     <img src={`/assets/country-flags${path === '/br-pt' ? '/br' : path }.svg`} className="nav-flag" />
