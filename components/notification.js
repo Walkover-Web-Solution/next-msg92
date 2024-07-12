@@ -10,11 +10,10 @@ const baseUrl = process.env.LOGIN_URL;
 const Notification = ({ path, compData, pathArray }) => {
     const [country, setCountry] = useState('');
     const [language, setLanguage] = useState("English");
+    const currentPage = pathArray.length > 2 ? '/'+pathArray[2] : '';
     
-    const baseUrl = process.env.API_BASE_URL;
-
     useEffect(() => {
-        path = path ? path : getCookie("country_code");
+        //path = path ? path : getCookie("country_code");
         
         if (path?.startsWith('/')) {
             path = path.substring(1);
@@ -24,8 +23,7 @@ const Notification = ({ path, compData, pathArray }) => {
         let lang = path === 'br' ? 'English' : 'Portuguese';
         
         setLanguage(lang);
-        
-        
+                
         if(!country){
             setCountry('Global');
         }
@@ -37,8 +35,6 @@ const Notification = ({ path, compData, pathArray }) => {
                 break;
             }
         }        
-
-
         
     }, []);
     return (
@@ -87,6 +83,7 @@ const Notification = ({ path, compData, pathArray }) => {
                                 role="button"
                             >
                                 <MdLanguage className="me-1" />
+                                
                                 <span className="c-fs-5 d-flex align-items-center">{country}</span>
                                 <MdExpandMore className="ms-1" />
                             </a>
@@ -97,42 +94,42 @@ const Notification = ({ path, compData, pathArray }) => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/in" className="dropdown-item c-fs-5">
+                                    <a href={'/in'+currentPage} className="dropdown-item c-fs-5">
                                         India
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/br-pt" className="dropdown-item c-fs-5">
+                                    <a href={'/br-pt'+currentPage} className="dropdown-item c-fs-5">
                                         Brazil
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/ae" className="dropdown-item c-fs-5">
+                                    <a href={'/ae'+currentPage} className="dropdown-item c-fs-5">
                                         United Arab Emirates
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/ph" className="dropdown-item c-fs-5">
+                                    <a href={'/ph'+currentPage} className="dropdown-item c-fs-5">
                                         Philippines
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/sg" className="dropdown-item c-fs-5">
+                                    <a href={'/sg'+currentPage} className="dropdown-item c-fs-5">
                                         Singapore
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/es" className="dropdown-item c-fs-5">
+                                    <a href={'/es'+currentPage} className="dropdown-item c-fs-5">
                                         Spain
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/gb" className="dropdown-item c-fs-5">
+                                    <a href={'/gb'+currentPage} className="dropdown-item c-fs-5">
                                         United Kingdom
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/us" className="dropdown-item c-fs-5">
+                                    <a href={'/us'+currentPage} className="dropdown-item c-fs-5">
                                         United States
                                     </a>
                                 </li>
