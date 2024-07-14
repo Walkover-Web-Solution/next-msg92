@@ -162,6 +162,8 @@ Marketing</li>
             <a href="https://support.google.com/adwordspolicy/answer/6008942?hl=en" target="_blank">https://support.google.com/adwordspolicy/answer/6008942?hl=en</a>
           </p>
           
+          <strong>GoogleWorkspace APIs</strong>
+          <p>We explicitly affirm that Google Workspace APIs are not used to develop, improve, or train generalized AI and/or ML models.</p>
           
           <p>We have not enabled Google AdSense on our site and we don't plan to do so in future.</p>
           <p>If you use Chrome Extensions or Google add-ons developed by MSG91, we may collect data such as your name, email address, through connecting to your Google Account (with your consent). This information won't be displayed to the public nor is it ever shared without your explicit consent. As of today, we don't use login or signup based on your Google Account.</p>
