@@ -9,8 +9,15 @@ const baseUrl = process.env.LOGIN_URL;
 
 const Notification = ({ path, compData, pathArray }) => {
     const [country, setCountry] = useState("");
-    const [language, setLanguage] = useState("English");
-    const currentPage = pathArray.length > 2 ? '/'+pathArray[2] : '/'+pathArray[1];
+    const [language, setLanguage] = useState("English");    
+    var currentPage = '';
+    if(pathArray.length > 2){
+        currentPage = '/'+pathArray[2];
+    }else{
+        if(pathArray[1].length === 2){
+            currentPage = '';
+        }
+    }
     
     useEffect(() => {
         
