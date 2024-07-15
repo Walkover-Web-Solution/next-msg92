@@ -84,19 +84,19 @@ export default function App({ Component, pageProps }) {
         }
         var cc = getCookie("country_code");
         
-        // $("a").on("click", function (event) {
-        //     event.preventDefault();
-        //     var href = $(this).attr("href");
-        //     console.log('anchor clicked', 'cc:', cc, 'href:',href);
-        //     if (href !== undefined) {
-        //         if (cc === "?" && href === "/") href = "/?";
-        //         if (products.includes(href) && cc && cc !== "?") {
-        //             window.location.href = "/" + cc + href;
-        //         } else {
-        //             window.location.href = href;
-        //         }
-        //     }
-        // });
+        $("a").on("click", function (event) {
+            event.preventDefault();
+            var href = $(this).attr("href");
+            console.log('anchor clicked', 'cc:', cc, 'href:',href);
+            if (href !== undefined) {
+                if (cc === "?" && href === "/") href = "/?";
+                if (products.includes(href) && cc && cc !== "?") {
+                    window.location.href = "/" + cc + href;
+                } else {
+                    window.location.href = href;
+                }
+            }
+        });
     }, []);
 
 
