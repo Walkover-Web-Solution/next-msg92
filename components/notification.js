@@ -9,28 +9,23 @@ const baseUrl = process.env.LOGIN_URL;
 
 const Notification = ({ path, compData, pathArray }) => {
     const [country, setCountry] = useState("");
-    const [language, setLanguage] = useState("English");    
-    var currentPage = '';
-    if(pathArray.length > 2){
-        currentPage = '/'+pathArray[2];
-    }else{
-        if(pathArray[1].length === 2){
-            currentPage = '';
-        }
-    }
-    
+    const [language, setLanguage] = useState("English");
+
+    const baseUrl = process.env.API_BASE_URL;
+
     useEffect(() => {
-        
-        if (path?.startsWith('/')) {
+        path = path ? path : getCookie("country_code");
+
+        if (path?.startsWith("/")) {
             path = path.substring(1);
         }
 
         let lang = path === "br" ? "English" : "Portuguese";
 
         setLanguage(lang);
-                
-        if(!country){
-            setCountry('Global');
+
+        if (!country) {
+            setCountry("Global");
         }
 
         for (let x in availableCountries) {
@@ -39,8 +34,7 @@ const Notification = ({ path, compData, pathArray }) => {
                 setCookie("country_code", availableCountries[x].shortname.toLowerCase(), 30);
                 break;
             }
-        }        
-        
+        }
     }, []);
     return (
         <>
@@ -84,7 +78,7 @@ const Notification = ({ path, compData, pathArray }) => {
                                 aria-expanded="false"
                                 role="button"
                             >
-                                {path === "/?" || path === "/" || path === ""  ? (
+                                {path === "/?" ? (
                                     <MdLanguage className="me-1" />
                                 ) : (
                                     <img src={`/assets/country-flags${path === '/br-pt' ? '/br' : path }.svg`} className="nav-flag" />
@@ -101,49 +95,49 @@ const Notification = ({ path, compData, pathArray }) => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={'/in'+currentPage} className="dropdown-item c-fs-5 d-flex align-items-center">
+                                    <a href="/in" className="dropdown-item c-fs-5 d-flex align-items-center">
                                         <img src="/assets/country-flags/in.svg" className="nav-flag" />
                                         India
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={'/br-pt'+currentPage} className="dropdown-item c-fs-5 d-flex align-items-center">
+                                    <a href="/br-pt" className="dropdown-item c-fs-5 d-flex align-items-center">
                                         <img src="/assets/country-flags/br.svg" className="nav-flag" />
                                         Brazil
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={'/ae'+currentPage} className="dropdown-item c-fs-5 d-flex align-items-center">
+                                    <a href="/ae" className="dropdown-item c-fs-5 d-flex align-items-center">
                                         <img src="/assets/country-flags/ae.svg" className="nav-flag" />
                                         United Arab Emirates
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={'/ph'+currentPage} className="dropdown-item c-fs-5 d-flex align-items-center">
+                                    <a href="/ph" className="dropdown-item c-fs-5 d-flex align-items-center">
                                         <img src="/assets/country-flags/ph.svg" className="nav-flag" />
                                         Philippines
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={'/sg'+currentPage} className="dropdown-item c-fs-5 d-flex align-items-center">
+                                    <a href="/sg" className="dropdown-item c-fs-5 d-flex align-items-center">
                                         <img src="/assets/country-flags/sg.svg" className="nav-flag" />
                                         Singapore
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={'/es'+currentPage} className="dropdown-item c-fs-5 d-flex align-items-center">
+                                    <a href="/es" className="dropdown-item c-fs-5 d-flex align-items-center">
                                         <img src="/assets/country-flags/es.svg" className="nav-flag" />
                                         Spain
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={'/gb'+currentPage} className="dropdown-item c-fs-5 d-flex align-items-center">
+                                    <a href="/gb" className="dropdown-item c-fs-5 d-flex align-items-center">
                                         <img src="/assets/country-flags/gb.svg" className="nav-flag" />
                                         United Kingdom
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={'/us'+currentPage} className="dropdown-item c-fs-5 d-flex align-items-center">
+                                    <a href="/us" className="dropdown-item c-fs-5 d-flex align-items-center">
                                         <img src="/assets/country-flags/us.svg" className="nav-flag" />
                                         United States
                                     </a>
