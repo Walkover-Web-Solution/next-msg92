@@ -11,9 +11,9 @@ const Insms = () => {
   return (
     <>
       <div className={`container my-5 ${showInsms ? "insms" : ""}`}>
-        <h1 className="pro-heading c-head">
+        <h3 className="pro-heading c-head">
         Enhance Business Communication with Our Voice API
-        </h1>
+        </h3>
         <p className="c-fs-3 mt-3">
         With MSG91 as your voice API service provider, you can unlock a world of possibilities to connect with your customers, automate processes, and deliver exceptional user experiences.
         </p>

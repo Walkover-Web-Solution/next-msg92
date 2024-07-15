@@ -11,12 +11,12 @@ const Insms = () => {
   return (
     <>
       <div className={`container my-5 ${showInsms ? "insms" : ""}`}>
-        <h1 className="pro-heading c-head">
+        <h3 className="pro-heading c-head">
           MSG91: Empowering Seamless Transactional Email Delivery in India
         
           <p className=" mt-3">Unlock the Power of Transactional Email with Our Bulk Transactional
           Email API</p>
-        </h1>
+        </h3>
         <p className="c-fs-3 mt-3">
           Welcome to MSG91, the leading best email API service provider for
           developers in India. With our state-of-the-art transactional email

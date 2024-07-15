@@ -12,9 +12,9 @@ const Insms = () => {
   return (
     <>
       <div className={`container my-5 ${showInsms ? "insms" : ""}`}>
-        <h1 className="pro-heading c-head">
+        <h3 className="pro-heading c-head">
           Welcome to MSG91: Your Trusted Cloud Communication Platform as a Service
-        </h1>
+        </h3>
         <p className="c-fs-3 mt-3">
           Are you searching for a reliable and versatile cloud communication platform as a service? Look no further! At MSG91, we specialize in providing top-notch mobile cloud communication platforms in India. Whether you're a startup, small business, or a large enterprise, we have the perfect solution to enhance your business communication.
         </p>
