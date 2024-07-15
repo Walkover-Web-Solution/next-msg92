@@ -12,10 +12,10 @@ const Insms = () => {
   return (
     <>
       <div className={`container my-5 ${showInsms ? "insms" : ""}`}>
-        <h1 className="pro-heading c-head">
+        <h3 className="pro-heading c-head">
           Revolutionizing Business Communication: Empower Your Connectivity with
           MSG91's SMS Services and API Solutions
-        </h1>
+        </h3>
         <p className="c-fs-3 mt-3">
           MSG91 is an SMS service provider that helps businesses improve their
           communication. They offer transactional SMS services and a robust SMS

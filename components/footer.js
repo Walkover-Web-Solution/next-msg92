@@ -8,7 +8,7 @@ const Footer = ({path, year}) => {
         <div className="footer_Main_Content mt-4 mb-4 container">
           <div className="row justify-content-sm-between">
             <div className="col-6 col-lg-4 mb-4">
-              <h1 className="c-fs-5 d-flex flex-column">Our products</h1>
+              <h3 className="c-fs-5 d-flex flex-column">Our products</h3>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a href={`${path}/hello`} className="c-link-underline c-fs-5 mt-2 c-fw-t">
                   Hello
@@ -24,7 +24,7 @@ const Footer = ({path, year}) => {
                 </a>
               </div>
 
-              <h1 className="c-fs-5 d-flex flex-column mt-5">Utilities</h1>
+              <h3 className="c-fs-5 d-flex flex-column mt-5">Utilities</h3>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a href={`${path}/shorturl`} className="c-link-underline c-fs-5 mt-2 c-fw-t">
                   URL Shortener
@@ -42,7 +42,7 @@ const Footer = ({path, year}) => {
             </div>
 
             <div className="col-6 col-lg-3 mb-4">
-              <h1 className=" c-fs-5 d-flex flex-column">Channels</h1>
+              <h3 className=" c-fs-5 d-flex flex-column">Channels</h3>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a href={`${path}/sms`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                   SMS
@@ -61,7 +61,7 @@ const Footer = ({path, year}) => {
                 </a>                
               </div>
 
-              <h1 className="c-fs-5 d-flex flex-column mt-5">Resources</h1>
+              <h3 className="c-fs-5 d-flex flex-column mt-5">Resources</h3>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a
                   href="/guide"
@@ -102,7 +102,7 @@ const Footer = ({path, year}) => {
             </div>            
 
             <div className="col-6 col-lg-3 mb-4">
-              <h1 className=" c-fs-5 d-flex flex-column">Discover</h1>
+              <h3 className=" c-fs-5 d-flex flex-column">Discover</h3>
               <div className="a-nav-link-cont d-flex flex-column mt-2 align-items-start">
                 <a
                   href="/about-us"

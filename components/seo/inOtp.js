@@ -11,9 +11,9 @@ const Insms = () => {
   return (
     <>
       <div className={`container my-5 ${showInsms ? "insms" : ""}`}>
-        <h1 className="pro-heading c-head">
+        <h3 className="pro-heading c-head">
           Supercharge Your Business with Reliable OTP SMS Services from MSG91
-        </h1>
+        </h3>
         <p className="c-fs-3 mt-3">
           Trusted OTP SMS Service Provider At MSG91, we understand the
           criticality of OTP (One-Time Password) authentication for your
