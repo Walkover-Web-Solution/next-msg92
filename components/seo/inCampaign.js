@@ -11,9 +11,9 @@ const Insms = () => {
   return (
     <>
       <div className={`container my-5 ${showInsms ? "insms" : ""}`}>
-        <h1 className="pro-heading c-head">
+        <h3 className="pro-heading c-head">
           Boost Your Marketing with the Best Campaign Software!
-        </h1>
+        </h3>
         <p className="c-fs-3 mt-3">
           Why choose SMS campaigns? It's simple – they deliver exceptional
           engagement! With an astounding open rate of over 98%, your messages

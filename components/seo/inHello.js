@@ -11,7 +11,7 @@ const Insms = () => {
     return (
         <>
             <div className={`container my-5 ${showInsms ? 'insms' : ''}`}>
-                <h1 className="pro-heading c-head">Eliminating Mediocre Customer Service</h1>
+                <h3 className="pro-heading c-head">Eliminating Mediocre Customer Service</h3>
                 <p className="c-fs-3 mt-3">
                     MSG91, the best customer support software, is designed with a range of sophisticated programs to
                     assist organizations in delivering exceptional support and guidance to their customers. We offer a

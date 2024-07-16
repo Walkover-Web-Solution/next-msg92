@@ -87,6 +87,7 @@ export default function App({ Component, pageProps }) {
         $("a").on("click", function (event) {
             event.preventDefault();
             var href = $(this).attr("href");
+            console.log('anchor clicked', 'cc:', cc, 'href:',href);
             if (href !== undefined) {
                 if (cc === "?" && href === "/") href = "/?";
                 if (products.includes(href) && cc && cc !== "?") {

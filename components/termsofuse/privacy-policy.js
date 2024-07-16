@@ -157,11 +157,13 @@ Marketing</li>
           <strong>Third-party Services</strong>
           <p>The Service may contain features or links to websites and services provided by third parties. Any information you provide on third-party sites or services is supplied directly to the operators of those services and is subject to the policies, if any, governing privacy and security set by those operators, even if accessed through the Service. We are not accountable for the content, privacy, and security practices and policies of third-party sites or services to which links or access are provided through the Service. We recommend that you familiarize yourself with the privacy and security policies of third parties before sharing your information with them.</p>
           
+          <strong>GoogleWorkspace APIs</strong>
+          <p>We explicitly affirm that Google Workspace APIs are not used to develop, improve, or train generalized AI and/or ML models.</p>
+          
           <strong>Google</strong>
           <p>Google's advertising requirements can be summed up by Google's Advertising Principles. They are put in place to provide a positive experience for users. 
             <a href="https://support.google.com/adwordspolicy/answer/6008942?hl=en" target="_blank">https://support.google.com/adwordspolicy/answer/6008942?hl=en</a>
-          </p>
-          
+          </p>                    
           
           <p>We have not enabled Google AdSense on our site and we don't plan to do so in future.</p>
           <p>If you use Chrome Extensions or Google add-ons developed by MSG91, we may collect data such as your name, email address, through connecting to your Google Account (with your consent). This information won't be displayed to the public nor is it ever shared without your explicit consent. As of today, we don't use login or signup based on your Google Account.</p>

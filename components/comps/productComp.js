@@ -22,10 +22,10 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
               {pageData?.tagline}
             </p>
             <div className="p-3">
-              <h2 className="small-heading w-md-75 w-100 mx-auto fw-normal mb-2">
+              <h2 className="heading w-md-75 w-100 mx-auto mb-2 c-fw-xb">
                 {pageData?.heading}
               </h2>
-              <p className="small-heading w-md-75 w-100 mx-auto fw-normal">
+              <p className="c-fs-2 w-md-75 w-100 mx-auto fw-normal">
                 {pageData?.subheading}
               </p>
             </div>
