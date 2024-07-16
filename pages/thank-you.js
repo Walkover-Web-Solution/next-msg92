@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { MdOutlineEmail, MdCall, MdWhatsapp } from "react-icons/md";
 import { InlineWidget, PopupButton } from "react-calendly";
-
-const baseUrl = process.env.LOGIN_URL;
-
+const baseUrl = process.env.API_BASE_URL;
 const contactus = ({path}) => {
     var [salesNumber, setSalesNumber] = useState('+91 88895 00704');
     
