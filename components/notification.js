@@ -9,13 +9,10 @@ const baseUrl = process.env.LOGIN_URL;
 
 const Notification = ({ path, compData, pathArray }) => {
     const [country, setCountry] = useState("");
-    const [language, setLanguage] = useState("English");
-
-    const baseUrl = process.env.API_BASE_URL;
+    const [language, setLanguage] = useState("English");    
 
     useEffect(() => {
-        path = path ? path : getCookie("country_code");
-
+        path = path ? path : getCookie("country_code");        
         if (path?.startsWith("/")) {
             path = path.substring(1);
         }
