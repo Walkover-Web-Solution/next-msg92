@@ -9,6 +9,7 @@ const baseUrl = process.env.LOGIN_URL;
 
 const Notification = ({ path, compData, pathArray }) => {
     const [country, setCountry] = useState("");
+    const [countryShort, setCountryShort] = useState("/?");
     const [language, setLanguage] = useState("English");    
 
     useEffect(() => {
@@ -23,12 +24,14 @@ const Notification = ({ path, compData, pathArray }) => {
 
         if (!country) {
             setCountry("Global");
+            setCountryShort("/?")
         }
 
         for (let x in availableCountries) {
             if (path?.toUpperCase() === availableCountries[x].shortname) {
                 setCountry(availableCountries[x].name);
                 setCookie("country_code", availableCountries[x].shortname.toLowerCase(), 30);
+                setCountryShort(availableCountries[x].shortname.toLowerCase())
                 break;
             }
         }
@@ -75,10 +78,10 @@ const Notification = ({ path, compData, pathArray }) => {
                                 aria-expanded="false"
                                 role="button"
                             >
-                                {path === "/?" ? (
+                                {countryShort === '/?' || countryShort === '?' || countryShort === '' || countryShort === '/' ? (
                                     <MdLanguage className="me-1" />
                                 ) : (
-                                    <img src={`/assets/country-flags${path === '/br-pt' ? '/br' : path }.svg`} className="nav-flag" />
+                                    <img src={`/assets/country-flags/${countryShort === 'br-pt' ? 'br' : countryShort }.svg`} className="nav-flag" />
                                 )}
 
                                 <span className="c-fs-5 d-flex align-items-center">{country}</span>
