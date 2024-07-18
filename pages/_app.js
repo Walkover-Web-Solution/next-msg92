@@ -87,11 +87,14 @@ export default function App({ Component, pageProps }) {
         $("a").on("click", function (event) {
             event.preventDefault();
             var href = $(this).attr("href");
-            console.log('anchor clicked', 'cc:', cc, 'href:',href);
+            var target = $(this).attr("target");            
             if (href !== undefined) {
                 if (cc === "?" && href === "/") href = "/?";
                 if (products.includes(href) && cc && cc !== "?") {
-                    window.location.href = "/" + cc + href;
+                    href = "/" + cc + href;
+                }
+                if (target === "_blank") {
+                    window.open(href, '_blank');
                 } else {
                     window.location.href = href;
                 }

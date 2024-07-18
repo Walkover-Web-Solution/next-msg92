@@ -1,34 +1,11 @@
 import React from "react";
 import { MdKeyboardArrowRight, MdDone } from "react-icons/md";
-import { InlineWidget } from "react-calendly";
 import axios from "axios";
 import GetStartedSection from "@/components/getStartedSection/getStartedSection";
+import startups from "@/data/startups.json";
 
-export async function getStaticProps() {
-    let data = null;
-    try {
-        const response = await axios.get(
-            "https://api.airtable.com/v0/appxLAuNWLqf7kh4j/STARTUP%20PAGE%20-%20WEBSITE%20DISPLAY",
-            {
-                headers: {
-                    Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
-                },
-            }
-        );
-        data = response.data;
-    } catch (error) {
-        console.error("There was an error fetching the data!", error);
-    }
-
-    return {
-        props: {
-            data,
-        },
-    };
-}
-
-const msg91ForStartups = ({ data }) => {
-    console.log("🚀 ~ msg91ForStartups ~ data:", data);
+const msg91ForStartups = ({ staticData }) => {
+    
     return (
         <>
             <div className="container d-flex justify-content-center flex-column text-center my-5 gap-3 ">
@@ -158,27 +135,27 @@ const msg91ForStartups = ({ data }) => {
                         and Crowdfunding platforms across to inspire, identify and develop end-to-end solutions for
                         businesses to discover and engage.
                     </p>
-                    {data?.records && (
+                    {startups && (
                         <div className="integrations-card-cont">
-                            {data.records.map((record) => {
-                                if (record?.fields?.Website) {
+                            {startups.map((record, index) => {
+                                if (record?.Website) {
                                     return (
                                             <a
                                                 target="_blank"
-                                                href={`${record?.fields?.Website}`}
-                                                key={record.id}
+                                                href={`${record?.Website}`}
+                                                key={`startup-${index}`}
                                                 className="integrations-card p-4 d-flex flex-column gap-2"
                                             >
                                                 <div>
                                                     <img
-                                                        src={record?.fields?.Logo[0]?.thumbnails?.large?.url}
-                                                        alt=""
+                                                        src={record?.Logo}
+                                                        alt={record?.CompanyName}
                                                         className="integrations-card-img"
                                                     />
                                                 </div>
 
                                                 <div className="mt-2">
-                                                    <h5 className="text-dark">{record.fields["Company Name"]}</h5>
+                                                    <h5 className="text-dark">{record?.CompanyName}</h5>
                                                 </div>
                                                
                                             </a>
