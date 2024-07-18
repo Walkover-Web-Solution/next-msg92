@@ -298,7 +298,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                 <h2 className="sub-heading c-head fw-bold">More services</h2>
                 <div className="d-flex my-5 flex-lg-row flex-column gap-4">
                     <a
-                        href={`${path}/shorturl`}
+                        href={`/shorturl`}
                         className=" text-dark col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-4 d-flex flex-column flex-sm-row flex-md-row flex-lg-column gap-3 rounded-2 more-services"
                     >
                         <div className="d-flex flex-column gap-3">
@@ -335,7 +335,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                     </a>
 
                     <a
-                        href={`${path}/knowledgebase`}
+                        href={`/knowledgebase`}
                         className=" text-dark col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 p-4 d-flex flex-column flex-sm-row flex-md-row flex-lg-column gap-3 rounded-2 more-services"
                     >
                         <div className="d-flex flex-column gap-3">
