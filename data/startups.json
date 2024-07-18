@@ -85,7 +85,7 @@
   },
   {
     "CompanyName": "Inclusive Divyangjan Entrepreneur Association",
-    "Website": "www.divyangjanindia.com",
+    "Website": "http://www.divyangjanindia.com",
     "SignupLink": "https://control.msg91.com/signup/?utm_source=divyangjanindia",
     "Logo": "/assets/startups/idea.jpeg"
   },
@@ -247,7 +247,7 @@
   },
   {
     "CompanyName": "Helpscout",
-    "Website": "www.helpscout.com",
+    "Website": "https://www.helpscout.com/",
     "SignupLink": "https://control.msg91.com/signup/?utm_source=helpscout",
     "Logo": "/assets/startups/helpscout.png"
   },
@@ -295,7 +295,7 @@
   },
   {
     "CompanyName": "Gujarat Student Startup & Innovation Hub (i-Hub)",
-    "Website": "www.ihubgujarata.in",
+    "Website": "http://www.ihubgujarata.in/",
     "SignupLink": "https://control.msg91.com/signup/?utm_source=ihubgujarat",
     "Logo": "/assets/startups/ihub.png"
   },
@@ -337,13 +337,13 @@
   },
   {
     "CompanyName": "IIM Udaipur Incubation Centre",
-    "Website": "www.iimu.ac.in",
+    "Website": "https://www.iimu.ac.in/",
     "SignupLink": "https://control.msg91.com/signup/?utm_source=iimudaipur",
     "Logo": "/assets/startups/iimudaipur.png"
   },
   {
     "CompanyName": "Satz Venture Nurturers Private Limited",
-    "Website": "www.wonkrew.com https://satzdigital.com/",
+    "Website": "https://satzdigital.com/",
     "SignupLink": "https://control.msg91.com/signup/?utm_source=satzadvisorsincubator",
     "Logo": "/assets/startups/satz.jpeg"
   },
