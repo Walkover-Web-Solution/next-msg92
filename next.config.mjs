@@ -3,4 +3,6 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
+Object.assign(nextConfig);
+
 export default nextConfig;
