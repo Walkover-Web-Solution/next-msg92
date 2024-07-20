@@ -1,14 +1,16 @@
 {
-    "NotificatoinBarComp" : {
-        "title" : "Notification",
-        "comp" : "NotificatoinBarComp"
-    },
-    "IndexComp":{
-        "title" : "Index comp",
-        "comp" : "IndexComp"
-    },
-    "ProductComp":{
-        "title" : "Index comp",
-        "comp" : "ProductComp"
-    }
+    "components": [
+        {
+            "title": "Notification",
+            "comp": "NotificationBarComp"
+        },
+        {
+            "title": "Index comp",
+            "comp": "IndexComp"
+        },
+        {
+            "title": "Index comp",
+            "comp": "ProductComp"
+        }
+    ]
 }
