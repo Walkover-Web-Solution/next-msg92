@@ -1,46 +1,46 @@
-import React from 'react';
-import axios from 'axios';
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft, MdCheckCircle, MdCancel } from 'react-icons/md';
-import { toast } from 'react-toastify';
-import Select from 'react-select';
+import React from "react";
+import axios from "axios";
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft, MdCheckCircle, MdCancel } from "react-icons/md";
+import { toast } from "react-toastify";
+import Select from "react-select";
 
 class StepThree extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             formData: props?.formData || {
-                firstName: '',
-                lastName: '',
-                companyName: '',
-                industryType: '',
+                firstName: "",
+                lastName: "",
+                companyName: "",
+                industryType: "",
                 serviceNeeded: [],
-                country: '',
-                countryName: '',
-                stateProvince: '',
-                stateName: '',
-                pincode: '',
-                city: '',
-                cityId: '',
-                otherCity: '',
-                address: '',
-                gstNumber: '',
+                country: "",
+                countryName: "",
+                stateProvince: "",
+                stateName: "",
+                pincode: "",
+                city: "",
+                cityId: "",
+                otherCity: "",
+                address: "",
+                gstNumber: "",
                 agreeToTerms: false,
                 acceptInviteForCompanies: [],
                 rejectInviteForCompanies: [],
             },
             formErrorData: {
-                firstNameError: '',
-                lastNameError: '',
-                gstNumberError: '',
-                pincodeError: '',
-                companyNameError: '',
-                industryTypeError: '',
-                serviceNeededError: '',
-                countryError: '',
-                stateError: '',
-                cityError: '',
-                otherCityError: '',
-                addressError: '',
+                firstNameError: "",
+                lastNameError: "",
+                gstNumberError: "",
+                pincodeError: "",
+                companyNameError: "",
+                industryTypeError: "",
+                serviceNeededError: "",
+                countryError: "",
+                stateError: "",
+                cityError: "",
+                otherCityError: "",
+                addressError: "",
                 // Add more error fields for other inputs
             },
             invitationRender: true,
@@ -56,7 +56,7 @@ class StepThree extends React.Component {
         this.setState((prevState) => ({
             formData: {
                 ...prevState.formData,
-                [name]: type === 'checkbox' ? checked : value,
+                [name]: type === "checkbox" ? checked : value,
             },
         }));
     };
@@ -64,7 +64,7 @@ class StepThree extends React.Component {
     getCountries = async () => {
         const response = await axios.get(`${process.env.API_BASE_URL}/api/v5/web/getCountries`, {
             headers: {
-                Cookie: 'HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D',
+                Cookie: "HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D",
             },
         });
         return response;
@@ -72,7 +72,7 @@ class StepThree extends React.Component {
     fetchServices = async () => {
         const response = await axios.get(`${process.env.API_BASE_URL}/api/v5/web/getAllServices`, {
             headers: {
-                Cookie: 'HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D',
+                Cookie: "HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D",
             },
         });
         return response;
@@ -80,7 +80,7 @@ class StepThree extends React.Component {
     fetchIndustry = async () => {
         const response = await axios.get(`${process.env.API_BASE_URL}/api/v5/web/getIndustry`, {
             headers: {
-                Cookie: 'HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D',
+                Cookie: "HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D",
             },
         });
         return response;
@@ -97,6 +97,10 @@ class StepThree extends React.Component {
                         if (value.toLowerCase().includes(this.props?.preselectedService.toLowerCase())) {
                             this.setState({
                                 defaultServiceNeeded: [{ value: +key, label: value }],
+                                formData: {
+                                    ...this.state.formData,
+                                    serviceNeeded: [{ value: +key, label: value }],
+                                },
                                 serviceRender: false,
                             });
                             setTimeout(() => {
@@ -114,6 +118,10 @@ class StepThree extends React.Component {
                     });
                     this.setState({
                         defaultServiceNeeded,
+                        formData: {
+                            ...this.state.formData,
+                            serviceNeeded: defaultServiceNeeded,
+                        },
                         serviceRender: false,
                     });
                     setTimeout(() => {
@@ -148,7 +156,7 @@ class StepThree extends React.Component {
                 `${process.env.API_BASE_URL}/api/v5/web/getStatesByCountryId/${selectedCountry}`,
                 {
                     headers: {
-                        Cookie: 'HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D',
+                        Cookie: "HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D",
                     },
                 }
             );
@@ -171,7 +179,7 @@ class StepThree extends React.Component {
                 `${process.env.API_BASE_URL}/api/v5/web/getCitiesByStateId/${selectedstateProvince}`,
                 {
                     headers: {
-                        Cookie: 'HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D',
+                        Cookie: "HELLO_APP_HASH=aHBVU0doU1NwRktBUDVkVndNSndUUVY3N1lmcWxzZVV2b01LcEkvR2ViST0%3D; PHPSESSID=8611kbh15da1ecpqeb712qlusj; PROXY_APP_HASH=YnB6Vm92ejVEYkgxSFR1bUxkNWFVMm9uYXUra1JzYk5QNEFyRVRKQXJiMD0%3D",
                     },
                 }
             );
@@ -214,81 +222,82 @@ class StepThree extends React.Component {
         const { firstName } = this.state.formData;
         // Regular expression to match names that contain only letters (no numbers or spaces)
         const nameRegex = /^[A-Za-z]+$/;
-        if (firstName.trim() === '') {
-            return 'First Name is required';
+        if (firstName.trim() === "") {
+            return "First Name is required";
         } else if (!nameRegex.test(firstName)) {
-            return 'First Name should only contain letters';
+            return "First Name should only contain letters";
         }
-        return '';
+        return "";
     };
 
     validateLastName = () => {
         const { lastName } = this.state.formData;
         // Regular expression to match names that contain only letters (no numbers or spaces)
         const nameRegex = /^[A-Za-z]+$/;
-        if (lastName.trim() === '') {
-            return 'Last Name is required';
+        if (lastName.trim() === "") {
+            return "Last Name is required";
         } else if (!nameRegex.test(lastName)) {
-            return 'Last Name should only contain letters';
+            return "Last Name should only contain letters";
         }
-        return '';
+        return "";
     };
 
     validateGSTNumber = () => {
         const { gstNumber, countryName } = this.state.formData;
         const gstRegex = /^\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}$/;
-        if (countryName?.toLowerCase()?.includes('india') && gstNumber && !gstRegex.test(gstNumber)) {
-            return 'Invalid GST Number';
+        if (countryName?.toLowerCase()?.includes("india") && gstNumber && !gstRegex.test(gstNumber)) {
+            return "Invalid GST Number";
         }
-        return '';
+        return "";
     };
 
     validatePincode = () => {
         const { pincode } = this.state.formData;
         const pincodeRegex = /^[0-9 A-Z a-z -]{4,11}$/;
         if (!pincode) {
-            return 'Pincode is required';
+            return "Pincode is required";
         }
         if (!pincodeRegex.test(pincode)) {
-            return 'Pincode must be a valid';
+            return "Pincode must be a valid";
         }
-        return '';
+        return "";
     };
 
     validateRequired = (fieldName, label) => {
         const fieldValue = this.state.formData?.[fieldName];
         if (fieldValue?.trim()?.length === 0) {
-            return label + ' is required';
+            return label + " is required";
         }
-        return '';
+        return "";
     };
 
-    validateMinMax = (fieldName,label, min, max) => {
+    validateMinMax = (fieldName, label, min, max) => {
         const fieldValue = this.state.formData?.[fieldName];
-        if(min !== null && min !== undefined && +min && fieldValue?.length < min) {
+        if (min !== null && min !== undefined && +min && fieldValue?.length < min) {
             return `${label} must be more than ${min} characters`;
         }
-        if(max !== null && max !== undefined && +max && fieldValue?.length > max) {
+        if (max !== null && max !== undefined && +max && fieldValue?.length > max) {
             return `${label} should be less than ${max} characters`;
         }
-        return '';
+        return "";
     };
 
     finalSubmit = () => {
         const errors = {
-            firstNameError: this.validateFirstName() || this.validateMinMax('firstName', 'First Name', null, 50),
-            lastNameError: this.validateLastName() || this.validateMinMax('lastName', 'Last Name', null, 50),
+            firstNameError: this.validateFirstName() || this.validateMinMax("firstName", "First Name", null, 50),
+            lastNameError: this.validateLastName() || this.validateMinMax("lastName", "Last Name", null, 50),
             gstNumberError: this.validateGSTNumber(),
             pincodeError: this.validatePincode(),
-            companyNameError: this.validateRequired('companyName', 'Company Name'),
-            industryTypeError: this.validateRequired('industryType', 'Industry Type'),
+            companyNameError: this.validateRequired("companyName", "Company Name"),
+            industryTypeError: this.validateRequired("industryType", "Industry Type"),
             serviceNeededError:
-                this.state.formData.serviceNeeded?.length === 0 ? 'Need to select atleast one service' : '',
-            countryError: this.validateRequired('country', 'Country'),
-            stateError: this.validateRequired('stateName', 'State'),
-            cityError: this.validateRequired('city', 'City'),
-            otherCityError: this.state.formData.city === 'other' ? this.validateRequired('otherCity', 'City') : '',
-            addressError: this.validateRequired('address', 'Address') || this.validateMinMax('address', 'Address', 5, 100),
+                this.state.formData.serviceNeeded?.length === 0 ? "Need to select atleast one service" : "",
+            countryError: this.validateRequired("country", "Country"),
+            stateError: this.validateRequired("stateName", "State"),
+            cityError: this.validateRequired("city", "City"),
+            otherCityError: this.state.formData.city === "other" ? this.validateRequired("otherCity", "City") : "",
+            addressError:
+                this.validateRequired("address", "Address") || this.validateMinMax("address", "Address", 5, 100),
         };
         if (this.state.createCompany) {
             this.setState((prevState) => ({
@@ -304,7 +313,7 @@ class StepThree extends React.Component {
                 !this.state.createCompany &&
                 !this.state.formData.acceptInviteForCompanies.length
             ) {
-                toast.error('Accept atleast one invitation or create a new company');
+                toast.error("Accept atleast one invitation or create a new company");
             } else {
                 this.props.finalSubmit(this.state.formData, this.state.createCompany);
             }
@@ -339,8 +348,8 @@ class StepThree extends React.Component {
                                 type="text"
                                 className={
                                     this.state.formErrorData.firstNameError
-                                        ? 'form-control input-error-display'
-                                        : 'form-control'
+                                        ? "form-control input-error-display"
+                                        : "form-control"
                                 }
                                 placeholder="First Name*"
                                 name="firstName"
@@ -356,8 +365,8 @@ class StepThree extends React.Component {
                                 type="text"
                                 className={
                                     this.state.formErrorData.lastNameError
-                                        ? 'form-control input-error-display'
-                                        : 'form-control'
+                                        ? "form-control input-error-display"
+                                        : "form-control"
                                 }
                                 placeholder="Last Name*"
                                 name="lastName"
@@ -376,7 +385,7 @@ class StepThree extends React.Component {
                                     return (
                                         <div className="d-flex flex-wrap gap-4 align-items-center">
                                             <p className="invitation-banner">
-                                                You are invited to join{' '}
+                                                You are invited to join{" "}
                                                 <span className="c-fw-sb">{value.companyName}</span>
                                             </p>
                                             {(value?.accept === null || value?.accept === undefined) && (
@@ -420,7 +429,7 @@ class StepThree extends React.Component {
                                 className="btn btn-login-prime-o create-company-btn"
                                 onClick={() => this.setState({ createCompany: true })}
                             >
-                                {' '}
+                                {" "}
                                 Create New Company
                             </button>
                         </div>
@@ -432,7 +441,7 @@ class StepThree extends React.Component {
                                 className="btn c-fs-6 c-fw-r btn-default"
                                 onClick={() => this.setState({ createCompany: false })}
                             >
-                                {' '}
+                                {" "}
                                 Cancel
                             </button>
                         </div>
@@ -482,16 +491,16 @@ class StepThree extends React.Component {
                                         <Select
                                             isMulti
                                             isClearable
-                                            instanceId={'serviceNeeded'}
+                                            instanceId={"serviceNeeded"}
                                             defaultValue={this.state.defaultServiceNeeded}
-                                            onChange={(value) =>
+                                            onChange={(value) => {
                                                 this.setState((prevState) => ({
                                                     formData: {
                                                         ...prevState.formData,
                                                         serviceNeeded: value.map((obj) => obj.value),
                                                     },
-                                                }))
-                                            }
+                                                }));
+                                            }}
                                             placeholder="Select Service Needed*"
                                             options={
                                                 this.state.services
@@ -562,8 +571,8 @@ class StepThree extends React.Component {
                                             type="text"
                                             className={
                                                 this.state.formErrorData.pincodeError
-                                                    ? 'form-control input-error-display'
-                                                    : 'form-control'
+                                                    ? "form-control input-error-display"
+                                                    : "form-control"
                                             }
                                             placeholder="Pincode*"
                                             name="pincode"
@@ -601,7 +610,7 @@ class StepThree extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                {this.state.formData.city == 'other' && (
+                                {this.state.formData.city == "other" && (
                                     <div className="col-12  form-input-with-error">
                                         <input
                                             type="text"
@@ -629,14 +638,14 @@ class StepThree extends React.Component {
                                         {this.state.formErrorData.addressError}
                                     </div>
                                 </div>
-                                {this.state.formData.countryName?.toLowerCase()?.includes('india') && (
+                                {this.state.formData.countryName?.toLowerCase()?.includes("india") && (
                                     <div className="col-12 form-input-with-error">
                                         <input
                                             type="text"
                                             className={
                                                 this.state.formErrorData.gstNumberError
-                                                    ? 'form-control input-error-display'
-                                                    : 'form-control'
+                                                    ? "form-control input-error-display"
+                                                    : "form-control"
                                             }
                                             placeholder="GST number"
                                             name="gstNumber"
@@ -664,7 +673,7 @@ class StepThree extends React.Component {
                                     onChange={this.handleInputChange}
                                 />
                                 <p className="form-check-label c-fs-7 c-fw-500 ps-0" htmlFor="termsCheckBox">
-                                    I agree to the{' '}
+                                    I agree to the{" "}
                                     <a
                                         href="https://msg91.com/terms-of-use"
                                         target="_blank"
@@ -679,7 +688,7 @@ class StepThree extends React.Component {
                                     className="btn btn-login-secondary c-fs-7"
                                     onClick={() => this.props.setStep(2)}
                                 >
-                                    {' '}
+                                    {" "}
                                     <MdKeyboardArrowLeft />
                                     Back
                                 </button>
