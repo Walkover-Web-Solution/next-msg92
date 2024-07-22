@@ -1,0 +1,12 @@
+{
+    "HeadComp":{
+        "title": "title",
+        "description": "description"
+    },
+    "NotificationBarComp": {
+        "title": "Notification"
+    },
+    "MenuBarComp": {
+        "title": "Menu Bar"
+    }    
+}

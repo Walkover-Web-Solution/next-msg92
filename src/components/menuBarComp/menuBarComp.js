@@ -1,4 +1,4 @@
-export default function NotificationBarComp({data}) {
+export default function MenuBar({data}) {
     return (
         <>
             <div className="text">{data.title}</div>

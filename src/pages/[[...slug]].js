@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import IndexComp from '@/components/indexComp/indexComp';
 import ProductComp from '@/components/productComp/productComp';
 import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
@@ -23,6 +24,35 @@ export default function Page(props) {
             </div>
         );
     }
+=======
+/* components */
+import HeadComp from '../components/headComp';
+import NotificationBarComp from '../components/notificationBarComp/notificationBarComp';
+import MenuBarComp from '../components/menuBarComp/menuBarComp';
+
+const Components = {
+  HeadComp,
+  NotificationBarComp,
+  MenuBarComp
+};
+
+export default function Page(props) {
+  return (
+    <div>
+      {Object.keys(props).map((key) => {
+        const data = props[key];
+        console.log("🚀 ~ Page ~ props:", data);
+        var Component = Components[key];
+        // Check if Component is undefined
+        if (!Component) {
+          console.error(`Component is undefined. Check your imports and component exports.`);
+          return;
+        }        
+        return <Component key={`section-${key}`} data={data} />
+      })}
+    </div>
+  );
+>>>>>>> c48e7df (fixed comp call by string)
 }
 
 export const getStaticPaths = async () => {
@@ -33,6 +63,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
+<<<<<<< HEAD
     const params = context.params.slug;
     const res = await fetch('http://localhost:3000/api/fetch?lang=en&country=in');
     const data = await res.json();
@@ -45,4 +76,20 @@ export const getStaticProps = async (context) => {
     return {
         props: data,
     };
+=======
+  const params = context.params  
+  const res = await fetch('http://localhost:3000/api/data', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(params),
+  });
+  const data = await res.json();  
+  //console.log("🚀 ~ getStaticProps ~ data:", data)
+  
+  return {
+    props: data,
+  };  
+>>>>>>> c48e7df (fixed comp call by string)
 };
