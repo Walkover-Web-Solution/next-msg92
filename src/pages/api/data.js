@@ -1,18 +1,13 @@
-export default function handler(req, res) {            
+export default function handler(req, res) {
     try {
-        const data = req.body;
-        if (Object.keys(data).length === 0 && data.constructor === Object) {
-            const data = require('@/data/home.json');
-            res.status(200).json(data);
-            return;
-            //res.status(400).json({ error: 'Data is an empty object' });
-        }
+        const params = req.body;
+        const folder = params.slug[0] ? params.slug[0] : 'global';
+        const file = params.slug[1] ? params.slug[1] : 'home';
+        const data = require(`@/data/${folder}/${file}.json`);
         res.status(200).json(data);
+        return;
     } catch (error) {
         res.status(404).json({ error: 'File not found' });
     }
     res.status(200).json({ message: 'Hello from Next.js!' })
 }
-
-
-

@@ -8,5 +8,8 @@
     },
     "MenuBarComp": {
         "title": "Menu Bar"
-    }    
+    },
+    "BannerComp": {
+        "title" : "Banner"
+    }
 }
