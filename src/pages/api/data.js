@@ -1,9 +1,25 @@
 export default function handler(req, res) {
-    try {
+    var folder = 'global';
+    var file = 'home';
+    try {        
         const params = req.body;
-        const folder = params.slug[0] ? params.slug[0] : 'global';
-        const file = params.slug[1] ? params.slug[1] : 'home';
-        const data = require(`@/data/${folder}/${file}.json`);
+        if (Object.keys(params).length !== 0) {
+            console.log(params.slug.length);
+            if(params.slug.length){
+                folder = params.slug[0];
+            }
+            if(params.slug.length > 1){
+                folder = params.slug[0];
+                file = params.slug[1];
+            }            
+        }        
+        let data;
+        try {
+            data = require(`@/data/${folder}/${file}.json`);
+        } catch (err) {
+            data = require(`@/data/notfound.json`);
+        }
+        
         res.status(200).json(data);
         return;
     } catch (error) {

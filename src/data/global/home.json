@@ -10,6 +10,52 @@
         "title": "Menu Bar"
     },
     "BannerComp": {
-        "title" : "Banner"
-    }
+        "icon" : "",
+        "name" : "",
+        "tagline": "Revolutionize customer support",
+        "heading": "Never lose sight of what’s important",
+        "subheading": "Don’t just solve tickets, build customer relationships",
+        "img":"/img/home/banner.webp"
+    },
+    "TrustedByComp":{
+        "heading":"Trusted by 30,000+ global businesses"
+    },
+    "ProductsComp":[
+        {
+            "icon":"/img/icon/hello.svg",
+            "tagline":"CONTACT CENTER",
+            "name":"Hello",
+            "description":"Empower your employees, Support your customers.",
+            "img":"/img/home/chats.svg",
+            "linkText": "Learn more",
+            "link": "/hello"
+        },
+        {
+            "icon":"/img/icon/campaign.svg",
+            "tagline":"EVENT BASED AUTOMATION",
+            "name":"Campaign",
+            "description":"Boost audience engagement through smart Platform.",
+            "img":"/img/home/campaign.svg",
+            "linkText": "Learn more",
+            "link": "/campaign"
+        },
+        {
+            "icon":"/img/icon/segmento.svg",
+            "tagline":"CUSTOMER DATA PLATFORM",
+            "name":"Segmento",
+            "description":"Customer segmentation by their actions or events.",
+            "img":"/img/home/segmento.webp",
+            "linkText": "Learn more",
+            "link": "/segmento"
+        },
+        {
+            "icon":"/img/icon/otp.svg",
+            "tagline":"INSTANT SECURE VERIFICATION",
+            "name":"OTP",
+            "description":"Quick and reliable multichannel OTP verification",
+            "img":"/img/home/otp.png",
+            "linkText": "Learn more",
+            "link": "/otp"
+        }
+    ]
 }

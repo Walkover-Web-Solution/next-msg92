@@ -1,14 +1,35 @@
 /* components */
-import HeadComp from '../components/HeadComp';
-import NotificationBarComp from '../components/NotificationBarComp/NotificationBarComp';
-import MenuBarComp from '../components/MenuBarComp/MenuBarComp';
 import BannerComp from '../components/BannerComp/BannerComp';
+import CaseStudiesComp from '../components/CaseStudiesComp/CaseStudiesComp';
+import ChannelsComp from '../components/ChannelsComp/ChannelsComp';
+import FactsComp from '../components/FactsComp/FactsComp';
+import FaqsComp from '../components/FaqsComp/FaqsComp';
+import FooterComp from '../components/FooterComp/FooterComp';
+import MenuBarComp from '../components/MenuBarComp/MenuBarComp';
+import MoreServicesComp from '../components/MoreServicesComp/MoreServicesComp';
+import NotFoundComp from '../components/NotFoundComp/NotFoundComp';
+import NotificationBarComp from '../components/NotificationBarComp/NotificationBarComp';
+import PreFooterComp from '../components/PreFooterComp/PreFooterComp';
+import ProductsComp from '../components/ProductsComp/ProductsComp';
+import TrustedByComp from '../components/TrustedByComp/TrustedByComp';
+import HeadComp from '../components/HeadComp';
+
 
 const Components = {
-  HeadComp,
-  NotificationBarComp,
+  BannerComp,
+  CaseStudiesComp,
+  ChannelsComp,
+  FactsComp,
+  FaqsComp,
+  FooterComp,
   MenuBarComp,
-  BannerComp
+  MoreServicesComp,
+  NotFoundComp,
+  NotificationBarComp,
+  PreFooterComp,
+  ProductsComp,
+  TrustedByComp,
+  HeadComp
 };
 
 export default function Page(props) {
@@ -36,7 +57,6 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const params = context.params  
-  //console.log("🚀 ~ getStaticProps ~ params:", context.params)
   const res = await fetch('http://localhost:3000/api/data', {
     method: 'POST',
     headers: {
