@@ -24,6 +24,7 @@ class StepThree extends React.Component {
                 otherCity: '',
                 address: '',
                 gstNumber: '',
+                vatNumber: '',
                 agreeToTerms: false,
                 acceptInviteForCompanies: [],
                 rejectInviteForCompanies: [],
@@ -41,6 +42,7 @@ class StepThree extends React.Component {
                 cityError: '',
                 otherCityError: '',
                 addressError: '',
+                varNumberError:'',
                 // Add more error fields for other inputs
             },
             invitationRender: true,
@@ -645,6 +647,25 @@ class StepThree extends React.Component {
                                         />
                                         <div className="text-danger input-error-message c-fs-7">
                                             {this.state.formErrorData.gstNumberError}
+                                        </div>
+                                    </div>
+                                )}
+                                {this.state.formData.countryName?.toLowerCase()?.includes('united kingdom') && (
+                                    <div className="col-12 form-input-with-error">
+                                        <input
+                                            type="text"
+                                            className={
+                                                this.state.formErrorData.varNumberError
+                                                    ? 'form-control input-error-display'
+                                                    : 'form-control'
+                                            }
+                                            placeholder="VAT number"
+                                            name="vatNumber"
+                                            value={this.state.formData.vatNumber}
+                                            onChange={this.handleInputChange}
+                                        />
+                                        <div className="text-danger input-error-message c-fs-7">
+                                            {this.state.formErrorData.varNumberError}
                                         </div>
                                     </div>
                                 )}

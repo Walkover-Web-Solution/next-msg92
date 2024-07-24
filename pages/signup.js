@@ -373,6 +373,7 @@ class SignUp extends React.Component {
                       'stateId': data?.stateProvince,
                       'companyName': data?.companyName,
                       'service': data?.serviceNeeded,
+                      'vatNo': data?.vatNumber,
                   }
                 : {},
             'userDetails': {
