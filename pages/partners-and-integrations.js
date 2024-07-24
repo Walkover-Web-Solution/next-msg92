@@ -3,24 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { MdOutlineCheck, MdArrowForward } from "react-icons/md";
-const partnersAndIntegrations = ({data}) => {
-    //console.log('partnersAndIntegrations', data);
-    //const [data, setData] = useState(null);
-
-    /* useEffect(() => {
-        axios
-            .get("https://api.airtable.com/v0/apprWVB91nVC9dqoS/tblkIzJ6ITtAwQXXx", {
-                headers: {
-                    Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
-                },
-            })
-            .then((response) => {
-                setData(response.data);
-            })
-            .catch((error) => {
-                console.error("There was an error fetching the data!", error);
-            });
-    }, []); */
+import partners from "@/data/partners.json";
+const partnersAndIntegrations = ({data}) => {    
     return (
         <>
             <div className="container text-center  ">
@@ -49,31 +33,31 @@ const partnersAndIntegrations = ({data}) => {
                             Note – For paid plugins you will receive free credits, depending on the policy.
                         </p>
                     </div>
-                    {data?.records && (
+                    {partners && (
                         <div className="integrations-card-cont">
-                            {data.records.map((record) => {
-                                if (record?.fields?.Link) {
+                            {partners.map((record, index) => {
+                                if (record?.Link) {
                                     return (
                                             <a
                                                 target="_blank"
-                                                href={record?.fields?.Link}
-                                                key={record.id}
+                                                href={record.Link}
+                                                key={`partner-${index}`}
                                                 className="integrations-card p-4 d-flex flex-column gap-2"
                                             >
                                                 <div>
                                                     <img
-                                                        src={record?.fields?.Logo[0]?.thumbnails?.large?.url}
+                                                        src={record?.Logo}
                                                         alt=""
                                                         className="integrations-card-img"
                                                     />
                                                 </div>
 
                                                 <div className="mt-2">
-                                                    <h5 className="text-dark">{record.fields.Partner}</h5>
-                                                    <p className="text-grey mt-1">{record.fields.Description}</p>
+                                                    <h5 className="text-dark">{record.Partner}</h5>
+                                                    <p className="text-grey mt-1">{record.Description}</p>
                                                 </div>
                                                 <span className="mt-auto text-grey ">
-                                                    By: {record.fields["Developed by"]}
+                                                    By: {record.DevelopedBy}
                                                 </span>
                                             </a>
                                     );

@@ -82,7 +82,7 @@ const Notification = ({ path, compData, pathArray }) => {
                                 {countryShort === '/?' || countryShort === '?' || countryShort === '' || countryShort === '/' ? (
                                     <MdLanguage className="me-1" />
                                 ) : (
-                                    <img src={`/assets/country-flags/${countryShort === '/br-pt' ? '/br' : countryShort }.svg`} className="nav-flag" />
+                                    <img src={`/assets/country-flags/${countryShort === 'br-pt' ? 'br' : countryShort }.svg`} className="nav-flag" />
                                 )}
 
                                 <span className="c-fs-5 d-flex align-items-center">{country}</span>
