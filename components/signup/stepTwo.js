@@ -10,25 +10,34 @@ var smsIdentifier = "";
 var mobileInvalid = false;
 
 class StepTwo extends React.Component {
+    componentDidMount() {
+        const queryParams = new URLSearchParams(window.location.search);
+        const query = queryParams.toString();
+        console.log(query);
+        const sourceValue = queryParams.get("source");
+        this.setState({ sourceValue });
+    }
     constructor(props) {
         super(props);
         this.state = {
             emailIdentifier: props.emailIdentifierBackup || "",
             smsIdentifier: props.smsIdentifierBackup || "",
+            sourceValue: "",
         };
         smsIdentifier = this.state.smsIdentifier;
     }
 
     handleSourceChange = (event) => {
-        const value =  event.target.value;
-        const utmData = getCookie('msg91_query');
-        if(utmData.includes('&source')) {
-            setCookie('msg91_query', utmData.replace(/&source=([\w_-])+/,'&source='+value), 30);
+        const sourceValue = event.target.value;
+        this.setState({ sourceValue });
+        const utmData = getCookie("msg91_query");
+        if (utmData.includes("&source=")) {
+            setCookie("msg91_query", utmData.replace(/&source=([\w_-])*/, "&source=" + sourceValue), 30);
         } else {
-            setCookie('msg91_query', utmData + '&source='+value, 30);
+            setCookie("msg91_query", utmData + "&source=" + sourceValue, 30);
         }
     };
-
+    
     render() {
         return (
             <>
@@ -225,6 +234,7 @@ class StepTwo extends React.Component {
                             </p>
                         ) : null}
                     </div>
+                    {this.state.sourceValue}
                     <div style={{ width: "360px" }}>
                         <select
                             autoComplete="on"
@@ -232,6 +242,7 @@ class StepTwo extends React.Component {
                             aria-label="Select Source"
                             name="source"
                             onChange={this.handleSourceChange}
+                            value={this.state.sourceValue}
                         >
                             <option value="">Select Source</option>
                             <option value="search_engine">Search engine (Google, Bing, Yahoo, etc)</option>
@@ -240,6 +251,7 @@ class StepTwo extends React.Component {
                             <option value="blog">Blog or Publication</option>
                             <option value="advertisement">Advertisement</option>
                             <option value="event">Event</option>
+                            <option value="tiedelhincr">TiEDelhiNCR</option>
                         </select>
                     </div>
                     <div className="row">
