@@ -90,7 +90,7 @@ const ProductComponent = ({pageData, path, webhookData=null, pricingPath }) => {
           
           <div className='col-6 '>
             <div className='d-flex gap-3 p-4 req-feature-cont justify-content-between align-items-center'>
-            <h2 className='c-fs-3 c-head me-text'>Looking for me ?</h2>
+            <h2 className='c-fs-3 c-head me-text'>Looking for more ?</h2>
             <button className='w-90 p-2 btn'>Request a Feature <AiOutlineArrowRight /></button>
             </div>
           </div>
