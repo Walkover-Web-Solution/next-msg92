@@ -1,19 +1,19 @@
 /* components */
-import BannerComp from '../components/BannerComp/BannerComp';
-import CaseStudiesComp from '../components/CaseStudiesComp/CaseStudiesComp';
-import ChannelsComp from '../components/ChannelsComp/ChannelsComp';
-import FactsComp from '../components/FactsComp/FactsComp';
-import FaqsComp from '../components/FaqsComp/FaqsComp';
-import FooterComp from '../components/FooterComp/FooterComp';
-import MenuBarComp from '../components/MenuBarComp/MenuBarComp';
-import MoreServicesComp from '../components/MoreServicesComp/MoreServicesComp';
-import NotFoundComp from '../components/NotFoundComp/NotFoundComp';
-import NotificationBarComp from '../components/NotificationBarComp/NotificationBarComp';
-import PreFooterComp from '../components/PreFooterComp/PreFooterComp';
-import ProductsComp from '../components/ProductsComp/ProductsComp';
-import SEOComp from '../components/SEOComp/SEOComp';
-import TrustedByComp from '../components/TrustedByComp/TrustedByComp';
-import HeadComp from '../components/HeadComp';
+import BannerComp from '@/components/BannerComp/BannerComp';
+import CaseStudiesComp from '@/components/CaseStudiesComp/CaseStudiesComp';
+import ChannelsComp from '@/components/ChannelsComp/ChannelsComp';
+import FactsComp from '@/components/FactsComp/FactsComp';
+import FaqsComp from '@/components/FaqsComp/FaqsComp';
+import FooterComp from '@/components/FooterComp/FooterComp';
+import MenuBarComp from '@/components/menuBarComp/menuBarComp';
+import MoreServicesComp from '@/components/MoreServicesComp/MoreServicesComp';
+import NotFoundComp from '@/components/NotFoundComp/NotFoundComp';
+import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
+import PreFooterComp from '@/components/PreFooterComp/PreFooterComp';
+import ProductsComp from '@/components/ProductsComp/ProductsComp';
+import SEOComp from '@/components/SEOComp/SEOComp';
+import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
+import HeadComp from '@/components/headComp';
 
 
 const Components = {
