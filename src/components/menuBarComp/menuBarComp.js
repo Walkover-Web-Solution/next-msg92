@@ -1,8 +1,9 @@
 export default function MenuBarComp({data}) {
-    const pageData = require(`@/data/${data.country}/menubar.json`);
+    const pageData = require(`@/data/${data?.country}/common.json`);
+    const componentData = pageData?.menu;
     return (
         <div className="container">
-            <div className="text">{pageData.title}</div>
+         <div className='text'>{componentData?.title}</div>
         </div>
     );
 }
