@@ -1,7 +1,8 @@
-export default function MenuBar({data}) {
+export default function FooterComp({data}) {
+    const pageData = require(`@/data/${data.country}/footer.json`);    
     return (
         <>
-            <div className="text">{data.title}</div>
+            <div className="text">{pageData.title}</div>
         </>
     );
 }

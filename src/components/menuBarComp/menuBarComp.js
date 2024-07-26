@@ -1,7 +1,8 @@
-export default function MenuBar({data}) {
+export default function MenuBarComp({data}) {
+    const pageData = require(`@/data/${data.country}/menubar.json`);
     return (
         <div className="container">
-            <div className="text">{data.title}</div>
+            <div className="text">{pageData.title}</div>
         </div>
     );
 }

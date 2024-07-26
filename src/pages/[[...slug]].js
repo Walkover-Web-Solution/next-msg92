@@ -11,6 +11,7 @@ import NotFoundComp from '../components/NotFoundComp/NotFoundComp';
 import NotificationBarComp from '../components/NotificationBarComp/NotificationBarComp';
 import PreFooterComp from '../components/PreFooterComp/PreFooterComp';
 import ProductsComp from '../components/ProductsComp/ProductsComp';
+import SEOComp from '../components/SEOComp/SEOComp';
 import TrustedByComp from '../components/TrustedByComp/TrustedByComp';
 import HeadComp from '../components/HeadComp';
 
@@ -28,6 +29,7 @@ const Components = {
   NotificationBarComp,
   PreFooterComp,
   ProductsComp,
+  SEOComp,
   TrustedByComp,
   HeadComp
 };
@@ -39,7 +41,7 @@ export default function Page(props) {
         const data = props[key];      
         var Component = Components[key];        
         if (!Component) {
-          console.error(`Component is undefined. Check your imports and component exports.`);
+          console.error(`Component "${key}" is undefined. Check your imports and component exports.`);
           return;
         }        
         return <Component key={`section-${key}`} data={data} />

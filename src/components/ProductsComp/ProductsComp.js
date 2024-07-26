@@ -1,4 +1,4 @@
-export default function MenuBar({data}) {
+export default function ProductsComp({data}) {
     
     return (
         <>

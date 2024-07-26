@@ -1,4 +1,4 @@
-export default function MenuBar({data}) {
+export default function BannerComp({data}) {
     return (
         <>
             <div>{data.tagline}</div>

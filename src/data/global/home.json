@@ -1,14 +1,10 @@
 {
     "HeadComp":{
-        "title": "title",
-        "description": "description"
+        "title": "Best Cloud Communication Platform for Businesses | MSG91",
+        "description": "MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
     },
-    "NotificationBarComp": {
-        "title": "Notification"
-    },
-    "MenuBarComp": {
-        "title": "Menu Bar"
-    },
+    "NotificationBarComp": {"country":"global"},
+    "MenuBarComp": {"country":"global"},
     "BannerComp": {
         "icon" : "",
         "name" : "",
@@ -18,7 +14,7 @@
         "img":"/img/home/banner.webp"
     },
     "TrustedByComp":{
-        "heading":"Trusted by 30,000+ global businesses"
+        "heading": "Trusted by 30,000+ global businesses"
     },
     "ProductsComp":[
         {
@@ -57,5 +53,163 @@
             "linkText": "Learn more",
             "link": "/otp"
         }
-    ]
+    ],
+    "ChannelsComp": {
+        "heading" : "Communication Channels",
+        "subheading" : "Empower conversations with best-in-class communication API Full-featured APIs for developers and businesses to connect and engage your customers globally",
+        "channels" : [
+            {
+                "icon":"/img/icon/hello.svg",                
+                "name":"SMS",
+                "description":"Transform your global communication with MSG91's reliable SMS services & APIs. Engage, analyze, and connect effortlessly on a global scale",                
+                "linkText": "Learn more",
+                "link": "/sms"
+            },
+            {
+                "icon":"/img/icon/email.svg",                
+                "name":"Email",
+                "description":"Enhance email outreach with templates, AMP, stats, SMTP/API, and validation for effective customer engagement",
+                "linkText": "Learn more",
+                "link": "/email"
+            },
+            {
+                "icon":"/img/icon/whatsapp.svg",                
+                "name":"WhatsApp",
+                "description":"Improve interaction on WhatsApp with Base64 support, two-way communication, template management, analytics, and message logs",
+                "linkText": "Learn more",
+                "link": "/whatsapp"
+            },
+            {
+                "icon":"/img/icon/voice.svg",                
+                "name":"Voice",
+                "description":"Enhance customer engagement with real-time calls, Call Monitoring, browser calling, advanced IVR, bulk voice messaging, and real-time agent connections",
+                "linkText": "Learn more",
+                "link": "/voice"
+            },
+            {
+                "icon":"/img/icon/numbers.svg",                
+                "name":"Numbers",
+                "description":"Unlock global markets with cost-efficient virtual numbers. Enhance engagement with missed call services, keyword messaging, surveys, and auto responses",
+                "linkText": "Learn more",
+                "link": "/numbers"
+            }
+        ]
+    },
+    "FactsComp": [
+        {
+            "fact":"2.5 Billion+",
+            "about":"API calls per month"
+        },
+        {
+            "fact":"1.6 Billion+",
+            "about":"SMS sent per month"
+        },
+        {
+            "fact":"1 Billion+",
+            "about":"OTP sent per month"
+        },
+        {
+            "fact":"1 Billion+",
+            "about":"Email sent per month"
+        }
+    ],
+    "MoreServicesComp":[
+        {
+            "icon":"/img/icon/shorturl.svg",
+            "name":"URL Shortner",
+            "img":"/img/short-url-img.svg",
+            "heading":"Make your long URLs short",
+            "description":"Automatically shortens URL and tracks your success, one click at a time. Turn your long, messy links into short, memorable branded links",
+            "linkText": "Learn more",
+            "link": "/shorturl"
+        },
+        {
+            "icon":"/img/icon/knowledgebase.svg",
+            "name":"KnowledgeBase App",
+            "img":"/img/knowledgebase-img.svg",
+            "heading":"Manage your help docs and articles",
+            "description":"Do not let your customers wait for simple solutions. Give them instant access to the self-service library of information.",
+            "linkText": "Learn more",
+            "link": "/knowledgebase"
+        },
+        {
+            "icon":"/img/icon/filehosting.svg",
+            "name":"File Hosting",
+            "img":"/img/file-hosting-img.svg",
+            "heading":"Simple and secured file storage",
+            "description":"A central hub for online file storage, sharing and syncing. Store all your files safely using powerful, reliable and easy-to-use cloud storage.",
+            "linkText": "Learn more",
+            "link": "https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91"
+        }
+    ],
+    "CaseStudiesComp":{
+        "heading":"Customer Success Powered by MSG91",
+        "casestudies":[
+            {
+                "img":"/img/milkbasket-bg.png",
+                "logo":"/img/milkbasket-logo.png",
+                "description":"Milkbasket sends regular updates to its customers by offering proactive support and recommendations",
+                "linkText": "Learn more",
+                "link": "/case-studies/milkbasket"
+            },
+            {
+                "img":"/img/unacademy-bg.png",
+                "logo":"/img/unacademy-logo.png",
+                "description":"Unacademy using omnichannel keeps its audience engaged and nurtured with personalised campaigns",
+                "linkText": "Learn more",
+                "link": "/case-studies/unacademy"
+            },
+            {
+                "img":"/img/ixigo-bg.png",
+                "logo":"/img/ixigo-logo.png",
+                "description":"Ixigo engages and updates its audience through multichannel communication across messaging, email and WhatsApp",
+                "linkText": "Learn more",
+                "link": "/case-studies/ixigo"
+            }
+        ]
+    },
+    "FaqsComp":{
+        "heading": "Frequently Asked Questions",
+        "faqs" : [
+            {
+                "question":"How can MSG91 benefit my business?",
+                "answer":"MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+            },
+            {
+                "question":"What makes MSG91 different from other communication platforms?",
+                "answer":"MSG91 stands out due to its reliability, scalability, and versatility. We specialize in providing mobile cloud communication platforms in India , addressing the unique needs of businesses in this market. Our platform offers advanced features, customizable solutions, and exceptional customer support to help businesses achieve their communication goals."
+            },
+            {
+                "question":"Is MSG91 suitable for businesses of all sizes?",
+                "answer":"Yes, MSG91 caters to businesses of all sizes. Whether you're a startup, small business, or large enterprise, our platform can be tailored to meet your specific requirements. We offer scalable solutions that can accommodate the communication needs of businesses as they grow and expand."
+            },
+            {
+                "question":"Is MSG91 secure?",
+                "answer":"Security is a top priority at MSG91. We implement industry-standard protocols and encryption techniques to ensure the confidentiality and integrity of your data. Our enterprise cloud communications platform offers features like two-factor authentication and OTP verification to enhance security and protect sensitive information."
+            },
+            {
+                "question":"Can I integrate MSG91 with my existing systems or applications?",
+                "answer":"Absolutely! MSG91 provides developer-friendly APIs and documentation, making it easy to integrate our platform with your existing systems or applications. Our APIs allow you to incorporate our communication functionalities seamlessly, enabling you to automate communication and streamline your workflows."
+            }
+        ]
+    },
+    "SEOComp":"<div class=\"container my-5 insms\"><h3 class=\"pro-heading c-head\">Welcome to MSG91: Your Trusted Cloud Communication Platform as a Service</h3><p class=\"c-fs-3 mt-3\">Are you searching for a reliable and versatile cloud communication platform as a service? Look no further! At MSG91, we specialize in providing top-notch mobile cloud communication platforms in India. Whether you're a startup, small business, or a large enterprise, we have the perfect solution to enhance your business communication.</p><div class=\"insms-soc c-fs-3\"><p>&nbsp;</p><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">Our cloud based communication platform in India is designed to address the unique needs of Indian businesses. With multiple communication channels like SMS, voice, email, and instant messaging, shorturl and many more so that you can reach your audience through their preferred mode of communication. Our features include two-factor authentication, personalized messaging, and scheduled campaigns in cloud communication software for enhanced security and automation.</span></span></span></p><p>&nbsp;</p><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">We understand that businesses come in different sizes, so our scalable and customizable solutions can adapt to your evolving needs. Plus, our dedicated support team is available to assist you every step of the way.</span></span></span></p><p>&nbsp;</p><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">Experience the difference with </span></span></span><a href=\"https://msg91.com/in\" style=\"text-decoration: none;\"><span><span><span style=\"color: rgb(17, 85, 204);\"><strong><u>MSG91</u></strong></span></span></span></a><span><span><span style=\"color: rgb(0, 0, 0);\">. Join us today and unlock the full potential with our best business communication platforms for your business in India.</span></span></span></p><p>&nbsp;</p><h2 style=\"text-align: justify;\"><span style=\"font-size: 16pt;\"><span><span style=\"color: rgb(0, 0, 0);\"><strong>Cloud Communication- All You need to Know</strong></span></span></span></h2><p>&nbsp;</p><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">Cloud communication refers to using cloud-based technologies such as cloud communication software to facilitate communication processes and services. Instead of relying on traditional on-premises hardware and infrastructure, cloud communication leverages the internet and cloud computing's power to enable seamless and flexible communication.</span></span></span></p><p>&nbsp;</p><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">In cloud based communication platform in India, various channels, such as voice, messaging, video, and email, are delivered through cloud-based platforms and services. These platforms allow businesses to engage with customers, employees, and stakeholders using multiple communication channels, all managed and accessed through a centralized cloud interface.</span></span></span></p><p>&nbsp;</p><h2 style=\"text-align: justify;\"><span style=\"font-size: 16pt;\"><span><span style=\"color: rgb(0, 0, 0);\"><strong>What MSG91 Offers to the World?</strong></span></span></span></h2><p>&nbsp;</p><h3 style=\"text-align: justify;\"><span style=\"font-size: 14pt;\"><span><span style=\"color: rgb(0, 0, 0);\"><strong>Cloud Communication Platform as a Service</strong></span></span></span></h3><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">We offer a comprehensive cloud communication platform as a service (CPaaS) that empowers businesses to seamlessly integrate communication functionalities into their applications, systems, or processes. With our CPaaS, you can leverage the power of cloud-based communication technologies to enhance customer engagement, improve team collaboration, and streamline your communication workflows.</span></span></span></p><p>&nbsp;</p><h3 style=\"text-align: justify;\"><span style=\"font-size: 14pt;\"><span><span style=\"color: rgb(0, 0, 0);\"><strong>Mobile Cloud Communication Platforms in India</strong></span></span></span></h3><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">As a leading provider of mobile cloud communication platforms in India, we understand the unique needs and challenges faced by businesses in the region. Our platform is designed to cater to the diverse communication requirements of Indian businesses, offering reliable and scalable solutions that can adapt to your evolving needs.</span></span></span></p><p>&nbsp;</p><h3 style=\"text-align: justify;\"><span style=\"font-size: 14pt;\"><span><span style=\"color: rgb(0, 0, 0);\"><strong>Best Business Communication Platforms</strong></span></span></span></h3><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">We take pride in offering one of the </span></span></span><span><span><span style=\"color: rgb(0, 0, 0);\"><strong>best business communication platforms </strong></span></span></span><span><span><span style=\"color: rgb(0, 0, 0);\">available in the market. Our platform provides a wide range of communication channels, including </span></span></span><a href=\"https://msg91.com/in/campaign\" style=\"text-decoration: none;\"><span><span><span style=\"color: rgb(17, 85, 204);\"><strong><u>campaign software</u></strong></span></span></span></a><span><span><span style=\"color: rgb(0, 0, 0);\">, voice, email, instant messaging, and more, enabling you to engage with your customers through their preferred channels. With advanced features like two-factor authentication, OTP verification, and personalized messaging, you can enhance the security and personalization of your cloud communication software.</span></span></span></p><p>&nbsp;</p><h3 style=\"text-align: justify;\"><span style=\"font-size: 14pt;\"><span><span style=\"color: rgb(0, 0, 0);\"><strong>Enterprise Cloud Communications Platform</strong></span></span></span></h3><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">For enterprises looking for a robust and secure cloud communication platform as a service, MSG91 is the ideal choice. Our cloud based communication platform in India offers scalable solutions that can handle high volumes of communication, ensuring uninterrupted service even during peak times. With comprehensive reporting and analytics, you can gain valuable insights into your communication performance and make data-driven decisions to optimize your business operations.</span></span></span></p><p>&nbsp;</p><h2 style=\"text-align: justify;\"><span style=\"font-size: 16pt;\"><span><span style=\"color: rgb(0, 0, 0);\"><strong>Experience the Difference with MSG91</strong></span></span></span></h2><p>&nbsp;</p><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\"><strong>Reliability</strong></span></span></span><span><span><span style=\"color: rgb(0, 0, 0);\">: We understand the importance of reliable communication for your business. Our best business communication platforms are built on robust infrastructure, ensuring high availability and reliability. You can trust that your communication channels will remain operational, allowing you to connect with your customers and stakeholders without interruptions. We prioritize the stability and performance of our platform so that you can focus on your core business activities.</span></span></span></p><p>&nbsp;</p><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\"><strong>Scalability:</strong></span></span></span><span><span><span style=\"color: rgb(0, 0, 0);\"> Our platform grows with you as your business grows and evolves. We understand that your communication needs may increase over time, and our scalable cloud communication software can seamlessly accommodate your expanding requirements. Whether you experience a surge in communication volume or need to add new features, MSG91 can easily scale up to meet your demands. Knowing that our mobile cloud communication platforms in India can handle your growing business communication needs, you can have peace of mind.</span></span></span></p><p>&nbsp;</p><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\"><strong>Developer-Friendly APIs:</strong></span></span></span><span><span><span style=\"color: rgb(0, 0, 0);\"> We believe in empowering businesses to integrate our communication functionalities into their applications or systems effortlessly. Our developer-friendly APIs (Application Programming Interfaces) are designed to be user-friendly and well-documented, making it easier for developers to integrate our communication capabilities into their existing infrastructure. With our APIs, you can unlock the full potential of our enterprise cloud communications platform and create customized communication solutions that align with your unique business requirements.</span></span></span></p><p>&nbsp;</p><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\"><strong>Excellent Support:</strong></span></span></span><span><span><span style=\"color: rgb(0, 0, 0);\"> At MSG91, we value the success of our clients, and that's why we provide excellent support. Our dedicated support team is available round the clock to assist you with any queries, concerns, or technical issues you may encounter. We are committed to ensuring that you have a smooth experience with our platform and that your communication needs are met. Whether you need guidance on </span></span></span><a href=\"https://msg91.com/in/hello\" style=\"text-decoration: none;\"><span><span><span style=\"color: rgb(17, 85, 204);\"><strong><u>best customer support software</u></strong></span></span></span></a><span><span><span style=\"color: rgb(0, 0, 0);\"> , platform integration, or troubleshooting support, our knowledgeable and responsive support team is here to help you at every step.</span></span></span></p><p>&nbsp;</p><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">Don't let communication barriers hinder your business success. Choose MSG91 as your trusted </span></span></span><span><span><span style=\"color: rgb(0, 0, 0);\"><strong>cloud communication software</strong></span></span></span><span><span><span style=\"color: rgb(0, 0, 0);\"> and unlock the true potential of seamless and efficient communication.</span></span></span></p><p>&nbsp;</p><p style=\"text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">Get started with MSG91 today and experience the power of a comprehensive cloud communication platform designed to drive your business forward.</span></span></span></p><p>&nbsp;</p><h2 style=\"margin-right: 6px; text-align: justify;\"><span style=\"font-size: 16pt;\"><span><span style=\"color: rgb(0, 0, 0);\"><strong>Our Vision Statement</strong></span></span></span></h2><p style=\"margin-right: 6px; text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">At MSG91, our vision is to revolutionize business communication by seamlessly connecting organizations with their customers, employees, and stakeholders. We aim to be the global leader in </span></span></span><span><span><span style=\"color: rgb(0, 0, 0);\"><strong>cloud communication platform as a service</strong></span></span></span><span><span><span style=\"color: rgb(0, 0, 0);\"> provider to empower businesses of all sizes to drive exceptional customer experiences and unlock their full potential.</span></span></span></p><p>&nbsp;</p><p style=\"margin-right: 6px; text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">We are committed to continuous innovation, pushing boundaries to deliver cutting-edge </span></span></span><span><span><span style=\"color: rgb(0, 0, 0);\"><strong>cloud communication software</strong></span></span></span><span><span><span style=\"color: rgb(0, 0, 0);\"> that cater to the evolving needs of businesses. Our comprehensive platform integrates various communication channels and advanced features, enabling businesses to create meaningful connections and enhance operational efficiency.</span></span></span></p><p>&nbsp;</p><p style=\"margin-right: 6px; text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">With scalability and reliability at the core of our vision, we strive to provide businesses worldwide with the tools to achieve seamless growth, improved customer engagement, and streamlined communication processes. We foster a culture of excellence, delivering outstanding customer support and driving technological advancements.</span></span></span></p><p>&nbsp;</p><p style=\"margin-right: 6px; text-align: justify;\"><span><span><span style=\"color: rgb(0, 0, 0);\">As we work towards our vision, we aim to be recognized as the trusted partner for businesses seeking transformative communication experiences. By leveraging cloud-based technologies, we empower businesses to thrive in the digital era and make a lasting impact on how they connect and engage with their audiences.</span></span></span></p></div><button class=\"border border-0 bg-transparent ps-0 mt-3 c-fs-3 fw-semibold shadow-none\">Read Less<span class=\"ms-4 fs-4\"><svg stroke=\"currentColor\" fill=\"currentColor\" stroke-width=\"0\" viewBox=\"0 0 24 24\" height=\"1em\" width=\"1em\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"none\" d=\"M0 0h24v24H0z\"></path><path d=\"M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z\"></path></svg></span></button></div>",
+    "PreFooterComp" : {
+        "content":"Start building your ideal customer engagement experience",
+        "buttons":[
+            {
+                "text":"Contact sales",
+                "link":"/contact-us"
+            },
+            {
+                "text":"Pricing",
+                "link":"/pricing/"
+            },
+            {
+                "text":"Get started",
+                "link":"https://control.msg91.com/signup/"
+            }
+        ]
+    },
+    "FooterComp":{"country": "global"}
 }
