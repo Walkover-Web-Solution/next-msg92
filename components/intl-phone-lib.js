@@ -4,6 +4,20 @@ var intl;
 var changeFlagZIndexInterval;
 
 class MobileInputComponent extends React.Component {
+    onChange(stopFocus) {
+        const input = document.getElementById('init-contact');
+        const isValid = this.props?.required ? intlClass?.isRequiredValidNumber : intlClass?.isValidNumber;
+        if (isValid) {
+            input?.classList?.remove('invalid-input');
+        } else {
+            input?.classList?.add('invalid-input');
+        }
+        this.props?.onInput && this.props?.onInput(intlClass.phoneNumber);
+        this.props?.setInvalid && this.props?.setInvalid(!isValid);
+        if (!stopFocus) {
+            setTimeout(() => input?.focus(), 200);
+        }
+    }
     render() {
         setTimeout(() => {
             if (typeof document !== 'undefined') {
@@ -22,17 +36,14 @@ class MobileInputComponent extends React.Component {
                     type="text"
                     id="init-contact"
                     placeholder={this.props.placeholder}
-                    onInput={(event) => {
-                        const isValid = this.props?.required
-                            ? intlClass?.isRequiredValidNumber
-                            : intlClass?.isValidNumber;
-                        if (isValid) {
-                            this.props?.onInput && this.props?.onInput(intlClass.phoneNumber);
-                        } else {
-                            this.props?.onInput(intlClass.phoneNumber);
-                        }
-                        this.props?.setInvalid && this.props?.setInvalid(!isValid);
-                        setTimeout(() => document.getElementById('init-contact').focus(), 200);
+                    onInput={(e) => {
+                        this.onChange();
+                    }}
+                    onBlur={(e) => {
+                        this.onChange(true);
+                    }}
+                    onFocus={(e) => {
+                        this.onChange(true);
                     }}
                     defaultValue={this.props?.defaultValue}
                     disabled={this.props?.disabled}
@@ -109,16 +120,6 @@ class IntlPhoneLib {
                     'url(https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.17/img/flags@2x.png)';
             }
         }
-
-        inputElement.addEventListener('keyup', () => {
-            setTimeout(() => {
-                if (this.isRequiredValidNumber) {
-                    inputElement.classList.remove('invalid-input');
-                } else {
-                    inputElement.classList.add('invalid-input');
-                }
-            }, 100);
-        });
         this.showCountryDropdown(parentDom);
     }
 
