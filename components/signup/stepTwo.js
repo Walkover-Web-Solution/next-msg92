@@ -154,8 +154,11 @@ class StepTwo extends React.Component {
                                     >
                                         <MobileInputComponent
                                             onInput={(event) => {
-                                                smsIdentifier = event?.replace("+", "");
-                                                this.props.identifierChange(true);
+                                                const value = event?.replace("+", "");
+                                                if(value !== smsIdentifier) {
+                                                    smsIdentifier = value
+                                                    this.props.identifierChange(true);
+                                                }
                                             }}
                                             required={true}
                                             disabled={this.props?.smsAccessToken}
