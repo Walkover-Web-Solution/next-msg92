@@ -4,5 +4,6 @@
     "semi": true,
     "bracketSpacing": true,
     "printWidth": 120,
-    "quoteProps": "preserve"
+    "quoteProps": "preserve",
+    "singleQuote": true
 }
