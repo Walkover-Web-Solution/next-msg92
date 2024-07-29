@@ -97,6 +97,10 @@ class StepThree extends React.Component {
                         if (value.toLowerCase().includes(this.props?.preselectedService.toLowerCase())) {
                             this.setState({
                                 defaultServiceNeeded: [{ value: +key, label: value }],
+                                formData: {
+                                    ...this.state.formData,
+                                    serviceNeeded: [{ value: +key, label: value }],
+                                },
                                 serviceRender: false,
                             });
                             setTimeout(() => {
@@ -114,6 +118,10 @@ class StepThree extends React.Component {
                     });
                     this.setState({
                         defaultServiceNeeded,
+                        formData: {
+                            ...this.state.formData,
+                            serviceNeeded: defaultServiceNeeded,
+                        },
                         serviceRender: false,
                     });
                     setTimeout(() => {
@@ -263,12 +271,12 @@ class StepThree extends React.Component {
         return '';
     };
 
-    validateMinMax = (fieldName,label, min, max) => {
+    validateMinMax = (fieldName, label, min, max) => {
         const fieldValue = this.state.formData?.[fieldName];
-        if(min !== null && min !== undefined && +min && fieldValue?.length < min) {
+        if (min !== null && min !== undefined && +min && fieldValue?.length < min) {
             return `${label} must be more than ${min} characters`;
         }
-        if(max !== null && max !== undefined && +max && fieldValue?.length > max) {
+        if (max !== null && max !== undefined && +max && fieldValue?.length > max) {
             return `${label} should be less than ${max} characters`;
         }
         return '';
@@ -288,7 +296,8 @@ class StepThree extends React.Component {
             stateError: this.validateRequired('stateName', 'State'),
             cityError: this.validateRequired('city', 'City'),
             otherCityError: this.state.formData.city === 'other' ? this.validateRequired('otherCity', 'City') : '',
-            addressError: this.validateRequired('address', 'Address') || this.validateMinMax('address', 'Address', 5, 100),
+            addressError:
+                this.validateRequired('address', 'Address') || this.validateMinMax('address', 'Address', 5, 100),
         };
         if (this.state.createCompany) {
             this.setState((prevState) => ({
@@ -484,14 +493,14 @@ class StepThree extends React.Component {
                                             isClearable
                                             instanceId={'serviceNeeded'}
                                             defaultValue={this.state.defaultServiceNeeded}
-                                            onChange={(value) =>
+                                            onChange={(value) => {
                                                 this.setState((prevState) => ({
                                                     formData: {
                                                         ...prevState.formData,
                                                         serviceNeeded: value.map((obj) => obj.value),
                                                     },
-                                                }))
-                                            }
+                                                }));
+                                            }}
                                             placeholder="Select Service Needed*"
                                             options={
                                                 this.state.services
