@@ -10,12 +10,7 @@ var smsIdentifier = '';
 var mobileInvalid = false;
 
 class StepTwo extends React.Component {
-    componentDidMount() {
-        const queryParams = new URLSearchParams(window.location.search);
-        const query = queryParams.toString();
-        const sourceValue = queryParams.get('source');
-        this.setState({ sourceValue });
-    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -26,6 +21,13 @@ class StepTwo extends React.Component {
         smsIdentifier = this.state.smsIdentifier;
     }
 
+    componentDidMount() {
+        const queryParams = new URLSearchParams(window.location.search);
+        const query = queryParams.toString();
+        const sourceValue = queryParams.get('source');
+        this.setState({ sourceValue });
+    }
+    
     handleSourceChange = (event) => {
         const sourceValue = event.target.value;
         this.setState({ sourceValue });
