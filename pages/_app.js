@@ -61,7 +61,7 @@ export default function App({ Component, pageProps }) {
     var pricingPath = products.includes(pageSlug) ? `/pricing${pageSlug}` : `/pricing/hello`;
     
     const year = new Date().getFullYear();
-    if (!["/signin", "/signup", "/github-auth", "/github-auth-token", "/outlook-token"].includes(browserPath)) {
+    if (!["/signin", "/signup", "/github-auth", "/github-auth-token", "/outlook-token", "/verify"].includes(browserPath)) {
         showNavbar = true;
     }
     useEffect(() => {
