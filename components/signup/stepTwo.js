@@ -13,7 +13,6 @@ class StepTwo extends React.Component {
     componentDidMount() {
         const queryParams = new URLSearchParams(window.location.search);
         const query = queryParams.toString();
-        console.log(query);
         const sourceValue = queryParams.get('source');
         this.setState({ sourceValue });
     }
@@ -237,7 +236,6 @@ class StepTwo extends React.Component {
                             </p>
                         ) : null}
                     </div>
-                    {this.state.sourceValue}
                     <div style={{ width: '360px' }}>
                         <select
                             autoComplete="on"
