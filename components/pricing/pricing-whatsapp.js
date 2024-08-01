@@ -1,14 +1,11 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
+import availableCountries from '@/data/available-countries.json';
 
-import inr from '@/data/wa-inr.json';
-import aud from '@/data/wa-aud.json';
-import eur from '@/data/wa-eur.json';
-import gbp from '@/data/wa-gbp.json';
-import idr from '@/data/wa-idr.json';
-import usd from '@/data/wa-usd.json';
-import restData from '@/data/wa-reset-country.json';
-
-const pricingwp = ({ countryCode, whatsappPricing }) => {
+const pricingwp = ({ countryCode }) => {
+    const [selectedCurrency, setSelectedCurrency] = useState(change);
+    const [tableData, setTableData] = useState([]);
+    const [pricing, setPricing] = useState([]);
     var change;
     var changeSymbol;
     if (
@@ -16,7 +13,8 @@ const pricingwp = ({ countryCode, whatsappPricing }) => {
         countryCode === 'AE' ||
         countryCode === 'SG' ||
         countryCode === 'PH' ||
-        countryCode === 'BR'
+        countryCode === 'BR' ||
+        countryCode === ''
     ) {
         change = 'USD';
         changeSymbol = '$';
@@ -27,54 +25,38 @@ const pricingwp = ({ countryCode, whatsappPricing }) => {
         change = 'INR';
         changeSymbol = '₹';
     }
-    const [selectedCurrency, setSelectedCurrency] = useState(change);
-    const [tableData, setTableData] = useState([]);
 
-    let pricingData;
-
+    const getWhatsAppPricing = async (currency) => {
+        try {
+            const response = await axios.get(`https://whatsapp.phone91.com/get-pricing-data/${currency}`);
+            setPricing(response?.data?.data.sort((a, b) => a.country_name.localeCompare(b.country_name)));
+        } catch (error) {
+            console.error('There was an error fetching the data!', error);
+        }
+    };
     useEffect(() => {
-        if (selectedCurrency === 'INR') {
-            pricingData = inr;
-        } else if (selectedCurrency === 'USD') {
-            pricingData = usd;
-        } else if (selectedCurrency === 'GBP') {
-            pricingData = gbp;
-        } else if (selectedCurrency === 'IDR') {
-            pricingData = idr;
-        } else if (selectedCurrency === 'AUD') {
-            pricingData = aud;
-        } else if (selectedCurrency === 'EUR') {
-            pricingData = eur;
+        getWhatsAppPricing(change.toLowerCase());
+    }, [countryCode, change]);
+    useEffect(() => {
+        const currentCountry = availableCountries[countryCode.toLowerCase()]?.name;
+        const fetchData = async () => {
+            const matchingCountry = pricing.find((country) => country.country_name === currentCountry);
+            const defaultCountry = pricing.find((country) => country.country_name === 'Default');
+
+            const updatedPricing = pricing.filter(
+                (country) => country.country_name !== currentCountry && country.country_name !== 'Default'
+            );
+            setTableData([matchingCountry, defaultCountry, ...updatedPricing]);
+        };
+
+        if (pricing.length > 0) {
+            fetchData();
+            setSelectedCurrency(change);
         }
-        if (whatsappPricing?.data?.length) {
-            setTableData(whatsappPricing?.data);
-        }
-    }, [selectedCurrency, whatsappPricing]);
-    console.log(tableData, 4444);
+    }, [countryCode, pricing]);
+
     return (
         <>
-            {/* <div className="d-flex justify-content-center mb-4">
-        <select
-          style={{ width: "fit-content" }}
-          className="form-select me-4"
-          aria-label="Default select example"
-          value={selectedCurrency}
-          onChange={(e) => setSelectedCurrency(e.target.value)}
-        >
-          <option value="INR">INR</option>
-          <option value="USD">USD</option>
-          <option value="GBP">GBP</option>
-          <option value="AUD">AUD</option>
-          <option value="EUR">EUR</option>
-          <option value="IDR">IDR</option>
-        </select> */}
-            {/* <select style={{width: 'fit-content'}} className="form-select" aria-label="Default select example" onChange={(e)=>setSelectedMode(e.target.value)}>
-          <option value="Monthly">Monthly</option>
-          <option value="Half yearly">Half Yearly</option>
-          <option value="Yearly">Yearly</option>
-        </select> */}
-            {/* </div> */}
-
             <div className="price-card whatsapp d-flex flex-sm-row flex-column rounded-1 col-xl-12 col-lg-11 col-md-10 bg-white p-4 gap-4 justify-content-between align-items-sm-center mb-0">
                 <div className=" ">
                     <h3 className="text-start fw-bolder fs-2 text-green mb-3">
@@ -109,7 +91,7 @@ const pricingwp = ({ countryCode, whatsappPricing }) => {
                         <tr>
                             <th scope="col">Market</th>
                             <th scope="col">prefix</th>
-                            <th scope="col">Currency</th>
+
                             <th scope="col">Marketing</th>
                             <th scope="col">Utility</th>
                             <th scope="col">Authentication</th>
@@ -117,19 +99,42 @@ const pricingwp = ({ countryCode, whatsappPricing }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {tableData.map((item, index) => (
-                            <>
-                                <tr>
-                                    <td>{item?.country_name}</td>
-                                    <td>{item?.prefix}</td>
-                                    <td>{changeSymbol}</td>
-                                    <td>{item?.marketing_rate}</td>
-                                    <td>{item?.utility_rate}</td>
-                                    <td>{item?.authentication_rate}</td>
-                                    <td>{item?.user_initiated_rate}</td>
-                                </tr>
-                            </>
-                        ))}
+                        {tableData?.length &&
+                            tableData.map((item, index) => {
+                                if (item?.country_name) {
+                                    return (
+                                        <tr key={index}>
+                                            <td>{item?.country_name}</td>
+                                            <td>{item?.prefix}</td>
+
+                                            <td>
+                                                {changeSymbol}
+                                                {!isNaN(parseFloat(item?.marketing_rate))
+                                                    ? parseFloat(item.marketing_rate).toFixed(5)
+                                                    : 'N/A'}
+                                            </td>
+                                            <td>
+                                                {changeSymbol}
+                                                {!isNaN(parseFloat(item?.utility_rate))
+                                                    ? parseFloat(item.utility_rate).toFixed(5)
+                                                    : 'N/A'}
+                                            </td>
+                                            <td>
+                                                {changeSymbol}
+                                                {!isNaN(parseFloat(item?.authentication_rate))
+                                                    ? parseFloat(item.authentication_rate).toFixed(5)
+                                                    : 'N/A'}
+                                            </td>
+                                            <td>
+                                                {changeSymbol}
+                                                {!isNaN(parseFloat(item?.user_initiated_rate))
+                                                    ? parseFloat(item?.user_initiated_rate).toFixed(5)
+                                                    : 'N/A'}
+                                            </td>
+                                        </tr>
+                                    );
+                                }
+                            })}
                     </tbody>
                 </table>
                 <a className="more-about" href="/whatsapp">

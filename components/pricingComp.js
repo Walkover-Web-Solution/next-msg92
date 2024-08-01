@@ -16,7 +16,7 @@ import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
 import Link from "next/link";
 import { MdExpandMore } from "react-icons/md";
 
-const PricingComp = ({ countryCode, product, browserPath, pathArray, whatsappPricingData }) => {
+const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
     var availCont = ["US", "UK", "IN", "BR", "SG", "AE", "PH", "ES"];
     var pathLengthCond = availCont.includes(countryCode);
     var [pricing, setPricing] = useState([]);
@@ -374,7 +374,7 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray, whatsappPri
                                 currencySymbol={currencySymbol}
                                 oneTimeWtsAppFee={oneTimeWtsAppFee}
                                 countryCode={countryCode}
-                                whatsappPricing={whatsappPricingData}
+                               pathArray={pathArray}
                             />
                         )}
                         {product === "otpwidget" && <PricingOtpWidget />}

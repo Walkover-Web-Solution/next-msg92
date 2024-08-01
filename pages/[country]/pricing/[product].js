@@ -3,38 +3,9 @@ import PricingComp from '@/components/pricingComp';
 import axios from 'axios';
 import availableCountries from '@/data/available-countries.json';
 
-export async function getStaticPaths() {
-    return {
-        paths: [
-            {
-                params: {
-                    country: '',
-                    product: '',
-                },
-            },
-        ],
-        fallback: true,
-    };
-}
 
-export async function getStaticProps(context) {
-    const currency = availableCountries[context?.params?.country]?.currency?.toLowerCase() || 'usd';
-    let whatsappPricing;
-    try {
-        const response = await axios.get(`https://whatsapp.phone91.com/get-pricing-data/${currency}`);
-        whatsappPricing = response.data;
-    } catch (error) {
-        console.error('There was an error fetching the data!', error);
-    }
 
-    return {
-        props: {
-            whatsappPricing,
-        },
-    };
-}
-
-const pricingmain = ({ pathArray, whatsappPricing }) => {
+const pricingmain = ({ pathArray }) => {
 
     const router = useRouter();
     // const { slug } = router.query;
@@ -64,7 +35,7 @@ const pricingmain = ({ pathArray, whatsappPricing }) => {
                 product={product}
                 browserPath={browserPath}
                 pathArray={pathArray}
-                whatsappPricingData={whatsappPricing}
+
             />
         );
     } else {
