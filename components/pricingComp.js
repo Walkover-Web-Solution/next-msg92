@@ -81,6 +81,8 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
         } else if (product === "hello") {
             fetchHelloData(currency);
         }
+        
+        
     }, [product, currency]);
 
     const fetchSMSData = async (currency, origin, destination) => {
@@ -372,6 +374,7 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
                                 currencySymbol={currencySymbol}
                                 oneTimeWtsAppFee={oneTimeWtsAppFee}
                                 countryCode={countryCode}
+                               pathArray={pathArray}
                             />
                         )}
                         {product === "otpwidget" && <PricingOtpWidget />}

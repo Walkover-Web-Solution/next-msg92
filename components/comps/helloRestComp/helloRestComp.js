@@ -7,7 +7,6 @@ import Seo from '@/components/seoComp';
 import GetStartedSection from '@/components/getStartedSection/getStartedSection';
 const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }) => {
     path = path ? path.substring(1) : 'global';    
-    console.log("🚀 ~ HelloRestComp ~ path:", path)
     return (
         <>
             {

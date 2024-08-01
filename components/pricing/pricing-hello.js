@@ -82,7 +82,6 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
             <div className="w-100 card-container d-flex flex-wrap gap-4">
                 {subscriptionHello?.length &&
                     subscriptionHello?.map((plan) => {
-                        console.log("🚀 ~ subscriptionHello?.map ~ plan:", plan);
                         return (
                             <>
                                 {plan?.plan_amounts?.length &&

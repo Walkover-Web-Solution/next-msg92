@@ -151,7 +151,7 @@ const partnersAndIntegrations = ({data}) => {
         </>
     );
 };
-export async function getStaticProps() {    
+export async function getStaticProps() {
     let data = null;
     try {
         const response = await axios.get("https://api.airtable.com/v0/apprWVB91nVC9dqoS/tblkIzJ6ITtAwQXXx", {
