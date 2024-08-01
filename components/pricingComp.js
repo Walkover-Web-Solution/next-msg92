@@ -17,7 +17,6 @@ import Link from "next/link";
 import { MdExpandMore } from "react-icons/md";
 
 const PricingComp = ({ countryCode, product, browserPath, pathArray, whatsappPricingData }) => {
-    
     var availCont = ["US", "UK", "IN", "BR", "SG", "AE", "PH", "ES"];
     var pathLengthCond = availCont.includes(countryCode);
     var [pricing, setPricing] = useState([]);
