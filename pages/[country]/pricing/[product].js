@@ -1,7 +1,38 @@
 import { useRouter } from "next/router";
 import PricingComp from "@/components/pricingComp";
+import axios from "axios";
 
-const pricingmain = ({pathArray}) => {
+export async function getStaticPaths() {
+    return {
+        paths: [
+            {
+            params: {
+                country: "",
+                product: ""
+            },
+            }
+        ],
+        fallback: true,
+    }    
+}
+
+export async function getStaticProps(context) {
+    let whatsappPricing;
+    try {
+        const response = await axios.get("https://whatsapp.phone91.com/get-pricing-data/inr");
+        whatsappPricing = response.data;
+    } catch (error) {
+        console.error("There was an error fetching the data!", error);
+    }
+
+    return {
+        props: {
+            whatsappPricing
+        },
+    };
+}
+
+const pricingmain = ({pathArray, whatsappPricing}) => {
     const router = useRouter();
    
     // const { slug } = router.query;
@@ -25,7 +56,7 @@ const pricingmain = ({pathArray}) => {
     };
     const data = getCountryCode();
     if (data !== "[COUNTRY]" && data.length !== 0 && product !== "product") {
-        return <PricingComp countryCode={data} product={product} browserPath={browserPath} pathArray={pathArray} />;
+        return <PricingComp countryCode={data} product={product} browserPath={browserPath} pathArray={pathArray} whatsappPricingData={whatsappPricing} />;
     } else {
         return <>LOADING</>;
     }

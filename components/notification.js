@@ -150,7 +150,7 @@ const Notification = ({ path, compData, pathArray }) => {
                                 {compData?.notification?.contact}
                             </span>
                         </a>
-                        <a href={`${process.env.LOGIN_URL}/signin/`} className="text-dark utm">
+                        <a href={`${baseUrl}/signin/`} className="text-dark utm">
                             <span className="c-fs-5 d-flex align-items-center">
                                 <MdLogin className="me-1" />
                                 {compData?.notification.login}

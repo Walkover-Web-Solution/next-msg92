@@ -45,7 +45,7 @@ const PricingMain = () => {
     );
     }
     else{
-    return <PricingComp countryCode={code} product={product} browserPath={browserPath} />;
+    return <PricingComp countryCode={code} product={product} browserPath={browserPath}  />;
 
     }
   } 
