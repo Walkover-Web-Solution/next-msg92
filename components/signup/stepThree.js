@@ -167,7 +167,7 @@ class StepThree extends React.Component {
                     ...this.state.formData,
                     countryName,
                     gstNumber: '',
-                    vatNumber: '', 
+                    vatNumber: '',
                     stateProvince: '',
                     stateName: '',
                     city: '',

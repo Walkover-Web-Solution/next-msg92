@@ -1,20 +1,20 @@
-import React from "react";
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft, MdCheckCircle, MdCheckCircleOutline } from "react-icons/md";
-import Otpinput from "./comps/otpInput";
-import MobileInputComponent from "@/components/intl-phone-lib";
-import { toast } from "react-toastify";
-import RetryOtp from "./comps/retryOtp";
-import { getCookie, setCookie } from "@/components/utils";
+import React from 'react';
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft, MdCheckCircle, MdCheckCircleOutline } from 'react-icons/md';
+import Otpinput from './comps/otpInput';
+import MobileInputComponent from '@/components/intl-phone-lib';
+import { toast } from 'react-toastify';
+import RetryOtp from './comps/retryOtp';
+import { getCookie, setCookie } from '@/components/utils';
 
-var smsIdentifier = "";
+var smsIdentifier = '';
 var mobileInvalid = false;
 
 class StepTwo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            emailIdentifier: props.emailIdentifierBackup || "",
-            smsIdentifier: props.smsIdentifierBackup || "",
+            emailIdentifier: props.emailIdentifierBackup || '',
+            smsIdentifier: props.smsIdentifierBackup || '',
             sourceValue: '',
         };
         smsIdentifier = this.state.smsIdentifier;
@@ -28,12 +28,12 @@ class StepTwo extends React.Component {
     }
 
     handleSourceChange = (event) => {
-        const value =  event.target.value;
+        const value = event.target.value;
         const utmData = getCookie('msg91_query');
-        if(utmData.includes('&source')) {
-            setCookie('msg91_query', utmData.replace(/&source=([\w_-])+/,'&source='+sourceValue), 30);
+        if (utmData.includes('&source')) {
+            setCookie('msg91_query', utmData.replace(/&source=([\w_-])+/, '&source=' + sourceValue), 30);
         } else {
-            setCookie('msg91_query', utmData + '&source='+sourceValue, 30);
+            setCookie('msg91_query', utmData + '&source=' + sourceValue, 30);
         }
     };
 
@@ -46,10 +46,10 @@ class StepTwo extends React.Component {
                             <MdCheckCircle
                                 className={
                                     this.props?.smsAccessToken && this.props?.emailAccessToken
-                                        ? "ico-green"
-                                        : "ico-grey"
+                                        ? 'ico-green'
+                                        : 'ico-grey'
                                 }
-                            />{" "}
+                            />{' '}
                             Verify email & mobile number
                         </div>
                         <span className="progress-line__none progress-line d-lg-block"></span>
@@ -89,16 +89,16 @@ class StepTwo extends React.Component {
                                             className="ver-email-main__btn btn  btn-login-prime-o c-fw-m c-fs-7"
                                             onClick={(e) => this.props.identifierChange(false)}
                                         >
-                                            Change{this.props?.signupByGitHub ? "" : "/Re-verify"} Email
+                                            Change{this.props?.signupByGitHub ? '' : '/Re-verify'} Email
                                         </button>
                                     ) : (
                                         <button
                                             className={`ver-email-main__btn btn c-fw-m c-fs-7 ${
-                                                this.props?.emailIdentifier ? "btn-light disabled" : "btn-login-prime-o"
+                                                this.props?.emailIdentifier ? 'btn-light disabled' : 'btn-login-prime-o'
                                             }`}
                                             onClick={() =>
                                                 this.props.sendOtp(
-                                                    document.getElementById("emailIdentifier").value,
+                                                    document.getElementById('emailIdentifier').value,
                                                     false
                                                 )
                                             }
@@ -156,21 +156,21 @@ class StepTwo extends React.Component {
                                 <div className="ver-phone-main d-flex gap-3 ver-input flex-wrap">
                                     <div
                                         className={
-                                            "ver-phone-main__input col ver-input__input" +
-                                            (this.props?.smsAccessToken ? " pointer-none" : "")
+                                            'ver-phone-main__input col ver-input__input' +
+                                            (this.props?.smsAccessToken ? ' pointer-none' : '')
                                         }
                                     >
                                         <MobileInputComponent
                                             onInput={(event) => {
-                                                const value = event?.replace("+", "");
-                                                if(value !== smsIdentifier) {
-                                                    smsIdentifier = value
+                                                const value = event?.replace('+', '');
+                                                if (value !== smsIdentifier) {
+                                                    smsIdentifier = value;
                                                     this.props.identifierChange(true);
                                                 }
                                             }}
                                             required={true}
                                             disabled={this.props?.smsAccessToken}
-                                            defaultValue={smsIdentifier ? "+" + smsIdentifier : ""}
+                                            defaultValue={smsIdentifier ? '+' + smsIdentifier : ''}
                                             setInvalid={(event) => (mobileInvalid = event)}
                                             placeholder="Mobile Number*"
                                         ></MobileInputComponent>
@@ -189,11 +189,11 @@ class StepTwo extends React.Component {
                                     ) : (
                                         <button
                                             className={`ver-mobile-main__btn btn c-fw-m c-fs-7 ${
-                                                this.props?.smsIdentifier ? "btn-light disabled" : "btn-login-prime-o"
+                                                this.props?.smsIdentifier ? 'btn-light disabled' : 'btn-login-prime-o'
                                             }`}
                                             onClick={() =>
                                                 mobileInvalid
-                                                    ? toast.error("Invalid mobile number.")
+                                                    ? toast.error('Invalid mobile number.')
                                                     : this.props.sendOtp(smsIdentifier, true)
                                             }
                                             disabled={this.props?.isLoading}
@@ -232,11 +232,11 @@ class StepTwo extends React.Component {
                         </div>
                         {this.props?.smsIdentifier && this.props?.smsSuccessMessage && !this.props?.smsAccessToken ? (
                             <p className="ver-email-message ico-green c-fs-7">
-                                {this.props?.smsSuccessMessage} +{this.props?.smsIdentifier?.replace("+", "")}
+                                {this.props?.smsSuccessMessage} +{this.props?.smsIdentifier?.replace('+', '')}
                             </p>
                         ) : null}
                     </div>
-                    <div style={{ width: "360px" }}>
+                    <div style={{ width: '360px' }}>
                         <select
                             autoComplete="on"
                             className="form-select"
@@ -256,7 +256,7 @@ class StepTwo extends React.Component {
                     <div className="row">
                         <div className="d-flex align-items-center gap-3">
                             <button className="btn btn-login-secondary c-fs-7" onClick={() => this.props.setStep(1)}>
-                                {" "}
+                                {' '}
                                 <MdKeyboardArrowLeft />
                                 Back
                             </button>
@@ -273,7 +273,7 @@ class StepTwo extends React.Component {
                                     this.props?.isLoading
                                 }
                             >
-                                {" "}
+                                {' '}
                                 Next <MdKeyboardArrowRight />
                             </button>
                         </div>
