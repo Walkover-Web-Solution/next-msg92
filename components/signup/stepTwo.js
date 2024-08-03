@@ -15,17 +15,25 @@ class StepTwo extends React.Component {
         this.state = {
             emailIdentifier: props.emailIdentifierBackup || "",
             smsIdentifier: props.smsIdentifierBackup || "",
+            sourceValue: '',
         };
         smsIdentifier = this.state.smsIdentifier;
+    }
+
+    componentDidMount() {
+        const queryParams = new URLSearchParams(window.location.search);
+        const query = queryParams.toString();
+        const sourceValue = queryParams.get('source');
+        this.setState({ sourceValue });
     }
 
     handleSourceChange = (event) => {
         const value =  event.target.value;
         const utmData = getCookie('msg91_query');
         if(utmData.includes('&source')) {
-            setCookie('msg91_query', utmData.replace(/&source=([\w_-])+/,'&source='+value), 30);
+            setCookie('msg91_query', utmData.replace(/&source=([\w_-])+/,'&source='+sourceValue), 30);
         } else {
-            setCookie('msg91_query', utmData + '&source='+value, 30);
+            setCookie('msg91_query', utmData + '&source='+sourceValue, 30);
         }
     };
 
