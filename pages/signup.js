@@ -29,7 +29,7 @@ class SignUp extends React.Component {
         let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
 
         this.state = {
-            activeStep: queryParams?.['code'] ? 2 : 1,
+            activeStep: queryParams?.['code'] ? 2 : 3,
             signupByGitHub: queryParams?.['githubsignup'] ? true : false,
             githubCode: queryParams?.['code'],
             githubState: queryParams?.['state'],
@@ -302,21 +302,21 @@ class SignUp extends React.Component {
                     githubState: null,
                     smsSuccessMessage: null,
                     emailSuccessMessage: null,
-                    smsIdentifierBackup: this.state.smsIdentifier || "",
-                    emailIdentifierBackup: this.state.emailIdentifier || "",
+                    smsIdentifierBackup: this.state.smsIdentifier || '',
+                    emailIdentifierBackup: this.state.emailIdentifier || '',
                     smsIdentifier: null,
                     emailIdentifier: null,
                 });
-                if (result?.status === "success") {
-                    if (result?.data?.data?.nextStep === "createNewCompany") {
+                if (result?.status === 'success') {
+                    if (result?.data?.data?.nextStep === 'createNewCompany') {
                         this.setStep(3);
-                    } else if (result?.data?.data?.nextStep === "loginIntoExistingAccount") {
+                    } else if (result?.data?.data?.nextStep === 'loginIntoExistingAccount') {
                         this.setState({ isLoading: true });
                         location.href = SUCCESS_REDIRECTION_URL?.replace(
-                            ":session",
+                            ':session',
                             result?.data?.sessionDetails?.PHPSESSID
                         );
-                    } else if (result?.data?.data?.nextStep === "hasInvitations") {
+                    } else if (result?.data?.data?.nextStep === 'hasInvitations') {
                         this.setState({ invitations: result?.data?.data?.invitations });
                         this.setStep(3);
                     }
@@ -338,8 +338,8 @@ class SignUp extends React.Component {
                     githubState: null,
                     smsSuccessMessage: null,
                     emailSuccessMessage: null,
-                    smsIdentifierBackup: this.state.smsIdentifier || "",
-                    emailIdentifierBackup: this.state.emailIdentifier || "",
+                    smsIdentifierBackup: this.state.smsIdentifier || '',
+                    emailIdentifierBackup: this.state.emailIdentifier || '',
                     smsIdentifier: null,
                     emailIdentifier: null,
                 });
@@ -373,6 +373,7 @@ class SignUp extends React.Component {
                       'stateId': data?.stateProvince,
                       'companyName': data?.companyName,
                       'service': data?.serviceNeeded,
+                      'vatNo': data?.vatNumber,
                   }
                 : {},
             'userDetails': {

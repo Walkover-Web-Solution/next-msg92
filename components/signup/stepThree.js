@@ -24,6 +24,7 @@ class StepThree extends React.Component {
                 otherCity: '',
                 address: '',
                 gstNumber: '',
+                vatNumber: '',
                 agreeToTerms: false,
                 acceptInviteForCompanies: [],
                 rejectInviteForCompanies: [],
@@ -165,6 +166,11 @@ class StepThree extends React.Component {
                 formData: {
                     ...this.state.formData,
                     countryName,
+                    gstNumber: '',
+                    vatNumber: '',
+                    stateProvince: '',
+                    stateName: '',
+                    city: '',
                 },
             });
         } catch (error) {
@@ -638,15 +644,23 @@ class StepThree extends React.Component {
                                         {this.state.formErrorData.addressError}
                                     </div>
                                 </div>
+                                {this.state.formData.countryName?.toLowerCase()?.includes('united kingdom') && (
+                                    <div className="col-12 form-input-with-error">
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="VAT number"
+                                            name="vatNumber"
+                                            value={this.state.formData.vatNumber}
+                                            onChange={this.handleInputChange}
+                                        />
+                                    </div>
+                                )}
                                 {this.state.formData.countryName?.toLowerCase()?.includes('india') && (
                                     <div className="col-12 form-input-with-error">
                                         <input
                                             type="text"
-                                            className={
-                                                this.state.formErrorData.gstNumberError
-                                                    ? 'form-control input-error-display'
-                                                    : 'form-control'
-                                            }
+                                            className="form-control"
                                             placeholder="GST number"
                                             name="gstNumber"
                                             value={this.state.formData.gstNumber}
