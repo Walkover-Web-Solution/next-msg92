@@ -656,6 +656,21 @@ class StepThree extends React.Component {
                                         />
                                     </div>
                                 )}
+                                {this.state.formData.countryName?.toLowerCase()?.includes('india') && (
+                                    <div className="col-12 form-input-with-error">
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="GST number"
+                                            name="gstNumber"
+                                            value={this.state.formData.gstNumber}
+                                            onChange={this.handleInputChange}
+                                        />
+                                        <div className="text-danger input-error-message c-fs-7">
+                                            {this.state.formErrorData.gstNumberError}
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </form>
                     )}
