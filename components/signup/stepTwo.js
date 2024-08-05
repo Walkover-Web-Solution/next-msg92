@@ -251,6 +251,7 @@ class StepTwo extends React.Component {
                             <option value="blog">Blog or Publication</option>
                             <option value="advertisement">Advertisement</option>
                             <option value="event">Event</option>
+                            <option value="tiedelhincr">TiEDelhiNCR</option>
                         </select>
                     </div>
                     <div className="row">
