@@ -24,6 +24,7 @@ module.exports = {
           accent: "#1E75BA",
           neutral: "#FAFAFA",
           "base-100": "#FFFFFF",
+          "--rounded-btn": "0.2rem",
         },
       },
     ],
