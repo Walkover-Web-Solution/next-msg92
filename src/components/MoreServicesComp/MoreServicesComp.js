@@ -1,15 +1,30 @@
-export default function MoreServicesComp({data}) {
+import Image from 'next/image';
+import Link from 'next/link';
+
+export default function MoreServicesComp({ data }) {
     return (
         <>
-        {data.map((service, index) => (
-            <div key={index} className="service-item">
-                <img src={service.icon} alt={`${service.name} icon`} />
-                <span>{service.name}</span>
-                <h2>{service.heading}</h2>
-                <p>{service.description}</p>
-                <a href={service.link}>{service.linkText}</a>
+            <div className='container flex flex-col gap-6 my-20'>
+                <h2 className='text-3xl font-bold'>{data.heading}</h2>
+                <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-10 gap-6'>
+                    {data.services.map((service, index) => (
+                        <Link
+                            key={index}
+                            className='flex flex-col gap-6 bg-neutral rounded-lg md:p-8 p-4 hover:shadow-lg'
+                            href={service.link}
+                        >
+                            <div className='flex items-center gap-2'>
+                                <Image width={36} height={36} src={service?.icon} alt={service?.name} />
+                                <span className='text-2xl font-semibold'>{service?.name}</span>
+                            </div>
+                            <Image width={600} height={600} src={service?.img} alt={service?.name} />
+                            <h3 className='text-xl font-semibold'>{service?.heading}</h3>
+                            <p className='text-lg'>{service?.description}</p>
+                            <span className='mt-auto'>{service.linkText}</span>
+                        </Link>
+                    ))}
+                </div>
             </div>
-        ))}
         </>
     );
 }
