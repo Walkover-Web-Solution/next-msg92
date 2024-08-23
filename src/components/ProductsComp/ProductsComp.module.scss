@@ -1,0 +1,32 @@
+.card {
+    @apply flex xl:py-8 xl:pl-8 lg:py-4 lg:pl-4 md:py-8 md:pl-8 py-4 pl-4 gap-3 items-center flex-col sm:flex-row rounded-lg hover:shadow-lg;
+    .learnmore_btn {
+    }
+}
+.tagline_sm {
+    @apply uppercase tracking-widest;
+}
+.hello {
+    background-color: #fdf4e2;
+    .tagline_sm {
+        color: #8c5d00;
+    }
+}
+.campaign {
+    background-color: #f6effc;
+    .tagline_sm {
+        color: #aa50f6;
+    }
+}
+.segmento {
+    background-color: #fceff6;
+    .tagline_sm {
+        color: #80335a;
+    }
+}
+.otp {
+    background-color: #e2f0ff;
+    .tagline_sm {
+        color: #1e75ba;
+    }
+}

@@ -10,34 +10,33 @@
         "country": "global"
     },
     "BannerComp": {
-        "icon": "",
-        "name": "",
         "tagline": "Revolutionize customer support",
         "heading": "Never lose sight of what’s important",
         "subheading": "Don’t just solve tickets, build customer relationships",
-        "img": "/img/home/banner.webp",
+        "banner_img": "/assets/global/index/banner.webp",
+        "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
             "logos": [
                 {
                     "name": "Xiaomi",
-                    "url": "/img/trusted/xiaomi.svg"
+                    "url": "/assets/trusted_by/xiaomi.svg"
                 },
                 {
                     "name": "Unacademy",
-                    "url": "/img/trusted/unacademy.svg"
+                    "url": "/assets/trusted_by/unacademy.svg"
                 },
                 {
                     "name": "Dream11",
-                    "url": "/img/trusted/dream11.svg"
+                    "url": "/assets/trusted_by/dream11.svg"
                 },
                 {
                     "name": "Indeed",
-                    "url": "/img/trusted/indeed.svg"
+                    "url": "/assets/trusted_by/indeed.svg"
                 },
                 {
                     "name": "Ixigo",
-                    "url": "/img/trusted/ixigo.svg"
+                    "url": "/assets/trusted_by/ixigo.svg"
                 }
             ]
         }
