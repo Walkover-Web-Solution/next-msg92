@@ -1,40 +1,24 @@
-export default function TrustedByComp({data}) {
-    const imgs = [
-            {
-                "name":"Razorpay",
-                "url":"/img/trusted/razorpay.svg"
-            },
-            {
-                "name":"Xiaomi",
-                "url":"/img/trusted/xiaomi.svg"
-            },
-            {
-                "name":"Unacademy",
-                "url":"/img/trusted/unacademy.svg"
-            },
-            {
-                "name":"Dream11",
-                "url":"/img/trusted/dream11.svg"
-            },
-            {
-                "name":"Indeed",
-                "url":"/img/trusted/indeed.svg"
-            },
-            {
-                "name":"IndianOil",
-                "url":"/img/trusted/indian-oil.svg"
-            },
-            {
-                "name":"Ixigo",
-                "url":"/img/trusted/ixigo.svg"
-            }
-        ]    
-    return (
-        <>
-            <div>{data.heading}</div>
-            {imgs.map((img, index) => (
-                <img key={index} src={img.url} alt={img.name} width={100} />
-            ))}
-        </>
-    );
+import Image from 'next/image';
+
+export default function TrustedByComp({ data }) {
+    if (data && data?.logos?.length > 0 && data?.heading)
+        return (
+            <>
+                <div className='flex flex-col gap-2'>
+                    <div className='text-lg'>{data?.heading}</div>
+                    <div className='flex gap-6 flex-wrap'>
+                        {data?.logos.map((img, index) => (
+                            <Image
+                                key={index}
+                                src={img?.url}
+                                alt={img?.name}
+                                width={100}
+                                height={100}
+                                className='h-[20px] w-auto'
+                            />
+                        ))}
+                    </div>
+                </div>
+            </>
+        );
 }

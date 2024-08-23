@@ -1,10 +1,15 @@
 {
     "common": true,
     "notification": {
-        "title": "Notification bar"
+        "support": "Support",
+        "login": "LOG IN"
     },
     "menu": {
-        "title": "menu bar"
+        "products": "Products",
+        "integrations": "Integrations",
+        "pricing": "Pricing",
+        "apidocs": "API Docs",
+        "signup_btn": "Sign Up"
     },
     "footer": {
         "products": {
