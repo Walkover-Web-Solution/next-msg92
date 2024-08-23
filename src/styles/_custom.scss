@@ -10,6 +10,12 @@
     &.btn-sm {
         @apply px-3;
     }
+    &.btn-md {
+        height: fit-content !important;
+        width: fit-content !important;
+        min-height: auto !important;
+        @apply px-4 py-2 text-base;
+    }
     &.btn-icon {
         height: fit-content !important;
         width: fit-content !important;
@@ -25,7 +31,6 @@
     cursor: pointer;
     position: relative;
     transition: color 0.1s ease-in-out;
-
 
     &::after {
         content: '';
