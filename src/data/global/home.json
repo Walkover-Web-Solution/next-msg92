@@ -3,11 +3,10 @@
         "title": "Best Cloud Communication Platform for Businesses | MSG91",
         "description": "MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
     },
-
     "BannerComp": {
-        "tagline": "Revolutionize customer support",
-        "heading": "Never lose sight of what’s important",
-        "subheading": "Don’t just solve tickets, build customer relationships",
+        "tagline": "customer solution platform",
+        "heading": "Connect with your customers via multiple channels",
+        "subheading": "Secure and robust APIs for SMS, Email, Voice, Authentication and more",
         "banner_img": "/assets/global/index/banner.webp",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
@@ -77,40 +76,36 @@
     "ChannelsComp": {
         "heading": "Communication Channels",
         "subheading": "Empower conversations with best-in-class communication API Full-featured APIs for developers and businesses to connect and engage your customers globally",
+        "linkText": "Learn more",
         "channels": [
             {
                 "icon": "/assets/icons/products/hello.svg",
                 "name": "SMS",
                 "description": "Transform your global communication with MSG91's reliable SMS services & APIs. Engage, analyze, and connect effortlessly on a global scale",
-                "linkText": "Learn more",
                 "link": "/sms"
             },
             {
                 "icon": "/assets/icons/products/email.svg",
                 "name": "Email",
                 "description": "Enhance email outreach with templates, AMP, stats, SMTP/API, and validation for effective customer engagement",
-                "linkText": "Learn more",
                 "link": "/email"
             },
             {
                 "icon": "/assets/icons/products/whatsapp.svg",
                 "name": "WhatsApp",
                 "description": "Improve interaction on WhatsApp with Base64 support, two-way communication, template management, analytics, and message logs",
-                "linkText": "Learn more",
                 "link": "/whatsapp"
             },
             {
                 "icon": "/assets/icons/products/voice.svg",
                 "name": "Voice",
                 "description": "Enhance customer engagement with real-time calls, Call Monitoring, browser calling, advanced IVR, bulk voice messaging, and real-time agent connections",
-                "linkText": "Learn more",
                 "link": "/voice"
             },
             {
                 "icon": "/assets/icons/products/numbers.svg",
                 "name": "Numbers",
                 "description": "Unlock global markets with cost-efficient virtual numbers. Enhance engagement with missed call services, keyword messaging, surveys, and auto responses",
-                "linkText": "Learn more",
                 "link": "/numbers"
             }
         ]
@@ -139,6 +134,7 @@
     ],
     "MoreServicesComp": {
         "heading": "More services",
+        "linkText": "Learn more",
         "services": [
             {
                 "icon": "/assets/icons/products/shorturl.svg",
@@ -146,7 +142,6 @@
                 "img": "/assets/global/index/services/shorturl.svg",
                 "heading": "Make your long URLs short",
                 "description": "Automatically shortens URL and tracks your success, one click at a time. Turn your long, messy links into short, memorable branded links",
-                "linkText": "Learn more",
                 "link": "/shorturl"
             },
             {
@@ -155,7 +150,6 @@
                 "img": "/assets/global/index/services/knowledgebase.svg",
                 "heading": "Manage your help docs and articles",
                 "description": "Do not let your customers wait for simple solutions. Give them instant access to the self-service library of information.",
-                "linkText": "Learn more",
                 "link": "/knowledgebase"
             },
             {
@@ -164,33 +158,30 @@
                 "img": "/assets/global/index/services/filehosting.svg",
                 "heading": "Simple and secured file storage",
                 "description": "A central hub for online file storage, sharing and syncing. Store all your files safely using powerful, reliable and easy-to-use cloud storage.",
-                "linkText": "Learn more",
                 "link": "https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91"
             }
         ]
     },
     "CaseStudiesComp": {
         "heading": "Customer Success Powered by MSG91",
+        "linkText": "Learn more",
         "casestudies": [
             {
                 "img": "/assets/global/index/stories/milkbasket-bg.png",
                 "logo": "/assets/global/index/stories/milkbasket-logo.png",
                 "description": "Milkbasket sends regular updates to its customers by offering proactive support and recommendations",
-                "linkText": "Learn more",
                 "link": "/case-studies/milkbasket"
             },
             {
                 "img": "/assets/global/index/stories/unacademy-bg.png",
                 "logo": "/assets/global/index/stories/unacademy-logo.png",
                 "description": "Unacademy using omnichannel keeps its audience engaged and nurtured with personalised campaigns",
-                "linkText": "Learn more",
                 "link": "/case-studies/unacademy"
             },
             {
                 "img": "/assets/global/index/stories/ixigo-bg.png",
                 "logo": "/assets/global/index/stories/ixigo-logo.png",
                 "description": "Ixigo engages and updates its audience through multichannel communication across messaging, email and WhatsApp",
-                "linkText": "Learn more",
                 "link": "/case-studies/ixigo"
             }
         ]
