@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './BannerComp.module.scss';
 import TrustedByComp from '../TrustedByComp/TrustedByComp';
-import { LinkButton,  } from '../UIComponent/Buttons/LinkButton';
+import { LinkButton } from '../UIComponent/Buttons/LinkButton';
 export default function BannerComp({ data }) {
     return (
         <>

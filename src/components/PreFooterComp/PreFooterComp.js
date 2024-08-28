@@ -1,7 +1,7 @@
-export default function PreFooterComp({data}) {
+export default function PreFooterComp({ data }) {
     return (
         <>
-            <div className="text">{data.title}</div>
+            <div className='text'>{data.title}</div>
         </>
     );
 }

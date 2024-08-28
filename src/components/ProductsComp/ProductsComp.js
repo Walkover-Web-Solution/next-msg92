@@ -17,7 +17,7 @@ export default function ProductsComp({ data }) {
                                         <span className={style.tagline_sm}>{product?.tagline}</span>
                                         <h2 className='text-2xl font-bold'>{product?.name}</h2>
                                         <p className='text-lg'>{product?.description}</p>
-                                        <LinkText className="link-btn" href={'/'}>
+                                        <LinkText className='link-btn' href={'/'}>
                                             Learn More
                                         </LinkText>
                                     </div>

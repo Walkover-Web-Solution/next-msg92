@@ -91,7 +91,9 @@ $button-transition-timing: 100ms;
     .arrow-body {
         opacity: 0;
         transform: scaleX(1);
-        transition: transform $button-transition-timing ease-in-out, opacity $button-transition-timing ease-in-out;
+        transition:
+            transform $button-transition-timing ease-in-out,
+            opacity $button-transition-timing ease-in-out;
     }
 
     &:hover {
