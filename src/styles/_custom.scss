@@ -1,18 +1,21 @@
 .container {
-    @apply mx-auto px-2;
+    @apply mx-auto px-4 md:px-10;
 }
 
 .btn {
     &.btn-primary {
         color: var(--white-color);
         @apply hover:bg-gray-700;
+        &.btn-outline {
+            @apply text-primary hover:text-white;
+        }
     }
     &.btn-sm {
         @apply px-3;
     }
     &.btn-md {
         height: fit-content !important;
-        width: fit-content !important;
+        width: fit-content;
         min-height: auto !important;
         @apply px-4 py-2 text-base;
     }
@@ -91,9 +94,7 @@ $button-transition-timing: 100ms;
     .arrow-body {
         opacity: 0;
         transform: scaleX(1);
-        transition:
-            transform $button-transition-timing ease-in-out,
-            opacity $button-transition-timing ease-in-out;
+        transition: transform $button-transition-timing ease-in-out, opacity $button-transition-timing ease-in-out;
     }
 
     &:hover {
@@ -120,11 +121,10 @@ $button-transition-timing: 100ms;
     }
 }
 
-
-.collapse:not(.collapse-close):has(> input[type="radio"]:checked) {
-   @apply border rounded;
-   .collapse-title{
-   background-color: var(    --secandary-color);
-   color: var(--accent-color);
-   }
+.collapse:not(.collapse-close):has(> input[type='radio']:checked) {
+    @apply border rounded;
+    .collapse-title {
+        background-color: var(--secandary-color);
+        color: var(--accent-color);
+    }
 }
