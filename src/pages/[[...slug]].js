@@ -36,8 +36,8 @@ const Components = {
 export default function Page(props) {
     return (
         <>
-            <NotificationBarComp country='global' />
-            <MenuBarComp country='global' />
+            {/* <NotificationBarComp country='global' /> */}
+            {/* <MenuBarComp country='global' /> */}
             {props.data &&
                 Object.keys(props.data).map((key) => {
                     const data = props.data[key];
@@ -48,7 +48,7 @@ export default function Page(props) {
                     }
                     return <Component key={`section-${key}`} data={data} />;
                 })}
-            <FooterComp country='global' />
+            {/* <FooterComp country='global' /> */}
         </>
     );
 }
@@ -61,7 +61,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-    const params = context.params;
+    const params = context?.params;
     const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/api/data', {
         method: 'POST',
         headers: {

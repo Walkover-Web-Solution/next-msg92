@@ -1,14 +1,5 @@
 {
-    "HeadComp": {
-        "title": "Page Not Found",
-        "description": "Page not found"
-    },
-    "NotificationBarComp": {
-        "title": "Page not found in"
-    },
-    "MenuBarComp": {
-        "title": "Page not found Bar in"
-    },
+
     "NotFoundComp": {
         "title": "Page not found in"
     }

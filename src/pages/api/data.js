@@ -5,12 +5,13 @@ export default function handler(req, res) {
         const params = req.body;
         if (Object.keys(params).length !== 0) {
             console.log(params.slug.length);
-            if (params.slug.length) {
-                folder = params.slug[0];
-            }
+
             if (params.slug.length > 1) {
                 folder = params.slug[0];
                 file = params.slug[1];
+            } else {
+                folder = 'global';
+                file = params.slug[0];
             }
         }
         let data;
