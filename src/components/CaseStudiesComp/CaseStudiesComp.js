@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { LinkText } from "../UIComponent/Buttons/LinkButton";
+import { LinkText } from '../UIComponent/Buttons/LinkButton';
 
 export default function CaseStudiesComp({ data }) {
     return (
