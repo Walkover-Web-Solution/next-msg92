@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { LinkText } from '../UIComponent/Buttons/LinkButton';
 
 export default function ChannelsComp({ data }) {
     return (
@@ -10,13 +11,13 @@ export default function ChannelsComp({ data }) {
                 {data.channels.map((channel, index) => (
                     <Link
                         key={index}
-                        className='flex flex-col gap-4 bg-neutral rounded-lg md:p-8 p-4 hover:shadow-lg'
+                        className='flex flex-col gap-4 bg-neutral rounded-lg md:p-8 p-4 hover:shadow-lg LinkButtonCard'
                         href={channel.link}
                     >
                         <Image width={40} height={40} src={channel?.icon} alt={channel?.name} />
                         <h3 className='text-2xl font-semibold'>{channel?.name}</h3>
                         <p className='text-lg'>{channel?.description}</p>
-                        <span className='mt-auto'>{channel.linkText}</span>
+                        <LinkText className='link-btn'>{channel.linkText}</LinkText>
                     </Link>
                 ))}
             </div>

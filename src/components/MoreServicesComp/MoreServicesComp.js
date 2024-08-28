@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { LinkText } from '../UIComponent/Buttons/LinkButton';
 
 export default function MoreServicesComp({ data }) {
     return (
@@ -10,7 +11,7 @@ export default function MoreServicesComp({ data }) {
                     {data.services.map((service, index) => (
                         <Link
                             key={index}
-                            className='flex flex-col gap-6 bg-neutral rounded-lg md:p-8 p-4 hover:shadow-lg'
+                            className='flex flex-col gap-6 bg-neutral rounded-lg md:p-8 p-4 hover:shadow-lg LinkButtonCard'
                             href={service.link}
                         >
                             <div className='flex items-center gap-2'>
@@ -20,7 +21,7 @@ export default function MoreServicesComp({ data }) {
                             <Image width={600} height={600} src={service?.img} alt={service?.name} />
                             <h3 className='text-xl font-semibold'>{service?.heading}</h3>
                             <p className='text-lg'>{service?.description}</p>
-                            <span className='mt-auto'>{service.linkText}</span>
+                            <LinkText className='link-btn'>{service.linkText}</LinkText>
                         </Link>
                     ))}
                 </div>

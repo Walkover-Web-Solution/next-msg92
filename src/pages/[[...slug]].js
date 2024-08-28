@@ -15,39 +15,42 @@ import SEOComp from '@/components/SEOComp/SEOComp';
 import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
 import HeadComp from '@/components/headComp';
 
-
 const Components = {
-  BannerComp,
-  CaseStudiesComp,
-  ChannelsComp,
-  FactsComp,
-  FaqsComp,
-  FooterComp,
-  MenuBarComp,
-  MoreServicesComp,
-  NotFoundComp,
-  NotificationBarComp,
-  PreFooterComp,
-  ProductsComp,
-  SEOComp,
-  TrustedByComp,
-  HeadComp
+    BannerComp,
+    CaseStudiesComp,
+    ChannelsComp,
+    FactsComp,
+    FaqsComp,
+    FooterComp,
+    MenuBarComp,
+    MoreServicesComp,
+    NotFoundComp,
+    NotificationBarComp,
+    PreFooterComp,
+    ProductsComp,
+    SEOComp,
+    TrustedByComp,
+    HeadComp,
 };
 
 export default function Page(props) {
-  return (
-    <>
-      {Object.keys(props).map((key) => {
-        const data = props[key];      
-        var Component = Components[key];        
-        if (!Component) {
-          console.error(`Component "${key}" is undefined. Check your imports and component exports.`);
-          return;
-        }        
-        return <Component key={`section-${key}`} data={data} />
-      })}          
-    </>
-  );
+    return (
+        <>
+            <NotificationBarComp country='global' />
+            <MenuBarComp country='global' />
+            {props.data &&
+                Object.keys(props.data).map((key) => {
+                    const data = props.data[key];
+                    var Component = Components[key];
+                    if (!Component) {
+                        console.error(`Component "${key}" is undefined. Check your imports and component exports.`);
+                        return;
+                    }
+                    return <Component key={`section-${key}`} data={data} />;
+                })}
+            <FooterComp country='global' />
+        </>
+    );
 }
 
 export const getStaticPaths = async () => {
@@ -58,16 +61,16 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-  const params = context.params  
-  const res = await fetch('http://localhost:3000/api/data', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(params),
-  });
-  const data = await res.json();  
-  return {
-    props: data,
-  };  
+    const params = context.params;
+    const res = await fetch('http://localhost:3000/api/data', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(params),
+    });
+    const data = await res.json();
+    return {
+        props: { data, params },
+    };
 };
