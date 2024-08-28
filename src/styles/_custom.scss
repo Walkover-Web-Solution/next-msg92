@@ -28,9 +28,31 @@
 }
 
 .text-link {
+    &::after {
+        background-color: var(--link-color);
+    }
+
+    &:hover {
+        color: var(--link-color);
+    }
+}
+
+.text-link-white {
+    &::after {
+        background-color: var(--neutral-color);
+    }
+
+    &:hover {
+        color: var(--neutral-color);
+    }
+}
+
+.text-link,
+.text-link-white {
     cursor: pointer;
     position: relative;
     transition: color 0.1s ease-in-out;
+    width: fit-content;
 
     &::after {
         content: '';
@@ -39,17 +61,61 @@
         height: 2px;
         bottom: 0;
         left: 0;
-        background-color: var(--link-color);
         transform: scaleX(0);
         transform-origin: left;
         transition: transform 0.1s ease-in-out;
     }
 
-    &:hover {
-        color: var(--link-color);
-    }
-
     &:hover::after {
         transform: scaleX(1);
+    }
+}
+
+//Button with arraw
+$button-transition-timing: 100ms;
+
+.link-btn {
+    @apply flex items-center gap-1 w-fit;
+
+    .arrow-icon {
+        overflow: visible;
+        margin-left: 3px;
+        width: 8px;
+    }
+
+    .arrow-head {
+        transform: translateX(0);
+        transition: transform $button-transition-timing ease-in-out;
+    }
+
+    .arrow-body {
+        opacity: 0;
+        transform: scaleX(1);
+        transition:
+            transform $button-transition-timing ease-in-out,
+            opacity $button-transition-timing ease-in-out;
+    }
+
+    &:hover {
+        // color: var(--link-color);
+        .arrow-head {
+            transform: translateX(3px);
+        }
+
+        .arrow-body {
+            opacity: 1;
+            transform: scaleX(2);
+        }
+    }
+}
+
+.LinkButtonCard:hover .link-btn {
+    .arrow-head {
+        transform: translateX(5px);
+    }
+
+    .arrow-body {
+        opacity: 1;
+        transform: scaleX(3);
     }
 }

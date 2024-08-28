@@ -1,7 +1,7 @@
-export default function NotFoundComp({data}) {
+export default function NotFoundComp({ data }) {
     return (
         <>
-            <div className="text">{data.title}</div>
+            <div className='text'>{data.title}</div>
         </>
     );
 }

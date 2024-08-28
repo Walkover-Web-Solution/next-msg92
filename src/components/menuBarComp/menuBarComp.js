@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MdMenu } from 'react-icons/md';
 
-export default function MenuBarComp({ data }) {
-    const pageData = require(`@/data/${data?.country}/common.json`);
+export default function MenuBarComp({ country }) {
+    const pageData = require(`@/data/${country}/common.json`);
     const componentData = pageData?.menu;
     return (
         <div>

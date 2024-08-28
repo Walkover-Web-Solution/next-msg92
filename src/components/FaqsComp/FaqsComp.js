@@ -1,7 +1,7 @@
-export default function FaqsComp({data}) {
+export default function FaqsComp({ data }) {
     return (
         <>
-            <div className="text">{data.title}</div>
+            <div className='text'>{data.title}</div>
         </>
     );
 }

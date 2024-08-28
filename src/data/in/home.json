@@ -1,5 +1,5 @@
 {
-    "HeadComp":{
+    "HeadComp": {
         "title": "title in",
         "description": "description in"
     },
@@ -10,6 +10,6 @@
         "title": "Menu Bar in"
     },
     "BannerComp": {
-        "title" : "Banner in"
+        "title": "Banner in"
     }
 }

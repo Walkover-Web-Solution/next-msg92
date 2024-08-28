@@ -1,5 +1,5 @@
 {
-    "HeadComp":{
+    "HeadComp": {
         "title": "Page Not Found",
         "description": "Page not found"
     },
@@ -10,6 +10,6 @@
         "title": "Page not found Bar in"
     },
     "NotFoundComp": {
-        "title" : "Page not found in"
+        "title": "Page not found in"
     }
 }

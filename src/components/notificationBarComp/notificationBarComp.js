@@ -1,8 +1,8 @@
 import styles from '@/components/NotificationBarComp/NotificationBarComp.module.scss';
 import Link from 'next/link';
 import { MdArrowDropDown, MdMoveDown, MdOutlineCall, MdOutlineLanguage, MdPinDrop } from 'react-icons/md';
-export default function NotificationBarComp({ data }) {
-    const pageData = require(`@/data/${data?.country}/common.json`);
+export default function NotificationBarComp({ country }) {
+    const pageData = require(`@/data/${country}/common.json`);
     const componentData = pageData?.notification;
 
     return (
