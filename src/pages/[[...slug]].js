@@ -62,7 +62,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
     const params = context.params;
-    const res = await fetch('http://localhost:3000/api/data', {
+    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/api/data', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

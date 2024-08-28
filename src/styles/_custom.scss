@@ -119,3 +119,12 @@ $button-transition-timing: 100ms;
         transform: scaleX(3);
     }
 }
+
+
+.collapse:not(.collapse-close):has(> input[type="radio"]:checked) {
+   @apply border rounded;
+   .collapse-title{
+   background-color: var(    --secandary-color);
+   color: var(--accent-color);
+   }
+}
