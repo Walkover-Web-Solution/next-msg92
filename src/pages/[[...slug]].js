@@ -15,6 +15,10 @@ import SEOComp from '@/components/SEOComp/SEOComp';
 import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
 import HeadComp from '@/components/headComp';
 
+//Functions to fetch data
+import getPageInfo from '@/utils/getPageInfo';
+import getCommonCompData from '@/utils/getCommonCompData';
+
 const Components = {
     BannerComp,
     CaseStudiesComp,
@@ -33,22 +37,26 @@ const Components = {
     HeadComp,
 };
 
-export default function Page(props) {
+export default function Page({ data, commonData, pageInfo }) {
     return (
         <>
-            {/* <NotificationBarComp country='global' /> */}
-            {/* <MenuBarComp country='global' /> */}
-            {props.data &&
-                Object.keys(props.data).map((key) => {
-                    const data = props.data[key];
+            <NotificationBarComp componentData={commonData?.notification} country={pageInfo?.country} />
+
+            <MenuBarComp componentData={commonData?.menu} />
+
+            {data &&
+                Object.keys(data).map((key) => {
+                    const pageData = data[key];
                     var Component = Components[key];
                     if (!Component) {
                         console.error(`Component "${key}" is undefined. Check your imports and component exports.`);
                         return;
                     }
-                    return <Component key={`section-${key}`} data={data} />;
+
+                    return <Component key={`section-${key}`} data={pageData} />;
                 })}
-            {/* <FooterComp country='global' /> */}
+
+            <FooterComp componentData={commonData?.footer} />
         </>
     );
 }
@@ -62,15 +70,22 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
     const params = context?.params;
+    const pageInfo = getPageInfo(params);
+    const commonData = getCommonCompData(pageInfo?.country);
+
     const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/api/data', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(params),
+        body: JSON.stringify(pageInfo),
     });
     const data = await res.json();
     return {
-        props: { data, params },
+        props: {
+            data,
+            commonData,
+            pageInfo,
+        },
     };
 };

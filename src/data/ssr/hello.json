@@ -228,5 +228,8 @@
                 "link": "https://control.msg91.com/signup/"
             }
         }
+    },
+    "FooterComp": {
+        "country": "global"
     }
 }

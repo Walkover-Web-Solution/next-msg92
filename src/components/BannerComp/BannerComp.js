@@ -22,6 +22,7 @@ export default function BannerComp({ data }) {
                     width={1080}
                     height={1080}
                     className='lg:h-full w-auto lg:absolute right-2 top-0 bottom-0'
+                    alt={data?.tagline}
                 />
             </div>
         </>

@@ -6,7 +6,7 @@ export default function FaqsComp({ data }) {
                 <div className='flex flex-col'>
                     {data?.faqs.map((faq, index) => {
                         return (
-                            <div className='collapse collapse-plus  border-b rounded-none'>
+                            <div key={index} className='collapse collapse-plus  border-b rounded-none'>
                                 <input type='radio' name='my-accordion-3' defaultChecked={index === 0} />
                                 <h3 className='collapse-title text-xl font-medium'>{faq?.question}</h3>
                                 <div className='collapse-content'>
