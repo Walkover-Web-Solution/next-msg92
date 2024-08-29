@@ -1,14 +1,11 @@
 import Link from 'next/link';
 
-export default function FooterComp({ country }) {
-    if (country) {
-        const pageData = require(`@/data/${country}/common.json`);
-        const componentData = pageData?.footer;
-
+export default function FooterComp({ componentData }) {
+    if (componentData) {
         return (
             <>
                 <div className='bg-gray-800 pt-16 pb-10'>
-                    <div className='container text-white flex '>
+                    <div className='container text-white grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10  '>
                         <div className='flex flex-col gap-10 w-full'>
                             {componentData?.products?.links.length > 0 && (
                                 <div className='flex flex-col gap-4'>
@@ -98,8 +95,8 @@ export default function FooterComp({ country }) {
                     </div>
                 </div>
                 <div className='bg-gray-900 pt-10 pb-16'>
-                    <div className='container text-white flex '>
-                        <ul className='flex  gap-4'>
+                    <div className='container text-white flex  '>
+                        <ul className='flex flex-wrap gap-4'>
                             {componentData?.policies?.links.length > 0 &&
                                 componentData?.policies?.links.map((link, index) => {
                                     return (

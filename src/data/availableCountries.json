@@ -1,0 +1,37 @@
+[
+    {
+        "shortName": "in",
+        "name": "India",
+        "Currencry": "INR"
+    },
+    {
+        "shortName": "us",
+        "name": "United States",
+        "Currency": "USD"
+    },
+    {
+        "shortName": "gb",
+        "name": "United Kingdom",
+        "Currency": "GBP"
+    },
+    {
+        "shortName": "ph",
+        "name": "Philippines",
+        "Currency": "PHP"
+    },
+    {
+        "shortName": "sg",
+        "name": "Singapore",
+        "Currency": "SGD"
+    },
+    {
+        "shortName": "ae",
+        "name": "United Arab Emirates",
+        "Currency": "AED"
+    },
+    {
+        "shortName": "es",
+        "name": "Spain",
+        "Currency": "EUR"
+    }
+]
