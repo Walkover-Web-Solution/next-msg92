@@ -1,10 +1,7 @@
 import Link from 'next/link';
 
-export default function FooterComp({ country }) {
-    if (country) {
-        const pageData = require(`@/data/${country}/common.json`);
-        const componentData = pageData?.footer;
-
+export default function FooterComp({ componentData }) {
+    if (componentData) {
         return (
             <>
                 <div className='bg-gray-800 pt-16 pb-10'>
