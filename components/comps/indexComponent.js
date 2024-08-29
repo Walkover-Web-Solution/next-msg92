@@ -17,7 +17,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                         <div className="home-pre-heading c-fs-4 uc">customer solution platform</div>
                         <h1 className="heading text-dark c-fw-xb">{pageData?.headline}</h1>
                         <h2 className="small-heading text-dark">
-                            Secure and robust APIs for SMS, Email, Voice, Authentication and more
+                            Secure and robust APIs for WhatsApp, SMS, RCS, Email, Voice, Authentication and more
                         </h2>
                         <a
                             href="/signup"
