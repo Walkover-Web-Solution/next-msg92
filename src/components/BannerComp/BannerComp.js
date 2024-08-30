@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import styles from './BannerComp.module.scss';
 import TrustedByComp from '../TrustedByComp/TrustedByComp';
 import { LinkButton } from '../UIComponent/Buttons/LinkButton';
 export default function BannerComp({ data }) {
@@ -14,7 +13,7 @@ export default function BannerComp({ data }) {
                                 <span className='font-semibold text-2xl'>{data?.product?.name}</span>
                             </div>
                         )}
-                        <span className={styles.tagline}>{data?.tagline}</span>
+                        <span className={`text-xl uppercase tracking-widest text-${data?.slug}`}>{data?.tagline}</span>
                         <h1 className='heading'>{data?.heading}</h1>
                         <h2 className='suheading'>{data?.subheading}</h2>
                     </div>
