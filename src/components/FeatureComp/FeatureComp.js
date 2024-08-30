@@ -12,7 +12,7 @@ export default function FeatureComp({ data }) {
                                 <div
                                     key={index}
                                     className={`lg:p-12 p-6 bg-white border flex items-center overflow-hidden gap-1 rounded ${
-                                        index == 2
+                                        (index + 1) % 3 === 0
                                             ? 'flex-col md:flex-row col-span-2'
                                             : 'flex-col lg:flex-col md:flex-row lg:col-span-1 col-span-2'
                                     }`}
