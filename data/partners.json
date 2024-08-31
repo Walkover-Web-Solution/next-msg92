@@ -144,14 +144,6 @@
     "Logo": "/assets/partners/prowebsms.jpg"
   },
   {
-    "Partner": "WooCommerce",
-    "Link": "https://bit.ly/partnerPage-theWeeky",
-    "Industry": "E-Commerce",
-    "Description": "WooCommerce is a free plugin available for WordPress which helps in converting your website into a Ecommerce Store. This plugin helps in extending the functionality of the WooCommerce plugin by verifying your customer’s Mobile number and sending them updates of the order on their phone.",
-    "DevelopedBy": "Third-Party",
-    "Logo": "/assets/partners/weeky.png"
-  },
-  {
     "Partner": "Tellephant",
     "Link": "https://bit.ly/partnerPage-tellephant",
     "Industry": "CRM",
