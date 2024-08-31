@@ -117,9 +117,9 @@ const partnersAndIntegrations = ({data}) => {
                 </div>
             </section>
             <div className="container d-flex flex-column my-80 ">
-                <h2 className="sub-heading c-head text-center text-sm-start">Hear from our Partners</h2>
+                <h2 className="sub-heading c-head text-center text-sm-start">Hear from our Partner</h2>
                 <div className="w-100 d-flex flex-wrap  h-100 p-3 pe-3 pe-md-4 our-partner">
-                    <div className=" c-w-pp  pe-0 pe-md-5 our-partner h-100">
+                    {/* <div className=" c-w-pp  pe-0 pe-md-5 our-partner h-100">
                         <img className="mt-3" src="/img/the-weeky-img.png" alt="weeky logo" />
                         <div className="d-flex flex-column">
                             <p className="c-fs-3 my-3">
@@ -129,7 +129,7 @@ const partnersAndIntegrations = ({data}) => {
                             </p>
                             <p className="c-fs-3 c-fw-m">Prateek Agrawal</p>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="c-w-pp mt-4 mt-md-0 h-100 pe-0 pe-md-5 our-partner pt-4 ">
                         <img className="mt-3 " src="/img/rixyncs-img.png" alt="rixyncs logo" />
                         <div className=" d-flex flex-column justify-content-between">
