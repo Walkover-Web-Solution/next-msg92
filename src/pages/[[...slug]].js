@@ -55,7 +55,7 @@ export default function Page({ data, commonData, pageInfo }) {
                         return;
                     }
 
-                    return <Component key={`section-${key}`} data={pageData} />;
+                    return <Component key={`section-${key}`} data={pageData} pageInfo={pageInfo} />;
                 })}
 
             <FooterComp componentData={commonData?.footer} />
