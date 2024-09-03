@@ -1,6 +1,5 @@
 import availableCountries from '@/data/availableCountries.json';
 export default function getPageInfo(params) {
-    console.log('🚀 ~ getPageInfo ~ params:', params);
     let country = 'global';
     let page = 'home';
     let pathArray = params?.slug;

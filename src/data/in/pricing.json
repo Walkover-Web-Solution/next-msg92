@@ -26,7 +26,7 @@
                 },
                 {
                     "name": "OTP",
-                    "slug": "otp",
+                    "slug": "otpwidget",
                     "description": "OTP widget SDK",
                     "icon": "/assets/icons/products/otp.svg"
                 }
