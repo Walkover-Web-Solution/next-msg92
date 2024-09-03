@@ -18,6 +18,7 @@ import HeadComp from '@/components/headComp';
 //Functions to fetch data
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
+import FeatureComp from '@/components/FeatureComp/FeatureComp';
 
 const Components = {
     BannerComp,
@@ -35,6 +36,7 @@ const Components = {
     SEOComp,
     TrustedByComp,
     HeadComp,
+    FeatureComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
@@ -53,7 +55,7 @@ export default function Page({ data, commonData, pageInfo }) {
                         return;
                     }
 
-                    return <Component key={`section-${key}`} data={pageData} />;
+                    return <Component key={`section-${key}`} data={pageData} pageInfo={pageInfo} />;
                 })}
 
             <FooterComp componentData={commonData?.footer} />
