@@ -1,94 +1,93 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import countries from "@/data/countries.json";
-import Pricingemail from "@/components/pricing/pricing-email";
-import Pricingsms from "@/components/pricing/pricing-sms";
-import Pricingvoice from "@/components/pricing/pricing-voice";
-import Pricingotp from "@/components/pricing/pricing-otp";
-import Pricingwp from "@/components/pricing/pricing-whatsapp";
-import Pricinghello from "@/components/pricing/pricing-hello";
-import Pricingsegmento from "@/components/pricing/pricing-segmento";
-import Pricingcampaign from "@/components/pricing/pricing-campaign";
-import Pricingrcs from "@/components/pricing/pricing-rcs";
-import PricingOtpWidget from "@/components/pricing/pricing-otpwidget";
-import Pricingknowledgebase from "@/components/pricing/pricing-knowledgebase";
-import Link from "next/link";
-import { MdExpandMore } from "react-icons/md";
+import React from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import countries from '@/data/countries.json';
+import Pricingemail from '@/components/pricing/pricing-email';
+import Pricingsms from '@/components/pricing/pricing-sms';
+import Pricingvoice from '@/components/pricing/pricing-voice';
+import Pricingotp from '@/components/pricing/pricing-otp';
+import Pricingwp from '@/components/pricing/pricing-whatsapp';
+import Pricinghello from '@/components/pricing/pricing-hello';
+import Pricingsegmento from '@/components/pricing/pricing-segmento';
+import Pricingcampaign from '@/components/pricing/pricing-campaign';
+import Pricingrcs from '@/components/pricing/pricing-rcs';
+import PricingOtpWidget from '@/components/pricing/pricing-otpwidget';
+import Pricingknowledgebase from '@/components/pricing/pricing-knowledgebase';
+import Link from 'next/link';
+import { MdExpandMore } from 'react-icons/md';
+import getRelativeURL from '@/utils/getRelativeURL';
 
 const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
-    var availCont = ["US", "UK", "IN", "BR", "SG", "AE", "PH", "ES"];
-    var pathLengthCond = availCont.includes(countryCode);
+    var availCont = ['US', 'GB', 'IN', 'BR', 'SG', 'AE', 'PH', 'ES'];
+    var pathLengthCond = availCont.includes(countryCode );
     var [pricing, setPricing] = useState([]);
-    var [originCountry, setOriginCountry] = useState("");
-    var [destinationCountry, setDestinationCountry] = useState("");
-    var [currency, setCurrency] = useState("");
-    var [currencySymbol, setCurrencySymbol] = useState("");
-    var [oneTimeWtsAppFee, setOneTimeWtsAppFee] = useState("");
-    var amountArr = ["1250", "3300", "5400", "10200", "20000", "76500", "154000"];
+    var [originCountry, setOriginCountry] = useState('');
+    var [destinationCountry, setDestinationCountry] = useState('');
+    var [currency, setCurrency] = useState('');
+    var [currencySymbol, setCurrencySymbol] = useState('');
+    var [oneTimeWtsAppFee, setOneTimeWtsAppFee] = useState('');
+    var amountArr = ['1250', '3300', '5400', '10200', '20000', '76500', '154000'];
     var [subscriptionEmail, setSubscriptionEmail] = useState([]);
     var [subscriptionVoice, setSubscriptionVoice] = useState([]);
     var [subscriptionWhatsapp, setSubscriptionWhatsapp] = useState([]);
     var [subscriptionSegmento, setSubscriptionSegmento] = useState([]);
     var [subscriptionHello, setSubscriptionHello] = useState([]);
     const [fetchCurrency, setfetchCurrency] = useState();
-    const [fetchMsId, setfetchMsId] = useState("");
+    const [fetchMsId, setfetchMsId] = useState('');
     const [states, setStates] = useState();
 
     const changeCurrencySymbol = async (currency) => {
-        if (currency == "INR") {
-            setCurrencySymbol("₹");
-            setOneTimeWtsAppFee("3000 +GST");
-        } else if (currency == "GBP") {
-            setOneTimeWtsAppFee("35");
-            setCurrencySymbol("£");
+        if (currency == 'INR') {
+            setCurrencySymbol('₹');
+            setOneTimeWtsAppFee('3000 +GST');
+        } else if (currency == 'GBP') {
+            setOneTimeWtsAppFee('35');
+            setCurrencySymbol('£');
         } else {
-            setCurrencySymbol("$");
-            setOneTimeWtsAppFee("40");
+            setCurrencySymbol('$');
+            setOneTimeWtsAppFee('40');
         }
     };
     const fetchemailData = async () => {
         setfetchCurrency(currency);
-        setfetchMsId("1");
-        setStates("subscriptionEmail");
-        fetchSubscription(currency, "1", "subscriptionEmail");
+        setfetchMsId('1');
+        setStates('subscriptionEmail');
+        fetchSubscription(currency, '1', 'subscriptionEmail');
     };
     const fetchSegmentoData = async () => {
         setfetchCurrency(currency);
-        setfetchMsId("2");
-        setStates("subscriptionSegmento");
-        fetchSubscription(currency, "2", "subscriptionSegmento");
+        setfetchMsId('2');
+        setStates('subscriptionSegmento');
+        fetchSubscription(currency, '2', 'subscriptionSegmento');
     };
     const fetchHelloData = async () => {
         setfetchCurrency(currency);
-        setfetchMsId("7");
-        setStates("SubscriptionHello");
-        fetchSubscription(currency, "7", "subscriptionHello");
+        setfetchMsId('7');
+        setStates('SubscriptionHello');
+        fetchSubscription(currency, '7', 'subscriptionHello');
     };
     const fetchWhatsAppData = async () => {
         setfetchCurrency(currency);
-        setfetchMsId("5");
-        setStates("SubscriptionWhatsapp");
-        fetchSubscription(currency, "5", "SubscriptionWhatsapp");
+        setfetchMsId('5');
+        setStates('SubscriptionWhatsapp');
+        fetchSubscription(currency, '5', 'SubscriptionWhatsapp');
     };
     useEffect(() => {
-        if (product === "email") {
+        if (product === 'email') {
             fetchemailData(currency);
-        } else if (product === "segmento") {
+        } else if (product === 'segmento') {
             fetchSegmentoData(currency);
-        } else if (product === "whatsapp") {
+        } else if (product === 'whatsapp') {
             fetchWhatsAppData(currency);
-        } else if (product === "hello") {
+        } else if (product === 'hello') {
             fetchHelloData(currency);
         }
-        
-        
     }, [product, currency]);
 
     const fetchSMSData = async (currency, origin, destination) => {
         setOriginCountry(origin);
         setDestinationCountry(destination);
-        amountArr = origin == "India" && currency == "INR" ? amountArr : ["5000"];
+        amountArr = origin == 'India' && currency == 'INR' ? amountArr : ['5000'];
         changeCurrencySymbol(currency);
         try {
             const fetchRequests = amountArr.map(async (amount) => {
@@ -102,7 +101,7 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
             setPricing([...newData]);
         } catch (error) {
             // Handle errors here
-            console.error("Error fetching pricing details:", error);
+            console.error('Error fetching pricing details:', error);
         }
     };
 
@@ -115,26 +114,26 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
                 );
 
                 switch (state) {
-                    case "subscriptionEmail":
+                    case 'subscriptionEmail':
                         setSubscriptionEmail([...response.data.data]);
                         break;
-                    case "SubscriptionWhatsapp":
+                    case 'SubscriptionWhatsapp':
                         setSubscriptionWhatsapp([...response.data.data]);
                         break;
-                    case "subscriptionSegmento":
+                    case 'subscriptionSegmento':
                         setSubscriptionSegmento([...response.data.data]);
                         break;
-                    case "SubscriptionVoice":
+                    case 'SubscriptionVoice':
                         setSubscriptionVoice([...response.data.data]);
                         break;
-                    case "subscriptionHello":
+                    case 'subscriptionHello':
                         setSubscriptionHello([...response.data.data]);
                         break;
                     default:
                         break;
                 }
             } catch (error) {
-                throw new Error("Some error on server: " + error.message);
+                throw new Error('Some error on server: ' + error.message);
             }
         }
     };
@@ -144,13 +143,13 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
         setCurrency(response?.currency);
         fetchSMSData(response?.currency, response?.name, response?.name);
 
-        if (product === "email") {
+        if (product === 'email') {
             fetchemailData(response?.currency);
-        } else if (product === "segmento") {
+        } else if (product === 'segmento') {
             fetchSegmentoData(response?.currency);
-        } else if (product === "whatsapp") {
+        } else if (product === 'whatsapp') {
             fetchWhatsAppData(response?.currency);
-        } else if (product === "hello") {
+        } else if (product === 'hello') {
             fetchHelloData(response?.currency);
         }
     };
@@ -160,73 +159,73 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
     }, [countryCode]);
     const productPricingData = [
         {
-            type: "heading",
-            heading: "Applications",
+            type: 'heading',
+            heading: 'Applications',
         },
         {
-            product: "hello",
-            productDes: "hello logo",
-            productName: "Hello",
-            des: "Contact Center",
-            onclick: () => fetchSubscription(currency, "7", "subscriptionHello"),
+            product: 'hello',
+            productDes: 'hello logo',
+            productName: 'Hello',
+            des: 'Contact Center',
+            onclick: () => fetchSubscription(currency, '7', 'subscriptionHello'),
         },
         {
-            product: "campaign",
-            productDes: "campaign logo",
-            productName: "Campaign",
-            des: "Event-bassed automation",
-            onclick: () => fetchSubscription(currency, "7", "subscriptionHello"),
+            product: 'campaign',
+            productDes: 'campaign logo',
+            productName: 'Campaign',
+            des: 'Event-bassed automation',
+            onclick: () => fetchSubscription(currency, '7', 'subscriptionHello'),
         },
         {
-            product: "segmento",
-            productDes: "segmento logo",
-            productName: "Segmento",
-            des: "Contact management",
-            onclick: () => fetchSubscription(currency, "2", "subscriptionSegmento"),
+            product: 'segmento',
+            productDes: 'segmento logo',
+            productName: 'Segmento',
+            des: 'Contact management',
+            onclick: () => fetchSubscription(currency, '2', 'subscriptionSegmento'),
         },
         {
-            product: "otpwidget",
-            productDes: "otpwidget logo",
-            productName: "OTP",
-            des: "OTP widget SDK",
+            product: 'otpwidget',
+            productDes: 'otpwidget logo',
+            productName: 'OTP',
+            des: 'OTP widget SDK',
         },
         {
-            type: "heading",
-            heading: "Channels",
+            type: 'heading',
+            heading: 'Channels',
         },
         {
-            product: "sms",
-            productDes: "sms logo",
-            productName: "SMS",
+            product: 'sms',
+            productDes: 'sms logo',
+            productName: 'SMS',
             onclick: () => fetchSMSData(currency, originCountry, destinationCountry),
         },
         {
-            product: "otp",
-            productDes: "otp logo",
-            productName: "SendOTP",
+            product: 'otp',
+            productDes: 'otp logo',
+            productName: 'SendOTP',
             onclick: () => fetchSMSData(currency, originCountry, destinationCountry),
         },
         {
-            product: "email",
-            productDes: "email logo",
-            productName: "Email",
-            onclick: () => fetchSubscription(currency, "1", "subscriptionEmail"),
+            product: 'email',
+            productDes: 'email logo',
+            productName: 'Email',
+            onclick: () => fetchSubscription(currency, '1', 'subscriptionEmail'),
         },
         {
-            product: "whatsapp",
-            productDes: "whatsapp logo",
-            productName: "WhatsApp",
-            onclick: () => fetchSubscription(currency, "5", "SubscriptionWhatsapp"),
+            product: 'whatsapp',
+            productDes: 'whatsapp logo',
+            productName: 'WhatsApp',
+            onclick: () => fetchSubscription(currency, '5', 'SubscriptionWhatsapp'),
         },
         {
-            product: "voice",
-            productDes: "voice logo",
-            productName: "Voice",
+            product: 'voice',
+            productDes: 'voice logo',
+            productName: 'Voice',
         },
         {
-            product: "rcs",
-            productDes: "rcs logo",
-            productName: "RCS",
+            product: 'rcs',
+            productDes: 'rcs logo',
+            productName: 'RCS',
         },
     ];
 
@@ -249,20 +248,16 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
                         </button>
                         <ul className="dropdown-menu p-2">
                             {productPricingData.map((productData, index) =>
-                                productData.type === "heading" ? (
+                                productData.type === 'heading' ? (
                                     <li className="c-fw-m c-fs-5 " key={index}>
                                         {productData.heading}
                                     </li>
                                 ) : (
                                     <li key={index}>
                                         <Link
-                                            href={
-                                                pathLengthCond && pathArray
-                                                    ? `/${pathArray[1]}/pricing/${productData?.product}`
-                                                    : `/pricing/${productData?.product}`
-                                            }
+                                            href={getRelativeURL(productData?.product)}
                                             className={`dropdown-item  w-100 ${
-                                                product === productData?.product ? "active" : ""
+                                                product === productData?.product ? 'active' : ''
                                             }`}
                                             id={`${productData?.product}-btn`}
                                             onClick={() => {
@@ -291,7 +286,7 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
                     </div>
                     <div className=" d-none d-md-flex flex-column gap-2 align-items-start py-4" id="pricing-pills-tab">
                         {productPricingData.map((productData, index) =>
-                            productData.type === "heading" ? (
+                            productData.type === 'heading' ? (
                                 <h1 className="c-fw-m fs-6  " key={index}>
                                     {productData.heading}
                                 </h1>
@@ -303,7 +298,7 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
                                             ? `/${pathArray[1]}/pricing/${productData?.product}`
                                             : `/pricing/${productData?.product}`
                                     }
-                                    className={`nav-item w-100 ${product === productData?.product ? "active" : ""}`}
+                                    className={`nav-item w-100 ${product === productData?.product ? 'active' : ''}`}
                                     id={`${productData?.product}-btn`}
                                     onClick={() => {
                                         if (productData?.onclick) {
@@ -330,7 +325,7 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
                         )}
                     </div>
                     <div className=" price-container w-100 p-md-4 p-1">
-                        {product === "sms" && (
+                        {product === 'sms' && (
                             <Pricingsms
                                 amountArr={amountArr}
                                 pricing={pricing}
@@ -346,7 +341,7 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
                             />
                         )}
 
-                        {product === "email" && (
+                        {product === 'email' && (
                             <Pricingemail
                                 setSubscriptionEmail={setSubscriptionEmail}
                                 subscriptionEmail={subscriptionEmail}
@@ -356,17 +351,17 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
                                 countryCode={countryCode}
                             />
                         )}
-                        {product === "voice" && (
+                        {product === 'voice' && (
                             <Pricingvoice
                                 subscriptionVoice={subscriptionVoice}
                                 fetchSubscriptionVoice={fetchSubscription}
                                 currency={currency}
-                                state={"SubscriptionVoice"}
+                                state={'SubscriptionVoice'}
                                 setCurrencySymbol={setCurrencySymbol}
                                 countryCode={countryCode}
                             />
                         )}
-                        {product === "whatsapp" && (
+                        {product === 'whatsapp' && (
                             <Pricingwp
                                 subscriptionWhatsapp={subscriptionWhatsapp}
                                 fetchSubscriptionWhatsapp={fetchSubscription}
@@ -374,11 +369,11 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
                                 currencySymbol={currencySymbol}
                                 oneTimeWtsAppFee={oneTimeWtsAppFee}
                                 countryCode={countryCode}
-                               pathArray={pathArray}
+                                pathArray={pathArray}
                             />
                         )}
-                        {product === "otpwidget" && <PricingOtpWidget />}
-                        {product === "otp" && (
+                        {product === 'otpwidget' && <PricingOtpWidget />}
+                        {product === 'otp' && (
                             <Pricingotp
                                 amountArr={amountArr}
                                 pricing={pricing}
@@ -392,32 +387,32 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
                                 currencySymbol={currencySymbol}
                             />
                         )}
-                        {product === "hello" && (
+                        {product === 'hello' && (
                             <Pricinghello
                                 setSubscriptionHello={setSubscriptionHello}
                                 subscriptionHello={subscriptionHello}
                                 fetchSubscriptionHello={fetchSubscription}
                                 currency={currency}
-                                state={"SubscriptionHello"}
+                                state={'SubscriptionHello'}
                                 setCurrencySymbol={setCurrencySymbol}
                                 countryCode={countryCode}
                             />
                         )}
-                        {product === "segmento" && (
+                        {product === 'segmento' && (
                             <Pricingsegmento
                                 subscriptionSegmento={subscriptionSegmento}
                                 setSubscriptionSegmento={setSubscriptionSegmento}
                                 fetchSubscriptionSegmento={fetchSubscription}
                                 currency={currency}
-                                state={"subscriptionSegmento"}
+                                state={'subscriptionSegmento'}
                                 setCurrencySymbol={setCurrencySymbol}
                                 countryCode={countryCode}
                                 currencySymbol={currencySymbol}
                             />
                         )}
-                        {product === "campaign" && <Pricingcampaign />}
-                        {product === "knowledgebase" && <Pricingknowledgebase />}
-                        {product === "rcs" && <Pricingrcs />}
+                        {product === 'campaign' && <Pricingcampaign />}
+                        {product === 'knowledgebase' && <Pricingknowledgebase />}
+                        {product === 'rcs' && <Pricingrcs />}
                     </div>
                 </div>
                 {/* <div className="bg-white">

@@ -1,18 +1,16 @@
 // Child Component
-import { React, useEffect, useState } from "react";
-import PreFooter from "../preFooter";
-import TrustedBy from "../trustedby";
-import Seo from "../seoComp";
+import { React, useEffect, useState } from 'react';
+import TrustedBy from '../trustedby';
+import Seo from '../seoComp';
 
-import Prism from "prismjs";
-//import "prismjs/themes/prism-tomorrow.css";
-import "prismjs/themes/prism-twilight.css";
-import snippetData from "@/pages/snippet.json";
-import { InlineWidget } from "react-calendly";
-import GetStartedSection from "../getStartedSection/getStartedSection";
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-twilight.css';
+import snippetData from '@/pages/snippet.json';
+import { InlineWidget } from 'react-calendly';
+import GetStartedSection from '../getStartedSection/getStartedSection';
 
 const ChannelComponent = ({ pageData, path, pricingPath }) => {
-    var HTTPSnippet = require("httpsnippet");
+    var HTTPSnippet = require('httpsnippet');
     var i = 0;
     const [isCopied, setIsCopied] = useState(false);
     const handleSearch = () => {
@@ -21,7 +19,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
     };
 
     useEffect(() => {
-        if (pageData?.pagename !== "Numbers") {
+        if (pageData?.pagename !== 'Numbers') {
             Prism.highlightAll();
         }
     }, []);
@@ -32,16 +30,16 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
             setIsCopied(true);
             setTimeout(() => setIsCopied(false), 5000);
         } catch (err) {
-            console.error("Failed to Copy: ", err);
+            console.error('Failed to Copy: ', err);
         }
     };
 
     const snippet = new HTTPSnippet(snippetData[pageData.pagename]);
-    const node = snippet.convert("node");
-    const cURL = snippet.convert("shell", "curl");
-    const php = snippet.convert("php");
-    const python = snippet.convert("python");
-    const ruby = snippet.convert("ruby");
+    const node = snippet.convert('node');
+    const cURL = snippet.convert('shell', 'curl');
+    const php = snippet.convert('php');
+    const python = snippet.convert('python');
+    const ruby = snippet.convert('ruby');
 
     return (
         <div>
@@ -66,7 +64,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                             Get started
                         </a>
 
-                        {pageData.pagename === "WhatsApp" && (
+                        {pageData.pagename === 'WhatsApp' && (
                             <button
                                 className="btn btn-lg btn-outline-dark c-fs-2"
                                 data-bs-toggle="modal"
@@ -78,7 +76,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                     </div>
                 </div>
 
-                {pageData?.pagename !== "Numbers" && (
+                {pageData?.pagename !== 'Numbers' && (
                     <div className="row justify-content-center">
                         <div className="code-wrp col-lg-8 col-md-8 col-10">
                             <ul className="nav nav-pills justify-content-around" id="pills-tab" role="tablist">
@@ -173,7 +171,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                                                 d="M15 1H4c-1.1 0-2 .9-2 2v13c0 .55.45 1 1 1s1-.45 1-1V4c0-.55.45-1 1-1h10c.55 0 1-.45 1-1s-.45-1-1-1zm4 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1z"
                                             />
                                         </svg>
-                                        {isCopied ? "Copied!" : "Copy"}
+                                        {isCopied ? 'Copied!' : 'Copy'}
                                     </button>
                                     <pre>
                                         <code className={`language-javascript`}>{cURL}</code>
@@ -198,7 +196,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                                                 d="M15 1H4c-1.1 0-2 .9-2 2v13c0 .55.45 1 1 1s1-.45 1-1V4c0-.55.45-1 1-1h10c.55 0 1-.45 1-1s-.45-1-1-1zm4 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1z"
                                             />
                                         </svg>
-                                        {isCopied ? "Copied!" : "Copy"}
+                                        {isCopied ? 'Copied!' : 'Copy'}
                                     </button>
                                     <pre>
                                         <code className={`language-javascript`}>{node}</code>
@@ -224,7 +222,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                                                 d="M15 1H4c-1.1 0-2 .9-2 2v13c0 .55.45 1 1 1s1-.45 1-1V4c0-.55.45-1 1-1h10c.55 0 1-.45 1-1s-.45-1-1-1zm4 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1z"
                                             />
                                         </svg>
-                                        {isCopied ? "Copied!" : "Copy"}
+                                        {isCopied ? 'Copied!' : 'Copy'}
                                     </button>
                                     <pre>
                                         <code className={`language-javascript`}>{php}</code>
@@ -250,7 +248,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                                                 d="M15 1H4c-1.1 0-2 .9-2 2v13c0 .55.45 1 1 1s1-.45 1-1V4c0-.55.45-1 1-1h10c.55 0 1-.45 1-1s-.45-1-1-1zm4 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1z"
                                             />
                                         </svg>
-                                        {isCopied ? "Copied!" : "Copy"}
+                                        {isCopied ? 'Copied!' : 'Copy'}
                                     </button>
                                     <pre>
                                         <code className={`language-javascript`}>{ruby}</code>
@@ -275,7 +273,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                                                 d="M15 1H4c-1.1 0-2 .9-2 2v13c0 .55.45 1 1 1s1-.45 1-1V4c0-.55.45-1 1-1h10c.55 0 1-.45 1-1s-.45-1-1-1zm4 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-1 16H9c-.55 0-1-.45-1-1V8c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1z"
                                             />
                                         </svg>
-                                        {isCopied ? "Copied!" : "Copy"}
+                                        {isCopied ? 'Copied!' : 'Copy'}
                                     </button>
                                     <pre>
                                         <code className={`language-javascript`}>{python}</code>
@@ -298,7 +296,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                             <div
                                 key={`key-${index}`}
                                 className={`container flex-column d-flex my-4  align-items-center justify-content-between  ${
-                                    i % 2 ? "flex-md-row-reverse" : "flex-md-row "
+                                    i % 2 ? 'flex-md-row-reverse' : 'flex-md-row '
                                 }`}
                             >
                                 <div className="col-12 col-md-6 d-flex justify-content-center ">
@@ -321,7 +319,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
 
             <GetStartedSection pricingPath={pricingPath} />
 
-            <TrustedBy align={"center"} />
+            <TrustedBy align={'center'} />
 
             <div>
                 <div
@@ -344,7 +342,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                             <div className="modal-body">
                                 <InlineWidget
                                     url="https://calendly.com/msg91-whatsapp/15-min-meeting?back=1&month=2024-05"
-                                    styles={{ height: "820px" }}
+                                    styles={{ height: '820px' }}
                                 />
                             </div>
                         </div>

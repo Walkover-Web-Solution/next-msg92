@@ -1,54 +1,55 @@
-import { MdDone, MdClose } from "react-icons/md";
-import { useEffect, useState } from "react";
-import { setUtm } from "@/components/utils";
-import Link from "next/link";
-import faqData from "@/data/faq.json";
-import FaqSection from "../faqSection/faqSection";
+import { MdDone, MdClose } from 'react-icons/md';
+import { useEffect, useState } from 'react';
+import { setUtm } from '@/components/utils';
+import Link from 'next/link';
+import faqData from '@/data/faq.json';
+import FaqSection from '../faqSection/faqSection';
 
 const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, countryCode }) => {
     var change;
     var changeSymbol;
     if (
-        countryCode === "US" ||
-        countryCode === "AE" ||
-        countryCode === "SG" ||
-        countryCode === "PH" ||
-        countryCode === "BR"
+        countryCode === 'US' ||
+        countryCode === 'AE' ||
+        countryCode === 'SG' ||
+        countryCode === 'PH' ||
+        countryCode === 'BR' ||
+        countryCode === 'ES'
     ) {
-        change = "USD";
-        changeSymbol = "$";
-    } else if (countryCode === "GB" || countryCode === "ES") {
-        change = "GBP";
-        changeSymbol = "£";
-    } else if (countryCode === "IN") {
-        change = "INR";
-        changeSymbol = "₹";
+        change = 'USD';
+        changeSymbol = '$';
+    } else if (countryCode === 'GB') {
+        change = 'GBP';
+        changeSymbol = '£';
+    } else if (countryCode === 'IN') {
+        change = 'INR';
+        changeSymbol = '₹';
     } else {
-        change = "USD";
-        changeSymbol = "$";
+        change = 'USD';
+        changeSymbol = '$';
     }
     const [selectedCurrency, setSelectedCurrency] = useState(change);
-    const [selectedMode, setSelectedMode] = useState("Monthly");
+    const [selectedMode, setSelectedMode] = useState('Monthly');
     const [symbol, setSymbol] = useState(changeSymbol);
 
     const changeCurrency = async (currency) => {
         setSelectedCurrency(currency);
 
         try {
-            const response = await fetchSubscriptionHello(currency, "7", "subscriptionHello");
+            const response = await fetchSubscriptionHello(currency, '7', 'subscriptionHello');
         } catch (error) {
-            console.log(error.message, "error");
+            console.log(error.message, 'error');
         }
 
         switch (currency) {
-            case "INR":
-                setSymbol("₹");
+            case 'INR':
+                setSymbol('₹');
                 break;
-            case "USD":
-                setSymbol("$");
+            case 'USD':
+                setSymbol('$');
                 break;
-            case "GBP":
-                setSymbol("£");
+            case 'GBP':
+                setSymbol('£');
                 break;
         }
     };
@@ -62,17 +63,17 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                 <span className="d-flex">
                     <h2
                         className={` ${
-                            selectedMode === "Monthly" ? "active" : null
+                            selectedMode === 'Monthly' ? 'active' : null
                         }  text-Secondary bg-white p-2 border rounded-start c-fs-6 cursor-pointer`}
-                        onClick={() => setSelectedMode("Monthly")}
+                        onClick={() => setSelectedMode('Monthly')}
                     >
                         Monthly
                     </h2>
                     <h3
                         className={` ${
-                            selectedMode === "Yearly" ? "active" : null
+                            selectedMode === 'Yearly' ? 'active' : null
                         }  text-Secondary bg-white p-2 border rounded-end c-fs-6 cursor-pointer`}
-                        onClick={() => setSelectedMode("Yearly")}
+                        onClick={() => setSelectedMode('Yearly')}
                     >
                         Yearly (20% off)
                     </h3>
@@ -133,7 +134,7 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
     return (
         <div
             className={`card d-flex align-items-start rounded-2 bg-white p-4  gap-3 ${
-                plan?.most_popular ? "border-2" : "border-0"
+                plan?.most_popular ? 'border-2' : 'border-0'
             }`}
         >
             <div className="d-flex flex-column gap-3 w-100">
@@ -150,12 +151,14 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
                     {planAmount?.currency?.symbol}
                     {planAmount?.plan_amount} {selectedMode}
                 </span>
-                <span className="c-fs-5"> {planAmount?.currency?.short_name === "INR" ? "+18% GST" : "-"}</span>
-                <Link href={"/signup?service=hello"}>
-                    <button className={`btn ${plan?.most_popular ? 'btn-dark':'btn-outline-dark'}  rounded-md`}>Get Started</button>
+                <span className="c-fs-5"> {planAmount?.currency?.short_name === 'INR' ? '+18% GST' : '-'}</span>
+                <Link href={'/signup?service=hello'}>
+                    <button className={`btn ${plan?.most_popular ? 'btn-dark' : 'btn-outline-dark'}  rounded-md`}>
+                        Get Started
+                    </button>
                 </Link>
             </div>
-            <hr className="w-100" style={{ borderColor: "rgba(0, 0, 0, 0.6)" }} />
+            <hr className="w-100" style={{ borderColor: 'rgba(0, 0, 0, 0.6)' }} />
 
             {/* Included */}
             <div className="d-flex flex-column gap-2">
@@ -170,7 +173,7 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
                                             if (rate?.currency?.short_name === currency)
                                                 return (
                                                     <span>
-                                                        {service?.service_credit?.service_credit_rates[0]?.free_credits}{" "}
+                                                        {service?.service_credit?.service_credit_rates[0]?.free_credits}{' '}
                                                         {service?.service_credit?.service?.name}/month
                                                     </span>
                                                 );
@@ -230,13 +233,13 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
                                                                 {rate?.follow_up_rate}/
                                                                 {service?.service_credit?.service?.name}
                                                                 {service?.service_credit?.service?.is_rental
-                                                                    ? "/month"
-                                                                    : ""}
+                                                                    ? '/month'
+                                                                    : ''}
                                                             </>
                                                         ) : (
                                                             <>
                                                                 <MdClose className="text-danger me-2 prcing-check" />
-                                                                {"No Extra "} {service?.service_credit?.service?.name}
+                                                                {'No Extra '} {service?.service_credit?.service?.name}
                                                             </>
                                                         )}
                                                     </span>

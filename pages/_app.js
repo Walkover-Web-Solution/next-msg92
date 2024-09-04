@@ -11,6 +11,7 @@ import { getCookie, setCookie, setUtm } from "@/components/utils";
 import availableCountries from "@/data/available-countries.json";
 
 import $ from "jquery";
+import getRelativeURL from "@/utils/getRelativeURL";
 export default function App({ Component, pageProps }) {
     const router = useRouter();
     var showNavbar = false;
@@ -58,7 +59,7 @@ export default function App({ Component, pageProps }) {
         "/shorturl",
     ];
     var pageSlug = Object.keys(router.query).length ? `/${router.query.pageslug}` : browserPath;
-    var pricingPath = products.includes(pageSlug) ? `/pricing${pageSlug}` : `/pricing/hello`;
+    var pricingPath = products.includes(pageSlug) ? getRelativeURL(pageSlug, 'pricing') : `/pricing/hello`;
     
     const year = new Date().getFullYear();
     if (!["/signin", "/signup", "/github-auth", "/github-auth-token", "/outlook-token", "/verify"].includes(browserPath)) {

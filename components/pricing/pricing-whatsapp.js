@@ -14,11 +14,12 @@ const pricingwp = ({ countryCode }) => {
         countryCode === 'SG' ||
         countryCode === 'PH' ||
         countryCode === 'BR' ||
-        countryCode === ''
+        countryCode === '' ||
+        countryCode === 'ES'
     ) {
         change = 'USD';
         changeSymbol = '$';
-    } else if (countryCode === 'GB' || countryCode === 'ES') {
+    } else if (countryCode === 'GB') {
         change = 'GBP';
         changeSymbol = '£';
     } else if (countryCode === 'IN') {
@@ -85,22 +86,21 @@ const pricingwp = ({ countryCode }) => {
                     Since we do not impose any service charge,{' '}
                     <strong>{selectedCurrency === 'INR' ? 'GST' : 'Taxes'}</strong> will be applied to WhatsApp pricing
                 </div>
+                {tableData?.length > 0 && (
+                    <table className="table table-sm c-fs-5">
+                        <thead>
+                            <tr>
+                                <th scope="col">Market</th>
+                                <th scope="col">prefix</th>
 
-                <table className="table table-sm c-fs-5">
-                    <thead>
-                        <tr>
-                            <th scope="col">Market</th>
-                            <th scope="col">prefix</th>
-
-                            <th scope="col">Marketing</th>
-                            <th scope="col">Utility</th>
-                            <th scope="col">Authentication</th>
-                            <th scope="col">Service</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {tableData?.length &&
-                            tableData.map((item, index) => {
+                                <th scope="col">Marketing</th>
+                                <th scope="col">Utility</th>
+                                <th scope="col">Authentication</th>
+                                <th scope="col">Service</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {tableData.map((item, index) => {
                                 if (item?.country_name) {
                                     return (
                                         <tr key={index}>
@@ -135,8 +135,9 @@ const pricingwp = ({ countryCode }) => {
                                     );
                                 }
                             })}
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                )}
                 <a className="more-about" href="/whatsapp">
                     <img src="/img/icon/link.svg" alt="#" className="icon me-2" />
                     <span>Know more about WhatsApp</span>
