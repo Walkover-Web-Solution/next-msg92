@@ -85,7 +85,6 @@ const Pricingsms = ({
             }
         }
     };
-
     return (
         <>
             <div>
@@ -202,7 +201,7 @@ const Pricingsms = ({
                             </>
                         ) : (
                             <>
-                                {pricing[0][pricingEnv].rate && (
+                                {pricing[0][pricingEnv]?.rate && (
                                     <div className="content-fit bg-white btn-ft d-flex flex-column border rounded gap-5 p-4 border-2 mt-4 align-items-center">
                                         <h3 className="c-fs-4">SMS Pricing</h3>
                                         <h3 className="text-green c-fs-2">

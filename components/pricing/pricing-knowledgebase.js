@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { setUtm } from "@/components/utils";
 const pricingknowledgebase = () => {
 useEffect(() => {    
