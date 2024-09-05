@@ -2,7 +2,7 @@ import availableCountries from '@/data/availableCountries.json';
 export default function getPageInfo(params) {
     let country = 'global';
     let page = 'home';
-    let pathArray = params?.slug;
+    let pathArray = params?.slug || [];
 
     if (params?.slug && params?.slug.length > 1) {
         if (availableCountries.some((c) => c.shortName === params?.slug[0])) {

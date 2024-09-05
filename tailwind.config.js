@@ -22,6 +22,7 @@ module.exports = {
                     secondary: '#E2F0FF',
                     accent: '#1E75BA',
                     neutral: '#FAFAFA',
+                    hello: '#f2ca55',
                     'base-100': '#FFFFFF',
                     '--rounded-btn': '0.2rem',
                 },

@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function PricingNav({ products, page }) {
     return (
         <>
-            <div className='flex flex-col gap-3 max-w-[190px]'>
+            <div className='flex flex-col gap-3 min-w-[210px]'>
                 <h2>Applications</h2>
                 <ul className='flex flex-col gap-2'>
                     {products?.applications.map((product, index) => {

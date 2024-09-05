@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { MdArrowDropDown, MdOutlineCall, MdOutlineLanguage } from 'react-icons/md';
 import availableCountries from '@/data/availableCountries.json';
 import Image from 'next/image';
+import getRelativeURL from '@/utils/getRelativeURL';
 export default function NotificationBarComp({ componentData, country }) {
     const currentCountry = availableCountries.find((cont) => cont.shortName === country);
     if (componentData) {
@@ -37,7 +38,7 @@ export default function NotificationBarComp({ componentData, country }) {
                                     return (
                                         <li key={index} className='cursor-pointer'>
                                             <a
-                                                href={`/${cont?.shortName}`}
+                                                href={getRelativeURL(cont?.shortName, 'country')}
                                                 className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
                                             >
                                                 {/* /* ${cont?.shortName} == 'in,us,gb etc. */}

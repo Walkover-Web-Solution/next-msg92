@@ -19,18 +19,20 @@ export default function PricingComp({ data, pageInfo }) {
 
     return (
         <>
-            <div className='container my-10 flex gap-6'>
-                <PricingNav products={data?.products} page={page} />
-                {page === 'hello' && <PricingHello />}
-                {page === 'campaign' && <PricingCampaign />}
-                {page === 'segmento' && <PricingSegmento />}
-                {page === 'otpwidget' && <PricingOtp />}
-                {page === 'sms' && <PricingSMS />}
-                {page === 'otp' && <PricingSendOTP />}
-                {page === 'email' && <PricingEmail />}
-                {page === 'whatsapp' && <PricingHello />}
-                {page === 'voice' && <PricingVoice />}
-                {page === 'rcs' && <PricingRCS />}
+            <div className='bg-neutral py-3'>
+                <div className='container my-10 flex gap-12 '>
+                    <PricingNav products={data?.products} page={page} />
+                    {page === 'hello' && <PricingHello />}
+                    {page === 'campaign' && <PricingCampaign />}
+                    {page === 'segmento' && <PricingSegmento />}
+                    {page === 'otpwidget' && <PricingOtp />}
+                    {page === 'sms' && <PricingSMS />}
+                    {page === 'otp' && <PricingSendOTP />}
+                    {page === 'email' && <PricingEmail />}
+                    {page === 'whatsapp' && <PricingHello />}
+                    {page === 'voice' && <PricingVoice />}
+                    {page === 'rcs' && <PricingRCS />}
+                </div>
             </div>
         </>
     );
