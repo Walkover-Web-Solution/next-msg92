@@ -4,7 +4,7 @@ import { MdCheck, MdClose } from 'react-icons/md';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 
-export default function PricingHello() {
+export default function PricingHello({ data }) {
     const [isLoading, setIsLoading] = useState(false);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
@@ -232,8 +232,8 @@ export default function PricingHello() {
                         ))}
                 </div>
 
-                <ConnectWithTeam product={'hello'} />
-                <FaqsComp notCont={true} />
+                <ConnectWithTeam product={'hello'} data={data?.connectComp} isPlan={true} />
+                <FaqsComp data={data?.faqComp} notCont={true} />
             </div>
         </>
     );
