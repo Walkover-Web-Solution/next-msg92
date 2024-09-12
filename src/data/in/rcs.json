@@ -12,7 +12,32 @@
           "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
           "subheading":"RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
         "banner_img": "/assets/global/hello/banner.webp",
-          "getstarted_btn": "Get Started"
+          "getstarted_btn": "Get Started",
+          "trustedByComp": {
+            "heading": "Support 15+ channels & platforms",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
       },
       "FeatureComp":{ 
         "heading": "Features",

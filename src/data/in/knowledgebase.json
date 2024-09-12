@@ -1,19 +1,44 @@
 {
     "HeadComp": {
-        "title": "ShortUrl",
-        "description": "Customised Links for Business Success Stand out with branded links that drive more clicks to improve conversion rates. Optimise smart links that can help you realise more revenues. Customising, tracking, managing, made easy. Get Demo Features Smart Links that magnify your conversions Enhance the deliverability of messages through our globally accepted best practices. Ensure improved..."
+        "title": "Customer knowledgebase platform by MSG91-India",
+        "description": "Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience"
     },
     "BannerComp": {
-        "slug": "shorturl",
+        "slug": "knowledgebase",
         "product": {
-            "name": "URL Shortner",
-            "icon": "/assets/icons/products/shorturl.svg"
+            "name": "KnowledgeBase",
+            "icon": "/assets/icons/products/Knowledgebase.svg"
         },
-        "tagline": "Simplify your links",
-        "heading": "Customise, share and track smart links",
-        "subheading": "Optimise your complex links to create short, cleaner links that are easier to share..",
-      "banner_img": "/assets/global/shorturl/banner-shorturl.svg",
-        "getstarted_btn": "Get Started"
+        "tagline": "Empower Customers with Self-Service Options",
+        "heading": "Knowledge base is the backbone for good customer support",
+        "subheading": "Get all essential features of KnowledgeBase software",
+      "banner_img": "/assets/global/knowledgebase/banner-knowledgebase.svg",
+        "getstarted_btn": "Get Started FREE forever",
+        "trustedByComp": {
+            "heading": "Support 15+ channels & platforms",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
     },
     "FeatureComp": {
         "heading": "Features",
@@ -22,15 +47,21 @@
           
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "No Code",
-                "content":"<strong>No code and fewer credits makes it a smart link.</strong>Shorten your URL in real-time without putting in any code. Just paste your link and you have a smart link that is easy to share, saves you space and consumes fewer credit. ",
-                "img": "/assets/global/shorturl/shorturl-no-code.svg"
+                "name": "WYSIWYG editor",
+                "content":"<strong>Easily create or edit your knowledge base articles</strong>Quickly create your articles with the what you see is what you get content editor. It is as simple to use as if you were using a Word Processor or HTML Editor.",
+                "img": "/assets/global/knowledgebase/knowledgebase-wysiwyg-editor.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "   NumberWise Tracking",
-                "content":"<strong>Gather statistics by monitoring the number of hits from your URL.</strong>Track the performance of your shortURL and the number of hits for each recipient. Know how many times the link has been clicked, where is it shared, and how is it driving traffic. ",
-                "img": "/assets/global/shorturl/shorturl-number-wise-tracking.svg"
+                "name": "SEO friendly (Subfolder and subdomain both support)",
+                "content":"<strong>An SEO-friendly optimized knowledge base</strong>Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages.",
+                "img": "/assets/global/knowledgebase/knowledgebase-seo-friendly.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "   Whitelabel",
+                "content":"<strong>It works on your branding and not ours</strong>Your users view your knowledge base under your branding on your website. Our whitelabel services ensure there’s no indication of it being powered by MSG91.",
+                "img": "/assets/global/knowledgebase/knowledgebase-whitelable.svg"
             }
           
         ]
@@ -52,5 +83,10 @@
                 "link": "https://control.msg91.com/signup/"
             }
         }
+    },
+    "moreFeature": {
+       
+        "name": "Looking for more",
+        "more_feature_btn": "Request a Feature"
     }
 }

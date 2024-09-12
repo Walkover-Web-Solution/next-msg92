@@ -13,7 +13,32 @@
         "heading": "smarter email strategy",
         "subheading": "Smart emails that land directly into the right inbox Make the most of these powerful touchpoints between your brand and your customers.",
        "banner_img": "/assets/global/hello/banner.webp",
-        "getstarted_btn": "Get Started"
+        "getstarted_btn": "Get Started",
+        "trustedByComp": {
+            "heading": "Support 15+ channels & platforms",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
     },
     "FeatureComp": {
         "heading": "Features",
