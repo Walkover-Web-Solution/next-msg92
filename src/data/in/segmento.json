@@ -1,0 +1,48 @@
+{ "HeadComp": {
+  "title": "Segmento - Target Based Marketing",
+  "description": "Personalize customer journeys with data segmentation by segmenting people based on demographics, behavior, interests, and other characteristics."
+}, 
+       "BannerComp": {
+        "slug": "segmento",
+        "product": {
+            "name": "Segmento-Target Based Marketing",
+            "icon": "/assets/icons/products/segmento.svg"
+        },
+        "tagline": "target based marketing",
+        "heading": "Personalize customer journeys with Data segmentation.",
+        "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
+        "banner_img": "/assets/global/segmento/banner-segmento.webp",
+        "getstarted_btn": "Get Started For Free",
+        "trustedByComp": {
+          "heading": "Trusted by 30,000+ global businesses",
+          "logos":  [
+            {"name": "Xiaomi", "url": "/assets/trusted_by/xiaomi.svg"},
+            {"name": "Unacademy", "url": "/assets/trusted_by/unacademy.svg"},
+            {"name": "Dream11", "url": "/assets/trusted_by/dream11.svg"},
+            {"name": "Indeed", "url": "/assets/trusted_by/indeed.svg"},
+            {"name": "Indian Oil", "url": "/assets/trusted_by/indianoil.svg"},
+            {"name": "Ixigo", "url": "/assets/trusted_by/ixigo.svg"}
+          ]
+      }
+    
+    },
+   
+    "PreFooterComp": {
+      "content": "Start building your ideal customer engagement experience",
+      "buttons": {
+          "contactSales": {
+              "text": "Contact sales",
+              "link": "/contact-us"
+          },
+          "pricing": {
+              "text": "Pricing",
+              "link": "/pricing/"
+          },
+          "getStarted": {
+              "text": "Get started",
+              "link": "https://control.msg91.com/signup/"
+          }
+      }
+  }
+  }
+  

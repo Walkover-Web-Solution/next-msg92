@@ -31,6 +31,10 @@
 }
 
 .text-link {
+    &.active-link {
+
+        color: var(--link-color);
+    }
     &::after {
         background-color: var(--link-color);
     }
@@ -129,3 +133,16 @@ $button-transition-timing: 100ms;
     }
 }
 
+//custom tab for pricing
+.tabs {
+    @apply rounded border overflow-hidden p-0;
+    .tab {
+        height: 38px !important;
+        background: var(--white-color);
+        @apply rounded-none text-primary font-semibold text-base border-none;
+        &.tab-active {
+            background: var(--secandary-color) !important;
+            color: var(--primary-color) !important;
+        }
+    }
+}

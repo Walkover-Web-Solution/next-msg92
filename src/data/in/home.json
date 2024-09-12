@@ -1,17 +1,21 @@
 {
     "HeadComp": {
-        "title": "Best Cloud Communication Platform for Businesses | MSG91",
+        "title": "Best Cloud Communication Platform in India | Communication Platform as a Service - MSG91-India",
         "description": "MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
     },
     "BannerComp": {
         "tagline": "customer solution platform",
-        "heading": "Connect with your customers via multiple channels",
-        "subheading": "Secure and robust APIs for SMS, Email, Voice, Authentication and more",
+        "heading": "Cloud Communication Platform",
+        "subheading": "Secure and robust APIs for WhatsApp, SMS, RCS, Email, Voice, Authentication and more",
         "banner_img": "/assets/global/index/banner.webp",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
             "logos": [
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
                 {
                     "name": "Xiaomi",
                     "url": "/assets/trusted_by/xiaomi.svg"
@@ -118,14 +122,15 @@
         },
         {
             "fact": "1.6 Billion+",
-            "stat": "OTPs",
+            "stat": "SMS sent",
             "per": "per month"
         },
         {
             "fact": "1 Billion+",
-            "stat": "SMS sent",
+            "stat": "OTPs",
             "per": "per month"
         },
+       
         {
             "fact": "1 Billion+",
             "stat": "Emails sent",
@@ -203,7 +208,7 @@
             },
             {
                 "question": "Is MSG91 secure?",
-                "answer": "Security is a top priority at MSG91. We implement industry-standard protocols and encryption techniques to ensure the confidentiality and integrity of your data. Our enterprise cloud communications platform offers features like two-factor authentication and OTP verification to enhance security and protect sensitive information."
+                "answer": "Security is a top priority at MSG91 <a href='/assets/brand/favicon.svg'>hello</a> We implement industry-standard protocols and encryption techniques to ensure the confidentiality and integrity of your data. Our enterprise cloud communications platform offers features like two-factor authentication and OTP verification to enhance security and protect sensitive information."
             },
             {
                 "question": "Can I integrate MSG91 with my existing systems or applications?",
