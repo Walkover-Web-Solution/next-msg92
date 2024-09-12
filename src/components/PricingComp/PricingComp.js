@@ -4,13 +4,13 @@ import PricingCampaign from './PricingCampaign/PricingCampaign';
 import PricingSegmento from './PricingSegmento/PricingSegmento';
 import PricingOtp from './PricingOtp/PricingOtp';
 import PricingSMS from './PricingSMS/PricingSMS';
-import PricingEmail from './PricingSendOTP/PricingSendOTP';
+import PricingSendOTP from './PricingSendOTP/PricingSendOTP';
 import PricingVoice from './PricingVoice/PricingVoice';
 import PricingRCS from './PricingRCS/PricingRCS';
-import PricingSendOTP from './PricingEmail/PricingEmail';
+import PricingEmail from './PricingEmail/PricingEmail';
+import PricingWhatsApp from './PricingWhatsApp/PricingWhatsApp';
 
 export default function PricingComp({ data, pageInfo }) {
-    console.log('🚀 ~ PricingComp ~ data:', data);
     let page;
     if (pageInfo?.country === 'global') {
         page = pageInfo?.pathArray[1];
@@ -38,7 +38,7 @@ export default function PricingComp({ data, pageInfo }) {
 
                     {page === 'email' && <PricingEmail data={data?.email} />}
 
-                    {page === 'whatsapp' && <PricingHello data={data?.whatsapp} />}
+                    {page === 'whatsapp' && <PricingWhatsApp data={data?.whatsapp} />}
 
                     {page === 'voice' && <PricingVoice data={data?.voice} />}
 

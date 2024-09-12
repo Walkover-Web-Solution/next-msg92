@@ -1,3 +1,3 @@
-export default function PricingEmail({ email }) {
-    return <>PricingEmail</>;
+export default function PricingSendOTP() {
+    return <>PricingSendOTP</>;
 }
