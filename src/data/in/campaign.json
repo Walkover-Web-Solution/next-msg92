@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Best Cloud Communication Platform for Businesses | MSG91",
-        "description": "MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
+        "title": "Best Campaign Software | Transactional Text Messages in India| MSG91-India",
+        "description": "MSG91s SMS Marketing software helps businesses build and manage subscriber lists, send transactional sms, and automate customer engagement. Checkout the best campaign automation tool in India."
     },
     "BannerComp": {
         "slug": "campaign",
@@ -13,10 +13,14 @@
         "heading": "Connect conversations across Channels and tools.",
         "subheading": "Deliver personalized, engaging and seamless experiences",
         "banner_img": "/assets/global/campaign/banner-campaign.webp",
-        "getstarted_btn": "Get Started",
+        "getstarted_btn": "Get Started for Free",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
             "logos": [
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
                 {
                     "name": "Xiaomi",
                     "url": "/assets/trusted_by/xiaomi.svg"
@@ -47,31 +51,31 @@
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Multi channel support",
-                "content": "Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, <a href='/in/whatsapp'>WhatsApp</a> and more. Meet your customers where they are.",
+                "content": " <strong>Support your customers on their preferred channel.</strong>Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, <a href='/in/whatsapp'>WhatsApp</a> and more. Meet your customers where they are.",
                 "img": "/assets/global/campaign/features/campaign-multi-channel-support.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Draggable Flow",
-                "content": "Drag and drop to create an omnichannel flow with ‘if-then’ scenarios.Choose when you need to initiate an SMS, email, or messaging conversation in a single workflow. Create a flow that is as simple or as complex as your business needs them to be.",
+                "content": "<strong>Drag and drop to create an omnichannel flow with ‘if-then’ scenarios.</strong>Choose when you need to initiate an SMS, email, or messaging conversation in a single workflow. Create a flow that is as simple or as complex as your business needs them to be.",
                 "img": "/assets/global/campaign/features/campaign-draggable-flow.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Time Based Condition",
-                "content": "Send perfectly timed automated messages.Build a thoughtful sending schedule with time-based conditions that control the time zone of when your campaigns are delivered. Support your customers at the right time.",
+                "content": "<strong>Send perfectly timed automated messages.</strong>Build a thoughtful sending schedule with time-based conditions that control the time zone of when your campaigns are delivered. Support your customers at the right time.",
                 "img": "/assets/global/campaign/features/campaign-time-based-condition.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "API based Conditions",
-                "content": "Get information instantly for real-time interactions.Call for data even when in mid of a flow by sending data to a third-party system or requesting data needed for your communication steps. Deliver real-time information to your customers.",
+                "content": "<strong>Get information instantly for real-time interactions.</strong>Call for data even when in mid of a flow by sending data to a third-party system or requesting data needed for your communication steps. Deliver real-time information to your customers.",
                 "img": "/assets/global/campaign/features/campaign-api-based-conditions.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Country Based Condition",
-                "content": "Support your customers across the world.Create personalized and memorable experiences for your customer across countries, languages, content, channels, flows and more. Easily connect, customize and communicate.",
+                "content": "<strong>Support your customers across the world.</strong>Create personalized and memorable experiences for your customer across countries, languages, content, channels, flows and more. Easily connect, customize and communicate.",
                 "img": "/assets/global/campaign/features/campaign-country-based-condition.svg"
             }
         ]
