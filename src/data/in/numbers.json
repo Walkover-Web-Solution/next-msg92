@@ -1,0 +1,101 @@
+{
+    "HeadComp": {
+        "title": "Numbers API for business | MSG91-India",
+        "description": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!"
+    },
+    "BannerComp": {
+        "slug": "numbers",
+        "product": {
+            "name": "Numbers",
+            "icon": "/assets/icons/products/numbers.svg"
+        },
+        "tagline": "Unlock the Power of Virtual Numbers",
+        "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+      
+        "getstarted_btn": "Get Started"
+    },
+    "FeatureComp": {
+        "heading": "Features",
+        "iconColor": "text-campaign",
+        "features": [
+          
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Global Market Entry with Numbers: Empowering Your Business in India",
+                "content":"Empowering Your Business in India Numbers provide a seamless gateway for businesses aiming to expand their reach in India's dynamic market. These numbers enable companies to establish a local presence by acquiring an Indian phone number, simplifying connections with Indian customers and partners. By using India-based virtual numbers, businesses can foster trust, improve accessibility, and bridge geographical gaps, all while projecting professionalism and cost-effectiveness in their interactions. This approach is particularly valuable for international companies looking to unlock opportunities in the vibrant Indian market.",
+                "img": "/assets/global/numbers/numbers-global-market-entry-with-numbers.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Cost Efficiency",
+                "content": "Numbers in India offer a more budget-friendly alternative compared to traditional landlines. They entail lower setup costs, reduced maintenance expenses, and eliminate the need for physical infrastructure, delivering a cost-effective solution for businesses of all sizes operating in the Indian market.",
+                "img": "/assets/global/numbers/numbers-cost-efficiency.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Missed Call Services",
+                "content": "Certain virtual number providers include features like missed call alerts and notifications, allowing Indian businesses to swiftly respond to customers who couldn't connect with them. This feature helps in providing timely assistance and enhancing customer engagement in the Indian market.",
+                "img": "/assets/global/numbers/numbers-missed-call-services.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Keyword Specific Messaging",
+                "content": "<strong>You can choose a unique keyword for your business or campaign</strong>When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication.",
+                "img": "/assets/global/numbers/numbers-keyword-specific-messaging.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Keyword Independent Messaging",
+                "content": "<strong>In addition to keywords</strong>you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords.",
+                "img": "/assets/global/numbers/numbers-keyword-independent-messaging.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Pre-formatted Set of Questions",
+                "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format.",
+                "img": "/assets/global/numbers/numbers-pre-formatted-questions.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Online Surveys",
+                "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease.",
+                "img": "/assets/global/numbers/numbers-online-survey.svg"
+            },       {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Lead Generation",
+                "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base.",
+                "img": "/assets/global/numbers/numbers-lead-generation.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Create Auto Responses",
+                "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users.",
+                "img": "/assets/global/numbers/numbers-auto-responses.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Integration into Web Applications",
+                "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication.",
+                "img": "/assets/global/numbers/numbers-integration-into-web.svg"
+            }
+        ]
+    },
+   
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
