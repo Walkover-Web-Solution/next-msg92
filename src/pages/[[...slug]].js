@@ -14,11 +14,12 @@ import ProductsComp from '@/components/ProductsComp/ProductsComp';
 import SEOComp from '@/components/SEOComp/SEOComp';
 import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
 import HeadComp from '@/components/headComp';
+import FeatureComp from '@/components/FeatureComp/FeatureComp';
+import PricingComp from '@/components/PricingComp/PricingComp';
 
 //Functions to fetch data
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
-import FeatureComp from '@/components/FeatureComp/FeatureComp';
 
 const Components = {
     BannerComp,
@@ -37,6 +38,7 @@ const Components = {
     TrustedByComp,
     HeadComp,
     FeatureComp,
+    PricingComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

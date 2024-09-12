@@ -2,17 +2,18 @@
     {
         "shortName": "in",
         "name": "India",
-        "Currencry": "INR"
+        "currencry": "INR"
+
     },
     {
         "shortName": "us",
         "name": "United States",
-        "Currency": "USD"
+        "currency": "USD"
     },
     {
         "shortName": "gb",
         "name": "United Kingdom",
-        "Currency": "GBP"
+        "currency": "GBP"
     },
     {
         "shortName": "ph",

@@ -1,0 +1,69 @@
+{
+    "HeadComp": {
+        "title": "Best Cloud Communication Platform for Businesses | MSG91",
+        "description": "MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
+    },
+    "PricingComp": {
+        "products": {
+            "applications": [
+                {
+                    "name": "Hello",
+                    "slug": "hello",
+                    "description": "Contact Center",
+                    "icon": "/assets/icons/products/hello.svg"
+                },
+                {
+                    "name": "Campaign",
+                    "slug": "campaign",
+                    "description": "Event-based automation",
+                    "icon": "/assets/icons/products/campaign.svg"
+                },
+                {
+                    "name": "Segmento",
+                    "slug": "segmento",
+                    "description": "Contact management",
+                    "icon": "/assets/icons/products/segmento.svg"
+                },
+                {
+                    "name": "OTP",
+                    "slug": "otp",
+                    "description": "OTP widget SDK",
+                    "icon": "/assets/icons/products/otp.svg"
+                }
+            ],
+            "channels": [
+                {
+                    "name": "SMS",
+                    "slug": "sms",
+                    "icon": "/assets/icons/products/sms.svg"
+                },
+                {
+                    "name": "SendOTP",
+                    "slug": "otp",
+                    "icon": "/assets/icons/products/otp.svg"
+                },
+                {
+                    "name": "Email",
+                    "slug": "email",
+                    "icon": "/assets/icons/products/email.svg"
+                },
+                {
+                    "name": "WhatsApp",
+                    "slug": "whatsapp",
+                    "icon": "/assets/icons/products/whatsapp.svg"
+                },
+                {
+                    "name": "Voice",
+                    "slug": "voice",
+                    "icon": "/assets/icons/products/voice.svg"
+                },
+                {
+                    "name": "RCS",
+                    "slug": "rcs",
+                    "icon": "/assets/icons/products/rcs.svg"
+                }
+               
+            ]
+        }
+    }
+}
