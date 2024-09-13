@@ -64,19 +64,19 @@ export default function Certificates() {
                                 </a>
                             </div>
                             <div className="col d-flex flex-column gap-4">
-                                {/* <h3 className="c-fs-2">ISO</h3>
+                                <h3 className="c-fs-2">Kratikal Secure</h3>
                                 <a
-                                    href="/pdf/iso.pdf"
+                                    href="/pdf/kratikal.pdf"
                                     target="_blank"
                                 >
                                     <Image
-                                        src="/images/certificate_iso.png"
+                                        src="/images/certificate_kratikal.png"
                                         width={1080}
                                         height={1080}
                                         className="w-100 h-auto"
                                         alt="casa certificate"
                                     />
-                                </a> */}
+                                </a>
                             </div>
                         </div>
 
