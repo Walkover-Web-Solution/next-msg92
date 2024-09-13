@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import availableCountries from '@/data/available-countries.json';
+import WhatsAppPopupComp from '../whatsAppPopupComp/whatsAppPopupComp';
 
 const pricingwp = ({ countryCode }) => {
     const [selectedCurrency, setSelectedCurrency] = useState(change);
+    const [showWhatsAppPopup, setShowWhatsAppPopup] = useState(false);
     const [tableData, setTableData] = useState([]);
     const [pricing, setPricing] = useState([]);
     var change;
@@ -56,8 +58,19 @@ const pricingwp = ({ countryCode }) => {
         }
     }, [countryCode, pricing]);
 
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const timer = setTimeout(() => {
+                setShowWhatsAppPopup(true);
+            }, 500); 
+
+            return () => clearTimeout(timer);
+        }
+    }, []);
     return (
         <>
+            {showWhatsAppPopup && <WhatsAppPopupComp />}
             <div className="price-card whatsapp d-flex flex-sm-row flex-column rounded-1 col-xl-12 col-lg-11 col-md-10 bg-white p-4 gap-4 justify-content-between align-items-sm-center mb-0">
                 <div className=" ">
                     <h3 className="text-start fw-bolder fs-2 text-green mb-3">
