@@ -37,16 +37,16 @@ export default function WhatsAppPopupComp() {
                     }}
                 >
                     <div
-                        className="modal-content border-3x"
+                        className="modal-content"
                         style={{
                             backgroundImage: 'url(/images/pushnotification/pushnotification-bg.svg)',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             height: '600px',
-                            minWidth: '600px',
+                            minWidth: '800px',
                         }}
                     >
-                        <div className="d-flex flex-column p-2 h-100 ">
+                        <div className="d-flex flex-column p-3 h-100 ">
                             <button
                                 type="button"
                                 className="btn-close ms-auto"
@@ -60,28 +60,27 @@ export default function WhatsAppPopupComp() {
                                     modalElement.removeAttribute('aria-modal');
                                 }}
                             ></button>
-                            <div className="d-flex align-items-center justify-content-center h-100">
-                                <div className='p-3'>
-                                    <div className="c-fs-2">
-                                        Boost sales & customer satisfaction with MSG91 WhatsApp:
-                                        <ul>
-                                            <li>Payments</li>
-                                            <li>Catalog</li>
-                                            <li>Chatbot</li>
-                                            <li>And more!</li>
-                                        </ul>
-                                    </div>
-                                    <p>Start WhatsApp now!</p>
+                            <div className="d-flex align-items-center justify-content-center h-100 column">
+                                <div className='d-flex flex-column row-gap-4 ps-3'>
+                                    <h2 className='text-success fw-bold'>Boost sales & customer satisfaction with MSG91 WhatsApp: </h2>
+
+                                    <ul className='fw-bolder fs-6 m-0'>
+                                        <li>Payments</li>
+                                        <li>Catalog</li>
+                                        <li>Chatbot</li>
+                                        <li>And more!</li>
+                                    </ul>
+                                    <p className='fw-bolder'>Start WhatsApp now!</p>
                                     <a href="https://calendly.com/msg91-whatsapp">
-                                        <button className="btn btn-lg btn-secondary">Schedule a Meeting!</button>
+                                        <button className="btn btn-lg btn-success fw-bolder rounded">Schedule a Meeting!</button>
                                     </a>
                                 </div>
                                 <Image
-                                    src={'/images/pushnotification/pushnotification-phone.svg'}
-                                    width={400}
-                                    height={800}
+                                    src={'/images/pushnotification/pushnotification-phone-1.svg'}
+                                    width={316}
+                                    height={450}
                                     style={{
-                                        height: '500px',
+                                        // height: '450px',
                                     }}
                                 />
                             </div>
