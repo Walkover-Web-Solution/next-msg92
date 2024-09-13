@@ -6,11 +6,25 @@ import Seo from '../seoComp';
 import FaqSection from '../faqSection/faqSection';
 import faqData from '@/data/indexfaq.json';
 import { MdEast } from 'react-icons/md';
+import WhatsAppPopupComp from '../whatsAppPopupComp/whatsAppPopupComp';
+import { useEffect } from 'react';
+
 
 const indexComp = ({ pageData, params, pricingPath }) => {
     const path = params ? params?.country : '';
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const timer = setTimeout(() => {
+                setShowWhatsAppPopup(true);
+            }, 500);
+
+            return () => clearTimeout(timer);
+        }
+    }, []);
     return (
         <>
+            <WhatsAppPopupComp />
             <div className="container bg-gray-100 section-y">
                 <div className="row">
                     <div className="col-12 col-sm-12 col-md-7 col-lg-7 d-flex flex-column gap-4 align-items-start hero-left">
@@ -120,7 +134,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                                         </div>
                                     </div>
                                     <div className="product-img col d-flex justify-content-end">
-                                        <img src="/img/home/otp.png"  alt='opt security image'/>
+                                        <img src="/img/home/otp.png" alt='opt security image' />
                                     </div>
                                 </div>
                             </a>
