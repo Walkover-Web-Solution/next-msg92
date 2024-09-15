@@ -162,7 +162,7 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
 
             {/* Included */}
             <div className="d-flex flex-column gap-2">
-                <h4 class="c-fs-4 c-fw-sb">Included</h4>
+                <h4 className="c-fs-4 c-fw-sb">Included</h4>
                 <div className="d-flex flex-column">
                     {plan?.plan_services?.length &&
                         plan?.plan_services?.map((service, index) => {
@@ -172,7 +172,7 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
                                         service?.service_credit?.service_credit_rates?.map((rate, i) => {
                                             if (rate?.currency?.short_name === currency)
                                                 return (
-                                                    <span>
+                                                    <span key={i}>
                                                         {service?.service_credit?.service_credit_rates[0]?.free_credits}{' '}
                                                         {service?.service_credit?.service?.name}/month
                                                     </span>
@@ -186,13 +186,13 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
             {/* Included */}
             {/* Features */}
             <div className="d-flex flex-column gap-2">
-                <h4 class="c-fs-4 c-fw-sb">Features</h4>
+                <h4 className="c-fs-4 c-fw-sb">Features</h4>
                 <div className="d-flex flex-column">
                     {plan?.plan_features?.length &&
                         plan?.plan_features?.map((feature, i) => {
                             if (feature?.is_visible) {
                                 return (
-                                    <span>
+                                    <span key={`feature${i}`}>
                                         {feature?.feature?.is_included ? (
                                             <MdDone className="text-green me-2 prcing-check" />
                                         ) : (
@@ -203,7 +203,7 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
                                 );
                             } else if (!feature?.feature?.is_included) {
                                 return (
-                                    <span>
+                                    <span key={`feature${i}`}>
                                         <MdClose className="text-danger me-2 prcing-check" />
                                         {feature?.feature?.name}
                                     </span>
@@ -215,7 +215,7 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
             {/* Features */}
             {/* Extras */}
             <div className="d-flex flex-column gap-2">
-                <h4 class="c-fs-4 c-fw-sb">Extra @</h4>
+                <h4 className="c-fs-4 c-fw-sb">Extra @</h4>
                 <div className="d-flex flex-column">
                     {plan?.plan_services?.length &&
                         plan?.plan_services?.map((service, index) => {
@@ -225,7 +225,7 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
                                         service?.service_credit?.service_credit_rates?.map((rate, i) => {
                                             if (rate?.currency?.short_name === currency)
                                                 return (
-                                                    <span>
+                                                    <span key={i}>
                                                         {plan?.postpaid_allowed ? (
                                                             <>
                                                                 <MdDone className="text-green me-2 prcing-check" />

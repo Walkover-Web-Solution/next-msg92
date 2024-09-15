@@ -23,7 +23,7 @@
 /:country/about-us /about-us
 /:country/rich-communication-services /
 /rich-communication-services/ /
-/pricing /pricing/sms
+/pricing /pricing/hello
 /blog /guide
 blog.msg91.com  /guide
 /in/transactional-sms/  /in/sms/

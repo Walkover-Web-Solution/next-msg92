@@ -9,17 +9,17 @@ import Script from "next/script";
 import Toastify from "@/components/toast";
 import { getCookie, setCookie, setUtm } from "@/components/utils";
 import availableCountries from "@/data/available-countries.json";
+import getPricingPath from "@/utils/getPricingPath";
+
 
 import $ from "jquery";
-import getRelativeURL from "@/utils/getRelativeURL";
+
 export default function App({ Component, pageProps }) {
     const router = useRouter();
     var showNavbar = false;
     var browserPath = router.asPath;
-    const rawPath = router.asPath
-
+    const rawPath = router.asPath;
     
-
     var rawPathArray = browserPath.split("?");
     var pathArray = rawPathArray[0].split("/");    
 
@@ -30,6 +30,7 @@ export default function App({ Component, pageProps }) {
 
     if (browserPath.includes("partners-and-integrations")) {
         var plugin = browserPath.split("/")[2];
+        console.log("🚀 ~ App ~ plugin:", browserPath)
     }
 
     if (browserPath !== "/") {
@@ -59,8 +60,7 @@ export default function App({ Component, pageProps }) {
         "/shorturl",
     ];
     var pageSlug = Object.keys(router.query).length ? `/${router.query.pageslug}` : browserPath;
-    var pricingPath = products.includes(pageSlug) ? getRelativeURL(pageSlug, 'pricing') : `/pricing/hello`;
-    
+    var pricingPath = getPricingPath();
     const year = new Date().getFullYear();
     if (!["/signin", "/signup", "/github-auth", "/github-auth-token", "/outlook-token", "/verify"].includes(browserPath)) {
         showNavbar = true;
@@ -100,7 +100,7 @@ export default function App({ Component, pageProps }) {
                     window.location.href = href;
                 }
             }
-        });
+        });        
     }, []);
 
 

@@ -77,6 +77,7 @@ const navbar = ({ browserPath, pricingPath, path, pageSlug, pathArray}) => {
     });
     var countryCodee = getCookie('country_code');
     setCountryCode(countryCodee)
+    
   }, []);
   var notification_class = "d-block";
   function showNotification() {
@@ -131,16 +132,18 @@ const navbar = ({ browserPath, pricingPath, path, pageSlug, pathArray}) => {
               <span className="c-fs-4 c-fw-m">{`${compData?.menu?.integrations || 'Integrations'}`}</span>
               <div className="nav-line"></div>
             </a>
+            
             { browserPath !== '/shorturl' && <Link
               className={`nav-link menu-opt text-dark ${
                 browserPath === "/pricing" ? "active" : ""
               }`}
-              href={countryCode && countryCode !== '?' ? "/" + countryCode + pricingPath : pricingPath}
+              href={pricingPath}
               id="pricing-link" 
             >              
               <span className="c-fs-4 c-fw-m">{`${compData?.menu?.pricing || 'Pricing'}`}</span>
               <div className="nav-line"></div>
             </Link> }
+
           </div>
           
           <div className="msg91-logo-cont  align-items-center justify-content-center d-flex" id="main-logo">
@@ -197,7 +200,7 @@ const navbar = ({ browserPath, pricingPath, path, pageSlug, pathArray}) => {
             />
           </div>
         </div>
-      </nav>
+      </nav>      
     </>
   );
 };
