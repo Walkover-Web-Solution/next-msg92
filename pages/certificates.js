@@ -64,7 +64,7 @@ export default function Certificates() {
                                 </a>
                             </div>
                             <div className="col d-flex flex-column gap-4">
-                                <h3 className="c-fs-2">Kratikal Secure</h3>
+                                <h3 className="c-fs-2">VAPT</h3>
                                 <a
                                     href="/pdf/kratikal.pdf"
                                     target="_blank"
