@@ -32,7 +32,6 @@ const Headcomp = (browserPath) => {
     };
 
     const path = browserPath.browserPath.split('?')[0].replace(/\/$/, '');
-    console.log("🚀 ~ Headcomp ~ path:", path)
     var meta = metaData[path] ? metaData[path] : { 'title': '', 'description': '' };
     var pathPage, pathCountry, isOnlyGlobal;
     const pathArrRaw = browserPath.browserPath.split('?');

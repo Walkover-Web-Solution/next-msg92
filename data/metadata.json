@@ -593,6 +593,100 @@
         "title": "otpwidget Pricing in India | MSG91-India",
         "description": "Avail robust and powerful services in India like transactional otpwidget, communication APIs and more at affordable prices. Check out the pricing now."
     },
+    "commentbr": {
+        "comment": "br country"
+    },
+    "/br/pricing/sms": {
+        "title": "SMS Pricing in Brazil | MSG91-Brazil",
+        "description": "Avail robust and powerful services in Brazil like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/br/pricing/email": {
+        "title": "Email Pricing in Brazil | MSG91-Brazil",
+        "description": "Avail robust and powerful services in Brazil like transactional Email, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/br/pricing/voice": {
+        "title": "Voice Pricing in Brazil | MSG91-Brazil",
+        "description": "Avail robust and powerful services in Brazil like transactional Voice, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/br/pricing/whatsapp": {
+        "title": "WhatsApp Business API Pricing (2024) | MSG91",
+        "description": "Avail robust and powerful services in Brazil like transactional WhatsApp, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/br/pricing/rcs": {
+        "title": "RCS Pricing in Brazil | MSG91-Brazil",
+        "description": "Avail robust and powerful services in Brazil like transactional RCS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/br/pricing/otp": {
+        "title": "OTP Pricing in Brazil | MSG91-Brazil",
+        "description": "Avail robust and powerful services in Brazil like transactional OTP, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/br/pricing/hello": {
+        "title": "Hello Pricing in Brazil | MSG91-Brazil",
+        "description": "Avail robust and powerful services in Brazil like transactional Hello, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/br/pricing/segmento": {
+        "title": "Segmento Pricing in Brazil | MSG91-Brazil",
+        "description": "Avail robust and powerful services in Brazil like transactional Segmento, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/br/pricing/campaign": {
+        "title": "Campaign Pricing in Brazil | MSG91-Brazil",
+        "description": "Avail robust and powerful services in Brazil like transactional Campaign, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/br/pricing/knowledgebase": {
+        "title": "KnowledgeBase Pricing in Brazil | MSG91-Brazil",
+        "description": "Avail robust and powerful services in Brazil like transactional KnowledgeBase, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/br/pricing/otpwidget": {
+        "title": "otpwidget Pricing in Brazil | MSG91-Brazil",
+        "description": "Avail robust and powerful services in Brazil like transactional otpwidget, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "commentbrpt": {
+        "comment": "país br"
+    },
+    "/br-pt/pricing/sms": {
+        "title": "Preços de SMS no Brasil | MSG91-Brasil",
+        "description": "Aproveite serviços robustos e poderosos no Brasil, como SMS transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
+    },
+    "/br-pt/pricing/email": {
+        "title": "Preços de Email no Brasil | MSG91-Brasil",
+        "description": "Aproveite serviços robustos e poderosos no Brasil, como Email transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
+    },
+    "/br-pt/pricing/voice": {
+        "title": "Preços de Voz no Brasil | MSG91-Brasil",
+        "description": "Aproveite serviços robustos e poderosos no Brasil, como Voz transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
+    },
+    "/br-pt/pricing/whatsapp": {
+        "title": "Preços da API do WhatsApp Business (2024) | MSG91",
+        "description": "Aproveite serviços robustos e poderosos no Brasil, como WhatsApp transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
+    },
+    "/br-pt/pricing/rcs": {
+        "title": "Preços de RCS no Brasil | MSG91-Brasil",
+        "description": "Aproveite serviços robustos e poderosos no Brasil, como RCS transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
+    },
+    "/br-pt/pricing/otp": {
+        "title": "Preços de OTP no Brasil | MSG91-Brasil",
+        "description": "Aproveite serviços robustos e poderosos no Brasil, como OTP transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
+    },
+    "/br-pt/pricing/hello": {
+        "title": "Preços de Hello no Brasil | MSG91-Brasil",
+        "description": "Aproveite serviços robustos e poderosos no Brasil, como Hello transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
+    },
+    "/br-pt/pricing/segmento": {
+        "title": "Preços de Segmento no Brasil | MSG91-Brasil",
+        "description": "Aproveite serviços robustos e poderosos no Brasil, como Segmento transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
+    },
+    "/br-pt/pricing/campaign": {
+        "title": "Preços de Campanha no Brasil | MSG91-Brasil",
+        "description": "Aproveite serviços robustos e poderosos no Brasil, como Campanha transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
+    },
+    "/br-pt/pricing/knowledgebase": {
+        "title": "Preços de KnowledgeBase no Brasil | MSG91-Brasil",
+        "description": "Aproveite serviços robustos e poderosos no Brasil, como KnowledgeBase transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
+    },
+    "/br-pt/pricing/otpwidget": {
+        "title": "Preços de otpwidget no Brasil | MSG91-Brasil",
+        "description": "Aproveite serviços robustos e poderosos no Brasil, como otpwidget transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
+    },
     "commentae": {
         "comment": "ae country"
     },
