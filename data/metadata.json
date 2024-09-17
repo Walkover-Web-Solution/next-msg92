@@ -7,6 +7,14 @@
         "title": "API Pricing in India | MSG91-India",
         "description": "Avail robust and powerful services in India like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
     },
+    "/br/pricing": {
+        "title": "API Pricing in Brazil | MSG91-Brazil",
+        "description": "Avail robust and powerful services in Brazil like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+    },
+    "/br-pt/pricing": {
+        "title": "Preços de API no Brasil | MSG91-Brasil",
+        "description": "Aproveite serviços robustos e poderosos no Brasil, como SMS transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
+    },
     "/ae/pricing": {
         "title": "API Pricing in United Arab Emirates | MSG91-United Arab Emirates",
         "description": "Avail robust and powerful services like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
@@ -39,6 +47,14 @@
     "/in": {
         "title": "Best Cloud Communication Platform in India | Communication Platform as a Service - MSG91-India",
         "description": "MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
+    },
+    "/br": {
+        "title": "Best Cloud Communication Platform in Brazil | Communication Platform as a Service - MSG91-Brazil",
+        "description": "MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
+    },
+    "/br-pt": {
+        "title": "Melhor Plataforma de Comunicação em Nuvem no Brasil | Plataforma de Comunicação como Serviço - MSG91-Brasil",
+        "description": "A plataforma de comunicações em nuvem da MSG91 integra voz, vídeo, mensagens, chat e colaboração baseados em nuvem em qualquer aplicativo, serviço ou processo empresarial. Solicite uma demonstração para comunicação em nuvem hoje mesmo!"
     },
     "/ae": {
         "title": "Best Cloud Communication Platform for Businesses in United Arab Emirates| MSG91-United Arab Emirates",
@@ -73,6 +89,14 @@
         "title": "Best Customer Support Software in India | Digital Customer Service Platform| MSG91 -India",
         "description": "We are the leading cloud customer service platform. Check out the best customer service software in India to proactively engage customers and answer all customer queries with MSG91."
     },
+    "/br/hello": {
+        "title": "Best Customer Support Software in Brazil | Digital Customer Service Platform| MSG91 -Brazil",
+        "description": "We are the leading cloud customer service platform. Check out the best customer service software in Brazil to proactively engage customers and answer all customer queries with MSG91."
+    },
+    "/br-pt/hello": {
+        "title": "Melhor Software de Suporte ao Cliente no Brasil | Plataforma de Atendimento Digital ao Cliente | MSG91-Brasil",
+        "description": "Somos a principal plataforma de atendimento ao cliente em nuvem. Confira o melhor software de atendimento ao cliente no Brasil para engajar proativamente os clientes e responder a todas as suas dúvidas com a MSG91."
+    },
     "/ae/hello": {
         "title": "Customer Support Platform for your Business by MSG91-United Arab Emirates",
         "description": "Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
@@ -105,6 +129,14 @@
     "/in/campaign": {
         "title": "Best Campaign Software | Transactional Text Messages in India| MSG91-India",
         "description": "MSG91s SMS Marketing software helps businesses build and manage subscriber lists, send transactional sms, and automate customer engagement. Checkout the best campaign automation tool in India."
+    },
+    "/br/campaign": {
+        "title": "Best Campaign Software | Transactional Text Messages in Brazil| MSG91-Brazil",
+        "description": "MSG91s SMS Marketing software helps businesses build and manage subscriber lists, send transactional sms, and automate customer engagement. Checkout the best campaign automation tool in Brazil."
+    },
+    "/br-pt/campaign": {
+        "title": "Melhor Software de Campanha | Mensagens de Texto Transacionais no Brasil | MSG91-Brasil",
+        "description": "O software de marketing por SMS da MSG91 ajuda as empresas a construir e gerenciar listas de assinantes, enviar SMS transacionais e automatizar o engajamento dos clientes. Confira a melhor ferramenta de automação de campanhas no Brasil."
     },
     "/ae/campaign": {
         "title": "SMS Campaign| MSG91-United Arab Emirates",
@@ -139,6 +171,14 @@
         "title": "Customer Segmentation Software | MSG91-India",
         "description": "Execute targeted marketing campaigns with the help of automated customer segmentation and targeted content. Try it out now."
     },
+    "/br/segmento": {
+        "title": "Customer Segmentation Software | MSG91-Brazil",
+        "description": "Execute targeted marketing campaigns with the help of automated customer segmentation and targeted content. Try it out now."
+    },
+    "/br-pt/segmento": {
+        "title": "Software de Segmentação de Clientes | MSG91-Brasil",
+        "description": "Execute campanhas de marketing direcionadas com a ajuda de segmentação automática de clientes e conteúdo direcionado. Experimente agora."
+    },
     "/ae/segmento": {
         "title": "Customer Segmentation Software | MSG91-United Arab Emirates",
         "description": "Execute targeted marketing campaigns with the help of automated customer segmentation and targeted content. Try it out now."
@@ -171,6 +211,14 @@
     "/in/otp": {
         "title": "OTP Authentication API | OTP SMS Service Provider in India -MSG91-India",
         "description": "OTP Service Provider - Consume simple API’s and give secure OTP with 2FA's and validations to your website and applications by using MSG91s best otp api service."
+    },
+    "/br/otp": {
+        "title": "OTP Authentication API | OTP SMS Service Provider in Brazil -MSG91-Brazil",
+        "description": "OTP Service Provider - Consume simple API’s and give secure OTP with 2FA's and validations to your website and applications by using MSG91s best otp api service."
+    },
+    "/br-pt/otp": {
+        "title": "API de Autenticação por OTP | Provedor de Serviço de SMS OTP no Brasil - MSG91-Brasil",
+        "description": "Provedor de Serviço de OTP - Utilize APIs simples e ofereça OTP seguro com autenticação de dois fatores (2FA) e validações para seu site e aplicativos usando o melhor serviço de API OTP da MSG91."
     },
     "/ae/otp": {
         "title": "Send OTP | OTP Service Providers -MSG91-United Arab Emirates",
@@ -205,6 +253,14 @@
         "title": "Best SMS API For Developers | Transactional SMS Service -MSG91-India",
         "description": "MSG91 is a bulk transactional sms service provider offering reliable business solutions, supporting both marketing campaigns and daily notifications. Start with a transactional sms api trial today."
     },
+    "/br/sms": {
+        "title": "Best SMS API For Developers | Transactional SMS Service -MSG91-Brazil",
+        "description": "MSG91 is a bulk transactional sms service provider offering reliable business solutions, supporting both marketing campaigns and daily notifications. Start with a transactional sms api trial today."
+    },
+    "/br-pt/sms": {
+        "title": "Melhor API de SMS para Desenvolvedores | Serviço de SMS Transacional - MSG91-Brasil",
+        "description": "A MSG91 é um provedor de serviço de SMS transacional em massa que oferece soluções empresariais confiáveis, suportando tanto campanhas de marketing quanto notificações diárias. Comece hoje mesmo com um teste da API de SMS transacional."
+    },
     "/ae/sms": {
         "title": "Transactional SMS | Transactional SMS Provider - MSG91-United Arab Emirates",
         "description": "MSG91 is among the leading transactional SMS service providers. Empowering businesses with easy-to-integrate transactional SMS API to enhance customer satisfaction."
@@ -237,6 +293,10 @@
     "/in/rcs": {
         "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91 - India",
         "description": "Enhance your customer engagement with Rich Communication Service. Effortless RCS integration and advanced features boost communication and stimulate business growth"
+    },
+    "/br-pt/rcs": {
+        "title": "RCS: Experiências Aprimoradas, Personalizadas e Interativas - MSG91 - Brasil",
+        "description": "Aprimore o engajamento com seus clientes usando o Rich Communication Service. A integração fácil do RCS e recursos avançados impulsionam a comunicação e estimulam o crescimento dos negócios."
     },
     "/ae/rcs": {
         "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91 - United Arab Emirates",
@@ -271,6 +331,14 @@
         "title": "Transactional Email Services in India | Email Api Provider -MSG91-India",
         "description": "Our best email api integration for application-driven emails gives you an easy way to automate your sending based on user actions. Send, receive, and track emails with MSG91's best email api service."
     },
+    "/br/email": {
+        "title": "Transactional Email Services in Brazil | Email Api Provider -MSG91-Brazil",
+        "description": "Our best email api integration for application-driven emails gives you an easy way to automate your sending based on user actions. Send, receive, and track emails with MSG91's best email api service."
+    },
+    "/br-pt/email": {
+        "title": "Serviços de Email Transacional no Brasil | Provedor de API de Email - MSG91-Brasil",
+        "description": "Nossa melhor integração de API de email para emails orientados por aplicativos oferece uma maneira fácil de automatizar o envio com base nas ações dos usuários. Envie, receba e acompanhe emails com o melhor serviço de API de email da MSG91."
+    },
     "/ae/email": {
         "title": "Transactional Email | Transactional Email API - MSG91-United Arab Emirates",
         "description": "Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
@@ -303,6 +371,14 @@
     "/in/whatsapp": {
         "title": "WhatsApp API for businesses in India | MSG91-India",
         "description": "Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred & reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now."
+    },
+    "/br/whatsapp": {
+        "title": "WhatsApp API for businesses in Brazil | MSG91-Brazil",
+        "description": "Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred & reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now."
+    },
+    "/br-pt/whatsapp": {
+        "title": "API do WhatsApp para Empresas no Brasil | MSG91-Brasil",
+        "description": "Envie e receba mensagens instantâneas e notificações para fornecer suporte ao cliente em tempo real globalmente em uma das plataformas de chat mais preferidas e confiáveis. Integre a API do WhatsApp da MSG91 ao seu site ou aplicativo agora mesmo."
     },
     "/ae/whatsapp": {
         "title": "WhatsApp API for businesses | MSG91-United Arab Emirates",
@@ -337,6 +413,14 @@
         "title": "Numbers API for business | MSG91-India",
         "description": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!"
     },
+    "/br/numbers": {
+        "title": "Numbers API for business | MSG91-Brazil",
+        "description": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!"
+    },
+    "/br-pt/numbers": {
+        "title": "API de Números para Negócios | MSG91-Brasil",
+        "description": "Receba, responda e personalize SMS com Códigos Longos, para um Engajamento e Comunicação Máximos!"
+    },
     "/ae/numbers": {
         "title": "Numbers API for business | MSG91-United Arab Emirates",
         "description": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!"
@@ -369,6 +453,14 @@
     "/in/voice": {
         "title": "Best Voice Call Api | Voice Api Service Provider in India - MSG91",
         "description": "We are the leading Voice Call API provider in India. With MSG91 voice api service, every developer can build and integrate communication systems, missed call services etc."
+    },
+    "/br/voice": {
+        "title": "Best Voice Call Api | Voice Api Service Provider in Brazil - MSG91",
+        "description": "We are the leading Voice Call API provider in Brazil. With MSG91 voice api service, every developer can build and integrate communication systems, missed call services etc."
+    },
+    "/br-pt/voice": {
+        "title": "Melhor API de Chamadas de Voz | Provedor de Serviço de API de Voz no Brasil - MSG91",
+        "description": "Somos o principal provedor de API de chamadas de voz no Brasil. Com o serviço de API de voz da MSG91, cada desenvolvedor pode construir e integrar sistemas de comunicação, serviços de chamadas perdidas, entre outros."
     },
     "/ae/voice": {
         "title": "Voice API for your Business | Voice Call API | MSG91-United Arab Emirates",
@@ -403,6 +495,11 @@
         "title": "ShortUrl",
         "description": "Customised Links for Business Success Stand out with branded links that drive more clicks to improve conversion rates. Optimise smart links that can help you realise more revenues. Customising, tracking, managing, made easy. Get Demo Features Smart Links that magnify your conversions Enhance the deliverability of messages through our globally accepted best practices. Ensure improved..."
     },
+    
+    "/br-pt/shorturl": {
+        "title": "ShortUrl - Brasil",
+        "description": "Links Personalizados para o Sucesso Empresarial Destaque-se com links personalizados que atraem mais cliques para melhorar as taxas de conversão. Otimize links inteligentes que podem ajudar você a gerar mais receitas. Personalização, rastreamento e gerenciamento facilitados. Obtenha uma Demonstração Recursos Links Inteligentes que ampliam suas conversões Melhore a entregabilidade das mensagens através das melhores práticas aceitas globalmente. Garanta uma melhoria..."
+    },
     "/ae/shorturl": {
         "title": "ShortUrl",
         "description": "Customised Links for Business Success Stand out with branded links that drive more clicks to improve conversion rates. Optimise smart links that can help you realise more revenues. Customising, tracking, managing, made easy. Get Demo Features Smart Links that magnify your conversions Enhance the deliverability of messages through our globally accepted best practices. Ensure improved..."
@@ -435,6 +532,14 @@
     "/in/knowledgebase": {
         "title": "Customer knowledgebase platform by MSG91-India",
         "description": "Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience"
+    },
+    "/br/knowledgebase": {
+        "title": "Customer knowledgebase platform by MSG91-Brazil",
+        "description": "Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience"
+    },
+    "/br-pt/knowledgebase": {
+        "title": "Plataforma de Base de Conhecimento para Clientes da MSG91-Brasil",
+        "description": "Repositório central de informações sobre seus produtos, serviços ou tópicos. Ajude seus clientes a encontrar respostas para suas perguntas por conta própria, na conveniência deles."
     },
     "/ae/knowledgebase": {
         "title": "Customer knowledgebase platform by MSG91-United Arab Emirates",
