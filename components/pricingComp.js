@@ -15,7 +15,6 @@ import PricingOtpWidget from '@/components/pricing/pricing-otpwidget';
 import Pricingknowledgebase from '@/components/pricing/pricing-knowledgebase';
 import Link from 'next/link';
 import { MdExpandMore } from 'react-icons/md';
-import getRelativeURL from '@/utils/getRelativeURL';
 
 const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
     var availCont = ['US', 'GB', 'IN', 'BR', 'SG', 'AE', 'PH', 'ES'];
@@ -255,7 +254,11 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
                                 ) : (
                                     <li key={index}>
                                         <Link
-                                            href={getRelativeURL(productData?.product)}
+                                            href={
+                                                pathLengthCond && pathArray
+                                                    ? `/${pathArray[1]}/pricing/${productData?.product}`
+                                                    : `/pricing/${productData?.product}`
+                                            }
                                             className={`dropdown-item  w-100 ${
                                                 product === productData?.product ? 'active' : ''
                                             }`}

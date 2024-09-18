@@ -1,4 +1,3 @@
-import Link from "next/link";
 const pricingcampaign = () => {
   return <>
     <div className="price-card campaign rounded-2 bg-white p-4">
@@ -12,9 +11,6 @@ const pricingcampaign = () => {
       >
           Get Started
       </a>
-      {/* <button data-bs-toggle="modal" data-bs-target="#sales-modal" className="fw-semibold btn btn-dark rounded-1 py-2 px-3 mt-2">
-        Get Started
-      </button>       */}
     </div>
     <a href="/campaign">
       <img src="/img/icon/link.svg" alt="Know more" className="icon me-2" />

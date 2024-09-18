@@ -14,11 +14,12 @@ const pricingwp = ({ countryCode }) => {
         countryCode === 'SG' ||
         countryCode === 'PH' ||
         countryCode === 'BR' ||
-        countryCode === ''
+        countryCode === '' ||
+        countryCode === 'ES'
     ) {
         change = 'USD';
         changeSymbol = '$';
-    } else if (countryCode === 'GB' || countryCode === 'ES') {
+    } else if (countryCode === 'GB') {
         change = 'GBP';
         changeSymbol = '£';
     } else if (countryCode === 'IN') {

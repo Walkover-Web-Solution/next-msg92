@@ -9,23 +9,24 @@ const pricingemail = ({ subscriptionEmail, fetchSubscriptionEmail, currency, set
     var change;
     var changeSymbol;
     if (
-        countryCode === "US" ||
-        countryCode === "AE" ||
-        countryCode === "SG" ||
-        countryCode === "PH" ||
-        countryCode === "BR"
+        countryCode === 'US' ||
+        countryCode === 'AE' ||
+        countryCode === 'SG' ||
+        countryCode === 'PH' ||
+        countryCode === 'BR' ||
+        countryCode === 'ES'
     ) {
-        change = "USD";
-        changeSymbol = "$";
-    } else if (countryCode === "GB" || countryCode === "ES") {
-        change = "GBP";
-        changeSymbol = "£";
-    } else if (countryCode === "IN") {
-        change = "INR";
-        changeSymbol = "₹";
+        change = 'USD';
+        changeSymbol = '$';
+    } else if (countryCode === 'GB') {
+        change = 'GBP';
+        changeSymbol = '£';
+    } else if (countryCode === 'IN') {
+        change = 'INR';
+        changeSymbol = '₹';
     } else {
-        change = "USD";
-        changeSymbol = "$";
+        change = 'USD';
+        changeSymbol = '$';
     }
     // ph,global
     const [selectedCurrency, setSelectedCurrency] = useState(change);

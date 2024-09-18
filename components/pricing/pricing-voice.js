@@ -5,7 +5,6 @@ import faqData from "@/data/faq.json";
 import FaqSection from "../faqSection/faqSection";
 import { Typeahead } from "react-bootstrap-typeahead";
 import axios from "axios";
-import Link from "next/link";
 
 const PricingCalls = ({ countryCode, currency }) => {
     const [data, setData] = useState(null);
@@ -28,9 +27,6 @@ const PricingCalls = ({ countryCode, currency }) => {
 
     useEffect(() => {
         if (selectedCountry) {
-            // const preferredCurrency = countries.find(
-            //     (country) => country.shortname === selectedCountry?.country_code
-            // )?.currency;
             if (currency === "GBP") {
                 setCurrencyCode("USD");
             } else if (currency === "INR" && selectedCountry?.name !== "India") {
