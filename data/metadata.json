@@ -44,6 +44,14 @@
         "title": "Best Cloud Communication Platform for Businesses | MSG91",
         "description": "MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
     },
+    "": {
+        "title": "Best Cloud Communication Platform for Businesses | MSG91",
+        "description": "MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
+    },
+    "/?": {
+        "title": "Best Cloud Communication Platform for Businesses | MSG91",
+        "description": "MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
+    },
     "/in": {
         "title": "Best Cloud Communication Platform in India | Communication Platform as a Service - MSG91-India",
         "description": "MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
@@ -294,6 +302,10 @@
         "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91 - India",
         "description": "Enhance your customer engagement with Rich Communication Service. Effortless RCS integration and advanced features boost communication and stimulate business growth"
     },
+    "/br/rcs": {
+        "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91",
+        "description": "Enhance your customer engagement with Rich Communication Service. Effortless RCS integration and advanced features boost communication and stimulate business growth"
+    },
     "/br-pt/rcs": {
         "title": "RCS: Experiências Aprimoradas, Personalizadas e Interativas - MSG91 - Brasil",
         "description": "Aprimore o engajamento com seus clientes usando o Rich Communication Service. A integração fácil do RCS e recursos avançados impulsionam a comunicação e estimulam o crescimento dos negócios."
@@ -495,7 +507,10 @@
         "title": "ShortUrl",
         "description": "Customised Links for Business Success Stand out with branded links that drive more clicks to improve conversion rates. Optimise smart links that can help you realise more revenues. Customising, tracking, managing, made easy. Get Demo Features Smart Links that magnify your conversions Enhance the deliverability of messages through our globally accepted best practices. Ensure improved..."
     },
-    
+    "/br/shorturl": {
+        "title": "ShortUrl",
+        "description": "Customised Links for Business Success Stand out with branded links that drive more clicks to improve conversion rates. Optimise smart links that can help you realise more revenues. Customising, tracking, managing, made easy. Get Demo Features Smart Links that magnify your conversions Enhance the deliverability of messages through our globally accepted best practices. Ensure improved..."
+    },
     "/br-pt/shorturl": {
         "title": "ShortUrl - Brasil",
         "description": "Links Personalizados para o Sucesso Empresarial Destaque-se com links personalizados que atraem mais cliques para melhorar as taxas de conversão. Otimize links inteligentes que podem ajudar você a gerar mais receitas. Personalização, rastreamento e gerenciamento facilitados. Obtenha uma Demonstração Recursos Links Inteligentes que ampliam suas conversões Melhore a entregabilidade das mensagens através das melhores práticas aceitas globalmente. Garanta uma melhoria..."
@@ -1130,6 +1145,10 @@
         "title": "Free Whatsapp Link generator| MSG91 - India",
         "description": "Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
     },
+    "/br/free-whatsapp-link-generator": {
+        "title": "WhatsApp API for businesses | MSG91",
+        "description": "Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
+    },
     "/ae/free-whatsapp-link-generator": {
         "title": "Free Whatsapp Link generator | MSG91 - United Arab Emirates",
         "description": "Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
@@ -1298,6 +1317,14 @@
     "/whatsapp/chatbot": {
         "title": "Whatsapp with Chatbot | MSG91",
         "description": "Maximize business potential with WhatsApp: Unleash automation, supercharge sales, and harness the efficiency of a WhatsApp chatbot. Elevate your strategy for success today!"
+    },
+    "/br/whatsapp/chatbot": {
+        "title": "Whatsapp with Chatbot | MSG91",
+        "description": "Maximize business potential with WhatsApp: Unleash automation, supercharge sales, and harness the efficiency of a WhatsApp chatbot. Elevate your strategy for success today!"
+    },
+    "/br-pt/whatsapp/chatbot": {
+        "title": "Whatsapp com Chatbot | MSG91",
+        "description": "Maximize o potencial de negócios com o WhatsApp: Libere a automação, supercarregue as vendas e aproveite a eficiência de um chatbot do WhatsApp. Eleve sua estratégia para o sucesso hoje!"
     },
     "/in/whatsapp/chatbot": {
         "title": "Whatsapp with Chatbot | MSG91-India",
