@@ -320,35 +320,36 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
             <GetStartedSection pricingPath={pricingPath} />
 
             <TrustedBy align={'center'} />
-
-            <div>
-                <div
-                    className="modal fade"
-                    id="whatsapp-meeting"
-                    tabIndex={-1}
-                    aria-labelledby="Schedule a meeting"
-                    aria-hidden="true"
-                >
-                    <div className="modal-dialog modal-xl">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <button
-                                    type="button"
-                                    className="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                />
-                            </div>
-                            <div className="modal-body">
-                                <InlineWidget
-                                    url="https://calendly.com/msg91-whatsapp/15-min-meeting?back=1&month=2024-05"
-                                    styles={{ height: '820px' }}
-                                />
+            {pageData.pagename === 'WhatsApp' && (
+                <div>
+                    <div
+                        className="modal fade"
+                        id="whatsapp-meeting"
+                        tabIndex={-1}
+                        aria-labelledby="Schedule a meeting"
+                        aria-hidden="true"
+                    >
+                        <div className="modal-dialog modal-xl">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <button
+                                        type="button"
+                                        className="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    />
+                                </div>
+                                <div className="modal-body">
+                                    <InlineWidget
+                                        url="https://calendly.com/msg91-whatsapp/15-min-meeting?back=1&month=2024-05"
+                                        styles={{ height: '820px' }}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };
