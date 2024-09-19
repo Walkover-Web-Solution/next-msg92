@@ -109,14 +109,15 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                 <span className="talk-to-sales d-block c-fs-4">
                     Connect with our team for a personalized plan to meet your needs.
                 </span>
-                <button
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#sales-modal"
-                    className="btn btn-outline-dark mt-2 mb-4 c-fs-5 border border-dark rounded-1 px-3 py-1"
-                >
-                    Talk to Sales
-                </button>
+        
+                    <button
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#sales-modal"
+                        className="btn btn-outline-dark mt-2 mb-4 c-fs-5 border border-dark rounded-1 px-3 py-1"
+                    >
+                        Talk to Sales
+                    </button>
                 <br />
                 <a href="/hello">
                     <img src="/img/icon/link.svg" alt="Know more" className="icon me-2" />
@@ -152,7 +153,7 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
                     {planAmount?.plan_amount} {selectedMode}
                 </span>
                 <span className="c-fs-5"> {planAmount?.currency?.short_name === 'INR' ? '+18% GST' : '-'}</span>
-                <Link href={'/signup?service=hello'}>
+                <Link href={'/signup?service=hello'} target="_blank">
                     <button className={`btn ${plan?.most_popular ? 'btn-dark' : 'btn-outline-dark'}  rounded-md`}>
                         Get Started
                     </button>

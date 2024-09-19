@@ -21,7 +21,7 @@ export default function productComponent({ pageData, pathArray, pricingPath }) {
                             <h2 className="small-heading w-md-75 w-100 mx-auto fw-normal mb-2">{pageData?.heading}</h2>
                             <p className="small-heading w-md-75 w-100 mx-auto fw-normal">{pageData?.subheading}</p>
                         </div>
-                        <a href={`/signup?service=${pageData.slug}`} className="btn btn-dark btn-lg c-fs-2 mt-3 utm">
+                        <a href={`/signup?service=${pageData.slug}`} className="btn btn-dark btn-lg c-fs-2 mt-3 utm" target="_blank">
                             {pageData.name === "KnowledgeBase" && (
                                 <span className="d-flex">
                                     Get started <mark className="highlight ms-2">FREE forever</mark>
