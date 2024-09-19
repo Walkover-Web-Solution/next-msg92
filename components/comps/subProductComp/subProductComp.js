@@ -13,8 +13,9 @@ import {
 } from 'react-icons/md';
 import React, { useState } from 'react';
 import PreFooter from '@/components/preFooter';
+import Link from 'next/link';
 
-export default function SubProductComp({path}) {
+export default function SubProductComp({ path }) {
     console.log('path', path);
     const [learnMore, setLearnMore] = useState();
     const icons = {
@@ -47,8 +48,7 @@ export default function SubProductComp({path}) {
         {
             name: 'Streamline Responses to FAQs ',
             icon: 'MdHelpOutline',
-            description:
-                `WhatsApp Chatbots swiftly address frequently asked questions by leveraging the <a href="${path}/whatsapp">WhatsApp Business API</a> to save businesses time and resources.`,
+            description: `WhatsApp Chatbots swiftly address frequently asked questions by leveraging the <a href="${path}/whatsapp">WhatsApp Business API</a> to save businesses time and resources.`,
         },
         {
             name: 'Elevate Customer Support',
@@ -118,7 +118,9 @@ export default function SubProductComp({path}) {
                     <p className="c-fs-2">
                         Enhance sales, streamline responses, and effortlessly reconnect with your contacts.
                     </p>
-                    <button className="btn btn-dark btn-lg rounded-1 btn-ft">Get started</button>
+                    <Link href="/signup?utm_campaign=tigerplugin&utm_source=tally&utm_medium=website" target="_blank">
+                        <button className="btn btn-dark btn-lg rounded-1 btn-ft">Get started</button>
+                    </Link>
                 </div>
                 <Image
                     src="/img/pageimg/whatapp-chatbot.png"

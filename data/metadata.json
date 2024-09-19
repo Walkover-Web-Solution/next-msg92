@@ -1,4 +1,8 @@
 {
+    "/signup": {
+        "title": "Sign up now to access the full range of MSG91 products.",
+        "description": "Sign up to access the complete suite of MSG91 products, including programmable SMS, customer contact centers, virtual numbers, automated user segmentation, and OTP invisible verification. Trusted by 30,000+ startups and enterprises."
+    },
     "/pricing": {
         "title": "API Pricing | MSG91",
         "description": "Avail robust and powerful services like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
