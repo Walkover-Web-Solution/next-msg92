@@ -10,7 +10,7 @@ export default function Certificates() {
                     <h2 className="  mx-auto fw-bold heading my-2 col-11 col-md-8">
                         Certified for Unparalleled Reliability and Security.{" "}
                     </h2>
-                    <a href="https://control.msg91.com/signup/" className="btn btn-ft btn-dark rounded-1 c-fs-4">
+                    <a href="https://control.msg91.com/signup/" target="_blank" className="btn btn-ft btn-dark rounded-1 c-fs-4">
                         Get Started
                     </a>
 
