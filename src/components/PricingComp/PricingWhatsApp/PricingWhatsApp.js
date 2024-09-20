@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function PricingWhatsApp() {
-    const [isLoading, setIsLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
     const [currency, setCurrency] = useState('INR');
@@ -11,11 +11,15 @@ export default function PricingWhatsApp() {
 
     useEffect(() => {
         const getWhatsAppPricing = async () => {
+            setLoading(true);
+
             try {
                 const response = await axios.get(`https://whatsapp.phone91.com/get-pricing-data/${currency}`);
                 setPlans(response?.data?.data.sort((a, b) => a.country_name.localeCompare(b.country_name)));
+                setLoading(false);
             } catch (error) {
                 console.error('There was an error fetching the data!', error);
+                setLoading(false);
             }
         };
         getWhatsAppPricing();
@@ -85,6 +89,34 @@ export default function PricingWhatsApp() {
                                                 {!isNaN(parseFloat(item?.user_initiated_rate))
                                                     ? parseFloat(item?.user_initiated_rate).toFixed(5)
                                                     : 'N/A'}
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
+
+                            {loading &&
+                                Array.from({ length: 20 }).map((_, index) => {
+                                    return (
+                                        <tr className='border-none text-[16px]' key={index}>
+                                            <td className='border-r'>
+                                                {' '}
+                                                <div className='skeleton w-2/3 h-[24px]'></div>
+                                            </td>
+                                            <td className='border-r'>
+                                                {' '}
+                                                <div className='skeleton w-2/3 h-[24px]'></div>
+                                            </td>
+                                            <td className='border-r'>
+                                                <div className='skeleton w-2/3 h-[24px]'></div>
+                                            </td>
+                                            <td className='border-r'>
+                                                <div className='skeleton w-2/3 h-[24px]'></div>
+                                            </td>
+                                            <td className='border-r'>
+                                                <div className='skeleton w-2/3 h-[24px]'></div>
+                                            </td>
+                                            <td className=''>
+                                                <div className='skeleton w-2/3 h-[24px]'></div>
                                             </td>
                                         </tr>
                                     );

@@ -2,6 +2,9 @@
     @apply mx-auto px-4 md:px-10;
 }
 
+.skeleton{
+    @apply bg-slate-50 rounded-sm;
+}
 .btn {
     &.btn-primary {
         color: var(--white-color);
@@ -32,7 +35,6 @@
 
 .text-link {
     &.active-link {
-
         color: var(--link-color);
     }
     &::after {
@@ -145,4 +147,20 @@ $button-transition-timing: 100ms;
             color: var(--primary-color) !important;
         }
     }
+}
+
+.pricing-country-input {
+    .wrapper {
+        border-radius: 4px !important;
+    }
+    &:hover {
+        box-shadow: none !important;
+    }
+}
+
+.jiMOeR .wrapper:hover {
+    box-shadow: none !important;
+}
+.jiMOeR .wrapper {
+    box-shadow: none !important;
 }

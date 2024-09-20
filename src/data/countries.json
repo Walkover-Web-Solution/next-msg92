@@ -1,0 +1,1484 @@
+[
+    {
+        "shortname": "AF",
+        "name": "Afghanistan",
+        "code": 93,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "AL",
+        "name": "Albania",
+        "code": 355,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "DZ",
+        "name": "Algeria",
+        "code": 213,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "AD",
+        "name": "Andorra",
+        "code": 376,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "AO",
+        "name": "Angola",
+        "code": 244,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "AR",
+        "name": "Argentina",
+        "code": 54,
+        "currency": "USD"
+    },
+    {
+        "shortname": "AM",
+        "name": "Armenia",
+        "code": 374,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "AW",
+        "name": "Aruba",
+        "code": 297,
+        "currency": "USD"
+    },
+    {
+        "shortname": "AU",
+        "name": "Australia",
+        "code": 61,
+        "currency": "USD"
+    },
+    {
+        "shortname": "AT",
+        "name": "Austria",
+        "code": 43,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "AZ",
+        "name": "Azerbaijan",
+        "code": 994,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "BH",
+        "name": "Bahrain",
+        "code": 973,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "BD",
+        "name": "Bangladesh",
+        "code": 880,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "BY",
+        "name": "Belarus",
+        "code": 375,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "BE",
+        "name": "Belgium",
+        "code": 32,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "BZ",
+        "name": "Belize",
+        "code": 501,
+        "currency": "USD"
+    },
+    {
+        "shortname": "BJ",
+        "name": "Benin",
+        "code": 229,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "BT",
+        "name": "Bhutan",
+        "code": 975,
+        "currency": "INR"
+    },
+    {
+        "shortname": "BO",
+        "name": "Bolivia",
+        "code": 591,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "BA",
+        "name": "Bosnia and Herzegovina",
+        "code": 387,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "BW",
+        "name": "Botswana",
+        "code": 267,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "BR",
+        "name": "Brazil",
+        "code": 55,
+        "currency": "USD"
+    },
+    {
+        "shortname": "BN",
+        "name": "Brunei",
+        "code": 673,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "BG",
+        "name": "Bulgaria",
+        "code": 359,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "BF",
+        "name": "Burkina Faso",
+        "code": 226,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "BI",
+        "name": "Burundi",
+        "code": 257,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "KH",
+        "name": "Cambodia",
+        "code": 855,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "CM",
+        "name": "Cameroon",
+        "code": 237,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "CV",
+        "name": "Cape Verde",
+        "code": 238,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "CF",
+        "name": "Central African Republic",
+        "code": 236,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "TD",
+        "name": "Chad",
+        "code": 235,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "CL",
+        "name": "Chile",
+        "code": 56,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "CN",
+        "name": "China",
+        "code": 86,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "CO",
+        "name": "Colombia",
+        "code": 57,
+        "currency": "USD"
+    },
+    {
+        "shortname": "KM",
+        "name": "Comoros",
+        "code": 269,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "CK",
+        "name": "Cook Islands",
+        "code": 682,
+        "currency": "USD"
+    },
+    {
+        "shortname": "CR",
+        "name": "Costa Rica",
+        "code": 506,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "HR",
+        "name": "Croatia",
+        "code": 385,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "CU",
+        "name": "Cuba",
+        "code": 53,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "CY",
+        "name": "Cyprus",
+        "code": 357,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "CZ",
+        "name": "Czech Republic",
+        "code": 420,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "CG",
+        "name": "Democratic Republic of the Congo",
+        "code": 243,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "DK",
+        "name": "Denmark",
+        "code": 45,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "TL",
+        "name": "East Timor",
+        "code": 670,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "EC",
+        "name": "Ecuador",
+        "code": 593,
+        "currency": "USD"
+    },
+    {
+        "shortname": "EG",
+        "name": "Egypt",
+        "code": 20,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SV",
+        "name": "El Salvador",
+        "code": 503,
+        "currency": "USD"
+    },
+    {
+        "shortname": "GQ",
+        "name": "Equatorial Guinea",
+        "code": 240,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "EE",
+        "name": "Estonia",
+        "code": 372,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "ET",
+        "name": "Ethiopia",
+        "code": 251,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "FK",
+        "name": "Falkland Islands",
+        "code": 500,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "FO",
+        "name": "Faroe Islands",
+        "code": 298,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "FM",
+        "name": "Federated States of Micronesia",
+        "code": 691,
+        "currency": "USD"
+    },
+    {
+        "shortname": "FJ",
+        "name": "Fiji Islands",
+        "code": 679,
+        "currency": "USD"
+    },
+    {
+        "shortname": "FI",
+        "name": "Finland",
+        "code": 358,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "FR",
+        "name": "France",
+        "code": 33,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "GF",
+        "name": "French Guiana",
+        "code": 594,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "PF",
+        "name": "French Polynesia",
+        "code": 689,
+        "currency": "USD"
+    },
+    {
+        "shortname": "GA",
+        "name": "Gabon",
+        "code": 241,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "GE",
+        "name": "Georgia",
+        "code": 995,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "DE",
+        "name": "Germany",
+        "code": 49,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "GH",
+        "name": "Ghana",
+        "code": 233,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "GI",
+        "name": "Gibraltar",
+        "code": 350,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "GR",
+        "name": "Greece",
+        "code": 30,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "GL",
+        "name": "Greenland",
+        "code": 299,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "GP",
+        "name": "Guadeloupe",
+        "code": 590,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "GT",
+        "name": "Guatemala",
+        "code": 502,
+        "currency": "USD"
+    },
+    {
+        "shortname": "GN",
+        "name": "Guinea",
+        "code": 224,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "GW",
+        "name": "Guinea-Bissau",
+        "code": 245,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "GY",
+        "name": "Guyana",
+        "code": 592,
+        "currency": "USD"
+    },
+    {
+        "shortname": "HT",
+        "name": "Haiti",
+        "code": 509,
+        "currency": "USD"
+    },
+    {
+        "shortname": "HN",
+        "name": "Honduras",
+        "code": 504,
+        "currency": "USD"
+    },
+    {
+        "shortname": "HK",
+        "name": "Hong Kong",
+        "code": 852,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "HU",
+        "name": "Hungary",
+        "code": 36,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "IS",
+        "name": "Iceland",
+        "code": 354,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "IN",
+        "name": "India",
+        "code": 91,
+        "currency": "INR"
+    },
+    {
+        "shortname": "ID",
+        "name": "Indonesia",
+        "code": 62,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "IR",
+        "name": "Iran",
+        "code": 98,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "IQ",
+        "name": "Iraq",
+        "code": 964,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "IE",
+        "name": "Ireland",
+        "code": 353,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "IL",
+        "name": "Israel",
+        "code": 972,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "IT",
+        "name": "Italy",
+        "code": 39,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "JP",
+        "name": "Japan",
+        "code": 81,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "JO",
+        "name": "Jordan",
+        "code": 962,
+        "currency": "USD"
+    },
+    {
+        "shortname": "KE",
+        "name": "Kenya",
+        "code": 254,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "KI",
+        "name": "Kiribati",
+        "code": 686,
+        "currency": "USD"
+    },
+    {
+        "shortname": "KW",
+        "name": "Kuwait",
+        "code": 965,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "KG",
+        "name": "Kyrgyzstan",
+        "code": 996,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "LA",
+        "name": "Laos",
+        "code": 856,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "LV",
+        "name": "Latvia",
+        "code": 371,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "LB",
+        "name": "Lebanon",
+        "code": 961,
+        "currency": "USD"
+    },
+    {
+        "shortname": "LS",
+        "name": "Lesotho",
+        "code": 266,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "LR",
+        "name": "Liberia",
+        "code": 231,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "LY",
+        "name": "Libya",
+        "code": 218,
+        "currency": "USD"
+    },
+    {
+        "shortname": "LI",
+        "name": "Liechtenstein",
+        "code": 423,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "LT",
+        "name": "Lithuania",
+        "code": 370,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "LU",
+        "name": "Luxembourg",
+        "code": 352,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MO",
+        "name": "Macau",
+        "code": 853,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MK",
+        "name": "Macedonia",
+        "code": 389,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MG",
+        "name": "Madagascar",
+        "code": 261,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MW",
+        "name": "Malawi",
+        "code": 265,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MY",
+        "name": "Malaysia",
+        "code": 60,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MV",
+        "name": "Maldives",
+        "code": 960,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "ML",
+        "name": "Mali",
+        "code": 223,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MT",
+        "name": "Malta",
+        "code": 356,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MH",
+        "name": "Marshall Islands",
+        "code": 692,
+        "currency": "USD"
+    },
+    {
+        "shortname": "MQ",
+        "name": "Martinique",
+        "code": 596,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MR",
+        "name": "Mauritania",
+        "code": 222,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MU",
+        "name": "Mauritius",
+        "code": 230,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MX",
+        "name": "Mexico",
+        "code": 52,
+        "currency": "USD"
+    },
+    {
+        "shortname": "MD",
+        "name": "Moldova",
+        "code": 373,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MC",
+        "name": "Monaco",
+        "code": 377,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MN",
+        "name": "Mongolia",
+        "code": 976,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "ME",
+        "name": "Montenegro",
+        "code": 382,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MA",
+        "name": "Morocco",
+        "code": 212,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MZ",
+        "name": "Mozambique",
+        "code": 258,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "MM",
+        "name": "Myanmar",
+        "code": 95,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "NA",
+        "name": "Namibia",
+        "code": 264,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "NR",
+        "name": "Nauru",
+        "code": 674,
+        "currency": "USD"
+    },
+    {
+        "shortname": "NP",
+        "name": "Nepal",
+        "code": 977,
+        "currency": "INR"
+    },
+    {
+        "shortname": "NL",
+        "name": "Netherlands",
+        "code": 31,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "NC",
+        "name": "New Caledonia",
+        "code": 687,
+        "currency": "USD"
+    },
+    {
+        "shortname": "NZ",
+        "name": "New Zealand",
+        "code": 64,
+        "currency": "USD"
+    },
+    {
+        "shortname": "NI",
+        "name": "Nicaragua",
+        "code": 505,
+        "currency": "USD"
+    },
+    {
+        "shortname": "NE",
+        "name": "Niger",
+        "code": 227,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "NG",
+        "name": "Nigeria",
+        "code": 234,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "NU",
+        "name": "Niue",
+        "code": 683,
+        "currency": "USD"
+    },
+    {
+        "shortname": "NF",
+        "name": "Norfolk Island",
+        "code": 672,
+        "currency": "USD"
+    },
+    {
+        "shortname": "KP",
+        "name": "North Korea",
+        "code": 850,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "NO",
+        "name": "Norway",
+        "code": 47,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "OM",
+        "name": "Oman",
+        "code": 968,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "PK",
+        "name": "Pakistan",
+        "code": 92,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "PW",
+        "name": "Palau",
+        "code": 680,
+        "currency": "USD"
+    },
+    {
+        "shortname": "PA",
+        "name": "Panama",
+        "code": 507,
+        "currency": "USD"
+    },
+    {
+        "shortname": "PG",
+        "name": "Papua New Guinea",
+        "code": 675,
+        "currency": "USD"
+    },
+    {
+        "shortname": "PY",
+        "name": "Paraguay",
+        "code": 595,
+        "currency": "USD"
+    },
+    {
+        "shortname": "PE",
+        "name": "Peru",
+        "code": 51,
+        "currency": "USD"
+    },
+    {
+        "shortname": "PH",
+        "name": "Philippines",
+        "code": 63,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "PL",
+        "name": "Poland",
+        "code": 48,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "PT",
+        "name": "Portugal",
+        "code": 351,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "QA",
+        "name": "Qatar",
+        "code": 974,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "RO",
+        "name": "Romania",
+        "code": 40,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "RU",
+        "name": "Russian Federation",
+        "code": 7,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "RW",
+        "name": "Rwanda",
+        "code": 250,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "PM",
+        "name": "Saint Pierre and Miquelon",
+        "code": 508,
+        "currency": "USD"
+    },
+    {
+        "shortname": "WS",
+        "name": "Samoa",
+        "code": 685,
+        "currency": "USD"
+    },
+    {
+        "shortname": "ST",
+        "name": "Sao Tome and Principe",
+        "code": 239,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SA",
+        "name": "Saudi Arabia",
+        "code": 966,
+        "currency": "USD"
+    },
+    {
+        "shortname": "SN",
+        "name": "Senegal",
+        "code": 221,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "RS",
+        "name": "Serbia",
+        "code": 381,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SC",
+        "name": "Seychelles",
+        "code": 248,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SL",
+        "name": "Sierra Leone",
+        "code": 232,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SG",
+        "name": "Singapore",
+        "code": 65,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SK",
+        "name": "Slovakia",
+        "code": 421,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SI",
+        "name": "Slovenia",
+        "code": 386,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SB",
+        "name": "Solomon Islands",
+        "code": 677,
+        "currency": "USD"
+    },
+    {
+        "shortname": "SO",
+        "name": "Somalia",
+        "code": 252,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "ZA",
+        "name": "South Africa",
+        "code": 27,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "KR",
+        "name": "South Korea",
+        "code": 82,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SS",
+        "name": "South Sudan",
+        "code": 211,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "ES",
+        "name": "Spain",
+        "code": 34,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "LK",
+        "name": "Sri Lanka",
+        "code": 94,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SD",
+        "name": "Sudan",
+        "code": 249,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SR",
+        "name": "Suriname",
+        "code": 597,
+        "currency": "USD"
+    },
+    {
+        "shortname": "SZ",
+        "name": "Swaziland",
+        "code": 268,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SE",
+        "name": "Sweden",
+        "code": 46,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "CH",
+        "name": "Switzerland",
+        "code": 41,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SY",
+        "name": "Syria",
+        "code": 963,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "TW",
+        "name": "Taiwan",
+        "code": 886,
+        "currency": "USD"
+    },
+    {
+        "shortname": "TJ",
+        "name": "Tajikistan",
+        "code": 992,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "TZ",
+        "name": "Tanzania",
+        "code": 255,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "TH",
+        "name": "Thailand",
+        "code": 66,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "TG",
+        "name": "Togo",
+        "code": 228,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "TK",
+        "name": "Tokelau",
+        "code": 690,
+        "currency": "USD"
+    },
+    {
+        "shortname": "TO",
+        "name": "Tonga",
+        "code": 676,
+        "currency": "USD"
+    },
+    {
+        "shortname": "TN",
+        "name": "Tunisia",
+        "code": 216,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "TR",
+        "name": "Turkey",
+        "code": 90,
+        "currency": "USD"
+    },
+    {
+        "shortname": "TM",
+        "name": "Turkmenistan",
+        "code": 993,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "TV",
+        "name": "Tuvalu",
+        "code": 688,
+        "currency": "USD"
+    },
+    {
+        "shortname": "UG",
+        "name": "Uganda",
+        "code": 256,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "UA",
+        "name": "Ukraine",
+        "code": 380,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "AE",
+        "name": "United Arab Emirates",
+        "code": 971,
+        "currency": "USD"
+    },
+    {
+        "shortname": "GB",
+        "name": "United Kingdom and Region",
+        "code": 44,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "US",
+        "name": "United States and Canada Region",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "UY",
+        "name": "Uruguay",
+        "code": 598,
+        "currency": "USD"
+    },
+    {
+        "shortname": "UZ",
+        "name": "Uzbekistan",
+        "code": 998,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "VU",
+        "name": "Vanuatu",
+        "code": 678,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "VE",
+        "name": "Venezuela",
+        "code": 58,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "VN",
+        "name": "Vietnam",
+        "code": 84,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "WF",
+        "name": "Wallis And Futuna Islands",
+        "code": 681,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "YE",
+        "name": "Yemen",
+        "code": 967,
+        "currency": "USD"
+    },
+    {
+        "shortname": "ZM",
+        "name": "Zambia",
+        "code": 260,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "ZW",
+        "name": "Zimbabwe",
+        "code": 263,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "AS",
+        "name": "American Samoa",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "AI",
+        "name": "Anguilla",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "AQ",
+        "name": "Antarctica",
+        "code": 672,
+        "currency": "USD"
+    },
+    {
+        "shortname": "AG",
+        "name": "Antigua And Barbuda",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "BS",
+        "name": "Bahamas The",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "BB",
+        "name": "Barbados",
+        "code": 1246,
+        "currency": "USD"
+    },
+    {
+        "shortname": "BM",
+        "name": "Bermuda",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "BV",
+        "name": "Bouvet Island",
+        "code": 47,
+        "currency": "USD"
+    },
+    {
+        "shortname": "IO",
+        "name": "British Indian Ocean Territory",
+        "code": 44,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "CA",
+        "name": "Canada",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "KY",
+        "name": "Cayman Islands",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "CX",
+        "name": "Christmas Island",
+        "code": 61,
+        "currency": "USD"
+    },
+    {
+        "shortname": "CC",
+        "name": "Cocos (Keeling) Islands",
+        "code": 61,
+        "currency": "USD"
+    },
+    {
+        "shortname": "CG",
+        "name": "Congo",
+        "code": 242,
+        "currency": "USD"
+    },
+    {
+        "shortname": "CI",
+        "name": "Cote dIvoire",
+        "code": 225,
+        "currency": "USD"
+    },
+    {
+        "shortname": "DJ",
+        "name": "Djibouti",
+        "code": 253,
+        "currency": "USD"
+    },
+    {
+        "shortname": "DM",
+        "name": "Dominica",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "DO",
+        "name": "Dominican Republic",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "ER",
+        "name": "Eritrea",
+        "code": 291,
+        "currency": "USD"
+    },
+    {
+        "shortname": "XA",
+        "name": "External Territories of Australia",
+        "code": 672,
+        "currency": "USD"
+    },
+    {
+        "shortname": "TF",
+        "name": "French Southern Territories",
+        "code": 262,
+        "currency": "USD"
+    },
+    {
+        "shortname": "GM",
+        "name": "Gambia The",
+        "code": 220,
+        "currency": "USD"
+    },
+    {
+        "shortname": "GD",
+        "name": "Grenada",
+        "code": 1473,
+        "currency": "USD"
+    },
+    {
+        "shortname": "GU",
+        "name": "Guam",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "XU",
+        "name": "Guernsey and Alderney",
+        "code": 44,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "HM",
+        "name": "Heard and McDonald Islands",
+        "code": 672,
+        "currency": "USD"
+    },
+    {
+        "shortname": "JM",
+        "name": "Jamaica",
+        "code": 1876,
+        "currency": "USD"
+    },
+    {
+        "shortname": "JE",
+        "name": "Jersey",
+        "code": 44,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "KZ",
+        "name": "Kazakhstan",
+        "code": 7,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "IM",
+        "name": "Man (Isle of)",
+        "code": 44,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "YT",
+        "name": "Mayotte",
+        "code": 262,
+        "currency": "USD"
+    },
+    {
+        "shortname": "FM",
+        "name": "Micronesia",
+        "code": 691,
+        "currency": "USD"
+    },
+    {
+        "shortname": "MS",
+        "name": "Montserrat",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "MP",
+        "name": "Northern Mariana Islands",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "PS",
+        "name": "Palestinian Territory Occupied",
+        "code": 970,
+        "currency": "USD"
+    },
+    {
+        "shortname": "PN",
+        "name": "Pitcairn Island",
+        "code": 64,
+        "currency": "USD"
+    },
+    {
+        "shortname": "PR",
+        "name": "Puerto Rico",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "RE",
+        "name": "Reunion",
+        "code": 262,
+        "currency": "USD"
+    },
+    {
+        "shortname": "SH",
+        "name": "Saint Helena",
+        "code": 290,
+        "currency": "USD"
+    },
+    {
+        "shortname": "KN",
+        "name": "Saint Kitts And Nevis",
+        "code": 1869,
+        "currency": "USD"
+    },
+    {
+        "shortname": "LC",
+        "name": "Saint Lucia",
+        "code": 1758,
+        "currency": "USD"
+    },
+    {
+        "shortname": "VC",
+        "name": "Saint Vincent And The Grenadines",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "SM",
+        "name": "San Marino",
+        "code": 378,
+        "currency": "USD"
+    },
+    {
+        "shortname": "XG",
+        "name": "Smaller Territories of the UK",
+        "code": 44,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "GS",
+        "name": "South Georgia",
+        "code": 995,
+        "currency": "USD"
+    },
+    {
+        "shortname": "SJ",
+        "name": "Svalbard And Jan Mayen Islands",
+        "code": 47,
+        "currency": "USD"
+    },
+    {
+        "shortname": "TT",
+        "name": "Trinidad And Tobago",
+        "code": 1868,
+        "currency": "USD"
+    },
+    {
+        "shortname": "TC",
+        "name": "Turks And Caicos Islands",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "VA",
+        "name": "Vatican City State (Holy See)",
+        "code": 379,
+        "currency": "USD"
+    },
+    {
+        "shortname": "VG",
+        "name": "Virgin Islands (British)",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "VI",
+        "name": "Virgin Islands (US)",
+        "code": 1,
+        "currency": "USD"
+    },
+    {
+        "shortname": "EH",
+        "name": "Western Sahara",
+        "code": 212,
+        "currency": "GBP"
+    },
+    {
+        "shortname": "YU",
+        "name": "Yugoslavia",
+        "code": 38,
+        "currency": "USD"
+    },
+    {
+        "shortname": "XK",
+        "name": "Kosovo",
+        "code": 383,
+        "currency": "GBP"
+    }
+]
