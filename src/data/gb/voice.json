@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Best Voice Call Api | Voice Api Service Provider in India - MSG91",
-        "description": "We are the leading Voice Call API provider in India. With MSG91 voice api service, every developer can build and integrate communication systems, missed call services etc."
+        "title": "Voice API for your Business | Voice Call API | MSG91-United Kingdom",
+        "description": "MSG91 provides voice call api's to your business which helps to engage your customers over voice with our virtual phone numbers, and voice APIs"
     },
     "BannerComp": {
         "slug": "voice",
@@ -15,7 +15,7 @@
       "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
-            "heading": "Support 15+ channels & platforms",
+            "heading": "Trusted by  30,000+  global businesses",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -48,42 +48,42 @@
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Call Monitoring",
-                "content":"<strong>Introducing the next-level communication experience with our all-new Call Monitoring features</strong>We're putting you in the driver's seat of your conversations. These robust features give you greater control and insight during your calls, ensuring enhanced communication and customer satisfaction. Call spying: your secret weapon for quality assurance! Call barging: real-time support, is just a click away! Call whispering: guidance at your fingertips!",
+                "content":"<strong>Introducing the next-level communication experience with our all-new Call Monitoring features</strong>We're giving you the reins of your conversations with UK callers. These robust features provide you with enhanced control and insight during your calls, ensuring improved communication and customer satisfaction. Call spying: your confidential tool for quality assurance for UK customers!  Call barging: real-time support, is just a click away! Call whispering: guidance at your fingertips!",
                 "img": "/assets/global/voice/voice-call-monitoring.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Direct calling from browser",
-                "content": "<strong>Skip the 2-way calling and directly call from browser.</strong>Enhance customer experience and save your agent's calling time in India. Seamlessly connect two phone numbers without putting one on hold, ensuring efficient customer conversations.",
+                "content": "<strong>Skip Traditional Calls and Dial Directly from Your Browser</strong>Enhance customer experiences while saving your agent's valuable time. Easily connect two phone numbers without placing one on hold, providing a seamless customer conversation experience.",
                 "img": "/assets/global/voice/voice-direct-calling-from-hello.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "IVR Flow",
-                "content": "<strong>Modern IVR for streamlined customer interactions in India</strong>Experience a cutting-edge IVR system in India that simplifies customer engagement. This smart IVR offers more than just query resolution. You can create time-based or agent-based settings and record personalized messages for a hassle-free experience.",
+                "content": "<strong>Modern IVR for Streamlined Customer Interaction in the UK</strong>Our sophisticated IVR system is designed to expedite customer interactions, going beyond query resolution. You can tailor settings based on time or agent availability, and even record personalized messages.",
                 "img": "/assets/global/voice/voice-ivr-flow.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Bulk Voice",
-                "content":"<strong>Engage with your audience in India through a single call</strong>Effectively communicate with your audience by recording and broadcasting voice messages in India. A ringing phone call is hard to ignore, making this a powerful way to convey your messages.",
+                "content":"<strong>Direct Voice Communication with Your UK Audience</strong>Effortlessly deliver your message to hundreds and thousands of customers with a single voice call. A ringing phone is hard to ignore, making it an effective way to reach your UK audience.",
                 "img": "/assets/global/voice/voice-bulk-voice.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Multiple Way to Upload File",
-                "content":"<strong>Various ways to upload your audio message in India</strong>Optimize customer interaction with personalized voice messages in India. Record messages for bulk voice calls or IVR menus using text-to-speech, browser mic, or phone calls.",
+                "content":"<strong>Versatile Audio Message Upload Options</strong>Amplify your customer interactions in the UK with personalized voice messages. Record your messages for bulk voice calls or IVR menus using text-to-speech, your browser's microphone, or a traditional phone call.",
                 "img": "/assets/global/voice/voice-multiple-way-to-upload-file.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Bulk voice with IVR",
-                "content":"<strong>Connect your voice calls to the IVR in India</strong>Extend your reach by sending bulk voice messages and collecting responses in India. Record your messages and transmit them to your customers using an IVR system.",
+                "content":"<strong>Seamlessly Connect Your Voice Calls to IVR in the UK</strong>Don't just send bulk voice messages; gather valuable feedback from your UK users. Record the message you want to convey and deliver it to your UK customers using our IVR system.",
                 "img": "/assets/global/voice/voice-bulk-voice-with-ivr.svg"
             },      {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Real time connect with agent on user input on bulk call",
-                "content": "<strong>Direct users to your support agents in India</strong>Elevate the customer experience in India by offering real-time support. Connect users to your customer support agents based on their input during bulk calls.",
+                "name": "Offer Real-Time Support to Your UK Users",
+                "content": "<strong>Direct Users to Your USA Support Agents</strong>Elevate the customer experience by providing immediate support when connecting your UK users to your customer support agents based on their bulk call input.",
                 "img": "/assets/global/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
             }
         ]
