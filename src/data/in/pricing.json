@@ -158,7 +158,8 @@
             "heading":"Outgoing call charges/min",
             "exportData": {
                 "content": "To download the detailed network and prefix wise pricing sheet. ",
-                "export": "Export"
+                "export": "Export",
+                "waiting": "Waiting..."
             },
             "addOns": {
                 "heading": "Add-on Services",

@@ -4,14 +4,84 @@ import countries from '@/data/countries.json';
 import { MdCheck } from 'react-icons/md';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
+import GetCurrencySymbol from '@/utils/getCurrencySymbol';
+import axios from 'axios';
+
 export default function PricingVoice({ data }) {
-    const [loading, setLoading] = useState(true);
+    const [countryData, setCountryData] = useState();
+    const [selectedCountry, setSelectedCountry] = useState([]);
+    const [currencyCode, setCurrencyCode] = useState();
+    const [symbol, setSymbol] = useState();
     const [plans, setPlans] = useState();
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState();
+    const [dialPlan, setDialPlan] = useState();
+    const [loadingExport, setLoadingExport] = useState(false);
+
+    //fetch Counties
+    useEffect(() => {
+        fetchCountryData();
+    }, []);
+
+    const fetchCountryData = async () => {
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_VOICE_API_BASE_URL}/public/country/`);
+            if (response.ok) {
+                const data = await response.json();
+                setCountryData(data);
+            } else {
+                throw new Error('Currently we only have plan for India(91)');
+            }
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+
+    // Set Country code
+    useEffect(() => {
+        const selectedCountryData = countries.find((country) => country?.shortname === selectedCountry?.country_code);
+        if (selectedCountryData) {
+            setCurrencyCode(selectedCountryData?.currency);
+        }
+    }, [selectedCountry]);
+
+    // Set Currency Symbol
+    useEffect(() => {
+        if (currencyCode) {
+            fetchDialPlan(currencyCode);
+            setSymbol(GetCurrencySymbol(currencyCode));
+        }
+    }, [currencyCode]);
+
+    //fetch dialPlan
+    const fetchDialPlan = async (currencyCode) => {
+        try {
+            const response = await fetch(
+                `${process.env.NEXT_PUBLIC_VOICE_API_BASE_URL}/public/dialplanPricing/?currency=${currencyCode}`
+            );
+            if (response.ok) {
+                const data = await response.json();
+
+                setDialPlan(data?.data.dialplan_id);
+            } else {
+                throw new Error('Currently we only have plan for India(91)');
+            }
+        } catch (error) {
+            setError(error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // fetch Plans
+    useEffect(() => {
+        if (selectedCountry && selectedCountry?.id && dialPlan) {
+            fetchData(selectedCountry?.id, dialPlan);
+        }
+    }, [dialPlan]);
 
     const fetchData = async (selectedCountry, dialPlan) => {
         setLoading(true);
-
         try {
             const response = await fetch(
                 `${process.env.NEXT_PUBLIC_VOICE_API_BASE_URL}/public/pricing/?cid=${selectedCountry}&dialplan_id=${dialPlan}`
@@ -29,18 +99,36 @@ export default function PricingVoice({ data }) {
         }
     };
 
-    useEffect(() => {
-        fetchData(231, 30);
-    }, []);
+    //export function
+    async function exportPricing() {
+        setLoadingExport(true);
 
+        try {
+            const response = await axios.get(
+                `${process.env.NEXT_PUBLIC_VOICE_API_BASE_URL}/public/pricing/?cid=${selectedCountry?.id}&dialplan_id=${dialPlan}&export=1`
+            );
+            if (response) {
+                setLoadingExport(false);
+                if (response?.data?.data?.url) {
+                    window.location.href = response.data.data.url;
+                }
+            }
+        } catch (e) {
+            console.log(e, 'error in my function');
+        } finally {
+            setLoadingExport(false);
+        }
+    }
+
+    //Auto complete functions
     const handleOnSelect = (item) => {
-        console.log(item);
+        setSelectedCountry(item);
     };
 
     const formatResult = (item) => {
         return (
             <>
-                <span className=''>{item.name}</span>
+                <span className=''>{item?.name}</span>
             </>
         );
     };
@@ -51,7 +139,7 @@ export default function PricingVoice({ data }) {
                 <div className='w-full flex flex-col gap-4'>
                     <div className='w-[300px] z-50'>
                         <ReactSearchAutocomplete
-                            items={countries}
+                            items={countryData}
                             onSelect={handleOnSelect}
                             showIcon={false}
                             formatResult={formatResult}
@@ -87,7 +175,7 @@ export default function PricingVoice({ data }) {
                                                 {' '}
                                                 {item?.local_rates_min && (
                                                     <>
-                                                        {/* {symbol} */}
+                                                        {symbol}
                                                         {item?.local_rates_min}
                                                     </>
                                                 )}
@@ -97,7 +185,7 @@ export default function PricingVoice({ data }) {
                                                         -{' '}
                                                         {item?.local_rates_max && (
                                                             <>
-                                                                {/* {symbol} */}
+                                                                {symbol}
                                                                 {item?.local_rates_max}
                                                             </>
                                                         )}
@@ -109,7 +197,7 @@ export default function PricingVoice({ data }) {
                                                 {' '}
                                                 {item?.international_rates_min && (
                                                     <>
-                                                        {/* {symbol} */}
+                                                        {symbol}
                                                         {item?.international_rates_min}
                                                     </>
                                                 )}
@@ -119,7 +207,7 @@ export default function PricingVoice({ data }) {
                                                         -{' '}
                                                         {item?.international_rates_max && (
                                                             <>
-                                                                {/* {symbol} */}
+                                                                {symbol}
                                                                 {item?.international_rates_max}
                                                             </>
                                                         )}
@@ -153,7 +241,13 @@ export default function PricingVoice({ data }) {
                     {data?.exportData && (
                         <p className='font-medium'>
                             {data?.exportData?.content}
-                            <span className='text-link active-link'>{data?.exportData?.export}</span>
+                            {loadingExport ? (
+                                <span className='active-link'>{data?.exportData?.waiting}</span>
+                            ) : (
+                                <span onClick={exportPricing} className='text-link active-link'>
+                                    {data?.exportData?.export}
+                                </span>
+                            )}
                         </p>
                     )}
                 </div>
@@ -182,7 +276,7 @@ export default function PricingVoice({ data }) {
                         data?.rates.length > 0 &&
                         data?.rates.map((rate, index) => {
                             return (
-                                <p>
+                                <p key={index}>
                                     <strong>{rate?.heading}: </strong>
                                     {rate?.content}
                                 </p>
