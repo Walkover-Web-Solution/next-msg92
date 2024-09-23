@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Transactional Email | Transactional Email API - MSG91-United States",
-        "description": "Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable.."
+        "title": "Transactional Email | Transactional Email API - MSG91-Spain",
+        "description": "Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
     },
     "BannerComp": {
         "slug": "email",
@@ -71,7 +71,7 @@
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Email Validation",
-                "content": "<strong>Deliver more messages to real contacts with our real-time API that detects and suppresses invalid email address with an accuracy rate of up to 85% to give you a clean list.",
+                "content": "<strong>Positively impact the engagement and reputation of your brand.</strong>Deliver more messages to real contacts with our real-time API that detects and suppresses invalid email address with an accuracy rate of up to 85% to give you a clean list.",
                "img": "/assets/global/email/email-validation.svg"
             }
         ]
