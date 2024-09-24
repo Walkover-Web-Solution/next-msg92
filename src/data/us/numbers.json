@@ -1,6 +1,6 @@
 {
     "HeadComp": {
-        "title": "Numbers API for business | MSG91-India",
+        "title": "Numbers API for business | MSG91-United States",
         "description": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!"
     },
     "BannerComp": {
@@ -11,7 +11,7 @@
         },
         "tagline": "Unlock the Power of Virtual Numbers",
         "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
-      
+     "banner_img": "/images/hello/hero.svg",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Support 15+ channels & platforms",
@@ -46,20 +46,20 @@
           
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Global Market Entry with Numbers: Empowering Your Business in India",
-                "content":"Empowering Your Business in India Numbers provide a seamless gateway for businesses aiming to expand their reach in India's dynamic market. These numbers enable companies to establish a local presence by acquiring an Indian phone number, simplifying connections with Indian customers and partners. By using India-based virtual numbers, businesses can foster trust, improve accessibility, and bridge geographical gaps, all while projecting professionalism and cost-effectiveness in their interactions. This approach is particularly valuable for international companies looking to unlock opportunities in the vibrant Indian market.",
+                "name": "Unlocking Global Markets with Numbers: Expanding Reach in the US",
+                "content":"Numbers open doors for businesses seeking to break into the American market. They offer the means to acquire a local US phone number, facilitating seamless connections with customers and collaborators in the USA. These virtual numbers enhance accessibility, projecting professionalism, and streamlining communication, all while offering cost-effective solutions for global expansion. This approach is invaluable for international companies aiming to tap into the thriving US market.",
                 "img": "/assets/global/numbers/numbers-global-market-entry-with-numbers.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Cost Efficiency",
-                "content": "Numbers in India offer a more budget-friendly alternative compared to traditional landlines. They entail lower setup costs, reduced maintenance expenses, and eliminate the need for physical infrastructure, delivering a cost-effective solution for businesses of all sizes operating in the Indian market.",
+                "content": "Numbers in us offer a more budget-friendly alternative compared to traditional landlines. They entail lower setup costs, reduced maintenance expenses, and eliminate the need for physical infrastructure, delivering a cost-effective solution for businesses of all sizes operating in the us market.",
                 "img": "/assets/global/numbers/numbers-cost-efficiency.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Missed Call Services",
-                "content": "Certain virtual number providers include features like missed call alerts and notifications, allowing Indian businesses to swiftly respond to customers who couldn't connect with them. This feature helps in providing timely assistance and enhancing customer engagement in the Indian market.",
+                "content": "Some virtual number providers offer functionalities such as missed call alerts and notifications, enabling U.S. businesses to promptly address customers who were unable to make contact. This feature aids in delivering timely support and boosting customer interaction in the American market.",
                 "img": "/assets/global/numbers/numbers-missed-call-services.svg"
             },
             {
@@ -88,7 +88,7 @@
             },       {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Lead Generation",
-                "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base.",
+                "content": " Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base.",
                 "img": "/assets/global/numbers/numbers-lead-generation.svg"
             },
             {

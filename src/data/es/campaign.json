@@ -1,0 +1,125 @@
+{
+    "HeadComp": {
+        "title": "SMS Campaign| MSG91-Spain",
+        "description": "Boost audience engagement through smart communication and on-time delivery. It's not only about communicating, it's about communicating with your users smartly and efficiently. Get Demo Reach your segmented customers across the world, Send your messages at the right moment! Features Automate sending messages under defined conditions Define different messaging parameters like time, region, number of.."
+    },
+    "BannerComp": {
+        "slug": "campaign",
+        "product": {
+            "name": "Campaign",
+            "icon": "/assets/icons/products/campaign.svg"
+        },
+        "tagline": "Event Base automation",
+        "heading": "Connect conversations across Channels and tools.",
+        "subheading": "Deliver personalized, engaging and seamless experiences",
+        "banner_img": "/assets/global/campaign/banner-campaign.webp",
+        "getstarted_btn": "Get Started for Free",
+        "trustedByComp": {
+            "heading": "Trusted by 30,000+ global businesses",
+            "logos": [
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Features",
+        "iconColor": "text-campaign",
+        "features": [
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Multi channel support",
+                "content": " <strong>Support your customers on their preferred channel.</strong>Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification,<a href='/in/whatsapp'>WhatsApp</a> and more. Meet your customers where they are.",
+                "img": "/assets/global/campaign/features/campaign-multi-channel-support.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Draggable Flow",
+                "content": "<strong>Drag and drop to create an omnichannel flow with ‘if-then’ scenarios.</strong>Choose when you need to initiate an SMS, email, or messaging conversation in a single workflow. Create a flow that is as simple or as complex as your business needs them to be.  ",
+                "img": "/assets/global/campaign/features/campaign-draggable-flow.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Time Based Condition",
+                "content": "<strong>Send perfectly timed automated messages.</strong>Build a thoughtful sending schedule with time-based conditions that control the time zone of when your campaigns are delivered. Support your customers at the right time.",
+                "img": "/assets/global/campaign/features/campaign-time-based-condition.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "API based Conditions",
+                "content": "<strong>Get information instantly for real-time interactions.</strong>Call for data even when in mid of a flow by sending data to a third-party system or requesting data needed for your communication steps. Deliver real-time information to your customers.",
+                "img": "/assets/global/campaign/features/campaign-api-based-conditions.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Country Based Condition",
+                "content": "<strong>Support your customers across the world.</strong>Create personalized and memorable experiences for your customer across countries, languages, content, channels, flows and more. Easily connect, customize and communicate.",
+                "img": "/assets/global/campaign/features/campaign-country-based-condition.svg"
+            }
+        ]
+    },
+    "FaqsComp": {
+        "heading": "Frequently Asked Questions",
+        "faqs": [
+            {
+                "question": "How can MSG91 benefit my business?",
+                "answer": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+            },
+            {
+                "question": "What makes MSG91 different from other communication platforms?",
+                "answer": "MSG91 stands out due to its reliability, scalability, and versatility. We specialize in providing mobile cloud communication platforms in India , addressing the unique needs of businesses in this market. Our platform offers advanced features, customizable solutions, and exceptional customer support to help businesses achieve their communication goals."
+            },
+            {
+                "question": "Is MSG91 suitable for businesses of all sizes?",
+                "answer": "Yes, MSG91 caters to businesses of all sizes. Whether you're a startup, small business, or large enterprise, our platform can be tailored to meet your specific requirements. We offer scalable solutions that can accommodate the communication needs of businesses as they grow and expand."
+            },
+            {
+                "question": "Is MSG91 secure?",
+                "answer": "Security is a top priority at MSG91. We implement industry-standard protocols and encryption techniques to ensure the confidentiality and integrity of your data. Our enterprise cloud communications platform offers features like two-factor authentication and OTP verification to enhance security and protect sensitive information."
+            },
+            {
+                "question": "Can I integrate MSG91 with my existing systems or applications?",
+                "answer": "Absolutely! MSG91 provides developer-friendly APIs and documentation, making it easy to integrate our platform with your existing systems or applications. Our APIs allow you to incorporate our communication functionalities seamlessly, enabling you to automate communication and streamline your workflows."
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

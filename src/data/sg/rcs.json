@@ -1,5 +1,5 @@
 { "HeadComp": {
-    "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91 - India",
+    "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91 - Singapore",
     "description":"Enhance your customer engagement with Rich Communication Service. Effortless RCS integration and advanced features boost communication and stimulate business growth"
   }, 
          "BannerComp": {
@@ -14,7 +14,7 @@
         "banner_img": "/assets/global/hello/banner.webp",
           "getstarted_btn": "Get Started",
           "trustedByComp": {
-            "heading": "Support 15+ channels & platforms",
+            "heading": "Trusted by 30,000+ global businesses",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -55,13 +55,13 @@
         },
         {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
           "name": "Boost Sales Through Interactive Conversations",
-          "content": " Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions.",
+          "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions.",
           "img": "/assets/global/rcs/rcs-boost-sales.svg"
         },
     {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
           "name": "Enhanced Customer Trust",
           "content": " <strong>Understand your customers' habits</strong>Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility.",
-          "img": "/assets/global/rcs/rcs-customer-trust.svg"
+           "img": "/assets/global/rcs/rcs-customer-trust.svg"
         }]
       },
       "PreFooterComp": {
