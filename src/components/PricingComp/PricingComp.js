@@ -3,7 +3,7 @@ import PricingHello from './PricingHello/PricingHello';
 import PricingCampaign from './PricingCampaign/PricingCampaign';
 import PricingSegmento from './PricingSegmento/PricingSegmento';
 import PricingOtp from './PricingOtp/PricingOtp';
-import PricingSMS from './PricingSMS/PricingSMS';
+import PricingSMSOTP from './PricingSMS/PricingSMSOTP';
 import PricingSendOTP from './PricingSendOTP/PricingSendOTP';
 import PricingVoice from './PricingVoice/PricingVoice';
 import PricingRCS from './PricingRCS/PricingRCS';
@@ -32,9 +32,9 @@ export default function PricingComp({ data, pageInfo }) {
 
                     {page === 'otpwidget' && <PricingOtp data={data?.otpwidget} />}
 
-                    {page === 'sms' && <PricingSMS data={data?.sms} />}
+                    {page === 'sms' && <PricingSMSOTP data={data?.sms} type={'sms'} />}
 
-                    {page === 'otp' && <PricingSendOTP data={data?.otp} />}
+                    {page === 'otp' && <PricingSMSOTP data={data?.otp} type={'otp'} />}
 
                     {page === 'email' && <PricingEmail data={data?.email} />}
 

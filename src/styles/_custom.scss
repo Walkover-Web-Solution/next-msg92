@@ -164,3 +164,44 @@ $button-transition-timing: 100ms;
 .jiMOeR .wrapper {
     box-shadow: none !important;
 }
+
+
+//SMS OTP slider
+.input-slider-padding {
+    padding: 0 56px;
+    @media only screen and (max-width: 1025px) {
+        padding: 0 32px;
+    }
+    @media only screen and (max-width: 780px) {
+        padding: 0 0px;
+    }
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.slider::-webkit-slider-runnable-track {
+    height: 20px;
+    background: linear-gradient(90deg, rgba(41, 166, 83, 0.15) 0%, #29a653 100%);
+    border-radius: 16px;
+
+    stroke: #5d6164;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid rgb(88, 88, 88);
+    box-shadow: -1207px 0 0 1200px #307368;
+}
