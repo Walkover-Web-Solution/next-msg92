@@ -1,0 +1,28 @@
+.chatbot_card-cont {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+.chatbot_card {
+    cursor: pointer;
+    &.active {
+        outline: 4px solid var(--hello);
+    }
+    background: #fafafa;
+    border-radius: 8px;
+    &:hover {
+        outline: 4px solid var(--hello);
+    }
+}
+
+.chatbotwrapper {
+    margin-top: 80px;
+    height: 650px;
+    min-width: 380px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-items: center;
+}
