@@ -15,6 +15,7 @@ import PricingOtpWidget from '@/components/pricing/pricing-otpwidget';
 import Pricingknowledgebase from '@/components/pricing/pricing-knowledgebase';
 import Link from 'next/link';
 import { MdExpandMore } from 'react-icons/md';
+import { InlineWidget } from 'react-calendly';
 
 const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
     var availCont = ['US', 'GB', 'IN', 'BR', 'SG', 'AE', 'PH', 'ES'];
@@ -418,203 +419,28 @@ const PricingComp = ({ countryCode, product, browserPath, pathArray }) => {
                         {product === 'rcs' && <Pricingrcs />}
                     </div>
                 </div>
-                {/* <div className="bg-white">
-        <div className="container Frequently-Questions py-5">
-        <strong className="sub-heading">Frequently Asked Questions</strong>
-        <div className="accordion mt-4" id="accordionPanelsStayOpenExample">
-        <div className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                  className="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#panelsStayOpen-collapseOne"
-                  aria-expanded="true"
-                  aria-controls="panelsStayOpen-collapseOne"
-                >
-                  How can MSG91 benefit my business?
-                </button>
-              </h2>
-              <div
-                id="panelsStayOpen-collapseOne"
-                className="accordion-collapse collapse show"
-              >
-                <div className="accordion-body">
-                  MSG91 offers numerous benefits for businesses, including
-                  improved customer engagement, streamlined communication
-                  workflows, increased operational efficiency, and enhanced
-                  brand reputation. Our platform enables businesses to automate
-                  communication, personalize interactions, and reach their
-                  target audience through their preferred channels.
+                <div
+                className="modal fade"
+                id="sales-modal"
+                tabIndex={-1}
+                aria-labelledby="Schedule a meeting"
+                aria-hidden="true"
+            >
+                <div className="modal-dialog modal-xl">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                        </div>
+
+                        <div className="modal-body">
+                            <InlineWidget
+                                url="https://calendly.com/sales-msg91/pre-sales"
+                                styles={{ height: '660px' }}
+                            />
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#panelsStayOpen-collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="panelsStayOpen-collapseTwo"
-                >
-                  What makes MSG91 different from other communication platforms?
-                </button>
-              </h2>
-              <div
-                id="panelsStayOpen-collapseTwo"
-                className="accordion-collapse collapse"
-              >
-                <div className="accordion-body">
-                  MSG91 offers numerous benefits for businesses, including
-                  improved customer engagement, streamlined communication
-                  workflows, increased operational efficiency, and enhanced
-                  brand reputation. Our platform enables businesses to automate
-                  communication, personalize interactions, and reach their
-                  target audience through their preferred channels.
-                </div>
-              </div>
-            </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#panelsStayOpen-collapseThree"
-                  aria-expanded="false"
-                  aria-controls="panelsStayOpen-collapseThree"
-                >
-                  Is MSG91 suitable for businesses of all sizes?
-                </button>
-              </h2>
-              <div
-                id="panelsStayOpen-collapseThree"
-                className="accordion-collapse collapse"
-              >
-                <div className="accordion-body">
-                  MSG91 offers numerous benefits for businesses, including
-                  improved customer engagement, streamlined communication
-                  workflows, increased operational efficiency, and enhanced
-                  brand reputation. Our platform enables businesses to automate
-                  communication, personalize interactions, and reach their
-                  target audience through their preferred channels.
-                </div>
-              </div>
-            </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#panelsStayOpen-collapseThree"
-                  aria-expanded="false"
-                  aria-controls="panelsStayOpen-collapseThree"
-                >
-                  Is MSG91 secure?
-                </button>
-              </h2>
-              <div
-                id="panelsStayOpen-collapseThree"
-                className="accordion-collapse collapse"
-              >
-                <div className="accordion-body">
-                  MSG91 offers numerous benefits for businesses, including
-                  improved customer engagement, streamlined communication
-                  workflows, increased operational efficiency, and enhanced
-                  brand reputation. Our platform enables businesses to automate
-                  communication, personalize interactions, and reach their
-                  target audience through their preferred channels.
-                </div>
-              </div>
-            </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#panelsStayOpen-collapseThree"
-                  aria-expanded="false"
-                  aria-controls="panelsStayOpen-collapseThree"
-                >
-                  Can I integrate MSG91 with my existing systems or
-                  applications?
-                </button>
-              </h2>
-              <div
-                id="panelsStayOpen-collapseThree"
-                className="accordion-collapse collapse"
-              >
-                <div className="accordion-body">
-                  MSG91 offers numerous benefits for businesses, including
-                  improved customer engagement, streamlined communication
-                  workflows, increased operational efficiency, and enhanced
-                  brand reputation. Our platform enables businesses to automate
-                  communication, personalize interactions, and reach their
-                  target audience through their preferred channels.
-                </div>
-              </div>
-            </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#panelsStayOpen-collapseThree"
-                  aria-expanded="false"
-                  aria-controls="panelsStayOpen-collapseThree"
-                >
-                  What level of support can I expect from MSG91?
-                </button>
-              </h2>
-              <div
-                id="panelsStayOpen-collapseThree"
-                className="accordion-collapse collapse"
-              >
-                <div className="accordion-body">
-                  MSG91 offers numerous benefits for businesses, including
-                  improved customer engagement, streamlined communication
-                  workflows, increased operational efficiency, and enhanced
-                  brand reputation. Our platform enables businesses to automate
-                  communication, personalize interactions, and reach their
-                  target audience through their preferred channels.
-                </div>
-              </div>
-            </div>
-            <div className="accordion-item">
-              <h2 className="accordion-header">
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#panelsStayOpen-collapseThree"
-                  aria-expanded="false"
-                  aria-controls="panelsStayOpen-collapseThree"
-                >
-                  How do I get started with MSG91?
-                </button>
-              </h2>
-              <div
-                id="panelsStayOpen-collapseThree"
-                className="accordion-collapse collapse"
-              >
-                <div className="accordion-body">
-                  MSG91 offers numerous benefits for businesses, including
-                  improved customer engagement, streamlined communication
-                  workflows, increased operational efficiency, and enhanced
-                  brand reputation. Our platform enables businesses to automate
-                  communication, personalize interactions, and reach their
-                  target audience through their preferred channels.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div> */}
             </div>
         </>
     );

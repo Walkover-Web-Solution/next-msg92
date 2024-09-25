@@ -98,6 +98,7 @@ const HelloNewComponent = ({ pageData, path, pricingPath }) => {
                         <h2 className="small-heading w-md-75 w-100 mx-auto fw-normal mt-2">{pageData?.subheading}</h2>
 
                         <a
+                        target="_blank"
                             href="https://control.msg91.com/signup/"
                             className="btn btn-dark btn-lg c-fs-2 mt-5 utm get-started-hello"
                         >
@@ -233,6 +234,7 @@ const HelloNewComponent = ({ pageData, path, pricingPath }) => {
                         started with HELLO by MSG91 now and experience the difference firsthand.
                     </div>
                     <a
+                    target="_blank"
                         href="https://control.msg91.com/signup/"
                         className="btn btn-dark btn-lg c-fs-2 mt-4  mb-4 utm get-started-hello me-5"
                     >

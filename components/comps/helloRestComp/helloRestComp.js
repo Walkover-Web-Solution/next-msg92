@@ -31,6 +31,7 @@ const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }
                                 </p>
                             </div>
                             <a
+                            target="_blank"
                                 href="https://control.msg91.com/signup/"
                                 className="btn btn-ft btn-dark rounded-1 c-fs-4"
                             >
