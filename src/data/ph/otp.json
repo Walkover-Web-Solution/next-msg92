@@ -1,0 +1,67 @@
+{ "HeadComp": {
+    "title": "Send OTP | OTP Service Providers -MSG91-Philippines",
+    "description":"Send OTP provides secure and reliable SMS API Integration that helps you easily send OTP to your users for 2 factor authentication."
+  }, 
+         "BannerComp": {
+          "slug": "otp",
+          "product": {
+              "name": "OTP",
+              "icon": "/assets/icons/products/otp.svg"
+          },
+          "tagline": "Instant Secure Verification",
+          "heading": "Simplest, quickest and most effective way to verify your users",
+          "subheading":"Build customer trust and enable business protection with two-factor authentication.",
+          "banner_img": "/assets/global/otp/banner-otp.webp",
+          "getstarted_btn": "Get Started For Free",
+          "trustedByComp": {
+            "heading": "Trusted by 30,000+ global businesses",
+            "logos":  [
+              {"name": "Xiaomi", "url": "/assets/trusted_by/xiaomi.svg"},
+              {"name": "Unacademy", "url": "/assets/trusted_by/unacademy.svg"},
+              {"name": "Dream11", "url": "/assets/trusted_by/dream11.svg"},
+              {"name": "Indeed", "url": "/assets/trusted_by/indeed.svg"},
+              {"name": "Indian Oil", "url": "/assets/trusted_by/indianoil.svg"},
+              {"name": "Ixigo", "url": "/assets/trusted_by/ixigo.svg"}
+            ]
+        }
+      
+      },
+      "FeatureComp":{ 
+        "heading": "Features",
+          "iconColor": "text-otp",
+          "features":[
+        { "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+          "name": "Simple as Login With Google",
+          "content": "<strong>Login with OTP is as simple as login with Gmail</strong> Give your users a fast, non-disruptive and simple authentication experience. Implement login with OTP by entering your mobile number or email address to receive OTP via SMS or email.",
+          "img": "/assets/global/otp/otp-simple-login.svg"
+        },
+        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+          "name": "Inbuilt IP Security",
+          "content": "<strong>Protect against fraud, hacks, validation, blocking</strong>  Minimize fraud with an extra layer of security. The inbuilt security ensures that when a login is risky the flow does not allow the bad actor to login by viewing it as potentially fraudulent.",
+          "img":  "/assets/global/otp/otp-inbuilt-ip-security.svg"
+        },
+        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+          "name": "Support multiple channels",
+          "content": "<strong>Build customer trust and increase conversion across multiple channels</strong> Authenticate your users on channels they prefer. We support multiple channels including SMS, email, Voice, <a href='/in/whatsapp'>WhatsApp</a>  giving businesses and users the flexibility they need to authenticate.",
+          "img": "/assets/global/otp/otp-support-multiple-channels.svg"
+        }]
+      },
+      "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+    }
+    
