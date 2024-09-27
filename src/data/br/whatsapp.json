@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "WhatsApp API for businesses in India | MSG91-India",
-        "description": "Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred & reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now."
+        "title": "WhatsApp API for businesses in Brazil | MSG91-Brazil",
+        "description": "Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred &amp; reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now."
     },
     "BannerComp": {
         "slug": "whatsapp",
@@ -16,7 +16,7 @@
         "getstarted_btn": "Get Started",
         "schedule_meet":"Schedule a Meeting",
         "trustedByComp": {
-            "heading": "Support 15+ channels & platforms",
+            "heading": "Trusted by 30,000+ global businesses",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -48,7 +48,7 @@
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "WhatsApp ChatBot",
-                "content": "Automated interactions on the messaging platform, providing instant responses, handling customer inquiries, and performing tasks such as customer support, order tracking,place order and providing information. It enhances customer service efficiency and availability.",
+                "content": "A WhatsApp chatbot automates customer interactions with pre-programmed responses and workflows. It can handle common queries, schedule appointments, track your order, offer customer support, and work 24/7. Chatbots use keywords and quick replies to engage customers and can escalate complex issues to human agents, ensuring a seamless experience.",
                 "img": "/assets/global/whatsapp/whatsapp-chatBot.svg"
             },
             {
@@ -91,7 +91,13 @@
                 "name": "2-way Communication",
                 "content": "<strong>Say hello to go on HELLO.</strong>Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business.",
                 "img": "/assets/global/whatsapp/whatsapp-2way-communication.svg"
-            },     {
+            },  
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Manage Template Inside Panel",
+                "content": "<strong>Create and manage your templates right here.</strong>No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook.",
+                "img": "/assets/global/whatsapp/whatsapp-analytics.svg"
+            },   {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Analytics",
                 "content": "<strong>Get graphical insights into your business messages.</strong>Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more.",

@@ -34,5 +34,10 @@
         "shortName": "es",
         "name": "Spain",
         "Currency": "EUR"
+    },
+    {
+        "shortName": "br",
+        "name": "Brazil",
+        "Currency": "BRL"
     }
 ]

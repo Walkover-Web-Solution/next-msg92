@@ -62,7 +62,7 @@
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Zero Charge on Click to WhatsApp Ads",
                 "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget-Friendly.",
-                "img": "/assets/global/whatsapp/whatsapp-zero-charge-low-latency-delivery-worldwide.svg"
+                "img": "/assets/global/whatsapp/whatsapp-zero-charge-on-click.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
@@ -74,7 +74,7 @@
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Broadcast / Campaign",
                 "content": "WhatsApp's broadcast lets you send the same message to multiple contacts at once, ideal for updates and announcements. Campaigns, available in the WhatsApp Business API, enable targeted marketing with automated, personalized messages. Both help businesses reach more people efficiently.",
-                "img": "/assets/global/whatsapp/whatsapp-enjoy-reliable-low-latency-delivery-worldwide.svg"
+           "img": "/assets/global/whatsapp/whatsapp-campaign.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
