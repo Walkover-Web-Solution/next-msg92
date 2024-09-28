@@ -1,0 +1,133 @@
+{
+    "HeadComp": {
+        "title": "Melhor API de Chamadas de Voz | Provedor de Serviço de API de Voz no Brasil - MSG91",
+        "description": "Somos o principal provedor de API de chamadas de voz no Brasil. Com o serviço de API de voz da MSG91, cada desenvolvedor pode construir e integrar sistemas de comunicação, serviços de chamadas perdidas, entre outros."
+    },
+    "BannerComp": {
+        "slug": "voice",
+        "product": {
+            "name": "Voice",
+            "icon": "/assets/icons/products/voice.svg"
+        },
+        "tagline": "conecte-se com confiança",
+        "heading": "Aumente o engajamento do cliente e construa confiança",
+        "subheading": "Inicie conversas em tempo real com áudio cristalino, baixa latência e insights mais profundos.",
+      "banner_img": "/assets/global/hello/banner.webp",
+        "getstarted_btn": "Comece gratuitamente",
+        "trustedByComp": {
+            "heading": "Confiado por 30,000+ negócios globais",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Características",
+        "iconColor": "text-campaign",
+        "features": [
+          
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Monitoramento de Chamadas",
+                "content":"<strong>Introducing the next-level communication experience with our all-new Call Monitoring features</strong>Estamos colocando você no controle de suas conversas com os chamadores. Esses recursos robustos oferecem maior controle e percepção durante suas chamadas, garantindo uma comunicação aprimorada e satisfação do cliente. Espionagem de chamadas: sua arma secreta para garantia de qualidade! Intervenção em chamadas: suporte em tempo real, a apenas um clique de distância! Sussurro de chamadas: orientação ao seu alcance!",
+                "img": "/assets/global/voice/voice-call-monitoring.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Chamada direta do navegador",
+                "content": "<strong>Pule a chamada bidirecional e ligue diretamente do navegador.</strong>Economize o tempo de chamada do seu agente e melhore a experiência do cliente. Conecte facilmente dois números de telefone sem manter um em espera para iniciar uma conversa com o cliente.",
+                "img": "/assets/global/voice/voice-direct-calling-from-hello.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Fluxo IVR",
+                "content": "<strong>IVR moderno que torna a interação do cliente rápida e sem complicações.</strong>Sistema IVR inteligente que oferece mais do que apenas resolver consultas. Além do habitual, você pode criar uma configuração baseada em tempo ou agente e até mesmo gravar uma mensagem.",
+                "img": "/assets/global/voice/voice-ivr-flow.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Voz em Massa",
+                "content":"<strong>Fale diretamente com seu público em uma única chamada.</strong>Grave sua mensagem de voz e envie a mensagem que deseja transmitir para centenas e milhares de clientes de uma só vez. Uma chamada telefônica geralmente é difícil de ignorar.",
+                "img": "/assets/global/voice/voice-bulk-voice.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Múltiplas maneiras de carregar arquivo",
+                "content":"<strong>Carregue sua mensagem de áudio de várias maneiras.</strong>Amplifique sua interação com o cliente com uma mensagem de voz personalizada. Grave sua mensagem para chamada de voz em massa ou menu IVR através de texto para fala, microfone do navegador ou chamada telefônica.",
+                "img": "/assets/global/voice/voice-multiple-way-to-upload-file.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Voz em massa com IVR",
+                "content":"<strong>Conecte sua chamada de voz ao IVR.</strong>Não apenas envie uma mensagem de voz em massa, mas também receba uma resposta de seus usuários. Grave a mensagem que você gostaria de transmitir e envie-a para seus clientes usando um IVR.",
+                "img": "/assets/global/voice/voice-bulk-voice-with-ivr.svg"
+            },      {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Conexão em tempo real com agente na entrada do usuário em chamada em massa",
+                "content": "<strong>Direcione seu usuário para seu agente de suporte.</strong>Melhore a experiência do cliente oferecendo suporte em tempo real quando você conecta seus usuários aos seus agentes de suporte ao cliente com base na entrada de chamada em massa.",
+                "img": "/assets/global/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
+            }
+        ]
+    },
+    "FaqsComp": {
+        "heading": "Perguntas Frequentes",
+        "faqs": [
+            {
+                "question": "Como o MSG91 pode beneficiar o meu negócio?",
+                "answer": "O MSG91 oferece inúmeros benefícios para os negócios, incluindo maior engajamento do cliente, fluxos de comunicação simplificados, aumento da eficiência operacional e melhoria da reputação da marca. Nossa plataforma permite que as empresas automatizem a comunicação, personalizem interações e alcancem seu público-alvo através dos canais de sua preferência."
+            },
+            {
+                "question": "O que torna o MSG91 diferente de outras plataformas de comunicação?",
+                "answer": "O MSG91 se destaca devido à sua confiabilidade, escalabilidade e versatilidade. Somos especializados em fornecer plataformas de comunicação em nuvem móvel na Índia, atendendo às necessidades únicas das empresas neste mercado. Nossa plataforma oferece recursos avançados, soluções personalizáveis e suporte ao cliente excepcional para ajudar as empresas a alcançarem seus objetivos de comunicação."
+            },
+            {
+                "question": "O MSG91 é adequado para empresas de todos os tamanhos?",
+                "answer": "Sim, o MSG91 atende empresas de todos os tamanhos. Seja você uma startup, pequena empresa ou grande empresa, nossa plataforma pode ser adaptada para atender às suas necessidades específicas. Oferecemos soluções escaláveis que podem acomodar as necessidades de comunicação das empresas à medida que elas crescem e se expandem."
+            },
+            {
+                "question": "O MSG91 é seguro?",
+                "answer": "A segurança é uma prioridade no MSG91. Implementamos protocolos e técnicas de criptografia padrão da indústria para garantir a confidencialidade e integridade dos seus dados. Nossa plataforma de comunicações em nuvem para empresas oferece recursos como autenticação de dois fatores e verificação de OTP para aumentar a segurança e proteger informações sensíveis."
+            },
+            {
+                "question": "Posso integrar o MSG91 com meus sistemas ou aplicativos existentes?",
+                "answer": "Absolutamente! O MSG91 fornece APIs e documentação amigáveis para desenvolvedores, tornando fácil integrar nossa plataforma com seus sistemas ou aplicativos existentes. Nossas APIs permitem incorporar nossas funcionalidades de comunicação sem problemas, permitindo que você automatize a comunicação e simplifique seus fluxos de trabalho."
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

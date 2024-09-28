@@ -39,5 +39,10 @@
         "shortName": "br",
         "name": "Brazil",
         "Currency": "BRL"
+    },
+    {
+        "shortName": "br-pt",
+        "name": "Brazil",
+        "Currency": "BRL"
     }
 ]

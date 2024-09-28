@@ -1,0 +1,122 @@
+{
+    "HeadComp": {
+        "title": "Serviços de Email Transacional no Brasil | Provedor de API de Email - MSG91-Brasil",
+        "description": "Nossa melhor integração de API de email para emails orientados por aplicativos oferece uma maneira fácil de automatizar o envio com base nas ações dos usuários. Envie, receba e acompanhe emails com o melhor serviço de API de email da MSG91."
+    },
+    "BannerComp": {
+        "slug": "email",
+        "product": {
+            "name": "Email",
+            "icon": "/assets/icons/products/email.svg"
+        },
+        "tagline": "estratégia de email mais inteligente",
+        "heading": "Emails inteligentes que chegam diretamente na caixa de entrada certa",
+        "subheading": "Aproveite ao máximo esses pontos de contato poderosos entre sua marca e seus clientes.",
+       "banner_img": "/assets/global/hello/banner.webp",
+        "getstarted_btn": "Comece gratuitamente",
+        "trustedByComp": {
+            "heading": "Confiado por 30,000+ negócios globais",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Características",
+        "iconColor": "text-email",
+        "features": [
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Construtor de Modelos de Email",
+                "content": "<strong>Arraste e solte para criar o layout do seu email.</strong>Personalize seus emails transacionais usando nossa interface sem código, de arrastar e soltar. Visualize para ver como seu email aparecerá quando visualizado em diferentes dispositivos.",
+                "img": "/assets/global/email/email-template-builder.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Emails AMP",
+                "content": "<strong>Emails interativos ricos para aumentar o engajamento do usuário.</strong>Emails interativos ricos para aumentar o engajamento do usuário. Seus clientes podem interagir dinamicamente com sua mensagem diretamente no email para realizar tarefas e CTAs com menos etapas e sem redirecionamentos.",
+                "img": "/assets/global/email/email-amp-emails.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Estatísticas",
+                "content": "<strong>Monitore e acompanhe todos os aspectos do ciclo de vida do seu email.</strong> Obtenha uma representação gráfica das taxas de entrega, taxas de abertura, taxas de cliques, taxas de rejeição e spam para iterar e garantir que você chegue à caixa de entrada do seu cliente.",
+                "img": "/assets/global/email/email-statistics.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Suporte SMTP/RestAPI",
+                "content": " <strong>Integre com nossas APIs RESTful e SMTP em minutos.</strong>Integre com nossas APIs RESTful e SMTP em minutos. Tenha acesso à nossa documentação abrangente ou conecte-se com nossos heróis de suporte para integrar facilmente em seus aplicativos personalizados ou de terceiros para começar a enviar emails.",
+               "img": "/assets/global/email/email-smtp-restapi-support.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Validação de Email",
+                "content": "<strong>Impacte positivamente o engajamento e a reputação da sua marca.</strong>Envie mais mensagens para contatos reais com nossa API em tempo real que detecta e suprime endereços de email inválidos com uma taxa de precisão de até 85% para fornecer uma lista limpa.",
+               "img": "/assets/global/email/email-validation.svg"
+            }
+        ]
+    },
+    "FaqsComp": {
+        "heading": "Perguntas Frequentes",
+        "faqs": [
+            {
+                "question": "Como o MSG91 pode beneficiar o meu negócio?",
+                "answer": "O MSG91 oferece inúmeros benefícios para os negócios, incluindo maior engajamento do cliente, fluxos de comunicação simplificados, aumento da eficiência operacional e melhoria da reputação da marca. Nossa plataforma permite que as empresas automatizem a comunicação, personalizem interações e alcancem seu público-alvo através dos canais de sua preferência."
+            },
+            {
+                "question": "O que torna o MSG91 diferente de outras plataformas de comunicação?",
+                "answer": "O MSG91 se destaca devido à sua confiabilidade, escalabilidade e versatilidade. Somos especializados em fornecer plataformas de comunicação em nuvem móvel na Índia, atendendo às necessidades únicas das empresas neste mercado. Nossa plataforma oferece recursos avançados, soluções personalizáveis e suporte ao cliente excepcional para ajudar as empresas a alcançarem seus objetivos de comunicação."
+            },
+            {
+                "question": "O MSG91 é adequado para empresas de todos os tamanhos?",
+                "answer": "Sim, o MSG91 atende empresas de todos os tamanhos. Seja você uma startup, pequena empresa ou grande empresa, nossa plataforma pode ser adaptada para atender às suas necessidades específicas. Oferecemos soluções escaláveis que podem acomodar as necessidades de comunicação das empresas à medida que elas crescem e se expandem."
+            },
+            {
+                "question": "O MSG91 é seguro?",
+                "answer": "A segurança é uma prioridade no MSG91. Implementamos protocolos e técnicas de criptografia padrão da indústria para garantir a confidencialidade e integridade dos seus dados. Nossa plataforma de comunicações em nuvem para empresas oferece recursos como autenticação de dois fatores e verificação de OTP para aumentar a segurança e proteger informações sensíveis."
+            },
+            {
+                "question": "Posso integrar o MSG91 com meus sistemas ou aplicativos existentes?",
+                "answer": "Absolutamente! O MSG91 fornece APIs e documentação amigáveis para desenvolvedores, tornando fácil integrar nossa plataforma com seus sistemas ou aplicativos existentes. Nossas APIs permitem incorporar nossas funcionalidades de comunicação sem problemas, permitindo que você automatize a comunicação e simplifique seus fluxos de trabalho."
+            }
+        ]
+    },
+    
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
