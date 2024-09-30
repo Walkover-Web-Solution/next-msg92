@@ -3,21 +3,31 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
-import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import countries from '@/data/countries.json';
+import { Typeahead } from 'react-bootstrap-typeahead';
+import GetCurrencySymbol from '@/utils/getCurrencySymbol';
+import GetCountryDetails from '@/utils/getCurrentCountry';
 
-export default function PricingSMSOTP({ data, type }) {
+export default function PricingSMSOTP({ data, type, country }) {
+    const { currency, symbol } = GetCurrencySymbol(country);
+    const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
+
     const [loading, setLoading] = useState(true);
     const [pricingData, setPricingData] = useState(null);
-    const [currency, setCurrency] = useState('INR');
-    const [symbol, setSymbol] = useState('$');
-    const [origin, setOrigin] = useState('India');
-    const [destination, setDestination] = useState('India');
+    const [origin, setOrigin] = useState(currentCountry?.name);
+    const [destination, setDestination] = useState(currentCountry?.name);
     const [noOfSmsArray, setNoOfSmsArray] = useState([]);
     const [amountArray, setAmountArray] = useState([]);
 
     //slider states
     const [sliderValue, setSliderValue] = useState(2);
+
+    const pricingEnv = type === 'sms' ? 4 : 19;
+    useEffect(() => {
+        if (pricingData) {
+            setNoOfSmsArray(pricingData.sort((a, b) => a[pricingEnv]?.totalNoOfSms - b[pricingEnv]?.totalNoOfSms));
+        }
+    }, [pricingData]);
 
     useEffect(() => {
         setAmountArray(
@@ -26,13 +36,6 @@ export default function PricingSMSOTP({ data, type }) {
                 : ['5000']
         );
     }, [origin, destination]);
-
-    const pricingEnv = type === 'sms' ? 4 : 19;
-    useEffect(() => {
-        if (pricingData) {
-            setNoOfSmsArray(pricingData.sort((a, b) => a[pricingEnv]?.totalNoOfSms - b[pricingEnv]?.totalNoOfSms));
-        }
-    });
 
     useEffect(() => {
         setLoading(true);
@@ -69,60 +72,47 @@ export default function PricingSMSOTP({ data, type }) {
 
     //Auto complete functions
     const handleOnSelectOrigin = (item) => {
-        setOrigin(item?.name);
+        setOrigin(item[0]?.name);
     };
     const handleOnSelectDestination = (item) => {
-        setDestination(item?.name);
+        setDestination(item[0]?.name);
     };
 
-    const formatResult = (item) => {
-        return (
-            <>
-                <span className=''>{item?.name}</span>
-            </>
-        );
-    };
     return (
         <>
             <div className='w-full flex flex-col gap-8'>
                 <div className='flex items-center text-lg gap-3'>
                     <span>Send {type.toUpperCase()} From</span>
                     <div className='w-[300px] z-50'>
-                        <ReactSearchAutocomplete
-                            items={countries}
-                            onSelect={handleOnSelectOrigin}
-                            showIcon={false}
-                            formatResult={formatResult}
-                            className={'pricing-country-input'}
-                            placeholder={'Select a country'}
-                            menuStyle={{
-                                borderRadius: '3px',
-                                boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
-                                padding: '2px 0',
-                                fontSize: '90%',
-                                position: 'fixed',
-                                overflow: 'auto',
-                                maxHeight: '50%',
+                        <Typeahead
+                            className='country-typehead'
+                            id='origin-country'
+                            placeholder='Origin Country'
+                            labelKey='name'
+                            onChange={(selected) => {
+                                handleOnSelectOrigin(selected);
+                            }}
+                            options={countries}
+                            defaultSelected={[countries?.find((item) => item.shortname.toLowerCase() === country)]}
+                            inputProps={{
+                                autoComplete: 'off',
                             }}
                         />
                     </div>
                     <span>To</span>
                     <div className='w-[300px] z-50'>
-                        <ReactSearchAutocomplete
-                            items={countries}
-                            onSelect={handleOnSelectDestination}
-                            showIcon={false}
-                            formatResult={formatResult}
-                            className={'pricing-country-input'}
-                            placeholder={'Select a country'}
-                            menuStyle={{
-                                borderRadius: '3px',
-                                boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
-                                padding: '2px 0',
-                                fontSize: '90%',
-                                position: 'fixed',
-                                overflow: 'auto',
-                                maxHeight: '50%',
+                        <Typeahead
+                            className='country-typehead'
+                            id='origin-country'
+                            placeholder='Origin Country'
+                            labelKey='name'
+                            onChange={(selected) => {
+                                handleOnSelectDestination(selected);
+                            }}
+                            options={countries}
+                            defaultSelected={[countries?.find((item) => item.shortname.toLowerCase() === country)]}
+                            inputProps={{
+                                autoComplete: 'off',
                             }}
                         />
                     </div>
@@ -203,7 +193,8 @@ export default function PricingSMSOTP({ data, type }) {
                         <div className='flex flex-col gap-8 justify-around items-center h-[282px] bg-white p-8 w-fit border rounded '>
                             <div>SMS Pricing</div>
                             <div className='text-3xl font-bold text-green-600'>
-                                {noOfSmsArray[0] && noOfSmsArray[0][pricingEnv]
+                                {symbol}
+                                {noOfSmsArray.length > 0 && noOfSmsArray[0]?.[pricingEnv]?.rate
                                     ? contvertToLocal(noOfSmsArray[0][pricingEnv].rate)
                                     : 'N/A'}{' '}
                                 per {type?.toUpperCase()}

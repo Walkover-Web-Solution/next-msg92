@@ -23,9 +23,16 @@ body {
     }
     .rbt-menu {
         display: flex !important;
+
         a {
+            &.active{
+                @apply bg-secondary
+            }
             @apply hover:bg-secondary text-[16px]
             px-2;
         }
     }
+}
+.rbt-menu{
+    @apply w-fit bg-white flex flex-col ;
 }

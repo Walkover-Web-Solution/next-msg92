@@ -4,7 +4,7 @@ import availableCountries from '@/data/availableCountries.json';
 import Image from 'next/image';
 import getRelativeURL from '@/utils/getRelativeURL';
 export default function NotificationBarComp({ componentData, country }) {
-    const currentCountry = availableCountries.find((cont) => cont.shortName === country);
+    const currentCountry = availableCountries.find((cont) => cont.shortname.toLowerCase() === country);
     if (componentData) {
         return (
             <div className='py-1 border border-b'>
@@ -12,9 +12,9 @@ export default function NotificationBarComp({ componentData, country }) {
                     <div className='dropdown'>
                         {/* /* Render the currentCountry in notification bar */}
                         <div tabIndex={0} role='button' className='flex gap-1 items-center '>
-                            {currentCountry?.shortName ? (
+                            {currentCountry?.shortname ? (
                                 <Image
-                                    src={`/assets/country-flags/${currentCountry?.shortName}.svg`}
+                                    src={`/assets/country-flags/${currentCountry?.shortname.toLowerCase()}.svg`}
                                     width={18}
                                     height={18}
                                 />
@@ -38,12 +38,12 @@ export default function NotificationBarComp({ componentData, country }) {
                                     return (
                                         <li key={index} className='cursor-pointer'>
                                             <a
-                                                href={getRelativeURL(cont?.shortName, 'country')}
+                                                href={getRelativeURL(cont?.shortname.toLowerCase(), 'country')}
                                                 className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
                                             >
-                                                {/* /* ${cont?.shortName} == 'in,us,gb etc. */}
+                                                {/* /* ${cont?.shortname} == 'in,us,gb etc. */}
                                                 <Image
-                                                    src={`/assets/country-flags/${cont?.shortName}.svg`}
+                                                    src={`/assets/country-flags/${cont?.shortname.toLowerCase()}.svg`}
                                                     width={18}
                                                     height={18}
                                                     alt={cont?.name}
