@@ -24,25 +24,25 @@ export default function PricingComp({ data, pageInfo }) {
                 <div className='container my-10 flex gap-12 '>
                     <PricingNav products={data?.products} page={page} />
 
-                    {page === 'hello' && <PricingHello data={data?.hello} />}
+                    {page === 'hello' && <PricingHello data={data?.hello} country={pageInfo?.country} />}
 
-                    {page === 'campaign' && <PricingCampaign data={data?.campaign} />}
+                    {page === 'campaign' && <PricingCampaign data={data?.campaign} country={pageInfo?.country} />}
 
-                    {page === 'segmento' && <PricingSegmento data={data?.segmento} />}
+                    {page === 'segmento' && <PricingSegmento data={data?.segmento} country={pageInfo?.country} />}
 
-                    {page === 'otpwidget' && <PricingOtp data={data?.otpwidget} />}
+                    {page === 'otpwidget' && <PricingOtp data={data?.otpwidget} country={pageInfo?.country} />}
 
-                    {page === 'sms' && <PricingSMSOTP data={data?.sms} type={'sms'} />}
+                    {page === 'sms' && <PricingSMSOTP data={data?.sms} type={'sms'} country={pageInfo?.country} />}
 
-                    {page === 'otp' && <PricingSMSOTP data={data?.otp} type={'otp'} />}
+                    {page === 'otp' && <PricingSMSOTP data={data?.otp} type={'otp'} country={pageInfo?.country} />}
 
-                    {page === 'email' && <PricingEmail data={data?.email} />}
+                    {page === 'email' && <PricingEmail data={data?.email} country={pageInfo?.country} />}
 
-                    {page === 'whatsapp' && <PricingWhatsApp data={data?.whatsapp} />}
+                    {page === 'whatsapp' && <PricingWhatsApp data={data?.whatsapp} country={pageInfo?.country} />}
 
-                    {page === 'voice' && <PricingVoice data={data?.voice} />}
+                    {page === 'voice' && <PricingVoice data={data?.voice} country={pageInfo?.country} />}
 
-                    {page === 'rcs' && <PricingRCS data={data?.rcs} />}
+                    {page === 'rcs' && <PricingRCS data={data?.rcs} country={pageInfo?.country} />}
                 </div>
             </div>
         </>

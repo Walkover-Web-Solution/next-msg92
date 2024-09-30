@@ -3,13 +3,15 @@ import { useState, useEffect, useCallback } from 'react';
 import { MdCheck, MdClose } from 'react-icons/md';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
+import GetCurrencySymbol from '@/utils/getCurrencySymbol';
+import Link from 'next/link';
 
-export default function PricingHello({ data }) {
+export default function PricingHello({ data, country }) {
+    const { currency, symbol } = GetCurrencySymbol(country);
+
     const [isLoading, setIsLoading] = useState(false);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
-    const [currency, setCurrency] = useState('INR');
-    const [symbol, setSymbol] = useState('₹');
 
     const fetchPlans = useCallback(async () => {
         setIsLoading(true);
@@ -79,13 +81,18 @@ export default function PricingHello({ data }) {
                                                         {amount?.plan_amount} {tabtype}
                                                     </p>
                                                     <p>{amount?.currency?.short_name === 'INR' ? '+18% GST' : '-'}</p>
-                                                    <button
-                                                        className={`btn btn-primary  btn-md ${
-                                                            plan?.name === 'Basic' ? '' : 'btn-outline'
-                                                        }`}
+                                                    <Link
+                                                        href={'https://msg91.com/signup?service=hello'}
+                                                        target='_blank'
                                                     >
-                                                        Get Started
-                                                    </button>
+                                                        <button
+                                                            className={`btn btn-primary  btn-md ${
+                                                                plan?.name === 'Basic' ? '' : 'btn-outline'
+                                                            }`}
+                                                        >
+                                                            Get Started
+                                                        </button>
+                                                    </Link>
                                                 </div>
                                                 <span className='border-b-[1px]'></span>
 

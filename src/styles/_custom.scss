@@ -205,3 +205,8 @@ $button-transition-timing: 100ms;
     border: 2px solid rgb(88, 88, 88);
     box-shadow: -1207px 0 0 1200px #307368;
 }
+
+.rbt-menu{
+
+    @apply w-fit bg-white flex flex-col ;
+}
