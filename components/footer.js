@@ -19,6 +19,12 @@ const Footer = ({ path, year }) => {
                                 <a href={`${path}/otp`} className=" c-link-underline c-fs-5 mt-2 c-fw-t">
                                     OTP
                                 </a>
+                                <a
+                                    href={`${path === '/in' ? '/in/otp/magiclink' : '/otp/magiclink'}`}
+                                    className=" c-link-underline c-fs-5 mt-2 c-fw-t"
+                                >
+                                    OTP-MagicLink
+                                </a>
                             </div>
 
                             <h3 className="c-fs-5 d-flex flex-column mt-5">Utilities</h3>
