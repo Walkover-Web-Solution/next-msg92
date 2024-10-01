@@ -1,22 +1,20 @@
 import { useEffect, useState } from 'react';
-import { ReactSearchAutocomplete } from 'react-search-autocomplete';
-import countries from '@/data/countries.json';
 import { MdCheck } from 'react-icons/md';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 import axios from 'axios';
+import { Typeahead } from 'react-bootstrap-typeahead';
 
-export default function PricingVoice({ data }) {
-    const [countryData, setCountryData] = useState();
-    const [selectedCountry, setSelectedCountry] = useState([]);
-    const [currencyCode, setCurrencyCode] = useState();
-    const [symbol, setSymbol] = useState();
+export default function PricingVoice({ data, country }) {
+    const [countryData, setCountryData] = useState([]);
+    const [selectedCountry, setSelectedCountry] = useState();
     const [plans, setPlans] = useState();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState();
     const [dialPlan, setDialPlan] = useState();
     const [loadingExport, setLoadingExport] = useState(false);
+    const { currency, symbol } = GetCurrencySymbol(selectedCountry?.country_code);
 
     //fetch Counties
     useEffect(() => {
@@ -37,27 +35,24 @@ export default function PricingVoice({ data }) {
         }
     };
 
-    // Set Country code
     useEffect(() => {
-        const selectedCountryData = countries.find((country) => country?.shortname === selectedCountry?.country_code);
-        if (selectedCountryData) {
-            setCurrencyCode(selectedCountryData?.currency);
+        if (countryData?.length > 0) {
+            setSelectedCountry(countryData?.find((item) => item?.country_code?.toLowerCase() === country));
         }
-    }, [selectedCountry]);
+    }, [countryData]);
 
     // Set Currency Symbol
     useEffect(() => {
-        if (currencyCode) {
-            fetchDialPlan(currencyCode);
-            setSymbol(GetCurrencySymbol(currencyCode));
+        if (currency) {
+            fetchDialPlan(currency);
         }
-    }, [currencyCode]);
+    }, [currency]);
 
     //fetch dialPlan
-    const fetchDialPlan = async (currencyCode) => {
+    const fetchDialPlan = async (currency) => {
         try {
             const response = await fetch(
-                `${process.env.NEXT_PUBLIC_VOICE_API_BASE_URL}/public/dialplanPricing/?currency=${currencyCode}`
+                `${process.env.NEXT_PUBLIC_VOICE_API_BASE_URL}/public/dialplanPricing/?currency=${currency}`
             );
             if (response.ok) {
                 const data = await response.json();
@@ -78,7 +73,7 @@ export default function PricingVoice({ data }) {
         if (selectedCountry && selectedCountry?.id && dialPlan) {
             fetchData(selectedCountry?.id, dialPlan);
         }
-    }, [dialPlan]);
+    }, [selectedCountry?.id, dialPlan]);
 
     const fetchData = async (selectedCountry, dialPlan) => {
         setLoading(true);
@@ -122,40 +117,33 @@ export default function PricingVoice({ data }) {
 
     //Auto complete functions
     const handleOnSelect = (item) => {
-        setSelectedCountry(item);
-    };
-
-    const formatResult = (item) => {
-        return (
-            <>
-                <span className=''>{item?.name}</span>
-            </>
-        );
+        setSelectedCountry(item[0]);
     };
 
     return (
         <>
             <div className='w-full flex flex-col gap-10'>
                 <div className='w-full flex flex-col gap-4'>
-                    <div className='w-[300px] z-50'>
-                        <ReactSearchAutocomplete
-                            items={countryData}
-                            onSelect={handleOnSelect}
-                            showIcon={false}
-                            formatResult={formatResult}
-                            className={'pricing-country-input'}
-                            placeholder={'Select a country'}
-                            menuStyle={{
-                                borderRadius: '3px',
-                                boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
-                                padding: '2px 0',
-                                fontSize: '90%',
-                                position: 'fixed',
-                                overflow: 'auto',
-                                maxHeight: '50%',
-                            }}
-                        />
-                    </div>
+                    {countryData.length > 0 && (
+                        <div className='w-[300px] z-50'>
+                            <Typeahead
+                                className='country-typehead'
+                                id='origin-country'
+                                placeholder='Origin Country'
+                                labelKey='name'
+                                onChange={(selected) => {
+                                    handleOnSelect(selected);
+                                }}
+                                options={countryData}
+                                defaultSelected={[
+                                    countryData?.find((item) => item?.country_code?.toLowerCase() === country),
+                                ]}
+                                inputProps={{
+                                    autoComplete: 'off',
+                                }}
+                            />
+                        </div>
+                    )}
                     <h1 className='text-xl font-semibold'>{data?.heading}</h1>
                     <table className='table bg-white rounded w-full'>
                         <thead>
