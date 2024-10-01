@@ -1,4 +1,12 @@
 {
+    "/in/otp/magiclink": {
+        "title": "MSG91 OTP Magic Link India - Hassle-Free & Secure User Authentication",
+        "description": "Enhance user experience with MSG91 OTP Magic Link, providing secure, one-click authentication without the need for manual OTP entry. Simplify sign-ups and boost conversions effortlessly."
+    },
+    "/otp/magiclink": {
+        "title": "MSG91 OTP Magic Link - Secure & Seamless User Authentication",
+        "description": "Enhance user experience with MSG91 OTP Magic Link, providing secure, one-click authentication without the need for manual OTP entry. Simplify sign-ups and boost conversions effortlessly."
+    },
     "/signup": {
         "title": "Sign up now to access the full range of MSG91 products.",
         "description": "Sign up to access the complete suite of MSG91 products, including programmable SMS, customer contact centers, virtual numbers, automated user segmentation, and OTP invisible verification. Trusted by 30,000+ startups and enterprises."
