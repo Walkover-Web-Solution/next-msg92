@@ -2,19 +2,28 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './magicLink.module.scss';
 import {
+    MdApps,
+    MdBolt,
+    MdGppGood,
+    MdLogin,
     MdOutlineHealthAndSafety,
     MdOutlineStorefront,
-    MdRocketLaunch,
+    MdSend,
     MdTouchApp,
+    MdTrendingUp,
 } from 'react-icons/md';
 import PreFooter from '@/components/preFooter';
 
 export default function OtpMagicLinkComp({pageData}) {
   
     const icons = {
-        send: MdRocketLaunch,
+        send: MdSend,
         click: MdTouchApp,
-        access: MdTouchApp,
+        access: MdLogin,
+        bolt: MdBolt,
+        apps: MdApps,
+        good: MdGppGood,
+        trending: MdTrendingUp,
         MdOutlineHealthAndSafety: MdOutlineHealthAndSafety,
         MdOutlineStorefront: MdOutlineStorefront,
     };
@@ -41,7 +50,7 @@ export default function OtpMagicLinkComp({pageData}) {
                     </Link>
                 </div>
                 <Image
-                    src="/img/pageimg/whatapp-chatbot.png"
+                    src="/assets/img/pages/otp-magiclink/magic-link-banner.svg"
                     width={1080}
                     height={1080}
                     className="col-md-6 col-12 h-auto"
@@ -135,7 +144,7 @@ export default function OtpMagicLinkComp({pageData}) {
                                         </div>
                                     </div>
                                     <Image
-                                        src={`/img/feature/${useCase?.img}.png`}
+                                        src={`/assets/img/pages/otp-magiclink/${useCase?.img}.png`}
                                         width={800}
                                         height={800}
                                         className={`${styles.useCase_img} col-12 col-lg-5 p-1 `}

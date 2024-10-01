@@ -11,15 +11,14 @@
     }
 }
 .feature_icon {
-    color: green;
+    color: #7AB4F5;
     font-size: 32px;
     @media only screen and (max-width: 768px) {
         font-size: 24px;
-
     }
     
-    
 }
+
 .features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
