@@ -6,7 +6,7 @@ export default function getRelativeURL(link, type) {
     const pathArray = rawPath.split('?')[0].split('/');
 
     // find id the country is global
-    const notGobal = availableCountries.some((country) => country.shortName === pathArray[1]);
+    const notGobal = availableCountries.some((country) => country.shortname === pathArray[1]);
 
     let relativeURL = '/';
     if (notGobal) {

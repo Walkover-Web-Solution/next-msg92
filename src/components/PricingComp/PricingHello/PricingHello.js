@@ -3,13 +3,15 @@ import { useState, useEffect, useCallback } from 'react';
 import { MdCheck, MdClose } from 'react-icons/md';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
+import GetCurrencySymbol from '@/utils/getCurrencySymbol';
+import Link from 'next/link';
 
-export default function PricingHello({ data }) {
+export default function PricingHello({ data, country }) {
+    const { currency, symbol } = GetCurrencySymbol(country);
+
     const [isLoading, setIsLoading] = useState(false);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
-    const [currency, setCurrency] = useState('INR');
-    const [symbol, setSymbol] = useState('₹');
 
     const fetchPlans = useCallback(async () => {
         setIsLoading(true);
@@ -79,13 +81,18 @@ export default function PricingHello({ data }) {
                                                         {amount?.plan_amount} {tabtype}
                                                     </p>
                                                     <p>{amount?.currency?.short_name === 'INR' ? '+18% GST' : '-'}</p>
-                                                    <button
-                                                        className={`btn btn-primary  btn-md ${
-                                                            plan?.name === 'Basic' ? '' : 'btn-outline'
-                                                        }`}
+                                                    <Link
+                                                        href={'https://msg91.com/signup?service=hello'}
+                                                        target='_blank'
                                                     >
-                                                        Get Started
-                                                    </button>
+                                                        <button
+                                                            className={`btn btn-primary  btn-md ${
+                                                                plan?.name === 'Basic' ? '' : 'btn-outline'
+                                                            }`}
+                                                        >
+                                                            Get Started
+                                                        </button>
+                                                    </Link>
                                                 </div>
                                                 <span className='border-b-[1px]'></span>
 
@@ -207,26 +214,26 @@ export default function PricingHello({ data }) {
                                 className='flex col-span-1 flex-col gap-6  h-[800px] p-6 border rounded bg-white'
                             >
                                 <div className='flex flex-col gap-4'>
-                                    <div className='bg-slate-50 rounded-sm skeleton h-[40px] w-full'></div>
-                                    <div className='bg-slate-50 rounded-sm skeleton h-[30px] w-2/3'></div>
-                                    <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
-                                    <div className='bg-slate-50 rounded-sm skeleton h-[40px] w-1/2'></div>
+                                    <div className=' skeleton h-[40px] w-full'></div>
+                                    <div className=' skeleton h-[30px] w-2/3'></div>
+                                    <div className=' skeleton h-[20px] w-1/3'></div>
+                                    <div className=' skeleton h-[40px] w-1/2'></div>
                                     <span className='border-b-[1px]'></span>
                                 </div>
                                 <div className='flex flex-col gap-4'>
-                                    <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-2/3'></div>
-                                    <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
-                                    <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
+                                    <div className=' skeleton h-[20px] w-2/3'></div>
+                                    <div className=' skeleton h-[20px] w-1/3'></div>
+                                    <div className=' skeleton h-[20px] w-1/3'></div>
                                 </div>
                                 <div className='flex flex-col gap-4 mt-4'>
-                                    <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-2/3'></div>
-                                    <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
-                                    <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
+                                    <div className=' skeleton h-[20px] w-2/3'></div>
+                                    <div className=' skeleton h-[20px] w-1/3'></div>
+                                    <div className=' skeleton h-[20px] w-1/3'></div>
                                 </div>
                                 <div className='flex flex-col gap-4 mt-4'>
-                                    <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-2/3'></div>
-                                    <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
-                                    <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
+                                    <div className=' skeleton h-[20px] w-2/3'></div>
+                                    <div className=' skeleton h-[20px] w-1/3'></div>
+                                    <div className=' skeleton h-[20px] w-1/3'></div>
                                 </div>
                             </div>
                         ))}

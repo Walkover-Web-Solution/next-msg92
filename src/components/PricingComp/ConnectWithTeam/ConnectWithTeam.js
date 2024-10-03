@@ -2,12 +2,12 @@ import getRelativeURL from '@/utils/getRelativeURL';
 import Link from 'next/link';
 import { MdLaunch } from 'react-icons/md';
 
-export default function ConnectWithTeam({ product, isPlan, data }) {
+export default function ConnectWithTeam({ product, isPlan, data, currency }) {
     return (
         <div className='flex flex-col gap-3'>
             {isPlan && (
                 <>
-                    <p className='text-xl'>{data?.content}</p>
+                    <p className='text-xl' dangerouslySetInnerHTML={{ __html: data?.content }}></p>
                     <button className='btn btn-outline btn-md'>{data?.sales_btn}</button>
                 </>
             )}

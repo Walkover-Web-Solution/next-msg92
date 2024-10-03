@@ -170,26 +170,26 @@ export default function PricingEmail({ data }) {
                             className='flex col-span-1 flex-col gap-6  h-[440px] p-6 border rounded bg-white'
                         >
                             <div className='flex flex-col gap-4'>
-                                <div className='bg-slate-50 rounded-sm skeleton h-[40px] w-full'></div>
-                                <div className='bg-slate-50 rounded-sm skeleton h-[30px] w-2/3'></div>
-                                <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
-                                <div className='bg-slate-50 rounded-sm skeleton h-[40px] w-1/2'></div>
+                                <div className=' skeleton h-[40px] w-full'></div>
+                                <div className=' skeleton h-[30px] w-2/3'></div>
+                                <div className=' skeleton h-[20px] w-1/3'></div>
+                                <div className=' skeleton h-[40px] w-1/2'></div>
                                 <span className='border-b-[1px]'></span>
                             </div>
                             <div className='flex flex-col gap-4'>
-                                <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-2/3'></div>
-                                <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
-                                <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
+                                <div className=' skeleton h-[20px] w-2/3'></div>
+                                <div className=' skeleton h-[20px] w-1/3'></div>
+                                <div className=' skeleton h-[20px] w-1/3'></div>
                             </div>
                             <div className='flex flex-col gap-4 mt-4'>
-                                <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-2/3'></div>
-                                <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
-                                <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
+                                <div className=' skeleton h-[20px] w-2/3'></div>
+                                <div className=' skeleton h-[20px] w-1/3'></div>
+                                <div className=' skeleton h-[20px] w-1/3'></div>
                             </div>
                             <div className='flex flex-col gap-4 mt-4'>
-                                <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-2/3'></div>
-                                <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
-                                <div className='bg-slate-50 rounded-sm skeleton h-[20px] w-1/3'></div>
+                                <div className=' skeleton h-[20px] w-2/3'></div>
+                                <div className=' skeleton h-[20px] w-1/3'></div>
+                                <div className=' skeleton h-[20px] w-1/3'></div>
                             </div>
                         </div>
                     ))}

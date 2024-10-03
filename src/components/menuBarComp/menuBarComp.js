@@ -2,7 +2,29 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MdMenu } from 'react-icons/md';
 
-export default function MenuBarComp({ componentData }) {
+export default function MenuBarComp({ componentData, pageInfo }) {
+    const getPricingPath = () => {
+        let path = '/pricing/hello';
+        switch (pageInfo?.country) {
+            case 'global':
+                if (pageInfo?.page !== 'pricing') {
+                    path = '/pricing/' + (pageInfo?.page || 'hello');
+                } else {
+                    path = '/pricing/hello';
+                }
+                break;
+
+            default:
+                if (pageInfo?.page !== 'pricing') {
+                    path = '/' + pageInfo?.country + '/pricing/' + (pageInfo?.page || 'hello');
+                } else {
+                    path = '/' + pageInfo?.country + '/pricing/' + 'hello';
+                }
+                break;
+        }
+        return process.env.NEXT_PUBLIC_BASE_URL + path;
+    };
+
     if (componentData) {
         return (
             <div>
@@ -10,7 +32,7 @@ export default function MenuBarComp({ componentData }) {
                     <ul className='w-full flex gap-6'>
                         <li className='text-link'>{componentData?.products}</li>
                         <li className='text-link'>{componentData?.integrations}</li>
-                        <Link className='text-link' href={'/pricing'}>
+                        <Link className='text-link' href={getPricingPath()}>
                             {componentData?.pricing}
                         </Link>
                     </ul>

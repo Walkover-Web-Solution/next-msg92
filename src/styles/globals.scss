@@ -9,3 +9,30 @@ body {
     font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
 }
+
+.country-typehead {
+    div {
+        @apply w-full;
+        input { 
+            padding: 6px 8px !important ;
+            @apply border rounded  text-[16px] w-full ; 
+            &::placeholder {
+                @apply text-[16px]
+            }
+        }
+    }
+    .rbt-menu {
+        display: flex !important;
+
+        a {
+            &.active{
+                @apply bg-secondary
+            }
+            @apply hover:bg-secondary text-[16px]
+            px-2;
+        }
+    }
+}
+.rbt-menu{
+    @apply w-fit bg-white flex flex-col ;
+}

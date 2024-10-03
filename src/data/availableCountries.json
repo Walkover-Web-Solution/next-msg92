@@ -1,48 +1,66 @@
 [
-    {
-        "shortName": "in",
-        "name": "India",
-        "currencry": "INR"
 
+    {
+        "shortname": "IN",
+        "name": "India",
+        "code": 91,
+        "language": "English",
+        "currency": "INR"
     },
     {
-        "shortName": "us",
-        "name": "United States",
+        "shortname": "BR",
+        "name": "Brazil",
+        "code": 55,
+        "language": "English",
         "currency": "USD"
     },
     {
-        "shortName": "gb",
-        "name": "United Kingdom",
+        "shortname": "BR-PT",
+        "name": "Brazil",
+        "code": 55,
+        "language": "Portuguese",
+        "currency": "USD"
+    },    
+    {
+        "shortname": "PH",
+        "name": "Philippines",
+        "code": 63,
+        "language": "English",
+        "currency": "GBP"
+    },    
+    {
+        "shortname": "SG",
+        "name": "Singapore",
+        "code": 65,
+        "language": "English",
+        "currency": "GBP"
+    },    
+    {
+        "shortname": "ES",
+        "name": "Spain",
+        "code": 34,
+        "language": "English",
         "currency": "GBP"
     },
     {
-        "shortName": "ph",
-        "name": "Philippines",
-        "Currency": "PHP"
-    },
-    {
-        "shortName": "sg",
-        "name": "Singapore",
-        "Currency": "SGD"
-    },
-    {
-        "shortName": "ae",
+        "shortname": "AE",
         "name": "United Arab Emirates",
-        "Currency": "AED"
+        "code": 971,
+        "language": "English",
+        "currency": "USD"
+    },    
+    {
+        "shortname": "GB",
+        "name": "United Kingdom",
+        "code": 55,
+        "language": "English",
+        "currency": "GBP"
     },
     {
-        "shortName": "es",
-        "name": "Spain",
-        "Currency": "EUR"
-    },
-    {
-        "shortName": "br",
-        "name": "Brazil",
-        "Currency": "BRL"
-    },
-    {
-        "shortName": "br-pt",
-        "name": "Brazil",
-        "Currency": "BRL"
+        "shortname": "US",
+        "name": "United States",
+        "code": 55,
+        "language": "English",
+        "currency": "USD"
     }
 ]

@@ -46,7 +46,7 @@ export default function Page({ data, commonData, pageInfo }) {
         <>
             <NotificationBarComp componentData={commonData?.notification} country={pageInfo?.country} />
 
-            <MenuBarComp componentData={commonData?.menu} />
+            <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
 
             {data &&
                 Object.keys(data).map((key) => {
