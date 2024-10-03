@@ -1,0 +1,109 @@
+{
+    "HeadComp": {
+        "title": "Voice API for your Business | Voice Call API | MSG91-United Kingdom",
+        "description": "MSG91 provides voice call api's to your business which helps to engage your customers over voice with our virtual phone numbers, and voice APIs"
+    },
+    "BannerComp": {
+        "slug": "voice",
+        "product": {
+            "name": "Voice",
+            "icon": "/assets/icons/products/voice.svg"
+        },
+        "tagline": "connect with confidence",
+        "heading": "Boost customer engagement and build trust",
+        "subheading": "Start real-time conversations with crystal clear audio, low latency and deeper insights.",
+      "banner_img": "/assets/global/hello/banner.webp",
+        "getstarted_btn": "Get Started",
+        "trustedByComp": {
+            "heading": "Trusted by  30,000+  global businesses",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Features",
+        "iconColor": "text-campaign",
+        "features": [
+          
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Call Monitoring",
+                "content":"<strong>Introducing the next-level communication experience with our all-new Call Monitoring features</strong>We're giving you the reins of your conversations with UK callers. These robust features provide you with enhanced control and insight during your calls, ensuring improved communication and customer satisfaction. Call spying: your confidential tool for quality assurance for UK customers!  Call barging: real-time support, is just a click away! Call whispering: guidance at your fingertips!",
+                "img": "/assets/global/voice/voice-call-monitoring.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Direct calling from browser",
+                "content": "<strong>Skip Traditional Calls and Dial Directly from Your Browser</strong>Enhance customer experiences while saving your agent's valuable time. Easily connect two phone numbers without placing one on hold, providing a seamless customer conversation experience.",
+                "img": "/assets/global/voice/voice-direct-calling-from-hello.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "IVR Flow",
+                "content": "<strong>Modern IVR for Streamlined Customer Interaction in the UK</strong>Our sophisticated IVR system is designed to expedite customer interactions, going beyond query resolution. You can tailor settings based on time or agent availability, and even record personalized messages.",
+                "img": "/assets/global/voice/voice-ivr-flow.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Bulk Voice",
+                "content":"<strong>Direct Voice Communication with Your UK Audience</strong>Effortlessly deliver your message to hundreds and thousands of customers with a single voice call. A ringing phone is hard to ignore, making it an effective way to reach your UK audience.",
+                "img": "/assets/global/voice/voice-bulk-voice.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Multiple Way to Upload File",
+                "content":"<strong>Versatile Audio Message Upload Options</strong>Amplify your customer interactions in the UK with personalized voice messages. Record your messages for bulk voice calls or IVR menus using text-to-speech, your browser's microphone, or a traditional phone call.",
+                "img": "/assets/global/voice/voice-multiple-way-to-upload-file.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Bulk voice with IVR",
+                "content":"<strong>Seamlessly Connect Your Voice Calls to IVR in the UK</strong>Don't just send bulk voice messages; gather valuable feedback from your UK users. Record the message you want to convey and deliver it to your UK customers using our IVR system.",
+                "img": "/assets/global/voice/voice-bulk-voice-with-ivr.svg"
+            },      {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Offer Real-Time Support to Your UK Users",
+                "content": "<strong>Direct Users to Your USA Support Agents</strong>Elevate the customer experience by providing immediate support when connecting your UK users to your customer support agents based on their bulk call input.",
+                "img": "/assets/global/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
+            }
+        ]
+    },
+   
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

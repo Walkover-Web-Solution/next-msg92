@@ -14,7 +14,32 @@
         "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
       "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",
-        "schedule_meet":"Schedule a Meeting"
+        "schedule_meet":"Schedule a Meeting",
+        "trustedByComp": {
+            "heading": "Support 15+ channels & platforms",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
     },
     "FeatureComp": {
         "heading": "Features",
@@ -36,7 +61,7 @@
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Zero Charge on Click to WhatsApp Ads",
                 "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget-Friendly.",
-                "img": "/assets/global/whatsapp/whatsapp-zero-charge-low-latency-delivery-worldwide.svg"
+                "img": "/assets/global/whatsapp/whatsapp-zero-charge-on-click.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
@@ -48,7 +73,7 @@
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Broadcast / Campaign",
                 "content": "WhatsApp's broadcast lets you send the same message to multiple contacts at once, ideal for updates and announcements. Campaigns, available in the WhatsApp Business API, enable targeted marketing with automated, personalized messages. Both help businesses reach more people efficiently.",
-                "img": "/assets/global/whatsapp/whatsapp-enjoy-reliable-low-latency-delivery-worldwide.svg"
+                 "img": "/assets/global/whatsapp/whatsapp-campaign.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
