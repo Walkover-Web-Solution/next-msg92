@@ -1,21 +1,21 @@
 {
     "HeadComp": {
-        "title": "Customer Support Platform for your Business by MSG91",
-        "description": "Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs"
+        "title": "Customer knowledgebase platform by MSG91",
+        "description": "Central repository for information on your products, services or topics Help your customers find answers to their queries on their own at their own convenience"
     },
     "BannerComp": {
-        "slug": "hello",
+        "slug": "knowledgebase",
         "product": {
-            "name": "Hello",
-            "icon": "/assets/icons/products/hello.svg"
+            "name": "KnowledgeBase",
+            "icon": "/assets/icons/products/Knowledgebase.svg"
         },
-        "tagline": "REVOLUTIONIZE CUSTOMER SUPPORT",
-        "heading": "Customer Service Software",
-        "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
-        "banner_img": "/assets/global/index/banner.webp",
-        "getstarted_btn": "Get Started",
+        "tagline": "Empower Customers with Self-Service Options",
+        "heading": "Knowledge base is the backbone for good customer support",
+        "subheading": "Get all essential features of knowledge base software at nominal price",
+      "banner_img": "/assets/global/knowledgebase/banner-knowledgebase.svg",
+        "getstarted_btn": "Get Started FREE forever",
         "trustedByComp": {
-            "heading": "Support 15+ channels & platforms",
+            "heading": "Trusted by 30,000+ global businesses",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -44,42 +44,26 @@
         "heading": "Features",
         "iconColor": "text-campaign",
         "features": [
+          
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Unlimited Agents",
-                "content": "Unlimited free agents to power up your customer support. More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is nonumber attached to your number of customer support agents",
-                "img": "/assets/global/hello/unlimited-agents.svg"
+                "name": "WYSIWYG editor",
+                "content":"<strong>Easily create or edit your knowledge base articles</strong>Quickly create your articles with the what you see is what you get content editor. It is as simple to use as if you were using a Word Processor or HTML Editor.",
+                "img": "/assets/global/knowledgebase/knowledgebase-wysiwyg-editor.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Chatbot",
-                "content": "Resolve customer queries round-the-clock across text and voice. Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents.",
-                "img": "/assets/global/hello/chatbot.svg"
+                "name": "SEO friendly (Subfolder and subdomain both support)",
+                "content":"<strong>An SEO-friendly optimized knowledge base</strong>Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages.",
+                "img": "/assets/global/knowledgebase/knowledgebase-seo-friendly.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Screen Control",
-                "content": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues.",
-                "img": "/assets/global/hello/screen-control.svg"
-            },
-            {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Video Call / Screen Sharing",
-                "content": "High-quality video calls wherever your customer is. Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue.",
-                "img": "/assets/global/hello/video-call---screen-sharing.svg"
-            },
-            {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Workflow",
-                "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs.",
-                "img": "/assets/global/hello/workflow.svg"
-            },
-            {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Analytics",
-                "content": "Analytics and reports to monitor your agent performance. Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support.",
-                "img": "/assets/global/hello/analytics.svg"
+                "name": "   Whitelabel",
+                "content":"<strong>It works on your branding and not ours</strong>Your users view your knowledge base under your branding on your website. Our whitelabel services ensure there’s no indication of it being powered by MSG91.",
+                "img": "/assets/global/knowledgebase/knowledgebase-whitelable.svg"
             }
+          
         ]
     },
     "FaqsComp": {
@@ -107,7 +91,6 @@
             }
         ]
     },
-    
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
@@ -125,7 +108,9 @@
             }
         }
     },
-    "FooterComp": {
-        "country": "global"
+    "moreFeature": {
+       
+        "name": "Looking for more",
+        "more_feature_btn": "Request a Feature"
     }
 }

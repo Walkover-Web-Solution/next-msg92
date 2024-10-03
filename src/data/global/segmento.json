@@ -1,0 +1,104 @@
+{ "HeadComp": {
+  "title": "Customer Segmentation Software | MSG91",
+  "description": "Execute targeted marketing campaigns with the help of automated customer segmentation and targeted content. Try it out now."
+}, 
+       "BannerComp": {
+        "slug": "segmento",
+        "product": {
+            "name": "Target Based Marketing",
+            "icon": "/assets/icons/products/segmento.svg"
+        },
+        "tagline": "target based marketing",
+        "heading": "Personalize customer journeys with Data segmentation.",
+        "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
+        "banner_img": "/assets/global/segmento/banner-segmento.webp",
+        "getstarted_btn": "Get Started For Free",
+        "trustedByComp": {
+          "heading": "Trusted by 30,000+ global businesses",
+          "logos":  [
+            {"name": "Xiaomi", "url": "/assets/trusted_by/xiaomi.svg"},
+            {"name": "Unacademy", "url": "/assets/trusted_by/unacademy.svg"},
+            {"name": "Dream11", "url": "/assets/trusted_by/dream11.svg"},
+            {"name": "Indeed", "url": "/assets/trusted_by/indeed.svg"},
+            {"name": "Indian Oil", "url": "/assets/trusted_by/indianoil.svg"},
+            {"name": "Ixigo", "url": "/assets/trusted_by/ixigo.svg"}
+          ]
+      }
+    
+    },
+    "FeatureComp": {
+      "heading": "Features",
+      "iconColor": "text-campaign",
+      "features": [
+        
+          {
+              "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+              "name": "Create filters as per segment",
+              "content":"<strong>Create a filtered list on your business phonebook.</strong>Tailor your marketing efforts by targeting people based on their requirements, traits or patterns by creating a particular filter on your phonebook.",
+              "img": "/assets/global/segmento/segmento-create-filters-as-per-segments.svg"
+          },
+          {
+              "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+              "name": "Automation Trigger ",
+              "content": "<strong>Trigger meaningful information for the filtered segments.</strong>Automate actions on the filters created based on the user’s action or input to deliver relevant and personalised messages for each group.",
+              "img": "/assets/global/segmento/segmento-automation-trigger.svg"
+          },
+          {
+              "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+              "name": "Automation Repeater ",
+              "content": "<strong>Send the most relevant content at the most relevant time.</strong>Send auto messages to the same filter at time-based intervals through your audience’s preferred business communication channel.",
+              "img": "/assets/global/segmento/segmento-automation-repeater.svg"
+          },
+          {
+              "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+              "name": "Open API",
+              "content": "<strong>Use API to get, create, update or delete contact.</strong>We provide APIs for every action, big or small, so that you can focus on what matters most- building your amazing product.",
+              "img": "/assets/global/segmento/segmento-open-api.svg"
+          }
+         
+      ]
+  },
+  "FaqsComp": {
+    "heading": "Frequently Asked Questions",
+    "faqs": [
+        {
+            "question": "How to subscribe to your Hello Plan.",
+            "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options\n You can directly subscribe to the plan from the website itself. There go to Hello Service click on Get Started, fill in the necessary details, and subscribe to the plan."
+        },
+        {
+            "question": "Are there any charges for AI chatbots?",
+            "answer": "No, there are no charges for Chat Bot, we are only charged for basic and premium plans. You can use the chatbot in a free plan till 50 tickets in Hello, after that you have to upgrade your Hello plan. Basically, we are providing the chatbot free for Trial purposes.\n You can use this Chat Bot in WhatsApp, Instagram, Chat Widget on your Website, Facebook and so on. So test the Chat Bot Now."
+        },
+        {
+            "question": "Are there any extra charges for Instagram/ Facebook  Inbox?",
+            "answer": "<p>You can use inboxes that are available in your Hello Plan for Instagram or Whatsapp. The number of inboxes assigned in each plan.</p><ul><li>Free Plan- 2 inboxes</li><li>Basic Plan- 2 inboxes</li><li>Premium Plan- 3 inboxes</li></ul><p>But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each.</p><p>In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox.</p> "
+        },
+        {
+            "question": "What are the charges for tickets and extra tickets in Hello?",
+            "answer": "<p>We are providing monthly tickets with each plan and in case they end, you can also use extra tickets which you pay in postpaid billing.</p><p>Here are the number of tickets assigned in each plan:</p><ul><li>Free Plan- 50 tickets/monthly</li><li>Basic Plan- 1000 tickets/monthly</li><li>Premium Plan- 2000 tickets/monthly</li></ul><p>Extra Charges for each ticket in different plans:</p><ul><li>Free Plan- there is no option for more tickets in free plans as you have to upgrade the Hello Plan to Basic or Premium as per your choice.</li><li>Basic Plan- ₹0.5 per ticket</li><li>Premium Plan- ₹0.75 per ticket</li></ul>"
+        },
+        {
+            "question":  " Can I customize the Hello Plan?",
+            "answer":  "Yes, you can have a customized plan for hello. Click on the link to schedule the meeting with the sales heads."
+        }
+    ]
+},
+    "PreFooterComp": {
+      "content": "Start building your ideal customer engagement experience",
+      "buttons": {
+          "contactSales": {
+              "text": "Contact sales",
+              "link": "/contact-us"
+          },
+          "pricing": {
+              "text": "Pricing",
+              "link": "/pricing/"
+          },
+          "getStarted": {
+              "text": "Get started",
+              "link": "https://control.msg91.com/signup/"
+          }
+      }
+  }
+  }
+  
