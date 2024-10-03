@@ -1,0 +1,105 @@
+{
+    "HeadComp": {
+        "title": "ShortUrl - Brasil",
+        "description": "Links Personalizados para o Sucesso Empresarial Destaque-se com links personalizados que atraem mais cliques para melhorar as taxas de conversão. Otimize links inteligentes que podem ajudar você a gerar mais receitas. Personalização, rastreamento e gerenciamento facilitados. Obtenha uma Demonstração Recursos Links Inteligentes que ampliam suas conversões Melhore a entregabilidade das mensagens através das melhores práticas aceitas globalmente. Garanta uma melhoria..."
+    },
+    "BannerComp": {
+        "slug": "shorturl",
+        "product": {
+            "name": "URL Shortner",
+            "icon": "/assets/icons/products/shorturl.svg"
+        },
+        "tagline": "Simplifique seus links",
+        "heading": "Personalize, compartilhe e acompanhe links inteligentes",
+        "subheading": "Otimize seus links complexos para criar links curtos e mais limpos que são mais fáceis de compartilhar.",
+      "banner_img": "/assets/global/shorturl/banner-shorturl.svg",
+        "getstarted_btn": "Comece gratuitamente",
+        "trustedByComp": {
+            "heading": "Confiado por 30,000+ negócios globais",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Características",
+        "iconColor": "text-campaign",
+        "features": [
+          
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Sem Código",
+                "content":"<strong>Sem código e menos créditos tornam-no um link inteligente.</strong>Encurte seu URL em tempo real sem inserir qualquer código. Basta colar seu link e você terá um link inteligente que é fácil de compartilhar, economiza espaço e consome menos créditos. ",
+                "img": "/assets/global/shorturl/shorturl-no-code.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Rastreamento Numérico",
+                "content":"<strong>Reúna estatísticas monitorando o número de acessos do seu URL.</strong>Acompanhe o desempenho do seu shortURL e o número de acessos para cada destinatário. Saiba quantas vezes o link foi clicado, onde foi compartilhado e como está direcionando o tráfego.",
+                "img": "/assets/global/shorturl/shorturl-number-wise-tracking.svg"
+            }
+          
+        ]
+    },
+    "FaqsComp": {
+        "heading": "Perguntas Frequentes",
+        "faqs": [
+            {
+                "question": "Como o MSG91 pode beneficiar o meu negócio?",
+                "answer": "O MSG91 oferece inúmeros benefícios para os negócios, incluindo maior engajamento do cliente, fluxos de comunicação simplificados, aumento da eficiência operacional e melhoria da reputação da marca. Nossa plataforma permite que as empresas automatizem a comunicação, personalizem interações e alcancem seu público-alvo através dos canais de sua preferência."
+            },
+            {
+                "question": "O que torna o MSG91 diferente de outras plataformas de comunicação?",
+                "answer": "O MSG91 se destaca devido à sua confiabilidade, escalabilidade e versatilidade. Somos especializados em fornecer plataformas de comunicação em nuvem móvel na Índia, atendendo às necessidades únicas das empresas neste mercado. Nossa plataforma oferece recursos avançados, soluções personalizáveis e suporte ao cliente excepcional para ajudar as empresas a alcançarem seus objetivos de comunicação."
+            },
+            {
+                "question": "O MSG91 é adequado para empresas de todos os tamanhos?",
+                "answer": "Sim, o MSG91 atende empresas de todos os tamanhos. Seja você uma startup, pequena empresa ou grande empresa, nossa plataforma pode ser adaptada para atender às suas necessidades específicas. Oferecemos soluções escaláveis que podem acomodar as necessidades de comunicação das empresas à medida que elas crescem e se expandem."
+            },
+            {
+                "question": "O MSG91 é seguro?",
+                "answer": "A segurança é uma prioridade no MSG91. Implementamos protocolos e técnicas de criptografia padrão da indústria para garantir a confidencialidade e integridade dos seus dados. Nossa plataforma de comunicações em nuvem para empresas oferece recursos como autenticação de dois fatores e verificação de OTP para aumentar a segurança e proteger informações sensíveis."
+            },
+            {
+                "question": "Posso integrar o MSG91 com meus sistemas ou aplicativos existentes?",
+                "answer": "Absolutamente! O MSG91 fornece APIs e documentação amigáveis para desenvolvedores, tornando fácil integrar nossa plataforma com seus sistemas ou aplicativos existentes. Nossas APIs permitem incorporar nossas funcionalidades de comunicação sem problemas, permitindo que você automatize a comunicação e simplifique seus fluxos de trabalho."
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

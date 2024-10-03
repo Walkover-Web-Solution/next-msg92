@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "WhatsApp API for businesses in India | MSG91-India",
-        "description": "Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred & reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now."
+        "title": "WhatsApp API for businesses | MSG91-Philippines",
+        "description": "Send and receive instant messages and notification to provide real-time customer support globally on one of most preferred & reliable chat platform. Integrate MSG91 WhatsApp API into your website or application now"
     },
     "BannerComp": {
         "slug": "whatsapp",
@@ -9,14 +9,15 @@
             "name": "WhatsApp",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "dominate popular platforms",
+        "tagline": "Dominate popular platforms",
         "heading": "Drive better customer engagement outcomes",
         "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
       "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",
         "schedule_meet":"Schedule a Meeting",
         "trustedByComp": {
-            "heading": "Support 15+ channels & platforms",
+            "heading": "Trusted by 30,000+ global businesses",
+
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -48,13 +49,13 @@
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "WhatsApp ChatBot",
-                "content": "Automated interactions on the messaging platform, providing instant responses, handling customer inquiries, and performing tasks such as customer support, order tracking,place order and providing information. It enhances customer service efficiency and availability.",
+                "content": "A WhatsApp chatbot automates customer interactions with pre-programmed responses and workflows. It can handle common queries, schedule appointments, track your order, offer customer support, and work 24/7. Chatbots use keywords and quick replies to engage customers and can escalate complex issues to human agents, ensuring a seamless experience.",
                 "img": "/assets/global/whatsapp/whatsapp-chatBot.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Whatsapp Integrations",
-                "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and more",
+                "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and more ",
                 "img": "/assets/global/whatsapp/whatsapp-integrations.svg"
             },
             {
@@ -73,13 +74,13 @@
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Broadcast / Campaign",
                 "content": "WhatsApp's broadcast lets you send the same message to multiple contacts at once, ideal for updates and announcements. Campaigns, available in the WhatsApp Business API, enable targeted marketing with automated, personalized messages. Both help businesses reach more people efficiently.",
-                 "img": "/assets/global/whatsapp/whatsapp-campaign.svg"
+                "img": "/assets/global/whatsapp/whatsapp-campaign.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Click Counts",
                 "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook.",
-                "img": "/assets/global/whatsapp/whatsapp-campaign.svg"
+                "img": "/assets/global/whatsapp/whatsapp-click-counts.svg"
             },     {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Support Base64",
@@ -93,8 +94,13 @@
                 "img": "/assets/global/whatsapp/whatsapp-2way-communication.svg"
             },     {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Manage Template Inside Panel",
+                "content": "<strong>Create and Manage your template right here</strong>No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook.",
+                "img": "/assets/global/whatsapp/whatsapp-analytics.svg"
+            },    {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Analytics",
-                "content": "<strong>Get graphical insights into your business messages.</strong>Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more.",
+                "content": "<strong>Get graphical insights into your business messages.</strong>Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more..",
                 "img": "/assets/global/whatsapp/whatsapp-analytics.svg"
             },
             {

@@ -1,0 +1,122 @@
+{
+    "HeadComp": {
+        "title": "API do WhatsApp para Empresas no Brasil | MSG91-Brasil",
+        "description": "Envie e receba mensagens instantâneas e notificações para fornecer suporte ao cliente em tempo real globalmente em uma das plataformas de chat mais preferidas e confiáveis. Integre a API do WhatsApp da MSG91 ao seu site ou aplicativo agora mesmo."
+    },
+    "BannerComp": {
+        "slug": "whatsapp",
+        "product": {
+            "name": "WhatsApp",
+            "icon": "/assets/icons/products/whatsapp.svg"
+        },
+        "tagline": "domine as plataformas populares",
+        "heading": "Impulsione melhores resultados de engajamento do cliente",
+        "subheading": "Encontre seus clientes onde eles já estão, na plataforma com mais de 2 bilhões de usuários.",
+      "banner_img": "/assets/global/hello/banner.webp",
+        "getstarted_btn": "Comece gratuitamente",
+        "schedule_meet":"Schedule a Meeting",
+        "trustedByComp": {
+            "heading": "Confiado por 30,000+ negócios globais",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Características",
+        "iconColor": "text-campaign",
+        "features": [
+          
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Suporte a Base64",
+                "content": "<strong>Envie o corpo em JSON e deixe o resto conosco.</strong>Não é necessário criar uma URL ou fazer o upload do seu arquivo, pois você pode enviar diretamente o corpo JSON e ele será convertido automaticamente em formato Base64 e enviado via WhatsApp.",
+                "img": "/assets/global/whatsapp/whatsapp-support-base64.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Comunicação bidirecional",
+                "content": "<strong>Diga olá para continuar no HELLO.</strong>Dê ao seu cliente a plataforma certa para continuar a conversa. Assim que ele responder, ele será levado diretamente para o HELLO para iniciar uma comunicação bidirecional com sua empresa.",
+                "img": "/assets/global/whatsapp/whatsapp-2way-communication.svg"
+            },  
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Gerencie o template dentro do painel",
+                "content": "<strong>Crie e gerencie seus templates aqui mesmo.</strong>No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook.",
+                "img": "/assets/global/whatsapp/whatsapp-analytics.svg"
+            },   {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Análise",
+                "content": "<strong>Obtenha insights gráficos sobre as mensagens da sua empresa.</strong>Analise e melhore a comunicação da sua empresa com as métricas certas. Obtenha um relatório gráfico sobre o número de mensagens enviadas, entregues, conversas e muito mais.",
+                "img": "/assets/global/whatsapp/whatsapp-analytics.svg"
+            },
+            {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Exportar Logs",
+                "content": "<strong>Obtenha logs individuais de mensagens enviadas e recebidas.</strong>Exporte os logs para uma melhor visualização e insights. Obtenha detalhes de todas as mensagens enviadas e recebidas e das conversas que sua empresa teve com seus clientes.",
+                "img": "/assets/global/whatsapp/whatsapp-export-logs.svg"
+            }
+        ]
+    },
+    "FaqsComp": {
+        "heading": "Perguntas Frequentes",
+        "faqs": [
+            {
+                "question": "Como o MSG91 pode beneficiar o meu negócio?",
+                "answer": "O MSG91 oferece inúmeros benefícios para os negócios, incluindo maior engajamento do cliente, fluxos de comunicação simplificados, aumento da eficiência operacional e melhoria da reputação da marca. Nossa plataforma permite que as empresas automatizem a comunicação, personalizem interações e alcancem seu público-alvo através dos canais de sua preferência."
+            },
+            {
+                "question": "O que torna o MSG91 diferente de outras plataformas de comunicação?",
+                "answer": "O MSG91 se destaca devido à sua confiabilidade, escalabilidade e versatilidade. Somos especializados em fornecer plataformas de comunicação em nuvem móvel na Índia, atendendo às necessidades únicas das empresas neste mercado. Nossa plataforma oferece recursos avançados, soluções personalizáveis e suporte ao cliente excepcional para ajudar as empresas a alcançarem seus objetivos de comunicação."
+            },
+            {
+                "question": "O MSG91 é adequado para empresas de todos os tamanhos?",
+                "answer": "Sim, o MSG91 atende empresas de todos os tamanhos. Seja você uma startup, pequena empresa ou grande empresa, nossa plataforma pode ser adaptada para atender às suas necessidades específicas. Oferecemos soluções escaláveis que podem acomodar as necessidades de comunicação das empresas à medida que elas crescem e se expandem."
+            },
+            {
+                "question": "O MSG91 é seguro?",
+                "answer": "A segurança é uma prioridade no MSG91. Implementamos protocolos e técnicas de criptografia padrão da indústria para garantir a confidencialidade e integridade dos seus dados. Nossa plataforma de comunicações em nuvem para empresas oferece recursos como autenticação de dois fatores e verificação de OTP para aumentar a segurança e proteger informações sensíveis."
+            },
+            {
+                "question": "Posso integrar o MSG91 com meus sistemas ou aplicativos existentes?",
+                "answer": "Absolutamente! O MSG91 fornece APIs e documentação amigáveis para desenvolvedores, tornando fácil integrar nossa plataforma com seus sistemas ou aplicativos existentes. Nossas APIs permitem incorporar nossas funcionalidades de comunicação sem problemas, permitindo que você automatize a comunicação e simplifique seus fluxos de trabalho."
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
