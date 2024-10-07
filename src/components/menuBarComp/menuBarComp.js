@@ -8,7 +8,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
         switch (pageInfo?.country) {
             case 'global':
                 if (pageInfo?.page !== 'pricing') {
-                    path = '/pricing/' + (pageInfo?.page || 'hello');
+                    path = '/pricing/' + ((pageInfo?.page !== 'home' && pageInfo?.page) || 'hello');
                 } else {
                     path = '/pricing/hello';
                 }
@@ -16,7 +16,11 @@ export default function MenuBarComp({ componentData, pageInfo }) {
 
             default:
                 if (pageInfo?.page !== 'pricing') {
-                    path = '/' + pageInfo?.country + '/pricing/' + (pageInfo?.page || 'hello');
+                    path =
+                        '/' +
+                        pageInfo?.country +
+                        '/pricing/' +
+                        ((pageInfo?.page !== 'home' && pageInfo?.page) || 'hello');
                 } else {
                     path = '/' + pageInfo?.country + '/pricing/' + 'hello';
                 }

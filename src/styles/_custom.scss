@@ -58,7 +58,7 @@
 
 .text-link,
 .text-link-white {
-    cursor: pointer;
+    cursor: pointer !important;
     position: relative;
     transition: color 0.1s ease-in-out;
     width: fit-content;

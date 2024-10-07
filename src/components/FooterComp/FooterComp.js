@@ -1,3 +1,4 @@
+import getRelativeURL from '@/utils/getRelativeURL';
 import Link from 'next/link';
 
 export default function FooterComp({ componentData }) {
@@ -14,7 +15,10 @@ export default function FooterComp({ componentData }) {
                                         {componentData?.products?.links.map((link, index) => {
                                             return (
                                                 <li key={index} className='text-link-white'>
-                                                    <Link href={link?.link} className='text-gray-200 '>
+                                                    <Link
+                                                        href={getRelativeURL(link?.link, 'product')}
+                                                        className='text-gray-200 '
+                                                    >
                                                         {link?.name}
                                                     </Link>
                                                 </li>
@@ -30,7 +34,10 @@ export default function FooterComp({ componentData }) {
                                         {componentData?.utilities?.links.map((link, index) => {
                                             return (
                                                 <li key={index} className='text-link-white'>
-                                                    <Link href={link?.link} className='text-gray-200'>
+                                                    <Link
+                                                        href={getRelativeURL(link?.link, 'product')}
+                                                        className='text-gray-200'
+                                                    >
                                                         {link?.name}
                                                     </Link>
                                                 </li>
@@ -48,7 +55,10 @@ export default function FooterComp({ componentData }) {
                                         {componentData?.channels?.links.map((link, index) => {
                                             return (
                                                 <li key={index} className='text-link-white'>
-                                                    <Link href={link?.link} className='text-gray-200'>
+                                                    <Link
+                                                        href={getRelativeURL(link?.link, 'product')}
+                                                        className='text-gray-200'
+                                                    >
                                                         {link?.name}
                                                     </Link>
                                                 </li>
@@ -64,7 +74,10 @@ export default function FooterComp({ componentData }) {
                                         {componentData?.resources?.links.map((link, index) => {
                                             return (
                                                 <li key={index} className='text-link-white'>
-                                                    <Link href={link?.link} className='text-gray-200'>
+                                                    <Link
+                                                        href={getRelativeURL(link?.link, 'product')}
+                                                        className='text-gray-200'
+                                                    >
                                                         {link?.name}
                                                     </Link>
                                                 </li>
@@ -101,7 +114,10 @@ export default function FooterComp({ componentData }) {
                                 componentData?.policies?.links.map((link, index) => {
                                     return (
                                         <li key={index} className='flex items-center gap-4'>
-                                            <Link href={link?.link} className='text-gray-200 text-link-white  '>
+                                            <Link
+                                                href={getRelativeURL(link?.link, 'product')}
+                                                className='text-gray-200 text-link-white  '
+                                            >
                                                 {link?.name}
                                             </Link>
                                             <span>|</span>

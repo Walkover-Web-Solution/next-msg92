@@ -1,5 +1,4 @@
 [
-
     {
         "shortname": "IN",
         "name": "India",
@@ -20,27 +19,6 @@
         "code": 55,
         "language": "Portuguese",
         "currency": "USD"
-    },    
-    {
-        "shortname": "PH",
-        "name": "Philippines",
-        "code": 63,
-        "language": "English",
-        "currency": "GBP"
-    },    
-    {
-        "shortname": "SG",
-        "name": "Singapore",
-        "code": 65,
-        "language": "English",
-        "currency": "GBP"
-    },    
-    {
-        "shortname": "ES",
-        "name": "Spain",
-        "code": 34,
-        "language": "English",
-        "currency": "GBP"
     },
     {
         "shortname": "AE",
@@ -48,7 +26,28 @@
         "code": 971,
         "language": "English",
         "currency": "USD"
-    },    
+    },
+    {
+        "shortname": "PH",
+        "name": "Philippines",
+        "code": 63,
+        "language": "English",
+        "currency": "GBP"
+    },
+    {
+        "shortname": "SG",
+        "name": "Singapore",
+        "code": 65,
+        "language": "English",
+        "currency": "GBP"
+    },
+    {
+        "shortname": "ES",
+        "name": "Spain",
+        "code": 34,
+        "language": "English",
+        "currency": "GBP"
+    },
     {
         "shortname": "GB",
         "name": "United Kingdom",

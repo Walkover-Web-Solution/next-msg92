@@ -6,12 +6,20 @@ export default function getRelativeURL(link, type) {
     const pathArray = rawPath.split('?')[0].split('/');
 
     // find id the country is global
-    const notGobal = availableCountries.some((country) => country.shortname === pathArray[1]);
+    const notGobal = availableCountries.some((country) => country.shortname.toLowerCase() === pathArray[1]);
 
     let relativeURL = '/';
     if (notGobal) {
         switch (type) {
             case 'product':
+                if (pathArray.length > 2) {
+                    pathArray[pathArray.length - 1] = link;
+                    relativeURL = pathArray.join('/');
+                    console.log('🚀 ~ getRelativeURL ~ relativeURL:', relativeURL);
+                }
+                break;
+
+            case 'pricing':
                 if (pathArray.length > 2) {
                     pathArray.splice(2, 1);
                     pathArray[pathArray.length - 1] = link;
@@ -21,7 +29,6 @@ export default function getRelativeURL(link, type) {
 
             case 'country':
                 pathArray[1] = link;
-                pathArray[pathArray.length - 1] = link;
                 relativeURL = pathArray.join('/');
                 break;
 
