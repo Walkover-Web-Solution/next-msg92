@@ -51,7 +51,7 @@
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Multi channel support",
-                "content": " <strong>Support your customers on their preferred channel.</strong>Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, WhatsApp and more. Meet your customers where they are.",
+                "content": " <strong>Support your customers on their preferred channel.</strong>Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification,<a href='/whatsapp'> WhatsApp</a> and more. Meet your customers where they are.",
                 "img": "/assets/global/campaign/features/campaign-multi-channel-support.svg"
             },
             {

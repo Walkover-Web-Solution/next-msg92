@@ -83,7 +83,7 @@
         "linkText": "Learn more",
         "channels": [
             {
-                "icon": "/assets/icons/products/hello.svg",
+                "icon": "/assets/icons/products/sms.svg",
                 "name": "SMS",
                 "description": "Transform your global communication with MSG91's reliable SMS services & APIs. Engage, analyze, and connect effortlessly on a global scale",
                 "link": "/sms"

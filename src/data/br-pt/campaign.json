@@ -63,7 +63,7 @@
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Condição Baseada em Tempo",
-                "content": "<strong>Send perfectly timed automated messages.</strong>Build a thoughtful sending schedule with time-based conditions that control the time zone of when your campaigns are delivered. Support your customers at the right time.",
+                "content": "<strong>Envie mensagens automáticas perfeitamente cronometradas.</strong>Crie um cronograma de envio cuidadoso com condições baseadas em tempo que controlam o fuso horário de quando suas campanhas são entregues. Apoie seus clientes no momento certo.",
                 "img": "/assets/global/campaign/features/campaign-time-based-condition.svg"
             },
             {
@@ -104,5 +104,18 @@
                 "answer": "Absolutamente! O MSG91 fornece APIs e documentação amigáveis para desenvolvedores, tornando fácil integrar nossa plataforma com seus sistemas ou aplicativos existentes. Nossas APIs permitem incorporar nossas funcionalidades de comunicação sem problemas, permitindo que você automatize a comunicação e simplifique seus fluxos de trabalho."
             }
         ]
+    },
+    "PreFooterComp": {
+        "content": "Comece a construir a experiência de engajamento do cliente ideal",
+        "buttons": {
+            "contactSales": {
+                "text": "Fale com as vendas",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Comece agora",
+                "link": "/pricing/"
+            }
+        }
     }
 }

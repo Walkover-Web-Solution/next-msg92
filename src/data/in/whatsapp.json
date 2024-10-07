@@ -16,7 +16,7 @@
         "getstarted_btn": "Get Started",
         "schedule_meet":"Schedule a Meeting",
         "trustedByComp": {
-            "heading": "Support 15+ channels & platforms",
+            "heading": "Trusted by 30,000+ global businesses",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -54,7 +54,7 @@
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Whatsapp Integrations",
-                "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and more",
+                "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and <a href='/integrations'>more</a>",
                 "img": "/assets/global/whatsapp/whatsapp-integrations.svg"
             },
             {

@@ -6,7 +6,7 @@
     "BannerComp": {
         "tagline": "customer solution platform",
         "heading": "Connect with your customers via multiple channels",
-        "subheading": "Secure and robust APIs for SMS, Email, Voice, Authentication and more",
+        "subheading":"Secure and robust APIs for WhatsApp, SMS, RCS, Email, Voice, Authentication and more",
         "banner_img": "/assets/global/index/banner.webp",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
@@ -79,7 +79,7 @@
         "linkText": "Learn more",
         "channels": [
             {
-                "icon": "/assets/icons/products/hello.svg",
+                "icon": "/assets/icons/products/sms.svg",
                 "name": "SMS",
                 "description": "Transform your global communication with MSG91's reliable SMS services & APIs. Engage, analyze, and connect effortlessly on a global scale",
                 "link": "/sms"
@@ -118,12 +118,12 @@
         },
         {
             "fact": "1.6 Billion+",
-            "stat": "OTPs",
+            "stat": "SMS sent",
             "per": "per month"
         },
         {
             "fact": "1 Billion+",
-            "stat": "SMS sent",
+            "stat": "OTP sent",
             "per": "per month"
         },
         {

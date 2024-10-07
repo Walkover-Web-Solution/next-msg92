@@ -107,6 +107,12 @@
             }
         ]
     },
+    "moreFeature": {
+       
+        "name": "Eliminating Mediocre Customer Service",
+    "description":"MSG91, the best customer support software, is designed with a range of sophisticated programs to assist organizations in delivering exceptional support and guidance to their customers. We offer a centralized system where customer support representatives can manage, prioritize, address, and ultimately take care of multiple employee or customer requests. Customer service software, however, consists of more than simply a ticketing system; it also consists of several customer service tools for small businesses to assist in providing impressive customer service.",
+        "Read_more_btn": "Read More"
+    },
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
