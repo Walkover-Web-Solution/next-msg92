@@ -6,16 +6,16 @@
     "BannerComp": {
         "slug": "email",
         "product": {
-            "name": "Email",
+            "name": "Email API Provider",
             "icon": "/assets/icons/products/email.svg"
         },
-        "tagline": "Email API Provider",
-        "heading": "smarter email strategy",
-        "subheading": "Smart emails that land directly into the right inbox Make the most of these powerful touchpoints between your brand and your customers.",
+        "tagline": "smarter email strategy",
+        "heading": "Smart emails that land directly into the right inbox",
+        "subheading": " Make the most of these powerful touchpoints between your brand and your customers.",
        "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
-            "heading": "Support 15+ channels & platforms",
+            "heading": "Trusted by 30,000+ global businesses",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -53,7 +53,7 @@
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "AMP Emails",
-                "content": "<strong>Rich interactive emails to increase user engagement.</strong>e queries Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects.",
+                "content": "<strong>Rich interactive emails to increase user engagement.</strong>Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects.",
                 "img": "/assets/global/email/email-amp-emails.svg"
             },
             {

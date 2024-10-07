@@ -1,17 +1,17 @@
 {
     "HeadComp": {
-        "title": "Transactional Email | Transactional Email API - MSG91-Singapore",
+        "title": "Transactional Email | Transactional Email API - MSG91",
         "description": "Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
     },
     "BannerComp": {
         "slug": "email",
         "product": {
-            "name": "Email API Service",
+            "name": "Email API ",
             "icon": "/assets/icons/products/email.svg"
         },
-        "tagline": "smarter email strategy",
+        "tagline": " smarter email strategy",
         "heading": "Smart emails that land directly into the right inbox",
-        "subheading": " Make the most of these powerful touchpoints between your brand and your customers.",
+        "subheading": "Make the most of these powerful touchpoints between your brand and your customers.",
        "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
@@ -53,19 +53,19 @@
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "AMP Emails",
-                "content": "<strong>Rich interactive emails to increase user engagement.</strong>Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects.",
+                "content": "<strong>Rich interactive emails to increase user engagement.</strong> Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects.",
                 "img": "/assets/global/email/email-amp-emails.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Statistics",
-                "content": "<strong>Monitor and track every aspect of your email’s lifecycle.</strong>Get a graphical representation of the delivery rates, open rates, click-through rates, bounce rates, and spam to iterate and ensure you reach your customer's inbox.",
+                "content": "<strong>Monitor and track every aspect of your email’s lifecycle.</strong> Get a graphical representation of the delivery rates, open rates, click-through rates, bounce rates, and spam to iterate and ensure you reach your customer's inbox.",
                 "img": "/assets/global/email/email-statistics.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "SMTP/RestAPI support",
-                "content": " <strong>Integrate with our RESTful APIs and SMTP in minutes.</strong> Integrate with our RESTful APIs and SMTP in minutes. Get your hands on our comprehensive documentation or connect with our support superheroes to easily integrate into your custom or third-party apps to start sending emails..",
+                "content": " <strong>Integrate with our RESTful APIs and SMTP in minutes.</strong>Integrate with our RESTful APIs and SMTP in minutes. Get your hands on our comprehensive documentation or connect with our support superheroes to easily integrate into your custom or third-party apps to start sending emails.",
                "img": "/assets/global/email/email-smtp-restapi-support.svg"
             },
             {
@@ -76,7 +76,31 @@
             }
         ]
     },
-    
+    "FaqsComp": {
+        "heading": "Frequently Asked Questions",
+        "faqs": [
+            {
+                "question": "How can MSG91 benefit my business?",
+                "answer": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+            },
+            {
+                "question": "What makes MSG91 different from other communication platforms?",
+                "answer": "MSG91 stands out due to its reliability, scalability, and versatility. We specialize in providing mobile cloud communication platforms in India , addressing the unique needs of businesses in this market. Our platform offers advanced features, customizable solutions, and exceptional customer support to help businesses achieve their communication goals."
+            },
+            {
+                "question": "Is MSG91 suitable for businesses of all sizes?",
+                "answer": "Yes, MSG91 caters to businesses of all sizes. Whether you're a startup, small business, or large enterprise, our platform can be tailored to meet your specific requirements. We offer scalable solutions that can accommodate the communication needs of businesses as they grow and expand."
+            },
+            {
+                "question": "Is MSG91 secure?",
+                "answer": "Security is a top priority at MSG91. We implement industry-standard protocols and encryption techniques to ensure the confidentiality and integrity of your data. Our enterprise cloud communications platform offers features like two-factor authentication and OTP verification to enhance security and protect sensitive information."
+            },
+            {
+                "question": "Can I integrate MSG91 with my existing systems or applications?",
+                "answer": "Absolutely! MSG91 provides developer-friendly APIs and documentation, making it easy to integrate our platform with your existing systems or applications. Our APIs allow you to incorporate our communication functionalities seamlessly, enabling you to automate communication and streamline your workflows."
+            }
+        ]
+    },
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {

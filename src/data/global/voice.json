@@ -1,22 +1,21 @@
 {
     "HeadComp": {
-        "title": "Customer Support Platform for your Business by MSG91-Singapore",
-        "description": "Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
+        "title": "Voice API for your Business | Voice Call API | MSG91",
+        "description": "MSG91 provides voice call api's to your business which helps to engage your customers over voice with our virtual phone numbers, and voice APIs."
     },
     "BannerComp": {
-        "slug": "hello",
+        "slug": "voice",
         "product": {
-          
-            "name": "Hello",
-            "icon": "/assets/icons/products/hello.svg"
+            "name": "Voice",
+            "icon": "/assets/icons/products/voice.svg"
         },
-        "tagline": "Revolutionize Customer Support",
-        "heading": "Customer Service Software ",
-        "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
-        "banner_img": "/img/pages/hello/heroimg.webp",
+        "tagline": "connect with confidence",
+        "heading": "Boost customer engagement and build trust",
+        "subheading": "Start real-time conversations with crystal clear audio, low latency and deeper insights.",
+      "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
-            "heading": "Support 15+ channels and platforms ",
+            "heading": "Trusted by 30,000+ global businesses",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -45,41 +44,47 @@
         "heading": "Features",
         "iconColor": "text-campaign",
         "features": [
+          
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Unlimited Agents",
-                "content": "Unlimited free agents to power up your customer support. More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is nonumber attached to your number of customer support agents",
-                "img": "/assets/global/hello/unlimited-agents.svg"
+                "name": "Call Monitoring",
+                "content":"<strong>Introducing the next-level communication experience with our all-new Call Monitoring features</strong>We're putting you in the driver's seat of your conversations with callers. These robust features give you greater control and insight during your calls, ensuring enhanced communication and customer satisfaction. Call spying: your secret weapon for quality assurance! Call barging: real-time support, is just a click away! Call whispering: guidance at your fingertips!",
+                "img": "/assets/global/voice/voice-call-monitoring.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Chatbot",
-                "content": "Resolve customer queries round-the-clock across text and voice. Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents.",
-                "img": "/assets/global/hello/chatbot.svg"
+                "name": "Direct calling from browser",
+                "content": "<strong>Skip the 2-way calling and directly call from browser.</strong>Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation.",
+                "img": "/assets/global/voice/voice-direct-calling-from-hello.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Screen Control",
-                "content": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues.",
-                "img": "/assets/global/hello/screen-control.svg"
+                "name": "IVR Flow",
+                "content": "<strong>Modern IVR that makes customer interaction quick and hassle-free.</strong>Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message.",
+                "img": "/assets/global/voice/voice-ivr-flow.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Video Call / Screen Sharing",
-                "content": "High-quality video calls wherever your customer is. Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue.",
-                "img": "/assets/global/hello/video-call---screen-sharing.svg"
+                "name": "Bulk Voice",
+                "content":"<strong>Speak directly with your audience over a single call.</strong>Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore.",
+                "img": "/assets/global/voice/voice-bulk-voice.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Workflow",
-                "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs.",
-                "img": "/assets/global/hello/workflow.svg"
+                "name": "Multiple Way to Upload File",
+                "content":"<strong>Upload your audio message in multiple ways.</strong>Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call.",
+                "img": "/assets/global/voice/voice-multiple-way-to-upload-file.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Analytics",
-                "content": "Analytics and reports to monitor your agent performance. Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support.",
-                "img": "/assets/global/hello/analytics.svg"
+                "name": "Bulk voice with IVR",
+                "content":"<strong>Connect your voice call to the IVR.</strong>Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR.",
+                "img": "/assets/global/voice/voice-bulk-voice-with-ivr.svg"
+            },      {
+                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+                "name": "Real time connect with agent on user input on bulk call",
+                "content": "<strong>Direct users to your support agents</strong>Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input.",
+                "img": "/assets/global/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
             }
         ]
     },

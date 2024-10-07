@@ -1,22 +1,20 @@
-{
-    "HeadComp": {
-        "title": "Customer Support Platform for your Business by MSG91-Singapore",
-        "description": "Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
-    },
-    "BannerComp": {
-        "slug": "hello",
-        "product": {
-          
-            "name": "Hello",
-            "icon": "/assets/icons/products/hello.svg"
-        },
-        "tagline": "Revolutionize Customer Support",
-        "heading": "Customer Service Software ",
-        "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
-        "banner_img": "/img/pages/hello/heroimg.webp",
-        "getstarted_btn": "Get Started",
-        "trustedByComp": {
-            "heading": "Support 15+ channels and platforms ",
+{ "HeadComp": {
+    "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91",
+    "description":"Enhance your customer engagement with Rich Communication Service. Effortless RCS integration and advanced features boost communication and stimulate business growth"
+  }, 
+         "BannerComp": {
+          "slug": "rcs",
+          "product": {
+              "name": "RCS",
+              "icon": "/assets/icons/products/rcs.svg"
+          },
+          "tagline": "Rich Communication Services",
+          "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+          "subheading":"RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
+        "banner_img": "/assets/global/hello/banner.webp",
+          "getstarted_btn": "Get Started",
+          "trustedByComp": {
+            "heading": "Trusted by 30,000+ global businesses",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -40,50 +38,33 @@
                 }
             ]
         }
-    },
-    "FeatureComp": {
+      },
+      "FeatureComp":{ 
         "heading": "Features",
-        "iconColor": "text-campaign",
-        "features": [
-            {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Unlimited Agents",
-                "content": "Unlimited free agents to power up your customer support. More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is nonumber attached to your number of customer support agents",
-                "img": "/assets/global/hello/unlimited-agents.svg"
-            },
-            {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Chatbot",
-                "content": "Resolve customer queries round-the-clock across text and voice. Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents.",
-                "img": "/assets/global/hello/chatbot.svg"
-            },
-            {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Screen Control",
-                "content": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues.",
-                "img": "/assets/global/hello/screen-control.svg"
-            },
-            {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Video Call / Screen Sharing",
-                "content": "High-quality video calls wherever your customer is. Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue.",
-                "img": "/assets/global/hello/video-call---screen-sharing.svg"
-            },
-            {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Workflow",
-                "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs.",
-                "img": "/assets/global/hello/workflow.svg"
-            },
-            {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-                "name": "Analytics",
-                "content": "Analytics and reports to monitor your agent performance. Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support.",
-                "img": "/assets/global/hello/analytics.svg"
-            }
-        ]
-    },
-    "FaqsComp": {
+          "iconColor": "text-otp",
+          "features":[
+        { "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+          "name": "Corporate Communications with Branding",
+          "content": "<strong>Distinguish by branding</strong>Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers.",
+          "img": "/assets/global/rcs/rcs-communications-branding.svg"
+        },
+        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+          "name": "Provide Multimedia Interactions",
+          "content": "<strong>Communication through visual representation</strong>Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions.",
+          "img":  "/assets/global/rcs/rcs-multimedia-interactions.svg"
+        },
+        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+          "name": "Boost Sales Through Interactive Conversations",
+          "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions.",
+          "img": "/assets/global/rcs/rcs-boost-sales.svg"
+        },
+    {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+          "name": "Enhanced Customer Trust",
+          "content": " <strong>Understand your customers' habits</strong>Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility.",
+          "img": "/assets/global/rcs/rcs-customer-trust.svg"
+        }]
+      },
+      "FaqsComp": {
         "heading": "Frequently Asked Questions",
         "faqs": [
             {
@@ -108,7 +89,7 @@
             }
         ]
     },
-    "PreFooterComp": {
+      "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
             "contactSales": {
@@ -125,4 +106,5 @@
             }
         }
     }
-}
+    }
+    
