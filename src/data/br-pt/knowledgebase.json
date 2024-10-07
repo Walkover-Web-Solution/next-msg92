@@ -92,19 +92,15 @@
         ]
     },
     "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
+        "content": "Comece a construir a experiência de engajamento do cliente ideal",
         "buttons": {
             "contactSales": {
-                "text": "Contact sales",
+                "text": "Fale com as vendas",
                 "link": "/contact-us"
             },
             "pricing": {
-                "text": "Pricing",
+                "text": "Comece agora",
                 "link": "/pricing/"
-            },
-            "getStarted": {
-                "text": "Get started",
-                "link": "https://control.msg91.com/signup/"
             }
         }
     },

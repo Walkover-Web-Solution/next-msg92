@@ -8,7 +8,7 @@
         "heading": "Plataforma de Comunicação em Nuvem",
         "subheading": "APIs seguras e robustas para SMS, Email, Voice, Autenticação e mais",
         "banner_img": "/assets/global/index/banner.webp",
-        "getstarted_btn": "Get Started",
+        "getstarted_btn": "Começar",
         "trustedByComp": {
             "heading": "Confiado por 30,000+ negócios globais",
             "logos": [
@@ -83,7 +83,7 @@
         "linkText": "Saiba mais",
         "channels": [
             {
-                "icon": "/assets/icons/products/hello.svg",
+                "icon": "/assets/icons/products/sms.svg",
                 "name": "SMS",
                 "description": "Transforme sua comunicação global com os serviços e APIs de SMS confiáveis da MSG91. Envolva, analise e conecte-se sem esforço em escala global",
                 "link": "/sms"
@@ -227,10 +227,6 @@
             "pricing": {
                 "text": "Comece agora",
                 "link": "/pricing/"
-            },
-            "getStarted": {
-                "text": "Get started",
-                "link": "https://control.msg91.com/signup/"
             }
         }
     },

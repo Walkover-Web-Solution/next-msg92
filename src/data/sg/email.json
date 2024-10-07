@@ -6,12 +6,12 @@
     "BannerComp": {
         "slug": "email",
         "product": {
-            "name": "Email",
+            "name": "Email API Service",
             "icon": "/assets/icons/products/email.svg"
         },
-        "tagline": "Email API Service",
-        "heading": "smarter email strategy",
-        "subheading": "Smart emails that land directly into the right inbox Make the most of these powerful touchpoints between your brand and your customers.",
+        "tagline": "smarter email strategy",
+        "heading": "Smart emails that land directly into the right inbox",
+        "subheading": " Make the most of these powerful touchpoints between your brand and your customers.",
        "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
