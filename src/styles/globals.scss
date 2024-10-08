@@ -10,6 +10,9 @@ body {
         'Noto Color Emoji';
 }
 
+.flex-col{
+    @apply flex
+}
 .country-typehead {
     div {
         @apply w-full;
@@ -34,5 +37,5 @@ body {
     }
 }
 .rbt-menu{
-    @apply w-fit bg-white flex flex-col ;
+    @apply w-fit bg-white flex-col ;
 }

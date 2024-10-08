@@ -80,7 +80,7 @@ export default function PricingSMSOTP({ data, type, country }) {
 
     return (
         <>
-            <div className='w-full flex flex-col gap-8'>
+            <div className='w-full flex-col gap-8'>
                 <div className='flex items-center text-lg gap-3'>
                     <span>Send {type.toUpperCase()} From</span>
                     <div className='w-[300px] z-50'>
@@ -120,7 +120,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                 {!loading ? (
                     noOfSmsArray.length > 1 ? (
                         <>
-                            <div className='w-full p-8 bg-white h-fit flex flex-col gap-6'>
+                            <div className='w-full p-8 bg-white h-fit flex-col gap-6'>
                                 <div className='d-none d-lg-block text-center text-dark c-fw-m'>Number of SMS</div>
                                 <div className=' flex'>
                                     {noOfSmsArray.map((item, index) => {
@@ -190,7 +190,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                             <button className='btn btn-primary btn-md'>Get Started</button>
                         </>
                     ) : (
-                        <div className='flex flex-col gap-8 justify-around items-center h-[282px] bg-white p-8 w-fit border rounded '>
+                        <div className='flex-col gap-8 justify-around items-center h-[282px] bg-white p-8 w-fit border rounded '>
                             <div>SMS Pricing</div>
                             <div className='text-3xl font-bold text-green-600'>
                                 {symbol}

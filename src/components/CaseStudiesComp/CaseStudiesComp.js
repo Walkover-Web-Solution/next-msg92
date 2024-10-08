@@ -6,7 +6,7 @@ export default function CaseStudiesComp({ data }) {
     return (
         <>
             <div className='bg-neutral py-20'>
-                <div className='container flex flex-col gap-6 '>
+                <div className='container flex-col gap-6 '>
                     <h2 className='text-3xl font-bold'>{data?.heading}</h2>
 
                     <div className='grid grid-cols-4 lg:grid-rows-2 md:grid-rows-4 grid-rows-6  md:gap-10 gap-6 '>
@@ -47,8 +47,8 @@ export default function CaseStudiesComp({ data }) {
                                         <div
                                             className={`${
                                                 index !== 0
-                                                    ? 'lg:p-8 md:p-6 p-4 flex flex-col gap-2'
-                                                    : 'lg:p-8 md:p-6 p-4 flex flex-col gap-2'
+                                                    ? 'lg:p-8 md:p-6 p-4 flex-col gap-2'
+                                                    : 'lg:p-8 md:p-6 p-4 flex-col gap-2'
                                             }`}
                                         >
                                             <p className='text-xl'>{caseStudy?.description}</p>

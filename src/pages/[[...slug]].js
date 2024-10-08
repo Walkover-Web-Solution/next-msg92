@@ -16,6 +16,7 @@ import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
 import HeadComp from '@/components/headComp';
 import FeatureComp from '@/components/FeatureComp/FeatureComp';
 import PricingComp from '@/components/PricingComp/PricingComp';
+import SignupComp from '@/components/signupComp/signupComp';
 
 //Functions to fetch data
 import getPageInfo from '@/utils/getPageInfo';
@@ -39,12 +40,18 @@ const Components = {
     HeadComp,
     FeatureComp,
     PricingComp,
+    SignupComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
     return (
         <>
-            <NotificationBarComp componentData={commonData?.notification} country={pageInfo?.country} />
+            {pageInfo?.page !== ''}
+            <NotificationBarComp
+                componentData={commonData?.notification}
+                country={pageInfo?.country}
+                pageInfo={pageInfo}
+            />
 
             <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
 
@@ -60,7 +67,7 @@ export default function Page({ data, commonData, pageInfo }) {
                     return <Component key={`section-${key}`} data={pageData} pageInfo={pageInfo} />;
                 })}
 
-            <FooterComp componentData={commonData?.footer} />
+            <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} />
         </>
     );
 }

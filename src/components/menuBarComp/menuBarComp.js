@@ -28,8 +28,8 @@ export default function MenuBarComp({ componentData, pageInfo }) {
         }
         return process.env.NEXT_PUBLIC_BASE_URL + path;
     };
-
-    if (componentData) {
+    const hidden = componentData?.hide.includes(pageInfo?.page);
+    if (componentData && !hidden) {
         return (
             <div>
                 <div className='container hidden lg:flex items-center py-5 '>

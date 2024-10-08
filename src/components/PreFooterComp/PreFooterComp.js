@@ -2,7 +2,7 @@ export default function PreFooterComp({ data }) {
     return (
         <>
             <div className='bg-neutral py-10'>
-                <div className='container flex flex-col lg:flex-row justify-between gap-6'>
+                <div className='container flex-col lg:flex-row justify-between gap-6'>
                     <h2 className='text-3xl font-bold lg:w-1/2'>
                         {data?.content || 'Start building your ideal customer engagement experience'}
                     </h2>

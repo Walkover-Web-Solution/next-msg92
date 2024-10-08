@@ -5,9 +5,9 @@ import Link from 'next/link';
 export default function PricingNav({ products, page }) {
     return (
         <>
-            <div className='flex flex-col gap-3 min-w-[210px]'>
+            <div className='flex-col gap-3 min-w-[210px]'>
                 <h2>Applications</h2>
-                <ul className='flex flex-col gap-2'>
+                <ul className='flex-col gap-2'>
                     {products?.applications.map((product, index) => {
                         return (
                             <li key={index}>
@@ -17,7 +17,7 @@ export default function PricingNav({ products, page }) {
                     })}
                 </ul>
                 <h2>Channels</h2>
-                <ul className='flex flex-col gap-2'>
+                <ul className='flex-col gap-2'>
                     {products?.channels.map((product, index) => {
                         return (
                             <li key={index}>
@@ -35,7 +35,7 @@ export function ProductButton({ product, page }) {
     return (
         <Link
             href={getRelativeURL(product?.slug)}
-            className={`flex flex-col px-3 py-2 rounded hover:bg-secondary ${page === product?.slug && 'bg-secondary'}`}
+            className={`flex-col px-3 py-2 rounded hover:bg-secondary ${page === product?.slug && 'bg-secondary'}`}
         >
             <div className='flex items-center gap-1'>
                 <Image src={product?.icon} width={32} height={32} alt={product?.name} />

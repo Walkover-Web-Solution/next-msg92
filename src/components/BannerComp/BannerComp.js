@@ -5,8 +5,8 @@ export default function BannerComp({ data }) {
     return (
         <>
             <div className='container my-20 flex gap-6 relative lg:h-[560px] flex-col lg:flex-row '>
-                <div className='flex flex-col lg:gap-12 gap-8  h-full justify-center lg:w-1/2 z-10'>
-                    <div className='flex flex-col gap-6'>
+                <div className='flex-col lg:gap-12 gap-8  h-full justify-center lg:w-1/2 z-10'>
+                    <div className='flex-col gap-6'>
                         {data?.product && (
                             <div className='flex items-center gap-2'>
                                 <Image src={data?.product?.icon} width={40} height={40} alt={data?.product?.name} />
