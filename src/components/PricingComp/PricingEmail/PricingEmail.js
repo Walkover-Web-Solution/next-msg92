@@ -25,7 +25,7 @@ export default function PricingEmail({ data }) {
     }, [fetchPlans]);
 
     return (
-        <div className='flex-col w-full gap-8'>
+        <div className='flex flex-col w-full gap-8'>
             <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
                 <span
                     role='tab'
@@ -58,10 +58,10 @@ export default function PricingEmail({ data }) {
                                         <div
                                             key={i}
                                             className={`flex gap-6 p-6 rounded bg-white col-span-1 lg:max-w-full max-w-[350px]  ${
-                                                i == 0 ? ' xl:col-span-3 xl:flex-row flex-col ' : ' flex-col '
+                                                i == 0 ? ' xl:col-span-3 xl:flex-row flex flex-col ' : ' flex flex-col '
                                             }`}
                                         >
-                                            <div className='flex-col gap-2 w-full'>
+                                            <div className='flex flex-col gap-2 w-full'>
                                                 <h2 className='text-2xl font-semibold capitalize'>{plan?.name} </h2>
                                                 <div className='flex items-end gap-1 '>
                                                     <h3 className='text-2xl font-semibold text-green-600 capitalize'>
@@ -84,9 +84,9 @@ export default function PricingEmail({ data }) {
                                             </button>
 
                                             {/* included */}
-                                            <div className='flex-col gap-2 w-full'>
+                                            <div className='flex flex-col gap-2 w-full'>
                                                 <h3 className='text-lg font-semibold'>Included</h3>
-                                                <div className='flex-col gap-1'>
+                                                <div className='flex flex-col gap-1'>
                                                     {plan?.plan_services?.map((service, index) =>
                                                         service?.service_credit?.service_credit_rates?.map(
                                                             (rate, i) =>
@@ -103,9 +103,9 @@ export default function PricingEmail({ data }) {
                                             </div>
 
                                             {/* Extras */}
-                                            <div className='flex-col gap-2 w-full'>
+                                            <div className='flex flex-col gap-2 w-full'>
                                                 <h3 className='text-lg font-semibold'>Extra @</h3>
-                                                <div className='flex-col gap-1'>
+                                                <div className='flex flex-col gap-1'>
                                                     {plan?.plan_services?.length > 0 &&
                                                         plan?.plan_services.map((service, index) => (
                                                             <div key={index}>
@@ -167,26 +167,26 @@ export default function PricingEmail({ data }) {
                     [...Array(5)].map((_, index) => (
                         <div
                             key={index}
-                            className='flex col-span-1 flex-col gap-6  h-[440px] p-6 border rounded bg-white'
+                            className='flex col-span-1 flex flex-col gap-6  h-[440px] p-6 border rounded bg-white'
                         >
-                            <div className='flex-col gap-4'>
+                            <div className='flex flex-col gap-4'>
                                 <div className=' skeleton h-[40px] w-full'></div>
                                 <div className=' skeleton h-[30px] w-2/3'></div>
                                 <div className=' skeleton h-[20px] w-1/3'></div>
                                 <div className=' skeleton h-[40px] w-1/2'></div>
                                 <span className='border-b-[1px]'></span>
                             </div>
-                            <div className='flex-col gap-4'>
+                            <div className='flex flex-col gap-4'>
                                 <div className=' skeleton h-[20px] w-2/3'></div>
                                 <div className=' skeleton h-[20px] w-1/3'></div>
                                 <div className=' skeleton h-[20px] w-1/3'></div>
                             </div>
-                            <div className='flex-col gap-4 mt-4'>
+                            <div className='flex flex-col gap-4 mt-4'>
                                 <div className=' skeleton h-[20px] w-2/3'></div>
                                 <div className=' skeleton h-[20px] w-1/3'></div>
                                 <div className=' skeleton h-[20px] w-1/3'></div>
                             </div>
-                            <div className='flex-col gap-4 mt-4'>
+                            <div className='flex flex-col gap-4 mt-4'>
                                 <div className=' skeleton h-[20px] w-2/3'></div>
                                 <div className=' skeleton h-[20px] w-1/3'></div>
                                 <div className=' skeleton h-[20px] w-1/3'></div>

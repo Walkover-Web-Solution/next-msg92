@@ -28,7 +28,7 @@ export default function PricingHello({ data, country }) {
 
     return (
         <>
-            <div className='flex-col w-full gap-8'>
+            <div className='flex flex-col w-full gap-8'>
                 <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
                     <span
                         role='tab'
@@ -63,11 +63,11 @@ export default function PricingHello({ data, country }) {
                                         return (
                                             <div
                                                 key={plan?.name + index}
-                                                className={`flex-col gap-6 col-span-1 p-6  rounded bg-white ${
+                                                className={`flex flex-col gap-6 col-span-1 p-6  rounded bg-white ${
                                                     plan?.name === 'Basic' ? 'border-4 border-black' : 'border'
                                                 }`}
                                             >
-                                                <div className='flex-col gap-4'>
+                                                <div className='flex flex-col gap-4'>
                                                     <div className='flex items-center justify-between'>
                                                         <h2 className=' text-2xl font-semibold'>{plan?.name}</h2>
                                                         {plan?.name === 'Basic' && (
@@ -97,9 +97,9 @@ export default function PricingHello({ data, country }) {
                                                 <span className='border-b-[1px]'></span>
 
                                                 {/* included */}
-                                                <div className='flex-col gap-2'>
+                                                <div className='flex flex-col gap-2'>
                                                     <h3 className='text-lg font-semibold'>Included</h3>
-                                                    <div className='flex-col gap-1'>
+                                                    <div className='flex flex-col gap-1'>
                                                         {plan?.plan_services?.map((service, index) =>
                                                             service?.service_credit?.service_credit_rates?.map(
                                                                 (rate, i) =>
@@ -116,9 +116,9 @@ export default function PricingHello({ data, country }) {
                                                 </div>
 
                                                 {/* features */}
-                                                <div className='flex-col gap-2'>
+                                                <div className='flex flex-col gap-2'>
                                                     <h3 className='text-lg font-semibold'>Features</h3>
-                                                    <div className='flex-col gap-1'>
+                                                    <div className='flex flex-col gap-1'>
                                                         {plan?.plan_features?.length > 0 &&
                                                             plan?.plan_features.map((feature, index) => {
                                                                 if (
@@ -152,9 +152,9 @@ export default function PricingHello({ data, country }) {
                                                 </div>
 
                                                 {/* Extras */}
-                                                <div className='flex-col gap-2'>
+                                                <div className='flex flex-col gap-2'>
                                                     <h3 className='text-lg font-semibold'>Extra @</h3>
-                                                    <div className='flex-col gap-1'>
+                                                    <div className='flex flex-col gap-1'>
                                                         {plan?.plan_services?.length > 0 &&
                                                             plan?.plan_services.map((service, index) => (
                                                                 <div key={index}>
@@ -211,26 +211,26 @@ export default function PricingHello({ data, country }) {
                         [...Array(3)].map((_, index) => (
                             <div
                                 key={index}
-                                className='flex col-span-1 flex-col gap-6  h-[800px] p-6 border rounded bg-white'
+                                className='flex col-span-1 flex flex-col gap-6  h-[800px] p-6 border rounded bg-white'
                             >
-                                <div className='flex-col gap-4'>
+                                <div className='flex flex-col gap-4'>
                                     <div className=' skeleton h-[40px] w-full'></div>
                                     <div className=' skeleton h-[30px] w-2/3'></div>
                                     <div className=' skeleton h-[20px] w-1/3'></div>
                                     <div className=' skeleton h-[40px] w-1/2'></div>
                                     <span className='border-b-[1px]'></span>
                                 </div>
-                                <div className='flex-col gap-4'>
+                                <div className='flex flex-col gap-4'>
                                     <div className=' skeleton h-[20px] w-2/3'></div>
                                     <div className=' skeleton h-[20px] w-1/3'></div>
                                     <div className=' skeleton h-[20px] w-1/3'></div>
                                 </div>
-                                <div className='flex-col gap-4 mt-4'>
+                                <div className='flex flex-col gap-4 mt-4'>
                                     <div className=' skeleton h-[20px] w-2/3'></div>
                                     <div className=' skeleton h-[20px] w-1/3'></div>
                                     <div className=' skeleton h-[20px] w-1/3'></div>
                                 </div>
-                                <div className='flex-col gap-4 mt-4'>
+                                <div className='flex flex-col gap-4 mt-4'>
                                     <div className=' skeleton h-[20px] w-2/3'></div>
                                     <div className=' skeleton h-[20px] w-1/3'></div>
                                     <div className=' skeleton h-[20px] w-1/3'></div>

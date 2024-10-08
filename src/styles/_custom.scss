@@ -14,13 +14,13 @@
         }
     }
     &.btn-sm {
-        @apply px-3;
+        @apply px-3 text-base font-normal;
     }
     &.btn-md {
         height: fit-content !important;
         width: fit-content;
         min-height: auto !important;
-        @apply px-4 py-2 text-base;
+        @apply px-4 py-2 text-base font-normal;
     }
     &.btn-icon {
         height: fit-content !important;
@@ -30,6 +30,12 @@
             background-color: rgba(0, 0, 0, 0.059);
         }
         @apply p-1 bg-transparent border-none shadow-none;
+    }
+    &.btn-otp{
+        @apply p-3;
+        height: fit-content !important;
+        width: fit-content !important;
+        min-height: auto !important;
     }
 }
 

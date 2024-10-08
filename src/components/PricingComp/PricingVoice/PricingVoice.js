@@ -122,8 +122,8 @@ export default function PricingVoice({ data, country }) {
 
     return (
         <>
-            <div className='w-full flex-col gap-10'>
-                <div className='w-full flex-col gap-4'>
+            <div className='w-full flex flex-col gap-10'>
+                <div className='w-full flex flex-col gap-4'>
                     {countryData.length > 0 && (
                         <div className='w-[300px] z-50'>
                             <Typeahead
@@ -239,7 +239,7 @@ export default function PricingVoice({ data, country }) {
                         </p>
                     )}
                 </div>
-                <div className='w-full flex-col gap-4 p-8 bg-white rounded'>
+                <div className='w-full flex flex-col gap-4 p-8 bg-white rounded'>
                     {data?.addOns?.content && data?.addOns?.content.length > 0 && (
                         <>
                             <h2 className='text-lg font-semibold'>{data?.addOns?.heading || 'Add-on services'}</h2>
@@ -259,7 +259,7 @@ export default function PricingVoice({ data, country }) {
                 </div>
                 <button className='btn btn-primary btn-md'>Get started</button>
 
-                <div className='flex-col gap-4'>
+                <div className='flex flex-col gap-4'>
                     {data?.rates &&
                         data?.rates.length > 0 &&
                         data?.rates.map((rate, index) => {

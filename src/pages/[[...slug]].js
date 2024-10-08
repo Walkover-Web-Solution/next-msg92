@@ -16,7 +16,7 @@ import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
 import HeadComp from '@/components/headComp';
 import FeatureComp from '@/components/FeatureComp/FeatureComp';
 import PricingComp from '@/components/PricingComp/PricingComp';
-import SignupComp from '@/components/signupComp/signupComp';
+import SignupComp from '@/components/SignupComp/signupComp';
 
 //Functions to fetch data
 import getPageInfo from '@/utils/getPageInfo';

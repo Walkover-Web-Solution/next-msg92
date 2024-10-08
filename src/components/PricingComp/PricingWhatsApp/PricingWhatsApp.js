@@ -26,9 +26,9 @@ export default function PricingWhatsApp() {
     }, []);
     return (
         <>
-            <div className='flex-col w-full gap-8'>
+            <div className='flex flex-col w-full gap-8'>
                 <div className='flex justify-between w-full p-8 rounded h-fit bg-white'>
-                    <div className='flex-col gap-4'>
+                    <div className='flex flex-col gap-4'>
                         <h2 className='text-3xl font-semibold'>
                             <span className='text-green-600  font-bold text-4xl'>Zero</span> margin on meta price.
                         </h2>
@@ -43,7 +43,7 @@ export default function PricingWhatsApp() {
                         alt='whatsapp logo'
                     />
                 </div>
-                <div className='flex-col gap-8'>
+                <div className='flex flex-col gap-8'>
                     <p>
                         Since we do not impose any service charge, <strong>GST</strong> will be applied to WhatsApp
                         pricing

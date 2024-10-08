@@ -12,7 +12,7 @@ export default function ProductsComp({ data }) {
                         {data.map((product, index) => (
                             <Link href={product?.link} key={index}>
                                 <div className={`${style[product?.name.toLowerCase()]} ${style?.card} LinkButtonCard`}>
-                                    <div className='flex-col gap-4'>
+                                    <div className='flex flex-col gap-4'>
                                         <Image width={40} height={40} src={product?.icon} alt={product?.name} />
                                         <span className={style.tagline_sm}>{product?.tagline}</span>
                                         <h2 className='text-2xl font-bold'>{product?.name}</h2>

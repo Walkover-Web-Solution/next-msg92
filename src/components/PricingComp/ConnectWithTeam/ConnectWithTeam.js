@@ -4,7 +4,7 @@ import { MdLaunch } from 'react-icons/md';
 
 export default function ConnectWithTeam({ product, isPlan, data, currency }) {
     return (
-        <div className='flex-col gap-3'>
+        <div className='flex flex-col gap-3'>
             {isPlan && (
                 <>
                     <p className='text-xl' dangerouslySetInnerHTML={{ __html: data?.content }}></p>

@@ -1,7 +1,7 @@
 export default function SEOComp({ data }) {
     return (
         <>
-            <div className='container flex-col gap-4 py-20'>
+            <div className='container flex flex-col gap-4 py-20'>
                 <h2 className='text-3xl font-bold'>
                     Welcome to MSG91: Your Trusted Cloud Communication Platform as a Service
                 </h2>
