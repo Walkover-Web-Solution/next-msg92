@@ -16,7 +16,8 @@ import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
 import HeadComp from '@/components/headComp';
 import FeatureComp from '@/components/FeatureComp/FeatureComp';
 import PricingComp from '@/components/PricingComp/PricingComp';
-import SignupComp from '@/components/SignupComp/signupComp';
+import SignUp from '@/components/signupComp/signupComp';
+import AboutUsComp from '@/components/AboutUsComp/AboutUsComp';
 
 //Functions to fetch data
 import getPageInfo from '@/utils/getPageInfo';
@@ -40,7 +41,8 @@ const Components = {
     HeadComp,
     FeatureComp,
     PricingComp,
-    SignupComp,
+    SignUp,
+    AboutUsComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

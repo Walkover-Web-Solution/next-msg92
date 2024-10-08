@@ -1,0 +1,28 @@
+{
+    "AboutUsComp":{
+        "heading":"",
+        "subheading":"",
+        "banner_img":"",
+        "offer":{
+            "heading":"",
+            "content":[
+                {
+                    "icon": "",
+                    "description":""
+                },
+                {
+                    "icon": "",
+                    "description":""
+                },
+                {
+                    "icon": "",
+                    "description":""
+                },
+                {
+                    "icon": "",
+                    "description":""
+                }
+            ]
+        }
+    }
+}
