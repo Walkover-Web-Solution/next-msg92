@@ -2,16 +2,28 @@
     "common": true,
     "notification": {
         "support": "Support",
-        "login": "LOG IN"
+        "login": "LOG IN",
+        "hide": [
+            "signup",
+            "singin"
+        ]
     },
     "menu": {
         "products": "Products",
         "integrations": "Integrations",
         "pricing": "Pricing",
         "apidocs": "API Docs",
-        "signup_btn": "Sign Up"
+        "signup_btn": "Sign Up",
+        "hide": [
+            "signup",
+            "singin"
+        ]
     },
     "footer": {
+        "hide": [
+            "signup",
+            "singin"
+        ],
         "products": {
             "name": "Our Products",
             "links": [

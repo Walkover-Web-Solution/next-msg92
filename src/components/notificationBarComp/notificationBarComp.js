@@ -3,9 +3,10 @@ import { MdArrowDropDown, MdOutlineCall, MdOutlineLanguage } from 'react-icons/m
 import availableCountries from '@/data/availableCountries.json';
 import Image from 'next/image';
 import getRelativeURL from '@/utils/getRelativeURL';
-export default function NotificationBarComp({ componentData, country }) {
-    const currentCountry = availableCountries.find((cont) => cont.shortname.toLowerCase() === country);
-    if (componentData) {
+export default function NotificationBarComp({ componentData, pageInfo }) {
+    const currentCountry = availableCountries.find((cont) => cont.shortname.toLowerCase() === pageInfo?.country);
+    const hidden = componentData?.hide.includes(pageInfo?.page);
+    if (componentData && !hidden) {
         return (
             <div className='py-1 border border-b'>
                 <div className='container flex gap-6 justify-end '>

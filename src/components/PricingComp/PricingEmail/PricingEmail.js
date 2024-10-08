@@ -58,7 +58,7 @@ export default function PricingEmail({ data }) {
                                         <div
                                             key={i}
                                             className={`flex gap-6 p-6 rounded bg-white col-span-1 lg:max-w-full max-w-[350px]  ${
-                                                i == 0 ? ' xl:col-span-3 xl:flex-row flex-col ' : ' flex-col '
+                                                i == 0 ? ' xl:col-span-3 xl:flex-row flex flex-col ' : ' flex flex-col '
                                             }`}
                                         >
                                             <div className='flex flex-col gap-2 w-full'>
@@ -167,7 +167,7 @@ export default function PricingEmail({ data }) {
                     [...Array(5)].map((_, index) => (
                         <div
                             key={index}
-                            className='flex col-span-1 flex-col gap-6  h-[440px] p-6 border rounded bg-white'
+                            className='flex col-span-1 flex flex-col gap-6  h-[440px] p-6 border rounded bg-white'
                         >
                             <div className='flex flex-col gap-4'>
                                 <div className=' skeleton h-[40px] w-full'></div>

@@ -211,7 +211,7 @@ export default function PricingHello({ data, country }) {
                         [...Array(3)].map((_, index) => (
                             <div
                                 key={index}
-                                className='flex col-span-1 flex-col gap-6  h-[800px] p-6 border rounded bg-white'
+                                className='flex col-span-1 flex flex-col gap-6  h-[800px] p-6 border rounded bg-white'
                             >
                                 <div className='flex flex-col gap-4'>
                                     <div className=' skeleton h-[40px] w-full'></div>

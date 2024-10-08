@@ -1,8 +1,10 @@
 import getRelativeURL from '@/utils/getRelativeURL';
 import Link from 'next/link';
 
-export default function FooterComp({ componentData }) {
-    if (componentData) {
+export default function FooterComp({ componentData, pageInfo }) {
+    const hidden = componentData?.hide.includes(pageInfo?.page);
+
+    if (componentData && !hidden) {
         return (
             <>
                 <div className='bg-gray-800 pt-16 pb-10'>

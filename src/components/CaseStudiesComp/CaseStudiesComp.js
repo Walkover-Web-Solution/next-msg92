@@ -19,8 +19,8 @@ export default function CaseStudiesComp({ data }) {
                                         key={`${index}`}
                                         className={`flex bg-white rounded-lg overflow-hidden hover:shadow-lg LinkButtonCard ${
                                             index !== 0
-                                                ? 'md:col-span-4 xl:col-span-2 row-span-2 lg:row-span-1 col-span-4 md:flex-row flex-col'
-                                                : 'col-span-4 xl:col-span-2 row-span-2  col-span-4 flex-col'
+                                                ? 'md:col-span-4 xl:col-span-2 row-span-2 lg:row-span-1 col-span-4 md:flex-row flex flex-col'
+                                                : 'col-span-4 xl:col-span-2 row-span-2  col-span-4 flex flex-col'
                                         }`}
                                     >
                                         <div

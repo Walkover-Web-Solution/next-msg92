@@ -1,5 +1,5 @@
 .card {
-    @apply flex xl:py-8 xl:pl-8 lg:py-4 lg:pl-4 md:py-8 md:pl-8 py-4 pl-4 gap-3 items-center flex-col sm:flex-row rounded-lg hover:shadow-lg;
+    @apply flex xl:py-8 xl:pl-8 lg:py-4 lg:pl-4 md:py-8 md:pl-8 py-4 pl-4 gap-3 items-center flex flex-col sm:flex-row rounded-lg hover:shadow-lg;
     .learnmore_btn {
     }
 }
