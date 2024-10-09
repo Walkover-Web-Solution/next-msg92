@@ -30,7 +30,7 @@ class SignUp extends React.Component {
         let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
 
         this.state = {
-            activeStep: queryParams?.['code'] ? 2 : 3,
+            activeStep: queryParams?.['code'] ? 2 : 1,
             signupByGitHub: queryParams?.['githubsignup'] ? true : false,
             githubCode: queryParams?.['code'],
             githubState: queryParams?.['state'],
@@ -456,7 +456,7 @@ class SignUp extends React.Component {
                             /> */}
 
                             {this.state.activeStep === 4 ? (
-                                <h1 className=''>Account created Successfully!</h1>
+                                <h1 className='text-2xl font-semibold text-success'>Account created Successfully!</h1>
                             ) : (
                                 <h1 className='text-2xl font-semibold '>Create an account</h1>
                             )}
@@ -508,21 +508,19 @@ class SignUp extends React.Component {
                                 />
                             )}
                             {this.state.activeStep === 4 && (
-                                <div className='trep-three d-flex flex-column gap-lg-3 gap-0'>
-                                    <div className='hide-on-mobile'>
-                                        <div className='step-three__progress d-flex align-items-center gap-2'>
-                                            <div className='text-green align-items-center gap-2 c-fs-7 d-lg-flex'>
-                                                <MdCheckCircle className='ico-green svg-icon' /> Verify email & mobile
-                                                number
-                                            </div>
-                                            <span className='progress-line line-green d-lg-block'></span>
-                                            <div className='text-green d-flex align-items-center gap-2 c-fs-7'>
-                                                <MdCheckCircle className='ico-green svg-icon' />
-                                                <span>Enter details</span>
-                                            </div>
+                                <div className='flex flex-col gap-8 2xl:w-2/3 xl:w-2/3  max-w-[600px]'>
+                                    <div className='flex sm:flex-row flex-col sm:items-center gap-4 text-green-600'>
+                                        <div className='flex items-center gap-2'>
+                                            <MdCheckCircle fontSize={18} className={'text-green-600'} />
+                                            <span>Verify email & mobile number</span>
+                                        </div>
+                                        <span className='sm:w-[60px] w-[1px] sm:ml-0 ml-2 sm:h-[1px] h-6 bg-slate-400'></span>
+                                        <div className='flex items-center gap-2 '>
+                                            <MdCheckCircle fontSize={18} />
+                                            <span>Enter details</span>
                                         </div>
                                     </div>
-                                    <p className='step-three__reddirect c-fw-m c-fs-7 mt-3'>Redirecting...</p>
+                                    <p className=''>Redirecting...</p>
                                 </div>
                             )}
                         </div>

@@ -41,7 +41,7 @@ class StepTwo extends React.Component {
         return (
             <>
                 <div className='signup flex flex-col gap-8 w-full'>
-                    <div className='flex gap-4 text-gray-500'>
+                    <div className='flex sm:flex-row flex-col sm:items-center gap-4'>
                         <div className='flex items-center gap-2'>
                             <MdCheckCircle
                                 fontSize={18}
@@ -53,8 +53,8 @@ class StepTwo extends React.Component {
                             />
                             <span>Verify email & mobile number</span>
                         </div>
-                        <span></span>
-                        <div className='flex items-center gap-2'>
+                        <span className='sm:w-[60px] w-[1px] sm:ml-0 ml-2 sm:h-[1px] h-6 bg-slate-400'></span>
+                        <div className='flex items-center gap-2 text-slate-500'>
                             <MdCheckCircleOutline fontSize={18} />
                             <span>Enter details</span>
                         </div>
