@@ -1,6 +1,7 @@
 import React from 'react';
-import { MdKeyboardArrowRight } from 'react-icons/md';
+import { MdChevronRight, MdKeyboardArrowRight } from 'react-icons/md';
 import { loginWithGitHubAccount } from '@/utils/utilis';
+import Link from 'next/link';
 
 class StepOne extends React.Component {
     signupWithGitHub = () => {
@@ -9,34 +10,28 @@ class StepOne extends React.Component {
     render() {
         return (
             <>
-                <div className='step-one d-grid'>
-                    <div className='stepone__dev d-grid gap-3'>
-                        <p className='stepone__dev__que c-fs-7 '>Are you a developer?</p>
-                        <div className='stepone__dev__icons'>
-                            <a href={undefined} onClick={() => this.signupWithGitHub()}>
-                                <button className='devlogin__btn__btn d-flex justify-content-center align-items-center'>
-                                    <img src='/img/icon-github.svg' alt='Github' />
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                    <span className='step-one__break c-fs-7 d-flex align-items-center gap-3'>
-                        or<span className='step-one__break__line'></span>
-                    </span>
-                    <div className='step-one__nondev'>
-                        <button
-                            className='step-one__nondev__withemail btn btn-login-prime c-fs-7'
-                            onClick={() => this.props.setStep(2)}
-                        >
-                            Sign up with Email
-                            <MdKeyboardArrowRight />
-                        </button>
-                    </div>
-                    <p className='step-one__login c-text c-fs-7'>
+                <div className='flex flex-col gap-4'>
+                    <h2>Are you a developer?</h2>
+                    <button className='btn btn-md h-10 btn-outline' onClick={() => this.signupWithGitHub()}>
+                        <img src='/img/icon-github.svg' alt='Github' />
+                    </button>
+                </div>
+
+                <div className='w-full flex items-center gap-2'>
+                    <span>or</span>
+                    <span className='h-[1px] w-full bg-gray-200'></span>
+                </div>
+
+                <div className='flex flex-col gap-4'>
+                    <button className='btn btn-accent btn-md ' onClick={() => this.props.setStep(2)}>
+                        Sign up with Email
+                        <MdChevronRight />
+                    </button>
+                    <p>
                         If you already have an account,{' '}
-                        <a href='/signin' className='text-hover-underline'>
+                        <Link className='text-link active-link' href='/signin'>
                             Login
-                        </a>
+                        </Link>
                     </p>
                 </div>
             </>

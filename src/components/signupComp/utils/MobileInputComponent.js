@@ -32,7 +32,7 @@ class MobileInputComponent extends React.Component {
         return (
             <>
                 <input
-                    className='w-100 form-control'
+                    className='input border-gray-300 focus:outline-none w-full focus:border-accent max-h-10'
                     type='text'
                     id='init-contact'
                     placeholder={this.props.placeholder}

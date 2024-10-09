@@ -1,11 +1,12 @@
 import React from 'react';
-import { MdDone } from 'react-icons/md';
+import { MdCheck, MdDone } from 'react-icons/md';
 import StepOne from './StepOne/StepOne';
 import StepTwo from './StepTwo/StepTwo';
 import StepThree from './StepThree/StepThree';
 import { toast } from 'react-toastify';
 import { MdCheckCircle } from 'react-icons/md';
 import { getCookie, getQueryParamsDeatils, setCookie } from '@/utils/utilis';
+import Image from 'next/image';
 
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 
@@ -29,7 +30,7 @@ class SignUp extends React.Component {
         let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
 
         this.state = {
-            activeStep: queryParams?.['code'] ? 2 : 1,
+            activeStep: queryParams?.['code'] ? 2 : 3,
             signupByGitHub: queryParams?.['githubsignup'] ? true : false,
             githubCode: queryParams?.['code'],
             githubState: queryParams?.['state'],
@@ -418,28 +419,54 @@ class SignUp extends React.Component {
         return (
             <>
                 <section className='signup d-flex flex-column flex-md-row-reverse '>
-                    <div className='signup__right d-flex gap-4 flex-column '>
-                        <img src='/images/msgOriginalsvg.png' className='signup__right__logo d-block d-md-none' />
-                        {this.state.activeStep === 1 && (
-                            <h1 className='signup__right__heading c-fs-2 mobile-heading d-md-none'>
-                                Signup to avail a complete suite of MSG91 products
-                            </h1>
-                        )}
-                        {this.state.activeStep === 4 ? (
-                            <h1 className='signup__right__heading c-fs-2 heading text-green mt-3'>
-                                Account created Successfully!
-                            </h1>
-                        ) : (
-                            <h1 className='signup__right__heading c-fs-2 heading '>Create an account</h1>
-                        )}
+                    <div className='flex md:flex-row flex-col-reverse'>
+                        <div className='flex flex-col bg-secondary sm:px-10 px-4 sm:py-20 py-10  gap-8 xl:w-1/4 lg:w-1/3 md:w-1/2 w-full md:min-h-dvh'>
+                            <div className='md:flex hidden flex-col  gap-5'>
+                                <Image
+                                    src={'/assets/brand/msg91.svg'}
+                                    width={420}
+                                    height={420}
+                                    className='w-32'
+                                    alt='msg91-logo'
+                                />
+                                <h1 className='text-2xl font-medium'>{this.props.data.heading}hello</h1>
+                            </div>
+                            <div className='flex flex-col gap-5'>
+                                <h2 className='text-xl'>{this.props.data.subheading}</h2>
+                                <ul className='flex flex-col gap-3'>
+                                    {this.props.data?.features.map((feature, index) => {
+                                        return (
+                                            <li key={index} className='flex items-center gap-2'>
+                                                <MdCheck fontSize={20} className='text-accent' /> {feature}
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </div>
+                            <p className='text-lg'>{this.props.data?.trusted}</p>
+                        </div>
 
-                        <div className='signup__right__main c-text'>
+                        <div className='lg:px-20 sm:px-10 px-4 sm:py-20 py-10 flex flex-col gap-8 w-full '>
+                            {/* <Image
+                                src={'/assets/brand/msg91.svg'}
+                                width={420}
+                                height={420}
+                                className='w-32'
+                                alt='msg91-logo'
+                            /> */}
+
+                            {this.state.activeStep === 4 ? (
+                                <h1 className=''>Account created Successfully!</h1>
+                            ) : (
+                                <h1 className='text-2xl font-semibold '>Create an account</h1>
+                            )}
+
                             {/* STEP #1 */}
                             {this.state.activeStep === 1 && <StepOne setStep={this.setStep} />}
 
                             {/* STEP #2 */}
                             {(this.state.activeStep === 2 || this.state.activeStep === 1) && (
-                                <div className={this.state.activeStep !== 2 ? 'd-none' : ''}>
+                                <div className={this.state.activeStep !== 2 ? 'hidden' : ''}>
                                     <StepTwo
                                         sendOtp={this.sendOtp}
                                         setStep={this.setStep}
@@ -499,46 +526,6 @@ class SignUp extends React.Component {
                                 </div>
                             )}
                         </div>
-                    </div>
-                    <div
-                        className={`${
-                            this.state.activeStep !== 1
-                                ? 'signup__left d-lg-flex d-md-flex gap-4 flex-column hide-on-mobile'
-                                : 'signup__left d-lg-flex d-md-flex gap-4 flex-column'
-                        }`}
-                    >
-                        <img src='/images/msgOriginalsvg.png' className='signup__left__logo d-none d-md-block' />
-                        <h1 className='signup__left__heading c-fs-2 heading d-none d-md-block c-fw-r'>
-                            Signup to avail a complete suite of MSG91 products
-                        </h1>
-                        <p className='signup__left__que c-fs-8 fw-medium c-text'>What can you build with MSG91?</p>
-                        <div className='signup__left__features d-grid gap-2'>
-                            <ul className='list-unstyled d-grid gap-3 c-fs-4'>
-                                <li className='d-flex align-items-center gap-2 c-fs-7 c-text'>
-                                    <MdDone className='icon-done ico-primary' />
-                                    Programmable SMS
-                                </li>
-                                <li className='d-flex align-items-center gap-2 c-fs-7 c-text'>
-                                    <MdDone className='icon-done ico-primary' />
-                                    Customer Contact Center
-                                </li>
-                                <li className='d-flex align-items-center gap-2 c-fs-7 c-text'>
-                                    <MdDone className='icon-done ico-primary' />
-                                    Virtual Number
-                                </li>
-                                <li className='d-flex align-items-center gap-2 c-fs-7 c-text'>
-                                    <MdDone className='icon-done ico-primary' />
-                                    Automated user segmentation
-                                </li>
-                                <li className='d-flex align-items-center gap-2 c-fs-7 c-text'>
-                                    <MdDone className='icon-done ico-primary' />
-                                    OTP invisible verification
-                                </li>
-                            </ul>
-                        </div>
-                        <p className='signup__left__que c-fs-8 c-text'>
-                            Trusted by <span className='fw-medium'>30000+</span> startups and enterprises
-                        </p>
                     </div>
                 </section>
             </>

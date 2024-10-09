@@ -1,6 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft, MdCheckCircle, MdCancel } from 'react-icons/md';
+import {
+    MdKeyboardArrowRight,
+    MdKeyboardArrowLeft,
+    MdCheckCircle,
+    MdCancel,
+    MdCheckCircleOutline,
+} from 'react-icons/md';
 import { toast } from 'react-toastify';
 import Select from 'react-select';
 
@@ -336,68 +342,61 @@ class StepThree extends React.Component {
     render() {
         return (
             <>
-                <div className='trep-three d-flex flex-column gap-4'>
-                    <div className='step-three__progress d-flex align-items-center gap-4'>
-                        <div className='ico-green align-items-center gap-2 c-fs-7 d-lg-flex hide-on-mobile'>
-                            <MdCheckCircle className='ico-green svg-icon' /> Verify email & mobile number
+                <div className='flex flex-col gap-8 2xl:w-2/3 xl:w-2/3  max-w-[600px]'>
+                    <div className='flex sm:flex-row flex-col sm:items-center gap-4'>
+                        <div className='flex items-center gap-2'>
+                            <MdCheckCircle fontSize={18} className={'text-green-600'} />
+                            <span>Verify email & mobile number</span>
                         </div>
-                        <span className='progress-line line-green d-lg-block hide-on-mobile'></span>
-                        <div className='d-flex  align-items-center gap-2 c-fs-7 '>
-                            <MdCheckCircle className='ico-grey svg-icon' />
-                            Enter details
+                        <span className='sm:w-[60px] w-[1px] sm:ml-0 ml-2 sm:h-[1px] h-6 bg-slate-400'></span>
+                        <div className='flex items-center gap-2 text-slate-500'>
+                            <MdCheckCircle fontSize={18} />
+                            <span>Enter details</span>
                         </div>
                     </div>
-                    {/* <p className="step-three__reddirect">Redirecting...</p> */}
-                    <div className='d-flex gap-4 flex-column  flex-lg-row detail-form__group step-three__main mt-3'>
-                        <div className='w-100 form-input-with-error'>
+
+                    <div className='flex md:flex-row  sm:flex-row flex-col gap-4 w-full'>
+                        <div className='w-full'>
                             <input
                                 type='text'
-                                className={
-                                    this.state.formErrorData.firstNameError
-                                        ? 'form-control input-error-display'
-                                        : 'form-control'
-                                }
+                                className={`${
+                                    this.state.formErrorData.firstNameError ? 'input-error-display' : ''
+                                } input input-bordered h-10 w-full `}
                                 placeholder='First Name*'
                                 name='firstName'
                                 value={this.state.formData.firstName}
                                 onChange={this.handleInputChange}
                             />
-                            <div className='text-danger input-error-message c-fs-7'>
-                                {this.state.formErrorData.firstNameError}
-                            </div>
+                            <p className='text-sm text-red-600'>{this.state.formErrorData.firstNameError}</p>
                         </div>
-                        <div className='w-100 form-input-with-error'>
+                        <div className='w-full'>
                             <input
                                 type='text'
-                                className={
-                                    this.state.formErrorData.lastNameError
-                                        ? 'form-control input-error-display'
-                                        : 'form-control'
-                                }
+                                className={`${
+                                    this.state.formErrorData.lastNameError ? 'input-error-display' : ''
+                                } input input-bordered h-10 w-full `}
                                 placeholder='Last Name*'
                                 name='lastName'
                                 value={this.state.formData.lastName}
                                 onChange={this.handleInputChange}
                             />
-                            <div className='text-danger input-error-message c-fs-7'>
-                                {this.state.formErrorData.lastNameError}
-                            </div>
+                            <p className='text-sm text-red-600'>{this.state.formErrorData.lastNameError}</p>
                         </div>
                     </div>
+
                     {this.props.invitations && (
-                        <div className='d-grid gap-4 my-2'>
+                        <div className='flex gap-3 flex-col'>
                             {this.state.invitationRender &&
                                 Object.values(this.props.invitations).map((value) => {
                                     return (
-                                        <div className='d-flex flex-wrap gap-4 align-items-center'>
-                                            <p className='invitation-banner'>
-                                                You are invited to join{' '}
-                                                <span className='c-fw-sb'>{value.companyName}</span>
+                                        <div className='flex gap-2'>
+                                            <p>
+                                                You are invited to join <span>{value.companyName}</span>
                                             </p>
                                             {(value?.accept === null || value?.accept === undefined) && (
-                                                <div className='d-flex gap-4 align-items-center'>
+                                                <div className='flex gap-2'>
                                                     <button
-                                                        className='btn btn-sm btn-accept rounded'
+                                                        className='btn btn-xs text-green-700 bg-green-200'
                                                         onClick={() => {
                                                             value.accept = true;
                                                             this.state.formData.acceptInviteForCompanies.push(
@@ -409,7 +408,7 @@ class StepThree extends React.Component {
                                                         Accept
                                                     </button>
                                                     <button
-                                                        className='btn btn-sm btn-reject rounded'
+                                                        className='btn btn-xs text-red-700 bg-red-200'
                                                         onClick={() => {
                                                             value.accept = false;
                                                             this.state.formData.rejectInviteForCompanies.push(
@@ -422,113 +421,115 @@ class StepThree extends React.Component {
                                                     </button>
                                                 </div>
                                             )}
-                                            {value?.accept === true && <MdCheckCircle className='ico-green svg-icon' />}
-                                            {value?.accept === false && <MdCancel className='ico-red svg-icon' />}
+                                            {value?.accept === true && <MdCheckCircle />}
+                                            {value?.accept === false && <MdCancel />}
                                         </div>
                                     );
                                 })}
                         </div>
                     )}
-                    {this.props?.invitations && !this.state.createCompany && (
-                        <div>
-                            <button
-                                className='btn btn-login-prime-o create-company-btn'
-                                onClick={() => this.setState({ createCompany: true })}
-                            >
-                                {' '}
-                                Create New Company
-                            </button>
-                        </div>
-                    )}
-                    {this.props?.invitations && this.state.createCompany && (
-                        <div className='d-flex align-items-center justify-content-between step-three__main'>
-                            <span className='c-fs-5 fw-medium'> Create Company </span>
-                            <button
-                                className='btn c-fs-6 c-fw-r btn-default'
-                                onClick={() => this.setState({ createCompany: false })}
-                            >
-                                {' '}
-                                Cancel
-                            </button>
-                        </div>
-                    )}
-                    {this.state.createCompany && (
-                        <form className='step-three__main'>
-                            <div className='detail-form d-flex flex-column gap-4'>
-                                <div className='col-12 form-input-with-error'>
+                    <div className='flex flex-col gap-4'>
+                        {!this.props?.invitations && this.state.createCompany && (
+                            <>
+                                <button
+                                    className='btn w-fit btn-secondary'
+                                    onClick={() => this.setState({ createCompany: true })}
+                                >
+                                    Create New Company
+                                </button>
+                            </>
+                        )}
+                        {this.props?.invitations && this.state.createCompany && (
+                            <div className='flex items-center justify-between w-full'>
+                                <h2 className='text-xl '> Create Company </h2>
+                                <button
+                                    className='btn btn-ghost btn-sm'
+                                    onClick={() => this.setState({ createCompany: false })}
+                                >
+                                    Cancel
+                                </button>
+                            </div>
+                        )}
+                        {this.state.createCompany && (
+                            <form className='flex flex-col gap-5'>
+                                <div className='flex flex-col gap-1'>
                                     <input
+                                        className='input input-bordered h-10 w-full'
                                         type='text'
-                                        className='form-control'
                                         placeholder='Company Name*'
                                         name='companyName'
                                         value={this.state.formData.companyName}
                                         onChange={this.handleInputChange}
                                     />
-                                    <div className='text-danger input-error-message c-fs-7'>
-                                        {this.state.formErrorData.companyNameError}
-                                    </div>
+                                    <p className='text-sm text-red-600'>{this.state.formErrorData.companyNameError}</p>
                                 </div>
-                                <div className='col-12 form-input-with-error'>
-                                    <select
-                                        autoComplete='on'
-                                        className='form-select'
-                                        aria-label='Default Industry Type'
-                                        name='industryType'
-                                        value={this.state.formData.industryType}
-                                        onChange={this.handleInputChange}
-                                    >
-                                        <option value=''>Select Industry Type*</option>
-                                        {this.state.industries && Object.keys(this.state.industries).length > 0 && (
-                                            <>
-                                                {this.state.industries.map((obj) => (
-                                                    <option key={obj.id} value={obj.name}>
-                                                        {obj.name}
-                                                    </option>
-                                                ))}
-                                            </>
+                                <div className='flex md:flex-row  sm:flex-row flex-col gap-4 w-full'>
+                                    <div className='flex flex-col w-full'>
+                                        <div className='rounded border px-1 w-full'>
+                                            <select
+                                                className='h-10 w-full focus:outline-none'
+                                                autoComplete='on'
+                                                aria-label='Default Industry Type'
+                                                name='industryType'
+                                                value={this.state.formData.industryType}
+                                                onChange={this.handleInputChange}
+                                            >
+                                                <option value=''>Select Industry Type*</option>
+                                                {this.state.industries &&
+                                                    Object.keys(this.state.industries).length > 0 && (
+                                                        <>
+                                                            {this.state.industries.map((obj) => (
+                                                                <option key={obj.id} value={obj.name}>
+                                                                    {obj.name}
+                                                                </option>
+                                                            ))}
+                                                        </>
+                                                    )}
+                                            </select>
+                                        </div>
+                                        <p className='text-sm text-red-600'>
+                                            {this.state.formErrorData.industryTypeError}
+                                        </p>
+                                    </div>
+                                    <div className='flex flex-col w-full'>
+                                        {this.state.serviceRender && (
+                                            <Select
+                                                classNames='h-10'
+                                                isMulti
+                                                isClearable
+                                                instanceId={'serviceNeeded'}
+                                                defaultValue={this.state.defaultServiceNeeded}
+                                                onChange={(value) => {
+                                                    this.setState((prevState) => ({
+                                                        formData: {
+                                                            ...prevState.formData,
+                                                            serviceNeeded: value.map((obj) => obj.value),
+                                                        },
+                                                    }));
+                                                }}
+                                                placeholder='Select Service Needed*'
+                                                options={
+                                                    this.state.services
+                                                        ? Object.entries(this.state.services).map(([key, value]) => ({
+                                                              value: +key,
+                                                              label: value,
+                                                          }))
+                                                        : []
+                                                }
+                                                className='chip-list-select'
+                                                classNamePrefix='signup_react_select'
+                                            />
                                         )}
-                                    </select>
-                                    <div className='text-danger input-error-message c-fs-7'>
-                                        {this.state.formErrorData.industryTypeError}
+                                        <p className='text-sm text-red-600'>
+                                            {this.state.formErrorData.serviceNeededError}
+                                        </p>
                                     </div>
                                 </div>
-                                <div className='col-12 form-input-with-error'>
-                                    {this.state.serviceRender && (
-                                        <Select
-                                            isMulti
-                                            isClearable
-                                            instanceId={'serviceNeeded'}
-                                            defaultValue={this.state.defaultServiceNeeded}
-                                            onChange={(value) => {
-                                                this.setState((prevState) => ({
-                                                    formData: {
-                                                        ...prevState.formData,
-                                                        serviceNeeded: value.map((obj) => obj.value),
-                                                    },
-                                                }));
-                                            }}
-                                            placeholder='Select Service Needed*'
-                                            options={
-                                                this.state.services
-                                                    ? Object.entries(this.state.services).map(([key, value]) => ({
-                                                          value: +key,
-                                                          label: value,
-                                                      }))
-                                                    : []
-                                            }
-                                            className='chip-list-select'
-                                            classNamePrefix='signup_react_select'
-                                        />
-                                    )}
-                                    <div className='text-danger input-error-message c-fs-7'>
-                                        {this.state.formErrorData.serviceNeededError}
-                                    </div>
-                                </div>
-                                <div className='d-flex gap-4 flex-column flex-lg-row detail-form__group'>
-                                    <div className='w-100 form-input-with-error'>
+                                <div className='flex md:flex-row  sm:flex-row flex-col gap-4 w-full'>
+                                    <div className='rounded border px-1 w-full'>
                                         <select
+                                            className='h-10 w-full focus:outline-none'
                                             autoComplete='on'
-                                            className='form-select'
                                             aria-label='Default Country'
                                             name='country'
                                             value={this.state.formData.country}
@@ -544,14 +545,12 @@ class StepThree extends React.Component {
                                                 Other
                                             </option>
                                         </select>
-                                        <div className='text-danger input-error-message c-fs-7'>
-                                            {this.state.formErrorData.countryError}
-                                        </div>
+                                        <p className='text-sm text-red-600'>{this.state.formErrorData.countryError}</p>
                                     </div>
-                                    <div className='w-100 form-input-with-error'>
+                                    <div className='rounded border px-1 w-full'>
                                         <select
+                                            className='h-10 w-full focus:outline-none'
                                             autoComplete='on'
-                                            className='form-select'
                                             aria-label='Default State/Province'
                                             name='stateProvince'
                                             value={this.state.formData.stateProvince}
@@ -566,33 +565,27 @@ class StepThree extends React.Component {
                                                   ))
                                                 : null}
                                         </select>
-                                        <div className='text-danger input-error-message c-fs-7'>
-                                            {this.state.formErrorData.stateError}
-                                        </div>
+                                        <p className='text-sm text-red-600'>{this.state.formErrorData.stateError}</p>
                                     </div>
                                 </div>
-                                <div className='d-flex gap-4 flex-column flex-lg-row detail-form__group'>
-                                    <div className='w-100 form-input-with-error'>
+                                <div className='flex md:flex-row  sm:flex-row flex-col gap-4 w-full'>
+                                    <div className='flex flex-col gap-1 w-full'>
                                         <input
                                             type='text'
-                                            className={
-                                                this.state.formErrorData.pincodeError
-                                                    ? 'form-control input-error-display'
-                                                    : 'form-control'
-                                            }
+                                            className={`input input-bordered h-10 w-full ${
+                                                this.state.formErrorData.pincodeError ? 'input-error-display' : ''
+                                            }`}
                                             placeholder='Pincode*'
                                             name='pincode'
                                             value={this.state.formData.pincode}
                                             onChange={this.handleInputChange}
                                         />
-                                        <div className='text-danger input-error-message c-fs-7'>
-                                            {this.state.formErrorData.pincodeError}
-                                        </div>
+                                        <p className='text-sm text-red-600'>{this.state.formErrorData.pincodeError}</p>
                                     </div>
-                                    <div className='w-100 form-input-with-error'>
+                                    <div className='rounded border px-1 w-full'>
                                         <select
+                                            className='h-10 w-full focus:outline-none'
                                             autoComplete='on'
-                                            className='form-select'
                                             aria-label='Default City'
                                             name='city'
                                             value={this.state.formData.city}
@@ -611,44 +604,40 @@ class StepThree extends React.Component {
                                                 : null}
                                             <option value='other'>Other</option>
                                         </select>
-                                        <div className='text-danger input-error-message c-fs-7'>
-                                            {this.state.formErrorData.cityError}
-                                        </div>
+                                        <p className='text-sm text-red-600'>{this.state.formErrorData.cityError}</p>
                                     </div>
                                 </div>
                                 {this.state.formData.city == 'other' && (
-                                    <div className='col-12  form-input-with-error'>
+                                    <div className='flex flex-col gap-1 w-full'>
                                         <input
+                                            className='input input-bordered h-10 w-full'
                                             type='text'
-                                            className='form-control'
                                             placeholder='Enter your city*'
                                             name='otherCity'
                                             value={this.state.formData.otherCity}
                                             onChange={this.handleInputChange}
                                         />
-                                        <div className='text-danger input-error-message c-fs-7'>
+                                        <p className='text-sm text-red-600'>
                                             {this.state.formErrorData.otherCityError}
-                                        </div>
+                                        </p>
                                     </div>
                                 )}
-                                <div className='col-12 form-input-with-error'>
+                                <div className='flex flex-col gap-1 w-full'>
                                     <input
+                                        className='input input-bordered h-10 w-full'
                                         type='text'
-                                        className='form-control'
                                         placeholder='Address*'
                                         name='address'
                                         value={this.state.formData.address}
                                         onChange={this.handleInputChange}
                                     />
-                                    <div className='text-danger input-error-message c-fs-7'>
-                                        {this.state.formErrorData.addressError}
-                                    </div>
+                                    <p className='text-sm text-red-600'>{this.state.formErrorData.addressError}</p>
                                 </div>
                                 {this.state.formData.countryName?.toLowerCase()?.includes('united kingdom') && (
-                                    <div className='col-12 form-input-with-error'>
+                                    <div className='flex flex-col gap-1 w-full'>
                                         <input
+                                            className='input input-bordered h-10 w-full'
                                             type='text'
-                                            className='form-control'
                                             placeholder='VAT number'
                                             name='vatNumber'
                                             value={this.state.formData.vatNumber}
@@ -657,65 +646,55 @@ class StepThree extends React.Component {
                                     </div>
                                 )}
                                 {this.state.formData.countryName?.toLowerCase()?.includes('india') && (
-                                    <div className='col-12 form-input-with-error'>
+                                    <div className='flex flex-col gap-1 w-full'>
                                         <input
+                                            className='input input-bordered h-10 w-full'
                                             type='text'
-                                            className='form-control'
                                             placeholder='GST number'
                                             name='gstNumber'
                                             value={this.state.formData.gstNumber}
                                             onChange={this.handleInputChange}
                                         />
-                                        <div className='text-danger input-error-message c-fs-7'>
-                                            {this.state.formErrorData.gstNumberError}
-                                        </div>
+                                        <div>{this.state.formErrorData.gstNumberError}</div>
                                     </div>
                                 )}
-                            </div>
-                        </form>
-                    )}
-                    <div className='row'>
-                        <div className='col-12'>
-                            <div className='form-check my-2 d-flex align-items-center gap-2'>
-                                <input
-                                    className='form-check-input'
-                                    type='checkbox'
-                                    value='true'
-                                    id='termsCheckBox'
-                                    name='agreeToTerms'
-                                    checked={this.state.formData.agreeToTerms}
-                                    onChange={this.handleInputChange}
-                                />
-                                <p className='form-check-label c-fs-7 c-fw-500 ps-0' htmlFor='termsCheckBox'>
-                                    I agree to the{' '}
-                                    <a
-                                        href='https://msg91.com/terms-of-use'
-                                        target='_blank'
-                                        className='cp text-hover-underline'
-                                    >
-                                        terms of use
-                                    </a>
-                                </p>
-                            </div>
-                            <div className='d-flex gap-3 mt-4'>
-                                <button
-                                    className='btn btn-login-secondary c-fs-7'
-                                    onClick={() => this.props.setStep(2)}
+                            </form>
+                        )}
+                        <div className='flex gap-2 items-center'>
+                            <input
+                                type='checkbox'
+                                value='true'
+                                id='termsCheckBox'
+                                name='agreeToTerms'
+                                checked={this.state.formData.agreeToTerms}
+                                onChange={this.handleInputChange}
+                            />
+                            <p htmlFor='termsCheckBox'>
+                                I agree to the{' '}
+                                <a
+                                    href='https://msg91.com/terms-of-use'
+                                    target='_blank'
+                                    className='text-link active-link'
                                 >
-                                    {' '}
-                                    <MdKeyboardArrowLeft />
-                                    Back
-                                </button>
-                                <button
-                                    className='btn btn-login-prime c-fs-7'
-                                    type='button'
-                                    onClick={this.finalSubmit}
-                                    disabled={!this.state.formData.agreeToTerms || this.props?.isLoading}
-                                >
-                                    Next <MdKeyboardArrowRight />
-                                </button>
-                            </div>
+                                    Terms of Use
+                                </a>
+                            </p>
                         </div>
+                    </div>
+                    <div className='flex  gap-4'>
+                        <button className='btn btn-accent btn-outline btn-md' onClick={() => this.props.setStep(2)}>
+                            {' '}
+                            <MdKeyboardArrowLeft />
+                            Back
+                        </button>
+                        <button
+                            className=' btn btn-md btn-accent disabled:bg-gray-300 disabled:text-primary'
+                            type='button'
+                            onClick={this.finalSubmit}
+                            disabled={!this.state.formData.agreeToTerms || this.props?.isLoading}
+                        >
+                            Next <MdKeyboardArrowRight />
+                        </button>
                     </div>
                 </div>
             </>

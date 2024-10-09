@@ -2,7 +2,7 @@
     @apply mx-auto px-4 md:px-10;
 }
 
-.skeleton{
+.skeleton {
     @apply bg-slate-50 rounded-sm;
 }
 .btn {
@@ -31,11 +31,21 @@
         }
         @apply p-1 bg-transparent border-none shadow-none;
     }
-    &.btn-otp{
+    &.btn-otp {
         @apply p-3;
         height: fit-content !important;
         width: fit-content !important;
         min-height: auto !important;
+    }
+    &.btn-accent {
+        color: var(--white-color);
+        @apply hover:bg-gray-700;
+        &.btn-outline {
+            @apply text-accent hover:bg-accent hover:text-white;
+        }
+    }
+    &.btn-secondary{
+        @apply text-accent
     }
 }
 
@@ -171,7 +181,6 @@ $button-transition-timing: 100ms;
     box-shadow: none !important;
 }
 
-
 //SMS OTP slider
 .input-slider-padding {
     padding: 0 56px;
@@ -211,4 +220,3 @@ $button-transition-timing: 100ms;
     border: 2px solid rgb(88, 88, 88);
     box-shadow: -1207px 0 0 1200px #307368;
 }
-

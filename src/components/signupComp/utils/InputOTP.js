@@ -24,13 +24,13 @@ class Otpinput extends React.Component {
         let otpLength = Array.from({ length: this.props.otpLength }, (_, index) => index + 1);
         return (
             <>
-                <div className='d-flex gap-3 ver-input'>
-                    <div className='d-flex gap-3 ver-input__input'>
+                <div className='flex gap-4'>
+                    <div className='flex gap-2'>
                         {otpLength.map((x) => (
                             <input
                                 type='number'
                                 inputMode='numeric'
-                                className='form-control otp-input'
+                                className='otp-input h-10 w-10 border flex items-center justify-center rounded'
                                 placeholder='*'
                                 autoComplete='off'
                                 min='0'
@@ -108,7 +108,7 @@ class Otpinput extends React.Component {
                         ))}
                     </div>
                     <button
-                        className='btn btn-login-prime-o c-fs-7'
+                        className='btn btn-accent btn-otp btn-outline'
                         onClick={() => {
                             let valOtp = '';
                             for (let i = 1; i <= +this.props.otpLength; i++) {
