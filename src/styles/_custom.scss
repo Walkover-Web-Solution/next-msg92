@@ -44,8 +44,8 @@
             @apply text-accent hover:bg-accent hover:text-white;
         }
     }
-    &.btn-secondary{
-        @apply text-accent
+    &.btn-secondary {
+        @apply text-accent;
     }
 }
 
@@ -130,6 +130,13 @@ $button-transition-timing: 100ms;
             transform: scaleX(2);
         }
     }
+
+    &.hide-ico {
+        .arrow-icon {
+            transition: all $button-transition-timing ease-in-out;
+            opacity: 0;
+        }
+    }
 }
 
 .LinkButtonCard:hover .link-btn {
@@ -140,6 +147,12 @@ $button-transition-timing: 100ms;
     .arrow-body {
         opacity: 1;
         transform: scaleX(3);
+    }
+
+    &.hide-ico {
+        & .arrow-icon {
+            opacity: 1;
+        }
     }
 }
 
@@ -219,4 +232,11 @@ $button-transition-timing: 100ms;
     border-radius: 50%;
     border: 2px solid rgb(88, 88, 88);
     box-shadow: -1207px 0 0 1200px #307368;
+}
+
+.nav-show {
+    @apply left-0;
+}
+.nav-hide {
+    @apply left-[-900px];
 }
