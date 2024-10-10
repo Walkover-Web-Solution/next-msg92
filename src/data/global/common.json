@@ -78,13 +78,46 @@
             }
         ],
         "integrations": "Integrations",
-        "integrations_list": [
-            {
-                "name": "Voice",
-                "link": "voice",
-                "icon": ""
-            }
-        ],
+        "integrations_list": {
+            "explore_btn": "Explore More Plugins",
+            "content": [
+                {
+                    "slug": "shopify",
+                    "name": "Shopify",
+                    "link": "https://apps.shopify.com/msg91"
+                },
+                {
+                    "slug": "tally",
+                    "name": "Tally",
+                    "link": "https://msg91.com/partners-and-integrations/tally"
+                },
+                {
+                    "slug": "zapier",
+                    "name": "Zapier",
+                    "link": "https://msg91.com/partners-and-integrations/zapier"
+                },
+                {
+                    "slug": "freshworks",
+                    "name": "Freshworks",
+                    "link": "https://msg91.com/partners-and-integrations/freshworks"
+                },
+                {
+                    "slug": "firebase",
+                    "name": "Firebase",
+                    "link": "https://msg91.com/partners-and-integrations/firebase"
+                },
+                {
+                    "slug": "hubspot",
+                    "name": "HubSpot",
+                    "link": "https://msg91.com/partners-and-integrations/hubspot"
+                },
+                {
+                    "slug": "googlesheets",
+                    "name": "Google Sheets",
+                    "link": "https://msg91.com/help/how-to-send-sms-and-email-from-google-spreadsheet"
+                }
+            ]
+        },
         "pricing": "Pricing",
         "apidocs": "API Docs",
         "signup_btn": "Sign Up",

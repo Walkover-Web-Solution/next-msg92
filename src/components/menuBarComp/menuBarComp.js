@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MdMenu } from 'react-icons/md';
 import styles from './menuBarComp.module.scss';
-import { BtnWithHideIco } from '../UIComponent/Buttons/LinkButton';
+import { BtnWithHideIco, LinkButton } from '../UIComponent/Buttons/LinkButton';
 import getRelativeURL from '@/utils/getRelativeURL';
 import { useState } from 'react';
 
@@ -56,7 +56,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                                         <Image
                                                                             className='h-10'
                                                                             src={`/assets/icons/products/${product?.slug}.svg`}
-                                                                            alt='hello'
+                                                                            alt={product?.name}
                                                                             width={46}
                                                                             height={46}
                                                                         />
@@ -81,16 +81,40 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             </div>
                         )}
                         {type === 'integrations' && (
-                            <div className='mt-32 grid grid-cols-2 gap-12 h-fit min-w-[640px]'>
-                                {componentData?.products_list?.length > 0 &&
-                                    componentData?.products_list.map((category, index) => {
-                                        return (
-                                            <div key={index} className='flex flex-col gap-3 w-full '>
-                                                <span className='text font-medium'>{category?.name} </span>
-                                                <div className='flex flex-col gap-2'>hello</div>
-                                            </div>
-                                        );
-                                    })}
+                            <div className='mt-32 min-w-[640px]'>
+                                <div className=' flex flex-col gap-4 h-fit w-[300px]'>
+                                    {componentData?.integrations_list?.content?.length > 0 &&
+                                        componentData?.integrations_list?.content.map((integration, index) => {
+                                            return (
+                                                <Link href={getRelativeURL(integration?.slug, 'product')}>
+                                                    <div className='flex items-center gap-2 py-2 px-2 rounded hover:bg-secondary w-full LinkButtonCard'>
+                                                        <Image
+                                                            className='h-10'
+                                                            src={`/assets/integrations/${integration?.slug}.svg`}
+                                                            alt={integration?.slug}
+                                                            width={46}
+                                                            height={46}
+                                                        />
+                                                        <div className='flex flex-col'>
+                                                            <BtnWithHideIco customClasses='text-xl font-semibold'>
+                                                                {integration?.name}
+                                                            </BtnWithHideIco>
+                                                            {integration?.description && (
+                                                                <p className='text-sm text-gray-500'>
+                                                                    {integration?.description}
+                                                                </p>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            );
+                                        })}
+                                    <LinkButton
+                                        href='/integrations'
+                                        customClasses='flex items-center gap-2 px-5 py-3 rounded hover:bg-secondary w-full'
+                                        content={componentData?.integrations_list?.explore_btn}
+                                    />
+                                </div>
                             </div>
                         )}
                         <div
