@@ -10,7 +10,81 @@
     },
     "menu": {
         "products": "Products",
+        "products_list": [
+            {
+                "name": "Applications",
+                "products": [
+                    {
+                        "name": "Hello",
+                        "slug": "hello",
+                        "description": "Ticketing and Chat"
+                    },
+                    {
+                        "name": "Segmento",
+                        "slug": "segmento",
+                        "description": "Event-based Automation"
+                    },
+                    {
+                        "name": "Campaign",
+                        "slug": "campaign",
+                        "description": "Contact Management"
+                    },
+                    {
+                        "name": "OTP",
+                        "slug": "otp",
+                        "description": "Simplified OTP Platform"
+                    }
+                ]
+            },
+            {
+                "name": "Channels",
+                "products": [
+                    {
+                        "name": "SMS",
+                        "slug": "sms"
+                    },
+                    {
+                        "name": "Email",
+                        "slug": "email"
+                    },
+                    {
+                        "name": "WhatsApp",
+                        "slug": "whatsapp"
+                    },
+                    {
+                        "name": "Voice",
+                        "slug": "voice"
+                    },
+                    {
+                        "name": "Numbers",
+                        "slug": "numbers"
+                    }
+                ]
+            },
+            {
+                "name": "Utilities",
+                "products": [
+                    {
+                        "name": "URL Shortener",
+                        "slug": "shorturl",
+                        "description": "Customize and Track URLs"
+                    },
+                    {
+                        "name": "KnowledgeBase",
+                        "slug": "knowledgebase",
+                        "description": "Manage Help Documents and Guides"
+                    }
+                ]
+            }
+        ],
         "integrations": "Integrations",
+        "integrations_list": [
+            {
+                "name": "Voice",
+                "link": "voice",
+                "icon": ""
+            }
+        ],
         "pricing": "Pricing",
         "apidocs": "API Docs",
         "signup_btn": "Sign Up",

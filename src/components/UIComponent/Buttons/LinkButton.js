@@ -32,3 +32,13 @@ export function LinkText({ children, customClasses }) {
         </>
     );
 }
+export function BtnWithHideIco({ children, customClasses }) {
+    return (
+        <>
+            <span className={`link-btn hide-ico ${customClasses}`}>
+                {children}
+                {arrowIcon}
+            </span>
+        </>
+    );
+}
