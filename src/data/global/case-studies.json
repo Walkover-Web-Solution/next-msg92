@@ -1,0 +1,76 @@
+{
+    "HeadComp": {
+        "title": "SMS Campaign",
+        "description": "Boost audience engagement through smart communication and on-time delivery. It's not only about communicating, it's about communicating with your users smartly and efficiently. Get Demo Reach your segmented customers across the world, Send your messages at the right moment! Features Automate sending messages under defined conditions Define different messaging parameters like time, region, number of.."
+    },
+    "CaseStudyComp": {
+        "heading": "Customer success stories of businesses successfully using MSG91 APIs",
+        "subheading": "Use SMS, Email, Voice APIs to trigger your communications from within your product",
+        "caseStudies": {
+            "heading":"Case Studies",
+            "card": {
+                "industry": "Industry",
+                "purpose": "Purpose",
+                "features": "Features in use"
+            },
+            "headings": {
+                "caseStudies": "Case Studies",
+                "problem": "Problem",
+                "solution": "Solution",
+                "benefit": "Benefit"
+            },
+            "content": [
+                {
+                    "img": "azimpremji",
+                    "title": "Azim Premji Foundation informs teachers and trainers using SMS via MSG91",
+                    "industry": "NGO (Education)",
+                    "purpose": "Communication APIs",
+                    "features": "Features in use",
+                    "caseStudies": "<a className='text-link active-link'>Azim Premji Foundation</a> is an NGO which works in the fields of Education. With the vision to help people with proper education by conducting classes and creating awareness, Azim Premji Foundation has been rigorously working on coordinating with the teachers for social welfare.",
+                    "problem": "A well-established communication channel with teachers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a huge volunteer teachers’ base without a robust and secure communication channel is a challenge. Thus to convey important information like details of vacancies, events and courses for better educational network, a communication channel targeting wide reach for mass audience (teachers) is required.",
+                    "solution": "Azim Premji Foundation is managing their operations and communication efficiently with SMS communications via MSG91 API. With MSG91’s Transactional and Unicode APIs and real-time robust system, SMS is delivered to the teachers to build communication at different events such as <br/><br/> <ul><li> Potential teachers and teacher’s educators are<a className='text-link active-link'> informed about the job vacancies</a> via SMS.</li></ul>"
+                },
+                {
+                    "img": "azimpremji",
+                    "title": "Azim Premji Foundation informs teachers and trainers using SMS via MSG91",
+                    "industry": "NGO (Education)",
+                    "purpose": "Communication APIs",
+                    "features": "Features in use",
+                    "caseStudies": "<a className='text-link active-link'>Azim Premji Foundation</a> is an NGO which works in the fields of Education. With the vision to help people with proper education by conducting classes and creating awareness, Azim Premji Foundation has been rigorously working on coordinating with the teachers for social welfare.",
+                    "problem": "A well-established communication channel with teachers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a huge volunteer teachers’ base without a robust and secure communication channel is a challenge. Thus to convey important information like details of vacancies, events and courses for better educational network, a communication channel targeting wide reach for mass audience (teachers) is required.",
+                    "solution": "Azim Premji Foundation is managing their operations and communication efficiently with SMS communications via MSG91 API. With MSG91’s Transactional and Unicode APIs and real-time robust system, SMS is delivered to the teachers to build communication at different events such as <br/><br/> <ul><li> Potential teachers and teacher’s educators are<a className='text-link active-link'> informed about the job vacancies</a> via SMS.</li></ul>"
+                },
+                {
+                    "img": "azimpremji",
+                    "title": "Azim Premji Foundation informs teachers and trainers using SMS via MSG91",
+                    "industry": "NGO (Education)",
+                    "purpose": "Communication APIs",
+                    "features": "Features in use",
+                    "caseStudies": "<a className='text-link active-link'>Azim Premji Foundation</a> is an NGO which works in the fields of Education. With the vision to help people with proper education by conducting classes and creating awareness, Azim Premji Foundation has been rigorously working on coordinating with the teachers for social welfare.",
+                    "problem": "A well-established communication channel with teachers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a huge volunteer teachers’ base without a robust and secure communication channel is a challenge. Thus to convey important information like details of vacancies, events and courses for better educational network, a communication channel targeting wide reach for mass audience (teachers) is required.",
+                    "solution": "Azim Premji Foundation is managing their operations and communication efficiently with SMS communications via MSG91 API. With MSG91’s Transactional and Unicode APIs and real-time robust system, SMS is delivered to the teachers to build communication at different events such as <br/><br/> <ul><li> Potential teachers and teacher’s educators are<a className='text-link active-link'> informed about the job vacancies</a> via SMS.</li></ul>"
+                },
+                {
+                    "img": "azimpremji",
+                    "title": "Azim Premji Foundation informs teachers and trainers using SMS via MSG91",
+                    "industry": "NGO (Education)",
+                    "purpose": "Communication APIs",
+                    "features": "Features in use",
+                    "caseStudies": "<a className='text-link active-link'>Azim Premji Foundation</a> is an NGO which works in the fields of Education. With the vision to help people with proper education by conducting classes and creating awareness, Azim Premji Foundation has been rigorously working on coordinating with the teachers for social welfare.",
+                    "problem": "A well-established communication channel with teachers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a huge volunteer teachers’ base without a robust and secure communication channel is a challenge. Thus to convey important information like details of vacancies, events and courses for better educational network, a communication channel targeting wide reach for mass audience (teachers) is required.",
+                    "solution": "Azim Premji Foundation is managing their operations and communication efficiently with SMS communications via MSG91 API. With MSG91’s Transactional and Unicode APIs and real-time robust system, SMS is delivered to the teachers to build communication at different events such as <br/><br/> <ul><li> Potential teachers and teacher’s educators are<a className='text-link active-link'> informed about the job vacancies</a> via SMS.</li></ul>"
+                },
+                {
+                    "img": "azimpremji",
+                    "title": "Azim Premji Foundation informs teachers and trainers using SMS via MSG91",
+                    "industry": "NGO (Education)",
+                    "purpose": "Communication APIs",
+                    "features": "Features in use",
+                    "caseStudies": "<a className='text-link active-link'>Azim Premji Foundation</a> is an NGO which works in the fields of Education. With the vision to help people with proper education by conducting classes and creating awareness, Azim Premji Foundation has been rigorously working on coordinating with the teachers for social welfare.",
+                    "problem": "A well-established communication channel with teachers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a huge volunteer teachers’ base without a robust and secure communication channel is a challenge. Thus to convey important information like details of vacancies, events and courses for better educational network, a communication channel targeting wide reach for mass audience (teachers) is required.",
+                    "solution": "Azim Premji Foundation is managing their operations and communication efficiently with SMS communications via MSG91 API. With MSG91’s Transactional and Unicode APIs and real-time robust system, SMS is delivered to the teachers to build communication at different events such as <br/><br/> <ul><li> Potential teachers and teacher’s educators are<a className='text-link active-link'> informed about the job vacancies</a> via SMS.</li></ul>"
+                }
+            ]
+        }
+    }
+}
