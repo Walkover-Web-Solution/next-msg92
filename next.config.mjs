@@ -5,7 +5,7 @@ const customEnvConfig = dotenv.config().parsed || {};
 
 var getEnvValue = (key) => process.env?.[key] || customEnvConfig?.[key];
 const nextConfig = {
-    reactStrictMode: true,
+    reactStrictMode: false,
     env: {
         // URLS
         API_BASE_URL: getEnvValue("API_BASE_URL"),

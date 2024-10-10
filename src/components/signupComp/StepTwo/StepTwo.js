@@ -103,7 +103,7 @@ class StepTwo extends React.Component {
                                     </button>
                                 )}
                             </div>
-
+                            {this.props?.emailIdentifier}
                             {this.props?.emailIdentifier && !this.props?.emailAccessToken ? (
                                 <>
                                     <div className='xl:block hidden  h-[100px] w-[1px] bg-gray-100'></div>
@@ -186,7 +186,7 @@ class StepTwo extends React.Component {
                             <div className='flex flex-col gap-2'>
                                 {this.props?.smsIdentifier && !this.props?.smsAccessToken ? (
                                     <>
-                                        <div className='flex flex-col gap-1'>
+                                        <div className='flex flex-col gap-2'>
                                             <Otpinput
                                                 tag='sms'
                                                 verifyOtp={this.props.verifyOtp}

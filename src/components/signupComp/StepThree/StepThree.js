@@ -429,7 +429,7 @@ class StepThree extends React.Component {
                         </div>
                     )}
                     <div className='flex flex-col gap-4'>
-                        {!this.props?.invitations && this.state.createCompany && (
+                        {this.props?.invitations && !this.state.createCompany && (
                             <>
                                 <button
                                     className='btn w-fit btn-secondary'
