@@ -40,101 +40,89 @@ class StepTwo extends React.Component {
     render() {
         return (
             <>
-                <div className='step-two d-grid gap-4'>
-                    <div className='step-two__progress d-flex align-items-center gap-2 gap-lg-4'>
-                        <div className='d-flex align-items-center gap-1 c-fs-7 form_step'>
+                <div className='signup flex flex-col gap-8 w-full'>
+                    <div className='flex sm:flex-row flex-col sm:items-center gap-4'>
+                        <div className='flex items-center gap-2'>
                             <MdCheckCircle
+                                fontSize={18}
                                 className={
                                     this.props?.smsAccessToken && this.props?.emailAccessToken
-                                        ? 'ico-green'
-                                        : 'ico-grey'
+                                        ? 'text-green-600'
+                                        : 'text-gray-500'
                                 }
-                            />{' '}
-                            Verify email & mobile number
+                            />
+                            <span>Verify email & mobile number</span>
                         </div>
-                        <span className='progress-line__none progress-line d-lg-block'></span>
-                        <div className='d-lg-flex align-items-center gap-1 c-fs-7 ico-grey form_step'>
-                            <MdCheckCircleOutline /> Enter details
+                        <span className='sm:w-[60px] w-[1px] sm:ml-0 ml-2 sm:h-[1px] h-6 bg-slate-400'></span>
+                        <div className='flex items-center gap-2 text-slate-500'>
+                            <MdCheckCircleOutline fontSize={18} />
+                            <span>Enter details</span>
                         </div>
                     </div>
-                    <div className='step-two__email w-100  d-grid gap-2'>
-                        <label htmlFor='email' className='step-two__email__lable c-fw-m c-fs-7'>
-                            Verify email
-                        </label>
-                        <div className='ver-email d-flex gap-4 align-items-top flex-wrap'>
-                            <div className='ver-email__main'>
-                                <div className='ver-email-main d-flex gap-3 ver-input'>
-                                    <div className='ver-email-main__input col ver-input__input d-flex align-items-center'>
-                                        {this.props?.signupByGitHub ? (
-                                            <div className='d-flex align-items-center gap-1 c-fs-7 text-green'>
-                                                Email Verified <MdCheckCircle className='ico-green' />
-                                            </div>
-                                        ) : (
-                                            <input
-                                                type='email'
-                                                className='form-control c-fs-7'
-                                                id='emailIdentifier'
-                                                placeholder='Email Address*'
-                                                defaultValue={this.state.emailIdentifier}
-                                                onInput={(e) => this.props.identifierChange(false)}
-                                                disabled={this.props?.emailAccessToken}
-                                            />
-                                        )}
-                                        <span className='ver-email-main__input__check'>
-                                            {this.props?.emailAccessToken && <MdCheckCircle className='ico-green' />}
-                                        </span>
-                                    </div>
-                                    {this.props?.emailAccessToken || this.props?.signupByGitHub ? (
-                                        <button
-                                            className='ver-email-main__btn btn  btn-login-prime-o c-fw-m c-fs-7'
-                                            onClick={(e) => this.props.identifierChange(false)}
-                                        >
-                                            Change{this.props?.signupByGitHub ? '' : '/Re-verify'} Email
-                                        </button>
+
+                    <div className='flex flex-col w-full gap-2'>
+                        <label htmlFor='email'>Verify email</label>
+                        <div className='flex xl:flex-row flex-col gap-12'>
+                            <div className='flex sm:flex-row flex-col  gap-4'>
+                                <div className='flex gap-4 items-center w-1/3 max-w-[360px] min-w-[280px] '>
+                                    {this.props?.signupByGitHub ? (
+                                        <div>
+                                            Email Verified <MdCheckCircle className='ico-green' />
+                                        </div>
                                     ) : (
-                                        <button
-                                            className={`ver-email-main__btn btn c-fw-m c-fs-7 ${
-                                                this.props?.emailIdentifier ? 'btn-light disabled' : 'btn-login-prime-o'
-                                            }`}
-                                            onClick={() =>
-                                                this.props.sendOtp(
-                                                    document.getElementById('emailIdentifier').value,
-                                                    false
-                                                )
-                                            }
-                                            disabled={this.props?.isLoading}
-                                        >
-                                            Get OTP
-                                        </button>
+                                        <input
+                                            className='input border-gray-300 focus:outline-none w-full focus:border-accent h-10'
+                                            type='email'
+                                            id='emailIdentifier'
+                                            placeholder='Email Address*'
+                                            defaultValue={this.state.emailIdentifier}
+                                            onInput={(e) => this.props.identifierChange(false)}
+                                            disabled={this.props?.emailAccessToken}
+                                        />
                                     )}
+                                    <span>
+                                        {this.props?.emailAccessToken && <MdCheckCircle className='text-green-600' />}
+                                    </span>
                                 </div>
-                                {/* {this.props?.emailIdentifier && this.props?.emailSuccessMessage ? (
-                                    <p className="ver-email-message mt-2 ico-green c-fs-7">
-                                        {this.props?.emailSuccessMessage} 
-                                    </p>
-                                ) : null} */}
+                                {this.props?.emailAccessToken || this.props?.signupByGitHub ? (
+                                    <button
+                                        className='btn btn-accent btn-otp'
+                                        onClick={(e) => this.props.identifierChange(false)}
+                                    >
+                                        Change{this.props?.signupByGitHub ? '' : '/Re-verify'} Email
+                                    </button>
+                                ) : (
+                                    <button
+                                        className='btn btn-accent btn-otp btn-outline'
+                                        onClick={() =>
+                                            this.props.sendOtp(document.getElementById('emailIdentifier').value, false)
+                                        }
+                                        disabled={this.props?.isLoading}
+                                    >
+                                        Get OTP
+                                    </button>
+                                )}
                             </div>
+
                             {this.props?.emailIdentifier && !this.props?.emailAccessToken ? (
                                 <>
-                                    <span className='hor-line'></span>
-                                    <div className='ver-email__otp'>
-                                        <div className='d-flex flex-column'>
-                                            <Otpinput
-                                                tag='email'
-                                                verifyOtp={this.props.verifyOtp}
-                                                otpLength={this.props.widgetData?.otpLength}
-                                                requestId={this.props.emailRequestId}
-                                                notByEmail={false}
-                                            />
-                                            {this.props?.hideEmailRetry ? null : (
-                                                <RetryOtp
-                                                    allowedRetry={this.props.allowedRetry}
-                                                    OTPRetryModes={this.props.OTPRetryModes}
-                                                    retryOtp={this.props.retryOtp}
-                                                    emailRequestId={this.props.emailRequestId}
-                                                ></RetryOtp>
-                                            )}
-                                        </div>
+                                    <div className='xl:block hidden  h-[100px] w-[1px] bg-gray-100'></div>
+                                    <div className='flex flex-col gap-1'>
+                                        <Otpinput
+                                            tag='email'
+                                            verifyOtp={this.props.verifyOtp}
+                                            otpLength={this.props.widgetData?.otpLength}
+                                            requestId={this.props.emailRequestId}
+                                            notByEmail={false}
+                                        />
+                                        {this.props?.hideEmailRetry ? null : (
+                                            <RetryOtp
+                                                allowedRetry={this.props.allowedRetry}
+                                                OTPRetryModes={this.props.OTPRetryModes}
+                                                retryOtp={this.props.retryOtp}
+                                                emailRequestId={this.props.emailRequestId}
+                                            ></RetryOtp>
+                                        )}
                                     </div>
                                 </>
                             ) : null}
@@ -142,74 +130,63 @@ class StepTwo extends React.Component {
                         {this.props?.emailIdentifier &&
                         this.props?.emailSuccessMessage &&
                         !this.props?.emailAccessToken ? (
-                            <p className='ver-email-message mt-2 ico-green c-fs-7'>
+                            <p>
                                 {this.props?.emailSuccessMessage} {this.props?.emailIdentifier}.
                             </p>
                         ) : null}
                     </div>
-                    <div className='step-two__phone  w-100  d-grid gap-2'>
-                        <label htmlFor='contact' className='step-two__phone__lable c-fw-m c-fs-7'>
-                            Verify Mobile number
-                        </label>
-                        <div className='ver-phone d-flex gap-4 align-items-top flex-wrap'>
-                            <div className='ver-phone__main'>
-                                <div className='ver-phone-main d-flex gap-3 ver-input flex-wrap'>
-                                    <div
-                                        className={
-                                            'ver-phone-main__input col ver-input__input' +
-                                            (this.props?.smsAccessToken ? ' pointer-none' : '')
-                                        }
-                                    >
-                                        <MobileInputComponent
-                                            onInput={(event) => {
-                                                const value = event?.replace('+', '');
-                                                if (value !== smsIdentifier) {
-                                                    smsIdentifier = value;
-                                                    this.props.identifierChange(true);
-                                                }
-                                            }}
-                                            required={true}
-                                            disabled={this.props?.smsAccessToken}
-                                            defaultValue={smsIdentifier ? '+' + smsIdentifier : ''}
-                                            setInvalid={(event) => (mobileInvalid = event)}
-                                            placeholder='Mobile Number*'
-                                        ></MobileInputComponent>
-
-                                        <span className='ver-phone-main__input__check'>
-                                            {this.props?.smsAccessToken && <MdCheckCircle className='ico-green' />}
-                                        </span>
-                                    </div>
-                                    {this.props?.smsAccessToken ? (
-                                        <button
-                                            className='ver-mobile-main__btn btn  btn-login-prime-o c-fw-m c-fs-7'
-                                            onClick={(e) => this.props.identifierChange(true)}
-                                        >
-                                            Change/Re-verify Mobile Number
-                                        </button>
-                                    ) : (
-                                        <button
-                                            className={`ver-mobile-main__btn btn c-fw-m c-fs-7 ${
-                                                this.props?.smsIdentifier ? 'btn-light disabled' : 'btn-login-prime-o'
-                                            }`}
-                                            onClick={() =>
-                                                mobileInvalid
-                                                    ? toast.error('Invalid mobile number.')
-                                                    : this.props.sendOtp(smsIdentifier, true)
+                    <div className='flex flex-col w-full gap-2'>
+                        <label htmlFor='contact'>Verify Mobile number</label>
+                        <div className='flex xl:flex-row flex-col gap-8'>
+                            <div className='flex sm:flex-row flex-col  gap-1'>
+                                <div className='flex gap-4 max-h-10 w-1/3 max-w-[280px] min-w-[280px] '>
+                                    <MobileInputComponent
+                                        onInput={(event) => {
+                                            const value = event?.replace('+', '');
+                                            if (value !== smsIdentifier) {
+                                                smsIdentifier = value;
+                                                this.props.identifierChange(true);
                                             }
-                                            disabled={this.props?.isLoading}
-                                        >
-                                            Get OTP
-                                        </button>
-                                    )}
+                                        }}
+                                        required={true}
+                                        disabled={this.props?.smsAccessToken}
+                                        defaultValue={smsIdentifier ? '+' + smsIdentifier : ''}
+                                        setInvalid={(event) => (mobileInvalid = event)}
+                                        placeholder='Mobile Number*'
+                                    ></MobileInputComponent>
+
+                                    <span className='mt-3'>
+                                        {this.props?.smsAccessToken && <MdCheckCircle className='text-green-600' />}
+                                    </span>
                                 </div>
+                                {this.props?.smsAccessToken ? (
+                                    <button
+                                        className='btn btn-accent btn-otp'
+                                        onClick={(e) => this.props.identifierChange(true)}
+                                    >
+                                        Change/Re-verify Mobile Number
+                                    </button>
+                                ) : (
+                                    <button
+                                        className='btn btn-accent btn-otp btn-outline'
+                                        onClick={() =>
+                                            mobileInvalid
+                                                ? toast.error('Invalid mobile number.')
+                                                : this.props.sendOtp(smsIdentifier, true)
+                                        }
+                                        disabled={this.props?.isLoading}
+                                    >
+                                        Get OTP
+                                    </button>
+                                )}
                             </div>
-
-                            {this.props?.smsIdentifier && !this.props?.smsAccessToken ? (
-                                <>
-                                    <span className='hor-line'></span>
-
-                                    <div className='ver-email__otp'>
-                                        <div className='d-flex flex-column'>
+                            {this.props?.smsIdentifier && !this.props?.smsAccessToken && (
+                                <div className='xl:block hidden h-[130px] w-[1px] bg-gray-100'></div>
+                            )}
+                            <div className='flex flex-col gap-2'>
+                                {this.props?.smsIdentifier && !this.props?.smsAccessToken ? (
+                                    <>
+                                        <div className='flex flex-col gap-1'>
                                             <Otpinput
                                                 tag='sms'
                                                 verifyOtp={this.props.verifyOtp}
@@ -226,20 +203,22 @@ class StepTwo extends React.Component {
                                                 ></RetryOtp>
                                             )}
                                         </div>
-                                    </div>
-                                </>
-                            ) : null}
+                                    </>
+                                ) : null}
+                                {this.props?.smsIdentifier &&
+                                this.props?.smsSuccessMessage &&
+                                !this.props?.smsAccessToken ? (
+                                    <p className='text-success'>
+                                        {this.props?.smsSuccessMessage} +{this.props?.smsIdentifier?.replace('+', '')}
+                                    </p>
+                                ) : null}
+                            </div>
                         </div>
-                        {this.props?.smsIdentifier && this.props?.smsSuccessMessage && !this.props?.smsAccessToken ? (
-                            <p className='ver-email-message ico-green c-fs-7'>
-                                {this.props?.smsSuccessMessage} +{this.props?.smsIdentifier?.replace('+', '')}
-                            </p>
-                        ) : null}
                     </div>
-                    <div style={{ width: '360px' }}>
+                    <div className='rounded border px-1 w-[270px] '>
                         <select
+                            className=' h-10 w-full'
                             autoComplete='on'
-                            className='form-select'
                             aria-label='Select Source'
                             name='source'
                             onChange={this.handleSourceChange}
@@ -254,30 +233,28 @@ class StepTwo extends React.Component {
                             <option value='tiedelhincr'>TiEDelhiNCR</option>
                         </select>
                     </div>
-                    <div className='row'>
-                        <div className='d-flex align-items-center gap-3'>
-                            <button className='btn btn-login-secondary c-fs-7' onClick={() => this.props.setStep(1)}>
-                                {' '}
-                                <MdKeyboardArrowLeft />
-                                Back
-                            </button>
-                            <button
-                                className='btn btn-login-prime c-fs-7'
-                                onClick={() =>
-                                    this.props?.smsAccessToken &&
-                                    (this.props?.emailAccessToken || this.props?.githubCode) &&
-                                    this.props.validateUserForCompany()
-                                }
-                                disabled={
-                                    !this.props?.smsAccessToken ||
-                                    (!this.props?.emailAccessToken && !this.props?.githubCode) ||
-                                    this.props?.isLoading
-                                }
-                            >
-                                {' '}
-                                Next <MdKeyboardArrowRight />
-                            </button>
-                        </div>
+                    <div className='flex  gap-4'>
+                        <button className='btn btn-accent btn-outline btn-md' onClick={() => this.props.setStep(1)}>
+                            {' '}
+                            <MdKeyboardArrowLeft />
+                            Back
+                        </button>
+                        <button
+                            className=' btn btn-md btn-accent disabled:bg-gray-300 disabled:text-primary'
+                            onClick={() =>
+                                this.props?.smsAccessToken &&
+                                (this.props?.emailAccessToken || this.props?.githubCode) &&
+                                this.props.validateUserForCompany()
+                            }
+                            disabled={
+                                !this.props?.smsAccessToken ||
+                                (!this.props?.emailAccessToken && !this.props?.githubCode) ||
+                                this.props?.isLoading
+                            }
+                        >
+                            {' '}
+                            Next <MdKeyboardArrowRight />
+                        </button>
                     </div>
                 </div>
             </>

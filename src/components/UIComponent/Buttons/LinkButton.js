@@ -14,7 +14,7 @@ const arrowIcon = (
 export function LinkButton({ href, content, customClasses }) {
     return (
         <>
-            <Link href={href || '/'} className={`link-btn ${customClasses}`}>
+            <Link href={href || '/'} className={`link-btn ${customClasses || ''}`}>
                 {content}
                 {arrowIcon}
             </Link>
@@ -25,7 +25,17 @@ export function LinkButton({ href, content, customClasses }) {
 export function LinkText({ children, customClasses }) {
     return (
         <>
-            <span className={`link-btn ${customClasses}`}>
+            <span className={`link-btn ${customClasses || ''}`}>
+                {children}
+                {arrowIcon}
+            </span>
+        </>
+    );
+}
+export function BtnWithHideIco({ children, customClasses }) {
+    return (
+        <>
+            <span className={`link-btn hide-ico ${customClasses || ''}`}>
                 {children}
                 {arrowIcon}
             </span>

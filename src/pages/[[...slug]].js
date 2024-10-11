@@ -18,15 +18,16 @@ import FeatureComp from '@/components/FeatureComp/FeatureComp';
 import PricingComp from '@/components/PricingComp/PricingComp';
 import SignUp from '@/components/signupComp/signupComp';
 import AboutUsComp from '@/components/AboutUsComp/AboutUsComp';
-
-//Functions to fetch data
-import getPageInfo from '@/utils/getPageInfo';
-import getCommonCompData from '@/utils/getCommonCompData';
 import DevelopersComp from '@/components/DevelopersComp/DevelopersComp';
 import StartupComp from '@/components/StartupComp/StartupComp';
 import PartnersComp from '@/components/PartnersComp/PartnersComp';
 import CertificatesComp from '@/components/CertificatesComp/CertificatesComp';
 import IntegrationsComp from '@/components/IntegrationsComp/IntegrationsComp';
+import CaseStudyComp from '@/components/CaseStudyComp/CaseStudyComp';
+
+//Functions to fetch data
+import getPageInfo from '@/utils/getPageInfo';
+import getCommonCompData from '@/utils/getCommonCompData';
 
 const Components = {
     BannerComp,
@@ -53,6 +54,8 @@ const Components = {
     PartnersComp,
     CertificatesComp,
     IntegrationsComp,
+    CaseStudyComp,
+
 };
 
 export default function Page({ data, commonData, pageInfo }) {
