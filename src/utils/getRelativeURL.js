@@ -15,7 +15,6 @@ export default function getRelativeURL(link, type) {
                 if (pathArray.length > 2) {
                     pathArray[pathArray.length - 1] = link;
                     relativeURL = pathArray.join('/');
-                    console.log('🚀 ~ getRelativeURL ~ relativeURL:', relativeURL);
                 }
                 break;
 
@@ -48,6 +47,9 @@ export default function getRelativeURL(link, type) {
                 break;
 
             case 'country':
+                console.log('🚀 ~ getRelativeURL ~ notGobal:', notGobal);
+                console.log('🚀 ~ getRelativeURL ~ pathArray:', pathArray);
+
                 pathArray.splice(1, 0, link);
                 relativeURL = pathArray.join('/');
                 break;

@@ -4,8 +4,9 @@ import availableCountries from '@/data/availableCountries.json';
 import Image from 'next/image';
 import getRelativeURL from '@/utils/getRelativeURL';
 export default function NotificationBarComp({ componentData, pageInfo }) {
+    console.log('🚀 ~ NotificationBarComp ~ pageInfo:', pageInfo);
     const currentCountry = availableCountries.find((cont) => cont.shortname.toLowerCase() === pageInfo?.country);
-    const hidden = componentData?.hide.includes(pageInfo?.page);
+    const hidden = componentData?.hide?.includes(pageInfo?.page);
     if (componentData && !hidden) {
         return (
             <div className='py-1 border border-b'>

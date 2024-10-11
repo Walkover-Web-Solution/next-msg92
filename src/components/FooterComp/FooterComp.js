@@ -2,7 +2,7 @@ import getRelativeURL from '@/utils/getRelativeURL';
 import Link from 'next/link';
 
 export default function FooterComp({ componentData, pageInfo }) {
-    const hidden = componentData?.hide.includes(pageInfo?.page);
+    const hidden = componentData?.hide?.includes(pageInfo?.page);
 
     if (componentData && !hidden) {
         return (

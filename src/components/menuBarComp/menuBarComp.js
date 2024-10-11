@@ -54,6 +54,10 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                                 <Link
                                                                     key={i}
                                                                     href={getRelativeURL(product?.slug, 'product')}
+                                                                    onClick={() => {
+                                                                        setNav('hide');
+                                                                        setType('products');
+                                                                    }}
                                                                 >
                                                                     <div className='flex items-center gap-2 py-2 px-2 rounded hover:bg-secondary w-full LinkButtonCard'>
                                                                         <Image
@@ -89,7 +93,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     {componentData?.integrations_list?.content?.length > 0 &&
                                         componentData?.integrations_list?.content.map((integration, index) => {
                                             return (
-                                                <Link href={getRelativeURL(integration?.slug, 'product')}>
+                                                <Link key={index} href={getRelativeURL(integration?.slug, 'product')}>
                                                     <div className='flex items-center gap-2 py-2 px-2 rounded hover:bg-secondary w-full LinkButtonCard'>
                                                         <Image
                                                             className='h-10'
@@ -151,7 +155,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     setNav('show');
                                     setType('products');
                                 }}
-                                className='text-link'
+                                className={`${nav === 'show' && type === 'products' && 'active-link '} text-link`}
                             >
                                 {componentData?.products}
                             </li>
@@ -160,7 +164,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     setNav('show');
                                     setType('integrations');
                                 }}
-                                className='text-link'
+                                className={`${nav === 'show' && type === 'integrations' && 'active-link '} text-link`}
                             >
                                 {componentData?.integrations}
                             </li>
@@ -176,13 +180,15 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             </Link>
                         </ul>
                         <div className='w-full items-center flex justify-center'>
-                            <Image
-                                src={'/assets/brand/msg91.svg'}
-                                width={300}
-                                height={100}
-                                className='h-[40px] w-auto'
-                                alt='MSG91'
-                            />
+                            <Link href={pageInfo?.country === 'global' ? '/' : pageInfo?.country}>
+                                <Image
+                                    src={'/assets/brand/msg91.svg'}
+                                    width={300}
+                                    height={100}
+                                    className='h-[40px] w-auto'
+                                    alt='MSG91'
+                                />
+                            </Link>
                         </div>
                         <ul className='w-full flex justify-end gap-6'>
                             <li className='text-link'>{componentData?.apidocs}</li>
@@ -192,13 +198,15 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                         </ul>
                     </div>
                     <div className='container flex lg:hidden items-center justify-between py-5 '>
-                        <Image
-                            src={'/assets/brand/msg91.svg'}
-                            width={300}
-                            height={100}
-                            className='h-[30px] w-auto'
-                            alt='MSG91'
-                        />
+                        <Link href={pageInfo?.country === 'global' ? '/' : pageInfo?.country}>
+                            <Image
+                                src={'/assets/brand/msg91.svg'}
+                                width={300}
+                                height={100}
+                                className='h-[30px] w-auto'
+                                alt='MSG91'
+                            />
+                        </Link>
                         <button className='btn btn-icon'>
                             <MdMenu fontSize={24} />
                         </button>
