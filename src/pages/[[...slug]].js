@@ -16,12 +16,18 @@ import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
 import HeadComp from '@/components/headComp';
 import FeatureComp from '@/components/FeatureComp/FeatureComp';
 import PricingComp from '@/components/PricingComp/PricingComp';
-import SignupComp from '@/components/SignupComp/signupComp';
+import SignUp from '@/components/signupComp/signupComp';
+import AboutUsComp from '@/components/AboutUsComp/AboutUsComp';
+import DevelopersComp from '@/components/DevelopersComp/DevelopersComp';
+import StartupComp from '@/components/StartupComp/StartupComp';
+import PartnersComp from '@/components/PartnersComp/PartnersComp';
+import CertificatesComp from '@/components/CertificatesComp/CertificatesComp';
+import IntegrationsComp from '@/components/IntegrationsComp/IntegrationsComp';
+import CaseStudyComp from '@/components/CaseStudyComp/CaseStudyComp';
 
 //Functions to fetch data
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
-import CaseStudyComp from '@/components/CaseStudyComp/CaseStudyComp';
 
 const Components = {
     BannerComp,
@@ -41,7 +47,13 @@ const Components = {
     HeadComp,
     FeatureComp,
     PricingComp,
-    SignupComp,
+    SignUp,
+    AboutUsComp,
+    DevelopersComp,
+    StartupComp,
+    PartnersComp,
+    CertificatesComp,
+    IntegrationsComp,
     CaseStudyComp,
 };
 
