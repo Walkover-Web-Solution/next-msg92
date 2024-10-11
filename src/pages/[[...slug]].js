@@ -22,6 +22,11 @@ import AboutUsComp from '@/components/AboutUsComp/AboutUsComp';
 //Functions to fetch data
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
+import DevelopersComp from '@/components/DevelopersComp/DevelopersComp';
+import StartupComp from '@/components/StartupComp/StartupComp';
+import PartnersComp from '@/components/PartnersComp/PartnersComp';
+import CertificatesComp from '@/components/CertificatesComp/CertificatesComp';
+import IntegrationsComp from '@/components/IntegrationsComp/IntegrationsComp';
 
 const Components = {
     BannerComp,
@@ -43,6 +48,11 @@ const Components = {
     PricingComp,
     SignUp,
     AboutUsComp,
+    DevelopersComp,
+    StartupComp,
+    PartnersComp,
+    CertificatesComp,
+    IntegrationsComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
