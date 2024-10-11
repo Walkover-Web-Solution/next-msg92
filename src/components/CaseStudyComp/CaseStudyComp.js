@@ -65,9 +65,19 @@ export default function CaseStudyComp({ data, pageInfo }) {
                             <h2 className='font-bold text-2xl'>{`${data?.caseStudies?.headings?.problem}`}</h2>
                             <p className='text-lg' dangerouslySetInnerHTML={{ __html: caseStudy?.problem }}></p>
                         </div>
-                        <div className='flex flex-col gap-2'>
+                        <div className='flex flex-col gap-4'>
                             <h2 className='font-bold text-2xl'>{`${data?.caseStudies?.headings?.solution}`}</h2>
-                            <p className='text-lg' dangerouslySetInnerHTML={{ __html: caseStudy?.solution }}></p>
+                            <p
+                                className='text-lg'
+                                dangerouslySetInnerHTML={{ __html: caseStudy?.solution?.description }}
+                            ></p>
+                            <ul className='list-disc flex flex-col gap-2 text-lg'>
+                                {caseStudy?.solution?.content?.length > 0 &&
+                                    caseStudy?.solution?.content?.map((solution, index) => {
+                                        return <li key={index}>{solution}</li>;
+                                    })}{' '}
+                            </ul>
+                            <p className='text-lg'>{caseStudy?.solution?.extra}</p>
                         </div>
                         <div className='flex flex-col gap-2'>
                             <h2 className='font-bold text-2xl'>{`${data?.caseStudies?.headings?.benefit}`}</h2>
