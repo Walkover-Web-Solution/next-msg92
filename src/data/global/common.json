@@ -136,19 +136,19 @@
             "links": [
                 {
                     "name": "Hello",
-                    "link": "/hello"
+                    "link": "hello"
                 },
                 {
                     "name": "Segmento",
-                    "link": "/segmento"
+                    "link": "segmento"
                 },
                 {
                     "name": "Campaign",
-                    "link": "/campaign"
+                    "link": "campaign"
                 },
                 {
                     "name": "OTP",
-                    "link": "/otp"
+                    "link": "otp"
                 }
             ]
         },
@@ -157,19 +157,19 @@
             "links": [
                 {
                     "name": "URL Shortener",
-                    "link": "/shorturl"
+                    "link": "shorturl"
                 },
                 {
                     "name": "KnowledgeBase",
-                    "link": "/knowledgebase"
+                    "link": "knowledgebase"
                 },
                 {
                     "name": "Free WhatsApp link generator",
-                    "link": "/free-whatsapp-link-generator"
+                    "link": "free-whatsapp-link-generator"
                 },
                 {
                     "name": "WhatsApp Chatbot",
-                    "link": "/whatsapp/chatbot"
+                    "link": "whatsapp/chatbot"
                 }
             ]
         },
@@ -178,23 +178,23 @@
             "links": [
                 {
                     "name": "SMS",
-                    "link": "/sms"
+                    "link": "sms"
                 },
                 {
                     "name": "Email",
-                    "link": "/email"
+                    "link": "email"
                 },
                 {
                     "name": "WhatsApp",
-                    "link": "/whatsapp"
+                    "link": "whatsapp"
                 },
                 {
                     "name": "Voice",
-                    "link": "/voice"
+                    "link": "voice"
                 },
                 {
                     "name": "Numbers",
-                    "link": "/numbers"
+                    "link": "numbers"
                 }
             ]
         },
@@ -203,23 +203,23 @@
             "links": [
                 {
                     "name": "Guide",
-                    "link": "/guide"
+                    "link": "guide"
                 },
                 {
                     "name": "Case Studies",
-                    "link": "/case-studies"
+                    "link": "case-studies"
                 },
                 {
                     "name": "FAQ",
-                    "link": "/help"
+                    "link": "help"
                 },
                 {
                     "name": "Voice",
-                    "link": "/voice"
+                    "link": "voice"
                 },
                 {
                     "name": "Numbers",
-                    "link": "/numbers"
+                    "link": "numbers"
                 }
             ]
         },
@@ -232,27 +232,27 @@
                 },
                 {
                     "name": "Pricing",
-                    "link": "/pricing"
+                    "link": "pricing"
                 },
                 {
                     "name": "Contact Us",
-                    "link": "/contact-us"
+                    "link": "contact-us"
                 },
                 {
                     "name": "Developers",
-                    "link": "/developers"
+                    "link": "developers"
                 },
                 {
                     "name": "MSG91 for startups",
-                    "link": "/startups"
+                    "link": "startups"
                 },
                 {
                     "name": "Partners and integrations",
-                    "link": "/partners-and-integrations"
+                    "link": "partners-and-integrations"
                 },
                 {
                     "name": "Become a partner",
-                    "link": "/become-a-partner"
+                    "link": "become-a-partner"
                 },
                 {
                     "name": "Career",
@@ -260,7 +260,7 @@
                 },
                 {
                     "name": "Certificates",
-                    "link": "/certificates"
+                    "link": "certificates"
                 }
             ]
         },
@@ -268,35 +268,35 @@
             "links": [
                 {
                     "name": "Terms of use",
-                    "link": "/terms-of-use"
+                    "link": "terms-of-use"
                 },
                 {
                     "name": "Privacy policy",
-                    "link": "/privacy-policy"
+                    "link": "privacy-policy"
                 },
                 {
                     "name": "GDPR",
-                    "link": "/gdpr"
+                    "link": "gdpr"
                 },
                 {
                     "name": "Refund policy",
-                    "link": "/refund-policy"
+                    "link": "refund-policy"
                 },
                 {
                     "name": "No spam",
-                    "link": "/no-spam"
+                    "link": "no-spam"
                 },
                 {
                     "name": "Startup policy",
-                    "link": "/startup-policy"
+                    "link": "startup-policy"
                 },
                 {
                     "name": "Fair pricing policy",
-                    "link": "/fair-pricing-policy"
+                    "link": "fair-pricing-policy"
                 },
                 {
                     "name": "Cookie policy",
-                    "link": "/cookie-policy"
+                    "link": "cookie-policy"
                 }
             ]
         },

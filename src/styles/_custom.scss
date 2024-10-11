@@ -5,6 +5,10 @@
 .skeleton {
     @apply bg-slate-50 rounded-sm;
 }
+
+.bg-gray{
+    @apply bg-gray-50
+}
 .btn {
     &.btn-primary {
         color: var(--white-color);
@@ -49,6 +53,10 @@
     }
 }
 
+.list-disc{
+    list-style: disc;
+    @apply ml-5
+}
 .text-link {
     &.active-link {
         color: var(--link-color);
@@ -238,5 +246,5 @@ $button-transition-timing: 100ms;
     @apply left-0;
 }
 .nav-hide {
-    @apply left-[-900px];
+    @apply left-[-2600px];
 }
