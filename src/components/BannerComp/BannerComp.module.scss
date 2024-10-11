@@ -1,0 +1,12 @@
+.cont {
+    height: 100%;
+
+}
+.img {
+    @apply w-full lg:w-[1000px] lg:absolute;
+    @media (min-width: 1024px) {
+        margin: 0 auto;
+        top: 45%;
+        transform: translateY(-50%);
+    }
+}

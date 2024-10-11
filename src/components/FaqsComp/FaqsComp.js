@@ -11,7 +11,10 @@ export default function FaqsComp({ data, notCont }) {
                                     <input type='radio' name='my-accordion-3' defaultChecked={index === 0} />
                                     <h3 className='collapse-title text-xl font-medium'>{faq?.question}</h3>
                                     <div className='collapse-content'>
-                                        <p className=' py-3 text-lg'>{faq?.answer}</p>
+                                        <p
+                                            className=' py-3 text-lg'
+                                            dangerouslySetInnerHTML={{ __html: faq?.answer }}
+                                        ></p>
                                     </div>
                                 </div>
                             );

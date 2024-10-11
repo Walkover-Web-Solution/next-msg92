@@ -14,11 +14,14 @@ export default function FeatureComp({ data }) {
                                     className={`lg:p-12 p-6 bg-white border flex items-center overflow-hidden gap-1 rounded ${
                                         (index + 1) % 3 === 0
                                             ? 'flex flex-col md:flex-row col-span-2'
-                                            : 'flex flex-col lg:flex flex-col md:flex-row lg:col-span-1 col-span-2'
+                                            : 'flex flex-col lg:flex-col  md:flex-row lg:col-span-1 col-span-2'
                                     }`}
                                 >
                                     <div className='flex flex-col gap-2'>
-                                        <Image src={feature?.icon} alt={feature?.name} width={40} height={40} />
+                                        {feature?.icon && (
+                                            <Image src={feature?.icon} alt={feature?.name} width={40} height={40} />
+                                        )}
+
                                         <h3 className='text-2xl font-semibold'>{feature?.name}</h3>
                                         <p
                                             className='text-lg'

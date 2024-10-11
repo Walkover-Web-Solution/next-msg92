@@ -1,19 +1,20 @@
-{ "HeadComp": {
-    "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91",
-    "description":"Enhance your customer engagement with Rich Communication Service. Effortless RCS integration and advanced features boost communication and stimulate business growth"
-  }, 
-         "BannerComp": {
-          "slug": "rcs",
-          "product": {
-              "name": "RCS",
-              "icon": "/assets/icons/products/rcs.svg"
-          },
-          "tagline": "Rich Communication Services",
-          "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
-          "subheading":"RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
+{
+    "HeadComp": {
+        "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91",
+        "description": "Enhance your customer engagement with Rich Communication Service. Effortless RCS integration and advanced features boost communication and stimulate business growth"
+    },
+    "BannerComp": {
+        "slug": "rcs",
+        "product": {
+            "name": "RCS",
+            "icon": "/assets/icons/products/rcs.svg"
+        },
+        "tagline": "Rich Communication Services",
+        "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+        "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
         "banner_img": "/assets/global/hello/banner.webp",
-          "getstarted_btn": "Get Started",
-          "trustedByComp": {
+        "getstarted_btn": "Get Started",
+        "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
             "logos": [
                 {
@@ -38,33 +39,34 @@
                 }
             ]
         }
-      },
-      "FeatureComp":{ 
+    },
+    "FeatureComp": {
         "heading": "Features",
-          "iconColor": "text-otp",
-          "features":[
-        { "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-          "name": "Corporate Communications with Branding",
-          "content": "<strong>Distinguish by branding</strong>Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers.",
-          "img": "/assets/global/rcs/rcs-communications-branding.svg"
-        },
-        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-          "name": "Provide Multimedia Interactions",
-          "content": "<strong>Communication through visual representation</strong>Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions.",
-          "img":  "/assets/global/rcs/rcs-multimedia-interactions.svg"
-        },
-        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-          "name": "Boost Sales Through Interactive Conversations",
-          "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions.",
-          "img": "/assets/global/rcs/rcs-boost-sales.svg"
-        },
-    {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-          "name": "Enhanced Customer Trust",
-          "content": " <strong>Understand your customers' habits</strong>Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility.",
-          "img": "/assets/global/rcs/rcs-customer-trust.svg"
-        }]
-      },
-      "FaqsComp": {
+        "iconColor": "text-otp",
+        "features": [
+            {
+                "name": "Corporate Communications with Branding",
+                "content": "<strong>Distinguish by branding</strong>Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers.",
+                "img": "/assets/global/rcs/rcs-communications-branding.svg"
+            },
+            {
+                "name": "Provide Multimedia Interactions",
+                "content": "<strong>Communication through visual representation</strong>Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions.",
+                "img": "/assets/global/rcs/rcs-multimedia-interactions.svg"
+            },
+            {
+                "name": "Boost Sales Through Interactive Conversations",
+                "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions.",
+                "img": "/assets/global/rcs/rcs-boost-sales.svg"
+            },
+            {
+                "name": "Enhanced Customer Trust",
+                "content": " <strong>Understand your customers' habits</strong>Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility.",
+                "img": "/assets/global/rcs/rcs-customer-trust.svg"
+            }
+        ]
+    },
+    "FaqsComp": {
         "heading": "Frequently Asked Questions",
         "faqs": [
             {
@@ -84,12 +86,12 @@
                 "answer": "<p>We are providing monthly tickets with each plan and in case they end, you can also use extra tickets which you pay in postpaid billing.</p><p>Here are the number of tickets assigned in each plan:</p><ul><li>Free Plan- 50 tickets/monthly</li><li>Basic Plan- 1000 tickets/monthly</li><li>Premium Plan- 2000 tickets/monthly</li></ul><p>Extra Charges for each ticket in different plans:</p><ul><li>Free Plan- there is no option for more tickets in free plans as you have to upgrade the Hello Plan to Basic or Premium as per your choice.</li><li>Basic Plan- ₹0.5 per ticket</li><li>Premium Plan- ₹0.75 per ticket</li></ul>"
             },
             {
-                "question":  " Can I customize the Hello Plan?",
-                "answer":  "Yes, you can have a customized plan for hello. Click on the link to schedule the meeting with the sales heads."
+                "question": " Can I customize the Hello Plan?",
+                "answer": "Yes, you can have a customized plan for hello. Click on the link to schedule the meeting with the sales heads."
             }
         ]
     },
-      "PreFooterComp": {
+    "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
             "contactSales": {
@@ -106,5 +108,4 @@
             }
         }
     }
-    }
-    
+}
