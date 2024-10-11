@@ -35,38 +35,38 @@
                
                 {
                     "icon": "/assets/about_us/pushpendra_agrawal.jpg",
-                    "post":"Pushpendra Agrawal",
-                    "name":"Founder & Advisor",
+                    "name":"Pushpendra Agrawal",
+                    "post":"Founder & Advisor",
                     "description":"Pushpendra is a serial entrepreneur."
                 },
                 {
                     "icon": "/assets/about_us/shubhendra_agrawal.png",
-                    "name":"Shubhendra Agrawal",
-                    "post":"Founder & CEO",
+                    "name":"Founder & CEO",
+                    "post":"Shubhendra Agrawal",
                     "description":"Shubhendra is an absolute Finance man."
                 },
                 {
                     "icon": "/assets/about_us/ravi_dangi.png",
-                    "post":"Sales",
-                    "name":"Ravi Dangi",
+                    "name":"Sales",
+                    "post":"Ravi Dangi",
                     "description":"Mistakenly believed Engineer, he’s a sales buff."
                 },
                 {
                     "icon": "/assets/about_us/vipin_sharma.png",
-                    "post":"Technology",
-                    "name":"Vipin Sharma",
+                    "name":"Technology",
+                    "post":"Vipin Sharma",
                     "description":"Mostly found in the gym or at the TT table."
                 },
                 {
                     "icon": "/assets/about_us/alisha_chouhan.png",
-                    "post":"Global Business",
-                    "name":"Alisha Chouhan",
+                    "name":"Global Business",
+                    "post":"Alisha Chouhan",
                     "description":"Works hard, has fun, makes a difference."
                 },
                 {
                     "icon": "/assets/about_us/chinmay_daga.png",
-                    "post":"Operations",
-                    "name":"Chinmay Daga",
+                    "name":"Operations",
+                    "post":"Chinmay Daga",
                     "description":"The processes & partnerships pro."
                 }
             ]
