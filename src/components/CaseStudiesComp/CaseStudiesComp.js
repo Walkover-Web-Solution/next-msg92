@@ -8,7 +8,6 @@ export default function CaseStudiesComp({ data }) {
             <div className='bg-neutral py-20'>
                 <div className='container flex flex-col gap-6 '>
                     <h2 className='text-3xl font-bold'>{data?.heading}</h2>
-
                     <div className='grid grid-cols-4 lg:grid-rows-2 md:grid-rows-4 grid-rows-6  md:gap-10 gap-6 '>
                         {data?.casestudies?.length > 0 &&
                             data?.casestudies.map((caseStudy, index) => {
