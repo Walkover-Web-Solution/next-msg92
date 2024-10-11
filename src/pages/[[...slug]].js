@@ -21,6 +21,7 @@ import SignupComp from '@/components/SignupComp/signupComp';
 //Functions to fetch data
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
+import CaseStudyComp from '@/components/CaseStudyComp/CaseStudyComp';
 
 const Components = {
     BannerComp,
@@ -41,6 +42,7 @@ const Components = {
     FeatureComp,
     PricingComp,
     SignupComp,
+    CaseStudyComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

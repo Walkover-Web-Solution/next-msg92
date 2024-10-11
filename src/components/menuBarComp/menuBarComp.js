@@ -38,7 +38,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
     if (componentData && !hidden) {
         return (
             <>
-                <div className={`${styles.cont} nav-${nav} `}>
+                <div className={`${styles.cont} nav-${nav}  `}>
                     <div className={`${styles.navigation} container flex`}>
                         {type === 'products' && (
                             <div className='mt-32 grid grid-cols-2 gap-12 h-fit min-w-[640px]'>
@@ -51,7 +51,10 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                     {category?.products?.length > 0 &&
                                                         category?.products.map((product, i) => {
                                                             return (
-                                                                <Link href={getRelativeURL(product?.slug, 'product')}>
+                                                                <Link
+                                                                    key={i}
+                                                                    href={getRelativeURL(product?.slug, 'product')}
+                                                                >
                                                                     <div className='flex items-center gap-2 py-2 px-2 rounded hover:bg-secondary w-full LinkButtonCard'>
                                                                         <Image
                                                                             className='h-10'
@@ -117,13 +120,15 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                 </div>
                             </div>
                         )}
-                        <div
-                            className='w-full'
-                            onMouseEnter={() => {
-                                setNav('hide');
-                                setType('products');
-                            }}
-                        ></div>
+                        {nav === 'show' && (
+                            <div
+                                className='w-full'
+                                onMouseEnter={() => {
+                                    setNav('hide');
+                                    setType('products');
+                                }}
+                            ></div>
+                        )}
                     </div>
                 </div>
                 <div className={`${styles.background} nav-${nav}`}></div>
