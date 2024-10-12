@@ -7,6 +7,8 @@
               "name": "RCS",
               "icon": "/assets/icons/products/rcs.svg"
           },
+          "code": true,
+
           "tagline": "Serviços de Comunicação Enriquecida",
           "heading": "Engaje os clientes na caixa de entrada SMS, entregando mensagens ricas e interativas usando RCS",
           "subheading":"RCS é um canal de mensagens integrado que permite às empresas engajar os clientes por meio de conversas ricas, imersivas e bidirecionais",

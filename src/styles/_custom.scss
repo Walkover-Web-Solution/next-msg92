@@ -261,3 +261,15 @@ $button-transition-timing: 100ms;
 .nav-hide {
     @apply left-[-2600px];
 }
+
+.code-m-0{
+    margin: 0px !important;
+    border: none !important;
+    border-radius: 0px !important;
+    height: 100%;
+    width: 100%;
+    
+}
+.code-tab-active{
+    @apply bg-primary
+}

@@ -1,0 +1,406 @@
+{
+    "HeadComp": {
+        "title": "MSG91 for Startups - upto 25,000 SMS per month for every Startup",
+        "description": "A startup for startups. Grow your startup with MSG91’s SMS for startups. First few transactional bulk SMS free every month. Spread this initiative and help startup."
+    },
+    "StartupComp": {
+        "heading": "Expand your vision with us",
+        "subheading": "Get a complimentary communication API package tailored to meet your needs",
+        "doc_btn": "Apply Now",
+        "doc_btn_link": "https://msg91.com/startups-form",
+        "tag": "Today we help you, tomorrow we can change the world together",
+        "infrastructure": {
+            "heading": "Grow your Startup with Robust Infrastructure",
+            "cards": [
+                {
+                    "icon": "/assets/startups/login.png",
+                    "head": "Sign up",
+                    "tag": "Sign up with your official email ID and integrate MSG91 API"
+                },
+                {
+                    "icon": "/assets/startups/Vector.png",
+                    "head": "Apply",
+                    "tag": "If you fulfill criteria, you can apply for the startup program"
+                },
+                {
+                    "icon": "/assets/startups/celebration.png",
+                    "head": "Enjoy",
+                    "tag": "You are good to go to avail the benifits"
+                }
+            ]
+        },
+        "benifits": {
+            "heading": "Benefits Offered in the form of Startup Balance",
+            "subheading": "Startup Balance can be used in either of the following ways: ",
+            "content": [
+                {
+                    "lines": "25,000 SMS credits per month for a duration of 6 months."
+                },
+                {
+                    "lines": "4,00,000 Emails as well as 4000 Email Verifications per month for a duration of 6 months."
+                },
+                {
+                    "lines": "Upto 10,000 WhatsApp Sessions(depending on the type of template) per month for a duration of 6 months."
+                },
+                {
+                    "lines": "25,000 OTP verification SMS credits per month for a duration of 6 months"
+                },
+                {
+                    "lines": "Access to Cloud Contact Center/Ticket Management Platform <a href='https://msg91.com/in/hello'>Hello</a>, Data Management & WareHouse Application<a href='https://msg91.com/in/segmento'>Segmento</a>, Flow Automation Application  <a href='https://msg91.com/in/campaign'>Campaign</a>, MSG91’s FAQ software <a href='https://msg91.com/in/knowledgebase'>KnowledgeBase</a>"
+                }
+            ]
+        },
+        "terms": {
+            "heading": "Eligibility and Terms",
+            "content": [
+                {
+                    "content": "All credits should be utilised for transactional messaging only."
+                },
+                {
+                    "content": "Only applicable for New MSG91 users."
+                },
+                {
+                    "content": "Registered email should be a private domain email (gmail/yahoo/outlook etc will be auto-rejected)."
+                },
+                {
+                    "content": "Startup should be associated with one of our collaborators."
+                },
+                {
+                    "content": "Startup has to add MSG91's Startup Badge on their website with tagline - Communication Partner."
+                }
+            ]
+        },
+        "colaborator": {
+            "heading": "Our Collaborators",
+            "subheading": "We’re proud to be associated with a growing set of Venture Capitalists, Accelerators, Incubators and Crowdfunding platforms across to inspire, identify and develop end-to-end solutions for businesses to discover and engage.",
+            "cards": [
+                {
+                    "icon": "/assets/startups/aic-36inc.png",
+                    "tag": "AIC - 36Inc",
+                    "url": "https://36inc.in/"
+                },
+                {
+                    "icon": "/assets/startups/spring-board-91.png",
+                    "tag": "91 SpringBoard",
+                    "url": "https://www.91springboard.com/"
+                },
+                {
+                    "icon": "/assets/startups/aic-bimtech.jpeg",
+                    "tag": "AIC - Bimtech",
+                    "url": "https://aicbimtech.com/"
+                },
+                {
+                    "icon": "/assets/startups/aic-raise.png",
+                    "tag": "AIC - RAISE STARTUP INCUBATION CENTRE",
+                    "url": "https://aicraise.com/"
+                },
+                {
+                    "icon": "/assets/startups/juincubator.png",
+                    "tag": "JU Incubator",
+                    "url": "https://www.juincubator.com/"
+                },
+                {
+                    "icon": "/assets/startups/nsrcel.png",
+                    "tag": "NSRCEL",
+                    "url": "https://nsrcel.org/"
+                },
+                {
+                    "icon": "/assets/startups/gusec.png",
+                    "tag": "GUSEC",
+                    "url": "https://gusec.edu.in/"
+                },
+                {
+                    "icon": "/assets/startups/acic.png",
+                    "tag": "ACIC-VGU Foundation",
+                    "url": "https://acic.vgu.ac.in/"
+                },
+                {
+                    "icon": "/assets/startups/pieds.jpeg",
+                    "tag": "PIEDS-BITS Pilani",
+                    "url": "https://pieds-bitspilani.org/"
+                },
+                {
+                    "icon": "/assets/startups/riidl.jpeg",
+                    "tag": "Research Innovation Incubation Design Laboratory Foundation",
+                    "url": "https://riidl.org/"
+                },
+                {
+                    "icon": "/assets/startups/grad.png",
+                    "tag": "Grad Capital",
+                    "url": "https://www.gradcapital.in/"
+                },
+                {
+                    "icon": "/assets/startups/lnct.jpeg",
+                    "tag": "LNCT Group",
+                    "url": "https://klic.lnct.ac.in/"
+                },
+                {
+                    "icon": "/assets/startups/volopay.png",
+                    "tag": "Volopay",
+                    "url": "https://www.volopay.com/"
+                },
+                {
+                    "icon": "/assets/startups/ideas.jpeg",
+                    "tag": "Ideas to Impacts Hub",
+                    "url": "https://www.ideastoimpacts.com/"
+                },
+                {
+                    "icon": "/assets/startups/idea.jpeg",
+                    "tag": "Inclusive Divyangjan Entrepreneur Association",
+                    "url": "http://www.divyangjanindia.com/pwd/"
+                },
+                {
+                    "icon": "/assets/startups/ciiic.jpeg",
+                    "tag": "Crescent Innovation Incubation Council (CIIIC) Ventures",
+                    "url": "https://www.ciic.ventures/"
+                },
+                {
+                    "icon": "/assets/startups/uincept.jpeg",
+                    "tag": "UIncept",
+                    "url": "https://www.uincept.com/"
+                },
+                {
+                    "icon": "/assets/startups/eximius.png",
+                    "tag": "Eximius VC",
+                    "url": "https://eximiusvc.com/"
+                },
+                {
+                    "icon": "/assets/startups/india-accelerator.png",
+                    "tag": "India Accelerator",
+                    "url": "https://www.indiaaccelerator.co/"
+                },
+                {
+                    "icon": "/assets/startups/startupvalley.png",
+                    "tag": "Startups Valley Amal Jyothi TBI",
+                    "url": "https://www.startupsvalley.in/"
+                },
+                {
+                    "icon": "/assets/startups/jito.png",
+                    "tag": "JITO-JIFF",
+                    "url": "https://www.jitojiif.com/"
+                },
+                {
+                    "icon": "/assets/startups/firstcheque.jpeg",
+                    "tag": "First Cheque",
+                    "url": "https://www.firstcheque.vc/"
+                },
+                {
+                    "icon": "/assets/startups/jptbi.png",
+                    "tag": "Sardar Patel Technology Business Incubator (sptbi)",
+                    "url": "https://www.sptbi.com/"
+                },
+                {
+                    "icon": "/assets/startups/arthayan.png",
+                    "tag": "Arthayan",
+                    "url": "https://arthayan.in/"
+                },
+                {
+                    "icon": "/assets/startups/bnest.jpeg",
+                    "tag": "BNest foundation",
+                    "url": "https://smartbhopal.city/BNest/index"
+                },
+                {
+                    "icon": "/assets/startups/iiitd.jpeg",
+                    "tag": "IIITD Innovation and Incubation Center",
+                    "url": "https://iiitdic.in/"
+                },
+                {
+                    "icon": "/assets/startups/randomly.png",
+                    "tag": "Randomly Club",
+                    "url": "https://randomly.club/"
+                },
+                {
+                    "icon": "/assets/startups/amity.jpeg",
+                    "tag": "Amity Innovation Incubator",
+                    "url": "https://www.amity.edu/aii/"
+                },
+                {
+                    "icon": "/assets/startups/icrisat.png",
+                    "tag": "ICRISAT-IN",
+                    "url": "https://www.icrisat.org/"
+                },
+                {
+                    "icon": "/assets/startups/advantedge.png",
+                    "tag": "AdvantEdge Technology Partners Pvt Ltd",
+                    "url": "https://www.advantedge.vc/"
+                },
+                {
+                    "icon": "/assets/startups/zone.jpeg",
+                    "tag": "Zone Startups (A part of BRTSIF)",
+                    "url": "https://india.zonestartups.com/"
+                },
+                {
+                    "icon": "/assets/startups/ciba.png",
+                    "tag": "CIBA - Mumbai",
+                    "url": "https://cibamumbai.org.in/"
+                },
+                {
+                    "icon": "/assets/startups/aic-isb.jpeg",
+                    "tag": "AIC - ISB",
+                    "url": "https://aicisb.org/en.html"
+                },
+                {
+                    "icon": "/assets/startups/ginserv.png",
+                    "tag": "GINSERV",
+                    "url": "https://www.ginserv.in/"
+                },
+                {
+                    "icon": "/assets/startups/ahmedabad.png",
+                    "tag": "Ahmedabad University",
+                    "url": "https://ahduni.edu.in/"
+                },
+                {
+                    "icon": "/assets/startups/goodworks.png",
+                    "tag": "GoodWorks CoWork",
+                    "url": "https://www.goodworks.in/"
+                },
+                {
+                    "icon": "/assets/startups/aic-rntu.png",
+                    "tag": "AIC - RNTU",
+                    "url": "https://www.aicrntu.com/"
+                },
+                {
+                    "icon": "/assets/startups/dlabs.png",
+                    "tag": "D-Labs",
+                    "url": "https://isbdlabs.org/en.html"
+                },
+                {
+                    "icon": "/assets/startups/headstart.png",
+                    "tag": "Headstart",
+                    "url": "https://www.headstart.in/"
+                },
+                {
+                    "icon": "/assets/startups/starworks.png",
+                    "tag": "Starworks Prime",
+                    "url": "https://starworks.world/"
+                },
+                {
+                    "icon": "/assets/startups/titan.jpeg",
+                    "tag": "Titan Capital",
+                    "url": "https://www.titancapital.vc/"
+                },
+                {
+                    "icon": "/assets/startups/helpscout.png",
+                    "tag": "Helpscout",
+                    "url": "https://www.helpscout.com/"
+                },
+                {
+                    "icon": "/assets/startups/reseau.jpeg",
+                    "tag": "Startup Reseau",
+                    "url": "https://www.startupreseau.com/"
+                },
+                {
+                    "icon": "/assets/startups/wadhwani.png",
+                    "tag": "Wadhwani Foundation",
+                    "url": "https://wadhwanifoundation.org/"
+                },
+                {
+                    "icon": "/assets/startups/gietu.png",
+                    "tag": "ACIC-Gandhi Institute of Engineering and Technology University (GIETU)",
+                    "url": "https://www.acicgietu.in/"
+                },
+                {
+                    "icon": "/assets/startups/iiml.png",
+                    "tag": "IIML- Incubator, IIM Lucknow",
+                    "url": "https://www.iimlincubator.com/"
+                },
+                {
+                    "icon": "/assets/startups/siddham.png",
+                    "tag": "Siddham Innovation and Business Incubation centre",
+                    "url": "https://sibic.in/"
+                },
+                {
+                    "icon": "/assets/startups/aic-jk.png",
+                    "tag": "AIC-JK Laxmipat University",
+                    "url": "https://www.aicjklu.in/"
+                },
+                {
+                    "icon": "/assets/startups/upeka.jpeg",
+                    "tag": "UPEKA VENTURE CATALYST PRIVATE LIMITED",
+                    "url": "https://www.upekkha.io/"
+                },
+                {
+                    "icon": "/assets/startups/ihub.png",
+                    "tag": "Gujarat Student Startup & Innovation Hub (i-Hub)",
+                    "url": "http://www.ihubgujarata.in/"
+                },
+                {
+                    "icon": "/assets/startups/aic-banasthali.jpeg",
+                    "tag": "AIC-Banasthali Vidyapith",
+                    "url": "https://www.aicbanasthali.org/"
+                },
+                {
+                    "icon": "/assets/startups/scalix.png",
+                    "tag": "Scalix - Letsventure",
+                    "url": "https://scalix.co/"
+                },
+                {
+                    "icon": "/assets/startups/pedal.png ",
+                    "tag": "Pedal Start",
+                    "url": "https://pedalstart.com/"
+                },
+                {
+                    "icon": "/assets/startups/kerela.jpeg",
+                    "tag": "Kerala Startup Mission",
+                    "url": "https://startupmission.kerala.gov.in/"
+                },
+                {
+                    "icon": "/assets/startups/iimt.png",
+                    "tag": "IIMT-BUSINESS INCUBATOR FOUNDATION",
+                    "url": "https://www.iimtindia.net/"
+                },
+                {
+                    "icon": "/assets/startups/loot.png",
+                    "tag": "Loot Discount Inc",
+                    "url": "https://get.onsafesearch.com"
+                },
+                {
+                    "icon": "/assets/startups/iimudaipur.png",
+                    "tag": "IIM Udaipur Incubation Centre",
+                    "url": "https://www.iimu.ac.in/"
+                },
+                {
+                    "icon": "/assets/startups/satz.jpeg",
+                    "tag": "Satz Venture Nurturers Private Limited",
+                    "url": "https://wonkrew.com/"
+                },
+                {
+                    "icon": "/assets/startups/cie-iiit.png",
+                    "tag": "CIE-IIIT Hyderabad",
+                    "url": "https://cie.iiit.ac.in/"
+                }
+            ]
+        },
+        "checklist": {
+            "heading": "Checklist to become a part of the program",
+            "content": [
+                {
+                    "line": "New MSG91 subscriber"
+                },
+                {
+                    "line": "Sign up from a private domain ID"
+                },
+                {
+                    "line": "Associated with our preferred collaborators"
+                }
+            ]
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
