@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import TrustedByComp from '../TrustedByComp/TrustedByComp';
 import { LinkButton } from '../UIComponent/Buttons/LinkButton';
+import styles from './BannerComp.module.scss';
 export default function BannerComp({ data }) {
+    console.log('🚀 ~ BannerComp ~ data:', data);
     return (
         <>
-            <div className='container my-20 flex gap-6 relative lg:h-[560px] flex flex-col lg:flex-row '>
-                <div className='flex flex-col lg:gap-12 gap-8  h-full justify-center lg:w-1/2 z-10'>
+            <div className='container cont_p flex gap-6 h-fit flex-col lg:flex-row '>
+                <div className='flex flex-col lg:gap-12 gap-8 h-full justify-center lg:w-1/2 w-full z-10'>
                     <div className='flex flex-col gap-6'>
                         {data?.product && (
                             <div className='flex items-center gap-2'>
@@ -21,12 +23,12 @@ export default function BannerComp({ data }) {
                     <LinkButton href={'/'} content={data?.getstarted_btn} customClasses={'btn btn-primary btn-md '} />
                     <TrustedByComp data={data?.trustedByComp} />
                 </div>
-                <div className='lg:absolute right-2 top-0 bottom-0 flex'>
+                <div className={styles.cont}>
                     <Image
+                        className={styles.img}
                         src={data?.banner_img}
-                        width={1080}
-                        height={1080}
-                        className='h-auto w-full max-w-[600px] m-auto'
+                        width={2000}
+                        height={2000}
                         alt={data?.tagline}
                     />
                 </div>

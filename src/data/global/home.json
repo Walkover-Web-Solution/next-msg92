@@ -4,6 +4,7 @@
         "description": "MSG91 cloud communications platform integrates cloud-based voice, video, messaging, chat, & collaboration into any app, service, or business process. Request a demo for cloud based communication today!"
     },
     "BannerComp": {
+        "slug": "home",
         "tagline": "customer solution platform",
         "heading": "Connect with your customers via multiple channels",
         "subheading":"Secure and robust APIs for WhatsApp, SMS, RCS, Email, Voice, Authentication and more",

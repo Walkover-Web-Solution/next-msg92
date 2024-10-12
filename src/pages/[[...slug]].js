@@ -55,7 +55,6 @@ const Components = {
     CertificatesComp,
     IntegrationsComp,
     CaseStudyComp,
-
 };
 
 export default function Page({ data, commonData, pageInfo }) {

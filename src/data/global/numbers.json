@@ -12,10 +12,9 @@
         "tagline": "Unlock the Power of Virtual Numbers",
         "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
         "banner_img": "/img/pages/hello/heroimg.webp",
-
         "getstarted_btn": "Get Started",
         "trustedByComp": {
-           "heading": "Trusted by 30,000+ global businesses",
+            "heading": "Trusted by 30,000+ global businesses",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -44,90 +43,55 @@
         "heading": "Features",
         "iconColor": "text-campaign",
         "features": [
-          
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Global Market Entry with Numbers: Expanding Your Presence",
-                "content":"Numbers offer an effective strategy for businesses seeking to broaden their reach in the market. These numbers facilitate the creation of a local connection by acquiring a phone number, streamlining communication with customers and associates. By leveraging numbers, businesses can establish trust, enhance accessibility, bridge geographic divides, all while projecting a professional image and optimizing cost-effectiveness. This approach is especially beneficial for international enterprises looking to seize opportunities in the diverse and competitive market.",
+                "content": "Numbers offer an effective strategy for businesses seeking to broaden their reach in the market. These numbers facilitate the creation of a local connection by acquiring a phone number, streamlining communication with customers and associates. By leveraging numbers, businesses can establish trust, enhance accessibility, bridge geographic divides, all while projecting a professional image and optimizing cost-effectiveness. This approach is especially beneficial for international enterprises looking to seize opportunities in the diverse and competitive market.",
                 "img": "/assets/global/numbers/numbers-global-market-entry-with-numbers.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Cost Efficiency",
                 "content": "Numbers in present a cost-effective alternative to traditional phone lines. They require fewer upfront expenses, minimize maintenance costs, and eliminate the need for physical infrastructure, making them a financially efficient choice for businesses of all scales in the market.",
                 "img": "/assets/global/numbers/numbers-cost-efficiency.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Missed Call Services",
                 "content": "A number of virtual number providers offer functionalities like missed call alerts and notifications, enabling businesses to promptly engage with customers who were unable to establish contact. This feature enhances customer communication and responsiveness within the market.",
                 "img": "/assets/global/numbers/numbers-missed-call-services.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Keyword Specific Messaging",
                 "content": "<strong>You can choose a unique keyword for your business or campaign</strong>When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication.",
                 "img": "/assets/global/numbers/numbers-keyword-specific-messaging.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Keyword Independent Messaging",
                 "content": "<strong>In addition to keywords</strong>you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords.",
                 "img": "/assets/global/numbers/numbers-keyword-independent-messaging.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Pre-formatted Set of Questions",
                 "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format.",
                 "img": "/assets/global/numbers/numbers-pre-formatted-questions.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Online Surveys",
                 "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease.",
                 "img": "/assets/global/numbers/numbers-online-survey.svg"
-            },       {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+            },
+            {
                 "name": "Lead Generation",
                 "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base.",
                 "img": "/assets/global/numbers/numbers-lead-generation.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Create Auto Responses",
                 "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users.",
                 "img": "/assets/global/numbers/numbers-auto-responses.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Integration into Web Applications",
                 "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication.",
                 "img": "/assets/global/numbers/numbers-integration-into-web.svg"
-            }
-        ]
-    },
-    "FaqsComp": {
-        "heading": "Frequently Asked Questions",
-        "faqs": [
-            {
-                "question": "How to subscribe to your Hello Plan.",
-                "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options\n You can directly subscribe to the plan from the website itself. There go to Hello Service click on Get Started, fill in the necessary details, and subscribe to the plan."
-            },
-            {
-                "question": "Are there any charges for AI chatbots?",
-                "answer": "No, there are no charges for Chat Bot, we are only charged for basic and premium plans. You can use the chatbot in a free plan till 50 tickets in Hello, after that you have to upgrade your Hello plan. Basically, we are providing the chatbot free for Trial purposes.\n You can use this Chat Bot in WhatsApp, Instagram, Chat Widget on your Website, Facebook and so on. So test the Chat Bot Now."
-            },
-            {
-                "question": "Are there any extra charges for Instagram/ Facebook  Inbox?",
-                "answer": "<p>You can use inboxes that are available in your Hello Plan for Instagram or Whatsapp. The number of inboxes assigned in each plan.</p><ul><li>Free Plan- 2 inboxes</li><li>Basic Plan- 2 inboxes</li><li>Premium Plan- 3 inboxes</li></ul><p>But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each.</p><p>In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox.</p> "
-            },
-            {
-                "question": "What are the charges for tickets and extra tickets in Hello?",
-                "answer": "<p>We are providing monthly tickets with each plan and in case they end, you can also use extra tickets which you pay in postpaid billing.</p><p>Here are the number of tickets assigned in each plan:</p><ul><li>Free Plan- 50 tickets/monthly</li><li>Basic Plan- 1000 tickets/monthly</li><li>Premium Plan- 2000 tickets/monthly</li></ul><p>Extra Charges for each ticket in different plans:</p><ul><li>Free Plan- there is no option for more tickets in free plans as you have to upgrade the Hello Plan to Basic or Premium as per your choice.</li><li>Basic Plan- ₹0.5 per ticket</li><li>Premium Plan- ₹0.75 per ticket</li></ul>"
-            },
-            {
-                "question":  " Can I customize the Hello Plan?",
-                "answer":  "Yes, you can have a customized plan for hello. Click on the link to schedule the meeting with the sales heads."
             }
         ]
     },

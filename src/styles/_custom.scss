@@ -1,14 +1,27 @@
 .container {
     @apply mx-auto px-4 md:px-10;
 }
+body{
+    overflow-x: hidden
+}
 
 .skeleton {
     @apply bg-slate-50 rounded-sm;
 }
 
-.bg-gray{
-    @apply bg-gray-50
+.bg-gray {
+    @apply bg-gray-50;
 }
+
+.cont {
+    &_gap {
+        @apply gap-6;
+    }
+    &_p {
+        @apply lg:py-20 md:py-12 py-6;
+    }
+}
+
 .btn {
     &.btn-primary {
         color: var(--white-color);
@@ -53,9 +66,9 @@
     }
 }
 
-.list-disc{
+.list-disc {
     list-style: disc;
-    @apply ml-5
+    @apply ml-5;
 }
 .text-link {
     &.active-link {
