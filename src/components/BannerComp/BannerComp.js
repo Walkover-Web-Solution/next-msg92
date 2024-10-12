@@ -64,7 +64,20 @@ export default function BannerComp({ pageInfo, data }) {
                         <h1 className='heading'>{data?.heading}</h1>
                         <h2 className='suheading'>{data?.subheading}</h2>
                     </div>
-                    <LinkButton href={'/'} content={data?.getstarted_btn} customClasses={'btn btn-primary btn-md '} />
+                    <div className='flex flex-col md:flex-row gap-6'>
+                        <LinkButton
+                            href={'/'}
+                            content={data?.getstarted_btn}
+                            customClasses={'btn btn-primary btn-md '}
+                        />
+                        {data?.schedule_meet && (
+                            <LinkButton
+                                href={'/'}
+                                content={data?.schedule_meet}
+                                customClasses={'btn btn-primary btn-outline btn-md '}
+                            />
+                        )}{' '}
+                    </div>
                     <TrustedByComp data={data?.trustedByComp} />
                     {data?.code && (
                         <div className='md:w-[800px] max-w-full mx-auto flex flex-col gap-0 rounded overflow-hidden border'>
@@ -109,7 +122,7 @@ export default function BannerComp({ pageInfo, data }) {
                 {!data?.code && (
                     <div className={styles.cont}>
                         <Image
-                            className={styles.img}
+                            className={pageInfo?.page === 'home' ? styles.homeimg : styles.img}
                             src={data?.banner_img}
                             width={2000}
                             height={2000}

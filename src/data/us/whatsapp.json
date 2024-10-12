@@ -98,8 +98,8 @@
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Manage Template Inside Panel",
                 "content": "<strong>Create and Manage your template right here</strong>No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook.",
-                "img": "/assets/global/whatsapp/whatsapp-analytics.svg"
-            },
+                "img": "/assets/global/whatsapp/whatsapp-manage-template-inside-panel.svg"
+            },  
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Analytics",

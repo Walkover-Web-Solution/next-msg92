@@ -48,42 +48,35 @@
         "features": [
           
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Call Monitoring",
                 "content":"<strong>Introducing the next-level communication experience with our all-new Call Monitoring features</strong>We're empowering you to take the reins of your conversations. These powerful functionalities offer you increased control and deeper insights during your calls, ensuring improved communication and customer delight. Call spying (eavesdropping): your covert tool for quality assurance! Call barging (intrusion): real-time assistance, just a tap away! Call whispering: guidance right at your fingertips!",
                 "img": "/assets/global/voice/voice-call-monitoring.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Direct calling from browser",
                 "content": "<strong>Skip the 2-way calling and directly call from browser.</strong>Save your agent's calling time and enhance the customer experience, Easily connect two phone numbers without placing one on hold, initiating efficient customer conversations.",
                 "img": "/assets/global/voice/voice-direct-calling-from-hello.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "IVR Flow",
                 "content": "<strong>Experience a cutting-edge IVR designed for swift, hassle-free customer interactions</strong>Our smart IVR system goes beyond query resolution. It allows you to customize settings based on time or agent availability and offers voice message recording..",
                 "img": "/assets/global/voice/voice-ivr-flow.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Bulk Voice",
                 "content":"<strong>DEngage directly with your audience through a single call</strong>Record your voice message and broadcast important information to hundreds and thousands of customers at once. A ringing phone call is hard to ignore, making it a powerful communication tool.",
                 "img": "/assets/global/voice/voice-bulk-voice.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Multiple Way to Upload File",
                 "content":"<strong>Upload your personalized audio message in multiple ways</strong>Amplify customer engagement with voice messages. Record your message for bulk voice calls or IVR menus using text-to-speech, your browser's microphone, or a phone call.",
                 "img": "/assets/global/voice/voice-multiple-way-to-upload-file.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Bulk voice with IVR",
                 "content":"<strong>Seamlessly connect voice calls to an IVR</strong>Extend your reach by not only sending bulk voice messages but also gathering user responses through an IVR.",
                 "img": "/assets/global/voice/voice-bulk-voice-with-ivr.svg"
             },      {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Real time connect with agent on user input on bulk call",
                 "content": "<strong>Efficiently direct users to your support agents</strong>Elevate the customer experience by offering real-time support and connecting users to customer support agents based on their bulk call input. Your Philippines-based support team is ready to assist you.",
                 "img": "/assets/global/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
