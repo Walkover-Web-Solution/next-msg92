@@ -9,6 +9,8 @@
             "name": "Voice",
             "icon": "/assets/icons/products/voice.svg"
         },
+        "code": true,
+
         "tagline": "conecte-se com confiança",
         "heading": "Aumente o engajamento do cliente e construa confiança",
         "subheading": "Inicie conversas em tempo real com áudio cristalino, baixa latência e insights mais profundos.",

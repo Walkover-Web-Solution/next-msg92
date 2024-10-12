@@ -9,6 +9,8 @@
             "name": "Email",
             "icon": "/assets/icons/products/email.svg"
         },
+        "code": true,
+
         "tagline": "Email API",
         "heading": "smarter email strategy",
         "subheading": "Smart emails that land directly into the right inbox Make the most of these powerful touchpoints between your brand and your customers.",
