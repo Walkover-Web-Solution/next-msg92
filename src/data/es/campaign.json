@@ -12,7 +12,7 @@
         "tagline": "Event Base automation",
         "heading": "Connect conversations across Channels and tools.",
         "subheading": "Deliver personalized, engaging and seamless experiences",
-        "banner_img": "/assets/global/campaign/banner-campaign.webp",
+        "banner_img": "/assets/global/campaign/campaign.webp",
         "getstarted_btn": "Get Started for Free",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
@@ -49,34 +49,29 @@
         "iconColor": "text-campaign",
         "features": [
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Multi channel support",
                 "content": " <strong>Support your customers on their preferred channel.</strong>Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification,<a href='/in/whatsapp'>WhatsApp</a> and more. Meet your customers where they are.",
-                "img": "/assets/global/campaign/features/campaign-multi-channel-support.svg"
+                "img": "/assets/global/campaign/campaign-multi-channel-support.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Draggable Flow",
                 "content": "<strong>Drag and drop to create an omnichannel flow with ‘if-then’ scenarios.</strong>Choose when you need to initiate an SMS, email, or messaging conversation in a single workflow. Create a flow that is as simple or as complex as your business needs them to be.  ",
-                "img": "/assets/global/campaign/features/campaign-draggable-flow.svg"
+                "img": "/assets/global/campaign/campaign-draggable-flow.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Time Based Condition",
                 "content": "<strong>Send perfectly timed automated messages.</strong>Build a thoughtful sending schedule with time-based conditions that control the time zone of when your campaigns are delivered. Support your customers at the right time.",
-                "img": "/assets/global/campaign/features/campaign-time-based-condition.svg"
+                "img": "/assets/global/campaign/campaign-time-based-condition.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "API based Conditions",
                 "content": "<strong>Get information instantly for real-time interactions.</strong>Call for data even when in mid of a flow by sending data to a third-party system or requesting data needed for your communication steps. Deliver real-time information to your customers.",
-                "img": "/assets/global/campaign/features/campaign-api-based-conditions.svg"
+                "img": "/assets/global/campaign/campaign-api-based-conditions.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Country Based Condition",
                 "content": "<strong>Support your customers across the world.</strong>Create personalized and memorable experiences for your customer across countries, languages, content, channels, flows and more. Easily connect, customize and communicate.",
-                "img": "/assets/global/campaign/features/campaign-country-based-condition.svg"
+                "img": "/assets/global/campaign/campaign-country-based-condition.svg"
             }
         ]
     },
