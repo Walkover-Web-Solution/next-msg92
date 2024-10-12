@@ -3,13 +3,15 @@
         "title": "Customer Support Platform for your Business by MSG91-Spain",
         "description": "Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
     },
-    "BannerComp": {
+    "NewHelloComp":{
+    "bannerComp": {
         "slug": "hello",
         "product": {
-            "sub-name":"introducing",
+            "subname":"introducing",
             "name": "Hello",
             "icon": "/assets/icons/products/hello.svg"
         },
+        "pretag":"INTRODUCING",
         "tagline": "Boosting Customer Satisfaction",
         "heading":  "An AI-Fueled Conversational HUB",
         "subheading": "Seamlessly merging chat, email, call and video to resolve customer queries.",
@@ -107,7 +109,7 @@
                 "img": "/assets/global/hello/screen-control.svg"
             }
         ]
-    },
+    }},
   
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
