@@ -273,3 +273,29 @@ $button-transition-timing: 100ms;
 .code-tab-active{
     @apply bg-primary
 }
+
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+.marquee{
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: bold;
+    animation: marquee 15s linear infinite;
+    display: flex;
+    
+    span{
+        margin: 0 24px;
+        display: inline-block;
+    }    
+    .yellow{       
+        text-shadow: 4px 4px #F4FF80 !important;        
+    }    
+    .purple{       
+        text-shadow: 4px 4px #F699FF !important;        
+    }    
+    .blue{       
+        text-shadow: 4px 4px #26D9D9 !important;        
+    }
+}
