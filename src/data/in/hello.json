@@ -12,7 +12,7 @@
         "tagline": "Customer Support Software",
         "heading": "AI-powered Contact Center",
         "subheading": "Never lose sight of what's important. Don't just solve tickets, build customer relationships",
-        "banner_img": "/assets/global/hello/banner.webp",
+        "banner_img": "/assets/global/hello/heroimg.webp",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Support 15+ channels & platforms",
@@ -45,37 +45,31 @@
         "iconColor": "text-campaign",
         "features": [
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Unlimited Agents",
                 "content": "Unlimited free agents to power up your customer support. More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is no number attached to your number of customer support agents",
                 "img": "/assets/global/hello/unlimited-agents.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Chatbot",
                 "content": "Resolve customer queries round-the-clock across text and voice. Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents.",
                 "img": "/assets/global/hello/chatbot.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Screen Control",
                 "content": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues.",
                 "img": "/assets/global/hello/screen-control.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Video Call / Screen Sharing",
                 "content": "High-quality video calls wherever your customer is. Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue.",
                 "img": "/assets/global/hello/video-call---screen-sharing.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Workflow",
                 "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs.",
                 "img": "/assets/global/hello/workflow.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Analytics",
                 "content": "Analytics and reports to monitor your agent performance. Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support.",
                 "img": "/assets/global/hello/analytics.svg"
