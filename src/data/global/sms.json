@@ -9,10 +9,11 @@
             "name": "SMS",
             "icon": "/assets/icons/products/sms.svg"
         },
+        "code": true,
         "tagline": "Next level messaging",
         "heading": "Engage your customers globally with quick, scalable and customizable messages",
         "subheading": "Integrate our developer-friendly APIs to send and receive text messages. Our distributed carrier network and intelligent routing ensure highest delivery and lowest latency.",
-       "banner_img": "/assets/global/hello/banner.webp",
+        "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
@@ -73,7 +74,8 @@
                 "name": "Link Shortener",
                 "content": "<strong>Transform a long URL into a shorter, more readable link.</strong>Enable the deeply integrated link shortener to convert long URLs to shorter links. Get a detailed user report on clicks with mobile numbers, browser, and IP.",
                 "img": "/assets/global/sms/sms-link-shortener.svg"
-            },  {
+            },
+            {
                 "name": "Enhanced Analytics",
                 "content": "<strong>Real-time graphical view for monitoring and troubleshooting.</strong>Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed.",
                 "img": "/assets/global/sms/sms-enhanced-analytics.svg"

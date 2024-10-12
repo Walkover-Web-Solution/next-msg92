@@ -9,6 +9,8 @@
             "name": "WhatsApp",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
+        "code": true,
+
         "tagline": "dominate popular platforms",
         "heading": "Drive better customer engagement outcomes",
         "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
