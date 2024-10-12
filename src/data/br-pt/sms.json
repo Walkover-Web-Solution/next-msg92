@@ -9,6 +9,8 @@
             "name": "SMS",
             "icon": "/assets/icons/products/sms.svg"
         },
+        "code": true,
+
         "tagline": "Mensagens de próximo nível",
         "heading": "Engaje seus clientes globalmente com mensagens rápidas, escaláveis e personalizáveis",
         "subheading": "Integre nossas APIs amigáveis para desenvolvedores para enviar e receber mensagens de texto. Nossa rede distribuída de operadoras e roteamento inteligente garantem a maior entrega e menor latência.",

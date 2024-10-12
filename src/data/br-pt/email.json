@@ -9,6 +9,8 @@
             "name": "Email",
             "icon": "/assets/icons/products/email.svg"
         },
+        "code": true,
+
         "tagline": "estratégia de email mais inteligente",
         "heading": "Emails inteligentes que chegam diretamente na caixa de entrada certa",
         "subheading": "Aproveite ao máximo esses pontos de contato poderosos entre sua marca e seus clientes.",

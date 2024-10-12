@@ -9,6 +9,7 @@
             "name": "RCS",
             "icon": "/assets/icons/products/rcs.svg"
         },
+        "code": true,
         "tagline": "Rich Communication Services",
         "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
         "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",

@@ -1,0 +1,242 @@
+{
+    "snipped": {
+        "sms": {
+            "log": {
+                "version": "1.2",
+                "entries": [
+                    {
+                        "request": {
+                            "method": "POST",
+                            "url": "https://control.msg91.com/api/v5/flow/",
+                            "httpVersion": "HTTP/1.1",
+                            "cookies": [],
+                            "headers": [
+                                {
+                                    "name": "Authkey",
+                                    "value": "<authkey>"
+                                },
+                                {
+                                    "name": "accept",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "name": "content-type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "queryString": [],
+                            "headersSize": -1,
+                            "bodySize": -1,
+                            "postData": {
+                                "mimeType": "application/json",
+                                "text": "{\"template_id\":\"EntertemplateID\",\"sender\":\"EnterSenderID\",\"short_url\":\"1 (On) or 0 (Off)\",\"mobiles\":\"919XXXXXXXXX\",\"VAR1\":\"VALUE 1\",\"VAR2\":\"VALUE 2\"}"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "rcs": {
+            "log": {
+                "version": "1.2",
+                "entries": [
+                    {
+                        "request": {
+                            "method": "POST",
+                            "url": "https://control.msg91.com/api/v5/rcs/send-rcs-message/bulk/",
+                            "httpVersion": "HTTP/1.1",
+                            "cookies": [],
+                            "headers": [
+                                {
+                                    "name": "authkey",
+                                    "value": "<authkey>"
+                                },
+                                {
+                                    "name": "accept",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "name": "content-type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "queryString": [],
+                            "headersSize": -1,
+                            "bodySize": -1,
+                            "postData": {
+                                "mimeType": "application/json",
+                                "text": "{\"customer_numbers\":[\"918818888761\",\"918818888763\"],\"project_id\":\"{{project_id}}\",\"function_name\":\"text_message\",\"text\":\"rcs test\"}"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "email": {
+            "log": {
+                "version": "1.2",
+                "entries": [
+                    {
+                        "request": {
+                            "method": "POST",
+                            "url": "https://control.msg91.com/api/v5/email/send",
+                            "httpVersion": "HTTP/1.1",
+                            "cookies": [],
+                            "headers": [
+                                {
+                                    "name": "Authkey",
+                                    "value": "<authkey>"
+                                },
+                                {
+                                    "name": "accept",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "name": "content-type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "queryString": [],
+                            "headersSize": -1,
+                            "bodySize": -1,
+                            "postData": {
+                                "mimeType": "application/json",
+                                "text": "\n{\"to\":[{\"name\":\"Mark\",\"email\":\"recipient@email.address\"}],\"from\":{\"name\":\"Joe\",\"email\":\"sender@email.address\"},\"cc\":[{\"email\":\"cc@email.address\"},{\"email\":\"test@email.address\"}],\"bcc\":[{\"email\":\"bcc@email.address\"},{\"email\":\"test1@email.address\"}],\"domain\":\"The domain which you have registered with us. We sign DKIM with this domain.\",\"mail_type_id\":\"1 for Transactional, 2 for Notificational, 3 for Promotional - Default is 3\",\"in_reply_to\":\"If the current mail is reply of any mail then that mail Message ID.\",\"reply_to\":[{\"email\":\"mail1@domain.com\"},{\"email\":\"mail2@domain.com\"}],\"attachments\":[{\"filePath\":\"Public path for file.\",\"fileName\":\"File Name\"},{\"file\":\"File in Data URI format data:content/type;base64,<data>.\",\"fileName\":\"File Name\"}],\"template_id\":\"YOUR_UNIQUE_TEMPLATE_NAME\",\"variables\":{\"VAR1\":\"VAR1 VALUE\",\"VAR2\":\"VAR2 VALUE\"}}\n"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "voice": {
+            "log": {
+                "version": "1.2",
+                "entries": [
+                    {
+                        "request": {
+                            "method": "POST",
+                            "url": "https://control.msg91.com/api/v5/voice/call/",
+                            "httpVersion": "HTTP/1.1",
+                            "cookies": [],
+                            "headers": [
+                                {
+                                    "name": "Authkey",
+                                    "value": "<authkey>"
+                                },
+                                {
+                                    "name": "accept",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "name": "content-type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "queryString": [],
+                            "headersSize": -1,
+                            "bodySize": -1,
+                            "postData": {
+                                "mimeType": "application/json",
+                                "text": "{\"template\":\"yourtemplate\",\"caller_id\":\"91999999999\",\"client_number\":\"918888888888\",\"callback_url\":\"https://status.callback.com\",\"variables\":{\"var1\":{\"type\":\"number\",\"as_digits\":true,\"value\":\"1234\"},\"var2\":{\"type\":\"currency\",\"currency_code\":\"USD\",\"value\":\"100\"}}}"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "whatsapp": {
+            "log": {
+                "version": "1.2",
+                "entries": [
+                    {
+                        "request": {
+                            "method": "POST",
+                            "url": "https://control.msg91.com/api/v5/whatsapp/whatsapp-outbound-message/",
+                            "httpVersion": "HTTP/1.1",
+                            "cookies": [],
+                            "headers": [
+                                {
+                                    "name": "Authkey",
+                                    "value": "<authkey>"
+                                },
+                                {
+                                    "name": "accept",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "name": "content-type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "queryString": [],
+                            "headersSize": -1,
+                            "bodySize": -1,
+                            "postData": {
+                                "mimeType": "application/json",
+                                "text": "\n{\"integrated_number\":\"Intergated WhatsApp Number, with country code\",\"recipient_number\":\"Mobile Number\",\"content_type\":\"text\",\"text\":\"Message Content\"}\n"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "numbers": {
+            "log": {
+                "version": "1.2",
+                "entries": [
+                    {
+                        "request": {
+                            "method": "POST",
+                            "url": "https://control.msg91.com/api/v5/whatsapp/whatsapp-outbound-message/",
+                            "httpVersion": "HTTP/1.1",
+                            "cookies": [],
+                            "headers": [
+                                {
+                                    "name": "Authkey",
+                                    "value": "<authkey>"
+                                },
+                                {
+                                    "name": "accept",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "name": "content-type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "queryString": [],
+                            "headersSize": -1,
+                            "bodySize": -1,
+                            "postData": {
+                                "mimeType": "application/json",
+                                "text": "\n{\"integrated_number\":\"Intergated WhatsApp Number, with country code\",\"recipient_number\":\"Mobile Number\",\"content_type\":\"text\",\"text\":\"Message Content\"}\n"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "languages": [
+        {
+            "name": "Node.js",
+            "value": "node"
+        },
+        {
+            "name": "cURL",
+            "value": "curl"
+        },
+        {
+            "name": "PHP",
+            "value": "php"
+        },
+        {
+            "name": "Python",
+            "value": "python"
+        },
+        {
+            "name": "Ruby",
+            "value": "ruby"
+        }
+    ]
+}
