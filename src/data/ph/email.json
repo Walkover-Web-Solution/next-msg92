@@ -9,6 +9,8 @@
             "name": "Email",
             "icon": "/assets/icons/products/email.svg"
         },
+        "code": true,
+
         "tagline": "Smarter Email strategy",
         "heading": "Smart emails that land directly into the right inbox",
         "subheading": "Make the most of these powerful touchpoints between your brand and your customers.",

@@ -3,10 +3,7 @@
     "notification": {
         "support": "Support",
         "login": "LOG IN",
-        "hide": [
-            "signup",
-            "singin"
-        ]
+        "hide": ["signup", "singin"]
     },
     "menu": {
         "products": "Products",
@@ -20,14 +17,14 @@
                         "description": "Ticketing and Chat"
                     },
                     {
-                        "name": "Segmento",
-                        "slug": "segmento",
-                        "description": "Event-based Automation"
-                    },
-                    {
                         "name": "Campaign",
                         "slug": "campaign",
                         "description": "Contact Management"
+                    },
+                    {
+                        "name": "Segmento",
+                        "slug": "segmento",
+                        "description": "Event-based Automation"
                     },
                     {
                         "name": "OTP",
@@ -50,6 +47,10 @@
                     {
                         "name": "WhatsApp",
                         "slug": "whatsapp"
+                    },
+                    {
+                        "name": "RCS",
+                        "slug": "rcs"
                     },
                     {
                         "name": "Voice",
@@ -121,16 +122,10 @@
         "pricing": "Pricing",
         "apidocs": "API Docs",
         "signup_btn": "Sign Up",
-        "hide": [
-            "signup",
-            "singin"
-        ]
+        "hide": ["signup", "singin"]
     },
     "footer": {
-        "hide": [
-            "signup",
-            "singin"
-        ],
+        "hide": ["signup", "singin"],
         "products": {
             "name": "Our Products",
             "links": [
