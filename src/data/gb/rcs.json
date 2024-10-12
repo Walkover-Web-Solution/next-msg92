@@ -1,87 +1,87 @@
-{ "HeadComp": {
+{
+  "HeadComp": {
     "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91 - United States",
-    "description":"Enhance your customer engagement with Rich Communication Service. Effortless RCS integration and advanced features boost communication and stimulate business growth"
-  }, 
-         "BannerComp": {
-          "slug": "rcs",
-          "product": {
-              "name": "RCS",
-              "icon": "/assets/icons/products/rcs.svg"
-          },
-          "code": true,
-
-          "tagline": "Rich Communication Services",
-          "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
-          "subheading":"RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
-        "banner_img": "/assets/global/hello/banner.webp",
-          "getstarted_btn": "Get Started",
-          "trustedByComp": {
-            "heading": "Trusted by 30,000+ global businesses",
-            "logos": [
-                {
-                    "name": "Xiaomi",
-                    "url": "/assets/trusted_by/xiaomi.svg"
-                },
-                {
-                    "name": "Unacademy",
-                    "url": "/assets/trusted_by/unacademy.svg"
-                },
-                {
-                    "name": "Dream11",
-                    "url": "/assets/trusted_by/dream11.svg"
-                },
-                {
-                    "name": "Indeed",
-                    "url": "/assets/trusted_by/indeed.svg"
-                },
-                {
-                    "name": "Ixigo",
-                    "url": "/assets/trusted_by/ixigo.svg"
-                }
-            ]
+    "description": "Enhance your customer engagement with Rich Communication Service. Effortless RCS integration and advanced features boost communication and stimulate business growth"
+  },
+  "BannerComp": {
+    "slug": "rcs",
+    "product": {
+      "name": "RCS",
+      "icon": "/assets/icons/products/rcs.svg"
+    },
+    "code": true,
+    "tagline": "Rich Communication Services",
+    "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+    "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
+    "banner_img": "/assets/global/hello/banner.webp",
+    "getstarted_btn": "Get Started",
+    "trustedByComp": {
+      "heading": "Trusted by 30,000+ global businesses",
+      "logos": [
+        {
+          "name": "Xiaomi",
+          "url": "/assets/trusted_by/xiaomi.svg"
+        },
+        {
+          "name": "Unacademy",
+          "url": "/assets/trusted_by/unacademy.svg"
+        },
+        {
+          "name": "Dream11",
+          "url": "/assets/trusted_by/dream11.svg"
+        },
+        {
+          "name": "Indeed",
+          "url": "/assets/trusted_by/indeed.svg"
+        },
+        {
+          "name": "Ixigo",
+          "url": "/assets/trusted_by/ixigo.svg"
         }
-      },
-      "FeatureComp":{ 
-        "heading": "Features",
-          "iconColor": "text-otp",
-          "features":[
-        { "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-          "name": "Corporate Communications with Branding",
-          "content": "<strong>Distinguish by branding</strong>Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers.",
-          "img": "/assets/global/rcs/rcs-communications-branding.svg"
-        },
-        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-          "name": "Provide Multimedia Interactions",
-          "content": "<strong>Communication through visual representation</strong>Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions.",
-          "img":  "/assets/global/rcs/rcs-multimedia-interactions.svg"
-        },
-        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-          "name": "Boost Sales Through Interactive Conversations",
-          "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions.",
-          "img": "/assets/global/rcs/rcs-boost-sales.svg"
-        },
-    {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-          "name": "Enhanced Customer Trust",
-          "content": " <strong>Understand your customers' habits</strong>Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility.",
-           "img": "/assets/global/rcs/rcs-customer-trust.svg"
-        }]
-      },
-      "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
-        "buttons": {
-            "contactSales": {
-                "text": "Contact sales",
-                "link": "/contact-us"
-            },
-            "pricing": {
-                "text": "Pricing",
-                "link": "/pricing/"
-            },
-            "getStarted": {
-                "text": "Get started",
-                "link": "https://control.msg91.com/signup/"
-            }
-        }
+      ]
     }
+  },
+  "FeatureComp": {
+    "heading": "Features",
+    "iconColor": "text-otp",
+    "features": [
+      {
+        "name": "Corporate Communications with Branding",
+        "content": "<strong>Distinguish by branding</strong>Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers.",
+        "img": "/assets/global/rcs/rcs-communications-branding.svg"
+      },
+      {
+        "name": "Provide Multimedia Interactions",
+        "content": "<strong>Communication through visual representation</strong>Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions.",
+        "img": "/assets/global/rcs/rcs-multimedia-interactions.svg"
+      },
+      {
+        "name": "Boost Sales Through Interactive Conversations",
+        "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions.",
+        "img": "/assets/global/rcs/rcs-boost-sales.svg"
+      },
+      {
+        "name": "Enhanced Customer Trust",
+        "content": " <strong>Understand your customers' habits</strong>Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility.",
+        "img": "/assets/global/rcs/rcs-customer-trust.svg"
+      }
+    ]
+  },
+  "PreFooterComp": {
+    "content": "Start building your ideal customer engagement experience",
+    "buttons": {
+      "contactSales": {
+        "text": "Contact sales",
+        "link": "/contact-us"
+      },
+      "pricing": {
+        "text": "Pricing",
+        "link": "/pricing/"
+      },
+      "getStarted": {
+        "text": "Get started",
+        "link": "https://control.msg91.com/signup/"
+      }
     }
-    
+  }
+}

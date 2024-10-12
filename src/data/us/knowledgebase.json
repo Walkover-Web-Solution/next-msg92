@@ -46,19 +46,16 @@
         "features": [
           
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "WYSIWYG editor",
                 "content":"<strong>Easily create or edit your knowledge base articles</strong>Quickly create your articles with the what you see is what you get content editor. It is as simple to use as if you were using a Word Processor or HTML Editor.",
                 "img": "/assets/global/knowledgebase/knowledgebase-wysiwyg-editor.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "SEO friendly (Subfolder and subdomain both support)",
                 "content":"<strong>An SEO-friendly optimized knowledge base</strong>Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages.",
                 "img": "/assets/global/knowledgebase/knowledgebase-seo-friendly.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "   Whitelabel",
                 "content":"<strong>It works on your branding and not ours</strong>Your users view your knowledge base under your branding on your website. Our whitelabel services ensure there’s no indication of it being powered by MSG91.",
                 "img": "/assets/global/knowledgebase/knowledgebase-whitelable.svg"
