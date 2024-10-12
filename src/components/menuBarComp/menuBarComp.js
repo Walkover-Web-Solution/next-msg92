@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { MdMenu } from 'react-icons/md';
-import styles from './menuBarComp.module.scss';
+import styles from './MenuBarComp.module.scss';
 import { BtnWithHideIco, LinkButton } from '../UIComponent/Buttons/LinkButton';
 import getRelativeURL from '@/utils/getRelativeURL';
 import { useState } from 'react';
