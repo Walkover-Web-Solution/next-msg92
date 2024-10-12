@@ -28,6 +28,7 @@ import CaseStudyComp from '@/components/CaseStudyComp/CaseStudyComp';
 //Functions to fetch data
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
+import NewHelloComp from '@/components/NewHelloComp/NewHelloComp';
 
 const Components = {
     BannerComp,
@@ -55,6 +56,7 @@ const Components = {
     CertificatesComp,
     IntegrationsComp,
     CaseStudyComp,
+    NewHelloComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
