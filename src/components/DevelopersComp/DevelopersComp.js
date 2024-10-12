@@ -14,7 +14,6 @@ export default function DevelopersComp({ pageInfo, data }) {
             <div className='bg-neutral'>
                 <div className='container flex flex-col cont_gap cont_p'>
                     <h2 className='text-4xl font-bold'>{data?.integrate?.heading}</h2>
-
                     <p className='text-lg'>{data?.integrate?.content}</p>
                     <p className='text-xl'>{data?.integrate?.subheading}</p>
                 </div>
