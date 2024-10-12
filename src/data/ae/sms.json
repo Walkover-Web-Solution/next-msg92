@@ -13,11 +13,10 @@
         "tagline": "Next level messaging",
         "heading": "Engage your customers globally with quick, scalable and customizable messages",
         "subheading": "Integrate our developer-friendly SMS API to send and receive text messages. Our distributed carrier network and intelligent routing ensure the highest delivery and lowest latency.",
-       "banner_img": "/assets/global/hello/banner.webp",
+        "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
-
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -47,49 +46,42 @@
         "iconColor": "text-campaign",
         "features": [
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Intelligent SMS Retry Algorithm",
                 "content": "Our SMS API service finds the most reliable and quickest telecom route for every message you send. In case the SMS fails, our algorithm retries it within a fraction of a second and delivers your messages using another telecom route.",
                 "img": "/assets/global/sms/sms-intelligent-sms-routing.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Reliable, Scalable, and Feature-Rich SMS API",
                 "content": "Available in all programming languages, integration with our SMS API for developers is quick, easy, and seamless. Built for developers by developers, explore quick-start guides, code snippets, SDKs, and more.",
                 "img": "/assets/global/sms/sms-enjoy-reliable-low-latency-delivery-worldwide.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Enjoy Low Latency Delivery-Worldwide",
                 "content": "Reach 210+ countries reliably with localized telecom operators. The automatic rerouting of global traffic in real-time helps us avoid outages and latency.",
                 "img": "/assets/global/sms/sms-enjoy-reliable-low-latency-delivery-worldwide.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Multi-Lingual Support",
                 "content": "Converse with your audience in their local language and take your customer engagement to the next level. Build customer confidence as you send messages in their regional language anywhere across the world.",
                 "img": "/assets/global/sms/sms-multi-lingual-support.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Personalized SMS",
                 "content": "<strong>Increase customer satisfaction with meaningful engagement.</strong>Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI.",
                 "img": "/assets/global/sms/sms-personalized-sms.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Link Shortener",
                 "content": "<strong>Transform a long URL into a shorter, more readable link.</strong>Enable the deeply integrated link shortener to convert long URLs to shorter links. Get a detailed user report on clicks with mobile numbers, browser, and IP.",
                 "img": "/assets/global/sms/sms-link-shortener.svg"
-            },  {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+            },
+            {
                 "name": "Enhanced Analytics",
                 "content": "<strong>Real-time graphical view for monitoring and troubleshooting.</strong>Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed.",
                 "img": "/assets/global/sms/sms-enhanced-analytics.svg"
             }
         ]
     },
-   
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {

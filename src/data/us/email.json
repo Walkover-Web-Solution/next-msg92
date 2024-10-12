@@ -47,31 +47,26 @@
         "iconColor": "text-email",
         "features": [
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Email Template Builder",
                 "content": "<strong>Drag-and-drop to create the layout of your email.</strong>Customize your transactional emails using our no-code, drag-and-drop interface. Preview to see how your email will look when viewed on different devices.",
                 "img": "/assets/global/email/email-template-builder.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "AMP Emails",
                 "content": "<strong>Rich interactive emails to increase user engagement.</strong>Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects..",
                 "img": "/assets/global/email/email-amp-emails.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Statistics",
                 "content": "<strong>Monitor and track every aspect of your email’s lifecycle.</strong>Get a graphical representation of the delivery rates, open rates, click-through rates, bounce rates, and spam to iterate and ensure you reach your customer's inbox.",
                 "img": "/assets/global/email/email-statistics.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "SMTP/RestAPI support",
                 "content": " <strong>Integrate with our RESTful APIs and SMTP in minutes.</strong> Integrate with our RESTful APIs and SMTP in minutes. Get your hands on our comprehensive documentation or connect with our support superheroes to easily integrate into your custom or third-party apps to start sending emails..",
                "img": "/assets/global/email/email-smtp-restapi-support.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Email Validation",
                 "content": "<strong>Deliver more messages to real contacts with our real-time API that detects and suppresses invalid email address with an accuracy rate of up to 85% to give you a clean list.",
                "img": "/assets/global/email/email-validation.svg"
