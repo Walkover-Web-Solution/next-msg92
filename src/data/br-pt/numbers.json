@@ -9,10 +9,11 @@
             "name": "Numbers",
             "icon": "/assets/icons/products/numbers.svg"
         },
+        "code": true,
+
         "tagline": "Desbloqueie o Poder dos Números Virtuais",
         "heading": "Receba, Responda e Personalize SMS com Long Codes, para o Máximo Engajamento e Comunicação!",
-        "banner_img": "/assets/global/hello/banner.webp",
-
+    
         "getstarted_btn": "Comece gratuitamente",
         "trustedByComp": {
             "heading": "Confiado por 30,000+ negócios globais",
@@ -47,88 +48,53 @@
         "features": [
           
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Entrada no Mercado Global com Números: Expandindo sua Presença",
                 "content":"Os números oferecem uma estratégia eficaz para empresas que buscam ampliar seu alcance no mercado. Esses números facilitam a criação de uma conexão local ao adquirir um número de telefone, simplificando a comunicação com clientes e associados. Ao aproveitar os números, as empresas podem estabelecer confiança, melhorar a acessibilidade, superar divisões geográficas, tudo enquanto projetam uma imagem profissional e otimizam a relação custo-benefício. Essa abordagem é especialmente benéfica para empresas internacionais que buscam oportunidades no mercado diversificado e competitivo.",
                 "img": "/assets/global/numbers/numbers-global-market-entry-with-numbers.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Eficiência de Custo",
                 "content": "Os números apresentam uma alternativa econômica às linhas telefônicas tradicionais. Eles exigem menos despesas iniciais, minimizam os custos de manutenção e eliminam a necessidade de infraestrutura física, tornando-os uma escolha financeiramente eficiente para empresas de todos os portes no mercado.",
                 "img": "/assets/global/numbers/numbers-cost-efficiency.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Serviços de Chamada Perdida",
                 "content": "Vários provedores de números virtuais oferecem funcionalidades como alertas e notificações de chamadas perdidas, permitindo que as empresas se comuniquem prontamente com os clientes que não conseguiram estabelecer contato. Esse recurso aprimora a comunicação e a capacidade de resposta do cliente no mercado.",
                 "img": "/assets/global/numbers/numbers-missed-call-services.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Mensagens Específicas por Palavra-chave",
                 "content": "<strong>Você pode escolher uma palavra-chave exclusiva para sua empresa ou campanha</strong>Quando os usuários enviam um SMS começando com sua palavra-chave escolhida para seu código longo dedicado ou compartilhado, você pode receber essas mensagens. Esse recurso permite uma comunicação personalizada e específica ao contexto.",
                 "img": "/assets/global/numbers/numbers-keyword-specific-messaging.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Mensagens Independentes de Palavra-chave",
                 "content": "<strong>Além das palavras-chave</strong>você pode receber mensagens sem palavras-chave específicas. Isso amplia suas opções de comunicação, permitindo que os usuários entrem em contato com você sem a necessidade de palavras-chave predefinidas.",
                 "img": "/assets/global/numbers/numbers-keyword-independent-messaging.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Conjunto de Perguntas Pré-formatadas",
                 "content": "Você pode configurar um conjunto de perguntas pré-formatadas para enviar ao seu público. Isso é particularmente útil para realizar pesquisas, questionários ou coletar informações específicas em um formato estruturado.",
                 "img": "/assets/global/numbers/numbers-pre-formatted-questions.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Pesquisas Online",
                 "content": "Use nosso serviço Numbers para criar e conduzir pesquisas online. Colete insights e feedbacks valiosos do seu público com facilidade.",
                 "img": "/assets/global/numbers/numbers-online-survey.svg"
             },       {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Geração de Leads",
                 "content": "Engaje na geração de leads permitindo que clientes potenciais entrem em contato com você por SMS. Colete detalhes de contato e consultas, ajudando você a expandir sua base de clientes.",
                 "img": "/assets/global/numbers/numbers-lead-generation.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Crie Respostas Automáticas",
                 "content": "Você tem a opção de configurar respostas automáticas para as mensagens que receber. Personalize essas respostas para fornecer feedback ou informações imediatas aos seus usuários.",
                 "img": "/assets/global/numbers/numbers-auto-responses.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Integração em Aplicações Web",
                 "content": "Integre perfeitamente os Números na sua aplicação web ou software. Isso permite estender as capacidades do seu software e melhorar a comunicação com o usuário.",
                 "img": "/assets/global/numbers/numbers-integration-into-web.svg"
-            }
-        ]
-    },
-    "FaqsComp": {
-        "heading": "Perguntas Frequentes",
-        "faqs": [
-            {
-                "question": "Como o MSG91 pode beneficiar o meu negócio?",
-                "answer": "O MSG91 oferece inúmeros benefícios para os negócios, incluindo maior engajamento do cliente, fluxos de comunicação simplificados, aumento da eficiência operacional e melhoria da reputação da marca. Nossa plataforma permite que as empresas automatizem a comunicação, personalizem interações e alcancem seu público-alvo através dos canais de sua preferência."
-            },
-            {
-                "question": "O que torna o MSG91 diferente de outras plataformas de comunicação?",
-                "answer": "O MSG91 se destaca devido à sua confiabilidade, escalabilidade e versatilidade. Somos especializados em fornecer plataformas de comunicação em nuvem móvel na Índia, atendendo às necessidades únicas das empresas neste mercado. Nossa plataforma oferece recursos avançados, soluções personalizáveis e suporte ao cliente excepcional para ajudar as empresas a alcançarem seus objetivos de comunicação."
-            },
-            {
-                "question": "O MSG91 é adequado para empresas de todos os tamanhos?",
-                "answer": "Sim, o MSG91 atende empresas de todos os tamanhos. Seja você uma startup, pequena empresa ou grande empresa, nossa plataforma pode ser adaptada para atender às suas necessidades específicas. Oferecemos soluções escaláveis que podem acomodar as necessidades de comunicação das empresas à medida que elas crescem e se expandem."
-            },
-            {
-                "question": "O MSG91 é seguro?",
-                "answer": "A segurança é uma prioridade no MSG91. Implementamos protocolos e técnicas de criptografia padrão da indústria para garantir a confidencialidade e integridade dos seus dados. Nossa plataforma de comunicações em nuvem para empresas oferece recursos como autenticação de dois fatores e verificação de OTP para aumentar a segurança e proteger informações sensíveis."
-            },
-            {
-                "question": "Posso integrar o MSG91 com meus sistemas ou aplicativos existentes?",
-                "answer": "Absolutamente! O MSG91 fornece APIs e documentação amigáveis para desenvolvedores, tornando fácil integrar nossa plataforma com seus sistemas ou aplicativos existentes. Nossas APIs permitem incorporar nossas funcionalidades de comunicação sem problemas, permitindo que você automatize a comunicação e simplifique seus fluxos de trabalho."
             }
         ]
     },
@@ -140,8 +106,12 @@
                 "link": "/contact-us"
             },
             "pricing": {
-                "text": "Comece agora",
+                "text": "tarifária",
                 "link": "/pricing/"
+            },
+            "getStarted":{
+            "text":"Comece agora",
+            "link":"https://control.msg91.com/signup/"
             }
         }
     }
