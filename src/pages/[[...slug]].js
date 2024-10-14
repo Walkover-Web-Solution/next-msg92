@@ -26,7 +26,7 @@ import CaseStudyComp from '@/components/CaseStudyComp/CaseStudyComp';
 import NewHelloComp from '@/components/NewHelloComp/NewHelloComp';
 import TermsComp from '@/components/TermsComp/TermsComp';
 import ContactUsComp from '@/components/ContactUsComp/ContactUsComp';
-// import SignUp from '@/components/SignupComp/SignUp';
+import SignUp from '@/components/SignupComp/SignUp';
 
 //Functions to fetch data
 import getPageInfo from '@/utils/getPageInfo';
@@ -60,7 +60,7 @@ const Components = {
     NewHelloComp,
     TermsComp,
     ContactUsComp,
-    // SignUp
+    SignUp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
