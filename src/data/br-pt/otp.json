@@ -30,59 +30,38 @@
         "heading": "Características",
           "iconColor": "text-otp",
           "features":[
-        { "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+        { 
           "name": "Tão simples quanto Login com Google",
           "content": "<strong>Login com OTP é tão simples quanto login com Gmail</strong>Dê aos seus usuários uma experiência de autenticação rápida, não disruptiva e simples. Implemente login com OTP inserindo seu número de celular ou endereço de e-mail para receber OTP via SMS ou e-mail.",
           "img": "/assets/global/otp/otp-simple-login.svg"
         },
-        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+        {
           "name": "Segurança IP Integrada",
           "content": "<strong>Proteção contra fraudes, hacks, validação, bloqueio</strong> Minimize fraudes com uma camada extra de segurança. A segurança integrada garante que, quando um login é arriscado, o fluxo não permite que o ator mal-intencionado faça login, visualizando-o como potencialmente fraudulento.",
           "img":  "/assets/global/otp/otp-inbuilt-ip-security.svg"
         },
-        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+        {
           "name": "Suporte a múltiplos canais",
           "content": "<strong>Construa confiança com o cliente e aumente a conversão em vários canais</strong> Autentique seus usuários nos canais que eles preferem. Suportamos vários canais, incluindo SMS, e-mail, voz, WhatsApp, dando às empresas e usuários a flexibilidade de que precisam para autenticar.",
           "img": "/assets/global/otp/otp-support-multiple-channels.svg"
         }]
       },
-      "FaqsComp": {
-        "heading": "Perguntas Frequentes",
-        "faqs": [
-            {
-                "question": "Como o MSG91 pode beneficiar o meu negócio?",
-                "answer": "O MSG91 oferece inúmeros benefícios para os negócios, incluindo maior engajamento do cliente, fluxos de comunicação simplificados, aumento da eficiência operacional e melhoria da reputação da marca. Nossa plataforma permite que as empresas automatizem a comunicação, personalizem interações e alcancem seu público-alvo através dos canais de sua preferência."
+      "PreFooterComp": {
+        "content": "Comece a construir a experiência de engajamento do cliente ideal",
+        "buttons": {
+            "contactSales": {
+                "text": "Fale com as vendas",
+                "link": "/contact-us"
             },
-            {
-                "question": "O que torna o MSG91 diferente de outras plataformas de comunicação?",
-                "answer": "O MSG91 se destaca devido à sua confiabilidade, escalabilidade e versatilidade. Somos especializados em fornecer plataformas de comunicação em nuvem móvel na Índia, atendendo às necessidades únicas das empresas neste mercado. Nossa plataforma oferece recursos avançados, soluções personalizáveis e suporte ao cliente excepcional para ajudar as empresas a alcançarem seus objetivos de comunicação."
+            "pricing": {
+                "text": "tarifária",
+                "link": "/pricing/"
             },
-            {
-                "question": "O MSG91 é adequado para empresas de todos os tamanhos?",
-                "answer": "Sim, o MSG91 atende empresas de todos os tamanhos. Seja você uma startup, pequena empresa ou grande empresa, nossa plataforma pode ser adaptada para atender às suas necessidades específicas. Oferecemos soluções escaláveis que podem acomodar as necessidades de comunicação das empresas à medida que elas crescem e se expandem."
-            },
-            {
-                "question": "O MSG91 é seguro?",
-                "answer": "A segurança é uma prioridade no MSG91. Implementamos protocolos e técnicas de criptografia padrão da indústria para garantir a confidencialidade e integridade dos seus dados. Nossa plataforma de comunicações em nuvem para empresas oferece recursos como autenticação de dois fatores e verificação de OTP para aumentar a segurança e proteger informações sensíveis."
-            },
-            {
-                "question": "Posso integrar o MSG91 com meus sistemas ou aplicativos existentes?",
-                "answer": "Absolutamente! O MSG91 fornece APIs e documentação amigáveis para desenvolvedores, tornando fácil integrar nossa plataforma com seus sistemas ou aplicativos existentes. Nossas APIs permitem incorporar nossas funcionalidades de comunicação sem problemas, permitindo que você automatize a comunicação e simplifique seus fluxos de trabalho."
+            "getStarted":{
+            "text":"Comece agora",
+            "link":"https://control.msg91.com/signup/"
             }
-        ]
-    },
-    "PreFooterComp": {
-      "content": "Comece a construir a experiência de engajamento do cliente ideal",
-      "buttons": {
-          "contactSales": {
-              "text": "Fale com as vendas",
-              "link": "/contact-us"
-          },
-          "pricing": {
-              "text": "Comece agora",
-              "link": "/pricing/"
-          }
-      }
-  }
+        }
+    }
     }
     
