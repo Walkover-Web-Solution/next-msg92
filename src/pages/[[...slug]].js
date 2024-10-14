@@ -31,6 +31,7 @@ import TermsComp from '@/components/TermsComp/TermsComp';
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
 import SignUp from '@/components/SignupComp/signupComp';
+import ContactUsComp from '@/components/ContactUsComp/ContactUsComp';
 
 const Components = {
     BannerComp,
@@ -60,6 +61,7 @@ const Components = {
     CaseStudyComp,
     NewHelloComp,
     TermsComp,
+    ContactUsComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

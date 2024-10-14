@@ -4,7 +4,6 @@ import availableCountries from '@/data/availableCountries.json';
 import Image from 'next/image';
 import getRelativeURL from '@/utils/getRelativeURL';
 export default function NotificationBarComp({ componentData, pageInfo }) {
-    console.log('🚀 ~ NotificationBarComp ~ pageInfo:', pageInfo);
     const currentCountry = availableCountries.find((cont) => cont.shortname.toLowerCase() === pageInfo?.country);
     const hidden = componentData?.hide?.includes(pageInfo?.page);
     if (componentData && !hidden) {
@@ -64,7 +63,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                         <MdOutlineCall fontSize={16} />
                         {componentData?.support}
                     </Link>
-                    <Link className='text-link ' href={'/signin'}>
+                    <Link className='text-link ' href={'https://test.msg91.com/signin/'}>
                         {componentData?.login}
                     </Link>
                 </div>
