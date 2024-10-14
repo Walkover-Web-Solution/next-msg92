@@ -8,7 +8,9 @@ export default function PricingSegmento({ data }) {
                 <div className='flex flex-col text-xl'>
                     <p>{data?.connectComp?.content || `You can store user information for free using Segmento.`}</p>
                 </div>
-                <button className='btn btn-primary w-fit btn-md'>{data?.get_started || 'Get Started'}</button>
+                <a href='https://web.msg91.com/signup?service=segmento'>
+                    <button className='btn btn-primary w-fit btn-md'>{data?.get_started || 'Get Started'}</button>
+                </a>
             </div>
             <ConnectWithTeam data={data?.connectComp} product={'segmento'} />
         </div>

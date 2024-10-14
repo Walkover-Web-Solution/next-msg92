@@ -4,7 +4,6 @@ import PricingCampaign from './PricingCampaign/PricingCampaign';
 import PricingSegmento from './PricingSegmento/PricingSegmento';
 import PricingOtp from './PricingOtp/PricingOtp';
 import PricingSMSOTP from './PricingSMS/PricingSMSOTP';
-import PricingSendOTP from './PricingSendOTP/PricingSendOTP';
 import PricingVoice from './PricingVoice/PricingVoice';
 import PricingRCS from './PricingRCS/PricingRCS';
 import PricingEmail from './PricingEmail/PricingEmail';

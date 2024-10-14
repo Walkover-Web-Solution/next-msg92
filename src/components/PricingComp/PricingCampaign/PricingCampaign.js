@@ -10,8 +10,10 @@ export default function PricingCampaign({ data }) {
                     <p>
                         {data?.connectComp?.content2 || `Channel wise pricing will be applicable for sending message.`}
                     </p>
-                </div>
-                <button className='btn btn-primary w-fit btn-md'>{data?.get_started || 'Get Started'}</button>
+                </div>{' '}
+                <a href='https://web.msg91.com/signup?service=campaign'>
+                    <button className='btn btn-primary w-fit btn-md'>{data?.get_started || 'Get Started'}</button>
+                </a>
             </div>
             <ConnectWithTeam data={data?.connectComp} product={'campaign'} />
         </div>
