@@ -30,8 +30,8 @@ import TermsComp from '@/components/TermsComp/TermsComp';
 //Functions to fetch data
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
-import SignUp from '@/components/SignupComp/signupComp';
 import ContactUsComp from '@/components/ContactUsComp/ContactUsComp';
+import SignUp from '@/components/SignupComp/signupComp';
 
 const Components = {
     BannerComp,
