@@ -16,7 +16,6 @@ import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
 import HeadComp from '@/components/headComp';
 import FeatureComp from '@/components/FeatureComp/FeatureComp';
 import PricingComp from '@/components/PricingComp/PricingComp';
-
 import AboutUsComp from '@/components/AboutUsComp/AboutUsComp';
 import DevelopersComp from '@/components/DevelopersComp/DevelopersComp';
 import StartupComp from '@/components/StartupComp/StartupComp';
@@ -27,11 +26,11 @@ import CaseStudyComp from '@/components/CaseStudyComp/CaseStudyComp';
 import NewHelloComp from '@/components/NewHelloComp/NewHelloComp';
 import TermsComp from '@/components/TermsComp/TermsComp';
 import ContactUsComp from '@/components/ContactUsComp/ContactUsComp';
+// import SignUp from '@/components/SignupComp/SignUp';
 
 //Functions to fetch data
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
-import SignUp from '@/components/SignupComp/SignUp';
 
 const Components = {
     BannerComp,
@@ -61,7 +60,7 @@ const Components = {
     NewHelloComp,
     TermsComp,
     ContactUsComp,
-    SignUp,
+    // SignUp
 };
 
 export default function Page({ data, commonData, pageInfo }) {
