@@ -45,37 +45,31 @@
         "iconColor": "text-campaign",
         "features": [
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Agentes Ilimitados",
                 "content": "Agentes gratuitos ilimitados para impulsionar seu suporte ao cliente. Mais agentes significam engajamento contínuo, mais tickets resolvidos e melhor suporte ao cliente em oferta. Não há número limite para a quantidade de agentes de suporte ao cliente.",
                 "img": "/assets/global/hello/unlimited-agents.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Chatbot",
                 "content": "Resolva consultas de clientes 24 horas por dia, em texto e voz. Deixe o chatbot lidar com consultas simples e repetitivas que não exigem as habilidades e experiência de seus agentes e, quando necessário, inclua agentes ao vivo de forma transparente.",
                 "img": "/assets/global/hello/chatbot.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Controle de Tela",
                 "content": "Controle a tela do seu cliente de onde você estiver. Trabalhe na tela remota como se você realmente estivesse lá. Uma vez que você obtenha acesso, tenha controle total da tela, mouse e teclado do seu cliente para resolver rapidamente os problemas.",
                 "img": "/assets/global/hello/screen-control.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Chamada de Vídeo / Compartilhamento de Tela",
                 "content": "Chamadas de vídeo de alta qualidade onde quer que seu cliente esteja. Faça uma chamada de vídeo com seu cliente para navegar juntos na tela do cliente. Assuma o controle da reunião enquanto seu cliente compartilha a tela para mostrar informações ou levantar um problema.",
                 "img": "/assets/global/hello/video-call---screen-sharing.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Fluxo de Trabalho",
                 "content": "Atribua automaticamente conversas a uma equipe ou agente dedicado. Comece com nosso Fluxo de Trabalho existente ou configure seu Fluxo de Trabalho personalizado com base nas necessidades de suporte do seu negócio.",
                 "img": "/assets/global/hello/workflow.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Análises",
                 "content": "Análises e relatórios para monitorar o desempenho de seus agentes. Obtenha insights profundos e acionáveis para oferecer suporte excepcional e alcançar seus objetivos. Os relatórios de análise fáceis de analisar ajudarão seus agentes a aumentar seu suporte ao cliente.",
                 "img": "/assets/global/hello/analytics.svg"
@@ -86,41 +80,41 @@
         "heading": "Perguntas Frequentes",
         "faqs": [
             {
-                "question": "Como o MSG91 pode beneficiar o meu negócio?",
-                "answer": "O MSG91 oferece inúmeros benefícios para os negócios, incluindo maior engajamento do cliente, fluxos de comunicação simplificados, aumento da eficiência operacional e melhoria da reputação da marca. Nossa plataforma permite que as empresas automatizem a comunicação, personalizem interações e alcancem seu público-alvo através dos canais de sua preferência."
+                "question": "Como assinar o seu Plano Hello.",
+                "answer": "No painel Hello, clique na aba de assinatura, que está disponível no canto esquerdo. Isso abrirá a página do plano atual e também a opção de adquirir um novo plano. Clique nisso e você poderá selecionar entre opções mensais e anuais. Você pode assinar o plano diretamente do site. Lá vá para o Serviço Hello, clique em Começar, preencha os detalhes necessários e assine o plano."
             },
             {
-                "question": "O que torna o MSG91 diferente de outras plataformas de comunicação?",
-                "answer": "O MSG91 se destaca devido à sua confiabilidade, escalabilidade e versatilidade. Somos especializados em fornecer plataformas de comunicação em nuvem móvel na Índia, atendendo às necessidades únicas das empresas neste mercado. Nossa plataforma oferece recursos avançados, soluções personalizáveis e suporte ao cliente excepcional para ajudar as empresas a alcançarem seus objetivos de comunicação."
+                "question": "Existem cobranças extras para a Caixa de Entrada do Instagram/Facebook?",
+                "answer": "Você pode usar caixas de entrada que estão disponíveis no seu Plano Hello para Instagram ou Whatsapp. O número de caixas de entrada atribuídas em cada plano.<ul><li><strong>Plano Gratuito-</strong> 2 caixas de entrada</li><li><strong>Plano Básico-</strong> 2 caixas de entrada</li><li><strong><strong>Plano Premium-</strong></strong> 3 caixas de entrada</li></ul>Mas, caso você já tenha usado as caixas de entrada atribuídas, você sempre pode comprar uma nova caixa de entrada nos planos básico e premium por 500 rúpias cada."
             },
             {
-                "question": "O MSG91 é adequado para empresas de todos os tamanhos?",
-                "answer": "Sim, o MSG91 atende empresas de todos os tamanhos. Seja você uma startup, pequena empresa ou grande empresa, nossa plataforma pode ser adaptada para atender às suas necessidades específicas. Oferecemos soluções escaláveis que podem acomodar as necessidades de comunicação das empresas à medida que elas crescem e se expandem."
+                "question": "Existem cobranças pelo chatbot de IA?",
+                "answer": "Não, não há cobranças pelo Chat Bot, somos cobrados apenas pelos planos básico e premium. Você pode usar o chatbot em um plano gratuito até 50 tickets no Hello, depois disso, você precisa atualizar seu plano Hello. Basicamente, estamos fornecendo o chatbot gratuitamente para fins de teste.  Você pode usar este Chat Bot no WhatsApp, Instagram, Widget de Chat no seu site, Facebook e assim por diante. Então teste o Chat Bot agora."
             },
             {
-                "question": "O MSG91 é seguro?",
-                "answer": "A segurança é uma prioridade no MSG91. Implementamos protocolos e técnicas de criptografia padrão da indústria para garantir a confidencialidade e integridade dos seus dados. Nossa plataforma de comunicações em nuvem para empresas oferece recursos como autenticação de dois fatores e verificação de OTP para aumentar a segurança e proteger informações sensíveis."
+                "question": "Quais são as cobranças por tickets e tickets extras no Hello?",
+                "answer": "Estamos fornecendo tickets mensais com cada plano e, caso eles terminem, você também pode usar tickets extras que você paga na cobrança pós-paga. Aqui estão o número de tickets atribuídos em cada plano:<ul><li><strong>Plano Gratuito-</strong> 150 tickets/mensal</li><li><strong>Plano Básico-</strong> 1000 tickets/mensal</li><li><strong>Plano Premium-</strong> 2000 tickets/mensal</li></ul>Cobranças Extras por cada ticket em diferentes planos:<ul><li><strong>Plano Gratuito-</strong> Não há opção para mais tickets em planos gratuitos, pois você tem que atualizar o Plano Hello para Básico ou Premium conforme sua escolha.</li><li><strong>Plano Básico-</strong> ₹0,50 por ticket</li><li><strong>Plano Premium-</strong></li> ₹0,75 por ticket</ul>"
             },
             {
-                "question": "Posso integrar o MSG91 com meus sistemas ou aplicativos existentes?",
-                "answer": "Absolutamente! O MSG91 fornece APIs e documentação amigáveis para desenvolvedores, tornando fácil integrar nossa plataforma com seus sistemas ou aplicativos existentes. Nossas APIs permitem incorporar nossas funcionalidades de comunicação sem problemas, permitindo que você automatize a comunicação e simplifique seus fluxos de trabalho."
+                "question": "Posso personalizar o Plano Hello?",
+                "answer": "Sim, você pode ter um plano personalizado para o hello. Clique no link para <a href='/contact-us'>agendar a reunião</a> com os chefes de vendas."
             }
         ]
     },
-    "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
+"PreFooterComp": {
+        "content": "Comece a construir a experiência de engajamento do cliente ideal",
         "buttons": {
             "contactSales": {
-                "text": "Contact sales",
+                "text": "Fale com as vendas",
                 "link": "/contact-us"
             },
             "pricing": {
-                "text": "Pricing",
+                "text": "tarifária",
                 "link": "/pricing/"
             },
-            "getStarted": {
-                "text": "Get started",
-                "link": "https://control.msg91.com/signup/"
+            "getStarted":{
+            "text":"Comece agora",
+            "link":"https://control.msg91.com/signup/"
             }
         }
     }
