@@ -3,6 +3,7 @@ import { MdArrowDropDown, MdOutlineCall, MdOutlineLanguage } from 'react-icons/m
 import availableCountries from '@/data/availableCountries.json';
 import Image from 'next/image';
 import getRelativeURL from '@/utils/getRelativeURL';
+
 export default function NotificationBarComp({ componentData, pageInfo }) {
     const currentCountry = availableCountries.find((cont) => cont.shortname.toLowerCase() === pageInfo?.country);
     const hidden = componentData?.hide?.includes(pageInfo?.page);
