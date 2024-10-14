@@ -223,7 +223,7 @@
             "links": [
                 {
                     "name": "About us",
-                    "link": "/about-us"
+                    "link": "about-us"
                 },
                 {
                     "name": "Pricing",
