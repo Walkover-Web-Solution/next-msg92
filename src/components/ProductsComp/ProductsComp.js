@@ -18,7 +18,7 @@ export default function ProductsComp({ data }) {
                                         <h2 className='text-2xl font-bold'>{product?.name}</h2>
                                         <p className='text-lg'>{product?.description}</p>
                                         <LinkText className='link-btn' href={'/'}>
-                                            Learn More
+                                            {product.linkText}
                                         </LinkText>
                                     </div>
                                     <Image
