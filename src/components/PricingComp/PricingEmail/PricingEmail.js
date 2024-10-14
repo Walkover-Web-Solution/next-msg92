@@ -74,15 +74,15 @@ export default function PricingEmail({ data }) {
                                             <span
                                                 className={`border-b-[1px] w-full ${i == 0 ? ' block xl:hidden ' : ' block '}`}
                                             ></span>
-
-                                            <button
-                                                className={`btn btn-primary  btn-md ${
-                                                    plan?.name === 'Basic' ? '' : 'btn-outline'
-                                                } ${i == 0 ? ' block xl:hidden ' : ' block '}`}
-                                            >
-                                                Get Started
-                                            </button>
-
+                                            <a href='https://web.msg91.com/signup?service=email'>
+                                                <button
+                                                    className={`btn btn-primary  btn-md ${
+                                                        plan?.name === 'Basic' ? '' : 'btn-outline'
+                                                    } ${i == 0 ? ' block xl:hidden ' : ' block '}`}
+                                                >
+                                                    Get Started
+                                                </button>
+                                            </a>
                                             {/* included */}
                                             <div className='flex flex-col gap-2 w-full'>
                                                 <h3 className='text-lg font-semibold'>Included</h3>

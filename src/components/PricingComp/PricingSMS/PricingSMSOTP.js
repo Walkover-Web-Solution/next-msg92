@@ -186,8 +186,10 @@ export default function PricingSMSOTP({ data, type, country }) {
                                         : 'N/A'}
                                 </span>
                                 <span>per SMS</span>
-                            </p>
-                            <button className='btn btn-primary btn-md'>Get Started</button>
+                            </p>{' '}
+                            <a href='https://web.msg91.com/signup?service=sms'>
+                                <button className='btn btn-primary btn-md'>Get Started</button>
+                            </a>
                         </>
                     ) : (
                         <div className='flex flex-col gap-8 justify-around items-center h-[282px] bg-white p-8 w-fit border rounded '>
@@ -199,7 +201,9 @@ export default function PricingSMSOTP({ data, type, country }) {
                                     : 'N/A'}{' '}
                                 per {type?.toUpperCase()}
                             </div>
-                            <button className='btn btn-primary btn-md'>Get Started</button>
+                            <a href='https://web.msg91.com/signup?service=otp'>
+                                <button className='btn btn-primary btn-md'>Get Started</button>
+                            </a>
                         </div>
                     )
                 ) : (

@@ -7,11 +7,19 @@ export default function PreFooterComp({ data }) {
                         {data?.content || 'Start building your ideal customer engagement experience'}
                     </h2>
                     <div className='flex gap-4 flex-wrap items-center  '>
-                        <button className='btn btn-primary btn-outline btn-md'>
-                            {data?.buttons?.contactSales?.text}
-                        </button>
-                        <button className='btn btn-primary btn-outline btn-md '>{data?.buttons?.pricing?.text}</button>
-                        <button className='btn btn-primary btn-md w-full'>{data?.buttons?.getStarted?.text}</button>
+                        <a href={data?.buttons?.contactSales?.link}>
+                            <button className='btn btn-primary btn-outline btn-md'>
+                                {data?.buttons?.contactSales?.text}
+                            </button>
+                        </a>
+                        <a href={data?.buttons?.pricing?.link}>
+                            <button className='btn btn-primary btn-outline btn-md '>
+                                {data?.buttons?.pricing?.text}
+                            </button>
+                        </a>
+                        <a href={data?.buttons?.getStarted?.link}>
+                            <button className='btn btn-primary btn-md w-full'>{data?.buttons?.getStarted?.text}</button>
+                        </a>
                     </div>
                 </div>
             </div>

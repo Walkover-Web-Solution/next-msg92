@@ -191,7 +191,9 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             </Link>
                         </div>
                         <ul className='w-full flex justify-end gap-6'>
-                            <li className='text-link'>{componentData?.apidocs}</li>
+                            <a href='https://docs.msg91.com/overview' target='_blank'>
+                                <li className='text-link'>{componentData?.apidocs}</li>
+                            </a>
                             <Link className='btn btn-primary btn-sm uppercase' href={'/signup'}>
                                 {componentData?.signup_btn}
                             </Link>
