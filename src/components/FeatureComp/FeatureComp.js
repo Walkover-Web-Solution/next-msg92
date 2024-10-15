@@ -23,10 +23,10 @@ export default function FeatureComp({ data }) {
                                         )}
 
                                         <h3 className='text-2xl font-semibold'>{feature?.name}</h3>
-                                        <p
+                                        <div
                                             className='text-lg'
                                             dangerouslySetInnerHTML={{ __html: feature?.content }}
-                                        ></p>
+                                        ></div>
                                     </div>
                                     <Image
                                         src={feature?.img}

@@ -1,16 +1,16 @@
 .overlay {
     background: rgba(0, 0, 0, 0.2);
-    @apply fixed top-0 left-0 z-[996] h-dvh w-dvw;
+    @apply fixed hidden lg:flex top-0 left-0 z-[996] h-dvh w-dvw;
 }
 
 .background {
-    @apply fixed bg-white w-[900px]  h-dvh top-0  z-[998]; // Keep z-index as is
+    @apply fixed hidden lg:flex bg-white w-[900px]  h-dvh top-0  z-[998]; // Keep z-index as is
     transition: all 0.2s;
 
 }
 
 .cont {
-    @apply fixed top-0 z-[999] h-dvh w-dvw flex items-center justify-center;
+    @apply fixed hidden lg:flex top-0 z-[999] h-dvh w-dvw  items-center justify-center;
     transition: all 0.2s;
    
 }

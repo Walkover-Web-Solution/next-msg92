@@ -9,6 +9,8 @@ import { useState } from 'react';
 export default function MenuBarComp({ componentData, pageInfo }) {
     const [nav, setNav] = useState('hide');
     const [type, setType] = useState('products');
+    const [miniMenu, setMiniMenu] = useState(false);
+
     const getPricingPath = () => {
         let path = '/pricing/hello';
         switch (pageInfo?.country) {
@@ -35,6 +37,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
         return process.env.NEXT_PUBLIC_BASE_URL + path;
     };
     const hidden = componentData?.hide?.includes(pageInfo?.page);
+
     if (componentData && !hidden) {
         return (
             <>
@@ -207,7 +210,12 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                 alt='MSG91'
                             />
                         </Link>
-                        <button className='btn btn-icon'>
+                        <button
+                            className='btn btn-icon'
+                            onClick={() => {
+                                setMiniMenu(!miniMenu);
+                            }}
+                        >
                             <MdMenu fontSize={24} />
                         </button>
                     </div>

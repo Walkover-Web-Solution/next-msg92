@@ -46,7 +46,7 @@ export default function StartupComp({ pageInfo, data }) {
                         {data?.benifits?.content.map((line, index) => (
                             <div key={index} className='flex gap-2'>
                                 <MdCheck className='text-green-600 text-2xl' />
-                                <p dangerouslySetInnerHTML={{ __html: line.lines }}></p>
+                                <div dangerouslySetInnerHTML={{ __html: line.lines }}></div>
                             </div>
                         ))}
                     </div>
