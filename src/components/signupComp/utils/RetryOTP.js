@@ -14,27 +14,25 @@ class RetryOtp extends React.Component {
         if (this.state.interval) {
             clearInterval(this.state.interval);
         }
-        this.setState({
-            interval: setInterval(() => {
-                this.setState({ timer: 1 });
-                if (this.state.timer >= 35) {
-                    this.setState({ timer: 0 });
-                    clearInterval(this.state.interval);
-                } else {
-                    this.setState({ timer: this.state.timer + 1 });
+        const newInterval = setInterval(() => {
+            this.setState((prevState) => {
+                const newTimer = prevState.timer + 1;
+                if (newTimer >= 35) {
+                    clearInterval(newInterval);
+                    return { timer: 0, interval: null };
                 }
-            }, 1000),
-        });
+                return { timer: newTimer };
+            });
+        }, 1000);
+        this.setState({ interval: newInterval });
     }
 
     render() {
         return (
             <>
-                {this.state.timer ? (
-                    <p className='col-dark my-3 c-fs-9 '>Retry in {36 - this.state.timer} seconds</p>
-                ) : null}
+                {this.state.timer ? <p className='text-sm '>Retry in {36 - this.state.timer} seconds</p> : null}
                 {!this.state.timer && this.props.emailRequestId && this.props.allowedRetry?.email ? (
-                    <p className='col-dark my-3 c-fs-9 '>
+                    <p className='text-sm '>
                         Resend on{' '}
                         <a
                             href={undefined}
@@ -42,14 +40,14 @@ class RetryOtp extends React.Component {
                                 this.startTimer();
                                 this.props.retryOtp(this.props.OTPRetryModes.Email, this.props.emailRequestId, false);
                             }}
-                            className='col-primary c-fw-m p-3 cursor-pointer text-hover-underline'
+                            className='text-link active-link'
                         >
                             Email
                         </a>
                     </p>
                 ) : null}
                 {!this.state.timer && this.props?.smsRequestId ? (
-                    <p className='col-dark my-3 c-fs-9'>
+                    <p className='text-sm'>
                         Resend on{' '}
                         {this.props.allowedRetry?.sms ? (
                             <a
@@ -58,14 +56,14 @@ class RetryOtp extends React.Component {
                                     this.startTimer();
                                     this.props.retryOtp(this.props.OTPRetryModes.Sms, this.props.smsRequestId, true);
                                 }}
-                                className='col-primary c-fw-600 p-3 cursor-pointer text-hover-underline'
+                                className='text-link active-link'
                             >
                                 Text
                             </a>
                         ) : null}
                         {this.props.allowedRetry?.whatsApp ? (
                             <span>
-                                {this.props.allowedRetry?.sms && <span>or </span>}
+                                {this.props.allowedRetry?.sms && <span> or </span>}
                                 <a
                                     href={undefined}
                                     onClick={() => {
@@ -76,7 +74,7 @@ class RetryOtp extends React.Component {
                                             true
                                         );
                                     }}
-                                    className='col-primary c-fw-600 p-3 cursor-pointer text-hover-underline'
+                                    className='text-link active-link'
                                 >
                                     WhatsApp
                                 </a>
@@ -85,7 +83,7 @@ class RetryOtp extends React.Component {
                         {this.props.allowedRetry?.voice ? (
                             <span>
                                 {(this.props.allowedRetry?.sms || this.props.allowedRetry?.whatsApp) && (
-                                    <span>or </span>
+                                    <span> or </span>
                                 )}
                                 <a
                                     href={undefined}
@@ -97,7 +95,7 @@ class RetryOtp extends React.Component {
                                             true
                                         );
                                     }}
-                                    className='col-primary c-fw-600 p-3 cursor-pointer text-hover-underline c-fw-m'
+                                    className='text-link active-link'
                                 >
                                     Call
                                 </a>

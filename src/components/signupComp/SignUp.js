@@ -430,7 +430,7 @@ export default class SignUp extends React.Component {
                                     className='w-32'
                                     alt='msg91-logo'
                                 />
-                                <h1 className='text-2xl font-medium'>{this.props.data.heading}hello</h1>
+                                <h1 className='text-2xl font-medium'>{this.props.data.heading}</h1>
                             </div>
                             <div className='flex flex-col gap-5'>
                                 <h2 className='text-xl'>{this.props.data.subheading}</h2>
@@ -447,7 +447,7 @@ export default class SignUp extends React.Component {
                             <p className='text-lg'>{this.props.data?.trusted}</p>
                         </div>
 
-                        <div className='lg:px-20 sm:px-10 px-4 sm:py-20 py-10 flex flex-col gap-8 w-full '>
+                        <div className='lg:px-20 sm:px-10 px-4 sm:py-20 py-10 flex flex-col gap-12 w-full '>
                             {/* <Image
                                 src={'/assets/brand/msg91.svg'}
                                 width={420}
