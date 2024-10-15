@@ -59,18 +59,18 @@ export default function CaseStudyComp({ data, pageInfo }) {
                     <div className='container flex flex-col gap-10 py-16'>
                         <div className='flex flex-col gap-2'>
                             <h2 className='font-bold text-2xl'>{`${data?.caseStudies?.headings?.caseStudies} - ${caseStudy?.name}`}</h2>
-                            <p className='text-lg' dangerouslySetInnerHTML={{ __html: caseStudy?.caseStudies }}></p>
+                            <div className='text-lg' dangerouslySetInnerHTML={{ __html: caseStudy?.caseStudies }}></div>
                         </div>
                         <div className='flex flex-col gap-2'>
                             <h2 className='font-bold text-2xl'>{`${data?.caseStudies?.headings?.problem}`}</h2>
-                            <p className='text-lg' dangerouslySetInnerHTML={{ __html: caseStudy?.problem }}></p>
+                            <div className='text-lg' dangerouslySetInnerHTML={{ __html: caseStudy?.problem }}></div>
                         </div>
                         <div className='flex flex-col gap-4'>
                             <h2 className='font-bold text-2xl'>{`${data?.caseStudies?.headings?.solution}`}</h2>
-                            <p
+                            <div
                                 className='text-lg'
                                 dangerouslySetInnerHTML={{ __html: caseStudy?.solution?.description }}
-                            ></p>
+                            ></div>
                             <ul className='list-disc flex flex-col gap-2 text-lg'>
                                 {caseStudy?.solution?.content?.length > 0 &&
                                     caseStudy?.solution?.content?.map((solution, index) => {
@@ -81,7 +81,7 @@ export default function CaseStudyComp({ data, pageInfo }) {
                         </div>
                         <div className='flex flex-col gap-2'>
                             <h2 className='font-bold text-2xl'>{`${data?.caseStudies?.headings?.benefit}`}</h2>
-                            <p className='text-lg' dangerouslySetInnerHTML={{ __html: caseStudy?.benefit }}></p>
+                            <div className='text-lg' dangerouslySetInnerHTML={{ __html: caseStudy?.benefit }}></div>
                         </div>
                         <a className='text-link active-link flex items-center' href='/case-studies'>
                             <MdChevronLeft fontSize={24} /> All Case Studies

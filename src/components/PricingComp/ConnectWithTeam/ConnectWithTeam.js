@@ -7,7 +7,7 @@ export default function ConnectWithTeam({ product, isPlan, data, currency }) {
         <div className='flex flex-col gap-3'>
             {isPlan && (
                 <>
-                    <p className='text-xl' dangerouslySetInnerHTML={{ __html: data?.content }}></p>
+                    <div className='text-xl' dangerouslySetInnerHTML={{ __html: data?.content }}></div>
                     <button className='btn btn-outline btn-md'>{data?.sales_btn}</button>
                 </>
             )}
