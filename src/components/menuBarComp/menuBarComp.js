@@ -93,7 +93,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     {componentData?.integrations_list?.content?.length > 0 &&
                                         componentData?.integrations_list?.content.map((integration, index) => {
                                             return (
-                                                <Link key={index} href={getRelativeURL(integration?.slug, 'product')}>
+                                                <Link key={index} href={integration?.link}>
                                                     <div className='flex items-center gap-2 py-2 px-2 rounded hover:bg-secondary w-full LinkButtonCard'>
                                                         <Image
                                                             className='h-10'

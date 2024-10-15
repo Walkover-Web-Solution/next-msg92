@@ -12,7 +12,7 @@
         "tagline": "Capacite os Clientes com Opções de Autoatendimento",
         "heading": "A base de conhecimento é a espinha dorsal de um bom suporte ao cliente ",
         "subheading": "Obtenha todos os recursos essenciais do software de base de conhecimento a um preço nominal",
-      "banner_img": "/assets/global/knowledgebase/knowledgebase.svg",
+      "banner_img": "/assets/brpt/knowledgebase/banner-knowledgebase.svg",
         "getstarted_btn": "Get Started FREE forever",
         "trustedByComp": {
             "heading": "Confiado por 30,000+ negócios globais",
@@ -48,17 +48,17 @@
             {
                 "name": "Editor WYSIWYG",
                 "content":"<strong>Crie ou edite facilmente seus artigos da base de conhecimento</strong>Crie rapidamente seus artigos com o editor de conteúdo 'o que você vê é o que você obtém'. É tão simples de usar quanto um processador de texto ou editor HTML.",
-                "img": "/assets/global/knowledgebase/knowledgebase-wysiwyg-editor.svg"
+                "img": "/assets/brpt/knowledgebase/knowledgebase-wysiwyg-editor.svg"
             },
             {
                 "name": "Amigável para SEO (Suporta subpasta e subdomínio)",
                 "content":"<strong>Uma base de conhecimento otimizada e amigável para SEO</strong>Sua base de conhecimento é executada em seu próprio domínio e não em um subdomínio, para que os algoritmos a tratem como seu site, dando a ela a mesma importância que suas outras páginas da web.",
-                "img": "/assets/global/knowledgebase/knowledgebase-seo-friendly.svg"
+                "img": "/assets/brpt/knowledgebase/knowledgebase-seo-friendly.svg"
             },
             {
                 "name": "   Whitelabel",
                 "content":"<strong>Funciona com sua marca e não com a nossa</strong>Seus usuários visualizam sua base de conhecimento com sua marca em seu site. Nossos serviços de whitelabel garantem que não haja indicação de que é alimentado pela MSG91.",
-                "img": "/assets/global/knowledgebase/knowledgebase-whitelable.svg"
+                "img": "/assets/brpt/knowledgebase/knowledgebase-whitelable.svg"
             }
           
         ]

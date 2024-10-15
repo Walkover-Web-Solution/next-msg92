@@ -47,22 +47,22 @@
         { 
           "name": "Comunicações Corporativas com Branding",
           "content": "<strong>Destaque-se pela marca</strong>Aumente a visibilidade da sua marca na caixa de entrada SMS usando um ID de remetente distinto e logotipo. Utilize uma interface visualmente atraente para engajar efetivamente os clientes.",
-          "img": "/assets/global/rcs/rcs-communications-branding.svg"
+          "img": "/assets/brpt/rcs/rcs-communications-branding.svg"
         },
         {
           "name": "Forneça Interações Multimídia",
           "content": "<strong>Comunicação por meio de representação visual</strong>Aprimore a comunicação da sua marca entregando RCS que constrói confiança. Incorpore seu logotipo, nome da marca, vídeos, imagens e carrosséis em suas mensagens para aumentar as conversões.",
-          "img":  "/assets/global/rcs/rcs-multimedia-interactions.svg"
+          "img":  "/assets/brpt/rcs/rcs-multimedia-interactions.svg"
         },
         {
           "name": "Aumente as Vendas por Meio de Conversas Interativas",
           "content": " Crie uma experiência de conversa envolvente com imagens, vídeos, carrosséis e botões de ação interativos. Destaque-se dos concorrentes enviando mensagens RCS envolventes e confiáveis que impulsionam conversões.",
-          "img": "/assets/global/rcs/rcs-boost-sales.svg"
+          "img": "/assets/brpt/rcs/rcs-boost-sales.svg"
         },
     {
           "name": "Confiança Aprimorada do Cliente",
           "content": " <strong>Entenda os hábitos dos seus clientes</strong> Personalize sua comunicação e construa relacionamentos duradouros que promovam a lealdade. Utilize IDs de remetente verificados e badged pela Google para taxas de resposta mais altas e maior confiança e credibilidade.",
-          "img": "/assets/global/rcs/rcs-customer-trust.svg"
+          "img": "/assets/brpt/rcs/rcs-customer-trust.svg"
         }]
       },
       "PreFooterComp": {

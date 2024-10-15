@@ -1,7 +1,7 @@
 {
     "common": true,
     "notification": {
-        "support": "Support",
+        "support": "Contact Us",
         "login": "LOG IN",
         "hide": ["signup", "singin"]
     },
@@ -19,12 +19,13 @@
                     {
                         "name": "Campaign",
                         "slug": "campaign",
-                        "description": "Contact Management"
+                        "description": "Event-based Automation"
+
                     },
                     {
                         "name": "Segmento",
                         "slug": "segmento",
-                        "description": "Event-based Automation"
+                        "description": "Contact Management"
                     },
                     {
                         "name": "OTP",
@@ -41,6 +42,10 @@
                         "slug": "sms"
                     },
                     {
+                        "name": "RCS",
+                        "slug": "rcs"
+                    },
+                    {
                         "name": "Email",
                         "slug": "email"
                     },
@@ -48,10 +53,7 @@
                         "name": "WhatsApp",
                         "slug": "whatsapp"
                     },
-                    {
-                        "name": "RCS",
-                        "slug": "rcs"
-                    },
+                   
                     {
                         "name": "Voice",
                         "slug": "voice"
@@ -120,6 +122,80 @@
             ]
         },
         "pricing": "Pricing",
+        "pricing_list":[
+            {
+                "name": "Applications",
+                "products": [
+                    {
+                        "name": "Hello",
+                        "slug": "hello",
+                        "description": "Contact Center"
+                    },
+                    {
+                        "name": "Campaign",
+                        "slug": "campaign",
+                        "description": "Event-based Automation"
+
+                    },
+                    {
+                        "name": "Segmento",
+                        "slug": "segmento",
+                        "description": "Contact Management"
+                    },
+                    {
+                        "name": "OTP",
+                        "slug": "otpwidget",
+                        "description": " OTP widget SDK"
+                    }
+                ]
+            },
+            {
+                "name": "Channels",
+                "products": [
+                    {
+                        "name": "SMS",
+                        "slug": "sms"
+                    },
+                    {
+                        "name": "SendOTP",
+                        "slug": "otp"
+                    },
+                    {
+                        "name": "Email",
+                        "slug": "email"
+                    },
+                    {
+                        "name": "WhatsApp",
+                        "slug": "whatsapp"
+                    },
+                   
+                    {
+                        "name": "Voice",
+                        "slug": "voice"
+                    },
+                    {
+                        "name": "RCS",
+                        "slug": "rcs"
+                    }
+                ]
+            },
+            {
+                "name": "Utilities",
+                "products": [
+                    {
+                        "name": "URL Shortener",
+                        "slug": "shorturl",
+                        "description": "Customize and Track URLs"
+                    },
+                    {
+                        "name": "KnowledgeBase",
+                        "slug": "knowledgebase",
+                        "description": "Manage Help Documents and Guides"
+                    }
+                ]
+            }
+            ]
+        ,
         "apidocs": "API Docs",
         "signup_btn": "Sign Up",
         "hide": ["signup", "singin"]
@@ -209,12 +285,12 @@
                     "link": "help"
                 },
                 {
-                    "name": "Voice",
-                    "link": "voice"
+                    "name": "API Documentation",
+                    "link": "overview"
                 },
                 {
-                    "name": "Numbers",
-                    "link": "numbers"
+                    "name": "Request a Feature",
+                    "link": "b/feature-requests"
                 }
             ]
         },

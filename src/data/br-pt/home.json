@@ -7,7 +7,7 @@
         "tagline": "PLATAFORMA DE SOLUÇÕES PARA CLIENTES",
         "heading": "Plataforma de Comunicação em Nuvem",
         "subheading": "APIs seguras e robustas para SMS, Email, Voice, Autenticação e mais",
-        "banner_img": "/assets/global/index/banner.webp",
+        "banner_img": "/assets/brpt/index/banner.webp",
         "getstarted_btn": "Começar",
         "trustedByComp": {
             "heading": "Confiado por 30,000+ negócios globais",
@@ -45,7 +45,7 @@
             "tagline": "Centro de contato",
             "name": "Hello",
             "description": "Empodere seus funcionários, apoie seus clientes.",
-            "img": "/img/home/chats.svg",
+            "img": "/assets/global/index/products/product-hello.svg",
             "linkText": "Saiba mais",
             "link": "/hello"
         },
@@ -54,7 +54,7 @@
             "tagline": "Automação baseada em eventos",
             "name": "Campaign",
             "description": "Aumente o engajamento do público através de uma plataforma inteligente.",
-            "img": "/img/home/campaign.svg",
+            "img": "/assets/global/index/products/product-campaign.svg",
             "linkText": "Saiba mais",
             "link": "/campaign"
         },
@@ -63,7 +63,7 @@
             "tagline": "Plataforma de dados de clientes",
             "name": "Segmento",
             "description": "Segmentação de clientes por suas ações ou eventos.",
-            "img": "/img/home/segmento.webp",
+            "img": "/assets/global/index/products/product-segmento.svg",
             "linkText": "Saiba mais",
             "link": "/segmento"
         },
@@ -72,7 +72,7 @@
             "tagline": "VERIFICAÇÃO SEGURA INSTANTÂNEA",
             "name": "OTP",
             "description": "Verificação de OTP multicanal rápida e confiável",
-            "img": "/img/home/otp.png",
+            "img": "/assets/global/index/products/product-otp.svg",
             "linkText": "Saiba mais",
             "link": "/otp"
         }
@@ -144,7 +144,7 @@
             {
                 "icon": "/assets/icons/products/shorturl.svg",
                 "name": "Encurtador de URL",
-                "img": "/assets/global/index/services/shorturl.svg",
+                "img": "/assets/brpt/index/services/shorturl.svg",
                 "heading": "Faça seus URLs longos ficarem curtos",
                 "description": "Encurta automaticamente URLs e rastreia seu sucesso, um clique de cada vez. Transforme seus links longos e bagunçados em links curtos e memoráveis com sua marca",
                 "link": "/shorturl"
@@ -152,7 +152,7 @@
             {
                 "icon": "/assets/icons/products/knowledgebase.svg",
                 "name": "Aplicativo de Base de Conhecimento",
-                "img": "/assets/global/index/services/knowledgebase.svg",
+                "img": "/assets/brpt/index/services/knowledgebase.svg",
                 "heading": "Gerencie seus documentos e artigos de ajuda",
                 "description": "Não deixe seus clientes esperando por soluções simples. Dê a eles acesso instantâneo à biblioteca de autoatendimento.",
                 "link": "/knowledgebase"
@@ -160,7 +160,7 @@
             {
                 "icon": "/assets/icons/products/filehosting.svg",
                 "name": "Hospedagem de Arquivos",
-                "img": "/assets/global/index/services/filehosting.svg",
+                "img": "/assets/brpt/index/services/filehosting.svg",
                 "heading": "Armazenamento de arquivos simples e seguro",
                 "description": "Um hub central para armazenamento, compartilhamento e sincronização de arquivos online. Armazene todos os seus arquivos com segurança usando um armazenamento em nuvem poderoso, confiável e fácil de usar.",
                 "link": "https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91"
@@ -178,8 +178,8 @@
                 "link": "/case-studies/milkbasket"
             },
             {
-                "img": "/assets/global/index/stories/unacademy-bg.png",
-                "logo": "/assets/global/index/stories/unacademy-logo.png",
+                "img": "/assets/brpt/index/stories/stories-bg-unacademy.png",
+                "logo": "/assets/brpt/index/stories/stories-logo-unacademy.png",
                 "description": "A Unacademy mantém seu público engajado e nutrido com campanhas personalizadas usando omnicanal",
                 "link": "/case-studies/unacademy"
             },
