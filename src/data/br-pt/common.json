@@ -1,35 +1,225 @@
 {
     "common": true,
     "notification": {
-        "support": "Support",
-        "login": "LOG IN"
+        "support": "Contato",
+        "login": "LOG IN",
+        "hide": ["signup", "singin"]
     },
     "menu": {
-        "products": "Products",
-        "integrations": "Integrations",
-        "pricing": "Pricing",
+        "products": "Produtos",
+        "products_list": [
+            {
+                "name": "Aplicações",
+                "products": [
+                    {
+                        "name": "Hello",
+                        "slug": "hello",
+                        "description": "Bilheteria e Chat"
+                    },
+                    {
+                        "name": "Campaign",
+                        "slug": "campaign",
+                        "description": "Automação Baseada em Eventos"
+
+                    },
+                    {
+                        "name": "Segmento",
+                        "slug": "segmento",
+                        "description": "Gestão de Contatos"
+                    },
+                    {
+                        "name": "OTP",
+                        "slug": "otp",
+                        "description": "Plataforma Simplificada de OTP"
+                    }
+                ]
+            },
+            {
+                "name": "Canais",
+                "products": [
+                    {
+                        "name": "SMS",
+                        "slug": "sms"
+                    },
+                    {
+                        "name": "RCS",
+                        "slug": "rcs"
+                    },
+                    {
+                        "name": "Email",
+                        "slug": "email"
+                    },
+                    {
+                        "name": "WhatsApp",
+                        "slug": "whatsapp"
+                    },
+                   
+                    {
+                        "name": "Voice",
+                        "slug": "voice"
+                    },
+                    {
+                        "name": "Numbers",
+                        "slug": "numbers"
+                    }
+                ]
+            },
+            {
+                "name": "Utilitários",
+                "products": [
+                    {
+                        "name": "URL Shortener",
+                        "slug": "shorturl",
+                        "description": "Personalize e Rastreie URLs"
+                    },
+                    {
+                        "name": "KnowledgeBase",
+                        "slug": "knowledgebase",
+                        "description": "Gerencie Documentos de Ajuda e Guias"
+                    }
+                ]
+            }
+        ],
+        "integrations": "Integrações",
+        "integrations_list": {
+            "explore_btn": "Explorar Mais Plugins",
+            "content": [
+                {
+                    "slug": "shopify",
+                    "name": "Shopify",
+                    "link": "https://apps.shopify.com/msg91"
+                },
+                {
+                    "slug": "tally",
+                    "name": "Tally",
+                    "link": "https://msg91.com/partners-and-integrations/tally"
+                },
+                {
+                    "slug": "zapier",
+                    "name": "Zapier",
+                    "link": "https://msg91.com/partners-and-integrations/zapier"
+                },
+                {
+                    "slug": "freshworks",
+                    "name": "Freshworks",
+                    "link": "https://msg91.com/partners-and-integrations/freshworks"
+                },
+                {
+                    "slug": "firebase",
+                    "name": "Firebase",
+                    "link": "https://msg91.com/partners-and-integrations/firebase"
+                },
+                {
+                    "slug": "hubspot",
+                    "name": "HubSpot",
+                    "link": "https://msg91.com/partners-and-integrations/hubspot"
+                },
+                {
+                    "slug": "googlesheets",
+                    "name": "Google Sheets",
+                    "link": "https://msg91.com/help/how-to-send-sms-and-email-from-google-spreadsheet"
+                }
+            ]
+        },
+        "pricing": "Preços",
+        "pricing_list":[
+            {
+                "name": "Applications",
+                "products": [
+                    {
+                        "name": "Hello",
+                        "slug": "hello",
+                        "description": "Contact Center"
+                    },
+                    {
+                        "name": "Campaign",
+                        "slug": "campaign",
+                        "description": "Event-based Automation"
+
+                    },
+                    {
+                        "name": "Segmento",
+                        "slug": "segmento",
+                        "description": "Contact Management"
+                    },
+                    {
+                        "name": "OTP",
+                        "slug": "otpwidget",
+                        "description": " OTP widget SDK"
+                    }
+                ]
+            },
+            {
+                "name": "Channels",
+                "products": [
+                    {
+                        "name": "SMS",
+                        "slug": "sms"
+                    },
+                    {
+                        "name": "SendOTP",
+                        "slug": "otp"
+                    },
+                    {
+                        "name": "Email",
+                        "slug": "email"
+                    },
+                    {
+                        "name": "WhatsApp",
+                        "slug": "whatsapp"
+                    },
+                   
+                    {
+                        "name": "Voice",
+                        "slug": "voice"
+                    },
+                    {
+                        "name": "RCS",
+                        "slug": "rcs"
+                    }
+                ]
+            },
+            {
+                "name": "Utilities",
+                "products": [
+                    {
+                        "name": "URL Shortener",
+                        "slug": "shorturl",
+                        "description": "Customize and Track URLs"
+                    },
+                    {
+                        "name": "KnowledgeBase",
+                        "slug": "knowledgebase",
+                        "description": "Manage Help Documents and Guides"
+                    }
+                ]
+            }
+            ]
+        ,
         "apidocs": "API Docs",
-        "signup_btn": "Sign Up"
+        "signup_btn": "Sign Up",
+        "hide": ["signup", "singin"]
     },
     "footer": {
+        "hide": ["signup", "singin"],
         "products": {
             "name": "Our Products",
             "links": [
                 {
                     "name": "Hello",
-                    "link": "/hello"
+                    "link": "hello"
                 },
                 {
                     "name": "Segmento",
-                    "link": "/segmento"
+                    "link": "segmento"
                 },
                 {
                     "name": "Campaign",
-                    "link": "/campaign"
+                    "link": "campaign"
                 },
                 {
                     "name": "OTP",
-                    "link": "/otp"
+                    "link": "otp"
                 }
             ]
         },
@@ -38,19 +228,19 @@
             "links": [
                 {
                     "name": "URL Shortener",
-                    "link": "/shorturl"
+                    "link": "shorturl"
                 },
                 {
                     "name": "KnowledgeBase",
-                    "link": "/knowledgebase"
+                    "link": "knowledgebase"
                 },
                 {
                     "name": "Free WhatsApp link generator",
-                    "link": "/free-whatsapp-link-generator"
+                    "link": "free-whatsapp-link-generator"
                 },
                 {
                     "name": "WhatsApp Chatbot",
-                    "link": "/whatsapp/chatbot"
+                    "link": "whatsapp/chatbot"
                 }
             ]
         },
@@ -59,23 +249,23 @@
             "links": [
                 {
                     "name": "SMS",
-                    "link": "/sms"
+                    "link": "sms"
                 },
                 {
                     "name": "Email",
-                    "link": "/email"
+                    "link": "email"
                 },
                 {
                     "name": "WhatsApp",
-                    "link": "/whatsapp"
+                    "link": "whatsapp"
                 },
                 {
                     "name": "Voice",
-                    "link": "/voice"
+                    "link": "voice"
                 },
                 {
                     "name": "Numbers",
-                    "link": "/numbers"
+                    "link": "numbers"
                 }
             ]
         },
@@ -84,23 +274,23 @@
             "links": [
                 {
                     "name": "Guide",
-                    "link": "/guide"
+                    "link": "guide"
                 },
                 {
                     "name": "Case Studies",
-                    "link": "/case-studies"
+                    "link": "case-studies"
                 },
                 {
                     "name": "FAQ",
-                    "link": "/help"
+                    "link": "help"
                 },
                 {
-                    "name": "Voice",
-                    "link": "/voice"
+                    "name": "API Documentation",
+                    "link": "overview"
                 },
                 {
-                    "name": "Numbers",
-                    "link": "/numbers"
+                    "name": "Request a Feature",
+                    "link": "b/feature-requests"
                 }
             ]
         },
@@ -109,31 +299,31 @@
             "links": [
                 {
                     "name": "About us",
-                    "link": "/about-us"
+                    "link": "about-us"
                 },
                 {
                     "name": "Pricing",
-                    "link": "/pricing"
+                    "link": "pricing"
                 },
                 {
                     "name": "Contact Us",
-                    "link": "/contact-us"
+                    "link": "contact-us"
                 },
                 {
                     "name": "Developers",
-                    "link": "/developers"
+                    "link": "developers"
                 },
                 {
                     "name": "MSG91 for startups",
-                    "link": "/startups"
+                    "link": "startups"
                 },
                 {
                     "name": "Partners and integrations",
-                    "link": "/partners-and-integrations"
+                    "link": "partners-and-integrations"
                 },
                 {
                     "name": "Become a partner",
-                    "link": "/become-a-partner"
+                    "link": "become-a-partner"
                 },
                 {
                     "name": "Career",
@@ -141,7 +331,7 @@
                 },
                 {
                     "name": "Certificates",
-                    "link": "/certificates"
+                    "link": "certificates"
                 }
             ]
         },
@@ -149,35 +339,35 @@
             "links": [
                 {
                     "name": "Terms of use",
-                    "link": "/terms-of-use"
+                    "link": "terms-of-use"
                 },
                 {
                     "name": "Privacy policy",
-                    "link": "/privacy-policy"
+                    "link": "privacy-policy"
                 },
                 {
                     "name": "GDPR",
-                    "link": "/gdpr"
+                    "link": "gdpr"
                 },
                 {
                     "name": "Refund policy",
-                    "link": "/refund-policy"
+                    "link": "refund-policy"
                 },
                 {
                     "name": "No spam",
-                    "link": "/no-spam"
+                    "link": "no-spam"
                 },
                 {
                     "name": "Startup policy",
-                    "link": "/startup-policy"
+                    "link": "startup-policy"
                 },
                 {
                     "name": "Fair pricing policy",
-                    "link": "/fair-pricing-policy"
+                    "link": "fair-pricing-policy"
                 },
                 {
                     "name": "Cookie policy",
-                    "link": "/cookie-policy"
+                    "link": "cookie-policy"
                 }
             ]
         },

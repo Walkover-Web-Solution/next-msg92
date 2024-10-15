@@ -11,7 +11,7 @@
           "tagline": "Verificação instantânea e segura",
           "heading": "A forma mais simples, rápida e eficaz de verificar seus usuários",
           "subheading":"Construa confiança com o cliente e proteja o seu negócio com autenticação de dois fatores.",
-          "banner_img": "/assets/br-pt/otp/banner-otp.svg",
+          "banner_img": "/assets/br-pt/otp/banner-otp.webp",
           "getstarted_btn": "Comece gratuitamente",
           "trustedByComp": {
             "heading": "Confiado por 30,000+ negócios globais",
@@ -33,17 +33,17 @@
         { 
           "name": "Tão simples quanto Login com Google",
           "content": "<strong>Login com OTP é tão simples quanto login com Gmail</strong>Dê aos seus usuários uma experiência de autenticação rápida, não disruptiva e simples. Implemente login com OTP inserindo seu número de celular ou endereço de e-mail para receber OTP via SMS ou e-mail.",
-          "img": "/assets/global/otp/otp-simple-login.svg"
+          "img": "/assets/brpt/otp/otp-simple-login.svg"
         },
         {
           "name": "Segurança IP Integrada",
           "content": "<strong>Proteção contra fraudes, hacks, validação, bloqueio</strong> Minimize fraudes com uma camada extra de segurança. A segurança integrada garante que, quando um login é arriscado, o fluxo não permite que o ator mal-intencionado faça login, visualizando-o como potencialmente fraudulento.",
-          "img":  "/assets/global/otp/otp-inbuilt-ip-security.svg"
+          "img":  "/assets/brpt/otp/otp-inbuilt-ip-security.svg"
         },
         {
           "name": "Suporte a múltiplos canais",
           "content": "<strong>Construa confiança com o cliente e aumente a conversão em vários canais</strong> Autentique seus usuários nos canais que eles preferem. Suportamos vários canais, incluindo SMS, e-mail, voz, WhatsApp, dando às empresas e usuários a flexibilidade de que precisam para autenticar.",
-          "img": "/assets/global/otp/otp-support-multiple-channels.svg"
+          "img": "/assets/brpt/otp/otp-support-multiple-channels.svg"
         }]
       },
       "PreFooterComp": {

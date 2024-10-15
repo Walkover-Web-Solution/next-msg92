@@ -50,36 +50,36 @@
             {
                 "name": "Algoritmo Inteligente de Retentativa de SMS",
                 "content": "Nosso serviço de API de SMS encontra a rota de telecom mais confiável e rápida para cada mensagem que você envia. Caso o SMS falhe, nosso algoritmo tenta novamente em uma fração de segundo e entrega suas mensagens usando outra rota de telecom.",
-                "img": "/assets/global/sms/sms-intelligent-sms-routing.svg"
+                "img": "/assets/brpt/sms/sms-intelligent-sms-routing.svg"
             },
             {
                 "name": "API de SMS Confiável, Escalável e Rica em Recursos",
                 "content": "Disponível em todas as linguagens de programação, a integração com nossa API de SMS para desenvolvedores é rápida, fácil e perfeita. Desenvolvida por desenvolvedores para desenvolvedores, explore guias de início rápido, trechos de código, SDKs e mais.",
-                "img": "/assets/global/sms/sms-enjoy-reliable-low-latency-delivery-worldwide.svg"
+                "img": "/assets/brpt/sms/sms-enjoy-reliable-low-latency-delivery-worldwide.svg"
             },
             {
                 "name": "Desfrute de Entrega com Baixa Latência - Mundial",
                 "content": "Alcance mais de 210 países de forma confiável com operadoras de telecom locais. O redirecionamento automático do tráfego global em tempo real nos ajuda a evitar falhas e latência.",
-                "img": "/assets/global/sms/sms-enjoy-reliable-low-latency-delivery-worldwide.svg"
+                "img": "/assets/brpt/sms/sms-enjoy-reliable-low-latency-delivery-worldwide.svg"
             },
             {
                 "name": "Suporte Multilíngue",
                 "content": "Converse com seu público em seu idioma local e leve o engajamento com o cliente para o próximo nível. Construa a confiança do cliente ao enviar mensagens em seu idioma regional em qualquer lugar do mundo.",
-                "img": "/assets/global/sms/sms-multi-lingual-support.svg"
+                "img": "/assets/brpt/sms/sms-multi-lingual-support.svg"
             },
             {
                 "name": "SMS Personalizado",
                 "content": "<strong>Aumente a satisfação do cliente com um engajamento significativo.</strong>Não apenas interaja com os clientes, crie experiências personalizadas adicionando características às suas mensagens. Aproveite o poder da personalização para aumentar seu ROI.",
-                "img": "/assets/global/sms/sms-personalized-sms.svg"
+                "img": "/assets/brpt/sms/sms-personalized-sms.svg"
             },
             {
                 "name": "Encurtador de Links",
                 "content": "<strong>Transforme uma URL longa em um link mais curto e legível.</strong>Habilite o encurtador de links profundamente integrado para converter URLs longas em links mais curtos. Obtenha um relatório detalhado de usuários sobre cliques com números de celular, navegador e IP.",
-                "img": "/assets/global/sms/sms-link-shortener.svg"
+                "img": "/assets/brpt/sms/sms-link-shortener.svg"
             },  {
                 "name": "Análise Aprimorada",
                 "content": "<strong>Visualização gráfica em tempo real para monitoramento e solução de problemas.</strong>Otimize a entrega de seus SMS, meça a eficácia de suas campanhas e melhore o ROI. Esteja sempre a par de quais mensagens os clientes receberam e quais foram perdidas.",
-                "img": "/assets/global/sms/sms-enhanced-analytics.svg"
+                "img": "/assets/brpt/sms/sms-enhanced-analytics.svg"
             }
         ]
     },

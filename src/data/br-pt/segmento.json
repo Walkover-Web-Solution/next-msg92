@@ -11,7 +11,7 @@
         "tagline": "Marketing baseado em alvos",
         "heading": "Personalize as jornadas dos clientes com segmentação de dados.",
         "subheading": "Segmente pessoas com base em seus dados demográficos, comportamento, interesses e outras características.",
-        "banner_img": "/assets/br-pt/segmento/banner-segmento.svg",
+        "banner_img": "/assets/brpt/segmento/banner-segmento.svg",
         "getstarted_btn": "Comece gratuitamente",
         "trustedByComp": {
             "heading": "Confiado por 30,000+ negócios globais",
@@ -34,22 +34,22 @@
           {
               "name": "Crie filtros por segmento",
               "content":"<strong>Crie uma lista filtrada no seu catálogo de endereços comercial.</strong>Adapte seus esforços de marketing segmentando pessoas com base em seus requisitos, traços ou padrões criando um filtro específico no seu catálogo de endereços.",
-              "img": "/assets/global/segmento/segmento-create-filters-as-per-segments.svg"
+              "img": "/assets/brpt/segmento/segmento-create-filters-as-per-segments.svg"
           },
           {
               "name": "Gatilho de automação",
               "content": "<strong>Acione informações relevantes para os segmentos filtrados.</strong>Automatize ações nos filtros criados com base na ação ou entrada do usuário para entregar mensagens relevantes e personalizadas para cada grupo.",
-              "img": "/assets/global/segmento/segmento-automation-trigger.svg"
+              "img": "/assets/brpt/segmento/segmento-automation-trigger.svg"
           },
           {
               "name": "Repetidor de automação",
               "content": "<strong>Envie o conteúdo mais relevante no momento mais relevante.</strong>Envie mensagens automáticas para o mesmo filtro em intervalos baseados em tempo através do canal de comunicação comercial preferido do seu público.",
-              "img": "/assets/global/segmento/segmento-automation-repeater.svg"
+              "img": "/assets/brpt/segmento/segmento-automation-repeater.svg"
           },
           {
               "name": "API aberta",
               "content": "<strong>Use API para obter, criar, atualizar ou excluir contatos.</strong>Fornecemos APIs para todas as ações, grandes ou pequenas, para que você possa se concentrar no que mais importa - construir seu produto incrível.",
-              "img": "/assets/global/segmento/segmento-open-api.svg"
+              "img": "/assets/brpt/segmento/segmento-open-api.svg"
           }
          
       ]

@@ -12,7 +12,7 @@
         "tagline": "REVOLUCIONE O SUPORTE AO CLIENTE",
         "heading": "Software de Atendimento ao Cliente",
         "subheading":  "Nunca perca de vista o que é importante. Não resolva apenas tickets, construa relacionamentos com clientes",
-        "banner_img": "/assets/global/hello/heroimg.webp",
+        "banner_img": "/assets/brpt/hello/banner.webp",
         "getstarted_btn": "Iniciar",
         "trustedByComp": {
             "heading": "Suporte a mais de 15 canais e plataformas",
@@ -47,32 +47,32 @@
             {
                 "name": "Agentes Ilimitados",
                 "content": "Agentes gratuitos ilimitados para impulsionar seu suporte ao cliente. Mais agentes significam engajamento contínuo, mais tickets resolvidos e melhor suporte ao cliente em oferta. Não há número limite para a quantidade de agentes de suporte ao cliente.",
-                "img": "/assets/global/hello/unlimited-agents.svg"
+                "img": "/assets/brpt/hello/unlimited-agents.svg"
             },
             {
                 "name": "Chatbot",
                 "content": "Resolva consultas de clientes 24 horas por dia, em texto e voz. Deixe o chatbot lidar com consultas simples e repetitivas que não exigem as habilidades e experiência de seus agentes e, quando necessário, inclua agentes ao vivo de forma transparente.",
-                "img": "/assets/global/hello/chatbot.svg"
+                "img": "/assets/brpt/hello/chatbot.svg"
             },
             {
                 "name": "Controle de Tela",
                 "content": "Controle a tela do seu cliente de onde você estiver. Trabalhe na tela remota como se você realmente estivesse lá. Uma vez que você obtenha acesso, tenha controle total da tela, mouse e teclado do seu cliente para resolver rapidamente os problemas.",
-                "img": "/assets/global/hello/screen-control.svg"
+                "img": "/assets/brpt/hello/screen-control.svg"
             },
             {
                 "name": "Chamada de Vídeo / Compartilhamento de Tela",
                 "content": "Chamadas de vídeo de alta qualidade onde quer que seu cliente esteja. Faça uma chamada de vídeo com seu cliente para navegar juntos na tela do cliente. Assuma o controle da reunião enquanto seu cliente compartilha a tela para mostrar informações ou levantar um problema.",
-                "img": "/assets/global/hello/video-call---screen-sharing.svg"
+                "img": "/assets/brpt/hello/video-call---screen-sharing.svg"
             },
             {
                 "name": "Fluxo de Trabalho",
                 "content": "Atribua automaticamente conversas a uma equipe ou agente dedicado. Comece com nosso Fluxo de Trabalho existente ou configure seu Fluxo de Trabalho personalizado com base nas necessidades de suporte do seu negócio.",
-                "img": "/assets/global/hello/workflow.svg"
+                "img": "/assets/brpt/hello/workflow.svg"
             },
             {
                 "name": "Análises",
                 "content": "Análises e relatórios para monitorar o desempenho de seus agentes. Obtenha insights profundos e acionáveis para oferecer suporte excepcional e alcançar seus objetivos. Os relatórios de análise fáceis de analisar ajudarão seus agentes a aumentar seu suporte ao cliente.",
-                "img": "/assets/global/hello/analytics.svg"
+                "img": "/assets/brpt/hello/analytics.svg"
             }
         ]
     },

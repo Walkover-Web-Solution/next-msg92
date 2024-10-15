@@ -48,12 +48,12 @@
             {
                 "name": "Sem Código",
                 "content":"<strong>Sem código e menos créditos tornam-no um link inteligente.</strong>Encurte seu URL em tempo real sem inserir qualquer código. Basta colar seu link e você terá um link inteligente que é fácil de compartilhar, economiza espaço e consome menos créditos. ",
-                "img": "/assets/global/shorturl/shorturl-no-code.svg"
+                "img": "/assets/br-pt/shorturl/shorturl-no-code.svg"
             },
             {
                 "name": "Rastreamento Numérico",
                 "content":"<strong>Reúna estatísticas monitorando o número de acessos do seu URL.</strong>Acompanhe o desempenho do seu shortURL e o número de acessos para cada destinatário. Saiba quantas vezes o link foi clicado, onde foi compartilhado e como está direcionando o tráfego.",
-                "img": "/assets/global/shorturl/shorturl-number-wise-tracking.svg"
+                "img": "/assets/br-pt/shorturl/shorturl-number-wise-tracking.svg"
             }
           
         ]

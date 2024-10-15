@@ -51,26 +51,26 @@
             {
                 "name": "Suporte a Base64",
                 "content": "<strong>Envie o corpo em JSON e deixe o resto conosco.</strong>Não é necessário criar uma URL ou fazer o upload do seu arquivo, pois você pode enviar diretamente o corpo JSON e ele será convertido automaticamente em formato Base64 e enviado via WhatsApp.",
-                "img": "/assets/global/whatsapp/whatsapp-support-base64.svg"
+                "img": "/assets/brpt/whatsapp/whatsapp-support-base64.svg"
             },
             {
                 "name": "Comunicação bidirecional",
                 "content": "<strong>Diga olá para continuar no HELLO.</strong>Dê ao seu cliente a plataforma certa para continuar a conversa. Assim que ele responder, ele será levado diretamente para o HELLO para iniciar uma comunicação bidirecional com sua empresa.",
-                "img": "/assets/global/whatsapp/whatsapp-2way-communication.svg"
+                "img": "/assets/brpt/whatsapp/whatsapp-2way-communication.svg"
             },  
             {
                 "name": "Gerencie o template dentro do painel",
                 "content": "<strong>Crie e gerencie seus templates aqui mesmo.</strong>No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook.",
-                "img": "/assets/global/whatsapp/whatsapp-analytics.svg"
+                "img": "/assets/brpt/whatsapp/whatsapp-analytics.svg"
             },   {
                 "name": "Análise",
                 "content": "<strong>Obtenha insights gráficos sobre as mensagens da sua empresa.</strong>Analise e melhore a comunicação da sua empresa com as métricas certas. Obtenha um relatório gráfico sobre o número de mensagens enviadas, entregues, conversas e muito mais.",
-                "img": "/assets/global/whatsapp/whatsapp-analytics.svg"
+                "img": "/assets/brpt/whatsapp/whatsapp-analytics.svg"
             },
             {
                 "name": "Exportar Logs",
                 "content": "<strong>Obtenha logs individuais de mensagens enviadas e recebidas.</strong>Exporte os logs para uma melhor visualização e insights. Obtenha detalhes de todas as mensagens enviadas e recebidas e das conversas que sua empresa teve com seus clientes.",
-                "img": "/assets/global/whatsapp/whatsapp-export-logs.svg"
+                "img": "/assets/brpt/whatsapp/whatsapp-export-logs.svg"
             }
         ]
     },

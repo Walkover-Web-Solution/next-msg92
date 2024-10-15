@@ -51,42 +51,42 @@
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Monitoramento de Chamadas",
                 "content":"<strong>Apresentando a experiência de comunicação de próximo nível com nossos novos recursos de Monitoramento de Chamadas</strong>Estamos colocando você no controle de suas conversas com os chamadores. Esses recursos robustos oferecem maior controle e percepção durante suas chamadas, garantindo uma comunicação aprimorada e satisfação do cliente. Espionagem de chamadas: sua arma secreta para garantia de qualidade! Intervenção em chamadas: suporte em tempo real, a apenas um clique de distância! Sussurro de chamadas: orientação ao seu alcance!",
-                "img": "/assets/global/voice/voice-call-monitoring.svg"
+                "img": "/assets/brpt/voice/voice-call-monitoring.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Chamada direta do navegador",
                 "content": "<strong>Pule a chamada bidirecional e ligue diretamente do navegador.</strong>Economize o tempo de chamada do seu agente e melhore a experiência do cliente. Conecte facilmente dois números de telefone sem manter um em espera para iniciar uma conversa com o cliente.",
-                "img": "/assets/global/voice/voice-direct-calling-from-hello.svg"
+                "img": "/assets/brpt/voice/voice-direct-calling-from-hello.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Fluxo IVR",
                 "content": "<strong>IVR moderno que torna a interação do cliente rápida e sem complicações.</strong>Sistema IVR inteligente que oferece mais do que apenas resolver consultas. Além do habitual, você pode criar uma configuração baseada em tempo ou agente e até mesmo gravar uma mensagem.",
-                "img": "/assets/global/voice/voice-ivr-flow.svg"
+                "img": "/assets/brpt/voice/voice-ivr-flow.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Voz em Massa",
                 "content":"<strong>Fale diretamente com seu público em uma única chamada.</strong>Grave sua mensagem de voz e envie a mensagem que deseja transmitir para centenas e milhares de clientes de uma só vez. Uma chamada telefônica geralmente é difícil de ignorar.",
-                "img": "/assets/global/voice/voice-bulk-voice.svg"
+                "img": "/assets/brpt/voice/voice-bulk-voice.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Múltiplas maneiras de carregar arquivo",
                 "content":"<strong>Carregue sua mensagem de áudio de várias maneiras.</strong>Amplifique sua interação com o cliente com uma mensagem de voz personalizada. Grave sua mensagem para chamada de voz em massa ou menu IVR através de texto para fala, microfone do navegador ou chamada telefônica.",
-                "img": "/assets/global/voice/voice-multiple-way-to-upload-file.svg"
+                "img": "/assets/brpt/voice/voice-multiple-way-to-upload-file.svg"
             },
             {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Voz em massa com IVR",
                 "content":"<strong>Conecte sua chamada de voz ao IVR.</strong>Não apenas envie uma mensagem de voz em massa, mas também receba uma resposta de seus usuários. Grave a mensagem que você gostaria de transmitir e envie-a para seus clientes usando um IVR.",
-                "img": "/assets/global/voice/voice-bulk-voice-with-ivr.svg"
+                "img": "/assets/brpt/voice/voice-bulk-voice-with-ivr.svg"
             },      {
                 "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Conexão em tempo real com agente na entrada do usuário em chamada em massa",
                 "content": "<strong>Direcione seu usuário para seu agente de suporte.</strong>Melhore a experiência do cliente oferecendo suporte em tempo real quando você conecta seus usuários aos seus agentes de suporte ao cliente com base na entrada de chamada em massa.",
-                "img": "/assets/global/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
+                "img": "/assets/brpt/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
             }
         ]
     },

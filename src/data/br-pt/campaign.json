@@ -12,7 +12,7 @@
         "tagline": "Automação Baseada em Eventos",
         "heading": "Conecte conversas através de canais e ferramentas.",
         "subheading": "Ofereça experiências personalizadas, envolventes e contínuas.",
-        "banner_img": "/assets/global/campaign/campaign.webp",
+        "banner_img": "/assets/brpt/campaign/banner-campaign.webp",
         "getstarted_btn": "Comece gratuitamente",
         "trustedByComp": {
             "heading": "Confiado por 30,000+ negócios globais",
@@ -51,27 +51,27 @@
             {
                 "name": "Suporte Multicanal",
                 "content": " <strong>Apoie seus clientes no canal de sua preferência.</strong>Proporcione uma melhor experiência de suporte aos seus clientes através de seu canal preferido - SMS, Email, Voz, Notificação Push, WhatsApp e mais. Encontre seus clientes onde eles estão.",
-                "img": "/assets/global/campaign/campaign-multi-channel-support.svg"
+                "img": "/assets/brpt/campaign/campaign-multi-channel-support.svg"
             },
             {
                 "name": "Fluxo Arrastável",
                 "content": "<strong>Arraste e solte para criar um fluxo omnichannel com cenários 'se-então'.</strong>Escolha quando você precisa iniciar uma conversa por SMS, email ou mensagem em um único fluxo de trabalho. Crie um fluxo que seja tão simples ou complexo quanto as necessidades do seu negócio.",
-                "img": "/assets/global/campaign/campaign-draggable-flow.svg"
+                "img": "/assets/brpt/campaign/campaign-draggable-flow.svg"
             },
             {
                 "name": "Condição Baseada em Tempo",
                 "content": "<strong>Envie mensagens automáticas perfeitamente cronometradas.</strong>Crie um cronograma de envio cuidadoso com condições baseadas em tempo que controlam o fuso horário de quando suas campanhas são entregues. Apoie seus clientes no momento certo.",
-                "img": "/assets/global/campaign/campaign-time-based-condition.svg"
+                "img": "/assets/brpt/campaign/campaign-time-based-condition.svg"
             },
             {
                 "name": "Condições Baseadas em API",
                 "content": "<strong>Obtenha informações instantaneamente para interações em tempo real.</strong>Solicite dados mesmo no meio de um fluxo, enviando dados para um sistema de terceiros ou solicitando dados necessários para seus passos de comunicação. Entregue informações em tempo real para seus clientes.",
-                "img": "/assets/global/campaign/campaign-api-based-conditions.svg"
+                "img": "/assets/brpt/campaign/campaign-api-based-conditions.svg"
             },
             {
                 "name": "Condição Baseada em País",
                 "content": "<strong>Apoie seus clientes em todo o mundo.</strong>Crie experiências personalizadas e memoráveis para seus clientes em vários países, idiomas, conteúdos, canais, fluxos e mais. Conecte, personalize e comunique-se facilmente.",
-                "img": "/assets/global/campaign/campaign-country-based-condition.svg"
+                "img": "/assets/brpt/campaign/campaign-country-based-condition.svg"
             }
         ]
     },

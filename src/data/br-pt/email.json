@@ -49,27 +49,27 @@
             {
                 "name": "Construtor de Modelos de Email",
                 "content": "<strong>Arraste e solte para criar o layout do seu email.</strong>Personalize seus emails transacionais usando nossa interface sem código, de arrastar e soltar. Visualize para ver como seu email aparecerá quando visualizado em diferentes dispositivos.",
-                "img": "/assets/global/email/email-template-builder.svg"
+                "img": "/assets/brpt/email/email-template-builder.svg"
             },
             {
                 "name": "Emails AMP",
                 "content": "<strong>Emails interativos ricos para aumentar o engajamento do usuário.</strong>Emails interativos ricos para aumentar o engajamento do usuário. Seus clientes podem interagir dinamicamente com sua mensagem diretamente no email para realizar tarefas e CTAs com menos etapas e sem redirecionamentos.",
-                "img": "/assets/global/email/email-amp-emails.svg"
+                "img": "/assets/brpt/email/email-amp-emails.svg"
             },
             {
                 "name": "Estatísticas",
                 "content": "<strong>Monitore e acompanhe todos os aspectos do ciclo de vida do seu email.</strong> Obtenha uma representação gráfica das taxas de entrega, taxas de abertura, taxas de cliques, taxas de rejeição e spam para iterar e garantir que você chegue à caixa de entrada do seu cliente.",
-                "img": "/assets/global/email/email-statistics.svg"
+                "img": "/assets/brpt/email/email-statistics.svg"
             },
             {
                 "name": "Suporte SMTP/RestAPI",
                 "content": " <strong>Integre com nossas APIs RESTful e SMTP em minutos.</strong>Integre com nossas APIs RESTful e SMTP em minutos. Tenha acesso à nossa documentação abrangente ou conecte-se com nossos heróis de suporte para integrar facilmente em seus aplicativos personalizados ou de terceiros para começar a enviar emails.",
-               "img": "/assets/global/email/email-smtp-restapi-support.svg"
+               "img": "/assets/brpt/email/email-smtp-restapi-support.svg"
             },
             {
                 "name": "Validação de Email",
                 "content": "<strong>Impacte positivamente o engajamento e a reputação da sua marca.</strong>Envie mais mensagens para contatos reais com nossa API em tempo real que detecta e suprime endereços de email inválidos com uma taxa de precisão de até 85% para fornecer uma lista limpa.",
-               "img": "/assets/global/email/email-validation.svg"
+               "img": "/assets/brpt/email/email-validation.svg"
             }
         ]
     },
