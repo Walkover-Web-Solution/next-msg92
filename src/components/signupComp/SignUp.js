@@ -1,12 +1,13 @@
 import React from 'react';
 import { MdCheck, MdDone } from 'react-icons/md';
-import StepOne from './StepOne/StepOne';
-import StepTwo from './StepTwo/StepTwo';
-import StepThree from './StepThree/StepThree';
+
 import { toast } from 'react-toastify';
 import { MdCheckCircle } from 'react-icons/md';
 import { getCookie, getQueryParamsDeatils, setCookie } from '@/utils/utilis';
 import Image from 'next/image';
+import StepOne from './StepOne/StepOne';
+import StepTwo from './StepTwo/StepTwo';
+import StepThree from './StepThree/StepThree';
 
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 
@@ -20,7 +21,7 @@ const MOBILE_REGEX = /^[+]?[0-9]{7,15}$/;
 const EMAIL_REGEX =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-class SignUp extends React.Component {
+export default class SignUp extends React.Component {
     constructor(props) {
         super(props);
         this.sendOtp = this.sendOtp.bind(this);
@@ -530,5 +531,3 @@ class SignUp extends React.Component {
         );
     }
 }
-
-export default SignUp;
