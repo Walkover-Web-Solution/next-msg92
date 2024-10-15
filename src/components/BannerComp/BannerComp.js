@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import snipped from '@/data/snipped.json';
 import { HTTPSnippet } from 'httpsnippet';
 import { MdCopyAll } from 'react-icons/md';
+import { InlineWidget } from 'react-calendly';
 
 export default function BannerComp({ pageInfo, data }) {
     const [isCopied, setIsCopied] = useState(false);
@@ -65,19 +66,33 @@ export default function BannerComp({ pageInfo, data }) {
                         <h2 className='suheading'>{data?.subheading}</h2>
                     </div>
                     <div className='flex flex-col md:flex-row gap-6'>
-                        <LinkButton
-                            href={'/'}
-                            content={data?.getstarted_btn}
-                            customClasses={'btn btn-primary btn-md '}
-                        />
+                        <a
+                            href={'https://web.msg91.com/signup?utm_source=msg91Website&source=msg91'}
+                            target='_blank'
+                            className='btn btn-primary btn-md'
+                        >
+                            {data?.getstarted_btn}
+                        </a>
                         {data?.schedule_meet && (
-                            <LinkButton
-                                href={'/'}
-                                content={data?.schedule_meet}
-                                customClasses={'btn btn-primary btn-outline btn-md '}
-                            />
+                            <button
+                                className='btn btn-md btn-primary btn-outline'
+                                onClick={() => document.getElementById('whatsapp_modal').showModal()}
+                            >
+                                {data?.schedule_meet}
+                            </button>
                         )}{' '}
                     </div>
+                    <dialog id='whatsapp_modal' className='modal'>
+                        <div className='modal-box'>
+                            <form method='dialog'>
+                                <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
+                            </form>
+                            <InlineWidget
+                                url='https://calendly.com/msg91-whatsapp/15-min-meeting?back=1'
+                                styles={{ height: '680px', width: 'auto' }}
+                            />
+                        </div>
+                    </dialog>
                     <TrustedByComp data={data?.trustedByComp} />
                     {data?.code && (
                         <div className='md:w-[800px] max-w-full mx-auto flex flex-col gap-0 rounded overflow-hidden border'>

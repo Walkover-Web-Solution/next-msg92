@@ -12,6 +12,6 @@ export default function GetCurrencySymbol(country) {
                 default:
                     return { symbol: '$', currency: currency };
             }
-        }
+        } else return { symbol: '$', currency: 'USD' };
     } else return { symbol: '$', currency: 'USD' };
 }
