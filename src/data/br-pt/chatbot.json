@@ -1,0 +1,118 @@
+{
+    "HeadComp": {
+        "title": "Whatsapp with Chatbot | MSG91",
+        "description": "Maximize business potential with WhatsApp: Unleash automation, supercharge sales, and harness the efficiency of a WhatsApp chatbot. Elevate your strategy for success today!"
+    },
+"ChatbotComp":{
+    "slug": "whatsapp/chatbot",
+    "product": {
+        "name": "WhatsApp Chatbot",
+        "icon": "/assets/icons/products/whatsapp.svg"
+    },
+
+    "tagline": "DOMINATE POPULAR PLATFORMS",
+    "heading": "Transform Automation and Sales on WhatsApp",
+    "subheading": "Enhance sales, streamline responses, and effortlessly reconnect with your contacts.",
+  "banner_img": "/assets/chatbot/banner.png",
+    "getstarted_btn": "Get Started",
+    "business_use":{
+        "heading":"Why businesses should use WhatsApp Chatbot",
+        "content":[
+            {
+               "heading":"Boost Engagement, Maximize Sales",
+               "description" :"WhatsApp chatbot platforms drive engagement by facilitating interactive conversations, guiding potential customers through the sales funnel to boost sales and improve user experience.",
+               "icon":"MdFlashOn"
+            },
+            {
+                "heading":"Establish a 24/7 Communication Channel",
+                "description" :"A WhatsApp Chatbot ensures 24/7 accessibility, addressing customer queries at any hour, reinforcing your commitment to their needs and maintaining an always-responsive chatbot flow.",
+                "icon":"MdOutlineWatch"
+             },
+             {
+                "heading":"Streamline Responses to FAQs ",
+                "description" :"WhatsApp Chatbots swiftly address frequently asked questions by leveraging the  <a href='/whatsapp'>WhatsApp Business API</a>to save businesses time and resources.",
+                "icon":"MDoutlineQuestion"
+             },
+             {
+                "heading":"Elevate Customer Support",
+                "description" :"WhatsApp Chatbots deliver instant responses, ensuring prompt acknowledgment and boosting brand loyalty.",
+                "icon":"MDoutlineSupport"
+             }
+        ]
+    },
+    "Across_industries":{
+        "heading":"WhatsApp Chatbot Applications Across Industries",
+        "content":[
+            {
+                "heading":"Healthcare",
+                "image":"/assets/chatbot/healthcare.png",
+                "description":"Automate appointment bookings and send consultation reminders hassle-free with MSG91s WhatsApp Chatbot for Business. Say goodbye to waiting on hold and callbacks. This tool streamlines scheduling for clinics and hospitals, minimizing no-shows and promoting punctuality.",
+                "card":[
+                    {
+                        "line":"Automated appointment scheduling"
+                    },  {
+                        "line":"Timely reminders to reduce no-show rates"
+                    },  {
+                        "line":"Enhanced punctuality in consultations"
+                    },  {
+                        "line":"Simplified process for patients and providers"
+                    }
+                ],
+                "more_btn":"Learn More"
+            },
+            {
+                "heading":"E-Commerce",
+                "image":"/assets/chatbot/e-commerce.png",
+
+                "description":"The e-commerce landscape has undergone a significant transformation due to digital advancements, and at the core of this evolution lies the WhatsApp Chatbot.",
+                "card":[
+                    {
+                        "line":"Product queries and suggestions"
+                    },  {
+                        "line":"Real-time order tracking via WhatsApp"
+                    },  {
+                        "line":"Handling of returns, exchange and feedback"
+                    },  {
+                        "line":"Engagement via updates and promotions"
+                    }
+                ],
+                "more_btn":"Learn More"
+            },
+            {
+                "heading":"Banking & Finance",
+                "image":"/assets/chatbot/banking.png",
+
+                "description":"WhatsApp Chatbot for Business revolutionizes banking with features like instant balance checks, quick customer support, tailored financial tips, robust security, and simplified onboarding, ensuring a smooth, secure, and superior customer experience.",
+                "card":[
+                    {
+                        "line":"Get  balance updates & transaction alerts"
+                    },  {
+                        "line":"Daily bills and deductions remainders"
+                    },  {
+                        "line":"Check account balance and other details"
+                    },  {
+                        "line":"Engagement via updates and promotions"
+                    }
+                ],
+                "more_btn":"Learn More"
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Comece a construir a experiência de engajamento do cliente ideal",
+        "buttons": {
+            "contactSales": {
+                "text": "Fale com as vendas",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "tarifária",
+                "link": "/pricing/"
+            },
+            "getStarted":{
+            "text":"Comece agora",
+            "link":"https://control.msg91.com/signup/"
+            }
+        }
+    }
+}}
