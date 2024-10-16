@@ -3,7 +3,7 @@
         "title": "Whatsapp with Chatbot | MSG91",
         "description": "Maximize business potential with WhatsApp: Unleash automation, supercharge sales, and harness the efficiency of a WhatsApp chatbot. Elevate your strategy for success today!"
     },
-"ChatbotComp":{
+"ChatBotComp":{
     "slug": "whatsapp/chatbot",
     "product": {
         "name": "WhatsApp Chatbot",
@@ -30,7 +30,7 @@
              },
              {
                 "heading":"Streamline Responses to FAQs ",
-                "description" :"WhatsApp Chatbots swiftly address frequently asked questions by leveraging the  <a href='/whatsapp'>WhatsApp Business API</a>to save businesses time and resources.",
+                "description" :"WhatsApp Chatbots swiftly address frequently asked questions by leveraging the  <a href='/whatsapp' style='color: blue;'>WhatsApp Business API</a> to save businesses time and resources.",
                 "icon":"MDoutlineQuestion"
              },
              {
@@ -46,6 +46,7 @@
             {
                 "heading":"Healthcare",
                 "image":"/assets/chatbot/healthcare.png",
+                "icon":"MdOutlineHealthAndSafety",
                 "description":"Automate appointment bookings and send consultation reminders hassle-free with MSG91s WhatsApp Chatbot for Business. Say goodbye to waiting on hold and callbacks. This tool streamlines scheduling for clinics and hospitals, minimizing no-shows and promoting punctuality.",
                 "card":[
                     {
@@ -63,7 +64,7 @@
             {
                 "heading":"E-Commerce",
                 "image":"/assets/chatbot/e-commerce.png",
-
+"icon":"MdOutlineStorefront",
                 "description":"The e-commerce landscape has undergone a significant transformation due to digital advancements, and at the core of this evolution lies the WhatsApp Chatbot.",
                 "card":[
                     {
@@ -81,7 +82,7 @@
             {
                 "heading":"Banking & Finance",
                 "image":"/assets/chatbot/banking.png",
-
+"icon":"MdAccountBalance",
                 "description":"WhatsApp Chatbot for Business revolutionizes banking with features like instant balance checks, quick customer support, tailored financial tips, robust security, and simplified onboarding, ensuring a smooth, secure, and superior customer experience.",
                 "card":[
                     {

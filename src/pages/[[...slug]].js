@@ -31,6 +31,7 @@ import ContactUsComp from '@/components/ContactUsComp/ContactUsComp';
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
 import SignUp from '@/components/signupComp/SignUp';
+import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 
 const Components = {
     BannerComp,
@@ -61,6 +62,7 @@ const Components = {
     TermsComp,
     ContactUsComp,
     SignUp,
+    ChatBotComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
