@@ -32,6 +32,7 @@ import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
 import SignUp from '@/components/signupComp/SignUp';
 import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
+import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
 
 const Components = {
     BannerComp,
@@ -63,6 +64,7 @@ const Components = {
     ContactUsComp,
     SignUp,
     ChatBotComp,
+    MagicLinkComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

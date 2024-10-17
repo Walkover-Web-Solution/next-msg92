@@ -15,7 +15,7 @@
         "subheading": "Authenticating users is now easier and faster. Just send a single link, and your users can verify themselves instantly.",
         "banner_img": "/assets/magiclink/magic-link-banner.svg",
         "getstarted_btn": "Get Started",
-        "magiclink?": {
+        "why_magiclink": {
             "heading": "What is Magic Link?",
             "content": "Magic Link is a simple, one-click authentication method that eliminates the need for passwords or OTPs. Instead, users receive a secure, unique link via their preferred channel—email, SMS, WhatsApp, RCS, or others. By clicking the link, they are instantly authenticated and granted access to the platform or service. It’s a fast, secure, and user-friendly alternative to traditional authentication methods, ensuring a frictionless experience while maintaining high security standards. Whether logging into an app, verifying transactions, or accessing a portal, Magic Link makes authentication effortless"
         },
@@ -30,12 +30,13 @@
                 {
                     "name": "Click",
                     "description": "The user clicks the link, and they are instantly authenticated.",
-                    "icon": "MdAdsClick"
+                    "icon": "MdTouchApp"
                 },
                 {
                     "name": "Access",
                     "description": "It is that simple—no need to remember passwords or enter codes.",
-                    "icon": ""
+                    "icon": "MdLogin"
+                    
                 }
             ]
         },
@@ -44,7 +45,7 @@
             "cards":[
                 {
                     "title":"Frictionless User Experience",
-                    "icon":"MdFlashOn",
+                    "icon":"MdBolt",
                     "description":"Magic Link allows users to authenticate instantly with just a click—no passwords or OTPs. It provides a smooth, hassle-free experience that enhances user satisfaction and reduces drop-offs."
                 },
                 {

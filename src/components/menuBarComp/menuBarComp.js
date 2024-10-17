@@ -120,7 +120,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                             );
                                         })}
                                     <LinkButton
-                                        href='/integrations'
+                                        href='/partners-and-integrations'
                                         customClasses='flex items-center gap-2 px-5 py-3 rounded hover:bg-secondary w-full'
                                         content={componentData?.integrations_list?.explore_btn}
                                     />

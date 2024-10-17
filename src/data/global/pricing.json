@@ -153,6 +153,128 @@
                     }
                 ]
             }
+        },
+        "voice": {
+            "heading": "Outgoing call charges/min",
+            "exportData": {
+                "content": "To download the detailed network and prefix wise pricing sheet. ",
+                "export": "Export",
+                "waiting": "Waiting..."
+            },
+            "addOns": {
+                "heading": "Add-on Services",
+                "content": [
+                    "Call Recording",
+                    "Call Monitoring",
+                    "Analytics",
+                    "Number Masking"
+                ],
+                "freeText": " All the Add-On Services are <span class='text-green-600'>FREE</span> of cost"
+            },
+            "rates": [
+                {
+                    "heading": "International rate",
+                    "content": "Calls are routed through premium A-Z routes and CLI can be any valid number. Calls without a CLI, with invalid CLI, with manipulated CLI, with CLI originated from unidentified, closed or unallocated prefix ranges, with CLI not in E.164 format, with CLI not matching ITU standards might be blocked or charged at the highest price."
+                },
+                {
+                    "heading": "Local Rate",
+                    "content": "Calls are routed through local operators’ in-country network. Only numbers on your MSG91 account can be used."
+                }
+            ],
+            "connectComp": {
+                "content": "Connect with our team for a personalized plan to meet your needs.",
+                "sales_btn": "Talk to Sales",
+                "know_more": "Know more about"
+            },
+            "faqComp": {
+                "heading": "Frequently Asked Questions",
+                "faqs": [
+                    {
+                        "question": "How to subscribe to your Hello Plan?",
+                        "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
+                    },
+                    {
+                        "question": "Are there any charges for AI Chat Bot?",
+                        "answer": "No, There are no charges for Chat Bot, we are only charged for basic and premium plans. You can use the chat bot in a free plan till 50 tickets in Hello, after that you have to upgrade your hello plan. Basically we are providing the chat Bot free for Trial purposes. You can use this Chat Bot in Whatsapp, Instagram, Chat Widget on your Website, Facebook and so on. So test the Chat Bot Now."
+                    },
+                    {
+                        "question": "Are there any extra charges for Instagram/Facebook Inbox?",
+                        "answer": "But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each. In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox."
+                    },
+                    {
+                        "question": "How to subscribe to your Hello Plan?",
+                        "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
+                    },
+                    {
+                        "question": "Can I customize the Hello Plan?",
+                        "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
+                    }
+                ]
+            }
+        },
+        "sms": {
+            "connectComp": {
+                "content": "Connect with our team for a personalized pricing.",
+                "sales_btn": "Talk to Sales",
+                "know_more": "Know more about"
+            },
+            "faqComp": {
+                "heading": "Frequently Asked Questions",
+                "faqs": [
+                    {
+                        "question": "How to subscribe to your Hello Plan?",
+                        "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
+                    },
+                    {
+                        "question": "Are there any charges for AI Chat Bot?",
+                        "answer": "No, There are no charges for Chat Bot, we are only charged for basic and premium plans. You can use the chat bot in a free plan till 50 tickets in Hello, after that you have to upgrade your hello plan. Basically we are providing the chat Bot free for Trial purposes. You can use this Chat Bot in Whatsapp, Instagram, Chat Widget on your Website, Facebook and so on. So test the Chat Bot Now."
+                    },
+                    {
+                        "question": "Are there any extra charges for Instagram/Facebook Inbox?",
+                        "answer": "But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each. In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox."
+                    },
+                    {
+                        "question": "How to subscribe to your Hello Plan?",
+                        "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
+                    },
+                    {
+                        "question": "Can I customize the Hello Plan?",
+                        "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
+                    }
+                ]
+            }
+        },
+        "otp": {
+            "connectComp": {
+                "content": "Connect with our team for a personalized plan to meet your needs.",
+                "sales_btn": "Talk to Sales",
+                "know_more": "Know more about"
+            },
+            "faqComp": {
+                "heading": "Frequently Asked Questions",
+                "faqs": [
+                    {
+                        "question": "How to subscribe to your Hello Plan?",
+                        "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
+                    },
+                    {
+                        "question": "Are there any charges for AI Chat Bot?",
+                        "answer": "No, There are no charges for Chat Bot, we are only charged for basic and premium plans. You can use the chat bot in a free plan till 50 tickets in Hello, after that you have to upgrade your hello plan. Basically we are providing the chat Bot free for Trial purposes. You can use this Chat Bot in Whatsapp, Instagram, Chat Widget on your Website, Facebook and so on. So test the Chat Bot Now."
+                    },
+                    {
+                        "question": "Are there any extra charges for Instagram/Facebook Inbox?",
+                        "answer": "But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each. In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox."
+                    },
+                    {
+                        "question": "How to subscribe to your Hello Plan?",
+                        "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
+                    },
+                    {
+                        "question": "Can I customize the Hello Plan?",
+                        "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
+                    }
+                ]
+            }
         }
     }
 }
