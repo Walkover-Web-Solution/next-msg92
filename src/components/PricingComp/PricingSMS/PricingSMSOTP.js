@@ -11,7 +11,6 @@ import GetCountryDetails from '@/utils/getCurrentCountry';
 export default function PricingSMSOTP({ data, type, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
     const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
-
     const [loading, setLoading] = useState(true);
     const [pricingData, setPricingData] = useState(null);
     const [origin, setOrigin] = useState(currentCountry?.name);
@@ -93,7 +92,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                                 handleOnSelectOrigin(selected);
                             }}
                             options={countries}
-                            defaultSelected={[countries?.find((item) => item.shortname.toLowerCase() === country)]}
+                            defaultSelected={[countries?.find((item) => item.shortname === currentCountry?.shortname)]}
                             inputProps={{
                                 autoComplete: 'off',
                             }}
@@ -110,7 +109,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                                 handleOnSelectDestination(selected);
                             }}
                             options={countries}
-                            defaultSelected={[countries?.find((item) => item.shortname.toLowerCase() === country)]}
+                            defaultSelected={[countries?.find((item) => item.shortname === currentCountry?.shortname)]}
                             inputProps={{
                                 autoComplete: 'off',
                             }}
