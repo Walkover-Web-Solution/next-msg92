@@ -3,6 +3,7 @@ import { MdArrowDropDown, MdOutlineCall, MdOutlineLanguage, MdTranslate } from '
 import availableCountries from '@/data/availableCountries.json';
 import Image from 'next/image';
 import getRelativeURL from '@/utils/getRelativeURL';
+import getURL from '@/utils/getURL';
 
 export default function NotificationBarComp({ componentData, pageInfo }) {
     const currentCountry = availableCountries.find((cont) => cont.shortname.toLowerCase() === pageInfo?.country);
@@ -55,7 +56,10 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                         <div tabIndex={0} className='dropdown-content bg-neutral z-[9999] w-60 rounded shadow'>
                             <ul>
                                 <li className='cursor-pointer'>
-                                    <a href={`/`} className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '>
+                                    <a
+                                        href={getURL('country', '')}
+                                        className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
+                                    >
                                         <Image src={`/assets/country-flags/global.svg`} width={18} height={18} />
                                         Global
                                     </a>
@@ -66,7 +70,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                         return (
                                             <li key={index} className='cursor-pointer'>
                                                 <a
-                                                    href={getRelativeURL(cont?.shortname.toLowerCase(), 'country')}
+                                                    href={getURL('country', cont?.shortname.toLowerCase())}
                                                     className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
                                                 >
                                                     {/* /* ${cont?.shortname} == 'in,us,gb etc. */}
