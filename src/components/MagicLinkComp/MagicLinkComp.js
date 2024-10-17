@@ -1,26 +1,18 @@
-import React, { useState } from 'react';
 import {
-    MdAccountBalance,
-    MdContactSupport,
-    MdExpandMore,
+    MdAdsClick,
+    MdApps,
+    MdBolt,
     MdFlashOn,
+    MdGppGood,
+    MdLogin,
+    MdMoving,
     MdOutlineHealthAndSafety,
-    MdOutlineQuestionMark,
+    MdOutlineSend,
     MdOutlineStorefront,
-    MdOutlineSupport,
-    MdOutlineSupportAgent,
-    MdOutlineWatch,
-    MdOutlineWatchLater,
-    MdExpandLess,
+    MdTouchApp,
 } from 'react-icons/md';
 
-export default function ChatBotComp({ data }) {
-    const [expandedIndex, setExpandedIndex] = useState(null);
-
-    const toggleExpand = (index) => {
-        setExpandedIndex(expandedIndex === index ? null : index);
-    };
-
+export default function MagicLinkComp({ data }) {
     return (
         <>
             <div className='flex lg:flex-row flex-col container py-20 justify-between'>
@@ -29,7 +21,7 @@ export default function ChatBotComp({ data }) {
                         <img src={data?.product?.icon} alt='Product Icon' />
                         <p className='text-xl font-bold '>{data?.product?.name}</p>
                     </div>
-                    <p className='text-lg'>{data?.tagline}</p>
+                    <p className='text-lg'>{data?.tagline?.toUpperCase()}</p>
                     <h1 className='text-4xl font-bold '>{data?.heading}</h1>
                     <h2 className='text-xl '>{data?.subheading}</h2>
                     <a
@@ -44,35 +36,60 @@ export default function ChatBotComp({ data }) {
                 </div>
             </div>
             <div className='bg-neutral'>
+                <div className='flex flex-col container gap-6 py-20'>
+                    <h2 className='text-3xl font-semibold'>{data?.why_magiclink?.heading}</h2>
+                    <p className='text-lg '>{data?.why_magiclink?.content}</p>
+                </div>
+            </div>
+            <div className='flex flex-col container gap-6 py-20'>
+                <h2 className='text-3xl font-semibold'>{data?.work?.heading}</h2>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+                    {data?.work?.content.map((content, index) => (
+                        <div key={index} className='flex flex-col gap-6 py-12 bg-neutral p-6'>
+                            <div className='text-3xl text-blue-300 py-6 border border-gray-300 rounded-lg bg-white flex items-center justify-center w-1/6 md:w-1/6'>
+                                {content?.icon === 'MdOutlineSend' && <MdOutlineSend />}
+                                {content?.icon === 'MdTouchApp' && <MdTouchApp />}
+                                {content?.icon === 'MdLogin' && <MdLogin />}
+                            </div>
+                            <p className='text-2xl font-semibold'>{content?.name}</p>
+                            <p className='text-sm' dangerouslySetInnerHTML={{ __html: content?.description }}></p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div className='bg-neutral'>
                 <div className='container flex flex-col py-20 gap-6'>
                     <div className='row'>
-                        <h2 className='text-3xl font-bold'>{data?.business_use?.heading}</h2>
+                        <h2 className='text-3xl font-bold'>{data?.choose_link?.heading}</h2>
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                        {data?.business_use?.content.map((content, index) => (
+                        {data?.choose_link?.cards.map((content, index) => (
                             <div key={index} className='flex flex-col gap-6 py-12'>
-                                <div className='text-3xl text-green-700 py-6 border border-gray-300 rounded-lg bg-white flex items-center justify-center w-1/6 md:w-1/6'>
-                                    {content?.icon === 'MdFlashOn' && <MdFlashOn />}
-                                    {content?.icon === 'MdOutlineWatch' && <MdOutlineWatchLater />}
-                                    {content?.icon === 'MDoutlineQuestion' && <MdContactSupport />}
-                                    {content?.icon === 'MDoutlineSupport' && <MdOutlineSupportAgent />}
+                                <div className='text-3xl text-blue-300 py-6 border border-gray-300 rounded-lg bg-white flex items-center justify-center w-1/6 md:w-1/6'>
+                                    {content?.icon === 'MdBolt' && <MdBolt />}
+                                    {content?.icon === 'MdApps' && <MdApps />}
+                                    {content?.icon === 'MdGppGood' && <MdGppGood />}
+                                    {content?.icon === 'MdMoving' && <MdMoving />}
                                 </div>
-                                <p className='text-2xl font-semibold'>{content?.heading}</p>
+                                <p className='text-2xl font-semibold'>{content?.title}</p>
                                 <p className='text-sm' dangerouslySetInnerHTML={{ __html: content?.description }}></p>
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
+
             <div className='container flex flex-col py-20 gap-6'>
                 <div className='row'>
-                    <h2 className='text-2xl md:text-3xl font-bold'>{data?.across_industries?.heading}</h2>
+                    <h2 className='text-2xl md:text-3xl font-bold'>{data?.Across_industries?.heading}</h2>
                 </div>
                 <div className='flex flex-col gap-6'>
-                    {data?.across_industries?.content.map((industry, index) => (
+                    {data?.accros_industies?.content.map((industry, index) => (
                         <div
                             key={index}
-                            className={`flex flex-col gap-6 py-8 md:py-12 ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}
+                            className={`flex flex-col gap-6 py-8 md:py-12 ${
+                                index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
+                            }`}
                         >
                             <div className='flex items-center justify-center w-full md:w-1/2'>
                                 <img
@@ -86,17 +103,16 @@ export default function ChatBotComp({ data }) {
                                 <div className='text-4xl md:text-6xl'>
                                     {industry?.icon === 'MdOutlineHealthAndSafety' && <MdOutlineHealthAndSafety />}
                                     {industry?.icon === 'MdOutlineStorefront' && <MdOutlineStorefront />}
-                                    {industry?.icon === 'MdAccountBalance' && <MdAccountBalance />}
                                 </div>
 
-                                <h2 className='text-2xl md:text-3xl font-semibold'>{industry?.heading}</h2>
+                                <h2 className='text-2xl md:text-3xl font-semibold'>{industry?.title}</h2>
                                 <p
                                     className='text-md md:text-lg'
                                     dangerouslySetInnerHTML={{ __html: industry?.description }}
                                 ></p>
 
                                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6'>
-                                    {industry?.card.map((card, cardIndex) => (
+                                    {industry?.cards.map((card, cardIndex) => (
                                         <div
                                             key={cardIndex}
                                             className='text-md md:text-lg font-normal bg-white border border-gray-300 rounded p-4 overflow-hidden'
@@ -104,27 +120,6 @@ export default function ChatBotComp({ data }) {
                                             {card?.line}
                                         </div>
                                     ))}
-                                </div>
-
-                                {expandedIndex === index && (
-                                    <div className='gap-6 flex flex-col'>
-                                        {industry?.extra.map((extra, extraIndex) => (
-                                            <div key={extraIndex} className='flex flex-col gap-4'>
-                                                <h3 className='text-md md:text-lg'>{extra?.title}</h3>
-                                                <p className='text-sm md:text-md'>{extra?.description}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
-
-                                <div className='flex items-center'>
-                                    <button
-                                        className='text-sm md:text-md font-semibold text-blue-600'
-                                        onClick={() => toggleExpand(index)}
-                                    >
-                                        {expandedIndex === index ? 'Show Less' : 'Learn More'}
-                                    </button>
-                                    {expandedIndex === index ? <MdExpandLess /> : <MdExpandMore />}
                                 </div>
                             </div>
                         </div>
