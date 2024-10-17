@@ -76,7 +76,6 @@ export default function Page({ data, commonData, pageInfo }) {
             />
 
             <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
-
             {data &&
                 Object.keys(data).map((key) => {
                     const pageData = data[key];
