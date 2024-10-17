@@ -21,7 +21,7 @@ export default function PricingSMSOTP({ data, type, country }) {
     //slider states
     const [sliderValue, setSliderValue] = useState(2);
 
-    const pricingEnv = type === 'sms' ? 4 : 19;
+    const pricingEnv = type === 'sms' ? 4 : 4;
     useEffect(() => {
         if (pricingData) {
             setNoOfSmsArray(pricingData.sort((a, b) => a[pricingEnv]?.totalNoOfSms - b[pricingEnv]?.totalNoOfSms));
@@ -76,6 +76,7 @@ export default function PricingSMSOTP({ data, type, country }) {
     const handleOnSelectDestination = (item) => {
         setDestination(item[0]?.name);
     };
+    console.log(noOfSmsArray[0]?.[pricingEnv]);
 
     return (
         <>
