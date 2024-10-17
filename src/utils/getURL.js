@@ -6,7 +6,12 @@ export default function getURL(type, link) {
     const pathArray = rawPath.split('?')[0].split('/');
     console.log('🚀 ~ getURL ~ pathArray:', pathArray);
 
-    const notGobal = availableCountries.some((country) => country.shortname.toLowerCase() === pathArray[1]);
+    const country = availableCountries.find((country) => {
+        return country.shortname.toLowerCase() === pathArray[1];
+    });
+    console.log('🚀 ~ getURL ~ country:', country);
+    const notGobal = Boolean(country);
+    console.log('🚀 ~ getURL ~ notGobal:', notGobal);
 
     let url = '/';
     switch (type) {
@@ -20,6 +25,15 @@ export default function getURL(type, link) {
             break;
 
         case 'product':
+            if (notGobal) {
+                pathArray[1] = link;
+            } else {
+                pathArray.splice(1, 0, link);
+            }
+            url = pathArray.join('/');
+            break;
+
+        case 'pricing':
             if (notGobal) {
                 pathArray[1] = link;
             } else {
