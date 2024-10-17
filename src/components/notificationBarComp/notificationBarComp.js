@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { MdArrowDropDown, MdOutlineCall, MdOutlineLanguage, MdTranslate } from 'react-icons/md';
 import availableCountries from '@/data/availableCountries.json';
 import Image from 'next/image';
-import getRelativeURL from '@/utils/getRelativeURL';
 import getURL from '@/utils/getURL';
 
 export default function NotificationBarComp({ componentData, pageInfo }) {
@@ -12,33 +11,37 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
         return (
             <div className='py-1 border border-b'>
                 <div className='container flex gap-6 justify-end '>
-                    <div className='dropdown'>
-                        {/* /* Render the currentCountry in notification bar */}
-                        <div tabIndex={0} role='button' className='flex gap-1 items-center '>
-                            <MdTranslate fontSize={16} />
-                            English
-                            <MdArrowDropDown fontSize={16} />
+                    {['br-pt', 'br'].includes(pageInfo?.country) && (
+                        <div className='dropdown'>
+                            <div tabIndex={0} role='button' className='flex gap-1 items-center '>
+                                <MdTranslate fontSize={16} />
+                                {currentCountry?.shortname === 'BR-PT' ? 'Portuguese' : 'English'}
+                                <MdArrowDropDown fontSize={16} />
+                            </div>
+                            <div tabIndex={0} className='dropdown-content bg-neutral z-[9999] w-32 rounded shadow'>
+                                <ul>
+                                    <li className='cursor-pointer'>
+                                        <a
+                                            href={getURL('country', '/br')}
+                                            className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
+                                        >
+                                            English
+                                        </a>
+                                    </li>
+                                    <li className='cursor-pointer'>
+                                        <a
+                                            href={getURL('country', '/br-pt')}
+                                            className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
+                                        >
+                                            Portuguese
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div tabIndex={0} className='dropdown-content bg-neutral z-[9999] w-32 rounded shadow'>
-                            <ul>
-                                <li className='cursor-pointer'>
-                                    <a href={`/br`} className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '>
-                                        English
-                                    </a>
-                                </li>
-                                <li className='cursor-pointer'>
-                                    <a
-                                        href={`/br-pt`}
-                                        className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
-                                    >
-                                        Portuguese
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    )}
+
                     <div className='dropdown'>
-                        {/* /* Render the currentCountry in notification bar */}
                         <div tabIndex={0} role='button' className='flex gap-1 items-center '>
                             {currentCountry?.shortname ? (
                                 <Image
@@ -66,7 +69,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                 </li>
                                 {/* /* Render the country list */}
                                 {availableCountries.map((cont, index) => {
-                                    if (cont?.shortname?.toLowerCase() !== 'br-pt')
+                                    if (cont?.shortname?.toLowerCase() !== 'br')
                                         return (
                                             <li key={index} className='cursor-pointer'>
                                                 <a
