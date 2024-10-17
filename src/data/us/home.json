@@ -226,7 +226,7 @@
             },
             "pricing": {
                 "text": "Pricing",
-                "link": "/pricing/"
+                "link": "pricing"
             },
             "getStarted": {
                 "text": "Get started",

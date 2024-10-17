@@ -1,3 +1,5 @@
+import getRelativeURL from '@/utils/getRelativeURL';
+
 export default function PreFooterComp({ data }) {
     return (
         <>
@@ -12,7 +14,7 @@ export default function PreFooterComp({ data }) {
                                 {data?.buttons?.contactSales?.text}
                             </button>
                         </a>
-                        <a href={data?.buttons?.pricing?.link}>
+                        <a href={getRelativeURL(data?.buttons?.pricing?.link, 'pricing')}>
                             <button className='btn btn-primary btn-outline btn-md '>
                                 {data?.buttons?.pricing?.text}
                             </button>
