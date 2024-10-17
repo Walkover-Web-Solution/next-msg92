@@ -29,7 +29,7 @@ const CaseStudyCard = ({ caseStudies }) => {
       </div>
       <div className="container d-flex flex-wrap gap-5 py-5">
         {caseStudyData.map((caseStudy, index) => (
-          <div key={`cs-${index}`} className="casestudycard  mx-auto  p-3 d-flex gap-3 flex-column">
+          <div key={`cs-${index}`} className="casestudycard    p-3 d-flex gap-3 flex-column">
             <div className="casestudycard-img w-100 bg-white">
               <img
                 className=""
