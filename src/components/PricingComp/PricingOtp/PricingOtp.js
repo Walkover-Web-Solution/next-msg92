@@ -1,3 +1,4 @@
+import getURL from '@/utils/getURL';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 
 export default function PricingOtp({ data }) {
@@ -11,7 +12,7 @@ export default function PricingOtp({ data }) {
                         {data?.connectComp?.content2 || `Channel wise pricing will be applicable for sending message.`}
                     </p>
                 </div>{' '}
-                <a href='https://web.msg91.com/signup?service=otp'>
+                <a href={getURL('signup', 'otp')}>
                     <button className='btn btn-primary w-fit btn-md'>{data?.get_started || 'Get Started'}</button>
                 </a>
             </div>

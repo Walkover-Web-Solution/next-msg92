@@ -5,6 +5,7 @@ import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 import axios from 'axios';
 import { Typeahead } from 'react-bootstrap-typeahead';
+import getURL from '@/utils/getURL';
 
 export default function PricingVoice({ data, country }) {
     const [countryData, setCountryData] = useState([]);
@@ -257,7 +258,7 @@ export default function PricingVoice({ data, country }) {
 
                     <div className='text-lg' dangerouslySetInnerHTML={{ __html: data?.addOns?.freeText }}></div>
                 </div>
-                <a href='https://web.msg91.com/signup?service=voice'>
+                <a href={getURL('signup', 'voice')}>
                     <button className='btn btn-primary btn-md'>Get started</button>
                 </a>
 

@@ -77,6 +77,10 @@ export default function getURL(type, link) {
             url = pathArray.join('/');
             break;
 
+        case 'signup':
+            url = '/signup' + '?utm_source=' + link + '&source=msg91';
+            break;
+
         default:
             url = pathArray.join('/');
             break;

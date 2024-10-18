@@ -9,8 +9,10 @@ import snipped from '@/data/snipped.json';
 import { HTTPSnippet } from 'httpsnippet';
 import { MdCopyAll } from 'react-icons/md';
 import { InlineWidget } from 'react-calendly';
+import getURL from '@/utils/getURL';
 
 export default function BannerComp({ pageInfo, data }) {
+    console.log('🚀 ~ BannerComp ~ pageInfo:', pageInfo);
     const [isCopied, setIsCopied] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState('node');
 
@@ -66,11 +68,7 @@ export default function BannerComp({ pageInfo, data }) {
                         <h2 className='suheading'>{data?.subheading}</h2>
                     </div>
                     <div className='flex flex-col md:flex-row gap-6'>
-                        <a
-                            href={'https://web.msg91.com/signup?utm_source=msg91Website&source=msg91'}
-                            target='_blank'
-                            className='btn btn-primary btn-md'
-                        >
+                        <a href={getURL('signup', pageInfo?.page)} target='_blank' className='btn btn-primary btn-md'>
                             {data?.getstarted_btn}
                         </a>
                         {data?.schedule_meet && (
