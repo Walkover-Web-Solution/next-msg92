@@ -92,27 +92,27 @@
                 {
                     "slug": "tally",
                     "name": "Tally",
-                    "link": "https://msg91.com/partners-and-integrations/tally"
+                    "link": "partners-and-integrations/tally"
                 },
                 {
                     "slug": "zapier",
                     "name": "Zapier",
-                    "link": "https://msg91.com/partners-and-integrations/zapier"
+                    "link": "partners-and-integrations/zapier"
                 },
                 {
                     "slug": "freshworks",
                     "name": "Freshworks",
-                    "link": "https://msg91.com/partners-and-integrations/freshworks"
+                    "link": "partners-and-integrations/freshworks"
                 },
                 {
                     "slug": "firebase",
                     "name": "Firebase",
-                    "link": "https://msg91.com/partners-and-integrations/firebase"
+                    "link": "partners-and-integrations/firebase"
                 },
                 {
                     "slug": "hubspot",
                     "name": "HubSpot",
-                    "link": "https://msg91.com/partners-and-integrations/hubspot"
+                    "link": "partners-and-integrations/hubspot"
                 },
                 {
                     "slug": "googlesheets",

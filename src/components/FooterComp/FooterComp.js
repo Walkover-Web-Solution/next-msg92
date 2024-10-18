@@ -1,4 +1,4 @@
-import getRelativeURL from '@/utils/getRelativeURL';
+import getURL from '@/utils/getURL';
 import Link from 'next/link';
 
 export default function FooterComp({ componentData, pageInfo }) {
@@ -18,7 +18,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                             return (
                                                 <li key={index} className='text-link-white'>
                                                     <Link
-                                                        href={getRelativeURL(link?.link, 'product')}
+                                                        href={getURL('product', link?.link)}
                                                         className='text-gray-200 '
                                                     >
                                                         {link?.name}
@@ -37,7 +37,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                             return (
                                                 <li key={index} className='text-link-white'>
                                                     <Link
-                                                        href={getRelativeURL(link?.link, 'product')}
+                                                        href={getURL('product', link?.link)}
                                                         className='text-gray-200'
                                                     >
                                                         {link?.name}
@@ -58,7 +58,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                             return (
                                                 <li key={index} className='text-link-white'>
                                                     <Link
-                                                        href={getRelativeURL(link?.link, 'product')}
+                                                        href={getURL('product', link?.link)}
                                                         className='text-gray-200'
                                                     >
                                                         {link?.name}
@@ -77,7 +77,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                             return (
                                                 <li key={index} className='text-link-white'>
                                                     <Link
-                                                        href={getRelativeURL(link?.link, 'product')}
+                                                        href={getURL('product', link?.link)}
                                                         className='text-gray-200'
                                                     >
                                                         {link?.name}
@@ -177,7 +177,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                     return (
                                         <li key={index} className='flex items-center gap-4'>
                                             <Link
-                                                href={getRelativeURL(link?.link, 'product')}
+                                                href={getURL('terms', link?.link)}
                                                 className='text-gray-200 text-link-white  '
                                             >
                                                 {link?.name}

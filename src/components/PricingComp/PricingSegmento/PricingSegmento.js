@@ -1,3 +1,4 @@
+import getURL from '@/utils/getURL';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 
 export default function PricingSegmento({ data }) {
@@ -8,7 +9,7 @@ export default function PricingSegmento({ data }) {
                 <div className='flex flex-col text-xl'>
                     <p>{data?.connectComp?.content || `You can store user information for free using Segmento.`}</p>
                 </div>
-                <a href='https://web.msg91.com/signup?service=segmento'>
+                <a href={getURL('signup', 'segmento')}>
                     <button className='btn btn-primary w-fit btn-md'>{data?.get_started || 'Get Started'}</button>
                 </a>
             </div>

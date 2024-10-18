@@ -1,3 +1,4 @@
+import getURL from '@/utils/getURL';
 import React, { useState } from 'react';
 import {
     MdAccountBalance,
@@ -32,10 +33,7 @@ export default function ChatBotComp({ data }) {
                     <p className='text-lg'>{data?.tagline}</p>
                     <h1 className='text-4xl font-bold '>{data?.heading}</h1>
                     <h2 className='text-xl '>{data?.subheading}</h2>
-                    <a
-                        href='https://web.msg91.com/signup?utm_campaign=tigerplugin&utm_source=tally&utm_medium=website'
-                        target='_blank'
-                    >
+                    <a href={getURL('signup', 'whatsapp/chatbot')} target='_blank'>
                         <button className='btn btn-primary'>{data?.getstarted_btn}</button>
                     </a>
                 </div>
@@ -72,7 +70,9 @@ export default function ChatBotComp({ data }) {
                     {data?.across_industries?.content.map((industry, index) => (
                         <div
                             key={index}
-                            className={`flex flex-col gap-6 py-8 md:py-12 ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}
+                            className={`flex flex-col gap-6 py-8 md:py-12 ${
+                                index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
+                            }`}
                         >
                             <div className='flex items-center justify-center w-full md:w-1/2'>
                                 <img

@@ -7,6 +7,7 @@ import countries from '@/data/countries.json';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 import GetCountryDetails from '@/utils/getCurrentCountry';
+import getURL from '@/utils/getURL';
 
 export default function PricingSMSOTP({ data, type, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
@@ -187,7 +188,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                                 </span>
                                 <span>per SMS</span>
                             </p>{' '}
-                            <a href='https://web.msg91.com/signup?service=sms'>
+                            <a href={getURL('signup', 'sms')}>
                                 <button className='btn btn-primary btn-md'>Get Started</button>
                             </a>
                         </>
@@ -201,7 +202,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                                     : 'N/A'}{' '}
                                 per {type?.toUpperCase()}
                             </div>
-                            <a href='https://web.msg91.com/signup?service=otp'>
+                            <a href={getURL('signup', 'otp')}>
                                 <button className='btn btn-primary btn-md'>Get Started</button>
                             </a>
                         </div>

@@ -10,8 +10,29 @@
         "certificates",
         "guide"
     ],
-    "products":[
-        
+    "products": [
+        "hello",
+        "campaign",
+        "segmento",
+        "otp",
+        "sms",
+        "rcs",
+        "email",
+        "whatsapp",
+        "voice",
+        "numbers",
+        "shorturl",
+        "knowledgebase"
+    ],
+    "countries": [
+        "in",
+        "br",
+        "br-pt",
+        "ae",
+        "ph",
+        "sg",
+        "es",
+        "gb",
+        "us"
     ]
-
 }

@@ -1,4 +1,4 @@
-import getRelativeURL from '@/utils/getRelativeURL';
+import getURL from '@/utils/getURL';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -34,7 +34,7 @@ export default function PricingNav({ products, page }) {
 export function ProductButton({ product, page }) {
     return (
         <Link
-            href={getRelativeURL(product?.slug)}
+            href={getURL('pricing', product?.slug)}
             className={`flex flex-col px-3 py-2 rounded hover:bg-secondary ${page === product?.slug && 'bg-secondary'}`}
         >
             <div className='flex items-center gap-1'>

@@ -1,6 +1,6 @@
-import getRelativeURL from '@/utils/getRelativeURL';
+import getURL from '@/utils/getURL';
 
-export default function PreFooterComp({ data }) {
+export default function PreFooterComp({ data, pageInfo }) {
     return (
         <>
             <div className='bg-neutral py-10'>
@@ -14,12 +14,15 @@ export default function PreFooterComp({ data }) {
                                 {data?.buttons?.contactSales?.text}
                             </button>
                         </a>
-                        <a href={getRelativeURL(data?.buttons?.pricing?.link, 'pricing')}>
+                        <a href={getURL('pricing', pageInfo?.page !== 'home' ? pageInfo?.page : 'hello')}>
                             <button className='btn btn-primary btn-outline btn-md '>
                                 {data?.buttons?.pricing?.text}
                             </button>
                         </a>
-                        <a href={data?.buttons?.getStarted?.link}>
+                        <a
+                            target='_blank'
+                            href={getURL('signup', pageInfo?.page !== 'home' ? pageInfo?.page : 'hello')}
+                        >
                             <button className='btn btn-primary btn-md w-full'>{data?.buttons?.getStarted?.text}</button>
                         </a>
                     </div>

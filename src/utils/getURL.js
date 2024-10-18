@@ -1,49 +1,87 @@
 import { useRouter } from 'next/router';
-import availableCountries from '@/data/availableCountries.json';
+import slugs from '@/data/specialPages.json';
+
 export default function getURL(type, link) {
     const router = useRouter();
     const rawPath = router.asPath;
-    const pathArray = rawPath.split('?')[0].split('/');
-    console.log('🚀 ~ getURL ~ pathArray:', pathArray);
+    let pathArray = rawPath.split('?')[0].split('/');
+    const pathLength = pathArray?.length || 0;
+    const currentCountry = slugs?.countries?.includes(pathArray[1]) ? pathArray[1] : null;
+    const isGobal = currentCountry === null;
 
-    const country = availableCountries.find((country) => {
-        return country.shortname.toLowerCase() === pathArray[1];
-    });
-    console.log('🚀 ~ getURL ~ country:', country);
-    const notGobal = Boolean(country);
-    console.log('🚀 ~ getURL ~ notGobal:', notGobal);
+    let page = pathArray[2];
+    switch (pathLength) {
+        case 2: {
+            if (isGobal) {
+                page = slugs?.products?.includes(pathArray[1]) ? pathArray[1] : null;
+            } else {
+                page = slugs?.products?.includes(pathArray[2]) ? pathArray[2] : null;
+            }
+            break;
+        }
+        case 3: {
+            if (pathArray.includes('pricing')) {
+                pathArray.splice(pathArray.indexOf('pricing'), 1);
+            }
+            if (isGobal) {
+                page = slugs?.products?.includes(pathArray[1]) ? pathArray[1] : null;
+            } else {
+                page = slugs?.products?.includes(pathArray[2]) ? pathArray[2] : null;
+            }
+            break;
+        }
+        case 4: {
+            if (pathArray.includes('pricing')) {
+                pathArray.splice(pathArray.indexOf('pricing'), 1);
+            }
+            if (isGobal) {
+                page = slugs?.products?.includes(pathArray[1]) ? pathArray[1] : null;
+            } else {
+                page = slugs?.products?.includes(pathArray[2]) ? pathArray[2] : null;
+            }
+            break;
+        }
+    }
 
     let url = '/';
     switch (type) {
         case 'country':
-            if (notGobal) {
-                pathArray[1] = link;
-            } else {
+            if (isGobal) {
                 pathArray.splice(1, 0, link);
+            } else {
+                pathArray[1] = link;
             }
             url = pathArray.join('/');
             break;
 
         case 'product':
-            if (notGobal) {
-                pathArray[1] = link;
+            if (isGobal) {
+                pathArray = ['', link];
             } else {
-                pathArray.splice(1, 0, link);
+                pathArray = ['', currentCountry, link];
             }
             url = pathArray.join('/');
             break;
 
         case 'pricing':
-            if (notGobal) {
-                pathArray[1] = link;
+            if (isGobal) {
+                pathArray = ['', 'pricing', link];
             } else {
-                pathArray.splice(1, 0, link);
+                pathArray = ['', currentCountry, 'pricing', link];
             }
             url = pathArray.join('/');
             break;
 
+        case 'terms':
+            pathArray = ['', link];
+            url = pathArray.join('/');
+            break;
+
+        case 'signup':
+            url = '/signup' + '?utm_source=' + link + '&source=msg91';
+            break;
+
         default:
-            pathArray[pathArray.length - 1] = link;
             url = pathArray.join('/');
             break;
     }

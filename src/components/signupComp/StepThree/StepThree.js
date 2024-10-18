@@ -671,11 +671,7 @@ class StepThree extends React.Component {
                             />
                             <p htmlFor='termsCheckBox'>
                                 I agree to the{' '}
-                                <a
-                                    href='https://msg91.com/terms-of-use'
-                                    target='_blank'
-                                    className='text-link active-link'
-                                >
+                                <a href='/terms-of-use' target='_blank' className='text-link active-link'>
                                     Terms of Use
                                 </a>
                             </p>

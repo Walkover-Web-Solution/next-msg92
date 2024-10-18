@@ -5,6 +5,7 @@ import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 import Link from 'next/link';
+import getURL from '@/utils/getURL';
 
 export default function PricingHello({ data, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
@@ -81,10 +82,7 @@ export default function PricingHello({ data, country }) {
                                                         {amount?.plan_amount} {tabtype}
                                                     </p>
                                                     <p>{amount?.currency?.short_name === 'INR' ? '+18% GST' : '-'}</p>
-                                                    <Link
-                                                        href={'https://msg91.com/signup?service=hello'}
-                                                        target='_blank'
-                                                    >
+                                                    <Link href={getURL('signup', 'hello')} target='_blank'>
                                                         <button
                                                             className={`btn btn-primary  btn-md ${
                                                                 plan?.name === 'Basic' ? '' : 'btn-outline'

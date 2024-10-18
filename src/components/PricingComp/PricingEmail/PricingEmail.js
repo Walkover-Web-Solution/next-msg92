@@ -3,6 +3,7 @@ import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import { useCallback, useEffect, useState } from 'react';
 import GetSubscriptions from '@/utils/getSubscription';
 import { MdCheck, MdClose } from 'react-icons/md';
+import getURL from '@/utils/getURL';
 
 export default function PricingEmail({ data }) {
     const [isLoading, setIsLoading] = useState(false);
@@ -72,9 +73,11 @@ export default function PricingEmail({ data }) {
                                                 </div>
                                             </div>
                                             <span
-                                                className={`border-b-[1px] w-full ${i == 0 ? ' block xl:hidden ' : ' block '}`}
+                                                className={`border-b-[1px] w-full ${
+                                                    i == 0 ? ' block xl:hidden ' : ' block '
+                                                }`}
                                             ></span>
-                                            <a href='https://web.msg91.com/signup?service=email'>
+                                            <a href={getURL('signup', 'email')}>
                                                 <button
                                                     className={`btn btn-primary  btn-md ${
                                                         plan?.name === 'Basic' ? '' : 'btn-outline'
