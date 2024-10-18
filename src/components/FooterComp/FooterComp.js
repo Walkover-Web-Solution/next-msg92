@@ -8,7 +8,7 @@ export default function FooterComp({ componentData, pageInfo }) {
         return (
             <>
                 <div className='bg-gray-800 pt-16 pb-10'>
-                    <div className='container text-white grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10  '>
+                    <div className='container text-white grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-10  '>
                         <div className='flex flex-col gap-10 w-full'>
                             {componentData?.products?.links.length > 0 && (
                                 <div className='flex flex-col gap-4'>
@@ -106,6 +106,66 @@ export default function FooterComp({ componentData, pageInfo }) {
                                     </ul>
                                 </div>
                             )}
+                        </div>
+                        <div className='flex flex-col gap-10 w-full'>
+                            <div className='flex flex-col gap-4 items-end'>
+                                <span className='font-semibold'>Download Apps</span>
+                                <div className='flex gap-4'>
+                                    <a
+                                        href='https://play.google.com/store/apps/details?id=com.hellornapp'
+                                        target='_blank'
+                                        className='flex items-center'
+                                    >
+                                        <img src='/assets/icons/social/android.svg' alt='Android ' />
+                                    </a>
+                                    <a
+                                        href='https://apps.apple.com/in/app/hello-by-msg91/id1635375551'
+                                        target='_blank'
+                                        className='flex items-center '
+                                    >
+                                        <img src='/assets/icons/social/apple.svg' alt='Apple ' />
+                                    </a>
+                                </div>
+                            </div>
+                            <div className='flex flex-col gap-4 items-end'>
+                                <span className='font-semibold '>Follow Us</span>
+                                <div className='flex gap-4'>
+                                    <a
+                                        href='https://www.facebook.com/msg91'
+                                        target='_blank'
+                                        className='flex items-center'
+                                    >
+                                        <img src='/assets/icons/social/facebook.svg' alt='Facebook ' />
+                                    </a>
+                                    <a
+                                        href='https://www.linkedin.com/company/msg91/'
+                                        target='_blank'
+                                        className='flex items-center '
+                                    >
+                                        <img src='/assets/icons/social/linkedin.svg' alt='LinkedIn ' />
+                                    </a>
+                                    <a href='https://x.com/msg91' target='_blank' className='flex items-center '>
+                                        <img
+                                            src='/assets/icons/social/twitter.svg'
+                                            width={25}
+                                            height={25}
+                                            alt='Twitter '
+                                        />
+                                    </a>
+                                    <a
+                                        href='https://www.youtube.com/@WalkoverWS'
+                                        target='_blank'
+                                        className='flex items-center '
+                                    >
+                                        <img
+                                            src='/assets/icons/social/youtube.svg'
+                                            width={25}
+                                            height={25}
+                                            alt='YouTube '
+                                        />
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
