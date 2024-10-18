@@ -113,7 +113,7 @@ export default function BannerComp({ pageInfo, data }) {
                                 })}
                             </div>
 
-                            <div className='relative '>
+                            <div className='relative bg-black '>
                                 <button
                                     className='absolute right-0 z-20 text-gray-200 flex gap-1 items-center p-4'
                                     onClick={() => copyText(code)}

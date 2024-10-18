@@ -19,7 +19,10 @@ export default function PreFooterComp({ data, pageInfo }) {
                                 {data?.buttons?.pricing?.text}
                             </button>
                         </a>
-                        <a href={data?.buttons?.getStarted?.link}>
+                        <a
+                            target='_blank'
+                            href={getURL('signup', pageInfo?.page !== 'home' ? pageInfo?.page : 'hello')}
+                        >
                             <button className='btn btn-primary btn-md w-full'>{data?.buttons?.getStarted?.text}</button>
                         </a>
                     </div>
