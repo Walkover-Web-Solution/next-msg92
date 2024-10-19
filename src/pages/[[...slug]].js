@@ -33,6 +33,7 @@ import getCommonCompData from '@/utils/getCommonCompData';
 import SignUp from '@/components/signupComp/SignUp';
 import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
+import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
 
 const Components = {
     BannerComp,
@@ -65,6 +66,7 @@ const Components = {
     SignUp,
     ChatBotComp,
     MagicLinkComp,
+    WhatsappLinkComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
