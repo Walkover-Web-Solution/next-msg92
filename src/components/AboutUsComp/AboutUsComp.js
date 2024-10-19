@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { MdAutoFixHigh } from 'react-icons/md';
+import { MdAllInclusive, MdAutoFixHigh, MdMoving, MdPermIdentity } from 'react-icons/md';
 export default function AboutUsComp({ pageInfo, data }) {
     return (
         <>
@@ -22,7 +22,12 @@ export default function AboutUsComp({ pageInfo, data }) {
                             data?.offer?.content.map((item, index) => {
                                 return (
                                     <div key={index} className='bg-white p-4 rounded-lg flex gap-3 items-center'>
-                                        <MdAutoFixHigh fontSize={30} />
+                                        <div className='text-3xl text-[#1E75BA]'>
+                                            {item?.icon === 'MdAutoFixHigh' && <MdAutoFixHigh />}
+                                            {item?.icon === 'MdMoving' && <MdMoving />}
+                                            {item?.icon === 'MdPermIdentity' && <MdPermIdentity />}
+                                            {item?.icon === 'MdAllInclusive' && <MdAllInclusive />}
+                                        </div>
                                         <p className='text-lg'>{item?.description}</p>
                                     </div>
                                 );

@@ -17,15 +17,15 @@
             "heading": "We enable communication in your awesome products",
             "card": [
                 {
-                    "icon": "/assets/Developers/Vector.png",
+                    "icon": "MdOutlineBeenhere",
                     "tag": "Engineered for reliability"
                 },
                 {
-                    "icon": "/assets/Developers/extension.png",
+                    "icon": "MdOutlineExtension ",
                     "tag": "Communication addons"
                 },
                 {
-                    "icon": "/assets/Developers/Card.png",
+                    "icon": "MdOutlineSupportAgent",
                     "tag": "Problem solvers at service"
                 }
             ]

@@ -11,19 +11,19 @@
             "heading":"Every brand offers its own culture, and this is what we offer you...",
             "content":[
                 {
-                    "icon": "/assets/about_us/star_our.svg",
+                    "icon": "MdAutoFixHigh",
                     "description":"Our Magic Wand is Innovations"
                 },
                 {
-                    "icon": "/assets/about_us/trendingup_uplifting.svg",
+                    "icon": "MdMoving",
                     "description":"Uplifting each other"
                 },
                 {
-                    "icon": "/assets/about_us/user_thinking.svg",
+                    "icon": "MdPermIdentity",
                     "description":"Thinking like a Customer"
                 },
                 {
-                    "icon": "/assets/about_us/feather_sustainability.svg",
+                    "icon": "MdAllInclusive",
                     "description":"Sustainability is Priority"
                 }
             ]
