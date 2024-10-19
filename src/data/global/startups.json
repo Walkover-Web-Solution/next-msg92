@@ -13,17 +13,17 @@
             "heading": "Grow your Startup with Robust Infrastructure",
             "cards": [
                 {
-                    "icon": "/assets/startups/login.png",
+                    "icon": "MdLogin",
                     "head": "Sign up",
                     "tag": "Sign up with your official email ID and integrate MSG91 API"
                 },
                 {
-                    "icon": "/assets/startups/Vector.png",
+                    "icon": "MdBeenhere",
                     "head": "Apply",
                     "tag": "If you fulfill criteria, you can apply for the startup program"
                 },
                 {
-                    "icon": "/assets/startups/celebration.png",
+                    "icon": "MdCelebration",
                     "head": "Enjoy",
                     "tag": "You are good to go to avail the benifits"
                 }

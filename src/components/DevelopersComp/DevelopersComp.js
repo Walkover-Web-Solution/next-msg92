@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { MdBeenhere, MdOutlineBeenhere } from 'react-icons/md';
+import { MdBeenhere, MdOutlineBeenhere, MdOutlineExtension, MdOutlineSupportAgent } from 'react-icons/md';
 
 export default function DevelopersComp({ pageInfo, data }) {
     return (
@@ -24,7 +24,11 @@ export default function DevelopersComp({ pageInfo, data }) {
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {data?.communication?.card.map((card, index) => (
                         <div key={index} className='bg-neutral p-4 rounded-lg flex items-center gap-4'>
-                            <MdOutlineBeenhere fontSize={40} className='text-accent' />
+                            <div className='text-3xl text-[#1E75BA]'>
+                                {card?.icon === 'MdOutlineBeenhere' && <MdOutlineBeenhere />}
+                                {card?.icon === 'MdOutlineExtension ' && <MdOutlineExtension />}
+                                {card?.icon === 'MdOutlineSupportAgent' && <MdOutlineSupportAgent />}
+                            </div>
                             <p className='text-lg'>{card?.tag}</p>
                         </div>
                     ))}

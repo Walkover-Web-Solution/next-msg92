@@ -1,6 +1,14 @@
 import Image from 'next/image';
 import React from 'react';
-import { MdArrowForward, MdCheck, MdCheckCircleOutline, MdChevronRight, MdLogin } from 'react-icons/md';
+import {
+    MdArrowForward,
+    MdBeenhere,
+    MdCelebration,
+    MdCheck,
+    MdCheckCircleOutline,
+    MdChevronRight,
+    MdLogin,
+} from 'react-icons/md';
 export default function StartupComp({ pageInfo, data }) {
     return (
         <>
@@ -24,7 +32,11 @@ export default function StartupComp({ pageInfo, data }) {
                     {data?.infrastructure?.cards.map((card, index) => (
                         <>
                             <div key={index} className='bg-neutral w-full p-4 rounded flex flex-col gap-4 h-fill'>
-                                <MdLogin fontSize={40} className='text-accent' />
+                                <div className='text-3xl text-[#1E75BA]'>
+                                    {card?.icon === 'MdLogin' && <MdLogin />}
+                                    {card?.icon === 'MdBeenhere' && <MdBeenhere />}
+                                    {card?.icon === 'MdCelebration' && <MdCelebration />}
+                                </div>
                                 <div className='flex flex-col gap-2'>
                                     <h3 className='text-xl font-bold'>{card.head}</h3>
                                     <p className=''>{card.tag}</p>
