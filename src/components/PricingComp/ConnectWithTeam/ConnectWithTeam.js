@@ -1,4 +1,4 @@
-import getRelativeURL from '@/utils/getRelativeURL';
+import getURL from '@/utils/getURL';
 import Link from 'next/link';
 import { MdLaunch } from 'react-icons/md';
 
@@ -12,10 +12,7 @@ export default function ConnectWithTeam({ product, isPlan, data, currency }) {
                 </>
             )}
             <div>
-                <Link
-                    href={getRelativeURL(product, 'product')}
-                    className='flex items-center gap-1 text-link active-link '
-                >
+                <Link href={getURL('product', product)} className='flex items-center gap-1 text-link active-link '>
                     <MdLaunch />
                     {data?.know_more} <span className='capitalize'>{product}</span>
                 </Link>

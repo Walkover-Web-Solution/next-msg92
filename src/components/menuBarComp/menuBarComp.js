@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { MdMenu } from 'react-icons/md';
 import styles from './MenuBarComp.module.scss';
 import { BtnWithHideIco, LinkButton } from '../UIComponent/Buttons/LinkButton';
-import getRelativeURL from '@/utils/getRelativeURL';
 import { useState } from 'react';
+import getURL from '@/utils/getURL';
 
 export default function MenuBarComp({ componentData, pageInfo }) {
     const [nav, setNav] = useState('hide');
@@ -56,7 +56,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                             return (
                                                                 <Link
                                                                     key={i}
-                                                                    href={getRelativeURL(product?.slug, 'product')}
+                                                                    href={getURL('product', product?.slug)}
                                                                     onClick={() => {
                                                                         setNav('hide');
                                                                         setType('products');

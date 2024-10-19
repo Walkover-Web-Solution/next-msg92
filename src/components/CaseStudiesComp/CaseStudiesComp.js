@@ -14,7 +14,6 @@ export default function CaseStudiesComp({ data }) {
                                 return (
                                     <Link
                                         href={caseStudy?.link}
-                                        target='_blank'
                                         key={`${index}`}
                                         className={`flex bg-white rounded-lg overflow-hidden hover:shadow-lg LinkButtonCard ${
                                             index !== 0
@@ -36,9 +35,9 @@ export default function CaseStudiesComp({ data }) {
                                             }}
                                         >
                                             <Image
-                                                height={600}
+                                                height={500}
                                                 width={600}
-                                                className='h-[60px] w-auto'
+                                                className='h-[50px] w-auto'
                                                 src={caseStudy?.logo}
                                                 alt={`Logo of ${caseStudy?.description}`}
                                             />

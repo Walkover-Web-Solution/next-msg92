@@ -13,10 +13,6 @@
             "heading": "Confiado por 30,000+ negócios globais",
             "logos": [
                 {
-                    "name": "Razorpay",
-                    "url": "/assets/trusted_by/razorpay.svg"
-                },
-                {
                     "name": "Xiaomi",
                     "url": "/assets/trusted_by/xiaomi.svg"
                 },
@@ -31,6 +27,14 @@
                 {
                     "name": "Indeed",
                     "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/indian-oil.svg"
                 },
                 {
                     "name": "Ixigo",

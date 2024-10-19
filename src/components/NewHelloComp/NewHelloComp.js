@@ -29,10 +29,7 @@ export default function NewHelloComp({ data }) {
                         <p className={`${styles.boost} text-hello`}>{data?.bannerComp?.tagline}</p>
                         <p className='text-2xl'>{data?.bannerComp?.subheading}</p>
                     </div>
-                    <Link
-                        className={styles?.getstarted}
-                        href='https://msg91.com/signup?source=msg91&utm_source=msg91Website'
-                    >
+                    <Link className={styles?.getstarted} href={getURL('signup', 'hello')}>
                         {data?.bannerComp?.getstarted_btn}
                     </Link>
                     <div className='flex flex-col gap-4'>
@@ -137,16 +134,10 @@ export default function NewHelloComp({ data }) {
                 <div className='container flex flex-col cont_gap cont_p text-2xl'>
                     <p>{data?.prefooter?.text3}</p>
                     <div className='flex flex-col md:flex-row gap-6'>
-                        <Link
-                            className={styles?.getstarted}
-                            href='https://msg91.com/signup?source=msg91&utm_source=msg91Website'
-                        >
-                            get started
+                        <Link className={styles?.getstarted} href={getURL('signup', 'hello')}>
+                            Get started
                         </Link>
-                        <Link
-                            className={styles?.sales}
-                            href='https://msg91.com/signup?source=msg91&utm_source=msg91Website'
-                        >
+                        <Link className={styles?.sales} href='/contact-us'>
                             Contact sales
                         </Link>
                     </div>

@@ -1,3 +1,4 @@
+import getURL from '@/utils/getURL';
 import axios from 'axios';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -33,7 +34,7 @@ export default function PricingWhatsApp() {
                             <span className='text-green-600  font-bold text-4xl'>Zero</span> margin on meta price.
                         </h2>
                         <p className='text-lg'>TDS and GST excluded.</p>
-                        <a href='https://web.msg91.com/signup?service=whatsapp'>
+                        <a href={getURL('signup', 'whatsapp')}>
                             <button className='btn btn-primary btn-md'>Get Started</button>
                         </a>
                     </div>
