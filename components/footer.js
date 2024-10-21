@@ -36,7 +36,7 @@ const Footer = ({ path, year }) => {
                                     KnowledgeBase
                                 </a>
                                 <a
-                                    href={`free-whatsapp-link-generator`}
+                                    href={`${process.env.REDIRECT_URL}/free-whatsapp-link-generator`}
                                     className=" c-link-underline c-fs-5 mt-2 c-fw-t"
                                 >
                                     Free WhatsApp link generator
