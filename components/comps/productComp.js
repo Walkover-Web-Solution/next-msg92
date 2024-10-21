@@ -26,7 +26,7 @@ const ProductComponent = ({ pageData, path, webhookData = null, pricingPath }) =
                         </div>
                         <a
                         target="_blank"
-                            href={`/signup?service=${pageData.pagename}`}
+                            href={`/signup?service=${pageData?.pagename}`}
                             className="btn btn-dark btn-lg c-fs-2 mt-3 utm"
                         >
                             {pageData.pagename === 'KnowledgeBase' && (
