@@ -19,6 +19,10 @@
             "heading": "Trusted by 30,000+ global businesses",
             "logos": [
                 {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
+                {
                     "name": "Xiaomi",
                     "url": "/assets/trusted_by/xiaomi.svg"
                 },
@@ -77,7 +81,7 @@
             },
             {
                 "name": "Real time connect with agent on user input on bulk call",
-                "content": "<strong>Direct users to your support agents</strong>Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input.",
+                "content": "<strong>Direct your user to your support agents</strong>Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input.",
                 "img": "/assets/global/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
             }
         ]
@@ -91,7 +95,7 @@
             },
             "pricing": {
                 "text": "Pricing",
-                "link": "/pricing/"
+                "link": "/pricing"
             },
             "getStarted": {
                 "text": "Get started",

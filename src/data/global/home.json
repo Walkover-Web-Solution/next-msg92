@@ -15,6 +15,10 @@
             "heading": "Trusted by 30,000+ global businesses",
             "logos": [
                 {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
+                {
                     "name": "Xiaomi",
                     "url": "/assets/trusted_by/xiaomi.svg"
                 },

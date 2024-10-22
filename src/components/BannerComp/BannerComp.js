@@ -14,7 +14,7 @@ import getURL from '@/utils/getURL';
 export default function BannerComp({ pageInfo, data }) {
     console.log('🚀 ~ BannerComp ~ pageInfo:', pageInfo);
     const [isCopied, setIsCopied] = useState(false);
-    const [selectedLanguage, setSelectedLanguage] = useState('node');
+    const [selectedLanguage, setSelectedLanguage] = useState('curl');
 
     useEffect(() => {
         if (pageInfo.page !== 'Numbers') {
@@ -39,11 +39,11 @@ export default function BannerComp({ pageInfo, data }) {
         console.error(`No snippet found for page: ${pageInfo.page}`);
     }
     const code = {
-        node: snippet?.convert('node'),
         curl: snippet?.convert('shell', 'curl'),
+        node: snippet?.convert('node'),
         php: snippet?.convert('php'),
-        python: snippet?.convert('python'),
         ruby: snippet?.convert('ruby'),
+        python: snippet?.convert('python'),
     };
 
     return (
@@ -123,7 +123,6 @@ export default function BannerComp({ pageInfo, data }) {
                                 </button>
                                 <div className='overflow-auto h-[400px]'>
                                     {' '}
-                                    {/* Added container for scrollable code */}
                                     <pre className='code-m-0'>
                                         <code className={`language-javascript text-sm`}>{code[selectedLanguage]}</code>
                                     </pre>
