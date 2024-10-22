@@ -1,0 +1,49 @@
+.feature_cont,
+.usecase_bg {
+    background: #fafafa;
+}
+.feature_icon_cont {
+    width: 60px;
+    height: 60px;
+    @media only screen and (max-width: 768px) {
+        width: 40px;
+        height: 40px;
+    }
+}
+.feature_icon {
+    color: #7AB4F5;
+    font-size: 32px;
+    @media only screen and (max-width: 768px) {
+        font-size: 24px;
+    }
+    
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @media only screen and (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.feature {
+    grid-column: span 1;
+}
+
+.usecase_features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @media only screen and (max-width: 1024px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.usecase_feature {
+    grid-column: span 1;
+}
+.useCase_feature_icon {
+    font-size: 40px;
+}
+.useCase_img {
+    height: 100% !important;
+    // width: auto!important;
+}

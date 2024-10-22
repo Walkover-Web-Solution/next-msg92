@@ -312,6 +312,18 @@
       ],
       "link": "/case-studies/indialends",
       "img": "/img/indialends.png"
+    },
+    {
+      "heading": "Unacademy is an online platform that makes both learning and teaching easy with its educational videos and lectures",
+      "content": " Unacademy started as a pure marketplace. They attracted teachers with a value proposition based on earnings work from home, and independence via SMS. Low cost but premium content - What makes Unacademy different is the Unacademy educator’s app.",
+
+      "tags": [
+        "Education",
+        "Services",
+        "Startup"
+      ],
+      "link": "/case-studies/unacademy",
+      "img": "/img/unacademy1.png"
     }
   ]
 }
