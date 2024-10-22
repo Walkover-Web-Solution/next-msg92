@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Transactional Email | Transactional Email API - MSG91-United Arab Emirates",
-        "description": "Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
+        "title": "Customer Support Platform for your Business by MSG91-United Arab Emiratess",
+        "description": "Harness the power of omnichannel customer experience with HELLO, a robust and data-driven customer support platform to meet all your customer service needs."
     },
     "NewHelloComp": {
         "bannerComp": {
@@ -107,7 +107,7 @@
                     "icon": "/assets/global/hello/new/icon-screen-sharing.svg",
                     "color": "yellow",
                     "name": "Screen sharing/Control",
-                    "content": "<atrong>Take control of the conversation like never before.</strong>With screen control, assist your customers by navigating their screens, resolving issues efficiently, and ensuring that they get the most out of your services. It's a level of support that truly stands out.",
+                    "content": "<strong>Take control of the conversation like never before.</strong>With screen control, assist your customers by navigating their screens, resolving issues efficiently, and ensuring that they get the most out of your services. It's a level of support that truly stands out.",
                     "img": "/assets/global/hello/new/screen-sharing.svg"
                 }
             ]

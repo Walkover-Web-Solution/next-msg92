@@ -53,12 +53,12 @@
             },
             {
                 "name": "Whatsapp Integrations",
-                "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and <a href='/integrations'>more</a>",
+                "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and <a href='/integrations' style='color: blue'>more</a>",
                 "img": "/assets/global/whatsapp/whatsapp-integrations.svg"
             },
             {
                 "name": "Zero Charge on Click to WhatsApp Ads",
-                "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget-Friendly.",
+                "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget Friendly.",
                 "img": "/assets/global/whatsapp/whatsapp-zero-charge-on-click.svg"
             },
             {
