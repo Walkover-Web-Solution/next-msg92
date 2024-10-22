@@ -57,27 +57,27 @@
             },
             {
                 "name": "IVR Flow",
-                "content": "<strong>Modern IVR for Efficient Customer Engagement in the UAE</strong>Experience a state-of-the-art IVR system designed for the UAE, simplifying customer interactions. This intelligent IVR goes beyond query resolution, allowing you to configure time-based or agent-based settings and record customized messages for a hassle-free experience.",
+                "content": "<strong>Modern IVR for Efficient Customer Engagement in the UAE</strong> Experience a state-of-the-art IVR system designed for the UAE, simplifying customer interactions. This intelligent IVR goes beyond query resolution, allowing you to configure time-based or agent-based settings and record customized messages for a hassle-free experience.",
                 "img": "/assets/global/voice/voice-ivr-flow.svg"
             },
             {
                 "name": "Bulk Voice",
-                "content": "<strong>Engage with UAE audience through single calls</strong>Effortlessly reach your UAE audience by recording and broadcasting voice messages. A ringing phone call is highly effective in conveying your message and is difficult to overlook.",
+                "content": "<strong>Engage with Your UAE Audience through Single Calls</strong> Effortlessly reach your UAE audience by recording and broadcasting voice messages. A ringing phone call is highly effective in conveying your message and is difficult to overlook.",
                 "img": "/assets/global/voice/voice-bulk-voice.svg"
             },
             {
                 "name": "Multiple Way to Upload File",
-                "content": "<strong>Multiple Options for Uploading Your Audio Messages in the UAE</strong>Enhance customer engagement with personalized voice messages tailored for the UAE market. Record messages for bulk voice calls or IVR menus using text-to-speech, browser microphone, or phone calls.",
+                "content": "<strong>Multiple Options for Uploading Your Audio Messages in the UAE</strong> Enhance customer engagement with personalized voice messages tailored for the UAE market. Record messages for bulk voice calls or IVR menus using text-to-speech, browser microphone, or phone calls.",
                 "img": "/assets/global/voice/voice-multiple-way-to-upload-file.svg"
             },
             {
                 "name": "Bulk voice with IVR",
-                "content": "<strong>Integrate Voice Calls with the UAE IVR</strong>Extend your communication reach by sending bulk voice messages and gathering responses in the UAE. Record your messages and transmit them to customers using an IVR system.",
+                "content": "<strong>Integrate Voice Calls with the UAE IVR</strong> Extend your communication reach by sending bulk voice messages and gathering responses in the UAE. Record your messages and transmit them to customers using an IVR system.",
                 "img": "/assets/global/voice/voice-bulk-voice-with-ivr.svg"
             },
             {
                 "name": "Real time connect with agent on user input on bulk call",
-                "content": "<strong>Direct Users to Your UAE Support Agents</strong>Take the customer experience to the next level in the UAE by providing real-time support. Connect users with your customer support agents based on their input during bulk calls.",
+                "content": "<strong>Direct Users to Your UAE Support Agents</strong> Take the customer experience to the next level in the UAE by providing real-time support. Connect users with your customer support agents based on their input during bulk calls.",
                 "img": "/assets/global/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
             }
         ]
