@@ -86,5 +86,5 @@ export default function getURL(type, link) {
             break;
     }
 
-    return process.env.NEXT_PUBLIC_BASE_URL + url;
+    return process.env.BASE_URL + url;
 }

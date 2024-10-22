@@ -27,7 +27,7 @@ export default function PricingVoice({ data, country }) {
 
     const fetchCountryData = async () => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_VOICE_API_BASE_URL}/public/country/`);
+            const response = await fetch(`${process.env.VOICE_API_URL}/public/country/`);
             if (response.ok) {
                 const data = await response.json();
                 setCountryData(data);
@@ -55,9 +55,7 @@ export default function PricingVoice({ data, country }) {
     //fetch dialPlan
     const fetchDialPlan = async (currency) => {
         try {
-            const response = await fetch(
-                `${process.env.NEXT_PUBLIC_VOICE_API_BASE_URL}/public/dialplanPricing/?currency=${currency}`
-            );
+            const response = await fetch(`${process.env.VOICE_API_URL}/public/dialplanPricing/?currency=${currency}`);
             if (response.ok) {
                 const data = await response.json();
 
@@ -83,7 +81,7 @@ export default function PricingVoice({ data, country }) {
         setLoading(true);
         try {
             const response = await fetch(
-                `${process.env.NEXT_PUBLIC_VOICE_API_BASE_URL}/public/pricing/?cid=${selectedCountry}&dialplan_id=${dialPlan}`
+                `${process.env.VOICE_API_URL}/public/pricing/?cid=${selectedCountry}&dialplan_id=${dialPlan}`
             );
             if (response.ok) {
                 const data = await response.json();
@@ -104,7 +102,7 @@ export default function PricingVoice({ data, country }) {
 
         try {
             const response = await axios.get(
-                `${process.env.NEXT_PUBLIC_VOICE_API_BASE_URL}/public/pricing/?cid=${selectedCountry?.id}&dialplan_id=${dialPlan}&export=1`
+                `${process.env.VOICE_API_URL}/public/pricing/?cid=${selectedCountry?.id}&dialplan_id=${dialPlan}&export=1`
             );
             if (response) {
                 setLoadingExport(false);

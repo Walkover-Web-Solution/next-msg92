@@ -226,7 +226,7 @@ export async function GetSmsOtpPricing(amountArray, currency, origin, destinatio
     try {
         const fetchRequests = amountArray.map(async (amount) => {
             const response = await axios.get(
-                `${process.env.NEXT_PUBLIC_PRICING_URL}/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
+                `${process.env.PRICING_URL}/api/v5/web/fetchPricingDetails?amount=${amount}&currency=${currency}&originCountry=${origin}&destinationCountry=${destination}`
             );
             return response.data.data;
         });

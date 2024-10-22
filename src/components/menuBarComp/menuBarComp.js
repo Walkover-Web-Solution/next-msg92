@@ -34,7 +34,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                 }
                 break;
         }
-        return process.env.NEXT_PUBLIC_BASE_URL + path;
+        return process.env.BASE_URL + path;
     };
     const hidden = componentData?.hide?.includes(pageInfo?.page);
 

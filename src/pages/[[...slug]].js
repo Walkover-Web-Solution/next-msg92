@@ -109,7 +109,7 @@ export const getStaticProps = async (context) => {
     const pageInfo = getPageInfo(params);
     const commonData = getCommonCompData(pageInfo?.country);
 
-    const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + '/api/data', {
+    const res = await fetch(process.env.BASE_URL + '/api/data', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ export default async function GetSubscriptions(currency, msId) {
         try {
             // changeCurrencySymbol(currency);
             const response = await axios.get(
-                `https://stagesubscription.msg91.com/api/plans?currency=${currency}&ms_id=${msId}`
+                `${process.env.SUBSCRIPTION_PRICING_URL}/plans?currency=${currency}&ms_id=${msId}`
             );
             return response.data.data;
         } catch (error) {
