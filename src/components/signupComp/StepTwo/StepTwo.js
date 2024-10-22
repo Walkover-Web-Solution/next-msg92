@@ -31,9 +31,9 @@ class StepTwo extends React.Component {
         const value = event.target.value;
         const utmData = getCookie('msg91_query');
         if (utmData.includes('&source')) {
-            setCookie('msg91_query', utmData.replace(/&source=([\w_-])+/, '&source=' + sourceValue), 30);
+            setCookie('msg91_query', utmData.replace(/&source=([\w_-])+/, '&source=' + this.state.sourceValue), 30);
         } else {
-            setCookie('msg91_query', utmData + '&source=' + sourceValue, 30);
+            setCookie('msg91_query', utmData + '&source=' + this.state.sourceValue, 30);
         }
     };
 
@@ -64,23 +64,25 @@ class StepTwo extends React.Component {
                         <div className='w-full flex flex-col gap-2 '>
                             <label htmlFor='email'>Verify email</label>
                             <div className='flex xl:flex-row flex-col gap-10'>
-                                <div className='flex sm:flex-row flex-col items-start w-1/3 max-w-[360px] min-w-[280px] gap-4'>
-                                    <div className='flex flex-col items-start gap-6 w-full '>
+                                <div className='flex sm:flex-row flex-col items-start w-fit  gap-4'>
+                                    <div className='flex flex-col items-start gap-6 w-fit w-[360px]  '>
                                         <div className='flex gap-2 items-center w-full '>
                                             {this.props?.signupByGitHub ? (
                                                 <div>
                                                     Email Verified <MdCheckCircle className='ico-green' />
                                                 </div>
                                             ) : (
-                                                <input
-                                                    className='input border-gray-300 focus:outline-none w-full focus:border-accent h-10'
-                                                    type='email'
-                                                    id='emailIdentifier'
-                                                    placeholder='Email Address*'
-                                                    defaultValue={this.state.emailIdentifier}
-                                                    onInput={(e) => this.props.identifierChange(false)}
-                                                    disabled={this.props?.emailAccessToken}
-                                                />
+                                                <div className='w-full'>
+                                                    <input
+                                                        className='input border-gray-300 focus:outline-none w-full focus:border-accent h-10'
+                                                        type='email'
+                                                        id='emailIdentifier'
+                                                        placeholder='Email Address*'
+                                                        defaultValue={this.state.emailIdentifier}
+                                                        onInput={(e) => this.props.identifierChange(false)}
+                                                        disabled={this.props?.emailAccessToken}
+                                                    />
+                                                </div>
                                             )}
                                             <span>
                                                 {this.props?.emailAccessToken && (
@@ -147,8 +149,8 @@ class StepTwo extends React.Component {
                         <div className='w-full flex flex-col gap-2 '>
                             <label htmlFor='contact'>Verify Mobile number</label>
                             <div className='flex xl:flex-row flex-col gap-10'>
-                                <div className='flex flex-col items-start w-1/3 max-w-[360px] min-w-[280px] gap-4'>
-                                    <div className='flex sm:flex-row flex-col  gap-6 w-full'>
+                                <div className='flex sm:flex-row flex-col w-fit gap-4 '>
+                                    <div className='flex flex-col items-start gap-6 w-[360px] '>
                                         <div className='flex gap-2 max-h-10 w-full'>
                                             <MobileInputComponent
                                                 onInput={(event) => {
@@ -171,35 +173,35 @@ class StepTwo extends React.Component {
                                                 )}
                                             </span>
                                         </div>
-                                        {this.props?.smsAccessToken ? (
-                                            <button
-                                                className='btn btn-accent btn-otp'
-                                                onClick={(e) => this.props.identifierChange(true)}
-                                            >
-                                                Change/Re-verify Mobile Number
-                                            </button>
-                                        ) : (
-                                            <button
-                                                className='btn btn-accent btn-otp btn-outline'
-                                                onClick={() =>
-                                                    mobileInvalid
-                                                        ? toast.error('Invalid mobile number.')
-                                                        : this.props.sendOtp(smsIdentifier, true)
-                                                }
-                                                disabled={this.props?.isLoading}
-                                            >
-                                                Get OTP
-                                            </button>
-                                        )}
+                                        {this.props?.smsIdentifier &&
+                                        this.props?.smsSuccessMessage &&
+                                        !this.props?.smsAccessToken ? (
+                                            <p className='text-success text-sm'>
+                                                {this.props?.smsSuccessMessage} +
+                                                {this.props?.smsIdentifier?.replace('+', '')}
+                                            </p>
+                                        ) : null}
                                     </div>
-                                    {this.props?.smsIdentifier &&
-                                    this.props?.smsSuccessMessage &&
-                                    !this.props?.smsAccessToken ? (
-                                        <p className='text-success text-sm'>
-                                            {this.props?.smsSuccessMessage} +
-                                            {this.props?.smsIdentifier?.replace('+', '')}
-                                        </p>
-                                    ) : null}
+                                    {this.props?.smsAccessToken ? (
+                                        <button
+                                            className='btn btn-accent btn-otp'
+                                            onClick={(e) => this.props.identifierChange(true)}
+                                        >
+                                            Change/Re-verify Mobile Number
+                                        </button>
+                                    ) : (
+                                        <button
+                                            className='btn btn-accent btn-otp btn-outline'
+                                            onClick={() =>
+                                                mobileInvalid
+                                                    ? toast.error('Invalid mobile number.')
+                                                    : this.props.sendOtp(smsIdentifier, true)
+                                            }
+                                            disabled={this.props?.isLoading}
+                                        >
+                                            Get OTP
+                                        </button>
+                                    )}
                                 </div>
                                 {this.props?.smsIdentifier && !this.props?.smsAccessToken && (
                                     <div className='xl:block hidden h-fill w-[1px] bg-gray-100'></div>
@@ -233,7 +235,7 @@ class StepTwo extends React.Component {
                             <label htmlFor='contact'>Select source</label>
                             <div className='rounded border px-2 w-full'>
                                 <select
-                                    className=' h-10 w-full'
+                                    className=' h-10 w-full focus:outline-none'
                                     autoComplete='on'
                                     aria-label='Select Source'
                                     name='source'
@@ -259,11 +261,15 @@ class StepTwo extends React.Component {
                         </button>
                         <button
                             className=' btn btn-md btn-accent disabled:bg-gray-300 disabled:text-primary'
-                            onClick={() =>
-                                this.props?.smsAccessToken &&
-                                (this.props?.emailAccessToken || this.props?.githubCode) &&
-                                this.props.validateUserForCompany()
-                            }
+                            onClick={() => {
+                                this.props.setStep(3);
+                                if (
+                                    this.props?.smsAccessToken &&
+                                    (this.props?.emailAccessToken || this.props?.githubCode)
+                                ) {
+                                    this.props.validateUserForCompany();
+                                }
+                            }}
                             disabled={
                                 !this.props?.smsAccessToken ||
                                 (!this.props?.emailAccessToken && !this.props?.githubCode) ||
