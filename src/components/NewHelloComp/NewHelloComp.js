@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './NewHelloComp.module.scss';
 import { MdHealthAndSafety } from 'react-icons/md';
+import getURL from '@/utils/getURL';
 
 export default function NewHelloComp({ data }) {
     return (

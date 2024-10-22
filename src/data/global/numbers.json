@@ -11,11 +11,15 @@
         },
         "tagline": "Unlock the Power of Virtual Numbers",
         "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
-        "banner_img": "/img/pages/hello/heroimg.webp",
+        "banner_img": "/assets/global/numbers/banner.svg",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
             "logos": [
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
                 {
                     "name": "Xiaomi",
                     "url": "/assets/trusted_by/xiaomi.svg"

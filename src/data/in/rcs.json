@@ -45,22 +45,22 @@
         "heading": "Features",
           "iconColor": "text-otp",
           "features":[
-        { "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+        { "icon": "",
           "name": "Corporate Communications with Branding",
           "content": "<strong>Distinguish by branding</strong>Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers.",
           "img": "/assets/global/rcs/rcs-communications-branding.svg"
         },
-        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+        {"icon": "",
           "name": "Provide Multimedia Interactions",
           "content": "<strong>Communication through visual representation</strong>Enhance your brand communication by delivering RCS that builds trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions.",
           "img":  "/assets/global/rcs/rcs-multimedia-interactions.svg"
         },
-        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+        {"icon": "",
           "name": "Boost Sales Through Interactive Conversations",
           "content": " Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable RCS messages that drive conversions.",
           "img": "/assets/global/rcs/rcs-boost-sales.svg"
         },
-    {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+    {"icon": "",
           "name": "Enhanced Customer Trust",
           "content": " <strong>Understand your customers' habits</strong>Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility.",
           "img": "/assets/global/rcs/rcs-customer-trust.svg"
