@@ -110,46 +110,93 @@ export default class SignUp extends React.Component {
         });
     };
 
+    //     const head = document.getElementsByTagName('head')[0];
+    //     const currentTimestamp = new Date().getTime();
+    //     const otpWidgetScript = document.createElement('script');
+    //     otpWidgetScript.type = 'text/javascript';
+    //     otpWidgetScript.src = `${process.env.WIDGET_SCRIPT}?v=${currentTimestamp}`;
+    //     otpWidgetScript.onload = () => {
+    //         const configuration = {
+    //             widgetId: process.env.OTP_WIDGET_TOKEN,
+    //             tokenAuth: process.env.WIDGET_AUTH_TOKEN,
+    //             success: (data) => {},
+    //             failure: (error) => {},
+    //             exposeMethods: true,
+    //         };
+    //         window.initSendOTP(configuration);
+    //         const widgetDataInterval = setInterval(() => {
+    //             let widgetData = window.getWidgetData();
+    //             if (widgetData) {
+    //                 this.setState({
+    //                     widgetData: window.getWidgetData(),
+    //                     allowedRetry: {
+    //                         email: widgetData?.processes?.find(
+    //                             (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Email
+    //                         ),
+    //                         whatsApp: widgetData?.processes?.find(
+    //                             (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Whatsapp
+    //                         ),
+    //                         voice: widgetData?.processes?.find(
+    //                             (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Voice
+    //                         ),
+    //                         sms: widgetData?.processes?.find(
+    //                             (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Sms
+    //                         ),
+    //                     },
+    //                 });
+    //                 clearInterval(widgetDataInterval);
+    //             }
+    //         }, 1000);
+    //     };
+    //     head.appendChild(otpWidgetScript);
+    // };
+
     otpWidgetSetup = () => {
-        const head = document.getElementsByTagName('head')[0];
         const currentTimestamp = new Date().getTime();
-        const otpWidgetScript = document.createElement('script');
-        otpWidgetScript.type = 'text/javascript';
-        otpWidgetScript.src = `${process.env.WIDGET_SCRIPT}?v=${currentTimestamp}`;
-        otpWidgetScript.onload = () => {
-            const configuration = {
-                widgetId: process.env.OTP_WIDGET_TOKEN,
-                tokenAuth: process.env.WIDGET_AUTH_TOKEN,
-                success: (data) => {},
-                failure: (error) => {},
-                exposeMethods: true,
+        const existingScript = document.getElementById('otpWidgetScript');
+
+        // If script already exists, don't add it again
+        if (!existingScript) {
+            const head = document.getElementsByTagName('head')[0];
+            const otpWidgetScript = document.createElement('script');
+            otpWidgetScript.type = 'text/javascript';
+            otpWidgetScript.id = 'otpWidgetScript';
+            otpWidgetScript.src = `${process.env.WIDGET_SCRIPT}?v=${currentTimestamp}`;
+            otpWidgetScript.onload = () => {
+                const configuration = {
+                    widgetId: process.env.OTP_WIDGET_TOKEN,
+                    tokenAuth: process.env.WIDGET_AUTH_TOKEN,
+                    success: (data) => {},
+                    failure: (error) => {},
+                    exposeMethods: true,
+                };
+                window.initSendOTP(configuration);
+                const widgetDataInterval = setInterval(() => {
+                    let widgetData = window.getWidgetData();
+                    if (widgetData) {
+                        this.setState({
+                            widgetData: window.getWidgetData(),
+                            allowedRetry: {
+                                email: widgetData?.processes?.find(
+                                    (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Email
+                                ),
+                                whatsApp: widgetData?.processes?.find(
+                                    (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Whatsapp
+                                ),
+                                voice: widgetData?.processes?.find(
+                                    (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Voice
+                                ),
+                                sms: widgetData?.processes?.find(
+                                    (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Sms
+                                ),
+                            },
+                        });
+                        clearInterval(widgetDataInterval);
+                    }
+                }, 1000);
             };
-            window.initSendOTP(configuration);
-            const widgetDataInterval = setInterval(() => {
-                let widgetData = window.getWidgetData();
-                if (widgetData) {
-                    this.setState({
-                        widgetData: window.getWidgetData(),
-                        allowedRetry: {
-                            email: widgetData?.processes?.find(
-                                (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Email
-                            ),
-                            whatsApp: widgetData?.processes?.find(
-                                (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Whatsapp
-                            ),
-                            voice: widgetData?.processes?.find(
-                                (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Voice
-                            ),
-                            sms: widgetData?.processes?.find(
-                                (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Sms
-                            ),
-                        },
-                    });
-                    clearInterval(widgetDataInterval);
-                }
-            }, 1000);
-        };
-        head.appendChild(otpWidgetScript);
+            head.appendChild(otpWidgetScript);
+        }
     };
 
     identifierChange = (notByEmail) => {
@@ -448,14 +495,6 @@ export default class SignUp extends React.Component {
                         </div>
 
                         <div className='lg:px-20 sm:px-10 px-4 sm:py-20 py-10 flex flex-col gap-12 w-full '>
-                            {/* <Image
-                                src={'/assets/brand/msg91.svg'}
-                                width={420}
-                                height={420}
-                                className='w-32'
-                                alt='msg91-logo'
-                            /> */}
-
                             {this.state.activeStep === 4 ? (
                                 <h1 className='text-2xl font-semibold text-success'>Account created Successfully!</h1>
                             ) : (

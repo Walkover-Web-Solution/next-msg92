@@ -14,7 +14,17 @@ export default function PreFooterComp({ data, pageInfo }) {
                                 {data?.buttons?.contactSales?.text}
                             </button>
                         </a>
-                        <a href={getURL('pricing', pageInfo?.page !== 'home' ? pageInfo?.page : 'hello')}>
+                        <a
+                            href={getURL(
+                                'pricing',
+                                pageInfo?.page !== 'home' &&
+                                    pageInfo?.page !== 'shorturl' &&
+                                    pageInfo?.page !== 'knowledgebase' &&
+                                    pageInfo?.page !== 'numbers'
+                                    ? pageInfo?.page
+                                    : 'sms'
+                            )}
+                        >
                             <button className='btn btn-primary btn-outline btn-md '>
                                 {data?.buttons?.pricing?.text}
                             </button>
