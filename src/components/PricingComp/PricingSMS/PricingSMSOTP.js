@@ -77,7 +77,6 @@ export default function PricingSMSOTP({ data, type, country }) {
     const handleOnSelectDestination = (item) => {
         setDestination(item[0]?.name);
     };
-    console.log(noOfSmsArray[0]?.[pricingEnv]);
 
     return (
         <>

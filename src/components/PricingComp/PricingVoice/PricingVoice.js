@@ -6,9 +6,12 @@ import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 import axios from 'axios';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import getURL from '@/utils/getURL';
+import GetCountryDetails from '@/utils/getCurrentCountry';
+import countries from '@/data/countries.json';
 
 export default function PricingVoice({ data, country }) {
     const [countryData, setCountryData] = useState([]);
+    const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
     const [selectedCountry, setSelectedCountry] = useState();
     const [plans, setPlans] = useState();
     const [loading, setLoading] = useState(true);
@@ -137,7 +140,7 @@ export default function PricingVoice({ data, country }) {
                                 }}
                                 options={countryData}
                                 defaultSelected={[
-                                    countryData?.find((item) => item?.country_code?.toLowerCase() === country),
+                                    countries?.find((item) => item.shortname === currentCountry?.shortname),
                                 ]}
                                 inputProps={{
                                     autoComplete: 'off',
@@ -145,6 +148,7 @@ export default function PricingVoice({ data, country }) {
                             />
                         </div>
                     )}
+
                     <h1 className='text-xl font-semibold'>{data?.heading}</h1>
                     <table className='table bg-white rounded w-full'>
                         <thead>
