@@ -275,6 +275,16 @@
                     }
                 ]
             }
+        },
+        "whatsapp": {
+            "connectComp": {
+                "know_more": "Know more about"
+            }
+        },
+        "rcs": {
+            "connectComp": {
+                "know_more": "Know more about"
+            }
         }
     }
 }

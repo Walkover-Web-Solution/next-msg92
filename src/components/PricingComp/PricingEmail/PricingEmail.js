@@ -4,13 +4,13 @@ import { useCallback, useEffect, useState } from 'react';
 import GetSubscriptions from '@/utils/getSubscription';
 import { MdCheck, MdClose } from 'react-icons/md';
 import getURL from '@/utils/getURL';
+import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 
-export default function PricingEmail({ data }) {
+export default function PricingEmail({ data, country }) {
+    const { currency, symbol } = GetCurrencySymbol(country);
     const [isLoading, setIsLoading] = useState(false);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
-    const [currency, setCurrency] = useState('INR');
-    const [symbol, setSymbol] = useState('₹');
 
     const fetchPlans = useCallback(async () => {
         setIsLoading(true);
@@ -198,7 +198,7 @@ export default function PricingEmail({ data }) {
                     ))}
             </div>
 
-            <ConnectWithTeam product={'hello'} data={data?.connectComp} isPlan={true} />
+            <ConnectWithTeam product={'Email'} data={data?.connectComp} href={'email'} isPlan={true} />
             <FaqsComp data={data?.faqComp} notCont={true} />
         </div>
     );

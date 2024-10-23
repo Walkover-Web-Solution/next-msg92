@@ -9,7 +9,6 @@ import getURL from '@/utils/getURL';
 
 export default function PricingHello({ data, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
-
     const [isLoading, setIsLoading] = useState(false);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
@@ -237,7 +236,7 @@ export default function PricingHello({ data, country }) {
                         ))}
                 </div>
 
-                <ConnectWithTeam product={'hello'} data={data?.connectComp} isPlan={true} />
+                <ConnectWithTeam product={'Hello'} href={'hello'} data={data?.connectComp} isPlan={true} />
                 <FaqsComp data={data?.faqComp} notCont={true} />
             </div>
         </>

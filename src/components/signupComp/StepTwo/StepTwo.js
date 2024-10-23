@@ -64,8 +64,8 @@ class StepTwo extends React.Component {
                         <div className='w-full flex flex-col gap-2 '>
                             <label htmlFor='email'>Verify email</label>
                             <div className='flex xl:flex-row flex-col gap-10'>
-                                <div className='flex sm:flex-row flex-col items-start w-fit  gap-4'>
-                                    <div className='flex flex-col items-start gap-6 w-fit w-[360px]  '>
+                                <div className='flex sm:flex-row flex-col items-start w-fit gap-4'>
+                                    <div className='flex flex-col items-start gap-6 w-[360px]  '>
                                         <div className='flex gap-2 items-center w-full '>
                                             {this.props?.signupByGitHub ? (
                                                 <div>
@@ -262,7 +262,6 @@ class StepTwo extends React.Component {
                         <button
                             className=' btn btn-md btn-accent disabled:bg-gray-300 disabled:text-primary'
                             onClick={() => {
-                                this.props.setStep(3);
                                 if (
                                     this.props?.smsAccessToken &&
                                     (this.props?.emailAccessToken || this.props?.githubCode)

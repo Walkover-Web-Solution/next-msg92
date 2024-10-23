@@ -113,7 +113,7 @@ export default function CaseStudyComp({ data, pageInfo }) {
                                             width={100}
                                             height={100}
                                             alt={caseStudy?.slug}
-                                            className='h-[80px] max-w-3/4'
+                                            className='h-[50px] w-fit '
                                         />
                                         <h3 className='text-xl font-medium'>{caseStudy?.title}</h3>
                                         <div>

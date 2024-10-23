@@ -10,10 +10,12 @@ export default function FaqsComp({ data, notCont }) {
                                 <div key={index} className='collapse collapse-plus  border-b rounded-none'>
                                     <input type='radio' name='my-accordion-3' defaultChecked={index === 0} />
                                     <h3 className='collapse-title text-xl font-medium'>{faq?.question}</h3>
-                                    <div
-                                        className='collapse-content py-3 text-lg'
-                                        dangerouslySetInnerHTML={{ __html: faq?.answer }}
-                                    ></div>
+                                    <div className='collapse-content '>
+                                        <div
+                                            className=' pt-3 text-lg '
+                                            dangerouslySetInnerHTML={{ __html: faq?.answer }}
+                                        ></div>
+                                    </div>
                                 </div>
                             );
                         })}
