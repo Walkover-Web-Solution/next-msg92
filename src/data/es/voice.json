@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Voice API for your Business | Voice Call API | MSG91-United Kingdom",
-        "description": "MSG91 provides voice call api's to your business which helps to engage your customers over voice with our virtual phone numbers, and voice APIs"
+        "title": "Voice API for your Business | Voice Call API | MSG91-Spain",
+        "description": "MSG91 provides voice call api's to your business which helps to engage your customers over voice with our virtual phone numbers, and voice APIs."
     },
     "BannerComp": {
         "slug": "voice",
@@ -49,36 +49,36 @@
           
             {
                 "name": "Call Monitoring",
-                "content":"<strong>Introducing the next-level communication experience with our all-new Call Monitoring features</strong>We're giving you the reins of your conversations with UK callers. These robust features provide you with enhanced control and insight during your calls, ensuring improved communication and customer satisfaction. Call spying: your confidential tool for quality assurance for UK customers!  Call barging: real-time support, is just a click away! Call whispering: guidance at your fingertips!",
+                "content":"<strong>Introducing the next-level communication experience with our all-new Call Monitoring features</strong> We're putting you in control of your conversations. These powerful features offer you increased oversight and insight during your calls, guaranteeing improved communication and satisfying customers of Spain. Call spying: your hidden gem for quality assurance! Call barging: instantaneous support, just a tap away! Call whispering: guidance at your fingertips!",
                 "img": "/assets/global/voice/voice-call-monitoring.svg"
             },
             {
                 "name": "Direct calling from browser",
-                "content": "<strong>Skip the 2-way calling and directly call from browser.</strong>Boost agent efficiency and elevate customer experiences. Seamlessly connect two phone numbers without putting one on hold, starting a seamless conversation with your customers.",
+                "content": "<strong>Skip the 2-way calling and directly call from browser.</strong> Boost agent efficiency and elevate customer experiences. Seamlessly connect two phone numbers without putting one on hold, starting a seamless conversation with your customers.",
                 "img": "/assets/global/voice/voice-direct-calling-from-hello.svg"
             },
             {
                 "name": "IVR Flow",
-                "content": "<strong>Modern IVR technology for streamlined interactions in Spain</strong>Our intelligent IVR system offers more than just query resolution. In addition to standard features, you can configure time-based or agent-based settings and even record custom messages.",
+                "content": "<strong>Modern IVR technology for streamlined interactions in Spain</strong> Our intelligent IVR system offers more than just query resolution. In addition to standard features, you can configure time-based or agent-based settings and even record custom messages.",
                 "img": "/assets/global/voice/voice-ivr-flow.svg"
             },
             {
                 "name": "Bulk Voice",
-                "content":"<strong>Directly engage with your Spanish audience with a single call</strong>Effortlessly broadcast your voice message to hundreds and thousands of customers in one go. A ringing phone call is hard to ignore, making it an effective way to convey your message.",
+                "content":"<strong>Directly engage with your Spanish audience with a single call</strong> Effortlessly broadcast your voice message to hundreds and thousands of customers in one go. A ringing phone call is hard to ignore, making it an effective way to convey your message.",
                 "img": "/assets/global/voice/voice-bulk-voice.svg"
             },
             {
                 "name": "Multiple Way to Upload File",
-                "content":"<strong>Various ways to upload your audio message</strong>Enhance customer interactions with personalized voice messages. Record your message for bulk voice calls or IVR menus using text-to-speech, your browser's microphone, or a phone call.",
+                "content":"<strong>Various ways to upload your audio message</strong> Enhance customer interactions with personalized voice messages. Record your message for bulk voice calls or IVR menus using text-to-speech, your browser's microphone, or a phone call.",
                 "img": "/assets/global/voice/voice-multiple-way-to-upload-file.svg"
             },
             {
                 "name": "Bulk voice with IVR",
-                "content":"<strong>Connect your voice call to the IVR</strong>Not only can you send bulk voice messages, but you can also receive responses from your users. Record the message you want to convey and send it to your customers using an IVR.",
+                "content":"<strong>Connect your voice call to the IVR</strong> Not only can you send bulk voice messages, but you can also receive responses from your users. Record the message you want to convey and send it to your customers using an IVR.",
                 "img": "/assets/global/voice/voice-bulk-voice-with-ivr.svg"
             },      {
                 "name": "Real time connect with agent on user input on bulk call",
-                "content": "<strong>Guide your users to your support agents</strong>Enhance the customer experience by providing real-time support and connecting your users to customer support agents based on their bulk call input in Spain.",
+                "content": "<strong>Guide your users to your support agents</strong> Enhance the customer experience by providing real-time support and connecting your users to customer support agents based on their bulk call input in Spain.",
                 "img": "/assets/global/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
             }
         ]

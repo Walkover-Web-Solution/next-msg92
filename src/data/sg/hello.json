@@ -19,24 +19,45 @@
             "heading": "Support 15+ channels and platforms ",
             "logos": [
                 {
-                    "name": "Xiaomi",
-                    "url": "/assets/trusted_by/xiaomi.svg"
+                    "name": "facebook",
+                   "url": "/assets/platforms/facebook.svg"
                 },
                 {
-                    "name": "Unacademy",
-                    "url": "/assets/trusted_by/unacademy.svg"
+                    "name": "gmail",
+                    "url": "/assets/platforms/gmail.svg"
                 },
                 {
-                    "name": "Dream11",
-                    "url": "/assets/trusted_by/dream11.svg"
+                    "name": "googleChat",
+                  "url": "/assets/platforms/googlechat.svg"
                 },
                 {
-                    "name": "Indeed",
-                    "url": "/assets/trusted_by/indeed.svg"
+                    "name": "instagram",
+                   "url": "/assets/platforms/instagram.svg"
                 },
                 {
-                    "name": "Ixigo",
-                    "url": "/assets/trusted_by/ixigo.svg"
+                    "name": "outlook",
+                  "url": "/assets/platforms/outlook.svg"
+                },
+                {
+                    "name": "sms",
+                   "url": "/assets/platforms/sms.svg"
+                },  {
+                    "name": "telegram",
+                  "url": "/assets/platforms/telegram.svg"
+                },
+                {
+                    "name": "twitter",
+                   "url": "/assets/platforms/twitter.svg"
+                },  {
+                    "name": "voice",
+                  "url": "/assets/platforms/voice.svg"
+                },
+                {
+                    "name": "whatsapp",
+                   "url": "/assets/platforms/whatsapp.svg"
+                },  {
+                    "name": "zoho",
+                  "url": "/assets/platforms/zoho.svg"
                 }
             ]
         }
