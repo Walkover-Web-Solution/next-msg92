@@ -1,6 +1,6 @@
 {
     "HeadComp": {
-        "title": "Transactional SMS | Transactional SMS Provider - MSG91-Spain",
+        "title": "Transactional SMS | Transactional SMS Provider - MSG91-United Kingdom",
         "description": "MSG91 is among the leading transactional SMS service providers. Empowering businesses with easy-to-integrate transactional SMS API to enhance customer satisfaction."
     },
     "BannerComp": {
@@ -67,12 +67,12 @@
             },
             {
                 "name": "Personalized SMS",
-                "content": "<strong>Increase customer satisfaction with meaningful engagement.</strong>Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI.",
+                "content": "<strong>Increase customer satisfaction with meaningful engagement.</strong> Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI.",
                 "img": "/assets/global/sms/sms-personalized-sms.svg"
             },
             {
                 "name": "Link Shortener",
-                "content": "<strong>Transform a long URL into a shorter, more readable link.</strong>Enable the deeply integrated link shortener to convert long URLs to shorter links. Get a detailed user report on clicks with mobile numbers, browser, and IP.",
+                "content": "<strong>Transform a long URL into a shorter, more readable link.</strong> Enable the deeply integrated link shortener to convert long URLs to shorter links. Get a detailed user report on clicks with mobile numbers, browser, and IP.",
                 "img": "/assets/global/sms/sms-link-shortener.svg"
             },
             {

@@ -67,17 +67,17 @@
             },
             {
                 "name": "Personalized SMS",
-                "content": "<strong>Increase customer satisfaction with meaningful engagement.</strong>Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI.",
+                "content": "<strong>Increase customer satisfaction with meaningful engagement.</strong> Don’t just engage with customers, create personalized experiences by adding characteristics to your messages. Harness the power of personalization to boost your ROI.",
                 "img": "/assets/global/sms/sms-personalized-sms.svg"
             },
             {
                 "name": "Link Shortener",
-                "content": "<strong>Transform a long URL into a shorter, more readable link.</strong>Enable the deeply integrated link shortener to convert long URLs to shorter links. Get a detailed user report on clicks with mobile numbers, browser, and IP.",
+                "content": "<strong>Transform a long URL into a shorter, more readable link.</strong> Enable the deeply integrated link shortener to convert long URLs to shorter links. Get a detailed user report on clicks with mobile numbers, browser, and IP.",
                 "img": "/assets/global/sms/sms-link-shortener.svg"
             },
             {
                 "name": "Enhanced Analytics",
-                "content": "<strong>Real-time graphical view for monitoring and troubleshooting.</strong>Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed.",
+                "content": "<strong>Real-time graphical view for monitoring and troubleshooting.</strong> Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed.",
                 "img": "/assets/global/sms/sms-enhanced-analytics.svg"
             }
         ]
