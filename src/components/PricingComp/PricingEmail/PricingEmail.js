@@ -198,7 +198,7 @@ export default function PricingEmail({ data }) {
                     ))}
             </div>
 
-            <ConnectWithTeam product={'hello'} data={data?.connectComp} isPlan={true} />
+            <ConnectWithTeam product={'Email'} data={data?.connectComp} href={'email'} isPlan={true} />
             <FaqsComp data={data?.faqComp} notCont={true} />
         </div>
     );

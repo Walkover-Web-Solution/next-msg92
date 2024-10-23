@@ -215,6 +215,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                     data={data?.connectComp}
                     isPlan={true}
                     currency={currency}
+                    href={type}
                 />
                 <FaqsComp data={data?.faqComp} notCont={true} />
             </div>

@@ -1,5 +1,6 @@
 import getURL from '@/utils/getURL';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
+import FaqsComp from '@/components/FaqsComp/FaqsComp';
 
 export default function PricingOtp({ data }) {
     return (
@@ -16,7 +17,8 @@ export default function PricingOtp({ data }) {
                     <button className='btn btn-primary w-fit btn-md'>{data?.get_started || 'Get Started'}</button>
                 </a>
             </div>
-            <ConnectWithTeam data={data?.connectComp} product={'otpwidget'} />
+            <ConnectWithTeam data={data?.connectComp} product={'OTP widget/SDK'} href={'otp'} />
+            <FaqsComp data={data?.faqComp} notCont={true} />
         </div>
     );
 }

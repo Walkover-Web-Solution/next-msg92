@@ -12,11 +12,11 @@ export default function PricingCampaign({ data }) {
                         {data?.connectComp?.content2 || `Channel wise pricing will be applicable for sending message.`}
                     </p>
                 </div>{' '}
-                <a href={getURL('signup', 'campaign')}>
+                <a href={getURL('signup', 'campaign')} target='_blank'>
                     <button className='btn btn-primary w-fit btn-md'>{data?.get_started || 'Get Started'}</button>
                 </a>
             </div>
-            <ConnectWithTeam data={data?.connectComp} product={'campaign'} />
+            <ConnectWithTeam href={'campaign'} data={data?.connectComp} product={'Campaign'} />
         </div>
     );
 }
