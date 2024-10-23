@@ -78,28 +78,28 @@
             },
             {
                 "name": "Unlimited Agents",
-                "content": "<strong>Your team is limitless, and so are the possibilities with HELLO.</strong>We offer the flexibility of unlimited agents, ensuring that your entire workforce can collaborate, assist, and provide exceptional service to your customers, no matter the scale of your operations.",
+                "content": "<strong>Your team is limitless, and so are the possibilities with HELLO.</strong> We offer the flexibility of unlimited agents, ensuring that your entire workforce can collaborate, assist, and provide exceptional service to your customers, no matter the scale of your operations.",
                 "img": "/assets/global/hello/unlimited-agents.svg"
             },
          
             {
                 "name": "Workflow Management",
-                "content": "<strong>Streamline your operations like never before with our intuitive workflow management.</strong>From lead generation to order processing, HELLO ensures that every step of your customer interaction is organized, efficient, and tailored to your unique processes.",
+                "content": "<strong>Streamline your operations like never before with our intuitive workflow management.</strong> From lead generation to order processing, HELLO ensures that every step of your customer interaction is organized, efficient, and tailored to your unique processes.",
                 "img": "/assets/global/hello/workflow.svg"
             },
             {
                 "name": "Video Call",
-                "content": "<strong>Sometimes words aren't enough.</strong>With HELLO's video call and screen sharing capabilities, bridge the gap between face-to-face meetings and virtual interactions. Whether you're diagnosing a medical condition or demonstrating a product, our features enable clear, real-time communication.",
+                "content": "<strong>Sometimes words aren't enough.</strong> With HELLO's video call and screen sharing capabilities, bridge the gap between face-to-face meetings and virtual interactions. Whether you're diagnosing a medical condition or demonstrating a product, our features enable clear, real-time communication.",
                 "img": "/assets/global/hello/video-call---screen-sharing.svg"
             },
             {
                 "name": "Analytics",
-                "content": "<strong>Data-driven decisions are the backbone of success. </strong>HELLO's advanced analytics provide you with insightful metrics to understand customer behavior, agent performance, and trends. Harness this knowledge to refine your strategies and create impactful customer experiences.",
+                "content": "<strong>Data-driven decisions are the backbone of success. </strong> HELLO's advanced analytics provide you with insightful metrics to understand customer behavior, agent performance, and trends. Harness this knowledge to refine your strategies and create impactful customer experiences.",
                 "img": "/assets/global/hello/analytics.svg"
             },
             {
                 "name": "Screen sharing/Control",
-                "content": "<atrong>Take control of the conversation like never before.</strong>With screen control, assist your customers by navigating their screens, resolving issues efficiently, and ensuring that they get the most out of your services. It's a level of support that truly stands out.",
+                "content": "<strong>Take control of the conversation like never before.</strong> With screen control, assist your customers by navigating their screens, resolving issues efficiently, and ensuring that they get the most out of your services. It's a level of support that truly stands out.",
                 "img": "/assets/global/hello/screen-control.svg"
             }
         ]

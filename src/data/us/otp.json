@@ -60,7 +60,7 @@
       },
       {
         "name": "Support multiple channels",
-        "content": "<strong>Build customer trust and increase conversion across multiple channels</strong> Authenticate your users on channels they prefer. We support multiple channels including SMS, email, Voice, <a href='/in/whatsapp'>WhatsApp</a>  giving businesses and users the flexibility they need to authenticate.",
+        "content": "<strong >Build customer trust and increase conversion across multiple channels</strong> Authenticate your users on channels they prefer. We support multiple channels including SMS, email, Voice, <a href='/in/whatsapp' style='color: blue;'>WhatsApp</a>  giving businesses and users the flexibility they need to authenticate.",
         "img": "/assets/global/otp/otp-support-multiple-channels.svg"
       }
     ]

@@ -52,32 +52,32 @@
             },
             {
                 "name": "Direct calling from browser",
-                "content": "<strong>Seamless Browser-Based Calling for Effortless Communication</strong>Enhance customer experience and reduce agent call time in the USA with direct browser-based calls. Connect two phone numbers smoothly, ensuring productive customer interactions.",
+                "content": "<strong>Seamless Browser-Based Calling for Effortless Communication</strong> Enhance customer experience and reduce agent call time in the USA with direct browser-based calls. Connect two phone numbers smoothly, ensuring productive customer interactions.",
                 "img": "/assets/global/voice/voice-direct-calling-from-hello.svg"
             },
             {
                 "name": "IVR Flow",
-                "content": "<strong>Modern IVR for Streamlined Customer Engagement in the USA</strong>Experience a cutting-edge IVR system tailored for the USA, simplifying customer interactions. This intelligent IVR goes beyond query resolution, allowing you to configure time-based or agent-based settings and record personalized messages for a frictionless experience.",
+                "content": "<strong>Modern IVR for Streamlined Customer Engagement in the USA</strong> Experience a cutting-edge IVR system tailored for the USA, simplifying customer interactions. This intelligent IVR goes beyond query resolution, allowing you to configure time-based or agent-based settings and record personalized messages for a frictionless experience.",
                 "img": "/assets/global/voice/voice-ivr-flow.svg"
             },
             {
                 "name": "Bulk Voice",
-                "content": "<strong>Engage with Your USA Audience via Single Calls</strong>Effectively connect with your USA audience by recording and broadcasting voice messages. A ringing phone call is a highly effective way to convey your message, ensuring it's hard to overlook.",
+                "content": "<strong>Engage with Your USA Audience via Single Calls</strong> Effectively connect with your USA audience by recording and broadcasting voice messages. A ringing phone call is a highly effective way to convey your message, ensuring it's hard to overlook.",
                 "img": "/assets/global/voice/voice-bulk-voice.svg"
             },
             {
                 "name": "Multiple Way to Upload File",
-                "content": "<strong>Diverse Methods for Uploading Your Audio Messages in the USA</strong>Optimize customer interaction in the USA with personalized voice messages. Record messages for bulk voice calls or IVR menus using text-to-speech, browser microphone, or phone calls.",
+                "content": "<strong>Diverse Methods for Uploading Your Audio Messages in the USA</strong> Optimize customer interaction in the USA with personalized voice messages. Record messages for bulk voice calls or IVR menus using text-to-speech, browser microphone, or phone calls.",
                 "img": "/assets/global/voice/voice-multiple-way-to-upload-file.svg"
             },
             {
                 "name": "Bulk voice with IVR",
-                "content": "<strong>Integrate Voice Calls with the USA IVR</strong>Extend your reach by sending bulk voice messages and collecting responses in the USA. Record your messages and transmit them to your customers using an IVR system.",
+                "content": "<strong>Integrate Voice Calls with the USA IVR</strong> Extend your reach by sending bulk voice messages and collecting responses in the USA. Record your messages and transmit them to your customers using an IVR system.",
                 "img": "/assets/global/voice/voice-bulk-voice-with-ivr.svg"
             },
             {
                 "name": "Real time connect with agent on user input on bulk call",
-                "content": "<strong>Direct Users to Your USA Support Agents</strong>Elevate the customer experience in the USA by providing real-time support. Connect users with your customer support agents based on their input during bulk calls.",
+                "content": "<strong>Direct Users to Your USA Support Agents</strong> Elevate the customer experience in the USA by providing real-time support. Connect users with your customer support agents based on their input during bulk calls.",
                 "img": "/assets/global/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
             }
         ]

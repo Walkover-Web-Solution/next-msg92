@@ -53,7 +53,7 @@
             },
             {
                 "name": "Whatsapp Integrations",
-                "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and more ",
+                "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and  <a href='/integration' style='color: blue'>more</a>  ",
                 "img": "/assets/global/whatsapp/whatsapp-integrations.svg"
             },
             {
@@ -78,27 +78,27 @@
             },
             {
                 "name": "Support Base64",
-                "content": "<strong>Send the body in JSON and leave the rest to us.</strong>No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp.",
+                "content": "<strong>Send the body in JSON and leave the rest to us.</strong> No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp.",
                 "img": "/assets/global/whatsapp/whatsapp-support-base64.svg"
             },
             {
                 "name": "2-way Communication",
-                "content": "<strong>Say hello to go on HELLO.</strong>Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business.",
+                "content": "<strong>Say hello to go on HELLO.</strong> Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business.",
                 "img": "/assets/global/whatsapp/whatsapp-2way-communication.svg"
             },
             {
                 "name": "Manage Template Inside Panel",
-                "content": "<strong>Create and Manage your template right here</strong>No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook.",
+                "content": "<strong>Create and Manage your template right here</strong> No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook.",
                 "img": "/assets/global/whatsapp/whatsapp-manage-template-inside-panel.svg"
             },  
             {
                 "name": "Analytics",
-                "content": "<strong>Get graphical insights into your business messages.</strong>Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more.",
+                "content": "<strong>Get graphical insights into your business messages.</strong> Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more.",
                 "img": "/assets/global/whatsapp/whatsapp-analytics.svg"
             },
             {
                 "name": "Export Logs",
-                "content": "<strong>Get individual outbound and inbound messages logs.</strong>Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers.",
+                "content": "<strong>Get individual outbound and inbound messages logs.</strong> Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers.",
                 "img": "/assets/global/whatsapp/whatsapp-export-logs.svg"
             }
         ]

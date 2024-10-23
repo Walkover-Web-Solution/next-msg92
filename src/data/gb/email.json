@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Transactional Email | Transactional Email API - MSG91-United States",
-        "description": "Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable.."
+        "title": "Transactional Email | Transactional Email API - MSG91-United Kingdom",
+        "description": "Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
     },
     "BannerComp": {
         "slug": "email",
@@ -10,9 +10,9 @@
             "icon": "/assets/icons/products/email.svg"
         },
         "code": true,
-        "tagline": "Email API",
-        "heading": "smarter email strategy",
-        "subheading": "Smart emails that land directly into the right inbox Make the most of these powerful touchpoints between your brand and your customers.",
+        "tagline": "smarter email strategy",
+        "heading": "Smart emails that land directly into the right inbox",
+        "subheading": " Make the most of these powerful touchpoints between your brand and your customers.",
         "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",
         "trustedByComp": {

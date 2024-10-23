@@ -55,7 +55,7 @@
       },
       {
         "name": "Inbuilt IP Security",
-        "content": "<strong>Protect against fraud, hacks, validation, blocking</strong>  Minimize fraud with an extra layer of security. The inbuilt security ensures that when a login is risky the flow does not allow the bad actor to login by viewing it as potentially fraudulent.",
+        "content": "<strong>Protect against fraud, hacks, validation, blocking</strong> Minimize fraud with an extra layer of security. The inbuilt security ensures that when a login is risky the flow does not allow the bad actor to login by viewing it as potentially fraudulent.",
         "img": "/assets/global/otp/otp-inbuilt-ip-security.svg"
       },
       {
