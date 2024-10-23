@@ -1,4 +1,12 @@
 import Image from 'next/image';
+import {
+    MdAdsClick,
+    MdOutlineAnalytics,
+    MdOutlineSchema,
+    MdOutlineScreenShare,
+    MdOutlineSmartToy,
+    MdSupportAgent,
+} from 'react-icons/md';
 
 export default function FeatureComp({ data }) {
     return (
@@ -19,7 +27,14 @@ export default function FeatureComp({ data }) {
                                 >
                                     <div className='flex flex-col gap-2'>
                                         {feature?.icon && (
-                                            <Image src={feature?.icon} alt={feature?.name} width={40} height={40} />
+                                            <div className='text-4xl text-[#F7DC6F]'>
+                                                {feature?.icon === 'MdSupportAgent' && <MdSupportAgent />}
+                                                {feature?.icon === 'MdOutlineSmartToy' && <MdOutlineSmartToy />}
+                                                {feature?.icon === 'MdAdsClick' && <MdAdsClick />}
+                                                {feature?.icon === 'MdOutlineScreenShare' && <MdOutlineScreenShare />}
+                                                {feature?.icon === 'MdOutlineSchema' && <MdOutlineSchema />}
+                                                {feature?.icon === 'MdOutlineAnalytics' && <MdOutlineAnalytics />}
+                                            </div>
                                         )}
 
                                         <h3 className='text-2xl font-semibold'>{feature?.name}</h3>
