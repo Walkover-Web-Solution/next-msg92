@@ -1,132 +1,201 @@
 {
     "HeadComp": {
-        "title": "Transactional Email | Transactional Email API - MSG91-United Arab Emirates",
-        "description": "Send transactional emails to your customers with the help of Transactional Email API from MSG91 that is easy to integrate, secure and reliable."
+        "title": "Best Cloud Communication Platform for Businesses in Spain| MSG91-Spain",
+        "description": "MSG91 is one of the finest communication platforms that provide businesses to integrate themselves with SMS APIs, e-mail APIs, voice call APIs, etc."
     },
-    "NewHelloComp": {
-        "bannerComp": {
-            "slug": "hello",
-            "product": {
-                "subname": "introducing",
-                "name": "Hello",
-                "icon": "/assets/icons/products/hello.svg"
-            },
-            "tagline": "Boosting Customer Satisfaction",
-            "heading": "An <strong class='ai-fuled'>AI-Fueled </strong> Conversational HUB",
-            "subheading": "Seamlessly merging chat, email, call and video to resolve customer queries.",
-            "banner_img": "/assets/global/hello/hero.svg",
-            "getstarted_btn": "Get Started",
-            "trustedByComp": {
-                "heading": "Working with some of the best",
-                "logos": [
-                    {
-                        "name": "Xiaomi",
-                        "url": "/assets/trusted_by/xiaomi.svg"
-                    },
-                    {
-                        "name": "Unacademy",
-                        "url": "/assets/trusted_by/unacademy.svg"
-                    },
-                    {
-                        "name": "Dream11",
-                        "url": "/assets/trusted_by/dream11.svg"
-                    },
-                    {
-                        "name": "Indeed",
-                        "url": "/assets/trusted_by/indeed.svg"
-                    },
-                    {
-                        "name": "Razorpay",
-                        "url": "/assets/trusted_by/razorpay.svg"
-                    },
-                    {
-                        "name": "Ixigo",
-                        "url": "/assets/trusted_by/indian-oil.svg"
-                    },
-                    {
-                        "name": "Ixigo",
-                        "url": "/assets/trusted_by/ixigo.svg"
-                    }
-                ]
-            }
-        },
-        "discover": {
-            "heading": "Discover the Powerhouse Communication Solution ",
-            "subheading": "When it comes to revolutionizing communication, look no further than HELLO by MSG91.",
-            "subtag": "Our cutting-edge application is designed to empower businesses across every industry with a suite of features that are not only transformative but also tailored to your needs.",
-            "tags": [
+    "BannerComp": {
+        "tagline": "customer solution platform",
+        "heading": "Best Cloud based communication platforms ",
+        "subheading": "Secure and robust APIs for WhatsApp, SMS, RCS, Email, Voice, Authentication and more",
+        "banner_img": "/assets/global/index/banner.webp",
+        "getstarted_btn": "Get Started",
+        "trustedByComp": {
+            "heading": "Trusted by 30,000+ global businesses",
+            "logos": [
                 {
-                    "icon": "MdVideoCall",
-                    "name": "E-commerce"
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
                 },
                 {
-                    "icon": "",
-                    "name": "Fintech"
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
                 },
                 {
-                    "icon": "",
-                    "name": "Healthcare"
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
                 },
                 {
-                    "icon": "",
-                    "name": "Technology"
-                }
-            ],
-            "extra": "No matter if you're in ecommerce, fintech, healthcare, or any other field, HELLO is the ultimate solution to elevate your communication game."
-        },
-        "FeatureComp": {
-            "features": [
-                {
-                    "icon": "/assets/global/hello/new/icon-ai-enabled-chat.svg",
-                    "color": "yellow",
-                    "name": "AI-Enabled Chatbot",
-                    "content": "<strong>Say hello to the future of customer engagement.</strong>Our AI-powered chatbot is your 24/7 virtual assistant, ready to engage with your customers, answer queries, and guide them seamlessly through their journey. Say goodbye to wait times and hello to instant, intelligent responses. Can be easily switched to Human agent when required.",
-                    "img": "/assets/global/hello/new/ai-enabled-chat.svg"
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
                 },
                 {
-                    "icon": "/assets/global/hello/new/icon-unlimited-agents.svg",
-                    "color": "purple",
-                    "name": "Unlimited Agents",
-                    "content": "<strong>Your team is limitless, and so are the possibilities with HELLO.</strong>We offer the flexibility of unlimited agents, ensuring that your entire workforce can collaborate, assist, and provide exceptional service to your customers, no matter the scale of your operations.",
-                    "img": "/assets/global/hello/new/unlimited-agents.svg"
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
                 },
                 {
-                    "icon": "/assets/global/hello/new/icon-workflow.svg",
-                    "color": "blue",
-                    "name": "Workflow Management",
-                    "content": "<strong>Streamline your operations like never before with our intuitive workflow management.</strong>From lead generation to order processing, HELLO ensures that every step of your customer interaction is organized, efficient, and tailored to your unique processes.",
-                    "img": "/assets/global/hello/new/workflow.svg"
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/indian-oil.svg"
                 },
                 {
-                    "icon": "/assets/global/hello/new/icon-video-call.svg",
-                    "color": "yellow",
-                    "name": "Video Call",
-                    "content": "<strong>Sometimes words aren't enough.</strong>With HELLO's video call and screen sharing capabilities, bridge the gap between face-to-face meetings and virtual interactions. Whether you're diagnosing a medical condition or demonstrating a product, our features enable clear, real-time communication.",
-                    "img": "/assets/global/hello/new/video-call.svg"
-                },
-                {
-                    "icon": "/assets/global/hello/new/icon-analytics.svg",
-                    "color": "purple",
-                    "name": "Analytics",
-                    "content": "<strong>Data-driven decisions are the backbone of success. </strong>HELLO's advanced analytics provide you with insightful metrics to understand customer behavior, agent performance, and trends. Harness this knowledge to refine your strategies and create impactful customer experiences.",
-                    "img": "/assets/global/hello/new/analytics.svg"
-                },
-                {
-                    "icon": "/assets/global/hello/new/icon-screen-sharing.svg",
-                    "color": "yellow",
-                    "name": "Screen sharing/Control",
-                    "content": "<atrong>Take control of the conversation like never before.</strong>With screen control, assist your customers by navigating their screens, resolving issues efficiently, and ensuring that they get the most out of your services. It's a level of support that truly stands out.",
-                    "img": "/assets/global/hello/new/screen-sharing.svg"
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
                 }
             ]
-        },
-        "prefooter": {
-            "text1": "At MSG91, we're not just offering a communication solution; We're offering a game-changer for businesses of all sizes and industries.",
-            "text2": "With HELLO, you're not just communicating – you're connecting, engaging, and thriving. Embrace the future of communication today.",
-            "text3": "Ready to transform the way you communicate? Say HELLO to your business's next big leap. Get started with HELLO by MSG91 now and experience the difference firsthand.",
-            "text4": "Unlock limitless possibilities with HELLO by MSG91. Your communication revolution starts here."
         }
-    }, "FaqsComp": {
+    },
+    "ProductsComp": [
+        {
+            "icon": "/assets/icons/products/hello.svg",
+            "tagline": "CONTACT CENTER",
+            "name": "Hello",
+            "description": "Empower your employees, Support your customers.",
+            "img": "/img/home/chats.svg",
+            "linkText": "Learn more",
+            "link": "/hello"
+        },
+        {
+            "icon": "/assets/icons/products/campaign.svg",
+            "tagline": "EVENT BASED AUTOMATION",
+            "name": "Campaign",
+            "description": "Boost audience engagement through smart Platform.",
+            "img": "/img/home/campaign.svg",
+            "linkText": "Learn more",
+            "link": "/campaign"
+        },
+        {
+            "icon": "/assets/icons/products/segmento.svg",
+            "tagline": "CUSTOMER DATA PLATFORM",
+            "name": "Segmento",
+            "description": "Customer segmentation by their actions or events.",
+            "img": "/img/home/segmento.webp",
+            "linkText": "Learn more",
+            "link": "/segmento"
+        },
+        {
+            "icon": "/assets/icons/products/otp.svg",
+            "tagline": "INSTANT SECURE VERIFICATION",
+            "name": "OTP",
+            "description": "Quick and reliable multichannel OTP verification",
+            "img": "/img/home/otp.png",
+            "linkText": "Learn more",
+            "link": "/otp"
+        }
+    ],
+    "ChannelsComp": {
+        "heading": "Communication Channels",
+        "subheading": "Empower conversations with best-in-class communication API Full-featured APIs for developers and businesses to connect and engage your customers globally",
+        "linkText": "Learn more",
+        "channels": [
+            {
+                "icon": "/assets/icons/products/sms.svg",
+                "name": "SMS",
+                "description": "Transform your global communication with MSG91's reliable SMS services & APIs. Engage, analyze, and connect effortlessly on a global scale",
+                "link": "/sms"
+            },
+            {
+                "icon": "/assets/icons/products/email.svg",
+                "name": "Email",
+                "description": "Enhance email outreach with templates, AMP, stats, SMTP/API, and validation for effective customer engagement",
+                "link": "/email"
+            },
+            {
+                "icon": "/assets/icons/products/whatsapp.svg",
+                "name": "WhatsApp",
+                "description": "Improve interaction on WhatsApp with Base64 support, two-way communication, template management, analytics, and message logs",
+                "link": "/whatsapp"
+            },
+            {
+                "icon": "/assets/icons/products/voice.svg",
+                "name": "Voice",
+                "description": "Enhance customer engagement with real-time calls, Call Monitoring, browser calling, advanced IVR, bulk voice messaging, and real-time agent connections",
+                "link": "/voice"
+            },
+            {
+                "icon": "/assets/icons/products/numbers.svg",
+                "name": "Numbers",
+                "description": "Unlock global markets with cost-efficient virtual numbers. Enhance engagement with missed call services, keyword messaging, surveys, and auto responses",
+                "link": "/numbers"
+            }
+        ]
+    },
+    "FactsComp": [
+        {
+            "fact": "2.5 Billion+",
+            "stat": "API calls",
+            "per": "per month"
+        },
+        {
+            "fact": "1.6 Billion+",
+            "stat": "SMS sent",
+            "per": "per month"
+        },
+        {
+            "fact": "1 Billion+",
+            "stat": "OTPs sent ",
+            "per": "per month"
+        },
+       
+        {
+            "fact": "1 Billion+",
+            "stat": "Emails sent",
+            "per": "per month"
+        }
+    ],
+    "MoreServicesComp": {
+        "heading": "More services",
+        "linkText": "Learn more",
+        "services": [
+            {
+                "icon": "/assets/icons/products/shorturl.svg",
+                "name": "URL Shortner",
+                "img": "/assets/global/index/services/shorturl.svg",
+                "heading": "Make your long URLs short",
+                "description": "Automatically shortens URL and tracks your success, one click at a time. Turn your long, messy links into short, memorable branded links",
+                "link": "/shorturl"
+            },
+            {
+                "icon": "/assets/icons/products/knowledgebase.svg",
+                "name": "KnowledgeBase App",
+                "img": "/assets/global/index/services/knowledgebase.svg",
+                "heading": "Manage your help docs and articles",
+                "description": "Do not let your customers wait for simple solutions. Give them instant access to the self-service library of information.",
+                "link": "/knowledgebase"
+            },
+            {
+                "icon": "/assets/icons/products/filehosting.svg",
+                "name": "File Hosting",
+                "img": "/assets/global/index/services/filehosting.svg",
+                "heading": "Simple and secured file storage",
+                "description": "A central hub for online file storage, sharing and syncing. Store all your files safely using powerful, reliable and easy-to-use cloud storage.",
+                "link": "https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91"
+            }
+        ]
+    },
+    "CaseStudiesComp": {
+        "heading": "Customer Success Powered by MSG91",
+        "linkText": "Learn more",
+        "casestudies": [
+            {
+                "img": "/assets/global/index/stories/milkbasket-bg.png",
+                "logo": "/assets/global/index/stories/milkbasket-logo.png",
+                "description": "Milkbasket sends regular updates to its customers by offering proactive support and recommendations",
+                "link": "/case-studies/milkbasket"
+            },
+            {
+                "img": "/assets/global/index/stories/unacademy-bg.png",
+                "logo": "/assets/global/index/stories/unacademy-logo.png",
+                "description": "Unacademy using omnichannel keeps its audience engaged and nurtured with personalised campaigns",
+                "link": "/case-studies/unacademy"
+            },
+            {
+                "img": "/assets/global/index/stories/ixigo-bg.png",
+                "logo": "/assets/global/index/stories/ixigo-logo.png",
+                "description": "Ixigo engages and updates its audience through multichannel communication across messaging, email and WhatsApp",
+                "link": "/case-studies/ixigo"
+            }
+        ]
+    },
+    "FaqsComp": {
         "heading": "Frequently Asked Questions",
         "faqs": [
             {
@@ -167,5 +236,8 @@
                 "link": "https://control.msg91.com/signup/"
             }
         }
+    },
+    "FooterComp": {
+        "country": "global"
     }
 }
