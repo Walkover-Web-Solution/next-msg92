@@ -11,6 +11,7 @@ import getURL from '@/utils/getURL';
 
 export default function PricingSMSOTP({ data, type, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
+    console.log('🚀 ~ PricingSMSOTP ~ currency:', currency);
     const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
     const [loading, setLoading] = useState(true);
     const [pricingData, setPricingData] = useState(null);

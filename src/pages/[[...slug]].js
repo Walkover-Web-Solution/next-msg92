@@ -117,6 +117,7 @@ export const getStaticProps = async (context) => {
         body: JSON.stringify(pageInfo),
     });
     const data = await res.json();
+    console.log('🚀 ~ getStaticProps ~ data:');
     return {
         props: {
             data,
