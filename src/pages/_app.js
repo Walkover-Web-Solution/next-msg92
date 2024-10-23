@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 export default function App({ Component, pageProps }) {
     return (
         <>
-            <Component {...pageProps} />;
+            <Component {...pageProps} />
             <ToastContainer
                 position='top-right'
                 autoClose={3000}

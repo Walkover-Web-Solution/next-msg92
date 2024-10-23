@@ -274,23 +274,23 @@
             "links": [
                 {
                     "name": "Guide",
-                    "link": "guide"
+                    "link": "https://msg91.com/guide"
                 },
                 {
                     "name": "Case Studies",
-                    "link": "case-studies"
+                    "link": "https://msg91.com/case-studies"
                 },
                 {
                     "name": "FAQ",
-                    "link": "help"
+                    "link": "https://msg91.com/help"
                 },
                 {
                     "name": "API Documentation",
-                    "link": "overview"
+                    "link": "https://docs.msg91.com/overview"
                 },
                 {
                     "name": "Request a Feature",
-                    "link": "b/feature-requests"
+                    "link": "https://features.msg91.com/feature-requests"
                 }
             ]
         },
