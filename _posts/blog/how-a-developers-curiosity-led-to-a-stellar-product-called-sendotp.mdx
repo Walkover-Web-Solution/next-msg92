@@ -1,0 +1,107 @@
+---
+title: How a developer\xe2\x80\x99s curiosity led to a stellar product called SendOTP!
+slug: how-a-developers-curiosity-led-to-a-stellar-product-called-sendotp
+author: shefali@walkover.in
+lastmod: 2020-08-18T09:45:04.000Z
+date: 2015-08-21T08:30:20.000Z
+description: A user’s convenience is at the hands of a sufficiently curious developer. Sameer Singh Rathod is one such developer who fortunately works for MSG91. He developed one of our most prized products – [SendOTP](https://msg91.com/otp). It’s a product that decreases the ‘annoyance quotient’ of users while making online payments, transactions and the likes. Here goes the story of SendOTP and its creator.
+tags: ""
+thumbnail: /images/uploads/proxyclick-visitor-management-system-l90zrbwvcoe-unsplash.jpg
+---
+
+![Untitled-2](https://images-msg91.s3.ap-south-1.amazonaws.com/content/images/wordpress/2015/08/Untitled-2.png)
+
+
+A user’s convenience is at the hands of a sufficiently curious developer. Sameer Singh Rathod is one such developer who fortunately works for MSG91. He developed one of our most prized products – [SendOTP](https://msg91.com/otp). It’s a product that decreases the ‘annoyance quotient’ of users while making online payments, transactions and the likes. Here goes the story of SendOTP and its creator.  
+
+
+One fine Monday morning Sameer Singh Rathorewas sitting on his desk minding his own ‘development’ (pun intended). He was summoned to the conference room for chit-chat. Little did he know that an interesting proposal awaited him from no less than a huge admirer of Steve Jobs, Pushpendra Agrawal. 
+
+
+Pushpendra: “Can we develop something that would make the developers spend less time in scratching their heads and focus on making the end-users happy?”
+
+
+Sameer: “Umm, sure!”  
+
+
+In Sameer’s head, the gist of the proposal was: Use [MSG91](https://msg91.com/) to empower developers so they can keep the end-users happy. This thought shook Sameer to his core. There’s a simple logic to any groundbreaking invention: make the developers happy, end users would automatically reap the benefit.  After relentless study, numerous sleepless nights, Sameer finally had a solution. He went up to Pushpendra with a paper in his hand containing wireframe and prototype detail of something which could address such an issue conveniently. The product code: Eagle Eye.
+
+
+ 
+
+
+Eagle Eye had some clear-cut goals:  
+
+
+ 
+
+
+* *Guaranteed delivery of OTP.*
+* *Make the integration of 2FA (two factor authentication) easy for developers.*
+* *Reduce the infrastructure cost involved in the process.*
+* *Provide analysis of each request to the user.*
+* *Provide the best security to the user.*
+
+
+ 
+
+
+**Design and its hurdles!**
+
+
+The designing of this project was further boosted by a fact: OTP covers almost 30% of  messaging industry. Today’s world cannot survive without an OTP (One Time Password). Can you imagine net banking, online transactions, e-commerce shopping etc. without it?  And it does hurt when you don’t receive the OTP within seconds or don’t receive it at all, right? A merely two-member team working on the product had exactly this in mind.  In five weeks, they had the beta release ready.  
+
+
+ 
+
+
+![01](https://images-msg91.s3.ap-south-1.amazonaws.com/content/images/wordpress/2015/08/01.png)
+
+
+ 
+
+
+ 
+
+
+The main challenge in designing of the OTP generating system was providing foolproof service to the end-user. So the team combined two application services with separate databases for each on distinct clouds, one on Amazon and other on Azure. This was a leap of sorts since it ensured that the user receives an OTP addressed to him/her in thirty seconds via other application service even if the first one goes down due to some technical or natural error. As a backup if the user did not get an OTP in 30 seconds, we’ll send him a call on the same number. 
+
+
+ 
+
+
+After testing the system, when this beta release was exposed to the users, it received an astounding response. This in turn, led to the exponential increase in the demand of the product. Even the existing clients of MSG91 were quite impressed by the product and hence, Eagle Eye beta was released in the market under the name sendOTP.com. 
+
+
+ 
+
+
+**Current status of SendOTP** 
+
+
+The main version is expected to be released in the last week of August. The major modifications in this version are anticipated to include changes in the current [SMS API’s](https://msg91.com/sms-for-developers). The code of  API’s is to be shifted from PHP code to JAVA code. A very light-weight framework known as sparkjava is to be used to accomplish this change so that no or minimal delay in the processing of API’s is achieved.
+
+
+ 
+
+
+SendOTP is powered by MSG91 and its messaging services are also handled by the same with the aid of distinct routes so that the delivery of messages could be guaranteed with MSG91.
+
+
+Check it out here: \<https://msg91.com/otp>
+
+
+So next time when your OTP reaches you within a blink of your eye, MSG91 may be behind it. 
+
+
+ 
+
+
+For more doses of development stories, watch this space!   
+
+***Stay hooked. Stay curious!*** 
+
+
+ Views: 26
+
+

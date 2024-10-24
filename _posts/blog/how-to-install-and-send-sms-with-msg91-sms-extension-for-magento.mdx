@@ -1,0 +1,203 @@
+---
+title: How To Install And Send SMS With MSG91 SMS Extension For Magento
+slug: how-to-install-and-send-sms-with-msg91-sms-extension-for-magento
+author: shefali@walkover.in
+lastmod: 2020-08-18T09:42:14.000Z
+date: 2015-12-31T11:21:15.000Z
+description: This post here is the step-by-step guide of how you can integrate our Magento SMS extension with your website. MSG91 has been providing its one touch enabled Bulk SMS
+tags: ""
+thumbnail: /images/uploads/proxyclick-visitor-management-system-l90zrbwvcoe-unsplash.jpg
+---
+
+Glad to announce one more plugin! [MSG91 SMS Extension](https://msg91.com/sms-addons/). This SMS plugin allows you to to send SMS/alerts automatically at all levels, at all times, to your customers right from your own ecommerce website via Magento platform. With MSG91 magento plugin, you can also send SMS notifications to your new, existing and potential customers. As the e-commerce sector solely relies on customer satisfaction, sellers can now make their customers happy by updating them about product orders, status, shipping details cancellation request and much more via the best mode of communication, a simple SMS .
+
+
+This post here is the step-by-step guide of how you can integrate our Magento SMS extension with your website-
+
+
+ 
+
+
+MSG91 has been providing its **one touch enabled Bulk SMS** **SMS Extension API** and here are the benefits of MSG91 APIs integration:
+
+
+1. One touch SMS API enabled
+2. Every client will get 500 free transactional SMS (sponsored by MSG91)
+3. 24\*7 priority [support](mailto:Support@msg91.com)
+4. Free Magento extensions
+
+
+
+![1.1](https://images-msg91.s3.ap-south-1.amazonaws.com/content/images/wordpress/2015/12/1.1.png)
+
+
+**{1}**
+
+
+ 
+
+
+**Figure {1} displays how to install MSG91 add-on in Magento**
+
+
+ 
+
+
+* Go to the link- [MSG91 SMS Extension](https://www.magentocommerce.com/magento-connect/msg91-messaging-extension.html)
+* Click on the ‘Install Now’ tab (In order to install MSG91 SMS Extension in your Magento store you need to login to your store admin panel)
+* Now, you need to click the tab titled ‘Get Extension Key’ and agree to extension license agreement
+* After you select agree checkbox and click ‘Get Extension Key’ [1] you will see the MSG91 SMS Extension key displayed in the box
+* Copy this extension **[1]** key
+
+
+ 
+
+
+![1](https://images-msg91.s3.ap-south-1.amazonaws.com/content/images/wordpress/2015/12/1.jpg)
+
+
+**{2}**
+
+
+**Figure {2} displays how to get started with Magento connect:**
+
+
+ 
+
+
+* Go to System[1]->Magento Connect->Magento Connect Manager[2]
+
+
+When you’ve clicked on Magento connect manager then it’ll ask you to login again. You need to use your store admin login credentials.
+
+
+![5](https://images-msg91.s3.ap-south-1.amazonaws.com/content/images/wordpress/2015/12/5.jpg)
+
+
+    **{3}**
+
+
+**Figure {3} displays how to add MSG91 key in Magento connect manager**
+
+
+ 
+
+
+* You need to paste that previously copied ‘MSG91 extension key’ **[2]**
+* Click on ‘Install’ tab **[3]**. Installation process will begin and after successful installation it will show you plugin details
+* Now click on ‘Proceed’ tab**[4]**
+
+
+ 
+
+
+![6](https://images-msg91.s3.ap-south-1.amazonaws.com/content/images/wordpress/2015/12/6.jpg)                              
+
+
+                     **{4}**
+
+
+You can optionally click on ‘Refresh’ **[1]** tab to see whether the extension is installed or not (refer Figure **{4}**)
+
+
+ 
+
+
+Now you’ve successfully installed MSG91 bulk SMS Magento plugin in your Magento website that requires **AuthKey** for sending SMS. For getting Authkey, you have to create an account on [MSG91](https://msg91.com/signup). Create an account and login in MSG91 panel. After login you have to copy **AuthKey** [3]. 
+
+
+ 
+
+
+For more details kindly visit \<https://msg91.com/help/MSG91/where-can-i-find-my-authentication-key>
+
+
+ 
+
+
+ 
+
+
+![msg91 AuthKey](https://images-msg91.s3.ap-south-1.amazonaws.com/content/images/wordpress/2015/12/msg91-AuthKey.png)
+
+
+             **{5}**
+
+
+**Figure {5} displays how to copy MSG91 authkey from MSG91 panel**
+
+
+ 
+
+
+Now come back to Magento admin panel and configure all required field as shown in **Figure{6}**
+
+
+* Paste the copied authkey on “**Authkey**” **[1]** field (e.g. 56555APUaRa5a4eada)
+
+
+* Enable the Plugin**[2]**
+
+
+![image 6](https://images-msg91.s3.ap-south-1.amazonaws.com/content/images/wordpress/2015/12/image-6.png)
+
+
+     
+
+
+**{6}**
+
+
+Now configure the MSG91 SMS extension and then you’ll able to send SMS.
+
+
+ 
+
+
+ 
+
+
+![9](https://images-msg91.s3.ap-south-1.amazonaws.com/content/images/wordpress/2015/12/9.jpg)
+
+
+**{7}**
+
+
+**Figure {7} displays how to configure MSG91 in Magento add-on**
+
+
+ 
+
+
+* Select route **[1]**, if you want to send transactional SMS then you’ve to select transactional route
+
+
+For more information kindly visit \<https://msg91.com/help/MSG91/what-is-the-difference-between-transactional-promotional-and-sendotp-route>
+
+https://msg91.com/help/what-is-a-sender-id
+* Add the desired sender ID in “**Sender**” **[2]** field (Sender ID defines the sender (your identity) and the intent (purpose) of the message. It serves like the subject line of an e-mail. For more details on Sender ID you can visit \<>)
+* **Message log** **[3,4]** will create logs for SMS delivery
+* **Configure Messages**: Add your ‘Order Status’ Yes/No  **[5]** for which you want to set the SMS
+* Type the SMS content related to your order status in the ‘Message’ **[6]** box, you can use TAGs for creating customizable SMS content as shown in the image below
+* Click on ‘**Save Config**’ tab to save the settings
+
+
+Now whenever you’ll change the order status then your system will send configured SMS content.
+
+
+ 
+
+
+NOTES-
+
+
+1. You need to install [ionCube PHP encoder](https://www.ioncube.com/) before-hand in order to use the plugin
+2. You also need to have SSL. If you do not have SSL or face any issue, you may contact our [support team](https://msg91.com/help/how-can-i-contact-support)
+
+
+We hope that you will now be able to integrate our SMS APIs in your Magento website easily. But if you still need help with plugin integration, feel free to [contact](https://msg91.com/contact-us) us. We will be more than happy to assist you.
+
+
+ Views: 471
+
+
