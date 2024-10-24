@@ -197,7 +197,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             <a href='https://docs.msg91.com/overview' target='_blank'>
                                 <li className='text-link'>{componentData?.apidocs}</li>
                             </a>
-                            <Link className='btn btn-primary btn-sm uppercase' href={'/signup'}>
+                            <Link className='btn btn-primary btn-sm uppercase' href={'/signup'} target='_blank'>
                                 {componentData?.signup_btn}
                             </Link>
                         </ul>

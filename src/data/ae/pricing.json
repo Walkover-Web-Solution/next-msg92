@@ -65,6 +65,7 @@
             ]
         },
         "hello": {
+            
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
                 "sales_btn": "Talk to Sales",
