@@ -18,7 +18,7 @@ export default function PricingSMSOTP({ data, type, country }) {
     const [destination, setDestination] = useState(currentCountry?.name);
     const [noOfSmsArray, setNoOfSmsArray] = useState([]);
     const [amountArray, setAmountArray] = useState([]);
-    const [finalAmountArray, setFinalAmountArray] = useState(amountArray);
+    const [per, setPer] = useState(false);
 
     //slider states
     const [sliderValue, setSliderValue] = useState(2);
@@ -31,10 +31,10 @@ export default function PricingSMSOTP({ data, type, country }) {
     }, [pricingData]);
 
     useEffect(() => {
-        console.log(origin, destination);
         if (origin && destination) {
+            setPer(origin === 'India' && destination === 'India' && currency == 'INR' && type === 'sms');
             setAmountArray(
-                origin == 'India' && destination == 'India' && currency == 'INR'
+                origin == 'India' && currency == 'INR'
                     ? ['1250', '3300', '5400', '10200', '20000', '76500', '154000']
                     : ['5000']
             );
@@ -247,6 +247,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                     isPlan={true}
                     currency={currency}
                     href={type}
+                    per={per}
                 />
                 <FaqsComp data={data?.faqComp} notCont={true} />
             </div>

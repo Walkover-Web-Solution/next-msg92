@@ -3,12 +3,16 @@ import Link from 'next/link';
 import { InlineWidget } from 'react-calendly';
 import { MdLaunch } from 'react-icons/md';
 
-export default function ConnectWithTeam({ product, isPlan, data, href }) {
+export default function ConnectWithTeam({ product, isPlan, data, href, per }) {
     return (
         <div className='flex flex-col gap-3'>
             {isPlan && (
                 <>
-                    <div className='text-xl' dangerouslySetInnerHTML={{ __html: data?.content }}></div>
+                    {per ? (
+                        <div className='text-xl' dangerouslySetInnerHTML={{ __html: data?.contentper }}></div>
+                    ) : (
+                        <div className='text-xl' dangerouslySetInnerHTML={{ __html: data?.content }}></div>
+                    )}
                     <button
                         onClick={() => document.getElementById('sales_modal').showModal()}
                         className='btn btn-outline btn-md'

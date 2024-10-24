@@ -214,7 +214,8 @@
         },
         "sms": {
             "connectComp": {
-                "content": "Connect with our team for a personalized pricing and get up to <span class='text-green-600'>₹0.13</span> per SMS to meet your needs.",
+                "content": "Connect with our team for a personalized pricing.",
+                "contentper": "Connect with our team for a personalized pricing and get up to <span class='text-green-600'>₹0.13</span> per SMS to meet your needs.",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             },

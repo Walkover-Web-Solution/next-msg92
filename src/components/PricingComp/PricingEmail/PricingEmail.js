@@ -154,13 +154,19 @@ export default function PricingEmail({ data, country }) {
                                                         ))}
                                                 </div>
                                             </div>
-                                            <button
-                                                className={`btn btn-primary  btn-md mt-auto ${
-                                                    plan?.name === 'Basic' ? '' : 'btn-outline'
-                                                } ${i == 0 ? ' xl:block hidden ' : ' hidden '}`}
+                                            <a
+                                                href={getURL('signup', 'email')}
+                                                target='_blank'
+                                                className='w-full justify-end '
                                             >
-                                                Get Started
-                                            </button>
+                                                <button
+                                                    className={`btn btn-primary  btn-md mt-auto ${
+                                                        plan?.name === 'Basic' ? '' : 'btn-outline'
+                                                    } ${i == 0 ? ' xl:block hidden ' : ' hidden '}`}
+                                                >
+                                                    Get Started
+                                                </button>
+                                            </a>
                                         </div>
                                     );
                                 }
