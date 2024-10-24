@@ -87,6 +87,11 @@ export default function PartnersComp({ pageInfo, data }) {
                     ))}
                 </div>
             </div>
+            <div className='container flex flex-col gap-6 py-20 items-center text-center'>
+                <a href='/partners-and-integrations' className='text-blue-500'>
+                    Explore more partners <span>&rarr;</span>
+                </a>
+            </div>
         </>
     );
 }
