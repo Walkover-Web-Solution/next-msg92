@@ -20,7 +20,7 @@ export default function PricingComp({ data, pageInfo }) {
     return (
         <>
             <div className='bg-neutral py-3'>
-                <div className='container my-10 flex gap-12 '>
+                <div className='container my-10 flex gap-12 md:flex-row flex-col '>
                     <PricingNav products={data?.products} page={page} />
 
                     {page === 'hello' && <PricingHello data={data?.hello} country={pageInfo?.country} />}

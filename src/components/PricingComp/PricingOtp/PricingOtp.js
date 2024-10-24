@@ -13,7 +13,7 @@ export default function PricingOtp({ data }) {
                         {data?.connectComp?.content2 || `Channel wise pricing will be applicable for sending message.`}
                     </p>
                 </div>{' '}
-                <a href={getURL('signup', 'otp')}>
+                <a href={getURL('signup', 'otp')} target='_blank'>
                     <button className='btn btn-primary w-fit btn-md'>{data?.get_started || 'Get Started'}</button>
                 </a>
             </div>

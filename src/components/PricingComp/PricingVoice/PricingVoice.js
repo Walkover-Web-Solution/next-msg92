@@ -54,8 +54,8 @@ export default function PricingVoice({ data, country }) {
     useEffect(() => {
         if (selectedCountry && selectedCountry?.id) {
             const { currency, symbol } = GetCurrencySymbol(selectedCountry?.country_code);
-            setCurrency(currency);
-            setSymbol(symbol);
+            setCurrency(currency === 'INR' ? 'INR' : 'USD');
+            setSymbol(currency === 'INR' ? '₹' : '$');
         }
     }, [selectedCountry]);
 
@@ -88,7 +88,7 @@ export default function PricingVoice({ data, country }) {
         if (selectedCountry && selectedCountry?.id && dialPlan) {
             fetchData(selectedCountry?.id, dialPlan);
         }
-    }, [dialPlan]);
+    }, [dialPlan, selectedCountry]);
 
     const fetchData = async (selectedCountry, dialPlan) => {
         setLoading(true);
@@ -132,7 +132,6 @@ export default function PricingVoice({ data, country }) {
 
     //Auto complete functions
     const handleOnSelect = (item) => {
-        setPlans();
         setSelectedCountry(item[0]);
     };
 

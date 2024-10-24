@@ -77,7 +77,7 @@ export default function PricingEmail({ data, country }) {
                                                     i == 0 ? ' block xl:hidden ' : ' block '
                                                 }`}
                                             ></span>
-                                            <a href={getURL('signup', 'email')}>
+                                            <a href={getURL('signup', 'email')} target='_blank'>
                                                 <button
                                                     className={`btn btn-primary  btn-md ${
                                                         plan?.name === 'Basic' ? '' : 'btn-outline'
