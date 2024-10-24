@@ -9,11 +9,11 @@
             "name": "Numbers",
             "icon": "/assets/icons/products/numbers.svg"
         },
-        "code": true,
+        
 
         "tagline": "Desbloqueie o Poder dos Números Virtuais",
         "heading": "Receba, Responda e Personalize SMS com Long Codes, para o Máximo Engajamento e Comunicação!",
-    
+     "banner_img": "/assets/brpt/numbers/banner.svg",
         "getstarted_btn": "Comece gratuitamente",
         "trustedByComp": {
             "heading": "Confiado por 30,000+ negócios globais",
