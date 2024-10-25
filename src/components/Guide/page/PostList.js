@@ -6,7 +6,7 @@ export default function PostList({ posts, tags, pagination }) {
     return (
         <div className='bg-[#cce1dc]'>
             <div className='container  mx-auto gap-6 py-20'>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
+                <div className='blog-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
                     {posts?.map((post, index) => post.slug && <PostItem key={index} post={post} />)}
                 </div>
                 <Pagination
