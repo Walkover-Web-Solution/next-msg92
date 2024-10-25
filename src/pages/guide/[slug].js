@@ -34,6 +34,7 @@ export default function TestPage({ source, title, description, author, date, thu
         <>
             <Head>
                 <title>{title}</title>
+
                 <meta name='description' content={description}></meta>
                 <meta
                     property='og:title'
@@ -41,20 +42,22 @@ export default function TestPage({ source, title, description, author, date, thu
                     key='title'
                 />
             </Head>
-            <div className='wrapper container blog-container'>
-                <a className='mb-3 d-inline-block btn btn-dark' onClick={handleClick}>
-                    {' '}
-                    <MdKeyboardArrowLeft />
-                    Back
+            <div className='wrapper container blog-container w-100 max-w-4xl flex flex-col gap-6 py-20'>
+                <a className=' d-inline-block' onClick={handleClick}>
+                    <button className=' btn btn-dark bg-black text-white'>
+                        {' '}
+                        <MdKeyboardArrowLeft />
+                        Back
+                    </button>
                 </a>
-                <div className='blog-header mt-4'>
+                <div className='blog-header flex flex-col gap-4'>
                     <div>
                         {author}, {date}
                     </div>
-                    <h1>{title}</h1>
+                    <h1 className='text-4xl font-bold'>{title}</h1>
                     {thumbnailImage !== '' && <img className='' src={thumbnailImage} alt={author} />}
                 </div>
-                <div className='body'>
+                <div className='body leading-normal flex flex-col gap-4 text-lg'>
                     <MDXRemote {...source} components={component} />
                 </div>
                 <ul className={'tag-list'}>
@@ -66,10 +69,13 @@ export default function TestPage({ source, title, description, author, date, thu
                         ))}
                 </ul>
 
-                <button className='btn btn-dark mt-3' onClick={handleClick}>
-                    <MdKeyboardArrowLeft />
-                    Back
-                </button>
+                <a className=' d-inline-block' onClick={handleClick}>
+                    <button className=' btn btn-dark bg-black text-white'>
+                        {' '}
+                        <MdKeyboardArrowLeft />
+                        Back
+                    </button>
+                </a>
             </div>
         </>
     );

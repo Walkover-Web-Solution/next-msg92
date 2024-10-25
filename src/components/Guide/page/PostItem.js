@@ -1,3 +1,5 @@
+import { MdCalendarMonth } from 'react-icons/md';
+
 export default function PostItem({ post }) {
     function getBlogStyle(titleText) {
         let textLength = titleText?.length;
@@ -18,25 +20,35 @@ export default function PostItem({ post }) {
                     backgroundImage: post.thumbnail ? 'url("' + post?.thumbnail + '")' : 'none',
                 }}
             >
-                <div className='card w-96 image-full'>
+                <div className='card w-auto h-96 image-full'>
                     {post?.thumbnail && (
                         <figure>
                             <img src={post?.thumbnail} alt='Thumbnailpost' />
                         </figure>
                     )}
-                    <div className='card-body'>
+                    <div className='card-body  '>
                         <h2 className='card-title'>{post?.title}</h2>
                         <p>{post?.description}</p>
                         {post?.tags && (
-                            <div className='card-actions justify-end'>
+                            <div className='card-actions justify-start'>
                                 {post?.tags !== '' &&
                                     post?.tags?.map((category, idx) => (
-                                        <span className='bg-tags' key={idx}>
+                                        <span className='bg-gray-300 p-2 border rounded-full' key={idx}>
                                             {category}
                                         </span>
                                     ))}
                             </div>
                         )}
+                        <div className='flex items-center'>
+                            <MdCalendarMonth />
+                            <p className=''>
+                                {new Date(post.date).toLocaleDateString('en-US', {
+                                    month: 'long',
+                                    day: 'numeric',
+                                    year: 'numeric',
+                                })}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </a>
