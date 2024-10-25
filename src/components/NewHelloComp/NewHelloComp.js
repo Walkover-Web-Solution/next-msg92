@@ -30,7 +30,7 @@ export default function NewHelloComp({ data }) {
                         <p className={`${styles.boost} text-hello`}>{data?.bannerComp?.tagline}</p>
                         <p className='text-2xl'>{data?.bannerComp?.subheading}</p>
                     </div>
-                    <Link className={styles?.getstarted} href={getURL('signup', 'hello')}>
+                    <Link className={styles?.getstarted} href={getURL('signup', 'hello')} target='_blank'>
                         {data?.bannerComp?.getstarted_btn}
                     </Link>
                     <div className='flex flex-col gap-4'>
@@ -135,7 +135,7 @@ export default function NewHelloComp({ data }) {
                 <div className='container flex flex-col cont_gap cont_p text-2xl'>
                     <p>{data?.prefooter?.text3}</p>
                     <div className='flex flex-col md:flex-row gap-6'>
-                        <Link className={styles?.getstarted} href={getURL('signup', 'hello')}>
+                        <Link className={styles?.getstarted} href={getURL('signup', 'hello')} target='_blank'>
                             Get started
                         </Link>
                         <Link className={styles?.sales} href='/contact-us'>

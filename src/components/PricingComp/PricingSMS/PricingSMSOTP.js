@@ -18,11 +18,12 @@ export default function PricingSMSOTP({ data, type, country }) {
     const [destination, setDestination] = useState(currentCountry?.name);
     const [noOfSmsArray, setNoOfSmsArray] = useState([]);
     const [amountArray, setAmountArray] = useState([]);
+    const [per, setPer] = useState(false);
 
     //slider states
     const [sliderValue, setSliderValue] = useState(2);
 
-    const pricingEnv = type === 'sms' ? 4 : 4;
+    const pricingEnv = type === 'sms' ? 4 : process.env.PRICING_URL === 'https://test.msg91.com' ? 19 : 106;
     useEffect(() => {
         if (pricingData) {
             setNoOfSmsArray(pricingData.sort((a, b) => a[pricingEnv]?.totalNoOfSms - b[pricingEnv]?.totalNoOfSms));
@@ -30,11 +31,14 @@ export default function PricingSMSOTP({ data, type, country }) {
     }, [pricingData]);
 
     useEffect(() => {
-        setAmountArray(
-            origin == 'India' && currency == 'INR'
-                ? ['1250', '3300', '5400', '10200', '20000', '76500', '154000']
-                : ['5000']
-        );
+        if (origin && destination) {
+            setPer(origin === 'India' && destination === 'India' && currency == 'INR' && type === 'sms');
+            setAmountArray(
+                origin == 'India' && currency == 'INR'
+                    ? ['1250', '3300', '5400', '10200', '20000', '76500', '154000']
+                    : ['5000']
+            );
+        }
     }, [origin, destination]);
 
     useEffect(() => {
@@ -81,7 +85,7 @@ export default function PricingSMSOTP({ data, type, country }) {
     return (
         <>
             <div className='w-full flex flex-col gap-8'>
-                <div className='flex items-center text-lg gap-3'>
+                <div className='flex lg:flex-row flex-col items-center text-lg gap-3'>
                     <span>Send {type.toUpperCase()} From</span>
                     <div className='w-[300px] z-50'>
                         <Typeahead
@@ -103,8 +107,8 @@ export default function PricingSMSOTP({ data, type, country }) {
                     <div className='w-[300px] z-50'>
                         <Typeahead
                             className='country-typehead'
-                            id='origin-country'
-                            placeholder='Origin Country'
+                            id='destination-country'
+                            placeholder='Destination Country'
                             labelKey='name'
                             onChange={(selected) => {
                                 handleOnSelectDestination(selected);
@@ -120,9 +124,21 @@ export default function PricingSMSOTP({ data, type, country }) {
                 {!loading ? (
                     noOfSmsArray.length > 1 ? (
                         <>
-                            <div className='w-full p-8 bg-white h-fit flex flex-col gap-6'>
-                                <div className='d-none d-lg-block text-center text-dark c-fw-m'>Number of SMS</div>
-                                <div className=' flex'>
+                            <div className='w-full md:p-4 lg:p-8 p-2 bg-white h-fit flex flex-col gap-6'>
+                                <div className='text-center'>Number of SMS</div>
+                                <div className=' flex lg:hidden justify-between'>
+                                    {noOfSmsArray.map((item, index) => {
+                                        if (index === 0 || index === noOfSmsArray.length - 1) {
+                                            return (
+                                                <div className='text-center w-fit ' key={index}>
+                                                    {contvertToLocal(item[pricingEnv]?.totalNoOfSms)}
+                                                </div>
+                                            );
+                                        }
+                                        return null;
+                                    })}
+                                </div>
+                                <div className='lg:flex hidden'>
                                     {noOfSmsArray.map((item, index) => {
                                         return (
                                             <div className='text-center w-full' key={index}>
@@ -143,7 +159,20 @@ export default function PricingSMSOTP({ data, type, country }) {
                                         aria-label='Slider'
                                     />
                                 </div>
-                                <div className=' flex'>
+                                <div className=' flex lg:hidden justify-between'>
+                                    {noOfSmsArray.map((item, index) => {
+                                        if (index === 0 || index === noOfSmsArray.length - 1) {
+                                            return (
+                                                <div className='text-center w-fit ' key={index}>
+                                                    {symbol}
+                                                    {item[pricingEnv]?.rate}
+                                                </div>
+                                            );
+                                        }
+                                        return null;
+                                    })}
+                                </div>
+                                <div className=' lg:flex hidden'>
                                     {noOfSmsArray.map((item, index) => {
                                         return (
                                             <div className='text-center w-full' key={index}>
@@ -155,7 +184,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                                 </div>
                                 <div className='d-none d-lg-block text-center text-dark c-fw-m'>Cost per SMS</div>
                             </div>
-                            <p className='flex gap-1 text-2xl items-end'>
+                            <p className='flex gap-1 text-2xl items-end flex-wrap '>
                                 <span className='text-3xl font-bold '>
                                     {' '}
                                     {noOfSmsArray[sliderValue] && noOfSmsArray[sliderValue][pricingEnv]
@@ -187,11 +216,11 @@ export default function PricingSMSOTP({ data, type, country }) {
                                 </span>
                                 <span>per SMS</span>
                             </p>{' '}
-                            <a href={getURL('signup', 'sms')}>
+                            <a href={getURL('signup', 'sms')} target='_blank'>
                                 <button className='btn btn-primary btn-md'>Get Started</button>
                             </a>
                         </>
-                    ) : (
+                    ) : noOfSmsArray.length > 0 && noOfSmsArray[0]?.[pricingEnv]?.rate ? (
                         <div className='flex flex-col gap-8 justify-around items-center h-[282px] bg-white p-8 w-fit border rounded '>
                             <div>SMS Pricing</div>
                             <div className='text-3xl font-bold text-green-600'>
@@ -201,13 +230,15 @@ export default function PricingSMSOTP({ data, type, country }) {
                                     : 'N/A'}{' '}
                                 per {type?.toUpperCase()}
                             </div>
-                            <a href={getURL('signup', 'otp')}>
+                            <a href={getURL('signup', 'otp')} target='_blank'>
                                 <button className='btn btn-primary btn-md'>Get Started</button>
                             </a>
                         </div>
+                    ) : (
+                        <div className='skeleton border h-[282px] bg-white p-8 w-full  rounded '></div>
                     )
                 ) : (
-                    <div className='skeleton h-[282px] bg-white p-8 w-full  rounded '></div>
+                    <div className='skeleton border h-[282px] bg-white p-8 w-full  rounded '></div>
                 )}
 
                 <ConnectWithTeam
@@ -215,6 +246,8 @@ export default function PricingSMSOTP({ data, type, country }) {
                     data={data?.connectComp}
                     isPlan={true}
                     currency={currency}
+                    href={type}
+                    per={per}
                 />
                 <FaqsComp data={data?.faqComp} notCont={true} />
             </div>

@@ -9,7 +9,6 @@ import getURL from '@/utils/getURL';
 
 export default function PricingHello({ data, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
-
     const [isLoading, setIsLoading] = useState(false);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
@@ -50,7 +49,7 @@ export default function PricingHello({ data, country }) {
                         Yearly (20% off)
                     </span>
                 </div>
-                <div className='grid grid-cols-3 w-full gap-8 '>
+                <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full gap-8 '>
                     {plans &&
                         plans.length > 0 &&
                         plans.map(
@@ -186,7 +185,12 @@ export default function PricingHello({ data, country }) {
                                                                                                     fontSize={18}
                                                                                                     color='#DC3645'
                                                                                                 />
-                                                                                                {'No Extra '}
+                                                                                                {'No Extra  '}{' '}
+                                                                                                {
+                                                                                                    service
+                                                                                                        ?.service_credit
+                                                                                                        ?.service?.name
+                                                                                                }
                                                                                             </>
                                                                                         )}
                                                                                         {service?.service_credit
@@ -237,7 +241,7 @@ export default function PricingHello({ data, country }) {
                         ))}
                 </div>
 
-                <ConnectWithTeam product={'hello'} data={data?.connectComp} isPlan={true} />
+                <ConnectWithTeam product={'Hello'} href={'hello'} data={data?.connectComp} isPlan={true} />
                 <FaqsComp data={data?.faqComp} notCont={true} />
             </div>
         </>

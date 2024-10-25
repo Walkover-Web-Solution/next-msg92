@@ -22,7 +22,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                 <ul>
                                     <li className='cursor-pointer'>
                                         <a
-                                            href={getURL('country', '/br')}
+                                            href={getURL('country', 'br')}
                                             className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
                                         >
                                             English
@@ -30,7 +30,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                     </li>
                                     <li className='cursor-pointer'>
                                         <a
-                                            href={getURL('country', '/br-pt')}
+                                            href={getURL('country', 'br-pt')}
                                             className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
                                         >
                                             Portuguese
