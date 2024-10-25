@@ -37,7 +37,7 @@ export default function FeatureComp({ data }) {
                                             </div>
                                         )}
 
-                                        <h3 className='text-2xl font-semibold'>{feature?.name}</h3>
+                                        <span className='text-2xl font-semibold'>{feature?.name}</span>
                                         <div
                                             className='text-lg'
                                             dangerouslySetInnerHTML={{ __html: feature?.content }}

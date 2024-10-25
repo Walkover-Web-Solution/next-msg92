@@ -20,7 +20,7 @@ export default function MoreServicesComp({ data }) {
                                     <span className='text-2xl font-semibold'>{service?.name}</span>
                                 </div>
                                 <Image width={600} height={600} src={service?.img} alt={service?.name} />
-                                <h3 className='text-xl font-semibold'>{service?.heading}</h3>
+                                <h2 className='text-xl font-semibold'>{service?.heading}</h2>
                                 <p className='text-lg'>{service?.description}</p>
                                 <LinkText className='link-btn'>{data?.linkText}</LinkText>
                             </Link>

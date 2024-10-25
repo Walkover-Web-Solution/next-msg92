@@ -15,7 +15,7 @@ export default function ProductsComp({ data }) {
                                     <div className='flex flex-col gap-4'>
                                         <Image width={40} height={40} src={product?.icon} alt={product?.name} />
                                         <span className={style.tagline_sm}>{product?.tagline}</span>
-                                        <h2 className='text-2xl font-bold'>{product?.name}</h2>
+                                        <div className='text-2xl font-bold'>{product?.name}</div>
                                         <p className='text-lg'>{product?.description}</p>
                                         <LinkText className='link-btn' href={'/'}>
                                             {product.linkText}
