@@ -46,7 +46,7 @@
                     "lines": "25,000 OTP verification SMS credits per month for a duration of 6 months"
                 },
                 {
-                    "lines": "Access to Cloud Contact Center/Ticket Management Platform <a href='https://msg91.com/in/hello'>Hello</a>, Data Management & WareHouse Application<a href='https://msg91.com/in/segmento'>Segmento</a>, Flow Automation Application  <a href='https://msg91.com/in/campaign'>Campaign</a>, MSG91’s FAQ software <a href='https://msg91.com/in/knowledgebase'>KnowledgeBase</a>"
+                    "lines": "Access to Cloud Contact Center/Ticket Management Platform <a href='https://msg91.com/in/hello' style='color: blue;'>Hello</a>, Data Management & WareHouse Application<a href='https://msg91.com/in/segmento' style='color: blue;'>Segmento</a>, Flow Automation Application  <a href='https://msg91.com/in/campaign' style='color: blue;'>Campaign</a>, MSG91’s FAQ software <a href='https://msg91.com/in/knowledgebase' style='color: blue;'>KnowledgeBase</a>"
                 }
             ]
         },

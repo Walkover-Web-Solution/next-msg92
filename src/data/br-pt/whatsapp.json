@@ -47,7 +47,36 @@
         "heading": "Características",
         "iconColor": "text-campaign",
         "features": [
-          
+            {
+                "name": "Chatbot do WhatsApp",
+                "content": "Um chatbot do WhatsApp automatiza interações com clientes por meio de respostas pré-programadas e fluxos de trabalho. Ele pode lidar com perguntas comuns, agendar compromissos, rastrear pedidos, oferecer suporte ao cliente e funcionar 24 horas por dia, 7 dias por semana. Chatbots utilizam palavras-chave e respostas rápidas para engajar os clientes e podem encaminhar questões mais complexas para agentes humanos, garantindo uma experiência contínua.",
+                "img": "/assets/brpt/whatsapp/whatsapp-chatbot.svg"
+            },   {
+                "name": "Integrações do WhatsApp",
+                "content": "Nossa API do WhatsApp Business se integra perfeitamente com diversas plataformas, permitindo uma funcionalidade de plug-and-play sem a necessidade de desenvolvimento adicional. Algumas das plataformas suportadas incluem Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheets, Tally, GIDDH e mais.",
+                "img": "/assets/brpt/whatsapp/whatsapp-integrations.svg"
+            },
+            {
+                "name": "Cobrança zero em anúncios de clique para o WhatsApp",
+                "content": "Oferecer cobrança zero em anúncios de clique para o WhatsApp significa que as empresas podem usar esses anúncios sem incorrer em custos adicionais associados às cobranças de sessão do WhatsApp. Essa abordagem oferece benefícios significativos, como a ausência de cobranças de sessão e ser econômica.",
+                "img": "/assets/brpt/whatsapp/whatsapp-zero-charg-on-click.svg"
+            },
+            {
+                "name": "Catálogo do WhatsApp",
+                "content": "A funcionalidade de catálogo do WhatsApp permite que as empresas exibam produtos e serviços dentro do aplicativo. Funciona como uma vitrine digital, permitindo que os clientes naveguem, vejam detalhes e façam perguntas sem sair do WhatsApp. As empresas podem organizar os itens, incluir imagens, preços e descrições, e atualizar o estoque em tempo real, facilitando a exploração e compra para os clientes.",
+                "img": "/assets/brpt/whatsapp/whatsapp-catalog.svg"
+            },
+            {
+                "name": "Transmissão / Campanha",
+                "content": "A transmissão do WhatsApp permite que você envie a mesma mensagem para vários contatos de uma vez, sendo ideal para atualizações e anúncios. As campanhas, disponíveis na API do WhatsApp Business, possibilitam marketing direcionado com mensagens automatizadas e personalizadas. Ambas ajudam as empresas a alcançar mais pessoas de forma eficiente.",
+                "img": "/assets/brpt/whatsapp/whatsapp-campaign.svg"
+            },
+            {
+                "name": "Contagem de Cliques",
+                "content": "A contagem de cliques indica quantas empresas ou clientes usam um recurso – uma alta contagem de cliques mostra sua popularidade e eficácia no engajamento com os clientes. Você pode visualizar todas as contagens de cliques de um botão na seção de análises ou por meio do seu webhook.",
+                "img": "/assets/brpt/whatsapp/whatsapp-click-counts.svg"
+            },
+           
             {
                 "name": "Suporte a Base64",
                 "content": "<strong>Envie o corpo em JSON e deixe o resto conosco.</strong>Não é necessário criar uma URL ou fazer o upload do seu arquivo, pois você pode enviar diretamente o corpo JSON e ele será convertido automaticamente em formato Base64 e enviado via WhatsApp.",
@@ -61,7 +90,7 @@
             {
                 "name": "Gerencie o template dentro do painel",
                 "content": "<strong>Crie e gerencie seus templates aqui mesmo.</strong>No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook.",
-                "img": "/assets/brpt/whatsapp/whatsapp-analytics.svg"
+                "img": "/assets/brpt/whatsapp/whatsapp-manage-template-inside-panel.svg"
             },   {
                 "name": "Análise",
                 "content": "<strong>Obtenha insights gráficos sobre as mensagens da sua empresa.</strong>Analise e melhore a comunicação da sua empresa com as métricas certas. Obtenha um relatório gráfico sobre o número de mensagens enviadas, entregues, conversas e muito mais.",

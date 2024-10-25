@@ -61,12 +61,12 @@
             },
             {
                 "name": "Keyword Specific Messaging",
-                "content": "<strong>You can choose a unique keyword for your business or campaign</strong>When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication.",
+                "content": "<strong>You can choose a unique keyword for your business or campaign</strong> When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication.",
                 "img": "/assets/global/numbers/numbers-keyword-specific-messaging.svg"
             },
             {
                 "name": "Keyword Independent Messaging",
-                "content": "<strong>In addition to keywords</strong>you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords.",
+                "content": "<strong>In addition to keywords</strong> you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords.",
                 "img": "/assets/global/numbers/numbers-keyword-independent-messaging.svg"
             },
             {
