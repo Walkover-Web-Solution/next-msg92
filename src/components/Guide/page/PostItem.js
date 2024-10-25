@@ -6,18 +6,20 @@ export default function PostItem({ post }) {
         let wordLength = titleText?.split(' ').length;
 
         if (wordLength > 8 || textLength > 48) {
-            return ' blog-card--large';
+            return ' blog-card__large';
         } else {
-            return ' blog-card--small';
+            return ' blog-card__small';
         }
     }
     return (
         <div className=''>
             <a
                 href={'/guide/' + post?.slug}
-                className={'blog-card' + (post.thumbnail ? ' bg-dark' : ' bg-light') + getBlogStyle(post?.title)}
+                className={'blog-card' + (post.thumbnail ? ' bg-black' : ' bg-light') + getBlogStyle(post?.title)}
                 style={{
                     backgroundImage: post.thumbnail ? 'url("' + post?.thumbnail + '")' : 'none',
+                    backgroundSize: 'cover',
+                    backgroundPosition: '50%',
                 }}
             >
                 <div className='card w-auto h-96 image-full'>
