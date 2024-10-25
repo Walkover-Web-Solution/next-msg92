@@ -13,64 +13,91 @@
         "tagline": "Revolutionize Customer Support",
         "heading": "Hello ",
         "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
-        "banner_img": "/assets/global/hello/heroimg.webp",
+        "banner_img": "/assets/global/hello/heroimg.png",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Support 15+ channels and platforms ",
             "logos": [
                 {
-                    "name": "Xiaomi",
-                    "url": "/assets/trusted_by/xiaomi.svg"
+                    "name": "facebook",
+                   "url": "/assets/platforms/facebook.svg"
                 },
                 {
-                    "name": "Unacademy",
-                    "url": "/assets/trusted_by/unacademy.svg"
+                    "name": "gmail",
+                    "url": "/assets/platforms/gmail.svg"
                 },
                 {
-                    "name": "Dream11",
-                    "url": "/assets/trusted_by/dream11.svg"
+                    "name": "googleChat",
+                  "url": "/assets/platforms/googlechat.svg"
                 },
                 {
-                    "name": "Indeed",
-                    "url": "/assets/trusted_by/indeed.svg"
+                    "name": "instagram",
+                   "url": "/assets/platforms/instagram.svg"
                 },
                 {
-                    "name": "Ixigo",
-                    "url": "/assets/trusted_by/ixigo.svg"
+                    "name": "outlook",
+                  "url": "/assets/platforms/outlook.svg"
+                },
+                {
+                    "name": "sms",
+                   "url": "/assets/platforms/sms.svg"
+                },  {
+                    "name": "telegram",
+                  "url": "/assets/platforms/telegram.svg"
+                },
+                {
+                    "name": "twitter",
+                   "url": "/assets/platforms/twitter.svg"
+                },  {
+                    "name": "voice",
+                  "url": "/assets/platforms/voice.svg"
+                },
+                {
+                    "name": "whatsapp",
+                   "url": "/assets/platforms/whatsapp.svg"
+                },  {
+                    "name": "zoho",
+                  "url": "/assets/platforms/zoho.svg"
                 }
             ]
         }
     },
-    "FeatureComp": {
+   "FeatureComp": {
         "heading": "Features",
         "iconColor": "text-campaign",
         "features": [
             {
+                "icon": "MdSupportAgent",
                 "name": "Unlimited Agents",
                 "content": "Unlimited free agents to power up your customer support. More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is nonumber attached to your number of customer support agents",
                 "img": "/assets/global/hello/unlimited-agents.svg"
             },
             {
+                "icon": "MdOutlineSmartToy",
                 "name": "Chatbot",
                 "content": "Resolve customer queries round-the-clock across text and voice. Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents.",
                 "img": "/assets/global/hello/chatbot.svg"
             },
             {
+                "icon": "MdAdsClick",
                 "name": "Screen Control",
                 "content": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues.",
                 "img": "/assets/global/hello/screen-control.svg"
             },
             {
+                "icon": "MdOutlineScreenShare",
                 "name": "Video Call / Screen Sharing",
                 "content": "High-quality video calls wherever your customer is. Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue.",
                 "img": "/assets/global/hello/video-call---screen-sharing.svg"
             },
             {
+                "icon": "MdOutlineSchema",
                 "name": "Workflow",
                 "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs.",
                 "img": "/assets/global/hello/workflow.svg"
             },
             {
+                "icon": "MdOutlineAnalytics",
                 "name": "Analytics",
                 "content": "Analytics and reports to monitor your agent performance. Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support.",
                 "img": "/assets/global/hello/analytics.svg"

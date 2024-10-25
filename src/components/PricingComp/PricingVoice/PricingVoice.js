@@ -12,13 +12,14 @@ import countries from '@/data/countries.json';
 export default function PricingVoice({ data, country }) {
     const [countryData, setCountryData] = useState([]);
     const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
-    const [selectedCountry, setSelectedCountry] = useState();
+    const [selectedCountry, setSelectedCountry] = useState(currentCountry?.name);
     const [plans, setPlans] = useState();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState();
     const [dialPlan, setDialPlan] = useState();
     const [loadingExport, setLoadingExport] = useState(false);
-    const { currency, symbol } = GetCurrencySymbol(selectedCountry?.country_code);
+    const [currency, setCurrency] = useState();
+    const [symbol, setSymbol] = useState();
 
     //fetch Counties
     useEffect(() => {
@@ -41,11 +42,23 @@ export default function PricingVoice({ data, country }) {
 
     useEffect(() => {
         if (countryData?.length > 0) {
-            setSelectedCountry(countryData?.find((item) => item?.country_code?.toLowerCase() === country));
+            setSelectedCountry(
+                countryData?.find(
+                    (item) => item?.country_code?.toLowerCase() === currentCountry?.shortname?.toLowerCase()
+                )
+            );
         }
     }, [countryData]);
 
     // Set Currency Symbol
+    useEffect(() => {
+        if (selectedCountry && selectedCountry?.id) {
+            const { currency, symbol } = GetCurrencySymbol(selectedCountry?.country_code);
+            setCurrency(currency === 'INR' ? 'INR' : 'USD');
+            setSymbol(currency === 'INR' ? '₹' : '$');
+        }
+    }, [selectedCountry]);
+
     useEffect(() => {
         if (currency) {
             fetchDialPlan(currency);
@@ -75,7 +88,7 @@ export default function PricingVoice({ data, country }) {
         if (selectedCountry && selectedCountry?.id && dialPlan) {
             fetchData(selectedCountry?.id, dialPlan);
         }
-    }, [selectedCountry?.id, dialPlan]);
+    }, [dialPlan, selectedCountry]);
 
     const fetchData = async (selectedCountry, dialPlan) => {
         setLoading(true);
@@ -211,22 +224,29 @@ export default function PricingVoice({ data, country }) {
                                         </tr>
                                     );
                                 })}
-                            {loading &&
-                                Array.from({ length: 5 }).map((_, index) => {
-                                    return (
-                                        <tr className='border-none text-[16px]' key={index}>
-                                            <td className='border-r p-4'>
-                                                <div className='skeleton w-2/3 h-[24px]'></div>
-                                            </td>
-                                            <td className='border-r p-4'>
-                                                <div className='skeleton w-1/3 h-[24px]'></div>
-                                            </td>
-                                            <td className='p-4'>
-                                                <div className='skeleton w-1/3 h-[24px]'></div>
-                                            </td>
-                                        </tr>
-                                    );
-                                })}
+                            {loading
+                                ? Array.from({ length: 5 }).map((_, index) => {
+                                      return (
+                                          <tr className='border-none text-[16px]' key={index}>
+                                              <td className='border-r p-4'>
+                                                  <div className='skeleton w-2/3 h-[24px]'></div>
+                                              </td>
+                                              <td className='border-r p-4'>
+                                                  <div className='skeleton w-1/3 h-[24px]'></div>
+                                              </td>
+                                              <td className='p-4'>
+                                                  <div className='skeleton w-1/3 h-[24px]'></div>
+                                              </td>
+                                          </tr>
+                                      );
+                                  })
+                                : plans?.length === 0 && (
+                                      <tr className='border-none text-[16px]'>
+                                          <td className='border-r p-4'>-</td>
+                                          <td className='border-r p-4'>-</td>
+                                          <td className='p-4'>-</td>
+                                      </tr>
+                                  )}
                         </tbody>
                     </table>
                     {data?.exportData && (
@@ -260,7 +280,7 @@ export default function PricingVoice({ data, country }) {
 
                     <div className='text-lg' dangerouslySetInnerHTML={{ __html: data?.addOns?.freeText }}></div>
                 </div>
-                <a href={getURL('signup', 'voice')}>
+                <a href={getURL('signup', 'voice')} target='_blank'>
                     <button className='btn btn-primary btn-md'>Get started</button>
                 </a>
 
@@ -277,7 +297,7 @@ export default function PricingVoice({ data, country }) {
                         })}
                 </div>
 
-                <ConnectWithTeam product={'voice'} data={data?.connectComp} isPlan={true} />
+                <ConnectWithTeam product={'Voice'} data={data?.connectComp} href={'voice'} isPlan={true} />
                 <FaqsComp data={data?.faqComp} notCont={true} />
             </div>
         </>

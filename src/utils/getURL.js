@@ -5,6 +5,7 @@ export default function getURL(type, link) {
     const router = useRouter();
     const rawPath = router.asPath;
     let pathArray = rawPath.split('?')[0].split('/');
+    let rowPathArray = rawPath.split('?')[0].split('/');
     const pathLength = pathArray?.length || 0;
     const currentCountry = slugs?.countries?.includes(pathArray[1]) ? pathArray[1] : null;
     const isGobal = currentCountry === null;
@@ -47,34 +48,35 @@ export default function getURL(type, link) {
     switch (type) {
         case 'country':
             if (isGobal) {
-                pathArray.splice(1, 0, link);
+                rowPathArray.splice(1, 0, link);
             } else {
-                pathArray[1] = link;
+                rowPathArray[1] = link;
+                console.log('🚀 ~ getURL ~ pathArray:', pathArray);
             }
-            url = pathArray.join('/');
+            url = rowPathArray.join('/');
             break;
 
         case 'product':
             if (isGobal) {
-                pathArray = ['', link];
+                rowPathArray = ['', link];
             } else {
-                pathArray = ['', currentCountry, link];
+                rowPathArray = ['', currentCountry, link];
             }
-            url = pathArray.join('/');
+            url = rowPathArray.join('/');
             break;
 
         case 'pricing':
             if (isGobal) {
-                pathArray = ['', 'pricing', link];
+                rowPathArray = ['', 'pricing', link];
             } else {
-                pathArray = ['', currentCountry, 'pricing', link];
+                rowPathArray = ['', currentCountry, 'pricing', link];
             }
-            url = pathArray.join('/');
+            url = rowPathArray.join('/');
             break;
 
         case 'terms':
-            pathArray = ['', link];
-            url = pathArray.join('/');
+            rowPathArray = ['', link];
+            url = rowPathArray.join('/');
             break;
 
         case 'signup':
@@ -82,7 +84,7 @@ export default function getURL(type, link) {
             break;
 
         default:
-            url = pathArray.join('/');
+            url = rowPathArray.join('/');
             break;
     }
 

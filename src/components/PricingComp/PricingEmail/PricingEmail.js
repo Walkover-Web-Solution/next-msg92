@@ -4,13 +4,13 @@ import { useCallback, useEffect, useState } from 'react';
 import GetSubscriptions from '@/utils/getSubscription';
 import { MdCheck, MdClose } from 'react-icons/md';
 import getURL from '@/utils/getURL';
+import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 
-export default function PricingEmail({ data }) {
+export default function PricingEmail({ data, country }) {
+    const { currency, symbol } = GetCurrencySymbol(country);
     const [isLoading, setIsLoading] = useState(false);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
-    const [currency, setCurrency] = useState('INR');
-    const [symbol, setSymbol] = useState('₹');
 
     const fetchPlans = useCallback(async () => {
         setIsLoading(true);
@@ -77,7 +77,7 @@ export default function PricingEmail({ data }) {
                                                     i == 0 ? ' block xl:hidden ' : ' block '
                                                 }`}
                                             ></span>
-                                            <a href={getURL('signup', 'email')}>
+                                            <a href={getURL('signup', 'email')} target='_blank'>
                                                 <button
                                                     className={`btn btn-primary  btn-md ${
                                                         plan?.name === 'Basic' ? '' : 'btn-outline'
@@ -154,13 +154,19 @@ export default function PricingEmail({ data }) {
                                                         ))}
                                                 </div>
                                             </div>
-                                            <button
-                                                className={`btn btn-primary  btn-md mt-auto ${
-                                                    plan?.name === 'Basic' ? '' : 'btn-outline'
-                                                } ${i == 0 ? ' xl:block hidden ' : ' hidden '}`}
+                                            <a
+                                                href={getURL('signup', 'email')}
+                                                target='_blank'
+                                                className='w-full justify-end '
                                             >
-                                                Get Started
-                                            </button>
+                                                <button
+                                                    className={`btn btn-primary  btn-md mt-auto ${
+                                                        plan?.name === 'Basic' ? '' : 'btn-outline'
+                                                    } ${i == 0 ? ' xl:block hidden ' : ' hidden '}`}
+                                                >
+                                                    Get Started
+                                                </button>
+                                            </a>
                                         </div>
                                     );
                                 }
@@ -198,7 +204,7 @@ export default function PricingEmail({ data }) {
                     ))}
             </div>
 
-            <ConnectWithTeam product={'hello'} data={data?.connectComp} isPlan={true} />
+            <ConnectWithTeam product={'Email'} data={data?.connectComp} href={'email'} isPlan={true} />
             <FaqsComp data={data?.faqComp} notCont={true} />
         </div>
     );

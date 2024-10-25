@@ -12,7 +12,7 @@
     "tagline": "Instant Secure Verification",
     "heading": "Simplest, quickest and most effective way to verify your users",
     "subheading": "Build customer trust and enable business protection with two-factor authentication.",
-    "banner_img": "/assets/global/otp/otp.png",
+    "banner_img": "/assets/global/otp/otp.svg",
     "getstarted_btn": "Get Started For Free",
     "trustedByComp": {
       "heading": "Trusted by 30,000+ global businesses",
@@ -55,7 +55,7 @@
       },
       {
         "name": "Inbuilt IP Security",
-        "content": "<strong>Protect against fraud, hacks, validation, blocking</strong>  Minimize fraud with an extra layer of security. The inbuilt security ensures that when a login is risky the flow does not allow the bad actor to login by viewing it as potentially fraudulent.",
+        "content": "<strong>Protect against fraud, hacks, validation, blocking</strong> Minimize fraud with an extra layer of security. The inbuilt security ensures that when a login is risky the flow does not allow the bad actor to login by viewing it as potentially fraudulent.",
         "img": "/assets/global/otp/otp-inbuilt-ip-security.svg"
       },
       {
