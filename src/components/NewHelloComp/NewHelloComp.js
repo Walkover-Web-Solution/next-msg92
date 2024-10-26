@@ -28,7 +28,7 @@ export default function NewHelloComp({ data }) {
                     ></h1>
                     <div className='flex flex-col gap-4'>
                         <p className={`${styles.boost} text-hello`}>{data?.bannerComp?.tagline}</p>
-                        <p className='text-2xl'>{data?.bannerComp?.subheading}</p>
+                        <h2 className='text-2xl'>{data?.bannerComp?.subheading}</h2>
                     </div>
                     <Link className={styles?.getstarted} href={getURL('signup', 'hello')} target='_blank'>
                         {data?.bannerComp?.getstarted_btn}
@@ -55,17 +55,17 @@ export default function NewHelloComp({ data }) {
 
             <div className='bg-[#f4ff80]'>
                 <div className='container flex flex-col cont_gap cont_p'>
-                    <h2 className='text-4xl font-bold'>{data?.discover?.heading}</h2>
+                    <h3 className='text-4xl font-bold'>{data?.discover?.heading}</h3>
                     <p className='text-xl'>{data?.discover?.subheading}</p>
                     <p className='text-xl'>{data?.discover?.subtag}</p>
                     <div className='grid grid-cols-2 gap-6'>
                         {data?.discover?.tags.map((tag) => (
-                            <div key={tag?.name} className='flex items-center gap-2'>
+                            <h2 key={tag?.name} className='flex items-center gap-2'>
                                 <div className='rounded-full p-2 bg-white h-[60px] w-[60px] flex items-center justify-center shadow-lg'>
                                     <MdHealthAndSafety fontSize={30} />
                                 </div>
                                 <span className='text-2xl font-semibold'>{tag?.name}</span>
-                            </div>
+                            </h2>
                         ))}
                     </div>
                     <p className='text-xl'>{data?.discover?.extra}</p>
@@ -84,7 +84,7 @@ export default function NewHelloComp({ data }) {
                                 >
                                     <div className='flex flex-col gap-4 lg:w-1/2'>
                                         <Image src={feature?.icon} width={70} height={70} alt='hello' />
-                                        <h3 className='text-2xl font-bold'>{feature?.name}</h3>
+                                        <span className='text-2xl font-bold'>{feature?.name}</span>
                                         <div
                                             className='text-lg'
                                             dangerouslySetInnerHTML={{ __html: feature?.content }}
