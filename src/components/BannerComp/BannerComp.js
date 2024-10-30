@@ -53,7 +53,7 @@ export default function BannerComp({ pageInfo, data }) {
                     className={
                         !data?.code
                             ? 'flex flex-col lg:gap-12 gap-8 h-full justify-center lg:w-1/2 w-full z-10'
-                            : 'flex flex-col lg:gap-12 gap-8 h-full justify-center w-full z-10'
+                            : 'flex flex-col lg:gap-12 gap-8 h-full justify-center w-full  z-10'
                     }
                 >
                     <div className='flex flex-col gap-6'>
