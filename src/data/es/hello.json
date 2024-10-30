@@ -142,22 +142,5 @@
             "text3": "Ready to transform the way you communicate? Say HELLO to your business's next big leap. Get started with HELLO by MSG91 now and experience the difference firsthand.",
             "text4": "Unlock limitless possibilities with HELLO by MSG91. Your communication revolution starts here."
         }
-    },
-    "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
-        "buttons": {
-            "contactSales": {
-                "text": "Contact sales",
-                "link": "/contact-us"
-            },
-            "pricing": {
-                "text": "Pricing",
-                "link": "/pricing/"
-            },
-            "getStarted": {
-                "text": "Get started",
-                "link": "https://control.msg91.com/signup/"
-            }
-        }
     }
 }
