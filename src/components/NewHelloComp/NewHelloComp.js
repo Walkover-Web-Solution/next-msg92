@@ -138,6 +138,9 @@ export default function NewHelloComp({ data }) {
                         <Link className={styles?.getstarted} href={getURL('signup', 'hello')} target='_blank'>
                             Get started
                         </Link>
+                        <Link className={styles?.sales} href='/pricing'>
+                            Pricing
+                        </Link>
                         <Link className={styles?.sales} href='/contact-us'>
                             Contact sales
                         </Link>
