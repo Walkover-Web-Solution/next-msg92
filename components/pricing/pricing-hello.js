@@ -147,11 +147,28 @@ export function HelloPricingCard({ plan, planAmount, currency, selectedMode }) {
                         </span>
                     )}
                 </div>
-
+                <div>                
                 <span className="mt-2 c-fs-2 c-fw-sb text-green">
                     {planAmount?.currency?.symbol}
                     {planAmount?.plan_amount} {selectedMode}
                 </span>
+                {planAmount?.currency?.short_name === 'INR' && planAmount?.plan_amount === 150 && (
+                    <div>
+                        <span className="c-fs-5 strick-through">
+                            {planAmount?.currency?.symbol}
+                            1500 {selectedMode}
+                        </span>
+                    </div>
+                )}
+                {planAmount?.currency?.short_name === 'INR' && planAmount?.plan_amount === 300 && (
+                    <div>
+                        <span className="c-fs-5 strick-through">
+                            {planAmount?.currency?.symbol}
+                            3000 {selectedMode}
+                        </span>
+                    </div>
+                )}
+                </div>                
                 <span className="c-fs-5"> {planAmount?.currency?.short_name === 'INR' ? '+18% GST' : '-'}</span>
                 <Link href={'/signup?service=hello'} target="_blank">
                     <button className={`btn ${plan?.most_popular ? 'btn-dark' : 'btn-outline-dark'}  rounded-md`}>
