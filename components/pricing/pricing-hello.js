@@ -78,11 +78,12 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                         Yearly (20% off)
                     </h3>
                 </span>
-            </div> */}
-
-            <div class="price-card rcs bg-white rounded-2 p-4">
-                <h3 class="text-start fw-bold text-green">Offer valid until November 7, 2024.</h3>
-            </div>
+            </div> */}            
+            {countryCode === 'IN' && (
+                <div className="price-card rcs bg-white rounded-2 p-4">
+                    <h3 className="text-start fw-bold text-green">Offer valid until November 7, 2024.</h3>
+                </div>
+            )}
 
             <div className="w-100 card-container d-flex flex-wrap gap-4">
                 {subscriptionHello?.length &&
