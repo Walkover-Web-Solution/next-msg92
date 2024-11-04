@@ -59,7 +59,7 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
 
     return (
         <>
-            <div className="header d-flex  gap-3 justify-content-between flex-wrap my-4">
+            {/* <div className="header d-flex  gap-3 justify-content-between flex-wrap my-4">
                 <span className="d-flex">
                     <h2
                         className={` ${
@@ -78,6 +78,10 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                         Yearly (20% off)
                     </h3>
                 </span>
+            </div> */}
+
+            <div class="price-card rcs bg-white rounded-2 p-4">
+                <h3 class="text-start fw-bold text-green">Offer valid until November 7, 2024.</h3>
             </div>
 
             <div className="w-100 card-container d-flex flex-wrap gap-4">
@@ -109,15 +113,15 @@ const pricinghello = ({ subscriptionHello, fetchSubscriptionHello, currency, cou
                 <span className="talk-to-sales d-block c-fs-4">
                     Connect with our team for a personalized plan to meet your needs.
                 </span>
-        
-                    <button
-                        type="button"
-                        data-bs-toggle="modal"
-                        data-bs-target="#sales-modal"
-                        className="btn btn-outline-dark mt-2 mb-4 c-fs-5 border border-dark rounded-1 px-3 py-1"
-                    >
-                        Talk to Sales
-                    </button>
+
+                <button
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#sales-modal"
+                    className="btn btn-outline-dark mt-2 mb-4 c-fs-5 border border-dark rounded-1 px-3 py-1"
+                >
+                    Talk to Sales
+                </button>
                 <br />
                 <a href="/hello">
                     <img src="/img/icon/link.svg" alt="Know more" className="icon me-2" />
