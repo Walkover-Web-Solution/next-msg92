@@ -246,9 +246,8 @@ $border-width: 2px;
 }
 .card-container {
     .card {
-        min-height: 250px;
-        width: 300px;
-
+        min-height: 250px;        
+        flex-grow: 1;        
         .popular-plan-tag {
             padding: 5px 12px;
             font-size: 12px;
