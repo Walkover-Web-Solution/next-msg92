@@ -11,6 +11,11 @@ import dynamic from 'next/dynamic';
 import { fetchPostContent } from '@/components/Guide/lib/posts';
 import { getTag } from '@/components/Guide/lib/tags';
 import TagButton from '@/components/Guide/tags/TagButton';
+import getPageInfo from '@/utils/getPageInfo';
+import getCommonCompData from '@/utils/getCommonCompData';
+import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
+import MenuBarComp from '@/components/menuBarComp/menuBarComp';
+import FooterComp from '@/components/FooterComp/FooterComp';
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 const component = { ReactPlayer };
@@ -24,7 +29,17 @@ const slugToPostContent = ((postContents) => {
     postContents?.forEach((it) => (hash[it.slug] = it));
     return hash;
 })(fetchPostContent());
-export default function TestPage({ source, title, description, author, date, thumbnailImage, tags }) {
+export default function TestPage({
+    source,
+    title,
+    description,
+    author,
+    date,
+    thumbnailImage,
+    tags,
+    commonData,
+    pageInfo,
+}) {
     const router = useRouter();
 
     const handleClick = () => {
@@ -42,6 +57,12 @@ export default function TestPage({ source, title, description, author, date, thu
                     key='title'
                 />
             </Head>
+            <NotificationBarComp
+                componentData={commonData?.notification}
+                country={pageInfo?.country}
+                pageInfo={pageInfo}
+            />
+            <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
             <div className='wrapper container blog-container w-100 max-w-4xl flex flex-col gap-6 py-20'>
                 <a className=' d-inline-block' onClick={handleClick}>
                     <button className=' btn btn-dark bg-black text-white'>
@@ -77,18 +98,13 @@ export default function TestPage({ source, title, description, author, date, thu
                     </button>
                 </a>
             </div>
+            <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} />
         </>
     );
 }
 
 export async function getStaticPaths() {
-    // const paths = [];
     const paths = fetchPostContent().map((it) => '/guide/' + it.staticPath);
-    // paths.push({
-    //   params: {
-    //     slug: "mastering-the-art-of-effective-communication-unveiling-the-secrets-to-successful-sms-campaigns-for-engaging-audiences"
-    //   },
-    // });
     return {
         paths,
         fallback: false,
@@ -97,6 +113,8 @@ export async function getStaticPaths() {
 export async function getStaticProps(slug) {
     const slugData = slug.params.slug;
     const source = fs.readFileSync(slugToPostContent[slugData]?.fullPath, 'utf8');
+    const pageInfo = getPageInfo('global');
+    const commonData = getCommonCompData(pageInfo?.country);
     const matterResult = matter(source, {
         engines: {
             yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }),
@@ -121,6 +139,8 @@ export async function getStaticProps(slug) {
             date: date,
             thumbnailImage: thumbnailImage || '',
             tags: tags || '',
+            commonData,
+            pageInfo,
         },
     };
 }
