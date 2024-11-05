@@ -26,15 +26,12 @@ import CaseStudyComp from '@/components/CaseStudyComp/CaseStudyComp';
 import NewHelloComp from '@/components/NewHelloComp/NewHelloComp';
 import TermsComp from '@/components/TermsComp/TermsComp';
 import ContactUsComp from '@/components/ContactUsComp/ContactUsComp';
-
-//Functions to fetch data
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
 import SignUp from '@/components/signupComp/SignUp';
 import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
 import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
-
 const Components = {
     BannerComp,
     CaseStudiesComp,
