@@ -12,6 +12,7 @@ const nextConfig = {
         REDIRECT_URL: getEnvValue("REDIRECT_URL"),
         PRICING_URL: getEnvValue("PRICING_URL"),
         SUBSCRIPTION_PRICING_URL: getEnvValue("SUBSCRIPTION_PRICING_URL"),
+        HELLO_TEST_URL: getEnvValue("HELLO_TEST_URL"),
 
         // CLIENT IDS
         GOOGLE_CLIENT_ID: getEnvValue("GOOGLE_CLIENT_ID"),

@@ -17,12 +17,12 @@
 
 .chatbotwrapper {
     margin-top: 80px;
-    height: 650px;
+    min-height: 650px;
     min-width: 380px;
-    border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: 8px;
     align-items: center;
     justify-items: center;
+    overflow: visible;
 }
