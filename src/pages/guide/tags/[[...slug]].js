@@ -5,7 +5,12 @@ import Pagination from '@/components/Guide/page/Pagination';
 import { countPosts, listPostContent } from '@/components/Guide/lib/posts';
 import { getTag, listTags } from '@/components/Guide/lib/tags';
 import PostItem from '@/components/Guide/page/PostItem';
-export default function Index({ posts, tag, pagination, page }) {
+import getPageInfo from '@/utils/getPageInfo';
+import getCommonCompData from '@/utils/getCommonCompData';
+import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
+import MenuBarComp from '@/components/menuBarComp/menuBarComp';
+import FooterComp from '@/components/FooterComp/FooterComp';
+export default function Index({ posts, tag, pagination, page, commonData, pageInfo }) {
     const router = useRouter();
     const handleClick = () => {
         router.back();
@@ -21,6 +26,12 @@ export default function Index({ posts, tag, pagination, page }) {
                     key='title'
                 />
             </Head>
+            <NotificationBarComp
+                componentData={commonData?.notification}
+                country={pageInfo?.country}
+                pageInfo={pageInfo}
+            />
+            <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
             <div className='blog'>
                 <div className={'container blog-home-container'}>
                     <div className={'posts'}>
@@ -44,6 +55,7 @@ export default function Index({ posts, tag, pagination, page }) {
                     </div>
                 </div>
             </div>
+            <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} />
         </>
     );
 }
@@ -54,6 +66,8 @@ export async function getStaticProps({ params }) {
     const [slug, page] = [queries[0], queries[1] || 1];
     const posts = listPostContent(page ? parseInt(page) : 1, 18, slug);
     const tag = getTag(slug);
+    const pageInfo = getPageInfo(params);
+    const commonData = getCommonCompData(pageInfo?.country);
 
     const pagination = {
         current: page ? parseInt(page) : 1,
@@ -64,6 +78,8 @@ export async function getStaticProps({ params }) {
         tag,
         pagination: { current: pagination.current, pages: pagination.pages },
         page,
+        pageInfo,
+        commonData,
     };
     if (page) {
         props.page = page;
