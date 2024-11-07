@@ -1,0 +1,21 @@
+.blog-card {
+
+    &__cont{
+        background: #0008;
+    }
+    &__small {
+        @apply row-span-3;
+    }
+    &__large {
+        @apply row-span-3;
+    }
+    &__description {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: block-axis;
+        -webkit-line-clamp: 3;
+        line-height: 1.5;
+        max-height: 4;
+    }
+}
