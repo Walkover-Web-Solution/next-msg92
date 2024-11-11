@@ -2,15 +2,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MdMenu } from 'react-icons/md';
 import styles from './MenuBarComp.module.scss';
-import { BtnWithHideIco, LinkButton } from '../UIComponent/Buttons/LinkButton';
-import { useState } from 'react';
+import { BtnWithHideIco, LinkButton, LinkText } from '../UIComponent/Buttons/LinkButton';
+import { useEffect, useState } from 'react';
 import getURL from '@/utils/getURL';
 
 export default function MenuBarComp({ componentData, pageInfo }) {
     const [nav, setNav] = useState('hide');
     const [type, setType] = useState('products');
-    const [miniMenu, setMiniMenu] = useState(false);
-
+    useEffect(() => {
+        if (nav === 'show') {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [nav]);
     const getPricingPath = () => {
         let path = '/pricing/hello';
         switch (pageInfo?.country) {
@@ -37,10 +42,105 @@ export default function MenuBarComp({ componentData, pageInfo }) {
         return process.env.BASE_URL + path;
     };
     const hidden = componentData?.hide?.includes(pageInfo?.page);
-
+    const handleMiniMenu = () => {
+        if (nav === 'show') {
+            setNav('hide');
+        } else {
+            setNav('show');
+        }
+    };
     if (componentData && !hidden) {
         return (
             <>
+                <div className={`${styles.minicont} nav-${nav}  `}>
+                    <div className={`${styles.navigation} container pt-28 w-full flex`}>
+                        <div className='flex  overflow-scroll flex-col scrollbar-none pb-4 gap-12 h-full min-w-full'>
+                            <div className='flex flex-col h-fit w-full '>
+                                {componentData?.products_list?.length > 0 &&
+                                    componentData?.products_list.map((category, index) => {
+                                        return (
+                                            <div key={index} className='flex flex-col gap-3 w-full '>
+                                                <span className='text font-medium'>{category?.name} </span>
+                                                <div className='flex flex-col gap-2'>
+                                                    {category?.products?.length > 0 &&
+                                                        category?.products.map((product, i) => {
+                                                            return (
+                                                                <Link
+                                                                    key={i}
+                                                                    href={getURL('product', product?.slug)}
+                                                                    onClick={() => {
+                                                                        setNav('hide');
+                                                                        setType('products');
+                                                                    }}
+                                                                >
+                                                                    <div className='flex items-center gap-2 py-2 px-2 rounded hover:bg-secondary w-full LinkButtonCard'>
+                                                                        <Image
+                                                                            className='h-10'
+                                                                            src={`/assets/icons/products/${product?.slug}.svg`}
+                                                                            alt={product?.name}
+                                                                            width={46}
+                                                                            height={46}
+                                                                        />
+                                                                        <div className='flex flex-col'>
+                                                                            <BtnWithHideIco customClasses='text-xl font-semibold'>
+                                                                                {product?.name}
+                                                                            </BtnWithHideIco>
+                                                                            {product?.description && (
+                                                                                <p className='text-sm text-gray-500'>
+                                                                                    {product?.description}
+                                                                                </p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
+                                                                </Link>
+                                                            );
+                                                        })}
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                <div className='flex flex-col gap-2'>
+                                    <Link
+                                        href={getURL('pricing', 'hello')}
+                                        onClick={() => {
+                                            setNav('hide');
+                                            setType('products');
+                                        }}
+                                    >
+                                        <LinkText customClasses='text-lg'>Pricing</LinkText>
+                                    </Link>
+                                    <Link
+                                        href={getURL('pricing', 'hello')}
+                                        onClick={() => {
+                                            setNav('hide');
+                                            setType('products');
+                                        }}
+                                    >
+                                        <LinkText customClasses='text-lg'>Integrations</LinkText>
+                                    </Link>
+                                    <Link
+                                        href={getURL('pricing', 'hello')}
+                                        onClick={() => {
+                                            setNav('hide');
+                                            setType('products');
+                                        }}
+                                    >
+                                        <LinkText customClasses='text-lg'>API Docs</LinkText>
+                                    </Link>
+                                    <Link
+                                        href={getURL('pricing', 'hello')}
+                                        onClick={() => {
+                                            setNav('hide');
+                                            setType('products');
+                                        }}
+                                    >
+                                        <LinkText customClasses='text-lg'>Sign Up</LinkText>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className={`${styles.cont} nav-${nav}  `}>
                     <div className={`${styles.navigation} container flex`}>
                         {type === 'products' && (
@@ -151,7 +251,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                 )}
 
                 <div>
-                    <div className='container hidden lg:flex items-center py-5 '>
+                    <div className='container hidden md:flex items-center py-5 '>
                         <ul className='w-full z-[1000] flex gap-6'>
                             <li
                                 onMouseEnter={() => {
@@ -202,24 +302,26 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             </Link>
                         </ul>
                     </div>
-                    <div className='container flex lg:hidden items-center justify-between py-5 '>
-                        <Link href={pageInfo?.country === 'global' ? '/' : pageInfo?.country}>
-                            <Image
-                                src={'/assets/brand/msg91.svg'}
-                                width={300}
-                                height={100}
-                                className='h-[30px] w-auto'
-                                alt='MSG91'
-                            />
-                        </Link>
-                        <button
-                            className='btn btn-icon'
-                            onClick={() => {
-                                setMiniMenu(!miniMenu);
-                            }}
-                        >
-                            <MdMenu fontSize={24} />
-                        </button>
+                    <div className='container z-[1000] flex md:hidden  py-5 '>
+                        <div className='w-full z-[1000] flex items-center justify-between gap-6'>
+                            <Link href={pageInfo?.country === 'global' ? '/' : pageInfo?.country}>
+                                <Image
+                                    src={'/assets/brand/msg91.svg'}
+                                    width={300}
+                                    height={100}
+                                    className='h-[30px] w-auto'
+                                    alt='MSG91'
+                                />
+                            </Link>
+                            <button
+                                className='btn btn-icon'
+                                onClick={() => {
+                                    handleMiniMenu();
+                                }}
+                            >
+                                <MdMenu fontSize={24} />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </>

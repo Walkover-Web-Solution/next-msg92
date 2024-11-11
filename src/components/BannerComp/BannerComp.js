@@ -12,7 +12,6 @@ import { InlineWidget } from 'react-calendly';
 import getURL from '@/utils/getURL';
 
 export default function BannerComp({ pageInfo, data }) {
-    console.log('🚀 ~ BannerComp ~ pageInfo:', pageInfo);
     const [isCopied, setIsCopied] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState('curl');
 

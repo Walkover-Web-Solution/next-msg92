@@ -13,11 +13,11 @@ body {
 .country-typehead {
     div {
         @apply w-full;
-        input { 
+        input {
             padding: 6px 8px !important ;
-            @apply border rounded  text-[16px] w-full ; 
+            @apply border rounded  text-[16px] w-full;
             &::placeholder {
-                @apply text-[16px]
+                @apply text-[16px];
             }
         }
     }
@@ -25,14 +25,23 @@ body {
         display: flex !important;
 
         a {
-            &.active{
-                @apply bg-secondary
+            &.active {
+                @apply bg-secondary;
             }
             @apply hover:bg-secondary text-[16px]
             px-2;
         }
     }
 }
-.rbt-menu{
-    @apply w-fit bg-white flex flex-col ;
+.rbt-menu {
+    @apply w-fit bg-white flex flex-col;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-none {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }

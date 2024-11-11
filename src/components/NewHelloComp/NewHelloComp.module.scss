@@ -14,12 +14,12 @@
     box-shadow: 8px 8px #f4ff80;
     padding: 8px 24px !important;
     background-color: black;
-    @apply bg-black text-white uppercase text-lg w-fit;
+    @apply bg-black text-white uppercase text-lg w-fit hover:bg-gray-700;
 }
 .sales {
     box-shadow: 8px 8px #f4ff80;
     padding: 8px 24px !important;
-    @apply bg-white text-black border border-black uppercase text-lg w-fit;
+    @apply bg-white text-black border border-black uppercase text-lg w-fit hover:text-white hover:bg-black;
 }
 
 .yellow {
