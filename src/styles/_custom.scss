@@ -64,6 +64,12 @@ body{
     &.btn-secondary {
         @apply text-accent;
     }
+    &.btn-white {
+        &.btn-outline{
+            @apply text-white hover:bg-accent hover:text-white;
+        }
+   
+    }
 }
 
 .list-disc {
