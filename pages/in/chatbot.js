@@ -39,9 +39,7 @@ export default function Chatbot() {
         if (template?.bot_id !== selectedTemplate?.bot_id) {
             const iframe = document.querySelector('.chatbotwrapper iframe');
             if (iframe) {
-                iframe.src = `/${
-                    process.env.ENVIRONMENT === 'prod' ? 'chat-widget' : 'chat-widget-test'
-                }.html?widgetToken=${template?.token}`;
+                iframe.src = `/chat-widget.html?widgetToken=${template?.token}&widgetUrl=${process.env.CHATBOT_TEMPLATE_TEST_URL}`;
             }
         }
         setSelectedTemplate(template);
@@ -78,9 +76,7 @@ export default function Chatbot() {
                 </div>
                 <div className="chatbotwrapper ">
                     <iframe
-                        src={`/${
-                            process.env.ENVIRONMENT === 'prod' ? 'chat-widget' : 'chat-widget-test'
-                        }.html?widgetToken=${selectedTemplate?.token}`}
+                        src={`/chat-widget.html?widgetToken=${selectedTemplate?.token}&widgetUrl=${process.env.CHATBOT_TEMPLATE_TEST_URL}`}
                         style={{ width: '100%', height: '100%', border: 'none' }}
                     ></iframe>
                 </div>

@@ -9,6 +9,7 @@
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const widgetToken = urlParams.get('widgetToken');
+        const widgetUrl = urlParams.get('widgetUrl') + '/widget/chat-widget.js';
         if (widgetToken) {
             const script = document.createElement('script');
             script.type = 'text/javascript';
@@ -20,7 +21,7 @@
                     show_close_button: false
                 }, 0);
             };
-            script.src = 'https://control.msg91.com/app/assets/widget/chat-widget.js';
+            script.src = widgetUrl;
             document.body.appendChild(script);
         } else {
             console.error('Widget token is missing');
