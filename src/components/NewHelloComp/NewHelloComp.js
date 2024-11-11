@@ -3,8 +3,9 @@ import Link from 'next/link';
 import styles from './NewHelloComp.module.scss';
 import { MdHealthAndSafety } from 'react-icons/md';
 import getURL from '@/utils/getURL';
+import PricingHello from './NewHelloPricingComp/NewHelloPricingComp';
 
-export default function NewHelloComp({ data }) {
+export default function NewHelloComp({ data, pageInfo }) {
     return (
         <>
             <div className='container flex md:flex-row flex-col cont_gap cont_p justify-between'>
@@ -102,35 +103,36 @@ export default function NewHelloComp({ data }) {
                     <p>{data?.prefooter?.text2}</p>
                 </div>
 
-                <div style={{ 'width': '100vw', overflow: 'hidden' }}></div>
-                <div className='marquee mt-5 mb-5'>
-                    <span className='yellow'>Connect</span>
-                    <span className='purple'>Engage</span>
-                    <span className='blue'>Thrive</span>
-                    <span className='yellow'>Connect</span>
-                    <span className='purple'>Engage</span>
-                    <span className='blue'>Thrive</span>
-                    <span className='yellow'>Connect</span>
-                    <span className='purple'>Engage</span>
-                    <span className='blue'>Thrive</span>
-                    <span className='yellow'>Connect</span>
-                    <span className='purple'>Engage</span>
-                    <span className='blue'>Thrive</span>
-                    <span className='yellow'>Connect</span>
-                    <span className='purple'>Engage</span>
-                    <span className='blue'>Thrive</span>
-                    <span className='yellow'>Connect</span>
-                    <span className='purple'>Engage</span>
-                    <span className='blue'>Thrive</span>
-                    <span className='yellow'>Connect</span>
-                    <span className='purple'>Engage</span>
-                    <span className='blue'>Thrive</span>
-                    <span className='yellow'>Connect</span>
-                    <span className='purple'>Engage</span>
-                    <span className='blue'>Thrive</span>
-                    <span className='yellow'>Connect</span>
-                    <span className='purple'>Engage</span>
-                    <span className='blue'>Thrive</span>
+                <div style={{ 'width': '100vw', overflow: 'hidden' }}>
+                    <div className='marquee mt-5 mb-5'>
+                        <span className='yellow'>Connect</span>
+                        <span className='purple'>Engage</span>
+                        <span className='blue'>Thrive</span>
+                        <span className='yellow'>Connect</span>
+                        <span className='purple'>Engage</span>
+                        <span className='blue'>Thrive</span>
+                        <span className='yellow'>Connect</span>
+                        <span className='purple'>Engage</span>
+                        <span className='blue'>Thrive</span>
+                        <span className='yellow'>Connect</span>
+                        <span className='purple'>Engage</span>
+                        <span className='blue'>Thrive</span>
+                        <span className='yellow'>Connect</span>
+                        <span className='purple'>Engage</span>
+                        <span className='blue'>Thrive</span>
+                        <span className='yellow'>Connect</span>
+                        <span className='purple'>Engage</span>
+                        <span className='blue'>Thrive</span>
+                        <span className='yellow'>Connect</span>
+                        <span className='purple'>Engage</span>
+                        <span className='blue'>Thrive</span>
+                        <span className='yellow'>Connect</span>
+                        <span className='purple'>Engage</span>
+                        <span className='blue'>Thrive</span>
+                        <span className='yellow'>Connect</span>
+                        <span className='purple'>Engage</span>
+                        <span className='blue'>Thrive</span>
+                    </div>
                 </div>
                 <div className='container flex flex-col cont_gap cont_p text-2xl'>
                     <p>{data?.prefooter?.text3}</p>
@@ -148,6 +150,7 @@ export default function NewHelloComp({ data }) {
                     <p>{data?.prefooter?.text4}</p>
                 </div>
             </div>
+            <PricingHello country={pageInfo?.country} />
         </>
     );
 }

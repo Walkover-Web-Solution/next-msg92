@@ -51,7 +51,6 @@ export default function getURL(type, link) {
                 rowPathArray.splice(1, 0, link);
             } else {
                 rowPathArray[1] = link;
-                console.log('🚀 ~ getURL ~ pathArray:', pathArray);
             }
             url = rowPathArray.join('/');
             break;
@@ -81,6 +80,10 @@ export default function getURL(type, link) {
 
         case 'signup':
             url = '/signup' + '?utm_source=' + link + '&source=msg91';
+            break;
+
+        case 'contact-us':
+            url = '/contact-us' + '?utm_source=' + link + '&source=msg91';
             break;
 
         default:
