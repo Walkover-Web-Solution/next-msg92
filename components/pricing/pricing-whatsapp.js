@@ -81,11 +81,21 @@ const pricingwp = ({ countryCode }) => {
             </div>
 
             <div className="d-flex container gap-3 flex-column text-start">
-                <div className="c-fs-5 mt-5">
-                    {/* MSG91 takes one time fee <strong>{symbol}{oneTimeWtsAppFee}</strong> to set up your WhatsApp Business account. */}
-                    Since we do not impose any service charge,{' '}
-                    <strong>{selectedCurrency === 'INR' ? 'GST' : 'Taxes'}</strong> will be applied to WhatsApp pricing
-                </div>
+                {selectedCurrency === 'INR' ? (
+                    <div className="d-flex flex-column gap-2 py-3">
+                        <h2 className="text-2xl font-bold mb-1">Whatsapp API Pricing</h2>
+                        <p>
+                            Since we do not impose any service charge, <strong>GST</strong> will be applied to WhatsApp
+                            API pricing
+                        </p>
+                        <p>Zero Whatsapp cloud API pricing for Click to WhatsApp Ads.</p>
+                    </div>
+                ) : (
+                    <div className="c-fs-5 mt-5">
+                        Since we do not impose any service charge, <strong>Taxes</strong> will be applied to WhatsApp
+                        pricing
+                    </div>
+                )}
                 {tableData?.length > 0 && (
                     <table className="table table-sm c-fs-5">
                         <thead>
