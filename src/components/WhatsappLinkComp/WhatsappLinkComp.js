@@ -193,7 +193,7 @@ var options = {
             )}
 
             <div className='container flex flex-col cont_p cont_gap' id='generate'>
-                <h3 className='text-3xl'>Create QR Code/Widget/Link</h3>
+                <h3 className='text-3xl'>{data?.create?.heading}</h3>
                 <div>
                     <div className='flex gap-8 flex-col lg:flex-row'>
                         <div id='widget-form' className='w-full'>
