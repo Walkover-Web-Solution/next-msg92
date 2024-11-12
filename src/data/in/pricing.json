@@ -318,6 +318,10 @@
             }
         },
         "rcs": {
+            "HeadComp": {
+                "title": "RCS Message Pricing in India | MSG91-India",
+                "description": "RCS Messaging now available in India at most affordable prices.  Learn How to send RCS Messages on android and iphone using Transactional RCS APIs and more"
+            },
             "connectComp": {
                 "know_more": "Know more about"
             }
