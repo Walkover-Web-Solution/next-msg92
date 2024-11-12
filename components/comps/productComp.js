@@ -4,6 +4,7 @@ import PreFooter from '../preFooter';
 import TrustedBy from '../trustedby';
 import Seo from '../seoComp';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import FaqSection from '../faqSection/faqSection';
 
 const ProductComponent = ({ pageData, path, webhookData = null, pricingPath }) => {
     var i = 0;
@@ -25,7 +26,7 @@ const ProductComponent = ({ pageData, path, webhookData = null, pricingPath }) =
                             <p className="c-fs-2 w-md-75 w-100 mx-auto fw-normal">{pageData?.subheading}</p>
                         </div>
                         <a
-                        target="_blank"
+                            target="_blank"
                             href={`/signup?service=${pageData?.pagename}`}
                             className="btn btn-dark btn-lg c-fs-2 mt-3 utm"
                         >
@@ -43,7 +44,11 @@ const ProductComponent = ({ pageData, path, webhookData = null, pricingPath }) =
             </div>
 
             <div className={`px-sm-0 d-flex flex-column justify-content-center justify-content-sm-start section mt-5`}>
-                <span className="container sub-heading c-head   pt-4 pt-md-0 c-fw-b">Features</span>
+                <span className="container sub-heading c-head   pt-4 pt-md-0 c-fw-b">
+                    {pageData?.pagetag === 'campaign'
+                        ? 'Features of Drip Campaign and Marketing Automation'
+                        : 'Features'}
+                </span>
                 {pageData?.features?.map((item, index) => {
                     if (item?.content) {
                         i++;
@@ -96,6 +101,9 @@ const ProductComponent = ({ pageData, path, webhookData = null, pricingPath }) =
                     </div>
                 </div>
             )}
+            <div className='container'>
+            <FaqSection faqData={pageData?.FaqsComp?.faqs} faq={pageData?.faqComp} />
+            </div>
             <Seo path={path} pageData={pageData?.pagename} />
             <PreFooter pricingPath={pricingPath} pageName={pageData?.pagename} />
         </div>

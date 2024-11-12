@@ -1,23 +1,22 @@
 {
-  "global":{
+  "global": {
     "pagename": "index",
-    "index":{
-      "code":"no",
-      "pagename":"index",
-      "head":"this is global index",
-      "headline":"Connect with your customers via multiple channels"
+    "index": {
+      "code": "no",
+      "pagename": "index",
+      "head": "this is global index",
+      "headline": "Connect with your customers via multiple channels"
     },
-    "hello":{
+    "hello": {
       "code": false,
       "icon": "/img/icon/hello.svg",
-      "pagename":"hello",      
-      "pagetag":"customer service software",
+      "pagename": "hello",
+      "pagetag": "customer service software",
       "tagline": "Revolutionize customer support",
       "heading": "Never lose sight of what’s important",
       "subheading": "Don’t just solve tickets, build customer relationships",
-      "pageimg":"/img/pageimg/hello.png",
+      "pageimg": "/img/pageimg/hello.png",
       "features": [
-      
         {
           "img": "/img/feature/hello-unlimited-agents.svg",
           "heading": "Unlimited Agents",
@@ -59,12 +58,12 @@
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"campaign", 
-      "pagetag":"Create Campaign",
+      "pagename": "campaign",
+      "pagetag": "Create Campaign",
       "tagline": "Event Base automation",
       "heading": "Connect conversations across Channels and tools.",
       "subheading": "Deliver personalized, engaging and seamless experiences.",
-      "pageimg":"/img/pageimg/campaign.svg",
+      "pageimg": "/img/pageimg/campaign.svg",
       "features": [
         {
           "img": "/img/feature/campaign-multi-channel-support.svg",
@@ -98,20 +97,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track campaign performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track campaign performance"
+        }
       ]
     },
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"segmento",
-      "pagetag":"segmento",
-      "pageimg":"/img/pageimg/segmento.svg",
+      "pagename": "segmento",
+      "pagetag": "segmento",
+      "pageimg": "/img/pageimg/segmento.svg",
       "tagline": "target based marketing",
       "heading": "Personalize customer journeys with Data segmentation.",
       "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
@@ -142,20 +153,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track segmento performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track segmento performance"
+        }
       ]
     },
     "otp": {
       "code": false,
-      "pagename":"otp",
-      "pagetag":"otp",
+      "pagename": "otp",
+      "pagetag": "otp",
       "icon": "/img/icon/otp.svg",
-      "pageimg":"/img/pageimg/otp.svg",
+      "pageimg": "/img/pageimg/otp.svg",
       "tagline": "Instant Secure verification",
       "heading": "Simplest, quickest and most effective way to verify your users",
       "subheading": "Build customer trust and enable business protection with two-factor authentication.",
@@ -180,20 +203,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track otp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track otp performance"
+        }
       ]
     },
     "shorturl": {
       "code": false,
       "icon": "/img/icon/shorturl.svg",
-      "pagename": "ShortUrl", 
-      "pagetag":"URL Shortener",
-      "pageimg":"/img/pageimg/shorturl.svg",
+      "pagename": "ShortUrl",
+      "pagetag": "URL Shortener",
+      "pageimg": "/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
       "subheading": "Optimise your complex links to create short, cleaner links that are easier to share.",
@@ -212,20 +247,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track shorturl performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track shorturl performance"
+        }
       ]
     },
     "knowledgebase": {
       "code": false,
       "icon": "/img/icon/knowledgebase.svg",
-      "pagename": "KnowledgeBase", 
-      "pagetag":"KnowledgeBase",
-      "pageimg":"/img/pageimg/knowledgebase.svg",
+      "pagename": "KnowledgeBase",
+      "pagetag": "KnowledgeBase",
+      "pageimg": "/img/pageimg/knowledgebase.svg",
       "tagline": "Empower Customers with Self-Service Options",
       "heading": "Knowledge base is the backbone for good customer support",
       "subheading": "Get all essential features of knowledge base software at nominal price",
@@ -240,7 +287,7 @@
           "img": "/img/feature/kb-seo-friendly.svg",
           "heading": "SEO friendly (Subfolder and subdomain both support)",
           "subheading": "An SEO-friendly optimized knowledge base",
-          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."          
+          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."
         },
         {
           "img": "/img/feature/kb-whitelable.svg",
@@ -250,18 +297,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track knowledgebase performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track knowledgebase performance"
+        }
       ]
-    },    
+    },
     "sms": {
       "code": true,
-      "pagename": "SMS", 
-      "pagetag":"SMS",
+      "pagename": "SMS",
+      "pagetag": "SMS",
       "icon": "/img/icon/sms.svg",
       "tagline": "Next level messaging",
       "heading": "Engage your customers globally with quick, scalable and customizable messages",
@@ -309,21 +368,32 @@
           "subheading": "Real-time graphical view for monitoring and troubleshooting.",
           "content": "Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed."
         }
-        
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track sms performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track sms performance"
+        }
       ]
     },
     "rcs": {
       "code": true,
-      "pagename": "RCS", 
-      "pagetag":"RCS",
+      "pagename": "RCS",
+      "pagetag": "RCS",
       "icon": "/img/icon/rcs.svg",
       "tagline": "Rich Communication Services",
       "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
@@ -352,16 +422,18 @@
           "heading": "Enhanced Customer Trust",
           "subheading": "Understand your customers' habits",
           "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
-        }        
+        }
       ],
       "morefeatures": [
-        {"more": "0"}
+        {
+          "more": "0"
+        }
       ]
-    },  
+    },
     "email": {
       "code": true,
-      "pagename": "Email", 
-      "pagetag":"Email API",
+      "pagename": "Email",
+      "pagetag": "Email API",
       "icon": "/img/icon/email.svg",
       "tagline": "smarter email strategy",
       "heading": "Smart emails that land directly into the right inbox",
@@ -399,18 +471,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track email performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track email performance"
+        }
       ]
     },
     "voice": {
       "code": true,
-      "pagename": "Voice", 
-      "pagetag":"Voice",
+      "pagename": "Voice",
+      "pagetag": "Voice",
       "icon": "/img/icon/voice.svg",
       "tagline": "connect with confidence",
       "heading": "Boost customer engagement and build trust",
@@ -460,18 +544,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track voice performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track voice performance"
+        }
       ]
     },
     "whatsapp": {
       "code": true,
-      "pagename": "WhatsApp", 
-      "pagetag":"WhatsApp",
+      "pagename": "WhatsApp",
+      "pagetag": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
       "tagline": "dominate popular platforms",
       "heading": "Drive better customer engagement outcomes",
@@ -545,18 +641,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track whatsapp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track whatsapp performance"
+        }
       ]
     },
     "numbers": {
       "code": true,
-      "pagename": "Numbers", 
-      "pagetag":"numbers",
+      "pagename": "Numbers",
+      "pagetag": "numbers",
       "icon": "/img/icon/numbers.svg",
       "tagline": "Unlock the Power of Virtual Numbers",
       "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
@@ -621,29 +729,28 @@
           "heading": "Integration into Web Applications",
           "subheading": "",
           "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
-        }        
+        }
       ]
     }
   },
-  "br":{
+  "br": {
     "pagename": "index",
-    "index":{
-      "code":"no",
-      "pagename":"index",
-      "head":"this is global index",
-      "headline":"Connect with your customers via multiple channels"
+    "index": {
+      "code": "no",
+      "pagename": "index",
+      "head": "this is global index",
+      "headline": "Connect with your customers via multiple channels"
     },
-    "hello":{
+    "hello": {
       "code": false,
       "icon": "/img/icon/hello.svg",
-      "pagename":"hello",      
-      "pagetag":"customer service software",
+      "pagename": "hello",
+      "pagetag": "customer service software",
       "tagline": "Revolutionize customer support",
       "heading": "Never lose sight of what’s important",
       "subheading": "Don’t just solve tickets, build customer relationships",
-      "pageimg":"/img/pageimg/hello.png",
+      "pageimg": "/img/pageimg/hello.png",
       "features": [
-      
         {
           "img": "/img/feature/hello-unlimited-agents.svg",
           "heading": "Unlimited Agents",
@@ -685,12 +792,12 @@
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"campaign", 
-      "pagetag":"Create Campaign",
+      "pagename": "campaign",
+      "pagetag": "Create Campaign",
       "tagline": "Event Base automation",
       "heading": "Connect conversations across Channels and tools.",
       "subheading": "Deliver personalized, engaging and seamless experiences.",
-      "pageimg":"/img/pageimg/campaign.svg",
+      "pageimg": "/img/pageimg/campaign.svg",
       "features": [
         {
           "img": "/img/feature/campaign-multi-channel-support.svg",
@@ -724,20 +831,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track campaign performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track campaign performance"
+        }
       ]
     },
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"segmento",
-      "pagetag":"segmento",
-      "pageimg":"/img/pageimg/segmento.svg",
+      "pagename": "segmento",
+      "pagetag": "segmento",
+      "pageimg": "/img/pageimg/segmento.svg",
       "tagline": "target based marketing",
       "heading": "Personalize customer journeys with Data segmentation.",
       "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
@@ -768,20 +887,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track segmento performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track segmento performance"
+        }
       ]
     },
     "otp": {
       "code": false,
-      "pagename":"otp",
-      "pagetag":"otp",
+      "pagename": "otp",
+      "pagetag": "otp",
       "icon": "/img/icon/otp.svg",
-      "pageimg":"/img/pageimg/otp.svg",
+      "pageimg": "/img/pageimg/otp.svg",
       "tagline": "Instant Secure verification",
       "heading": "Simplest, quickest and most effective way to verify your users",
       "subheading": "Build customer trust and enable business protection with two-factor authentication.",
@@ -806,20 +937,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track otp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track otp performance"
+        }
       ]
     },
     "shorturl": {
       "code": false,
       "icon": "/img/icon/shorturl.svg",
-      "pagename": "ShortUrl", 
-      "pagetag":"URL Shortener",
-      "pageimg":"/img/pageimg/shorturl.svg",
+      "pagename": "ShortUrl",
+      "pagetag": "URL Shortener",
+      "pageimg": "/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
       "subheading": "Optimise your complex links to create short, cleaner links that are easier to share.",
@@ -838,20 +981,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track shorturl performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track shorturl performance"
+        }
       ]
     },
     "knowledgebase": {
       "code": false,
       "icon": "/img/icon/knowledgebase.svg",
-      "pagename": "KnowledgeBase", 
-      "pagetag":"KnowledgeBase",
-      "pageimg":"/img/pageimg/knowledgebase.svg",
+      "pagename": "KnowledgeBase",
+      "pagetag": "KnowledgeBase",
+      "pageimg": "/img/pageimg/knowledgebase.svg",
       "tagline": "Empower Customers with Self-Service Options",
       "heading": "Knowledge base is the backbone for good customer support",
       "subheading": "Get all essential features of knowledge base software at nominal price",
@@ -866,7 +1021,7 @@
           "img": "/img/feature/kb-seo-friendly.svg",
           "heading": "SEO friendly (Subfolder and subdomain both support)",
           "subheading": "An SEO-friendly optimized knowledge base",
-          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."          
+          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."
         },
         {
           "img": "/img/feature/kb-whitelable.svg",
@@ -876,18 +1031,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track knowledgebase performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track knowledgebase performance"
+        }
       ]
-    },    
+    },
     "sms": {
       "code": true,
-      "pagename": "SMS", 
-      "pagetag":"SMS",
+      "pagename": "SMS",
+      "pagetag": "SMS",
       "icon": "/img/icon/sms.svg",
       "tagline": "Next level messaging",
       "heading": "Engage your customers globally with quick, scalable and customizable messages",
@@ -935,21 +1102,32 @@
           "subheading": "Real-time graphical view for monitoring and troubleshooting.",
           "content": "Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed."
         }
-        
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track sms performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track sms performance"
+        }
       ]
     },
     "rcs": {
       "code": true,
-      "pagename": "RCS", 
-      "pagetag":"RCS",
+      "pagename": "RCS",
+      "pagetag": "RCS",
       "icon": "/img/icon/rcs.svg",
       "tagline": "Rich Communication Services",
       "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
@@ -978,16 +1156,18 @@
           "heading": "Enhanced Customer Trust",
           "subheading": "Understand your customers' habits",
           "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
-        }        
+        }
       ],
       "morefeatures": [
-        {"more": "0"}
+        {
+          "more": "0"
+        }
       ]
     },
     "email": {
       "code": true,
-      "pagename": "Email", 
-      "pagetag":"Email API",
+      "pagename": "Email",
+      "pagetag": "Email API",
       "icon": "/img/icon/email.svg",
       "tagline": "smarter email strategy",
       "heading": "Smart emails that land directly into the right inbox",
@@ -1025,18 +1205,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track email performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track email performance"
+        }
       ]
     },
     "voice": {
       "code": true,
-      "pagename": "Voice", 
-      "pagetag":"Voice",
+      "pagename": "Voice",
+      "pagetag": "Voice",
       "icon": "/img/icon/voice.svg",
       "tagline": "connect with confidence",
       "heading": "Boost customer engagement and build trust",
@@ -1086,18 +1278,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track voice performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track voice performance"
+        }
       ]
     },
     "whatsapp": {
       "code": true,
-      "pagename": "WhatsApp", 
-      "pagetag":"WhatsApp",
+      "pagename": "WhatsApp",
+      "pagetag": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
       "tagline": "dominate popular platforms",
       "heading": "Drive better customer engagement outcomes",
@@ -1171,18 +1375,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track whatsapp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track whatsapp performance"
+        }
       ]
     },
     "numbers": {
       "code": true,
-      "pagename": "Numbers", 
-      "pagetag":"numbers",
+      "pagename": "Numbers",
+      "pagetag": "numbers",
       "icon": "/img/icon/numbers.svg",
       "tagline": "Unlock the Power of Virtual Numbers",
       "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
@@ -1247,29 +1463,28 @@
           "heading": "Integration into Web Applications",
           "subheading": "",
           "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
-        }        
+        }
       ]
     }
   },
-  "in":{
+  "in": {
     "pagename": "index",
-    "index":{
-      "code":"no",
-      "pagename":"index",
-      "head":"this is global index",
-      "headline":"Cloud Communication Platform"
+    "index": {
+      "code": "no",
+      "pagename": "index",
+      "head": "this is global index",
+      "headline": "Cloud Communication Platform"
     },
-    "hello":{
+    "hello": {
       "code": false,
       "icon": "/img/icon/hello.svg",
-      "pagename":"hello",      
-      "pagetag":"Hello! Contact Center",
+      "pagename": "hello",
+      "pagetag": "Hello! Contact Center",
       "tagline": "Customer Support Software",
       "heading": "Never lose sight of what’s important",
       "subheading": "Don’t just solve tickets, build customer relationships",
-      "pageimg":"/img/pageimg/hello.png",
+      "pageimg": "/img/pageimg/hello.png",
       "features": [
-      
         {
           "img": "/img/feature/hello-unlimited-agents.svg",
           "heading": "Unlimited Agents",
@@ -1311,30 +1526,30 @@
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"campaign",
-      "pagetag":"campaign",
-      "tagline": "Event Base automation",
+      "pagename": "campaign",
+      "pagetag": "campaign",
+      "tagline": "Event Base Marketing Automation",
       "heading": "Connect conversations across Channels and tools.",
       "subheading": "Deliver personalized, engaging and seamless experiences.",
-      "pageimg":"/img/pageimg/campaign.svg",
+      "pageimg": "/img/pageimg/campaign.svg",
       "features": [
         {
           "img": "/img/feature/campaign-multi-channel-support.svg",
           "heading": "Multi channel support",
-          "subheading": "Support your customers on their preferred channel.",
-          "content": "Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, <a href='/in/whatsapp'>WhatsApp</a> and more. Meet your customers where they are."
+          "subheading": "Support your customers on their preferred channel. ",
+          "content": "Give your customers a better support experience via Drip Campaign using their preferred channel-SMS, Email, Voice, Push Notification, WhatsApp and more. Meet your customers where they are."
         },
         {
           "img": "/img/feature/campaign-draggable-flow.svg",
           "heading": "Draggable Flow",
-          "subheading": "Drag and drop to create an omnichannel flow with ‘if-then’ scenarios.",
-          "content": "Choose when you need to initiate an SMS, email, or messaging conversation in a single workflow. Create a flow that is as simple or as complex as your business needs them to be. "
+          "subheading": "Drag and drop to create an omnichannel flow with ‘if-then’ scenarios. ",
+          "content": "Choose when you need to initiate an SMS, mail, or messaging conversation in a single workflow. Create a marketing automation flow based on previous drip campaignflow."
         },
         {
           "img": "/img/feature/campaign-time-based-condition.svg",
           "heading": "Time Based Condition",
-          "subheading": "Send perfectly timed automated messages.",
-          "content": "Build a thoughtful sending schedule with time-based conditions that control the time zone of when your campaigns are delivered. Support your customers at the right time."
+          "subheading": "Send perfectly timed automated messages. ",
+          "content": "Build a thoughtful sending schedule with time-based conditions that control the time zone of when your drip campaigns are delivered. Support your customers at the right time."
         },
         {
           "img": "/img/feature/campaign-api-based-conditions.svg",
@@ -1349,21 +1564,62 @@
           "content": "Create personalized and memorable experiences for your customer across countries, languages, content, channels, flows and more. Easily connect, customize and communicate. "
         }
       ],
+      "FaqsComp": {
+        "heading": "FAQ for Marketing Automation:",
+        "faqs": [
+          {
+            "que": "What is a Drip Campaign?",
+            "des": "<ul class='list-disc'><li>A drip campaign is a series of automated emails sent over time to guide leads through the sales funnel.</li><li>Each email is scheduled based on customer behaviour or set timelines, ensuring timely, personalised engagement.</li><li>Drip campaigns help nurture leads, build relationships, and drive conversions.</li></ul>"
+          },
+          {
+            "que": "How does Email Marketing support business growth?",
+            "des": "<ul class='list-disc'><li>Email marketing allows direct communication with your audience, keeping your brand top-of-mind.</li><li>It’s cost-effective, with a high ROI, helping businesses reach their customers efficiently.</li><li>You can segment your audience and personalise email content, improving engagement and conversions.</li></ul>"
+          },
+          {
+            "que": "What is Marketing Automation, and why is it important?",
+            "des": "<ul class='list-disc'><li>Marketing automation uses software to streamline repetitive marketing tasks, like email campaigns and follow-ups via multiple channels, such as WhatsApp, text messages, voice SMS, and RCS.</li><li>It allows businesses to engage with potential customers at scale while saving time and resources.</li><li>Marketing automation platforms can also provide valuable analytics to refine marketing strategies and improve ROI.</li></ul>"
+          },
+          {
+            "que": "What are Sales Funnel Builders?",
+            "des": "<ul class='list-disc'><li>Sales funnel builders are tools that help create a structured path for leads, guiding them from awareness to conversion.</li><li>They automate various stages of customer journeys, helping move leads through the sales process seamlessly.</li><li>With these tools, businesses can capture more leads, nurture relationships, and increase conversions.</li></ul>"
+          },
+          {
+            "que": "How does B2B Marketing differ from B2C?",
+            "des": "<ul class='list-disc'><li>B2B marketing focuses on business clients, requiring a more data-driven, solution-oriented approach.</li><li>It often involves longer sales cycles and personalised, targeted communications to address business-specific pain points.</li><li>B2B marketing relies on building trust and long-term relationships, as purchases are typically larger and require approval from multiple stakeholders.</li></ul>"
+          },
+          {
+            "que": "Why is a Marketing Platform essential for B2B companies?",
+            "des": "<ul class='list-disc'><li>A marketing platform centralises tools for campaign management, analytics, and automation, enhancing efficiency.</li><li>It helps track customer behaviour across channels, providing insights that optimise B2B strategies.</li><li>With a unified platform, companies can streamline workflows, increase ROI, and improve customer engagement.</li></ul>"
+          }
+        ]
+      },
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track campaign performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track campaign performance"
+        }
       ]
     },
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"segmento",
-      "pagetag":"segmento",
-      "pageimg":"/img/pageimg/segmento.svg",
+      "pagename": "segmento",
+      "pagetag": "segmento",
+      "pageimg": "/img/pageimg/segmento.svg",
       "tagline": "target based marketing",
       "heading": "Personalize customer journeys with Data segmentation.",
       "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
@@ -1394,20 +1650,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track segmento performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track segmento performance"
+        }
       ]
     },
     "otp": {
       "code": false,
-      "pagename":"otp",
-      "pagetag":"otp",
+      "pagename": "otp",
+      "pagetag": "otp",
       "icon": "/img/icon/otp.svg",
-      "pageimg":"/img/pageimg/otp.svg",
+      "pageimg": "/img/pageimg/otp.svg",
       "tagline": "Instant Secure verification",
       "heading": "Verify users quickly and effectively via SMS, WhatsApp Auth, email, or voice.",
       "subheading": "Build customer trust and enable business protection with two-factor authentication.",
@@ -1432,20 +1700,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track otp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track otp performance"
+        }
       ]
     },
     "shorturl": {
       "code": false,
       "icon": "/img/icon/shorturl.svg",
-      "pagename": "ShortUrl", 
-      "pagetag":"URL Shortener",
-      "pageimg":"/img/pageimg/shorturl.svg",
+      "pagename": "ShortUrl",
+      "pagetag": "URL Shortener",
+      "pageimg": "/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
       "subheading": "Optimise your complex links to create short, cleaner links that are easier to share.",
@@ -1464,20 +1744,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track shorturl performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track shorturl performance"
+        }
       ]
     },
     "knowledgebase": {
       "code": false,
       "icon": "/img/icon/knowledgebase.svg",
-      "pagename": "KnowledgeBase", 
-      "pagetag":"KnowledgeBase",
-      "pageimg":"/img/pageimg/knowledgebase.svg",
+      "pagename": "KnowledgeBase",
+      "pagetag": "KnowledgeBase",
+      "pageimg": "/img/pageimg/knowledgebase.svg",
       "tagline": "Empower Customers with Self-Service Options",
       "heading": "Knowledge base is the backbone for good customer support",
       "subheading": "Get all essential features of KnowledgeBase software",
@@ -1492,7 +1784,7 @@
           "img": "/img/feature/kb-seo-friendly.svg",
           "heading": "SEO friendly (Subfolder and subdomain both support)",
           "subheading": "An SEO-friendly optimized knowledge base",
-          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."          
+          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."
         },
         {
           "img": "/img/feature/kb-whitelable.svg",
@@ -1502,18 +1794,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track knowledgebase performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track knowledgebase performance"
+        }
       ]
-    },    
+    },
     "sms": {
       "code": true,
-      "pagename": "SMS", 
-      "pagetag":"SMS",
+      "pagename": "SMS",
+      "pagetag": "SMS",
       "icon": "/img/icon/sms.svg",
       "tagline": "Next level messaging",
       "heading": "Reach your customers globally with quick, scalable, and customizable message",
@@ -1561,21 +1865,32 @@
           "subheading": "Real-time graphical view for monitoring and troubleshooting.",
           "content": "Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed."
         }
-        
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track sms performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track sms performance"
+        }
       ]
-    },  
+    },
     "rcs": {
       "code": true,
-      "pagename": "RCS", 
-      "pagetag":"RCS",
+      "pagename": "RCS",
+      "pagetag": "RCS",
       "icon": "/img/icon/rcs.svg",
       "tagline": "Rich Communication Services",
       "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
@@ -1604,16 +1919,18 @@
           "heading": "Enhanced Customer Trust",
           "subheading": "Understand your customers' habits",
           "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
-        }        
+        }
       ],
       "morefeatures": [
-        {"more": "0"}
+        {
+          "more": "0"
+        }
       ]
-    },  
+    },
     "email": {
       "code": true,
-      "pagename": "Email", 
-      "pagetag":"Email API Provider",
+      "pagename": "Email",
+      "pagetag": "Email API Provider",
       "icon": "/img/icon/email.svg",
       "tagline": "smarter email strategy",
       "heading": "Smart emails that land directly into the right inbox",
@@ -1651,18 +1968,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track email performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track email performance"
+        }
       ]
     },
     "voice": {
       "code": true,
-      "pagename": "Voice", 
-      "pagetag":"Voice",
+      "pagename": "Voice",
+      "pagetag": "Voice",
       "icon": "/img/icon/voice.svg",
       "tagline": "connect with confidence",
       "heading": "Boost customer engagement and build trust",
@@ -1712,18 +2041,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track voice performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track voice performance"
+        }
       ]
     },
     "whatsapp": {
       "code": true,
-      "pagename": "WhatsApp", 
-      "pagetag":"WhatsApp",
+      "pagename": "WhatsApp",
+      "pagetag": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
       "tagline": "dominate popular platforms",
       "heading": "Drive better customer engagement outcomes",
@@ -1797,18 +2138,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track whatsapp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track whatsapp performance"
+        }
       ]
     },
     "numbers": {
       "code": true,
-      "pagename": "Numbers", 
-      "pagetag":"numbers",
+      "pagename": "Numbers",
+      "pagetag": "numbers",
       "icon": "/img/icon/numbers.svg",
       "tagline": "Unlock the Power of Virtual Numbers",
       "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
@@ -1873,29 +2226,28 @@
           "heading": "Integration into Web Applications",
           "subheading": "",
           "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
-        }        
+        }
       ]
     }
   },
-  "ae":{
+  "ae": {
     "pagename": "index",
-    "index":{
-      "code":"no",
-      "pagename":"index",
-      "head":"this is global index",
-      "headline":"Cloud based Business communication"
-
+    "index": {
+      "code": "no",
+      "pagename": "index",
+      "head": "this is global index",
+      "headline": "Cloud based Business communication"
     },
-    "hello":{
+    "hello": {
       "code": false,
       "icon": "/img/icon/hello.svg",
-      "pagename":"hello",    
-      "pagetag":"HELLO An AI-Fueled Conversational HUB",
+      "pagename": "hello",
+      "pagetag": "HELLO An AI-Fueled Conversational HUB",
       "tagline": "BOOSTING CUSTOMER SATISFACTION",
       "heading": "",
       "subheading": "Seamlessly merging chat, email, call and video to resolve customer queries.",
-      "pageimg":"/img/pageimg/hello.png",
-      "features": [        
+      "pageimg": "/img/pageimg/hello.png",
+      "features": [
         {
           "icon": "/images/hello/icon-ai-enabled-chat.svg",
           "img": "/images/hello/ai-enabled-chat.svg",
@@ -1943,12 +2295,12 @@
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"campaign",
-      "pagetag":"campaign",
+      "pagename": "campaign",
+      "pagetag": "campaign",
       "tagline": "Event Base automation",
       "heading": "Connect conversations across Channels and tools.",
       "subheading": "Deliver personalized, engaging and seamless experiences.",
-      "pageimg":"/img/pageimg/campaign.svg",
+      "pageimg": "/img/pageimg/campaign.svg",
       "features": [
         {
           "img": "/img/feature/campaign-multi-channel-support.svg",
@@ -1982,20 +2334,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track campaign performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track campaign performance"
+        }
       ]
     },
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"segmento",
-      "pagetag":"segmento",
-      "pageimg":"/img/pageimg/segmento.svg",
+      "pagename": "segmento",
+      "pagetag": "segmento",
+      "pageimg": "/img/pageimg/segmento.svg",
       "tagline": "target based marketing",
       "heading": "Personalize customer journeys with Data segmentation.",
       "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
@@ -2026,20 +2390,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track segmento performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track segmento performance"
+        }
       ]
     },
     "otp": {
       "code": false,
-      "pagename":"otp",
-      "pagetag":"otp",
+      "pagename": "otp",
+      "pagetag": "otp",
       "icon": "/img/icon/otp.svg",
-      "pageimg":"/img/pageimg/otp.svg",
+      "pageimg": "/img/pageimg/otp.svg",
       "tagline": "Instant Secure verification",
       "heading": "Simplest, quickest and most effective way to verify your users",
       "subheading": "Build customer trust and enable business protection with two-factor authentication.",
@@ -2064,20 +2440,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track otp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track otp performance"
+        }
       ]
     },
     "shorturl": {
       "code": false,
       "icon": "/img/icon/shorturl.svg",
-      "pagename": "ShortUrl", 
-      "pagetag":"URL Shortener",
-      "pageimg":"/img/pageimg/shorturl.svg",
+      "pagename": "ShortUrl",
+      "pagetag": "URL Shortener",
+      "pageimg": "/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
       "subheading": "Optimise your complex links to create short, cleaner links that are easier to share.",
@@ -2096,20 +2484,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track shorturl performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track shorturl performance"
+        }
       ]
     },
     "knowledgebase": {
       "code": false,
       "icon": "/img/icon/knowledgebase.svg",
-      "pagename": "KnowledgeBase", 
-      "pagetag":"KnowledgeBase",
-      "pageimg":"/img/pageimg/knowledgebase.svg",
+      "pagename": "KnowledgeBase",
+      "pagetag": "KnowledgeBase",
+      "pageimg": "/img/pageimg/knowledgebase.svg",
       "tagline": "Empower Customers with Self-Service Options",
       "heading": "Knowledge base is the backbone for good customer support",
       "subheading": "Get all essential features of knowledge base software at nominal price",
@@ -2124,7 +2524,7 @@
           "img": "/img/feature/kb-seo-friendly.svg",
           "heading": "SEO friendly (Subfolder and subdomain both support)",
           "subheading": "An SEO-friendly optimized knowledge base",
-          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."          
+          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."
         },
         {
           "img": "/img/feature/kb-whitelable.svg",
@@ -2134,18 +2534,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track knowledgebase performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track knowledgebase performance"
+        }
       ]
-    },    
+    },
     "sms": {
       "code": true,
-      "pagename": "SMS", 
-      "pagetag":"SMS",
+      "pagename": "SMS",
+      "pagetag": "SMS",
       "icon": "/img/icon/sms.svg",
       "tagline": "Next level messaging",
       "heading": "Engage your customers globally with quick, scalable and customizable messages",
@@ -2193,21 +2605,32 @@
           "subheading": "Real-time graphical view for monitoring and troubleshooting.",
           "content": "Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed."
         }
-        
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track sms performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track sms performance"
+        }
       ]
     },
     "rcs": {
       "code": true,
-      "pagename": "RCS", 
-      "pagetag":"RCS",
+      "pagename": "RCS",
+      "pagetag": "RCS",
       "icon": "/img/icon/rcs.svg",
       "tagline": "Rich Communication Services",
       "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
@@ -2236,16 +2659,18 @@
           "heading": "Enhanced Customer Trust",
           "subheading": "Understand your customers' habits",
           "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
-        }        
+        }
       ],
       "morefeatures": [
-        {"more": "0"}
+        {
+          "more": "0"
+        }
       ]
     },
     "email": {
       "code": true,
-      "pagename": "Email", 
-      "pagetag":"Email",
+      "pagename": "Email",
+      "pagetag": "Email",
       "icon": "/img/icon/email.svg",
       "tagline": "smarter email strategy",
       "heading": "Smart emails that land directly into the right inbox",
@@ -2283,18 +2708,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track email performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track email performance"
+        }
       ]
     },
     "voice": {
       "code": true,
-      "pagename": "Voice", 
-      "pagetag":"Voice",
+      "pagename": "Voice",
+      "pagetag": "Voice",
       "icon": "/img/icon/voice.svg",
       "tagline": "connect with confidence",
       "heading": "Boost customer engagement and build trust",
@@ -2344,18 +2781,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track voice performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track voice performance"
+        }
       ]
     },
     "whatsapp": {
       "code": true,
-      "pagename": "WhatsApp", 
-      "pagetag":"WhatsApp",
+      "pagename": "WhatsApp",
+      "pagetag": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
       "tagline": "dominate popular platforms",
       "heading": "Drive better customer engagement outcomes",
@@ -2429,18 +2878,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track whatsapp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track whatsapp performance"
+        }
       ]
     },
     "numbers": {
       "code": true,
-      "pagename": "Numbers", 
-      "pagetag":"numbers",
+      "pagename": "Numbers",
+      "pagetag": "numbers",
       "icon": "/img/icon/numbers.svg",
       "tagline": "Unlock the Power of Virtual Numbers",
       "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
@@ -2505,29 +2966,28 @@
           "heading": "Integration into Web Applications",
           "subheading": "",
           "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
-        }        
+        }
       ]
     }
   },
-  "es":{
+  "es": {
     "pagename": "index",
-    "index":{
-      "code":"no",
-      "pagename":"index",
-      "head":"this is global index",
-      "headline":"Best Cloud based communication platforms"
-
+    "index": {
+      "code": "no",
+      "pagename": "index",
+      "head": "this is global index",
+      "headline": "Best Cloud based communication platforms"
     },
-    "hello":{
+    "hello": {
       "code": false,
       "icon": "/img/icon/hello.svg",
-      "pagename":"hello",    
-      "pagetag":"HELLO An AI-Fueled Conversational HUB",
+      "pagename": "hello",
+      "pagetag": "HELLO An AI-Fueled Conversational HUB",
       "tagline": "BOOSTING CUSTOMER SATISFACTION",
       "heading": "",
       "subheading": "Seamlessly merging chat, email, call and video to resolve customer queries.",
-      "pageimg":"/img/pageimg/hello.png",
-      "features": [        
+      "pageimg": "/img/pageimg/hello.png",
+      "features": [
         {
           "icon": "/images/hello/icon-ai-enabled-chat.svg",
           "img": "/images/hello/ai-enabled-chat.svg",
@@ -2575,12 +3035,12 @@
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"campaign",
-      "pagetag":"campaign",
+      "pagename": "campaign",
+      "pagetag": "campaign",
       "tagline": "Event Base automation",
       "heading": "Connect conversations across Channels and tools.",
       "subheading": "Deliver personalized, engaging and seamless experiences.",
-      "pageimg":"/img/pageimg/campaign.svg",
+      "pageimg": "/img/pageimg/campaign.svg",
       "features": [
         {
           "img": "/img/feature/campaign-multi-channel-support.svg",
@@ -2614,20 +3074,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track campaign performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track campaign performance"
+        }
       ]
     },
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"segmento",
-      "pagetag":"segmento",
-      "pageimg":"/img/pageimg/segmento.svg",
+      "pagename": "segmento",
+      "pagetag": "segmento",
+      "pageimg": "/img/pageimg/segmento.svg",
       "tagline": "target based marketing",
       "heading": "Personalize customer journeys with Data segmentation.",
       "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
@@ -2658,20 +3130,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track segmento performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track segmento performance"
+        }
       ]
     },
     "otp": {
       "code": false,
-      "pagename":"otp",
-      "pagetag":"otp",
+      "pagename": "otp",
+      "pagetag": "otp",
       "icon": "/img/icon/otp.svg",
-      "pageimg":"/img/pageimg/otp.svg",
+      "pageimg": "/img/pageimg/otp.svg",
       "tagline": "Instant Secure verification",
       "heading": "Simplest, quickest and most effective way to verify your users",
       "subheading": "Build customer trust and enable business protection with two-factor authentication.",
@@ -2696,20 +3180,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track otp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track otp performance"
+        }
       ]
     },
     "shorturl": {
       "code": false,
       "icon": "/img/icon/shorturl.svg",
-      "pagename": "ShortUrl", 
-      "pagetag":"URL Shortener",
-      "pageimg":"/img/pageimg/shorturl.svg",
+      "pagename": "ShortUrl",
+      "pagetag": "URL Shortener",
+      "pageimg": "/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
       "subheading": "Optimise your complex links to create short, cleaner links that are easier to share.",
@@ -2728,20 +3224,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track shorturl performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track shorturl performance"
+        }
       ]
     },
     "knowledgebase": {
       "code": false,
       "icon": "/img/icon/knowledgebase.svg",
-      "pagename": "KnowledgeBase", 
-      "pagetag":"KnowledgeBase",
-      "pageimg":"/img/pageimg/knowledgebase.svg",
+      "pagename": "KnowledgeBase",
+      "pagetag": "KnowledgeBase",
+      "pageimg": "/img/pageimg/knowledgebase.svg",
       "tagline": "Empower Customers with Self-Service Options",
       "heading": "Knowledge base is the backbone for good customer support",
       "subheading": "Get all essential features of knowledge base software at nominal price",
@@ -2756,7 +3264,7 @@
           "img": "/img/feature/kb-seo-friendly.svg",
           "heading": "SEO friendly (Subfolder and subdomain both support)",
           "subheading": "An SEO-friendly optimized knowledge base",
-          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."          
+          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."
         },
         {
           "img": "/img/feature/kb-whitelable.svg",
@@ -2766,18 +3274,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track knowledgebase performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track knowledgebase performance"
+        }
       ]
-    },    
+    },
     "sms": {
       "code": true,
-      "pagename": "SMS", 
-      "pagetag":"SMS",
+      "pagename": "SMS",
+      "pagetag": "SMS",
       "icon": "/img/icon/sms.svg",
       "tagline": "Next level messaging",
       "heading": "Engage your customers globally with quick, scalable and customizable messages",
@@ -2825,21 +3345,32 @@
           "subheading": "Real-time graphical view for monitoring and troubleshooting.",
           "content": "Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed."
         }
-        
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track sms performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track sms performance"
+        }
       ]
     },
     "rcs": {
       "code": true,
-      "pagename": "RCS", 
-      "pagetag":"RCS",
+      "pagename": "RCS",
+      "pagetag": "RCS",
       "icon": "/img/icon/rcs.svg",
       "tagline": "Rich Communication Services",
       "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
@@ -2868,16 +3399,18 @@
           "heading": "Enhanced Customer Trust",
           "subheading": "Understand your customers' habits",
           "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
-        }        
+        }
       ],
       "morefeatures": [
-        {"more": "0"}
+        {
+          "more": "0"
+        }
       ]
     },
     "email": {
       "code": true,
-      "pagename": "Email", 
-      "pagetag":"Email",
+      "pagename": "Email",
+      "pagetag": "Email",
       "icon": "/img/icon/email.svg",
       "tagline": "smarter email strategy",
       "heading": "Smart emails that land directly into the right inbox",
@@ -2915,18 +3448,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track email performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track email performance"
+        }
       ]
     },
     "voice": {
       "code": true,
-      "pagename": "Voice", 
-      "pagetag":"Voice",
+      "pagename": "Voice",
+      "pagetag": "Voice",
       "icon": "/img/icon/voice.svg",
       "tagline": "connect with confidence",
       "heading": "Boost customer engagement and build trust",
@@ -2976,18 +3521,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track voice performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track voice performance"
+        }
       ]
     },
     "whatsapp": {
       "code": true,
-      "pagename": "WhatsApp", 
-      "pagetag":"WhatsApp",
+      "pagename": "WhatsApp",
+      "pagetag": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
       "tagline": "dominate popular platforms",
       "heading": "Drive better customer engagement outcomes",
@@ -3061,18 +3618,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track whatsapp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track whatsapp performance"
+        }
       ]
     },
     "numbers": {
       "code": true,
-      "pagename": "Numbers", 
-      "pagetag":"numbers",
+      "pagename": "Numbers",
+      "pagetag": "numbers",
       "icon": "/img/icon/numbers.svg",
       "tagline": "Unlock the Power of Virtual Numbers",
       "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
@@ -3082,15 +3651,13 @@
           "img": "/img/feature/numbers-global-market-entry-with-numbers.svg",
           "heading": "Global Market Expansion with Numbers: Enhancing Your Reach in Spain",
           "subheading": "",
-          "content":"Numbers offer a strategic solution for businesses seeking to extend their global footprint in the Spanish market. They empower companies to acquire local Spanish phone numbers, facilitating easy access and connectivity with customers and partners in Spain. This localized approach enhances trust, accessibility, and professionalism while optimizing cost-effectiveness in business communications. For international companies, utilizing numbers in Spain opens doors to new opportunities and market growth."
-
+          "content": "Numbers offer a strategic solution for businesses seeking to extend their global footprint in the Spanish market. They empower companies to acquire local Spanish phone numbers, facilitating easy access and connectivity with customers and partners in Spain. This localized approach enhances trust, accessibility, and professionalism while optimizing cost-effectiveness in business communications. For international companies, utilizing numbers in Spain opens doors to new opportunities and market growth."
         },
         {
           "img": "/img/feature/numbers-cost-efficiency.svg",
           "heading": "Cost Efficiency",
           "subheading": "",
           "content": "Cost Efficiency in Spain: Numbers present a cost-effective solution, offering businesses in Spain a budget-friendly option that minimizes setup expenses and reduces maintenance costs. With no reliance on physical infrastructure, numbers in Spain are a cost-efficient choice for companies seeking affordable communication solutions."
-
         },
         {
           "img": "/img/feature/numbers-missed-call-services.svg",
@@ -3139,29 +3706,28 @@
           "heading": "Integration into Web Applications",
           "subheading": "",
           "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
-        }        
+        }
       ]
     }
   },
-  "ph":{
+  "ph": {
     "pagename": "index",
-    "index":{
-      "code":"no",
-      "pagename":"index",
-      "head":"this is global index",
-      "headline":"Cloud Business communications"
-
+    "index": {
+      "code": "no",
+      "pagename": "index",
+      "head": "this is global index",
+      "headline": "Cloud Business communications"
     },
-    "hello":{
+    "hello": {
       "code": false,
       "icon": "/img/icon/hello.svg",
-      "pagename":"hello", 
-      "pagetag":"hello",
+      "pagename": "hello",
+      "pagetag": "hello",
       "tagline": "Revolutionize customer support",
       "heading": "Never lose sight of what’s important",
       "subheading": "Don’t just solve tickets, build customer relationships",
-      "pageimg":"/img/pageimg/hello.png",
-      "features": [        
+      "pageimg": "/img/pageimg/hello.png",
+      "features": [
         {
           "img": "/img/feature/hello-unlimited-agents.svg",
           "heading": "Unlimited Agents",
@@ -3203,12 +3769,12 @@
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"campaign",
-      "pagetag":"campaign",
+      "pagename": "campaign",
+      "pagetag": "campaign",
       "tagline": "Event Base automation",
       "heading": "Connect conversations across Channels and tools.",
       "subheading": "Deliver personalized, engaging and seamless experiences.",
-      "pageimg":"/img/pageimg/campaign.svg",
+      "pageimg": "/img/pageimg/campaign.svg",
       "features": [
         {
           "img": "/img/feature/campaign-multi-channel-support.svg",
@@ -3242,20 +3808,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track campaign performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track campaign performance"
+        }
       ]
     },
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"segmento",
-      "pagetag":"segmento",
-      "pageimg":"/img/pageimg/segmento.svg",
+      "pagename": "segmento",
+      "pagetag": "segmento",
+      "pageimg": "/img/pageimg/segmento.svg",
       "tagline": "target based marketing",
       "heading": "Personalize customer journeys with Data segmentation.",
       "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
@@ -3286,20 +3864,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track segmento performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track segmento performance"
+        }
       ]
     },
     "otp": {
       "code": false,
-      "pagename":"otp",
-      "pagetag":"otp",
+      "pagename": "otp",
+      "pagetag": "otp",
       "icon": "/img/icon/otp.svg",
-      "pageimg":"/img/pageimg/otp.svg",
+      "pageimg": "/img/pageimg/otp.svg",
       "tagline": "Instant Secure verification",
       "heading": "Simplest, quickest and most effective way to verify your users",
       "subheading": "Build customer trust and enable business protection with two-factor authentication.",
@@ -3324,20 +3914,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track otp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track otp performance"
+        }
       ]
     },
     "shorturl": {
       "code": false,
       "icon": "/img/icon/shorturl.svg",
-      "pagename": "ShortUrl", 
-      "pagetag":"URL Shortener",
-      "pageimg":"/img/pageimg/shorturl.svg",
+      "pagename": "ShortUrl",
+      "pagetag": "URL Shortener",
+      "pageimg": "/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
       "subheading": "Optimise your complex links to create short, cleaner links that are easier to share.",
@@ -3356,20 +3958,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track shorturl performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track shorturl performance"
+        }
       ]
     },
     "knowledgebase": {
       "code": false,
       "icon": "/img/icon/knowledgebase.svg",
-      "pagename": "KnowledgeBase", 
-      "pagetag":"KnowledgeBase",
-      "pageimg":"/img/pageimg/knowledgebase.svg",
+      "pagename": "KnowledgeBase",
+      "pagetag": "KnowledgeBase",
+      "pageimg": "/img/pageimg/knowledgebase.svg",
       "tagline": "Empower Customers with Self-Service Options",
       "heading": "Knowledge base is the backbone for good customer support",
       "subheading": "Get all essential features of knowledge base software at nominal price",
@@ -3384,7 +3998,7 @@
           "img": "/img/feature/kb-seo-friendly.svg",
           "heading": "SEO friendly (Subfolder and subdomain both support)",
           "subheading": "An SEO-friendly optimized knowledge base",
-          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."          
+          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."
         },
         {
           "img": "/img/feature/kb-whitelable.svg",
@@ -3394,18 +4008,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track knowledgebase performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track knowledgebase performance"
+        }
       ]
-    },    
+    },
     "sms": {
       "code": true,
-      "pagename": "SMS", 
-      "pagetag":"SMS",
+      "pagename": "SMS",
+      "pagetag": "SMS",
       "icon": "/img/icon/sms.svg",
       "tagline": "Next level messaging",
       "heading": "Engage your customers globally with quick, scalable and customizable messages",
@@ -3453,21 +4079,32 @@
           "subheading": "Real-time graphical view for monitoring and troubleshooting.",
           "content": "Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed."
         }
-        
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track sms performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track sms performance"
+        }
       ]
     },
     "rcs": {
       "code": true,
-      "pagename": "RCS", 
-      "pagetag":"RCS",
+      "pagename": "RCS",
+      "pagetag": "RCS",
       "icon": "/img/icon/rcs.svg",
       "tagline": "Rich Communication Services",
       "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
@@ -3496,16 +4133,18 @@
           "heading": "Enhanced Customer Trust",
           "subheading": "Understand your customers' habits",
           "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
-        }        
+        }
       ],
       "morefeatures": [
-        {"more": "0"}
+        {
+          "more": "0"
+        }
       ]
-    }, 
+    },
     "email": {
       "code": true,
-      "pagename": "Email", 
-      "pagetag":"Email",
+      "pagename": "Email",
+      "pagetag": "Email",
       "icon": "/img/icon/email.svg",
       "tagline": "smarter email strategy",
       "heading": "Smart emails that land directly into the right inbox",
@@ -3543,18 +4182,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track email performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track email performance"
+        }
       ]
     },
     "voice": {
       "code": true,
-      "pagename": "Voice", 
-      "pagetag":"Voice",
+      "pagename": "Voice",
+      "pagetag": "Voice",
       "icon": "/img/icon/voice.svg",
       "tagline": "connect with confidence",
       "heading": "Boost customer engagement and build trust",
@@ -3604,18 +4255,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track voice performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track voice performance"
+        }
       ]
     },
     "whatsapp": {
       "code": true,
-      "pagename": "WhatsApp", 
-      "pagetag":"WhatsApp",
+      "pagename": "WhatsApp",
+      "pagetag": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
       "tagline": "dominate popular platforms",
       "heading": "Drive better customer engagement outcomes",
@@ -3689,18 +4352,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track whatsapp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track whatsapp performance"
+        }
       ]
     },
     "numbers": {
       "code": true,
-      "pagename": "Numbers", 
-      "pagetag":"numbers",
+      "pagename": "Numbers",
+      "pagetag": "numbers",
       "icon": "/img/icon/numbers.svg",
       "tagline": "Unlock the Power of Virtual Numbers",
       "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
@@ -3765,28 +4440,28 @@
           "heading": "Integration into Web Applications",
           "subheading": "",
           "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
-        }        
+        }
       ]
     }
   },
-  "sg":{
+  "sg": {
     "pagename": "index",
-    "index":{
-      "code":"no",
-      "pagename":"index",
-      "head":"this is global index",
-      "headline":"Cloud based communication platform"
+    "index": {
+      "code": "no",
+      "pagename": "index",
+      "head": "this is global index",
+      "headline": "Cloud based communication platform"
     },
-    "hello":{
+    "hello": {
       "code": false,
       "icon": "/img/icon/hello.svg",
-      "pagename":"hello",
-      "pagetag":"customer support platform",    
+      "pagename": "hello",
+      "pagetag": "customer support platform",
       "tagline": "Revolutionize customer support",
       "heading": "Never lose sight of what’s important",
       "subheading": "Don’t just solve tickets, build customer relationships",
-      "pageimg":"/img/pageimg/hello.png",
-      "features": [        
+      "pageimg": "/img/pageimg/hello.png",
+      "features": [
         {
           "img": "/img/feature/hello-unlimited-agents.svg",
           "heading": "Unlimited Agents",
@@ -3828,12 +4503,12 @@
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"campaign",
-      "pagetag":"SMS Campaign",
+      "pagename": "campaign",
+      "pagetag": "SMS Campaign",
       "tagline": "Event Base automation",
       "heading": "Connect conversations across Channels and tools.",
       "subheading": "Deliver personalized, engaging and seamless experiences.",
-      "pageimg":"/img/pageimg/campaign.svg",
+      "pageimg": "/img/pageimg/campaign.svg",
       "features": [
         {
           "img": "/img/feature/campaign-multi-channel-support.svg",
@@ -3867,20 +4542,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track campaign performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track campaign performance"
+        }
       ]
     },
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"segmento",
-      "pagetag":"segmento",
-      "pageimg":"/img/pageimg/segmento.svg",
+      "pagename": "segmento",
+      "pagetag": "segmento",
+      "pageimg": "/img/pageimg/segmento.svg",
       "tagline": "target based marketing",
       "heading": "Personalize customer journeys with Data segmentation.",
       "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
@@ -3911,20 +4598,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track segmento performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track segmento performance"
+        }
       ]
     },
     "otp": {
       "code": false,
-      "pagename":"otp",
-      "pagetag":"otp",
+      "pagename": "otp",
+      "pagetag": "otp",
       "icon": "/img/icon/otp.svg",
-      "pageimg":"/img/pageimg/otp.svg",
+      "pageimg": "/img/pageimg/otp.svg",
       "tagline": "Instant Secure verification",
       "heading": "Simplest, quickest and most effective way to verify your users",
       "subheading": "Build customer trust and enable business protection with two-factor authentication.",
@@ -3949,20 +4648,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track otp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track otp performance"
+        }
       ]
     },
     "shorturl": {
       "code": false,
       "icon": "/img/icon/shorturl.svg",
-      "pagename": "ShortUrl", 
-      "pagetag":"URL Shortener",
-      "pageimg":"/img/pageimg/shorturl.svg",
+      "pagename": "ShortUrl",
+      "pagetag": "URL Shortener",
+      "pageimg": "/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
       "subheading": "Optimise your complex links to create short, cleaner links that are easier to share.",
@@ -3981,20 +4692,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track shorturl performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track shorturl performance"
+        }
       ]
     },
     "knowledgebase": {
       "code": false,
       "icon": "/img/icon/knowledgebase.svg",
-      "pagename": "KnowledgeBase", 
-      "pagetag":"KnowledgeBase",
-      "pageimg":"/img/pageimg/knowledgebase.svg",
+      "pagename": "KnowledgeBase",
+      "pagetag": "KnowledgeBase",
+      "pageimg": "/img/pageimg/knowledgebase.svg",
       "tagline": "Empower Customers with Self-Service Options",
       "heading": "Knowledge base is the backbone for good customer support",
       "subheading": "Get all essential features of knowledge base software at nominal price",
@@ -4009,7 +4732,7 @@
           "img": "/img/feature/kb-seo-friendly.svg",
           "heading": "SEO friendly (Subfolder and subdomain both support)",
           "subheading": "An SEO-friendly optimized knowledge base",
-          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."          
+          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."
         },
         {
           "img": "/img/feature/kb-whitelable.svg",
@@ -4019,18 +4742,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track knowledgebase performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track knowledgebase performance"
+        }
       ]
-    },    
+    },
     "sms": {
       "code": true,
-      "pagename": "SMS", 
-      "pagetag":"SMS",
+      "pagename": "SMS",
+      "pagetag": "SMS",
       "icon": "/img/icon/sms.svg",
       "tagline": "Next level messaging",
       "heading": "Engage your customers globally with quick, scalable and customizable messages",
@@ -4078,21 +4813,32 @@
           "subheading": "Real-time graphical view for monitoring and troubleshooting.",
           "content": "Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed."
         }
-        
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track sms performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track sms performance"
+        }
       ]
     },
     "rcs": {
       "code": true,
-      "pagename": "RCS", 
-      "pagetag":"RCS",
+      "pagename": "RCS",
+      "pagetag": "RCS",
       "icon": "/img/icon/rcs.svg",
       "tagline": "Rich Communication Services",
       "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
@@ -4121,16 +4867,18 @@
           "heading": "Enhanced Customer Trust",
           "subheading": "Understand your customers' habits",
           "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
-        }        
+        }
       ],
       "morefeatures": [
-        {"more": "0"}
+        {
+          "more": "0"
+        }
       ]
-    }, 
+    },
     "email": {
       "code": true,
-      "pagename": "Email", 
-      "pagetag":"Email Api Service",
+      "pagename": "Email",
+      "pagetag": "Email Api Service",
       "icon": "/img/icon/email.svg",
       "tagline": "smarter email strategy",
       "heading": "Smart emails that land directly into the right inbox",
@@ -4168,18 +4916,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track email performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track email performance"
+        }
       ]
     },
     "voice": {
       "code": true,
-      "pagename": "Voice", 
-      "pagetag":"Voice",
+      "pagename": "Voice",
+      "pagetag": "Voice",
       "icon": "/img/icon/voice.svg",
       "tagline": "connect with confidence",
       "heading": "Boost customer engagement and build trust",
@@ -4229,18 +4989,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track voice performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track voice performance"
+        }
       ]
     },
     "whatsapp": {
       "code": true,
-      "pagename": "WhatsApp", 
-      "pagetag":"WhatsApp",
+      "pagename": "WhatsApp",
+      "pagetag": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
       "tagline": "dominate popular platforms",
       "heading": "Drive better customer engagement outcomes",
@@ -4314,18 +5086,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track whatsapp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track whatsapp performance"
+        }
       ]
     },
     "numbers": {
       "code": true,
-      "pagename": "Numbers", 
-      "pagetag":"numbers",
+      "pagename": "Numbers",
+      "pagetag": "numbers",
       "icon": "/img/icon/numbers.svg",
       "tagline": "Unlock the Power of Virtual Numbers",
       "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
@@ -4336,15 +5120,12 @@
           "heading": "Global Market Entry with Numbers: Unlocking Opportunities in Singapore",
           "subheading": "",
           "content": "Virtual numbers serve as a powerful tool for businesses seeking to expand their global presence into Singapore's vibrant market. By obtaining a Singaporean virtual number, companies can effortlessly establish a local identity, making it convenient for customers and partners in Singapore to get in touch. These numbers not only enhance accessibility but also convey professionalism and cost-effectiveness in communications, all of which are essential for businesses looking to thrive in the dynamic Singaporean business landscape."
-
         },
         {
           "img": "/img/feature/numbers-cost-efficiency.svg",
           "heading": "Cost Efficiency",
           "subheading": "",
           "content": "Numbers in Singapore provide a cost-efficient alternative to conventional phone lines. They come with minimal setup expenses, reduced operational costs, and eliminate the necessity for physical infrastructure, making them a cost-effective solution for businesses of all sizes operating in the Singaporean market."
-
-
         },
         {
           "img": "/img/feature/numbers-missed-call-services.svg",
@@ -4393,29 +5174,28 @@
           "heading": "Integration into Web Applications",
           "subheading": "",
           "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
-        }        
+        }
       ]
     }
   },
-  "gb":{
+  "gb": {
     "pagename": "index",
-    "index":{
-      "code":"no",
-      "pagename":"index",
-      "head":"this is global index",
-      "headline":"Cloud communication platform"
-
+    "index": {
+      "code": "no",
+      "pagename": "index",
+      "head": "this is global index",
+      "headline": "Cloud communication platform"
     },
-    "hello":{
+    "hello": {
       "code": false,
       "icon": "/img/icon/hello.svg",
-      "pagename":"hello",      
-      "pagetag":"hello",
+      "pagename": "hello",
+      "pagetag": "hello",
       "tagline": "Revolutionize customer support",
       "heading": "Never lose sight of what’s important",
       "subheading": "Don’t just solve tickets, build customer relationships",
-      "pageimg":"/img/pageimg/hello.png",
-      "features": [        
+      "pageimg": "/img/pageimg/hello.png",
+      "features": [
         {
           "img": "/img/feature/hello-unlimited-agents.svg",
           "heading": "Unlimited Agents",
@@ -4457,12 +5237,12 @@
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"campaign",
-      "pagetag":"campaign",
+      "pagename": "campaign",
+      "pagetag": "campaign",
       "tagline": "Event Base automation",
       "heading": "Connect conversations across Channels and tools.",
       "subheading": "Deliver personalized, engaging and seamless experiences.",
-      "pageimg":"/img/pageimg/campaign.svg",
+      "pageimg": "/img/pageimg/campaign.svg",
       "features": [
         {
           "img": "/img/feature/campaign-multi-channel-support.svg",
@@ -4496,20 +5276,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track campaign performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track campaign performance"
+        }
       ]
     },
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"segmento",
-      "pagetag":"segmento",
-      "pageimg":"/img/pageimg/segmento.svg",
+      "pagename": "segmento",
+      "pagetag": "segmento",
+      "pageimg": "/img/pageimg/segmento.svg",
       "tagline": "target based marketing",
       "heading": "Personalize customer journeys with Data segmentation.",
       "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
@@ -4540,20 +5332,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track segmento performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track segmento performance"
+        }
       ]
     },
     "otp": {
       "code": false,
-      "pagename":"otp",
-      "pagetag":"otp",
+      "pagename": "otp",
+      "pagetag": "otp",
       "icon": "/img/icon/otp.svg",
-      "pageimg":"/img/pageimg/otp.svg",
+      "pageimg": "/img/pageimg/otp.svg",
       "tagline": "Instant Secure verification",
       "heading": "Simplest, quickest and most effective way to verify your users",
       "subheading": "Build customer trust and enable business protection with two-factor authentication.",
@@ -4578,20 +5382,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track otp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track otp performance"
+        }
       ]
     },
     "shorturl": {
       "code": false,
       "icon": "/img/icon/shorturl.svg",
-      "pagename": "ShortUrl", 
-      "pagetag":"URL Shortener",
-      "pageimg":"/img/pageimg/shorturl.svg",
+      "pagename": "ShortUrl",
+      "pagetag": "URL Shortener",
+      "pageimg": "/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
       "subheading": "Optimise your complex links to create short, cleaner links that are easier to share.",
@@ -4610,20 +5426,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track shorturl performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track shorturl performance"
+        }
       ]
     },
     "knowledgebase": {
       "code": false,
       "icon": "/img/icon/knowledgebase.svg",
-      "pagename": "KnowledgeBase", 
-      "pagetag":"KnowledgeBase",
-      "pageimg":"/img/pageimg/knowledgebase.svg",
+      "pagename": "KnowledgeBase",
+      "pagetag": "KnowledgeBase",
+      "pageimg": "/img/pageimg/knowledgebase.svg",
       "tagline": "Empower Customers with Self-Service Options",
       "heading": "Knowledge base is the backbone for good customer support",
       "subheading": "Get all essential features of knowledge base software at nominal price",
@@ -4638,7 +5466,7 @@
           "img": "/img/feature/kb-seo-friendly.svg",
           "heading": "SEO friendly (Subfolder and subdomain both support)",
           "subheading": "An SEO-friendly optimized knowledge base",
-          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."          
+          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."
         },
         {
           "img": "/img/feature/kb-whitelable.svg",
@@ -4648,18 +5476,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track knowledgebase performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track knowledgebase performance"
+        }
       ]
-    },    
+    },
     "sms": {
       "code": true,
-      "pagename": "SMS", 
-      "pagetag":"SMS",
+      "pagename": "SMS",
+      "pagetag": "SMS",
       "icon": "/img/icon/sms.svg",
       "tagline": "Next level messaging",
       "heading": "Engage your customers globally with quick, scalable and customizable messages",
@@ -4707,21 +5547,32 @@
           "subheading": "Real-time graphical view for monitoring and troubleshooting.",
           "content": "Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed."
         }
-        
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track sms performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track sms performance"
+        }
       ]
     },
     "rcs": {
       "code": true,
-      "pagename": "RCS", 
-      "pagetag":"RCS",
+      "pagename": "RCS",
+      "pagetag": "RCS",
       "icon": "/img/icon/rcs.svg",
       "tagline": "Rich Communication Services",
       "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
@@ -4750,16 +5601,18 @@
           "heading": "Enhanced Customer Trust",
           "subheading": "Understand your customers' habits",
           "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
-        }        
+        }
       ],
       "morefeatures": [
-        {"more": "0"}
+        {
+          "more": "0"
+        }
       ]
     },
     "email": {
       "code": true,
-      "pagename": "Email", 
-      "pagetag":"Email",
+      "pagename": "Email",
+      "pagetag": "Email",
       "icon": "/img/icon/email.svg",
       "tagline": "smarter email strategy",
       "heading": "Smart emails that land directly into the right inbox",
@@ -4797,18 +5650,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track email performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track email performance"
+        }
       ]
     },
     "voice": {
       "code": true,
-      "pagename": "Voice", 
-      "pagetag":"Voice",
+      "pagename": "Voice",
+      "pagetag": "Voice",
       "icon": "/img/icon/voice.svg",
       "tagline": "connect with confidence",
       "heading": "Boost customer engagement and build trust",
@@ -4858,18 +5723,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track voice performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track voice performance"
+        }
       ]
     },
     "whatsapp": {
       "code": true,
-      "pagename": "WhatsApp", 
-      "pagetag":"WhatsApp",
+      "pagename": "WhatsApp",
+      "pagetag": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
       "tagline": "dominate popular platforms",
       "heading": "Drive better customer engagement outcomes",
@@ -4943,18 +5820,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track whatsapp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track whatsapp performance"
+        }
       ]
     },
     "numbers": {
       "code": true,
-      "pagename": "Numbers", 
-      "pagetag":"numbers",
+      "pagename": "Numbers",
+      "pagetag": "numbers",
       "icon": "/img/icon/numbers.svg",
       "tagline": "Unlock the Power of Virtual Numbers",
       "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
@@ -5019,28 +5908,27 @@
           "heading": "Integration into Web Applications",
           "subheading": "",
           "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
-        }        
+        }
       ]
     }
   },
-  "us":{
+  "us": {
     "pagename": "index",
-    "index":{
-      "code":"no",
-      "pagename":"index",
-      "head":"this is global index",
-      "headline":"Best Cloud communication platform"
-
+    "index": {
+      "code": "no",
+      "pagename": "index",
+      "head": "this is global index",
+      "headline": "Best Cloud communication platform"
     },
-    "hello":{
+    "hello": {
       "code": false,
       "icon": "/img/icon/hello.svg",
-      "pagename":"hello",    
-      "pagetag":"HELLO An AI-Fueled Conversational HUB",
+      "pagename": "hello",
+      "pagetag": "HELLO An AI-Fueled Conversational HUB",
       "tagline": "BOOSTING CUSTOMER SATISFACTION",
       "heading": "",
       "subheading": "Seamlessly merging chat, email, call and video to resolve customer queries.",
-      "pageimg":"/img/pageimg/hello.png",
+      "pageimg": "/img/pageimg/hello.png",
       "features": [
         {
           "icon": "/images/hello/icon-ai-enabled-chat.svg",
@@ -5089,12 +5977,12 @@
     "campaign": {
       "code": false,
       "icon": "/img/icon/campaign.svg",
-      "pagename":"campaign",
-      "pagetag":"Start your Campaign",
+      "pagename": "campaign",
+      "pagetag": "Start your Campaign",
       "tagline": "Event Base automation",
       "heading": "Connect conversations across Channels and tools.",
       "subheading": "Deliver personalized, engaging and seamless experiences.",
-      "pageimg":"/img/pageimg/campaign.svg",
+      "pageimg": "/img/pageimg/campaign.svg",
       "features": [
         {
           "img": "/img/feature/campaign-multi-channel-support.svg",
@@ -5128,20 +6016,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track campaign performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track campaign performance"
+        }
       ]
     },
     "segmento": {
       "code": false,
       "icon": "/img/icon/segmento.svg",
-      "pagename":"segmento",
-      "pagetag":"segmento",
-      "pageimg":"/img/pageimg/segmento.svg",
+      "pagename": "segmento",
+      "pagetag": "segmento",
+      "pageimg": "/img/pageimg/segmento.svg",
       "tagline": "target based marketing",
       "heading": "Personalize customer journeys with Data segmentation.",
       "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
@@ -5172,20 +6072,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track segmento performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track segmento performance"
+        }
       ]
     },
     "otp": {
       "code": false,
-      "pagename":"otp",
-      "pagetag":"otp",
+      "pagename": "otp",
+      "pagetag": "otp",
       "icon": "/img/icon/otp.svg",
-      "pageimg":"/img/pageimg/otp.svg",
+      "pageimg": "/img/pageimg/otp.svg",
       "tagline": "Instant Secure verification",
       "heading": "Simplest, quickest and most effective way to verify your users",
       "subheading": "Build customer trust and enable business protection with two-factor authentication.",
@@ -5210,20 +6122,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track otp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track otp performance"
+        }
       ]
     },
     "shorturl": {
       "code": false,
       "icon": "/img/icon/shorturl.svg",
-      "pagename": "ShortUrl", 
-      "pagetag":"URL Shortener",
-      "pageimg":"/img/pageimg/shorturl.svg",
+      "pagename": "ShortUrl",
+      "pagetag": "URL Shortener",
+      "pageimg": "/img/pageimg/shorturl.svg",
       "tagline": "Simplify your links",
       "heading": "Customise, share and track smart links",
       "subheading": "Optimise your complex links to create short, cleaner links that are easier to share.",
@@ -5242,20 +6166,32 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track shorturl performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track shorturl performance"
+        }
       ]
     },
     "knowledgebase": {
       "code": false,
       "icon": "/img/icon/knowledgebase.svg",
-      "pagename": "KnowledgeBase", 
-      "pagetag":"KnowledgeBase",
-      "pageimg":"/img/pageimg/knowledgebase.svg",
+      "pagename": "KnowledgeBase",
+      "pagetag": "KnowledgeBase",
+      "pageimg": "/img/pageimg/knowledgebase.svg",
       "tagline": "Empower Customers with Self-Service Options",
       "heading": "Knowledge base is the backbone for good customer support",
       "subheading": "Get all essential features of knowledge base software at nominal price",
@@ -5270,7 +6206,7 @@
           "img": "/img/feature/kb-seo-friendly.svg",
           "heading": "SEO friendly (Subfolder and subdomain both support)",
           "subheading": "An SEO-friendly optimized knowledge base",
-          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."          
+          "content": "Your knowledge base is run on your own domain and not on any subdomain so the algorithms treat it as your website giving it the same importance as your other webpages."
         },
         {
           "img": "/img/feature/kb-whitelable.svg",
@@ -5280,18 +6216,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track knowledgebase performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track knowledgebase performance"
+        }
       ]
-    },    
+    },
     "sms": {
       "code": true,
-      "pagename": "SMS", 
-      "pagetag":"SMS",
+      "pagename": "SMS",
+      "pagetag": "SMS",
       "icon": "/img/icon/sms.svg",
       "tagline": "Next level messaging",
       "heading": "Engage your customers globally with quick, scalable and customizable messages",
@@ -5339,21 +6287,32 @@
           "subheading": "Real-time graphical view for monitoring and troubleshooting.",
           "content": "Optimize your SMS delivery, measure the effectiveness of your campaigns, and improve ROI. Always be in the know which messages customers have received and which are missed."
         }
-        
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track sms performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track sms performance"
+        }
       ]
     },
     "rcs": {
       "code": true,
-      "pagename": "RCS", 
-      "pagetag":"RCS",
+      "pagename": "RCS",
+      "pagetag": "RCS",
       "icon": "/img/icon/rcs.svg",
       "tagline": "Rich Communication Services",
       "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
@@ -5382,16 +6341,18 @@
           "heading": "Enhanced Customer Trust",
           "subheading": "Understand your customers' habits",
           "content": "Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility."
-        }        
+        }
       ],
       "morefeatures": [
-        {"more": "0"}
+        {
+          "more": "0"
+        }
       ]
     },
     "email": {
       "code": true,
-      "pagename": "Email", 
-      "pagetag":"Email Api",
+      "pagename": "Email",
+      "pagetag": "Email Api",
       "icon": "/img/icon/email.svg",
       "tagline": "smarter email strategy",
       "heading": "Smart emails that land directly into the right inbox",
@@ -5429,18 +6390,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track email performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track email performance"
+        }
       ]
     },
     "voice": {
       "code": true,
-      "pagename": "Voice", 
-      "pagetag":"Voice",
+      "pagename": "Voice",
+      "pagetag": "Voice",
       "icon": "/img/icon/voice.svg",
       "tagline": "connect with confidence",
       "heading": "Boost customer engagement and build trust",
@@ -5490,18 +6463,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track voice performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track voice performance"
+        }
       ]
     },
     "whatsapp": {
       "code": true,
-      "pagename": "WhatsApp", 
-      "pagetag":"WhatsApp",
+      "pagename": "WhatsApp",
+      "pagetag": "WhatsApp",
       "icon": "/img/icon/whatsapp.svg",
       "tagline": "dominate popular platforms",
       "heading": "Drive better customer engagement outcomes",
@@ -5575,18 +6560,30 @@
         }
       ],
       "morefeatures": [
-        {"more": "Provide customer support via screen sharing on a single click"},
-        {"more": "Troubleshooting over video in seconds"},
-        {"more" : "Record agent performance for quality control"},
-        {"more": "Understand your customers emotions through sentiment analysis"},
-        {"more": "Solution for remote access and support"},
-        {"more": "Track whatsapp performance"}
+        {
+          "more": "Provide customer support via screen sharing on a single click"
+        },
+        {
+          "more": "Troubleshooting over video in seconds"
+        },
+        {
+          "more": "Record agent performance for quality control"
+        },
+        {
+          "more": "Understand your customers emotions through sentiment analysis"
+        },
+        {
+          "more": "Solution for remote access and support"
+        },
+        {
+          "more": "Track whatsapp performance"
+        }
       ]
     },
     "numbers": {
       "code": true,
-      "pagename": "Numbers", 
-      "pagetag":"numbers",
+      "pagename": "Numbers",
+      "pagetag": "numbers",
       "icon": "/img/icon/numbers.svg",
       "tagline": "Unlock the Power of Virtual Numbers",
       "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
@@ -5651,7 +6648,7 @@
           "heading": "Integration into Web Applications",
           "subheading": "",
           "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication."
-        }        
+        }
       ]
     }
   }
