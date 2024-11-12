@@ -91,44 +91,49 @@ export default function BannerComp({ pageInfo, data }) {
                         </div>
                     </dialog>
                     <TrustedByComp data={data?.trustedByComp} />
-                    {data?.code && (
-                        <div className='md:w-[800px] max-w-full mx-auto flex flex-col gap-0 rounded overflow-hidden border'>
-                            <div role='tablist' className='flex'>
-                                {snipped?.languages.map((language, index) => {
-                                    return (
-                                        <a
-                                            key={index}
-                                            role='tab'
-                                            className={` w-full p-2 text-center cursor-pointer  ${
-                                                language?.value === selectedLanguage ? 'bg-primary text-white' : ''
-                                            }`}
-                                            onClick={() => {
-                                                setSelectedLanguage(language?.value);
-                                            }}
-                                        >
-                                            {language?.name}
-                                        </a>
-                                    );
-                                })}
-                            </div>
+                    <div className='flex flex-col gap-3'>
+                        {data?.text_h2 && <h2 className='text-center font-semibold text-xl'>{data?.text_h2}</h2>}
+                        {data?.code && (
+                            <div className='md:w-[800px] max-w-full mx-auto flex flex-col gap-0 rounded overflow-hidden border'>
+                                <div role='tablist' className='flex'>
+                                    {snipped?.languages.map((language, index) => {
+                                        return (
+                                            <a
+                                                key={index}
+                                                role='tab'
+                                                className={` w-full p-2 text-center cursor-pointer  ${
+                                                    language?.value === selectedLanguage ? 'bg-primary text-white' : ''
+                                                }`}
+                                                onClick={() => {
+                                                    setSelectedLanguage(language?.value);
+                                                }}
+                                            >
+                                                {language?.name}
+                                            </a>
+                                        );
+                                    })}
+                                </div>
 
-                            <div className='relative bg-black '>
-                                <button
-                                    className='absolute right-0 z-20 text-gray-200 flex gap-1 items-center p-4'
-                                    onClick={() => copyText(code)}
-                                >
-                                    <MdCopyAll />
-                                    {isCopied ? 'Copied!' : 'Copy'}
-                                </button>
-                                <div className='overflow-auto h-[400px]'>
-                                    {' '}
-                                    <pre className='code-m-0'>
-                                        <code className={`language-javascript text-sm`}>{code[selectedLanguage]}</code>
-                                    </pre>
+                                <div className='relative bg-black '>
+                                    <button
+                                        className='absolute right-0 z-20 text-gray-200 flex gap-1 items-center p-4'
+                                        onClick={() => copyText(code)}
+                                    >
+                                        <MdCopyAll />
+                                        {isCopied ? 'Copied!' : 'Copy'}
+                                    </button>
+                                    <div className='overflow-auto h-[400px]'>
+                                        {' '}
+                                        <pre className='code-m-0'>
+                                            <code className={`language-javascript text-sm`}>
+                                                {code[selectedLanguage]}
+                                            </code>
+                                        </pre>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    )}
+                        )}
+                    </div>
                 </div>
                 {!data?.code && (
                     <div className={styles.cont}>
