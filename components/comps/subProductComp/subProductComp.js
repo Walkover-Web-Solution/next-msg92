@@ -37,13 +37,13 @@ export default function SubProductComp({ path }) {
             name: 'Boost Engagement, Maximize Sales',
             icon: 'MdBolt',
             description:
-                'WhatsApp chatbot platforms drive engagement by facilitating interactive conversations, guiding potential customers through the sales funnel to boost sales and improve user experience.',
+                'WhatsApp chat bot platforms drive engagement by facilitating interactive conversations, guiding potential customers through the sales funnel to boost sales and improve user experience.',
         },
         {
             name: 'Establish a 24/7 Communication Channel',
             icon: 'MdAccessTime',
             description:
-                'A WhatsApp Chatbot ensures 24/7 accessibility, addressing customer queries at any hour, reinforcing your commitment to their needs and maintaining an always-responsive chatbot flow.',
+                'A WhatsApp bot API ensures 24/7 accessibility, addressing customer queries at any hour, reinforcing your commitment to their needs and maintaining an always-responsive chatbot flow.',
         },
         {
             name: 'Streamline Responses to FAQs ',
@@ -54,7 +54,7 @@ export default function SubProductComp({ path }) {
             name: 'Elevate Customer Support',
             icon: 'MdSupportAgent',
             description:
-                'WhatsApp Chatbots deliver instant responses, ensuring prompt acknowledgment and boosting brand loyalty.',
+                'ChatBot in WhatsApp deliver instant responses, ensuring prompt acknowledgment and boosting brand loyalty.',
         },
     ];
     const useCases = [

@@ -148,7 +148,7 @@
     },
     "/in/campaign": {
         "title": "Drip Campaign for Marketing Automation | B2B eMail & MKTG Automation",
-        "description": "B2B marketing automation with sales funnel builders. Our drip email marketingcampaigns & mktg automation platforms help streamline sales and email automation."
+        "description": "B2B marketing automation with sales funnel builders. Our drip email marketing campaigns & mktg automation platforms help streamline sales and email automation."
     },
     "/br/campaign": {
         "title": "Best Campaign Software | Transactional Text Messages in Brazil| MSG91-Brazil",
@@ -311,8 +311,8 @@
         "description": "Enhance your customer engagement with Rich Communication Service. Effortless RCS integration and advanced features boost communication and stimulate business growth"
     },
     "/in/rcs": {
-        "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91 - India",
-        "description": "Enhance your customer engagement with Rich Communication Service. Effortless RCS integration and advanced features boost communication and stimulate business growth"
+        "title": "RCS Message:  Learn how to send RCS messages on Android & iPhone",
+        "description": "MSG91 is a top RCS messaging provider in India. Discover RCS pricing & how to send RCS messages on Android and iPhone using Google RCS Messages, with examples."
     },
     "/br/rcs": {
         "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91",
@@ -1339,8 +1339,8 @@
         "description": "Maximize o potencial de negócios com o WhatsApp: Libere a automação, supercarregue as vendas e aproveite a eficiência de um chatbot do WhatsApp. Eleve sua estratégia para o sucesso hoje!"
     },
     "/in/whatsapp/chatbot": {
-        "title": "Whatsapp with Chatbot | MSG91-India",
-        "description": "Maximize business potential with WhatsApp: Unleash automation, supercharge sales, and harness the efficiency of a WhatsApp chatbot. Elevate your strategy for success today!"
+        "title": "Whatsapp Chatbot Builder APP with API for Business",
+        "description": "Create a WhatsApp chatbot for business with the WhatsApp Bot API. Use a bot builder app to integrate an AI-powered chat bot for automated, seamless customer support"
     },
     "/gb/whatsapp/chatbot": {
         "title": "Whatsapp with Chatbot | MSG91-United Kingdom",

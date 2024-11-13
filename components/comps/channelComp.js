@@ -290,7 +290,11 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
             <div
                 className={` my-5  px-sm-0 d-flex flex-column justify-content-center justift-content-sm-start section`}
             >
-                <span className="container c-head sub-heading  c-head pt-4 pt-md-0 c-fw-b">Features</span>
+                          <span className="container sub-heading c-head   pt-4 pt-md-0 c-fw-b">
+                    {pageData?.featureheading 
+                        ? pageData?.featureheading
+                        : 'Features'}
+                </span>
                 {pageData?.features?.map((item, index) => {
                     if (item?.content) {
                         i++;

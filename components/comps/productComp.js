@@ -7,6 +7,7 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import FaqSection from '../faqSection/faqSection';
 
 const ProductComponent = ({ pageData, path, webhookData = null, pricingPath }) => {
+    console.log("🚀 ~ ProductComponent ~ pageData:", pageData)
     var i = 0;
     return (
         <div>
@@ -45,8 +46,8 @@ const ProductComponent = ({ pageData, path, webhookData = null, pricingPath }) =
 
             <div className={`px-sm-0 d-flex flex-column justify-content-center justify-content-sm-start section mt-5`}>
                 <span className="container sub-heading c-head   pt-4 pt-md-0 c-fw-b">
-                    {pageData?.pagetag === 'campaign'
-                        ? 'Features of Drip Campaign and Marketing Automation'
+                    {pageData?.featureheading 
+                        ? pageData?.featureheading
                         : 'Features'}
                 </span>
                 {pageData?.features?.map((item, index) => {
