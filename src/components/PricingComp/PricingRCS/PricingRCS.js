@@ -7,7 +7,7 @@ export default function PricingRCS({ data }) {
         <>
             <div className='flex flex-col gap-6'>
                 <div className='p-8 flex flex-col gap-4 bg-white h-fit rounded'>
-                    <h1 className='text-2xl'>Connect to our team for the custimized pricing</h1>
+                    <h1 className='text-2xl'>Connect To Our Team For The Customized RCS Message Pricing</h1>
 
                     <button
                         onClick={() => document.getElementById('sales_modal').showModal()}
@@ -16,7 +16,7 @@ export default function PricingRCS({ data }) {
                         Get Started
                     </button>
                 </div>
-                <ConnectWithTeam product={'Voice'} data={data?.connectComp} href={'voice'} isPlan={false} />
+                <ConnectWithTeam product={'RCS'} data={data?.connectComp} href={'rcs'} isPlan={false} />
             </div>
             <dialog id='sales_modal' className='modal'>
                 <div className='modal-box'>

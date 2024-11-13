@@ -8,6 +8,7 @@ import PricingVoice from './PricingVoice/PricingVoice';
 import PricingRCS from './PricingRCS/PricingRCS';
 import PricingEmail from './PricingEmail/PricingEmail';
 import PricingWhatsApp from './PricingWhatsApp/PricingWhatsApp';
+import HeadComp from '../headComp';
 
 export default function PricingComp({ data, pageInfo }) {
     let page;
@@ -19,10 +20,10 @@ export default function PricingComp({ data, pageInfo }) {
 
     return (
         <>
+            <HeadComp data={data[page]?.HeadComp} />
             <div className='bg-neutral py-3'>
                 <div className='container my-10 flex gap-12 md:flex-row flex-col '>
                     <PricingNav products={data?.products} page={page} />
-
                     {page === 'hello' && <PricingHello data={data?.hello} country={pageInfo?.country} />}
 
                     {page === 'campaign' && <PricingCampaign data={data?.campaign} country={pageInfo?.country} />}

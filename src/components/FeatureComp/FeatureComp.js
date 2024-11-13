@@ -1,12 +1,5 @@
+import GetMdIcons from '@/utils/getMdIcons';
 import Image from 'next/image';
-import {
-    MdAdsClick,
-    MdOutlineAnalytics,
-    MdOutlineSchema,
-    MdOutlineScreenShare,
-    MdOutlineSmartToy,
-    MdSupportAgent,
-} from 'react-icons/md';
 
 export default function FeatureComp({ data }) {
     return (
@@ -16,6 +9,7 @@ export default function FeatureComp({ data }) {
                     <h2 className='text-3xl font-bold'>{data?.heading}</h2>
                     <div className='grid grid-cols-2 md:gap-12 gap-6'>
                         {data?.features?.map((feature, index) => {
+                            const Icon = GetMdIcons(feature?.icon);
                             return (
                                 <div
                                     key={index}
@@ -26,22 +20,13 @@ export default function FeatureComp({ data }) {
                                     }`}
                                 >
                                     <div className='flex flex-col gap-2'>
-                                        {feature?.icon && (
-                                            <div className='text-4xl text-[#F7DC6F]'>
-                                                {feature?.icon === 'MdSupportAgent' && <MdSupportAgent />}
-                                                {feature?.icon === 'MdOutlineSmartToy' && <MdOutlineSmartToy />}
-                                                {feature?.icon === 'MdAdsClick' && <MdAdsClick />}
-                                                {feature?.icon === 'MdOutlineScreenShare' && <MdOutlineScreenShare />}
-                                                {feature?.icon === 'MdOutlineSchema' && <MdOutlineSchema />}
-                                                {feature?.icon === 'MdOutlineAnalytics' && <MdOutlineAnalytics />}
-                                            </div>
-                                        )}
+                                        {feature?.icon && <Icon className='text-5xl text-[#F7DC6F]' />}
 
                                         <span className='text-2xl font-semibold'>{feature?.name}</span>
-                                        <div
-                                            className='text-lg'
-                                            dangerouslySetInnerHTML={{ __html: feature?.content }}
-                                        ></div>
+                                        <span className='flex text-lg'>
+                                            <span className='font-bold'>{feature?.subheading} </span>
+                                            <span dangerouslySetInnerHTML={{ __html: feature?.content }}></span>
+                                        </span>
                                     </div>
                                     <Image
                                         src={feature?.img}

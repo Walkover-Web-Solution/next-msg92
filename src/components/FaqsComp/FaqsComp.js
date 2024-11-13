@@ -10,7 +10,7 @@ export default function FaqsComp({ data, notCont }) {
                                 <div key={index} className='collapse collapse-plus  border-b rounded-none'>
                                     <input type='radio' name='my-accordion-3' defaultChecked={index === 0} />
                                     <h2 className='collapse-title text-xl font-medium'>
-                                        <button>{faq?.question}</button>
+                                        <button className='text-start'>{faq?.question}</button>
                                     </h2>
                                     <div className='collapse-content '>
                                         <div

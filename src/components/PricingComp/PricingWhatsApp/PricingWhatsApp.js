@@ -49,10 +49,11 @@ export default function PricingWhatsApp({ country, data }) {
                     />
                 </div>
                 <div className='flex flex-col gap-8'>
-                    <p>
-                        Since we do not impose any service charge, <strong>{country === 'in' ? 'GST' : 'Taxes'}</strong>{' '}
-                        will be applied to WhatsApp pricing
-                    </p>
+                    <div className='flex flex-col gap-2'>
+                        <h2 className='text-2xl font-bold mb-1'>{data?.heading}</h2>
+                        <p>{data?.tax}</p>
+                        {data?.adds && <p>{data?.adds}</p>}
+                    </div>
                     <table className='table bg-white rounded'>
                         <thead>
                             <tr className='font-bold text-[16px] text-black '>

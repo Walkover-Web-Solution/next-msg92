@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "WhatsApp API for businesses | MSG91",
-        "description": "Generate WhatsApp links and QR codes easily with our WhatsApp Link Generator. Start chatting instantly!."
+        "title": "Create a Whatsapp link | Free Whatsapp Link generator",
+        "description": "Create a whatsapp link & QR Codes for website integration using our whatsapp link generator widget. Using WA link, customers can chat instantly on your website."
     },
     "WhatsappLinkComp": {
         "slug": "free-whatsapp-link-generator",
@@ -35,7 +35,7 @@
             ]
         },
         "create": {
-            "heading": "Create QR Code/Widget/Link",
+            "heading": "Create whatsapp Link / Widget/ QR Code",
             "image": "assets/whatsapp-link/widget-preview.svg",
             "generate_btn": "Generate Now",
             "content": [
@@ -78,11 +78,11 @@
         "heading": "FAQs",
         "faqs": [
             {
-                "question": "How does a WhatsApp link work?",
+                "question": "How can I create wa link?",
                 "answer": "WhatsApp links use a specific URL format that, when clicked, opens the WhatsApp app on a user's device and starts a chat with the provided phone number or message."
             },
             {
-                "question": "Is it possible to add a predefined message with the WhatsApp link?",
+                "question": "Is it possible to create a whatsapp link with predefined message?",
                 "answer": "Yes, absolutely. When utilizing the <a href='/whatsapp'>whatsapp API </a>, you can include a pre-filled message along with the phone number in the link. Services like MSG91 offer WhatsApp link generators that allow you to easily create these links."
             },
             {

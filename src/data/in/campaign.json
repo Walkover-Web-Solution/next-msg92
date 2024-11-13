@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Best Campaign Software | Transactional Text Messages in India| MSG91-India",
-        "description": "MSG91s SMS Marketing software helps businesses build and manage subscriber lists, send transactional sms, and automate customer engagement. Checkout the best campaign automation tool in India."
+        "title": "Drip Campaign for Marketing Automation | B2B eMail & MKTG Automation",
+        "description": "B2B marketing automation with sales funnel builders. Our drip email marketing campaigns & mktg automation platforms help streamline sales and email automation."
     },
     "BannerComp": {
         "slug": "campaign",
@@ -9,7 +9,7 @@
             "name": "Campaign",
             "icon": "/assets/icons/products/campaign.svg"
         },
-        "tagline": "Event Base automation",
+        "tagline": "Event Base Marketing Automation",
         "heading": "Connect conversations across Channels and tools.",
         "subheading": "Deliver personalized, engaging and seamless experiences",
         "banner_img": "/assets/global/campaign/campaign.png",
@@ -45,37 +45,65 @@
         }
     },
     "FeatureComp": {
-        "heading": "Features",
+        "heading": "Features of Drip Campaign and Marketing Automation",
         "iconColor": "text-campaign",
         "features": [
             {
                 "name": "Multi channel support",
-                "content": " <strong>Support your customers on their preferred channel.</strong>Give your customers a better support experience via their preferred channel- SMS, Email, Voice, Push Notification, <a href='/in/whatsapp' style='color: blue'>WhatsApp</a> and more. Meet your customers where they are.",
+                "content": " <strong>Support your customers on their preferred channel.</strong> Give your customers a better support experience via Drip Campaign using their preferred channel-SMS, Email, Voice, Push Notification, <a href='/in/whatsapp' class='text-link active-link'>WhatsApp</a> and more. Meet your customers where they are.",
                 "img": "/assets/global/campaign/campaign-multi-channel-support.svg"
             },
             {
                 "name": "Draggable Flow",
-                "content": "<strong>Drag and drop to create an omnichannel flow with ‘if-then’ scenarios.</strong>Choose when you need to initiate an SMS, email, or messaging conversation in a single workflow. Create a flow that is as simple or as complex as your business needs them to be.",
+                "content": "<strong>Drag and drop to create an omnichannel flow with ‘if-then’ scenarios.</strong> Choose when you need to initiate an SMS, mail, or messaging conversation in a single workflow. Create a marketing automation flow based on previous drip campaignflow.",
                 "img": "/assets/global/campaign/campaign-draggable-flow.svg"
             },
             {
                 "name": "Time Based Condition",
-                "content": "<strong>Send perfectly timed automated messages.</strong>Build a thoughtful sending schedule with time-based conditions that control the time zone of when your campaigns are delivered. Support your customers at the right time.",
+                "content": "<strong>Send perfectly timed automated messages.</strong> Build a thoughtful sending schedule with time-based conditions that control the time zone of when your drip campaigns are delivered. Support your customers at the right time.",
                 "img": "/assets/global/campaign/campaign-time-based-condition.svg"
             },
             {
                 "name": "API based Conditions",
-                "content": "<strong>Get information instantly for real-time interactions.</strong>Call for data even when in mid of a flow by sending data to a third-party system or requesting data needed for your communication steps. Deliver real-time information to your customers.",
+                "content": "<strong>Get information instantly for real-time interactions.</strong> Call for data even when in mid of a flow by sending data to a third-party system or requesting data needed for your communication steps. Deliver real-time information to your customers.",
                 "img": "/assets/global/campaign/campaign-api-based-conditions.svg"
             },
             {
                 "name": "Country Based Condition",
-                "content": "<strong>Support your customers across the world.</strong>Create personalized and memorable experiences for your customer across countries, languages, content, channels, flows and more. Easily connect, customize and communicate.",
+                "content": "<strong>Support your customers across the world.</strong> Create personalized and memorable experiences for your customer across countries, languages, content, channels, flows and more. Easily connect, customize and communicate.",
                 "img": "/assets/global/campaign/campaign-country-based-condition.svg"
             }
         ]
     },
-  
+    "FaqsComp": {
+        "heading": "FAQ for Marketing Automation:",
+        "faqs": [
+            {
+                "question": "What is a Drip Campaign?",
+                "answer": "<ul class='list-disc'><li>A drip campaign is a series of automated emails sent over time to guide leads through the sales funnel.</li><li>Each email is scheduled based on customer behaviour or set timelines, ensuring timely, personalised engagement.</li><li>Drip campaigns help nurture leads, build relationships, and drive conversions.</li></ul>"
+            },
+            {
+                "question": "How does Email Marketing support business growth?",
+                "answer": "<ul class='list-disc'><li>Email marketing allows direct communication with your audience, keeping your brand top-of-mind.</li><li>It’s cost-effective, with a high ROI, helping businesses reach their customers efficiently.</li><li>You can segment your audience and personalise email content, improving engagement and conversions.</li></ul>"
+            },
+            {
+                "question": "What is Marketing Automation, and why is it important?",
+                "answer": "<ul class='list-disc'><li>Marketing automation uses software to streamline repetitive marketing tasks, like email campaigns and follow-ups via multiple channels, such as WhatsApp, text messages, voice SMS, and RCS.</li><li>It allows businesses to engage with potential customers at scale while saving time and resources.</li><li>Marketing automation platforms can also provide valuable analytics to refine marketing strategies and improve ROI.</li></ul>"
+            },
+            {
+                "question": "What are Sales Funnel Builders?",
+                "answer": "<ul class='list-disc'><li>Sales funnel builders are tools that help create a structured path for leads, guiding them from awareness to conversion.</li><li>They automate various stages of customer journeys, helping move leads through the sales process seamlessly.</li><li>With these tools, businesses can capture more leads, nurture relationships, and increase conversions.</li></ul>"
+            },
+            {
+                "question": "How does B2B Marketing differ from B2C?",
+                "answer": "<ul class='list-disc'><li>B2B marketing focuses on business clients, requiring a more data-driven, solution-oriented approach.</li><li>It often involves longer sales cycles and personalised, targeted communications to address business-specific pain points.</li><li>B2B marketing relies on building trust and long-term relationships, as purchases are typically larger and require approval from multiple stakeholders.</li></ul>"
+            },
+            {
+                "question": "Why is a Marketing Platform essential for B2B companies?",
+                "answer": "<ul class='list-disc'><li>A marketing platform centralises tools for campaign management, analytics, and automation, enhancing efficiency.</li><li>It helps track customer behaviour across channels, providing insights that optimise B2B strategies.</li><li>With a unified platform, companies can streamline workflows, increase ROI, and improve customer engagement.</li></ul>"
+            }
+        ]
+    },
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
