@@ -77,7 +77,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                     </div>
                 </div>
 
-                <h2>Whatsapp Business API to Send Message</h2>
+                {pageData?.apiheading && <h2>{pageData?.apiheading}</h2>}
                 {pageData?.pagename !== 'Numbers' && (
                     <div className="row justify-content-center">
                         <div className="code-wrp col-lg-8 col-md-8 col-10">
@@ -320,7 +320,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
             <FaqSection faqData={pageData?.FaqsComp?.faqs} faq={pageData?.faqComp} />
             
             </div>
-            <Seo path={path} pageData={pageData.pagename} />
+            <Seo path={path} pageData={pageData.pagename} pricingPath={pricingPath} />
 
             <GetStartedSection pricingPath={pricingPath} />
        

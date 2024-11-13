@@ -7,10 +7,13 @@ import HelloSeoComp from './seo/inHello';
 import OtpSeoComp from './seo/inOtp';
 import InRcs from './seo/inRcs';
 
-const Seo = ({ path, pageData }) => {
+const Seo = ({ path, pricingPath, pageData }) => {
+    console.log("🚀 ~ Seo ~ pricingPaht:", pricingPath)
+    console.log("🚀 ~ Seo ~ path:", path)
     let seoComponent = null;
-
-    if (path === '/in') {
+const country = pricingPath.split('/')[1];
+    console.log("🚀 ~ Seo ~ country:", country)
+    if (country === 'in') {
         switch (pageData) {
             case 'index':
                 seoComponent = <IndexSeoComp />;

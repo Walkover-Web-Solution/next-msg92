@@ -1895,6 +1895,7 @@
       "tagline": "Rich Communication Services",
       "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
       "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
+      "apiheading": "RCS Example API:",
       "features": [
         {
           "img": "/img/feature/rcs-communications-branding.svg",
@@ -2069,6 +2070,7 @@
       "tagline": "dominate popular platforms",
       "heading": "Drive better customer engagement outcomes",
       "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
+      "apiheading": "Whatsapp Business API to Send Message",
       "features": [
         {
           "img": "/img/feature/whatsapp-chatBot.svg",

@@ -104,7 +104,7 @@ const ProductComponent = ({ pageData, path, webhookData = null, pricingPath }) =
             <div className='container'>
             <FaqSection faqData={pageData?.FaqsComp?.faqs} faq={pageData?.faqComp} />
             </div>
-            <Seo path={path} pageData={pageData?.pagename} />
+            <Seo path={path} pageData={pageData?.pagename} pricingPath={pricingPath} />
             <PreFooter pricingPath={pricingPath} pageName={pageData?.pagename} />
         </div>
     );
