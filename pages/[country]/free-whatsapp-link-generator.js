@@ -1,6 +1,7 @@
 // Parent Component
 import React, { useEffect } from "react";
 import PreFooter from "@/components/preFooter";
+import BasicMeta from "@/components/meta/basicMeta";
 const ParentComponent = ({ pricingPath, path }) => {
   //const data = json.global.hello;  
   console.log('path', path);
@@ -172,6 +173,7 @@ const ParentComponent = ({ pricingPath, path }) => {
   });
   return (
     <>
+<BasicMeta title={'Create a Whatsapp link | Free Whatsapp Link generator'} description={'Create a whatsapp link & QR Codes for website integration using our whatsapp link generator widget. Using WA link, customers can chat instantly on your website.'}/>
       <script type="text/javascript" src="/js/qrcode.js" defer></script>
       <script type="text/javascript" src="/js/jquery.min.js"></script>
       <script src="/js/highlight.min.js"></script>
@@ -255,7 +257,7 @@ const ParentComponent = ({ pricingPath, path }) => {
 
       <div className="container px-4 py-5" id="generate">
         <h3 className="sub-heading c-head pt-4 pt-md-0">
-          Create QR Code/Widget/Link
+        Create whatsapp Link / Widget/ QR Code
         </h3>
         <div className="row g-4 py-5 row-cols-1 row-cols-lg-2">
           <div className="col-md-6" id="widget-form">
@@ -664,7 +666,7 @@ const ParentComponent = ({ pricingPath, path }) => {
                       aria-expanded="false"
                       aria-controls="flush-collapseThree"
                     >
-                      Is it possible to generate a WhatsApp link for a business account?
+                      Is it possible to create a whatsapp link with predefined message?
                     </button>
                   </h2>
                   <div
@@ -714,7 +716,7 @@ const ParentComponent = ({ pricingPath, path }) => {
                       aria-expanded="false"
                       aria-controls="flush-collapseFive"
                     >
-                      How can I generate a WhatsApp link?
+                How can I create wa link?
                     </button>
                   </h2>
                   <div

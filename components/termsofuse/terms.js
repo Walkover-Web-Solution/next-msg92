@@ -136,6 +136,8 @@ const terms = () => {
                             14. You shall in no way raise questions concerning our price policy since it is liable to change with due amendments in the Government, TRAI or Telecom Operators' rules and regulations, or for any other reasons.
                             <div className="my-3"></div>
                             15. Your wallet balance or credits will be lapsed if you keep your account inactive for one year of time.
+                            <div className="my-3"></div>
+                            16. In compliance with TRAI regulations, we require a sample OPT-IN consent to offer voice services.
                         </span>
                     </div>
                     <div className="my-5">

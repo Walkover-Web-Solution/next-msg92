@@ -40,7 +40,7 @@ export default function App({ Component, pageProps }) {
     }
 
     var path = browserPath.split("/")[1];    
-    path = (path?.length === 2 ||  path === 'br-pt' || path === '?') ? `/${path}` : "";
+    path = (path?.length === 2 ||  path === 'br-pt' || path === '?') ? `/${path}` : ""; 
     
 
     const products = [

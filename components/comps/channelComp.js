@@ -8,6 +8,7 @@ import 'prismjs/themes/prism-twilight.css';
 import snippetData from '@/pages/snippet.json';
 import { InlineWidget } from 'react-calendly';
 import GetStartedSection from '../getStartedSection/getStartedSection';
+import FaqSection from '../faqSection/faqSection';
 
 const ChannelComponent = ({ pageData, path, pricingPath }) => {
     var HTTPSnippet = require('httpsnippet');
@@ -76,6 +77,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                     </div>
                 </div>
 
+                {pageData?.apiheading && <h2>{pageData?.apiheading}</h2>}
                 {pageData?.pagename !== 'Numbers' && (
                     <div className="row justify-content-center">
                         <div className="code-wrp col-lg-8 col-md-8 col-10">
@@ -288,7 +290,11 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
             <div
                 className={` my-5  px-sm-0 d-flex flex-column justify-content-center justift-content-sm-start section`}
             >
-                <span className="container c-head sub-heading  c-head pt-4 pt-md-0 c-fw-b">Features</span>
+                          <span className="container sub-heading c-head   pt-4 pt-md-0 c-fw-b">
+                    {pageData?.featureheading 
+                        ? pageData?.featureheading
+                        : 'Features'}
+                </span>
                 {pageData?.features?.map((item, index) => {
                     if (item?.content) {
                         i++;
@@ -314,11 +320,14 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                     }
                 })}
             </div>
-
-            <Seo path={path} pageData={pageData.pagename} />
+            <div className="container">
+            <FaqSection faqData={pageData?.FaqsComp?.faqs} faq={pageData?.faqComp} />
+            
+            </div>
+            <Seo path={path} pageData={pageData.pagename} pricingPath={pricingPath} />
 
             <GetStartedSection pricingPath={pricingPath} />
-
+       
             <TrustedBy align={'center'} />
             {pageData.pagename === 'WhatsApp' && (
                 <div>
