@@ -1,21 +1,16 @@
+import style from './SEOComp.module.scss';
 export default function SEOComp({ data }) {
     return (
         <>
             <div className='container flex flex-col gap-6 py-20'>
-                <h3 className='text-3xl font-bold'>
-                    Welcome to MSG91: Your Trusted Cloud Communication Platform as a Service
-                </h3>
+                <h3 className='text-xl font-bold'>{data?.heading}</h3>
                 <div className='flex flex-col gap-2'>
-                    <p>
-                        Are you searching for a reliable and versatile cloud communication platform as a service? Look
-                        no further! At MSG91, we specialize in providing top-notch mobile cloud communication platforms
-                        in India. Whether you're a startup, small business, or a large enterprise, we have the perfect
-                        solution to enhance your business communication.
-                    </p>
+                    <p>{data?.description}</p>
                     <div
+                        className={style.seotext}
                         id='dangerousContent'
                         style={{ display: 'none' }}
-                        dangerouslySetInnerHTML={{ __html: data }}
+                        dangerouslySetInnerHTML={{ __html: data?.data }}
                     ></div>
                     <button
                         className='text text-link active-link'
@@ -23,7 +18,7 @@ export default function SEOComp({ data }) {
                             const contentDiv = document.getElementById('dangerousContent');
                             const button = event.target;
                             if (contentDiv.style.display === 'none') {
-                                contentDiv.style.display = 'block';
+                                contentDiv.style.display = 'flex';
                                 button.textContent = 'Read less';
                             } else {
                                 contentDiv.style.display = 'none';
