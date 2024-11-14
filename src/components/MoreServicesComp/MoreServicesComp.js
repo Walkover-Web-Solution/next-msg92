@@ -17,11 +17,13 @@ export default function MoreServicesComp({ data }) {
                             >
                                 <div className='flex items-center gap-2'>
                                     <Image width={36} height={36} src={service?.icon} alt={service?.name} />
-                                    <span className='text-2xl font-semibold'>{service?.name}</span>
+                                    <h3 className='text-2xl font-semibold'>{service?.name}</h3>
                                 </div>
                                 <Image width={600} height={600} src={service?.img} alt={service?.name} />
-                                <h2 className='text-xl font-semibold'>{service?.heading}</h2>
-                                <p className='text-lg'>{service?.description}</p>
+                                <div className='flex flex-col gap-2 mb-auto'>
+                                    <h4 className='text-xl font-semibold'>{service?.heading}</h4>
+                                    <p className='text-lg'>{service?.description}</p>
+                                </div>
                                 <LinkText className='link-btn'>{data?.linkText}</LinkText>
                             </Link>
                         ))}

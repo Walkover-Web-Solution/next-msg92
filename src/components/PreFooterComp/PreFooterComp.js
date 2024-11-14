@@ -5,9 +5,9 @@ export default function PreFooterComp({ data, pageInfo }) {
         <>
             <div className='bg-neutral py-10'>
                 <div className='container flex flex-col lg:flex-row md:justify-between items-center gap-6'>
-                    <span className='text-3xl font-bold lg:w-1/2'>
+                    <h2 className='text-3xl font-bold lg:w-1/2'>
                         {data?.content || 'Start building your ideal customer engagement experience'}
-                    </span>
+                    </h2>
                     <div className='flex gap-4 flex-wrap items-center  '>
                         <a href={data?.buttons?.contactSales?.link}>
                             <button className='btn btn-primary btn-outline btn-md'>
