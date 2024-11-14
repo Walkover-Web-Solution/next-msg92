@@ -7,7 +7,6 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import FaqSection from '../faqSection/faqSection';
 
 const ProductComponent = ({ pageData, path, webhookData = null, pricingPath }) => {
-    console.log("🚀 ~ ProductComponent ~ pageData:", pageData)
     var i = 0;
     return (
         <div>
