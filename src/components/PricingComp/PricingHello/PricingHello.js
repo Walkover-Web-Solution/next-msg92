@@ -13,8 +13,9 @@ export default function PricingHello({ data, country }) {
     const [isLoading, setIsLoading] = useState(false);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
-    const [tickets, setTickets] = useState(2000);
+    const [plansObj, setPlansObj] = useState({});
     const [inboxes, setInboxes] = useState(4);
+    const [tickets, setTickets] = useState(4000);
 
     const fetchPlans = useCallback(async () => {
         setIsLoading(true);
@@ -28,10 +29,62 @@ export default function PricingHello({ data, country }) {
     useEffect(() => {
         fetchPlans();
     }, [fetchPlans]);
+
+    useEffect(() => {
+        if (plans) {
+            const plansObj = plans
+                .filter((plan) => plan.name !== 'Free')
+                .reduce((acc, plan) => {
+                    const key = plan.name;
+                    acc[key] = {
+                        planAmount: plan.plan_amounts
+                            .map((amount) =>
+                                amount.currency.short_name === currency && amount.plan_type.name === tabtype
+                                    ? amount
+                                    : null
+                            )
+                            .filter((amount) => amount !== null)[0]?.plan_amount,
+
+                        planServices: {
+                            'Inbox': plan.plan_services
+                                .map((service) =>
+                                    service?.service_credit?.service_credit_rates?.find(
+                                        (rate) => rate?.currency?.short_name === currency
+                                    )
+                                        ? service
+                                        : null
+                                )
+                                ?.filter((service) => service?.service_credit?.service?.name === 'Inbox')[0]
+                                ?.service_credit?.service_credit_rates?.filter(
+                                    (service) => service?.currency?.short_name === currency
+                                )[0],
+
+                            'Tickets': plan.plan_services
+                                .map((service) =>
+                                    service?.service_credit?.service_credit_rates?.find(
+                                        (rate) => rate?.currency?.short_name === currency
+                                    )
+                                        ? service
+                                        : null
+                                )
+                                ?.filter((service) => service?.service_credit?.service?.name === 'Tickets')[0]
+                                ?.service_credit?.service_credit_rates?.filter(
+                                    (service) => service?.currency?.short_name === currency
+                                )[0],
+                        },
+                    };
+                    setPlansObj(acc);
+                    return acc;
+                }, {});
+            console.log(plansObj);
+        }
+    }, [plans]);
+
+    console.log(Object.keys(plansObj)[0]);
     return (
         <>
             <div className='flex flex-col w-full gap-8'>
-                <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
+                {/* <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
                     <span
                         role='tab'
                         className={`tab ${tabtype === 'Monthly' && 'tab-active'}`}
@@ -50,7 +103,7 @@ export default function PricingHello({ data, country }) {
                     >
                         Yearly (20% off)
                     </span>
-                </div>
+                </div> */}
                 <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full gap-8 '>
                     {plans &&
                         plans.length > 0 &&
@@ -212,7 +265,7 @@ export default function PricingHello({ data, country }) {
                                                         document.getElementById('calculate_hello_pricing').showModal()
                                                     }
                                                 >
-                                                    Calcualte
+                                                    Calculate
                                                 </button>
                                             </div>
                                         );
@@ -223,7 +276,7 @@ export default function PricingHello({ data, country }) {
                         [...Array(3)].map((_, index) => (
                             <div
                                 key={index}
-                                className='flex col-span-1 flex flex-col gap-6  h-[800px] p-6 border rounded bg-white'
+                                className='flex col-span-1  flex-col gap-6  h-[800px] p-6 border rounded bg-white'
                             >
                                 <div className='flex flex-col gap-4'>
                                     <div className=' skeleton h-[40px] w-full'></div>
@@ -255,7 +308,7 @@ export default function PricingHello({ data, country }) {
                 <FaqsComp data={data?.faqComp} notCont={true} />
             </div>
             {/* // calculate hello pricing */}
-            {plans?.length > 0 && (
+            {plansObj && (
                 <dialog id='calculate_hello_pricing' className='modal '>
                     <div className={`modal-box flex flex-col gap-4 ${style.modal}`}>
                         <div className='flex justify-between'>
@@ -296,34 +349,16 @@ export default function PricingHello({ data, country }) {
                                         <h4>Plan charges</h4>
                                     </div>
                                     <div className='p-4 border-e-2 flex flex-col gap-4'>
-                                        <span>{plans[1]?.name}</span>
+                                        <span>{Object.keys(plansObj)[0]}</span>
                                         <span className='font-bold text-green-600'>
                                             {symbol}
-                                            {plans[1]?.plan_amounts?.length > 0 &&
-                                                plans[1]?.plan_amounts.map((amount) => {
-                                                    if (
-                                                        amount?.currency?.short_name === currency &&
-                                                        amount?.plan_type?.name === tabtype
-                                                    ) {
-                                                        return amount?.plan_amount;
-                                                    }
-                                                })}
+                                            {plansObj[Object.keys(plansObj)[0]]?.planAmount}
                                         </span>
                                     </div>
                                     <div className='p-4 flex flex-col gap-4'>
-                                        <span>{plans[2]?.name}</span>
+                                        <span>{Object.keys(plansObj)[1]}</span>
                                         <span className='font-bold text-green-600'>
-                                            {' '}
-                                            {symbol}
-                                            {plans[2]?.plan_amounts?.length > 0 &&
-                                                plans[2]?.plan_amounts.map((amount) => {
-                                                    if (
-                                                        amount?.currency?.short_name === currency &&
-                                                        amount?.plan_type?.name === tabtype
-                                                    ) {
-                                                        return amount?.plan_amount;
-                                                    }
-                                                })}
+                                            {symbol} {plansObj[Object.keys(plansObj)[1]]?.planAmount}
                                         </span>
                                     </div>
                                 </div>
@@ -336,32 +371,20 @@ export default function PricingHello({ data, country }) {
                                         <h4>Inboxes</h4>
                                     </div>
                                     <div className='p-4 border-e-2 flex flex-col gap-4'>
-                                        {plans[1]?.plan_services[1].service_credit?.service_credit_rates?.map(
-                                            (rate, i) =>
-                                                rate?.currency?.short_name === currency && (
-                                                    <span key={i}>{rate?.free_credits}</span>
-                                                )
-                                        )}
-                                        {plans[1]?.plan_services[0].service_credit?.service_credit_rates?.map(
-                                            (rate, i) =>
-                                                rate?.currency?.short_name === currency && (
-                                                    <span key={i}>{rate?.free_credits}</span>
-                                                )
-                                        )}
+                                        <span>
+                                            {plansObj[Object.keys(plansObj)[0]]?.planServices?.Tickets?.free_credits}
+                                        </span>
+                                        <span>
+                                            {plansObj[Object.keys(plansObj)[0]]?.planServices?.Inbox?.free_credits}
+                                        </span>
                                     </div>
                                     <div className='p-4 flex flex-col gap-4'>
-                                        {plans[2]?.plan_services[1].service_credit?.service_credit_rates?.map(
-                                            (rate, i) =>
-                                                rate?.currency?.short_name === currency && (
-                                                    <span key={i}>{rate?.free_credits}</span>
-                                                )
-                                        )}
-                                        {plans[2]?.plan_services[0].service_credit?.service_credit_rates?.map(
-                                            (rate, i) =>
-                                                rate?.currency?.short_name === currency && (
-                                                    <span key={i}>{rate?.free_credits}</span>
-                                                )
-                                        )}
+                                        <span>
+                                            {plansObj[Object.keys(plansObj)[1]]?.planServices?.Tickets?.free_credits}
+                                        </span>
+                                        <span>
+                                            {plansObj[Object.keys(plansObj)[1]]?.planServices?.Inbox?.free_credits}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -377,62 +400,47 @@ export default function PricingHello({ data, country }) {
                                     <div className='p-4 border-e-2 flex flex-col gap-4'>
                                         <span>
                                             {tickets -
-                                                (plans[1]?.plan_services[1].service_credit?.service_credit_rates || [])
-                                                    .filter((rate) => rate?.currency?.short_name === currency)
-                                                    .reduce((acc, rate) => acc + Number(rate?.free_credits), 0)}
+                                                plansObj[Object.keys(plansObj)[0]]?.planServices?.Tickets?.free_credits}
                                         </span>
                                         <span>
                                             {tickets -
-                                                (plans[1]?.plan_services[1].service_credit?.service_credit_rates || [])
-                                                    .filter((rate) => rate?.currency?.short_name === currency)
-                                                    .reduce((acc, rate) => acc + Number(rate?.free_credits), 0)}{' '}
+                                                plansObj[Object.keys(plansObj)[0]]?.planServices?.Tickets
+                                                    ?.free_credits}{' '}
                                             X{' '}
-                                            {plans[1]?.plan_services[1].service_credit?.service_credit_rates
-                                                ?.filter((rate) => rate?.currency?.short_name === currency)
-                                                .reduce((acc, rate) => acc + Number(rate?.follow_up_rate), 0)}{' '}
-                                            ={' '}
+                                            {plansObj[Object.keys(plansObj)[0]]?.planServices?.Tickets?.follow_up_rate}{' '}
+                                            ={''}
                                             <span className='text-green-600 font-semibold'>
-                                                {symbol}
+                                                {' '}
+                                                {symbol}{' '}
                                                 {(tickets -
-                                                    (
-                                                        plans[1]?.plan_services[1].service_credit
-                                                            ?.service_credit_rates || []
-                                                    )
-                                                        .filter((rate) => rate?.currency?.short_name === currency)
-                                                        .reduce((acc, rate) => acc + Number(rate?.free_credits), 0)) *
-                                                    plans[1]?.plan_services[1].service_credit?.service_credit_rates
-                                                        ?.filter((rate) => rate?.currency?.short_name === currency)
-                                                        .reduce((acc, rate) => acc + Number(rate?.follow_up_rate), 0)}
+                                                    plansObj[Object.keys(plansObj)[0]]?.planServices?.Tickets
+                                                        ?.free_credits) *
+                                                    Number(
+                                                        plansObj[Object.keys(plansObj)[0]]?.planServices?.Tickets
+                                                            ?.follow_up_rate
+                                                    )}
                                             </span>
                                         </span>
                                         <span>
                                             {inboxes -
-                                                (plans[1]?.plan_services[0].service_credit?.service_credit_rates || [])
-                                                    .filter((rate) => rate?.currency?.short_name === currency)
-                                                    .reduce((acc, rate) => acc + Number(rate?.free_credits), 0)}
+                                                plansObj[Object.keys(plansObj)[0]]?.planServices?.Inbox?.free_credits}
                                         </span>
                                         <span>
                                             {inboxes -
-                                                (plans[1]?.plan_services[0].service_credit?.service_credit_rates || [])
-                                                    .filter((rate) => rate?.currency?.short_name === currency)
-                                                    .reduce((acc, rate) => acc + Number(rate?.free_credits), 0)}{' '}
-                                            X{' '}
-                                            {plans[1]?.plan_services[0].service_credit?.service_credit_rates
-                                                ?.filter((rate) => rate?.currency?.short_name === currency)
-                                                .reduce((acc, rate) => acc + Number(rate?.follow_up_rate), 0)}{' '}
-                                            ={' '}
+                                                plansObj[Object.keys(plansObj)[0]]?.planServices?.Inbox
+                                                    ?.free_credits}{' '}
+                                            X {plansObj[Object.keys(plansObj)[0]]?.planServices?.Inbox?.follow_up_rate}{' '}
+                                            ={''}
                                             <span className='text-green-600 font-semibold'>
-                                                {symbol}
+                                                {' '}
+                                                {symbol}{' '}
                                                 {(inboxes -
-                                                    (
-                                                        plans[1]?.plan_services[0].service_credit
-                                                            ?.service_credit_rates || []
-                                                    )
-                                                        .filter((rate) => rate?.currency?.short_name === currency)
-                                                        .reduce((acc, rate) => acc + Number(rate?.free_credits), 0)) *
-                                                    plans[1]?.plan_services[0].service_credit?.service_credit_rates
-                                                        ?.filter((rate) => rate?.currency?.short_name === currency)
-                                                        .reduce((acc, rate) => acc + Number(rate?.follow_up_rate), 0)}
+                                                    plansObj[Object.keys(plansObj)[0]]?.planServices?.Inbox
+                                                        ?.free_credits) *
+                                                    Number(
+                                                        plansObj[Object.keys(plansObj)[0]]?.planServices?.Inbox
+                                                            ?.follow_up_rate
+                                                    )}
                                             </span>
                                         </span>
                                     </div>
