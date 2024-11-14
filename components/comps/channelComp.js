@@ -290,10 +290,8 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
             <div
                 className={` my-5  px-sm-0 d-flex flex-column justify-content-center justift-content-sm-start section`}
             >
-                          <span className="container sub-heading c-head   pt-4 pt-md-0 c-fw-b">
-                    {pageData?.featureheading 
-                        ? pageData?.featureheading
-                        : 'Features'}
+                <span className="container sub-heading c-head   pt-4 pt-md-0 c-fw-b">
+                    {pageData?.featureheading ? pageData?.featureheading : 'Features'}
                 </span>
                 {pageData?.features?.map((item, index) => {
                     if (item?.content) {
@@ -321,13 +319,12 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
                 })}
             </div>
             <div className="container">
-            <FaqSection faqData={pageData?.FaqsComp?.faqs} faq={pageData?.faqComp} />
-            
+                <FaqSection faqData={pageData?.FaqsComp?.faqs} faq={pageData?.FaqsComp} />
             </div>
             <Seo path={path} pageData={pageData.pagename} pricingPath={pricingPath} />
 
             <GetStartedSection pricingPath={pricingPath} />
-       
+
             <TrustedBy align={'center'} />
             {pageData.pagename === 'WhatsApp' && (
                 <div>
