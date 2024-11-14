@@ -6,12 +6,15 @@ import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 import Link from 'next/link';
 import getURL from '@/utils/getURL';
+import style from './PricingHello.module.scss';
 
 export default function PricingHello({ data, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
     const [isLoading, setIsLoading] = useState(false);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
+    const [tickets, setTickets] = useState(2000);
+    const [inboxes, setInboxes] = useState(4);
 
     const fetchPlans = useCallback(async () => {
         setIsLoading(true);
@@ -25,7 +28,6 @@ export default function PricingHello({ data, country }) {
     useEffect(() => {
         fetchPlans();
     }, [fetchPlans]);
-
     return (
         <>
             <div className='flex flex-col w-full gap-8'>
@@ -204,6 +206,14 @@ export default function PricingHello({ data, country }) {
                                                             ))}
                                                     </div>
                                                 </div>
+                                                <button
+                                                    className='text-link active-link'
+                                                    onClick={() =>
+                                                        document.getElementById('calculate_hello_pricing').showModal()
+                                                    }
+                                                >
+                                                    Calcualte
+                                                </button>
                                             </div>
                                         );
                                 })
@@ -244,6 +254,216 @@ export default function PricingHello({ data, country }) {
                 <ConnectWithTeam product={'Hello'} href={'hello'} data={data?.connectComp} isPlan={true} />
                 <FaqsComp data={data?.faqComp} notCont={true} />
             </div>
+            {/* // calculate hello pricing */}
+            {plans?.length > 0 && (
+                <dialog id='calculate_hello_pricing' className='modal '>
+                    <div className={`modal-box flex flex-col gap-4 ${style.modal}`}>
+                        <div className='flex justify-between'>
+                            <h2 className='font-bold text-xl'>Calcualte</h2>
+                            <form method='dialog'>
+                                <button className='btn btn-sm btn-circle btn-ghost  right-2 top-2'>✕</button>
+                            </form>
+                        </div>
+                        <div className='flex flex-col gap-4'>
+                            <p className=''>Here you can calculate your monthly expense based on your usage.</p>
+                            <div className='flex gap-6 items-end'>
+                                <label className='form-control w-full flex flex-col gap-1'>
+                                    <span className='label-text'>Monthly Ticket usage</span>
+                                    <input
+                                        type='text'
+                                        placeholder='Monthly Ticket usage'
+                                        className='input input-bordered w-full '
+                                    />
+                                </label>
+
+                                <label className='form-control w-full flex flex-col gap-1'>
+                                    <span className='label-text'>Monthly Inbox usage</span>
+                                    <input
+                                        type='text'
+                                        placeholder='Monthly Inbox usage'
+                                        className='input input-bordered w-full '
+                                    />
+                                </label>
+                                <button className='btn btn-primary'>Calculate</button>
+                            </div>
+                        </div>
+                        <div className='flex flex-col  border rounded'>
+                            <div className='flex flex-col gap-1 py-2'>
+                                <h3 className='px-4 font-medium text-gray-500'>Plan details</h3>
+                                <div className='grid grid-cols-3 bg-gray'>
+                                    <div className='p-4 border-e-2 flex flex-col gap-4'>
+                                        <h4>Plan</h4>
+                                        <h4>Plan charges</h4>
+                                    </div>
+                                    <div className='p-4 border-e-2 flex flex-col gap-4'>
+                                        <span>{plans[1]?.name}</span>
+                                        <span className='font-bold text-green-600'>
+                                            {symbol}
+                                            {plans[1]?.plan_amounts?.length > 0 &&
+                                                plans[1]?.plan_amounts.map((amount) => {
+                                                    if (
+                                                        amount?.currency?.short_name === currency &&
+                                                        amount?.plan_type?.name === tabtype
+                                                    ) {
+                                                        return amount?.plan_amount;
+                                                    }
+                                                })}
+                                        </span>
+                                    </div>
+                                    <div className='p-4 flex flex-col gap-4'>
+                                        <span>{plans[2]?.name}</span>
+                                        <span className='font-bold text-green-600'>
+                                            {' '}
+                                            {symbol}
+                                            {plans[2]?.plan_amounts?.length > 0 &&
+                                                plans[2]?.plan_amounts.map((amount) => {
+                                                    if (
+                                                        amount?.currency?.short_name === currency &&
+                                                        amount?.plan_type?.name === tabtype
+                                                    ) {
+                                                        return amount?.plan_amount;
+                                                    }
+                                                })}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='flex flex-col gap-1 py-2'>
+                                <h3 className='px-4 font-medium text-gray-500'>Included benefits</h3>
+                                <div className='grid grid-cols-3 bg-gray'>
+                                    <div className='p-4 border-e-2 flex flex-col gap-4'>
+                                        <h4>Tickets</h4>
+                                        <h4>Inboxes</h4>
+                                    </div>
+                                    <div className='p-4 border-e-2 flex flex-col gap-4'>
+                                        {plans[1]?.plan_services[1].service_credit?.service_credit_rates?.map(
+                                            (rate, i) =>
+                                                rate?.currency?.short_name === currency && (
+                                                    <span key={i}>{rate?.free_credits}</span>
+                                                )
+                                        )}
+                                        {plans[1]?.plan_services[0].service_credit?.service_credit_rates?.map(
+                                            (rate, i) =>
+                                                rate?.currency?.short_name === currency && (
+                                                    <span key={i}>{rate?.free_credits}</span>
+                                                )
+                                        )}
+                                    </div>
+                                    <div className='p-4 flex flex-col gap-4'>
+                                        {plans[2]?.plan_services[1].service_credit?.service_credit_rates?.map(
+                                            (rate, i) =>
+                                                rate?.currency?.short_name === currency && (
+                                                    <span key={i}>{rate?.free_credits}</span>
+                                                )
+                                        )}
+                                        {plans[2]?.plan_services[0].service_credit?.service_credit_rates?.map(
+                                            (rate, i) =>
+                                                rate?.currency?.short_name === currency && (
+                                                    <span key={i}>{rate?.free_credits}</span>
+                                                )
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='flex flex-col gap-1 py-2'>
+                                <h3 className='px-4 font-medium text-gray-500'>Calculations</h3>
+                                <div className='grid grid-cols-3 bg-gray'>
+                                    <div className='p-4 border-e-2 flex flex-col gap-4'>
+                                        <h4>Extra tickets</h4>
+                                        <h4>Extra tickets charges</h4>
+                                        <h4>Extra inboxes</h4>
+                                        <h4>Extra inboxe charges</h4>
+                                    </div>
+                                    <div className='p-4 border-e-2 flex flex-col gap-4'>
+                                        <span>
+                                            {tickets -
+                                                (plans[1]?.plan_services[1].service_credit?.service_credit_rates || [])
+                                                    .filter((rate) => rate?.currency?.short_name === currency)
+                                                    .reduce((acc, rate) => acc + Number(rate?.free_credits), 0)}
+                                        </span>
+                                        <span>
+                                            {tickets -
+                                                (plans[1]?.plan_services[1].service_credit?.service_credit_rates || [])
+                                                    .filter((rate) => rate?.currency?.short_name === currency)
+                                                    .reduce((acc, rate) => acc + Number(rate?.free_credits), 0)}{' '}
+                                            X{' '}
+                                            {plans[1]?.plan_services[1].service_credit?.service_credit_rates
+                                                ?.filter((rate) => rate?.currency?.short_name === currency)
+                                                .reduce((acc, rate) => acc + Number(rate?.follow_up_rate), 0)}{' '}
+                                            ={' '}
+                                            <span className='text-green-600 font-semibold'>
+                                                {symbol}
+                                                {(tickets -
+                                                    (
+                                                        plans[1]?.plan_services[1].service_credit
+                                                            ?.service_credit_rates || []
+                                                    )
+                                                        .filter((rate) => rate?.currency?.short_name === currency)
+                                                        .reduce((acc, rate) => acc + Number(rate?.free_credits), 0)) *
+                                                    plans[1]?.plan_services[1].service_credit?.service_credit_rates
+                                                        ?.filter((rate) => rate?.currency?.short_name === currency)
+                                                        .reduce((acc, rate) => acc + Number(rate?.follow_up_rate), 0)}
+                                            </span>
+                                        </span>
+                                        <span>
+                                            {inboxes -
+                                                (plans[1]?.plan_services[0].service_credit?.service_credit_rates || [])
+                                                    .filter((rate) => rate?.currency?.short_name === currency)
+                                                    .reduce((acc, rate) => acc + Number(rate?.free_credits), 0)}
+                                        </span>
+                                        <span>
+                                            {inboxes -
+                                                (plans[1]?.plan_services[0].service_credit?.service_credit_rates || [])
+                                                    .filter((rate) => rate?.currency?.short_name === currency)
+                                                    .reduce((acc, rate) => acc + Number(rate?.free_credits), 0)}{' '}
+                                            X{' '}
+                                            {plans[1]?.plan_services[0].service_credit?.service_credit_rates
+                                                ?.filter((rate) => rate?.currency?.short_name === currency)
+                                                .reduce((acc, rate) => acc + Number(rate?.follow_up_rate), 0)}{' '}
+                                            ={' '}
+                                            <span className='text-green-600 font-semibold'>
+                                                {symbol}
+                                                {(inboxes -
+                                                    (
+                                                        plans[1]?.plan_services[0].service_credit
+                                                            ?.service_credit_rates || []
+                                                    )
+                                                        .filter((rate) => rate?.currency?.short_name === currency)
+                                                        .reduce((acc, rate) => acc + Number(rate?.free_credits), 0)) *
+                                                    plans[1]?.plan_services[0].service_credit?.service_credit_rates
+                                                        ?.filter((rate) => rate?.currency?.short_name === currency)
+                                                        .reduce((acc, rate) => acc + Number(rate?.follow_up_rate), 0)}
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div className='p-4 flex flex-col gap-4'>
+                                        <span>2000</span>
+                                        <span>2000</span>
+                                        <span>2000</span>
+                                        <span>2000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='flex flex-col gap-1 pt-2'>
+                                <h3 className='px-4 font-medium text-gray-500'>Total</h3>
+                                <div className='grid grid-cols-3 bg-gray'>
+                                    <div className='p-4 border-e-2 flex flex-col gap-4'>
+                                        <h4>Monthly recurring charges</h4>
+                                    </div>
+                                    <div className='p-4 border-e-2 flex flex-col gap-4'>
+                                        <span className='font-bold text-green-600'>$3,000</span>
+                                        <span>Premium</span>
+                                    </div>
+                                    <div className='p-4 flex flex-col gap-4'>
+                                        <span className='font-bold text-green-600'>$3,000</span>
+                                        <span>Premium</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </dialog>
+            )}
         </>
     );
 }
