@@ -2,11 +2,11 @@ export default function FaqSection({ faqData, faq }) {
     const faqs = faqData;
     return (
         <>
-            <div className=" my-5 d-grid gap-4">
-                <h2 className="c-fs-1">{faq?.heading || `Frequently Asked Questions`}</h2>
-                <div className="accordion" id="accordionExample">
-                    {faqs?.length > 0 &&
-                        faqs.map((data, index) => {
+            {faqs?.length > 0 && (
+                <div className=" my-5 d-grid gap-4">
+                    <h2 className="c-fs-1">{faq?.heading || `Frequently Asked Questions`}</h2>
+                    <div className="accordion" id="accordionExample">
+                        {faqs.map((data, index) => {
                             return (
                                 <div className="accordion-item  border-start-0 border-end-0" key={`heading${index}`}>
                                     <h2 className="accordion-header" id={`heading${index}`}>
@@ -38,8 +38,9 @@ export default function FaqSection({ faqData, faq }) {
                                 </div>
                             );
                         })}
+                    </div>
                 </div>
-            </div>
+            )}
         </>
     );
 }

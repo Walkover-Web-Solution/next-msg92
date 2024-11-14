@@ -483,7 +483,7 @@ const indexComp = ({ pageData, params, pricingPath }) => {
                 <FaqSection faqData={faqData?.main} />
             </div>
 
-            <Seo path={path} pageData={'index'} />
+            <Seo path={path} pageData={'index'} pricingPath={pricingPath} />
 
             <PreFooter pricingPath={pricingPath} />
         </>
