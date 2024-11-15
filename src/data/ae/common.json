@@ -217,9 +217,14 @@
                     "name": "Campaign",
                     "link": "campaign"
                 },
-                {
+              {
                     "name": "OTP",
                     "link": "otp"
+                },
+                {
+                    "name": "OTP-MagicLink",
+                         "link": "otp/magiclink",
+                    "nested": true
                 }
             ]
         },

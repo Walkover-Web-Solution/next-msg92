@@ -4,7 +4,8 @@
         "description": "Enhance user experience with MSG91 OTP Magic Link, providing secure, one-click authentication without the need for manual OTP entry. Simplify sign-ups and boost conversions effortlessly."
     },
     "MagicLinkComp": {
-        "slug": "otp/magiclink",
+             "link": "otp/magiclink",
+                    "nested": true,
         "product": {
             "name": "OTP Magic-link",
             "icon": "/assets/icons/products/otp.svg"
