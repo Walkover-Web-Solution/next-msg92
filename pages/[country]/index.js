@@ -2,7 +2,7 @@ import data from "@/data/content.json";
 import IndexComp from "@/components/comps/indexComponent";
 import availableCountries from "@/data/available-countries.json";
 
-const mainpage = ({ pageData, params, countryList, pricingPath }) => {
+const mainpage = ({ pageData, params, countryList, pricingPath, pathArray }) => {
     var page = pageData?.pagename;
     if (!pageData) {
         return (
@@ -14,7 +14,7 @@ const mainpage = ({ pageData, params, countryList, pricingPath }) => {
     } else if (page === "index") {
         return (
             <>
-                <IndexComp params={params} pageData={pageData} pricingPath={pricingPath} />
+                <IndexComp params={params} pageData={pageData} pricingPath={pricingPath} pathArray={pathArray} />
             </>
         );
     } else {

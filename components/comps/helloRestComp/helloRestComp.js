@@ -5,7 +5,7 @@ import TrusedSection from '@/components/trustedSection/trustedSection';
 import FaqSection from '@/components/faqSection/faqSection';
 import Seo from '@/components/seoComp';
 import GetStartedSection from '@/components/getStartedSection/getStartedSection';
-const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }) => {
+const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page, pathArray }) => {
     path = path ? path.substring(1) : 'global';    
     return (
         <>
@@ -47,7 +47,7 @@ const HelloRestComp = ({ pageData, path, webhookData = null, pricingPath, page }
                     <div className="container">
                         <FaqSection faqData={productData?.faq} />
                     </div>
-                    <Seo path={path} pageData={productData?.product} pricingPath={pricingPath} />
+                    <Seo path={path} pageData={productData?.product} pricingPath={pricingPath} pathArray={pathArray} />
 
                     <GetStartedSection pricingPath={pricingPath} />
                 </div>
