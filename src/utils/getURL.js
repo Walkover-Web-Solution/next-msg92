@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import slugs from '@/data/specialPages.json';
 
-export default function getURL(type, link) {
+export default function getURL(type, link, pageInfo) {
     const router = useRouter();
     const rawPath = router.asPath;
     let pathArray = rawPath.split('?')[0].split('/');
@@ -44,13 +44,38 @@ export default function getURL(type, link) {
         }
     }
 
-    let url = '/';
+    let url = '';
     switch (type) {
         case 'country':
-            if (isGobal) {
-                rowPathArray.splice(1, 0, link);
+            let data;
+
+            try {
+                data = require(`@/data/${link}/${pageInfo?.page}.json`);
+            } catch (err) {
+                data = require(`@/data/notfound.json`);
+            }
+            if (Object.keys(data).length > 0 && Object.keys(data)[0] === 'NotFoundComp') {
+                if (isGobal) {
+                    rowPathArray = ['', link];
+                } else {
+                    rowPathArray = [];
+                }
             } else {
-                rowPathArray[1] = link;
+                if (isGobal) {
+                    if (link === 'global') {
+                        rowPathArray.splice(1, 0, '');
+                    } else {
+                        console.log(link, 'gbl');
+                        rowPathArray.splice(1, 0, link);
+                    }
+                } else {
+                    console.log(link);
+                    if (link === 'global') {
+                        rowPathArray.splice(1, 1);
+                    } else {
+                        rowPathArray[1] = link;
+                    }
+                }
             }
             url = rowPathArray.join('/');
             break;

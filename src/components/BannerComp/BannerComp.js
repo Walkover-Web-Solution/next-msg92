@@ -34,8 +34,6 @@ export default function BannerComp({ pageInfo, data }) {
     let snippet;
     if (snipped?.snipped[pageInfo.page]) {
         snippet = new HTTPSnippet(snipped?.snipped[pageInfo.page]);
-    } else {
-        console.error(`No snippet found for page: ${pageInfo.page}`);
     }
     const code = {
         curl: snippet?.convert('shell', 'curl'),
@@ -67,7 +65,11 @@ export default function BannerComp({ pageInfo, data }) {
                         <p className='suheading'>{data?.subheading}</p>
                     </div>
                     <div className='flex flex-col md:flex-row gap-6'>
-                        <a href={getURL('signup', pageInfo?.page)} target='_blank' className='btn btn-primary btn-md'>
+                        <a
+                            href={getURL('signup', pageInfo?.page, pageInfo)}
+                            target='_blank'
+                            className='btn btn-primary btn-md'
+                        >
                             {data?.getstarted_btn}
                         </a>
                         {data?.schedule_meet && (

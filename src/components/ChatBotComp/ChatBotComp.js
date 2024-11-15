@@ -3,7 +3,7 @@ import getURL from '@/utils/getURL';
 import React, { useState } from 'react';
 import { MdExpandMore, MdExpandLess } from 'react-icons/md';
 
-export default function ChatBotComp({ data }) {
+export default function ChatBotComp({ data, pageInfo }) {
     const [expandedIndex, setExpandedIndex] = useState(null);
 
     const toggleExpand = (index) => {
@@ -21,7 +21,7 @@ export default function ChatBotComp({ data }) {
                     <p className='text-lg uppercase  tracking-widest'>{data?.tagline}</p>
                     <h1 className='text-4xl font-bold'>{data?.heading}</h1>
                     <h2 className='text-xl '>{data?.subheading}</h2>
-                    <a href={getURL('signup', 'whatsapp/chatbot')} target='_blank'>
+                    <a href={getURL('signup', 'whatsapp/chatbot', pageInfo)} target='_blank'>
                         <button className='btn btn-primary'>{data?.getstarted_btn}</button>
                     </a>
                 </div>

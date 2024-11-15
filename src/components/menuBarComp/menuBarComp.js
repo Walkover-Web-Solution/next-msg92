@@ -67,7 +67,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                             return (
                                                                 <Link
                                                                     key={i}
-                                                                    href={getURL('product', product?.slug)}
+                                                                    href={getURL('product', product?.slug, pageInfo)}
                                                                     onClick={() => {
                                                                         setNav('hide');
                                                                         setType('products');
@@ -101,7 +101,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     })}
                                 <div className='flex flex-col gap-2'>
                                     <Link
-                                        href={getURL('pricing', 'hello')}
+                                        href={getURL('pricing', 'hello', pageInfo)}
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -110,7 +110,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         <LinkText customClasses='text-lg'>Pricing</LinkText>
                                     </Link>
                                     <Link
-                                        href={getURL('pricing', 'hello')}
+                                        href={getURL('pricing', 'hello', pageInfo)}
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -119,7 +119,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         <LinkText customClasses='text-lg'>Integrations</LinkText>
                                     </Link>
                                     <Link
-                                        href={getURL('pricing', 'hello')}
+                                        href={getURL('pricing', 'hello', pageInfo)}
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -128,7 +128,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         <LinkText customClasses='text-lg'>API Docs</LinkText>
                                     </Link>
                                     <Link
-                                        href={getURL('pricing', 'hello')}
+                                        href={getURL('pricing', 'hello', pageInfo)}
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -156,7 +156,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                             return (
                                                                 <Link
                                                                     key={i}
-                                                                    href={getURL('product', product?.slug)}
+                                                                    href={getURL('product', product?.slug, pageInfo)}
                                                                     onClick={() => {
                                                                         setNav('hide');
                                                                         setType('products');

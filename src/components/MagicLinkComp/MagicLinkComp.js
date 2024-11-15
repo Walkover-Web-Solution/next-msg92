@@ -25,7 +25,7 @@ export default function MagicLinkComp({ data }) {
                     <p className='text-lg'>{data?.tagline?.toUpperCase()}</p>
                     <h1 className='text-4xl font-bold '>{data?.heading}</h1>
                     <h2 className='text-xl '>{data?.subheading}</h2>
-                    <a href={getURL('signup', 'magic-link')} target='_blank'>
+                    <a href={getURL('signup', 'magic-link', pageInfo)} target='_blank'>
                         <button className='btn btn-primary'>{data?.getstarted_btn}</button>
                     </a>
                 </div>
