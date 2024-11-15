@@ -6,7 +6,7 @@ import ChannelComponent from '@/components/comps/channelComp';
 import HelloRestComp from '@/components/comps/helloRestComp/helloRestComp';
 import availableCountries from '@/data/available-countries.json';
 
-const mainpage = ({ pageData, params, path, pricingPath }) => {
+const mainpage = ({ pageData, params, path, pricingPath, pathArray }) => {
     var page = pageData?.pagename;
     var Dataa = pageData;
     var channels = ['SMS', 'RCS', 'Email', 'WhatsApp', 'Voice', 'Numbers'];
@@ -21,7 +21,7 @@ const mainpage = ({ pageData, params, path, pricingPath }) => {
     } else if (page === 'index') {
         return (
             <>
-                <IndexComp params={params} pricingPath={pricingPath} />
+                <IndexComp params={params} pricingPath={pricingPath} pathArray={pathArray} />
             </>
         );
     } else {
@@ -29,7 +29,7 @@ const mainpage = ({ pageData, params, path, pricingPath }) => {
             return (
                 <>
                     <div>
-                        <ChannelComponent pageData={Dataa} path={path} pricingPath={pricingPath} />
+                        <ChannelComponent pageData={Dataa} path={path} pricingPath={pricingPath} pathArray={pathArray} />
                     </div>
                 </>
             );
@@ -38,7 +38,7 @@ const mainpage = ({ pageData, params, path, pricingPath }) => {
                 return (
                     <>
                         <div>
-                            <HelloNewComponent pageData={Dataa} path={path} pricingPath={pricingPath} />
+                            <HelloNewComponent pageData={Dataa} path={path} pricingPath={pricingPath} pathArray={pathArray} />
                         </div>
                     </>
                 );
@@ -48,9 +48,9 @@ const mainpage = ({ pageData, params, path, pricingPath }) => {
                     <>
                         <div>
                             {params?.pageslug === 'hello' ? (
-                                <HelloRestComp pageData={Dataa} path={path} pricingPath={pricingPath} />
+                                <HelloRestComp pageData={Dataa} path={path} pricingPath={pricingPath} pathArray={pathArray}/>
                             ) : ( 
-                                <ProductComponent pageData={Dataa} path={path} pricingPath={pricingPath} />
+                                <ProductComponent pageData={Dataa} path={path} pricingPath={pricingPath} pathArray={pathArray} />
                             )}
                         </div>
                     </>

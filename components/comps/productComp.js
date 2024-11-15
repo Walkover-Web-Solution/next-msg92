@@ -6,7 +6,7 @@ import Seo from '../seoComp';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import FaqSection from '../faqSection/faqSection';
 
-const ProductComponent = ({ pageData, path, webhookData = null, pricingPath }) => {
+const ProductComponent = ({ pageData, path, webhookData = null, pricingPath, pathArray }) => {
     var i = 0;
     return (
         <div>
@@ -104,7 +104,7 @@ const ProductComponent = ({ pageData, path, webhookData = null, pricingPath }) =
             <div className='container'>
             <FaqSection faqData={pageData?.FaqsComp?.faqs} faq={pageData?.faqComp} />
             </div>
-            <Seo path={path} pageData={pageData?.pagename} pricingPath={pricingPath} />
+            <Seo path={path} pageData={pageData?.pagename} pricingPath={pricingPath} pathArray={pathArray}/>
             <PreFooter pricingPath={pricingPath} pageName={pageData?.pagename} />
         </div>
     );

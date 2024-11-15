@@ -10,7 +10,7 @@ import { InlineWidget } from 'react-calendly';
 import GetStartedSection from '../getStartedSection/getStartedSection';
 import FaqSection from '../faqSection/faqSection';
 
-const ChannelComponent = ({ pageData, path, pricingPath }) => {
+const ChannelComponent = ({ pageData, path, pricingPath, pathArray }) => {
     var HTTPSnippet = require('httpsnippet');
     var i = 0;
     const [isCopied, setIsCopied] = useState(false);
@@ -41,7 +41,6 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
     const php = snippet.convert('php');
     const python = snippet.convert('python');
     const ruby = snippet.convert('ruby');
-
     return (
         <div>
             <div className="container text-center overflow-hidden d-flex flex-column gap-4">
@@ -321,7 +320,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
             <div className="container">
                 <FaqSection faqData={pageData?.FaqsComp?.faqs} faq={pageData?.FaqsComp} />
             </div>
-            <Seo path={path} pageData={pageData.pagename} pricingPath={pricingPath} />
+            <Seo path={path} pageData={pageData.pagename} pricingPath={pricingPath}  pathArray={pathArray}/>
 
             <GetStartedSection pricingPath={pricingPath} />
 
@@ -358,6 +357,7 @@ const ChannelComponent = ({ pageData, path, pricingPath }) => {
             )}
         </div>
     );
+
 };
 
 export default ChannelComponent;

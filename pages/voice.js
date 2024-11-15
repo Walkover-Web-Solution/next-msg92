@@ -3,11 +3,11 @@ import React from 'react';
 import ChannelComponent from '@/components/comps/channelComp';
 import json from "../data/content.json"; 
 
-const ParentComponent = ({pricingPath}) => {
+const ParentComponent = ({pricingPath, pathArray}) => {
   const data = json.global.voice;  
   return (
     <>    
-      <ChannelComponent pageData={data} pricingPath={pricingPath}/>    
+      <ChannelComponent pageData={data} pricingPath={pricingPath} pathArray={pathArray}/>    
     </>
   );
 };
