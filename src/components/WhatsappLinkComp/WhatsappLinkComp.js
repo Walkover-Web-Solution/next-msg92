@@ -5,7 +5,6 @@ import style from './WhatsappLinkComp.module.scss';
 import GetMdIcons from '@/utils/getMdIcons';
 import { MdChevronRight, MdCopyAll, MdDownload } from 'react-icons/md';
 const ParentComponent = ({ data }) => {
-    console.log('🚀 ~ ParentComponent ~ data:', data);
     useEffect(() => {
         var qrcode = new QRCode(document.getElementById('qrcode'), {
             width: 150,

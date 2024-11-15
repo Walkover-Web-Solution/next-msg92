@@ -3,7 +3,7 @@ export default function getPageInfo(params) {
     let country = 'global';
     let page = 'home';
     let pathArray = params?.slug || [];
-
+    let pathURL = pathArray.join('/');
     if (params?.slug && params?.slug.length > 1) {
         if (availableCountries.some((c) => c.shortname.toLowerCase() === params?.slug[0])) {
             country = params?.slug[0];
@@ -17,5 +17,5 @@ export default function getPageInfo(params) {
         page = params?.slug[0];
     }
 
-    return { country, page, pathArray };
+    return { country, page, pathArray, pathURL };
 }

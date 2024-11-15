@@ -220,7 +220,6 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                 {nav === 'show' && (
                     <div
                         onMouseEnter={() => {
-                            console.log('Mouse entered overlay');
                             setNav('hide');
                             setType('products');
                         }}

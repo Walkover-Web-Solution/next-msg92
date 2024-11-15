@@ -65,11 +65,9 @@ export default function getURL(type, link, pageInfo) {
                     if (link === 'global') {
                         rowPathArray.splice(1, 0, '');
                     } else {
-                        console.log(link, 'gbl');
                         rowPathArray.splice(1, 0, link);
                     }
                 } else {
-                    console.log(link);
                     if (link === 'global') {
                         rowPathArray.splice(1, 1);
                     } else {

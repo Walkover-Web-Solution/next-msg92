@@ -5,10 +5,8 @@ export default function PostItem({ post }) {
         let textLength = titleText?.length;
         let wordLength = titleText?.split(' ').length;
         if (wordLength > 8) {
-            console.log(textLength, wordLength);
             return ' blog-card__large';
         } else {
-            console.log(titleText);
             return ' blog-card__small';
         }
     }
