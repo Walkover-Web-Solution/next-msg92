@@ -98,6 +98,12 @@ export default function getURL(type, link, pageInfo) {
             url = rowPathArray.join('/');
             break;
 
+        case 'global':
+            rowPathArray = ['', link];
+
+            url = rowPathArray.join('/');
+            break;
+
         case 'terms':
             rowPathArray = ['', link];
             url = rowPathArray.join('/');

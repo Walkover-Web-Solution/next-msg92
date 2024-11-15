@@ -34,5 +34,17 @@
         "es",
         "gb",
         "us"
+    ],
+    "pricing": [
+        "hello",
+        "campaign",
+        "segmento",
+        "otp",
+        "sms",
+        "rcs",
+        "email",
+        "whatsapp",
+        "voice",
+        "otpwidget"
     ]
 }

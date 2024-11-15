@@ -94,7 +94,10 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         {componentData?.discover?.links.map((link, index) => {
                                             return (
                                                 <li key={index} className='text-link-white'>
-                                                    <Link href={link?.link} className='text-gray-200'>
+                                                    <Link
+                                                        href={getURL('global', link?.link, pageInfo)}
+                                                        className='text-gray-200'
+                                                    >
                                                         {link?.name}
                                                     </Link>
                                                 </li>
