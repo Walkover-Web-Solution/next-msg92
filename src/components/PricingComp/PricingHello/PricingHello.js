@@ -16,6 +16,7 @@ export default function PricingHello({ data, country }) {
     const [plansObj, setPlansObj] = useState({});
     const [inboxes, setInboxes] = useState(0);
     const [tickets, setTickets] = useState(0);
+    const [showCalculations, setShowCalculations] = useState(false);
     const [rawInboxes, setRawInboxes] = useState(0);
     const [rawTickets, setRawTickets] = useState(0);
 
@@ -28,8 +29,11 @@ export default function PricingHello({ data, country }) {
         setIsLoading(false);
     }, []);
     const onCalculate = () => {
-        setTickets(rawTickets);
-        setInboxes(rawInboxes);
+        if (rawInboxes > 0 || rawTickets > 0) {
+            setShowCalculations(true);
+            setTickets(rawTickets);
+            setInboxes(rawInboxes);
+        }
     };
     useEffect(() => {
         fetchPlans();
@@ -79,72 +83,9 @@ export default function PricingHello({ data, country }) {
                         },
 
                         extra: {
-                            'Inbox':
+                            'Inbox': Math.max(
+                                0,
                                 inboxes -
-                                plan.plan_services
-                                    .map((service) =>
-                                        service?.service_credit?.service_credit_rates?.find(
-                                            (rate) => rate?.currency?.short_name === currency
-                                        )
-                                            ? service
-                                            : null
-                                    )
-                                    ?.filter((service) => service?.service_credit?.service?.name === 'Inbox')[0]
-                                    ?.service_credit?.service_credit_rates?.filter(
-                                        (service) => service?.currency?.short_name === currency
-                                    )[0].free_credits,
-
-                            'Tickets':
-                                tickets -
-                                plan.plan_services
-                                    .map((service) =>
-                                        service?.service_credit?.service_credit_rates?.find(
-                                            (rate) => rate?.currency?.short_name === currency
-                                        )
-                                            ? service
-                                            : null
-                                    )
-                                    ?.filter((service) => service?.service_credit?.service?.name === 'Tickets')[0]
-                                    ?.service_credit?.service_credit_rates?.filter(
-                                        (service) => service?.currency?.short_name === currency
-                                    )[0].free_credits,
-                        },
-
-                        extra: {
-                            'Inbox':
-                                inboxes -
-                                plan.plan_services
-                                    .map((service) =>
-                                        service?.service_credit?.service_credit_rates?.find(
-                                            (rate) => rate?.currency?.short_name === currency
-                                        )
-                                            ? service
-                                            : null
-                                    )
-                                    ?.filter((service) => service?.service_credit?.service?.name === 'Inbox')[0]
-                                    ?.service_credit?.service_credit_rates?.filter(
-                                        (service) => service?.currency?.short_name === currency
-                                    )[0].free_credits,
-
-                            'Tickets':
-                                tickets -
-                                plan.plan_services
-                                    .map((service) =>
-                                        service?.service_credit?.service_credit_rates?.find(
-                                            (rate) => rate?.currency?.short_name === currency
-                                        )
-                                            ? service
-                                            : null
-                                    )
-                                    ?.filter((service) => service?.service_credit?.service?.name === 'Tickets')[0]
-                                    ?.service_credit?.service_credit_rates?.filter(
-                                        (service) => service?.currency?.short_name === currency
-                                    )[0].free_credits,
-                        },
-
-                        extraCharges: {
-                            'Inbox':
-                                (inboxes -
                                     plan.plan_services
                                         .map((service) =>
                                             service?.service_credit?.service_credit_rates?.find(
@@ -156,7 +97,45 @@ export default function PricingHello({ data, country }) {
                                         ?.filter((service) => service?.service_credit?.service?.name === 'Inbox')[0]
                                         ?.service_credit?.service_credit_rates?.filter(
                                             (service) => service?.currency?.short_name === currency
-                                        )[0].free_credits) *
+                                        )[0].free_credits
+                            ),
+
+                            'Tickets': Math.max(
+                                0,
+                                tickets -
+                                    plan.plan_services
+                                        .map((service) =>
+                                            service?.service_credit?.service_credit_rates?.find(
+                                                (rate) => rate?.currency?.short_name === currency
+                                            )
+                                                ? service
+                                                : null
+                                        )
+                                        ?.filter((service) => service?.service_credit?.service?.name === 'Tickets')[0]
+                                        ?.service_credit?.service_credit_rates?.filter(
+                                            (service) => service?.currency?.short_name === currency
+                                        )[0].free_credits
+                            ),
+                        },
+
+                        extraCharges: {
+                            'Inbox':
+                                Math.max(
+                                    0,
+                                    inboxes -
+                                        plan.plan_services
+                                            .map((service) =>
+                                                service?.service_credit?.service_credit_rates?.find(
+                                                    (rate) => rate?.currency?.short_name === currency
+                                                )
+                                                    ? service
+                                                    : null
+                                            )
+                                            ?.filter((service) => service?.service_credit?.service?.name === 'Inbox')[0]
+                                            ?.service_credit?.service_credit_rates?.filter(
+                                                (service) => service?.currency?.short_name === currency
+                                            )[0].free_credits
+                                ) *
                                 plan.plan_services
                                     .map((service) =>
                                         service?.service_credit?.service_credit_rates?.find(
@@ -171,19 +150,24 @@ export default function PricingHello({ data, country }) {
                                     )[0].follow_up_rate,
 
                             'Tickets':
-                                (tickets -
-                                    plan.plan_services
-                                        .map((service) =>
-                                            service?.service_credit?.service_credit_rates?.find(
-                                                (rate) => rate?.currency?.short_name === currency
+                                Math.max(
+                                    0,
+                                    tickets -
+                                        plan.plan_services
+                                            .map((service) =>
+                                                service?.service_credit?.service_credit_rates?.find(
+                                                    (rate) => rate?.currency?.short_name === currency
+                                                )
+                                                    ? service
+                                                    : null
                                             )
-                                                ? service
-                                                : null
-                                        )
-                                        ?.filter((service) => service?.service_credit?.service?.name === 'Tickets')[0]
-                                        ?.service_credit?.service_credit_rates?.filter(
-                                            (service) => service?.currency?.short_name === currency
-                                        )[0].free_credits) *
+                                            ?.filter(
+                                                (service) => service?.service_credit?.service?.name === 'Tickets'
+                                            )[0]
+                                            ?.service_credit?.service_credit_rates?.filter(
+                                                (service) => service?.currency?.short_name === currency
+                                            )[0].free_credits
+                                ) *
                                 plan.plan_services
                                     .map((service) =>
                                         service?.service_credit?.service_credit_rates?.find(
@@ -201,11 +185,9 @@ export default function PricingHello({ data, country }) {
                     setPlansObj(acc);
                     return acc;
                 }, {});
-            console.log(plansObj);
         }
     }, [plans, tickets, inboxes]);
 
-    console.log(Object.keys(plansObj)[0]);
     return (
         <>
             <div className='flex flex-col w-full gap-8'>
@@ -384,14 +366,18 @@ export default function PricingHello({ data, country }) {
                                                             ))}
                                                     </div>
                                                 </div>
-                                                <button
-                                                    className='text-link active-link'
-                                                    onClick={() =>
-                                                        document.getElementById('calculate_hello_pricing').showModal()
-                                                    }
-                                                >
-                                                    Calculate
-                                                </button>
+                                                {plan?.name !== 'Free' && (
+                                                    <button
+                                                        className='text-link active-link'
+                                                        onClick={() =>
+                                                            document
+                                                                .getElementById('calculate_hello_pricing')
+                                                                .showModal()
+                                                        }
+                                                    >
+                                                        Calculate
+                                                    </button>
+                                                )}
                                             </div>
                                         );
                                 })
@@ -478,7 +464,7 @@ export default function PricingHello({ data, country }) {
                                 </button>
                             </div>
                         </div>
-                        <div className='flex flex-col  border rounded'>
+                        <div className={`${showCalculations ? 'flex' : 'hidden'} flex-col  border rounded`}>
                             <div className='flex flex-col gap-1 py-2'>
                                 <h3 className='px-4 font-medium text-gray-500'>Plan details</h3>
                                 <div className='grid grid-cols-3 bg-gray'>
@@ -535,55 +521,77 @@ export default function PricingHello({ data, country }) {
                                         <h4>Extra inboxes</h4>
                                         <h4>Extra inboxe charges</h4>
                                     </div>
-                                    <div className='p-4 border-e-2 flex flex-col gap-4'>
+                                    <div className='p-4 flex flex-col gap-4'>
                                         <span>{plansObj[Object.keys(plansObj)[0]]?.extra?.Tickets}</span>
-                                        <span>
-                                            {plansObj[Object.keys(plansObj)[0]]?.extra?.Tickets} X{' '}
-                                            {plansObj[Object.keys(plansObj)[0]]?.planServices?.Tickets?.follow_up_rate}{' '}
-                                            ={''}
-                                            <span className='text-green-600 font-semibold'>
-                                                {' '}
-                                                {symbol} {plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Tickets}
+                                        {plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Tickets !== 0 ? (
+                                            <span>
+                                                {plansObj[Object.keys(plansObj)[0]]?.extra?.Tickets} X{' '}
+                                                {
+                                                    plansObj[Object.keys(plansObj)[0]]?.planServices?.Tickets
+                                                        ?.follow_up_rate
+                                                }{' '}
+                                                =
+                                                <span className='text-green-600 font-semibold'>
+                                                    {''} {symbol}{' '}
+                                                    {plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Tickets}
+                                                </span>
                                             </span>
-                                        </span>
-                                        <span>
-                                            {inboxes -
-                                                plansObj[Object.keys(plansObj)[0]]?.planServices?.Inbox?.free_credits}
-                                        </span>
-                                        <span>
-                                            {plansObj[Object.keys(plansObj)[0]]?.extra?.Inbox} X{' '}
-                                            {plansObj[Object.keys(plansObj)[0]]?.planServices?.Inbox?.follow_up_rate} =
-                                            {''}
-                                            <span className='text-green-600 font-semibold'>
-                                                {' '}
-                                                {symbol} {plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Inbox}
+                                        ) : (
+                                            <span>-</span>
+                                        )}
+                                        <span>{plansObj[Object.keys(plansObj)[0]]?.extra?.Inbox}</span>
+                                        {plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Inbox !== 0 ? (
+                                            <span>
+                                                {plansObj[Object.keys(plansObj)[0]]?.extra?.Inbox} X{' '}
+                                                {
+                                                    plansObj[Object.keys(plansObj)[0]]?.planServices?.Inbox
+                                                        ?.follow_up_rate
+                                                }{' '}
+                                                ={''}
+                                                <span className='text-green-600 font-semibold'>
+                                                    {' '}
+                                                    {symbol} {plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Inbox}
+                                                </span>
                                             </span>
-                                        </span>
+                                        ) : (
+                                            <span>-</span>
+                                        )}
                                     </div>
                                     <div className='p-4 flex flex-col gap-4'>
                                         <span>{plansObj[Object.keys(plansObj)[1]]?.extra?.Tickets}</span>
-                                        <span>
-                                            {plansObj[Object.keys(plansObj)[1]]?.extra?.Tickets} X{' '}
-                                            {plansObj[Object.keys(plansObj)[1]]?.planServices?.Tickets?.follow_up_rate}{' '}
-                                            ={''}
-                                            <span className='text-green-600 font-semibold'>
-                                                {' '}
-                                                {symbol} {plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Tickets}
+                                        {plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Tickets !== 0 ? (
+                                            <span>
+                                                {plansObj[Object.keys(plansObj)[1]]?.extra?.Tickets} X{' '}
+                                                {
+                                                    plansObj[Object.keys(plansObj)[1]]?.planServices?.Tickets
+                                                        ?.follow_up_rate
+                                                }{' '}
+                                                ={''}
+                                                <span className='text-green-600 font-semibold'>
+                                                    {''} {symbol}{' '}
+                                                    {plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Tickets}
+                                                </span>
                                             </span>
-                                        </span>
-                                        <span>
-                                            {inboxes -
-                                                plansObj[Object.keys(plansObj)[1]]?.planServices?.Inbox?.free_credits}
-                                        </span>
-                                        <span>
-                                            {plansObj[Object.keys(plansObj)[1]]?.extra?.Inbox} X{' '}
-                                            {plansObj[Object.keys(plansObj)[1]]?.planServices?.Inbox?.follow_up_rate} =
-                                            {''}
-                                            <span className='text-green-600 font-semibold'>
-                                                {' '}
-                                                {symbol} {plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Inbox}
+                                        ) : (
+                                            <span>-</span>
+                                        )}
+                                        <span>{plansObj[Object.keys(plansObj)[1]]?.extra?.Inbox}</span>
+                                        {plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Inbox !== 0 ? (
+                                            <span>
+                                                {plansObj[Object.keys(plansObj)[1]]?.extra?.Inbox} X{' '}
+                                                {
+                                                    plansObj[Object.keys(plansObj)[1]]?.planServices?.Inbox
+                                                        ?.follow_up_rate
+                                                }{' '}
+                                                ={''}
+                                                <span className='text-green-600 font-semibold'>
+                                                    {' '}
+                                                    {symbol} {plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Inbox}
+                                                </span>
                                             </span>
-                                        </span>
+                                        ) : (
+                                            <span>-</span>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -611,7 +619,7 @@ export default function PricingHello({ data, country }) {
                                                 plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Tickets +
                                                 plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Inbox}
                                         </span>
-                                        <span>Premium</span>
+                                        <span>{currency === 'INR' ? 'Excluding 18% GST' : ''}</span>
                                     </div>
                                 </div>
                             </div>
