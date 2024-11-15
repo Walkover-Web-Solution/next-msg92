@@ -47,7 +47,7 @@
         "voice",
         "otpwidget"
     ],
-    "nested":[
+    "nested": [
         "whatsapp/chatbot",
         "in/whatsapp/chatbot",
         "br/whatsapp/chatbot",
@@ -57,6 +57,8 @@
         "sg/whatsapp/chatbot",
         "es/whatsapp/chatbot",
         "gb/whatsapp/chatbot",
-        "us/whatsapp/chatbot"
+        "us/whatsapp/chatbot",
+        "otp/magiclink",
+        "in/otp/magiclink"
     ]
 }
