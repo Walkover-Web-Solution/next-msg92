@@ -9,7 +9,7 @@ import InRcs from './seo/inRcs';
 
 const Seo = ({ path, pricingPath, pageData, pathArray }) => {
     let seoComponent = null;
-const country = pathArray[1];
+const country = pathArray?.length > 1 &&  pathArray[1];
     if (country === 'in') {
         switch (pageData) {
             case 'index':
