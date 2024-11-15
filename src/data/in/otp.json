@@ -1,67 +1,87 @@
-{ "HeadComp": {
+{
+  "HeadComp": {
     "title": "OTP Authentication API | OTP SMS Service Provider in India -MSG91-India",
-    "description":"OTP Service Provider - Consume simple API’s and give secure OTP with 2FA's and validations to your website and applications by using MSG91s best otp api service."
-  }, 
-         "BannerComp": {
-          "slug": "otp",
-          "product": {
-              "name": "OTP",
-              "icon": "/assets/icons/products/otp.svg"
-          },
-          "tagline": "Instant Secure Verification",
-          "heading": "Verify users quickly and effectively via SMS, WhatsApp Auth, email, or voice.",
-          "subheading":"Build customer trust and enable business protection with two-factor authentication.",
-          "banner_img": "/assets/global/otp/otp.svg",
-          "getstarted_btn": "Get Started For Free",
-          "trustedByComp": {
-            "heading": "Trusted by 30,000+ global businesses",
-            "logos":  [
-              {"name": "Xiaomi", "url": "/assets/trusted_by/xiaomi.svg"},
-              {"name": "Unacademy", "url": "/assets/trusted_by/unacademy.svg"},
-              {"name": "Dream11", "url": "/assets/trusted_by/dream11.svg"},
-              {"name": "Indeed", "url": "/assets/trusted_by/indeed.svg"},
-              {"name": "Indian Oil", "url": "/assets/trusted_by/indianoil.svg"},
-              {"name": "Ixigo", "url": "/assets/trusted_by/ixigo.svg"}
-            ]
-        }
-      
+    "description": "OTP Service Provider - Consume simple API’s and give secure OTP with 2FA's and validations to your website and applications by using MSG91s best otp api service."
+  },
+  "BannerComp": {
+    "slug": "otp",
+    "product": {
+      "name": "OTP",
+      "icon": "/assets/icons/products/otp.svg"
+    },
+    "tagline": "Instant Secure Verification",
+    "heading": "Verify users quickly and effectively via SMS, WhatsApp Auth, email, or voice.",
+    "subheading": "Build customer trust and enable business protection with two-factor authentication.",
+    "banner_img": "/assets/global/otp/otp.svg",
+    "getstarted_btn": "Get Started For Free"
+
+  },
+  "FeatureComp": {
+    "heading": "Features",
+    "iconColor": "text-otp",
+    "features": [
+      {
+        "name": "Simple as Login With Google",
+        "content": "<strong>Login with OTP is as simple as login with Gmail</strong>Give your users a fast, non-disruptive and simple authentication experience. Implement login with OTP by entering your mobile number or email address to receive OTP via SMS or email.",
+        "img": "/assets/global/otp/otp-simple-login.svg"
       },
-      "FeatureComp":{ 
-        "heading": "Features",
-          "iconColor": "text-otp",
-          "features":[
-        { "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-          "name": "Simple as Login With Google",
-          "content": "<strong>Login with OTP is as simple as login with Gmail</strong>Give your users a fast, non-disruptive and simple authentication experience. Implement login with OTP by entering your mobile number or email address to receive OTP via SMS or email.",
-          "img": "/assets/global/otp/otp-simple-login.svg"
-        },
-        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-          "name": "Inbuilt IP Security",
-          "content": "<strong>Protect against fraud, hacks, validation, blocking</strong> Minimize fraud with an extra layer of security. The inbuilt security ensures that when a login is risky the flow does not allow the bad actor to login by viewing it as potentially fraudulent.",
-          "img":  "/assets/global/otp/otp-inbuilt-ip-security.svg"
-        },
-        {"icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
-          "name": "Support multiple channels",
-          "content": "<strong>Build customer trust and increase conversion across multiple channels</strong> Authenticate your users on channels they prefer. We support multiple channels including SMS, email, Voice,<a href='/in/whatsapp'>WhatsApp</a>  giving businesses and users the flexibility they need to authenticate.",
-          "img": "/assets/global/otp/otp-support-multiple-channels.svg"
-        }]
+      {
+        "name": "Inbuilt IP Security",
+        "content": "<strong>Protect against fraud, hacks, validation, blocking</strong> Minimize fraud with an extra layer of security. The inbuilt security ensures that when a login is risky the flow does not allow the bad actor to login by viewing it as potentially fraudulent.",
+        "img": "/assets/global/otp/otp-inbuilt-ip-security.svg"
       },
-      "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
-        "buttons": {
-            "contactSales": {
-                "text": "Contact sales",
-                "link": "/contact-us"
-            },
-            "pricing": {
-                "text": "Pricing",
-                "link": "/pricing/"
-            },
-            "getStarted": {
-                "text": "Get started",
-                "link": "https://control.msg91.com/signup/"
-            }
-        }
+      {
+        "name": "Support multiple channels",
+        "content": "<strong>Build customer trust and increase conversion across multiple channels</strong> Authenticate your users on channels they prefer. We support multiple channels including SMS, email, Voice,<a href='/in/whatsapp'>WhatsApp</a>  giving businesses and users the flexibility they need to authenticate.",
+        "img": "/assets/global/otp/otp-support-multiple-channels.svg"
+      }
+    ]
+  },
+  "TrustedByComp": {
+    "heading": "Trusted by 30,000+ global businesses",
+    "fullwidth": true,
+    "logos": [
+      {
+        "name": "Razorpay",
+        "url": "/assets/trusted_by/razorpay.svg"
+      },
+      {
+        "name": "Xiaomi",
+        "url": "/assets/trusted_by/xiaomi.svg"
+      },
+      {
+        "name": "Unacademy",
+        "url": "/assets/trusted_by/unacademy.svg"
+      },
+      {
+        "name": "Dream11",
+        "url": "/assets/trusted_by/dream11.svg"
+      },
+      {
+        "name": "Indeed",
+        "url": "/assets/trusted_by/indeed.svg"
+      },
+      {
+        "name": "Ixigo",
+        "url": "/assets/trusted_by/ixigo.svg"
+      }
+    ]
+  },
+  "PreFooterComp": {
+    "content": "Start building your ideal customer engagement experience",
+    "buttons": {
+      "contactSales": {
+        "text": "Contact sales",
+        "link": "/contact-us"
+      },
+      "pricing": {
+        "text": "Pricing",
+        "link": "/pricing/"
+      },
+      "getStarted": {
+        "text": "Get started",
+        "link": "https://control.msg91.com/signup/"
+      }
     }
-    }
-    
+  }
+}

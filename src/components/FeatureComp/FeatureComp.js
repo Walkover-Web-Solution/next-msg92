@@ -22,7 +22,7 @@ export default function FeatureComp({ data }) {
                                     <div className='flex flex-col gap-2'>
                                         {feature?.icon && <Icon className='text-5xl text-[#F7DC6F]' />}
 
-                                        <span className='text-2xl font-semibold'>{feature?.name}</span>
+                                        <h3 className='text-2xl font-semibold'>{feature?.name}</h3>
                                         <span className='flex text-lg'>
                                             <span className='font-bold'>{feature?.subheading} </span>
                                             <span dangerouslySetInnerHTML={{ __html: feature?.content }}></span>

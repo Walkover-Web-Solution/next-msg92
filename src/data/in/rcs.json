@@ -15,31 +15,7 @@
     "subheading": "RCS messaging is an integrated channel that enables businesses to engage customers through rich, immersive, two-way conversations.",
     "banner_img": "/assets/global/hello/banner.webp",
     "getstarted_btn": "Get Started",
-    "trustedByComp": {
-      "heading": "Trusted by 30,000+ global businesses",
-      "logos": [
-        {
-          "name": "Xiaomi",
-          "url": "/assets/trusted_by/xiaomi.svg"
-        },
-        {
-          "name": "Unacademy",
-          "url": "/assets/trusted_by/unacademy.svg"
-        },
-        {
-          "name": "Dream11",
-          "url": "/assets/trusted_by/dream11.svg"
-        },
-        {
-          "name": "Indeed",
-          "url": "/assets/trusted_by/indeed.svg"
-        },
-        {
-          "name": "Ixigo",
-          "url": "/assets/trusted_by/ixigo.svg"
-        }
-      ]
-    }
+    "text_h2": "RCS Example API:"
   },
   "FeatureComp": {
     "heading": "Features of Google RCS Messages",
@@ -71,6 +47,41 @@
       }
     ]
   },
+  "TrustedByComp": {
+    "heading": "Trusted by 30,000+ global businesses",
+    "fullwidth": true,
+    "logos": [
+      {
+        "name": "Razorpay",
+        "url": "/assets/trusted_by/razorpay.svg"
+      },
+      {
+        "name": "Xiaomi",
+        "url": "/assets/trusted_by/xiaomi.svg"
+      },
+      {
+        "name": "Unacademy",
+        "url": "/assets/trusted_by/unacademy.svg"
+      },
+      {
+        "name": "Dream11",
+        "url": "/assets/trusted_by/dream11.svg"
+      },
+      {
+        "name": "Indeed",
+        "url": "/assets/trusted_by/indeed.svg"
+      },
+      {
+        "name": "Ixigo",
+        "url": "/assets/trusted_by/ixigo.svg"
+      }
+    ]
+  },
+  "SEOComp": {
+    "heading": "What is RCS messaging?",
+    "description": "RCS (Rich Communication Services) is an upgrade to SMS, offering features like read receipts, typing indicators, multimedia sharing, and interactive buttons for a more engaging messaging experience.",
+    "data": "<div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">What is RCS messaging?</h2><p>RCS (Rich Communication Services) is an upgrade to SMS, offering features like read receipts, typing indicators, multimedia sharing, and interactive buttons for a more engaging messaging experience.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">How to send RCS messages</h2><p>To send RCS messages using an API, you can use MSG91's services. With MSG91, businesses can integrate RCS messaging directly into their applications to reach customers more interactively. Alternatively, to send RCS messages on mobile, you can use an RCS-enabled app like Google Messages. Both the sender and recipient need to have RCS activated through their carrier or app settings for messages to be delivered with RCS features.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">Is RCS available in India?</h2><p>Yes, RCS messaging is available in India through major carriers and supported apps, including Google Messages.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">How to send RCS messages on Android</h2><p>Open Google Messages and go to Settings. Enable \"Chat features\" (RCS). Start a conversation with RCS-enabled contacts.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">How to send RCS messages on iPhone</h2><p>Currently, iPhones do not natively support RCS. However, RCS features can be accessed through third-party apps on both iPhone, although they are less common.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">How to Send RCS Messages Using MSG91</h2><ul class='list-decimal'><li>Sign Up on MSG91: Create an account on MSG91, an RCS messaging provider.</li><li>Set Up RCS Messaging: Contact MSG91 to enable RCS for your business account. You’ll get API access for RCS messaging.</li><li>Configure API Integration: Use MSG91's RCS API documentation to integrate RCS with your application or CRM for automated messaging.</li><li>Compose and Send Messages: Customize your message with images, videos, carousels, or buttons, and send them directly to RCS-enabled contacts.</li><li>Track Engagement: Monitor message delivery, read receipts, and customer responses to enhance engagement.</li></ul></div>"
+},
   "PreFooterComp": {
     "content": "Start building your ideal customer engagement experience",
     "buttons": {

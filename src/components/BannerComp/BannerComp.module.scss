@@ -1,12 +1,12 @@
 .cont {
     height: 100%;
+    @apply overflow-hidden w-1/2
 
 }
 .img {
     @apply w-full lg:w-[1000px] lg:absolute;
     @media (min-width: 1024px) {
         margin: 0 auto;
-
     }
 }
 .homeimg {

@@ -7,8 +7,8 @@ export default function FactsComp({ data }) {
                         data.map((stat, index) => {
                             return (
                                 <div key={index} className='flex flex-col text-center '>
-                                    <h2 className='text-3xl font-bold mb-4'>{stat?.fact}</h2>
-                                    <h3 className='text-xl'>{stat?.stat}</h3>
+                                    <h3 className='text-3xl font-bold mb-4'>{stat?.fact}</h3>
+                                    <p className='text-xl'>{stat?.stat}</p>
                                     <p className='text-xl'>{stat?.per}</p>
                                 </div>
                             );
