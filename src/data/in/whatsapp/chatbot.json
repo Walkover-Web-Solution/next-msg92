@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Whatsapp with Chatbot | MSG91",
-        "description": "Maximize business potential with WhatsApp: Unleash automation, supercharge sales, and harness the efficiency of a WhatsApp chatbot. Elevate your strategy for success today!"
+        "title": "Whatsapp Chatbot Builder APP with API for Business",
+        "description": "Create a WhatsApp chatbot for business with the WhatsApp Bot API. Use a bot builder app to integrate an AI-powered chat bot for automated, seamless customer support."
     },
     "ChatBotComp": {
         "slug": "whatsapp/chatbot",
@@ -19,12 +19,12 @@
             "content": [
                 {
                     "heading": "Boost Engagement, Maximize Sales",
-                    "description": "WhatsApp chatbot platforms drive engagement by facilitating interactive conversations, guiding potential customers through the sales funnel to boost sales and improve user experience.",
+                    "description": "WhatsApp chat bot platforms drive engagement by facilitating interactive conversations, guiding potential customers through the sales funnel to boost sales and improve user experience",
                     "icon": "MdFlashOn"
                 },
                 {
                     "heading": "Establish a 24/7 Communication Channel",
-                    "description": "A WhatsApp Chatbot ensures 24/7 accessibility, addressing customer queries at any hour, reinforcing your commitment to their needs and maintaining an always-responsive chatbot flow.",
+                    "description": "A WhatsApp bot API ensures 24/7 accessibility, addressing customer queries at any hour, reinforcing your commitment to their needs and maintaining an always-responsive chatbot flow.",
                     "icon": "MdOutlineWatch"
                 },
                 {
@@ -34,7 +34,7 @@
                 },
                 {
                     "heading": "Elevate Customer Support",
-                    "description": "WhatsApp Chatbots deliver instant responses, ensuring prompt acknowledgment and boosting brand loyalty.",
+                    "description": "ChatBot in WhatsApp deliver instant responses, ensuring prompt acknowledgment and boosting brand loyalty.",
                     "icon": "MdOutlineSupport"
                 }
             ]

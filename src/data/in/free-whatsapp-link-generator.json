@@ -11,7 +11,6 @@
         },
         "tagline": "Generate WhatsApp click to chat QR code/Widget/Link",
         "heading": "Simple tool to create WhatsApp click to chat QR code/Widget/Link for your website or landing pages.",
-
         "banner_img": "/assets/global/whatsapp-link/banner.png",
         "getstarted_btn": "Generate",
         "steps": {
@@ -78,7 +77,7 @@
         "heading": "FAQs",
         "faqs": [
             {
-                "question": "How can I create wa link?",
+                "question": "How does a WhatsApp link work??",
                 "answer": "WhatsApp links use a specific URL format that, when clicked, opens the WhatsApp app on a user's device and starts a chat with the provided phone number or message."
             },
             {
@@ -94,26 +93,26 @@
                 "answer": "Yes, WhatsApp links work across different platforms, including iOS, Android, and web browsers, ensuring a seamless experience for users regardless of their device."
             },
             {
-                "question": " How can I generate a WhatsApp link?",
+                "question": " How can I generate a Wa link?",
                 "answer": "You can generate a WhatsApp link by appending the phone number to the WhatsApp URL: https://wa.me/phonenumbers. For example, to create a link for the number 1234567890, the URL would be https://wa.me/1234567"
             }
         ]
     },
     "PreFooterComp": {
-    "content": "Start building your ideal customer engagement experience",
-    "buttons": {
-        "contactSales": {
-            "text": "Contact sales",
-            "link": "/contact-us"
-        },
-        "pricing": {
-            "text": "Pricing",
-            "link": "/pricing/"
-        },
-        "getStarted": {
-            "text": "Get started",
-            "link": "https://control.msg91.com/signup/"
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
         }
     }
-}
 }

@@ -28,12 +28,14 @@ export default function IntegrationsComp({ pageInfo, data }) {
                             <a
                                 href={card?.url}
                                 target='_blank'
-                                className='flex flex-col items-start justify-center p-4 bg-white rounded shadow h-full'
+                                className='flex flex-col  p-6 gap-2 bg-white rounded shadow h-full'
                             >
-                                <img src={card.icon} alt={card.name} className='w-16 h-16 mb-2' />
-                                <h3 className='text-lg font-bold mb-2'>{card.name}</h3>
+                                <div className='flex flex-col gap-2'>
+                                    <img src={card.icon} alt={card.name} className=' max-h-12 w-fit mb-2' />
+                                    <h3 className='text-lg font-bold mb-2'>{card.name}</h3>
+                                </div>
                                 <p className='mb-4'>{card.description}</p>
-                                <p className='text-sm text-gray-500'>{card.author}</p>
+                                <p className='text-sm text-gray-500 mt-auto'>{card.author}</p>
                             </a>
                         ))}
                     </div>
@@ -77,7 +79,7 @@ export default function IntegrationsComp({ pageInfo, data }) {
                         <div key={index} className='bg-neutral flex flex-col gap-6 p-4'>
                             <p>{item?.content}</p>
                             <h3>{item?.name}</h3>
-                            <img src={item?.icon} alt={item?.name} className='w-20 h-10' />
+                            <img src={item?.icon} alt={item?.name} className='w-fit h-10' />
                         </div>
                     ))}
                 </div>
