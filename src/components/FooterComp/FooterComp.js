@@ -97,16 +97,30 @@ export default function FooterComp({ componentData, pageInfo }) {
                                     <span className='font-semibold'>{componentData?.discover?.name}</span>
                                     <ul className='flex flex-col gap-2'>
                                         {componentData?.discover?.links.map((link, index) => {
-                                            return (
-                                                <li key={index} className='text-link-white'>
-                                                    <Link
-                                                        href={getURL('global', link?.link, pageInfo)}
-                                                        className='text-gray-200'
-                                                    >
-                                                        {link?.name}
-                                                    </Link>
-                                                </li>
-                                            );
+                                            if (link?.link.startsWith('http')) {
+                                                return (
+                                                    <li key={index} className='text-link-white'>
+                                                        <Link
+                                                            href={link?.link}
+                                                            target='blank'
+                                                            className='text-gray-200'
+                                                        >
+                                                            {link?.name}
+                                                        </Link>
+                                                    </li>
+                                                );
+                                            } else {
+                                                return (
+                                                    <li key={index} className='text-link-white'>
+                                                        <Link
+                                                            href={getURL('global', link?.link, pageInfo)}
+                                                            className='text-gray-200'
+                                                        >
+                                                            {link?.name}
+                                                        </Link>
+                                                    </li>
+                                                );
+                                            }
                                         })}
                                     </ul>
                                 </div>

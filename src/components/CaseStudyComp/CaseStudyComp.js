@@ -110,8 +110,8 @@ export default function CaseStudyComp({ data, pageInfo }) {
                                     >
                                         <Image
                                             src={`/assets/case-studies/${caseStudy?.slug}.png`}
-                                            width={100}
-                                            height={100}
+                                            width={400}
+                                            height={400}
                                             alt={caseStudy?.slug}
                                             className='h-[50px] w-fit '
                                         />
@@ -126,7 +126,7 @@ export default function CaseStudyComp({ data, pageInfo }) {
                                             })}
                                         </div>
 
-                                        <LinkText>Learn More</LinkText>
+                                        <LinkText customClasses={'mt-auto'}>Learn More</LinkText>
                                     </Link>
                                 );
                             })}
