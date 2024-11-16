@@ -62,7 +62,7 @@ export default function BannerComp({ pageInfo, data }) {
                         )}
                         <span className={`text-xl uppercase tracking-widest text-${data?.slug}`}>{data?.tagline}</span>
                         <h1 className='heading'>{data?.heading}</h1>
-                        <p className='suheading'>{data?.subheading}</p>
+                        <h2 className='suheading'>{data?.subheading}</h2>
                     </div>
                     <div className='flex flex-col md:flex-row gap-6'>
                         <a
