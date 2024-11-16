@@ -17,8 +17,8 @@ export default function ChannelsComp({ data }) {
                                 href={channel?.link}
                             >
                                 <Image width={40} height={40} src={channel?.icon} alt={channel?.name} />
-                                <h3 className='text-2xl font-semibold'>{channel?.name}</h3>
-                                <p className='text-lg'>{channel?.description}</p>
+                                <h2 className='text-2xl font-semibold'>{channel?.name}</h2>
+                                <h3 className='text-lg'>{channel?.description}</h3>
                                 <LinkText className='link-btn'>{data?.linkText}</LinkText>
                             </Link>
                         );
