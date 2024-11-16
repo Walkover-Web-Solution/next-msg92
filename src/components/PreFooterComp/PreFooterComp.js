@@ -14,21 +14,23 @@ export default function PreFooterComp({ data, pageInfo }) {
                                 {data?.buttons?.contactSales?.text}
                             </button>
                         </a>
-                        <a
-                            href={getURL(
-                                'pricing',
-                                pageInfo?.page !== 'home' &&
-                                    pageInfo?.page !== 'shorturl' &&
-                                    pageInfo?.page !== 'knowledgebase' &&
-                                    pageInfo?.page !== 'numbers'
-                                    ? pageInfo?.page
-                                    : 'sms'
-                            )}
-                        >
-                            <button className='btn btn-primary btn-outline btn-md '>
-                                {data?.buttons?.pricing?.text}
-                            </button>
-                        </a>
+                        {data?.buttons?.pricing?.text && (
+                            <a
+                                href={getURL(
+                                    'pricing',
+                                    pageInfo?.page !== 'home' &&
+                                        pageInfo?.page !== 'shorturl' &&
+                                        pageInfo?.page !== 'knowledgebase' &&
+                                        pageInfo?.page !== 'numbers'
+                                        ? pageInfo?.page
+                                        : 'sms'
+                                )}
+                            >
+                                <button className='btn btn-primary btn-outline btn-md '>
+                                    {data?.buttons?.pricing?.text}
+                                </button>
+                            </a>
+                        )}
                         <a
                             target='_blank'
                             href={getURL('signup', pageInfo?.page !== 'home' ? pageInfo?.page : 'hello')}

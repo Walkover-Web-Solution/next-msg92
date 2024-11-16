@@ -25,7 +25,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                 <ul>
                                     <li className='cursor-pointer'>
                                         <a
-                                            href={getURL('country', 'br')}
+                                            href={getURL('country', 'br', pageInfo)}
                                             className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
                                         >
                                             English
@@ -33,7 +33,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                     </li>
                                     <li className='cursor-pointer'>
                                         <a
-                                            href={getURL('country', 'br-pt')}
+                                            href={getURL('country', 'br-pt', pageInfo)}
                                             className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
                                         >
                                             Portuguese
@@ -63,7 +63,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                 <ul>
                                     <li className='cursor-pointer'>
                                         <a
-                                            href={getURL('country', '')}
+                                            href={getURL('country', 'global', pageInfo)}
                                             className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
                                         >
                                             <Image src={`/assets/country-flags/global.svg`} width={18} height={18} />
@@ -76,7 +76,11 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                             return (
                                                 <li key={index} className='cursor-pointer'>
                                                     <a
-                                                        href={getURL('country', cont?.shortname.toLowerCase())}
+                                                        href={getURL(
+                                                            'country',
+                                                            cont?.shortname.toLowerCase(),
+                                                            pageInfo
+                                                        )}
                                                         className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
                                                     >
                                                         {/* /* ${cont?.shortname} == 'in,us,gb etc. */}

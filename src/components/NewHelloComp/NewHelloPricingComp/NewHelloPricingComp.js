@@ -6,7 +6,7 @@ import Link from 'next/link';
 import getURL from '@/utils/getURL';
 import style from './NewHelloPricingComp.module.scss';
 
-export default function PricingHello({ country }) {
+export default function PricingHello({ country, pageInfo }) {
     const { currency, symbol } = GetCurrencySymbol(country);
     const [isLoading, setIsLoading] = useState(false);
     const [plans, setPlans] = useState();
@@ -60,7 +60,7 @@ export default function PricingHello({ country }) {
                                                             </p>
                                                             <Link
                                                                 className='w-full'
-                                                                href={getURL('signup', 'hello')}
+                                                                href={getURL('signup', 'hello', pageInfo)}
                                                                 target='_blank'
                                                             >
                                                                 <button

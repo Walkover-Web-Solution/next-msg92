@@ -5,6 +5,7 @@ import styles from './MenuBarComp.module.scss';
 import { BtnWithHideIco, LinkButton, LinkText } from '../UIComponent/Buttons/LinkButton';
 import { useEffect, useState } from 'react';
 import getURL from '@/utils/getURL';
+import getPricingURL from '@/utils/getPricingURL';
 
 export default function MenuBarComp({ componentData, pageInfo }) {
     const [nav, setNav] = useState('hide');
@@ -16,31 +17,8 @@ export default function MenuBarComp({ componentData, pageInfo }) {
             document.body.style.overflow = 'auto';
         }
     }, [nav]);
-    const getPricingPath = () => {
-        let path = '/pricing/hello';
-        switch (pageInfo?.country) {
-            case 'global':
-                if (pageInfo?.page !== 'pricing') {
-                    path = '/pricing/' + ((pageInfo?.page !== 'home' && pageInfo?.page) || 'hello');
-                } else {
-                    path = '/pricing/hello';
-                }
-                break;
 
-            default:
-                if (pageInfo?.page !== 'pricing') {
-                    path =
-                        '/' +
-                        pageInfo?.country +
-                        '/pricing/' +
-                        ((pageInfo?.page !== 'home' && pageInfo?.page) || 'hello');
-                } else {
-                    path = '/' + pageInfo?.country + '/pricing/' + 'hello';
-                }
-                break;
-        }
-        return process.env.BASE_URL + path;
-    };
+    const pricingPath = getPricingURL(pageInfo);
     const hidden = componentData?.hide?.includes(pageInfo?.page);
     const handleMiniMenu = () => {
         if (nav === 'show') {
@@ -67,7 +45,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                             return (
                                                                 <Link
                                                                     key={i}
-                                                                    href={getURL('product', product?.slug)}
+                                                                    href={getURL('product', product?.slug, pageInfo)}
                                                                     onClick={() => {
                                                                         setNav('hide');
                                                                         setType('products');
@@ -101,7 +79,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     })}
                                 <div className='flex flex-col gap-2'>
                                     <Link
-                                        href={getURL('pricing', 'hello')}
+                                        href={getURL('pricing', 'hello', pageInfo)}
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -110,7 +88,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         <LinkText customClasses='text-lg'>Pricing</LinkText>
                                     </Link>
                                     <Link
-                                        href={getURL('pricing', 'hello')}
+                                        href={getURL('pricing', 'hello', pageInfo)}
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -119,7 +97,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         <LinkText customClasses='text-lg'>Integrations</LinkText>
                                     </Link>
                                     <Link
-                                        href={getURL('pricing', 'hello')}
+                                        href={getURL('pricing', 'hello', pageInfo)}
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -128,7 +106,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         <LinkText customClasses='text-lg'>API Docs</LinkText>
                                     </Link>
                                     <Link
-                                        href={getURL('pricing', 'hello')}
+                                        href={getURL('pricing', 'hello', pageInfo)}
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -156,7 +134,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                             return (
                                                                 <Link
                                                                     key={i}
-                                                                    href={getURL('product', product?.slug)}
+                                                                    href={getURL('product', product?.slug, pageInfo)}
                                                                     onClick={() => {
                                                                         setNav('hide');
                                                                         setType('products');
@@ -242,7 +220,6 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                 {nav === 'show' && (
                     <div
                         onMouseEnter={() => {
-                            console.log('Mouse entered overlay');
                             setNav('hide');
                             setType('products');
                         }}
@@ -277,7 +254,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     setType('products');
                                 }}
                                 className='text-link'
-                                href={getPricingPath()}
+                                href={pricingPath}
                             >
                                 {componentData?.pricing}
                             </Link>

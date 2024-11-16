@@ -32,6 +32,10 @@ import SignUp from '@/components/signupComp/SignUp';
 import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
 import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
+
+/* files */
+import specialPages from '@/data/specialPages.json';
+
 const Components = {
     BannerComp,
     CaseStudiesComp,
@@ -104,20 +108,23 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const params = context?.params;
     const pageInfo = getPageInfo(params);
+    const isNestedpage = specialPages.nested.includes(pageInfo.pathURL);
     const commonData = getCommonCompData(pageInfo?.country);
-
-    const res = await fetch(process.env.BASE_URL + '/api/data', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(pageInfo),
-    });
-    const data = await res.json();
+    const fetchData = async (endpoint) => {
+        const res = await fetch(`${process.env.BASE_URL}${endpoint}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(pageInfo),
+        });
+        return await res.json();
+    };
+    const data = isNestedpage ? await fetchData('/api/getNestedData') : await fetchData('/api/data');
     return {
         props: {
-            data,
-            commonData,
+            data: data || {},
+            commonData: commonData || {},
             pageInfo,
         },
     };

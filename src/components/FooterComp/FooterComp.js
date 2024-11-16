@@ -1,3 +1,4 @@
+import getNestedURL from '@/utils/getNestedURL';
 import getURL from '@/utils/getURL';
 import Link from 'next/link';
 
@@ -18,7 +19,11 @@ export default function FooterComp({ componentData, pageInfo }) {
                                             return (
                                                 <li key={index} className='text-link-white'>
                                                     <Link
-                                                        href={getURL('product', link?.link)}
+                                                        href={
+                                                            link?.nested
+                                                                ? getNestedURL('product', link?.link, pageInfo)
+                                                                : getURL('product', link?.link, pageInfo)
+                                                        }
                                                         className='text-gray-200 '
                                                     >
                                                         {link?.name}
@@ -37,7 +42,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                             return (
                                                 <li key={index} className='text-link-white'>
                                                     <Link
-                                                        href={getURL('product', link?.link)}
+                                                        href={getURL('product', link?.link, pageInfo)}
                                                         className='text-gray-200'
                                                     >
                                                         {link?.name}
@@ -58,7 +63,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                             return (
                                                 <li key={index} className='text-link-white'>
                                                     <Link
-                                                        href={getURL('product', link?.link)}
+                                                        href={getURL('product', link?.link, pageInfo)}
                                                         className='text-gray-200'
                                                     >
                                                         {link?.name}
@@ -94,7 +99,10 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         {componentData?.discover?.links.map((link, index) => {
                                             return (
                                                 <li key={index} className='text-link-white'>
-                                                    <Link href={link?.link} className='text-gray-200'>
+                                                    <Link
+                                                        href={getURL('global', link?.link, pageInfo)}
+                                                        className='text-gray-200'
+                                                    >
                                                         {link?.name}
                                                     </Link>
                                                 </li>
@@ -174,7 +182,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                     return (
                                         <li key={index} className='flex items-center gap-4'>
                                             <Link
-                                                href={getURL('terms', link?.link)}
+                                                href={getURL('terms', link?.link, pageInfo)}
                                                 className='text-gray-200 text-link-white  '
                                             >
                                                 {link?.name}

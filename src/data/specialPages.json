@@ -34,5 +34,31 @@
         "es",
         "gb",
         "us"
+    ],
+    "pricing": [
+        "hello",
+        "campaign",
+        "segmento",
+        "otp",
+        "sms",
+        "rcs",
+        "email",
+        "whatsapp",
+        "voice",
+        "otpwidget"
+    ],
+    "nested": [
+        "whatsapp/chatbot",
+        "in/whatsapp/chatbot",
+        "br/whatsapp/chatbot",
+        "br-pt/whatsapp/chatbot",
+        "ae/whatsapp/chatbot",
+        "ph/whatsapp/chatbot",
+        "sg/whatsapp/chatbot",
+        "es/whatsapp/chatbot",
+        "gb/whatsapp/chatbot",
+        "us/whatsapp/chatbot",
+        "otp/magiclink",
+        "in/otp/magiclink"
     ]
 }

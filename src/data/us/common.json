@@ -3,7 +3,10 @@
     "notification": {
         "support": "Contact Us",
         "login": "LOG IN",
-        "hide": ["signup", "singin"]
+        "hide": [
+            "signup",
+            "singin"
+        ]
     },
     "menu": {
         "products": "Products",
@@ -20,7 +23,6 @@
                         "name": "Campaign",
                         "slug": "campaign",
                         "description": "Event-based Automation"
-
                     },
                     {
                         "name": "Segment",
@@ -53,7 +55,6 @@
                         "name": "WhatsApp",
                         "slug": "whatsapp"
                     },
-                   
                     {
                         "name": "Voice",
                         "slug": "voice"
@@ -122,7 +123,7 @@
             ]
         },
         "pricing": "Pricing",
-        "pricing_list":[
+        "pricing_list": [
             {
                 "name": "Applications",
                 "products": [
@@ -135,7 +136,6 @@
                         "name": "Campaign",
                         "slug": "campaign",
                         "description": "Event-based Automation"
-
                     },
                     {
                         "name": "Segmento",
@@ -168,7 +168,6 @@
                         "name": "WhatsApp",
                         "slug": "whatsapp"
                     },
-                   
                     {
                         "name": "Voice",
                         "slug": "voice"
@@ -194,14 +193,19 @@
                     }
                 ]
             }
-            ]
-        ,
+        ],
         "apidocs": "API Docs",
         "signup_btn": "Sign Up",
-        "hide": ["signup", "singin"]
+        "hide": [
+            "signup",
+            "singin"
+        ]
     },
     "footer": {
-        "hide": ["signup", "singin"],
+        "hide": [
+            "signup",
+            "singin"
+        ],
         "products": {
             "name": "Our Products",
             "links": [
@@ -217,9 +221,14 @@
                     "name": "Campaign",
                     "link": "campaign"
                 },
-                {
+              {
                     "name": "OTP",
                     "link": "otp"
+                },
+                {
+                    "name": "OTP-MagicLink",
+                         "link": "otp/magiclink",
+                    "nested": true
                 }
             ]
         },
