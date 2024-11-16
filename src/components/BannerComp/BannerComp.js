@@ -13,13 +13,14 @@ import getURL from '@/utils/getURL';
 
 export default function BannerComp({ pageInfo, data }) {
     const [isCopied, setIsCopied] = useState(false);
+    const [code, setCode] = useState({});
     const [selectedLanguage, setSelectedLanguage] = useState('curl');
 
     useEffect(() => {
         if (pageInfo.page !== 'Numbers') {
             Prism.highlightAll();
         }
-    }, []);
+    }, [selectedLanguage, snipped, code]);
 
     const copyText = async (text) => {
         try {
@@ -31,17 +32,21 @@ export default function BannerComp({ pageInfo, data }) {
         }
     };
 
-    let snippet;
-    if (snipped?.snipped[pageInfo.page]) {
-        snippet = new HTTPSnippet(snipped?.snipped[pageInfo.page]);
-    }
-    const code = {
-        curl: snippet?.convert('shell', 'curl'),
-        node: snippet?.convert('node'),
-        php: snippet?.convert('php'),
-        ruby: snippet?.convert('ruby'),
-        python: snippet?.convert('python'),
-    };
+    useEffect(() => {
+        let snippet;
+        if (snipped?.snipped[pageInfo.page]) {
+            snippet = new HTTPSnippet(snipped?.snipped[pageInfo.page]);
+        }
+
+        const snippetCode = {
+            curl: snippet?.convert('shell', 'curl'),
+            node: snippet?.convert('node'),
+            php: snippet?.convert('php'),
+            ruby: snippet?.convert('ruby'),
+            python: snippet?.convert('python'),
+        };
+        setCode(snippetCode);
+    }, []);
 
     return (
         <>
@@ -105,17 +110,15 @@ export default function BannerComp({ pageInfo, data }) {
                                         );
                                     })}
                                 </div>
-
                                 <div className='relative bg-black '>
                                     <button
                                         className='absolute right-0 z-20 text-gray-200 flex gap-1 items-center p-4'
-                                        onClick={() => copyText(code)}
+                                        onClick={() => copyText(code[selectedLanguage])}
                                     >
                                         <MdCopyAll />
                                         {isCopied ? 'Copied!' : 'Copy'}
                                     </button>
                                     <div className='overflow-auto h-[400px]'>
-                                        {' '}
                                         <pre className='code-m-0'>
                                             <code className={`language-javascript text-sm`}>
                                                 {code[selectedLanguage]}
