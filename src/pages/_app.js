@@ -1,6 +1,7 @@
 import '@/styles/globals.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import Script from 'next/script';
 
 export default function App({ Component, pageProps }) {
     return (
