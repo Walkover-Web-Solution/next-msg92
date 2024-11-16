@@ -24,7 +24,7 @@
       {
         "icon": "",
         "name": "Corporate Communications with Branding",
-        "content": "<strong>Distinguish by branding</strong>Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers.",
+        "content": "<strong>Distinguish by branding </strong>Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers.",
         "img": "/assets/global/rcs/rcs-communications-branding.svg"
       },
       {
@@ -36,13 +36,13 @@
       {
         "icon": "",
         "name": "Boost Sales Through Interactive Conversations",
-        "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging andreliable Google RCS messages that drive conversions.",
+        "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable Google RCS messages that drive conversions.",
         "img": "/assets/global/rcs/rcs-boost-sales.svg"
       },
       {
         "icon": "",
         "name": "Enhanced Customer Trust",
-        "content": " <strong>Understand your customers' habits</strong>Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility.",
+        "content": " <strong>Understand your customer's habits </strong>Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility.",
         "img": "/assets/global/rcs/rcs-customer-trust.svg"
       }
     ]

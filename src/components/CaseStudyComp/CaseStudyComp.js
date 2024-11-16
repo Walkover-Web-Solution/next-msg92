@@ -33,10 +33,10 @@ export default function CaseStudyComp({ data, pageInfo }) {
                     <div className='flex flex-col gap-4'>
                         <Image
                             src={`/assets/case-studies/${caseStudy?.slug}.png`}
-                            width={100}
-                            height={100}
+                            width={400}
+                            height={400}
                             alt={caseStudy?.slug}
-                            className='h-[80px] max-w-3/4'
+                            className='h-[80px] w-fit'
                         />
                         <h1 className='text-4xl font-bold md:w-2/3'>{caseStudy?.title}</h1>
                     </div>

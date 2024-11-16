@@ -518,8 +518,8 @@ export default function PricingHello({ data, country }) {
                                     <div className='p-4 border-e-2 flex flex-col gap-4'>
                                         <h4>Extra tickets</h4>
                                         <h4>Extra tickets charges</h4>
-                                        <h4>Extra inboxes</h4>
-                                        <h4>Extra inboxe charges</h4>
+                                        <h4>Extra inboxs</h4>
+                                        <h4>Extra inbox charges</h4>
                                     </div>
                                     <div className='p-4 flex flex-col gap-4'>
                                         <span>{plansObj[Object.keys(plansObj)[0]]?.extra?.Tickets}</span>

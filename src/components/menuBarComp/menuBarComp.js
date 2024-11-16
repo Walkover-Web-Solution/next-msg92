@@ -197,11 +197,17 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                 </Link>
                                             );
                                         })}
-                                    <LinkButton
-                                        href='/partners-and-integrations'
-                                        customClasses='flex items-center gap-2 px-5 py-3 rounded hover:bg-secondary w-full'
-                                        content={componentData?.integrations_list?.explore_btn}
-                                    />
+                                    <Link href='/partners-and-integrations'>
+                                        <button
+                                            className='flex items-center gap-2 px-5 py-3 rounded hover:bg-secondary w-full'
+                                            onClick={() => {
+                                                setNav('hide');
+                                                setType('products');
+                                            }}
+                                        >
+                                            <LinkText>{componentData?.integrations_list?.explore_btn}</LinkText>
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         )}
