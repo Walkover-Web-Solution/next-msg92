@@ -1,8 +1,8 @@
 {
     "common": true,
     "notification": {
-        "support": "Contact Us",
-        "login": "LOG IN",
+        "support": "Contact",
+        "login": "Login",
         "hide": [
             "signup",
             "singin"

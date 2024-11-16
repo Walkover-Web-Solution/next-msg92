@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { MdArrowDropDown, MdOutlineCall, MdOutlineLanguage, MdTranslate } from 'react-icons/md';
+import { MdArrowDropDown, MdLogin, MdOutlineCall, MdOutlineLanguage, MdTranslate } from 'react-icons/md';
 import availableCountries from '@/data/availableCountries.json';
 import Image from 'next/image';
 import getURL from '@/utils/getURL';
@@ -12,7 +12,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
     const hidden = componentData?.hide?.includes(pageInfo?.page);
     if (componentData && !hidden) {
         return (
-            <div className='py-1 border border-b'>
+            <div className='py-3 border border-b'>
                 <div className='container flex gap-6 justify-end '>
                     {['br-pt', 'br'].includes(pageInfo?.country) && (
                         <div className='dropdown'>
@@ -102,10 +102,11 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                     )}
 
                     <Link className='text-link flex gap-1 items-center' href={'/contact-us'}>
-                        <MdOutlineCall fontSize={16} />
+                        <MdOutlineCall fontSize={18} />
                         {componentData?.support}
                     </Link>
-                    <Link className='text-link ' href={'https://test.msg91.com/signin/'}>
+                    <Link className='text-link flex gap-1 items-center' href={'https://test.msg91.com/signin/'}>
+                        <MdLogin fontSize={18} />
                         {componentData?.login}
                     </Link>
                 </div>
