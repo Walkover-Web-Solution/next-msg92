@@ -1,3 +1,4 @@
+import getPricingURL from '@/utils/getPricingURL';
 import getURL from '@/utils/getURL';
 
 export default function PreFooterComp({ data, pageInfo }) {
@@ -15,17 +16,7 @@ export default function PreFooterComp({ data, pageInfo }) {
                             </button>
                         </a>
                         {data?.buttons?.pricing?.text && (
-                            <a
-                                href={getURL(
-                                    'pricing',
-                                    pageInfo?.page !== 'home' &&
-                                        pageInfo?.page !== 'shorturl' &&
-                                        pageInfo?.page !== 'knowledgebase' &&
-                                        pageInfo?.page !== 'numbers'
-                                        ? pageInfo?.page
-                                        : 'sms'
-                                )}
-                            >
+                            <a href={getPricingURL(pageInfo)}>
                                 <button className='btn btn-primary btn-outline btn-md '>
                                     {data?.buttons?.pricing?.text}
                                 </button>

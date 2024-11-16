@@ -57,12 +57,12 @@ export default function BannerComp({ pageInfo, data }) {
                         {data?.product && (
                             <div className='flex items-center gap-2'>
                                 <Image src={data?.product?.icon} width={40} height={40} alt={data?.product?.name} />
-                                <h1 className='font-semibold text-2xl'>{data?.product?.name}</h1>
+                                <span className='font-semibold text-2xl'>{data?.product?.name}</span>
                             </div>
                         )}
                         <span className={`text-xl uppercase tracking-widest text-${data?.slug}`}>{data?.tagline}</span>
                         <h1 className='heading'>{data?.heading}</h1>
-                        <p className='suheading'>{data?.subheading}</p>
+                        <h2 className='suheading'>{data?.subheading}</h2>
                     </div>
                     <div className='flex flex-col md:flex-row gap-6'>
                         <a
