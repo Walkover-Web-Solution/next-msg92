@@ -65,6 +65,10 @@
             ]
         },
         "hello": {
+            "HeadComp": {
+                "title": "Hello Pricing in United Kingdom | MSG91-United Kingdom",
+                "description": "Avail robust and powerful services in United Kingdom like transactional Hello, communication APIs and more at affordable prices. Check out the pricing now."
+            },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
                 "sales_btn": "Talk to Sales",
@@ -97,6 +101,10 @@
             }
         },
         "campaign": {
+            "HeadComp": {
+                "title": "Campaign Pricing in United Kingdom | MSG91-United Kingdom",
+                "description": "Avail robust and powerful services in United Kingdom like transactional Campaign, communication APIs and more at affordable prices. Check out the pricing now."
+            },
             "get_started": "Get Started",
             "connectComp": {
                 "content": "Campaign usage is free.",
@@ -106,6 +114,10 @@
             }
         },
         "segmento": {
+            "HeadComp": {
+                "title": "Segmento Pricing in United Kingdom | MSG91-United Kingdom",
+                "description": "Avail robust and powerful services in United Kingdom like transactional Segmento, communication APIs and more at affordable prices. Check out the pricing now."
+            },
             "get_started": "Get Started",
             "connectComp": {
                 "content": "You can store user information for free using Segmento.",
@@ -114,6 +126,10 @@
             }
         },
         "otpwidget": {
+            "HeadComp": {
+                "title": "otpwidget Pricing in United Kingdom | MSG91-United Kingdom",
+                "description": "Avail robust and powerful services in United Kingdom like transactional otpwidget, communication APIs and more at affordable prices. Check out the pricing now."
+            },
             "get_started": "Get Started",
             "connectComp": {
                 "content": "OTP widget/SDK usage is free.",
@@ -143,189 +159,159 @@
                     {
                         "question": "Are there any additional charges for using advanced security features, such as Google Captcha validation?",
                         "answer": "While some providers may charge additional fees for features like Google Captcha validation to boost OTP Widget security, we do not impose any additional charges for captcha validation."
-                    }
-                    ,
+                    },
                     {
                         "question": "Can I get a customized pricing plan based on my specific business needs?",
                         "answer": "Many service providers offer customized pricing plans for businesses with unique requirements. Contact the sales team to discuss your needs and explore tailored pricing options."
-                    }
-                    ,
+                    },
                     {
                         "question": "Are there any hidden fees or charges that I should be aware of?",
                         "answer": "No, there are no hidden additional charges for the widget, except for the actual sending of OTPs through any channel. To send OTPs, you simply need to subscribe or add balance to your account"
-                    }
-                    ,
+                    },
                     {
                         "question": "Is there a trial period or demo available for the testing of otp widget ?",
                         "answer": "We do not offer a trial period or demo for testing the widget. However, you can add funds to your wallet with a low amount for testing purposes."
                     }
                 ]
             }
-        }
-    ,
-    "email": {
-        "connectComp": {
-            "content": "Connect with our team for a personalized plan to meet your needs.",
-            "sales_btn": "Talk to Sales",
-            "know_more": "Know more about"
         },
-        "faqComp": {
-            "heading": "Frequently Asked Questions",
-            "faqs": [
-                {
-                    "question": "Do I get 5000 free emails only once or every month?",
-                    "answer": "With the free plan subscription, you will receive 5000 free emails every month."
-                },
-                {
-                    "question": "I purchased the starter plan and received 100,000 emails for a month. What if my email traffic exceeds 100,000 in a month?",
-                    "answer": "In the starter plan, you get 100,000 emails and 100 email validations. If you send more than 100,000 emails in a month, you will be charged an additional 0.02/- per email. Additionally, if you perform more than 100 email validations, you will be charged 0.25/- per validation. This amount will be deducted from your MSG91 wallet. The Extra section in every email plans displays this information."
-                },
-                {
-                    "question": "In the plan I bought, there are two limits: a Monthly Spending Limit and a Postpaid Billing Limit. Could you explain the difference between them and how they're used?",
-                    "answer": "You, as the user, can set the monthly spending limit, while the postpaid billing limit can only be set by the MSG91. If you have exhausted the emails and validations allotted according to your subscribed plan and wish to send more emails or validate additional email IDs, MSG91 will deduct the excess usage amount from your wallet when you reach 90% of your postpaid billing limit. After this deduction, your postpaid billing limit will reset to the default. If your consumption continues and reaches 90% of your postpaid billing limit again, another deduction will occur from your wallet. In this situation, the total maximum deduction aligns with the monthly spending limit you've set."
-                },
-                {
-                    "question": "I am a free plan user, and I don't get any email validations in it. How can I use validations?",
-                    "answer": "If you want to go beyond the benefits provided in any plan, check the extra section of that plan for details. To use email validation in the free plan, you'll need to pay 0.35 per email validation, which will be deducted from your MSG91 wallet."
-                },
-                {
-                    "question": "I subscribed to the starter plan, which should give me 1 Lac emails at 2000/-. However, after subscribing, I noticed that the deducted amount was less than 2000, and I received fewer than 1 Lac emails.",
-                    "answer": "Each plan operates on a monthly basis, starting from the first date to the last. If you purchase a plan in the middle of the month, the system will calculate charges and benefits on a pro-rated basis, considering the remaining days in the month."
-                }
-            ]
-        }
-    },
-    "voice": {
-        "heading": "Outgoing call charges/min",
-        "exportData": {
-            "content": "To download the detailed network and prefix wise pricing sheet. ",
-            "export": "Export",
-            "waiting": "Waiting..."
-        },
-        "addOns": {
-            "heading": "Add-on Services",
-            "content": [
-                "Call Recording",
-                "Call Monitoring",
-                "Analytics",
-                "Number Masking"
-            ],
-            "freeText": " All the Add-On Services are <span class='text-green-600'>FREE</span> of cost"
-        },
-        "rates": [
-            {
-                "heading": "International rate",
-                "content": "Calls are routed through premium A-Z routes and CLI can be any valid number. Calls without a CLI, with invalid CLI, with manipulated CLI, with CLI originated from unidentified, closed or unallocated prefix ranges, with CLI not in E.164 format, with CLI not matching ITU standards might be blocked or charged at the highest price."
+        "email": {
+            "HeadComp": {
+                "title": "Email Pricing in United Kingdom | MSG91-United Kingdom",
+                "description": "Avail robust and powerful services in United Kingdom like transactional Email, communication APIs and more at affordable prices. Check out the pricing now."
             },
-            {
-                "heading": "Local Rate",
-                "content": "Calls are routed through local operators’ in-country network. Only numbers on your MSG91 account can be used."
+            "connectComp": {
+                "content": "Connect with our team for a personalized plan to meet your needs.",
+                "sales_btn": "Talk to Sales",
+                "know_more": "Know more about"
+            },
+            "faqComp": {
+                "heading": "Frequently Asked Questions",
+                "faqs": [
+                    {
+                        "question": "Do I get 5000 free emails only once or every month?",
+                        "answer": "With the free plan subscription, you will receive 5000 free emails every month."
+                    },
+                    {
+                        "question": "I purchased the starter plan and received 100,000 emails for a month. What if my email traffic exceeds 100,000 in a month?",
+                        "answer": "In the starter plan, you get 100,000 emails and 100 email validations. If you send more than 100,000 emails in a month, you will be charged an additional 0.02/- per email. Additionally, if you perform more than 100 email validations, you will be charged 0.25/- per validation. This amount will be deducted from your MSG91 wallet. The Extra section in every email plans displays this information."
+                    },
+                    {
+                        "question": "In the plan I bought, there are two limits: a Monthly Spending Limit and a Postpaid Billing Limit. Could you explain the difference between them and how they're used?",
+                        "answer": "You, as the user, can set the monthly spending limit, while the postpaid billing limit can only be set by the MSG91. If you have exhausted the emails and validations allotted according to your subscribed plan and wish to send more emails or validate additional email IDs, MSG91 will deduct the excess usage amount from your wallet when you reach 90% of your postpaid billing limit. After this deduction, your postpaid billing limit will reset to the default. If your consumption continues and reaches 90% of your postpaid billing limit again, another deduction will occur from your wallet. In this situation, the total maximum deduction aligns with the monthly spending limit you've set."
+                    },
+                    {
+                        "question": "I am a free plan user, and I don't get any email validations in it. How can I use validations?",
+                        "answer": "If you want to go beyond the benefits provided in any plan, check the extra section of that plan for details. To use email validation in the free plan, you'll need to pay 0.35 per email validation, which will be deducted from your MSG91 wallet."
+                    },
+                    {
+                        "question": "I subscribed to the starter plan, which should give me 1 Lac emails at 2000/-. However, after subscribing, I noticed that the deducted amount was less than 2000, and I received fewer than 1 Lac emails.",
+                        "answer": "Each plan operates on a monthly basis, starting from the first date to the last. If you purchase a plan in the middle of the month, the system will calculate charges and benefits on a pro-rated basis, considering the remaining days in the month."
+                    }
+                ]
             }
-        ],
-        "connectComp": {
-            "content": "Connect with our team for a personalized plan to meet your needs.",
-            "sales_btn": "Talk to Sales",
-            "know_more": "Know more about"
         },
-        "faqComp": {
-            "heading": "Frequently Asked Questions",
-            "faqs": [
+        "voice": {
+            "HeadComp": {
+                "title": "Voice Pricing in United Kingdom | MSG91-United Kingdom",
+                "description": "Avail robust and powerful services in United Kingdom like transactional Voice, communication APIs and more at affordable prices. Check out the pricing now."
+            },
+            "heading": "Outgoing call charges/min",
+            "exportData": {
+                "content": "To download the detailed network and prefix wise pricing sheet. ",
+                "export": "Export",
+                "waiting": "Waiting..."
+            },
+            "addOns": {
+                "heading": "Add-on Services",
+                "content": [
+                    "Call Recording",
+                    "Call Monitoring",
+                    "Analytics",
+                    "Number Masking"
+                ],
+                "freeText": " All the Add-On Services are <span class='text-green-600'>FREE</span> of cost"
+            },
+            "rates": [
                 {
-                    "question": "How to subscribe to your Hello Plan?",
-                    "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
+                    "heading": "International rate",
+                    "content": "Calls are routed through premium A-Z routes and CLI can be any valid number. Calls without a CLI, with invalid CLI, with manipulated CLI, with CLI originated from unidentified, closed or unallocated prefix ranges, with CLI not in E.164 format, with CLI not matching ITU standards might be blocked or charged at the highest price."
                 },
                 {
-                    "question": "Are there any charges for AI Chat Bot?",
-                    "answer": "No, There are no charges for Chat Bot, we are only charged for basic and premium plans. You can use the chat bot in a free plan till 50 tickets in Hello, after that you have to upgrade your hello plan. Basically we are providing the chat Bot free for Trial purposes. You can use this Chat Bot in Whatsapp, Instagram, Chat Widget on your Website, Facebook and so on. So test the Chat Bot Now."
-                },
-                {
-                    "question": "Are there any extra charges for Instagram/Facebook Inbox?",
-                    "answer": "But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each. In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox."
-                },
-                {
-                    "question": "How to subscribe to your Hello Plan?",
-                    "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
-                },
-                {
-                    "question": "Can I customize the Hello Plan?",
-                    "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
+                    "heading": "Local Rate",
+                    "content": "Calls are routed through local operators’ in-country network. Only numbers on your MSG91 account can be used."
                 }
-            ]
-        }
-    },
-    "sms": {
-        "connectComp": {
-            "content": "Connect with our team for a personalized pricing.",
-            "sales_btn": "Talk to Sales",
-            "know_more": "Know more about"
+            ],
+            "connectComp": {
+                "content": "Connect with our team for a personalized plan to meet your needs.",
+                "sales_btn": "Talk to Sales",
+                "know_more": "Know more about"
+            },
+            "faqComp": {
+                "heading": "Frequently Asked Questions",
+                "faqs": [
+                    {
+                        "question": "How can I get in touch for further assistance or custom pricing plans, and are there any volume-based discounts for high call volumes?",
+                        "answer": "For further assistance or to discuss custom pricing plans, please reach out to our support team at [support@email.com]. Yes, we do offer volume-based discounts for high call volumes. Contact our sales team for personalized solutions."
+                    },
+                    {
+                        "question": "Do the listed prices include taxes or additional fees?",
+                        "answer": "The listed prices for our voice services are exclusive of taxes and additional fees. Taxes and fees, if applicable, will be clearly communicated during the billing process."
+                    },
+                    {
+                        "question": "Is there a difference in pricing for landline and mobile numbers?",
+                        "answer": "Our pricing structure may vary based on the destination type, including landline and mobile numbers. Please refer to our pricing page or contact our sales team for specific details."
+                    },
+                    {
+                        "question": "Inbound calls are free on the Hello panel. If I take a call on a mobile phone, how will it be charged?",
+                        "answer": "While inbound calls on the Hello panel are free, taking a call on a mobile phone will be subject to the applicable outbound call rates as per our pricing. Check our pricing details for specific rates."
+                    },
+                    {
+                        "question": "Difference between local and international prices?",
+                        "answer": "Local and international call prices differ based on the destination. Local calls typically refer to calls within the same country, while international calls involve calls to numbers outside the country. Refer to our pricing page for detailed information on local and international rates."
+                    }
+                ]
+            }
         },
-        "faqComp": {
-            "heading": "Frequently Asked Questions",
-            "faqs": [
-                {
-                    "question": "How to subscribe to your Hello Plan?",
-                    "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
-                },
-                {
-                    "question": "Are there any charges for AI Chat Bot?",
-                    "answer": "No, There are no charges for Chat Bot, we are only charged for basic and premium plans. You can use the chat bot in a free plan till 50 tickets in Hello, after that you have to upgrade your hello plan. Basically we are providing the chat Bot free for Trial purposes. You can use this Chat Bot in Whatsapp, Instagram, Chat Widget on your Website, Facebook and so on. So test the Chat Bot Now."
-                },
-                {
-                    "question": "Are there any extra charges for Instagram/Facebook Inbox?",
-                    "answer": "But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each. In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox."
-                },
-                {
-                    "question": "How to subscribe to your Hello Plan?",
-                    "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
-                },
-                {
-                    "question": "Can I customize the Hello Plan?",
-                    "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
-                }
-            ]
-        }
-    },
-    "otp": {
-        "connectComp": {
-            "content": "Connect with our team for a personalized plan to meet your needs.",
-            "sales_btn": "Talk to Sales",
-            "know_more": "Know more about"
+        "sms": {
+            "HeadComp": {
+                "title": "SMS Pricing in United Kingdom | MSG91-United Kingdom",
+                "description": "Avail robust and powerful services in United Kingdom like transactional SMS, communication APIs and more at affordable prices. Check out the pricing now."
+            },
+            "connectComp": {
+                "content": "Connect with our team for a personalized pricing.",
+                "sales_btn": "Talk to Sales",
+                "know_more": "Know more about"
+            }
         },
-        "faqComp": {
-            "heading": "Frequently Asked Questions",
-            "faqs": [
-                {
-                    "question": "How to subscribe to your Hello Plan?",
-                    "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
-                },
-                {
-                    "question": "Are there any charges for AI Chat Bot?",
-                    "answer": "No, There are no charges for Chat Bot, we are only charged for basic and premium plans. You can use the chat bot in a free plan till 50 tickets in Hello, after that you have to upgrade your hello plan. Basically we are providing the chat Bot free for Trial purposes. You can use this Chat Bot in Whatsapp, Instagram, Chat Widget on your Website, Facebook and so on. So test the Chat Bot Now."
-                },
-                {
-                    "question": "Are there any extra charges for Instagram/Facebook Inbox?",
-                    "answer": "But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each. In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox."
-                },
-                {
-                    "question": "How to subscribe to your Hello Plan?",
-                    "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
-                },
-                {
-                    "question": "Can I customize the Hello Plan?",
-                    "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
-                }
-            ]
-        }
-    },
-    "whatsapp": {
-        "connectComp": {
-            "know_more": "Know more about"
-        }
-    },
-    "rcs": {
-        "connectComp": {
-            "know_more": "Know more about"
+        "otp": {
+            "HeadComp": {
+                "title": "OTP Pricing in United Kingdom | MSG91-United Kingdom",
+                "description": "Avail robust and powerful services in United Kingdom like transactional OTP, communication APIs and more at affordable prices. Check out the pricing now."
+            },
+            "connectComp": {
+                "content": "Connect with our team for a personalized plan to meet your needs.",
+                "sales_btn": "Talk to Sales",
+                "know_more": "Know more about"
+            }
+        },
+        "whatsapp": {
+            "HeadComp": {
+                "title": "WhatsApp Pricing in United Kingdom | MSG91-United Kingdom",
+                "description": "Avail robust and powerful services in United Kingdom like transactional WhatsApp, communication APIs and more at affordable prices. Check out the pricing now."
+            },
+            "connectComp": {
+                "know_more": "Know more about"
+            }
+        },
+        "rcs": {
+            "HeadComp": {
+                "title": "RCS Pricing in United Kingdom | MSG91-United Kingdom",
+                "description": "Avail robust and powerful services in United Kingdom like transactional RCS, communication APIs and more at affordable prices. Check out the pricing now."
+            },
+            "connectComp": {
+                "know_more": "Know more about"
+            }
         }
     }
-}
 }
