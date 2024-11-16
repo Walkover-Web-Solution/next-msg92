@@ -81,7 +81,6 @@
                 "img": "/assets/global/whatsapp/whatsapp-campaign.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Support Base64",
                 "content": "<strong>Send the body in JSON and leave the rest to us.</strong>No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp.",
                 "img": "/assets/global/whatsapp/whatsapp-support-base64.svg"
@@ -95,7 +94,7 @@
                 "name": "Manage Template Inside Panel",
                 "content": "<strong>Create and Manage your template right here</strong>No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook.",
                 "img": "/assets/global/whatsapp/whatsapp-manage-template-inside-panel.svg"
-            },  
+            },
             {
                 "name": "Analytics",
                 "content": "<strong>Get graphical insights into your business messages.</strong>Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more.",

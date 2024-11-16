@@ -43,69 +43,58 @@
         "heading": "Features",
         "iconColor": "text-campaign",
         "features": [
-          
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Global Market Expansion via Numbers: Connecting with the Philippines",
-                "content":"Numbers are a strategic tool for businesses seeking to broaden their horizons and effectively enter the Philippines market. By securing local Philippine phone numbers, companies can effortlessly establish a strong local presence, facilitating seamless connections with Filipino clients and associates. This approach streamlines accessibility, boosts credibility, and minimizes the geographical divide, offering a professional, cost-efficient, and impactful strategy for global market expansion into the Philippines.",
+                "content": "Numbers are a strategic tool for businesses seeking to broaden their horizons and effectively enter the Philippines market. By securing local Philippine phone numbers, companies can effortlessly establish a strong local presence, facilitating seamless connections with Filipino clients and associates. This approach streamlines accessibility, boosts credibility, and minimizes the geographical divide, offering a professional, cost-efficient, and impactful strategy for global market expansion into the Philippines.",
                 "img": "/assets/global/numbers/numbers-global-market-entry-with-numbers.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Cost Efficiency",
                 "content": "Numbers in the Philippines present a budget-friendly alternative to conventional phone lines, with reduced setup expenses and maintenance costs. These numbers eliminate the need for physical infrastructure, making them a cost-efficient choice for businesses operating in the Philippine market.",
                 "img": "/assets/global/numbers/numbers-cost-efficiency.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Missed Call Services",
                 "content": "Missed Call Services: Several virtual number providers offer features such as missed call notifications, enabling businesses in the Philippines to promptly address customers who were unable to make contact. This functionality enhances customer engagement and responsiveness in the Philippine market.",
                 "img": "/assets/global/numbers/numbers-missed-call-services.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Keyword Specific Messaging",
                 "content": "<strong>You can choose a unique keyword for your business or campaign</strong>When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication.",
                 "img": "/assets/global/numbers/numbers-keyword-specific-messaging.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Keyword Independent Messaging",
                 "content": "<strong>In addition to keywords</strong>you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords.",
                 "img": "/assets/global/numbers/numbers-keyword-independent-messaging.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Pre-formatted Set of Questions",
                 "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format.",
                 "img": "/assets/global/numbers/numbers-pre-formatted-questions.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Online Surveys",
                 "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease.",
                 "img": "/assets/global/numbers/numbers-online-survey.svg"
-            },       {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+            },
+            {
                 "name": "Lead Generation",
                 "content": " Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base.",
                 "img": "/assets/global/numbers/numbers-lead-generation.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Create Auto Responses",
                 "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users.",
                 "img": "/assets/global/numbers/numbers-auto-responses.svg"
             },
             {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
                 "name": "Integration into Web Applications",
                 "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication.",
                 "img": "/assets/global/numbers/numbers-integration-into-web.svg"
             }
         ]
     },
-   
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
