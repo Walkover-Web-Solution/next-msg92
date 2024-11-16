@@ -84,7 +84,7 @@ export default function TestPage({
                 <ul className={'tag-list'}>
                     {tags !== '' &&
                         tags?.map((it, i) => (
-                            <li key={i} className='bg-tags'>
+                            <li key={i} className='bg-gray-300 py-1 px-3 rounded-full w-fit'>
                                 <TagButton tag={getTag(it)} />
                             </li>
                         ))}

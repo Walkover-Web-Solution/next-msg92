@@ -35,7 +35,7 @@ export default function PostItem({ post }) {
                             <div className='card-actions justify-start mt-auto'>
                                 {post?.tags !== '' &&
                                     post?.tags?.map((category, idx) => (
-                                        <span className='bg-gray-400 px-3  rounded-full' key={idx}>
+                                        <span className='bg-gray-300 py-1 px-3 rounded-full' key={idx}>
                                             {category}
                                         </span>
                                     ))}

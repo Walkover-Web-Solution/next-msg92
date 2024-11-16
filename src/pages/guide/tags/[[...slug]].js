@@ -32,14 +32,14 @@ export default function Index({ posts, tag, pagination, page, commonData, pageIn
                 pageInfo={pageInfo}
             />
             <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
-            <div className='blog'>
+            <div className='blog bg-neutral py-8'>
                 <div className={'container blog-home-container'}>
                     <div className={'posts'}>
                         <button className='d-inline-block btn blog-container__back-btn mb-4' onClick={handleClick}>
                             <MdKeyboardArrowLeft />
                             Back
                         </button>
-                        <div className='flex flex-wrap gap-12'>
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 '>
                             {posts?.map((it, i) => (
                                 <PostItem key={i} post={it} />
                             ))}
