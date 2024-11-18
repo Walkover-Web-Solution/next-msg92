@@ -1,9 +1,11 @@
 import '@/styles/globals.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import Script from 'next/script';
+import handleBrawserCookies from '@/utils/setCookies';
 
 export default function App({ Component, pageProps }) {
+    // Manage browser cookies to send to signup page
+    handleBrawserCookies();
     return (
         <>
             <Component {...pageProps} />
