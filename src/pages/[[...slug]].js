@@ -110,7 +110,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const params = context?.params;
     const pageInfo = getPageInfo(params);
-    const isNestedpage = specialPages.nested.includes(pageInfo.pathURL);
+    const isNestedpage = specialPages.nested.includes(pageInfo?.pathURL);
     const commonData = getCommonCompData(pageInfo?.country);
     const fetchData = async (endpoint) => {
         const res = await fetch(`${process.env.BASE_URL}${endpoint}`, {
