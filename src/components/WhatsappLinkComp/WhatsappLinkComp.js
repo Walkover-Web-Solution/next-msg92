@@ -6,118 +6,119 @@ import GetMdIcons from '@/utils/getMdIcons';
 import { MdChevronRight, MdCopyAll, MdDownload } from 'react-icons/md';
 const ParentComponent = ({ data }) => {
     useEffect(() => {
-        var qrcode = new QRCode(document.getElementById('qrcode'), {
-            width: 150,
-            height: 150,
-            colorDark: '#000000',
-            colorLight: '#ffffff',
-        });
-        $(function () {
-            $('#wq-copy-btn').on('click', function (event) {
-                event.preventDefault();
-                var elementText = $('#whatsappChatWidgetStartChat').attr('href');
-                navigator.clipboard.writeText(elementText);
-                $(this).find('span').text('Copied!');
+        if (document.getElementById('qrcode')) {
+            var qrcode = new QRCode(document.getElementById('qrcode'), {
+                width: 150,
+                height: 150,
+                colorDark: '#000000',
+                colorLight: '#ffffff',
             });
+            $(function () {
+                $('#wq-copy-btn').on('click', function (event) {
+                    event.preventDefault();
+                    var elementText = $('#whatsappChatWidgetStartChat').attr('href');
+                    navigator.clipboard.writeText(elementText);
+                    $(this).find('span').text('Copied!');
+                });
 
-            $('#wq-copy-code').on('click', function (event) {
-                event.preventDefault();
-                var elementText = $('#widget-code').text();
-                navigator.clipboard.writeText(elementText);
-                $(this).find('span').text('Copied!');
-            });
+                $('#wq-copy-code').on('click', function (event) {
+                    event.preventDefault();
+                    var elementText = $('#widget-code').text();
+                    navigator.clipboard.writeText(elementText);
+                    $(this).find('span').text('Copied!');
+                });
 
-            $('#edit').on('click', function () {
-                $('#widget-dummy-preview, #widget-form').show();
-                $('#widget-preview, #widget-code-wrp').hide();
-            });
+                $('#edit').on('click', function () {
+                    $('#widget-dummy-preview, #widget-form').show();
+                    $('#widget-preview, #widget-code-wrp').hide();
+                });
 
-            $('.wq-create-link-btn').on('click', function (event) {
-                event.preventDefault();
-                var wp_number = $('#wqinputphone').val();
-                var wp_message = $('#wqinputtext').val();
-                var wp_welcome = $('#whatsappChatWidgetWelcomeText').val();
-                var wp_brand = $('#whatsappChatWidgetBrandImage').val();
+                $('.wq-create-link-btn').on('click', function (event) {
+                    event.preventDefault();
+                    var wp_number = $('#wqinputphone').val();
+                    var wp_message = $('#wqinputtext').val();
+                    var wp_welcome = $('#whatsappChatWidgetWelcomeText').val();
+                    var wp_brand = $('#whatsappChatWidgetBrandImage').val();
 
-                // Example usage
-                if (wp_number == '') {
-                    alert('Please enter a phone number.');
-                } else {
-                    var wp_end_url = `https://wa.me/${wp_number}?text=${encodeURIComponent(wp_message)}`;
-                    $('#widget-dummy-preview').hide();
-                    $('#widget-preview').show();
-                    $('#whatsappChatWidgetStartChat').attr('href', wp_end_url);
-                    $('#dataBox').val(wp_end_url);
-                    $('.wq-link-display-box').html(wp_end_url);
-                    $('#whatsappChatWidgetBrandImagePreview').attr(
-                        'src',
-                        wp_brand ? wp_brand : 'https://msg91.com/img/icon/walink-whatsapp.svg'
-                    );
-                    makeQrCode();
-                    widgetCode(wp_brand, wp_welcome, wp_message, wp_number);
+                    // Example usage
+                    if (wp_number == '') {
+                        alert('Please enter a phone number.');
+                    } else {
+                        var wp_end_url = `https://wa.me/${wp_number}?text=${encodeURIComponent(wp_message)}`;
+                        $('#widget-dummy-preview').hide();
+                        $('#widget-preview').show();
+                        $('#whatsappChatWidgetStartChat').attr('href', wp_end_url);
+                        $('#dataBox').val(wp_end_url);
+                        $('.wq-link-display-box').html(wp_end_url);
+                        $('#whatsappChatWidgetBrandImagePreview').attr(
+                            'src',
+                            wp_brand ? wp_brand : 'https://msg91.com/img/icon/walink-whatsapp.svg'
+                        );
+                        makeQrCode();
+                        widgetCode(wp_brand, wp_welcome, wp_message, wp_number);
+                    }
+                });
+
+                const downloadBtn = document.getElementById('downloadBtn');
+                const qrcode1 = document.getElementById('qrcode');
+                const toHideClassName = 'hide';
+                function makeQrCode() {
+                    var elText = document.getElementById('dataBox');
+                    if (!elText.value) {
+                        alert('Input a text');
+                        elText.focus();
+                        return;
+                    }
+                    qrcode.makeCode(elText.value);
                 }
-            });
 
-            const downloadBtn = document.getElementById('downloadBtn');
-            const qrcode1 = document.getElementById('qrcode');
-            const toHideClassName = 'hide';
-            function makeQrCode() {
-                var elText = document.getElementById('dataBox');
-                if (!elText.value) {
-                    alert('Input a text');
-                    elText.focus();
-                    return;
+                downloadBtn.onclick = function (e) {
+                    e.preventDefault();
+                    // Image tag
+                    const img = qrcode1.getElementsByTagName('img')[0];
+
+                    // Canvas tag
+                    const canvas = qrcode1.getElementsByTagName('canvas')[0];
+
+                    // Padding to QRCode
+                    const padding = 40;
+
+                    // Adding padding to width and height
+                    canvas.width = canvas.width + padding;
+                    canvas.height = canvas.height + padding;
+
+                    // Canvas context
+                    const context = canvas.getContext('2d');
+                    // Clearing previous content
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    // Making the background white
+                    context.fillStyle = '#ffffff';
+                    context.fillRect(0, 0, canvas.width, canvas.height);
+                    // Adding the image of QRCode
+                    // x and y are padding / 2
+                    context.drawImage(img, padding / 2, padding / 2);
+
+                    // Getting base64 url
+                    const image = canvas.toDataURL('image/png', 1);
+                    const filename = 'WhatsApp-QR-code-' + Date.now() + '.png';
+                    downloadImage(image, filename);
+                    //reset height and width
+                    canvas.width = 150;
+                    canvas.height = 150;
+                };
+
+                function downloadImage(image, filename) {
+                    // Creating hidden <a> tag to download
+                    var element = document.createElement('a');
+                    element.setAttribute('href', image);
+                    element.setAttribute('download', filename);
+                    element.setAttribute('class', toHideClassName);
+                    document.body.appendChild(element);
+                    element.click();
+                    document.body.removeChild(element);
                 }
-                qrcode.makeCode(elText.value);
-            }
-
-            downloadBtn.onclick = function (e) {
-                e.preventDefault();
-                // Image tag
-                const img = qrcode1.getElementsByTagName('img')[0];
-
-                // Canvas tag
-                const canvas = qrcode1.getElementsByTagName('canvas')[0];
-
-                // Padding to QRCode
-                const padding = 40;
-
-                // Adding padding to width and height
-                canvas.width = canvas.width + padding;
-                canvas.height = canvas.height + padding;
-
-                // Canvas context
-                const context = canvas.getContext('2d');
-                // Clearing previous content
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                // Making the background white
-                context.fillStyle = '#ffffff';
-                context.fillRect(0, 0, canvas.width, canvas.height);
-                // Adding the image of QRCode
-                // x and y are padding / 2
-                context.drawImage(img, padding / 2, padding / 2);
-
-                // Getting base64 url
-                const image = canvas.toDataURL('image/png', 1);
-                const filename = 'WhatsApp-QR-code-' + Date.now() + '.png';
-                downloadImage(image, filename);
-                //reset height and width
-                canvas.width = 150;
-                canvas.height = 150;
-            };
-
-            function downloadImage(image, filename) {
-                // Creating hidden <a> tag to download
-                var element = document.createElement('a');
-                element.setAttribute('href', image);
-                element.setAttribute('download', filename);
-                element.setAttribute('class', toHideClassName);
-                document.body.appendChild(element);
-                element.click();
-                document.body.removeChild(element);
-            }
-            function widgetCode(barndImage, welcomeText, preFilledMsg, mobile) {
-                var html = `&lt;script&gt;
+                function widgetCode(barndImage, welcomeText, preFilledMsg, mobile) {
+                    var html = `&lt;script&gt;
 var options = {
   brandSetting: {
     brandImg: "${barndImage}",
@@ -139,13 +140,14 @@ var options = {
 &lt;/script&gt;
 &lt;script type="text/javascript" onload="CreateWhatsappChatWidget(options)" src="https://msg91.com/js/waWidget.js"\&gt; &lt;/script&gt;`;
 
-                $('#widget-code').html(html);
-                hljs.highlightAll();
-                $('#widget-code-wrp').show();
-                $('#widget-form').hide();
-            }
-        });
-    });
+                    $('#widget-code').html(html);
+                    hljs.highlightAll();
+                    $('#widget-code-wrp').show();
+                    $('#widget-form').hide();
+                }
+            });
+        }
+    }, []);
     return (
         <>
             <script type='text/javascript' src='/js/qrcode.js' defer></script>
