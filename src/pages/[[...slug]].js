@@ -36,6 +36,7 @@ import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
 /* files */
 import specialPages from '@/data/specialPages.json';
 import ThankYouComp from '@/components/ThankYouComp/ThankYouComp';
+import HelloChatBotComp from '@/components/HelloChatBotComp/HelloChatBotComp';
 
 const Components = {
     BannerComp,
@@ -70,6 +71,7 @@ const Components = {
     MagicLinkComp,
     WhatsappLinkComp,
     ThankYouComp,
+    HelloChatBotComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

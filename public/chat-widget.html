@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Widget</title>
+</head>
+<body>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const widgetToken = urlParams.get('widgetToken');
+        const widgetUrl = urlParams.get('widgetUrl') + '/widget/chat-widget.js';
+        if (widgetToken) {
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.onload = function() {
+                initChatWidget({
+                    widgetToken: widgetToken,
+                    hide_launcher: true,
+                    launch_widget: true,
+                    show_close_button: false
+                }, 0);
+            };
+            script.src = widgetUrl;
+            document.body.appendChild(script);
+        } else {
+            console.error('Widget token is missing');
+        }
+    </script>
+</body>
+</html>
