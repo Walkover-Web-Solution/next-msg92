@@ -5,7 +5,7 @@ import { MdDoneOutline, MdArrowForward } from 'react-icons/md';
 export async function getStaticProps() {    
   let data = null;
   try {
-      const response = await axios.get("https://api.airtable.com/v0/appxLAuNWLqf7kh4j/STARTUP%20PAGE%20-%20WEBSITE%20DISPLAY?maxRecords=3&view=Grid%20view", {
+      const response = await fetch.get("https://api.airtable.com/v0/appxLAuNWLqf7kh4j/STARTUP%20PAGE%20-%20WEBSITE%20DISPLAY?maxRecords=3&view=Grid%20view", {
           headers: {
               Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
           },
