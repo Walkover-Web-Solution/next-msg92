@@ -204,7 +204,6 @@
                         "question": "I subscribed to the starter plan, which should give me 1 Lac emails at 2000/-. However, after subscribing, I noticed that the deducted amount was less than 2000, and I received fewer than 1 Lac emails.",
                         "answer": "Each plan operates on a monthly basis, starting from the first date to the last. If you purchase a plan in the middle of the month, the system will calculate charges and benefits on a pro-rated basis, considering the remaining days in the month."
                     }
-
                 ]
             }
         },
@@ -358,7 +357,7 @@
         "rcs": {
             "HeadComp": {
                 "title": "RCS Message Pricing in India | MSG91-India",
-                "description": "RCS Messaging now available in India at most affordable prices.  Learn How to send RCS Messages on android and iphone using Transactional RCS APIs and more"
+                "description": "RCS Messaging now available in India at most affordable prices. Learn How to send RCS Messages on android and iphone using Transactional RCS APIs and more"
             },
             "connectComp": {
                 "know_more": "Know more about"

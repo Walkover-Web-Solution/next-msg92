@@ -15,6 +15,7 @@ const nextConfig = {
         SUBSCRIPTION_PRICING_URL: getEnvValue('SUBSCRIPTION_PRICING_URL'),
         VOICE_API_URL: getEnvValue('VOICE_API_URL'),
         CHATBOT_BASE_URL: getEnvValue('CHATBOT_BASE_URL'),
+        LOGIN_URL: getEnvValue('LOGIN_URL'),
 
         // CLIENT IDS
         GOOGLE_CLIENT_ID: getEnvValue('GOOGLE_CLIENT_ID'),

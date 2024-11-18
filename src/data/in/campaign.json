@@ -26,7 +26,7 @@
             },
             {
                 "name": "Draggable Flow",
-                "content": "<strong>Drag and drop to create an omnichannel flow with ‘if-then’ scenarios.</strong> Choose when you need to initiate an SMS, mail, or messaging conversation in a single workflow. Create a marketing automation flow based on previous drip campaignflow.",
+                "content": "<strong>Drag and drop to create an omnichannel flow with ‘if-then’ scenarios.</strong> Choose when you need to initiate an SMS, mail, or messaging conversation in a single workflow. Create a marketing automation flow based on previous drip campaign flow.",
                 "img": "/assets/global/campaign/campaign-draggable-flow.svg"
             },
             {

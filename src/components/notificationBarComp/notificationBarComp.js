@@ -136,7 +136,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                         <MdOutlineCall fontSize={18} />
                         {componentData?.support}
                     </Link>
-                    <Link className='text-link flex gap-1 items-center' href={'https://test.msg91.com/signin/'}>
+                    <Link className='text-link flex gap-1 items-center' href={process.env.LOGIN_URL || '#'}>
                         <MdLogin fontSize={18} />
                         {componentData?.login}
                     </Link>
