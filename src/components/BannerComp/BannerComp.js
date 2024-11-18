@@ -14,6 +14,7 @@ import getURL from '@/utils/getURL';
 export default function BannerComp({ pageInfo, data }) {
     const [isCopied, setIsCopied] = useState(false);
     const [code, setCode] = useState({});
+
     const [selectedLanguage, setSelectedLanguage] = useState('curl');
 
     useEffect(() => {
@@ -46,7 +47,7 @@ export default function BannerComp({ pageInfo, data }) {
             python: snippet?.convert('python'),
         };
         setCode(snippetCode);
-    }, []);
+    }, [pageInfo]);
 
     return (
         <>
