@@ -108,8 +108,6 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-    const queryParams = context?.query;
-    console.log('🚀 ~ getStaticProps ~ queryParams:', queryParams);
     const params = context?.params;
     const pageInfo = getPageInfo(params);
     const isNestedpage = specialPages.nested.includes(pageInfo?.pathURL);
