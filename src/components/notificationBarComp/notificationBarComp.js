@@ -61,38 +61,69 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                             </div>
                             <div tabIndex={0} className='dropdown-content bg-neutral z-[9999] w-60 rounded shadow'>
                                 <ul>
-                                    <li className='cursor-pointer'>
-                                        <a
-                                            href={getURL('country', 'global', pageInfo)}
-                                            className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
-                                        >
-                                            <Image src={`/assets/country-flags/global.svg`} width={18} height={18} />
-                                            Global
-                                        </a>
+                                    <li className='cursor-pointer '>
+                                        {pageInfo?.country === 'global' ? (
+                                            <div className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '>
+                                                <Image
+                                                    src={`/assets/country-flags/global.svg`}
+                                                    width={18}
+                                                    height={18}
+                                                    alt='global'
+                                                />
+                                                Global
+                                            </div>
+                                        ) : (
+                                            <a
+                                                href={getURL('country', 'global', pageInfo)}
+                                                className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
+                                            >
+                                                <Image
+                                                    src={`/assets/country-flags/global.svg`}
+                                                    width={18}
+                                                    height={18}
+                                                    alt='global'
+                                                />
+                                                Global
+                                            </a>
+                                        )}
                                     </li>
                                     {/* /* Render the country list */}
                                     {availableCountries.map((cont, index) => {
                                         if (cont?.shortname?.toLowerCase() !== 'br')
                                             return (
                                                 <li key={index} className='cursor-pointer'>
-                                                    <a
-                                                        href={getURL(
-                                                            'country',
-                                                            cont?.shortname.toLowerCase(),
-                                                            pageInfo
-                                                        )}
-                                                        className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
-                                                    >
-                                                        {/* /* ${cont?.shortname} == 'in,us,gb etc. */}
-                                                        <Image
-                                                            src={`/assets/country-flags/${cont?.shortname.toLowerCase()}.svg`}
-                                                            width={18}
-                                                            height={18}
-                                                            alt={cont?.name}
-                                                        />
+                                                    {pageInfo?.country === cont?.shortname.toLowerCase() ? (
+                                                        <div className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '>
+                                                            {/* /* ${cont?.shortname} == 'in,us,gb etc. */}
+                                                            <Image
+                                                                src={`/assets/country-flags/${cont?.shortname.toLowerCase()}.svg`}
+                                                                width={18}
+                                                                height={18}
+                                                                alt={cont?.name}
+                                                            />
 
-                                                        {cont?.name}
-                                                    </a>
+                                                            {cont?.name}
+                                                        </div>
+                                                    ) : (
+                                                        <a
+                                                            href={getURL(
+                                                                'country',
+                                                                cont?.shortname.toLowerCase(),
+                                                                pageInfo
+                                                            )}
+                                                            className='px-2 py-1 hover:bg-secondary flex items-center gap-2 cursor-pointer '
+                                                        >
+                                                            {/* /* ${cont?.shortname} == 'in,us,gb etc. */}
+                                                            <Image
+                                                                src={`/assets/country-flags/${cont?.shortname.toLowerCase()}.svg`}
+                                                                width={18}
+                                                                height={18}
+                                                                alt={cont?.name}
+                                                            />
+
+                                                            {cont?.name}
+                                                        </a>
+                                                    )}
                                                 </li>
                                             );
                                     })}
