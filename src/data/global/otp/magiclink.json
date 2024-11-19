@@ -1,6 +1,6 @@
 {
     "HeadComp": {
-        "title": "MSG91 OTP Magic Link India - Hassle-Free & Secure User Authentication",
+        "title": "MSG91 OTP Magic Link - Secure & Seamless User Authentication",
         "description": "Enhance user experience with MSG91 OTP Magic Link, providing secure, one-click authentication without the need for manual OTP entry. Simplify sign-ups and boost conversions effortlessly."
     },
     "MagicLinkComp": {
@@ -13,7 +13,7 @@
         "tagline": "Effortless Access, Instant Authentication",
         "heading": "Authenticate Seamlessly with Magic Link",
         "subheading": "Authenticating users is now easier and faster. Just send a single link, and your users can verify themselves instantly.",
-        "banner_img": "/assets/chatbot/banner.png",
+        "banner_img": "/assets/magiclink/magic-link-banner.svg",
         "getstarted_btn": "Get Started",
         "what_magiclink": {
             "heading": "What is Magic Link?",
@@ -69,7 +69,7 @@
             "content": [
                 {
                     "heading": "Healthcare",
-                    "image": "/assets/chatbot/healthcare.png",
+                    "image": "/assets/magiclink/healthcare.webp",
                     "icon": "MdOutlineHealthAndSafety",
                     "description": "For healthcare providers, ensuring patient data security is a top priority. With Magic Link, patients can easily access their medical records, test results, or appointment details by simply clicking a secure link sent via SMS, email, or WhatsApp. This improves the patient experience by eliminating the need for cumbersome logins while maintaining high security standards.",
                     "card": [
@@ -89,7 +89,7 @@
                 },
                 {
                     "heading": "E-Commerce",
-                    "image": "/assets/chatbot/e-commerce.png",
+                    "image": "/assets/magiclink/e-commerce.avif",
                     "icon": "MdOutlineStorefront",
                     "description": "n the fast-paced world of online shopping, customers want a smooth and quick checkout experience. With Magic Link, shoppers can log in or register instantly with a single click, making the process hassle-free and reducing cart abandonment. No more forgotten passwords or slow OTP verification—just a seamless, one-click authentication for faster purchases.",
                     "card": [

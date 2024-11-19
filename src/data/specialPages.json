@@ -59,6 +59,7 @@
         "gb/whatsapp/chatbot",
         "us/whatsapp/chatbot",
         "otp/magiclink",
+        "in/otp/magiclink",
         "partners-and-integrations/tally"
     ]
 }
