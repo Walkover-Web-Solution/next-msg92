@@ -2,8 +2,10 @@ import { MdDone } from 'react-icons/md';
 import React, { useRef } from 'react';
 import { InlineWidget } from 'react-calendly';
 import Image from 'next/image';
+import Head from 'next/head';
 
 export default function IntegrationAppComp({ data }) {
+    console.log('🚀 ~ IntegrationAppComp ~ data:', data);
     const videoRef = useRef();
     const handleVideoClick = () => {
         if (videoRef.current.paused) {
@@ -16,6 +18,16 @@ export default function IntegrationAppComp({ data }) {
 
     return (
         <>
+            <Head>
+                <script
+                    type='module'
+                    src='https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.esm.js'
+                ></script>
+                <link
+                    rel='stylesheet'
+                    href='https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.css'
+                />
+            </Head>
             <div
                 className='py-4'
                 style={{
@@ -37,40 +49,63 @@ export default function IntegrationAppComp({ data }) {
                 <div className='flex flex-col gap-4 py-20'>
                     <h2 className='text-6xl font-bold'>{data?.heading}</h2>
                     <p className='text-lg w-full md:w-1/2'>{data?.subheading}</p>
-                    <div className='flex  gap-3'>
-                        <a
-                            className='btn btn-primary bnt-md'
-                            href='https://msg91.com/help/MSG91/integrate-tally-with-msg91'
-                            target='_blank'
-                        >
-                            Get The Plugin
-                        </a>
-                        <button
-                            onClick={() => document.getElementById('plugin_modal').showModal()}
-                            className='btn btn-secondary '
-                        >
-                            Schedule a meeting
-                        </button>
-                    </div>
+                    {data?.buttons && (
+                        <div className='flex  gap-3'>
+                            {data?.buttons?.get_plugin && (
+                                <a
+                                    className='btn btn-primary bnt-md'
+                                    href={data?.buttons?.get_plugin?.link}
+                                    target='_blank'
+                                >
+                                    Get The Plugin
+                                </a>
+                            )}
+                            {data?.buttons?.meet && (
+                                <button
+                                    onClick={() => document.getElementById('plugin_modal').showModal()}
+                                    className='btn btn-secondary '
+                                >
+                                    Schedule a meeting
+                                </button>
+                            )}
+                        </div>
+                    )}
                 </div>
-                <div className='flex justify-center cont_p'>
-                    <div className='max-w-[900px]'>
-                        <video
-                            ref={videoRef}
-                            onClick={handleVideoClick}
-                            height={600}
-                            preload='none'
-                            poster='https://storage.googleapis.com/production-file-system/293020/gkacnbuk'
-                        >
-                            <source
-                                src='https://storage.googleapis.com/production-file-system/293020/yzeokyfz'
-                                type='video/mp4'
-                            />
-                            <track kind='captions' srclang='en' label='english_captions' />
-                            Your browser does not support the video tag.
-                        </video>
+                {data?.slug === 'tally' && (
+                    <div className='flex justify-center cont_p'>
+                        <div className='max-w-[900px]'>
+                            <video
+                                ref={videoRef}
+                                onClick={handleVideoClick}
+                                height={600}
+                                preload='none'
+                                poster='https://storage.googleapis.com/production-file-system/293020/gkacnbuk'
+                            >
+                                <source
+                                    src='https://storage.googleapis.com/production-file-system/293020/yzeokyfz'
+                                    type='video/mp4'
+                                />
+                                <track kind='captions' srclang='en' label='english_captions' />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
-                </div>
+                )}
+                {data?.slug === 'zapier' && (
+                    <div className='flex justify-center '>
+                        <div className='w-[900px]'>
+                            <zapier-zap-templates
+                                theme='light'
+                                apps='msg91'
+                                create-without-template='hide'
+                                limit='10'
+                                link-target='new-tab'
+                                presentation='row'
+                                use-this-zap='show'
+                            ></zapier-zap-templates>
+                        </div>
+                    </div>
+                )}
                 {data?.features && (
                     <div className='flex flex-col cont_gap cont_p'>
                         <h2 className='text-4xl font-bold'>Top features of this powerful integration</h2>
@@ -94,16 +129,12 @@ export default function IntegrationAppComp({ data }) {
                     <span className='text-4xl font-medium'>
                         Customize your workflow to fit your specific requirements
                     </span>
-                    <a
-                        className='btn btn-primary btn-outline'
-                        href='https://msg91.com/help/MSG91/integrate-tally-with-msg91'
-                        target='_blank'
-                    >
+                    <a className='btn btn-primary btn-outline' href={data?.workflow?.link} target='_blank'>
                         Get The Plugin
                     </a>
                 </div>
                 <div className=' flex justify-between cont_gap items-center p-20'>
-                    <p className='text-2xl'>{data?.supercharge?.content}</p>
+                    <p className='text-2xl' dangerouslySetInnerHTML={{ __html: data?.supercharge?.content }}></p>
                     <img src={data?.supercharge?.img} alt='tally-graphics image' />
                 </div>
                 <div className='flex flex-col cont_gap cont_p'>

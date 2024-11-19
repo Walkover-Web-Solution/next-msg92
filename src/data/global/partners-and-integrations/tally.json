@@ -37,7 +37,7 @@
         },
         "supercharge": {
             "content": "Supercharge your Tally Prime experience with the MSG91 Tally Prime Plugin, unlocking unparalleled communication and automation capabilities. Save time, enhance communication, and gain precise control over financial transactions for streamlined invoicing and ledger management today.",
-            "img": "/img/integrations/tally-graphics.svg"
+            "img": "/assets/integrations/graphics/tally-graphics.svg"
         },
         "get_plugin": {
             "content": "Get the MSG91 Tally plugin",
