@@ -32,6 +32,7 @@ import SignUp from '@/components/signupComp/SignUp';
 import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
 import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
+import IntegrationAppComp from '@/components/IntegrationsComp/IntegrationAppComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -72,6 +73,7 @@ const Components = {
     WhatsappLinkComp,
     ThankYouComp,
     StartupFormsComp,
+    IntegrationAppComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
