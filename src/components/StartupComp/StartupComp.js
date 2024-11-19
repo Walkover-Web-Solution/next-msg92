@@ -15,7 +15,7 @@ export default function StartupComp({ pageInfo, data }) {
             <div className='container flex flex-col cont_gap cont_p'>
                 <h1 class='text-5xl font-bold'>{data?.heading}</h1>
                 <p class='text-xl'>{data?.subheading}</p>
-                <a href={data?.doc_btn_link} target='_blank'>
+                <a href={'/startups-form'} target='_blank'>
                     <button className='btn btn-primary  '>{data?.doc_btn}</button>
                 </a>
             </div>
