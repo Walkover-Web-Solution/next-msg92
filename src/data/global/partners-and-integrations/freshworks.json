@@ -1,0 +1,50 @@
+{
+    "HeadComp": {
+        "title": "Automate your Message | Send SMS, Email and Whatsapp - MSG91",
+        "description": "Supercharge your customer support and engagement with the powerful combination of MSG91 and Freshworks integration. Deliver timely notifications, automate customer interactions, and drive better user experiences. Experience the seamless synergy between MSG91 and Freshworks for enhanced business growth."
+    },
+    "IntegrationAppComp": {
+        "slug": "freshworks",
+        "nav": {
+            "heading": "Freshworks Integration",
+            "subheading": "Streamline Your Engagement Workflows",
+            "img": "/assets/integrations/freshworks.svg"
+        },
+        "heading": "Engage Effectively With Freshworks",
+        "subheading": "The MSG91 Freshworks Plugin lets you send SMS inside Freshsales Suite / Freshdesk so you can automate your business workflows and customer engagement with ease, without embedding any code",
+        "buttons": {
+            "get_plugin": {
+                "text": "Get The Plugin",
+                "link": "https://www.freshworks.com/apps/freshworks_crm/msg91/"
+            }
+        },
+        "features": {
+            "heading": "This powerful integration empowers businesses to",
+            "content": [
+                "Automate engagement tasks",
+                "Streamline communication processes",
+                "Enhance Overall Efficiency"
+            ]
+        },
+        "workflow": {
+            "text": "Get The Plugin",
+            "link": "https://www.freshworks.com/apps/freshworks_crm/msg91/"
+        },
+        "offers": {
+            "heading": "The MSG91 Freshworks Plugin Offers",
+            "content": [
+                "A user-friendly interface",
+                "Intuitive setup process",
+                "Pre-build templates"
+            ]
+        },
+        "supercharge": {
+            "content": "Create custom triggers and actions that initiate messaging and increase engagement based on specific events or conditions in connected applications.<br/><br/>Send order alerts and recover abandoned checkouts via WhatsApp / SMS Create customer journeys with multi-channel communication Update customers on critical events- New Signups, Payment Confirmation, Send Invoice PDF",
+            "img": "/assets/integrations/graphics/zapeir-graphics.svg"
+        },
+        "get_plugin": {
+            "content": "Get the MSG91 Freshworks plugin",
+            "link": "https://www.freshworks.com/apps/freshworks_crm/msg91/"
+        }
+    }
+}

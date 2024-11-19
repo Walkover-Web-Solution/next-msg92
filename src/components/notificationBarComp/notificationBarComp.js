@@ -51,6 +51,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                         src={`/assets/country-flags/${currentCountry?.shortname.toLowerCase()}.svg`}
                                         width={18}
                                         height={18}
+                                        alt={currentCountry?.shortname.toLowerCase()}
                                     />
                                 ) : (
                                     <MdOutlineLanguage fontSize={16} />

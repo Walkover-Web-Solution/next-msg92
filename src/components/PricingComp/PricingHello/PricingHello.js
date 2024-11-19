@@ -423,7 +423,7 @@ export default function PricingHello({ data, country }) {
                 <dialog id='calculate_hello_pricing' className='modal '>
                     <div className={`modal-box flex flex-col gap-4 ${style.modal}`}>
                         <div className='flex justify-between'>
-                            <h2 className='font-bold text-xl'>Calcualte</h2>
+                            <h2 className='font-bold text-xl'>Calculate</h2>
                             <form method='dialog'>
                                 <button className='btn btn-sm btn-circle btn-ghost  right-2 top-2'>✕</button>
                             </form>
