@@ -1,0 +1,38 @@
+{
+    "CaseStudyPageComp":  {
+        "slug": "zing",
+        "name": "Zing",
+        "title": "ZingHR communicates with the potential candidates using SMS via MSG91",
+        "industry": "Services (HR-Tech CRM)",
+        "purpose": "Communication APIs",
+        "features": "Programmable SMS",
+        "caseStudies": "<a class='text-link active-link' href='https://www.zing.com/'>ZingHR</a> provides HR CRM services to various companies, where they communicate with the potential candidates. With the vision to help their clients get seamless services in hiring, ZingHR has been rigorously working on the operations to the behest of their clients.",
+        "problem": "A well-established communication channel with customers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a wide range of customer base without a robust and secure communication channel is a challenge. Thus to convey important information like vacancies, interview calls details and selection update to hire a strong workforce for the clients, a real-time communication channel targeting wide reach for mass audience (candidates) is required.",
+        "solution": { "description": "ZingHR is managing their operations through their website and business communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the candidates at different events such as", 
+        "content": [
+            "Upon on-boarding, the customer receives an SMS with the Verification code OTP.",
+            "Every time a new candidate is on-boarded, they receive an SMS with the app link for further details.",
+            "Candidates are shared interview schedule details via SMS."
+        ],
+         "extra": "This way ZingHR has been able to establish and maintain an effective communication with candidates via SMS using MSG91 API."},
+        "benefit": "As a result, the candidates gets regular updates for every interview scheduled via secured channel making the hiring operations reliable and seamless resulting in a better rapport with the customer and better hiring.",
+        "tags": [
+            {
+                "name": "CRM",
+                "slug": "crm"
+            },
+            {
+                "name": "Services",
+                "slug": "services"
+            },
+            {
+                "name": "Startup",
+                "slug": "startup"
+            },
+            {
+                "name": "Transactional SMS",
+                "slug": "transaction-sms"
+            }
+        ]
+    }
+}
