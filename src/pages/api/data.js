@@ -3,7 +3,6 @@ export default function handler(req, res) {
 
     try {
         const params = req?.body;
-        console.log('🚀 ~ handler ~ params:', params);
 
         try {
             if (params?.page === 'pricing') {

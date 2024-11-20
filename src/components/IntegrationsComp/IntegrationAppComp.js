@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Head from 'next/head';
 
 export default function IntegrationAppComp({ data }) {
-    console.log('🚀 ~ IntegrationAppComp ~ data:', data);
     const videoRef = useRef();
     const handleVideoClick = () => {
         if (videoRef.current.paused) {
