@@ -61,15 +61,28 @@ body {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+input[type='number'] {
+    -moz-appearance: textfield;
 }
 
 .collapse-plus > .collapse-title:after {
     display: none !important;
+}
+
+:root {
+    --int-page-head-prime-color: 11%;
+    --zapier: #ff7136;
+    --firebase: #ffcc30;
+    --freshworks: #2ac89c;
+    --hubspot: #ff6c49;
+    --tally: #2567b3;
+}
+
+.integrations_header {
+    background: linear-gradient(90deg, var(--zapier) 11%, rgba(242, 242, 243, 0.91995) 11%, #f2f2f3 100%);
 }

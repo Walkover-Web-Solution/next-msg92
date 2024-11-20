@@ -32,11 +32,13 @@ import SignUp from '@/components/signupComp/SignUp';
 import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
 import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
+import IntegrationAppComp from '@/components/IntegrationsComp/IntegrationAppComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
 import ThankYouComp from '@/components/ThankYouComp/ThankYouComp';
 import HelloChatBotComp from '@/components/HelloChatBotComp/HelloChatBotComp';
+import StartupFormsComp from '@/components/StartupFormsComp/StartupFormsComp';
 
 const Components = {
     BannerComp,
@@ -72,6 +74,8 @@ const Components = {
     WhatsappLinkComp,
     ThankYouComp,
     HelloChatBotComp,
+    StartupFormsComp,
+    IntegrationAppComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
@@ -112,7 +116,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const params = context?.params;
     const pageInfo = getPageInfo(params);
-    const isNestedpage = specialPages.nested.includes(pageInfo.pathURL);
+    const isNestedpage = specialPages.nested.includes(pageInfo?.pathURL);
     const commonData = getCommonCompData(pageInfo?.country);
     const fetchData = async (endpoint) => {
         const res = await fetch(`${process.env.BASE_URL}${endpoint}`, {

@@ -107,12 +107,15 @@ export default function getURL(type, link, pageInfo) {
             url = rowPathArray.join('/');
             break;
 
+        // case 'signup':
+        //     url = '/signup' + '?utm_source=' + link + '&source=msg91';
+        //     break;
         case 'signup':
-            url = '/signup' + '?utm_source=' + link + '&source=msg91';
+            url = '/signup';
             break;
 
         case 'contact-us':
-            url = '/contact-us' + '?utm_source=' + link + '&source=msg91';
+            url = '/contact-us';
             break;
 
         default:

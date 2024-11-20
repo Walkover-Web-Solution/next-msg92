@@ -1,0 +1,50 @@
+{
+    "HeadComp": {
+        "title": "Hubspot Intergration | Connect your apps with MSG91",
+        "description": "Unlock the true potential of your marketing and sales efforts with the seamless integration of MSG91 and Hubspot. Drive personalized communication, automate lead nurturing, and supercharge your customer engagement. Discover the winning combination of MSG91 and Hubspot integration for accelerated business growth and success."
+    },
+    "IntegrationAppComp": {
+        "slug": "hubspot",
+        "nav": {
+            "heading": "HubSpot Integration",
+            "subheading": "Streamline Your Engagement Workflows",
+            "img": "/assets/integrations/hubspot.svg"
+        },
+        "heading": "Engage Effectively With HubSpot",
+        "subheading": "The MSG91 HubSpot Plugin lets you integrate communication features into your HubSpot workflows. Automate and power up your business workflows and customer engagement with ease, without embedding any code",
+        "buttons": {
+            "get_plugin": {
+                "text": "Get The Plugin",
+                "link": "https://msg91.com/help/MSG91/hubspot-integration-with-msg91"
+            }
+        },
+        "features": {
+            "heading": "This powerful integration empowers businesses to",
+            "content": [
+                "Automate engagement tasks",
+                "Streamline communication processes",
+                "Enhance Overall Efficiency"
+            ]
+        },
+        "workflow": {
+            "text": "Get The Plugin",
+            "link": "https://msg91.com/help/MSG91/hubspot-integration-with-msg91"
+        },
+        "offers": {
+            "heading": "The MSG91 HubSpot Plugin Offers",
+            "content": [
+                "A user-friendly interface",
+                "Intuitive setup process",
+                "Pre-build templates"
+            ]
+        },
+        "supercharge": {
+            "content": "Create custom triggers and actions that initiate messaging and increase engagement based on specific events or conditions in connected applications.<br/><br/>Send order alerts and recover abandoned checkouts via WhatsApp / SMS Create customer journeys with multi-channel communication Update customers on critical events- New Signups, Payment Confirmation, Send Invoice PDF",
+            "img": "/assets/integrations/graphics/zapeir-graphics.svg"
+        },
+        "get_plugin": {
+            "content": "Get the MSG91 HubSpot plugin",
+            "link": "https://msg91.com/help/MSG91/hubspot-integration-with-msg91"
+        }
+    }
+}

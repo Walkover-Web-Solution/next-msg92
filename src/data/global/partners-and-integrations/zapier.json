@@ -1,0 +1,44 @@
+{
+    "HeadComp": {
+        "title": "Connect your app with Zapier | Intergrate with MSG91",
+        "description": "MSG91 is a robust communication platform that seamlessly integrates with Zapier, a powerful automation tool. By leveraging MSG91 through Zapier, you can streamline your workflow and automate processes, such as sending WhatsApp messages, emails, and voice messages. This eliminates the need for manual intervention and enhances your communication capabilities."
+    },
+    "IntegrationAppComp": {
+        "slug": "zapier",
+        "nav": {
+            "heading": "Zapier Integration",
+            "subheading": "Streamline Your Engagement Workflows",
+            "img": "/assets/integrations/tally.svg"
+        },
+        "heading": "Engage Effectively With Zapier",
+        "subheading": "MSG91 can integrate with 5000+ apps via Zapier so you can automate your business workflows and customer engagement with ease, without embedding any code.",
+        "features": {
+            "heading": "This powerful integration empowers businesses to",
+            "content": [
+                "Automate engagement tasks",
+                "Streamline communication processes",
+                "Enhance Overall Efficiency"
+            ]
+        },
+        "workflow": {
+            "text": "Get The Plugin",
+            "link": "https://zapier.com/apps/msg91/integrations"
+        },
+        "offers": {
+            "heading": "The MSG91 Tally Prime Plugin Offers",
+            "content": [
+                "Tailored Voucher Flows",
+                "Effortless Voucher Resending via. Email or WhatsApp",
+                "Send In-Depth Outstanding Balance and Ledger Details"
+            ]
+        },
+        "supercharge": {
+            "content": "Create custom triggers and actions that initiate messaging and increase engagement based on specific events or conditions in connected applications.<br/><br/>Send order alerts and recover abandoned checkouts via WhatsApp / SMS Create customer journeys with multi-channel communication Update customers on critical events- New Signups, Payment Confirmation, Send Invoice PDF",
+            "img": "/assets/integrations/graphics/zapeir-graphics.svg"
+        },
+        "get_plugin": {
+            "content": "Get the MSG91 Zapier plugin",
+            "link": "https://zapier.com/apps/msg91/integrations"
+        }
+    }
+}

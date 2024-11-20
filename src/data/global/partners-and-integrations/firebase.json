@@ -1,0 +1,50 @@
+{
+    "HeadComp": {
+        "title": "Firebase Integration | Connect your apps with MSG91",
+        "description": "Enhance your app's communication capabilities with seamless integration of MSG91 and Firebase. Send real-time notifications, SMS alerts, and engage users effectively. Unlock the power of MSG91 and Firebase integration to deliver an exceptional user experience and drive app success."
+    },
+    "IntegrationAppComp": {
+        "slug": "firebase",
+        "nav": {
+            "heading": "Firebase Integration",
+            "subheading": "Streamline Your Engagement Workflows",
+            "img": "/assets/integrations/firebase.svg"
+        },
+        "heading": "Engage Effectively With Firebase",
+        "subheading": "TThe MSG91 Firebase Plugin allows users to send messages from a collection of documents in real time. Automate your customer engagement with ease, send cost-effective SMS, schedule updates from Firebase, without embedding any code",
+        "buttons": {
+            "get_plugin": {
+                "text": "Get The Plugin",
+                "link": "https://extensions.dev/extensions/msg91/msg91-send-msg"
+            }
+        },
+        "features": {
+            "heading": "This powerful integration empowers businesses to",
+            "content": [
+                "Automate engagement tasks",
+                "Streamline communication processes",
+                "Enhance Overall Efficiency"
+            ]
+        },
+        "workflow": {
+            "text": "Get The Plugin",
+            "link": "https://extensions.dev/extensions/msg91/msg91-send-msg"
+        },
+        "offers": {
+            "heading": "The MSG91 Firebase Plugin Offers",
+            "content": [
+                "A user-friendly interface",
+                "Intuitive setup process",
+                "Pre-build templates"
+            ]
+        },
+        "supercharge": {
+            "content": "Create custom triggers and actions that initiate messaging and increase engagement based on specific events or conditions in connected applications.<br/><br/>Send order alerts and recover abandoned checkouts via WhatsApp / SMS Create customer journeys with multi-channel communication Update customers on critical events- New Signups, Payment Confirmation, Send Invoice PDF",
+            "img": "/assets/integrations/graphics/zapeir-graphics.svg"
+        },
+        "get_plugin": {
+            "content": "Get the MSG91 Firebase plugin",
+            "link": "https://extensions.dev/extensions/msg91/msg91-send-msg"
+        }
+    }
+}
