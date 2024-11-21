@@ -1,0 +1,40 @@
+{
+    "CaseStudyPageComp":  {
+        "slug": "joeyrooms",
+        "name": "Joey Rooms",
+        "title": "Joey Rooms keeps their clients updated with SMS via MSG91",
+        "industry": "Services (Restaurant Chain)",
+        "purpose": "Communication APIs",
+        "features": "Programmable SMS",
+        "caseStudies": "<a class='text-link active-link' href='https://www.joeyrooms.com/'>Joey Rooms</a> is an online platform where you can find PG and hostel accommodations on monthly and daily basis rental. With the vision to help their customers in finding the right and cost-effective accommodation in Hyderabad and Bangalore, Joey Rooms has been rigorously working on the providing better services for the customer’s welfare.",
+        "problem": "A well-established communication channel with customers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a wide range of customer base without a robust and secure communication channel is a challenge. Thus to convey important information like booking details, offers and updates for building a strong customer relationship, a communication channel targeting wide reach for mass audience (customers) is required.",
+        "solution": { "description": "Joey Rooms is managing their operations and customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to build communication at different events such as:", 
+        "content": [
+            "Upon the Sign up the customer receives an onboarding message, making it secured.",
+            "Upon registration, the user gets notified with the user registration message.",
+            "Upon registration, hostel owner gets notified with the property registration message.",
+            "Customers receive OTP , upon every login to make it secure.",
+            "Customers receive an SMS notifying the Accommodation booking confirmations."
+        ],
+         "extra": "This way Joey Rooms has been able to establish and maintain an effective communication with Customers via SMS using MSG91 API."},
+        "benefit": "As a result, the customer gets regular updates for every event related to their accommodation hunting via a secured channel, making the operations reliable and seamless. Moreover, the OTP on login sent to the customers makes the account secured which results in a better rapport with the customer.",
+        "tags": [
+            {
+                "name": "Food, Travel and Hospitality",
+                "slug": "food-travel-and-hospitality"
+            },
+            {
+                "name": "Services",
+                "slug": "services"
+            },
+            {
+                "name": "Startup",
+                "slug": "startup"
+            },
+            {
+                "name": "Transactional SMS",
+                "slug": "transaction-sms"
+            }
+        ]
+    }
+}

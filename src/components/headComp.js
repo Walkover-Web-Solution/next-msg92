@@ -86,7 +86,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <link rel='canonical' href={`https://msg91.com/${pageInfo?.pathURL}`} />
                 <link
                     rel='alternate'
-                    hrefLang={`${pageInfo?.country === 'global' || pageInfo?.country === 'br-pt' ? 'en' : 'en-' + pageInfo?.country.toUpperCase()}`}
+                    hrefLang={`${
+                        pageInfo?.country === 'global' || pageInfo?.country === 'br-pt'
+                            ? 'en'
+                            : 'en-' + pageInfo?.country.toUpperCase()
+                    }`}
                     href={`https://msg91.com/${pageInfo?.pathURL}`}
                 />
                 {process.env.BASE_URL !== 'https://msg91.com' && (

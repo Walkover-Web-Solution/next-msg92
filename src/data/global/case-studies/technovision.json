@@ -1,0 +1,33 @@
+{
+    "CaseStudyPageComp":  {
+        "slug": "technovision",
+        "name": "Technovision",
+        "title": "Sankalp India Foundation informs blood donors and recipients with SMS via MSG91",
+        "industry": "NGO (Blood Donation)",
+        "purpose": "Communication APIs",
+        "features": "Programmable SMS",
+        "caseStudies": "Technovision is an E commerce<a class='text-link active-link' href='https://www.technovision.com/'>website</a> which sells mobile phones and accessories. To ensure a seamless and efficient service, Technovision has been rigorously working on sending the offers updates and other important information for their customer’s satisfaction.",
+        "problem": "A well-established communication channel with customers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a wide range of customer base without a robust and secure communication channel is a challenge. Thus to convey important information like booking details, offers and updates for building a strong customer relationship, a communication channel targeting wide reach for mass audience (customers) is required.",
+        "solution": { "description": "Technovision is managing their operations by its app and website http://technovisionmobile.com/, while the customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to build communication at different events such as:", 
+        "content": [
+            "Customer receives SMS notifications having informations of all the Ongoing Offers and Updates.",
+            "Customers receive SMS with Greetings on all festivals."
+        ],
+         "extra": "This way Technovision has been able to establish and maintain an effective communication with Customers via SMS using MSG91 API."},
+        "benefit": "As a result, the customer gets regular updates for their orders and ongoing offers via a secured channel, making the operations reliable and seamless, which results in a better rapport with the customer and increase in sales.",
+        "tags": [
+            {
+                "name": "E-commerce",
+                "slug": "e-commerce"
+            },
+            {
+                "name": "Startup",
+                "slug": "startup"
+            },
+            {
+                "name": "Transactional SMS",
+                "slug": "transaction-sms"
+            }
+        ]
+    }
+}

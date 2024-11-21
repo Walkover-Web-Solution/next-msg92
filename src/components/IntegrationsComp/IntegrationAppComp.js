@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Head from 'next/head';
 
 export default function IntegrationAppComp({ data }) {
-    console.log('🚀 ~ IntegrationAppComp ~ data:', data);
     const videoRef = useRef();
     const handleVideoClick = () => {
         if (videoRef.current.paused) {
@@ -31,8 +30,7 @@ export default function IntegrationAppComp({ data }) {
             <div
                 className='py-4'
                 style={{
-                    background:
-                        'linear-gradient(90deg, var(--tally) 11%, rgba(242, 242, 243, 0.91995) 11%, #f2f2f3 100%)',
+                    background: `linear-gradient(90deg, var(--${data?.slug}) 11%, rgba(242, 242, 243, 0.91995) 11%, #f2f2f3 100%)`,
                 }}
             >
                 <div className='flex container gap-8 items-center '>
@@ -116,7 +114,10 @@ export default function IntegrationAppComp({ data }) {
                                         key={index}
                                         className='p-6 rounded flex flex-col h-full w-full bg-neutral justify-center gap-2 '
                                     >
-                                        <MdDone className='text-4xl font-bold text-green-600' />
+                                        <MdDone
+                                            className={`text-4xl font-bold`}
+                                            style={{ color: `var(--${data?.slug})` }}
+                                        />
                                         <h3 className='text-2xl  font-medium'>{feature}</h3>
                                     </div>
                                 );

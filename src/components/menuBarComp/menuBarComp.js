@@ -122,7 +122,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                 <div className={`${styles.cont} nav-${nav}  `}>
                     <div className={`${styles.navigation} container flex`}>
                         {type === 'products' && (
-                            <div className='mt-32 grid grid-cols-2 gap-12 h-fit min-w-[640px]'>
+                            <div className='mt-32 grid grid-cols-2 gap-12 h-fit '>
                                 {componentData?.products_list?.length > 0 &&
                                     componentData?.products_list.map((category, index) => {
                                         return (
