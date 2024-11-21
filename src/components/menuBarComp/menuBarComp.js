@@ -77,7 +77,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                             </div>
                                         );
                                     })}
-                                <div className='flex flex-col gap-2'>
+                                <div className='flex flex-col gap-2 mt-4'>
                                     <Link
                                         href={getURL('pricing', 'sms', pageInfo)}
                                         onClick={() => {
@@ -123,7 +123,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                 </div>
                 <div className={`${styles.cont} nav-${nav}  `}>
                     <div className={`${styles.navigation} container flex`}>
-                        <div className='w-1/2 '>
+                        <div className=' lg:w-3/5  xl:w-1/2 w-3/4 '>
                             {type === 'products' && (
                                 <div className='mt-32 grid grid-cols-2 gap-12 h-fit '>
                                     {componentData?.products_list?.length > 0 &&
@@ -228,6 +228,14 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                 ></div>
                             )}
                         </div>
+                        <div
+                            className='lg:w-2/5 xl:w-1/2 w-1/4 h-dvh'
+                            onMouseEnter={() => {
+                                setNav('hide');
+                                setType('products');
+                                console.log('hello');
+                            }}
+                        ></div>
                     </div>
                 </div>
                 <div className={`${styles.background} nav-${nav}`}></div>
@@ -236,6 +244,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                         onMouseEnter={() => {
                             setNav('hide');
                             setType('products');
+                            console.log('hello');
                         }}
                         className={styles.overlay}
                     ></div>
