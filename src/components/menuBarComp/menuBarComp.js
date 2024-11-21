@@ -79,7 +79,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     })}
                                 <div className='flex flex-col gap-2'>
                                     <Link
-                                        href={getURL('pricing', 'hello', pageInfo)}
+                                        href={getURL('pricing', 'sms', pageInfo)}
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -88,7 +88,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         <LinkText customClasses='text-lg'>Pricing</LinkText>
                                     </Link>
                                     <Link
-                                        href={getURL('pricing', 'hello', pageInfo)}
+                                        href='/partners-and-integrations'
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -96,17 +96,19 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     >
                                         <LinkText customClasses='text-lg'>Integrations</LinkText>
                                     </Link>
-                                    <Link
-                                        href={getURL('pricing', 'hello', pageInfo)}
+                                    <a
+                                        href='https://docs.msg91.com/overview'
+                                        target='_blank'
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
                                         }}
                                     >
                                         <LinkText customClasses='text-lg'>API Docs</LinkText>
-                                    </Link>
+                                    </a>
                                     <Link
-                                        href={getURL('pricing', 'hello', pageInfo)}
+                                        href={getURL('signup', pageInfo?.page)}
+                                        target='_blank'
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -121,105 +123,111 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                 </div>
                 <div className={`${styles.cont} nav-${nav}  `}>
                     <div className={`${styles.navigation} container flex`}>
-                        {type === 'products' && (
-                            <div className='mt-32 grid grid-cols-2 gap-12 h-fit '>
-                                {componentData?.products_list?.length > 0 &&
-                                    componentData?.products_list.map((category, index) => {
-                                        return (
-                                            <div key={index} className='flex flex-col gap-3 w-full '>
-                                                <span className='text font-medium'>{category?.name} </span>
-                                                <div className='flex flex-col gap-2'>
-                                                    {category?.products?.length > 0 &&
-                                                        category?.products.map((product, i) => {
-                                                            return (
-                                                                <Link
-                                                                    key={i}
-                                                                    href={getURL('product', product?.slug, pageInfo)}
-                                                                    onClick={() => {
-                                                                        setNav('hide');
-                                                                        setType('products');
-                                                                    }}
-                                                                >
-                                                                    <div className='flex items-center gap-2 py-2 px-2 rounded hover:bg-secondary w-full LinkButtonCard'>
-                                                                        <Image
-                                                                            className='h-10'
-                                                                            src={`/assets/icons/products/${product?.slug}.svg`}
-                                                                            alt={product?.name}
-                                                                            width={46}
-                                                                            height={46}
-                                                                        />
-                                                                        <div className='flex flex-col'>
-                                                                            <BtnWithHideIco customClasses='text-xl font-semibold'>
-                                                                                {product?.name}
-                                                                            </BtnWithHideIco>
-                                                                            {product?.description && (
-                                                                                <p className='text-sm text-gray-500'>
-                                                                                    {product?.description}
-                                                                                </p>
-                                                                            )}
-                                                                        </div>
-                                                                    </div>
-                                                                </Link>
-                                                            );
-                                                        })}
-                                                </div>
-                                            </div>
-                                        );
-                                    })}
-                            </div>
-                        )}
-                        {type === 'integrations' && (
-                            <div className='mt-32 min-w-[640px]'>
-                                <div className=' flex flex-col gap-4 h-fit w-[300px]'>
-                                    {componentData?.integrations_list?.content?.length > 0 &&
-                                        componentData?.integrations_list?.content.map((integration, index) => {
+                        <div className='w-1/2 '>
+                            {type === 'products' && (
+                                <div className='mt-32 grid grid-cols-2 gap-12 h-fit '>
+                                    {componentData?.products_list?.length > 0 &&
+                                        componentData?.products_list.map((category, index) => {
                                             return (
-                                                <Link key={index} href={integration?.link}>
-                                                    <div className='flex items-center gap-2 py-2 px-2 rounded hover:bg-secondary w-full LinkButtonCard'>
-                                                        <Image
-                                                            className='h-10'
-                                                            src={`/assets/integrations/${integration?.slug}.svg`}
-                                                            alt={integration?.slug}
-                                                            width={46}
-                                                            height={46}
-                                                        />
-                                                        <div className='flex flex-col'>
-                                                            <BtnWithHideIco customClasses='text-xl font-semibold'>
-                                                                {integration?.name}
-                                                            </BtnWithHideIco>
-                                                            {integration?.description && (
-                                                                <p className='text-sm text-gray-500'>
-                                                                    {integration?.description}
-                                                                </p>
-                                                            )}
-                                                        </div>
+                                                <div key={index} className='flex flex-col gap-3 w-full '>
+                                                    <span className='text font-medium'>{category?.name} </span>
+                                                    <div className='flex flex-col gap-2'>
+                                                        {category?.products?.length > 0 &&
+                                                            category?.products.map((product, i) => {
+                                                                return (
+                                                                    <Link
+                                                                        key={i}
+                                                                        href={getURL(
+                                                                            'product',
+                                                                            product?.slug,
+                                                                            pageInfo
+                                                                        )}
+                                                                        onClick={() => {
+                                                                            setNav('hide');
+                                                                            setType('products');
+                                                                        }}
+                                                                    >
+                                                                        <div className='flex items-center gap-2 py-2 px-2 rounded hover:bg-secondary w-full LinkButtonCard'>
+                                                                            <Image
+                                                                                className='h-10'
+                                                                                src={`/assets/icons/products/${product?.slug}.svg`}
+                                                                                alt={product?.name}
+                                                                                width={46}
+                                                                                height={46}
+                                                                            />
+                                                                            <div className='flex flex-col'>
+                                                                                <BtnWithHideIco customClasses='text-xl font-semibold'>
+                                                                                    {product?.name}
+                                                                                </BtnWithHideIco>
+                                                                                {product?.description && (
+                                                                                    <p className='text-sm text-gray-500'>
+                                                                                        {product?.description}
+                                                                                    </p>
+                                                                                )}
+                                                                            </div>
+                                                                        </div>
+                                                                    </Link>
+                                                                );
+                                                            })}
                                                     </div>
-                                                </Link>
+                                                </div>
                                             );
                                         })}
-                                    <Link href='/partners-and-integrations'>
-                                        <button
-                                            className='flex items-center gap-2 px-5 py-3 rounded hover:bg-secondary w-full'
-                                            onClick={() => {
-                                                setNav('hide');
-                                                setType('products');
-                                            }}
-                                        >
-                                            <LinkText>{componentData?.integrations_list?.explore_btn}</LinkText>
-                                        </button>
-                                    </Link>
                                 </div>
-                            </div>
-                        )}
-                        {nav === 'show' && (
-                            <div
-                                className='w-full'
-                                onMouseEnter={() => {
-                                    setNav('hide');
-                                    setType('products');
-                                }}
-                            ></div>
-                        )}
+                            )}
+                            {type === 'integrations' && (
+                                <div className='mt-32 min-w-[640px]'>
+                                    <div className=' flex flex-col gap-4 h-fit w-[300px]'>
+                                        {componentData?.integrations_list?.content?.length > 0 &&
+                                            componentData?.integrations_list?.content.map((integration, index) => {
+                                                return (
+                                                    <Link key={index} href={integration?.link}>
+                                                        <div className='flex items-center gap-2 py-2 px-2 rounded hover:bg-secondary w-full LinkButtonCard'>
+                                                            <Image
+                                                                className='h-10'
+                                                                src={`/assets/integrations/${integration?.slug}.svg`}
+                                                                alt={integration?.slug}
+                                                                width={46}
+                                                                height={46}
+                                                            />
+                                                            <div className='flex flex-col'>
+                                                                <BtnWithHideIco customClasses='text-xl font-semibold'>
+                                                                    {integration?.name}
+                                                                </BtnWithHideIco>
+                                                                {integration?.description && (
+                                                                    <p className='text-sm text-gray-500'>
+                                                                        {integration?.description}
+                                                                    </p>
+                                                                )}
+                                                            </div>
+                                                        </div>
+                                                    </Link>
+                                                );
+                                            })}
+                                        <Link href='/partners-and-integrations'>
+                                            <button
+                                                className='flex items-center gap-2 px-5 py-3 rounded hover:bg-secondary w-full'
+                                                onClick={() => {
+                                                    setNav('hide');
+                                                    setType('products');
+                                                }}
+                                            >
+                                                <LinkText>{componentData?.integrations_list?.explore_btn}</LinkText>
+                                            </button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            )}
+                            {nav === 'show' && (
+                                <div
+                                    className='w-full'
+                                    onMouseEnter={() => {
+                                        setNav('hide');
+                                        setType('products');
+                                    }}
+                                ></div>
+                            )}
+                        </div>
                     </div>
                 </div>
                 <div className={`${styles.background} nav-${nav}`}></div>
