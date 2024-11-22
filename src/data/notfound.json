@@ -1,5 +1,7 @@
 {
-
+    "HeadComp": {
+        "title": "404 | No page found"
+    },
     "NotFoundComp": {
         "title": "Page not found in"
     }

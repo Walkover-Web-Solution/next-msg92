@@ -5,7 +5,6 @@ import style from './HelloChatBotComp.module.scss';
 export default function Chatbot() {
     const [selectedTemplate, setSelectedTemplate] = useState();
     const [templateData, setTemplateData] = useState([]);
-    console.log('🚀 ~ Chatbot ~ templateData:', templateData);
     const [isLoading, setLoading] = useState(false);
 
     async function GetTemplates() {
@@ -37,10 +36,11 @@ export default function Chatbot() {
     }, [templateData]);
 
     const handleTemplateSelet = (template) => {
+        console.log('🚀 ~ handleTemplateSe ~ template:', template);
         if (template?.bot_id !== selectedTemplate?.bot_id) {
             const iframe = document.querySelector('.chatbotwrapper iframe');
             if (iframe) {
-                iframe.src = `/chat-widget.html?widgetToken=${template?.token}&widgetUrl=${process.env.CHATBOT_TEMPLATE_TEST_URL}`;
+                iframe.src = `/chat-widget.html?widgetToken=${template?.token}&widgetUrl=${process.env.CHATBOT_TEMPLATE_TEST_URL}&botId=${template?.bot_id}&botType=${template?.bot_type}`;
             }
         }
         setSelectedTemplate(template);

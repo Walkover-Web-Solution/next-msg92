@@ -13,7 +13,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
     if (componentData && !hidden) {
         return (
             <div className='py-3 border border-b'>
-                <div className='container flex gap-6 justify-end '>
+                <div className='container flex  gap-6 justify-end '>
                     {['br-pt', 'br'].includes(pageInfo?.country) && (
                         <div className='dropdown'>
                             <div tabIndex={0} role='button' className='flex gap-1 items-center '>
@@ -137,7 +137,10 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                         <MdOutlineCall fontSize={18} />
                         {componentData?.support}
                     </Link>
-                    <Link className='text-link flex gap-1 items-center' href={process.env.LOGIN_URL || '#'}>
+                    <Link
+                        className='text-link flex gap-1 items-center'
+                        href={process.env.LOGIN_URL || 'https://control.msg91.com/signin/'}
+                    >
                         <MdLogin fontSize={18} />
                         {componentData?.login}
                     </Link>

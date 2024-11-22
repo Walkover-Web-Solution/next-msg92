@@ -39,6 +39,7 @@ import specialPages from '@/data/specialPages.json';
 import ThankYouComp from '@/components/ThankYouComp/ThankYouComp';
 import HelloChatBotComp from '@/components/HelloChatBotComp/HelloChatBotComp';
 import StartupFormsComp from '@/components/StartupFormsComp/StartupFormsComp';
+import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/CaseStudyPageComp';
 
 const Components = {
     BannerComp,
@@ -76,6 +77,7 @@ const Components = {
     HelloChatBotComp,
     StartupFormsComp,
     IntegrationAppComp,
+    CaseStudyPageComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
@@ -128,7 +130,7 @@ export const getStaticProps = async (context) => {
         });
         return await res.json();
     };
-    const data = isNestedpage ? await fetchData('/api/getNestedData') : await fetchData('/api/data');
+    const data = isNestedpage ? await fetchData('/api/data') : await fetchData('/api/data');
     return {
         props: {
             data: data || {},

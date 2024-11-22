@@ -4,7 +4,7 @@
 }
 
 .background {
-    @apply fixed hidden md:flex bg-white w-[900px]  h-dvh top-0  z-[998]; // Keep z-index as is
+    @apply fixed hidden md:flex bg-white   lg:w-3/5 xl:w-1/2 w-3/4  h-dvh top-0  z-[998]; // Keep z-index as is
     transition: all 0.2s;
 }
 

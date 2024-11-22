@@ -30,9 +30,12 @@ class StepOne extends React.Component {
                         </button>
                         <p>
                             If you already have an account,{' '}
-                            <Link className='text-link active-link' href='/signin'>
+                            <a
+                                className='text-link active-link'
+                                href={process.env.LOGIN_URL || 'https://control.msg91.com/signin/'}
+                            >
                                 Login
-                            </Link>
+                            </a>
                         </p>
                     </div>
                 </div>
