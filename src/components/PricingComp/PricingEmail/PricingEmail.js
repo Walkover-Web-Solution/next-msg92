@@ -128,7 +128,9 @@ export default function PricingEmail({ data, country }) {
                                                                                                 color='#16A34A'
                                                                                             />
                                                                                             {symbol}
-                                                                                            {rate?.follow_up_rate}/
+                                                                                            {
+                                                                                                rate?.follow_up_rate
+                                                                                            }/
                                                                                             {
                                                                                                 service?.service_credit
                                                                                                     ?.service?.name
@@ -140,7 +142,9 @@ export default function PricingEmail({ data, country }) {
                                                                                                 fontSize={18}
                                                                                                 color='#DC3645'
                                                                                             />
-                                                                                            {'No Extra '}
+                                                                                            {'No Extra ' +
+                                                                                                service?.service_credit
+                                                                                                    ?.service?.name}
                                                                                         </>
                                                                                     )}
                                                                                     {service?.service_credit?.service
