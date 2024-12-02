@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import style from './HelloChatBotComp.module.scss';
 
-export default function Chatbot() {
+export default function HelloChatBotComp() {
     const [selectedTemplate, setSelectedTemplate] = useState();
     const [templateData, setTemplateData] = useState([]);
     const [isLoading, setLoading] = useState(false);
