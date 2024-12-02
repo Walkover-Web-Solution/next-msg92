@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import style from './ChatBotDemoComp.module.scss';
 
-export default function ChatBotDemoComp({ data }) {
+export default function ChatBotDemoComp({ pageInfo, data }) {
     const [selectedTemplate, setSelectedTemplate] = useState();
     const [templateData, setTemplateData] = useState([]);
     const [isLoading, setLoading] = useState(false);
@@ -36,12 +36,12 @@ export default function ChatBotDemoComp({ data }) {
     }, [templateData]);
 
     const handleTemplateSelet = (template) => {
-        if (template?.bot_id !== selectedTemplate?.bot_id) {
-            const iframe = document.querySelector('.chatbotwrapper iframe');
-            if (iframe) {
-                iframe.src = `/chat-widget.html?widgetToken=${template?.token}&widgetUrl=${process.env.CHATBOT_TEMPLATE_TEST_URL}&botId=${template?.bot_id}&botType=${template?.bot_type}`;
-            }
-        }
+        // if (template?.bot_id !== selectedTemplate?.bot_id) {
+        //     const iframe = document.querySelector('.chatbotwrapper iframe');
+        //     if (iframe) {
+        //         iframe.src = `/chat-widget.html?widgetToken=${template?.token}&widgetUrl=${process.env.CHATBOT_TEMPLATE_TEST_URL}&botId=${template?.bot_id}&botType=${template?.bot_type}`;
+        //     }
+        // }
         setSelectedTemplate(template);
     };
 
@@ -100,7 +100,7 @@ export default function ChatBotDemoComp({ data }) {
                 </div>
                 <div className={`${style?.chatbotwrapper} chatbotwrapper`}>
                     <iframe
-                        src={`/chat-widget.html?widgetToken=${selectedTemplate?.token}&widgetUrl=${process.env.CHATBOT_TEMPLATE_TEST_URL}`}
+                        src={`/chat-widget.html?widgetToken=${selectedTemplate?.token}&widgetUrl=${process.env.CHATBOT_TEMPLATE_TEST_URL}&botId=${selectedTemplate?.bot_id}&botType=${selectedTemplate?.bot_type}`}
                         style={{ width: '100%', height: '650px', border: 'none' }}
                         className='lg:max-w-full '
                     ></iframe>
