@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import style from './HelloChatBotComp.module.scss';
+import style from './ChatBotDemoComp.module.scss';
 
-export default function HelloChatBotComp() {
+export default function ChatBotDemoComp({ data }) {
     const [selectedTemplate, setSelectedTemplate] = useState();
     const [templateData, setTemplateData] = useState([]);
     const [isLoading, setLoading] = useState(false);
