@@ -1,49 +1,80 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import style from './ChatBotDemoComp.module.scss';
 
 export default function ChatBotDemoComp({ pageInfo, data }) {
-    const [selectedTemplate, setSelectedTemplate] = useState();
+    const [selectedTemplate, setSelectedTemplate] = useState({});
     const [templateData, setTemplateData] = useState([]);
     const [isLoading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+    const [iframeLoading, setIframeLoading] = useState(true);
 
-    async function GetTemplates() {
+    // Function to fetch templates
+    const fetchTemplates = async () => {
         try {
             setLoading(true);
-            const response = await axios.get(process.env.HELLO_API_URL + '/public/bot/template?with_widget=true');
-            if (response?.data?.success === true) {
-                const data = await response;
-                setTemplateData(data?.data?.data?.templates);
-                setLoading(false);
+            const response = await axios.get(`${process.env.HELLO_API_URL}/public/bot/template?with_widget=true`);
+            if (response?.data?.success) {
+                setTemplateData(response.data.data.templates);
             } else {
-                console.error('Failed to fetch templates');
-                setLoading(false);
+                setError('Failed to fetch templates');
             }
         } catch (error) {
-            console.error('Error:', error);
+            setError('Error fetching templates');
+        } finally {
             setLoading(false);
         }
-    }
+    };
 
+    // Fetch templates on component mount
     useEffect(() => {
-        GetTemplates();
+        fetchTemplates();
     }, []);
 
+    // Set the first template as selected when templateData is available
     useEffect(() => {
-        if (templateData.length > 0) {
+        if (templateData.length > 0 && Object.keys(selectedTemplate).length === 0) {
             setSelectedTemplate(templateData[0]);
         }
     }, [templateData]);
 
-    const handleTemplateSelet = (template) => {
-        // if (template?.bot_id !== selectedTemplate?.bot_id) {
-        //     const iframe = document.querySelector('.chatbotwrapper iframe');
-        //     if (iframe) {
-        //         iframe.src = `/chat-widget.html?widgetToken=${template?.token}&widgetUrl=${process.env.CHATBOT_TEMPLATE_TEST_URL}&botId=${template?.bot_id}&botType=${template?.bot_type}`;
-        //     }
-        // }
+    // Memoize handleTemplateSelect to avoid re-creation on every render
+    const handleTemplateSelect = useCallback((template) => {
         setSelectedTemplate(template);
-    };
+        setIframeLoading(true);
+    }, []);
+
+    const chatbotContent = `
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Chat Widget</title>
+            </head>
+            <body>
+                <script>
+                    (function() {
+                        document.cookie = 'hello-widget-uuid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                        const script = document.createElement('script');
+                        script.type = 'text/javascript';
+                        script.onload = function() {
+                            initChatWidget({
+                                widgetToken: '${selectedTemplate?.token || ''}',
+                                hide_launcher: true,
+                                launch_widget: true,
+                                show_close_button: false,
+                                bot_type: '${selectedTemplate?.bot_type}',
+                                bot_id: ${selectedTemplate?.bot_id || null},
+                            }, 0);
+                        };
+                        script.src = '${process.env.CHATBOT_TEMPLATE_TEST_URL}/widget/chat-widget.js';
+                        document.body.appendChild(script);
+                    })();
+                </script>
+            </body>
+        </html>
+    `;
 
     return (
         <>
@@ -62,14 +93,12 @@ export default function ChatBotDemoComp({ pageInfo, data }) {
                     <div className='lg:grid hidden lg:grid-cols-2 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 rounded-lg gap-6'>
                         {templateData.map((template, index) => (
                             <div
-                                onClick={() => {
-                                    handleTemplateSelet(template);
-                                }}
+                                onClick={() => handleTemplateSelect(template)}
                                 key={index}
                                 className={`cursor-pointer rounded bg-neutral p-6 flex flex-col gap-2 hover:border-[#F2CA55] border-2 ${
-                                    template?.bot_id == selectedTemplate?.bot_id
-                                        ? 'border-[#F2CA55]  border-2'
-                                        : ' border-neutral'
+                                    template?.bot_id === selectedTemplate?.bot_id
+                                        ? 'border-[#F2CA55]'
+                                        : 'border-neutral'
                                 }`}
                             >
                                 <h3 className='text-lg font-bold'>{template?.bot_name}</h3>
@@ -86,7 +115,7 @@ export default function ChatBotDemoComp({ pageInfo, data }) {
                                 const selectedTemplate = templateData.find(
                                     (template) => template.bot_name === e.target.value
                                 );
-                                handleTemplateSelet(selectedTemplate);
+                                handleTemplateSelect(selectedTemplate);
                             }}
                             value={selectedTemplate?.bot_name || ''}
                         >
@@ -98,15 +127,17 @@ export default function ChatBotDemoComp({ pageInfo, data }) {
                         </select>
                     </div>
                 </div>
-                <div className={`${style?.chatbotwrapper} chatbotwrapper`}>
+                <div className={`${style.chatbotwrapper} chatbotwrapper`}>
+                    {iframeLoading && <div className={style.loadingIndicator}>Loading...</div>}
                     <iframe
-                        src={`/chat-widget.html?widgetToken=${selectedTemplate?.token}&widgetUrl=${process.env.CHATBOT_TEMPLATE_TEST_URL}&botId=${selectedTemplate?.bot_id}&botType=${selectedTemplate?.bot_type}`}
                         style={{ width: '100%', height: '650px', border: 'none' }}
-                        className='lg:max-w-full '
+                        className='lg:max-w-full'
+                        title='Chatbot Frame'
+                        srcDoc={chatbotContent}
+                        onLoad={() => setIframeLoading(false)}
                     ></iframe>
                 </div>
             </div>
-            <div className='d-grid grid-cols-2 chatbot_card-cont'></div>
         </>
     );
 }
