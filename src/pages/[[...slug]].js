@@ -39,6 +39,7 @@ import specialPages from '@/data/specialPages.json';
 import ThankYouComp from '@/components/ThankYouComp/ThankYouComp';
 import StartupFormsComp from '@/components/StartupFormsComp/StartupFormsComp';
 import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/CaseStudyPageComp';
+import ChatBotDemoComp from '@/components/ChatBotDemoComp/ChatBotDemoComp';
 
 const Components = {
     BannerComp,
@@ -76,6 +77,7 @@ const Components = {
     StartupFormsComp,
     IntegrationAppComp,
     CaseStudyPageComp,
+    ChatBotDemoComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
