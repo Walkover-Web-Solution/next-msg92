@@ -36,7 +36,6 @@ export default function Chatbot() {
     }, [templateData]);
 
     const handleTemplateSelet = (template) => {
-        console.log('🚀 ~ handleTemplateSe ~ template:', template);
         if (template?.bot_id !== selectedTemplate?.bot_id) {
             const iframe = document.querySelector('.chatbotwrapper iframe');
             if (iframe) {
@@ -48,10 +47,10 @@ export default function Chatbot() {
 
     return (
         <>
-            <div className='container flex flex-col lg:flex-row cont_p gap-24 justify-between'>
+            <div className='container flex lg:flex-row flex-col cont_p lg:gap-24 gap-10 justify-between'>
                 <div className='flex flex-col gap-6 lg:w-2/3 w-full'>
-                    <div className='flex flex-col gap-2'>
-                        <p className='text-[#F2CA55]'>AI CHATBOT DEMO</p>
+                    <div className='flex flex-col gap-6'>
+                        <p className='text-[#8C5D00]'>AI CHATBOT DEMO</p>
                         <h1 className='text-4xl font-semibold'>
                             Experience AI Chatbots in Action, Start Chatting Now!
                         </h1>
@@ -60,7 +59,7 @@ export default function Chatbot() {
                         </h2>
                     </div>
 
-                    <div className='grid lg:grid-cols-2 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 rounded-lg gap-6'>
+                    <div className='lg:grid hidden lg:grid-cols-2 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 rounded-lg gap-6'>
                         {templateData.map((template, index) => (
                             <div
                                 onClick={() => {
@@ -80,11 +79,30 @@ export default function Chatbot() {
                             </div>
                         ))}
                     </div>
+                    <div className='flex lg:hidden'>
+                        <select
+                            className='select select-bordered w-full max-w-xs'
+                            onChange={(e) => {
+                                const selectedTemplate = templateData.find(
+                                    (template) => template.bot_name === e.target.value
+                                );
+                                handleTemplateSelet(selectedTemplate);
+                            }}
+                            value={selectedTemplate?.bot_name || ''}
+                        >
+                            {templateData.map((template, index) => (
+                                <option key={index} value={template?.bot_name}>
+                                    {template?.bot_name}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
                 <div className={`${style?.chatbotwrapper} chatbotwrapper`}>
                     <iframe
                         src={`/chat-widget.html?widgetToken=${selectedTemplate?.token}&widgetUrl=${process.env.CHATBOT_TEMPLATE_TEST_URL}`}
-                        style={{ width: '100%', height: '100%', border: 'none' }}
+                        style={{ width: '100%', height: '650px', border: 'none' }}
+                        className='lg:max-w-full '
                     ></iframe>
                 </div>
             </div>

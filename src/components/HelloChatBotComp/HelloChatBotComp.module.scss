@@ -1,5 +1,4 @@
 .chatbotwrapper {
-    margin-top: 80px;
     min-height: 650px;
     max-height: 650px;
     min-width: 380px;
@@ -9,4 +8,5 @@
     align-items: center;
     justify-items: center;
     overflow: visible;
+    @apply lg:mt-20 mt-5 sm:border lg:border-0 border-0 rounded 
 }
