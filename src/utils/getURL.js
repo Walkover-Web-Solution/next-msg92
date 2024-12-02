@@ -54,7 +54,8 @@ export default function getURL(type, link, pageInfo) {
             } catch (err) {
                 data = require(`@/data/notfound.json`);
             }
-            if (Object.keys(data).length > 0 && Object.keys(data)[0] === 'NotFoundComp') {
+
+            if (Object.keys(data).length > 0 && Object.keys(data)[1] === 'NotFoundComp') {
                 if (isGobal) {
                     rowPathArray = ['', link];
                 } else {
