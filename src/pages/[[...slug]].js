@@ -37,6 +37,7 @@ import IntegrationAppComp from '@/components/IntegrationsComp/IntegrationAppComp
 /* files */
 import specialPages from '@/data/specialPages.json';
 import ThankYouComp from '@/components/ThankYouComp/ThankYouComp';
+import HelloChatBotComp from '@/components/HelloChatBotComp/HelloChatBotComp';
 import StartupFormsComp from '@/components/StartupFormsComp/StartupFormsComp';
 import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/CaseStudyPageComp';
 
@@ -73,6 +74,7 @@ const Components = {
     MagicLinkComp,
     WhatsappLinkComp,
     ThankYouComp,
+    HelloChatBotComp,
     StartupFormsComp,
     IntegrationAppComp,
     CaseStudyPageComp,

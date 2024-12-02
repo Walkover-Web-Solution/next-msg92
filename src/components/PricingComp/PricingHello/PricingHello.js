@@ -242,7 +242,13 @@ export default function PricingHello({ data, country }) {
                                                         {amount?.currency?.symbol}
                                                         {amount?.plan_amount} {tabtype}
                                                     </p>
-                                                    <p>{amount?.currency?.short_name === 'INR' ? '+18% GST' : '-'}</p>
+                                                    <p>
+                                                        {amount?.currency?.short_name === 'INR'
+                                                            ? '+18% GST'
+                                                            : amount?.currency?.short_name === 'GBP'
+                                                              ? '+ VAT'
+                                                              : '-'}
+                                                    </p>
                                                     <Link href={getURL('signup', 'hello')} target='_blank'>
                                                         <button
                                                             className={`btn btn-primary  btn-md ${
@@ -334,7 +340,9 @@ export default function PricingHello({ data, country }) {
                                                                                                     color='#16A34A'
                                                                                                 />
                                                                                                 {symbol}
-                                                                                                {rate?.follow_up_rate}/
+                                                                                                {
+                                                                                                    rate?.follow_up_rate
+                                                                                                }/
                                                                                                 {
                                                                                                     service
                                                                                                         ?.service_credit
@@ -368,7 +376,7 @@ export default function PricingHello({ data, country }) {
                                                 </div>
                                                 {plan?.name !== 'Free' && (
                                                     <button
-                                                        className='text-link active-link'
+                                                        className=' btn btn-accent btn-outline btn-md '
                                                         onClick={() =>
                                                             document
                                                                 .getElementById('calculate_hello_pricing')
@@ -609,7 +617,14 @@ export default function PricingHello({ data, country }) {
                                                 plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Tickets +
                                                 plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Inbox}
                                         </span>
-                                        <span>{currency === 'INR' ? 'Excluding 18% GST' : ''}</span>
+                                        <span>
+                                            {' '}
+                                            {currency === 'INR'
+                                                ? 'Excluding 18% GST'
+                                                : currency === 'GBP'
+                                                  ? 'Excluding VAT'
+                                                  : ''}
+                                        </span>
                                     </div>
                                     <div className='p-4 flex flex-col gap-4'>
                                         <span className='font-bold text-green-600'>
@@ -619,7 +634,13 @@ export default function PricingHello({ data, country }) {
                                                 plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Tickets +
                                                 plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Inbox}
                                         </span>
-                                        <span>{currency === 'INR' ? 'Excluding 18% GST' : ''}</span>
+                                        <span>
+                                            {currency === 'INR'
+                                                ? 'Excluding 18% GST'
+                                                : currency === 'GBP'
+                                                  ? 'Excluding VAT'
+                                                  : ''}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
