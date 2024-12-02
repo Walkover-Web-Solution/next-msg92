@@ -43,7 +43,11 @@ export default function TestPage({
     const router = useRouter();
 
     const handleClick = () => {
-        router.back();
+        if (window.history.length > 1) {
+            router.back();
+        } else {
+            router.push('/guide');
+        }
     };
     return (
         <>
