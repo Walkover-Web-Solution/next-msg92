@@ -147,17 +147,19 @@ export default function BannerComp({ pageInfo, data }) {
                     </div>
                 )}
             </div>
-            <dialog id='whatsapp_modal' className='modal'>
-                <div className='modal-box'>
-                    <form method='dialog'>
-                        <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
-                    </form>
-                    <InlineWidget
-                        url='https://calendly.com/msg91-whatsapp/15-min-meeting?back=1'
-                        styles={{ height: '680px', width: 'auto' }}
-                    />
-                </div>
-            </dialog>
+            {data?.schedule_meet && (
+                <dialog id='whatsapp_modal' className='modal'>
+                    <div className='modal-box'>
+                        <form method='dialog'>
+                            <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
+                        </form>
+                        <InlineWidget
+                            url='https://calendly.com/msg91-whatsapp/15-min-meeting?back=1'
+                            styles={{ height: '680px', width: 'auto' }}
+                        />
+                    </div>
+                </dialog>
+            )}
         </>
     );
 }
