@@ -160,18 +160,19 @@ export default function IntegrationAppComp({ data }) {
                         {data?.get_plugin?.content}
                     </a>
                 </div>
-
-                <dialog id='plugin_modal' className='modal'>
-                    <div className='modal-box'>
-                        <form method='dialog'>
-                            <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
-                        </form>
-                        <InlineWidget
-                            url='https://calendly.com/tigermsg91/msg91-for-tally?utm_campaign=tigerplugin&utm_source=tally&utm_medium=website'
-                            styles={{ height: '820px' }}
-                        />
-                    </div>
-                </dialog>
+                {data?.buttons?.meet && (
+                    <dialog id='plugin_modal' className='modal'>
+                        <div className='modal-box'>
+                            <form method='dialog'>
+                                <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
+                            </form>
+                            <InlineWidget
+                                url='https://calendly.com/tigermsg91/msg91-for-tally?utm_campaign=tigerplugin&utm_source=tally&utm_medium=website'
+                                styles={{ height: '820px' }}
+                            />
+                        </div>
+                    </dialog>
+                )}
             </div>
         </>
     );
