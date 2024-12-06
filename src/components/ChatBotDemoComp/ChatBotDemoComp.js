@@ -64,6 +64,8 @@ export default function ChatBotDemoComp({ pageInfo, data }) {
                                 hide_launcher: true,
                                 launch_widget: true,
                                 show_close_button: false,
+                                show_widget_form: false,
+                                hide_upload: true,
                                 bot_type: '${selectedTemplate?.bot_type}',
                                 bot_id: ${selectedTemplate?.bot_id || null},
                             }, 0);

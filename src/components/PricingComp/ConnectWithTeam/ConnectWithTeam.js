@@ -27,14 +27,16 @@ export default function ConnectWithTeam({ product, isPlan, data, href, per }) {
                     {data?.know_more} {product}
                 </Link>
             </div>
-            <dialog id='sales_modal' className='modal'>
-                <div className='modal-box'>
-                    <form method='dialog'>
-                        <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
-                    </form>
-                    <InlineWidget url='https://calendly.com/sales-msg91/pre-sales' styles={{ height: '680px' }} />
-                </div>
-            </dialog>
+            {isPlan && (
+                <dialog id='sales_modal' className='modal'>
+                    <div className='modal-box'>
+                        <form method='dialog'>
+                            <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
+                        </form>
+                        <InlineWidget url='https://calendly.com/sales-msg91/pre-sales' styles={{ height: '680px' }} />
+                    </div>
+                </dialog>
+            )}
         </div>
     );
 }
