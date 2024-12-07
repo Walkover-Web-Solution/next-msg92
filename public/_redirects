@@ -113,7 +113,6 @@ support.msg91.com/users/41006711-sagarvaishnav/filters/comments /
 /tag/marketing/rss/ /guide
 /blog/tag/sms-plugin/ /guide
 /uk/one-api/ /gb
-# msg91.com/gb/otp
 /ph/internet-messaging/ /ph/whatsapp
 /guide/benefits-of-sms-solutions-to-the-agricultural-industry/feed/ /guide
 /blog/tips-tricks-to-successful-business-texting/feed/ /guide
@@ -289,7 +288,6 @@ signup.msg91.com/features/ /signup
 /guide/top-wordpress-plugins-to-send-sms-using-msg91/ /guide
 control.msg91.com/signupEngbabu /signup
 /blog/tag/sms-marketing-for-business/feed/ /signup
-# msg91.com/gb/hello
 /blog/tag/bulk-sms/page/1/ /guide
 /blog/tag/customer-retention/feed/ /guide
 /blog/category/benefits-of-bulk-sms/ /guide
@@ -366,7 +364,6 @@ control.msg91.com/signupjerryabs /signup
 /blog/tag/post-sales/feed/ /guide
 /guide/tag/smshare/ /guide
 signup.msg91.com/startups/policy /signup
-# msg91.com/gb/shorturl
 /guide/tag/saas-marketing/ /guide
 /es/case-studies/tag/e-commerce/feed  /case-studies/tag/e-commerce
 /guide/happy-holi/feed/ /guide
@@ -612,7 +609,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /us/case-studies/indialends/?utm_source=rss&utm_medium=rss&utm_campaign=indialends&amp /case-studies/indialends
 /Login; https://control.msg91.com/signin/
 /ph/startups-form/ /startups
-/gb/whatsapp /whatsapp
 /check_circle/ /
 /longcode /longcode
 /transactional-email/?trk=products_details_guest_secondary_call_to_action /email
@@ -648,12 +644,10 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /case-studies/mahindra-mahindra-automotive-division/ /case-studies/mahindra
 /hello/hello_1/feed/ /hello
 /wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4 /wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4
-/gb/knowledgebase /help
 /in/voice-call-api/ /voice
 /in/no-spam-policy/ /no-spam-policy/
 /in/startups/ /startups/
 /case-studies/razorpay/amp/ /case-studies/razorpay
-/gb/hello /hello
 /sg/developers/ /developers/
 /sg/regional-sms/ /sms
 /guide/delivering-remarkable-hospitality-service-by-breaking-the-taboo-of-micro-stay/fair-pricing-policy/ /guide/delivering-remarkable-hospitality-service-by-breaking-the-taboo-of-micro-stay
@@ -722,7 +716,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /blog/author/pallavi/amp/page/page?nonamp=1 /guide
 /in/case-studies/joey-rooms/?typeform-embed=popup-drawer /case-studies/joeyrooms
 /case-studies/joey-rooms/ /case-studies/joey-rooms/
-/gb/segmento /segmento
 /blog/author/pallavi/amp/page?nonamp=1 /guide
 /hello/group-17476/ /hello
 /TiEcon /
@@ -795,7 +788,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /case-studies/smart-shift/feed/ /case-studies/smartshift
 /regional-sms/?__hstc=241134940.2f3f33a24b44870ec4a577029c49e44b.1602547200083.1602547200084.1602547200085.1&__hssc=241134940.1.1602547200086&__hsfp=2827025116 /sms
 /regional-sms?typeform-embed=popup-drawer /sms
-/gb/email /email
 /in/privacy-policy/?__hstc=241134940.d9f92fa8eef68bbb7f3a5412b223a496.1602547200116.1602547200117.1602547200118.1&__hssc=241134940.1.1602547200119&__hsfp=2827025116 /privacy-policy
 /in/grabonrent/ /case-studies/grabonrent
 /guide/sankalp-india-foundation-sms-saving-lives/ /case-studies/sankalp
@@ -918,7 +910,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /blog/6-reasons-why-sms-marketing-can-be-beneficial-for-you/ /guide
 /no-spam-policy/?__hstc=241134940.2f3f33a24b44870ec4a577029c49e44b.1602547200083.1602547200084.1602547200085.1&__hssc=241134940.1.1602547200086&__hsfp=2827025116 /no-spam
 /cdn-cgi/challenge-platform/h/g/scripts/cb/invisible.js?cb=79f3ff296e4f82e6 /
-/gb/ /
 /blog/tag/mobile-messaging/amp/ /guide
 /blog/know-the-secrets-to-increase-readership/?utm_source=organic&utm_medium=blog&utm_campaign=retarget /guide/know-the-secrets-to-increase-readership/?utm_source=organic&utm_medium=blog&utm_campaign=retarget
 /blog/tag/long-code/ /guide
