@@ -61,7 +61,7 @@ export default function ChatBotDemoComp({ pageInfo, data }) {
                         script.onload = function() {
                             initChatWidget({
                                 widgetToken: '${selectedTemplate?.token || ''}',
-                                hide_launcher: true,
+                                hide_launcher: false,
                                 launch_widget: true,
                                 show_close_button: false,
                                 show_widget_form: false,
