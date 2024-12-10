@@ -81,9 +81,9 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         {componentData?.resources?.links.map((link, index) => {
                                             return (
                                                 <li key={index} className='text-link-white'>
-                                                    <Link href={link?.link} className='text-gray-200'>
+                                                    <a href={link?.link} className='text-gray-200'>
                                                         {link?.name}
-                                                    </Link>
+                                                    </a>
                                                 </li>
                                             );
                                         })}
