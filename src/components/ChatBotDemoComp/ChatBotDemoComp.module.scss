@@ -8,5 +8,7 @@
     align-items: center;
     justify-items: center;
     overflow: visible;
-    @apply lg:mt-20 mt-5 sm:border lg:border-0 border-0 rounded 
+    position: sticky;
+    top: 20px;
+    @apply lg:mt-20 mt-5 sm:border p-3 rounded ;
 }
