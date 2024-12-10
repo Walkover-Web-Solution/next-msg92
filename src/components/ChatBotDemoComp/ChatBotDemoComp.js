@@ -11,7 +11,6 @@ export default function ChatBotDemoComp({ pagepath }) {
     const [iframeLoading, setIframeLoading] = useState(true);
     const [totalPages, setTotalPages] = useState();
     const [currentPage, setCurrentPage] = useState();
-    console.log('🚀 ~ ChatBotDemoComp ~ currentPage:', currentPage);
 
     useEffect(() => {
         const queryParams = new URLSearchParams(window.location.search);
