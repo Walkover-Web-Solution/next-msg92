@@ -7,7 +7,7 @@ import PreFooterComp from '@/components/PreFooterComp/PreFooterComp';
 import getPageInfo from '@/utils/getPageInfo';
 import { useRouter } from 'next/router';
 
-export default function demochatbot({}) {
+export default function demochatbot({ pageInfo }) {
     const router = useRouter(); // This hook gives you access to the router object
     return (
         <div>
@@ -26,7 +26,7 @@ export default function demochatbot({}) {
                 }}
                 pageInfo={{
                     'country': 'global',
-                    'page': 'home',
+                    'page': 'demochatbot',
                     'pathArray': [],
                     'pathURL': '',
                 }}
@@ -229,7 +229,7 @@ export default function demochatbot({}) {
                     'pathURL': '',
                 }}
             />
-            <ChatBotDemoComp pagepath={router?.asPath} />
+            <ChatBotDemoComp pageInfo={pageInfo} pagepath={router?.asPath} />
             <PreFooterComp
                 data={{
                     'content': 'Start building your ideal customer engagement experience',
@@ -473,3 +473,12 @@ export default function demochatbot({}) {
         </div>
     );
 }
+export const getStaticProps = async (context) => {
+    const params = context?.params;
+    const pageInfo = getPageInfo(params);
+    return {
+        props: {
+            pageInfo,
+        },
+    };
+};

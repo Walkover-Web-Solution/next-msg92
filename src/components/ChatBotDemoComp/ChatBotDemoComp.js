@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import style from './ChatBotDemoComp.module.scss';
 import ChatBotDemoPagination from './ChatBotDemoPagination/ChatBotDemoPagination';
 
-export default function ChatBotDemoComp({ pagepath }) {
+export default function ChatBotDemoComp({ pageInfo, pagepath }) {
     const [selectedTemplate, setSelectedTemplate] = useState({});
     const [templateData, setTemplateData] = useState([]);
     const [isLoading, setLoading] = useState(false);
