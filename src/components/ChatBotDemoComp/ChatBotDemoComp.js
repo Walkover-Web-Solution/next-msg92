@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import style from './ChatBotDemoComp.module.scss';
 import ChatBotDemoPagination from './ChatBotDemoPagination/ChatBotDemoPagination';
 
-export default function ChatBotDemoComp({ pageInfo, data }) {
+export default function ChatBotDemoComp({ pagepath }) {
     const [selectedTemplate, setSelectedTemplate] = useState({});
     const [templateData, setTemplateData] = useState([]);
     const [isLoading, setLoading] = useState(false);
@@ -11,23 +11,36 @@ export default function ChatBotDemoComp({ pageInfo, data }) {
     const [iframeLoading, setIframeLoading] = useState(true);
     const [totalPages, setTotalPages] = useState();
     const [currentPage, setCurrentPage] = useState();
+    console.log('🚀 ~ ChatBotDemoComp ~ currentPage:', currentPage);
+
+    useEffect(() => {
+        const queryParams = new URLSearchParams(window.location.search);
+        const currentPage = queryParams.get('page');
+        setCurrentPage(Number(currentPage) || 1);
+    }, []);
+
+    useEffect(() => {
+        fetchTemplates();
+    }, [currentPage]);
 
     const fetchTemplates = async () => {
-        try {
-            setLoading(true);
-            const response = await axios.get(
-                `${process.env.HELLO_API_URL}/public/bot/template?with_widget=true&page=${currentPage}`
-            );
-            if (response?.data?.success) {
-                setTemplateData(response.data.data.templates);
-                setTotalPages(response.data?.data?.last_page);
-            } else {
-                setError('Failed to fetch templates');
+        if (currentPage) {
+            try {
+                setLoading(true);
+                const response = await axios.get(
+                    `${process.env.HELLO_API_URL}/public/bot/template?with_widget=true&page=${currentPage}`
+                );
+                if (response?.data?.success) {
+                    setTemplateData(response.data.data.templates);
+                    setTotalPages(response.data?.data?.last_page);
+                } else {
+                    setError('Failed to fetch templates');
+                }
+            } catch (error) {
+                setError('Error fetching templates');
+            } finally {
+                setLoading(false);
             }
-        } catch (error) {
-            setError('Error fetching templates');
-        } finally {
-            setLoading(false);
         }
     };
 
@@ -51,23 +64,12 @@ export default function ChatBotDemoComp({ pageInfo, data }) {
             handleGoToNext(currentPage + 1);
         } else if (templateValue === 'gotoprev') {
             handleGoToNext(currentPage - 1);
-        }
-        if (!iframeLoading) {
+        } else if (!iframeLoading) {
             const selectedTemplateDrop = templateData.find((template) => template?.bot_name === templateValue);
             setSelectedTemplate(selectedTemplateDrop);
             setIframeLoading(true);
         }
     };
-
-    useEffect(() => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const currentPage = parseInt(urlParams.get('page')) || 1;
-        setCurrentPage(currentPage);
-    }, []);
-
-    useEffect(() => {
-        fetchTemplates();
-    }, [currentPage]);
 
     useEffect(() => {
         if (templateData?.length > 0 && Object?.keys(selectedTemplate).length === 0) {

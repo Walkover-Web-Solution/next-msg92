@@ -3,8 +3,12 @@ import FooterComp from '@/components/FooterComp/FooterComp';
 import HeadComp from '@/components/headComp';
 import MenuBarComp from '@/components/menuBarComp/menuBarComp';
 import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
+import PreFooterComp from '@/components/PreFooterComp/PreFooterComp';
+import getPageInfo from '@/utils/getPageInfo';
+import { useRouter } from 'next/router';
 
-export default function demochatbot() {
+export default function demochatbot({}) {
+    const router = useRouter(); // This hook gives you access to the router object
     return (
         <div>
             <HeadComp
@@ -225,7 +229,22 @@ export default function demochatbot() {
                     'pathURL': '',
                 }}
             />
-            <ChatBotDemoComp />
+            <ChatBotDemoComp pagepath={router?.asPath} />
+            <PreFooterComp
+                data={{
+                    'content': 'Start building your ideal customer engagement experience',
+                    'buttons': {
+                        'contactSales': {
+                            'text': 'Contact sales',
+                            'link': '/contact-us',
+                        },
+                        'getStarted': {
+                            'text': 'Get started',
+                            'link': 'https://control.msg91.com/signup/',
+                        },
+                    },
+                }}
+            />
             <FooterComp
                 componentData={{
                     'hide': ['signup', 'singin'],
