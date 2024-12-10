@@ -243,7 +243,7 @@ export default function PricingHello({ data, country }) {
                                                         {amount?.plan_amount} {tabtype}
                                                     </p>
                                                     <p>
-                                                        {amount?.currency?.short_name === 'INR'
+                                                        {amount?.currency?.short_name === 'INR' && plan?.name != 'Free'
                                                             ? '+18% GST'
                                                             : amount?.currency?.short_name === 'GBP'
                                                               ? '+ VAT'
@@ -340,9 +340,7 @@ export default function PricingHello({ data, country }) {
                                                                                                     color='#16A34A'
                                                                                                 />
                                                                                                 {symbol}
-                                                                                                {
-                                                                                                    rate?.follow_up_rate
-                                                                                                }/
+                                                                                                {rate?.follow_up_rate}/
                                                                                                 {
                                                                                                     service
                                                                                                         ?.service_credit
