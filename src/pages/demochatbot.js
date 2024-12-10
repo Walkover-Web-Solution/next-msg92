@@ -1,11 +1,19 @@
 import ChatBotDemoComp from '@/components/ChatBotDemoComp/ChatBotDemoComp';
 import FooterComp from '@/components/FooterComp/FooterComp';
+import HeadComp from '@/components/headComp';
 import MenuBarComp from '@/components/menuBarComp/menuBarComp';
 import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
 
 export default function demochatbot() {
     return (
         <div>
+            <HeadComp
+                data={{
+                    'title': 'Demo Chatbot - MSG91',
+                    'description':
+                        "Explore the capabilities of the MSG91 Demo Chatbot. See how AI-powered chatbots can streamline customer interactions, provide instant responses, and enhance user experience. Try the demo to understand the seamless integration and advanced features offered by MSG91's chatbot solutions.",
+                }}
+            />
             <NotificationBarComp
                 componentData={{
                     'support': 'Contact',
