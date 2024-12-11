@@ -4,11 +4,11 @@ import HeadComp from '@/components/headComp';
 import MenuBarComp from '@/components/menuBarComp/menuBarComp';
 import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
 import PreFooterComp from '@/components/PreFooterComp/PreFooterComp';
+import getBotTemplates from '@/utils/getBotTemplates';
 import getPageInfo from '@/utils/getPageInfo';
 import { useRouter } from 'next/router';
 
-export default function demochatbot({ pageInfo }) {
-    const router = useRouter(); // This hook gives you access to the router object
+export default function demochatbot({ pageInfo, templateList, totalPages, currentPage }) {
     return (
         <div>
             <HeadComp
@@ -229,7 +229,12 @@ export default function demochatbot({ pageInfo }) {
                     'pathURL': '',
                 }}
             />
-            <ChatBotDemoComp pageInfo={pageInfo} pagepath={router?.asPath} />
+            <ChatBotDemoComp
+                pageInfo={pageInfo}
+                templateList={templateList}
+                totalPages={totalPages}
+                currentPage={currentPage}
+            />
             <PreFooterComp
                 data={{
                     'content': 'Start building your ideal customer engagement experience',
@@ -473,12 +478,18 @@ export default function demochatbot({ pageInfo }) {
         </div>
     );
 }
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
+    const currentPage = Number(context.query?.page) || 1;
     const params = context?.params;
     const pageInfo = getPageInfo(params);
+    const templateData = await getBotTemplates(currentPage);
+
     return {
         props: {
             pageInfo,
+            templateList: templateData?.templates || [],
+            totalPages: templateData?.last_page || 0,
+            currentPage: currentPage || 1,
         },
     };
 };

@@ -2,46 +2,11 @@ import axios from 'axios';
 import { useCallback, useEffect, useState } from 'react';
 import style from './ChatBotDemoComp.module.scss';
 import ChatBotDemoPagination from './ChatBotDemoPagination/ChatBotDemoPagination';
+import { useRouter } from 'next/router';
 
-export default function ChatBotDemoComp({ pageInfo, pagepath }) {
+export default function ChatBotDemoComp({ templateList, totalPages, currentPage }) {
     const [selectedTemplate, setSelectedTemplate] = useState({});
-    const [templateData, setTemplateData] = useState([]);
-    const [isLoading, setLoading] = useState(false);
-    const [error, setError] = useState('');
     const [iframeLoading, setIframeLoading] = useState(true);
-    const [totalPages, setTotalPages] = useState();
-    const [currentPage, setCurrentPage] = useState();
-
-    useEffect(() => {
-        const queryParams = new URLSearchParams(window.location.search);
-        const currentPage = queryParams.get('page');
-        setCurrentPage(Number(currentPage) || 1);
-    }, []);
-
-    useEffect(() => {
-        fetchTemplates();
-    }, [currentPage]);
-
-    const fetchTemplates = async () => {
-        if (currentPage) {
-            try {
-                setLoading(true);
-                const response = await axios.get(
-                    `${process.env.HELLO_API_URL}/public/bot/template?with_widget=true&page=${currentPage}`
-                );
-                if (response?.data?.success) {
-                    setTemplateData(response.data.data.templates);
-                    setTotalPages(response.data?.data?.last_page);
-                } else {
-                    setError('Failed to fetch templates');
-                }
-            } catch (error) {
-                setError('Error fetching templates');
-            } finally {
-                setLoading(false);
-            }
-        }
-    };
 
     const handlePagination = (page) => {
         const navigateToPage = `/demochatbot?page=${page}`;
@@ -64,17 +29,17 @@ export default function ChatBotDemoComp({ pageInfo, pagepath }) {
         } else if (templateValue === 'gotoprev') {
             handleGoToNext(currentPage - 1);
         } else if (!iframeLoading) {
-            const selectedTemplateDrop = templateData.find((template) => template?.bot_name === templateValue);
+            const selectedTemplateDrop = templateList.find((template) => template?.bot_name === templateValue);
             setSelectedTemplate(selectedTemplateDrop);
             setIframeLoading(true);
         }
     };
 
     useEffect(() => {
-        if (templateData?.length > 0 && Object?.keys(selectedTemplate).length === 0) {
-            setSelectedTemplate(templateData[0]);
+        if (templateList?.length > 0 && Object?.keys(selectedTemplate).length === 0) {
+            setSelectedTemplate(templateList[0]);
         }
-    }, [templateData]);
+    }, [templateList]);
 
     const chatbotContent = `
         <!DOCTYPE html>
@@ -125,12 +90,8 @@ export default function ChatBotDemoComp({ pageInfo, pagepath }) {
                     </div>
 
                     <div className='lg:grid hidden lg:grid-cols-2 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 rounded-lg gap-6'>
-                        {isLoading &&
-                            [...Array(12)].map((_, index) => (
-                                <div key={index} className='skeleton h-[136px] rounded'></div>
-                            ))}
-                        {templateData?.length > 0 &&
-                            templateData.map((template, index) => (
+                        {templateList?.length > 0 &&
+                            templateList.map((template, index) => (
                                 <div
                                     onClick={() => handleTemplateSelect(template)}
                                     key={index}
@@ -149,7 +110,7 @@ export default function ChatBotDemoComp({ pageInfo, pagepath }) {
                             ))}
                     </div>
 
-                    {templateData?.length > 0 && (
+                    {templateList?.length > 0 && (
                         <div className=' gap-2 lg:flex hidden'>
                             <ChatBotDemoPagination
                                 totalPages={totalPages}
@@ -166,7 +127,7 @@ export default function ChatBotDemoComp({ pageInfo, pagepath }) {
                             }}
                             value={selectedTemplate?.bot_name || ''}
                         >
-                            {templateData.map((template, index) => (
+                            {templateList.map((template, index) => (
                                 <option key={index} value={template?.bot_name}>
                                     {template?.bot_name}
                                 </option>
@@ -177,7 +138,7 @@ export default function ChatBotDemoComp({ pageInfo, pagepath }) {
                                 </option>
                             )}
                             {currentPage != totalPages && (
-                                <option key={'index'} value={'gotonext'}>
+                                <option key={'index2'} value={'gotonext'}>
                                     {`Go To Next Page`}
                                 </option>
                             )}
