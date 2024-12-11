@@ -10,17 +10,19 @@
             "icon": "/assets/icons/products/whatsapp.svg"
         },
         "code": true,
-
         "tagline": "Dominate popular platforms",
         "heading": "Drive better customer engagement outcomes",
         "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
-      "banner_img": "/assets/global/hello/banner.webp",
+        "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",
-        "schedule_meet":"Schedule a Meeting",
+        "schedule_meet": "Schedule a Meeting",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
-
             "logos": [
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
                 {
                     "name": "Xiaomi",
                     "url": "/assets/trusted_by/xiaomi.svg"
@@ -87,13 +89,13 @@
                 "name": "2-way Communication",
                 "content": "<strong>Say hello to go on HELLO.</strong> Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business.",
                 "img": "/assets/global/whatsapp/whatsapp-2way-communication.svg"
-            },       {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+            },
+            {
                 "name": "Manage Template Inside Panel",
                 "content": "<strong>Create and Manage your template right here</strong> No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook.",
                 "img": "/assets/global/whatsapp/whatsapp-manage-template-inside-panel.svg"
-            },     {
-                "icon": "/assets/icons/features/hello/unlimited-agents-ico.svg",
+            },
+            {
                 "name": "Analytics",
                 "content": "<strong>Get graphical insights into your business messages.</strong> Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more.",
                 "img": "/assets/global/whatsapp/whatsapp-analytics.svg"
@@ -105,7 +107,6 @@
             }
         ]
     },
-   
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
