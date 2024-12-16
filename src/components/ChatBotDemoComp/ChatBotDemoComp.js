@@ -101,7 +101,7 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
                                             : 'border-neutral'
                                     }`}
                                 >
-                                    <h3 className='text-lg font-bold'>{template?.bot_name}</h3>
+                                    <h3 className='text-lg font-bold w-full break-words'>{template?.bot_name}</h3>
                                     <p>
                                         {template?.description ||
                                             'Experience AI Chatbots in Action, Start Chatting Now!'}
