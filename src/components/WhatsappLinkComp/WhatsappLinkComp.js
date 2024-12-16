@@ -6,7 +6,7 @@ import GetMdIcons from '@/utils/getMdIcons';
 import { MdChevronRight, MdCopyAll, MdDownload } from 'react-icons/md';
 const ParentComponent = ({ data }) => {
     useEffect(() => {
-        if (document.getElementById('qrcode') && typeof QRCode !== 'undefined') {
+        if (document.getElementById('qrcode') && typeof QRCode != 'undefined') {
             var qrcode = new QRCode(document.getElementById('qrcode'), {
                 width: 150,
                 height: 150,
