@@ -7,6 +7,7 @@ import getURL from '@/utils/getURL';
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 
 export default function PricingEmail({ data, country }) {
+    console.log('🚀 ~ PricingEmail ~ country:', country);
     const { currency, symbol } = GetCurrencySymbol(country);
     const [isLoading, setIsLoading] = useState(false);
     const [plans, setPlans] = useState();
@@ -71,6 +72,9 @@ export default function PricingEmail({ data, country }) {
                                                     </h3>
                                                     <p> {tabtype}</p>
                                                 </div>
+                                                {country === 'in' && amount?.plan_amount !== 0 && (
+                                                    <p className='text-sm'>+ 18% GST</p>
+                                                )}
                                             </div>
                                             <span
                                                 className={`border-b-[1px] w-full ${
@@ -128,9 +132,7 @@ export default function PricingEmail({ data, country }) {
                                                                                                 color='#16A34A'
                                                                                             />
                                                                                             {symbol}
-                                                                                            {
-                                                                                                rate?.follow_up_rate
-                                                                                            }/
+                                                                                            {rate?.follow_up_rate}/
                                                                                             {
                                                                                                 service?.service_credit
                                                                                                     ?.service?.name
