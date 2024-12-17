@@ -27,6 +27,10 @@
                 "Share ledgers on Whatsapp and recover dues"
             ]
         },
+        "workflow": {
+            "text": "Get The Plugin",
+            "link": "https://msg91.com/help/MSG91/integrate-tally-with-msg91"
+        },
         "offers": {
             "heading": "The MSG91 Tally Prime Plugin Offers",
             "content": [
