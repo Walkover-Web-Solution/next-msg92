@@ -75,6 +75,9 @@ export default function PricingEmail({ data, country }) {
                                                 {country === 'in' && amount?.plan_amount !== 0 && (
                                                     <p className='text-sm'>+ 18% GST</p>
                                                 )}
+                                                {country === 'gb' && amount?.plan_amount !== 0 && (
+                                                    <p className='text-sm'>+ VAT</p>
+                                                )}
                                             </div>
                                             <span
                                                 className={`border-b-[1px] w-full ${
