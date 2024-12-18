@@ -10,6 +10,7 @@ import { HTTPSnippet } from 'httpsnippet';
 import { MdCopyAll } from 'react-icons/md';
 import { InlineWidget } from 'react-calendly';
 import getURL from '@/utils/getURL';
+import Link from 'next/link';
 
 export default function BannerComp({ pageInfo, data }) {
     const [isCopied, setIsCopied] = useState(false);
@@ -85,7 +86,12 @@ export default function BannerComp({ pageInfo, data }) {
                             >
                                 {data?.schedule_meet}
                             </button>
-                        )}{' '}
+                        )}
+                        {pageInfo?.page === 'hello' && (
+                            <Link href='/demochatbot'>
+                                <button className='btn btn-md btn-primary btn-outline'>Test Chatbot</button>
+                            </Link>
+                        )}
                     </div>
 
                     <TrustedByComp data={data?.trustedByComp} />

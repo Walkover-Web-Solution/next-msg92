@@ -237,7 +237,7 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
             />
             <PreFooterComp
                 data={{
-                    'content': 'Start building your ideal customer engagement experience',
+                    'content': 'Start building your ideal customer engagement experience ',
                     'buttons': {
                         'contactSales': {
                             'text': 'Contact sales',
