@@ -1,8 +1,38 @@
+# Clickjacking Protection: Prevent all framing
 /*
   X-Frame-Options: DENY
-  X-XSS-Protection: 1; mode=block  
   Content-Security-Policy: frame-ancestors 'none';
-  
+
+# Specific domain framing exception (for legacy use cases or specific trusted subdomains)
+# Use sparingly as ALLOW-FROM is deprecated and CSP is the preferred solution
 /*
   X-Frame-Options: ALLOW-FROM https://shopifytest.msg91.com
   X-Frame-Options: ALLOW-FROM https://secommerce.msg91.com
+
+# XSS Protection and Content Validation
+/*
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+
+# Referrer Policy for Privacy
+/*
+  Referrer-Policy: no-referrer-when-downgrade
+
+# Enforce HTTPS with HSTS (HTTP Strict Transport Security)
+# Ensures browsers use HTTPS for all connections to the domain and its subdomains for one year
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# CORS Configuration: Allow cross-origin requests only from trusted origins
+/cdn-cgi/rum/  
+  Access-Control-Allow-Methods: POST, OPTIONS
+  Access-Control-Allow-Headers: Content-Type
+  Access-Control-Allow-Credentials: false
+  Access-Control-Max-Age: 86400
+
+# Content Security Policy (CSP): Restrict resources to the same origin and specific trusted external origins
+/*
+  Content-Security-Policy: 
+    default-src 'self'; 
+    script-src 'self'; 
+    object-src 'none';
