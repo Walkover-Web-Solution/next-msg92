@@ -191,7 +191,7 @@ export default function PricingHello({ data, country }) {
     return (
         <>
             <div className='flex flex-col w-full gap-8'>
-                {/* <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
+                <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
                     <span
                         role='tab'
                         className={`tab ${tabtype === 'Monthly' && 'tab-active'}`}
@@ -210,7 +210,7 @@ export default function PricingHello({ data, country }) {
                     >
                         Yearly (20% off)
                     </span>
-                </div> */}
+                </div>
                 <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full gap-8 '>
                     {plans &&
                         plans.length > 0 &&
@@ -245,7 +245,8 @@ export default function PricingHello({ data, country }) {
                                                     <p>
                                                         {amount?.currency?.short_name === 'INR' && plan?.name != 'Free'
                                                             ? '+18% GST'
-                                                            : amount?.currency?.short_name === 'GBP'
+                                                            : amount?.currency?.short_name === 'GBP' &&
+                                                                plan?.name != 'Free'
                                                               ? '+ VAT'
                                                               : '-'}
                                                     </p>

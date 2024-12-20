@@ -161,6 +161,8 @@ export default function PricingVoice({ data, country }) {
                     )}
 
                     <h1 className='text-xl font-semibold'>{data?.heading}</h1>
+                    {country === 'in' && <p className='text-lg'>GST excluded.</p>}
+                    {country === 'gb' && <p className='text-lg'>VAT excluded.</p>}
                     <table className='table bg-white rounded w-full'>
                         <thead>
                             <tr className='font-bold text-[16px] text-black '>

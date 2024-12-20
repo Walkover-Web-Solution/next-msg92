@@ -35,7 +35,8 @@ export default function PricingWhatsApp({ country, data }) {
                         <h2 className='text-3xl font-semibold'>
                             <span className='text-green-600  font-bold text-4xl'>Zero</span> margin on meta price.
                         </h2>
-                        <p className='text-lg'>TDS and GST excluded.</p>
+                        {country === 'in' && <p className='text-lg'>GST excluded.</p>}
+                        {country === 'gb' && <p className='text-lg'>VAT excluded.</p>}
                         <a href={getURL('signup', 'whatsapp')} target='_blank'>
                             <button className='btn btn-primary btn-md'>Get Started</button>
                         </a>
