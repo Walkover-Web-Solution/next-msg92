@@ -19,6 +19,7 @@ export default function PricingHello({ data, country }) {
     const [showCalculations, setShowCalculations] = useState(false);
     const [rawInboxes, setRawInboxes] = useState(0);
     const [rawTickets, setRawTickets] = useState(0);
+    const [hasyYarly, setHasYearly] = useState(false);
 
     const fetchPlans = useCallback(async () => {
         setIsLoading(true);
@@ -188,29 +189,92 @@ export default function PricingHello({ data, country }) {
         }
     }, [plans, tickets, inboxes]);
 
+    const hasYearlyPlan = useCallback(() => {
+        return plans?.some((plan) => plan.plan_amounts?.some((amount) => amount.plan_type?.name === 'Yearly'));
+    }, [plans]);
+
+    useEffect(() => {
+        if (hasYearlyPlan()) {
+            setHasYearly(true);
+        }
+    }, [hasYearlyPlan]);
+
+    function handleOfferPrice(price) {
+        console.log('🚀 ~ handleOfferPrice ~ price:', price);
+        let ammount;
+        let percent;
+        switch (price?.currency?.short_name) {
+            case 'INR':
+                if (price.plan_amount == 1000) {
+                    percent = ((1500 - 1000) / 1500) * 100;
+                    ammount = 1500;
+                } else if (price.plan_amount == 2000) {
+                    percent = ((3000 - 2000) / 3000) * 100;
+                    ammount = 3000;
+                }
+                break;
+            case 'USD':
+                if (price.plan_amount == 28) {
+                    percent = ((40 - 28) / 40) * 100;
+                    ammount = 40;
+                } else if (price.plan_amount == 56) {
+                    percent = ((80 - 56) / 80) * 100;
+                    ammount = 80;
+                }
+                break;
+            case 'GBP':
+                if (price.plan_amount == 24) {
+                    percent = ((35 - 24) / 35) * 100;
+                    ammount = 35;
+                } else if (price.plan_amount == 45) {
+                    percent = ((65 - 45) / 65) * 100;
+                    ammount = 65;
+                }
+                break;
+            default:
+                break;
+        }
+        if (ammount) {
+            return (
+                <div className='flex gap-2 items-center'>
+                    <span className=' text-gray-400 text-lg'>
+                        <span className=' line-through'>
+                            {' '}
+                            {price?.currency?.symbol}
+                            {ammount}
+                        </span>
+                    </span>
+                    <span className='font-bold'>{Math.round(percent)}% Off</span>
+                </div>
+            );
+        }
+    }
     return (
         <>
             <div className='flex flex-col w-full gap-8'>
-                <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
-                    <span
-                        role='tab'
-                        className={`tab ${tabtype === 'Monthly' && 'tab-active'}`}
-                        onClick={() => {
-                            setTabtype('Monthly');
-                        }}
-                    >
-                        Monthly
-                    </span>
-                    <span
-                        role='tab'
-                        className={`tab ${tabtype === 'Yearly' && 'tab-active'}`}
-                        onClick={() => {
-                            setTabtype('Yearly');
-                        }}
-                    >
-                        Yearly (20% off)
-                    </span>
-                </div>
+                {hasyYarly && (
+                    <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
+                        <span
+                            role='tab'
+                            className={`tab ${tabtype === 'Monthly' && 'tab-active'}`}
+                            onClick={() => {
+                                setTabtype('Monthly');
+                            }}
+                        >
+                            Monthly
+                        </span>
+                        <span
+                            role='tab'
+                            className={`tab ${tabtype === 'Yearly' && 'tab-active'}`}
+                            onClick={() => {
+                                setTabtype('Yearly');
+                            }}
+                        >
+                            Yearly (20% off)
+                        </span>
+                    </div>
+                )}
+
                 <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full gap-8 '>
                     {plans &&
                         plans.length > 0 &&
@@ -238,10 +302,13 @@ export default function PricingHello({ data, country }) {
                                                             </span>
                                                         )}
                                                     </div>
-                                                    <p className=' text-2xl font-semibold text-green-600 capitalize'>
-                                                        {amount?.currency?.symbol}
-                                                        {amount?.plan_amount} {tabtype}
-                                                    </p>
+                                                    <div className='gap-1 flex flex-col'>
+                                                        <p className=' text-2xl font-semibold text-green-600 capitalize'>
+                                                            {amount?.currency?.symbol}
+                                                            {amount?.plan_amount} {tabtype}
+                                                        </p>
+                                                        <div>{handleOfferPrice(amount) || '-'}</div>
+                                                    </div>
                                                     <p>
                                                         {amount?.currency?.short_name === 'INR' && plan?.name != 'Free'
                                                             ? '+18% GST'
