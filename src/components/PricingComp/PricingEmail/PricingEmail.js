@@ -7,7 +7,6 @@ import getURL from '@/utils/getURL';
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 
 export default function PricingEmail({ data, country }) {
-    console.log('🚀 ~ PricingEmail ~ country:', country);
     const { currency, symbol } = GetCurrencySymbol(country);
     const [isLoading, setIsLoading] = useState(false);
     const [plans, setPlans] = useState();

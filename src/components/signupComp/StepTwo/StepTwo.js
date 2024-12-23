@@ -16,24 +16,62 @@ class StepTwo extends React.Component {
             emailIdentifier: props.emailIdentifierBackup || '',
             smsIdentifier: props.smsIdentifierBackup || '',
             sourceValue: '',
+            optionValue: '',
         };
         smsIdentifier = this.state.smsIdentifier;
+
+        this.sourceOptions = [
+            { value: '', label: 'Select Source' },
+            { value: 'search_engine', label: 'Search engine (Google, Bing, Yahoo, etc)' },
+            { value: 'recommended_by_friend', label: 'Recommended by friend or colleague' },
+            { value: 'social_media', label: 'Social Media' },
+            { value: 'blog', label: 'Blog or Publication' },
+            { value: 'advertisement', label: 'Advertisement' },
+            { value: 'event', label: 'Event' },
+            { value: 'tiedelhincr', label: 'TiEDelhiNCR' },
+        ];
     }
 
     componentDidMount() {
         const queryParams = new URLSearchParams(window.location.search);
         const query = queryParams.toString();
         const sourceValue = queryParams.get('source');
-        this.setState({ sourceValue });
+        this.setState({ sourceValue: sourceValue });
+        if (this.sourceOptions.some((option) => option.value === sourceValue)) {
+            this.setState({ optionValue: sourceValue });
+            this.setState({ sourceValue: sourceValue });
+        } else if (this.sourceOptions.some((option) => option.label === sourceValue)) {
+            const lableValue = this.sourceOptions.find((option) => option.label === sourceValue).value;
+            this.setState({ sourceValue: lableValue });
+            this.setState({ optionValue: lableValue });
+        } else if (sourceValue && this.sourceOptions.some((option) => option.value != sourceValue)) {
+            this.setState({ sourceValue: sourceValue });
+            this.setState({ optionValue: 'other' });
+        }
+    }
+
+    updateSourceInUrlAndCookie(value) {
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.set('source', value);
+        window.history.replaceState(null, '', currentUrl.toString());
+        const utmData = getCookie('msg91_query');
+        if (utmData?.includes('&source=')) {
+            setCookie('msg91_query', utmData.replace(/&source=([\w_-])+/, '&source=' + value), 30);
+        } else if (utmData?.includes('?source=')) {
+            setCookie('msg91_query', utmData.replace(/\?source=([\w_-])+/, '?source=' + value), 30);
+        } else {
+            setCookie('msg91_query', utmData ? utmData + '&source=' + value : '?source=' + value, 30);
+        }
     }
 
     handleSourceChange = (event) => {
         const value = event.target.value;
-        const utmData = getCookie('msg91_query');
-        if (utmData.includes('&source')) {
-            setCookie('msg91_query', utmData.replace(/&source=([\w_-])+/, '&source=' + this.state.sourceValue), 30);
+        if (this.sourceOptions.some((option) => option.value === value)) {
+            this.setState({ optionValue: value, sourceValue: value });
+            this.updateSourceInUrlAndCookie(value);
         } else {
-            setCookie('msg91_query', utmData + '&source=' + this.state.sourceValue, 30);
+            this.setState({ optionValue: 'other', sourceValue: value });
+            this.updateSourceInUrlAndCookie(value);
         }
     };
 
@@ -241,16 +279,34 @@ class StepTwo extends React.Component {
                                     name='source'
                                     onChange={this.handleSourceChange}
                                 >
-                                    <option value=''>Select Source</option>
-                                    <option value='search_engine'>Search engine (Google, Bing, Yahoo, etc)</option>
-                                    <option value='recommended_by_friend'>Recommended by friend or colleague</option>
-                                    <option value='social_media'>Social Media</option>
-                                    <option value='blog'>Blog or Publication</option>
-                                    <option value='advertisement'>Advertisement</option>
-                                    <option value='event'>Event</option>
-                                    <option value='tiedelhincr'>TiEDelhiNCR</option>
+                                    {this.sourceOptions.map((source, index) => {
+                                        return (
+                                            <option
+                                                selected={this.state.optionValue === source?.value}
+                                                key={index}
+                                                value={source?.value}
+                                            >
+                                                {source?.label}
+                                            </option>
+                                        );
+                                    })}
+                                    <option selected={this.state.optionValue === 'other'} value='other'>
+                                        Other
+                                    </option>
                                 </select>
                             </div>
+                            {this.state.optionValue === 'other' && (
+                                <input
+                                    className='input border-gray-300 focus:outline-none w-full focus:border-accent h-10'
+                                    type='text'
+                                    placeholder='Source'
+                                    defaultValue={this.state.sourceValue}
+                                    onBlur={(e) => {
+                                        this.handleSourceChange(e);
+                                        this.setState({ sourceValue: e.target.value });
+                                    }}
+                                />
+                            )}
                         </div>
                     </div>
                     <div className='flex  gap-4'>
