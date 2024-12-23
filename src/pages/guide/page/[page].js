@@ -16,6 +16,7 @@ export default function Index({ posts, tags, pagination, commonData, pageInfo })
         <>
             <Head>
                 <title>Page {pagination.current} | MSG91 Guide </title>
+                <link rel='canonical' href={`https://msg91.com/guide/page/${pagination?.current}`} />
             </Head>
             <NotificationBarComp
                 componentData={commonData?.notification}
