@@ -234,6 +234,7 @@ export default function PricingHello({ data, country }) {
             default:
                 break;
         }
+        percent = Math.round(percent) === 31 ? 30 : Math.round(percent);
         if (ammount) {
             return (
                 <div className='flex gap-2 items-center'>
@@ -244,7 +245,7 @@ export default function PricingHello({ data, country }) {
                             {ammount}
                         </span>
                     </span>
-                    <span className='font-bold'>{Math.round(percent)}% Off</span>
+                    <span className='font-bold'>{percent}% Off</span>
                 </div>
             );
         }
