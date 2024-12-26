@@ -84,172 +84,181 @@ export default function PricingSMSOTP({ data, type, country }) {
 
     return (
         <>
-            <div className='w-full flex flex-col gap-8'>
-                <div className='flex lg:flex-row flex-col items-center text-lg gap-3'>
-                    <span>Send {type.toUpperCase()} From</span>
-                    <div className='w-[300px] z-50'>
-                        <Typeahead
-                            className='country-typehead'
-                            id='origin-country'
-                            placeholder='Origin Country'
-                            labelKey='name'
-                            onChange={(selected) => {
-                                handleOnSelectOrigin(selected);
-                            }}
-                            options={countries}
-                            defaultSelected={[countries?.find((item) => item.shortname === currentCountry?.shortname)]}
-                            inputProps={{
-                                autoComplete: 'off',
-                            }}
-                        />
+            <div className='flex flex-col gap-3 w-full'>
+                <h1 className='text-3xl font-semibold capitalize '>{type.toUpperCase()} Pricing</h1>
+                <div className='w-full flex flex-col gap-8'>
+                    <div className='flex lg:flex-row flex-col items-center text-lg gap-3'>
+                        <span>Send {type.toUpperCase()} From</span>
+                        <div className='w-[300px] z-50'>
+                            <Typeahead
+                                className='country-typehead'
+                                id='origin-country'
+                                placeholder='Origin Country'
+                                labelKey='name'
+                                onChange={(selected) => {
+                                    handleOnSelectOrigin(selected);
+                                }}
+                                options={countries}
+                                defaultSelected={[
+                                    countries?.find((item) => item.shortname === currentCountry?.shortname),
+                                ]}
+                                inputProps={{
+                                    autoComplete: 'off',
+                                }}
+                            />
+                        </div>
+                        <span>To</span>
+                        <div className='w-[300px] z-50'>
+                            <Typeahead
+                                className='country-typehead'
+                                id='destination-country'
+                                placeholder='Destination Country'
+                                labelKey='name'
+                                onChange={(selected) => {
+                                    handleOnSelectDestination(selected);
+                                }}
+                                options={countries}
+                                defaultSelected={[
+                                    countries?.find((item) => item.shortname === currentCountry?.shortname),
+                                ]}
+                                inputProps={{
+                                    autoComplete: 'off',
+                                }}
+                            />
+                        </div>
                     </div>
-                    <span>To</span>
-                    <div className='w-[300px] z-50'>
-                        <Typeahead
-                            className='country-typehead'
-                            id='destination-country'
-                            placeholder='Destination Country'
-                            labelKey='name'
-                            onChange={(selected) => {
-                                handleOnSelectDestination(selected);
-                            }}
-                            options={countries}
-                            defaultSelected={[countries?.find((item) => item.shortname === currentCountry?.shortname)]}
-                            inputProps={{
-                                autoComplete: 'off',
-                            }}
-                        />
-                    </div>
-                </div>
-                {!loading ? (
-                    noOfSmsArray.length > 1 ? (
-                        <>
-                            <div className='w-full md:p-4 lg:p-8 p-2 bg-white h-fit flex flex-col gap-6'>
-                                <div className='text-center'>Number of SMS</div>
-                                <div className=' flex lg:hidden justify-between'>
-                                    {noOfSmsArray.map((item, index) => {
-                                        if (index === 0 || index === noOfSmsArray.length - 1) {
+                    {!loading ? (
+                        noOfSmsArray.length > 1 ? (
+                            <>
+                                <div className='w-full md:p-4 lg:p-8 p-2 bg-white h-fit flex flex-col gap-6'>
+                                    <div className='text-center'>Number of SMS</div>
+                                    <div className=' flex lg:hidden justify-between'>
+                                        {noOfSmsArray.map((item, index) => {
+                                            if (index === 0 || index === noOfSmsArray.length - 1) {
+                                                return (
+                                                    <div className='text-center w-fit ' key={index}>
+                                                        {contvertToLocal(item[pricingEnv]?.totalNoOfSms)}
+                                                    </div>
+                                                );
+                                            }
+                                            return null;
+                                        })}
+                                    </div>
+                                    <div className='lg:flex hidden'>
+                                        {noOfSmsArray.map((item, index) => {
                                             return (
-                                                <div className='text-center w-fit ' key={index}>
+                                                <div className='text-center w-full' key={index}>
                                                     {contvertToLocal(item[pricingEnv]?.totalNoOfSms)}
                                                 </div>
                                             );
-                                        }
-                                        return null;
-                                    })}
-                                </div>
-                                <div className='lg:flex hidden'>
-                                    {noOfSmsArray.map((item, index) => {
-                                        return (
-                                            <div className='text-center w-full' key={index}>
-                                                {contvertToLocal(item[pricingEnv]?.totalNoOfSms)}
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                                <div className='input-slider-padding w-full'>
-                                    <input
-                                        className='slider'
-                                        type='range'
-                                        min='0'
-                                        max={noOfSmsArray.length - 1}
-                                        step='1'
-                                        value={sliderValue}
-                                        onChange={(e) => setSliderValue(e.target.value)}
-                                        aria-label='Slider'
-                                    />
-                                </div>
-                                <div className=' flex lg:hidden justify-between'>
-                                    {noOfSmsArray.map((item, index) => {
-                                        if (index === 0 || index === noOfSmsArray.length - 1) {
+                                        })}
+                                    </div>
+                                    <div className='input-slider-padding w-full'>
+                                        <input
+                                            className='slider'
+                                            type='range'
+                                            min='0'
+                                            max={noOfSmsArray.length - 1}
+                                            step='1'
+                                            value={sliderValue}
+                                            onChange={(e) => setSliderValue(e.target.value)}
+                                            aria-label='Slider'
+                                        />
+                                    </div>
+                                    <div className=' flex lg:hidden justify-between'>
+                                        {noOfSmsArray.map((item, index) => {
+                                            if (index === 0 || index === noOfSmsArray.length - 1) {
+                                                return (
+                                                    <div className='text-center w-fit ' key={index}>
+                                                        {symbol}
+                                                        {item[pricingEnv]?.rate}
+                                                    </div>
+                                                );
+                                            }
+                                            return null;
+                                        })}
+                                    </div>
+                                    <div className=' lg:flex hidden'>
+                                        {noOfSmsArray.map((item, index) => {
                                             return (
-                                                <div className='text-center w-fit ' key={index}>
+                                                <div className='text-center w-full' key={index}>
                                                     {symbol}
                                                     {item[pricingEnv]?.rate}
                                                 </div>
                                             );
-                                        }
-                                        return null;
-                                    })}
+                                        })}
+                                    </div>
+                                    <div className='d-none d-lg-block text-center text-dark c-fw-m'>Cost per SMS</div>
                                 </div>
-                                <div className=' lg:flex hidden'>
-                                    {noOfSmsArray.map((item, index) => {
-                                        return (
-                                            <div className='text-center w-full' key={index}>
-                                                {symbol}
-                                                {item[pricingEnv]?.rate}
-                                            </div>
-                                        );
-                                    })}
+                                <p className='flex gap-1 text-2xl items-end flex-wrap '>
+                                    <span className='text-3xl font-bold '>
+                                        {' '}
+                                        {noOfSmsArray[sliderValue] && noOfSmsArray[sliderValue][pricingEnv]
+                                            ? contvertToLocal(
+                                                  Number(noOfSmsArray[sliderValue][pricingEnv].totalNoOfSms)
+                                              )
+                                            : 'N/A'}
+                                    </span>
+
+                                    <span>SMS for </span>
+
+                                    <span className='text-3xl font-bold text-green-600'>
+                                        {symbol}
+                                        {contvertToLocal(
+                                            (Number(PricingToShow) % 1 === 0
+                                                ? Number(PricingToShow)
+                                                : Number(PricingToShow).toFixed(1)
+                                            )
+                                                .toString()
+                                                .replace(/\.0$/, '')
+                                        )}
+                                    </span>
+
+                                    {currency === 'INR' && <span> +18% GST at </span>}
+
+                                    <span className='text-3xl font-bold text-green-600'>
+                                        {symbol}
+                                        {noOfSmsArray[sliderValue] && noOfSmsArray[sliderValue][pricingEnv]
+                                            ? noOfSmsArray[sliderValue][pricingEnv].rate
+                                            : 'N/A'}
+                                    </span>
+                                    <span>per SMS</span>
+                                </p>{' '}
+                                <a href={getURL('signup', 'sms')} target='_blank'>
+                                    <button className='btn btn-primary btn-md'>Get Started</button>
+                                </a>
+                            </>
+                        ) : noOfSmsArray.length > 0 && noOfSmsArray[0]?.[pricingEnv]?.rate ? (
+                            <div className='flex flex-col gap-8 justify-around items-center h-[282px] bg-white p-8 w-fit border rounded '>
+                                <div>SMS Pricing</div>
+                                <div className='text-3xl font-bold text-green-600'>
+                                    {symbol}
+                                    {noOfSmsArray.length > 0 && noOfSmsArray[0]?.[pricingEnv]?.rate
+                                        ? contvertToLocal(noOfSmsArray[0][pricingEnv].rate)
+                                        : 'N/A'}{' '}
+                                    per {type?.toUpperCase()}
                                 </div>
-                                <div className='d-none d-lg-block text-center text-dark c-fw-m'>Cost per SMS</div>
+                                <a href={getURL('signup', 'otp')} target='_blank'>
+                                    <button className='btn btn-primary btn-md'>Get Started</button>
+                                </a>
                             </div>
-                            <p className='flex gap-1 text-2xl items-end flex-wrap '>
-                                <span className='text-3xl font-bold '>
-                                    {' '}
-                                    {noOfSmsArray[sliderValue] && noOfSmsArray[sliderValue][pricingEnv]
-                                        ? contvertToLocal(Number(noOfSmsArray[sliderValue][pricingEnv].totalNoOfSms))
-                                        : 'N/A'}
-                                </span>
-
-                                <span>SMS for </span>
-
-                                <span className='text-3xl font-bold text-green-600'>
-                                    {symbol}
-                                    {contvertToLocal(
-                                        (Number(PricingToShow) % 1 === 0
-                                            ? Number(PricingToShow)
-                                            : Number(PricingToShow).toFixed(1)
-                                        )
-                                            .toString()
-                                            .replace(/\.0$/, '')
-                                    )}
-                                </span>
-
-                                {currency === 'INR' && <span> +18% GST at </span>}
-
-                                <span className='text-3xl font-bold text-green-600'>
-                                    {symbol}
-                                    {noOfSmsArray[sliderValue] && noOfSmsArray[sliderValue][pricingEnv]
-                                        ? noOfSmsArray[sliderValue][pricingEnv].rate
-                                        : 'N/A'}
-                                </span>
-                                <span>per SMS</span>
-                            </p>{' '}
-                            <a href={getURL('signup', 'sms')} target='_blank'>
-                                <button className='btn btn-primary btn-md'>Get Started</button>
-                            </a>
-                        </>
-                    ) : noOfSmsArray.length > 0 && noOfSmsArray[0]?.[pricingEnv]?.rate ? (
-                        <div className='flex flex-col gap-8 justify-around items-center h-[282px] bg-white p-8 w-fit border rounded '>
-                            <div>SMS Pricing</div>
-                            <div className='text-3xl font-bold text-green-600'>
-                                {symbol}
-                                {noOfSmsArray.length > 0 && noOfSmsArray[0]?.[pricingEnv]?.rate
-                                    ? contvertToLocal(noOfSmsArray[0][pricingEnv].rate)
-                                    : 'N/A'}{' '}
-                                per {type?.toUpperCase()}
-                            </div>
-                            <a href={getURL('signup', 'otp')} target='_blank'>
-                                <button className='btn btn-primary btn-md'>Get Started</button>
-                            </a>
-                        </div>
+                        ) : (
+                            <div className='skeleton border h-[282px] bg-white p-8 w-full  rounded '></div>
+                        )
                     ) : (
                         <div className='skeleton border h-[282px] bg-white p-8 w-full  rounded '></div>
-                    )
-                ) : (
-                    <div className='skeleton border h-[282px] bg-white p-8 w-full  rounded '></div>
-                )}
+                    )}
 
-                <ConnectWithTeam
-                    product={type?.toUpperCase()}
-                    data={data?.connectComp}
-                    isPlan={true}
-                    currency={currency}
-                    href={type}
-                    per={per}
-                />
-                <FaqsComp data={data?.faqComp} notCont={true} />
+                    <ConnectWithTeam
+                        product={type?.toUpperCase()}
+                        data={data?.connectComp}
+                        isPlan={true}
+                        currency={currency}
+                        href={type}
+                        per={per}
+                    />
+                    <FaqsComp data={data?.faqComp} notCont={true} />
+                </div>
             </div>
         </>
     );
