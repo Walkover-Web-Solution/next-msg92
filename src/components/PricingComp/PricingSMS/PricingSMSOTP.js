@@ -171,7 +171,8 @@ export default function PricingSMSOTP({ data, type, country }) {
                                                 return (
                                                     <div className='text-center w-fit ' key={index}>
                                                         {symbol}
-                                                        {item[pricingEnv]?.rate}
+                                                        {parseFloat(0.2).toFixed(2)}
+                                                        {parseFloat(item[pricingEnv]?.rate).toFixed(2)}
                                                     </div>
                                                 );
                                             }
@@ -183,7 +184,8 @@ export default function PricingSMSOTP({ data, type, country }) {
                                             return (
                                                 <div className='text-center w-full' key={index}>
                                                     {symbol}
-                                                    {item[pricingEnv]?.rate}
+                                                    {/* {parseFloat(0.2).toFixed(2)} */}
+                                                    {parseFloat(item[pricingEnv]?.rate).toFixed(2)}
                                                 </div>
                                             );
                                         })}
