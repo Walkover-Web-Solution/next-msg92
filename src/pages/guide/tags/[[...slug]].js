@@ -25,6 +25,7 @@ export default function Index({ posts, tag, pagination, page, commonData, pageIn
                     content={`Explore our collection of articles tagged under ${tag} at MSG91 -The Best Cloud Communication Platform. Discover insightful content, tips, and resources related to ${tag}.`}
                     key='title'
                 />
+                <link rel='canonical' href={`https://msg91.com/guide/tags/${pageInfo?.pathURL}`} />
             </Head>
             <NotificationBarComp
                 componentData={commonData?.notification}
@@ -34,11 +35,14 @@ export default function Index({ posts, tag, pagination, page, commonData, pageIn
             <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
             <div className='blog bg-neutral py-8'>
                 <div className={'container blog-home-container'}>
-                    <div className={'posts'}>
-                        <button className='d-inline-block btn blog-container__back-btn mb-4' onClick={handleClick}>
+                    <div className={'posts flex flex-col gap-4'}>
+                        <button className='btn w-fit' onClick={handleClick}>
                             <MdKeyboardArrowLeft />
                             Back
                         </button>
+                        <h1 className='text-3xl font-semibold text-center capitalize'>
+                            Browse Blogs by Category: {tag}
+                        </h1>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 '>
                             {posts?.map((it, i) => (
                                 <PostItem key={i} post={it} />

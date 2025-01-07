@@ -39,6 +39,7 @@ export default function TestPage({
     tags,
     commonData,
     pageInfo,
+    slugData,
 }) {
     const router = useRouter();
 
@@ -49,6 +50,7 @@ export default function TestPage({
             router.push('/guide');
         }
     };
+
     return (
         <>
             <Head>
@@ -60,6 +62,7 @@ export default function TestPage({
                     content={`Explore the world of ${title} Through our blog and stay informed about the latest developments, expert insights, and valuable tips that matter most. visit at MSG91 -The Best Cloud Communication Platform.`}
                     key='title'
                 />
+                <link rel='canonical' href={`https://msg91.com/guide/${router?.query?.slug}`} />
             </Head>
             <NotificationBarComp
                 componentData={commonData?.notification}
@@ -136,6 +139,7 @@ export async function getStaticProps(slug) {
     const mdxSource = await serialize(content);
     return {
         props: {
+            slugData,
             source: mdxSource || '',
             title: title || '',
             description: description || '',

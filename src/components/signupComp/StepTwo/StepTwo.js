@@ -39,7 +39,13 @@ class StepTwo extends React.Component {
         this.setState({ sourceValue: sourceValue });
         if (this.sourceOptions.some((option) => option.value === sourceValue)) {
             this.setState({ optionValue: sourceValue });
-        } else {
+            this.setState({ sourceValue: sourceValue });
+        } else if (this.sourceOptions.some((option) => option.label === sourceValue)) {
+            const lableValue = this.sourceOptions.find((option) => option.label === sourceValue).value;
+            this.setState({ sourceValue: lableValue });
+            this.setState({ optionValue: lableValue });
+        } else if (sourceValue && this.sourceOptions.some((option) => option.value != sourceValue)) {
+            this.setState({ sourceValue: sourceValue });
             this.setState({ optionValue: 'other' });
         }
     }

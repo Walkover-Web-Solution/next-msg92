@@ -8,6 +8,7 @@ import { Typeahead } from 'react-bootstrap-typeahead';
 import getURL from '@/utils/getURL';
 import GetCountryDetails from '@/utils/getCurrentCountry';
 import countries from '@/data/countries.json';
+import CalculateVoicePricing from './CalculateVoicePricing/CalculateVoicePricing';
 
 export default function PricingVoice({ data, country }) {
     const [countryData, setCountryData] = useState([]);
@@ -137,169 +138,189 @@ export default function PricingVoice({ data, country }) {
 
     return (
         <>
-            <div className='w-full flex flex-col gap-10'>
-                <div className='w-full flex flex-col gap-4'>
-                    {countryData.length > 0 && (
-                        <div className='w-[300px] z-50'>
-                            <Typeahead
-                                className='country-typehead'
-                                id='origin-country'
-                                placeholder='Origin Country'
-                                labelKey='name'
-                                onChange={(selected) => {
-                                    handleOnSelect(selected);
-                                }}
-                                options={countryData}
-                                defaultSelected={[
-                                    countries?.find((item) => item.shortname === currentCountry?.shortname),
-                                ]}
-                                inputProps={{
-                                    autoComplete: 'off',
-                                }}
-                            />
-                        </div>
-                    )}
-
-                    <h1 className='text-xl font-semibold'>{data?.heading}</h1>
-                    <table className='table bg-white rounded w-full'>
-                        <thead>
-                            <tr className='font-bold text-[16px] text-black '>
-                                <th className='w-[300px] border-r p-4'>Recipient’s Network</th>
-                                <th className='border-r p-4'>Local rates</th>
-                                <th className='p-4'>International rates</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {plans &&
-                                plans.map((item, index) => {
-                                    return (
-                                        <tr className='border-none text-[16px]' key={index}>
-                                            <td className='border-r p-4'>{item?.network}</td>
-                                            <td className='border-r p-4'>
-                                                {' '}
-                                                {item?.local_rates_min && (
-                                                    <>
-                                                        {symbol}
-                                                        {item?.local_rates_min}
-                                                    </>
-                                                )}
-                                                {item?.local_rates_min !== item?.local_rates_max && (
-                                                    <>
-                                                        {' '}
-                                                        -{' '}
-                                                        {item?.local_rates_max && (
-                                                            <>
-                                                                {symbol}
-                                                                {item?.local_rates_max}
-                                                            </>
-                                                        )}
-                                                    </>
-                                                )}
-                                                {!item?.local_rates_min && !item?.local_rates_max && <>-</>}
-                                            </td>
-                                            <td className='p-4'>
-                                                {' '}
-                                                {item?.international_rates_min && (
-                                                    <>
-                                                        {symbol}
-                                                        {item?.international_rates_min}
-                                                    </>
-                                                )}
-                                                {item?.international_rates_min !== item?.international_rates_max && (
-                                                    <>
-                                                        {' '}
-                                                        -{' '}
-                                                        {item?.international_rates_max && (
-                                                            <>
-                                                                {symbol}
-                                                                {item?.international_rates_max}
-                                                            </>
-                                                        )}
-                                                    </>
-                                                )}
-                                                {!item?.international_rates_min && !item?.international_rates_max && (
-                                                    <>-</>
-                                                )}
-                                            </td>
-                                        </tr>
-                                    );
-                                })}
-                            {loading
-                                ? Array.from({ length: 5 }).map((_, index) => {
-                                      return (
-                                          <tr className='border-none text-[16px]' key={index}>
-                                              <td className='border-r p-4'>
-                                                  <div className='skeleton w-2/3 h-[24px]'></div>
-                                              </td>
-                                              <td className='border-r p-4'>
-                                                  <div className='skeleton w-1/3 h-[24px]'></div>
-                                              </td>
-                                              <td className='p-4'>
-                                                  <div className='skeleton w-1/3 h-[24px]'></div>
-                                              </td>
-                                          </tr>
-                                      );
-                                  })
-                                : plans?.length === 0 && (
-                                      <tr className='border-none text-[16px]'>
-                                          <td className='border-r p-4'>-</td>
-                                          <td className='border-r p-4'>-</td>
-                                          <td className='p-4'>-</td>
-                                      </tr>
-                                  )}
-                        </tbody>
-                    </table>
-                    {data?.exportData && (
-                        <p className='font-medium'>
-                            {data?.exportData?.content}
-                            {loadingExport ? (
-                                <span className='active-link'>{data?.exportData?.waiting}</span>
-                            ) : (
-                                <span onClick={exportPricing} className='text-link active-link'>
-                                    {data?.exportData?.export}
-                                </span>
-                            )}
-                        </p>
-                    )}
+            <div className='flex flex-col gap-3 w-full'>
+                <div className='flex items-center gap-4'>
+                    <h1 className='text-3xl font-semibold capitalize '>Voice Pricing </h1>
                 </div>
-                <div className='w-full flex flex-col gap-4 p-8 bg-white rounded'>
-                    {data?.addOns?.content && data?.addOns?.content.length > 0 && (
-                        <>
-                            <h2 className='text-lg font-semibold'>{data?.addOns?.heading || 'Add-on services'}</h2>
-                            <div className='grid grid-cols-2 gap-4'>
-                                {data?.addOns?.content.map((item, index) => {
-                                    return (
-                                        <div key={index} className='flex items-center gap-1'>
-                                            <MdCheck color='#29a653' fontSize={22} /> <p>{item}</p>
-                                        </div>
-                                    );
-                                })}
+
+                <div className='w-full flex flex-col gap-10'>
+                    <div className='w-full flex flex-col gap-4'>
+                        {countryData.length > 0 && (
+                            <div className='w-[300px] z-50'>
+                                <Typeahead
+                                    className='country-typehead'
+                                    id='origin-country'
+                                    placeholder='Origin Country'
+                                    labelKey='name'
+                                    onChange={(selected) => {
+                                        handleOnSelect(selected);
+                                    }}
+                                    options={countryData}
+                                    defaultSelected={[
+                                        countries?.find((item) => item.shortname === currentCountry?.shortname),
+                                    ]}
+                                    inputProps={{
+                                        autoComplete: 'off',
+                                    }}
+                                />
                             </div>
-                        </>
-                    )}
+                        )}
+                        <div className='flex items-center gap-4'>
+                            <h2 className='text-xl font-semibold'>{data?.heading}</h2>{' '}
+                            <button
+                                onClick={() => document.getElementById('calculate_voice_pricing').showModal()}
+                                className='btn btn-accent btn-outline w-fit btn-sm'
+                            >
+                                Calculate
+                            </button>
+                        </div>
+                        {country === 'in' && <p className='text-lg'>GST excluded.</p>}
+                        {country === 'gb' && <p className='text-lg'>VAT excluded.</p>}
+                        <table className='table bg-white rounded w-full'>
+                            <thead>
+                                <tr className='font-bold text-[16px] text-black '>
+                                    <th className='w-[300px] border-r p-4'>Recipient’s Network</th>
+                                    <th className='border-r p-4'>Local rates</th>
+                                    <th className='p-4'>International rates</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {plans &&
+                                    plans.map((item, index) => {
+                                        return (
+                                            <tr className='border-none text-[16px]' key={index}>
+                                                <td className='border-r p-4'>{item?.network}</td>
+                                                <td className='border-r p-4'>
+                                                    {' '}
+                                                    {item?.local_rates_min && (
+                                                        <>
+                                                            {symbol}
+                                                            {item?.local_rates_min}
+                                                        </>
+                                                    )}
+                                                    {item?.local_rates_min !== item?.local_rates_max && (
+                                                        <>
+                                                            {' '}
+                                                            -{' '}
+                                                            {item?.local_rates_max && (
+                                                                <>
+                                                                    {symbol}
+                                                                    {item?.local_rates_max}
+                                                                </>
+                                                            )}
+                                                        </>
+                                                    )}
+                                                    {!item?.local_rates_min && !item?.local_rates_max && <>-</>}
+                                                </td>
+                                                <td className='p-4'>
+                                                    {' '}
+                                                    {item?.international_rates_min && (
+                                                        <>
+                                                            {symbol}
+                                                            {item?.international_rates_min}
+                                                        </>
+                                                    )}
+                                                    {item?.international_rates_min !==
+                                                        item?.international_rates_max && (
+                                                        <>
+                                                            {' '}
+                                                            -{' '}
+                                                            {item?.international_rates_max && (
+                                                                <>
+                                                                    {symbol}
+                                                                    {item?.international_rates_max}
+                                                                </>
+                                                            )}
+                                                        </>
+                                                    )}
+                                                    {!item?.international_rates_min &&
+                                                        !item?.international_rates_max && <>-</>}
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
+                                {loading
+                                    ? Array.from({ length: 5 }).map((_, index) => {
+                                          return (
+                                              <tr className='border-none text-[16px]' key={index}>
+                                                  <td className='border-r p-4'>
+                                                      <div className='skeleton w-2/3 h-[24px]'></div>
+                                                  </td>
+                                                  <td className='border-r p-4'>
+                                                      <div className='skeleton w-1/3 h-[24px]'></div>
+                                                  </td>
+                                                  <td className='p-4'>
+                                                      <div className='skeleton w-1/3 h-[24px]'></div>
+                                                  </td>
+                                              </tr>
+                                          );
+                                      })
+                                    : plans?.length === 0 && (
+                                          <tr className='border-none text-[16px]'>
+                                              <td className='border-r p-4'>-</td>
+                                              <td className='border-r p-4'>-</td>
+                                              <td className='p-4'>-</td>
+                                          </tr>
+                                      )}
+                            </tbody>
+                        </table>
+                        {data?.exportData && (
+                            <p className='font-medium'>
+                                {data?.exportData?.content}
+                                {loadingExport ? (
+                                    <span className='active-link'>{data?.exportData?.waiting}</span>
+                                ) : (
+                                    <span onClick={exportPricing} className='text-link active-link'>
+                                        {data?.exportData?.export}
+                                    </span>
+                                )}
+                            </p>
+                        )}
+                    </div>
+                    <div className='w-full flex flex-col gap-4 p-8 bg-white rounded'>
+                        {data?.addOns?.content && data?.addOns?.content.length > 0 && (
+                            <>
+                                <h2 className='text-lg font-semibold'>{data?.addOns?.heading || 'Add-on services'}</h2>
+                                <div className='grid grid-cols-2 gap-4'>
+                                    {data?.addOns?.content.map((item, index) => {
+                                        return (
+                                            <div key={index} className='flex items-center gap-1'>
+                                                <MdCheck color='#29a653' fontSize={22} /> <p>{item}</p>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </>
+                        )}
 
-                    <div className='text-lg' dangerouslySetInnerHTML={{ __html: data?.addOns?.freeText }}></div>
+                        <div className='text-lg' dangerouslySetInnerHTML={{ __html: data?.addOns?.freeText }}></div>
+                    </div>
+                    <a href={getURL('signup', 'voice')} target='_blank'>
+                        <button className='btn btn-primary btn-md'>Get started</button>
+                    </a>
+
+                    <div className='flex flex-col gap-4'>
+                        {data?.rates &&
+                            data?.rates.length > 0 &&
+                            data?.rates.map((rate, index) => {
+                                return (
+                                    <p key={index}>
+                                        <strong>{rate?.heading}: </strong>
+                                        {rate?.content}
+                                    </p>
+                                );
+                            })}
+                    </div>
+
+                    <ConnectWithTeam product={'Voice'} data={data?.connectComp} href={'voice'} isPlan={true} />
+                    <FaqsComp data={data?.faqComp} notCont={true} />
                 </div>
-                <a href={getURL('signup', 'voice')} target='_blank'>
-                    <button className='btn btn-primary btn-md'>Get started</button>
-                </a>
-
-                <div className='flex flex-col gap-4'>
-                    {data?.rates &&
-                        data?.rates.length > 0 &&
-                        data?.rates.map((rate, index) => {
-                            return (
-                                <p key={index}>
-                                    <strong>{rate?.heading}: </strong>
-                                    {rate?.content}
-                                </p>
-                            );
-                        })}
-                </div>
-
-                <ConnectWithTeam product={'Voice'} data={data?.connectComp} href={'voice'} isPlan={true} />
-                <FaqsComp data={data?.faqComp} notCont={true} />
             </div>
+            {plans?.length > 0 && (
+                <dialog id='calculate_voice_pricing' className='modal'>
+                    <CalculateVoicePricing plans={plans} currency={currency} symbol={symbol} />
+                </dialog>
+            )}
         </>
     );
 }
