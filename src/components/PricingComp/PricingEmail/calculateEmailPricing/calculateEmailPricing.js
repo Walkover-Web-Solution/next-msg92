@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 export default function CalculateEmailPricing({ plans, currency, symbol, tabtype }) {
-    const [inputEmails, setInputEmails] = useState();
-    const [inputEmailValidations, setInputEmailValidations] = useState();
+    const [inputEmails, setInputEmails] = useState('');
+    const [inputEmailValidations, setInputEmailValidations] = useState('');
     const [isCalculate, setIsCalculate] = useState(false);
     const contvertToLocal = (number) => {
         if (currency === 'INR') {
@@ -16,22 +16,22 @@ export default function CalculateEmailPricing({ plans, currency, symbol, tabtype
         }
     };
     const handleClose = () => {
-        setIsCalculate(false);
-        setInputEmailValidations(null);
-        setInputEmails(null);
+        setInputEmailValidations('');
+        setInputEmails('');
         document.getElementById('calculate_email_pricing').close();
+        setIsCalculate(false);
     };
     return (
         <>
             <div className='modal-box flex flex-col gap-6'>
-                <button
+                <span
                     className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'
                     onClick={() => {
                         handleClose();
                     }}
                 >
                     ✕
-                </button>
+                </span>
 
                 <h3 className='font-bold text-lg'>Calculate Email Pricing</h3>
                 <div className='flex flex-col gap-2'>
@@ -222,7 +222,7 @@ export default function CalculateEmailPricing({ plans, currency, symbol, tabtype
                         <div className='grid grid-cols-4 bg-gray'>
                             <p className='p-4 border-e-2'>Total monthly recurring charges</p>
                             {plans?.map((plan, index) => {
-                                if (plan.name !== 'Free') {
+                                if (plan?.name !== 'Free') {
                                     return (
                                         <p className='p-4 border-e-2 font-bold text-green-600 text-2xl flex flex-col break-words'>
                                             {symbol}

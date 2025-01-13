@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
 export default function CalculatePricingWhatsApp({ plans, currentCountry, symbol, currency }) {
-    const [marketingMessages, setMarketingMessages] = useState(null);
-    const [utilityMessages, setUtilityMessages] = useState(null);
-    const [authenticationMessages, setAuthenticationMessages] = useState(null);
+    const [marketingMessages, setMarketingMessages] = useState('');
+    const [utilityMessages, setUtilityMessages] = useState('');
+    const [authenticationMessages, setAuthenticationMessages] = useState('');
     const [serviceMessages, setServiceMessages] = useState(null);
-    const [selectedCountry, setSelectedCountry] = useState({});
+    const [selectedCountry, setSelectedCountry] = useState(currentCountry);
 
     useEffect(() => {
         if (plans?.length > 0) {
@@ -32,10 +32,10 @@ export default function CalculatePricingWhatsApp({ plans, currentCountry, symbol
     };
 
     const handleClose = () => {
-        setMarketingMessages(null);
-        setUtilityMessages(null);
-        setAuthenticationMessages(null);
-        setSelectedCountry({});
+        setMarketingMessages('');
+        setUtilityMessages('');
+        setAuthenticationMessages('');
+        handleSelectCountry(currentCountry?.name);
         document.getElementById('calculate_whatsapp_pricing').close();
     };
     return (
