@@ -200,7 +200,6 @@ export default function PricingHello({ data, country }) {
     }, [hasYearlyPlan]);
 
     function handleOfferPrice(price) {
-        console.log('🚀 ~ handleOfferPrice ~ price:', price);
         let ammount;
         let percent;
         switch (price?.currency?.short_name) {

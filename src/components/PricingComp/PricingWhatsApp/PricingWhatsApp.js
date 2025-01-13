@@ -54,8 +54,8 @@ export default function PricingWhatsApp({ country, data }) {
                     </div>
                     <div className='flex flex-col gap-8'>
                         <div className='flex flex-col gap-2'>
-                            <div className='flex w-full justify-between'>
-                                <h2 className='text-2xl font-bold mb-1'>{data?.heading} </h2>
+                            <div className='flex w-full justify-between items-center'>
+                                <h2 className='text-2xl font-bold mb-1'>{data?.heading || 'Whatsapp API Pricing'} </h2>
                                 <button
                                     onClick={() => document.getElementById('calculate_whatsapp_pricing').showModal()}
                                     className='btn btn-accent btn-outline w-fit btn-sm'
