@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function FooterComp({ componentData, pageInfo }) {
     const hidden = componentData?.hide?.includes(pageInfo?.page);
-
+    const year = new Date().getFullYear();
     if (componentData && !hidden) {
         return (
             <>
@@ -189,7 +189,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                     </div>
                 </div>
                 <div className='bg-gray-900 pt-10 pb-16'>
-                    <div className='container text-white flex  '>
+                    <div className='container text-white flex'>
                         <ul className='flex flex-wrap gap-4'>
                             {componentData?.policies?.links.length > 0 &&
                                 componentData?.policies?.links.map((link, index) => {
@@ -201,11 +201,14 @@ export default function FooterComp({ componentData, pageInfo }) {
                                             >
                                                 {link?.name}
                                             </Link>
-                                            <span>|</span>
+                                            {index !== componentData?.policies?.links.length - 1 && <span>|</span>}
                                         </li>
                                     );
                                 })}
                         </ul>
+                    </div>
+                    <div className='container pt-5 text-white'>
+                        Copyright 2008-{year}, Superheroes, Inc. | All rights reserved.
                     </div>
                 </div>
             </>
