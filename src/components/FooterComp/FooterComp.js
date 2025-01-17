@@ -1,5 +1,6 @@
 import getNestedURL from '@/utils/getNestedURL';
 import getURL from '@/utils/getURL';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function FooterComp({ componentData, pageInfo }) {
@@ -126,8 +127,8 @@ export default function FooterComp({ componentData, pageInfo }) {
                                 </div>
                             )}
                         </div>
-                        <div className='flex flex-col gap-10 w-full'>
-                            <div className='flex flex-col gap-4 items-end'>
+                        <div className='flex flex-col gap-10 w-full h-full'>
+                            <div className='flex flex-col gap-4 sm:items-end'>
                                 <span className='font-semibold'>Download Apps</span>
                                 <div className='flex gap-4'>
                                     <a
@@ -146,7 +147,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                     </a>
                                 </div>
                             </div>
-                            <div className='flex flex-col gap-4 items-end'>
+                            <div className='flex flex-col gap-4 sm:items-end'>
                                 <span className='font-semibold '>Follow Us</span>
                                 <div className='flex gap-4'>
                                     <a
@@ -184,6 +185,15 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         />
                                     </a>
                                 </div>
+                            </div>
+                            <div className='flex h-full mt-auto w-full sm:items-end sm:justify-end'>
+                                <Image
+                                    className='w-40'
+                                    src={'/assets/icons/extras/meta-business-platform.svg'}
+                                    width={480}
+                                    height={480}
+                                    alt='Meta Business Platform'
+                                />
                             </div>
                         </div>
                     </div>
