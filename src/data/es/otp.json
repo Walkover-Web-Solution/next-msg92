@@ -1,6 +1,6 @@
 { "HeadComp": {
     "title": "Send OTP | OTP Service Providers -MSG91-Spain",
-    "description":"Send OTP provides secure and reliable SMS API Integration that helps you easily send OTP to your users for 2 factor authentication"
+    "description":"Ensure secure and reliable two-factor authentication with MSG91’s OTP SMS API. Fast and easy integration for enhanced customer security."
   }, 
          "BannerComp": {
           "slug": "otp",
