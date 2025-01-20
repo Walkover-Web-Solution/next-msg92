@@ -40,6 +40,7 @@ import ThankYouComp from '@/components/ThankYouComp/ThankYouComp';
 import StartupFormsComp from '@/components/StartupFormsComp/StartupFormsComp';
 import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/CaseStudyPageComp';
 import ChatBotDemoComp from '@/components/ChatBotDemoComp/ChatBotDemoComp';
+import AsSeenComp from '@/components/AsSeenComp/AsSeenComp';
 
 const Components = {
     BannerComp,
@@ -78,6 +79,7 @@ const Components = {
     IntegrationAppComp,
     CaseStudyPageComp,
     ChatBotDemoComp,
+    AsSeenComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
