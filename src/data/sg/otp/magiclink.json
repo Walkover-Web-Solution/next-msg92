@@ -1,0 +1,126 @@
+{
+    "HeadComp": {
+        "title": "MSG91 OTP Magic Link - Secure & Hassle-Free Authentication",
+        "description": "Provide a smooth user experience with MSG91 OTP Magic Link. Secure, one-click authentication that simplifies sign-ups and enhances conversions."
+    },
+    "MagicLinkComp": {
+             "link": "otp/magiclink",
+                    "nested": true,
+        "product": {
+            "name": "OTP Magic-link",
+            "icon": "/assets/icons/products/otp.svg"
+        },
+        "tagline": "Effortless Access, Instant Authentication",
+        "heading": "Authenticate Seamlessly with Magic Link",
+        "subheading": "Authenticating users is now easier and faster. Just send a single link, and your users can verify themselves instantly.",
+        "banner_img": "/assets/magiclink/magic-link-banner.svg",
+        "getstarted_btn": "Get Started",
+        "what_magiclink": {
+            "heading": "What is Magic Link?",
+            "content": "Magic Link is a simple, one-click authentication method that eliminates the need for passwords or OTPs. Instead, users receive a secure, unique link via their preferred channel—email, SMS, WhatsApp, RCS, or others. By clicking the link, they are instantly authenticated and granted access to the platform or service. It’s a fast, secure, and user-friendly alternative to traditional authentication methods, ensuring a frictionless experience while maintaining high security standards. Whether logging into an app, verifying transactions, or accessing a portal, Magic Link makes authentication effortless"
+        },
+        "how_works": {
+            "heading": "How Does It Work?",
+            "content": [
+                {
+                    "heading": "Send",
+                    "description": "When a user requests access, send them a Magic Link via their preferred channel.",
+                    "icon": "MdFlashOn"
+                },
+                {
+                    "heading": "Click",
+                    "description": "The user clicks the link, and they are instantly authenticated.",
+                    "icon": "MdOutlineWatch"
+                },
+                {
+                    "heading": "Access",
+                    "description": "It is that simple—no need to remember passwords or enter codes.",
+                    "icon": "MdHelpOutline"
+                }
+            ]
+        },
+        "why_magiclink": {
+            "heading": "Why Choose Magic Link?",
+            "content": [
+                {
+                    "heading": "Frictionless User Experience",
+                    "description": "Magic Link allows users to authenticate instantly with just a click—no passwords or OTPs. It provides a smooth, hassle-free experience that enhances user satisfaction and reduces drop-offs.",
+                    "icon": "MdFlashOn"
+                },
+                {
+                    "heading": "Multi-Channel Delivery",
+                    "description": "Send Magic Links via email, SMS, WhatsApp, RCS, or any preferred channel, offering personalized access and reaching users where they are most comfortable.",
+                    "icon": "MdOutlineWatch"
+                },
+                {
+                    "heading": "Secure & Reliable",
+                    "description": "Each Magic Link is unique, encrypted, and time-sensitive, ensuring secure, one-time use access without compromising user data.",
+                    "icon": "MdHelpOutline"
+                },
+                {
+                    "heading": "Boost Conversions",
+                    "description": "By simplifying the login process, Magic Link reduces authentication friction, leading to higher conversion rates and better user engagement.",
+                    "icon": "MdHelpOutline"
+                }
+            ]
+        },
+        "across_industries": {
+            "heading": "OTP Magic-Link Applications Across Industries",
+            "content": [
+                {
+                    "heading": "Healthcare",
+                    "image": "/assets/magiclink/healthcare.webp",
+                    "icon": "MdOutlineHealthAndSafety",
+                    "description": "For healthcare providers, ensuring patient data security is a top priority. With Magic Link, patients can easily access their medical records, test results, or appointment details by simply clicking a secure link sent via SMS, email, or WhatsApp. This improves the patient experience by eliminating the need for cumbersome logins while maintaining high security standards.",
+                    "card": [
+                        {
+                            "line": "Secure access"
+                        },
+                        {
+                            "line": "Multi-channel delivery"
+                        },
+                        {
+                            "line": "Enhanced experience"
+                        },
+                        {
+                            "line": "Top-tier security"
+                        }
+                    ]
+                },
+                {
+                    "heading": "E-Commerce",
+                    "image": "/assets/magiclink/e-commerce.avif",
+                    "icon": "MdOutlineStorefront",
+                    "description": "n the fast-paced world of online shopping, customers want a smooth and quick checkout experience. With Magic Link, shoppers can log in or register instantly with a single click, making the process hassle-free and reducing cart abandonment. No more forgotten passwords or slow OTP verification—just a seamless, one-click authentication for faster purchases.",
+                    "card": [
+                        {
+                            "line": "One-click login"
+                        },
+                        {
+                            "line": "Faster checkout"
+                        },
+                        {
+                            "line": "Lower cart abandonment"
+                        },
+                        {
+                            "line": "Simplified process"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
