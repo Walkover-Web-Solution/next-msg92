@@ -187,13 +187,20 @@ export default function FooterComp({ componentData, pageInfo }) {
                                 </div>
                             </div>
                             <div className='flex h-full mt-auto w-full sm:items-end sm:justify-end'>
-                                <Image
-                                    className='w-40'
-                                    src={'/assets/icons/extras/meta-business-platform.svg'}
-                                    width={480}
-                                    height={480}
-                                    alt='Meta Business Platform'
-                                />
+                                <Link
+                                    target='_blank'
+                                    href={
+                                        'https://www.facebook.com/business/partner-directory/search?solution_type=messaging&ref=pd_home_hero_cta&id=5412005225590465&section=overview'
+                                    }
+                                >
+                                    <Image
+                                        className='w-40'
+                                        src={'/assets/icons/extras/meta-business-platform.svg'}
+                                        width={480}
+                                        height={480}
+                                        alt='Meta Business Platform'
+                                    />
+                                </Link>
                             </div>
                         </div>
                     </div>
