@@ -49,7 +49,7 @@ export default function CalculatePricingWhatsApp({ plans, currentCountry, symbol
                 >
                     ✕
                 </button>
-                <h3 className='font-bold text-lg'>Calculate Email Pricing</h3>
+                <h3 className='font-bold text-lg'>Calculate WhatsApp Pricing</h3>
                 <label className='form-control w-full max-w-xs flex flex-col gap-1'>
                     <span className='label-text'>Market</span>
                     <select
@@ -66,11 +66,9 @@ export default function CalculatePricingWhatsApp({ plans, currentCountry, symbol
                     </select>
                 </label>
                 <p>Here you can calculate your expense based on your usage.</p>
-                <div>
-                    <div className='grid grid-cols-2'>
-                        <p className='font-bold text-center'>Number on Messages</p>
-                        <p className='font-bold text-center'>Charges</p>
-                    </div>
+                <div className='hidden md:grid grid-cols-2'>
+                    <p className='font-bold text-start'>Number on Messages</p>
+                    <p className='font-bold text-start'>Charges</p>
                 </div>
                 <div className='flex flex-col gap-1'>
                     <p className='text-gray-500'>Marketing</p>
@@ -85,14 +83,14 @@ export default function CalculatePricingWhatsApp({ plans, currentCountry, symbol
                             min={0}
                             max={9999999999999}
                         />
-                        <div className='flex flex-col sm:flex-row gap-3 items-center justify-center '>
-                            <p className='text-center'>
+                        <div className='flex flex-col sm:flex-row gap-3 items-start  w-full justify-start '>
+                            <p className='text-start'>
                                 {marketingMessages &&
                                     `${marketingMessages} x ${contvertToLocal(
                                         selectedCountry?.marketing_rate
                                     )} = `}{' '}
                             </p>
-                            <p className='font-bold text-center'>
+                            <p className='font-bold text-start'>
                                 {symbol}
                                 {marketingMessages
                                     ? contvertToLocal(marketingMessages * selectedCountry?.marketing_rate)
@@ -114,7 +112,7 @@ export default function CalculatePricingWhatsApp({ plans, currentCountry, symbol
                             min={0}
                             max={9999999999999}
                         />
-                        <div className='flex flex-col sm:flex-row gap-3 items-center justify-center '>
+                        <div className='flex flex-col sm:flex-row gap-3 items-start  w-full justify-start '>
                             <p className='text-center'>
                                 {utilityMessages &&
                                     `${utilityMessages} x ${contvertToLocal(selectedCountry?.utility_rate)} = `}{' '}
@@ -139,7 +137,7 @@ export default function CalculatePricingWhatsApp({ plans, currentCountry, symbol
                             min={0}
                             max={9999999999999}
                         />
-                        <div className='flex flex-col sm:flex-row gap-3 items-center justify-center '>
+                        <div className='flex flex-col sm:flex-row gap-3 items-start  w-full justify-start '>
                             <p className='text-center'>
                                 {authenticationMessages &&
                                     `${authenticationMessages} x ${contvertToLocal(
@@ -180,7 +178,7 @@ export default function CalculatePricingWhatsApp({ plans, currentCountry, symbol
                 </div> */}
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-4 items-center'>
                     <p className='font-bold text-lg'>Total monthly recurring charges</p>
-                    <p className='text-center p-4 font-bold text-green-600 text-2xl flex flex-col break-words'>
+                    <p className=' p-4 font-bold text-green-600 text-2xl flex flex-col break-words'>
                         {symbol}
                         {contvertToLocal(
                             Number(marketingMessages * selectedCountry?.marketing_rate) +
