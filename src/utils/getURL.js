@@ -116,7 +116,7 @@ export default function getURL(type, link, pageInfo) {
             break;
 
         case 'contact-us':
-            url = '/contact-us';
+            url = (currentCountry ? '/' + currentCountry : '') + '/contact-us';
             break;
 
         default:

@@ -1,0 +1,21 @@
+{
+    "HeadComp": {
+        "title": "Contact Us - Reach out to Team MSG91!",
+        "description": "Questions? Comments? Suggestions? We love to hear them. Contact us and get support via phone, chat or on our email. MSG91 is here just for you!"
+    },
+    "ContactUsComp": {
+        "heading": "Contact Us",
+        "sales": {
+            "heading": "Sales",
+            "email": "sales@msg91.com",
+            "phone": "+917049088848",
+            "phone2": "+918889378605"
+        },
+        "support": {
+            "heading": "Support",
+            "email": "support@msg91.com",
+            "whatsapp": "+918818888733",
+            "phone": "+918818888733"
+        }
+    }
+}

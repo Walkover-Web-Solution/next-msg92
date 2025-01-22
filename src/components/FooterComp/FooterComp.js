@@ -186,6 +186,9 @@ export default function FooterComp({ componentData, pageInfo }) {
                                     </a>
                                 </div>
                             </div>
+                            {componentData?.address?.address && (
+                                <p className=' text-gray-200 text-end'>{componentData?.address?.address}</p>
+                            )}
                             <div className='flex h-full mt-auto w-full sm:items-end sm:justify-end'>
                                 <Link
                                     target='_blank'
@@ -230,9 +233,6 @@ export default function FooterComp({ componentData, pageInfo }) {
                             Copyright 2008-{year}, {componentData?.address?.name || 'Superheroes, Inc.'} | All rights
                             reserved.
                         </p>
-                        {componentData?.address?.address && (
-                            <p className='text-sm'>Address : {componentData?.address?.address}</p>
-                        )}
                     </div>
                 </div>
             </>
