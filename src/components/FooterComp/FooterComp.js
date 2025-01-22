@@ -224,8 +224,15 @@ export default function FooterComp({ componentData, pageInfo }) {
                                 })}
                         </ul>
                     </div>
-                    <div className='container pt-5 text-white'>
-                        Copyright 2008-{year}, Superheroes, Inc. | All rights reserved.
+                    <div className='container flex flex-col  gap-2 pt-5 text-gray-300 text-sm'>
+                        <p>
+                            {' '}
+                            Copyright 2008-{year}, {componentData?.address?.name || 'Superheroes, Inc.'} | All rights
+                            reserved.
+                        </p>
+                        {componentData?.address?.address && (
+                            <p className='text-sm'>Address : {componentData?.address?.address}</p>
+                        )}
                     </div>
                 </div>
             </>
