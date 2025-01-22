@@ -133,7 +133,10 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                         </div>
                     )}
 
-                    <Link className='text-link flex gap-1 items-center' href={'/contact-us'}>
+                    <Link
+                        className='text-link flex gap-1 items-center'
+                        href={getURL('contact-us', 'contact-us', pageInfo)}
+                    >
                         <MdOutlineCall fontSize={18} />
                         {componentData?.support}
                     </Link>

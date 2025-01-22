@@ -1,0 +1,21 @@
+{
+    "HeadComp": {
+        "title": "Contact Us - Connect with Team MSG91 Philippines!",
+        "description": "Have questions, comments, or suggestions? We’re here to help. Contact us via phone, chat, or email for quick support."
+    },
+    "ContactUsComp": {
+        "heading": "Contact Us",
+        "sales": {
+            "heading": "Sales",
+            "email": "sales@msg91.com",
+            "phone": "+917049088848",
+            "phone2": "+918889378605"
+        },
+        "support": {
+            "heading": "Support",
+            "email": "support@msg91.com",
+            "whatsapp": "+918818888733",
+            "phone": "+918818888733"
+        }
+    }
+}

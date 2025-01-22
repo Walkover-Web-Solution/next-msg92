@@ -1,0 +1,21 @@
+{
+    "HeadComp": {
+        "title": "Contact Us - Connect with Team MSG91 United Kingdom!",
+        "description": "Looking for support or have queries? Get in touch via phone, chat, or email. We’re here to help!"
+    },
+    "ContactUsComp": {
+        "heading": "Contact Us",
+        "sales": {
+            "heading": "Sales",
+            "email": "sales@msg91.com",
+            "phone": "+917049088848",
+            "phone2": "+918889378605"
+        },
+        "support": {
+            "heading": "Support",
+            "email": "support@msg91.com",
+            "whatsapp": "+918818888733",
+            "phone": "+918818888733"
+        }
+    }
+}
