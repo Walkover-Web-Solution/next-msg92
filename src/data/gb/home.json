@@ -43,6 +43,32 @@
             ]
         }
     },
+    "AsSeenComp": [
+        {
+            "name": "barchart",
+            "url": "https://www.barchart.com/story/news/30493889/msg91-broadens-global-footprint-with-cutting-edge-multi-channel-messaging-and-marketing-automation-capabilities"
+        },
+        {
+            "name": "benzinga",
+            "url": "https://www.benzinga.com/pressreleases/25/01/43059372/msg91-broadens-global-footprint-with-cutting-edge-multi-channel-messaging-and-marketing-automation-"
+        },
+        {
+            "name": "businessinsider",
+            "url": "https://markets.businessinsider.com/news/stocks/msg91-broadens-global-footprint-with-cutti[…]saging-and-marketing-automation-capabilities-1034240659"
+        },
+        {
+            "name": "digitajournal",
+            "url": "https://www.digitaljournal.com/pr/news/newsfile/msg91-broadens-global-footprint-cutting-edge-1999874703.html"
+        },
+        {
+            "name": "marketwatch",
+            "url": "https://www.marketwatch.com/press-release/msg91-broadens-global-footprint-with-cutting-edge-multi-channel-messaging-and-marketing-automation-capabilities-67174e34"
+        },
+        {
+            "name": "yahoo_finance",
+            "url": "https://finance.yahoo.com/news/msg91-broadens-global-footprint-cutting-154000233.html?guccounter=1"
+        }
+    ],
     "ProductsComp": [
         {
             "icon": "/assets/icons/products/hello.svg",
@@ -134,7 +160,6 @@
             "stat": "OTPs",
             "per": "per month"
         },
-       
         {
             "fact": "1 Billion+",
             "stat": "Emails sent",
@@ -220,7 +245,6 @@
             }
         ]
     },
-  
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
