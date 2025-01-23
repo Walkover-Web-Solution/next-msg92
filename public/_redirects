@@ -34,7 +34,6 @@ blog.msg91.com  /guide
 /in/verified-sms/ /in/sms
 /us/send-otp/ /us/otp
 /in/case-studies/ /case-studies/
-#/in/contact-us/ /
 # msg91.com/wp-content/uploads/2018/05/reseller-mock6.svg
 /in/talkcharge/ /in/pricing
 # /blog/chatbots-and-business-communication/
@@ -86,7 +85,6 @@ support.msg91.com/users/41006711-sagarvaishnav/filters/comments /
 /blog/tag/semrush/feed/ /guide
 # msg91.com/es/case-studies/tag/food-travel-and-hospitality
 /guide/tag/regional-sms/ /guide
-#/ph/contact-us/ /contact-us
 /blog/tag/notifications/ /guide
 /blog/category/saas/feed/ /guide
 /blog/category/wordpress/ /guide
@@ -182,7 +180,6 @@ support.msg91.com/users/39515833-chris  /contact-us
 /startups/policy.php  /startup-policy
 /in/blackbuck/  /case-studies/blackbuck
 /blog/the-3-effective-s-of-sms/ /guide
-/ph/contact-us  /contact-us
 /blog/sms-the-new-marketing-gateway-for-wordpress/feed/ /guide
 /channel/transactional-sms/ /sms
 support.msg91.com/users/37630083/filters/ /help
@@ -471,7 +468,6 @@ support.msg91.com/users/26435366-manish/filters/comments /contact-us
 /blog/iot-igniting-future-transforming-lives/ /guide
 support.msg91.com/forums/146824-msg91-feature-and-idea-suggestion-forum/suggestions/5526979-i-am-new-in-this-field-so-pls-provide-me-complete /contact-us
 /es/case-studies/milkbasket/feed /case-studies/milkbasket
-msg91.com/in/contact-us /contact-us
 docs.msg91.com/collection/msg91-api-integration/5/verify-otp/T1SVAQJ7 https://msg91.com/help/MSG91/step-by-step-process-to-configure-otp
 support.msg91.com/ /contact-us
 /guide/tag/sms-addons/ /guide
@@ -640,7 +636,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /ph/voice-call-api/ /voice
 /sg/send-otp/ /otp
 /uk/send-otp/ /otp
-/in/contact-us/ /contact-us
 /case-studies/mahindra-mahindra-automotive-division/ /case-studies/mahindra
 /hello/hello_1/feed/ /hello
 /wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4 /wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4
@@ -899,7 +894,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /cdn-cgi/challenge-platform/h/b/scripts/cb/invisible.js?cb=7b622063c9e43adc /
 /cdn-cgi/challenge-platform/h/b/scripts/cb/invisible.js?cb=7b2b8c7f1e04233e /
 /one-api/?typeform-embed=popup-drawer /campaign
-/in/contact-us//?__hstc=241134940.2f3f33a24b44870ec4a577029c49e44b.1602547200083.1602547200084.1602547200085.1&__hssc=241134940.1.1602547200086&__hsfp=2827025116 /contact-us/
 /blog/tag/segment-marketing/ /guide
 /cdn-cgi/challenge-platform/h/g/scripts/cb/invisible.js?cb=7a030d6a3b393b7e /
 /hello/group-17476/feed/ /hello
@@ -993,7 +987,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /blog/market-segmentation-holiday-marketing-campaign/amp/ /guide
 /sms-for-developers/ /sms
 /in/contact-us/case-studies/ /case-studies/
-/in/contact-us/?__hstc=241134940.2f3f33a24b44870ec4a577029c49e44b.1602547200083.1602547200084.1602547200085.1&__hssc=241134940.1.1602547200086&__hsfp=2827025116 /contact-us
 /blog/world-cup-in-india-sms/amp/ /guide
 /sms-for-spreadsheets?typeform-embed=popup-drawer /sms
 /virtual-number/?__hstc=241134940.d9f92fa8eef68bbb7f3a5412b223a496.1602547200116.1602547200117.1602547200118.1&__hssc=241134940.1.1602547200119&__hsfp=2827025116 /voice
@@ -1008,7 +1001,6 @@ test.panel.msg91.com/apidoc/basic/error-code-basic.php https://msg91.com
 /home_tile_2/ /
 /blog/tag/office-productivity/amp/ /guide
 /cdn-cgi/challenge-platform/h/b/scripts/cb/invisible.js?cb=7a86a9db8d088f2c /
-/in/contact-us /contact-us
 /blog/tag/otp/amp /case-studies/tag/otp/
 /uk/sms /sms
 /in/case-studies/tag/otp /case-studies/tag/otp
