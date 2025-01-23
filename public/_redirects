@@ -34,7 +34,7 @@ blog.msg91.com  /guide
 /in/verified-sms/ /in/sms
 /us/send-otp/ /us/otp
 /in/case-studies/ /case-studies/
-/in/contact-us/ /contact-us
+#/in/contact-us/ /
 # msg91.com/wp-content/uploads/2018/05/reseller-mock6.svg
 /in/talkcharge/ /in/pricing
 # /blog/chatbots-and-business-communication/
@@ -86,7 +86,7 @@ support.msg91.com/users/41006711-sagarvaishnav/filters/comments /
 /blog/tag/semrush/feed/ /guide
 # msg91.com/es/case-studies/tag/food-travel-and-hospitality
 /guide/tag/regional-sms/ /guide
-/ph/contact-us/ /contact-us
+#/ph/contact-us/ /contact-us
 /blog/tag/notifications/ /guide
 /blog/category/saas/feed/ /guide
 /blog/category/wordpress/ /guide
