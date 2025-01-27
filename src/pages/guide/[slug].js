@@ -16,6 +16,7 @@ import getCommonCompData from '@/utils/getCommonCompData';
 import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
 import MenuBarComp from '@/components/menuBarComp/menuBarComp';
 import FooterComp from '@/components/FooterComp/FooterComp';
+import { useEffect } from 'react';
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 const component = { ReactPlayer };
@@ -44,11 +45,7 @@ export default function TestPage({
     const router = useRouter();
 
     const handleClick = () => {
-        if (window.history.length > 1) {
-            router.back();
-        } else {
-            router.push('/guide');
-        }
+        router.push('/guide');
     };
 
     return (
