@@ -77,6 +77,11 @@ class StepTwo extends React.Component {
 
     handleBackClick = () => {
         this.props.setStep(1);
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.delete('githubsignup');
+        currentUrl.searchParams.delete('code');
+        currentUrl.searchParams.delete('state');
+        window.history.replaceState(null, '', currentUrl.toString());
         // smsIdentifier = '';
         // mobileInvalid = false;
         // this.setState({
