@@ -29,7 +29,6 @@ export default class SignUp extends React.Component {
         this.verifyOtp = this.verifyOtp.bind(this);
 
         let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
-        console.log('🚀 ~ SignUp ~ constructor ~ queryParams:', queryParams);
 
         this.state = {
             activeStep: queryParams?.['code'] ? 2 : 1,
@@ -496,7 +495,6 @@ export default class SignUp extends React.Component {
                         </div>
 
                         <div className='lg:px-20 sm:px-10 px-4 sm:py-20 py-10 flex flex-col gap-12 w-full '>
-                            {this.state.activeStep}
                             {this.state.activeStep === 4 ? (
                                 <h1 className='text-2xl font-semibold text-success'>Account created Successfully!</h1>
                             ) : (
