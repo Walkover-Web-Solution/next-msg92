@@ -77,11 +77,11 @@ class StepTwo extends React.Component {
 
     handleBackClick = () => {
         this.props.setStep(1);
-        smsIdentifier = '';
-        mobileInvalid = false;
-        this.setState({
-            smsIdentifier: '',
-        });
+        // smsIdentifier = '';
+        // mobileInvalid = false;
+        // this.setState({
+        //     smsIdentifier: '',
+        // });
     };
     render() {
         return (
