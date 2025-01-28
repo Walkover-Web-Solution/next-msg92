@@ -106,8 +106,9 @@ class StepTwo extends React.Component {
                                     <div className='flex flex-col items-start gap-6 w-[360px]  '>
                                         <div className='flex gap-2 items-center w-full '>
                                             {this.props?.signupByGitHub ? (
-                                                <div>
-                                                    Email Verified <MdCheckCircle className='ico-green' />
+                                                <div className='flex items-center gap-2'>
+                                                    Email Verified{' '}
+                                                    <MdCheckCircle className='ico-green text-green-600' />
                                                 </div>
                                             ) : (
                                                 <div className='w-full'>
