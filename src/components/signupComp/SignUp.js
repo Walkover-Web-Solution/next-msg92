@@ -29,6 +29,7 @@ export default class SignUp extends React.Component {
         this.verifyOtp = this.verifyOtp.bind(this);
 
         let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
+        console.log('🚀 ~ SignUp ~ constructor ~ queryParams:', queryParams);
 
         this.state = {
             activeStep: queryParams?.['code'] ? 2 : 1,
