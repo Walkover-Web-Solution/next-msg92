@@ -75,6 +75,14 @@ class StepTwo extends React.Component {
         }
     };
 
+    handleBackClick = () => {
+        this.props.setStep(1);
+        smsIdentifier = '';
+        mobileInvalid = false;
+        this.setState({
+            smsIdentifier: '',
+        });
+    };
     render() {
         return (
             <>
@@ -204,7 +212,7 @@ class StepTwo extends React.Component {
                                                 defaultValue={smsIdentifier ? '+' + smsIdentifier : ''}
                                                 setInvalid={(event) => (mobileInvalid = event)}
                                                 placeholder='Mobile Number*'
-                                            ></MobileInputComponent>
+                                            />
 
                                             <span className='mt-3'>
                                                 {this.props?.smsAccessToken && (
@@ -311,7 +319,7 @@ class StepTwo extends React.Component {
                         </div>
                     </div>
                     <div className='flex  gap-4'>
-                        <button className='btn btn-accent btn-outline btn-md' onClick={() => this.props.setStep(1)}>
+                        <button className='btn btn-accent btn-outline btn-md' onClick={this.handleBackClick}>
                             {' '}
                             <MdKeyboardArrowLeft />
                             Back
