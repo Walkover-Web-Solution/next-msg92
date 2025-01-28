@@ -495,6 +495,7 @@ export default class SignUp extends React.Component {
                         </div>
 
                         <div className='lg:px-20 sm:px-10 px-4 sm:py-20 py-10 flex flex-col gap-12 w-full '>
+                            {this.state.activeStep}
                             {this.state.activeStep === 4 ? (
                                 <h1 className='text-2xl font-semibold text-success'>Account created Successfully!</h1>
                             ) : (
@@ -505,7 +506,7 @@ export default class SignUp extends React.Component {
                             {this.state.activeStep === 1 && <StepOne setStep={this.setStep} />}
 
                             {/* STEP #2 */}
-                            {(this.state.activeStep === 2 || this.state.activeStep === 1) && (
+                            {this.state.activeStep === 2 && (
                                 <div className={this.state.activeStep !== 2 ? 'hidden' : ''}>
                                     <StepTwo
                                         sendOtp={this.sendOtp}
