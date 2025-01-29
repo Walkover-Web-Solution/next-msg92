@@ -13,7 +13,7 @@ import FooterComp from '@/components/FooterComp/FooterComp';
 export default function Index({ posts, tag, pagination, page, commonData, pageInfo }) {
     const router = useRouter();
     const handleClick = () => {
-        router.back();
+        router.push('/guide');
     };
     const url = `/guide/tags/${tag}` + (page ? `/${page}` : '');
     return (

@@ -49,7 +49,7 @@ export function setCookie(name, value, days) {
 export function loginWithGitHubAccount(loginProcess) {
     let state = Math.floor(100000000 + Math.random() * 900000000);
     let otherParams = loginProcess ? `githublogin=true` : `githubsignup=true`;
-    location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/github-auth-token?${otherParams}&state=${state}`;
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/github-auth-token?${otherParams}&state=${state}`;
 }
 
 export function setUtm() {
