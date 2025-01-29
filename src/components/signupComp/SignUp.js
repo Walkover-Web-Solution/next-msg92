@@ -8,6 +8,7 @@ import Image from 'next/image';
 import StepOne from './StepOne/StepOne';
 import StepTwo from './StepTwo/StepTwo';
 import StepThree from './StepThree/StepThree';
+import { useRouter } from 'next/router';
 
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 
@@ -29,7 +30,7 @@ export default class SignUp extends React.Component {
         this.verifyOtp = this.verifyOtp.bind(this);
 
         let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
-
+        console.log(queryParams, 'wuru');
         this.state = {
             activeStep: queryParams?.['code'] ? 2 : 1,
             signupByGitHub: queryParams?.['githubsignup'] ? true : false,
@@ -69,6 +70,11 @@ export default class SignUp extends React.Component {
             console.log('No Session Found');
         }
     };
+    // componentDidUpdate = () => {
+    //     const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
+    //     this.setState({ activeStep: queryParams?.['code'] ? 2 : 1 });
+    // };
+    // console.log('SignUp', activeStep);
 
     setStep = (step) => {
         if (step === 1) {
@@ -502,10 +508,12 @@ export default class SignUp extends React.Component {
                             )}
 
                             {/* STEP #1 */}
-                            {this.state.activeStep === 1 && <StepOne setStep={this.setStep} />}
+                            {this.state.activeStep === 1 && !this.state.githubCode && !this.state.githubState && (
+                                <StepOne setStep={this.setStep} />
+                            )}
 
                             {/* STEP #2 */}
-                            {(this.state.activeStep === 2 || this.state.activeStep === 1) && (
+                            {this.state.activeStep === 2 && this.state.githubCode && this.state.githubState && (
                                 <div className={this.state.activeStep !== 2 ? 'hidden' : ''}>
                                     <StepTwo
                                         sendOtp={this.sendOtp}
