@@ -503,17 +503,16 @@ export default class SignUp extends React.Component {
                             ) : (
                                 <h1 className='text-2xl font-semibold '>Create an account</h1>
                             )}
+
                             {!this.state.activeStep && (
-                                <div className='flex flex-col gap-2'>
+                                <div className='flex flex-col gap-2 h-full  max-w-[600px] w-full items-center justify-center'>
                                     <span className='loading loading-ring loading-lg'></span>
-                                    <span>Loading....</span>
+                                    <span className='flex items-end gap-2 text-lg'>Loading ...</span>
                                 </div>
                             )}
 
                             {/* STEP #1 */}
-                            {this.state.activeStep === 1 && !this.state.githubCode && (
-                                <StepOne setStep={this.setStep} />
-                            )}
+                            {this.state.activeStep === 1 && <StepOne setStep={this.setStep} />}
 
                             {/* STEP #2 */}
                             {(this.state.activeStep === 2 || this.state.activeStep === 1) && (
