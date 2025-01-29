@@ -505,9 +505,15 @@ export default class SignUp extends React.Component {
                             )}
 
                             {!this.state.activeStep && (
-                                <div className='flex flex-col gap-2 h-full  max-w-[600px] w-full items-center justify-center'>
-                                    <span className='loading loading-ring loading-lg'></span>
-                                    <span className='flex items-end gap-2 text-lg'>Loading ...</span>
+                                <div className='flex flex-col gap-4 h-full  max-w-[600px] w-full '>
+                                    <span className='skeleton max-w-[300px] w-full bg-gray-100 h-12'></span>
+                                    <span className='skeleton w-12 bg-gray-100 h-12'></span>
+                                    <div className='flex flex-col gap-2'>
+                                        <span className='skeleton max-w-[400px] w-full bg-gray-200 h-7'></span>
+                                        <span className='skeleton max-w-[400px] w-full bg-gray-200 h-7'></span>
+                                        <span className='skeleton max-w-[400px] w-full bg-gray-200 h-7'></span>
+                                        <span className='skeleton max-w-[200px] w-full bg-gray-200 h-7'></span>
+                                    </div>
                                 </div>
                             )}
 
