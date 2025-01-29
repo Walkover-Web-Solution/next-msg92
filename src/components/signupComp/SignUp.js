@@ -9,6 +9,7 @@ import StepOne from './StepOne/StepOne';
 import StepTwo from './StepTwo/StepTwo';
 import StepThree from './StepThree/StepThree';
 import { useRouter } from 'next/router';
+import { preconnect } from 'react-dom';
 
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 
@@ -30,9 +31,10 @@ export default class SignUp extends React.Component {
         this.verifyOtp = this.verifyOtp.bind(this);
 
         var queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
+
         console.log(queryParams);
         this.state = {
-            activeStep: queryParams?.code ? 2 : 1,
+            activeStep: null,
             signupByGitHub: queryParams?.githubsignup ? true : false,
             githubCode: queryParams?.code,
             githubState: queryParams?.state,
@@ -48,7 +50,7 @@ export default class SignUp extends React.Component {
     componentDidMount = () => {
         this.otpWidgetSetup();
         const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
-
+        this.setState({ activeStep: queryParams?.code ? 2 : 1 });
         if (queryParams?.service) {
             this.setState({ preselectedService: queryParams.service });
         }
