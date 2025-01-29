@@ -30,11 +30,12 @@ export default class SignUp extends React.Component {
         this.verifyOtp = this.verifyOtp.bind(this);
 
         var queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
+        console.log(queryParams);
         this.state = {
-            activeStep: queryParams?.['code'] ? 2 : 1,
-            signupByGitHub: queryParams?.['githubsignup'] ? true : false,
-            githubCode: queryParams?.['code'],
-            githubState: queryParams?.['state'],
+            activeStep: queryParams?.code ? 2 : 1,
+            signupByGitHub: queryParams?.githubsignup ? true : false,
+            githubCode: queryParams?.code,
+            githubState: queryParams?.state,
             widgetData: null,
             allowedRetry: null,
             emailAccessToken: null,
