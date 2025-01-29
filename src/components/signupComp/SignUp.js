@@ -70,17 +70,6 @@ export default class SignUp extends React.Component {
             console.log('No Session Found');
         }
     };
-    componentDidUpdate(prevProps) {
-        const currentQueryParams = getQueryParamsDeatils(this.props?.browserPathCase);
-        const previousQueryParams = getQueryParamsDeatils(prevProps?.browserPathCase);
-        if (currentQueryParams?.['code'] !== previousQueryParams?.['code']) {
-            if (currentQueryParams?.['code']) {
-                this.setState({ activeStep: 2 });
-            }
-        }
-
-        console.log('SignUp', currentQueryParams);
-    }
 
     setStep = (step) => {
         if (step === 1) {
@@ -359,8 +348,8 @@ export default class SignUp extends React.Component {
                     isLoading: false,
                     emailAccessToken: null,
                     smsAccessToken: null,
-                    githubCode: this.state.githubCode,
-                    githubState: this.state.githubState,
+                    githubCode: null,
+                    githubState: null,
                     smsSuccessMessage: null,
                     emailSuccessMessage: null,
                     smsIdentifierBackup: this.state.smsIdentifier || '',
@@ -510,16 +499,16 @@ export default class SignUp extends React.Component {
                             {this.state.activeStep === 4 ? (
                                 <h1 className='text-2xl font-semibold text-success'>Account created Successfully!</h1>
                             ) : (
-                                <h1 className='text-2xl font-semibold '>Create an account</h1>
+                                <h1 className='text-2xl font-semibold '>Create an account {this.state.githubCode}</h1>
                             )}
 
                             {/* STEP #1 */}
-                            {this.state.activeStep === 1 && this.queryParams['code'] && (
+                            {this.state.activeStep === 1 && !this.state.githubCode && (
                                 <StepOne setStep={this.setStep} />
                             )}
 
                             {/* STEP #2 */}
-                            {this.state.activeStep === 2 && this.state.githubCode && this.state.githubState && (
+                            {(this.state.activeStep === 2 || this.state.activeStep === 1) && (
                                 <div className={this.state.activeStep !== 2 ? 'hidden' : ''}>
                                     <StepTwo
                                         sendOtp={this.sendOtp}
