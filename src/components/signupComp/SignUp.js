@@ -32,7 +32,6 @@ export default class SignUp extends React.Component {
 
         var queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
 
-        console.log(queryParams);
         this.state = {
             activeStep: null,
             signupByGitHub: queryParams?.githubsignup ? true : false,
@@ -502,7 +501,13 @@ export default class SignUp extends React.Component {
                             {this.state.activeStep === 4 ? (
                                 <h1 className='text-2xl font-semibold text-success'>Account created Successfully!</h1>
                             ) : (
-                                <h1 className='text-2xl font-semibold '>Create an account {this.state.githubCode}</h1>
+                                <h1 className='text-2xl font-semibold '>Create an account</h1>
+                            )}
+                            {!this.state.activeStep && (
+                                <div className='flex flex-col gap-2'>
+                                    <span className='loading loading-ring loading-lg'></span>
+                                    <span>Loading....</span>
+                                </div>
                             )}
 
                             {/* STEP #1 */}
