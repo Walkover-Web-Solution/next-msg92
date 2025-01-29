@@ -31,6 +31,7 @@ export default class SignUp extends React.Component {
         let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
 
         this.state = {
+            isLoading: true,
             activeStep: queryParams?.['code'] ? 2 : 1,
             signupByGitHub: queryParams?.['githubsignup'] ? true : false,
             githubCode: queryParams?.['code'],
@@ -45,6 +46,7 @@ export default class SignUp extends React.Component {
     }
 
     componentDidMount = () => {
+        this.setState({ isLoading: false });
         this.otpWidgetSetup();
         const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
         if (queryParams?.service) {
@@ -464,6 +466,9 @@ export default class SignUp extends React.Component {
     };
 
     render() {
+        if (this.state.isLoading) {
+            return <div>Loading...</div>; // Show a loading indicator
+        }
         return (
             <>
                 <section className='signup d-flex flex-column flex-md-row-reverse '>
