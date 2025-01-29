@@ -46,9 +46,9 @@ export default class SignUp extends React.Component {
     }
 
     componentDidMount = () => {
-        this.setState({ isLoading: false });
         this.otpWidgetSetup();
         const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
+        this.setState({ isLoading: false, activeStep: queryParams?.['code'] ? 2 : 1 });
         if (queryParams?.service) {
             this.setState({ preselectedService: queryParams.service });
         }
