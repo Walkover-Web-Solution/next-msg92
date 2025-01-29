@@ -29,8 +29,7 @@ export default class SignUp extends React.Component {
         this.retryOtp = this.retryOtp.bind(this);
         this.verifyOtp = this.verifyOtp.bind(this);
 
-        let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
-        console.log(queryParams, 'wuru');
+        var queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
         this.state = {
             activeStep: queryParams?.['code'] ? 2 : 1,
             signupByGitHub: queryParams?.['githubsignup'] ? true : false,
@@ -48,6 +47,7 @@ export default class SignUp extends React.Component {
     componentDidMount = () => {
         this.otpWidgetSetup();
         const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
+
         if (queryParams?.service) {
             this.setState({ preselectedService: queryParams.service });
         }
@@ -70,11 +70,17 @@ export default class SignUp extends React.Component {
             console.log('No Session Found');
         }
     };
-    // componentDidUpdate = () => {
-    //     const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
-    //     this.setState({ activeStep: queryParams?.['code'] ? 2 : 1 });
-    // };
-    // console.log('SignUp', activeStep);
+    componentDidUpdate(prevProps) {
+        const currentQueryParams = getQueryParamsDeatils(this.props?.browserPathCase);
+        const previousQueryParams = getQueryParamsDeatils(prevProps?.browserPathCase);
+        if (currentQueryParams?.['code'] !== previousQueryParams?.['code']) {
+            if (currentQueryParams?.['code']) {
+                this.setState({ activeStep: 2 });
+            }
+        }
+
+        console.log('SignUp', currentQueryParams);
+    }
 
     setStep = (step) => {
         if (step === 1) {
@@ -353,8 +359,8 @@ export default class SignUp extends React.Component {
                     isLoading: false,
                     emailAccessToken: null,
                     smsAccessToken: null,
-                    githubCode: null,
-                    githubState: null,
+                    githubCode: this.state.githubCode,
+                    githubState: this.state.githubState,
                     smsSuccessMessage: null,
                     emailSuccessMessage: null,
                     smsIdentifierBackup: this.state.smsIdentifier || '',
@@ -508,7 +514,7 @@ export default class SignUp extends React.Component {
                             )}
 
                             {/* STEP #1 */}
-                            {this.state.activeStep === 1 && !this.state.githubCode && !this.state.githubState && (
+                            {this.state.activeStep === 1 && this.queryParams['code'] && (
                                 <StepOne setStep={this.setStep} />
                             )}
 
