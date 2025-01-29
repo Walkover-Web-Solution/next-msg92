@@ -514,7 +514,9 @@ export default class SignUp extends React.Component {
                             )}
 
                             {/* STEP #1 */}
-                            {this.state.activeStep === 1 && this.queryParams(<StepOne setStep={this.setStep} />)}
+                            {this.state.activeStep === 1 && this.queryParams['code'] && (
+                                <StepOne setStep={this.setStep} />
+                            )}
 
                             {/* STEP #2 */}
                             {this.state.activeStep === 2 && this.state.githubCode && this.state.githubState && (
