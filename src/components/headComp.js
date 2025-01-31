@@ -14,10 +14,7 @@ export default function HeadComp({ data, pageInfo }) {
                 }}
             />
 
-            <Script
-                onload='initChatWidget(helloConfig, 5000)'
-                src='https://control.msg91.com/app/assets/widget/chat-widget.js'
-            />
+            <Script onload='initChatWidget(helloConfig, 5000)' src='https://blacksea.msg91.com/chat-widget.js' />
 
             <Script
                 strategy='afterInteractive'

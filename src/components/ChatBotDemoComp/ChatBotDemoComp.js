@@ -67,7 +67,7 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
                                 bot_id: ${selectedTemplate?.bot_id || null},
                             }, 0);
                         };
-                        script.src = '${process.env.CHATBOT_TEMPLATE_TEST_URL}/widget/chat-widget.js';
+                        script.src = '${process.env.CHATBOT_TEMPLATE_TEST_URL}';
                         document.body.appendChild(script);
                     })();
                 </script>
