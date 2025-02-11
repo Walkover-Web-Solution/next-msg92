@@ -2,7 +2,6 @@ import { InlineWidget } from 'react-calendly';
 import { MdCall, MdOutlineEmail, MdWhatsapp } from 'react-icons/md';
 
 export default function ContactUsComp({ data, pageInfo }) {
-    console.log('🚀 ~ ContactUsComp ~ pageInfo:', pageInfo);
     return (
         <>
             <div className='container flex flex-col cont_gap cont_p'>
