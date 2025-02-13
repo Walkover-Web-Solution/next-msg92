@@ -1,7 +1,10 @@
 import GetMdIcons from '@/utils/getMdIcons';
 import Image from 'next/image';
+import { MoreButton } from '../UIComponent/Buttons/LinkButton';
+import { useState } from 'react';
 
 export default function FeatureComp({ data }) {
+    const [openedFeatures, setOpenedFeatures] = useState([]);
     return (
         <>
             <div className='bg-neutral'>
@@ -27,6 +30,24 @@ export default function FeatureComp({ data }) {
                                             <span className='font-bold'>{feature?.subheading} </span>
                                             <span dangerouslySetInnerHTML={{ __html: feature?.content }}></span>
                                         </span>
+                                        {}
+                                        <div
+                                            className={`text-lg ${openedFeatures.includes(index) ? 'block' : 'hidden'}`}
+                                            dangerouslySetInnerHTML={{ __html: feature?.more_content }}
+                                        ></div>
+                                        <div
+                                            onClick={() => {
+                                                setOpenedFeatures((prevOpenedFeatures) => {
+                                                    if (prevOpenedFeatures.includes(index)) {
+                                                        return prevOpenedFeatures.filter((i) => i !== index);
+                                                    } else {
+                                                        return [...prevOpenedFeatures, index];
+                                                    }
+                                                });
+                                            }}
+                                        >
+                                            <MoreButton open={openedFeatures.includes(index)} content={'Read More'} />
+                                        </div>
                                     </div>
                                     <Image
                                         src={feature?.img}
