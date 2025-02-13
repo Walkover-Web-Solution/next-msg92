@@ -16,13 +16,13 @@ export default function FeatureComp({ data }) {
                             return (
                                 <div
                                     key={index}
-                                    className={`lg:p-12 p-6 bg-white border flex items-center overflow-hidden gap-1 rounded ${
+                                    className={` bg-white border flex items-center overflow-hidden gap-1 rounded ${
                                         (index + 1) % 3 === 0
-                                            ? 'flex flex-col md:flex-row col-span-2'
-                                            : 'flex flex-col lg:flex-col  md:flex-row lg:col-span-1 col-span-2'
+                                            ? 'flex flex-col lg:flex-row col-span-2'
+                                            : 'flex flex-col lg:col-span-1 col-span-2'
                                     }`}
                                 >
-                                    <div className='flex flex-col gap-2'>
+                                    <div className='lg:p-12 p-4 flex flex-col gap-2'>
                                         {feature?.icon && <Icon className='text-5xl text-[#F7DC6F]' />}
 
                                         <h3 className='text-2xl font-semibold'>{feature?.name}</h3>
@@ -52,7 +52,7 @@ export default function FeatureComp({ data }) {
                                     <Image
                                         src={feature?.img}
                                         alt={feature?.name}
-                                        className='w-full xl:max-w-[500px] lg:max-w-[400px] max-w-[200px] mx-12'
+                                        className='w-full xl:max-w-[600px] lg:max-w-[400px] max-w-[300px] md:mx-12 mx-2'
                                         width={420}
                                         height={420}
                                     />
