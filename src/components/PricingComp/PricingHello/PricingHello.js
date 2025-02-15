@@ -17,6 +17,7 @@ export default function PricingHello({ data, country }) {
     const [inboxes, setInboxes] = useState(0);
     const [tickets, setTickets] = useState(0);
     const [showCalculations, setShowCalculations] = useState(false);
+    const [isCalculationModalOpen, setIsCalculationModalOpen] = useState(false);
     const [rawInboxes, setRawInboxes] = useState(0);
     const [rawTickets, setRawTickets] = useState(0);
     const [hasyYarly, setHasYearly] = useState(false);
@@ -451,11 +452,7 @@ export default function PricingHello({ data, country }) {
                                                     {plan?.name !== 'Free' && (
                                                         <button
                                                             className=' btn btn-accent btn-outline btn-md '
-                                                            onClick={() =>
-                                                                document
-                                                                    .getElementById('calculate_hello_pricing')
-                                                                    .showModal()
-                                                            }
+                                                            onClick={() => setIsCalculationModalOpen(true)}
                                                         >
                                                             Calculate
                                                         </button>
@@ -502,14 +499,17 @@ export default function PricingHello({ data, country }) {
                 </div>
             </div>
             {/* // calculate hello pricing */}
-            {plansObj && (
-                <dialog id='calculate_hello_pricing' className='modal '>
+            {plansObj && isCalculationModalOpen && (
+                <dialog id='calculate_hello_pricing' className='modal ' open>
                     <div className={`modal-box flex flex-col gap-4 ${style.modal}`}>
                         <div className='flex justify-between'>
                             <h2 className='font-bold text-xl'>Calculate</h2>
-                            <form method='dialog'>
-                                <button className='btn btn-sm btn-circle btn-ghost  right-2 top-2'>✕</button>
-                            </form>
+                            <button
+                                onClick={() => setIsCalculationModalOpen(false)}
+                                className='btn btn-sm btn-circle btn-ghost  right-2 top-2'
+                            >
+                                ✕
+                            </button>
                         </div>
                         <div className='flex flex-col gap-4'>
                             <p className=''>Here you can calculate your monthly expense based on your usage.</p>

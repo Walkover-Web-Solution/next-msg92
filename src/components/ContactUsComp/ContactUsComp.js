@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { InlineWidget } from 'react-calendly';
 import { MdCall, MdOutlineEmail, MdWhatsapp } from 'react-icons/md';
 
 export default function ContactUsComp({ data, pageInfo }) {
+    const [isSalesModalOpen, setIsSalesModalOpen] = useState(false);
+    const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
     return (
         <>
             <div className='container flex flex-col cont_gap cont_p'>
@@ -38,10 +41,7 @@ export default function ContactUsComp({ data, pageInfo }) {
                                 </>
                             )}
                         </div>
-                        <button
-                            className='btn btn-md btn-primary'
-                            onClick={() => document.getElementById('sales_modal').showModal()}
-                        >
+                        <button className='btn btn-md btn-primary' onClick={() => setIsSalesModalOpen(true)}>
                             Schedule a meeting
                         </button>
                     </div>
@@ -62,35 +62,41 @@ export default function ContactUsComp({ data, pageInfo }) {
                                 <a href='tel:+918818888733'> +91 88188 88733</a>
                             </div>
                         </div>
-                        <button
-                            className='btn btn-md btn-primary'
-                            onClick={() => document.getElementById('support_modal').showModal()}
-                        >
+                        <button className='btn btn-md btn-primary' onClick={() => setIsSupportModalOpen(true)}>
                             Schedule a meeting
                         </button>
                     </div>
                 </div>
             </div>
-
-            <dialog id='support_modal' className='modal'>
-                <div className='modal-box'>
-                    <form method='dialog'>
-                        <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
-                    </form>
-                    <InlineWidget
-                        url='https://calendly.com/d/y3n-29s-29h?hide_gdpr_banner=1'
-                        styles={{ height: '680px' }}
-                    />
-                </div>
-            </dialog>
-            <dialog id='sales_modal' className='modal'>
-                <div className='modal-box'>
-                    <form method='dialog'>
-                        <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
-                    </form>
-                    <InlineWidget url='https://calendly.com/sales-msg91/pre-sales' styles={{ height: '680px' }} />
-                </div>
-            </dialog>
+            {isSupportModalOpen && (
+                <dialog id='support_modal' className='modal' open>
+                    <div className='modal-box'>
+                        <button
+                            onClick={() => setIsSupportModalOpen(false)}
+                            className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'
+                        >
+                            ✕
+                        </button>
+                        <InlineWidget
+                            url='https://calendly.com/d/y3n-29s-29h?hide_gdpr_banner=1'
+                            styles={{ height: '680px' }}
+                        />
+                    </div>
+                </dialog>
+            )}
+            {isSalesModalOpen && (
+                <dialog id='sales_modal' className='modal' open>
+                    <div className='modal-box'>
+                        <button
+                            onClick={() => setIsSalesModalOpen(false)}
+                            className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'
+                        >
+                            ✕
+                        </button>
+                        <InlineWidget url='https://calendly.com/sales-msg91/pre-sales' styles={{ height: '680px' }} />
+                    </div>
+                </dialog>
+            )}
         </>
     );
 }
