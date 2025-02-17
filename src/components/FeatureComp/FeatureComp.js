@@ -2,6 +2,7 @@ import GetMdIcons from '@/utils/getMdIcons';
 import Image from 'next/image';
 import { MoreButton } from '../UIComponent/Buttons/LinkButton';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function FeatureComp({ data }) {
     const [openedFeatures, setOpenedFeatures] = useState([]);
@@ -91,6 +92,15 @@ export default function FeatureComp({ data }) {
                                                         content={'Read More'}
                                                     />
                                                 </div>{' '}
+                                                {feature?.button && (
+                                                    <div className='mt-4'>
+                                                        <Link target='blank' href={feature?.button?.link}>
+                                                            <button className='btn btn-primary w-fit btn-sm'>
+                                                                {feature?.button?.name}
+                                                            </button>
+                                                        </Link>
+                                                    </div>
+                                                )}
                                             </>
                                         )}
                                     </div>
