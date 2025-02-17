@@ -1,10 +1,11 @@
 import { MdDone } from 'react-icons/md';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { InlineWidget } from 'react-calendly';
 import Image from 'next/image';
 import Head from 'next/head';
 
 export default function IntegrationAppComp({ data }) {
+    const [isPluginModalOpen, setIsPluginModalOpen] = useState(false);
     const videoRef = useRef();
     const handleVideoClick = () => {
         if (videoRef.current.paused) {
@@ -59,10 +60,7 @@ export default function IntegrationAppComp({ data }) {
                                 </a>
                             )}
                             {data?.buttons?.meet && (
-                                <button
-                                    onClick={() => document.getElementById('plugin_modal').showModal()}
-                                    className='btn btn-secondary '
-                                >
+                                <button onClick={() => setIsPluginModalOpen(true)} className='btn btn-secondary '>
                                     Schedule a meeting
                                 </button>
                             )}
@@ -160,12 +158,15 @@ export default function IntegrationAppComp({ data }) {
                         {data?.get_plugin?.content}
                     </a>
                 </div>
-                {data?.buttons?.meet && (
+                {isPluginModalOpen && (
                     <dialog id='plugin_modal' className='modal'>
                         <div className='modal-box'>
-                            <form method='dialog'>
-                                <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
-                            </form>
+                            <button
+                                onClick={() => setIsPluginModalOpen(false)}
+                                className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'
+                            >
+                                ✕
+                            </button>
                             <InlineWidget
                                 url='https://calendly.com/tigermsg91/msg91-for-tally?utm_campaign=tigerplugin&utm_source=tally&utm_medium=website'
                                 styles={{ height: '820px' }}

@@ -14,6 +14,7 @@ import Link from 'next/link';
 
 export default function BannerComp({ pageInfo, data }) {
     const [isCopied, setIsCopied] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [code, setCode] = useState({});
 
     const [selectedLanguage, setSelectedLanguage] = useState('curl');
@@ -84,10 +85,7 @@ export default function BannerComp({ pageInfo, data }) {
                             {data?.getstarted_btn}
                         </a>
                         {data?.schedule_meet && (
-                            <button
-                                className='btn btn-md btn-primary btn-outline'
-                                onClick={() => document.getElementById('whatsapp_modal').showModal()}
-                            >
+                            <button className='btn btn-md btn-primary btn-outline' onClick={() => setIsModalOpen(true)}>
                                 {data?.schedule_meet}
                             </button>
                         )}
@@ -157,12 +155,15 @@ export default function BannerComp({ pageInfo, data }) {
                     </div>
                 )}
             </div>
-            {data?.schedule_meet && (
-                <dialog id='whatsapp_modal' className='modal'>
+            {isModalOpen && (
+                <dialog id='whatsapp_modal' className='modal' open>
                     <div className='modal-box'>
-                        <form method='dialog'>
-                            <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
-                        </form>
+                        <button
+                            onClick={() => setIsModalOpen(false)}
+                            className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'
+                        >
+                            ✕
+                        </button>
                         <InlineWidget
                             url='https://calendly.com/msg91-whatsapp/15-min-meeting?back=1'
                             styles={{ height: '680px', width: 'auto' }}
