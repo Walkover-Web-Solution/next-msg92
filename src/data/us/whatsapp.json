@@ -47,6 +47,80 @@
         "iconColor": "text-campaign",
         "features": [
             {
+                "name": "Revolutionize Customer Support with WhatsApp ChatBot",
+                "content": "Transform your customer service experience with a WhatsApp ChatBot that delivers instant, accurate, and personalized responses. Automate routine queries, provide 24/7 support, and enhance customer satisfaction without human intervention. Whether it's answering FAQs, processing orders, or resolving complaints, a WhatsApp ChatBot ensures seamless communication and reduces response times.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "FAQs and Queries",
+                            "description": "Automate responses to frequently asked questions."
+                        },
+                        {
+                            "name": "Order Tracking",
+                            "description": "Provide real-time updates on order status."
+                        },
+                        {
+                            "name": "Appointment Booking",
+                            "description": "Let customers schedule appointments effortlessly."
+                        },
+                        {
+                            "name": "Lead Generation",
+                            "description": "Engage potential customers with instant replies."
+                        },
+                        {
+                            "name": "Feedback Collection",
+                            "description": "Gather customer feedback through automated surveys."
+                        }
+                    ],
+                    "features": [
+                        "24/7 availability for uninterrupted support.",
+                        "Instant responses to improve customer satisfaction.",
+                        "Customizable workflows for specific business needs.",
+                        "Integration with CRM tools for better data management.",
+                        "Multilingual support for global audiences."
+                    ]
+                },
+                "button":{
+                    "name":"Test WhatsApp Chatbot",
+                    "link":"https://msg91.com/demochatbot"
+                },
+                "img": "/assets/us/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg"
+            },
+            {
+                "name": "Click-to-WhatsApp Ads Boost Engagement with Zero Margin Costs",
+                "content": "Maximize your marketing efforts with Click-to-WhatsApp Ads, a powerful solution to connect with customers instantly. This feature allows businesses to drive traffic from online advertisements directly to WhatsApp conversations, creating a seamless transition from discovery to engagement.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Lead Generation",
+                            "description": "Drive potential customers from ads to WhatsApp for instant engagement."
+                        },
+                        {
+                            "name": "Customer Support",
+                            "description": "Allow users to connect with support teams directly from ads."
+                        },
+                        {
+                            "name": "Product Inquiries",
+                            "description": "Enable customers to ask questions about products or services."
+                        },
+                        {
+                            "name": "Event Registrations",
+                            "description": "Use ads to promote events and collect RSVPs via WhatsApp."
+                        },
+                        {
+                            "name": "Exclusive Offers",
+                            "description": "Advertise limited-time deals and redirect users to WhatsApp for redemption."
+                        }
+                    ],
+                    "features": [
+                        "Seamless transition from ads to WhatsApp chats.",
+                        "Instant responses using AI chatbots and bulk messaging.",
+                        "Cost-effective advertising with full ROI transparency."
+                    ]
+                },
+                "img": "/assets/us/whatsapp/whatsapp-click-to-whatsapp-ads-boost-engagement-with-zero-margin-costs.svg"
+            },
+            {
                 "name": "Send Bulk WhatsApp Messages Effortlessly",
                 "content": "Simplify your communication strategy with the ability to send bulk WhatsApp messages seamlessly through CSV uploads. Share essential updates, product launches, exclusive offers, or critical alerts with your customers across the United States instantly. Engage thousands of users simultaneously while maintaining a personalized touch for each recipient.",
                 "more_content": {
@@ -257,40 +331,7 @@
                 },
                 "img": "/assets/us/whatsapp/whatsapp-robust-whatsapp-api-for-business-scalability.svg"
             },
-            {
-                "name": "Click-to-WhatsApp Ads Boost Engagement with Zero Margin Costs",
-                "content": "Maximize your marketing efforts with Click-to-WhatsApp Ads, a powerful solution to connect with customers instantly. This feature allows businesses to drive traffic from online advertisements directly to WhatsApp conversations, creating a seamless transition from discovery to engagement.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Lead Generation",
-                            "description": "Drive potential customers from ads to WhatsApp for instant engagement."
-                        },
-                        {
-                            "name": "Customer Support",
-                            "description": "Allow users to connect with support teams directly from ads."
-                        },
-                        {
-                            "name": "Product Inquiries",
-                            "description": "Enable customers to ask questions about products or services."
-                        },
-                        {
-                            "name": "Event Registrations",
-                            "description": "Use ads to promote events and collect RSVPs via WhatsApp."
-                        },
-                        {
-                            "name": "Exclusive Offers",
-                            "description": "Advertise limited-time deals and redirect users to WhatsApp for redemption."
-                        }
-                    ],
-                    "features": [
-                        "Seamless transition from ads to WhatsApp chats.",
-                        "Instant responses using AI chatbots and bulk messaging.",
-                        "Cost-effective advertising with full ROI transparency."
-                    ]
-                },
-                "img": "/assets/us/whatsapp/whatsapp-click-to-whatsapp-ads-boost-engagement-with-zero-margin-costs.svg"
-            },
+ 
             {
                 "name": "Audience Segmentation and Automated Reminders through WhatsApp",
                 "content": "Never miss an opportunity to engage your customers with <strong>automated WhatsApp message reminders</strong> for birthdays, anniversaries, class schedules, and more. Strengthen customer relationships by sending personalized messages that make them feel valued and appreciated.",
@@ -362,42 +403,7 @@
                 },
                 "img": "/assets/us/whatsapp/whatsapp-audience-segmentation-for-targeted-campaigns-and-customer-journeys.svg"
             },
-            {
-                "name": "Revolutionize Customer Support with WhatsApp ChatBot",
-                "content": "Transform your customer service experience with a WhatsApp ChatBot that delivers instant, accurate, and personalized responses. Automate routine queries, provide 24/7 support, and enhance customer satisfaction without human intervention. Whether it's answering FAQs, processing orders, or resolving complaints, a WhatsApp ChatBot ensures seamless communication and reduces response times.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "FAQs and Queries",
-                            "description": "Automate responses to frequently asked questions."
-                        },
-                        {
-                            "name": "Order Tracking",
-                            "description": "Provide real-time updates on order status."
-                        },
-                        {
-                            "name": "Appointment Booking",
-                            "description": "Let customers schedule appointments effortlessly."
-                        },
-                        {
-                            "name": "Lead Generation",
-                            "description": "Engage potential customers with instant replies."
-                        },
-                        {
-                            "name": "Feedback Collection",
-                            "description": "Gather customer feedback through automated surveys."
-                        }
-                    ],
-                    "features": [
-                        "24/7 availability for uninterrupted support.",
-                        "Instant responses to improve customer satisfaction.",
-                        "Customizable workflows for specific business needs.",
-                        "Integration with CRM tools for better data management.",
-                        "Multilingual support for global audiences."
-                    ]
-                },
-                "img": "/assets/us/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg"
-            },
+ 
             {
                 "name": "Drive Engagement with WhatsApp Broadcast and Campaigns",
                 "content": "Leverage the power of WhatsApp Broadcast and Campaigns to reach your audience with personalized messages at scale. Whether it's promoting a new product, sharing exclusive offers, or sending event invitations, WhatsApp campaigns ensure your message lands directly in your customers' inboxes. With advanced segmentation and scheduling, you can deliver the right message to the right audience at the right time.",
