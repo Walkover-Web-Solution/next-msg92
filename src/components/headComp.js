@@ -8,13 +8,13 @@ export default function HeadComp({ data, pageInfo }) {
                 strategy='afterInteractive'
                 dangerouslySetInnerHTML={{
                     __html: `var helloConfig = {
-              widgetToken: "1d31e",
+              widgetToken: '${process.env.CHAT_WIDGET_TOKEN}',
               hide_launcher: false
             };`,
                 }}
             />
 
-            <Script onload='initChatWidget(helloConfig, 5000)' src='https://blacksea.msg91.com/chat-widget.js' />
+            <Script onload='initChatWidget(helloConfig, 0)' src={`${process.env.CHAT_WIDGET_URL}`} />
 
             <Script
                 strategy='afterInteractive'
