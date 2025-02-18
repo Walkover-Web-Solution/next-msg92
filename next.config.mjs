@@ -30,8 +30,9 @@ const nextConfig = {
         WIDGET_AUTH_TOKEN: getEnvValue('WIDGET_AUTH_TOKEN'),
         WIDGET_SCRIPT: getEnvValue('WIDGET_SCRIPT'),
 
-        //INTEGRATIONS CONFIG
-        AIRTABLE_API_KEY: getEnvValue('AIRTABLE_API_KEY'),
+        //CHATWIDGET CONFIG
+        CHAT_WIDGET_TOKEN:getEnvValue('CHAT_WIDGET_TOKEN'),
+        CHAT_WIDGET_URL: getEnvValue('CHAT_WIDGET_URL'),
     },
 };
 
