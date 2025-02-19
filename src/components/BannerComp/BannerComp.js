@@ -181,13 +181,13 @@ export default function BannerComp({ pageInfo, data }) {
                         />
                     </div>
                 )}
-                {animationData && (
+                {animationData && data?.lottie && (
                     <div className={styles.lottie_animation}>
                         <Lottie options={animationData} />
                     </div>
                 )}
             </div>
-            {isModalOpen && data?.lottie && (
+            {isModalOpen && (
                 <dialog id='whatsapp_modal' className='modal' open>
                     <div className='modal-box'>
                         <button
