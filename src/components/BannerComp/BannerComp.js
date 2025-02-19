@@ -143,7 +143,7 @@ export default function BannerComp({ pageInfo, data }) {
                         )}
                     </div>
                 </div>
-                {!data?.code && (
+                {!data?.code && data?.banner_img && (
                     <div className={styles.cont}>
                         <Image
                             className={pageInfo?.page === 'home' ? styles.homeimg : styles.img}

@@ -78,7 +78,7 @@ body{
 }
 .text-link {
     &.active-link {
-        color: var(--link-color);
+        color: var(--link-color) !important;
     }
     &::after {
         background-color: var(--link-color);

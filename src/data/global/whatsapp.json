@@ -9,11 +9,10 @@
             "name": "WhatsApp",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "code": true,
         "tagline": "WhatsApp Messaging Revolution",
         "heading": "WhatsApp API for Global Messaging and Communication",
         "subheading": "Use WhatsApp API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
-        "banner_img": "/assets/global/hello/banner.webp",
+        "banner_img": "",
         "getstarted_btn": "Get Started",
         "schedule_meet": "Schedule a Meeting",
         "trustedByComp": {
@@ -43,7 +42,7 @@
         }
     },
     "FeatureComp": {
-        "heading": "Features",
+        "heading": "",
         "iconColor": "text-campaign",
         "features": [
             {

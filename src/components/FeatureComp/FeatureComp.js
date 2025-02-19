@@ -1,8 +1,7 @@
 import GetMdIcons from '@/utils/getMdIcons';
 import Image from 'next/image';
-import { MoreButton } from '../UIComponent/Buttons/LinkButton';
+import { LinkButton, MoreButton } from '../UIComponent/Buttons/LinkButton';
 import { useState } from 'react';
-import Link from 'next/link';
 
 export default function FeatureComp({ data }) {
     const [openedFeatures, setOpenedFeatures] = useState([]);
@@ -17,7 +16,7 @@ export default function FeatureComp({ data }) {
                             return (
                                 <div
                                     key={index}
-                                    className={` bg-white border flex items-center overflow-hidden gap-1 rounded ${
+                                    className={` bg-white border flex items-center overflow-hidden gap-1 rounded justify-between ${
                                         (index + 1) % 3 === 0
                                             ? 'flex flex-col lg:flex-row col-span-2'
                                             : 'flex flex-col lg:col-span-1 col-span-2'
@@ -53,7 +52,7 @@ export default function FeatureComp({ data }) {
                                                         <ul className='flex flex-col gap-1 list-disc'>
                                                             {feature?.more_content?.usecases?.map((usecase, index) => {
                                                                 return (
-                                                                    <li>
+                                                                    <li key={index}>
                                                                         <strong>{usecase.name}:</strong>{' '}
                                                                         {usecase?.description}
                                                                     </li>
@@ -76,6 +75,14 @@ export default function FeatureComp({ data }) {
                                                         </ul>
                                                     </div>
                                                 )}
+                                                {feature?.button && (
+                                                    <LinkButton
+                                                        customClasses={'active-link text-link'}
+                                                        target='_blank'
+                                                        content={feature?.button?.name}
+                                                        href={feature?.button?.link}
+                                                    />
+                                                )}
                                                 <div
                                                     onClick={() => {
                                                         setOpenedFeatures((prevOpenedFeatures) => {
@@ -92,15 +99,6 @@ export default function FeatureComp({ data }) {
                                                         content={'Read More'}
                                                     />
                                                 </div>{' '}
-                                                {feature?.button && (
-                                                    <div className='mt-4'>
-                                                        <Link target='blank' href={feature?.button?.link}>
-                                                            <button className='btn btn-primary w-fit btn-sm'>
-                                                                {feature?.button?.name}
-                                                            </button>
-                                                        </Link>
-                                                    </div>
-                                                )}
                                             </>
                                         )}
                                     </div>
