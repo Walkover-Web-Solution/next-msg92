@@ -53,7 +53,6 @@ export default function BannerComp({ pageInfo, data }) {
     }, [pageInfo]);
 
     const [animationData, setAnimationData] = useState(null);
-    console.log('🚀 ~ BannerComp ~ animationData:', animationData);
 
     useEffect(() => {
         const fetchLottieData = async () => {
@@ -188,7 +187,7 @@ export default function BannerComp({ pageInfo, data }) {
                     </div>
                 )}
             </div>
-            {isModalOpen && (
+            {isModalOpen && data?.lottie && (
                 <dialog id='whatsapp_modal' className='modal' open>
                     <div className='modal-box'>
                         <button
