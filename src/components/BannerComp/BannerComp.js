@@ -11,6 +11,7 @@ import { MdCopyAll } from 'react-icons/md';
 import { InlineWidget } from 'react-calendly';
 import getURL from '@/utils/getURL';
 import Link from 'next/link';
+import Lottie from 'react-lottie';
 
 export default function BannerComp({ pageInfo, data }) {
     const [isCopied, setIsCopied] = useState(false);
@@ -50,6 +51,33 @@ export default function BannerComp({ pageInfo, data }) {
         };
         setCode(snippetCode);
     }, [pageInfo]);
+
+    const [animationData, setAnimationData] = useState(null);
+    console.log('🚀 ~ BannerComp ~ animationData:', animationData);
+
+    useEffect(() => {
+        const fetchLottieData = async () => {
+            if (data?.lottie) {
+                try {
+                    const response = await fetch(data.lottie);
+                    const animationJson = await response.json();
+                    const lottieOptions = {
+                        loop: true,
+                        autoplay: true,
+                        animationData: animationJson,
+                        rendererSettings: {
+                            preserveAspectRatio: 'xMidYMid slice',
+                        },
+                    };
+                    setAnimationData(lottieOptions);
+                } catch (error) {
+                    console.error('Error loading Lottie animation:', error);
+                }
+            }
+        };
+
+        fetchLottieData();
+    }, [data?.lottie]);
 
     return (
         <>
@@ -152,6 +180,11 @@ export default function BannerComp({ pageInfo, data }) {
                             height={2000}
                             alt={data?.tagline}
                         />
+                    </div>
+                )}
+                {animationData && (
+                    <div className={styles.lottie_animation}>
+                        <Lottie options={animationData} />
                     </div>
                 )}
             </div>

@@ -12,7 +12,7 @@
         "tagline": "WhatsApp Messaging Revolution",
         "heading": "WhatsApp API for Global Messaging and Communication",
         "subheading": "Use WhatsApp API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
-        "banner_img": "",
+        "lottie": "@/data/lotties/in-whatsapp.json",
         "getstarted_btn": "Get Started",
         "schedule_meet": "Schedule a Meeting",
         "trustedByComp": {
@@ -79,9 +79,9 @@
                         "Multilingual support for global audiences."
                     ]
                 },
-                "button":{
-                    "name":"Test WhatsApp Chatbot",
-                    "link":"https://msg91.com/demochatbot"
+                "button": {
+                    "name": "Test WhatsApp Chatbot",
+                    "link": "https://msg91.com/demochatbot"
                 },
                 "img": "/assets/us/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg"
             },
@@ -330,7 +330,6 @@
                 },
                 "img": "/assets/us/whatsapp/whatsapp-robust-whatsapp-api-for-business-scalability.svg"
             },
- 
             {
                 "name": "Audience Segmentation and Automated Reminders through WhatsApp",
                 "content": "Never miss an opportunity to engage your customers with <strong>automated WhatsApp message reminders</strong> for birthdays, anniversaries, class schedules, and more. Strengthen customer relationships by sending personalized messages that make them feel valued and appreciated.",
@@ -402,7 +401,6 @@
                 },
                 "img": "/assets/us/whatsapp/whatsapp-audience-segmentation-for-targeted-campaigns-and-customer-journeys.svg"
             },
- 
             {
                 "name": "Drive Engagement with WhatsApp Broadcast and Campaigns",
                 "content": "Leverage the power of WhatsApp Broadcast and Campaigns to reach your audience with personalized messages at scale. Whether it's promoting a new product, sharing exclusive offers, or sending event invitations, WhatsApp campaigns ensure your message lands directly in your customers' inboxes. With advanced segmentation and scheduling, you can deliver the right message to the right audience at the right time.",
@@ -529,7 +527,7 @@
                 "img": "/assets/us/whatsapp/whatsapp-simplify-reporting-with-whatsapp-export-logs.svg"
             }
         ]
-},
+    },
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
