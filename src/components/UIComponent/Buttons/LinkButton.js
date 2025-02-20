@@ -12,10 +12,10 @@ const arrowIcon = (
     </svg>
 );
 
-export function LinkButton({ href, content, customClasses }) {
+export function LinkButton({ href, content, target, customClasses }) {
     return (
         <>
-            <Link href={href || '/'} className={`link-btn ${customClasses || ''}`}>
+            <Link href={href || '/'} target={target || '_self'} className={`link-btn ${customClasses || ''}`}>
                 {content}
                 {arrowIcon}
             </Link>
@@ -46,7 +46,7 @@ export function BtnWithHideIco({ children, customClasses }) {
 export function MoreButton({ content, customClasses, open }) {
     return (
         <>
-            <span className={`link-btn hover:text-blue-500 cursor-pointer  ${customClasses || ''}`}>
+            <span className={`link-btn text-link cursor-pointer  ${customClasses || ''}`}>
                 {content}
                 {open ? <MdKeyboardArrowUp fontSize={24} /> : <MdKeyboardArrowDown fontSize={24} />}
             </span>
