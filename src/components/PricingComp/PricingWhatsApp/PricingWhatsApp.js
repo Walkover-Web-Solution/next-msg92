@@ -5,6 +5,7 @@ import axios from 'axios';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
+import CalculatePricingWhatsApp from './CalculatePricingWhatsApp/CalculatePricingWhatsApp';
 
 export default function PricingWhatsApp({ country, data }) {
     const { currency, symbol } = GetCurrencySymbol(country);
@@ -53,7 +54,15 @@ export default function PricingWhatsApp({ country, data }) {
                     </div>
                     <div className='flex flex-col gap-8'>
                         <div className='flex flex-col gap-2'>
-                            <h2 className='text-2xl font-bold mb-1'>{data?.heading}</h2>
+                            <div className='flex w-full justify-between items-center'>
+                                <h2 className='text-2xl font-bold mb-1'>{data?.heading || 'Whatsapp API Pricing'} </h2>
+                                <button
+                                    onClick={() => document.getElementById('calculate_whatsapp_pricing').showModal()}
+                                    className='btn btn-accent btn-outline w-fit btn-sm'
+                                >
+                                    Calculate
+                                </button>
+                            </div>
                             <p>{data?.tax}</p>
                             {data?.adds && <p>{data?.adds}</p>}
                         </div>
@@ -213,6 +222,16 @@ export default function PricingWhatsApp({ country, data }) {
                     <ConnectWithTeam product={'WhatsApp'} data={data?.connectComp} href={'whatsapp'} isPlan={false} />
                 </div>
             </div>
+            {plans?.length > 0 && (
+                <dialog id='calculate_whatsapp_pricing' className='modal'>
+                    <CalculatePricingWhatsApp
+                        plans={plans}
+                        currentCountry={currentCountry}
+                        currency={currency}
+                        symbol={symbol}
+                    />
+                </dialog>
+            )}
         </>
     );
 }
