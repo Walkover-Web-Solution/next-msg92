@@ -82,7 +82,7 @@ export default function TestPage({
                     <h1 className='text-4xl font-bold'>{title}</h1>
                     {thumbnailImage !== '' && <img className='' src={thumbnailImage} alt={author} />}
                 </div>
-                <div className='body leading-normal flex flex-col gap-4 text-lg'>
+                <div className='body leading-normal flex flex-col gap-4 text-lg ancor-parent'>
                     <MDXRemote {...source} components={component} />
                 </div>
                 <ul className={'tag-list'}>
