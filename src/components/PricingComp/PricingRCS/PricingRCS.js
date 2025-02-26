@@ -48,10 +48,10 @@ export default function PricingRCS({ country, data, pageInfo }) {
                                 <tr className='font-bold text-[16px] text-black '>
                                     <th className='w-[300px] border-r'>Market</th>
                                     <th className='border-r'>Prefix</th>
-                                    <th className='border-r'>Marketing</th>
-                                    <th className='border-r'>Utility</th>
-                                    <th className='border-r'>Authentication</th>
-                                    <th className=''>Service</th>
+                                    <th className='border-r text-wrap'>Single Text Promotional Rate</th>
+                                    <th className='border-r text-wrap'>Single Text Transactional Rate</th>
+                                    <th className='border-r text-wrap'>Rich Promotional Rate</th>
+                                    <th className='text-wrap'>Rich Transactional Rate</th>
                                 </tr>
                             </thead>
                             <tbody>
