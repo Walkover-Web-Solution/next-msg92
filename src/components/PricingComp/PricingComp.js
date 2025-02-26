@@ -43,7 +43,7 @@ export default function PricingComp({ data, pageInfo }) {
 
                     {page === 'voice' && <PricingVoice data={data?.voice} country={pageInfo?.country} />}
 
-                    {page === 'rcs' && <PricingRCS data={data?.rcs} country={pageInfo?.country} />}
+                    {page === 'rcs' && <PricingRCS data={data?.rcs} country={pageInfo?.country} pageInfo={pageInfo} />}
                 </div>
             </div>
         </>
