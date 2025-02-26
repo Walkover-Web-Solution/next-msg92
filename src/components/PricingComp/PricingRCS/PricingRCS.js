@@ -13,7 +13,7 @@ export default function PricingRCS({ country, data, pageInfo }) {
     const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
     const [loading, setLoading] = useState(true);
     const [plans, setPlans] = useState();
-    // const [isSalesModalOpen, setIsSalesModalOpen] = useState(false);
+    const [isSalesModalOpen, setIsSalesModalOpen] = useState(false);
 
     useEffect(() => {
         const getWhatsAppPricing = async () => {
@@ -38,9 +38,14 @@ export default function PricingRCS({ country, data, pageInfo }) {
                 <div className='flex flex-col w-full gap-8'>
                     <div className='p-8 flex flex-col gap-4 bg-white h-fit rounded w-fit'>
                         <h2 className='text-2xl'>Connect To Our Team For The Customized RCS Message Pricing</h2>
-                        <Link className='w-fit' href={getURL('contact-us', 'rcs')} target='_blank'>
-                            <button className='btn btn-primary btn-md'>Contact Us</button>
-                        </Link>
+                        <button
+                            onClick={() => {
+                                setIsSalesModalOpen(true);
+                            }}
+                            className='btn btn-primary btn-md'
+                        >
+                            Connect
+                        </button>
                     </div>
                     <div className='flex flex-col gap-8'>
                         <table className='table bg-white rounded'>
@@ -48,10 +53,10 @@ export default function PricingRCS({ country, data, pageInfo }) {
                                 <tr className='font-bold text-[16px] text-black '>
                                     <th className='w-[300px] border-r'>Market</th>
                                     <th className='border-r'>Prefix</th>
-                                    <th className='border-r'>Marketing</th>
-                                    <th className='border-r'>Utility</th>
-                                    <th className='border-r'>Authentication</th>
-                                    <th className=''>Service</th>
+                                    <th className='border-r text-wrap'>Single Text Promotional Rate</th>
+                                    <th className='border-r text-wrap'>Single Text Transactional Rate</th>
+                                    <th className='border-r text-wrap'>Rich Promotional Rate</th>
+                                    <th className='text-wrap'>Rich Transactional Rate</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -175,7 +180,7 @@ export default function PricingRCS({ country, data, pageInfo }) {
                 </div>
             </div>
 
-            {/* {isSalesModalOpen && (
+            {isSalesModalOpen && (
                 <dialog id='sales_modal' className='modal' open>
                     <div className='modal-box'>
                         <button
@@ -184,10 +189,13 @@ export default function PricingRCS({ country, data, pageInfo }) {
                         >
                             ✕
                         </button>
-                        <InlineWidget url='https://calendly.com/sales-msg91/pre-sales' styles={{ height: '680px' }} />
+                        <InlineWidget
+                            url='https://calendly.com/msg91-rcs/15-min-rcs-meeting'
+                            styles={{ height: '680px' }}
+                        />
                     </div>
                 </dialog>
-            )} */}
+            )}
         </>
     );
 }
