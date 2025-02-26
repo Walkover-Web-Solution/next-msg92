@@ -85,10 +85,10 @@ export default function PricingSMSOTP({ data, type, country }) {
     return (
         <>
             <div className='flex flex-col gap-3 w-full'>
-                <h1 className='text-3xl font-semibold capitalize '>{type.toUpperCase()} Pricing</h1>
+                <h1 className='text-3xl font-semibold capitalize '>{type?.toUpperCase()} Pricing</h1>
                 <div className='w-full flex flex-col gap-8'>
                     <div className='flex lg:flex-row flex-col items-center text-lg gap-3'>
-                        <span>Send {type.toUpperCase()} From</span>
+                        <span>Send {type?.toUpperCase()} From</span>
                         <div className='w-[300px] z-50'>
                             <Typeahead
                                 className='country-typehead'
@@ -194,9 +194,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                                     <span className='text-3xl font-bold '>
                                         {' '}
                                         {noOfSmsArray[sliderValue] && noOfSmsArray[sliderValue][pricingEnv]
-                                            ? contvertToLocal(
-                                                  Number(noOfSmsArray[sliderValue][pricingEnv].totalNoOfSms)
-                                              )
+                                            ? Number(noOfSmsArray[sliderValue][pricingEnv].totalNoOfSms)
                                             : 'N/A'}
                                     </span>
 
@@ -207,7 +205,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                                         {contvertToLocal(
                                             (Number(PricingToShow) % 1 === 0
                                                 ? Number(PricingToShow)
-                                                : Number(PricingToShow).toFixed(1)
+                                                : Number(PricingToShow).toFixed(3)
                                             )
                                                 .toString()
                                                 .replace(/\.0$/, '')
@@ -234,7 +232,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                                 <div className='text-3xl font-bold text-green-600'>
                                     {symbol}
                                     {noOfSmsArray.length > 0 && noOfSmsArray[0]?.[pricingEnv]?.rate
-                                        ? contvertToLocal(noOfSmsArray[0][pricingEnv].rate)
+                                        ? noOfSmsArray[0][pricingEnv].rate
                                         : 'N/A'}{' '}
                                     per {type?.toUpperCase()}
                                 </div>
