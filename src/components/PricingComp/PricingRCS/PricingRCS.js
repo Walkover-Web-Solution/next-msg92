@@ -17,7 +17,7 @@ export default function PricingRCS({ country, data, pageInfo }) {
         const getWhatsAppPricing = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(`https://testrcs.phone91.com/get-pricing-data/${currency}`);
+                const response = await axios.get(`https://rcs.phone91.com/get-pricing-data/${currency}`);
                 setPlans(
                     response?.data?.data?.pricing_list?.sort((a, b) => a.country_name.localeCompare(b.country_name))
                 );
