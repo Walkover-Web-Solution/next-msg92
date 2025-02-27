@@ -1,12 +1,10 @@
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 import GetCountryDetails from '@/utils/getCurrentCountry';
-import getURL from '@/utils/getURL';
 import axios from 'axios';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import { InlineWidget } from 'react-calendly';
-import Link from 'next/link';
+import CalculatePricingRCS from './CalculatePricingRCS/CalculatePricingRCS';
 
 export default function PricingRCS({ country, data, pageInfo }) {
     const { currency, symbol } = GetCurrencySymbol(country);
@@ -31,12 +29,13 @@ export default function PricingRCS({ country, data, pageInfo }) {
         };
         getWhatsAppPricing();
     }, []);
+
     return (
         <>
             <div className='flex flex-col gap-3 w-full'>
                 <h1 className='text-3xl font-semibold capitalize'>RCS Pricing</h1>
                 <div className='flex flex-col w-full gap-8'>
-                    <div className='p-8 flex flex-col gap-4 bg-white h-fit rounded w-fit'>
+                    <div className='p-8 flex flex-col gap-4 bg-white h-full rounded w-full'>
                         <h2 className='text-2xl'>Connect To Our Team For The Customized RCS Message Pricing</h2>
                         <button
                             onClick={() => {
@@ -45,6 +44,14 @@ export default function PricingRCS({ country, data, pageInfo }) {
                             className='btn btn-primary btn-md'
                         >
                             Connect
+                        </button>
+                    </div>
+                    <div className='flex w-full justify-end items-center'>
+                        <button
+                            onClick={() => document.getElementById('calculate_rcs_pricing').showModal()}
+                            className='btn btn-accent btn-outline w-fit btn-sm'
+                        >
+                            Calculate
                         </button>
                     </div>
                     <div className='flex flex-col gap-8'>
@@ -194,6 +201,16 @@ export default function PricingRCS({ country, data, pageInfo }) {
                             styles={{ height: '680px' }}
                         />
                     </div>
+                </dialog>
+            )}
+            {plans?.length > 0 && (
+                <dialog id='calculate_rcs_pricing' className='modal'>
+                    <CalculatePricingRCS
+                        plans={plans}
+                        currentCountry={currentCountry}
+                        currency={currency}
+                        symbol={symbol}
+                    />
                 </dialog>
             )}
         </>
