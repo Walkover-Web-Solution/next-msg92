@@ -11,9 +11,11 @@ import { MdCopyAll } from 'react-icons/md';
 import { InlineWidget } from 'react-calendly';
 import getURL from '@/utils/getURL';
 import Link from 'next/link';
+import Lottie from 'react-lottie';
 
 export default function BannerComp({ pageInfo, data }) {
     const [isCopied, setIsCopied] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [code, setCode] = useState({});
 
     const [selectedLanguage, setSelectedLanguage] = useState('curl');
@@ -50,6 +52,32 @@ export default function BannerComp({ pageInfo, data }) {
         setCode(snippetCode);
     }, [pageInfo]);
 
+    const [animationData, setAnimationData] = useState(null);
+
+    useEffect(() => {
+        const fetchLottieData = async () => {
+            if (data?.lottie) {
+                try {
+                    const response = await fetch(data.lottie);
+                    const animationJson = await response.json();
+                    const lottieOptions = {
+                        loop: true,
+                        autoplay: true,
+                        animationData: animationJson,
+                        rendererSettings: {
+                            preserveAspectRatio: 'xMidYMid slice',
+                        },
+                    };
+                    setAnimationData(lottieOptions);
+                } catch (error) {
+                    console.error('Error loading Lottie animation:', error);
+                }
+            }
+        };
+
+        fetchLottieData();
+    }, [data?.lottie]);
+
     return (
         <>
             <div className='container cont_p flex gap-6 h-fit flex-col lg:flex-row overflow-hidden'>
@@ -84,10 +112,7 @@ export default function BannerComp({ pageInfo, data }) {
                             {data?.getstarted_btn}
                         </a>
                         {data?.schedule_meet && (
-                            <button
-                                className='btn btn-md btn-primary btn-outline'
-                                onClick={() => document.getElementById('whatsapp_modal').showModal()}
-                            >
+                            <button className='btn btn-md btn-primary btn-outline' onClick={() => setIsModalOpen(true)}>
                                 {data?.schedule_meet}
                             </button>
                         )}
@@ -145,7 +170,7 @@ export default function BannerComp({ pageInfo, data }) {
                         )}
                     </div>
                 </div>
-                {!data?.code && (
+                {!data?.code && data?.banner_img && (
                     <div className={styles.cont}>
                         <Image
                             className={pageInfo?.page === 'home' ? styles.homeimg : styles.img}
@@ -156,13 +181,21 @@ export default function BannerComp({ pageInfo, data }) {
                         />
                     </div>
                 )}
+                {animationData && data?.lottie && !data?.code && (
+                    <div className={styles.lottie_animation}>
+                        <Lottie options={animationData} />
+                    </div>
+                )}
             </div>
-            {data?.schedule_meet && (
-                <dialog id='whatsapp_modal' className='modal'>
+            {isModalOpen && (
+                <dialog id='whatsapp_modal' className='modal' open>
                     <div className='modal-box'>
-                        <form method='dialog'>
-                            <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
-                        </form>
+                        <button
+                            onClick={() => setIsModalOpen(false)}
+                            className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'
+                        >
+                            ✕
+                        </button>
                         <InlineWidget
                             url='https://calendly.com/msg91-whatsapp/15-min-meeting?back=1'
                             styles={{ height: '680px', width: 'auto' }}

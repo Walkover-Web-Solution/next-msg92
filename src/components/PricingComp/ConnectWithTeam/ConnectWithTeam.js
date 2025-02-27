@@ -1,9 +1,11 @@
 import getURL from '@/utils/getURL';
 import Link from 'next/link';
+import { useState } from 'react';
 import { InlineWidget } from 'react-calendly';
 import { MdLaunch } from 'react-icons/md';
 
 export default function ConnectWithTeam({ product, isPlan, data, href, per }) {
+    const [isSalesModalOpen, setIsSalesModalOpen] = useState(false);
     return (
         <div className='flex flex-col gap-3'>
             {isPlan && (
@@ -13,10 +15,7 @@ export default function ConnectWithTeam({ product, isPlan, data, href, per }) {
                     ) : (
                         <div className='text-xl' dangerouslySetInnerHTML={{ __html: data?.content }}></div>
                     )}
-                    <button
-                        onClick={() => document.getElementById('sales_modal').showModal()}
-                        className='btn btn-outline btn-md'
-                    >
+                    <button onClick={() => setIsSalesModalOpen(true)} className='btn btn-outline btn-md'>
                         {data?.sales_btn}
                     </button>
                 </>
@@ -27,12 +26,15 @@ export default function ConnectWithTeam({ product, isPlan, data, href, per }) {
                     {data?.know_more} {product}
                 </Link>
             </div>
-            {isPlan && (
-                <dialog id='sales_modal' className='modal'>
+            {isSalesModalOpen && (
+                <dialog id='sales_modal' className='modal' open>
                     <div className='modal-box'>
-                        <form method='dialog'>
-                            <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
-                        </form>
+                        <button
+                            onClick={() => setIsSalesModalOpen(false)}
+                            className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'
+                        >
+                            ✕
+                        </button>
                         <InlineWidget url='https://calendly.com/sales-msg91/pre-sales' styles={{ height: '680px' }} />
                     </div>
                 </dialog>
