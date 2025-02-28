@@ -8,6 +8,7 @@ import { Typeahead } from 'react-bootstrap-typeahead';
 import getURL from '@/utils/getURL';
 import GetCountryDetails from '@/utils/getCurrentCountry';
 import countries from '@/data/countries.json';
+import CalculateVoicePricing from './CalculateVoicePricing/CalculateVoicePricing';
 
 export default function PricingVoice({ data, country }) {
     const [countryData, setCountryData] = useState([]);
@@ -138,7 +139,10 @@ export default function PricingVoice({ data, country }) {
     return (
         <>
             <div className='flex flex-col gap-3 w-full'>
-                <h1 className='text-3xl font-semibold capitalize '>Voice Pricing </h1>
+                <div className='flex items-center gap-4'>
+                    <h1 className='text-3xl font-semibold capitalize '>Voice Pricing </h1>
+                </div>
+
                 <div className='w-full flex flex-col gap-10'>
                     <div className='w-full flex flex-col gap-4'>
                         {countryData.length > 0 && (
@@ -161,8 +165,15 @@ export default function PricingVoice({ data, country }) {
                                 />
                             </div>
                         )}
-
-                        <h1 className='text-xl font-semibold'>{data?.heading}</h1>
+                        <div className='flex items-center gap-4'>
+                            <h2 className='text-xl font-semibold'>{data?.heading}</h2>{' '}
+                            <button
+                                onClick={() => document.getElementById('calculate_voice_pricing').showModal()}
+                                className='btn btn-accent btn-outline w-fit btn-sm'
+                            >
+                                Calculate
+                            </button>
+                        </div>
                         {country === 'in' && <p className='text-lg'>GST excluded.</p>}
                         {country === 'gb' && <p className='text-lg'>VAT excluded.</p>}
                         <table className='table bg-white rounded w-full'>
@@ -305,6 +316,11 @@ export default function PricingVoice({ data, country }) {
                     <FaqsComp data={data?.faqComp} notCont={true} />
                 </div>
             </div>
+            {plans?.length > 0 && (
+                <dialog id='calculate_voice_pricing' className='modal'>
+                    <CalculateVoicePricing plans={plans} currency={currency} symbol={symbol} />
+                </dialog>
+            )}
         </>
     );
 }
