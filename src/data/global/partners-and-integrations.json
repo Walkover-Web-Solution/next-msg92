@@ -3,203 +3,279 @@
         "title": "Magento, WooCommerce, OpenCart, WordPress SMS addon plugin - MSG91",
         "description": "Wordpress SMS plugin, WooCommerce SMS plugin, OpenCart SMS extension, Magento SMS extension, OpenCart SMS gateway to send unlimited SMS directly from website"
     },
-    "IntegrationsComp":{
-        "heading":"Integrations & Add-ons",
-        "subheading":"Add-ons that enable SMS notifications in your application with a single click.",
-        "doc_btn":"Get your API key",
-        "doc_btn_link":"https://msg91.com/signup",
-        "addon":{
-            "heading":"MSG91 Add-ons for your preferred Platform",
-            "subheading":"Note – For paid plugins you will receive free credits, depending on the policy.",
-            "cards":[
+    "IntegrationsComp": {
+        "heading": "Integrations & Add-ons",
+        "subheading": "Add-ons that enable SMS notifications in your application with a single click.",
+        "doc_btn": "Get your API key",
+        "doc_btn_link": "https://msg91.com/signup",
+        "plugins_by_msg91": {
+            "heading": "Plugins by MSG91",
+            "plugins": [
                 {
-                    "name":"MS Excel",
-                    "description":"MSG91 has created a one stop solution for all MS Excel users to send communication through multiple channels like Text message, Whatsapp, RCS, Emails and Voice Call.",
-                    "icon":"/assets/integration_partner/excel.jpg",
-                    "author":"By:MSG91",
-                    "url":"https://msg91.com/help"
+                    "name": "Shopify",
+                    "description": "MSG91 have a native integration with shopify which allow you to send notifications and alerts on multiple events (i.e. Order Updates, Abandoned cart and checkouts) and you can sync MSG91's Segmento with shopify account to capture the user events and their journey to run marketing and  retention campaigns, also you can set up a hello chat widget and whatsapp widget on the website and many more.",
+                    "icon": "/assets/integration_partner/shopify.webp",
+                    "channels": [
+                        {
+                            "channel": "SMS",
+                            "link": "https://msg91.com/help/add-ons-and-plug-ins/how-to-use-msg91-with-shopify"
+                        },
+                        {
+                            "channel": "WhatsApp",
+                            "link": "https://msg91.com/help/add-ons-and-plug-ins/how-to-use-msg91-with-shopify"
+                        }
+                    ]
                 },
                 {
-                    "name":"FreshWorks",
-                    "description":"Automate your customer communication model by using MSG91! Send customized communications through Email, Text Message, RCS and Whatsapp for Deal/Contact related alerts. Increasing your customer reach with automation and boost sales.",
-                    "icon":"/assets/integration_partner/freshworks.png",
-                    "author":"By:MSG91",
-                    "url":"https://www.freshworks.com/apps/msg91-for-freshworks_crm/"
-                },    {
-                    "name":"Shopify",
-                    "description":"Send customized automated communications through Email, Text Message, RCS and Whatsapp for:Order Related Alerts, Signup Greetings, Abandoned Cart Alerts, Abandoned Checkout Alerts,Order Cancellation Alerts, Refund Alerts, etc",
-                    "icon":"/assets/integration_partner/shopify.webp",
-                     "author":"By:MSG91",
-                    "url":"https://apps.shopify.com/msg91"
+                    "name": "Zoho CRM",
+                    "description": "MSG91 offers native plugin for zoho crm through which you can automate the omnichannel campaigns for multiple lead stages and workflow conditions. You can manually run personalized multichannel bulk campaigns on specific segments directly from your Zoho CRM panel.MSG91 also provides webhooks for inbound and outbound whatsapp messages to capture the logs and responses and many more features you can explore through the plugin.",
+                    "icon": "/assets/integration_partner/zoho-crm.svg",
+                    "channels": [
+                        {
+                            "channel": "SMS",
+                            "link": "https://msg91.com/help/integration-guides/zoho-subscription-how-to-integrate-with-msg91"
+                        },
+                        {
+                            "channel": "WhatsApp",
+                            "link": "https://msg91.com/help/integration-guides/zoho-subscription-how-to-integrate-with-msg91"
+                        }
+                    ]
                 },
                 {
-                    "name":"Google Sheets",
-                    "description":"MSG91 has created a one stop solution for all Google Spreadsheet users to send communication through multiple channels like Text message, Whatsapp, RCS, Emails and Voice Call.",
-                    "icon":"/assets/integration_partner/googlesheets.png",
-                    "author":"By:MSG91",
-                    "url":"https://msg91.com/help"
+                    "name": "Clevertap",
+                    "description": "MSG91 has SMS and Whatsapp integration with CleverTap. You can run sms and whatsapp campaigns on specific segments of your CleverTap account and also the sent delivery failed and click reports you can track in your  CleverTap panel itself for different campaigns. You can also send different type of whatsapp templates (i.e. Carousel, Limited time offer, flow) on single and bulk data which allows you to plan your marketing strategies more effectively.",
+                    "icon": "/assets/integration_partner/clevertap.png",
+                    "channels": [
+                        {
+                            "channel": "SMS",
+                            "link": "https://msg91.com/help/integration-guides/how-to-send-sms-in-clevertap-with-msg91"
+                        },
+                        {
+                            "channel": "WhatsApp",
+                            "link": "https://msg91.com/help/whatsapp/clevertap-whatsapp-connector"
+                        }
+                    ]
                 },
                 {
-                    "name":"Auth0",
-                    "description":"MSG91 has created a one stop solution for all Auth0 users to send Multi Factor Authentication communication(MFA) through multiple channels like Text message, Whatsapp, RCS, Emails and Voice Call.",
-                    "icon":"/assets/integration_partner/auth0.png",
-                    "author":"By:MSG91",
-                    "url":"https://marketplace.auth0.com/integrations/msg-91"
-                },    {
-                    "name":"Pabbly Connect",
-                    "description":"Connect MSG91 with more than 1000+ apps. Just select the app and you're good to go. No installation required!",
-                    "icon":"/assets/integration_partner/pabbly.webp",
-                   "author":"By:MSG91",
-                    "url":"https://www.pabbly.com/connect/integrations/msg91/"
+                    "name": "WebEngage",
+                    "description": "MSG91 allows you to send SMS and Whatsapp messages through your WebEngage platform.",
+                    "icon": "/assets/integration_partner/webengage.jpg",
+                    "channels": [
+                        {
+                            "channel": "SMS",
+                            "link": "https://msg91.com/help/add-ons-and-plug-ins/how-to-send-sms-in-webengage-with-msg91"
+                        },
+                        {
+                            "channel": "WhatsApp",
+                            "link": "https://msg91.com/help/whatsapp/webengage-whatsapp-integration"
+                        }
+                    ]
                 },
                 {
-                    "name":"ViaSocket",
-                    "description":"Stop managing servers to build business logics. Use Viasocket as a no-code tool or control the code using low-code script, conditions, and loop to build complex workflows.",
-                    "icon":"/assets/integration_partner/socket.png",
-                     "author":"By:MSG91",
-                    "url":"https://auth.viasocket.com/signup"
+                    "name": "MoEngage",
+                    "description": "MSG91 allows you to send SMS and Whatsapp messages through your MoEngage platform.",
+                    "icon": "/assets/integration_partner/moengage.webp",
+                    "channels": [
+                        {
+                            "channel": "SMS",
+                            "link": "https://msg91.com/help/text-sms/msg91-sms-connector-for-moengage"
+                        },
+                        {
+                            "channel": "WhatsApp",
+                            "link": "https://msg91.com/help/whatsapp/moengage-whatsapp-integration"
+                        }
+                    ]
                 },
                 {
-                    "name":"Clevertap",
-                    "description":"CleverTap is a customer engagement and retention platform that provides the functionality to integrate app analytics and marketing.",
-                    "icon":"/assets/integration_partner/clevertap.png",
-                    "author":"By:Clevertap",
-                    "url":"https://docs.clevertap.com/docs/msg91"
-                },    {
-                    "name":"Integrately",
-                    "description":"Integrately gives you LOTS of pre-made automations. So you can activate automations in 1 click!",
-                    "icon":"/assets/integration_partner/integrately.png",
-                    "author":"By: Third-Party",
-                    "url":"https://integrately.com/integrations/msg91"
+                    "name": "Tally",
+                    "description": "This plugin offers a range of features to help you streamline your invoicing and ledger management processes. In this help document, we will explore the top three key features and their associated benefits.",
+                    "extra": [
+                        "Send Vouchers via Whatsapp or Email (Credit note, Debit Note,Journal Voucher,Payment,Purchase,Receipt,Sales)",
+                        "Resend Voucher or Invoice Manually via Email or WhatsApp",
+                        "Manual Sending of Ledgers"
+                    ],
+                    "icon": "/assets/integration_partner/Tally.png",
+                    "channels": [
+                        {
+                            "channel": "SMS",
+                            "link": "https://msg91.com/help/integration-guides/integrate-tally-with-msg91"
+                        },
+                        {
+                            "channel": "WhatsApp",
+                            "link": "https://msg91.com/help/integration-guides/integrate-tally-with-msg91"
+                        }
+                    ]
                 },
                 {
-                    "name":"Magento",
-                    "description":"Notify customers about current order status and available promotions in time and boost their loyalty with Magento 2 SMS Notification Pro extension.",
-                    "icon":"/assets/integration_partner/amasty.png",
-                    "author":"By: Third-Party",
-                    "url":"https://amasty.com/docs/doku.php?id=magento_2:sms_notification"
+                    "name": "Kylas",
+                    "description": "You can integrate MSG91 services with your Kylas CRM and make triggers automated according to your leads and contact stages. It allows you to communicate with your customers Via SMS,Whatsapp,Email,RCS and Voice.",
+                    "icon": "/assets/integration_partner/kylas.svg",
+                    "channels": [
+                        {
+                            "channel": "SMS",
+                            "link": "https://msg91.com/help/integration-guides/Kylas-MSG91"
+                        },
+                        {
+                            "channel": "WhatsApp",
+                            "link": "https://msg91.com/help/integration-guides/Kylas-MSG91"
+                        }
+                    ]
                 },
                 {
-                    "name":"Zoho Flow",
-                    "description":"Zoho Flow is MSG91 plugin that helps with the SMS and Email notifications. Sends an email to the specified recipients, Sends a text message to the specified phone numbers, Creates a contact in the selected group. If the contact exists, the details are updated, Sends an OTP to the selected phone number and Resends an OTP to the selected phone number",
-                    "icon":"/assets/integration_partner/zoho.png",
-                    "author":"By: Third-Party",
-                    "url":"https://www.zohoflow.com/en-in/apps/msg91/integrations/"
-                },    {
-                    "name":"WHMCS",
-                    "description":"WHMCS SMS add-on allows you to send automated SMS message to your clients on defined actions, such as placing a new order, register, password change, payment status and more. You can even receive alerts as administrator on events.",
-                    "icon":"/assets/integration_partner/whmcs.png",
-                   "author":"By: Third-Party",
-                    "url":"https://msg91.com/help"
+                    "name": "Freshworks",
+                    "description": "Automate your customer communication model by using MSG91! Send customized communications through Email, Text Message, RCS and Whatsapp for Deal/Contact related alerts. Increasing your customer reach with automation and boost sales.",
+                    "icon": "/assets/integration_partner/freshworks.svg",
+                    "channels": [
+                        {
+                            "channel": "SMS",
+                            "link": "https://msg91.com/help/add-ons-and-plug-ins/freshworks-how-to-integrate-the-msg91-plugin-in-freshworks"
+                        },
+                        {
+                            "channel": "WhatsApp",
+                            "link": "https://msg91.com/help/add-ons-and-plug-ins/freshworks-how-to-integrate-the-msg91-plugin-in-freshworks"
+                        }
+                    ]
                 },
                 {
-                    "name":"Vtiger",
-                    "description":"Vtiger is an open source CRM software solutions which offers marketing and service with quotes and sales order processing, inventory/products, billing and project management. Send SMS directly to leads, contacts or accounts via Vtiger SMS plugin.",
-                    "icon":"/assets/integration_partner/vtiger.png",
-                   "author":"By: Third-Party",
-                    "url":"https://msg91.com/help"
+                    "name": "MS Excel",
+                    "description": "MSG91 has created a one stop solution for all MS Excel users to send communication through multiple channels like Text message, Whatsapp, RCS, Emails and Voice Call.",
+                    "icon": "/assets/integration_partner/ms-excel.svg",
+                    "channels": [
+                        {
+                            "channel": "SMS",
+                            "link": "https://msg91.com/help/add-ons-and-plug-ins/excel-how-to-use-the-excel-plugin-for-sending-campaign"
+                        },
+                        {
+                            "channel": "WhatsApp",
+                            "link": "https://msg91.com/help/add-ons-and-plug-ins/excel-how-to-use-the-excel-plugin-for-sending-campaign"
+                        }
+                    ]
                 },
                 {
-                    "name":"Ulgebra Integrations",
-                    "description":"Integrate SMS and Whatsapp with Pipedrive CRM, Zoho CRM, Hubspot, Bitrix24, Salesforce, Freshworks, Zendesk, ZohoBooks, Freshdesk, Leadsquared, Shopify, Zoho Recruit, Bigin and MS Excel",
-                    "icon":"/assets/integration_partner/ulgebra.png",
-                   "author":"By: Third-Party",
-                    "url":"https://sms.ulgebra.com/marketplace/msg91"
-                },    {
-                    "name":"Segment",
-                    "description":"MSG91 provides SMS marketing/transactional automation for businesses. With Segment you can send SMS with a single call. This destination is maintained by MSG91.",
-                    "icon":"/assets/integration_partner/segmento.png",
-                  "author":"By: Third-Party",
-                    "url":"https://segment.com/catalog/integrations/destination/msg91/"
+                    "name": "Google Sheets",
+                    "description": "MSG91 has created a one stop solution for all Google Spreadsheet users to send communication through multiple channels like Text message, Whatsapp, RCS, Emails and Voice Call.",
+                    "icon": "/assets/integration_partner/google-sheets.svg",
+                    "channels": [
+                        {
+                            "channel": "SMS",
+                            "link": "https://msg91.com/help/add-ons-and-plug-ins/google-spreadsheet-how-to-send-sms"
+                        },
+                        {
+                            "channel": "WhatsApp",
+                            "link": "https://msg91.com/help/add-ons-and-plug-ins/google-spreadsheet-how-to-send-sms"
+                        }
+                    ]
                 },
                 {
-                    "name":"CSCart",
-                    "description":"Placing new order and Shipment information and Order status. We are providing MSG91 APIs which supports all Indian Cell Operators.",
-                    "icon":"/assets/integration_partner/cscart.jpg",
-                    "author":"By: Third-Party",
-                    "url":"https://www.fortune-kart.com/msg91-order-sms-notification-add-on-for-cs-cart.html"
-                },
-                {
-                    "name":"Rista Apps",
-                    "description":"Experience the power of the all-in-one platform for restaurants. The only platform that offers multi-channel sales, inventory & marketing on a single enterprise app. Direct & deep integrations with 3rd party, including food aggregators & payment providers, offer speed and high integrity of data transfer across multiple platforms.",
-                    "icon":"/assets/integration_partner/rista.png",
-                    "author":"By: Third-Party",
-                    "url":"https://ristaapps.com/business"
-                },    {
-                    "name":"PrestaShop",
-                    "description":"Notify customers by SMS when you update their orders from Order History page. You can associate an order status with a custom template. Notify clients by SMS on new order once they complete the online transaction. Notify clients or admin by SMS on registration",
-                    "icon":"/assets/integration_partner/prowebsms.jpg",
-                    "author":"By: Third-Party",
-                    "url":"https://www.prowebtec.com/sms3"
-                },
-                {
-                    "name":"Tellephant",
-                    "description":"By integrating WhatsApp Business API with MSG91, you’ll be able to reach out to customers through multiple channels. Message your customers via SMS, email, voice call, or WhatsApp through Tellephant.",
-                    "icon":"/assets/integration_partner/tellephant.png",
-                    "author":"By: Third-Party",
-                    "url":"https://www.tellephant.com/integrations/msg91-to-whatsapp-plugin"
-                },
-                {
-                    "name":"LeadSquared",
-                    "description":"It is now possible to integrate MSG91 SMS service with LeadSquared. Send automated and bulk messages to your customers.",
-                    "icon":"/assets/integration_partner/leadsquared.png",
-                    "author":"By: LeadSquared",
-                    "url":"https://help.leadsquared.com/points-to-note-when-creating-an-sms-campaign-on-msg91/"
-                },     {
-                    "name":"Magento",
-                    "description":"Make your online store more professional using Magento 2 Mobile Login extension by Meetanshi. Allow the customers to register & login on your store and update their mobile number and reset password using OTP in your store.",
-                    "icon":"/assets/integration_partner/meetanshi.svg",
-                    "author":"By: Third-Party",
-                    "url":"https://meetanshi.com/magento-2-mobile-login.html?utm_source=Website&utm_medium=Partners-integrartions&utm_campaign=PartnerPage"
-                },  {
-                    "name":"Tally",
-                    "description":"With Tally you can now send the notifications via Multiple Channels such as WhatsApp and EMails (Coming soon on other channels too). Resolve the use case - like Invoice Generated, Material Dispatch, Outstanding Reminders and lot more by using automations Send Vouchers, Resend Vouchers and Send the Ledger for specific period. For more details please Refer the Help Document.For MSG91 Files for Tally & Support - Connect at 'Support@msg91.com'",
-                    "icon":"/assets/integration_partner/Tally.png",
-                    "author":"By: MSG91",
-                    "url":"https://drive.google.com/drive/folders/1-XoT7bJeWax7igncW0qPVFRrA8Zuw4hj"
-                },
-                {
-                    "name":"Zapier",
-                    "description":"Zapier lets you connect MSG91 with thousands of the most popular apps, so you can automate your work and have more time for what matters most—no code required.",
-                    "icon":"/assets/integration_partner/zapier.png",
-                    "author":"By: MSG91",
-                    "url":"https://zapier.com/apps/msg91/integrations"
+                    "name": "Auth0",
+                    "description": "MSG91 has created a one stop solution for all Auth0 users to send Multi Factor Authentication communication(MFA) through multiple channels like Text message, Whatsapp, RCS, Emails and Voice Call.",
+                    "icon": "/assets/integration_partner/auth0.png",
+                    "channels": [
+                        {
+                            "channel": "SMS",
+                            "link": "https://msg91.com/help/integration-guides/How-to-Integrate-MSG91-with-Auth0"
+                        },
+                        {
+                            "channel": "WhatsApp",
+                            "link": "https://msg91.com/help/integration-guides/How-to-Integrate-MSG91-with-Auth0"
+                        }
+                    ]
                 }
             ]
         },
-        "section":{
-            "heading":"Don’t see the Add-on or Plugin you are looking for?",
-            "tag":"Up for creating one? Great!",
-            "subtag":"We would be glad to add you too.",
-            "partner_btn":"Become a Partner",
-            "url":"https://msg91.com/become-a-partner"
-        },
-        "plugin":{
-            
-            "subheading":"Why Build MSG91 Plugins?",
-            "build":[
+        "connectors": {
+            "heading": "Connectors",
+            "connectors": [
                 {
-                    "line":"All the revenues on the plugin will be yours and it will be your plugin."
-                }, {
-                    "line":"We will provide free OTP SMS (one time) to every plug-in users."
-                }, {
-                    "line":"Mentoring for developing plug-in for your choice of platform."
-                }, {
-                    "line":"We will promote your plugin using Google ad, blogs, mail to all our 40K clients."
+                    "name": "viaSocket",
+                    "icon": "/assets/integration_partner/viasocket.svg",
+                    "link": "https://viasocket.com/integrations/msg91",
+                    "description": "viaSocket is an AI-powered workflow automation tool that lets you connect thousands of apps and automate tasks with ease—all without needing any coding skills. It’s the perfect solution to simplify your workflows and save time."
+                },
+                {
+                    "name": "Zapier",
+                    "icon": "/assets/integration_partner/zapier.svg",
+                    "link": "https://msg91.com/partners-and-integrations/zapier",
+                    "description": "Zapier lets you connect MSG91 with thousands of the most popular apps, so you can automate your work and have more time for what matters most — no code required."
+                },
+                {
+                    "name": "Pabbly",
+                    "icon": "/assets/integration_partner/pabbly.svg",
+                    "link": "https://www.pabbly.com/connect/integrations/msg91/",
+                    "description": "Connect MSG91 with more than 1000+ apps. Just select the app and you're good to go. No installation required!"
+                },
+                {
+                    "name": "Integrately",
+                    "icon": "/assets/integration_partner/integrately.svg",
+                    "link": "https://integrately.com/integrations/msg91",
+                    "description": "Integrately gives you LOTS of pre-made automations. So you can activate automations in 1 click!"
                 }
             ]
         },
-        "partner":{
-            "heading":"Hear from our Partner",
-            "card":[{
-                "name":"Bharat Kumar",
-                "content":"We are happy partnering with MSG91, the team has been prompt in addressing the queries and taking our partnership ahead. Thank you MSG91",
-                "icon":"/assets/integration_partner/rixyncs-img.png"
-            },
-            {
-                "name":"Prateek Agrawal",
-                "content":"Our long standing Partnership with MSG91 has been very successful. The quality of services and support MSG91 provides is excellent. We have been treated with a positive response every single time.",
-                "icon":"/assets/integration_partner/weeky.png"
-            }]
+        "third_party": {
+            "heading": "Third Party/Partners Integrations",
+            "plugins": [
+                {
+                    "name": "​UnitedSol (Shopify)",
+                    "title": "Shopify OTP Login Extension:",
+                    "icon": "/assets/integration_partner/​unitedsol-shopify.png",
+                    "link": "https://viasocket.com/integrations/msg91",
+                    "description": "Enhance authentication on Shopify with the OTP Login with Phone app, enabling customers to securely log in and sign up using their phone numbers and email. "
+                },
+                {
+                    "name": "​UnitedSol (WooCommerce)",
+                    "title": "WooCommerce OTP Login Extension:",
+                    "icon": "/assets/integration_partner/​unitedsol-woocommerce.png",
+                    "link": "https://viasocket.com/integrations/msg91",
+                    "description": "Streamline customer access with Registration & Login via Mobile Phone Number for WooCommerce. Empower users to log in effortlessly with secure OTP verification, eliminating password hassles!"
+                },
+                {
+                    "name": "​UnitedSol (Magento)",
+                    "title": "Magento 2 OTP Login Extension:",
+                    "icon": "/assets/integration_partner/​unitedsol-megento.png",
+                    "link": "https://viasocket.com/integrations/msg91",
+                    "description": "Boost security and user experience with the Magento 2 OTP Login Extension by FMEextensions. Allow customers to log in or register seamlessly via an OTP sent through SMS or email."
+                }
+            ]
+        },
+        "section": {
+            "heading": "Don’t see the Add-on or Plugin you are looking for?",
+            "tag": "Up for creating one? Great!",
+            "subtag": "We would be glad to add you too.",
+            "partner_btn": "Become a Partner",
+            "url": "https://msg91.com/become-a-partner"
+        },
+        "plugin": {
+            "subheading": "Why Build MSG91 Plugins?",
+            "build": [
+                {
+                    "line": "All the revenues on the plugin will be yours and it will be your plugin."
+                },
+                {
+                    "line": "We will provide free OTP SMS (one time) to every plug-in users."
+                },
+                {
+                    "line": "Mentoring for developing plug-in for your choice of platform."
+                },
+                {
+                    "line": "We will promote your plugin using Google ad, blogs, mail to all our 40K clients."
+                }
+            ]
+        },
+        "partner": {
+            "heading": "Hear from our Partner",
+            "card": [
+                {
+                    "name": "Bharat Kumar",
+                    "content": "We are happy partnering with MSG91, the team has been prompt in addressing the queries and taking our partnership ahead. Thank you MSG91",
+                    "icon": "/assets/integration_partner/rixyncs-img.png"
+                },
+                {
+                    "name": "Prateek Agrawal",
+                    "content": "Our long standing Partnership with MSG91 has been very successful. The quality of services and support MSG91 provides is excellent. We have been treated with a positive response every single time.",
+                    "icon": "/assets/integration_partner/weeky.png"
+                }
+            ]
         }
-        }}
+    }
+}
