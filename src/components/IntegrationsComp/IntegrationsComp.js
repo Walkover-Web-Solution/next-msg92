@@ -32,25 +32,36 @@ export default function IntegrationsComp({ pageInfo, data }) {
                         {data?.plugins_by_msg91?.plugins.map((card, index) => (
                             <div
                                 key={index}
-                                className='flex flex-col p-6 gap-2 bg-white rounded-lg shadow h-full w-full min-h-[380px]'
+                                className='flex flex-col p-6 gap-4 bg-white rounded-lg shadow h-full w-full min-h-[380px]'
                             >
                                 <div className='flex flex-col gap-4'>
                                     <img src={card.icon} alt={card.name} className=' h-8 w-fit' />
                                     <h3 className='text-lg font-bold mb-2'>{card.name}</h3>
                                 </div>
-                                <p className='mb-4'>{card.description}</p>
+                                <div className=''>
+                                    <p className=''>{card.description}</p>
+                                    {card?.extra && (
+                                        <ul className='list-disc'>
+                                            {card?.extra?.map((extra, index) => (
+                                                <li className='text-sm' key={index}>
+                                                    {extra}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
                                 <div className='flex items-center gap-5 mt-auto'>
                                     {card?.channels?.length > 0 &&
                                         card.channels.map((channel, index) => {
                                             return (
-                                                <a
+                                                <Link
                                                     target='_blank'
                                                     className='text-sm text-link active-link'
                                                     href={channel?.link}
                                                     key={index}
                                                 >
                                                     {channel?.channel}
-                                                </a>
+                                                </Link>
                                             );
                                         })}
                                 </div>
@@ -86,6 +97,37 @@ export default function IntegrationsComp({ pageInfo, data }) {
                             </LinkText>
                         </Link>
                     ))}
+                </div>
+            </div>
+            <div className='bg-neutral'>
+                <div className='container flex flex-col gap-6 py-20'>
+                    <h2 class='text-3xl font-bold '>{data?.third_party?.heading || 'Plugins by MSG91'}</h2>
+                    {data?.third_party?.subheading && (
+                        <p class='text-xl font-normal'>{data?.third_party?.subheading}</p>
+                    )}
+
+                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'>
+                        {data?.third_party?.plugins.map((card, index) => (
+                            <Link
+                                target='_blank'
+                                href={card?.link}
+                                key={index}
+                                className='flex flex-col p-6 gap-2 bg-white rounded-lg shadow hover:shadow-lg h-full w-full LinkButtonCard'
+                            >
+                                <div className='flex flex-col gap-4'>
+                                    <img src={card?.icon} alt={card?.name} className=' h-8 w-fit' />
+                                    <h3 className='text-lg font-bold mb-2'>{card?.name}</h3>
+                                </div>
+                                <div className=''>
+                                    <h4 className='font-bold'>{card?.title}</h4>
+                                    <p className=''>{card?.description}</p>
+                                </div>
+                                <LinkText customClasses='link-btn mt-auto' href={'/'}>
+                                    Learn More
+                                </LinkText>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
             <div className='container flex flex-col py-20 gap-6'>
