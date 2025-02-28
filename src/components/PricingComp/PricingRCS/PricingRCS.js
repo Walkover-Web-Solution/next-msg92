@@ -90,15 +90,15 @@ export default function PricingRCS({ country, data, pageInfo }) {
                                             })}
                                         {plans &&
                                             plans.map((item, index) => {
-                                                if (
-                                                    item?.country_name &&
-                                                    currentCountry?.name !== item?.country_name &&
-                                                    item.country_name !== 'Default'
-                                                ) {
+                                                if (item?.country_name && currentCountry?.name !== item?.country_name) {
                                                     return (
                                                         <tr className='border-none text-[16px]' key={index}>
                                                             <td className='border-r'>{item?.country_name}</td>
-                                                            <td className='border-r'>{item?.country_prefix}</td>
+                                                            <td className='border-r'>
+                                                                {item?.country_prefix == 0
+                                                                    ? 'NA'
+                                                                    : item?.country_prefix}
+                                                            </td>
                                                             <td className='border-r'>
                                                                 {symbol}
                                                                 {item?.single_text_promotional_rate || 'N/A'}
