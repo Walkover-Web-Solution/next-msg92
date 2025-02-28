@@ -62,10 +62,9 @@ export default function PricingRCS({ country, data, pageInfo }) {
                                         <tr className='font-bold text-[16px] text-black '>
                                             <th className='w-[300px] border-r'>Market</th>
                                             <th className='border-r'>Prefix</th>
-                                            <th className='border-r text-wrap'>Single Text Promotional Rate</th>
-                                            <th className='border-r text-wrap'>Single Text Transactional Rate</th>
-                                            <th className='border-r text-wrap'>Rich Promotional Rate</th>
-                                            <th className='text-wrap'>Rich Transactional Rate</th>
+                                            <th className='border-r text-wrap'>Text</th>
+
+                                            <th className='border-r text-wrap'>Rich</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -80,44 +79,10 @@ export default function PricingRCS({ country, data, pageInfo }) {
                                                                 {symbol}
                                                                 {item?.single_text_promotional_rate || 'N/A'}
                                                             </td>
-                                                            <td className='border-r'>
-                                                                {symbol}
-                                                                {item?.single_text_transactional_rate || 'N/A'}
-                                                            </td>
+
                                                             <td className='border-r'>
                                                                 {symbol}
                                                                 {item?.rich_promotional_rate || 'N/A'}
-                                                            </td>
-                                                            <td className=''>
-                                                                {symbol}
-                                                                {item?.rich_transactional_rate || 'N/A'}
-                                                            </td>
-                                                        </tr>
-                                                    );
-                                                }
-                                            })}
-                                        {plans &&
-                                            plans.map((item, index) => {
-                                                if (item.country_name === 'Default') {
-                                                    return (
-                                                        <tr className='border-none text-[16px]' key={index}>
-                                                            <td className='border-r'>{item?.country_name}</td>
-                                                            <td className='border-r'>{item?.country_prefix}</td>
-                                                            <td className='border-r'>
-                                                                {symbol}
-                                                                {item?.single_text_promotional_rate || 'N/A'}
-                                                            </td>
-                                                            <td className='border-r'>
-                                                                {symbol}
-                                                                {item?.single_text_transactional_rate || 'N/A'}
-                                                            </td>
-                                                            <td className='border-r'>
-                                                                {symbol}
-                                                                {item?.rich_promotional_rate || 'N/A'}
-                                                            </td>
-                                                            <td className=''>
-                                                                {symbol}
-                                                                {item?.rich_transactional_rate || 'N/A'}
                                                             </td>
                                                         </tr>
                                                     );
@@ -138,17 +103,10 @@ export default function PricingRCS({ country, data, pageInfo }) {
                                                                 {symbol}
                                                                 {item?.single_text_promotional_rate || 'N/A'}
                                                             </td>
-                                                            <td className='border-r'>
-                                                                {symbol}
-                                                                {item?.single_text_transactional_rate || 'N/A'}
-                                                            </td>
+
                                                             <td className='border-r'>
                                                                 {symbol}
                                                                 {item?.rich_promotional_rate || 'N/A'}
-                                                            </td>
-                                                            <td className=''>
-                                                                {symbol}
-                                                                {item?.rich_transactional_rate || 'N/A'}
                                                             </td>
                                                         </tr>
                                                     );
@@ -171,12 +129,6 @@ export default function PricingRCS({ country, data, pageInfo }) {
                                                             <div className='skeleton w-2/3 h-[24px]'></div>
                                                         </td>
                                                         <td className='border-r'>
-                                                            <div className='skeleton w-2/3 h-[24px]'></div>
-                                                        </td>
-                                                        <td className='border-r'>
-                                                            <div className='skeleton w-2/3 h-[24px]'></div>
-                                                        </td>
-                                                        <td className=''>
                                                             <div className='skeleton w-2/3 h-[24px]'></div>
                                                         </td>
                                                     </tr>

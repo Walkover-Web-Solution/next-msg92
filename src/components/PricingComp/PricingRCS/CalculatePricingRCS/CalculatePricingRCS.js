@@ -2,10 +2,7 @@ import { useEffect, useState } from 'react';
 
 export default function CalculatePricingRCS({ plans, currentCountry, symbol, currency }) {
     const [singleTextPromotional, setSingleTextPromotional] = useState('');
-    const [singleTextTransactional, setSingleTextTransactional] = useState('');
     const [richTextPromotional, setRichTextPromotional] = useState('');
-    const [richTextTransactional, setRichTextTransactional] = useState('');
-
     const [selectedCountry, setSelectedCountry] = useState(currentCountry);
 
     useEffect(() => {
@@ -38,9 +35,7 @@ export default function CalculatePricingRCS({ plans, currentCountry, symbol, cur
 
     const handleClose = () => {
         setSingleTextPromotional('');
-        setSingleTextTransactional('');
         setRichTextPromotional('');
-        setRichTextTransactional('');
         handleSelectCountry(currentCountry?.name);
         document.getElementById('calculate_rcs_pricing').close();
     };
@@ -77,12 +72,12 @@ export default function CalculatePricingRCS({ plans, currentCountry, symbol, cur
                     <p className='font-bold text-start'>Charges</p>
                 </div>
                 <div className='flex flex-col gap-1'>
-                    <p className='text-gray-500'>Single Text Promotional Messages</p>
+                    <p className='text-gray-500'>Text Messages</p>
                     <div className='bg-gray p-4 rounded grid grid-cols-1 md:grid-cols-2 gap-4 items-center'>
                         {' '}
                         <input
                             type='number'
-                            placeholder='Single Text Promotional Messages'
+                            placeholder='Text Messages'
                             className='input input-bordered w-full input-ms max-w-[340px]'
                             value={singleTextPromotional}
                             onChange={(e) => setSingleTextPromotional(e.target.value)}
@@ -108,93 +103,31 @@ export default function CalculatePricingRCS({ plans, currentCountry, symbol, cur
                     </div>
                 </div>
                 <div className='flex flex-col gap-1'>
-                    <p className='text-gray-500'>Single Text Transactional Messages</p>
+                    <p className='text-gray-500'>Rich Messages</p>
                     <div className='bg-gray p-4 rounded grid grid-cols-1 md:grid-cols-2 gap-4 items-center'>
                         {' '}
                         <input
                             type='number'
-                            placeholder='Single Text Transactional Messages'
+                            placeholder='Rich Messages'
                             className='input input-bordered w-full input-ms max-w-[340px]'
-                            value={singleTextTransactional}
-                            onChange={(e) => setSingleTextTransactional(e.target.value)}
+                            value={richTextPromotional}
+                            onChange={(e) => setRichTextPromotional(e.target.value)}
                             min={0}
                             max={9999999999999}
                         />
                         <div className='flex flex-col sm:flex-row gap-3 items-start  w-full justify-start '>
                             <p className='text-start'>
-                                {singleTextTransactional &&
-                                    `${singleTextTransactional} x 
-                                        ${selectedCountry?.single_text_transactional_rate}
+                                {richTextPromotional &&
+                                    `${richTextPromotional} x 
+                                        ${selectedCountry?.rich_promotional_rate}
                                   = `}{' '}
                             </p>
                             <p className='font-bold text-start'>
                                 {symbol}
-                                {singleTextTransactional
-                                    ? contvertToLocal(
-                                          singleTextTransactional * selectedCountry?.single_text_transactional_rate
-                                      )
+                                {richTextPromotional
+                                    ? contvertToLocal(richTextPromotional * selectedCountry?.rich_promotional_rate)
                                     : 0}
                             </p>
-                        </div>
-                    </div>
-                    <div className='flex flex-col gap-1'>
-                        <p className='text-gray-500'>Rich Promotional Messages</p>
-                        <div className='bg-gray p-4 rounded grid grid-cols-1 md:grid-cols-2 gap-4 items-center'>
-                            {' '}
-                            <input
-                                type='number'
-                                placeholder='Rich Promotional Messages'
-                                className='input input-bordered w-full input-ms max-w-[340px]'
-                                value={richTextPromotional}
-                                onChange={(e) => setRichTextPromotional(e.target.value)}
-                                min={0}
-                                max={9999999999999}
-                            />
-                            <div className='flex flex-col sm:flex-row gap-3 items-start  w-full justify-start '>
-                                <p className='text-start'>
-                                    {richTextPromotional &&
-                                        `${richTextPromotional} x 
-                                        ${selectedCountry?.rich_promotional_rate}
-                                  = `}{' '}
-                                </p>
-                                <p className='font-bold text-start'>
-                                    {symbol}
-                                    {richTextPromotional
-                                        ? contvertToLocal(richTextPromotional * selectedCountry?.rich_promotional_rate)
-                                        : 0}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex flex-col gap-1'>
-                        <p className='text-gray-500'>Rich Transactional Messages</p>
-                        <div className='bg-gray p-4 rounded grid grid-cols-1 md:grid-cols-2 gap-4 items-center'>
-                            {' '}
-                            <input
-                                type='number'
-                                placeholder='Rich Transactional Messages'
-                                className='input input-bordered w-full input-ms max-w-[340px]'
-                                value={richTextTransactional}
-                                onChange={(e) => setRichTextTransactional(e.target.value)}
-                                min={0}
-                                max={9999999999999}
-                            />
-                            <div className='flex flex-col sm:flex-row gap-3 items-start  w-full justify-start '>
-                                <p className='text-start'>
-                                    {richTextTransactional &&
-                                        `${richTextTransactional} x 
-                                        ${selectedCountry?.rich_transactional_rate}
-                                  = `}{' '}
-                                </p>
-                                <p className='font-bold text-start'>
-                                    {symbol}
-                                    {richTextTransactional
-                                        ? contvertToLocal(
-                                              richTextTransactional * selectedCountry?.rich_transactional_rate
-                                          )
-                                        : 0}
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -205,9 +138,7 @@ export default function CalculatePricingRCS({ plans, currentCountry, symbol, cur
                         {symbol}
                         {contvertToLocal(
                             Number(singleTextPromotional * selectedCountry?.single_text_promotional_rate) +
-                                Number(singleTextTransactional * selectedCountry?.single_text_transactional_rate) +
-                                Number(richTextPromotional * selectedCountry?.rich_promotional_rate) +
-                                Number(richTextTransactional * selectedCountry?.rich_transactional_rate)
+                                Number(richTextPromotional * selectedCountry?.rich_promotional_rate)
                         ) || 0}
                         {currency === 'INR' && <span className='font-normal text-sm text-gray-500'>+18% GST</span>}
                         {currency === 'GBP' && <span className='font-normal text-sm text-gray-500'>+VAT</span>}
