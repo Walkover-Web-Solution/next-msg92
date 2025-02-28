@@ -219,21 +219,21 @@
                     "name": "​UnitedSol (Shopify)",
                     "title": "Shopify OTP Login Extension:",
                     "icon": "/assets/integration_partner/​unitedsol-shopify.png",
-                    "link": "https://viasocket.com/integrations/msg91",
+                    "link": "https://apps.shopify.com/login-with-phone-number",
                     "description": "Enhance authentication on Shopify with the OTP Login with Phone app, enabling customers to securely log in and sign up using their phone numbers and email. "
                 },
                 {
                     "name": "​UnitedSol (WooCommerce)",
                     "title": "WooCommerce OTP Login Extension:",
                     "icon": "/assets/integration_partner/​unitedsol-woocommerce.png",
-                    "link": "https://viasocket.com/integrations/msg91",
+                    "link": "https://woocommerce.com/products/registration-login-with-mobile-phone-number/",
                     "description": "Streamline customer access with Registration & Login via Mobile Phone Number for WooCommerce. Empower users to log in effortlessly with secure OTP verification, eliminating password hassles!"
                 },
                 {
                     "name": "​UnitedSol (Magento)",
                     "title": "Magento 2 OTP Login Extension:",
                     "icon": "/assets/integration_partner/​unitedsol-megento.png",
-                    "link": "https://viasocket.com/integrations/msg91",
+                    "link": "https://www.fmeextensions.com/magento-2-otp-login",
                     "description": "Boost security and user experience with the Magento 2 OTP Login Extension by FMEextensions. Allow customers to log in or register seamlessly via an OTP sent through SMS or email."
                 }
             ]
