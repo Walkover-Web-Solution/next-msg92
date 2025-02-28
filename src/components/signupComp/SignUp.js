@@ -8,6 +8,8 @@ import Image from 'next/image';
 import StepOne from './StepOne/StepOne';
 import StepTwo from './StepTwo/StepTwo';
 import StepThree from './StepThree/StepThree';
+import { useRouter } from 'next/router';
+import { preconnect } from 'react-dom';
 
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 
@@ -28,13 +30,13 @@ export default class SignUp extends React.Component {
         this.retryOtp = this.retryOtp.bind(this);
         this.verifyOtp = this.verifyOtp.bind(this);
 
-        let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
+        var queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
 
         this.state = {
-            activeStep: queryParams?.['code'] ? 2 : 1,
-            signupByGitHub: queryParams?.['githubsignup'] ? true : false,
-            githubCode: queryParams?.['code'],
-            githubState: queryParams?.['state'],
+            activeStep: null,
+            signupByGitHub: queryParams?.githubsignup ? true : false,
+            githubCode: queryParams?.code,
+            githubState: queryParams?.state,
             widgetData: null,
             allowedRetry: null,
             emailAccessToken: null,
@@ -47,6 +49,7 @@ export default class SignUp extends React.Component {
     componentDidMount = () => {
         this.otpWidgetSetup();
         const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
+        this.setState({ activeStep: queryParams?.code ? 2 : 1 });
         if (queryParams?.service) {
             this.setState({ preselectedService: queryParams.service });
         }
@@ -499,6 +502,19 @@ export default class SignUp extends React.Component {
                                 <h1 className='text-2xl font-semibold text-success'>Account created Successfully!</h1>
                             ) : (
                                 <h1 className='text-2xl font-semibold '>Create an account</h1>
+                            )}
+
+                            {!this.state.activeStep && (
+                                <div className='flex flex-col gap-4 h-full  max-w-[600px] w-full '>
+                                    <span className='skeleton max-w-[300px] w-full bg-gray-100 h-12'></span>
+                                    <span className='skeleton w-12 bg-gray-100 h-12'></span>
+                                    <div className='flex flex-col gap-2'>
+                                        <span className='skeleton max-w-[400px] w-full bg-gray-200 h-7'></span>
+                                        <span className='skeleton max-w-[400px] w-full bg-gray-200 h-7'></span>
+                                        <span className='skeleton max-w-[400px] w-full bg-gray-200 h-7'></span>
+                                        <span className='skeleton max-w-[200px] w-full bg-gray-200 h-7'></span>
+                                    </div>
+                                </div>
                             )}
 
                             {/* STEP #1 */}

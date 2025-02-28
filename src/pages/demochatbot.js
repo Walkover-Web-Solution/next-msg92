@@ -383,7 +383,7 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
                             },
                             {
                                 'name': 'Career',
-                                'link': 'https://apply.workable.com/walkover/',
+                                'link': 'https://walkover.in/careers',
                             },
                             {
                                 'name': 'Certificates',

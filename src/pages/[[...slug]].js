@@ -40,6 +40,8 @@ import ThankYouComp from '@/components/ThankYouComp/ThankYouComp';
 import StartupFormsComp from '@/components/StartupFormsComp/StartupFormsComp';
 import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/CaseStudyPageComp';
 import ChatBotDemoComp from '@/components/ChatBotDemoComp/ChatBotDemoComp';
+import AsSeenComp from '@/components/AsSeenComp/AsSeenComp';
+import { useRouter } from 'next/router';
 
 const Components = {
     BannerComp,
@@ -78,9 +80,13 @@ const Components = {
     IntegrationAppComp,
     CaseStudyPageComp,
     ChatBotDemoComp,
+    AsSeenComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
+    const router = useRouter();
+    var browserPath = router.asPath;
+    var browserPathCase = browserPath;
     return (
         <>
             {pageInfo?.page !== ''}
@@ -100,7 +106,14 @@ export default function Page({ data, commonData, pageInfo }) {
                         return;
                     }
 
-                    return <Component key={`section-${key}`} data={pageData} pageInfo={pageInfo} />;
+                    return (
+                        <Component
+                            key={`section-${key}`}
+                            data={pageData}
+                            pageInfo={pageInfo}
+                            browserPathCase={browserPathCase}
+                        />
+                    );
                 })}
 
             <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} />

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
 const arrowIcon = (
     <svg viewBox='0 0 6 9' fill='none' xmlns='http://www.w3.org/2000/svg' className='arrow-icon'>
@@ -11,10 +12,10 @@ const arrowIcon = (
     </svg>
 );
 
-export function LinkButton({ href, content, customClasses }) {
+export function LinkButton({ href, content, target, customClasses }) {
     return (
         <>
-            <Link href={href || '/'} className={`link-btn ${customClasses || ''}`}>
+            <Link href={href || '/'} target={target || '_self'} className={`link-btn ${customClasses || ''}`}>
                 {content}
                 {arrowIcon}
             </Link>
@@ -38,6 +39,16 @@ export function BtnWithHideIco({ children, customClasses }) {
             <span className={`link-btn hide-ico ${customClasses || ''}`}>
                 {children}
                 {arrowIcon}
+            </span>
+        </>
+    );
+}
+export function MoreButton({ content, customClasses, open }) {
+    return (
+        <>
+            <span className={`link-btn text-link cursor-pointer  ${customClasses || ''}`}>
+                {content}
+                {open ? <MdKeyboardArrowUp fontSize={24} /> : <MdKeyboardArrowDown fontSize={24} />}
             </span>
         </>
     );

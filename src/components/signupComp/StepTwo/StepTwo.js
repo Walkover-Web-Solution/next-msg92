@@ -75,6 +75,19 @@ class StepTwo extends React.Component {
         }
     };
 
+    handleBackClick = () => {
+        this.props.setStep(1);
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.delete('githubsignup');
+        currentUrl.searchParams.delete('code');
+        currentUrl.searchParams.delete('state');
+        window.history.replaceState(null, '', currentUrl.toString());
+        // smsIdentifier = '';
+        // mobileInvalid = false;
+        // this.setState({
+        //     smsIdentifier: '',
+        // });
+    };
     render() {
         return (
             <>
@@ -106,8 +119,9 @@ class StepTwo extends React.Component {
                                     <div className='flex flex-col items-start gap-6 w-[360px]  '>
                                         <div className='flex gap-2 items-center w-full '>
                                             {this.props?.signupByGitHub ? (
-                                                <div>
-                                                    Email Verified <MdCheckCircle className='ico-green' />
+                                                <div className='flex items-center gap-2'>
+                                                    Email Verified{' '}
+                                                    <MdCheckCircle className='ico-green text-green-600' />
                                                 </div>
                                             ) : (
                                                 <div className='w-full'>
@@ -203,7 +217,7 @@ class StepTwo extends React.Component {
                                                 defaultValue={smsIdentifier ? '+' + smsIdentifier : ''}
                                                 setInvalid={(event) => (mobileInvalid = event)}
                                                 placeholder='Mobile Number*'
-                                            ></MobileInputComponent>
+                                            />
 
                                             <span className='mt-3'>
                                                 {this.props?.smsAccessToken && (
@@ -310,7 +324,7 @@ class StepTwo extends React.Component {
                         </div>
                     </div>
                     <div className='flex  gap-4'>
-                        <button className='btn btn-accent btn-outline btn-md' onClick={() => this.props.setStep(1)}>
+                        <button className='btn btn-accent btn-outline btn-md' onClick={this.handleBackClick}>
                             {' '}
                             <MdKeyboardArrowLeft />
                             Back
