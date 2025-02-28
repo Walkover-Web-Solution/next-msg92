@@ -56,12 +56,16 @@ export default function PricingWhatsApp({ country, data }) {
                         <div className='flex flex-col gap-2'>
                             <div className='flex w-full justify-between items-center'>
                                 <h2 className='text-2xl font-bold mb-1'>{data?.heading || 'Whatsapp API Pricing'} </h2>
-                                <button
-                                    onClick={() => document.getElementById('calculate_whatsapp_pricing').showModal()}
-                                    className='btn btn-accent btn-outline w-fit btn-sm'
-                                >
-                                    Calculate
-                                </button>
+                                {plans && (
+                                    <button
+                                        onClick={() =>
+                                            document.getElementById('calculate_whatsapp_pricing').showModal()
+                                        }
+                                        className='btn btn-accent btn-outline w-fit btn-sm'
+                                    >
+                                        Calculate
+                                    </button>
+                                )}
                             </div>
                             <p>{data?.tax}</p>
                             {data?.adds && <p>{data?.adds}</p>}
@@ -84,23 +88,25 @@ export default function PricingWhatsApp({ country, data }) {
                                             return (
                                                 <tr className='border-none text-[16px]' key={index}>
                                                     <td className='border-r'>{item?.country_name}</td>
-                                                    <td className='border-r'>{item?.prefix}</td>
+                                                    <td className='border-r'>
+                                                        {item?.prefix == 0 ? 'N/A' : item?.prefix}
+                                                    </td>
                                                     <td className='border-r'>
                                                         {symbol}
                                                         {!isNaN(parseFloat(item?.marketing_rate))
-                                                            ? parseFloat(item.marketing_rate).toFixed(5)
+                                                            ? parseFloat(item?.marketing_rate).toFixed(5)
                                                             : 'N/A'}
                                                     </td>
                                                     <td className='border-r'>
                                                         {symbol}
                                                         {!isNaN(parseFloat(item?.utility_rate))
-                                                            ? parseFloat(item.utility_rate).toFixed(5)
+                                                            ? parseFloat(item?.utility_rate).toFixed(5)
                                                             : 'N/A'}
                                                     </td>
                                                     <td className='border-r'>
                                                         {symbol}
                                                         {!isNaN(parseFloat(item?.authentication_rate))
-                                                            ? parseFloat(item.authentication_rate).toFixed(5)
+                                                            ? parseFloat(item?.authentication_rate).toFixed(5)
                                                             : 'N/A'}
                                                     </td>
                                                     <td className=''>
@@ -119,7 +125,9 @@ export default function PricingWhatsApp({ country, data }) {
                                             return (
                                                 <tr className='border-none text-[16px]' key={index}>
                                                     <td className='border-r'>{item?.country_name}</td>
-                                                    <td className='border-r'>{item?.prefix}</td>
+                                                    <td className='border-r'>
+                                                        {item?.prefix == 0 ? 'N/A' : item?.prefix}
+                                                    </td>
                                                     <td className='border-r'>
                                                         {symbol}
                                                         {!isNaN(parseFloat(item?.marketing_rate))
@@ -159,7 +167,9 @@ export default function PricingWhatsApp({ country, data }) {
                                             return (
                                                 <tr className='border-none text-[16px]' key={index}>
                                                     <td className='border-r'>{item?.country_name}</td>
-                                                    <td className='border-r'>{item?.prefix}</td>
+                                                    <td className='border-r'>
+                                                        {item?.prefix == 0 ? 'N/A' : item?.prefix}
+                                                    </td>
                                                     <td className='border-r'>
                                                         {symbol}
                                                         {!isNaN(parseFloat(item?.marketing_rate))
