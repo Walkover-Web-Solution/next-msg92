@@ -8,8 +8,8 @@ export default function IntegrationsComp({ pageInfo, data }) {
         <>
             {' '}
             <div className='container gap-6 py-20'>
-                <h1 class='text-4xl font-bold mb-2 weight-700'>{data?.heading || ' this is heading '}</h1>
-                <h2 class='text-xl font-normal mb-4 w-full lg:w-1/2 gap-6'>
+                <h1 className='text-4xl font-bold mb-2 weight-700'>{data?.heading || ' this is heading '}</h1>
+                <h2 className='text-xl font-normal mb-4 w-full lg:w-1/2 gap-6'>
                     {data?.subheading || ' this is heading '}
                 </h2>
 
@@ -23,9 +23,9 @@ export default function IntegrationsComp({ pageInfo, data }) {
             </div>
             <div className='bg-neutral'>
                 <div className='container flex flex-col gap-6 py-20'>
-                    <h2 class='text-3xl font-bold '>{data?.plugins_by_msg91?.heading || 'Plugins by MSG91'}</h2>
+                    <h2 className='text-3xl font-bold '>{data?.plugins_by_msg91?.heading || 'Plugins by MSG91'}</h2>
                     {data?.plugins_by_msg91?.subheading && (
-                        <p class='text-xl font-normal'>{data?.plugins_by_msg91?.subheading}</p>
+                        <p className='text-xl font-normal'>{data?.plugins_by_msg91?.subheading}</p>
                     )}
 
                     <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'>
@@ -71,8 +71,8 @@ export default function IntegrationsComp({ pageInfo, data }) {
                 </div>
             </div>
             <div className='container flex flex-col gap-6 py-20'>
-                <h2 class='text-3xl font-bold '>{'Connectors'}</h2>
-                {data?.connectors?.subheading && <p class='text-xl font-normal'>{data?.connectors?.subheading}</p>}
+                <h2 className='text-3xl font-bold '>{'Connectors'}</h2>
+                {data?.connectors?.subheading && <p className='text-xl font-normal'>{data?.connectors?.subheading}</p>}
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
                     {data?.connectors?.connectors.map((card, index) => (
                         <Link
@@ -101,9 +101,9 @@ export default function IntegrationsComp({ pageInfo, data }) {
             </div>
             <div className='bg-neutral'>
                 <div className='container flex flex-col gap-6 py-20'>
-                    <h2 class='text-3xl font-bold '>{data?.third_party?.heading || 'Plugins by MSG91'}</h2>
+                    <h2 className='text-3xl font-bold '>{data?.third_party?.heading || 'Plugins by MSG91'}</h2>
                     {data?.third_party?.subheading && (
-                        <p class='text-xl font-normal'>{data?.third_party?.subheading}</p>
+                        <p className='text-xl font-normal'>{data?.third_party?.subheading}</p>
                     )}
 
                     <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'>
