@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 export default function CalculatePricingRCS({ plans, currentCountry, symbol, currency }) {
-    const [singleTextPromotional, setSingleTextPromotional] = useState('');
-    const [richTextPromotional, setRichTextPromotional] = useState('');
+    const [singleTextPromotional, setSingleTextPromotional] = useState('10000');
+    const [richTextPromotional, setRichTextPromotional] = useState('10000');
     const [selectedCountry, setSelectedCountry] = useState(currentCountry);
 
     useEffect(() => {
@@ -34,8 +34,8 @@ export default function CalculatePricingRCS({ plans, currentCountry, symbol, cur
     };
 
     const handleClose = () => {
-        setSingleTextPromotional('');
-        setRichTextPromotional('');
+        setSingleTextPromotional('10000');
+        setRichTextPromotional('10000');
         handleSelectCountry(currentCountry?.name);
         document.getElementById('calculate_rcs_pricing').close();
     };
