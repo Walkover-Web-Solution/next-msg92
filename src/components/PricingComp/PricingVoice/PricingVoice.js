@@ -167,12 +167,14 @@ export default function PricingVoice({ data, country }) {
                         )}
                         <div className='flex items-center gap-4'>
                             <h2 className='text-xl font-semibold'>{data?.heading}</h2>{' '}
-                            <button
-                                onClick={() => document.getElementById('calculate_voice_pricing').showModal()}
-                                className='btn btn-accent btn-outline w-fit btn-sm'
-                            >
-                                Calculate
-                            </button>
+                            {plans && (
+                                <button
+                                    onClick={() => document.getElementById('calculate_voice_pricing').showModal()}
+                                    className='btn btn-accent btn-outline w-fit btn-sm'
+                                >
+                                    Calculate
+                                </button>
+                            )}
                         </div>
                         {country === 'in' && <p className='text-lg'>GST excluded.</p>}
                         {country === 'gb' && <p className='text-lg'>VAT excluded.</p>}
@@ -210,7 +212,7 @@ export default function PricingVoice({ data, country }) {
                                                             )}
                                                         </>
                                                     )}
-                                                    {!item?.local_rates_min && !item?.local_rates_max && <>-</>}
+                                                    {!item?.local_rates_min && !item?.local_rates_max && <>N/A</>}
                                                 </td>
                                                 <td className='p-4'>
                                                     {' '}
@@ -234,7 +236,7 @@ export default function PricingVoice({ data, country }) {
                                                         </>
                                                     )}
                                                     {!item?.international_rates_min &&
-                                                        !item?.international_rates_max && <>-</>}
+                                                        !item?.international_rates_max && <>N/A</>}
                                                 </td>
                                             </tr>
                                         );
