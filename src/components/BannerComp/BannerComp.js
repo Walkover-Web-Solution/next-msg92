@@ -181,7 +181,7 @@ export default function BannerComp({ pageInfo, data }) {
                         />
                     </div>
                 )}
-                {animationData && data?.lottie && (
+                {animationData && data?.lottie && !data?.code && (
                     <div className={styles.lottie_animation}>
                         <Lottie options={animationData} />
                     </div>
