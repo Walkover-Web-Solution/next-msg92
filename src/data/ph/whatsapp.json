@@ -9,17 +9,14 @@
             "name": "WhatsApp",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "code": true,
-
-        "tagline": "Dominate popular platforms",
-        "heading": "Drive better customer engagement outcomes",
-        "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
-      "banner_img": "/assets/global/hello/banner.webp",
+        "tagline": "WhatsApp Business Solutions",
+        "heading": "Seemless Global messaging and communications.",
+        "subheading": "Use Developer Friendly API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
+        "lottie": "/assets/lotties/global-whatsapp.json",
         "getstarted_btn": "Get Started",
-        "schedule_meet":"Schedule a Meeting",
+        "schedule_meet": "Schedule a Meeting",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
-
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -45,64 +42,436 @@
         }
     },
     "FeatureComp": {
-        "heading": "Features",
+        "heading": "",
         "iconColor": "text-campaign",
         "features": [
             {
-                "name": "WhatsApp ChatBot",
-                "content": "A WhatsApp chatbot automates customer interactions with pre-programmed responses and workflows. It can handle common queries, schedule appointments, track your order, offer customer support, and work 24/7. Chatbots use keywords and quick replies to engage customers and can escalate complex issues to human agents, ensuring a seamless experience.",
-                "img": "/assets/global/whatsapp/whatsapp-chatBot.svg"
+                "name": "WhatsApp ChatBot: Instant Support, Anytime",
+                "content": "Transform your customer service experience with a WhatsApp ChatBot that delivers instant, accurate, and personalized responses. Automate routine queries, provide 24/7 support, and enhance customer satisfaction without human intervention just with another WhatsApp marketing tool.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "FAQs and Queries",
+                            "description": "Automate WhatsApp template responses to frequently asked questions."
+                        },
+                        {
+                            "name": "Order Tracking",
+                            "description": "Provide real-time updates on order status with WhatsApp business API."
+                        },
+                        {
+                            "name": "Appointment Booking",
+                            "description": "Let customers schedule appointments effortlessly with Interactive WhatsApp messages."
+                        },
+                        {
+                            "name": "Lead Generation",
+                            "description": "Engage potential customers with instant replies with WhatsApp AI Chatbot."
+                        },
+                        {
+                            "name": "Feedback Collection",
+                            "description": "Gather customer feedback through automated WhatsApp survey template."
+                        }
+                    ],
+                    "features": [
+                        "24/7 availability for uninterrupted support.",
+                        "Instant responses on WhatsApp Chats to improve customer satisfaction.",
+                        "Customizable WhatsApp botflows for specific business needs.",
+                        "Integration with CRM tools for better data management."
+                    ]
+                },
+                "button": {
+                    "name": "Test WhatsApp Chatbot",
+                    "link": "https://msg91.com/demochatbot"
+                },
+                "img": "/assets/global/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg"
             },
             {
-                "name": "Whatsapp Integrations",
-                "content": "Our WhatsApp Business API integrates seamlessly with numerous platforms, allowing for easy plug-and-play functionality without the need for additional development. Some of the supported platforms include Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheet, Tally, GIDDH and <a href='/integration' style='color: blue'>more</a> ",
-                "img": "/assets/global/whatsapp/whatsapp-integrations.svg"
+                "name": "Click-to-WhatsApp Ads: Drive Engagement with Zero Costs",
+                "content": "Maximize your marketing efforts with Click-to-WhatsApp Ads, a powerful solution to connect with customers instantly. This feature allows businesses to drive traffic from online advertisements directly to WhatsApp conversations, creating a seamless transition from discovery to engagement.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Lead Generation",
+                            "description": "Drive potential customers from ads to WhatsApp for instant engagement."
+                        },
+                        {
+                            "name": "Customer Support",
+                            "description": "Allow users to connect with support teams directly from ads."
+                        },
+                        {
+                            "name": "Product Inquiries",
+                            "description": "Enable customers to ask questions about products or services."
+                        },
+                        {
+                            "name": "Event Registrations",
+                            "description": "Use ads to promote events and collect RSVPs via WhatsApp."
+                        },
+                        {
+                            "name": "Exclusive Offers",
+                            "description": "Advertise limited-time deals and redirect users to WhatsApp for redemption."
+                        }
+                    ],
+                    "features": [
+                        "Zero panel fees and no hidden costs.",
+                        "Seamless transition from ads to WhatsApp chats.",
+                        "Instant responses using AI-powered WhatsApp chatbots and bulk messaging.",
+                        "Cost-effective advertising with full ROI transparency.",
+                        "Enhanced WhatsApp lead generation capabilities."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-click-to-whatsapp-ads-boost-engagement-with-zero-margin-costs.svg"
             },
             {
-                "name": "Zero Charge on Click to WhatsApp Ads",
-                "content": "Offering zero charge on Click to WhatsApp Ads means businesses can use these ads without incurring additional costs associated with WhatsApp session charges. This approach provides significant benefits as No Session Charges and Budget-Friendly.",
-                "img": "/assets/global/whatsapp/whatsapp-zero-charge-on-click.svg"
+                "name": "Bulk Sending Through CSV: Scale Your WhatsApp Marketing Effortlessly",
+                "content": "Simplify your communication strategy with bulk WhatsApp messaging through CSV uploads. Engage thousands of users simultaneously while maintaining a personalized touch for each recipient. Our WhatsApp Business API solution ensures high delivery rates and advanced analytics to optimize your campaigns.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Product Launches",
+                            "description": "Share new product details with thousands of customers instantly with WhatsApp catalog and carousel."
+                        },
+                        {
+                            "name": "Exclusive Offers",
+                            "description": "Send personalized discount codes or limited time offers to drive sales through WhatsApp Interactive templates."
+                        },
+                        {
+                            "name": "Critical Alerts",
+                            "description": "Notify customers about urgent updates, such as service disruptions or security alerts through WhatsApp API."
+                        },
+                        {
+                            "name": "Event Invitations",
+                            "description": "Invite customers to webinars, workshops, or sales events with WhatsApp campaign."
+                        },
+                        {
+                            "name": "Customer Updates",
+                            "description": "Share important updates like order confirmations, shipping details, or policy changes through WhatsApp API."
+                        }
+                    ],
+                    "features": [
+                        "Schedule campaigns for optimal timing.",
+                        "Automate followups to improve engagement.",
+                        "Use CSV uploads for seamless bulk WhatsApp messaging.",
+                        "Track delivery rates and optimize campaigns.",
+                        "Gain insights through WhatsApp analytics and reporting."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-send-bulk-whatsapp-messages-effortlessly.svg"
             },
             {
-                "name": "Whatsapp Catalogue",
-                "content": "WhatsApp's catalogue feature lets businesses showcase products and services within the app. It serves as a digital storefront, allowing customers to browse, view details, and make inquiries without leaving WhatsApp. Businesses can organize items, include images, prices, and descriptions, and update inventory in real time, making it easier for customers to explore and shop.",
-                "img": "/assets/global/whatsapp/whatsapp-catalog.svg"
+                "name": "OptOut Feature: Ensure Compliance in WhatsApp Marketing Automation",
+                "content": "Give your customers the power to control their communication preferences with the OptOut feature. This functionality ensures that recipients can unsubscribe from WhatsApp messages easily, maintaining a positive and respectful relationship with your brand. Transparency builds trust, creating a loyal and engaged audience.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Compliance with Regulations",
+                            "description": "Ensure adherence to global communication laws."
+                        },
+                        {
+                            "name": "List Hygiene",
+                            "description": "Maintain a clean and engaged customer list by removing uninterested users."
+                        },
+                        {
+                            "name": "Customer Trust",
+                            "description": "Build transparency and trust by allowing users to control their preferences."
+                        },
+                        {
+                            "name": "Reduced Spam",
+                            "description": "Minimize spam complaints and improve sender reputation of your WhatsApp number."
+                        },
+                        {
+                            "name": "Personalized Journeys",
+                            "description": "Focus on engaged customers for more effective WhatsApp communication."
+                        }
+                    ],
+                    "features": [
+                        "Easy optout option for customers.",
+                        "Automated list updates to remove unsubscribed users.",
+                        "Compliance with legal requirements.",
+                        "Improved WhatsApp customer engagement and loyalty.",
+                        "Enhanced WhatsApp marketing strategies for better targeting."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-opt-out-feature-for-better-customer-experience.svg"
             },
             {
-                "name": "Broadcast / Campaign",
-                "content": "WhatsApp's broadcast lets you send the same message to multiple contacts at once, ideal for updates and announcements. Campaigns, available in the WhatsApp Business API, enable targeted marketing with automated, personalized messages. Both help businesses reach more people efficiently.",
-                "img": "/assets/global/whatsapp/whatsapp-campaign.svg"
+                "name": "Interactive Product Catalogs & WhatsApp Payments",
+                "content": "Transform WhatsApp into your onestop sales channel by sharing interactive product catalogs. Let your customers browse products, explore categories, and discover their preferences within a familiar chat environment. Enable WhatsApp payment solutions for instant, secure transactions, simplifying the buyer journey and reducing dropoff rates.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "E-commerce Sales",
+                            "description": "Showcase products directly on WhatsApp for seamless shopping with the help of WhatsApp catalog templates."
+                        },
+                        {
+                            "name": "DirecttoConsumer (D2C)",
+                            "description": "Enable customers to browse and buy without leaving the app with instant WhatsApp payments."
+                        },
+                        {
+                            "name": "Instant Checkout",
+                            "description": "Reduce cart abandonment with WhatsApp payment solutions."
+                        },
+                        {
+                            "name": "Product Discovery",
+                            "description": "Help customers explore categories and find their preferences with WhatsApp Chatbot flows."
+                        },
+                        {
+                            "name": "Upselling and CrossSelling",
+                            "description": "Recommend related products through interactive catalogs."
+                        }
+                    ],
+                    "features": [
+                        "Interactive product catalogs with images and descriptions.",
+                        "Secure WhatsApp payment solutions for instant transactions.",
+                        "Faster checkout process to boost sales.",
+                        "Frictionless shopping experience for customers.",
+                        "Integration with WhatsApp for ecommerce platforms."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-share-product-catalogs-and-enable-whatsapp-payments.svg"
             },
             {
-                "name": "Click Counts",
-                "content": "Click counts indicate how many businesses or customers use a feature - high click counts show its popularity and effectiveness for customer engagement. You can view all click counts for a button either in the analytics section or through your webhook.",
-                "img": "/assets/global/whatsapp/whatsapp-click-counts.svg"
-            },     {
-                "name": "Support Base64",
-                "content": "<strong>Send the body in JSON and leave the rest to us.</strong>No need to make a URL or upload your file as you can directly send JSON body and it will be converted automatically into Base64 format and sent via WhatsApp.",
-                "img": "/assets/global/whatsapp/whatsapp-support-base64.svg"
+                "name": "Instant Template Creation",
+                "content": "Save time and effort by creating and approving WhatsApp templates instantly. Whether you're designing templates for automated WhatsApp campaigns, order updates, or personalized product recommendations, our platform allows you to build them effortlessly.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Marketing Campaigns",
+                            "description": "Design templates for promotions, discounts, and offers."
+                        },
+                        {
+                            "name": "Order Updates",
+                            "description": "Notify customers about order status, shipping, and delivery instantly through WhatsApp business API."
+                        },
+                        {
+                            "name": "Personalized Recommendations",
+                            "description": "Send tailored product suggestions based on user behavior."
+                        },
+                        {
+                            "name": "Event Reminders",
+                            "description": "Create WhatsApp templates for event invitations and followups."
+                        },
+                        {
+                            "name": "Customer Support",
+                            "description": "Use templates for FAQs and support queries with WhatsApp AI Assistance."
+                        }
+                    ],
+                    "features": [
+                        "Instant template creation and Metacompliant approvals.",
+                        "Customizable templates with buttons, images, and text.",
+                        "Centralized template management for easy access.",
+                        "Integration with WhatsApp marketing automation tools."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-create-and-approve-templates-instantly.svg"
             },
             {
-                "name": "2-way Communication",
-                "content": "<strong>Say hello to go on HELLO.</strong>Give your customer the right platform to continue the conversation. Once they reply, they are directly taken to HELLO to start a 2-way communication with your business.",
-                "img": "/assets/global/whatsapp/whatsapp-2way-communication.svg"
-            },     {
-                "name": "Manage Template Inside Panel",
-                "content": "<strong>Create and Manage your template right here</strong>No need to switch platforms to create your template. You can create the templates, manage it and check the status of it right here without going on Facebook.",
-                "img": "/assets/global/whatsapp/whatsapp-manage-template-inside-panel.svg"
-            },    {
-                "name": "Analytics",
-                "content": "<strong>Get graphical insights into your business messages.</strong>Analyse and improvise your business messaging with the right metrics. Get a graphical report on the number of messages sent, delivered, conversations and more..",
-                "img": "/assets/global/whatsapp/whatsapp-analytics.svg"
+                "name": "Seamless Integrations, Connect Tools, Simplify Workflows",
+                "content": "Integrate seamlessly with a wide range of powerful tools such as <strong>Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheets, Tally, and GIDDH.</strong> Our WhatsApp Business API solution allows you to connect these platforms directly to your messaging system, automating workflows and improving data flow across applications.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "CRM Integration",
+                            "description": "Sync customer data from Zoho, Freshworks, or other CRMs and create personalized WhatsApp journeys."
+                        },
+                        {
+                            "name": "E-commerce Automation",
+                            "description": "Connect Shopify or Wix for order updates and promotions and send instant order notifications through WhatsApp business API solutions."
+                        },
+                        {
+                            "name": "Marketing Analytics",
+                            "description": "Use WebEngage or CleverTap for campaign tracking and plan your marketing automations accordingly."
+                        },
+                        {
+                            "name": "Workflow Automation",
+                            "description": "Integrate Google Sheets or Tally for data management and sending the Invoices through WhatsApp templates."
+                        },
+                        {
+                            "name": "Unified Communication",
+                            "description": "Manage all customer interactions from one platform."
+                        }
+                    ],
+                    "features": [
+                        "Integration with popular tools like Zoho, Shopify, and Google Sheets.",
+                        "Automated workflows for better efficiency.",
+                        "Centralized data flow across applications.",
+                        "Improved productivity and customer satisfaction.",
+                        "Enhanced WhatsApp CRM integration for seamless operations."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-powerful-plugins-and-seamless-integrations.svg"
             },
             {
-                "name": "Export Logs",
-                "content": "<strong>Get individual outbound and inbound messages logs.</strong>Export the logs for better viewing and insights. Get details of all the outbound and inbound messages and conversations your business had with your customers.",
-                "img": "/assets/global/whatsapp/whatsapp-export-logs.svg"
+                "name": "Scalable WhatsApp Business API",
+                "content": "Achieve seamless communication scalability with our robust WhatsApp Business API solution. Integrate messaging capabilities directly into your existing systems to create a unified customer experience. Whether it's sending notifications, handling support queries, or managing automated workflows, the API adapts to your business needs.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Order Updates & Tracking",
+                            "description": "Send realtime order confirmations, shipping updates, and delivery notifications directly to customers with WhatsApp API."
+                        },
+                        {
+                            "name": "24/7 Customer Support",
+                            "description": "Automate responses to FAQs, troubleshoot issues, and provide instant support using AIpowered WhatsApp chatbots."
+                        },
+                        {
+                            "name": "Appointment Scheduling",
+                            "description": "Allow customers to book, reschedule, or cancel appointments seamlessly through WhatsApp."
+                        },
+                        {
+                            "name": "Payment Notifications & Reminders",
+                            "description": "Notify customers about pending payments, subscription renewals, or transaction confirmations."
+                        },
+                        {
+                            "name": "Feedback Collection",
+                            "description": "Automate postpurchase or postservice feedback requests to improve customer satisfaction with AI Assistance."
+                        }
+                    ],
+                    "features": [
+                        "Scalable and secure WhatsApp Business API.",
+                        "Customizable solutions for unique business processes.",
+                        "Highspeed performance during hightraffic scenarios.",
+                        "Unified customer experience across platforms.",
+                        "Integration with WhatsApp automation tools for efficiency."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-robust-whatsapp-api-for-business-scalability.svg"
+            },
+            {
+                "name": "Automated Reminders: Never Miss an Opportunity",
+                "content": "Never miss an opportunity to engage your customers with automated WhatsApp reminders for birthdays, anniversaries, class schedules, and more. Strengthen customer relationships by sending personalized messages that make them feel valued and appreciated.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Birthday Wishes",
+                            "description": "Send personalized birthday whatsapp messages to customers."
+                        },
+                        {
+                            "name": "Anniversary Reminders",
+                            "description": "Celebrate customer milestones with special offers WhatsApp automations."
+                        },
+                        {
+                            "name": "Class Schedules",
+                            "description": "Notify students or participants about upcoming sessions through WhatsApp business API."
+                        },
+                        {
+                            "name": "Appointment Reminders",
+                            "description": "Reduce noshows for appointments or consultations with WhatsApp campaigns."
+                        },
+                        {
+                            "name": "Subscription Renewals",
+                            "description": "Remind customers about upcoming renewals with WhatsApp AI Chatbots."
+                        }
+                    ],
+                    "features": [
+                        "Automated recurring reminders.",
+                        "Personalized messages for better engagement.",
+                        "Timely updates to improve attendance and conversions.",
+                        "Enhanced customer relationships through thoughtful communication.",
+                        "Integration with WhatsApp for appointment scheduling."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-audience-segmentation-and-automated-reminders-through-whatsapp.svg"
+            },
+            {
+                "name": "Audience Segmentation: Deliver Targeted Campaigns",
+                "content": "Unlock the power of WhatsApp audience segmentation to send tailored messages to specific customer groups. Whether targeting premium clients, firsttime buyers, or repeat customers, segmentation helps deliver highly relevant campaigns that drive engagement and conversions.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Premium Clients",
+                            "description": "Send exclusive offers to highvalue customers with our simplified WhatsApp marketing automation tools."
+                        },
+                        {
+                            "name": "FirstTime Buyers",
+                            "description": "Welcome new customers with special discounts through WhatsApp Chatbots."
+                        },
+                        {
+                            "name": "Repeat Customers",
+                            "description": "Reward loyal customers with personalized deals with Coupons through WhatsApp Business API."
+                        },
+                        {
+                            "name": "Location Based Campaigns",
+                            "description": "Target users based on their geographic location and create Personalized customer journey."
+                        },
+                        {
+                            "name": "Behavioral Segmentation",
+                            "description": "Send tailored WhatsApp messages based on user engagement or purchase history with the help of WhatsApp marketing tools."
+                        }
+                    ],
+                    "features": [
+                        "Automated segmentation for precise targeting and WhatsApp campaigns.",
+                        "Personalized customer journeys for better engagement.",
+                        "Relevant offers and updates based on user data with WhatsApp marketing automations.",
+                        "Improved WhatsApp campaign effectiveness and ROI.",
+                        "WhatsApp Integration for lead nurturing."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-audience-segmentation-for-targeted-campaigns-and-customer-journeys.svg"
+            },
+            {
+                "name": "Broadcast and Campaign Management: Engage at Scale",
+                "content": "Leverage the power of WhatsApp Broadcast and Campaigns to reach your audience with personalized messages at scale. Whether it's promoting a new product, sharing exclusive offers, or sending event invitations, WhatsApp campaigns ensure your message lands directly in your customers' inboxes.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Product Launches",
+                            "description": "Announce new products to your entire customer base with WhatsApp campaigns."
+                        },
+                        {
+                            "name": "Festive Offers",
+                            "description": "Share seasonal discounts and promotions with interactive WhatsApp catalogs and templates."
+                        },
+                        {
+                            "name": "Event Invitations",
+                            "description": "Send invites to webinars, workshops, or sales events with WhatsApp API."
+                        },
+                        {
+                            "name": "Customer Updates",
+                            "description": "Notify users about policy changes or service updates with WhatsApp utility templates at very affordable pricing."
+                        },
+                        {
+                            "name": "Personalized Offers",
+                            "description": "Deliver tailored deals based on user behavior and WhatsApp marketing automations."
+                        }
+                    ],
+                    "features": [
+                        "Bulk WhatsApp messaging with CSV uploads for seamless campaigns.",
+                        "Advanced audience segmentation for targeted WhatsApp campaigns.",
+                        "Scheduled campaigns for optimal timing with WhatsApp marketing tools.",
+                        "Realtime analytics to track WhatsApp campaign performance.",
+                        "High engagement rates with personalized messaging."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-drive-engagement-with-whatsapp-broadcast-and-campaigns.svg"
+            },
+            {
+                "name": "Export Logs: Simplify Reporting and Compliance",
+                "content": "Streamline your reporting and analysis process with WhatsApp Export Logs. Export detailed logs of all your WhatsApp interactions, including messages sent, delivered, read, click counts and responded to. Use this data to analyze campaign performance, track customer behavior, and ensure compliance with communication regulations.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "WhatsApp Campaign Analysis",
+                            "description": "Evaluate the success of WhatsApp marketing campaigns including messages sent, delivered, read, click counts and responded to."
+                        },
+                        {
+                            "name": "Customer Insights",
+                            "description": "Analyze interaction patterns for better targeting and WhatsApp campaign planning."
+                        },
+                        {
+                            "name": "Click Count Performance",
+                            "description": "Track how many users have clicked on the provided link in the WhatsApp template and analyze the performance of the template."
+                        }
+                    ],
+                    "features": [
+                        "Easy export of WhatsApp message logs in CSV format.",
+                        "Detailed insights into message delivery and engagement.",
+                        "Compliance with data protection and communication laws.",
+                        "Improved decisionmaking with actionable WhatsApp analytics data."
+                    ]
+                },
+                "img": "/assets/global/whatsapp/whatsapp-simplify-reporting-with-whatsapp-export-logs.svg"
             }
         ]
     },
-   
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {

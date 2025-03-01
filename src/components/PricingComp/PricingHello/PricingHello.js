@@ -40,7 +40,17 @@ export default function PricingHello({ data, country }) {
     useEffect(() => {
         fetchPlans();
     }, [fetchPlans]);
-
+    const contvertToLocal = (number) => {
+        if (currency === 'INR') {
+            {
+                return Number(number).toLocaleString('en-IN');
+            }
+        } else {
+            {
+                return Number(number).toLocaleString('en-US');
+            }
+        }
+    };
     useEffect(() => {
         if (plans) {
             const plansObj = plans
@@ -518,6 +528,7 @@ export default function PricingHello({ data, country }) {
                                     <span className='label-text'>Monthly Ticket usage</span>
                                     <input
                                         type='number'
+                                        step='1'
                                         placeholder='Monthly Ticket usage'
                                         className='input input-bordered w-full '
                                         onChange={(e) => {
@@ -529,11 +540,16 @@ export default function PricingHello({ data, country }) {
                                 <label className='form-control w-full flex flex-col gap-1'>
                                     <span className='label-text'>Monthly Inbox usage</span>
                                     <input
-                                        type='text'
+                                        type='number'
+                                        step='1'
                                         placeholder='Monthly Inbox usage'
                                         className='input input-bordered w-full '
                                         onChange={(e) => {
-                                            setRawInboxes(Number(e.target.value));
+                                            const value = e.target.value;
+                                            if (/^\d+$/.test(value)) {
+                                                // Check if the value is a whole number
+                                                setRawInboxes(Number(value));
+                                            }
                                         }}
                                     />
                                 </label>
@@ -605,10 +621,12 @@ export default function PricingHello({ data, country }) {
                                         <h4>Extra inbox charges</h4>
                                     </div>
                                     <div className='p-4 flex flex-col gap-4'>
-                                        <span>{plansObj[Object.keys(plansObj)[0]]?.extra?.Tickets}</span>
+                                        <span>
+                                            {contvertToLocal(plansObj[Object.keys(plansObj)[0]]?.extra?.Tickets)}
+                                        </span>
                                         {plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Tickets !== 0 ? (
                                             <span>
-                                                {plansObj[Object.keys(plansObj)[0]]?.extra?.Tickets} X{' '}
+                                                {contvertToLocal(plansObj[Object.keys(plansObj)[0]]?.extra?.Tickets)} X{' '}
                                                 {
                                                     plansObj[Object.keys(plansObj)[0]]?.planServices?.Tickets
                                                         ?.follow_up_rate
@@ -616,16 +634,18 @@ export default function PricingHello({ data, country }) {
                                                 =
                                                 <span className='text-green-600 font-semibold'>
                                                     {''} {symbol}{' '}
-                                                    {plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Tickets}
+                                                    {contvertToLocal(
+                                                        plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Tickets
+                                                    )}
                                                 </span>
                                             </span>
                                         ) : (
                                             <span>-</span>
                                         )}
-                                        <span>{plansObj[Object.keys(plansObj)[0]]?.extra?.Inbox}</span>
+                                        <span>{contvertToLocal(plansObj[Object.keys(plansObj)[0]]?.extra?.Inbox)}</span>
                                         {plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Inbox !== 0 ? (
                                             <span>
-                                                {plansObj[Object.keys(plansObj)[0]]?.extra?.Inbox} X{' '}
+                                                {contvertToLocal(plansObj[Object.keys(plansObj)[0]]?.extra?.Inbox)} X{' '}
                                                 {
                                                     plansObj[Object.keys(plansObj)[0]]?.planServices?.Inbox
                                                         ?.follow_up_rate
@@ -633,7 +653,10 @@ export default function PricingHello({ data, country }) {
                                                 ={''}
                                                 <span className='text-green-600 font-semibold'>
                                                     {' '}
-                                                    {symbol} {plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Inbox}
+                                                    {symbol}{' '}
+                                                    {contvertToLocal(
+                                                        plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Inbox
+                                                    )}
                                                 </span>
                                             </span>
                                         ) : (
@@ -641,10 +664,12 @@ export default function PricingHello({ data, country }) {
                                         )}
                                     </div>
                                     <div className='p-4 flex flex-col gap-4'>
-                                        <span>{plansObj[Object.keys(plansObj)[1]]?.extra?.Tickets}</span>
+                                        <span>
+                                            {contvertToLocal(plansObj[Object.keys(plansObj)[1]]?.extra?.Tickets)}
+                                        </span>
                                         {plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Tickets !== 0 ? (
                                             <span>
-                                                {plansObj[Object.keys(plansObj)[1]]?.extra?.Tickets} X{' '}
+                                                {contvertToLocal(plansObj[Object.keys(plansObj)[1]]?.extra?.Tickets)} X{' '}
                                                 {
                                                     plansObj[Object.keys(plansObj)[1]]?.planServices?.Tickets
                                                         ?.follow_up_rate
@@ -652,16 +677,18 @@ export default function PricingHello({ data, country }) {
                                                 ={''}
                                                 <span className='text-green-600 font-semibold'>
                                                     {''} {symbol}{' '}
-                                                    {plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Tickets}
+                                                    {contvertToLocal(
+                                                        plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Tickets
+                                                    )}
                                                 </span>
                                             </span>
                                         ) : (
                                             <span>-</span>
                                         )}
-                                        <span>{plansObj[Object.keys(plansObj)[1]]?.extra?.Inbox}</span>
+                                        <span>{contvertToLocal(plansObj[Object.keys(plansObj)[1]]?.extra?.Inbox)}</span>
                                         {plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Inbox !== 0 ? (
                                             <span>
-                                                {plansObj[Object.keys(plansObj)[1]]?.extra?.Inbox} X{' '}
+                                                {contvertToLocal(plansObj[Object.keys(plansObj)[1]]?.extra?.Inbox)} X{' '}
                                                 {
                                                     plansObj[Object.keys(plansObj)[1]]?.planServices?.Inbox
                                                         ?.follow_up_rate
@@ -669,7 +696,10 @@ export default function PricingHello({ data, country }) {
                                                 ={''}
                                                 <span className='text-green-600 font-semibold'>
                                                     {' '}
-                                                    {symbol} {plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Inbox}
+                                                    {symbol}{' '}
+                                                    {contvertToLocal(
+                                                        plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Inbox
+                                                    )}
                                                 </span>
                                             </span>
                                         ) : (
@@ -688,9 +718,11 @@ export default function PricingHello({ data, country }) {
                                         <span className='font-bold text-green-600'>
                                             {' '}
                                             {symbol}{' '}
-                                            {plansObj[Object.keys(plansObj)[0]]?.planAmount +
-                                                plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Tickets +
-                                                plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Inbox}
+                                            {contvertToLocal(
+                                                plansObj[Object.keys(plansObj)[0]]?.planAmount +
+                                                    plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Tickets +
+                                                    plansObj[Object.keys(plansObj)[0]]?.extraCharges?.Inbox
+                                            )}
                                         </span>
                                         <span>
                                             {' '}
@@ -705,9 +737,11 @@ export default function PricingHello({ data, country }) {
                                         <span className='font-bold text-green-600'>
                                             {' '}
                                             {symbol}{' '}
-                                            {plansObj[Object.keys(plansObj)[1]]?.planAmount +
-                                                plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Tickets +
-                                                plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Inbox}
+                                            {contvertToLocal(
+                                                plansObj[Object.keys(plansObj)[1]]?.planAmount +
+                                                    plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Tickets +
+                                                    plansObj[Object.keys(plansObj)[1]]?.extraCharges?.Inbox
+                                            )}
                                         </span>
                                         <span>
                                             {currency === 'INR'
