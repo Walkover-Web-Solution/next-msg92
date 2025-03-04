@@ -1,7 +1,7 @@
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import { useCallback, useEffect, useState } from 'react';
-import GetSubscriptions from '@/utils/getSubscription';
+import getSubscriptions from '@/utils/getSubscription';
 import { MdCheck, MdClose } from 'react-icons/md';
 import getURL from '@/utils/getURL';
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
@@ -15,7 +15,7 @@ export default function PricingEmail({ data, country }) {
 
     const fetchPlans = useCallback(async () => {
         setIsLoading(true);
-        const response = await GetSubscriptions(currency, 1);
+        const response = await getSubscriptions(currency, 1);
         if (response) {
             setPlans(response);
         }
@@ -65,16 +65,23 @@ export default function PricingEmail({ data, country }) {
                                             return (
                                                 <div
                                                     key={i}
-                                                    className={`flex gap-6 p-6 rounded bg-white col-span-1 lg:max-w-full max-w-[350px]  ${
+                                                    className={`flex gap-6 p-6 rounded bg-white col-span-1 lg:max-w-full max-w-[350px] ${
+                                                        plan?.name === 'Basic' ? 'border-4 border-black' : 'border'
+                                                    }  ${
                                                         i == 0
                                                             ? ' xl:col-span-3 xl:flex-row flex flex-col '
                                                             : ' flex flex-col '
                                                     }`}
                                                 >
                                                     <div className='flex flex-col gap-2 w-full'>
-                                                        <h2 className='text-2xl font-semibold capitalize'>
-                                                            {plan?.name}{' '}
-                                                        </h2>
+                                                        <div className='flex items-center justify-between'>
+                                                            <h2 className=' text-2xl font-semibold'>{plan?.name}</h2>
+                                                            {plan?.name === 'Basic' && (
+                                                                <span className='bg-black text-white px-2 rounded-badge'>
+                                                                    Popular
+                                                                </span>
+                                                            )}
+                                                        </div>
                                                         <div className='flex items-end gap-1 '>
                                                             <h3 className='text-2xl font-semibold text-green-600 capitalize'>
                                                                 {amount?.currency?.symbol}
@@ -107,7 +114,7 @@ export default function PricingEmail({ data, country }) {
                                                     <div className='flex flex-col gap-2 w-full'>
                                                         <h3 className='text-lg font-semibold'>Included</h3>
                                                         <div className='flex flex-col gap-1'>
-                                                            {plan?.plan_services?.map((service, index) =>
+                                                            {plan?.plan_services?.map((service) =>
                                                                 service?.service_credit?.service_credit_rates?.map(
                                                                     (rate, i) =>
                                                                         rate?.currency?.short_name === currency && (
