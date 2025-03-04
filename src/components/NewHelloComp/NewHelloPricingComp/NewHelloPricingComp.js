@@ -1,4 +1,4 @@
-import GetSubscriptions from '@/utils/getSubscription';
+import getSubscriptions from '@/utils/getSubscription';
 import { useState, useEffect, useCallback } from 'react';
 import { MdCheck, MdClose } from 'react-icons/md';
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
@@ -14,7 +14,7 @@ export default function PricingHello({ country, pageInfo }) {
 
     const fetchPlans = useCallback(async () => {
         setIsLoading(true);
-        const response = await GetSubscriptions(currency, 7);
+        const response = await getSubscriptions(currency, 7);
         if (response) {
             setPlans(response);
         }
