@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default async function GetSubscriptions(currency, msId) {
+export default async function getSubscriptions(currency, msId) {
     if (currency && msId) {
         try {
             // changeCurrencySymbol(currency);

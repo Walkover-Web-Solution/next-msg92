@@ -48,13 +48,15 @@ export default function PricingRCS({ country, data, pageInfo }) {
                     </div>
                     {(plans || loading) && (
                         <>
-                            <div className='flex w-full justify-end items-center'>
-                                <button
-                                    onClick={() => document.getElementById('calculate_rcs_pricing').showModal()}
-                                    className='btn btn-accent btn-outline w-fit btn-sm'
-                                >
-                                    Calculate
-                                </button>
+                            <div className='flex w-full justify-end items-center min-h-[36px]'>
+                                {plans && (
+                                    <button
+                                        onClick={() => document.getElementById('calculate_rcs_pricing').showModal()}
+                                        className='btn btn-accent btn-outline w-fit btn-sm'
+                                    >
+                                        Calculate
+                                    </button>
+                                )}
                             </div>
                             <div className='flex flex-col gap-8'>
                                 <table className='table bg-white rounded'>
@@ -76,7 +78,7 @@ export default function PricingRCS({ country, data, pageInfo }) {
                                                             <td className='border-r'>{item?.country_name}</td>
                                                             <td className='border-r'>
                                                                 {item?.country_prefix == 0
-                                                                    ? 'NA'
+                                                                    ? 'N/A'
                                                                     : item?.country_prefix}
                                                             </td>
                                                             <td className='border-r'>
@@ -104,7 +106,7 @@ export default function PricingRCS({ country, data, pageInfo }) {
                                                             <td className='border-r'>{item?.country_name}</td>
                                                             <td className='border-r'>
                                                                 {item?.country_prefix == 0
-                                                                    ? 'NA'
+                                                                    ? 'N/A'
                                                                     : item?.country_prefix}
                                                             </td>
                                                             <td className='border-r'>
