@@ -10,7 +10,7 @@ import CalculatePricingSegmento from './CalculatePricingSegmento/CalculatePricin
 
 export default function PricingSegmento({ data, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
     const [isCalculationModalOpen, setIsCalculationModalOpen] = useState(true);
@@ -27,7 +27,7 @@ export default function PricingSegmento({ data, country }) {
 
     useEffect(() => {
         fetchPlans();
-    }, [fetchPlans]);
+    }, []);
 
     const hasYearlyPlan = useCallback(() => {
         return plans?.some((plan) => plan.plan_amounts?.some((amount) => amount.plan_type?.name === 'Yearly'));
