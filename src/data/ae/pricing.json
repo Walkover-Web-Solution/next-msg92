@@ -325,6 +325,16 @@
             "connectComp": {
                 "know_more": "Know more about"
             }
+        },
+        "shorturl": {
+            "HeadComp": {
+                "title": "ShortURL Pricing in United Arab Emirates | MSG91-United Arab Emirates",
+                "description": "Explore flexible pricing plans for branded short links that boost clicks and conversions. Customize, track, and optimize your marketing efforts with affordable options for every business"
+            },
+            "connectComp": {
+                "sales_btn": "Talk to Sales",
+                "know_more": "Know more about"
+            }
         }
     }
 }
