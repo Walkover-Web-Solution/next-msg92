@@ -39,7 +39,7 @@ export default function PricingSegmento({ data, country }) {
     return (
         <>
             <div className='flex flex-col gap-3 w-full'>
-                <h1 className='text-3xl font-semibold capitalize '>segmento Pricing</h1>
+                <h1 className='text-3xl font-semibold capitalize '>URL Shortener Pricing</h1>
                 <div className='flex flex-col w-full gap-8'>
                     {hasyYarly && (
                         <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
@@ -265,7 +265,12 @@ export default function PricingSegmento({ data, country }) {
                             ))}
                     </div>
 
-                    <ConnectWithTeam product={'Shorturl'} href={'shorturl'} data={data?.connectComp} isPlan={true} />
+                    <ConnectWithTeam
+                        product={'URL Shortener'}
+                        href={'shorturl'}
+                        data={data?.connectComp}
+                        isPlan={true}
+                    />
                     <FaqsComp data={data?.faqComp} notCont={true} />
                 </div>
             </div>
