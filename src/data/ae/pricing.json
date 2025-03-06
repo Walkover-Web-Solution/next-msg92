@@ -62,6 +62,13 @@
                     "slug": "rcs",
                     "icon": "/assets/icons/products/rcs.svg"
                 }
+            ],
+            "utilities": [
+                {
+                    "name": "URL Shortener",
+                    "slug": "shorturl",
+                    "icon": "/assets/icons/products/shorturl.svg"
+                }
             ]
         },
         "hello": {
