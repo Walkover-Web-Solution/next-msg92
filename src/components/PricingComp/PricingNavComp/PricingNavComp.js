@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function PricingNav({ products, page }) {
-    console.log('🚀 ~ PricingNav ~ products:', products);
     return (
         <>
             <div className='flex w-full justify-start md:hidden '>

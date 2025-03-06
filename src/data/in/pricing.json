@@ -58,6 +58,13 @@
                     "slug": "rcs",
                     "icon": "/assets/icons/products/rcs.svg"
                 }
+            ],
+            "utilities": [
+                {
+                    "name": "URL Shortener",
+                    "slug": "shorturl",
+                    "icon": "/assets/icons/products/shorturl.svg"
+                }
             ]
         },
         "hello": {
@@ -310,6 +317,16 @@
                 "description": "RCS Messaging now available in India at most affordable prices. Learn How to send RCS Messages on android and iphone using Transactional RCS APIs and more"
             },
             "connectComp": {
+                "know_more": "Know more about"
+            }
+        },
+        "shorturl": {
+            "HeadComp": {
+                "title": "ShortURL Pricing in India | MSG91-India",
+                "description": "Explore flexible pricing plans for branded short links that boost clicks and conversions. Customize, track, and optimize your marketing efforts with affordable options for every business."
+            },
+            "connectComp": {
+                "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }
         }
