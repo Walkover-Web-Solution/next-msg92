@@ -148,15 +148,17 @@ export default function PricingSegmento({ data, country }) {
                                                                 {amount?.currency?.symbol}
                                                                 {amount?.plan_amount} {tabtype}
                                                             </p>
-                                                            <p className='text-sm'>
-                                                                {amount?.currency?.short_name === 'INR' &&
-                                                                plan?.name != 'Free'
-                                                                    ? '+18% GST'
-                                                                    : amount?.currency?.short_name === 'GBP' &&
-                                                                        plan?.name != 'Free'
-                                                                      ? '+ VAT'
-                                                                      : '-'}
-                                                            </p>
+                                                            {amount?.plan_amount != '0' ? (
+                                                                <p className='text-sm'>
+                                                                    {amount?.currency?.short_name === 'INR'
+                                                                        ? '+18% GST'
+                                                                        : amount?.currency?.short_name === 'GBP'
+                                                                          ? '+VAT'
+                                                                          : '-'}
+                                                                </p>
+                                                            ) : (
+                                                                '-'
+                                                            )}
                                                             {/* <div>{handleOfferPrice(amount) || '-'}</div> */}
                                                         </div>
 
@@ -258,7 +260,7 @@ export default function PricingSegmento({ data, country }) {
                                                                                                         fontSize={18}
                                                                                                         color='#16A34A'
                                                                                                     />
-                                                                                                    {`${symbol} ${rate?.follow_up_rate}/${rate?.chunk_size} ${service?.service_credit?.service?.name}`}
+                                                                                                    {`${symbol}${rate?.follow_up_rate}/${rate?.chunk_size} ${service?.service_credit?.service?.name}`}
                                                                                                 </>
                                                                                             ) : (
                                                                                                 <>
@@ -329,8 +331,6 @@ export default function PricingSegmento({ data, country }) {
                     <FaqsComp data={data?.faqComp} notCont={true} />
                 </div>
             </div>
-
-            {/* // calculate segmento pricing */}
             {/* {plans && isCalculationModalOpen && (
                 <dialog id='calculate_segmento_pricing' className='modal' open>
                     <CalculatePricingSegmento />
