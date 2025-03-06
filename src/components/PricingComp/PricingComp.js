@@ -9,6 +9,7 @@ import PricingRCS from './PricingRCS/PricingRCS';
 import PricingEmail from './PricingEmail/PricingEmail';
 import PricingWhatsApp from './PricingWhatsApp/PricingWhatsApp';
 import HeadComp from '../headComp';
+import PricingShortURL from './PricingShortURL/PricingShortURL';
 
 export default function PricingComp({ data, pageInfo }) {
     let page;
@@ -44,6 +45,10 @@ export default function PricingComp({ data, pageInfo }) {
                     {page === 'voice' && <PricingVoice data={data?.voice} country={pageInfo?.country} />}
 
                     {page === 'rcs' && <PricingRCS data={data?.rcs} country={pageInfo?.country} pageInfo={pageInfo} />}
+
+                    {page === 'shorturl' && (
+                        <PricingShortURL data={data?.shorturl} country={pageInfo?.country} pageInfo={pageInfo} />
+                    )}
                 </div>
             </div>
         </>
