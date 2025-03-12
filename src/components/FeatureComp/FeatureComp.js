@@ -70,7 +70,7 @@ export default function FeatureComp({ data }) {
                                                         <h4 className='font-semibold text-lg'>Key Features:</h4>
                                                         <ul className='flex flex-col gap-1 list-disc'>
                                                             {feature?.more_content?.features?.map((feature, index) => {
-                                                                return <li>{feature}</li>;
+                                                                return <li key={index}>{feature}</li>;
                                                             })}
                                                         </ul>
                                                     </div>
@@ -84,6 +84,7 @@ export default function FeatureComp({ data }) {
                                                     />
                                                 )}
                                                 <div
+                                                    className='cursor-pointer'
                                                     onClick={() => {
                                                         setOpenedFeatures((prevOpenedFeatures) => {
                                                             if (prevOpenedFeatures.includes(index)) {
