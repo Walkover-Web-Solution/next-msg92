@@ -1,4 +1,4 @@
-import HeadComp from '@/components/headComp';
+import HeadComp from '@/components/HeadComp/HeadComp';
 import Image from 'next/image';
 import { MdChevronLeft } from 'react-icons/md';
 
