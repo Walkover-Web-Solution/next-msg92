@@ -1,12 +1,11 @@
 import ChatBotDemoComp from '@/components/ChatBotDemoComp/ChatBotDemoComp';
 import FooterComp from '@/components/FooterComp/FooterComp';
-import HeadComp from '@/components/headComp';
+import HeadComp from '@/components/HeadComp/HeadComp';
 import MenuBarComp from '@/components/menuBarComp/menuBarComp';
 import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
 import PreFooterComp from '@/components/PreFooterComp/PreFooterComp';
 import getBotTemplates from '@/utils/getBotTemplates';
 import getPageInfo from '@/utils/getPageInfo';
-import { useRouter } from 'next/router';
 
 export default function demochatbot({ pageInfo, templateList, totalPages, currentPage }) {
     return (
