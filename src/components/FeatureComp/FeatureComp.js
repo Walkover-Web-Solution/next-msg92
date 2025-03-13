@@ -2,6 +2,7 @@ import GetMdIcons from '@/utils/getMdIcons';
 import Image from 'next/image';
 import { LinkButton, MoreButton } from '../UIComponent/Buttons/LinkButton';
 import { useState } from 'react';
+import LottiePlayer from '../LottiePlayer/LottiePlayer';
 
 export default function FeatureComp({ data }) {
     const [openedFeatures, setOpenedFeatures] = useState([]);
@@ -22,7 +23,7 @@ export default function FeatureComp({ data }) {
                                             : 'flex flex-col lg:col-span-1 col-span-2'
                                     }`}
                                 >
-                                    <div className='lg:p-12 p-4 flex flex-col gap-3'>
+                                    <div className='lg:p-12 p-4 flex flex-col gap-3 w-full'>
                                         {feature?.icon && <Icon className='text-5xl text-[#F7DC6F]' />}
 
                                         <h3 className='text-2xl font-semibold'>{feature?.name}</h3>
@@ -103,13 +104,19 @@ export default function FeatureComp({ data }) {
                                             </>
                                         )}
                                     </div>
-                                    <Image
-                                        src={feature?.img}
-                                        alt={feature?.name}
-                                        className='w-full xl:max-w-[600px] lg:max-w-[400px] max-w-[300px] md:mx-12 mx-2'
-                                        width={420}
-                                        height={420}
-                                    />
+                                    {feature?.img && feature?.img.endsWith('.json') ? (
+                                        <div className='w-full xl:max-w-[600px] lg:max-w-[400px] max-w-[300px] md:mx-12 mx-2'>
+                                            <LottiePlayer lottie={feature?.img} />
+                                        </div>
+                                    ) : (
+                                        <Image
+                                            src={feature?.img}
+                                            alt={feature?.name}
+                                            className='w-full xl:max-w-[600px] lg:max-w-[400px] max-w-[300px] md:mx-12 mx-2'
+                                            width={420}
+                                            height={420}
+                                        />
+                                    )}
                                 </div>
                             );
                         })}
