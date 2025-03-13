@@ -547,12 +547,33 @@
                         "Response analytics to track team performance and email resolution times."
                     ]
                 },
-             "img": "/assets/global/email/lotties/effortlessly-manage-incoming-emails-with-a-unified-inbox.json"
+                "img": "/assets/global/email/lotties/effortlessly-manage-incoming-emails-with-a-unified-inbox.json"
+            }
+        ]
+    },
+    "ProductStatsComp": {
+        "heading": "Best-in-class email delivery and industry-leading results",
+        "content": [
+            {
+                "count": "98.5%",
+                "des": "Email delivery rate"
+            },
+            {
+                "count": "15M+",
+                "des": "Emails delivered successfully every month."
+            },
+            {
+                "count": "100%",
+                "des": "Emails attempted within the first 5 minutes for instant engagement."
+            },
+            {
+                "count": "24/7",
+                "des": "Dedicated support, always ready to assist."
             }
         ]
     },
     "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
+        "content": "Millions of Users trust us with our Email Solution, You can too.",
         "buttons": {
             "contactSales": {
                 "text": "Contact sales",
