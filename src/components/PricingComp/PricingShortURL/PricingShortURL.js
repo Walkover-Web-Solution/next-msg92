@@ -1,24 +1,21 @@
 import getSubscriptions from '@/utils/getSubscription';
 import { useState, useEffect, useCallback } from 'react';
-import { MdCheck, MdClose } from 'react-icons/md';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 import Link from 'next/link';
 import getURL from '@/utils/getURL';
-import CalculatePricingSegmento from './CalculatePricingSegmento/CalculatePricingSegmento';
 
 export default function PricingSegmento({ data, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
     const [isLoading, setIsLoading] = useState(true);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
-    const [isCalculationModalOpen, setIsCalculationModalOpen] = useState(true);
     const [hasyYarly, setHasYearly] = useState(false);
 
     const fetchPlans = useCallback(async () => {
         setIsLoading(true);
-        const response = await getSubscriptions(currency, 2);
+        const response = await getSubscriptions(currency, 3);
         if (response) {
             setPlans(response);
         }
@@ -39,59 +36,10 @@ export default function PricingSegmento({ data, country }) {
         }
     }, [hasYearlyPlan]);
 
-    function handleOfferPrice(price) {
-        let ammount;
-        let percent;
-        switch (price?.currency?.short_name) {
-            case 'INR':
-                if (price.plan_amount == 1000) {
-                    percent = ((1500 - 1000) / 1500) * 100;
-                    ammount = 1500;
-                } else if (price.plan_amount == 2000) {
-                    percent = ((3000 - 2000) / 3000) * 100;
-                    ammount = 3000;
-                }
-                break;
-            case 'USD':
-                if (price.plan_amount == 28) {
-                    percent = ((40 - 28) / 40) * 100;
-                    ammount = 40;
-                } else if (price.plan_amount == 56) {
-                    percent = ((80 - 56) / 80) * 100;
-                    ammount = 80;
-                }
-                break;
-            case 'GBP':
-                if (price.plan_amount == 24) {
-                    percent = ((35 - 24) / 35) * 100;
-                    ammount = 35;
-                } else if (price.plan_amount == 45) {
-                    percent = ((65 - 45) / 65) * 100;
-                    ammount = 65;
-                }
-                break;
-            default:
-                break;
-        }
-        percent = Math.round(percent) === 31 ? 30 : Math.round(percent);
-        if (ammount) {
-            return (
-                <div className='flex gap-2 items-center'>
-                    <span className=' text-gray-400 text-lg'>
-                        <span className=' line-through'>
-                            {price?.currency?.symbol}
-                            {ammount}
-                        </span>
-                    </span>
-                    <span className='font-bold'>{percent}% Off</span>
-                </div>
-            );
-        }
-    }
     return (
         <>
             <div className='flex flex-col gap-3 w-full'>
-                <h1 className='text-3xl font-semibold capitalize '>segmento Pricing</h1>
+                <h1 className='text-3xl font-semibold capitalize '>URL Shortener Pricing</h1>
                 <div className='flex flex-col w-full gap-8'>
                     {hasyYarly && (
                         <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
@@ -203,7 +151,7 @@ export default function PricingSegmento({ data, country }) {
                                                     </div>
 
                                                     {/* features */}
-                                                    <div className='flex flex-col gap-2'>
+                                                    {/* <div className='flex flex-col gap-2'>
                                                         <h3 className='text-lg font-semibold'>Features</h3>
                                                         <div className='flex flex-col gap-1'>
                                                             {plan?.plan_features?.length > 0 &&
@@ -235,10 +183,10 @@ export default function PricingSegmento({ data, country }) {
                                                                     }
                                                                 })}
                                                         </div>
-                                                    </div>
+                                                    </div> */}
 
                                                     {/* Extras */}
-                                                    <div className='flex flex-col gap-2'>
+                                                    {/* <div className='flex flex-col gap-2'>
                                                         <h3 className='text-lg font-semibold'>Extra @</h3>
                                                         <div className='flex flex-col gap-1'>
                                                             {plan?.plan_services?.length > 0 &&
@@ -281,7 +229,7 @@ export default function PricingSegmento({ data, country }) {
                                                                     </div>
                                                                 ))}
                                                         </div>
-                                                    </div>
+                                                    </div> */}
                                                     {/* {plan?.name !== 'Free' && (
                                                         <button
                                                             className=' btn btn-accent btn-outline btn-md '
@@ -296,10 +244,10 @@ export default function PricingSegmento({ data, country }) {
                             )}
 
                         {isLoading &&
-                            [...Array(3)].map((_, index) => (
+                            [...Array(2)].map((_, index) => (
                                 <div
                                     key={index}
-                                    className='flex col-span-1  flex-col gap-6  h-[800px] p-6 border rounded bg-white'
+                                    className='flex col-span-1  flex-col gap-6  h-[300px] p-6 border rounded bg-white'
                                 >
                                     <div className='flex flex-col gap-4'>
                                         <div className=' skeleton h-[40px] w-full'></div>
@@ -313,29 +261,19 @@ export default function PricingSegmento({ data, country }) {
                                         <div className=' skeleton h-[20px] w-1/3'></div>
                                         <div className=' skeleton h-[20px] w-1/3'></div>
                                     </div>
-                                    <div className='flex flex-col gap-4 mt-4'>
-                                        <div className=' skeleton h-[20px] w-2/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                    </div>
-                                    <div className='flex flex-col gap-4 mt-4'>
-                                        <div className=' skeleton h-[20px] w-2/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                    </div>
                                 </div>
                             ))}
                     </div>
 
-                    <ConnectWithTeam product={'Segmento'} href={'segmento'} data={data?.connectComp} isPlan={true} />
+                    <ConnectWithTeam
+                        product={'URL Shortener'}
+                        href={'shorturl'}
+                        data={data?.connectComp}
+                        isPlan={true}
+                    />
                     <FaqsComp data={data?.faqComp} notCont={true} />
                 </div>
             </div>
-            {/* {plans && isCalculationModalOpen && (
-                <dialog id='calculate_segmento_pricing' className='modal' open>
-                    <CalculatePricingSegmento />
-                </dialog>
-            )} */}
         </>
     );
 }

@@ -46,7 +46,8 @@
         "email",
         "whatsapp",
         "voice",
-        "otpwidget"
+        "otpwidget",
+        "shorturl"
     ],
     "nested": [
         "whatsapp/chatbot",
