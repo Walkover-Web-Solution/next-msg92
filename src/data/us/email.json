@@ -6,14 +6,14 @@
     "BannerComp": {
         "slug": "email",
         "product": {
-            "name": "Email Api",
+            "name": "Email",
             "icon": "/assets/icons/products/email.svg"
         },
         "code": true,
 
-        "tagline": "smarter email strategy",
-        "heading": "Smart emails that land directly into the right inbox",
-        "subheading": " Make the most of these powerful touchpoints between your brand and your customers.",
+        "tagline": "Maximize Revenue with Targeted Emails",
+        "heading": "Unlock Revenue with Every Email",
+        "subheading": "Transform your business with the best email marketing solution and automation platform, designed for seamless interaction and growth. Whether you need to send promotional email or transactional email, our platform ensures high deliverability and engagement.",
        "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
@@ -43,39 +43,538 @@
         }
     },
     "FeatureComp": {
-        "heading": "Features",
+        "heading": "Send high-converting emails with advanced features",
         "iconColor": "text-email",
         "features": [
             {
-                "name": "Email Template Builder",
-                "content": "<strong>Drag-and-drop to create the layout of your email.</strong> Customize your transactional emails using our no-code, drag-and-drop interface. Preview to see how your email will look when viewed on different devices.",
-                "img": "/assets/global/email/email-template-builder.svg"
+                "name": "Mobile-Optimized Email Templates for Perfect Display",
+                "content": "Ensure your emails look great on any device with mobile-optimised templates. Responsive designs adapt to various screen sizes, providing a smooth experience and boosting engagement",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "E-Commerce & Promotions",
+                            "description": "Optimise product showcases, discounts, and CTA buttons for mobile shoppers."
+                        },
+                        {
+                            "name": "Event Invitations & Reminders",
+                            "description": "Deliver well-formatted event updates that users can easily access on the go."
+                        },
+                        {
+                            "name": "Transactional Emails",
+                            "description": "Ensure order confirmations, OTPs, and notifications display correctly."
+                        },
+                        {
+                            "name": "Newsletter & Blog Updates",
+                            "description": "Deliver well-structured content that’s easy to read on mobile screens."
+                        },
+                        {
+                            "name": "Customer Support & Surveys",
+                            "description": "Ensure feedback forms and support responses are accessible and user-friendly on any device."
+                        }
+                    ],
+                    "features": [
+                        "Templates designed for perfect display across all devices.",
+                        "Automatically adjust the layout to fit different screen sizes.",
+                        "Keep brand elements consistent across devices.",
+                        "Ensure emails are easy to read and navigate on mobile devices.",
+                        "Prioritise mobile responsiveness to enhance user experience and engagement."
+                    ]
+                },
+                "img": "/assets/global/email/mobile-optimized-email-templates-for-perfect-display.svg"
             },
             {
-                "name": "AMP Emails",
-                "content": "<strong>Rich interactive emails to increase user engagement.</strong> Rich interactive emails to increase user engagement. Your customers can interact dynamically with your message directly in the email to perform tasks and CTAs with fewer steps and zero redirects..",
-                "img": "/assets/global/email/email-amp-emails.svg"
+                "name": "Maintain your Domain Reputation with Smart Email Validation",
+                "content": "Maintain a clean and effective email list by validating email addresses before sending campaigns. Removing invalid, fake, or risky addresses ensures higher deliverability and protects your sender reputation.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Reduce Bounce Rates",
+                            "description": "Remove invalid or fake email addresses to ensure your emails reach real users."
+                        },
+                        {
+                            "name": "Increase Deliverability",
+                            "description": "Improve inbox delivery by maintaining a validated email list."
+                        },
+                        {
+                            "name": "Target the Right Audience",
+                            "description": "Engage with valid, active users to maximize campaign effectiveness."
+                        },
+                        {
+                            "name": "Improve Campaign Performance",
+                            "description": "Optimise open rates by sending emails to a high-quality list."
+                        },
+                        {
+                            "name": "Protect Sender Reputation",
+                            "description": "Avoid issues with undeliverable emails to maintain a strong sender reputation."
+                        }
+                    ],
+                    "features": [
+                        "Instantly detect valid, invalid, and risky email addresses.",
+                        "Upload and validate large email lists efficiently.",
+                        "Remove fake and undeliverable emails before campaigns.",
+                        "Proactively protect your sender reputation.",
+                        "Enhance engagement by sending to a targeted audience."
+                    ]
+                },
+                "img": "/assets/global/email/maintain-your-domain-reputation-with-smart-email-validation.svg"
             },
             {
-                "name": "Statistics",
-                "content": "<strong>Monitor and track every aspect of your email’s lifecycle.</strong> Get a graphical representation of the delivery rates, open rates, click-through rates, bounce rates, and spam to iterate and ensure you reach your customer's inbox.",
-                "img": "/assets/global/email/email-statistics.svg"
+                "name": "Create Stunning Emails in Minutes",
+                "content": "Design beautiful emails effortlessly using our drag-and-drop editor. Personalize every detail, from layouts and colours to fonts, ensuring a perfect match with your brand’s identity. Whether it’s a quick update or an in-depth announcement, our email marketing solution helps you craft polished emails that resonate with your audience and drive seamless engagement.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Newsletters",
+                            "description": "Keep your audience updated with regular insights."
+                        },
+                        {
+                            "name": "Exclusive Offers",
+                            "description": "Boost sales with personalised offers and discounts."
+                        },
+                        {
+                            "name": "Product Announcements",
+                            "description": "Keep customers informed about new product launches."
+                        },
+                        {
+                            "name": "Order Updates",
+                            "description": "Provide real-time order and shipping information."
+                        },
+                        {
+                            "name": "Abandoned Cart Reminders",
+                            "description": "Automatically send reminders to recover abandoned carts."
+                        }
+                    ],
+                    "features": [
+                        "Drag-and-drop editor for easy customization.",
+                        "Add buttons, images, and videos for interactive content.",
+                        "Customize colors, fonts, and logos to match your brand identity.",
+                        "Optimized designs for seamless display on all devices.",
+                        "Preview and test compatibility across various devices before sending."
+                    ]
+                },
+                "img": "/assets/global/email/lotties/create-stunning-emails-in-minutes.json"
             },
             {
-                "name": "SMTP/RestAPI support",
-                "content": " <strong>Integrate with our RESTful APIs and SMTP in minutes.</strong> Integrate with our RESTful APIs and SMTP in minutes. Get your hands on our comprehensive documentation or connect with our support superheroes to easily integrate into your custom or third-party apps to start sending emails..",
-               "img": "/assets/global/email/email-smtp-restapi-support.svg"
+                "name": "Create conversion-driving AMP emails in minutes.",
+                "content": "Enhance your email marketing strategy with AMP technology. Create interactive and engaging experiences right within the email inbox. Add dynamic elements like carousels, forms, and real-time content to attract your audience and drive better conversion rates. AMP-enabled email solutions offer seamless interactions without requiring users to leave their inbox.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Product Carousels",
+                            "description": "Showcase multiple products in a single email for an interactive shopping experience."
+                        },
+                        {
+                            "name": "Forms & Surveys",
+                            "description": "Collect feedback or data directly within the email."
+                        },
+                        {
+                            "name": "Real-Time Content",
+                            "description": "Keep your emails updated with live information, such as inventory or pricing."
+                        },
+                        {
+                            "name": "Event Registrations",
+                            "description": "Enable users to register for events directly from the email."
+                        },
+                        {
+                            "name": "Polls & Voting",
+                            "description": "Engage your audience with interactive polls and voting features."
+                        }
+                    ],
+                    "features": [
+                        "Dynamic elements like carousels, forms, and live updates.",
+                        "Allow recipients to take action without leaving the inbox.",
+                        "Stand out in crowded inboxes with rich, interactive content.",
+                        "Drive conversions with seamless and engaging email experiences.",
+                        "Fully optimised for both mobile and desktop devices."
+                    ]
+                },
+                "img": "/assets/global/email/lotties/create-conversion-driving-amp-emails-in-minutes.json"
             },
             {
-                "name": "Email Validation",
-                "content": "<strong>Positively impact the engagement and reputation of your brand.</strong> Deliver more messages to real contacts with our real-time API that detects and suppresses invalid email address with an accuracy rate of up to 85% to give you a clean list.",
-               "img": "/assets/global/email/email-validation.svg"
+                "name": "Send Email Campaigns Faster with Pre-Designed Templates",
+                "content": "Save time and boost engagement with professionally designed promotional & transactional email templates. Choose from a variety of layouts for newsletters, promotions, and transactional emails using the MSG91 Email Template Library.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "E-Commerce Sales",
+                            "description": "Ready-to-use email templates for flash sales and product launches."
+                        },
+                        {
+                            "name": "Event Invitations",
+                            "description": "Professionally designed templates for event promotions."
+                        },
+                        {
+                            "name": "Customer Support",
+                            "description": "Branded templates for issue resolution and follow-ups."
+                        },
+                        {
+                            "name": "Welcome Emails",
+                            "description": "Quickly set up an engaging welcome series."
+                        },
+                        {
+                            "name": "Product Announcements",
+                            "description": "Modify announcement emails in minutes and send instantly."
+                        }
+                    ],
+                    "features": [
+                        "Professionally designed, mobile-responsive templates for any use case.",
+                        "Drag-and-drop customisation – no coding required.",
+                        "Pre-built templates for promotions, newsletters, and transactional emails.",
+                        "Save time with pre-tested, high-converting designs.",
+                        "Instantly test, optimise, and schedule campaigns with ease."
+                    ]
+                },
+                "img": "/assets/global/email/send-email-campaigns-faster-with-pre-designed-templates.svg"
+            },
+            {
+                "name": "Flexible Email API For Seamless Integration",
+                "content": "Ensure seamless and reliable email delivery with our Transactional Email API. Send order confirmations, invoices, and notifications with fast delivery and high deliverability.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "OTP Verification",
+                            "description": "Ensure secure and seamless user authentication with instant one-time passwords via Email OTP Api."
+                        },
+                        {
+                            "name": "Abandoned Cart Reminders",
+                            "description": "Send follow-up emails to encourage users to complete their purchase."
+                        },
+                        {
+                            "name": "Order Confirmations",
+                            "description": "Immediately send receipts and order details after a purchase."
+                        },
+                        {
+                            "name": "Shipping & Delivery Alerts",
+                            "description": "Keep customers informed about order dispatch, tracking, and delivery status."
+                        },
+                        {
+                            "name": "Refund & Return Updates",
+                            "description": "Notify users about refund processing, return approvals, and status updates."
+                        }
+                    ],
+                    "features": [
+                        "High-speed delivery to ensure time-sensitive emails reach users instantly.",
+                        "API integration for seamless automation and real-time email triggers.",
+                        "Scalable to handle high-volume transactional emails effortlessly.",
+                        "Advanced deliverability features to maximise inbox placement.",
+                        "Real-time tracking and analytics to monitor email performance."
+                    ]
+                },
+                "img": "/assets/global/email/transactional-email-api-deliver-critical-emails-instantly.svg"
+            },
+            {
+                "name": "Seamless Integration with Gmail & Outlook",
+                "content": "Send personalised, professional emails directly from your Gmail or Outlook account via the MSG91 dashboard. This seamless integration allows you to create engaging templates, ensures instant deliverability, boosts open rates, and provides detailed analytics to simplify your email communication.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Transactional Emails",
+                            "description": "Automate order confirmations, OTPs, and notifications via your existing email provider."
+                        },
+                        {
+                            "name": "Marketing Campaigns",
+                            "description": "Design engaging templates and send bulk emails to registered audiences with instant deliverability."
+                        },
+                        {
+                            "name": "Lead Nurturing",
+                            "description": "Send targeted follow-ups and personalised emails to nurture prospects."
+                        },
+                        {
+                            "name": "Detailed Analytics",
+                            "description": "Track open rates, clicks, and engagement for better insights."
+                        },
+                        {
+                            "name": "Easy Access",
+                            "description": "Manage email campaigns seamlessly from Gmail or Outlook."
+                        }
+                    ],
+                    "features": [
+                        "Send email campaigns directly from one dashboard.",
+                        "Engage customers from your business inbox effortlessly.",
+                        "Handle all campaigns from a single interface.",
+                        "Monitor email opens, clicks, and performance instantly.",
+                        "Streamline communication without extra software."
+                    ]
+                },
+                "img": "/assets/global/email/seamless-integration-with-gmail-and-outlook.svg"
+            },
+            {
+                "name": "Target the Right Audience & Run Email Campaigns Effortlessly",
+                "content": "Reach the right audience with the right email using advanced segmentation and marketing email automation. Deliver personalized emails that drive engagement and conversions seamlessly.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Personalised Email Marketing",
+                            "description": "Send targeted campaigns based on customer interests and behaviour."
+                        },
+                        {
+                            "name": "Re-Engagement Campaigns",
+                            "description": "Identify inactive users and send tailored emails to bring them back."
+                        },
+                        {
+                            "name": "Event-Based Triggers",
+                            "description": "Automate emails for signups, purchases, and abandoned carts."
+                        },
+                        {
+                            "name": "Geo-Targeted Campaigns",
+                            "description": "Reach audiences based on their location and preferences."
+                        },
+                        {
+                            "name": "A/B Testing",
+                            "description": "Test subject lines, content, and designs to optimise email performance."
+                        }
+                    ],
+                    "features": [
+                        "Create precise segments based on user behaviour, demographics, and engagement.",
+                        "Set up trigger-based emails for signups, purchases, and abandoned carts.",
+                        "Optimise performance with real-time data, smart scheduling, and campaign insights.",
+                        "Deliver dynamic, tailored content for higher engagement.",
+                        "Connect with CRMs, APIs, and multi-channel platforms for a unified marketing approach."
+                    ]
+                },
+                "img": "/assets/global/email/target-the-right-audience-and-run-email-campaigns-effortlessly.svg"
+            },
+            {
+                "name": "Detailed Analytics: Track Delivered, Open, and Click Reports",
+                "content": "Gain actionable insights with real-time analytics. Monitor delivery rates, open rates, click-through rates, and conversions to optimise your campaigns effectively.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Campaign Performance Tracking",
+                            "description": "Analyse email effectiveness with comprehensive reports."
+                        },
+                        {
+                            "name": "A/B Testing Insights",
+                            "description": "Compare subject lines and email variations for better engagement."
+                        },
+                        {
+                            "name": "User Engagement Analysis",
+                            "description": "Track interactions to optimise future campaigns."
+                        },
+                        {
+                            "name": "Deliverability Monitoring",
+                            "description": "Measure email success rates and improve inbox placement."
+                        },
+                        {
+                            "name": "Geo-Based Analytics",
+                            "description": "View campaign performance across different countries for better targeting."
+                        }
+                    ],
+                    "features": [
+                        "Access an advanced analytics dashboard for deep, data-driven decision-making.",
+                        "Gain deliverability insights to understand email performance and overall engagement.",
+                        "Track real-time performance metrics like delivered, opens, clicks, and conversions instantly.",
+                        "Analyse click-through rates to measure email offer success.",
+                        "Export campaign analytics with a custom date range for precise audience targeting."
+                    ]
+                },
+                "img": "/assets/global/email/detailed-analytics-track-delivered-open-and-click-reports.svg"
+            },
+            {
+                "name": "Prevent Spam with Suppression List",
+                "content": "Maintain a healthy sender reputation by automatically filtering out unsubscribed, bounced, or invalid email addresses. A suppression list prevents emails from being sent to these addresses, reducing spam risks and enhancing deliverability and engagement.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Avoid Spam Complaints",
+                            "description": "Prevent sending emails to unsubscribed users, reducing spam reports."
+                        },
+                        {
+                            "name": "Improve Deliverability",
+                            "description": "Block invalid or bounced addresses to ensure emails reach active recipients."
+                        },
+                        {
+                            "name": "Protect Sender Reputation",
+                            "description": "Maintain a clean email list to avoid blacklisting and spam filters."
+                        },
+                        {
+                            "name": "Save Costs on Campaigns",
+                            "description": "Avoid wasting resources on undeliverable emails."
+                        },
+                        {
+                            "name": "Enhance Engagement Rates",
+                            "description": "Focus on reaching real, interested users for better open and click-through rates."
+                        }
+                    ],
+                    "features": [
+                        "Automatically blocks emails to unsubscribed, bounced, or invalid addresses.",
+                        "Continuously updates and manages suppressed contacts.",
+                        "Easily add and manage suppression lists for better control.",
+                        "Prevents sending emails to users who opted out, ensuring compliance.",
+                        "Reduces bounce rates and protects sender reputation."
+                    ]
+                },
+                "img": "/assets/global/email/prevent-spam-with-suppression-list.svg"
+            },
+            {
+                "name": "Send Emails at Optimal Times with Country-Based Scheduling",
+                "content": "Maximise open rates and engagement by sending emails based on the recipient’s local time zone. Automated time-zone-based scheduling ensures emails reach recipients when they are most likely to engage.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Boost Open Rates",
+                            "description": "Schedule emails to land when recipients are most likely to open them."
+                        },
+                        {
+                            "name": "Enhance Customer Experience",
+                            "description": "Deliver emails when recipients are ready to engage."
+                        },
+                        {
+                            "name": "Drive Meaningful Interactions",
+                            "description": "Improve conversion chances by timing emails strategically."
+                        },
+                        {
+                            "name": "Global Campaigns",
+                            "description": "Optimise send times for recipients across different time zones."
+                        },
+                        {
+                            "name": "Time-Sensitive Offers",
+                            "description": "Send offers at peak times for better action rates."
+                        }
+                    ],
+                    "features": [
+                        "Automatically schedules emails based on each recipient’s local time.",
+                        "Ensures emails reach users when they are most likely to engage.",
+                        "Schedule and send emails seamlessly across multiple time zones.",
+                        "Set up campaigns once, and emails are sent at the right local time.",
+                        "Boost engagement by delivering emails at the optimal moment"
+                    ]
+                },
+                "img": "/assets/global/email/send-emails-at-optimal-times-with-country-based-scheduling.svg"
+            },
+            {
+                "name": "Boost Performance with A/B Testing for Emails",
+                "content": "Optimize your email marketing campaigns by running A/B tests on different email elements. Test subject lines, content variations, and designs to see what works best for your audience and improve your email performance.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Subject Line Optimisation",
+                            "description": "Test different subject lines to determine which one gets higher open rates."
+                        },
+                        {
+                            "name": "Email Content Variations",
+                            "description": "Experiment with different text, images, or CTAs to improve engagement."
+                        },
+                        {
+                            "name": "Personalisation vs. Generic Messaging",
+                            "description": "Compare personalised emails against standard ones to measure impact."
+                        },
+                        {
+                            "name": "Email Design & Layout",
+                            "description": "Compare single-column vs. multi-column layouts or dark mode vs. light mode designs."
+                        },
+                        {
+                            "name": "Offer & Discount Testing",
+                            "description": "Test different promotional offers to see which drives higher sales."
+                        }
+                    ],
+                    "features": [
+                        "Run A/B tests on different audience segments to understand how variations perform.",
+                        "Compare different email variations to identify the most effective version.",
+                        "Leverage past A/B test results to refine future campaigns.",
+                        "Control how long the test runs and what percentage of recipients receive each variation.",
+                        "Monitor key metrics such as open rates, CTR, and conversions to analyse test results instantly."
+                    ]
+                },
+                "img": "/assets/global/email/boost-performance-with-ab-testing-for-emails.svg"
+            },
+            {
+                "name": "Webhooks for Delivery Reports, Incoming Emails, & Domain Status",
+                "content": "Stay updated with instant webhook notifications for email delivery, incoming messages, and domain authentication status. Automate workflows and track real-time email activity effortlessly.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Real-Time Delivery Alerts",
+                            "description": "Get instant notifications for delivered, bounced, or failed emails."
+                        },
+                        {
+                            "name": "Authentication Monitoring",
+                            "description": "Stay updated on SPF, DKIM, and DMARC status to maintain email security."
+                        },
+                        {
+                            "name": "User Engagement Tracking",
+                            "description": "Monitor email opens, clicks, and replies for better audience insights."
+                        },
+                        {
+                            "name": "Automated Lead Capture",
+                            "description": "Capture form submissions and email inquiries directly into your CRM."
+                        },
+                        {
+                            "name": "Support Ticket Automation",
+                            "description": "Convert incoming emails into support tickets and assign them to agents."
+                        }
+                    ],
+                    "features": [
+                        "Get real-time alerts for bounces and spam complaints to protect email deliverability.",
+                        "Instantly detect unsubscribes to update lists and avoid sending unwanted emails.",
+                        "Ensure domain security with continuous monitoring of SPF, DKIM, and DMARC records.",
+                        "Easily connect with CRMs, customer support platforms, and email marketing automation tools.",
+                        "Receive incoming emails on a specific URL and trigger actions accordingly."
+                    ]
+                },
+                "img": "/assets/global/email/webhooks-for-delivery-reports-incoming-emails-and-domain-status.svg"
+            },
+            {
+                "name": "Effortlessly Manage Incoming Emails with a Unified Inbox.",
+                "content": "Effortlessly manage incoming emails, collaborate with your team, and respond faster, all from a single, organised inbox.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Centralised Email Management",
+                            "description": "Handle all customer emails from one inbox."
+                        },
+                        {
+                            "name": "Team Collaboration",
+                            "description": "Assign and track email responses within the team."
+                        },
+                        {
+                            "name": "Faster Response Times",
+                            "description": "Reduce delays with real-time email tracking and smart sorting."
+                        },
+                        {
+                            "name": "Automated Email Assignment",
+                            "description": "Route emails to the right team members instantly."
+                        },
+                        {
+                            "name": "Categorised Conversations",
+                            "description": "Organise emails by priority, status, or department for better efficiency."
+                        }
+                    ],
+                    "features": [
+                        "Unified inbox to manage emails from multiple accounts in one place.",
+                        "Effortlessly assign emails for seamless team collaboration.",
+                        "Dedicated Android/IOS app to efficiently manage and respond to incoming queries.",
+                        "Real-time notifications to never miss an important message.",
+                        "Response analytics to track team performance and email resolution times."
+                    ]
+                },
+                "img": "/assets/global/email/lotties/effortlessly-manage-incoming-emails-with-a-unified-inbox.json"
             }
         ]
     },
-    
+    "ProductStatsComp": {
+        "heading": "Best-in-class email delivery and industry-leading results",
+        "content": [
+            {
+                "count": "98.5%",
+                "des": "Email delivery rate"
+            },
+            {
+                "count": "15M+",
+                "des": "Emails delivered successfully every month."
+            },
+            {
+                "count": "100%",
+                "des": "Emails attempted within the first 5 minutes for instant engagement."
+            },
+            {
+                "count": "24/7",
+                "des": "Dedicated support, always ready to assist."
+            }
+        ]
+    },
     "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
+        "content": "Millions of Users trust us with our Email Solution, You can too.",
         "buttons": {
             "contactSales": {
                 "text": "Contact sales",
