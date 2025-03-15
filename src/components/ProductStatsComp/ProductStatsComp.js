@@ -8,10 +8,10 @@ export default function ProductStatsComp({ data }) {
                         return (
                             <div
                                 key={index}
-                                className=' border cont gap-1 xl:px-6 px-3 py-12 rounded items-center text-center justify-center'
+                                className=' border cont gap-3 xl:px-6 px-3 py-12 rounded items-center text-center justify-center'
                             >
-                                <p className='text-3xl font-bold text-accent'>{stat?.count}</p>
-                                <p className='text-sm '>{stat?.des}</p>
+                                <p className='md:text-5xl text-3xl font-bold text-accent'>{stat?.count}</p>
+                                <p className=''>{stat?.des}</p>
                             </div>
                         );
                     })}
