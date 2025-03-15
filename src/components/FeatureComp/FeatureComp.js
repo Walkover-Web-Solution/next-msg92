@@ -4,7 +4,7 @@ import { LinkButton, MoreButton } from '../UIComponent/Buttons/LinkButton';
 import { useState } from 'react';
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
 
-export default function FeatureComp({ data }) {
+export default function FeatureComp({ data, pageInfo }) {
     const [openedFeatures, setOpenedFeatures] = useState([]);
     return (
         <>
@@ -49,7 +49,9 @@ export default function FeatureComp({ data }) {
                                                             openedFeatures.includes(index) ? 'block' : 'hidden'
                                                         }`}
                                                     >
-                                                        <h4 className='font-semibold text-lg'>Use Cases:</h4>
+                                                        <h4 className='font-semibold text-lg'>{`${
+                                                            pageInfo?.country === 'br-pt' ? 'Casos de uso' : 'Use Cases'
+                                                        }:`}</h4>
                                                         <ul className='flex flex-col gap-1 list-disc'>
                                                             {feature?.more_content?.usecases?.map((usecase, index) => {
                                                                 return (
@@ -68,7 +70,11 @@ export default function FeatureComp({ data }) {
                                                             openedFeatures.includes(index) ? 'block' : 'hidden'
                                                         }`}
                                                     >
-                                                        <h4 className='font-semibold text-lg'>Key Features:</h4>
+                                                        <h4 className='font-semibold text-lg'>{`${
+                                                            pageInfo?.country === 'br-pt'
+                                                                ? 'Principais recursos'
+                                                                : 'Key Features'
+                                                        }:`}</h4>
                                                         <ul className='flex flex-col gap-1 list-disc'>
                                                             {feature?.more_content?.features?.map((feature, index) => {
                                                                 return <li key={index}>{feature}</li>;

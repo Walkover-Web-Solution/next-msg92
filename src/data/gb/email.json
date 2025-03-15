@@ -9,11 +9,11 @@
             "name": "Email API",
             "icon": "/assets/icons/products/email.svg"
         },
-        "code": true,
+
         "tagline": "Smarter email strategy",
         "heading": "Unlock Revenue with Every Email",
         "subheading": "Scale your business with the #1 email marketing solution and automation platform, built to drive effortless engagement and growth. Whether you need to send promotional email or transactional email, our platform ensures high deliverability and engagement.",
-        "banner_img": "/assets/global/hello/banner.webp",
+        "lottie": "/assets/global/email/lotties/banner.json",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
@@ -263,36 +263,36 @@
             },
             {
                 "name": "Seamless Integration with Gmail & Outlook",
-                "content": "Send personalised, professional emails directly from your Gmail or Outlook account via the MSG91 dashboard. This seamless integration allows you to create engaging templates, ensures instant deliverability, boosts open rates, and provides detailed analytics to simplify your email communication.",
+                "content": "Integrate effortlessly with Gmail and Outlook using MSG91’s Email API. Send transactional emails, OTPs, and notifications directly through your existing email provider—ensuring instant deliverability and detailed tracking without additional software.",
                 "more_content": {
                     "usecases": [
                         {
                             "name": "Transactional Emails",
-                            "description": "Automate order confirmations, OTPs, and notifications via your existing email provider."
+                            "description": "Automate order confirmations, OTPs, and account alerts."
                         },
                         {
-                            "name": "Marketing Campaigns",
-                            "description": "Design engaging templates and send bulk emails to registered audiences with instant deliverability."
+                            "name": "System Notifications",
+                            "description": "Send real-time updates and reminders."
                         },
                         {
-                            "name": "Lead Nurturing",
-                            "description": "Send targeted follow-ups and personalised emails to nurture prospects."
+                            "name": "User Communication",
+                            "description": "Deliver personalized emails seamlessly."
                         },
                         {
-                            "name": "Detailed Analytics",
-                            "description": "Track open rates, clicks, and engagement for better insights."
+                            "name": "Security & Authentication",
+                            "description": "Enable secure logins with OTP verification."
                         },
                         {
-                            "name": "Easy Access",
-                            "description": "Manage email campaigns seamlessly from Gmail or Outlook."
+                            "name": "Customer Support",
+                            "description": "Automate responses and status updates."
                         }
                     ],
                     "features": [
-                        "Send email campaigns directly from one dashboard.",
-                        "Engage customers from your business inbox effortlessly.",
-                        "Handle all campaigns from a single interface.",
-                        "Monitor email opens, clicks, and performance instantly.",
-                        "Streamline communication without extra software."
+                        "Direct API Integration – Connect seamlessly with Gmail & Outlook.",
+                        "Instant Deliverability – Ensure timely and reliable email delivery.",
+                        "Real-Time Tracking – Monitor email opens, clicks, and engagement.",
+                        "Scalable & Reliable – Handle high-volume email traffic effortlessly.",
+                        "No Additional Software Needed – Use your existing email provider."
                     ]
                 },
                 "img": "/assets/global/email/seamless-integration-with-gmail-and-outlook.svg"
