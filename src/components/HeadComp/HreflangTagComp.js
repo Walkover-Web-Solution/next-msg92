@@ -1,12 +1,22 @@
 import specialPages from '@/data/specialPages.json';
 import Head from 'next/head';
 export default function HreflangTagComp({ pageInfo }) {
+    console.log('⚡️ ~ HreflangTagComp.js:4 ~ HreflangTagComp ~ pageInfo:', pageInfo);
     return (
         <Head>
             <link rel='canonical' href={`https://msg91.com/${pageInfo?.pathURL}`} />
             <link rel='alternate' hreflang='en' href={`https://msg91.com/${pageInfo?.baseURL}`} />
             {specialPages?.countries.map((country, index) => {
-                if (!specialPages?.global.includes(pageInfo?.page))
+                if (
+                    !specialPages?.global.includes(pageInfo?.page) &&
+                    !specialPages?.justNested?.includes(pageInfo?.baseURL)
+                ) {
+                    console.log(
+                        '⚡️ ~ HreflangTagComp.js:11 ~ :',
+                        !specialPages?.global.includes(pageInfo?.page),
+                        !specialPages?.justNested?.includes(pageInfo?.baseURL)
+                    );
+
                     return (
                         <link
                             key={index}
@@ -15,6 +25,7 @@ export default function HreflangTagComp({ pageInfo }) {
                             href={`https://msg91.com/${country}/${pageInfo?.baseURL}`}
                         />
                     );
+                }
             })}
 
             {/* <link

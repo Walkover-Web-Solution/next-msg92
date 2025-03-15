@@ -8,7 +8,18 @@
         "become-a-partner",
         "certificates",
         "guide",
-        "demochatbot"
+        "demochatbot",
+        "terms-of-use",
+        "privacy-policy",
+        "gdpr",
+        "refund-policy",
+        "no-spam",
+        "startup-policy",
+        "fair-pricing-policy",
+        "cookie-policy",
+        "thank-you",
+        "startup-form",
+        "certificates"
     ],
     "products": [
         "hello",
@@ -58,6 +69,15 @@
         "es/whatsapp/chatbot",
         "gb/whatsapp/chatbot",
         "us/whatsapp/chatbot",
+        "otp/magiclink",
+        "in/otp/magiclink",
+        "partners-and-integrations/tally",
+        "partners-and-integrations/zapier",
+        "partners-and-integrations/freshworks",
+        "partners-and-integrations/firebase",
+        "partners-and-integrations/hubspot"
+    ],
+    "justNested": [
         "otp/magiclink",
         "in/otp/magiclink",
         "partners-and-integrations/tally",
