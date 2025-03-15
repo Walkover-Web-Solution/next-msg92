@@ -574,9 +574,9 @@
     "PreFooterComp": {
         "content": "Milhões de usuários confiam em nós com nossa Solução de E-mail, Você também pode.",
         "buttons": {
-            "contactSales": {
+            "salesModal": {
                 "text": "Comece agora",
-                "link": "/contact-us"
+                "link": "https://calendly.com/bison-msg91/30min?month=2025-02"
             },
             "pricing": {
                 "text": "Pricing",
@@ -586,6 +586,7 @@
                 "text": "Get started",
                 "link": "https://control.msg91.com/signup/"
             }
+         
         }
     }
 }
