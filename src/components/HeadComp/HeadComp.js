@@ -3,6 +3,7 @@ import Script from 'next/script';
 import HreflangTagComp from './HreflangTagComp';
 
 export default function HeadComp({ data, pageInfo }) {
+    console.log('⚡️ ~ HeadComp.js:6 ~ HeadComp ~ data:', data);
     return (
         <>
             <Script
