@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Script from 'next/script';
-import HreflangTagComp from './HeadComp/HreflangTagComp';
+import HreflangTagComp from './HreflangTagComp';
 
 export default function HeadComp({ data, pageInfo }) {
     return (
@@ -82,7 +82,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 />
                 <meta name='google-site-verification' content='RfcBy_Lv1Ao1j0eP8UlMjJ44ik5_1YDKsRQSNFr9jEQ' />
                 {/* Hreflag tags */}
-                <HreflangTagComp pageInfo={pageInfo} />
 
                 {process.env.BASE_URL !== 'https://msg91.com' && (
                     <>
@@ -92,6 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </>
                 )}
             </Head>
+            <HreflangTagComp pageInfo={pageInfo} />
         </>
     );
 }

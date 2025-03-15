@@ -13,7 +13,7 @@ import PreFooterComp from '@/components/PreFooterComp/PreFooterComp';
 import ProductsComp from '@/components/ProductsComp/ProductsComp';
 import SEOComp from '@/components/SEOComp/SEOComp';
 import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
-import HeadComp from '@/components/headComp';
+import HeadComp from '@/components/HeadComp/HeadComp';
 import FeatureComp from '@/components/FeatureComp/FeatureComp';
 import PricingComp from '@/components/PricingComp/PricingComp';
 import AboutUsComp from '@/components/AboutUsComp/AboutUsComp';
