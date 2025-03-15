@@ -109,9 +109,10 @@
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
-            "contactSales": {
+        
+            "salesModal": {
                 "text": "Contact sales",
-                "link": "/contact-us"
+                "link": "https://calendly.com/bison-msg91/30min?month=2025-02"
             },
             "pricing": {
                 "text": "Pricing",
