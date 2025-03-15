@@ -7,6 +7,8 @@ import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 import Link from 'next/link';
 import getURL from '@/utils/getURL';
 import CalculatePricingSegmento from './CalculatePricingSegmento/CalculatePricingSegmento';
+import features from '@/data/segmentoPricingFeatures.json';
+import FeaturesModalComp from './FeaturesModalComp/FeaturesModalComp';
 
 export default function PricingSegmento({ data, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
@@ -14,6 +16,7 @@ export default function PricingSegmento({ data, country }) {
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
     const [isCalculationModalOpen, setIsCalculationModalOpen] = useState(true);
+    const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false);
     const [hasyYarly, setHasYearly] = useState(false);
 
     const fetchPlans = useCallback(async () => {
@@ -206,6 +209,42 @@ export default function PricingSegmento({ data, country }) {
                                                     <div className='flex flex-col gap-2'>
                                                         <h3 className='text-lg font-semibold'>Features</h3>
                                                         <div className='flex flex-col gap-1'>
+                                                            {features?.primary?.length > 0 &&
+                                                                features.primary.map((feature, index) => {
+                                                                    return (
+                                                                        <p
+                                                                            className='flex items-center gap-1'
+                                                                            key={index}
+                                                                        >
+                                                                            {/* {feature?.is_visible &&
+                                                                            feature?.feature?.is_included ? (
+                                                                                <MdCheck
+                                                                                    fontSize={18}
+                                                                                    color='#16A34A'
+                                                                                />
+                                                                            ) : (
+                                                                                <MdClose
+                                                                                    fontSize={18}
+                                                                                    color='#DC3645'
+                                                                                />
+                                                                            )} */}
+                                                                            <MdCheck fontSize={18} color='#16A34A' />
+                                                                            {feature?.name}
+                                                                        </p>
+                                                                    );
+                                                                })}
+                                                        </div>
+                                                        <p
+                                                            onClick={() => setIsFeatureModalOpen(true)}
+                                                            className='text-link active-link text-sm'
+                                                        >
+                                                            See More Features
+                                                        </p>
+                                                    </div>
+                                                    {/* features
+                                                    <div className='flex flex-col gap-2'>
+                                                        <h3 className='text-lg font-semibold'>Features</h3>
+                                                        <div className='flex flex-col gap-1'>
                                                             {plan?.plan_features?.length > 0 &&
                                                                 plan?.plan_features.map((feature, index) => {
                                                                     if (
@@ -235,7 +274,7 @@ export default function PricingSegmento({ data, country }) {
                                                                     }
                                                                 })}
                                                         </div>
-                                                    </div>
+                                                    </div> */}
 
                                                     {/* Extras */}
                                                     <div className='flex flex-col gap-2'>
@@ -260,7 +299,7 @@ export default function PricingSegmento({ data, country }) {
                                                                                                         fontSize={18}
                                                                                                         color='#16A34A'
                                                                                                     />
-                                                                                                    {`${symbol}${rate?.follow_up_rate}/${rate?.chunk_size} ${service?.service_credit?.service?.name}`}
+                                                                                                    {`${symbol}${rate?.follow_up_rate || 'N/A'}/${rate?.chunk_size} ${service?.service_credit?.service?.name}`}
                                                                                                 </>
                                                                                             ) : (
                                                                                                 <>
@@ -336,6 +375,22 @@ export default function PricingSegmento({ data, country }) {
                     <CalculatePricingSegmento />
                 </dialog>
             )} */}
+            {isFeatureModalOpen && (
+                <dialog className='modal z-[1111]' open>
+                    <div className='bg-white max-h-[700px] sm:h-3/4 h-[90%] max-w-[600px!important] sm:w-3/4 relative  modal-box flex flex-col md:gap-5 gap-3'>
+                        <div className='flex items-center justify-between'>
+                            <h3 className='text-2xl font-bold'>More Features</h3>
+                            <button
+                                onClick={() => setIsFeatureModalOpen(false)}
+                                className='btn btn-sm btn-circle btn-ghost'
+                            >
+                                ✕
+                            </button>
+                        </div>
+                        <FeaturesModalComp features={features?.modal} />
+                    </div>
+                </dialog>
+            )}
         </>
     );
 }
