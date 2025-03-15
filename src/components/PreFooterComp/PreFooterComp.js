@@ -1,7 +1,10 @@
 import getPricingURL from '@/utils/getPricingURL';
 import getURL from '@/utils/getURL';
+import { useState } from 'react';
+import { InlineWidget } from 'react-calendly';
 
 export default function PreFooterComp({ data, pageInfo }) {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <>
             <div className='bg-neutral py-10'>
@@ -10,11 +13,16 @@ export default function PreFooterComp({ data, pageInfo }) {
                         {data?.content || 'Start building your ideal customer engagement experience'}
                     </h2>
                     <div className='flex gap-4 flex-wrap items-center  '>
-                        <a href={data?.buttons?.contactSales?.link}>
-                            <button className='btn btn-primary btn-outline btn-md'>
-                                {data?.buttons?.contactSales?.text}
-                            </button>
-                        </a>
+                        {data?.buttons?.contactSales?.link && (
+                            <a href={data?.buttons?.contactSales?.link}>
+                                <button className='btn btn-primary btn-outline btn-md'>
+                                    {data?.buttons?.contactSales?.text}
+                                </button>
+                            </a>
+                        )}
+                        <button className='btn btn-primary btn-outline btn-md' onClick={() => setIsModalOpen(true)}>
+                            {data?.buttons?.salesModal?.text}
+                        </button>
                         {data?.buttons?.pricing?.text && (
                             <a href={getPricingURL(pageInfo)}>
                                 <button className='btn btn-primary btn-outline btn-md '>
@@ -31,6 +39,22 @@ export default function PreFooterComp({ data, pageInfo }) {
                     </div>
                 </div>
             </div>
+            {isModalOpen && (
+                <dialog id='whatsapp_modal' className='modal' open>
+                    <div className='modal-box'>
+                        <button
+                            onClick={() => setIsModalOpen(false)}
+                            className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'
+                        >
+                            ✕
+                        </button>
+                        <InlineWidget
+                            url={data?.buttons?.salesModal?.link}
+                            styles={{ height: '680px', width: 'auto' }}
+                        />
+                    </div>
+                </dialog>
+            )}
         </>
     );
 }
