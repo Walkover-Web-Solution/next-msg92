@@ -43,6 +43,23 @@ export default function PricingSegmento({ data, country }) {
         }
     }, [hasYearlyPlan]);
 
+    useEffect(() => {
+        if (isFeatureModalOpen) {
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .modal {
+                    overflow-scroll: scroll !important;
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Cleanup on unmount or when modal closes
+            return () => {
+                document.head.removeChild(style);
+            };
+        }
+    }, [isFeatureModalOpen]);
+
     function handleOfferPrice(price) {
         let ammount;
         let percent;
@@ -361,9 +378,9 @@ export default function PricingSegmento({ data, country }) {
                                                         </button>
                                                     )} */}
                                                         {isFeatureModalOpen && openedFeatureModal === plan?.name && (
-                                                            <dialog className='modal absolute z-[1111] ' open>
-                                                                <div className='bg-white w-[90%] h-[90%] relative rounded-md border modal-box flex flex-col md:gap-5 gap-3'>
-                                                                    <div className='flex items-center justify-between'>
+                                                            <dialog className='modal modal-scrollable absolute' open>
+                                                                <div className='bg-white w-[95%] h-[95%] relative rounded-md border modal-box flex flex-col '>
+                                                                    <div className='flex items-center justify-between h-fit'>
                                                                         <h3 className='text-2xl font-bold'>
                                                                             More Features
                                                                         </h3>
