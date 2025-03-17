@@ -323,3 +323,7 @@ $button-transition-timing: 100ms;
         @apply bg-gray-800 text-white w-full;
     }
 }
+
+:root:has(:is(.modal-open, .modal:target, .modal-toggle:checked + .modal, .modal[open])):has(.modal-scrollable) {
+    overflow: scroll !important;
+}

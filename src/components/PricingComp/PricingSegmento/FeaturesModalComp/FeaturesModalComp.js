@@ -3,10 +3,10 @@ import { MdCheck, MdClose } from 'react-icons/md';
 export default function FeaturesModalComp({ features, plan_name }) {
     return (
         <>
-            <div className='flex gap-8 flex-col h-fit'>
+            <div className='flex  flex-col h-full overflow-scroll'>
                 {features?.map((category) => {
                     return (
-                        <div className='flex flex-col gap-2'>
+                        <div className='flex flex-col gap-2 mt-8'>
                             <h3 className='text-xl  font-bold'>{category?.category}</h3>
                             <div className='flex flex-col gap-3'>
                                 {category?.items?.length > 0 &&

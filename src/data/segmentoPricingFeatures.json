@@ -1,16 +1,19 @@
 {
     "primary": [
         {
-            "name": "Dynamic Segmentation",
-            "description": "Create targeted contact groups using custom filters for precise audience segmentation."
-        },
-        {
             "name": "Live Visitor Tracking",
             "description": "Track live visitors on the widget after syncing with Segmento."
         },
         {
             "name": "Shopify Integration",
             "description": "Connect with Shopify to capture user actions and sync data."
+        },
+        {
+            "name": "Dynamic Segmentation",
+            "description": "Create targeted contact groups using custom filters for precise audience segmentation.",
+            "notIncluded": [
+                "Free"
+            ]
         },
         {
             "name": "Automated Customer Journey",
