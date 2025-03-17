@@ -14,6 +14,7 @@ body {
 }
 
 .cont {
+    @apply flex flex-col ;
     &_gap {
         @apply gap-6;
     }

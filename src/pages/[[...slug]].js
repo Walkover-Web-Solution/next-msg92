@@ -33,14 +33,17 @@ import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
 import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
 import IntegrationAppComp from '@/components/IntegrationsComp/IntegrationAppComp';
-
-/* files */
-import specialPages from '@/data/specialPages.json';
 import ThankYouComp from '@/components/ThankYouComp/ThankYouComp';
 import StartupFormsComp from '@/components/StartupFormsComp/StartupFormsComp';
 import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/CaseStudyPageComp';
 import ChatBotDemoComp from '@/components/ChatBotDemoComp/ChatBotDemoComp';
 import AsSeenComp from '@/components/AsSeenComp/AsSeenComp';
+import ProductStatsComp from '@/components/ProductStatsComp/ProductStatsComp';
+
+/* files */
+import specialPages from '@/data/specialPages.json';
+
+/* utils */
 import { useRouter } from 'next/router';
 
 const Components = {
@@ -81,6 +84,7 @@ const Components = {
     CaseStudyPageComp,
     ChatBotDemoComp,
     AsSeenComp,
+    ProductStatsComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
