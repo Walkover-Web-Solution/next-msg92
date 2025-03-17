@@ -58,7 +58,7 @@
                 },
                 {
                     "name": "WebEngage",
-                    "description": "MSG91 allows you to send SMS and Whatsapp messages through your WebEngage platform.",
+                    "description": "MSG91 has SMS and WhatsApp integration with WebEngage. You can run sms and WhatsApp campaigns on specific segments of your WebEngage account and also the sent delivery failed and click reports you can track in your WebEngage panel itself for different campaigns. You can also send different type of WhatsApp templates (i.e. Carousel, Limited time offer, Flow) on single and bulk data which allows you to plan your marketing strategies more effectively.",
                     "icon": "/assets/integration_partner/webengage.jpg",
                     "channels": [
                         {
@@ -73,7 +73,7 @@
                 },
                 {
                     "name": "MoEngage",
-                    "description": "MSG91 allows you to send SMS and Whatsapp messages through your MoEngage platform.",
+                    "description": "MSG91 has SMS and WhatsApp integration with MoEngage. You can run sms and WhatsApp campaigns on specific segments of your MoEngage account and also the sent delivery failed and click reports you can track in your MoEngage panel itself for different campaigns. You can also send different type of WhatsApp templates (i.e. Carousel, Limited time offer, Flow) on single and bulk data which allows you to plan your marketing strategies more effectively.",
                     "icon": "/assets/integration_partner/moengage.webp",
                     "channels": [
                         {
