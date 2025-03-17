@@ -17,6 +17,7 @@ export default function PricingSegmento({ data, country }) {
     const [tabtype, setTabtype] = useState('Monthly');
     const [isCalculationModalOpen, setIsCalculationModalOpen] = useState(true);
     const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false);
+    const [openedFeatureModal, setOpenedFeatureModal] = useState('');
     const [hasyYarly, setHasYearly] = useState(false);
 
     const fetchPlans = useCallback(async () => {
@@ -131,117 +132,128 @@ export default function PricingSegmento({ data, country }) {
                                             amount?.plan_type?.name === tabtype
                                         )
                                             return (
-                                                <div
-                                                    key={plan?.name + index}
-                                                    className={`flex flex-col gap-4 col-span-1 p-6  rounded bg-white ${
-                                                        plan?.name === 'Starter' ? 'border-4 border-black' : 'border'
-                                                    }`}
-                                                >
-                                                    <div className='flex flex-col gap-2'>
-                                                        <div className='flex items-center justify-between'>
-                                                            <h2 className=' text-2xl font-semibold'>{plan?.name}</h2>
-                                                            {plan?.name === 'Starter' && (
-                                                                <span className='bg-black text-white px-2 rounded-badge'>
-                                                                    Popular
-                                                                </span>
-                                                            )}
-                                                        </div>
-                                                        <div className='gap-1 flex flex-col'>
-                                                            <p className=' text-2xl font-semibold text-green-600 capitalize'>
-                                                                {amount?.currency?.symbol}
-                                                                {amount?.plan_amount} {tabtype}
-                                                            </p>
-                                                            {amount?.plan_amount != '0' ? (
-                                                                <p className='text-sm'>
-                                                                    {amount?.currency?.short_name === 'INR'
-                                                                        ? '+18% GST'
-                                                                        : amount?.currency?.short_name === 'GBP'
-                                                                          ? '+VAT'
-                                                                          : '-'}
+                                                <>
+                                                    <div
+                                                        key={plan?.name + index}
+                                                        className={`flex flex-col gap-4 col-span-1 p-6  rounded bg-white relative ${
+                                                            plan?.name === 'Starter'
+                                                                ? 'border-4 border-black'
+                                                                : 'border'
+                                                        }`}
+                                                    >
+                                                        <div className='flex flex-col gap-2'>
+                                                            <div className='flex items-center justify-between'>
+                                                                <h2 className=' text-2xl font-semibold'>
+                                                                    {plan?.name}
+                                                                </h2>
+                                                                {plan?.name === 'Starter' && (
+                                                                    <span className='bg-black text-white px-2 rounded-badge'>
+                                                                        Popular
+                                                                    </span>
+                                                                )}
+                                                            </div>
+                                                            <div className='gap-1 flex flex-col'>
+                                                                <p className=' text-2xl font-semibold text-green-600 capitalize'>
+                                                                    {amount?.currency?.symbol}
+                                                                    {amount?.plan_amount} {tabtype}
                                                                 </p>
-                                                            ) : (
-                                                                '-'
-                                                            )}
-                                                            {/* <div>{handleOfferPrice(amount) || '-'}</div> */}
+                                                                {amount?.plan_amount != '0' ? (
+                                                                    <p className='text-sm'>
+                                                                        {amount?.currency?.short_name === 'INR'
+                                                                            ? '+18% GST'
+                                                                            : amount?.currency?.short_name === 'GBP'
+                                                                              ? '+VAT'
+                                                                              : '-'}
+                                                                    </p>
+                                                                ) : (
+                                                                    '-'
+                                                                )}
+                                                                {/* <div>{handleOfferPrice(amount) || '-'}</div> */}
+                                                            </div>
+
+                                                            <Link href={getURL('signup', 'segmento')} target='_blank'>
+                                                                <button
+                                                                    className={`btn btn-primary  btn-sm ${
+                                                                        plan?.name === 'Starter' ? '' : 'btn-outline'
+                                                                    }`}
+                                                                >
+                                                                    Get Started
+                                                                </button>
+                                                            </Link>
+                                                        </div>
+                                                        <span className='border-b-[1px]'></span>
+
+                                                        {/* included */}
+                                                        <div className='flex flex-col gap-2'>
+                                                            <h3 className='text-lg font-semibold'>Included</h3>
+                                                            <div className='flex flex-col gap-1'>
+                                                                {plan?.plan_services?.map((service, index) =>
+                                                                    service?.service_credit?.service_credit_rates?.map(
+                                                                        (rate, i) =>
+                                                                            rate?.currency?.short_name === currency && (
+                                                                                <p key={i}>
+                                                                                    {`${
+                                                                                        rate?.free_credits === -1
+                                                                                            ? 'Unlimited'
+                                                                                            : rate?.free_credits
+                                                                                    } ${
+                                                                                        service?.service_credit?.service
+                                                                                            ?.name
+                                                                                    }${
+                                                                                        rate?.free_credits === -1
+                                                                                            ? ''
+                                                                                            : '/month'
+                                                                                    }`}
+                                                                                </p>
+                                                                            )
+                                                                    )
+                                                                )}
+                                                            </div>
                                                         </div>
 
-                                                        <Link href={getURL('signup', 'segmento')} target='_blank'>
-                                                            <button
-                                                                className={`btn btn-primary  btn-sm ${
-                                                                    plan?.name === 'Starter' ? '' : 'btn-outline'
-                                                                }`}
-                                                            >
-                                                                Get Started
-                                                            </button>
-                                                        </Link>
-                                                    </div>
-                                                    <span className='border-b-[1px]'></span>
+                                                        {/* features */}
+                                                        <div className='flex flex-col gap-2'>
+                                                            <h3 className='text-lg font-semibold'>Features</h3>
+                                                            <div className='flex flex-col gap-1'>
+                                                                {features?.primary?.length > 0 &&
+                                                                    features.primary.map((feature, index) => {
+                                                                        return (
+                                                                            <p
+                                                                                className='flex text-start gap-1 tooltip tooltip-black cursor-pointer'
+                                                                                key={index}
+                                                                                data-tip={feature?.description}
+                                                                            >
+                                                                                {feature?.notIncluded &&
+                                                                                feature?.notIncluded.includes(
+                                                                                    plan?.name
+                                                                                ) ? (
+                                                                                    <MdClose
+                                                                                        fontSize={18}
+                                                                                        color='#DC3645'
+                                                                                    />
+                                                                                ) : (
+                                                                                    <MdCheck
+                                                                                        fontSize={18}
+                                                                                        color='#16A34A'
+                                                                                    />
+                                                                                )}
 
-                                                    {/* included */}
-                                                    <div className='flex flex-col gap-2'>
-                                                        <h3 className='text-lg font-semibold'>Included</h3>
-                                                        <div className='flex flex-col gap-1'>
-                                                            {plan?.plan_services?.map((service, index) =>
-                                                                service?.service_credit?.service_credit_rates?.map(
-                                                                    (rate, i) =>
-                                                                        rate?.currency?.short_name === currency && (
-                                                                            <p key={i}>
-                                                                                {`${
-                                                                                    rate?.free_credits === -1
-                                                                                        ? 'Unlimited'
-                                                                                        : rate?.free_credits
-                                                                                } ${
-                                                                                    service?.service_credit?.service
-                                                                                        ?.name
-                                                                                }${
-                                                                                    rate?.free_credits === -1
-                                                                                        ? ''
-                                                                                        : '/month'
-                                                                                }`}
+                                                                                {feature?.name}
                                                                             </p>
-                                                                        )
-                                                                )
-                                                            )}
+                                                                        );
+                                                                    })}
+                                                            </div>
+                                                            <p
+                                                                onClick={() => {
+                                                                    setIsFeatureModalOpen(true);
+                                                                    setOpenedFeatureModal(plan?.name);
+                                                                }}
+                                                                className='text-link active-link text-sm'
+                                                            >
+                                                                See More Features
+                                                            </p>
                                                         </div>
-                                                    </div>
-
-                                                    {/* features */}
-                                                    <div className='flex flex-col gap-2'>
-                                                        <h3 className='text-lg font-semibold'>Features</h3>
-                                                        <div className='flex flex-col gap-1'>
-                                                            {features?.primary?.length > 0 &&
-                                                                features.primary.map((feature, index) => {
-                                                                    return (
-                                                                        <p
-                                                                            className='flex items-center gap-1'
-                                                                            key={index}
-                                                                        >
-                                                                            {/* {feature?.is_visible &&
-                                                                            feature?.feature?.is_included ? (
-                                                                                <MdCheck
-                                                                                    fontSize={18}
-                                                                                    color='#16A34A'
-                                                                                />
-                                                                            ) : (
-                                                                                <MdClose
-                                                                                    fontSize={18}
-                                                                                    color='#DC3645'
-                                                                                />
-                                                                            )} */}
-                                                                            <MdCheck fontSize={18} color='#16A34A' />
-                                                                            {feature?.name}
-                                                                        </p>
-                                                                    );
-                                                                })}
-                                                        </div>
-                                                        <p
-                                                            onClick={() => setIsFeatureModalOpen(true)}
-                                                            className='text-link active-link text-sm'
-                                                        >
-                                                            See More Features
-                                                        </p>
-                                                    </div>
-                                                    {/* features
+                                                        {/* features
                                                     <div className='flex flex-col gap-2'>
                                                         <h3 className='text-lg font-semibold'>Features</h3>
                                                         <div className='flex flex-col gap-1'>
@@ -276,52 +288,67 @@ export default function PricingSegmento({ data, country }) {
                                                         </div>
                                                     </div> */}
 
-                                                    {/* Extras */}
-                                                    <div className='flex flex-col gap-2'>
-                                                        <h3 className='text-lg font-semibold'>Extra @</h3>
-                                                        <div className='flex flex-col gap-1'>
-                                                            {plan?.plan_services?.length > 0 &&
-                                                                plan?.plan_services.map((service, index) => (
-                                                                    <div key={index}>
-                                                                        {service?.service_credit?.service_credit_rates
-                                                                            ?.length > 0 &&
-                                                                            service?.service_credit?.service_credit_rates.map(
-                                                                                (rate, i) =>
-                                                                                    rate?.currency?.short_name ===
-                                                                                        currency && (
-                                                                                        <p
-                                                                                            className='flex items-center gap-1'
-                                                                                            key={i}
-                                                                                        >
-                                                                                            {plan?.postpaid_allowed ? (
-                                                                                                <>
-                                                                                                    <MdCheck
-                                                                                                        fontSize={18}
-                                                                                                        color='#16A34A'
-                                                                                                    />
-                                                                                                    {`${symbol}${rate?.follow_up_rate || 'N/A'}/${rate?.chunk_size} ${service?.service_credit?.service?.name}`}
-                                                                                                </>
-                                                                                            ) : (
-                                                                                                <>
-                                                                                                    <MdClose
-                                                                                                        fontSize={18}
-                                                                                                        color='#DC3645'
-                                                                                                    />
-                                                                                                    {`No Extra ${service?.service_credit?.service?.name}`}
-                                                                                                </>
-                                                                                            )}
-                                                                                            {service?.service_credit
-                                                                                                ?.service?.is_rental
-                                                                                                ? '/month'
-                                                                                                : ''}
-                                                                                        </p>
-                                                                                    )
-                                                                            )}
-                                                                    </div>
-                                                                ))}
+                                                        {/* Extras */}
+                                                        <div className='flex flex-col gap-2'>
+                                                            <h3 className='text-lg font-semibold'>Extra @</h3>
+                                                            <div className='flex flex-col gap-1'>
+                                                                {plan?.plan_services?.length > 0 &&
+                                                                    plan?.plan_services.map((service, index) => (
+                                                                        <div key={index}>
+                                                                            {service?.service_credit
+                                                                                ?.service_credit_rates?.length > 0 &&
+                                                                                service?.service_credit?.service_credit_rates.map(
+                                                                                    (rate, i) =>
+                                                                                        rate?.currency?.short_name ===
+                                                                                            currency && (
+                                                                                            <p
+                                                                                                className='flex items-center gap-1'
+                                                                                                key={i}
+                                                                                                data-tip='hello'
+                                                                                            >
+                                                                                                {plan?.postpaid_allowed ? (
+                                                                                                    <>
+                                                                                                        <MdCheck
+                                                                                                            fontSize={
+                                                                                                                18
+                                                                                                            }
+                                                                                                            color='#16A34A'
+                                                                                                        />
+                                                                                                        {`${symbol}${
+                                                                                                            rate?.follow_up_rate ||
+                                                                                                            'N/A'
+                                                                                                        }/${
+                                                                                                            rate?.chunk_size
+                                                                                                        } ${
+                                                                                                            service
+                                                                                                                ?.service_credit
+                                                                                                                ?.service
+                                                                                                                ?.name
+                                                                                                        }`}
+                                                                                                    </>
+                                                                                                ) : (
+                                                                                                    <>
+                                                                                                        <MdClose
+                                                                                                            fontSize={
+                                                                                                                18
+                                                                                                            }
+                                                                                                            color='#DC3645'
+                                                                                                        />
+                                                                                                        {`No Extra ${service?.service_credit?.service?.name}`}
+                                                                                                    </>
+                                                                                                )}
+                                                                                                {service?.service_credit
+                                                                                                    ?.service?.is_rental
+                                                                                                    ? '/month'
+                                                                                                    : ''}
+                                                                                            </p>
+                                                                                        )
+                                                                                )}
+                                                                        </div>
+                                                                    ))}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    {/* {plan?.name !== 'Free' && (
+                                                        {/* {plan?.name !== 'Free' && (
                                                         <button
                                                             className=' btn btn-accent btn-outline btn-md '
                                                             onClick={() => setIsCalculationModalOpen(true)}
@@ -329,7 +356,32 @@ export default function PricingSegmento({ data, country }) {
                                                             Calculate
                                                         </button>
                                                     )} */}
-                                                </div>
+                                                        {isFeatureModalOpen && openedFeatureModal === plan?.name && (
+                                                            <dialog className='modal absolute z-[1111] ' open>
+                                                                <div className='bg-white w-[90%] h-[90%] relative rounded-md border modal-box flex flex-col md:gap-5 gap-3'>
+                                                                    <div className='flex items-center justify-between'>
+                                                                        <h3 className='text-2xl font-bold'>
+                                                                            More Features
+                                                                        </h3>
+                                                                        <button
+                                                                            onClick={() => {
+                                                                                setIsFeatureModalOpen(false);
+                                                                                setOpenedFeatureModal('');
+                                                                            }}
+                                                                            className='btn btn-sm btn-circle btn-ghost'
+                                                                        >
+                                                                            ✕
+                                                                        </button>
+                                                                    </div>
+                                                                    <FeaturesModalComp
+                                                                        features={features?.modal}
+                                                                        plan_name={plan?.name}
+                                                                    />
+                                                                </div>
+                                                            </dialog>
+                                                        )}
+                                                    </div>
+                                                </>
                                             );
                                     })
                             )}
@@ -375,22 +427,6 @@ export default function PricingSegmento({ data, country }) {
                     <CalculatePricingSegmento />
                 </dialog>
             )} */}
-            {isFeatureModalOpen && (
-                <dialog className='modal z-[1111]' open>
-                    <div className='bg-white max-h-[700px] sm:h-3/4 h-[90%] max-w-[600px!important] sm:w-3/4 relative  modal-box flex flex-col md:gap-5 gap-3'>
-                        <div className='flex items-center justify-between'>
-                            <h3 className='text-2xl font-bold'>More Features</h3>
-                            <button
-                                onClick={() => setIsFeatureModalOpen(false)}
-                                className='btn btn-sm btn-circle btn-ghost'
-                            >
-                                ✕
-                            </button>
-                        </div>
-                        <FeaturesModalComp features={features?.modal} />
-                    </div>
-                </dialog>
-            )}
         </>
     );
 }

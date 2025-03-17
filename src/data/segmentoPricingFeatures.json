@@ -14,7 +14,10 @@
         },
         {
             "name": "Automated Customer Journey",
-            "description": "Create customized workflows based on client actions (e.g., after user signup, send an SMS, if unread, follow up with an email)."
+            "description": "Create customized workflows based on client actions (e.g., after user signup, send an SMS, if unread, follow up with an email).",
+            "notIncluded": [
+                "Basic"
+            ]
         }
     ],
     "modal": [
@@ -42,20 +45,8 @@
                     "description": "Ensure data is always up-to-date across integrated platforms."
                 },
                 {
-                    "name": "Optimized Filtering",
-                    "description": "Refine audience targeting with options like 'exact match', 'starts with', 'is not empty', etc."
-                },
-                {
-                    "name": "Filters API",
-                    "description": "Use API to filter contacts dynamically."
-                },
-                {
-                    "name": "Real-Time Segmentation",
-                    "description": "Automatically update segments as new data is added."
-                },
-                {
-                    "name": "Personalize Segmentation",
-                    "description": "Combine multiple filters to create highly specific segments."
+                    "name": "Widget Integration",
+                    "description": "Connect Segmento with a live chat widget to automatically add users into the phonebook."
                 },
                 {
                     "name": "Segment Data History",
@@ -66,26 +57,45 @@
                     "description": "Choose which fields to display in the phonebook (e.g., name, number, email)."
                 },
                 {
-                    "name": "Smart Query Builder",
-                    "description": "Use the query builder to track custom user actions like adding to cart or signing up."
+                    "name": "Optimized Filtering",
+                    "description": "Refine audience targeting with options like 'exact match', 'starts with', 'is not empty', etc.",
+                    "notIncluded": [
+                        "Basic"
+                    ]
                 },
                 {
-                    "name": "Widget Integration",
-                    "description": "Connect Segmento with a live chat widget to automatically add users into the phonebook."
+                    "name": "Filters API",
+                    "description": "Use API to filter contacts dynamically.",
+                    "notIncluded": [
+                        "Basic"
+                    ]
+                },
+                {
+                    "name": "Real-Time Segmentation",
+                    "description": "Automatically update segments as new data is added.",
+                    "notIncluded": [
+                        "Basic"
+                    ]
+                },
+                {
+                    "name": "Personalize Segmentation",
+                    "description": "Combine multiple filters to create highly specific segments.",
+                    "notIncluded": [
+                        "Basic"
+                    ]
+                },
+                {
+                    "name": "Smart Query Builder",
+                    "description": "Use the query builder to track custom user actions like adding to cart or signing up.",
+                    "notIncluded": [
+                        "Basic"
+                    ]
                 }
             ]
         },
         {
             "category": "Automation",
             "items": [
-                {
-                    "name": "Conditional Logic",
-                    "description": "Set conditions for automation (e.g., send a message only if the contact is in a specific segment)."
-                },
-                {
-                    "name": "Repeater Automation",
-                    "description": "Schedule messages to be sent on a repeat basis (daily, weekly, monthly, etc.)."
-                },
                 {
                     "name": "Multi-Channel Campaigns",
                     "description": "Instantly launch campaigns via SMS, email, WhatsApp, or other channels."
@@ -105,6 +115,20 @@
                 {
                     "name": "Campaign History",
                     "description": "Track all sent campaigns and engagement logs in one click."
+                },
+                {
+                    "name": "Conditional Logic",
+                    "description": "Set conditions for automation (e.g., send a message only if the contact is in a specific segment).",
+                    "notIncluded": [
+                        "Basic"
+                    ]
+                },
+                {
+                    "name": "Repeater Automation",
+                    "description": "Schedule messages to be sent on a repeat basis (daily, weekly, monthly, etc.).",
+                    "notIncluded": [
+                        "Basic"
+                    ]
                 }
             ]
         },
@@ -113,23 +137,43 @@
             "items": [
                 {
                     "name": "Advanced Filtering",
-                    "description": "Sharpen audience targeting with options like 'Ends With,' 'Contains,' and other dynamic filters."
+                    "description": "Sharpen audience targeting with options like 'Ends With,' 'Contains,' and other dynamic filters.",
+                    "notIncluded": [
+                        "Free",
+                        "Basic"
+                    ]
                 },
                 {
                     "name": "User Activity Tracking",
-                    "description": "Capture user actions on Shopify like page clicks, time spent, and other interactions."
+                    "description": "Capture user actions on Shopify like page clicks, time spent, and other interactions.",
+                    "notIncluded": [
+                        "Free",
+                        "Basic"
+                    ]
                 },
                 {
                     "name": "360 View of Customer Profile",
-                    "description": "Access a comprehensive history of user interactions, including page clicks on the website."
+                    "description": "Access a comprehensive history of user interactions, including page clicks on the website.",
+                    "notIncluded": [
+                        "Free",
+                        "Basic"
+                    ]
                 },
                 {
                     "name": "Time Spent Analysis",
-                    "description": "Measure how much time users spend on specific pages or content."
+                    "description": "Measure how much time users spend on specific pages or content.",
+                    "notIncluded": [
+                        "Free",
+                        "Basic"
+                    ]
                 },
                 {
                     "name": "Event-Based Triggers",
-                    "description": "Automate actions based on user behavior (e.g., page clicks, form submissions)."
+                    "description": "Automate actions based on user behavior (e.g., page clicks, form submissions).",
+                    "notIncluded": [
+                        "Free",
+                        "Basic"
+                    ]
                 }
             ]
         }

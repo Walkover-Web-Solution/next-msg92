@@ -317,3 +317,9 @@ $button-transition-timing: 100ms;
         @apply text-blue-500 hover:text-blue-600;
     }
 }
+
+.tooltip.tooltip-black {
+    &:before {
+        @apply bg-gray-800 text-white w-full;
+    }
+}

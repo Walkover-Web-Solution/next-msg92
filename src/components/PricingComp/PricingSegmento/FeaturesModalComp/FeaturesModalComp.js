@@ -1,6 +1,6 @@
-import { MdCheck } from 'react-icons/md';
+import { MdCheck, MdClose } from 'react-icons/md';
 
-export default function FeaturesModalComp({ features }) {
+export default function FeaturesModalComp({ features, plan_name }) {
     return (
         <>
             <div className='flex gap-8 flex-col h-fit'>
@@ -12,8 +12,16 @@ export default function FeaturesModalComp({ features }) {
                                 {category?.items?.length > 0 &&
                                     category?.items?.map((feature, index) => {
                                         return (
-                                            <p className='flex items-center gap-1' key={index}>
-                                                <MdCheck fontSize={18} color='#16A34A' />
+                                            <p
+                                                className='flex text-start gap-1 tooltip tooltip-black  cursor-pointer'
+                                                key={index}
+                                                data-tip={feature?.description}
+                                            >
+                                                {feature?.notIncluded && feature?.notIncluded?.includes(plan_name) ? (
+                                                    <MdClose className='mt-1' fontSize={18} color='#DC3645' />
+                                                ) : (
+                                                    <MdCheck className='mt-1' fontSize={18} color='#16A34A' />
+                                                )}
                                                 {feature?.name}
                                             </p>
                                         );
