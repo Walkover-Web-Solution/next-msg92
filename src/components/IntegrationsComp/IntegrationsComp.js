@@ -16,7 +16,7 @@ export default function IntegrationsComp({ pageInfo, data }) {
                 <a
                     href={data?.doc_btn_link}
                     target='_blank'
-                    className='btn btn-outline sm:btn-sm md:btn-md lg:btn-lg bg-black py-2 text-white'
+                    className='btn btn-outline sm:btn-sm md:btn-md bg-black py-2 text-white'
                 >
                     {data?.doc_btn}
                 </a>
