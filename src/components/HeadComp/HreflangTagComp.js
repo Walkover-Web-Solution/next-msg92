@@ -11,12 +11,6 @@ export default function HreflangTagComp({ pageInfo }) {
                     !specialPages?.global.includes(pageInfo?.page) &&
                     !specialPages?.justNested?.includes(pageInfo?.baseURL)
                 ) {
-                    console.log(
-                        '⚡️ ~ HreflangTagComp.js:11 ~ :',
-                        !specialPages?.global.includes(pageInfo?.page),
-                        !specialPages?.justNested?.includes(pageInfo?.baseURL)
-                    );
-
                     return (
                         <link
                             key={index}

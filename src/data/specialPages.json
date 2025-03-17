@@ -71,6 +71,14 @@
         "us/whatsapp/chatbot",
         "otp/magiclink",
         "in/otp/magiclink",
+        "br/otp/magiclink",
+        "br-pt/otp/magiclink",
+        "ae/otp/magiclink",
+        "ph/otp/magiclink",
+        "sg/otp/magiclink",
+        "es/otp/magiclink",
+        "gb/otp/magiclink",
+        "us/otp/magiclink",
         "partners-and-integrations/tally",
         "partners-and-integrations/zapier",
         "partners-and-integrations/freshworks",
@@ -78,8 +86,6 @@
         "partners-and-integrations/hubspot"
     ],
     "justNested": [
-        "otp/magiclink",
-        "in/otp/magiclink",
         "partners-and-integrations/tally",
         "partners-and-integrations/zapier",
         "partners-and-integrations/freshworks",
