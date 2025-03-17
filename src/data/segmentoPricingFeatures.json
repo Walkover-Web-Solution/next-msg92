@@ -16,7 +16,7 @@
             "name": "Automated Customer Journey",
             "description": "Create customized workflows based on client actions (e.g., after user signup, send an SMS, if unread, follow up with an email).",
             "notIncluded": [
-                "Basic"
+                "Free"
             ]
         }
     ],
@@ -60,35 +60,35 @@
                     "name": "Optimized Filtering",
                     "description": "Refine audience targeting with options like 'exact match', 'starts with', 'is not empty', etc.",
                     "notIncluded": [
-                        "Basic"
+                        "Free"
                     ]
                 },
                 {
                     "name": "Filters API",
                     "description": "Use API to filter contacts dynamically.",
                     "notIncluded": [
-                        "Basic"
+                        "Free"
                     ]
                 },
                 {
                     "name": "Real-Time Segmentation",
                     "description": "Automatically update segments as new data is added.",
                     "notIncluded": [
-                        "Basic"
+                        "Free"
                     ]
                 },
                 {
                     "name": "Personalize Segmentation",
                     "description": "Combine multiple filters to create highly specific segments.",
                     "notIncluded": [
-                        "Basic"
+                        "Free"
                     ]
                 },
                 {
                     "name": "Smart Query Builder",
                     "description": "Use the query builder to track custom user actions like adding to cart or signing up.",
                     "notIncluded": [
-                        "Basic"
+                        "Free"
                     ]
                 }
             ]
@@ -120,14 +120,14 @@
                     "name": "Conditional Logic",
                     "description": "Set conditions for automation (e.g., send a message only if the contact is in a specific segment).",
                     "notIncluded": [
-                        "Basic"
+                        "Free"
                     ]
                 },
                 {
                     "name": "Repeater Automation",
                     "description": "Schedule messages to be sent on a repeat basis (daily, weekly, monthly, etc.).",
                     "notIncluded": [
-                        "Basic"
+                        "Free"
                     ]
                 }
             ]

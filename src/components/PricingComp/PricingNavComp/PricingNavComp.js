@@ -32,21 +32,19 @@ export default function PricingNav({ products, page }) {
                         })}
                         {products?.channels.map((product, index) => {
                             return (
-                                <>
-                                    <Link
-                                        key={index}
-                                        href={getURL('pricing', product?.slug)}
-                                        className={`flex flex-col px-3 py-2 rounded hover:bg-secondary ${
-                                            page === product?.slug && 'bg-secondary'
-                                        }`}
-                                    >
-                                        <div className='flex items-center gap-1'>
-                                            <Image src={product?.icon} width={32} height={32} alt={product?.name} />
-                                            <h3 className='text-lg font-medium'> {product?.name}</h3>
-                                        </div>
-                                        {product?.description && <p className='text-sm'>{product?.description}</p>}
-                                    </Link>
-                                </>
+                                <Link
+                                    key={index}
+                                    href={getURL('pricing', product?.slug)}
+                                    className={`flex flex-col px-3 py-2 rounded hover:bg-secondary ${
+                                        page === product?.slug && 'bg-secondary'
+                                    }`}
+                                >
+                                    <div className='flex items-center gap-1'>
+                                        <Image src={product?.icon} width={32} height={32} alt={product?.name} />
+                                        <h3 className='text-lg font-medium'> {product?.name}</h3>
+                                    </div>
+                                    {product?.description && <p className='text-sm'>{product?.description}</p>}
+                                </Link>
                             );
                         })}
                         {products?.utilities.map((product, index) => {

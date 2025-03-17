@@ -228,11 +228,13 @@ export default function PricingSegmento({ data, country }) {
                                                                                     plan?.name
                                                                                 ) ? (
                                                                                     <MdClose
+                                                                                        className='mt-1'
                                                                                         fontSize={18}
                                                                                         color='#DC3645'
                                                                                     />
                                                                                 ) : (
                                                                                     <MdCheck
+                                                                                        className='mt-1'
                                                                                         fontSize={18}
                                                                                         color='#16A34A'
                                                                                     />
@@ -309,6 +311,7 @@ export default function PricingSegmento({ data, country }) {
                                                                                                 {plan?.postpaid_allowed ? (
                                                                                                     <>
                                                                                                         <MdCheck
+                                                                                                            className='mt-1'
                                                                                                             fontSize={
                                                                                                                 18
                                                                                                             }
@@ -329,6 +332,7 @@ export default function PricingSegmento({ data, country }) {
                                                                                                 ) : (
                                                                                                     <>
                                                                                                         <MdClose
+                                                                                                            className='mt-1'
                                                                                                             fontSize={
                                                                                                                 18
                                                                                                             }
