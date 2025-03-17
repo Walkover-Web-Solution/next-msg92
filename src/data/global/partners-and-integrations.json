@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Magento, WooCommerce, OpenCart, WordPress SMS addon plugin - MSG91",
-        "description": "Wordpress SMS plugin, WooCommerce SMS plugin, OpenCart SMS extension, Magento SMS extension, OpenCart SMS gateway to send unlimited SMS directly from website"
+        "title": "100+ Third Party Integrations | WhatsApp Business API, SMS, Emails, RCS and Voice",
+        "description": "MSG91 Integrates with Shopify, WebEngage, MoEngage, CleverTap, Tally, WooCommerce, ZohoCRM, Kylas, Zapier, Hubspot, Google Sheets and many other softwares for Automating communication Messages with MSG91 Built-in plugins to boost your business sales."
     },
     "IntegrationsComp": {
         "heading": "Integrations & Add-ons",
@@ -14,7 +14,7 @@
                 {
                     "name": "Shopify",
                     "description": "MSG91 have a native integration with shopify which allow you to send notifications and alerts on multiple events (i.e. Order Updates, Abandoned cart and checkouts) and you can sync MSG91's Segmento with shopify account to capture the user events and their journey to run marketing and  retention campaigns, also you can set up a hello chat widget and whatsapp widget on the website and many more.",
-                    "icon": "/assets/integration_partner/shopify.webp",
+                    "icon": "/assets/integration_partner/shopify.svg",
                     "channels": [
                         {
                             "channel": "SMS",
@@ -44,7 +44,7 @@
                 {
                     "name": "Clevertap",
                     "description": "MSG91 has SMS and Whatsapp integration with CleverTap. You can run sms and whatsapp campaigns on specific segments of your CleverTap account and also the sent delivery failed and click reports you can track in your  CleverTap panel itself for different campaigns. You can also send different type of whatsapp templates (i.e. Carousel, Limited time offer, flow) on single and bulk data which allows you to plan your marketing strategies more effectively.",
-                    "icon": "/assets/integration_partner/clevertap.png",
+                    "icon": "/assets/integration_partner/clevertap.jpeg",
                     "channels": [
                         {
                             "channel": "SMS",
@@ -169,7 +169,7 @@
                 {
                     "name": "Auth0",
                     "description": "MSG91 has created a one stop solution for all Auth0 users to send Multi Factor Authentication communication(MFA) through multiple channels like Text message, Whatsapp, RCS, Emails and Voice Call.",
-                    "icon": "/assets/integration_partner/auth0.png",
+                    "icon": "/assets/integration_partner/auth0.svg",
                     "channels": [
                         {
                             "channel": "SMS",
