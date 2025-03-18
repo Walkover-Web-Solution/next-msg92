@@ -11,7 +11,7 @@
         },
         "tagline": "smarter email strategy",
         "heading": "Maximize Revenue with Targeted Emails",
-        "subheading": "Boost your business with the #1 email marketing solution and automation platform, built to drive effortless engagement and growth. Whether you need to send promotional email or transactional email, our platform ensures high deliverability and engagement.",
+        "subheading": "Transform your business with the No.1 email marketing solution and automation platform, designed for seamless interaction and growth.",
         "lottie": "/assets/global/email/lotties/banner.json",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
@@ -41,7 +41,6 @@
         }
     },
     "FeatureComp": {
-        "heading": "Send high-converting emails with advanced features",
         "iconColor": "text-email",
         "features": [
             {
@@ -574,7 +573,6 @@
     "PreFooterComp": {
         "content": "Millions of Users trust us with our Email Solution, You can too.",
         "buttons": {
-        
             "salesModal": {
                 "text": "Contact sales",
                 "link": "https://calendly.com/bison-msg91/30min?month=2025-02"

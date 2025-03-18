@@ -20,9 +20,12 @@ export default function PreFooterComp({ data, pageInfo }) {
                                 </button>
                             </a>
                         )}
-                        <button className='btn btn-primary btn-outline btn-md' onClick={() => setIsModalOpen(true)}>
-                            {data?.buttons?.salesModal?.text}
-                        </button>
+                        {data?.buttons?.salesModal?.text && (
+                            <button className='btn btn-primary btn-outline btn-md' onClick={() => setIsModalOpen(true)}>
+                                {data?.buttons?.salesModal?.text}
+                            </button>
+                        )}
+
                         {data?.buttons?.pricing?.text && (
                             <a href={getPricingURL(pageInfo)}>
                                 <button className='btn btn-primary btn-outline btn-md '>
@@ -30,12 +33,16 @@ export default function PreFooterComp({ data, pageInfo }) {
                                 </button>
                             </a>
                         )}
-                        <a
-                            target='_blank'
-                            href={getURL('signup', pageInfo?.page !== 'home' ? pageInfo?.page : 'hello')}
-                        >
-                            <button className='btn btn-primary btn-md w-full'>{data?.buttons?.getStarted?.text}</button>
-                        </a>
+                        {data?.buttons?.getStarted?.text && (
+                            <a
+                                target='_blank'
+                                href={getURL('signup', pageInfo?.page !== 'home' ? pageInfo?.page : 'hello')}
+                            >
+                                <button className='btn btn-primary btn-md w-full'>
+                                    {data?.buttons?.getStarted?.text}
+                                </button>
+                            </a>
+                        )}
                     </div>
                 </div>
             </div>

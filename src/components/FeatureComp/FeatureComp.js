@@ -17,7 +17,7 @@ export default function FeatureComp({ data, pageInfo }) {
                             return (
                                 <div
                                     key={index}
-                                    className={` bg-white border flex items-center overflow-hidden gap-1 rounded justify-between ${
+                                    className={` bg-white border flex items-center overflow-hidden  rounded justify-between ${
                                         (index + 1) % 3 === 0
                                             ? 'flex flex-col lg:flex-row col-span-2'
                                             : 'flex flex-col lg:col-span-1 col-span-2'
@@ -111,16 +111,16 @@ export default function FeatureComp({ data, pageInfo }) {
                                         )}
                                     </div>
                                     {feature?.img && feature?.img.endsWith('.json') ? (
-                                        <div className='w-full xl:max-w-[600px] lg:max-w-[400px] max-w-[300px] md:mx-12 mx-2'>
+                                        <div className='w-full xl:max-w-[600px] lg:max-w-[400px] max-w-[300px] md:mx-6 mx-2'>
                                             <LottiePlayer lottie={feature?.img} />
                                         </div>
                                     ) : (
                                         <Image
                                             src={feature?.img}
                                             alt={feature?.name}
-                                            className='w-full xl:max-w-[600px] lg:max-w-[400px] max-w-[300px] md:mx-12 mx-2'
-                                            width={420}
-                                            height={420}
+                                            className='w-full xl:max-w-[700px] lg:max-w-[500px] max-w-[300px] md:mx-6 mx-2'
+                                            width={1080}
+                                            height={1080}
                                         />
                                     )}
                                 </div>

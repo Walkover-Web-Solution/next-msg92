@@ -11,7 +11,7 @@
         },
         "tagline": "Maximize Revenue with Targeted Emails",
         "heading": "Smart emails that land directly into the right inbox",
-        "subheading": "Transform your business with the best email marketing solution and automation platform, designed for seamless interaction and growth. Whether you need to send promotional email or transactional email, our platform ensures high deliverability and engagement.  ",
+        "subheading": "Transform your business with the No.1 email marketing solution and automation platform, designed for seamless interaction and growth.",
         "lottie": "/assets/global/email/lotties/banner.json",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
@@ -41,7 +41,6 @@
         }
     },
     "FeatureComp": {
-        "heading": "Send high-converting emails with advanced features",
         "iconColor": "text-email",
         "features": [
             {
