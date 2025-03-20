@@ -267,31 +267,31 @@
                     "usecases": [
                         {
                             "name": "E-mails Transacionais",
-                            "description": "Automatize confirmações de pedidos, OTPs e alertas de conta."
+                            "description": "Automatize confirmações de pedidos, OTPs e notificações por meio do seu provedor de e-mail existente."
                         },
                         {
-                            "name": "Notificações do sistema",
-                            "description": "Envie atualizações e lembretes em tempo real."
+                            "name": "Campanhas de marketing",
+                            "description": "Crie modelos envolventes e envie e-mails em massa para públicos registrados com entrega instantânea."
                         },
                         {
-                            "name": "Comunicação com o usuário",
-                            "description": "Entregue e-mails personalizados perfeitamente."
+                            "name": "Nutrição de leads",
+                            "description": "Envie acompanhamentos direcionados e e-mails personalizados para nutrir clientes em potencial."
                         },
                         {
-                            "name": "Segurança e autenticação",
-                            "description": "Habilite logins seguros com verificação de OTP."
+                            "name": "Análise detalhada",
+                            "description": "Acompanhe taxas de abertura, cliques e engajamento para obter melhores insights."
                         },
                         {
-                            "name": "Suporte ao cliente",
-                            "description": "Automatize respostas e atualizações de status."
+                            "name": "Fácil acesso",
+                            "description": "Gerencie campanhas de e-mail perfeitamente do Gmail ou Outlook."
                         }
                     ],
                     "features": [
-                        "Integração direta de API – Conecte-se perfeitamente com o Gmail e o Outlook.",
-                        "Entrega instantânea – Garanta entrega de e-mail confiável e pontual.",
-                        "Rastreamento em tempo real – Monitore aberturas de e-mail, cliques e engajamento.",
-                        "Escalável e confiável – Lide com tráfego de e-mail de alto volume sem esforço.",
-                        "Nenhum software adicional necessário – Use seu provedor de e-mail existente."
+                        "Envie campanhas de e-mail diretamente de um painel.",
+                        "Envolva os clientes da caixa de entrada da sua empresa sem esforço.",
+                        "Lide com todas as campanhas em uma única interface.",
+                        "Monitore aberturas de e-mail, cliques e desempenho instantaneamente.",
+                        "Simplifique a comunicação sem software extra."
                     ]
                 },
                 "img": "/assets/brpt/email/seamless-integration-with-gmail-and-outlook.svg"
@@ -586,7 +586,6 @@
                 "text": "Get started",
                 "link": "https://control.msg91.com/signup/"
             }
-         
         }
     }
 }

@@ -267,31 +267,31 @@
                     "usecases": [
                         {
                             "name": "Transactional Emails",
-                            "description": "Automate order confirmations, OTPs, and account alerts."
+                            "description": "Automate order confirmations, OTPs, and notifications via your existing email provider."
                         },
                         {
-                            "name": "System Notifications",
-                            "description": "Send real-time updates and reminders."
+                            "name": "Marketing Campaigns",
+                            "description": "Design engaging templates and send bulk emails to registered audiences with instant deliverability."
                         },
                         {
-                            "name": "User Communication",
-                            "description": "Deliver personalized emails seamlessly."
+                            "name": "Lead Nurturing",
+                            "description": "Send targeted follow-ups and personalized emails to nurture prospects."
                         },
                         {
-                            "name": "Security & Authentication",
-                            "description": "Enable secure logins with OTP verification."
+                            "name": "Detailed Analytics",
+                            "description": "Track open rates, clicks, and engagement for better insights."
                         },
                         {
-                            "name": "Customer Support",
-                            "description": "Automate responses and status updates."
+                            "name": "Easy Access",
+                            "description": "Manage email campaigns seamlessly from Gmail or Outlook."
                         }
                     ],
                     "features": [
-                        "Direct API Integration – Connect seamlessly with Gmail & Outlook.",
-                        "Instant Deliverability – Ensure timely and reliable email delivery.",
-                        "Real-Time Tracking – Monitor email opens, clicks, and engagement.",
-                        "Scalable & Reliable – Handle high-volume email traffic effortlessly.",
-                        "No Additional Software Needed – Use your existing email provider."
+                        "Send email campaigns directly from one dashboard.",
+                        "Engage customers from your business inbox effortlessly.",
+                        "Handle all campaigns from a single interface.",
+                        "Monitor email opens, clicks, and performance instantly.",
+                        "Streamline communication without extra software."
                     ]
                 },
                 "img": "/assets/global/email/seamless-integration-with-gmail-and-outlook.svg"
