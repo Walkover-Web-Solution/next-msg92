@@ -13,7 +13,7 @@ export default function FeaturesModalComp({ features, plan_name }) {
                                     category?.items?.map((feature, index) => {
                                         return (
                                             <p
-                                                className='flex text-start gap-1 tooltip tooltip-black  cursor-pointer'
+                                                className='flex text-start hover:underline gap-1 tooltip tooltip-modal cursor-pointer'
                                                 key={index}
                                                 data-tip={feature?.description}
                                             >

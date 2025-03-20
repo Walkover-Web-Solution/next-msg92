@@ -52,8 +52,8 @@
                     "description": "Connect Segmento with a live chat widget to automatically add users into the phonebook."
                 },
                 {
-                    "name": "Segment Data History",
-                    "description": "Track changes and updates made to segmented users over time."
+                    "name": "Segmento data history",
+                    "description": "Track changes and updates made to segmento data over time."
                 },
                 {
                     "name": "Customize Columns",
