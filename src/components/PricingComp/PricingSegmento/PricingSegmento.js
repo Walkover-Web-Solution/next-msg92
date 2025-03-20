@@ -126,7 +126,8 @@ export default function PricingSegmento({ data, country }) {
                     </div>{' '}
                     <p className='text-sm'>
                         <strong>Note:</strong>{' '}
-                        {`Contacts are available for purchase in bundles of ${contvertToLocal(1000)} contacts each`}.
+                        {`Extra Contacts are available for purchase in bundles of ${contvertToLocal(1000)} contacts each`}
+                        .
                     </p>
                 </div>
 
@@ -269,7 +270,7 @@ export default function PricingSegmento({ data, country }) {
                                                 <div className='flex items-center gap-1'>
                                                     <h3 className='text-lg font-semibold'>Extra @</h3>{' '}
                                                     <InfoIcon
-                                                        content={`Contacts are available for purchase in bundles of 1,000 contacts each.`}
+                                                        content={`Extra Contacts are available for purchase in bundles of 1,000 contacts each.`}
                                                     />
                                                 </div>
                                                 <div className='flex flex-col gap-1'>
