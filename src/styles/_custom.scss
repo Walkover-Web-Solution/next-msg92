@@ -317,3 +317,13 @@ $button-transition-timing: 100ms;
         @apply text-blue-500 hover:text-blue-600;
     }
 }
+
+.tooltip.tooltip-modal {
+    &:before {
+        @apply tooltip-secondary w-full z-[10001];
+    }
+}
+
+:root:has(:is(.modal-open, .modal:target, .modal-toggle:checked + .modal, .modal[open])):has(.modal-scrollable) {
+    overflow: scroll !important;
+}
