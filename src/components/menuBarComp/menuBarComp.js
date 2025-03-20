@@ -233,7 +233,6 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             onMouseEnter={() => {
                                 setNav('hide');
                                 setType('products');
-                                console.log('hello');
                             }}
                         ></div>
                     </div>
@@ -244,7 +243,6 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                         onMouseEnter={() => {
                             setNav('hide');
                             setType('products');
-                            console.log('hello');
                         }}
                         className={styles.overlay}
                     ></div>
