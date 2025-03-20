@@ -9,13 +9,15 @@ import CalculatePricingSegmento from './CalculatePricingSegmento/CalculatePricin
 import features from '@/data/segmentoPricingFeatures.json';
 import FeaturesModalComp from './FeaturesModalComp/FeaturesModalComp';
 import getSubscriptions from '@/utils/getSimplifiedPlans';
+import contvertToLocal from '@/utils/convertToLocal';
+import InfoIcon from '@/components/UIComponent/InfoIcon/InfoIcon';
 
 export default function PricingSegmento({ data, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
     const [isLoading, setIsLoading] = useState(true);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
-    const [isCalculationModalOpen, setIsCalculationModalOpen] = useState(true);
+    const [isCalculationModalOpen, setIsCalculationModalOpen] = useState(false);
     const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false);
     const [openedFeatureModal, setOpenedFeatureModal] = useState('');
     const [hasyYarly, setHasYearly] = useState(false);
@@ -112,15 +114,22 @@ export default function PricingSegmento({ data, country }) {
     return (
         <>
             <div className='flex flex-col gap-6 w-full'>
-                <div className='flex items-center justify-between'>
-                    <h1 className='text-3xl font-semibold capitalize '>segmento Pricing</h1>
-                    <button
-                        className=' btn btn-accent btn-outline btn-sm'
-                        onClick={() => setIsCalculationModalOpen(true)}
-                    >
-                        Calculate
-                    </button>
+                <div className='flex flex-col gap-1'>
+                    <div className='flex items-center justify-between'>
+                        <h1 className='text-3xl font-semibold capitalize '>segmento Pricing</h1>
+                        <button
+                            className=' btn btn-accent btn-outline btn-sm'
+                            onClick={() => setIsCalculationModalOpen(true)}
+                        >
+                            Calculate
+                        </button>
+                    </div>{' '}
+                    <p className='text-sm'>
+                        <strong>Note:</strong>{' '}
+                        {`Contacts are available for purchase in bundles of ${contvertToLocal(1000)} contacts each`}.
+                    </p>
                 </div>
+
                 <div className='flex flex-col w-full gap-8'>
                     {hasyYarly && (
                         <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
@@ -146,267 +155,6 @@ export default function PricingSegmento({ data, country }) {
                     )}
 
                     <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full gap-8 '>
-                        {plans &&
-                            plans.length > 0 &&
-                            plans.map(
-                                (plan) =>
-                                    plan?.plan_amounts?.length > 0 &&
-                                    plan?.plan_amounts.map((amount, index) => {
-                                        if (
-                                            amount?.currency?.short_name === currency &&
-                                            amount?.plan_type?.name === tabtype
-                                        )
-                                            return (
-                                                <>
-                                                    <div
-                                                        key={plan?.name + index}
-                                                        className={`flex flex-col gap-4 col-span-1 p-6  rounded bg-white relative ${
-                                                            plan?.name === 'Starter'
-                                                                ? 'border-4 border-black'
-                                                                : 'border'
-                                                        }`}
-                                                    >
-                                                        <div className='flex flex-col gap-2'>
-                                                            <div className='flex items-center justify-between'>
-                                                                <h2 className=' text-2xl font-semibold'>
-                                                                    {plan?.name}
-                                                                </h2>
-                                                                {plan?.name === 'Starter' && (
-                                                                    <span className='bg-black text-white px-2 rounded-badge'>
-                                                                        Popular
-                                                                    </span>
-                                                                )}
-                                                            </div>
-                                                            <div className='gap-1 flex flex-col'>
-                                                                <p className=' text-2xl font-semibold text-green-600 capitalize'>
-                                                                    {amount?.currency?.symbol}
-                                                                    {amount?.plan_amount} {tabtype}
-                                                                </p>
-                                                                {amount?.plan_amount != '0' ? (
-                                                                    <p className='text-sm'>
-                                                                        {amount?.currency?.short_name === 'INR'
-                                                                            ? '+18% GST'
-                                                                            : amount?.currency?.short_name === 'GBP'
-                                                                              ? '+VAT'
-                                                                              : '-'}
-                                                                    </p>
-                                                                ) : (
-                                                                    '-'
-                                                                )}
-                                                                {/* <div>{handleOfferPrice(amount) || '-'}</div> */}
-                                                            </div>
-
-                                                            <Link href={getURL('signup', 'segmento')} target='_blank'>
-                                                                <button
-                                                                    className={`btn btn-primary  btn-sm ${
-                                                                        plan?.name === 'Starter' ? '' : 'btn-outline'
-                                                                    }`}
-                                                                >
-                                                                    Get Started
-                                                                </button>
-                                                            </Link>
-                                                        </div>
-                                                        <span className='border-b-[1px]'></span>
-
-                                                        {/* included */}
-                                                        <div className='flex flex-col gap-2'>
-                                                            <h3 className='text-lg font-semibold'>Included</h3>
-                                                            <div className='flex flex-col gap-1'>
-                                                                {plan?.plan_services?.map((service, index) =>
-                                                                    service?.service_credit?.service_credit_rates?.map(
-                                                                        (rate, i) =>
-                                                                            rate?.currency?.short_name === currency && (
-                                                                                <p key={i}>
-                                                                                    {`${
-                                                                                        rate?.free_credits === -1
-                                                                                            ? 'Unlimited'
-                                                                                            : rate?.free_credits
-                                                                                    } ${
-                                                                                        service?.service_credit?.service
-                                                                                            ?.name
-                                                                                    }${
-                                                                                        rate?.free_credits === -1
-                                                                                            ? ''
-                                                                                            : '/month'
-                                                                                    }`}
-                                                                                </p>
-                                                                            )
-                                                                    )
-                                                                )}
-                                                            </div>
-                                                        </div>
-
-                                                        {/* features */}
-                                                        <div className='flex flex-col gap-2'>
-                                                            <h3 className='text-lg font-semibold'>Features</h3>
-                                                            <div className='flex flex-col gap-1'>
-                                                                {features?.primary?.length > 0 &&
-                                                                    features.primary.map((feature, index) => {
-                                                                        return (
-                                                                            <p
-                                                                                className='flex text-start gap-1 tooltip tooltip-black cursor-pointer'
-                                                                                key={index}
-                                                                                data-tip={feature?.description}
-                                                                            >
-                                                                                {feature?.notIncluded &&
-                                                                                feature?.notIncluded.includes(
-                                                                                    plan?.name
-                                                                                ) ? (
-                                                                                    <MdClose
-                                                                                        className='mt-1'
-                                                                                        fontSize={18}
-                                                                                        color='#DC3645'
-                                                                                    />
-                                                                                ) : (
-                                                                                    <MdCheck
-                                                                                        className='mt-1'
-                                                                                        fontSize={18}
-                                                                                        color='#16A34A'
-                                                                                    />
-                                                                                )}
-
-                                                                                {feature?.name}
-                                                                            </p>
-                                                                        );
-                                                                    })}
-                                                            </div>
-                                                            <p
-                                                                onClick={() => {
-                                                                    setIsFeatureModalOpen(true);
-                                                                    setOpenedFeatureModal(plan?.name);
-                                                                }}
-                                                                className='text-link active-link text-sm'
-                                                            >
-                                                                See More Features
-                                                            </p>
-                                                        </div>
-                                                        {/* features
-                                                    <div className='flex flex-col gap-2'>
-                                                        <h3 className='text-lg font-semibold'>Features</h3>
-                                                        <div className='flex flex-col gap-1'>
-                                                            {plan?.plan_features?.length > 0 &&
-                                                                plan?.plan_features.map((feature, index) => {
-                                                                    if (
-                                                                        feature?.is_visible ||
-                                                                        !feature?.feature?.is_included
-                                                                    ) {
-                                                                        return (
-                                                                            <p
-                                                                                className='flex items-center gap-1'
-                                                                                key={index}
-                                                                            >
-                                                                                {feature?.is_visible &&
-                                                                                feature?.feature?.is_included ? (
-                                                                                    <MdCheck
-                                                                                        fontSize={18}
-                                                                                        color='#16A34A'
-                                                                                    />
-                                                                                ) : (
-                                                                                    <MdClose
-                                                                                        fontSize={18}
-                                                                                        color='#DC3645'
-                                                                                    />
-                                                                                )}
-                                                                                {feature?.feature?.name}
-                                                                            </p>
-                                                                        );
-                                                                    }
-                                                                })}
-                                                        </div>
-                                                    </div> */}
-
-                                                        {/* Extras */}
-                                                        <div className='flex flex-col gap-2'>
-                                                            <h3 className='text-lg font-semibold'>Extra @</h3>
-                                                            <div className='flex flex-col gap-1'>
-                                                                {plan?.plan_services?.length > 0 &&
-                                                                    plan?.plan_services.map((service, index) => (
-                                                                        <div key={index}>
-                                                                            {service?.service_credit
-                                                                                ?.service_credit_rates?.length > 0 &&
-                                                                                service?.service_credit?.service_credit_rates.map(
-                                                                                    (rate, i) =>
-                                                                                        rate?.currency?.short_name ===
-                                                                                            currency && (
-                                                                                            <p
-                                                                                                className='flex items-center gap-1'
-                                                                                                key={i}
-                                                                                                data-tip='hello'
-                                                                                            >
-                                                                                                {plan?.postpaid_allowed ? (
-                                                                                                    <>
-                                                                                                        <MdCheck
-                                                                                                            className='mt-1'
-                                                                                                            fontSize={
-                                                                                                                18
-                                                                                                            }
-                                                                                                            color='#16A34A'
-                                                                                                        />
-                                                                                                        {`${symbol}${
-                                                                                                            rate?.follow_up_rate ||
-                                                                                                            'N/A'
-                                                                                                        }/${
-                                                                                                            rate?.chunk_size
-                                                                                                        } ${
-                                                                                                            service
-                                                                                                                ?.service_credit
-                                                                                                                ?.service
-                                                                                                                ?.name
-                                                                                                        }`}
-                                                                                                    </>
-                                                                                                ) : (
-                                                                                                    <>
-                                                                                                        <MdClose
-                                                                                                            className='mt-1'
-                                                                                                            fontSize={
-                                                                                                                18
-                                                                                                            }
-                                                                                                            color='#DC3645'
-                                                                                                        />
-                                                                                                        {`No Extra ${service?.service_credit?.service?.name}`}
-                                                                                                    </>
-                                                                                                )}
-                                                                                                {service?.service_credit
-                                                                                                    ?.service?.is_rental
-                                                                                                    ? '/month'
-                                                                                                    : ''}
-                                                                                            </p>
-                                                                                        )
-                                                                                )}
-                                                                        </div>
-                                                                    ))}
-                                                            </div>
-                                                        </div>
-
-                                                        {isFeatureModalOpen && openedFeatureModal === plan?.name && (
-                                                            <dialog className='modal modal-scrollable absolute' open>
-                                                                <div className='bg-white w-[95%] h-[95%] relative rounded-md border modal-box flex flex-col '>
-                                                                    <div className='flex items-center justify-between h-fit'>
-                                                                        <h3 className='text-2xl font-bold'>
-                                                                            More Features
-                                                                        </h3>
-                                                                        <button
-                                                                            onClick={() => {
-                                                                                setIsFeatureModalOpen(false);
-                                                                                setOpenedFeatureModal('');
-                                                                            }}
-                                                                            className='btn btn-sm btn-circle btn-ghost'
-                                                                        >
-                                                                            ✕
-                                                                        </button>
-                                                                    </div>
-                                                                    <FeaturesModalComp
-                                                                        features={features?.modal}
-                                                                        plan_name={plan?.name}
-                                                                    />
-                                                                </div>
-                                                            </dialog>
-                                                        )}
-                                                    </div>
-                                                </>
-                                            );
-                                    })
-                            )}
                         {plans?.length > 0 &&
                             plans?.map((plan, index) => {
                                 return (
@@ -481,7 +229,7 @@ export default function PricingSegmento({ data, country }) {
                                                         features.primary.map((feature, index) => {
                                                             return (
                                                                 <p
-                                                                    className='flex text-start gap-1 w-fit hover:underline tooltip tooltip-black cursor-pointer'
+                                                                    className='flex text-start gap-1 w-fit hover:underline tooltip tooltip-secondary cursor-pointer'
                                                                     key={index}
                                                                     data-tip={feature?.description}
                                                                 >
@@ -518,7 +266,12 @@ export default function PricingSegmento({ data, country }) {
 
                                             {/* Extras */}
                                             <div className='flex flex-col gap-2'>
-                                                <h3 className='text-lg font-semibold'>Extra @</h3>
+                                                <div className='flex items-center gap-1'>
+                                                    <h3 className='text-lg font-semibold'>Extra @</h3>{' '}
+                                                    <InfoIcon
+                                                        content={`Contacts are available for purchase in bundles of 1,000 contacts each.`}
+                                                    />
+                                                </div>
                                                 <div className='flex flex-col gap-1'>
                                                     {plan?.extras?.length > 0 &&
                                                         plan?.extras.map((service, index) => (

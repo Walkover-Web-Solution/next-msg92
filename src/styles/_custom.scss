@@ -317,9 +317,9 @@ $button-transition-timing: 100ms;
     }
 }
 
-.tooltip.tooltip-black {
+.tooltip.tooltip-modal {
     &:before {
-        @apply bg-gray-800 text-white w-full;
+        @apply tooltip-secondary w-full z-[10001];
     }
 }
 
