@@ -4,42 +4,21 @@
         "description": "MSG91 Integrates with Shopify, WebEngage, MoEngage, CleverTap, Tally, WooCommerce, ZohoCRM, Kylas, Zapier, Hubspot, Google Sheets and many other softwares for Automating communication Messages with MSG91 Built-in plugins to boost your business sales."
     },
     "IntegrationsComp": {
-        "heading": "Integrations & Add-ons",
-        "subheading": "Add-ons that enable SMS notifications in your application with a single click.",
-        "doc_btn": "Get your API key",
-        "doc_btn_link": "https://msg91.com/signup",
+        "heading": "Integrate to automate communication across Email, SMS, WhatsApp, Voice, and RCS.",
         "plugins_by_msg91": {
-            "heading": "Plugins by MSG91",
+            "heading": "Build by MSG91",
             "plugins": [
                 {
                     "name": "Shopify",
                     "description": "MSG91 have a native integration with shopify which allow you to send notifications and alerts on multiple events (i.e. Order Updates, Abandoned cart and checkouts) and you can sync MSG91's Segmento with shopify account to capture the user events and their journey to run marketing and  retention campaigns, also you can set up a hello chat widget and whatsapp widget on the website and many more.",
                     "icon": "/assets/integration_partner/shopify.svg",
-                    "channels": [
-                        {
-                            "channel": "SMS",
-                            "link": "https://msg91.com/help/add-ons-and-plug-ins/how-to-use-msg91-with-shopify"
-                        },
-                        {
-                            "channel": "WhatsApp",
-                            "link": "https://msg91.com/help/add-ons-and-plug-ins/how-to-use-msg91-with-shopify"
-                        }
-                    ]
+                    "link": "https://msg91.com/help/add-ons-and-plug-ins/how-to-use-msg91-with-shopify"
                 },
                 {
                     "name": "Zoho CRM",
                     "description": "MSG91 offers native plugin for zoho crm through which you can automate the omnichannel campaigns for multiple lead stages and workflow conditions. You can manually run personalized multichannel bulk campaigns on specific segments directly from your Zoho CRM panel.MSG91 also provides webhooks for inbound and outbound whatsapp messages to capture the logs and responses and many more features you can explore through the plugin.",
                     "icon": "/assets/integration_partner/zoho-crm.svg",
-                    "channels": [
-                        {
-                            "channel": "SMS",
-                            "link": "https://msg91.com/help/integration-guides/zoho-subscription-how-to-integrate-with-msg91"
-                        },
-                        {
-                            "channel": "WhatsApp",
-                            "link": "https://msg91.com/help/integration-guides/zoho-subscription-how-to-integrate-with-msg91"
-                        }
-                    ]
+                    "link": "https://msg91.com/help/integration-guides/zoho-subscription-how-to-integrate-with-msg91"
                 },
                 {
                     "name": "Clevertap",
@@ -95,91 +74,37 @@
                         "Manual Sending of Ledgers"
                     ],
                     "icon": "/assets/integration_partner/Tally.png",
-                    "channels": [
-                        {
-                            "channel": "SMS",
-                            "link": "https://msg91.com/help/integration-guides/integrate-tally-with-msg91"
-                        },
-                        {
-                            "channel": "WhatsApp",
-                            "link": "https://msg91.com/help/integration-guides/integrate-tally-with-msg91"
-                        }
-                    ]
+                    "link": "https://msg91.com/help/integration-guides/integrate-tally-with-msg91"
                 },
                 {
                     "name": "Kylas",
                     "description": "You can integrate MSG91 services with your Kylas CRM and make triggers automated according to your leads and contact stages. It allows you to communicate with your customers Via SMS,Whatsapp,Email,RCS and Voice.",
                     "icon": "/assets/integration_partner/kylas.svg",
-                    "channels": [
-                        {
-                            "channel": "SMS",
-                            "link": "https://msg91.com/help/integration-guides/Kylas-MSG91"
-                        },
-                        {
-                            "channel": "WhatsApp",
-                            "link": "https://msg91.com/help/integration-guides/Kylas-MSG91"
-                        }
-                    ]
+                    "link": "https://msg91.com/help/integration-guides/Kylas-MSG91"
                 },
                 {
                     "name": "Freshworks",
                     "description": "Automate your customer communication model by using MSG91! Send customized communications through Email, Text Message, RCS and Whatsapp for Deal/Contact related alerts. Increasing your customer reach with automation and boost sales.",
                     "icon": "/assets/integration_partner/freshworks.svg",
-                    "channels": [
-                        {
-                            "channel": "SMS",
-                            "link": "https://msg91.com/help/add-ons-and-plug-ins/freshworks-how-to-integrate-the-msg91-plugin-in-freshworks"
-                        },
-                        {
-                            "channel": "WhatsApp",
-                            "link": "https://msg91.com/help/add-ons-and-plug-ins/freshworks-how-to-integrate-the-msg91-plugin-in-freshworks"
-                        }
-                    ]
+                    "link": "https://msg91.com/help/add-ons-and-plug-ins/freshworks-how-to-integrate-the-msg91-plugin-in-freshworks"
                 },
                 {
                     "name": "MS Excel",
                     "description": "MSG91 has created a one stop solution for all MS Excel users to send communication through multiple channels like Text message, Whatsapp, RCS, Emails and Voice Call.",
                     "icon": "/assets/integration_partner/ms-excel.svg",
-                    "channels": [
-                        {
-                            "channel": "SMS",
-                            "link": "https://msg91.com/help/add-ons-and-plug-ins/excel-how-to-use-the-excel-plugin-for-sending-campaign"
-                        },
-                        {
-                            "channel": "WhatsApp",
-                            "link": "https://msg91.com/help/add-ons-and-plug-ins/excel-how-to-use-the-excel-plugin-for-sending-campaign"
-                        }
-                    ]
+                    "link": "https://msg91.com/help/add-ons-and-plug-ins/excel-how-to-use-the-excel-plugin-for-sending-campaign"
                 },
                 {
                     "name": "Google Sheets",
                     "description": "MSG91 has created a one stop solution for all Google Spreadsheet users to send communication through multiple channels like Text message, Whatsapp, RCS, Emails and Voice Call.",
                     "icon": "/assets/integration_partner/google-sheets.svg",
-                    "channels": [
-                        {
-                            "channel": "SMS",
-                            "link": "https://msg91.com/help/add-ons-and-plug-ins/google-spreadsheet-how-to-send-sms"
-                        },
-                        {
-                            "channel": "WhatsApp",
-                            "link": "https://msg91.com/help/add-ons-and-plug-ins/google-spreadsheet-how-to-send-sms"
-                        }
-                    ]
+                    "link": "https://msg91.com/help/add-ons-and-plug-ins/google-spreadsheet-how-to-send-sms"
                 },
                 {
                     "name": "Auth0",
                     "description": "MSG91 has created a one stop solution for all Auth0 users to send Multi Factor Authentication communication(MFA) through multiple channels like Text message, Whatsapp, RCS, Emails and Voice Call.",
                     "icon": "/assets/integration_partner/auth0.svg",
-                    "channels": [
-                        {
-                            "channel": "SMS",
-                            "link": "https://msg91.com/help/integration-guides/How-to-Integrate-MSG91-with-Auth0"
-                        },
-                        {
-                            "channel": "WhatsApp",
-                            "link": "https://msg91.com/help/integration-guides/How-to-Integrate-MSG91-with-Auth0"
-                        }
-                    ]
+                    "link": "https://msg91.com/help/integration-guides/How-to-Integrate-MSG91-with-Auth0"
                 }
             ]
         },
@@ -213,28 +138,63 @@
             ]
         },
         "third_party": {
-            "heading": "Third Party/Partners Integrations",
+            "heading": "Build by Partners",
             "plugins": [
                 {
-                    "name": "​UnitedSol (Shopify)",
+                    "name": "​UnitedSol",
                     "title": "Shopify OTP Login Extension:",
-                    "icon": "/assets/integration_partner/​unitedsol-shopify.png",
-                    "link": "https://apps.shopify.com/login-with-phone-number",
-                    "description": "Enhance authentication on Shopify with the OTP Login with Phone app, enabling customers to securely log in and sign up using their phone numbers and email. "
+                    "icon": "/assets/integration_partner/unitedsol.png",
+                    "description": "Enhance authentication on Shopify, WooCommerce, Magento with the OTP Login with Phone app, enabling customers to securely log in and sign up using their phone numbers and email. ",
+                    "channels": [
+                        {
+                            "channel": "Shopify",
+                            "link": "https://apps.shopify.com/login-with-phone-number"
+                        },
+                        {
+                            "channel": "WooCommerce",
+                            "link": "https://woocommerce.com/products/registration-login-with-mobile-phone-number/"
+                        },
+                        {
+                            "channel": "Magento",
+                            "link": "https://www.fmeextensions.com/magento-2-otp-login"
+                        }
+                    ]
                 },
                 {
-                    "name": "​UnitedSol (WooCommerce)",
-                    "title": "WooCommerce OTP Login Extension:",
-                    "icon": "/assets/integration_partner/​unitedsol-woocommerce.png",
-                    "link": "https://woocommerce.com/products/registration-login-with-mobile-phone-number/",
-                    "description": "Streamline customer access with Registration & Login via Mobile Phone Number for WooCommerce. Empower users to log in effortlessly with secure OTP verification, eliminating password hassles!"
+                    "name": "Binary",
+                    "description": "Binary Web Solutions is a leading Shopify development company and e-commerce experts in India. They provide a range of services including migration from other marketplaces to Shopify, store management and custom integrations.",
+                    "icon": "/assets/integration_partner/binary.png",
+                    "link": "https://binaryic.com/"
                 },
                 {
-                    "name": "​UnitedSol (Magento)",
-                    "title": "Magento 2 OTP Login Extension:",
-                    "icon": "/assets/integration_partner/​unitedsol-megento.png",
-                    "link": "https://www.fmeextensions.com/magento-2-otp-login",
-                    "description": "Boost security and user experience with the Magento 2 OTP Login Extension by FMEextensions. Allow customers to log in or register seamlessly via an OTP sent through SMS or email."
+                    "name": "Flits",
+                    "description": "Flits helps you maximize customer retention and drive repeat purchases with a powerful, all-in-one Shopify loyalty program. Lower acquisition cost and strengthen your brand.",
+                    "icon": "/assets/integration_partner/flits.png",
+                    "link": "https://apps.shopify.com/flits"
+                },
+                {
+                    "name": "Dotpe/Rista",
+                    "description": "Seamlessly connect front and back-of-house operations, make supply-chain efficient, optimize costs, and grow your business with native direct-ordering and marketing. Rista does it all, and makes your guest experience exceptional.",
+                    "icon": "/assets/integration_partner/rista.png",
+                    "link": "https://ristaapps.com/"
+                },
+                {
+                    "name": "Fudr",
+                    "description": "Fudr is a SaaS based app builder that help restaurant chains launch their private-label app on top of their existing POS system.",
+                    "icon": "/assets/integration_partner/fudr.png",
+                    "link": "https://business.fudr.in/"
+                },
+                {
+                    "name": "Lucent",
+                    "description": "This app streamlines customer logins with OTP authentication via Mobile, WhatsApp, or Email. Now with added WhatsApp and SMS notifications, you can send real-time alerts for abandoned carts, order status, and customer engagement",
+                    "icon": "/assets/integration_partner/lucent.png",
+                    "link": "https://apps.shopify.com/simply-otp-login?st_source=msg91Listing"
+                },
+                {
+                    "name": "AppBrew",
+                    "description": "Appbrew empowers Shopify brands to launch high-conversion mobile apps with ease. Trusted by over 100 brands and backed by Accel, we deliver exceptional mobile experiences that drive growth and engagement",
+                    "icon": "/assets/integration_partner/appbrew.png",
+                    "link": "https://appbrew.com/"
                 }
             ]
         },
