@@ -35,6 +35,13 @@
         "currency": "GBP"
     },
     {
+        "shortname": "FIL-PH",
+        "name": "Philippines",
+        "code": 63,
+        "language": "Filipino",
+        "currency": "GBP"
+    },
+    {
         "shortname": "SG",
         "name": "Singapore",
         "code": 65,
