@@ -83,40 +83,40 @@
         "integrations": "Integrations",
         "integrations_list": {
             "explore_btn": "Explore More Plugins",
-            "content": [
+             "content": [
                 {
                     "name": "Shopify",
-                    "link": "https://msg91.com/help/add-ons-and-plug-ins/how-to-use-msg91-with-shopify",
+                    "link": "https://apps.shopify.com/msg91",
                     "icon": "/assets/integration_partner/shopify.svg"
                 },
                 {
                     "name": "Zoho CRM",
-                    "link": "https://msg91.com/help/integration-guides/zoho-subscription-how-to-integrate-with-msg",
+                    "link": "https://marketplace.zoho.com/app/crm/msg91-campaign-for-zoho-crm",
                     "icon": "/assets/integration_partner/zoho-crm.svg"
                 },
                 {
                     "name": "Clevertap",
-                    "link": "https://msg91.com/help/integration-guides/how-to-send-sms-in-clevertap-with-msg91",
+                    "link": "https://docs.clevertap.com/docs/msg91",
                     "icon": "/assets/integration_partner/clevertap.jpeg"
                 },
                 {
                     "name": "WebEngage",
-                    "link": "https://msg91.com/help/add-ons-and-plug-ins/how-to-send-sms-in-webengage-with-msg91",
+                    "link": "https://docs.webengage.com/docs/msg91",
                     "icon": "/assets/integration_partner/webengage.jpg"
                 },
                 {
                     "name": "MoEngage",
-                    "link": "https://msg91.com/help/text-sms/msg91-sms-connector-for-moengage",
+                    "link": "https://partners.moengage.com/hc/en-us/articles/34933932637332-Configure-MSG91",
                     "icon": "/assets/integration_partner/moengage.webp"
                 },
                 {
                     "name": "Tally",
-                    "link": "https://msg91.com/help/integration-guides/integrate-tally-with-msg91",
+                    "link": "https://msg91.com/partners-and-integrations/tally",
                     "icon": "/assets/integration_partner/Tally.png"
                 },
                 {
                     "name": "Kylas",
-                    "link": "https://msg91.com/help/integration-guides/Kylas-MSG91",
+                    "link": "https://kylas.io/mplaceintgrations/integration-msg91",
                     "icon": "/assets/integration_partner/kylas.svg"
                 }
             ]
