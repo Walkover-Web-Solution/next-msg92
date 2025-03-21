@@ -85,39 +85,39 @@
             "explore_btn": "Explorar Mais Plugins",
             "content": [
                 {
-                    "slug": "shopify",
                     "name": "Shopify",
-                    "link": "https://apps.shopify.com/msg91"
+                    "link": "https://msg91.com/help/add-ons-and-plug-ins/how-to-use-msg91-with-shopify",
+                    "icon": "/assets/integration_partner/shopify.svg"
                 },
                 {
-                    "slug": "tally",
+                    "name": "Zoho CRM",
+                    "link": "https://msg91.com/help/integration-guides/zoho-subscription-how-to-integrate-with-msg",
+                    "icon": "/assets/integration_partner/zoho-crm.svg"
+                },
+                {
+                    "name": "Clevertap",
+                    "link": "https://msg91.com/help/integration-guides/how-to-send-sms-in-clevertap-with-msg91",
+                    "icon": "/assets/integration_partner/clevertap.jpeg"
+                },
+                {
+                    "name": "WebEngage",
+                    "link": "https://msg91.com/help/add-ons-and-plug-ins/how-to-send-sms-in-webengage-with-msg91",
+                    "icon": "/assets/integration_partner/webengage.jpg"
+                },
+                {
+                    "name": "MoEngage",
+                    "link": "https://msg91.com/help/text-sms/msg91-sms-connector-for-moengage",
+                    "icon": "/assets/integration_partner/moengage.webp"
+                },
+                {
                     "name": "Tally",
-                    "link": "https://msg91.com/partners-and-integrations/tally"
+                    "link": "https://msg91.com/help/integration-guides/integrate-tally-with-msg91",
+                    "icon": "/assets/integration_partner/Tally.png"
                 },
                 {
-                    "slug": "zapier",
-                    "name": "Zapier",
-                    "link": "https://msg91.com/partners-and-integrations/zapier"
-                },
-                {
-                    "slug": "freshworks",
-                    "name": "Freshworks",
-                    "link": "https://msg91.com/partners-and-integrations/freshworks"
-                },
-                {
-                    "slug": "firebase",
-                    "name": "Firebase",
-                    "link": "https://msg91.com/partners-and-integrations/firebase"
-                },
-                {
-                    "slug": "hubspot",
-                    "name": "HubSpot",
-                    "link": "https://msg91.com/partners-and-integrations/hubspot"
-                },
-                {
-                    "slug": "googlesheets",
-                    "name": "Google Sheets",
-                    "link": "https://msg91.com/help/how-to-send-sms-and-email-from-google-spreadsheet"
+                    "name": "Kylas",
+                    "link": "https://msg91.com/help/integration-guides/Kylas-MSG91",
+                    "icon": "/assets/integration_partner/kylas.svg"
                 }
             ]
         },

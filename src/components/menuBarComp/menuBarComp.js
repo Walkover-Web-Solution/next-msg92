@@ -183,9 +183,9 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                 return (
                                                     <a key={index} href={integration?.link}>
                                                         <div className='flex items-center gap-2 py-2 px-2 rounded hover:bg-secondary w-full LinkButtonCard'>
-                                                            <Image
+                                                            <img
                                                                 className='h-10'
-                                                                src={`/assets/integrations/${integration?.slug}.svg`}
+                                                                src={integration?.icon || 'https://placehold.co/20'}
                                                                 alt={integration?.slug}
                                                                 width={46}
                                                                 height={46}
