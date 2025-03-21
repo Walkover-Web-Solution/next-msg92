@@ -2,14 +2,14 @@ import HeadComp from '@/components/HeadComp/HeadComp';
 import Image from 'next/image';
 import { MdChevronLeft } from 'react-icons/md';
 
-export default function CaseStudyPageComp({ data }) {
+export default function CaseStudyPageComp({ data, pageInfo }) {
     const headComp = {
         'title': `Customer success stories: ${data?.name} with MSG91 API Integration`,
     };
 
     return (
         <>
-            <HeadComp data={headComp} />
+            <HeadComp data={headComp} pageInfo={pageInfo} />
             <div>
                 <div className='container flex flex-col gap-10 pb-16 pt-4'>
                     <div>
