@@ -183,9 +183,9 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                 return (
                                                     <a key={index} href={integration?.link}>
                                                         <div className='flex items-center gap-2 py-2 px-2 rounded hover:bg-secondary w-full LinkButtonCard'>
-                                                            <Image
-                                                                className='h-10'
-                                                                src={`/assets/integrations/${integration?.slug}.svg`}
+                                                            <img
+                                                                className='h-fit w-1-'
+                                                                src={integration?.icon || 'https://placehold.co/20'}
                                                                 alt={integration?.slug}
                                                                 width={46}
                                                                 height={46}
@@ -233,7 +233,6 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             onMouseEnter={() => {
                                 setNav('hide');
                                 setType('products');
-                                console.log('hello');
                             }}
                         ></div>
                     </div>
@@ -244,7 +243,6 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                         onMouseEnter={() => {
                             setNav('hide');
                             setType('products');
-                            console.log('hello');
                         }}
                         className={styles.overlay}
                     ></div>
