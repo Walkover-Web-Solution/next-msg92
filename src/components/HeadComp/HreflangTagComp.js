@@ -4,7 +4,7 @@ export default function HreflangTagComp({ pageInfo }) {
     return (
         <Head>
             <link rel='canonical' href={`https://msg91.com/${pageInfo?.pathURL}`} />
-            <link rel='alternate' hreflang='en' href={`https://msg91.com/${pageInfo?.baseURL}`} />
+            <link rel='alternate' hrefLang='en' href={`https://msg91.com/${pageInfo?.baseURL}`} />
             {countries?.countries.map((country, index) => {
                 return (
                     <link
