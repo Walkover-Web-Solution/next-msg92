@@ -6,44 +6,43 @@ import getURL from '@/utils/getURL';
 import { useRouter } from 'next/router';
 
 export default function NotificationBarComp({ componentData, pageInfo }) {
-    console.log('⚡️ ~ notificationBarComp.js:9 ~ NotificationBarComp ~ pageInfo:', pageInfo);
     const router = useRouter();
     const visibility = router?.pathname.startsWith('/guide') ? true : false;
     const currentCountry = availableCountries.find((cont) => cont.shortname === pageInfo?.country);
     const hidden = componentData?.hide?.includes(pageInfo?.page);
     const languages = availableCountries?.find(
-        (country) => country?.languages && country?.languages.some((lang) => lang?.route === pageInfo?.country)
+        (country) => country?.languages && country?.shortname === pageInfo?.country
     );
+    // const languages = availableCountries?.find(
+    //     (country) => country?.languages && country?.languages.some((lang) => lang?.route === pageInfo?.country)
+    // );
     console.log('⚡️ ~ notificationBarComp.js:15 ~ NotificationBarComp ~ languages:', languages);
     if (componentData && !hidden) {
         return (
             <div className='py-3 border border-b'>
                 <div className='container flex  gap-6 justify-end '>
-                    {['br-pt', 'br'].includes(pageInfo?.country) && (
+                    {languages?.languages && languages?.languages?.length > 0 && (
                         <div className='dropdown'>
                             <div tabIndex={0} role='button' className='flex gap-1 items-center '>
                                 <MdTranslate fontSize={16} />
-                                {currentCountry?.shortname === 'BR-PT' ? 'Portuguese' : 'English'}
+                                {languages?.language}
                                 <MdArrowDropDown fontSize={16} />
                             </div>
+
                             <div tabIndex={0} className='dropdown-content bg-neutral z-[9999] w-32 rounded shadow'>
                                 <ul>
-                                    <li className='cursor-pointer'>
-                                        <a
-                                            href={getURL('country', 'br', pageInfo)}
-                                            className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
-                                        >
-                                            English
-                                        </a>
-                                    </li>
-                                    <li className='cursor-pointer'>
-                                        <a
-                                            href={getURL('country', 'br-pt', pageInfo)}
-                                            className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
-                                        >
-                                            Portuguese
-                                        </a>
-                                    </li>
+                                    {languages?.languages?.map((lang, index) => {
+                                        return (
+                                            <li key={index} className='cursor-pointer'>
+                                                <a
+                                                    href={getURL('country', lang?.route, pageInfo)}
+                                                    className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
+                                                >
+                                                    {lang?.name}
+                                                </a>
+                                            </li>
+                                        );
+                                    })}
                                 </ul>
                             </div>
                         </div>
