@@ -6,7 +6,7 @@ export default function handler(req, res) {
 
         try {
             if (params?.page === 'pricing') {
-                data = require(`@/data/${params?.country}/${params?.page}.json`);
+                data = require(`@/data/${params?.country.toLowerCase}/${params?.page}.json`);
             } else {
                 if (params?.country === 'global') {
                     if (params.page === 'home') {
@@ -16,6 +16,7 @@ export default function handler(req, res) {
                     }
                 } else {
                     if (params.page === 'home') {
+                        console.log('⚡️ ~ data.js:14 ~ handler ~ params:', params);
                         data = require(`@/data/${params?.country}/home.json`);
                     } else {
                         data = require(`@/data/${params?.pathURL}.json`);

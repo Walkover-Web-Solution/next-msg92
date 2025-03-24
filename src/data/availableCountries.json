@@ -1,72 +1,113 @@
 [
     {
-        "shortname": "IN",
+        "shortname": "in",
         "name": "India",
         "code": 91,
-        "language": "English",
-        "currency": "INR"
+        "currency": "INR",
+        "language": "English"
     },
     {
-        "shortname": "BR",
+        "shortname": "br",
         "name": "Brazil",
         "code": 55,
+        "currency": "USD",
         "language": "English",
-        "currency": "USD"
+        "nestedLanguage": true,
+        "languages": [
+            {
+                "name": "Portuguese",
+                "route": "br-pt"
+            },
+            {
+                "name": "English",
+                "route": "br"
+            }
+        ]
     },
     {
-        "shortname": "BR-PT",
+        "shortname": "br-pt",
         "name": "Brazil",
         "code": 55,
-        "language": "Portuguese",
-        "currency": "USD"
+        "languages": [
+            {
+                "name": "Portuguese",
+                "route": "br-pt"
+            },
+            {
+                "name": "English",
+                "route": "br"
+            }
+        ],
+        "language": "Portuguese"
     },
     {
-        "shortname": "AE",
+        "shortname": "ae",
         "name": "United Arab Emirates",
         "code": 971,
-        "language": "English",
-        "currency": "USD"
+        "currency": "USD",
+        "language": "English"
     },
     {
-        "shortname": "PH",
+        "shortname": "ph",
         "name": "Philippines",
         "code": 63,
+        "currency": "GBP",
         "language": "English",
-        "currency": "GBP"
+        "nestedLanguage": true,
+        "languages": [
+            {
+                "name": "Filipino",
+                "route": "fil-ph"
+            },
+            {
+                "name": "English",
+                "route": "ph"
+            }
+        ]
     },
     {
-        "shortname": "FIL-PH",
+        "shortname": "fil-ph",
         "name": "Philippines",
         "code": 63,
+        "currency": "GBP",
         "language": "Filipino",
-        "currency": "GBP"
+        "languages": [
+            {
+                "name": "Filipino",
+                "route": "fil-ph"
+            },
+            {
+                "name": "English",
+                "route": "ph"
+            }
+        ]
     },
     {
-        "shortname": "SG",
+        "shortname": "sg",
         "name": "Singapore",
         "code": 65,
-        "language": "English",
-        "currency": "GBP"
+        "currency": "GBP",
+        "language": "English"
     },
     {
-        "shortname": "ES",
+        "shortname": "es",
         "name": "Spain",
         "code": 34,
-        "language": "English",
-        "currency": "GBP"
+        "currency": "GBP",
+        "language": "English"
     },
     {
-        "shortname": "GB",
+        "shortname": "gb",
         "name": "United Kingdom",
         "code": 55,
-        "language": "English",
-        "currency": "GBP"
+        "currency": "GBP",
+        "language": "English"
     },
     {
-        "shortname": "US",
+        "shortname": "us",
         "name": "United States",
         "code": 55,
-        "language": "English",
-        "currency": "USD"
+        "currency": "USD",
+        "language": "English"
     }
 ]

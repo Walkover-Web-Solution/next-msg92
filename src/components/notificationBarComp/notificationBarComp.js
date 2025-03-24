@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 export default function NotificationBarComp({ componentData, pageInfo }) {
     const router = useRouter();
     const visibility = router?.pathname.startsWith('/guide') ? true : false;
-    const currentCountry = availableCountries.find((cont) => cont.shortname.toLowerCase() === pageInfo?.country);
+    const currentCountry = availableCountries.find((cont) => cont.shortname === pageInfo?.country);
     const hidden = componentData?.hide?.includes(pageInfo?.page);
     if (componentData && !hidden) {
         return (
@@ -61,7 +61,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                 <MdArrowDropDown fontSize={16} />
                             </div>
                             <div tabIndex={0} className='dropdown-content bg-neutral z-[9999] w-60 rounded shadow'>
-                                <ul>
+                                <ul className='cursor-pointer'>
                                     <li className='cursor-pointer '>
                                         {pageInfo?.country === 'global' ? (
                                             <div className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '>
@@ -90,11 +90,15 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                     </li>
                                     {/* /* Render the country list */}
                                     {availableCountries.map((cont, index) => {
-                                        if (cont?.shortname?.toLowerCase() !== 'br')
+                                        console.log(
+                                            '⚡️ ~ notificationBarComp.js:93 ~ {availableCountries.map ~ cont:',
+                                            cont
+                                        );
+                                        if (cont?.shortname !== 'br')
                                             return (
                                                 <li key={index} className='cursor-pointer'>
-                                                    {pageInfo?.country === cont?.shortname.toLowerCase() ? (
-                                                        <div className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '>
+                                                    {pageInfo?.country === cont?.shortname ? (
+                                                        <div className='px-2 py-1 hover:bg-secondary bg-secondary flex items-center gap-2 '>
                                                             {/* /* ${cont?.shortname} == 'in,us,gb etc. */}
                                                             <Image
                                                                 src={`/assets/country-flags/${cont?.shortname.toLowerCase()}.svg`}
@@ -107,11 +111,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                                         </div>
                                                     ) : (
                                                         <a
-                                                            href={getURL(
-                                                                'country',
-                                                                cont?.shortname.toLowerCase(),
-                                                                pageInfo
-                                                            )}
+                                                            href={getURL('country', cont?.shortname, pageInfo)}
                                                             className='px-2 py-1 hover:bg-secondary flex items-center gap-2 cursor-pointer '
                                                         >
                                                             {/* /* ${cont?.shortname} == 'in,us,gb etc. */}
