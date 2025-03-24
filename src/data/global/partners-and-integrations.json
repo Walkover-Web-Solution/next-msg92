@@ -6,7 +6,7 @@
     "IntegrationsComp": {
         "heading": "Integrate to automate communication across Email, SMS, WhatsApp, Voice, and RCS.",
         "plugins_by_msg91": {
-            "heading": "Build by MSG91",
+            "heading": "Built by MSG91",
             "plugins": [
                 {
                     "name": "Shopify",
@@ -138,7 +138,7 @@
             ]
         },
         "third_party": {
-            "heading": "Build by Partners",
+            "heading": "Built by Partners",
             "plugins": [
                 {
                     "name": "​UnitedSol",
