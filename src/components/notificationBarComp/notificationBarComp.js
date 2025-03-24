@@ -6,10 +6,15 @@ import getURL from '@/utils/getURL';
 import { useRouter } from 'next/router';
 
 export default function NotificationBarComp({ componentData, pageInfo }) {
+    console.log('⚡️ ~ notificationBarComp.js:9 ~ NotificationBarComp ~ pageInfo:', pageInfo);
     const router = useRouter();
     const visibility = router?.pathname.startsWith('/guide') ? true : false;
     const currentCountry = availableCountries.find((cont) => cont.shortname === pageInfo?.country);
     const hidden = componentData?.hide?.includes(pageInfo?.page);
+    const languages = availableCountries?.find(
+        (country) => country?.languages && country?.languages.some((lang) => lang?.route === pageInfo?.country)
+    );
+    console.log('⚡️ ~ notificationBarComp.js:15 ~ NotificationBarComp ~ languages:', languages);
     if (componentData && !hidden) {
         return (
             <div className='py-3 border border-b'>
@@ -90,11 +95,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                     </li>
                                     {/* /* Render the country list */}
                                     {availableCountries.map((cont, index) => {
-                                        console.log(
-                                            '⚡️ ~ notificationBarComp.js:93 ~ {availableCountries.map ~ cont:',
-                                            cont
-                                        );
-                                        if (cont?.shortname !== 'br')
+                                        if (!cont?.nestedLanguage)
                                             return (
                                                 <li key={index} className='cursor-pointer'>
                                                     {pageInfo?.country === cont?.shortname ? (

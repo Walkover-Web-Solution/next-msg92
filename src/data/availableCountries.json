@@ -12,7 +12,7 @@
         "code": 55,
         "currency": "USD",
         "language": "English",
-        "nestedLanguage": true,
+        "nestedLanguage": "br-pt",
         "languages": [
             {
                 "name": "Portuguese",
@@ -53,7 +53,7 @@
         "code": 63,
         "currency": "GBP",
         "language": "English",
-        "nestedLanguage": true,
+        "nestedLanguage": "fil-ph",
         "languages": [
             {
                 "name": "Filipino",

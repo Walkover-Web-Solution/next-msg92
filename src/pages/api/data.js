@@ -16,7 +16,6 @@ export default function handler(req, res) {
                     }
                 } else {
                     if (params.page === 'home') {
-                        console.log('⚡️ ~ data.js:14 ~ handler ~ params:', params);
                         data = require(`@/data/${params?.country}/home.json`);
                     } else {
                         data = require(`@/data/${params?.pathURL}.json`);
