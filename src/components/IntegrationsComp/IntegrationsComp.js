@@ -31,7 +31,7 @@ export default function IntegrationsComp({ pageInfo, data }) {
                         <p className='text-xl font-normal'>{data?.plugins_by_msg91?.subheading}</p>
                     )}
 
-                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-4 lg:gap-8'>
                         {data?.plugins_by_msg91?.plugins.map((card, index) => (
                             <CardComponent card={card} index={index} />
                         ))}
@@ -74,7 +74,7 @@ export default function IntegrationsComp({ pageInfo, data }) {
                         <p className='text-xl font-normal'>{data?.third_party?.subheading}</p>
                     )}
 
-                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-4 lg:gap-8'>
                         {data?.third_party?.plugins.map((card, index) => {
                             return <CardComponent card={card} index={index} />;
                         })}
@@ -134,7 +134,7 @@ const CardComponent = ({ card, index }) => {
                 target='_blank'
                 href={card?.link}
                 key={index}
-                className='flex flex-col p-6 gap-4 bg-white rounded-lg border h-full w-full '
+                className='flex flex-col p-6 gap-4 bg-white rounded-lg border h-full w-full min-h-[460px] '
             >
                 <div className='flex flex-col gap-4'>
                     <img src={card?.icon} alt={card?.name} className=' h-8 w-fit' />
@@ -167,7 +167,7 @@ const CardComponent = ({ card, index }) => {
                 target='_blank'
                 href={card?.link}
                 key={index}
-                className='flex flex-col p-6 gap-2 bg-white rounded-lg shadow hover:shadow-lg h-full w-full LinkButtonCard'
+                className='flex flex-col p-6 gap-2 bg-white rounded-lg shadow hover:shadow-lg h-full min-h-[560px] sm:min-h-[410px] md:min-h-[620px] lg:min-h-[500px] w-full LinkButtonCard'
             >
                 <div className='flex flex-col items-start justify-center gap-4'>
                     <Image width={360} height={260} src={card?.icon} alt={card?.name} className=' h-8 w-fit' />
