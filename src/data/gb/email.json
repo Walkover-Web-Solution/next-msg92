@@ -262,7 +262,7 @@
             },
             {
                 "name": "Seamless Integration with Gmail & Outlook",
-                "content": "Integrate effortlessly with Gmail and Outlook using MSG91’s Email API. Send transactional emails, OTPs, and notifications directly through your existing email provider—ensuring instant deliverability and detailed tracking without additional software.",
+                "content": "Integrate effortlessly with Gmail and Outlook using MSG91’s Email Service. Send transactional emails, OTPs, notifications, and bulk campaigns - all from a single platform, ensuring instant deliverability, scalability, and detailed tracking without additional software",
                 "more_content": {
                     "usecases": [
                         {

@@ -262,7 +262,7 @@
             },
             {
                 "name": "Integração Perfeita com Gmail & Outlook",
-                "content": "Integre-se sem esforço com o Gmail e o Outlook usando a API de e-mail do MSG91. Envie e-mails transacionais, OTPs e notificações diretamente por meio do seu provedor de e-mail existente, garantindo entrega instantânea e rastreamento detalhado sem software adicional.",
+                "content": "Integre-se sem esforço com o Gmail e o Outlook usando o Serviço de E-mail do MSG91. Envie e-mails transacionais, OTPs, notificações e campanhas em massa - tudo a partir de uma única plataforma, garantindo entrega instantânea, escalabilidade e rastreamento detalhado sem software adicional",
                 "more_content": {
                     "usecases": [
                         {
