@@ -6,7 +6,7 @@ export default function handler(req, res) {
 
         try {
             if (params?.page === 'pricing') {
-                data = require(`@/data/${params?.country.toLowerCase}/${params?.page}.json`);
+                data = require(`@/data/${params?.country}/${params?.page}.json`);
             } else {
                 if (params?.country === 'global') {
                     if (params.page === 'home') {

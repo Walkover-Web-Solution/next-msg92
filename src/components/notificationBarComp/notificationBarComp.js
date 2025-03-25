@@ -13,10 +13,6 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
     const languages = availableCountries?.find(
         (country) => country?.languages && country?.shortname === pageInfo?.country
     );
-    // const languages = availableCountries?.find(
-    //     (country) => country?.languages && country?.languages.some((lang) => lang?.route === pageInfo?.country)
-    // );
-    console.log('⚡️ ~ notificationBarComp.js:15 ~ NotificationBarComp ~ languages:', languages);
     if (componentData && !hidden) {
         return (
             <div className='py-3 border border-b'>
@@ -36,7 +32,10 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                             <li key={index} className='cursor-pointer'>
                                                 <a
                                                     href={getURL('country', lang?.route, pageInfo)}
-                                                    className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
+                                                    className={`px-2 py-1 hover:bg-secondary flex items-center gap-2 cursor-pointer ${
+                                                        pageInfo?.country === lang?.route &&
+                                                        'bg-secondary pointer-events-none'
+                                                    }`}
                                                 >
                                                     {lang?.name}
                                                 </a>
@@ -67,64 +66,43 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                             <div tabIndex={0} className='dropdown-content bg-neutral z-[9999] w-60 rounded shadow'>
                                 <ul className='cursor-pointer'>
                                     <li className='cursor-pointer '>
-                                        {pageInfo?.country === 'global' ? (
-                                            <div className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '>
-                                                <Image
-                                                    src={`/assets/country-flags/global.svg`}
-                                                    width={18}
-                                                    height={18}
-                                                    alt='global'
-                                                />
-                                                Global
-                                            </div>
-                                        ) : (
-                                            <a
-                                                href={getURL('country', 'global', pageInfo)}
-                                                className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
-                                            >
-                                                <Image
-                                                    src={`/assets/country-flags/global.svg`}
-                                                    width={18}
-                                                    height={18}
-                                                    alt='global'
-                                                />
-                                                Global
-                                            </a>
-                                        )}
+                                        <a
+                                            href={getURL('country', 'global', pageInfo)}
+                                            className={`px-2 py-1 hover:bg-secondary flex items-center gap-2 cursor-pointer ${
+                                                pageInfo?.country === 'global' && 'bg-secondary pointer-events-none'
+                                            }`}
+                                        >
+                                            <Image
+                                                src={`/assets/country-flags/global.svg`}
+                                                width={18}
+                                                height={18}
+                                                alt='global'
+                                            />
+                                            Global
+                                        </a>
                                     </li>
                                     {/* /* Render the country list */}
                                     {availableCountries.map((cont, index) => {
                                         if (!cont?.nestedLanguage)
                                             return (
                                                 <li key={index} className='cursor-pointer'>
-                                                    {pageInfo?.country === cont?.shortname ? (
-                                                        <div className='px-2 py-1 hover:bg-secondary bg-secondary flex items-center gap-2 '>
-                                                            {/* /* ${cont?.shortname} == 'in,us,gb etc. */}
-                                                            <Image
-                                                                src={`/assets/country-flags/${cont?.shortname.toLowerCase()}.svg`}
-                                                                width={18}
-                                                                height={18}
-                                                                alt={cont?.name}
-                                                            />
+                                                    <a
+                                                        href={getURL('country', cont?.shortname, pageInfo)}
+                                                        className={`px-2 py-1 hover:bg-secondary flex items-center gap-2 cursor-pointer ${
+                                                            pageInfo?.country === cont?.shortname &&
+                                                            'bg-secondary pointer-events-none'
+                                                        }`}
+                                                    >
+                                                        {/* /* ${cont?.shortname} == 'in,us,gb etc. */}
+                                                        <Image
+                                                            src={`/assets/country-flags/${cont?.shortname.toLowerCase()}.svg`}
+                                                            width={18}
+                                                            height={18}
+                                                            alt={cont?.name}
+                                                        />
 
-                                                            {cont?.name}
-                                                        </div>
-                                                    ) : (
-                                                        <a
-                                                            href={getURL('country', cont?.shortname, pageInfo)}
-                                                            className='px-2 py-1 hover:bg-secondary flex items-center gap-2 cursor-pointer '
-                                                        >
-                                                            {/* /* ${cont?.shortname} == 'in,us,gb etc. */}
-                                                            <Image
-                                                                src={`/assets/country-flags/${cont?.shortname.toLowerCase()}.svg`}
-                                                                width={18}
-                                                                height={18}
-                                                                alt={cont?.name}
-                                                            />
-
-                                                            {cont?.name}
-                                                        </a>
-                                                    )}
+                                                        {cont?.name}
+                                                    </a>
                                                 </li>
                                             );
                                     })}

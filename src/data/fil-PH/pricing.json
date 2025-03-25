@@ -1,7 +1,7 @@
 {
     "HeadComp": {
         "title": "Best Cloud Communication Platform for Businesses | MSG91",
-        "description": "Explore MSG91’s cloud communication platform to integrate voice, video, and messaging into your business. Request a demo and transform your communication."
+        "description": "Discover the power of MSG91’s cloud communication platform. Easily integrate voice, video, messaging, and more into your business. Request a demo today!"
     },
     "PricingComp": {
         "products": {
@@ -66,8 +66,8 @@
         },
         "hello": {
             "HeadComp": {
-                "title": "Hello Pricing in Philippines | MSG91-Philippines",
-                "description": "Experience reliable and powerful services such as transactional Hello, communication APIs, and more, offered at great prices. View the pricing now."
+                "title": "Hello Pricing | MSG91",
+                "description": "Avail robust and powerful services like transactional Hello, communication APIs, and more at competitive prices. Check out the pricing now."
             },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
@@ -102,8 +102,8 @@
         },
         "campaign": {
             "HeadComp": {
-                "title": "Campaign Pricing in Philippines | MSG91-Philippines",
-                "description": "Experience reliable and powerful services such as transactional Campaign, communication APIs, and more, offered at great prices. View the pricing now."
+                "title": "Campaign Pricing | MSG91",
+                "description": "Avail robust and powerful services like transactional Campaign, communication APIs, and more at competitive prices. Check out the pricing now."
             },
             "get_started": "Get Started",
             "connectComp": {
@@ -115,8 +115,8 @@
         },
         "segmento": {
             "HeadComp": {
-                "title": "Segmento Pricing in Philippines | MSG91-Philippines",
-                "description": "Experience reliable and powerful services such as transactional Segmento, communication APIs, and more, offered at great prices. View the pricing now."
+                "title": "Segmento Pricing | MSG91",
+                "description": "Avail robust and powerful services like transactional Segmento, communication APIs, and more at competitive prices. Check out the pricing now."
             },
             "get_started": "Get Started",
             "connectComp": {
@@ -127,8 +127,8 @@
         },
         "otpwidget": {
             "HeadComp": {
-                "title": "otpwidget Pricing in Philippines | MSG91-Philippines",
-                "description": "Experience reliable and powerful services such as transactional otpwidget, communication APIs, and more, offered at great prices. View the pricing now."
+                "title": "OtpWidget Pricing | MSG91",
+                "description": "Avail robust and powerful services like transactional otpwidget, communication APIs, and more at competitive prices. Check out the pricing now."
             },
             "get_started": "Get Started",
             "connectComp": {
@@ -137,48 +137,45 @@
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             },
-            "faqComp": {
-                "heading": "Frequently Asked Questions",
-                "faqs": [
-                    {
-                        "question": "What is the pricing of the OTP Widget?",
-                        "answer": "The pricing of the OTP Widget is primarily determined by the volume of OTPs sent and the specific channels utilized, including SMS, Voice, Email, and WhatsApp. Charges are incurred based on the quantity of OTPs sent through each respective channel."
-                    },
-                    {
-                        "question": "Is there a fixed monthly subscription fee for using the OTP Widget?",
-                        "answer": " No, there is no monthly subscription fee associated with the OTP Widget."
-                    },
-                    {
-                        "question": "Are there different pricing plans available based on usage levels?",
-                        "answer": "Yes, different pricing plans are available based on usage, and if you have a substantial volume, we can customize the pricing to suit your needs."
-                    },
-                    {
-                        "question": "How is the pricing structured for Voice OTPs?",
-                        "answer": "Voice OTPs may have a separate pricing structure, often based on factors such as the number of voice calls made, and whether a global or local caller ID is used."
-                    },
-                    {
-                        "question": "Are there any additional charges for using advanced security features, such as Google Captcha validation?",
-                        "answer": "While some providers may charge additional fees for features like Google Captcha validation to boost OTP Widget security, we do not impose any additional charges for captcha validation."
-                    },
-                    {
-                        "question": "Can I get a customized pricing plan based on my specific business needs?",
-                        "answer": "Many service providers offer customized pricing plans for businesses with unique requirements. Contact the sales team to discuss your needs and explore tailored pricing options."
-                    },
-                    {
-                        "question": "Are there any hidden fees or charges that I should be aware of?",
-                        "answer": "No, there are no hidden additional charges for the widget, except for the actual sending of OTPs through any channel. To send OTPs, you simply need to subscribe or add balance to your account"
-                    },
-                    {
-                        "question": "Is there a trial period or demo available for the testing of otp widget ?",
-                        "answer": "We do not offer a trial period or demo for testing the widget. However, you can add funds to your wallet with a low amount for testing purposes."
-                    }
-                ]
-            }
+            "faqs": [
+                {
+                    "question": "What is the pricing of the OTP Widget?",
+                    "answer": "The pricing of the OTP Widget is primarily determined by the volume of OTPs sent and the specific channels utilized, including SMS, Voice, Email, and WhatsApp. Charges are incurred based on the quantity of OTPs sent through each respective channel."
+                },
+                {
+                    "question": "Is there a fixed monthly subscription fee for using the OTP Widget?",
+                    "answer": " No, there is no monthly subscription fee associated with the OTP Widget."
+                },
+                {
+                    "question": "Are there different pricing plans available based on usage levels?",
+                    "answer": "Yes, different pricing plans are available based on usage, and if you have a substantial volume, we can customize the pricing to suit your needs."
+                },
+                {
+                    "question": "How is the pricing structured for Voice OTPs?",
+                    "answer": "Voice OTPs may have a separate pricing structure, often based on factors such as the number of voice calls made, and whether a global or local caller ID is used."
+                },
+                {
+                    "question": "Are there any additional charges for using advanced security features, such as Google Captcha validation?",
+                    "answer": "While some providers may charge additional fees for features like Google Captcha validation to boost OTP Widget security, we do not impose any additional charges for captcha validation."
+                },
+                {
+                    "question": "Can I get a customized pricing plan based on my specific business needs?",
+                    "answer": "Many service providers offer customized pricing plans for businesses with unique requirements. Contact the sales team to discuss your needs and explore tailored pricing options."
+                },
+                {
+                    "question": "Are there any hidden fees or charges that I should be aware of? dsd",
+                    "answer": ":No, there are no hidden additional charges for the widget, except for the actual sending of OTPs through any channel. To send OTPs, you simply need to subscribe or add balance to your account"
+                },
+                {
+                    "question": "Is there a trial period or demo available for the testing of otp widget ?",
+                    "answer": "We do not offer a trial period or demo for testing the widget. However, you can add funds to your wallet with a low amount for testing purposes."
+                }
+            ]
         },
         "email": {
             "HeadComp": {
-                "title": "Email Pricing in Philippines | MSG91-Philippines",
-                "description": "Experience reliable and powerful services such as transactional Email, communication APIs, and more, offered at great prices. View the pricing now."
+                "title": "Email Pricing | MSG91",
+                "description": "Avail robust and powerful services like transactional Email, communication APIs, and more at competitive prices. Check out the pricing now."
             },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
@@ -213,8 +210,8 @@
         },
         "voice": {
             "HeadComp": {
-                "title": "Voice Pricing in Philippines | MSG91-Philippines",
-                "description": "Experience reliable and powerful services such as transactional Voice, communication APIs, and more, offered at great prices. View the pricing now."
+                "title": "Voice Pricing  | MSG91",
+                "description": "Avail robust and powerful services like transactional Voice, communication APIs, and more at competitive prices. Check out the pricing now."
             },
             "heading": "Outgoing call charges/min",
             "exportData": {
@@ -275,8 +272,8 @@
         },
         "sms": {
             "HeadComp": {
-                "title": "SMS Pricing in Philippines | MSG91-Philippines",
-                "description": "Experience reliable and powerful services such as transactional SMS, communication APIs, and more, offered at great prices. View the pricing now."
+                "title": "SMS Pricing | MSG91",
+                "description": "Avail robust and powerful services like transactional SMS, communication APIs, and more at competitive prices. Check out the pricing now."
             },
             "connectComp": {
                 "content": "Connect with our team for a personalized pricing.",
@@ -286,8 +283,8 @@
         },
         "otp": {
             "HeadComp": {
-                "title": "OTP Pricing in Philippines | MSG91-Philippines",
-                "description": "Experience reliable and powerful services such as transactional OTP, communication APIs, and more, offered at great prices. View the pricing now."
+                "title": "OTP Pricing | MSG91",
+                "description": "Avail robust and powerful services like transactional OTP, communication APIs, and more at competitive prices. Check out the pricing now."
             },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
@@ -297,8 +294,8 @@
         },
         "whatsapp": {
             "HeadComp": {
-                "title": "WhatsApp Pricing in Philippines | MSG91-Philippines",
-                "description": "Experience reliable and powerful services such as transactional WhatsApp, communication APIs, and more, offered at great prices. View the pricing now."
+                "title": "WhatsApp Pricing | MSG91",
+                "description": "Avail robust and powerful services like transactional WhatsApp, communication APIs, and more at competitive prices. Check out the pricing now."
             },
             "connectComp": {
                 "know_more": "Know more about"
@@ -306,12 +303,12 @@
         },
         "rcs": {
             "HeadComp": {
-                "title": "RCS Pricing in Philippines | MSG91-Philippines",
-                "description": "Experience reliable and powerful services such as transactional RCS, communication APIs, and more, offered at great prices. View the pricing now."
+                "title": "RCS Pricing | MSG91",
+                "description": "Avail robust and powerful services like transactional RCS, communication APIs, and more at competitive prices. Check out the pricing now."
             },
             "connectComp": {
                 "know_more": "Know more about"
             }
         }
-    }
+}
 }
