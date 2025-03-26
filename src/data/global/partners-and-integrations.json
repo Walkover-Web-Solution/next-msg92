@@ -4,7 +4,7 @@
         "description": "MSG91 Integrates with Shopify, WebEngage, MoEngage, CleverTap, Tally, WooCommerce, ZohoCRM, Kylas, Zapier, Hubspot, Google Sheets and many other softwares for Automating communication Messages with MSG91 Built-in plugins to boost your business sales."
     },
     "IntegrationsComp": {
-        "heading": "Integrate to automate communication across Email, SMS, WhatsApp, Voice, and RCS.",
+        "heading": "Integrations and Connectors",
         "plugins_by_msg91": {
             "heading": "Built by MSG91",
             "plugins": [
