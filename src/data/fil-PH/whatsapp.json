@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "WhatsApp API for businesses | MSG91-Philippines",
-        "description": "Provide instant notifications and real-time customer support with MSG91’s WhatsApp API. Connect with your audience on their favorite chat platform seamlessly."
+        "title": "WhatsApp API para sa mga negosyo | MSG91-Philippines",
+        "description": "Magbigay ng instant na mga notipikasyon at real-time na suporta sa customer gamit ang WhatsApp API ng MSG91. Makipag-ugnayan sa iyong audience sa kanilang paboritong chat platform ng walang putol."
     },
     "BannerComp": {
         "slug": "whatsapp",
@@ -9,14 +9,14 @@
             "name": "WhatsApp",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "WhatsApp Business Solutions",
-        "heading": "Seemless Global messaging and communications.",
-        "subheading": "Use Developer Friendly API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
+        "tagline": "Mga Solusyon para sa WhatsApp Negosyo",
+        "heading": "Walang Putol na Global na mensahe at komunikasyon.",
+        "subheading": "Gamitin ang Developer Friendly API upang matiyak ang maayos, real-time na komunikasyon sa iyong mga customer sa buong mundo, pagpapahusay ng pakikipag-ugnayan at kasiyahan.",
         "lottie": "/assets/lotties/global-whatsapp.json",
-        "getstarted_btn": "Get Started",
-        "schedule_meet": "Schedule a Meeting",
+        "getstarted_btn": "Mag-Start",
+        "schedule_meet": "Mag-iskedyul ng Pagpupulong",
         "trustedByComp": {
-            "heading": "Trusted by 30,000+ global businesses",
+            "heading": "Pinagkakatiwalaan ng 30,000+ na negosyo sa buong mundo",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -47,425 +47,425 @@
         "features": [
             {
                 "name": "WhatsApp ChatBot: Instant Support, Anytime",
-                "content": "Transform your customer service experience with a WhatsApp ChatBot that delivers instant, accurate, and personalized responses. Automate routine queries, provide 24/7 support, and enhance customer satisfaction without human intervention just with another WhatsApp marketing tool.",
+                "content": "I-transform ang iyong karanasan sa serbisyo sa customer gamit ang WhatsApp ChatBot na nagbibigay ng instant, tumpak, at personalized na mga tugon. I-automate ang mga karaniwang tanong, magbigay ng 24/7 na suporta, at palakasin ang kasiyahan ng customer nang walang human intervention gamit lamang ang isa pang WhatsApp marketing tool.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "FAQs and Queries",
-                            "description": "Automate WhatsApp template responses to frequently asked questions."
+                            "name": "FAQs at Mga Tanong",
+                            "description": "I-automate ang mga sagot sa mga template ng WhatsApp para sa madalas na tinatanong na mga katanungan."
                         },
                         {
-                            "name": "Order Tracking",
-                            "description": "Provide real-time updates on order status with WhatsApp business API."
+                            "name": "Pagsubaybay ng Order",
+                            "description": "Magbigay ng real-time na mga update sa estado ng order gamit ang WhatsApp business API."
                         },
                         {
-                            "name": "Appointment Booking",
-                            "description": "Let customers schedule appointments effortlessly with Interactive WhatsApp messages."
+                            "name": "Pag-iskedyul ng Appointment",
+                            "description": "Pahintulutan ang mga customer na mag-iskedyul ng mga appointment ng walang hirap gamit ang Interactive WhatsApp messages."
                         },
                         {
-                            "name": "Lead Generation",
-                            "description": "Engage potential customers with instant replies with WhatsApp AI Chatbot."
+                            "name": "Pagbuo ng Lead",
+                            "description": "Makipag-ugnayan sa mga potensyal na customer gamit ang mga instant na tugon mula sa WhatsApp AI Chatbot."
                         },
                         {
-                            "name": "Feedback Collection",
-                            "description": "Gather customer feedback through automated WhatsApp survey template."
+                            "name": "Pagkolekta ng Feedback",
+                            "description": "Kolektahin ang feedback ng customer sa pamamagitan ng automated WhatsApp survey template."
                         }
                     ],
                     "features": [
-                        "24/7 availability for uninterrupted support.",
-                        "Instant responses on WhatsApp Chats to improve customer satisfaction.",
-                        "Customizable WhatsApp botflows for specific business needs.",
-                        "Integration with CRM tools for better data management."
+                        "24/7 na availability para sa tuloy-tuloy na suporta.",
+                        "Instant na mga tugon sa WhatsApp Chats upang mapabuti ang kasiyahan ng customer.",
+                        "Na-customize na WhatsApp botflows para sa mga partikular na pangangailangan ng negosyo.",
+                        "Integrasyon sa mga CRM tool para sa mas mahusay na pamamahala ng data."
                     ]
                 },
                 "button": {
-                    "name": "Test WhatsApp Chatbot",
+                    "name": "Subukan ang WhatsApp Chatbot",
                     "link": "https://msg91.com/demochatbot"
                 },
                 "img": "/assets/global/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg"
             },
             {
-                "name": "Click-to-WhatsApp Ads: Drive Engagement with Zero Costs",
-                "content": "Maximize your marketing efforts with Click-to-WhatsApp Ads, a powerful solution to connect with customers instantly. This feature allows businesses to drive traffic from online advertisements directly to WhatsApp conversations, creating a seamless transition from discovery to engagement.",
+                "name": "Click-to-WhatsApp Ads: Pahusayin ang Pakikipag-ugnayan ng Walang Gastos",
+                "content": "Maksimisa ang iyong mga pagsusumikap sa marketing gamit ang Click-to-WhatsApp Ads, isang makapangyarihang solusyon upang makipag-ugnayan sa mga customer nang instant. Pinapayagan ng tampok na ito ang mga negosyo na magpadala ng traffic mula sa mga online advertisement direkta sa mga WhatsApp conversation, lumilikha ng isang walang putol na transisyon mula sa pagdiskubre patungo sa pakikipag-ugnayan.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "Lead Generation",
-                            "description": "Drive potential customers from ads to WhatsApp for instant engagement."
+                            "name": "Pagbuo ng Lead",
+                            "description": "I-redirect ang mga potensyal na customer mula sa ads patungo sa WhatsApp para sa instant na pakikipag-ugnayan."
                         },
                         {
-                            "name": "Customer Support",
-                            "description": "Allow users to connect with support teams directly from ads."
+                            "name": "Suporta sa Customer",
+                            "description": "Pahintulutan ang mga gumagamit na kumonekta sa mga support team direkta mula sa ads."
                         },
                         {
-                            "name": "Product Inquiries",
-                            "description": "Enable customers to ask questions about products or services."
+                            "name": "Mga Tanong tungkol sa Produkto",
+                            "description": "Pahintulutan ang mga customer na magtanong tungkol sa mga produkto o serbisyo."
                         },
                         {
-                            "name": "Event Registrations",
-                            "description": "Use ads to promote events and collect RSVPs via WhatsApp."
+                            "name": "Pagrerehistro sa mga Kaganapan",
+                            "description": "Gamitin ang mga ads upang i-promote ang mga kaganapan at mangolekta ng RSVPs sa pamamagitan ng WhatsApp."
                         },
                         {
-                            "name": "Exclusive Offers",
-                            "description": "Advertise limited-time deals and redirect users to WhatsApp for redemption."
+                            "name": "Eksklusibong Alok",
+                            "description": "I-advertise ang mga limitadong alok at i-redirect ang mga gumagamit sa WhatsApp para sa redemption."
                         }
                     ],
                     "features": [
-                        "Zero panel fees and no hidden costs.",
-                        "Seamless transition from ads to WhatsApp chats.",
-                        "Instant responses using AI-powered WhatsApp chatbots and bulk messaging.",
-                        "Cost-effective advertising with full ROI transparency.",
-                        "Enhanced WhatsApp lead generation capabilities."
+                        "Walang bayad sa panel at walang mga nakatagong gastos.",
+                        "Walang putol na transisyon mula sa ads patungo sa WhatsApp chats.",
+                        "Instant na mga tugon gamit ang AI-powered WhatsApp chatbots at bulk messaging.",
+                        "Cost-effective na advertising na may buong transparency ng ROI.",
+                        "Pinahusay na kakayahan sa WhatsApp lead generation."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-click-to-whatsapp-ads-boost-engagement-with-zero-margin-costs.svg"
             },
             {
-                "name": "Bulk Sending Through CSV: Scale Your WhatsApp Marketing Effortlessly",
-                "content": "Simplify your communication strategy with bulk WhatsApp messaging through CSV uploads. Engage thousands of users simultaneously while maintaining a personalized touch for each recipient. Our WhatsApp Business API solution ensures high delivery rates and advanced analytics to optimize your campaigns.",
+                "name": "Bulk Sending sa pamamagitan ng CSV: Palakihin ang Iyong WhatsApp Marketing nang Walang Hirap",
+                "content": "Pinasimple ang iyong estratehiya sa komunikasyon gamit ang bulk WhatsApp messaging sa pamamagitan ng mga CSV upload. Makipag-ugnayan sa libu-libong mga gumagamit ng sabay-sabay habang pinapanatili ang isang personalized na pagtingin para sa bawat tatanggap. Tinitiyak ng aming WhatsApp Business API solution ang mataas na delivery rates at advanced analytics upang ma-optimize ang iyong mga kampanya.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "Product Launches",
-                            "description": "Share new product details with thousands of customers instantly with WhatsApp catalog and carousel."
+                            "name": "Paglulunsad ng Produkto",
+                            "description": "Ibahagi ang mga detalye ng bagong produkto sa libu-libong customer agad gamit ang WhatsApp catalog at carousel."
                         },
                         {
-                            "name": "Exclusive Offers",
-                            "description": "Send personalized discount codes or limited time offers to drive sales through WhatsApp Interactive templates."
+                            "name": "Eksklusibong Alok",
+                            "description": "Magpadala ng personalized na mga discount code o limitadong oras na mga alok upang mapataas ang mga benta sa pamamagitan ng WhatsApp Interactive templates."
                         },
                         {
-                            "name": "Critical Alerts",
-                            "description": "Notify customers about urgent updates, such as service disruptions or security alerts through WhatsApp API."
+                            "name": "Mga Kritikal na Abiso",
+                            "description": "I-notify ang mga customer tungkol sa mga kagyat na update, tulad ng mga pagkaantala sa serbisyo o mga alerto sa seguridad sa pamamagitan ng WhatsApp API."
                         },
                         {
-                            "name": "Event Invitations",
-                            "description": "Invite customers to webinars, workshops, or sales events with WhatsApp campaign."
+                            "name": "Imbitasyon sa mga Kaganapan",
+                            "description": "Mag-imbita ng mga customer sa mga webinar, workshop, o mga kaganapan sa benta gamit ang WhatsApp campaign."
                         },
                         {
-                            "name": "Customer Updates",
-                            "description": "Share important updates like order confirmations, shipping details, or policy changes through WhatsApp API."
+                            "name": "Mga Update ng Customer",
+                            "description": "Ibahagi ang mga importanteng update tulad ng mga order confirmations, shipping details, o mga pagbabago sa polisiya sa pamamagitan ng WhatsApp API."
                         }
                     ],
                     "features": [
-                        "Schedule campaigns for optimal timing.",
-                        "Automate followups to improve engagement.",
-                        "Use CSV uploads for seamless bulk WhatsApp messaging.",
-                        "Track delivery rates and optimize campaigns.",
-                        "Gain insights through WhatsApp analytics and reporting."
+                        "Iskedyul ng mga kampanya para sa optimal na timing.",
+                        "Automate ang followups upang mapabuti ang engagement.",
+                        "Gamitin ang mga CSV uploads para sa seamless bulk WhatsApp messaging.",
+                        "Subaybayan ang mga delivery rates at i-optimize ang mga kampanya.",
+                        "Makakuha ng insights sa pamamagitan ng WhatsApp analytics at reporting."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-send-bulk-whatsapp-messages-effortlessly.svg"
             },
             {
-                "name": "OptOut Feature: Ensure Compliance in WhatsApp Marketing Automation",
-                "content": "Give your customers the power to control their communication preferences with the OptOut feature. This functionality ensures that recipients can unsubscribe from WhatsApp messages easily, maintaining a positive and respectful relationship with your brand. Transparency builds trust, creating a loyal and engaged audience.",
+                "name": "OptOut Feature: Tiyakin ang Pagsunod sa WhatsApp Marketing Automation",
+                "content": "Bigyan ang iyong mga customer ng kapangyarihan na kontrolin ang kanilang mga komunikasyon preferences gamit ang OptOut feature. Tinitiyak ng tampok na ito na ang mga tatanggap ay madaling mag-unsubscribe mula sa mga mensahe sa WhatsApp, pinapanatili ang isang positibo at magalang na relasyon sa iyong brand. Ang transparency ay bumubuo ng tiwala, na lumilikha ng isang tapat at aktibong audience.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "Compliance with Regulations",
-                            "description": "Ensure adherence to global communication laws."
+                            "name": "Pagsunod sa Mga Regulasyon",
+                            "description": "Tiyakin ang pagsunod sa mga global na batas sa komunikasyon."
                         },
                         {
-                            "name": "List Hygiene",
-                            "description": "Maintain a clean and engaged customer list by removing uninterested users."
+                            "name": "Listahan ng Kalinisan",
+                            "description": "Panatilihin ang isang malinis at aktibong listahan ng customer sa pamamagitan ng pagtanggal ng mga hindi interesado."
                         },
                         {
-                            "name": "Customer Trust",
-                            "description": "Build transparency and trust by allowing users to control their preferences."
+                            "name": "Tiwala ng Customer",
+                            "description": "Bumuo ng transparency at tiwala sa pamamagitan ng pagpapahintulot sa mga gumagamit na kontrolin ang kanilang mga preferences."
                         },
                         {
-                            "name": "Reduced Spam",
-                            "description": "Minimize spam complaints and improve sender reputation of your WhatsApp number."
+                            "name": "Bawas Spam",
+                            "description": "Bawasan ang mga reklamo tungkol sa spam at mapabuti ang reputasyon ng sender ng iyong WhatsApp number."
                         },
                         {
                             "name": "Personalized Journeys",
-                            "description": "Focus on engaged customers for more effective WhatsApp communication."
+                            "description": "Magpokus sa mga aktibong customer para sa mas epektibong komunikasyon sa WhatsApp."
                         }
                     ],
                     "features": [
-                        "Easy optout option for customers.",
-                        "Automated list updates to remove unsubscribed users.",
-                        "Compliance with legal requirements.",
-                        "Improved WhatsApp customer engagement and loyalty.",
-                        "Enhanced WhatsApp marketing strategies for better targeting."
+                        "Madaling optout option para sa mga customer.",
+                        "Automated na mga update sa listahan upang alisin ang mga unsubscribed na gumagamit.",
+                        "Pagsunod sa mga legal na pangangailangan.",
+                        "Pinahusay na WhatsApp customer engagement at loyalty.",
+                        "Pinahusay na WhatsApp marketing strategies para sa mas mahusay na targeting."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-opt-out-feature-for-better-customer-experience.svg"
             },
             {
                 "name": "Interactive Product Catalogs & WhatsApp Payments",
-                "content": "Transform WhatsApp into your onestop sales channel by sharing interactive product catalogs. Let your customers browse products, explore categories, and discover their preferences within a familiar chat environment. Enable WhatsApp payment solutions for instant, secure transactions, simplifying the buyer journey and reducing dropoff rates.",
+                "content": "I-transform ang WhatsApp sa iyong one-stop na sales channel sa pamamagitan ng pagbabahagi ng interactive na product catalogs. Hayaan ang iyong mga customer na mag-browse ng mga produkto, tuklasin ang mga kategorya, at madiskubre ang kanilang mga kagustuhan sa loob ng pamilyar na chat environment. Paganahin ang mga WhatsApp payment solutions para sa instant at secure na mga transaksyon, pinapadali ang buyer journey at binabawasan ang mga dropoff rates.",
                 "more_content": {
                     "usecases": [
                         {
                             "name": "E-commerce Sales",
-                            "description": "Showcase products directly on WhatsApp for seamless shopping with the help of WhatsApp catalog templates."
+                            "description": "Ipakita ang mga produkto nang direkta sa WhatsApp para sa seamless na pamimili gamit ang WhatsApp catalog templates."
                         },
                         {
                             "name": "DirecttoConsumer (D2C)",
-                            "description": "Enable customers to browse and buy without leaving the app with instant WhatsApp payments."
+                            "description": "Pahintulutan ang mga customer na mag-browse at bumili nang hindi umaalis sa app gamit ang instant WhatsApp payments."
                         },
                         {
                             "name": "Instant Checkout",
-                            "description": "Reduce cart abandonment with WhatsApp payment solutions."
+                            "description": "Bawasan ang cart abandonment gamit ang WhatsApp payment solutions."
                         },
                         {
                             "name": "Product Discovery",
-                            "description": "Help customers explore categories and find their preferences with WhatsApp Chatbot flows."
+                            "description": "Tulungan ang mga customer na tuklasin ang mga kategorya at hanapin ang kanilang mga kagustuhan gamit ang WhatsApp Chatbot flows."
                         },
                         {
                             "name": "Upselling and CrossSelling",
-                            "description": "Recommend related products through interactive catalogs."
+                            "description": "Magrekomenda ng mga kaugnay na produkto sa pamamagitan ng interactive catalogs."
                         }
                     ],
                     "features": [
-                        "Interactive product catalogs with images and descriptions.",
-                        "Secure WhatsApp payment solutions for instant transactions.",
-                        "Faster checkout process to boost sales.",
-                        "Frictionless shopping experience for customers.",
-                        "Integration with WhatsApp for ecommerce platforms."
+                        "Interactive na mga product catalogs na may mga larawan at deskripsyon.",
+                        "Secure WhatsApp payment solutions para sa instant na mga transaksyon.",
+                        "Mas mabilis na proseso ng checkout upang mapataas ang mga benta.",
+                        "Walang friction na shopping experience para sa mga customer.",
+                        "Integrasyon sa WhatsApp para sa ecommerce platforms."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-share-product-catalogs-and-enable-whatsapp-payments.svg"
             },
             {
                 "name": "Instant Template Creation",
-                "content": "Save time and effort by creating and approving WhatsApp templates instantly. Whether you're designing templates for automated WhatsApp campaigns, order updates, or personalized product recommendations, our platform allows you to build them effortlessly.",
+                "content": "Mag-save ng oras at pagsisikap sa pamamagitan ng paggawa at pag-apruba ng WhatsApp templates ng instant. Kung nagdidisenyo ka ng mga template para sa automated WhatsApp campaigns, order updates, o personalized na mga rekomendasyon sa produkto, pinapayagan ka ng aming platform na gawin ang mga ito nang walang hirap.",
                 "more_content": {
                     "usecases": [
                         {
                             "name": "Marketing Campaigns",
-                            "description": "Design templates for promotions, discounts, and offers."
+                            "description": "Magdisenyo ng mga template para sa mga promosyon, diskwento, at mga alok."
                         },
                         {
                             "name": "Order Updates",
-                            "description": "Notify customers about order status, shipping, and delivery instantly through WhatsApp business API."
+                            "description": "I-notify ang mga customer tungkol sa order status, shipping, at delivery nang instant sa pamamagitan ng WhatsApp business API."
                         },
                         {
                             "name": "Personalized Recommendations",
-                            "description": "Send tailored product suggestions based on user behavior."
+                            "description": "Magpadala ng mga tailored na produktong mungkahi batay sa ugali ng gumagamit."
                         },
                         {
                             "name": "Event Reminders",
-                            "description": "Create WhatsApp templates for event invitations and followups."
+                            "description": "Gumawa ng WhatsApp templates para sa mga imbitasyon sa kaganapan at followups."
                         },
                         {
                             "name": "Customer Support",
-                            "description": "Use templates for FAQs and support queries with WhatsApp AI Assistance."
+                            "description": "Gamitin ang mga template para sa mga FAQs at mga support queries gamit ang WhatsApp AI Assistance."
                         }
                     ],
                     "features": [
-                        "Instant template creation and Metacompliant approvals.",
-                        "Customizable templates with buttons, images, and text.",
-                        "Centralized template management for easy access.",
-                        "Integration with WhatsApp marketing automation tools."
+                        "Instant template creation at Metacompliant approvals.",
+                        "Na-customize na mga template na may mga button, larawan, at teksto.",
+                        "Centralized template management para sa madaling pag-access.",
+                        "Integrasyon sa WhatsApp marketing automation tools."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-create-and-approve-templates-instantly.svg"
             },
             {
                 "name": "Seamless Integrations, Connect Tools, Simplify Workflows",
-                "content": "Integrate seamlessly with a wide range of powerful tools such as <strong>Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheets, Tally, and GIDDH.</strong> Our WhatsApp Business API solution allows you to connect these platforms directly to your messaging system, automating workflows and improving data flow across applications.",
+                "content": "Mag-integrate ng walang putol sa isang malawak na hanay ng makapangyarihang mga tool tulad ng <strong>Zoho, Freshworks, WebEngage, MoEngage, CleverTap, Shopify, Wix, Google Sheets, Tally, at GIDDH.</strong> Pinapayagan ng aming WhatsApp Business API solution na ikonekta ang mga platform na ito nang direkta sa iyong messaging system, inia-automate ang mga workflows at pinapabuti ang daloy ng data sa mga aplikasyon.",
                 "more_content": {
                     "usecases": [
                         {
                             "name": "CRM Integration",
-                            "description": "Sync customer data from Zoho, Freshworks, or other CRMs and create personalized WhatsApp journeys."
+                            "description": "I-sync ang data ng customer mula sa Zoho, Freshworks, o iba pang CRMs at gumawa ng personalized na WhatsApp journeys."
                         },
                         {
                             "name": "E-commerce Automation",
-                            "description": "Connect Shopify or Wix for order updates and promotions and send instant order notifications through WhatsApp business API solutions."
+                            "description": "I-konekta ang Shopify o Wix para sa mga order updates at promosyon at magpadala ng instant order notifications sa pamamagitan ng WhatsApp business API solutions."
                         },
                         {
                             "name": "Marketing Analytics",
-                            "description": "Use WebEngage or CleverTap for campaign tracking and plan your marketing automations accordingly."
+                            "description": "Gamitin ang WebEngage o CleverTap para sa kampanya tracking at i-plano ang iyong mga marketing automations ayon doon."
                         },
                         {
                             "name": "Workflow Automation",
-                            "description": "Integrate Google Sheets or Tally for data management and sending the Invoices through WhatsApp templates."
+                            "description": "I-integrate ang Google Sheets o Tally para sa pamamahala ng data at pagpapadala ng mga Invoice sa pamamagitan ng WhatsApp templates."
                         },
                         {
                             "name": "Unified Communication",
-                            "description": "Manage all customer interactions from one platform."
+                            "description": "Pamahalaan ang lahat ng interaksyon ng customer mula sa isang platform."
                         }
                     ],
                     "features": [
-                        "Integration with popular tools like Zoho, Shopify, and Google Sheets.",
-                        "Automated workflows for better efficiency.",
-                        "Centralized data flow across applications.",
-                        "Improved productivity and customer satisfaction.",
-                        "Enhanced WhatsApp CRM integration for seamless operations."
+                        "Integrasyon sa mga tanyag na tool tulad ng Zoho, Shopify, at Google Sheets.",
+                        "Automated workflows para sa mas mahusay na kahusayan.",
+                        "Centralized data flow sa mga aplikasyon.",
+                        "Pinahusay na productivity at kasiyahan ng customer.",
+                        "Pinahusay na WhatsApp CRM integration para sa seamless na operasyon."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-powerful-plugins-and-seamless-integrations.svg"
             },
             {
                 "name": "Scalable WhatsApp Business API",
-                "content": "Achieve seamless communication scalability with our robust WhatsApp Business API solution. Integrate messaging capabilities directly into your existing systems to create a unified customer experience. Whether it's sending notifications, handling support queries, or managing automated workflows, the API adapts to your business needs.",
+                "content": "Makamit ang seamless na scalability ng komunikasyon gamit ang aming matibay na WhatsApp Business API solution. I-integrate ang messaging capabilities nang direkta sa iyong umiiral na mga sistema upang lumikha ng isang unified na karanasan ng customer. Kung ito man ay pagpapadala ng mga notipikasyon, pag-handle ng mga support queries, o pamamahala ng mga automated workflows, ang API ay umaangkop sa iyong mga pangangailangan ng negosyo.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "Order Updates & Tracking",
-                            "description": "Send realtime order confirmations, shipping updates, and delivery notifications directly to customers with WhatsApp API."
+                            "name": "Mga Order Updates at Pagsubaybay",
+                            "description": "Magpadala ng mga realtime na order confirmations, shipping updates, at delivery notifications direkta sa mga customer gamit ang WhatsApp API."
                         },
                         {
                             "name": "24/7 Customer Support",
-                            "description": "Automate responses to FAQs, troubleshoot issues, and provide instant support using AIpowered WhatsApp chatbots."
+                            "description": "I-automate ang mga tugon sa FAQs, mag-troubleshoot ng mga isyu, at magbigay ng instant na suporta gamit ang AI-powered WhatsApp chatbots."
                         },
                         {
-                            "name": "Appointment Scheduling",
-                            "description": "Allow customers to book, reschedule, or cancel appointments seamlessly through WhatsApp."
+                            "name": "Pag-iskedyul ng Appointment",
+                            "description": "Pahintulutan ang mga customer na mag-book, mag-reschedule, o mag-cancel ng mga appointment ng walang hirap sa pamamagitan ng WhatsApp."
                         },
                         {
-                            "name": "Payment Notifications & Reminders",
-                            "description": "Notify customers about pending payments, subscription renewals, or transaction confirmations."
+                            "name": "Mga Abiso at Paalala sa Pagbabayad",
+                            "description": "I-notify ang mga customer tungkol sa mga pending na bayad, subscription renewals, o transaction confirmations."
                         },
                         {
-                            "name": "Feedback Collection",
-                            "description": "Automate postpurchase or postservice feedback requests to improve customer satisfaction with AI Assistance."
+                            "name": "Pagkolekta ng Feedback",
+                            "description": "I-automate ang mga post-purchase o post-service feedback requests upang mapabuti ang kasiyahan ng customer gamit ang AI Assistance."
                         }
                     ],
                     "features": [
-                        "Scalable and secure WhatsApp Business API.",
-                        "Customizable solutions for unique business processes.",
-                        "Highspeed performance during hightraffic scenarios.",
-                        "Unified customer experience across platforms.",
-                        "Integration with WhatsApp automation tools for efficiency."
+                        "Scalable at secure WhatsApp Business API.",
+                        "Na-customize na mga solusyon para sa mga natatanging proseso ng negosyo.",
+                        "Mataas na bilis ng performance sa panahon ng mataas na traffic scenarios.",
+                        "Unified na karanasan ng customer sa iba't ibang platform.",
+                        "Integrasyon sa WhatsApp automation tools para sa kahusayan."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-robust-whatsapp-api-for-business-scalability.svg"
             },
             {
-                "name": "Automated Reminders: Never Miss an Opportunity",
-                "content": "Never miss an opportunity to engage your customers with automated WhatsApp reminders for birthdays, anniversaries, class schedules, and more. Strengthen customer relationships by sending personalized messages that make them feel valued and appreciated.",
+                "name": "Automated Reminders: Huwag Palampasin ang Isang Oportunidad",
+                "content": "Huwag palampasin ang anumang oportunidad upang makipag-ugnayan sa iyong mga customer gamit ang automated WhatsApp reminders para sa mga kaarawan, anibersaryo, mga schedule ng klase, at marami pa. Palakasin ang relasyon sa customer sa pamamagitan ng pagpapadala ng personalized na mensahe na magpaparamdam sa kanila ng pagpapahalaga at pagpapahalaga.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "Birthday Wishes",
-                            "description": "Send personalized birthday whatsapp messages to customers."
+                            "name": "Mga Kaarawan",
+                            "description": "Magpadala ng personalized na mga mensahe sa WhatsApp sa mga customer para sa kanilang mga kaarawan."
                         },
                         {
-                            "name": "Anniversary Reminders",
-                            "description": "Celebrate customer milestones with special offers WhatsApp automations."
+                            "name": "Mga Paalala sa Anibersaryo",
+                            "description": "I-celebrate ang mga milestones ng customer gamit ang mga espesyal na alok sa WhatsApp automations."
                         },
                         {
-                            "name": "Class Schedules",
-                            "description": "Notify students or participants about upcoming sessions through WhatsApp business API."
+                            "name": "Mga Schedule ng Klase",
+                            "description": "I-notify ang mga mag-aaral o kalahok tungkol sa mga darating na session sa pamamagitan ng WhatsApp business API."
                         },
                         {
-                            "name": "Appointment Reminders",
-                            "description": "Reduce noshows for appointments or consultations with WhatsApp campaigns."
+                            "name": "Mga Paalala ng Appointment",
+                            "description": "Bawasan ang mga no-shows para sa mga appointment o konsultasyon gamit ang WhatsApp campaigns."
                         },
                         {
-                            "name": "Subscription Renewals",
-                            "description": "Remind customers about upcoming renewals with WhatsApp AI Chatbots."
+                            "name": "Mga Renewal ng Subscription",
+                            "description": "I-remind ang mga customer tungkol sa mga paparating na renewal gamit ang WhatsApp AI Chatbots."
                         }
                     ],
                     "features": [
-                        "Automated recurring reminders.",
-                        "Personalized messages for better engagement.",
-                        "Timely updates to improve attendance and conversions.",
-                        "Enhanced customer relationships through thoughtful communication.",
-                        "Integration with WhatsApp for appointment scheduling."
+                        "Automated na mga recurring reminders.",
+                        "Personalized na mga mensahe para sa mas mahusay na engagement.",
+                        "Mga tamang oras na update upang mapabuti ang attendance at conversions.",
+                        "Pinahusay na mga relasyon sa customer sa pamamagitan ng maalalahaning komunikasyon.",
+                        "Integrasyon sa WhatsApp para sa pag-schedule ng appointment."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-audience-segmentation-and-automated-reminders-through-whatsapp.svg"
             },
             {
-                "name": "Audience Segmentation: Deliver Targeted Campaigns",
-                "content": "Unlock the power of WhatsApp audience segmentation to send tailored messages to specific customer groups. Whether targeting premium clients, firsttime buyers, or repeat customers, segmentation helps deliver highly relevant campaigns that drive engagement and conversions.",
+                "name": "Audience Segmentation: Maghatid ng Targeted Campaigns",
+                "content": "I-unlock ang kapangyarihan ng audience segmentation sa WhatsApp upang magpadala ng mga tailor-made na mensahe sa partikular na mga grupo ng customer. Kung ito man ay target ang mga premium clients, first-time buyers, o repeat customers, ang segmentation ay tumutulong sa paghahatid ng highly relevant na mga campaign na nagpapalakas ng engagement at conversions.",
                 "more_content": {
                     "usecases": [
                         {
                             "name": "Premium Clients",
-                            "description": "Send exclusive offers to highvalue customers with our simplified WhatsApp marketing automation tools."
+                            "description": "Magpadala ng eksklusibong alok sa mga high-value na customer gamit ang aming pinadaling WhatsApp marketing automation tools."
                         },
                         {
-                            "name": "FirstTime Buyers",
-                            "description": "Welcome new customers with special discounts through WhatsApp Chatbots."
+                            "name": "First-Time Buyers",
+                            "description": "Maligayang pagdating sa mga bagong customer gamit ang mga espesyal na diskwento sa pamamagitan ng WhatsApp Chatbots."
                         },
                         {
                             "name": "Repeat Customers",
-                            "description": "Reward loyal customers with personalized deals with Coupons through WhatsApp Business API."
+                            "description": "I-reward ang mga tapat na customer gamit ang personalized na mga deals na may Coupons sa pamamagitan ng WhatsApp Business API."
                         },
                         {
-                            "name": "Location Based Campaigns",
-                            "description": "Target users based on their geographic location and create Personalized customer journey."
+                            "name": "Location-Based Campaigns",
+                            "description": "Targetin ang mga gumagamit batay sa kanilang lokasyon at gumawa ng Personalized na customer journey."
                         },
                         {
                             "name": "Behavioral Segmentation",
-                            "description": "Send tailored WhatsApp messages based on user engagement or purchase history with the help of WhatsApp marketing tools."
+                            "description": "Magpadala ng mga tailor-made na mensahe sa WhatsApp batay sa pakikisalamuha ng gumagamit o kasaysayan ng pagbili gamit ang mga WhatsApp marketing tools."
                         }
                     ],
                     "features": [
-                        "Automated segmentation for precise targeting and WhatsApp campaigns.",
-                        "Personalized customer journeys for better engagement.",
-                        "Relevant offers and updates based on user data with WhatsApp marketing automations.",
-                        "Improved WhatsApp campaign effectiveness and ROI.",
-                        "WhatsApp Integration for lead nurturing."
+                        "Automated segmentation para sa tumpak na targeting at WhatsApp campaigns.",
+                        "Personalized na mga customer journeys para sa mas mahusay na engagement.",
+                        "Mga kaugnay na alok at update batay sa data ng gumagamit gamit ang WhatsApp marketing automations.",
+                        "Pinahusay na bisa ng mga WhatsApp campaign at ROI.",
+                        "WhatsApp Integration para sa lead nurturing."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-audience-segmentation-for-targeted-campaigns-and-customer-journeys.svg"
             },
             {
-                "name": "Broadcast and Campaign Management: Engage at Scale",
-                "content": "Leverage the power of WhatsApp Broadcast and Campaigns to reach your audience with personalized messages at scale. Whether it's promoting a new product, sharing exclusive offers, or sending event invitations, WhatsApp campaigns ensure your message lands directly in your customers' inboxes.",
+                "name": "Broadcast at Campaign Management: Makipag-ugnayan sa Malakihang Saklaw",
+                "content": "Gamitin ang kapangyarihan ng WhatsApp Broadcast at Campaigns upang maabot ang iyong audience gamit ang personalized na mga mensahe sa malakihang saklaw. Kung ito man ay nagpo-promote ng bagong produkto, pagbabahagi ng eksklusibong mga alok, o pagpapadala ng mga imbitasyon sa mga kaganapan, tinitiyak ng WhatsApp campaigns na direktang mapupunta ang iyong mensahe sa inbox ng mga customer.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "Product Launches",
-                            "description": "Announce new products to your entire customer base with WhatsApp campaigns."
+                            "name": "Paglulunsad ng Produkto",
+                            "description": "I-anunsyo ang mga bagong produkto sa iyong buong customer base gamit ang WhatsApp campaigns."
                         },
                         {
-                            "name": "Festive Offers",
-                            "description": "Share seasonal discounts and promotions with interactive WhatsApp catalogs and templates."
+                            "name": "Mga Festive Offers",
+                            "description": "Ibahagi ang mga seasonal na diskwento at promosyon gamit ang interactive na WhatsApp catalogs at templates."
                         },
                         {
-                            "name": "Event Invitations",
-                            "description": "Send invites to webinars, workshops, or sales events with WhatsApp API."
+                            "name": "Mga Imbitasyon sa Kaganapan",
+                            "description": "Magpadala ng imbitasyon sa mga webinar, workshop, o mga sales events gamit ang WhatsApp API."
                         },
                         {
-                            "name": "Customer Updates",
-                            "description": "Notify users about policy changes or service updates with WhatsApp utility templates at very affordable pricing."
+                            "name": "Mga Update sa Customer",
+                            "description": "I-notify ang mga gumagamit tungkol sa mga pagbabago sa polisiya o serbisyo gamit ang WhatsApp utility templates sa abot-kayang presyo."
                         },
                         {
-                            "name": "Personalized Offers",
-                            "description": "Deliver tailored deals based on user behavior and WhatsApp marketing automations."
+                            "name": "Personalized na mga Alok",
+                            "description": "Maghatid ng mga tailor-made na deals batay sa pakikisalamuha ng gumagamit at WhatsApp marketing automations."
                         }
                     ],
                     "features": [
-                        "Bulk WhatsApp messaging with CSV uploads for seamless campaigns.",
-                        "Advanced audience segmentation for targeted WhatsApp campaigns.",
-                        "Scheduled campaigns for optimal timing with WhatsApp marketing tools.",
-                        "Realtime analytics to track WhatsApp campaign performance.",
-                        "High engagement rates with personalized messaging."
+                        "Bulk WhatsApp messaging gamit ang CSV uploads para sa seamless na mga kampanya.",
+                        "Advanced audience segmentation para sa targeted na mga WhatsApp campaigns.",
+                        "Iskedyul ng mga kampanya para sa optimal na timing gamit ang WhatsApp marketing tools.",
+                        "Real-time na analytics upang subaybayan ang performance ng WhatsApp campaign.",
+                        "Mataas na engagement rates sa personalized na messaging."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-drive-engagement-with-whatsapp-broadcast-and-campaigns.svg"
             },
             {
-                "name": "Export Logs: Simplify Reporting and Compliance",
-                "content": "Streamline your reporting and analysis process with WhatsApp Export Logs. Export detailed logs of all your WhatsApp interactions, including messages sent, delivered, read, click counts and responded to. Use this data to analyze campaign performance, track customer behavior, and ensure compliance with communication regulations.",
+                "name": "Export Logs: Pinasimple ang Pag-uulat at Pagsunod",
+                "content": "Pinasimple ang iyong proseso ng pag-uulat at pagsusuri gamit ang WhatsApp Export Logs. I-export ang detalyadong mga log ng lahat ng iyong interaksyon sa WhatsApp, kabilang ang mga mensaheng ipinadala, na-deliver, nabasa, bilang ng mga pag-click at mga tugon. Gamitin ang data na ito upang suriin ang performance ng kampanya, subaybayan ang pakikisalamuha ng customer, at tiyakin ang pagsunod sa mga regulasyon sa komunikasyon.",
                 "more_content": {
                     "usecases": [
                         {
                             "name": "WhatsApp Campaign Analysis",
-                            "description": "Evaluate the success of WhatsApp marketing campaigns including messages sent, delivered, read, click counts and responded to."
+                            "description": "Suriin ang tagumpay ng mga WhatsApp marketing campaigns kabilang ang mga mensaheng ipinadala, na-deliver, nabasa, bilang ng mga pag-click at mga tugon."
                         },
                         {
                             "name": "Customer Insights",
-                            "description": "Analyze interaction patterns for better targeting and WhatsApp campaign planning."
+                            "description": "Suriin ang mga pattern ng interaksyon para sa mas mahusay na targeting at pagpaplano ng WhatsApp campaign."
                         },
                         {
                             "name": "Click Count Performance",
-                            "description": "Track how many users have clicked on the provided link in the WhatsApp template and analyze the performance of the template."
+                            "description": "Subaybayan kung ilan ang mga gumagamit na nag-click sa ibinigay na link sa WhatsApp template at suriin ang performance ng template."
                         }
                     ],
                     "features": [
-                        "Easy export of WhatsApp message logs in CSV format.",
-                        "Detailed insights into message delivery and engagement.",
-                        "Compliance with data protection and communication laws.",
-                        "Improved decisionmaking with actionable WhatsApp analytics data."
+                        "Madaling pag-export ng WhatsApp message logs sa CSV format.",
+                        "Detalyadong insights tungkol sa mensahe delivery at engagement.",
+                        "Pagsunod sa mga batas sa proteksyon ng data at komunikasyon.",
+                        "Pinahusay na paggawa ng desisyon gamit ang actionable WhatsApp analytics data."
                     ]
                 },
                 "img": "/assets/global/whatsapp/whatsapp-simplify-reporting-with-whatsapp-export-logs.svg"
@@ -473,18 +473,18 @@
         ]
     },
     "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
+        "content": "Magsimula sa paggawa ng iyong ideal na karanasan sa pakikipag-ugnayan sa customer",
         "buttons": {
             "contactSales": {
-                "text": "Contact sales",
+                "text": "Makipag-ugnayan sa sales",
                 "link": "/contact-us"
             },
             "pricing": {
-                "text": "Pricing",
+                "text": "Presyo",
                 "link": "/pricing/"
             },
             "getStarted": {
-                "text": "Get started",
+                "text": "Mag-Start",
                 "link": "https://control.msg91.com/signup/"
             }
         }

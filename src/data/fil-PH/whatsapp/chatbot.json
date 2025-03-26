@@ -1,7 +1,7 @@
 {
     "HeadComp": {
         "title": "Whatsapp with Chatbot | MSG91",
-        "description": "Take your business to new heights with WhatsApp: Automate processes, drive sales, and improve operations with a reliable WhatsApp chatbot. Start achieving more today!"
+        "description": "Dalhin ang iyong negosyo sa mga bagong taas gamit ang WhatsApp: I-automate ang mga proseso, magtulak ng mga benta, at pagbutihin ang mga operasyon gamit ang isang maaasahang WhatsApp chatbot. Magsimula nang makamit ang higit pa ngayon!"
     },
     "ChatBotComp": {
         "slug": "whatsapp/chatbot",
@@ -9,83 +9,83 @@
             "name": "WhatsApp Chatbot",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "DOMINATE POPULAR PLATFORMS",
-        "heading": "Transform Automation and Sales on WhatsApp",
-        "subheading": "Enhance sales, streamline responses, and effortlessly reconnect with your contacts.",
+        "tagline": "PANGUNAHIN ANG MGA POPULAR NA PLATAPORMA",
+        "heading": "Baguhin ang Automation at Benta sa WhatsApp",
+        "subheading": "Pahusayin ang benta, pag-streamline ng mga tugon, at madaling makipag-ugnayan muli sa iyong mga kontak.",
         "banner_img": "/assets/chatbot/banner.png",
-        "getstarted_btn": "Get Started",
+        "getstarted_btn": "Magsimula",
         "business_use": {
-            "heading": "Why businesses should use WhatsApp Chatbot",
+            "heading": "Bakit Dapat Gamitin ng mga Negosyo ang WhatsApp Chatbot",
             "content": [
                 {
-                    "heading": "Boost Engagement, Maximize Sales",
-                    "description": "WhatsApp chatbot platforms drive engagement by facilitating interactive conversations, guiding potential customers through the sales funnel to boost sales and improve user experience.",
+                    "heading": "Pataas ng Engagement, Maximize ang Benta",
+                    "description": "Pinapalakas ng WhatsApp chatbot platforms ang engagement sa pamamagitan ng pagpapadali ng interactive na mga pag-uusap, tinutulungan ang mga potensyal na customer na dumaan sa sales funnel upang mapataas ang benta at mapabuti ang karanasan ng user.",
                     "icon": "MdFlashOn"
                 },
                 {
-                    "heading": "Establish a 24/7 Communication Channel",
-                    "description": "A WhatsApp Chatbot ensures 24/7 accessibility, addressing customer queries at any hour, reinforcing your commitment to their needs and maintaining an always-responsive chatbot flow.",
+                    "heading": "Magkaroon ng 24/7 na Komunikasyon Channel",
+                    "description": "Ang WhatsApp Chatbot ay tinitiyak ang 24/7 na accessibility, tumutugon sa mga query ng customer sa anumang oras, pinapalakas ang iyong pangako sa kanilang mga pangangailangan at nagpapanatili ng palaging-tugon na chatbot flow.",
                     "icon": "MdOutlineWatch"
                 },
                 {
-                    "heading": "Streamline Responses to FAQs ",
-                    "description": "WhatsApp Chatbots swiftly address frequently asked questions by leveraging the  <a href='/whatsapp' style='color: blue;'>WhatsApp Business API</a> to save businesses time and resources.",
+                    "heading": "Pag-streamline ng mga Tugon sa FAQs",
+                    "description": "Mabilis na tinutugunan ng WhatsApp Chatbots ang madalas itanong na mga tanong gamit ang <a href='/whatsapp' style='color: blue;'>WhatsApp Business API</a> upang makatipid ng oras at mga resources para sa mga negosyo.",
                     "icon": "MdHelpOutline"
                 },
                 {
-                    "heading": "Elevate Customer Support",
-                    "description": "WhatsApp Chatbots deliver instant responses, ensuring prompt acknowledgment and boosting brand loyalty.",
+                    "heading": "Pahusayin ang Suporta sa Customer",
+                    "description": "Nagbibigay ang WhatsApp Chatbots ng instant na mga tugon, tinitiyak ang mabilis na pag-acknowledge at pagpapalakas ng brand loyalty.",
                     "icon": "MdOutlineSupport"
                 }
             ]
         },
         "across_industries": {
-            "heading": "WhatsApp Chatbot Applications Across Industries",
+            "heading": "Mga Aplikasyon ng WhatsApp Chatbot sa Iba't ibang Industriya",
             "content": [
                 {
                     "heading": "Healthcare",
                     "image": "/assets/chatbot/healthcare.png",
                     "icon": "MdOutlineHealthAndSafety",
-                    "description": "Automate appointment bookings and send consultation reminders hassle-free with MSG91s WhatsApp Chatbot for Business. Say goodbye to waiting on hold and callbacks. This tool streamlines scheduling for clinics and hospitals, minimizing no-shows and promoting punctuality.",
+                    "description": "I-automate ang mga appointment booking at magpadala ng mga paalala para sa konsultasyon nang walang abala gamit ang WhatsApp Chatbot ng MSG91 para sa Negosyo. Paalam sa paghihintay sa telepono at callbacks. Pinapadali ng tool na ito ang pag-schedule para sa mga klinika at ospital, binabawasan ang mga no-show at pinapalakas ang pagiging punctual.",
                     "card": [
                         {
                             "line": "Automated appointment scheduling"
                         },
                         {
-                            "line": "Timely reminders to reduce no-show rates"
+                            "line": "Mga paalala sa tamang oras upang mabawasan ang no-show rates"
                         },
                         {
-                            "line": "Enhanced punctuality in consultations"
+                            "line": "Pinahusay na punctuality sa konsultasyon"
                         },
                         {
-                            "line": "Simplified process for patients and providers"
+                            "line": "Pinadaling proseso para sa mga pasyente at mga provider"
                         }
                     ],
-                    "more_btn": "Learn More",
+                    "more_btn": "Alamin Pa",
                     "extra": [
                         {
-                            "title": "Automating Appointment Bookings & Sending Consultation Reminders:",
-                            "description": "Traditional hassles of waiting on hold or dealing with callbacks are a thing of the past. MSG91's WhatsApp Chatbot for Business enables clinics and hospitals to automate appointment scheduling, streamlining the process for both patients and healthcare providers. Additionally, the chatbot sends timely reminders, minimizing no-show rates and promoting punctuality."
+                            "title": "Pag-automate ng Appointment Bookings & Pagpapadala ng Paalala sa Konsultasyon:",
+                            "description": "Ang mga tradisyunal na abala ng paghihintay sa telepono o dealing with callbacks ay isang bagay ng nakaraan. Pinapayagan ng WhatsApp Chatbot ng MSG91 para sa Negosyo ang mga klinika at ospital na i-automate ang appointment scheduling, pinapadali ang proseso para sa parehong mga pasyente at healthcare providers. Bukod dito, ang chatbot ay nagpapadala ng mga paalala sa tamang oras, binabawasan ang mga no-show rates at pinapalakas ang pagiging punctual."
                         },
                         {
-                            "title": "Addressing Common Medical Queries:",
-                            "description": "Patients often have urgent inquiries about their health, medications, or hospital procedures. Leveraging the WhatsApp Bot API, MSG91's chatbot delivers automated responses to frequently asked questions, providing patients with quick and reliable information, thereby enhancing customer support within the healthcare sector."
+                            "title": "Pag-address sa Karaniwang mga Tanong Medikal:",
+                            "description": "Madalas na may mga urgent na tanong ang mga pasyente tungkol sa kanilang kalusugan, gamot, o mga proseso sa ospital. Gamit ang WhatsApp Bot API, nagbibigay ang chatbot ng MSG91 ng automated na mga sagot sa mga madalas itanong na tanong, nagbigay ng mabilis at maaasahang impormasyon sa mga pasyente, na nagpapabuti ng customer support sa sektor ng healthcare."
                         },
                         {
-                            "title": "Disseminating Health Tips and Medication Reminders:",
-                            "description": "TProactive healthcare is optimal. MSG91's WhatsApp Chatbot can be configured to share relevant health tips, including dietary recommendations and exercise routines. For those on medication, the chatbot sends timely reminders, promoting adherence to prescribed regimens."
+                            "title": "Pagpapalaganap ng Mga Tips sa Kalusugan at Paalala sa Medisina:",
+                            "description": "Ang proactive healthcare ay pinakamainam. Ang WhatsApp Chatbot ng MSG91 ay maaaring i-configure upang magbahagi ng mga relevant health tips, kabilang ang mga rekomendasyon sa pagkain at mga exercise routine. Para sa mga gumagamit ng gamot, ang chatbot ay nagpapadala ng mga paalala sa tamang oras, pinapalakas ang pagsunod sa mga prescribed regimens."
                         },
                         {
-                            "title": "Fostering Trust with Patients:",
-                            "description": "In the digital healthcare era, cultivating and retaining patient trust is paramount. By developing a chatbot flow that is empathetic, responsive, and consistent, healthcare providers can establish an environment where patients feel valued and heard. This seamless interaction is facilitated through MSG91's platform."
+                            "title": "Pagpapatibay ng Tiwala sa mga Pasyente:",
+                            "description": "Sa digital healthcare era, ang pagbuo at pagpapanatili ng tiwala ng pasyente ay mahalaga. Sa pamamagitan ng paggawa ng chatbot flow na empatik, tumutugon, at pare-pareho, ang mga healthcare provider ay maaaring magtatag ng isang kapaligiran kung saan ang mga pasyente ay nararamdaman na sila ay pinahahalagahan at naririnig. Pinapalakas ang seamless na interaksyon sa pamamagitan ng platform ng MSG91."
                         },
                         {
-                            "title": "Ensuring Patient Data Privacy:",
-                            "description": "In healthcare, safeguarding data privacy is non-negotiable. MSG91 prioritizes the security features of its WhatsApp Chatbot platforms, ensuring that patient information is securely stored, handled ethically, and complies with all relevant regulations."
+                            "title": "Pagtiyak ng Privacy ng Data ng Pasyente:",
+                            "description": "Sa healthcare, ang pagprotekta sa privacy ng data ay hindi pwedeng i-compromise. Binibigyan ng prioridad ng MSG91 ang mga security features ng mga WhatsApp Chatbot platforms nito, tinitiyak na ang impormasyon ng pasyente ay ligtas na naka-imbak, pinangangasiwaan nang etikal, at sumusunod sa lahat ng mga kaugnay na regulasyon."
                         },
                         {
                             "title": "",
-                            "description": "In conclusion, the convergence of healthcare and technology is inevitable. Leveraging the capabilities of WhatsApp Chatbots, healthcare providers can not only enhance patient interactions but also streamline operations, leading to improved care and better patient outcomes. With MSG91 steering the journey, the experience is smoother, more intuitive, and ultimately more rewarding."
+                            "description": "Sa wakas, ang convergence ng healthcare at teknolohiya ay hindi maiiwasan. Sa pamamagitan ng paggamit ng mga kakayahan ng WhatsApp Chatbots, hindi lamang mapapalakas ng mga healthcare provider ang interaksyon sa mga pasyente kundi pinadali rin ang mga operasyon, na nagdudulot ng pinabuting pangangalaga at mas magagandang resulta para sa mga pasyente. Sa MSG91 na gumagabay sa proseso, ang karanasan ay magiging mas makinis, mas intuitive, at sa huli, mas rewarding."
                         }
                     ]
                 },
@@ -93,46 +93,46 @@
                     "heading": "E-Commerce",
                     "image": "/assets/chatbot/e-commerce.png",
                     "icon": "MdOutlineStorefront",
-                    "description": "The e-commerce landscape has undergone a significant transformation due to digital advancements, and at the core of this evolution lies the WhatsApp Chatbot.",
+                    "description": "Ang e-commerce landscape ay nakaranas ng makabuluhang pagbabago dulot ng digital advancements, at sa sentro ng ebolusyong ito ay ang WhatsApp Chatbot.",
                     "card": [
                         {
-                            "line": "Product queries and suggestions"
+                            "line": "Mga tanong tungkol sa produkto at mga suhestiyon"
                         },
                         {
-                            "line": "Real-time order tracking via WhatsApp"
+                            "line": "Real-time order tracking sa pamamagitan ng WhatsApp"
                         },
                         {
-                            "line": "Handling of returns, exchange and feedback"
+                            "line": "Pag-handle ng mga returns, exchange, at feedback"
                         },
                         {
-                            "line": "Engagement via updates and promotions"
+                            "line": "Engagement sa pamamagitan ng mga updates at promosyon"
                         }
                     ],
-                    "more_btn": "Learn More",
+                    "more_btn": "Alamin Pa",
                     "extra": [
                         {
-                            "title": "Product Queries and Suggestions:",
-                            "description": "Navigating through a plethora of online products can be overwhelming for shoppers. MSG91's WhatsApp Chatbot for Business assists customers by furnishing comprehensive product details, reviews, and personalized recommendations based on browsing history and preferences, ensuring a tailored shopping experience."
+                            "title": "Mga Tanong tungkol sa Produkto at Mga Suhestiyon:",
+                            "description": "Ang pag-navigate sa maraming online na produkto ay maaaring magdulot ng pagkalito para sa mga mamimili. Ang WhatsApp Chatbot ng MSG91 para sa Negosyo ay tumutulong sa mga customer sa pamamagitan ng pagbibigay ng komprehensibong mga detalye ng produkto, mga review, at personalized na mga rekomendasyon batay sa kasaysayan ng pag-browse at mga kagustuhan, tinitiyak ang isang customized na shopping experience."
                         },
                         {
-                            "title": "Real-Time Order Tracking via WhatsApp:",
-                            "description": "The excitement and occasional anxiety associated with awaiting a package are addressed through the WhatsApp bot API. Our whatsapp bot application provides real-time order tracking, keeping customers informed about the status and location of their purchases, thereby enhancing customer support within the e-commerce realm."
+                            "title": "Real-Time Order Tracking sa pamamagitan ng WhatsApp:",
+                            "description": "Ang kasiyahan at paminsan-minsan na pagkabahala ng paghihintay sa package ay tinutugunan ng WhatsApp bot API. Ang aming whatsapp bot application ay nagbibigay ng real-time na order tracking, pinapanatili ang mga customer na may kaalaman tungkol sa status at lokasyon ng kanilang mga biniling produkto, kaya pinapalakas ang customer support sa e-commerce na sektor."
                         },
                         {
-                            "title": "Instant Handling of Returns and Customer Feedback:",
-                            "description": "Returns, exchanges, and feedback play a crucial role in e-commerce. MSG91's chatbot streamlines these processes by delivering immediate solutions and gathering feedback, allowing businesses to continuously improve while prioritizing customer satisfaction."
+                            "title": "Instant na Pag-handle ng Returns at Customer Feedback:",
+                            "description": "Mahalaga ang returns, exchanges, at feedback sa e-commerce. Pinapadali ng chatbot ng MSG91 ang mga prosesong ito sa pamamagitan ng pagbibigay ng agarang solusyon at pagkolekta ng feedback, na nagpapahintulot sa mga negosyo na patuloy na mapabuti habang pinaprioritize ang kasiyahan ng customer."
                         },
                         {
-                            "title": "Automated Responses for Common Queries:",
-                            "description": "Customers often seek information on payment methods, shipping policies, and other details. Our chatbot, powered by the WhatsApp Business API, efficiently provides automated responses to frequently asked questions, simplifying the shopping experience."
+                            "title": "Automated na mga Tugon para sa Mga Karaniwang Tanong:",
+                            "description": "Madalas naghahanap ang mga customer ng impormasyon tungkol sa mga paraan ng pagbabayad, mga patakaran sa pagpapadala, at iba pang detalye. Ang aming chatbot, na pinapalakas ng WhatsApp Business API, ay mahusay na nagbibigay ng mga automated na sagot sa mga madalas itanong na tanong, pinapadali ang shopping experience."
                         },
                         {
-                            "title": "Customer Engagement through Promotions and Updates:",
-                            "description": "Staying abreast of developments in the dynamic e-commerce environment is essential. By crafting a chatbot flow that engages users, businesses can keep customers informed about sales, new arrivals, and exclusive offers, directly enhancing opportunities for engagement and sales."
+                            "title": "Customer Engagement sa Pamamagitan ng mga Promosyon at Updates:",
+                            "description": "Mahalaga ang pagiging updated sa mga developments sa dynamic na e-commerce environment. Sa pamamagitan ng paggawa ng isang chatbot flow na nakikisalamuha sa mga gumagamit, maaaring panatilihin ng mga negosyo ang mga customer na may kaalaman tungkol sa mga benta, mga bagong produkto, at mga eksklusibong alok, direktang pinapalakas ang mga oportunidad para sa engagement at benta."
                         },
                         {
                             "title": "",
-                            "description": "In the intricate tapestry of e-commerce, the WhatsApp Chatbot emerges as a connecting thread that brings businesses and customers into a closer relationship than ever before. At MSG91, we are dedicated to ensuring that this connection is not only robust but also fruitful, driving sales while ensuring unparalleled customer satisfaction."
+                            "description": "Sa masalimuot na mundo ng e-commerce, ang WhatsApp Chatbot ay isang konektadong thread na nagdadala ng mga negosyo at customer sa mas malapit na relasyon kaysa kailanman. Sa MSG91, kami ay nakatuon sa pagtiyak na ang koneksyon na ito ay hindi lamang matibay kundi puno ng bunga, na nagtutulak ng mga benta habang tinitiyak ang walang kapantay na kasiyahan ng customer."
                         }
                     ]
                 },
@@ -140,46 +140,46 @@
                     "heading": "Banking & Finance",
                     "image": "/assets/chatbot/banking.png",
                     "icon": "MdAccountBalance",
-                    "description": "WhatsApp Chatbot for Business revolutionizes banking with features like instant balance checks, quick customer support, tailored financial tips, robust security, and simplified onboarding, ensuring a smooth, secure, and superior customer experience.",
+                    "description": "Rebolusyonaryo ang WhatsApp Chatbot para sa Negosyo sa banking na may mga tampok tulad ng instant na balance check, mabilis na suporta sa customer, mga personal na financial tips, malakas na seguridad, at pinadaling onboarding, tinitiyak ang isang makinis, ligtas, at superior na karanasan sa customer.",
                     "card": [
                         {
-                            "line": "Get  balance updates & transaction alerts"
+                            "line": "Makakuha ng mga update sa balance at mga alerto sa transaksyon"
                         },
                         {
-                            "line": "Daily bills and deductions remainders"
+                            "line": "Mga paalala sa araw-araw na mga bills at deductions"
                         },
                         {
-                            "line": "Check account balance and other details"
+                            "line": "I-check ang account balance at iba pang detalye"
                         },
                         {
-                            "line": "Engagement via updates and promotions"
+                            "line": "Engagement sa pamamagitan ng updates at promosyon"
                         }
                     ],
-                    "more_btn": "Learn More",
+                    "more_btn": "Alamin Pa",
                     "extra": [
                         {
-                            "title": "Checking Account Balances and Receiving Transaction Alerts:",
-                            "description": "The era of logging into banking portals or making helpline calls is a thing of the past. With MSG91's WhatsApp bot builder, customers can effortlessly inquire about account balances or receive instant transaction alerts, ensuring constant awareness and control over their financial information."
+                            "title": "Pag-check ng Account Balances at Pagtanggap ng mga Alerto sa Transaksyon:",
+                            "description": "Ang panahon ng pag-log in sa banking portals o paggawa ng helpline calls ay isang bagay ng nakaraan. Sa pamamagitan ng WhatsApp bot builder ng MSG91, madali nang magtanong ang mga customer tungkol sa mga account balances o tumanggap ng instant na mga alerto sa transaksyon, tinitiyak ang patuloy na kamalayan at kontrol sa kanilang pinansyal na impormasyon."
                         },
                         {
-                            "title": "Providing Swift Customer Support for Financial Inquiries:",
-                            "description": "Whether it's grasping interest rates, navigating loan processes, or understanding account features, customers frequently have urgent queries. Utilizing the capabilities of the WhatsApp Business API, our chatbot delivers prompt automated responses to frequently asked questions, fostering clarity and instilling confidence in financial decision-making."
+                            "title": "Pagbibigay ng Mabilis na Suporta sa Customer para sa mga Financial Inquiries:",
+                            "description": "Kung ito man ay mga rate ng interes, mga proseso ng loan, o pag-unawa sa mga features ng account, madalas na may mga urgent na tanong ang mga customer. Gamit ang mga kakayahan ng WhatsApp Business API, ang aming chatbot ay nagbibigay ng prompt automated na mga tugon sa mga madalas itanong na tanong, nagpapalaganap ng kalinawan at nagtatanim ng tiwala sa paggawa ng mga financial decisions."
                         },
                         {
-                            "title": "Sharing Financial Tips and Service Updates:",
-                            "description": "The financial landscape is expansive and ever-evolving. MSG91's WhatsApp Chatbots ensure customers stay well-informed by sharing tailored financial tips, news, and updates on banking services, aligning with each individual's banking profile."
+                            "title": "Pagbabahagi ng Financial Tips at Mga Update sa Serbisyo:",
+                            "description": "Ang financial landscape ay malawak at patuloy na nagbabago. Tinitiyak ng WhatsApp Chatbots ng MSG91 na ang mga customer ay palaging updated sa pamamagitan ng pagbabahagi ng mga tailor-made na financial tips, balita, at mga update tungkol sa mga serbisyo sa banking, ayon sa profile ng bawat indibidwal."
                         },
                         {
-                            "title": "Upholding Security and Trust:",
-                            "description": "In the delicate domain of banking and finance, security is of utmost importance. At MSG91, we prioritize the robust security features of our Chatbot platforms for WhatsApp, ensuring encrypted communication, secure data handling, and compliance with banking regulations."
+                            "title": "Pagpapanatili ng Seguridad at Tiwala:",
+                            "description": "Sa delikadong domain ng banking at finance, ang seguridad ay pinakamahalaga. Sa MSG91, binibigyan namin ng prioridad ang malalakas na security features ng aming Chatbot platforms para sa WhatsApp, tinitiyak ang encrypted na komunikasyon, secure na data handling, at pagsunod sa mga regulasyon sa banking."
                         },
                         {
-                            "title": "Simplified Onboarding and Access to Services:",
-                            "description": "Onboarding new customers or accessing various banking services can be intricate. Through a thoughtfully designed chatbot flow that streamlines these processes, we provide a seamless, hassle-free experience for all banking activities."
+                            "title": "Pinadaling Onboarding at Pag-access sa mga Serbisyo:",
+                            "description": "Ang onboarding ng mga bagong customer o pag-access sa iba't ibang mga serbisyo sa banking ay maaaring maging masalimuot. Sa pamamagitan ng isang thoughtfully designed na chatbot flow na pinadadali ang mga prosesong ito, nagbibigay kami ng isang seamless, walang abala na karanasan para sa lahat ng mga banking activities."
                         },
                         {
                             "title": "",
-                            "description": "As the financial sector steps into a new era, the WhatsApp Chatbot emerges as an indispensable ally. With MSG91 leading the way, we are enthusiastic about assisting banks and financial institutions in reshaping the narrative, offering customers an experience that is smooth, secure, and superior."
+                            "description": "Habang ang financial sector ay pumapasok sa isang bagong era, ang WhatsApp Chatbot ay nagiging isang hindi matatawarang alyado. Sa MSG91 na gumagabay sa daan, kami ay nasasabik na tulungan ang mga bangko at mga institusyong pinansyal na baguhin ang naratibo, nag-aalok ng isang karanasan na makinis, ligtas, at superior."
                         }
                     ]
                 }
@@ -187,18 +187,18 @@
         }
     },
     "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
+        "content": "Magsimula sa paggawa ng iyong ideal na karanasan sa pakikipag-ugnayan sa customer",
         "buttons": {
             "contactSales": {
-                "text": "Contact sales",
+                "text": "Makipag-ugnayan sa sales",
                 "link": "/contact-us"
             },
             "pricing": {
-                "text": "Pricing",
+                "text": "Presyo",
                 "link": "/pricing/"
             },
             "getStarted": {
-                "text": "Get started",
+                "text": "Mag-Start",
                 "link": "https://control.msg91.com/signup/"
             }
         }

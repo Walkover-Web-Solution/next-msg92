@@ -1,89 +1,89 @@
 {
     "HeadComp": {
-        "title": "MSG91 OTP Magic Link - Seamless & Secure User Access",
-        "description": "Simplify user authentication with MSG91 OTP Magic Link. Enable secure, one-click access to boost user experience and drive higher conversions."
+        "title": "MSG91 OTP Magic Link - Walang Hassle at Ligtas na Pag-access ng User",
+        "description": "Pinasimple ang authentication ng user gamit ang MSG91 OTP Magic Link. Magbigay ng ligtas, isang-click na access upang mapabuti ang karanasan ng user at mapataas ang conversion rates."
     },
     "MagicLinkComp": {
-             "link": "otp/magiclink",
-                    "nested": true,
+        "link": "otp/magiclink",
+        "nested": true,
         "product": {
             "name": "OTP Magic-link",
             "icon": "/assets/icons/products/otp.svg"
         },
-        "tagline": "Effortless Access, Instant Authentication",
-        "heading": "Authenticate Seamlessly with Magic Link",
-        "subheading": "Authenticating users is now easier and faster. Just send a single link, and your users can verify themselves instantly.",
+        "tagline": "Walang Abala na Pag-access, Instant na Authentication",
+        "heading": "Mag-authenticate ng Walang Hirap gamit ang Magic Link",
+        "subheading": "Ang pag-authenticate ng mga user ay ngayon ay mas madali at mas mabilis. Magpadala lamang ng isang link, at agad na magki-click ang iyong mga user upang mag-verify.",
         "banner_img": "/assets/magiclink/magic-link-banner.svg",
-        "getstarted_btn": "Get Started",
+        "getstarted_btn": "Magsimula",
         "what_magiclink": {
-            "heading": "What is Magic Link?",
-            "content": "Magic Link is a simple, one-click authentication method that eliminates the need for passwords or OTPs. Instead, users receive a secure, unique link via their preferred channel—email, SMS, WhatsApp, RCS, or others. By clicking the link, they are instantly authenticated and granted access to the platform or service. It’s a fast, secure, and user-friendly alternative to traditional authentication methods, ensuring a frictionless experience while maintaining high security standards. Whether logging into an app, verifying transactions, or accessing a portal, Magic Link makes authentication effortless"
+            "heading": "Ano ang Magic Link?",
+            "content": "Ang Magic Link ay isang simpleng, one-click na authentication method na tinatanggal ang pangangailangan para sa mga password o OTPs. Sa halip, ang mga user ay makakatanggap ng isang secure at unique na link sa kanilang preferred na channel—email, SMS, WhatsApp, RCS, o iba pa. Sa pamamagitan ng pag-click ng link, agad silang maa-authenticate at magkakaroon ng access sa platform o serbisyo. Isa itong mabilis, ligtas, at user-friendly na alternatibo sa mga tradisyunal na paraan ng authentication, tinitiyak ang isang frictionless na karanasan habang pinapanatili ang mataas na mga security standards. Kung maglo-log in sa isang app, magki-verify ng transaksyon, o mag-a-access ng isang portal, ginagawang madali ang authentication gamit ang Magic Link."
         },
         "how_works": {
-            "heading": "How Does It Work?",
+            "heading": "Paano Ito Gumagana?",
             "content": [
                 {
-                    "heading": "Send",
-                    "description": "When a user requests access, send them a Magic Link via their preferred channel.",
+                    "heading": "Magpadala",
+                    "description": "Kapag humiling ang user ng access, magpadala ng Magic Link sa kanilang preferred na channel.",
                     "icon": "MdFlashOn"
                 },
                 {
-                    "heading": "Click",
-                    "description": "The user clicks the link, and they are instantly authenticated.",
+                    "heading": "I-click",
+                    "description": "I-click ng user ang link, at agad silang maa-authenticate.",
                     "icon": "MdOutlineWatch"
                 },
                 {
                     "heading": "Access",
-                    "description": "It is that simple—no need to remember passwords or enter codes.",
+                    "description": "Ganoon lang kasimple—hindi na kailangang tandaan ang mga password o maglagay ng mga code.",
                     "icon": "MdHelpOutline"
                 }
             ]
         },
         "why_magiclink": {
-            "heading": "Why Choose Magic Link?",
+            "heading": "Bakit Pumili ng Magic Link?",
             "content": [
                 {
-                    "heading": "Frictionless User Experience",
-                    "description": "Magic Link allows users to authenticate instantly with just a click—no passwords or OTPs. It provides a smooth, hassle-free experience that enhances user satisfaction and reduces drop-offs.",
+                    "heading": "Walang Abalang Karanasan ng User",
+                    "description": "Pinapayagan ng Magic Link ang mga user na mag-authenticate ng instant na may isang click—walang password o OTPs. Nagbibigay ito ng isang smooth at hassle-free na karanasan na nagpapahusay ng kasiyahan ng user at nagpapababa ng mga drop-offs.",
                     "icon": "MdFlashOn"
                 },
                 {
                     "heading": "Multi-Channel Delivery",
-                    "description": "Send Magic Links via email, SMS, WhatsApp, RCS, or any preferred channel, offering personalized access and reaching users where they are most comfortable.",
+                    "description": "Magpadala ng Magic Links sa email, SMS, WhatsApp, RCS, o anumang preferred na channel, nagbibigay ng personalized na access at naaabot ang mga user kung saan sila pinaka-komportable.",
                     "icon": "MdOutlineWatch"
                 },
                 {
-                    "heading": "Secure & Reliable",
-                    "description": "Each Magic Link is unique, encrypted, and time-sensitive, ensuring secure, one-time use access without compromising user data.",
+                    "heading": "Ligtas at Maaasahan",
+                    "description": "Bawat Magic Link ay unique, encrypted, at time-sensitive, tinitiyak ang secure, one-time use access nang hindi isinasakripisyo ang data ng user.",
                     "icon": "MdHelpOutline"
                 },
                 {
-                    "heading": "Boost Conversions",
-                    "description": "By simplifying the login process, Magic Link reduces authentication friction, leading to higher conversion rates and better user engagement.",
+                    "heading": "Pataas ng Conversions",
+                    "description": "Sa pamamagitan ng pagpapadali ng login process, pinapalakas ng Magic Link ang conversion rates at mas mahusay na engagement ng user.",
                     "icon": "MdHelpOutline"
                 }
             ]
         },
         "across_industries": {
-            "heading": "OTP Magic-Link Applications Across Industries",
+            "heading": "Mga Aplikasyon ng OTP Magic-Link sa Iba't ibang Industriya",
             "content": [
                 {
                     "heading": "Healthcare",
                     "image": "/assets/magiclink/healthcare.webp",
                     "icon": "MdOutlineHealthAndSafety",
-                    "description": "For healthcare providers, ensuring patient data security is a top priority. With Magic Link, patients can easily access their medical records, test results, or appointment details by simply clicking a secure link sent via SMS, email, or WhatsApp. This improves the patient experience by eliminating the need for cumbersome logins while maintaining high security standards.",
+                    "description": "Para sa mga healthcare providers, ang pagtiyak ng seguridad ng data ng pasyente ay isang pangunahing priyoridad. Sa Magic Link, ang mga pasyente ay madaling mag-a-access ng kanilang mga medical records, test results, o appointment details sa pamamagitan lamang ng pag-click sa isang secure na link na ipinadala sa pamamagitan ng SMS, email, o WhatsApp. Pinapabuti nito ang karanasan ng pasyente sa pamamagitan ng pagtanggal sa pangangailangan ng abalang logins habang pinapanatili ang mataas na mga security standards.",
                     "card": [
                         {
-                            "line": "Secure access"
+                            "line": "Secure na access"
                         },
                         {
                             "line": "Multi-channel delivery"
                         },
                         {
-                            "line": "Enhanced experience"
+                            "line": "Pinahusay na karanasan"
                         },
                         {
-                            "line": "Top-tier security"
+                            "line": "Top-tier na seguridad"
                         }
                     ]
                 },
@@ -91,19 +91,19 @@
                     "heading": "E-Commerce",
                     "image": "/assets/magiclink/e-commerce.avif",
                     "icon": "MdOutlineStorefront",
-                    "description": "n the fast-paced world of online shopping, customers want a smooth and quick checkout experience. With Magic Link, shoppers can log in or register instantly with a single click, making the process hassle-free and reducing cart abandonment. No more forgotten passwords or slow OTP verification—just a seamless, one-click authentication for faster purchases.",
+                    "description": "Sa mabilis na mundo ng online shopping, nais ng mga customer ng smooth at mabilis na checkout experience. Sa Magic Link, ang mga shoppers ay maaaring mag-log in o mag-register agad-agad gamit ang isang click, ginagawa ang proseso na hassle-free at binabawasan ang cart abandonment. Wala nang mga nakalimutang password o mabagal na OTP verification—isang seamless na one-click authentication para sa mas mabilis na mga pagbili.",
                     "card": [
                         {
                             "line": "One-click login"
                         },
                         {
-                            "line": "Faster checkout"
+                            "line": "Mas mabilis na checkout"
                         },
                         {
-                            "line": "Lower cart abandonment"
+                            "line": "Mas mababang cart abandonment"
                         },
                         {
-                            "line": "Simplified process"
+                            "line": "Pinadaling proseso"
                         }
                     ]
                 }
@@ -111,14 +111,14 @@
         }
     },
     "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
+        "content": "Magsimula sa paggawa ng iyong ideal na karanasan sa pakikipag-ugnayan sa customer",
         "buttons": {
             "contactSales": {
-                "text": "Contact sales",
+                "text": "Makipag-ugnayan sa sales",
                 "link": "/contact-us"
             },
             "getStarted": {
-                "text": "Get started",
+                "text": "Mag-Start",
                 "link": "https://control.msg91.com/signup/"
             }
         }

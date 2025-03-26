@@ -13,6 +13,10 @@ export default function PricingEmail({ data, country }) {
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
 
+    useEffect(() => {
+        fetchPlans();
+    }, [fetchPlans]);
+
     const fetchPlans = useCallback(async () => {
         setIsLoading(true);
         const response = await getSubscriptions(currency, 1);
@@ -21,10 +25,6 @@ export default function PricingEmail({ data, country }) {
         }
         setIsLoading(false);
     }, []);
-
-    useEffect(() => {
-        fetchPlans();
-    }, [fetchPlans]);
 
     return (
         <>
