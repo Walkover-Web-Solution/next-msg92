@@ -14,7 +14,7 @@ export default function CaseStudiesComp({ data }) {
                                 return (
                                     <Link
                                         href={caseStudy?.link}
-                                        key={`${index}`}
+                                        key={index}
                                         className={`flex bg-white rounded-lg overflow-hidden hover:shadow-lg LinkButtonCard ${
                                             index !== 0
                                                 ? 'md:col-span-4 xl:col-span-2 row-span-2 lg:row-span-1 col-span-4 md:flex-row flex flex-col'
