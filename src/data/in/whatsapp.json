@@ -9,9 +9,9 @@
             "name": "WhatsApp API",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "dominate popular platforms",
-        "heading": "Drive better customer engagement outcomes",
-        "subheading": "Meet your customers where they already are, on the platform with 2 billion+ users.",
+        "tagline": "WhatsApp Business Solutions",
+        "heading": "Seemless Global messaging and communications.",
+        "subheading": "Use Developer Friendly API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
         "lottie": "/assets/lotties/in-whatsapp.json",
         "getstarted_btn": "Get Started",
         "schedule_meet": "Schedule a Meeting"
@@ -72,7 +72,7 @@
             {
                 "name": "Whatsapp Catalogue",
                 "content": "WhatsApp's catalogue feature lets businesses showcase products and services within the app. It uses whatsapp business api application to serves as a digital storefront, allowing customers to browse, view details, and make inquiries without leaving WhatsApp. Businesses can organize items, include images, prices, and descriptions, and update inventory in real time, making it easier for customers to explore and shop.",
-                "img": "/assets/in/whatsapp/whatsapp-catalog.svg"
+                "img": "/assets/in/whatsapp/whatsapp-catalogue.svg"
             },
             {
                 "name": "Broadcast / Campaign",
@@ -143,7 +143,7 @@
                         "Integration with WhatsApp for ecommerce platforms."
                     ]
                 },
-                "img": "/assets/global/whatsapp/whatsapp-share-product-catalogs-and-enable-whatsapp-payments.svg"
+                "img": "/assets/in/whatsapp/whatsapp-payments.svg"
             },
             {
                 "name": "Bulk Sending Through CSV: Scale Your WhatsApp Marketing Effortlessly",
