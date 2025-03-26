@@ -1,7 +1,7 @@
 {
     "HeadComp": {
         "title": "ShortUrl",
-        "description": "Create branded short links to improve conversions and track performance. Customize and manage smart URLs to optimize your marketing efforts."
+        "description": "Gumawa ng branded short links upang mapabuti ang conversions at masubaybayan ang performance. I-customize at i-manage ang smart URLs upang ma-optimize ang iyong marketing efforts."
     },
     "BannerComp": {
         "slug": "shorturl",
@@ -9,13 +9,13 @@
             "name": "URL Shortner",
             "icon": "/assets/icons/products/shorturl.svg"
         },
-        "tagline": "Simplify your links",
-        "heading": "Customise, share and track smart links",
-        "subheading": "Optimise your complex links to create short, cleaner links that are easier to share..",
-      "banner_img": "/assets/global/shorturl/shorturl.svg",
-        "getstarted_btn": "Get Started for FREE",
+        "tagline": "Pasimplehin ang iyong mga link",
+        "heading": "I-customize, ibahagi, at subaybayan ang smart links",
+        "subheading": "I-optimize ang mga komplikadong link upang makalikha ng maiikli at malilinis na links na mas madaling ibahagi.",
+        "banner_img": "/assets/global/shorturl/shorturl.svg",
+        "getstarted_btn": "Magsimula nang LIBRE",
         "trustedByComp": {
-            "heading": "Trusted by  30,000+  global businesses",
+            "heading": "Pinagkakatiwalaan ng 30,000+ global na negosyo",
             "logos": [
                 {
                     "name": "Xiaomi",
@@ -41,37 +41,34 @@
         }
     },
     "FeatureComp": {
-        "heading": "Features",
+        "heading": "Mga Tampok",
         "iconColor": "text-campaign",
         "features": [
-          
             {
-                "name": "No Code",
-                "content":"<strong>No code and fewer credits makes it a smart link.</strong> Shorten your URL in real-time without putting in any code. Just paste your link and you have a smart link that is easy to share, saves you space and consumes fewer credit. ",
+                "name": "Walang Kailangan na Code",
+                "content": "<strong>Walang code at mas kaunting credits — isang smart link.</strong> Paikliin ang iyong URL agad-agad nang hindi kailangang mag-code. I-paste lang ang iyong link at makakakuha ka ng smart link na madaling ibahagi, nakakatipid ng espasyo, at mas matipid sa credits.",
                 "img": "/assets/global/shorturl/shorturl-no-code.svg"
             },
             {
-                "name": "   NumberWise Tracking",
-                "content":"<strong>Gather statistics by monitoring the number of hits from your URL.</strong> Track the performance of your shortURL and the number of hits for each recipient. Know how many times the link has been clicked, where is it shared, and how is it driving traffic. ",
+                "name": "NumberWise Tracking",
+                "content": "<strong>Kolektahin ang statistics sa pamamagitan ng pagsubaybay sa dami ng clicks ng iyong URL.</strong> Subaybayan ang performance ng iyong shortURL at alamin kung ilang beses na-click ang link, sino ang nakatanggap, saan ito ibinahagi, at kung paano ito nakaka-drive ng traffic.",
                 "img": "/assets/global/shorturl/shorturl-number-wise-tracking.svg"
             }
-          
         ]
     },
-   
     "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
+        "content": "Simulan ang paggawa ng iyong ideal na customer engagement experience",
         "buttons": {
             "contactSales": {
-                "text": "Contact sales",
+                "text": "Makipag-ugnayan sa sales",
                 "link": "/contact-us"
             },
             "pricing": {
-                "text": "Pricing",
+                "text": "Presyo",
                 "link": "/pricing/"
             },
             "getStarted": {
-                "text": "Get started",
+                "text": "Magsimula",
                 "link": "https://control.msg91.com/signup/"
             }
         }

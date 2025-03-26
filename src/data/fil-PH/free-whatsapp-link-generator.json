@@ -1,55 +1,55 @@
 {
     "HeadComp": {
-        "title": "Create a Whatsapp link | Free Whatsapp Link generator",
-        "description": "Generate WhatsApp links and QR codes for seamless website integration. Enable customers to chat instantly using our easy-to-use WhatsApp link generator."
+        "title": "Gumawa ng Whatsapp link | Libreng Whatsapp Link generator",
+        "description": "Mag-generate ng WhatsApp links at QR codes para sa seamless na integration sa website. Pahintulutan ang mga customer na makipag-chat agad gamit ang aming madaling gamitin na WhatsApp link generator."
     },
     "WhatsappLinkComp": {
-        "slug": "free-whatsapp-link-generator",
+        "slug": "libreng-whatsapp-link-generator",
         "product": {
-            "name": "Free Whatsapp Link Generator",
+            "name": "Libreng Whatsapp Link Generator",
             "icon": "/assets/icons/products/whatsapp.svg"
         },
-        "tagline": "Generate WhatsApp click to chat QR code/Widget/Link",
-        "heading": "Simple tool to create WhatsApp click to chat QR code/Widget/Link for your website or landing pages.",
+        "tagline": "Mag-generate ng WhatsApp click to chat QR code/Widget/Link",
+        "heading": "Simpleng tool para gumawa ng WhatsApp click to chat QR code/Widget/Link para sa iyong website o landing pages.",
         "banner_img": "/assets/global/whatsapp-link/banner.png",
-        "getstarted_btn": "Generate",
+        "getstarted_btn": "Mag-generate",
         "steps": {
-            "heading": "3 steps to creating a QR code/Widget/Link",
+            "heading": "3 hakbang para gumawa ng QR code/Widget/Link",
             "cards": [
                 {
-                    "title": "Step 1",
-                    "description": "Enter your country code and your WhatsApp Business number, and add a welcome message if desired.",
+                    "title": "Hakbang 1",
+                    "description": "Ilagay ang iyong country code at WhatsApp Business number, at magdagdag ng welcome message kung nais.",
                     "icon": "MdDialpad"
                 },
                 {
-                    "title": "Step 2",
-                    "description": "Personalize your widget, QR code, or link to align with your brand's visual guidelines and identity.",
+                    "title": "Hakbang 2",
+                    "description": "I-personalize ang iyong widget, QR code, o link upang umayon sa visual guidelines at identity ng iyong brand.",
                     "icon": "MdOutlineDashboardCustomize"
                 },
                 {
-                    "title": "Step 3",
-                    "description": "Lastly, simply click the 'Generate Now' button to create your widget, QR code, or link. It's that simple!",
+                    "title": "Hakbang 3",
+                    "description": "Huling hakbang, i-click ang 'Generate Now' button para gumawa ng iyong widget, QR code, o link. Ganun lang kadali!",
                     "icon": "MdOutlineAutoAwesome"
                 }
             ]
         },
         "create": {
-            "heading": "Create whatsapp Link / Widget/ QR Code",
+            "heading": "Gumawa ng whatsapp Link / Widget/ QR Code",
             "image": "assets/whatsapp-link/widget-preview.svg",
-            "generate_btn": "Generate Now",
+            "generate_btn": "Mag-generate Ngayon",
             "content": [
                 {
-                    "title": "Type your WhatsApp Number",
-                    "description": "Enter your WhatsApp number along with your country code (without the ‘+’ symbol). For instance, if your country code is +91 and your WhatsApp number is 872849182, just type 91872849182.",
+                    "title": "I-type ang iyong WhatsApp Number",
+                    "description": "Ilagay ang iyong WhatsApp number kasama ang iyong country code (nang walang ‘+’ symbol). Halimbawa, kung ang iyong country code ay +91 at ang iyong WhatsApp number ay 872849182, i-type lang ang 91872849182.",
                     "feilds": [
                         {
                             "name": "WhatsApp number",
-                            "placeholder": "eg. 919000012345",
-                            "description": "Automatically send this text when a user clicks on your chat link, making it easier to start a conversation."
+                            "placeholder": "hal. 919000012345",
+                            "description": "Awtomatikong ipadala ang text na ito kapag nag-click ang user sa iyong chat link, na nagpapadali sa pagsisimula ng pag-uusap."
                         },
                         {
-                            "name": "Pre-Filled Message(optional)",
-                            "placeholder": "Please enter a valid email address for shipping updates.",
+                            "name": "Pre-Filled Message(pwedeng piliin)",
+                            "placeholder": "Mangyaring ilagay ang wastong email address para sa mga update sa pagpapadala.",
                             "description": ""
                         }
                     ]
@@ -60,11 +60,11 @@
                     "feilds": [
                         {
                             "name": "Welcome text",
-                            "placeholder": "Hi there!\nHow can I help you?",
+                            "placeholder": "Hi diyan!\nPaano kita matutulungan?",
                             "description": ""
                         },
                         {
-                            "name": "Brand image URL(optional)",
+                            "name": "Brand image URL(pwedeng piliin)",
                             "placeholder": "https://storage.googleapis.com/92283/image.png",
                             "description": ""
                         }
@@ -77,40 +77,40 @@
         "heading": "FAQs",
         "faqs": [
             {
-                "question": "How does a WhatsApp link work??",
-                "answer": "WhatsApp links use a specific URL format that, when clicked, opens the WhatsApp app on a user's device and starts a chat with the provided phone number or message."
+                "question": "Paano gumagana ang WhatsApp link?",
+                "answer": "Ang WhatsApp links ay gumagamit ng partikular na URL format na, kapag na-click, magbubukas ng WhatsApp app sa device ng user at magsisimula ng chat gamit ang ibinigay na phone number o mensahe."
             },
             {
-                "question": "Is it possible to create a whatsapp link with predefined message?",
-                "answer": "Yes, absolutely. When utilizing the <a href='/whatsapp'>whatsapp API </a>, you can include a pre-filled message along with the phone number in the link. Services like MSG91 offer WhatsApp link generators that allow you to easily create these links."
+                "question": "Posible bang gumawa ng whatsapp link na may predefined na mensahe?",
+                "answer": "Oo, tiyak. Kapag ginagamit ang <a href='/whatsapp'>whatsapp API </a>, maaari mong isama ang pre-filled message kasama ang phone number sa link. Ang mga serbisyo tulad ng MSG91 ay nag-aalok ng WhatsApp link generators na nagpapadali sa paggawa ng mga link na ito."
             },
             {
-                "question": "Is it possible to generate a WhatsApp link for a business account?",
-                "answer": "Yes, WhatsApp link generators can create links for both personal and business accounts. Business accounts often have additional features suitable for customer interactions."
+                "question": "Posible bang gumawa ng WhatsApp link para sa isang business account?",
+                "answer": "Oo, ang WhatsApp link generators ay makakagawa ng mga link para sa parehong personal at business accounts. Ang mga business accounts ay madalas may karagdagang mga tampok na angkop para sa pakikipag-ugnayan sa customer."
             },
             {
-                "question": "Are WhatsApp links cross-platform compatible?",
-                "answer": "Yes, WhatsApp links work across different platforms, including iOS, Android, and web browsers, ensuring a seamless experience for users regardless of their device."
+                "question": "Ang WhatsApp links ba ay cross-platform compatible?",
+                "answer": "Oo, ang WhatsApp links ay gumagana sa iba't ibang platform, kabilang ang iOS, Android, at web browsers, na tinitiyak ang seamless na karanasan para sa mga user kahit anong device nila."
             },
             {
-                "question": " How can I generate a Wa link?",
-                "answer": "You can generate a WhatsApp link by appending the phone number to the WhatsApp URL: https://wa.me/phonenumbers. For example, to create a link for the number 1234567890, the URL would be https://wa.me/1234567"
+                "question": "Paano ako makakagawa ng Wa link?",
+                "answer": "Maaari kang gumawa ng WhatsApp link sa pamamagitan ng pagdagdag ng phone number sa WhatsApp URL: https://wa.me/phonenumbers. Halimbawa, para gumawa ng link para sa numerong 1234567890, ang URL ay magiging https://wa.me/1234567"
             }
         ]
     },
     "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
+        "content": "Simulan ang paggawa ng iyong ideal na customer engagement experience",
         "buttons": {
             "contactSales": {
-                "text": "Contact sales",
+                "text": "Makipag-ugnayan sa sales",
                 "link": "/contact-us"
             },
             "pricing": {
-                "text": "Pricing",
+                "text": "Presyo",
                 "link": "/pricing/"
             },
             "getStarted": {
-                "text": "Get started",
+                "text": "Magsimula",
                 "link": "https://control.msg91.com/signup/"
             }
         }

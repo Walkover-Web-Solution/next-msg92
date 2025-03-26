@@ -42,7 +42,7 @@
     },
     "FeatureComp": {
         "iconColor": "text-email",
-        "features": [
+       "features": [
             {
                 "name": "Mobile-Optimized Email Templates for Perfect Display",
                 "content": "Ensure your emails look great on any device with mobile-optimised templates. Responsive designs adapt to various screen sizes, providing a smooth experience and boosting engagement",
@@ -69,7 +69,7 @@
                             "description": "Ensure feedback forms and support responses are accessible and user-friendly on any device."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Templates designed for perfect display across all devices.",
                         "Automatically adjust the layout to fit different screen sizes.",
                         "Keep brand elements consistent across devices.",
@@ -105,7 +105,7 @@
                             "description": "Avoid issues with undeliverable emails to maintain a strong sender reputation."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Instantly detect valid, invalid, and risky email addresses.",
                         "Upload and validate large email lists efficiently.",
                         "Remove fake and undeliverable emails before campaigns.",
@@ -141,7 +141,7 @@
                             "description": "Automatically send reminders to recover abandoned carts."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Drag-and-drop editor for easy customization.",
                         "Add buttons, images, and videos for interactive content.",
                         "Customize colors, fonts, and logos to match your brand identity.",
@@ -177,7 +177,7 @@
                             "description": "Engage your audience with interactive polls and voting features."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Dynamic elements like carousels, forms, and live updates.",
                         "Allow recipients to take action without leaving the inbox.",
                         "Stand out in crowded inboxes with rich, interactive content.",
@@ -213,7 +213,7 @@
                             "description": "Modify announcement emails in minutes and send instantly."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Professionally designed, mobile-responsive templates for any use case.",
                         "Drag-and-drop customisation – no coding required.",
                         "Pre-built templates for promotions, newsletters, and transactional emails.",
@@ -249,7 +249,7 @@
                             "description": "Notify users about refund processing, return approvals, and status updates."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "High-speed delivery to ensure time-sensitive emails reach users instantly.",
                         "API integration for seamless automation and real-time email triggers.",
                         "Scalable to handle high-volume transactional emails effortlessly.",
@@ -285,7 +285,7 @@
                             "description": "Manage email campaigns seamlessly from Gmail or Outlook."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Send email campaigns directly from one dashboard.",
                         "Engage customers from your business inbox effortlessly.",
                         "Handle all campaigns from a single interface.",
@@ -321,7 +321,7 @@
                             "description": "Test subject lines, content, and designs to optimise email performance."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Create precise segments based on user behaviour, demographics, and engagement.",
                         "Set up trigger-based emails for signups, purchases, and abandoned carts.",
                         "Optimise performance with real-time data, smart scheduling, and campaign insights.",
@@ -357,7 +357,7 @@
                             "description": "View campaign performance across different countries for better targeting."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Access an advanced analytics dashboard for deep, data-driven decision-making.",
                         "Gain deliverability insights to understand email performance and overall engagement.",
                         "Track real-time performance metrics like delivered, opens, clicks, and conversions instantly.",
@@ -393,7 +393,7 @@
                             "description": "Focus on reaching real, interested users for better open and click-through rates."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Automatically blocks emails to unsubscribed, bounced, or invalid addresses.",
                         "Continuously updates and manages suppressed contacts.",
                         "Easily add and manage suppression lists for better control.",
@@ -429,7 +429,7 @@
                             "description": "Send offers at peak times for better action rates."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Automatically schedules emails based on each recipient’s local time.",
                         "Ensures emails reach users when they are most likely to engage.",
                         "Schedule and send emails seamlessly across multiple time zones.",
@@ -465,7 +465,7 @@
                             "description": "Test different promotional offers to see which drives higher sales."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Run A/B tests on different audience segments to understand how variations perform.",
                         "Compare different email variations to identify the most effective version.",
                         "Leverage past A/B test results to refine future campaigns.",
@@ -501,7 +501,7 @@
                             "description": "Convert incoming emails into support tickets and assign them to agents."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Get real-time alerts for bounces and spam complaints to protect email deliverability.",
                         "Instantly detect unsubscribes to update lists and avoid sending unwanted emails.",
                         "Ensure domain security with continuous monitoring of SPF, DKIM, and DMARC records.",
@@ -537,7 +537,7 @@
                             "description": "Organise emails by priority, status, or department for better efficiency."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Unified inbox to manage emails from multiple accounts in one place.",
                         "Effortlessly assign emails for seamless team collaboration.",
                         "Dedicated Android/IOS app to efficiently manage and respond to incoming queries.",

@@ -1,26 +1,25 @@
 {
     "HeadComp": {
-        "title": "Customer Support Platform for your Business by MSG91-Philippines",
-        "description": "HELLO is a robust omnichannel platform that empowers your customer support team. Deliver exceptional service experiences with data-driven insights."
+        "title": "Platforma ng Suporta sa Customer para sa iyong Negosyo ng MSG91-Philippines",
+        "description": "Ang HELLO ay isang matibay na omnichannel platform na nagpapalakas sa iyong customer support team. Maghatid ng pambihirang karanasan sa serbisyo gamit ang mga data-driven na insight."
     },
     "BannerComp": {
         "slug": "hello",
         "product": {
-          
             "name": "Hello",
             "icon": "/assets/icons/products/hello.svg"
         },
-        "tagline": "Revolutionize Customer Support",
-        "heading": "Hello ",
-        "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
- "banner_img": "/assets/global/hello/heroimg.png",
-        "getstarted_btn": "Get Started",
+        "tagline": "Rebolusyonaryong Suporta sa Customer",
+        "heading": "Hello",
+        "subheading": "Huwag mawalan ng pansin sa kung ano ang mahalaga. Huwag lamang lutasin ang mga ticket, magtayo ng relasyon sa mga customer",
+        "banner_img": "/assets/global/hello/heroimg.png",
+        "getstarted_btn": "Magsimula",
         "trustedByComp": {
-            "heading": "Support 15+ channels and platforms ",
+            "heading": "Suporta sa 15+ na mga channel at platform",
             "logos": [
                 {
                     "name": "facebook",
-                   "url": "/assets/platforms/facebook.svg"
+                    "url": "/assets/platforms/facebook.svg"
                 },
                 {
                     "name": "gmail",
@@ -28,120 +27,123 @@
                 },
                 {
                     "name": "googleChat",
-                  "url": "/assets/platforms/googlechat.svg"
+                    "url": "/assets/platforms/googlechat.svg"
                 },
                 {
                     "name": "instagram",
-                   "url": "/assets/platforms/instagram.svg"
+                    "url": "/assets/platforms/instagram.svg"
                 },
                 {
                     "name": "outlook",
-                  "url": "/assets/platforms/outlook.svg"
+                    "url": "/assets/platforms/outlook.svg"
                 },
                 {
                     "name": "sms",
-                   "url": "/assets/platforms/sms.svg"
-                },  {
+                    "url": "/assets/platforms/sms.svg"
+                },
+                {
                     "name": "telegram",
-                  "url": "/assets/platforms/telegram.svg"
+                    "url": "/assets/platforms/telegram.svg"
                 },
                 {
                     "name": "twitter",
-                   "url": "/assets/platforms/twitter.svg"
-                },  {
+                    "url": "/assets/platforms/twitter.svg"
+                },
+                {
                     "name": "voice",
-                  "url": "/assets/platforms/voice.svg"
+                    "url": "/assets/platforms/voice.svg"
                 },
                 {
                     "name": "whatsapp",
-                   "url": "/assets/platforms/whatsapp.svg"
-                },  {
+                    "url": "/assets/platforms/whatsapp.svg"
+                },
+                {
                     "name": "zoho",
-                  "url": "/assets/platforms/zoho.svg"
+                    "url": "/assets/platforms/zoho.svg"
                 }
             ]
         }
     },
-   "FeatureComp": {
-        "heading": "Features",
+    "FeatureComp": {
+        "heading": "Mga Tampok",
         "iconColor": "text-campaign",
         "features": [
             {
                 "icon": "MdSupportAgent",
-                "name": "Unlimited Agents",
-                "content": "Unlimited free agents to power up your customer support. More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is nonumber attached to your number of customer support agents",
+                "name": "Walang Limitasyong Ahente",
+                "content": "Walang limitasyong libreng ahente upang palakasin ang iyong customer support. Ang mas maraming ahente ay nangangahulugang tuloy-tuloy na engagement, mas maraming ticket na nalutas, at mas mahusay na suporta sa customer. Walang bilang na nakatalaga sa iyong bilang ng mga customer support agent.",
                 "img": "/assets/global/hello/unlimited-agents.svg"
             },
             {
                 "icon": "MdOutlineSmartToy",
                 "name": "Chatbot",
-                "content": "Resolve customer queries round-the-clock across text and voice. Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents.",
+                "content": "Lutasin ang mga query ng customer 24/7 sa text at voice. Hayaan ang chatbot na tugunan ang mga simpleng paulit-ulit na query na hindi nangangailangan ng mga soft skills at karanasan ng iyong mga ahente at kapag kinakailangan, agad na mag-loop sa mga live na ahente.",
                 "img": "/assets/global/hello/chatbot.svg"
             },
             {
                 "icon": "MdAdsClick",
-                "name": "Screen Control",
-                "content": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues.",
+                "name": "Control ng Screen",
+                "content": "Kontrolin ang screen ng iyong customer mula sa iyong kinaroroonan. Magtrabaho sa remote screen na parang andoon ka talaga. Kapag nakuha mo na ang access, magka-kontrol ka ng buo sa screen, mouse at keyboard ng customer upang mabilis na malutas ang mga isyu.",
                 "img": "/assets/global/hello/screen-control.svg"
             },
             {
                 "icon": "MdOutlineScreenShare",
                 "name": "Video Call / Screen Sharing",
-                "content": "High-quality video calls wherever your customer is. Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue.",
+                "content": "Mataas na kalidad na mga video call saan man naroroon ang iyong customer. Mag-video call kasama ang iyong customer upang mag-co-browse ng kanilang screen. Kunin ang kontrol ng meeting habang nagsha-share ng screen ang customer upang magpakita ng impormasyon o mag-raise ng isyu.",
                 "img": "/assets/global/hello/video-call---screen-sharing.svg"
             },
             {
                 "icon": "MdOutlineSchema",
                 "name": "Workflow",
-                "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs.",
+                "content": "Awtomatikong i-assign ang mga usapan sa isang team o dedikadong ahente. Magsimula gamit ang aming umiiral na Workflow o mag-set up ng iyong custom na Workflow batay sa mga pangangailangan ng iyong suporta sa negosyo.",
                 "img": "/assets/global/hello/workflow.svg"
             },
             {
                 "icon": "MdOutlineAnalytics",
                 "name": "Analytics",
-                "content": "Analytics and reports to monitor your agent performance. Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support.",
+                "content": "Analytics at mga ulat upang subaybayan ang pagganap ng iyong mga ahente. Makakuha ng mga malalim na actionable insights upang maghatid ng kahanga-hangang suporta at makamit ang iyong mga layunin. Ang madaling suriin na mga analytics na ulat ay makakatulong sa iyong mga ahente na mag-scale ng kanilang customer support.",
                 "img": "/assets/global/hello/analytics.svg"
             }
         ]
     },
     "FaqsComp": {
-        "heading": "Frequently Asked Questions",
+        "heading": "Mga Madalas Itanong",
         "faqs": [
             {
-                "question": "How to subscribe to your Hello Plan.",
-                "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options\n You can directly subscribe to the plan from the website itself. There go to Hello Service click on Get Started, fill in the necessary details, and subscribe to the plan."
+                "question": "Paano mag-subscribe sa iyong Hello Plan.",
+                "answer": "Sa Hello panel, i-click ang subscription tab, na makikita sa kaliwang sulok. Bubuksan nito ang pahina ng kasalukuyang plan at pati na rin ang opsyon upang bumili ng bagong plano. I-click ito at makakapili ka mula sa mga monthly at yearly na opsyon. Maaari ka ring mag-subscribe sa plano mula mismo sa website. Pumunta sa Hello Service, i-click ang Get Started, punan ang mga kinakailangang detalye, at mag-subscribe sa plano."
             },
             {
-                "question": "Are there any charges for AI chatbots?",
-                "answer": "No, there are no charges for Chat Bot, we are only charged for basic and premium plans. You can use the chatbot in a free plan till 50 tickets in Hello, after that you have to upgrade your Hello plan. Basically, we are providing the chatbot free for Trial purposes.\n You can use this Chat Bot in WhatsApp, Instagram, Chat Widget on your Website, Facebook and so on. So test the Chat Bot Now."
+                "question": "Mayroon bang mga bayarin para sa AI chatbots?",
+                "answer": "Wala, walang bayad para sa Chat Bot, sinisingil lang kami para sa mga basic at premium na plano. Maaari mong gamitin ang chatbot sa free plan hanggang 50 tickets sa Hello, pagkatapos nito kailangan mong mag-upgrade sa iyong Hello plan. Ang chatbot ay ibinibigay nang libre para sa Trial purposes. Maaari mong gamitin ang Chat Bot sa WhatsApp, Instagram, Chat Widget sa iyong Website, Facebook atbp. Kaya subukan na ang Chat Bot."
             },
             {
-                "question": "Are there any extra charges for Instagram/ Facebook  Inbox?",
-                "answer": "<p>You can use inboxes that are available in your Hello Plan for Instagram or Whatsapp. The number of inboxes assigned in each plan.</p><ul><li>Free Plan- 2 inboxes</li><li>Basic Plan- 2 inboxes</li><li>Premium Plan- 3 inboxes</li></ul><p>But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each.</p><p>In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox.</p> "
+                "question": "Mayroon bang mga karagdagang bayad para sa Instagram/ Facebook Inbox?",
+                "answer": "<p>Maaari mong gamitin ang inboxes na available sa iyong Hello Plan para sa Instagram o Whatsapp. Ang bilang ng mga inboxes na nakatalaga sa bawat plano.</p><ul><li>Free Plan- 2 inboxes</li><li>Basic Plan- 2 inboxes</li><li>Premium Plan- 3 inboxes</li></ul><p>Ngunit kung naubos mo na ang mga nakatalagang inboxes, maaari kang bumili ng bagong inbox sa basic at premium plan para sa 500 rupees bawat isa.</p><p>Sa free plan, hindi ka makakabili ng mga bagong inboxes. Kailangan mong mag-upgrade ng plano kung nais mo ng karagdagang inbox.</p>"
             },
             {
-                "question": "What are the charges for tickets and extra tickets in Hello?",
-                "answer": "<p>We are providing monthly tickets with each plan and in case they end, you can also use extra tickets which you pay in postpaid billing.</p><p>Here are the number of tickets assigned in each plan:</p><ul><li>Free Plan- 50 tickets/monthly</li><li>Basic Plan- 1000 tickets/monthly</li><li>Premium Plan- 2000 tickets/monthly</li></ul><p>Extra Charges for each ticket in different plans:</p><ul><li>Free Plan- there is no option for more tickets in free plans as you have to upgrade the Hello Plan to Basic or Premium as per your choice.</li><li>Basic Plan- ₹0.5 per ticket</li><li>Premium Plan- ₹0.75 per ticket</li></ul>"
+                "question": "Ano ang mga bayarin para sa mga ticket at karagdagang mga ticket sa Hello?",
+                "answer": "<p>Nagbibigay kami ng buwanang mga ticket sa bawat plano at kung sakaling magtapos na ang mga ito, maaari ka ring gumamit ng karagdagang mga ticket na babayaran mo sa postpaid billing.</p><p>Narito ang bilang ng mga ticket na nakatalaga sa bawat plano:</p><ul><li>Free Plan- 50 ticket/buwan</li><li>Basic Plan- 1000 ticket/buwan</li><li>Premium Plan- 2000 ticket/buwan</li></ul><p>Karagdagang bayad para sa bawat ticket sa iba't ibang plano:</p><ul><li>Free Plan- walang opsyon para sa dagdag na ticket sa free plans, kailangan mong mag-upgrade sa Hello Plan sa Basic o Premium ayon sa iyong kagustuhan.</li><li>Basic Plan- ₹0.5 bawat ticket</li><li>Premium Plan- ₹0.75 bawat ticket</li></ul>"
             },
             {
-                "question":  " Can I customize the Hello Plan?",
-                "answer":  "Yes, you can have a customized plan for hello. Click on the link to schedule the meeting with the sales heads."
+                "question":  "Maaari ko bang i-customize ang Hello Plan?",
+                "answer":  "Oo, maaari kang magkaroon ng isang customized na plano para sa Hello. I-click ang link upang mag-iskedyul ng meeting kasama ang mga sales heads."
             }
         ]
     },
     "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
+        "content": "Simulan ang pagbuo ng iyong ideal na customer engagement experience",
         "buttons": {
             "contactSales": {
-                "text": "Contact sales",
+                "text": "Makipag-ugnayan sa sales",
                 "link": "/contact-us"
             },
             "pricing": {
-                "text": "Pricing",
+                "text": "Pagpepresyo",
                 "link": "/pricing/"
             },
             "getStarted": {
-                "text": "Get started",
+                "text": "Magsimula",
                 "link": "https://control.msg91.com/signup/"
             }
         }

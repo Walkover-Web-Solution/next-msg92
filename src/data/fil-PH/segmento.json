@@ -1,76 +1,90 @@
-{ "HeadComp": {
-  "title": "Customer Segmentation Software | MSG91-Philippines",
-  "description": "Automate customer segmentation based on behavior, demographics, and interests. Personalize journeys and execute targeted campaigns to drive better results."
-}, 
-       "BannerComp": {
+{
+    "HeadComp": {
+        "title": "Customer Segmentation Software | MSG91-Philippines",
+        "description": "I-automate ang segmentation ng mga customer batay sa kanilang kilos, demograpiko, at interes. I-personalize ang journey at magsagawa ng targeted campaigns para sa mas magagandang resulta."
+    },
+    "BannerComp": {
         "slug": "segmento",
         "product": {
             "name": "Segmento",
             "icon": "/assets/icons/products/segmento.svg"
         },
-        "tagline": "target based marketing",
-        "heading": "Personalize customer journeys with Data segmentation.",
-        "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
+        "tagline": "target-based na marketing",
+        "heading": "I-personalize ang customer journeys gamit ang Data Segmentation.",
+        "subheading": "I-segment ang mga tao batay sa kanilang demograpiko, pag-uugali, interes, at iba pang katangian.",
         "banner_img": "/assets/global/segmento/segmento.svg",
-        "getstarted_btn": "Get Started For Free",
+        "getstarted_btn": "Magsimula Nang Libre",
         "trustedByComp": {
-          "heading": "Trusted by 30,000+ global businesses",
-          "logos":  [
-            {"name": "Xiaomi", "url": "/assets/trusted_by/xiaomi.svg"},
-            {"name": "Unacademy", "url": "/assets/trusted_by/unacademy.svg"},
-            {"name": "Dream11", "url": "/assets/trusted_by/dream11.svg"},
-            {"name": "Indeed", "url": "/assets/trusted_by/indeed.svg"},
-            {"name": "Indian Oil", "url": "/assets/trusted_by/indianoil.svg"},
-            {"name": "Ixigo", "url": "/assets/trusted_by/ixigo.svg"}
-          ]
-      }
-    
+            "heading": "Pinagkakatiwalaan ng 30,000+ global na negosyo",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Indian Oil",
+                    "url": "/assets/trusted_by/indianoil.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
     },
     "FeatureComp": {
-      "heading": "Features",
-      "iconColor": "text-campaign",
-      "features": [
-        
-          {
-              
-              "name": "Create filters as per segment",
-              "content":"<strong>Create a filtered list on your business phonebook.</strong>Tailor your marketing efforts by targeting people based on their requirements, traits or patterns by creating a particular filter on your phonebook.",
-              "img": "/assets/global/segmento/segmento-create-filters-as-per-segments.svg"
-          },
-          {
-              "name": "Automation Trigger ",
-              "content": "<strong>Trigger meaningful information for the filtered segments.</strong>Automate actions on the filters created based on the user’s action or input to deliver relevant and personalised messages for each group.",
-              "img": "/assets/global/segmento/segmento-automation-trigger.svg"
-          },
-          {
-              "name": "Automation Repeater ",
-              "content": "<strong>Send the most relevant content at the most relevant time.</strong>Send auto messages to the same filter at time-based intervals through your audience’s preferred business communication channel.",
-              "img": "/assets/global/segmento/segmento-automation-repeater.svg"
-          },
-          {
-              "name": "Open API",
-              "content": "<strong>Use API to get, create, update or delete contact.</strong>We provide APIs for every action, big or small, so that you can focus on what matters most- building your amazing product.",
-              "img": "/assets/global/segmento/segmento-open-api.svg"
-          }
-         
-      ]
-  },
+        "heading": "Mga Tampok",
+        "iconColor": "text-campaign",
+        "features": [
+            {
+                "name": "Gumawa ng filters ayon sa segment",
+                "content": "<strong>Gumawa ng filtered list sa iyong business phonebook.</strong>I-angkop ang iyong marketing efforts sa pamamagitan ng pagtutok sa mga tao base sa kanilang pangangailangan, katangian, o pattern sa pamamagitan ng paggawa ng partikular na filter sa iyong phonebook.",
+                "img": "/assets/global/segmento/segmento-create-filters-as-per-segments.svg"
+            },
+            {
+                "name": "Automation Trigger",
+                "content": "<strong>I-trigger ang makabuluhang impormasyon para sa mga na-filter na segments.</strong>I-automate ang mga aksyon batay sa filter at user action o input upang maipadala ang may kaugnayan at personalized na mga mensahe para sa bawat grupo.",
+                "img": "/assets/global/segmento/segmento-automation-trigger.svg"
+            },
+            {
+                "name": "Automation Repeater",
+                "content": "<strong>Ipadala ang pinaka-angkop na content sa pinaka-angkop na oras.</strong>Awtomatikong magpadala ng mensahe sa parehong filter sa mga tinakdang oras gamit ang paboritong business communication channel ng iyong audience.",
+                "img": "/assets/global/segmento/segmento-automation-repeater.svg"
+            },
+            {
+                "name": "Open API",
+                "content": "<strong>Gamitin ang API upang kumuha, gumawa, mag-update, o mag-delete ng contact.</strong>Mayroon kaming API para sa bawat aksyon, maliit man o malaki, para makatuon ka sa pinakamahalaga—ang paggawa ng iyong amazing na produkto.",
+                "img": "/assets/global/segmento/segmento-open-api.svg"
+            }
+        ]
+    },
     "PreFooterComp": {
-      "content": "Start building your ideal customer engagement experience",
-      "buttons": {
-          "contactSales": {
-              "text": "Contact sales",
-              "link": "/contact-us"
-          },
-          "pricing": {
-              "text": "Pricing",
-              "link": "/pricing/"
-          },
-          "getStarted": {
-              "text": "Get started",
-              "link": "https://control.msg91.com/signup/"
-          }
-      }
-  }
-  }
-  
+        "content": "Simulan ang paggawa ng iyong ideal na customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Makipag-ugnayan sa sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Presyo",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Magsimula",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

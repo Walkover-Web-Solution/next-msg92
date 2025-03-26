@@ -1,67 +1,85 @@
-{ "HeadComp": {
-    "title": "Send OTP | OTP Service Providers -MSG91-Philippines",
-    "description":"Secure your platform with MSG91’s OTP SMS API. Easily implement two-factor authentication for reliable and seamless customer security."
-  }, 
-         "BannerComp": {
-          "slug": "otp",
-          "product": {
-              "name": "OTP",
-              "icon": "/assets/icons/products/otp.svg"
-          },
-          "tagline": "Instant Secure Verification",
-          "heading": "Simplest, quickest and most effective way to verify your users",
-          "subheading":"Build customer trust and enable business protection with two-factor authentication.",
-          "banner_img": "/assets/global/otp/otp.svg",
-          "getstarted_btn": "Get Started For Free",
-          "trustedByComp": {
-            "heading": "Trusted by 30,000+ global businesses",
-            "logos":  [
-              {"name": "Xiaomi", "url": "/assets/trusted_by/xiaomi.svg"},
-              {"name": "Unacademy", "url": "/assets/trusted_by/unacademy.svg"},
-              {"name": "Dream11", "url": "/assets/trusted_by/dream11.svg"},
-              {"name": "Indeed", "url": "/assets/trusted_by/indeed.svg"},
-              {"name": "Indian Oil", "url": "/assets/trusted_by/indianoil.svg"},
-              {"name": "Ixigo", "url": "/assets/trusted_by/ixigo.svg"}
-            ]
-        }
-      
-      },
-      "FeatureComp":{ 
-        "heading": "Features",
-          "iconColor": "text-otp",
-          "features":[
-        { 
-          "name": "Simple as Login With Google",
-          "content": "<strong>Login with OTP is as simple as login with Gmail</strong> Give your users a fast, non-disruptive and simple authentication experience. Implement login with OTP by entering your mobile number or email address to receive OTP via SMS or email.",
-          "img": "/assets/global/otp/otp-simple-login.svg"
+{
+  "HeadComp": {
+    "title": "Magpadala ng OTP | Mga OTP Service Provider - MSG91-Philippines",
+    "description": "Protektahan ang iyong platform gamit ang OTP SMS API ng MSG91. Madaling i-implement ang two-factor authentication para sa maaasahan at seamless na seguridad ng customer."
+  },
+  "BannerComp": {
+    "slug": "otp",
+    "product": {
+      "name": "OTP",
+      "icon": "/assets/icons/products/otp.svg"
+    },
+    "tagline": "Mabilis at Ligtas na Pag-verify",
+    "heading": "Pinakasimple, pinakamabilis, at pinaka-epektibong paraan para i-verify ang iyong mga user",
+    "subheading": "Bumuo ng tiwala ng customer at protektahan ang negosyo gamit ang two-factor authentication.",
+    "banner_img": "/assets/global/otp/otp.svg",
+    "getstarted_btn": "Magsimula nang Libre",
+    "trustedByComp": {
+      "heading": "Pinagkakatiwalaan ng 30,000+ global na negosyo",
+      "logos": [
+        {
+          "name": "Xiaomi",
+          "url": "/assets/trusted_by/xiaomi.svg"
         },
         {
-          "name": "Inbuilt IP Security",
-          "content": "<strong>Protect against fraud, hacks, validation, blocking</strong>  Minimize fraud with an extra layer of security. The inbuilt security ensures that when a login is risky the flow does not allow the bad actor to login by viewing it as potentially fraudulent.",
-          "img":  "/assets/global/otp/otp-inbuilt-ip-security.svg"
+          "name": "Unacademy",
+          "url": "/assets/trusted_by/unacademy.svg"
         },
         {
-          "name": "Support multiple channels",
-          "content": "<strong>Build customer trust and increase conversion across multiple channels</strong> Authenticate your users on channels they prefer. We support multiple channels including SMS, email, Voice, <a href='/in/whatsapp'>WhatsApp</a>  giving businesses and users the flexibility they need to authenticate.",
-          "img": "/assets/global/otp/otp-support-multiple-channels.svg"
-        }]
-      },
-      "PreFooterComp": {
-        "content": "Start building your ideal customer engagement experience",
-        "buttons": {
-            "contactSales": {
-                "text": "Contact sales",
-                "link": "/contact-us"
-            },
-            "pricing": {
-                "text": "Pricing",
-                "link": "/pricing/"
-            },
-            "getStarted": {
-                "text": "Get started",
-                "link": "https://control.msg91.com/signup/"
-            }
+          "name": "Dream11",
+          "url": "/assets/trusted_by/dream11.svg"
+        },
+        {
+          "name": "Indeed",
+          "url": "/assets/trusted_by/indeed.svg"
+        },
+        {
+          "name": "Indian Oil",
+          "url": "/assets/trusted_by/indianoil.svg"
+        },
+        {
+          "name": "Ixigo",
+          "url": "/assets/trusted_by/ixigo.svg"
         }
+      ]
     }
+  },
+  "FeatureComp": {
+    "heading": "Mga Tampok",
+    "iconColor": "text-otp",
+    "features": [
+      {
+        "name": "Kasing Simple ng Pag-login gamit ang Google",
+        "content": "<strong>Ang pag-login gamit ang OTP ay kasing simple ng pag-login gamit ang Gmail</strong> Bigyan ang iyong mga user ng mabilis, hindi istorbo, at simpleng karanasan sa authentication. I-implementa ang login gamit ang OTP sa pamamagitan ng paglagay ng iyong mobile number o email address para makatanggap ng OTP via SMS o email.",
+        "img": "/assets/global/otp/otp-simple-login.svg"
+      },
+      {
+        "name": "May Kasamang IP Security",
+        "content": "<strong>Proteksyon laban sa panloloko, pag-hack, maling validation, at pag-block</strong> Bawasan ang panganib ng panloloko gamit ang dagdag na security layer. Ang built-in na seguridad ay tinitiyak na kapag delikado ang login, hindi ito papayagan ng system at itinuturing itong posibleng mapanlinlang.",
+        "img": "/assets/global/otp/otp-inbuilt-ip-security.svg"
+      },
+      {
+        "name": "Suporta sa Maraming Channels",
+        "content": "<strong>Palakasin ang tiwala ng customer at pataasin ang conversion sa maraming channels</strong> I-verify ang iyong mga user sa channel na mas gusto nila. Sinasaklaw namin ang iba't ibang channels kabilang ang SMS, email, Voice, at <a href='/in/whatsapp'>WhatsApp</a> para sa mas flexible na authentication experience para sa negosyo at users.",
+        "img": "/assets/global/otp/otp-support-multiple-channels.svg"
+      }
+    ]
+  },
+  "PreFooterComp": {
+    "content": "Simulan ang paggawa ng iyong ideal na customer engagement experience",
+    "buttons": {
+      "contactSales": {
+        "text": "Makipag-ugnayan sa sales",
+        "link": "/contact-us"
+      },
+      "pricing": {
+        "text": "Presyo",
+        "link": "/pricing/"
+      },
+      "getStarted": {
+        "text": "Magsimula",
+        "link": "https://control.msg91.com/signup/"
+      }
     }
-    
+  }
+}
