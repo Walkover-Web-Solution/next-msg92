@@ -31,6 +31,14 @@ export default function FeatureComp({ data, pageInfo }) {
                                             <span className='font-bold'>{feature?.subheading} </span>
                                             <span dangerouslySetInnerHTML={{ __html: feature?.content }}></span>
                                         </span>
+                                        {feature?.button && (
+                                            <LinkButton
+                                                customClasses={'active-link text-link'}
+                                                target='_blank'
+                                                content={feature?.button?.name}
+                                                href={feature?.button?.link}
+                                            />
+                                        )}
                                         {feature?.more_content && (
                                             <>
                                                 {feature?.more_content.content && (
@@ -81,14 +89,6 @@ export default function FeatureComp({ data, pageInfo }) {
                                                             })}
                                                         </ul>
                                                     </div>
-                                                )}
-                                                {feature?.button && (
-                                                    <LinkButton
-                                                        customClasses={'active-link text-link'}
-                                                        target='_blank'
-                                                        content={feature?.button?.name}
-                                                        href={feature?.button?.link}
-                                                    />
                                                 )}
                                                 <div
                                                     className='cursor-pointer'

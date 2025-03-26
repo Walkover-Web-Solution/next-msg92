@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MdMenu } from 'react-icons/md';
 import styles from './MenuBarComp.module.scss';
-import { BtnWithHideIco, LinkButton, LinkText } from '../UIComponent/Buttons/LinkButton';
+import { BtnWithHideIco, LinkText } from '../UIComponent/Buttons/LinkButton';
 import { useEffect, useState } from 'react';
 import getURL from '@/utils/getURL';
 import getPricingURL from '@/utils/getPricingURL';
@@ -97,6 +97,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         <LinkText customClasses='text-lg'>Integrations</LinkText>
                                     </Link>
                                     <a
+                                        className='flex items-center h-full justify-center'
                                         href='https://docs.msg91.com/overview'
                                         target='_blank'
                                         onClick={() => {
@@ -291,8 +292,12 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                 />
                             </Link>
                         </div>
-                        <ul className='w-full flex justify-end gap-6'>
-                            <a href='https://docs.msg91.com/overview' target='_blank'>
+                        <ul className='w-full flex justify-end gap-6 items-center'>
+                            <a
+                                className='flex items-center h-full justify-center'
+                                href='https://docs.msg91.com/overview'
+                                target='_blank'
+                            >
                                 <li className='text-link'>{componentData?.apidocs}</li>
                             </a>
                             <Link
