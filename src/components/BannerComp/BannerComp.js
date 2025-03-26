@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import TrustedByComp from '../TrustedByComp/TrustedByComp';
-import { LinkButton } from '../UIComponent/Buttons/LinkButton';
 import styles from './BannerComp.module.scss';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-twilight.css';
@@ -11,7 +10,7 @@ import { MdCopyAll } from 'react-icons/md';
 import { InlineWidget } from 'react-calendly';
 import getURL from '@/utils/getURL';
 import Link from 'next/link';
-import Lottie from 'react-lottie';
+import LottiePlayer from '../LottiePlayer/LottiePlayer';
 
 export default function BannerComp({ pageInfo, data }) {
     const [isCopied, setIsCopied] = useState(false);
@@ -51,32 +50,6 @@ export default function BannerComp({ pageInfo, data }) {
         };
         setCode(snippetCode);
     }, [pageInfo]);
-
-    const [animationData, setAnimationData] = useState(null);
-
-    useEffect(() => {
-        const fetchLottieData = async () => {
-            if (data?.lottie) {
-                try {
-                    const response = await fetch(data.lottie);
-                    const animationJson = await response.json();
-                    const lottieOptions = {
-                        loop: true,
-                        autoplay: true,
-                        animationData: animationJson,
-                        rendererSettings: {
-                            preserveAspectRatio: 'xMidYMid slice',
-                        },
-                    };
-                    setAnimationData(lottieOptions);
-                } catch (error) {
-                    console.error('Error loading Lottie animation:', error);
-                }
-            }
-        };
-
-        fetchLottieData();
-    }, [data?.lottie]);
 
     return (
         <>
@@ -185,9 +158,9 @@ export default function BannerComp({ pageInfo, data }) {
                         />
                     </div>
                 )}
-                {animationData && data?.lottie && !data?.code && (
+                {data?.lottie && !data?.code && (
                     <div className={styles.lottie_animation}>
-                        <Lottie options={animationData} />
+                        <LottiePlayer lottie={data?.lottie} />
                     </div>
                 )}
             </div>

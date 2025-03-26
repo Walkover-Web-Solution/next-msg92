@@ -44,7 +44,11 @@ export default function CaseStudyComp({ data, pageInfo }) {
 
                                     <div className='flex flex-wrap  gap-2'>
                                         {caseStudy?.tags?.map((tag, i) => {
-                                            return <button className='btn btn-primary btn-sm'>{tag?.name}</button>;
+                                            return (
+                                                <button key={i} className='btn btn-primary btn-sm'>
+                                                    {tag?.name}
+                                                </button>
+                                            );
                                         })}
                                     </div>
 
