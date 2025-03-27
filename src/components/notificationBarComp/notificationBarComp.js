@@ -16,23 +16,23 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
     if (componentData && !hidden) {
         return (
             <div className='py-3 border border-b'>
-                <div className='container flex  gap-6 justify-end '>
+                <div className='container flex gap-3 md:gap-6 justify-end '>
                     {languages?.languages && languages?.languages?.length > 0 && (
-                        <div className='dropdown'>
-                            <div tabIndex={0} role='button' className='flex gap-1 items-center '>
+                        <div className='dropdown text-sm sm:text-base'>
+                            <div tabIndex={0} role='button' className='flex gap-1 items-center text-sm sm:text-base '>
                                 <MdTranslate fontSize={16} />
                                 {languages?.language}
                                 <MdArrowDropDown fontSize={16} />
                             </div>
 
-                            <div tabIndex={0} className='dropdown-content bg-neutral z-[9999] w-32 rounded shadow'>
+                            <div tabIndex={0} className='dropdown-content bg-neutral z-[9999] w-28 rounded shadow'>
                                 <ul>
                                     {languages?.languages?.map((lang, index) => {
                                         return (
                                             <li key={index} className='cursor-pointer'>
                                                 <a
                                                     href={getURL('country', lang?.route, pageInfo)}
-                                                    className={`px-2 py-1 hover:bg-secondary flex items-center gap-2 cursor-pointer ${
+                                                    className={`px-2 py-1 hover:bg-secondary flex items-center gap-2 cursor-pointer text-sm sm:text-base ${
                                                         pageInfo?.country === lang?.route &&
                                                         'bg-secondary pointer-events-none'
                                                     }`}
@@ -48,7 +48,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                     )}
                     {!visibility && (
                         <div className='dropdown'>
-                            <div tabIndex={0} role='button' className='flex gap-1 items-center '>
+                            <div tabIndex={0} role='button' className='flex gap-1 items-center text-sm sm:text-base'>
                                 {currentCountry?.shortname ? (
                                     <Image
                                         src={`/assets/country-flags/${currentCountry?.shortname.toLowerCase()}.svg`}
@@ -63,12 +63,15 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                 {currentCountry?.name || 'Global'}
                                 <MdArrowDropDown fontSize={16} />
                             </div>
-                            <div tabIndex={0} className='dropdown-content bg-neutral z-[9999] w-60 rounded shadow'>
+                            <div
+                                tabIndex={0}
+                                className='dropdown-content bg-neutral z-[9999] md:w-48 max-w-[280px] sm:w-44 w-32 rounded shadow'
+                            >
                                 <ul className='cursor-pointer'>
                                     <li className='cursor-pointer '>
                                         <a
                                             href={getURL('country', 'global', pageInfo)}
-                                            className={`px-2 py-1 hover:bg-secondary flex items-center gap-2 cursor-pointer ${
+                                            className={`px-2 py-1 hover:bg-secondary flex items-center gap-2 cursor-pointer text-sm  ${
                                                 pageInfo?.country === 'global' && 'bg-secondary pointer-events-none'
                                             }`}
                                         >
@@ -88,7 +91,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                                 <li key={index} className='cursor-pointer'>
                                                     <a
                                                         href={getURL('country', cont?.shortname, pageInfo)}
-                                                        className={`px-2 py-1 hover:bg-secondary flex items-center gap-2 cursor-pointer ${
+                                                        className={`px-2 py-1 hover:bg-secondary flex items-center gap-2 cursor-pointer text-sm  ${
                                                             pageInfo?.country === cont?.shortname &&
                                                             'bg-secondary pointer-events-none'
                                                         }`}
@@ -115,15 +118,15 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                         className='text-link flex gap-1 items-center'
                         href={getURL('contact-us', 'contact-us', pageInfo)}
                     >
-                        <MdOutlineCall className='text-2xl sm:text-xl' />
-                        <span className='hidden sm:block'>{componentData?.support}</span>
+                        <MdOutlineCall className='text-md sm:text-base' />
+                        <span className='hidden sm:block text-sm sm:text-base'>{componentData?.support}</span>
                     </Link>
                     <Link
                         className='text-link flex gap-1 items-center'
                         href={process.env.LOGIN_URL || 'https://control.msg91.com/signin/'}
                     >
-                        <MdLogin className='text-2xl sm:text-xl' />
-                        <span className='hidden sm:block'>{componentData?.login}</span>
+                        <MdLogin className='text-md sm:text-base' />
+                        <span className='hidden sm:block text-sm sm:text-base'>{componentData?.login}</span>
                     </Link>
                 </div>
             </div>

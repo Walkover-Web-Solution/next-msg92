@@ -1,12 +1,12 @@
 {
     "common": true,
     "notification": {
-        "support": "Makipag-ugnayan sa Amin",
-        "login": "MAG-LOG IN",
+        "support": "Suporta",
+        "login": "LOG IN",
         "hide": ["signup", "singin"]
     },
     "menu": {
-        "products": "Mga Produkto",
+        "products": "Produkto",
         "products_list": [
             {
                 "name": "Aplikasyon",
@@ -192,7 +192,7 @@
             }
         ],
         "apidocs": "API Docs",
-        "signup_btn": "Mag-sign Up",
+        "signup_btn": "Sign Up",
         "hide": ["signup", "singin"]
     },
     "footer": {
