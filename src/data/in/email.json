@@ -11,7 +11,7 @@
         },
         "tagline": "smarter email strategy",
         "heading": "Turn Emails into Revenue",
-        "subheading": "Grow your business with the #1 email marketing solution and automation platform, built to drive effortless engagement and growth. Whether you need to send promotional email or transactional email, our platform ensures high deliverability and engagement.",
+        "subheading": "Grow your business with the #1 email marketing solution and automation platform, built to drive effortless engagement and growth.",
         "lottie": "/assets/global/email/lotties/banner.json",
         "getstarted_btn": "Get Started"
     },
@@ -521,6 +521,36 @@
                     ]
                 },
                 "img": "/assets/global/email/lotties/effortlessly-manage-incoming-emails-with-a-unified-inbox.json"
+            }
+        ]
+    },
+    "TrustedByComp": {
+        "heading": "Trusted by 30,000+ in businesses",
+        "fullwidth": true,
+        "logos": [
+            {
+                "name": "Razorpay",
+                "url": "/assets/trusted_by/razorpay.svg"
+            },
+            {
+                "name": "Xiaomi",
+                "url": "/assets/trusted_by/xiaomi.svg"
+            },
+            {
+                "name": "Unacademy",
+                "url": "/assets/trusted_by/unacademy.svg"
+            },
+            {
+                "name": "Dream11",
+                "url": "/assets/trusted_by/dream11.svg"
+            },
+            {
+                "name": "Indeed",
+                "url": "/assets/trusted_by/indeed.svg"
+            },
+            {
+                "name": "Ixigo",
+                "url": "/assets/trusted_by/ixigo.svg"
             }
         ]
     },
