@@ -9,10 +9,10 @@
             "name": "Email",
             "icon": "/assets/icons/products/email.svg"
         },
-        "tagline": "Maximize Revenue with Targeted Emails",
+        "tagline": "Smarter email strategy",
         "heading": "Turn Your Email Into Profit",
-        "subheading": "Power your business with the #1 email marketing solution and automation platform, built to drive effortless engagement and growth.",
-        "lottie": "/assets/global/email/lotties/banner.json",
+        "subheading": "Boost your business with the #1 email solution and automation platform, built to drive effortless engagement and growth.",
+        "banner_img": "/assets/global/email/mobile-optimized-email-templates-for-perfect-display.svg",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
@@ -44,49 +44,49 @@
         "iconColor": "text-email",
         "features": [
             {
-                "name": "Mobile-Optimized Email Templates for Perfect Display",
-                "content": "Ensure your emails look great on any device with mobile-optimised templates. Responsive designs adapt to various screen sizes, providing a smooth experience and boosting engagement",
+                "name": "Prevent Email Fraud with DMARC Compliance",
+                "content": "Protect your brand from email spoofing and phishing with DMARC (Domain-based Message Authentication, Reporting & Conformance). Ensure only legitimate emails reach your audience while enhancing security and email deliverability",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "E-Commerce & Promotions",
-                            "description": "Optimise product showcases, discounts, and CTA buttons for mobile shoppers."
+                            "name": "Prevent Email Spoofing & Phishing",
+                            "description": "Protects your website’s domain from being used in fraudulent emails."
                         },
                         {
-                            "name": "Event Invitations & Reminders",
-                            "description": "Deliver well-formatted event updates that users can easily access on the go."
+                            "name": "Enhance Website Security",
+                            "description": "Strengthens domain security by preventing unauthorized email activity."
                         },
                         {
-                            "name": "Transactional Emails",
-                            "description": "Ensure order confirmations, OTPs, and notifications display correctly."
+                            "name": "Improve Transactional Email Deliverability",
+                            "description": "Ensures emails like order confirmations and password resets reach users."
                         },
                         {
-                            "name": "Newsletter & Blog Updates",
-                            "description": "Deliver well-structured content that’s easy to read on mobile screens."
+                            "name": "Gain Visibility on Email Usage",
+                            "description": "Provides reports on email-sending sources linked to your website."
                         },
                         {
-                            "name": "Customer Support & Surveys",
-                            "description": "Ensure feedback forms and support responses are accessible and user-friendly on any device."
+                            "name": "Boost Brand Trust & Reputation",
+                            "description": "Ensures customers receive only legitimate emails from your domain."
                         }
                     ],
                     "features": [
-                        "Templates designed for perfect display across all devices.",
-                        "Automatically adjust the layout to fit different screen sizes.",
-                        "Keep brand elements consistent across devices.",
-                        "Ensure emails are easy to read and navigate on mobile devices.",
-                        "Prioritise mobile responsiveness to enhance user experience and engagement."
+                        "SPF & DKIM Authentication – Ensures emails are sent from authorized servers and remain unaltered.",
+                        "DMARC Policy Control (None, Quarantine, Reject) – Allows gradual enforcement to block fake emails.",
+                        "Detailed Reporting (RUA & RUF) – Provides insights into email authentication and unauthorized usage.",
+                        "Subdomain Protection – Secures all subdomains from misuse in email spoofing.",
+                        "Geo-Location Tracking – Identifies the geographic origin of emails to detect suspicious or unauthorized activity."
                     ]
                 },
                 "img": "/assets/global/email/mobile-optimized-email-templates-for-perfect-display.svg"
             },
             {
                 "name": "Maintain your Domain Reputation with Smart Email Validation",
-                "content": "Maintain a clean and effective email list by validating email addresses before sending campaigns. Removing invalid, fake, or risky addresses ensures higher deliverability and protects your sender reputation.",
+                "content": "Maintain a clean, effective email list by validating email addresses before sending email campaigns. Removing invalid, fake, or risky addresses ensures higher email deliverability and protects your sender reputation.",
                 "more_content": {
                     "usecases": [
                         {
                             "name": "Reduce Bounce Rates",
-                            "description": "Remove invalid or fake email addresses to ensure your emails reach real users."
+                            "description": "Remove invalid or fake email addresses."
                         },
                         {
                             "name": "Increase Deliverability",
@@ -94,22 +94,22 @@
                         },
                         {
                             "name": "Target the Right Audience",
-                            "description": "Engage with valid, active users to maximize campaign effectiveness."
+                            "description": "Engage with valid, active users."
                         },
                         {
                             "name": "Improve Campaign Performance",
-                            "description": "Optimise open rates by sending emails to a high-quality list."
+                            "description": "Optimize open rates by sending to a high-quality list."
                         },
                         {
                             "name": "Protect Sender Reputation",
-                            "description": "Avoid issues with undeliverable emails to maintain a strong sender reputation."
+                            "description": "Avoid issues with undeliverable emails."
                         }
                     ],
                     "features": [
                         "Instantly detect valid, invalid, and risky email addresses.",
                         "Upload and validate large email lists efficiently.",
                         "Remove fake and undeliverable emails before campaigns.",
-                        "Proactively protect your sender reputation.",
+                        "Prevent deliverability issues by ensuring compliance with DMARC, SPF, and DKIM authentication.",
                         "Enhance engagement by sending to a targeted audience."
                     ]
                 },
@@ -117,24 +117,24 @@
             },
             {
                 "name": "Create Stunning Emails in Minutes",
-                "content": "Design beautiful emails effortlessly using our drag-and-drop editor. Personalize every detail, from layouts and colours to fonts, ensuring a perfect match with your brand’s identity. Whether it’s a quick update or an in-depth announcement, our email marketing solution helps you craft polished emails that resonate with your audience and drive seamless engagement.",
+                "content": "Create stunning emails quickly with our drag-and-drop editor. Customize every detail, from layouts and colors to fonts, to perfectly match your brand’s identity. Whether it’s a quick update or an in-depth announcement, , our email solution helps you craft polished emails that connect with your audience and maximize engagement seamlessly.",
                 "more_content": {
                     "usecases": [
                         {
                             "name": "Newsletters",
-                            "description": "Keep your audience updated with regular insights."
+                            "description": "Keep your audience informed with regular updates."
                         },
                         {
-                            "name": "Exclusive Offers",
-                            "description": "Boost sales with personalised offers and discounts."
+                            "name": "Exclusive Deals",
+                            "description": "Drive sales with personalized deals."
                         },
                         {
                             "name": "Product Announcements",
-                            "description": "Keep customers informed about new product launches."
+                            "description": "Update customers on new product launches."
                         },
                         {
                             "name": "Order Updates",
-                            "description": "Provide real-time order and shipping information."
+                            "description": "Provide real-time order and shipping updates."
                         },
                         {
                             "name": "Abandoned Cart Reminders",
@@ -142,23 +142,23 @@
                         }
                     ],
                     "features": [
-                        "Drag-and-drop editor for easy customization.",
-                        "Add buttons, images, and videos for interactive content.",
-                        "Customize colors, fonts, and logos to match your brand identity.",
-                        "Optimized designs for seamless display on all devices.",
-                        "Preview and test compatibility across various devices before sending."
+                        "Drag-and-drop editor, no coding required.",
+                        "Add buttons, images, and videos for richer engagement.",
+                        "Customizable colors, fonts, and logos to match your brand.",
+                        "Optimized designs that display seamlessly on all devices.",
+                        "View previews and test compatibility across devices before sending."
                     ]
                 },
                 "img": "/assets/global/email/lotties/create-stunning-emails-in-minutes.json"
             },
             {
                 "name": "Create conversion-driving AMP emails in minutes.",
-                "content": "Enhance your email marketing strategy with AMP technology. Create interactive and engaging experiences right within the email inbox. Add dynamic elements like carousels, forms, and real-time content to attract your audience and drive better conversion rates. AMP-enabled email solutions offer seamless interactions without requiring users to leave their inbox.",
+                "content": "Elevate your email strategy with AMP technology. Create interactive and engaging experiences right within the email inbox. Add dynamic elements like product carousels, forms, and real-time content to attract your audience and drive better conversion rates. AMP-enabled email solutions offer seamless interactions without requiring users to leave their inbox.",
                 "more_content": {
                     "usecases": [
                         {
                             "name": "Product Carousels",
-                            "description": "Showcase multiple products in a single email for an interactive shopping experience."
+                            "description": "Present multiple products in one email for an interactive shopping experience."
                         },
                         {
                             "name": "Forms & Surveys",
@@ -166,30 +166,30 @@
                         },
                         {
                             "name": "Real-Time Content",
-                            "description": "Keep your emails updated with live information, such as inventory or pricing."
+                            "description": "Keep your emails up-to-date with live information like inventory or pricing."
                         },
                         {
                             "name": "Event Registrations",
-                            "description": "Enable users to register for events directly from the email."
+                            "description": "Let users register for events directly from the email."
                         },
                         {
                             "name": "Polls & Voting",
-                            "description": "Engage your audience with interactive polls and voting features."
+                            "description": "Engage users with interactive polls and voting features."
                         }
                     ],
                     "features": [
                         "Dynamic elements like carousels, forms, and live updates.",
-                        "Allow recipients to take action without leaving the inbox.",
+                        "Allow recipients to take actions without leaving the inbox.",
                         "Stand out in crowded inboxes with rich, interactive content.",
-                        "Drive conversions with seamless and engaging email experiences.",
-                        "Fully optimised for both mobile and desktop devices."
+                        "Increase conversions with seamless and engaging email experiences.",
+                        "Fully optimized for mobile and desktop devices."
                     ]
                 },
                 "img": "/assets/global/email/lotties/create-conversion-driving-amp-emails-in-minutes.json"
             },
             {
                 "name": "Send Email Campaigns Faster with Pre-Designed Templates",
-                "content": "Save time and boost engagement with professionally designed promotional & transactional email templates. Choose from a variety of layouts for newsletters, promotions, and transactional emails using the MSG91 Email Template Library.",
+                "content": "Save time and boost engagement with professionally designed email templates. Choose from a variety of layouts for newsletters and transactional emails using the MSG91 Email Template Library.",
                 "more_content": {
                     "usecases": [
                         {
@@ -198,7 +198,7 @@
                         },
                         {
                             "name": "Event Invitations",
-                            "description": "Professionally designed templates for event promotions."
+                            "description": "Professionally designed templates for events."
                         },
                         {
                             "name": "Customer Support",
@@ -215,10 +215,10 @@
                     ],
                     "features": [
                         "Professionally designed, mobile-responsive templates for any use case.",
-                        "Drag-and-drop customisation – no coding required.",
-                        "Pre-built templates for promotions, newsletters, and transactional emails.",
+                        "Drag-and-drop customization—no coding required.",
+                        "Pre-built templates for newsletters, and transactional emails.",
                         "Save time with pre-tested, high-converting designs.",
-                        "Instantly test, optimise, and schedule campaigns with ease."
+                        "Instantly test, optimize, and schedule campaigns effortlessly."
                     ]
                 },
                 "img": "/assets/global/email/send-email-campaigns-faster-with-pre-designed-templates.svg"
@@ -234,34 +234,34 @@
                         },
                         {
                             "name": "Abandoned Cart Reminders",
-                            "description": "Send follow-up emails to encourage users to complete their purchase."
+                            "description": "Send follow-up emails encouraging users to complete their purchase."
                         },
                         {
                             "name": "Order Confirmations",
-                            "description": "Immediately send receipts and order details after a purchase."
+                            "description": "Send receipts and order details immediately after purchase."
                         },
                         {
                             "name": "Shipping & Delivery Alerts",
-                            "description": "Keep customers informed about order dispatch, tracking, and delivery status."
+                            "description": "Notify customers about order dispatch, tracking, and delivery status."
                         },
                         {
                             "name": "Refund & Return Updates",
-                            "description": "Notify users about refund processing, return approvals, and status updates."
+                            "description": "Inform users about refund processing, return approvals, and status updates."
                         }
                     ],
                     "features": [
-                        "High-speed delivery to ensure time-sensitive emails reach users instantly.",
+                        "High-speed delivery to ensure time-sensitive emails reach instantly.",
                         "API integration for seamless automation and real-time email triggers.",
                         "Scalable to handle high-volume transactional emails effortlessly.",
-                        "Advanced deliverability features to maximise inbox placement.",
-                        "Real-time tracking and analytics to monitor email performance."
+                        "Advanced deliverability with DMARC, SPF, and DKIM authentication to maximize inbox placement and prevent spoofing.",
+                        "Real-time tracking and analytics for monitoring email performance."
                     ]
                 },
                 "img": "/assets/global/email/transactional-email-api-deliver-critical-emails-instantly.svg"
             },
             {
                 "name": "Seamless Integration with Gmail & Outlook",
-                "content": "Integrate effortlessly with Gmail and Outlook using MSG91’s Email Service. Send transactional emails, OTPs, notifications, and bulk campaigns - all from a single platform, ensuring instant deliverability, scalability, and detailed tracking without additional software",
+                "content": "Integrate effortlessly with Gmail and Outlook using MSG91’s Email Service. Send transactional emails, OTPs, notifications, and bulk campaigns - all from a single platform, ensuring instant deliverability, scalability, and detailed tracking without additional software.",
                 "more_content": {
                     "usecases": [
                         {
@@ -269,7 +269,7 @@
                             "description": "Automate order confirmations, OTPs, and notifications via your existing email provider."
                         },
                         {
-                            "name": "Marketing Campaigns",
+                            "name": "Targeted Campaigns",
                             "description": "Design engaging templates and send bulk emails to registered audiences with instant deliverability."
                         },
                         {
@@ -301,8 +301,8 @@
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "Personalised Email Marketing",
-                            "description": "Send targeted campaigns based on customer interests and behaviour."
+                            "name": "Personalized Email",
+                            "description": "Send targeted campaigns based on customer interests and behavior."
                         },
                         {
                             "name": "Re-Engagement Campaigns",
@@ -318,27 +318,27 @@
                         },
                         {
                             "name": "A/B Testing",
-                            "description": "Test subject lines, content, and designs to optimise email performance."
+                            "description": "Test subject lines, content, and designs to optimize email performance."
                         }
                     ],
                     "features": [
-                        "Create precise segments based on user behaviour, demographics, and engagement.",
+                        "Create precise segments based on user behavior, demographics, and engagement.",
                         "Set up trigger-based emails for signups, purchases, and abandoned carts.",
-                        "Optimise performance with real-time data, smart scheduling, and campaign insights.",
-                        "Deliver dynamic, tailored content for higher engagement.",
-                        "Connect with CRMs, APIs, and multi-channel platforms for a unified marketing approach."
+                        "Optimize performance with real-time data, smart scheduling, and campaign insights.",
+                        "Ensure campaign emails comply with DMARC authentication to improve inbox placement and prevent phishing risks.",
+                        "Connect with CRMs, APIs, and multi-channel platforms for a unified approach."
                     ]
                 },
                 "img": "/assets/global/email/target-the-right-audience-and-run-email-campaigns-effortlessly.svg"
             },
             {
                 "name": "Detailed Analytics: Track Delivered, Open, and Click Reports",
-                "content": "Gain actionable insights with real-time analytics. Monitor delivery rates, open rates, click-through rates, and conversions to optimise your campaigns effectively.",
+                "content": "Gain actionable insights with real-time analytics. Monitor delivery rates, open rates, click-through rates, and conversions to optimize your email campaigns effectively.",
                 "more_content": {
                     "usecases": [
                         {
                             "name": "Campaign Performance Tracking",
-                            "description": "Analyse email effectiveness with comprehensive reports."
+                            "description": "Analyze email effectiveness with comprehensive reports."
                         },
                         {
                             "name": "A/B Testing Insights",
@@ -346,7 +346,7 @@
                         },
                         {
                             "name": "User Engagement Analysis",
-                            "description": "Track interactions to optimise future campaigns."
+                            "description": "Track interactions to optimize future campaigns."
                         },
                         {
                             "name": "Deliverability Monitoring",
@@ -359,9 +359,9 @@
                     ],
                     "features": [
                         "Access an advanced analytics dashboard for deep, data-driven decision-making.",
-                        "Gain deliverability insights to understand email performance and overall engagement.",
+                        "Gain deliverability insights with DMARC, SPF, and DKIM authentication to improve inbox placement and prevent spoofing.",
                         "Track real-time performance metrics like delivered, opens, clicks, and conversions instantly.",
-                        "Analyse click-through rates to measure email offer success.",
+                        "Analyze click-through rates to measure email success.",
                         "Export campaign analytics with a custom date range for precise audience targeting."
                     ]
                 },
@@ -381,8 +381,8 @@
                             "description": "Block invalid or bounced addresses to ensure emails reach active recipients."
                         },
                         {
-                            "name": "Protect Sender Reputation",
-                            "description": "Maintain a clean email list to avoid blacklisting and spam filters."
+                            "name": "Enhance Sender Reputation",
+                            "description": "Enhance sender reputation by aligning with DMARC policies to prevent unauthorized email usage."
                         },
                         {
                             "name": "Save Costs on Campaigns",
@@ -405,7 +405,7 @@
             },
             {
                 "name": "Send Emails at Optimal Times with Country-Based Scheduling",
-                "content": "Maximise open rates and engagement by sending emails based on the recipient’s local time zone. Automated time-zone-based scheduling ensures emails reach recipients when they are most likely to engage.",
+                "content": "Maximize open rates and engagement by sending emails based on the recipient’s local time zone. Automated time-zone-based scheduling ensures emails reach recipients when they are most likely to engage.",
                 "more_content": {
                     "usecases": [
                         {
@@ -422,11 +422,11 @@
                         },
                         {
                             "name": "Global Campaigns",
-                            "description": "Optimise send times for recipients across different time zones."
+                            "description": "Optimize send times for recipients across different time zones."
                         },
                         {
-                            "name": "Time-Sensitive Offers",
-                            "description": "Send offers at peak times for better action rates."
+                            "name": "Time-Sensitive Deals",
+                            "description": "Send at peak times for better action rates."
                         }
                     ],
                     "features": [
@@ -434,7 +434,7 @@
                         "Ensures emails reach users when they are most likely to engage.",
                         "Schedule and send emails seamlessly across multiple time zones.",
                         "Set up campaigns once, and emails are sent at the right local time.",
-                        "Boost engagement by delivering emails at the optimal moment"
+                        "Boost engagement by delivering emails at the optimal moment."
                     ]
                 },
                 "img": "/assets/global/email/send-emails-at-optimal-times-with-country-based-scheduling.svg"
@@ -445,7 +445,7 @@
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "Subject Line Optimisation",
+                            "name": "Subject Line Optimization",
                             "description": "Test different subject lines to determine which one gets higher open rates."
                         },
                         {
@@ -453,16 +453,16 @@
                             "description": "Experiment with different text, images, or CTAs to improve engagement."
                         },
                         {
-                            "name": "Personalisation vs. Generic Messaging",
-                            "description": "Compare personalised emails against standard ones to measure impact."
+                            "name": "Personalization vs. Generic Messaging",
+                            "description": "Compare personalized emails against standard ones to measure impact."
                         },
                         {
                             "name": "Email Design & Layout",
                             "description": "Compare single-column vs. multi-column layouts or dark mode vs. light mode designs."
                         },
                         {
-                            "name": "Offer & Discount Testing",
-                            "description": "Test different promotional offers to see which drives higher sales."
+                            "name": "Performance Testing",
+                            "description": "Analyze different options to see what drives higher sales."
                         }
                     ],
                     "features": [
@@ -470,7 +470,7 @@
                         "Compare different email variations to identify the most effective version.",
                         "Leverage past A/B test results to refine future campaigns.",
                         "Control how long the test runs and what percentage of recipients receive each variation.",
-                        "Monitor key metrics such as open rates, CTR, and conversions to analyse test results instantly."
+                        "Monitor key metrics such as open rates, CTR, and conversions to analyze test results instantly."
                     ]
                 },
                 "img": "/assets/global/email/boost-performance-with-ab-testing-for-emails.svg"
@@ -505,19 +505,19 @@
                         "Get real-time alerts for bounces and spam complaints to protect email deliverability.",
                         "Instantly detect unsubscribes to update lists and avoid sending unwanted emails.",
                         "Ensure domain security with continuous monitoring of SPF, DKIM, and DMARC records.",
-                        "Easily connect with CRMs, customer support platforms, and email marketing automation tools.",
+                        "Easily connect with CRMs, customer support platforms, and email automation tools.",
                         "Receive incoming emails on a specific URL and trigger actions accordingly."
                     ]
                 },
                 "img": "/assets/global/email/webhooks-for-delivery-reports-incoming-emails-and-domain-status.svg"
             },
             {
-                "name": "Effortlessly Manage Incoming Emails with a Unified Inbox.",
-                "content": "Effortlessly manage incoming emails, collaborate with your team, and respond faster, all from a single, organised inbox.",
+                "name": " Effortlessly Manage Incoming Emails with a Unified Inbox.",
+                "content": "Effortlessly manage incoming emails, collaborate with your team, and respond faster, all from a single, organized inbox.",
                 "more_content": {
                     "usecases": [
                         {
-                            "name": "Centralised Email Management",
+                            "name": "Centralized Email Management",
                             "description": "Handle all customer emails from one inbox."
                         },
                         {
@@ -533,14 +533,14 @@
                             "description": "Route emails to the right team members instantly."
                         },
                         {
-                            "name": "Categorised Conversations",
-                            "description": "Organise emails by priority, status, or department for better efficiency."
+                            "name": "Categorized Conversations",
+                            "description": "Organize emails by priority, status, or department for better efficiency."
                         }
                     ],
                     "features": [
                         "Unified inbox to manage emails from multiple accounts in one place.",
-                        "Effortlessly assign emails for seamless team collaboration.",
-                        "Dedicated Android/IOS app to efficiently manage and respond to incoming queries.",
+                        "Effortlessly Assign emails for seamless team collaboration.",
+                        "Dedicated Android/IOS App to Efficiently Manage and Respond to Incoming Queries",
                         "Real-time notifications to never miss an important message.",
                         "Response analytics to track team performance and email resolution times."
                     ]
@@ -573,7 +573,6 @@
     "PreFooterComp": {
         "content": "Millions of Users trust us with our Email Solution, You can too.",
         "buttons": {
-        
             "salesModal": {
                 "text": "Contact sales",
                 "link": "https://calendly.com/bison-msg91/30min?month=2025-02"

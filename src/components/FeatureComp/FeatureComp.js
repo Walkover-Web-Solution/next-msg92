@@ -104,7 +104,7 @@ export default function FeatureComp({ data, pageInfo }) {
                                                 >
                                                     <MoreButton
                                                         open={openedFeatures.includes(index)}
-                                                        content={'Read More'}
+                                                        content={data?.read_more || 'Read More'}
                                                     />
                                                 </div>{' '}
                                             </>
