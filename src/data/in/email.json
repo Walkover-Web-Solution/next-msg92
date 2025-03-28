@@ -45,14 +45,14 @@
                         }
                     ],
                     "features": [
-                        "SPF & DKIM Authentication – Ensures emails are sent from authorized servers and remain unaltered.",
+                        "SPF & DKIM Authentication – Ensures emails are sent from authorized servers .",
                         "DMARC Policy Control (None, Quarantine, Reject) – Allows gradual enforcement to block fake emails.",
-                        "Detailed Reporting (RUA & RUF) – Provides insights into email authentication and unauthorized usage.",
+                        "Detailed Reporting  – Provides insights into email authentication and unauthorized usage.",
                         "Subdomain Protection – Secures all subdomains from misuse in email spoofing.",
                         "Geo-Location Tracking – Identifies the geographic origin of emails to detect suspicious or unauthorized activity."
                     ]
                 },
-                "img": "/assets/global/email/mobile-optimized-email-templates-for-perfect-display.svg"
+                "img": "/assets/global/email/prevent-email-fraud-with-dmarc-compliance.svg"
             },
             {
                 "name": "Maintain your Domain Reputation with Smart Email Validation",
@@ -272,7 +272,7 @@
             },
             {
                 "name": "Target the Right Audience & Run Email Campaigns Effortlessly",
-                "content": "Reach the right audience with the right email using advanced segmentation and marketing email automation. Deliver personalized emails that drive engagement and conversions seamlessly.",
+                "content": "Reach the right audience with the right email using advanced segmentation and email automation. Deliver personalized emails that drive engagement and conversions seamlessly.",
                 "more_content": {
                     "usecases": [
                         {
@@ -416,7 +416,7 @@
             },
             {
                 "name": "Boost Performance with A/B Testing for Emails",
-                "content": "Optimize your email marketing campaigns by running A/B tests on different email elements. Test subject lines, content variations, and designs to see what works best for your audience and improve your email performance.",
+                "content": "Optimize your email campaigns by running A/B tests on different email elements. Test subject lines, content variations, and designs to see what works best for your audience and improve your email performance.",
                 "more_content": {
                     "usecases": [
                         {
