@@ -147,10 +147,21 @@ export default function BannerComp({ pageInfo, data }) {
                         )}
                     </div>
                 </div>
-                {!data?.code && data?.banner_img && (
+                {!data?.code && data?.banner_img && !data?.not_absolute && (
                     <div className={styles.cont}>
                         <Image
                             className={pageInfo?.page === 'home' ? styles.homeimg : styles.img}
+                            src={data?.banner_img}
+                            width={2000}
+                            height={2000}
+                            alt={data?.tagline}
+                        />
+                    </div>
+                )}
+                {!data?.code && data?.banner_img && data?.not_absolute && (
+                    <div className='lg:w-1/2'>
+                        <Image
+                            className='w-full'
                             src={data?.banner_img}
                             width={2000}
                             height={2000}
