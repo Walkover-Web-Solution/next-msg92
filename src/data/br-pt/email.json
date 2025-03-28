@@ -11,7 +11,7 @@
         },
         "tagline": "estratégia de email mais inteligente",
         "heading": "Transforme E-mails em Receita",
-        "subheading": "Expanda seus negócios com a solução de marketing por e-mail e plataforma de automação nº 1, desenvolvida para gerar engajamento e crescimento sem esforço.",
+        "subheading": "Expanda seus negócios com a solução de por e-mail e plataforma de automação nº 1, desenvolvida para gerar engajamento e crescimento sem esforço.",
         "banner_img": "/assets/brpt/email/mobile-optimized-email-templates-for-perfect-display.svg",
         "getstarted_btn": "Comece Agora |",
         "trustedByComp": {
@@ -72,14 +72,14 @@
                         }
                     ],
                     "features": [
-                        "Autenticação SPF & DKIM – Garante que os e-mails sejam enviados de servidores autorizados e permaneçam inalterados.",
+                        "SPF at DKIM Authentication – Tinitiyak na ang mga email ay ipinapadala mula sa mga awtorisadong server",
                         "Controle de Política DMARC (Nenhum, Quarentena, Rejeitar) – Permite a aplicação gradual para bloquear e-mails falsos.",
-                        "Relatórios Detalhados (RUA & RUF) – Fornece insights sobre autenticação de e-mails e uso não autorizado.",
+                        "Relatórios Detalhados  – Fornece insights sobre autenticação de e-mails e uso não autorizado.",
                         "Proteção de Subdomínios – Protege todos os subdomínios contra uso indevido em falsificação de e-mails.",
                         "Rastreamento de Geolocalização – Identifica a origem geográfica dos e-mails para detectar atividades suspeitas ou não autorizadas."
                     ]
                 },
-                "img": "/assets/brpt/email/mobile-optimized-email-templates-for-perfect-display.svg"
+                "img": "/assets/brpt/email/prevent-email-fraud-with-dmarc-compliance.svg"
             },
             {
                 "name": "Mantenha a Reputação do Seu Domínio com Validação Inteligente de E-mails",
@@ -298,7 +298,7 @@
             },
             {
                 "name": "Alcance o Público Certo & Execute Campanhas de E-mail com Facilidade",
-                "content": "Alcance o público certo com o e-mail certo usando segmentação avançada e automação de marketing por e-mail. Envie e-mails personalizados que impulsionam o engajamento e as conversões de forma fluida.",
+                "content": "Alcance o público certo com o e-mail certo usando segmentação avançada e automação de e-mail. Entregue e-mails personalizados que impulsionam engajamento e conversões perfeitamente.",
                 "more_content": {
                     "usecases": [
                         {
