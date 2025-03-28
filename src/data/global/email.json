@@ -9,10 +9,9 @@
             "name": "Email API ",
             "icon": "/assets/icons/products/email.svg"
         },
-
         "tagline": " smarter email strategy",
         "heading": "Maximize Revenue with Targeted Emails",
-        "subheading":  "Transform your business with the No.1 email marketing solution and automation platform, designed for seamless interaction and growth.",
+        "subheading": "Transform your business with the best email marketing solution and automation platform, designed for seamless interaction and growth.",
         "lottie": "/assets/global/email/lotties/banner.json",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
@@ -578,7 +577,6 @@
     "PreFooterComp": {
         "content": "Millions of Users trust us with our Email Solution, You can too.",
         "buttons": {
-        
             "salesModal": {
                 "text": "Contact sales",
                 "link": "https://calendly.com/bison-msg91/30min?month=2025-02"
