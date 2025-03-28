@@ -13,6 +13,7 @@
         "heading": "Unlock Revenue with Every Email",
         "subheading": "Transform your business with the best email solution and automation platform, designed for seamless interaction and growth. ",
         "banner_img": "/assets/global/email/mobile-optimized-email-templates-for-perfect-display.svg",
+        "not_absolute":true,
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",

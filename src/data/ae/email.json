@@ -13,6 +13,7 @@
         "heading": "Maximize Revenue with Targeted Emails",
         "subheading": "Boost your business with the #1 email solution and automation platform, built to drive effortless engagement and growth. ",
         "banner_img": "/assets/global/email/mobile-optimized-email-templates-for-perfect-display.svg",
+        "not_absolute":true,
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
