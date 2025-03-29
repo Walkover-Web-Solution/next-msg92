@@ -39,6 +39,8 @@ import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/Case
 import ChatBotDemoComp from '@/components/ChatBotDemoComp/ChatBotDemoComp';
 import AsSeenComp from '@/components/AsSeenComp/AsSeenComp';
 import ProductStatsComp from '@/components/ProductStatsComp/ProductStatsComp';
+import CompareBannerComp from '@/components/compareComp/compareBannerComp';
+import CompareGridComp from '@/components/compareComp/compareGridComp/compareGridComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -85,6 +87,8 @@ const Components = {
     ChatBotDemoComp,
     AsSeenComp,
     ProductStatsComp,
+    CompareBannerComp,
+    CompareGridComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

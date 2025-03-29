@@ -1,0 +1,29 @@
+{
+    "HeadComp": {
+        "title": "MSG91 - Our team, culture and happy clients.",
+        "description": "Empowering developers with communication APIs. Building modern communication tools and supporting ideas for startups and enterprises globally."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs Twilio",
+        "subheading": "MSG91 and Twilio are two leading communication platforms offering SMS, WhatsApp, and omnichannel messaging solutions. While both provide robust APIs and automation capabilities, their pricing, ease of integration, and customer-centric features cater to different business needs.",
+        "img": "/assets/compare/twilio/twilio-icon.svg",
+        "color":"#F22F46"
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
