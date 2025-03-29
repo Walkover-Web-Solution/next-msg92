@@ -10,10 +10,10 @@
             "icon": "/assets/icons/products/email.svg"
         },
         "tagline": "estratégia de email mais inteligente",
-        "heading": "Transforme E-mails em Receita",
-        "subheading": "Expanda seus negócios com a solução de por e-mail e plataforma de automação nº 1, desenvolvida para gerar engajamento e crescimento sem esforço.",
+        "heading": "Entregue e-mails seguros e instantâneos",
+        "subheading": "Garanta que todas as mensagens cheguem aos seus clientes no prazo com a plataforma de automação de e-mail número 1: rápida, confiável e criada para transações perfeitas.",
         "banner_img": "/assets/brpt/email/mobile-optimized-email-templates-for-perfect-display.svg",
-        "not_absolute":true,
+        "not_absolute": true,
         "getstarted_btn": "Comece Agora |",
         "trustedByComp": {
             "heading": "Confiado por mais de 30.000 empresas ao redor do mundo",
@@ -44,7 +44,7 @@
     "FeatureComp": {
         "heading": "Envie e-mails de alta conversão com recursos avançados",
         "iconColor": "text-email",
-        "read_more":"Magbasa pa",
+        "read_more": "Magbasa pa",
         "features": [
             {
                 "name": "Prevenir Fraude de E-mail com Conformidade DMARC",
@@ -189,7 +189,8 @@
                     ]
                 },
                 "img": "/assets/brpt/email/lotties/create-conversion-driving-amp-emails-in-minutes.json"
-            },    {
+            },
+            {
                 "name": "Envie Campanhas de E-mail Mais Rápido com Modelos Pré-Projetados",
                 "content": "Economize tempo e aumente o engajamento com modelos de e-mail projetados profissionalmente. Escolha entre uma variedade de layouts para newsletters e e-mails transacionais usando a Biblioteca de Modelos de E-mail da MSG91.",
                 "more_content": {

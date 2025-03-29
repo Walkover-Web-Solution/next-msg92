@@ -10,10 +10,10 @@
             "icon": "/assets/icons/products/email.svg"
         },
         "tagline": "Smarter email strategy",
-        "heading": "Turn Your Email Into Profit",
-        "subheading": "Boost your business with the #1 email solution and automation platform, built to drive effortless engagement and growth.",
+        "heading": "Send Emails Securely and Instantly",
+        "subheading": "Guarantee timely delivery with the leading email automation platform - fast, reliable, and designed for seamless transactions",
         "banner_img": "/assets/global/email/mobile-optimized-email-templates-for-perfect-display.svg",
-        "not_absolute":true,
+        "not_absolute": true,
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
