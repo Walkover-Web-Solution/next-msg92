@@ -1,0 +1,64 @@
+{
+    "HeadComp": {
+        "title": "MSG91 - Our team, culture and happy clients.",
+        "description": "Empowering developers with communication APIs. Building modern communication tools and supporting ideas for startups and enterprises globally."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs Twilio",
+        "subheading": "MSG91 and Twilio are two leading communication platforms offering SMS, WhatsApp, and omnichannel messaging solutions. While both provide robust APIs and automation capabilities, their pricing, ease of integration, and customer-centric features cater to different business needs",
+        "img": "/assets/compare/twilio/twilio-icon.svg",
+        "color": "#F22F46"
+    },
+    "CompareTableComp": {
+        "heading": "Comparison Summary: MSG91 vs Twilio",
+        "name": "Twilio",
+        "img": "/assets/compare/twilio/twilio-logo.svg",
+        "content": [
+            {
+                "name": "MSG91",
+                "des": "MSG91 is a powerful communication platform designed for businesses looking for cost-effective, scalable, and highly reliable messaging solutions. Unlike Twilio, MSG91 offers localized pricing, premium customer support, and advanced automation features like WhatsApp Flows, AI-driven customer journey creation, and omnichannel messaging. Its seamless integrations and affordability make it the preferred choice for businesses looking to enhance customer engagement while keeping costs low."
+            },
+            {
+                "name": "Twilio",
+                "des": "Twilio is a cloud communication platform offering various APIs for messaging, voice, and video. It is widely used by enterprises needing global reach, but its pricing can be complex, and customer support often lacks personalized assistance."
+            }
+        ],
+        "features": {
+            "pricing": "Pay-as-you-go, variable rates",
+            "broadcasting": "Available but limited based on policies",
+            "multi_agent_support": "Yes",
+            "omnichannel_support": "WhatsApp and SMS",
+            "ai_chatbot_integration": "Yes, supports chatbot integration",
+            "no_code_automation": "No native no-code solution",
+            "developer_specific_bots": "No specific developer-focused bot",
+            "crm_integration": "API-based CRM integrations",
+            "whatsapp_payments": "No native payment integration",
+            "payment_links": "No payment link feature",
+            "whatsapp_carousels": "Yes carousel support",
+            "customer_journey_creation": "No journey creation feature",
+            "client_segmentation": "No segmentation tool",
+            "integration_and_plugins": "API-based integrations only",
+            "affordability": "Medium cost with additional charges",
+            "click_to_whatsapp_use_case_journeys": "No predefined journeys",
+            "otp_widget": "Offers OTP verification through SMS and Voice only.",
+            "one_click_verification": "No"
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
