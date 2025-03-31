@@ -1,7 +1,7 @@
 {
     "msg91": {
         "pricing": "Zero margin on Meta pricing, cost-effective for all businesses",
-        "bulk_messaging": "Supports unlimited bulk messaging",
+        "broadcasting": "Supports unlimited bulk messaging",
         "multi_agent_support": "Yes, allows seamless handling of multiple agents",
         "omnichannel_support": "Full omnichannel solution with Email, SMS, Voice, and WhatsApp",
         "ai_chatbot_integration": "Yes, advanced AI chatbot with automation",
@@ -21,7 +21,7 @@
     },
     "twilio": {
         "pricing": "Pay-as-you-go, variable rates",
-        "bulk_messaging": "Available but limited based on policies",
+        "broadcasting": "Available but limited based on policies",
         "multi_agent_support": "Yes",
         "omnichannel_support": "WhatsApp and SMS",
         "ai_chatbot_integration": "Yes, supports chatbot integration",
@@ -42,7 +42,7 @@
 
     "wati": {
         "pricing": "Monthly subscription model",
-        "bulk_messaging": "Limited bulk messaging support",
+        "broadcasting": "Limited bulk messaging support",
         "multi_agent_support": "Yes",
         "omnichannel_support": "WhatsApp and Email",
         "ai_chatbot_integration": "Limited AI bot capabilities",
@@ -62,7 +62,7 @@
     },
     "gallabox": {
         "pricing": "Custom pricing based on usage",
-        "bulk_messaging": "Supports bulk messaging",
+        "broadcasting": "Supports bulk messaging",
         "multi_agent_support": "Yes",
         "omnichannel_support": "WhatsApp only",
         "ai_chatbot_integration": "AI chatbot available",
@@ -82,7 +82,7 @@
     },
     "doubletick": {
         "pricing": "Pricing not disclosed publicly",
-        "bulk_messaging": "Supports broadcasting",
+        "broadcasting": "Supports broadcasting",
         "multi_agent_support": "Yes",
         "omnichannel_support": "WhatsApp only",
         "ai_chatbot_integration": "Basic chatbot capabilities",
@@ -102,7 +102,7 @@
     },
     "yellow_ai": {
         "pricing": "Volume-based pricing, suitable for enterprises",
-        "bulk_messaging": "AI-driven bulk messaging",
+        "broadcasting": "AI-driven bulk messaging",
         "multi_agent_support": "Yes",
         "omnichannel_support": "WhatsApp, AI Chat, and SMS",
         "ai_chatbot_integration": "AI-powered chatbot automation",
@@ -122,7 +122,7 @@
     },
     "gupshup": {
         "pricing": "Competitive rates with API access",
-        "bulk_messaging": "Available with advanced segmentation",
+        "broadcasting": "Available with advanced segmentation",
         "multi_agent_support": "Yes",
         "omnichannel_support": "Full omnichannel solution",
         "ai_chatbot_integration": "AI-based chatbot support",
@@ -142,7 +142,7 @@
     },
     "infobip": {
         "pricing": "Custom pricing based on enterprise needs",
-        "bulk_messaging": "Limited bulk messaging support",
+        "broadcasting": "Limited bulk messaging support",
         "multi_agent_support": "Yes",
         "omnichannel_support": "Multi-channel support including WhatsApp",
         "ai_chatbot_integration": "AI-driven automation",
@@ -162,7 +162,7 @@
     },
     "360_dialog": {
         "pricing": "Competitive pricing with multiple plans",
-        "bulk_messaging": "Supports broadcasts",
+        "broadcasting": "Supports broadcasts",
         "multi_agent_support": "Yes",
         "omnichannel_support": "Multi-channel including WhatsApp",
         "ai_chatbot_integration": "Supports AI chatbot",
@@ -182,7 +182,7 @@
     },
     "kaleyra": {
         "pricing": "Enterprise-focused pricing",
-        "bulk_messaging": "Supports bulk campaigns",
+        "broadcasting": "Supports bulk campaigns",
         "multi_agent_support": "Yes",
         "omnichannel_support": "Omnichannel enterprise solution",
         "ai_chatbot_integration": "AI chatbot available",
@@ -202,7 +202,7 @@
     },
     "cm_com": {
         "pricing": "Custom pricing per business",
-        "bulk_messaging": "Available with campaign tracking",
+        "broadcasting": "Available with campaign tracking",
         "multi_agent_support": "Yes",
         "omnichannel_support": "WhatsApp and SMS",
         "ai_chatbot_integration": "AI-powered automation",
@@ -222,7 +222,7 @@
     },
     "aisensy": {
         "pricing": "SAAS model with multiple plans",
-        "bulk_messaging": "Available with user segmentation",
+        "broadcasting": "Available with user segmentation",
         "multi_agent_support": "Yes",
         "omnichannel_support": "WhatsApp only",
         "ai_chatbot_integration": "Supports chatbot features",
@@ -242,7 +242,7 @@
     },
     "sendinblue": {
         "pricing": "Freemium model with basic features",
-        "bulk_messaging": "Available with automation",
+        "broadcasting": "Available with automation",
         "multi_agent_support": "Yes",
         "omnichannel_support": "WhatsApp only",
         "ai_chatbot_integration": "AI-driven chatbot capabilities",
@@ -262,7 +262,7 @@
     },
     "messagebird": {
         "pricing": "API-based pricing",
-        "bulk_messaging": "Available with AI-driven insights",
+        "broadcasting": "Available with AI-driven insights",
         "multi_agent_support": "Yes",
         "omnichannel_support": "Multi-channel API solution",
         "ai_chatbot_integration": "AI chatbot integration",
@@ -282,7 +282,7 @@
     },
     "tyntec": {
         "pricing": "Per message pricing",
-        "bulk_messaging": "Available with compliance checks",
+        "broadcasting": "Available with compliance checks",
         "multi_agent_support": "Yes",
         "omnichannel_support": "Multi-channel solution",
         "ai_chatbot_integration": "AI-based automation",
@@ -302,7 +302,7 @@
     },
     "clickatell": {
         "pricing": "Enterprise plans, suitable for large-scale businesses",
-        "bulk_messaging": "Available with audience targeting",
+        "broadcasting": "Available with audience targeting",
         "multi_agent_support": "Yes",
         "omnichannel_support": "Full omnichannel stack",
         "ai_chatbot_integration": "AI-powered automation",
@@ -322,7 +322,7 @@
     },
     "unifonic": {
         "pricing": "Scalable pricing based on volume",
-        "bulk_messaging": "Available with personalization",
+        "broadcasting": "Available with personalization",
         "multi_agent_support": "Yes",
         "omnichannel_support": "Multi-channel business messaging",
         "ai_chatbot_integration": "AI-based chatbot",
@@ -342,7 +342,7 @@
     },
     "vonage": {
         "pricing": "Pay-as-you-go model",
-        "bulk_messaging": "Available with analytics",
+        "broadcasting": "Available with analytics",
         "multi_agent_support": "Yes",
         "omnichannel_support": "Multi-channel messaging",
         "ai_chatbot_integration": "AI chatbot with advanced NLP",
@@ -362,7 +362,7 @@
     },
     "plivo": {
         "pricing": "Volume-based pricing with discounts",
-        "bulk_messaging": "Available with custom audience targeting",
+        "broadcasting": "Available with custom audience targeting",
         "multi_agent_support": "Yes",
         "omnichannel_support": "Multi-channel support with AI capabilities",
         "ai_chatbot_integration": "AI chatbot with API integration",
@@ -382,7 +382,7 @@
     },
     "sinch": {
         "pricing": "Bulk pricing for high-volume usage",
-        "bulk_messaging": "Supports large-scale messaging campaigns",
+        "broadcasting": "Supports large-scale messaging campaigns",
         "multi_agent_support": "Yes",
         "omnichannel_support": "Multi-channel API services",
         "ai_chatbot_integration": "AI-driven customer interaction",

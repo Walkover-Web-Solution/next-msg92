@@ -3,13 +3,13 @@ import Image from 'next/image';
 export default function CompareTableComp({ data }) {
     return (
         <div className='container cont cont_p gap-12'>
-            <div className=' cont_gap'>
+            <div className='cont gap-4'>
                 <h2 className='md:text-3xl text-2xl font-bold'>{data?.heading}</h2>
-                <di className='cont gap-2'>
+                <di className='cont gap-1'>
                     {data?.content?.map((comp, index) => {
                         return (
                             <p key={index} className='md:text-lg text-base'>
-                                <strong>{comp?.name} -</strong> {comp?.des}
+                                {comp?.des}
                             </p>
                         );
                     })}
@@ -35,7 +35,7 @@ export default function CompareTableComp({ data }) {
                                     className='px-auto md:h-7 h-5'
                                     width={360}
                                     height={360}
-                                    alt='MSG91'
+                                    alt={data?.name}
                                 />
                             </th>
                         </tr>

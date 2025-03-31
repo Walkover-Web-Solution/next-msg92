@@ -1,0 +1,65 @@
+{
+    "HeadComp": {
+        "title": "MSG91 - Our team, culture and happy clients.",
+        "description": "Empowering developers with communication APIs. Building modern communication tools and supporting ideas for startups and enterprises globally."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs WATI",
+        "subheading": "MSG91 and WATI both provide WhatsApp Business API solutions for customer communication and engagement. However, MSG91 offers a more comprehensive suite with AI-powered automation, seamless integrations, and advanced customer journey creation tools, making it ideal for businesses seeking an all-in-one communication platform.",
+        "img": "/assets/compare/wati/wati-icon.svg",
+        "color": "#13E785"
+    },
+    "CompareTableComp": {
+        "heading": "Comparison Summary: MSG91 vs WATI",
+        "name": "WATI",
+        "img": "/assets/compare/wati/wati-logo.svg",
+        "content": [
+            {
+                "name": "WATI",
+                "des": "WATI specializes in WhatsApp Business API solutions tailored for SMEs, offering basic automation and CRM features. However, it lacks multi-channel capabilities and deep customization required for large-scale operations."
+            },
+            {
+                "name": "MSG91",
+                "des": "MSG91, on the other hand, is an all-in-one communication platform that not only provides WhatsApp Business API with advanced automation but also enables businesses to create customer journeys, segment users, and integrate seamlessly with multiple platforms. With competitive pricing, premium support, and a strong focus on scalability, MSG91 is the superior choice for businesses looking to maximize customer engagement."
+            }
+           
+        ],
+        "features": {
+            "pricing": "Monthly subscription model",
+            "broadcasting": "Limited bulk messaging support",
+            "multi_agent_support": "Yes",
+            "omnichannel_support": "WhatsApp and Email",
+            "ai_chatbot_integration": "Limited AI bot capabilities",
+            "no_code_automation": "Pre-built automation flows",
+            "developer_specific_bots": "No developer bot",
+            "crm_integration": "Supports limited CRM integrations",
+            "whatsapp_payments": "No payment integration",
+            "payment_links": "Yes payment link support",
+            "whatsapp_carousels": "Yes carousel support",
+            "customer_journey_creation": "No automated journey support",
+            "client_segmentation": "No segmentation support",
+            "integration_and_plugins": "Limited third-party integration",
+            "affordability": "Moderate pricing",
+            "click_to_whatsapp_use_case_journeys": "No predefined journeys",
+            "otp_widget": "Does not provide OTP verification as a built-in feature",
+            "one_click_verification": "No"
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

@@ -5,22 +5,22 @@
     },
     "CompareBannerComp": {
         "heading": "MSG91 vs Twilio",
-        "subheading": "MSG91 and Twilio are two leading communication platforms offering SMS, WhatsApp, and omnichannel messaging solutions. While both provide robust APIs and automation capabilities, their pricing, ease of integration, and customer-centric features cater to different business needs.",
+        "subheading": "MSG91 and Twilio are two leading communication platforms offering SMS, WhatsApp, and omnichannel messaging solutions. While both provide robust APIs and automation capabilities, their pricing, ease of integration, and customer-centric features cater to different business needs",
         "img": "/assets/compare/twilio/twilio-icon.svg",
         "color": "#F22F46"
     },
     "CompareTableComp": {
         "heading": "Comparison Summary: MSG91 vs Twilio",
-        "name":"Twilio",
+        "name": "Twilio",
         "img": "/assets/compare/twilio/twilio-logo.svg",
         "content": [
             {
                 "name": "MSG91",
-                "des": "MSG91 focuses on broader communication solutions, including SMS, WhatsApp, and email, while Gallabox specifically streamlines WhatsApp sales and marketing conversations. MSG91 focuses on broader communication solutions, including SMS."
+                "des": "MSG91 is a powerful communication platform designed for businesses looking for cost-effective, scalable, and highly reliable messaging solutions. Unlike Twilio, MSG91 offers localized pricing, premium customer support, and advanced automation features like WhatsApp Flows, AI-driven customer journey creation, and omnichannel messaging. Its seamless integrations and affordability make it the preferred choice for businesses looking to enhance customer engagement while keeping costs low."
             },
             {
                 "name": "Twilio",
-                "des": "MSG91 focuses on broader communication solutions, including SMS, WhatsApp, and email, while Gallabox specifically streamlines WhatsApp sales and marketing conversations. MSG91 focuses on broader communication solutions, including SMS."
+                "des": "Twilio is a cloud communication platform offering various APIs for messaging, voice, and video. It is widely used by enterprises needing global reach, but its pricing can be complex, and customer support often lacks personalized assistance."
             }
         ],
         "features": {
