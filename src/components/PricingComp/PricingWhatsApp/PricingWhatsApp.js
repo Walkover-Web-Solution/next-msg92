@@ -164,7 +164,7 @@ function RowComp({ item, index, symbol }) {
             <td className='border-r'>{formatRate(item?.utility_rate)}</td>
             <td className='border-r'>{formatRate(item?.authentication_rate)}</td>
             <td>{formatRate(item?.user_initiated_rate)}</td>
-            <td>{formatRate(item?.use_mm_lite)}</td>
+            <td>{formatRate(item?.mm_lite_rate)}</td>
         </tr>
     );
 }
