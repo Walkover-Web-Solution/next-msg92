@@ -7,7 +7,42 @@
         "heading": "MSG91 vs Twilio",
         "subheading": "MSG91 and Twilio are two leading communication platforms offering SMS, WhatsApp, and omnichannel messaging solutions. While both provide robust APIs and automation capabilities, their pricing, ease of integration, and customer-centric features cater to different business needs.",
         "img": "/assets/compare/twilio/twilio-icon.svg",
-        "color":"#F22F46"
+        "color": "#F22F46"
+    },
+    "CompareTableComp": {
+        "heading": "Comparison Summary: MSG91 vs Twilio",
+        "name":"Twilio",
+        "img": "/assets/compare/twilio/twilio-logo.svg",
+        "content": [
+            {
+                "name": "MSG91",
+                "des": "MSG91 focuses on broader communication solutions, including SMS, WhatsApp, and email, while Gallabox specifically streamlines WhatsApp sales and marketing conversations. MSG91 focuses on broader communication solutions, including SMS."
+            },
+            {
+                "name": "Twilio",
+                "des": "MSG91 focuses on broader communication solutions, including SMS, WhatsApp, and email, while Gallabox specifically streamlines WhatsApp sales and marketing conversations. MSG91 focuses on broader communication solutions, including SMS."
+            }
+        ],
+        "features": {
+            "pricing": "Pay-as-you-go, variable rates",
+            "broadcasting": "Available but limited based on policies",
+            "multi_agent_support": "Yes",
+            "omnichannel_support": "WhatsApp and SMS",
+            "ai_chatbot_integration": "Yes, supports chatbot integration",
+            "no_code_automation": "No native no-code solution",
+            "developer_specific_bots": "No specific developer-focused bot",
+            "crm_integration": "API-based CRM integrations",
+            "whatsapp_payments": "No native payment integration",
+            "payment_links": "No payment link feature",
+            "whatsapp_carousels": "Yes carousel support",
+            "customer_journey_creation": "No journey creation feature",
+            "client_segmentation": "No segmentation tool",
+            "integration_and_plugins": "API-based integrations only",
+            "affordability": "Medium cost with additional charges",
+            "click_to_whatsapp_use_case_journeys": "No predefined journeys",
+            "otp_widget": "Offers OTP verification through SMS and Voice only.",
+            "one_click_verification": "No"
+        }
     },
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",

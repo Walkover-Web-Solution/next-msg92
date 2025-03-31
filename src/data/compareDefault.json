@@ -1,0 +1,74 @@
+{
+    "pricing": {
+        "name": "Pricing",
+        "msg91": "Zero margin on Meta pricing, cost-effective for all businesses"
+    },
+    "broadcasting": {
+        "name": "Broadcasting",
+        "msg91": "Supports unlimited bulk messaging"
+    },
+    "multi_agent_support": {
+        "name": "Multi-Agent Support",
+        "msg91": "Yes, allows seamless handling of multiple agents"
+    },
+    "omnichannel_support": {
+        "name": "Omnichannel Support",
+        "msg91": "Full omnichannel solution with Email, SMS, Voice, and WhatsApp"
+    },
+    "ai_chatbot_integration": {
+        "name": "AI Chatbot Integration",
+        "msg91": "Yes, advanced AI chatbot with automation"
+    },
+    "no_code_automation": {
+        "name": "No-Code Automation",
+        "msg91": "Drag-and-drop automation builder for workflows"
+    },
+    "developer_specific_bots": {
+        "name": "Developer-Specific Bots",
+        "msg91": "Specialized bots designed for developers"
+    },
+    "crm_integration": {
+        "name": "CRM Integration",
+        "msg91": "Native integrations with top CRMs like Zoho, HubSpot, Salesforce"
+    },
+    "whatsapp_payments": {
+        "name": "WhatsApp Payments (Razorpay, Cashfree, etc.)",
+        "msg91": "Supports direct payment links with Razorpay, Cashfree & Stripe"
+    },
+    "payment_links": {
+        "name": "Payment Links",
+        "msg91": "Generate payment links directly within WhatsApp chat"
+    },
+    "whatsapp_carousels": {
+        "name": "WhatsApp Carousels",
+        "msg91": "Supports rich media carousels for showcasing products/services"
+    },
+    "customer_journey_creation": {
+        "name": "Customer Journey Creation",
+        "msg91": "Create personalized automated customer journeys"
+    },
+    "client_segmentation": {
+        "name": "Client Segmentation",
+        "msg91": "Advanced customer segmentation for targeted campaigns"
+    },
+    "integration_and_plugins": {
+        "name": "Integration and Plugins",
+        "msg91": "Integrates with Shopify, WooCommerce, and other platforms"
+    },
+    "affordability": {
+        "name": "Affordability",
+        "msg91": "Cost-effective solution with no extra margin"
+    },
+    "click_to_whatsapp_use_case_journeys": {
+        "name": "Click-to-WhatsApp Use Case Journeys",
+        "msg91": "Pre-built use cases for Click-to-WhatsApp advertising"
+    },
+    "otp_widget": {
+        "name": "OTP Widget",
+        "msg91": "Provides OTP verification via multiple channels - WhatsApp, SMS, Email, Voice"
+    },
+    "one_click_verification": {
+        "name": "One Click Verification",
+        "msg91": "Yes"
+    }
+}
