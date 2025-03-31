@@ -78,7 +78,7 @@ export default function PricingWhatsApp({ country, data }) {
                                     <th className='border-r'>Marketing</th>
                                     <th className='border-r'>Utility</th>
                                     <th className='border-r'>Authentication</th>
-                                    <th className=''>Service</th>
+                                    <th className='border-r'>Service</th>
                                     <th className=''>MM Lite</th>
                                 </tr>
                             </thead>
@@ -163,7 +163,7 @@ function RowComp({ item, index, symbol }) {
             <td className='border-r'>{formatRate(item?.marketing_rate)}</td>
             <td className='border-r'>{formatRate(item?.utility_rate)}</td>
             <td className='border-r'>{formatRate(item?.authentication_rate)}</td>
-            <td>{formatRate(item?.user_initiated_rate)}</td>
+            <td className='border-r'>{formatRate(item?.user_initiated_rate)}</td>
             <td>{formatRate(item?.mm_lite_rate)}</td>
         </tr>
     );
