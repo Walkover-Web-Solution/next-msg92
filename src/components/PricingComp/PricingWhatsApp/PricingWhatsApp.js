@@ -18,7 +18,7 @@ export default function PricingWhatsApp({ country, data }) {
             setLoading(true);
 
             try {
-                const response = await axios.get(`https://whatsapp.phone91.com/get-pricing-data/${currency}`);
+                const response = await axios.get(`${process.env.WHATSAPP_PRICING_URL}/${currency}`);
                 setPlans(response?.data?.data.sort((a, b) => a.country_name.localeCompare(b.country_name)));
                 setLoading(false);
             } catch (error) {
@@ -79,81 +79,20 @@ export default function PricingWhatsApp({ country, data }) {
                                     <th className='border-r'>Utility</th>
                                     <th className='border-r'>Authentication</th>
                                     <th className=''>Service</th>
+                                    <th className=''>MM Lite</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {plans &&
                                     plans.map((item, index) => {
                                         if (currentCountry.name === item.country_name) {
-                                            return (
-                                                <tr className='border-none text-[16px]' key={index}>
-                                                    <td className='border-r'>{item?.country_name}</td>
-                                                    <td className='border-r'>
-                                                        {item?.prefix == 0 ? 'N/A' : item?.prefix}
-                                                    </td>
-                                                    <td className='border-r'>
-                                                        {symbol}
-                                                        {!isNaN(parseFloat(item?.marketing_rate))
-                                                            ? parseFloat(item?.marketing_rate).toFixed(5)
-                                                            : 'N/A'}
-                                                    </td>
-                                                    <td className='border-r'>
-                                                        {symbol}
-                                                        {!isNaN(parseFloat(item?.utility_rate))
-                                                            ? parseFloat(item?.utility_rate).toFixed(5)
-                                                            : 'N/A'}
-                                                    </td>
-                                                    <td className='border-r'>
-                                                        {symbol}
-                                                        {!isNaN(parseFloat(item?.authentication_rate))
-                                                            ? parseFloat(item?.authentication_rate).toFixed(5)
-                                                            : 'N/A'}
-                                                    </td>
-                                                    <td className=''>
-                                                        {symbol}
-                                                        {!isNaN(parseFloat(item?.user_initiated_rate))
-                                                            ? parseFloat(item?.user_initiated_rate).toFixed(5)
-                                                            : 'N/A'}
-                                                    </td>
-                                                </tr>
-                                            );
+                                            return <RowComp item={item} index={index} symbol={symbol} />;
                                         }
                                     })}
                                 {plans &&
                                     plans.map((item, index) => {
                                         if (item.country_name === 'Default') {
-                                            return (
-                                                <tr className='border-none text-[16px]' key={index}>
-                                                    <td className='border-r'>{item?.country_name}</td>
-                                                    <td className='border-r'>
-                                                        {item?.prefix == 0 ? 'N/A' : item?.prefix}
-                                                    </td>
-                                                    <td className='border-r'>
-                                                        {symbol}
-                                                        {!isNaN(parseFloat(item?.marketing_rate))
-                                                            ? parseFloat(item.marketing_rate).toFixed(5)
-                                                            : 'N/A'}
-                                                    </td>
-                                                    <td className='border-r'>
-                                                        {symbol}
-                                                        {!isNaN(parseFloat(item?.utility_rate))
-                                                            ? parseFloat(item.utility_rate).toFixed(5)
-                                                            : 'N/A'}
-                                                    </td>
-                                                    <td className='border-r'>
-                                                        {symbol}
-                                                        {!isNaN(parseFloat(item?.authentication_rate))
-                                                            ? parseFloat(item.authentication_rate).toFixed(5)
-                                                            : 'N/A'}
-                                                    </td>
-                                                    <td className=''>
-                                                        {symbol}
-                                                        {!isNaN(parseFloat(item?.user_initiated_rate))
-                                                            ? parseFloat(item?.user_initiated_rate).toFixed(5)
-                                                            : 'N/A'}
-                                                    </td>
-                                                </tr>
-                                            );
+                                            return <RowComp item={item} index={index} symbol={symbol} />;
                                         }
                                     })}
 
@@ -164,38 +103,7 @@ export default function PricingWhatsApp({ country, data }) {
                                             currentCountry?.name !== item?.country_name &&
                                             item.country_name !== 'Default'
                                         ) {
-                                            return (
-                                                <tr className='border-none text-[16px]' key={index}>
-                                                    <td className='border-r'>{item?.country_name}</td>
-                                                    <td className='border-r'>
-                                                        {item?.prefix == 0 ? 'N/A' : item?.prefix}
-                                                    </td>
-                                                    <td className='border-r'>
-                                                        {symbol}
-                                                        {!isNaN(parseFloat(item?.marketing_rate))
-                                                            ? parseFloat(item.marketing_rate).toFixed(5)
-                                                            : 'N/A'}
-                                                    </td>
-                                                    <td className='border-r'>
-                                                        {symbol}
-                                                        {!isNaN(parseFloat(item?.utility_rate))
-                                                            ? parseFloat(item.utility_rate).toFixed(5)
-                                                            : 'N/A'}
-                                                    </td>
-                                                    <td className='border-r'>
-                                                        {symbol}
-                                                        {!isNaN(parseFloat(item?.authentication_rate))
-                                                            ? parseFloat(item.authentication_rate).toFixed(5)
-                                                            : 'N/A'}
-                                                    </td>
-                                                    <td className=''>
-                                                        {symbol}
-                                                        {!isNaN(parseFloat(item?.user_initiated_rate))
-                                                            ? parseFloat(item?.user_initiated_rate).toFixed(5)
-                                                            : 'N/A'}
-                                                    </td>
-                                                </tr>
-                                            );
+                                            return <RowComp item={item} index={index} symbol={symbol} />;
                                         }
                                     })}
 
@@ -243,5 +151,20 @@ export default function PricingWhatsApp({ country, data }) {
                 </dialog>
             )}
         </>
+    );
+}
+
+function RowComp({ item, index, symbol }) {
+    const formatRate = (rate) => (!isNaN(parseFloat(rate)) ? `${symbol}${parseFloat(rate).toFixed(5)}` : 'N/A');
+    return (
+        <tr className='border-none text-[16px]' key={index}>
+            <td className='border-r'>{item?.country_name}</td>
+            <td className='border-r'>{item?.prefix === 0 ? 'N/A' : item?.prefix}</td>
+            <td className='border-r'>{formatRate(item?.marketing_rate)}</td>
+            <td className='border-r'>{formatRate(item?.utility_rate)}</td>
+            <td className='border-r'>{formatRate(item?.authentication_rate)}</td>
+            <td>{formatRate(item?.user_initiated_rate)}</td>
+            <td>{formatRate(item?.mm_lite_rate)}</td>
+        </tr>
     );
 }
