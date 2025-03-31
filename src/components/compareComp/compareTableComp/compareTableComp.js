@@ -45,9 +45,9 @@ export default function CompareTableComp({ data }) {
                             const feature = features[featureKey];
                             return (
                                 <tr key={index}>
-                                    <td className='font-se text-center'>{feature.name}</td>
-                                    <td className='bg-secondary text-center'>{feature.msg91}</td>
-                                    <td className='text-center'>{data.features[featureKey]}</td>
+                                    <td className='font-se text-center w-1/3'>{feature.name}</td>
+                                    <td className='bg-secondary text-center w-1/3'>{feature.msg91}</td>
+                                    <td className='text-center w-1/3'>{data.features[featureKey]}</td>
                                 </tr>
                             );
                         })}
