@@ -19,7 +19,6 @@ export default function CompareTableComp({ data }) {
                 <table className='table min-w-[676px]'>
                     <thead>
                         <tr className=''>
-                            <th className=''></th>
                             <th className='flex items-center justify-center h-full  bg-secondary rounded-t-lg text-black'>
                                 <Image
                                     src='/assets/brand/msg91.svg'
@@ -29,7 +28,8 @@ export default function CompareTableComp({ data }) {
                                     alt='MSG91'
                                 />
                             </th>
-                            <th className=''>
+                            <th className=''></th>
+                            <th className='bg-gray-100 flex items-center justify-center h-full  rounded-t-lg text-black'>
                                 <Image
                                     src={data?.img}
                                     className='px-auto md:h-7 h-5'
@@ -45,9 +45,13 @@ export default function CompareTableComp({ data }) {
                             const feature = features[featureKey];
                             return (
                                 <tr key={index}>
-                                    <td className='font-se text-center w-1/3'>{feature.name}</td>
-                                    <td className='bg-secondary text-center w-1/3'>{feature.msg91}</td>
-                                    <td className='text-center w-1/3'>{data.features[featureKey]}</td>
+                                    <td className='bg-secondary text-base text-center w-1/3'>{feature.msg91}</td>
+                                    <td className='font-semibold text-base text-center text-gray-500 w-1/5'>
+                                        {feature.name}
+                                    </td>
+                                    <td className='text-center text-base bg-gray-100  w-1/3'>
+                                        {data.features[featureKey]}
+                                    </td>
                                 </tr>
                             );
                         })}

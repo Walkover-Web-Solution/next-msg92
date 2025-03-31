@@ -32,7 +32,7 @@
         "msg91": "Native integrations with top CRMs like Zoho, HubSpot, Salesforce"
     },
     "whatsapp_payments": {
-        "name": "WhatsApp Payments (Razorpay, Cashfree, etc.)",
+        "name": "WhatsApp Payments",
         "msg91": "Supports direct payment links with Razorpay, Cashfree & Stripe"
     },
     "payment_links": {
