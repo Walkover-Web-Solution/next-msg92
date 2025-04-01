@@ -15,13 +15,13 @@ export default function CompareTableComp({ data }) {
                     })}
                 </di>
             </div>
-            <div className='hidden md:block overflow-x-auto rounded-lg border border-300 border-base-content/5 bg-base-100 max-w-[1200px] mx-auto'>
+            <div className='hidden md:block overflow-x-auto rounded-lg border-b  bg-base-100 max-w-[1200px] mx-auto'>
                 <table className='table min-w-[676px] '>
                     <thead>
                         <tr>
                             <th className='w-1/4'></th>
                             <th className=' w-1/3 p-0  text-black'>
-                                <div className='flex items-start border-x py-8 px-6  bg-[#F0F7FF] justify-start h-full'>
+                                <div className='flex items-start rounded-t-lg border border-b-0 py-8 px-6  bg-[#F0F7FF] justify-start h-full'>
                                     <Image
                                         src='/assets/brand/msg91.svg'
                                         className='md:h-8 w-fit h-4'
@@ -31,7 +31,7 @@ export default function CompareTableComp({ data }) {
                                     />
                                 </div>
                             </th>
-                            <th className='bg-gray-50 w-1/3 py-8 text-black '>
+                            <th className='w-1/3 py-8 text-black '>
                                 <div className='flex items-start justify-start h-full '>
                                     <Image
                                         src={data?.img}
@@ -49,7 +49,7 @@ export default function CompareTableComp({ data }) {
                             const feature = features[featureKey];
                             return (
                                 <tr key={index} className=''>
-                                    <td className='font-semiboldd border-r border-300 text-base text-gray-600 w-1/5'>
+                                    <td className='font-semibold border-x border-300 text-base text-gray-500 w-1/5'>
                                         {feature.name}
                                     </td>
                                     <td
@@ -58,7 +58,7 @@ export default function CompareTableComp({ data }) {
                                     >
                                         {feature?.msg91}
                                     </td>
-                                    <td className='text-base bg-gray-50 text-gray-500 w-1/3 px-6 py-6'>
+                                    <td className='text-base text-gray-500 border-r w-1/3 px-6 py-6'>
                                         {data?.features[featureKey]}
                                     </td>
                                 </tr>
