@@ -21,6 +21,7 @@ const nextConfig = {
         CHATBOT_BASE_URL: getEnvValue('CHATBOT_BASE_URL'),
         HELLO_API_URL: getEnvValue('HELLO_API_URL'),
         CHATBOT_TEMPLATE_TEST_URL: getEnvValue('CHATBOT_TEMPLATE_TEST_URL'),
+        WHATSAPP_PRICING_URL: getEnvValue('WHATSAPP_PRICING_URL'),
 
         // CLIENT IDS
         GOOGLE_CLIENT_ID: getEnvValue('GOOGLE_CLIENT_ID'),
