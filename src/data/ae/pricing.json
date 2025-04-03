@@ -301,6 +301,8 @@
                 "description": "Avail cutting-edge services such as transactional WhatsApp, communication APIs, and more at competitive prices. Discover the pricing today."
             },
             "connectComp": {
+                "content": "Connect with our team for Pricing .",
+                "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }
         },

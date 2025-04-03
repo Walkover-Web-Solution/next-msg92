@@ -304,6 +304,8 @@
                 "description": "Aproveite serviços robustos e poderosos no Brasil, como WhatsApp transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
             },
             "connectComp": {
+                "content": "Connect with our team for Pricing .",
+                "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }
         },
