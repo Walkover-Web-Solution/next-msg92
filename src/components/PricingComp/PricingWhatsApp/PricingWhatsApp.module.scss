@@ -1,0 +1,16 @@
+.table_cont {
+    @apply w-full overflow-x-scroll;
+    .table {
+        @apply w-full bg-white rounded min-w-[640px] md:min-w-[900px];
+        .table_row {
+            @apply grid 2xl:grid-cols-8 grid-cols-7 text-[10px] sm:text-[14px] xl:text-[16px];
+
+            & span {
+                @apply flex  w-full px-1 py-2 sm:px-2 sm:py-3 break-words overflow-hidden;
+            }
+            & span:first-of-type {
+                @apply 2xl:col-span-2;
+            }
+        }
+    }
+}

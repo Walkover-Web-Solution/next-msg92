@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import CalculatePricingWhatsApp from './CalculatePricingWhatsApp/CalculatePricingWhatsApp';
+import styles from './PricingWhatsApp.module.scss';
 
 export default function PricingWhatsApp({ country, data }) {
     const { currency, symbol } = GetCurrencySymbol(country);
@@ -31,22 +32,25 @@ export default function PricingWhatsApp({ country, data }) {
     return (
         <>
             <div className='flex flex-col gap-3 w-full'>
-                <h1 className='text-3xl font-semibold capitalize '>WhatsApp Pricing</h1>
+                <h1 className='text-2xl md:text-3xl font-semibold capitalize '>WhatsApp Pricing</h1>
                 <div className='flex flex-col w-full gap-8'>
-                    <div className='flex justify-between w-full p-8 rounded h-fit bg-white'>
-                        <div className='flex flex-col gap-4'>
-                            <h2 className='text-3xl font-semibold'>
-                                <span className='text-green-600  font-bold text-4xl'>Zero</span> margin on meta price.
-                            </h2>
-                            {country === 'in' && <p className='text-lg'>GST excluded.</p>}
-                            {country === 'gb' && <p className='text-lg'>VAT excluded.</p>}
-                            <a href={getURL('signup', 'whatsapp')} target='_blank'>
+                    <div className='flex flex-col-reverse lg:flex-row justify-between w-full sm:p- lg:p-8 sm:rounded h-fit sm:bg-white'>
+                        <div className='flex flex-col gap-2 sm:gap-4'>
+                            <div className='flex flex-col gap-2'>
+                                <h2 className='text-xl md:text-3xl font-semibold'>
+                                    <span className='text-green-600  font-bold text-2xl md:text-4xl'>Zero</span> margin
+                                    on meta price.
+                                </h2>
+                                {country === 'in' && <p className='txt-sm md:text-lg'>GST excluded.</p>}
+                                {country === 'gb' && <p className='txt-sm md:text-lg'>VAT excluded.</p>}
+                            </div>
+                            <a href={getURL('signup', 'whatsapp')} className='w-fit' target='_blank'>
                                 <button className='btn btn-primary btn-md'>Get Started</button>
                             </a>
                         </div>
                         <Image
                             src={'/assets/icons/extras/whatsapp-black.svg'}
-                            className='w-[140px] h-fit'
+                            className='w-[140px] h-fit hidden lg:block'
                             width={400}
                             height={400}
                             alt='whatsapp logo'
@@ -54,8 +58,8 @@ export default function PricingWhatsApp({ country, data }) {
                     </div>
                     <div className='flex flex-col gap-8'>
                         <div className='flex flex-col gap-2'>
-                            <div className='flex w-full justify-between items-center'>
-                                <h2 className='text-2xl font-bold mb-1'>{data?.heading || 'Whatsapp API Pricing'} </h2>
+                            <div className='flex flex-col md:flex-row w-full justify-between ms:items-center gap-1'>
+                                <h2 className='text-2xl font-bold '>{data?.heading || 'Whatsapp API Pricing'} </h2>
                                 {plans && (
                                     <button
                                         onClick={() =>
@@ -70,19 +74,17 @@ export default function PricingWhatsApp({ country, data }) {
                             <p>{data?.tax}</p>
                             {data?.adds && <p>{data?.adds}</p>}
                         </div>
-                        <table className='table bg-white rounded'>
-                            <thead>
-                                <tr className='font-bold text-[16px] text-black '>
-                                    <th className='w-[300px] border-r'>Market</th>
-                                    <th className='border-r'>Prefix</th>
-                                    <th className='border-r'>Marketing</th>
-                                    <th className='border-r'>Utility</th>
-                                    <th className='border-r'>Authentication</th>
-                                    <th className='border-r'>Service</th>
-                                    <th className=''>MM Lite</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                        {/* <div className={styles?.table_cont}>
+                            <div className={styles?.table}>
+                                <div className={`${styles.table_row} font-bold border-b`}>
+                                    <span className='border-r'>Market</span>
+                                    <span className='border-r'>Prefix</span>
+                                    <span className='border-r'>Marketing</span>
+                                    <span className='border-r'>Utility</span>
+                                    <span className='border-r'>Authentication</span>
+                                    <span className='border-r'>Service</span>
+                                    <span className=''>MM Lite</span>
+                                </div>
                                 {plans &&
                                     plans.map((item, index) => {
                                         if (currentCountry.name === item.country_name) {
@@ -107,35 +109,8 @@ export default function PricingWhatsApp({ country, data }) {
                                         }
                                     })}
 
-                                {loading &&
-                                    Array.from({ length: 20 }).map((_, index) => {
-                                        return (
-                                            <tr className='border-none text-[16px]' key={index}>
-                                                <td className='border-r'>
-                                                    {' '}
-                                                    <div className='skeleton w-2/3 h-[24px]'></div>
-                                                </td>
-                                                <td className='border-r'>
-                                                    {' '}
-                                                    <div className='skeleton w-2/3 h-[24px]'></div>
-                                                </td>
-                                                <td className='border-r'>
-                                                    <div className='skeleton w-2/3 h-[24px]'></div>
-                                                </td>
-                                                <td className='border-r'>
-                                                    <div className='skeleton w-2/3 h-[24px]'></div>
-                                                </td>
-                                                <td className='border-r'>
-                                                    <div className='skeleton w-2/3 h-[24px]'></div>
-                                                </td>
-                                                <td className=''>
-                                                    <div className='skeleton w-2/3 h-[24px]'></div>
-                                                </td>
-                                            </tr>
-                                        );
-                                    })}
-                            </tbody>
-                        </table>
+                            </div>
+                        </div> */}
                     </div>
                     <ConnectWithTeam product={'WhatsApp'} data={data?.connectComp} href={'whatsapp'} isPlan={false} />
                 </div>
@@ -157,14 +132,14 @@ export default function PricingWhatsApp({ country, data }) {
 function RowComp({ item, index, symbol }) {
     const formatRate = (rate) => (!isNaN(parseFloat(rate)) ? `${symbol}${parseFloat(rate).toFixed(5)}` : 'N/A');
     return (
-        <tr className='border-none text-[16px]' key={index}>
-            <td className='border-r'>{item?.country_name}</td>
-            <td className='border-r'>{item?.prefix === 0 ? 'N/A' : item?.prefix}</td>
-            <td className='border-r'>{formatRate(item?.marketing_rate)}</td>
-            <td className='border-r'>{formatRate(item?.utility_rate)}</td>
-            <td className='border-r'>{formatRate(item?.authentication_rate)}</td>
-            <td className='border-r'>{formatRate(item?.user_initiated_rate)}</td>
-            <td>{formatRate(item?.mm_lite_rate)}</td>
-        </tr>
+        <div className={`${styles.table_row}  `} key={index}>
+            <span className='border-r'>{item?.country_name}</span>
+            <span className='border-r'>{item?.prefix === 0 ? 'N/A' : item?.prefix}</span>
+            <span className='border-r'>{formatRate(item?.marketing_rate)}</span>
+            <span className='border-r'>{formatRate(item?.utility_rate)}</span>
+            <span className='border-r'>{formatRate(item?.authentication_rate)}</span>
+            <span className='border-r'>{formatRate(item?.user_initiated_rate)}</span>
+            <span>{formatRate(item?.mm_lite_rate)}</span>
+        </div>
     );
 }
