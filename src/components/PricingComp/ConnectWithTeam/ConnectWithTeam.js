@@ -15,9 +15,11 @@ export default function ConnectWithTeam({ product, isPlan, data, href, per }) {
                     ) : (
                         <div className='text-xl' dangerouslySetInnerHTML={{ __html: data?.content }}></div>
                     )}
-                    <button onClick={() => setIsSalesModalOpen(true)} className='btn btn-outline btn-md'>
-                        {data?.sales_btn}
-                    </button>
+                    {data?.sales_btn && (
+                        <button onClick={() => setIsSalesModalOpen(true)} className='btn btn-outline btn-md'>
+                            {data?.sales_btn}
+                        </button>
+                    )}
                 </>
             )}
             <div>
