@@ -297,7 +297,10 @@
                 "title": "WhatsApp Pricing | MSG91",
                 "description": "Avail robust and powerful services like transactional WhatsApp, communication APIs, and more at competitive prices. Check out the pricing now."
             },
+
             "connectComp": {
+                "content": "Connect with our team for Pricing .",
+                "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }
         },
