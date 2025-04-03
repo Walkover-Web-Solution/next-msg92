@@ -311,6 +311,8 @@
                 "description": "Benefit from reliable and effective services like transactional WhatsApp, communication APIs, and more, all at affordable rates. Check out the pricing now."
             },
             "connectComp": {
+                "content": "Connect with our team for Pricing .",
+                "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }
         },

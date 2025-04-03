@@ -1,0 +1,102 @@
+{
+    "HeadComp": {
+        "title": "Voice API para sa Iyong Negosyo | Voice Call API | MSG91-Philippines",
+        "description": "Makipag-ugnayan sa mga customer gamit ang voice call APIs ng MSG91. Gumamit ng virtual numbers at advanced voice features para sa makabuluhan at personalized na mga pakikipag-ugnayan."
+    },
+    "BannerComp": {
+        "slug": "voice",
+        "product": {
+            "name": "Voice",
+            "icon": "/assets/icons/products/voice.svg"
+        },
+        "code": true,
+        "tagline": "kumonekta nang may kumpiyansa",
+        "heading": "Palakasin ang customer engagement at bumuo ng tiwala",
+        "subheading": "Magsimula ng real-time na pag-uusap gamit ang malinaw na audio, mababang latency, at mas malalim na insights.",
+        "banner_img": "/assets/global/hello/banner.webp",
+        "getstarted_btn": "Magsimula",
+        "trustedByComp": {
+            "heading": "Pinagkakatiwalaan ng 30,000+ global na negosyo",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Mga Tampok",
+        "iconColor": "text-campaign",
+        "features": [
+            {
+                "name": "Call Monitoring",
+                "content": "<strong>Ipinapakilala ang next-level na karanasan sa komunikasyon gamit ang aming bagong Call Monitoring features</strong> Binibigyan ka namin ng kapangyarihang kontrolin ang iyong mga tawag. Ang mga functionalities na ito ay nagbibigay ng mas malalim na insights at mas mahusay na kontrol habang nasa tawag — para sa mas maayos na komunikasyon at kasiyahan ng customer. Call spying (pakikinig nang palihim): para sa quality assurance! Call barging (pagpasok sa tawag): para sa real-time na tulong! Call whispering: para sa gabay habang nasa tawag!",
+                "img": "/assets/global/voice/voice-call-monitoring.svg"
+            },
+            {
+                "name": "Direktang pagtawag mula sa browser",
+                "content": "<strong>Laktawan ang 2-way calling at tumawag nang direkta mula sa browser.</strong> Bawasan ang oras ng iyong agent sa pagtawag at pagandahin ang karanasan ng customer. Madaling ikonekta ang dalawang numero nang hindi na kailangang mag-hold.",
+                "img": "/assets/global/voice/voice-direct-calling-from-hello.svg"
+            },
+            {
+                "name": "IVR Flow",
+                "content": "<strong>Subukan ang makabagong IVR para sa mabilis at hassle-free na customer interactions</strong> Ang aming smart IVR system ay higit pa sa simpleng pagsagot ng tanong — puwede mong i-customize ang settings batay sa oras o availability ng agent, at maaari kang mag-record ng voice messages.",
+                "img": "/assets/global/voice/voice-ivr-flow.svg"
+            },
+            {
+                "name": "Bulk Voice",
+                "content": "<strong>Makipag-ugnayan direkta sa iyong audience gamit ang isang tawag lang</strong> I-record ang iyong voice message at i-broadcast ito sa daan-daan o libu-libong customers nang sabay. Ang isang tawag sa telepono ay mahirap balewalain — isa itong epektibong paraan ng komunikasyon.",
+                "img": "/assets/global/voice/voice-bulk-voice.svg"
+            },
+            {
+                "name": "Iba’t Ibang Paraan ng Pag-upload ng File",
+                "content": "<strong>I-upload ang iyong personalized na audio message sa iba't ibang paraan</strong> Pataas ng customer engagement gamit ang voice messages. Puwede kang mag-record gamit ang text-to-speech, ang microphone ng iyong browser, o isang phone call.",
+                "img": "/assets/global/voice/voice-multiple-way-to-upload-file.svg"
+            },
+            {
+                "name": "Bulk Voice na may IVR",
+                "content": "<strong>I-konekta ang bulk voice calls sa isang IVR nang seamless</strong> Palawakin ang iyong reach hindi lamang sa pamamagitan ng pagpapadala ng mensahe kundi pati sa pagkolekta ng tugon mula sa user gamit ang IVR.",
+                "img": "/assets/global/voice/voice-bulk-voice-with-ivr.svg"
+            },
+            {
+                "name": "Real-time na koneksyon sa agent batay sa input ng user sa bulk call",
+                "content": "<strong>Direktang i-connect ang users sa support agents</strong> Pahusayin ang karanasan ng customer sa pamamagitan ng real-time support — awtomatikong ikonekta ang user sa support agent base sa kanilang input habang nasa tawag. Handa ang iyong support team sa Pilipinas para tumulong.",
+                "img": "/assets/global/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Simulan ang paggawa ng iyong ideal na customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Makipag-ugnayan sa sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Presyo",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Magsimula",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

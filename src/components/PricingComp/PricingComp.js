@@ -25,7 +25,7 @@ export default function PricingComp({ data, pageInfo }) {
             <>
                 <HeadComp data={data[page]?.HeadComp} pageInfo={pageInfo} />
                 <div className='bg-neutral py-3'>
-                    <div className='container my-10 flex gap-12 md:flex-row flex-col '>
+                    <div className='container md:my-10 my-4 flex md:gap-12 gap-6 md:flex-row flex-col '>
                         <PricingNav products={data?.products} page={page} />
 
                         {page === 'hello' && <PricingHello data={data?.hello} country={pageInfo?.country} />}

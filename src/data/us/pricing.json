@@ -308,8 +308,10 @@
                 "description": "Access robust and reliable services such as transactional WhatsApp, communication APIs, and more at affordable prices. Explore the pricing today."
             },
             "connectComp": {
+                "content": "Connect with our team for Pricing .",
+                "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
-            }
+            } 
         },
         "rcs": {
             "HeadComp": {

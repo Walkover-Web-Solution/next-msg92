@@ -70,8 +70,8 @@ export default function PricingSMSOTP({ data, type, country }) {
     };
     const PricingToShow =
         noOfSmsArray[sliderValue] && noOfSmsArray[sliderValue][pricingEnv]
-            ? Number(noOfSmsArray[sliderValue][pricingEnv].totalNoOfSms) *
-              Number(noOfSmsArray[sliderValue][pricingEnv].rate)
+            ? Number(noOfSmsArray[sliderValue][pricingEnv]?.totalNoOfSms) *
+              Number(noOfSmsArray[sliderValue][pricingEnv]?.rate)
             : 0;
 
     //Auto complete functions
