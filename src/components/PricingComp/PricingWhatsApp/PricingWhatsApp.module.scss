@@ -1,5 +1,5 @@
 .table_cont {
-    @apply w-full overflow-x-scroll;
+    @apply w-full overflow-x-scroll rounded;
     .table {
         @apply w-full bg-white rounded min-w-[640px] md:min-w-[900px];
         .table_row {

@@ -31,7 +31,7 @@ export default function PricingWhatsApp({ country, data }) {
     }, []);
     return (
         <>
-            <div className='flex flex-col gap-3 w-full'>
+            <div className='flex flex-col gap-3 max-w-full overflow-hidden'>
                 <h1 className='text-2xl md:text-3xl font-semibold capitalize '>WhatsApp Pricing</h1>
                 <div className='flex flex-col w-full gap-8'>
                     <div className='flex flex-col-reverse lg:flex-row justify-between w-full sm:p- lg:p-8 sm:rounded h-fit sm:bg-white'>
@@ -74,7 +74,7 @@ export default function PricingWhatsApp({ country, data }) {
                             <p>{data?.tax}</p>
                             {data?.adds && <p>{data?.adds}</p>}
                         </div>
-                        {/* <div className={styles?.table_cont}>
+                        <div className={styles?.table_cont}>
                             <div className={styles?.table}>
                                 <div className={`${styles.table_row} font-bold border-b`}>
                                     <span className='border-r'>Market</span>
@@ -108,9 +108,8 @@ export default function PricingWhatsApp({ country, data }) {
                                             return <RowComp item={item} index={index} symbol={symbol} />;
                                         }
                                     })}
-
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                     <ConnectWithTeam product={'WhatsApp'} data={data?.connectComp} href={'whatsapp'} isPlan={false} />
                 </div>
