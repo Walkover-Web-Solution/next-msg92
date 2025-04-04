@@ -77,7 +77,7 @@
                         "Priyoridad ang pagiging tumutugon sa mobile upang mapahusay ang karanasan at pakikipag-ugnayan ng user."
                     ]
                 },
-                "img": "/assets/global/email/mobile-optimized-email-templates-for-perfect-display.svg"
+                "img": "/assets/filph/email/mobile_optimized_email_templates_for_perfect_display.webp"
             },
             {
                 "name": "Panatilihin ang iyong Reputasyon ng Domain gamit ang Smart Email Validation",
@@ -113,7 +113,7 @@
                         "Pahusayin ang pakikipag-ugnayan sa pamamagitan ng pagpapadala sa isang naka-target na madla."
                     ]
                 },
-                "img": "/assets/global/email/maintain-your-domain-reputation-with-smart-email-validation.svg"
+                "img": "/assets/filph/email/maintain_your_domain_reputation_with_smart_email_validation.webp"
             },
             {
                 "name": "Gumawa ng mga nakamamanghang Email sa loob ng Minuto",
@@ -149,7 +149,7 @@
                         "I-preview at subukan ang compatibility sa iba't ibang device bago ipadala."
                     ]
                 },
-                "img": "/assets/global/email/lotties/create-stunning-emails-in-minutes.json"
+                "img": "/assets/filph/email/lotties/create_stunning_emails_in_minutes.json"
             },
             {
                 "name": "Gumawa ng mga AMP email na nagtutulak sa conversion sa loob ng ilang minuto.",
@@ -185,7 +185,7 @@
                         "Ganap na na-optimize para sa parehong mga mobile at desktop device."
                     ]
                 },
-                "img": "/assets/global/email/lotties/create-conversion-driving-amp-emails-in-minutes.json"
+                "img": "/assets/filph/email/lotties/create_conversion_driving_amp_emails_in_minutes.json"
             },
             {
                 "name": "Magpadala ng Mga Kampanya sa Email nang Mas Mabilis gamit ang Mga Pre-Designed Templates",
@@ -221,7 +221,7 @@
                         "Agad na subukan, i-optimize, at iiskedyul ang mga kampanya nang madali."
                     ]
                 },
-                "img": "/assets/global/email/send-email-campaigns-faster-with-pre-designed-templates.svg"
+                "img": "/assets/filph/email/send_email_campaigns_faster_with_pre_designed_templates.webp"
             },
             {
                 "name": "Flexible Email API Para sa Seamless Integration",
@@ -257,7 +257,7 @@
                         "Real-time na pagsubaybay at analytics upang masubaybayan ang pagganap ng email."
                     ]
                 },
-                "img": "/assets/global/email/transactional-email-api-deliver-critical-emails-instantly.svg"
+                "img": "/assets/filph/email/transactional_email_api_deliver_critical_emails_instantly.webp"
             },
             {
                 "name": "Seamless Integration sa Gmail at Outlook",
@@ -293,7 +293,7 @@
                         "I-streamline ang komunikasyon nang walang karagdagang software."
                     ]
                 },
-                "img": "/assets/global/email/seamless-integration-with-gmail-and-outlook.svg"
+                "img": "/assets/filph/email/seamless_integration_with_gmail_and_outlook.webp"
             },
             {
                 "name": "Target ang Tamang Audience at Magpatakbo ng Email Campaign nang Walang Kahirap-hirap",
@@ -329,7 +329,7 @@
                         "Kumonekta sa mga CRM, API, at multi-channel na platform para sa pinag-isang diskarte sa marketing."
                     ]
                 },
-                "img": "/assets/global/email/target-the-right-audience-and-run-email-campaigns-effortlessly.svg"
+                "img": "/assets/filph/email/target_the_right_audience_and_run_email_campaigns_effortlessly.webp"
             },
             {
                 "name": "Detalyadong Analytics: Subaybayan ang Naihatid, Buksan, at I-click ang Mga Ulat",
@@ -365,7 +365,7 @@
                         "I-export ang analytics ng campaign na may custom na hanay ng petsa para sa tumpak na pag-target ng audience."
                     ]
                 },
-                "img": "/assets/global/email/detailed-analytics-track-delivered-open-and-click-reports.svg"
+                "img": "/assets/filph/email/detailed_analytics_track_delivered_open_and_click_reports.webp"
             },
             {
                 "name": "Pigilan ang Spam na may Listahan ng Pagpigil",
@@ -401,7 +401,7 @@
                         "Binabawasan ang mga bounce rate at pinoprotektahan ang reputasyon ng nagpadala."
                     ]
                 },
-                "img": "/assets/global/email/prevent-spam-with-suppression-list.svg"
+                "img": "/assets/filph/email/prevent_spam_with_suppression_list.webp"
             },
             {
                 "name": "Magpadala ng mga Email sa Pinakamainam na Oras na may Pag-iiskedyul na Nakabatay sa Bansa",
@@ -437,7 +437,7 @@
                         "Palakasin ang pakikipag-ugnayan sa pamamagitan ng paghahatid ng mga email sa pinakamainam na sandali"
                     ]
                 },
-                "img": "/assets/global/email/send-emails-at-optimal-times-with-country-based-scheduling.svg"
+                "img": "/assets/filph/email/send_emails_at_optimal_times_with_country_based_scheduling.webp"
             },
             {
                 "name": "Palakasin ang Pagganap gamit ang A/B Testing para sa mga Email",
@@ -473,7 +473,7 @@
                         "Subaybayan ang mga pangunahing sukatan gaya ng mga bukas na rate, CTR, at mga conversion upang agad na masuri ang mga resulta ng pagsubok."
                     ]
                 },
-                "img": "/assets/global/email/boost-performance-with-ab-testing-for-emails.svg"
+                "img": "/assets/filph/email/boost_performance_with_ab_testing_for_emails.webp"
             },
             {
                 "name": "Webhooks para sa Mga Ulat sa Paghahatid, Mga Papasok na Email, at Katayuan ng Domain",
@@ -509,7 +509,7 @@
                         "Tumanggap ng mga papasok na email sa isang partikular na URL at mag-trigger ng mga aksyon nang naaayon."
                     ]
                 },
-                "img": "/assets/global/email/webhooks-for-delivery-reports-incoming-emails-and-domain-status.svg"
+                "img": "/assets/filph/email/webhooks_for_delivery_reports_incoming_emails_and_domain_status.webp"
             },
             {
                 "name": "Walang kahirap-hirap na Pamahalaan ang mga Papasok na Email gamit ang Pinag-isang Inbox.",
@@ -545,7 +545,7 @@
                         "Analytics ng tugon upang subaybayan ang pagganap ng koponan at mga oras ng paglutas ng email."
                     ]
                 },
-                "img": "/assets/global/email/lotties/effortlessly-manage-incoming-emails-with-a-unified-inbox.json"
+                "img": "/assets/filph/email/lotties/effortlessly_manage_incoming_emails_with_a_unified_inbox.json"
             }
         ]
     },

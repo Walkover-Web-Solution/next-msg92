@@ -13,7 +13,6 @@
     "tagline": "Rich Communication Services",
     "heading": "Makipag-ugnayan sa mga customer sa kanilang SMS inbox gamit ang rich at interactive na mga mensahe sa pamamagitan ng RCS",
     "subheading": "Ang RCS ay isang integrated messaging channel na nagbibigay-daan sa mga negosyo na makipag-ugnayan sa mga customer gamit ang rich, immersive na two-way na usapan",
-    "banner_img": "/assets/global/hello/banner.webp",
     "getstarted_btn": "Magsimula",
     "trustedByComp": {
       "heading": "Pinagkakatiwalaan ng 30,000+ global na negosyo",
@@ -48,22 +47,22 @@
       {
         "name": "Corporate Communications na may Branding",
         "content": "<strong>Magpakilala gamit ang branding</strong>Palakasin ang visibility ng iyong brand sa SMS inbox gamit ang kakaibang sender ID at logo. Gumamit ng visual na interface upang mas epektibong makipag-ugnayan sa mga customer.",
-        "img": "/assets/global/rcs/rcs-communications-branding.svg"
+        "img": "/assets/filph/rcs/communications_branding.webp"
       },
       {
         "name": "Magbigay ng Multimedia Interactions",
         "content": "<strong>Komunikasyon gamit ang visual na representasyon</strong>Pahusayin ang brand communication sa pamamagitan ng RCS na nakakapagpatibay ng tiwala. Isama ang iyong logo, brand name, videos, images, at carousels sa iyong mga mensahe upang mapataas ang conversion.",
-        "img": "/assets/global/rcs/rcs-multimedia-interactions.svg"
+        "img": "/assets/filph/rcs/multimedia_interactions.webp"
       },
       {
         "name": "Palaguin ang Benta Gamit ang Interactive na Usapan",
         "content": "Gumawa ng engaging na karanasan gamit ang mga imahe, videos, carousels, at interactive action buttons. Maging kakaiba sa kompetisyon gamit ang engaging at maaasahang RCS messages na nagdudulot ng conversions.",
-        "img": "/assets/global/rcs/rcs-boost-sales.svg"
+        "img": "/assets/filph/rcs/boost_sales.webp"
       },
       {
         "name": "Mas Pinagkakatiwalaang Relasyon sa Customer",
         "content": "<strong>Unawain ang gawi ng iyong mga customer</strong>I-personalize ang iyong komunikasyon at bumuo ng matagalang relasyon na nagpapalalim ng loyalty. Gumamit ng verified at badged sender IDs na aprubado ng Google para sa mas mataas na response rates at tiwala mula sa customer.",
-        "img": "/assets/global/rcs/rcs-customer-trust.svg"
+        "img": "/assets/filph/rcs/customer_trust.webp"
       }
     ]
   },
