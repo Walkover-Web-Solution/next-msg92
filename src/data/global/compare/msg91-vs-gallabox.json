@@ -1,0 +1,64 @@
+{
+    "HeadComp": {
+        "title": "MSG91 - Our team, culture and happy clients.",
+        "description": "Empowering developers with communication APIs. Building modern communication tools and supporting ideas for startups and enterprises globally."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs Gallabox",
+        "subheading": "MSG91 and Gallabox enable businesses to streamline WhatsApp communication, but MSG91 goes beyond by offering omnichannel marketing, superior segmentation tools, and enterprise-level scalability, ensuring better automation and engagement.",
+        "img": "/assets/compare/gallabox/gallabox-icon.svg",
+        "color": "#3264FA"
+    },
+    "CompareTableComp": {
+        "heading": "Comparison Summary: MSG91 vs Gallabox",
+        "name": "Gallabox",
+        "img": "/assets/compare/gallabox/gallabox-logo.svg",
+        "content": [
+            {
+                "name": "Gallabox",
+                "des": "Gallabox is a conversational commerce platform focusing on WhatsApp automation and chatbot-based customer support. While it helps businesses manage customer interactions, it lacks flexibility in API-based messaging and broader communication channels."
+            },
+            {
+                "name": "MSG91",
+                "des": "MSG91 goes beyond WhatsApp by offering a truly omnichannel experience, including SMS, email, RCS, and WhatsApp, ensuring seamless customer communication. It provides AI-powered chatbots, advanced workflow automation, and deep analytics to optimize customer engagement. With its cost-effective pricing and superior automation capabilities, MSG91 is the preferred solution for businesses looking for a scalable and feature-rich communication platform."
+            }
+        ],
+        "features": {
+            "pricing": "Custom pricing based on usage",
+            "broadcasting": "Supports bulk messaging",
+            "multi_agent_support": "Yes",
+            "omnichannel_support": "WhatsApp only",
+            "ai_chatbot_integration": "AI chatbot available",
+            "no_code_automation": "No-code automation support",
+            "developer_specific_bots": "No developer bot",
+            "crm_integration": "CRM integration available",
+            "whatsapp_payments": "Yes payment integration",
+            "payment_links": "Yes payment link support",
+            "whatsapp_carousels": "Yes carousel support",
+            "customer_journey_creation": "No custom journeys",
+            "client_segmentation": "No segmentation support",
+            "integration_and_plugins": "Supports Shopify & WooCommerce",
+            "affordability": "Medium cost for businesses",
+            "click_to_whatsapp_use_case_journeys": "No automated journeys",
+            "otp_widget": "Through WhatsApp only",
+            "one_click_verification": "No"
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
