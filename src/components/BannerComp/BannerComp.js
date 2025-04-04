@@ -161,17 +161,23 @@ export default function BannerComp({ pageInfo, data }) {
                             width={2000}
                             height={2000}
                             alt={data?.tagline}
+                            key={data?.banner_img}
+                            placeholder='blur'
+                            blurDataURL='/assets/extras/placeholder.webp'
                         />
                     </div>
                 )}
                 {!data?.code && data?.banner_img && data?.not_absolute && (
                     <div className='lg:w-1/2'>
                         <Image
+                            key={data?.banner_img}
                             className='w-full'
                             src={data?.banner_img}
                             width={2000}
                             height={2000}
                             alt={data?.tagline}
+                            placeholder='blur'
+                            blurDataURL='/assets/extras/placeholder.webp'
                         />
                     </div>
                 )}
