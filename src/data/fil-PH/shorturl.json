@@ -12,7 +12,7 @@
         "tagline": "Pasimplehin ang iyong mga link",
         "heading": "I-customize, ibahagi, at subaybayan ang smart links",
         "subheading": "I-optimize ang mga komplikadong link upang makalikha ng maiikli at malilinis na links na mas madaling ibahagi.",
-        "banner_img": "/assets/global/shorturl/shorturl.svg",
+        "banner_img": "/assets/filph/shorturl/shorturl_hero.webp",
         "getstarted_btn": "Magsimula nang LIBRE",
         "trustedByComp": {
             "heading": "Pinagkakatiwalaan ng 30,000+ global na negosyo",
@@ -47,12 +47,12 @@
             {
                 "name": "Walang Kailangan na Code",
                 "content": "<strong>Walang code at mas kaunting credits — isang smart link.</strong> Paikliin ang iyong URL agad-agad nang hindi kailangang mag-code. I-paste lang ang iyong link at makakakuha ka ng smart link na madaling ibahagi, nakakatipid ng espasyo, at mas matipid sa credits.",
-                "img": "/assets/global/shorturl/shorturl-no-code.svg"
+                "img": "/assets/filph/shorturl/no_code.webp"
             },
             {
                 "name": "NumberWise Tracking",
                 "content": "<strong>Kolektahin ang statistics sa pamamagitan ng pagsubaybay sa dami ng clicks ng iyong URL.</strong> Subaybayan ang performance ng iyong shortURL at alamin kung ilang beses na-click ang link, sino ang nakatanggap, saan ito ibinahagi, at kung paano ito nakaka-drive ng traffic.",
-                "img": "/assets/global/shorturl/shorturl-number-wise-tracking.svg"
+                "img": "/assets/filph/shorturl/number_wise_tracking.webp"
             }
         ]
     },

@@ -13,7 +13,6 @@
         "tagline": "kumonekta nang may kumpiyansa",
         "heading": "Palakasin ang customer engagement at bumuo ng tiwala",
         "subheading": "Magsimula ng real-time na pag-uusap gamit ang malinaw na audio, mababang latency, at mas malalim na insights.",
-        "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Magsimula",
         "trustedByComp": {
             "heading": "Pinagkakatiwalaan ng 30,000+ global na negosyo",
@@ -48,37 +47,37 @@
             {
                 "name": "Call Monitoring",
                 "content": "<strong>Ipinapakilala ang next-level na karanasan sa komunikasyon gamit ang aming bagong Call Monitoring features</strong> Binibigyan ka namin ng kapangyarihang kontrolin ang iyong mga tawag. Ang mga functionalities na ito ay nagbibigay ng mas malalim na insights at mas mahusay na kontrol habang nasa tawag — para sa mas maayos na komunikasyon at kasiyahan ng customer. Call spying (pakikinig nang palihim): para sa quality assurance! Call barging (pagpasok sa tawag): para sa real-time na tulong! Call whispering: para sa gabay habang nasa tawag!",
-                "img": "/assets/global/voice/voice-call-monitoring.svg"
+                "img": "/assets/filph/voice/call_monitoring.webp"
             },
             {
                 "name": "Direktang pagtawag mula sa browser",
                 "content": "<strong>Laktawan ang 2-way calling at tumawag nang direkta mula sa browser.</strong> Bawasan ang oras ng iyong agent sa pagtawag at pagandahin ang karanasan ng customer. Madaling ikonekta ang dalawang numero nang hindi na kailangang mag-hold.",
-                "img": "/assets/global/voice/voice-direct-calling-from-hello.svg"
+                "img": "/assets/filph/voice/direct_calling_from_hello.webp"
             },
             {
                 "name": "IVR Flow",
                 "content": "<strong>Subukan ang makabagong IVR para sa mabilis at hassle-free na customer interactions</strong> Ang aming smart IVR system ay higit pa sa simpleng pagsagot ng tanong — puwede mong i-customize ang settings batay sa oras o availability ng agent, at maaari kang mag-record ng voice messages.",
-                "img": "/assets/global/voice/voice-ivr-flow.svg"
+                "img": "/assets/filph/voice/ivr_flow.webp"
             },
             {
                 "name": "Bulk Voice",
                 "content": "<strong>Makipag-ugnayan direkta sa iyong audience gamit ang isang tawag lang</strong> I-record ang iyong voice message at i-broadcast ito sa daan-daan o libu-libong customers nang sabay. Ang isang tawag sa telepono ay mahirap balewalain — isa itong epektibong paraan ng komunikasyon.",
-                "img": "/assets/global/voice/voice-bulk-voice.svg"
+                "img": "/assets/filph/voice/bulk_voice.webp"
             },
             {
                 "name": "Iba’t Ibang Paraan ng Pag-upload ng File",
                 "content": "<strong>I-upload ang iyong personalized na audio message sa iba't ibang paraan</strong> Pataas ng customer engagement gamit ang voice messages. Puwede kang mag-record gamit ang text-to-speech, ang microphone ng iyong browser, o isang phone call.",
-                "img": "/assets/global/voice/voice-multiple-way-to-upload-file.svg"
+                "img": "/assets/filph/voice/multiple_way_to_upload_file.webp"
             },
             {
                 "name": "Bulk Voice na may IVR",
                 "content": "<strong>I-konekta ang bulk voice calls sa isang IVR nang seamless</strong> Palawakin ang iyong reach hindi lamang sa pamamagitan ng pagpapadala ng mensahe kundi pati sa pagkolekta ng tugon mula sa user gamit ang IVR.",
-                "img": "/assets/global/voice/voice-bulk-voice-with-ivr.svg"
+                "img": "/assets/filph/voice/bulk_voice_with_ivr.webp"
             },
             {
                 "name": "Real-time na koneksyon sa agent batay sa input ng user sa bulk call",
                 "content": "<strong>Direktang i-connect ang users sa support agents</strong> Pahusayin ang karanasan ng customer sa pamamagitan ng real-time support — awtomatikong ikonekta ang user sa support agent base sa kanilang input habang nasa tawag. Handa ang iyong support team sa Pilipinas para tumulong.",
-                "img": "/assets/global/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
+                "img": "/assets/filph/voice/real_time_connect_with_agent_on_user_input_on_bulk_call.webp"
             }
         ]
     },
