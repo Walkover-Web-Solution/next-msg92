@@ -64,7 +64,13 @@ export default function BannerComp({ pageInfo, data }) {
                     <div className='flex flex-col gap-6'>
                         {data?.product && (
                             <div className='flex items-center gap-2'>
-                                <Image src={data?.product?.icon} width={40} height={40} alt={data?.product?.name} />
+                                <Image
+                                    key={data?.product?.ico}
+                                    src={data?.product?.icon}
+                                    width={40}
+                                    height={40}
+                                    alt={data?.product?.name}
+                                />
                                 <h1 className='font-semibold text-2xl'>{data?.product?.name}</h1>
                             </div>
                         )}

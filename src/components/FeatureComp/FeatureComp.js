@@ -17,7 +17,7 @@ export default function FeatureComp({ data, pageInfo }) {
                             return (
                                 <div
                                     key={index}
-                                    className={` bg-white border flex items-center overflow-hidden  rounded justify-between ${
+                                    className={`bg-white border flex items-center overflow-hidden rounded justify-between ${
                                         (index + 1) % 3 === 0
                                             ? 'flex flex-col lg:flex-row col-span-2'
                                             : 'flex flex-col lg:col-span-1 col-span-2'
