@@ -12,11 +12,15 @@
     "tagline": "Mabilis at Ligtas na Pag-verify",
     "heading": "Pinakasimple, pinakamabilis, at pinaka-epektibong paraan para i-verify ang iyong mga user",
     "subheading": "Bumuo ng tiwala ng customer at protektahan ang negosyo gamit ang two-factor authentication.",
-    "banner_img": "/assets/global/otp/otp.svg",
+    "banner_img": "/assets/filph/otp/otp-banner.webp",
     "getstarted_btn": "Magsimula nang Libre",
     "trustedByComp": {
       "heading": "Pinagkakatiwalaan ng 30,000+ global na negosyo",
       "logos": [
+        {
+          "name": "Razorpay",
+          "url": "/assets/trusted_by/razorpay.svg"
+        },
         {
           "name": "Xiaomi",
           "url": "/assets/trusted_by/xiaomi.svg"
@@ -34,10 +38,6 @@
           "url": "/assets/trusted_by/indeed.svg"
         },
         {
-          "name": "Indian Oil",
-          "url": "/assets/trusted_by/indianoil.svg"
-        },
-        {
           "name": "Ixigo",
           "url": "/assets/trusted_by/ixigo.svg"
         }
@@ -51,17 +51,17 @@
       {
         "name": "Kasing Simple ng Pag-login gamit ang Google",
         "content": "<strong>Ang pag-login gamit ang OTP ay kasing simple ng pag-login gamit ang Gmail</strong> Bigyan ang iyong mga user ng mabilis, hindi istorbo, at simpleng karanasan sa authentication. I-implementa ang login gamit ang OTP sa pamamagitan ng paglagay ng iyong mobile number o email address para makatanggap ng OTP via SMS o email.",
-        "img": "/assets/global/otp/otp-simple-login.svg"
+        "img": "/assets/filph/otp/simple-login.webp"
       },
       {
         "name": "May Kasamang IP Security",
         "content": "<strong>Proteksyon laban sa panloloko, pag-hack, maling validation, at pag-block</strong> Bawasan ang panganib ng panloloko gamit ang dagdag na security layer. Ang built-in na seguridad ay tinitiyak na kapag delikado ang login, hindi ito papayagan ng system at itinuturing itong posibleng mapanlinlang.",
-        "img": "/assets/global/otp/otp-inbuilt-ip-security.svg"
+        "img": "/assets/filph/otp/inbuilt-ip-security.webp"
       },
       {
         "name": "Suporta sa Maraming Channels",
         "content": "<strong>Palakasin ang tiwala ng customer at pataasin ang conversion sa maraming channels</strong> I-verify ang iyong mga user sa channel na mas gusto nila. Sinasaklaw namin ang iba't ibang channels kabilang ang SMS, email, Voice, at <a href='/in/whatsapp'>WhatsApp</a> para sa mas flexible na authentication experience para sa negosyo at users.",
-        "img": "/assets/global/otp/otp-support-multiple-channels.svg"
+        "img": "/assets/filph/otp/support-multiple-channels.webp"
       }
     ]
   },

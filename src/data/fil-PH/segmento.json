@@ -9,14 +9,18 @@
             "name": "Segmento",
             "icon": "/assets/icons/products/segmento.svg"
         },
-        "tagline": "target-based na marketing",
+        "tagline": "Target-Based na Marketing",
         "heading": "I-personalize ang customer journeys gamit ang Data Segmentation.",
         "subheading": "I-segment ang mga tao batay sa kanilang demograpiko, pag-uugali, interes, at iba pang katangian.",
-        "banner_img": "/assets/global/segmento/segmento.svg",
+        "banner_img": "/assets/filph/segmento/segmento-banner.webp",
         "getstarted_btn": "Magsimula Nang Libre",
         "trustedByComp": {
             "heading": "Pinagkakatiwalaan ng 30,000+ global na negosyo",
             "logos": [
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
                 {
                     "name": "Xiaomi",
                     "url": "/assets/trusted_by/xiaomi.svg"
@@ -34,10 +38,6 @@
                     "url": "/assets/trusted_by/indeed.svg"
                 },
                 {
-                    "name": "Indian Oil",
-                    "url": "/assets/trusted_by/indianoil.svg"
-                },
-                {
                     "name": "Ixigo",
                     "url": "/assets/trusted_by/ixigo.svg"
                 }
@@ -51,22 +51,22 @@
             {
                 "name": "Gumawa ng filters ayon sa segment",
                 "content": "<strong>Gumawa ng filtered list sa iyong business phonebook.</strong>I-angkop ang iyong marketing efforts sa pamamagitan ng pagtutok sa mga tao base sa kanilang pangangailangan, katangian, o pattern sa pamamagitan ng paggawa ng partikular na filter sa iyong phonebook.",
-                "img": "/assets/global/segmento/segmento-create-filters-as-per-segments.svg"
+                "img": "/assets/filph/segmento/create-filters-as-per-segments.webp"
             },
             {
                 "name": "Automation Trigger",
                 "content": "<strong>I-trigger ang makabuluhang impormasyon para sa mga na-filter na segments.</strong>I-automate ang mga aksyon batay sa filter at user action o input upang maipadala ang may kaugnayan at personalized na mga mensahe para sa bawat grupo.",
-                "img": "/assets/global/segmento/segmento-automation-trigger.svg"
+                "img": "/assets/filph/segmento/automation-trigger.webp"
             },
             {
                 "name": "Automation Repeater",
                 "content": "<strong>Ipadala ang pinaka-angkop na content sa pinaka-angkop na oras.</strong>Awtomatikong magpadala ng mensahe sa parehong filter sa mga tinakdang oras gamit ang paboritong business communication channel ng iyong audience.",
-                "img": "/assets/global/segmento/segmento-automation-repeater.svg"
+                "img": "/assets/filph/segmento/automation-repeater.webp"
             },
             {
                 "name": "Open API",
                 "content": "<strong>Gamitin ang API upang kumuha, gumawa, mag-update, o mag-delete ng contact.</strong>Mayroon kaming API para sa bawat aksyon, maliit man o malaki, para makatuon ka sa pinakamahalaga—ang paggawa ng iyong amazing na produkto.",
-                "img": "/assets/global/segmento/segmento-open-api.svg"
+                "img": "/assets/filph/segmento/open-api.webp"
             }
         ]
     },

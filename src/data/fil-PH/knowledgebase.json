@@ -12,7 +12,7 @@
         "tagline": "Bigyan ang mga customer ng mga self-service na opsyon",
         "heading": "Ang knowledge base ay ang backbone ng magandang customer support",
         "subheading": "Makukuha mo ang lahat ng mahahalagang tampok ng KnowledgeBase software sa isang abot-kayang presyo",
-        "banner_img": "/assets/global/knowledgebase/knowledgebase.svg",
+        "banner_img": "/assets/filph/knowledgebase/knowledgebase_hero.webp",
         "getstarted_btn": "Magsimula ng LIBRE magpakailanman",
         "trustedByComp": {
             "heading": "Tiwala ng 30,000+ na global na negosyo",
@@ -47,17 +47,17 @@
             {
                 "name": "WYSIWYG editor",
                 "content": "<strong>Madaling gumawa o mag-edit ng iyong knowledge base articles</strong> Mabilis na gumawa ng iyong mga artikulo gamit ang what you see is what you get content editor. Kasing dali lang gamitin nito tulad ng isang Word Processor o HTML Editor.",
-                "img": "/assets/global/knowledgebase/knowledgebase-wysiwyg-editor.svg"
+                "img": "/assets/filph/knowledgebase/wysiwyg_editor.webp"
             },
             {
                 "name": "SEO friendly (Suporta sa Subfolder at Subdomain)",
                 "content": "<strong>Isang SEO-friendly optimized na knowledge base</strong> Ang iyong knowledge base ay tumatakbo sa iyong sariling domain at hindi sa anumang subdomain, kaya’t tinatrato ito ng mga algorithms tulad ng iyong website, binibigyan ito ng parehong importansya ng iyong ibang mga webpage.",
-                "img": "/assets/global/knowledgebase/knowledgebase-seo-friendly.svg"
+                "img": "/assets/filph/knowledgebase/seo_friendly.webp"
             },
             {
                 "name": "Whitelabel",
                 "content": "<strong>Ito ay gumagana sa iyong branding at hindi sa amin</strong> Ang iyong mga user ay makikita ang iyong knowledge base sa ilalim ng iyong branding sa iyong website. Ang aming whitelabel services ay tinitiyak na walang indikasyon na ito ay pinapalakas ng MSG91.",
-                "img": "/assets/global/knowledgebase/knowledgebase-whitelable.svg"
+                "img": "/assets/filph/knowledgebase/whitelable.webp"
             }
         ]
     },

@@ -11,7 +11,7 @@
         },
         "tagline": "I-unlock ang Kapangyarihan ng Virtual Numbers",
         "heading": "Tanggapin, Mag-reply, at I-customize ang SMS gamit ang Long Codes, para sa Pinakamahusay na Engagement at Komunikasyon!",
-        "banner_img": "/assets/global/numbers/banner.svg",
+        "banner_img": "/assets/filph/numbers/number_hero.webp",
         "getstarted_btn": "Magsimula",
         "trustedByComp": {
             "heading": "Pinagkakatiwalaan ng 30,000+ global na negosyo",
@@ -46,52 +46,52 @@
             {
                 "name": "Paglawak sa Pandaigdigang Merkado gamit ang Numbers: Pagkonekta sa Pilipinas",
                 "content": "Ang Numbers ay isang estratehikong kasangkapan para sa mga negosyo na nais palawakin ang kanilang saklaw at makapasok nang epektibo sa merkado ng Pilipinas. Sa pamamagitan ng pagkuha ng lokal na numero sa Pilipinas, madaling makapagtatag ng matibay na presensya ang mga kumpanya, na nagbibigay-daan sa tuloy-tuloy na koneksyon sa mga kliyente at kasosyo. Pinapadali nito ang accessibility, pinapalakas ang kredibilidad, at binabawasan ang distansya — isang propesyonal, matipid, at epektibong estratehiya para sa global expansion sa Pilipinas.",
-                "img": "/assets/global/numbers/numbers-global-market-entry-with-numbers.svg"
+                "img": "/assets/filph/numbers/global_market_entry_with_numbers.webp"
             },
             {
                 "name": "Makatipid sa Gastos",
                 "content": "Ang mga numero sa Pilipinas ay isang abot-kayang alternatibo kumpara sa tradisyonal na linya ng telepono, na may mas mababang gastos sa setup at maintenance. Hindi na kailangan ng pisikal na infrastructure, kaya’t ito ay praktikal para sa mga negosyong gustong mag-operate sa merkado ng Pilipinas.",
-                "img": "/assets/global/numbers/numbers-cost-efficiency.svg"
+                "img": "/assets/filph/numbers/cost_efficiency.webp"
             },
             {
                 "name": "Mga Serbisyo ng Missed Call",
                 "content": "Missed Call Services: Maraming virtual number providers ang may tampok na missed call notifications, na tumutulong sa mga negosyo sa Pilipinas na agad tugunan ang mga customer na hindi nakontak. Pinapabuti nito ang customer engagement at pagiging responsive sa lokal na merkado.",
-                "img": "/assets/global/numbers/numbers-missed-call-services.svg"
+                "img": "/assets/filph/numbers/missed_call_services.webp"
             },
             {
                 "name": "Keyword Specific Messaging",
                 "content": "<strong>Pumili ng natatanging keyword para sa iyong negosyo o campaign</strong>Kapag nagpadala ng SMS ang mga user na nagsisimula sa napili mong keyword sa iyong dedicated o shared long code, matatanggap mo ang mga mensaheng ito. Pinapagana nito ang personalized at context-specific na komunikasyon.",
-                "img": "/assets/global/numbers/numbers-keyword-specific-messaging.svg"
+                "img": "/assets/filph/numbers/keyword_specific_messaging.webp"
             },
             {
                 "name": "Keyword Independent Messaging",
                 "content": "<strong>Bukod sa paggamit ng keywords</strong> maaari kang tumanggap ng mga mensahe kahit walang partikular na keyword. Pinapalawak nito ang iyong opsyon sa komunikasyon, kaya mas madali kang maabot ng mga user.",
-                "img": "/assets/global/numbers/numbers-keyword-independent-messaging.svg"
+                "img": "/assets/filph/numbers/keyword_independent_messaging.webp"
             },
             {
                 "name": "Pre-formatted Set of Questions",
                 "content": "Maaaring mag-set up ng pre-formatted na set ng mga tanong para ipadala sa iyong audience. Mainam ito para sa mga survey, quiz, o pagkuha ng tiyak na impormasyon sa isang organisadong format.",
-                "img": "/assets/global/numbers/numbers-pre-formatted-questions.svg"
+                "img": "/assets/filph/numbers/pre_formatted_questions.webp"
             },
             {
                 "name": "Online Surveys",
                 "content": "Gamitin ang aming Numbers service para gumawa at magsagawa ng online surveys. Mangolekta ng mahalagang insight at feedback mula sa iyong audience nang madali.",
-                "img": "/assets/global/numbers/numbers-online-survey.svg"
+                "img": "/assets/filph/numbers/online_survey.webp"
             },
             {
                 "name": "Lead Generation",
                 "content": "Makipag-ugnayan sa mga potensyal na customer gamit ang SMS. Kolektahin ang kanilang detalye at mga tanong upang mapalawak ang iyong customer base.",
-                "img": "/assets/global/numbers/numbers-lead-generation.svg"
+                "img": "/assets/filph/numbers/lead_generation.webp"
             },
             {
                 "name": "Gumawa ng Auto Responses",
                 "content": "Maaaring mag-setup ng automated na sagot para sa mga natatanggap mong mensahe. I-customize ang mga ito upang makapagbigay agad ng impormasyon o tugon sa iyong mga user.",
-                "img": "/assets/global/numbers/numbers-auto-responses.svg"
+                "img": "/assets/filph/numbers/auto_responses.webp"
             },
             {
                 "name": "Integration sa Web Applications",
                 "content": "I-integrate nang seamless ang Numbers sa iyong web application o software. Pinapalawak nito ang kakayahan ng iyong system at pinapaganda ang komunikasyon ng user.",
-                "img": "/assets/global/numbers/numbers-integration-into-web.svg"
+                "img": "/assets/filph/numbers/integration_into_web.webp"
             }
         ]
     },
