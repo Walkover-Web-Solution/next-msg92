@@ -1,0 +1,101 @@
+{
+    "HeadComp": {
+        "title": "Transactional SMS | Tagapagbigay ng Transactional SMS - MSG91-Philippines",
+        "description": "Gamitin ang transactional SMS API ng MSG91 para sa mabilis, maaasahan, at seamless na komunikasyon. Pahusayin ang customer satisfaction gamit ang effortless message delivery."
+    },
+    "BannerComp": {
+        "slug": "sms",
+        "product": {
+            "name": "SMS",
+            "icon": "/assets/icons/products/sms.svg"
+        },
+        "code": true,
+        "tagline": "Next level na pagmemensahe",
+        "heading": "Makipag-ugnayan sa mga customer sa buong mundo gamit ang mabilis, scalable, at customizable na mga mensahe",
+        "subheading": "I-integrate ang aming developer-friendly APIs upang makapagpadala at makatanggap ng text messages. Ang aming distributed carrier network at intelligent routing ay tinitiyak ang pinakamataas na delivery at pinakamababang latency.",
+        "getstarted_btn": "Magsimula",
+        "trustedByComp": {
+            "heading": "Pinagkakatiwalaan ng 30,000+ global na negosyo",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Mga Tampok",
+        "iconColor": "text-campaign",
+        "features": [
+            {
+                "name": "Intelligent SMS Retry Algorithm",
+                "content": "Ang aming SMS API service ay naghahanap ng pinaka-maaasahan at pinakamabilis na telecom route para sa bawat mensahe na iyong ipinapadala. Kung sakaling mabigo ang delivery, awtomatikong inuulit ng algorithm ang pagpapadala sa loob ng ilang bahagi ng segundo gamit ang ibang ruta.",
+                "img": "/assets/filph/sms/intelligent_sms_routing.webp"
+            },
+            {
+                "name": "Maaasahan, Scalable, at Feature-Rich na SMS API",
+                "content": "Available sa lahat ng programming languages, ang integration sa aming SMS API ay mabilis, madali, at seamless. Ginawa ng mga developer para sa mga developer — tuklasin ang mga quick-start guides, code snippets, SDKs, at iba pa.",
+                "img": "/assets/filph/sms/reliable_scalable_and_feature_rich_sms_api.webp"
+            },
+            {
+                "name": "Mas Mababang Latency at Global Delivery",
+                "content": "Maabot ang 210+ na mga bansa sa tulong ng mga lokal na telecom operators. Ang real-time automatic rerouting ng global traffic ay tumutulong upang maiwasan ang service outage at mabawasan ang delay.",
+                "img": "/assets/filph/sms/enjoy_reliable_low_latency_delivery_worldwide.webp"
+            },
+            {
+                "name": "Multi-Lingual Support",
+                "content": "Makipag-usap sa iyong audience gamit ang kanilang lokal na wika upang mapalakas ang customer engagement. Magpadala ng mensahe sa kanilang rehiyonal na wika saan mang panig ng mundo.",
+                "img": "/assets/filph/sms/multi_lingual_support.webp"
+            },
+            {
+                "name": "Personalized SMS",
+                "content": "<strong>Palakasin ang kasiyahan ng customer gamit ang makabuluhang pakikipag-ugnayan.</strong>Higit pa sa simpleng mensahe — lumikha ng personalized na karanasan sa pamamagitan ng pagdagdag ng mga detalye sa iyong mga mensahe. Gamitin ang personalization upang mapataas ang ROI.",
+                "img": "/assets/filph/sms/personalized_sms.webp"
+            },
+            {
+                "name": "Link Shortener",
+                "content": "<strong>I-convert ang mahabang URL sa mas maikli at madaling basahin na link.</strong>Gamitin ang integrated link shortener upang gawing compact ang iyong URL. Makakuha ng detalyadong report ng user clicks kasama ang mobile number, browser, at IP address.",
+                "img": "/assets/filph/sms/shorturl_no_code.webp"
+            },
+            {
+                "name": "Pinahusay na Analytics",
+                "content": "<strong>Real-time na graphical view para sa monitoring at troubleshooting.</strong>I-optimize ang delivery ng SMS, sukatin ang bisa ng iyong campaigns, at pataasin ang ROI. Laging malaman kung alin sa mga mensahe ang naipadala at alin ang hindi.",
+                "img": "/assets/filph/sms/enhanced_analytics.webp"
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Simulan ang paggawa ng iyong ideal na customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Makipag-ugnayan sa sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Presyo",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Magsimula",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

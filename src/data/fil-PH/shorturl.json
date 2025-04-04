@@ -1,0 +1,76 @@
+{
+    "HeadComp": {
+        "title": "ShortUrl",
+        "description": "Gumawa ng branded short links upang mapabuti ang conversions at masubaybayan ang performance. I-customize at i-manage ang smart URLs upang ma-optimize ang iyong marketing efforts."
+    },
+    "BannerComp": {
+        "slug": "shorturl",
+        "product": {
+            "name": "URL Shortner",
+            "icon": "/assets/icons/products/shorturl.svg"
+        },
+        "tagline": "Pasimplehin ang iyong mga link",
+        "heading": "I-customize, ibahagi, at subaybayan ang smart links",
+        "subheading": "I-optimize ang mga komplikadong link upang makalikha ng maiikli at malilinis na links na mas madaling ibahagi.",
+        "banner_img": "/assets/filph/shorturl/shorturl_hero.webp",
+        "getstarted_btn": "Magsimula nang LIBRE",
+        "trustedByComp": {
+            "heading": "Pinagkakatiwalaan ng 30,000+ global na negosyo",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Mga Tampok",
+        "iconColor": "text-campaign",
+        "features": [
+            {
+                "name": "Walang Kailangan na Code",
+                "content": "<strong>Walang code at mas kaunting credits — isang smart link.</strong> Paikliin ang iyong URL agad-agad nang hindi kailangang mag-code. I-paste lang ang iyong link at makakakuha ka ng smart link na madaling ibahagi, nakakatipid ng espasyo, at mas matipid sa credits.",
+                "img": "/assets/filph/shorturl/no_code.webp"
+            },
+            {
+                "name": "NumberWise Tracking",
+                "content": "<strong>Kolektahin ang statistics sa pamamagitan ng pagsubaybay sa dami ng clicks ng iyong URL.</strong> Subaybayan ang performance ng iyong shortURL at alamin kung ilang beses na-click ang link, sino ang nakatanggap, saan ito ibinahagi, at kung paano ito nakaka-drive ng traffic.",
+                "img": "/assets/filph/shorturl/number_wise_tracking.webp"
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Simulan ang paggawa ng iyong ideal na customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Makipag-ugnayan sa sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Presyo",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Magsimula",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
