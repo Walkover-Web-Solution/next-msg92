@@ -30,6 +30,11 @@ class StepTwo extends React.Component {
             { value: 'event', label: 'Event' },
             { value: 'tiedelhincr', label: 'TiEDelhiNCR' },
         ];
+        console.log(
+            (this.props?.smsAccessToken || this.props?.emailAccessToken || this.props?.githubCode) &&
+                this.props?.isLoading &&
+                'loading'
+        );
     }
 
     componentDidMount() {
@@ -88,6 +93,7 @@ class StepTwo extends React.Component {
         //     smsIdentifier: '',
         // });
     };
+
     render() {
         return (
             <>
@@ -329,6 +335,7 @@ class StepTwo extends React.Component {
                             <MdKeyboardArrowLeft />
                             Back
                         </button>
+
                         <button
                             className=' btn btn-md btn-accent disabled:bg-gray-300 disabled:text-primary'
                             onClick={() => {
@@ -345,7 +352,8 @@ class StepTwo extends React.Component {
                                 this.props?.isLoading
                             }
                         >
-                            {' '}
+                            {((this.props?.smsAccessToken && this.props?.emailAccessToken) || this.props?.githubCode) &&
+                                this.props?.isLoading && <span className='loading loading-spinner loading-sm'></span>}
                             Next <MdKeyboardArrowRight />
                         </button>
                     </div>
