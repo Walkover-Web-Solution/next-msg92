@@ -30,11 +30,6 @@ class StepTwo extends React.Component {
             { value: 'event', label: 'Event' },
             { value: 'tiedelhincr', label: 'TiEDelhiNCR' },
         ];
-        console.log(
-            (this.props?.smsAccessToken || this.props?.emailAccessToken || this.props?.githubCode) &&
-                this.props?.isLoading &&
-                'loading'
-        );
     }
 
     componentDidMount() {
