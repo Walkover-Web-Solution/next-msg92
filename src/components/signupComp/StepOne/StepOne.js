@@ -13,7 +13,10 @@ class StepOne extends React.Component {
                 <div className='flex flex-col gap-8 2xl:w-2/3 xl:w-2/3  max-w-[600px]'>
                     <div className='flex flex-col gap-4'>
                         <h2>Are you a developer?</h2>
-                        <button className='btn btn-md h-10 btn-outline' onClick={() => this.signupWithGitHub()}>
+                        <button
+                            className='btn bg-white border border-black hover:bg-gray-100 hover:border-black btn-md '
+                            onClick={() => this.signupWithGitHub()}
+                        >
                             <img src='/img/icon-github.svg' alt='Github' />
                         </button>
                     </div>
