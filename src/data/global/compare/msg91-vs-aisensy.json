@@ -4,18 +4,18 @@
         "description": "Empowering developers with communication APIs. Building modern communication tools and supporting ideas for startups and enterprises globally."
     },
     "CompareBannerComp": {
-        "heading": "MSG91 vs WATI",
-        "subheading": "MSG91 and WATI both provide WhatsApp Business API solutions for customer communication and engagement. However, MSG91 offers a more comprehensive suite with AI-powered automation, seamless integrations, and advanced customer journey creation tools, making it ideal for businesses seeking an all-in-one communication platform.",
-        "img": "/assets/compare/wati/wati-icon.svg",
-        "color": "#13E785"
+        "heading": "MSG91 vs AiSensy",
+        "subheading": "MSG91 and AiSensy both provide WhatsApp Business API solutions for customer communication and engagement. However, MSG91 offers a more comprehensive suite with AI-powered automation, seamless integrations, and advanced customer journey creation tools, making it ideal for businesses seeking an all-in-one communication platform.",
+        "img": "/assets/compare/aisensy/aisensy-icon.png",
+        "color": "#40B163"
     },
     "CompareTableComp": {
-        "heading": "Comparison Summary: MSG91 vs WATI",
-        "name": "WATI",
-        "img": "/assets/compare/wati/wati-logo.svg",
+        "heading": "Comparison Summary: MSG91 vs AiSensy",
+        "name": "AiSensy",
+        "img": "/assets/compare/aisensy/aisensy-logo.png",
         "content": [
             {
-                "name": "WATI",
+                "name": "AiSensy",
                 "des": "WATI specializes in WhatsApp Business API solutions tailored for SMEs, offering basic automation and CRM features. However, it lacks multi-channel capabilities and deep customization required for large-scale operations."
             },
             {

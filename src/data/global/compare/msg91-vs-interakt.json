@@ -1,0 +1,66 @@
+{
+    "HeadComp": {
+        "title": "MSG91 - Our team, culture and happy clients.",
+        "description": "Empowering developers with communication APIs. Building modern communication tools and supporting ideas for startups and enterprises globally."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs Interakt",
+        "subheading": "MSG91 and Interakt both provide WhatsApp Business API solutions for customer communication and engagement. However, MSG91 offers a more comprehensive suite with AI-powered automation, seamless integrations, and advanced customer journey creation tools, making it ideal for businesses seeking an all-in-one communication platform.",
+        "img": "/assets/compare/interakt/interakt-icon.svg",
+        "color": "#00A68B"
+    },
+    "CompareTableComp": {
+        "heading": "Comparison Summary: MSG91 vs Interakt",
+        "name": "Interakt",
+        "img": "/assets/compare/interakt/interakt-logo.svg",
+        "content": [
+            {
+                "name": "Interakt",
+                "des": "Interakt specializes in WhatsApp Business API solutions tailored for SMEs, offering basic automation and CRM features. However, it lacks multi-channel capabilities and deep customization required for large-scale operations."
+            },
+            {
+                "name": "MSG91",
+                "des": "MSG91, on the other hand, is an all-in-one communication platform that not only provides WhatsApp Business API with advanced automation but also enables businesses to create customer journeys, segment users, and integrate seamlessly with multiple platforms. With competitive pricing, premium support, and a strong focus on scalability, MSG91 is the superior choice for businesses looking to maximize customer engagement."
+            }
+        ],
+        "features": {
+            "pricing": "2499 Per Month along with additional charges on per credit - Marketing: ₹0.871 Utility: ₹0.150 Authentication: ₹0.128",
+            "broadcasting": "WhatsApp Marketing Journey",
+            "multi_agent_support": "Unlimited Team Members",
+            "omnichannel_communication": "Omnichannel Inbox - whatsapp and instagram only",
+            "ai_chatbot_integration": "Drag & Drop Chatbot Builder & GPT Chatbot",
+            "unlimited_bot_creation": "Yes",
+            "whatsapp_payments": "yes whatsapp payment support through PayU and Razorpay",
+            "payment_links": "Yes payment feature",
+            "whatsapp_carousels": "Yes carousel support",
+            "customer_journey_creation": "Custom Workflows",
+            "client_segmentation": "No segmentation tool",
+            "integration_and_plugins": "e-commerce platforms, CRMs, e-stores & more",
+            "otp_widget": "OTP verification through whatsapp business api",
+            "one_click_verification": "Authentication templates include option autofill otp or copy otp code",
+            "unified_platform": "one platform for whatsapp api, whatsapp & instagram automation, chatbot, whatsapp flows and analytics",
+            "technical_knowledge_required": "Not Necessarily needed.",
+            "customer_support_quality": "Monday to Friday from 9 AM to 6 PM",
+            "omnichannel_chatbot_support": "Offer chatbot customer service across WhatsApp & Instagram",
+            "shopify_revenue_analytics": "No",
+            "blue_tick_assistance": "Yes"
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

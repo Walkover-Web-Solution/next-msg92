@@ -24,11 +24,24 @@
                 "img": "/assets/compare/wati/wati-icon.svg",
                 "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(0, 231, 133, 0.10) 107.23%)"
             },
+
             {
-                "name": "MSG91 vs Gallabox",
-                "link": "msg91-vs-gallabox",
-                "img": "/assets/compare/gallabox/gallabox-icon.svg",
-                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(51, 100, 250, 0.10) 107.23%)"
+                "name": "MSG91 vs Interakt",
+                "link": "msg91-vs-interakt",
+                "img": "/assets/compare/interakt/interakt-icon.svg",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(0, 166, 139, 0.10) 107.23%)"
+            },
+            {
+                "name": "MSG91 vs 360Dialog",
+                "link": "msg91-vs-360dialog",
+                "img": "/assets/compare/360dialog/360dialog-icon.png",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(255, 67, 105, 0.10) 107.23%)"
+            },
+            {
+                "name": "MSG91 vs AiSensy",
+                "link": "msg91-vs-aisensy",
+                "img": "/assets/compare/aisensy/aisensy-icon.png",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(66, 184, 98, 0.10)  107.23%)"
             }
         ]
     },
