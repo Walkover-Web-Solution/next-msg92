@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function PricingNav({ products, page }) {
     return (
         <>
-            <div className='flex w-full justify-start md:hidden '>
+            <div className='flex w-full justify-center md:hidden '>
                 <div className='dropdown marker:hidden cursor-pointer bg-white w-52 rounded '>
                     <div tabIndex={0} role='button' className='px-3 py-2 capitalize'>
                         {page}

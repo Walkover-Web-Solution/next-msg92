@@ -85,9 +85,9 @@ export default function PricingSMSOTP({ data, type, country }) {
     return (
         <>
             <div className='flex flex-col gap-3 w-full'>
-                <h1 className='text-3xl font-semibold capitalize '>{type?.toUpperCase()} Pricing</h1>
-                <div className='w-full flex flex-col gap-8'>
-                    <div className='flex lg:flex-row flex-col items-center text-lg gap-3'>
+                <h1 className='text-3xl font-semibold capitalize text-center '>{type?.toUpperCase()} Pricing</h1>
+                <div className='w-full flex flex-col  gap-8'>
+                    <div className='flex xl:flex-row flex-col items-center text-lg gap-3'>
                         <span>Send {type?.toUpperCase()} From</span>
                         <div className='w-[300px] z-50'>
                             <Typeahead
@@ -227,7 +227,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                                 </a>
                             </>
                         ) : noOfSmsArray.length > 0 && noOfSmsArray[0]?.[pricingEnv]?.rate ? (
-                            <div className='flex flex-col gap-8 justify-around items-center h-[282px] bg-white p-8 w-fit border rounded '>
+                            <div className='flex flex-col gap-8 items-center w-full md:w-fit h-[282px] bg-white p-8  border rounded '>
                                 <div>SMS Pricing</div>
                                 <div className='text-3xl font-bold text-green-600'>
                                     {symbol}
