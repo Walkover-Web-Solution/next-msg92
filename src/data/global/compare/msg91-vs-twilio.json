@@ -1,0 +1,67 @@
+{
+    "HeadComp": {
+        "title": "MSG91 - Our team, culture and happy clients.",
+        "description": "Empowering developers with communication APIs. Building modern communication tools and supporting ideas for startups and enterprises globally."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs Twilio",
+        "subheading": "MSG91 and Twilio are two leading communication platforms offering SMS, WhatsApp, and omnichannel messaging solutions. While both provide robust APIs and automation capabilities, their pricing, ease of integration, and customer-centric features cater to different business needs.",
+        "img": "/assets/compare/twilio/twilio-icon.svg",
+        "color": "#F22F46"
+    },
+    "CompareTableComp": {
+        "heading": "Comparison Summary: MSG91 vs Twilio",
+        "name": "Twilio",
+        "img": "/assets/compare/twilio/twilio-logo.svg",
+        "content": [
+            {
+                "name": "MSG91",
+                "des": "MSG91 is a powerful communication platform designed for businesses looking for cost-effective, scalable, and highly reliable messaging solutions. Unlike Twilio, MSG91 offers localized pricing, premium customer support, and advanced automation features like WhatsApp Flows, AI-driven customer journey creation, and omnichannel messaging. Its seamless integrations and affordability make it the preferred choice for businesses looking to enhance customer engagement while keeping costs low."
+            },
+            {
+                "name": "Twilio",
+                "des": "Twilio is a cloud communication platform offering various APIs for messaging, voice, and video. It is widely used by enterprises needing global reach, but its pricing can be complex, and customer support often lacks personalized assistance."
+            }
+        ],
+        "features": {
+            "pricing": "Costlier, Added margin on Meta pricing",
+            "broadcasting": "Supports unlimited bulk messaging",
+            "multi_agent_support": "Multiple agent support",
+            "omnichannel_communication": "SMS, RCS, MMS, WhatsApp, and Facebook Messenger",
+            "ai_chatbot_integration": "Twilio offers APIs to build AI chatbots using models like GPT with simple code.",
+            "unlimited_bot_creation": "Yes",
+            "whatsapp_payments": "Yes through API",
+            "payment_links": "No payment link feature",
+            "whatsapp_carousels": "Yes carousel support",
+            "customer_journey_creation": "Create Personalized customer journeys",
+            "client_segmentation": "Advanced customer segmentation for targeted campaigns- through twilio segments",
+            "integration_and_plugins": "Integrates with Multiple platforms like Shopify, Zoho, Hubspot etc",
+            "otp_widget": "Offers OTP verification through SMS, email, WhatsApp and Voice",
+            "one_click_verification": "No",
+            "unified_platform": "With Twilio, full automation means using multiple services — twilio Segment, twilio Engage, twilio Flex, and more.",
+            "technical_knowledge_required": "Requires technical knowledge",
+            "customer_support_quality": "Limited free support; fast replies need a paid plan.",
+            "omnichannel_chatbot_support": "SMS, webchat, WhatsApp, and Facebook Messenger.",
+            "shopify_revenue_analytics": "Yes",
+            "blue_tick_assistance": "Yes",
+            "meta_ads_trackings_conversion": "Available"
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

@@ -64,7 +64,13 @@ export default function BannerComp({ pageInfo, data }) {
                     <div className='flex flex-col gap-6'>
                         {data?.product && (
                             <div className='flex items-center gap-2'>
-                                <Image src={data?.product?.icon} width={40} height={40} alt={data?.product?.name} />
+                                <Image
+                                    key={data?.product?.ico}
+                                    src={data?.product?.icon}
+                                    width={40}
+                                    height={40}
+                                    alt={data?.product?.name}
+                                />
                                 <h1 className='font-semibold text-2xl'>{data?.product?.name}</h1>
                             </div>
                         )}
@@ -80,14 +86,18 @@ export default function BannerComp({ pageInfo, data }) {
                             {data?.subheading}
                         </h3>
                     </div>
+
                     <div className='flex flex-col md:flex-row gap-6'>
-                        <a
-                            href={getURL('signup', pageInfo?.page, pageInfo)}
-                            target='_blank'
-                            className='btn btn-primary btn-md'
-                        >
-                            {data?.getstarted_btn}
-                        </a>
+                        {data?.getstarted_btn && (
+                            <a
+                                href={getURL('signup', pageInfo?.page, pageInfo)}
+                                target='_blank'
+                                className='btn btn-primary btn-md'
+                            >
+                                {data?.getstarted_btn}
+                            </a>
+                        )}
+
                         {data?.schedule_meet && (
                             <button className='btn btn-md btn-primary btn-outline' onClick={() => setIsModalOpen(true)}>
                                 {data?.schedule_meet}
@@ -155,17 +165,23 @@ export default function BannerComp({ pageInfo, data }) {
                             width={2000}
                             height={2000}
                             alt={data?.tagline}
+                            key={data?.banner_img}
+                            placeholder='blur'
+                            blurDataURL='/assets/extras/placeholder.webp'
                         />
                     </div>
                 )}
                 {!data?.code && data?.banner_img && data?.not_absolute && (
                     <div className='lg:w-1/2'>
                         <Image
+                            key={data?.banner_img}
                             className='w-full'
                             src={data?.banner_img}
                             width={2000}
                             height={2000}
                             alt={data?.tagline}
+                            placeholder='blur'
+                            blurDataURL='/assets/extras/placeholder.webp'
                         />
                     </div>
                 )}

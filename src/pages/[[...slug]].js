@@ -39,6 +39,9 @@ import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/Case
 import ChatBotDemoComp from '@/components/ChatBotDemoComp/ChatBotDemoComp';
 import AsSeenComp from '@/components/AsSeenComp/AsSeenComp';
 import ProductStatsComp from '@/components/ProductStatsComp/ProductStatsComp';
+import CompareBannerComp from '@/components/compareComp/compareBannerComp/compareBannerComp';
+import CompareGridComp from '@/components/compareComp/compareGridComp/compareGridComp';
+import CompareTableComp from '@/components/compareComp/compareTableComp/compareTableComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -85,6 +88,9 @@ const Components = {
     ChatBotDemoComp,
     AsSeenComp,
     ProductStatsComp,
+    CompareBannerComp,
+    CompareGridComp,
+    CompareTableComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
@@ -135,7 +141,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const params = context?.params;
     const pageInfo = getPageInfo(params);
-    const isNestedpage = specialPages.nested.includes(pageInfo?.pathURL);
+    // const isNestedpage = specialPages.nested.includes(pageInfo?.pathURL);
     const commonData = getCommonCompData(pageInfo?.country);
     const fetchData = async (endpoint) => {
         const res = await fetch(`${process.env.BASE_URL}${endpoint}`, {
@@ -147,7 +153,7 @@ export const getStaticProps = async (context) => {
         });
         return await res.json();
     };
-    const data = isNestedpage ? await fetchData('/api/data') : await fetchData('/api/data');
+    const data = await fetchData('/api/data');
     return {
         props: {
             data: data || {},

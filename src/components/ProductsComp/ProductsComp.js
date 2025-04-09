@@ -22,8 +22,9 @@ export default function ProductsComp({ data }) {
                                         </LinkText>
                                     </div>
                                     <Image
-                                        width={420}
-                                        height={420}
+                                        width={480}
+                                        height={480}
+                                        quality={100}
                                         className='2xl:h-[260px] xl:h-[250px] lg:h-[200px] h-[200px] w-auto sm:ml-auto'
                                         src={product?.img}
                                         alt={product?.name}
