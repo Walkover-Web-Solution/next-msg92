@@ -1,7 +1,7 @@
 {
     "pricing": {
         "name": "Pricing",
-        "msg91": "Zero margin on Meta pricing, cost-effective for all businesses"
+        "msg91": "Zero margin on Meta pricing"
     },
     "broadcasting": {
         "name": "Broadcasting",
@@ -9,31 +9,23 @@
     },
     "multi_agent_support": {
         "name": "Multi-Agent Support",
-        "msg91": "Yes, allows seamless handling of multiple agents"
+        "msg91": "Supports multiple agents on the platform."
     },
-    "omnichannel_support": {
-        "name": "Omnichannel Support",
-        "msg91": "Full omnichannel solution with Email, SMS, Voice, and WhatsApp"
+    "omnichannel_communication": {
+        "name": "Omnichannel Communication",
+        "msg91": "Email, SMS, Voice, and WhatsApp"
     },
     "ai_chatbot_integration": {
         "name": "AI Chatbot Integration",
-        "msg91": "Yes, advanced AI chatbot with automation"
+        "msg91": "MSG91 offers multiple AI options to build chatbots in minutes — just use simple English prompts."
     },
-    "no_code_automation": {
-        "name": "No-Code Automation",
-        "msg91": "Drag-and-drop automation builder for workflows"
-    },
-    "developer_specific_bots": {
-        "name": "Developer-Specific Bots",
-        "msg91": "Specialized bots designed for developers"
-    },
-    "crm_integration": {
-        "name": "CRM Integration",
-        "msg91": "Native integrations with top CRMs like Zoho, HubSpot, Salesforce"
+    "unlimited_bot_creation": {
+        "name": "Unlimited Bot Creation",
+        "msg91": "Yes"
     },
     "whatsapp_payments": {
         "name": "WhatsApp Payments",
-        "msg91": "Supports direct payment links with Razorpay, Cashfree & Stripe"
+        "msg91": "Supports direct payment links with Razorpay, Cashfree, Credit/Debit Cards, UPI and so on"
     },
     "payment_links": {
         "name": "Payment Links",
@@ -53,22 +45,42 @@
     },
     "integration_and_plugins": {
         "name": "Integration and Plugins",
-        "msg91": "Integrates with Shopify, WooCommerce, and other platforms"
-    },
-    "affordability": {
-        "name": "Affordability",
-        "msg91": "Cost-effective solution with no extra margin"
-    },
-    "click_to_whatsapp_use_case_journeys": {
-        "name": "Click-to-WhatsApp Use Case Journeys",
-        "msg91": "Pre-built use cases for Click-to-WhatsApp advertising"
+        "msg91": "Integrates with Multiple platforms Shopify, WooCommerce, Webengage, Zoho and other platforms"
     },
     "otp_widget": {
         "name": "OTP Widget",
-        "msg91": "Provides OTP verification via multiple channels - WhatsApp, SMS, Email, Voice"
+        "msg91": "Provides OTP verification via multiple channels - WhatsApp, SMS, Email, and Voice"
     },
     "one_click_verification": {
         "name": "One Click Verification",
+        "msg91": "Yes, through WhatsApp only"
+    },
+    "unified_platform": {
+        "name": "Unified Platform",
+        "msg91": "One platform for all your marketing: Segmento (targeting), Hello (AI support), Campaign (omnichannel outreach)."
+    },
+    "technical_knowledge_required": {
+        "name": "Technical Knowledge Required",
+        "msg91": "Not Necessarily needed."
+    },
+    "customer_support_quality": {
+        "name": "Customer Support Quality",
+        "msg91": "Free 24/7 support — email, WhatsApp & calls covered!"
+    },
+    "omnichannel_chatbot_support": {
+        "name": "Omnichannel Chatbot Support",
+        "msg91": "WhatsApp, Website, Instagram, and Facebook Messanger"
+    },
+    "shopify_revenue_analytics": {
+        "name": "Shopify Revenue Analytics",
         "msg91": "Yes"
+    },
+    "blue_tick_assistance": {
+        "name": "Blue Tick Assistance",
+        "msg91": "Yes"
+    },
+    "meta_ads_trackings_conversion": {
+        "name": "Meta Ads Trackings & Conversion",
+        "msg91": "Campaign wise, Ad set wise all analytics are available"
     }
 }

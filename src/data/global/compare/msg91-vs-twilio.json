@@ -5,7 +5,7 @@
     },
     "CompareBannerComp": {
         "heading": "MSG91 vs Twilio",
-        "subheading": "MSG91 and Twilio are two leading communication platforms offering SMS, WhatsApp, and omnichannel messaging solutions. While both provide robust APIs and automation capabilities, their pricing, ease of integration, and customer-centric features cater to different business needs",
+        "subheading": "MSG91 and Twilio are two leading communication platforms offering SMS, WhatsApp, and omnichannel messaging solutions. While both provide robust APIs and automation capabilities, their pricing, ease of integration, and customer-centric features cater to different business needs.",
         "img": "/assets/compare/twilio/twilio-icon.svg",
         "color": "#F22F46"
     },
@@ -24,24 +24,27 @@
             }
         ],
         "features": {
-            "pricing": "Pay-as-you-go, variable rates",
-            "broadcasting": "Available but limited based on policies",
-            "multi_agent_support": "Yes",
-            "omnichannel_support": "WhatsApp and SMS",
-            "ai_chatbot_integration": "Yes, supports chatbot integration",
-            "no_code_automation": "No native no-code solution",
-            "developer_specific_bots": "No specific developer-focused bot",
-            "crm_integration": "API-based CRM integrations",
-            "whatsapp_payments": "No native payment integration",
+            "pricing": "Costlier, Added margin on Meta pricing",
+            "broadcasting": "Supports unlimited bulk messaging",
+            "multi_agent_support": "Multiple agent support",
+            "omnichannel_communication": "SMS, RCS, MMS, WhatsApp, and Facebook Messenger",
+            "ai_chatbot_integration": "Twilio offers APIs to build AI chatbots using models like GPT with simple code.",
+            "unlimited_bot_creation": "Yes",
+            "whatsapp_payments": "Yes through API",
             "payment_links": "No payment link feature",
             "whatsapp_carousels": "Yes carousel support",
-            "customer_journey_creation": "No journey creation feature",
-            "client_segmentation": "No segmentation tool",
-            "integration_and_plugins": "API-based integrations only",
-            "affordability": "Medium cost with additional charges",
-            "click_to_whatsapp_use_case_journeys": "No predefined journeys",
-            "otp_widget": "Offers OTP verification through SMS and Voice only.",
-            "one_click_verification": "No"
+            "customer_journey_creation": "Create Personalized customer journeys",
+            "client_segmentation": "Advanced customer segmentation for targeted campaigns- through twilio segments",
+            "integration_and_plugins": "Integrates with Multiple platforms like Shopify, Zoho, Hubspot etc",
+            "otp_widget": "Offers OTP verification through SMS, email, WhatsApp and Voice",
+            "one_click_verification": "No",
+            "unified_platform": "With Twilio, full automation means using multiple services — twilio Segment, twilio Engage, twilio Flex, and more.",
+            "technical_knowledge_required": "Requires technical knowledge",
+            "customer_support_quality": "Limited free support; fast replies need a paid plan.",
+            "omnichannel_chatbot_support": "SMS, webchat, WhatsApp, and Facebook Messenger.",
+            "shopify_revenue_analytics": "Yes",
+            "blue_tick_assistance": "Yes",
+            "meta_ads_trackings_conversion": "Available"
         }
     },
     "PreFooterComp": {
