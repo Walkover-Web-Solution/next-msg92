@@ -47,22 +47,24 @@ export default function CompareTableComp({ data }) {
                     <tbody>
                         {Object.keys(features).map((featureKey, index) => {
                             const feature = features[featureKey];
-                            return (
-                                <tr key={index} className=''>
-                                    <td className='font-semibold border-x border-300 text-base text-gray-500 w-1/5'>
-                                        {feature.name}
-                                    </td>
-                                    <td
-                                        className='bg-[#F0F7FF] border-r  border-300 px-6 py-6
-                                     text-base w-1/3'
-                                    >
-                                        {feature?.msg91}
-                                    </td>
-                                    <td className='text-base text-gray-500 border-r w-1/3 px-6 py-6'>
-                                        {data?.features[featureKey]}
-                                    </td>
-                                </tr>
-                            );
+                            if (data?.features[featureKey]) {
+                                return (
+                                    <tr key={index} className=''>
+                                        <td className='font-semibold border-x border-300 text-base text-gray-500 w-1/5'>
+                                            {feature.name}
+                                        </td>
+                                        <td
+                                            className='bg-[#F0F7FF] border-r  border-300 px-6 py-6
+                                         text-base w-1/3'
+                                        >
+                                            {feature?.msg91}
+                                        </td>
+                                        <td className='text-base text-gray-500 border-r w-1/3 px-6 py-6'>
+                                            {data?.features[featureKey]}
+                                        </td>
+                                    </tr>
+                                );
+                            }
                         })}
                     </tbody>
                 </table>
