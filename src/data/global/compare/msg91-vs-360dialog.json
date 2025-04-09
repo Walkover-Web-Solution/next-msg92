@@ -4,23 +4,23 @@
         "description": "Empowering developers with communication APIs. Building modern communication tools and supporting ideas for startups and enterprises globally."
     },
     "CompareBannerComp": {
-        "heading": "MSG91 vs Interakt",
-        "subheading": "MSG91 and Interakt both provide WhatsApp Business API solutions for customer communication and engagement. However, MSG91 offers a more comprehensive suite with AI-powered automation, seamless integrations, and advanced customer journey creation tools, making it ideal for businesses seeking an all-in-one communication platform.",
+        "heading": "MSG91 vs 360Dialog",
+        "subheading": "MSG91 and 360dialog both offer access to WhatsApp Business API for customer messaging. 360dialog is known for providing direct API access with flexible integration options. MSG91, on the other hand, combines this with advanced features like AI automation, chatbots, and omnichannel tools. Both platforms support scalable communication, but MSG91 is the go-to choice for businesses seeking end-to-end automation and engagement solutions.",
         "img": "/assets/compare/360dialog/360dialog-icon.png",
         "color": "#FD4369"
     },
     "CompareTableComp": {
-        "heading": "Comparison Summary: MSG91 vs Interakt",
-        "name": "Interakt",
+        "heading": "Comparison Summary: MSG91 vs 360Dialog",
+        "name": "360Dialog",
         "img": "/assets/compare/360dialog/360dialog-logo.svg",
         "content": [
             {
-                "name": "Interakt",
-                "des": "Interakt specializes in WhatsApp Business API solutions tailored for SMEs, offering basic automation and CRM features. However, it lacks multi-channel capabilities and deep customization required for large-scale operations."
+                "name": "360Dialog",
+                "des": "360dialog is a WhatsApp Business API provider known for offering direct API access with minimal platform overhead. It’s often used by developers and SaaS platforms looking for a quick gateway to WhatsApp, but it offers limited built-in tools for marketing automation, customer journey management, or omnichannel engagement."
             },
             {
                 "name": "MSG91",
-                "des": "MSG91, on the other hand, is an all-in-one communication platform that not only provides WhatsApp Business API with advanced automation but also enables businesses to create customer journeys, segment users, and integrate seamlessly with multiple platforms. With competitive pricing, premium support, and a strong focus on scalability, MSG91 is the superior choice for businesses looking to maximize customer engagement."
+                "des": "MSG91, in contrast, is an end-to-end communication platform tailored for businesses aiming to scale intelligently. It goes beyond just WhatsApp access — offering AI-driven automation, WhatsApp Flows, chatbots built through natural language prompts, and a unified platform that includes SMS, Email, RCS, and more. With localized pricing and dedicated support, MSG91 empowers brands to create smarter, more efficient customer journeys across channels."
             }
         ],
         "features": {

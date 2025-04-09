@@ -5,7 +5,7 @@
     },
     "CompareBannerComp": {
         "heading": "MSG91 vs Interakt",
-        "subheading": "MSG91 and Interakt both provide WhatsApp Business API solutions for customer communication and engagement. However, MSG91 offers a more comprehensive suite with AI-powered automation, seamless integrations, and advanced customer journey creation tools, making it ideal for businesses seeking an all-in-one communication platform.",
+        "subheading": "MSG91 and Interakt both provide WhatsApp Business API solutions for customer communication. While Interakt focuses on CRM functionalities and sales workflows over WhatsApp, MSG91 offers a wider suite with AI automation, chatbot building, and omnichannel campaign tools. Both platforms support customer engagement, but MSG91 is ideal for businesses looking for an all-in-one communication and marketing platform.",
         "img": "/assets/compare/interakt/interakt-icon.svg",
         "color": "#00A68B"
     },
@@ -16,11 +16,11 @@
         "content": [
             {
                 "name": "Interakt",
-                "des": "Interakt specializes in WhatsApp Business API solutions tailored for SMEs, offering basic automation and CRM features. However, it lacks multi-channel capabilities and deep customization required for large-scale operations."
+                "des": "Interakt is a WhatsApp Business API platform focused on helping SMBs with CRM-style features like lead management, shared inbox, and basic campaign tools. It’s user-friendly and suited for businesses looking to manage customer conversations primarily on WhatsApp."
             },
             {
                 "name": "MSG91",
-                "des": "MSG91, on the other hand, is an all-in-one communication platform that not only provides WhatsApp Business API with advanced automation but also enables businesses to create customer journeys, segment users, and integrate seamlessly with multiple platforms. With competitive pricing, premium support, and a strong focus on scalability, MSG91 is the superior choice for businesses looking to maximize customer engagement."
+                "des": "MSG91 offers a broader communication ecosystem designed for scale. Alongside WhatsApp, it provides AI-powered automation, customer journey flows, bot creation using natural English prompts, and omnichannel capabilities including SMS, Email, and RCS. With advanced features, localized pricing, and 24/7 support, MSG91 is ideal for brands that want more than just messaging — a platform to automate, engage, and grow."
             }
         ],
         "features": {
