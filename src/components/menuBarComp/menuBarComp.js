@@ -97,7 +97,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         <LinkText customClasses='text-lg'>Integrations</LinkText>
                                     </Link>
                                     <a
-                                        className='flex items-center h-full justify-center'
+                                        className='flex items-centerd h-full justify-cente'
                                         href='https://docs.msg91.com/overview'
                                         target='_blank'
                                         onClick={() => {
