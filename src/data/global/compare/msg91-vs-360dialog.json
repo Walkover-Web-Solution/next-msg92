@@ -1,0 +1,66 @@
+{
+    "HeadComp": {
+        "title": "MSG91 - Our team, culture and happy clients.",
+        "description": "Empowering developers with communication APIs. Building modern communication tools and supporting ideas for startups and enterprises globally."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs 360Dialog",
+        "subheading": "MSG91 and 360dialog both offer access to WhatsApp Business API for customer messaging. 360dialog is known for providing direct API access with flexible integration options. MSG91, on the other hand, combines this with advanced features like AI automation, chatbots, and omnichannel tools. Both platforms support scalable communication, but MSG91 is the go-to choice for businesses seeking end-to-end automation and engagement solutions.",
+        "img": "/assets/compare/360dialog/360dialog-icon.png",
+        "color": "#FD4369"
+    },
+    "CompareTableComp": {
+        "heading": "Comparison Summary: MSG91 vs 360Dialog",
+        "name": "360Dialog",
+        "img": "/assets/compare/360dialog/360dialog-logo.svg",
+        "content": [
+            {
+                "name": "360Dialog",
+                "des": "360dialog is a WhatsApp Business API provider known for offering direct API access with minimal platform overhead. It’s often used by developers and SaaS platforms looking for a quick gateway to WhatsApp, but it offers limited built-in tools for marketing automation, customer journey management, or omnichannel engagement."
+            },
+            {
+                "name": "MSG91",
+                "des": "MSG91, in contrast, is an end-to-end communication platform tailored for businesses aiming to scale intelligently. It goes beyond just WhatsApp access — offering AI-driven automation, WhatsApp Flows, chatbots built through natural language prompts, and a unified platform that includes SMS, Email, RCS, and more. With localized pricing and dedicated support, MSG91 empowers brands to create smarter, more efficient customer journeys across channels."
+            }
+        ],
+        "features": {
+            "pricing": "Not disclosed",
+            "broadcasting": "Whatsapp marketing campaigns",
+            "multi_agent_support": "Yes",
+            "omnichannel_communication": "Whatsapp Inbox only",
+            "ai_chatbot_integration": "AI-powered chatbots",
+            "unlimited_bot_creation": "Yes",
+            "whatsapp_payments": "Yes payment solution available only for Indian businesses",
+            "payment_links": "Yes payment support available only for Indian businesses",
+            "whatsapp_carousels": "Yes carousel support",
+            "customer_journey_creation": "Personalized customer journeys",
+            "client_segmentation": "No segmentation feature",
+            "integration_and_plugins": "API-based integrations",
+            "otp_widget": "Yes OTP verification through WhatsApp Business API",
+            "one_click_verification": "Authentication templates include option autofill OTP or copy OTP code",
+            "unified_platform": "One platform for WhatsApp automation, WhatsApp API, connect with Google Ads and add WhatsApp button on any website to increase conversion",
+            "technical_knowledge_required": "Requires technical knowledge for integrating API",
+            "customer_support_quality": "24 hours support team available",
+            "omnichannel_chatbot_support": "WhatsApp",
+            "shopify_revenue_analytics": "Yes"
+
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

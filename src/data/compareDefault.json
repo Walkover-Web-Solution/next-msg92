@@ -1,0 +1,86 @@
+{
+    "pricing": {
+        "name": "Pricing",
+        "msg91": "Zero margin on Meta pricing"
+    },
+    "broadcasting": {
+        "name": "Broadcasting",
+        "msg91": "Supports unlimited bulk messaging"
+    },
+    "multi_agent_support": {
+        "name": "Multi-Agent Support",
+        "msg91": "Supports multiple agents on the platform."
+    },
+    "omnichannel_communication": {
+        "name": "Omnichannel Communication",
+        "msg91": "Email, SMS, Voice, and WhatsApp"
+    },
+    "ai_chatbot_integration": {
+        "name": "AI Chatbot Integration",
+        "msg91": "MSG91 offers multiple AI options to build chatbots in minutes — just use simple English prompts."
+    },
+    "unlimited_bot_creation": {
+        "name": "Unlimited Bot Creation",
+        "msg91": "Yes"
+    },
+    "whatsapp_payments": {
+        "name": "WhatsApp Payments",
+        "msg91": "Supports direct payment links with Razorpay, Cashfree, Credit/Debit Cards, UPI and so on"
+    },
+    "payment_links": {
+        "name": "Payment Links",
+        "msg91": "Generate payment links directly within WhatsApp chat"
+    },
+    "whatsapp_carousels": {
+        "name": "WhatsApp Carousels",
+        "msg91": "Supports rich media carousels for showcasing products/services"
+    },
+    "customer_journey_creation": {
+        "name": "Customer Journey Creation",
+        "msg91": "Create personalized automated customer journeys"
+    },
+    "client_segmentation": {
+        "name": "Client Segmentation",
+        "msg91": "Advanced customer segmentation for targeted campaigns"
+    },
+    "integration_and_plugins": {
+        "name": "Integration and Plugins",
+        "msg91": "Integrates with Multiple platforms Shopify, WooCommerce, Webengage, Zoho and other platforms"
+    },
+    "otp_widget": {
+        "name": "OTP Widget",
+        "msg91": "Provides OTP verification via multiple channels - WhatsApp, SMS, Email, and Voice"
+    },
+    "one_click_verification": {
+        "name": "One Click Verification",
+        "msg91": "Yes, through WhatsApp only"
+    },
+    "unified_platform": {
+        "name": "Unified Platform",
+        "msg91": "One platform for all your marketing: Segmento (targeting), Hello (AI support), Campaign (omnichannel outreach)."
+    },
+    "technical_knowledge_required": {
+        "name": "Technical Knowledge Required",
+        "msg91": "Not Necessarily needed."
+    },
+    "customer_support_quality": {
+        "name": "Customer Support Quality",
+        "msg91": "Free 24/7 support — email, WhatsApp & calls covered!"
+    },
+    "omnichannel_chatbot_support": {
+        "name": "Omnichannel Chatbot Support",
+        "msg91": "WhatsApp, Website, Instagram, and Facebook Messanger"
+    },
+    "shopify_revenue_analytics": {
+        "name": "Shopify Revenue Analytics",
+        "msg91": "Yes"
+    },
+    "blue_tick_assistance": {
+        "name": "Blue Tick Assistance",
+        "msg91": "Yes"
+    },
+    "meta_ads_trackings_conversion": {
+        "name": "Meta Ads Trackings & Conversion",
+        "msg91": "Campaign wise, Ad set wise all analytics are available"
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "HeadComp": {
+        "title": "MSG91 - Our team, culture and happy clients.",
+        "description": "Empowering developers with communication APIs. Building modern communication tools and supporting ideas for startups and enterprises globally."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs AiSensy",
+        "subheading": "MSG91 and AiSensy both offer WhatsApp Business API solutions for customer engagement. While AiSensy focuses mainly on WhatsApp marketing and broadcasting, MSG91 provides a more comprehensive suite with AI-powered automation, chatbot creation, and omnichannel messaging tools. Both platforms support campaign management, but MSG91 stands out for businesses seeking scalability and cross-channel communication in one place.",
+        "img": "/assets/compare/aisensy/aisensy-icon.png",
+        "color": "#40B163"
+    },
+    "CompareTableComp": {
+        "heading": "Comparison Summary: MSG91 vs AiSensy",
+        "name": "AiSensy",
+        "img": "/assets/compare/aisensy/aisensy-logo.png",
+        "content": [
+            {
+                "name": "AiSensy",
+                "des": "AiSensy is a WhatsApp Business API platform focused on helping businesses run campaigns and automate responses via WhatsApp. It’s simple to use and caters well to businesses with basic marketing needs over a single channel. However, it offers limited scope beyond WhatsApp and lacks advanced automation and AI capabilities."
+            },
+            {
+                "name": "MSG91",
+                "des": "MSG91, on the other hand, is a comprehensive communication platform built for growing and enterprise businesses. It provides AI-powered automation, chatbot creation through simple English prompts, WhatsApp Flows, and complete customer journey mapping. With support for multiple channels like SMS, Email, WhatsApp, and RCS, along with localized pricing and 24/7 support, MSG91 is ideal for brands looking to scale their engagement efficiently and intelligently across touchpoints."
+            }
+        ],
+        "features": {
+            "pricing": "Costlier, Added margin on Meta pricing",
+            "broadcasting": "Through WhatsApp only",
+            "multi_agent_support": "Free agents till 3 users, extra charges for extra users",
+            "omnichannel_communication": "WhatsApp only",
+            "ai_chatbot_integration": "No codechatbot, costlier as we go for complex bots",
+            "unlimited_bot_creation": "Yes",
+            "whatsapp_payments": "WhatsApp Pay checkout in Catalog with Razorpay and PayU",
+            "payment_links": "Yes payment link support",
+            "whatsapp_carousels": "Yes carousel support",
+            "customer_journey_creation": "WhatsApp Journey",
+            "client_segmentation": "Advanced customer segmentation",
+            "integration_and_plugins": "Integrates with Multiple platforms like Shopify, Zoho, Hubspot etc",
+            "otp_widget": "Does not provide OTP verification as a built-in feature",
+            "one_click_verification": "No",
+            "unified_platform": "WhatsApp workflows are available",
+            "technical_knowledge_required": "Not Necessarily needed.",
+            "customer_support_quality": "Email & Chat support",
+            "omnichannel_chatbot_support": "Only WhatsApp",
+            "shopify_revenue_analytics": "Yes (whatsapp campaigns)",
+            "blue_tick_assistance": "Yes",
+            "meta_ads_trackings_conversion": "Available"
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
