@@ -1,4 +1,10 @@
+import specialpages from '@/data/specialPages.json';
 export default function getCommonCompData(country) {
-    const commonData = require(`@/data/${country}/common.json`);
+    let commonData = {};
+    if (specialpages?.countries.includes(country)) {
+        commonData = require(`@/data/${country}/common.json`);
+    } else {
+        commonData = require(`@/data/global/common.json`);
+    }
     return commonData || {};
 }

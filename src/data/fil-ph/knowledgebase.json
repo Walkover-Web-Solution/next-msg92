@@ -1,0 +1,85 @@
+{
+    "HeadComp": {
+        "title": "Customer knowledgebase platform ng MSG91-Philippines",
+        "description": "Magbigay sa mga customer ng isang sentralisadong knowledge base para sa mabilisang pag-access ng mga sagot tungkol sa iyong mga produkto at serbisyo. Bigyan sila ng mga self-service na opsyon."
+    },
+    "BannerComp": {
+        "slug": "knowledgebase",
+        "product": {
+            "name": "KnowledgeBase",
+            "icon": "/assets/icons/products/Knowledgebase.svg"
+        },
+        "tagline": "Bigyan ang mga customer ng mga self-service na opsyon",
+        "heading": "Ang knowledge base ay ang backbone ng magandang customer support",
+        "subheading": "Makukuha mo ang lahat ng mahahalagang tampok ng KnowledgeBase software sa isang abot-kayang presyo",
+        "banner_img": "/assets/filph/knowledgebase/knowledgebase_hero.webp",
+        "getstarted_btn": "Magsimula ng LIBRE magpakailanman",
+        "trustedByComp": {
+            "heading": "Tiwala ng 30,000+ na global na negosyo",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Mga Tampok",
+        "iconColor": "text-campaign",
+        "features": [
+            {
+                "name": "WYSIWYG editor",
+                "content": "<strong>Madaling gumawa o mag-edit ng iyong knowledge base articles</strong> Mabilis na gumawa ng iyong mga artikulo gamit ang what you see is what you get content editor. Kasing dali lang gamitin nito tulad ng isang Word Processor o HTML Editor.",
+                "img": "/assets/filph/knowledgebase/wysiwyg_editor.webp"
+            },
+            {
+                "name": "SEO friendly (Suporta sa Subfolder at Subdomain)",
+                "content": "<strong>Isang SEO-friendly optimized na knowledge base</strong> Ang iyong knowledge base ay tumatakbo sa iyong sariling domain at hindi sa anumang subdomain, kaya’t tinatrato ito ng mga algorithms tulad ng iyong website, binibigyan ito ng parehong importansya ng iyong ibang mga webpage.",
+                "img": "/assets/filph/knowledgebase/seo_friendly.webp"
+            },
+            {
+                "name": "Whitelabel",
+                "content": "<strong>Ito ay gumagana sa iyong branding at hindi sa amin</strong> Ang iyong mga user ay makikita ang iyong knowledge base sa ilalim ng iyong branding sa iyong website. Ang aming whitelabel services ay tinitiyak na walang indikasyon na ito ay pinapalakas ng MSG91.",
+                "img": "/assets/filph/knowledgebase/whitelable.webp"
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Simulan ang paggawa ng iyong ideal na customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Makipag-ugnayan sa sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Presyo",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Magsimula",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    },
+    "moreFeature": {
+        "name": "Naghahanap ng iba pa",
+        "more_feature_btn": "Mag-request ng Tampok"
+    }
+}
