@@ -1,0 +1,95 @@
+{
+    "HeadComp": {
+        "title": "SMS Campaign| MSG91-Philippines",
+        "description": "Pahusayin ang iyong B2B marketing strategy gamit ang mga advanced na automation tools at sales funnel builders. Isagawa ang mga drip email campaigns at ayusin nang epektibo ang sales."
+    },
+    "BannerComp": {
+        "slug": "campaign",
+        "product": {
+            "name": "Campaign",
+            "icon": "/assets/icons/products/campaign.svg"
+        },
+        "tagline": "Event Base automation",
+        "heading": "Ikonekta ang mga pag-uusap sa buong Channels at mga tool.",
+        "subheading": "Magbigay ng personalized, engaging at seamless na mga karanasan",
+        "banner_img": "/assets/filph/campaign/campaign-banner.webp",
+        "getstarted_btn": "Magsimula ng Libre",
+        "trustedByComp": {
+            "heading": "Pinagkakatiwalaan ng 30,000+ na mga global na negosyo",
+            "logos": [
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Mga Tampok",
+        "iconColor": "text-campaign",
+        "features": [
+            {
+                "name": "Multi channel support",
+                "content": "<strong>Suportahan ang iyong mga customer sa kanilang paboritong channel.</strong> Bigyan ang iyong mga customer ng mas magandang karanasan sa suporta sa pamamagitan ng kanilang paboritong channel- SMS, Email, Voice, Push Notification, <a href='/in/whatsapp'>WhatsApp</a> at iba pa. Makipag-ugnayan sa iyong mga customer kung saan sila naroroon.",
+                "img": "/assets/filph/campaign/multi-channel-support.webp"
+            },
+            {
+                "name": "Draggable Flow",
+                "content": "<strong>Drag at drop upang lumikha ng isang omnichannel flow gamit ang mga ‘if-then’ na scenario.</strong> Pumili ng oras kung kailan mo nais magsimula ng isang SMS, email, o messaging conversation sa isang workflow. Lumikha ng flow na kasing simple o kasing kumplikado ng iyong mga pangangailangan sa negosyo.",
+                "img": "/assets/filph/campaign/draggable-flow.webp"
+            },
+            {
+                "name": "Time Based Condition",
+                "content": "<strong>Magpadala ng tamang oras na mga automated na mensahe.</strong> Bumuo ng isang maingat na schedule ng pagpapadala gamit ang time-based conditions na kumokontrol sa oras ng pagpapadala ng iyong mga campaign. Suportahan ang iyong mga customer sa tamang oras.",
+                "img": "/assets/filph/campaign/time-based-condition.webp"
+            },
+            {
+                "name": "API based Conditions",
+                "content": "<strong>Kumuha ng impormasyon agad para sa mga real-time na interaksyon.</strong> Tumawag para sa data kahit na nasa gitna ng flow sa pamamagitan ng pagpapadala ng data sa isang third-party system o humiling ng data na kailangan para sa iyong mga hakbang sa komunikasyon. Maghatid ng real-time na impormasyon sa iyong mga customer.",
+                "img": "/assets/filph/campaign/api-based-conditions.webp"
+            },
+            {
+                "name": "Country Based Condition",
+                "content": "<strong>Suportahan ang iyong mga customer sa buong mundo.</strong> Lumikha ng personalized at memorable na mga karanasan para sa iyong customer sa iba't ibang mga bansa, wika, nilalaman, channel, flow at iba pa. Madaling kumonekta, mag-customize, at magkomunika.",
+                "img": "/assets/filph/campaign/country-based-condition.webp"
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Simulan ang pagbuo ng iyong ideal na customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Makipag-ugnayan sa sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pagpepresyo",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Magsimula",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

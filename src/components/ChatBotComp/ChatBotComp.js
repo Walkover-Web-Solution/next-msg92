@@ -1,5 +1,6 @@
 import GetMdIcons from '@/utils/getMdIcons';
 import getURL from '@/utils/getURL';
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { MdExpandMore, MdExpandLess } from 'react-icons/md';
 
@@ -13,7 +14,7 @@ export default function ChatBotComp({ data, pageInfo }) {
     return (
         <>
             <div className='flex lg:flex-row flex-col container py-20 justify-between'>
-                <div className='flex flex-col gap-6 justify-center'>
+                <div className='flex w-full flex-col gap-6 justify-center'>
                     <div className='flex items-center'>
                         <img src={data?.product?.icon} alt='Product Icon' />
                         <p className='text-2xl font-bold '>{data?.product?.name}</p>
@@ -25,9 +26,13 @@ export default function ChatBotComp({ data, pageInfo }) {
                         <button className='btn btn-primary'>{data?.getstarted_btn}</button>
                     </a>
                 </div>
-                <div>
-                    <img src={data?.banner_img} alt='Banner Image' />
-                </div>
+                <Image
+                    width={720}
+                    height={720}
+                    className='h-fit lg:w-1/2 w-full'
+                    src={data?.banner_img}
+                    alt='Banner Image'
+                />
             </div>
             <div className='bg-neutral'>
                 <div className='container flex flex-col py-20 gap-6'>

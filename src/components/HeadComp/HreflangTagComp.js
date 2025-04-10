@@ -1,6 +1,10 @@
 import specialPages from '@/data/specialPages.json';
 import Head from 'next/head';
 export default function HreflangTagComp({ pageInfo }) {
+    const specialCoutries = [
+        { name: 'br-pt', language: 'pt-BR' },
+        { name: 'fil-ph', language: 'fil-PH' },
+    ];
     return (
         <Head>
             <link rel='canonical' href={`https://msg91.com/${pageInfo?.pathURL}`} />
@@ -15,22 +19,15 @@ export default function HreflangTagComp({ pageInfo }) {
                         <link
                             key={index}
                             rel='alternate'
-                            hrefLang={`${country === 'br-pt' ? 'pt-BR' : 'en-' + country.toUpperCase()}`}
+                            hrefLang={`${
+                                specialCoutries.find((cont) => cont?.name === country)?.language ||
+                                'en-' + country.toUpperCase()
+                            }`}
                             href={`https://msg91.com/${country}/${pageInfo?.baseURL}`}
                         />
                     );
                 }
             })}
-
-            {/* <link
-            rel='alternate'
-            hrefLang={`${
-                pageInfo?.country === 'global' || pageInfo?.country === 'br-pt'
-                ? 'en'
-                : 'en-' + pageInfo?.country.toUpperCase()
-                }`}
-                href={`https://msg91.com/${pageInfo?.pathURL}`}
-                /> */}
         </Head>
     );
 }

@@ -1,0 +1,126 @@
+{
+    "HeadComp": {
+        "title": "Platforma ng Suporta sa Customer para sa iyong Negosyo ng MSG91-Philippines",
+        "description": "Ang HELLO ay isang matibay na omnichannel platform na nagpapalakas sa iyong customer support team. Maghatid ng pambihirang karanasan sa serbisyo gamit ang mga data-driven na insight."
+    },
+    "BannerComp": {
+        "slug": "hello",
+        "product": {
+            "name": "Hello",
+            "icon": "/assets/icons/products/hello.svg"
+        },
+        "tagline": "Rebolusyonaryong Suporta sa Customer",
+        "heading": "Hello",
+        "subheading": "Huwag mawalan ng pansin sa kung ano ang mahalaga. Huwag lamang lutasin ang mga ticket, magtayo ng relasyon sa mga customer",
+        "banner_img": "/assets/filph/hello/hello_banner.webp",
+        "getstarted_btn": "Magsimula",
+        "trustedByComp": {
+            "heading": "Suporta sa 15+ na mga channel at platform",
+            "logos": [
+                {
+                    "name": "facebook",
+                    "url": "/assets/platforms/facebook.svg"
+                },
+                {
+                    "name": "gmail",
+                    "url": "/assets/platforms/gmail.svg"
+                },
+                {
+                    "name": "googleChat",
+                    "url": "/assets/platforms/googlechat.svg"
+                },
+                {
+                    "name": "instagram",
+                    "url": "/assets/platforms/instagram.svg"
+                },
+                {
+                    "name": "outlook",
+                    "url": "/assets/platforms/outlook.svg"
+                },
+                {
+                    "name": "sms",
+                    "url": "/assets/platforms/sms.svg"
+                },
+                {
+                    "name": "telegram",
+                    "url": "/assets/platforms/telegram.svg"
+                },
+                {
+                    "name": "twitter",
+                    "url": "/assets/platforms/twitter.svg"
+                },
+                {
+                    "name": "voice",
+                    "url": "/assets/platforms/voice.svg"
+                },
+                {
+                    "name": "whatsapp",
+                    "url": "/assets/platforms/whatsapp.svg"
+                },
+                {
+                    "name": "zoho",
+                    "url": "/assets/platforms/zoho.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Mga Tampok",
+        "iconColor": "text-campaign",
+        "features": [
+            {
+                "icon": "MdSupportAgent",
+                "name": "Walang Limitasyong Ahente",
+                "content": "Walang limitasyong libreng ahente upang palakasin ang iyong customer support. Ang mas maraming ahente ay nangangahulugang tuloy-tuloy na engagement, mas maraming ticket na nalutas, at mas mahusay na suporta sa customer. Walang bilang na nakatalaga sa iyong bilang ng mga customer support agent.",
+                "img": "/assets/filph/hello/unlimited_agents.webp"
+            },
+            {
+                "icon": "MdOutlineSmartToy",
+                "name": "Chatbot",
+                "content": "Lutasin ang mga query ng customer 24/7 sa text at voice. Hayaan ang chatbot na tugunan ang mga simpleng paulit-ulit na query na hindi nangangailangan ng mga soft skills at karanasan ng iyong mga ahente at kapag kinakailangan, agad na mag-loop sa mga live na ahente.",
+                "img": "/assets/filph/hello/chat_bot.webp"
+            },
+            {
+                "icon": "MdAdsClick",
+                "name": "Control ng Screen",
+                "content": "Kontrolin ang screen ng iyong customer mula sa iyong kinaroroonan. Magtrabaho sa remote screen na parang andoon ka talaga. Kapag nakuha mo na ang access, magka-kontrol ka ng buo sa screen, mouse at keyboard ng customer upang mabilis na malutas ang mga isyu.",
+                "img": "/assets/filph/hello/screen_control.webp"
+            },
+            {
+                "icon": "MdOutlineScreenShare",
+                "name": "Video Call / Screen Sharing",
+                "content": "Mataas na kalidad na mga video call saan man naroroon ang iyong customer. Mag-video call kasama ang iyong customer upang mag-co-browse ng kanilang screen. Kunin ang kontrol ng meeting habang nagsha-share ng screen ang customer upang magpakita ng impormasyon o mag-raise ng isyu.",
+                "img": "/assets/filph/hello/video_call.webp"
+            },
+            {
+                "icon": "MdOutlineSchema",
+                "name": "Workflow",
+                "content": "Awtomatikong i-assign ang mga usapan sa isang team o dedikadong ahente. Magsimula gamit ang aming umiiral na Workflow o mag-set up ng iyong custom na Workflow batay sa mga pangangailangan ng iyong suporta sa negosyo.",
+                "img": "/assets/filph/hello/workflow.webp"
+            },
+            {
+                "icon": "MdOutlineAnalytics",
+                "name": "Analytics",
+                "content": "Analytics at mga ulat upang subaybayan ang pagganap ng iyong mga ahente. Makakuha ng mga malalim na actionable insights upang maghatid ng kahanga-hangang suporta at makamit ang iyong mga layunin. Ang madaling suriin na mga analytics na ulat ay makakatulong sa iyong mga ahente na mag-scale ng kanilang customer support.",
+                "img": "/assets/filph/hello/analytics.webp"
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Simulan ang pagbuo ng iyong ideal na customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Makipag-ugnayan sa sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pagpepresyo",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Magsimula",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
