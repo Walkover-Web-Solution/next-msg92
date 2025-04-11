@@ -526,45 +526,49 @@ class StepThree extends React.Component {
                                     </div>
                                 </div>
                                 <div className='flex md:flex-row  sm:flex-row flex-col gap-4 w-full'>
-                                    <div className='rounded border px-1 w-full'>
-                                        <select
-                                            className='h-10 w-full focus:outline-none'
-                                            autoComplete='on'
-                                            aria-label='Default Country'
-                                            name='country'
-                                            value={this.state.formData.country}
-                                            onChange={this.handleInputChange}
-                                        >
-                                            <option value=''>Select Country*</option>
-                                            {this.state.countryNames.map((country) => (
-                                                <option key={country.id} value={country.id}>
-                                                    {country.name}
+                                    <div className='flex flex-col w-full'>
+                                        <div className='rounded border px-1 w-full'>
+                                            <select
+                                                className='h-10 w-full focus:outline-none'
+                                                autoComplete='on'
+                                                aria-label='Default Country'
+                                                name='country'
+                                                value={this.state.formData.country}
+                                                onChange={this.handleInputChange}
+                                            >
+                                                <option value=''>Select Country*</option>
+                                                {this.state.countryNames.map((country) => (
+                                                    <option key={country.id} value={country.id}>
+                                                        {country.name}
+                                                    </option>
+                                                ))}
+                                                <option key='other' value='other'>
+                                                    Other
                                                 </option>
-                                            ))}
-                                            <option key='other' value='other'>
-                                                Other
-                                            </option>
-                                        </select>
+                                            </select>
+                                        </div>
                                         <p className='text-sm text-red-600'>{this.state.formErrorData.countryError}</p>
                                     </div>
-                                    <div className='rounded border px-1 w-full'>
-                                        <select
-                                            className='h-10 w-full focus:outline-none'
-                                            autoComplete='on'
-                                            aria-label='Default State/Province'
-                                            name='stateProvince'
-                                            value={this.state.formData.stateProvince}
-                                            onChange={this.handleInputChange}
-                                        >
-                                            <option value=''>Select State/Province*</option>
-                                            {this.state.countryData
-                                                ? this.state.countryData?.data.map((stateProvince) => (
-                                                      <option key={stateProvince.id} value={stateProvince.id}>
-                                                          {stateProvince.name}
-                                                      </option>
-                                                  ))
-                                                : null}
-                                        </select>
+                                    <div className='flex flex-col w-full'>
+                                        <div className='rounded border px-1 w-full'>
+                                            <select
+                                                className='h-10 w-full focus:outline-none'
+                                                autoComplete='on'
+                                                aria-label='Default State/Province'
+                                                name='stateProvince'
+                                                value={this.state.formData.stateProvince}
+                                                onChange={this.handleInputChange}
+                                            >
+                                                <option value=''>Select State/Province*</option>
+                                                {this.state.countryData
+                                                    ? this.state.countryData?.data.map((stateProvince) => (
+                                                          <option key={stateProvince.id} value={stateProvince.id}>
+                                                              {stateProvince.name}
+                                                          </option>
+                                                      ))
+                                                    : null}
+                                            </select>
+                                        </div>
                                         <p className='text-sm text-red-600'>{this.state.formErrorData.stateError}</p>
                                     </div>
                                 </div>
@@ -582,28 +586,30 @@ class StepThree extends React.Component {
                                         />
                                         <p className='text-sm text-red-600'>{this.state.formErrorData.pincodeError}</p>
                                     </div>
-                                    <div className='rounded border px-1 w-full'>
-                                        <select
-                                            className='h-10 w-full focus:outline-none'
-                                            autoComplete='on'
-                                            aria-label='Default City'
-                                            name='city'
-                                            value={this.state.formData.city}
-                                            onChange={(event) => {
-                                                this.handleInputChange(event);
-                                                this.setCityIdByCityName(event?.target?.value);
-                                            }}
-                                        >
-                                            <option value=''>Select City*</option>
-                                            {this.state.countryData
-                                                ? this.state.stateData?.data.map((city) => (
-                                                      <option key={city.id} value={city.name}>
-                                                          {city.name}
-                                                      </option>
-                                                  ))
-                                                : null}
-                                            <option value='other'>Other</option>
-                                        </select>
+                                    <div className='flex flex-col w-full'>
+                                        <div className='rounded border px-1 w-full'>
+                                            <select
+                                                className='h-10 w-full focus:outline-none'
+                                                autoComplete='on'
+                                                aria-label='Default City'
+                                                name='city'
+                                                value={this.state.formData.city}
+                                                onChange={(event) => {
+                                                    this.handleInputChange(event);
+                                                    this.setCityIdByCityName(event?.target?.value);
+                                                }}
+                                            >
+                                                <option value=''>Select City*</option>
+                                                {this.state.countryData
+                                                    ? this.state.stateData?.data.map((city) => (
+                                                          <option key={city.id} value={city.name}>
+                                                              {city.name}
+                                                          </option>
+                                                      ))
+                                                    : null}
+                                                <option value='other'>Other</option>
+                                            </select>
+                                        </div>
                                         <p className='text-sm text-red-600'>{this.state.formErrorData.cityError}</p>
                                     </div>
                                 </div>
