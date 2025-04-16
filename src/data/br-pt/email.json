@@ -119,6 +119,42 @@
                 "img": "/assets/brpt/email/maintain-your-domain-reputation-with-smart-email-validation.svg"
             },
             {
+                "name": "Personalização de E-mails com IA em Escala",
+                "content": "Transforme seu e-mail com o IntellSend AI - onde cada e-mail evolui dinamicamente para corresponder ao seu público. Nosso sistema impulsionado por IA modifica o conteúdo em escala, garantindo que cada destinatário receba a mensagem mais relevante para maior engajamento e melhor entregabilidade.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Campanhas Hiper-Personalizadas",
+                            "description": "Entregue conteúdo único para diferentes públicos automaticamente."
+                        },
+                        {
+                            "name": "Otimização de Linha de Assunto",
+                            "description": "A IA testa e seleciona as linhas de assunto com melhor desempenho para maiores taxas de abertura."
+                        },
+                        {
+                            "name": "Testes A/B Automatizados",
+                            "description": "Executa e refina experimentos sem esforço manual para melhores resultados."
+                        },
+                        {
+                            "name": "Anúncios de Produtos em Escala",
+                            "description": "Personalize mensagens e atualizações com base nas metas da campanha."
+                        },
+                        {
+                            "name": "Campanhas de Eventos e Webinars",
+                            "description": "Personalize convites e lembretes para melhores taxas de participação."
+                        }
+                    ],
+                    "features": [
+                        "Motor de IA Integrado – Gera automaticamente conteúdo de e-mail personalizado em escala.",
+                        "Escalonamento de Variação de Conteúdo – A IA gera e entrega várias versões de conteúdo adaptadas a diferentes públicos.",
+                        "Modificação Automática de Conteúdo – Personaliza instantaneamente o conteúdo do e-mail para cada usuário sem esforço manual.",
+                        "Escalonamento 2X para Impacto Máximo – O conteúdo evolui em um padrão de crescimento 2x para melhor alcance.",
+                        "Modelos Prontos para Dispositivos – Totalmente otimizados para dispositivos móveis e desktop."
+                    ]
+                },
+                "img": "/assets/brpt/email/lotties/ai-powered-email-personalization-at-scale.json"
+            },
+            {
                 "name": "Crie E-mails Impressionantes em Minutos",
                 "content": "Crie e-mails impressionantes rapidamente com nosso editor de arrastar e soltar. Personalize cada detalhe, desde layouts e cores até fontes, para combinar perfeitamente com a identidade da sua marca. Seja uma atualização rápida ou um anúncio mais detalhado, nossa solução de e-mail ajuda você a criar e-mails polidos que conectam com seu público e maximizam o engajamento de forma perfeita.",
                 "more_content": {

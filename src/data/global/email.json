@@ -84,7 +84,7 @@
                 },
                 "img": "/assets/global/email/prevent-email-fraud-with-dmarc-compliance.svg"
             },
-            {
+                   {
                 "name": "Maintain your Domain Reputation with Smart Email Validation",
                 "content": "Maintain a clean, effective email list by validating email addresses before sending email campaigns. Removing invalid, fake, or risky addresses ensures higher email deliverability and protects your sender reputation.",
                 "more_content": {
@@ -119,6 +119,43 @@
                     ]
                 },
                 "img": "/assets/global/email/maintain-your-domain-reputation-with-smart-email-validation.svg"
+            },
+
+            {
+                "name": "AI-Powered Email Personalization at Scale",
+                "content": "Transform your email with IntellSend AI - where every email evolves dynamically to match your audience. Our AI-driven system modifies content at scale, ensuring each recipient gets the most relevant message for higher engagement and better deliverability.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Hyper-Personalized Campaigns",
+                            "description": "Deliver unique content to different audiences automatically."
+                        },
+                        {
+                            "name": "Subject Line Optimization",
+                            "description": "AI tests and selects the best-performing subject lines for higher open rates."
+                        },
+                        {
+                            "name": "Automated A/B Testing",
+                            "description": "Runs and refines experiments without manual effort for better results."
+                        },
+                        {
+                            "name": "Scalable Product Announcements",
+                            "description": "Customize messaging and updates based on campaign goals."
+                        },
+                        {
+                            "name": "Event & Webinar Campaigns",
+                            "description": "Personalize invites and reminders for better attendance rates."
+                        }
+                    ],
+                    "features": [
+                        "Inbuilt AI Engine – Auto-generates personalized email content at scale.",
+                        "Content Variation Scaling – AI generates and delivers multiple content versions tailored to different audiences.",
+                        "Auto Content Modification – Instantly personalizes email content for each user without manual effort.",
+                        "2X Scaling for Maximum Impact – Content evolves in a 2x growth pattern for better reach.",
+                        "Device-Ready Templates – Fully optimized for mobile and desktop."
+                    ]
+                },
+                "img": "/assets/global/email/lotties/ai-powered-email-personalization-at-scale.json"
             },
             {
                 "name": "Create Stunning Emails in Minutes",
@@ -578,7 +615,7 @@
     "PreFooterComp": {
         "content": "Millions of Users trust us with our Email Solution, You can too.",
         "buttons": {
-           "contactSales": {
+            "contactSales": {
                 "text": "Contact sales",
                 "link": "/contact-us"
             },
