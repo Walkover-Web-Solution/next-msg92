@@ -22,27 +22,27 @@
                 "name": "MSG91",
                 "des": "MSG91, on the other hand, is an all-in-one communication platform that not only provides WhatsApp Business API with advanced automation but also enables businesses to create customer journeys, segment users, and integrate seamlessly with multiple platforms. With competitive pricing, premium support, and a strong focus on scalability, MSG91 is the superior choice for businesses looking to maximize customer engagement."
             }
-           
         ],
         "features": {
-            "pricing": "Monthly subscription model",
-            "broadcasting": "Limited bulk messaging support",
-            "multi_agent_support": "Yes",
-            "omnichannel_support": "WhatsApp and Email",
-            "ai_chatbot_integration": "Limited AI bot capabilities",
-            "no_code_automation": "Pre-built automation flows",
-            "developer_specific_bots": "No developer bot",
-            "crm_integration": "Supports limited CRM integrations",
-            "whatsapp_payments": "No payment integration",
-            "payment_links": "Yes payment link support",
+            "pricing": "Costlier, Added margin on Meta pricing",
+            "multi_agent_support": "Free agents till 3 users, extra charges for extra users",
+            "omnichannel_communication": "WhatsApp only",
+            "ai_chatbot_integration": "No code chatbot, costlier as we go for complex bots",
+            "unlimited_bot_creation": "Yes",
+            "omnichannel_chatbot_support": "Only WhatsApp",
+            "whatsapp_payments": "WhatsApp Pay checkout in Catalog with Razorpay and PayU",
             "whatsapp_carousels": "Yes carousel support",
-            "customer_journey_creation": "No automated journey support",
-            "client_segmentation": "No segmentation support",
-            "integration_and_plugins": "Limited third-party integration",
-            "affordability": "Moderate pricing",
-            "click_to_whatsapp_use_case_journeys": "No predefined journeys",
-            "otp_widget": "Does not provide OTP verification as a built-in feature",
-            "one_click_verification": "No"
+            "customer_journey_creation": "WhatsApp Journey",
+            "client_segmentation": "Advanced customer segmentation",
+            "integration_and_plugins": "Integrates with Multiple platforms like Shopify, Zoho, Hubspot etc",
+            "otp_verification": "Does not provide OTP verification as a built-in feature",
+            "otp_widget": "",
+            "one_click_verification": "No",
+            "unified_platform": "WhatsApp workflows are available",
+            "technical_knowledge_required": "Not Necessarily needed.",
+            "customer_support_quality": "Email & Chat support",
+            "blue_tick_assistance": "Yes",
+            "meta_ads_trackings_conversion": "Available"
         }
     },
     "PreFooterComp": {
