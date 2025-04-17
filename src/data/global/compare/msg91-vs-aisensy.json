@@ -16,7 +16,7 @@
         "content": [
             {
                 "name": "AiSensy",
-                "des": "AiSensy is a WhatsApp Business API platform focused on helping businesses run campaigns and automate responses via WhatsApp. It’s simple to use and caters well to businesses with basic marketing needs over a single channel. However, it offers limited scope beyond WhatsApp and lacks advanced automation and AI capabilities."
+                "des": "AiSensy is a WhatsApp Business API platform focused on helping businesses run campaigns and automate responses via WhatsApp. It's simple to use and caters well to businesses with basic marketing needs over a single channel. However, it offers limited scope beyond WhatsApp and lacks advanced automation and AI capabilities."
             },
             {
                 "name": "MSG91",
@@ -26,24 +26,25 @@
         "features": {
             "pricing": "Costlier, Added margin on Meta pricing",
             "broadcasting": "Through WhatsApp only",
-            "multi_agent_support": "Free agents till 3 users, extra charges for extra users",
-            "omnichannel_communication": "WhatsApp only",
-            "ai_chatbot_integration": "No codechatbot, costlier as we go for complex bots",
-            "unlimited_bot_creation": "Yes",
-            "whatsapp_payments": "WhatsApp Pay checkout in Catalog with Razorpay and PayU",
+            "multi_agent_support": "Unlimited Agent Logins",
+            "omnichannel_communication": "only whatsapp",
+            "ai_chatbot_integration": "Basic autoreply is free only - 5 Chatbot Flows: ₹ 1999 (charged separately)",
+            "unlimited_bot_creation": "whatsapp",
+            "whatsapp_payments": "Carousel Template Click Tracking",
             "payment_links": "Yes payment link support",
-            "whatsapp_carousels": "Yes carousel support",
-            "customer_journey_creation": "WhatsApp Journey",
-            "client_segmentation": "Advanced customer segmentation",
-            "integration_and_plugins": "Integrates with Multiple platforms like Shopify, Zoho, Hubspot etc",
-            "otp_widget": "Does not provide OTP verification as a built-in feature",
-            "one_click_verification": "No",
-            "unified_platform": "WhatsApp workflows are available",
-            "technical_knowledge_required": "Not Necessarily needed.",
-            "customer_support_quality": "Email & Chat support",
-            "omnichannel_chatbot_support": "Only WhatsApp",
+            "whatsapp_carousels": "Smart Journey Designer",
+            "customer_journey_creation": "Smart Audience Segregation",
+            "client_segmentation": "e-commerce stores (Shopify, WooCommerce, OpenCart), CRMs (HubSpot, Zoho), and other tools like Pabbly Connect, Zapier, and WebEngage",
+            "integration_and_plugins": "OTP verification through whatsapp business api",
+            "otp_verification": "",
+            "otp_widget": "No",
+            "one_click_verification": "one platform for client segmentation, custom journey designer, whatsapp automation, whatsapp api, connect with ads, and chatbots",
+            "unified_platform": "Not Necessarily needed.",
+            "technical_knowledge_required": "Monday to Saturday from 10 AM to 7 PM",
+            "customer_support_quality": "Yes",
+            "omnichannel_chatbot_support": "Yes payment support",
             "shopify_revenue_analytics": "Yes (whatsapp campaigns)",
-            "blue_tick_assistance": "Yes",
+            "blue_tick_assistance": "Only basic Tracking is Available",
             "meta_ads_trackings_conversion": "Available"
         }
     },
