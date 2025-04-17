@@ -14,12 +14,15 @@ body {
 }
 
 .cont {
-    @apply flex flex-col ;
+    @apply flex flex-col;
     &_gap {
         @apply gap-6;
     }
     &_p {
         @apply lg:py-20 md:py-12 py-6;
+    }
+    &_w {
+        @apply max-w-[1000px] w-full;
     }
 }
 
