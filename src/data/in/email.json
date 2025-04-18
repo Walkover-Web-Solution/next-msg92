@@ -105,8 +105,8 @@
                             "description": "AI tests and selects the best-performing subject lines for higher open rates."
                         },
                         {
-                            "name": "Automated A/B Testing",
-                            "description": "Runs and refines experiments without manual effort for better results."
+                            "name": "Static Preview, Dynamic Delivery",
+                            "description": "Senders preview only the approved static template, while recipients receive fully personalized versions."
                         },
                         {
                             "name": "Scalable Product Announcements",

@@ -132,8 +132,8 @@
                             "description": "A IA testa e seleciona as linhas de assunto com melhor desempenho para maiores taxas de abertura."
                         },
                         {
-                            "name": "Testes A/B Automatizados",
-                            "description": "Executa e refina experimentos sem esforço manual para melhores resultados."
+                            "name": "Visualização Estática, Entrega Dinâmica",
+                            "description": "Os remetentes visualizam apenas o modelo estático aprovado, enquanto os destinatários recebem versões totalmente personalizadas."
                         },
                         {
                             "name": "Anúncios de Produtos em Escala",
