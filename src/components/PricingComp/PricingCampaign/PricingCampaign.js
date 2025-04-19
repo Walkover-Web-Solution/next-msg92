@@ -25,8 +25,8 @@ export default function PricingCampaign({ data }) {
                     <div className='flex flex-col w-full gap-5 h-full md:p-8 p-4 bg-white rounded'>
                         <h2 className='text-2xl md:text-3xl font-semibold capitalize'>For third party APIs</h2>
                         <div className='flex flex-col gap-2 text-base md:text-xl'>
-                            <p>Using any third-party API will currently incur a charge per 1,000 API calls.</p>
-                            <p className='text-sm'>{`Please note that fixed pricing will be announced shortly.`}</p>
+                            <p>Using any third-party API will currently incur a charge for every 1,000 API calls.</p>
+                            <p className='text-sm'>{`Please note that fixed pricing will be announced soon.`}</p>
                         </div>{' '}
                         <a href={getURL('signup', 'campaign')} target='_blank'>
                             <button className='btn btn-primary btn-outline w-fit btn-md'>
