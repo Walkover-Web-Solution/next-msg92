@@ -105,6 +105,10 @@
                 "title": "Campaign Pricing in Spain | MSG91-Spain",
                 "description": "Benefit from reliable and effective services like transactional Campaign, communication APIs, and more, all at affordable rates. Check out the pricing now."
             },
+            "for_third_party_apis": {
+                "line_one": "Charges for third-party API calls will be introduced soon, calculated per 1,000 calls.",
+                "line_two": "Final pricing details will be provided shortly."
+            },
             "get_started": "Get Started",
             "connectComp": {
                 "content": "Campaign usage is free.",

@@ -105,6 +105,10 @@
                 "title": "Campaign Pricing | MSG91",
                 "description": "Avail robust and powerful services like transactional Campaign, communication APIs, and more at competitive prices. Check out the pricing now."
             },
+            "for_third_party_apis": {
+                "line_one": "Usage-based charges for third-party APIs are coming soon.",
+                "line_two": "Costs will apply for every 1,000 API calls, with final pricing to be announced shortly."
+            },
             "get_started": "Get Started",
             "connectComp": {
                 "content": "Campaign usage is free.",
@@ -297,7 +301,6 @@
                 "title": "WhatsApp Pricing | MSG91",
                 "description": "Avail robust and powerful services like transactional WhatsApp, communication APIs, and more at competitive prices. Check out the pricing now."
             },
-
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",
@@ -313,5 +316,5 @@
                 "know_more": "Know more about"
             }
         }
-}
+    }
 }
