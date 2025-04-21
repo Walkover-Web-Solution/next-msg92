@@ -105,6 +105,10 @@
                 "title": "Campaign Pricing in Singapore | MSG91-Singapore",
                 "description": "Leverage powerful and robust services, including transactional Campaign, communication APIs, and more, at competitive prices. Explore the pricing today."
             },
+            "for_third_party_apis": {
+                "line_one": "Usage-based charges for third-party APIs will be introduced soon.",
+                "line_two": "Costs will apply for every 1,000 API calls, and final pricing will be announced shortly."
+            },
             "get_started": "Get Started",
             "connectComp": {
                 "content": "Campaign usage is free.",

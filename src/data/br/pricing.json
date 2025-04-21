@@ -105,6 +105,10 @@
                 "title": "Campaign Pricing in Brazil | MSG91-Brazil",
                 "description": "Enjoy robust and efficient services, including transactional Campaign, communication APIs, and more at affordable prices. Check the pricing today."
             },
+            "for_third_party_apis": {
+                "line_one": "Charges for third-party API calls will be applied soon, calculated per 1,000 calls.",
+                "line_two": "Final pricing information will be shared shortly."
+            },
             "get_started": "Get Started",
             "connectComp": {
                 "content": "Campaign usage is free.",

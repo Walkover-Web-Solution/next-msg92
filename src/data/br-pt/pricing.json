@@ -105,6 +105,10 @@
                 "title": "Preços de Campanha no Brasil | MSG91-Brasil",
                 "description": "Aproveite serviços robustos e poderosos no Brasil, como Campanha transacional, APIs de comunicação e muito mais a preços acessíveis. Confira os preços agora."
             },
+            "for_third_party_apis": {
+                "line_one": "Charges for third-party API calls will be applied soon, calculated per 1,000 calls.",
+                "line_two": "Final pricing information will be shared shortly."
+            },
             "get_started": "Get Started",
             "connectComp": {
                 "content": "Campaign usage is free.",
