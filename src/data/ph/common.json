@@ -334,9 +334,13 @@
                     "name": "Career",
                     "link": "https://walkover.in/careers"
                 },
-                {
+                      {
                     "name": "Certificates",
                     "link": "certificates"
+                },
+                {
+                    "name": "Compare",
+                    "link": "compare"
                 }
             ]
         },
