@@ -108,6 +108,10 @@
                 "title": "Campaign Pricing in India | MSG91-India",
                 "description": "Avail robust and powerful services in India like transactional Campaign, communication APIs and more at affordable prices. Check out the pricing now."
             },
+            "for_third_party_apis": {
+                "line_one": "Using any third-party API will soon incur a charge for every 1,000 API calls.",
+                "line_two": "Please note that the final pricing will be announced soon."
+            },
             "get_started": "Get Started",
             "connectComp": {
                 "content": "Campaign usage is free.",

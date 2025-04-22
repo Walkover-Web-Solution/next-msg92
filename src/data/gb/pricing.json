@@ -112,6 +112,10 @@
                 "title": "Campaign Pricing in United Kingdom | MSG91-United Kingdom",
                 "description": "Discover powerful services like transactional Campaign, communication APIs, and more, all at competitive prices. Check out the pricing now."
             },
+            "for_third_party_apis": {
+                "line_one": "Charges based on usage (per 1,000 API calls) will soon apply to third-party integrations.",
+                "line_two": "Stay tuned — official pricing will be announced shortly."
+            },
             "get_started": "Get Started",
             "connectComp": {
                 "content": "Campaign usage is free.",
