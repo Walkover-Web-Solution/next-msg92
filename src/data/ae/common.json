@@ -341,6 +341,10 @@
                 {
                     "name": "Certificates",
                     "link": "certificates"
+                },
+                {
+                    "name": "Compare",
+                    "link": "compare"
                 }
             ]
         },
