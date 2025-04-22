@@ -89,7 +89,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                 <div className='w-full flex flex-col gap-8'>
                     <div className='flex lg:flex-row flex-col items-center text-lg gap-3'>
                         <span>Send {type?.toUpperCase()} From</span>
-                        <div className='w-[300px] z-50'>
+                        <div className='w-[300px]'>
                             <Typeahead
                                 className='country-typehead'
                                 id='origin-country'
@@ -108,7 +108,7 @@ export default function PricingSMSOTP({ data, type, country }) {
                             />
                         </div>
                         <span>To</span>
-                        <div className='w-[300px] z-50'>
+                        <div className='w-[300px]'>
                             <Typeahead
                                 className='country-typehead'
                                 id='destination-country'
