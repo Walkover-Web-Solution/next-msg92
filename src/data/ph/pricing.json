@@ -105,6 +105,10 @@
                 "title": "Campaign Pricing in Philippines | MSG91-Philippines",
                 "description": "Experience reliable and powerful services such as transactional Campaign, communication APIs, and more, offered at great prices. View the pricing now."
             },
+            "for_third_party_apis": {
+                "line_one": "Charges for third-party API usage will be introduced soon, based on every 1,000 API calls.",
+                "line_two": "Please stay tuned — final pricing details will be shared with you shortly."
+            },
             "get_started": "Get Started",
             "connectComp": {
                 "content": "Campaign usage is free.",
