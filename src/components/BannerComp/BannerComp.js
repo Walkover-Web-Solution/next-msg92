@@ -80,14 +80,18 @@ export default function BannerComp({ pageInfo, data }) {
                             {data?.subheading}
                         </h3>
                     </div>
+
                     <div className='flex flex-col md:flex-row gap-6'>
-                        <a
-                            href={getURL('signup', pageInfo?.page, pageInfo)}
-                            target='_blank'
-                            className='btn btn-primary btn-md'
-                        >
-                            {data?.getstarted_btn}
-                        </a>
+                        {data?.getstarted_btn && (
+                            <a
+                                href={getURL('signup', pageInfo?.page, pageInfo)}
+                                target='_blank'
+                                className='btn btn-primary btn-md'
+                            >
+                                {data?.getstarted_btn}
+                            </a>
+                        )}
+
                         {data?.schedule_meet && (
                             <button className='btn btn-md btn-primary btn-outline' onClick={() => setIsModalOpen(true)}>
                                 {data?.schedule_meet}
