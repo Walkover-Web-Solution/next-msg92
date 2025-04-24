@@ -11,6 +11,7 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
     return (
         <div>
             <HeadComp
+                pageInfo={pageInfo}
                 data={{
                     'title': 'Demo Chatbot - MSG91',
                     'description':
@@ -477,7 +478,8 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
         </div>
     );
 }
-export const getServerSideProps = async (context) => {
+
+export const getStaticProps = async (context) => {
     const currentPage = Number(context.query?.page) || 1;
     const params = context?.params;
     const pageInfo = getPageInfo(params);
