@@ -1,0 +1,66 @@
+{
+    "HeadComp": {
+        "title": "AiSensy vs MSG91 | Compare Communication APIs & Messaging Platforms",
+        "description": "Compare AiSensy and MSG91 to find the right communication platform for your business. Explore differences in pricing, features, ease of integration, and support to make an informed decision."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs AiSensy",
+        "subheading": "MSG91 and AiSensy are powerful platforms for WhatsApp and customer engagement. While MSG91 offers a broader omnichannel and customizable messaging suite, AiSensy focuses on WhatsApp-first automation with a no-code interface, catering to businesses seeking quick, WhatsApp-centric solutions.",
+        "img": "/assets/compare/aisensy/aisensy-icon.png",
+        "color": "#40B163"
+    },
+    "CompareTableComp": {
+        "heading": "Comparison Summary: MSG91 vs AiSensy",
+        "name": "AiSensy",
+        "img": "/assets/compare/aisensy/aisensy-logo.png",
+        "content": [
+            {
+                "name": "MSG91",
+                "des": "MSG91, on the other hand, is a robust omnichannel communication platform offering WhatsApp, SMS, Email, and RCS with advanced automation capabilities. It supports AI-driven journey creation, dynamic segmentation, and enterprise-grade reliability. With flexible customization, localized pricing, and premium support, MSG91 is ideal for growing businesses seeking scalability beyond just WhatsApp."
+            },
+            {
+                "name": "AiSensy",
+                "des": "AiSensy is a WhatsApp-focused platform tailored for businesses aiming to quickly launch chatbots, run campaigns, and engage users through no-code automation. It offers features like Flow Builder, catalog integration, and Meta Ads connectivity—ideal for SMEs looking for a simple, WhatsApp-only solution."
+            }
+        ],
+        "features": {
+            "pricing": "Costlier, Added margin on Meta pricing",
+            "multi_agent_support": "AiSensy offers unlimited agent logins with all its paid plans,",
+            "omnichannel_communication": "AiSensy primarily focuses on WhatsApp-based communication",
+            "ai_chatbot_integration": "No direct ChatGPT integration; only via third-party tools.",
+            "unlimited_bot_creation": "Only 5 flows are for free—additional flows require pay-as-you-go.",
+            "omnichannel_chatbot_support": "Whatsapp only",
+            "whatsapp_payments": "Razorpay and PayU only",
+            "whatsapp_carousels": "supports creating and sending WhatsApp carousel templates.",
+            "whatsapp_catalogs": "Built-in catalog via Facebook;setup with Flow Builder only.",
+            "customer_journey_creation": "Customer journeys can be created only via the WhatsApp channel using the Flow Builder.",
+            "client_segmentation": "Smart segmentation is available with 5 custom attributes; adding more requires pay-as-you-go.",
+            "integration_and_plugins": "Integrates with Shopify, WooCommerce, CleverTap, CRMs, and automation tools.",
+            "otp_verification": "OTP verification through whatsapp only",
+            "otp_widget": "Doesn't offer a standalone OTP widget.",
+            "one_click_verification": "No",
+            "unified_platform": "One WhatsApp-focused dashboard for segmentation, ad integration, and chatbot automation.",
+            "technical_knowledge_required": "Not Necessarily needed.",
+            "customer_support_quality": "Monday to Saturday from 10 AM to 7 PM",
+            "blue_tick_assistance": "Yes",
+            "meta_ads_trackings_conversion": "Provides real-time analytics for messages, campaigns, agent activity, and ad performance."
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
