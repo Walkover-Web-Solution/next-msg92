@@ -61,7 +61,11 @@ export default function CalculatePricingWhatsApp({ plans, currentCountry, symbol
                     >
                         {plans?.length > 0 &&
                             plans?.map((plan, index) => {
-                                return <option value={plan?.country_name}>{plan?.country_name}</option>;
+                                return (
+                                    <option key={index} value={plan?.country_name}>
+                                        {plan?.country_name}
+                                    </option>
+                                );
                             })}
                     </select>
                 </label>

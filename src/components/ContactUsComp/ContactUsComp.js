@@ -8,61 +8,64 @@ export default function ContactUsComp({ data, pageInfo }) {
     return (
         <>
             <div className='container flex flex-col cont_gap cont_p'>
-                <h1 className='text-center text-4xl font-semibold'>{data?.heading}</h1>
-                <div className='flex lg:flex-row flex-col gap-12 justify-between mx-40'>
-                    <div className='flex flex-col gap-6 items-center'>
-                        <h2 className='text-3xl font-semibold'>{data?.sales?.heading}</h2>
-                        <div className='flex flex-col gap-6'>
+                <h1 className='text-center md:text-4xl text-lg font-semibold'>{data?.heading}</h1>
+                <div className='flex lg:flex-row flex-col gap-12 justify-between lg:mx-40 md:mx-12 mx-2'>
+                    <div className='flex flex-col md:gap-6 gap-3 items-center'>
+                        <h2 className='md:text-3xl texl-lg font-semibold'>{data?.sales?.heading}</h2>
+                        <div className='flex flex-col md:gap-4 gap-2'>
                             {pageInfo?.country != 'in' ? (
                                 <>
-                                    <div className='flex items-center gap-2 text-2xl'>
+                                    <div className='flex items-center gap-2 md:text-2xl'>
                                         <MdOutlineEmail className='text-2xl' />
                                         <a href='mailto:contact@msg91.com'>contact@msg91.com</a>
                                     </div>
-                                    <div className='flex items-center gap-2 text-2xl'>
+                                    <div className='flex items-center gap-2 md:text-2xl'>
                                         <MdCall className='text-2xl' />
                                         <a href='tel:+6531595004'>+65 31595004</a>
                                     </div>
                                 </>
                             ) : (
                                 <>
-                                    <div className='flex items-center gap-2 text-2xl'>
+                                    <div className='flex items-center gap-2 md:text-2xl'>
                                         <MdOutlineEmail />
                                         <a href='mailto:sales@msg91.com'>sales@msg91.com</a>
                                     </div>
-                                    <div className='flex items-center gap-2 text-2xl'>
+                                    <div className='flex items-center gap-2 md:text-2xl'>
                                         <MdCall />
                                         <a href='tel:+917049088848'>+91 70490 88848</a>
                                     </div>
-                                    <div className='flex items-center gap-2 text-2xl'>
+                                    <div className='flex items-center gap-2 md:text-2xl'>
                                         <MdCall />
                                         <a href='tel:+918889378605'>+91 88893 78605</a>
                                     </div>
                                 </>
                             )}
                         </div>
-                        <button className='btn btn-md btn-primary' onClick={() => setIsSalesModalOpen(true)}>
+                        <button className='btn btn-sm md:btn-md btn-primary' onClick={() => setIsSalesModalOpen(true)}>
                             Schedule a meeting
                         </button>
                     </div>
-                    <div className='flex flex-col gap-6 items-center'>
-                        <h2 className='text-3xl font-semibold '>{data?.support?.heading}</h2>
-                        <div className='flex flex-col gap-6'>
-                            <div className='flex items-center gap-2 text-2xl'>
-                                <MdOutlineEmail className='text-2xl' />
+                    <div className='flex flex-col md:gap-6 gap-3 items-center'>
+                        <h2 className='md:text-3xl text-lg font-semibold'>{data?.support?.heading}</h2>
+                        <div className='flex flex-col md:gap-4 gap-2'>
+                            <div className='flex items-center gap-2 md:text-2xl'>
+                                <MdOutlineEmail />
                                 <a href='mailto:support@msg91.com'>support@msg91.com</a>
                             </div>
-                            <div className='flex items-center gap-2 text-2xl'>
-                                <MdWhatsapp className='text-2xl' />
+                            <div className='flex items-center gap-2 md:text-2xl'>
+                                <MdWhatsapp />
                                 <a href='https://wa.me/918818888733'> +91 88188 88733</a>
                             </div>
 
-                            <div className='flex items-center gap-2 text-2xl'>
+                            <div className='flex items-center gap-2 md:text-2xl'>
                                 <MdCall />
                                 <a href='tel:+918818888733'> +91 88188 88733</a>
                             </div>
                         </div>
-                        <button className='btn btn-md btn-primary' onClick={() => setIsSupportModalOpen(true)}>
+                        <button
+                            className='btn btn-sm md:btn-md btn-primary'
+                            onClick={() => setIsSupportModalOpen(true)}
+                        >
                             Schedule a meeting
                         </button>
                     </div>

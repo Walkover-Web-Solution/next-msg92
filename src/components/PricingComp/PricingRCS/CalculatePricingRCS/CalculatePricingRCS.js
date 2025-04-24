@@ -62,7 +62,11 @@ export default function CalculatePricingRCS({ plans, currentCountry, symbol, cur
                     >
                         {plans?.length > 0 &&
                             plans?.map((plan, index) => {
-                                return <option value={plan?.country_name}>{plan?.country_name}</option>;
+                                return (
+                                    <option key={index} value={plan?.country_name}>
+                                        {plan?.country_name}
+                                    </option>
+                                );
                             })}
                     </select>
                 </label>

@@ -1,0 +1,591 @@
+{
+    "HeadComp": {
+        "title": "Mga Serbisyo ng Transaksyonal na Email sa Brazil | Tagapagbigay ng Email Api - MSG91",
+        "description": "Ang aming pinakamahusay na integrasyon ng email api para sa mga application-driven na email ay nagbibigay sa iyo ng madaling paraan upang i-automate ang iyong pagpapadala batay sa mga aksyon ng gumagamit. Magpadala, tumanggap, at subaybayan ang mga email gamit ang pinakamahusay na serbisyo ng email api ng MSG91."
+    },
+    "BannerComp": {
+        "slug": "email",
+        "product": {
+            "name": "Email API",
+            "icon": "/assets/icons/products/email.svg"
+        },
+        "tagline": "mas matalinong estratehiya sa email",
+        "heading": "Maghatid ng ligtas at agarang mga email",
+        "subheading": "Tiyakin na ang bawat mensahe ay makarating sa iyong mga customer sa tamang oras gamit ang #1 na email automation platform: mabilis, maaasahan, at ginawa para sa walang putol na mga transaksyon.",
+        "banner_img": "/assets/filph/email/mobile_optimized_email_templates_for_perfect_display.webp",
+        "not_absolute": true,
+        "getstarted_btn": "Magsimula",
+        "trustedByComp": {
+            "heading": "Pinagkakatiwalaan ng 30,000+ na pandaigdigang negosyo",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "iconColor": "text-email",
+        "features": [
+            {
+                "name": "Pigilan ang Pandaraya sa Email gamit ang DMARC Compliance",
+                "content": "Protektahan ang iyong tatak mula sa email spoofing at phishing gamit ang DMARC (Domain-based Message Authentication, Reporting & Conformance). Tiyakin na tanging mga lehitimong email lamang ang makarating sa iyong audience habang pinapahusay ang seguridad at email deliverability",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Pigilan ang Email Spoofing & Phishing",
+                            "description": "Pinoprotektahan ang domain ng iyong website mula sa paggamit sa mga mapanlinlang na email."
+                        },
+                        {
+                            "name": "Palakasin ang Seguridad ng Website",
+                            "description": "Pinapalakas ang seguridad ng domain sa pamamagitan ng pagpigil sa hindi awtorisadong aktibidad ng email."
+                        },
+                        {
+                            "name": "Pagbutihin ang Deliverability ng Transaksyonal na Email",
+                            "description": "Tinitiyak na ang mga email tulad ng kumpirmasyon ng order at pag-reset ng password ay makarating sa mga gumagamit."
+                        },
+                        {
+                            "name": "Makakuha ng Visibility sa Paggamit ng Email",
+                            "description": "Nagbibigay ng mga ulat sa mga pinagmumulan ng pagpapadala ng email na naka-link sa iyong website."
+                        },
+                        {
+                            "name": "Palakasin ang Tiwala at Reputasyon ng Tatak",
+                            "description": "Tinitiyak na ang mga customer ay makakatanggap lamang ng mga lehitimong email mula sa iyong domain."
+                        }
+                    ],
+                    "features": [
+                        "SPF & DKIM Authentication – Tinitiyak na ang mga email ay ipinapadala mula sa mga awtorisadong server.",
+                        "DMARC Policy Control (Wala, Quarantine, Tanggihan) – Nagbibigay-daan sa unti-unting pagpapatupad upang harangan ang mga pekeng email.",
+                        "Detalyadong Pag-uulat – Nagbibigay ng mga pananaw sa pagpapatunay ng email at hindi awtorisadong paggamit.",
+                        "Proteksyon ng Subdomain – Sine-secure ang lahat ng subdomain mula sa maling paggamit sa email spoofing.",
+                        "Pagsubaybay sa Geo-Location – Tinutukoy ang heograpikong pinagmulan ng mga email upang makita ang kahina-hinala o hindi awtorisadong aktibidad."
+                    ]
+                },
+                "img": "/assets/filph/email/prevent_email_fraud_with_dmarc_compliance.webp"
+            },
+            {
+                "name": "Panatilihin ang Iyong Reputasyon ng Domain gamit ang Smart Email Validation",
+                "content": "Panatilihin ang malinis at epektibong listahan ng email sa pamamagitan ng pagpapatunay ng mga email address bago magpadala ng mga kampanya sa email. Ang pag-aalis ng mga hindi wasto, pekeng, o mapanganib na mga address ay tinitiyak ang mas mataas na deliverability ng email at pinoprotektahan ang reputasyon ng iyong nagpadala.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Bawasan ang Bounce Rates",
+                            "description": "Alisin ang mga hindi wasto o pekeng email address."
+                        },
+                        {
+                            "name": "Dagdagan ang Deliverability",
+                            "description": "Pagbutihin ang paghahatid sa inbox sa pamamagitan ng pagpapanatili ng isang napatunayang listahan ng email."
+                        },
+                        {
+                            "name": "Targetin ang Tamang Audience",
+                            "description": "Makipag-ugnayan sa mga lehitimo at aktibong gumagamit."
+                        },
+                        {
+                            "name": "Pagbutihin ang Pagganap ng Kampanya",
+                            "description": "I-optimize ang mga open rate sa pamamagitan ng pagpapadala sa isang mataas na kalidad na listahan."
+                        },
+                        {
+                            "name": "Protektahan ang Reputasyon ng Nagpadala",
+                            "description": "Iwasan ang mga isyu sa mga hindi maihatid na email."
+                        }
+                    ],
+                    "features": [
+                        "Agad na tukuyin ang mga wasto, hindi wasto, at mapanganib na mga email address.",
+                        "Mag-upload at magpatunay ng malalaking listahan ng email nang mahusay.",
+                        "Alisin ang mga pekeng at hindi maihatid na email bago ang mga kampanya.",
+                        "Pigilan ang mga isyu sa deliverability sa pamamagitan ng pagtiyak ng pagsunod sa DMARC, SPF, at DKIM authentication.",
+                        "Palakasin ang pakikipag-ugnayan sa pamamagitan ng pagpapadala sa isang target na audience."
+                    ]
+                },
+                "img": "/assets/filph/email/maintain_your_domain_reputation_with_smart_email_validation.webp"
+            },
+            {
+                "name": "Lumikha ng Nakakamanghang mga Email sa Ilang Minuto",
+                "content": "Lumikha ng mga nakakamanghang email nang mabilis gamit ang aming drag-and-drop editor. I-customize ang bawat detalye, mula sa mga layout at kulay hanggang sa mga font, upang perpektong tumugma sa pagkakakilanlan ng iyong tatak. Kung ito man ay isang mabilis na update o isang malalim na anunsyo, ang aming solusyon sa email ay tumutulong sa iyo na lumikha ng mga pinakintab na email na kumokonekta sa iyong audience at i-maximize ang pakikipag-ugnayan nang walang putol.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Mga Newsletters",
+                            "description": "Panatilihing may alam ang iyong audience sa mga regular na update."
+                        },
+                        {
+                            "name": "Eksklusibong Mga Deal",
+                            "description": "Magmaneho ng mga benta gamit ang mga personalized na deal."
+                        },
+                        {
+                            "name": "Mga Anunsyo ng Produkto",
+                            "description": "I-update ang mga customer sa mga bagong paglulunsad ng produkto."
+                        },
+                        {
+                            "name": "Mga Update sa Order",
+                            "description": "Magbigay ng mga real-time na update sa order at pagpapadala."
+                        },
+                        {
+                            "name": "Mga Paalala sa Naiwan na Cart",
+                            "description": "Awtomatikong magpadala ng mga paalala upang mabawi ang mga naiwan na cart."
+                        }
+                    ],
+                    "features": [
+                        "Drag-and-drop editor, walang kinakailangang coding.",
+                        "Magdagdag ng mga button, larawan, at video para sa mas mayamang pakikipag-ugnayan.",
+                        "Mga nako-customize na kulay, font, at logo upang tumugma sa iyong tatak.",
+                        "Na-optimize na mga disenyo na walang putol na nagpapakita sa lahat ng mga device.",
+                        "Tingnan ang mga preview at subukan ang compatibility sa mga device bago magpadala."
+                    ]
+                },
+                "img": "/assets/filph/email/lotties/create_stunning_emails_in_minutes.json"
+            },
+            {
+                "name": "Lumikha ng mga AMP Email na Nagdadala ng Conversion sa Ilang Minuto.",
+                "content": "Iangat ang iyong estratehiya sa email gamit ang teknolohiyang AMP. Lumikha ng mga interactive at nakaka-engganyong karanasan mismo sa loob ng inbox ng email. Magdagdag ng mga dynamic na elemento tulad ng mga product carousel, form, at real-time na nilalaman upang maakit ang iyong audience at magmaneho ng mas mahusay na mga rate ng conversion. Ang mga solusyon sa email na may AMP ay nag-aalok ng walang putol na mga pakikipag-ugnayan nang hindi kinakailangang umalis ang mga gumagamit sa kanilang inbox.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Mga Product Carousel",
+                            "description": "Ipakita ang maraming produkto sa isang email para sa isang interactive na karanasan sa pamimili."
+                        },
+                        {
+                            "name": "Mga Form at Survey",
+                            "description": "Kolektahin ang feedback o data nang direkta sa loob ng email."
+                        },
+                        {
+                            "name": "Real-Time na Nilalaman",
+                            "description": "Panatilihing napapanahon ang iyong mga email sa live na impormasyon tulad ng imbentaryo o pagpepresyo."
+                        },
+                        {
+                            "name": "Mga Pagpaparehistro ng Kaganapan",
+                            "description": "Hayaan ang mga gumagamit na magparehistro para sa mga kaganapan nang direkta mula sa email."
+                        },
+                        {
+                            "name": "Mga Botohan at Pagboto",
+                            "description": "Makipag-ugnayan sa mga gumagamit gamit ang mga interactive na botohan at tampok sa pagboto."
+                        }
+                    ],
+                    "features": [
+                        "Mga dynamic na elemento tulad ng mga carousel, form, at live na update.",
+                        "Payagan ang mga tatanggap na gumawa ng mga aksyon nang hindi umaalis sa inbox.",
+                        "Tumayo sa masikip na mga inbox gamit ang mayaman, interactive na nilalaman.",
+                        "Dagdagan ang mga conversion gamit ang walang putol at nakaka-engganyong mga karanasan sa email.",
+                        "Ganap na na-optimize para sa mga mobile at desktop na device."
+                    ]
+                },
+                "img": "/assets/filph/email/lotties/create_conversion_driving_amp_emails_in_minutes.json"
+            },
+            {
+                "name": "Magpadala ng Mga Kampanya sa Email nang Mas Mabilis gamit ang Mga Pre-Designed na Template",
+                "content": "Magtipid ng oras at palakasin ang pakikipag-ugnayan gamit ang mga propesyonal na dinisenyong template ng email. Pumili mula sa iba't ibang layout para sa mga newsletter at transaksyonal na email gamit ang MSG91 Email Template Library.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Mga Benta sa E-Commerce",
+                            "description": "Handa nang gamitin na mga template ng email para sa mga flash sale at paglulunsad ng produkto."
+                        },
+                        {
+                            "name": "Mga Imbitasyon sa Kaganapan",
+                            "description": "Propesyonal na dinisenyong mga template para sa mga kaganapan."
+                        },
+                        {
+                            "name": "Suporta sa Customer",
+                            "description": "Mga branded na template para sa paglutas ng isyu at follow-up."
+                        },
+                        {
+                            "name": "Mga Welcome Email",
+                            "description": "Mabilis na mag-set up ng isang nakaka-engganyong serye ng welcome."
+                        },
+                        {
+                            "name": "Mga Anunsyo ng Produkto",
+                            "description": "Baguhin ang mga email ng anunsyo sa ilang minuto at magpadala kaagad."
+                        }
+                    ],
+                    "features": [
+                        "Propesyonal na dinisenyo, mobile-responsive na mga template para sa anumang paggamit.",
+                        "Drag-and-drop na pagpapasadya—walang kinakailangang coding.",
+                        "Mga pre-built na template para sa mga newsletter, at transaksyonal na email.",
+                        "Magtipid ng oras gamit ang mga pre-tested, high-converting na disenyo.",
+                        "Agad na subukan, i-optimize, at i-schedule ang mga kampanya nang walang kahirap-hirap."
+                    ]
+                },
+                "img": "/assets/filph/email/send_email_campaigns_faster_with_pre_designed_templates.webp"
+            },
+            {
+                "name": "Flexible Email API Para sa Walang Putol na Integrasyon",
+                "content": "Tiyakin ang walang putol at maaasahang paghahatid ng email gamit ang aming Transactional Email API. Magpadala ng mga kumpirmasyon ng order, invoice, at mga abiso na may mabilis na paghahatid at mataas na deliverability.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Pagpapatunay ng OTP",
+                            "description": "Tiyakin ang ligtas at walang putol na pagpapatunay ng gumagamit gamit ang mga instant na one-time password sa pamamagitan ng Email OTP Api."
+                        },
+                        {
+                            "name": "Mga Paalala sa Naiwan na Cart",
+                            "description": "Magpadala ng mga follow-up na email na hinihikayat ang mga gumagamit na tapusin ang kanilang pagbili."
+                        },
+                        {
+                            "name": "Mga Kumpirmasyon ng Order",
+                            "description": "Magpadala ng mga resibo at detalye ng order kaagad pagkatapos ng pagbili."
+                        },
+                        {
+                            "name": "Mga Alerto sa Pagpapadala at Paghahatid",
+                            "description": "Ipaalam sa mga customer ang tungkol sa pagpapadala ng order, pagsubaybay, at katayuan ng paghahatid."
+                        },
+                        {
+                            "name": "Mga Update sa Refund at Pagbabalik",
+                            "description": "Ipagbigay-alam sa mga gumagamit ang tungkol sa pagproseso ng refund, pag-apruba ng pagbabalik, at mga update sa katayuan."
+                        }
+                    ],
+                    "features": [
+                        "Mabilis na paghahatid upang matiyak na ang mga time-sensitive na email ay makarating kaagad.",
+                        "API integration para sa walang putol na automation at real-time na mga trigger ng email.",
+                        "Scalable upang hawakan ang mataas na dami ng mga transaksyonal na email nang walang kahirap-hirap.",
+                        "Advanced na deliverability gamit ang DMARC, SPF, at DKIM authentication upang i-maximize ang inbox placement at maiwasan ang spoofing.",
+                        "Real-time na pagsubaybay at analytics para sa pagsubaybay sa pagganap ng email."
+                    ]
+                },
+                "img": "/assets/filph/email/transactional_email_api_deliver_critical_emails_instantly.webp"
+            },
+            {
+                "name": "Walang Putol na Integrasyon sa Gmail at Outlook",
+                "content": "Mag-integrate nang walang kahirap-hirap sa Gmail at Outlook gamit ang Email Service ng MSG91. Magpadala ng mga transaksyonal na email, OTPs, mga abiso, at mga bulk na kampanya - lahat mula sa isang solong platform, na tinitiyak ang agarang deliverability, scalability, at detalyadong pagsubaybay nang walang karagdagang software.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Mga Transaksyonal na Email",
+                            "description": "Awtomatikong magpadala ng mga kumpirmasyon ng order, OTPs, at mga abiso sa pamamagitan ng iyong umiiral na provider ng email."
+                        },
+                        {
+                            "name": "Mga Target na Kampanya",
+                            "description": "Magdisenyo ng mga nakaka-engganyong template at magpadala ng mga bulk na email sa mga rehistradong audience na may agarang deliverability."
+                        },
+                        {
+                            "name": "Pag-aalaga ng Lead",
+                            "description": "Magpadala ng mga target na follow-up at mga personalized na email upang alagaan ang mga prospect."
+                        },
+                        {
+                            "name": "Detalyadong Analytics",
+                            "description": "Subaybayan ang mga open rate, pag-click, at pakikipag-ugnayan para sa mas mahusay na mga pananaw."
+                        },
+                        {
+                            "name": "Madaling Pag-access",
+                            "description": "Pamahalaan ang mga kampanya sa email nang walang putol mula sa Gmail o Outlook."
+                        }
+                    ],
+                    "features": [
+                        "Magpadala ng mga kampanya sa email nang direkta mula sa isang dashboard.",
+                        "Makipag-ugnayan sa mga customer mula sa iyong business inbox nang walang kahirap-hirap.",
+                        "Hawakan ang lahat ng mga kampanya mula sa isang solong interface.",
+                        "Subaybayan ang mga pagbubukas ng email, pag-click, at pagganap kaagad.",
+                        "I-streamline ang komunikasyon nang walang karagdagang software."
+                    ]
+                },
+                "img": "/assets/filph/email/seamless_integration_with_gmail_and_outlook.webp"
+            },
+            {
+                "name": "Targetin ang Tamang Audience at Patakbuhin ang Mga Kampanya sa Email nang Walang Hirap",
+                "content": "Abutin ang tamang audience gamit ang tamang email gamit ang advanced na segmentation at email automation. Maghatid ng mga personalized na email na nagdadala ng pakikipag-ugnayan at mga conversion nang walang putol.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Personalized na Email",
+                            "description": "Magpadala ng mga target na kampanya batay sa mga interes at pag-uugali ng customer."
+                        },
+                        {
+                            "name": "Mga Kampanya sa Muling Pakikipag-ugnayan",
+                            "description": "Kilalanin ang mga hindi aktibong gumagamit at magpadala ng mga iniangkop na email upang ibalik sila."
+                        },
+                        {
+                            "name": "Mga Trigger na Batay sa Kaganapan",
+                            "description": "Awtomatikong magpadala ng mga email para sa mga pag-signup, pagbili, at naiwan na mga cart."
+                        },
+                        {
+                            "name": "Mga Kampanya na Geo-Targeted",
+                            "description": "Abutin ang mga audience batay sa kanilang lokasyon at kagustuhan."
+                        },
+                        {
+                            "name": "A/B Testing",
+                            "description": "Subukan ang mga subject line, nilalaman, at disenyo upang i-optimize ang pagganap ng email."
+                        }
+                    ],
+                    "features": [
+                        "Lumikha ng mga tumpak na segment batay sa pag-uugali ng gumagamit, demograpiko, at pakikipag-ugnayan.",
+                        "Mag-set up ng mga trigger-based na email para sa mga pag-signup, pagbili, at naiwan na mga cart.",
+                        "I-optimize ang pagganap gamit ang real-time na data, matalinong pag-iiskedyul, at mga pananaw sa kampanya.",
+                        "Tiyakin na ang mga email ng kampanya ay sumusunod sa DMARC authentication upang mapabuti ang inbox placement at maiwasan ang mga panganib sa phishing.",
+                        "Ikonekta sa mga CRM, API, at multi-channel na platform para sa isang pinag-isang diskarte."
+                    ]
+                },
+                "img": "/assets/filph/email/target_the_right_audience_and_run_email_campaigns_effortlessly.webp"
+            },
+            {
+                "name": "Detalyadong Analytics: Subaybayan ang Mga Naihatid, Buksan, at I-click na Ulat",
+                "content": "Kumuha ng mga actionable na pananaw gamit ang real-time na analytics. Subaybayan ang mga rate ng paghahatid, mga rate ng pagbubukas, mga rate ng pag-click-through, at mga conversion upang i-optimize ang iyong mga kampanya sa email nang epektibo.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Pagsubaybay sa Pagganap ng Kampanya",
+                            "description": "Suriin ang pagiging epektibo ng email gamit ang mga komprehensibong ulat."
+                        },
+                        {
+                            "name": "Mga Pananaw sa A/B Testing",
+                            "description": "Ihambing ang mga subject line at mga pagkakaiba-iba ng email para sa mas mahusay na pakikipag-ugnayan."
+                        },
+                        {
+                            "name": "Pagsusuri sa Pakikipag-ugnayan ng Gumagamit",
+                            "description": "Subaybayan ang mga pakikipag-ugnayan upang i-optimize ang mga hinaharap na kampanya."
+                        },
+                        {
+                            "name": "Pagsubaybay sa Deliverability",
+                            "description": "Sukatin ang mga rate ng tagumpay ng email at pagbutihin ang inbox placement."
+                        },
+                        {
+                            "name": "Geo-Based na Analytics",
+                            "description": "Tingnan ang pagganap ng kampanya sa iba't ibang bansa para sa mas mahusay na pag-target."
+                        }
+                    ],
+                    "features": [
+                        "I-access ang isang advanced na analytics dashboard para sa malalim, data-driven na paggawa ng desisyon.",
+                        "Kumuha ng mga pananaw sa deliverability gamit ang DMARC, SPF, at DKIM authentication upang mapabuti ang inbox placement at maiwasan ang spoofing.",
+                        "Subaybayan ang mga real-time na sukatan ng pagganap tulad ng mga naihatid, pagbubukas, pag-click, at mga conversion kaagad.",
+                        "Suriin ang mga rate ng pag-click-through upang sukatin ang tagumpay ng email.",
+                        "I-export ang analytics ng kampanya na may custom na saklaw ng petsa para sa tumpak na pag-target ng audience."
+                    ]
+                },
+                "img": "/assets/filph/email/detailed_analytics_track_delivered_open_and_click_reports.webp"
+            },
+            {
+                "name": "Pigilan ang Spam gamit ang Suppression List",
+                "content": "Panatilihin ang isang malusog na reputasyon ng nagpadala sa pamamagitan ng awtomatikong pag-filter ng mga hindi nag-subscribe, nag-bounce, o hindi wastong mga email address. Ang isang suppression list ay pumipigil sa mga email na maipadala sa mga address na ito, binabawasan ang mga panganib sa spam at pinapahusay ang deliverability at pakikipag-ugnayan.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Iwasan ang Mga Reklamo sa Spam",
+                            "description": "Pigilan ang pagpapadala ng mga email sa mga hindi nag-subscribe na gumagamit, binabawasan ang mga ulat ng spam."
+                        },
+                        {
+                            "name": "Pagbutihin ang Deliverability",
+                            "description": "I-block ang mga hindi wasto o nag-bounce na mga address upang matiyak na ang mga email ay makarating sa mga aktibong tatanggap."
+                        },
+                        {
+                            "name": "Palakasin ang Reputasyon ng Nagpadala",
+                            "description": "Palakasin ang reputasyon ng nagpadala sa pamamagitan ng pag-align sa mga patakaran ng DMARC upang maiwasan ang hindi awtorisadong paggamit ng email."
+                        },
+                        {
+                            "name": "Magtipid sa Mga Gastos sa Kampanya",
+                            "description": "Iwasan ang pag-aaksaya ng mga mapagkukunan sa mga hindi maihatid na email."
+                        },
+                        {
+                            "name": "Palakasin ang Mga Rate ng Pakikipag-ugnayan",
+                            "description": "Tumutok sa pag-abot sa mga tunay, interesadong gumagamit para sa mas mahusay na mga rate ng pagbubukas at pag-click-through."
+                        }
+                    ],
+                    "features": [
+                        "Awtomatikong hinaharangan ang mga email sa mga hindi nag-subscribe, nag-bounce, o hindi wastong mga address.",
+                        "Patuloy na ina-update at pinamamahalaan ang mga pinigilang contact.",
+                        "Madaling magdagdag at pamahalaan ang mga suppression list para sa mas mahusay na kontrol.",
+                        "Pinipigilan ang pagpapadala ng mga email sa mga gumagamit na nag-opt out, tinitiyak ang pagsunod.",
+                        "Binabawasan ang mga bounce rate at pinoprotektahan ang reputasyon ng nagpadala."
+                    ]
+                },
+                "img": "/assets/filph/email/prevent_spam_with_suppression_list.webp"
+            },
+            {
+                "name": "Magpadala ng Mga Email sa Pinakamainam na Oras gamit ang Country-Based Scheduling",
+                "content": "I-maximize ang mga rate ng pagbubukas at pakikipag-ugnayan sa pamamagitan ng pagpapadala ng mga email batay sa lokal na time zone ng tatanggap. Tinitiyak ng automated na time-zone-based scheduling na makarating ang mga email sa mga tatanggap kapag sila ay pinaka-malamang na makipag-ugnayan.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Palakasin ang Mga Rate ng Pagbubukas",
+                            "description": "I-schedule ang mga email upang makarating kapag ang mga tatanggap ay pinaka-malamang na buksan ang mga ito."
+                        },
+                        {
+                            "name": "Pagandahin ang Karanasan ng Customer",
+                            "description": "Ihatid ang mga email kapag ang mga tatanggap ay handa nang makipag-ugnayan."
+                        },
+                        {
+                            "name": "Magmaneho ng Makabuluhang Pakikipag-ugnayan",
+                            "description": "Pagbutihin ang mga pagkakataon ng conversion sa pamamagitan ng estratehikong pag-time ng mga email."
+                        },
+                        {
+                            "name": "Mga Pandaigdigang Kampanya",
+                            "description": "I-optimize ang mga oras ng pagpapadala para sa mga tatanggap sa iba't ibang time zone."
+                        },
+                        {
+                            "name": "Mga Deal na Sensitibo sa Oras",
+                            "description": "Magpadala sa mga oras ng kasagsagan para sa mas mahusay na mga rate ng aksyon."
+                        }
+                    ],
+                    "features": [
+                        "Awtomatikong i-schedule ang mga email batay sa lokal na oras ng bawat tatanggap.",
+                        "Tinitiyak na makarating ang mga email sa mga gumagamit kapag sila ay pinaka-malamang na makipag-ugnayan.",
+                        "I-schedule at ipadala ang mga email nang walang putol sa iba't ibang time zone.",
+                        "Mag-set up ng mga kampanya nang isang beses, at ang mga email ay ipinapadala sa tamang lokal na oras.",
+                        "Palakasin ang pakikipag-ugnayan sa pamamagitan ng paghahatid ng mga email sa pinakamainam na sandali."
+                    ]
+                },
+                "img": "/assets/filph/email/send_emails_at_optimal_times_with_country_based_scheduling.webp"
+            },
+            {
+                "name": "Palakasin ang Pagganap gamit ang A/B Testing para sa Mga Email",
+                "content": "I-optimize ang iyong mga kampanya sa email sa pamamagitan ng pagpapatakbo ng A/B tests sa iba't ibang elemento ng email. Subukan ang mga subject line, pagkakaiba-iba ng nilalaman, at mga disenyo upang makita kung ano ang pinakamahusay na gumagana para sa iyong audience at pagbutihin ang iyong pagganap ng email.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Pag-optimize ng Subject Line",
+                            "description": "Subukan ang iba't ibang subject line upang matukoy kung alin ang nakakakuha ng mas mataas na mga rate ng pagbubukas."
+                        },
+                        {
+                            "name": "Mga Pagkakaiba-iba ng Nilalaman ng Email",
+                            "description": "Mag-eksperimento sa iba't ibang teksto, larawan, o CTA upang mapabuti ang pakikipag-ugnayan."
+                        },
+                        {
+                            "name": "Pag-personalize vs. Generic na Pagmemensahe",
+                            "description": "Ihambing ang mga personalized na email laban sa mga karaniwang email upang sukatin ang epekto."
+                        },
+                        {
+                            "name": "Disenyo at Layout ng Email",
+                            "description": "Ihambing ang single-column vs. multi-column na mga layout o dark mode vs. light mode na mga disenyo."
+                        },
+                        {
+                            "name": "Pagsubok sa Pagganap",
+                            "description": "Suriin ang iba't ibang mga opsyon upang makita kung ano ang nagdadala ng mas mataas na benta."
+                        }
+                    ],
+                    "features": [
+                        "Magpatakbo ng A/B tests sa iba't ibang segment ng audience upang maunawaan kung paano gumaganap ang mga pagkakaiba-iba.",
+                        "Ihambing ang iba't ibang pagkakaiba-iba ng email upang matukoy ang pinaka-epektibong bersyon.",
+                        "Gamitin ang mga nakaraang resulta ng A/B test upang pinuhin ang mga hinaharap na kampanya.",
+                        "Kontrolin kung gaano katagal tatakbo ang pagsubok at kung anong porsyento ng mga tatanggap ang makakatanggap ng bawat pagkakaiba-iba.",
+                        "Subaybayan ang mga pangunahing sukatan tulad ng mga rate ng pagbubukas, CTR, at mga conversion upang agad na suriin ang mga resulta ng pagsubok."
+                    ]
+                },
+                "img": "/assets/filph/email/boost_performance_with_ab_testing_for_emails.webp"
+            },
+            {
+                "name": "Webhooks para sa Mga Ulat sa Paghahatid, Papasok na Mga Email, at Katayuan ng Domain",
+                "content": "Manatiling updated gamit ang mga instant na abiso ng webhook para sa paghahatid ng email, papasok na mga mensahe, at katayuan ng pagpapatunay ng domain. Awtomatikong mga workflow at subaybayan ang real-time na aktibidad ng email nang walang kahirap-hirap.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Mga Real-Time na Alerto sa Paghahatid",
+                            "description": "Kumuha ng mga instant na abiso para sa mga naihatid, nag-bounce, o nabigong mga email."
+                        },
+                        {
+                            "name": "Pagsubaybay sa Pagpapatunay",
+                            "description": "Manatiling updated sa katayuan ng SPF, DKIM, at DMARC upang mapanatili ang seguridad ng email."
+                        },
+                        {
+                            "name": "Pagsubaybay sa Pakikipag-ugnayan ng Gumagamit",
+                            "description": "Subaybayan ang mga pagbubukas ng email, pag-click, at mga tugon para sa mas mahusay na mga pananaw sa audience."
+                        },
+                        {
+                            "name": "Awtomatikong Pagkuha ng Lead",
+                            "description": "Kunin ang mga pagsusumite ng form at mga pagtatanong sa email nang direkta sa iyong CRM."
+                        },
+                        {
+                            "name": "Awtomasyon ng Tiket ng Suporta",
+                            "description": "I-convert ang mga papasok na email sa mga tiket ng suporta at i-assign ang mga ito sa mga ahente."
+                        }
+                    ],
+                    "features": [
+                        "Kumuha ng mga real-time na alerto para sa mga bounce at reklamo sa spam upang protektahan ang deliverability ng email.",
+                        "Agad na tukuyin ang mga hindi nag-subscribe upang i-update ang mga listahan at maiwasan ang pagpapadala ng mga hindi gustong email.",
+                        "Tiyakin ang seguridad ng domain sa pamamagitan ng patuloy na pagsubaybay sa mga tala ng SPF, DKIM, at DMARC.",
+                        "Madaling kumonekta sa mga CRM, platform ng suporta sa customer, at mga tool sa automation ng email.",
+                        "Tanggapin ang mga papasok na email sa isang partikular na URL at mag-trigger ng mga aksyon nang naaayon."
+                    ]
+                },
+                "img": "/assets/filph/email/webhooks_for_delivery_reports_incoming_emails_and_domain_status.webp"
+            },
+            {
+                "name": "Walang Hirap na Pamahalaan ang Papasok na Mga Email gamit ang Isang Unified Inbox.",
+                "content": "Walang hirap na pamahalaan ang mga papasok na email, makipagtulungan sa iyong koponan, at tumugon nang mas mabilis, lahat mula sa isang solong, organisadong inbox.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Sentralisadong Pamamahala ng Email",
+                            "description": "Pamahalaan ang lahat ng mga email ng customer mula sa isang inbox."
+                        },
+                        {
+                            "name": "Pakikipagtulungan ng Koponan",
+                            "description": "I-assign at subaybayan ang mga tugon sa email sa loob ng koponan."
+                        },
+                        {
+                            "name": "Mas Mabilis na Oras ng Pagtugon",
+                            "description": "Bawasan ang mga pagkaantala gamit ang real-time na pagsubaybay sa email at matalinong pag-uuri."
+                        },
+                        {
+                            "name": "Awtomatikong Pag-assign ng Email",
+                            "description": "I-route ang mga email sa tamang miyembro ng koponan kaagad."
+                        },
+                        {
+                            "name": "Mga Nakategoryang Pag-uusap",
+                            "description": "Ayusin ang mga email ayon sa prayoridad, katayuan, o departamento para sa mas mahusay na kahusayan."
+                        }
+                    ],
+                    "features": [
+                        "Unified inbox upang pamahalaan ang mga email mula sa maraming account sa isang lugar.",
+                        "Walang hirap na I-assign ang mga email para sa walang putol na pakikipagtulungan ng koponan.",
+                        "Dedicated Android/IOS App upang Mahusay na Pamahalaan at Tumugon sa Mga Papasok na Pagtatanong",
+                        "Mga real-time na notification upang hindi makaligtaan ang isang mahalagang mensahe.",
+                        "Mga analytics ng tugon upang subaybayan ang pagganap ng koponan at mga oras ng resolusyon ng email."
+                    ]
+                },
+                "img": "/assets/filph/email/lotties/effortlessly_manage_incoming_emails_with_a_unified_inbox.json"
+            }
+        ]
+    },
+    "ProductStatsComp": {
+        "heading": "Pinakamahusay sa klase na paghahatid ng email at nangungunang mga resulta sa industriya",
+        "content": [
+            {
+                "count": "98.5%",
+                "des": "Rate ng paghahatid ng email"
+            },
+            {
+                "count": "15M+",
+                "des": "Mga email na matagumpay na naihatid bawat buwan."
+            },
+            {
+                "count": "100%",
+                "des": "Mga email na sinubukan sa loob ng unang 5 minuto para sa agarang pakikipag-ugnayan."
+            },
+            {
+                "count": "24/7",
+                "des": "Dedicated na suporta, palaging handang tumulong."
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Milyun-milyong Gumagamit ang nagtitiwala sa amin sa aming Solusyon sa Email, Maaari ka rin.",
+        "buttons": {
+           "contactSales": {
+                "text": "Makipag-ugnayan sa sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pagpepresyo",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Magsimula",
+                "link": "https:/control.msg91.com/signup/"
+            }
+        }
+    }
+}

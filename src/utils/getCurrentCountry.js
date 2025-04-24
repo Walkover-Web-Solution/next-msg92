@@ -15,6 +15,9 @@ export default function GetCountryDetails(params) {
         if (countryy?.toLowerCase() === 'br-pt') {
             countryy = 'br';
         }
+        if (countryy?.toLowerCase() === 'fil-ph') {
+            countryy = 'ph';
+        }
 
         if (params?.shortname && params?.shortname !== 'global') {
             const countryDetails = countries.find((country) => country.shortname === countryy?.toUpperCase());
