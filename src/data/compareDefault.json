@@ -31,6 +31,10 @@
         "name": "WhatsApp Carousels",
         "msg91": "supports creating and sending WhatsApp carousel templates."
     },
+    "whatsapp_catalogs": {
+        "name": "WhatsApp Catalogs",
+        "msg91": "Supports WhatsApp catalog with single and multi-product templates for easy sharing."
+    },
     "customer_journey_creation": {
         "name": "Customer Journey Creation",
         "msg91": "MSG91 powers multichannel journeys via SMS, WhatsApp, Email, RCS & more"
@@ -49,7 +53,7 @@
     },
     "otp_widget": {
         "name": "OTP Widget",
-        "msg91": ""
+        "msg91": "OTP widget for website & app—secure login, plug & play!"
     },
     "one_click_verification": {
         "name": "One Click Verification",

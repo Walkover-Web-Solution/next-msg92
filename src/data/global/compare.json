@@ -17,6 +17,12 @@
                 "link": "msg91-vs-twilio",
                 "img": "/assets/compare/twilio/twilio-icon.svg",
                 "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(242, 47, 70, 0.15) 107.23%)"
+            },
+            {
+                "name": "MSG91 vs AiSensy",
+                "link": "msg91-vs-aisensy",
+                "img": "/assets/compare/aisensy/aisensy-icon.png",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(66, 184, 98, 0.10)  107.23%)"
             }
         ]
     },
