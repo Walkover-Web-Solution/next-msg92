@@ -1,6 +1,7 @@
 import specialPages from '@/data/specialPages.json';
 import Head from 'next/head';
 export default function HreflangTagComp({ pageInfo }) {
+    const isPricingPage = specialPages?.pricing.includes(pageInfo?.page);
     return (
         <Head>
             <link rel='canonical' href={`https://msg91.com${pageInfo?.pathURL ? '/' + pageInfo.pathURL : ''}`} />
@@ -14,22 +15,25 @@ export default function HreflangTagComp({ pageInfo }) {
                 hrefLang='en'
                 href={`https://msg91.com${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
             />
-            {specialPages?.countries.map((country, index) => {
-                if (
-                    !specialPages?.global.includes(pageInfo?.page) &&
-                    !specialPages?.justNested?.includes(pageInfo?.baseURL) &&
-                    !(pageInfo?.page === 'case-studies')
-                ) {
-                    return (
-                        <link
-                            key={index}
-                            rel='alternate'
-                            hrefLang={`${country === 'br-pt' ? 'pt-BR' : 'en-' + country.toUpperCase()}`}
-                            href={`https://msg91.com/${country}${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
-                        />
-                    );
-                }
-            })}
+            {specialPages?.countries
+                .map((country, index) => {
+                    if (
+                        (!specialPages?.global.includes(pageInfo?.page) || isPricingPage) &&
+                        !specialPages?.justNested?.includes(pageInfo?.baseURL) &&
+                        !(pageInfo?.page === 'case-studies')
+                    ) {
+                        return (
+                            <link
+                                key={index}
+                                rel='alternate'
+                                hrefLang={`${country === 'br-pt' ? 'pt-BR' : 'en-' + country.toUpperCase()}`}
+                                href={`https://msg91.com/${country}${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
+                            />
+                        );
+                    }
+                    return null;
+                })
+                .filter(Boolean)}
         </Head>
     );
 }
