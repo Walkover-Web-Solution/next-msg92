@@ -1,11 +1,17 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import Document from 'next/document';
+import countryData from '@/data/availableCountries.json';
 
 function getLanguageFromPath(path) {
-    const country = path?.split('/')[1] || 'global';
+    const countryFromPath = path?.split('/')[1]?.toUpperCase() || 'GLOBAL';
 
-    if (country === 'br-pt' || country === 'br') return 'pt-BR';
-    return 'en';
+    if (countryFromPath === 'BR-PT') {
+        return 'pt-BR';
+    }
+
+    const countryInfo = countryData.find((country) => country.shortname.toUpperCase() === countryFromPath);
+
+    return countryInfo?.htmlLang || 'en';
 }
 
 export default class MyDocument extends Document {
