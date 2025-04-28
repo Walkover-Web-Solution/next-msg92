@@ -7,18 +7,18 @@ export default function HreflangTagComp({ pageInfo }) {
 
     return (
         <Head>
-            <link rel='canonical' href={`https://msg91.com${pageInfo?.pathURL ? '/' + pageInfo.pathURL : ''}`} />
+            <link rel='canonical' href={`${process.env.BASE_URL}${pageInfo?.pathURL ? '/' + pageInfo.pathURL : ''}`} />
 
             <link
                 rel='alternate'
                 hreflang='x-default'
-                href={`https://msg91.com${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
+                href={`${process.env.BASE_URL}${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
             />
 
             <link
                 rel='alternate'
                 hreflang='en'
-                href={`https://msg91.com${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
+                href={`${process.env.BASE_URL}${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
             />
 
             {countryData.map((country, index) => {
@@ -38,7 +38,7 @@ export default function HreflangTagComp({ pageInfo }) {
                             key={index}
                             rel='alternate'
                             hreflang={country.hreflang}
-                            href={`https://msg91.com/${hrefPrefix}${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
+                            href={`${process.env.BASE_URL}/${hrefPrefix}${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
                         />
                     );
                 }
