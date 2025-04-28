@@ -5,7 +5,6 @@ import MenuBarComp from '@/components/menuBarComp/menuBarComp';
 import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
 import PreFooterComp from '@/components/PreFooterComp/PreFooterComp';
 import getBotTemplates from '@/utils/getBotTemplates';
-import getPageInfo from '@/utils/getPageInfo';
 
 export default function demochatbot({ pageInfo, templateList, totalPages, currentPage }) {
     return (
@@ -24,12 +23,7 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
                     'login': 'Login',
                     'hide': ['signup', 'singin'],
                 }}
-                pageInfo={{
-                    'country': 'global',
-                    'page': 'demochatbot',
-                    'pathArray': [],
-                    'pathURL': '',
-                }}
+                pageInfo={pageInfo}
             />
             <MenuBarComp
                 componentData={{
@@ -222,12 +216,7 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
                     'signup_btn': 'Sign Up',
                     'hide': ['signup', 'singin'],
                 }}
-                pageInfo={{
-                    'country': 'global',
-                    'page': 'home',
-                    'pathArray': [],
-                    'pathURL': '',
-                }}
+                pageInfo={pageInfo}
             />
             <ChatBotDemoComp
                 pageInfo={pageInfo}
@@ -468,21 +457,21 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
                         ],
                     },
                 }}
-                pageInfo={{
-                    'country': 'global',
-                    'page': 'home',
-                    'pathArray': [],
-                    'pathURL': '',
-                }}
+                pageInfo={pageInfo}
             />
         </div>
     );
 }
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const currentPage = Number(context.query?.page) || 1;
-    const params = context?.params;
-    const pageInfo = getPageInfo(params);
+    const pageInfo = {
+        'country': 'global',
+        'page': 'demochatbot',
+        'pathArray': ['demochatbot'],
+        'pathURL': 'demochatbot',
+        'baseURL': 'demochatbot',
+    };
     const templateData = await getBotTemplates(currentPage);
 
     return {
