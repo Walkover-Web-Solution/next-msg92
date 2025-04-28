@@ -5,6 +5,7 @@ const customEnvConfig = dotenv.config().parsed || {};
 
 var getEnvValue = (key) => process.env?.[key] || customEnvConfig?.[key];
 const nextConfig = {
+    trailingSlash: false, 
     reactStrictMode: false,
     images: {
         domains: ['placehold.co'],

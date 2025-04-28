@@ -12,7 +12,7 @@
                     "name": "Shopify",
                     "description": "MSG91 have a native integration with shopify which allow you to send notifications and alerts on multiple events (i.e. Order Updates, Abandoned cart and checkouts) and you can sync MSG91's Segmento with shopify account to capture the user events and their journey to run marketing and  retention campaigns, also you can set up a hello chat widget and whatsapp widget on the website and many more.",
                     "icon": "/assets/integration_partner/shopify.svg",
-                    "link": "https://msg91.com/help/add-ons-and-plug-ins/how-to-use-msg91-with-shopify"
+                    "link": "https://msg91.com/help/segmento/how-to-use-msg91-with-shopify"
                 },
                 {
                     "name": "Zoho CRM",
@@ -31,7 +31,7 @@
                         },
                         {
                             "channel": "WhatsApp",
-                            "link": "https://msg91.com/help/whatsapp/clevertap-whatsapp-connector"
+                            "link": "https://msg91.com/help/integration-guides/clevertap-whatsapp-connector"
                         }
                     ]
                 },

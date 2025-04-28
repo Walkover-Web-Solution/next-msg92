@@ -32,6 +32,7 @@
             "omnichannel_chatbot_support": "SMS, webchat, WhatsApp, and Facebook Messenger.",
             "whatsapp_payments": "Twilio doesn't support direct payments within WhatsApp chats.",
             "whatsapp_carousels": "supports creating and sending WhatsApp carousel templates.",
+            "whatsapp_catalogs": "Supports WhatsApp catalog,setup requires manual integration.",
             "customer_journey_creation": "enables multichannel journeys across SMS, Email, WhatsApp & more",
             "client_segmentation": "Advanced customer segmentation for targeted campaigns- through twilio segments",
             "integration_and_plugins": "Integrates with Multiple platforms like Shopify, Zoho, Hubspot etc",

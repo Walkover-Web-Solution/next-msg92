@@ -69,6 +69,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </>
             )}
 
+            <HreflangTagComp pageInfo={pageInfo} />
+
             <Head>
                 <title>{data?.title}</title>
                 <meta name='description' content={data?.description} />
@@ -81,8 +83,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     content='width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no'
                 />
                 <meta name='google-site-verification' content='RfcBy_Lv1Ao1j0eP8UlMjJ44ik5_1YDKsRQSNFr9jEQ' />
-                {/* Hreflag tags */}
-                <HreflangTagComp pageInfo={pageInfo} />
 
                 {process.env.BASE_URL !== 'https://msg91.com' && (
                     <>
