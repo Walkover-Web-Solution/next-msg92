@@ -1,8 +1,6 @@
-import axios from 'axios';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import style from './ChatBotDemoComp.module.scss';
 import ChatBotDemoPagination from './ChatBotDemoPagination/ChatBotDemoPagination';
-import { useRouter } from 'next/router';
 
 export default function ChatBotDemoComp({ templateList, totalPages, currentPage }) {
     const [selectedTemplate, setSelectedTemplate] = useState({});
@@ -47,7 +45,6 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
             <head>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>Chat Widget</title>
             </head>
             <body>
                 <script>
