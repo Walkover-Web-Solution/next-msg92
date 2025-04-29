@@ -4,7 +4,9 @@
         "name": "India",
         "code": 91,
         "currency": "INR",
-        "language": "English"
+        "language": "English",
+        "htmlLang": "en-IN",
+        "hreflang": "en-in"
     },
     {
         "shortname": "br",
@@ -22,7 +24,9 @@
                 "name": "English",
                 "route": "br"
             }
-        ]
+        ],
+        "htmlLang": "en-BR",
+        "hreflang": "en-br"
     },
     {
         "shortname": "br-pt",
@@ -38,14 +42,18 @@
                 "route": "br"
             }
         ],
-        "language": "Portuguese"
+        "language": "Portuguese",
+        "htmlLang": "pt-BR",
+        "hreflang": "pt-br"
     },
     {
         "shortname": "ae",
         "name": "United Arab Emirates",
         "code": 971,
         "currency": "USD",
-        "language": "English"
+        "language": "English",
+        "htmlLang": "en-AE",
+        "hreflang": "en-ae"
     },
     {
         "shortname": "ph",
@@ -63,7 +71,9 @@
                 "name": "English",
                 "route": "ph"
             }
-        ]
+        ],
+        "htmlLang": "en-PH",
+        "hreflang": "en-ph"
     },
     {
         "shortname": "fil-ph",
@@ -80,34 +90,44 @@
                 "name": "English",
                 "route": "ph"
             }
-        ]
+        ],
+        "htmlLang": "fil-PH",
+        "hreflang": "fil-ph"
     },
     {
         "shortname": "sg",
         "name": "Singapore",
         "code": 65,
         "currency": "GBP",
-        "language": "English"
+        "language": "English",
+        "htmlLang": "en-SG",
+        "hreflang": "en-sg"
     },
     {
         "shortname": "es",
         "name": "Spain",
         "code": 34,
         "currency": "GBP",
-        "language": "English"
+        "language": "English",
+        "htmlLang": "en-ES",
+        "hreflang": "en-es"
     },
     {
         "shortname": "gb",
         "name": "United Kingdom",
         "code": 55,
         "currency": "GBP",
-        "language": "English"
+        "language": "English",
+        "htmlLang": "en-GB",
+        "hreflang": "en-gb"
     },
     {
         "shortname": "us",
         "name": "United States",
         "code": 55,
         "currency": "USD",
-        "language": "English"
+        "language": "English",
+        "htmlLang": "en-US",
+        "hreflang": "en-us"
     }
 ]
