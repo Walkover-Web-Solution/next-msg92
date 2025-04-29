@@ -13,13 +13,30 @@
     }
 
     /* Firefox */
-    input[type=number] {
+    input[type='number'] {
         -moz-appearance: textfield;
     }
 }
 
 // /hellonew
-.ai-fuled{
+.ai-fuled {
     text-shadow: 4px 4px #26d9d9;
     position: relative;
 }
+
+//blog
+.blog-body-cont {
+    h2 {
+        @apply text-2xl mt-10;
+    }
+    h3 {
+        @apply text-xl mt-3;
+    }
+    h4 {
+        @apply text-lg;
+    }
+    a {
+        @apply text-blue-600 hover:text-blue-700;
+    }
+}
+

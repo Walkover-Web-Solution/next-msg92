@@ -82,10 +82,10 @@ export default function TestPage({
                     <h1 className='text-4xl font-bold'>{title}</h1>
                     {thumbnailImage !== '' && <img className='' src={thumbnailImage} alt={author} />}
                 </div>
-                <div className='body leading-normal flex flex-col gap-4 text-lg ancor-parent'>
+                <div className='body leading-normal flex flex-col gap-2 text-lg blog-body-cont'>
                     <MDXRemote {...source} components={component} />
                 </div>
-                <ul className={'tag-list'}>
+                <ul className={'flex flex-wrap gap-2'}>
                     {tags !== '' &&
                         tags?.map((it, i) => (
                             <li key={i} className='bg-gray-300 py-1 px-3 rounded-full w-fit'>
