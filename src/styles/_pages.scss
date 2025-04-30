@@ -27,16 +27,21 @@
 //blog
 .blog-body-cont {
     h2 {
-        @apply text-2xl mt-10;
+        @apply text-2xl mt-6;
     }
     h3 {
-        @apply text-xl mt-3;
+        @apply text-xl mt-4;
     }
     h4 {
-        @apply text-lg;
+        @apply text-lg mt-2;
     }
     a {
         @apply text-blue-600 hover:text-blue-700;
     }
+    ul {
+        @apply list-disc flex flex-col gap-3 mb-4;
+    }
+    strong {
+        @apply font-bold;
+    }
 }
-
