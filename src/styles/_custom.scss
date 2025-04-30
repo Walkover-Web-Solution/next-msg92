@@ -315,11 +315,7 @@ $button-transition-timing: 100ms;
 .iti .iti__country-list {
     width: 350px !important;
 }
-.ancor-parent {
-    a {
-        @apply text-blue-500 hover:text-blue-600;
-    }
-}
+
 
 .tooltip.tooltip-modal {
     &:before {

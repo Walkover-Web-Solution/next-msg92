@@ -195,6 +195,11 @@
                     "url": "https://arthayan.in/"
                 },
                 {
+                    "icon": "/assets/startups/bnest.jpeg",
+                    "tag": "BNest foundation",
+                    "url": "https://bnest.in/index.html"
+                },
+                {
                     "icon": "/assets/startups/iiitd.jpeg",
                     "tag": "IIITD Innovation and Incubation Center",
                     "url": "https://iiitdic.in/"
@@ -230,6 +235,11 @@
                     "url": "https://cibamumbai.org.in/"
                 },
                 {
+                    "icon": "/assets/startups/aic-isb.jpeg",
+                    "tag": "AIC - ISB",
+                    "url": "https://aicisb.org/"
+                },
+                {
                     "icon": "/assets/startups/ginserv.png",
                     "tag": "GINSERV",
                     "url": "https://www.ginserv.in/"
@@ -248,6 +258,11 @@
                     "icon": "/assets/startups/aic-rntu.png",
                     "tag": "AIC - RNTU",
                     "url": "https://www.aicrntu.com/"
+                },
+                {
+                    "icon": "/assets/startups/dlabs.png",
+                    "tag": "D-Labs",
+                    "url": "https://isbdlabs.org/"
                 },
                 {
                     "icon": "/assets/startups/headstart.png",
