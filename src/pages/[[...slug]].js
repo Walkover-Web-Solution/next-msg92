@@ -49,7 +49,6 @@ import specialPages from '@/data/specialPages.json';
 
 /* utils */
 import { useRouter } from 'next/router';
-import { getMDXContent } from '@/utils/mdxUtils';
 
 const Components = {
     BannerComp,
@@ -96,7 +95,7 @@ const Components = {
     SLAComp,
 };
 
-export default function Page({ data, commonData, pageInfo, mdxData }) {
+export default function Page({ data, commonData, pageInfo }) {
     const router = useRouter();
     var browserPath = router.asPath;
     var browserPathCase = browserPath;
@@ -125,7 +124,6 @@ export default function Page({ data, commonData, pageInfo, mdxData }) {
                             data={pageData}
                             pageInfo={pageInfo}
                             browserPathCase={browserPathCase}
-                            mdxData={mdxData}
                         />
                     );
                 })}
@@ -160,15 +158,11 @@ export const getStaticProps = async (context) => {
     };
     const data = isNestedpage ? await fetchData('/api/data') : await fetchData('/api/data');
 
-    const mdxFilePath = data?.SLAComp?.mdxfile;
-    const mdxSource = await getMDXContent(mdxFilePath);
-
     return {
         props: {
             data: data || {},
             commonData: commonData || {},
             pageInfo,
-            mdxData: mdxSource,
         },
     };
 };
