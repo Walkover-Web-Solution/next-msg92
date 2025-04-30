@@ -88,6 +88,7 @@ class StepTwo extends React.Component {
         //     smsIdentifier: '',
         // });
     };
+
     render() {
         return (
             <>
@@ -329,6 +330,7 @@ class StepTwo extends React.Component {
                             <MdKeyboardArrowLeft />
                             Back
                         </button>
+
                         <button
                             className=' btn btn-md btn-accent disabled:bg-gray-300 disabled:text-primary'
                             onClick={() => {

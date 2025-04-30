@@ -43,7 +43,7 @@
     },
     "FeatureComp": {
         "iconColor": "text-email",
-        "features": [
+       "features": [
             {
                 "name": "Prevent Email Fraud with DMARC Compliance",
                 "content": "Protect your brand from email spoofing and phishing with DMARC (Domain-based Message Authentication, Reporting & Conformance). Ensure only legitimate emails reach your audience while enhancing security and email deliverability",
@@ -106,7 +106,7 @@
                             "description": "Avoid issues with undeliverable emails."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Instantly detect valid, invalid, and risky email addresses.",
                         "Upload and validate large email lists efficiently.",
                         "Remove fake and undeliverable emails before campaigns.",
@@ -214,7 +214,7 @@
                             "description": "Engage users with interactive polls and voting features."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Dynamic elements like carousels, forms, and live updates.",
                         "Allow recipients to take actions without leaving the inbox.",
                         "Stand out in crowded inboxes with rich, interactive content.",
@@ -250,7 +250,7 @@
                             "description": "Modify announcement emails in minutes and send instantly."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Professionally designed, mobile-responsive templates for any use case.",
                         "Drag-and-drop customization—no coding required.",
                         "Pre-built templates for newsletters, and transactional emails.",
@@ -322,7 +322,7 @@
                             "description": "Manage email campaigns seamlessly from Gmail or Outlook."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Send email campaigns directly from one dashboard.",
                         "Engage customers from your business inbox effortlessly.",
                         "Handle all campaigns from a single interface.",
@@ -394,7 +394,7 @@
                             "description": "View campaign performance across different countries for better targeting."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Access an advanced analytics dashboard for deep, data-driven decision-making.",
                         "Gain deliverability insights with DMARC, SPF, and DKIM authentication to improve inbox placement and prevent spoofing.",
                         "Track real-time performance metrics like delivered, opens, clicks, and conversions instantly.",
@@ -430,7 +430,7 @@
                             "description": "Focus on reaching real, interested users for better open and click-through rates."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Automatically blocks emails to unsubscribed, bounced, or invalid addresses.",
                         "Continuously updates and manages suppressed contacts.",
                         "Easily add and manage suppression lists for better control.",
@@ -466,7 +466,7 @@
                             "description": "Send at peak times for better action rates."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Automatically schedules emails based on each recipient’s local time.",
                         "Ensures emails reach users when they are most likely to engage.",
                         "Schedule and send emails seamlessly across multiple time zones.",
@@ -502,7 +502,7 @@
                             "description": "Analyze different options to see what drives higher sales."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Run A/B tests on different audience segments to understand how variations perform.",
                         "Compare different email variations to identify the most effective version.",
                         "Leverage past A/B test results to refine future campaigns.",
@@ -538,7 +538,7 @@
                             "description": "Convert incoming emails into support tickets and assign them to agents."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Get real-time alerts for bounces and spam complaints to protect email deliverability.",
                         "Instantly detect unsubscribes to update lists and avoid sending unwanted emails.",
                         "Ensure domain security with continuous monitoring of SPF, DKIM, and DMARC records.",
@@ -574,7 +574,7 @@
                             "description": "Organize emails by priority, status, or department for better efficiency."
                         }
                     ],
-                    "features": [
+                   "features": [
                         "Unified inbox to manage emails from multiple accounts in one place.",
                         "Effortlessly Assign emails for seamless team collaboration.",
                         "Dedicated Android/IOS App to Efficiently Manage and Respond to Incoming Queries",

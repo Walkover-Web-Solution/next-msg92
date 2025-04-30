@@ -1,84 +1,133 @@
 [
     {
-      "shortname": "IN",
-      "name": "India",
-      "code": 91,
-      "language": "English",
-      "currency": "INR",
-      "htmlLang": "en-IN",
-      "hreflang": "en-in"
+        "shortname": "in",
+        "name": "India",
+        "code": 91,
+        "currency": "INR",
+        "language": "English",
+        "htmlLang": "en-IN",
+        "hreflang": "en-in"
     },
     {
-      "shortname": "BR",
-      "name": "Brazil",
-      "code": 55,
-      "language": "English",
-      "currency": "USD",
-      "htmlLang": "en-BR",
-      "hreflang": "en-br"
+        "shortname": "br",
+        "name": "Brazil",
+        "code": 55,
+        "currency": "USD",
+        "language": "English",
+        "nestedLanguage": "br-pt",
+        "languages": [
+            {
+                "name": "Portuguese",
+                "route": "br-pt"
+            },
+            {
+                "name": "English",
+                "route": "br"
+            }
+        ],
+        "htmlLang": "en-BR",
+        "hreflang": "en-br"
     },
     {
-      "shortname": "BR-PT",
-      "name": "Brazil",
-      "code": 55,
-      "language": "Portuguese",
-      "currency": "USD",
-      "htmlLang": "pt-BR",
-      "hreflang": "pt-br"
+        "shortname": "br-pt",
+        "name": "Brazil",
+        "code": 55,
+        "languages": [
+            {
+                "name": "Portuguese",
+                "route": "br-pt"
+            },
+            {
+                "name": "English",
+                "route": "br"
+            }
+        ],
+        "language": "Portuguese",
+        "htmlLang": "pt-BR",
+        "hreflang": "pt-br"
     },
     {
-      "shortname": "AE",
-      "name": "United Arab Emirates",
-      "code": 971,
-      "language": "English",
-      "currency": "USD",
-      "htmlLang": "en-AE",
-      "hreflang": "en-ae"
+        "shortname": "ae",
+        "name": "United Arab Emirates",
+        "code": 971,
+        "currency": "USD",
+        "language": "English",
+        "htmlLang": "en-AE",
+        "hreflang": "en-ae"
     },
     {
-      "shortname": "PH",
-      "name": "Philippines",
-      "code": 63,
-      "language": "English",
-      "currency": "GBP",
-      "htmlLang": "en-PH",
-      "hreflang": "en-ph"
+        "shortname": "ph",
+        "name": "Philippines",
+        "code": 63,
+        "currency": "GBP",
+        "language": "English",
+        "nestedLanguage": "fil-ph",
+        "languages": [
+            {
+                "name": "Filipino",
+                "route": "fil-ph"
+            },
+            {
+                "name": "English",
+                "route": "ph"
+            }
+        ],
+        "htmlLang": "en-PH",
+        "hreflang": "en-ph"
     },
     {
-      "shortname": "SG",
-      "name": "Singapore",
-      "code": 65,
-      "language": "English",
-      "currency": "GBP",
-      "htmlLang": "en-SG",
-      "hreflang": "en-sg"
+        "shortname": "fil-ph",
+        "name": "Philippines",
+        "code": 63,
+        "currency": "GBP",
+        "language": "Filipino",
+        "languages": [
+            {
+                "name": "Filipino",
+                "route": "fil-ph"
+            },
+            {
+                "name": "English",
+                "route": "ph"
+            }
+        ],
+        "htmlLang": "fil-PH",
+        "hreflang": "fil-ph"
     },
     {
-      "shortname": "ES",
-      "name": "Spain",
-      "code": 34,
-      "language": "English",
-      "currency": "GBP",
-      "htmlLang": "en-ES",
-      "hreflang": "en-es"
+        "shortname": "sg",
+        "name": "Singapore",
+        "code": 65,
+        "currency": "GBP",
+        "language": "English",
+        "htmlLang": "en-SG",
+        "hreflang": "en-sg"
     },
     {
-      "shortname": "GB",
-      "name": "United Kingdom",
-      "code": 44,
-      "language": "English",
-      "currency": "GBP",
-      "htmlLang": "en-GB",
-      "hreflang": "en-gb"
+        "shortname": "es",
+        "name": "Spain",
+        "code": 34,
+        "currency": "GBP",
+        "language": "English",
+        "htmlLang": "en-ES",
+        "hreflang": "en-es"
     },
     {
-      "shortname": "US",
-      "name": "United States",
-      "code": 1,
-      "language": "English",
-      "currency": "USD",
-      "htmlLang": "en-US",
-      "hreflang": "en-us"
+        "shortname": "gb",
+        "name": "United Kingdom",
+        "code": 55,
+        "currency": "GBP",
+        "language": "English",
+        "htmlLang": "en-GB",
+        "hreflang": "en-gb"
+    },
+    {
+        "shortname": "us",
+        "name": "United States",
+        "code": 55,
+        "currency": "USD",
+        "language": "English",
+        "htmlLang": "en-US",
+        "hreflang": "en-us"
     }
-  ]
-  
+]

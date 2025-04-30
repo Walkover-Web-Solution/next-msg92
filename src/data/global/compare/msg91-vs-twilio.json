@@ -5,7 +5,7 @@
     },
     "CompareBannerComp": {
         "heading": "MSG91 vs Twilio",
-        "subheading": "MSG91 and Twilio are two leading communication platforms offering SMS, WhatsApp, and omnichannel messaging solutions. While both provide robust APIs and automation capabilities, their pricing, ease of integration, and customer-centric features cater to different business needs",
+        "subheading": "MSG91 and Twilio are two leading communication platforms offering SMS, WhatsApp, and omnichannel messaging solutions. While both provide robust APIs and automation capabilities, their pricing, ease of integration, and customer-centric features cater to different business needs.",
         "img": "/assets/compare/twilio/twilio-icon.svg",
         "color": "#F22F46"
     },
