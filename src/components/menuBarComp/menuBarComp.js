@@ -97,7 +97,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         <LinkText customClasses='text-lg'>Integrations</LinkText>
                                     </Link>
                                     <a
-                                        className='flex items-center h-full justify-center'
+                                        className='flex items-center h-full '
                                         href='https://docs.msg91.com/overview'
                                         target='_blank'
                                         onClick={() => {
@@ -251,7 +251,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
 
                 <div>
                     <div className='container hidden md:flex items-center py-5 '>
-                        <ul className='w-full z-[1000] flex gap-6'>
+                        <ul className='w-full min-w-fit text-sm lg:text-lg z-[1000] flex lg:gap-6 gap-4'>
                             <li
                                 onMouseEnter={() => {
                                     setNav('show');
@@ -281,18 +281,18 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                 {componentData?.pricing}
                             </Link>
                         </ul>
-                        <div className='w-full items-center flex justify-center'>
+                        <div className='w-full min-w-fit  items-center flex justify-center'>
                             <Link href={pageInfo?.country === 'global' ? '/' : pageInfo?.country}>
                                 <Image
                                     src={'/assets/brand/msg91.svg'}
                                     width={300}
                                     height={100}
-                                    className='h-[40px] w-auto'
+                                    className='lg:h-[40px] h-[30px] w-auto'
                                     alt='MSG91'
                                 />
                             </Link>
                         </div>
-                        <ul className='w-full flex justify-end gap-6 items-center'>
+                        <ul className='w-full min-w-fit text-sm lg:text-lg z-[1000] flex items-end justify-end lg:gap-6 gap-4'>
                             <a
                                 className='flex items-center h-full justify-center'
                                 href='https://docs.msg91.com/overview'
