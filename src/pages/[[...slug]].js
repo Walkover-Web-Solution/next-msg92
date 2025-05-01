@@ -42,6 +42,7 @@ import ProductStatsComp from '@/components/ProductStatsComp/ProductStatsComp';
 import CompareBannerComp from '@/components/compareComp/compareBannerComp/compareBannerComp';
 import CompareGridComp from '@/components/compareComp/compareGridComp/compareGridComp';
 import CompareTableComp from '@/components/compareComp/compareTableComp/compareTableComp';
+import SLAComp from '@/components/SLAComp/SLAComp';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -91,6 +92,7 @@ const Components = {
     CompareBannerComp,
     CompareGridComp,
     CompareTableComp,
+    SLAComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
@@ -143,6 +145,7 @@ export const getStaticProps = async (context) => {
     const pageInfo = getPageInfo(params);
     const isNestedpage = specialPages.nested.includes(pageInfo?.pathURL);
     const commonData = getCommonCompData(pageInfo?.country);
+
     const fetchData = async (endpoint) => {
         const res = await fetch(`${process.env.BASE_URL}${endpoint}`, {
             method: 'POST',
@@ -153,7 +156,8 @@ export const getStaticProps = async (context) => {
         });
         return await res.json();
     };
-    const data = isNestedpage ? await fetchData('/api/data') : await fetchData('/api/data');
+    const data = await fetchData('/api/data');
+
     return {
         props: {
             data: data || {},
