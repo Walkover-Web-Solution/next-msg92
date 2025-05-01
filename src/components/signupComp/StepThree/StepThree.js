@@ -340,6 +340,7 @@ class StepThree extends React.Component {
     };
 
     render() {
+        const isLoading = this.props?.isLoading;
         return (
             <>
                 <div className='flex flex-col gap-8 2xl:w-2/3 xl:w-2/3  max-w-[600px]'>
@@ -366,6 +367,7 @@ class StepThree extends React.Component {
                                 name='firstName'
                                 value={this.state.formData.firstName}
                                 onChange={this.handleInputChange}
+                                disabled={isLoading}
                             />
                             <p className='text-sm text-red-600'>{this.state.formErrorData.firstNameError}</p>
                         </div>
@@ -379,6 +381,7 @@ class StepThree extends React.Component {
                                 name='lastName'
                                 value={this.state.formData.lastName}
                                 onChange={this.handleInputChange}
+                                disabled={isLoading}
                             />
                             <p className='text-sm text-red-600'>{this.state.formErrorData.lastNameError}</p>
                         </div>
@@ -404,6 +407,7 @@ class StepThree extends React.Component {
                                                             );
                                                             this.handleInvitationSelection();
                                                         }}
+                                                        disabled={isLoading}
                                                     >
                                                         Accept
                                                     </button>
@@ -416,6 +420,7 @@ class StepThree extends React.Component {
                                                             );
                                                             this.handleInvitationSelection();
                                                         }}
+                                                        disabled={isLoading}
                                                     >
                                                         Reject
                                                     </button>
@@ -434,6 +439,7 @@ class StepThree extends React.Component {
                                 <button
                                     className='btn w-fit btn-secondary'
                                     onClick={() => this.setState({ createCompany: true })}
+                                    disabled={isLoading}
                                 >
                                     Create New Company
                                 </button>
@@ -445,6 +451,7 @@ class StepThree extends React.Component {
                                 <button
                                     className='btn btn-ghost btn-sm'
                                     onClick={() => this.setState({ createCompany: false })}
+                                    disabled={isLoading}
                                 >
                                     Cancel
                                 </button>
@@ -460,6 +467,7 @@ class StepThree extends React.Component {
                                         name='companyName'
                                         value={this.state.formData.companyName}
                                         onChange={this.handleInputChange}
+                                        disabled={isLoading}
                                     />
                                     <p className='text-sm text-red-600'>{this.state.formErrorData.companyNameError}</p>
                                 </div>
@@ -473,6 +481,7 @@ class StepThree extends React.Component {
                                                 name='industryType'
                                                 value={this.state.formData.industryType}
                                                 onChange={this.handleInputChange}
+                                                disabled={isLoading}
                                             >
                                                 <option value=''>Select Industry Type*</option>
                                                 {this.state.industries &&
@@ -518,6 +527,7 @@ class StepThree extends React.Component {
                                                 }
                                                 className='chip-list-select'
                                                 classNamePrefix='signup_react_select'
+                                                isDisabled={isLoading}
                                             />
                                         )}
                                         <p className='text-sm text-red-600'>
@@ -535,6 +545,7 @@ class StepThree extends React.Component {
                                                 name='country'
                                                 value={this.state.formData.country}
                                                 onChange={this.handleInputChange}
+                                                disabled={isLoading}
                                             >
                                                 <option value=''>Select Country*</option>
                                                 {this.state.countryNames.map((country) => (
@@ -558,6 +569,7 @@ class StepThree extends React.Component {
                                                 name='stateProvince'
                                                 value={this.state.formData.stateProvince}
                                                 onChange={this.handleInputChange}
+                                                disabled={isLoading}
                                             >
                                                 <option value=''>Select State/Province*</option>
                                                 {this.state.countryData
@@ -583,6 +595,7 @@ class StepThree extends React.Component {
                                             name='pincode'
                                             value={this.state.formData.pincode}
                                             onChange={this.handleInputChange}
+                                            disabled={isLoading}
                                         />
                                         <p className='text-sm text-red-600'>{this.state.formErrorData.pincodeError}</p>
                                     </div>
@@ -598,6 +611,7 @@ class StepThree extends React.Component {
                                                     this.handleInputChange(event);
                                                     this.setCityIdByCityName(event?.target?.value);
                                                 }}
+                                                disabled={isLoading}
                                             >
                                                 <option value=''>Select City*</option>
                                                 {this.state.countryData
@@ -622,6 +636,7 @@ class StepThree extends React.Component {
                                             name='otherCity'
                                             value={this.state.formData.otherCity}
                                             onChange={this.handleInputChange}
+                                            disabled={isLoading}
                                         />
                                         <p className='text-sm text-red-600'>
                                             {this.state.formErrorData.otherCityError}
@@ -636,6 +651,7 @@ class StepThree extends React.Component {
                                         name='address'
                                         value={this.state.formData.address}
                                         onChange={this.handleInputChange}
+                                        disabled={isLoading}
                                     />
                                     <p className='text-sm text-red-600'>{this.state.formErrorData.addressError}</p>
                                 </div>
@@ -648,6 +664,7 @@ class StepThree extends React.Component {
                                             name='vatNumber'
                                             value={this.state.formData.vatNumber}
                                             onChange={this.handleInputChange}
+                                            disabled={isLoading}
                                         />
                                     </div>
                                 )}
@@ -660,6 +677,7 @@ class StepThree extends React.Component {
                                             name='gstNumber'
                                             value={this.state.formData.gstNumber}
                                             onChange={this.handleInputChange}
+                                            disabled={isLoading}
                                         />
                                         <div>{this.state.formErrorData.gstNumberError}</div>
                                     </div>
@@ -674,6 +692,7 @@ class StepThree extends React.Component {
                                 name='agreeToTerms'
                                 checked={this.state.formData.agreeToTerms}
                                 onChange={this.handleInputChange}
+                                disabled={isLoading}
                             />
                             <p htmlFor='termsCheckBox'>
                                 I agree to the{' '}
@@ -693,13 +712,13 @@ class StepThree extends React.Component {
                             className=' btn btn-md btn-accent disabled:bg-gray-300 disabled:text-primary'
                             type='button'
                             onClick={this.finalSubmit}
-                            disabled={!this.state.formData.agreeToTerms || this.props?.isLoading}
+                            disabled={!this.state.formData.agreeToTerms || isLoading}
                         >
                             Next
-                            {this.state.formData.agreeToTerms && this.props?.isLoading && (
+                            {isLoading && this.state.formData.agreeToTerms && (
                                 <span className='loading loading-spinner loading-sm'></span>
                             )}
-                            {!this.props?.isLoading && <MdKeyboardArrowRight className='text-[20px]' />}
+                            {!isLoading && <MdKeyboardArrowRight className='text-[20px]' />}
                         </button>
                     </div>
                 </div>

@@ -89,6 +89,9 @@ class StepTwo extends React.Component {
         // });
     };
     render() {
+        const isLoading =
+            ((this.props?.smsAccessToken && this.props?.emailAccessToken) || this.props?.githubCode) &&
+            this.props?.isLoading;
         return (
             <>
                 <div className='flex flex-col gap-12'>
@@ -132,7 +135,7 @@ class StepTwo extends React.Component {
                                                         placeholder='Email Address*'
                                                         defaultValue={this.state.emailIdentifier}
                                                         onInput={(e) => this.props.identifierChange(false)}
-                                                        disabled={this.props?.emailAccessToken}
+                                                        disabled={this.props?.emailAccessToken || isLoading}
                                                     />
                                                 </div>
                                             )}
@@ -153,6 +156,7 @@ class StepTwo extends React.Component {
 
                                     {this.props?.emailAccessToken || this.props?.signupByGitHub ? (
                                         <button
+                                            disabled={isLoading}
                                             className='btn btn-accent btn-otp'
                                             onClick={(e) => this.props.identifierChange(false)}
                                         >
@@ -167,7 +171,7 @@ class StepTwo extends React.Component {
                                                     false
                                                 )
                                             }
-                                            disabled={this.props?.isLoading}
+                                            disabled={this.props?.isLoading || isLoading}
                                         >
                                             Get OTP
                                         </button>
@@ -236,6 +240,7 @@ class StepTwo extends React.Component {
                                     </div>
                                     {this.props?.smsAccessToken ? (
                                         <button
+                                            disabled={isLoading}
                                             className='btn btn-accent btn-otp'
                                             onClick={(e) => this.props.identifierChange(true)}
                                         >
@@ -249,7 +254,7 @@ class StepTwo extends React.Component {
                                                     ? toast.error('Invalid mobile number.')
                                                     : this.props.sendOtp(smsIdentifier, true)
                                             }
-                                            disabled={this.props?.isLoading}
+                                            disabled={this.props?.isLoading || isLoading}
                                         >
                                             Get OTP
                                         </button>
@@ -311,6 +316,7 @@ class StepTwo extends React.Component {
                             </div>
                             {this.state.optionValue === 'other' && (
                                 <input
+                                    disabled={isLoading}
                                     className='input border-gray-300 focus:outline-none w-full focus:border-accent h-10'
                                     type='text'
                                     placeholder='Source'
