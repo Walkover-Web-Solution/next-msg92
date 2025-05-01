@@ -347,9 +347,13 @@ class StepTwo extends React.Component {
                                 this.props?.isLoading
                             }
                         >
+                            Next
                             {((this.props?.smsAccessToken && this.props?.emailAccessToken) || this.props?.githubCode) &&
-                                this.props?.isLoading && <span className='loading loading-spinner loading-sm'></span>}
-                            Next <MdKeyboardArrowRight />
+                            this.props?.isLoading ? (
+                                <span className='loading loading-spinner loading-sm'></span>
+                            ) : (
+                                <MdKeyboardArrowRight className='text-[20px]' />
+                            )}
                         </button>
                     </div>
                 </div>
