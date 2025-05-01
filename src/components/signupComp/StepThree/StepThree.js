@@ -695,7 +695,11 @@ class StepThree extends React.Component {
                             onClick={this.finalSubmit}
                             disabled={!this.state.formData.agreeToTerms || this.props?.isLoading}
                         >
-                            Next <MdKeyboardArrowRight />
+                            Next
+                            {this.state.formData.agreeToTerms && this.props?.isLoading && (
+                                <span className='loading loading-spinner loading-sm'></span>
+                            )}
+                            {!this.props?.isLoading && <MdKeyboardArrowRight className='text-[20px]' />}
                         </button>
                     </div>
                 </div>
