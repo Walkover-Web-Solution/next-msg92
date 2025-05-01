@@ -39,7 +39,7 @@
         @apply text-blue-600 hover:text-blue-700;
     }
     ul {
-        @apply list-disc flex flex-col gap-3 mb-4;
+        @apply list-disc flex flex-col gap-3 mb-4 pl-2;
     }
     strong {
         @apply font-bold;
