@@ -64,6 +64,9 @@ body {
         &.btn-outline {
             @apply text-accent hover:bg-accent hover:text-white;
         }
+        &:disabled {
+            @apply bg-gray-300 text-primary;
+        }
     }
     &.btn-secondary {
         @apply text-accent;
