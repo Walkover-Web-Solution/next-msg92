@@ -42,7 +42,7 @@ import ProductStatsComp from '@/components/ProductStatsComp/ProductStatsComp';
 import CompareBannerComp from '@/components/compareComp/compareBannerComp/compareBannerComp';
 import CompareGridComp from '@/components/compareComp/compareGridComp/compareGridComp';
 import CompareTableComp from '@/components/compareComp/compareTableComp/compareTableComp';
-
+import DemoChatBotComp from '@/components/DemoChatBotComp/DemoChatBotComp';
 /* files */
 import specialPages from '@/data/specialPages.json';
 
@@ -91,6 +91,7 @@ const Components = {
     CompareBannerComp,
     CompareGridComp,
     CompareTableComp,
+    DemoChatBotComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
