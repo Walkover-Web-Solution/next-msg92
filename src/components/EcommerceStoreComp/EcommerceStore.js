@@ -4,7 +4,7 @@ export default function EcommerceStoreComp() {
         <>
             <div className='bg-neutral py-20'>
                 <div className='container'>
-                    <p className='text-gray-500'>{ecommerceStore.HeadComp.description}</p>
+                    <p className='text-gray-500'>{ecommerceStore.EcommerceStoreComp.description}</p>
                 </div>
             </div>
         </>
