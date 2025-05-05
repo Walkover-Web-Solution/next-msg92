@@ -84,27 +84,28 @@ export default function DemoChatBotComp() {
                         })}
                     </div> */}
                 </div>
-                <div className='flex flex-col gap-5 items-center'>
-                    <div className='flex items-center gap-1 justify-center'>
-                        <Image
-                            src={'/assets/icons/social/instagram_logo.svg'}
-                            width={32}
-                            height={32}
-                            alt='Instagram Logo'
-                        />
-                        <h2 className='text-xl font-bold'>Instagram Bots</h2>
-                    </div>
-                    <Link href='https://test.msg91.com/hello-new/m/l/sms/templates' target='_blank'>
-                        <button className='btn bg-gray hover:bg-gray-500 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
-                            Fashion & Style Industry
-                        </button>
-                    </Link>
-                    <Link href='https://test.msg91.com/hello-new/m/l/sms/templates' target='_blank'>
-                        <button className='btn bg-gray hover:bg-gray-500 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
-                            Real Estate Industry
-                        </button>
-                    </Link>
-                    {/* <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 '>
+                <div className='flex flex-col gap-12'>
+                    <div className='flex flex-col gap-5 items-center'>
+                        <div className='flex items-center gap-1 justify-center'>
+                            <Image
+                                src={'/assets/icons/social/instagram_logo.svg'}
+                                width={32}
+                                height={32}
+                                alt='Instagram Logo'
+                            />
+                            <h2 className='text-xl font-bold'>Instagram Bots</h2>
+                        </div>
+                        <Link href='https://ig.me/m/MSG91_Instabot' target='_blank'>
+                            <button className='btn bg-gray hover:bg-gray-500 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
+                                Fashion & Style Industry
+                            </button>
+                        </Link>
+                        <Link href='https://ig.me/m/msg91_hello' target='_blank'>
+                            <button className='btn bg-gray hover:bg-gray-500 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
+                                Real Estate Industry
+                            </button>
+                        </Link>
+                        {/* <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 '>
                         {chatbotdemo.instagram_bot.map((bot, index) => {
                             return (
                                 <Link
@@ -127,6 +128,18 @@ export default function DemoChatBotComp() {
                             );
                         })}
                     </div> */}
+                    </div>
+                    <div className='flex flex-col gap-5 items-center'>
+                        <div className='flex items-center gap-1 justify-center'>
+                            <Image src={'/assets/brand/favicon.svg'} width={32} height={32} alt='Website Logo' />
+                            <h2 className='text-xl font-bold'>Website Bots</h2>
+                        </div>
+                        <Link href='https://web.msg91.com/ecommerce-store' target='_blank'>
+                            <button className='btn bg-gray hover:bg-gray-500 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
+                                Marketing Strategy
+                            </button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </>
