@@ -138,7 +138,7 @@ export default function DemoChatBotComp() {
                                 <Image src={'/assets/brand/favicon.svg'} width={32} height={32} alt='Website Logo' />
                                 <h2 className='text-xl font-bold'>Website Bots</h2>
                             </div>
-                            <Link href='https://web.msg91.com/ecommerce-store' target='_blank'>
+                            <Link href='https://msg91.com/ecommerce-store' target='_blank'>
                                 <button className='btn bg-gray hover:bg-gray-500 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
                                     Marketing Strategy
                                 </button>
