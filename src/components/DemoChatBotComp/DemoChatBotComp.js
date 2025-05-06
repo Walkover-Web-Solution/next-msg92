@@ -59,7 +59,7 @@ export default function DemoChatBotComp() {
                                 Abandoned Cart
                             </button>
                         </Link>
-                        <Link href='hhttps://wa.me/917316914316?text=Latest%20Collection' target='_blank'>
+                        <Link href='https://wa.me/917316914316?text=Latest%20Collection' target='_blank'>
                             <button className='btn bg-gray hover:bg-gray-500 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
                                 Latest Collection
                             </button>
