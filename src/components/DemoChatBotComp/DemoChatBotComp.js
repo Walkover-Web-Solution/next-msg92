@@ -51,15 +51,15 @@ export default function DemoChatBotComp() {
                                 Talk to Support
                             </button>
                         </Link>
-                        <Link href='https://wa.me/917316914316?text=Latest%20Collection' target='_blank'>
-                            <button className='btn bg-gray hover:bg-gray-500 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
-                                Abandoned Cart
-                            </button>
-                        </Link>
                         <Link
                             href='https://wa.me/917316914316?text=%F0%9F%9B%92%E2%8F%B3Abandoned%20Cart'
                             target='_blank'
                         >
+                            <button className='btn bg-gray hover:bg-gray-500 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
+                                Abandoned Cart
+                            </button>
+                        </Link>
+                        <Link href='hhttps://wa.me/917316914316?text=Latest%20Collection' target='_blank'>
                             <button className='btn bg-gray hover:bg-gray-500 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
                                 Latest Collection
                             </button>
