@@ -21,7 +21,7 @@ class StepTwo extends React.Component {
         smsIdentifier = this.state.smsIdentifier;
 
         this.sourceOptions = [
-            { value: '', label: 'Select Source' },
+            { value: '/', label: 'Select Source' },
             { value: 'search_engine', label: 'Search engine (Google, Bing, Yahoo, etc)' },
             { value: 'recommended_by_friend', label: 'Recommended by friend or colleague' },
             { value: 'social_media', label: 'Social Media' },
@@ -345,7 +345,8 @@ class StepTwo extends React.Component {
                             disabled={
                                 !this.props?.smsAccessToken ||
                                 (!this.props?.emailAccessToken && !this.props?.githubCode) ||
-                                this.props?.isLoading
+                                this.props?.isLoading ||
+                                this.state.optionValue === '/'
                             }
                         >
                             Next
