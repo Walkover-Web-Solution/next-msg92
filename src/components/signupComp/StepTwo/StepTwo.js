@@ -296,7 +296,7 @@ class StepTwo extends React.Component {
                                     autoComplete='on'
                                     aria-label='Select Source'
                                     name='source'
-                                    value={this.state.optionValue}
+                                    value={this.state.optionValue ? this.state.optionValue : ''}
                                     onChange={this.handleSourceChange}
                                 >
                                     {this.sourceOptions.map((source, index) => {
