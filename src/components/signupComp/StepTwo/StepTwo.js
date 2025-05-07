@@ -21,7 +21,7 @@ class StepTwo extends React.Component {
         smsIdentifier = this.state.smsIdentifier;
 
         this.sourceOptions = [
-            { value: '', label: 'Select Source' },
+            { value: '/', label: 'Select Source' },
             { value: 'search_engine', label: 'Search engine (Google, Bing, Yahoo, etc)' },
             { value: 'recommended_by_friend', label: 'Recommended by friend or colleague' },
             { value: 'social_media', label: 'Social Media' },
@@ -29,6 +29,7 @@ class StepTwo extends React.Component {
             { value: 'advertisement', label: 'Advertisement' },
             { value: 'event', label: 'Event' },
             { value: 'tiedelhincr', label: 'TiEDelhiNCR' },
+            { value: 'other', label: 'Other' },
         ];
     }
 
@@ -119,7 +120,7 @@ class StepTwo extends React.Component {
                             <label htmlFor='email'>Verify email</label>
                             <div className='flex xl:flex-row flex-col gap-10'>
                                 <div className='flex sm:flex-row flex-col items-start w-fit gap-4'>
-                                    <div className='flex flex-col items-start gap-6 w-[360px]  '>
+                                    <div className='flex flex-col items-start gap-6 w-[300px]  '>
                                         <div className='flex gap-2 items-center w-full '>
                                             {this.props?.signupByGitHub ? (
                                                 <div className='flex items-center gap-2'>
@@ -202,11 +203,11 @@ class StepTwo extends React.Component {
                                 ) : null}
                             </div>
                         </div>
-                        <div className='w-full flex flex-col gap-2 '>
+                        <div className='w-full flex flex-col gap-2 clint-input-container'>
                             <label htmlFor='contact'>Verify Mobile number</label>
                             <div className='flex xl:flex-row flex-col gap-10'>
                                 <div className='flex sm:flex-row flex-col w-fit gap-4 '>
-                                    <div className='flex flex-col items-start gap-6 w-[360px] '>
+                                    <div className='flex flex-col items-start gap-6 w-[300px] '>
                                         <div className='flex gap-2 max-h-10 w-full'>
                                             <MobileInputComponent
                                                 onInput={(event) => {
@@ -292,7 +293,7 @@ class StepTwo extends React.Component {
                             <label htmlFor='contact'>Select source</label>
                             <div className='rounded border px-2 w-full'>
                                 <select
-                                    className=' h-10 w-full focus:outline-none'
+                                    className=' h-10 w-full bg-white focus:outline-none'
                                     autoComplete='on'
                                     aria-label='Select Source'
                                     name='source'
@@ -309,9 +310,6 @@ class StepTwo extends React.Component {
                                             </option>
                                         );
                                     })}
-                                    <option selected={this.state.optionValue === 'other'} value='other'>
-                                        Other
-                                    </option>
                                 </select>
                             </div>
                             {this.state.optionValue === 'other' && (
@@ -319,8 +317,7 @@ class StepTwo extends React.Component {
                                     disabled={isLoading}
                                     className='input border-gray-300 focus:outline-none w-full focus:border-accent h-10'
                                     type='text'
-                                    placeholder='Source'
-                                    defaultValue={this.state.sourceValue}
+                                    placeholder='Other'
                                     onBlur={(e) => {
                                         this.handleSourceChange(e);
                                         this.setState({ sourceValue: e.target.value });
