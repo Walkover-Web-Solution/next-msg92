@@ -29,6 +29,7 @@ class StepTwo extends React.Component {
             { value: 'advertisement', label: 'Advertisement' },
             { value: 'event', label: 'Event' },
             { value: 'tiedelhincr', label: 'TiEDelhiNCR' },
+            { value: 'other', label: 'Other' },
         ];
     }
 
@@ -296,7 +297,6 @@ class StepTwo extends React.Component {
                                     autoComplete='on'
                                     aria-label='Select Source'
                                     name='source'
-                                    value={this.state.optionValue ? this.state.optionValue : ''}
                                     onChange={this.handleSourceChange}
                                 >
                                     {this.sourceOptions.map((source, index) => {
@@ -310,7 +310,6 @@ class StepTwo extends React.Component {
                                             </option>
                                         );
                                     })}
-                                    <option value='other'>Other</option>
                                 </select>
                             </div>
                             {this.state.optionValue === 'other' && (
