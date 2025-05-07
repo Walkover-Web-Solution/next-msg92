@@ -142,6 +142,9 @@ export default function DemoChatBotComp() {
                                 <button className='btn bg-gray hover:bg-gray-500 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
                                     Marketing Strategy
                                 </button>
+                                {/* <div>
+                                    hello
+                                </div> */}
                             </div>
                         </div>
                     </div>
