@@ -21,7 +21,7 @@ class StepTwo extends React.Component {
         smsIdentifier = this.state.smsIdentifier;
 
         this.sourceOptions = [
-            { value: '', label: 'Select Source' },
+            { value: '/', label: 'Select Source' },
             { value: 'search_engine', label: 'Search engine (Google, Bing, Yahoo, etc)' },
             { value: 'recommended_by_friend', label: 'Recommended by friend or colleague' },
             { value: 'social_media', label: 'Social Media' },
@@ -29,6 +29,7 @@ class StepTwo extends React.Component {
             { value: 'advertisement', label: 'Advertisement' },
             { value: 'event', label: 'Event' },
             { value: 'tiedelhincr', label: 'TiEDelhiNCR' },
+            { value: 'other', label: 'Other' },
         ];
     }
 
@@ -296,7 +297,6 @@ class StepTwo extends React.Component {
                                     autoComplete='on'
                                     aria-label='Select Source'
                                     name='source'
-                                    value={this.state.optionValue}
                                     onChange={this.handleSourceChange}
                                 >
                                     {this.sourceOptions.map((source, index) => {
@@ -310,9 +310,6 @@ class StepTwo extends React.Component {
                                             </option>
                                         );
                                     })}
-                                    <option selected={this.state.optionValue === 'other'} value='other'>
-                                        Other
-                                    </option>
                                 </select>
                             </div>
                             {this.state.optionValue === 'other' && (
