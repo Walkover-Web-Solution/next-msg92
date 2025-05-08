@@ -343,6 +343,8 @@ class StepTwo extends React.Component {
                                 }
                             }}
                             disabled={
+                                !this.state.optionValue ||
+                                this.state.optionValue === '/' ||
                                 !this.props?.smsAccessToken ||
                                 (!this.props?.emailAccessToken && !this.props?.githubCode) ||
                                 this.props?.isLoading
