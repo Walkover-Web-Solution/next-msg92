@@ -24,7 +24,7 @@ class Otpinput extends React.Component {
         let otpLength = Array.from({ length: this.props.otpLength }, (_, index) => index + 1);
         return (
             <>
-                <div className='flex gap-4'>
+                <div className='flex gap-4 flex-wrap'>
                     <div className='flex gap-2'>
                         {otpLength.map((x) => (
                             <input
