@@ -269,9 +269,13 @@ export default function PricingSegmento({ data, country }) {
                                             <div className='flex flex-col gap-2'>
                                                 <div className='flex items-center gap-1'>
                                                     <h3 className='text-lg font-semibold'>Extra @</h3>{' '}
-                                                    <InfoIcon
-                                                        content={`Extra Contacts are available for purchase in bundles of 1,000 contacts each.`}
-                                                    />
+                                                    {plan.postpaid_allowed ? (
+                                                        <InfoIcon
+                                                            content={`Extra Contacts are available for purchase in bundles of 1,000 contacts each.`}
+                                                        />
+                                                    ) : (
+                                                        ''
+                                                    )}
                                                 </div>
                                                 <div className='flex flex-col gap-1'>
                                                     {plan?.extras?.length > 0 &&
