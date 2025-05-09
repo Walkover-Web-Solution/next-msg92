@@ -42,6 +42,7 @@ export function getSimplifiedPlans(currency, plans) {
                     ?.chunk_size || 1,
             'postpaid_allowed': plan.postpaid_allowed || false,
         })),
+        'postpaid_allowed': plan.postpaid_allowed || false,
     }));
     return simplifiedPlans || [];
 }
