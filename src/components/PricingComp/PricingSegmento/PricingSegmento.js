@@ -27,7 +27,6 @@ export default function PricingSegmento({ data, country }) {
         const response = await getSubscriptions(currency, 2);
         if (response) {
             setPlans(response);
-            console.log(response, 'response');
         }
         setIsLoading(false);
     }, []);

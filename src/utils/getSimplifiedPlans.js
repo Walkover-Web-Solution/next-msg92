@@ -6,7 +6,6 @@ export default async function getSubscriptions(currency, msId) {
             const response = await axios.get(
                 `${process.env.SUBSCRIPTION_PRICING_URL}/plans?currency=${currency}&ms_id=${msId}`
             );
-            console.log(response.data.data, 'data from the api');
             return getSimplifiedPlans(currency, response.data.data);
         } catch (error) {
             throw new Error('Some error on server: ' + error.message);
