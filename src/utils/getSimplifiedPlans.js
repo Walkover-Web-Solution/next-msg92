@@ -40,6 +40,7 @@ export function getSimplifiedPlans(currency, plans) {
             'chunk':
                 service?.service_credit?.service_credit_rates?.find((rate) => rate?.currency?.short_name === currency)
                     ?.chunk_size || 1,
+            'postpaid_allowed': plan.postpaid_allowed || false,
         })),
     }));
     return simplifiedPlans || [];

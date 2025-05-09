@@ -277,7 +277,7 @@ export default function PricingSegmento({ data, country }) {
                                                     {plan?.extras?.length > 0 &&
                                                         plan?.extras.map((service, index) => (
                                                             <div key={index} className='flex  gap-1'>
-                                                                {service?.rate > 0 ? (
+                                                                {service?.postpaid_allowed ? (
                                                                     <>
                                                                         {' '}
                                                                         <MdCheck
