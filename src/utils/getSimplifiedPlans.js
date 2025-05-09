@@ -6,6 +6,7 @@ export default async function getSubscriptions(currency, msId) {
             const response = await axios.get(
                 `${process.env.SUBSCRIPTION_PRICING_URL}/plans?currency=${currency}&ms_id=${msId}`
             );
+            console.log(response.data.data, 'data from the api');
             return getSimplifiedPlans(currency, response.data.data);
         } catch (error) {
             throw new Error('Some error on server: ' + error.message);
@@ -40,6 +41,7 @@ export function getSimplifiedPlans(currency, plans) {
             'chunk':
                 service?.service_credit?.service_credit_rates?.find((rate) => rate?.currency?.short_name === currency)
                     ?.chunk_size || 1,
+            'postpaid_allowed': plan.postpaid_allowed || false,
         })),
     }));
     return simplifiedPlans || [];
