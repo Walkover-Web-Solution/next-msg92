@@ -1,67 +1,322 @@
-{ "HeadComp": {
+{
+  "HeadComp": {
     "title": "API de Autenticação por OTP | Provedor de Serviço de SMS OTP no Brasil - MSG91-Brasil",
-    "description":"Provedor de Serviço de OTP - Utilize APIs simples e ofereça OTP seguro com autenticação de dois fatores (2FA) e validações para seu site e aplicativos usando o melhor serviço de API OTP da MSG91"
-  }, 
-         "BannerComp": {
-          "slug": "otp",
-          "product": {
-              "name": "OTP",
-              "icon": "/assets/icons/products/otp.svg"
-          },
-          "tagline": "Verificação instantânea e segura",
-          "heading": "A forma mais simples, rápida e eficaz de verificar seus usuários",
-          "subheading":"Construa confiança com o cliente e proteja o seu negócio com autenticação de dois fatores.",
-          "banner_img": "/assets/brpt/otp/banner.svg",
-          "getstarted_btn": "Comece gratuitamente",
-          "trustedByComp": {
-            "heading": "Confiado por 30,000+ negócios globais",
-            "logos":  [
-              {"name": "Xiaomi", "url": "/assets/trusted_by/xiaomi.svg"},
-              {"name": "Unacademy", "url": "/assets/trusted_by/unacademy.svg"},
-              {"name": "Dream11", "url": "/assets/trusted_by/dream11.svg"},
-              {"name": "Indeed", "url": "/assets/trusted_by/indeed.svg"},
-              {"name": "Indian Oil", "url": "/assets/trusted_by/indianoil.svg"},
-              {"name": "Ixigo", "url": "/assets/trusted_by/ixigo.svg"}
-            ]
+    "description": "Provedor de Serviço de OTP - Utilize APIs simples e ofereça OTP seguro com autenticação de dois fatores (2FA) e validações para seu site e aplicativos usando o melhor serviço de API OTP da MSG91"
+  },
+  "BannerComp": {
+    "slug": "otp",
+    "product": {
+      "name": "OTP",
+      "icon": "/assets/icons/products/otp.svg"
+    },
+    "tagline": "Verificação Segura Instantânea",
+    "heading": "Solução Avançada de Verificação OTP para Autenticação Segura",
+    "subheading": "O serviço de autenticação OTP da MSG91 oferece uma solução OTP poderosa, segura e contínua para proteger contas de usuários com autenticação multifatorial. De OTPs invisíveis à entrega de OTPs por múltiplos canais, nossos recursos aumentam a segurança enquanto melhoram a experiência do usuário.",
+    "banner_img": "/assets/global/otp/otp.svg",
+    "getstarted_btn": "Comece Gratuitamente",
+    "trustedByComp": {
+      "heading": "Confiado por mais de 30.000 empresas globais",
+      "logos": [
+        {
+          "name": "Razorpay",
+          "url": "/assets/trusted_by/razorpay.svg"
+        },
+        {
+          "name": "Xiaomi",
+          "url": "/assets/trusted_by/xiaomi.svg"
+        },
+        {
+          "name": "Unacademy",
+          "url": "/assets/trusted_by/unacademy.svg"
+        },
+        {
+          "name": "Dream11",
+          "url": "/assets/trusted_by/dream11.svg"
+        },
+        {
+          "name": "Indeed",
+          "url": "/assets/trusted_by/indeed.svg"
+        },
+        {
+          "name": "Ixigo",
+          "url": "/assets/trusted_by/ixigo.svg"
         }
-      
-      },
-      "FeatureComp":{ 
-        "heading": "Características",
-          "iconColor": "text-otp",
-          "features":[
-        { 
-          "name": "Tão simples quanto Login com Google",
-          "content": "<strong>Login com OTP é tão simples quanto login com Gmail</strong>Dê aos seus usuários uma experiência de autenticação rápida, não disruptiva e simples. Implemente login com OTP inserindo seu número de celular ou endereço de e-mail para receber OTP via SMS ou e-mail.",
-          "img": "/assets/brpt/otp/otp-simple-login.svg"
-        },
-        {
-          "name": "Segurança IP Integrada",
-          "content": "<strong>Proteção contra fraudes, hacks, validação, bloqueio</strong> Minimize fraudes com uma camada extra de segurança. A segurança integrada garante que, quando um login é arriscado, o fluxo não permite que o ator mal-intencionado faça login, visualizando-o como potencialmente fraudulento.",
-          "img":  "/assets/brpt/otp/otp-inbuilt-ip-security.svg"
-        },
-        {
-          "name": "Suporte a múltiplos canais",
-          "content": "<strong>Construa confiança com o cliente e aumente a conversão em vários canais</strong> Autentique seus usuários nos canais que eles preferem. Suportamos vários canais, incluindo SMS, e-mail, voz, WhatsApp, dando às empresas e usuários a flexibilidade de que precisam para autenticar.",
-          "img": "/assets/brpt/otp/otp-support-multiple-channels.svg"
-        }]
-      },
-      "PreFooterComp": {
-        "content": "Comece a construir a experiência de engajamento do cliente ideal",
-        "buttons": {
-            "contactSales": {
-                "text": "Fale com as vendas",
-                "link": "/contact-us"
+      ]
+    }
+  },
+  "FeatureComp": {
+    "heading": "Recursos",
+    "iconColor": "text-otp",
+    "features": [
+      {
+        "name": "OTP Invisível: Autenticação Segura Simplificada",
+        "content": "OTP Invisível é um método de autenticação seguro e contínuo que verifica a identidade do usuário sem exigir que ele insira um código manualmente. O OTP Invisível funciona silenciosamente em segundo plano, detectando e verificando o OTP automaticamente. Isso não apenas simplifica o processo de login, mas também fortalece a segurança.",
+        "img": "/assets/global/otp/otp-simple-login.svg",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Aplicativos de Banco Móvel",
+              "description": "Previne acesso não autorizado sem exigir a entrada de OTP, garantindo transações de usuários sem esforço."
             },
-            "pricing": {
-                "text": "tarifária",
-                "link": "/pricing/"
+            {
+              "name": "Plataformas de E-commerce",
+              "description": "Permite checkout rápido verificando usuários em segundo plano sem entrada manual de OTP."
             },
-            "getStarted":{
-            "text":"Comece agora",
-            "link":"https://control.msg91.com/signup/"
+            {
+              "name": "Jogos Online",
+              "description": "Protege compras no aplicativo com OTPs invisíveis para uma experiência de usuário sem atritos."
+            },
+            {
+              "name": "Serviços de Streaming",
+              "description": "Verifica novos logins sem interromper o engajamento do usuário."
+            },
+            {
+              "name": "Aplicativos de Saúde",
+              "description": "Garante login seguro sem a necessidade de os usuários inserirem códigos manualmente, reduzindo atrasos no acesso dos pacientes."
             }
+          ],
+          "features": [
+            "Nenhuma entrada de código manual necessária - Habilita autenticação automatizada.",
+            "Processo de autenticação suave sem interromper a experiência do usuário.",
+            "Minimiza o risco de fraude de OTP e preenchimento de credenciais.",
+            "Aumenta a segurança com verificação em segundo plano.",
+            "Funciona silenciosamente em segundo plano para autenticação sem complicações."
+          ]
         }
+      },
+      {
+        "name": "Links Mágicos: Autenticação Sem Senha em Um Clique",
+        "content": "Link Mágico é um método de login seguro onde os usuários não precisam inserir uma senha. Após fornecerem seu e-mail ou número de telefone, eles recebem um link único e sensível ao tempo. Clicar no link verifica sua identidade e os conecta de forma contínua e segura.",
+        "img": "/assets/global/otp/otp-simple-login.svg",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Login Sem Senha",
+              "description": "Elimina a necessidade de lembrar senhas, tornando o login mais rápido e fácil."
+            },
+            {
+              "name": "Recuperação Instantânea de Conta",
+              "description": "Permite que os usuários recuperem o acesso rapidamente sem passar por etapas de redefinição de senha."
+            },
+            {
+              "name": "Cadastro em Um Clique",
+              "description": "Permite que novos usuários se registrem e façam login em um único passo, aumentando as conversões de cadastro."
+            },
+            {
+              "name": "Autenticação Segura",
+              "description": "Reduz o risco de violações de dados ao remover vulnerabilidades baseadas em senha."
+            },
+            {
+              "name": "Melhor Experiência do Usuário",
+              "description": "Oferece um login suave e rápido em todos os dispositivos - ideal para usuários móveis."
+            }
+          ],
+          "features": [
+            "Cada Link Mágico é válido para uma única sessão de login, garantindo maior segurança.",
+            "Links expiram automaticamente após um tempo definido ou uma vez usados, minimizando o uso indevido.",
+            "Flexibilidade para definir quanto tempo um link permanece ativo com base nas necessidades da plataforma.",
+            "Geração de link seguro protege contra tentativas de phishing.",
+            "Processo de login simplificado para aumentar a retenção de usuários."
+          ]
+        }
+      },
+      {
+        "name": "Entrega de OTP Multicanal: OTP Que Te Encontra, Sempre",
+        "content": "A Entrega de OTP Multicanal garante acesso seguro enviando OTPs por vários canais, como SMS OTP, WhatsApp OTP, e-mail OTP e voz OTP, garantindo que os usuários recebam seus códigos independentemente do meio.",
+        "img": "/assets/global/otp/otp-simple-login.svg",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "E-commerce & Varejo Online",
+              "description": "Login seguro do usuário e checkout via OTPs multicanal."
+            },
+            {
+              "name": "Aplicativos de Viagem",
+              "description": "Garante processos de reserva e pagamento seguros para viajantes com autenticação multifator."
+            },
+            {
+              "name": "Instituições Financeiras",
+              "description": "Fornece acesso seguro e validação de transações através de canais de comunicação preferidos."
+            },
+            {
+              "name": "Serviços de Telecomunicações",
+              "description": "Autentica usuários com SMS, e-mail ou OTPs de voz com base em suas preferências regionais."
+            },
+            {
+              "name": "Aplicativos de Varejo",
+              "description": "Garante login bem-sucedido do usuário aproveitando múltiplos canais para entrega de OTP."
+            }
+          ],
+          "features": [
+            "OTPs entregues via SMS, Email, WhatsApp e Voz para máxima flexibilidade.",
+            "Garante entrega via o canal de comunicação preferido do usuário.",
+            "Suporta entrega internacional de OTPs através de canais para acessibilidade global.",
+            "Garante confiabilidade na entrega de OTPs mesmo em áreas de baixa rede.",
+            "Sistema de Retorno Inteligente garante que se um canal falhar, outro entrega instantaneamente."
+          ]
+        }
+      },
+      {
+        "name": "Mecanismo de Failover: Garantindo Entrega Ininterrupta de OTP",
+        "content": "O mecanismo de failover de OTP garante que os usuários recebam seus códigos OTP alternando automaticamente para um canal alternativo se a entrega primária de OTP falhar. Isso garante autenticação contínua e oportuna.",
+        "img": "/assets/global/otp/otp-simple-login.svg",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Rastreamento de Entrega em Tempo Real",
+              "description": "Monitora o status de entrega de OTPs em todos os canais para melhor transparência."
+            },
+            {
+              "name": "Serviços de Emergência",
+              "description": "Fornece OTPs confiáveis para autenticação urgente, mesmo em zonas de baixa rede."
+            },
+            {
+              "name": "Venda de Ingressos Online",
+              "description": "Garante que os clientes possam reservar ingressos com segurança mesmo durante horários de alto tráfego com entrega garantida de OTP."
+            },
+            {
+              "name": "Negócios Internacionais",
+              "description": "Garante que OTPs alcancem usuários em países em desenvolvimento com redes de SMS menos confiáveis."
+            },
+            {
+              "name": "Logins Seguros",
+              "description": "Melhora as taxas de sucesso de login garantindo a entrega de OTPs por canais de backup."
+            }
+          ],
+          "features": [
+            "Entrega OTPs sem atraso, garantindo autenticação rápida e suave do usuário.",
+            "Repetições automáticas via canais alternativos garantem autenticação OTP bem-sucedida.",
+            "Reduz falhas de login e aumenta a retenção de usuários garantindo a entrega de OTPs.",
+            "Garante entrega confiável de OTPs em todo o mundo.",
+            "Ideal para áreas com cobertura de rede inconsistente."
+          ]
+        }
+      },
+      {
+        "name": "Integração Plug & Play: Configuração Sem Esforço, Conectividade Instantânea",
+        "content": "O Widget OTP com Integração Plug & Play permite que você se conecte facilmente e comece a usar a autenticação OTP sem configurações complexas, garantindo uma configuração rápida e sem complicações.",
+        "img": "/assets/global/otp/otp-simple-login.svg",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Startups",
+              "description": "Implemente rapidamente a autenticação OTP em seu site sem a necessidade de trabalho de desenvolvimento pesado."
+            },
+            {
+              "name": "Plataformas SaaS",
+              "description": "Integre a autenticação OTP para logins seguros de usuários com configuração mínima."
+            },
+            {
+              "name": "Aplicativos Móveis",
+              "description": "Integre a verificação OTP perfeitamente com nosso SDK móvel para implantação rápida e fácil."
+            },
+            {
+              "name": "Soluções Empresariais",
+              "description": "Proteja aplicativos empresariais sem exigir mudanças extensas na infraestrutura."
+            },
+            {
+              "name": "Mercados Online",
+              "description": "Garante transações seguras entre comprador e vendedor sem integração complicada."
+            }
+          ],
+          "features": [
+            "Configuração fácil com codificação mínima necessária.",
+            "SDKs prontos para uso para aplicativos web e móveis.",
+            "Integra-se perfeitamente com sistemas existentes.",
+            "Economize tempo e recursos implantando facilmente soluções OTP.",
+            "Escalável para empresas em crescimento e expansão de aplicativos."
+          ]
+        }
+      },
+      {
+        "name": "Análise e Relatórios em Tempo Real: Insights Instantâneos para Decisões Mais Inteligentes",
+        "content": "Análise e Relatórios em Tempo Real oferecem insights detalhados, permitindo que você acompanhe a entrega de OTPs, desempenho por canal e engajamento do usuário instantaneamente para tomar decisões mais inteligentes e baseadas em dados.",
+        "img": "/assets/global/otp/otp-simple-login.svg",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Plataformas de E-commerce",
+              "description": "Analise o desempenho da entrega de OTPs durante eventos de vendas de alto tráfego para otimizar campanhas futuras."
+            },
+            {
+              "name": "Bancos Online",
+              "description": "Acompanhe os tempos de entrega de OTPs para melhorar a verificação do usuário durante transações."
+            },
+            {
+              "name": "Serviços de Viagem",
+              "description": "Use análises para monitorar a entrega de OTPs e solucionar problemas em áreas remotas."
+            },
+            {
+              "name": "Plataformas Educacionais",
+              "description": "Avalie as taxas de sucesso de OTPs para otimizar o login de estudantes em diferentes regiões."
+            },
+            {
+              "name": "Serviços de Tecnologia",
+              "description": "Monitore o desempenho da entrega para garantir que os usuários recebam OTPs a tempo durante logins críticos."
+            }
+          ],
+          "features": [
+            "Acompanhe taxas de entrega de OTPs, falhas e tempos de resposta em tempo real.",
+            "Obtenha insights sobre a eficácia dos canais de OTP e verifique a atividade do usuário.",
+            "Monitore taxas de sucesso de OTPs para melhor solução de problemas e otimização.",
+            "Personalize relatórios com base em métricas e parâmetros específicos.",
+            "Ajuda as empresas a refinarem seus processos de OTP para uma melhor experiência do usuário."
+          ]
+        }
+      },
+      {
+        "name": "Segurança de IP Integrada: Protegendo o Acesso de Localizações Não Autorizadas",
+        "content": "A Segurança de IP Integrada garante que OTPs e dados sensíveis sejam acessíveis apenas a partir de endereços IP confiáveis, adicionando uma camada extra de proteção contra acesso não autorizado e ameaças potenciais.",
+        "img": "/assets/global/otp/otp-simple-login.svg",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Autenticação de Usuário Aprimorada",
+              "description": "Protege processos de login restringindo o acesso a endereços IP confiáveis, reduzindo o risco de logins não autorizados."
+            },
+            {
+              "name": "Transações Seguras",
+              "description": "Protege transações ou ações de alto valor garantindo que sejam iniciadas apenas a partir de endereços IP aprovados."
+            },
+            {
+              "name": "Restrição Geográfica de Acesso",
+              "description": "Impede o acesso de regiões ou intervalos de IP específicos, adicionando uma camada extra de segurança para empresas com necessidades de segurança baseadas em localização."
+            },
+            {
+              "name": "Proteção de Rede Corporativa",
+              "description": "Ideal para sistemas internos, garantindo que apenas funcionários acessando de redes aprovadas pela empresa possam realizar operações sensíveis."
+            },
+            {
+              "name": "Prevenção de Fraude",
+              "description": "Detecta e previne tentativas fraudulentas monitorando e bloqueando endereços IP suspeitos."
+            }
+          ],
+          "features": [
+            "Restringe o acesso apenas a endereços IP confiáveis.",
+            "Monitora e bloqueia IPs não autorizados em tempo real.",
+            "Define restrições de acesso baseadas em localização para IPs ou regiões.",
+            "Receba alertas instantâneos para tentativas de acesso não autorizadas.",
+            "Integra-se facilmente com sistemas de autenticação existentes."
+          ]
+        }
+      }
+    ]
+  },
+  "PreFooterComp": {
+    "content": "Comece a construir a experiência de engajamento do cliente ideal",
+    "buttons": {
+      "contactSales": {
+        "text": "Fale com as vendas",
+        "link": "/contact-us"
+      },
+      "pricing": {
+        "text": "tarifária",
+        "link": "/pricing/"
+      },
+      "getStarted": {
+        "text": "Comece agora",
+        "link": "https://control.msg91.com/signup/"
+      }
     }
-    }
-    
+  }
+}
