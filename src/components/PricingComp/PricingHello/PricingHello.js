@@ -461,7 +461,7 @@ export default function PricingHello({ data, country }) {
                                                     </div>
                                                     {plan?.name !== 'Free' && (
                                                         <button
-                                                            className=' btn btn-accent btn-outline btn-md '
+                                                            className=' btn btn-accent btn-outline btn-sm w-fit mt-auto'
                                                             onClick={() => setIsCalculationModalOpen(true)}
                                                         >
                                                             Calculate
