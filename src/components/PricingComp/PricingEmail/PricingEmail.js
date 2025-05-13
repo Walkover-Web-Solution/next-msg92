@@ -208,7 +208,7 @@ export default function PricingEmail({ data, country }) {
                                                                     .getElementById('calculate_email_pricing')
                                                                     .showModal()
                                                             }
-                                                            className='btn btn-accent btn-outline w-fit btn-sm'
+                                                            className='btn btn-accent btn-outline w-fit btn-sm mt-auto'
                                                         >
                                                             Calculate
                                                         </button>
