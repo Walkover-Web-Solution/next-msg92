@@ -47,6 +47,23 @@ export default function PricingNav({ products, page }) {
                                 </Link>
                             );
                         })}
+                        {products?.utilities.map((product, index) => {
+                            return (
+                                <Link
+                                    key={index}
+                                    href={getURL('pricing', product?.slug)}
+                                    className={`flex flex-col px-3 py-2 rounded hover:bg-secondary ${
+                                        page === product?.slug && 'bg-secondary'
+                                    }`}
+                                >
+                                    <div className='flex items-center gap-1'>
+                                        <Image src={product?.icon} width={32} height={32} alt={product?.name} />
+                                        <h3 className='text-lg font-medium'> {product?.name}</h3>
+                                    </div>
+                                    {product?.description && <p className='text-sm'>{product?.description}</p>}
+                                </Link>
+                            );
+                        })}
                     </ul>
                 </div>
             </div>
@@ -64,6 +81,16 @@ export default function PricingNav({ products, page }) {
                 <h2>Channels</h2>
                 <ul className='flex flex-col gap-2'>
                     {products?.channels.map((product, index) => {
+                        return (
+                            <li key={index}>
+                                <ProductButton product={product} page={page} />
+                            </li>
+                        );
+                    })}
+                </ul>
+                <h2>Utilities</h2>
+                <ul className='flex flex-col gap-2'>
+                    {products?.utilities.map((product, index) => {
                         return (
                             <li key={index}>
                                 <ProductButton product={product} page={page} />

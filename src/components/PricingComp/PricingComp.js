@@ -11,6 +11,7 @@ import PricingWhatsApp from './PricingWhatsApp/PricingWhatsApp';
 import HeadComp from '../headComp';
 import NotFoundComp from '../NotFoundComp/NotFoundComp';
 import pages from '@/data/specialPages.json';
+import PricingShortURL from './PricingShortURL/PricingShortURL';
 
 export default function PricingComp({ data, pageInfo }) {
     let page;
@@ -49,6 +50,10 @@ export default function PricingComp({ data, pageInfo }) {
                             <PricingRCS data={data?.rcs} country={pageInfo?.country} pageInfo={pageInfo} />
                         )}
                     </div>
+
+                    {page === 'shorturl' && (
+                        <PricingShortURL data={data?.shorturl} country={pageInfo?.country} pageInfo={pageInfo} />
+                    )}
                 </div>
             </>
         );
