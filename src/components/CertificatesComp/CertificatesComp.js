@@ -34,7 +34,7 @@ export default function CertificatesComp({ pageInfo, data }) {
                     <div className='grid grid-cols-1 md:grid-cols-2  gap-12'>
                         {data?.certificates?.cards.map((card, index) => (
                             <div key={index} className=''>
-                                <a href={card.url} target='_blank' rel='noopener noreferrer'>
+                                <a href={card?.url} target='_blank' rel='noopener noreferrer'>
                                     <div className='card'>
                                         <div className='text-lg font-medium'>{card?.name}</div>
                                         <div>
