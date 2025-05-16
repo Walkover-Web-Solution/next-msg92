@@ -119,7 +119,7 @@ export default function FeatureComp({ data, pageInfo }) {
                                         <Image
                                             src={feature?.img}
                                             alt={feature?.name}
-                                            className='w-full xl:max-w-[700px] lg:max-w-[500px] max-w-[300px] md:mx-6 mx-2'
+                                            className='w-full xl:max-w-[620px] lg:max-w-[500px] max-w-[300px] p-10 '
                                             width={1080}
                                             height={1080}
                                         />

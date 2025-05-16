@@ -12,7 +12,7 @@
     "tagline": "Verificação Segura Instantânea",
     "heading": "Solução Avançada de Verificação OTP para Autenticação Segura",
     "subheading": "O serviço de autenticação OTP da MSG91 oferece uma solução OTP poderosa, segura e contínua para proteger contas de usuários com autenticação multifatorial. De OTPs invisíveis à entrega de OTPs por múltiplos canais, nossos recursos aumentam a segurança enquanto melhoram a experiência do usuário.",
-    "banner_img": "/assets/global/otp/otp.svg",
+    "lottie": "/assets/brpt/otp/lotties/banner.json",
     "getstarted_btn": "Comece Gratuitamente",
     "trustedByComp": {
       "heading": "Confiado por mais de 30.000 empresas globais",
@@ -51,7 +51,7 @@
       {
         "name": "OTP Invisível: Autenticação Segura Simplificada",
         "content": "OTP Invisível é um método de autenticação seguro e contínuo que verifica a identidade do usuário sem exigir que ele insira um código manualmente. O OTP Invisível funciona silenciosamente em segundo plano, detectando e verificando o OTP automaticamente. Isso não apenas simplifica o processo de login, mas também fortalece a segurança.",
-        "img": "/assets/global/otp/otp-simple-login.svg",
+        "img": "/assets/brpt/otp/invisible_otp.webp",
         "more_content": {
           "usecases": [
             {
@@ -64,7 +64,7 @@
             },
             {
               "name": "Jogos Online",
-              "description": "Protege compras no aplicativo com OTPs invisíveis para uma experiência de usuário sem atritos."
+              "description": "Protege compras dentro do aplicativo com OTPs invisíveis para uma experiência de usuário sem atritos."
             },
             {
               "name": "Serviços de Streaming",
@@ -76,7 +76,7 @@
             }
           ],
           "features": [
-            "Nenhuma entrada de código manual necessária - Habilita autenticação automatizada.",
+            "Nenhuma entrada manual de código necessária - Permite autenticação automatizada.",
             "Processo de autenticação suave sem interromper a experiência do usuário.",
             "Minimiza o risco de fraude de OTP e preenchimento de credenciais.",
             "Aumenta a segurança com verificação em segundo plano.",
@@ -87,7 +87,7 @@
       {
         "name": "Links Mágicos: Autenticação Sem Senha em Um Clique",
         "content": "Link Mágico é um método de login seguro onde os usuários não precisam inserir uma senha. Após fornecerem seu e-mail ou número de telefone, eles recebem um link único e sensível ao tempo. Clicar no link verifica sua identidade e os conecta de forma contínua e segura.",
-        "img": "/assets/global/otp/otp-simple-login.svg",
+        "img": "/assets/brpt/otp/magic_links.webp",
         "more_content": {
           "usecases": [
             {
@@ -115,15 +115,15 @@
             "Cada Link Mágico é válido para uma única sessão de login, garantindo maior segurança.",
             "Links expiram automaticamente após um tempo definido ou uma vez usados, minimizando o uso indevido.",
             "Flexibilidade para definir quanto tempo um link permanece ativo com base nas necessidades da plataforma.",
-            "Geração de link seguro protege contra tentativas de phishing.",
+            "Geração de links segura protege contra tentativas de phishing.",
             "Processo de login simplificado para aumentar a retenção de usuários."
           ]
         }
       },
       {
-        "name": "Entrega de OTP Multicanal: OTP Que Te Encontra, Sempre",
+        "name": "Entrega de OTP Multicanal: OTP Que Sempre Te Encontra",
         "content": "A Entrega de OTP Multicanal garante acesso seguro enviando OTPs por vários canais, como SMS OTP, WhatsApp OTP, e-mail OTP e voz OTP, garantindo que os usuários recebam seus códigos independentemente do meio.",
-        "img": "/assets/global/otp/otp-simple-login.svg",
+        "img": "/assets/brpt/otp/multi_channel_otp_delivery.webp",
         "more_content": {
           "usecases": [
             {
@@ -132,7 +132,7 @@
             },
             {
               "name": "Aplicativos de Viagem",
-              "description": "Garante processos de reserva e pagamento seguros para viajantes com autenticação multifator."
+              "description": "Garante processos de reserva e pagamento seguros para viajantes com autenticação multifatorial."
             },
             {
               "name": "Instituições Financeiras",
@@ -148,8 +148,8 @@
             }
           ],
           "features": [
-            "OTPs entregues via SMS, Email, WhatsApp e Voz para máxima flexibilidade.",
-            "Garante entrega via o canal de comunicação preferido do usuário.",
+            "OTPs entregues via SMS, E-mail, WhatsApp e Voz para máxima flexibilidade.",
+            "Garante entrega através do canal de comunicação preferido do usuário.",
             "Suporta entrega internacional de OTPs através de canais para acessibilidade global.",
             "Garante confiabilidade na entrega de OTPs mesmo em áreas de baixa rede.",
             "Sistema de Retorno Inteligente garante que se um canal falhar, outro entrega instantaneamente."
@@ -159,12 +159,12 @@
       {
         "name": "Mecanismo de Failover: Garantindo Entrega Ininterrupta de OTP",
         "content": "O mecanismo de failover de OTP garante que os usuários recebam seus códigos OTP alternando automaticamente para um canal alternativo se a entrega primária de OTP falhar. Isso garante autenticação contínua e oportuna.",
-        "img": "/assets/global/otp/otp-simple-login.svg",
+        "img": "/assets/brpt/otp/failover_mechanism.webp",
         "more_content": {
           "usecases": [
             {
               "name": "Rastreamento de Entrega em Tempo Real",
-              "description": "Monitora o status de entrega de OTPs em todos os canais para melhor transparência."
+              "description": "Monitora o status de entrega de OTPs através de canais para melhor transparência."
             },
             {
               "name": "Serviços de Emergência",
@@ -180,12 +180,12 @@
             },
             {
               "name": "Logins Seguros",
-              "description": "Melhora as taxas de sucesso de login garantindo a entrega de OTPs por canais de backup."
+              "description": "Melhora as taxas de sucesso de login garantindo a entrega de OTPs através de canais de backup."
             }
           ],
           "features": [
             "Entrega OTPs sem atraso, garantindo autenticação rápida e suave do usuário.",
-            "Repetições automáticas via canais alternativos garantem autenticação OTP bem-sucedida.",
+            "Repetições automáticas através de canais alternativos garantem autenticação OTP bem-sucedida.",
             "Reduz falhas de login e aumenta a retenção de usuários garantindo a entrega de OTPs.",
             "Garante entrega confiável de OTPs em todo o mundo.",
             "Ideal para áreas com cobertura de rede inconsistente."
@@ -195,7 +195,7 @@
       {
         "name": "Integração Plug & Play: Configuração Sem Esforço, Conectividade Instantânea",
         "content": "O Widget OTP com Integração Plug & Play permite que você se conecte facilmente e comece a usar a autenticação OTP sem configurações complexas, garantindo uma configuração rápida e sem complicações.",
-        "img": "/assets/global/otp/otp-simple-login.svg",
+        "img": "/assets/brpt/otp/plug_play_integration.webp",
         "more_content": {
           "usecases": [
             {
@@ -221,17 +221,17 @@
           ],
           "features": [
             "Configuração fácil com codificação mínima necessária.",
-            "SDKs prontos para uso para aplicativos web e móveis.",
+            "SDKs prontos para uso para aplicações web e móveis.",
             "Integra-se perfeitamente com sistemas existentes.",
             "Economize tempo e recursos implantando facilmente soluções OTP.",
-            "Escalável para empresas em crescimento e expansão de aplicativos."
+            "Escalável para empresas em crescimento e aplicações em expansão."
           ]
         }
       },
       {
         "name": "Análise e Relatórios em Tempo Real: Insights Instantâneos para Decisões Mais Inteligentes",
         "content": "Análise e Relatórios em Tempo Real oferecem insights detalhados, permitindo que você acompanhe a entrega de OTPs, desempenho por canal e engajamento do usuário instantaneamente para tomar decisões mais inteligentes e baseadas em dados.",
-        "img": "/assets/global/otp/otp-simple-login.svg",
+        "img": "/assets/brpt/otp/real_time_analytics_reporting.webp",
         "more_content": {
           "usecases": [
             {
@@ -265,9 +265,9 @@
         }
       },
       {
-        "name": "Segurança de IP Integrada: Protegendo o Acesso de Localizações Não Autorizadas",
-        "content": "A Segurança de IP Integrada garante que OTPs e dados sensíveis sejam acessíveis apenas a partir de endereços IP confiáveis, adicionando uma camada extra de proteção contra acesso não autorizado e ameaças potenciais.",
-        "img": "/assets/global/otp/otp-simple-login.svg",
+        "name": "Segurança de IP Embutida: Protegendo o Acesso de Localizações Não Autorizadas",
+        "content": "A Segurança de IP Embutida garante que OTPs e dados sensíveis sejam acessíveis apenas a partir de endereços IP confiáveis, adicionando uma camada extra de proteção contra acessos não autorizados e ameaças potenciais.",
+        "img": "/assets/brpt/otp/inbuilt_ip_security.webp",
         "more_content": {
           "usecases": [
             {
@@ -280,7 +280,7 @@
             },
             {
               "name": "Restrição Geográfica de Acesso",
-              "description": "Impede o acesso de regiões ou intervalos de IP específicos, adicionando uma camada extra de segurança para empresas com necessidades de segurança baseadas em localização."
+              "description": "Previne acesso de regiões ou intervalos de IP específicos, adicionando uma camada extra de segurança para empresas com necessidades de segurança baseadas em localização."
             },
             {
               "name": "Proteção de Rede Corporativa",
