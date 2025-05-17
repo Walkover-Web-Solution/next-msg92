@@ -35,6 +35,12 @@
                 "link": "msg91-vs-freshchat",
                 "img": "/assets/compare/freshchat/freshchat-icon.svg",
                 "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(191, 99, 198, 0.10) 107.23%)"
+            },
+            {
+                "name": "MSG91 vs Delight Chat",
+                "link": "msg91-vs-delightchat",
+                "img": "/assets/compare/delightchat/delightchat-icon.png",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(233, 26, 134, 0.10) 107.23%)"
             }
         ]
     },
