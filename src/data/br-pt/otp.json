@@ -10,8 +10,8 @@
       "icon": "/assets/icons/products/otp.svg"
     },
     "tagline": "Verificação Segura Instantânea",
-    "heading": "Solução Avançada de Verificação OTP para Autenticação Segura",
-    "subheading": "O serviço de autenticação OTP da MSG91 oferece uma solução OTP poderosa, segura e contínua para proteger contas de usuários com autenticação multifatorial. De OTPs invisíveis à entrega de OTPs por múltiplos canais, nossos recursos aumentam a segurança enquanto melhoram a experiência do usuário.",
+    "heading": "Verificação de OTP sem esforço em múltiplos canais",
+    "subheading": "Integre nosso Widget de OTP para verificar usuários instantaneamente via SMS, WhatsApp, e-mail e mais — sem complicações de código, apenas autenticação multicanal segura e fluida.",
     "lottie": "/assets/brpt/otp/lotties/banner.json",
     "getstarted_btn": "Comece Gratuitamente",
     "trustedByComp": {
