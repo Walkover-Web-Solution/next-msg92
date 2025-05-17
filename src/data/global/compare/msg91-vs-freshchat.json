@@ -1,0 +1,66 @@
+{
+    "HeadComp": {
+        "title": "Freshchat vs MSG91 | Compare Communication APIs & Messaging Platforms",
+        "description": "Compare Freshchat and MSG91 to find the right communication platform for your business. Explore differences in pricing, features, ease of integration, and support to make an informed decision."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs Freshchat",
+        "subheading": "Freshchat and MSG91 both support WhatsApp business messaging, but Freshchat focuses on omnichannel customer engagement with AI-driven support, advanced segmentation, and multi-platform integrations, while MSG91 offers strong WhatsApp automation alongside broad omnichannel messaging, AI-powered journeys, and localized support—making MSG91 more suited for scalable, multichannel campaigns.",
+        "img": "/assets/compare/freshchat/freshchat-icon.svg",
+        "color": "#45A4EC"
+    },
+    "CompareTableComp": {
+        "heading": "Comparison Summary: MSG91 vs Freshchat",
+        "name": "Freshchat",
+        "img": "/assets/compare/freshchat/freshchat-logo.svg",
+        "content": [
+            {
+                "name": "MSG91",
+                "des": "MSG91 offers a broad omnichannel communication solution including SMS, email, and WhatsApp, with features like AI-powered customer journeys, dynamic segmentation, and detailed analytics—suited for businesses needing scalable, flexible, and cost-effective messaging across multiple channels."
+            },
+            {
+                "name": "Freshchat",
+                "des": "Freshchat is an omnichannel customer messaging platform with strong AI-driven support, advanced customer segmentation, and integrations across WhatsApp, web, email, and social channels—best for businesses focused on personalized multi-platform engagement."
+            }
+        ],
+        "features": {
+            "pricing": "Costlier, Added margin on Meta pricing",
+            "multi_agent_support": "Free agents till 3 users, extra charges for extra users",
+            "omnichannel_communication": "WhatsApp only",
+            "ai_chatbot_integration": "No code chatbot, costlier as we go for complex bots",
+            "unlimited_bot_creation": "Free trial allows 3 basic bots; more flows need a paid plan.",
+            "omnichannel_chatbot_support": "Only WhatsApp",
+            "whatsapp_payments": "WhatsApp Pay checkout in Catalog with Razorpay and PayU",
+            "whatsapp_carousels": "Supports WhatsApp carousel templates.",
+            "whatsapp_catalogs": "Supports WhatsApp catalog with easy integration and product sharing in chat.",
+            "customer_journey_creation": "WhatsApp Journey only through bot",
+            "client_segmentation": "Advanced customer segmentation",
+            "integration_and_plugins": "Freshchat’s free trial lacks third-party integrations; the Basic Plan allows 2, with more on pay-as-you-go.",
+            "otp_verification": "Does not provide OTP verification as a built-in feature",
+            "otp_widget": "Freshchat doesn’t offer a website OTP widget.",
+            "one_click_verification": "No",
+            "unified_platform": "WhatsApp workflows are available",
+            "technical_knowledge_required": "Not Necessarily needed.",
+            "customer_support_quality": "Support via WhatsApp and email only.",
+            "blue_tick_assistance": "Yes",
+            "meta_ads_trackings_conversion": "Integrates with Meta Ads for Clicks, conversion tracking, and real-time insights."
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
