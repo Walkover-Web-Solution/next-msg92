@@ -10,8 +10,8 @@
       "icon": "/assets/icons/products/otp.svg"
     },
     "tagline": "Instant Secure Verification",
-    "heading": "Advanced OTP Verification Solution for Secure Authentication",
-    "subheading": "MSG91’s OTP authentication service offers a powerful, secure, and seamless OTP solution to protect user accounts with multi-factor authentication. From invisible OTPs to multi-channel OTP delivery, our features enhance security while improving the user experience.",
+    "heading": "Effortless OTP Verification Across Channels",
+    "subheading": "Integrate our OTP Widget to verify users instantly via SMS, WhatsApp, email, and more — no code hassles, just secure and seamless multi-channel authentication.",
     "lottie": "/assets/global/otp/lotties/banner.json",
     "getstarted_btn": "Get Started For Free",
     "trustedByComp": {
