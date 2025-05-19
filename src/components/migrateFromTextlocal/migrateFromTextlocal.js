@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { LinkText } from '../UIComponent/Buttons/LinkButton';
+import { useState } from 'react';
+import { InlineWidget } from 'react-calendly';
 
 export default function MigrateFromTextlocal({ pageInfo, data }) {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <>
             <div className='container'>
@@ -13,9 +16,9 @@ export default function MigrateFromTextlocal({ pageInfo, data }) {
                         recharge the existing accounts from May 01, 2025 onwards. Keep your messaging seamless by moving
                         to MSG91 — enjoy powerful features, reliable delivery, and transparent pricing.
                     </h2>
-                    <Link href='/demochatbot'>
-                        <button className='btn btn-md btn-primary'>Schedule a Meeting Now</button>
-                    </Link>
+                    <button onClick={() => setIsModalOpen(true)} className='btn btn-md btn-primary'>
+                        Schedule a Meeting Now
+                    </button>
                 </div>
             </div>
             <div className='container cont cont_p cont_gap'>
@@ -69,6 +72,22 @@ export default function MigrateFromTextlocal({ pageInfo, data }) {
                     ))}
                 </div>
             </div>
+            {isModalOpen && (
+                <dialog id='whatsapp_modal' className='modal' open>
+                    <div className='modal-box'>
+                        <button
+                            onClick={() => setIsModalOpen(false)}
+                            className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'
+                        >
+                            ✕
+                        </button>
+                        <InlineWidget
+                            url={'https://calendly.com/sales-msg91/pre-sales'}
+                            styles={{ height: '680px', width: 'auto' }}
+                        />
+                    </div>
+                </dialog>
+            )}
         </>
     );
 }

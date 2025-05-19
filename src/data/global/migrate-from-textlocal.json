@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Customer knowledgebase platform by MSG91",
-        "description": "Offer customers a centralized knowledge base for quick answers to queries about your products and services. Enhance satisfaction with self-service tools."
+        "title": "Textlocal Shutdown: Switch to MSG91 Easily Before October 31, 2025",
+        "description": "Textlocal Messenger is shutting down by October 31, 2025, with recharges ending from May 1. Move to MSG91 in just one meeting and ensure uninterrupted messaging with powerful features and reliable delivery."
     },
     "MigrateFromTextlocal": {
         "why_msg91": [
@@ -121,7 +121,7 @@
             }
         ]
     },
-    "CTAMFTL":{},
+    "CTAMFTL": {},
     "FaqsComp": {
         "heading": "Frequently Asked Questions",
         "faqs": [
