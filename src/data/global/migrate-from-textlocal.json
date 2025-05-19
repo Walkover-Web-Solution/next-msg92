@@ -1,0 +1,168 @@
+{
+    "HeadComp": {
+        "title": "Customer knowledgebase platform by MSG91",
+        "description": "Offer customers a centralized knowledge base for quick answers to queries about your products and services. Enhance satisfaction with self-service tools."
+    },
+    "MigrateFromTextlocal": {
+        "why_msg91": [
+            {
+                "icon": "🚀",
+                "title": "One-Meeting Migration",
+                "description": "We’ll help you switch everything from APIs to DLT Headers and templates in a single session."
+            },
+            {
+                "icon": "🤑",
+                "title": "50% Extra Credits",
+                "description": "You will get 50% extra credits on your first purchase, and you can get up to Rs. 7500 credits for free. Validity of credits will be lifetime."
+            },
+            {
+                "icon": "💬",
+                "title": "True SMS Delivery",
+                "description": "Efficient SMS delivery with smart retry logic via alternate operators."
+            },
+            {
+                "icon": "🔁",
+                "title": "No-Charge Resend OTP API",
+                "description": "Resend OTPs without being charged again through our Resend OTP API."
+            },
+            {
+                "icon": "🌐",
+                "title": "Multi-Channel OTP",
+                "description": "Don’t just limit sending OTPs to SMS, also send it via Email, WhatsApp, and Voice using MSG91."
+            },
+            {
+                "icon": "⚡",
+                "title": "Efficient and Reliable OTP Widget",
+                "description": "It includes a customizable pre-built UI, multi-channel OTP delivery, reCAPTCHA support, and a token system to prevent bot attacks — all at no extra cost.."
+            },
+            {
+                "icon": "🤝",
+                "title": "30,000+ Businesses Trust MSG91",
+                "description": "Proven reliability and scale."
+            },
+            {
+                "icon": "📞",
+                "title": "Human Support That Cares",
+                "description": "Real support, not just ticketing systems. Our dedicated technical support team and DLT experts are always available to assist you."
+            }
+        ],
+        "how_to_migrate": [
+            {
+                "title": "Schedule a meeting now",
+                "description": "Schedule a 30-minute onboarding call with our team."
+            },
+            {
+                "title": "DLT Setup Assistance",
+                "description": "We will port your templates, headers from Textlocal. Our DLT experts will also assist you with CTA Whitelisting and PE-TM chain binding on the DLT portal."
+            },
+            {
+                "title": "API Integration Help",
+                "description": "Our experts guide your tech team to integrate MSG91 APIs smoothly."
+            },
+            {
+                "title": "Testing & Go Live",
+                "description": "Once you’re ready, start sending SMS without downtime."
+            }
+        ],
+        "beyond_sms": [
+            {
+                "slug": "email",
+                "name": "Email",
+                "title": "Reliable Email Service at Unbeatable Prices",
+                "description": "Affordable, reliable, and fast — MSG91 Email lets you start and test for free with zero hassle."
+            },
+            {
+                "slug": "hello",
+                "name": "Hello",
+                "title": "Smart Conversations Powered by AI and Non-AI Chatbots",
+                "description": "Engage users with intelligent, human-like responses — start free and automate support effortlessly."
+            },
+            {
+                "slug": "whatsapp",
+                "name": "WhatsApp",
+                "title": "Reach Your Users on WhatsApp – Instantly and Affordably",
+                "description": "MSG91’s WhatsApp service offers fast, reliable messaging with budget-friendly plans. MSG91 charges the same per-message rate as Meta."
+            },
+            {
+                "slug": "segmento",
+                "name": "Segmento",
+                "title": "Smart Contact Management through Segmento",
+                "description": "Organize your contacts effortlessly and launch precise campaigns by creating custom segments using powerful filters."
+            },
+            {
+                "slug": "campaign",
+                "name": "Campaign",
+                "title": "Create Powerful Multi-Channel Campaigns with Ease",
+                "description": "Build engaging campaigns using smart nodes and filters across channels. Only pay for the messages — the campaign tool is completely free."
+            }
+        ]
+    },
+    "CaseStudiesComp": {
+        "heading": "Customer Success Powered by MSG91",
+        "linkText": "Learn more",
+        "casestudies": [
+            {
+                "img": "/assets/global/index/stories/milkbasket-bg.png",
+                "logo": "/assets/global/index/stories/milkbasket-logo.png",
+                "description": "Milkbasket sends regular updates to its customers by offering proactive support and recommendations",
+                "link": "/case-studies/milkbasket"
+            },
+            {
+                "img": "/assets/global/index/stories/unacademy-bg.png",
+                "logo": "/assets/global/index/stories/unacademy-logo.png",
+                "description": "Unacademy using omnichannel keeps its audience engaged and nurtured with personalised campaigns",
+                "link": "/case-studies/unacademy"
+            },
+            {
+                "img": "/assets/global/index/stories/ixigo-bg.png",
+                "logo": "/assets/global/index/stories/ixigo-logo.png",
+                "description": "Ixigo engages and updates its audience through multichannel communication across messaging, email and WhatsApp",
+                "link": "/case-studies/ixigo"
+            }
+        ]
+    },
+    "CTAMFTL":{},
+    "FaqsComp": {
+        "heading": "Frequently Asked Questions",
+        "faqs": [
+            {
+                "question": "How can MSG91 benefit my business?",
+                "answer": "MSG91 offers numerous benefits for businesses, including improved customer engagement, streamlined communication workflows, increased operational efficiency, and enhanced brand reputation. Our platform enables businesses to automate communication, personalize interactions, and reach their target audience through their preferred channels."
+            },
+            {
+                "question": "What makes MSG91 different from other communication platforms?",
+                "answer": "MSG91 stands out due to its reliability, scalability, and versatility. We specialize in providing mobile cloud communication platforms in India , addressing the unique needs of businesses in this market. Our platform offers advanced features, customizable solutions, and exceptional customer support to help businesses achieve their communication goals."
+            },
+            {
+                "question": "Is MSG91 suitable for businesses of all sizes?",
+                "answer": "Yes, MSG91 caters to businesses of all sizes. Whether you're a startup, small business, or large enterprise, our platform can be tailored to meet your specific requirements. We offer scalable solutions that can accommodate the communication needs of businesses as they grow and expand."
+            },
+            {
+                "question": "Is MSG91 secure?",
+                "answer": "Security is a top priority at MSG91 <a href='/assets/brand/favicon.svg'>hello</a> We implement industry-standard protocols and encryption techniques to ensure the confidentiality and integrity of your data. Our enterprise cloud communications platform offers features like two-factor authentication and OTP verification to enhance security and protect sensitive information."
+            },
+            {
+                "question": "Can I integrate MSG91 with my existing systems or applications?",
+                "answer": "Absolutely! MSG91 provides developer-friendly APIs and documentation, making it easy to integrate our platform with your existing systems or applications. Our APIs allow you to incorporate our communication functionalities seamlessly, enabling you to automate communication and streamline your workflows."
+            }
+        ]
+    },
+    "PreFooterMFTL": {},
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "pricing"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

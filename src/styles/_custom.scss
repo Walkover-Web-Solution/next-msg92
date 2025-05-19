@@ -72,6 +72,7 @@ body {
         @apply text-accent;
     }
     &.btn-white {
+        @apply text-black bg-white hover:bg-primary hover:text-white outline-none border-none shadow-none;
         &.btn-outline {
             @apply text-white hover:bg-accent hover:text-white;
         }
@@ -318,7 +319,6 @@ $button-transition-timing: 100ms;
 .iti .iti__country-list {
     width: 350px !important;
 }
-
 
 .tooltip.tooltip-modal {
     &:before {
