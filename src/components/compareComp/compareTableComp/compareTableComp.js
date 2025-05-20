@@ -1,6 +1,19 @@
-import features from '@/data/compareDefault.json';
+import globalFeatures from '@/data/compareDefault.json';
+import whatsAppFeatures from '@/data/compare/whatsapp.json';
 import Image from 'next/image';
 export default function CompareTableComp({ data }) {
+    let features;
+    switch (data?.type) {
+        case 'global':
+            features = globalFeatures;
+            break;
+        case 'whatsapp':
+            features = whatsAppFeatures;
+            break;
+        default:
+            features = globalFeatures;
+            break;
+    }
     return (
         <div className='container cont cont_p gap-12'>
             <div className='cont gap-4'>
