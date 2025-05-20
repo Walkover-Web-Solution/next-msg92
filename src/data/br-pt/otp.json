@@ -12,7 +12,8 @@
     "tagline": "Verificação Segura Instantânea",
     "heading": "Verificação de OTP sem esforço em múltiplos canais",
     "subheading": "Integre nosso Widget de OTP para verificar usuários instantaneamente via SMS, WhatsApp, e-mail e mais — sem complicações de código, apenas autenticação multicanal segura e fluida.",
-    "lottie": "/assets/brpt/otp/lotties/banner.json",
+    "banner_img": "/assets/brpt/otp/banner.webp",
+    "not_absolute": "true",
     "getstarted_btn": "Comece Gratuitamente",
     "trustedByComp": {
       "heading": "Confiado por mais de 30.000 empresas globais",
@@ -51,7 +52,7 @@
       {
         "name": "OTP Invisível: Autenticação Segura Simplificada",
         "content": "OTP Invisível é um método de autenticação seguro e contínuo que verifica a identidade do usuário sem exigir que ele insira um código manualmente. O OTP Invisível funciona silenciosamente em segundo plano, detectando e verificando o OTP automaticamente. Isso não apenas simplifica o processo de login, mas também fortalece a segurança.",
-        "img": "/assets/brpt/otp/invisible_otp.webp",
+        "img": "/assets/brpt/otp/lotties/invisible_otp.json",
         "more_content": {
           "usecases": [
             {
@@ -123,7 +124,7 @@
       {
         "name": "Entrega de OTP Multicanal: OTP Que Sempre Te Encontra",
         "content": "A Entrega de OTP Multicanal garante acesso seguro enviando OTPs por vários canais, como SMS OTP, WhatsApp OTP, e-mail OTP e voz OTP, garantindo que os usuários recebam seus códigos independentemente do meio.",
-        "img": "/assets/brpt/otp/multi_channel_otp_delivery.webp",
+        "img": "/assets/brpt/otp/lotties/multi_channel_otp_delivery.json",
         "more_content": {
           "usecases": [
             {
@@ -159,7 +160,7 @@
       {
         "name": "Mecanismo de Failover: Garantindo Entrega Ininterrupta de OTP",
         "content": "O mecanismo de failover de OTP garante que os usuários recebam seus códigos OTP alternando automaticamente para um canal alternativo se a entrega primária de OTP falhar. Isso garante autenticação contínua e oportuna.",
-        "img": "/assets/brpt/otp/failover_mechanism.webp",
+        "img": "/assets/global/otp/lotties/failover_mechanism.json",
         "more_content": {
           "usecases": [
             {

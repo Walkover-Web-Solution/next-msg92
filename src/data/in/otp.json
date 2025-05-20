@@ -12,7 +12,8 @@
     "tagline": "Instant Secure Verification",
     "heading": "Effortless OTP Verification Across Channels",
     "subheading": "Integrate our OTP Widget to verify users instantly via SMS, WhatsApp, email, and more — no code hassles, just secure and seamless multi-channel authentication.",
-    "lottie": "/assets/global/otp/lotties/banner.json",
+    "banner_img": "/assets/global/otp/banner.webp",
+    "not_absolute": "true",
     "getstarted_btn": "Get Started For Free"
   },
   "FeatureComp": {
@@ -22,7 +23,7 @@
       {
         "name": "Invisible OTP: Secure Authentication Made Simple",
         "content": "Invisible OTP is a secure and seamless authentication method that verifies a user’s identity without requiring them to enter a code manually. Invisible OTP works silently in the background. detecting and verifying the OTP automatically. This not only simplifies the login process but also strengthens security.",
-        "img": "/assets/global/otp/invisible_otp.webp",
+        "img": "/assets/global/otp/lotties/invisible_otp.json",
         "more_content": {
           "usecases": [
             {
@@ -58,7 +59,7 @@
       {
         "name": "Magic Links: Password-Free Authentication in One Click",
         "content": "Magic Link is a secure login method where users don’t need to enter a password. After providing their email or phone number, they receive a unique, time-sensitive link. Clicking the link verifies their identity and logs them in seamlessly and securely.",
-        "img": "/assets/global/otp/magic_links.webp",
+        "img": "/assets/in/otp/magic_links.webp",
         "more_content": {
           "usecases": [
             {
@@ -94,7 +95,7 @@
       {
         "name": "Multi-Channel OTP Delivery: OTP That Finds You, Always",
         "content": "Multi-Channel OTP Delivery ensures secure access by sending OTPs through various channels, like OTP SMS, WhatsApp OTP, OTP email, and voice OTP, guaranteeing that users receive their codes no matter the medium.",
-        "img": "/assets/global/otp/multi_channel_otp_delivery.webp",
+        "img": "/assets/global/otp/lotties/multi_channel_otp_delivery.json",
         "more_content": {
           "usecases": [
             {
@@ -130,7 +131,7 @@
       {
         "name": "Failover Mechanism: Ensuring Uninterrupted OTP Delivery",
         "content": "The OTP failover mechanism guarantees that users receive their OTP codes by automatically switching to an alternate channel if the primary OTP delivery fails. This ensures seamless and timely authentication.",
-        "img": "/assets/global/otp/failover_mechanism.webp",
+        "img": "/assets/global/otp/lotties/failover_mechanism.json",
         "more_content": {
           "usecases": [
             {
@@ -166,7 +167,7 @@
       {
         "name": "Plug & Play Integration: Effortless Setup, Instant Connectivity",
         "content": "OTP Widget with Plug & Play Integration allows you to easily connect and start using OTP authentication without complex configurations, ensuring a hassle-free and quick setup.",
-        "img": "/assets/global/otp/plug_play_integration.webp",
+        "img": "/assets/in/otp/plug_play_integration.webp",
         "more_content": {
           "usecases": [
             {
