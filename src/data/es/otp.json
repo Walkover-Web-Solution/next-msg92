@@ -49,42 +49,7 @@
     "heading": "Features",
     "iconColor": "text-otp",
        "features": [
-      {
-        "name": "Invisible OTP: Secure Authentication Made Simple",
-        "content": "Invisible OTP is a secure and seamless authentication method that verifies a user’s identity without requiring them to enter a code manually. Invisible OTP works silently in the background. detecting and verifying the OTP automatically. This not only simplifies the login process but also strengthens security.",
-        "img": "/assets/global/otp/lotties/invisible_otp.json",
-        "more_content": {
-          "usecases": [
-            {
-              "name": "Mobile Banking Apps",
-              "description": "Prevent unauthorized access without requiring OTP input, securing user transactions effortlessly."
-            },
-            {
-              "name": "E-commerce Platforms",
-              "description": "Enable fast checkout by verifying users in the background without manual OTP input."
-            },
-            {
-              "name": "Online Games",
-              "description": "Secure in-app purchases with invisible OTPs for a frictionless user experience."
-            },
-            {
-              "name": "Streaming Services",
-              "description": "Verify new logins without interrupting user engagement."
-            },
-            {
-              "name": "Healthcare Apps",
-              "description": "Ensure secure login without the need for users to manually enter codes, reducing delays in patient access."
-            }
-          ],
-          "features": [
-            "No manual code entry required - Enables automated authentication.",
-            "Smooth authentication process without interrupting the user experience.",
-            "Minimizes the risk of OTP fraud and credential stuffing.",
-            "Enhances security with background verification.",
-            "Works silently in the background for hassle-free authentication."
-          ]
-        }
-      },
+     
       {
         "name": "Magic Links: Password-Free Authentication in One Click",
         "content": "Magic Link is a secure login method where users don’t need to enter a password. After providing their email or phone number, they receive a unique, time-sensitive link. Clicking the link verifies their identity and logs them in seamlessly and securely.",
