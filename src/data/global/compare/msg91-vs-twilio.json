@@ -10,6 +10,7 @@
         "color": "#F22F46"
     },
     "CompareTableComp": {
+        "type":"global",
         "heading": "Comparison Summary: MSG91 vs Twilio",
         "name": "Twilio",
         "img": "/assets/compare/twilio/twilio-logo.svg",

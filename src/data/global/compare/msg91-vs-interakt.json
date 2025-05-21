@@ -10,6 +10,7 @@
         "color": "#00A68B"
     },
     "CompareTableComp": {
+        "type":"global",
         "heading": "Comparison Summary: MSG91 vs Interakt",
         "name": "Interakt",
         "img": "/assets/compare/interakt/interakt-logo.svg",

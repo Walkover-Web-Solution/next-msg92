@@ -120,7 +120,7 @@ export default function getURL(type, link, pageInfo) {
             break;
 
         case 'compare':
-            url = '/compare/' + link;
+            url = '/' + link;
             break;
 
         default:
