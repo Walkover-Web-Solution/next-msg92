@@ -472,47 +472,7 @@
             }
         ]
     },
-    "CompareGridComp": {
-        "heading": "How MSG91 Stacks Up Against Other WhatsApp Platforms",
-        "cards": [
-            {
-                "name": "MSG91 vs Twilio",
-                "link": "whatsapp/compare/msg91-vs-twilio",
-                "img": "/assets/compare/twilio/twilio-icon.svg",
-                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(242, 47, 70, 0.15) 107.23%)"
-            },
-            {
-                "name": "MSG91 vs AiSensy",
-                "link": "whatsapp/compare/msg91-vs-aisensy",
-                "img": "/assets/compare/aisensy/aisensy-icon.png",
-                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(66, 184, 98, 0.10)  107.23%)"
-            },
-            {
-                "name": "MSG91 vs Wati",
-                "link": "whatsapp/compare/msg91-vs-wati",
-                "img": "/assets/compare/wati/wati-icon.svg",
-                "bg_gredient": "linear-gradient(100deg, rgba(47, 154, 239, 0.10) -5.04%, rgba(0, 231, 133, 0.10) 107.23%)"
-            },
-            {
-                "name": "MSG91 vs Freshchat",
-                "link": "whatsapp/compare/msg91-vs-freshchat",
-                "img": "/assets/compare/freshchat/freshchat-icon.svg",
-                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(191, 99, 198, 0.10) 107.23%)"
-            },
-            {
-                "name": "MSG91 vs DelightChat",
-                "link": "whatsapp/compare/msg91-vs-delightchat",
-                "img": "/assets/compare/delightchat/delightchat-icon.png",
-                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(233, 26, 134, 0.10) 107.23%)"
-            },
-            {
-                "name": "MSG91 vs Interakt",
-                "link": "whatsapp/compare/msg91-vs-interakt",
-                "img": "/assets/compare/interakt/interakt-icon.svg",
-                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(0, 166, 139, 0.10) 107.23%)"
-            }
-        ]
-    },
+
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {

@@ -90,6 +90,7 @@
         "whatsapp/compare/msg91-vs-freshchat",
         "whatsapp/compare/msg91-vs-interakt",
         "whatsapp/compare/msg91-vs-wati",
+        "whatsapp/compare",
         "sla/hello"
     ],
     "justNested": [
@@ -103,6 +104,8 @@
         "whatsapp/compare/msg91-vs-delightchat",
         "whatsapp/compare/msg91-vs-freshchat",
         "whatsapp/compare/msg91-vs-interakt",
+        "whatsapp/compare/msg91-vs-wati",
+        "whatsapp/compare",
         "sla/hello"
     ]
 }
