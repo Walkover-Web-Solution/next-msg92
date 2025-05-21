@@ -10,6 +10,7 @@
         "color": "#45A4EC"
     },
     "CompareTableComp": {
+        "type":"global",
         "heading": "Comparison Summary: MSG91 vs Freshchat",
         "name": "Freshchat",
         "img": "/assets/compare/freshchat/freshchat-logo.svg",

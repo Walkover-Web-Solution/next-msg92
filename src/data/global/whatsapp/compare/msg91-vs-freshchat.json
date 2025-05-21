@@ -1,0 +1,68 @@
+{
+    "HeadComp": {
+        "title": "Freshchat vs MSG91 | WhatsApp Business API Comparison",
+        "description": "Compare Freshchat and MSG91 for WhatsApp Business API solutions. See how they differ in WhatsApp pricing, automation, template management, integrations, and support to choose the best WhatsApp platform for your business."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs Freshchat",
+        "subheading": "Freshchat integrates WhatsApp into its broader customer support suite, focusing on conversational support. In contrast, MSG91 excels in structured WhatsApp communication, with features like template management, bulk messaging, and opt-out functionality, suited for marketing-driven use cases.",
+        "img": "/assets/compare/freshchat/freshchat-icon.svg",
+        "color": "#45A4EC"
+    },
+    "CompareTableComp": {
+        "type": "whatsapp",
+        "heading": "Comparison Summary: MSG91 vs Freshchat",
+        "name": "Freshchat",
+        "img": "/assets/compare/freshchat/freshchat-logo.svg",
+        "content": [
+            {
+                "name": "Freshchat",
+                "des": "Freshchat is an omnichannel customer messaging platform that integrates WhatsApp for support and automated responses. However, it does not offer specific WhatsApp features like payments or carousel templates."
+            },
+            {
+                "name": "MSG91",
+                "des": "MSG91 stands out with its WhatsApp-specific tools, including payments, carousel creation, AI-powered chatbots, opt-out functionality, and template category handling. Its feature-rich API enables businesses to manage customer journeys efficiently and maintain consistent, compliant messaging across multiple channels."
+            }
+        ],
+        "features": {
+            "pricing": "Costlier, Added margin on Meta pricing",
+            "whatsapp_template_creation": "It lacks a template panel; it redirects to WhatsApp Manager, for template setup.",
+            "multi_agent_support": "Multi-agent support is available at $19 per agent per month.",
+            "omnichannel_communication": "Supports Web, Mobile, WA, and FB.",
+            "ai_chatbot_integration": "Freshchat offers AI chatbots with a visual flow builder for seamless automation.",
+            "unlimited_bot_creation": "Freshchat's free plan allows up to 5 chatbots; more bots require a paid plan.",
+            "omnichannel_chatbot_support": "",
+            "whatsapp_payments": "Freshchat requires third-party apps for WhatsApp payments, as native features don't support it.",
+            "whatsapp_carousels": "You can't create carousel templates in Freshchat; use Meta's platform for that.",
+            "whatsapp_catalogs": "You have to create the catalog template in Meta only.",
+            "customer_journey_creation": "",
+            "client_segmentation": "Advanced customer segmentation",
+            "integration_and_plugins": "Integrates with multiple platforms including Shopify, WooCommerce, Zoho, etc.",
+            "otp_verification": "Freshworks provides OTP verification via WhatsApp templates",
+            "otp_widget": "",
+            "one_click_verification": "Through Whatsapp template",
+            "unified_platform": "With Freshworks, full automation involves using Freshchat, Freshsales, Freshmarketer, and other Freshworks suite products together.",
+            "technical_knowledge_required": "Not Necessarily needed.",
+            "customer_support_quality": "Freshworks offers 24/7 email support on all plans; phone support 24/5 from Growth, and 24/7 chat on Pro and Enterprise.",
+            "blue_tick_assistance": "Yes",
+            "meta_ads_trackings_conversion": "Meta reports can be viewed after integrating Freshdesk Analytics with your Meta account."
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

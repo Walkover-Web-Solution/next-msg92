@@ -10,6 +10,7 @@
         "color": "#E91A86"
     },
     "CompareTableComp": {
+        "type":"global",
         "heading": "Comparison Summary: MSG91 vs DelightChat",
         "name": "DelightChat",
         "img": "/assets/compare/delightchat/delightchat-logo.png",
