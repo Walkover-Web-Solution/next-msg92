@@ -10,6 +10,7 @@
         "color": "#00E785"
     },
     "CompareTableComp": {
+        "type":"global",
         "heading": "Comparison Summary: MSG91 vs Wati",
         "name": "Wati",
         "img": "/assets/compare/wati/wati-logo.svg",
