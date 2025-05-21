@@ -36,7 +36,7 @@ export default function MigrateFromTextlocal({ pageInfo, data }) {
             <div className='bg-gray'>
                 <div className='container cont cont_p cont_gap'>
                     <h2 className='text-3xl font-bold'>How to Migrate from Textlocal to MSG91</h2>
-                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-12'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12'>
                         {data?.how_to_migrate?.map((how, index) => (
                             <div className=' bg-white sm:p-8 p-6 md:p-8 lg:p-12 cont gap-3 rounded-lg ' key={index}>
                                 <span className='text-4xl font-semibold text-accent'>{index + 1}</span>
