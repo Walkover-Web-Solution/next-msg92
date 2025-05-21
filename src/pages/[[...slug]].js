@@ -46,11 +46,14 @@ import SLAComp from '@/components/SLAComp/SLAComp';
 
 import DemoChatBotComp from '@/components/DemoChatBotComp/DemoChatBotComp';
 import EcommerceStoreComp from '@/components/EcommerceStoreComp/EcommerceStore';
+import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromTextlocal';
 /* files */
 import specialPages from '@/data/specialPages.json';
 
 /* utils */
 import { useRouter } from 'next/router';
+import PreFooterMFTL from '@/components/migrateFromTextlocal/preFooterMFTL/preFooterMFTL';
+import CTAMFTL from '@/components/migrateFromTextlocal/ctaMFTL/ctaMFTL';
 
 const Components = {
     BannerComp,
@@ -97,6 +100,9 @@ const Components = {
     SLAComp,
     DemoChatBotComp,
     EcommerceStoreComp,
+    MigrateFromTextlocal,
+    PreFooterMFTL,
+    CTAMFTL,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

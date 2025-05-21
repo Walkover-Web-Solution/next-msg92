@@ -19,7 +19,9 @@
         "cookie-policy",
         "thank-you",
         "startup-form",
-        "certificates"
+        "certificates",
+        "textlocal-alternative",
+        "compare"
     ],
     "products": [
         "hello",
