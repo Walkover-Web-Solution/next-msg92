@@ -7,7 +7,7 @@ export default function CompareBannerComp({ data, pageInfo }) {
                 <h1 className='md:text-4xl text-2xl font-bold'>{data?.heading}</h1>
                 <h2 className='md:text-xl text-lg '>{data?.subheading}</h2>
             </div>
-            <div className='items-center justify-center flex rounded overflow-hidden w-full xl:max-w-[600px] max-w-[400px] '>
+            <div className='items-center justify-center flex rounded overflow-hidden w-full xl:max-w-[560px] max-w-[400px] '>
                 <div
                     className='p-8 items-center justify-center flex gap-4 w-full aspect-square'
                     style={{ backgroundColor: '#1E75BA' }}
