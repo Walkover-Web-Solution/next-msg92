@@ -1,0 +1,67 @@
+{
+    "HeadComp": {
+        "title": "MSG91 vs Intercom | WhatsApp API & Messaging Platform Comparison",
+        "description": "Compare Intercom and MSG91 to find the best WhatsApp messaging solution for your business. Explore differences in pricing, features, WhatsApp integration, automation, and support to make an informed decision."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs Intercom",
+        "subheading": "Intercom and MSG91 both offer WhatsApp messaging capabilities, but differ in their approach and feature set. Intercom provides customer messaging and support with WhatsApp integration, while MSG91 specializes in advanced WhatsApp automation, template management, and omnichannel messaging for scalable campaigns.",
+        "img": "/assets/compare/intercom/intercom-icon.svg",
+        "color": "#000000"
+    },
+    "CompareTableComp": {
+        "type": "global",
+        "heading": "Comparison Summary: MSG91 vs Intercom",
+        "name": "Intercom",
+        "img": "/assets/compare/intercom/intercom-logo.svg",
+        "content": [
+            {
+                "name": "MSG91",
+                "des": "MSG91 offers a robust WhatsApp communication suite with features like WhatsApp payments, carousel templates, AI-powered chatbots, opt-out management, and template category handling (e.g., utility to marketing). Designed for scalability and automation, MSG91 empowers businesses to deliver rich, personalized, and compliant WhatsApp experiences across customer touchpoints."
+            },
+            {
+                "name": "Intercom",
+                "des": "Intercom supports WhatsApp messaging through API integration, enabling customer conversations and outbound messaging via approved templates. However, it lacks advanced WhatsApp functionalities like payments, carousel templates, one-click verification, and built-in template creation. Intercom offers an all-in-one dashboard for targeting, AI support, and omnichannel campaigns, but is costlier and less flexible for WhatsApp-driven campaigns compared to MSG91."
+            }
+        ],
+        "features": {
+            "pricing": "Paid plans starting at $29 per agent per month. Costlier, added margin on Meta pricing.",
+            "multi_agent_support": "Pricing is per agent; unlimited agent logins not included in base plans.",
+            "omnichannel_communication": "SMS, WhatsApp, Facebook, Email, and more.",
+            "ai_chatbot_integration": "Intercom offers multiple visual flow builders for seamless automation. You can create multiple workflows.",
+            "unlimited_bot_creation": "Unlimited workflows possible, but subject to plan limits and pricing.",
+            "omnichannel_chatbot_support": "Supports multiple channels, but WhatsApp automation is limited to approved templates.",
+            "whatsapp_payments": "Intercom integrates with WhatsApp for messaging but does not support WhatsApp payments.",
+            "whatsapp_carousels": "You can't create carousel templates; you have to use Meta's platform for that.",
+            "whatsapp_catalogs": "Intercom does not support sending WhatsApp Catalog messages, only text-based templates.",
+            "customer_journey_creation": "Visual flow builders for customer journeys across channels; WhatsApp journeys limited to template-based flows.",
+            "client_segmentation": "Advanced segmentation and targeting available within Intercom's platform.",
+            "integration_and_plugins": "Integrates with multiple platforms like Salesforce, HubSpot, Slack, Stripe, and other business tools.",
+            "otp_verification": "Provides OTP verification via WhatsApp template and Email.",
+            "otp_widget": "No standalone OTP widget.",
+            "one_click_verification": "No",
+            "unified_platform": "Intercom offers an all-in-one dashboard for targeting, AI support, and omnichannel campaigns.",
+            "technical_knowledge_required": "Not Necessarily needed.",
+            "customer_support_quality": "Intercom offers customer support through email, live chat, and phone.",
+            "blue_tick_assistance": "Intercom does not assist with WhatsApp Blue Tick verification.",
+            "meta_ads_trackings_conversion": "Intercom doesn't natively show Meta Ads performance analytics."
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
