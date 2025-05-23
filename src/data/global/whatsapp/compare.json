@@ -53,6 +53,12 @@
                 "link": "compare/msg91-vs-intercom",
                 "img": "/assets/compare/intercom/intercom-icon.svg",
                 "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(0, 0, 0, 0.10) 107.23%)"
+            },
+            {
+                "name": "MSG91 vs MessageBird",
+                "link": "compare/msg91-vs-messagebird",
+                "img": "/assets/compare/messagebird/messagebird-icon.svg",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(0, 0, 0, 0.10) 107.23%)"
             }
         ]
     },
