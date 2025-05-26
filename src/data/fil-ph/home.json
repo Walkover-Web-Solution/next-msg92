@@ -1,0 +1,240 @@
+{
+    "HeadComp": {
+        "title": "Pinakamahusay na Cloud Communication Platform para sa mga Negosyo | MSG91",
+        "description": "Nagbibigay ang MSG91 ng tuluy-tuloy na solusyon sa komunikasyon gamit ang SMS APIs, email APIs, voice call APIs, at marami pa upang mapabuti ang kahusayan ng negosyo."
+    },
+    "BannerComp": {
+        "slug": "home",
+        "tagline": "platform ng solusyon sa customer",
+        "heading": "Kumonekta sa iyong mga customer sa iba't ibang channel",
+        "subheading": "Segurado at matitibay na APIs para sa WhatsApp, SMS, RCS, Email, Voice, Authentication at iba pa",
+        "banner_img": "/assets/global/index/banner.webp",
+        "getstarted_btn": "Magsimula",
+        "trustedByComp": {
+            "heading": "Pinagkakatiwalaan ng 30,000+ na pandaigdigang negosyo",
+            "logos": [
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/indian-oil.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "ProductsComp": [
+        {
+            "icon": "/assets/icons/products/hello.svg",
+            "tagline": "CONTACT CENTER",
+            "name": "Hello",
+            "description": "Bigyang-kapangyarihan ang iyong mga empleyado, Suportahan ang iyong mga customer.",
+            "img": "/img/home/chats.svg",
+            "linkText": "Alamin pa",
+            "link": "/hello"
+        },
+        {
+            "icon": "/assets/icons/products/campaign.svg",
+            "tagline": "AUTOMATION BATAY SA KAGANAPAN",
+            "name": "Campaign",
+            "description": "Palakasin ang pakikipag-ugnayan ng audience gamit ang matalinong Platform.",
+            "img": "/img/home/campaign.svg",
+            "linkText": "Alamin pa",
+            "link": "/campaign"
+        },
+        {
+            "icon": "/assets/icons/products/segmento.svg",
+            "tagline": "PLATFORM NG DATA NG CUSTOMER",
+            "name": "Segmento",
+            "description": "Segmentasyon ng customer batay sa kanilang mga aksyon o kaganapan.",
+            "img": "/img/home/segmento.webp",
+            "linkText": "Alamin pa",
+            "link": "/segmento"
+        },
+        {
+            "icon": "/assets/icons/products/otp.svg",
+            "tagline": "MABILIS AT SEGURADONG PAGBERIPIKA",
+            "name": "OTP",
+            "description": "Mabilis at maaasahang multichannel OTP verification",
+            "img": "/img/home/otp.png",
+            "linkText": "Alamin pa",
+            "link": "/otp"
+        }
+    ],
+    "ChannelsComp": {
+        "heading": "Mga Channel ng Komunikasyon",
+        "subheading": "Bigyang-kapangyarihan ang mga pag-uusap gamit ang pinakamahusay na communication API Mga kumpletong API para sa mga developer at negosyo upang kumonekta at makipag-ugnayan sa mga customer sa buong mundo",
+        "linkText": "Alamin pa",
+        "channels": [
+            {
+                "icon": "/assets/icons/products/sms.svg",
+                "name": "SMS",
+                "description": "Baguhin ang iyong global na komunikasyon gamit ang maaasahang SMS services at APIs ng MSG91. Makipag-ugnayan, magsuri, at kumonekta nang madali sa pandaigdigang saklaw",
+                "link": "/sms"
+            },
+            {
+                "icon": "/assets/icons/products/email.svg",
+                "name": "Email",
+                "description": "Pagandahin ang email outreach gamit ang templates, AMP, stats, SMTP/API, at validation para sa mas epektibong pakikipag-ugnayan sa customer",
+                "link": "/email"
+            },
+            {
+                "icon": "/assets/icons/products/whatsapp.svg",
+                "name": "WhatsApp",
+                "description": "Pahusayin ang interaksyon sa WhatsApp gamit ang Base64 support, two-way communication, template management, analytics, at message logs",
+                "link": "/whatsapp"
+            },
+            {
+                "icon": "/assets/icons/products/voice.svg",
+                "name": "Voice",
+                "description": "Pahusayin ang pakikipag-ugnayan sa customer gamit ang real-time calls, Call Monitoring, browser calling, advanced IVR, bulk voice messaging, at real-time na koneksyon sa ahente",
+                "link": "/voice"
+            },
+            {
+                "icon": "/assets/icons/products/numbers.svg",
+                "name": "Mga Numero",
+                "description": "Buksan ang global na merkado gamit ang cost-efficient na virtual numbers. Palakasin ang pakikipag-ugnayan gamit ang missed call services, keyword messaging, surveys, at auto responses",
+                "link": "/numbers"
+            }
+        ]
+    },
+    "FactsComp": [
+        {
+            "fact": "2.5 Bilyon+",
+            "stat": "API calls",
+            "per": "kada buwan"
+        },
+        {
+            "fact": "1.6 Bilyon+",
+            "stat": "SMS na naipadala",
+            "per": "kada buwan"
+        },
+        {
+            "fact": "1 Bilyon+",
+            "stat": "OTP na naipadala",
+            "per": "kada buwan"
+        },
+        {
+            "fact": "1 Bilyon+",
+            "stat": "Mga email na naipadala",
+            "per": "kada buwan"
+        }
+    ],
+    "MoreServicesComp": {
+        "heading": "Iba Pang Serbisyo",
+        "linkText": "Alamin pa",
+        "services": [
+            {
+                "icon": "/assets/icons/products/shorturl.svg",
+                "name": "URL Shortner",
+                "img": "/assets/global/index/services/shorturl.svg",
+                "heading": "Paikliin ang iyong mahahabang URL",
+                "description": "Awtomatikong pinaiikli ang URL at sinusubaybayan ang tagumpay nito. Gawin ang mahahabang link na simple at madaling tandaan.",
+                "link": "/shorturl"
+            },
+            {
+                "icon": "/assets/icons/products/knowledgebase.svg",
+                "name": "KnowledgeBase App",
+                "img": "/assets/global/index/services/knowledgebase.svg",
+                "heading": "Pamamahala ng iyong help docs at artikulo",
+                "description": "Huwag hayaang maghintay ang iyong mga customer. Bigyan sila ng agarang access sa self-service na impormasyon.",
+                "link": "/knowledgebase"
+            },
+            {
+                "icon": "/assets/icons/products/filehosting.svg",
+                "name": "File Hosting",
+                "img": "/assets/global/index/services/filehosting.svg",
+                "heading": "Simple at ligtas na imbakan ng file",
+                "description": "Isang sentrong imbakan para sa file sharing at syncing. Itago ang lahat ng file sa ligtas at madaling gamiting cloud storage.",
+                "link": "https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91"
+            }
+        ]
+    },
+    "CaseStudiesComp": {
+        "heading": "Tagumpay ng Customer sa Tulong ng MSG91",
+        "linkText": "Alamin pa",
+        "casestudies": [
+            {
+                "img": "/assets/global/index/stories/milkbasket-bg.png",
+                "logo": "/assets/global/index/stories/milkbasket-logo.png",
+                "description": "Ang Milkbasket ay regular na nag-a-update sa kanilang mga customer sa pamamagitan ng proactive na suporta at rekomendasyon",
+                "link": "/case-studies/milkbasket"
+            },
+            {
+                "img": "/assets/global/index/stories/unacademy-bg.png",
+                "logo": "/assets/global/index/stories/unacademy-logo.png",
+                "description": "Ginagamit ng Unacademy ang omnichannel upang mapanatiling aktibo at nurtured ang audience gamit ang personalisadong kampanya",
+                "link": "/case-studies/unacademy"
+            },
+            {
+                "img": "/assets/global/index/stories/ixigo-bg.png",
+                "logo": "/assets/global/index/stories/ixigo-logo.png",
+                "description": "Ginagamit ng Ixigo ang multichannel communication para ma-update ang audience sa messaging, email, at WhatsApp",
+                "link": "/case-studies/ixigo"
+            }
+        ]
+    },
+    "FaqsComp": {
+        "heading": "Mga Madalas Itanong",
+        "faqs": [
+            {
+                "question": "Paano makakatulong ang MSG91 sa aking negosyo?",
+                "answer": "Nagbibigay ang MSG91 ng maraming benepisyo sa mga negosyo tulad ng pinahusay na pakikipag-ugnayan sa customer, streamlined na komunikasyon, mas mataas na kahusayan, at mas magandang reputasyon ng brand."
+            },
+            {
+                "question": "Ano ang pinagkaiba ng MSG91 sa iba pang mga platform?",
+                "answer": "Ang MSG91 ay bukod-tangi dahil sa pagiging maaasahan, scalability, at versatility nito. Mayroon itong advanced features, custom solutions, at mahusay na support para sa negosyo."
+            },
+            {
+                "question": "Angkop ba ang MSG91 sa lahat ng uri ng negosyo?",
+                "answer": "Oo, mula startup hanggang enterprise, kayang iakma ng MSG91 ang platform sa iyong mga pangangailangan sa paglago."
+            },
+            {
+                "question": "Ligtas ba ang MSG91?",
+                "answer": "Oo, gumagamit ang MSG91 ng industry-standard security measures tulad ng encryption at OTP verification upang protektahan ang sensitibong data."
+            },
+            {
+                "question": "Maaari ko bang isama ang MSG91 sa aking kasalukuyang sistema?",
+                "answer": "Oo naman! May developer-friendly APIs at dokumentasyon ang MSG91 upang madaling maisama sa iyong umiiral na mga system."
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Simulan ang paggawa ng perpektong karanasan sa customer engagement",
+        "buttons": {
+            "contactSales": {
+                "text": "Makipag-ugnayan sa Sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Presyo",
+                "link": "pricing"
+            },
+            "getStarted": {
+                "text": "Magsimula",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
