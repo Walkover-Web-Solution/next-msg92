@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Platform ng Suporta sa Customer para sa Iyong Negosyo ng MSG91-Philippines",
-        "description": "Ang HELLO ay isang matatag na omnichannel platform na nagpapalakas sa iyong customer support team. Maghatid ng pambihirang karanasan sa serbisyo gamit ang mga data-driven na insight."
+        "title": "Platform ng Suporta sa Customer para sa Iyong Negosyo ng MSG91-Pilipinas",
+        "description": "Ang HELLO ay isang matatag na omnichannel platform na nagpapalakas sa iyong customer support team. Maghatid ng natatanging karanasan sa serbisyo gamit ang mga insight na batay sa datos."
     },
     "BannerComp": {
         "slug": "hello",
@@ -10,12 +10,12 @@
             "icon": "/assets/icons/products/hello.svg"
         },
         "tagline": "Baguhin ang Suporta sa Customer",
-        "heading": "Hello ",
-        "subheading": "Huwag mawalan ng pokus sa mahalaga. Huwag lang lutasin ang mga tiket, bumuo ng relasyon sa customer",
+        "heading": "Hello",
+        "subheading": "Huwag mawalan ng pokus sa mahalaga. Huwag lang magresolba ng mga ticket, bumuo ng matibay na relasyon sa customer",
         "banner_img": "/assets/global/hello/heroimg.png",
         "getstarted_btn": "Magsimula",
         "trustedByComp": {
-            "heading": "Suportahan ang 15+ channel at platform",
+            "heading": "Suportado ang 15+ channel at platform",
             "logos": [
                 {
                     "name": "facebook",
@@ -71,37 +71,37 @@
             {
                 "icon": "MdSupportAgent",
                 "name": "Walang Limitasyong Ahente",
-                "content": "Walang limitasyong libreng ahente para palakasin ang iyong customer support. Mas maraming ahente, tuloy-tuloy na pakikipag-ugnayan, mas maraming tiket na nalulutas at mas mahusay na suporta sa customer. Walang limitasyon sa bilang ng iyong mga ahente ng customer support.",
+                "content": "Walang limitasyong libreng ahente para palakasin ang iyong customer support. Mas maraming ahente, tuloy-tuloy na pakikipag-ugnayan, mas maraming ticket na nareresolba, at mas mahusay na suporta sa customer. Walang limitasyon sa bilang ng iyong mga ahente ng customer support.",
                 "img": "/assets/global/hello/unlimited-agents.svg"
             },
             {
                 "icon": "MdOutlineSmartToy",
                 "name": "Chatbot",
-                "content": "Lutasin ang mga tanong ng customer 24/7 sa text at boses. Hayaan ang chatbot na asikasuhin ang mga simpleng paulit-ulit na tanong na hindi nangangailangan ng soft skills at karanasan ng iyong mga ahente, at kapag kinakailangan, agad na ipasa sa live agent.",
+                "content": "Sagutin ang mga tanong ng customer 24/7 sa text at voice. Hayaan ang chatbot na tugunan ang mga simpleng paulit-ulit na tanong na hindi nangangailangan ng soft skills at karanasan ng iyong mga ahente, at kapag kinakailangan, agad na ipasa sa live agent.",
                 "img": "/assets/global/hello/chatbot.svg"
             },
             {
                 "icon": "MdAdsClick",
-                "name": "Kontrol ng Screen",
-                "content": "Kontrolin ang screen ng iyong customer kahit saan ka man. Gamitin ang remote screen na parang nandoon ka talaga. Kapag nakuha mo ang access, makukuha mo ang buong kontrol sa screen, mouse, at keyboard ng customer para mabilis na maresolba ang mga isyu.",
+                "name": "Screen Control",
+                "content": "Kontrolin ang screen ng iyong customer kahit nasaan ka. Magtrabaho sa remote screen na parang nandoon ka mismo. Kapag nabigyan ng access, makukuha mo ang buong kontrol sa screen, mouse, at keyboard ng customer para mabilis maresolba ang isyu.",
                 "img": "/assets/global/hello/screen-control.svg"
             },
             {
                 "icon": "MdOutlineScreenShare",
-                "name": "Video Call / Pagbabahagi ng Screen",
-                "content": "Mataas na kalidad ng video call saan man naroroon ang iyong customer. Makipag-video call sa iyong customer para mag-co-browse ng kanilang screen. Ikaw ang may kontrol sa meeting habang nagbabahagi ng screen ang customer para magpakita ng impormasyon o mag-ulat ng isyu.",
+                "name": "Video Call / Screen Sharing",
+                "content": "Mataas na kalidad ng video call saan man naroon ang iyong customer. Makipag-video call sa customer para mag-co-browse ng kanilang screen. Kontrolin ang meeting habang nagsha-share ng screen ang customer para magpakita ng impormasyon o mag-ulat ng isyu.",
                 "img": "/assets/global/hello/video-call---screen-sharing.svg"
             },
             {
                 "icon": "MdOutlineSchema",
-                "name": "Daloy ng Trabaho (Workflow)",
-                "content": "Awtomatikong i-assign ang mga pag-uusap sa isang team o dedikadong ahente. Magsimula gamit ang aming umiiral na Workflow o mag-set up ng sarili mong Workflow batay sa pangangailangan ng iyong negosyo.",
+                "name": "Workflow",
+                "content": "Awtomatikong i-assign ang mga usapan sa isang team o dedikadong ahente. Magsimula gamit ang aming kasalukuyang Workflow o mag-set up ng sarili mong Workflow ayon sa pangangailangan ng iyong negosyo.",
                 "img": "/assets/global/hello/workflow.svg"
             },
             {
                 "icon": "MdOutlineAnalytics",
                 "name": "Analytics",
-                "content": "Analytics at mga ulat para subaybayan ang performance ng iyong ahente. Makakuha ng malalim at kapaki-pakinabang na insight para maghatid ng mahusay na suporta at maabot ang iyong mga layunin. Ang madaling suriin na analytics report ay tutulong sa iyong mga ahente na mapabuti pa ang kanilang serbisyo.",
+                "content": "Analytics at mga ulat para subaybayan ang performance ng iyong mga ahente. Makakuha ng malalim at kapaki-pakinabang na insight para maghatid ng mahusay na suporta at maabot ang iyong mga layunin. Ang madaling intindihin na analytics reports ay tutulong sa iyong mga ahente na iangat ang kanilang customer support.",
                 "img": "/assets/global/hello/analytics.svg"
             }
         ]
@@ -110,32 +110,32 @@
         "heading": "Mga Madalas Itanong",
         "faqs": [
             {
-                "question": "Paano mag-subscribe sa inyong Hello Plan?",
-                "answer": "Sa Hello panel, i-click ang subscription tab na nasa kaliwang sulok. Bubuksan nito ang pahina ng kasalukuyang plano at ang opsyon na bumili ng bagong plano. I-click iyon at makakapili ka ng buwanan o taunang opsyon. Maaari ka ring direktang mag-subscribe sa website. Pumunta sa Hello Service, i-click ang Magsimula, punan ang kinakailangang detalye, at mag-subscribe sa plano."
+                "question": "Paano mag-subscribe sa Hello Plan?",
+                "answer": "Sa Hello panel, i-click ang subscription tab na makikita sa kaliwang bahagi. Bubuksan nito ang pahina ng kasalukuyang plan at ang opsyon para bumili ng bagong plan. I-click ito at makakapili ka ng buwanan o taunang opsyon.\n Maaari ka ring direktang mag-subscribe sa plan mula sa website. Pumunta sa Hello Service, i-click ang 'Magsimula', punan ang kinakailangang detalye, at mag-subscribe sa plan."
             },
             {
                 "question": "May bayad ba ang AI chatbots?",
-                "answer": "Wala, walang bayad ang Chat Bot, kami ay naniningil lamang para sa basic at premium na plano. Maaari mong gamitin ang chatbot sa libreng plano hanggang 50 tiket sa Hello, pagkatapos nito kailangan mong i-upgrade ang iyong Hello plan. Ibinibigay namin ang chatbot nang libre para sa trial. Maaari mong gamitin ang Chat Bot na ito sa WhatsApp, Instagram, Chat Widget sa iyong Website, Facebook at iba pa. Subukan na ang Chat Bot ngayon."
+                "answer": "Wala, walang bayad ang Chat Bot, may singil lang para sa basic at premium plans. Maaari mong gamitin ang chatbot sa libreng plan hanggang 50 ticket sa Hello, pagkatapos nito kailangan mong i-upgrade ang iyong Hello plan. Karaniwan, libre naming ibinibigay ang chatbot para sa trial.\n Maaari mong gamitin ang Chat Bot na ito sa WhatsApp, Instagram, Chat Widget sa iyong Website, Facebook, at iba pa. Subukan na ang Chat Bot ngayon."
             },
             {
                 "question": "May dagdag bang bayad para sa Instagram/Facebook Inbox?",
-                "answer": "<p>Maaari mong gamitin ang mga inbox na kasama sa iyong Hello Plan para sa Instagram o Whatsapp. Narito ang bilang ng mga inbox sa bawat plano.</p><ul><li>Libreng Plano- 2 inbox</li><li>Basic Plan- 2 inbox</li><li>Premium Plan- 3 inbox</li></ul><p>Kung nagamit mo na ang lahat ng inbox, maaari kang bumili ng bagong inbox sa basic at premium plan sa halagang 500 bawat isa.</p><p>Sa libreng plano, hindi ka makakabili ng bagong inbox. Kailangan mong mag-upgrade ng plano para sa dagdag na inbox.</p>"
+                "answer": "<p>Maaari mong gamitin ang mga inbox na kasama sa iyong Hello Plan para sa Instagram o Whatsapp. Narito ang bilang ng inbox bawat plan.</p><ul><li>Libreng Plan- 2 inbox</li><li>Basic Plan- 2 inbox</li><li>Premium Plan- 3 inbox</li></ul><p>Kung nagamit mo na ang lahat ng inbox, maaari kang bumili ng bagong inbox sa basic at premium plan sa halagang 500 bawat isa.</p><p>Sa libreng plan, hindi ka makakabili ng dagdag na inbox. Kailangan mong mag-upgrade ng plan kung gusto mo ng dagdag na inbox.</p>"
             },
             {
-                "question": "Ano ang singil para sa mga tiket at dagdag na tiket sa Hello?",
-                "answer": "<p>Nagbibigay kami ng buwanang tiket sa bawat plano at kung maubos ito, maaari kang gumamit ng dagdag na tiket na babayaran mo sa postpaid billing.</p><p>Narito ang bilang ng mga tiket sa bawat plano:</p><ul><li>Libreng Plano- 50 tiket/buwan</li><li>Basic Plan- 1000 tiket/buwan</li><li>Premium Plan- 2000 tiket/buwan</li></ul><p>Dagdag na singil para sa bawat tiket sa iba't ibang plano:</p><ul><li>Libreng Plano- walang opsyon para sa dagdag na tiket, kailangan mong mag-upgrade sa Basic o Premium na Hello Plan.</li><li>Basic Plan- ₱0.5 bawat tiket</li><li>Premium Plan- ₱0.75 bawat tiket</li></ul>"
+                "question": "Ano ang singil para sa mga ticket at dagdag na ticket sa Hello?",
+                "answer": "<p>Nagbibigay kami ng buwanang ticket sa bawat plan at kung maubos ito, maaari kang gumamit ng dagdag na ticket na babayaran mo sa postpaid billing.</p><p>Narito ang bilang ng ticket bawat plan:</p><ul><li>Libreng Plan- 50 ticket/buwan</li><li>Basic Plan- 1000 ticket/buwan</li><li>Premium Plan- 2000 ticket/buwan</li></ul><p>Dagdag na singil bawat ticket sa iba't ibang plan:</p><ul><li>Libreng Plan- walang opsyon para sa dagdag na ticket, kailangan mong mag-upgrade sa Basic o Premium.</li><li>Basic Plan- ₹0.5 bawat ticket</li><li>Premium Plan- ₹0.75 bawat ticket</li></ul>"
             },
             {
                 "question": "Maaari ko bang i-customize ang Hello Plan?",
-                "answer": "Oo, maaari kang magkaroon ng customized na plano para sa Hello. I-click ang link para mag-schedule ng meeting sa aming sales heads."
+                "answer": "Oo, maaari kang magkaroon ng customized na plan para sa Hello. I-click ang link para mag-schedule ng meeting sa sales heads."
             }
         ]
     },
     "PreFooterComp": {
-        "content": "Simulan ang pagbuo ng iyong ideal na karanasan sa customer engagement",
+        "content": "Simulan ang paggawa ng iyong ideal na karanasan sa customer engagement",
         "buttons": {
             "contactSales": {
-                "text": "Makipag-ugnayan sa sales",
+                "text": "Kontakin ang sales",
                 "link": "/contact-us"
             },
             "pricing": {

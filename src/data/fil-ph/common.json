@@ -1,12 +1,9 @@
 {
     "common": true,
     "notification": {
-        "support": "Makipag-ugnayan",
-        "login": "Mag-login",
-        "hide": [
-            "signup",
-            "singin"
-        ]
+        "support": "Makipag-ugnayan sa Amin",
+        "login": "MAG-LOG IN",
+        "hide": ["signup", "singin"]
     },
     "menu": {
         "products": "Mga Produkto",
@@ -22,33 +19,51 @@
                     {
                         "name": "Campaign",
                         "slug": "campaign",
-                        "description": "Automation Batay sa Kaganapan"
+                        "description": "Automation na Batay sa Kaganapan"
                     },
                     {
-                        "name": "Segment",
+                        "name": "Segmento",
                         "slug": "segmento",
                         "description": "Pamamahala ng mga Contact"
                     },
                     {
                         "name": "OTP",
                         "slug": "otp",
-                        "description": "Pinasimpleng OTP Platform"
+                        "description": "Pinadaling OTP Platform"
                     }
                 ]
             },
             {
                 "name": "Mga Channel",
                 "products": [
-                    { "name": "SMS", "slug": "sms" },
-                    { "name": "RCS", "slug": "rcs" },
-                    { "name": "Email", "slug": "email" },
-                    { "name": "WhatsApp", "slug": "whatsapp" },
-                    { "name": "Voice", "slug": "voice" },
-                    { "name": "Mga Numero", "slug": "numbers" }
+                    {
+                        "name": "SMS",
+                        "slug": "sms"
+                    },
+                    {
+                        "name": "RCS",
+                        "slug": "rcs"
+                    },
+                    {
+                        "name": "Email",
+                        "slug": "email"
+                    },
+                    {
+                        "name": "WhatsApp",
+                        "slug": "whatsapp"
+                    },
+                    {
+                        "name": "Voice",
+                        "slug": "voice"
+                    },
+                    {
+                        "name": "Mga Numero",
+                        "slug": "numbers"
+                    }
                 ]
             },
             {
-                "name": "Mga Utility",
+                "name": "Mga Kagamitan",
                 "products": [
                     {
                         "name": "URL Shortener",
@@ -58,14 +73,14 @@
                     {
                         "name": "KnowledgeBase",
                         "slug": "knowledgebase",
-                        "description": "Pamahalaan ang mga Help Document at Gabay"
+                        "description": "Pamahalaan ang mga Dokumento at Gabay"
                     }
                 ]
             }
         ],
-        "integrations": "Mga Integrasyon",
+        "integrations": "Integrasyon",
         "integrations_list": {
-            "explore_btn": "Tuklasin ang Higit Pang Plugins",
+            "explore_btn": "Tuklasin pa ang mga Plugin",
             "content": [
                 {
                     "name": "Shopify",
@@ -117,7 +132,7 @@
                     {
                         "name": "Campaign",
                         "slug": "campaign",
-                        "description": "Automation Batay sa Kaganapan"
+                        "description": "Automation na Batay sa Kaganapan"
                     },
                     {
                         "name": "Segmento",
@@ -134,16 +149,34 @@
             {
                 "name": "Mga Channel",
                 "products": [
-                    { "name": "SMS", "slug": "sms" },
-                    { "name": "SendOTP", "slug": "otp" },
-                    { "name": "Email", "slug": "email" },
-                    { "name": "WhatsApp", "slug": "whatsapp" },
-                    { "name": "Voice", "slug": "voice" },
-                    { "name": "RCS", "slug": "rcs" }
+                    {
+                        "name": "SMS",
+                        "slug": "sms"
+                    },
+                    {
+                        "name": "SendOTP",
+                        "slug": "otp"
+                    },
+                    {
+                        "name": "Email",
+                        "slug": "email"
+                    },
+                    {
+                        "name": "WhatsApp",
+                        "slug": "whatsapp"
+                    },
+                    {
+                        "name": "Voice",
+                        "slug": "voice"
+                    },
+                    {
+                        "name": "RCS",
+                        "slug": "rcs"
+                    }
                 ]
             },
             {
-                "name": "Mga Utility",
+                "name": "Mga Kagamitan",
                 "products": [
                     {
                         "name": "URL Shortener",
@@ -153,30 +186,36 @@
                     {
                         "name": "KnowledgeBase",
                         "slug": "knowledgebase",
-                        "description": "Pamahalaan ang mga Help Document at Gabay"
+                        "description": "Pamahalaan ang mga Dokumento at Gabay"
                     }
                 ]
             }
         ],
-        "apidocs": "API Dokumentasyon",
+        "apidocs": "API Docs",
         "signup_btn": "Mag-sign Up",
-        "hide": [
-            "signup",
-            "singin"
-        ]
+        "hide": ["signup", "singin"]
     },
     "footer": {
-        "hide": [
-            "signup",
-            "singin"
-        ],
+        "hide": ["signup", "singin"],
         "products": {
             "name": "Aming mga Produkto",
             "links": [
-                { "name": "Hello", "link": "hello" },
-                { "name": "Segmento", "link": "segmento" },
-                { "name": "Campaign", "link": "campaign" },
-                { "name": "OTP", "link": "otp" },
+                {
+                    "name": "Hello",
+                    "link": "hello"
+                },
+                {
+                    "name": "Segmento",
+                    "link": "segmento"
+                },
+                {
+                    "name": "Campaign",
+                    "link": "campaign"
+                },
+                {
+                    "name": "OTP",
+                    "link": "otp"
+                },
                 {
                     "name": "OTP-MagicLink",
                     "link": "otp/magiclink",
@@ -185,12 +224,18 @@
             ]
         },
         "utilities": {
-            "name": "Mga Utility",
+            "name": "Mga Kagamitan",
             "links": [
-                { "name": "URL Shortener", "link": "shorturl" },
-                { "name": "KnowledgeBase", "link": "knowledgebase" },
                 {
-                    "name": "Libreng WhatsApp Link Generator",
+                    "name": "URL Shortener",
+                    "link": "shorturl"
+                },
+                {
+                    "name": "KnowledgeBase",
+                    "link": "knowledgebase"
+                },
+                {
+                    "name": "Libreng WhatsApp link generator",
                     "link": "free-whatsapp-link-generator"
                 },
                 {
@@ -202,22 +247,43 @@
         "channels": {
             "name": "Mga Channel",
             "links": [
-                { "name": "SMS", "link": "sms" },
-                { "name": "Email", "link": "email" },
-                { "name": "WhatsApp", "link": "whatsapp" },
-                { "name": "Voice", "link": "voice" },
-                { "name": "Mga Numero", "link": "numbers" }
+                {
+                    "name": "SMS",
+                    "link": "sms"
+                },
+                {
+                    "name": "Email",
+                    "link": "email"
+                },
+                {
+                    "name": "WhatsApp",
+                    "link": "whatsapp"
+                },
+                {
+                    "name": "Voice",
+                    "link": "voice"
+                },
+                {
+                    "name": "Mga Numero",
+                    "link": "numbers"
+                }
             ]
         },
         "resources": {
             "name": "Mga Mapagkukunan",
             "links": [
-                { "name": "Gabay", "link": "https://msg91.com/guide" },
                 {
-                    "name": "Mga Kaso ng Pag-aaral",
+                    "name": "Gabay",
+                    "link": "https://msg91.com/guide"
+                },
+                {
+                    "name": "Mga Case Study",
                     "link": "https://msg91.com/case-studies"
                 },
-                { "name": "Mga FAQ", "link": "https://msg91.com/help" },
+                {
+                    "name": "FAQ",
+                    "link": "https://msg91.com/help"
+                },
                 {
                     "name": "API Dokumentasyon",
                     "link": "https://docs.msg91.com/overview"
@@ -229,12 +295,24 @@
             ]
         },
         "discover": {
-            "name": "Alamin Pa",
+            "name": "Tuklasin",
             "links": [
-                { "name": "Tungkol sa Amin", "link": "about-us" },
-                { "name": "Presyo", "link": "pricing/hello" },
-                { "name": "Makipag-ugnayan", "link": "contact-us" },
-                { "name": "Mga Developer", "link": "developers" },
+                {
+                    "name": "Tungkol sa amin",
+                    "link": "about-us"
+                },
+                {
+                    "name": "Presyo",
+                    "link": "pricing/hello"
+                },
+                {
+                    "name": "Makipag-ugnayan sa Amin",
+                    "link": "contact-us"
+                },
+                {
+                    "name": "Mga Developer",
+                    "link": "developers"
+                },
                 {
                     "name": "MSG91 para sa mga startup",
                     "link": "startups"
@@ -244,27 +322,57 @@
                     "link": "partners-and-integrations"
                 },
                 {
-                    "name": "Maging Isang Partner",
+                    "name": "Maging Partner",
                     "link": "become-a-partner"
                 },
-                { "name": "Karera", "link": "https://walkover.in/careers" },
-                { "name": "Mga Sertipiko", "link": "certificates" },
-                { "name": "Paghambingin", "link": "compare" }
+                {
+                    "name": "Karera",
+                    "link": "https://walkover.in/careers"
+                },
+                {
+                    "name": "Mga Sertipiko",
+                    "link": "certificates"
+                },
+                {
+                    "name": "Ihambing",
+                    "link": "compare"
+                }
             ]
         },
         "policies": {
             "links": [
-                { "name": "Mga Tuntunin ng Paggamit", "link": "terms-of-use" },
-                { "name": "Patakaran sa Privacy", "link": "privacy-policy" },
-                { "name": "GDPR", "link": "gdpr" },
-                { "name": "Patakaran sa Refund", "link": "refund-policy" },
-                { "name": "Walang Spam", "link": "no-spam" },
-                { "name": "Patakaran sa Startup", "link": "startup-policy" },
+                {
+                    "name": "Mga Tuntunin ng Paggamit",
+                    "link": "terms-of-use"
+                },
+                {
+                    "name": "Patakaran sa Privacy",
+                    "link": "privacy-policy"
+                },
+                {
+                    "name": "GDPR",
+                    "link": "gdpr"
+                },
+                {
+                    "name": "Patakaran sa Refund",
+                    "link": "refund-policy"
+                },
+                {
+                    "name": "Walang Spam",
+                    "link": "no-spam"
+                },
+                {
+                    "name": "Patakaran para sa Startup",
+                    "link": "startup-policy"
+                },
                 {
                     "name": "Patakaran sa Makatarungang Presyo",
                     "link": "fair-pricing-policy"
                 },
-                { "name": "Patakaran sa Cookie", "link": "cookie-policy" }
+                {
+                    "name": "Patakaran sa Cookie",
+                    "link": "cookie-policy"
+                }
             ]
         },
         "downloads": {

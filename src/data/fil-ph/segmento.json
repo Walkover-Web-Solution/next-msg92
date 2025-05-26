@@ -1,0 +1,90 @@
+{
+    "HeadComp": {
+        "title": "Software para sa Customer Segmentation | MSG91-Pilipinas",
+        "description": "Awtomatikong i-segment ang mga customer batay sa kanilang kilos, demograpiko, at interes. I-personalize ang mga paglalakbay at magpatupad ng mga target na kampanya para sa mas magagandang resulta."
+    },
+    "BannerComp": {
+        "slug": "segmento",
+        "product": {
+            "name": "Segmento",
+            "icon": "/assets/icons/products/segmento.svg"
+        },
+        "tagline": "marketing na nakabatay sa target",
+        "heading": "I-personalize ang customer journey gamit ang data segmentation.",
+        "subheading": "I-segment ang mga tao batay sa kanilang demograpiko, kilos, interes, at iba pang katangian.",
+        "banner_img": "/assets/global/segmento/segmento.svg",
+        "getstarted_btn": "Magsimula nang Libre",
+        "trustedByComp": {
+            "heading": "Pinagkakatiwalaan ng 30,000+ negosyo sa buong mundo",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Indian Oil",
+                    "url": "/assets/trusted_by/indianoil.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Mga Tampok",
+        "iconColor": "text-campaign",
+        "features": [
+            {
+                "name": "Gumawa ng mga filter ayon sa segment",
+                "content": "<strong>Gumawa ng filtered na listahan sa iyong business phonebook.</strong>Iakma ang iyong marketing sa pamamagitan ng pagtutok sa mga tao batay sa kanilang pangangailangan, katangian, o pattern sa pamamagitan ng paggawa ng partikular na filter sa iyong phonebook.",
+                "img": "/assets/global/segmento/segmento-create-filters-as-per-segments.svg"
+            },
+            {
+                "name": "Automation Trigger",
+                "content": "<strong>I-trigger ang makabuluhang impormasyon para sa mga na-filter na segment.</strong>Awtomatikong magsagawa ng mga aksyon sa mga filter na ginawa batay sa kilos o input ng user upang maihatid ang kaugnay at personalisadong mensahe para sa bawat grupo.",
+                "img": "/assets/global/segmento/segmento-automation-trigger.svg"
+            },
+            {
+                "name": "Automation Repeater",
+                "content": "<strong>Ipadala ang pinaka-nauugnay na nilalaman sa pinaka-angkop na oras.</strong>Ipadala ang mga awtomatikong mensahe sa parehong filter sa mga takdang oras gamit ang paboritong business communication channel ng iyong audience.",
+                "img": "/assets/global/segmento/segmento-automation-repeater.svg"
+            },
+            {
+                "name": "Open API",
+                "content": "<strong>Gamitin ang API para kumuha, gumawa, mag-update, o mag-delete ng contact.</strong>Nagbibigay kami ng API para sa bawat aksyon, maliit man o malaki, upang makapagpokus ka sa pinakamahalaga—ang pagbuo ng iyong kamangha-manghang produkto.",
+                "img": "/assets/global/segmento/segmento-open-api.svg"
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Simulan ang pagbuo ng iyong ideal na karanasan sa customer engagement",
+        "buttons": {
+            "contactSales": {
+                "text": "Kontakin ang sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Presyo",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Magsimula",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

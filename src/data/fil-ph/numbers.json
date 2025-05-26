@@ -1,0 +1,115 @@
+{
+    "HeadComp": {
+        "title": "Numbers API para sa negosyo | MSG91-Pilipinas",
+        "description": "Palakasin ang pakikipag-ugnayan sa customer gamit ang Long Codes para sa pagtanggap, pagsagot, at pag-customize ng SMS. Magpadala ng personalisadong mensahe at pagbutihin ang komunikasyon."
+    },
+    "BannerComp": {
+        "slug": "numbers",
+        "product": {
+            "name": "Numbers",
+            "icon": "/assets/icons/products/numbers.svg"
+        },
+        "tagline": "Buksan ang Lakas ng Virtual Numbers",
+        "heading": "Tumanggap, Sumagot, at I-customize ang SMS gamit ang Long Codes, para sa Pinakamahusay na Pakikipag-ugnayan at Komunikasyon!",
+        "banner_img": "/assets/global/numbers/banner.svg",
+        "getstarted_btn": "Magsimula",
+        "trustedByComp": {
+            "heading": "Pinagkakatiwalaan ng 30,000+ negosyo sa buong mundo",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Mga Tampok",
+        "iconColor": "text-campaign",
+        "features": [
+            {
+                "name": "Pagpapalawak ng Global Market gamit ang Numbers: Kumonekta sa Pilipinas",
+                "content": "Ang Numbers ay isang estratehikong kasangkapan para sa mga negosyong nais palawakin ang kanilang abot at epektibong makapasok sa merkado ng Pilipinas. Sa pagkakaroon ng lokal na Philippine phone numbers, madaling makakapagtatag ng matibay na presensya ang mga kumpanya, na nagpapadali ng tuloy-tuloy na koneksyon sa mga kliyente at kasosyo sa Pilipinas. Pinapadali nito ang accessibility, pinapataas ang kredibilidad, at binabawasan ang distansya, nag-aalok ng propesyonal, matipid, at epektibong estratehiya para sa global market expansion sa Pilipinas.",
+                "img": "/assets/global/numbers/numbers-global-market-entry-with-numbers.svg"
+            },
+            {
+                "name": "Matipid sa Gastos",
+                "content": "Ang Numbers sa Pilipinas ay nag-aalok ng abot-kayang alternatibo sa tradisyonal na linya ng telepono, na may mas mababang gastos sa pag-setup at maintenance. Inaalis ng mga numerong ito ang pangangailangan para sa pisikal na imprastraktura, kaya't ito ay matipid para sa mga negosyong nag-ooperate sa merkado ng Pilipinas.",
+                "img": "/assets/global/numbers/numbers-cost-efficiency.svg"
+            },
+            {
+                "name": "Missed Call Services",
+                "content": "Missed Call Services: Maraming virtual number provider ang nag-aalok ng mga tampok tulad ng missed call notifications, na nagpapahintulot sa mga negosyo sa Pilipinas na agad matugunan ang mga customer na hindi nakapag-ugnayan. Pinapahusay ng tampok na ito ang pakikipag-ugnayan at tugon sa customer sa merkado ng Pilipinas.",
+                "img": "/assets/global/numbers/numbers-missed-call-services.svg"
+            },
+            {
+                "name": "Keyword Specific Messaging",
+                "content": "<strong>Maaari kang pumili ng natatanging keyword para sa iyong negosyo o kampanya</strong>Kapag ang mga user ay nagpadala ng SMS na nagsisimula sa iyong napiling keyword sa iyong dedicated o shared long code, matatanggap mo ang mga mensaheng ito. Pinapagana ng tampok na ito ang personalisado at kontekstong komunikasyon.",
+                "img": "/assets/global/numbers/numbers-keyword-specific-messaging.svg"
+            },
+            {
+                "name": "Keyword Independent Messaging",
+                "content": "<strong>Maliban sa mga keyword</strong>maaari kang tumanggap ng mga mensahe kahit walang partikular na keyword. Pinapalawak nito ang iyong opsyon sa komunikasyon, na nagpapahintulot sa mga user na makipag-ugnayan kahit walang nakatakdang keyword.",
+                "img": "/assets/global/numbers/numbers-keyword-independent-messaging.svg"
+            },
+            {
+                "name": "Pre-formatted Set of Questions",
+                "content": "Maaari kang mag-set up ng pre-formatted na set ng mga tanong na ipapadala sa iyong audience. Lalo itong kapaki-pakinabang para sa pagsasagawa ng survey, quiz, o pagkuha ng partikular na impormasyon sa organisadong paraan.",
+                "img": "/assets/global/numbers/numbers-pre-formatted-questions.svg"
+            },
+            {
+                "name": "Online Surveys",
+                "content": "Gamitin ang aming Numbers service para gumawa at magsagawa ng online surveys. Mangolekta ng mahahalagang insight at feedback mula sa iyong audience nang madali.",
+                "img": "/assets/global/numbers/numbers-online-survey.svg"
+            },
+            {
+                "name": "Lead Generation",
+                "content": " Makilahok sa lead generation sa pamamagitan ng pagpapahintulot sa mga potensyal na customer na makipag-ugnayan sa iyo sa pamamagitan ng SMS. Mangolekta ng contact details at mga inquiry upang mapalago ang iyong customer base.",
+                "img": "/assets/global/numbers/numbers-lead-generation.svg"
+            },
+            {
+                "name": "Gumawa ng Auto Responses",
+                "content": "May opsyon kang mag-set up ng automated na sagot para sa mga mensaheng natatanggap mo. I-customize ang mga sagot na ito upang magbigay ng agarang tugon o impormasyon sa iyong mga user.",
+                "img": "/assets/global/numbers/numbers-auto-responses.svg"
+            },
+            {
+                "name": "Integrasyon sa Web Applications",
+                "content": "Madaling i-integrate ang Numbers sa iyong web application o software. Pinapalawak nito ang kakayahan ng iyong software at pinapabuti ang komunikasyon sa user.",
+                "img": "/assets/global/numbers/numbers-integration-into-web.svg"
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Simulan ang paggawa ng iyong ideal na karanasan sa customer engagement",
+        "buttons": {
+            "contactSales": {
+                "text": "Kontakin ang sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Presyo",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Magsimula",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

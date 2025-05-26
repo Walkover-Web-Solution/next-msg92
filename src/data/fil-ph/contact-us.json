@@ -1,0 +1,21 @@
+{
+    "HeadComp": {
+        "title": "Makipag-ugnayan sa Amin - Kumonekta sa Team MSG91 Pilipinas!",
+        "description": "May mga tanong, komento, o suhestiyon? Narito kami upang tumulong. Makipag-ugnayan sa amin sa pamamagitan ng telepono, chat, o email para sa mabilis na suporta."
+    },
+    "ContactUsComp": {
+        "heading": "Makipag-ugnayan sa Amin",
+        "sales": {
+            "heading": "Benta",
+            "email": "sales@msg91.com",
+            "phone": "+917049088848",
+            "phone2": "+918889378605"
+        },
+        "support": {
+            "heading": "Suporta",
+            "email": "support@msg91.com",
+            "whatsapp": "+918818888733",
+            "phone": "+918818888733"
+        }
+    }
+}

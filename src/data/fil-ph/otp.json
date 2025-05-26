@@ -1,0 +1,287 @@
+{
+  "HeadComp": {
+    "title": "Magpadala ng OTP | Mga Tagapagbigay ng Serbisyo ng OTP - MSG91-Pilipinas",
+    "description": "Seguraduhin ang iyong platform gamit ang OTP SMS API ng MSG91. Madaling ipatupad ang two-factor authentication para sa maaasahan at tuloy-tuloy na seguridad ng customer."
+  },
+  "BannerComp": {
+    "slug": "otp",
+    "product": {
+      "name": "OTP",
+      "icon": "/assets/icons/products/otp.svg"
+    },
+    "tagline": "Mabilis at Seguradong Pag-beripika",
+    "heading": "Pinakasimple, pinakamabilis, at pinakaepektibong paraan para i-verify ang iyong mga user",
+    "subheading": "Bumuo ng tiwala ng customer at bigyang-proteksyon ang negosyo gamit ang two-factor authentication.",
+    "banner_img": "/assets/global/otp/banner.webp",
+    "not_absolute": "true",
+    "getstarted_btn": "Magsimula nang Libre",
+    "trustedByComp": {
+      "heading": "Pinagkakatiwalaan ng 30,000+ negosyo sa buong mundo",
+      "logos": [
+        {
+          "name": "Xiaomi",
+          "url": "/assets/trusted_by/xiaomi.svg"
+        },
+        {
+          "name": "Unacademy",
+          "url": "/assets/trusted_by/unacademy.svg"
+        },
+        {
+          "name": "Dream11",
+          "url": "/assets/trusted_by/dream11.svg"
+        },
+        {
+          "name": "Indeed",
+          "url": "/assets/trusted_by/indeed.svg"
+        },
+        {
+          "name": "Indian Oil",
+          "url": "/assets/trusted_by/indianoil.svg"
+        },
+        {
+          "name": "Ixigo",
+          "url": "/assets/trusted_by/ixigo.svg"
+        }
+      ]
+    }
+  },
+  "FeatureComp": {
+    "heading": "Mga Tampok",
+    "iconColor": "text-otp",
+    "features": [
+      {
+        "name": "Magic Links: Pag-authenticate nang Walang Password sa Isang Click",
+        "content": "Ang Magic Link ay isang seguradong paraan ng pag-login kung saan hindi na kailangan ng password ng user. Pagkatapos ibigay ang kanilang email o numero ng telepono, makakatanggap sila ng natatangi at time-sensitive na link. Ang pag-click sa link ay magbe-verify ng kanilang pagkakakilanlan at maglo-login sa kanila nang madali at ligtas.",
+        "img": "/assets/global/otp/magic_links.webp",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Login na Walang Password",
+              "description": "Tinatanggal ang pangangailangang tandaan ang mga password, kaya mas mabilis at madali ang pag-login."
+            },
+            {
+              "name": "Mabilis na Pagbawi ng Account",
+              "description": "Pinapadali ang muling pag-access ng user nang hindi na kailangang dumaan sa password reset."
+            },
+            {
+              "name": "Isang-Click na Pag-sign Up",
+              "description": "Pinapadali ang pagpaparehistro at pag-login ng mga bagong user sa isang hakbang, tumataas ang conversion."
+            },
+            {
+              "name": "Seguradong Pag-authenticate",
+              "description": "Binabawasan ang panganib ng data breach sa pagtanggal ng mga kahinaan ng password."
+            },
+            {
+              "name": "Mas Magandang Karanasan ng User",
+              "description": "Nagbibigay ng mabilis at maayos na pag-login sa lahat ng device – perpekto para sa mga mobile user."
+            }
+          ],
+          "features": [
+            "Bawat Magic Link ay balido lamang para sa isang session ng pag-login, para sa mas mataas na seguridad.",
+            "Awtomatikong nag-e-expire ang mga link matapos ang itinakdang oras o kapag nagamit na, para maiwasan ang maling paggamit.",
+            "May kakayahang itakda kung gaano katagal aktibo ang link depende sa pangangailangan ng platform.",
+            "Seguradong pagbuo ng link laban sa phishing attempts.",
+            "Pinadaling proseso ng pag-login para mapanatili ang mga user."
+          ]
+        }
+      },
+      {
+        "name": "Multi-Channel OTP Delivery: OTP na Laging Makakarating Sayo",
+        "content": "Tinitiyak ng Multi-Channel OTP Delivery ang seguradong access sa pamamagitan ng pagpapadala ng OTP sa iba't ibang channel tulad ng OTP SMS, WhatsApp OTP, OTP email, at voice OTP, kaya siguradong matatanggap ng user ang kanilang code anuman ang medium.",
+        "img": "/assets/global/otp/lotties/multi_channel_otp_delivery.json",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "E-commerce at Online Retail",
+              "description": "Seguradong pag-login at pag-checkout ng user gamit ang multi-channel OTPs."
+            },
+            {
+              "name": "Travel Apps",
+              "description": "Tinitiyak ang seguradong booking at bayad ng mga biyahero gamit ang multi-factor authentication."
+            },
+            {
+              "name": "Mga Institusyong Pinansyal",
+              "description": "Nagbibigay ng seguradong access at beripikasyon ng transaksyon sa paboritong channel ng komunikasyon."
+            },
+            {
+              "name": "Serbisyong Telecom",
+              "description": "Ina-authenticate ang user gamit ang SMS, email, o voice OTP depende sa kanilang rehiyon."
+            },
+            {
+              "name": "Retail Apps",
+              "description": "Tinitiyak ang matagumpay na pag-login ng user gamit ang maraming channel para sa OTP delivery."
+            }
+          ],
+          "features": [
+            "Naipapadala ang OTP sa SMS, Email, WhatsApp, at Voice para sa pinakamalawak na pagpipilian.",
+            "Tinitiyak ang delivery gamit ang paboritong channel ng user.",
+            "Sumusuporta sa international OTP delivery sa lahat ng channel para sa global na abot.",
+            "Tinitiyak ang maaasahang delivery kahit sa lugar na mahina ang signal.",
+            "May Smart Fallback System – kung pumalya ang isang channel, agad na magde-deliver ang iba."
+          ]
+        }
+      },
+      {
+        "name": "Failover Mechanism: Tiyak na Walang Patid na OTP Delivery",
+        "content": "Tinitiyak ng OTP failover mechanism na matatanggap ng user ang kanilang OTP code sa pamamagitan ng awtomatikong paglipat sa alternatibong channel kung pumalya ang pangunahing delivery. Tinitiyak nito ang tuloy-tuloy at napapanahong authentication.",
+        "img": "/assets/global/otp/lotties/failover_mechanism.json",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Real-Time Delivery Tracking",
+              "description": "Subaybayan ang status ng OTP delivery sa lahat ng channel para sa mas malinaw na monitoring."
+            },
+            {
+              "name": "Serbisyong Pang-emerhensiya",
+              "description": "Nagbibigay ng maaasahang OTP para sa agarang authentication, kahit sa lugar na mahina ang signal."
+            },
+            {
+              "name": "Online Ticketing",
+              "description": "Tinitiyak na makakapag-book ng ligtas ang customer kahit sa oras ng mataas na traffic gamit ang garantisadong OTP delivery."
+            },
+            {
+              "name": "Mga Negosyong Internasyonal",
+              "description": "Tinitiyak na makakarating ang OTP sa mga user sa mga bansang may hindi maaasahang SMS network."
+            },
+            {
+              "name": "Seguradong Pag-login",
+              "description": "Pinapabuti ang tagumpay ng pag-login sa pamamagitan ng backup channels para sa OTP delivery."
+            }
+          ],
+          "features": [
+            "Naipapadala ang OTP nang walang delay, para sa mabilis at maayos na authentication.",
+            "Awtomatikong nagre-retry sa alternatibong channel para matiyak ang tagumpay ng OTP authentication.",
+            "Binabawasan ang mga palyang pag-login at pinapataas ang retention ng user sa pamamagitan ng siguradong delivery.",
+            "Garantisadong maaasahan ang OTP delivery saan mang panig ng mundo.",
+            "Perpekto para sa mga lugar na hindi pantay ang network coverage."
+          ]
+        }
+      },
+      {
+        "name": "Plug & Play Integration: Walang Hassle na Setup, Instant na Koneksyon",
+        "content": "Ang OTP Widget na may Plug & Play Integration ay nagbibigay-daan para madali mong maikonekta at magamit ang OTP authentication nang walang komplikadong configuration, para sa mabilis at walang abalang setup.",
+        "img": "/assets/global/otp/plug_play_integration.webp",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Mga Startup",
+              "description": "Mabilis na magpatupad ng OTP authentication sa iyong website nang hindi kailangan ng mabigat na development."
+            },
+            {
+              "name": "SaaS Platforms",
+              "description": "I-integrate ang OTP authentication para sa seguradong pag-login ng user na may minimal na setup."
+            },
+            {
+              "name": "Mobile Apps",
+              "description": "I-integrate ang OTP verification nang madali gamit ang aming mobile SDK para sa mabilis na deployment."
+            },
+            {
+              "name": "Enterprise Solutions",
+              "description": "Seguraduhin ang mga enterprise application nang hindi kailangan ng malawakang pagbabago sa infrastructure."
+            },
+            {
+              "name": "Online Marketplaces",
+              "description": "Tinitiyak ang seguradong transaksyon ng buyer at seller nang walang komplikadong integration."
+            }
+          ],
+          "features": [
+            "Madaling setup na nangangailangan ng kaunting coding.",
+            "Handa nang gamitin na SDKs para sa web at mobile applications.",
+            "Maayos na integration sa kasalukuyang sistema.",
+            "Nakakatipid ng oras at resources sa madaling pag-deploy ng OTP solutions.",
+            "Kayang mag-scale para sa lumalaking negosyo at lumalawak na aplikasyon."
+          ]
+        }
+      },
+      {
+        "name": "Real-Time Analytics & Reporting: Agarang Insight para sa Mas Matalinong Desisyon",
+        "content": "Nagbibigay ang Real-Time Analytics & Reporting ng detalyadong insight, na nagbibigay-daan para subaybayan mo ang OTP delivery, performance ng bawat channel, at engagement ng user agad-agad para makagawa ng mas matalino at batay sa datos na desisyon.",
+        "img": "/assets/global/otp/real_time_analytics_reporting.webp",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "E-commerce Platforms",
+              "description": "Suriin ang performance ng OTP delivery tuwing mataas ang traffic para mapabuti ang mga susunod na kampanya."
+            },
+            {
+              "name": "Online Banking",
+              "description": "Subaybayan ang oras ng OTP delivery para mapahusay ang beripikasyon ng user sa mga transaksyon."
+            },
+            {
+              "name": "Travel Services",
+              "description": "Gamitin ang analytics para subaybayan ang OTP delivery at lutasin ang mga isyu sa malalayong lugar."
+            },
+            {
+              "name": "Education Platforms",
+              "description": "Suriin ang tagumpay ng OTP para mapabuti ang pag-login ng mga estudyante sa iba't ibang rehiyon."
+            },
+            {
+              "name": "Tech Services",
+              "description": "Subaybayan ang performance ng delivery para matiyak na natatanggap ng user ang OTP sa oras ng kritikal na pag-login."
+            }
+          ],
+          "features": [
+            "Subaybayan ang OTP delivery rates, failures, at response times nang real time.",
+            "Makakuha ng insight sa bisa ng OTP channels at ma-verify ang aktibidad ng user.",
+            "Subaybayan ang tagumpay ng OTP para sa mas mahusay na troubleshooting at optimization.",
+            "I-customize ang mga ulat base sa partikular na metrics at parameters.",
+            "Tumutulong sa negosyo na pagandahin ang proseso ng OTP para sa mas magandang karanasan ng user."
+          ]
+        }
+      },
+      {
+        "name": "Inbuilt IP Security: Protektado ang Access mula sa Hindi Awtorisadong Lokasyon",
+        "content": "Tinitiyak ng Inbuilt IP Security na ang OTP at sensitibong datos ay maa-access lamang mula sa mga pinagkakatiwalaang IP address, nagbibigay ng dagdag na layer ng proteksyon laban sa hindi awtorisadong access at mga banta.",
+        "img": "/assets/global/otp/inbuilt_ip_security.webp",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Pinahusay na User Authentication",
+              "description": "Pinoprotektahan ang proseso ng pag-login sa pamamagitan ng paglimita ng access sa mga trusted IP address, binabawasan ang panganib ng hindi awtorisadong pag-login."
+            },
+            {
+              "name": "Seguradong Transaksyon",
+              "description": "Pinangangalagaan ang mga high-value na transaksyon o aksyon sa pamamagitan ng pagtitiyak na ito ay magmumula lamang sa aprubadong IP address."
+            },
+            {
+              "name": "Geographically Restrict Access",
+              "description": "Pinipigilan ang access mula sa partikular na rehiyon o IP range, nagbibigay ng dagdag na seguridad para sa mga negosyong may location-based na pangangailangan."
+            },
+            {
+              "name": "Proteksyon ng Corporate Network",
+              "description": "Perpekto para sa internal systems, tinitiyak na tanging empleyado mula sa company-approved networks lang ang makakagawa ng sensitibong operasyon."
+            },
+            {
+              "name": "Pag-iwas sa Panlilinlang",
+              "description": "Natukoy at napipigilan ang mapanlinlang na pagtatangka sa pamamagitan ng pagmamanman at pag-block ng kahina-hinalang IP address."
+            }
+          ],
+          "features": [
+            "Limitahan ang access sa mga pinagkakatiwalaang IP address lamang.",
+            "Subaybayan at i-block ang hindi awtorisadong IPs nang real time.",
+            "Mag-set ng location-based na access restrictions para sa IPs o rehiyon.",
+            "Makakuha ng agarang alerto para sa hindi awtorisadong pagtatangkang access.",
+            "Madaling i-integrate sa kasalukuyang authentication systems."
+          ]
+        }
+      }
+    ]
+  },
+  "PreFooterComp": {
+    "content": "Simulan ang paggawa ng iyong ideal na karanasan sa customer engagement",
+    "buttons": {
+      "contactSales": {
+        "text": "Kontakin ang sales",
+        "link": "/contact-us"
+      },
+      "pricing": {
+        "text": "Presyo",
+        "link": "/pricing/"
+      },
+      "getStarted": {
+        "text": "Magsimula",
+        "link": "https://control.msg91.com/signup/"
+      }
+    }
+  }
+}
