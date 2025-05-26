@@ -10,21 +10,42 @@
   },
   {
     "shortname": "BR",
+    "hide": true,
     "name": "Brazil",
     "code": 55,
     "language": "English",
     "currency": "USD",
     "htmlLang": "en-BR",
-    "hreflang": "en-br"
+    "hreflang": "en-br",
+    "languages": [
+      {
+        "language": "Portuguese",
+        "link": "br-pt"
+      },
+      {
+        "language": "English",
+        "link": "br"
+      }
+    ]
   },
   {
     "shortname": "BR-PT",
     "name": "Brazil",
     "code": 55,
-    "language": "Portuguese",
     "currency": "USD",
     "htmlLang": "pt-BR",
-    "hreflang": "pt-br"
+    "language": "Portuguese",
+    "hreflang": "pt-br",
+    "languages": [
+      {
+        "language": "Portuguese",
+        "link": "br-pt"
+      },
+      {
+        "language": "English",
+        "link": "br"
+      }
+    ]
   },
   {
     "shortname": "AE",
@@ -37,12 +58,23 @@
   },
   {
     "shortname": "PH",
+    "hide": true,
     "name": "Philippines",
     "code": 63,
     "language": "English",
     "currency": "GBP",
     "htmlLang": "en-PH",
-    "hreflang": "en-ph"
+    "hreflang": "en-ph",
+    "languages": [
+      {
+        "language": "Filipino",
+        "link": "fil-ph"
+      },
+      {
+        "language": "English",
+        "link": "ph"
+      }
+    ]
   },
   {
     "shortname": "FIL-PH",
@@ -51,7 +83,17 @@
     "language": "Filipino",
     "currency": "GBP",
     "htmlLang": "fil-PH",
-    "hreflang": "fil-ph"
+    "hreflang": "fil-ph",
+    "languages": [
+      {
+        "language": "Filipino",
+        "link": "fil-ph"
+      },
+      {
+        "language": "English",
+        "link": "ph"
+      }
+    ]
   },
   {
     "shortname": "SG",
