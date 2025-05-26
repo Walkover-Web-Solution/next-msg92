@@ -39,12 +39,21 @@ import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/Case
 import ChatBotDemoComp from '@/components/ChatBotDemoComp/ChatBotDemoComp';
 import AsSeenComp from '@/components/AsSeenComp/AsSeenComp';
 import ProductStatsComp from '@/components/ProductStatsComp/ProductStatsComp';
+import CompareBannerComp from '@/components/compareComp/compareBannerComp/compareBannerComp';
+import CompareGridComp from '@/components/compareComp/compareGridComp/compareGridComp';
+import CompareTableComp from '@/components/compareComp/compareTableComp/compareTableComp';
+import SLAComp from '@/components/SLAComp/SLAComp';
 
+import DemoChatBotComp from '@/components/DemoChatBotComp/DemoChatBotComp';
+import EcommerceStoreComp from '@/components/EcommerceStoreComp/EcommerceStore';
+import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromTextlocal';
 /* files */
 import specialPages from '@/data/specialPages.json';
 
 /* utils */
 import { useRouter } from 'next/router';
+import PreFooterMFTL from '@/components/migrateFromTextlocal/preFooterMFTL/preFooterMFTL';
+import CTAMFTL from '@/components/migrateFromTextlocal/ctaMFTL/ctaMFTL';
 
 const Components = {
     BannerComp,
@@ -85,6 +94,15 @@ const Components = {
     ChatBotDemoComp,
     AsSeenComp,
     ProductStatsComp,
+    CompareBannerComp,
+    CompareGridComp,
+    CompareTableComp,
+    SLAComp,
+    DemoChatBotComp,
+    EcommerceStoreComp,
+    MigrateFromTextlocal,
+    PreFooterMFTL,
+    CTAMFTL,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
@@ -137,6 +155,7 @@ export const getStaticProps = async (context) => {
     const pageInfo = getPageInfo(params);
     // const isNestedpage = specialPages.nested.includes(pageInfo?.pathURL);
     const commonData = getCommonCompData(pageInfo?.country);
+
     const fetchData = async (endpoint) => {
         const res = await fetch(`${process.env.BASE_URL}${endpoint}`, {
             method: 'POST',

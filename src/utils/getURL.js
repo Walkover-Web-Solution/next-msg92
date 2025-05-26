@@ -119,6 +119,10 @@ export default function getURL(type, link, pageInfo) {
             url = (currentCountry ? '/' + currentCountry : '') + '/contact-us';
             break;
 
+        case 'compare':
+            url = '/' + link;
+            break;
+
         default:
             url = rowPathArray.join('/');
             break;

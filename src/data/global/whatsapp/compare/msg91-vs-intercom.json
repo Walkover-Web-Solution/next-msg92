@@ -1,0 +1,64 @@
+{
+    "HeadComp": {
+        "title": "Intercom vs MSG91 | WhatsApp Business API Comparison",
+        "description": "Compare Intercom and MSG91 for WhatsApp Business API solutions. See how they differ in WhatsApp pricing, automation, template management, integrations, and support to choose the best WhatsApp platform for your business."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs Intercom",
+        "subheading": "Intercom offers WhatsApp support within its customer messaging platform, but MSG91 specializes in WhatsApp template management, automated bulk messaging, and seamless integration with other channels, offering greater flexibility for messaging-driven campaigns.",
+        "img": "/assets/compare/intercom/intercom-icon.svg",
+        "color": "#000000"
+    },
+    "CompareTableComp": {
+        "type": "whatsapp",
+        "heading": "Comparison Summary: MSG91 vs Intercom",
+        "name": "Intercom",
+        "img": "/assets/compare/intercom/intercom-logo.svg",
+        "content": [
+            {
+                "name": "MSG91",
+                "des": "MSG91, on the other hand, offers a robust WhatsApp communication suite with features like WhatsApp payments, carousel templates, AI-powered chatbots, opt-out management, and template category handling (e.g., utility to marketing). Designed for scalability and automation, MSG91 empowers businesses to deliver rich, personalized, and compliant WhatsApp experiences across customer touchpoints."
+            },
+            {
+                "name": "Intercom",
+                "des": "Intercom supports WhatsApp messaging through API integration, enabling customer conversations and outbound messaging via approved templates. However, it lacks advanced WhatsApp functionalities like payments, carousel templates, one-click verification, and built-in template creation."
+            }
+        ],
+        "features": {
+            "whatsapp_pricing": "Costlier, Added margin on Meta pricing",
+            "whatsapp_template_creation": "Intercom lacks a template panel; it redirects to WhatsApp Manager,for template setup.",
+            "multi_agent_support": "Paid plans starting at $29 per agent per month.",
+            "other_channel_support": "SMS, WhatsApp,Facebook, Email and more",
+            "whatsapp_ai_chatbot_integration": "Intercom offers  multiple visual flow builder for seamless automation.\n You can create multiple Workflows.",
+            "unlimited_whatsapp_bot_creation": "",
+            "whatsapp_payments": "Intercom integrates with WhatsApp for messaging but does not support WhatsApp payments.",
+            "whatsapp_carousels": "You can't create carousel templates, you have to use Meta's platform for that.",
+            "whatsapp_catalogs": "Intercom does not support sending WhatsApp Catalog messages, only text-based templates.",
+            "integration_and_plugins_whatsapp": "Integrates with multiple platforms like Salesforce, HubSpot, Slack, Stripe, and other business tools.",
+            "otp_verification_whatsapp": "Provides OTP verification via WhatsApp template and Email",
+            "one_click_verification_whatsapp": "No",
+            "unified_platform": "Intercom offers an all-in-one dashboard for targeting, AI support, and omnichannel campaigns.\n",
+            "technical_knowledge_required": "Not Necessarily needed.",
+            "customer_support_quality": "​Intercom offers customer support through email, live chat, and phone",
+            "blue_tick_assistance": "Intercom does not assist with WhatsApp Blue Tick verification",
+            "meta_ads_trackings_conversion": "Intercom doesn't natively show Meta Ads performance analytics.\n\n"
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

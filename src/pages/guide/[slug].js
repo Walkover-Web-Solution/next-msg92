@@ -67,40 +67,35 @@ export default function TestPage({
                 pageInfo={pageInfo}
             />
             <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
-            <div className='wrapper container blog-container w-100 max-w-4xl flex flex-col gap-6 py-20'>
-                <a className=' d-inline-block' onClick={handleClick}>
-                    <button className=' btn btn-dark bg-black text-white'>
-                        {' '}
-                        <MdKeyboardArrowLeft />
-                        Back
-                    </button>
-                </a>
-                <div className='blog-header flex flex-col gap-4'>
-                    <div>
-                        {author}, {date}
+            <div className='wrapper container blog-container w-100 max-w-4xl flex flex-col gap-8 py-20'>
+                <button className=' btn btn-md btn-primary' onClick={handleClick}>
+                    <MdKeyboardArrowLeft className='text-xl' />
+                    Back
+                </button>
+                <div className='blog-header flex flex-col gap-2'>
+                    <div className='flex gap-1 text-gray-500'>
+                        <span>{author},</span>
+                        <span>{date}</span>
                     </div>
                     <h1 className='text-4xl font-bold'>{title}</h1>
                     {thumbnailImage !== '' && <img className='' src={thumbnailImage} alt={author} />}
                 </div>
-                <div className='body leading-normal flex flex-col gap-4 text-lg ancor-parent'>
+                <div className='body leading-normal flex flex-col gap-1 text-lg blog-body-cont text-gray-900'>
                     <MDXRemote {...source} components={component} />
                 </div>
-                <ul className={'tag-list'}>
+                <ul className={'flex flex-wrap gap-2'}>
                     {tags !== '' &&
                         tags?.map((it, i) => (
-                            <li key={i} className='bg-gray-300 py-1 px-3 rounded-full w-fit'>
+                            <li key={i}>
                                 <TagButton tag={getTag(it)} />
                             </li>
                         ))}
                 </ul>
 
-                <a className=' d-inline-block' onClick={handleClick}>
-                    <button className=' btn btn-dark bg-black text-white'>
-                        {' '}
-                        <MdKeyboardArrowLeft />
-                        Back
-                    </button>
-                </a>
+                <button className=' btn btn-md btn-primary' onClick={handleClick}>
+                    <MdKeyboardArrowLeft className='text-xl' />
+                    Back
+                </button>
             </div>
             <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} />
         </>

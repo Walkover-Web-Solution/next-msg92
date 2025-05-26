@@ -19,7 +19,9 @@
         "cookie-policy",
         "thank-you",
         "startup-form",
-        "certificates"
+        "certificates",
+        "textlocal-alternative",
+        "compare"
     ],
     "products": [
         "hello",
@@ -84,13 +86,29 @@
         "partners-and-integrations/zapier",
         "partners-and-integrations/freshworks",
         "partners-and-integrations/firebase",
-        "partners-and-integrations/hubspot"
+        "partners-and-integrations/hubspot",
+        "whatsapp/compare/msg91-vs-twilio",
+        "whatsapp/compare/msg91-vs-aisensy",
+        "whatsapp/compare/msg91-vs-delightchat",
+        "whatsapp/compare/msg91-vs-freshchat",
+        "whatsapp/compare/msg91-vs-interakt",
+        "whatsapp/compare/msg91-vs-wati",
+        "whatsapp/compare",
+        "sla/hello"
     ],
     "justNested": [
         "partners-and-integrations/tally",
         "partners-and-integrations/zapier",
         "partners-and-integrations/freshworks",
         "partners-and-integrations/firebase",
-        "partners-and-integrations/hubspot"
+        "partners-and-integrations/hubspot",
+        "whatsapp/compare/msg91-vs-twilio",
+        "whatsapp/compare/msg91-vs-aisensy",
+        "whatsapp/compare/msg91-vs-delightchat",
+        "whatsapp/compare/msg91-vs-freshchat",
+        "whatsapp/compare/msg91-vs-interakt",
+        "whatsapp/compare/msg91-vs-wati",
+        "whatsapp/compare",
+        "sla/hello"
     ]
 }

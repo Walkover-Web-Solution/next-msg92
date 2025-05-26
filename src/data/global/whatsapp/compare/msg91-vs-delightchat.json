@@ -1,0 +1,65 @@
+{
+    "HeadComp": {
+        "title": "DelightChat vs MSG91 | WhatsApp Business API Comparison",
+        "description": "Compare DelightChat and MSG91 for WhatsApp Business API solutions. See how they differ in WhatsApp pricing, automation, template management, integrations, and support to choose the best WhatsApp platform for your business."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs DelightChat",
+        "subheading": "DelightChat focuses on e-commerce integrations and WhatsApp-based customer support, while MSG91 offers a versatile communication platform with template handling, message automation, and broader omnichannel support, making it more adaptable for varied business communication needs.",
+        "img": "/assets/compare/delightchat/delightchat-icon.png",
+        "color": "#E91A86"
+    },
+    "CompareTableComp": {
+        "type": "whatsapp",
+        "heading": "Comparison Summary: MSG91 vs DelightChat",
+        "name": "DelightChat",
+        "img": "/assets/compare/delightchat/delightchat-logo.png",
+        "content": [
+            {
+                "name": "DelightChat",
+                "des": "DelightChat is a support platform for small businesses, focusing on WhatsApp-based customer engagement. While it offers chat automation, it lacks advanced WhatsApp features like payments and AI chatbots."
+            },
+            {
+                "name": "MSG91",
+                "des": "MSG91 offers a full suite of WhatsApp-specific features, including payments, carousel templates, AI-powered chatbots, opt-out support, and utility-to-marketing template management. Businesses benefit from MSG91’s dynamic and cost-efficient approach to scaling WhatsApp interactions."
+            }
+        ],
+        "features": {
+            "pricing": "Costlier, Added margin on Meta pricing",
+            "whatsapp_template_creation": "Offers a dashboard for creating WhatsApp templates",
+            "multi_agent_support": "Supports WA, IG, FB, Email, and Live Chat.",
+            "ai_chatbot_integration": "DelightChat’s GPT AI Assistant is a paid add-on with limited free use.",
+            "unlimited_whatsapp_bot_creation": "DelightChat doesn't specify chatbot creation limits.",
+            "other_channel_support": "",
+            "whatsapp_ai_chatbot_integration": "",
+            "whatsapp_payments": "Supports Razorpay for in-chat payments but not other gateways.",
+            "whatsapp_carousels": "Does not support WhatsApp carousel template creation.",
+            "whatsapp_catalogs": "It allows sharing product catalogs via WhatsApp",
+            "integration_and_plugins_whatsapp": "DelightChat integrates with multiple platforms including Shopify, WooCommerce, and Zapier",
+            "otp_verification_whatsapp": "Supports OTP verification on WhatsApp via pre-approved templates but lacks native SMS, email, or voice OTP support.",
+            "one_click_verification_whatsapp": "No",
+            "unified_platform": "DelightChat offers a dashboard for chat, order management, and automations.",
+            "technical_knowledge_required": "Not Necessarily needed.",
+            "customer_support_quality": "Free 24/7 support — email, WhatsApp & calls covered!",
+            "blue_tick_assistance": "Yes",
+            "meta_ads_trackings_conversion": "It does not provide Meta ad analytics"
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

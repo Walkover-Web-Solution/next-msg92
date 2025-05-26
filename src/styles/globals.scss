@@ -35,7 +35,7 @@ body {
     }
 }
 .rbt-menu {
-    @apply w-fit bg-white flex flex-col;
+    @apply w-fit bg-white flex flex-col z-10;
 }
 
 .scrollbar-none::-webkit-scrollbar {
@@ -93,4 +93,14 @@ input[type='number'] {
 #__next{
 
     overflow-x: hidden;
+}
+.clint-input-container {
+    .iti--allow-dropdown {
+        &:has(.iti--allow-dropdown) {
+            margin-bottom: 0;
+           > .iti__flag-container {
+                display: none;
+            }
+        }
+    }   
 }

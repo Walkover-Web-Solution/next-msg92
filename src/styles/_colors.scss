@@ -47,6 +47,47 @@
 .text-knowledgebase {
     color: var(--knowledgebase-color) !important;
 }
-.text-home{
+.text-home {
     color: var(--accent-color) !important;
 }
+
+@mixin product-color($name) {
+    .#{$name} {
+        &_bg {
+            background-color: var(--#{$name}-color) !important;
+        }
+        &_text {
+            color: var(--#{$name}-color) !important;
+        }
+
+        &_lite {
+            &_bg {
+                background-color: var(--#{$name}-lite-color) !important;
+            }
+            &_text {
+                color: var(--#{$name}-lite-color) !important;
+            }
+        }
+        &_dark {
+            &_bg {
+                background-color: var(--#{$name}-dark-color) !important;
+            }
+            &_text {
+                color: var(--#{$name}-dark-color) !important;
+            }
+        }
+    }
+}
+
+@include product-color('hello');
+@include product-color('campaign');
+@include product-color('segmento');
+@include product-color('opt');
+@include product-color('sms');
+@include product-color('rcs');
+@include product-color('email');
+@include product-color('whatsapp');
+@include product-color('voice');
+@include product-color('numbers');
+@include product-color('shorturl');
+@include product-color('knowledgebase');

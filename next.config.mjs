@@ -5,6 +5,7 @@ const customEnvConfig = dotenv.config().parsed || {};
 
 var getEnvValue = (key) => process.env?.[key] || customEnvConfig?.[key];
 const nextConfig = {
+    trailingSlash: false, 
     reactStrictMode: false,
     images: {
         domains: ['placehold.co'],
@@ -36,6 +37,7 @@ const nextConfig = {
 
         //CHATWIDGET CONFIG
         CHAT_WIDGET_TOKEN: getEnvValue('CHAT_WIDGET_TOKEN'),
+        ECOMMERCE_WIDGET_TOKEN: getEnvValue('ECOMMERCE_WIDGET_TOKEN'),
         CHAT_WIDGET_URL: getEnvValue('CHAT_WIDGET_URL'),
     },
 };

@@ -3,13 +3,15 @@ import Script from 'next/script';
 import HreflangTagComp from './HreflangTagComp';
 
 export default function HeadComp({ data, pageInfo }) {
+    const isEcommerceStore = pageInfo?.page === 'ecommerce-store';
+
     return (
         <>
             <Script
                 strategy='afterInteractive'
                 dangerouslySetInnerHTML={{
                     __html: `var helloConfig = {
-              widgetToken: '${process.env.CHAT_WIDGET_TOKEN}',
+              widgetToken: '${isEcommerceStore ? process.env.ECOMMERCE_WIDGET_TOKEN : process.env.CHAT_WIDGET_TOKEN}',
               hide_launcher: false
             };`,
                 }}

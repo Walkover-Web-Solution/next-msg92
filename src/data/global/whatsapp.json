@@ -10,7 +10,7 @@
             "icon": "/assets/icons/products/whatsapp.svg"
         },
         "tagline": "WhatsApp Messaging Revolution",
-        "heading": "Seemless Global messaging and communications.",
+        "heading": "Seamless Global messaging and communications.",
         "subheading": "Use Developer Friendly API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
         "lottie": "/assets/lotties/global-whatsapp.json",
         "getstarted_btn": "Get Started",
@@ -472,6 +472,7 @@
             }
         ]
     },
+
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {

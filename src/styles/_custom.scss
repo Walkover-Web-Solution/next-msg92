@@ -14,12 +14,15 @@ body {
 }
 
 .cont {
-    @apply flex flex-col ;
+    @apply flex flex-col;
     &_gap {
         @apply gap-6;
     }
     &_p {
         @apply lg:py-20 md:py-12 py-6;
+    }
+    &_w {
+        @apply max-w-[1000px] w-full;
     }
 }
 
@@ -61,11 +64,15 @@ body {
         &.btn-outline {
             @apply text-accent hover:bg-accent hover:text-white;
         }
+        &:disabled {
+            @apply bg-gray-300 text-primary;
+        }
     }
     &.btn-secondary {
         @apply text-accent;
     }
     &.btn-white {
+        @apply text-black bg-white hover:bg-primary hover:text-white outline-none border-none shadow-none;
         &.btn-outline {
             @apply text-white hover:bg-accent hover:text-white;
         }
@@ -311,11 +318,6 @@ $button-transition-timing: 100ms;
 
 .iti .iti__country-list {
     width: 350px !important;
-}
-.ancor-parent {
-    a {
-        @apply text-blue-500 hover:text-blue-600;
-    }
 }
 
 .tooltip.tooltip-modal {

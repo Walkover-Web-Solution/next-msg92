@@ -21,7 +21,7 @@ class StepTwo extends React.Component {
         smsIdentifier = this.state.smsIdentifier;
 
         this.sourceOptions = [
-            { value: '', label: 'Select Source' },
+            { value: '/', label: 'Select Source' },
             { value: 'search_engine', label: 'Search engine (Google, Bing, Yahoo, etc)' },
             { value: 'recommended_by_friend', label: 'Recommended by friend or colleague' },
             { value: 'social_media', label: 'Social Media' },
@@ -29,6 +29,7 @@ class StepTwo extends React.Component {
             { value: 'advertisement', label: 'Advertisement' },
             { value: 'event', label: 'Event' },
             { value: 'tiedelhincr', label: 'TiEDelhiNCR' },
+            { value: 'other', label: 'Other' },
         ];
     }
 
@@ -89,6 +90,9 @@ class StepTwo extends React.Component {
         // });
     };
     render() {
+        const isLoading =
+            ((this.props?.smsAccessToken && this.props?.emailAccessToken) || this.props?.githubCode) &&
+            this.props?.isLoading;
         return (
             <>
                 <div className='flex flex-col gap-12'>
@@ -116,7 +120,7 @@ class StepTwo extends React.Component {
                             <label htmlFor='email'>Verify email</label>
                             <div className='flex xl:flex-row flex-col gap-10'>
                                 <div className='flex sm:flex-row flex-col items-start w-fit gap-4'>
-                                    <div className='flex flex-col items-start gap-6 w-[360px]  '>
+                                    <div className='flex flex-col items-start gap-6 w-[300px]  '>
                                         <div className='flex gap-2 items-center w-full '>
                                             {this.props?.signupByGitHub ? (
                                                 <div className='flex items-center gap-2'>
@@ -132,7 +136,7 @@ class StepTwo extends React.Component {
                                                         placeholder='Email Address*'
                                                         defaultValue={this.state.emailIdentifier}
                                                         onInput={(e) => this.props.identifierChange(false)}
-                                                        disabled={this.props?.emailAccessToken}
+                                                        disabled={this.props?.emailAccessToken || isLoading}
                                                     />
                                                 </div>
                                             )}
@@ -153,6 +157,7 @@ class StepTwo extends React.Component {
 
                                     {this.props?.emailAccessToken || this.props?.signupByGitHub ? (
                                         <button
+                                            disabled={isLoading}
                                             className='btn btn-accent btn-otp'
                                             onClick={(e) => this.props.identifierChange(false)}
                                         >
@@ -167,7 +172,7 @@ class StepTwo extends React.Component {
                                                     false
                                                 )
                                             }
-                                            disabled={this.props?.isLoading}
+                                            disabled={this.props?.isLoading || isLoading}
                                         >
                                             Get OTP
                                         </button>
@@ -198,11 +203,11 @@ class StepTwo extends React.Component {
                                 ) : null}
                             </div>
                         </div>
-                        <div className='w-full flex flex-col gap-2 '>
+                        <div className='w-full flex flex-col gap-2 clint-input-container'>
                             <label htmlFor='contact'>Verify Mobile number</label>
                             <div className='flex xl:flex-row flex-col gap-10'>
                                 <div className='flex sm:flex-row flex-col w-fit gap-4 '>
-                                    <div className='flex flex-col items-start gap-6 w-[360px] '>
+                                    <div className='flex flex-col items-start gap-6 w-[300px] '>
                                         <div className='flex gap-2 max-h-10 w-full'>
                                             <MobileInputComponent
                                                 onInput={(event) => {
@@ -236,6 +241,7 @@ class StepTwo extends React.Component {
                                     </div>
                                     {this.props?.smsAccessToken ? (
                                         <button
+                                            disabled={isLoading}
                                             className='btn btn-accent btn-otp'
                                             onClick={(e) => this.props.identifierChange(true)}
                                         >
@@ -249,7 +255,7 @@ class StepTwo extends React.Component {
                                                     ? toast.error('Invalid mobile number.')
                                                     : this.props.sendOtp(smsIdentifier, true)
                                             }
-                                            disabled={this.props?.isLoading}
+                                            disabled={this.props?.isLoading || isLoading}
                                         >
                                             Get OTP
                                         </button>
@@ -304,17 +310,14 @@ class StepTwo extends React.Component {
                                             </option>
                                         );
                                     })}
-                                    <option selected={this.state.optionValue === 'other'} value='other'>
-                                        Other
-                                    </option>
                                 </select>
                             </div>
                             {this.state.optionValue === 'other' && (
                                 <input
+                                    disabled={isLoading}
                                     className='input border-gray-300 focus:outline-none w-full focus:border-accent h-10'
                                     type='text'
-                                    placeholder='Source'
-                                    defaultValue={this.state.sourceValue}
+                                    placeholder='Other'
                                     onBlur={(e) => {
                                         this.handleSourceChange(e);
                                         this.setState({ sourceValue: e.target.value });
@@ -340,13 +343,20 @@ class StepTwo extends React.Component {
                                 }
                             }}
                             disabled={
+                                !this.state.optionValue ||
+                                this.state.optionValue === '/' ||
                                 !this.props?.smsAccessToken ||
                                 (!this.props?.emailAccessToken && !this.props?.githubCode) ||
                                 this.props?.isLoading
                             }
                         >
-                            {' '}
-                            Next <MdKeyboardArrowRight />
+                            Next
+                            {((this.props?.smsAccessToken && this.props?.emailAccessToken) || this.props?.githubCode) &&
+                            this.props?.isLoading ? (
+                                <span className='loading loading-spinner loading-sm'></span>
+                            ) : (
+                                <MdKeyboardArrowRight className='text-[20px]' />
+                            )}
                         </button>
                     </div>
                 </div>

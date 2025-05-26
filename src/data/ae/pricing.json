@@ -105,6 +105,10 @@
                 "title": "Campaign Pricing in United Arab Emirates | MSG91-United Arab Emirates",
                 "description": "Avail cutting-edge services such as transactional Campaign, communication APIs, and more at competitive prices. Discover the pricing today."
             },
+            "for_third_party_apis": {
+                "line_one": "Charges for third-party API calls will be implemented soon, calculated per 1,000 calls.",
+                "line_two": "Final pricing details will be communicated shortly."
+            },
             "get_started": "Get Started",
             "connectComp": {
                 "content": "Campaign usage is free.",

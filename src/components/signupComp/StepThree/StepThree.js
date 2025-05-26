@@ -340,6 +340,7 @@ class StepThree extends React.Component {
     };
 
     render() {
+        const isLoading = this.props?.isLoading;
         return (
             <>
                 <div className='flex flex-col gap-8 2xl:w-2/3 xl:w-2/3  max-w-[600px]'>
@@ -366,6 +367,7 @@ class StepThree extends React.Component {
                                 name='firstName'
                                 value={this.state.formData.firstName}
                                 onChange={this.handleInputChange}
+                                disabled={isLoading}
                             />
                             <p className='text-sm text-red-600'>{this.state.formErrorData.firstNameError}</p>
                         </div>
@@ -379,6 +381,7 @@ class StepThree extends React.Component {
                                 name='lastName'
                                 value={this.state.formData.lastName}
                                 onChange={this.handleInputChange}
+                                disabled={isLoading}
                             />
                             <p className='text-sm text-red-600'>{this.state.formErrorData.lastNameError}</p>
                         </div>
@@ -404,6 +407,7 @@ class StepThree extends React.Component {
                                                             );
                                                             this.handleInvitationSelection();
                                                         }}
+                                                        disabled={isLoading}
                                                     >
                                                         Accept
                                                     </button>
@@ -416,6 +420,7 @@ class StepThree extends React.Component {
                                                             );
                                                             this.handleInvitationSelection();
                                                         }}
+                                                        disabled={isLoading}
                                                     >
                                                         Reject
                                                     </button>
@@ -434,6 +439,7 @@ class StepThree extends React.Component {
                                 <button
                                     className='btn w-fit btn-secondary'
                                     onClick={() => this.setState({ createCompany: true })}
+                                    disabled={isLoading}
                                 >
                                     Create New Company
                                 </button>
@@ -445,6 +451,7 @@ class StepThree extends React.Component {
                                 <button
                                     className='btn btn-ghost btn-sm'
                                     onClick={() => this.setState({ createCompany: false })}
+                                    disabled={isLoading}
                                 >
                                     Cancel
                                 </button>
@@ -460,6 +467,7 @@ class StepThree extends React.Component {
                                         name='companyName'
                                         value={this.state.formData.companyName}
                                         onChange={this.handleInputChange}
+                                        disabled={isLoading}
                                     />
                                     <p className='text-sm text-red-600'>{this.state.formErrorData.companyNameError}</p>
                                 </div>
@@ -473,6 +481,7 @@ class StepThree extends React.Component {
                                                 name='industryType'
                                                 value={this.state.formData.industryType}
                                                 onChange={this.handleInputChange}
+                                                disabled={isLoading}
                                             >
                                                 <option value=''>Select Industry Type*</option>
                                                 {this.state.industries &&
@@ -518,6 +527,7 @@ class StepThree extends React.Component {
                                                 }
                                                 className='chip-list-select'
                                                 classNamePrefix='signup_react_select'
+                                                isDisabled={isLoading}
                                             />
                                         )}
                                         <p className='text-sm text-red-600'>
@@ -526,45 +536,51 @@ class StepThree extends React.Component {
                                     </div>
                                 </div>
                                 <div className='flex md:flex-row  sm:flex-row flex-col gap-4 w-full'>
-                                    <div className='rounded border px-1 w-full'>
-                                        <select
-                                            className='h-10 w-full focus:outline-none'
-                                            autoComplete='on'
-                                            aria-label='Default Country'
-                                            name='country'
-                                            value={this.state.formData.country}
-                                            onChange={this.handleInputChange}
-                                        >
-                                            <option value=''>Select Country*</option>
-                                            {this.state.countryNames.map((country) => (
-                                                <option key={country.id} value={country.id}>
-                                                    {country.name}
+                                    <div className='flex flex-col w-full'>
+                                        <div className='rounded border px-1 w-full'>
+                                            <select
+                                                className='h-10 w-full focus:outline-none'
+                                                autoComplete='on'
+                                                aria-label='Default Country'
+                                                name='country'
+                                                value={this.state.formData.country}
+                                                onChange={this.handleInputChange}
+                                                disabled={isLoading}
+                                            >
+                                                <option value=''>Select Country*</option>
+                                                {this.state.countryNames.map((country) => (
+                                                    <option key={country.id} value={country.id}>
+                                                        {country.name}
+                                                    </option>
+                                                ))}
+                                                <option key='other' value='other'>
+                                                    Other
                                                 </option>
-                                            ))}
-                                            <option key='other' value='other'>
-                                                Other
-                                            </option>
-                                        </select>
+                                            </select>
+                                        </div>
                                         <p className='text-sm text-red-600'>{this.state.formErrorData.countryError}</p>
                                     </div>
-                                    <div className='rounded border px-1 w-full'>
-                                        <select
-                                            className='h-10 w-full focus:outline-none'
-                                            autoComplete='on'
-                                            aria-label='Default State/Province'
-                                            name='stateProvince'
-                                            value={this.state.formData.stateProvince}
-                                            onChange={this.handleInputChange}
-                                        >
-                                            <option value=''>Select State/Province*</option>
-                                            {this.state.countryData
-                                                ? this.state.countryData?.data.map((stateProvince) => (
-                                                      <option key={stateProvince.id} value={stateProvince.id}>
-                                                          {stateProvince.name}
-                                                      </option>
-                                                  ))
-                                                : null}
-                                        </select>
+                                    <div className='flex flex-col w-full'>
+                                        <div className='rounded border px-1 w-full'>
+                                            <select
+                                                className='h-10 w-full focus:outline-none'
+                                                autoComplete='on'
+                                                aria-label='Default State/Province'
+                                                name='stateProvince'
+                                                value={this.state.formData.stateProvince}
+                                                onChange={this.handleInputChange}
+                                                disabled={isLoading}
+                                            >
+                                                <option value=''>Select State/Province*</option>
+                                                {this.state.countryData
+                                                    ? this.state.countryData?.data.map((stateProvince) => (
+                                                          <option key={stateProvince.id} value={stateProvince.id}>
+                                                              {stateProvince.name}
+                                                          </option>
+                                                      ))
+                                                    : null}
+                                            </select>
+                                        </div>
                                         <p className='text-sm text-red-600'>{this.state.formErrorData.stateError}</p>
                                     </div>
                                 </div>
@@ -579,31 +595,35 @@ class StepThree extends React.Component {
                                             name='pincode'
                                             value={this.state.formData.pincode}
                                             onChange={this.handleInputChange}
+                                            disabled={isLoading}
                                         />
                                         <p className='text-sm text-red-600'>{this.state.formErrorData.pincodeError}</p>
                                     </div>
-                                    <div className='rounded border px-1 w-full'>
-                                        <select
-                                            className='h-10 w-full focus:outline-none'
-                                            autoComplete='on'
-                                            aria-label='Default City'
-                                            name='city'
-                                            value={this.state.formData.city}
-                                            onChange={(event) => {
-                                                this.handleInputChange(event);
-                                                this.setCityIdByCityName(event?.target?.value);
-                                            }}
-                                        >
-                                            <option value=''>Select City*</option>
-                                            {this.state.countryData
-                                                ? this.state.stateData?.data.map((city) => (
-                                                      <option key={city.id} value={city.name}>
-                                                          {city.name}
-                                                      </option>
-                                                  ))
-                                                : null}
-                                            <option value='other'>Other</option>
-                                        </select>
+                                    <div className='flex flex-col w-full'>
+                                        <div className='rounded border px-1 w-full'>
+                                            <select
+                                                className='h-10 w-full focus:outline-none'
+                                                autoComplete='on'
+                                                aria-label='Default City'
+                                                name='city'
+                                                value={this.state.formData.city}
+                                                onChange={(event) => {
+                                                    this.handleInputChange(event);
+                                                    this.setCityIdByCityName(event?.target?.value);
+                                                }}
+                                                disabled={isLoading}
+                                            >
+                                                <option value=''>Select City*</option>
+                                                {this.state.countryData
+                                                    ? this.state.stateData?.data.map((city) => (
+                                                          <option key={city.id} value={city.name}>
+                                                              {city.name}
+                                                          </option>
+                                                      ))
+                                                    : null}
+                                                <option value='other'>Other</option>
+                                            </select>
+                                        </div>
                                         <p className='text-sm text-red-600'>{this.state.formErrorData.cityError}</p>
                                     </div>
                                 </div>
@@ -616,6 +636,7 @@ class StepThree extends React.Component {
                                             name='otherCity'
                                             value={this.state.formData.otherCity}
                                             onChange={this.handleInputChange}
+                                            disabled={isLoading}
                                         />
                                         <p className='text-sm text-red-600'>
                                             {this.state.formErrorData.otherCityError}
@@ -630,6 +651,7 @@ class StepThree extends React.Component {
                                         name='address'
                                         value={this.state.formData.address}
                                         onChange={this.handleInputChange}
+                                        disabled={isLoading}
                                     />
                                     <p className='text-sm text-red-600'>{this.state.formErrorData.addressError}</p>
                                 </div>
@@ -642,6 +664,7 @@ class StepThree extends React.Component {
                                             name='vatNumber'
                                             value={this.state.formData.vatNumber}
                                             onChange={this.handleInputChange}
+                                            disabled={isLoading}
                                         />
                                     </div>
                                 )}
@@ -654,6 +677,7 @@ class StepThree extends React.Component {
                                             name='gstNumber'
                                             value={this.state.formData.gstNumber}
                                             onChange={this.handleInputChange}
+                                            disabled={isLoading}
                                         />
                                         <div>{this.state.formErrorData.gstNumberError}</div>
                                     </div>
@@ -668,6 +692,7 @@ class StepThree extends React.Component {
                                 name='agreeToTerms'
                                 checked={this.state.formData.agreeToTerms}
                                 onChange={this.handleInputChange}
+                                disabled={isLoading}
                             />
                             <p htmlFor='termsCheckBox'>
                                 I agree to the{' '}
@@ -687,9 +712,13 @@ class StepThree extends React.Component {
                             className=' btn btn-md btn-accent disabled:bg-gray-300 disabled:text-primary'
                             type='button'
                             onClick={this.finalSubmit}
-                            disabled={!this.state.formData.agreeToTerms || this.props?.isLoading}
+                            disabled={!this.state.formData.agreeToTerms || isLoading}
                         >
-                            Next <MdKeyboardArrowRight />
+                            Next
+                            {isLoading && this.state.formData.agreeToTerms && (
+                                <span className='loading loading-spinner loading-sm'></span>
+                            )}
+                            {!isLoading && <MdKeyboardArrowRight className='text-[20px]' />}
                         </button>
                     </div>
                 </div>

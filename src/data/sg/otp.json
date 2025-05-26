@@ -10,13 +10,18 @@
       "icon": "/assets/icons/products/otp.svg"
     },
     "tagline": "Instant Secure Verification",
-    "heading": "Simplest, quickest and most effective way to verify your users",
-    "subheading": "Build customer trust and enable business protection with two-factor authentication.",
-    "banner_img": "/assets/global/otp/otp.svg",
+    "heading": "Effortless OTP Verification Across Channels",
+    "subheading": "Integrate our OTP Widget to verify users instantly via SMS, WhatsApp, email, and more — no code hassles, just secure and seamless multi-channel authentication.",
+    "banner_img": "/assets/global/otp/banner.webp",
+    "not_absolute": "true",
     "getstarted_btn": "Get Started For Free",
     "trustedByComp": {
       "heading": "Trusted by 30,000+ global businesses",
       "logos": [
+        {
+          "name": "Razorpay",
+          "url": "/assets/trusted_by/razorpay.svg"
+        },
         {
           "name": "Xiaomi",
           "url": "/assets/trusted_by/xiaomi.svg"
@@ -34,10 +39,6 @@
           "url": "/assets/trusted_by/indeed.svg"
         },
         {
-          "name": "Indian Oil",
-          "url": "/assets/trusted_by/indianoil.svg"
-        },
-        {
           "name": "Ixigo",
           "url": "/assets/trusted_by/ixigo.svg"
         }
@@ -48,20 +49,222 @@
     "heading": "Features",
     "iconColor": "text-otp",
     "features": [
+     
       {
-        "name": "Simple as Login With Google",
-        "content": "<strong>Login with OTP is as simple as login with Gmail</strong> Give your users a fast, non-disruptive and simple authentication experience. Implement login with OTP by entering your mobile number or email address to receive OTP via SMS or email.",
-        "img": "/assets/global/otp/otp-simple-login.svg"
+        "name": "Magic Links: Password-Free Authentication in One Click",
+        "content": "Magic Link is a secure login method where users don’t need to enter a password. After providing their email or phone number, they receive a unique, time-sensitive link. Clicking the link verifies their identity and logs them in seamlessly and securely.",
+        "img": "/assets/global/otp/magic_links.webp",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Passwordless Login",
+              "description": "Eliminates the need to remember passwords, making login faster and easier."
+            },
+            {
+              "name": "Instant Account Recovery",
+              "description": "Lets users regain access quickly without going through password reset steps."
+            },
+            {
+              "name": "One-Click Sign-Up",
+              "description": "Enables new users to register and log in in a single step, boosting sign-up conversions."
+            },
+            {
+              "name": "Secure Authentication",
+              "description": "Reduces the risk of data breaches by removing password-based vulnerabilities."
+            },
+            {
+              "name": "Better User Experience",
+              "description": "Offers a smooth and quick login across devices - ideal for mobile users."
+            }
+          ],
+          "features": [
+            "Each Magic Link is valid for a single login session, ensuring higher security.",
+            "Links automatically expire after a set time or once used, minimizing misuse.",
+            "Flexibility to define how long a link stays active based on platform needs.",
+            "Secure link generation protects against phishing attempts.",
+            "Simplified login process to boost user retention."
+          ]
+        }
       },
       {
-        "name": "Inbuilt IP Security",
-        "content": "<strong>Protect against fraud, hacks, validation, blocking</strong>  Minimize fraud with an extra layer of security. The inbuilt security ensures that when a login is risky the flow does not allow the bad actor to login by viewing it as potentially fraudulent.",
-        "img": "/assets/global/otp/otp-inbuilt-ip-security.svg"
+        "name": "Multi-Channel OTP Delivery: OTP That Finds You, Always",
+        "content": "Multi-Channel OTP Delivery ensures secure access by sending OTPs through various channels, like OTP SMS, WhatsApp OTP, OTP email, and voice OTP, guaranteeing that users receive their codes no matter the medium.",
+        "img": "/assets/global/otp/lotties/multi_channel_otp_delivery.json",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "E-commerce & Online Retail",
+              "description": "Secure user login & checkout via multi-channel OTPs."
+            },
+            {
+              "name": "Travel Apps",
+              "description": "Ensure secure booking and payment processes for travelers with multi-factor authentication."
+            },
+            {
+              "name": "Financial Institutions",
+              "description": "Provide secure access and transaction validation through preferred communication channels."
+            },
+            {
+              "name": "Telecom Services",
+              "description": "Authenticate users with SMS, email, or voice OTPs based on their regional preferences."
+            },
+            {
+              "name": "Retail Apps",
+              "description": "Ensure successful user login by leveraging multiple channels for OTP delivery."
+            }
+          ],
+          "features": [
+            "OTPs delivered via SMS, Email, WhatsApp, and Voice for maximum flexibility.",
+            "Ensures delivery via the preferred communication channel of the user.",
+            "Supports international OTP delivery across channels for global accessibility.",
+            "Ensures OTP delivery reliability works even in low-network areas.",
+            "Smart Fallback System ensures if One Channel Fails, Another Delivers Instantly."
+          ]
+        }
       },
       {
-        "name": "Support multiple channels",
-        "content": "<strong>Build customer trust and increase conversion across multiple channels</strong> Authenticate your users on channels they prefer. We support multiple channels including SMS, email, Voice, <a href='/in/whatsapp'>WhatsApp</a>  giving businesses and users the flexibility they need to authenticate.",
-        "img": "/assets/global/otp/otp-support-multiple-channels.svg"
+        "name": "Failover Mechanism: Ensuring Uninterrupted OTP Delivery",
+        "content": "The OTP failover mechanism guarantees that users receive their OTP codes by automatically switching to an alternate channel if the primary OTP delivery fails. This ensures seamless and timely authentication.",
+        "img": "/assets/global/otp/lotties/failover_mechanism.json",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Real-Time Delivery Tracking",
+              "description": "Monitor OTP delivery status across channels for better transparency."
+            },
+            {
+              "name": "Emergency Services",
+              "description": "Provide reliable OTPs for urgent authentication, even in low-network zones."
+            },
+            {
+              "name": "Online Ticketing",
+              "description": "Ensure customers can securely book tickets even during high-traffic times with guaranteed OTP delivery."
+            },
+            {
+              "name": "International Businesses",
+              "description": "Ensure OTPs reach users in developing countries with less reliable SMS networks."
+            },
+            {
+              "name": "Secure Logins",
+              "description": "Improve login success rates by ensuring OTP delivery via backup channels."
+            }
+          ],
+          "features": [
+            "Delivers OTPs without delay, ensuring quick and smooth user authentication.",
+            "Auto-retries via alternate channels ensures successful OTP authentication.",
+            "Reduces login failures increases user retention by ensuring OTP delivery.",
+            "Guarantees reliable OTP delivery worldwide.",
+            "Ideal for areas with inconsistent network coverage."
+          ]
+        }
+      },
+      {
+        "name": "Plug & Play Integration: Effortless Setup, Instant Connectivity",
+        "content": "OTP Widget with Plug & Play Integration allows you to easily connect and start using OTP authentication without complex configurations, ensuring a hassle-free and quick setup.",
+        "img": "/assets/global/otp/plug_play_integration.webp",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Startups",
+              "description": "Quickly implement OTP authentication to your website without the need for heavy development work."
+            },
+            {
+              "name": "SaaS Platforms",
+              "description": "Integrate OTP authentication for secure user logins with minimal setup."
+            },
+            {
+              "name": "Mobile Apps",
+              "description": "Integrate OTP verification seamlessly with our mobile SDK for fast and easy deployment."
+            },
+            {
+              "name": "Enterprise Solutions",
+              "description": "Secure enterprise applications without requiring extensive changes to the infrastructure."
+            },
+            {
+              "name": "Online Marketplaces",
+              "description": "Ensure secure buyer-seller transactions without complicated integration."
+            }
+          ],
+          "features": [
+            "Easy setup with minimal coding required.",
+            "Ready-to-use SDKs for both web and mobile applications.",
+            "Integrate with existing systems seamlessly.",
+            "Save time and resources by easily deploying OTP solutions.",
+            "Scalable for growing businesses and expanding applications."
+          ]
+        }
+      },
+      {
+        "name": "Real-Time Analytics & Reporting: Instant Insights for Smarter Decisions",
+        "content": "Real-Time Analytics & Reporting offer detailed insights, allowing you to track OTP delivery, channel wise performance, and user engagement instantly to make smarter & data-driven decisions.",
+        "img": "/assets/global/otp/real_time_analytics_reporting.webp",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "E-commerce Platforms",
+              "description": "Analyze OTP delivery performance during high-traffic sales events to optimize future campaigns."
+            },
+            {
+              "name": "Online Banking",
+              "description": "Track OTP delivery times to enhance user verification during transactions."
+            },
+            {
+              "name": "Travel Services",
+              "description": "Use analytics to monitor OTP delivery and troubleshoot issues in remote areas."
+            },
+            {
+              "name": "Education Platforms",
+              "description": "Assess OTP success rates to optimize login for students across different regions."
+            },
+            {
+              "name": "Tech Services",
+              "description": "Monitor delivery performance to ensure users receive OTPs on time during critical logins."
+            }
+          ],
+          "features": [
+            "Track OTP delivery rates, failures, and response times in real time.",
+            "Gain insights into the effectiveness of OTP channels and verify user activity.",
+            "Monitor OTP success rates for better troubleshooting and optimization.",
+            "Customize reports based on specific metrics and parameters.",
+            "Helps businesses refine their OTP processes for better user experience."
+          ]
+        }
+      },
+      {
+        "name": "Inbuilt IP Security: Protecting Access from Unauthorized Locations",
+        "content": "Inbuilt IP Security ensures that OTPs and sensitive data are only accessible from trusted IP addresses, adding an extra layer of protection against unauthorized access and potential threats.",
+        "img": "/assets/global/otp/inbuilt_ip_security.webp",
+        "more_content": {
+          "usecases": [
+            {
+              "name": "Enhanced User Authentication",
+              "description": "Protects login processes by restricting access to trusted IP addresses, reducing the risk of unauthorized logins."
+            },
+            {
+              "name": "Secure Transactions",
+              "description": "Safeguards high-value transactions or actions by ensuring that they are initiated only from approved IP addresses."
+            },
+            {
+              "name": "Geographically Restrict Access",
+              "description": "Prevents access from specific regions or IP ranges, adding an extra layer of security for businesses with location-based security needs."
+            },
+            {
+              "name": "Corporate Network Protection",
+              "description": "Ideal for internal systems, ensuring only employees accessing from company-approved networks can perform sensitive operations."
+            },
+            {
+              "name": "Fraud Prevention",
+              "description": "Detects and prevents fraudulent attempts by monitoring and blocking suspicious IP addresses."
+            }
+          ],
+          "features": [
+            "Restrict access to trusted IP addresses only.",
+            "Monitor and block unauthorized IPs in real time.",
+            "Set location-based access restrictions for IPs or regions.",
+            "Get instant alerts for unauthorized access attempts.",
+            "Easily integrate with existing authentication systems."
+          ]
+        }
       }
     ]
   },
