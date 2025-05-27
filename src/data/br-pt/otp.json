@@ -50,42 +50,6 @@
     "iconColor": "text-otp",
     "features": [
       {
-        "name": "OTP Invisível: Autenticação Segura Simplificada",
-        "content": "OTP Invisível é um método de autenticação seguro e contínuo que verifica a identidade do usuário sem exigir que ele insira um código manualmente. O OTP Invisível funciona silenciosamente em segundo plano, detectando e verificando o OTP automaticamente. Isso não apenas simplifica o processo de login, mas também fortalece a segurança.",
-        "img": "/assets/brpt/otp/lotties/invisible_otp.json",
-        "more_content": {
-          "usecases": [
-            {
-              "name": "Aplicativos de Banco Móvel",
-              "description": "Previne acesso não autorizado sem exigir a entrada de OTP, garantindo transações de usuários sem esforço."
-            },
-            {
-              "name": "Plataformas de E-commerce",
-              "description": "Permite checkout rápido verificando usuários em segundo plano sem entrada manual de OTP."
-            },
-            {
-              "name": "Jogos Online",
-              "description": "Protege compras dentro do aplicativo com OTPs invisíveis para uma experiência de usuário sem atritos."
-            },
-            {
-              "name": "Serviços de Streaming",
-              "description": "Verifica novos logins sem interromper o engajamento do usuário."
-            },
-            {
-              "name": "Aplicativos de Saúde",
-              "description": "Garante login seguro sem a necessidade de os usuários inserirem códigos manualmente, reduzindo atrasos no acesso dos pacientes."
-            }
-          ],
-          "features": [
-            "Nenhuma entrada manual de código necessária - Permite autenticação automatizada.",
-            "Processo de autenticação suave sem interromper a experiência do usuário.",
-            "Minimiza o risco de fraude de OTP e preenchimento de credenciais.",
-            "Aumenta a segurança com verificação em segundo plano.",
-            "Funciona silenciosamente em segundo plano para autenticação sem complicações."
-          ]
-        }
-      },
-      {
         "name": "Links Mágicos: Autenticação Sem Senha em Um Clique",
         "content": "Link Mágico é um método de login seguro onde os usuários não precisam inserir uma senha. Após fornecerem seu e-mail ou número de telefone, eles recebem um link único e sensível ao tempo. Clicar no link verifica sua identidade e os conecta de forma contínua e segura.",
         "img": "/assets/brpt/otp/magic_links.webp",

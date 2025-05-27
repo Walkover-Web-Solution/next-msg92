@@ -293,7 +293,7 @@ class StepTwo extends React.Component {
                             <label htmlFor='contact'>Select source</label>
                             <div className='rounded border px-2 w-full'>
                                 <select
-                                    className=' h-10 w-full focus:outline-none'
+                                    className=' h-10 w-full bg-white focus:outline-none'
                                     autoComplete='on'
                                     aria-label='Select Source'
                                     name='source'
