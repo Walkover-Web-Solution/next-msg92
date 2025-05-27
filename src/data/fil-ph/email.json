@@ -12,7 +12,7 @@
         "tagline": "Mas Matalinong Email Strategy",
         "heading": "Magpadala ng Email nang Ligtas at Agad-agad",
         "subheading": "Siguraduhin ang napapanahong pagdating gamit ang nangungunang email automation platform - mabilis, maaasahan, at idinisenyo para sa tuloy-tuloy na transaksyon",
-        "banner_img": "/assets/global/email/mobile-optimized-email-templates-for-perfect-display.svg",
+        "banner_img": "/assets/fil_ph/email/email_banner.webp",
         "not_absolute": true,
         "getstarted_btn": "Magsimula",
         "trustedByComp": {
@@ -78,7 +78,7 @@
                         "Geo-Location Tracking – Natutukoy ang pinagmulan ng email para makita ang kahina-hinala o hindi awtorisadong aktibidad."
                     ]
                 },
-                "img": "/assets/global/email/prevent-email-fraud-with-dmarc-compliance.svg"
+                "img": "/assets/fil_ph/email/prevent_email_fraud_with_dmarc_compliance.webp"
             },
             {
                 "name": "Panatilihin ang Reputasyon ng Iyong Domain gamit ang Smart Email Validation",
@@ -114,7 +114,7 @@
                         "Palakasin ang engagement sa pamamagitan ng pagpapadala sa target na audience."
                     ]
                 },
-                "img": "/assets/global/email/maintain-your-domain-reputation-with-smart-email-validation.svg"
+                "img": "/assets/fil_ph/email/maintain_your_domain_reputation_with_smart_email_validation.webp"
             },
             {
                 "name": "AI-Powered na Personalization ng Email sa Malakihang Sukat",
@@ -150,7 +150,7 @@
                         "Device-Ready Templates – Lubos na optimized para sa mobile at desktop."
                     ]
                 },
-                "img": "/assets/global/email/ai-powered-email-personalization-at-scale.svg"
+                "img": "/assets/fil_ph/email/ai_powered_email_personalization_at_scale.webp"
             },
             {
                 "name": "Gumawa ng Kaakit-akit na Email sa Ilang Minuto",
@@ -186,7 +186,7 @@
                         "Tingnan ang preview at subukan ang compatibility bago magpadala."
                     ]
                 },
-                "img": "/assets/global/email/lotties/create-stunning-emails-in-minutes.json"
+                "img": "/assets/fil_ph/email/lotties/create_stunning_emails_in_minutes.json"
             },
             {
                 "name": "Gumawa ng Conversion-Driving AMP Emails sa Ilang Minuto",
@@ -222,7 +222,7 @@
                         "Lubos na optimized para sa mobile at desktop."
                     ]
                 },
-                "img": "/assets/global/email/lotties/create-conversion-driving-amp-emails-in-minutes.json"
+                "img": "/assets/fil_ph/email/lotties/create_conversion_driving_amp_emails_in_minutes.json"
             },
             {
                 "name": "Mas Mabilis na Email Campaign gamit ang Pre-Designed Templates",
@@ -258,7 +258,7 @@
                         "Agad na subukan, i-optimize, at i-schedule ang campaigns nang madali."
                     ]
                 },
-                "img": "/assets/global/email/send-email-campaigns-faster-with-pre-designed-templates.svg"
+                "img": "/assets/fil_ph/email/send_email_campaigns_faster_with_pre_designed_templates.webp"
             },
             {
                 "name": "Flexible na Email API para sa Seamless Integration",
@@ -294,7 +294,7 @@
                         "Real-time na tracking at analytics para sa monitoring ng email performance."
                     ]
                 },
-                "img": "/assets/global/email/transactional-email-api-deliver-critical-emails-instantly.svg"
+                "img": "/assets/fil_ph/email/flexible_email_api_for_seamless_integration.webp"
             },
             {
                 "name": "Seamless na Integrasyon sa Gmail at Outlook",
@@ -330,7 +330,7 @@
                         "Pinasimple ang komunikasyon nang walang dagdag na software."
                     ]
                 },
-                "img": "/assets/global/email/seamless-integration-with-gmail-and-outlook.svg"
+                "img": "/assets/fil_ph/email/seamless_integration_with_gmail_outlook.webp"
             },
             {
                 "name": "Tamaan ang Tamang Audience at Magpatakbo ng Email Campaign nang Madali",
@@ -366,7 +366,7 @@
                         "Ikonekta sa CRM, API, at multi-channel platform para sa unified na approach."
                     ]
                 },
-                "img": "/assets/global/email/target-the-right-audience-and-run-email-campaigns-effortlessly.svg"
+                "img": "/assets/fil_ph/email/target_the_right_audience_run_email_campaigns_effortlessly.webp"
             },
             {
                 "name": "Detalyadong Analytics: Subaybayan ang Delivered, Open, at Click Reports",
@@ -402,7 +402,7 @@
                         "I-export ang campaign analytics gamit ang custom date range para sa tumpak na audience targeting."
                     ]
                 },
-                "img": "/assets/global/email/detailed-analytics-track-delivered-open-and-click-reports.svg"
+                "img": "/assets/fil_ph/email/detailed_analytics_track_delivered_open_and_click_reports.webp"
             },
             {
                 "name": "Pigilan ang Spam gamit ang Suppression List",
@@ -438,7 +438,7 @@
                         "Binabawasan ang bounce rate at pinoprotektahan ang reputasyon ng sender."
                     ]
                 },
-                "img": "/assets/global/email/prevent-spam-with-suppression-list.svg"
+                "img": "/assets/fil_ph/email/prevent_spam_with_suppression_list.webp"
             },
             {
                 "name": "Magpadala ng Email sa Pinakamainam na Oras gamit ang Country-Based Scheduling",
@@ -474,7 +474,7 @@
                         "Palakihin ang engagement sa pamamagitan ng paghatid ng email sa pinakamainam na sandali."
                     ]
                 },
-                "img": "/assets/global/email/send-emails-at-optimal-times-with-country-based-scheduling.svg"
+                "img": "/assets/fil_ph/email/send_emails_at_optimal_times_with_country_based_scheduling.webp"
             },
             {
                 "name": "Palakasin ang Performance gamit ang A/B Testing para sa Email",
@@ -510,7 +510,7 @@
                         "Subaybayan ang key metrics tulad ng open rate, CTR, at conversion para agad na masuri ang resulta ng test."
                     ]
                 },
-                "img": "/assets/global/email/boost-performance-with-ab-testing-for-emails.svg"
+                "img": "/assets/fil_ph/email/boost_performance_with_a_b_testing_for_emails.webp"
             },
             {
                 "name": "Webhooks para sa Delivery Reports, Incoming Emails, at Domain Status",
@@ -546,7 +546,7 @@
                         "Tanggapin ang incoming email sa partikular na URL at mag-trigger ng aksyon ayon dito."
                     ]
                 },
-                "img": "/assets/global/email/webhooks-for-delivery-reports-incoming-emails-and-domain-status.svg"
+                "img": "/assets/fil_ph/email/webhooks_for_delivery_reports_incoming_emails_domain_status.webp"
             },
             {
                 "name": "Madaling Pamahalaan ang Incoming Email gamit ang Unified Inbox",
@@ -582,7 +582,7 @@
                         "Response analytics para subaybayan ang performance ng team at oras ng pagsagot sa email."
                     ]
                 },
-                "img": "/assets/global/email/lotties/effortlessly-manage-incoming-emails-with-a-unified-inbox.json"
+                "img": "/assets/fil_ph/email/lotties/effortlessly_manage_incoming_emails_with_a_unified_inbox.json"
             }
         ]
     },
@@ -610,7 +610,7 @@
     "PreFooterComp": {
         "content": "Milyun-milyong user ang nagtitiwala sa aming Email Solution, maaari ka rin.",
         "buttons": {
-           "contactSales": {
+            "contactSales": {
                 "text": "Makipag-ugnayan sa Sales",
                 "link": "/contact-us"
             },
