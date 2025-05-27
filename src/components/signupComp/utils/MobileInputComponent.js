@@ -23,7 +23,7 @@ class MobileInputComponent extends React.Component {
             if (typeof document !== 'undefined') {
                 const parentDom = document.querySelector('body');
                 const input = document.getElementById('init-contact');
-                const customCssStyleURL = `${process.env.REDIRECT_URL}/intl-tel-input-custom.css`;
+                const customCssStyleURL = `${process.env.BASE_URL}/intl-tel-input-custom.css`;
                 if (input) {
                     intlClass = new IntlPhoneLib(input, parentDom, customCssStyleURL, this.props?.defaultValue);
                 }
