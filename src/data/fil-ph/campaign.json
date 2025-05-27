@@ -6,13 +6,13 @@
     "BannerComp": {
         "slug": "campaign",
         "product": {
-            "name": " Kampanya",
+            "name": " Campaign",
             "icon": "/assets/icons/products/campaign.svg"
         },
         "tagline": "Event-based na awtomasyon",
         "heading": "Pag-ugnayin ang mga usapan sa iba't ibang Channel at tools.",
         "subheading": "Maghatid ng personalisado, nakakaengganyo, at tuloy-tuloy na karanasan",
-        "banner_img": "/assets/global/campaign/campaign.png",
+        "banner_img": "/assets/fil_ph/campaign/campaign_banner.webp",
         "getstarted_btn": "Magsimula nang Libre",
         "trustedByComp": {
             "heading": "Pinagkakatiwalaan ng 30,000+ negosyo sa buong mundo",
@@ -51,27 +51,27 @@
             {
                 "name": "Suporta sa Maraming Channel",
                 "content": " <strong>Suportahan ang iyong mga customer sa kanilang gustong channel.</strong>Bigyan sila ng mas magandang karanasan sa pamamagitan ng kanilang napiling channel—SMS, Email, Voice, Push Notification, <a href='/in/whatsapp'>WhatsApp</a> at iba pa. Abutin ang iyong mga customer kung saan sila naroroon.",
-                "img": "/assets/global/campaign/campaign-multi-channel-support.svg"
+                "img": "/assets/fil_ph/campaign/multi_channel_support.webp"
             },
             {
                 "name": "Draggable Flow",
                 "content": "<strong>I-drag at i-drop para gumawa ng omnichannel flow na may ‘if-then’ scenarios.</strong>Pumili kung kailan mo gustong magpadala ng SMS, email, o magsimula ng usapan sa isang workflow. Gumawa ng flow na simple o kasing-komplikado ng kailangan ng iyong negosyo.",
-                "img": "/assets/global/campaign/campaign-draggable-flow.svg"
+                "img": "/assets/fil_ph/campaign/draggable_flow.webp"
             },
             {
                 "name": "Time Based Condition",
                 "content": "<strong>Magpadala ng awtomatikong mensahe sa tamang oras.</strong>Bumuo ng maayos na schedule gamit ang time-based conditions na kumokontrol sa time zone ng pagpapadala ng iyong mga kampanya. Suportahan ang iyong mga customer sa tamang oras.",
-                "img": "/assets/global/campaign/campaign-time-based-condition.svg"
+                "img": "/assets/fil_ph/campaign/time_based_condition.webp"
             },
             {
                 "name": "API-based na Kondisyon",
                 "content": "<strong>Kumuha ng impormasyon agad para sa real-time na interaksyon.</strong>Humingi ng data kahit nasa gitna ng flow sa pamamagitan ng pagpapadala ng data sa third-party system o pagkuha ng kinakailangang impormasyon para sa iyong communication steps. Maghatid ng real-time na impormasyon sa iyong mga customer.",
-                "img": "/assets/global/campaign/campaign-api-based-conditions.svg"
+                "img": "/assets/fil_ph/campaign/api_based_conditions.webp"
             },
             {
                 "name": "Country Based Condition",
                 "content": "<strong>Suportahan ang iyong mga customer saan mang panig ng mundo.</strong>Gumawa ng personalisado at di-malilimutang karanasan para sa iyong customer sa iba't ibang bansa, wika, nilalaman, channel, flow, at iba pa. Madaling kumonekta, mag-customize, at makipagkomunika.",
-                "img": "/assets/global/campaign/campaign-country-based-condition.svg"
+                "img": "/assets/fil_ph/campaign/country_based_condition.webp"
             }
         ]
     },
