@@ -13,7 +13,7 @@
         "tagline": "Susunod na antas ng pagmemensahe",
         "heading": "Makipag-ugnayan sa iyong mga customer sa buong mundo gamit ang mabilis, scalable, at nako-customize na mga mensahe",
         "subheading": "Isama ang aming developer-friendly na API para magpadala at tumanggap ng text messages. Ang aming distributed carrier network at intelligent routing ay nagsisiguro ng pinakamataas na delivery at pinakamababang latency.",
-        "banner_img": "/assets/global/hello/banner.webp",
+        "banner_img": "/assets/fil_ph/hello/banner.webp",
         "getstarted_btn": "Magsimula",
         "trustedByComp": {
             "heading": "Pinagkakatiwalaan ng 30,000+ negosyo sa buong mundo",
@@ -48,37 +48,37 @@
             {
                 "name": "Intelligent SMS Retry Algorithm",
                 "content": "Ang aming SMS API service ay naghahanap ng pinaka-maaasahan at pinakamabilis na telecom route para sa bawat mensahe na iyong ipinapadala. Kapag nabigo ang SMS, awtomatikong uulitin ng aming algorithm ang pagpapadala sa loob ng isang bahagi ng segundo at ihahatid ang iyong mensahe gamit ang ibang telecom route.",
-                "img": "/assets/global/sms/sms-intelligent-sms-routing.svg"
+                "img": "/assets/fil_ph/sms/intelligent_sms_retry_algorithm.webp"
             },
             {
                 "name": "Maaasahan, Scalable, at Maraming Tampok na SMS API",
                 "content": "Available sa lahat ng programming language, mabilis, madali, at seamless ang integration ng aming SMS API para sa mga developer. Ginawa ng mga developer para sa mga developer, tuklasin ang mga quick-start guide, code snippet, SDK, at marami pa.",
-                "img": "/assets/global/sms/sms-enjoy-reliable-low-latency-delivery-worldwide.svg"
+                "img": "/assets/fil_ph/sms/reliable_scalable_and_feature_rich_sms_api.webp"
             },
             {
                 "name": "Mababa ang Latency ng Delivery sa Buong Mundo",
                 "content": "Abutin ang 210+ bansa nang maaasahan gamit ang mga lokal na telecom operator. Ang awtomatikong rerouting ng global traffic sa real-time ay tumutulong maiwasan ang outage at latency.",
-                "img": "/assets/global/sms/sms-enjoy-reliable-low-latency-delivery-worldwide.svg"
+                "img": "/assets/fil_ph/sms/enjoy_low_latency_delivery_worldwide.webp"
             },
             {
                 "name": "Multi-Lingual na Suporta",
                 "content": "Makipag-usap sa iyong audience gamit ang kanilang lokal na wika at dalhin ang customer engagement sa mas mataas na antas. Palakasin ang tiwala ng customer sa pagpapadala ng mensahe sa kanilang rehiyonal na wika saan mang panig ng mundo.",
-                "img": "/assets/global/sms/sms-multi-lingual-support.svg"
+                "img": "/assets/fil_ph/sms/multi_lingual_support.webp"
             },
             {
                 "name": "Personalized na SMS",
                 "content": "<strong>Pataasin ang kasiyahan ng customer gamit ang makabuluhang pakikipag-ugnayan.</strong>Huwag lang makipag-ugnayan, lumikha ng personalized na karanasan sa pamamagitan ng pagdagdag ng mga katangian sa iyong mga mensahe. Gamitin ang kapangyarihan ng personalization upang mapataas ang iyong ROI.",
-                "img": "/assets/global/sms/sms-personalized-sms.svg"
+                "img": "/assets/fil_ph/sms/personalized_sms.webp"
             },
             {
                 "name": "Link Shortener",
                 "content": "<strong>Gawing mas maikli at madaling basahin ang mahabang URL.</strong>Paganahin ang integrated na link shortener upang gawing mas maikli ang mahahabang URL. Makakuha ng detalyadong ulat ng user sa mga pag-click kasama ang mobile number, browser, at IP.",
-                "img": "/assets/global/sms/sms-link-shortener.svg"
+                "img": "/assets/fil_ph/sms/link_shortener.webp"
             },
             {
                 "name": "Pinahusay na Analytics",
                 "content": "<strong>Real-time na graphical view para sa monitoring at troubleshooting.</strong>I-optimize ang iyong SMS delivery, sukatin ang bisa ng iyong mga kampanya, at pagbutihin ang ROI. Laging malaman kung aling mga mensahe ang natanggap ng customer at alin ang hindi.",
-                "img": "/assets/global/sms/sms-enhanced-analytics.svg"
+                "img": "/assets/fil_ph/sms/enhanced_analytics.webp"
             }
         ]
     },

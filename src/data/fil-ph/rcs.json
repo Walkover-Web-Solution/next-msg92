@@ -13,7 +13,7 @@
     "tagline": "Rich Communication Services",
     "heading": "Makipag-ugnayan sa mga customer sa kanilang SMS inbox sa pamamagitan ng pagpapadala ng mayaman at interaktibong mga mensahe gamit ang RCS",
     "subheading": "Ang RCS ay isang integrated na channel ng pagmemensahe na nagbibigay-daan sa mga negosyo na makipag-ugnayan sa mga customer sa pamamagitan ng mayaman, immersive na two-way na pag-uusap",
-    "banner_img": "/assets/global/hello/banner.webp",
+    "banner_img": "/assets/fil_ph/hello/banner.webp",
     "getstarted_btn": "Magsimula",
     "trustedByComp": {
       "heading": "Pinagkakatiwalaan ng 30,000+ negosyo sa buong mundo",
@@ -48,22 +48,22 @@
       { 
         "name": "Corporate Communications na may Branding",
         "content": "<strong>Magpakilala gamit ang branding</strong>Palakasin ang visibility ng iyong brand sa SMS inbox gamit ang natatanging sender ID at logo. Gamitin ang kaakit-akit na interface upang epektibong makipag-ugnayan sa mga customer.",
-        "img": "/assets/global/rcs/rcs-communications-branding.svg"
+        "img": "/assets/fil_ph/rcs/corporate_communications_with_branding.webp"
       },
       {
         "name": "Magbigay ng Multimedia Interactions",
         "content": "<strong>Komunikasyon sa pamamagitan ng visual na presentasyon</strong>Pagandahin ang komunikasyon ng iyong brand sa pamamagitan ng RCS na nagbibigay ng tiwala. Isama ang iyong logo, pangalan ng brand, mga video, larawan, at carousels sa iyong mga mensahe upang mapataas ang conversion.",
-        "img":  "/assets/global/rcs/rcs-multimedia-interactions.svg"
+        "img":  "/assets/fil_ph/rcs/provide_multimedia_interactions.webp"
       },
       {
         "name": "Palakihin ang Benta sa Pamamagitan ng Interaktibong Usapan",
         "content": "Bumuo ng nakakaengganyong karanasan sa pag-uusap gamit ang mga larawan, video, carousels, at interaktibong action buttons. Mangibabaw sa mga kakumpitensya sa pamamagitan ng pagpapadala ng nakakaengganyo at maaasahang RCS messages na nagtutulak ng conversion.",
-        "img": "/assets/global/rcs/rcs-boost-sales.svg"
+        "img": "/assets/fil_ph/rcs/boost_sales_through_interactive_conversations.webp"
       },
       {
         "name": "Pinahusay na Tiwala ng Customer",
         "content": "<strong>Unawain ang gawi ng iyong mga customer</strong>I-personalize ang iyong komunikasyon, at bumuo ng matibay na relasyon na nagdudulot ng katapatan. Gamitin ang verified at may badge na sender IDs na sinuri ng Google para sa mas mataas na response rate at pinahusay na tiwala at kredibilidad.",
-        "img": "/assets/global/rcs/rcs-customer-trust.svg"
+        "img": "/assets/fil_ph/rcs/enhanced_customer_trust.webp"
       }
     ]
   },
