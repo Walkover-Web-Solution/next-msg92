@@ -12,7 +12,7 @@
     "tagline": "Mabilis at Seguradong Pag-beripika",
     "heading": "Pinakasimple, pinakamabilis, at pinakaepektibong paraan para i-verify ang iyong mga user",
     "subheading": "Bumuo ng tiwala ng customer at bigyang-proteksyon ang negosyo gamit ang two-factor authentication.",
-    "banner_img": "/assets/global/otp/banner.webp",
+    "banner_img": "/assets/fil_ph/otp/otp_banner.webp",
     "not_absolute": "true",
     "getstarted_btn": "Magsimula nang Libre",
     "trustedByComp": {
@@ -52,7 +52,7 @@
       {
         "name": "Magic Links: Pag-authenticate nang Walang Password sa Isang Click",
         "content": "Ang Magic Link ay isang seguradong paraan ng pag-login kung saan hindi na kailangan ng password ng user. Pagkatapos ibigay ang kanilang email o numero ng telepono, makakatanggap sila ng natatangi at time-sensitive na link. Ang pag-click sa link ay magbe-verify ng kanilang pagkakakilanlan at maglo-login sa kanila nang madali at ligtas.",
-        "img": "/assets/global/otp/magic_links.webp",
+        "img": "/assets/fil_ph/otp/magic_links.webp",
         "more_content": {
           "usecases": [
             {
@@ -88,7 +88,7 @@
       {
         "name": "Multi-Channel OTP Delivery: OTP na Laging Makakarating Sayo",
         "content": "Tinitiyak ng Multi-Channel OTP Delivery ang seguradong access sa pamamagitan ng pagpapadala ng OTP sa iba't ibang channel tulad ng OTP SMS, WhatsApp OTP, OTP email, at voice OTP, kaya siguradong matatanggap ng user ang kanilang code anuman ang medium.",
-        "img": "/assets/global/otp/lotties/multi_channel_otp_delivery.json",
+        "img": "/assets/fil_ph/otp/multi_channel_otp_delivery.webp",
         "more_content": {
           "usecases": [
             {
@@ -160,7 +160,7 @@
       {
         "name": "Plug & Play Integration: Walang Hassle na Setup, Instant na Koneksyon",
         "content": "Ang OTP Widget na may Plug & Play Integration ay nagbibigay-daan para madali mong maikonekta at magamit ang OTP authentication nang walang komplikadong configuration, para sa mabilis at walang abalang setup.",
-        "img": "/assets/global/otp/plug_play_integration.webp",
+        "img": "/assets/fil_ph/otp/plug_play_integration.webp",
         "more_content": {
           "usecases": [
             {
@@ -196,7 +196,7 @@
       {
         "name": "Real-Time Analytics & Reporting: Agarang Insight para sa Mas Matalinong Desisyon",
         "content": "Nagbibigay ang Real-Time Analytics & Reporting ng detalyadong insight, na nagbibigay-daan para subaybayan mo ang OTP delivery, performance ng bawat channel, at engagement ng user agad-agad para makagawa ng mas matalino at batay sa datos na desisyon.",
-        "img": "/assets/global/otp/real_time_analytics_reporting.webp",
+        "img": "/assets/fil_ph/otp/real_time_analytics_reporting.webp",
         "more_content": {
           "usecases": [
             {
@@ -232,7 +232,7 @@
       {
         "name": "Inbuilt IP Security: Protektado ang Access mula sa Hindi Awtorisadong Lokasyon",
         "content": "Tinitiyak ng Inbuilt IP Security na ang OTP at sensitibong datos ay maa-access lamang mula sa mga pinagkakatiwalaang IP address, nagbibigay ng dagdag na layer ng proteksyon laban sa hindi awtorisadong access at mga banta.",
-        "img": "/assets/global/otp/inbuilt_ip_security.webp",
+        "img": "/assets/fil_ph/otp/inbuilt_ip_security.webp",
         "more_content": {
           "usecases": [
             {
