@@ -38,7 +38,9 @@ export default function HreflangTagComp({ pageInfo }) {
                             key={index}
                             rel='alternate'
                             hreflang={country.hreflang}
-                            href={`${process.env.BASE_URL}/${hrefPrefix}${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
+                            href={`${process.env.BASE_URL}/${hrefPrefix}${
+                                pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''
+                            }`}
                         />
                     );
                 }

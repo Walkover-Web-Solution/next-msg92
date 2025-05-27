@@ -7,7 +7,7 @@
         "tagline": "platform para sa solusyon sa customer",
         "heading": " Cloud na Komunikasyon sa Negosyo ",
         "subheading": "Ligtas at matatag na mga API para sa WhatsApp, SMS, RCS, Email, Voice, Authentication at marami pa",
-        "banner_img": "/assets/global/index/banner.webp",
+        "banner_img": "/assets/fil_ph/index/index_banner.webp",
         "getstarted_btn": "Magsimula",
         "trustedByComp": {
             "heading": "Pinagkakatiwalaan ng 30,000+ global na negosyo",
@@ -46,37 +46,37 @@
     "ProductsComp": [
         {
             "icon": "/assets/icons/products/hello.svg",
-            "tagline": "CONTACT CENTER",
+            "tagline": "Contact Center",
             "name": "Hello",
             "description": "Bigyang kapangyarihan ang iyong mga empleyado, Suportahan ang iyong mga customer.",
-            "img": "/img/home/chats.svg",
+            "img": "/assets/fil_ph/index/hello.webp",
             "linkText": "Alamin pa",
             "link": "/hello"
         },
         {
             "icon": "/assets/icons/products/campaign.svg",
-            "tagline": "AUTOMATION BASED SA EVENT",
+            "tagline": "Automation Bases SA Event",
             "name": "Campaign",
             "description": "Palakasin ang pakikilahok ng audience gamit ang matalinong Platform.",
-            "img": "/img/home/campaign.svg",
+            "img": "/assets/fil_ph/index/campaign.webp",
             "linkText": "Alamin pa",
             "link": "/campaign"
         },
         {
             "icon": "/assets/icons/products/segmento.svg",
-            "tagline": "PLATFORM NG DATA NG CUSTOMER",
+            "tagline": "Platform para sa solusyon sa customer",
             "name": "Segmento",
             "description": "Pag-segment ng customer batay sa kanilang mga aksyon o event.",
-            "img": "/img/home/segmento.webp",
+            "img": "/assets/fil_ph/index/segmento.webp",
             "linkText": "Alamin pa",
             "link": "/segmento"
         },
         {
             "icon": "/assets/icons/products/otp.svg",
-            "tagline": "INSTANT AT SEGURADONG BERIPIKASYON",
+            "tagline": "Instant at Seguradong beripikasyon",
             "name": "OTP",
             "description": "Mabilis at maaasahang multichannel OTP verification",
-            "img": "/img/home/otp.png",
+            "img": "/assets/fil_ph/index/otp.webp",
             "linkText": "Alamin pa",
             "link": "/otp"
         }
@@ -147,7 +147,7 @@
             {
                 "icon": "/assets/icons/products/shorturl.svg",
                 "name": "URL Shortener",
-                "img": "/assets/global/index/services/shorturl.svg",
+                "img": "/assets/fil_ph/index/short_url.webp",
                 "heading": "Gawing maikli ang iyong mahahabang URL",
                 "description": "Awtomatikong pinaikli ang URL at sinusubaybayan ang iyong tagumpay, isang click bawat isa. Gawing maikli at madaling tandaan ang iyong mahahabang link.",
                 "link": "/shorturl"
@@ -155,7 +155,7 @@
             {
                 "icon": "/assets/icons/products/knowledgebase.svg",
                 "name": "KnowledgeBase App",
-                "img": "/assets/global/index/services/knowledgebase.svg",
+                "img": "/assets/fil_ph/index/knowledgebase.webp",
                 "heading": "Pamahalaan ang iyong mga help docs at artikulo",
                 "description": "Huwag hayaang maghintay ang iyong mga customer para sa simpleng solusyon. Bigyan sila ng instant na access sa self-service library ng impormasyon.",
                 "link": "/knowledgebase"
@@ -163,7 +163,7 @@
             {
                 "icon": "/assets/icons/products/filehosting.svg",
                 "name": "File Hosting",
-                "img": "/assets/global/index/services/filehosting.svg",
+                "img": "/assets/fil_ph/index/file_hosting.webp",
                 "heading": "Simple at seguradong file storage",
                 "description": "Isang sentrong hub para sa online file storage, pagbabahagi at pag-sync. Itago ang lahat ng iyong files nang ligtas gamit ang makapangyarihan, maaasahan at madaling gamitin na cloud storage.",
                 "link": "https://msg91.com/help/all-you-need-to-know-about-files-option-of-msg91"
