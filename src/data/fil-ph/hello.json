@@ -12,7 +12,7 @@
         "tagline": "Baguhin ang Suporta sa Customer",
         "heading": "Hello",
         "subheading": "Huwag mawalan ng pokus sa mahalaga. Huwag lang magresolba ng mga ticket, bumuo ng matibay na relasyon sa customer",
-        "banner_img": "/assets/global/hello/heroimg.png",
+        "banner_img": "/assets/fil_ph/hello/hello_banner.webp",
         "getstarted_btn": "Magsimula",
         "trustedByComp": {
             "heading": "Suportado ang 15+ channel at platform",
@@ -72,37 +72,37 @@
                 "icon": "MdSupportAgent",
                 "name": "Walang Limitasyong Ahente",
                 "content": "Walang limitasyong libreng ahente para palakasin ang iyong customer support. Mas maraming ahente, tuloy-tuloy na pakikipag-ugnayan, mas maraming ticket na nareresolba, at mas mahusay na suporta sa customer. Walang limitasyon sa bilang ng iyong mga ahente ng customer support.",
-                "img": "/assets/global/hello/unlimited-agents.svg"
+                "img": "/assets/fil_ph/hello/unlimited_agents.webp"
             },
             {
                 "icon": "MdOutlineSmartToy",
                 "name": "Chatbot",
                 "content": "Sagutin ang mga tanong ng customer 24/7 sa text at voice. Hayaan ang chatbot na tugunan ang mga simpleng paulit-ulit na tanong na hindi nangangailangan ng soft skills at karanasan ng iyong mga ahente, at kapag kinakailangan, agad na ipasa sa live agent.",
-                "img": "/assets/global/hello/chatbot.svg"
+                "img": "/assets/fil_ph/hello/chatbot.webp"
             },
             {
                 "icon": "MdAdsClick",
                 "name": "Screen Control",
                 "content": "Kontrolin ang screen ng iyong customer kahit nasaan ka. Magtrabaho sa remote screen na parang nandoon ka mismo. Kapag nabigyan ng access, makukuha mo ang buong kontrol sa screen, mouse, at keyboard ng customer para mabilis maresolba ang isyu.",
-                "img": "/assets/global/hello/screen-control.svg"
+                "img": "/assets/fil_ph/hello/screen_control.webp"
             },
             {
                 "icon": "MdOutlineScreenShare",
                 "name": "Video Call / Screen Sharing",
                 "content": "Mataas na kalidad ng video call saan man naroon ang iyong customer. Makipag-video call sa customer para mag-co-browse ng kanilang screen. Kontrolin ang meeting habang nagsha-share ng screen ang customer para magpakita ng impormasyon o mag-ulat ng isyu.",
-                "img": "/assets/global/hello/video-call---screen-sharing.svg"
+                "img": "/assets/fil_ph/hello/video_call_screen_sharing.webp"
             },
             {
                 "icon": "MdOutlineSchema",
                 "name": "Workflow",
                 "content": "Awtomatikong i-assign ang mga usapan sa isang team o dedikadong ahente. Magsimula gamit ang aming kasalukuyang Workflow o mag-set up ng sarili mong Workflow ayon sa pangangailangan ng iyong negosyo.",
-                "img": "/assets/global/hello/workflow.svg"
+                "img": "/assets/fil_ph/hello/workflow.webp"
             },
             {
                 "icon": "MdOutlineAnalytics",
                 "name": "Analytics",
                 "content": "Analytics at mga ulat para subaybayan ang performance ng iyong mga ahente. Makakuha ng malalim at kapaki-pakinabang na insight para maghatid ng mahusay na suporta at maabot ang iyong mga layunin. Ang madaling intindihin na analytics reports ay tutulong sa iyong mga ahente na iangat ang kanilang customer support.",
-                "img": "/assets/global/hello/analytics.svg"
+                "img": "/assets/fil_ph/hello/analytics.webp"
             }
         ]
     },
