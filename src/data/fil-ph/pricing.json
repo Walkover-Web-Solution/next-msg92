@@ -1,0 +1,323 @@
+{
+    "HeadComp": {
+        "title": "Pinakamahusay na Cloud Communication Platform para sa Negosyo | MSG91",
+        "description": "Tuklasin ang cloud communication platform ng MSG91 upang maisama ang boses, video, at pagmemensahe sa iyong negosyo. Humiling ng demo at baguhin ang iyong komunikasyon."
+    },
+    "PricingComp": {
+        "products": {
+            "applications": [
+                {
+                    "name": "Hello",
+                    "slug": "hello",
+                    "description": "Contact Center",
+                    "icon": "/assets/icons/products/hello.svg"
+                },
+                {
+                    "name": "Campaign",
+                    "slug": "campaign",
+                    "description": "Automation batay sa kaganapan",
+                    "icon": "/assets/icons/products/campaign.svg"
+                },
+                {
+                    "name": "Segmento",
+                    "slug": "segmento",
+                    "description": "Pamamahala ng contact",
+                    "icon": "/assets/icons/products/segmento.svg"
+                },
+                {
+                    "name": "OTP",
+                    "slug": "otpwidget",
+                    "description": "OTP widget SDK",
+                    "icon": "/assets/icons/products/otp.svg"
+                }
+            ],
+            "channels": [
+                {
+                    "name": "SMS",
+                    "slug": "sms",
+                    "icon": "/assets/icons/products/sms.svg"
+                },
+                {
+                    "name": "SendOTP",
+                    "slug": "otp",
+                    "icon": "/assets/icons/products/otp.svg"
+                },
+                {
+                    "name": "Email",
+                    "slug": "email",
+                    "icon": "/assets/icons/products/email.svg"
+                },
+                {
+                    "name": "WhatsApp",
+                    "slug": "whatsapp",
+                    "icon": "/assets/icons/products/whatsapp.svg"
+                },
+                {
+                    "name": "Voice",
+                    "slug": "voice",
+                    "icon": "/assets/icons/products/voice.svg"
+                },
+                {
+                    "name": "RCS",
+                    "slug": "rcs",
+                    "icon": "/assets/icons/products/rcs.svg"
+                }
+            ]
+        },
+        "hello": {
+            "HeadComp": {
+                "title": "Presyo ng Hello sa Pilipinas | MSG91-Pilipinas",
+                "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional Hello, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
+            },
+            "connectComp": {
+                "content": "Makipag-ugnayan sa aming team para sa isang personalisadong plano na akma sa iyong pangangailangan.",
+                "sales_btn": "Makipag-usap sa Sales",
+                "know_more": "Alamin pa tungkol sa"
+            },
+            "faqComp": {
+                "heading": "Mga Madalas Itanong",
+                "faqs": [
+                    {
+                        "question": "Paano mag-subscribe sa inyong Hello Plan?",
+                        "answer": "Sa Hello panel, i-click ang subscription tab na matatagpuan sa kaliwang sulok. Bubuksan nito ang pahina ng kasalukuyang plano at pati na rin ang opsyon na bumili ng bagong plano. I-click ito at maaari kang pumili mula sa buwanan o taunang opsyon. Maaari kang direktang mag-subscribe sa plano mula sa website. Pumunta sa hello service, i-click ang get started, punan ang kinakailangang detalye at mag-subscribe sa plano."
+                    },
+                    {
+                        "question": "May bayad ba ang AI Chat Bot?",
+                        "answer": "Wala, walang bayad ang Chat Bot, sisingilin lamang para sa basic at premium na mga plano. Maaari mong gamitin ang chat bot sa libreng plano hanggang 50 ticket sa Hello, pagkatapos nito kailangan mong i-upgrade ang iyong hello plan. Karaniwan, ibinibigay namin ang Chat Bot nang libre para sa trial. Maaari mong gamitin ang Chat Bot na ito sa Whatsapp, Instagram, Chat Widget sa iyong Website, Facebook at iba pa. Subukan na ang Chat Bot ngayon."
+                    },
+                    {
+                        "question": "May dagdag bang bayad para sa Instagram/Facebook Inbox?",
+                        "answer": "Kung nagamit mo na ang mga nakatalagang inbox, maaari kang bumili ng bagong inbox sa basic at premium na plano sa halagang 500 rupees bawat isa. Sa libreng plano, hindi ka makakabili ng bagong inbox. Kailangan mong i-upgrade ang plano kung gusto mo ng dagdag na inbox."
+                    },
+                    {
+                        "question": "Paano mag-subscribe sa inyong Hello Plan?",
+                        "answer": "Sa Hello panel, i-click ang subscription tab na matatagpuan sa kaliwang sulok. Bubuksan nito ang pahina ng kasalukuyang plano at pati na rin ang opsyon na bumili ng bagong plano. I-click ito at maaari kang pumili mula sa buwanan o taunang opsyon. Maaari kang direktang mag-subscribe sa plano mula sa website. Pumunta sa hello service, i-click ang get started, punan ang kinakailangang detalye at mag-subscribe sa plano."
+                    },
+                    {
+                        "question": "Maaari ko bang i-customize ang Hello Plan?",
+                        "answer": "Sa Hello panel, i-click ang subscription tab na matatagpuan sa kaliwang sulok. Bubuksan nito ang pahina ng kasalukuyang plano at pati na rin ang opsyon na bumili ng bagong plano. I-click ito at maaari kang pumili mula sa buwanan o taunang opsyon. Maaari kang direktang mag-subscribe sa plano mula sa website. Pumunta sa hello service, i-click ang get started, punan ang kinakailangang detalye at mag-subscribe sa plano."
+                    }
+                ]
+            }
+        },
+        "campaign": {
+            "HeadComp": {
+                "title": "Presyo ng Campaign sa Pilipinas | MSG91-Pilipinas",
+                "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional Campaign, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
+            },
+            "for_third_party_apis": {
+                "line_one": "Ang singil para sa paggamit ng third-party API ay ilulunsad sa lalong madaling panahon, batay sa bawat 1,000 API calls.",
+                "line_two": "Mangyaring maghintay — ang pinal na detalye ng presyo ay ibabahagi sa iyo sa lalong madaling panahon."
+            },
+            "get_started": "Magsimula",
+            "connectComp": {
+                "content": "Libre ang paggamit ng Campaign.",
+                "content2": "Channel-wise na presyo ang ipapataw para sa pagpapadala ng mensahe.",
+                "sales_btn": "Makipag-usap sa Sales",
+                "know_more": "Alamin pa tungkol sa"
+            }
+        },
+        "segmento": {
+            "HeadComp": {
+                "title": "Presyo ng Segmento sa Pilipinas | MSG91-Pilipinas",
+                "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional Segmento, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
+            },
+            "get_started": "Magsimula",
+            "connectComp": {
+                "content": "Maaari kang mag-imbak ng impormasyon ng user nang libre gamit ang Segmento.",
+                "sales_btn": "Makipag-usap sa Sales",
+                "know_more": "Alamin pa tungkol sa"
+            }
+        },
+        "otpwidget": {
+            "HeadComp": {
+                "title": "Presyo ng otpwidget sa Pilipinas | MSG91-Pilipinas",
+                "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional otpwidget, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
+            },
+            "get_started": "Magsimula",
+            "connectComp": {
+                "content": "Libre ang paggamit ng OTP widget/SDK.",
+                "content2": "Channel-wise na presyo ang ipapataw para sa pagpapadala ng mensahe.",
+                "sales_btn": "Makipag-usap sa Sales",
+                "know_more": "Alamin pa tungkol sa"
+            },
+            "faqComp": {
+                "heading": "Mga Madalas Itanong",
+                "faqs": [
+                    {
+                        "question": "Ano ang presyo ng OTP Widget?",
+                        "answer": "Ang presyo ng OTP Widget ay pangunahing nakabatay sa dami ng OTP na ipinadala at sa mga partikular na channel na ginamit, kabilang ang SMS, Voice, Email, at WhatsApp. Sisingilin batay sa dami ng OTP na ipinadala sa bawat channel."
+                    },
+                    {
+                        "question": "Mayroon bang nakatakdang buwanang bayad sa subscription para sa paggamit ng OTP Widget?",
+                        "answer": "Wala, walang buwanang bayad sa subscription na kaugnay ng OTP Widget."
+                    },
+                    {
+                        "question": "Mayroon bang iba't ibang plano ng presyo batay sa antas ng paggamit?",
+                        "answer": "Oo, may iba't ibang plano ng presyo batay sa paggamit, at kung malaki ang volume mo, maaari naming i-customize ang presyo ayon sa iyong pangangailangan."
+                    },
+                    {
+                        "question": "Paano nakaayos ang presyo para sa Voice OTPs?",
+                        "answer": "Ang Voice OTPs ay maaaring may hiwalay na istraktura ng presyo, kadalasan batay sa bilang ng voice calls na ginawa, at kung global o lokal ang ginamit na caller ID."
+                    },
+                    {
+                        "question": "May dagdag bang bayad para sa paggamit ng advanced security features, tulad ng Google Captcha validation?",
+                        "answer": "Bagamat ang ibang provider ay maaaring maningil ng dagdag para sa mga feature tulad ng Google Captcha validation upang mapataas ang seguridad ng OTP Widget, hindi kami naniningil ng dagdag para sa captcha validation."
+                    },
+                    {
+                        "question": "Maaari ba akong makakuha ng customized na plano ng presyo batay sa aking partikular na pangangailangan sa negosyo?",
+                        "answer": "Maraming service provider ang nag-aalok ng customized na plano ng presyo para sa mga negosyo na may natatanging pangangailangan. Makipag-ugnayan sa sales team upang talakayin ang iyong pangangailangan at alamin ang mga angkop na opsyon."
+                    },
+                    {
+                        "question": "Mayroon bang mga nakatagong bayarin o singil na dapat kong malaman?",
+                        "answer": "Wala, walang nakatagong dagdag na singil para sa widget, maliban sa aktwal na pagpapadala ng OTP sa anumang channel. Para makapagpadala ng OTP, kailangan mo lang mag-subscribe o magdagdag ng balanse sa iyong account."
+                    },
+                    {
+                        "question": "May trial period o demo ba para sa pagsubok ng otp widget?",
+                        "answer": "Wala kaming inaalok na trial period o demo para sa pagsubok ng widget. Gayunpaman, maaari kang magdagdag ng pondo sa iyong wallet ng maliit na halaga para sa pagsubok."
+                    }
+                ]
+            }
+        },
+        "email": {
+            "HeadComp": {
+                "title": "Presyo ng Email sa Pilipinas | MSG91-Pilipinas",
+                "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional Email, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
+            },
+            "connectComp": {
+                "content": "Makipag-ugnayan sa aming team para sa isang personalisadong plano na akma sa iyong pangangailangan.",
+                "sales_btn": "Makipag-usap sa Sales",
+                "know_more": "Alamin pa tungkol sa"
+            },
+            "faqComp": {
+                "heading": "Mga Madalas Itanong",
+                "faqs": [
+                    {
+                        "question": "Makakatanggap ba ako ng 5000 libreng email isang beses lang o buwan-buwan?",
+                        "answer": "Sa libreng plano, makakatanggap ka ng 5000 libreng email bawat buwan."
+                    },
+                    {
+                        "question": "Bumili ako ng starter plan at nakatanggap ng 100,000 email para sa isang buwan. Paano kung lumampas ang aking email traffic sa 100,000 sa isang buwan?",
+                        "answer": "Sa starter plan, makakakuha ka ng 100,000 email at 100 email validation. Kung magpadala ka ng higit sa 100,000 email sa isang buwan, sisingilin ka ng karagdagang 0.02/- bawat email. Bukod dito, kung mag-validate ka ng higit sa 100 email, sisingilin ka ng 0.25/- bawat validation. Ibabawas ang halagang ito mula sa iyong MSG91 wallet. Ang seksyong Extra sa bawat email plan ay nagpapakita ng impormasyong ito."
+                    },
+                    {
+                        "question": "Sa planong binili ko, may dalawang limitasyon: Monthly Spending Limit at Postpaid Billing Limit. Maaari mo bang ipaliwanag ang pagkakaiba at paano ito ginagamit?",
+                        "answer": "Ikaw, bilang user, ang magtatakda ng monthly spending limit, habang ang postpaid billing limit ay tanging MSG91 lang ang makakapag-set. Kung naubos mo na ang email at validation na kasama sa iyong plan at nais mong magpadala pa ng email o mag-validate ng dagdag na email ID, ibabawas ng MSG91 ang sobrang paggamit mula sa iyong wallet kapag naabot mo ang 90% ng iyong postpaid billing limit. Pagkatapos ng pagbawas, mare-reset ang iyong postpaid billing limit sa default. Kung magpapatuloy ang iyong paggamit at muling umabot sa 90% ng postpaid billing limit, magkakaroon ulit ng pagbawas mula sa iyong wallet. Sa sitwasyong ito, ang kabuuang maximum na pagbawas ay naaayon sa monthly spending limit na itinakda mo."
+                    },
+                    {
+                        "question": "Ako ay free plan user at wala akong natanggap na email validation. Paano ako makakagamit ng validation?",
+                        "answer": "Kung gusto mong lumampas sa benepisyo ng anumang plano, tingnan ang extra section ng planong iyon para sa detalye. Para magamit ang email validation sa libreng plano, kailangan mong magbayad ng 0.35 bawat email validation, na ibabawas mula sa iyong MSG91 wallet."
+                    },
+                    {
+                        "question": "Nag-subscribe ako sa starter plan na dapat ay magbibigay sa akin ng 1 Lac email sa halagang 2000/-. Ngunit pagkatapos mag-subscribe, napansin kong mas mababa ang nabawas na halaga at mas kaunti ang natanggap kong email.",
+                        "answer": "Ang bawat plano ay buwanan, mula unang araw hanggang huli. Kung bumili ka ng plano sa kalagitnaan ng buwan, kakalkulahin ng system ang singil at benepisyo batay sa natitirang araw ng buwan."
+                    }
+                ]
+            }
+        },
+        "voice": {
+            "HeadComp": {
+                "title": "Presyo ng Voice sa Pilipinas | MSG91-Pilipinas",
+                "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional Voice, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
+            },
+            "heading": "Singil sa outgoing na tawag/bawat minuto",
+            "exportData": {
+                "content": "Para i-download ang detalyadong network at prefix-wise na pricing sheet.",
+                "export": "I-export",
+                "waiting": "Naghihintay..."
+            },
+            "addOns": {
+                "heading": "Mga Add-on na Serbisyo",
+                "content": [
+                    "Pagre-record ng Tawag",
+                    "Pagmo-monitor ng Tawag",
+                    "Analytics",
+                    "Number Masking"
+                ],
+                "freeText": " Lahat ng Add-On na Serbisyo ay <span class='text-green-600'>LIBRE</span> ng bayad"
+            },
+            "rates": [
+                {
+                    "heading": "International rate",
+                    "content": "Ang mga tawag ay dinadaan sa premium A-Z routes at ang CLI ay maaaring anumang valid na numero. Ang mga tawag na walang CLI, may maling CLI, may manipulated na CLI, CLI na nagmula sa hindi kilala, sarado o hindi nakatalagang prefix ranges, CLI na hindi E.164 format, o hindi tumutugma sa ITU standards ay maaaring ma-block o singilin sa pinakamataas na presyo."
+                },
+                {
+                    "heading": "Local Rate",
+                    "content": "Ang mga tawag ay dinadaan sa local operator sa loob ng bansa. Tanging mga numero sa iyong MSG91 account lang ang maaaring gamitin."
+                }
+            ],
+            "connectComp": {
+                "content": "Makipag-ugnayan sa aming team para sa isang personalisadong plano na akma sa iyong pangangailangan.",
+                "sales_btn": "Makipag-usap sa Sales",
+                "know_more": "Alamin pa tungkol sa"
+            },
+            "faqComp": {
+                "heading": "Mga Madalas Itanong",
+                "faqs": [
+                    {
+                        "question": "Paano ako makakakuha ng tulong o custom na plano ng presyo, at may discount ba para sa malalaking volume ng tawag?",
+                        "answer": "Para sa karagdagang tulong o upang talakayin ang custom na plano ng presyo, mangyaring makipag-ugnayan sa aming support team sa [support@email.com]. Oo, nag-aalok kami ng volume-based na discount para sa malalaking volume ng tawag. Makipag-ugnayan sa aming sales team para sa personalisadong solusyon."
+                    },
+                    {
+                        "question": "Kasama ba sa nakalistang presyo ang buwis o dagdag na bayarin?",
+                        "answer": "Ang nakalistang presyo para sa aming voice services ay hindi kasama ang buwis at dagdag na bayarin. Ang buwis at bayarin, kung mayroon, ay malinaw na ipapahayag sa proseso ng pagsingil."
+                    },
+                    {
+                        "question": "May pagkakaiba ba ang presyo para sa landline at mobile numbers?",
+                        "answer": "Ang aming istraktura ng presyo ay maaaring mag-iba batay sa uri ng destinasyon, kabilang ang landline at mobile numbers. Mangyaring tingnan ang aming pricing page o makipag-ugnayan sa aming sales team para sa detalye."
+                    },
+                    {
+                        "question": "Libre ang inbound calls sa Hello panel. Kung tatanggap ako ng tawag sa mobile phone, paano ito sisingilin?",
+                        "answer": "Bagamat libre ang inbound calls sa Hello panel, ang pagtanggap ng tawag sa mobile phone ay sasailalim sa naaangkop na outbound call rates ayon sa aming presyo. Tingnan ang aming pricing details para sa partikular na rates."
+                    },
+                    {
+                        "question": "Ano ang pagkakaiba ng local at international na presyo?",
+                        "answer": "Magkaiba ang presyo ng local at international na tawag batay sa destinasyon. Ang local calls ay karaniwang tumutukoy sa tawag sa loob ng parehong bansa, habang ang international calls ay tumutukoy sa tawag sa labas ng bansa. Tingnan ang aming pricing page para sa detalyadong impormasyon."
+                    }
+                ]
+            }
+        },
+        "sms": {
+            "HeadComp": {
+                "title": "Presyo ng SMS sa Pilipinas | MSG91-Pilipinas",
+                "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional SMS, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
+            },
+            "connectComp": {
+                "content": "Makipag-ugnayan sa aming team para sa personalisadong presyo.",
+                "sales_btn": "Makipag-usap sa Sales",
+                "know_more": "Alamin pa tungkol sa"
+            }
+        },
+        "otp": {
+            "HeadComp": {
+                "title": "Presyo ng OTP sa Pilipinas | MSG91-Pilipinas",
+                "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional OTP, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
+            },
+            "connectComp": {
+                "content": "Makipag-ugnayan sa aming team para sa isang personalisadong plano na akma sa iyong pangangailangan.",
+                "sales_btn": "Makipag-usap sa Sales",
+                "know_more": "Alamin pa tungkol sa"
+            }
+        },
+        "whatsapp": {
+            "HeadComp": {
+                "title": "Presyo ng WhatsApp sa Pilipinas | MSG91-Pilipinas",
+                "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional WhatsApp, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
+            },
+            "connectComp": {
+                "content": "Makipag-ugnayan sa aming team para sa presyo.",
+                "sales_btn": "Makipag-usap sa Sales",
+                "know_more": "Alamin pa tungkol sa"
+            }  
+        },
+        "rcs": {
+            "HeadComp": {
+                "title": "Presyo ng RCS sa Pilipinas | MSG91-Pilipinas",
+                "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional RCS, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
+            },
+            "connectComp": {
+                "know_more": "Alamin pa tungkol sa"
+            }
+        }
+    }
+}

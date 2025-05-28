@@ -1,0 +1,419 @@
+{
+    "common": true,
+    "notification": {
+        "support": "Makipag-ugnayan sa Amin",
+        "login": "MAG-LOG IN",
+        "hide": ["signup", "singin"]
+    },
+    "menu": {
+        "products": "Mga Produkto",
+        "products_list": [
+            {
+                "name": "Mga Aplikasyon",
+                "products": [
+                    {
+                        "name": "Hello",
+                        "slug": "hello",
+                        "description": "Ticketing at Chat"
+                    },
+                    {
+                        "name": "Campaign",
+                        "slug": "campaign",
+                        "description": "Automation na Batay sa Kaganapan"
+                    },
+                    {
+                        "name": "Segmento",
+                        "slug": "segmento",
+                        "description": "Pamamahala ng mga Contact"
+                    },
+                    {
+                        "name": "OTP",
+                        "slug": "otp",
+                        "description": "Pinadaling OTP Platform"
+                    }
+                ]
+            },
+            {
+                "name": "Mga Channel",
+                "products": [
+                    {
+                        "name": "SMS",
+                        "slug": "sms"
+                    },
+                    {
+                        "name": "RCS",
+                        "slug": "rcs"
+                    },
+                    {
+                        "name": "Email",
+                        "slug": "email"
+                    },
+                    {
+                        "name": "WhatsApp",
+                        "slug": "whatsapp"
+                    },
+                    {
+                        "name": "Voice",
+                        "slug": "voice"
+                    },
+                    {
+                        "name": "Numbers",
+                        "slug": "numbers"
+                    }
+                ]
+            },
+            {
+                "name": "Mga Kagamitan",
+                "products": [
+                    {
+                        "name": "URL Shortener",
+                        "slug": "shorturl",
+                        "description": "I-customize at Subaybayan ang mga URL"
+                    },
+                    {
+                        "name": "KnowledgeBase",
+                        "slug": "knowledgebase",
+                        "description": "Pamahalaan ang mga Dokumento at Gabay"
+                    }
+                ]
+            }
+        ],
+        "integrations": "Integrasyon",
+        "integrations_list": {
+            "explore_btn": "Tuklasin pa ang mga Plugin",
+            "content": [
+                {
+                    "name": "Shopify",
+                    "link": "https://apps.shopify.com/msg91",
+                    "icon": "/assets/integration_partner/shopify.svg"
+                },
+                {
+                    "name": "Zoho CRM",
+                    "link": "https://marketplace.zoho.com/app/crm/msg91-campaign-for-zoho-crm",
+                    "icon": "/assets/integration_partner/zoho-crm.svg"
+                },
+                {
+                    "name": "Clevertap",
+                    "link": "https://docs.clevertap.com/docs/msg91",
+                    "icon": "/assets/integration_partner/clevertap.jpeg"
+                },
+                {
+                    "name": "WebEngage",
+                    "link": "https://docs.webengage.com/docs/msg91",
+                    "icon": "/assets/integration_partner/webengage.jpg"
+                },
+                {
+                    "name": "MoEngage",
+                    "link": "https://partners.moengage.com/hc/en-us/articles/34933932637332-Configure-MSG91",
+                    "icon": "/assets/integration_partner/moengage.webp"
+                },
+                {
+                    "name": "Tally",
+                    "link": "https://msg91.com/partners-and-integrations/tally",
+                    "icon": "/assets/integration_partner/Tally.png"
+                },
+                {
+                    "name": "Kylas",
+                    "link": "https://kylas.io/mplaceintgrations/integration-msg91",
+                    "icon": "/assets/integration_partner/kylas.svg"
+                }
+            ]
+        },
+        "pricing": "Presyo",
+        "pricing_list": [
+            {
+                "name": "Mga Aplikasyon",
+                "products": [
+                    {
+                        "name": "Hello",
+                        "slug": "hello",
+                        "description": "Contact Center"
+                    },
+                    {
+                        "name": "Campaign",
+                        "slug": "campaign",
+                        "description": "Automation na Batay sa Kaganapan"
+                    },
+                    {
+                        "name": "Segmento",
+                        "slug": "segmento",
+                        "description": "Pamamahala ng mga Contact"
+                    },
+                    {
+                        "name": "OTP",
+                        "slug": "otpwidget",
+                        "description": "OTP widget SDK"
+                    }
+                ]
+            },
+            {
+                "name": "Mga Channel",
+                "products": [
+                    {
+                        "name": "SMS",
+                        "slug": "sms"
+                    },
+                    {
+                        "name": "SendOTP",
+                        "slug": "otp"
+                    },
+                    {
+                        "name": "Email",
+                        "slug": "email"
+                    },
+                    {
+                        "name": "WhatsApp",
+                        "slug": "whatsapp"
+                    },
+                    {
+                        "name": "Voice",
+                        "slug": "voice"
+                    },
+                    {
+                        "name": "RCS",
+                        "slug": "rcs"
+                    }
+                ]
+            },
+            {
+                "name": "Mga Kagamitan",
+                "products": [
+                    {
+                        "name": "URL Shortener",
+                        "slug": "shorturl",
+                        "description": "I-customize at Subaybayan ang mga URL"
+                    },
+                    {
+                        "name": "KnowledgeBase",
+                        "slug": "knowledgebase",
+                        "description": "Pamahalaan ang mga Dokumento at Gabay"
+                    }
+                ]
+            }
+        ],
+        "apidocs": "API Docs",
+        "signup_btn": "Mag-sign Up",
+        "hide": ["signup", "singin"]
+    },
+    "footer": {
+        "hide": ["signup", "singin"],
+        "products": {
+            "name": "Aming mga Produkto",
+            "links": [
+                {
+                    "name": "Hello",
+                    "link": "hello"
+                },
+                {
+                    "name": "Segmento",
+                    "link": "segmento"
+                },
+                {
+                    "name": "Campaign",
+                    "link": "campaign"
+                },
+                {
+                    "name": "OTP",
+                    "link": "otp"
+                },
+                {
+                    "name": "OTP-MagicLink",
+                    "link": "otp/magiclink",
+                    "nested": true
+                }
+            ]
+        },
+        "utilities": {
+            "name": "Mga Kagamitan",
+            "links": [
+                {
+                    "name": "URL Shortener",
+                    "link": "shorturl"
+                },
+                {
+                    "name": "KnowledgeBase",
+                    "link": "knowledgebase"
+                },
+                {
+                    "name": "Libreng WhatsApp link generator",
+                    "link": "free-whatsapp-link-generator"
+                },
+                {
+                    "name": "WhatsApp Chatbot",
+                    "link": "whatsapp/chatbot"
+                }
+            ]
+        },
+        "channels": {
+            "name": "Mga Channel",
+            "links": [
+                {
+                    "name": "SMS",
+                    "link": "sms"
+                },
+                {
+                    "name": "Email",
+                    "link": "email"
+                },
+                {
+                    "name": "WhatsApp",
+                    "link": "whatsapp"
+                },
+                {
+                    "name": "Voice",
+                    "link": "voice"
+                },
+                {
+                    "name": "Mga Numero",
+                    "link": "numbers"
+                }
+            ]
+        },
+        "resources": {
+            "name": "Mga Mapagkukunan",
+            "links": [
+                {
+                    "name": "Gabay",
+                    "link": "https://msg91.com/guide"
+                },
+                {
+                    "name": "Mga Case Study",
+                    "link": "https://msg91.com/case-studies"
+                },
+                {
+                    "name": "FAQ",
+                    "link": "https://msg91.com/help"
+                },
+                {
+                    "name": "API Dokumentasyon",
+                    "link": "https://docs.msg91.com/overview"
+                },
+                {
+                    "name": "Humiling ng Tampok",
+                    "link": "https://features.msg91.com/feature-requests"
+                }
+            ]
+        },
+        "discover": {
+            "name": "Tuklasin",
+            "links": [
+                {
+                    "name": "Tungkol sa amin",
+                    "link": "about-us"
+                },
+                {
+                    "name": "Presyo",
+                    "link": "pricing/hello"
+                },
+                {
+                    "name": "Makipag-ugnayan sa Amin",
+                    "link": "contact-us"
+                },
+                {
+                    "name": "Mga Developer",
+                    "link": "developers"
+                },
+                {
+                    "name": "MSG91 para sa mga startup",
+                    "link": "startups"
+                },
+                {
+                    "name": "Mga Partner at Integrasyon",
+                    "link": "partners-and-integrations"
+                },
+                {
+                    "name": "Maging Partner",
+                    "link": "become-a-partner"
+                },
+                {
+                    "name": "Karera",
+                    "link": "https://walkover.in/careers"
+                },
+                {
+                    "name": "Mga Sertipiko",
+                    "link": "certificates"
+                },
+                {
+                    "name": "Ihambing",
+                    "link": "compare"
+                }
+            ]
+        },
+        "policies": {
+            "links": [
+                {
+                    "name": "Mga Tuntunin ng Paggamit",
+                    "link": "terms-of-use"
+                },
+                {
+                    "name": "Patakaran sa Privacy",
+                    "link": "privacy-policy"
+                },
+                {
+                    "name": "GDPR",
+                    "link": "gdpr"
+                },
+                {
+                    "name": "Patakaran sa Refund",
+                    "link": "refund-policy"
+                },
+                {
+                    "name": "Walang Spam",
+                    "link": "no-spam"
+                },
+                {
+                    "name": "Patakaran para sa Startup",
+                    "link": "startup-policy"
+                },
+                {
+                    "name": "Patakaran sa Makatarungang Presyo",
+                    "link": "fair-pricing-policy"
+                },
+                {
+                    "name": "Patakaran sa Cookie",
+                    "link": "cookie-policy"
+                }
+            ]
+        },
+        "downloads": {
+            "name": "I-download ang mga App",
+            "apps": [
+                {
+                    "name": "Play Store",
+                    "icon": "/img/icon/android.svg",
+                    "link": "https://play.google.com/store/apps/details?id=com.hellornapp"
+                },
+                {
+                    "name": "App Store",
+                    "icon": "/img/icon/apple.svg",
+                    "link": "https://apps.apple.com/in/app/hello-by-msg91/id1635375551"
+                }
+            ]
+        },
+        "social": {
+            "name": "Sundan Kami",
+            "apps": [
+                {
+                    "name": "Facebook",
+                    "icon": "/img/icon/facebook.svg",
+                    "link": "https://www.facebook.com/msg91"
+                },
+                {
+                    "name": "LinkedIn",
+                    "icon": "/img/icon/linkedin.svg",
+                    "link": "https://www.linkedin.com/company/msg91/"
+                },
+                {
+                    "name": "Twitter",
+                    "icon": "/img/icon/twitter.svg",
+                    "link": "https://twitter.com/msg91"
+                },
+                {
+                    "name": "YouTube",
+                    "icon": "/img/icon/youtube.svg",
+                    "link": "https://www.youtube.com/@WalkoverWS"
+                }
+            ]
+        }
+    }
+}
