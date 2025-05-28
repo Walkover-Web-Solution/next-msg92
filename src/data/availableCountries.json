@@ -1,6 +1,7 @@
 [
   {
     "shortname": "IN",
+    "route": "in",
     "name": "India",
     "code": 91,
     "language": "English",
@@ -10,6 +11,7 @@
   },
   {
     "shortname": "BR",
+    "route": "br",
     "hide": true,
     "name": "Brazil",
     "code": 55,
@@ -30,6 +32,7 @@
   },
   {
     "shortname": "BR-PT",
+    "route": "br",
     "name": "Brazil",
     "code": 55,
     "currency": "USD",
@@ -49,6 +52,7 @@
   },
   {
     "shortname": "AE",
+    "route": "ae",
     "name": "United Arab Emirates",
     "code": 971,
     "language": "English",
@@ -58,6 +62,7 @@
   },
   {
     "shortname": "PH",
+    "route": "ph",
     "hide": true,
     "name": "Philippines",
     "code": 63,
@@ -78,6 +83,7 @@
   },
   {
     "shortname": "FIL-PH",
+    "route": "ph",
     "name": "Philippines",
     "code": 63,
     "language": "Filipino",
@@ -97,6 +103,7 @@
   },
   {
     "shortname": "SG",
+    "route": "sg",
     "name": "Singapore",
     "code": 65,
     "language": "English",
@@ -106,6 +113,7 @@
   },
   {
     "shortname": "ES",
+    "route": "es",
     "name": "Spain",
     "code": 34,
     "language": "English",
@@ -115,6 +123,7 @@
   },
   {
     "shortname": "GB",
+    "route": "gb",
     "name": "United Kingdom",
     "code": 44,
     "language": "English",
@@ -124,6 +133,7 @@
   },
   {
     "shortname": "US",
+    "route": "us",
     "name": "United States",
     "code": 1,
     "language": "English",
