@@ -1,0 +1,87 @@
+{ 
+  "HeadComp": {
+    "title": "RCS: Pinahusay, Branded, at Interaktibong Karanasan - MSG91 - Pilipinas",
+    "description": "Iangat ang pakikipag-ugnayan sa customer gamit ang Rich Communication Services (RCS). Gamitin ang mga advanced na tampok sa pagmemensahe upang pagandahin ang iyong komunikasyon at palaguin ang iyong negosyo."
+  }, 
+  "BannerComp": {
+    "slug": "rcs",
+    "product": {
+      "name": "RCS",
+      "icon": "/assets/icons/products/rcs.svg"
+    },
+    "code": true,
+    "tagline": "Rich Communication Services",
+    "heading": "Makipag-ugnayan sa mga customer sa kanilang SMS inbox sa pamamagitan ng pagpapadala ng mayaman at interaktibong mga mensahe gamit ang RCS",
+    "subheading": "Ang RCS ay isang integrated na channel ng pagmemensahe na nagbibigay-daan sa mga negosyo na makipag-ugnayan sa mga customer sa pamamagitan ng mayaman, immersive na two-way na pag-uusap",
+    "banner_img": "/assets/fil_ph/hello/banner.webp",
+    "getstarted_btn": "Magsimula",
+    "trustedByComp": {
+      "heading": "Pinagkakatiwalaan ng 30,000+ negosyo sa buong mundo",
+      "logos": [
+        {
+          "name": "Xiaomi",
+          "url": "/assets/trusted_by/xiaomi.svg"
+        },
+        {
+          "name": "Unacademy",
+          "url": "/assets/trusted_by/unacademy.svg"
+        },
+        {
+          "name": "Dream11",
+          "url": "/assets/trusted_by/dream11.svg"
+        },
+        {
+          "name": "Indeed",
+          "url": "/assets/trusted_by/indeed.svg"
+        },
+        {
+          "name": "Ixigo",
+          "url": "/assets/trusted_by/ixigo.svg"
+        }
+      ]
+    }
+  },
+  "FeatureComp": { 
+    "heading": "Mga Tampok",
+    "iconColor": "text-otp",
+    "features": [
+      { 
+        "name": "Corporate Communications na may Branding",
+        "content": "<strong>Magpakilala gamit ang branding</strong>Palakasin ang visibility ng iyong brand sa SMS inbox gamit ang natatanging sender ID at logo. Gamitin ang kaakit-akit na interface upang epektibong makipag-ugnayan sa mga customer.",
+        "img": "/assets/fil_ph/rcs/corporate_communications_with_branding.webp"
+      },
+      {
+        "name": "Magbigay ng Multimedia Interactions",
+        "content": "<strong>Komunikasyon sa pamamagitan ng visual na presentasyon</strong>Pagandahin ang komunikasyon ng iyong brand sa pamamagitan ng RCS na nagbibigay ng tiwala. Isama ang iyong logo, pangalan ng brand, mga video, larawan, at carousels sa iyong mga mensahe upang mapataas ang conversion.",
+        "img":  "/assets/fil_ph/rcs/provide_multimedia_interactions.webp"
+      },
+      {
+        "name": "Palakihin ang Benta sa Pamamagitan ng Interaktibong Usapan",
+        "content": "Bumuo ng nakakaengganyong karanasan sa pag-uusap gamit ang mga larawan, video, carousels, at interaktibong action buttons. Mangibabaw sa mga kakumpitensya sa pamamagitan ng pagpapadala ng nakakaengganyo at maaasahang RCS messages na nagtutulak ng conversion.",
+        "img": "/assets/fil_ph/rcs/boost_sales_through_interactive_conversations.webp"
+      },
+      {
+        "name": "Pinahusay na Tiwala ng Customer",
+        "content": "<strong>Unawain ang gawi ng iyong mga customer</strong>I-personalize ang iyong komunikasyon, at bumuo ng matibay na relasyon na nagdudulot ng katapatan. Gamitin ang verified at may badge na sender IDs na sinuri ng Google para sa mas mataas na response rate at pinahusay na tiwala at kredibilidad.",
+        "img": "/assets/fil_ph/rcs/enhanced_customer_trust.webp"
+      }
+    ]
+  },
+  "PreFooterComp": {
+    "content": "Simulan ang pagbuo ng iyong ideal na karanasan sa pakikipag-ugnayan sa customer",
+    "buttons": {
+      "contactSales": {
+        "text": "Kontakin ang sales",
+        "link": "/contact-us"
+      },
+      "pricing": {
+        "text": "Presyo",
+        "link": "/pricing/"
+      },
+      "getStarted": {
+        "text": "Magsimula",
+        "link": "https://control.msg91.com/signup/"
+      }
+    }
+  }
+}

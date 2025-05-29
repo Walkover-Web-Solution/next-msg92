@@ -14,31 +14,27 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
         return (
             <div className='py-3 border border-b'>
                 <div className='container flex  gap-6 justify-end '>
-                    {['br-pt', 'br'].includes(pageInfo?.country) && (
+                    {currentCountry?.languages && (
                         <div className='dropdown'>
                             <div tabIndex={0} role='button' className='flex gap-1 items-center '>
                                 <MdTranslate fontSize={16} />
-                                {currentCountry?.shortname === 'BR-PT' ? 'Portuguese' : 'English'}
+                                {currentCountry?.language}
                                 <MdArrowDropDown fontSize={16} />
                             </div>
                             <div tabIndex={0} className='dropdown-content bg-neutral z-[9999] w-32 rounded shadow'>
                                 <ul>
-                                    <li className='cursor-pointer'>
-                                        <a
-                                            href={getURL('country', 'br', pageInfo)}
-                                            className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
-                                        >
-                                            English
-                                        </a>
-                                    </li>
-                                    <li className='cursor-pointer'>
-                                        <a
-                                            href={getURL('country', 'br-pt', pageInfo)}
-                                            className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
-                                        >
-                                            Portuguese
-                                        </a>
-                                    </li>
+                                    {currentCountry?.languages?.map((language, index) => {
+                                        return (
+                                            <li className='cursor-pointer' key={index}>
+                                                <a
+                                                    href={getURL('country', language?.link, pageInfo)}
+                                                    className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
+                                                >
+                                                    {language?.language}
+                                                </a>
+                                            </li>
+                                        );
+                                    })}
                                 </ul>
                             </div>
                         </div>
@@ -90,7 +86,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                     </li>
                                     {/* /* Render the country list */}
                                     {availableCountries.map((cont, index) => {
-                                        if (cont?.shortname?.toLowerCase() !== 'br')
+                                        if (!cont?.hide)
                                             return (
                                                 <li key={index} className='cursor-pointer'>
                                                     {pageInfo?.country === cont?.shortname.toLowerCase() ? (

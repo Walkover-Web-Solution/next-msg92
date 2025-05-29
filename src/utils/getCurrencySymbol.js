@@ -2,6 +2,8 @@ import countries from '@/data/countries.json';
 export default function GetCurrencySymbol(country) {
     if (country?.toLowerCase() === 'br-pt') {
         country = 'br';
+    } else if (country?.toLowerCase() === 'fil-ph') {
+        country = 'ph';
     }
     if (country) {
         const countryData = countries?.find((c) => c.shortname === country?.toUpperCase());
