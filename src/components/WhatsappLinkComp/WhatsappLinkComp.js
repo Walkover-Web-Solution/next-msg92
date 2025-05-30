@@ -364,7 +364,10 @@ var options = {
                                                 title='WhatsApp'
                                                 className='btn btn-primary'
                                             >
-                                                <img src='assets/global/whatsapp-link/whatsapp-icon-white.svg' />
+                                                <img
+                                                    src='assets/global/whatsapp-link/whatsapp-icon-white.svg'
+                                                    alt='WhatsApp Link '
+                                                />
                                                 <span
                                                     id='whatsappChatWidgetButtonTextPreview'
                                                     style={{
@@ -380,7 +383,7 @@ var options = {
                                             </a>
                                         </div>
                                         <div>
-                                            <img src='https://msg91.com/img/poweredby.svg' />
+                                            <img src='https://msg91.com/img/poweredby.svg' alt='Powered By' />
                                         </div>
                                     </div>
                                     <div className='ml-auto bg-green-400 rounded-full h-[44px] w-[44px] flex items-center justify-center'>
