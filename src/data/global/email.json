@@ -84,7 +84,7 @@
                 },
                 "img": "/assets/global/email/prevent-email-fraud-with-dmarc-compliance.svg"
             },
-                   {
+            {
                 "name": "Maintain your Domain Reputation with Smart Email Validation",
                 "content": "Maintain a clean, effective email list by validating email addresses before sending email campaigns. Removing invalid, fake, or risky addresses ensures higher email deliverability and protects your sender reputation.",
                 "more_content": {
@@ -120,7 +120,6 @@
                 },
                 "img": "/assets/global/email/maintain-your-domain-reputation-with-smart-email-validation.svg"
             },
-
             {
                 "name": "AI-Powered Email Personalization at Scale",
                 "content": "Transform your email with Intellisend AI - where every email evolves dynamically to match your audience. Our AI-driven system modifies content at scale, ensuring each recipient gets the most relevant message for higher engagement and better deliverability.",
@@ -155,7 +154,7 @@
                         "Device-Ready Templates – Fully optimized for mobile and desktop."
                     ]
                 },
-          "img": "/assets/global/email/ai-powered-email-personalization-at-scale.svg"
+                "img": "/assets/global/email/ai-powered-email-personalization-at-scale.svg"
             },
             {
                 "name": "Create Stunning Emails in Minutes",
@@ -588,6 +587,114 @@
                     ]
                 },
                 "img": "/assets/global/email/lotties/effortlessly-manage-incoming-emails-with-a-unified-inbox.json"
+            },
+            {
+                "name": "Boost Visibility with Gmail Markup",
+                "content": "Make your emails more engaging with Gmail schema markup. Display rich snippets, action buttons, and event previews directly in the Gmail inbox to help users take action faster and improve your email performanceperformance",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Event Invitations",
+                            "description": "Show “RSVP” or “Add to Calendar” buttons directly in the email preview."
+                        },
+                        {
+                            "name": "E-Commerce Offers",
+                            "description": "Highlight sales with “Shop Now” or “View Deal” actions."
+                        },
+                        {
+                            "name": "Order & Delivery Updates",
+                            "description": "Display real-time order status in the Gmail summary."
+                        },
+                        {
+                            "name": "Appointment Confirmations",
+                            "description": "Let users confirm, cancel, or reschedule directly from the inbox."
+                        },
+                        {
+                            "name": "Flight & Hotel Bookings",
+                            "description": "Share essential travel info with actionable buttons."
+                        }
+                    ],
+                    "features": [
+                        "Schema-Enabled Email Enhancements – Add Gmail-supported structured data to your emails.",
+                        "Interactive Action Buttons – Boost click-through rates with inbox-level calls-to-action.",
+                        "Improved Inbox Placement – Enhance your email’s visibility in Gmail with enriched content.",
+                        "Faster Conversions – Users can take action without opening the full email.",
+                        "Google-Compliant Markup Integration – Easy implementation with full schema support."
+                    ]
+                },
+                "img": "/assets/global/email/boost_visibility_with_gmail_markup.webp"
+            },
+            {
+                "name": "Create Email Templates with an AI Email Generator — In Seconds!",
+                "content": "Accelerate your email creation process with MSG91’s AI Email Generator, which instantly crafts subject lines, headers, and full email content perfectly aligned with your campaign goals and target audience.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Launch Campaigns Faster",
+                            "description": "Generate complete email content instantly from a short brief."
+                        },
+                        {
+                            "name": "Multilingual Campaigns",
+                            "description": "Effortlessly create content in your preferred language."
+                        },
+                        {
+                            "name": "Consistent Brand Voice",
+                            "description": "Ensure every email reflects your brand’s unique tone and messaging."
+                        },
+                        {
+                            "name": "Boost Engagement",
+                            "description": "Use AI to craft attention-grabbing content that truly resonates."
+                        },
+                        {
+                            "name": "Save Time",
+                            "description": "Let the AI email generator handle content creation so you can focus on strategy."
+                        }
+                    ],
+                    "features": [
+                        "Smart Subject Line Suggestions – AI-generated subject lines designed to maximize open rates.",
+                        "Prompt-Based Content Generator – Provide a brief and receive a complete, campaign-ready email.",
+                        "Full Email Coverage – Generate everything from headers to footers in one seamless step.",
+                        "Engagement Optimized – Every word crafted to drive opens, clicks, and conversions.",
+                        "Tone & Style Flexibility – Choose between casual, formal, or informative tones to match your brand perfectly."
+                    ]
+                },
+                "img": "/assets/global/email/lotties/create_email_templates_with_an_ai_email_generator_in_seconds.json"
+            },
+            {
+                "name": "Dynamic Personalization with Handlebar Variables",
+                "content": "Handlebar lets you personalize emails automatically by inserting dynamic data and conditional content. Create relevant, one-to-one messages that boost engagement without any manual work.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "User-Specific Greetings",
+                            "description": "Add names, cities, or companies dynamically to personalize every email."
+                        },
+                        {
+                            "name": "Custom Discount Codes",
+                            "description": "Display unique promo codes for each user to drive conversions."
+                        },
+                        {
+                            "name": "Behavior-Based Messaging",
+                            "description": "Show products or content based on each recipient’s past behavior."
+                        },
+                        {
+                            "name": "Transactional Emails",
+                            "description": "Include order details like ID, price, and delivery status for a tailored experience."
+                        },
+                        {
+                            "name": "Account Notifications",
+                            "description": "Personalize messages for renewals, upgrades, or security alerts."
+                        }
+                    ],
+                    "features": [
+                        "Easy {{variable}} Integration – Seamlessly insert dynamic content.",
+                        "Supports Conditional Logic – Display content based on user-specific values.",
+                        "Flexible Personalization at Scale – Works across large audiences without manual work.",
+                        "Template Compatibility – Embed variables in any HTML email template.",
+                        "Automation-Ready – Combine with workflows for real-time, event-based email updates."
+                    ]
+                },
+                "img": "/assets/global/email/lotties/dynamic_personalization_with_handlebar_variables.json"
             }
         ]
     },
