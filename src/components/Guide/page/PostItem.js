@@ -14,15 +14,15 @@ export default function PostItem({ post }) {
         <a
             href={'/guide/' + post?.slug}
             className={`blog-card rounded-lg overflow-hidden blog-card__${getBlogStyle(post?.title)}`}
-            style={{
-                backgroundImage: post.thumbnail ? 'url("' + post?.thumbnail + '")' : 'none',
-                backgroundSize: 'cover',
-                backgroundPosition: '50%',
-            }}
+            // style={{
+            //     backgroundImage: post.thumbnail ? 'url("' + post?.thumbnail + '")' : 'none',
+            //     backgroundSize: 'cover',
+            //     backgroundPosition: '50%',
+            // }}
         >
             <div
                 className={`${
-                    post?.thumbnail ? ' blog-card__cont text-white ' : 'bg-white'
+                    post?.thumbnaildd ? ' blog-card__cont text-white ' : 'bg-white'
                 }     w-auto h-96 image-full`}
             >
                 <div className='card-body  flex flex-col justify-between h-full p-10'>
@@ -34,8 +34,8 @@ export default function PostItem({ post }) {
                         {post?.tags && (
                             <div className='card-actions justify-start mt-auto'>
                                 {post?.tags !== '' &&
-                                    post?.tags?.map((category, idx) => (
-                                        <span className='bg-gray-300 py-1 px-3 rounded-full' key={idx}>
+                                    post?.tags?.slice(0, 2)?.map((category, idx) => (
+                                        <span className='bg-gray-300 py-1 px-3 rounded-full text-xs' key={idx}>
                                             {category}
                                         </span>
                                     ))}
