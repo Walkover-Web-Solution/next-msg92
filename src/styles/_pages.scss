@@ -27,13 +27,13 @@
 //blog
 .blog-body-cont {
     h2 {
-        @apply text-2xl mt-6;
+        @apply text-2xl mt-6 mb-3;
     }
     h3 {
-        @apply text-xl mt-4;
+        @apply text-xl mt-4 mb-2;
     }
     h4 {
-        @apply text-lg mt-2;
+        @apply text-lg mt-2 mb-2;
     }
     a {
         @apply text-blue-600 hover:text-blue-700;
