@@ -28,17 +28,14 @@ export default function HreflangTagComp({ pageInfo }) {
 
                 if ((isPricingPage || !isGlobalPage) && !isJustNested && !isCaseStudyPage) {
                     let hrefPrefix = country.shortname.toLowerCase();
-                    if (country.shortname.toLowerCase() === 'br-pt') {
-                        hrefPrefix = 'br-pt';
-                    } else if (country.shortname.toLowerCase() === 'br') {
-                        hrefPrefix = 'br';
-                    }
                     return (
                         <link
                             key={index}
                             rel='alternate'
                             hreflang={country.hreflang}
-                            href={`${process.env.BASE_URL}/${hrefPrefix}${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
+                            href={`${process.env.BASE_URL}/${hrefPrefix}${
+                                pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''
+                            }`}
                         />
                     );
                 }

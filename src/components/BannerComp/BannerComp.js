@@ -16,9 +16,7 @@ export default function BannerComp({ pageInfo, data }) {
     const [isCopied, setIsCopied] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [code, setCode] = useState({});
-
     const [selectedLanguage, setSelectedLanguage] = useState('curl');
-
     useEffect(() => {
         if (pageInfo.page !== 'Numbers') {
             Prism.highlightAll();
@@ -154,6 +152,7 @@ export default function BannerComp({ pageInfo, data }) {
                 {!data?.code && data?.banner_img && !data?.not_absolute && (
                     <div className={styles.cont}>
                         <Image
+                            key={data?.tagline}
                             className={pageInfo?.page === 'home' ? styles.homeimg : styles.img}
                             src={data?.banner_img}
                             width={2000}
@@ -165,6 +164,7 @@ export default function BannerComp({ pageInfo, data }) {
                 {!data?.code && data?.banner_img && data?.not_absolute && (
                     <div className='lg:w-1/2'>
                         <Image
+                            key={data?.tagline}
                             className='w-full'
                             src={data?.banner_img}
                             width={2000}
