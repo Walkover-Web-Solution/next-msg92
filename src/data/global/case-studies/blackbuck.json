@@ -8,7 +8,7 @@
         "features": "Programmable SMS",
         "caseStudies": "<a class='text-link active-link' href='https://www.barbequenation.com/'>Barbeque Nation</a> is a Restaurant chain across different cities in India. With the vision to offer their customers with quality food with a good experience, and to ensure it happens efficiently, Barbeque Nation has been rigorously working on sending the booking updates for their customer’s satisfaction.",
         "problem": "Barbeque Nation is managing their operations by its <a class='text-link active-link' href='https://www.barbequenation.com/'>Website</a> and customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to build communication at different events such as:",
-        "solution": { "description": "Craypolar is managing their operations through their website and customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers at different events such as", 
+        "solution": { "description": "Barbeque Nation is managing their operations through their website and customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers at different events such as", 
         "content": [
             "Once the customer makes a reservation, the customer receives an Reservation Confirmation SMS.",
             "If the reservation gets cancelled, the customer receives an Reservation Cancellation SMS.",

@@ -475,7 +475,7 @@ class StepThree extends React.Component {
                                     <div className='flex flex-col w-full'>
                                         <div className='rounded border px-1 w-full'>
                                             <select
-                                                className='h-10 w-full focus:outline-none'
+                                                className='h-10 w-full focus:outline-none bg-white'
                                                 autoComplete='on'
                                                 aria-label='Default Industry Type'
                                                 name='industryType'
@@ -503,7 +503,7 @@ class StepThree extends React.Component {
                                     <div className='flex flex-col w-full'>
                                         {this.state.serviceRender && (
                                             <Select
-                                                classNames='h-10'
+                                                classNames='h-10 bg-white'
                                                 isMulti
                                                 isClearable
                                                 instanceId={'serviceNeeded'}
@@ -539,7 +539,7 @@ class StepThree extends React.Component {
                                     <div className='flex flex-col w-full'>
                                         <div className='rounded border px-1 w-full'>
                                             <select
-                                                className='h-10 w-full focus:outline-none'
+                                                className='h-10 w-full focus:outline-none bg-white'
                                                 autoComplete='on'
                                                 aria-label='Default Country'
                                                 name='country'
@@ -563,7 +563,7 @@ class StepThree extends React.Component {
                                     <div className='flex flex-col w-full'>
                                         <div className='rounded border px-1 w-full'>
                                             <select
-                                                className='h-10 w-full focus:outline-none'
+                                                className='h-10 w-full focus:outline-none bg-white'
                                                 autoComplete='on'
                                                 aria-label='Default State/Province'
                                                 name='stateProvince'
@@ -602,7 +602,7 @@ class StepThree extends React.Component {
                                     <div className='flex flex-col w-full'>
                                         <div className='rounded border px-1 w-full'>
                                             <select
-                                                className='h-10 w-full focus:outline-none'
+                                                className='h-10 w-full focus:outline-none bg-white'
                                                 autoComplete='on'
                                                 aria-label='Default City'
                                                 name='city'

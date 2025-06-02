@@ -63,6 +63,7 @@
 }
 
 .iti__country-list {
+    border-radius: 12px;
     position: absolute;
     z-index: 2;
     list-style: none;
@@ -181,6 +182,7 @@
 }
 
 .iti-mobile .iti--container {
+    border-radius: 12px;
     top: 30px;
     bottom: 30px;
     left: 30px;
@@ -1594,8 +1596,8 @@
     box-shadow: none;
     font-size: 14px;
     margin-left: 0;
-    width: 316px;
-    max-height: 250px;
+    /* width: 316px; */
+    /* max-height: 250px; */
 }
 
 /* // .iti__flag-container.open + input {
