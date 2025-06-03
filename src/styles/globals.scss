@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.container {
+  @apply mx-auto px-4 md:px-10;
+}
+body {
+  overflow-x: hidden;
+}
+
+.skeleton {
+  @apply bg-slate-50 rounded-sm;
+}
+
+.bg-gray {
+  @apply bg-gray-50;
+}
+
+.cont {
+  @apply flex flex-col;
+  &_gap {
+    @apply gap-6;
+  }
+  &_p {
+    @apply lg:py-20 md:py-12 py-6;
+  }
+  &_w {
+    @apply max-w-[1000px] w-full;
+  }
+}
