@@ -75,6 +75,10 @@ export default function CaseStudyPageComp({ data, pageInfo }) {
                                     data?.solution?.content?.map((solution, index) => {
                                         return <li key={index}>{solution}</li>;
                                     })}{' '}
+                                {data?.solution?.htmlcontent?.length > 0 &&
+                                    data?.solution?.htmlcontent?.map((solution, index) => {
+                                        return <li dangerouslySetInnerHTML={{ __html: solution }} key={index}></li>;
+                                    })}{' '}
                             </ul>
                             <p className='text-lg'>{data?.solution?.extra}</p>
                         </div>

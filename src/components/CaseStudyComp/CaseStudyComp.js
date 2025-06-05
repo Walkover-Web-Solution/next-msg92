@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { LinkText } from '../UIComponent/Buttons/LinkButton';
 import Link from 'next/link';
-import { MdChevronLeft } from 'react-icons/md';
 
 export default function CaseStudyComp({ data, pageInfo }) {
     //tag filter
@@ -45,9 +44,12 @@ export default function CaseStudyComp({ data, pageInfo }) {
                                     <div className='flex flex-wrap  gap-2'>
                                         {caseStudy?.tags?.map((tag, i) => {
                                             return (
-                                                <button key={i} className='btn btn-primary btn-sm'>
+                                                <div
+                                                    key={i}
+                                                    className='bg-gray-100 px-2 py-1 rounded-full text-gray-600'
+                                                >
                                                     {tag?.name}
-                                                </button>
+                                                </div>
                                             );
                                         })}
                                     </div>

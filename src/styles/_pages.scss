@@ -35,6 +35,9 @@
     h4 {
         @apply text-lg mt-2 mb-2;
     }
+    h5 {
+        @apply text-lg mt-1 mb-1;
+    }
     a {
         @apply text-blue-600 hover:text-blue-700;
     }
@@ -43,5 +46,9 @@
     }
     strong {
         @apply font-bold;
+    }
+    br {
+        font-size: 12px;
+        line-height: 12px;
     }
 }
