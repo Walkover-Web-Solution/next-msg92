@@ -35,7 +35,7 @@ import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
 import IntegrationAppComp from '@/components/IntegrationsComp/IntegrationAppComp';
 import ThankYouComp from '@/components/ThankYouComp/ThankYouComp';
 import StartupFormsComp from '@/components/StartupFormsComp/StartupFormsComp';
-import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/CaseStudyPageComp';
+import CaseStudyPageCompOld from '@/components/CaseStudyComp/CaseStudyPageCompOld/CaseStudyPageCompOld';
 import ChatBotDemoComp from '@/components/ChatBotDemoComp/ChatBotDemoComp';
 import AsSeenComp from '@/components/AsSeenComp/AsSeenComp';
 import ProductStatsComp from '@/components/ProductStatsComp/ProductStatsComp';
@@ -54,6 +54,7 @@ import specialPages from '@/data/specialPages.json';
 import { useRouter } from 'next/router';
 import PreFooterMFTL from '@/components/migrateFromTextlocal/preFooterMFTL/preFooterMFTL';
 import CTAMFTL from '@/components/migrateFromTextlocal/ctaMFTL/ctaMFTL';
+import CaseStudyPageComp from '@/components/CaseStudyComp/caseStudyPageComp/caseStudyPageComp';
 
 const Components = {
     BannerComp,
@@ -90,7 +91,7 @@ const Components = {
     ThankYouComp,
     StartupFormsComp,
     IntegrationAppComp,
-    CaseStudyPageComp,
+    CaseStudyPageCompOld,
     ChatBotDemoComp,
     AsSeenComp,
     ProductStatsComp,
@@ -103,6 +104,7 @@ const Components = {
     MigrateFromTextlocal,
     PreFooterMFTL,
     CTAMFTL,
+    CaseStudyPageComp,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

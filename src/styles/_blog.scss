@@ -1,6 +1,5 @@
 .blog-card {
-
-    &__cont{
+    &__cont {
         background: #0008;
     }
     &__small {
@@ -20,8 +19,8 @@
     }
 }
 
-.blog-header{
-    img{
+.blog-header {
+    img {
         width: 100%;
         @apply mt-12 mb-6;
     }

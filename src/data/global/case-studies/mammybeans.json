@@ -2,25 +2,52 @@
     "CaseStudyPageComp": {
         "slug": "mammybeans",
         "name": "MammyBeans",
-        "title": "MammyBeans updates customers of their orders via MSG91",
-        "industry": "e‑commerce (Online Food Delivery)",
-        "purpose": "Customer Order Journey",
-        "features": "WhatsApp • MSG91 Chatbot • OTP • Programmable SMS",
-        "caseStudies": "<a class='text-link active-link' href='https://mammybeans.com/'>MammyBeans</a> is a community‑centric FoodTech platform with a vision to empower homemakers—especially mothers—by turning their culinary skills into a sustainable income source, while ensuring every home can order fresh, homemade meals easily.",
-        "problem": [
-            "<ul class='list-disc cont gap-1'><li>Lengthy, multi‑step online booking process frustrated customers.</li><li>Difficulty in reaching out to the brand for support or order changes.</li><li>Fragmented order management and customer queries across multiple channels.</li></ul>"
+        "title": "MammyBeans – Empowering Homemakers Through WhatsApp Automation",
+        "content": [
+            {
+                "title": "Industry",
+                "content": "FoodTech, Community Commerce"
+            },
+            {
+                "title": "Platform Vision",
+                "content": "Enable homemakers, especially mothers, to earn a sustainable income by sharing their culinary skills, while providing fresh homemade meals to families through a convenient platform."
+            }
         ],
-        "solution": {
-            "htmlcontent": [
-                "<div class='cont'><strong>WhatsApp‑Based Chatbot</strong><ul class='list-disc cont gap-1'><li>Deployed MSG91Bot to handle the entire order flow within WhatsApp.</li></ul></div>",
-                "<div class='cont'><strong>Product Catalog Integration</strong><ul class='list-disc cont gap-1'><li>Enabled MammyBeans to upload and manage rotating meal menus directly in chat.</li><li>Customers view daily offerings without leaving WhatsApp.</li></ul></div>",
-                "<div class='cont'><strong>Streamlined Booking Flow</strong><ul class='list-disc cont gap-1'><li>Guided selection of meals, quantities, and delivery address.</li><li>Integrated WhatsApp Payments or UPI links for instant checkout—all under 2 minutes.</li></ul></div>",
-                "<div class='cont'><strong>Instant Order Updates</strong><ul class='list-disc cont gap-1'><li>Automated WhatsApp messages acknowledge each order in real time.</li><li>Delivery timelines and status updates sent without manual effort.</li></ul></div>",
-                "<div class='cont'><strong>Smart Support & Handoff</strong><ul class='list-disc cont gap-1'><li>Bot handles FAQs and simple queries.</li><li>Complex issues are seamlessly routed to MammyBeans’ team via MSG91’s multi‑agent handoff feature.</li></ul></div>"
-            ],
-            "extra": "This way MammyBeans has been able to establish and maintain an effective communication with customers via WhatsApp using MSG91 Bot."
+        "problems": {
+            "title": "The Challenge",
+            "description": "MammyBeans faced multiple operational hurdles as they scaled:",
+            "content": [
+                "<strong>Cumbersome Booking Process:</strong> Customers found the existing online ordering system too lengthy and multi-stepped, leading to drop-offs.",
+                "<strong>Difficult Customer Support:</strong> Reaching out for order changes or support required navigating multiple channels, frustrating users.",
+                "<strong>Fragmented Communication:</strong> Order management and customer queries were scattered across various platforms, making it difficult to provide a seamless experience."
+            ]
         },
-        "benefit": "As a Result it reduced booking friction by over 60%, increased daily user engagement on WhatsApp, leading to high repeat rates, Scalable platform that maintains an emotional connection with homemaker‑entrepreneurs.",
+        "solutions": {
+            "title": "The Solution",
+            "h2": "MSG91 WhatsApp Integration",
+            "description": "MammyBeans partnered with MSG91 to revamp their customer experience by leveraging WhatsApp-based automation:",
+            "content": [
+                "<strong>WhatsApp-Based Chatbot:</strong> Deployed the MSG91Bot to manage the entire order process directly within WhatsApp, offering customers an intuitive and familiar interface.",
+                "<strong>Product Catalog Integration:</strong> Integrated a dynamic meal menu inside the chat, allowing customers to browse daily offerings without leaving WhatsApp.",
+                "<strong>Streamlined Booking Flow:</strong> Customers could now select meals, quantities, and enter delivery details in a guided, conversational flow—completing orders (including payments via WhatsApp or UPI) in under two minutes.",
+                "<strong>Instant Order Updates:</strong> Automated notifications acknowledged orders in real time and provided live delivery status, eliminating manual intervention.",
+                "<strong>Smart Support & Handoff:</strong> The WhatsApp bot addressed FAQs and simple queries, while complex issues were seamlessly routed to MammyBeans' human agents using MSG91’s multi-agent handoff."
+            ]
+        },
+        "results": {
+            "title": "The Results",
+            "description": "MammyBeans achieved significant improvements after implementing WhatsApp automation with MSG91:",
+            "content": [
+                "<strong>Reduced Booking Friction:</strong> Booking drop-offs decreased by over 60%, making it easier for customers to place orders.",
+                "<strong>Higher Engagement & Retention:</strong> Daily user activity on WhatsApp increased, leading to higher repeat order rates.",
+                "<strong>Operational Efficiency:</strong> Centralized all customer interactions on WhatsApp, streamlining support and order management.",
+                "<strong>Stronger Community Connection:</strong> Maintained a personal, emotional link between the platform and homemaker-entrepreneurs."
+            ]
+        },
+        "conclusion": {
+            "title": "Conclusion",
+            "description": "By adopting MSG91’s WhatsApp automation, MammyBeans successfully transformed their customer journey—making homemade meals just a message away and empowering homemakers to grow their businesses"
+        },
         "tags": [
             {
                 "name": "e-commerce",
