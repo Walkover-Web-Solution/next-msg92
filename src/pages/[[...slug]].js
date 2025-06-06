@@ -54,7 +54,7 @@ import specialPages from '@/data/specialPages.json';
 import { useRouter } from 'next/router';
 import PreFooterMFTL from '@/components/migrateFromTextlocal/preFooterMFTL/preFooterMFTL';
 import CTAMFTL from '@/components/migrateFromTextlocal/ctaMFTL/ctaMFTL';
-import CaseStudyPageComp from '@/components/CaseStudyComp/caseStudyPageComp/caseStudyPageComp';
+import CaseStudyPageComp from '@/components/CaseStudyComp/caseStudyPageComp/CaseStudyPageComp';
 
 const Components = {
     BannerComp,
