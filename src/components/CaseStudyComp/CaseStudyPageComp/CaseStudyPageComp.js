@@ -66,10 +66,13 @@ export default function CaseStudyPageComp({ data, pageInfo }) {
                             <h2 className='font-bold text-2xl'>{`${
                                 data?.caseStudies?.headings?.solution || 'Solution'
                             }`}</h2>
-                            <div
-                                className='text-lg'
-                                dangerouslySetInnerHTML={{ __html: data?.solution?.description }}
-                            ></div>
+                            {data?.solution?.description && (
+                                <div
+                                    className='text-lg'
+                                    dangerouslySetInnerHTML={{ __html: data?.solution?.description }}
+                                ></div>
+                            )}
+
                             <ul className='list-disc flex flex-col gap-2 text-lg'>
                                 {data?.solution?.content?.length > 0 &&
                                     data?.solution?.content?.map((solution, index) => {
