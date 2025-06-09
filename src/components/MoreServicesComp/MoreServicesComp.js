@@ -10,7 +10,7 @@ export default function MoreServicesComp({ data }) {
                 <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-10 gap-6'>
                     {data?.services?.length > 0 &&
                         data?.services.map((service, index) => (
-                            <Link
+                            <a
                                 key={index}
                                 className='flex flex-col gap-6 bg-neutral rounded-lg md:p-8 p-4 hover:shadow-lg LinkButtonCard'
                                 href={service?.link}
@@ -25,7 +25,7 @@ export default function MoreServicesComp({ data }) {
                                     <p className='text-lg'>{service?.description}</p>
                                 </div>
                                 <LinkText className='link-btn'>{data?.linkText}</LinkText>
-                            </Link>
+                            </a>
                         ))}
                 </div>
             </div>
