@@ -1,0 +1,102 @@
+{
+  "HeadComp": {
+    "title": "RCS Message:  Learn how to send RCS messages on Android & iPhone",
+    "description": "MSG91 is a top RCS messaging provider in India. Discover RCS pricing & how to send RCS messages on Android and iPhone using Google RCS Messages, withexamples."
+  },
+  "BannerComp": {
+    "slug": "rcs",
+    "product": {
+      "name": "RCS",
+      "icon": "/assets/icons/products/rcs.svg"
+    },
+    "code": true,
+    "tagline": "Rich Communication Services",
+    "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+    "subheading": "RCS messaging is an integrated channel that enables businesses to engage customers through rich, immersive, two-way conversations.",
+    "banner_img": "/assets/global/hello/banner.webp",
+    "getstarted_btn": "Get Started",
+    "text_h2": "RCS Example API:"
+  },
+  "FeatureComp": {
+    "heading": "Features of Google RCS Messages",
+    "iconColor": "text-otp",
+    "features": [
+      {
+        "icon": "",
+        "name": "Corporate Communications with Branding",
+        "content": "<strong>Distinguish by branding </strong>Enhance your brand's visibility in the SMS inbox using a distinctive sender ID and logo. Utilize a visually appealing interface to effectively engage customers.",
+        "img": "/assets/global/rcs/rcs-communications-branding.svg"
+      },
+      {
+        "icon": "",
+        "name": "Provide Multimedia Interactions",
+        "content": "Enhance your brand communication by delivering RCS messages that build trust. Incorporate your logo, brand name, videos, images, and carousels into your messaging to increase conversions.",
+        "img": "/assets/global/rcs/rcs-multimedia-interactions.svg"
+      },
+      {
+        "icon": "",
+        "name": "Boost Sales Through Interactive Conversations",
+        "content": "Craft an engaging conversation experience with images, videos, carousels, and interactive action buttons. Stand out from competitors by sending engaging and reliable Google RCS messages that drive conversions.",
+        "img": "/assets/global/rcs/rcs-boost-sales.svg"
+      },
+      {
+        "icon": "",
+        "name": "Enhanced Customer Trust",
+        "content": " <strong>Understand your customer's habits </strong>Personalize your communication, and build lasting relationships that drive loyalty. Utilize verified and badged sender IDs vetted by Google for higher response rates and enhanced trust and credibility.",
+        "img": "/assets/global/rcs/rcs-customer-trust.svg"
+      }
+    ]
+  },
+  "TrustedByComp": {
+    "heading": "Trusted by 30,000+ global businesses",
+    "fullwidth": true,
+    "logos": [
+      {
+        "name": "Razorpay",
+        "url": "/assets/trusted_by/razorpay.svg"
+      },
+      {
+        "name": "Xiaomi",
+        "url": "/assets/trusted_by/xiaomi.svg"
+      },
+      {
+        "name": "Unacademy",
+        "url": "/assets/trusted_by/unacademy.svg"
+      },
+      {
+        "name": "Dream11",
+        "url": "/assets/trusted_by/dream11.svg"
+      },
+      {
+        "name": "Indeed",
+        "url": "/assets/trusted_by/indeed.svg"
+      },
+      {
+        "name": "Ixigo",
+        "url": "/assets/trusted_by/ixigo.svg"
+      }
+    ]
+  },
+  "SEOComp": {
+    "heading": "What is RCS messaging?",
+    "description": "RCS (Rich Communication Services) is an upgrade to SMS, offering features like read receipts, typing indicators, multimedia sharing, and interactive buttons for a more engaging messaging experience.",
+    "data": "<div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">What is RCS messaging?</h2><p>RCS (Rich Communication Services) is an upgrade to SMS, offering features like read receipts, typing indicators, multimedia sharing, and interactive buttons for a more engaging messaging experience.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">How to send RCS messages</h2><p>To send RCS messages using an API, you can use MSG91's services. With MSG91, businesses can integrate RCS messaging directly into their applications to reach customers more interactively. Alternatively, to send RCS messages on mobile, you can use an RCS-enabled app like Google Messages. Both the sender and recipient need to have RCS activated through their carrier or app settings for messages to be delivered with RCS features.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">Is RCS available in India?</h2><p>Yes, RCS messaging is available in India through major carriers and supported apps, including Google Messages.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">How to send RCS messages on Android</h2><p>Open Google Messages and go to Settings. Enable \"Chat features\" (RCS). Start a conversation with RCS-enabled contacts.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">How to send RCS messages on iPhone</h2><p>Currently, iPhones do not natively support RCS. However, RCS features can be accessed through third-party apps on both iPhone, although they are less common.</p></div><div className=\"d-flex flex-column gap-2\"><h2 className=\"c-fs-2\">How to Send RCS Messages Using MSG91</h2><ul class='list-decimal px-4 '><li><strong>Sign Up on MSG91:</strong> Create an account on MSG91, an RCS messaging provider.</li><li><strong>Set Up RCS Messaging:</strong> Contact MSG91 to enable RCS for your business account. You’ll get API access for RCS messaging.</li><li><strong>Configure API Integration:</strong> Use MSG91's RCS API documentation to integrate RCS with your application or CRM for automated messaging.</li><li ><strong>Compose and Send Messages:</strong> Customize your message with images, videos, carousels, or buttons, and send them directly to RCS-enabled contacts.</li><li>Track Engagement: Monitor message delivery, read receipts, and customer responses to enhance engagement.</li></ul></div>"
+},
+  "PreFooterComp": {
+    "content": "Start building your ideal customer engagement experience",
+    "buttons": {
+      "contactSales": {
+        "text": "Contact sales",
+        "link": "/contact-us"
+      },
+      "pricing": {
+        "text": "Pricing",
+        "link": "/pricing/"
+      },
+      "getStarted": {
+        "text": "Get started",
+        "link": "https://control.msg91.com/signup/"
+      }
+    }
+  }
+}

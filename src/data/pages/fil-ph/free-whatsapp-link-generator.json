@@ -1,0 +1,118 @@
+{
+    "HeadComp": {
+        "title": "Gumawa ng Whatsapp link | Libreng Whatsapp Link Generator",
+        "description": "Gumawa ng WhatsApp links at QR codes para sa madaling integrasyon sa website. Payagan ang mga customer na makipag-chat agad gamit ang aming madaling gamitin na WhatsApp link generator."
+    },
+    "WhatsappLinkComp": {
+        "slug": "free-whatsapp-link-generator",
+        "product": {
+            "name": "Libreng Whatsapp Link Generator",
+            "icon": "/assets/icons/products/whatsapp.svg"
+        },
+        "tagline": "Gumawa ng WhatsApp click to chat QR code/Widget/Link",
+        "heading": "Simpleng tool para gumawa ng WhatsApp click to chat QR code/Widget/Link para sa iyong website o landing pages.",
+        "banner_img": "/assets/fil_ph/free_whatsapp_link_generator/free_whatsapp_link_generator.webp",
+        "getstarted_btn": "Gumawa",
+        "steps": {
+            "heading": "3 hakbang sa paggawa ng QR code/Widget/Link",
+            "cards": [
+                {
+                    "title": "Hakbang 1",
+                    "description": "Ilagay ang iyong country code at WhatsApp Business number, at magdagdag ng welcome message kung nais.",
+                    "icon": "MdDialpad"
+                },
+                {
+                    "title": "Hakbang 2",
+                    "description": "I-personalize ang iyong widget, QR code, o link upang umayon sa visual guidelines at pagkakakilanlan ng iyong brand.",
+                    "icon": "MdOutlineDashboardCustomize"
+                },
+                {
+                    "title": "Hakbang 3",
+                    "description": "Panghuli, i-click lang ang 'Gumawa Ngayon' na button para makagawa ng iyong widget, QR code, o link. Ganoon lang kasimple!",
+                    "icon": "MdOutlineAutoAwesome"
+                }
+            ]
+        },
+        "create": {
+            "heading": "Gumawa ng WhatsApp Link / Widget / QR Code",
+            "image": "assets/whatsapp-link/widget-preview.svg",
+            "generate_btn": "Gumawa Ngayon",
+            "content": [
+                {
+                    "title": "I-type ang iyong WhatsApp Number",
+                    "description": "Ilagay ang iyong WhatsApp number kasama ang country code (huwag isama ang ‘+’ na simbolo). Halimbawa, kung ang country code mo ay +91 at ang WhatsApp number mo ay 872849182, i-type lang ang 91872849182.",
+                    "feilds": [
+                        {
+                            "name": "WhatsApp number",
+                            "placeholder": "hal. 919000012345",
+                            "description": "Awtomatikong ipadala ang text na ito kapag nag-click ang user sa iyong chat link, para mas madali magsimula ng usapan."
+                        },
+                        {
+                            "name": "Pre-Filled Message (opsyonal)",
+                            "placeholder": "Mangyaring maglagay ng wastong email address para sa shipping updates.",
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Pag-customize ng Widget",
+                    "description": "",
+                    "feilds": [
+                        {
+                            "name": "Welcome text",
+                            "placeholder": "Hi there!\nPaano kita matutulungan?",
+                            "description": ""
+                        },
+                        {
+                            "name": "Brand image URL (opsyonal)",
+                            "placeholder": "https://storage.googleapis.com/92283/image.png",
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "FaqsComp": {
+        "heading": "Mga Madalas Itanong",
+        "faqs": [
+            {
+                "question": "Paano gumagana ang WhatsApp link?",
+                "answer": "Ang WhatsApp links ay gumagamit ng partikular na URL format na kapag na-click, binubuksan ang WhatsApp app sa device ng user at nagsisimula ng chat gamit ang ibinigay na numero o mensahe."
+            },
+            {
+                "question": "Posible bang gumawa ng WhatsApp link na may nakahandang mensahe?",
+                "answer": "Oo, posible. Kapag ginamit ang <a href='/whatsapp'>WhatsApp API</a>, maaari kang maglagay ng pre-filled na mensahe kasama ng numero sa link. Nag-aalok ang mga serbisyo tulad ng MSG91 ng WhatsApp link generators na nagpapadali sa paggawa ng mga link na ito."
+            },
+            {
+                "question": "Posible bang gumawa ng WhatsApp link para sa business account?",
+                "answer": "Oo, ang WhatsApp link generators ay maaaring gumawa ng links para sa parehong personal at business accounts. Ang business accounts ay kadalasang may dagdag na features na angkop para sa customer interactions."
+            },
+            {
+                "question": "Compatible ba ang WhatsApp links sa iba't ibang platform?",
+                "answer": "Oo, gumagana ang WhatsApp links sa iba't ibang platform, kabilang ang iOS, Android, at web browsers, kaya siguradong seamless ang karanasan ng mga user anuman ang kanilang device."
+            },
+            {
+                "question": "Paano ako makakagawa ng Wa link?",
+                "answer": "Maaari kang gumawa ng WhatsApp link sa pamamagitan ng pagdagdag ng phone number sa WhatsApp URL: https://wa.me/phonenumbers. Halimbawa, para gumawa ng link para sa numerong 1234567890, ang URL ay magiging https://wa.me/1234567"
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Simulan ang paggawa ng iyong ideal na karanasan sa customer engagement",
+        "buttons": {
+            "contactSales": {
+                "text": "Kontakin ang sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Presyo",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Magsimula",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

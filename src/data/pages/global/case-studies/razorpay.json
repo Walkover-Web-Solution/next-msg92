@@ -1,0 +1,34 @@
+{
+    "CaseStudyPageCompOld": {
+        "slug": "razorpay",
+        "name": " Razorpay",
+        "title": "Razorpay ensures their customers’ security via MSG91",
+        "industry": "Fintech (Payment Gateway)",
+        "purpose": "Communication APIs",
+        "features": "Programmable SMS",
+        "caseStudies": "<a class='text-link active-link' href='https://www.razorpay.com/'>Razorpay</a> is a payment gateway. With the vision to offer their customers secured payment gateways integrated with web and mobile applications. To ensure it happens efficiently, Razorpay has been rigorously working on sending the OTPs and payment links for their customers security and satisfaction.",
+        "problem": "A well-established communication channel with customers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a wide range of customer base without a robust and secure communication channel is a challenge. Thus to convey important information like booking details, offers and updates for building a strong customer relationship, a communication channel targeting wide reach for mass audience (customers) is required.",
+        "solution": { 
+            "description": "Razorpay is managing their operations by its website https://razorpay.com and customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to build communication at different events such as", 
+        "content": [
+            "Sends OTP SMS to customers upon login for payment.",
+            "Sends payment links to customers via SMS."
+        ],
+         "extra": "This way Razorpay has been able to secure its Customers payment transactions using an effective communication via SMS using MSG91 API.."},
+        "benefit": "As a result, the customer gets OTPs and payment links via a secured channel, making the operations secure, reliable and seamless, which results in a better rapport with the customer and increase in sales.",
+        "tags": [
+            {
+                "name": "Fintech",
+                "slug": "fintech"
+            },
+            {
+                "name": "OTP",
+                "slug": "otp"
+            },
+            {
+                "name": "Startup",
+                "slug": "startup"
+            }
+        ]
+    }
+}

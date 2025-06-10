@@ -1,0 +1,34 @@
+{
+    "CaseStudyPageCompOld": {
+        "slug": "oxebox",
+        "name": "Oxebox",
+        "title": "OxeBox secure their customers’ accounts via MSG91",
+        "industry": "Services (Secure E-bills)",
+        "purpose": "Number Verification",
+        "features": "Send OTP",
+        "caseStudies": "<a class='text-link active-link' href='https://www.oxebox.com/'>Oxebox</a>  is a Bengaluru based secured e-billing startup. With the vision to offer their customers with secured e-billing, OxeBox has been rigorously working on securing the OxeBox accounts for their customer’s satisfaction.",
+        "problem": "A well-established communication channel with customers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a wide range of customer base without a robust and secure communication channel is a challenge. Thus to convey important information like booking details, offers and updates for building a strong customer relationship, a communication channel targeting wide reach for mass audience (customers) is required.",
+        "solution": {
+            "description": "OxeBox is managing their operations by its app and securing the user accounts efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, OTP SMS is delivered to the customers to build communication at different events such as",
+            "content": [
+                "Upon sign up, the customer receives a Verification Code SMS to verify the registered mobile number, thereby securing the user account."
+            ],
+            "extra": "This way OxeBox has been able to establish and maintain secure operations with Customers via SMS using MSG91 API."
+        },
+        "benefit": "As a result, the customer gets verification code for verifying their registered mobile numbers. Thereby protecting the information and bill receipts within their user accounts via a secured channel, making the operations reliable and seamless. This results in a better rapport with the customer and increase in sales.",
+        "tags": [
+            {
+                "name": "otp",
+                "slug": "OTP"
+            },
+            {
+                "name": "Services",
+                "slug": "services"
+            },
+            {
+                "name": "Startup",
+                "slug": "startup"
+            }
+        ]
+    }
+}

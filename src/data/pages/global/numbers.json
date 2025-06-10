@@ -1,0 +1,119 @@
+{
+    "HeadComp": {
+        "title": "Numbers API for business | MSG91",
+        "description": "Engage better with Long Codes for receiving, replying, and customizing SMS. Deliver personalized communication and improve customer relationships."
+    },
+    "BannerComp": {
+        "slug": "numbers",
+        "product": {
+            "name": "Numbers",
+            "icon": "/assets/icons/products/numbers.svg"
+        },
+        "tagline": "Unlock the Power of Virtual Numbers",
+        "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
+        "banner_img": "/assets/global/numbers/banner.svg",
+        "getstarted_btn": "Get Started",
+        "trustedByComp": {
+            "heading": "Trusted by 30,000+ global businesses",
+            "logos": [
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Features",
+        "iconColor": "text-campaign",
+        "features": [
+            {
+                "name": "Global Market Entry with Numbers: Expanding Your Presence",
+                "content": "Numbers offer an effective strategy for businesses seeking to broaden their reach in the market. These numbers facilitate the creation of a local connection by acquiring a phone number, streamlining communication with customers and associates. By leveraging numbers, businesses can establish trust, enhance accessibility, bridge geographic divides, all while projecting a professional image and optimizing cost-effectiveness. This approach is especially beneficial for international enterprises looking to seize opportunities in the diverse and competitive market.",
+                "img": "/assets/global/numbers/numbers-global-market-entry-with-numbers.svg"
+            },
+            {
+                "name": "Cost Efficiency",
+                "content": "Numbers in present a cost-effective alternative to traditional phone lines. They require fewer upfront expenses, minimize maintenance costs, and eliminate the need for physical infrastructure, making them a financially efficient choice for businesses of all scales in the market.",
+                "img": "/assets/global/numbers/numbers-cost-efficiency.svg"
+            },
+            {
+                "name": "Missed Call Services",
+                "content": "A number of virtual number providers offer functionalities like missed call alerts and notifications, enabling businesses to promptly engage with customers who were unable to establish contact. This feature enhances customer communication and responsiveness within the market.",
+                "img": "/assets/global/numbers/numbers-missed-call-services.svg"
+            },
+            {
+                "name": "Keyword Specific Messaging",
+                "content": "<strong>You can choose a unique keyword for your business or campaign</strong>When users send an SMS starting with your chosen keyword to your dedicated or shared long code, you can receive these messages. This feature enables personalized and context-specific communication.",
+                "img": "/assets/global/numbers/numbers-keyword-specific-messaging.svg"
+            },
+            {
+                "name": "Keyword Independent Messaging",
+                "content": "<strong>In addition to keywords</strong>you can receive messages without specific keywords. This broadens your communication options, allowing users to reach you without the need for predefined keywords.",
+                "img": "/assets/global/numbers/numbers-keyword-independent-messaging.svg"
+            },
+            {
+                "name": "Pre-formatted Set of Questions",
+                "content": "You can set up a pre-formatted set of questions to send to your audience. This is particularly useful for conducting surveys, quizzes, or gathering specific information in a structured format.",
+                "img": "/assets/global/numbers/numbers-pre-formatted-questions.svg"
+            },
+            {
+                "name": "Online Surveys",
+                "content": "Use our Numbers service to create and conduct online surveys. Collect valuable insights and feedback from your audience with ease.",
+                "img": "/assets/global/numbers/numbers-online-survey.svg"
+            },
+            {
+                "name": "Lead Generation",
+                "content": "Engage in lead generation by allowing potential customers to reach out to you through SMS. Gather contact details and inquiries, helping you grow your customer base.",
+                "img": "/assets/global/numbers/numbers-lead-generation.svg"
+            },
+            {
+                "name": "Create Auto Responses",
+                "content": "You have the option to set up automated responses for messages you receive. Customize these responses to provide immediate feedback or information to your users.",
+                "img": "/assets/global/numbers/numbers-auto-responses.svg"
+            },
+            {
+                "name": "Integration into Web Applications",
+                "content": "Seamlessly integrate Numbers into your web application or software. This allows you to extend the capabilities of your software and enhance user communication.",
+                "img": "/assets/global/numbers/numbers-integration-into-web.svg"
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

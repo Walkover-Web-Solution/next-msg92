@@ -1,0 +1,38 @@
+{
+    "CaseStudyPageCompOld": {
+        "slug": "saboro",
+        "name": "Saboro",
+        "title": "Mahindra Saboro sends order updates to its customers with SMS via MSG91",
+        "industry": " E-commerce (Milk Retailer)",
+        "purpose": "Communication APIs, Number Verification",
+        "features": "Programmable SMS, Send OTP",
+        "caseStudies": "<a class='text-link active-link' href='https://www.saboromilk.com/'>Mahindra</a>, is the milk retailing unit of the Mahindra Agri, which is the farm and agricultural unit of the Mahindra Group. With the vision to help the farmers improve their financials using modern technology and selling their higher quality produce at better markets, Saboro has been rigorously working in the agri-business for farmer’s welfare.",
+        "problem": "A well-established communication channel with customers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a wide range of customer base without a robust and secure communication channel is a challenge. Thus to convey important information like booking details, offers and updates for building a strong customer relationship, a communication channel targeting wide reach for mass audience (customers) is required.",
+        "solution": {
+            "description": "Mahindra Saboro is managing their operations and customer communication, efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to built communication at different events such as",
+            "content": [
+                "Upon the Sign up the customer receives an OTP for the verification , making it secured.",
+                "Once the customer makes an order, he/she receives an SMS for the Order Confirmation.",
+                "Upon the confirmation when the order is delivered, the customer gets notified with the Order Delivery SMS.",
+                "If the order is cancelled, then the customer gets notified for the Order Cancellation SMS.",
+                "Apart from the notifications regarding Orders, clients also receive Offers, Alerts and other information via SMS."
+            ],
+            "extra": "This way Mahindra Saboro had been able to establish and maintain an effective communication with Customers via SMS using MSG91 API."
+        },
+        "benefit": "As a result, the customer gets regular updates for every event related to their order via secured channel, making the operations reliable and seamless. Moreover, the offers and updates sent to customer results in a better rapport with the customer and increase in sales.",
+        "tags": [
+            {
+                "name": "OTP",
+                "slug": "otp"
+            },
+            {
+                "name": "E-commerce",
+                "slug": "e-commerce"
+            },
+            {
+                "name": "Transactional SMS",
+                "slug": "transaction-sms"
+            }
+        ]
+    }
+}

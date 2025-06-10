@@ -1,0 +1,70 @@
+{
+    "CaseStudyPageComp": {
+        "slug": "mammybeans",
+        "name": "MammyBeans",
+        "title": "MammyBeans – Empowering Homemakers Through WhatsApp Automation",
+        "content": [
+            {
+                "title": "Industry",
+                "content": "FoodTech, Community Commerce"
+            },
+            {
+                "title": "Platform Vision",
+                "content": "Enable homemakers, especially mothers, to earn a sustainable income by sharing their culinary skills, while providing fresh homemade meals to families through a convenient platform."
+            }
+        ],
+        "problems": {
+            "title": "The Challenge",
+            "description": "MammyBeans faced multiple operational hurdles as they scaled:",
+            "content": [
+                "<strong>Cumbersome Booking Process:</strong> Customers found the existing online ordering system too lengthy and multi-stepped, leading to drop-offs.",
+                "<strong>Difficult Customer Support:</strong> Reaching out for order changes or support required navigating multiple channels, frustrating users.",
+                "<strong>Fragmented Communication:</strong> Order management and customer queries were scattered across various platforms, making it difficult to provide a seamless experience."
+            ]
+        },
+        "solutions": {
+            "title": "The Solution",
+            "h2": "MSG91 WhatsApp Integration",
+            "description": "MammyBeans partnered with MSG91 to revamp their customer experience by leveraging WhatsApp-based automation:",
+            "content": [
+                "<strong>WhatsApp-Based Chatbot:</strong> Deployed the MSG91Bot to manage the entire order process directly within WhatsApp, offering customers an intuitive and familiar interface.",
+                "<strong>Product Catalog Integration:</strong> Integrated a dynamic meal menu inside the chat, allowing customers to browse daily offerings without leaving WhatsApp.",
+                "<strong>Streamlined Booking Flow:</strong> Customers could now select meals, quantities, and enter delivery details in a guided, conversational flow—completing orders (including payments via WhatsApp or UPI) in under two minutes.",
+                "<strong>Instant Order Updates:</strong> Automated notifications acknowledged orders in real time and provided live delivery status, eliminating manual intervention.",
+                "<strong>Smart Support & Handoff:</strong> The WhatsApp bot addressed FAQs and simple queries, while complex issues were seamlessly routed to MammyBeans' human agents using MSG91’s multi-agent handoff."
+            ]
+        },
+        "results": {
+            "title": "The Results",
+            "description": "MammyBeans achieved significant improvements after implementing WhatsApp automation with MSG91:",
+            "content": [
+                "<strong>Reduced Booking Friction:</strong> Booking drop-offs decreased by over 60%, making it easier for customers to place orders.",
+                "<strong>Higher Engagement & Retention:</strong> Daily user activity on WhatsApp increased, leading to higher repeat order rates.",
+                "<strong>Operational Efficiency:</strong> Centralized all customer interactions on WhatsApp, streamlining support and order management.",
+                "<strong>Stronger Community Connection:</strong> Maintained a personal, emotional link between the platform and homemaker-entrepreneurs."
+            ]
+        },
+        "conclusion": {
+            "title": "Conclusion",
+            "description": "By adopting MSG91’s WhatsApp automation, MammyBeans successfully transformed their customer journey—making homemade meals just a message away and empowering homemakers to grow their businesses"
+        },
+        "tags": [
+            {
+                "name": "e-commerce",
+                "slug": "e-commerce"
+            },
+            {
+                "name": "WhatsApp",
+                "slug": "whatsapp"
+            },
+            {
+                "name": "Chatbot",
+                "slug": "chatbot"
+            },
+            {
+                "name": "FoodTech",
+                "slug": "foodtech"
+            }
+        ]
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "HeadComp": {
+        "title": "Send SMS API | SMS API Integration in php - MSG91",
+        "description": "Revolutionary communication APIs designed with developers in mind. Read more."
+    },
+    "DevelopersComp": {
+        "heading": "Hello Developers",
+        "subheading": "Integrate SMS, Email, Voice API with Java, PHP, HTTP Scripts. Build apps, innovation and ideas for rapid growing business, or just integrate for your team development.",
+        "doc_btn": "Explore Documentation",
+        "doc_btn_link": "https://docs.msg91.com/sms/send-sms",
+        "integrate": {
+            "heading": "One API to revolutionalise the way developers integrate",
+            "subheading": "Just integrate and forget the rest of the challenges.",
+            "content": "A single, unified API to simplify communication across multiple architectures. Build integrations faster and deliver a unified experience across channels for faster performance, more productivity and greater innovation."
+        },
+        "communication": {
+            "heading": "We enable communication in your awesome products",
+            "card": [
+                {
+                    "icon": "MdOutlineBeenhere",
+                    "tag": "Engineered for reliability"
+                },
+                {
+                    "icon": "MdOutlineExtension ",
+                    "tag": "Communication addons"
+                },
+                {
+                    "icon": "MdOutlineSupportAgent",
+                    "tag": "Problem solvers at service"
+                }
+            ]
+        },
+        "msg91api": {
+            "heading": "Why MSG91 API is developer friendly for real?",
+            "comp": [
+                {
+                    "heading": "Powerful sending infrastructure",
+                    "content": "Easy API integration and a simple, HTTP or JSON/XML API enables your App with Text, Voice and Email functionality. Scale quickly, whether it’s a matter of communicating to 10 users or 10 million. Build exactly what you need with flexible APIs."
+                },
+                {
+                    "heading": "Tracking and analytics",
+                    "content": "Searchable logs means you always know what is happening to your messages, while tags make it easy to report on your data and all that via our efficient panel and webhooks."
+                },
+                {
+                    "heading": "Manage your contact and SMS campaigns wisely",
+                    "content": "Track and optimise your SMS campaign and know how your customer is interacting with your messages."
+                }
+            ]
+        },
+        "customcode": {
+            "heading": "Start your custom code adventure now",
+            "content": "Easily integrate MSG91 APIs for Sending SMS, OTP verification or communicate across channels. Access sample codes in Ruby, Python, PHP, Java and more.",
+            "code": "/assets/developers/developers-code-img.png"
+        },
+        "setup": {
+            "heading": "5 Minute Setup",
+            "description": "Build real-time communications into your apps in a few minutes and a few lines of code.The SDKs seamlessly connect to MSG91 global infrastructure.",
+            "type": [
+                {
+                    "url": "https://play.google.com/store/apps/details?id=com.hellornapp",
+                    "name": "Google Play",
+                    "text": "Get it on",
+                    "icon": "/assets/developers/android.svg"
+                },
+                {
+                    "url": "https://apps.apple.com/in/app/msg91/id981827687",
+                    "name": "App Store",
+                    "text": "Download on the",
+                    "icon": "/assets/developers/apple.svg"
+                }
+            ]
+        }
+    }
+}

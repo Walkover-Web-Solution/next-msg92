@@ -1,0 +1,21 @@
+{
+    "HeadComp": {
+        "title": "Contact Us - Connect with Team MSG91 Spain!",
+        "description": "Have questions or feedback? Reach out to us via phone, chat, or email. We’re here to assist you promptly!"
+    },
+    "ContactUsComp": {
+        "heading": "Contact Us",
+        "sales": {
+            "heading": "Sales",
+            "email": "sales@msg91.com",
+            "phone": "+917049088848",
+            "phone2": "+918889378605"
+        },
+        "support": {
+            "heading": "Support",
+            "email": "support@msg91.com",
+            "whatsapp": "+918818888733",
+            "phone": "+918818888733"
+        }
+    }
+}

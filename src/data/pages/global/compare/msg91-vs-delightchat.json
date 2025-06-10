@@ -1,0 +1,66 @@
+{
+    "HeadComp": {
+        "title": "DelightChat vs MSG91 | Compare Communication APIs & Messaging Platforms",
+        "description": "Compare DelightChat and MSG91 to find the right communication platform for your business. Explore differences in pricing, features, ease of integration, and support to make an informed decision."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs DelightChat",
+        "subheading": "DelightChat is a customer support tool designed for small and medium businesses, focusing on WhatsApp interactions, chat automation, and seamless e-commerce integrations. In contrast, MSG91 is a comprehensive omnichannel communication platform supporting SMS, email, WhatsApp, and more, with advanced segmentation, AI-driven customer journeys, and robust analytics, making it more versatile for businesses seeking multichannel communication.",
+        "img": "/assets/compare/delightchat/delightchat-icon.png",
+        "color": "#E91A86"
+    },
+    "CompareTableComp": {
+        "type":"global",
+        "heading": "Comparison Summary: MSG91 vs DelightChat",
+        "name": "DelightChat",
+        "img": "/assets/compare/delightchat/delightchat-logo.png",
+        "content": [
+            {
+                "name": "MSG91",
+                "des": "MSG91, on the other hand, is a comprehensive omnichannel communication solution, supporting SMS, email, WhatsApp, and more. It offers advanced features like AI-driven customer journeys, dynamic segmentation, and robust analytics, catering to businesses seeking scalability, flexibility, and efficient multichannel messaging solutions."
+            },
+            {
+                "name": "DelightChat",
+                "des": "DelightChat is a customer support platform tailored for small and medium businesses, primarily focusing on WhatsApp-based interactions, chat automation, and seamless integration with e-commerce tools. It features an intuitive interface, making it suitable for businesses managing customer support on WhatsApp."
+            }
+        ],
+        "features": {
+            "pricing": "Free plan available. Paid plans start at $49/month.",
+            "multi_agent_support": "Supports WA, IG, FB, Email, and Live Chat.",
+            "ai_chatbot_integration": "DelightChat’s GPT AI Assistant is a paid add-on with limited free use.",
+            "unlimited_bot_creation": "DelightChat doesn't specify chatbot creation limits.",
+            "omnichannel_chatbot_support": "Supports WhatsApp, Instagram, FB, and Live Chat.",
+            "whatsapp_payments": "Supports Razorpay for in-chat payments but not other gateways.",
+            "whatsapp_carousels": "Does not support WhatsApp carousel template creation.",
+            "whatsapp_catalogs": "It allows sharing product catalogs via WhatsApp.",
+            "customer_journey_creation": "It lacks multi-channel customer journey creation.",
+            "client_segmentation": "DelightChat offers limited customer segmentation based on purchased products, total spend, order count, recency, country, and tags.",
+            "integration_and_plugins": "DelightChat integrates with multiple platforms including Shopify, WooCommerce, and Zapier.",
+            "otp_verification": "Supports OTP verification on WhatsApp via pre-approved templates but lacks native SMS, email, or voice OTP support.",
+            "otp_widget": "Does not provide a native OTP widget.",
+            "one_click_verification": "No",
+            "unified_platform": "DelightChat offers a dashboard for chat, order management, and automations.",
+            "technical_knowledge_required": "Not Necessarily needed.",
+            "customer_support_quality": "Free 24/7 support — email, WhatsApp & calls covered!",
+            "blue_tick_assistance": "Yes",
+            "meta_ads_trackings_conversion": "It does not provide Meta ad analytics."
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

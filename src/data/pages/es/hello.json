@@ -1,0 +1,146 @@
+{
+    "HeadComp": {
+        "title": "Customer Support Platform for your Business by MSG91-Spain",
+        "description": "HELLO is a powerful omnichannel platform designed to deliver exceptional customer support. Utilize data-driven insights to enhance the customer experience."
+    },
+    "NewHelloComp": {
+        "bannerComp": {
+            "slug": "hello",
+            "product": {
+                "subname": "introducing",
+                "name": "Hello",
+                "icon": "/assets/icons/products/hello.svg"
+            },
+            "tagline": "Boosting Customer Satisfaction",
+            "heading": "An <strong class='ai-fuled'>AI-Fueled </strong> Conversational HUB",
+            "subheading": "Seamlessly merging chat, email, call and video to resolve customer queries.",
+            "banner_img": "/assets/global/hello/new/hero.svg",
+            "getstarted_btn": "Get Started",
+            "trustedByComp": {
+                "heading": "Working with some of the best",
+                "logos": [
+                    {
+                        "name": "Xiaomi",
+                        "url": "/assets/trusted_by/xiaomi.svg"
+                    },
+                    {
+                        "name": "Unacademy",
+                        "url": "/assets/trusted_by/unacademy.svg"
+                    },
+                    {
+                        "name": "Dream11",
+                        "url": "/assets/trusted_by/dream11.svg"
+                    },
+                    {
+                        "name": "Indeed",
+                        "url": "/assets/trusted_by/indeed.svg"
+                    },
+                    {
+                        "name": "Ixigo",
+                        "url": "/assets/trusted_by/ixigo.svg"
+                    }
+                ]
+            }
+        },
+        "discover": {
+            "heading": "Discover the Powerhouse Communication Solution ",
+            "subheading": "When it comes to revolutionizing communication, look no further than HELLO by MSG91.",
+            "subtag": "Our cutting-edge application is designed to empower businesses across every industry with a suite of features that are not only transformative but also tailored to your needs.",
+            "tags": [
+                {
+                    "icon": "MdVideoCall",
+                    "name": "E-commerce"
+                },
+                {
+                    "icon": "",
+                    "name": "Fintech"
+                },
+                {
+                    "icon": "",
+                    "name": "Healthcare"
+                },
+                {
+                    "icon": "",
+                    "name": "Technology"
+                }
+            ],
+            "extra": "No matter if you're in ecommerce, fintech, healthcare, or any other field, HELLO is the ultimate solution to elevate your communication game."
+        },
+        "FeatureComp": {
+            "features": [
+                {
+                    "icon": "/assets/global/hello/new/icon-ai-enabled-chat.svg",
+                    "color": "yellow",
+                    "name": "AI-Enabled Chatbot",
+                    "content": "<strong>Say hello to the future of customer engagement.</strong>Our AI-powered chatbot is your 24/7 virtual assistant, ready to engage with your customers, answer queries, and guide them seamlessly through their journey. Say goodbye to wait times and hello to instant, intelligent responses. Can be easily switched to Human agent when required.",
+                    "img": "/assets/global/hello/new/ai-enabled-chat.svg"
+                },
+                {
+                    "icon": "/assets/global/hello/new/icon-unlimited-agents.svg",
+                    "color": "purple",
+                    "name": "Unlimited Agents",
+                    "content": "<strong>Your team is limitless, and so are the possibilities with HELLO.</strong>We offer the flexibility of unlimited agents, ensuring that your entire workforce can collaborate, assist, and provide exceptional service to your customers, no matter the scale of your operations.",
+                    "img": "/assets/global/hello/new/unlimited-agents.svg"
+                },
+                {
+                    "icon": "/assets/global/hello/new/icon-workflow.svg",
+                    "color": "blue",
+                    "name": "Workflow Management",
+                    "content": "<strong>Streamline your operations like never before with our intuitive workflow management.</strong>From lead generation to order processing, HELLO ensures that every step of your customer interaction is organized, efficient, and tailored to your unique processes.",
+                    "img": "/assets/global/hello/new/workflow.svg"
+                },
+                {
+                    "icon": "/assets/global/hello/new/icon-video-call.svg",
+                    "color": "yellow",
+                    "name": "Video Call",
+                    "content": "<strong>Sometimes words aren't enough.</strong>With HELLO's video call and screen sharing capabilities, bridge the gap between face-to-face meetings and virtual interactions. Whether you're diagnosing a medical condition or demonstrating a product, our features enable clear, real-time communication.",
+                    "img": "/assets/global/hello/new/video-call.svg"
+                },
+                {
+                    "icon": "/assets/global/hello/new/icon-analytics.svg",
+                    "color": "purple",
+                    "name": "Analytics",
+                    "content": "<strong>Data-driven decisions are the backbone of success. </strong>HELLO's advanced analytics provide you with insightful metrics to understand customer behavior, agent performance, and trends. Harness this knowledge to refine your strategies and create impactful customer experiences.",
+                    "img": "/assets/global/hello/new/analytics.svg"
+                },
+                {
+                    "icon": "/assets/global/hello/new/icon-screen-sharing.svg",
+                    "color": "yellow",
+                    "name": "Screen sharing/Control",
+                    "content": "<Strong>Take control of the conversation like never before.</strong>With screen control, assist your customers by navigating their screens, resolving issues efficiently, and ensuring that they get the most out of your services. It's a level of support that truly stands out.",
+                    "img": "/assets/global/hello/new/screen-sharing.svg"
+                }
+            ]
+        }, "FaqsComp": {
+            "heading": "Frequently Asked Questions",
+            "faqs": [
+                {
+                    "question": "How to subscribe to your Hello Plan.",
+                    "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options\n You can directly subscribe to the plan from the website itself. There go to Hello Service click on Get Started, fill in the necessary details, and subscribe to the plan."
+                },
+                {
+                    "question": "Are there any charges for AI chatbots?",
+                    "answer": "No, there are no charges for Chat Bot, we are only charged for basic and premium plans. You can use the chatbot in a free plan till 50 tickets in Hello, after that you have to upgrade your Hello plan. Basically, we are providing the chatbot free for Trial purposes.\n You can use this Chat Bot in WhatsApp, Instagram, Chat Widget on your Website, Facebook and so on. So test the Chat Bot Now."
+                },
+                {
+                    "question": "Are there any extra charges for Instagram/ Facebook  Inbox?",
+                    "answer": "<p>You can use inboxes that are available in your Hello Plan for Instagram or Whatsapp. The number of inboxes assigned in each plan.</p><ul><li>Free Plan- 2 inboxes</li><li>Basic Plan- 2 inboxes</li><li>Premium Plan- 3 inboxes</li></ul><p>But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each.</p><p>In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox.</p> "
+                },
+                {
+                    "question": "What are the charges for tickets and extra tickets in Hello?",
+                    "answer": "<p>We are providing monthly tickets with each plan and in case they end, you can also use extra tickets which you pay in postpaid billing.</p><p>Here are the number of tickets assigned in each plan:</p><ul><li>Free Plan- 50 tickets/monthly</li><li>Basic Plan- 1000 tickets/monthly</li><li>Premium Plan- 2000 tickets/monthly</li></ul><p>Extra Charges for each ticket in different plans:</p><ul><li>Free Plan- there is no option for more tickets in free plans as you have to upgrade the Hello Plan to Basic or Premium as per your choice.</li><li>Basic Plan- ₹0.5 per ticket</li><li>Premium Plan- ₹0.75 per ticket</li></ul>"
+                },
+                {
+                    "question": " Can I customize the Hello Plan?",
+                    "answer": "Yes, you can have a customized plan for hello. Click on the link to schedule the meeting with the sales heads."
+                }
+            ]
+        },
+        "prefooter": {
+            "text1": "At MSG91, we're not just offering a communication solution; We're offering a game-changer for businesses of all sizes and industries.",
+            "text2": "With HELLO, you're not just communicating – you're connecting, engaging, and thriving. Embrace the future of communication today.",
+            "text3": "Ready to transform the way you communicate? Say HELLO to your business's next big leap. Get started with HELLO by MSG91 now and experience the difference firsthand.",
+            "text4": "Unlock limitless possibilities with HELLO by MSG91. Your communication revolution starts here."
+        }
+    }
+}

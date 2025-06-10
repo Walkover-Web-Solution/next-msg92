@@ -1,11 +1,11 @@
 {
-  "name": "nexus-four",
-  "version": "0.1.0",
+  "name": "next-msg92",
+  "version": "2.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 8008",
+    "dev": "next dev -p 3030",
     "build": "next build",
-    "start": "next start -p 8008",
+    "start": "next start -p 3030",
     "lint": "next lint"
   },
   "dependencies": {

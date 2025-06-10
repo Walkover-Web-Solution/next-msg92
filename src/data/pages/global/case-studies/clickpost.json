@@ -1,0 +1,41 @@
+{
+    "CaseStudyPageCompOld": {
+        "slug": "clickpost",
+        "name": "Click Post",
+        "title": "ClickPost update their customers of their orders via MSG91",
+        "industry": "Services (Logistics and E-commerce delivery)",
+        "purpose": "Communication APIs",
+        "features": "Programmable SMS",
+        "caseStudies": "<a class='text-link active-link' href='https://www.clickpost.com/'>ClickPost</a>  is a logistics optimization startup which offers services to E-Commerce businesses for orders’ delivery. With the vision to offer their customers with intact orders delivery at their doorsteps, and to ensure it happens efficiently, ClickPost has been rigorously working on sending the delivery updates for their customer’s satisfaction.",
+        "problem": "A well-established communication channel with customers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a wide range of customer base without a robust and secure communication channel is a challenge. Thus to convey important information like booking details, offers and updates for building a strong customer relationship, a communication channel targeting wide reach for mass audience (customers) is required.",
+        "solution": {
+            "description": "ClickPost is managing their operations by its website https://www.clickpost.ai and customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to build communication at different events such as",
+            "content": [
+                "Once the customer makes an order , the customer receives an Order Confirmation SMS.",
+                "Once the order gets delivered, the customer receives an Order Delivery SMS.",
+                "If the order gets cancelled, the customer receives an Order Cancellation SMS.",
+                "Customer receives SMS notifications regarding all the Ongoing Offers and Updates."
+            ],
+            "extra": "This way ClickPost has been able to establish and maintain an effective communication with Customers via SMS using MSG91 API."
+        },
+        "benefit": "As a result, the customer gets regular updates for their food orders and ongoing offers via a secured channel, making the operations reliable and seamless, which results in a better rapport with the customer and increase in sales.",
+        "tags": [
+            {
+                "name": "Logistics",
+                "slug": "logistics"
+            },
+            {
+                "name": "Services",
+                "slug": "services"
+            },
+            {
+                "name": "Startup",
+                "slug": "startup"
+            },
+            {
+                "name": "Transactional SMS",
+                "slug": "transaction-sms"
+            }
+        ]
+    }
+}

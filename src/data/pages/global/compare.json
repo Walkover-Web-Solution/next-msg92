@@ -1,0 +1,88 @@
+{
+    "HeadComp": {
+        "title": "Why Choose MSG91 Over the Competition | Compare Business Automation Tools",
+        "description": "Explore how MSG91 stands out among automation platforms. Learn why it's the smarter choice for boosting productivity, streamlining workflows, and driving business efficiency."
+    },
+    "BannerComp": {
+        "heading": "Why Choose MSG91 Over the Competition?",
+        "subheading": "In today's fast-paced digital world, automation tools are key to enhancing productivity and streamlining workflows. But with so many options available, how do you choose the right one for your business? ",
+        "banner_img": "/assets/compare/compare_banner.webp",
+        "not_absolute": true
+    },
+    "CompareGridComp": {
+        "heading": "How MSG91 Stands Out Compared to Other Competitions",
+        "cards": [
+            {
+                "name": "MSG91 vs Twilio",
+                "link": "compare/msg91-vs-twilio",
+                "img": "/assets/compare/twilio/twilio-icon.svg",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(242, 47, 70, 0.15) 107.23%)"
+            },
+            {
+                "name": "MSG91 vs AiSensy",
+                "link": "compare/msg91-vs-aisensy",
+                "img": "/assets/compare/aisensy/aisensy-icon.png",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(66, 184, 98, 0.10)  107.23%)"
+            },
+            {
+                "name": "MSG91 vs Wati",
+                "link": "compare/msg91-vs-wati",
+                "img": "/assets/compare/wati/wati-icon.svg",
+                "bg_gredient": "linear-gradient(100deg, rgba(47, 154, 239, 0.10) -5.04%, rgba(0, 231, 133, 0.10) 107.23%)"
+            },
+            {
+                "name": "MSG91 vs Freshchat",
+                "link": "compare/msg91-vs-freshchat",
+                "img": "/assets/compare/freshchat/freshchat-icon.svg",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(191, 99, 198, 0.10) 107.23%)"
+            },
+            {
+                "name": "MSG91 vs DelightChat",
+                "link": "compare/msg91-vs-delightchat",
+                "img": "/assets/compare/delightchat/delightchat-icon.png",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(233, 26, 134, 0.10) 107.23%)"
+            },
+            {
+                "name": "MSG91 vs Interakt",
+                "link": "compare/msg91-vs-interakt",
+                "img": "/assets/compare/interakt/interakt-icon.svg",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(0, 166, 139, 0.10) 107.23%)"
+            },
+            {
+                "name": "MSG91 vs Textlocal",
+                "link": "textlocal-alternative",
+                "img": "/assets/compare/textlocal/textlocal-logo.svg",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(1, 89, 184, 0.10) 107.23%)"
+            },
+            {
+                "name": "MSG91 vs Intercom",
+                "link": "compare/msg91-vs-intercom",
+                "img": "/assets/compare/intercom/intercom-icon.svg",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(0, 0, 0, 0.10) 107.23%)"
+            },
+            {
+                "name": "MSG91 vs MessageBird",
+                "link": "compare/msg91-vs-messagebird",
+                "img": "/assets/compare/messagebird/messagebird-icon.svg",
+                "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(0, 0, 0, 0.10) 107.23%)"
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

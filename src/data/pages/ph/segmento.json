@@ -1,0 +1,76 @@
+{ "HeadComp": {
+  "title": "Customer Segmentation Software | MSG91-Philippines",
+  "description": "Automate customer segmentation based on behavior, demographics, and interests. Personalize journeys and execute targeted campaigns to drive better results."
+}, 
+       "BannerComp": {
+        "slug": "segmento",
+        "product": {
+            "name": "Segmento",
+            "icon": "/assets/icons/products/segmento.svg"
+        },
+        "tagline": "target based marketing",
+        "heading": "Personalize customer journeys with Data segmentation.",
+        "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
+        "banner_img": "/assets/global/segmento/segmento.svg",
+        "getstarted_btn": "Get Started For Free",
+        "trustedByComp": {
+          "heading": "Trusted by 30,000+ global businesses",
+          "logos":  [
+            {"name": "Xiaomi", "url": "/assets/trusted_by/xiaomi.svg"},
+            {"name": "Unacademy", "url": "/assets/trusted_by/unacademy.svg"},
+            {"name": "Dream11", "url": "/assets/trusted_by/dream11.svg"},
+            {"name": "Indeed", "url": "/assets/trusted_by/indeed.svg"},
+            {"name": "Indian Oil", "url": "/assets/trusted_by/indianoil.svg"},
+            {"name": "Ixigo", "url": "/assets/trusted_by/ixigo.svg"}
+          ]
+      }
+    
+    },
+    "FeatureComp": {
+      "heading": "Features",
+      "iconColor": "text-campaign",
+      "features": [
+        
+          {
+              
+              "name": "Create filters as per segment",
+              "content":"<strong>Create a filtered list on your business phonebook.</strong>Tailor your marketing efforts by targeting people based on their requirements, traits or patterns by creating a particular filter on your phonebook.",
+              "img": "/assets/global/segmento/segmento-create-filters-as-per-segments.svg"
+          },
+          {
+              "name": "Automation Trigger ",
+              "content": "<strong>Trigger meaningful information for the filtered segments.</strong>Automate actions on the filters created based on the user’s action or input to deliver relevant and personalised messages for each group.",
+              "img": "/assets/global/segmento/segmento-automation-trigger.svg"
+          },
+          {
+              "name": "Automation Repeater ",
+              "content": "<strong>Send the most relevant content at the most relevant time.</strong>Send auto messages to the same filter at time-based intervals through your audience’s preferred business communication channel.",
+              "img": "/assets/global/segmento/segmento-automation-repeater.svg"
+          },
+          {
+              "name": "Open API",
+              "content": "<strong>Use API to get, create, update or delete contact.</strong>We provide APIs for every action, big or small, so that you can focus on what matters most- building your amazing product.",
+              "img": "/assets/global/segmento/segmento-open-api.svg"
+          }
+         
+      ]
+  },
+    "PreFooterComp": {
+      "content": "Start building your ideal customer engagement experience",
+      "buttons": {
+          "contactSales": {
+              "text": "Contact sales",
+              "link": "/contact-us"
+          },
+          "pricing": {
+              "text": "Pricing",
+              "link": "/pricing/"
+          },
+          "getStarted": {
+              "text": "Get started",
+              "link": "https://control.msg91.com/signup/"
+          }
+      }
+  }
+  }
+  

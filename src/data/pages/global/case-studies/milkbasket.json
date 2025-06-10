@@ -1,0 +1,49 @@
+{
+    "CaseStudyPageCompOld": {
+        "slug": "milkbasket",
+        "name": "Milk Basket",
+        "title": "Milkbasket sends regular updates to their customers’ via MSG91",
+        "industry": "E-commerce (Online Grocery)",
+        "purpose": "Communication APIs, Number Verification",
+        "features": "Programmable SMS, Send OTP",
+        "caseStudies": "<a class='text-link active-link' href='https://www.milkbasket.com/'>Milkbasket</a> is an E-commerce platform providing milk and grocery at doorsteps. With the vision to offer their customers a seamless customized delivery, and to ensure it happens efficiently, Milkbasket has been rigorously working on sending the updates and information for their customers security and satisfaction.",
+        "problem": "A well-established communication channel with customers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a wide range of customer base without a robust and secure communication channel is a challenge. Thus to convey important information like booking details, offers and updates for building a strong customer relationship, a communication channel targeting wide reach for mass audience (customers) is required.",
+        "solution": { 
+            "description": "Milkbasket is managing their operations by its website https://milkbasket.com and customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to build communication at different events such as", 
+        "content": [
+            "Sends SMS on on-boarding with the URL of app and password.",
+            "Sends OTP on login and order to ensure security via SMS.",
+            "Sends updates regarding successful adding of top-up, eligibility for cashback and refunds credit via SMS.",
+            "Updates of Back in stock, cash collection details and service updates to customers via SMS.",
+            "Notifies low/negative balance, issue in payment and unavailability for cash pickup order via SMS.",
+            "Sends latest offers and updates and their timely reminders via SMS.",
+            "Alerts Customers via SMS, when another account of same address already exists.",
+            "Sends acknowledgement of address update and Holiday setup via SMS.",
+            "Sends Orders failure updates via SMS.",
+            "Notifies the customer when not providing service in the required area."
+        ],
+         "extra": "This way Milkbasket has been able to update its Customers regularly using an effective communication via SMS using MSG91 API."},
+        "benefit": "As a result, the customer gets updates SMS via a secured channel, making the operations secure, reliable and seamless, which results in a better rapport with the customer and increase in sales.",
+        "tags": [
+            {
+                "name": "E-commerce",
+                "slug": "e-commerce"
+            },
+            {
+                "name": "OTP",
+                "slug": "otp"
+            }, {
+                "name": "Services",
+                "slug": "services"
+            },
+            {
+                "name": "Startup",
+                "slug": "startup"
+            },
+            {
+                "name": "Transactional SMS",
+                "slug": "transaction-sms"
+            }
+        ]
+    }
+}

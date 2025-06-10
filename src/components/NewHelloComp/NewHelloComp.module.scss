@@ -1,0 +1,33 @@
+.intro {
+    @apply uppercase text-lg;
+    letter-spacing: 1px;
+}
+.hello {
+    text-shadow: 4px 4px #f2ca55;
+    @apply md:text-6xl text-4xl  font-bold uppercase;
+}
+.boost {
+    @apply uppercase text-lg;
+    letter-spacing: 2px;
+}
+.getstarted {
+    box-shadow: 8px 8px #f4ff80;
+    padding: 8px 24px !important;
+    background-color: black;
+    @apply bg-black text-white uppercase text-lg w-fit hover:bg-gray-700;
+}
+.sales {
+    box-shadow: 8px 8px #f4ff80;
+    padding: 8px 24px !important;
+    @apply bg-white text-black border border-black uppercase text-lg w-fit hover:text-white hover:bg-black;
+}
+
+.yellow {
+    box-shadow: 16px 16px #f4ff80 !important;
+}
+.purple {
+    box-shadow: 16px 16px #f699ff !important;
+}
+.blue {
+    box-shadow: 16px 16px #26d9d9 !important;
+}

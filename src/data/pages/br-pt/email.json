@@ -1,0 +1,629 @@
+{
+    "HeadComp": {
+        "title": "Serviços de Email Transacional no Brasil | Provedor de API de Email - MSG91-Brasil",
+        "description": "Nossa melhor integração de API de email para emails orientados por aplicativos oferece uma maneira fácil de automatizar o envio com base nas ações dos usuários. Envie, receba e acompanhe emails com o melhor serviço de API de email da MSG91."
+    },
+    "BannerComp": {
+        "slug": "email",
+        "product": {
+            "name": "Email",
+            "icon": "/assets/icons/products/email.svg"
+        },
+        "tagline": "estratégia de email mais inteligente",
+        "heading": "Entregue e-mails seguros e instantâneos",
+        "subheading": "Garanta que todas as mensagens cheguem aos seus clientes no prazo com a plataforma de automação de e-mail número 1: rápida, confiável e criada para transações perfeitas.",
+        "banner_img": "/assets/brpt/email/mobile-optimized-email-templates-for-perfect-display.svg",
+        "not_absolute": true,
+        "getstarted_btn": "Comece Agora |",
+        "trustedByComp": {
+            "heading": "Confiado por mais de 30.000 empresas ao redor do mundo",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "",
+        "iconColor": "text-email",
+        "read_more": "Magbasa pa",
+        "features": [
+            {
+                "name": "Prevenir Fraude de E-mail com Conformidade DMARC",
+                "content": "Proteja sua marca contra falsificação de e-mails e phishing com DMARC (Autenticação de Mensagem Baseada em Domínio, Relatórios e Conformidade). Garanta que apenas e-mails legítimos cheguem ao seu público, enquanto aumenta a segurança e a entrega de e-mails.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Prevenir Falsificação de E-mails & Phishing",
+                            "description": "Protege o domínio do seu site contra o uso em e-mails fraudulentos."
+                        },
+                        {
+                            "name": "Aumentar a Segurança do Site",
+                            "description": "Fortalece a segurança do domínio, prevenindo atividades não autorizadas de e-mail."
+                        },
+                        {
+                            "name": "Melhorar a Entregabilidade de E-mails Transacionais",
+                            "description": "Garante que e-mails como confirmações de pedido e redefinições de senha cheguem aos usuários."
+                        },
+                        {
+                            "name": "Ganhar Visibilidade no Uso de E-mails",
+                            "description": "Fornece relatórios sobre as fontes de envio de e-mails vinculadas ao seu site."
+                        },
+                        {
+                            "name": "Aumentar a Confiança & Reputação da Marca",
+                            "description": "Garante que os clientes recebam apenas e-mails legítimos do seu domínio."
+                        }
+                    ],
+                    "features": [
+                        "SPF at DKIM Authentication – Tinitiyak na ang mga email ay ipinapadala mula sa mga awtorisadong server",
+                        "Controle de Política DMARC (Nenhum, Quarentena, Rejeitar) – Permite a aplicação gradual para bloquear e-mails falsos.",
+                        "Relatórios Detalhados  – Fornece insights sobre autenticação de e-mails e uso não autorizado.",
+                        "Proteção de Subdomínios – Protege todos os subdomínios contra uso indevido em falsificação de e-mails.",
+                        "Rastreamento de Geolocalização – Identifica a origem geográfica dos e-mails para detectar atividades suspeitas ou não autorizadas."
+                    ]
+                },
+                "img": "/assets/brpt/email/prevent-email-fraud-with-dmarc-compliance.svg"
+            },
+            {
+                "name": "Mantenha a Reputação do Seu Domínio com Validação Inteligente de E-mails",
+                "content": "Mantenha uma lista de e-mails limpa e eficaz validando os endereços de e-mail antes de enviar campanhas. Remover endereços inválidos, falsos ou arriscados garante maior entregabilidade de e-mails e protege sua reputação de remetente.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Reduzir Taxas de Rejeição",
+                            "description": "Remova endereços de e-mail inválidos ou falsos."
+                        },
+                        {
+                            "name": "Aumentar a Entregabilidade",
+                            "description": "Melhore a entrega na caixa de entrada mantendo uma lista de e-mails validada."
+                        },
+                        {
+                            "name": "Alcançar o Público Certo",
+                            "description": "Engaje com usuários válidos e ativos."
+                        },
+                        {
+                            "name": "Melhorar o Desempenho das Campanhas",
+                            "description": "Otimize as taxas de abertura enviando para uma lista de alta qualidade."
+                        },
+                        {
+                            "name": "Proteger a Reputação do Remetente",
+                            "description": "Evite problemas com e-mails não entregáveis."
+                        }
+                    ],
+                    "features": [
+                        "Detecte instantaneamente endereços de e-mail válidos, inválidos e arriscados.",
+                        "Carregue e valide grandes listas de e-mails de forma eficiente.",
+                        "Remova e-mails falsos e não entregáveis antes das campanhas.",
+                        "Previna problemas de entregabilidade garantindo conformidade com autenticação DMARC, SPF e DKIM.",
+                        "Aumente o engajamento enviando para um público segmentado."
+                    ]
+                },
+                "img": "/assets/brpt/email/maintain-your-domain-reputation-with-smart-email-validation.svg"
+            },
+            {
+                "name": "Personalização de E-mails com IA em Escala",
+                "content": "Transforme seu e-mail com o Intellisend AI - onde cada e-mail evolui dinamicamente para corresponder ao seu público. Nosso sistema impulsionado por IA modifica o conteúdo em escala, garantindo que cada destinatário receba a mensagem mais relevante para maior engajamento e melhor entregabilidade.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Campanhas Hiper-Personalizadas",
+                            "description": "Entregue conteúdo único para diferentes públicos automaticamente."
+                        },
+                        {
+                            "name": "Otimização de Linha de Assunto",
+                            "description": "A IA testa e seleciona as linhas de assunto com melhor desempenho para maiores taxas de abertura."
+                        },
+                        {
+                            "name": "Visualização Estática, Entrega Dinâmica",
+                            "description": "Os remetentes visualizam apenas o modelo estático aprovado, enquanto os destinatários recebem versões totalmente personalizadas."
+                        },
+                        {
+                            "name": "Anúncios de Produtos em Escala",
+                            "description": "Personalize mensagens e atualizações com base nas metas da campanha."
+                        },
+                        {
+                            "name": "Campanhas de Eventos e Webinars",
+                            "description": "Personalize convites e lembretes para melhores taxas de participação."
+                        }
+                    ],
+                    "features": [
+                        "Motor de IA Integrado – Gera automaticamente conteúdo de e-mail personalizado em escala.",
+                        "Escalonamento de Variação de Conteúdo – A IA gera e entrega várias versões de conteúdo adaptadas a diferentes públicos.",
+                        "Modificação Automática de Conteúdo – Personaliza instantaneamente o conteúdo do e-mail para cada usuário sem esforço manual.",
+                        "Escalonamento 2X para Impacto Máximo – O conteúdo evolui em um padrão de crescimento 2x para melhor alcance.",
+                        "Modelos Prontos para Dispositivos – Totalmente otimizados para dispositivos móveis e desktop."
+                    ]
+                },
+                "img": "/assets/brpt/email/ai-powered-email-personalization-at-scale.svg"
+            },
+            {
+                "name": "Crie E-mails Impressionantes em Minutos",
+                "content": "Crie e-mails impressionantes rapidamente com nosso editor de arrastar e soltar. Personalize cada detalhe, desde layouts e cores até fontes, para combinar perfeitamente com a identidade da sua marca. Seja uma atualização rápida ou um anúncio mais detalhado, nossa solução de e-mail ajuda você a criar e-mails polidos que conectam com seu público e maximizam o engajamento de forma perfeita.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Newsletters",
+                            "description": "Mantenha seu público informado com atualizações regulares."
+                        },
+                        {
+                            "name": "Ofertas Exclusivas",
+                            "description": "Aumente as vendas com ofertas personalizadas."
+                        },
+                        {
+                            "name": "Anúncios de Produtos",
+                            "description": "Atualize os clientes sobre novos lançamentos de produtos."
+                        },
+                        {
+                            "name": "Atualizações de Pedidos",
+                            "description": "Forneça atualizações em tempo real sobre pedidos e envio."
+                        },
+                        {
+                            "name": "Lembretes de Carrinho Abandonado",
+                            "description": "Envie lembretes automaticamente para recuperar carrinhos abandonados."
+                        }
+                    ],
+                    "features": [
+                        "Editor de arrastar e soltar, sem necessidade de codificação.",
+                        "Adicione botões, imagens e vídeos para maior engajamento.",
+                        "Cores, fontes e logotipos personalizáveis para combinar com sua marca.",
+                        "Designs otimizados que exibem perfeitamente em todos os dispositivos.",
+                        "Veja visualizações e teste a compatibilidade entre dispositivos antes de enviar."
+                    ]
+                },
+                "img": "/assets/brpt/email/lotties/create-stunning-emails-in-minutes.json"
+            },
+            {
+                "name": "Crie E-mails AMP que Geram Conversões em Minutos",
+                "content": "Eleve sua estratégia de e-mail com a tecnologia AMP. Crie experiências interativas e envolventes diretamente na caixa de entrada. Adicione elementos dinâmicos como carrosséis de produtos, formulários e conteúdo em tempo real para atrair seu público e aumentar as taxas de conversão. As soluções de e-mail compatíveis com AMP oferecem interações perfeitas sem que os usuários precisem sair do e-mail.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Carrosséis de Produtos",
+                            "description": "Apresente vários produtos em um único e-mail para uma experiência de compra interativa."
+                        },
+                        {
+                            "name": "Formulários & Pesquisas",
+                            "description": "Colete feedback ou dados diretamente no e-mail."
+                        },
+                        {
+                            "name": "Conteúdo em Tempo Real",
+                            "description": "Mantenha seus e-mails sempre atualizados com informações ao vivo, como estoque ou preços."
+                        },
+                        {
+                            "name": "Registro de Eventos",
+                            "description": "Permita que os usuários se inscrevam em eventos diretamente pelo e-mail."
+                        },
+                        {
+                            "name": "Enquetes & Votação",
+                            "description": "Engaje os usuários com enquetes interativas e recursos de votação."
+                        }
+                    ],
+                    "features": [
+                        "Elementos dinâmicos como carrosséis, formulários e atualizações ao vivo.",
+                        "Permite que os destinatários tomem ações sem sair da caixa de entrada.",
+                        "Destaque-se em caixas de entrada lotadas com conteúdo interativo e rico.",
+                        "Aumente as conversões com experiências de e-mail envolventes e fluidas.",
+                        "Totalmente otimizado para dispositivos móveis e desktops."
+                    ]
+                },
+                "img": "/assets/brpt/email/lotties/create-conversion-driving-amp-emails-in-minutes.json"
+            },
+            {
+                "name": "Envie Campanhas de E-mail Mais Rápido com Modelos Pré-Projetados",
+                "content": "Economize tempo e aumente o engajamento com modelos de e-mail projetados profissionalmente. Escolha entre uma variedade de layouts para newsletters e e-mails transacionais usando a Biblioteca de Modelos de E-mail da MSG91.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Vendas em E-Commerce",
+                            "description": "Modelos de e-mail prontos para promoções relâmpago e lançamentos de produtos."
+                        },
+                        {
+                            "name": "Convites para Eventos",
+                            "description": "Modelos projetados profissionalmente para eventos."
+                        },
+                        {
+                            "name": "Suporte ao Cliente",
+                            "description": "Modelos personalizados para resolução de problemas e follow-ups."
+                        },
+                        {
+                            "name": "E-mails de Boas-Vindas",
+                            "description": "Configure rapidamente uma série de boas-vindas envolvente."
+                        },
+                        {
+                            "name": "Anúncios de Produtos",
+                            "description": "Modifique e-mails de anúncio em minutos e envie instantaneamente."
+                        }
+                    ],
+                    "features": [
+                        "Modelos projetados profissionalmente e responsivos para qualquer caso de uso.",
+                        "Personalização com arrastar e soltar—sem necessidade de codificação.",
+                        "Modelos pré-construídos para newsletters e e-mails transacionais.",
+                        "Economize tempo com designs pré-testados e de alta conversão.",
+                        "Teste, otimize e agende campanhas instantaneamente."
+                    ]
+                },
+                "img": "/assets/brpt/email/send-email-campaigns-faster-with-pre-designed-templates.svg"
+            },
+            {
+                "name": "API de E-mail Flexível para Integração Perfeita",
+                "content": "Garanta a entrega de e-mails de forma confiável e eficiente com nossa API de E-mail Transacional. Envie confirmações de pedidos, faturas e notificações com entrega rápida e alta entregabilidade.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Verificação OTP",
+                            "description": "Garanta autenticação segura e fluida de usuários com senhas únicas instantâneas via API de E-mail OTP."
+                        },
+                        {
+                            "name": "Lembretes de Carrinho Abandonado",
+                            "description": "Envie e-mails de acompanhamento incentivando os usuários a concluir a compra."
+                        },
+                        {
+                            "name": "Confirmações de Pedido",
+                            "description": "Envie recibos e detalhes do pedido imediatamente após a compra."
+                        },
+                        {
+                            "name": "Alertas de Envio & Entrega",
+                            "description": "Notifique os clientes sobre despacho do pedido, rastreamento e status de entrega."
+                        },
+                        {
+                            "name": "Atualizações de Reembolso & Devolução",
+                            "description": "Informe os usuários sobre processamento de reembolso, aprovação de devoluções e status das solicitações."
+                        }
+                    ],
+                    "features": [
+                        "Entrega de alta velocidade para garantir que e-mails urgentes cheguem instantaneamente.",
+                        "Integração via API para automação perfeita e acionamento de e-mails em tempo real.",
+                        "Escalável para lidar com grandes volumes de e-mails transacionais sem esforço.",
+                        "Alta entregabilidade com autenticação DMARC, SPF e DKIM para maximizar a entrega na caixa de entrada e evitar falsificação.",
+                        "Monitoramento e análise em tempo real para acompanhar o desempenho dos e-mails."
+                    ]
+                },
+                "img": "/assets/brpt/email/transactional-email-api-deliver-critical-emails-instantly.svg"
+            },
+            {
+                "name": "Integração Perfeita com Gmail & Outlook",
+                "content": "Integre-se facilmente ao Gmail e Outlook usando o Serviço de E-mail da MSG91. Envie e-mails transacionais, OTPs, notificações e campanhas em massa – tudo a partir de uma única plataforma, garantindo entrega instantânea, escalabilidade e rastreamento detalhado sem necessidade de software adicional.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "E-mails Transacionais",
+                            "description": "Automatize confirmações de pedidos, OTPs e notificações pelo seu provedor de e-mail existente."
+                        },
+                        {
+                            "name": "Campanhas Segmentadas",
+                            "description": "Crie modelos envolventes e envie e-mails em massa para públicos cadastrados com entrega instantânea."
+                        },
+                        {
+                            "name": "Nutrição de Leads",
+                            "description": "Envie e-mails de acompanhamento segmentados e personalizados para converter leads."
+                        },
+                        {
+                            "name": "Análises Detalhadas",
+                            "description": "Acompanhe taxas de abertura, cliques e engajamento para obter melhores insights."
+                        },
+                        {
+                            "name": "Acesso Fácil",
+                            "description": "Gerencie campanhas de e-mail diretamente do Gmail ou Outlook."
+                        }
+                    ],
+                    "features": [
+                        "Envie campanhas de e-mail diretamente de um único painel de controle.",
+                        "Engaje clientes a partir da sua caixa de entrada corporativa sem complicações.",
+                        "Gerencie todas as campanhas em uma única interface.",
+                        "Monitore aberturas, cliques e desempenho dos e-mails instantaneamente.",
+                        "Simplifique a comunicação sem precisar de software extra."
+                    ]
+                },
+                "img": "/assets/brpt/email/seamless-integration-with-gmail-and-outlook.svg"
+            },
+            {
+                "name": "Alcance o Público Certo & Execute Campanhas de E-mail com Facilidade",
+                "content": "Alcance o público certo com o e-mail certo usando segmentação avançada e automação de e-mail. Entregue e-mails personalizados que impulsionam engajamento e conversões perfeitamente.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "E-mail Personalizado",
+                            "description": "Envie campanhas segmentadas com base nos interesses e no comportamento do cliente."
+                        },
+                        {
+                            "name": "Campanhas de Reengajamento",
+                            "description": "Identifique usuários inativos e envie e-mails personalizados para trazê-los de volta."
+                        },
+                        {
+                            "name": "Gatilhos Baseados em Eventos",
+                            "description": "Automatize e-mails para cadastros, compras e carrinhos abandonados."
+                        },
+                        {
+                            "name": "Campanhas Geolocalizadas",
+                            "description": "Alcance públicos com base na localização e preferências."
+                        },
+                        {
+                            "name": "Testes A/B",
+                            "description": "Teste linhas de assunto, conteúdos e designs para otimizar o desempenho dos e-mails."
+                        }
+                    ],
+                    "features": [
+                        "Crie segmentos precisos com base no comportamento do usuário, dados demográficos e engajamento.",
+                        "Configure e-mails acionados automaticamente para cadastros, compras e carrinhos abandonados.",
+                        "Otimize o desempenho com dados em tempo real, agendamento inteligente e insights de campanhas.",
+                        "Garanta que os e-mails de campanha cumpram a autenticação DMARC para melhorar a entrega na caixa de entrada e evitar riscos de phishing.",
+                        "Integre-se a CRMs, APIs e plataformas multicanais para uma abordagem unificada."
+                    ]
+                },
+                "img": "/assets/brpt/email/target-the-right-audience-and-run-email-campaigns-effortlessly.svg"
+            },
+            {
+                "name": "Análises Detalhadas: Acompanhe Relatórios de Entrega, Abertura e Cliques",
+                "content": "Obtenha insights acionáveis com análises em tempo real. Monitore taxas de entrega, taxas de abertura, taxas de cliques e conversões para otimizar suas campanhas de e-mail com eficiência.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Monitoramento de Desempenho de Campanhas",
+                            "description": "Analise a eficácia dos e-mails com relatórios completos."
+                        },
+                        {
+                            "name": "Insights de Testes A/B",
+                            "description": "Compare linhas de assunto e variações de e-mails para melhorar o engajamento."
+                        },
+                        {
+                            "name": "Análise de Engajamento do Usuário",
+                            "description": "Acompanhe interações para otimizar campanhas futuras."
+                        },
+                        {
+                            "name": "Monitoramento de Entregabilidade",
+                            "description": "Meça taxas de sucesso de e-mails e melhore a entrega na caixa de entrada."
+                        },
+                        {
+                            "name": "Análises Geográficas",
+                            "description": "Visualize o desempenho da campanha em diferentes países para melhor segmentação."
+                        }
+                    ],
+                    "features": [
+                        "Acesse um painel de análises avançado para tomada de decisões baseada em dados.",
+                        "Obtenha insights de entregabilidade com autenticação DMARC, SPF e DKIM para melhorar a entrega e evitar falsificações.",
+                        "Acompanhe métricas de desempenho em tempo real, como entregas, aberturas, cliques e conversões.",
+                        "Analise taxas de cliques para medir o sucesso do e-mail.",
+                        "Exporte análises de campanhas com um intervalo de datas personalizado para segmentação precisa."
+                    ]
+                },
+                "img": "/assets/brpt/email/detailed-analytics-track-delivered-open-and-click-reports.svg"
+            },
+            {
+                "name": "Evite Spam com Lista de Supressão",
+                "content": "Mantenha uma boa reputação de remetente filtrando automaticamente endereços de e-mail que se descadastraram, retornaram ou são inválidos. A lista de supressão evita o envio de e-mails para esses endereços, reduzindo riscos de spam e melhorando a entregabilidade e o engajamento.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Evite Reclamações de Spam",
+                            "description": "Impeça o envio de e-mails para usuários que optaram por sair, reduzindo denúncias de spam."
+                        },
+                        {
+                            "name": "Melhore a Entregabilidade",
+                            "description": "Bloqueie endereços inválidos ou que retornaram para garantir que e-mails cheguem a destinatários ativos."
+                        },
+                        {
+                            "name": "Aprimore a Reputação do Remetente",
+                            "description": "Melhore sua reputação de envio ao seguir políticas DMARC para evitar uso não autorizado de e-mail."
+                        },
+                        {
+                            "name": "Economize em Campanhas",
+                            "description": "Evite gastar recursos em e-mails não entregáveis."
+                        },
+                        {
+                            "name": "Aumente as Taxas de Engajamento",
+                            "description": "Foque em alcançar usuários reais e interessados para obter melhores taxas de abertura e cliques."
+                        }
+                    ],
+                    "features": [
+                        "Bloqueia automaticamente e-mails para endereços descadastrados, retornados ou inválidos.",
+                        "Atualiza e gerencia contatos suprimidos continuamente.",
+                        "Facilidade para adicionar e gerenciar listas de supressão.",
+                        "Evita o envio para usuários que optaram por sair, garantindo conformidade.",
+                        "Reduz taxas de retorno e protege a reputação do remetente."
+                    ]
+                },
+                "img": "/assets/brpt/email/prevent-spam-with-suppression-list.svg"
+            },
+            {
+                "name": "Envie E-mails nos Melhores Horários com Agendamento Baseado em País",
+                "content": "Maximize taxas de abertura e engajamento enviando e-mails de acordo com o fuso horário local do destinatário. O agendamento automatizado baseado em fuso horário garante que os e-mails cheguem no momento ideal.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Aumente as Taxas de Abertura",
+                            "description": "Agende e-mails para chegar quando os destinatários estiverem mais propensos a abri-los."
+                        },
+                        {
+                            "name": "Melhore a Experiência do Cliente",
+                            "description": "Entregue e-mails quando os destinatários estiverem prontos para interagir."
+                        },
+                        {
+                            "name": "Gere Interações Significativas",
+                            "description": "Melhore as chances de conversão ao programar e-mails estrategicamente."
+                        },
+                        {
+                            "name": "Campanhas Globais",
+                            "description": "Otimize horários de envio para destinatários em diferentes fusos horários."
+                        },
+                        {
+                            "name": "Ofertas Sensíveis ao Tempo",
+                            "description": "Envie nos horários de pico para obter melhores taxas de conversão."
+                        }
+                    ],
+                    "features": [
+                        "Agenda e-mails automaticamente com base no fuso horário de cada destinatário.",
+                        "Garante que os e-mails cheguem quando os usuários estiverem mais propensos a interagir.",
+                        "Permite o envio eficiente de campanhas em vários fusos horários.",
+                        "Configure campanhas uma vez e os e-mails serão enviados no horário certo.",
+                        "Aumente o engajamento entregando e-mails no momento ideal."
+                    ]
+                },
+                "img": "/assets/brpt/email/send-emails-at-optimal-times-with-country-based-scheduling.svg"
+            },
+            {
+                "name": "Melhore o Desempenho com Testes A/B para E-mails",
+                "content": "Otimize suas campanhas de e-mail testando diferentes elementos. Teste linhas de assunto, variações de conteúdo e designs para entender o que funciona melhor para seu público e melhorar o desempenho dos e-mails.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Otimização de Linhas de Assunto",
+                            "description": "Teste diferentes linhas de assunto para determinar qual gera maior taxa de abertura."
+                        },
+                        {
+                            "name": "Variações de Conteúdo de E-mail",
+                            "description": "Experimente diferentes textos, imagens ou CTAs para aumentar o engajamento."
+                        },
+                        {
+                            "name": "Personalização vs. Mensagem Genérica",
+                            "description": "Compare e-mails personalizados com genéricos para medir o impacto."
+                        },
+                        {
+                            "name": "Design e Layout de E-mail",
+                            "description": "Compare layouts de coluna única vs. múltiplas colunas ou modo escuro vs. modo claro."
+                        },
+                        {
+                            "name": "Teste de Performance",
+                            "description": "Analise diferentes variações para identificar o que gera mais conversões."
+                        }
+                    ],
+                    "features": [
+                        "Realize testes A/B em diferentes segmentos de público para entender o desempenho das variações.",
+                        "Compare diferentes versões de e-mails para identificar a mais eficaz.",
+                        "Utilize resultados de testes anteriores para refinar campanhas futuras.",
+                        "Controle a duração do teste e a porcentagem de destinatários que receberão cada variação.",
+                        "Monitore métricas como taxas de abertura, cliques e conversões para analisar resultados em tempo real."
+                    ]
+                },
+                "img": "/assets/brpt/email/boost-performance-with-ab-testing-for-emails.svg"
+            },
+            {
+                "name": "Webhooks para Relatórios de Entrega, E-mails Recebidos e Status de Domínio",
+                "content": "Fique atualizado com notificações instantâneas via webhook para entrega de e-mails, mensagens recebidas e status de autenticação de domínio. Automatize fluxos de trabalho e acompanhe atividades de e-mail em tempo real sem esforço.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Alertas de Entrega em Tempo Real",
+                            "description": "Receba notificações instantâneas sobre e-mails entregues, retornados ou com falha."
+                        },
+                        {
+                            "name": "Monitoramento de Autenticação",
+                            "description": "Fique atualizado sobre o status do SPF, DKIM e DMARC para manter a segurança dos e-mails."
+                        },
+                        {
+                            "name": "Rastreamento de Engajamento do Usuário",
+                            "description": "Monitore aberturas, cliques e respostas para obter melhores insights sobre o público."
+                        },
+                        {
+                            "name": "Captura Automatizada de Leads",
+                            "description": "Capture envios de formulários e consultas por e-mail diretamente no seu CRM."
+                        },
+                        {
+                            "name": "Automação de Tickets de Suporte",
+                            "description": "Converta e-mails recebidos em tickets de suporte e atribua-os automaticamente a agentes."
+                        }
+                    ],
+                    "features": [
+                        "Receba alertas em tempo real sobre retornos e reclamações de spam para proteger a entregabilidade.",
+                        "Detecte cancelamentos de inscrição instantaneamente para atualizar listas e evitar envios indesejados.",
+                        "Garanta a segurança do domínio com monitoramento contínuo dos registros SPF, DKIM e DMARC.",
+                        "Conecte-se facilmente a CRMs, plataformas de suporte ao cliente e ferramentas de automação de e-mails.",
+                        "Receba e-mails em uma URL específica e acione ações automaticamente."
+                    ]
+                },
+                "img": "/assets/brpt/email/webhooks-for-delivery-reports-incoming-emails-and-domain-status.svg"
+            },
+            {
+                "name": "Gerencie E-mails Recebidos de Forma Eficiente com uma Caixa de Entrada Unificada",
+                "content": "Gerencie e-mails recebidos com eficiência, colabore com sua equipe e responda mais rapidamente, tudo a partir de uma única caixa de entrada organizada.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Gestão Centralizada de E-mails",
+                            "description": "Gerencie todos os e-mails de clientes em uma única caixa de entrada."
+                        },
+                        {
+                            "name": "Colaboração em Equipe",
+                            "description": "Atribua e acompanhe respostas de e-mails dentro da equipe."
+                        },
+                        {
+                            "name": "Respostas Mais Rápidas",
+                            "description": "Reduza atrasos com rastreamento de e-mails em tempo real e classificação inteligente."
+                        },
+                        {
+                            "name": "Atribuição Automatizada de E-mails",
+                            "description": "Direcione e-mails para os membros certos da equipe instantaneamente."
+                        },
+                        {
+                            "name": "Conversas Categorizadas",
+                            "description": "Organize e-mails por prioridade, status ou departamento para maior eficiência."
+                        }
+                    ],
+                    "features": [
+                        "Caixa de entrada unificada para gerenciar e-mails de várias contas em um só lugar.",
+                        "Atribuição de e-mails sem esforço para uma colaboração perfeita da equipe.",
+                        "Aplicativo dedicado para Android/iOS para gerenciar e responder consultas com eficiência.",
+                        "Notificações em tempo real para nunca perder uma mensagem importante.",
+                        "Análises de resposta para acompanhar o desempenho da equipe e os tempos de resolução de e-mails."
+                    ]
+                },
+                "img": "/assets/brpt/email/lotties/effortlessly-manage-incoming-emails-with-a-unified-inbox.json"
+            }
+        ]
+    },
+    "ProductStatsComp": {
+        "heading": "Entrega de e-mails de classe mundial e resultados líderes da indústria.",
+        "content": [
+            {
+                "count": "98.5%",
+                "des": "Taxa de entrega de e-mails"
+            },
+            {
+                "count": "15M+",
+                "des": "E-mails entregues com sucesso todos os meses."
+            },
+            {
+                "count": "100%",
+                "des": "E-mails enviados nos primeiros 5 minutos para engajamento instantâneo."
+            },
+            {
+                "count": "24/7",
+                "des": "Suporte dedicado, sempre pronto para ajudar."
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Milhões de usuários confiam em nós com nossa Solução de E-mail, Você também pode.",
+        "buttons": {
+            "contactSales": {
+                "text": "Fale com as vendas",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

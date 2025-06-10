@@ -1,0 +1,28 @@
+.cont {
+    height: 100%;
+    @apply overflow-hidden lg:w-1/2;
+}
+.img {
+    @apply w-full lg:w-[1000px] lg:absolute;
+    @media (min-width: 1024px) {
+        margin: 0 auto;
+    }
+}
+.homeimg {
+    @apply w-full max-w-[600px];
+}
+.code_sm {
+    font-size: 14px !important;
+}
+.lottie_animation {
+    width: 50%;
+    @media (max-width: 1023px) {
+        width: 100% !important;
+    }
+    @apply flex items-center justify-center cursor-none;
+
+    div {
+        height: fit-content !important;
+      
+    }
+}

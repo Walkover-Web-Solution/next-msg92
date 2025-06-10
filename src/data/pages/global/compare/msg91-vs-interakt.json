@@ -1,0 +1,66 @@
+{
+    "HeadComp": {
+        "title": "Interakt vs MSG91 | Compare Communication APIs & Messaging Platforms",
+        "description": "Compare Interakt and MSG91 to find the right communication platform for your business. Explore differences in pricing, features, ease of integration, and support to make an informed decision."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs Interakt",
+        "subheading": "Interakt primarily targets social communication through WhatsApp and Instagram, offering automated responses, chatbot support, and Meta ad analytics—ideal for businesses focused on social interactions. In contrast, MSG91 stands out as a powerful omnichannel communication platform, seamlessly integrating SMS, email, WhatsApp, RCS and more. With advanced features like AI-driven customer journeys, dynamic segmentation, and insightful analytics, MSG91 empowers businesses with scalable, flexible, and data-driven multichannel messaging solutions for enhanced customer engagement.",
+        "img": "/assets/compare/interakt/interakt-icon.svg",
+        "color": "#00A68B"
+    },
+    "CompareTableComp": {
+        "type":"global",
+        "heading": "Comparison Summary: MSG91 vs Interakt",
+        "name": "Interakt",
+        "img": "/assets/compare/interakt/interakt-logo.svg",
+        "content": [
+            {
+                "name": "MSG91",
+                "des": "MSG91, on the other hand, is a comprehensive omnichannel communication solution, supporting SMS, email, WhatsApp, and more. It provides advanced features like AI-driven customer journeys, dynamic segmentation, and robust analytics, catering to businesses seeking scalable, flexible, and data-driven multichannel messaging solutions."
+            },
+            {
+                "name": "Interakt",
+                "des": "Interakt is a customer engagement platform focused on WhatsApp and Instagram communication, offering chatbot automation and Smart Ads integration for social media marketing. It’s designed for businesses looking to streamline interactions on social channels."
+            }
+        ],
+        "features": {
+            "pricing": "Costlier, with added margin on Meta pricing.",
+            "multi_agent_support": "Owner can add unlimited agents.",
+            "ai_chatbot_integration": "Drag & Drop Chatbot Builder & GPT Chatbot.",
+            "unlimited_bot_creation": "Interakt doesn't specify chatbot creation limits.",
+            "omnichannel_chatbot_support": "WhatsApp & Instagram only.",
+            "whatsapp_payments": "Supports payments through PayU and Razorpay.",
+            "whatsapp_carousels": "Supports creating and sending WhatsApp carousel templates.",
+            "whatsapp_catalogs": "Provides WhatsApp Product Catalog.",
+            "customer_journey_creation": "Interakt supports customer journeys via WhatsApp and Instagram but lacks multichannel capabilities like SMS, email, or RCS.",
+            "client_segmentation": "Supports customer segmentation based on attributes and events.",
+            "integration_and_plugins": "Integrates with multiple platforms including WooCommerce, Webengage, and others.",
+            "otp_verification": "OTP verification through WhatsApp.",
+            "otp_widget": "No",
+            "one_click_verification": "Through WhatsApp template.",
+            "unified_platform": "Single platform for WhatsApp & Instagram, chatbot, analytics and more.",
+            "technical_knowledge_required": "Not Necessarily needed.",
+            "customer_support_quality": "Provides standard email and chat support, plus premium WhatsApp and phone support (10 AM - 7 PM, Mon-Fri) with the Add-on.",
+            "blue_tick_assistance": "Yes",
+            "meta_ads_trackings_conversion": "Interakt provides Meta ad analytics via Smart Ads."
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

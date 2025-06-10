@@ -1,0 +1,33 @@
+{
+    "CaseStudyPageCompOld": {
+        "slug": "sankalp",
+        "name": "Sankalp",
+        "title": "Sankalp India Foundation informs blood donors and recipients with SMS via MSG91",
+        "industry": "NGO (Blood Donation)",
+        "purpose": "Communication APIs",
+        "features": "Programmable SMS",
+        "caseStudies": "<a class='text-link active-link' href='https://www.sankalp.com/'>Sankalp India Foundation</a> is a Bengaluru based NGO which works in the fields of Blood Donation, Thalassemia cure and management . With the vision to help people requiring blood units with proper supply of blood by conducting blood donation camps and creating awareness, Sankalp India Foundation has been rigorously working on coordinating with the donors and patients for the their welfare.",
+        "problem": "A well-established communication channel with customers is a key requirement to ensure better operations. Setting up seamless operations while maintaining a wide range of customer base without a robust and secure communication channel is a challenge. Thus to convey important information like booking details, offers and updates for building a strong customer relationship, a communication channel targeting wide reach for mass audience (customers) is required.",
+        "solution": {
+            "description": "KartFood is managing their operations by its website http://kartfood.in/ and customer communication efficiently with SMS communications via MSG91 API. With MSG91 APIs and real-time robust system, SMS is delivered to the customers to build communication at different events such as",
+            "content": [
+                "Volunteers are informed about the blood donation camps and drives via SMS containing details of the drive.",
+                "Kin of the patients are sent details of the Blood Banks which have the required blood group units via SMS.",
+                "SMS regarding blood units requirements in emergency and the details are sent to volunteers having the required blood group.",
+                "Blood donation requests for Bombay Blood Group along with details are sent to the registered Bombay blood Group donors via SMS."
+            ],
+            "extra": "This way Sankalp India Foundation has been able to establish and maintain an effective coordination with donors and patients via SMS using MSG91 API."
+        },
+        "benefit": "As a result, the patient gets details of blood banks or donors via secured channel, making the operations reliable and seamless. Moreover, the updates of camps and emergencies sent to donors results in a better coordination and resulting in timely procurement of required blood units saving lives.",
+        "tags": [
+            {
+                "name": "NGO",
+                "slug": "ngo"
+            },
+            {
+                "name": "Transactional SMS",
+                "slug": "transaction-sms"
+            }
+        ]
+    }
+}

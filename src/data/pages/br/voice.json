@@ -1,0 +1,102 @@
+{
+    "HeadComp": {
+        "title": "Best Voice Call Api | Voice Api Service Provider in Brazil - MSG91",
+        "description": "We are the leading Voice Call API provider in Brazil. With MSG91 voice api service, every developer can build and integrate communication systems, missed call services etc."
+    },
+    "BannerComp": {
+        "slug": "voice",
+        "product": {
+            "name": "Voice",
+            "icon": "/assets/icons/products/voice.svg"
+        },
+        "code": true,
+        "tagline": "connect with confidence",
+        "heading": "Boost customer engagement and build trust",
+        "subheading": "Start real-time conversations with crystal clear audio, low latency and deeper insights.",
+        "banner_img": "/assets/global/hello/banner.webp",
+        "getstarted_btn": "Get Started",
+        "trustedByComp": {
+            "heading": "Trusted by 30,000+ global businesses",
+            "logos": [
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
+    },
+    "FeatureComp": {
+        "heading": "Features",
+        "iconColor": "text-campaign",
+        "features": [
+            {
+                "name": "Call Monitoring",
+                "content": "<strong>Introducing the next-level communication experience with our all-new Call Monitoring features</strong> We're putting you in the driver's seat of your conversations with callers. These robust features give you greater control and insight during your calls, ensuring enhanced communication and customer satisfaction. Call spying: your secret weapon for quality assurance! Call barging: real-time support, is just a click away! Call whispering: guidance at your fingertips!",
+                "img": "/assets/global/voice/voice-call-monitoring.svg"
+            },
+            {
+                "name": "Direct calling from browser",
+                "content": "<strong>Skip the 2-way calling and directly call from browser.</strong> Save your agent calling time and enhance customer experience. Easily connect two phone numbers without keeping one on hold to start a customer conversation.",
+                "img": "/assets/global/voice/voice-direct-calling-from-hello.svg"
+            },
+            {
+                "name": "IVR Flow",
+                "content": "<strong>Modern IVR that makes customer interaction quick and hassle-free.</strong> Smart IVR system that offers more that just resolving queries. Besides the usual, you can create a time-based or agent-based setting and even record a message.",
+                "img": "/assets/global/voice/voice-ivr-flow.svg"
+            },
+            {
+                "name": "Bulk Voice",
+                "content": "<strong>Speak directly with your audience over a single call.</strong> Record your voice message and blast the message you wish to convey to hundreds and thousands of customer in one go. A ringing phone call is usually hard to ignore.",
+                "img": "/assets/global/voice/voice-bulk-voice.svg"
+            },
+            {
+                "name": "Multiple Way to Upload File",
+                "content": "<strong>Upload your audio message in multiple ways.</strong> Amplify your customer interaction with personalised voice message. Record your message for bulk voice call or IVR menu through text-to-speech, browser mic or phone call.",
+                "img": "/assets/global/voice/voice-multiple-way-to-upload-file.svg"
+            },
+            {
+                "name": "Bulk voice with IVR",
+                "content": "<strong>Connect your voice call to the IVR.</strong> Not just send a bulk voice message but also get a response from your users. Record the message you’d like to convey and send it to your customers using an IVR.",
+                "img": "/assets/global/voice/voice-bulk-voice-with-ivr.svg"
+            },
+            {
+                "name": "Real time connect with agent on user input on bulk call",
+                "content": "<strong>Direct your user to your support agent.</strong> Up the customer experience game by offering real-time support when you connect your users to your customer support agents based on their bulk call input.",
+                "img": "/assets/global/voice/voice-real-time-connect-with-agent-on-user-input-on-bulk-call.svg"
+            }
+        ]
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}
