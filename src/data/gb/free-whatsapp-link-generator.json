@@ -77,7 +77,7 @@
         "heading": "FAQs",
         "faqs": [
             {
-                "question": "How does a WhatsApp link work??",
+                "question": "How does a WhatsApp link work?",
                 "answer": "WhatsApp links use a specific URL format that, when clicked, opens the WhatsApp app on a user's device and starts a chat with the provided phone number or message."
             },
             {
