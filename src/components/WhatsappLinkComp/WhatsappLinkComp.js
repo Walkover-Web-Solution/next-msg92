@@ -410,7 +410,7 @@ var options = {
                             <div className='lg:w-1/2' id='widget-code-wrp' style={{ display: 'none' }}>
                                 <div>
                                     <h4 style={{ lineHeight: '38px' }}>
-                                        <span className='text-xl font-semibold'>Widget code snipet</span>
+                                        <span className='text-xl font-semibold'>Widget code snippet</span>
                                     </h4>
                                 </div>
                                 <p>Copy and paste this code on every page of your website.</p>

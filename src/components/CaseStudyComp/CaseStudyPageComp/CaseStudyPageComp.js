@@ -6,13 +6,12 @@ export default function CaseStudyPageComp({ data, pageInfo }) {
     const headComp = {
         'title': `Customer success stories: ${data?.name} with MSG91 API Integration`,
     };
-
     return (
         <>
             <HeadComp data={headComp} pageInfo={pageInfo} />
-            <div>
-                <div className='container flex flex-col gap-10 pb-16 pt-4'>
-                    <div>
+            <div className='container max-w-4xl cont gap-12 py-12'>
+                <div className='cont gap-3'>
+                    <div className='text-sm'>
                         <a className='text-link' href='/case-studies'>
                             All Case Studies
                         </a>{' '}
@@ -21,74 +20,72 @@ export default function CaseStudyPageComp({ data, pageInfo }) {
                             {data?.name}
                         </span>
                     </div>
-                    <div className='flex flex-col gap-4'>
-                        <Image
-                            src={`/assets/case-studies/${data?.slug}.png`}
-                            width={400}
-                            height={400}
-                            alt={data?.slug}
-                            className='h-[80px] w-fit'
-                        />
-                        <h1 className='text-4xl font-bold md:w-2/3'>{data?.title}</h1>
-                    </div>
-                    <ul className='flex flex-col gap-4'>
-                        <li className='flex gap-2 text-lg'>
-                            <span className='font-bold'>{data?.caseStudies?.headings?.industry || 'Industry'}:</span>
-                            <span>{data?.industry}</span>
-                        </li>
-                        <li className='flex gap-2 text-lg'>
-                            <span className='font-bold'>{data?.caseStudies?.headings?.purpose || 'Purpose'}:</span>
-                            <span>{data?.purpose}</span>
-                        </li>
-                        <li className='flex gap-2 text-lg'>
-                            <span className='font-bold'>
-                                {data?.caseStudies?.headings?.features || 'Features in use'}:
-                            </span>
-                            <span>{data?.features}</span>
-                        </li>
-                    </ul>
+                    <Image
+                        src={`/assets/case-studies/${data?.slug}.png`}
+                        width={400}
+                        height={400}
+                        alt={data?.slug}
+                        className='lg:h-[60px] h-[40px] w-fit'
+                    />
+                    <h1 className='md:text-4xl text-2xl font-bold'>{data?.title}</h1>
+                    {data?.content?.length > 0 && (
+                        <ul className='cont gap-1'>
+                            {data?.content?.map((item, index) => (
+                                <li className='' key={index}>
+                                    <span className='font-bold '>{item?.title}</span>: {item?.content}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                 </div>
-                <div className='bg-gray'>
-                    <div className='container flex flex-col gap-10 py-16'>
-                        <div className='flex flex-col gap-2'>
-                            <h2 className='font-bold text-2xl'>{`${
-                                data?.caseStudies?.headings?.caseStudies || 'Case Studies '
-                            } - ${data?.name}`}</h2>
-                            <div className='text-lg' dangerouslySetInnerHTML={{ __html: data?.caseStudies }}></div>
-                        </div>
-                        <div className='flex flex-col gap-2'>
-                            <h2 className='font-bold text-2xl'>{`${
-                                data?.caseStudies?.headings?.problem || 'Problem'
-                            }`}</h2>
-                            <div className='text-lg' dangerouslySetInnerHTML={{ __html: data?.problem }}></div>
-                        </div>
-                        <div className='flex flex-col gap-4'>
-                            <h2 className='font-bold text-2xl'>{`${
-                                data?.caseStudies?.headings?.solution || 'Solution'
-                            }`}</h2>
-                            <div
-                                className='text-lg'
-                                dangerouslySetInnerHTML={{ __html: data?.solution?.description }}
-                            ></div>
-                            <ul className='list-disc flex flex-col gap-2 text-lg'>
-                                {data?.solution?.content?.length > 0 &&
-                                    data?.solution?.content?.map((solution, index) => {
-                                        return <li key={index}>{solution}</li>;
-                                    })}{' '}
-                            </ul>
-                            <p className='text-lg'>{data?.solution?.extra}</p>
-                        </div>
-                        <div className='flex flex-col gap-2'>
-                            <h2 className='font-bold text-2xl'>{`${
-                                data?.caseStudies?.headings?.benefit || 'Benefit'
-                            }`}</h2>
-                            <div className='text-lg' dangerouslySetInnerHTML={{ __html: data?.benefit }}></div>
-                        </div>
-                        <a className='text-link active-link flex items-center' href='/case-studies'>
-                            <MdChevronLeft fontSize={24} /> All Case Studies
-                        </a>
-                    </div>
+
+                <div className='cont gap-1'>
+                    <h2 className='md:text-2xl text-xl font-bold'>{data?.problems?.title}:</h2>
+                    {data?.problems?.description && <p>{data?.problems?.description}</p>}
+                    {data?.problems?.content?.length > 0 && (
+                        <ul className='cont gap-4 list-disc'>
+                            {data?.problems?.content?.map((item, index) => (
+                                <li key={index} dangerouslySetInnerHTML={{ __html: item }}></li>
+                            ))}
+                        </ul>
+                    )}
                 </div>
+                <div className='cont gap-1'>
+                    <h2 className='md:text-2xl text-xl font-bold'>{data?.solutions?.title}:</h2>
+                    {data?.solutions?.description && <p>{data?.solutions?.description}</p>}
+                    {data?.solutions?.content?.length > 0 && (
+                        <ul className='cont gap-4 list-disc'>
+                            {data?.solutions?.content?.map((item, index) => (
+                                <li key={index} dangerouslySetInnerHTML={{ __html: item }}></li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+                <div className='cont gap-1'>
+                    <h2 className='md:text-2xl text-xl font-bold'>{data?.results?.title}:</h2>
+                    {data?.results?.description && <p>{data?.results?.description}</p>}
+                    {data?.results?.content?.length > 0 && (
+                        <ul className='cont gap-4 list-disc'>
+                            {data?.results?.content?.map((item, index) => (
+                                <li key={index} dangerouslySetInnerHTML={{ __html: item }}></li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+                <div className='cont gap-1'>
+                    <h2 className='md:text-2xl text-xl font-bold'>{data?.conclusion?.title}:</h2>
+                    {data?.conclusion?.description && <p>{data?.conclusion?.description}</p>}
+                    {data?.conclusion?.content?.length > 0 && (
+                        <ul className='cont gap-4 list-disc'>
+                            {data?.conclusion?.content?.map((item, index) => (
+                                <li key={index} dangerouslySetInnerHTML={{ __html: item }}></li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+                <a className='text-link active-link flex items-center' href='/case-studies'>
+                    <MdChevronLeft fontSize={24} /> All Case Studies
+                </a>
             </div>
         </>
     );
