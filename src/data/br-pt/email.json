@@ -47,6 +47,42 @@
         "read_more": "Magbasa pa",
         "features": [
             {
+                "name": "Crie Modelos de E-mail com um Gerador de E-mails com IA Em Segundos!",
+                "content": "Acelere o processo de criação de e-mails com o Gerador de E-mails com IA da MSG91, que cria instantaneamente linhas de assunto, cabeçalhos e conteúdo completo de e-mail perfeitamente alinhados aos objetivos da sua campanha e público-alvo.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Lance Campanhas Mais Rápido",
+                            "description": "Gere conteúdo completo de e-mail instantaneamente a partir de um breve resumo."
+                        },
+                        {
+                            "name": "Campanhas Multilíngues",
+                            "description": "Crie conteúdo facilmente no idioma de sua preferência."
+                        },
+                        {
+                            "name": "Voz de Marca Consistente",
+                            "description": "Garanta que cada e-mail reflita o tom e a mensagem únicos da sua marca."
+                        },
+                        {
+                            "name": "Aumente o Engajamento",
+                            "description": "Use IA para criar conteúdos envolventes que realmente ressoam."
+                        },
+                        {
+                            "name": "Economize Tempo",
+                            "description": "Deixe o gerador de e-mails com IA cuidar da criação de conteúdo para que você possa focar na estratégia."
+                        }
+                    ],
+                    "features": [
+                        "Sugestões Inteligentes de Assunto – Linhas de assunto geradas por IA para maximizar as taxas de abertura.",
+                        "Gerador de Conteúdo por Prompt – Forneça um breve resumo e receba um e-mail completo, pronto para campanha.",
+                        "Cobertura Completa de E-mail – Gere tudo, desde cabeçalhos até rodapés, em um único passo.",
+                        "Engajamento Otimizado – Cada palavra criada para impulsionar aberturas, cliques e conversões.",
+                        "Flexibilidade de Tom e Estilo – Escolha entre tons casuais, formais ou informativos para combinar perfeitamente com sua marca."
+                    ]
+                },
+                "img": "/assets/brpt/email/lotties/create_email_templates_with_an_ai_email_generator_in_seconds.json"
+            },
+            {
                 "name": "Aumente a Visibilidade com o Gmail Markup",
                 "content": "Torne seus e-mails mais envolventes com o schema markup do Gmail. Exiba trechos enriquecidos, botões de ação e prévias de eventos diretamente na caixa de entrada do Gmail para ajudar os usuários a agir mais rápido e melhorar o desempenho dos seus e-mails.",
                 "more_content": {
@@ -81,42 +117,6 @@
                     ]
                 },
                 "img": "/assets/brpt/email/boost_visibility_with_gmail_markup.webp"
-            },
-            {
-                "name": "Crie Modelos de E-mail com um Gerador de E-mails com IA — Em Segundos!",
-                "content": "Acelere o processo de criação de e-mails com o Gerador de E-mails com IA da MSG91, que cria instantaneamente linhas de assunto, cabeçalhos e conteúdo completo de e-mail perfeitamente alinhados aos objetivos da sua campanha e público-alvo.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Lance Campanhas Mais Rápido",
-                            "description": "Gere conteúdo completo de e-mail instantaneamente a partir de um breve resumo."
-                        },
-                        {
-                            "name": "Campanhas Multilíngues",
-                            "description": "Crie conteúdo facilmente no idioma de sua preferência."
-                        },
-                        {
-                            "name": "Voz de Marca Consistente",
-                            "description": "Garanta que cada e-mail reflita o tom e a mensagem únicos da sua marca."
-                        },
-                        {
-                            "name": "Aumente o Engajamento",
-                            "description": "Use IA para criar conteúdos envolventes que realmente ressoam."
-                        },
-                        {
-                            "name": "Economize Tempo",
-                            "description": "Deixe o gerador de e-mails com IA cuidar da criação de conteúdo para que você possa focar na estratégia."
-                        }
-                    ],
-                    "features": [
-                        "Sugestões Inteligentes de Assunto – Linhas de assunto geradas por IA para maximizar as taxas de abertura.",
-                        "Gerador de Conteúdo por Prompt – Forneça um breve resumo e receba um e-mail completo, pronto para campanha.",
-                        "Cobertura Completa de E-mail – Gere tudo, desde cabeçalhos até rodapés, em um único passo.",
-                        "Engajamento Otimizado – Cada palavra criada para impulsionar aberturas, cliques e conversões.",
-                        "Flexibilidade de Tom e Estilo – Escolha entre tons casuais, formais ou informativos para combinar perfeitamente com sua marca."
-                    ]
-                },
-                "img": "/assets/brpt/email/lotties/create_email_templates_with_an_ai_email_generator_in_seconds.json"
             },
             {
                 "name": "Personalização Dinâmica com Variáveis Handlebar",

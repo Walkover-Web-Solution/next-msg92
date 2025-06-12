@@ -49,6 +49,42 @@
         "iconColor": "text-email",
         "features": [
             {
+                "name": "Create Email Templates with an AI Email Generator In Seconds!",
+                "content": "Accelerate your email creation process with MSG91’s AI Email Generator, which instantly crafts subject lines, headers, and full email content perfectly aligned with your campaign goals and target audience.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Launch Campaigns Faster",
+                            "description": "Generate complete email content instantly from a short brief."
+                        },
+                        {
+                            "name": "Multilingual Campaigns",
+                            "description": "Effortlessly create content in your preferred language."
+                        },
+                        {
+                            "name": "Consistent Brand Voice",
+                            "description": "Ensure every email reflects your brand’s unique tone and messaging."
+                        },
+                        {
+                            "name": "Boost Engagement",
+                            "description": "Use AI to craft attention-grabbing content that truly resonates."
+                        },
+                        {
+                            "name": "Save Time",
+                            "description": "Let the AI email generator handle content creation so you can focus on strategy."
+                        }
+                    ],
+                    "features": [
+                        "Smart Subject Line Suggestions – AI-generated subject lines designed to maximize open rates.",
+                        "Prompt-Based Content Generator – Provide a brief and receive a complete, campaign-ready email.",
+                        "Full Email Coverage – Generate everything from headers to footers in one seamless step.",
+                        "Engagement Optimized – Every word crafted to drive opens, clicks, and conversions.",
+                        "Tone & Style Flexibility – Choose between casual, formal, or informative tones to match your brand perfectly."
+                    ]
+                },
+                "img": "/assets/global/email/lotties/create_email_templates_with_an_ai_email_generator_in_seconds.json"
+            },
+            {
                 "name": "Boost Visibility with Gmail Markup",
                 "content": "Make your emails more engaging with Gmail schema markup. Display rich snippets, action buttons, and event previews directly in the Gmail inbox to help users take action faster and improve your email performance",
                 "more_content": {
@@ -83,42 +119,6 @@
                     ]
                 },
                 "img": "/assets/global/email/boost_visibility_with_gmail_markup.webp"
-            },
-            {
-                "name": "Create Email Templates with an AI Email Generator — In Seconds!",
-                "content": "Accelerate your email creation process with MSG91’s AI Email Generator, which instantly crafts subject lines, headers, and full email content perfectly aligned with your campaign goals and target audience.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Launch Campaigns Faster",
-                            "description": "Generate complete email content instantly from a short brief."
-                        },
-                        {
-                            "name": "Multilingual Campaigns",
-                            "description": "Effortlessly create content in your preferred language."
-                        },
-                        {
-                            "name": "Consistent Brand Voice",
-                            "description": "Ensure every email reflects your brand’s unique tone and messaging."
-                        },
-                        {
-                            "name": "Boost Engagement",
-                            "description": "Use AI to craft attention-grabbing content that truly resonates."
-                        },
-                        {
-                            "name": "Save Time",
-                            "description": "Let the AI email generator handle content creation so you can focus on strategy."
-                        }
-                    ],
-                    "features": [
-                        "Smart Subject Line Suggestions – AI-generated subject lines designed to maximize open rates.",
-                        "Prompt-Based Content Generator – Provide a brief and receive a complete, campaign-ready email.",
-                        "Full Email Coverage – Generate everything from headers to footers in one seamless step.",
-                        "Engagement Optimized – Every word crafted to drive opens, clicks, and conversions.",
-                        "Tone & Style Flexibility – Choose between casual, formal, or informative tones to match your brand perfectly."
-                    ]
-                },
-                "img": "/assets/global/email/lotties/create_email_templates_with_an_ai_email_generator_in_seconds.json"
             },
             {
                 "name": "Dynamic Personalization with Handlebar Variables",

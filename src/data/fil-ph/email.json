@@ -45,6 +45,42 @@
         "iconColor": "text-email",
         "features": [
             {
+                "name": "Gumawa ng Email Templates gamit ang AI Email Generator Sa Ilang Segundo!",
+                "content": "Pabilisin ang paggawa ng email gamit ang AI Email Generator ng MSG91, na agad gumagawa ng subject lines, headers, at buong email content na akma sa iyong campaign goals at target audience.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Mas Mabilis na Paglunsad ng Campaign",
+                            "description": "Awtomatikong gumawa ng kumpletong email content mula sa maikling brief."
+                        },
+                        {
+                            "name": "Multilingual na Campaign",
+                            "description": "Gumawa ng content nang madali sa iyong gustong wika."
+                        },
+                        {
+                            "name": "Consistent na Boses ng Brand",
+                            "description": "Tiyaking bawat email ay sumasalamin sa natatanging tono at mensahe ng iyong brand."
+                        },
+                        {
+                            "name": "Palakihin ang Engagement",
+                            "description": "Gamitin ang AI para gumawa ng content na talagang tumatagos at nakakakuha ng atensyon."
+                        },
+                        {
+                            "name": "Makatipid ng Oras",
+                            "description": "Hayaan ang AI email generator na gumawa ng content para makapag-focus ka sa strategy."
+                        }
+                    ],
+                    "features": [
+                        "Matalinong Subject Line Suggestions – AI-generated na subject lines para mapataas ang open rates.",
+                        "Prompt-Based Content Generator – Magbigay ng maikling brief at makakuha ng kumpletong, campaign-ready na email.",
+                        "Buong Email Coverage – Gumawa ng lahat mula header hanggang footer sa isang seamless na hakbang.",
+                        "Engagement Optimized – Bawat salita ay nilikha para magdulot ng opens, clicks, at conversions.",
+                        "Tone & Style Flexibility – Pumili mula sa casual, formal, o informative na tono para tumugma sa iyong brand."
+                    ]
+                },
+                "img": "/assets/fil_ph/email/lotties/create_email_templates_with_an_ai_email_generator_in_seconds.json"
+            },
+            {
                 "name": "Palakasin ang Visibility gamit ang Gmail Markup",
                 "content": "Gawing mas kaakit-akit ang iyong mga email gamit ang Gmail schema markup. Magpakita ng rich snippets, action buttons, at event previews direkta sa Gmail inbox para matulungan ang users na kumilos agad at mapabuti ang performance ng iyong email.",
                 "more_content": {
@@ -79,42 +115,6 @@
                     ]
                 },
                 "img": "/assets/fil_ph/email/boost_visibility_with_gmail_markup.webp"
-            },
-            {
-                "name": "Gumawa ng Email Templates gamit ang AI Email Generator — Sa Ilang Segundo!",
-                "content": "Pabilisin ang paggawa ng email gamit ang AI Email Generator ng MSG91, na agad gumagawa ng subject lines, headers, at buong email content na akma sa iyong campaign goals at target audience.",
-                "more_content": {
-                    "usecases": [
-                        {
-                            "name": "Mas Mabilis na Paglunsad ng Campaign",
-                            "description": "Awtomatikong gumawa ng kumpletong email content mula sa maikling brief."
-                        },
-                        {
-                            "name": "Multilingual na Campaign",
-                            "description": "Gumawa ng content nang madali sa iyong gustong wika."
-                        },
-                        {
-                            "name": "Consistent na Boses ng Brand",
-                            "description": "Tiyaking bawat email ay sumasalamin sa natatanging tono at mensahe ng iyong brand."
-                        },
-                        {
-                            "name": "Palakihin ang Engagement",
-                            "description": "Gamitin ang AI para gumawa ng content na talagang tumatagos at nakakakuha ng atensyon."
-                        },
-                        {
-                            "name": "Makatipid ng Oras",
-                            "description": "Hayaan ang AI email generator na gumawa ng content para makapag-focus ka sa strategy."
-                        }
-                    ],
-                    "features": [
-                        "Matalinong Subject Line Suggestions – AI-generated na subject lines para mapataas ang open rates.",
-                        "Prompt-Based Content Generator – Magbigay ng maikling brief at makakuha ng kumpletong, campaign-ready na email.",
-                        "Buong Email Coverage – Gumawa ng lahat mula header hanggang footer sa isang seamless na hakbang.",
-                        "Engagement Optimized – Bawat salita ay nilikha para magdulot ng opens, clicks, at conversions.",
-                        "Tone & Style Flexibility – Pumili mula sa casual, formal, o informative na tono para tumugma sa iyong brand."
-                    ]
-                },
-                "img": "/assets/fil_ph/email/lotties/create_email_templates_with_an_ai_email_generator_in_seconds.json"
             },
             {
                 "name": "Dynamic na Personalization gamit ang Handlebar Variables",
