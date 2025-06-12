@@ -45,6 +45,114 @@
         "iconColor": "text-email",
         "features": [
             {
+                "name": "Gumawa ng Email Templates gamit ang AI Email Generator Sa Ilang Segundo!",
+                "content": "Pabilisin ang paggawa ng email gamit ang AI Email Generator ng MSG91, na agad gumagawa ng subject lines, headers, at buong email content na akma sa iyong campaign goals at target audience.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Mas Mabilis na Paglunsad ng Campaign",
+                            "description": "Awtomatikong gumawa ng kumpletong email content mula sa maikling brief."
+                        },
+                        {
+                            "name": "Multilingual na Campaign",
+                            "description": "Gumawa ng content nang madali sa iyong gustong wika."
+                        },
+                        {
+                            "name": "Consistent na Boses ng Brand",
+                            "description": "Tiyaking bawat email ay sumasalamin sa natatanging tono at mensahe ng iyong brand."
+                        },
+                        {
+                            "name": "Palakihin ang Engagement",
+                            "description": "Gamitin ang AI para gumawa ng content na talagang tumatagos at nakakakuha ng atensyon."
+                        },
+                        {
+                            "name": "Makatipid ng Oras",
+                            "description": "Hayaan ang AI email generator na gumawa ng content para makapag-focus ka sa strategy."
+                        }
+                    ],
+                    "features": [
+                        "Matalinong Subject Line Suggestions – AI-generated na subject lines para mapataas ang open rates.",
+                        "Prompt-Based Content Generator – Magbigay ng maikling brief at makakuha ng kumpletong, campaign-ready na email.",
+                        "Buong Email Coverage – Gumawa ng lahat mula header hanggang footer sa isang seamless na hakbang.",
+                        "Engagement Optimized – Bawat salita ay nilikha para magdulot ng opens, clicks, at conversions.",
+                        "Tone & Style Flexibility – Pumili mula sa casual, formal, o informative na tono para tumugma sa iyong brand."
+                    ]
+                },
+                "img": "/assets/fil_ph/email/lotties/create_email_templates_with_an_ai_email_generator_in_seconds.json"
+            },
+            {
+                "name": "Palakasin ang Visibility gamit ang Gmail Markup",
+                "content": "Gawing mas kaakit-akit ang iyong mga email gamit ang Gmail schema markup. Magpakita ng rich snippets, action buttons, at event previews direkta sa Gmail inbox para matulungan ang users na kumilos agad at mapabuti ang performance ng iyong email.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "Imbitasyon sa Kaganapan",
+                            "description": "Ipakita ang mga button na “RSVP” o “Add to Calendar” direkta sa email preview."
+                        },
+                        {
+                            "name": "Mga Alok sa E-Commerce",
+                            "description": "I-highlight ang mga sale gamit ang “Shop Now” o “View Deal” na mga aksyon."
+                        },
+                        {
+                            "name": "Order at Delivery Updates",
+                            "description": "Ipakita ang real-time na status ng order sa Gmail summary."
+                        },
+                        {
+                            "name": "Kumpirmasyon ng Appointment",
+                            "description": "Pahintulutan ang users na mag-confirm, mag-cancel, o mag-reschedule direkta mula sa inbox."
+                        },
+                        {
+                            "name": "Booking ng Flight at Hotel",
+                            "description": "Ibahagi ang mahahalagang travel info gamit ang actionable na mga button."
+                        }
+                    ],
+                    "features": [
+                        "Schema-Enabled na Email Enhancements – Magdagdag ng Gmail-supported na structured data sa iyong mga email.",
+                        "Interactive Action Buttons – Palakihin ang click-through rate gamit ang inbox-level na call-to-action.",
+                        "Pinahusay na Inbox Placement – Palakasin ang visibility ng iyong email sa Gmail gamit ang enriched na content.",
+                        "Mas Mabilis na Conversion – Maaaring kumilos ang users nang hindi binubuksan ang buong email.",
+                        "Google-Compliant Markup Integration – Madaling implementasyon gamit ang full schema support."
+                    ]
+                },
+                "img": "/assets/fil_ph/email/boost_visibility_with_gmail_markup.webp"
+            },
+            {
+                "name": "Dynamic na Personalization gamit ang Handlebar Variables",
+                "content": "Pinapayagan ka ng Handlebar na awtomatikong i-personalize ang mga email sa pamamagitan ng paglalagay ng dynamic na data at conditional na content. Gumawa ng relevant, one-to-one na mensahe na nagpapataas ng engagement nang walang manual na trabaho.",
+                "more_content": {
+                    "usecases": [
+                        {
+                            "name": "User-Specific na Pagbati",
+                            "description": "Magdagdag ng pangalan, lungsod, o kumpanya nang dynamic para maging personalized ang bawat email."
+                        },
+                        {
+                            "name": "Custom na Discount Codes",
+                            "description": "Ipakita ang natatanging promo code para sa bawat user upang mapataas ang conversion."
+                        },
+                        {
+                            "name": "Behavior-Based na Mensahe",
+                            "description": "Ipakita ang produkto o content base sa nakaraang kilos ng bawat recipient."
+                        },
+                        {
+                            "name": "Transactional na Email",
+                            "description": "Isama ang detalye ng order tulad ng ID, presyo, at delivery status para sa mas personal na karanasan."
+                        },
+                        {
+                            "name": "Account Notifications",
+                            "description": "I-personalize ang mensahe para sa renewal, upgrade, o security alert."
+                        }
+                    ],
+                    "features": [
+                        "Madaling {{variable}} Integration – Seamless na paglalagay ng dynamic na content.",
+                        "Sumusuporta ng Conditional Logic – Ipakita ang content base sa user-specific na value.",
+                        "Flexible Personalization sa Malakihang Sukat – Gumagana sa malalaking audience nang walang manual na trabaho.",
+                        "Template Compatibility – Maaaring maglagay ng variables sa kahit anong HTML email template.",
+                        "Automation-Ready – I-combine sa workflows para sa real-time, event-based na email updates."
+                    ]
+                },
+                "img": "/assets/fil_ph/email/lotties/dynamic_personalization_with_handlebar_variables.json"
+            },
+            {
                 "name": "Pigilan ang Email Fraud gamit ang DMARC Compliance",
                 "content": "Protektahan ang iyong brand mula sa email spoofing at phishing gamit ang DMARC (Domain-based Message Authentication, Reporting & Conformance). Siguraduhin na tanging lehitimong emails lang ang makakarating sa iyong audience habang pinapalakas ang seguridad at deliverability ng email.",
                 "more_content": {
