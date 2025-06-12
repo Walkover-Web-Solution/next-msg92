@@ -1,0 +1,144 @@
+[
+    {
+      "shortname": "IN",
+      "route": "in",
+      "name": "India",
+      "code": 91,
+      "language": "English",
+      "currency": "INR",
+      "htmlLang": "en-IN",
+      "hreflang": "en-in"
+    },
+    {
+      "shortname": "BR",
+      "route": "br",
+      "hide": true,
+      "name": "Brazil",
+      "code": 55,
+      "language": "English",
+      "currency": "USD",
+      "htmlLang": "en-BR",
+      "hreflang": "en-br",
+      "languages": [
+        {
+          "language": "Portuguese",
+          "link": "br-pt"
+        },
+        {
+          "language": "English",
+          "link": "br"
+        }
+      ]
+    },
+    {
+      "shortname": "BR-PT",
+      "route": "br",
+      "name": "Brazil",
+      "code": 55,
+      "currency": "USD",
+      "htmlLang": "pt-BR",
+      "language": "Portuguese",
+      "hreflang": "pt-br",
+      "languages": [
+        {
+          "language": "Portuguese",
+          "link": "br-pt"
+        },
+        {
+          "language": "English",
+          "link": "br"
+        }
+      ]
+    },
+    {
+      "shortname": "AE",
+      "route": "ae",
+      "name": "United Arab Emirates",
+      "code": 971,
+      "language": "English",
+      "currency": "USD",
+      "htmlLang": "en-AE",
+      "hreflang": "en-ae"
+    },
+    {
+      "shortname": "PH",
+      "route": "ph",
+      "hide": true,
+      "name": "Philippines",
+      "code": 63,
+      "language": "English",
+      "currency": "GBP",
+      "htmlLang": "en-PH",
+      "hreflang": "en-ph",
+      "languages": [
+        {
+          "language": "Filipino",
+          "link": "fil-ph"
+        },
+        {
+          "language": "English",
+          "link": "ph"
+        }
+      ]
+    },
+    {
+      "shortname": "FIL-PH",
+      "route": "ph",
+      "name": "Philippines",
+      "code": 63,
+      "language": "Filipino",
+      "currency": "GBP",
+      "htmlLang": "tl-PH",
+      "hreflang": "tl-ph",
+      "languages": [
+        {
+          "language": "Filipino",
+          "link": "fil-ph"
+        },
+        {
+          "language": "English",
+          "link": "ph"
+        }
+      ]
+    },
+    {
+      "shortname": "SG",
+      "route": "sg",
+      "name": "Singapore",
+      "code": 65,
+      "language": "English",
+      "currency": "GBP",
+      "htmlLang": "en-SG",
+      "hreflang": "en-sg"
+    },
+    {
+      "shortname": "ES",
+      "route": "es",
+      "name": "Spain",
+      "code": 34,
+      "language": "English",
+      "currency": "GBP",
+      "htmlLang": "en-ES",
+      "hreflang": "en-es"
+    },
+    {
+      "shortname": "GB",
+      "route": "gb",
+      "name": "United Kingdom",
+      "code": 44,
+      "language": "English",
+      "currency": "GBP",
+      "htmlLang": "en-GB",
+      "hreflang": "en-gb"
+    },
+    {
+      "shortname": "US",
+      "route": "us",
+      "name": "United States",
+      "code": 1,
+      "language": "English",
+      "currency": "USD",
+      "htmlLang": "en-US",
+      "hreflang": "en-us"
+    }
+  ]

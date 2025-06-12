@@ -1,4 +1,4 @@
-export default function getDataByParams(params) {
+export default function getData(params) {
     let data;
     try {
         if (params?.page === 'pricing') {

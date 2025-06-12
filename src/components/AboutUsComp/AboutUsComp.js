@@ -1,18 +1,18 @@
 import Image from 'next/image';
 import { MdAllInclusive, MdAutoFixHigh, MdMoving, MdPermIdentity } from 'react-icons/md';
-export default function AboutUsComp({ pageInfo, data }) {
+export default function AboutUsComp({data }) {
     return (
         <>
             <div className='container flex flex-col cont_gap cont_p '>
-                <h1 class='text-5xl font-bold '>{data?.heading}</h1>
-                <h2 class='text-xl md:w-1/2 gap-6'>{data?.subheading}</h2>
-                <Image
+                <h1 className='text-5xl font-bold '>{data?.heading}</h1>
+                <h2 className='text-xl md:w-1/2 gap-6'>{data?.subheading}</h2>
+                {/* <Image
                     src={data?.banner_img}
                     alt='walkoverteam'
                     width={1500}
                     height={495}
                     className=' w-full h-auto rounded-md'
-                />
+                /> */}
             </div>
             <div className='bg-gray'>
                 <div className='container flex flex-col cont_gap cont_p'>
@@ -44,13 +44,13 @@ export default function AboutUsComp({ pageInfo, data }) {
                         data?.team?.content.map((item, index) => {
                             return (
                                 <div key={index} className='flex flex-col gap-6 rounded p-6 bg-neutral '>
-                                    <Image
+                                    {/* <Image
                                         className='rounded'
                                         src={item?.icon}
                                         alt={item?.name}
                                         width={400}
                                         height={400}
-                                    />
+                                    /> */}
                                     <div>
                                         <h3 className='text-2xl font-bold'>{item?.name}</h3>
                                         <p className='text-lg'>{item?.post}</p>
@@ -76,14 +76,14 @@ export default function AboutUsComp({ pageInfo, data }) {
 
             <div className='container flex flex-col cont_gap cont_p'>
                 <h2 className='text-3xl font-bold'>{data?.teamStrength?.heading}</h2>
-                <Image
+                {/* <Image
                     src={data?.teamStrength?.img}
                     alt='walkoverteam image'
                     width={1500}
                     height={495}
                     className=' w-full h-auto'
-                />
-                <p class='text-xl font-normal'>{data?.teamStrength?.description}</p>
+                /> */}
+                <p className='text-xl font-normal'>{data?.teamStrength?.description}</p>
             </div>
             <div className='bg-neutral'>
                 <div className='container flex flex-col cont_gap cont_p'>
@@ -95,7 +95,7 @@ export default function AboutUsComp({ pageInfo, data }) {
                                     <div key={index} className='bg-white rounded  flex flex-col md:p-6 p-4 gap-6'>
                                         <p className='text-lg'>{item?.description}</p>
                                         <div className='flex gap-4 mt-auto'>
-                                            <div class='skeleton h-[40px] w-[40px] color-gray-200'></div>
+                                            <div className='skeleton h-[40px] w-[40px] color-gray-200'></div>
                                             <div className='flex flex-col'>
                                                 <h3 className='text-lg font-bold'>{item?.name}</h3>
                                                 <p className='font-normal'>{item?.post}</p>
