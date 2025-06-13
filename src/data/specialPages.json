@@ -59,7 +59,8 @@
         "email",
         "whatsapp",
         "voice",
-        "otpwidget"
+        "otpwidget",
+        "shorturl"
     ],
     "justNested": [
         "partners-and-integrations/tally",
