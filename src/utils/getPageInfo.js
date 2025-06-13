@@ -43,7 +43,7 @@ export default function getPageInfo(slugArray, queryParams) {
         }
     } else if (pathArray && availableCountries.some((c) => c.shortname.toLowerCase() === pathArray[0])) {
         country = pathArray[0];
-    } else if (pathArray) {
+    } else if (pathArray && pathArray.length > 0) {
         page = pathArray[0];
     }
 

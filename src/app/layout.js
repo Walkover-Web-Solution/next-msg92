@@ -1,13 +1,30 @@
-import "@/styles/globals.scss";
+import { getScripts } from '@/components/Metadata';
+import '@/styles/globals.scss';
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en" data-theme="light">
-      <head>
-      <link rel="icon" href="/assets/brand/favicon.svg" sizes="any" />
+    const scripts = getScripts();
+    return (
+        <html lang='en' data-theme='light'>
+            <head>
+                {scripts.map((script, i) => {
+                    if (script.src) {
+                        return <script key={`src-${i}`} src={script.src} async />;
+                    }
 
-      </head>
-      <body className={` antialiased`}>{children}</body>
-    </html>
-  );
+                    if (script.inline) {
+                        return (
+                            <script
+                                key={`inline-${i}`}
+                                type={script.type || 'text/javascript'}
+                                dangerouslySetInnerHTML={{ __html: script.inline }}
+                            />
+                        );
+                    }
+
+                    return null;
+                })}
+            </head>
+            <body className={` antialiased`}>{children}</body>
+        </html>
+    );
 }

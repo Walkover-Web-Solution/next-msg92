@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { MdAllInclusive, MdAutoFixHigh, MdMoving, MdPermIdentity } from 'react-icons/md';
-export default function AboutUsComp({data }) {
+export default function AboutUs({data }) {
     return (
         <>
             <div className='container flex flex-col cont_gap cont_p '>
