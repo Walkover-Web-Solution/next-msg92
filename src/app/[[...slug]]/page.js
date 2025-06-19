@@ -6,6 +6,7 @@ import Banner from '@/components/Banner';
 import getPageInfo from '@/utils/getPageInfo';
 import getData from '@/utils/getData';
 import Metadata, { setMetadata, generateMetadata } from '@/components/Metadata';
+import Navbar from '@/components/Navbar';
 
 // Component registry
 const Components = {
@@ -31,6 +32,7 @@ export default async function Page(props) {
     return (
         <>
             <Metadata />
+            <Navbar/>
             {data &&
                 Object.keys(data).map((key) => {
                     if (key != 'MetaData') {
