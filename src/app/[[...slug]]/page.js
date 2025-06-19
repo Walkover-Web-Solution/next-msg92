@@ -1,5 +1,6 @@
 // Components
 import AboutUs from '@/components/AboutUs';
+import Banner from '@/components/Banner';
 
 // Utils
 import getPageInfo from '@/utils/getPageInfo';
@@ -10,6 +11,7 @@ import Metadata, { setMetadata, generateMetadata } from '@/components/Metadata';
 const Components = {
     AboutUs,
     Metadata,
+    Banner,
 };
 
 // Export SSR metadata for Next.js
@@ -24,7 +26,7 @@ export default async function Page(props) {
     const data = getData(pageInfo);
 
     // Inject metadata from data + pageInfo
-    setMetadata({ data: data.MetaData, pageInfo });
+    setMetadata({ data: data?.MetaData || {}, pageInfo });
 
     return (
         <>
@@ -32,14 +34,14 @@ export default async function Page(props) {
             {data &&
                 Object.keys(data).map((key) => {
                     if (key != 'MetaData') {
-                        const pageData = data[key];
+                        const compData = data[key];
                         const Component = Components[key];
                         if (!Component) {
                             console.error(`Component "${key}" is undefined. Check your imports and registry.`);
                             return null;
                         }
 
-                        return <Component key={`section-${key}`} data={pageData} pageInfo={pageInfo} />;
+                        return <Component key={`section-${key}`} data={compData} pageInfo={pageInfo} />;
                     }
                 })}
         </>

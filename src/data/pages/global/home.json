@@ -2,5 +2,46 @@
     "MetaData": {
         "title": "Best Cloud Communication Platform for Businesses | MSG91",
         "description": "MSG91 provides seamless communication solutions with SMS APIs, email APIs, voice call APIs, and more to improve business efficiency."
+    },
+    "Banner": {
+        "slug": "home",
+        "tagline": "Customer Solution Platform",
+        "heading": "Connect with your customers via multiple channels",
+        "subheading": "Secure and robust APIs for WhatsApp, SMS, RCS, Email, Voice, Authentication and more",
+        "banner_img": "/assets/global/index/banner.webp",
+        "getstarted_btn": "Get Started",
+        "trustedByComp": {
+            "heading": "Trusted by 30,000+ global businesses",
+            "logos": [
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
+                {
+                    "name": "Xiaomi",
+                    "url": "/assets/trusted_by/xiaomi.svg"
+                },
+                {
+                    "name": "Unacademy",
+                    "url": "/assets/trusted_by/unacademy.svg"
+                },
+                {
+                    "name": "Dream11",
+                    "url": "/assets/trusted_by/dream11.svg"
+                },
+                {
+                    "name": "Indeed",
+                    "url": "/assets/trusted_by/indeed.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/indian-oil.svg"
+                },
+                {
+                    "name": "Ixigo",
+                    "url": "/assets/trusted_by/ixigo.svg"
+                }
+            ]
+        }
     }
 }

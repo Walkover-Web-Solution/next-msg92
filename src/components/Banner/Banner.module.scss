@@ -1,0 +1,8 @@
+.tagline {
+    &.home {
+        color: var(--accent-color);
+    }
+    &.hello {
+        color: var(--hello-dark-color);
+    }
+}

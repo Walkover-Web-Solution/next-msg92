@@ -118,7 +118,7 @@ body {
     }
     &.btn-primary {
         color: var(--white-color);
-        @apply hover:bg-gray-700;
+        @apply hover:bg-accent hover:border-accent;
         &.btn-outline {
             @apply text-primary hover:bg-primary hover:text-white;
         }
@@ -408,4 +408,22 @@ $button-transition-timing: 100ms;
 
 :root:has(:is(.modal-open, .modal:target, .modal-toggle:checked + .modal, .modal[open])):has(.modal-scrollable) {
     overflow: scroll !important;
+}
+
+//Text
+.h1 {
+    @apply text-5xl font-bold;
+    &_sub {
+        @apply text-xl;
+    }
+}
+
+//Product
+.banner_tagline {
+    &.home {
+        color: var(--accent-color);
+    }
+    &.hello {
+        color: var(--hello-dark-color);
+    }
 }
