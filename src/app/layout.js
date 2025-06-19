@@ -1,5 +1,5 @@
 import { getScripts } from '@/components/Metadata';
-import '@/styles/globals.scss';
+import '@/styles/global.scss';
 
 export default function RootLayout({ children }) {
     const scripts = getScripts();

@@ -1,21 +1,34 @@
 .overlay {
     background: rgba(0, 0, 0, 0.2);
-    @apply fixed hidden md:flex top-0 left-0 z-[996] h-dvh w-dvw;
+    position: fixed;
+    height: 100dvh;
+    width: 100dvw;
+    top: 0px;
+    left: 0px;
+    z-index: 995;
 }
 
 .background {
-    @apply fixed hidden md:flex bg-white   lg:w-3/5 xl:w-1/2 w-3/4  h-dvh top-0  z-[998]; // Keep z-index as is
+    background: rgb(255, 255, 255);
+    position: fixed;
+    height: 100dvh;
+    width: 50dvw;
+    min-width: 720px;
+    top: 0px;
+    left: 0px;
+    z-index: 996;
     transition: all 0.2s;
 }
 
 .cont {
-    @apply fixed hidden md:flex top-0 z-[999] h-dvh w-dvw  items-center justify-center;
-    transition: all 0.2s;
+    position: fixed;
+    height: 100dvh;
+    width: 100dvw;
+    top: 0px;
+    left: 0px;
+    z-index: 997;
 }
-.minicont {
-    @apply fixed md:hidden bg-white flex top-0 z-[999] h-dvh w-dvw  items-center justify-center;
-    transition: all 0.2s;
-}
+
 .navigation {
-    @apply z-[999] h-dvh; // Increase z-index
+    z-index: 999;
 }

@@ -7,6 +7,7 @@ import getPageInfo from '@/utils/getPageInfo';
 import getData from '@/utils/getData';
 import Metadata, { setMetadata, generateMetadata } from '@/components/Metadata';
 import Navbar from '@/components/Navbar';
+import NotificationBar from '@/components/Notificationbar';
 
 // Component registry
 const Components = {
@@ -25,18 +26,20 @@ export default async function Page(props) {
 
     const pageInfo = getPageInfo(slugArray, searchParams);
     const data = getData(pageInfo);
-
+    const pageData = data?.pageData
+    const commonData = data?.commonData
     // Inject metadata from data + pageInfo
-    setMetadata({ data: data?.MetaData || {}, pageInfo });
+    setMetadata({ data: pageData?.MetaData || {}, pageInfo });
 
     return (
         <>
             <Metadata />
-            <Navbar/>
-            {data &&
-                Object.keys(data).map((key) => {
+            <NotificationBar data={commonData?.notification} pageInfo={pageInfo} />
+            <Navbar data={commonData?.menu} pageInfo={pageInfo}/>
+            {pageData &&
+                Object.keys(pageData).map((key) => {
                     if (key != 'MetaData') {
-                        const compData = data[key];
+                        const compData = pageData[key];
                         const Component = Components[key];
                         if (!Component) {
                             console.error(`Component "${key}" is undefined. Check your imports and registry.`);
