@@ -136,7 +136,7 @@ body {
     }
     &.btn-sm {
         min-height: fit-content;
-        @apply px-3 py-1 text-sm ;
+        @apply px-3 py-1 text-sm;
     }
 
     &.btn-icon {
@@ -424,5 +424,22 @@ $button-transition-timing: 100ms;
     }
     &.hello {
         color: var(--hello-dark-color);
+    }
+}
+
+//navigatin
+#nav {
+    &_overlay {
+        &.show {
+            display: block;
+        }
+    }
+    &_main {
+ 
+        left: -100dvw; // default state, off-screen to the right
+        transition: left 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        &.show {
+            left: 0px !important; // after show, slide in
+        }
     }
 }

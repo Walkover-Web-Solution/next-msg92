@@ -1,47 +1,14 @@
-'use client';
 import Image from 'next/image';
 import styles from './Navbar.module.scss';
-import { useEffect, useState } from 'react';
-import { MdMenu, MdMenuBook, MdMenuOpen } from 'react-icons/md';
+import { MiniMenuButton, NavbarBlank, NavbarUtils } from './NavbarUtils';
 
 export default function Navbar({ data, pageInfo }) {
-    console.log('⚡️ ~ :8 ~ Navbar ~ data:', data);
-    const [nav, setNav] = useState('show');
-    const [type, setType] = useState('products');
-    useEffect(() => {
-        if (nav === 'show') {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-    }, [nav]);
-
-    // const pricingPath = getPricingURL(pageInfo);
-    // const hidden = componentData?.hide?.includes(pageInfo?.page);
-    const handleMiniMenu = () => {
-        if (nav === 'show') {
-            setNav('hide');
-        } else {
-            setNav('show');
-        }
-    };
-
     return (
         <>
             {/* //LG Navigation Start */}
             <div className='container py-6  hidden md:flex'>
                 <ul className={`${styles.navigation} lg:gap-8 gap-5 w-full items-center justify-start flex  `}>
-                    <li className='text-md font-medium text-link flex items-center '>
-                        <Image
-                            width={120}
-                            height={120}
-                            src={'/assets/icons/products/hello.svg'}
-                            className='h-8 w-fit mr-1'
-                            alt='Hello Logo'
-                        />
-                        Hello
-                    </li>
-                    <li className='text-md font-medium text-link'>Integrations</li>
+                    <NavbarUtils />
                     <li className='text-md font-medium text-link'>Pricing</li>
                 </ul>
                 <Image
@@ -57,6 +24,7 @@ export default function Navbar({ data, pageInfo }) {
                 </ul>
             </div>
             {/* //LG Navigation End */}
+
             {/* Small Navigation */}
             <div className='container py-2 flex md:hidden items-center justify-between'>
                 <Image
@@ -66,47 +34,53 @@ export default function Navbar({ data, pageInfo }) {
                     className='h-10 w-fit'
                     alt='MSG91 Logo'
                 />
-                <MdMenu className='text-3xl' />
+                <MiniMenuButton />
             </div>
             {/* Small Navigation */}
             {/* Menu Content */}
-            {/* <div className={styles.overlay}></div>
-            <div className={styles.background}></div>
-            <div className={styles.cont}>
-                <div className='container mt-30'>
-                    <div className='w-1/2 min-w-[720px] flex pe-10 flex-wrap'>
-                        {data?.products_list?.map((list, idx) => (
-                            <div key={idx} className='mb-10 pe-10 w-1/2'>
-                                <span className='font-semibold text-sm text-gray-600'>{list?.name}</span>
-                                <ul className='cont gap-2'>
-                                    {list.products?.map((product, pidx) => (
-                                        <li
-                                            key={pidx}
-                                            className='flex items-center gap-2 w-full hover:bg-secondary rounded p-2 '
-                                        >
-                                            <Image
-                                                className='w-fit h-10'
-                                                src={`/assets/icons/products/${product?.slug || 'hello'}.svg`}
-                                                width={72}
-                                                height={72}
-                                                alt={`${product?.name} Logo`}
-                                            />
-                                            <div className='cont'>
-                                                <span className='text-lg font-bold'>{product?.name}</span>
-                                                {product?.description && (
-                                                    <span className='text-sm text-gray-600'>
-                                                        {product?.description}
-                                                    </span>
-                                                )}
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
+            <div id='nav_overlay' className={`${styles.overlay} `}></div>
+
+            <div id='nav_main' className={`${styles.mainnav} `}>
+                <div id='nav_bg' className={styles.background}></div>
+                <NavbarBlank />
+                <div id='nav_cont' className={styles.cont}>
+                    <div className='container flex h-full'>
+                        <div className='w-1/2 min-w-[720px] h-fit mt-30 flex pe-10 flex-wrap items-start justify-start'>
+                            {data?.products_list?.map((list, idx) => (
+                                <div key={idx} className='mb-10 pe-10 w-1/2 max-h-fit'>
+                                    <span className='font-semibold text-sm text-gray-600'>{list?.name}</span>
+                                    <ul className='cont gap-2'>
+                                        {list.products?.map((product, pidx) => (
+                                            <li
+                                                key={pidx}
+                                                className='flex items-center gap-2 w-full hover:bg-secondary rounded p-2 '
+                                            >
+                                                <Image
+                                                    className='w-fit h-10'
+                                                    src={`/assets/icons/products/${product?.slug || 'hello'}.svg`}
+                                                    width={72}
+                                                    height={72}
+                                                    alt={`${product?.name} Logo`}
+                                                />
+                                                <div className='cont'>
+                                                    <span className='text-lg font-bold'>{product?.name}</span>
+                                                    {product?.description && (
+                                                        <span className='text-sm text-gray-600'>
+                                                            {product?.description}
+                                                        </span>
+                                                    )}
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                        <NavbarBlank />
                     </div>
                 </div>
-            </div> */}
+            </div>
+
             {/* Menu Content */}
         </>
     );
