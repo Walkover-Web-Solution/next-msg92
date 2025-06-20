@@ -1,19 +1,29 @@
 // Components
 import AboutUs from '@/components/AboutUs';
 import Banner from '@/components/Banner';
+import Channels from '@/components/Index/Channels';
+import Facts from '@/components/Index/Facts';
+import Faqs from '@/components/Index/Faqs';
+import MoreServices from '@/components/Index/MoreServices';
+import Navbar from '@/components/Navbar';
+import NotificationBar from '@/components/Notificationbar';
+import Products from '@/components/Index/Products';
 
 // Utils
 import getPageInfo from '@/utils/getPageInfo';
 import getData from '@/utils/getData';
 import Metadata, { setMetadata, generateMetadata } from '@/components/Metadata';
-import Navbar from '@/components/Navbar';
-import NotificationBar from '@/components/Notificationbar';
 
 // Component registry
 const Components = {
     AboutUs,
-    Metadata,
     Banner,
+    Channels,
+    Facts,
+    Faqs,
+    Metadata,
+    MoreServices,
+    Products,
 };
 
 // Export SSR metadata for Next.js
@@ -26,8 +36,8 @@ export default async function Page(props) {
 
     const pageInfo = getPageInfo(slugArray, searchParams);
     const data = getData(pageInfo);
-    const pageData = data?.pageData
-    const commonData = data?.commonData
+    const pageData = data?.pageData;
+    const commonData = data?.commonData;
     // Inject metadata from data + pageInfo
     setMetadata({ data: pageData?.MetaData || {}, pageInfo });
 
@@ -35,7 +45,7 @@ export default async function Page(props) {
         <>
             <Metadata />
             <NotificationBar data={commonData?.notification} pageInfo={pageInfo} />
-            <Navbar data={commonData?.menu} pageInfo={pageInfo}/>
+            <Navbar data={commonData?.menu} pageInfo={pageInfo} />
             {pageData &&
                 Object.keys(pageData).map((key) => {
                     if (key != 'MetaData') {
