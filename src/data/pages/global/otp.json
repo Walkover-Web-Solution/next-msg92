@@ -1,9 +1,9 @@
 {
-  "HeadComp": {
+  "Head": {
     "title": "Send OTP | OTP Service Providers - MSG91",
     "description": "Secure your platform with MSG91’s OTP SMS API. Implement reliable two-factor authentication to ensure user trust and safety."
   },
-  "BannerComp": {
+  "Banner": {
     "slug": "otp",
     "product": {
       "name": "OTP",
@@ -15,7 +15,7 @@
     "banner_img": "/assets/global/otp/banner.webp",
     "not_absolute":"true",
     "getstarted_btn": "Get Started For Free",
-    "trustedByComp": {
+    "trustedBy": {
       "heading": "Trusted by 30,000+ global businesses",
       "logos": [
         {
@@ -45,7 +45,7 @@
       ]
     }
   },
-  "FeatureComp": {
+  "Features": {
     "heading": "Features",
     "iconColor": "text-otp",
     "features": [
@@ -268,7 +268,7 @@
       }
     ]
   },
-  "PreFooterComp": {
+  "PreFooter": {
     "content": "Start building your ideal customer engagement experience",
     "buttons": {
       "contactSales": {

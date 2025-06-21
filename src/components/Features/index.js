@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import LottiePlayer from '../LottiePlayer';
 
 export default function Features({ data }) {
     if (data?.features && data?.features.length > 0) {
@@ -25,15 +26,8 @@ export default function Features({ data }) {
                                             dangerouslySetInnerHTML={{ __html: feature?.content }}
                                         />
                                     </div>
-                                    {feature?.img && (
-                                        <Image
-                                            src={feature?.img}
-                                            width={720}
-                                            height={720}
-                                            className='w-full'
-                                            alt={`${feature?.name} Image`}
-                                        />
-                                    )}
+
+                                    <FeatureGraphic src={feature?.img} name={feature?.name} />
                                 </div>
                             );
                         })}
@@ -41,5 +35,17 @@ export default function Features({ data }) {
                 </div>
             </div>
         );
+    }
+}
+
+function FeatureGraphic({ src, name }) {
+    if (src) {
+        if (src.endsWith('.json')) {
+            return <LottiePlayer lottie={src} />;
+        } else {
+            return <Image src={src} width={720} height={720} className='w-full' alt={`${name} Image`} />;
+        }
+    } else {
+        return <div className='w-full aspect-square max-w-[500px]'></div>;
     }
 }

@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from 'react';
 import Lottie from 'react-lottie';
 import styles from './LottiePlayer.module.scss';

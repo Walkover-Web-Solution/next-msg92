@@ -1,8 +1,6 @@
 import Image from 'next/image';
-import styles from './Banner.module.scss';
 import TrustedBy from '../TrustedBy';
 export default function Banner({ pageInfo, data }) {
-    console.log('⚡️ ~ :5 ~ Banner ~ data:', data);
     return (
         <div className='container flex items-center gap-6 cont_p lg:flex-row flex-col '>
             <div className='cont cont_p md:gap-8 gap-6 w-full'>

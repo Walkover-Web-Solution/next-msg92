@@ -1,9 +1,9 @@
 {
-    "HeadComp": {
+    "Head": {
         "title": "SMS Campaign",
         "description": "Streamline B2B marketing with advanced automation tools and sales funnel builders. Simplify drip email campaigns and improve your sales process efficiently."
     },
-    "BannerComp": {
+    "Banner": {
         "slug": "campaign",
         "product": {
             "name": "Create Campaign",
@@ -44,7 +44,7 @@
             ]
         }
     },
-    "FeatureComp": {
+    "Features": {
         "heading": "Features",
         "iconColor": "text-campaign",
         "features": [
@@ -75,7 +75,7 @@
             }
         ]
     },
-    "PreFooterComp": {
+    "PreFooter": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
             "contactSales": {
