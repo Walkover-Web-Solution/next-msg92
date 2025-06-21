@@ -4,6 +4,7 @@ import Banner from '@/components/Banner';
 import Channels from '@/components/Index/Channels';
 import Facts from '@/components/Index/Facts';
 import Faqs from '@/components/Index/Faqs';
+import Features from '@/components/Features';
 import MoreServices from '@/components/Index/MoreServices';
 import Navbar from '@/components/Navbar';
 import NotificationBar from '@/components/Notificationbar';
@@ -21,6 +22,7 @@ const Components = {
     Channels,
     Facts,
     Faqs,
+    Features,
     Metadata,
     MoreServices,
     Products,
@@ -52,7 +54,7 @@ export default async function Page(props) {
                         const compData = pageData[key];
                         const Component = Components[key];
                         if (!Component) {
-                            console.error(`Component "${key}" is undefined. Check your imports and registry.`);
+                            // console?.log(`Component "${key}" is undefined. Check your imports and registry.`);
                             return null;
                         }
 

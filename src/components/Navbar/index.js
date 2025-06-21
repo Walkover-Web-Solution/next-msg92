@@ -50,7 +50,7 @@ export default function Navbar({ data, pageInfo }) {
                     <div className='container flex h-full overflow-y-scroll'>
                         <div id='nav_products' className='hidden w-full lg:min-w-[720px] md:min-w-[340px] mt-32 flex-wrap h-fit md:max-w-[86%]'>
                             {data?.products_list?.map((list, idx) => (
-                                <div key={idx} className='mb-10 pe-10 lg:w-1/2 md:w-full sm:w-1/2 w-full max-h-fit'>
+                                <div key={idx} className='cont gap-2 mb-10 pe-10 lg:w-1/2 md:w-full sm:w-1/2 w-full max-h-fit'>
                                     <span className='font-semibold text-sm text-gray-600'>{list?.name}</span>
                                     <ul className='cont gap-2'>
                                         {list.products?.map((product, pidx) => (

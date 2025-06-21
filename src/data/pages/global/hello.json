@@ -1,9 +1,9 @@
 {
-    "HeadComp": {
+    "Head": {
         "title": "Customer Support Platform for your Business by MSG91",
         "description": "HELLO is a robust omnichannel platform designed to enhance customer support. Leverage data-driven insights to deliver exceptional service experiences."
     },
-    "BannerComp": {
+    "Banner": {
         "slug": "hello",
         "product": {
             "name": "Hello",
@@ -11,15 +11,15 @@
         },
         "tagline": "REVOLUTIONIZE CUSTOMER SUPPORT",
         "heading": "Customer Service Software",
-        "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
+        "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships.",
         "banner_img": "/assets/global/hello/heroimg.png",
         "getstarted_btn": "Get Started",
-        "trustedByComp": {
+        "trustedBy": {
             "heading": "Support 15+ channels & platforms",
             "logos": [
                 {
                     "name": "facebook",
-                   "url": "/assets/platforms/facebook.svg"
+                    "url": "/assets/platforms/facebook.svg"
                 },
                 {
                     "name": "gmail",
@@ -27,41 +27,44 @@
                 },
                 {
                     "name": "googleChat",
-                  "url": "/assets/platforms/googlechat.svg"
+                    "url": "/assets/platforms/googlechat.svg"
                 },
                 {
                     "name": "instagram",
-                   "url": "/assets/platforms/instagram.svg"
+                    "url": "/assets/platforms/instagram.svg"
                 },
                 {
                     "name": "outlook",
-                  "url": "/assets/platforms/outlook.svg"
+                    "url": "/assets/platforms/outlook.svg"
                 },
                 {
                     "name": "sms",
-                   "url": "/assets/platforms/sms.svg"
-                },  {
+                    "url": "/assets/platforms/sms.svg"
+                },
+                {
                     "name": "telegram",
-                  "url": "/assets/platforms/telegram.svg"
+                    "url": "/assets/platforms/telegram.svg"
                 },
                 {
                     "name": "twitter",
-                   "url": "/assets/platforms/twitter.svg"
-                },  {
+                    "url": "/assets/platforms/twitter.svg"
+                },
+                {
                     "name": "voice",
-                  "url": "/assets/platforms/voice.svg"
+                    "url": "/assets/platforms/voice.svg"
                 },
                 {
                     "name": "whatsapp",
-                   "url": "/assets/platforms/whatsapp.svg"
-                },  {
+                    "url": "/assets/platforms/whatsapp.svg"
+                },
+                {
                     "name": "zoho",
-                  "url": "/assets/platforms/zoho.svg"
+                    "url": "/assets/platforms/zoho.svg"
                 }
             ]
         }
     },
-    "FeatureComp": {
+    "Features": {
         "heading": "Features",
         "iconColor": "text-campaign",
         "features": [
@@ -103,7 +106,7 @@
             }
         ]
     },
-    "FaqsComp": {
+    "Faqs": {
         "heading": "Frequently Asked Questions",
         "faqs": [
             {

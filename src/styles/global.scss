@@ -97,7 +97,9 @@ body {
         @apply max-w-[1000px] w-full;
     }
 }
-
+.border{
+    @apply border border-stone-200;
+}
 .btn {
     @apply w-fit rounded-sm text-shadow-none shadow-none;
     &.btn-accent {
@@ -414,6 +416,18 @@ $button-transition-timing: 100ms;
     @apply sm:text-5xl text-3xl font-bold;
     &_sub {
         @apply sm:text-xl text-base;
+    }
+}
+.h2 {
+    @apply sm:text-3xl text-xl font-bold;
+    &_sub {
+        @apply sm:text-lg text-base;
+    }
+}
+.h3 {
+    @apply sm:text-2xl text-lg font-bold;
+    &_sub {
+        @apply  text-base;
     }
 }
 
