@@ -8,6 +8,7 @@ import Features from '@/components/Features';
 import MoreServices from '@/components/Index/MoreServices';
 import Navbar from '@/components/Navbar';
 import NotificationBar from '@/components/Notificationbar';
+import PreFooter from '@/components/PreFooter';
 import Products from '@/components/Index/Products';
 
 // Utils
@@ -25,6 +26,7 @@ const Components = {
     Features,
     Metadata,
     MoreServices,
+    PreFooter,
     Products,
 };
 

@@ -131,7 +131,7 @@
             }
         ]
     },
-    "PreFooterComp": {
+    "PreFooter": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
             "contactSales": {
@@ -148,7 +148,7 @@
             }
         }
     },
-    "FooterComp": {
+    "Footer": {
         "country": "global"
     }
 }
