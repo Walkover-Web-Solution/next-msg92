@@ -5,6 +5,7 @@ import Channels from '@/components/Index/Channels';
 import Facts from '@/components/Index/Facts';
 import Faqs from '@/components/Index/Faqs';
 import Features from '@/components/Features';
+import Footer from '@/components/Footer';
 import MoreServices from '@/components/Index/MoreServices';
 import Navbar from '@/components/Navbar';
 import NotificationBar from '@/components/Notificationbar';
@@ -63,6 +64,7 @@ export default async function Page(props) {
                         return <Component key={`section-${key}`} data={compData} pageInfo={pageInfo} />;
                     }
                 })}
+            <Footer data={commonData?.footer} pageInfo={pageInfo} />
         </>
     );
 }
