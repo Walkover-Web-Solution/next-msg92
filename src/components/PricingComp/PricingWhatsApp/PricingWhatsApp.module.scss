@@ -1,10 +1,10 @@
 .table_cont {
     @apply w-full overflow-x-scroll rounded;
     .table {
-        @apply w-full bg-white rounded min-w-[640px] md:min-w-[900px];
+        @apply w-full bg-white rounded min-w-[300px] md:min-w-[540px];
         .table_row {
             @apply grid  text-[10px] sm:text-[14px] xl:text-[16px];
-            grid-template-columns: repeat(22, minmax(0, 1fr));
+            grid-template-columns: repeat(16, minmax(0, 1fr));
             & span {
                 @apply flex col-span-3 w-full px-1 py-2 sm:px-2 sm:py-3 break-words overflow-hidden;
             }
