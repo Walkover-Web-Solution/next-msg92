@@ -45,10 +45,7 @@ export default function PartnersComp({ pageInfo, data }) {
                 </div>
             </div>
             <div id='partnership-meet' className='container'>
-                <InlineWidget
-                    url='https://calendly.com/partnership-msg91/discussion'
-                    styles={{ width: '100%', height: '700px' }}
-                />
+                <InlineWidget url='https://calendly.com/d/y3n-29s-29h' styles={{ width: '100%', height: '700px' }} />
             </div>
             <div className='bg-neutral'>
                 <div className='container flex flex-col gap-6 py-20'>
