@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function FooterComp({ componentData, pageInfo }) {
+    console.log('componentData', componentData);
     const hidden = componentData?.hide?.includes(pageInfo?.page);
     const year = new Date().getFullYear();
     if (componentData && !hidden) {
@@ -19,7 +20,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         {componentData?.products?.links.map((link, index) => {
                                             return (
                                                 <li key={index} className='text-link-white'>
-                                                    <Link
+                                                    <a
                                                         href={
                                                             link?.nested
                                                                 ? getNestedURL('product', link?.link, pageInfo)
@@ -28,7 +29,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                                         className='text-gray-200 '
                                                     >
                                                         {link?.name}
-                                                    </Link>
+                                                    </a>
                                                 </li>
                                             );
                                         })}
