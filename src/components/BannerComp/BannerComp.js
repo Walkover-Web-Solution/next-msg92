@@ -96,9 +96,9 @@ export default function BannerComp({ pageInfo, data }) {
                             </button>
                         )}
                         {pageInfo?.page === 'hello' && (
-                            <Link href='/demochatbot'>
+                            <a href='/demochatbot'>
                                 <button className='btn btn-md btn-primary btn-outline'>Test Chatbot</button>
-                            </Link>
+                            </a>
                         )}
                     </div>
 
