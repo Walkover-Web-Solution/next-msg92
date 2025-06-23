@@ -168,7 +168,7 @@ export default function IntegrationAppComp({ data }) {
                                 ✕
                             </button>
                             <InlineWidget
-                                url='https://calendly.com/tigermsg91/msg91-for-tally?utm_campaign=tigerplugin&utm_source=tally&utm_medium=website'
+                                url='https://calendly.com/d/y3n-29s-29hy?utm_campaign=tigerplugin&utm_source=tally&utm_medium=website'
                                 styles={{ height: '820px' }}
                             />
                         </div>

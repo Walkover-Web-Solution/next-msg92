@@ -77,10 +77,7 @@ export default function ContactUsComp({ data, pageInfo }) {
                         >
                             ✕
                         </button>
-                        <InlineWidget
-                            url='https://calendly.com/d/y3n-29s-29h?hide_gdpr_banner=1'
-                            styles={{ height: '680px' }}
-                        />
+                        <InlineWidget url='https://calendly.com/d/y3n-29s-29h' styles={{ height: '680px' }} />
                     </div>
                 </dialog>
             )}
@@ -93,7 +90,7 @@ export default function ContactUsComp({ data, pageInfo }) {
                         >
                             ✕
                         </button>
-                        <InlineWidget url='https://calendly.com/sales-msg91/pre-sales' styles={{ height: '680px' }} />
+                        <InlineWidget url='https://calendly.com/d/y3n-29s-29h' styles={{ height: '680px' }} />
                     </div>
                 </dialog>
             )}

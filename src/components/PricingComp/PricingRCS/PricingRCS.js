@@ -162,10 +162,7 @@ export default function PricingRCS({ country, data, pageInfo }) {
                         >
                             ✕
                         </button>
-                        <InlineWidget
-                            url='https://calendly.com/msg91-rcs/15-min-rcs-meeting'
-                            styles={{ height: '680px' }}
-                        />
+                        <InlineWidget url='https://calendly.com/d/y3n-29s-29h' styles={{ height: '680px' }} />
                     </div>
                 </dialog>
             )}
