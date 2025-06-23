@@ -37,7 +37,7 @@ export default function ConnectWithTeam({ product, isPlan, data, href, per }) {
                         >
                             ✕
                         </button>
-                        <InlineWidget url='https://calendly.com/sales-msg91/pre-sales' styles={{ height: '680px' }} />
+                        <InlineWidget url='https://calendly.com/d/y3n-29s-29h' styles={{ height: '680px' }} />
                     </div>
                 </dialog>
             )}
