@@ -15,26 +15,30 @@ export default function ContactUsComp({ data, pageInfo }) {
                         <div className='flex flex-col gap-6'>
                             {pageInfo?.country != 'in' ? (
                                 <>
-                                    <div className='flex items-center gap-2 text-2xl'>
+                                    <div className='flex items-center gap-2 text-2xl text-link'>
                                         <MdOutlineEmail className='text-2xl' />
                                         <a href='mailto:contact@msg91.com'>contact@msg91.com</a>
                                     </div>
-                                    <div className='flex items-center gap-2 text-2xl'>
+                                    <div className='flex items-center gap-2 text-2xl text-link'>
                                         <MdCall className='text-2xl' />
                                         <a href='tel:+6531595004'>+65 31595004</a>
+                                    </div>
+                                    <div className='flex items-center gap-2 text-2xl text-link'>
+                                        <MdWhatsapp className='text-2xl' />
+                                        <a href='https://wa.me/6531595004'>+65 31595004</a>
                                     </div>
                                 </>
                             ) : (
                                 <>
-                                    <div className='flex items-center gap-2 text-2xl'>
+                                    <div className='flex items-center gap-2 text-2xl text-link'>
                                         <MdOutlineEmail />
                                         <a href='mailto:sales@msg91.com'>sales@msg91.com</a>
                                     </div>
-                                    <div className='flex items-center gap-2 text-2xl'>
+                                    <div className='flex items-center gap-2 text-2xl text-link'>
                                         <MdCall />
                                         <a href='tel:+917049088848'>+91 70490 88848</a>
                                     </div>
-                                    <div className='flex items-center gap-2 text-2xl'>
+                                    <div className='flex items-center gap-2 text-2xl text-link'>
                                         <MdCall />
                                         <a href='tel:+918889378605'>+91 88893 78605</a>
                                     </div>
@@ -48,18 +52,18 @@ export default function ContactUsComp({ data, pageInfo }) {
                     <div className='flex flex-col gap-6 items-center'>
                         <h2 className='text-3xl font-semibold '>{data?.support?.heading}</h2>
                         <div className='flex flex-col gap-6'>
-                            <div className='flex items-center gap-2 text-2xl'>
+                            <div className='flex items-center gap-2 text-2xl text-link'>
                                 <MdOutlineEmail className='text-2xl' />
                                 <a href='mailto:support@msg91.com'>support@msg91.com</a>
                             </div>
-                            <div className='flex items-center gap-2 text-2xl'>
+                            <div className='flex items-center gap-2 text-2xl text-link'>
                                 <MdWhatsapp className='text-2xl' />
-                                <a href='https://wa.me/918818888733'> +91 88188 88733</a>
+                                <a href='https://wa.me/918818888733'>+91 88188 88733</a>
                             </div>
 
-                            <div className='flex items-center gap-2 text-2xl'>
+                            <div className='flex items-center gap-2 text-2xl text-link'>
                                 <MdCall />
-                                <a href='tel:+918818888733'> +91 88188 88733</a>
+                                <a href='tel:+918818888733'>+91 88188 88733</a>
                             </div>
                         </div>
                         <button className='btn btn-md btn-primary' onClick={() => setIsSupportModalOpen(true)}>
@@ -77,7 +81,10 @@ export default function ContactUsComp({ data, pageInfo }) {
                         >
                             ✕
                         </button>
-                        <InlineWidget url='https://calendly.com/d/y3n-29s-29h' styles={{ height: '680px' }} />
+                        <InlineWidget
+                            url='https://calendly.com/d/y3n-29s-29h?hide_gdpr_banner=1'
+                            styles={{ height: '680px' }}
+                        />
                     </div>
                 </dialog>
             )}
