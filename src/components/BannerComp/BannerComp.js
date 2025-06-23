@@ -17,6 +17,7 @@ export default function BannerComp({ pageInfo, data }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [code, setCode] = useState({});
     const [selectedLanguage, setSelectedLanguage] = useState('curl');
+    const [showLoader, setShowLoader] = useState(false);
     useEffect(() => {
         if (pageInfo.page !== 'Numbers') {
             Prism.highlightAll();
@@ -96,8 +97,21 @@ export default function BannerComp({ pageInfo, data }) {
                             </button>
                         )}
                         {pageInfo?.page === 'hello' && (
-                            <a href='/demochatbot'>
-                                <button className='btn btn-md btn-primary btn-outline'>Test Chatbot</button>
+                            <a
+                                href='/demochatbot'
+                                onClick={() => {
+                                    setShowLoader(true);
+                                }}
+                            >
+                                <button className='btn btn-md btn-primary btn-outline'>
+                                    {showLoader ? (
+                                        <span className='flex align-baseline justify-end gap-1'>
+                                            Redirecting <span className='loading loading-dots loading-sm'></span>
+                                        </span>
+                                    ) : (
+                                        <span>Test Chatbot</span>
+                                    )}
+                                </button>
                             </a>
                         )}
                     </div>
