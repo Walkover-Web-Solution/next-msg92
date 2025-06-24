@@ -47,7 +47,16 @@
     strong {
         @apply font-bold;
     }
+    hr{
+        @apply mt-2
+    }
     br {
+        &.br_1{
+            height: 1px;
+            max-height:1px;
+            font-size: 1px;
+            line-height: 1px;
+        }
         font-size: 8px;
         line-height: 8px;
     }
