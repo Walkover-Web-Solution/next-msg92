@@ -568,8 +568,8 @@ export default function PricingHello({ data, country }) {
                                 <h3 className='px-4 font-medium text-gray-500'>Plan details</h3>
                                 <div className='grid grid-cols-3 bg-gray'>
                                     <div className='p-4 border-e-2 flex flex-col gap-4'>
-                                        <h4>Plan</h4>
-                                        <h4>Plan charges</h4>
+                                        <span>Plan</span>
+                                        <span>Plan charges</span>
                                     </div>
                                     <div className='p-4 border-e-2 flex flex-col gap-4'>
                                         <span>{Object.keys(plansObj)[0]}</span>
@@ -590,8 +590,8 @@ export default function PricingHello({ data, country }) {
                                 <h3 className='px-4 font-medium text-gray-500'>Included benefits</h3>
                                 <div className='grid grid-cols-3 bg-gray'>
                                     <div className='p-4 border-e-2 flex flex-col gap-4'>
-                                        <h4>Tickets</h4>
-                                        <h4>Inboxes</h4>
+                                        <span>Tickets</span>
+                                        <span>Inboxes</span>
                                     </div>
                                     <div className='p-4 border-e-2 flex flex-col gap-4'>
                                         <span>
@@ -615,10 +615,10 @@ export default function PricingHello({ data, country }) {
                                 <h3 className='px-4 font-medium text-gray-500'>Calculations</h3>
                                 <div className='grid grid-cols-3 bg-gray'>
                                     <div className='p-4 border-e-2 flex flex-col gap-4'>
-                                        <h4>Extra tickets</h4>
-                                        <h4>Extra tickets charges</h4>
-                                        <h4>Extra inboxs</h4>
-                                        <h4>Extra inbox charges</h4>
+                                        <span>Extra tickets</span>
+                                        <span>Extra tickets charges</span>
+                                        <span>Extra inboxs</span>
+                                        <span>Extra inbox charges</span>
                                     </div>
                                     <div className='p-4 flex flex-col gap-4'>
                                         <span>
@@ -712,7 +712,7 @@ export default function PricingHello({ data, country }) {
                                 <h3 className='px-4 font-medium text-gray-500'>Total</h3>
                                 <div className='grid grid-cols-3 bg-gray'>
                                     <div className='p-4 border-e-2 flex flex-col gap-4'>
-                                        <h4>Monthly recurring charges</h4>
+                                        <span>Monthly recurring charges</span>
                                     </div>
                                     <div className='p-4 border-e-2 flex flex-col gap-4'>
                                         <span className='font-bold text-green-600'>

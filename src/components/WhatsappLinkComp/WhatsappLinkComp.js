@@ -206,7 +206,7 @@ var options = {
                     <div className='flex gap-8 flex-col lg:flex-row'>
                         <div id='widget-form' className='w-full'>
                             <form className='flex flex-col gap-6' noValidate=''>
-                                <h4 className='text-xl font-semibold'>Type your WhatsApp Number</h4>
+                                <span className='text-xl font-semibold'>Type your WhatsApp Number</span>
                                 <p>
                                     Enter your WhatsApp number along with your country code (without the ‘+’ symbol).
                                     For instance, if your country code is +91 and your WhatsApp number is 872849182,
@@ -241,7 +241,7 @@ var options = {
                                     <div>Please enter a valid email address for shipping updates.</div>
                                 </div>
 
-                                <h4 className='text-xl font-semibold'>Widget Customisation</h4>
+                                <span className='text-xl font-semibold'>Widget Customisation</span>
 
                                 <div className='flex flex-col gap-2'>
                                     <label htmlFor='whatsappChatWidgetWelcomeText'>Welcome text</label>
@@ -273,20 +273,20 @@ var options = {
                         </div>
 
                         <div id='widget-dummy-preview' className='w-full flex gap-4 flex-col'>
-                            <h4 className='text-xl font-semibold'>
+                            <span className='text-xl font-semibold'>
                                 <span>Widget preview</span>
-                            </h4>
+                            </span>
                             <img className='max-w-[460px]' src='/img/widget-preview.svg' alt='widget preview logo' />
                         </div>
                     </div>
 
                     <div id='widget-preview' style={{ display: 'none' }}>
-                        <h4 className='flex gap-4'>
+                        <span className='flex gap-4'>
                             <span className='text-xl font-semibold'>Widget preview</span>
                             <button id='edit' type='button' className='text-link active-link'>
                                 Edit
                             </button>
-                        </h4>
+                        </span>
                         <div id='wq-generated-output' className='my-4'>
                             <div>https://wa.me/WhatsApp number?text=Pre-Filled Message</div>
                         </div>
@@ -409,9 +409,9 @@ var options = {
 
                             <div className='lg:w-1/2' id='widget-code-wrp' style={{ display: 'none' }}>
                                 <div>
-                                    <h4 style={{ lineHeight: '38px' }}>
+                                    <span style={{ lineHeight: '38px' }}>
                                         <span className='text-xl font-semibold'>Widget code snippet</span>
-                                    </h4>
+                                    </span>
                                 </div>
                                 <p>Copy and paste this code on every page of your website.</p>
                                 <pre style={{ position: 'relative' }}>

@@ -16,7 +16,7 @@ export default function ProductsComp({ data }) {
                                         <Image width={40} height={40} src={product?.icon} alt={product?.name} />
                                         <span className={style.tagline_sm}>{product?.tagline}</span>
                                         <h2 className='text-2xl font-bold'>{product?.name}</h2>
-                                        <h3 className='text-lg'>{product?.description}</h3>
+                                        <p className='text-lg'>{product?.description}</p>
                                         <LinkText className='link-btn' href={'/'}>
                                             {product.linkText}
                                         </LinkText>

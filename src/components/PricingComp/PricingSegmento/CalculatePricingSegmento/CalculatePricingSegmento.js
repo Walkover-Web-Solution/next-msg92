@@ -61,8 +61,8 @@ export default function CalculatePricingSegmento({ plans, currency, symbol, tabt
                             <h3 className='px-4 font-medium text-gray-500'>Included Benefits</h3>
                             <div className='grid grid-cols-4 bg-gray'>
                                 <div className='p-4 border-e-2 flex flex-col gap-4'>
-                                    <h4>Plan</h4>
-                                    <h4>Plan charges</h4>
+                                    <span>Plan</span>
+                                    <span>Plan charges</span>
                                 </div>
                                 {plansToShow?.map((plan, index) => {
                                     return (
@@ -82,7 +82,7 @@ export default function CalculatePricingSegmento({ plans, currency, symbol, tabt
                             <h3 className='px-4 font-medium text-gray-500'>Plan details</h3>
                             <div className='grid grid-cols-4 bg-gray'>
                                 <div className='p-4 border-e-2 flex flex-col gap-4'>
-                                    <h4>Contacts</h4>
+                                    <span>Contacts</span>
                                 </div>
                                 {plansToShow?.map((plan, index) => {
                                     return (
@@ -98,9 +98,9 @@ export default function CalculatePricingSegmento({ plans, currency, symbol, tabt
                             <h3 className='px-4 font-medium text-gray-500'>Calculations</h3>
                             <div className='grid grid-cols-4 bg-gray'>
                                 <div className='p-4 border-e-2 flex flex-col gap-4'>
-                                    <h4>Extra Contacts</h4>
-                                    <h4>Extra Bundle</h4>
-                                    <h4 className='mb-6'>Extra Charges</h4>
+                                    <span>Extra Contacts</span>
+                                    <span>Extra Bundle</span>
+                                    <span className='mb-6'>Extra Charges</span>
                                 </div>
                                 {plansToShow?.map((plan, index) => {
                                     const extraContact = Number(contacts) - Number(plan?.included[0]?.amount);

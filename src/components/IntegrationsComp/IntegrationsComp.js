@@ -141,7 +141,7 @@ const CardComponent = ({ card, index }) => {
                     <h3 className='text-lg font-bold mb-2'>{card?.name}</h3>
                 </div>
                 <div className=''>
-                    <h4 className='font-bold'>{card?.title}</h4>
+                    <span className='font-bold'>{card?.title}</span>
                     <p className=''>{card?.description}</p>
                 </div>
                 <div className='flex items-center md:gap-4 lg:gap-6 gap-2 mt-auto flex-wrap'>

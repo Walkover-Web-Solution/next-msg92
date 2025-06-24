@@ -73,8 +73,8 @@ export default function CalculateEmailPricing({ plans, currency, symbol, tabtype
                             <h3 className='px-4 font-medium text-gray-500'>Included Benefits</h3>
                             <div className='grid grid-cols-4 bg-gray'>
                                 <div className='p-4 border-e-2 flex flex-col gap-4'>
-                                    <h4>Plan</h4>
-                                    <h4>Plan charges</h4>
+                                    <span>Plan</span>
+                                    <span>Plan charges</span>
                                 </div>
                                 {plans?.map((plan, index) => {
                                     if (plan.name !== 'Free') {
@@ -95,8 +95,8 @@ export default function CalculateEmailPricing({ plans, currency, symbol, tabtype
                             <h3 className='px-4 font-medium text-gray-500'>Plan details</h3>
                             <div className='grid grid-cols-4 bg-gray'>
                                 <div className='p-4 border-e-2 flex flex-col gap-4'>
-                                    <h4>Emails</h4>
-                                    <h4>Email Validations</h4>
+                                    <span>Emails</span>
+                                    <span>Email Validations</span>
                                 </div>
                                 {plans?.map((plan, index) => {
                                     if (plan.name !== 'Free') {
@@ -122,10 +122,10 @@ export default function CalculateEmailPricing({ plans, currency, symbol, tabtype
                             <h3 className='px-4 font-medium text-gray-500'>Calculations</h3>
                             <div className='grid grid-cols-4 bg-gray'>
                                 <div className='p-4 border-e-2 flex flex-col gap-4'>
-                                    <h4>Extra Emails</h4>
-                                    <h4 className='mb-6'>Extra Emails Charges</h4>
-                                    <h4>Extra Emails Validations</h4>
-                                    <h4>Extra Email Validations Charges</h4>
+                                    <span>Extra Emails</span>
+                                    <span className='mb-6'>Extra Emails Charges</span>
+                                    <span>Extra Emails Validations</span>
+                                    <span>Extra Email Validations Charges</span>
                                 </div>
                                 {plans?.map((plan, index) => {
                                     if (plan.name !== 'Free') {

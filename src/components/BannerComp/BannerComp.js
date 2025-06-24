@@ -9,7 +9,6 @@ import { HTTPSnippet } from 'httpsnippet';
 import { MdCopyAll } from 'react-icons/md';
 import { InlineWidget } from 'react-calendly';
 import getURL from '@/utils/getURL';
-import Link from 'next/link';
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
 
 export default function BannerComp({ pageInfo, data }) {
@@ -64,20 +63,20 @@ export default function BannerComp({ pageInfo, data }) {
                         {data?.product && (
                             <div className='flex items-center gap-2'>
                                 <Image src={data?.product?.icon} width={40} height={40} alt={data?.product?.name} />
-                                <h1 className='font-semibold text-2xl'>{data?.product?.name}</h1>
+                                <span className='font-semibold text-2xl'>{data?.product?.name}</span>
                             </div>
                         )}
                         <span className={`text-xl uppercase tracking-widest text-${data?.slug}`}>{data?.tagline}</span>
                         {data?.product ? (
-                            <h2 className={`${data?.slug === 'whatsapp' ? 'whatsapp__' : ''}heading`}>
+                            <h1 className={`${data?.slug === 'whatsapp' ? 'whatsapp__' : ''}heading`}>
                                 {data?.heading}
-                            </h2>
+                            </h1>
                         ) : (
                             <h1 className='heading'>{data?.heading}</h1>
                         )}
-                        <h3 className={`${data?.slug === 'whatsapp' ? 'whatsapp__suheading' : 'suheading'}`}>
+                        <p className={`${data?.slug === 'whatsapp' ? 'whatsapp__suheading' : 'suheading'}`}>
                             {data?.subheading}
-                        </h3>
+                        </p>
                     </div>
 
                     <div className='flex flex-col md:flex-row gap-6'>
