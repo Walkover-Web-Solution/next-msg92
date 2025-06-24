@@ -78,6 +78,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <meta property='og:description' content={data?.description} />
                 <meta property='og:image' content={'/assets/brand/favicon.svg'} />
                 <link rel='icon' href='/assets/brand/favicon.svg' />
+                <meta name='msvalidate.01' content='38DA8FFFF9D52A1C9236A51CEFEE7542' />
+                <Script
+                    id='ms-clarity'
+                    strategy='afterInteractive'
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function(c,l,a,r,i,t,y){
+                                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                            })(window, document, "clarity", "script", "ru7xog184s");
+                        `,
+                    }}
+                />
+
                 <meta
                     name='viewport'
                     content='width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no'

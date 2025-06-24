@@ -8,9 +8,9 @@ import PricingVoice from './PricingVoice/PricingVoice';
 import PricingRCS from './PricingRCS/PricingRCS';
 import PricingEmail from './PricingEmail/PricingEmail';
 import PricingWhatsApp from './PricingWhatsApp/PricingWhatsApp';
-import HeadComp from '../headComp';
 import NotFoundComp from '../NotFoundComp/NotFoundComp';
 import pages from '@/data/specialPages.json';
+import HeadComp from '../HeadComp/HeadComp';
 
 export default function PricingComp({ data, pageInfo }) {
     let page;
