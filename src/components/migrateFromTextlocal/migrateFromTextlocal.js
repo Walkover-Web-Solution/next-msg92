@@ -51,7 +51,7 @@ export default function MigrateFromTextlocal({ pageInfo, data }) {
                 <h2 className='text-3xl font-bold'>Beyond SMS: Discover Our Full Suite of Communication Tools</h2>
                 <div className='grid grid-cols-1 lg:grid-cols-2  gap-6 md:gap-12'>
                     {data?.beyond_sms?.map((product, index) => (
-                        <Link href={product?.slug} key={index}>
+                        <a href={product?.slug} key={index}>
                             <div
                                 className={`bg-gray sm:p-8 p-6 md:p-8 lg:p-12 cont gap-4 h-full rounded-lg ${product?.slug}_lite_bg LinkButtonCard hover:shadow-lg`}
                                 key={index}
@@ -68,7 +68,7 @@ export default function MigrateFromTextlocal({ pageInfo, data }) {
                                     Learn More
                                 </LinkText>
                             </div>
-                        </Link>
+                        </a>
                     ))}
                 </div>
             </div>

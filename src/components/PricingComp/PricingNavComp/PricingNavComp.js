@@ -16,7 +16,7 @@ export default function PricingNav({ products, page }) {
                     >
                         {products?.applications.map((product, index) => {
                             return (
-                                <Link
+                                <a
                                     key={index}
                                     href={getURL('pricing', product?.slug)}
                                     className={`flex flex-col px-3 py-2 rounded hover:bg-secondary ${
@@ -27,12 +27,12 @@ export default function PricingNav({ products, page }) {
                                         <Image src={product?.icon} width={32} height={32} alt={product?.name} />
                                         <h3 className='text-lg font-medium'> {product?.name}</h3>
                                     </div>
-                                </Link>
+                                </a>
                             );
                         })}
                         {products?.channels.map((product, index) => {
                             return (
-                                <Link
+                                <a
                                     key={index}
                                     href={getURL('pricing', product?.slug)}
                                     className={`flex flex-col px-3 py-2 rounded hover:bg-secondary ${
@@ -44,7 +44,7 @@ export default function PricingNav({ products, page }) {
                                         <h3 className='text-lg font-medium'> {product?.name}</h3>
                                     </div>
                                     {product?.description && <p className='text-sm'>{product?.description}</p>}
-                                </Link>
+                                </a>
                             );
                         })}
                     </ul>
@@ -78,7 +78,7 @@ export default function PricingNav({ products, page }) {
 
 export function ProductButton({ product, page }) {
     return (
-        <Link
+        <a
             href={getURL('pricing', product?.slug)}
             className={`flex flex-col px-3 py-2 rounded hover:bg-secondary ${page === product?.slug && 'bg-secondary'}`}
         >
@@ -87,6 +87,6 @@ export function ProductButton({ product, page }) {
                 <h3 className='text-lg font-medium'> {product?.name}</h3>
             </div>
             {product?.description && <p className='text-sm'>{product?.description}</p>}
-        </Link>
+        </a>
     );
 }

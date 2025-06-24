@@ -43,7 +43,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                     {category?.products?.length > 0 &&
                                                         category?.products.map((product, i) => {
                                                             return (
-                                                                <Link
+                                                                <a
                                                                     key={i}
                                                                     href={getURL('product', product?.slug, pageInfo)}
                                                                     onClick={() => {
@@ -70,7 +70,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                                             )}
                                                                         </div>
                                                                     </div>
-                                                                </Link>
+                                                                </a>
                                                             );
                                                         })}
                                                 </div>
@@ -78,7 +78,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         );
                                     })}
                                 <div className='flex flex-col gap-2 mt-4'>
-                                    <Link
+                                    <a
                                         href={getURL('pricing', 'sms', pageInfo)}
                                         onClick={() => {
                                             setNav('hide');
@@ -86,8 +86,8 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         }}
                                     >
                                         <LinkText customClasses='text-lg'>Pricing</LinkText>
-                                    </Link>
-                                    <Link
+                                    </a>
+                                    <a
                                         href='/partners-and-integrations'
                                         onClick={() => {
                                             setNav('hide');
@@ -95,7 +95,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         }}
                                     >
                                         <LinkText customClasses='text-lg'>Integrations</LinkText>
-                                    </Link>
+                                    </a>
                                     <a
                                         className='flex items-center h-full justify-center'
                                         href='https://docs.msg91.com/overview'
@@ -107,7 +107,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     >
                                         <LinkText customClasses='text-lg'>API Docs</LinkText>
                                     </a>
-                                    <Link
+                                    <a
                                         href={getURL('signup', pageInfo?.page)}
                                         target='_blank'
                                         onClick={() => {
@@ -116,7 +116,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         }}
                                     >
                                         <LinkText customClasses='text-lg'>Sign Up</LinkText>
-                                    </Link>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                         {category?.products?.length > 0 &&
                                                             category?.products.map((product, i) => {
                                                                 return (
-                                                                    <Link
+                                                                    <a
                                                                         key={i}
                                                                         href={getURL(
                                                                             'product',
@@ -167,7 +167,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                                                 )}
                                                                             </div>
                                                                         </div>
-                                                                    </Link>
+                                                                    </a>
                                                                 );
                                                             })}
                                                     </div>
@@ -205,7 +205,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                     </a>
                                                 );
                                             })}
-                                        <Link href='/partners-and-integrations'>
+                                        <a href='/partners-and-integrations'>
                                             <button
                                                 className='flex items-center gap-2 px-5 py-3 rounded hover:bg-secondary w-full'
                                                 onClick={() => {
@@ -215,7 +215,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                             >
                                                 <LinkText>{componentData?.integrations_list?.explore_btn}</LinkText>
                                             </button>
-                                        </Link>
+                                        </a>
                                     </div>
                                 </div>
                             )}
@@ -270,7 +270,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             >
                                 {componentData?.integrations}
                             </li>
-                            <Link
+                            <a
                                 onMouseEnter={() => {
                                     setNav('hide');
                                     setType('products');
@@ -279,10 +279,10 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                 href={pricingPath}
                             >
                                 {componentData?.pricing}
-                            </Link>
+                            </a>
                         </ul>
                         <div className='w-full items-center flex justify-center'>
-                            <Link href={pageInfo?.country === 'global' ? '/' : pageInfo?.country}>
+                            <a href={pageInfo?.country === 'global' ? '/' : pageInfo?.country}>
                                 <Image
                                     src={'/assets/brand/msg91.svg'}
                                     width={300}
@@ -290,7 +290,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     className='h-[40px] w-auto'
                                     alt='MSG91'
                                 />
-                            </Link>
+                            </a>
                         </div>
                         <ul className='w-full flex justify-end gap-6 items-center'>
                             <a
@@ -300,18 +300,18 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             >
                                 <li className='text-link'>{componentData?.apidocs}</li>
                             </a>
-                            <Link
+                            <a
                                 className='btn btn-primary btn-sm uppercase'
                                 href={getURL('signup', pageInfo?.page)}
                                 target='_blank'
                             >
                                 {componentData?.signup_btn}
-                            </Link>
+                            </a>
                         </ul>
                     </div>
                     <div className='container z-[1000] flex md:hidden  py-5 '>
                         <div className='w-full z-[1000] flex items-center justify-between gap-6'>
-                            <Link href={pageInfo?.country === 'global' ? '/' : pageInfo?.country}>
+                            <a href={pageInfo?.country === 'global' ? '/' : pageInfo?.country}>
                                 <Image
                                     src={'/assets/brand/msg91.svg'}
                                     width={300}
@@ -319,7 +319,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     className='h-[30px] w-auto'
                                     alt='MSG91'
                                 />
-                            </Link>
+                            </a>
                             <button
                                 className='btn btn-icon'
                                 onClick={() => {

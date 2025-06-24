@@ -9,12 +9,9 @@ export default function TermsComp({ data, pageInfo }) {
                     {pages.map((page, i) => {
                         return (
                             <li className='w-fit' key={i}>
-                                <Link
-                                    className='text-link active-link w-fit'
-                                    href={getURL('terms', page?.link, pageInfo)}
-                                >
+                                <a className='text-link active-link w-fit' href={getURL('terms', page?.link, pageInfo)}>
                                     {page?.name}
-                                </Link>
+                                </a>
                             </li>
                         );
                     })}

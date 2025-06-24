@@ -12,7 +12,7 @@ export default function CaseStudiesComp({ data }) {
                         {data?.casestudies?.length > 0 &&
                             data?.casestudies.map((caseStudy, index) => {
                                 return (
-                                    <Link
+                                    <a
                                         href={caseStudy?.link}
                                         key={index}
                                         className={`flex bg-white rounded-lg overflow-hidden hover:shadow-lg LinkButtonCard ${
@@ -52,7 +52,7 @@ export default function CaseStudiesComp({ data }) {
                                             <p className='text-xl'>{caseStudy?.description}</p>
                                             <LinkText className='link-btn'>{data?.linkText}</LinkText>
                                         </div>
-                                    </Link>
+                                    </a>
                                 );
                             })}
                     </div>
