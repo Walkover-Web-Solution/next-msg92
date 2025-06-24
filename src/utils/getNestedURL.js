@@ -1,6 +1,6 @@
 export default function getNestedURL(type, link, pageInfo) {
-    if (pageInfo.country === 'in') {
-        return process.env.BASE_URL + '/in/' + link;
+    if (pageInfo.country !== 'global') {
+        return process.env.BASE_URL + '/' + pageInfo.country + '/' + link;
     } else {
         return process.env.BASE_URL + '/' + link;
     }

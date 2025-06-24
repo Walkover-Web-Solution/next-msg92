@@ -30,10 +30,10 @@ export default function Index({ posts, tags, pagination, commonData, pageInfo })
     );
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
     const posts = listPostContent(1, 18);
     const tags = listTags();
-    const pageInfo = getPageInfo(params);
+    const pageInfo = getPageInfo({ slug: ['global', 'guide'] });
     const commonData = getCommonCompData(pageInfo?.country);
     const pagination = {
         current: 1,
