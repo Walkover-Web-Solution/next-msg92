@@ -10,6 +10,13 @@ import getPricingURL from '@/utils/getPricingURL';
 export default function MenuBarComp({ componentData, pageInfo }) {
     const [nav, setNav] = useState('hide');
     const [type, setType] = useState('products');
+    // Access cookies country
+    let cookiesCountry = null;
+    if (typeof document !== 'undefined') {
+        const match = document.cookie.match('(^|;)\\s*country\\s*=\\s*([^;]+)');
+        cookiesCountry = match ? match.pop() : null;
+        console.log('⚡️ ~ :18 ~ MenuBarComp ~ cookiesCountry:', cookiesCountry);
+    }
     useEffect(() => {
         if (nav === 'show') {
             document.body.style.overflow = 'hidden';
@@ -18,7 +25,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
         }
     }, [nav]);
 
-    const pricingPath = '/pricing/sms';
+    const pricingPath = cookiesCountry ? cookiesCountry + '/pricing/sms' : '/pricing/sms';
     const hidden = componentData?.hide?.includes(pageInfo?.page);
     const handleMiniMenu = () => {
         if (nav === 'show') {
