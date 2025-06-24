@@ -282,7 +282,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             </a>
                         </ul>
                         <div className='w-full items-center flex justify-center'>
-                            <a href={pageInfo?.country === 'global' ? '/' : pageInfo?.country}>
+                            <a href={pageInfo?.country === 'global' ? '/' : `/${pageInfo?.country}`}>
                                 <Image
                                     src={'/assets/brand/msg91.svg'}
                                     width={300}
@@ -311,7 +311,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                     </div>
                     <div className='container z-[1000] flex md:hidden  py-5 '>
                         <div className='w-full z-[1000] flex items-center justify-between gap-6'>
-                            <a href={pageInfo?.country === 'global' ? '/' : pageInfo?.country}>
+                            <a href={pageInfo?.country === 'global' ? '/' : `/${pageInfo?.country}`}>
                                 <Image
                                     src={'/assets/brand/msg91.svg'}
                                     width={300}
