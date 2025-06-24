@@ -18,7 +18,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
         }
     }, [nav]);
 
-    const pricingPath = getPricingURL(pageInfo);
+    const pricingPath = '/pricing/sms';
     const hidden = componentData?.hide?.includes(pageInfo?.page);
     const handleMiniMenu = () => {
         if (nav === 'show') {
