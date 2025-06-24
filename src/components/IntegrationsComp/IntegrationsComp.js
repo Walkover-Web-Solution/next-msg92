@@ -43,7 +43,7 @@ export default function IntegrationsComp({ pageInfo, data }) {
                 {data?.connectors?.subheading && <p className='text-xl font-normal'>{data?.connectors?.subheading}</p>}
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
                     {data?.connectors?.connectors.map((card, index) => (
-                        <Link
+                        <a
                             target='_blank'
                             href={card?.link}
                             key={index}
@@ -63,7 +63,7 @@ export default function IntegrationsComp({ pageInfo, data }) {
                             <LinkText className='link-btn' href={'/'}>
                                 Learn More
                             </LinkText>
-                        </Link>
+                        </a>
                     ))}
                 </div>
             </div>
@@ -148,14 +148,14 @@ const CardComponent = ({ card, index }) => {
                     {card?.channels?.length > 0 &&
                         card.channels.map((channel, index) => {
                             return (
-                                <Link
+                                <a
                                     target='_blank'
                                     className='text-sm text-link active-link'
                                     href={channel?.link}
                                     key={index}
                                 >
                                     {channel?.channel}
-                                </Link>
+                                </a>
                             );
                         })}
                 </div>
@@ -163,7 +163,7 @@ const CardComponent = ({ card, index }) => {
         );
     } else {
         return (
-            <Link
+            <a
                 target='_blank'
                 href={card?.link}
                 key={index}
@@ -177,7 +177,7 @@ const CardComponent = ({ card, index }) => {
                 <LinkText className='link-btn' href={'/'}>
                     Learn More
                 </LinkText>
-            </Link>
+            </a>
         );
     }
 };

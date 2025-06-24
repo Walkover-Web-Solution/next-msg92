@@ -8,12 +8,12 @@ export default function NotFoundComp({ pageInfo }) {
                 The page you're trying to reach isn't available or doesn't exist.
             </h1>
             <div className='flex items-center gap-4'>
-                <Link className='btn btn-secondary' href={pageInfo?.country === 'global' ? '/' : pageInfo?.country}>
+                <a className='btn btn-secondary' href={pageInfo?.country === 'global' ? '/' : pageInfo?.country}>
                     Go To Home
-                </Link>
-                <Link className='btn btn-secondary' href={'/contact-us'}>
+                </a>
+                <a className='btn btn-secondary' href={'/contact-us'}>
                     Contact Support
-                </Link>
+                </a>
             </div>
         </div>
     );

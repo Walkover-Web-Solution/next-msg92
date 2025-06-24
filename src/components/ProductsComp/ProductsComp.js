@@ -10,7 +10,7 @@ export default function ProductsComp({ data }) {
                 <div className='bg-neutral py-20'>
                     <div className='container grid lg:grid-cols-2 grid-cols-1 md:gap-10 gap-6 '>
                         {data.map((product, index) => (
-                            <Link href={product?.link} key={index}>
+                            <a href={product?.link} key={index}>
                                 <div className={`${style[product?.name.toLowerCase()]} ${style?.card} LinkButtonCard`}>
                                     <div className='flex flex-col gap-4'>
                                         <Image width={40} height={40} src={product?.icon} alt={product?.name} />
@@ -29,7 +29,7 @@ export default function ProductsComp({ data }) {
                                         alt={product?.name}
                                     />
                                 </div>
-                            </Link>
+                            </a>
                         ))}
                     </div>
                 </div>

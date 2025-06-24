@@ -331,7 +331,7 @@ export default function PricingHello({ data, country }) {
                                                                   ? '+ VAT'
                                                                   : '-'}
                                                         </p>
-                                                        <Link href={getURL('signup', 'hello')} target='_blank'>
+                                                        <a href={getURL('signup', 'hello')} target='_blank'>
                                                             <button
                                                                 className={`btn btn-primary  btn-md ${
                                                                     plan?.name === 'Basic' ? '' : 'btn-outline'
@@ -339,7 +339,7 @@ export default function PricingHello({ data, country }) {
                                                             >
                                                                 Get Started
                                                             </button>
-                                                        </Link>
+                                                        </a>
                                                     </div>
                                                     <span className='border-b-[1px]'></span>
 
