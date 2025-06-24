@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function FooterComp({ componentData, pageInfo }) {
-    console.log('componentData', componentData);
     const hidden = componentData?.hide?.includes(pageInfo?.page);
     const year = new Date().getFullYear();
     if (componentData && !hidden) {
