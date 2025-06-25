@@ -1,0 +1,161 @@
+---
+title: The Complete Guide to Creating WhatsApp Templates with Best Practices
+slug: complete-guide-creating-whatsapp-templates-best-practices
+author: Ragini Pawar
+date: 2025-05-15T04:43:25.000Z
+description: Discover why brands are moving from Bird to MSG91 for better support, reliable APIs, and smarter automation. Get a 20% discount on switching.
+tags: ''
+---
+
+**Overview**  
+WhatsApp requires all business-initiated message templates to be approved before they can be used. Templates that don’t meet Meta’s content or formatting standards may be rejected or recategorized. This guide provides practical tips and best practices to help you create message templates that are more likely to be approved and properly categorized.
+###
+---
+
+## **What Are WhatsApp Message Templates?**
+
+WhatsApp Message Templates let you **send bulk messages** like promotions, alerts, or updates to users who’ve opted in.
+
+They’re also required to message users **after 24 hours of their last reply**.
+
+Common uses include:
+
+* **Order and payment updates**
+
+* **Promotional offers and product launches**
+
+### **Template Categories:**
+
+* **Marketing**: For promotional offers, campaigns, and announcements.
+
+* **Authentication**: For sending one-time passwords (OTPs). These must follow Meta’s controlled format and include a “Copy Code” button.
+
+* **Utility**: For transactional updates such as order status, account changes, or billing alerts.
+
+**Templates must be submitted for approval before use.**
+
+Sample templates: [https://msg91.com/help/whatsapp/whatsapp-template-samples](https://msg91.com/help/whatsapp/whatsapp-template-samples) 
+###
+---
+
+## **Common Reasons for Template Rejection**
+
+Meta has strict policies to prevent spam and misuse. Templates may be rejected for:
+
+* **Lack of clarity**: Messages like “Hi, `{{1}}` `{{2}}` Thank you.” are too vague.
+
+* **Non-sequential variables**: If you use `{{1}}`, `{{2}}`, and `{{4}}`, but skip `{{3}`}`.
+
+* **Variables placed side by side**: Avoid sequences like `{{1}}` `{{2}}`.
+
+* **Duplicate templates**: Submitting identical templates may cause rejection.
+
+* **Improper formatting**:
+
+  * Template cannot start or end with a variable
+
+  * No more than two consecutive newline (`\n`) characters
+
+  * No emojis, asterisks, or `\n` in text headers
+
+  * No newlines inside variables
+
+  * No more than four consecutive spaces
+
+* **Media header issues**: Media-based templates must include sample files.
+
+* **Prohibited or threatening content**: Any content seen as abusive will be rejected.
+
+* **WhatsApp links**: URLs leading directly to WhatsApp (e.g., `https://wa.me/...`) are not allowed.
+
+---
+
+## **Best Practices by Template Category**
+
+### **✅ Utility Templates**
+
+* Triggered by a specific user action or transaction.
+
+* Should mention the relevant transaction, order, or account detail.
+
+* Avoid adding promotional content—**this will cause the message to be recategorised as marketing by Meta itself automatically.** 
+
+**Example**:
+
+Hello `{{1}}`, your payment of ₹`{{2}}` for order ID `{{3}}` has been received.
+###
+---
+
+### **✅ Authentication Templates**
+
+* Must use Meta’s standardized format.
+
+* Must include a one-time password button (e.g., Copy Code).
+
+* No use of media, emojis, or URLs.
+
+* Variable values must be under 15 characters.  
+* **Only authentication templates can be used to send a one-time passcode for identity verification; marketing and utility templates cannot be used for this purpose.**
+###
+---
+
+### **✅ Marketing Templates**
+
+* Best for announcements, discounts, event invites, or re-engagement.
+
+* Templates will be classified as marketing if:
+
+  * The message doesn't fit the utility or authentication criteria
+
+  * It mixes content (e.g., a transaction update \+ promotion)
+
+  * It contains vague language or only variables
+
+**Example**:
+
+Hi `{{1}}`, don’t miss our weekend offer – Get 20% off on your next purchase. Valid until `{{2}}`\!
+###
+---
+
+## **General Template Writing Tips**
+
+* **Keep your message under 450 characters** for Utility and Marketing templates to avoid rejection.
+
+* **Use no more than 10 emojis** in a template. Too many emojis can get it rejected.  
+    
+* **Keep it short and clear** – Avoid unnecessary details.
+
+* **Use proper grammar** – Major errors lead to rejection.
+
+* **Choose the correct category and language** while submitting.
+
+* Don’t submit templates with only variables or unclear structure.
+
+* Avoid using the word “survey”—ask for feedback instead.
+
+* Never begin or end a message with a variable.
+
+**Example of a good template**:
+
+Hi `{{1}}`, your booking for `{{2}}` on `{{3}}` is confirmed. Show this message at entry.
+###
+---
+
+## **Final Checklist**
+
+✅ 450 characters in the message body.
+
+✅ Less than 10 emojis
+
+✅ Message purpose is clear
+
+✅ Variables are used logically and in sequence
+
+✅ No formatting issues (e.g., emojis in headers, newline misuse)
+
+✅ Correct category is selected
+
+✅ Message content is free of grammar/spelling errors
+###
+---
+
