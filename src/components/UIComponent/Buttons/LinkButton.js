@@ -15,10 +15,10 @@ const arrowIcon = (
 export function LinkButton({ href, content, target, customClasses }) {
     return (
         <>
-            <Link href={href || '/'} target={target || '_self'} className={`link-btn ${customClasses || ''}`}>
+            <a href={href || '/'} target={target || '_self'} className={`link-btn ${customClasses || ''}`}>
                 {content}
                 {arrowIcon}
-            </Link>
+            </a>
         </>
     );
 }

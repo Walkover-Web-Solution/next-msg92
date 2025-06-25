@@ -21,7 +21,7 @@ export default function MoreServicesComp({ data }) {
                                 </div>
                                 <Image width={600} height={600} src={service?.img} alt={service?.name} />
                                 <div className='flex flex-col gap-2 mb-auto'>
-                                    <h4 className='text-xl font-semibold'>{service?.heading}</h4>
+                                    <span className='text-xl font-semibold'>{service?.heading}</span>
                                     <p className='text-lg'>{service?.description}</p>
                                 </div>
                                 <LinkText className='link-btn'>{data?.linkText}</LinkText>

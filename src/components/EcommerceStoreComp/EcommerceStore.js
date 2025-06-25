@@ -17,7 +17,7 @@ export default function EcommerceStoreComp() {
                     <p className='text-3xl font-bold '>{ecommerceStore.EcommerceStoreComp.bodyHeading}</p>
                     <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-4 lg:gap-8'>
                         {ecommerceStore.EcommerceStoreComp.card.map((item, index) => (
-                            <Link
+                            <a
                                 key={index}
                                 href={item.link}
                                 target='_blank'
@@ -28,7 +28,7 @@ export default function EcommerceStoreComp() {
                                     <p className='text-black text-lg font-bold'>{item.title}</p>
                                 </div>
                                 <p className='text-gray-500'>{item.description}</p>
-                            </Link>
+                            </a>
                         ))}
                     </div>
                 </div>
@@ -37,10 +37,10 @@ export default function EcommerceStoreComp() {
                 <p className='text-3xl font-bold mb-10'>{ecommerceStore.EcommerceStoreComp.PluginHeading}</p>
                 <div className=' flex flex-wrap gap-6'>
                     {ecommerceStore.EcommerceStoreComp.plugins.map((item, index) => (
-                        <Link target='_blank' href={item?.link} key={index} className='flex gap-4'>
+                        <a target='_blank' href={item?.link} key={index} className='flex gap-4'>
                             <img width={360} height={260} src={item?.icon} alt={item?.name} className=' h-8 w-fit' />
                             <h3 className='text-lg font-bold mb-2'>{item?.name}</h3>
-                        </Link>
+                        </a>
                     ))}
                 </div>
             </div>

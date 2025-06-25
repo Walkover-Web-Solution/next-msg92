@@ -58,7 +58,7 @@ export default function PricingHello({ country, pageInfo }) {
                                                                 {amount?.currency?.symbol}
                                                                 {amount?.plan_amount} {tabtype}
                                                             </p>
-                                                            <Link
+                                                            <a
                                                                 className='w-full'
                                                                 href={getURL('signup', 'hello', pageInfo)}
                                                                 target='_blank'
@@ -68,7 +68,7 @@ export default function PricingHello({ country, pageInfo }) {
                                                                 >
                                                                     Get Started
                                                                 </button>
-                                                            </Link>
+                                                            </a>
                                                         </div>
                                                         <span className='border-b-[1px]'></span>
 
@@ -235,13 +235,13 @@ export default function PricingHello({ country, pageInfo }) {
                             className={`flex p-8 justify-between flex-col md:flex-row gap-4 items-center bg-white ${style.shadow_black}`}
                         >
                             <p className='text-xl font-medium'>For a personalised plan to meet your custom need.</p>
-                            <Link className='w-full sm:w-fit' href={getURL('contact-us', 'hello')} target='_blank'>
+                            <a className='w-full sm:w-fit' href={getURL('contact-us', 'hello')} target='_blank'>
                                 <button
                                     className={`btn rounded-none btn-primary w-full btn-outline uppercase ${style.get_started}`}
                                 >
                                     Contact Us
                                 </button>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>

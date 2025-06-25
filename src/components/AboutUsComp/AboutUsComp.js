@@ -5,7 +5,7 @@ export default function AboutUsComp({ pageInfo, data }) {
         <>
             <div className='container flex flex-col cont_gap cont_p '>
                 <h1 class='text-5xl font-bold '>{data?.heading}</h1>
-                <h2 class='text-xl md:w-1/2 gap-6'>{data?.subheading}</h2>
+                <p class='text-xl md:w-1/2 gap-6'>{data?.subheading}</p>
                 <Image
                     src={data?.banner_img}
                     alt='walkoverteam'

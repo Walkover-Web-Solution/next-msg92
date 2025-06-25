@@ -19,7 +19,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         {componentData?.products?.links.map((link, index) => {
                                             return (
                                                 <li key={index} className='text-link-white'>
-                                                    <Link
+                                                    <a
                                                         href={
                                                             link?.nested
                                                                 ? getNestedURL('product', link?.link, pageInfo)
@@ -28,7 +28,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                                         className='text-gray-200 '
                                                     >
                                                         {link?.name}
-                                                    </Link>
+                                                    </a>
                                                 </li>
                                             );
                                         })}
@@ -42,12 +42,12 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         {componentData?.utilities?.links.map((link, index) => {
                                             return (
                                                 <li key={index} className='text-link-white'>
-                                                    <Link
+                                                    <a
                                                         href={getURL('product', link?.link, pageInfo)}
                                                         className='text-gray-200'
                                                     >
                                                         {link?.name}
-                                                    </Link>
+                                                    </a>
                                                 </li>
                                             );
                                         })}
@@ -63,12 +63,12 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         {componentData?.channels?.links.map((link, index) => {
                                             return (
                                                 <li key={index} className='text-link-white'>
-                                                    <Link
+                                                    <a
                                                         href={getURL('product', link?.link, pageInfo)}
                                                         className='text-gray-200'
                                                     >
                                                         {link?.name}
-                                                    </Link>
+                                                    </a>
                                                 </li>
                                             );
                                         })}
@@ -101,24 +101,20 @@ export default function FooterComp({ componentData, pageInfo }) {
                                             if (link?.link.startsWith('http')) {
                                                 return (
                                                     <li key={index} className='text-link-white'>
-                                                        <Link
-                                                            href={link?.link}
-                                                            target='blank'
-                                                            className='text-gray-200'
-                                                        >
+                                                        <a href={link?.link} target='blank' className='text-gray-200'>
                                                             {link?.name}
-                                                        </Link>
+                                                        </a>
                                                     </li>
                                                 );
                                             } else {
                                                 return (
                                                     <li key={index} className='text-link-white'>
-                                                        <Link
+                                                        <a
                                                             href={getURL('global', link?.link, pageInfo)}
                                                             className='text-gray-200'
                                                         >
                                                             {link?.name}
-                                                        </Link>
+                                                        </a>
                                                     </li>
                                                 );
                                             }
@@ -190,7 +186,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                 <p className=' text-gray-200 text-end'>{componentData?.address?.address}</p>
                             )}
                             <div className='flex h-full mt-auto w-full sm:items-end sm:justify-end'>
-                                <Link
+                                <a
                                     target='_blank'
                                     href={
                                         'https://www.facebook.com/business/partner-directory/search?solution_type=messaging&ref=pd_home_hero_cta&id=5412005225590465&section=overview'
@@ -203,7 +199,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         height={480}
                                         alt='Meta Business Platform'
                                     />
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -215,12 +211,12 @@ export default function FooterComp({ componentData, pageInfo }) {
                                 componentData?.policies?.links.map((link, index) => {
                                     return (
                                         <li key={index} className='flex items-center gap-4'>
-                                            <Link
+                                            <a
                                                 href={getURL('terms', link?.link, pageInfo)}
                                                 className='text-gray-200 text-link-white  '
                                             >
                                                 {link?.name}
-                                            </Link>
+                                            </a>
                                             {index !== componentData?.policies?.links.length - 1 && <span>|</span>}
                                         </li>
                                     );

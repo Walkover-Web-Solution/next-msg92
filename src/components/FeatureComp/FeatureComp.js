@@ -58,9 +58,9 @@ export default function FeatureComp({ data, pageInfo }) {
                                                             openedFeatures.includes(index) ? 'block' : 'hidden'
                                                         }`}
                                                     >
-                                                        <h4 className='font-semibold text-lg'>{`${
+                                                        <span className='font-semibold text-lg'>{`${
                                                             pageInfo?.country === 'br-pt' ? 'Casos de uso' : 'Use Cases'
-                                                        }:`}</h4>
+                                                        }:`}</span>
                                                         <ul className='flex flex-col gap-1 list-disc'>
                                                             {feature?.more_content?.usecases?.map((usecase, index) => {
                                                                 return (
@@ -79,11 +79,11 @@ export default function FeatureComp({ data, pageInfo }) {
                                                             openedFeatures.includes(index) ? 'block' : 'hidden'
                                                         }`}
                                                     >
-                                                        <h4 className='font-semibold text-lg'>{`${
+                                                        <span className='font-semibold text-lg'>{`${
                                                             pageInfo?.country === 'br-pt'
                                                                 ? 'Principais recursos'
                                                                 : 'Key Features'
-                                                        }:`}</h4>
+                                                        }:`}</span>
                                                         <ul className='flex flex-col gap-1 list-disc'>
                                                             {feature?.more_content?.features?.map((feature, index) => {
                                                                 return <li key={index}>{feature}</li>;

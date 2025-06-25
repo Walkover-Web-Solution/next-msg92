@@ -194,7 +194,7 @@ export default function PricingSegmento({ data, country }) {
                                                     {/* <div>{handleOfferPrice(amount) || '-'}</div> */}
                                                 </div>
 
-                                                <Link href={getURL('signup', 'segmento')} target='_blank'>
+                                                <a href={getURL('signup', 'segmento')} target='_blank'>
                                                     <button
                                                         className={`btn btn-primary  btn-sm ${
                                                             plan?.name === 'Starter' ? '' : 'btn-outline'
@@ -202,7 +202,7 @@ export default function PricingSegmento({ data, country }) {
                                                     >
                                                         Get Started
                                                     </button>
-                                                </Link>
+                                                </a>
                                             </div>
                                             <span className='border-b-[1px]'></span>
 

@@ -24,7 +24,7 @@ export default function CaseStudyComp({ data, pageInfo }) {
                     <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10'>
                         {caseStudies?.map((caseStudy, index) => {
                             return (
-                                <Link
+                                <a
                                     key={index}
                                     href={`/case-studies/${caseStudy?.slug}`}
                                     className='flex flex-col gap-6 rounded p-6 bg-white LinkButtonCard '
@@ -55,7 +55,7 @@ export default function CaseStudyComp({ data, pageInfo }) {
                                     </div>
 
                                     <LinkText customClasses={'mt-auto'}>Learn More</LinkText>
-                                </Link>
+                                </a>
                             );
                         })}
                     </div>

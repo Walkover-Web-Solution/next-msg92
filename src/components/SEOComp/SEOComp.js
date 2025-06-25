@@ -3,7 +3,7 @@ export default function SEOComp({ data }) {
     return (
         <>
             <div className='container flex flex-col gap-6 py-20'>
-                <h3 className='text-xl font-bold'>{data?.heading}</h3>
+                <h2 className='text-2xl font-bold'>{data?.heading}</h2>
                 <div className='flex flex-col gap-2'>
                     <p>{data?.description}</p>
                     <div

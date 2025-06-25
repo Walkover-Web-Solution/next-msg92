@@ -111,6 +111,15 @@ export default function Page({ data, commonData, pageInfo }) {
     const router = useRouter();
     var browserPath = router.asPath;
     var browserPathCase = browserPath;
+    // Check if 'country' cookie is set; if not, set it to pageInfo.country
+    if (typeof window !== 'undefined' && pageInfo?.country) {
+        const cookieName = 'country';
+        const cookies = document.cookie.split(';').map((cookie) => cookie.trim());
+        const countryCookie = cookies.find((cookie) => cookie.startsWith(`${cookieName}=`));
+        if (!countryCookie) {
+            document.cookie = `${cookieName}=${pageInfo.country}; path=/; max-age=3600`; // 1 year
+        }
+    }
     return (
         <>
             {pageInfo?.page !== ''}

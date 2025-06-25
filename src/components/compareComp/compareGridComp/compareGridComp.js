@@ -9,7 +9,7 @@ export default function CompareGridComp({ data }) {
             <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-8 gap-6'>
                 {data?.cards?.map((card, index) => {
                     return (
-                        <Link
+                        <a
                             href={getURL('compare', card?.link)}
                             key={index}
                             className='border rounded-lg overflow-hidden hover:shadow-lg'
@@ -43,7 +43,7 @@ export default function CompareGridComp({ data }) {
                             <div className='flex text-center w-full items-center justify-center p-4'>
                                 <h3 className='text-lg'>{card?.name}</h3>
                             </div>
-                        </Link>
+                        </a>
                     );
                 })}
             </div>

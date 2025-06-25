@@ -13,7 +13,6 @@ export default function PricingWhatsApp({ country, data }) {
     const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
     const [loading, setLoading] = useState(true);
     const [plans, setPlans] = useState();
-    console.log('⚡️ ~ :16 ~ PricingWhatsApp ~ plans:', plans);
 
     useEffect(() => {
         const getWhatsAppPricing = async () => {

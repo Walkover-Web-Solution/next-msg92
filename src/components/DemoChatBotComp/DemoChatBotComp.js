@@ -23,51 +23,48 @@ export default function DemoChatBotComp() {
                             />
                             <h2 className='text-xl font-bold'>WhatsApp Bots</h2>
                         </div>
-                        <Link href='https://wa.me/917316914316?text=%F0%9F%9B%92%20Track%20My%20Order' target='_blank'>
+                        <a href='https://wa.me/917316914316?text=%F0%9F%9B%92%20Track%20My%20Order' target='_blank'>
                             <button className='btn bg-gray-500 hover:bg-gray-600 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
                                 Track Order
                             </button>
-                        </Link>
-                        <Link href='https://wa.me/917316914316?text=%F0%9F%93%A6%20Order%20Issues' target='_blank'>
+                        </a>
+                        <a href='https://wa.me/917316914316?text=%F0%9F%93%A6%20Order%20Issues' target='_blank'>
                             <button className='btn bg-gray-500 hover:bg-gray-600 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
                                 Order Issues
                             </button>
-                        </Link>
-                        <Link
+                        </a>
+                        <a
                             href='https://wa.me/917316914316?text=%F0%9F%92%B0%20Refund%20%26%20Cancellation'
                             target='_blank'
                         >
                             <button className='btn bg-gray-500 hover:bg-gray-600 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
                                 Refund and Cancellation
                             </button>
-                        </Link>
-                        <Link href='https://wa.me/917316914316?text=%F0%9F%8E%81%20Ongoing%20Offers' target='_blank'>
+                        </a>
+                        <a href='https://wa.me/917316914316?text=%F0%9F%8E%81%20Ongoing%20Offers' target='_blank'>
                             <button className='btn bg-gray-500 hover:bg-gray-600 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
                                 Ongoing Offers
                             </button>
-                        </Link>
-                        <Link href='https://wa.me/917316914316?text=%F0%9F%99%8B%20Talk%20to%20Support' target='_blank'>
+                        </a>
+                        <a href='https://wa.me/917316914316?text=%F0%9F%99%8B%20Talk%20to%20Support' target='_blank'>
                             <button className='btn bg-gray-500 hover:bg-gray-600 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
                                 Talk to Support
                             </button>
-                        </Link>
-                        <Link
-                            href='https://wa.me/917316914316?text=%F0%9F%9B%92%E2%8F%B3Abandoned%20Cart'
-                            target='_blank'
-                        >
+                        </a>
+                        <a href='https://wa.me/917316914316?text=%F0%9F%9B%92%E2%8F%B3Abandoned%20Cart' target='_blank'>
                             <button className='btn bg-gray-500 hover:bg-gray-600 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
                                 Abandoned Cart
                             </button>
-                        </Link>
-                        <Link href='https://wa.me/917316914316?text=Latest%20Collection' target='_blank'>
+                        </a>
+                        <a href='https://wa.me/917316914316?text=Latest%20Collection' target='_blank'>
                             <button className='btn bg-gray-500 hover:bg-gray-600 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
                                 Latest Collection
                             </button>
-                        </Link>
+                        </a>
                         {/* <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 '>
                         {chatbotdemo.whatsapp_bot.map((bot, index) => {
                             return (
-                                <Link
+                                <a
                                     key={index}
                                     href={bot?.link}
                                     className='flex flex-col  bg-gray-50 gap-3 p-3 rounded-lg'
@@ -83,7 +80,7 @@ export default function DemoChatBotComp() {
                                         <h3 className='text-base font-semibold'>{bot?.name}</h3>
                                         <p className='text-gray-800 text-sm'>{bot?.description}</p>
                                     </div>
-                                </Link>
+                                </a>
                             );
                         })}
                     </div> */}
@@ -99,20 +96,20 @@ export default function DemoChatBotComp() {
                                 />
                                 <h2 className='text-xl font-bold'>Instagram Bots</h2>
                             </div>
-                            <Link href='https://ig.me/m/MSG91_Instabot' target='_blank'>
+                            <a href='https://ig.me/m/MSG91_Instabot' target='_blank'>
                                 <button className='btn bg-gray-500 hover:bg-gray-600 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
                                     Fashion & Style Industry
                                 </button>
-                            </Link>
-                            <Link href='https://ig.me/m/msg91_hello' target='_blank'>
+                            </a>
+                            <a href='https://ig.me/m/msg91_hello' target='_blank'>
                                 <button className='btn bg-gray-500 hover:bg-gray-600 border-none font-bold h-[44px] min-h-[36px] text-[16px] text-white w-[300px]'>
                                     Real Estate Industry
                                 </button>
-                            </Link>
+                            </a>
                             {/* <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 '>
                         {chatbotdemo.instagram_bot.map((bot, index) => {
                             return (
-                                <Link
+                                <a
                                     key={index}
                                     href={bot?.link}
                                     className='flex flex-col  bg-gray-50 gap-3 p-3 rounded-lg'
@@ -128,7 +125,7 @@ export default function DemoChatBotComp() {
                                         <h3 className='text-base font-semibold'>{bot?.name}</h3>
                                         <p className='text-gray-800 text-sm'>{bot?.description}</p>
                                     </div>
-                                </Link>
+                                </a>
                             );
                         })}
                     </div> */}
@@ -150,25 +147,25 @@ export default function DemoChatBotComp() {
                     </div>
                 </div>
                 <div className='flex gap-5 items-center justify-center'>
-                    <Link href='https://www.instagram.com/msg91com/?igsh=MWV5ZjQ1M3d5NDFyNQ%3D%3D#' target='_blank'>
+                    <a href='https://www.instagram.com/msg91com/?igsh=MWV5ZjQ1M3d5NDFyNQ%3D%3D#' target='_blank'>
                         <Image
                             src={'/assets/icons/social/insta-outline.svg'}
                             width={32}
                             height={32}
                             alt='Instagram Logo'
                         />
-                    </Link>
-                    <Link href='https://x.com/msg91' target='_blank'>
+                    </a>
+                    <a href='https://x.com/msg91' target='_blank'>
                         <Image src={'/assets/icons/social/X icon.svg'} width={28} height={28} alt='Twitter Logo' />
-                    </Link>
-                    <Link href='https://www.linkedin.com/company/msg91' target='_blank'>
+                    </a>
+                    <a href='https://www.linkedin.com/company/msg91' target='_blank'>
                         <Image
                             src={'/assets/icons/social/linkedin-outline.svg'}
                             width={28}
                             height={28}
                             alt='LinkedIn Logo'
                         />
-                    </Link>
+                    </a>
                 </div>
             </div>
         </>

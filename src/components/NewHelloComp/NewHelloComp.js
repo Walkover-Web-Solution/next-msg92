@@ -31,9 +31,9 @@ export default function NewHelloComp({ data, pageInfo }) {
                         <p className={`${styles.boost} text-hello`}>{data?.bannerComp?.tagline}</p>
                         <h2 className='text-2xl'>{data?.bannerComp?.subheading}</h2>
                     </div>
-                    <Link className={styles?.getstarted} href={getURL('signup', 'hello', pageInfo)} target='_blank'>
+                    <a className={styles?.getstarted} href={getURL('signup', 'hello', pageInfo)} target='_blank'>
                         {data?.bannerComp?.getstarted_btn}
-                    </Link>
+                    </a>
                     <div className='flex flex-col gap-4'>
                         <p className=' text-lg '>{data?.bannerComp?.trustedByComp?.heading}</p>
                         <div className='flex flex-wrap gap-4'>
@@ -137,15 +137,15 @@ export default function NewHelloComp({ data, pageInfo }) {
                 <div className='container flex flex-col cont_gap cont_p text-2xl'>
                     <p>{data?.prefooter?.text3}</p>
                     <div className='flex flex-col md:flex-row gap-6'>
-                        <Link className={styles?.getstarted} href={getURL('signup', 'hello', pageInfo)} target='_blank'>
+                        <a className={styles?.getstarted} href={getURL('signup', 'hello', pageInfo)} target='_blank'>
                             Get started
-                        </Link>
-                        <Link className={styles?.sales} href='/pricing'>
+                        </a>
+                        <a className={styles?.sales} href='/pricing'>
                             Pricing
-                        </Link>
-                        <Link className={styles?.sales} href='/contact-us'>
+                        </a>
+                        <a className={styles?.sales} href='/contact-us'>
                             Contact sales
-                        </Link>
+                        </a>
                     </div>
                     <p>{data?.prefooter?.text4}</p>
                 </div>

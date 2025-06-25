@@ -4,12 +4,21 @@ import availableCountries from '@/data/availableCountries.json';
 import Image from 'next/image';
 import getURL from '@/utils/getURL';
 import { useRouter } from 'next/router';
+import specialPages from '@/data/specialPages.json';
 
 export default function NotificationBarComp({ componentData, pageInfo }) {
     const router = useRouter();
-    const visibility = router?.pathname.startsWith('/guide') ? true : false;
+    const visibility = specialPages?.global?.some((page) => router.asPath.startsWith(`/${page}`));
     const currentCountry = availableCountries.find((cont) => cont.shortname.toLowerCase() === pageInfo?.country);
     const hidden = componentData?.hide?.includes(pageInfo?.page);
+
+    function handleCookies(country) {
+        if (typeof window !== 'undefined' && country) {
+            const cookieName = 'country';
+            document.cookie = `${cookieName}=${country}; path=/; max-age=3600`; // 1 hour
+        }
+    }
+    // Store the 'country' cookie value
     if (componentData && !hidden) {
         return (
             <div className='py-3 border border-b'>
@@ -25,7 +34,13 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                 <ul>
                                     {currentCountry?.languages?.map((language, index) => {
                                         return (
-                                            <li className='cursor-pointer' key={index}>
+                                            <li
+                                                className='cursor-pointer'
+                                                key={index}
+                                                onClick={() => {
+                                                    handleCookies(language?.link);
+                                                }}
+                                            >
                                                 <a
                                                     href={getURL('country', language?.link, pageInfo)}
                                                     className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '
@@ -58,7 +73,12 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                             </div>
                             <div tabIndex={0} className='dropdown-content bg-neutral z-[9999] w-60 rounded shadow'>
                                 <ul>
-                                    <li className='cursor-pointer '>
+                                    <li
+                                        className='cursor-pointer '
+                                        onClick={() => {
+                                            handleCookies('global');
+                                        }}
+                                    >
                                         {pageInfo?.country === 'global' ? (
                                             <div className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '>
                                                 <Image
@@ -88,7 +108,13 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                     {availableCountries.map((cont, index) => {
                                         if (!cont?.hide)
                                             return (
-                                                <li key={index} className='cursor-pointer'>
+                                                <li
+                                                    key={index}
+                                                    className='cursor-pointer'
+                                                    onClick={() => {
+                                                        handleCookies(cont?.shortname.toLowerCase());
+                                                    }}
+                                                >
                                                     {pageInfo?.country === cont?.shortname.toLowerCase() ? (
                                                         <div className='px-2 py-1 hover:bg-secondary flex items-center gap-2 '>
                                                             {/* /* ${cont?.shortname} == 'in,us,gb etc. */}
@@ -129,20 +155,20 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                         </div>
                     )}
 
-                    <Link
+                    <a
                         className='text-link flex gap-1 items-center'
                         href={getURL('contact-us', 'contact-us', pageInfo)}
                     >
                         <MdOutlineCall className='text-2xl sm:text-xl' />
                         <span className='hidden sm:block'>{componentData?.support}</span>
-                    </Link>
-                    <Link
+                    </a>
+                    <a
                         className='text-link flex gap-1 items-center'
                         href={process.env.LOGIN_URL || 'https://control.msg91.com/signin/'}
                     >
                         <MdLogin className='text-2xl sm:text-xl' />
                         <span className='hidden sm:block'>{componentData?.login}</span>
-                    </Link>
+                    </a>
                 </div>
             </div>
         );

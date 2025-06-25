@@ -23,10 +23,10 @@ export default function ConnectWithTeam({ product, isPlan, data, href, per }) {
                 </>
             )}
             <div>
-                <Link href={getURL('product', href)} className='flex items-center gap-1 text-link active-link '>
+                <a href={getURL('product', href)} className='flex items-center gap-1 text-link active-link '>
                     <MdLaunch />
                     {data?.know_more} {product}
-                </Link>
+                </a>
             </div>
             {isSalesModalOpen && (
                 <dialog id='sales_modal' className='modal' open>

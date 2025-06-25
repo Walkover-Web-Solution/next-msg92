@@ -11,16 +11,16 @@ export default function PreFooterMFTL() {
                     <MdCall className='text-2xl' />{' '}
                     <span className='text-lg'>
                         {' '}
-                        <Link href={'tel:+918818888733'} className='text-lg text-link'>
+                        <a href={'tel:+918818888733'} className='text-lg text-link'>
                             +91-8818888733
-                        </Link>
+                        </a>
                     </span>
                 </div>
                 <div className='flex items-center  gap-2'>
                     <MdEmail className='text-2xl' />
-                    <Link href={'mailTo:support@msg91.com'} className='text-lg text-link'>
+                    <a href={'mailTo:support@msg91.com'} className='text-lg text-link'>
                         support@msg91.com
-                    </Link>
+                    </a>
                 </div>
             </div>
         </div>

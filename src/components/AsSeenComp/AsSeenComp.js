@@ -18,7 +18,7 @@ export default function AsSeenComp({ data }) {
                         <div className='max-w-full flex-wrap flex items-center sm:gap-20 gap-12 justify-center  flex-col sm:flex-row'>
                             {data?.map((icon, index) => {
                                 return (
-                                    <Link href={icon?.url || '#'} target='_blank'>
+                                    <a href={icon?.url || '#'} target='_blank'>
                                         <Image
                                             key={index}
                                             className='xl:h-5 h-5 w-fit'
@@ -27,7 +27,7 @@ export default function AsSeenComp({ data }) {
                                             height={400}
                                             alt={icon?.name}
                                         />
-                                    </Link>
+                                    </a>
                                 );
                             })}
                         </div>
