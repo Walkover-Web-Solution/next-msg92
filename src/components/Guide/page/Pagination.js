@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { generatePagination } from '../lib/pagination';
 
 function Pagination({ current, pages, link }) {
@@ -10,8 +9,10 @@ function Pagination({ current, pages, link }) {
                     {it.excerpt ? (
                         '...'
                     ) : (
-                        <a legacyBehavior href={link.href(it.page)} as={link.as(it.page)}>
-                            <a className={it.page === current ? 'active' : null}>{it.page}</a>
+                        <a legacyBehavior href={link.as(it.page)}>
+                            <span className={it.page === current ? 'text-white bg-accent px-2 py-1 rounded' : null}>
+                                {it.page}
+                            </span>
                         </a>
                     )}
                 </li>

@@ -15,7 +15,6 @@ export default function MenuBarComp({ componentData, pageInfo }) {
     if (typeof document !== 'undefined') {
         const match = document.cookie.match('(^|;)\\s*country\\s*=\\s*([^;]+)');
         cookiesCountry = match ? match.pop() : null;
-        console.log('⚡️ ~ :18 ~ MenuBarComp ~ cookiesCountry:', cookiesCountry);
     }
     useEffect(() => {
         if (nav === 'show') {
@@ -24,8 +23,8 @@ export default function MenuBarComp({ componentData, pageInfo }) {
             document.body.style.overflow = 'auto';
         }
     }, [nav]);
-
-    const pricingPath = cookiesCountry ? cookiesCountry + '/pricing/sms' : '/pricing/sms';
+    const pricingPath =
+        cookiesCountry && cookiesCountry !== 'global' ? '/' + cookiesCountry + '/pricing/sms' : '/pricing/sms';
     const hidden = componentData?.hide?.includes(pageInfo?.page);
     const handleMiniMenu = () => {
         if (nav === 'show') {
