@@ -22,11 +22,8 @@
             {
                 "name": "WhatsApp ChatBot",
                 "content": "Automated interactions on the messaging platform, providing instant responses, handling customer inquiries, and performing tasks such as customer support, order tracking,place order and providing information. It enhances customer service efficiency and availability.",
-                "img": "/assets/in/whatsapp/whatsapp-chatBot.svg",
-                "button": {
-                    "name": "Test WhatsApp Chatbot",
-                    "link": "https://msg91.com/demochatbot"
-                }
+                "img": "/assets/in/whatsapp/whatsapp-chatBot.svg"
+               
             },
             {
                 "name": "Whatsapp Integrations",
