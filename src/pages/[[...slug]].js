@@ -177,12 +177,17 @@ export const getStaticProps = async (context) => {
         return await res.json();
     };
     const data = await fetchData('/api/data');
-
-    return {
-        props: {
-            data: data || {},
-            commonData: commonData || {},
-            pageInfo,
-        },
-    };
+    if (data?.NotFoundComp) {
+        return {
+            notFound: true,
+        };
+    } else {
+        return {
+            props: {
+                data: data || {},
+                commonData: commonData || {},
+                pageInfo,
+            },
+        };
+    }
 };
