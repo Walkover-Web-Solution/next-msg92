@@ -3,6 +3,7 @@ import countryData from '@/data/availableCountries.json';
 import Head from 'next/head';
 
 export default function HreflangTagComp({ pageInfo }) {
+    console.log('⚡️ ~ :6 ~ HreflangTagComp ~ pageInfo:', pageInfo);
     const isPricingPage = specialPages?.pricing?.includes(pageInfo?.page);
 
     return (
@@ -23,6 +24,7 @@ export default function HreflangTagComp({ pageInfo }) {
 
             {countryData.map((country, index) => {
                 const isGlobalPage = specialPages?.global.includes(pageInfo?.page);
+                console.log('⚡️ ~ :27 ~ {countryData.map ~ isGlobalPage:', isGlobalPage);
                 const isJustNested = specialPages?.justNested.includes(pageInfo?.baseURL);
                 const isCaseStudyPage = pageInfo?.page === 'case-studies';
 

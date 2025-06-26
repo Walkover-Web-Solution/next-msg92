@@ -73,6 +73,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                             );
                                         })}
                                     </ul>
+                                    <a className='absolute' href='/pricing/sms'></a>
                                 </div>
                             )}
                             {componentData?.resources?.links.length > 0 && (

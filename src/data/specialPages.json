@@ -21,7 +21,9 @@
         "startup-form",
         "certificates",
         "textlocal-alternative",
-        "compare"
+        "compare",
+        "signup",
+        "startups-form"
     ],
     "products": [
         "hello",
