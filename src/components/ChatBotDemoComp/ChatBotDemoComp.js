@@ -142,7 +142,7 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
                         </select>
                     </div>
                 </div>
-                <div className={`${style.chatbotwrapper} chatbotwrapper `}>
+                {/* <div className={`${style.chatbotwrapper} chatbotwrapper `}>
                     {iframeLoading && <div className={'h-full flex items-center justify-center'}>Loading...</div>}
                     <iframe
                         style={{ width: '100%', height: '650px', border: 'none' }}
@@ -151,7 +151,7 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
                         srcDoc={chatbotContent}
                         onLoad={() => setIframeLoading(false)}
                     ></iframe>
-                </div>
+                </div> */}
             </div>
         </>
     );

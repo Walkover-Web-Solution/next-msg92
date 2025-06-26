@@ -95,7 +95,7 @@ export default function BannerComp({ pageInfo, data }) {
                                 {data?.schedule_meet}
                             </button>
                         )}
-                        {pageInfo?.page === 'hello' && (
+                        {/* {pageInfo?.page === 'hello' && (
                             <a
                                 href='/demochatbot'
                                 onClick={() => {
@@ -112,7 +112,7 @@ export default function BannerComp({ pageInfo, data }) {
                                     )}
                                 </button>
                             </a>
-                        )}
+                        )} */}
                     </div>
 
                     <TrustedByComp data={data?.trustedByComp} />
