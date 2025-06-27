@@ -125,7 +125,18 @@ export default function FooterComp({ componentData, pageInfo }) {
                             )}
                         </div>
                         <div className='flex flex-col gap-10 w-full h-full'>
-                            <div className='flex flex-col gap-4 sm:items-end'>
+                            <div className='flex flex-col gap-4 lg:items-end'>
+                                <a href={'https://msg91.com'}>
+                                    <Image
+                                        className='w-32'
+                                        src={'/assets/brand/msg91_white.svg'}
+                                        width={480}
+                                        height={480}
+                                        alt='MSG91 Logo'
+                                    />
+                                </a>
+                            </div>
+                            <div className='flex flex-col gap-2 lg:items-end'>
                                 <span className='font-semibold'>Download Apps</span>
                                 <div className='flex gap-4'>
                                     <a
@@ -144,7 +155,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                                     </a>
                                 </div>
                             </div>
-                            <div className='flex flex-col gap-4 sm:items-end'>
+                            <div className='flex flex-col gap-2 lg:items-end'>
                                 <span className='font-semibold '>Follow Us</span>
                                 <div className='flex gap-4'>
                                     <a
@@ -186,7 +197,7 @@ export default function FooterComp({ componentData, pageInfo }) {
                             {componentData?.address?.address && (
                                 <p className=' text-gray-200 text-end'>{componentData?.address?.address}</p>
                             )}
-                            <div className='flex h-full mt-auto w-full sm:items-end sm:justify-end'>
+                            <div className='flex flex-col gap-4 mt-auto lg:items-end'>
                                 <a
                                     target='_blank'
                                     href={
