@@ -365,7 +365,7 @@ var options = {
                                                 className='btn btn-primary'
                                             >
                                                 <img
-                                                    src='assets/global/whatsapp-link/whatsapp-icon-white.svg'
+                                                    src='/assets/global/whatsapp-link/whatsapp-icon-white.svg'
                                                     alt='WhatsApp Link '
                                                 />
                                                 <span
