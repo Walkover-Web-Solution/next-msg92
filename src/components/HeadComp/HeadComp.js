@@ -17,7 +17,11 @@ export default function HeadComp({ data, pageInfo }) {
                 }}
             />
 
-            <Script onload='initChatWidget(helloConfig, 0)' src={`${process.env.CHAT_WIDGET_URL}`} />
+            <Script
+                strategy='afterInteractive'
+                onload='initChatWidget(helloConfig, 0)'
+                src={`${process.env.CHAT_WIDGET_URL}`}
+            />
 
             <Script
                 strategy='afterInteractive'
@@ -81,6 +85,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <meta name='msvalidate.01' content='38DA8FFFF9D52A1C9236A51CEFEE7542' />
                 <meta property='og:url' content='https://msg91.com/' />
                 <meta property='og:type' content='website' />
+                {getSchemaScript(pageInfo?.country)}
                 <Script
                     id='ms-clarity'
                     strategy='afterInteractive'
@@ -114,3 +119,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </>
     );
 }
+function getSchemaScript(shortname) {
+    const countryMap = {
+        'in': { url: 'https://msg91.com/in', name: 'Msg91 (India)' },
+        'br-pt': { url: 'https://msg91.com/br-pt', name: 'Msg91 (Brazil)' },
+        'ae': { url: 'https://msg91.com/ae', name: 'Msg91 (United Arab Emirates)' },
+        'fil-ph': { url: 'https://msg91.com/fil-ph', name: 'Msg91 (Philippines)' },
+        'sg': { url: 'https://msg91.com/sg', name: 'Msg91 (Singapore)' },
+        'es': { url: 'https://msg91.com/es', name: 'Msg91 (Spain)' },
+        'gb': { url: 'https://msg91.com/gb', name: 'Msg91 (United Kingdom)' },
+        'us': { url: 'https://msg91.com/us', name: 'Msg91 (United States)' },
+    };
+
+    const country = countryMap[shortname];
+    if (!country) {
+        return `<!-- Invalid shortname: ${shortname} -->`;
+    }
+
+    const schema = {
+        '@context': 'http://schema.org',
+        '@id': `${country.url}#webpage`,
+        '@type': 'WebPage',
+        'url': country.url,
+        'name': country.name,
+    };
+
+    return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>`;
+}
+
+// Example usage:
+console.log(getSchemaScript('in'));
+console.log(getSchemaScript('sg'));
