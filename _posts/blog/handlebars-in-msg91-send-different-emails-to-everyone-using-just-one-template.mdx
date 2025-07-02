@@ -1,0 +1,162 @@
+---
+title: Handlebars in MSG91- Send Different Emails to Everyone Using Just One Template
+slug: handlebars-in-msg91-send-different-emails-to-everyone-using-just-one-template
+author: Karan Chandwani
+date: 2025-07-02T06:07:39.000Z
+description: Discover how Handlebars in MSG91 empowers you to send highly personalized, dynamic emails at scale using a single smart template. This blog explains what Handlebars is, why it matters for email personalization, and showcases real-world use cases and best practices to help you craft relevant, data-driven campaigns for every recipient.
+tags:
+---
+
+What if **one email** could speak in **a thousand different ways**—based on who’s reading it?
+
+With **Handlebars in MSG91**, that’s exactly what you get: the power to send **personalized, data-driven emails at scale** without creating separate templates for every use case.
+
+No copy-pasting. No complexity. Just one smart template that adapts automatically to each user.
+
+It’s not just a tool—it’s your **personalization engine**, built right into every send.
+
+## **What is Handlebars and Why It Matters?**
+
+**Handlebars** is a dynamic templating language in MSG91 that lets you insert real-time data and logic into your email templates.
+
+Beyond just using `{{name}}`, you can:
+
+-   Display personalized product recommendations
+
+-   Adjust messages based on location, user status, or cart activity
+
+-   Serve multiple segments with a single smart template
+
+You build one email. Handlebars make it feel personal for each recipient.
+
+## [**Real-World Use Cases: Handlebars in Action**](https://docs.msg91.com/email/send-email-with-handlebars)
+
+Let’s explore how **email templates** powered by Handlebars actually work—formatted the way your customers will see them.
+
+### **1\. Recover Abandoned Carts**
+
+**Scenario**: A user adds items to their cart but doesn’t checkout.
+
+**Email Output:**
+
+**Subject**: Don’t forget these\!
+
+**Body**:
+
+***`{{#if isPremium}}`***
+
+Hi Sana,
+
+Looks like you left these behind:
+
+Headphone – ₹1999
+
+Complete Your Purchase
+
+**_`{{else}}`_**
+
+Hi Sana,
+
+Still looking? Check out our trending picks just for you
+
+### **2\. Talk Differently to Premium vs Free Users**
+
+**Scenario**: You offer free and premium plans.
+
+**Email Output:**
+
+**Subject**: Your Premium plan is about to expire
+
+**Body**:
+
+Hi Ravi,
+
+**_`{{\#if isPremium}}`_**
+
+Renew now to continue enjoying priority access and premium features.  
+[Renew Now]
+
+**_`{{else}}`_**
+
+Go Premium today—get faster support, no ads, and early access to new features.  
+[Upgrade Now]
+
+### **3\. Show Local Offers Based on User Location**
+
+**Scenario**: You want Mumbai users to know about a local store offer.
+
+**Email Output:**
+
+**Subject**: Special offer just for our Mumbai fam\!
+
+**Body**:
+
+Hi Vinny,
+
+**_`{{\#if location \== 'Mumbai'}}`_**
+
+Visit our Bandra store this weekend and enjoy 15% off exclusively for you\!  
+Get Directions
+
+**_`{{else}}`_**
+
+Explore offers near you or shop online—great deals await\!  
+Shop Now
+
+## [**How to Use Handlebars in MSG91**](https://msg91.com/help/email/personalize-emails-with-handlebars-in-msg91)
+
+Follow these simple steps to start building your dynamic templates:
+
+1. **Log in** to your MSG91 Dashboard
+
+2. Navigate to **Email \> Templates**
+
+3. Click **Create Template**
+
+4. Add smart variables like `{{name}}`, `{{product}}` and use conditions like `{{#if}}`
+
+5. Map your data via panel or API
+
+6. **Preview & test** your email using real sample data
+
+7. Send campaigns that feel tailor-made for every recipient
+
+## [**Why Businesses Choose Handlebars for Email Personalization**](https://msg91.com/email)
+
+When personalization is automated and accurate, your email strategy transforms:
+
+-   **Smarter Campaigns** – Reach diverse users with one dynamic template
+
+-   **Higher Relevance** – Emails match user behavior, plan, or location
+
+-   **Faster Execution** – No delays building multiple templates
+
+-   **Fewer Errors** – Logic-driven content reduces manual mistakes
+
+It’s personalization at scale—without the scale of work.
+
+## **Best Practices for Handlebars Success**
+
+✔️ Use clean and meaningful variable names
+
+✔️ Always test templates with and without data
+
+✔️ Include `{{else}}` fallbacks for empty conditions
+
+✔️ Keep logic structured and easy to read
+
+## [**Start Crafting Smarter Emails Today**](https://msg91.com/email)
+
+If you're reaching hundreds or thousands of users, Handlebars lets you:
+
+-   Send one email with many faces
+
+-   Personalize at scale without hassle
+
+-   Increase conversions with relevant content
+
+## **Ready to make the switch from generic to genius?**
+
+[**Log in now**](https://control.msg91.com/signin/) **to create your first dynamic email template using Handlebars.**
+
+Need help getting started? [**Book a meeting with our email expert**](https://calendly.com/bison-msg91/30min) for hands-on support.
