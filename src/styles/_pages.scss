@@ -44,6 +44,9 @@
     ul {
         @apply list-disc flex flex-col gap-3 mb-4 pl-2;
     }
+    ol {
+        @apply list-decimal flex flex-col gap-3 mb-4 pl-8;
+    }
     strong {
         @apply font-bold;
     }
