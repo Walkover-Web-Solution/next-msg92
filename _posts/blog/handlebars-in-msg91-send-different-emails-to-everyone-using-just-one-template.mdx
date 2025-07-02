@@ -43,6 +43,8 @@ Let’s explore how **email templates** powered by Handlebars actually work—fo
 
 **Body**:
 
+***`{{#if isPremium}}`***
+
 Hi Sana,
 
 Looks like you left these behind:
@@ -52,6 +54,8 @@ Headphone – ₹1999
 Complete Your Purchase
 
 **_`{{else}}`_**
+
+Hi Sana,
 
 Still looking? Check out our trending picks just for you
 
@@ -70,9 +74,10 @@ Hi Ravi,
 **_`{{\#if isPremium}}`_**
 
 Renew now to continue enjoying priority access and premium features.  
-Renew Now
+[Renew Now]
 
 **_`{{else}}`_**
+
 Go Premium today—get faster support, no ads, and early access to new features.  
 [Upgrade Now]
 
@@ -94,6 +99,7 @@ Visit our Bandra store this weekend and enjoy 15% off exclusively for you\!
 Get Directions
 
 **_`{{else}}`_**
+
 Explore offers near you or shop online—great deals await\!  
 Shop Now
 
