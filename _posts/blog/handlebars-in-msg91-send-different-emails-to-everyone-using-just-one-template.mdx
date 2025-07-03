@@ -43,7 +43,7 @@ Let’s explore how **email templates** powered by Handlebars actually work—fo
 
 **Body**:
 
-***`{{#if isPremium}}`***
+**_`{{#if cartItems}}`_**
 
 Hi Sana,
 
@@ -69,16 +69,19 @@ Still looking? Check out our trending picks just for you
 
 **Body**:
 
-Hi Ravi,
-
 **_`{{\#if isPremium}}`_**
+
+Hi Ravi,
 
 Renew now to continue enjoying priority access and premium features.  
 [Renew Now]
 
 **_`{{else}}`_**
 
-Go Premium today—get faster support, no ads, and early access to new features.  
+Hi Ravi,
+
+Go Premium today—get faster support, no ads, and early access to new features.
+
 [Upgrade Now]
 
 ### **3\. Show Local Offers Based on User Location**
@@ -91,14 +94,16 @@ Go Premium today—get faster support, no ads, and early access to new features.
 
 **Body**:
 
-Hi Vinny,
-
 **_`{{\#if location \== 'Mumbai'}}`_**
+
+Hi Vinny,
 
 Visit our Bandra store this weekend and enjoy 15% off exclusively for you\!  
 Get Directions
 
 **_`{{else}}`_**
+
+Hi Vinny,
 
 Explore offers near you or shop online—great deals await\!  
 Shop Now
