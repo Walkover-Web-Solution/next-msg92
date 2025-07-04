@@ -1,21 +1,27 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { MdMenu } from 'react-icons/md';
 import styles from './MenuBarComp.module.scss';
 import { BtnWithHideIco, LinkText } from '../UIComponent/Buttons/LinkButton';
 import { useEffect, useState } from 'react';
 import getURL from '@/utils/getURL';
-import getPricingURL from '@/utils/getPricingURL';
 
 export default function MenuBarComp({ componentData, pageInfo }) {
     const [nav, setNav] = useState('hide');
     const [type, setType] = useState('products');
     // Access cookies country
+    const [pricingPath, setPricingPath] = useState('/pricing/sms');
     let cookiesCountry = null;
     if (typeof document !== 'undefined') {
         const match = document.cookie.match('(^|;)\\s*country\\s*=\\s*([^;]+)');
         cookiesCountry = match ? match.pop() : null;
     }
+
+    useEffect(() => {
+        setPricingPath(
+            cookiesCountry && cookiesCountry !== 'global' ? '/' + cookiesCountry + '/pricing/sms' : '/pricing/sms'
+        );
+    }, [cookiesCountry]);
+
     useEffect(() => {
         if (nav === 'show') {
             document.body.style.overflow = 'hidden';
@@ -23,9 +29,9 @@ export default function MenuBarComp({ componentData, pageInfo }) {
             document.body.style.overflow = 'auto';
         }
     }, [nav]);
-    const pricingPath =
-        cookiesCountry && cookiesCountry !== 'global' ? '/' + cookiesCountry + '/pricing/sms' : '/pricing/sms';
+
     const hidden = componentData?.hide?.includes(pageInfo?.page);
+
     const handleMiniMenu = () => {
         if (nav === 'show') {
             setNav('hide');
@@ -282,7 +288,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     setType('products');
                                 }}
                                 className='text-link'
-                                href={pricingPath}
+                                href={pricingPath || '/pricing/sms'}
                             >
                                 {componentData?.pricing}
                             </a>

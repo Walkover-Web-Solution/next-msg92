@@ -9,7 +9,7 @@ function Pagination({ current, pages, link }) {
                     {it.excerpt ? (
                         '...'
                     ) : (
-                        <a legacyBehavior href={link.as(it.page)}>
+                        <a href={link.as(it.page)}>
                             <span className={it.page === current ? 'text-white bg-accent px-2 py-1 rounded' : null}>
                                 {it.page}
                             </span>
