@@ -1,53 +1,14 @@
 import Image from 'next/image';
 import TrustedByComp from '../TrustedByComp/TrustedByComp';
 import styles from './BannerComp.module.scss';
-import Prism from 'prismjs';
-import 'prismjs/themes/prism-twilight.css';
-import { useEffect, useState } from 'react';
-import snipped from '@/data/snipped.json';
-import { HTTPSnippet } from 'httpsnippet';
-import { MdCopyAll } from 'react-icons/md';
+import { useState } from 'react';
 import { InlineWidget } from 'react-calendly';
 import getURL from '@/utils/getURL';
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
+import CodeSnippet from '../CodeSnipped/CodeSnipped';
 
 export default function BannerComp({ pageInfo, data }) {
-    const [isCopied, setIsCopied] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [code, setCode] = useState({});
-    const [selectedLanguage, setSelectedLanguage] = useState('curl');
-    const [showLoader, setShowLoader] = useState(false);
-    useEffect(() => {
-        if (pageInfo.page !== 'Numbers') {
-            Prism.highlightAll();
-        }
-    }, [selectedLanguage, snipped, code]);
-
-    const copyText = async (text) => {
-        try {
-            await navigator.clipboard.writeText(text);
-            setIsCopied(true);
-            setTimeout(() => setIsCopied(false), 5000);
-        } catch (err) {
-            console.error('Failed to Copy: ', err);
-        }
-    };
-
-    useEffect(() => {
-        let snippet;
-        if (snipped?.snipped[pageInfo.page]) {
-            snippet = new HTTPSnippet(snipped?.snipped[pageInfo.page]);
-        }
-
-        const snippetCode = {
-            curl: snippet?.convert('shell', 'curl'),
-            node: snippet?.convert('node'),
-            php: snippet?.convert('php'),
-            ruby: snippet?.convert('ruby'),
-            python: snippet?.convert('python'),
-        };
-        setCode(snippetCode);
-    }, [pageInfo]);
 
     return (
         <>
@@ -116,51 +77,7 @@ export default function BannerComp({ pageInfo, data }) {
                     </div>
 
                     <TrustedByComp data={data?.trustedByComp} />
-                    <div className='flex flex-col gap-3'>
-                        {data?.text_h2 && <h2 className='text-center font-semibold text-xl'>{data?.text_h2}</h2>}
-                        {data?.code && (
-                            <div className='md:w-[800px] max-w-full mx-auto flex flex-col gap-0 rounded-lg overflow-hidden border'>
-                                <div role='tablist' className='flex bg-gray-700'>
-                                    {snipped?.languages.map((language, index) => {
-                                        return (
-                                            <a
-                                                key={index}
-                                                role='tab'
-                                                className={` w-full p-2 text-center cursor-pointer transition-all  hover:bg-gray-800 text-sm ${
-                                                    language?.value === selectedLanguage
-                                                        ? 'bg-primary text-white '
-                                                        : 'text-slate-300'
-                                                }`}
-                                                onClick={() => {
-                                                    setSelectedLanguage(language?.value);
-                                                }}
-                                            >
-                                                {language?.name}
-                                            </a>
-                                        );
-                                    })}
-                                </div>
-                                <div className='relative bg-black '>
-                                    <div className='absolute right-0 z-20 text-white flex gap-1 items-center p-4'>
-                                        <button
-                                            className='btn btn-primary btn-sm'
-                                            onClick={() => copyText(code[selectedLanguage])}
-                                        >
-                                            <MdCopyAll />
-                                            {isCopied ? 'Copied!' : 'Copy'}
-                                        </button>
-                                    </div>
-                                    <div className='overflow-auto h-[380px]'>
-                                        <pre className='code-m-0'>
-                                            <code className={`language-javascript ${styles.code_sm} `}>
-                                                {code[selectedLanguage]}
-                                            </code>
-                                        </pre>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-                    </div>
+                    {data?.code && <CodeSnippet curlKey={data?.slug} />}
                 </div>
                 {!data?.code && data?.banner_img && !data?.not_absolute && (
                     <div className={styles.cont}>
