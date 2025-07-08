@@ -53,12 +53,9 @@ export default function TestPage({
             <Head>
                 <title>{title}</title>
 
-                <meta name='description' content={description}></meta>
-                <meta
-                    property='og:title'
-                    content={`Explore the world of ${title} Through our blog and stay informed about the latest developments, expert insights, and valuable tips that matter most. visit at MSG91 -The Best Cloud Communication Platform.`}
-                    key='title'
-                />
+                <meta name='description' content={description} />
+                <meta property='og:title' content={title} key='title' />
+                <meta property='og:description' content={description} key='description' />
                 <link rel='canonical' href={`https://msg91.com/guide/${router?.query?.slug}`} />
             </Head>
             <NotificationBarComp

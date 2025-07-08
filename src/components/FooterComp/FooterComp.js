@@ -2,10 +2,24 @@ import getNestedURL from '@/utils/getNestedURL';
 import getURL from '@/utils/getURL';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function FooterComp({ componentData, pageInfo }) {
     const hidden = componentData?.hide?.includes(pageInfo?.page);
     const year = new Date().getFullYear();
+    const [pricingPath, setPricingPath] = useState('/pricing/sms');
+    let cookiesCountry = null;
+    if (typeof document !== 'undefined') {
+        const match = document.cookie.match('(^|;)\\s*country\\s*=\\s*([^;]+)');
+        cookiesCountry = match ? match.pop() : null;
+    }
+
+    useEffect(() => {
+        setPricingPath(
+            cookiesCountry && cookiesCountry !== 'global' ? '/' + cookiesCountry + '/pricing/sms' : '/pricing/sms'
+        );
+    }, [cookiesCountry]);
+
     if (componentData && !hidden) {
         return (
             <>
@@ -99,10 +113,21 @@ export default function FooterComp({ componentData, pageInfo }) {
                                     <span className='font-semibold'>{componentData?.discover?.name}</span>
                                     <ul className='flex flex-col gap-2'>
                                         {componentData?.discover?.links.map((link, index) => {
-                                            if (link?.link.startsWith('http')) {
+                                            if (link?.link === 'pricing/hello') {
                                                 return (
                                                     <li key={index} className='text-link-white'>
-                                                        <a href={link?.link} target='blank' className='text-gray-200'>
+                                                        <a
+                                                            href={pricingPath || 'pricing/sms'}
+                                                            className='text-gray-200'
+                                                        >
+                                                            {link?.name}
+                                                        </a>
+                                                    </li>
+                                                );
+                                            } else if (link?.link.startsWith('http')) {
+                                                return (
+                                                    <li key={index} className='text-link-white'>
+                                                        <a href={link?.link} target='_blank' className='text-gray-200'>
                                                             {link?.name}
                                                         </a>
                                                     </li>
