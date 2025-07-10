@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"
+      xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <url>
+       <loc>https://msg91.com/help/files/all-you-need-to-know-about-files-option-of-msg91</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.6400</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/vPBghCrTO70/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>What is File Hosting and how to use it?</video:title>
+         <video:description>File-hosting enables you to generate a public URL for any file, which can then be utilized for sharing in various communications.</video:description>
+         <video:publication_date>2023-08-04T05:33:21Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/vPBghCrTO70</video:player_loc>
+         <video:duration>108</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/segmento/how-to-use-msg91-with-shopify</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.5120</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/PhkwAhukOh0/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>MSG91 Plugin Integration With Shopify</video:title>
+         <video:description>This video will help you integrating MSG91 plugin with Shopify.</video:description>
+         <video:publication_date>2022-12-09T09:28:52Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/PhkwAhukOh0</video:player_loc>
+         <video:duration>239</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/add-ons-and-plug-ins/freshworks-how-to-integrate-the-msg91-plugin-in-freshworks</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.5120</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/Fb-hYH0ZUbE/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>MSG91 Integration with Freshworks</video:title>
+         <video:description></video:description>
+         <video:publication_date>2022-10-01T11:08:02Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Fb-hYH0ZUbE</video:player_loc>
+         <video:duration>121</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/add-ons-and-plug-ins/excel-how-to-use-the-excel-plugin-for-sending-campaign</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.5120</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/GsT3Crjw7uk/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to use Excel plugin</video:title>
+         <video:description>Excel Plugin empowers you to send SMS, Email, etc directly from the excel sheet. You do not need to upload your excel sheet on the panel. You are allowed to send SMS or Email from the sheet itself without going online.</video:description>
+         <video:publication_date>2022-11-02T09:39:03Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/GsT3Crjw7uk</video:player_loc>
+         <video:duration>157</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/add-ons-and-plug-ins/google-spreadsheet-how-to-send-sms</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.5120</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/sH8U8pU2iMk/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to use Google Spreadsheet for sending Transactional SMS</video:title>
+         <video:description>You can send SMS directly from your Google spreadsheet by using this add-on without switching back and forth to the panel.</video:description>
+         <video:publication_date>2022-11-03T11:38:58Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/sH8U8pU2iMk</video:player_loc>
+         <video:duration>256</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/dlt-registration-in-india</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.5120</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/567giMN_kVo/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>Variable format on DLT and MSG91</video:title>
+         <video:description>Check this video to understand the correct format to define variables while applying SMS content templates on DLT and then to add it in MSG91.</video:description>
+         <video:publication_date>2022-09-22T12:46:34Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/567giMN_kVo</video:player_loc>
+         <video:duration>43</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/sendotp</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.5120</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/vo6D6YBWTds/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to use send OTP API?</video:title>
+         <video:description>How to create send OTP templates and  use send, resend and verify OTP API.</video:description>
+         <video:publication_date>2022-11-12T11:41:23Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/vo6D6YBWTds</video:player_loc>
+         <video:duration>251</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/whatsapp</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.5120</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/2NaYBsNrBL0/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to create WhatsApp Template and send it using API?</video:title>
+         <video:description>This video will help you to understand about adding the WhatsApp Template and sending WhatsApp messages using API.</video:description>
+         <video:publication_date>2023-07-28T10:22:18Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/2NaYBsNrBL0</video:player_loc>
+         <video:duration>135</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/campaign</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.5120</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/ExFwKMClhrE/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to create the Campaign on MSG91</video:title>
+         <video:description>How to create the campaign in MSG91 to use communication channels.</video:description>
+         <video:publication_date>2023-07-28T09:07:22Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/ExFwKMClhrE</video:player_loc>
+         <video:duration>194</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/hello-contact-center</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.5120</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/XRTY-RhuFGQ/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>Get to know about Hello - Inbox overview</video:title>
+         <video:description>&quot;Hello&quot; is a Customer Communications Platform.  It allows you to manage your queries together using an Inbox and makes it easy to personally communicate with them with targeted content, behavior-driven messages, and conversational support.</video:description>
+         <video:publication_date>2023-08-08T06:12:20Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/XRTY-RhuFGQ</video:player_loc>
+         <video:duration>338</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/best-practices</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.5120</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/rMl3WLuPRto/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>All about settings of MSG91</video:title>
+         <video:description>In this video, we will provide you with an in-depth exploration of the various settings available within the MSG91 dashboard.</video:description>
+         <video:publication_date>2023-10-05T09:53:35Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/rMl3WLuPRto</video:player_loc>
+         <video:duration>234</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/voice</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.5120</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/mbjL1wiKF3w/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to use MSG91 voice services?</video:title>
+         <video:description>MSG91 offers an all-in-one business Voice calls service. Easy to setup &amp; integrate. Customized IVR solutions. Call Recording, Call Forwarding, IVR, Speech Analysis, Call Tracking &amp; Recording etc.</video:description>
+         <video:publication_date>2023-08-05T06:20:42Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/mbjL1wiKF3w</video:player_loc>
+         <video:duration>397</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/url-shortener</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.5120</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/qA2NzDYc_qQ/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to use MSG91 Short URL</video:title>
+         <video:description>A URL shortener is a feature that converts a regular URL (the web address that starts with http://) into its condensed format. Using this feature will automatically convert the long URL present in your SMS content into a short one. Once the SMS is delivered and the receiver clicks on the short URL received, it will redirect him/her to your original long URL.</video:description>
+         <video:publication_date>2022-09-30T12:33:50Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/qA2NzDYc_qQ</video:player_loc>
+         <video:duration>122</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/transactional-email</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.5120</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/avbdnbR2ebs/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to do Email domain verification and API integration?</video:title>
+         <video:description>You verify your domain through your domain host (typically where you purchased your domain name). Within your domain host&apos;s DNS records settings, you can create a TXT and MX verification record.</video:description>
+         <video:publication_date>2022-11-05T10:28:36Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/avbdnbR2ebs</video:player_loc>
+         <video:duration>501</video:duration>
+       </video:video>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/09-64mQAGRo/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to add and verify domain?</video:title>
+         <video:description>Email domain verification is a crucial process that involves confirming the authenticity and ownership of a specific email domain. This verification ensures that the domain is legitimate and can be trusted for sending and receiving emails.</video:description>
+         <video:publication_date>2023-09-01T06:26:42Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/09-64mQAGRo</video:player_loc>
+         <video:duration>168</video:duration>
+       </video:video>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/jdhzDnP8kCg/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to send Emails via Campaign?</video:title>
+         <video:description>With MSG91&apos;s comprehensive communication platform, you can effortlessly engage your audience through well-crafted email campaigns. Efficiently reaching out to your recipients becomes a breeze with the user-friendly interface and powerful features.</video:description>
+         <video:publication_date>2023-08-29T05:53:01Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/jdhzDnP8kCg</video:player_loc>
+         <video:duration>118</video:duration>
+       </video:video>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/K4T_Rt-PR7Y/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to use Email API?</video:title>
+         <video:description>An Email API, or Email Application Programming Interface, is a powerful tool that allows developers to integrate email functionality into their applications, websites, or software systems.</video:description>
+         <video:publication_date>2023-09-02T05:53:59Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/K4T_Rt-PR7Y</video:player_loc>
+         <video:duration>265</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/dlt-registration-in-india/get-approval-for-your-sms-content-on-dlt-platform</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/LGDOpOjig4M/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>DLT Content Template Registration Process on PingConnect | MSG91</video:title>
+         <video:description>Complete Guide for Content Template Registration on Ping Connect by MSG91
+Also, you can refer to this help doc for all documentation needs -
+https://help.msg91.com/article/366-content-template-registration-dlt</video:description>
+         <video:publication_date>2020-12-17T13:03:45Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/LGDOpOjig4M</video:player_loc>
+         <video:duration>178</video:duration>
+       </video:video>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/pt1DO4_GtsU/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>DLT Content Template Registration Process on VILPower | MSG91</video:title>
+         <video:description>Complete Guide for Content Template Registration on VILPower by MSG91
+Also, you can refer to this help doc for all documentation needs -
+https://help.msg91.com/article/366-content-template-registration-dlt</video:description>
+         <video:publication_date>2020-12-17T13:25:17Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/pt1DO4_GtsU</video:player_loc>
+         <video:duration>161</video:duration>
+       </video:video>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/spg_TwW-vJE/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>DLT Content Template Registration Process on TrueConnect | MSG91</video:title>
+         <video:description>Complete Guide for Content Template Registration on TrueConnect JIO  by MSG91
+Also, you can refer to this help doc for all documentation needs -
+https://help.msg91.com/article/366-content-template-registration-dlt</video:description>
+         <video:publication_date>2020-12-17T13:18:11Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/spg_TwW-vJE</video:player_loc>
+         <video:duration>160</video:duration>
+       </video:video>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/ZEnf_U0UOyk/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>Enterprise   Template Registration SB2020</video:title>
+         <video:description></video:description>
+         <video:publication_date>2020-02-07T17:10:55Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/ZEnf_U0UOyk</video:player_loc>
+         <video:duration>86</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/dlt-registration-in-india/error-description-sms-not-matched-with-dlt-template</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/jDMGMLkeyOM/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>SMS Failure Due To Content Mismatch on DLT</video:title>
+         <video:description>This video is to help you if your SMS is failing due to content mismatch in your API call with the content in DLT.</video:description>
+         <video:publication_date>2022-10-31T09:12:12Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/jDMGMLkeyOM</video:player_loc>
+         <video:duration>114</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/dlt-registration-in-india/map-sms-content-template-on-msg91-api-panel</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/sho6sQqLkyk/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>OneAPI | Mapping and Testing of DLT Template Id in MSG91 Panel</video:title>
+         <video:description>OneAPI | Mapping and Testing of DLT Template Id in MSG91 Panel</video:description>
+         <video:publication_date>2021-03-04T10:06:20Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/sho6sQqLkyk</video:player_loc>
+         <video:duration>200</video:duration>
+       </video:video>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/Klcfpl-1O2U/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>SMSAPI | Mapping and Testing of DLT Template Id from MSG91 Panel and API</video:title>
+         <video:description>MSG91 brings AI-powered closest match technology, which ensures seamless transaction toward the new DLT Template Id regime.</video:description>
+         <video:publication_date>2021-03-04T12:42:31Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Klcfpl-1O2U</video:player_loc>
+         <video:duration>230</video:duration>
+       </video:video>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/5Oeb3ro6UyQ/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>SendOTP | Mapping and Testing DLT Template Id on MSG91 Panel</video:title>
+         <video:description></video:description>
+         <video:publication_date>2021-03-04T09:55:41Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/5Oeb3ro6UyQ</video:player_loc>
+         <video:duration>191</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/dlt-registration-in-india/entity-registration-on-dlt-platform</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/CPbV9WO14J4/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>Entity Registration process on DLT platform | By MSG91</video:title>
+         <video:description>As you all know, TRAI and Telecom Operators have implemented DLT. Now, Sender Id (Header) Registration is mandatory on DLT platform. 
+Here is a small video taking you through the Entity Registration process and answering few of your queries.
+
+Please ignore the skip part of the payment option as Pingconnect is having paid registration so you need to pay the amount to the operator.</video:description>
+         <video:publication_date>2020-06-05T12:43:34Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/CPbV9WO14J4</video:player_loc>
+         <video:duration>852</video:duration>
+       </video:video>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/ZOtG3JNphJc/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>Enterprise &amp; Telemarketer Registration</video:title>
+         <video:description></video:description>
+         <video:publication_date>2020-02-07T17:11:34Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/ZOtG3JNphJc</video:player_loc>
+         <video:duration>249</video:duration>
+       </video:video>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/bVDw2ylgv_o/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>Enterprise   Header Registration</video:title>
+         <video:description></video:description>
+         <video:publication_date>2020-02-07T17:10:30Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/bVDw2ylgv_o</video:player_loc>
+         <video:duration>132</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/dlt-registration-in-india/dlt-faqs</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/JtrrtLRh4wI/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>TeleMarketer Registration process on DLT Platform | By MSG91</video:title>
+         <video:description>As you all know, TRAI and Telecom Operators have implemented DLT. Now, Sender Id (Header) Registration is mandatory on DLT platform. 
+Here is a small video specially for TeleMarketers, taking them through the TeleMarketer Registration process and answering few of your queries.</video:description>
+         <video:publication_date>2020-06-05T15:35:01Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/JtrrtLRh4wI</video:player_loc>
+         <video:duration>568</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/text-sms/how-to-send-sms-using-an-excel-file-from-the-send-sms-option</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/mAOFd28ggBg/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to send SMS using an excel file?</video:title>
+         <video:description></video:description>
+         <video:publication_date>2019-09-05T08:25:21Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/mAOFd28ggBg</video:player_loc>
+         <video:duration>41</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/integration-guides/why-to-integrate-msg91-api-using-socket</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/bvt8GxdM-wM/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>Easily Integrate MSG91 API with Socket - English</video:title>
+         <video:description>Integrate MSG91 API with Socket for quick and easy integration.
+
+Socket provides an API integration platform which makes third party API integration easy. Socket can also help you configure SMS in any software like CRM, WooCommerce, Magento etc. Also, you can not only send SMS, but can also send Emails, make entries in Slack, Trello, Google Sheet etc. using Socket.</video:description>
+         <video:publication_date>2017-02-14T09:09:44Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/bvt8GxdM-wM</video:player_loc>
+         <video:duration>123</video:duration>
+       </video:video>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/cvdvTgz3j9A/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>Easily Integrate MSG91 API with Socket - Hindi</video:title>
+         <video:description>Integrate MSG91 API with Socket for quick and easy integration.
+
+Socket provides an API integration platform which makes third party API integration easy. Socket can also help you configure SMS in any software like CRM, WooCommerce, Magento etc. Also, you can not only send SMS, but can also send Emails, make entries in Slack, Trello, Google Sheet etc. using Socket.</video:description>
+         <video:publication_date>2017-02-14T09:16:19Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/cvdvTgz3j9A</video:player_loc>
+         <video:duration>141</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/delivery-report/how-to-automate-your-reports-via-dashboard</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/sC2FFXv_R8Y/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to export delivery report?</video:title>
+         <video:description></video:description>
+         <video:publication_date>2019-09-05T10:26:36Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/sC2FFXv_R8Y</video:player_loc>
+         <video:duration>37</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/whatsapp/how-to-begin-with-whatsapp</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/SXbcJ3ClruA/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>MSG91 WhatsApp Onboarding and basic Features.</video:title>
+         <video:description></video:description>
+         <video:publication_date>2024-08-10T13:38:15Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/SXbcJ3ClruA</video:player_loc>
+         <video:duration>390</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/add-ons-and-plug-ins/wordpress-and-woo-commerce-how-to-send-notifications-and-otp-sms</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/e-moO1AYg8Q/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>Login with Otp WordPress Plugin | MSG91 | Login with OTP in PHP | WordPress Login with SMS | 2FA</video:title>
+         <video:description>orion | login with otp wordpress | login with sms code | msg91  woocommerce | MSG91 sms tutorial | MSG91 sms tutorial php | MSG91 sms api | MSG91 sms | MSG91 WordPress Plugin | login with otp | authentication | 2fa | sms login | otp login | WordPress Login | passwordless login | MSG91 wordpress tutorial | MSG91 tutorial | MSG91 sender id | MSG91 sms review | MSG91 trial | how to send otp sms using php free
+
+Download this plugin for free from WordPress.org:
+https://wordpress.org/plugins/orion-login-with-sms/
+
+Please follow me on: 
+
+Twitter: 
+https://twitter.com/imranhsayed</video:description>
+         <video:publication_date>2019-06-30T09:45:19Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/e-moO1AYg8Q</video:player_loc>
+         <video:duration>603</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/add-ons-and-plug-ins/how-to-send-sms-from-excel-plugin</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/0GwPvfc_B8g/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to use excel plugin for sending SMS from the excel sheet?</video:title>
+         <video:description></video:description>
+         <video:publication_date>2019-09-05T11:37:27Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/0GwPvfc_B8g</video:player_loc>
+         <video:duration>112</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/resellers/what-is-the-meaning-of-ssl-certificate-error-1659610637296715</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/yHXUU60oOp8/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to add SSL for your reseller website?</video:title>
+         <video:description>Tutorial on adding SSL certificate for your reseller website.</video:description>
+         <video:publication_date>2018-05-28T21:31:05Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/yHXUU60oOp8</video:player_loc>
+         <video:duration>65</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/resellers/how-to-add-clients-under-reseller-panel</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/3mX21hAh8aw/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to add client under a reseller account?</video:title>
+         <video:description></video:description>
+         <video:publication_date>2019-09-05T10:44:52Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/3mX21hAh8aw</video:player_loc>
+         <video:duration>65</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/resellers/how-to-have-my-own-website-for-selling-sms</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/EPrDYCyBX0g/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>MSG91: How to point the cname for my white labeled reseller website?</video:title>
+         <video:description>Tutorial for cname pointing for reseller website!</video:description>
+         <video:publication_date>2018-05-28T21:22:50Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/EPrDYCyBX0g</video:player_loc>
+         <video:duration>79</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/resellers/how-does-client-search-work</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/1bVBMYjI29U/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to use client search</video:title>
+         <video:description></video:description>
+         <video:publication_date>2018-04-25T11:03:38Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/1bVBMYjI29U</video:player_loc>
+         <video:duration>64</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/resellers/can-my-clients-also-pay-me-online-if-yes-then-how</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/ZJGKjXcfu4k/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to integrate payment gateway in reseller panel</video:title>
+         <video:description></video:description>
+         <video:publication_date>2018-04-25T19:43:08Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/ZJGKjXcfu4k</video:player_loc>
+         <video:duration>67</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/credits/where-can-i-download-the-invoice</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/GWTKTP0VzSw/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>Where can I get Invoice?</video:title>
+         <video:description></video:description>
+         <video:publication_date>2019-09-05T10:14:37Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/GWTKTP0VzSw</video:player_loc>
+         <video:duration>33</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/help/virtual-number/what-is-a-virtual-number-or-longcode-what-is-keyword-and-inbox-balance</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.4096</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/kNOb4qApnzw/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>How to use Virtual number and Call back URL</video:title>
+         <video:description></video:description>
+         <video:publication_date>2018-04-24T10:28:11Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/kNOb4qApnzw</video:player_loc>
+         <video:duration>139</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/guide/why-you-need-right-tools-make-data-driven</loc>
+       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.1678</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/Tk2igpfPt_o/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>Mobile World Congress 2018 - Mobivity &amp; Subway Present on the Future of Messaging as a Platform</video:title>
+         <video:description>Learn about the future of Messaging as a Platform using tools like Google&apos;s RCS Messaging Program, presented at Mobile World Congress 2018 in Barcelona by Laura Balinskas, Senior Digital Marketing Manager for Subway, and David Galante, Senior Vice President of Product for Mobivity.</video:description>
+         <video:publication_date>2018-03-19T18:37:57Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/Tk2igpfPt_o</video:player_loc>
+         <video:duration>495</video:duration>
+       </video:video>
+  </url>
+  <url>
+       <loc>https://msg91.com/guide/integrated-marketing-communication-strategy-part-three</loc>
+       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.1342</priority>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/IPYeCltXpxw/2.jpg</video:thumbnail_loc> 
+         <video:title>Communication Strategy - Third &amp; Final Part of the Three-Piece Tips to Ace Mobile Messaging.</video:title>
+         <video:description>Simply put, a marketing communication strategy either used by an individual or an organization is a strategy used to convey the communication effectively. It includes a message what you want to convey, a medium the channel you use and the target to whom you want to convey.</video:description>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/watch?v=IPYeCltXpxw</video:player_loc>
+       </video:video>
+  </url>
+</urlset>

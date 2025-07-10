@@ -27,10 +27,10 @@
 //blog
 .blog-body-cont {
     h2 {
-        @apply text-2xl mt-6 mb-3;
+        @apply text-2xl mt-6 mb-1;
     }
     h3 {
-        @apply text-xl mt-4 mb-2;
+        @apply text-xl mt-4 mb-0;
     }
     h4 {
         @apply text-lg mt-2 mb-2;
@@ -52,6 +52,9 @@
     }
     hr{
         @apply mt-2
+    }
+    span{
+        height: 8px;
     }
     br {
         &.br_1{
