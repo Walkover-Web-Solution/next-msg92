@@ -33,6 +33,7 @@ const slugToPostContent = ((postContents) => {
 export default function TestPage({
     source,
     title,
+    metaTitle,
     description,
     author,
     date,
@@ -51,10 +52,10 @@ export default function TestPage({
     return (
         <>
             <Head>
-                <title>{title}</title>
+                <title>{metaTitle}</title>
 
                 <meta name='description' content={description} />
-                <meta property='og:title' content={title} key='title' />
+                <meta property='og:title' content={metaTitle} key='title' />
                 <meta property='og:description' content={description} key='description' />
                 <link rel='canonical' href={`https://msg91.com/guide/${router?.query?.slug}`} />
             </Head>
@@ -119,6 +120,7 @@ export async function getStaticProps(slug) {
     });
     const thumbnailImage = matterResult?.data?.thumbnail;
     const title = matterResult?.data?.title;
+    const metaTitle = matterResult?.data.metaTitle || title;
     const description = matterResult?.data?.description;
     const author = matterResult?.data?.author;
     const content = matterResult?.content;
@@ -131,6 +133,7 @@ export async function getStaticProps(slug) {
             slugData,
             source: mdxSource || '',
             title: title || '',
+            metaTitle: metaTitle,
             description: description || '',
             author: author || '',
             date: date,
