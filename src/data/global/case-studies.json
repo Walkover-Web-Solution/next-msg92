@@ -601,7 +601,7 @@
                 {
                     "slug": "grabonrent",
                     "name": "Grab on rent",
-                    "title": "GrabOnRent updates customers of their orders and offers with SMS via MSG91",
+                    "title": "Grab On Rent updates customers of their orders and offers with SMS via MSG91",
                     "industry": " Services (Online Rental Services)",
                     "purpose": "Communication APIs, Number Verification",
                     "features": "Programmable SMS, Send OTP",
@@ -643,7 +643,7 @@
                 {
                     "slug": "kartfood",
                     "name": "Kartfood",
-                    "title": "Joey Rooms keeps their clients updated with SMS via MSG91",
+                    "title": "Kartfood keeps their clients updated with SMS via MSG91",
                     "industry": "Services (Restaurant Chain)",
                     "purpose": "Communication APIs",
                     "features": "Programmable SMS",
@@ -818,8 +818,8 @@
                 {
                     "slug": "technovision",
                     "name": "Technovision",
-                    "title": "Sankalp India Foundation informs blood donors and recipients with SMS via MSG91",
-                    "industry": "NGO (Blood Donation)",
+                    "title": "Technovision is managing their operations by SMS via MSG91",
+                    "industry": "Tech",
                     "purpose": "Communication APIs",
                     "features": "Programmable SMS",
                     "caseStudies": "Technovision is an E commerce<a class='text-link active-link' href='https://www.technovision.com/'>website</a> which sells mobile phones and accessories. To ensure a seamless and efficient service, Technovision has been rigorously working on sending the offers updates and other important information for their customer’s satisfaction.",
@@ -1000,7 +1000,7 @@
                 },
                 {
                     "slug": "zing",
-                    "name": "Zing",
+                    "name": "ZingHR",
                     "title": "ZingHR communicates with the potential candidates using SMS via MSG91",
                     "industry": "Services (HR-Tech CRM)",
                     "purpose": "Communication APIs",
@@ -1039,7 +1039,7 @@
                 {
                     "slug": "indialends",
                     "name": "Indialends",
-                    "title": "ZingHR communicates with the potential candidates using SMS via MSG91",
+                    "title": "Indialends communicates with the potential candidates using SMS via MSG91",
                     "industry": "Services (HR-Tech CRM)",
                     "purpose": "Communication APIs",
                     "features": "Programmable SMS",
