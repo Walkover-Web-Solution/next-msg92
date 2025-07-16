@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import style from './ChatBotDemoComp.module.scss';
 import ChatBotDemoPagination from './ChatBotDemoPagination/ChatBotDemoPagination';
+import Script from 'next/script';
 
 export default function ChatBotDemoComp({ templateList, totalPages, currentPage }) {
     const [selectedTemplate, setSelectedTemplate] = useState({});
@@ -74,6 +75,33 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
 
     return (
         <>
+            <Script id='whatsapp-widget-options' strategy='afterInteractive'>
+                {`
+         var options = {
+           brandSetting: {
+             brandImg: "",
+             welcomeText: "Hi there!\\nHow can I help you?",
+             messageText: "Hi, I want to Test the chatbot !",
+             phoneNumber: "917316914306",
+           },
+           chatButtonSetting: {
+             backgroundColor: "#24d366",
+             ctaText: "Chat with us",
+             marginLeft: "0",
+             marginRight: "7",
+             marginBottom: "75",
+             position: "right",
+           },
+           enabled: true,
+           isNewChatWidget: true
+         };
+       `}
+            </Script>
+            <Script
+                type='text/javascript'
+                onload='CreateWhatsappChatWidget(options)'
+                src='https://msg91.com/js/waWidget.js'
+            ></Script>
             <div className='container flex lg:flex-row flex-col cont_p lg:gap-24 gap-10 justify-between'>
                 <div className='flex flex-col gap-6 lg:w-2/3 w-full'>
                     <div className='flex flex-col gap-3'>
