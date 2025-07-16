@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { LinkText } from '../UIComponent/Buttons/LinkButton';
-import Link from 'next/link';
 
 export default function CaseStudyComp({ data, pageInfo }) {
     //tag filter
