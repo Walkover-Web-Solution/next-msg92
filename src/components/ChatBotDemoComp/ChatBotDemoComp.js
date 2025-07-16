@@ -82,7 +82,7 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
                             Experience AI Chatbots in Action, Start Chatting Now!
                         </h1>
                         <h2 className='text-lg'>
-                            Integrate AI-powered chatbot with WhatsApp, Chatbot, Facebook Messenger and more channels
+                            Connect your AI-powered chatbot to WhatsApp, Facebook Messenger, and other channels
                         </h2>
                     </div>
 
