@@ -80,7 +80,7 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
          var options = {
            brandSetting: {
              brandImg: "https://msg91.com/assets/brand/favicon.svg",
-             welcomeText: "Hi there!\\nHow can I help you?",
+             welcomeText: "Hey, Welcome to MSG91, Try AI Chatbot Now !",
              messageText: "Hi, I want to Test the chatbot !",
              phoneNumber: "917316914306",
            },
