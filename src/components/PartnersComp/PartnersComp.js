@@ -1,14 +1,11 @@
 import { InlineWidget } from 'react-calendly';
 import { MdDoneOutline } from 'react-icons/md';
-export default function PartnersComp({ pageInfo, data }) {
+export default function PartnersComp({ data }) {
     return (
         <>
-            {' '}
             <div className='container gap-6 py-20'>
                 <h1 class='text-4xl font-bold mb-2 weight-700'>{data?.heading || ' this is heading '}</h1>
-                <h2 class='text-xl font-normal mb-4 w-full lg:w-1/2 gap-6'>
-                    {data?.subheading || ' this is heading '}
-                </h2>
+                <p class='text-xl font-normal mb-4 w-full lg:w-1/2 gap-6'>{data?.subheading || ' this is heading '}</p>
                 <a href={data?.doc_btn_link} className='btn btn-outline sm:btn-sm md:btn-md  bg-black py-2 text-white'>
                     {data?.doc_btn}
                 </a>
@@ -18,34 +15,28 @@ export default function PartnersComp({ pageInfo, data }) {
                     <h2 class='text-4xl font-bold '>{data?.partnership?.heading || ' this is heading '}</h2>
 
                     {data?.partnership?.cards.map((card, index) => (
-                        <div key={index} className='flex flex-col lg:flex-row gap-6 bg-white'>
-                            {index % 2 === 0 ? (
-                                <>
-                                    <div className='flex-1 flex flex-col justify-center items-start p-4'>
-                                        <h3 className='text-lg font-bold mb-4'>{card?.heading}</h3>
-                                        <p>{card?.content}</p>
-                                    </div>
-                                    <div className='flex-1'>
-                                        <img src={card?.icon} alt={card?.heading} className='w-full h-auto' />
-                                    </div>
-                                </>
-                            ) : (
-                                <>
-                                    <div className='flex-1'>
-                                        <img src={card?.icon} alt={card?.heading} className='w-full h-auto' />
-                                    </div>
-                                    <div className='flex-1 flex flex-col justify-center items-start p-4'>
-                                        <h3 className='text-lg font-bold mb-4'>{card?.heading}</h3>
-                                        <p>{card?.content}</p>
-                                    </div>
-                                </>
-                            )}
+                        <div
+                            key={index}
+                            className={`flex flex-col ${
+                                index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                            } gap-6 bg-white rounded-[30px]`}
+                        >
+                            <div className='flex-1 flex flex-col justify-center items-start p-lg-10 p-md-6 p-4'>
+                                <h3 className='text-lg font-bold mb-4'>{card?.heading}</h3>
+                                <p>{card?.content}</p>
+                            </div>
+                            <div className='flex-1 flex items-center justify-center p-4'>
+                                <img src={card?.icon} alt={card?.heading} className='w-full h-auto' />
+                            </div>
                         </div>
                     ))}
                 </div>
             </div>
             <div id='partnership-meet' className='container'>
-                <InlineWidget url='https://calendly.com/d/y3n-29s-29h' styles={{ width: '100%', height: '700px' }} />
+                <InlineWidget
+                    url='https://calendly.com/partnership-msg91/discussion'
+                    styles={{ width: '100%', height: '720px' }}
+                />
             </div>
             <div className='bg-neutral'>
                 <div className='container flex flex-col gap-6 py-20'>
