@@ -159,7 +159,7 @@ export default function IntegrationAppComp({ data }) {
                     </a>
                 </div>
                 {isPluginModalOpen && (
-                    <dialog id='plugin_modal' className='modal'>
+                    <dialog id='plugin_modal' className='modal' open>
                         <div className='modal-box'>
                             <button
                                 onClick={() => setIsPluginModalOpen(false)}
@@ -167,10 +167,7 @@ export default function IntegrationAppComp({ data }) {
                             >
                                 ✕
                             </button>
-                            <InlineWidget
-                                url='https://calendly.com/d/y3n-29s-29hy?utm_campaign=tigerplugin&utm_source=tally&utm_medium=website'
-                                styles={{ height: '820px' }}
-                            />
+                            <InlineWidget url='https://calendly.com/d/y3n-29s-29h' styles={{ height: '820px' }} />
                         </div>
                     </dialog>
                 )}
