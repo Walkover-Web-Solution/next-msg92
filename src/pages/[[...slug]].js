@@ -43,10 +43,13 @@ import CompareBannerComp from '@/components/compareComp/compareBannerComp/compar
 import CompareGridComp from '@/components/compareComp/compareGridComp/compareGridComp';
 import CompareTableComp from '@/components/compareComp/compareTableComp/compareTableComp';
 import SLAComp from '@/components/SLAComp/SLAComp';
-
 import DemoChatBotComp from '@/components/DemoChatBotComp/DemoChatBotComp';
 import EcommerceStoreComp from '@/components/EcommerceStoreComp/EcommerceStore';
+import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/CaseStudyPageComp';
+import WhyChooseMSG91 from '@/components/WhyChooseMSG91/WhyChooseMSG91';
 import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromTextlocal';
+import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
+
 /* files */
 import specialPages from '@/data/specialPages.json';
 
@@ -54,7 +57,6 @@ import specialPages from '@/data/specialPages.json';
 import { useRouter } from 'next/router';
 import PreFooterMFTL from '@/components/migrateFromTextlocal/preFooterMFTL/preFooterMFTL';
 import CTAMFTL from '@/components/migrateFromTextlocal/ctaMFTL/ctaMFTL';
-import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/CaseStudyPageComp';
 
 const Components = {
     BannerComp,
@@ -105,6 +107,8 @@ const Components = {
     PreFooterMFTL,
     CTAMFTL,
     CaseStudyPageComp,
+    WhyChooseMSG91,
+    WhatsAppIntegrations,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
