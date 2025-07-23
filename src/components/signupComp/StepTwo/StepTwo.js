@@ -13,6 +13,7 @@ class StepTwo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            emailInputValue: props.emailIdentifierBackup || '',
             emailIdentifier: props.emailIdentifierBackup || '',
             smsIdentifier: props.smsIdentifierBackup || '',
             sourceValue: '',
@@ -128,16 +129,28 @@ class StepTwo extends React.Component {
                                                     <MdCheckCircle className='ico-green text-green-600' />
                                                 </div>
                                             ) : (
-                                                <div className='w-full'>
+                                                <div className='w-full flex flex-col'>
                                                     <input
-                                                        className='input border-gray-300 focus:outline-none w-full focus:border-accent h-10'
+                                                        className={`input focus:outline-none w-full focus:border-accent h-10 ${
+                                                            this.state.emailInputValue.length >= 255
+                                                                ? 'border-red-500'
+                                                                : 'border-gray-300'
+                                                        }`}
                                                         type='email'
                                                         id='emailIdentifier'
                                                         placeholder='Email Address*'
                                                         defaultValue={this.state.emailIdentifier}
-                                                        onInput={(e) => this.props.identifierChange(false)}
+                                                        onInput={(e) => {
+                                                            this.setState({ emailInputValue: e.target.value });
+                                                            this.props.identifierChange(false);
+                                                        }}
                                                         disabled={this.props?.emailAccessToken || isLoading}
+                                                        maxLength={255}
                                                     />
+                                                    <span className='text-[10px] h-2 text-red-500'>
+                                                        {this.state.emailInputValue.length >= 255 &&
+                                                            'Maximum Email Length: 255'}
+                                                    </span>
                                                 </div>
                                             )}
                                             <span>
