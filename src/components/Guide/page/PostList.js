@@ -15,14 +15,7 @@ export default function PostList({ posts, tags, pagination }) {
                         {posts?.map((post, index) => post.slug && <PostItem key={index} post={post} />)}
                     </div>
                     <div>
-                        <Pagination
-                            current={pagination.current}
-                            pages={pagination.pages}
-                            link={{
-                                href: (page) => (page === 1 ? '/guide' : '/guide/page/[page]'),
-                                as: (page) => (page === 1 ? null : '/guide/page/' + page),
-                            }}
-                        />
+                        <Pagination current={pagination.current} pages={pagination.pages} />
                     </div>
                 </div>
             </div>

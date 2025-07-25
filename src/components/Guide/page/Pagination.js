@@ -1,6 +1,6 @@
 import { generatePagination } from '../lib/pagination';
 
-function Pagination({ current, pages, link }) {
+function Pagination({ current, pages }) {
     const pagination = generatePagination(current, pages);
     return (
         <ul className='flex justify-center'>
@@ -9,7 +9,7 @@ function Pagination({ current, pages, link }) {
                     {it.excerpt ? (
                         '...'
                     ) : (
-                        <a href={link.as(it.page)}>
+                        <a href={it.page === 1 ? null : '/guide?page=' + it.page}>
                             <span className={it.page === current ? 'text-white bg-accent px-2 py-1 rounded' : null}>
                                 {it.page}
                             </span>
