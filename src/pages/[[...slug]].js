@@ -49,6 +49,7 @@ import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/Case
 import WhyChooseMSG91 from '@/components/WhyChooseMSG91/WhyChooseMSG91';
 import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromTextlocal';
 import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
+import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -109,6 +110,7 @@ const Components = {
     CaseStudyPageComp,
     WhyChooseMSG91,
     WhatsAppIntegrations,
+    WhatsAppAccountVerification,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
