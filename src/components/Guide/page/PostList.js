@@ -1,7 +1,6 @@
 import React from 'react';
 import Pagination from './Pagination';
 import PostItem from './PostItem';
-import MenuBarComp from '@/components/menuBarComp/menuBarComp';
 
 export default function PostList({ posts, tags, pagination }) {
     return (
@@ -12,17 +11,10 @@ export default function PostList({ posts, tags, pagination }) {
                         Explore the Latest Insights and Updates on MSG91
                     </h1>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 '>
-                        {posts?.map((post, index) => post.slug && <PostItem key={index} post={post} />)}
+                        {posts?.map((post, index) => post.slug && <PostItem key={index} post={post} tags={tags} />)}
                     </div>
                     <div>
-                        <Pagination
-                            current={pagination.current}
-                            pages={pagination.pages}
-                            link={{
-                                href: (page) => (page === 1 ? '/guide' : '/guide/page/[page]'),
-                                as: (page) => (page === 1 ? null : '/guide/page/' + page),
-                            }}
-                        />
+                        <Pagination current={pagination.current} pages={pagination.pages} />
                     </div>
                 </div>
             </div>
