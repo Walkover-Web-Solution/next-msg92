@@ -9,8 +9,8 @@ function Pagination({ current, pages }) {
                     {it.excerpt ? (
                         '...'
                     ) : (
-                        <a href={it.page === 1 ? null : '/guide?page=' + it.page}>
-                            <span className={it.page === current ? 'text-white bg-accent px-2 py-1 rounded' : null}>
+                        <a href={it.page == current ? null : it.page === 1 ? '/guide' : '/guide?page=' + it.page}>
+                            <span className={it.page == current ? 'text-white bg-accent px-2 py-1 rounded' : null}>
                                 {it.page}
                             </span>
                         </a>
