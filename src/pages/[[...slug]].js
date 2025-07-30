@@ -50,6 +50,7 @@ import WhyChooseMSG91 from '@/components/WhyChooseMSG91/WhyChooseMSG91';
 import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromTextlocal';
 import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
 import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
+import WhatsAppDriveSaled from '@/components/WhatsAppDriveSaled';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -111,6 +112,7 @@ const Components = {
     WhyChooseMSG91,
     WhatsAppIntegrations,
     WhatsAppAccountVerification,
+    WhatsAppDriveSaled,
 };
 
 export default function Page({ data, commonData, pageInfo }) {

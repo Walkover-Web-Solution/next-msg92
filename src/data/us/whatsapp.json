@@ -658,7 +658,30 @@
             }
         ]
     },
-    "WhatsAppAccountVerification":{},
+    "WhatsAppDriveSaled": {
+        "heading": "Drive Sales Directly on WhatsApp",
+        "subheading": "Sell Smarter — Where Customers Already Are.",
+        "description": "Showcase products, run ads, take orders — all inside a WhatsApp chat.",
+        "content": [
+            {
+                "title": "Click-to-WhatsApp Ads",
+                "description": "Use Instagram & Facebook to drive leads straight to chat.",
+                "cta": {
+                    "text": "See How It Works →",
+                    "link": "/features/whatsapp-ads"
+                }
+            },
+            {
+                "title": "Make shopping easy on WhatsApp",
+                "description": "Let customers browse, chat, and order with catalogs and payments."
+            },
+            {
+                "title": "Customize Sales Journeys via WhatsApp",
+                "description": "Send bulk offers, upsell intelligently, and close deals faster — all from one panel."
+            }
+        ],
+        "img": ""
+    },
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {
