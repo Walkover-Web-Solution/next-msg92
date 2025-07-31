@@ -1,7 +1,6 @@
 import FooterComp from '@/components/FooterComp/FooterComp';
 import Layout from '@/components/Guide/layout';
 import { countPosts, listPostContent } from '@/components/Guide/lib/posts';
-import { listTags } from '@/components/Guide/lib/tags';
 import PostList from '@/components/Guide/page/PostList';
 import MenuBarComp from '@/components/menuBarComp/menuBarComp';
 import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
