@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Best Cloud Communication Platform for Businesses in United States",
-        "description": "MSG91 is your comprehensive communication platform, offering seamless integration for SMS APIs, email APIs, voice call APIs, and more to enhance business efficiency."
+        "title": "Customer Service Software For Small Business - Customer Support",
+        "description": "Provide customer support with MSG91’s software for small businesses. Streamline communication, resolve queries faster, & boost customer satisfaction."
     },
     "BannerComp": {
         "tagline": "customer solution platform",
@@ -134,7 +134,6 @@
             "stat": "OTPs",
             "per": "per month"
         },
-       
         {
             "fact": "1 Billion+",
             "stat": "Emails sent",
@@ -220,7 +219,6 @@
             }
         ]
     },
-   
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {

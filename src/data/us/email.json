@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Transactional Email | Transactional Email API - MSG91-United States",
-        "description": "Deliver secure and reliable transactional emails with MSG91’s easy-to-integrate Transactional Email API. Enhance communication with your customers effortlessly."
+        "title": "Email Marketing Platform - Email Marketing Automation",
+        "description": "Create, automate, and optimize email campaigns with MSG91’s Email Marketing Platform. Drive engagement, boost conversions, and grow your business effortlessly."
     },
     "BannerComp": {
         "slug": "email",
@@ -44,7 +44,7 @@
     "FeatureComp": {
         "iconColor": "text-email",
         "features": [
-             {
+            {
                 "name": "Create Email Templates with an AI Email Generator in Seconds!",
                 "content": "Accelerate your email creation process with MSG91’s AI Email Generator, which instantly crafts subject lines, headers, and full email content perfectly aligned with your campaign goals and target audience.",
                 "more_content": {

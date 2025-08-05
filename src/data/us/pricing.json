@@ -279,8 +279,8 @@
         },
         "sms": {
             "HeadComp": {
-                "title": "SMS Pricing in United States | MSG91-United States",
-                "description": "Access robust and reliable services such as transactional SMS, communication APIs, and more at affordable prices. Explore the pricing today."
+                "title": "SMS Package - Small Business SMS Service Cost",
+                "description": "Discover affordable SMS packages for small businesses with MSG91. Compare bulk SMS service costs, choose flexible plans, and start messaging at scale."
             },
             "connectComp": {
                 "content": "Connect with our team for a personalized pricing.",
@@ -301,19 +301,19 @@
         },
         "whatsapp": {
             "HeadComp": {
-                "title": "WhatsApp Pricing in United States | MSG91-United States",
-                "description": "Access robust and reliable services such as transactional WhatsApp, communication APIs, and more at affordable prices. Explore the pricing today."
+                "title": "WhatsApp Pricing - WhatsApp Business Account Cost",
+                "description": "Explore transparent WhatsApp Business API pricing with MSG91. Compare message rates, choose the right plan, and scale your communication cost-effectively."
             },
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
-            } 
+            }
         },
         "rcs": {
             "HeadComp": {
-                "title": "RCS Pricing in United States | MSG91-United States",
-                "description": "Access robust and reliable services such as transactional RCS, communication APIs, and more at affordable prices. Explore the pricing today."
+                "title": "RCS Messaging Cost - Rich Communication Services Cost",
+                "description": "Explore transparent RCS messaging costs with MSG91. Leverage Rich Communication Services to deliver interactive, branded messages and enhance user engagement."
             },
             "connectComp": {
                 "know_more": "Know more about"
