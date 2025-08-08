@@ -49,6 +49,22 @@ export default function ChatBotPageComp() {
             <FeaturesAccordionComp data={data} />
             <FeatureWithBulletComp />
             <PluginsAndIntegrationsComp />
+            <MultilingualBot />
         </>
+    );
+}
+
+export function MultilingualBot() {
+    return (
+        <section className='container cont cont_gap cont_p'>
+            <div className='flex flex-col gap-2'>
+                <span className='text-lg uppercase text-[var(--hello-dark-color)] font-bold'>Multilingual Bot</span>
+                <h2 className='text-3xl font-bold'>Go Global With Multilingual AI Chatbot</h2>
+                <p className='subheading'>
+                    Break through language barriers and connect globally with artificial intelligence.
+                </p>
+            </div>
+            <div className='w-full h-[600px] bg-[var(--hello-lite-color)] rounded-lg border'></div>
+        </section>
     );
 }
