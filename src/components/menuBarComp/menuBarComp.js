@@ -190,21 +190,29 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             )}
                             {type === 'integrations' && (
                                 <div className='mt-32 min-w-[640px]'>
-                                    <div className=' flex flex-col gap-4 h-fit w-[300px]'>
+                                    <div className=' flex flex-col gap-2 h-fit w-[300px]'>
                                         {componentData?.integrations_list?.content?.length > 0 &&
                                             componentData?.integrations_list?.content.map((integration, index) => {
                                                 return (
-                                                    <a key={index} href={integration?.link}>
-                                                        <div className='flex items-center gap-2 py-2 px-2 rounded hover:bg-secondary w-full LinkButtonCard'>
-                                                            <img
-                                                                className='h-fit w-1-'
-                                                                src={integration?.icon || 'https://placehold.co/20'}
-                                                                alt={integration?.slug}
-                                                                width={46}
-                                                                height={46}
-                                                            />
+                                                    <a
+                                                        key={index}
+                                                        href={integration?.link}
+                                                        {...(integration?.link?.startsWith('https://msg91.com')
+                                                            ? {}
+                                                            : { target: '_blank', rel: 'noopener noreferrer' })}
+                                                    >
+                                                        <div className='flex items-center gap-2 p-2 rounded hover:bg-secondary w-full LinkButtonCard'>
+                                                            <div className='w-8 h-8 flex items-center justify-center'>
+                                                                <Image
+                                                                    className='h-fit w-8'
+                                                                    src={integration?.icon || 'https://placehold.co/20'}
+                                                                    alt={integration?.slug}
+                                                                    width={46}
+                                                                    height={46}
+                                                                />
+                                                            </div>
                                                             <div className='flex flex-col'>
-                                                                <BtnWithHideIco customClasses='text-xl font-semibold'>
+                                                                <BtnWithHideIco customClasses='text-lg font-semibold'>
                                                                     {integration?.name}
                                                                 </BtnWithHideIco>
                                                                 {integration?.description && (
