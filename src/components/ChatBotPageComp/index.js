@@ -50,6 +50,7 @@ export default function ChatBotPageComp() {
             <FeatureWithBulletComp />
             <PluginsAndIntegrationsComp />
             <MultilingualBot />
+            <PreFooterComp />
         </>
     );
 }
@@ -63,6 +64,19 @@ export function MultilingualBot() {
                 <p className='subheading'>
                     Break through language barriers and connect globally with artificial intelligence.
                 </p>
+            </div>
+            <div className='w-full h-[600px] bg-[var(--hello-lite-color)] rounded-lg border'></div>
+        </section>
+    );
+}
+
+export function PreFooterComp() {
+    return (
+        <section className='container cont cont_gap cont_p'>
+            <div className='flex flex-col gap-2'>
+                <span className='text-lg uppercase text-[var(--hello-dark-color)] font-bold'>Pre Footer</span>
+                <h2 className='text-3xl font-bold'>Pre Footer</h2>
+                <p className='subheading'>Pre Footer</p>
             </div>
             <div className='w-full h-[600px] bg-[var(--hello-lite-color)] rounded-lg border'></div>
         </section>
