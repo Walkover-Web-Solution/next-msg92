@@ -20,12 +20,12 @@ export default function ContactUsComp({ data, pageInfo }) {
                                         <a href='mailto:contact@msg91.com'>contact@msg91.com</a>
                                     </div>
                                     <div className='flex items-center gap-2 text-2xl text-link'>
-                                        <MdCall className='text-2xl' />
-                                        <a href='tel:+6531595004'>+65 31595004</a>
-                                    </div>
-                                    <div className='flex items-center gap-2 text-2xl text-link'>
                                         <MdWhatsapp className='text-2xl' />
                                         <a href='https://wa.me/6531595004'>+65 31595004</a>
+                                    </div>
+                                    <div className='flex items-center gap-2 text-2xl text-link'>
+                                        <MdCall className='text-2xl' />
+                                        <a href='tel:+6531595004'>+65 31595004</a>
                                     </div>
                                 </>
                             ) : (
@@ -34,13 +34,17 @@ export default function ContactUsComp({ data, pageInfo }) {
                                         <MdOutlineEmail />
                                         <a href='mailto:sales@msg91.com'>sales@msg91.com</a>
                                     </div>
+                                    {/* <div className='flex items-center gap-2 text-2xl text-link'>
+                                        <MdWhatsapp className='text-2xl' />
+                                        <a href='https://wa.me/917316914352'>+91 73169 14352</a>
+                                    </div> */}
                                     <div className='flex items-center gap-2 text-2xl text-link'>
                                         <MdCall />
-                                        <a href='tel:+917049088848'>+91 70490 88848</a>
+                                        <a href='tel:+917049088848'>+91 7049088848</a>
                                     </div>
                                     <div className='flex items-center gap-2 text-2xl text-link'>
                                         <MdCall />
-                                        <a href='tel:+918889378605'>+91 88893 78605</a>
+                                        <a href='tel:+918889378605'>+91 8889378605</a>
                                     </div>
                                 </>
                             )}
@@ -58,12 +62,12 @@ export default function ContactUsComp({ data, pageInfo }) {
                             </div>
                             <div className='flex items-center gap-2 text-2xl text-link'>
                                 <MdWhatsapp className='text-2xl' />
-                                <a href='https://wa.me/918818888733'>+91 88188 88733</a>
+                                <a href='https://wa.me/917316914364'>+91 7316914364</a>
                             </div>
 
                             <div className='flex items-center gap-2 text-2xl text-link'>
                                 <MdCall />
-                                <a href='tel:+918818888733'>+91 88188 88733</a>
+                                <a href='tel:+918818888733'>+91 8818888733</a>
                             </div>
                         </div>
                         <button className='btn btn-md btn-primary' onClick={() => setIsSupportModalOpen(true)}>

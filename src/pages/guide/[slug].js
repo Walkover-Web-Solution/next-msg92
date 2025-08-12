@@ -16,7 +16,6 @@ import getCommonCompData from '@/utils/getCommonCompData';
 import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
 import MenuBarComp from '@/components/menuBarComp/menuBarComp';
 import FooterComp from '@/components/FooterComp/FooterComp';
-import { useEffect } from 'react';
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 const component = { ReactPlayer };
@@ -115,7 +114,6 @@ export async function getStaticProps(slug) {
     const matterResult = matter(source, {
         engines: {
             yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }),
-            // engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
         },
     });
     const thumbnailImage = matterResult?.data?.thumbnail;
@@ -138,7 +136,7 @@ export async function getStaticProps(slug) {
             author: author || '',
             date: date,
             thumbnailImage: thumbnailImage || '',
-            tags: tags || '',
+            tags: tags || [],
             commonData,
             pageInfo,
         },

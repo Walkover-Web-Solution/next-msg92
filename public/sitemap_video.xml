@@ -5,7 +5,7 @@
 
   <url>
        <loc>https://msg91.com/help/files/all-you-need-to-know-about-files-option-of-msg91</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <lastmod>2025-07-24T22:53:12+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.6400</priority>
        <video:video>
@@ -19,7 +19,7 @@
   </url>
   <url>
        <loc>https://msg91.com/help/segmento/how-to-use-msg91-with-shopify</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <lastmod>2025-07-24T22:53:12+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.5120</priority>
        <video:video>
@@ -33,7 +33,7 @@
   </url>
   <url>
        <loc>https://msg91.com/help/add-ons-and-plug-ins/freshworks-how-to-integrate-the-msg91-plugin-in-freshworks</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.5120</priority>
        <video:video>
@@ -47,7 +47,7 @@
   </url>
   <url>
        <loc>https://msg91.com/help/add-ons-and-plug-ins/excel-how-to-use-the-excel-plugin-for-sending-campaign</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.5120</priority>
        <video:video>
@@ -61,7 +61,7 @@
   </url>
   <url>
        <loc>https://msg91.com/help/add-ons-and-plug-ins/google-spreadsheet-how-to-send-sms</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.5120</priority>
        <video:video>
@@ -75,7 +75,7 @@
   </url>
   <url>
        <loc>https://msg91.com/help/dlt-registration-in-india</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.5120</priority>
        <video:video>
@@ -89,7 +89,7 @@
   </url>
   <url>
        <loc>https://msg91.com/help/sendotp</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <lastmod>2025-07-24T22:53:12+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.5120</priority>
        <video:video>
@@ -103,7 +103,7 @@
   </url>
   <url>
        <loc>https://msg91.com/help/whatsapp</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <lastmod>2025-07-24T22:53:12+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.5120</priority>
        <video:video>
@@ -114,10 +114,18 @@
          <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/2NaYBsNrBL0</video:player_loc>
          <video:duration>135</video:duration>
        </video:video>
+       <video:video>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/SXbcJ3ClruA/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>MSG91 WhatsApp Onboarding and basic Features.</video:title>
+         <video:description></video:description>
+         <video:publication_date>2024-08-10T13:38:15Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/SXbcJ3ClruA</video:player_loc>
+         <video:duration>390</video:duration>
+       </video:video>
   </url>
   <url>
        <loc>https://msg91.com/help/campaign</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <lastmod>2025-07-24T22:53:12+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.5120</priority>
        <video:video>
@@ -130,22 +138,8 @@
        </video:video>
   </url>
   <url>
-       <loc>https://msg91.com/help/hello-contact-center</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
-       <changefreq>weekly</changefreq>
-       <priority>0.5120</priority>
-       <video:video>
-         <video:thumbnail_loc>https://i.ytimg.com/vi/XRTY-RhuFGQ/mqdefault.jpg</video:thumbnail_loc> 
-         <video:title>Get to know about Hello - Inbox overview</video:title>
-         <video:description>&quot;Hello&quot; is a Customer Communications Platform.  It allows you to manage your queries together using an Inbox and makes it easy to personally communicate with them with targeted content, behavior-driven messages, and conversational support.</video:description>
-         <video:publication_date>2023-08-08T06:12:20Z</video:publication_date>
-         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/XRTY-RhuFGQ</video:player_loc>
-         <video:duration>338</video:duration>
-       </video:video>
-  </url>
-  <url>
        <loc>https://msg91.com/help/best-practices</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <lastmod>2025-07-24T22:53:12+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.5120</priority>
        <video:video>
@@ -159,7 +153,7 @@
   </url>
   <url>
        <loc>https://msg91.com/help/voice</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <lastmod>2025-07-24T22:53:12+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.5120</priority>
        <video:video>
@@ -173,7 +167,7 @@
   </url>
   <url>
        <loc>https://msg91.com/help/url-shortener</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <lastmod>2025-07-24T22:53:12+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.5120</priority>
        <video:video>
@@ -187,7 +181,7 @@
   </url>
   <url>
        <loc>https://msg91.com/help/transactional-email</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <lastmod>2025-07-24T22:53:12+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.5120</priority>
        <video:video>
@@ -225,7 +219,7 @@
   </url>
   <url>
        <loc>https://msg91.com/help/dlt-registration-in-india/get-approval-for-your-sms-content-on-dlt-platform</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -269,7 +263,7 @@ https://help.msg91.com/article/366-content-template-registration-dlt</video:desc
   </url>
   <url>
        <loc>https://msg91.com/help/dlt-registration-in-india/error-description-sms-not-matched-with-dlt-template</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -283,7 +277,7 @@ https://help.msg91.com/article/366-content-template-registration-dlt</video:desc
   </url>
   <url>
        <loc>https://msg91.com/help/dlt-registration-in-india/map-sms-content-template-on-msg91-api-panel</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -313,7 +307,7 @@ https://help.msg91.com/article/366-content-template-registration-dlt</video:desc
   </url>
   <url>
        <loc>https://msg91.com/help/dlt-registration-in-india/entity-registration-on-dlt-platform</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -346,7 +340,7 @@ Please ignore the skip part of the payment option as Pingconnect is having paid 
   </url>
   <url>
        <loc>https://msg91.com/help/dlt-registration-in-india/dlt-faqs</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -361,7 +355,7 @@ Here is a small video specially for TeleMarketers, taking them through the TeleM
   </url>
   <url>
        <loc>https://msg91.com/help/text-sms/how-to-send-sms-using-an-excel-file-from-the-send-sms-option</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -375,7 +369,7 @@ Here is a small video specially for TeleMarketers, taking them through the TeleM
   </url>
   <url>
        <loc>https://msg91.com/help/integration-guides/why-to-integrate-msg91-api-using-socket</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -401,7 +395,7 @@ Socket provides an API integration platform which makes third party API integrat
   </url>
   <url>
        <loc>https://msg91.com/help/delivery-report/how-to-automate-your-reports-via-dashboard</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <lastmod>2025-07-24T22:53:12+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -414,22 +408,22 @@ Socket provides an API integration platform which makes third party API integrat
        </video:video>
   </url>
   <url>
-       <loc>https://msg91.com/help/whatsapp/how-to-begin-with-whatsapp</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <loc>https://msg91.com/help/hello-contact-center/getting-started-with-hello</loc>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
-       <priority>0.4096</priority>
+       <priority>0.9500</priority>
        <video:video>
-         <video:thumbnail_loc>https://i.ytimg.com/vi/SXbcJ3ClruA/mqdefault.jpg</video:thumbnail_loc> 
-         <video:title>MSG91 WhatsApp Onboarding and basic Features.</video:title>
-         <video:description></video:description>
-         <video:publication_date>2024-08-10T13:38:15Z</video:publication_date>
-         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/SXbcJ3ClruA</video:player_loc>
-         <video:duration>390</video:duration>
+         <video:thumbnail_loc>https://i.ytimg.com/vi/XRTY-RhuFGQ/mqdefault.jpg</video:thumbnail_loc> 
+         <video:title>Get to know about Hello - Inbox overview</video:title>
+         <video:description>&quot;Hello&quot; is a Customer Communications Platform.  It allows you to manage your queries together using an Inbox and makes it easy to personally communicate with them with targeted content, behavior-driven messages, and conversational support.</video:description>
+         <video:publication_date>2023-08-08T06:12:20Z</video:publication_date>
+         <video:player_loc allow_embed="yes" autoplay="ap=1">https://www.youtube.com/embed/XRTY-RhuFGQ</video:player_loc>
+         <video:duration>338</video:duration>
        </video:video>
   </url>
   <url>
        <loc>https://msg91.com/help/add-ons-and-plug-ins/wordpress-and-woo-commerce-how-to-send-notifications-and-otp-sms</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -451,7 +445,7 @@ https://twitter.com/imranhsayed</video:description>
   </url>
   <url>
        <loc>https://msg91.com/help/add-ons-and-plug-ins/how-to-send-sms-from-excel-plugin</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -465,7 +459,7 @@ https://twitter.com/imranhsayed</video:description>
   </url>
   <url>
        <loc>https://msg91.com/help/resellers/what-is-the-meaning-of-ssl-certificate-error-1659610637296715</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -479,7 +473,7 @@ https://twitter.com/imranhsayed</video:description>
   </url>
   <url>
        <loc>https://msg91.com/help/resellers/how-to-add-clients-under-reseller-panel</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <lastmod>2025-07-24T22:53:12+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -493,7 +487,7 @@ https://twitter.com/imranhsayed</video:description>
   </url>
   <url>
        <loc>https://msg91.com/help/resellers/how-to-have-my-own-website-for-selling-sms</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -507,7 +501,7 @@ https://twitter.com/imranhsayed</video:description>
   </url>
   <url>
        <loc>https://msg91.com/help/resellers/how-does-client-search-work</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <lastmod>2025-07-24T22:53:12+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -521,7 +515,7 @@ https://twitter.com/imranhsayed</video:description>
   </url>
   <url>
        <loc>https://msg91.com/help/resellers/can-my-clients-also-pay-me-online-if-yes-then-how</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -535,7 +529,7 @@ https://twitter.com/imranhsayed</video:description>
   </url>
   <url>
        <loc>https://msg91.com/help/credits/where-can-i-download-the-invoice</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -549,7 +543,7 @@ https://twitter.com/imranhsayed</video:description>
   </url>
   <url>
        <loc>https://msg91.com/help/virtual-number/what-is-a-virtual-number-or-longcode-what-is-keyword-and-inbox-balance</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.4096</priority>
        <video:video>
@@ -563,7 +557,7 @@ https://twitter.com/imranhsayed</video:description>
   </url>
   <url>
        <loc>https://msg91.com/guide/why-you-need-right-tools-make-data-driven</loc>
-       <lastmod>2025-07-09T18:24:40+00:00</lastmod>
+       <lastmod>2025-07-24T22:53:12+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.1678</priority>
        <video:video>
@@ -577,7 +571,7 @@ https://twitter.com/imranhsayed</video:description>
   </url>
   <url>
        <loc>https://msg91.com/guide/integrated-marketing-communication-strategy-part-three</loc>
-       <lastmod>2025-07-09T00:09:00+00:00</lastmod>
+       <lastmod>2025-07-24T00:09:00+00:00</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.1342</priority>
        <video:video>
