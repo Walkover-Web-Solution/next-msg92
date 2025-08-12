@@ -33,7 +33,6 @@ export default class MyDocument extends Document {
         } else {
             // htmlLang = 'en';
         }
-        console.log('⚡️ ~ :36 ~ MyDocument ~ getInitialProps ~ htmlLang:', htmlLang);
         return {
             ...initialProps,
             htmlLang,
