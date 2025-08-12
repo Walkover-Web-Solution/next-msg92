@@ -1,3 +1,133 @@
 {
-    "ChatBotPageComp":{}
+    "ChatBotPageComp": {
+        "voiceSupport": {
+            "heading": "Automate Conversations Across Channels",
+            "subHeading": "Modern customers expect you to meet them wherever they are. With MSG91 Chatbot, deploy your conversational AI assistant across more platforms than ever for seamless customer service:",
+            "content": [
+                {
+                    "title": "WhatsApp",
+                    "description": "Send order updates, respond to FAQs, push personalized offers, and even collect feedback—all in the chat app your customers use daily. Automation makes it easy to broadcast campaigns and enrich every engagement with two-way conversation."
+                },
+                {
+                    "title": "Facebook Messenger & Instagram DM",
+                    "description": "Let your AI chatbot initiate product recommendations, send reminders, and handle post-purchase support, increasing social engagement and conversion rates. Leverage instagram automation to maximize outreach."
+                },
+                {
+                    "title": "Website Live Chat & Mobile Widget",
+                    "description": "Greet website visitors with personalized messages, capture leads in real time, answer product/service queries, and trigger contextual pop-ups based on user actions using an AI chat bot website experience."
+                },
+                {
+                    "title": "Voice Calls",
+                    "description": "Enable customers to talk to your AI Voice Agent, allowing hands-free scheduling, support, and even complex issue resolution—perfect for those on the go."
+                }
+            ]
+        },
+        "voiceBot": {
+            "tagline": "Voice Bot",
+            "heading": "Conversational Voice Support in Real Time",
+            "subHeading": "Empower your contact centre with a self-learning, always-on AI Voice Agent.",
+            "content": [
+                {
+                    "title": "Natural Conversation",
+                    "description": "Our bot understands customer intent, mood, and even complex commands, using advanced artificial intelligence."
+                },
+                {
+                    "title": "Automated Call Handling",
+                    "description": "Securely collect information, route calls, verify identity, or trigger IVR logic—all without human intervention."
+                },
+                {
+                    "title": "Real-Time Responses, No Hold Music",
+                    "description": "No more waiting. Customers get instant answers to queries like 'What’s my order status?' or 'Schedule my appointment for Thursday at 4pm.'"
+                },
+                {
+                    "title": "Personalized Service",
+                    "description": "Greet callers by name, retrieve their recent orders, and continue conversations across channels seamlessly using AI chatbot features."
+                },
+                {
+                    "title": "Multilingual Recognition",
+                    "description": "Speak the language your customer chooses, switching context as needed with intelligent chatbots."
+                }
+            ]
+        },
+        "chatBotBuilder": [
+            {
+                "tagline": "Chatbot Builder",
+                "heading": "Drag, Drop, Deploy—DIY Chatbots",
+                "subHeading": "Unleash Your Team’s Creativity—Build Bots Your Way, No Code Needed",
+                "content": [
+                    {
+                        "title": "Intuitive Visual Studio",
+                        "description": "Arrange conversational flows with drag-and-drop blocks—add texts, questions, quick replies, action steps, API calls, and more, with ai chatbot support."
+                    },
+                    {
+                        "title": "Pre-Built Industry Templates",
+                        "description": "E-commerce order flows, appointment schedulers, lead capture bots, survey bots, feedback collectors, etc."
+                    },
+                    {
+                        "title": "Real-Time Testing",
+                        "description": "See how your AI chatbot responds in real scenarios before going live, on your preferred channel."
+                    },
+                    {
+                        "title": "Personalized Service",
+                        "description": "Greet callers by name, retrieve their recent orders, and continue conversations across channels seamlessly using AI chatbot features."
+                    },
+                    {
+                        "title": "Easy Handover to Agents",
+                        "description": "When needed, let your bot transfer chats seamlessly to a human teammate with all context intact"
+                    }
+                ]
+            },
+            {
+                "tagline": "Agentic AI Bot",
+                "heading": "Smarter Conversations with Agentic AI",
+                "subHeading": "Let AI Do the Talking—Handle Complex Queries, Seamlessly",
+                "content": [
+                    {
+                        "title": "Conversational Intelligence",
+                        "description": "Powered by ChatGPT and other advanced models, the bot delivers natural, human-like responses across customer queries—24/7."
+                    },
+                    {
+                        "title": "Media-Savvy Responses",
+                        "description": "Accepts media like PDFs, images, and voice notes—understands the content, and responds meaningfully across channels."
+                    },
+                    {
+                        "title": "Real-Time Understanding",
+                        "description": "Interprets questions as they come, provides instant answers, and maintains fluid conversations."
+                    },
+                    {
+                        "title": "Self-Closing & Contextual Escalations",
+                        "description": "Knows when to close resolved chats or hand over to a human teammate with full context, ensuring smooth transitions."
+                    }
+                ]
+            }
+        ],
+        "cta": {
+            "heading": "Try the Chatbot Live—Instant Demo",
+            "subHeading": "Don’t just read about it—engage with our AI chatbot live!",
+            "content": "See how MSG91’s AI chatbot understands intent, handles queries, and automates responses—instantly. Whether it’s customer support, order tracking, or appointment booking, our live demo shows you what’s possible.",
+            "button":
+                {
+                    "text": "Test Chatbot Live",
+                    "link": "/demochatbot"
+                }
+            
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
 }

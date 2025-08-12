@@ -1,30 +1,9 @@
 import { LinkText } from '../UIComponent/Buttons/LinkButton';
+import { ChatbotBuilder } from './ChatbotBuilder';
 import FeaturesAccordionComp from './FeaturesAccordionComp';
 import FeatureWithBulletComp from './FeatureWithBulletComp';
 import PluginsAndIntegrationsComp from './PluginsAndIntegrationsComp';
-const data = [
-    {
-        title: 'WhatsApp',
-        description:
-            'Send order updates, respond to FAQs, push personalized offers, and even collect feedback—all in the chat app your customers use daily. Automation makes it easy to broadcast campaigns and enrich every engagement with two-way conversation.',
-    },
-    {
-        title: 'Facebook Messenger & Instagram DM',
-        description:
-            'Let your AI chatbot initiate product recommendations, send reminders, and handle post-purchase support, increasing social engagement and conversion rates. Leverage instagram automation to maximize outreach.',
-    },
-    {
-        title: 'Website Live Chat & Mobile Widget',
-        description:
-            'Greet website visitors with personalized messages, capture leads in real time, answer product/service queries, and trigger contextual pop-ups based on user actions using an AI chat bot website experience.',
-    },
-    {
-        title: 'Voice Calls',
-        description:
-            'Enable customers to talk to your AI Voice Agent, allowing hands-free scheduling, support, and even complex issue resolution—perfect for those on the go.',
-    },
-];
-export default function ChatBotPageComp() {
+export default function ChatBotPageComp({ data }) {
     return (
         <>
             <section className='container cont cont_gap cont_p'>
@@ -46,11 +25,12 @@ export default function ChatBotPageComp() {
                 </div>
                 <div className='w-full h-[600px] bg-[var(--hello-lite-color)] rounded-lg border'></div>
             </section>
-            <FeaturesAccordionComp data={data} />
-            <FeatureWithBulletComp />
+            <FeaturesAccordionComp data={data?.voiceSupport} />
+            <FeatureWithBulletComp data={data?.voiceBot} />
             <PluginsAndIntegrationsComp />
             <MultilingualBot />
-            <PreFooterComp />
+            <ChatbotBuilder data={data?.chatBotBuilder} />
+            <CTAComp data={data?.cta} />
         </>
     );
 }
@@ -70,15 +50,23 @@ export function MultilingualBot() {
     );
 }
 
-export function PreFooterComp() {
+export function CTAComp({ data }) {
     return (
-        <section className='container cont cont_gap cont_p'>
-            <div className='flex flex-col gap-2'>
-                <span className='text-lg uppercase text-[var(--hello-dark-color)] font-bold'>Pre Footer</span>
-                <h2 className='text-3xl font-bold'>Pre Footer</h2>
-                <p className='subheading'>Pre Footer</p>
+        <section className=' bg-secondary'>
+            <div className='container cont cont_gap cont_p items-center'>
+                <div className='flex flex-col gap-2 cont items-center text-center cont_w'>
+                    <h2 className='text-2xl font-bold'>{data?.heading}</h2>
+                    <h3 className='text-2xl font-bold'>{data?.subHeading}</h3>
+                    <p className='text-gray-600'>{data?.content}</p>
+                </div>
+                <div className='flex gap-2'>
+                    <a href={data?.button?.link}>
+                        <button className='btn btn-primary btn-md'>
+                            <LinkText>{data?.button?.text}</LinkText>
+                        </button>
+                    </a>
+                </div>
             </div>
-            <div className='w-full h-[600px] bg-[var(--hello-lite-color)] rounded-lg border'></div>
         </section>
     );
 }
