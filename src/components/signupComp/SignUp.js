@@ -362,6 +362,8 @@ export default class SignUp extends React.Component {
                 if (result?.status === 'success') {
                     if (result?.data?.data?.nextStep === 'createNewCompany') {
                         this.setStep(3);
+                    } else if (result?.data?.data?.nextStep === 'createNewCompanyFromSignup') {
+                        this.setStep(3);
                     } else if (result?.data?.data?.nextStep === 'loginIntoExistingAccount') {
                         this.setState({ isLoading: true });
                         location.href = SUCCESS_REDIRECTION_URL?.replace(
