@@ -1,3 +1,5 @@
+import LottiePlayer from '../LottiePlayer/LottiePlayer';
+
 export default function WhyChooseMSG91({ data }) {
     return (
         <div className='container cont cont_p cont_gap'>
@@ -9,7 +11,7 @@ export default function WhyChooseMSG91({ data }) {
                 <div
                     key={index}
                     className={`flex gap-12 items-center justify-center ${
-                        index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                        index % 2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col'
                     }`}
                 >
                     <div className='w-full cont gap-4 max-w-[720px]'>
@@ -25,7 +27,9 @@ export default function WhyChooseMSG91({ data }) {
                         </ul>
                         <p>{item?.footer}.</p>
                     </div>
-                    <div className='min-w-[460px] h-[460px] rounded bg-secondary'></div>
+                    <div className='w-full xl:max-w-[700px] lg:max-w-[320px] max-w-[280px] md:mx-6 mx-2 rounded'>
+                        <LottiePlayer lottie={item?.img} />
+                    </div>
                 </div>
             ))}
         </div>
