@@ -344,7 +344,7 @@ class StepThree extends React.Component {
         return (
             <>
                 <div className='flex flex-col gap-8 2xl:w-2/3 xl:w-2/3  max-w-[600px]'>
-                    <div className='flex sm:flex-row flex-col sm:items-center gap-4'>
+                    <div className='flex sm:flex-row flex-col sm:items-center gap-1'>
                         <div className='flex items-center gap-2'>
                             <MdCheckCircle fontSize={18} className={'text-green-600'} />
                             <span>Verify email & mobile number</span>
@@ -356,7 +356,7 @@ class StepThree extends React.Component {
                         </div>
                     </div>
 
-                    <div className='flex md:flex-row  sm:flex-row flex-col gap-4 w-full'>
+                    <div className='flex md:flex-row  sm:flex-row flex-col gap-2 w-full'>
                         <div className='w-full'>
                             <input
                                 type='text'
@@ -458,7 +458,7 @@ class StepThree extends React.Component {
                             </div>
                         )}
                         {this.state.createCompany && (
-                            <form className='flex flex-col gap-5'>
+                            <form className='flex flex-col gap-3'>
                                 <div className='flex flex-col gap-1'>
                                     <input
                                         className='input input-bordered h-10 w-full'
