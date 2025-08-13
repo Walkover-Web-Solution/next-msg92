@@ -37,7 +37,7 @@ class StepTwo extends React.Component {
     componentDidMount() {
         const queryParams = new URLSearchParams(window.location.search);
         const query = queryParams.toString();
-        const sourceValue = queryParams.get('source');
+        const sourceValue = queryParams.get('source') || queryParams.get('utm_source');
         this.setState({ sourceValue: sourceValue });
         if (this.sourceOptions.some((option) => option.value === sourceValue)) {
             this.setState({ optionValue: sourceValue });
@@ -83,6 +83,7 @@ class StepTwo extends React.Component {
         currentUrl.searchParams.delete('githubsignup');
         currentUrl.searchParams.delete('code');
         currentUrl.searchParams.delete('state');
+        currentUrl.searchParams.delete('source');
         window.history.replaceState(null, '', currentUrl.toString());
         // smsIdentifier = '';
         // mobileInvalid = false;

@@ -1,7 +1,7 @@
 {
     "HeadComp": {
-        "title": "Connect your app with Zapier | Intergrate with MSG91",
-        "description": "MSG91 is a robust communication platform that seamlessly integrates with Zapier, a powerful automation tool. By leveraging MSG91 through Zapier, you can streamline your workflow and automate processes, such as sending WhatsApp messages, emails, and voice messages. This eliminates the need for manual intervention and enhances your communication capabilities."
+        "title": "WhatsApp Zapier Integration - Integrate with MSG91",
+        "description": "Connect WhatsApp with 5,000+ apps using MSG91’s Zapier integration. Automate workflows, send messages, and streamline business communication effortlessly."
     },
     "IntegrationAppComp": {
         "slug": "zapier",
