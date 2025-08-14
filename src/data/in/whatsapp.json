@@ -33,10 +33,7 @@
                     "Upsell & Cross-sell Offers"
                 ],
                 "footer": "Reach thousands. Get instant clicks. Drive real sales. No spam folder. Just results.",
-                "cta": {
-                    "text": "Read More",
-                    "link": "https://msg91.com/help/whatsapp/send-whatsapp"
-                }
+                "schedule_meet": "Talk to Us"
             },
             {
                 "title": "Transactional WhatsApp Messaging",
@@ -51,10 +48,7 @@
                     "Delivery Status & Service Updates"
                 ],
                 "footer": "Reliable. Timely. Expected. Exactly what transactional messaging should be.",
-                "cta": {
-                    "text": "Read More",
-                    "link": "https://msg91.com/help/whatsapp/new-article-1720595602018809"
-                }
+                "schedule_meet": "Book A Demo"
             },
             {
                 "title": "Customer Support on WhatsApp",
@@ -73,30 +67,27 @@
                     "link": "https://wa.me/917316914306"
                 }
             }
-        ]
-    },
-    "WhatsAppDriveSaled": {
-        "heading": "Drive Sales Directly on WhatsApp",
-        "subheading": "Sell Smarter — Where Customers Already Are.",
-        "description": "Showcase products, run ads, take orders — all inside a WhatsApp chat.",
-        "content": [
-            {
-                "title": "Click-to-WhatsApp Ads",
-                "description": "Use Instagram & Facebook to drive leads straight to chat."
-            },
-            {
-                "title": "Make shopping easy on WhatsApp",
-                "description": "Let customers browse, chat, and order with catalogs and payments."
-            },
-            {
-                "title": "Customize Sales Journeys via WhatsApp",
-                "description": "Send bulk offers, upsell intelligently, and close deals faster — all from one panel."
-            }
         ],
-        "img": "/assets/us/whatsapp/drive_sales_directly_on_whatsapp.json",
-        "cta": {
-            "text": "Know More",
-            "link": "https://msg91.com/help/whatsapp/click-to-whatsapp-ads"
+        "WhatsAppDriveSales": {
+            "heading": "Drive Sales Directly on WhatsApp",
+            "subheading": "Sell Smarter — Where Customers Already Are.",
+            "description": "Showcase products, run ads, take orders — all inside a WhatsApp chat.",
+            "content": [
+                {
+                    "title": "Click-to-WhatsApp Ads",
+                    "description": "Use Instagram & Facebook to drive leads straight to chat."
+                },
+                {
+                    "title": "Make shopping easy on WhatsApp",
+                    "description": "Let customers browse, chat, and order with catalogs and payments."
+                },
+                {
+                    "title": "Customize Sales Journeys via WhatsApp",
+                    "description": "Send bulk offers, upsell intelligently, and close deals faster — all from one panel."
+                }
+            ],
+            "img": "/assets/us/whatsapp/drive_sales_directly_on_whatsapp.json",
+            "schedule_meet": "Book a Meeting"
         }
     },
     "FeatureComp": {
@@ -106,7 +97,6 @@
                 "name": "WhatsApp ChatBot",
                 "content": "Automated interactions on the messaging platform, providing instant responses, handling customer inquiries, and performing tasks such as customer support, order tracking,place order and providing information. It enhances customer service efficiency and availability.",
                 "img": "/assets/in/whatsapp/whatsapp-chatBot.svg"
-               
             },
             {
                 "name": "Whatsapp Integrations",
