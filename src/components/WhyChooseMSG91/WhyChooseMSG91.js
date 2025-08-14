@@ -1,4 +1,5 @@
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
+import { LinkButton, LinkText } from '../UIComponent/Buttons/LinkButton';
 
 export default function WhyChooseMSG91({ data }) {
     return (
@@ -25,7 +26,15 @@ export default function WhyChooseMSG91({ data }) {
                                 <li key={i}>{hl}</li>
                             ))}
                         </ul>
-                        <p>{item?.footer}.</p>
+                        {item?.footer && <p>{item?.footer}.</p>}
+                        {item?.cta && (
+                            <LinkButton
+                                href={item?.cta?.link}
+                                target='_blank'
+                                customClasses={'text-link active-link'}
+                                content={item?.cta?.text}
+                            />
+                        )}
                     </div>
                     <div className='w-full xl:max-w-[700px] lg:max-w-[320px] max-w-[280px] md:mx-6 mx-2 rounded'>
                         <LottiePlayer lottie={item?.img} />

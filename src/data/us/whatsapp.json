@@ -540,7 +540,11 @@
                     "Win-back & Re-engagement Messages",
                     "Upsell & Cross-sell Offers"
                 ],
-                "footer": "Reach thousands. Get instant clicks. Drive real sales. No spam folder. Just results."
+                "footer": "Reach thousands. Get instant clicks. Drive real sales. No spam folder. Just results.",
+                "cta": {
+                    "text": "Read More",
+                    "link": "https://msg91.com/help/whatsapp/send-whatsapp"
+                }
             },
             {
                 "title": "Transactional WhatsApp Messaging",
@@ -554,7 +558,11 @@
                     "Invoices, Tickets & Documents",
                     "Delivery Status & Service Updates"
                 ],
-                "footer": "Reliable. Timely. Expected. Exactly what transactional messaging should be."
+                "footer": "Reliable. Timely. Expected. Exactly what transactional messaging should be.",
+                "cta": {
+                    "text": "Read More",
+                    "link": "https://msg91.com/help/whatsapp/new-article-1720595602018809"
+                }
             },
             {
                 "title": "Customer Support on WhatsApp",
@@ -562,15 +570,42 @@
                 "description": "No more waiting. No more forms. Just real-time reply to your customers via WhatsApp — from bots or human agents.",
                 "img": "/assets/us/whatsapp/customer_support_on_whatsapp.json",
                 "highlights": [
-                    "Smart Chatbots for Instant Replies [Test Now →]",
+                    "Smart Chatbots for Instant Replies ",
                     "Seamless Handoff to Human Agents",
                     "Inbound Calling on WhatsApp",
                     "One Unified Inbox for All Chats- Instagram, Emails, Webchat",
                     "Real-Time Customer Updates"
                 ],
-                "footer": "[Try WhatsApp Support in Action →]- 917316914306"
+                "cta": {
+                    "text": "Try WhatsApp Support in Action",
+                    "link": "https://wa.me/917316914306"
+                }
             }
         ]
+    },
+    "WhatsAppDriveSaled": {
+        "heading": "Drive Sales Directly on WhatsApp",
+        "subheading": "Sell Smarter — Where Customers Already Are.",
+        "description": "Showcase products, run ads, take orders — all inside a WhatsApp chat.",
+        "content": [
+            {
+                "title": "Click-to-WhatsApp Ads",
+                "description": "Use Instagram & Facebook to drive leads straight to chat."
+            },
+            {
+                "title": "Make shopping easy on WhatsApp",
+                "description": "Let customers browse, chat, and order with catalogs and payments."
+            },
+            {
+                "title": "Customize Sales Journeys via WhatsApp",
+                "description": "Send bulk offers, upsell intelligently, and close deals faster — all from one panel."
+            }
+        ],
+        "img": "/assets/us/whatsapp/drive_sales_directly_on_whatsapp.json",
+        "cta": {
+            "text": "Know More",
+            "link": "https://msg91.com/help/whatsapp/click-to-whatsapp-ads"
+        }
     },
     "WhatsAppIntegrations": {
         "heading": "Integrations That Just Work",
@@ -657,30 +692,6 @@
                 ]
             }
         ]
-    },
-    "WhatsAppDriveSaled": {
-        "heading": "Drive Sales Directly on WhatsApp",
-        "subheading": "Sell Smarter — Where Customers Already Are.",
-        "description": "Showcase products, run ads, take orders — all inside a WhatsApp chat.",
-        "content": [
-            {
-                "title": "Click-to-WhatsApp Ads",
-                "description": "Use Instagram & Facebook to drive leads straight to chat.",
-                "cta": {
-                    "text": "See How It Works →",
-                    "link": "/features/whatsapp-ads"
-                }
-            },
-            {
-                "title": "Make shopping easy on WhatsApp",
-                "description": "Let customers browse, chat, and order with catalogs and payments."
-            },
-            {
-                "title": "Customize Sales Journeys via WhatsApp",
-                "description": "Send bulk offers, upsell intelligently, and close deals faster — all from one panel."
-            }
-        ],
-        "img": "/assets/us/whatsapp/drive_sales_directly_on_whatsapp.json"
     },
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
