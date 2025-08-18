@@ -58,6 +58,7 @@ import specialPages from '@/data/specialPages.json';
 import { useRouter } from 'next/router';
 import PreFooterMFTL from '@/components/migrateFromTextlocal/preFooterMFTL/preFooterMFTL';
 import CTAMFTL from '@/components/migrateFromTextlocal/ctaMFTL/ctaMFTL';
+import SignupPage from '@/components/SignupCompNew/SingupComp';
 
 const Components = {
     BannerComp,
@@ -111,6 +112,7 @@ const Components = {
     WhyChooseMSG91,
     WhatsAppIntegrations,
     WhatsAppAccountVerification,
+    SignupPage,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
