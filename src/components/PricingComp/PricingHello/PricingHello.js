@@ -360,7 +360,8 @@ export default function PricingHello({ data, country }) {
                                                                     (rate, i) =>
                                                                         rate?.currency?.short_name === currency && (
                                                                             <p key={i}>
-                                                                                {rate?.free_credits === '-1'
+                                                                                {rate?.free_credits === -1 ||
+                                                                                rate?.free_credits === '-1'
                                                                                     ? 'Unlimited'
                                                                                     : rate?.free_credits}{' '}
                                                                                 {service?.service_credit?.service?.name}
