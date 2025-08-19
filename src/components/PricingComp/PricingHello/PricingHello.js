@@ -320,17 +320,25 @@ export default function PricingHello({ data, country }) {
                                                                 {amount?.currency?.symbol}
                                                                 {amount?.plan_amount} {tabtype}
                                                             </p>
-                                                            <div>{handleOfferPrice(amount) || '-'}</div>
+                                                            {handleOfferPrice(amount) ? (
+                                                                <div>{handleOfferPrice(amount) || '-'}</div>
+                                                            ) : null}
                                                         </div>
-                                                        <p>
-                                                            {amount?.currency?.short_name === 'INR' &&
-                                                            plan?.name != 'Free'
-                                                                ? '+18% GST'
-                                                                : amount?.currency?.short_name === 'GBP' &&
-                                                                    plan?.name != 'Free'
-                                                                  ? '+ VAT'
-                                                                  : '-'}
-                                                        </p>
+                                                        {(amount?.currency?.short_name === 'INR' ||
+                                                            amount?.currency?.short_name === 'GBP') &&
+                                                            (amount?.plan_amount != '0' ? (
+                                                                <>
+                                                                    {amount?.currency?.short_name === 'INR' && (
+                                                                        <p>+18% GST</p>
+                                                                    )}
+                                                                    {amount?.currency?.short_name === 'GBP' && (
+                                                                        <p>+ VAT</p>
+                                                                    )}
+                                                                </>
+                                                            ) : (
+                                                                <p>-</p>
+                                                            ))}
+
                                                         <a href={getURL('signup', 'hello')} target='_blank'>
                                                             <button
                                                                 className={`btn btn-primary  btn-md ${
@@ -352,7 +360,9 @@ export default function PricingHello({ data, country }) {
                                                                     (rate, i) =>
                                                                         rate?.currency?.short_name === currency && (
                                                                             <p key={i}>
-                                                                                {rate?.free_credits}{' '}
+                                                                                {rate?.free_credits === '-1'
+                                                                                    ? 'Unlimited'
+                                                                                    : rate?.free_credits}{' '}
                                                                                 {service?.service_credit?.service?.name}
                                                                                 /month
                                                                             </p>
