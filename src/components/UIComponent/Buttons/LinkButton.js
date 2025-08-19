@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
 const arrowIcon = (
