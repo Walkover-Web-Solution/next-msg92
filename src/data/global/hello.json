@@ -181,7 +181,7 @@
                         "Scale seamlessly from dozens to thousands of requests per day"
                     ]
                 },
-                "img": "/assets/global/hello/advanced-ticket-management.svg"
+                "img": "/assets/global/hello/analytics.svg"
             },
             {
                 "name": "Get the Full Picture, Instantly",
@@ -194,7 +194,7 @@
                         "Export and share actionable insights across your business"
                     ]
                 },
-                "img": "/assets/global/hello/advanced-analytics.svg"
+                "img": "/assets/global/hello/analytics.svg"
             },
             {
                 "name": "Work Without Limits—Wherever You Are",
@@ -208,7 +208,7 @@
                         "Perfect for traveling reps, remote agents, and business owners on the move"
                     ]
                 },
-                "img": "/assets/global/hello/mobile-app.svg"
+                "img": "/assets/global/hello/analytics.svg"
             },
             {
                 "name": "Create Conversations That Sell—Checkout Without the Hassle",
@@ -222,7 +222,7 @@
                         "No links, no redirects, zero drop-offs—just conversions"
                     ]
                 },
-                "img": "/assets/global/hello/chat-to-checkout.svg"
+                "img": "/assets/global/hello/analytics.svg"
             },
             {
                 "name": "Automated, Always-On Support That Scales With You",
@@ -236,7 +236,7 @@
                         "Continuously improve bots with analytics and feedback"
                     ]
                 },
-                "img": "/assets/global/hello/no-code-chatbot.svg"
+                "img": "/assets/global/hello/analytics.svg"
             }
         ]
     },
