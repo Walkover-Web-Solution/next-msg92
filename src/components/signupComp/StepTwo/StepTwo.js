@@ -146,12 +146,7 @@ class StepTwo extends React.Component {
                                                             this.props.identifierChange(false);
                                                         }}
                                                         disabled={this.props?.emailAccessToken || isLoading}
-                                                        maxLength={255}
                                                     />
-                                                    <span className='text-[10px] h-2 text-red-500'>
-                                                        {this.state.emailInputValue.length >= 255 &&
-                                                            'Maximum Email Length: 255'}
-                                                    </span>
                                                 </div>
                                             )}
                                             <span>
