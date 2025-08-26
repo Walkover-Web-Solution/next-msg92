@@ -132,11 +132,7 @@ class StepTwo extends React.Component {
                                             ) : (
                                                 <div className='w-full flex flex-col'>
                                                     <input
-                                                        className={`input focus:outline-none w-full focus:border-accent h-10 ${
-                                                            this.state.emailInputValue.length >= 255
-                                                                ? 'border-red-500'
-                                                                : 'border-gray-300'
-                                                        }`}
+                                                        className={`input focus:outline-none w-full focus:border-accent h-10 ${'border-gray-300'}`}
                                                         type='email'
                                                         id='emailIdentifier'
                                                         placeholder='Email Address*'
