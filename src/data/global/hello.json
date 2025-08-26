@@ -64,7 +64,7 @@
             ]
         }
     },
-    "FeatureComp": {
+    "FeaturesV2": {
         "heading": "Features",
         "iconColor": "text-campaign",
         "features": [
