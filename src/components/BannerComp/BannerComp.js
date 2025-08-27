@@ -50,12 +50,17 @@ export default function BannerComp({ pageInfo, data }) {
                                 {data?.getstarted_btn}
                             </a>
                         )}
-
+                        {data?.onboarding_call && (
+                            <a href={getURL('contact-us', 'contact-us', pageInfo)} target='_blank'>
+                                <button className='btn btn-md btn-primary'>{data?.onboarding_call}</button>
+                            </a>
+                        )}
                         {data?.schedule_meet && (
                             <button className='btn btn-md btn-primary btn-outline' onClick={() => setIsModalOpen(true)}>
                                 {data?.schedule_meet}
                             </button>
                         )}
+
                         {/* {pageInfo?.page === 'hello' && (
                             <a
                                 href='/demochatbot'
