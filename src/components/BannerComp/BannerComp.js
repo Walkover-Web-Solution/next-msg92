@@ -6,6 +6,7 @@ import { InlineWidget } from 'react-calendly';
 import getURL from '@/utils/getURL';
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
 import CodeSnippet from '../CodeSnipped/CodeSnipped';
+import { MdArrowUpward } from 'react-icons/md';
 
 export default function BannerComp({ pageInfo, data }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -40,37 +41,45 @@ export default function BannerComp({ pageInfo, data }) {
                             {data?.subheading}
                         </p>
                     </div>
+                    <div className='cont gap-2'>
+                        {data?.buttonHeading && (
+                            <h2 className='flex items-center gap-2'>
+                                {data?.buttonHeading} <MdArrowUpward fontSize={22} color='green' />
+                            </h2>
+                        )}
+                        <div className='flex flex-col md:flex-row gap-3 md:gap-6'>
+                            {data?.getstarted_btn && (
+                                <a
+                                    href={getURL('signup', pageInfo?.page, pageInfo)}
+                                    target='_blank'
+                                    className='btn btn-primary btn-md'
+                                >
+                                    {data?.getstarted_btn}
+                                </a>
+                            )}
+                            {data?.onboarding_call && (
+                                <button className='btn btn-md btn-primary ' onClick={() => setIsModalOpen(true)}>
+                                    {data?.onboarding_call}
+                                </button>
+                            )}
+                            {data?.pricing_call && (
+                                <button
+                                    className='btn btn-md btn-primary btn-outline'
+                                    onClick={() => setIsPricingModalOpen(true)}
+                                >
+                                    {data?.pricing_call}
+                                </button>
+                            )}
+                            {data?.schedule_meet && (
+                                <button
+                                    className='btn btn-md btn-primary btn-outline'
+                                    onClick={() => setIsModalOpen(true)}
+                                >
+                                    {data?.schedule_meet}
+                                </button>
+                            )}
 
-                    <div className='flex flex-col md:flex-row gap-6'>
-                        {data?.getstarted_btn && (
-                            <a
-                                href={getURL('signup', pageInfo?.page, pageInfo)}
-                                target='_blank'
-                                className='btn btn-primary btn-md'
-                            >
-                                {data?.getstarted_btn}
-                            </a>
-                        )}
-                        {data?.onboarding_call && (
-                            <button className='btn btn-md btn-primary ' onClick={() => setIsModalOpen(true)}>
-                                {data?.onboarding_call}
-                            </button>
-                        )}
-                        {data?.pricing_call && (
-                            <button
-                                className='btn btn-md btn-primary btn-outline'
-                                onClick={() => setIsPricingModalOpen(true)}
-                            >
-                                {data?.pricing_call}
-                            </button>
-                        )}
-                        {data?.schedule_meet && (
-                            <button className='btn btn-md btn-primary btn-outline' onClick={() => setIsModalOpen(true)}>
-                                {data?.schedule_meet}
-                            </button>
-                        )}
-
-                        {/* {pageInfo?.page === 'hello' && (
+                            {/* {pageInfo?.page === 'hello' && (
                             <a
                                 href='/demochatbot'
                                 onClick={() => {
@@ -88,6 +97,7 @@ export default function BannerComp({ pageInfo, data }) {
                                 </button>
                             </a>
                         )} */}
+                        </div>
                     </div>
 
                     <TrustedByComp data={data?.trustedByComp} />
