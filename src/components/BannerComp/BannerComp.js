@@ -9,6 +9,7 @@ import CodeSnippet from '../CodeSnipped/CodeSnipped';
 
 export default function BannerComp({ pageInfo, data }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isPricingModalOpen, setIsPricingModalOpen] = useState(false);
 
     return (
         <>
@@ -51,9 +52,17 @@ export default function BannerComp({ pageInfo, data }) {
                             </a>
                         )}
                         {data?.onboarding_call && (
-                            <a href={getURL('contact-us', 'contact-us', pageInfo)} target='_blank'>
-                                <button className='btn btn-md btn-primary'>{data?.onboarding_call}</button>
-                            </a>
+                            <button className='btn btn-md btn-primary ' onClick={() => setIsModalOpen(true)}>
+                                {data?.onboarding_call}
+                            </button>
+                        )}
+                        {data?.pricing_call && (
+                            <button
+                                className='btn btn-md btn-primary btn-outline'
+                                onClick={() => setIsPricingModalOpen(true)}
+                            >
+                                {data?.pricing_call}
+                            </button>
                         )}
                         {data?.schedule_meet && (
                             <button className='btn btn-md btn-primary btn-outline' onClick={() => setIsModalOpen(true)}>
@@ -125,6 +134,22 @@ export default function BannerComp({ pageInfo, data }) {
                         </button>
                         <InlineWidget
                             url='https://calendly.com/d/y3n-29s-29h?back=1'
+                            styles={{ height: '680px', width: 'auto' }}
+                        />
+                    </div>
+                </dialog>
+            )}
+            {isPricingModalOpen && (
+                <dialog id='pricing_modal' className='modal' open>
+                    <div className='modal-box'>
+                        <button
+                            onClick={() => setIsPricingModalOpen(false)}
+                            className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'
+                        >
+                            ✕
+                        </button>
+                        <InlineWidget
+                            url='https://calendly.com/msg91-whatsapp/15-min-meeting'
                             styles={{ height: '680px', width: 'auto' }}
                         />
                     </div>
