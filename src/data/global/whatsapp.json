@@ -13,8 +13,8 @@
         "heading": "Seamless Global messaging and communications.",
         "subheading": "Use Developer Friendly API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
         "lottie": "/assets/lotties/global-whatsapp.json",
-        "schedule_meet": "Schedule Sales Call",
-        "onboarding_call": "Schedule Onboarding Call",
+        "onboarding_call": "Start Onboarding",
+        "pricing_call": "Discuss Pricing",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
             "logos": [
@@ -78,7 +78,6 @@
                         "Integration with CRM tools for better data management."
                     ]
                 },
-
                 "img": "/assets/global/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg"
             },
             {
@@ -469,7 +468,6 @@
             }
         ]
     },
-
     "PreFooterComp": {
         "content": "Start building your ideal customer engagement experience",
         "buttons": {

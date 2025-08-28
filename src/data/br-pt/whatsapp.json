@@ -13,8 +13,9 @@
         "heading": "API do WhatsApp para Mensagens e Comunicação Global",
         "subheading": "Use a API do WhatsApp para garantir uma comunicação fluida e em tempo real com seus clientes globalmente, aumentando o engajamento e a satisfação.",
         "lottie": "/assets/lotties/brpt-whatsapp.json",
-        "schedule_meet": "Agendar chamada de vendas",
-        "onboarding_call": "Agendar chamada de integração",
+        "onboarding_call": "Iniciar Onboarding",
+        "pricing_call": "Discutir Preços",
+
         "trustedByComp": {
             "heading": "Confiado por 30,000+ negócios globais",
             "logos": [
