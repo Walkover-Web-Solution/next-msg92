@@ -10,7 +10,7 @@ import getPlanServices from '@/utils/getPlanServices';
 
 export default function PricingHello({ data, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
 
@@ -94,7 +94,7 @@ export default function PricingHello({ data, country }) {
         <>
             <div className='flex flex-col gap-3 w-full'>
                 <h1 className='text-3xl font-semibold capitalize '>Hello Pricing</h1>
-                <div className='flex flex-col w-full gap-8'>
+                <div className='flex flex-col w-full gap-6'>
                     {hasyYarly && (
                         <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
                             <span
@@ -118,7 +118,7 @@ export default function PricingHello({ data, country }) {
                         </div>
                     )}
 
-                    <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full gap-8 '>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 w-full gap-4 '>
                         {plans &&
                             plans.length > 0 &&
                             plans.map(
@@ -138,9 +138,9 @@ export default function PricingHello({ data, country }) {
                                                         plan?.name === 'Basic' ? 'border-4 border-black' : 'border'
                                                     }`}
                                                 >
-                                                    <div className='flex flex-col gap-4'>
+                                                    <div className='flex flex-col gap-3'>
                                                         <div className='flex items-center justify-between'>
-                                                            <h2 className=' text-2xl font-semibold'>{plan?.name}</h2>
+                                                            <h2 className=' text-xl font-semibold'>{plan?.name}</h2>
                                                             {plan?.name === 'Basic' && (
                                                                 <span className='bg-black text-white px-2 rounded-badge'>
                                                                     Popular
@@ -148,7 +148,7 @@ export default function PricingHello({ data, country }) {
                                                             )}
                                                         </div>
                                                         <div className='gap-1 flex flex-col'>
-                                                            <p className=' text-2xl font-semibold text-green-600 capitalize'>
+                                                            <p className=' text-xl font-semibold text-green-600 capitalize'>
                                                                 {amount?.currency?.symbol}
                                                                 {amount?.plan_amount} {tabtype}
                                                             </p>
@@ -159,7 +159,7 @@ export default function PricingHello({ data, country }) {
 
                                                         <a href={getURL('signup', 'hello')} target='_blank'>
                                                             <button
-                                                                className={`btn btn-primary  btn-md ${
+                                                                className={`btn btn-primary  btn-sm ${
                                                                     plan?.name === 'Basic' ? '' : 'btn-outline'
                                                                 }`}
                                                             >
@@ -171,13 +171,13 @@ export default function PricingHello({ data, country }) {
 
                                                     {/* included */}
                                                     <div className='flex flex-col gap-2'>
-                                                        <h3 className='text-lg font-semibold'>Included</h3>
+                                                        <h3 className='font-semibold'>Included</h3>
                                                         <div className='flex flex-col gap-1'>
                                                             {plan?.plan_services?.map((service, index) =>
                                                                 service?.service_credit?.service_credit_rates?.map(
                                                                     (rate, i) =>
                                                                         rate?.currency?.short_name === currency && (
-                                                                            <p key={i}>
+                                                                            <p key={i} className='text-sm'>
                                                                                 {rate?.free_credits === -1 ||
                                                                                 rate?.free_credits === '-1'
                                                                                     ? 'Unlimited'
@@ -193,7 +193,7 @@ export default function PricingHello({ data, country }) {
 
                                                     {/* features */}
                                                     <div className='flex flex-col gap-2'>
-                                                        <h3 className='text-lg font-semibold'>Features</h3>
+                                                        <h3 className='font-semibold'>Features</h3>
                                                         <div className='flex flex-col gap-1'>
                                                             {plan?.plan_features?.length > 0 &&
                                                                 plan?.plan_features.map((feature, index) => {
@@ -203,7 +203,7 @@ export default function PricingHello({ data, country }) {
                                                                     ) {
                                                                         return (
                                                                             <p
-                                                                                className='flex items-center gap-1'
+                                                                                className='flex items-center gap-1 text-sm'
                                                                                 key={index}
                                                                             >
                                                                                 {feature?.is_visible &&
@@ -229,7 +229,7 @@ export default function PricingHello({ data, country }) {
 
                                                     {services?.servicesList?.length > 0 && services?.showExtra && (
                                                         <div className='flex flex-col gap-2'>
-                                                            <h3 className='text-lg font-semibold'>Extra @</h3>
+                                                            <h3 className='font-semibold'>Extra @</h3>
                                                             <div className='flex flex-col gap-1'>
                                                                 {services?.servicesList.map((service, index) => {
                                                                     const rate = service?.follow_up_rate;
@@ -243,7 +243,7 @@ export default function PricingHello({ data, country }) {
                                                                         return (
                                                                             <div
                                                                                 key={index}
-                                                                                className='flex items-center gap-1'
+                                                                                className='flex items-center gap-1 text-sm'
                                                                             >
                                                                                 {rate && services?.postpaidAllowed ? (
                                                                                     <span className='flex items-center gap-1 w-fit'>
