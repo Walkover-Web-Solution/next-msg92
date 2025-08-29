@@ -6,6 +6,7 @@ import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 import getURL from '@/utils/getURL';
 import CalculateHelloPricing from './calculateHelloPricing';
+import getPlanServices from '@/utils/getPlanServices';
 
 export default function PricingHello({ data, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
@@ -127,7 +128,9 @@ export default function PricingHello({ data, country }) {
                                         if (
                                             amount?.currency?.short_name === currency &&
                                             amount?.plan_type?.name === tabtype
-                                        )
+                                        ) {
+                                            const services = getPlanServices(plan, currency);
+                                            console.log('⚡️ ~ :133 ~ plan?.plan_amounts.map ~ services:', services);
                                             return (
                                                 <div
                                                     key={plan?.name + index}
@@ -224,54 +227,45 @@ export default function PricingHello({ data, country }) {
                                                         </div>
                                                     </div>
 
-                                                    {/* Extras */}
-                                                    {plan?.postpaid_allowed && (
+                                                    {services?.servicesList?.length > 0 && services?.showExtra && (
                                                         <div className='flex flex-col gap-2'>
                                                             <h3 className='text-lg font-semibold'>Extra @</h3>
                                                             <div className='flex flex-col gap-1'>
-                                                                {plan?.plan_services?.length > 0 &&
-                                                                    plan?.plan_services.map((service, index) => {
-                                                                        const rate =
-                                                                            plan?.postpaid_allowed &&
-                                                                            service?.service_credit?.service_credit_rates?.find(
-                                                                                (rate) =>
-                                                                                    rate?.currency?.short_name ===
-                                                                                    currency
-                                                                            );
-                                                                        const serviceName =
-                                                                            service?.service_credit?.service?.name;
-                                                                        if (
-                                                                            rate?.free_credits === -1 ||
-                                                                            rate?.free_credits === '-1'
-                                                                        ) {
-                                                                            return null;
-                                                                        } else {
-                                                                            return (
-                                                                                <div
-                                                                                    key={index}
-                                                                                    className='flex items-center gap-1'
-                                                                                >
-                                                                                    {rate?.follow_up_rate ? (
-                                                                                        <span className='flex items-center gap-1 w-fit'>
-                                                                                            <MdCheck
-                                                                                                fontSize={18}
-                                                                                                color='#16A34A'
-                                                                                            />
-                                                                                            {`${symbol}${rate?.follow_up_rate}/${serviceName}/month`}
-                                                                                        </span>
-                                                                                    ) : (
-                                                                                        <span className='flex items-center gap-1 w-fit'>
-                                                                                            <MdClose
-                                                                                                fontSize={18}
-                                                                                                color='#DC3645'
-                                                                                            />
-                                                                                            No Extra {serviceName}
-                                                                                        </span>
-                                                                                    )}
-                                                                                </div>
-                                                                            );
-                                                                        }
-                                                                    })}
+                                                                {services?.servicesList.map((service, index) => {
+                                                                    const rate = service?.follow_up_rate;
+                                                                    const serviceName = service?.servicename;
+                                                                    if (
+                                                                        service?.free_credits === -1 ||
+                                                                        service?.free_credits === '-1'
+                                                                    ) {
+                                                                        return null;
+                                                                    } else {
+                                                                        return (
+                                                                            <div
+                                                                                key={index}
+                                                                                className='flex items-center gap-1'
+                                                                            >
+                                                                                {rate && services?.postpaidAllowed ? (
+                                                                                    <span className='flex items-center gap-1 w-fit'>
+                                                                                        <MdCheck
+                                                                                            fontSize={18}
+                                                                                            color='#16A34A'
+                                                                                        />
+                                                                                        {`${symbol}${rate}/${serviceName}/month`}
+                                                                                    </span>
+                                                                                ) : (
+                                                                                    <span className='flex items-center gap-1 w-fit'>
+                                                                                        <MdClose
+                                                                                            fontSize={18}
+                                                                                            color='#DC3645'
+                                                                                        />
+                                                                                        No Extra {serviceName}
+                                                                                    </span>
+                                                                                )}
+                                                                            </div>
+                                                                        );
+                                                                    }
+                                                                })}
                                                             </div>
                                                         </div>
                                                     )}
@@ -285,6 +279,7 @@ export default function PricingHello({ data, country }) {
                                                     )}
                                                 </div>
                                             );
+                                        }
                                     })
                             )}
 
