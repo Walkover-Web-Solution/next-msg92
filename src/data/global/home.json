@@ -7,17 +7,12 @@
         "slug": "home",
         "tagline": "customer solution platform",
         "heading": "Connect with your customers via multiple channels",
-        "subheading":"Secure and robust APIs for WhatsApp, SMS, RCS, Email, Voice, Authentication and more",
+        "subheading": "Secure and robust APIs for WhatsApp, SMS, RCS, Email, Voice, Authentication and more",
         "banner_img": "/assets/global/index/banner.webp",
         "getstarted_btn": "Get Started",
-        
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
             "logos": [
-                {
-                    "name": "Razorpay",
-                    "url": "/assets/trusted_by/razorpay.svg"
-                },
                 {
                     "name": "Xiaomi",
                     "url": "/assets/trusted_by/xiaomi.svg"
@@ -27,21 +22,36 @@
                     "url": "/assets/trusted_by/unacademy.svg"
                 },
                 {
-                    "name": "Dream11",
-                    "url": "/assets/trusted_by/dream11.svg"
-                },
-                {
                     "name": "Indeed",
                     "url": "/assets/trusted_by/indeed.svg"
                 },
-             
+                {
+                    "name": "Razorpay",
+                    "url": "/assets/trusted_by/razorpay.svg"
+                },
                 {
                     "name": "Ixigo",
                     "url": "/assets/trusted_by/indian-oil.svg"
                 },
                 {
-                    "name": "Ixigo",
-                    "url": "/assets/trusted_by/ixigo.svg"
+                    "name": "Mahindra",
+                    "url": "/assets/trusted_by/mahindra.webp"
+                },
+                {
+                    "name": "Bajaj Finserve",
+                    "url": "/assets/trusted_by/bajaj_finserve.svg"
+                },
+                {
+                    "name": "Apollo 24X7",
+                    "url": "/assets/trusted_by/apollo_247.svg"
+                },
+                {
+                    "name": "NTPC",
+                    "url": "/assets/trusted_by/ntpc.svg"
+                },
+                {
+                    "name": "Marico",
+                    "url": "/assets/trusted_by/marico.svg"
                 }
             ]
         }
