@@ -17,13 +17,9 @@ function SignupSteps() {
     };
 
     useEffect(() => {
-        console.log('SignupSteps - Initializing widget with dispatch:', dispatch);
-
         otpWidgetSetup(
             dispatch,
-            (data) => {
-                console.log('Widget initialized successfully:', data);
-            },
+            (data) => {},
             (error) => {
                 console.error('Widget initialization failed:', error);
             }

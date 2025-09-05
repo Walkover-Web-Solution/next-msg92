@@ -6,26 +6,13 @@ import style from './StepOne.module.scss';
 export default function StepOne({ onNext }) {
     const { state, dispatch } = useSignup();
     const [email, setEmail] = useState('');
-    const [otpSent, setOtpSent] = useState(false);
-    const otpLength = state.widgetData?.otpLength || 6;
     const [otp, setOtp] = useState(() => new Array(otpLength).fill(''));
     const otpInputRefs = useRef([]);
 
     // Use global loading state from context
     const isLoading = state.isLoading;
-
-    const handleSendOtp = () => {
-        if (!email) {
-            console.error('Please enter email');
-            return;
-        }
-        dispatch({ type: 'SET_LOADING', payload: true });
-        sendOtp(email, false, dispatch, (message) => {
-            console.log('⚡️ ~ :24 ~ sendOtp ~ message:', message);
-            setOtpSent(true);
-        });
-    };
-    console.log('⚡️ ~ :10 ~ StepOne ~ otpSent:', otpSent);
+    const otpLength = state.widgetData?.otpLength || null;
+    const otpSent = state.otpSent;
 
     const handleOtpChange = (index, value) => {
         if (value.length > 1) return;
@@ -63,6 +50,15 @@ export default function StepOne({ onNext }) {
         }
     };
 
+    const handleSendOtp = () => {
+        if (!email) {
+            console.error('Please enter email');
+            return;
+        }
+        dispatch({ type: 'SET_LOADING', payload: true });
+        sendOtp(email, false, dispatch);
+    };
+
     const handleVerifyOtp = () => {
         const otpValue = otp.join('');
         if (otpValue.length !== otpLength) {
@@ -83,7 +79,6 @@ export default function StepOne({ onNext }) {
             false, // notByEmail - false for email verification
             dispatch,
             (data) => {
-                console.log('Email OTP verified successfully:', data);
                 dispatch({ type: 'SET_ACTIVE_STEP', payload: 2 });
             },
             (error) => {
@@ -96,19 +91,6 @@ export default function StepOne({ onNext }) {
             }
         );
     };
-
-    useEffect(() => {
-        console.log('StepOne - State changed:', {
-            widgetData: state.widgetData,
-            allowedRetry: state.allowedRetry,
-            hasWidgetData: !!state.widgetData,
-        });
-
-        if (state.widgetData) {
-            console.log('Widget data updated:', state.widgetData);
-            console.log('Allowed retry modes:', state.allowedRetry);
-        }
-    }, [state.widgetData, state.allowedRetry]);
 
     const socialIcons = [
         {
@@ -124,7 +106,7 @@ export default function StepOne({ onNext }) {
     ];
 
     const handleSocialSignup = (id) => {
-        console.log(id);
+        console.log('⚡️ ~ :111 ~ handleSocialSignup ~ id:', id);
     };
 
     return (
@@ -136,7 +118,7 @@ export default function StepOne({ onNext }) {
                     Already have an account? <a href='/login'>Login</a>
                 </p>
             </div>
-            {otpSent ? (
+            {otpSent && otpLength ? (
                 <div className='cont gap-3'>
                     <p className='text-gray-500'>
                         OTP sent to <strong>{email}</strong>

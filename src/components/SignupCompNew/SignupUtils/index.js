@@ -11,6 +11,7 @@ const initialState = {
     smsIdentifier: null,
     smsSuccessMessage: null,
     hideMobileRetry: null,
+    otpSent: false,
     emailRequestId: null,
     emailIdentifier: null,
     emailSuccessMessage: null,
@@ -50,6 +51,7 @@ function reducer(state, action) {
                 smsSuccessMessage: action.payload.message,
                 hideMobileRetry: null,
                 isLoading: false,
+                otpSent: true,
             };
         case 'SET_EMAIL_OTP_SUCCESS':
             return {
@@ -59,6 +61,7 @@ function reducer(state, action) {
                 emailSuccessMessage: action.payload.message,
                 hideEmailRetry: null,
                 isLoading: false,
+                otpSent: true,
             };
         case 'SET_OTP_ERROR':
             return { ...state, isLoading: false };
@@ -68,6 +71,8 @@ function reducer(state, action) {
                 widgetData: action.payload.widgetData,
                 allowedRetry: action.payload.allowedRetry,
             };
+        case 'SET_OTP_SENT':
+            return { ...state, otpSent: action.payload };
         case 'RESET':
             return initialState;
         default:
