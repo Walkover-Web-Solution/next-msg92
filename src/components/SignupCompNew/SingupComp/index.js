@@ -1,19 +1,60 @@
-import { useState } from 'react';
-import { SignupProvider } from '../SignupUtils';
+import { useEffect } from 'react';
+import checkSession, { otpWidgetSetup, SignupProvider, useSignup } from '../SignupUtils';
 import StepOne from '../StepOne';
 import StepTwo from '../StepTwo';
 import StepThree from '../StepThree';
 
-export default function SignupPage() {
-    const [step, setStep] = useState(0);
+// Create a separate component that uses the context
+function SignupSteps() {
+    const { state, dispatch } = useSignup();
+
+    // To set the step to a specific value
+    const setStep = (stepNumber) => {
+        dispatch({
+            type: 'SET_ACTIVE_STEP',
+            payload: stepNumber,
+        });
+    };
+
+    useEffect(() => {
+        console.log('SignupSteps - Initializing widget with dispatch:', dispatch);
+
+        otpWidgetSetup(
+            dispatch,
+            (data) => {
+                console.log('Widget initialized successfully:', data);
+            },
+            (error) => {
+                console.error('Widget initialization failed:', error);
+            }
+        );
+        checkSession();
+    }, [dispatch]);
+
+    useEffect(() => {
+        console.log('SignupSteps - State updated:', {
+            widgetData: state.widgetData,
+            allowedRetry: state.allowedRetry,
+            activeStep: state.activeStep,
+        });
+    }, [state]);
 
     return (
-        <SignupProvider>
-            <div style={{ maxWidth: 400, margin: '40px auto' }}>
-                {step === 0 && <StepOne onNext={() => setStep(1)} />}
-                {step === 1 && <StepTwo onNext={() => setStep(2)} onBack={() => setStep(0)} />}
-                {step === 2 && <StepThree onBack={() => setStep(1)} />}
+        <div className='flex h-screen w-full'>
+            <div className='h-full w-1/3 min-w-[320px] max-w-full bg-secondary'></div>
+            <div className='w-full p-12'>
+                {state.activeStep === 1 && <StepOne onNext={() => setStep(2)} />}
+                {state.activeStep === 2 && <StepTwo onNext={() => setStep(3)} onBack={() => setStep(1)} />}
+                {state.activeStep === 3 && <StepThree onBack={() => setStep(2)} />}
             </div>
+        </div>
+    );
+}
+
+export default function SignupPage() {
+    return (
+        <SignupProvider>
+            <SignupSteps />
         </SignupProvider>
     );
 }
