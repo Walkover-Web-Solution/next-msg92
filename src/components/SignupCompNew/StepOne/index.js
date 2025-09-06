@@ -6,12 +6,12 @@ import style from './StepOne.module.scss';
 export default function StepOne({ onNext }) {
     const { state, dispatch } = useSignup();
     const [email, setEmail] = useState('');
-    const [otp, setOtp] = useState(() => new Array(otpLength).fill(''));
     const otpInputRefs = useRef([]);
+    const otpLength = state.widgetData?.otpLength || null;
+    const [otp, setOtp] = useState(() => new Array(otpLength).fill(''));
 
     // Use global loading state from context
     const isLoading = state.isLoading;
-    const otpLength = state.widgetData?.otpLength || null;
     const otpSent = state.otpSent;
 
     const handleOtpChange = (index, value) => {
@@ -119,7 +119,7 @@ export default function StepOne({ onNext }) {
                 </p>
             </div>
             {otpSent && otpLength ? (
-                <div className='cont gap-3'>
+                <div className='cont gap-2'>
                     <p className='text-gray-500'>
                         OTP sent to <strong>{email}</strong>
                     </p>
@@ -159,7 +159,7 @@ export default function StepOne({ onNext }) {
                     </div>
                 </div>
             ) : (
-                <div className='cont gap-3'>
+                <div className='cont gap-2'>
                     <p className='text-gray-500'>Create account using Email ID</p>
                     <div className='flex items-center gap-4'>
                         <input

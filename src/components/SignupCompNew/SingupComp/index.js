@@ -5,7 +5,7 @@ import StepTwo from '../StepTwo';
 import StepThree from '../StepThree';
 
 // Create a separate component that uses the context
-function SignupSteps() {
+function SignupSteps({ pageInfo }) {
     const { state, dispatch } = useSignup();
 
     // To set the step to a specific value
@@ -39,18 +39,21 @@ function SignupSteps() {
         <div className='flex h-screen w-full'>
             <div className='h-full w-1/3 min-w-[320px] max-w-full bg-secondary'></div>
             <div className='w-full p-12'>
-                {state.activeStep === 1 && <StepOne onNext={() => setStep(2)} />}
-                {state.activeStep === 2 && <StepTwo onNext={() => setStep(3)} onBack={() => setStep(1)} />}
-                {state.activeStep === 3 && <StepThree onBack={() => setStep(2)} />}
+                {state.activeStep === 1 && <StepOne pageInfo={pageInfo} onNext={() => setStep(2)} />}
+                {state.activeStep === 2 && (
+                    <StepTwo pageInfo={pageInfo} onNext={() => setStep(3)} onBack={() => setStep(1)} />
+                )}
+                {state.activeStep === 3 && <StepThree pageInfo={pageInfo} onBack={() => setStep(2)} />}
             </div>
         </div>
     );
 }
 
-export default function SignupPage() {
+export default function SignupPage({ pageInfo }) {
+    console.log('⚡️ ~ :51 ~ SignupPage ~ pageInfo:', pageInfo);
     return (
         <SignupProvider>
-            <SignupSteps />
+            <SignupSteps pageInfo={pageInfo} />
         </SignupProvider>
     );
 }
