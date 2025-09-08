@@ -6,7 +6,7 @@ import { Typeahead } from 'react-bootstrap-typeahead';
 import GetCountryDetails from '@/utils/getCurrentCountry';
 import countries from '@/data/countries.json';
 
-export default function StepOne({ onNext, pageInfo }) {
+export default function StepTwo({ onNext, pageInfo }) {
     const { state, dispatch } = useSignup();
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
