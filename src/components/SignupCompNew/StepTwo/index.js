@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import { useSignup, sendOtp, verifyOtp } from '../SignupUtils';
 import { useEffect, useState, useRef } from 'react';
-import style from './StepOne.module.scss';
+import style from './StepTwo.module.scss';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import GetCountryDetails from '@/utils/getCurrentCountry';
 import countries from '@/data/countries.json';
+import { MdCheckCircle } from 'react-icons/md';
 
 export default function StepTwo({ onNext, pageInfo }) {
     const { state, dispatch } = useSignup();
@@ -197,17 +198,38 @@ export default function StepTwo({ onNext, pageInfo }) {
                     <div className='cont gap-2'>
                         <p className='text-gray-500'>Phone Number</p>
                         <div className='flex items-center gap-4'>
-                            <input
-                                maxLength={244}
-                                className='input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] outline-none focus-within:outline-none'
-                                name='phone'
-                                type='phone'
-                                required
-                                placeholder='9876543210'
-                                pattern='^[^\s@]+@[^\s@]+\.[^\s@]+$'
-                                value={phone}
-                                onChange={(e) => setPhone(e.target.value)}
-                            />
+                            <div className='input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] flex items-center gap-2  outline-none focus-within:outline-none'>
+                                <Typeahead
+                                    className='country-list-phone w-[24px]'
+                                    id='Country Code'
+                                    placeholder='+1'
+                                    labelKey={(option) => option.code?.toString()}
+                                    onChange={(selected) => {
+                                        handleOnSelect(selected);
+                                    }}
+                                    options={countries}
+                                    defaultSelected={
+                                        pageInfo?.country !== 'global'
+                                            ? [countries?.find((item) => item.shortname === currentCountry?.shortname)]
+                                            : []
+                                    }
+                                    inputProps={{
+                                        autoComplete: 'off',
+                                    }}
+                                />
+                                <input
+                                    maxLength={244}
+                                    className=' outline-none focus-within:outline-none'
+                                    name='phone'
+                                    type='phone'
+                                    required
+                                    placeholder='9876543210'
+                                    pattern='^[^\s@]+@[^\s@]+\.[^\s@]+$'
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value)}
+                                />
+                                <MdCheckCircle className='ms-auto text-green-600 text-xl' />
+                            </div>
                             {isLoading ? (
                                 <div className='flex items-center gap-2 text-accent '>
                                     <div className='loading loading-spinner loading-sm '></div>
@@ -221,6 +243,18 @@ export default function StepTwo({ onNext, pageInfo }) {
                         </div>
                     </div>
                 )}
+            </div>
+            <div className='flex gap-4'>
+                <button className='btn btn-primary btn-outline btn-md' disabled={otp.join('').length !== otpLength}>
+                    Back
+                </button>
+                <button
+                    onClick={handleVerifyOtp}
+                    className='btn btn-accent btn-md'
+                    disabled={otp.join('').length !== otpLength}
+                >
+                    Continue
+                </button>
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
 const initialState = {
-    activeStep: 3,
+    activeStep: 2,
     emailToken: null,
     mobileToken: null,
     personal: { fullName: '', dob: '', password: '' },

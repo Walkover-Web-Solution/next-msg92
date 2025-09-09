@@ -60,6 +60,31 @@ body {
         @apply bg-secondary;
     }
 }
+.country-list-phone {
+    div {
+        @apply w-full;
+        input {
+            @apply rounded  text-[16px] w-full;
+            &::placeholder {
+                @apply text-[16px] text-gray-500;
+            }
+        }
+    }
+    .rbt-menu {
+        @apply bg-white shadow-lg mt-2 rounded;
+        display: flex !important;
+        a {
+            &.active {
+                @apply bg-secondary;
+            }
+            @apply hover:bg-secondary text-[16px] rounded
+            px-3 py-2;
+        }
+    }
+    .rbt-highlight-text {
+        @apply bg-secondary;
+    }
+}
 .rbt-menu {
     @apply w-fit bg-white flex flex-col z-10;
 }
