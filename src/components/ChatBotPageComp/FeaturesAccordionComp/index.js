@@ -10,7 +10,7 @@ export default function FeaturesAccordionComp({ data }) {
                     <h2 className='text-3xl font-bold'>{data?.heading}</h2>
                     <p className='subheading'>{data?.subHeading}</p>
                 </div>
-                <div className='flex gap-2'>
+                <div className='flex gap-12'>
                     <div className='w-full flex flex-col gap-2 my-auto'>
                         {data?.content?.map((item, index) => (
                             <div
@@ -33,7 +33,11 @@ export default function FeaturesAccordionComp({ data }) {
                             </div>
                         ))}
                     </div>
-                    <div className='w-full ratio-square h-[500px] bg-[var(--hello-lite-color)] rounded-lg border'></div>
+                    <img
+                        className='w-full h-fit max-w-[600px] object-contain'
+                        src={data?.content?.[active]?.img}
+                        alt='bot'
+                    />
                 </div>
             </section>
         </>

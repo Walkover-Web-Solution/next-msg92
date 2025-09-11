@@ -58,7 +58,6 @@ import specialPages from '@/data/specialPages.json';
 import { useRouter } from 'next/router';
 import PreFooterMFTL from '@/components/migrateFromTextlocal/preFooterMFTL/preFooterMFTL';
 import CTAMFTL from '@/components/migrateFromTextlocal/ctaMFTL/ctaMFTL';
-import CaseStudyPageComp from '@/components/CaseStudyComp/CaseStudyPageComp/CaseStudyPageComp';
 import ChatBotPageComp from '@/components/ChatBotPageComp';
 
 const Components = {

@@ -6,19 +6,33 @@
             "content": [
                 {
                     "title": "WhatsApp",
-                    "description": "Send order updates, respond to FAQs, push personalized offers, and even collect feedback—all in the chat app your customers use daily. Automation makes it easy to broadcast campaigns and enrich every engagement with two-way conversation."
+                    "description": "Send order updates, respond to FAQs, push personalized offers, and even collect feedback—all in the chat app your customers use daily. Automation makes it easy to broadcast campaigns and enrich every engagement with two-way conversation.",
+                    "img": "/assets/global/hello-chatbot/whatsapp_bot.webp"
                 },
                 {
-                    "title": "Facebook Messenger & Instagram DM",
-                    "description": "Let your AI chatbot initiate product recommendations, send reminders, and handle post-purchase support, increasing social engagement and conversion rates. Leverage instagram automation to maximize outreach."
+                    "title": "Facebook",
+                    "description": "Your customers are already on Facebook, asking questions and looking for quick answers. Instead of leaving them waiting, let Hello Chatbot jump in—qualify leads, resolve product queries, share updates, and even offer personalized deals, all in one smooth conversation. Every message becomes an opportunity to connect, engage, and convert—without your team needing to stay online 24/7.",
+                    "img": "/assets/global/hello-chatbot/facebook_bot.webp"
+                },
+                {
+                    "title": "Instagram",
+                    "description": "Turn Instagram into a conversion hub with AI chatbots that instantly reply to DMs, suggest products, and resolve FAQs. Even post comments like “Price?” or “Size?” get smart replies or a quick DM follow-up—turning casual engagement into sales opportunities.",
+                    "img": "/assets/global/hello-chatbot/instagram_bot.webp"
                 },
                 {
                     "title": "Website Live Chat & Mobile Widget",
-                    "description": "Greet website visitors with personalized messages, capture leads in real time, answer product/service queries, and trigger contextual pop-ups based on user actions using an AI chat bot website experience."
+                    "description": "Greet website visitors with personalized messages, capture leads in real time, answer product/service queries, and trigger contextual pop-ups based on user actions using an AI chat bot website experience.",
+                    "img": "/assets/global/hello-chatbot/website_bot.webp"
                 },
                 {
                     "title": "Voice Calls",
-                    "description": "Enable customers to talk to your AI Voice Agent, allowing hands-free scheduling, support, and even complex issue resolution—perfect for those on the go."
+                    "description": "Enable customers to talk to your AI Voice Agent, allowing hands-free scheduling, support, and even complex issue resolution—perfect for those on the go.",
+                    "img": "/assets/global/hello-chatbot/voice_bot.webp"
+                },
+                {
+                    "title": "Email",
+                    "description": "Turn your inbox into a smarter support hub. With AI-powered automation, instantly sort, prioritize, and respond to customer queries. Send personalized offers, acknowledge tickets, and trigger follow-ups automatically—ensuring no customer email gets overlooked.",
+                    "img": "/assets/global/hello-chatbot/email_bot.webp"
                 }
             ]
         },

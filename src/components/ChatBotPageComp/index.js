@@ -1,8 +1,10 @@
+import LottiePlayer from '../LottiePlayer/LottiePlayer';
 import { LinkText } from '../UIComponent/Buttons/LinkButton';
 import { ChatbotBuilder } from './ChatbotBuilder';
 import FeaturesAccordionComp from './FeaturesAccordionComp';
 import FeatureWithBulletComp from './FeatureWithBulletComp';
 import PluginsAndIntegrationsComp from './PluginsAndIntegrationsComp';
+import styles from './ChatBotPageComp.module.scss';
 export default function ChatBotPageComp({ data }) {
     return (
         <>
@@ -23,7 +25,9 @@ export default function ChatBotPageComp({ data }) {
                         <LinkText>Test Chatbot</LinkText>
                     </button>
                 </div>
-                <div className='w-full h-[600px] bg-[var(--hello-lite-color)] rounded-lg border'></div>
+                <div className='w-full h-fit'>
+                    <LottiePlayer lottie='/assets/global/hello-chatbot/lottie/chatbot_hero.json' />
+                </div>
             </section>
             <FeaturesAccordionComp data={data?.voiceSupport} />
             <FeatureWithBulletComp data={data?.voiceBot} />
