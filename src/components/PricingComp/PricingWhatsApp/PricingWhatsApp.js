@@ -38,8 +38,22 @@ export default function PricingWhatsApp({ country, data }) {
                         <div className='flex flex-col gap-2 sm:gap-4'>
                             <div className='flex flex-col gap-2'>
                                 <h2 className='text-xl md:text-3xl font-semibold'>
-                                    <span className='text-green-600  font-bold text-2xl md:text-4xl'>Zero</span> margin
-                                    on meta price.
+                                    {country === 'in' ? (
+                                        <>
+                                            <span className='text-green-600  font-bold text-2xl md:text-4xl'>
+                                                Zero{' '}
+                                            </span>
+                                            margin on meta price.
+                                        </>
+                                    ) : (
+                                        <>
+                                            Meta Price?
+                                            <span className='text-green-600  font-bold text-2xl md:text-4xl'>
+                                                {' '}
+                                                Ours is Less.
+                                            </span>
+                                        </>
+                                    )}
                                 </h2>
                                 {country === 'in' && <p className='txt-sm md:text-lg'>GST excluded.</p>}
                                 {country === 'gb' && <p className='txt-sm md:text-lg'>VAT excluded.</p>}

@@ -13,8 +13,9 @@
         "heading": "Seamless Global messaging and communications.",
         "subheading": "Use Developer Friendly API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
         "lottie": "/assets/lotties/global-whatsapp.json",
-        "getstarted_btn": "Get Started",
-        "schedule_meet": "Schedule a Meeting",
+        "onboarding_call": "Start Onboarding",
+        "pricing_call": "Discuss Pricing",
+        "buttonHeading":"Take Your WhatsApp Journey Forward",
         "trustedByComp": {
             "heading": "Trusted by 30,000+ global businesses",
             "logos": [
