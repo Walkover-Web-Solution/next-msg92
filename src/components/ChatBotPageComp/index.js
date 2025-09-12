@@ -49,7 +49,9 @@ export function MultilingualBot() {
                     Break through language barriers and connect globally with artificial intelligence.
                 </p>
             </div>
-            <div className='w-full h-[600px] bg-[var(--hello-lite-color)] rounded-lg border'></div>
+            <div className='w-full h-fit rounded overflow-hidden'>
+                <LottiePlayer lottie='/assets/global/hello-chatbot/lottie/multilingual_ai_chatbot.json' />
+            </div>
         </section>
     );
 }

@@ -69,6 +69,7 @@
                 "tagline": "Chatbot Builder",
                 "heading": "Drag, Drop, Deploy—DIY Chatbots",
                 "subHeading": "Unleash Your Team’s Creativity—Build Bots Your Way, No Code Needed",
+                "img": "/assets/global/hello-chatbot/diy_chatbot.webp",
                 "content": [
                     {
                         "title": "Intuitive Visual Studio",
@@ -96,6 +97,7 @@
                 "tagline": "Agentic AI Bot",
                 "heading": "Smarter Conversations with Agentic AI",
                 "subHeading": "Let AI Do the Talking—Handle Complex Queries, Seamlessly",
+                "img": "/assets/global/hello-chatbot/agenetic_chatbot_builder.webp",
                 "content": [
                     {
                         "title": "Conversational Intelligence",
@@ -120,12 +122,10 @@
             "heading": "Try the Chatbot Live—Instant Demo",
             "subHeading": "Don’t just read about it—engage with our AI chatbot live!",
             "content": "See how MSG91’s AI chatbot understands intent, handles queries, and automates responses—instantly. Whether it’s customer support, order tracking, or appointment booking, our live demo shows you what’s possible.",
-            "button":
-                {
-                    "text": "Test Chatbot Live",
-                    "link": "/demochatbot"
-                }
-            
+            "button": {
+                "text": "Test Chatbot Live",
+                "link": "/demochatbot"
+            }
         }
     },
     "PreFooterComp": {
