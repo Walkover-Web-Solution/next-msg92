@@ -11,22 +11,17 @@ export default function FeaturesAccordionComp({ data }) {
                     <p className='subheading'>{data?.subHeading}</p>
                 </div>
 
-                <div className='flex gap-12'>
-                    <div className='w-full flex flex-col gap-2 my-auto'>
+                <div className='flex gap-12 items-center'>
+                    <div className='w-full flex flex-col md:gap-2 my-auto gap-6'>
                         {data?.content?.map((item, index) => (
                             <div
-                                className={`transition-all cursor-pointer border-b py-3 ${
+                                className={`transition-all cursor-pointer lg:border-b py-3 cont gap-4 ${
                                     index === data?.content?.length - 1 ? 'border-b-0' : ''
                                 }`}
                                 key={index}
                                 onClick={() => setActive(index)}
                             >
                                 <h3 className='text-xl font-semibold text-primary'>{item.title}</h3>
-                                <img
-                                    className='w-full h-fit max-w-[600px] object-contain lg:hidden'
-                                    src={item?.img}
-                                    alt='bot'
-                                />
                                 <p
                                     className={`${styles.slideDescription} ${
                                         index === active ? styles.slideDescriptionActive : ''
@@ -34,11 +29,16 @@ export default function FeaturesAccordionComp({ data }) {
                                 >
                                     {item.description}
                                 </p>
+                                <img
+                                    className='w-full h-fit max-w-[400px] object-contain lg:hidden'
+                                    src={item?.img}
+                                    alt='bot'
+                                />
                             </div>
                         ))}
                     </div>
                     <img
-                        className='w-full h-fit max-w-[600px] object-contain hidden lg:block'
+                        className='lg:w-1/2 xl:w-1/3 h-fit lg:block hidden'
                         src={data?.content?.[active]?.img}
                         alt='bot'
                     />
