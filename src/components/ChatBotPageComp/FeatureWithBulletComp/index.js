@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { MdArrowRightAlt } from 'react-icons/md';
 
 export default function FeatureWithBulletComp({ data, index }) {
@@ -9,9 +10,19 @@ export default function FeatureWithBulletComp({ data, index }) {
                     <h2 className='text-3xl font-bold'>{data?.heading}</h2>
                     <p className='text-lg text-gray-500 '>{data?.subHeading}</p>
                 </div>
-                <div className={`cont_gap gap-12 flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                    <div className='w-full max-w-[520px] aspect-square bg-[var(--hello-lite-color)] rounded-lg border'></div>
-                    <div className='w-full cont gap-6 justify-center'>
+                <div
+                    className={`cont_gap gap-12 flex items-center ${
+                        index % 2 === 0 ? 'flex-col lg:flex-row' : 'flex-col lg:flex-row-reverse'
+                    }`}
+                >
+                    <Image
+                        width={600}
+                        height={600}
+                        className='w-full h-fit max-w-[500px]'
+                        src={data?.img}
+                        alt='Voice Bot'
+                    />
+                    <div className='w-full cont gap-6 justify-center '>
                         {data?.content.map((feature, i) => (
                             <div className='flex gap-3' key={i}>
                                 <MdArrowRightAlt className='text-2xl' />

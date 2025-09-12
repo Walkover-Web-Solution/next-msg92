@@ -16,9 +16,9 @@
                 },
                 {
                     "name": "Zoho CRM",
-                    "description": "MSG91 offers native plugin for zoho crm through which you can automate the omnichannel campaigns for multiple lead stages and workflow conditions. You can manually run personalized multichannel bulk campaigns on specific segments directly from your Zoho CRM panel.MSG91 also provides webhooks for inbound and outbound whatsapp messages to capture the logs and responses and many more features you can explore through the plugin.",
+                    "description": "MSG91 offers a native plugin for Zoho CRM through which you can automate omni channel campaigns for multiple lead stages and workflow conditions. You can manually run personalized multichannel bulk campaigns on specific segments directly from your Zoho CRM panel. MSG91 also provides webhooks for inbound and outbound WhatsApp messages to capture the logs and responses and many more features you can explore through the plugin.",
                     "icon": "/assets/integration_partner/zoho-crm.svg",
-                    "link": "https://msg91.com/help/integration-guides/zoho-subscription-how-to-integrate-with-msg91"
+                    "link": "https://msg91.com/help/integration-guides/zoho-crm-how-to-integrate-with-msg91"
                 },
                 {
                     "name": "Clevertap",

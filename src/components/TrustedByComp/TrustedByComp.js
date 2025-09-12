@@ -8,7 +8,7 @@ export default function TrustedByComp({ data }) {
                     className={`flex flex-col gap-4 ${data?.fullwidth ? 'container cont_p items-center gap-6' : 'gap-4'} `}
                 >
                     <h2 className={` ${data?.fullwidth ? 'text-3xl font-bold' : 'text-lg'} `}>{data?.heading}</h2>
-                    <div className='flex gap-8 flex-wrap items-center'>
+                    <div className='flex gap-5 flex-wrap items-center'>
                         {data?.logos.map((img, index) => (
                             <Image
                                 key={index}
@@ -16,7 +16,7 @@ export default function TrustedByComp({ data }) {
                                 alt={img?.name}
                                 width={100}
                                 height={100}
-                                className='h-[24px] w-auto'
+                                className='h-[22px] w-auto'
                             />
                         ))}
                     </div>
