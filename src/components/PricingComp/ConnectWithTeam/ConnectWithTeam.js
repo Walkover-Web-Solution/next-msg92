@@ -1,23 +1,22 @@
 import getURL from '@/utils/getURL';
-import Link from 'next/link';
 import { useState } from 'react';
 import { InlineWidget } from 'react-calendly';
 import { MdLaunch } from 'react-icons/md';
 
-export default function ConnectWithTeam({ product, isPlan, data, href, per }) {
+export default function ConnectWithTeam({ product, isPlan, pageData, href, per }) {
     const [isSalesModalOpen, setIsSalesModalOpen] = useState(false);
     return (
         <div className='flex flex-col gap-3'>
             {isPlan && (
                 <>
                     {per ? (
-                        <div className='text-xl' dangerouslySetInnerHTML={{ __html: data?.contentper }}></div>
+                        <div className='text-xl' dangerouslySetInnerHTML={{ __html: pageData?.contentper }}></div>
                     ) : (
-                        <div className='text-xl' dangerouslySetInnerHTML={{ __html: data?.content }}></div>
+                        <div className='text-xl' dangerouslySetInnerHTML={{ __html: pageData?.content }}></div>
                     )}
-                    {data?.sales_btn && (
+                    {pageData?.sales_btn && (
                         <button onClick={() => setIsSalesModalOpen(true)} className='btn btn-outline btn-md'>
-                            {data?.sales_btn}
+                            {pageData?.sales_btn}
                         </button>
                     )}
                 </>
@@ -25,7 +24,7 @@ export default function ConnectWithTeam({ product, isPlan, data, href, per }) {
             <div>
                 <a href={getURL('product', href)} className='flex items-center gap-1 text-link active-link '>
                     <MdLaunch />
-                    {data?.know_more} {product}
+                    {pageData?.know_more} {product}
                 </a>
             </div>
             {isSalesModalOpen && (

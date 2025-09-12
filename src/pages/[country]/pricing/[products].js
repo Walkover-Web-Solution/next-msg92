@@ -27,6 +27,7 @@ export const getServerSideProps = async (context) => {
     }
     let pageData = getPricingPageData(country, product);
     let products = getProducts(country);
+    console.log('⚡️ ~ :45 ~ getServerSideProps ~ pricingData:', pricingData);
 
     if (!pricingData) {
         return { notFound: true };

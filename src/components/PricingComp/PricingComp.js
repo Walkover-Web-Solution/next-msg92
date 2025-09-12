@@ -34,10 +34,22 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                             <PricingHello pricingData={pricingData} pageData={pageData} country={pageInfo?.country} />
                         )}
 
-                        {/* {page === 'campaign' && <PricingCampaign data={data?.campaign} country={pageInfo?.country} />}
+                        {pageInfo?.product === 'campaign' && (
+                            <PricingCampaign
+                                pricingData={pricingData}
+                                pageData={pageData}
+                                country={pageInfo?.country}
+                            />
+                        )}
 
-                        {page === 'segmento' && <PricingSegmento data={data?.segmento} country={pageInfo?.country} />}
-
+                        {pageInfo?.product === 'segmento' && (
+                            <PricingSegmento
+                                pricingData={pricingData}
+                                pageData={pageData}
+                                country={pageInfo?.country}
+                            />
+                        )}
+                        {/* 
                         {page === 'otpwidget' && <PricingOtp data={data?.otpwidget} country={pageInfo?.country} />}
 
                         {page === 'sms' && <PricingSMSOTP data={data?.sms} type={'sms'} country={pageInfo?.country} />}

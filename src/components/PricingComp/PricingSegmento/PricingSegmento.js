@@ -12,32 +12,17 @@ import getSubscriptions from '@/utils/getSimplifiedPlans';
 import contvertToLocal from '@/utils/convertToLocal';
 import InfoIcon from '@/components/UIComponent/InfoIcon/InfoIcon';
 
-export default function PricingSegmento({ data, country }) {
-    const { currency, symbol } = GetCurrencySymbol(country);
-    const [isLoading, setIsLoading] = useState(true);
-    const [plans, setPlans] = useState();
+export default function PricingSegmento({ pageData, pricingData, pageInfo }) {
+    const { currency, symbol } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
     const [isCalculationModalOpen, setIsCalculationModalOpen] = useState(false);
     const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false);
     const [openedFeatureModal, setOpenedFeatureModal] = useState('');
     const [hasyYarly, setHasYearly] = useState(false);
 
-    const fetchPlans = useCallback(async () => {
-        setIsLoading(true);
-        const response = await getSubscriptions(currency, 2);
-        if (response) {
-            setPlans(response);
-        }
-        setIsLoading(false);
-    }, []);
-
-    useEffect(() => {
-        fetchPlans();
-    }, []);
-
     const hasYearlyPlan = useCallback(() => {
-        return plans?.some((plan) => plan.plan_amounts?.some((amount) => amount.plan_type?.name === 'Yearly'));
-    }, [plans]);
+        return pricingData?.some((plan) => plan.plan_amounts?.some((amount) => amount.plan_type?.name === 'Yearly'));
+    }, [pricingData]);
 
     useEffect(() => {
         if (hasYearlyPlan()) {
@@ -62,55 +47,6 @@ export default function PricingSegmento({ data, country }) {
         }
     }, [isFeatureModalOpen]);
 
-    function handleOfferPrice(price) {
-        let ammount;
-        let percent;
-        switch (price?.currency?.short_name) {
-            case 'INR':
-                if (price.plan_amount == 1000) {
-                    percent = ((1500 - 1000) / 1500) * 100;
-                    ammount = 1500;
-                } else if (price.plan_amount == 2000) {
-                    percent = ((3000 - 2000) / 3000) * 100;
-                    ammount = 3000;
-                }
-                break;
-            case 'USD':
-                if (price.plan_amount == 28) {
-                    percent = ((40 - 28) / 40) * 100;
-                    ammount = 40;
-                } else if (price.plan_amount == 56) {
-                    percent = ((80 - 56) / 80) * 100;
-                    ammount = 80;
-                }
-                break;
-            case 'GBP':
-                if (price.plan_amount == 24) {
-                    percent = ((35 - 24) / 35) * 100;
-                    ammount = 35;
-                } else if (price.plan_amount == 45) {
-                    percent = ((65 - 45) / 65) * 100;
-                    ammount = 65;
-                }
-                break;
-            default:
-                break;
-        }
-        percent = Math.round(percent) === 31 ? 30 : Math.round(percent);
-        if (ammount) {
-            return (
-                <div className='flex gap-2 items-center'>
-                    <span className=' text-gray-400 text-lg'>
-                        <span className=' line-through'>
-                            {price?.currency?.symbol}
-                            {ammount}
-                        </span>
-                    </span>
-                    <span className='font-bold'>{percent}% Off</span>
-                </div>
-            );
-        }
-    }
     return (
         <>
             <div className='flex flex-col gap-6 w-full'>
@@ -126,7 +62,9 @@ export default function PricingSegmento({ data, country }) {
                     </div>{' '}
                     <p className='text-sm'>
                         <strong>Note:</strong>{' '}
-                        {`Extra Contacts are available for purchase in bundles of ${contvertToLocal(1000)} contacts each`}
+                        {`Extra Contacts are available for purchase in bundles of ${contvertToLocal(
+                            1000
+                        )} contacts each`}
                         .
                     </p>
                 </div>
@@ -156,8 +94,8 @@ export default function PricingSegmento({ data, country }) {
                     )}
 
                     <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full gap-8 '>
-                        {plans?.length > 0 &&
-                            plans?.map((plan, index) => {
+                        {pricingData?.length > 0 &&
+                            pricingData?.map((plan, index) => {
                                 return (
                                     <>
                                         <div
@@ -337,44 +275,18 @@ export default function PricingSegmento({ data, country }) {
                                     </>
                                 );
                             })}
-
-                        {isLoading &&
-                            [...Array(3)].map((_, index) => (
-                                <div
-                                    key={index}
-                                    className='flex col-span-1  flex-col gap-6  h-[800px] p-6 border rounded bg-white'
-                                >
-                                    <div className='flex flex-col gap-4'>
-                                        <div className=' skeleton h-[40px] w-full'></div>
-                                        <div className=' skeleton h-[30px] w-2/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                        <div className=' skeleton h-[40px] w-1/2'></div>
-                                        <span className='border-b-[1px]'></span>
-                                    </div>
-                                    <div className='flex flex-col gap-4'>
-                                        <div className=' skeleton h-[20px] w-2/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                    </div>
-                                    <div className='flex flex-col gap-4 mt-4'>
-                                        <div className=' skeleton h-[20px] w-2/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                    </div>
-                                    <div className='flex flex-col gap-4 mt-4'>
-                                        <div className=' skeleton h-[20px] w-2/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                    </div>
-                                </div>
-                            ))}
                     </div>
 
-                    <ConnectWithTeam product={'Segmento'} href={'segmento'} data={data?.connectComp} isPlan={true} />
-                    <FaqsComp data={data?.faqComp} notCont={true} />
+                    <ConnectWithTeam
+                        product={'Segmento'}
+                        href={'segmento'}
+                        data={pageData?.connectComp}
+                        isPlan={true}
+                    />
+                    <FaqsComp data={pageData?.faqComp} notCont={true} />
                 </div>
             </div>
-            {plans && isCalculationModalOpen && (
+            {pricingData && isCalculationModalOpen && (
                 <dialog id='calculate_segmento_pricing' className='modal z-[1000!important]' open>
                     <div className='modal-box rounded-md flex flex-col gap-4 justify-between'>
                         <div className='flex items-center justify-between'>
@@ -388,7 +300,12 @@ export default function PricingSegmento({ data, country }) {
                                 ✕
                             </span>
                         </div>
-                        <CalculatePricingSegmento plans={plans} currency={currency} symbol={symbol} tabtype={tabtype} />
+                        <CalculatePricingSegmento
+                            plans={pricingData}
+                            currency={currency}
+                            symbol={symbol}
+                            tabtype={tabtype}
+                        />
                     </div>
                 </dialog>
             )}
