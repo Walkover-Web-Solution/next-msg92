@@ -1,8 +1,10 @@
+import LottiePlayer from '@/components/LottiePlayer/LottiePlayer';
+
 export default function PluginsAndIntegrationsComp() {
     return (
         <section className='bg-[var(--campaign-lite-color)]'>
-            <div className='container flex cont_gap cont_p justify-between items-center '>
-                <div className='flex flex-col gap-1 max-w-[640px]'>
+            <div className='container cont cont_gap cont_p justify-between items-center '>
+                <div className='flex flex-col gap-1'>
                     <span className='text-lg uppercase text-[var(--campaign-dark-color)] font-bold'>
                         Plugins & Integrations
                     </span>
@@ -21,7 +23,9 @@ export default function PluginsAndIntegrationsComp() {
                         <li>Custom Workflows</li>
                     </ul>
                 </div>
-                <div className='w-full max-w-[520px] aspect-square bg-[var(--white-color)] rounded-lg border'></div>
+                <div className='w-full h-fit rounded overflow-hidden'>
+                    <LottiePlayer lottie='/assets/global/hello-chatbot/lottie/plugin_and_integrations.json' />
+                </div>
             </div>
         </section>
     );
