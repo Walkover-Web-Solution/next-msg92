@@ -12,7 +12,7 @@
         "tagline": "REVOLUTIONIZE CUSTOMER SUPPORT",
         "heading": "Customer Service Software",
         "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
-        "banner_img": "/assets/global/hello/heroimg.png",
+        "lottie": "/assets/global/hello/new_webp/hello_hero.json",
         "getstarted_btn": "Get Started",
         "trustedByComp": {
             "heading": "Support 15+ channels & platforms",
@@ -64,40 +64,10 @@
             ]
         }
     },
-    "FeaturesV2": {
+    "FeatureWithBulletGroup": {
         "heading": "Features",
         "iconColor": "text-campaign",
         "features": [
-            {
-                "name": "Unlimited Agents",
-                "content": "Unlimited free agents to power up your customer support. More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is nonumber attached to your number of customer support agents",
-                "img": "/assets/global/hello/unlimited-agents.svg"
-            },
-            {
-                "name": "Chatbot",
-                "content": "Resolve customer queries round-the-clock across text and voice. Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents.",
-                "img": "/assets/global/hello/chatbot.svg"
-            },
-            {
-                "name": "Screen Control",
-                "content": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues.",
-                "img": "/assets/global/hello/screen-control.svg"
-            },
-            {
-                "name": "Video Call / Screen Sharing",
-                "content": "High-quality video calls wherever your customer is. Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue.",
-                "img": "/assets/global/hello/video-call---screen-sharing.svg"
-            },
-            {
-                "name": "Workflow",
-                "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs.",
-                "img": "/assets/global/hello/workflow.svg"
-            },
-            {
-                "name": "Analytics",
-                "content": "Analytics and reports to monitor your agent performance. Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support.",
-                "img": "/assets/global/hello/analytics.svg"
-            },
             {
                 "name": "Unify Every Conversation, Empower Every Team",
                 "subtitle": "Seamless Multichannel Inbox for Your Business",
@@ -111,7 +81,7 @@
                     ]
                 },
                 "footer": "Achieve next-level collaboration and customer visibility, unifying every channel for seamless service. Your teams work as one, with instant access to rich customer context—empowering proactive support and meaningful engagement at scale.",
-                "img": "/assets/global/hello/analytics.svg"
+                "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
             },
             {
                 "name": "Connect, Engage, and Convert Instantly",
@@ -125,7 +95,7 @@
                         "Reduce bounce rates, capture more leads, and create memorable first impressions"
                     ]
                 },
-                "img": "/assets/global/hello/analytics.svg"
+                "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
             },
             {
                 "name": "Handle Even the Toughest Calls with Ease",
@@ -140,7 +110,7 @@
                         "Dramatically reduce hold times while maintaining a warm, branded voice experience"
                     ]
                 },
-                "img": "/assets/global/hello/analytics.svg"
+                "img": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp"
             },
             {
                 "name": "Reply Smarter and Faster—Every Time",
@@ -154,7 +124,7 @@
                     ]
                 },
                 "footer": "Your agents become super-agents—delivering quick, consistent customer care at scale through intelligent chatbots.",
-                "img": "/assets/global/hello/analytics.svg"
+                "lottie": "/assets/global/hello/new_webp/summarization.json"
             },
             {
                 "name": "Speak Their Language—Break Barriers, Build Trust",
@@ -236,6 +206,31 @@
                         "Continuously improve bots with analytics and feedback"
                     ]
                 },
+                "img": "/assets/global/hello/analytics.svg"
+            },
+            {
+                "name": "Chatbot",
+                "content": "Resolve customer queries round-the-clock across text and voice. Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents.",
+                "img": "/assets/global/hello/chatbot.svg"
+            },
+            {
+                "name": "Screen Control",
+                "content": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues.",
+                "img": "/assets/global/hello/screen-control.svg"
+            },
+            {
+                "name": "Video Call / Screen Sharing",
+                "content": "High-quality video calls wherever your customer is. Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue.",
+                "img": "/assets/global/hello/video-call---screen-sharing.svg"
+            },
+            {
+                "name": "Workflow",
+                "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs.",
+                "img": "/assets/global/hello/workflow.svg"
+            },
+            {
+                "name": "Analytics",
+                "content": "Analytics and reports to monitor your agent performance. Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support.",
                 "img": "/assets/global/hello/analytics.svg"
             }
         ]
