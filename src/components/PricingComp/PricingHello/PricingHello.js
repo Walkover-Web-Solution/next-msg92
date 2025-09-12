@@ -1,4 +1,3 @@
-import getSubscriptions from '@/utils/getSubscription';
 import { useState, useEffect, useCallback } from 'react';
 import { MdCheck, MdClose } from 'react-icons/md';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
@@ -8,30 +7,14 @@ import getURL from '@/utils/getURL';
 import CalculateHelloPricing from './calculateHelloPricing';
 import getPlanServices from '@/utils/getPlanServices';
 
-export default function PricingHello({ data, country }) {
+export default function PricingHello({ pageData, pricingData, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
-    const [isLoading, setIsLoading] = useState(true);
-    const [plans, setPlans] = useState();
     const [tabtype, setTabtype] = useState('Monthly');
-
     const [hasyYarly, setHasYearly] = useState(false);
 
-    const fetchPlans = useCallback(async () => {
-        const response = await getSubscriptions(currency, 7);
-        if (response) {
-            setPlans(response);
-        }
-        setIsLoading(false);
-    }, []);
-
-    useEffect(() => {
-        setIsLoading(true);
-        fetchPlans();
-    }, [fetchPlans]);
-
     const hasYearlyPlan = useCallback(() => {
-        return plans?.some((plan) => plan.plan_amounts?.some((amount) => amount.plan_type?.name === 'Yearly'));
-    }, [plans]);
+        return pricingData?.some((plan) => plan.plan_amounts?.some((amount) => amount.plan_type?.name === 'Yearly'));
+    }, [pricingData]);
 
     useEffect(() => {
         if (hasYearlyPlan()) {
@@ -119,9 +102,9 @@ export default function PricingHello({ data, country }) {
                     )}
 
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 w-full gap-4 '>
-                        {plans &&
-                            plans.length > 0 &&
-                            plans.map(
+                        {pricingData &&
+                            pricingData.length > 0 &&
+                            pricingData.map(
                                 (plan) =>
                                     plan?.plan_amounts?.length > 0 &&
                                     plan?.plan_amounts.map((amount, index) => {
@@ -130,7 +113,6 @@ export default function PricingHello({ data, country }) {
                                             amount?.plan_type?.name === tabtype
                                         ) {
                                             const services = getPlanServices(plan, currency);
-                                            console.log('⚡️ ~ :133 ~ plan?.plan_amounts.map ~ services:', services);
                                             return (
                                                 <div
                                                     key={plan?.name + index}
@@ -149,8 +131,7 @@ export default function PricingHello({ data, country }) {
                                                         </div>
                                                         <div className='gap-1 flex flex-col'>
                                                             <p className=' text-xl font-semibold text-green-600 capitalize'>
-                                                                {amount?.currency?.symbol}
-                                                                {amount?.plan_amount} {tabtype}
+                                                                {`${amount?.currency?.symbol}${amount?.plan_amount} ${tabtype}`}
                                                             </p>
                                                             {handleOfferPrice(amount) ? (
                                                                 <div>{handleOfferPrice(amount) || '-'}</div>
@@ -178,12 +159,15 @@ export default function PricingHello({ data, country }) {
                                                                     (rate, i) =>
                                                                         rate?.currency?.short_name === currency && (
                                                                             <p key={i} className='text-sm'>
-                                                                                {rate?.free_credits === -1 ||
-                                                                                rate?.free_credits === '-1'
-                                                                                    ? 'Unlimited'
-                                                                                    : rate?.free_credits}{' '}
-                                                                                {service?.service_credit?.service?.name}
-                                                                                /month
+                                                                                {`${
+                                                                                    rate?.free_credits === -1 ||
+                                                                                    rate?.free_credits === '-1'
+                                                                                        ? 'Unlimited'
+                                                                                        : rate?.free_credits
+                                                                                } ${
+                                                                                    service?.service_credit?.service
+                                                                                        ?.name
+                                                                                }/month`}
                                                                             </p>
                                                                         )
                                                                 )
@@ -217,8 +201,7 @@ export default function PricingHello({ data, country }) {
                                                                                         fontSize={18}
                                                                                         color='#DC3645'
                                                                                     />
-                                                                                )}
-
+                                                                                )}{' '}
                                                                                 {feature?.feature?.name}
                                                                             </p>
                                                                         );
@@ -259,7 +242,7 @@ export default function PricingHello({ data, country }) {
                                                                                             fontSize={18}
                                                                                             color='#DC3645'
                                                                                         />
-                                                                                        No Extra {serviceName}
+                                                                                        {`No Extra ${serviceName}`}
                                                                                     </span>
                                                                                 )}
                                                                             </div>
@@ -282,37 +265,6 @@ export default function PricingHello({ data, country }) {
                                         }
                                     })
                             )}
-
-                        {isLoading &&
-                            [...Array(3)].map((_, index) => (
-                                <div
-                                    key={index}
-                                    className='flex col-span-1  flex-col gap-6  h-[800px] p-6 border rounded bg-white'
-                                >
-                                    <div className='flex flex-col gap-4'>
-                                        <div className=' skeleton h-[40px] w-full'></div>
-                                        <div className=' skeleton h-[30px] w-2/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                        <div className=' skeleton h-[40px] w-1/2'></div>
-                                        <span className='border-b-[1px]'></span>
-                                    </div>
-                                    <div className='flex flex-col gap-4'>
-                                        <div className=' skeleton h-[20px] w-2/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                    </div>
-                                    <div className='flex flex-col gap-4 mt-4'>
-                                        <div className=' skeleton h-[20px] w-2/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                    </div>
-                                    <div className='flex flex-col gap-4 mt-4'>
-                                        <div className=' skeleton h-[20px] w-2/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                        <div className=' skeleton h-[20px] w-1/3'></div>
-                                    </div>
-                                </div>
-                            ))}
                     </div>
                     {country === 'in' || country === 'gb' ? (
                         <div className='text-gray-500'>
@@ -320,8 +272,8 @@ export default function PricingHello({ data, country }) {
                         </div>
                     ) : null}
 
-                    <ConnectWithTeam product={'Hello'} href={'hello'} data={data?.connectComp} isPlan={true} />
-                    <FaqsComp data={data?.faqComp} notCont={true} />
+                    <ConnectWithTeam product={'Hello'} href={'hello'} data={pageData?.connectComp} isPlan={true} />
+                    <FaqsComp data={pageData?.faqComp} notCont={true} />
                 </div>
             </div>
         </>

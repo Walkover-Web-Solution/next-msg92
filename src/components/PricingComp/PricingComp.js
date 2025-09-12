@@ -9,27 +9,32 @@ import PricingRCS from './PricingRCS/PricingRCS';
 import PricingEmail from './PricingEmail/PricingEmail';
 import PricingWhatsApp from './PricingWhatsApp/PricingWhatsApp';
 import NotFoundComp from '../NotFoundComp/NotFoundComp';
-import pages from '@/data/specialPages.json';
 import HeadComp from '../HeadComp/HeadComp';
+import NotificationBarComp from '../notificationBarComp/notificationBarComp';
+import MenuBarComp from '../menuBarComp/menuBarComp';
+import FooterComp from '../FooterComp/FooterComp';
 
-export default function PricingComp({ data, pageInfo }) {
-    let page;
-    if (pageInfo?.country === 'global') {
-        page = pageInfo?.pathArray[1];
-    } else {
-        page = pageInfo?.pathArray[2];
-    }
-    if (pages?.pricing.includes(page)) {
+export default function PricingComp({ pricingData, pageInfo, pageData, products, commonData }) {
+    if (pricingData) {
         return (
             <>
-                <HeadComp data={data[page]?.HeadComp} pageInfo={pageInfo} />
+                <HeadComp data={pageData?.HeadComp} pageInfo={pageInfo} />
+                <NotificationBarComp
+                    componentData={commonData?.notification}
+                    country={pageInfo?.country}
+                    pageInfo={pageInfo}
+                />
+
+                <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
                 <div className='bg-neutral py-3'>
                     <div className='container md:my-10 my-4 flex md:gap-12 gap-6 md:flex-row flex-col '>
-                        <PricingNav products={data?.products} page={page} />
+                        <PricingNav products={products} page={pageInfo?.product} />
 
-                        {page === 'hello' && <PricingHello data={data?.hello} country={pageInfo?.country} />}
+                        {pageInfo?.product === 'hello' && (
+                            <PricingHello pricingData={pricingData} pageData={pageData} country={pageInfo?.country} />
+                        )}
 
-                        {page === 'campaign' && <PricingCampaign data={data?.campaign} country={pageInfo?.country} />}
+                        {/* {page === 'campaign' && <PricingCampaign data={data?.campaign} country={pageInfo?.country} />}
 
                         {page === 'segmento' && <PricingSegmento data={data?.segmento} country={pageInfo?.country} />}
 
@@ -47,9 +52,10 @@ export default function PricingComp({ data, pageInfo }) {
 
                         {page === 'rcs' && (
                             <PricingRCS data={data?.rcs} country={pageInfo?.country} pageInfo={pageInfo} />
-                        )}
+                        )} */}
                     </div>
                 </div>
+                <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} />
             </>
         );
     } else {
