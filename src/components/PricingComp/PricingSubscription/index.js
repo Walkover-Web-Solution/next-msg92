@@ -4,6 +4,7 @@ import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 import PricingHello from './PricingHello';
 import PricingSegmento from './PricingSegmento';
+import PricingEmail from './PricingEmail';
 
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {
     const { symbol } = GetCurrencySymbol(pageInfo?.country);
@@ -12,7 +13,6 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
 
     useEffect(() => {
         const yearlyPlan = pricingData?.find((plan) => plan.amount.plan_type === 'Yearly');
-        console.log('⚡️ ~ :15 ~ useEffect ~ yearlyPlan:', yearlyPlan);
         if (yearlyPlan) {
             setHasYearly(true);
         }
@@ -55,6 +55,9 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                             tabtype={tabtype}
                             pageInfo={pageInfo}
                         />
+                    )}
+                    {pageInfo?.product === 'email' && (
+                        <PricingEmail pricingData={pricingData} symbol={symbol} tabtype={tabtype} pageInfo={pageInfo} />
                     )}
 
                     {pageInfo?.country === 'in' || pageInfo?.country === 'gb' ? (

@@ -1,12 +1,9 @@
 import PricingNav from './PricingNavComp/PricingNavComp';
-import PricingHello from './PricingSubscription/PricingHello';
 import PricingCampaign from './PricingCampaign/PricingCampaign';
-import PricingSegmento from './PricingSubscription/PricingSegmento';
 import PricingOtp from './PricingOtp/PricingOtp';
 import PricingSMSOTP from './PricingSMS/PricingSMSOTP';
 import PricingVoice from './PricingVoice/PricingVoice';
 import PricingRCS from './PricingRCS/PricingRCS';
-import PricingEmail from './PricingEmail/PricingEmail';
 import PricingWhatsApp from './PricingWhatsApp/PricingWhatsApp';
 import NotFoundComp from '../NotFoundComp/NotFoundComp';
 import HeadComp from '../HeadComp/HeadComp';
@@ -50,7 +47,9 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                                 country={pageInfo?.country}
                             />
                         )} */}
-                        {(pageInfo?.product === 'hello' || pageInfo?.product === 'segmento') && (
+                        {(pageInfo?.product === 'hello' ||
+                            pageInfo?.product === 'segmento' ||
+                            pageInfo?.product === 'email') && (
                             <PricingSubscription pricingData={pricingData} pageData={pageData} pageInfo={pageInfo} />
                         )}
                         {/* 
