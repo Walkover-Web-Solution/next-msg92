@@ -3,6 +3,7 @@ import getCommonCompData from '@/utils/getCommonCompData';
 import getPricing from '@/utils/getPricing';
 
 export default function PricingCountryPage({ pricingData, pageInfo, pageData, commonData, products }) {
+    console.log('⚡️ ~ :6 ~ PricingCountryPage ~ pricingData:', pricingData);
     return (
         <PricingComp
             pricingData={pricingData}

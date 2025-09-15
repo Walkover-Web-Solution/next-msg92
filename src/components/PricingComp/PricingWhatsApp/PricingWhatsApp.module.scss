@@ -1,21 +1,38 @@
 .table_cont {
     @apply w-full overflow-x-scroll rounded;
     .table {
-        @apply w-full bg-white rounded min-w-[300px] md:min-w-[540px];
+        @apply w-full bg-white rounded min-w-[300px] md:min-w-[540px] border-collapse;
         .table_row {
-            @apply grid  text-[10px] sm:text-[14px] xl:text-[16px];
-            grid-template-columns: repeat(16, minmax(0, 1fr));
-            & span {
-                @apply flex col-span-3 w-full px-1 py-2 sm:px-2 sm:py-3 break-words overflow-hidden;
+            @apply text-[10px] sm:text-[14px] xl:text-[16px];
+            
+            & th,
+            & td {
+                @apply px-1 py-2 sm:px-4 sm:py-3 break-words;
             }
-            & span:first-of-type {
-                @apply col-span-4;
+            
+            & th:first-of-type,
+            & td:first-of-type {
+                @apply w-[25%];
             }
-            & span:nth-of-type(2){
-                @apply flex col-span-2
+            
+            & th:nth-of-type(2),
+            & td:nth-of-type(2) {
+                @apply w-[12.5%];
             }
-            & span:nth-of-type(5){
-                @apply flex col-span-4
+            
+            & th:nth-of-type(3),
+            & td:nth-of-type(3) {
+                @apply w-[18.75%];
+            }
+            
+            & th:nth-of-type(4),
+            & td:nth-of-type(4) {
+                @apply w-[18.75%];
+            }
+            
+            & th:nth-of-type(5),
+            & td:nth-of-type(5) {
+                @apply w-[25%];
             }
         }
     }

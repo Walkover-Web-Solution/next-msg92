@@ -3,7 +3,7 @@ import getPlanServices from './getPlanServices';
 
 export default async function getPricing(country, page) {
     const msId = msIds[page];
-    const currencySymbol = currency[country] || '$';
+    const currencySymbol = currency[country] || 'USD';
     if (page === 'segmento' || page === 'email' || page === 'hello') {
         try {
             const response = await axios.get(
@@ -14,15 +14,15 @@ export default async function getPricing(country, page) {
         } catch (error) {
             throw new Error('Some error on server: ' + error.message);
         }
-    } else if (page === 'otp' || page === 'sms') {
+    } else if (page === 'whatsapp') {
         try {
-            const response = await axios.get(
-                `${process.env.SUBSCRIPTION_PRICING_URL}/plans?currency=${currencySymbol}&ms_id=${msId}`
-            );
-            return response.data.data;
+            const response = await axios.get(`${process.env.WHATSAPP_PRICING_URL}/${currencySymbol}`);
+            return response?.data?.data.sort((a, b) => a.country_name.localeCompare(b.country_name));
         } catch (error) {
-            throw new Error('Some error on server: ' + error.message);
+            console.error('There was an error fetching the data!', error);
         }
+    } else {
+        return {};
     }
 }
 const msIds = {

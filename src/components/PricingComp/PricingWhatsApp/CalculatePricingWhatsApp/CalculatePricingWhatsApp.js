@@ -4,7 +4,6 @@ export default function CalculatePricingWhatsApp({ plans, currentCountry, symbol
     const [marketingMessages, setMarketingMessages] = useState('1000');
     const [utilityMessages, setUtilityMessages] = useState('1000');
     const [authenticationMessages, setAuthenticationMessages] = useState('1000');
-    const [serviceMessages, setServiceMessages] = useState(null);
     const [selectedCountry, setSelectedCountry] = useState(currentCountry);
 
     useEffect(() => {

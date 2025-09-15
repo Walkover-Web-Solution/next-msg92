@@ -28,41 +28,30 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                     <div className='container md:my-10 my-4 flex md:gap-12 gap-6 md:flex-row flex-col '>
                         <PricingNav products={products} page={pageInfo?.product} />
 
-                        {/* {pageInfo?.product === 'hello' && (
-                            <PricingHello pricingData={pricingData} pageData={pageData} country={pageInfo?.country} />
-                        )} */}
+                        {pageInfo?.product === 'campaign' && <PricingCampaign pageData={pageData} />}
 
-                        {/* {pageInfo?.product === 'campaign' && (
-                            <PricingCampaign
-                                pricingData={pricingData}
-                                pageData={pageData}
-                                country={pageInfo?.country}
-                            />
-                        )}
-
-                        {pageInfo?.product === 'segmento' && (
-                            <PricingSegmento
-                                pricingData={pricingData}
-                                pageData={pageData}
-                                country={pageInfo?.country}
-                            />
-                        )} */}
                         {(pageInfo?.product === 'hello' ||
                             pageInfo?.product === 'segmento' ||
                             pageInfo?.product === 'email') && (
                             <PricingSubscription pricingData={pricingData} pageData={pageData} pageInfo={pageInfo} />
                         )}
+
+                        {pageInfo?.product === 'otpwidget' && (
+                            <PricingOtp data={pageData} country={pageInfo?.country} />
+                        )}
+
+                        {pageInfo?.product === 'sms' && (
+                            <PricingSMSOTP data={pageData} type={'sms'} country={pageInfo?.country} />
+                        )}
+
+                        {pageInfo?.product === 'otp' && (
+                            <PricingSMSOTP data={pageData} type={'otp'} country={pageInfo?.country} />
+                        )}
+
+                        {pageInfo?.product === 'whatsapp' && (
+                            <PricingWhatsApp pricingData={pricingData} data={pageData} pageInfo={pageInfo} />
+                        )}
                         {/* 
-                        {page === 'otpwidget' && <PricingOtp data={data?.otpwidget} country={pageInfo?.country} />}
-
-                        {page === 'sms' && <PricingSMSOTP data={data?.sms} type={'sms'} country={pageInfo?.country} />}
-
-                        {page === 'otp' && <PricingSMSOTP data={data?.otp} type={'otp'} country={pageInfo?.country} />}
-
-                        {page === 'email' && <PricingEmail data={data?.email} country={pageInfo?.country} />}
-
-                        {page === 'whatsapp' && <PricingWhatsApp data={data?.whatsapp} country={pageInfo?.country} />}
-
                         {page === 'voice' && <PricingVoice data={data?.voice} country={pageInfo?.country} />}
 
                         {page === 'rcs' && (
