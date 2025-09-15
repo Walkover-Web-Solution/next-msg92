@@ -110,7 +110,7 @@
                         "Dramatically reduce hold times while maintaining a warm, branded voice experience"
                     ]
                 },
-                "img": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp"
+                 "img": "/assets/global/hello/new_webp/roles_permissions_ticket_assignment.webp"
             },
             {
                 "name": "Reply Smarter and Faster—Every Time",
@@ -219,19 +219,9 @@
                 "img": "/assets/global/hello/new_webp/screen_control.webp"
             },
             {
-                "name": "Video Call / Screen Sharing",
-                "content": "High-quality video calls wherever your customer is. Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue.",
-                "img": "/assets/global/hello/video-call---screen-sharing.svg"
-            },
-            {
                 "name": "Workflow",
                 "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs.",
                 "lottie": "/assets/global/hello/new_webp/workflow_automation.json"
-            },
-            {
-                "name": "Analytics",
-                "content": "Analytics and reports to monitor your agent performance. Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support.",
-                "img": "/assets/global/hello/analytics.svg"
             }
         ]
     },

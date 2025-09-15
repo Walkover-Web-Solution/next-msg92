@@ -29,12 +29,9 @@ export default function FeatureWithBulletGroup({ data }) {
                             )}
                         </div>
                         {group?.lottie ? (
-                            (console.log(group?.lottie, 'lottie'),
-                            (
-                                <div className='max-w-[clamp(200px, 40%, 500px)] lg:w-1/3 w-full'>
-                                    <LottiePlayer lottie={group?.lottie} />
-                                </div>
-                            ))
+                            <div className='w-full xl:max-w-[490px] lg:max-w-[400px] max-w-[300px] md:w-full md:max-w-[600px] '>
+                                <LottiePlayer lottie={group?.lottie} />
+                            </div>
                         ) : (
                             <Image
                                 width={720}
