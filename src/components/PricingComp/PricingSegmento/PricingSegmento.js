@@ -8,12 +8,11 @@ import getURL from '@/utils/getURL';
 import CalculatePricingSegmento from './CalculatePricingSegmento/CalculatePricingSegmento';
 import features from '@/data/segmentoPricingFeatures.json';
 import FeaturesModalComp from './FeaturesModalComp/FeaturesModalComp';
-import getSubscriptions from '@/utils/getSimplifiedPlans';
 import contvertToLocal from '@/utils/convertToLocal';
 import InfoIcon from '@/components/UIComponent/InfoIcon/InfoIcon';
 
-export default function PricingSegmento({ pageData, pricingData, pageInfo }) {
-    const { currency, symbol } = GetCurrencySymbol(pageInfo?.country);
+export default function PricingSegmento({ pageData, pricingData, country }) {
+    const { currency, symbol } = GetCurrencySymbol(country);
     const [tabtype, setTabtype] = useState('Monthly');
     const [isCalculationModalOpen, setIsCalculationModalOpen] = useState(false);
     const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false);
@@ -21,7 +20,7 @@ export default function PricingSegmento({ pageData, pricingData, pageInfo }) {
     const [hasyYarly, setHasYearly] = useState(false);
 
     const hasYearlyPlan = useCallback(() => {
-        return pricingData?.some((plan) => plan.plan_amounts?.some((amount) => amount.plan_type?.name === 'Yearly'));
+        return pricingData?.some((plan) => plan.amount?.some((amount) => amount.plan_type?.name === 'Yearly'));
     }, [pricingData]);
 
     useEffect(() => {
@@ -116,9 +115,9 @@ export default function PricingSegmento({ pageData, pricingData, pageInfo }) {
                                                 <div className='gap-1 flex flex-col'>
                                                     <p className=' text-2xl font-semibold text-green-600 capitalize'>
                                                         {symbol}
-                                                        {plan?.amount} {tabtype}
+                                                        {plan?.amount[0]?.plan_amount} {tabtype}
                                                     </p>
-                                                    {plan?.amount > 0 ? (
+                                                    {plan?.amount[0]?.plan_amount > 0 ? (
                                                         <p className='text-sm'>
                                                             {currency === 'INR'
                                                                 ? '+18% GST'
@@ -129,7 +128,6 @@ export default function PricingSegmento({ pageData, pricingData, pageInfo }) {
                                                     ) : (
                                                         '-'
                                                     )}
-                                                    {/* <div>{handleOfferPrice(amount) || '-'}</div> */}
                                                 </div>
 
                                                 <a href={getURL('signup', 'segmento')} target='_blank'>

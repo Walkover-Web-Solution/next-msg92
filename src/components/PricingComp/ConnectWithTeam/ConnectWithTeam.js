@@ -22,9 +22,9 @@ export default function ConnectWithTeam({ product, isPlan, pageData, href, per }
                 </>
             )}
             <div>
-                <a href={getURL('product', href)} className='flex items-center gap-1 text-link active-link '>
+                <a href={getURL('product', href)} className='flex items-center gap-1 text-link active-link capitalize'>
                     <MdLaunch />
-                    {pageData?.know_more} {product}
+                    {`${pageData?.know_more} ${product}`}
                 </a>
             </div>
             {isSalesModalOpen && (

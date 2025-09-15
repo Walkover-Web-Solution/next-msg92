@@ -1,5 +1,5 @@
 import PricingNav from './PricingNavComp/PricingNavComp';
-import PricingHello from './PricingHello/PricingHello';
+import PricingHello from './PricingSubscription/PricingHello/PricingHello';
 import PricingCampaign from './PricingCampaign/PricingCampaign';
 import PricingSegmento from './PricingSegmento/PricingSegmento';
 import PricingOtp from './PricingOtp/PricingOtp';
@@ -13,6 +13,7 @@ import HeadComp from '../HeadComp/HeadComp';
 import NotificationBarComp from '../notificationBarComp/notificationBarComp';
 import MenuBarComp from '../menuBarComp/menuBarComp';
 import FooterComp from '../FooterComp/FooterComp';
+import PricingSubscription from './PricingSubscription';
 
 export default function PricingComp({ pricingData, pageInfo, pageData, products, commonData }) {
     if (pricingData) {
@@ -30,11 +31,11 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                     <div className='container md:my-10 my-4 flex md:gap-12 gap-6 md:flex-row flex-col '>
                         <PricingNav products={products} page={pageInfo?.product} />
 
-                        {pageInfo?.product === 'hello' && (
+                        {/* {pageInfo?.product === 'hello' && (
                             <PricingHello pricingData={pricingData} pageData={pageData} country={pageInfo?.country} />
-                        )}
+                        )} */}
 
-                        {pageInfo?.product === 'campaign' && (
+                        {/* {pageInfo?.product === 'campaign' && (
                             <PricingCampaign
                                 pricingData={pricingData}
                                 pageData={pageData}
@@ -48,6 +49,9 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                                 pageData={pageData}
                                 country={pageInfo?.country}
                             />
+                        )} */}
+                        {(pageInfo?.product === 'hello' || pageInfo?.product === 'segmento') && (
+                            <PricingSubscription pricingData={pricingData} pageData={pageData} pageInfo={pageInfo} />
                         )}
                         {/* 
                         {page === 'otpwidget' && <PricingOtp data={data?.otpwidget} country={pageInfo?.country} />}
