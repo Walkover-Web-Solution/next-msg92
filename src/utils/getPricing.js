@@ -39,28 +39,37 @@ const currency = {
 
 export function getSimplifiedPlans(currency, plans) {
     let simplifiedPlans = [];
-    simplifiedPlans = plans?.map((plan) => ({
-        'name': plan?.name,
-        'amount': plan?.plan_amounts
-            ?.filter((amount) => amount?.currency?.short_name === currency)
-            ?.map((amount) => ({
-                plan_amount: amount?.plan_amount,
-                plan_type: amount?.plan_type?.name,
-            })),
 
-        'included': plan?.plan_services?.map((service) => ({
-            'service_name': service?.service_credit?.service?.name,
-            'amount':
-                service?.service_credit?.service_credit_rates?.find((rate) => rate?.currency?.short_name === currency)
-                    ?.free_credits || 0,
-        })),
-        'features': plan?.plan_features
-            ?.filter((feature) => feature?.is_visible || !feature?.feature?.is_included)
-            ?.map((feature) => ({
-                'name': feature?.feature?.name,
-                'is_included': feature?.is_visible && feature?.feature?.is_included ? true : false,
-            })),
-        'extras': getPlanServices(plan, currency),
-    }));
+    plans?.forEach((plan) => {
+        const planAmounts = plan?.plan_amounts?.filter((amount) => amount?.currency?.short_name === currency);
+
+        if (planAmounts && planAmounts.length > 0) {
+            // Create a separate plan for each amount
+            planAmounts.forEach((amount) => {
+                simplifiedPlans.push({
+                    'name': plan?.name,
+                    'amount': {
+                        plan_amount: amount?.plan_amount,
+                        plan_type: amount?.plan_type?.name,
+                    },
+                    'included': plan?.plan_services?.map((service) => ({
+                        'service_name': service?.service_credit?.service?.name,
+                        'amount':
+                            service?.service_credit?.service_credit_rates?.find(
+                                (rate) => rate?.currency?.short_name === currency
+                            )?.free_credits || 0,
+                    })),
+                    'features': plan?.plan_features
+                        ?.filter((feature) => feature?.is_visible || !feature?.feature?.is_included)
+                        ?.map((feature) => ({
+                            'name': feature?.feature?.name,
+                            'is_included': feature?.is_visible && feature?.feature?.is_included ? true : false,
+                        })),
+                    'extras': getPlanServices(plan, currency),
+                });
+            });
+        }
+    });
+
     return simplifiedPlans || [];
 }

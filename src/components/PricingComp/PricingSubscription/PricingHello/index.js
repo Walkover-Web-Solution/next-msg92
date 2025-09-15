@@ -11,7 +11,9 @@ export default function PricingHello({ pricingData, symbol, tabtype }) {
                             <>
                                 <div
                                     key={plan?.name + index}
-                                    className={`flex flex-col gap-4 col-span-1 p-4  rounded bg-white relative ${
+                                    className={`${
+                                        plan?.amount?.plan_type === tabtype ? 'flex' : 'hidden'
+                                    } flex-col gap-4 col-span-1 p-4  rounded bg-white relative ${
                                         plan?.name === 'Basic' ? 'border-2 border-black' : 'border'
                                     }`}
                                 >
@@ -26,8 +28,7 @@ export default function PricingHello({ pricingData, symbol, tabtype }) {
                                         </div>
                                         <div className='gap-1 flex flex-col'>
                                             <p className=' text-xl font-semibold text-green-600 capitalize'>
-                                                {symbol}
-                                                {plan?.amount[0]?.plan_amount} {tabtype}
+                                                {`${symbol}${plan?.amount?.plan_amount} ${tabtype}`}
                                             </p>
                                         </div>
 
@@ -64,14 +65,14 @@ export default function PricingHello({ pricingData, symbol, tabtype }) {
                                             {plan?.features?.length > 0 &&
                                                 plan?.features.map((feature, index) => {
                                                     return (
-                                                        <p className='flex items-center gap-1 text-sm' key={index}>
+                                                        <div className='flex items-center gap-1 text-sm' key={index}>
                                                             {feature?.is_included ? (
                                                                 <MdCheck fontSize={18} color='#16A34A' />
                                                             ) : (
                                                                 <MdClose fontSize={18} color='#DC3645' />
                                                             )}{' '}
-                                                            {feature?.name}
-                                                        </p>
+                                                            <p>{`${feature?.name}`}</p>
+                                                        </div>
                                                     );
                                                 })}
                                         </div>
@@ -100,12 +101,12 @@ export default function PricingHello({ pricingData, symbol, tabtype }) {
                                                                     {rate && plan?.extras?.postpaidAllowed ? (
                                                                         <span className='flex items-center gap-1 w-fit'>
                                                                             <MdCheck fontSize={18} color='#16A34A' />
-                                                                            {`${symbol}${rate}/${serviceName}/month`}
+                                                                            <p>{`${symbol}${rate}/${serviceName}/month`}</p>
                                                                         </span>
                                                                     ) : (
                                                                         <span className='flex items-center gap-1 w-fit'>
                                                                             <MdClose fontSize={18} color='#DC3645' />
-                                                                            {`No Extra ${serviceName}`}
+                                                                            <p>{`No Extra ${serviceName}`}</p>
                                                                         </span>
                                                                     )}
                                                                 </div>

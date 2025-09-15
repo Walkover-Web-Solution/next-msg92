@@ -1,25 +1,22 @@
-import { useState, useEffect, useCallback } from 'react';
-import { MdCheck, MdClose } from 'react-icons/md';
+import { useState, useEffect } from 'react';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
-import getURL from '@/utils/getURL';
-import PricingHello from './PricingHello/PricingHello';
+import PricingHello from './PricingHello';
+import PricingSegmento from './PricingSegmento';
 
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {
     const { symbol } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
     const [hasyYarly, setHasYearly] = useState(false);
 
-    const hasYearlyPlan = useCallback(() => {
-        return pricingData?.some((plan) => plan.amount?.some((amount) => amount.plan_type?.name === 'Yearly'));
-    }, [pricingData]);
-
     useEffect(() => {
-        if (hasYearlyPlan()) {
+        const yearlyPlan = pricingData?.find((plan) => plan.amount.plan_type === 'Yearly');
+        console.log('⚡️ ~ :15 ~ useEffect ~ yearlyPlan:', yearlyPlan);
+        if (yearlyPlan) {
             setHasYearly(true);
         }
-    }, [hasYearlyPlan]);
+    }, [pricingData]);
 
     return (
         <>
@@ -50,6 +47,14 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                     )}
                     {pageInfo?.product === 'hello' && (
                         <PricingHello pricingData={pricingData} symbol={symbol} tabtype={tabtype} />
+                    )}
+                    {pageInfo?.product === 'segmento' && (
+                        <PricingSegmento
+                            pricingData={pricingData}
+                            symbol={symbol}
+                            tabtype={tabtype}
+                            pageInfo={pageInfo}
+                        />
                     )}
 
                     {pageInfo?.country === 'in' || pageInfo?.country === 'gb' ? (
