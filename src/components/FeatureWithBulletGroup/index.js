@@ -20,11 +20,21 @@ export default function FeatureWithBulletGroup({ data }) {
                         <div>
                             <h2 className='text-2xl font-bold text-primary'>{group.name}</h2>
                             <p className='text-lg text-gray-600'>{group.content}</p>
+                            {group.more_content?.features && (
+                                <ul className='list-disc ps-8 text-lg text-gray-600'>
+                                    {group.more_content.features.map((item, idx) => (
+                                        <li key={idx}>{item}</li>
+                                    ))}
+                                </ul>
+                            )}
                         </div>
                         {group?.lottie ? (
-                            <div className='max-w-[clamp(200px, 40%, 500px)] lg:w-1/3 w-full'>
-                                <LottiePlayer lottie={group?.lottie} />
-                            </div>
+                            (console.log(group?.lottie, 'lottie'),
+                            (
+                                <div className='max-w-[clamp(200px, 40%, 500px)] lg:w-1/3 w-full'>
+                                    <LottiePlayer lottie={group?.lottie} />
+                                </div>
+                            ))
                         ) : (
                             <Image
                                 width={720}

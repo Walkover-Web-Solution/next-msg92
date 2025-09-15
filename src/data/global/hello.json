@@ -95,7 +95,7 @@
                         "Reduce bounce rates, capture more leads, and create memorable first impressions"
                     ]
                 },
-                "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
+                "img": "/assets/global/hello/new_webp/roles_permissions_ticket_assignment.webp"
             },
             {
                 "name": "Handle Even the Toughest Calls with Ease",
@@ -137,7 +137,7 @@
                         "Your team expands internationally — no added staff or language training needed"
                     ]
                 },
-                "img": "/assets/global/hello/analytics.svg"
+                "img": "/assets/global/hello/new_webp/multilingual_capabilities.webp"
             },
             {
                 "name": "Keep Support Flowing, Even at Scale",
@@ -151,7 +151,7 @@
                         "Scale seamlessly from dozens to thousands of requests per day"
                     ]
                 },
-                "img": "/assets/global/hello/analytics.svg"
+                "img": "/assets/global/hello/new_webp/keep_support_flowing.webp"
             },
             {
                 "name": "Get the Full Picture, Instantly",
@@ -164,7 +164,7 @@
                         "Export and share actionable insights across your business"
                     ]
                 },
-                "img": "/assets/global/hello/analytics.svg"
+                "img": "/assets/global/hello/new_webp/analytics.webp"
             },
             {
                 "name": "Work Without Limits—Wherever You Are",
@@ -192,7 +192,7 @@
                         "No links, no redirects, zero drop-offs—just conversions"
                     ]
                 },
-                "img": "/assets/global/hello/analytics.svg"
+                "lottie": "/assets/global/hello/new_webp/chat_to_checkout.json"
             },
             {
                 "name": "Automated, Always-On Support That Scales With You",
@@ -206,17 +206,17 @@
                         "Continuously improve bots with analytics and feedback"
                     ]
                 },
-                "img": "/assets/global/hello/analytics.svg"
+                "img": "/assets/global/hello/new_webp/unlimited_agents.webp"
             },
             {
                 "name": "Chatbot",
                 "content": "Resolve customer queries round-the-clock across text and voice. Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents.",
-                "img": "/assets/global/hello/chatbot.svg"
+                "img": "/assets/global/hello/new_webp/chatbot.webp"
             },
             {
                 "name": "Screen Control",
                 "content": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues.",
-                "img": "/assets/global/hello/screen-control.svg"
+                "img": "/assets/global/hello/new_webp/screen_control.webp"
             },
             {
                 "name": "Video Call / Screen Sharing",
@@ -226,7 +226,7 @@
             {
                 "name": "Workflow",
                 "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs.",
-                "img": "/assets/global/hello/workflow.svg"
+                "lottie": "/assets/global/hello/new_webp/workflow_automation.json"
             },
             {
                 "name": "Analytics",
