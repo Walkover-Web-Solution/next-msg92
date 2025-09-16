@@ -58,6 +58,7 @@ import specialPages from '@/data/specialPages.json';
 import { useRouter } from 'next/router';
 import PreFooterMFTL from '@/components/migrateFromTextlocal/preFooterMFTL/preFooterMFTL';
 import CTAMFTL from '@/components/migrateFromTextlocal/ctaMFTL/ctaMFTL';
+import ChatBotPageComp from '@/components/ChatBotPageComp';
 
 const Components = {
     BannerComp,
@@ -108,6 +109,7 @@ const Components = {
     PreFooterMFTL,
     CTAMFTL,
     CaseStudyPageComp,
+    ChatBotPageComp,
     WhyChooseMSG91,
     WhatsAppIntegrations,
     WhatsAppAccountVerification,
