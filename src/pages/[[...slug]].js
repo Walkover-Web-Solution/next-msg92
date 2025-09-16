@@ -52,6 +52,9 @@ import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
 import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
 
+// New Components
+import Banner from '@/components/UpdatedComp/Banner';
+
 /* files */
 import specialPages from '@/data/specialPages.json';
 
@@ -115,6 +118,9 @@ const Components = {
     WhatsAppIntegrations,
     WhatsAppAccountVerification,
     FeatureWithBulletGroup,
+
+    // New Components
+    Banner,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
