@@ -249,7 +249,7 @@ export default function PricingSMSOTP({ data, type, country }) {
 
                     <ConnectWithTeam
                         product={type?.toUpperCase()}
-                        data={data?.connectComp}
+                        pageData={data?.connectComp}
                         isPlan={true}
                         currency={currency}
                         href={type}

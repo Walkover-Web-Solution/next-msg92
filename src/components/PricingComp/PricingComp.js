@@ -37,7 +37,7 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                         )}
 
                         {pageInfo?.product === 'otpwidget' && (
-                            <PricingOtp data={pageData} country={pageInfo?.country} />
+                            <PricingOtp pageData={pageData} country={pageInfo?.country} />
                         )}
 
                         {pageInfo?.product === 'sms' && (
@@ -49,13 +49,18 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                         )}
 
                         {pageInfo?.product === 'whatsapp' && (
-                            <PricingWhatsApp pricingData={pricingData} data={pageData} pageInfo={pageInfo} />
+                            <PricingWhatsApp pricingData={pricingData} pageData={pageData} pageInfo={pageInfo} />
                         )}
 
                         {pageInfo?.product === 'voice' && <PricingVoice data={pageData} country={pageInfo?.country} />}
 
                         {pageInfo?.product === 'rcs' && (
-                            <PricingRCS data={pricingData} country={pageInfo?.country} pageInfo={pageInfo} />
+                            <PricingRCS
+                                pricingData={pricingData}
+                                pageData={pageData}
+                                country={pageInfo?.country}
+                                pageInfo={pageInfo}
+                            />
                         )}
                     </div>
                 </div>

@@ -7,11 +7,8 @@ import CalculatePricingWhatsApp from './CalculatePricingWhatsApp/CalculatePricin
 import styles from './PricingWhatsApp.module.scss';
 
 export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
-    console.log('⚡️ ~ :12 ~ PricingWhatsApp ~ pageInfo:', pageInfo);
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
     const currentCountry = GetCountryDetails({ shortname: pageInfo?.country, type: 'shortname' });
-
-    console.log('⚡️ ~ :15 ~ PricingWhatsApp ~ currentCountry:', currentCountry);
     return (
         <>
             <div className='flex flex-col gap-3 max-w-full w-full overflow-hidden'>
@@ -120,7 +117,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                     </div>
                     <ConnectWithTeam
                         product={'WhatsApp'}
-                        data={pageData?.connectComp}
+                        pageData={pageData?.connectComp}
                         href={'whatsapp'}
                         isPlan={true}
                     />
