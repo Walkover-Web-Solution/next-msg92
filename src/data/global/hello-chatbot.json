@@ -1,7 +1,7 @@
 {
     "ChatBotPageComp": {
         "voiceSupport": {
-            "heading": "Automate Conversations Across Channels",
+            "heading": "Omnichannel Conversational AI",
             "subHeading": "Modern customers expect you to meet them wherever they are. With MSG91 Chatbot, deploy your conversational AI assistant across more platforms than ever for seamless customer service:",
             "content": [
                 {
@@ -38,7 +38,7 @@
         },
         "voiceBot": {
             "tagline": "Voice Bot",
-            "heading": "Conversational Voice Support in Real Time",
+            "heading": "Conversational AI Voice Support in Real Time",
             "subHeading": "Empower your contact centre with a self-learning, always-on AI Voice Agent.",
             "img": "/assets/global/hello-chatbot/voice_bot.webp",
             "content": [
