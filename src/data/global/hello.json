@@ -9,8 +9,8 @@
             "name": "Hello",
             "icon": "/assets/icons/products/hello.svg"
         },
-        "tagline": "REVOLUTIONIZE CUSTOMER SUPPORT",
-        "heading": "Customer Service Software",
+        "tagline": "Customer Support Software",
+        "heading": "AI-powered Contact centre",
         "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
         "lottie": "/assets/global/hello/new_webp/hello_hero.json",
         "getstarted_btn": "Get Started",
