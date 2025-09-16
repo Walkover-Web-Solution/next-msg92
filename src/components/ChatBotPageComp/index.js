@@ -4,8 +4,8 @@ import { ChatbotBuilder } from './ChatbotBuilder';
 import FeaturesAccordionComp from './FeaturesAccordionComp';
 import FeatureWithBulletComp from './FeatureWithBulletComp';
 import PluginsAndIntegrationsComp from './PluginsAndIntegrationsComp';
-import styles from './ChatBotPageComp.module.scss';
-export default function ChatBotPageComp({ data }) {
+import getURL from '@/utils/getURL';
+export default function ChatBotPageComp({ data, pageInfo }) {
     return (
         <>
             <section className='container cont cont_gap cont_p'>
@@ -18,12 +18,16 @@ export default function ChatBotPageComp({ data }) {
                 </div>
 
                 <div className='flex gap-2'>
-                    <button className='btn btn-hello btn-md'>
-                        <LinkText>Get Started</LinkText>
-                    </button>
-                    <button className='btn btn-hello btn-outline btn-md'>
-                        <LinkText>Test Chatbot</LinkText>
-                    </button>
+                    <a href={getURL('signup', pageInfo?.page, pageInfo)} target='_blank'>
+                        <button className='btn btn-hello btn-md'>
+                            <LinkText>Get Started</LinkText>
+                        </button>
+                    </a>
+                    <a href='/demochatbot'>
+                        <button className='btn btn-hello btn-outline btn-md'>
+                            <LinkText>Test Chatbot</LinkText>
+                        </button>
+                    </a>
                 </div>
                 <div className='w-full h-fit'>
                     <LottiePlayer lottie='/assets/global/hello-chatbot/lottie/chatbot_hero.json' />
