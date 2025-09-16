@@ -110,7 +110,7 @@
                         "Dramatically reduce hold times while maintaining a warm, branded voice experience"
                     ]
                 },
-                 "img": "/assets/global/hello/new_webp/roles_permissions_ticket_assignment.webp"
+                "img": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp"
             },
             {
                 "name": "Reply Smarter and Faster—Every Time",
@@ -209,19 +209,35 @@
                 "img": "/assets/global/hello/new_webp/unlimited_agents.webp"
             },
             {
-                "name": "Chatbot",
-                "content": "Resolve customer queries round-the-clock across text and voice. Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents.",
+                "name": "Route Queries to the Right Agent Every Time",
+                "content": "Hello gives you total control over your customer support process. As an admin, you can set custom roles and assign specialized permissions—so agents focus only on what they do best, whether that’s operations, sales, or support. Every message goes to the right expert, and you can track every action for full accountability.",
+                "more_content": {
+                    "features": [
+                        "Set team or user roles and permissions",
+                        "Specialize agent access by function",
+                        "Smart assignment—by channel, expertise, or round robin"
+                    ]
+                },
+                "lottie": "/assets/global/hello/new_webp/workflow_automation.json"
+            },
+            {
+                "name": "Automated, Always-On Support That Scales With You",
+                "subtitle": "No-Code AI Chatbot Solution for Every Channel",
+                "content": "Empower your brand to provide instant support day or night—at scale. Hello’s intuitive drag-and-drop ai chatbot maker lets anyone create and launch highly-capable chatbots on WhatsApp, Instagram, Facebook, your website, or more. Collect leads, answer FAQs, process orders, and hand off to humans when needed.",
+                "more_content": {
+                    "features": [
+                        "Visual bot builder: Create flows without coding",
+                        "Multichannel deployment in minutes",
+                        "Multilingual support and seamless escalation",
+                        "Available 24/7—delivering answers, leads, and happy customers"
+                    ]
+                },
                 "img": "/assets/global/hello/new_webp/chatbot.webp"
             },
             {
                 "name": "Screen Control",
                 "content": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues.",
                 "img": "/assets/global/hello/new_webp/screen_control.webp"
-            },
-            {
-                "name": "Workflow",
-                "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs.",
-                "lottie": "/assets/global/hello/new_webp/workflow_automation.json"
             }
         ]
     },
