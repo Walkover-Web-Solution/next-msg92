@@ -51,12 +51,12 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                         {pageInfo?.product === 'whatsapp' && (
                             <PricingWhatsApp pricingData={pricingData} data={pageData} pageInfo={pageInfo} />
                         )}
-                        {/* 
-                        {page === 'voice' && <PricingVoice data={data?.voice} country={pageInfo?.country} />}
 
-                        {page === 'rcs' && (
-                            <PricingRCS data={data?.rcs} country={pageInfo?.country} pageInfo={pageInfo} />
-                        )} */}
+                        {pageInfo?.product === 'voice' && <PricingVoice data={pageData} country={pageInfo?.country} />}
+
+                        {pageInfo?.product === 'rcs' && (
+                            <PricingRCS data={pricingData} country={pageInfo?.country} pageInfo={pageInfo} />
+                        )}
                     </div>
                 </div>
                 <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} />
