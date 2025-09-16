@@ -77,6 +77,12 @@ body {
             @apply text-white hover:bg-accent hover:text-white;
         }
     }
+    &.btn-hello {
+        @apply bg-[var(--hello-color)] text-black outline-none border-black shadow-none;
+        &.btn-outline {
+            @apply border-[var(--hello-dark-color)] text-[var(--hello-dark-color)] bg-transparent hover:bg-[var(--hello-color)] hover:text-black;
+        }
+    }
 }
 
 .list-disc {
