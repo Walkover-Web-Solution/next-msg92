@@ -12,7 +12,7 @@ import getURL from '@/utils/getURL';
 export default function PricingSMSOTP({ data, type, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);
     const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [pricingData, setPricingData] = useState(null);
     const [origin, setOrigin] = useState(currentCountry?.name);
     const [destination, setDestination] = useState(currentCountry?.name);
