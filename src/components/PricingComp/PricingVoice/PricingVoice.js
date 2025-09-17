@@ -314,7 +314,7 @@ export default function PricingVoice({ data, country }) {
                             })}
                     </div>
 
-                    <ConnectWithTeam product={'Voice'} data={data?.connectComp} href={'voice'} isPlan={true} />
+                    <ConnectWithTeam product={'Voice'} pageData={data?.connectComp} href={'voice'} isPlan={true} />
                     <FaqsComp data={data?.faqComp} notCont={true} />
                 </div>
             </div>

@@ -170,10 +170,16 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-    const params = context?.params;
+    const params = context?.params?.slug || [];
+    // If pricing route, let SSR handle
+    const isPricingRoute =
+        (params.length >= 2 && params[0] === 'pricing') || (params.length >= 3 && params[1] === 'pricing');
+    if (isPricingRoute) {
+        return { notFound: true };
+    }
+    // SSG for all other routes
     const pageInfo = getPageInfo(params);
     const commonData = getCommonCompData(pageInfo?.country);
-
     const fetchData = async (endpoint) => {
         const res = await fetch(`${process.env.BASE_URL}${endpoint}`, {
             method: 'POST',
