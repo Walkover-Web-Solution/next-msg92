@@ -12,7 +12,7 @@ import MenuBarComp from '../menuBarComp/menuBarComp';
 import FooterComp from '../FooterComp/FooterComp';
 import PricingSubscription from './PricingSubscription';
 
-export default function PricingComp({ pricingData, pageInfo, pageData, products, commonData }) {
+export default function PricingComp({ pricingData, pageInfo, pageData, products, commonData, country }) {
     if (pricingData) {
         return (
             <>
@@ -20,7 +20,7 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                 <NotificationBarComp
                     componentData={commonData?.notification}
                     country={pageInfo?.country}
-                    pageInfo={pageInfo}
+                    pageInfo={{ country: country, page: 'pricing' }}
                 />
 
                 <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />

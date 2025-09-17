@@ -2,7 +2,7 @@ import PricingComp from '@/components/PricingComp/PricingComp';
 import getCommonCompData from '@/utils/getCommonCompData';
 import getPricing from '@/utils/getPricing';
 
-export default function PricingCountryPage({ pricingData, pageInfo, pageData, commonData, products }) {
+export default function PricingCountryPage({ pricingData, pageInfo, pageData, commonData, products, country }) {
     return (
         <PricingComp
             pricingData={pricingData}
@@ -10,6 +10,7 @@ export default function PricingCountryPage({ pricingData, pageInfo, pageData, co
             pageData={pageData}
             commonData={commonData}
             products={products}
+            country={country}
         />
     );
 }
@@ -38,6 +39,7 @@ export const getServerSideProps = async (context) => {
                 pageData,
                 commonData,
                 products,
+                country,
             },
         };
     }
