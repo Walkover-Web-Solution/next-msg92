@@ -13,56 +13,7 @@
         "heading": "AI-powered Contact centre",
         "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
         "lottie": "/assets/global/hello/new_webp/hello_hero.json",
-        "getstarted_btn": "Get Started",
-        "trustedByComp": {
-            "heading": "Support 15+ channels & platforms",
-            "logos": [
-                {
-                    "name": "facebook",
-                    "url": "/assets/platforms/facebook.svg"
-                },
-                {
-                    "name": "gmail",
-                    "url": "/assets/platforms/gmail.svg"
-                },
-                {
-                    "name": "googleChat",
-                    "url": "/assets/platforms/googlechat.svg"
-                },
-                {
-                    "name": "instagram",
-                    "url": "/assets/platforms/instagram.svg"
-                },
-                {
-                    "name": "outlook",
-                    "url": "/assets/platforms/outlook.svg"
-                },
-                {
-                    "name": "sms",
-                    "url": "/assets/platforms/sms.svg"
-                },
-                {
-                    "name": "telegram",
-                    "url": "/assets/platforms/telegram.svg"
-                },
-                {
-                    "name": "twitter",
-                    "url": "/assets/platforms/twitter.svg"
-                },
-                {
-                    "name": "voice",
-                    "url": "/assets/platforms/voice.svg"
-                },
-                {
-                    "name": "whatsapp",
-                    "url": "/assets/platforms/whatsapp.svg"
-                },
-                {
-                    "name": "zoho",
-                    "url": "/assets/platforms/zoho.svg"
-                }
-            ]
-        }
+        "getstarted_btn": "Get Started"
     },
     "FeatureWithBulletGroup": {
         "heading": "Features",

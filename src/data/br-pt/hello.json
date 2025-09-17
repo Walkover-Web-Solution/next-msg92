@@ -3,109 +3,192 @@
         "title": "Melhor Software de Suporte ao Cliente no Brasil | Plataforma de Atendimento Digital ao Cliente | MSG91-Brasil",
         "description": "Somos a principal plataforma de atendimento ao cliente em nuvem. Confira o melhor software de atendimento ao cliente no Brasil para engajar proativamente os clientes e responder a todas as suas dúvidas com a MSG91."
     },
-    "BannerComp": {
+    "Banner": {
         "slug": "hello",
         "product": {
             "name": "Hello",
             "icon": "/assets/icons/products/hello.svg"
         },
-        "tagline": "REVOLUCIONE O SUPORTE AO CLIENTE",
-        "heading": "Software de Atendimento ao Cliente",
-        "subheading": "Nunca perca de vista o que é importante. Não resolva apenas tickets, construa relacionamentos com clientes",
-        "banner_img": "/assets/brpt/hello/banner.svg",
-        "getstarted_btn": "Iniciar",
-        "trustedByComp": {
-            "heading": "Suporte a mais de 15 canais e plataformas",
-            "logos": [
-                {
-                    "name": "facebook",
-                    "url": "/assets/platforms/facebook.svg"
-                },
-                {
-                    "name": "gmail",
-                    "url": "/assets/platforms/gmail.svg"
-                },
-                {
-                    "name": "googleChat",
-                    "url": "/assets/platforms/googlechat.svg"
-                },
-                {
-                    "name": "instagram",
-                    "url": "/assets/platforms/instagram.svg"
-                },
-                {
-                    "name": "outlook",
-                    "url": "/assets/platforms/outlook.svg"
-                },
-                {
-                    "name": "sms",
-                    "url": "/assets/platforms/sms.svg"
-                },
-                {
-                    "name": "telegram",
-                    "url": "/assets/platforms/telegram.svg"
-                },
-                {
-                    "name": "twitter",
-                    "url": "/assets/platforms/twitter.svg"
-                },
-                {
-                    "name": "voice",
-                    "url": "/assets/platforms/voice.svg"
-                },
-                {
-                    "name": "whatsapp",
-                    "url": "/assets/platforms/whatsapp.svg"
-                },
-                {
-                    "name": "zoho",
-                    "url": "/assets/platforms/zoho.svg"
-                }
-            ]
-        }
+        "tagline": "Software de Suporte ao Cliente",
+        "heading": "Central de Atendimento com IA",
+        "subheading": "Nunca perca de vista o que é importante. Não apenas resolva tickets, construa relacionamentos com clientes",
+        "lottie": "/assets/global/hello/new_webp/hello_hero.json",
+        "getstarted_btn": "Comece agora"
     },
-    "FeatureComp": {
-        "heading": "Features",
+    "FeatureWithBulletGroup": {
+        "heading": "Funcionalidades",
         "iconColor": "text-campaign",
         "features": [
             {
-                "icon": "MdSupportAgent",
-                "name": "Agentes Ilimitados",
-                "content": "Agentes gratuitos ilimitados para impulsionar seu suporte ao cliente. Mais agentes significam engajamento contínuo, mais tickets resolvidos e melhor suporte ao cliente em oferta. Não há número limite para a quantidade de agentes de suporte ao cliente.",
-                "img": "/assets/brpt/hello/unlimited-agents.svg"
+                "name": "Unifique Todas as Conversas, Empodere Toda a Equipe",
+                "subtitle": "Caixa de Entrada Multicanal Integrada para Seu Negócio",
+                "content": "Reúna todas as conversas com clientes—WhatsApp, Email, Instagram, Facebook, Site e mais—em uma plataforma centralizada e fácil de usar. Chega de alternar abas ou perder solicitações. Com o Hello, equipes de vendas e suporte colaboram facilmente, lidam com todos os leads, solicitações e feedbacks, sem perder o histórico de nenhum cliente.",
+                "more_content": {
+                    "features": [
+                        "Visualize todas as mensagens de todos os canais em um só lugar e mantenha cada conversa ao alcance.",
+                        "Atribua e priorize conversas para os membros certos da equipe com um clique.",
+                        "Pesquise, filtre e marque comunicações para contexto instantâneo usando chatbots inteligentes.",
+                        "Tenha o histórico completo dos clientes sempre disponível."
+                    ]
+                },
+                "footer": "Alcance colaboração e visibilidade de clientes em outro nível, unificando todos os canais para um atendimento perfeito. Suas equipes trabalham como uma só, com acesso instantâneo ao contexto do cliente—empoderando suporte proativo e engajamento significativo em escala.",
+                "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
             },
             {
-                "icon": "MdOutlineSmartToy",
-                "name": "Chatbot",
-                "content": "Resolva consultas de clientes 24 horas por dia, em texto e voz. Deixe o chatbot lidar com consultas simples e repetitivas que não exigem as habilidades e experiência de seus agentes e, quando necessário, inclua agentes ao vivo de forma transparente.",
-                "img": "/assets/brpt/hello/chatbot.svg"
+                "name": "Conecte, Engaje e Converta Instantaneamente",
+                "subtitle": "Widget de Chat Que Converte—Do Primeiro Olá à Fidelidade",
+                "content": "O widget de chat ao vivo do Hello fica em seu site, tornando-se a ponte instantânea entre sua empresa e visitantes curiosos. Clientes podem conversar, compartilhar arquivos, enviar áudios ou até mudar para chamada de voz—tudo sem sair da página, com inteligência artificial.",
+                "more_content": {
+                    "features": [
+                        "Visitantes do site iniciam chat ou chamada com um clique",
+                        "Escalone dúvidas do chat para chamada de voz, facilmente com Agente de Voz IA",
+                        "Widget totalmente personalizável para combinar com sua marca e fluxo de trabalho",
+                        "Reduza taxas de abandono, capture mais leads e crie primeiras impressões memoráveis"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/roles_permissions_ticket_assignment.webp"
             },
             {
-                "icon": "MdAdsClick",
+                "name": "Atenda Até as Chamadas Mais Difíceis com Facilidade",
+                "subtitle": "Bot de Voz e Automação IVR Que Nunca Dorme",
+                "content": "Ofereça suporte telefônico e de voz de nível mundial. Com o Agente de Voz IA avançado do Hello, cada chamada é atendida, guiada e resolvida—sem filas ou transferências erradas.",
+                "more_content": {
+                    "features": [
+                        "Menus multiníveis e fluxos personalizados direcionam o cliente ao agente ou setor certo",
+                        "Toque saudações personalizadas e colete informações essenciais logo no início",
+                        "Grave chamadas para treinamento, compliance ou garantia de qualidade",
+                        "Integração fácil com seu CRM e helpdesk para conversas ricas em contexto",
+                        "Reduza drasticamente o tempo de espera mantendo uma experiência de voz acolhedora e personalizada"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp"
+            },
+            {
+                "name": "Responda de Forma Mais Inteligente e Rápida—Sempre",
+                "subtitle": "Sugestões Inteligentes com IA para Suporte Humanizado",
+                "content": "Com SmartCue AI integrado, cada interação com o cliente é elevada. Agentes recebem sugestões de resposta instantâneas, contextuais, profissionais e empáticas, personalizadas para cada chat graças à inteligência artificial. Isso acelera o atendimento e garante comunicação consistente e alinhada à marca, mesmo para novos membros.",
+                "more_content": {
+                    "features": [
+                        "Respostas inteligentes e prontas para enviar ao seu alcance",
+                        "Reduza o cansaço de digitação e o tempo de treinamento de novos agentes",
+                        "Identifique problemas de clareza para ajudar agentes a entregar respostas perfeitas"
+                    ]
+                },
+                "footer": "Seus agentes viram superagentes—oferecendo atendimento rápido e consistente em escala com chatbots inteligentes.",
+                "lottie": "/assets/global/hello/new_webp/summarization.json"
+            },
+            {
+                "name": "Fale a Língua do Cliente—Quebre Barreiras, Construa Confiança",
+                "subtitle": "Mensagens Multilíngues Globais de Forma Simples",
+                "content": "Não deixe o idioma limitar seu alcance. O Hello traduz conversas em tempo real, permitindo que sua equipe responda em qualquer idioma, sem esforço.",
+                "more_content": {
+                    "features": [
+                        "Traduções bidirecionais em mais de 100 idiomas globais e regionais",
+                        "Clientes conversam, perguntam e compram no idioma preferido",
+                        "Sua equipe expande internacionalmente—sem necessidade de novos funcionários ou treinamento linguístico"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/multilingual_capabilities.webp"
+            },
+            {
+                "name": "Mantenha o Suporte Fluindo, Mesmo em Escala",
+                "subtitle": "Gestão Avançada de Tickets e Automação Sem Esforço",
+                "content": "Cada ticket de suporte é mais que uma mensagem—é uma chance de impressionar. Com o Hello, dúvidas são automaticamente organizadas por urgência, tema ou perfil do cliente, garantindo que a pessoa certa atenda cada situação. Defina regras inteligentes para que problemas comuns sejam resolvidos por bots e casos complexos sejam priorizados ou escalados em tempo real.",
+                "more_content": {
+                    "features": [
+                        "Direcione tickets por habilidade, departamento ou status VIP",
+                        "Resolva automaticamente questões repetitivas, liberando tempo do agente com chatbots especializados",
+                        "Dispare escalonamentos e ações com lógica personalizada",
+                        "Escalone facilmente de dezenas para milhares de solicitações por dia"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/keep_support_flowing.webp"
+            },
+            {
+                "name": "Tenha a Visão Completa, Instantaneamente",
+                "subtitle": "Dashboard Analítico Avançado para Decisões Inteligentes",
+                "content": "Desbloqueie insights acionáveis sobre tudo que acontece nos seus canais de comunicação. O dashboard do Hello traz estatísticas em tempo real sobre volume de mensagens, desempenho de agentes, tempos de resposta, resoluções no primeiro contato, satisfação do cliente e mais. Visualize toda a operação com gráficos e relatórios dinâmicos apoiados por IA.",
+                "more_content": {
+                    "features": [
+                        "Acompanhe SLAs, sentimento e produtividade dos agentes",
+                        "Identifique problemas, destaques e oportunidades de crescimento",
+                        "Exporte e compartilhe insights acionáveis em toda a empresa"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/analytics.webp"
+            },
+            {
+                "name": "Trabalhe Sem Limites—Onde Quer que Esteja",
+                "subtitle": "App Mobile que Coloca Conversas com Clientes no Bolso",
+                "content": "Nunca perca um cliente, mesmo fora do escritório. Com o app mobile completo do Hello (iOS e Android), sua equipe recebe notificações instantâneas, responde chats, atribui casos e pode até iniciar chamadas—com toda a segurança e confiabilidade da plataforma principal.",
+                "more_content": {
+                    "features": [
+                        "Alertas push em tempo real para cada nova mensagem",
+                        "Acesse todas as funções—chat, chamadas, atribuições, históricos—de qualquer lugar",
+                        "Seguro e confiável, feito para equipes móveis",
+                        "Perfeito para representantes em viagem, agentes remotos e empresários em movimento"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/mobile.webp"
+            },
+            {
+                "name": "Converta Conversas em Vendas—Checkout Sem Complicação",
+                "subtitle": "Chat para Checkout: Aumente a Receita Diretamente pelo Chat",
+                "content": "Transforme qualquer conversa em uma venda! Com o Hello, clientes navegam, escolhem e compram direto no widget de chat ou WhatsApp. Mostre cartões de produtos, estoque em tempo real e botões de compra ou pagamento instantâneos—cada dúvida pode virar uma conversão.",
+                "more_content": {
+                    "features": [
+                        "Exiba produtos e variações com estoque ao vivo",
+                        "Gateway de pagamento integrado para checkout fluido e seguro",
+                        "Acompanhe pedidos da conversa à entrega",
+                        "Sem links, sem redirecionamentos, zero desistências—só conversão"
+                    ]
+                },
+                "lottie": "/assets/global/hello/new_webp/chat_to_checkout.json"
+            },
+            {
+                "name": "Suporte Automatizado e Sempre Ativo Que Cresce com Você",
+                "subtitle": "Construtor de Chatbot IA Sem Código para Automação Fácil",
+                "content": "Dê poder ao seu negócio com respostas instantâneas 24/7 e ações automatizadas—sem precisar programar. O construtor de chatbot do Hello permite criar fluxos personalizados para FAQs, captação de leads, agendamento e mais. Lance bots poderosos que escalam o atendimento, impulsionam vendas e qualificam leads a qualquer hora.",
+                "more_content": {
+                    "features": [
+                        "Crie e publique chatbots em minutos—sem habilidades técnicas",
+                        "Automatize tarefas e fluxos comuns, liberando agentes humanos",
+                        "Integre com CRMs, agendas e gateways de pagamento",
+                        "Aprimore bots continuamente com análises e feedbacks"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/unlimited_agents.webp"
+            },
+            {
+                "name": "Direcione Dúvidas ao Agente Certo Sempre",
+                "content": "Com o Hello, você tem controle total do suporte ao cliente. Como administrador, defina funções e permissões personalizadas—assim cada agente foca no que faz melhor, seja operações, vendas ou suporte. Toda mensagem vai para o especialista certo e você acompanha cada ação para máxima responsabilidade.",
+                "more_content": {
+                    "features": [
+                        "Defina funções e permissões por equipe ou usuário",
+                        "Especialize o acesso dos agentes por função",
+                        "Atribuição inteligente—por canal, expertise ou rodízio"
+                    ]
+                },
+                "lottie": "/assets/global/hello/new_webp/workflow_automation.json"
+            },
+            {
+                "name": "Suporte Automatizado e Sempre Ativo Que Cresce com Você",
+                "subtitle": "Construtor de Chatbot IA Sem Código para Todo Canal",
+                "content": "Capacite sua marca para oferecer suporte instantâneo dia e noite—em escala. O criador intuitivo de chatbots do Hello permite que qualquer um crie e publique bots altamente capazes no WhatsApp, Instagram, Facebook, site e mais. Colete leads, responda FAQs, processe pedidos e faça repasses para humanos quando necessário.",
+                "more_content": {
+                    "features": [
+                        "Construtor visual: Crie fluxos sem programar",
+                        "Implantação multicanal em minutos",
+                        "Suporte multilíngue e escalonamento fácil",
+                        "Disponível 24/7—entregando respostas, leads e clientes satisfeitos"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/chatbot.webp"
+            },
+            {
                 "name": "Controle de Tela",
-                "content": "Controle a tela do seu cliente de onde você estiver. Trabalhe na tela remota como se você realmente estivesse lá. Uma vez que você obtenha acesso, tenha controle total da tela, mouse e teclado do seu cliente para resolver rapidamente os problemas.",
-                "img": "/assets/brpt/hello/screen-control.svg"
-            },
-            {
-                "icon": "MdOutlineScreenShare",
-
-                "name": "Chamada de Vídeo / Compartilhamento de Tela",
-                "content": "Chamadas de vídeo de alta qualidade onde quer que seu cliente esteja. Faça uma chamada de vídeo com seu cliente para navegar juntos na tela do cliente. Assuma o controle da reunião enquanto seu cliente compartilha a tela para mostrar informações ou levantar um problema.",
-                "img": "/assets/brpt/hello/video-call---screen-sharing.svg"
-            },
-            {
-                "icon": "MdOutlineSchema",
-
-                "name": "Fluxo de Trabalho",
-                "content": "Atribua automaticamente conversas a uma equipe ou agente dedicado. Comece com nosso Fluxo de Trabalho existente ou configure seu Fluxo de Trabalho personalizado com base nas necessidades de suporte do seu negócio.",
-                "img": "/assets/brpt/hello/workflow.svg"
-            },
-            {
-                "icon": "MdOutlineAnalytics",
-
-                "name": "Análises",
-                "content": "Análises e relatórios para monitorar o desempenho de seus agentes. Obtenha insights profundos e acionáveis para oferecer suporte excepcional e alcançar seus objetivos. Os relatórios de análise fáceis de analisar ajudarão seus agentes a aumentar seu suporte ao cliente.",
-                "img": "/assets/brpt/hello/analytics.svg"
+                "content": "Controle a tela do seu cliente de onde estiver. Trabalhe na tela remota como se estivesse realmente lá. Assim que tiver acesso, tenha controle total da tela, mouse e teclado do cliente para resolver problemas rapidamente.",
+                "img": "/assets/global/hello/new_webp/screen_control.webp"
             }
         ]
     },
