@@ -66,7 +66,7 @@
             {
                 "name": "Responda de Forma Mais Inteligente e Rápida—Sempre",
                 "subtitle": "Sugestões Inteligentes com IA para Suporte Humanizado",
-                "content": "Com SmartCue AI integrado, cada interação com o cliente é elevada. Agentes recebem sugestões de resposta instantâneas, contextuais, profissionais e empáticas, personalizadas para cada chat graças à inteligência artificial. Isso acelera o atendimento e garante comunicação consistente e alinhada à marca, mesmo para novos membros.",
+                "content": "Com AI integrado, cada interação com o cliente é elevada. Agentes recebem sugestões de resposta instantâneas, contextuais, profissionais e empáticas, personalizadas para cada chat graças à inteligência artificial. Isso acelera o atendimento e garante comunicação consistente e alinhada à marca, mesmo para novos membros.",
                 "more_content": {
                     "features": [
                         "Respostas inteligentes e prontas para enviar ao seu alcance",
@@ -75,7 +75,7 @@
                     ]
                 },
                 "footer": "Seus agentes viram superagentes—oferecendo atendimento rápido e consistente em escala com chatbots inteligentes.",
-                "lottie": "/assets/global/hello/new_webp/summarization.json"
+                "lottie": "/assets/global/hello/new_webp/smartcue_ai.json"
             },
             {
                 "name": "Fale a Língua do Cliente—Quebre Barreiras, Construa Confiança",

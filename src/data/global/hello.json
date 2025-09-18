@@ -57,7 +57,7 @@
                         "Multi-level menus and custom call flows direct callers to the perfect agent or department",
                         "Play personalized greetings and collect critical information up front",
                         "Record calls for training, compliance, or quality assurance",
-                        "Easily integrates with your customer service software crm and helpdesk for context-rich conversations",
+                   
                         "Dramatically reduce hold times while maintaining a warm, branded voice experience"
                     ]
                 },
@@ -66,7 +66,7 @@
             {
                 "name": "Reply Smarter and Faster—Every Time",
                 "subtitle": "AI-Powered Smart Suggestions for Human-Like Support",
-                "content": "With AI built-in, every customer interaction is elevated. Agents receive instant, context-aware reply suggestions that are professional, empathetic, and tailored to each chat through the power of artificial intelligence capabilities. This not only accelerates response times, but also ensures consistent, on-brand communication, even for new team members.",
+                "content": "With AI Reply, every customer interaction is elevated. Agents receive instant, context-aware reply suggestions that are professional, empathetic, and tailored to each chat through the power of artificial intelligence capabilities. This not only accelerates response times, but also ensures consistent, on-brand communication, even for new team members.",
                 "more_content": {
                     "features": [
                         "Intelligent, ready-to-send replies at your fingertips",
@@ -75,7 +75,7 @@
                     ]
                 },
                 "footer": "Your agents become super-agents—delivering quick, consistent customer care at scale through intelligent chatbots.",
-                "lottie": "/assets/global/hello/new_webp/summarization.json"
+                "lottie": "/assets/global/hello/new_webp/smartcue_ai.json"
             },
             {
                 "name": "Speak Their Language—Break Barriers, Build Trust",
