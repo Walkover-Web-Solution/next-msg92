@@ -28,7 +28,8 @@ export default function FeatureComp({ data, pageInfo }) {
                                         {feature?.icon && <Icon className='text-5xl text-[#F7DC6F]' />}
 
                                         <h3 className='text-2xl font-semibold'>{feature?.name}</h3>
-                                        <span className='flex text-lg'>
+                                        {feature?.subtitle && <h4 className=''>{feature?.subtitle}</h4>}
+                                        <span className='flex'>
                                             <span className='font-bold'>{feature?.subheading} </span>
                                             <span dangerouslySetInnerHTML={{ __html: feature?.content }}></span>
                                         </span>
@@ -90,6 +91,15 @@ export default function FeatureComp({ data, pageInfo }) {
                                                             })}
                                                         </ul>
                                                     </div>
+                                                )}
+                                                {feature?.footer && (
+                                                    <p
+                                                        className={` ${
+                                                            openedFeatures.includes(index) ? 'block' : 'hidden'
+                                                        }`}
+                                                    >
+                                                        {feature?.footer}
+                                                    </p>
                                                 )}
                                                 <div
                                                     className='cursor-pointer'

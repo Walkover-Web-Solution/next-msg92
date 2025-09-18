@@ -130,7 +130,6 @@ export default function PricingHello({ data, country }) {
                                             amount?.plan_type?.name === tabtype
                                         ) {
                                             const services = getPlanServices(plan, currency);
-                                            console.log('⚡️ ~ :133 ~ plan?.plan_amounts.map ~ services:', services);
                                             return (
                                                 <div
                                                     key={plan?.name + index}

@@ -3,106 +3,185 @@
         "title": "Platform ng Suporta sa Customer para sa Iyong Negosyo ng MSG91-Pilipinas",
         "description": "Ang HELLO ay isang matatag na omnichannel platform na nagpapalakas sa iyong customer support team. Maghatid ng natatanging karanasan sa serbisyo gamit ang mga insight na batay sa datos."
     },
-    "BannerComp": {
+    "Banner": {
         "slug": "hello",
         "product": {
             "name": "Hello",
             "icon": "/assets/icons/products/hello.svg"
         },
-        "tagline": "Baguhin ang Suporta sa Customer",
-        "heading": "Hello",
-        "subheading": "Huwag mawalan ng pokus sa mahalaga. Huwag lang magresolba ng mga ticket, bumuo ng matibay na relasyon sa customer",
-        "banner_img": "/assets/fil_ph/hello/hello_banner.webp",
-        "getstarted_btn": "Magsimula",
-        "trustedByComp": {
-            "heading": "Suportado ang 15+ channel at platform",
-            "logos": [
-                {
-                    "name": "facebook",
-                    "url": "/assets/platforms/facebook.svg"
-                },
-                {
-                    "name": "gmail",
-                    "url": "/assets/platforms/gmail.svg"
-                },
-                {
-                    "name": "googleChat",
-                    "url": "/assets/platforms/googlechat.svg"
-                },
-                {
-                    "name": "instagram",
-                    "url": "/assets/platforms/instagram.svg"
-                },
-                {
-                    "name": "outlook",
-                    "url": "/assets/platforms/outlook.svg"
-                },
-                {
-                    "name": "sms",
-                    "url": "/assets/platforms/sms.svg"
-                },
-                {
-                    "name": "telegram",
-                    "url": "/assets/platforms/telegram.svg"
-                },
-                {
-                    "name": "twitter",
-                    "url": "/assets/platforms/twitter.svg"
-                },
-                {
-                    "name": "voice",
-                    "url": "/assets/platforms/voice.svg"
-                },
-                {
-                    "name": "whatsapp",
-                    "url": "/assets/platforms/whatsapp.svg"
-                },
-                {
-                    "name": "zoho",
-                    "url": "/assets/platforms/zoho.svg"
-                }
-            ]
-        }
+        "tagline": "Software para sa Suporta sa Customer",
+        "heading": "Contact Center na Pinapagana ng AI",
+        "subheading": "Huwag mawalan ng pokus sa mahalaga. Huwag lang magresolba ng mga ticket—bumuo ng matibay na relasyon sa customer",
+        "lottie": "/assets/global/hello/new_webp/hello_hero.json",
+        "getstarted_btn": "Magsimula"
     },
-    "FeatureComp": {
+    "FeatureWithBulletGroup": {
         "heading": "Mga Tampok",
         "iconColor": "text-campaign",
         "features": [
             {
-                "icon": "MdSupportAgent",
-                "name": "Walang Limitasyong Ahente",
-                "content": "Walang limitasyong libreng ahente para palakasin ang iyong customer support. Mas maraming ahente, tuloy-tuloy na pakikipag-ugnayan, mas maraming ticket na nareresolba, at mas mahusay na suporta sa customer. Walang limitasyon sa bilang ng iyong mga ahente ng customer support.",
-                "img": "/assets/fil_ph/hello/unlimited_agents.webp"
+                "name": "Pagsamahin ang Bawat Usapan, Palakasin ang Bawat Team",
+                "subtitle": "Maginhawang Multichannel Inbox para sa Iyong Negosyo",
+                "content": "Pagsama-samahin ang lahat ng usapan ng iyong customer — mula WhatsApp, Email, Instagram, Facebook, Website, at iba pa — sa isang madaling gamitin at sentralisadong platform. Hindi mo na kailangang lumipat-lipat ng tab, mag-forward ng mensahe, o makaligtaan ang tanong ng customer. Sa Hello, madali nang makipag-collaborate ang iyong mga team (mula sales hanggang customer service), sabay-sabay na humahawak ng bawat lead, support request, o feedback — at hindi kailanman mawawala ang kasaysayan ng isang customer.",
+                "more_content": {
+                    "features": [
+                        "Masiyahan sa isang all-in-one na view ng mensahe para sa lahat ng channel na gamit mo, kasama ang chatbot sa isang click.",
+                        "Mag-assign at mag-prioritize ng mga usapan sa tamang miyembro ng team nang madali.",
+                        "Maghanap, mag-filter, at maglagay ng tag sa komunikasyon para sa instant na konteksto gamit ang intelligent chatbots.",
+                        "Panatilihing nasa kamay mo ang buong history ng customer."
+                    ]
+                },
+                "footer": "Abutin ang susunod na level ng collaboration at customer visibility — pinagsasama-sama ang lahat ng channel para sa tuloy-tuloy na serbisyo. Gagana bilang isang unit ang iyong mga team, may instant na access sa mayamang konteksto ng customer — pinapalakas ang proaktibong suporta at makabuluhang engagement sa malaking scale.",
+                "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
             },
             {
-                "icon": "MdOutlineSmartToy",
-                "name": "Chatbot",
-                "content": "Sagutin ang mga tanong ng customer 24/7 sa text at voice. Hayaan ang chatbot na tugunan ang mga simpleng paulit-ulit na tanong na hindi nangangailangan ng soft skills at karanasan ng iyong mga ahente, at kapag kinakailangan, agad na ipasa sa live agent.",
-                "img": "/assets/fil_ph/hello/chatbot.webp"
+                "name": "Kumonekta, Makipag-Engage, at Mag-convert Agad",
+                "subtitle": "Chat Widget na Nagko-convert — Mula Unang Hello hanggang Loyalidad",
+                "content": "Nakaupo ang live chat widget ng Hello sa iyong website, nagiging tulay sa pagitan ng iyong negosyo at ng mga bisita. Puwedeng makipag-chat ang mga customer, magpadala ng file, voice note, o lumipat sa voice call — lahat ito nang hindi umaalis sa iyong page, gamit ang AI.",
+                "more_content": {
+                    "features": [
+                        "Makapagsimula ng chat o tawag ang bisita ng site sa isang click",
+                        "Maaari mong i-escalate ang mga komplikadong tanong mula chat papuntang voice call gamit ang AI Voice Agent",
+                        "Fully customizable ang widget para bumagay sa iyong brand at workflow para sa bawat AI Chatbot journey",
+                        "Bawasan ang bounce rate, makakuha ng mas maraming lead, at mag-iwan ng magandang first impression"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp"
             },
             {
-                "icon": "MdAdsClick",
-                "name": "Screen Control",
-                "content": "Kontrolin ang screen ng iyong customer kahit nasaan ka. Magtrabaho sa remote screen na parang nandoon ka mismo. Kapag nabigyan ng access, makukuha mo ang buong kontrol sa screen, mouse, at keyboard ng customer para mabilis maresolba ang isyu.",
-                "img": "/assets/fil_ph/hello/screen_control.webp"
+                "name": "Kaya ang Pinakamahirap na Tawag",
+                "subtitle": "Voice Bot at IVR Automation na Laging Gising",
+                "content": "Maghatid ng world-class na telephony at voice support. Sa advanced na AI Voice Agent ng Hello, bawat caller ay sasalubungin, gagabayan, at tutulungan — walang waiting time at walang maling paglipat ng tawag.",
+                "more_content": {
+                    "features": [
+                        "Multi-level na menu at custom call flows para sa tamang ahente o departamento",
+                        "Mag-play ng personalized na pagbati at kolektahin ang mahahalagang detalye agad",
+                        "I-record ang mga tawag para sa training, compliance, o quality assurance",
+                        "Madaling i-integrate sa CRM at helpdesk para sa mas mayamang konteksto ng pag-uusap",
+                        "Lubos na mababawasan ang hold time habang pinapanatiling mainit at branded ang experience"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp"
             },
             {
-                "icon": "MdOutlineScreenShare",
-                "name": "Video Call / Screen Sharing",
-                "content": "Mataas na kalidad ng video call saan man naroon ang iyong customer. Makipag-video call sa customer para mag-co-browse ng kanilang screen. Kontrolin ang meeting habang nagsha-share ng screen ang customer para magpakita ng impormasyon o mag-ulat ng isyu.",
-                "img": "/assets/fil_ph/hello/video_call_screen_sharing.webp"
+                "name": "Maging Mas Matalino at Mas Mabilis Sumagot — Sa Bawat Oras",
+                "subtitle": "AI-Powered Smart Suggestions para sa Human-Like Support",
+                "content": "Sa tulong ng AI, tataas ang kalidad ng bawat customer interaction. Agad na makakatanggap ang mga ahente ng context-aware na mga suhestiyon ng sagot na propesyonal, may empatiya, at akma sa bawat chat. Mapapabilis nito ang response time at masisiguro ang consistent, on-brand na komunikasyon — kahit para sa bagong team members.",
+                "more_content": {
+                    "features": [
+                        "Matalinong mga sagot na handa nang ipadala",
+                        "Bawasan ang pagod sa pagta-type at training time ng bagong ahente",
+                        "Natukoy ang mga problema sa kalinawan ng mensahe para sa mas perpektong sagot"
+                    ]
+                },
+                "footer": "Nagiging super-agents ang iyong mga ahente — naghahatid ng mabilis, pare-parehong customer care sa tulong ng matatalinong chatbots.",
+                "lottie": "/assets/global/hello/new_webp/smartcue_ai.json"
             },
             {
-                "icon": "MdOutlineSchema",
-                "name": "Workflow",
-                "content": "Awtomatikong i-assign ang mga usapan sa isang team o dedikadong ahente. Magsimula gamit ang aming kasalukuyang Workflow o mag-set up ng sarili mong Workflow ayon sa pangangailangan ng iyong negosyo.",
-                "img": "/assets/fil_ph/hello/workflow.webp"
+                "name": "Magsalita sa Kanilang Wika — Alisin ang Hadlang, Bumuo ng Tiwala",
+                "subtitle": "Global Multilingual Messaging na Walang Hirap",
+                "content": "Huwag hayaang pigilan ka ng wika. Ang multilingual messaging ng Hello ay awtomatikong isinasalin ang bawat chat in real time — para makasagot ang iyong team sa anumang wika nang walang kahirap-hirap.",
+                "more_content": {
+                    "features": [
+                        "Bi-directional na pagsasalin sa higit 100 wika",
+                        "Makakapag-chat at makakabili ang customer sa kanilang paboritong wika",
+                        "Palawakin ang iyong team nang hindi nadaragdagan ng staff o language training"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/multilingual_capabilities.webp"
             },
             {
-                "icon": "MdOutlineAnalytics",
-                "name": "Analytics",
-                "content": "Analytics at mga ulat para subaybayan ang performance ng iyong mga ahente. Makakuha ng malalim at kapaki-pakinabang na insight para maghatid ng mahusay na suporta at maabot ang iyong mga layunin. Ang madaling intindihin na analytics reports ay tutulong sa iyong mga ahente na iangat ang kanilang customer support.",
-                "img": "/assets/fil_ph/hello/analytics.webp"
+                "name": "Panatilihing Tuloy-tuloy ang Suporta, Kahit Malaki ang Volume",
+                "subtitle": "Advanced Ticket Management at Madaling Automation",
+                "content": "Bawat ticket ay pagkakataon para humanga ang customer. Sa Hello, awtomatikong na-aayos ang mga query ayon sa urgency, topic, o customer profile. Ang mga karaniwang issue ay auto-solved ng bots; ang mas komplikadong kaso ay na-e-escalate agad ng automation system.",
+                "more_content": {
+                    "features": [
+                        "I-route ang mga ticket base sa skill, departamento, o VIP status",
+                        "Auto-resolve ng paulit-ulit na issue gamit ang chatbots",
+                        "Trigger ng escalations at actions gamit ang custom logic",
+                        "Kayang mag-scale mula dose-dosenang request hanggang libo-libo kada araw"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/keep_support_flowing.webp"
+            },
+            {
+                "name": "Makita ang Buong Larawan Agad",
+                "subtitle": "Advanced Analytics Dashboard para sa Mas Matalinong Desisyon",
+                "content": "Makakuha ng actionable insights mula sa lahat ng channel. Ang analytics dashboard ng Hello ay nagbibigay ng real-time stats tungkol sa volume ng mensahe, performance ng agent, chatbot involvement sa ticket resolution, peak days analytics, tickets per channel, at marami pa. I-visualize ang buong operasyon gamit ang graphs at dynamic reports na sinusuportahan ng AI.",
+                "more_content": {
+                    "features": [
+                        "Subaybayan ang sentiment scores at productivity ng agents",
+                        "Tukuyin ang problema, top performers, at oportunidad para lumago",
+                        "I-export at i-share ang actionable insights sa buong negosyo"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/analytics.webp"
+            },
+            {
+                "name": "Trabaho Kahit Saan, Kahit Kailan",
+                "subtitle": "Mobile App na Naglalagay ng Usapan sa Iyong Bulsa",
+                "content": "Huwag palampasin ang customer kahit on the go. Sa full-featured mobile app ng Hello (iOS at Android), makakatanggap ang iyong team ng push notifications, makakasagot ng chat, makakapag-assign ng kaso, at makakatawag — ligtas at kasing-lakas ng main platform.",
+                "more_content": {
+                    "features": [
+                        "Real-time push alerts para sa bawat bagong mensahe",
+                        "Access sa lahat ng feature — chat, tawag, assignment, history — saanman",
+                        "Secure at maaasahan, para sa mobile workforce",
+                        "Perpekto para sa mga reps na naglalakbay, remote agents, at business owners on the go"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/mobile.webp"
+            },
+            {
+                "name": "Gawing Sales Opportunity ang Bawat Usapan",
+                "subtitle": "Chat-to-Checkout: Diretso ang Kita mula sa Chat",
+                "content": "Gawing sales ang bawat chat! Sa Hello, makakakita, makakapili, at makakabili ang customer direkta sa WhatsApp. Ipakita ang interactive product cards, real-time inventory, at instant na add-to-cart o payment buttons — para ang bawat tanong ay maging benta.",
+                "more_content": {
+                    "features": [
+                        "Ipakita ang produkto at variants na may live inventory",
+                        "Integrated payment gateway para sa smooth at secure checkout",
+                        "Subaybayan ang order mula chat hanggang delivery",
+                        "Walang links, walang redirects — puro conversion"
+                    ]
+                },
+                "lottie": "/assets/global/hello/new_webp/chat_to_checkout.json"
+            },
+            {
+                "name": "Tamang Agent, Tamang Mensahe",
+                "content": "Binibigyan ka ng Hello ng full control sa iyong customer support process. Bilang admin, maaari kang mag-set ng custom roles at permissions — para ang bawat agent ay nakatutok sa kanilang expertise, tulad ng sales, support, o operations. Tumatama ang bawat message sa tamang tao, at makikita mo ang bawat action para sa accountability.",
+                "more_content": {
+                    "features": [
+                        "Mag-set ng roles at permissions kada team o user",
+                        "Limitahan ang access ng agent base sa function",
+                        "Smart assignment — by channel, expertise, o round robin"
+                    ]
+                },
+                "lottie": "/assets/global/hello/new_webp/workflow_automation.json"
+            },
+            {
+                "name": "Laging Available na Support na Kayang Mag-Scale",
+                "subtitle": "No-Code AI Chatbot Solution para sa Lahat ng Channel",
+                "content": "Bigyan ng kapangyarihan ang iyong brand na magbigay ng instant support, araw at gabi. Ang drag-and-drop chatbot builder ng Hello ay madaling gamitin para gumawa at mag-launch ng bots sa WhatsApp, Instagram, Facebook, website at iba pa. Makakakuha ng leads, makakasagot ng FAQs, makakapag-process ng orders, at makakapag-handoff sa tao kung kailangan.",
+                "more_content": {
+                    "features": [
+                        "Visual bot builder: Gumawa ng flow nang walang coding",
+                        "Mabilis na deployment sa maraming channel",
+                        "Multilingual support at seamless escalation",
+                        "Available 24/7 — nagbibigay ng sagot at leads palagi"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/chatbot.webp"
+            },
+            {
+                "name": "Pabilisin ang Ticket Handoffs",
+                "subtitle": "Gawing mabilis at madali ang paglipat ng ticket.",
+                "content": "Kapag lumipat ang ticket mula isang agent papunta sa iba, awtomatikong gumagawa ang Hello ng maikling buod ng buong usapan. Hindi na kailangang basahin ang mahabang history — agad naiintindihan ng bagong agent ang problema, ano ang nagawa na, at ano ang susunod na hakbang. Pinapabilis nito ang sagot at pinipigilan ang paulit-ulit na tanong.",
+                "lottie": "/assets/global/hello/new_webp/summarization.json"
+            },
+            {
+                "name": "Ayusin ang Komplikadong Problema Agad",
+                "subtitle": "Bigyan ng kakayahan ang agents na kontrolin ang screen ng customer para masolusyonan agad ang isyu.",
+                "content": "Sa halip na paulit-ulit na screenshots at instructions, maaaring direktang ma-access ng agent ang screen ng customer (may pahintulot) at ayusin ang problema parang nandoon sila. Makakapag-navigate sila, magagamit ang mouse at keyboard, at maayos ang error on the spot. Pinapabilis nito ang resolution time at tinatanggal ang kalituhan.",
+                "img": "/assets/global/hello/new_webp/screen_control.webp"
             }
         ]
     },
