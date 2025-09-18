@@ -46,7 +46,7 @@
                         "Reduce bounce rates, capture more leads, and create memorable first impressions"
                     ]
                 },
-                "img": "/assets/global/hello/new_webp/roles_permissions_ticket_assignment.webp"
+                "img": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp"
             },
             {
                 "name": "Handle Even the Toughest Calls with Ease",
@@ -66,7 +66,7 @@
             {
                 "name": "Reply Smarter and Faster—Every Time",
                 "subtitle": "AI-Powered Smart Suggestions for Human-Like Support",
-                "content": "With SmartCue AI built-in, every customer interaction is elevated. Agents receive instant, context-aware reply suggestions that are professional, empathetic, and tailored to each chat through the power of artificial intelligence capabilities. This not only accelerates response times, but also ensures consistent, on-brand communication, even for new team members.",
+                "content": "With AI built-in, every customer interaction is elevated. Agents receive instant, context-aware reply suggestions that are professional, empathetic, and tailored to each chat through the power of artificial intelligence capabilities. This not only accelerates response times, but also ensures consistent, on-brand communication, even for new team members.",
                 "more_content": {
                     "features": [
                         "Intelligent, ready-to-send replies at your fingertips",
@@ -107,10 +107,10 @@
             {
                 "name": "Get the Full Picture, Instantly",
                 "subtitle": "Advanced Analytics Dashboard for Smarter Decisions",
-                "content": "Unlock actionable insights into everything happening across your communication channels. Hello’s analytics dashboard gives you real-time stats on message volumes, agent performance, response times, first contact resolutions, customer service satisfaction, and more. Visualize your entire operation with graphs and dynamic reports supported by artificial intelligence.",
+                "content": "Unlock actionable insights into everything happening across your communication channels. Hello’s analytics dashboard gives you real-time stats on message volumes, agent performance, ChatBot Involvement In Ticket Resolution, Peak Days Analytics, Tickets Distribution By Channel, and more. Visualize your entire operation with graphs and dynamic reports supported by artificial intelligence.",
                 "more_content": {
                     "features": [
-                        "Track SLAs, sentiment scores, and agent productivity",
+                        "Track sentiment scores, and agent productivity",
                         "Identify issues, top performers, and growth opportunities",
                         "Export and share actionable insights across your business"
                     ]
@@ -134,7 +134,7 @@
             {
                 "name": "Create Conversations That Sell—Checkout Without the Hassle",
                 "subtitle": "Chat-to-Checkout: Boost Revenue Directly from Chat",
-                "content": "Turn any customer conversation into a transaction! With Hello, customers browse, select, and purchase right inside your chat widget or WhatsApp window. Display interactive product cards, real-time inventory, and instant “add to cart” or payment buttons—so every inquiry can become a sale.",
+                "content": "Turn any customer conversation into a transaction! With Hello, customers browse, select, and purchase right inside your WhatsApp window. Display interactive product cards, real-time inventory, and instant “add to cart” or payment buttons—so every inquiry can become a sale.",
                 "more_content": {
                     "features": [
                         "Showcase products and variants, with live inventory",
@@ -144,20 +144,6 @@
                     ]
                 },
                 "lottie": "/assets/global/hello/new_webp/chat_to_checkout.json"
-            },
-            {
-                "name": "Automated, Always-On Support That Scales With You",
-                "subtitle": "No-Code AI Chatbot Builder for Effortless Automation",
-                "content": "Empower your business with 24/7 instant responses and automated actions—no coding required. Hello’s drag-and-drop chatbot builder lets you design custom flows for FAQs, lead capture, appointment booking, and more. Launch powerful bots that scale your customer service, drive sales, and qualify leads around the clock.",
-                "more_content": {
-                    "features": [
-                        "Build and deploy chatbots in minutes—no technical skills needed",
-                        "Automate common tasks and workflows, freeing up live agents",
-                        "Integrate with CRMs, calendars, and payment gateways",
-                        "Continuously improve bots with analytics and feedback"
-                    ]
-                },
-                "img": "/assets/global/hello/new_webp/unlimited_agents.webp"
             },
             {
                 "name": "Route Queries to the Right Agent Every Time",
@@ -186,8 +172,15 @@
                 "img": "/assets/global/hello/new_webp/chatbot.webp"
             },
             {
-                "name": "Screen Control",
-                "content": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues.",
+                "name": "Speed Up Ticket Handoffs",
+                "subtitle": "Make switching tickets smooth and effortless.",
+                "content": "When a ticket moves from one agent to another, Hello automatically generates a short summary of the entire conversation. Instead of reading through long chat histories, the new agent can quickly understand the customer’s issue, what has already been done, and what needs to happen next. This helps teams respond faster, avoid repeated questions, and deliver a seamless support experience to the customer.",
+                "lottie": "/assets/global/hello/new_webp/summarization.json"
+            },
+            {
+                "name": "Resolve Complex Issues Instantly",
+                "subtitle": "Empower agents to solve problems in real time by taking control of your customer’s screen.",
+                "content": " Instead of spending hours exchanging screenshots, instructions, and explanations, agents can directly access the customer’s screen (with their permission) and handle the issue as if they were physically present. They can navigate the interface, operate the mouse and keyboard, and fix errors on the spot. This hands-on support eliminates back-and-forth confusion, prevents miscommunication, and significantly reduces resolution time—turning what could be a long, frustrating process into a seamless one-click fix.",
                 "img": "/assets/global/hello/new_webp/screen_control.webp"
             }
         ]
