@@ -66,7 +66,7 @@
             {
                 "name": "Reply Smarter and Faster—Every Time",
                 "subtitle": "AI-Powered Smart Suggestions for Human-Like Support",
-                "content": "With SmartCue AI built-in, every customer interaction is elevated. Agents receive instant, context-aware reply suggestions that are professional, empathetic, and tailored to each chat through the power of artificial intelligence capabilities. This not only accelerates response times, but also ensures consistent, on-brand communication, even for new team members.",
+                "content": "With AI built-in, every customer interaction is elevated. Agents receive instant, context-aware reply suggestions that are professional, empathetic, and tailored to each chat through the power of artificial intelligence capabilities. This not only accelerates response times, but also ensures consistent, on-brand communication, even for new team members.",
                 "more_content": {
                     "features": [
                         "Intelligent, ready-to-send replies at your fingertips",
@@ -178,8 +178,9 @@
                 "lottie": "/assets/global/hello/new_webp/summarization.json"
             },
             {
-                "name": "Screen Control",
-                "content": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues.",
+                "name": "Resolve Complex Issues Instantly",
+                "subtitle": "Empower agents to solve problems in real time by taking control of your customer’s screen.",
+                "content": " Instead of spending hours exchanging screenshots, instructions, and explanations, agents can directly access the customer’s screen (with their permission) and handle the issue as if they were physically present. They can navigate the interface, operate the mouse and keyboard, and fix errors on the spot. This hands-on support eliminates back-and-forth confusion, prevents miscommunication, and significantly reduces resolution time—turning what could be a long, frustrating process into a seamless one-click fix.",
                 "img": "/assets/global/hello/new_webp/screen_control.webp"
             }
         ]

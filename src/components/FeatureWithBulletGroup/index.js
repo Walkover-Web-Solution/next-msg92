@@ -17,6 +17,9 @@ export default function FeatureWithBulletGroup({ data }) {
                     >
                         <div className='w-full flex flex-col gap-2'>
                             <h2 className='md:text-3xl text-xl font-semibold text-primary'>{group?.name}</h2>
+                            {group?.subtitle && (
+                                <p className='md:text-lg text-base font-semibold text-gray-800'>{group?.subtitle}</p>
+                            )}
                             <p className='md:text-lg text-base text-gray-800'>{group?.content}</p>
                             {group?.more_content?.features?.length > 0 && (
                                 <ul className='text-gray-600 cont gap-1'>
