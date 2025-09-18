@@ -6,9 +6,11 @@ import { InlineWidget } from 'react-calendly';
 import getURL from '@/utils/getURL';
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
 import CodeSnippet from '../CodeSnipped/CodeSnipped';
+import { MdArrowUpward } from 'react-icons/md';
 
 export default function BannerComp({ pageInfo, data }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isPricingModalOpen, setIsPricingModalOpen] = useState(false);
 
     return (
         <>
@@ -39,24 +41,45 @@ export default function BannerComp({ pageInfo, data }) {
                             {data?.subheading}
                         </p>
                     </div>
-
-                    <div className='flex flex-col md:flex-row gap-6'>
-                        {data?.getstarted_btn && (
-                            <a
-                                href={getURL('signup', pageInfo?.page, pageInfo)}
-                                target='_blank'
-                                className='btn btn-primary btn-md'
-                            >
-                                {data?.getstarted_btn}
-                            </a>
+                    <div className='cont gap-2'>
+                        {data?.buttonHeading && (
+                            <h2 className='flex items-center gap-2'>
+                                {data?.buttonHeading} <MdArrowUpward fontSize={22} color='green' />
+                            </h2>
                         )}
+                        <div className='flex flex-col md:flex-row gap-3 md:gap-6'>
+                            {data?.getstarted_btn && (
+                                <a
+                                    href={getURL('signup', pageInfo?.page, pageInfo)}
+                                    target='_blank'
+                                    className='btn btn-primary btn-md'
+                                >
+                                    {data?.getstarted_btn}
+                                </a>
+                            )}
+                            {data?.onboarding_call && (
+                                <button className='btn btn-md btn-primary ' onClick={() => setIsModalOpen(true)}>
+                                    {data?.onboarding_call}
+                                </button>
+                            )}
+                            {data?.pricing_call && (
+                                <button
+                                    className='btn btn-md btn-primary btn-outline'
+                                    onClick={() => setIsPricingModalOpen(true)}
+                                >
+                                    {data?.pricing_call}
+                                </button>
+                            )}
+                            {data?.schedule_meet && (
+                                <button
+                                    className='btn btn-md btn-primary btn-outline'
+                                    onClick={() => setIsModalOpen(true)}
+                                >
+                                    {data?.schedule_meet}
+                                </button>
+                            )}
 
-                        {data?.schedule_meet && (
-                            <button className='btn btn-md btn-primary btn-outline' onClick={() => setIsModalOpen(true)}>
-                                {data?.schedule_meet}
-                            </button>
-                        )}
-                        {/* {pageInfo?.page === 'hello' && (
+                            {/* {pageInfo?.page === 'hello' && (
                             <a
                                 href='/demochatbot'
                                 onClick={() => {
@@ -74,6 +97,7 @@ export default function BannerComp({ pageInfo, data }) {
                                 </button>
                             </a>
                         )} */}
+                        </div>
                     </div>
 
                     <TrustedByComp data={data?.trustedByComp} />
@@ -120,6 +144,22 @@ export default function BannerComp({ pageInfo, data }) {
                         </button>
                         <InlineWidget
                             url='https://calendly.com/d/y3n-29s-29h?back=1'
+                            styles={{ height: '680px', width: 'auto' }}
+                        />
+                    </div>
+                </dialog>
+            )}
+            {isPricingModalOpen && (
+                <dialog id='pricing_modal' className='modal' open>
+                    <div className='modal-box'>
+                        <button
+                            onClick={() => setIsPricingModalOpen(false)}
+                            className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'
+                        >
+                            ✕
+                        </button>
+                        <InlineWidget
+                            url='https://calendly.com/msg91-whatsapp/15-min-meeting'
                             styles={{ height: '680px', width: 'auto' }}
                         />
                     </div>
