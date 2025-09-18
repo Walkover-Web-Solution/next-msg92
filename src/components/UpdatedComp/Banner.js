@@ -4,7 +4,6 @@ import getURL from '@/utils/getURL';
 import { LinkText } from '../UIComponent/Buttons/LinkButton';
 
 export default function Banner({ pageInfo, data }) {
-    console.log('⚡️ ~ :2 ~ Banner ~ data:', data);
     return (
         <section className='container '>
             <div className='cont gap-6 flex flex-col lg:flex-row items-center min-h-[75dvh] '>
