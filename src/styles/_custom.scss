@@ -80,6 +80,12 @@ body {
     &.social-icon {
         @apply p-2 h-fit w-fit min-h-fit border border-gray-300 rounded hover:bg-gray-50 hover:border-accent;
     }
+    &.btn-hello {
+        @apply bg-[var(--hello-color)] text-black outline-none border-black shadow-none;
+        &.btn-outline {
+            @apply border-[var(--hello-dark-color)] text-[var(--hello-dark-color)] bg-transparent hover:bg-[var(--hello-color)] hover:text-black;
+        }
+    }
 }
 
 .list-disc {

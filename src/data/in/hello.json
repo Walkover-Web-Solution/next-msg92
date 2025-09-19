@@ -3,103 +3,185 @@
         "title": "Best Customer Support Software in India | Digital Customer Service Platform | MSG91",
         "description": "We are the leading cloud customer service platform. Check out the best customer service software in India to proactively engage customers and answer all customer queries with MSG91"
     },
-    "BannerComp": {
+    "Banner": {
         "slug": "hello",
         "product": {
             "name": "Hello",
             "icon": "/assets/icons/products/hello.svg"
         },
         "tagline": "Customer Support Software",
-        "heading": "AI-powered Contact Center",
-        "subheading": "Never lose sight of what's important. Don't just solve tickets, build customer relationships",
-        "banner_img": "/assets/global/hello/heroimg.png",
-        "getstarted_btn": "Get Started",
-        "trustedByComp": {
-            "heading": "Support 15+ channels & platforms",
-            "logos": [
-                {
-                    "name": "facebook",
-                   "url": "/assets/platforms/facebook.svg"
-                },
-                {
-                    "name": "gmail",
-                    "url": "/assets/platforms/gmail.svg"
-                },
-                {
-                    "name": "googleChat",
-                  "url": "/assets/platforms/googlechat.svg"
-                },
-                {
-                    "name": "instagram",
-                   "url": "/assets/platforms/instagram.svg"
-                },
-                {
-                    "name": "outlook",
-                  "url": "/assets/platforms/outlook.svg"
-                },
-                {
-                    "name": "sms",
-                   "url": "/assets/platforms/sms.svg"
-                },  {
-                    "name": "telegram",
-                  "url": "/assets/platforms/telegram.svg"
-                },
-                {
-                    "name": "twitter",
-                   "url": "/assets/platforms/twitter.svg"
-                },  {
-                    "name": "voice",
-                  "url": "/assets/platforms/voice.svg"
-                },
-                {
-                    "name": "whatsapp",
-                   "url": "/assets/platforms/whatsapp.svg"
-                },  {
-                    "name": "zoho",
-                  "url": "/assets/platforms/zoho.svg"
-                }
-            ]
-        }
+        "heading": "AI-powered Contact centre",
+        "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
+        "lottie": "/assets/global/hello/new_webp/hello_hero.json",
+        "getstarted_btn": "Get Started"
     },
-   "FeatureComp": {
+    "FeatureWithBulletGroup": {
         "heading": "Features",
         "iconColor": "text-campaign",
         "features": [
             {
-                "icon": "MdSupportAgent",
-                "name": "Unlimited Agents",
-                "content": "Unlimited free agents to power up your customer support. More agents mean continuous engagement, more tickets resolved and better customer support on offer. There is nonumber attached to your number of customer support agents",
-                "img": "/assets/global/hello/unlimited-agents.svg"
+                "name": "Unify Every Conversation, Empower Every Team",
+                "subtitle": "Seamless Multichannel Inbox for Your Business",
+                "content": "Bring together all your customer conversations—across WhatsApp, Email, Instagram, Facebook, Website, and more—into one easy-to-use, centralized platform. No more juggling tabs, forwarding messages, or letting customer inquiries slip through the cracks. With Hello, your teams (from sales to customer service) collaborate effortlessly, handle every sales lead, customer support request, or feedback together, and never lose track of a single customer.",
+                "more_content": {
+                    "features": [
+                        "Enjoy an all-in-one message view for every channel you use and keep every conversation chatbot at your fingertips.",
+                        "Assign and prioritize conversations to the right team members with one click.",
+                        "Effortlessly search, filter, and tag communications for instant context using intelligent chatbots.",
+                        "Keep complete customer histories at your fingertips."
+                    ]
+                },
+                "footer": "Achieve next-level collaboration and customer visibility, unifying every channel for seamless service. Your teams work as one, with instant access to rich customer context—empowering proactive support and meaningful engagement at scale.",
+                "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
             },
             {
-                "icon": "MdOutlineSmartToy",
-                "name": "Chatbot",
-                "content": "Resolve customer queries round-the-clock across text and voice. Let the chatbot tackle simple repetitive queries that don’t require the soft skills and experience of your agents and when required, seamlessly loop in live agents.",
-                "img": "/assets/global/hello/chatbot.svg"
+                "name": "Connect, Engage, and Convert Instantly",
+                "subtitle": "Chat Widget That Converts—From First Hello to Lasting Loyalty",
+                "content": "Hello’s live chat widget sits right on your website, becoming the instant bridge between your business and curious visitors. Customers can chat, share files, leave voice notes, or even switch to a voice call—all without leaving your page, enabled by artificial intelligence.",
+                "more_content": {
+                    "features": [
+                        "Website visitors start a chat or call with just one click",
+                        "Escalate complex queries from chat to voice call, seamlessly with an AI Voice Agent",
+                        "Fully customizable widget to match your brand and workflow for every AI Chatbot journey",
+                        "Reduce bounce rates, capture more leads, and create memorable first impressions"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp"
             },
             {
-                "icon": "MdAdsClick",
-                "name": "Screen Control",
-                "content": "Control your customer’s screen from where you are. Work on the remote screen as if you are really there. Once you get access, get complete control of your customer’s screen, mouse and keyboard to quickly resolve issues.",
-                "img": "/assets/global/hello/screen-control.svg"
+                "name": "Handle Even the Toughest Calls with Ease",
+                "subtitle": "Voice Bot and IVR Automation That Never Sleeps",
+                "content": "Deliver world-class telephony and voice support. With Hello’s advanced AI Voice Agent, every caller is greeted, guided, and helped—without wait times or misrouted calls.",
+                "more_content": {
+                    "features": [
+                        "Multi-level menus and custom call flows direct callers to the perfect agent or department",
+                        "Play personalized greetings and collect critical information up front",
+                        "Record calls for training, compliance, or quality assurance",
+                   
+                        "Dramatically reduce hold times while maintaining a warm, branded voice experience"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp"
+            },
+                {
+                "name": "Reply Smarter and Faster—Every Time",
+                "subtitle": "AI-Powered Smart Suggestions for Human-Like Support",
+                "content": "With AI Reply, every customer interaction is elevated. Agents receive instant, context-aware reply suggestions that are professional, empathetic, and tailored to each chat through the power of artificial intelligence capabilities. This not only accelerates response times, but also ensures consistent, on-brand communication, even for new team members.",
+                "more_content": {
+                    "features": [
+                        "Intelligent, ready-to-send replies at your fingertips",
+                        "Reduce typing fatigue and cut training time for new agents.",
+                        "Spots clarity issues to support agents in delivering perfect responses."
+                    ]
+                },
+                "footer": "Your agents become super-agents—delivering quick, consistent customer care at scale through intelligent chatbots.",
+                "lottie": "/assets/global/hello/new_webp/smartcue_ai.json"
             },
             {
-                "icon": "MdOutlineScreenShare",
-                "name": "Video Call / Screen Sharing",
-                "content": "High-quality video calls wherever your customer is. Get on a video call with your customer to co-browse your customer’s screen. Take control of the meeting as your customer screen shares to show information or raise an issue.",
-                "img": "/assets/global/hello/video-call---screen-sharing.svg"
+                "name": "Speak Their Language—Break Barriers, Build Trust",
+                "subtitle": "Global Multilingual Messaging Made Simple",
+                "content": "Don’t let language limit your reach. Hello’s multilingual messaging breaks down borders, automatically translating every customer chat in real time—letting your team reply in any language, effortlessly.",
+                "more_content": {
+                    "features": [
+                        "Bi-directional translations in over 100 global and regional languages",
+                        "Customers chat, ask, and buy in their preferred language",
+                        "Your team expands internationally — no added staff or language training needed"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/multilingual_capabilities.webp"
             },
             {
-                "icon": "MdOutlineSchema",
-                "name": "Workflow",
-                "content": "Automatically assign conversations to a team or a dedicated agent. Get started with our existing Workflow or set up your customised Workflow based on your business support needs.",
-                "img": "/assets/global/hello/workflow.svg"
+                "name": "Keep Support Flowing, Even at Scale",
+                "subtitle": "Advanced Ticket Management and Effortless Automation",
+                "content": "Every support ticket is more than a message—it’s a chance to impress. With Hello, incoming queries are auto-sorted by urgency, topic, or customer profile, ensuring the right person handles each situation. Set smart rules so common issues are solved by bots; complex ones are prioritized or escalated in real time by your customer support automation system.",
+                "more_content": {
+                    "features": [
+                        "Route tickets by skill, department, or VIP status",
+                        "Auto-resolve repetitive issues, freeing up agent time with specialized chatbots",
+                        "Trigger escalations and actions based on custom logic",
+                        "Scale seamlessly from dozens to thousands of requests per day"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/keep_support_flowing.webp"
             },
             {
-                "icon": "MdOutlineAnalytics",
-                "name": "Analytics",
-                "content": "Analytics and reports to monitor your agent performance. Get deep actionable insights to deliver outstanding support and achieve your goals. The easy-to-analyse analytics reports will help your agents scale up their customer support.",
-                "img": "/assets/global/hello/analytics.svg"
+                "name": "Get the Full Picture, Instantly",
+                "subtitle": "Advanced Analytics Dashboard for Smarter Decisions",
+                "content": "Unlock actionable insights into everything happening across your communication channels. Hello’s analytics dashboard gives you real-time stats on message volumes, agent performance, ChatBot Involvement In Ticket Resolution, Peak Days Analytics, Tickets Distribution By Channel, and more. Visualize your entire operation with graphs and dynamic reports supported by artificial intelligence.",
+                "more_content": {
+                    "features": [
+                        "Track sentiment scores, and agent productivity",
+                        "Identify issues, top performers, and growth opportunities",
+                        "Export and share actionable insights across your business"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/analytics.webp"
+            },
+            {
+                "name": "Work Without Limits—Wherever You Are",
+                "subtitle": "Mobile App That Puts Customer Conversations in Your Pocket",
+                "content": "Never miss a customer, even on the go. With Hello’s fully featured mobile app (iOS and Android), your team receives instant notifications, replies to chats, assigns cases, and can even start calls—all with the security and reliability of your main platform.",
+                "more_content": {
+                    "features": [
+                        "Real-time push alerts for every new customer message",
+                        "Access full feature set—chat, calls, assignment, histories—anywhere",
+                        "Secure and reliable, built for mobile workforces",
+                        "Perfect for traveling reps, remote agents, and business owners on the move"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/mobile.webp"
+            },
+            {
+                "name": "Create Conversations That Sell—Checkout Without the Hassle",
+                "subtitle": "Chat-to-Checkout: Boost Revenue Directly from Chat",
+                "content": "Turn any customer conversation into a transaction! With Hello, customers browse, select, and purchase right inside your WhatsApp window. Display interactive product cards, real-time inventory, and instant “add to cart” or payment buttons—so every inquiry can become a sale.",
+                "more_content": {
+                    "features": [
+                        "Showcase products and variants, with live inventory",
+                        "Integrated payment gateway for smooth, secure checkout",
+                        "Track orders from conversation to delivery",
+                        "No links, no redirects, zero drop-offs—just conversions"
+                    ]
+                },
+                "lottie": "/assets/global/hello/new_webp/chat_to_checkout.json"
+            },
+            {
+                "name": "Route Queries to the Right Agent Every Time",
+                "content": "Hello gives you total control over your customer support process. As an admin, you can set custom roles and assign specialized permissions—so agents focus only on what they do best, whether that’s operations, sales, or support. Every message goes to the right expert, and you can track every action for full accountability.",
+                "more_content": {
+                    "features": [
+                        "Set team or user roles and permissions",
+                        "Specialize agent access by function",
+                        "Smart assignment—by channel, expertise, or round robin"
+                    ]
+                },
+                "lottie": "/assets/global/hello/new_webp/workflow_automation.json"
+            },
+            {
+                "name": "Automated, Always-On Support That Scales With You",
+                "subtitle": "No-Code AI Chatbot Solution for Every Channel",
+                "content": "Empower your brand to provide instant support day or night—at scale. Hello’s intuitive drag-and-drop ai chatbot maker lets anyone create and launch highly-capable chatbots on WhatsApp, Instagram, Facebook, your website, or more. Collect leads, answer FAQs, process orders, and hand off to humans when needed.",
+                "more_content": {
+                    "features": [
+                        "Visual bot builder: Create flows without coding",
+                        "Multichannel deployment in minutes",
+                        "Multilingual support and seamless escalation",
+                        "Available 24/7—delivering answers, leads, and happy customers"
+                    ]
+                },
+                "img": "/assets/global/hello/new_webp/chatbot.webp"
+            },
+            {
+                "name": "Speed Up Ticket Handoffs",
+                "subtitle": "Make switching tickets smooth and effortless.",
+                "content": "When a ticket moves from one agent to another, Hello automatically generates a short summary of the entire conversation. Instead of reading through long chat histories, the new agent can quickly understand the customer’s issue, what has already been done, and what needs to happen next. This helps teams respond faster, avoid repeated questions, and deliver a seamless support experience to the customer.",
+                "lottie": "/assets/global/hello/new_webp/summarization.json"
+            },
+            {
+                "name": "Resolve Complex Issues Instantly",
+                "subtitle": "Empower agents to solve problems in real time by taking control of your customer’s screen.",
+                "content": " Instead of spending hours exchanging screenshots, instructions, and explanations, agents can directly access the customer’s screen (with their permission) and handle the issue as if they were physically present. They can navigate the interface, operate the mouse and keyboard, and fix errors on the spot. This hands-on support eliminates back-and-forth confusion, prevents miscommunication, and significantly reduces resolution time—turning what could be a long, frustrating process into a seamless one-click fix.",
+                "img": "/assets/global/hello/new_webp/screen_control.webp"
             }
         ]
     },
@@ -123,15 +205,14 @@
                 "answer": "<p>We are providing monthly tickets with each plan and in case they end, you can also use extra tickets which you pay in postpaid billing.</p><p>Here are the number of tickets assigned in each plan:</p><ul class='list-disc'><li>Free Plan- 50 tickets/monthly</li><li>Basic Plan- 1000 tickets/monthly</li><li>Premium Plan- 2000 tickets/monthly</li></ul><p>Extra Charges for each ticket in different plans:</p><ul class='list-disc'><li>Free Plan- there is no option for more tickets in free plans as you have to upgrade the Hello Plan to Basic or Premium as per your choice.</li><li>Basic Plan- ₹0.5 per ticket</li><li>Premium Plan- ₹0.75 per ticket</li></ul>"
             },
             {
-                "question":  " Can I customize the Hello Plan?",
-                "answer":  "Yes, you can have a customized plan for hello. Click on the link to schedule the meeting with the sales heads."
+                "question": " Can I customize the Hello Plan?",
+                "answer": "Yes, you can have a customized plan for hello. Click on the link to schedule the meeting with the sales heads."
             }
         ]
     },
     "moreFeature": {
-       
         "name": "Eliminating Mediocre Customer Service",
-    "description":"MSG91, the best customer support software, is designed with a range of sophisticated programs to assist organizations in delivering exceptional support and guidance to their customers. We offer a centralized system where customer support representatives can manage, prioritize, address, and ultimately take care of multiple employee or customer requests. Customer service software, however, consists of more than simply a ticketing system; it also consists of several customer service tools for small businesses to assist in providing impressive customer service.",
+        "description": "MSG91, the best customer support software, is designed with a range of sophisticated programs to assist organizations in delivering exceptional support and guidance to their customers. We offer a centralized system where customer support representatives can manage, prioritize, address, and ultimately take care of multiple employee or customer requests. Customer service software, however, consists of more than simply a ticketing system; it also consists of several customer service tools for small businesses to assist in providing impressive customer service.",
         "Read_more_btn": "Read More"
     },
     "SEOComp": {
