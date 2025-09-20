@@ -10,10 +10,11 @@
             "icon": "/assets/icons/products/hello.svg"
         },
         "tagline": "Customer Support Software",
-        "heading": "AI-powered Contact centre",
+        "heading": "AI-Powered Contact Centre",
         "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
         "lottie": "/assets/global/hello/new_webp/hello_hero.json",
-        "getstarted_btn": "Get Started"
+        "getstarted_btn": "Get Started",
+        "schedule_meet": "Schedule a Meeting"
     },
     "FeatureWithBulletGroup": {
         "heading": "Features",
@@ -31,6 +32,7 @@
                         "Keep complete customer histories at your fingertips."
                     ]
                 },
+                "schedule_meet": "Talk to Us",
                 "footer": "Achieve next-level collaboration and customer visibility, unifying every channel for seamless service. Your teams work as one, with instant access to rich customer context—empowering proactive support and meaningful engagement at scale.",
                 "img": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp"
             },
@@ -61,6 +63,7 @@
                         "Dramatically reduce hold times while maintaining a warm, branded voice experience"
                     ]
                 },
+                "schedule_meet": "Get In Action",
                 "img": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp"
             },
             {
@@ -88,6 +91,7 @@
                         "Your team expands internationally — no added staff or language training needed"
                     ]
                 },
+                "schedule_meet": "Book A Demo",
                 "img": "/assets/global/hello/new_webp/multilingual_capabilities.webp"
             },
             {
@@ -129,6 +133,9 @@
                         "Perfect for traveling reps, remote agents, and business owners on the move"
                     ]
                 },
+                "get_mobile_app": "Get Mobile App",
+                "android":"Android",
+                "ios":"iOS",
                 "img": "/assets/global/hello/new_webp/mobile.webp"
             },
             {
@@ -169,6 +176,7 @@
                         "Available 24/7—delivering answers, leads, and happy customers"
                     ]
                 },
+                "get_in_action": "Get in Action Bot",
                 "img": "/assets/global/hello/new_webp/chatbot.webp"
             },
             {
