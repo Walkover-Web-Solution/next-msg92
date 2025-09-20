@@ -113,7 +113,7 @@
                     },
                     {
                         "title": "Real-Time Understanding",
-                        "description": "Interprets questions as they come, provides instant answers, and maintains fluid conversations."
+                        "description": "Interprets questions as they come,With LLM-powered response generation, your bot can adapt to unexpected user questions and maintain context seamlessly."
                     },
                     {
                         "title": "Self-Closing & Contextual Escalations",

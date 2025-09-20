@@ -2,8 +2,11 @@ import Image from 'next/image';
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
 import getURL from '@/utils/getURL';
 import { LinkText } from '../UIComponent/Buttons/LinkButton';
+import { useState } from 'react';
+import { InlineWidget } from 'react-calendly';
 
 export default function Banner({ pageInfo, data }) {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <section className='container '>
             <div className='cont gap-6 flex flex-col lg:flex-row items-center min-h-[75dvh] '>
@@ -28,6 +31,11 @@ export default function Banner({ pageInfo, data }) {
                                 <LinkText>Test Chatbot</LinkText>
                             </button>
                         </a>
+                        {data?.schedule_meet && (
+                            <button className='btn btn-md btn-hello btn-outline' onClick={() => setIsModalOpen(true)}>
+                                <LinkText>Schedule a Meeting</LinkText>
+                            </button>
+                        )}
                     </div>
                 </div>
                 {data?.lottie && !data?.code && (
@@ -36,6 +44,22 @@ export default function Banner({ pageInfo, data }) {
                     </div>
                 )}
             </div>
+            {isModalOpen && (
+                <dialog id='schedule_modal' className='modal' open>
+                    <div className='modal-box'>
+                        <button
+                            onClick={() => setIsModalOpen(false)}
+                            className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'
+                        >
+                            ✕
+                        </button>
+                        <InlineWidget
+                            url='https://calendly.com/hello-shared-inbox/hello-meeting'
+                            styles={{ height: '680px', width: 'auto' }}
+                        />
+                    </div>
+                </dialog>
+            )}
         </section>
     );
 }
