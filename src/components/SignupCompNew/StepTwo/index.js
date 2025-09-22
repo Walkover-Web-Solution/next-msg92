@@ -125,10 +125,10 @@ export default function StepTwo({ onNext, pageInfo }) {
                     <input
                         maxLength={244}
                         className='input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] outline-none focus-within:outline-none'
-                        name='Name'
+                        name='companyName'
                         type='text'
                         required
-                        placeholder='John Doe'
+                        placeholder='Walkover'
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
@@ -199,27 +199,8 @@ export default function StepTwo({ onNext, pageInfo }) {
                         <p className='text-gray-500'>Phone Number</p>
                         <div className='flex items-center gap-4'>
                             <div className='input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] flex items-center gap-2  outline-none focus-within:outline-none'>
-                                <Typeahead
-                                    className='country-list-phone w-[24px]'
-                                    id='Country Code'
-                                    placeholder='+1'
-                                    labelKey={(option) => option.code?.toString()}
-                                    onChange={(selected) => {
-                                        handleOnSelect(selected);
-                                    }}
-                                    options={countries}
-                                    defaultSelected={
-                                        pageInfo?.country !== 'global'
-                                            ? [countries?.find((item) => item.shortname === currentCountry?.shortname)]
-                                            : []
-                                    }
-                                    inputProps={{
-                                        autoComplete: 'off',
-                                    }}
-                                />
                                 <input
-                                    maxLength={244}
-                                    className=' outline-none focus-within:outline-none'
+                                    className=' outline-none focus-within:outline-none w-full'
                                     name='phone'
                                     type='phone'
                                     required
