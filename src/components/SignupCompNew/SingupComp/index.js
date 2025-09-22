@@ -50,7 +50,6 @@ function SignupSteps({ pageInfo }) {
 }
 
 export default function SignupPage({ pageInfo }) {
-    console.log('⚡️ ~ :51 ~ SignupPage ~ pageInfo:', pageInfo);
     return (
         <SignupProvider>
             <SignupSteps pageInfo={pageInfo} />

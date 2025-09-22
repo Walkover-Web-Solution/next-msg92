@@ -5,6 +5,7 @@ import style from './StepTwo.module.scss';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import GetCountryDetails from '@/utils/getCurrentCountry';
 import countries from '@/data/countries.json';
+console.log('⚡️ ~ :8 ~ countries:', countries);
 import { MdCheckCircle } from 'react-icons/md';
 
 export default function StepTwo({ onNext, pageInfo }) {
@@ -136,7 +137,7 @@ export default function StepTwo({ onNext, pageInfo }) {
                 <div className='cont gap-1'>
                     <p className='text-gray-500'>Country</p>
                     <Typeahead
-                        className='country-list   w-full min-w-[320px] max-w-[420px]'
+                        className='country-list w-full min-w-[320px] max-w-[420px]'
                         id='country'
                         placeholder='Country'
                         labelKey='name'
@@ -199,8 +200,28 @@ export default function StepTwo({ onNext, pageInfo }) {
                         <p className='text-gray-500'>Phone Number</p>
                         <div className='flex items-center gap-4'>
                             <div className='input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] flex items-center gap-2  outline-none focus-within:outline-none'>
+                                +
+                                <Typeahead
+                                    className={`country-list-phone`}
+                                    id='country-code'
+                                    placeholder=''
+                                    labelKey='code'
+                                    maxResults={206}
+                                    onChange={(selected) => {
+                                        handleOnSelect(selected);
+                                    }}
+                                    options={countries.map((country) => ({ ...country, code: String(country.code) }))}
+                                    defaultSelected={
+                                        pageInfo?.country !== 'global'
+                                            ? [countries?.find((item) => item.shortname === currentCountry?.shortname)]
+                                            : []
+                                    }
+                                    inputProps={{
+                                        autoComplete: 'off',
+                                    }}
+                                />
                                 <input
-                                    className=' outline-none focus-within:outline-none w-full'
+                                    className='outline-none focus-within:outline-none w-full'
                                     name='phone'
                                     type='phone'
                                     required

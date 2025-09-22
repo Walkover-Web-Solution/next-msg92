@@ -64,14 +64,14 @@ body {
     div {
         @apply w-full;
         input {
-            @apply rounded  text-[16px] w-full;
+            @apply rounded  text-[16px] w-8;
             &::placeholder {
-                @apply text-[16px] text-gray-500;
+                @apply text-[14px] text-gray-500;
             }
         }
     }
     .rbt-menu {
-        @apply bg-white shadow-lg mt-2 rounded;
+        @apply bg-white shadow-lg mt-2 rounded w-24;
         display: flex !important;
         a {
             &.active {
