@@ -17,7 +17,7 @@ export default function ChatBotPageComp({ data, pageInfo }) {
                     </p>
                 </div>
 
-                <div className='flex gap-2'>
+                <div className='flex gap-2 flex-col md:flex-row'>
                     <a href={getURL('signup', pageInfo?.page, pageInfo)} target='_blank'>
                         <button className='btn btn-hello btn-md'>
                             <LinkText>Get Started</LinkText>
