@@ -48,11 +48,11 @@ export default function FeatureWithBulletGroup({ data }) {
                                     <LinkText customClasses={'text-link active-link'}>{group?.schedule_meet}</LinkText>
                                 </a>
                             )}
-                            {group?.get_in_action && (
+                            {/* {group?.get_in_action && (
                                 <a href='/demochatbot' target='_blank'>
                                     <LinkText customClasses={'text-link active-link'}>{group?.get_in_action}</LinkText>
                                 </a>
-                            )}
+                            )} */}
                             {group?.get_mobile_app && (
                                 <div className='flex gap-4 items-center flex-wrap'>
                                     <button
