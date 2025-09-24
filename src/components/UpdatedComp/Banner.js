@@ -26,11 +26,11 @@ export default function Banner({ pageInfo, data }) {
                                 <LinkText>Get Started</LinkText>
                             </button>
                         </a>
-                        <a href='/demochatbot'>
+                        {/* <a href='/demochatbot'>
                             <button className='btn btn-hello btn-outline btn-md'>
                                 <LinkText>Test Chatbot</LinkText>
                             </button>
-                        </a>
+                        </a> */}
                         {data?.schedule_meet && (
                             <button className='btn btn-md btn-hello btn-outline' onClick={() => setIsModalOpen(true)}>
                                 <LinkText>Schedule a Meeting</LinkText>
