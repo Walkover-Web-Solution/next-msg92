@@ -7,11 +7,15 @@ import GetCountryDetails from '@/utils/getCurrentCountry';
 import countries from '@/data/countries.json';
 console.log('⚡️ ~ :8 ~ countries:', countries);
 import { MdCheckCircle } from 'react-icons/md';
+import intlTelInput from 'intl-tel-input';
+import phoneStyles from './intl-tel-input-custom.module.css';
 
 export default function StepTwo({ onNext, pageInfo }) {
     const { state, dispatch } = useSignup();
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
+    const phoneInputRef = useRef(null);
+    const itiRef = useRef(null);
     const otpInputRefs = useRef([]);
     const otpLength = state.widgetData?.otpLength || null;
     const [otp, setOtp] = useState(() => new Array(otpLength).fill(''));
@@ -56,12 +60,20 @@ export default function StepTwo({ onNext, pageInfo }) {
     };
 
     const handleSendOtp = () => {
-        if (!phone) {
+        let phoneNumber = phone;
+
+        // Get the full international number from intl-tel-input if available
+        if (itiRef.current) {
+            phoneNumber = itiRef.current.getNumber();
+        }
+
+        if (!phoneNumber) {
             console.error('Please enter phone number');
             return;
         }
+
         dispatch({ type: 'SET_LOADING', payload: true });
-        sendOtp(phone, true, dispatch);
+        sendOtp(phoneNumber, true, dispatch);
     };
 
     const handleVerifyOtp = () => {
@@ -99,6 +111,44 @@ export default function StepTwo({ onNext, pageInfo }) {
 
     const handleOnSelect = (item) => {
         setSelectedCountry(item[0]);
+    };
+
+    // Initialize intl-tel-input
+    useEffect(() => {
+        if (phoneInputRef.current && !itiRef.current) {
+            itiRef.current = intlTelInput(phoneInputRef.current, {
+                initialCountry: currentCountry?.shortname?.toLowerCase() || 'auto',
+                preferredCountries: ['in', 'us', 'gb'],
+                separateDialCode: true,
+                utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
+            });
+
+            // Update phone state when country changes
+            phoneInputRef.current.addEventListener('countrychange', () => {
+                if (itiRef.current) {
+                    const fullNumber = itiRef.current.getNumber();
+                    setPhone(fullNumber);
+                }
+            });
+        }
+
+        return () => {
+            if (itiRef.current) {
+                itiRef.current.destroy();
+                itiRef.current = null;
+            }
+        };
+    }, [currentCountry]);
+
+    // Handle phone input change
+    const handlePhoneChange = (e) => {
+        const value = e.target.value;
+        setPhone(value);
+
+        if (itiRef.current) {
+            const fullNumber = itiRef.current.getNumber();
+            setPhone(fullNumber);
+        }
     };
 
     return (
@@ -199,38 +249,20 @@ export default function StepTwo({ onNext, pageInfo }) {
                     <div className='cont gap-2'>
                         <p className='text-gray-500'>Phone Number</p>
                         <div className='flex items-center gap-4'>
-                            <div className='input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] flex items-center gap-2  outline-none focus-within:outline-none'>
-                                +
-                                <Typeahead
-                                    className={`country-list-phone`}
-                                    id='country-code'
-                                    placeholder=''
-                                    labelKey='code'
-                                    maxResults={206}
-                                    onChange={(selected) => {
-                                        handleOnSelect(selected);
-                                    }}
-                                    options={countries.map((country) => ({ ...country, code: String(country.code) }))}
-                                    defaultSelected={
-                                        pageInfo?.country !== 'global'
-                                            ? [countries?.find((item) => item.shortname === currentCountry?.shortname)]
-                                            : []
-                                    }
-                                    inputProps={{
-                                        autoComplete: 'off',
-                                    }}
-                                />
+                            <div
+                                className={`w-full min-w-[320px] max-w-[420px] relative ${phoneStyles.phoneInputContainer}`}
+                            >
                                 <input
-                                    className='outline-none focus-within:outline-none w-full'
+                                    ref={phoneInputRef}
+                                    className='input input-bordered text-base p-3 h-fit w-full outline-none focus-within:outline-none'
                                     name='phone'
-                                    type='phone'
+                                    type='tel'
                                     required
                                     placeholder='9876543210'
-                                    pattern='^[^\s@]+@[^\s@]+\.[^\s@]+$'
                                     value={phone}
-                                    onChange={(e) => setPhone(e.target.value)}
+                                    onChange={handlePhoneChange}
                                 />
-                                <MdCheckCircle className='ms-auto text-green-600 text-xl' />
+                                <MdCheckCircle className='absolute right-3 top-1/2 transform -translate-y-1/2 text-green-600 text-xl z-10' />
                             </div>
                             {isLoading ? (
                                 <div className='flex items-center gap-2 text-accent '>
