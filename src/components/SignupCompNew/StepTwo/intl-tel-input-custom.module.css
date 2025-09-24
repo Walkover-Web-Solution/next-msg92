@@ -56,3 +56,10 @@
 .phoneInputContainer :global(.iti__selected-dial-code) {
     display: none !important;
 }
+.phoneInputContainer :global(.iti__search-input) {
+    min-height: 44px !important;
+}
+
+.phoneInputContainer :global(.iti__dropdown-content) {
+    max-width: 320px;
+}

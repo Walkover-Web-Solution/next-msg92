@@ -5,12 +5,12 @@ import style from './StepTwo.module.scss';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import GetCountryDetails from '@/utils/getCurrentCountry';
 import countries from '@/data/countries.json';
-console.log('⚡️ ~ :8 ~ countries:', countries);
 import { MdCheckCircle } from 'react-icons/md';
 import intlTelInput from 'intl-tel-input';
 import phoneStyles from './intl-tel-input-custom.module.css';
+import getCountyFromIP from '@/utils/getCountyFromIP';
 
-export default function StepTwo({ onNext, pageInfo }) {
+export default function StepTwo({ pageInfo }) {
     const { state, dispatch } = useSignup();
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
@@ -21,8 +21,27 @@ export default function StepTwo({ onNext, pageInfo }) {
     const [otp, setOtp] = useState(() => new Array(otpLength).fill(''));
     const isLoading = state.isLoading;
     const otpSent = state.otpSent;
-    const currentCountry = GetCountryDetails({ shortname: pageInfo?.country, type: 'shortname' });
-    const [selectedCountry, setSelectedCountry] = useState(currentCountry?.name);
+    const [selectedCountry, setSelectedCountry] = useState({});
+    console.log('⚡️ ~ :26 ~ StepTwo ~ selectedCountry:', selectedCountry);
+    const [countryCode, setCountryCode] = useState('');
+
+    useEffect(() => {
+        const fetchCountryFromIP = async () => {
+            try {
+                const countryCodeFromIP = await getCountyFromIP();
+                setCountryCode(countryCodeFromIP);
+                const country = countries.find(
+                    (country) => country?.shortname?.toLowerCase() === countryCodeFromIP?.toLowerCase()
+                );
+                setSelectedCountry(country);
+            } catch (error) {
+                console.error('Error fetching country from IP:', error);
+            }
+        };
+
+        fetchCountryFromIP();
+    }, []);
+
     const handleOtpChange = (index, value) => {
         if (value.length > 1) return;
 
@@ -110,6 +129,7 @@ export default function StepTwo({ onNext, pageInfo }) {
     };
 
     const handleOnSelect = (item) => {
+        console.log('⚡️ ~ handleOnSelect ~ selected country:', item[0]);
         setSelectedCountry(item[0]);
     };
 
@@ -117,7 +137,7 @@ export default function StepTwo({ onNext, pageInfo }) {
     useEffect(() => {
         if (phoneInputRef.current && !itiRef.current) {
             itiRef.current = intlTelInput(phoneInputRef.current, {
-                initialCountry: currentCountry?.shortname?.toLowerCase() || 'auto',
+                initialCountry: selectedCountry?.shortname?.toLowerCase() || 'auto',
                 preferredCountries: ['in', 'us', 'gb'],
                 separateDialCode: true,
                 utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
@@ -126,7 +146,10 @@ export default function StepTwo({ onNext, pageInfo }) {
             // Update phone state when country changes
             phoneInputRef.current.addEventListener('countrychange', () => {
                 if (itiRef.current) {
+                    const selectedCountryData = itiRef.current.getSelectedCountryData();
                     const fullNumber = itiRef.current.getNumber();
+                    console.log('⚡️ ~ intl-tel-input ~ selected country:', selectedCountryData);
+                    console.log('⚡️ ~ :130 ~ phoneInputRef.current.addEventListener ~ fullNumber:', fullNumber);
                     setPhone(fullNumber);
                 }
             });
@@ -138,7 +161,7 @@ export default function StepTwo({ onNext, pageInfo }) {
                 itiRef.current = null;
             }
         };
-    }, [currentCountry]);
+    }, [selectedCountry]);
 
     // Handle phone input change
     const handlePhoneChange = (e) => {
@@ -197,7 +220,7 @@ export default function StepTwo({ onNext, pageInfo }) {
                         options={countries}
                         defaultSelected={
                             pageInfo?.country !== 'global'
-                                ? [countries?.find((item) => item.shortname === currentCountry?.shortname)]
+                                ? [countries?.find((item) => item.shortname === selectedCountry?.shortname)]
                                 : []
                         }
                         inputProps={{
