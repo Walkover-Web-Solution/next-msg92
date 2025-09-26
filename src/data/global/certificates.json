@@ -59,6 +59,16 @@
                     "name": "META",
                     "image": "/assets/certificates/certificate_meta.png",
                     "url": "https://www.credly.com/badges/4aca43c8-307b-4e17-8c19-b29a120979bd/public_url"
+                },
+                {
+                    "name": "MSME Certificate",
+                    "image": "/assets/certificates/msme.png",
+                    "url": "https://msg91.com/pdf/msme.pdf"
+                },
+                {
+                    "name": "System Audit Report",
+                    "image": "/assets/certificates/sar.png",
+                    "url": "https://msg91.com/pdf/sar.pdf"
                 }
             ]
         }

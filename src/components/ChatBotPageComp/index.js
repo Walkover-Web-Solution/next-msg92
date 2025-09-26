@@ -23,11 +23,11 @@ export default function ChatBotPageComp({ data, pageInfo }) {
                             <LinkText>Get Started</LinkText>
                         </button>
                     </a>
-                    <a href='/demochatbot'>
+                    {/* <a href='/demochatbot'>
                         <button className='btn btn-hello btn-outline btn-md'>
                             <LinkText>Test Chatbot</LinkText>
                         </button>
-                    </a>
+                    </a> */}
                 </div>
                 <div className='w-full h-fit'>
                     <LottiePlayer lottie='/assets/global/hello-chatbot/lottie/chatbot_hero.json' />
