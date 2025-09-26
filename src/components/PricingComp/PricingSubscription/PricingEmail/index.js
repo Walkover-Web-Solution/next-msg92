@@ -2,7 +2,8 @@ import { MdCheck, MdClose } from 'react-icons/md';
 import getURL from '@/utils/getURL';
 import CalculateEmailPricing from './calculateEmailPricing/calculateEmailPricing';
 
-export default function PricingEmail({ pricingData, symbol, tabtype, pageInfo }) {
+export default function PricingEmail({ pricingData, symbol, currency, tabtype, pageInfo }) {
+    console.log('⚡️ ~ :6 ~ PricingEmail ~ tabtype:', tabtype);
     return (
         <>
             <div className='grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-6'>
@@ -124,11 +125,11 @@ export default function PricingEmail({ pricingData, symbol, tabtype, pageInfo })
                         );
                     })}
             </div>
-            {/* {pricingData?.length > 0 && (
+            {pricingData?.length > 0 && (
                 <dialog id='calculate_email_pricing' className='modal'>
                     <CalculateEmailPricing plans={pricingData} currency={currency} symbol={symbol} tabtype={tabtype} />
                 </dialog>
-            )} */}
+            )}
         </>
     );
 }

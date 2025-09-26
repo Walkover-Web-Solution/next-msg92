@@ -7,7 +7,7 @@ import PricingSegmento from './PricingSegmento';
 import PricingEmail from './PricingEmail';
 
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {
-    const { symbol } = GetCurrencySymbol(pageInfo?.country);
+    const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
     const [hasyYarly, setHasYearly] = useState(false);
 
@@ -57,7 +57,13 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         />
                     )}
                     {pageInfo?.product === 'email' && (
-                        <PricingEmail pricingData={pricingData} symbol={symbol} tabtype={tabtype} pageInfo={pageInfo} />
+                        <PricingEmail
+                            pricingData={pricingData}
+                            symbol={symbol}
+                            currency={currency}
+                            tabtype={tabtype}
+                            pageInfo={pageInfo}
+                        />
                     )}
 
                     {pageInfo?.country === 'in' || pageInfo?.country === 'gb' ? (
