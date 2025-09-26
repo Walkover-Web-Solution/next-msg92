@@ -77,13 +77,13 @@ export default function CalculateEmailPricing({ plans, currency, symbol, tabtype
                                     <span>Plan charges</span>
                                 </div>
                                 {plans?.map((plan, index) => {
-                                    if (plan.name !== 'Free') {
+                                    if (plan.name !== 'Free' && plan?.amount?.plan_type === tabtype) {
                                         return (
                                             <div key={index} className='p-4 border-e-2 flex flex-col gap-4'>
                                                 <p>{plan?.name}</p>
                                                 <p className='font-semibold'>
                                                     {symbol}
-                                                    {fetchPlanAmmount(tabtype, currency, plan?.plan_amounts)}
+                                                    {plan?.amount?.plan_amount}
                                                 </p>
                                             </div>
                                         );
@@ -99,18 +99,12 @@ export default function CalculateEmailPricing({ plans, currency, symbol, tabtype
                                     <span>Email Validations</span>
                                 </div>
                                 {plans?.map((plan, index) => {
-                                    if (plan.name !== 'Free') {
+                                    if (plan.name !== 'Free' && plan?.amount?.plan_type === tabtype) {
                                         return (
                                             <div key={index} className='p-4 border-e-2 flex flex-col gap-4'>
-                                                <p>
-                                                    {contvertToLocal(
-                                                        plan?.plan_services[0]?.service_credit?.free_credits
-                                                    )}
-                                                </p>
+                                                <p>{contvertToLocal(plan?.extras?.servicesList?.[0]?.free_credits)}</p>
                                                 <p className=''>
-                                                    {contvertToLocal(
-                                                        plan?.plan_services[1]?.service_credit?.free_credits
-                                                    )}
+                                                    {contvertToLocal(plan?.extras?.servicesList?.[1]?.free_credits)}
                                                 </p>
                                             </div>
                                         );
@@ -128,88 +122,61 @@ export default function CalculateEmailPricing({ plans, currency, symbol, tabtype
                                     <span>Extra Email Validations Charges</span>
                                 </div>
                                 {plans?.map((plan, index) => {
-                                    if (plan.name !== 'Free') {
+                                    if (plan.name !== 'Free' && plan?.amount?.plan_type === tabtype) {
                                         return (
                                             <div key={index} className='p-4 border-e-2 flex flex-col gap-4'>
                                                 <p className='break-words'>
                                                     {contvertToLocal(
-                                                        inputEmails >
-                                                            plan?.plan_services[0]?.service_credit?.free_credits
+                                                        inputEmails > plan?.extras?.servicesList?.[0]?.free_credits
                                                             ? inputEmails -
-                                                                  plan?.plan_services[0]?.service_credit?.free_credits
+                                                                  plan?.extras?.servicesList?.[0]?.free_credits
                                                             : 0
                                                     )}
                                                 </p>
                                                 <p className=' flex flex-col break-words'>
                                                     {contvertToLocal(
-                                                        inputEmails >
-                                                            plan?.plan_services[0]?.service_credit?.free_credits
+                                                        inputEmails > plan?.extras?.servicesList?.[0]?.free_credits
                                                             ? inputEmails -
-                                                                  plan?.plan_services[0]?.service_credit?.free_credits
+                                                                  plan?.extras?.servicesList?.[0]?.free_credits
                                                             : 0
                                                     )}{' '}
-                                                    x{' '}
-                                                    {
-                                                        plan?.plan_services[0]?.service_credit?.service_credit_rates.find(
-                                                            (rate) => {
-                                                                return rate?.currency?.short_name === currency;
-                                                            }
-                                                        )?.follow_up_rate
-                                                    }{' '}
+                                                    x {plan?.extras?.servicesList?.[0]?.follow_up_rate}{' '}
                                                     <span className='font-bold break-words'>
                                                         ={' '}
                                                         {contvertToLocal(
-                                                            (inputEmails >
-                                                            plan?.plan_services[0]?.service_credit?.free_credits
+                                                            (inputEmails > plan?.extras?.servicesList?.[0]?.free_credits
                                                                 ? inputEmails -
-                                                                  plan?.plan_services[0]?.service_credit?.free_credits
-                                                                : 0) *
-                                                                plan?.plan_services[0]?.service_credit?.service_credit_rates?.find(
-                                                                    (rate) => {
-                                                                        return rate?.currency?.short_name === currency;
-                                                                    }
-                                                                )?.follow_up_rate
+                                                                  plan?.extras?.servicesList?.[0]?.free_credits
+                                                                : 0) * plan?.extras?.servicesList?.[0]?.follow_up_rate
                                                         )}
                                                     </span>
                                                 </p>
                                                 <p className='break-words'>
                                                     {contvertToLocal(
                                                         inputEmailValidations >
-                                                            plan?.plan_services[1]?.service_credit?.free_credits
+                                                            plan?.extras?.servicesList?.[1]?.free_credits
                                                             ? inputEmailValidations -
-                                                                  plan?.plan_services[1]?.service_credit?.free_credits
+                                                                  plan?.extras?.servicesList?.[1]?.free_credits
                                                             : 0
                                                     )}
                                                 </p>
                                                 <p className='flex flex-col break-words'>
                                                     {contvertToLocal(
                                                         inputEmailValidations >
-                                                            plan?.plan_services[1]?.service_credit?.free_credits
+                                                            plan?.extras?.servicesList?.[1]?.free_credits
                                                             ? inputEmailValidations -
-                                                                  plan?.plan_services[1]?.service_credit?.free_credits
+                                                                  plan?.extras?.servicesList?.[1]?.free_credits
                                                             : 0
                                                     )}{' '}
-                                                    x{' '}
-                                                    {
-                                                        plan?.plan_services[1]?.service_credit?.service_credit_rates.find(
-                                                            (rate) => {
-                                                                return rate?.currency?.short_name === currency;
-                                                            }
-                                                        )?.follow_up_rate
-                                                    }{' '}
+                                                    x {plan?.extras?.servicesList?.[1]?.follow_up_rate}{' '}
                                                     <span className='font-bold break-words'>
                                                         ={' '}
                                                         {contvertToLocal(
                                                             (inputEmailValidations >
-                                                            plan?.plan_services[1]?.service_credit?.free_credits
+                                                            plan?.extras?.servicesList?.[1]?.free_credits
                                                                 ? inputEmailValidations -
-                                                                  plan?.plan_services[1]?.service_credit?.free_credits
-                                                                : 0) *
-                                                                plan?.plan_services[1]?.service_credit?.service_credit_rates?.find(
-                                                                    (rate) => {
-                                                                        return rate?.currency?.short_name === currency;
-                                                                    }
-                                                                )?.follow_up_rate
+                                                                  plan?.extras?.servicesList?.[1]?.free_credits
+                                                                : 0) * plan?.extras?.servicesList?.[1]?.follow_up_rate
                                                         )}
                                                     </span>
                                                 </p>
@@ -222,36 +189,24 @@ export default function CalculateEmailPricing({ plans, currency, symbol, tabtype
                         <div className='grid grid-cols-4 bg-gray'>
                             <p className='p-4 border-e-2'>Total monthly recurring charges</p>
                             {plans?.map((plan, index) => {
-                                if (plan?.name !== 'Free') {
+                                if (plan?.name !== 'Free' && plan?.amount?.plan_type === tabtype) {
                                     return (
                                         <p className='p-4 border-e-2 font-bold text-green-600 text-2xl flex flex-col break-words'>
                                             {symbol}
                                             {contvertToLocal(
                                                 Number(
                                                     (inputEmailValidations >
-                                                    plan?.plan_services[1]?.service_credit?.free_credits
+                                                    plan?.extras?.servicesList?.[1]?.free_credits
                                                         ? inputEmailValidations -
-                                                          plan?.plan_services[1]?.service_credit?.free_credits
-                                                        : 0) *
-                                                        plan?.plan_services[1]?.service_credit?.service_credit_rates?.find(
-                                                            (rate) => {
-                                                                return rate?.currency?.short_name === currency;
-                                                            }
-                                                        )?.follow_up_rate
+                                                          plan?.extras?.servicesList?.[1]?.free_credits
+                                                        : 0) * plan?.extras?.servicesList?.[1]?.follow_up_rate
                                                 ) +
                                                     Number(
-                                                        (inputEmails >
-                                                        plan?.plan_services[0]?.service_credit?.free_credits
-                                                            ? inputEmails -
-                                                              plan?.plan_services[0]?.service_credit?.free_credits
-                                                            : 0) *
-                                                            plan?.plan_services[0]?.service_credit?.service_credit_rates?.find(
-                                                                (rate) => {
-                                                                    return rate?.currency?.short_name === currency;
-                                                                }
-                                                            )?.follow_up_rate
+                                                        (inputEmails > plan?.extras?.servicesList?.[0]?.free_credits
+                                                            ? inputEmails - plan?.extras?.servicesList[0]?.free_credits
+                                                            : 0) * plan?.extras?.servicesList[0]?.follow_up_rate
                                                     ) +
-                                                    Number(fetchPlanAmmount(tabtype, currency, plan?.plan_amounts))
+                                                    Number(plan?.amount?.plan_amount)
                                             )}
                                             {currency === 'INR' && (
                                                 <span className='font-normal text-sm text-gray-500'>+18% GST</span>
