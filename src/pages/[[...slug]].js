@@ -1,4 +1,3 @@
-/* components */
 import BannerComp from '@/components/BannerComp/BannerComp';
 import CaseStudiesComp from '@/components/CaseStudiesComp/CaseStudiesComp';
 import ChannelsComp from '@/components/ChannelsComp/ChannelsComp';

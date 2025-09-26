@@ -1,55 +1,70 @@
 import PricingNav from './PricingNavComp/PricingNavComp';
-import PricingHello from './PricingHello/PricingHello';
 import PricingCampaign from './PricingCampaign/PricingCampaign';
-import PricingSegmento from './PricingSegmento/PricingSegmento';
 import PricingOtp from './PricingOtp/PricingOtp';
 import PricingSMSOTP from './PricingSMS/PricingSMSOTP';
 import PricingVoice from './PricingVoice/PricingVoice';
 import PricingRCS from './PricingRCS/PricingRCS';
-import PricingEmail from './PricingEmail/PricingEmail';
 import PricingWhatsApp from './PricingWhatsApp/PricingWhatsApp';
 import NotFoundComp from '../NotFoundComp/NotFoundComp';
-import pages from '@/data/specialPages.json';
 import HeadComp from '../HeadComp/HeadComp';
+import NotificationBarComp from '../notificationBarComp/notificationBarComp';
+import MenuBarComp from '../menuBarComp/menuBarComp';
+import FooterComp from '../FooterComp/FooterComp';
+import PricingSubscription from './PricingSubscription';
 
-export default function PricingComp({ data, pageInfo }) {
-    let page;
-    if (pageInfo?.country === 'global') {
-        page = pageInfo?.pathArray[1];
-    } else {
-        page = pageInfo?.pathArray[2];
-    }
-    if (pages?.pricing.includes(page)) {
+export default function PricingComp({ pricingData, pageInfo, pageData, products, commonData, country }) {
+    if (pricingData) {
         return (
             <>
-                <HeadComp data={data[page]?.HeadComp} pageInfo={pageInfo} />
+                <HeadComp data={pageData?.HeadComp} pageInfo={pageInfo} />
+                <NotificationBarComp
+                    componentData={commonData?.notification}
+                    country={pageInfo?.country}
+                    pageInfo={{ country: country, page: 'pricing' }}
+                />
+
+                <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
                 <div className='bg-neutral py-3'>
                     <div className='container md:my-10 my-4 flex md:gap-12 gap-6 md:flex-row flex-col '>
-                        <PricingNav products={data?.products} page={page} />
+                        <PricingNav products={products} page={pageInfo?.product} />
 
-                        {page === 'hello' && <PricingHello data={data?.hello} country={pageInfo?.country} />}
+                        {pageInfo?.product === 'campaign' && <PricingCampaign pageData={pageData} />}
 
-                        {page === 'campaign' && <PricingCampaign data={data?.campaign} country={pageInfo?.country} />}
+                        {(pageInfo?.product === 'hello' ||
+                            pageInfo?.product === 'segmento' ||
+                            pageInfo?.product === 'email') && (
+                            <PricingSubscription pricingData={pricingData} pageData={pageData} pageInfo={pageInfo} />
+                        )}
 
-                        {page === 'segmento' && <PricingSegmento data={data?.segmento} country={pageInfo?.country} />}
+                        {pageInfo?.product === 'otpwidget' && (
+                            <PricingOtp pageData={pageData} country={pageInfo?.country} />
+                        )}
 
-                        {page === 'otpwidget' && <PricingOtp data={data?.otpwidget} country={pageInfo?.country} />}
+                        {pageInfo?.product === 'sms' && (
+                            <PricingSMSOTP data={pageData} type={'sms'} country={pageInfo?.country} />
+                        )}
 
-                        {page === 'sms' && <PricingSMSOTP data={data?.sms} type={'sms'} country={pageInfo?.country} />}
+                        {pageInfo?.product === 'otp' && (
+                            <PricingSMSOTP data={pageData} type={'otp'} country={pageInfo?.country} />
+                        )}
 
-                        {page === 'otp' && <PricingSMSOTP data={data?.otp} type={'otp'} country={pageInfo?.country} />}
+                        {pageInfo?.product === 'whatsapp' && (
+                            <PricingWhatsApp pricingData={pricingData} pageData={pageData} pageInfo={pageInfo} />
+                        )}
 
-                        {page === 'email' && <PricingEmail data={data?.email} country={pageInfo?.country} />}
+                        {pageInfo?.product === 'voice' && <PricingVoice data={pageData} country={pageInfo?.country} />}
 
-                        {page === 'whatsapp' && <PricingWhatsApp data={data?.whatsapp} country={pageInfo?.country} />}
-
-                        {page === 'voice' && <PricingVoice data={data?.voice} country={pageInfo?.country} />}
-
-                        {page === 'rcs' && (
-                            <PricingRCS data={data?.rcs} country={pageInfo?.country} pageInfo={pageInfo} />
+                        {pageInfo?.product === 'rcs' && (
+                            <PricingRCS
+                                pricingData={pricingData}
+                                pageData={pageData}
+                                country={pageInfo?.country}
+                                pageInfo={pageInfo}
+                            />
                         )}
                     </div>
                 </div>
+                <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} />
             </>
         );
     } else {
