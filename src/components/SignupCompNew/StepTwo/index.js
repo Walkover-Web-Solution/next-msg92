@@ -22,7 +22,6 @@ export default function StepTwo({ pageInfo }) {
     const isLoading = state.isLoading;
     const otpSent = state.otpSent;
     const [selectedCountry, setSelectedCountry] = useState({});
-    console.log('⚡️ ~ :26 ~ StepTwo ~ selectedCountry:', selectedCountry);
     const [countryCode, setCountryCode] = useState('');
 
     useEffect(() => {
@@ -83,10 +82,17 @@ export default function StepTwo({ pageInfo }) {
 
         // Get the full international number from intl-tel-input if available
         if (itiRef.current) {
-            phoneNumber = itiRef.current.getNumber();
+            const intlNumber = itiRef.current.getNumber();
+            if (intlNumber) {
+                phoneNumber = intlNumber;
+            }
         }
 
-        if (!phoneNumber) {
+        console.log('⚡️ ~ :86 ~ handleSendOtp ~ phone state:', phone);
+        console.log('⚡️ ~ :86 ~ handleSendOtp ~ final phoneNumber:', phoneNumber);
+        console.log('⚡️ ~ :86 ~ handleSendOtp ~ itiRef.current exists:', !!itiRef.current);
+
+        if (!phoneNumber || phoneNumber.trim() === '') {
             console.error('Please enter phone number');
             return;
         }
@@ -129,7 +135,6 @@ export default function StepTwo({ pageInfo }) {
     };
 
     const handleOnSelect = (item) => {
-        console.log('⚡️ ~ handleOnSelect ~ selected country:', item[0]);
         setSelectedCountry(item[0]);
     };
 
@@ -148,9 +153,13 @@ export default function StepTwo({ pageInfo }) {
                 if (itiRef.current) {
                     const selectedCountryData = itiRef.current.getSelectedCountryData();
                     const fullNumber = itiRef.current.getNumber();
-                    console.log('⚡️ ~ intl-tel-input ~ selected country:', selectedCountryData);
-                    console.log('⚡️ ~ :130 ~ phoneInputRef.current.addEventListener ~ fullNumber:', fullNumber);
-                    setPhone(fullNumber);
+                    console.log('⚡️ ~ countrychange ~ selectedCountryData:', selectedCountryData);
+                    console.log('⚡️ ~ countrychange ~ fullNumber:', fullNumber);
+
+                    // Only update if we have a valid number or keep the current input value
+                    if (fullNumber && fullNumber !== phone) {
+                        setPhone(fullNumber);
+                    }
                 }
             });
         }
@@ -166,11 +175,15 @@ export default function StepTwo({ pageInfo }) {
     // Handle phone input change
     const handlePhoneChange = (e) => {
         const value = e.target.value;
+
+        // Update the phone state with the raw input value
         setPhone(value);
 
+        // Log for debugging
+        console.log('⚡️ ~ handlePhoneChange ~ raw value:', value);
         if (itiRef.current) {
             const fullNumber = itiRef.current.getNumber();
-            setPhone(fullNumber);
+            console.log('⚡️ ~ handlePhoneChange ~ intl formatted number:', fullNumber);
         }
     };
 

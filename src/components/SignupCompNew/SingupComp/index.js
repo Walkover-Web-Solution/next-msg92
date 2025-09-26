@@ -27,14 +27,6 @@ function SignupSteps({ pageInfo }) {
         checkSession();
     }, [dispatch]);
 
-    useEffect(() => {
-        console.log('SignupSteps - State updated:', {
-            widgetData: state.widgetData,
-            allowedRetry: state.allowedRetry,
-            activeStep: state.activeStep,
-        });
-    }, [state]);
-
     return (
         <div className='flex h-screen w-full'>
             <div className='h-full w-1/3 min-w-[320px] max-w-full bg-secondary'></div>
