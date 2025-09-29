@@ -14,7 +14,8 @@
         "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
         "lottie": "/assets/global/hello/new_webp/hello_hero.json",
         "getstarted_btn": "Get Started",
-        "schedule_meet": "Schedule a Meeting"
+        "schedule_meet": "Schedule a Meeting",
+        "chatbot": "Chatbot"
     },
     "FeatureWithBulletGroup": {
         "heading": "Features",

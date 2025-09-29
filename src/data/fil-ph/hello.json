@@ -13,7 +13,8 @@
         "heading": "Contact Center na Pinapagana ng AI",
         "subheading": "Huwag mawalan ng pokus sa mahalaga. Huwag lang magresolba ng mga ticket—bumuo ng matibay na relasyon sa customer",
         "lottie": "/assets/global/hello/new_webp/hello_hero.json",
-        "getstarted_btn": "Magsimula"
+        "getstarted_btn": "Magsimula",
+        "chatbot": "Chatbot"
     },
     "FeatureWithBulletGroup": {
         "heading": "Mga Tampok",

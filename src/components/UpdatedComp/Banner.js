@@ -36,6 +36,16 @@ export default function Banner({ pageInfo, data }) {
                                 <LinkText>Schedule a Meeting</LinkText>
                             </button>
                         )}
+                        {data?.chatbot && (
+                            <button
+                                className='btn btn-md btn-hello btn-outline'
+                                onClick={() => {
+                                    window.open('https://msg91.com/chatbot', '_blank');
+                                }}
+                            >
+                                <LinkText>{data?.chatbot}</LinkText>
+                            </button>
+                        )}
                     </div>
                 </div>
                 {data?.lottie && !data?.code && (
