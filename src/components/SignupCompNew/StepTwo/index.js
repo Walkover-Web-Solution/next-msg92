@@ -3,14 +3,13 @@ import { useSignup, sendOtp, verifyOtp } from '../SignupUtils';
 import { useEffect, useState, useRef } from 'react';
 import style from './StepTwo.module.scss';
 import { Typeahead } from 'react-bootstrap-typeahead';
-import GetCountryDetails from '@/utils/getCurrentCountry';
 import countries from '@/data/countries.json';
 import { MdCheckCircle } from 'react-icons/md';
 import intlTelInput from 'intl-tel-input';
 import phoneStyles from './intl-tel-input-custom.module.css';
 import getCountyFromIP from '@/utils/getCountyFromIP';
 
-export default function StepTwo({ pageInfo }) {
+export default function StepTwo() {
     const { state, dispatch } = useSignup();
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
@@ -22,13 +21,11 @@ export default function StepTwo({ pageInfo }) {
     const isLoading = state.isLoading;
     const otpSent = state.otpSent;
     const [selectedCountry, setSelectedCountry] = useState({});
-    const [countryCode, setCountryCode] = useState('');
 
     useEffect(() => {
         const fetchCountryFromIP = async () => {
             try {
                 const countryCodeFromIP = await getCountyFromIP();
-                setCountryCode(countryCodeFromIP);
                 const country = countries.find(
                     (country) => country?.shortname?.toLowerCase() === countryCodeFromIP?.toLowerCase()
                 );
@@ -80,17 +77,12 @@ export default function StepTwo({ pageInfo }) {
     const handleSendOtp = () => {
         let phoneNumber = phone;
 
-        // Get the full international number from intl-tel-input if available
         if (itiRef.current) {
             const intlNumber = itiRef.current.getNumber();
             if (intlNumber) {
                 phoneNumber = intlNumber;
             }
         }
-
-        console.log('⚡️ ~ :86 ~ handleSendOtp ~ phone state:', phone);
-        console.log('⚡️ ~ :86 ~ handleSendOtp ~ final phoneNumber:', phoneNumber);
-        console.log('⚡️ ~ :86 ~ handleSendOtp ~ itiRef.current exists:', !!itiRef.current);
 
         if (!phoneNumber || phoneNumber.trim() === '') {
             console.error('Please enter phone number');
@@ -108,7 +100,6 @@ export default function StepTwo({ pageInfo }) {
             return;
         }
 
-        // Only use email request ID for email verification
         const requestId = state.phoneRequestId;
         if (!requestId) {
             console.error('No phone request ID found. Please resend OTP.');
@@ -180,7 +171,6 @@ export default function StepTwo({ pageInfo }) {
         setPhone(value);
 
         // Log for debugging
-        console.log('⚡️ ~ handlePhoneChange ~ raw value:', value);
         if (itiRef.current) {
             const fullNumber = itiRef.current.getNumber();
             console.log('⚡️ ~ handlePhoneChange ~ intl formatted number:', fullNumber);
@@ -231,11 +221,8 @@ export default function StepTwo({ pageInfo }) {
                             handleOnSelect(selected);
                         }}
                         options={countries}
-                        defaultSelected={
-                            pageInfo?.country !== 'global'
-                                ? [countries?.find((item) => item.shortname === selectedCountry?.shortname)]
-                                : []
-                        }
+                        selected={selectedCountry && selectedCountry.name ? [selectedCountry] : []}
+                        defaultSelected={selectedCountry && selectedCountry.name ? [selectedCountry] : []}
                         inputProps={{
                             autoComplete: 'off',
                         }}
