@@ -250,7 +250,6 @@ export default function checkSession() {
 
 // OTP sending function for functional components
 export function sendOtp(identifier, notByEmail, dispatch, showToast = console.error) {
-    console.log('⚡️ ~ :253 ~ sendOtp ~ identifier:', identifier);
     if (!new RegExp(EMAIL_REGEX).test(identifier) && !notByEmail) {
         showToast('Invalid email address.');
         return;
@@ -265,6 +264,7 @@ export function sendOtp(identifier, notByEmail, dispatch, showToast = console.er
     window.sendOtp(
         identifier,
         (data) => {
+            console.log('⚡️ ~ :268 ~ sendOtp ~ data:', data);
             if (notByEmail) {
                 dispatch({
                     type: 'SET_SMS_OTP_SUCCESS',

@@ -78,14 +78,41 @@ export default function StepTwo() {
         let phoneNumber = phone;
 
         if (itiRef.current) {
-            const intlNumber = itiRef.current.getNumber();
-            if (intlNumber) {
-                phoneNumber = intlNumber;
+            try {
+                const intlNumber = itiRef.current.getNumber();
+
+                // Get selected country data and dial code
+                const selectedCountryData = itiRef.current.getSelectedCountryData();
+
+                const rawInput = phoneInputRef.current?.value;
+
+                // If getNumber() returns a valid international number, use it
+                if (intlNumber && intlNumber.trim() !== '' && intlNumber !== rawInput) {
+                    phoneNumber = intlNumber;
+                } else if (rawInput && rawInput.trim() !== '') {
+                    // Fallback: manually format with country code
+                    const dialCode = selectedCountryData?.dialCode;
+                    if (dialCode && !rawInput.startsWith('+')) {
+                        phoneNumber = `+${dialCode}${rawInput}`;
+                    } else {
+                        phoneNumber = rawInput;
+                    }
+                }
+            } catch (error) {
+                // Fallback to raw input
+                const rawInput = phoneInputRef.current?.value;
+                if (rawInput && rawInput.trim() !== '') {
+                    phoneNumber = rawInput;
+                }
+            }
+        } else {
+            const rawInput = phoneInputRef.current?.value;
+            if (rawInput && rawInput.trim() !== '') {
+                phoneNumber = rawInput;
             }
         }
 
         if (!phoneNumber || phoneNumber.trim() === '') {
-            console.error('Please enter phone number');
             return;
         }
 
@@ -109,7 +136,7 @@ export default function StepTwo() {
         verifyOtp(
             otpValue,
             requestId,
-            false, // notByEmail - false for email verification
+            true, // notByEmail - true for phone verification
             dispatch,
             (data) => {
                 dispatch({ type: 'SET_ACTIVE_STEP', payload: 2 });
@@ -129,39 +156,93 @@ export default function StepTwo() {
         setSelectedCountry(item[0]);
     };
 
-    // Initialize intl-tel-input
+    // Initialize intl-tel-input with better React lifecycle management
     useEffect(() => {
-        if (phoneInputRef.current && !itiRef.current) {
-            itiRef.current = intlTelInput(phoneInputRef.current, {
-                initialCountry: selectedCountry?.shortname?.toLowerCase() || 'auto',
-                preferredCountries: ['in', 'us', 'gb'],
-                separateDialCode: true,
-                utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
-            });
+        let mounted = true;
+        let timeoutId;
 
-            // Update phone state when country changes
-            phoneInputRef.current.addEventListener('countrychange', () => {
-                if (itiRef.current) {
-                    const selectedCountryData = itiRef.current.getSelectedCountryData();
-                    const fullNumber = itiRef.current.getNumber();
-                    console.log('⚡️ ~ countrychange ~ selectedCountryData:', selectedCountryData);
-                    console.log('⚡️ ~ countrychange ~ fullNumber:', fullNumber);
+        const initializeIntlTelInput = () => {
+            if (!mounted) return;
 
-                    // Only update if we have a valid number or keep the current input value
-                    if (fullNumber && fullNumber !== phone) {
-                        setPhone(fullNumber);
-                    }
+            // Cleanup previous instance first
+            if (itiRef.current) {
+                try {
+                    itiRef.current.destroy();
+                } catch (error) {
+                    console.warn('Error destroying intl-tel-input:', error);
                 }
-            });
-        }
+                itiRef.current = null;
+            }
+
+            // Only initialize if phone input is visible (not in OTP mode)
+            if (phoneInputRef.current && !otpSent && mounted) {
+                try {
+                    itiRef.current = intlTelInput(phoneInputRef.current, {
+                        initialCountry: selectedCountry?.shortname?.toLowerCase() || 'auto',
+                        preferredCountries: ['in', 'us', 'gb'],
+                        separateDialCode: true,
+                        utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
+                        autoPlaceholder: 'polite',
+                        formatOnDisplay: true,
+                    });
+
+                    // Store reference to the event handler for proper cleanup
+                    const handleCountryChange = () => {
+                        if (itiRef.current && mounted) {
+                            try {
+                                const selectedCountryData = itiRef.current.getSelectedCountryData();
+                                const fullNumber = itiRef.current.getNumber();
+
+                                // Only update if we have a valid number
+                                if (fullNumber && fullNumber !== phone) {
+                                    setPhone(fullNumber);
+                                }
+                            } catch (error) {
+                                console.warn('Error in country change handler:', error);
+                            }
+                        }
+                    };
+
+                    // Store the handler reference for cleanup
+                    phoneInputRef.current._countryChangeHandler = handleCountryChange;
+                    phoneInputRef.current.addEventListener('countrychange', handleCountryChange);
+                } catch (error) {
+                    console.error('Error initializing intl-tel-input:', error);
+                }
+            }
+        };
+
+        // Delay initialization to avoid React DOM conflicts
+        timeoutId = setTimeout(initializeIntlTelInput, 150);
 
         return () => {
+            mounted = false;
+            clearTimeout(timeoutId);
+
+            // Clean up event listeners first
+            if (phoneInputRef.current && phoneInputRef.current._countryChangeHandler) {
+                try {
+                    phoneInputRef.current.removeEventListener(
+                        'countrychange',
+                        phoneInputRef.current._countryChangeHandler
+                    );
+                    delete phoneInputRef.current._countryChangeHandler;
+                } catch (error) {
+                    console.warn('Error removing event listener:', error);
+                }
+            }
+
+            // Then destroy intl-tel-input instance
             if (itiRef.current) {
-                itiRef.current.destroy();
+                try {
+                    itiRef.current.destroy();
+                } catch (error) {
+                    console.warn('Error destroying intl-tel-input in cleanup:', error);
+                }
                 itiRef.current = null;
             }
         };
-    }, [selectedCountry]);
+    }, [selectedCountry, otpSent]);
 
     // Handle phone input change
     const handlePhoneChange = (e) => {
@@ -231,7 +312,7 @@ export default function StepTwo() {
                 {otpSent && otpLength ? (
                     <div className='cont gap-3'>
                         <p className='text-gray-500'>
-                            OTP sent to <strong>{email}</strong>
+                            OTP sent to <strong>{phone}</strong>
                         </p>
                         <div className='flex  gap-4'>
                             <div className='flex items-center gap-2'>
@@ -293,7 +374,13 @@ export default function StepTwo() {
                                     Sending OTP...
                                 </div>
                             ) : (
-                                <button onClick={handleSendOtp} className='btn btn-accent font-normal '>
+                                <button
+                                    onClick={() => {
+                                        console.log('🔥 Button clicked!');
+                                        handleSendOtp();
+                                    }}
+                                    className='btn btn-accent font-normal '
+                                >
                                     Verify
                                 </button>
                             )}
