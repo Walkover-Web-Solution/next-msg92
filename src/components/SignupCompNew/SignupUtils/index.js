@@ -2,7 +2,7 @@ import React, { createContext, useContext, useReducer } from 'react';
 
 const initialState = {
     //Temporary Data
-    activeStep: 2,
+    activeStep: 3,
     widgetData: null,
     allowedRetry: null,
     isLoading: false,
