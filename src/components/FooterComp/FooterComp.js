@@ -65,6 +65,11 @@ export default function FooterComp({ componentData, pageInfo }) {
                                                 </li>
                                             );
                                         })}
+                                        <li className='text-link-white'>
+                                            <a href='/chatbot' className='text-gray-200'>
+                                                Chatbot
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             )}

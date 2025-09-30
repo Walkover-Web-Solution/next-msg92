@@ -13,7 +13,8 @@
         "heading": "Central de Atendimento com IA",
         "subheading": "Nunca perca de vista o que é importante. Não apenas resolva tickets, construa relacionamentos com clientes",
         "lottie": "/assets/global/hello/new_webp/hello_hero.json",
-        "getstarted_btn": "Comece agora"
+        "getstarted_btn": "Comece agora",
+        "chatbot": "Chatbot"
     },
     "FeatureWithBulletGroup": {
         "heading": "Funcionalidades",

@@ -78,6 +78,10 @@
                         "Integration with CRM tools for better data management."
                     ]
                 },
+                "button": {
+                    "name": "ChatBot",
+                    "link": "/chatbot"
+                },
 
                 "img": "/assets/global/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg"
             },
