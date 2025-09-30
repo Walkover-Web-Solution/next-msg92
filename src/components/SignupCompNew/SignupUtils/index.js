@@ -1,23 +1,42 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
 const initialState = {
+    //Temporary Data
     activeStep: 2,
-    emailToken: null,
-    mobileToken: null,
-    personal: { fullName: '', dob: '', password: '' },
-    // OTP related state
-    isLoading: false,
-    smsRequestId: null,
-    smsIdentifier: null,
-    smsSuccessMessage: null,
-    hideMobileRetry: null,
-    otpSent: false,
-    emailRequestId: null,
-    emailIdentifier: null,
-    emailSuccessMessage: null,
-    hideEmailRetry: null,
     widgetData: null,
     allowedRetry: null,
+    isLoading: false,
+    otpSent: false,
+    otpSendFailed: false,
+    emailIdentifier: null,
+    emailRequestId: null,
+    emailToken: null,
+
+    mobileIdentifier: null,
+    mobileRequestId: null,
+    mobileToken: null,
+    mobileOtpVerified: false,
+
+    //Final Register Data
+    userDetails: { firstName: '', lastName: '' },
+    companyDetails: {
+        industry: null,
+        state: null,
+        zipcode: null,
+        city: null,
+        address: null,
+        gstNo: null,
+        cityId: null,
+        countryId: null,
+        stateId: null,
+        customCity: '',
+        companyName: null,
+        country: null,
+        service: [],
+    },
+    acceptInviteForCompanies: [],
+    rejectInviteForCompanies: [],
+    session: null,
 };
 
 const MOBILE_REGEX = /^[+]?[0-9]{7,15}$/;
@@ -33,44 +52,67 @@ const OTPRetryModes = {
 
 function reducer(state, action) {
     switch (action.type) {
-        case 'SET_EMAIL_TOKEN':
-            return { ...state, emailToken: action.payload };
-        case 'SET_MOBILE_TOKEN':
-            return { ...state, mobileToken: action.payload };
-        case 'SET_PERSONAL':
-            return { ...state, personal: action.payload };
         case 'SET_ACTIVE_STEP':
             return { ...state, activeStep: action.payload };
-        case 'SET_LOADING':
-            return { ...state, isLoading: action.payload };
-        case 'SET_SMS_OTP_SUCCESS':
-            return {
-                ...state,
-                smsRequestId: action.payload.requestId,
-                smsIdentifier: action.payload.identifier,
-                smsSuccessMessage: action.payload.message,
-                hideMobileRetry: null,
-                isLoading: false,
-                otpSent: true,
-            };
-        case 'SET_EMAIL_OTP_SUCCESS':
-            return {
-                ...state,
-                emailRequestId: action.payload.requestId,
-                emailIdentifier: action.payload.identifier,
-                emailSuccessMessage: action.payload.message,
-                hideEmailRetry: null,
-                isLoading: false,
-                otpSent: true,
-            };
-        case 'SET_OTP_ERROR':
-            return { ...state, isLoading: false };
+
         case 'SET_WIDGET_DATA':
             return {
                 ...state,
                 widgetData: action.payload.widgetData,
                 allowedRetry: action.payload.allowedRetry,
             };
+
+        case 'SET_LOADING':
+            return { ...state, isLoading: action.payload };
+
+        case 'SET_OTP_ERROR':
+            return { ...state, isLoading: false, otpSendFailed: true };
+
+        case 'SET_EMAIL_TOKEN':
+            return { ...state, emailToken: action.payload };
+
+        case 'SET_MOBILE_TOKEN':
+            return { ...state, mobileToken: action.payload };
+
+        case 'SET_PERSONAL':
+            return { ...state, personal: action.payload };
+
+        case 'SET_EMAIL_OTP_SUCCESS':
+            return {
+                ...state,
+                emailRequestId: action.payload.requestId,
+                emailIdentifier: action.payload.identifier,
+                isLoading: false,
+                otpSent: true,
+            };
+
+        case 'SET_EMAIL_VERIFICATION_SUCCESS':
+            return {
+                ...state,
+                emailToken: action.payload.accessToken,
+                isLoading: false,
+                activeStep: 2,
+                otpSent: false,
+            };
+
+        case 'SET_MOBILE_OTP_SUCCESS':
+            return {
+                ...state,
+                mobileRequestId: action.payload.requestId,
+                mobileIdentifier: action.payload.identifier,
+                isLoading: false,
+                otpSent: true,
+            };
+
+        case 'SET_MOBILE_VERIFICATION_SUCCESS':
+            return {
+                ...state,
+                mobileToken: action.payload.accessToken,
+                isLoading: false,
+                mobileOtpVerified: true,
+                otpSent: false,
+            };
+
         case 'SET_OTP_SENT':
             return { ...state, otpSent: action.payload };
         case 'RESET':
@@ -264,10 +306,9 @@ export function sendOtp(identifier, notByEmail, dispatch, showToast = console.er
     window.sendOtp(
         identifier,
         (data) => {
-            console.log('⚡️ ~ :268 ~ sendOtp ~ data:', data);
             if (notByEmail) {
                 dispatch({
-                    type: 'SET_SMS_OTP_SUCCESS',
+                    type: 'SET_MOBILE_OTP_SUCCESS',
                     payload: {
                         requestId: data?.message,
                         identifier: identifier,
@@ -293,32 +334,35 @@ export function sendOtp(identifier, notByEmail, dispatch, showToast = console.er
 }
 
 export function verifyOtp(otp, requestId, notByEmail, dispatch, onSuccess, onError = console.error) {
+    console.log('⚡️ ~ :337 ~ verifyOtp ~ otp:', otp);
     dispatch({ type: 'SET_LOADING', payload: true });
     window.verifyOtp(
         `${otp}`,
         (data) => {
+            console.log('⚡️ ~ :321 ~ verifyOtp ~ data:', data);
             dispatch({ type: 'SET_LOADING', payload: false });
+            if (data?.type === 'success') {
+                if (!notByEmail) {
+                    dispatch({
+                        type: 'SET_EMAIL_VERIFICATION_SUCCESS',
+                        payload: {
+                            accessToken: data.message,
+                            message: 'Email verified successfully.',
+                        },
+                    });
+                } else {
+                    dispatch({
+                        type: 'SET_MOBILE_VERIFICATION_SUCCESS',
+                        payload: {
+                            accessToken: data.message,
+                            message: 'Mobile verified successfully.',
+                        },
+                    });
+                }
 
-            if (!notByEmail) {
-                dispatch({
-                    type: 'SET_EMAIL_VERIFICATION_SUCCESS',
-                    payload: {
-                        accessToken: data.message,
-                        message: 'Email verified successfully.',
-                    },
-                });
-            } else {
-                dispatch({
-                    type: 'SET_SMS_VERIFICATION_SUCCESS',
-                    payload: {
-                        accessToken: data.message,
-                        message: 'Mobile verified successfully.',
-                    },
-                });
-            }
-
-            if (onSuccess) {
-                onSuccess(data);
+                if (onSuccess) {
+                    onSuccess(data);
+                }
             }
         },
         (error) => {

@@ -7,12 +7,18 @@ export default function StepOne({ onNext }) {
     const { state, dispatch } = useSignup();
     const [email, setEmail] = useState('');
     const otpInputRefs = useRef([]);
-    const otpLength = state.widgetData?.otpLength || null;
-    const [otp, setOtp] = useState(() => new Array(otpLength).fill(''));
+    const otpLength = state.widgetData?.otpLength || 6; // Default to 6 if not available
+    const [otp, setOtp] = useState(() => new Array(otpLength || 6).fill(''));
 
     // Use global loading state from context
     const isLoading = state.isLoading;
     const otpSent = state.otpSent;
+
+    useEffect(() => {
+        if (otpLength && otpLength !== otp.length) {
+            setOtp(new Array(otpLength).fill(''));
+        }
+    }, [otpLength]);
 
     const handleOtpChange = (index, value) => {
         if (value.length > 1) return;
@@ -55,7 +61,6 @@ export default function StepOne({ onNext }) {
             console.error('Please enter email');
             return;
         }
-        dispatch({ type: 'SET_LOADING', payload: true });
         sendOtp(email, false, dispatch);
     };
 

@@ -5,22 +5,35 @@ import style from './StepTwo.module.scss';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import countries from '@/data/countries.json';
 import { MdCheckCircle } from 'react-icons/md';
-import intlTelInput from 'intl-tel-input';
-import phoneStyles from './intl-tel-input-custom.module.css';
 import getCountyFromIP from '@/utils/getCountyFromIP';
 
 export default function StepTwo() {
     const { state, dispatch } = useSignup();
     const [name, setName] = useState('');
+    const [companyName, setCompanyName] = useState('');
     const [phone, setPhone] = useState('');
     const phoneInputRef = useRef(null);
-    const itiRef = useRef(null);
     const otpInputRefs = useRef([]);
-    const otpLength = state.widgetData?.otpLength || null;
-    const [otp, setOtp] = useState(() => new Array(otpLength).fill(''));
+    const otpLength = state.widgetData?.otpLength || 6; // Default to 6 if not available
+    const [otp, setOtp] = useState(() => new Array(otpLength || 6).fill(''));
     const isLoading = state.isLoading;
     const otpSent = state.otpSent;
+    const otpVerified = state.mobileOtpVerified;
     const [selectedCountry, setSelectedCountry] = useState({});
+    const [continueAllowed, setContinueAllowed] = useState(false);
+
+    useEffect(() => {
+        if (otpVerified && name && companyName && phone) {
+            setContinueAllowed(true);
+        }
+    }, [otpVerified, name, companyName, phone]);
+
+    // Update OTP array when otpLength changes
+    useEffect(() => {
+        if (otpLength && otpLength !== otp.length) {
+            setOtp(new Array(otpLength).fill(''));
+        }
+    }, [otpLength]);
 
     useEffect(() => {
         const fetchCountryFromIP = async () => {
@@ -75,187 +88,63 @@ export default function StepTwo() {
     };
 
     const handleSendOtp = () => {
-        let phoneNumber = phone;
+        const rawInput = phone.trim();
 
-        if (itiRef.current) {
-            try {
-                const intlNumber = itiRef.current.getNumber();
-
-                // Get selected country data and dial code
-                const selectedCountryData = itiRef.current.getSelectedCountryData();
-
-                const rawInput = phoneInputRef.current?.value;
-
-                // If getNumber() returns a valid international number, use it
-                if (intlNumber && intlNumber.trim() !== '' && intlNumber !== rawInput) {
-                    phoneNumber = intlNumber;
-                } else if (rawInput && rawInput.trim() !== '') {
-                    // Fallback: manually format with country code
-                    const dialCode = selectedCountryData?.dialCode;
-                    if (dialCode && !rawInput.startsWith('+')) {
-                        phoneNumber = `+${dialCode}${rawInput}`;
-                    } else {
-                        phoneNumber = rawInput;
-                    }
-                }
-            } catch (error) {
-                // Fallback to raw input
-                const rawInput = phoneInputRef.current?.value;
-                if (rawInput && rawInput.trim() !== '') {
-                    phoneNumber = rawInput;
-                }
-            }
-        } else {
-            const rawInput = phoneInputRef.current?.value;
-            if (rawInput && rawInput.trim() !== '') {
-                phoneNumber = rawInput;
-            }
-        }
-
-        if (!phoneNumber || phoneNumber.trim() === '') {
+        if (!rawInput) {
+            console.error('Please enter a phone number');
             return;
         }
 
+        // Format with selected country code
+        let phoneNumber = rawInput;
+        if (selectedCountry?.code && !rawInput.startsWith('+')) {
+            phoneNumber = `${selectedCountry.code}${rawInput}`;
+        }
+
+        console.log('Sending OTP to:', phoneNumber);
         dispatch({ type: 'SET_LOADING', payload: true });
         sendOtp(phoneNumber, true, dispatch);
     };
 
     const handleVerifyOtp = () => {
         const otpValue = otp.join('');
-        if (otpValue.length !== otpLength) {
+        console.log('⚡️ ~ :105 ~ handleVerifyOtp ~ otpValue:', otpValue);
+
+        // Check if OTP is complete (no empty values and correct length)
+        if (otpValue.length !== otpLength || otp.includes('')) {
             console.error('Please enter complete OTP');
             return;
         }
 
-        const requestId = state.phoneRequestId;
+        const requestId = state.mobileRequestId; // Fixed: use mobileRequestId instead of smsRequestId
+        console.log('⚡️ ~ :108 ~ handleVerifyOtp ~ requestId:', requestId);
         if (!requestId) {
             console.error('No phone request ID found. Please resend OTP.');
             return;
         }
 
-        verifyOtp(
-            otpValue,
-            requestId,
-            true, // notByEmail - true for phone verification
-            dispatch,
-            (data) => {
-                dispatch({ type: 'SET_ACTIVE_STEP', payload: 2 });
-            },
-            (error) => {
-                console.error('Phone OTP verification failed:', error);
-                // Clear the OTP inputs on error
-                setOtp(new Array(otpLength).fill(''));
-                if (otpInputRefs.current[0]) {
-                    otpInputRefs.current[0].focus();
-                }
-            }
-        );
+        // Add success and error callbacks
+        const onSuccess = (data) => {
+            console.log('OTP verification successful:', data);
+            // You can add additional success handling here
+        };
+
+        const onError = (error) => {
+            console.error('OTP verification failed:', error);
+            // You can add toast notification or other error handling here
+        };
+
+        verifyOtp(otpValue, requestId, true, dispatch, onSuccess, onError);
     };
 
     const handleOnSelect = (item) => {
         setSelectedCountry(item[0]);
     };
 
-    // Initialize intl-tel-input with better React lifecycle management
-    useEffect(() => {
-        let mounted = true;
-        let timeoutId;
-
-        const initializeIntlTelInput = () => {
-            if (!mounted) return;
-
-            // Cleanup previous instance first
-            if (itiRef.current) {
-                try {
-                    itiRef.current.destroy();
-                } catch (error) {
-                    console.warn('Error destroying intl-tel-input:', error);
-                }
-                itiRef.current = null;
-            }
-
-            // Only initialize if phone input is visible (not in OTP mode)
-            if (phoneInputRef.current && !otpSent && mounted) {
-                try {
-                    itiRef.current = intlTelInput(phoneInputRef.current, {
-                        initialCountry: selectedCountry?.shortname?.toLowerCase() || 'auto',
-                        preferredCountries: ['in', 'us', 'gb'],
-                        separateDialCode: true,
-                        utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
-                        autoPlaceholder: 'polite',
-                        formatOnDisplay: true,
-                    });
-
-                    // Store reference to the event handler for proper cleanup
-                    const handleCountryChange = () => {
-                        if (itiRef.current && mounted) {
-                            try {
-                                const selectedCountryData = itiRef.current.getSelectedCountryData();
-                                const fullNumber = itiRef.current.getNumber();
-
-                                // Only update if we have a valid number
-                                if (fullNumber && fullNumber !== phone) {
-                                    setPhone(fullNumber);
-                                }
-                            } catch (error) {
-                                console.warn('Error in country change handler:', error);
-                            }
-                        }
-                    };
-
-                    // Store the handler reference for cleanup
-                    phoneInputRef.current._countryChangeHandler = handleCountryChange;
-                    phoneInputRef.current.addEventListener('countrychange', handleCountryChange);
-                } catch (error) {
-                    console.error('Error initializing intl-tel-input:', error);
-                }
-            }
-        };
-
-        // Delay initialization to avoid React DOM conflicts
-        timeoutId = setTimeout(initializeIntlTelInput, 150);
-
-        return () => {
-            mounted = false;
-            clearTimeout(timeoutId);
-
-            // Clean up event listeners first
-            if (phoneInputRef.current && phoneInputRef.current._countryChangeHandler) {
-                try {
-                    phoneInputRef.current.removeEventListener(
-                        'countrychange',
-                        phoneInputRef.current._countryChangeHandler
-                    );
-                    delete phoneInputRef.current._countryChangeHandler;
-                } catch (error) {
-                    console.warn('Error removing event listener:', error);
-                }
-            }
-
-            // Then destroy intl-tel-input instance
-            if (itiRef.current) {
-                try {
-                    itiRef.current.destroy();
-                } catch (error) {
-                    console.warn('Error destroying intl-tel-input in cleanup:', error);
-                }
-                itiRef.current = null;
-            }
-        };
-    }, [selectedCountry, otpSent]);
-
-    // Handle phone input change
     const handlePhoneChange = (e) => {
         const value = e.target.value;
-
-        // Update the phone state with the raw input value
-        setPhone(value);
-
-        // Log for debugging
-        if (itiRef.current) {
-            const fullNumber = itiRef.current.getNumber();
-            console.log('⚡️ ~ handlePhoneChange ~ intl formatted number:', fullNumber);
-        }
+        const numericValue = value.replace(/\D/g, '');
+        setPhone(numericValue);
     };
 
     return (
@@ -287,8 +176,8 @@ export default function StepTwo() {
                         type='text'
                         required
                         placeholder='Walkover'
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        value={companyName}
+                        onChange={(e) => setCompanyName(e.target.value)}
                     />
                 </div>
                 <div className='cont gap-1'>
@@ -336,13 +225,15 @@ export default function StepTwo() {
                             {isLoading ? (
                                 <div className='flex items-center gap-2 text-accent '>
                                     <div className='loading loading-spinner loading-sm '></div>
-                                    Sending OTP...
+                                    Verifying OTP...
                                 </div>
                             ) : (
                                 <button
-                                    onClick={handleVerifyOtp}
+                                    onClick={() => {
+                                        handleVerifyOtp();
+                                    }}
                                     className='btn btn-accent font-normal'
-                                    disabled={otp.join('').length !== otpLength}
+                                    disabled={otp.join('').length !== otpLength || otp.includes('')}
                                 >
                                     Verify OTP
                                 </button>
@@ -353,12 +244,15 @@ export default function StepTwo() {
                     <div className='cont gap-2'>
                         <p className='text-gray-500'>Phone Number</p>
                         <div className='flex items-center gap-4'>
-                            <div
-                                className={`w-full min-w-[320px] max-w-[420px] relative ${phoneStyles.phoneInputContainer}`}
-                            >
+                            <div className='w-full min-w-[320px] max-w-[420px] relative flex'>
+                                <div className='flex items-center bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg px-3'>
+                                    <span className='text-sm font-medium'>+{selectedCountry?.code || '91'}</span>
+                                </div>
                                 <input
                                     ref={phoneInputRef}
-                                    className='input input-bordered text-base p-3 h-fit w-full outline-none focus-within:outline-none'
+                                    className={`input input-bordered text-base p-3 h-fit w-full outline-none focus-within:outline-none rounded-l-none border-l-0 ${
+                                        otpVerified ? 'pointer-events-none' : ''
+                                    }`}
                                     name='phone'
                                     type='tel'
                                     required
@@ -366,7 +260,9 @@ export default function StepTwo() {
                                     value={phone}
                                     onChange={handlePhoneChange}
                                 />
-                                <MdCheckCircle className='absolute right-3 top-1/2 transform -translate-y-1/2 text-green-600 text-xl z-10' />
+                                {otpVerified && (
+                                    <MdCheckCircle className='absolute right-3 top-1/2 transform -translate-y-1/2 text-green-600 text-xl z-10' />
+                                )}
                             </div>
                             {isLoading ? (
                                 <div className='flex items-center gap-2 text-accent '>
@@ -376,7 +272,6 @@ export default function StepTwo() {
                             ) : (
                                 <button
                                     onClick={() => {
-                                        console.log('🔥 Button clicked!');
                                         handleSendOtp();
                                     }}
                                     className='btn btn-accent font-normal '
@@ -389,14 +284,13 @@ export default function StepTwo() {
                 )}
             </div>
             <div className='flex gap-4'>
-                <button className='btn btn-primary btn-outline btn-md' disabled={otp.join('').length !== otpLength}>
+                <button
+                    className='btn btn-primary btn-outline btn-md'
+                    disabled={otpSent && (otp.join('').length !== otpLength || otp.includes(''))}
+                >
                     Back
                 </button>
-                <button
-                    onClick={handleVerifyOtp}
-                    className='btn btn-accent btn-md'
-                    disabled={otp.join('').length !== otpLength}
-                >
+                <button className='btn btn-accent btn-md' disabled={!continueAllowed}>
                     Continue
                 </button>
             </div>
