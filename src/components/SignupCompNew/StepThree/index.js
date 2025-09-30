@@ -2,8 +2,11 @@ import getServices from '@/utils/getServices';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { MdClose } from 'react-icons/md';
+import { setDetails, useSignup } from '../SignupUtils';
 
 export default function StepThree({ data }) {
+    const { state, dispatch } = useSignup();
+    console.log('⚡️ ~ :9 ~ StepThree ~ state:', state);
     const [services, setServices] = useState({});
     const [slectedServices, setSlectedServices] = useState([]);
     const [source, setSource] = useState('');
@@ -14,6 +17,14 @@ export default function StepThree({ data }) {
             setServices(response.data.data);
         });
     }, []);
+
+    useEffect(() => {
+        setDetails('services', dispatch, slectedServices);
+    }, [slectedServices]);
+
+    useEffect(() => {
+        setDetails('source', dispatch, source);
+    }, [source]);
 
     function handleServiceClick(key) {
         if (slectedServices.includes(key)) {
@@ -26,8 +37,6 @@ export default function StepThree({ data }) {
     function handleSourceChange(value) {
         setSource(value);
     }
-
-    useEffect(() => {}, [slectedServices, source]);
 
     return (
         <div className='cont cont_gap'>

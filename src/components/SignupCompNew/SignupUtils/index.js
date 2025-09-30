@@ -6,6 +6,7 @@ const initialState = {
     widgetData: null,
     allowedRetry: null,
     isLoading: false,
+    source: null,
     otpSent: false,
     otpSendFailed: false,
     emailIdentifier: null,
@@ -123,6 +124,16 @@ function reducer(state, action) {
             return {
                 ...state,
                 mobileIdentifier: action.payload.mobile,
+            };
+        case 'SET_SERVICES':
+            return {
+                ...state,
+                services: action.payload.services,
+            };
+        case 'SET_SOURCE':
+            return {
+                ...state,
+                source: action.payload.source,
             };
 
         case 'SET_OTP_SENT':
@@ -408,6 +419,20 @@ export function setDetails(type, dispatch, identifier) {
             type: 'SET_MOBILE',
             payload: {
                 phone: identifier,
+            },
+        });
+    } else if (type === 'services') {
+        dispatch({
+            type: 'SET_SERVICES',
+            payload: {
+                services: identifier,
+            },
+        });
+    } else if (type === 'source') {
+        dispatch({
+            type: 'SET_SOURCE',
+            payload: {
+                source: identifier,
             },
         });
     }
