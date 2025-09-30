@@ -68,15 +68,6 @@ function reducer(state, action) {
         case 'SET_OTP_ERROR':
             return { ...state, isLoading: false, otpSendFailed: true };
 
-        case 'SET_EMAIL_TOKEN':
-            return { ...state, emailToken: action.payload };
-
-        case 'SET_MOBILE_TOKEN':
-            return { ...state, mobileToken: action.payload };
-
-        case 'SET_PERSONAL':
-            return { ...state, personal: action.payload };
-
         case 'SET_EMAIL_OTP_SUCCESS':
             return {
                 ...state,
@@ -111,6 +102,27 @@ function reducer(state, action) {
                 isLoading: false,
                 mobileOtpVerified: true,
                 otpSent: false,
+            };
+
+        case 'SET_USER_DETAILS':
+            return {
+                ...state,
+                userDetails: {
+                    firstName: action.payload.firstName,
+                    lastName: action.payload.lastName,
+                },
+            };
+
+        case 'SET_COMPANY_NAME':
+            return {
+                ...state,
+                companyName: action.payload.companyName,
+            };
+
+        case 'SET_MOBILE':
+            return {
+                ...state,
+                mobileIdentifier: action.payload.mobile,
             };
 
         case 'SET_OTP_SENT':
@@ -334,7 +346,6 @@ export function sendOtp(identifier, notByEmail, dispatch, showToast = console.er
 }
 
 export function verifyOtp(otp, requestId, notByEmail, dispatch, onSuccess, onError = console.error) {
-    console.log('⚡️ ~ :337 ~ verifyOtp ~ otp:', otp);
     dispatch({ type: 'SET_LOADING', payload: true });
     window.verifyOtp(
         `${otp}`,
@@ -372,4 +383,32 @@ export function verifyOtp(otp, requestId, notByEmail, dispatch, onSuccess, onErr
         },
         requestId
     );
+}
+
+export function setDetails(type, dispatch, identifier) {
+    if (type === 'userDetails') {
+        const firstName = identifier.split(' ')[0];
+        const lastName = identifier.split(' ').slice(1).join(' ');
+        dispatch({
+            type: 'SET_USER_DETAILS',
+            payload: {
+                firstName,
+                lastName,
+            },
+        });
+    } else if (type === 'companyName') {
+        dispatch({
+            type: 'SET_COMPANY_NAME',
+            payload: {
+                companyName: identifier,
+            },
+        });
+    } else if (type === 'phone') {
+        dispatch({
+            type: 'SET_MOBILE',
+            payload: {
+                phone: identifier,
+            },
+        });
+    }
 }

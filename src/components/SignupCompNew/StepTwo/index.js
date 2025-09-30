@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useSignup, sendOtp, verifyOtp } from '../SignupUtils';
+import { useSignup, sendOtp, verifyOtp, setDetails } from '../SignupUtils';
 import { useEffect, useState, useRef } from 'react';
 import style from './StepTwo.module.scss';
 import { Typeahead } from 'react-bootstrap-typeahead';
@@ -9,16 +9,20 @@ import getCountyFromIP from '@/utils/getCountyFromIP';
 
 export default function StepTwo() {
     const { state, dispatch } = useSignup();
-    const [name, setName] = useState('');
-    const [companyName, setCompanyName] = useState('');
-    const [phone, setPhone] = useState('');
+
+    const isLoading = state.isLoading;
+    const otpSent = state.otpSent;
+    const otpVerified = state.mobileOtpVerified;
+    const mobileIdentifier = state.mobileIdentifier;
+    const userDetails = state.userDetails;
+
+    const [name, setName] = useState(userDetails?.firstName && userDetails?.firstName + ' ' + userDetails?.lastName);
+    const [companyName, setCompanyName] = useState(state.companyDetails?.companyName);
+    const [phone, setPhone] = useState(mobileIdentifier || '');
     const phoneInputRef = useRef(null);
     const otpInputRefs = useRef([]);
     const otpLength = state.widgetData?.otpLength || 6; // Default to 6 if not available
     const [otp, setOtp] = useState(() => new Array(otpLength || 6).fill(''));
-    const isLoading = state.isLoading;
-    const otpSent = state.otpSent;
-    const otpVerified = state.mobileOtpVerified;
     const [selectedCountry, setSelectedCountry] = useState({});
     const [continueAllowed, setContinueAllowed] = useState(false);
 
@@ -101,14 +105,12 @@ export default function StepTwo() {
             phoneNumber = `${selectedCountry.code}${rawInput}`;
         }
 
-        console.log('Sending OTP to:', phoneNumber);
         dispatch({ type: 'SET_LOADING', payload: true });
         sendOtp(phoneNumber, true, dispatch);
     };
 
     const handleVerifyOtp = () => {
         const otpValue = otp.join('');
-        console.log('⚡️ ~ :105 ~ handleVerifyOtp ~ otpValue:', otpValue);
 
         // Check if OTP is complete (no empty values and correct length)
         if (otpValue.length !== otpLength || otp.includes('')) {
@@ -116,8 +118,7 @@ export default function StepTwo() {
             return;
         }
 
-        const requestId = state.mobileRequestId; // Fixed: use mobileRequestId instead of smsRequestId
-        console.log('⚡️ ~ :108 ~ handleVerifyOtp ~ requestId:', requestId);
+        const requestId = state.mobileRequestId;
         if (!requestId) {
             console.error('No phone request ID found. Please resend OTP.');
             return;
@@ -147,6 +148,22 @@ export default function StepTwo() {
         setPhone(numericValue);
     };
 
+    const handleDetailsBlur = (type) => {
+        if (type === 'name') {
+            setDetails('userDetails', dispatch, name);
+        } else if (type === 'companyName') {
+            setDetails('companyName', dispatch, companyName);
+        } else if (type === 'phone') {
+            setDetails('phone', dispatch, phone);
+        }
+    };
+
+    const handleContinue = () => {
+        if (continueAllowed) {
+            dispatch({ type: 'SET_ACTIVE_STEP', payload: 3 });
+        }
+    };
+
     return (
         <div className='cont cont_gap'>
             <Image width={160} height={80} className='w-fit h-12' src={'/assets/brand/msg91.svg'} alt='MSG91 Logo' />
@@ -165,6 +182,9 @@ export default function StepTwo() {
                         placeholder='John Doe'
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                        onBlur={() => {
+                            handleDetailsBlur('name');
+                        }}
                     />
                 </div>
                 <div className='cont gap-1'>
@@ -178,6 +198,9 @@ export default function StepTwo() {
                         placeholder='Walkover'
                         value={companyName}
                         onChange={(e) => setCompanyName(e.target.value)}
+                        onBlur={() => {
+                            handleDetailsBlur('companyName');
+                        }}
                     />
                 </div>
                 <div className='cont gap-1'>
@@ -258,7 +281,12 @@ export default function StepTwo() {
                                     required
                                     placeholder='9876543210'
                                     value={phone}
-                                    onChange={handlePhoneChange}
+                                    onChange={(e) => {
+                                        setPhone(e.target.value);
+                                    }}
+                                    onBlur={() => {
+                                        handleDetailsBlur('phone');
+                                    }}
                                 />
                                 {otpVerified && (
                                     <MdCheckCircle className='absolute right-3 top-1/2 transform -translate-y-1/2 text-green-600 text-xl z-10' />
@@ -286,11 +314,19 @@ export default function StepTwo() {
             <div className='flex gap-4'>
                 <button
                     className='btn btn-primary btn-outline btn-md'
-                    disabled={otpSent && (otp.join('').length !== otpLength || otp.includes(''))}
+                    onClick={() => {
+                        dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
+                    }}
                 >
                     Back
                 </button>
-                <button className='btn btn-accent btn-md' disabled={!continueAllowed}>
+                <button
+                    onClick={() => {
+                        handleContinue();
+                    }}
+                    className='btn btn-accent btn-md'
+                    disabled={!continueAllowed}
+                >
                     Continue
                 </button>
             </div>
