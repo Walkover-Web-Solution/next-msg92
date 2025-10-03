@@ -79,8 +79,8 @@
                     ]
                 },
                 "button": {
-                    "name": "Testar ChatBot do WhatsApp",
-                    "link": "https://msg91.com/demochatbot"
+                    "name": "ChatBot",
+                    "link": "/chatbot"
                 },
                 "img": "/assets/brpt/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg"
             },

@@ -13,7 +13,8 @@
         "heading": "AI-Powered Contact Centre",
         "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
         "lottie": "/assets/global/hello/new_webp/hello_hero.json",
-        "getstarted_btn": "Get Started"
+        "getstarted_btn": "Get Started",
+        "chatbot": "Chatbot"
     },
     "FeatureWithBulletGroup": {
         "heading": "Features",
