@@ -1,9 +1,8 @@
 import Image from 'next/image';
-import { useSignup, sendOtp, verifyOtp, setDetails } from '../SignupUtils';
+import { useSignup, sendOtp, verifyOtp, setDetails, fetchCountries } from '../SignupUtils';
 import { useEffect, useState, useRef } from 'react';
 import style from './StepTwo.module.scss';
 import { Typeahead } from 'react-bootstrap-typeahead';
-import countries from '@/data/countries.json';
 import { MdCheckCircle } from 'react-icons/md';
 import getCountyFromIP from '@/utils/getCountyFromIP';
 
@@ -24,8 +23,9 @@ export default function StepTwo() {
     const otpLength = state.widgetData?.otpLength || 6; // Default to 6 if not available
     const [otp, setOtp] = useState(() => new Array(otpLength || 6).fill(''));
     const [selectedCountry, setSelectedCountry] = useState({});
+    console.log('⚡️ ~ :26 ~ StepTwo ~ selectedCountry:', selectedCountry);
     const [continueAllowed, setContinueAllowed] = useState(false);
-
+    const [countries, setCountries] = useState([]);
     useEffect(() => {
         if (otpVerified && name && companyName && phone) {
             setContinueAllowed(true);
@@ -40,20 +40,20 @@ export default function StepTwo() {
     }, [otpLength]);
 
     useEffect(() => {
-        const fetchCountryFromIP = async () => {
-            try {
-                const countryCodeFromIP = await getCountyFromIP();
-                const country = countries.find(
-                    (country) => country?.shortname?.toLowerCase() === countryCodeFromIP?.toLowerCase()
-                );
-                setSelectedCountry(country);
-            } catch (error) {
-                console.error('Error fetching country from IP:', error);
-            }
-        };
-
-        fetchCountryFromIP();
+        fetchCountries().then((response) => {
+            setCountries(response.data);
+        });
     }, []);
+    useEffect(() => {
+        const fetchCountryFromIP = async () => {
+            const localData = await getCountyFromIP();
+            const country = countries.find(
+                (country) => country?.shortName?.toLowerCase() === localData?.countryCode?.toLowerCase()
+            );
+            setSelectedCountry(country);
+        };
+        fetchCountryFromIP();
+    }, [countries]);
 
     const handleOtpChange = (index, value) => {
         if (value.length > 1) return;
@@ -101,8 +101,8 @@ export default function StepTwo() {
 
         // Format with selected country code
         let phoneNumber = rawInput;
-        if (selectedCountry?.code && !rawInput.startsWith('+')) {
-            phoneNumber = `${selectedCountry.code}${rawInput}`;
+        if (selectedCountry?.countryCode && !rawInput.startsWith('+')) {
+            phoneNumber = `${selectedCountry.countryCode}${rawInput}`;
         }
 
         dispatch({ type: 'SET_LOADING', payload: true });
@@ -269,7 +269,7 @@ export default function StepTwo() {
                         <div className='flex items-center gap-4'>
                             <div className='w-full min-w-[320px] max-w-[420px] relative flex'>
                                 <div className='flex items-center bg-gray-100 border border-r-0 border-gray-300 rounded-l-lg px-3'>
-                                    <span className='text-sm font-medium'>+{selectedCountry?.code || '91'}</span>
+                                    <span className='text-sm font-medium'>+{selectedCountry?.countryCode || '91'}</span>
                                 </div>
                                 <input
                                     ref={phoneInputRef}

@@ -21,17 +21,7 @@ class StepTwo extends React.Component {
         };
         smsIdentifier = this.state.smsIdentifier;
 
-        this.sourceOptions = [
-            { value: '/', label: 'Select Source' },
-            { value: 'search_engine', label: 'Search engine (Google, Bing, Yahoo, etc)' },
-            { value: 'recommended_by_friend', label: 'Recommended by friend or colleague' },
-            { value: 'social_media', label: 'Social Media' },
-            { value: 'blog', label: 'Blog or Publication' },
-            { value: 'advertisement', label: 'Advertisement' },
-            { value: 'event', label: 'Event' },
-            { value: 'tiedelhincr', label: 'TiEDelhiNCR' },
-            { value: 'other', label: 'Other' },
-        ];
+        this.sourceOptions = invitations;
     }
 
     componentDidMount() {
