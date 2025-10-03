@@ -9,6 +9,7 @@ import {
     fetchStatesByCountry,
     fetchCitiesByState,
     fetchCountries,
+    finalRegistration,
 } from '../SignupUtils';
 import getCountyFromIP from '@/utils/getCountyFromIP';
 import { Typeahead } from 'react-bootstrap-typeahead';
@@ -239,7 +240,7 @@ export default function StepThree({ pageInfo, data }) {
 
     // Handle Final Registration
     const handleFinalRegistration = () => {
-        console.log('Final Registration', state);
+        finalRegistration(dispatch);
     };
 
     return (

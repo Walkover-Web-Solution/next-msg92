@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useSignup, sendOtp, verifyOtp, setDetails, fetchCountries } from '../SignupUtils';
+import { useSignup, sendOtp, verifyOtp, setDetails, fetchCountries, validateEmailSignUp } from '../SignupUtils';
 import { useEffect, useState, useRef } from 'react';
 import style from './StepTwo.module.scss';
 import { Typeahead } from 'react-bootstrap-typeahead';
@@ -160,7 +160,8 @@ export default function StepTwo() {
 
     const handleContinue = () => {
         if (continueAllowed) {
-            dispatch({ type: 'SET_ACTIVE_STEP', payload: 3 });
+            validateEmailSignUp(dispatch, state);
+            // dispatch({ type: 'SET_ACTIVE_STEP', payload: 3 });
         }
     };
 

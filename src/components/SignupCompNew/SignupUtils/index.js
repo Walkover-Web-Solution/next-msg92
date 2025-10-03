@@ -2,7 +2,7 @@ import React, { createContext, useContext, useReducer } from 'react';
 
 const initialState = {
     //Temporary Data
-    activeStep: 3,
+    activeStep: 1,
     widgetData: null,
     allowedRetry: null,
     isLoading: false,
@@ -134,6 +134,14 @@ function reducer(state, action) {
                 ...state,
                 mobileIdentifier: action.payload.mobile,
             };
+
+        case 'SET_SESSION':
+            return {
+                ...state,
+                session: action.payload.session,
+                activeStep: 3,
+            };
+
         case 'SET_SERVICES':
             return {
                 ...state,
@@ -166,6 +174,7 @@ function reducer(state, action) {
 
         case 'SET_OTP_SENT':
             return { ...state, otpSent: action.payload };
+
         case 'SET_UTM_PARAMS':
             return {
                 ...state,
@@ -334,8 +343,8 @@ export default function checkSession() {
             const parts = value.split(`; ${name}=`);
             if (parts.length === 2) return parts.pop().split(';').shift();
         };
-
-        const payload = { session: getCookie('sessionId') };
+        const session = getCookie('sessionId');
+        const payload = { session: session };
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -345,8 +354,7 @@ export default function checkSession() {
             .then((response) => response?.json())
             .then((result) => {
                 if (result?.status === 'success') {
-                    // Redirect to dashboard or success page
-                    window.location.href = '/dashboard'; // or appropriate success URL
+                    window.location.href = process.env.REDIRECT_URL + `/api/nexusRedirection.php?session=${session}`;
                 }
             });
     } catch (error) {
@@ -483,8 +491,8 @@ export function setDetails(type, dispatch, identifier) {
     }
 }
 
-export function validateEmailSignUp() {
-    const url = process.env.API_BASE_URL + '/api/v5/nexus/validateGithubSignUp';
+export function validateEmailSignUp(dispatch, state) {
+    const url = process.env.API_BASE_URL + '/api/v5/nexus/validateEmailSignUp';
     const payload = {
         session: state?.session,
         emailToken: state?.emailToken,
@@ -504,11 +512,43 @@ export function validateEmailSignUp() {
         .post(url, payload)
         .then((response) => {
             if (response?.data?.status === 'success') {
-                window.location.href = response?.data?.redirectUrl;
+                dispatch({
+                    type: 'SET_SESSION',
+                    payload: {
+                        session: response?.data?.sessionDetails?.PHPSESSID,
+                        message: 'Email verified successfully.',
+                    },
+                });
             }
         })
         .catch((error) => {
             console.log('Error validating GitHub signup:', error);
+        });
+}
+
+export function finalRegistration(dispatch, state) {
+    const url = process.env.API_BASE_URL + '/api/v5/nexus/finalRegister';
+    const payload = {
+        session: state?.session,
+        companyDetails: state?.companyDetails,
+        userDetails: state?.userDetails,
+        acceptInviteForCompanies: state?.acceptInviteForCompanies,
+        rejectInviteForCompanies: state?.rejectInviteForCompanies,
+    };
+    axios
+        .post(url, payload)
+        .then((response) => {
+            if (response?.data?.status === 'success') {
+                dispatch({
+                    type: 'SET_ACTIVE_STEP',
+                    payload: 4,
+                });
+                window.location.href =
+                    process.env.REDIRECT_URL + `?session=${response?.data?.sessionDetails?.PHPSESSID}`;
+            }
+        })
+        .catch((error) => {
+            console.log('Error final registration:', error);
         });
 }
 
