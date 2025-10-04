@@ -77,6 +77,9 @@ body {
             @apply text-white hover:bg-accent hover:text-white;
         }
     }
+    &.social-icon {
+        @apply p-2 h-fit w-fit min-h-fit border border-gray-300 rounded hover:bg-gray-50 hover:border-accent;
+    }
     &.btn-hello {
         @apply bg-[var(--hello-color)] text-black outline-none border-black shadow-none;
         &.btn-outline {
