@@ -51,6 +51,7 @@ import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromT
 import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
 import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
+import SignupParentComp from '@/components/SignupCompNew/SignupParentComp';
 
 // New Components
 import Banner from '@/components/UpdatedComp/Banner';
@@ -120,7 +121,7 @@ const Components = {
     WhatsAppAccountVerification,
     SignupPage,
     FeatureWithBulletGroup,
-
+    SignupParentComp,
     // New Components
     Banner,
 };

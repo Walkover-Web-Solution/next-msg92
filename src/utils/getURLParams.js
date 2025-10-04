@@ -1,4 +1,14 @@
 export default function getURLParams(paramsString) {
+    // Remove path before '?' or '/' if exists, keep only the query string part
+    if (typeof paramsString === 'string') {
+        // If paramsString contains '?', use substring after '?'
+        if (paramsString.includes('?')) {
+            paramsString = paramsString.substring(paramsString.indexOf('?'));
+        } else if (paramsString.includes('/')) {
+            // If no '?', but contains '/', use substring after last '/'
+            paramsString = paramsString.substring(paramsString.lastIndexOf('/') + 1);
+        }
+    }
     // Remove leading '?' if present
     const cleanString = paramsString.startsWith('?') ? paramsString.slice(1) : paramsString;
 
