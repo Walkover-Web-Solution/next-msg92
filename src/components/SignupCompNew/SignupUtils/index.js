@@ -1,4 +1,6 @@
+import getURLParams from '@/utils/getURLParams';
 import React, { createContext, useContext, useReducer } from 'react';
+import axios from 'axios';
 
 const initialState = {
     //Temporary Data
@@ -13,6 +15,9 @@ const initialState = {
     emailIdentifier: null,
     emailRequestId: null,
     emailToken: null,
+
+    githubCode: null,
+    githubState: null,
 
     mobileIdentifier: null,
     mobileRequestId: null,
@@ -62,6 +67,9 @@ const OTPRetryModes = {
 
 function reducer(state, action) {
     switch (action.type) {
+        case 'SET_INITIAL_STATES':
+            return { ...state, ...action.payload };
+
         case 'SET_ACTIVE_STEP':
             return { ...state, activeStep: action.payload };
 
@@ -204,6 +212,38 @@ export function SignupProvider({ children }) {
 
 export function useSignup() {
     return useContext(SignupCtx);
+}
+
+export function setInitialStates(dispatch, state, urlParams) {
+    const githubSignup = urlParams?.githubsignup;
+    const githubCode = urlParams?.code;
+    const githubState = urlParams?.state;
+
+    dispatch({
+        type: 'SET_INITIAL_STATES',
+        payload: {
+            ...state,
+            githubSignup: githubSignup,
+            githubCode: githubCode,
+            githubState: githubState,
+            source: urlParams?.source,
+            utm_term: urlParams?.utm_term,
+            utm_medium: urlParams?.utm_medium,
+            utm_source: urlParams?.utm_source,
+            utm_campaign: urlParams?.utm_campaign,
+            utm_content: urlParams?.utm_content,
+            utm_matchtype: urlParams?.utm_matchtype,
+            ad: urlParams?.ad,
+            adposition: urlParams?.adposition,
+            reference: urlParams?.reference,
+        },
+    });
+    if (githubCode && githubState) {
+        dispatch({
+            type: 'SET_ACTIVE_STEP',
+            payload: 2,
+        });
+    }
 }
 
 export function otpWidgetSetup(dispatch, onSuccess, onError) {
@@ -444,6 +484,111 @@ export function verifyOtp(otp, requestId, notByEmail, dispatch, onSuccess, onErr
     );
 }
 
+export function handleGithubSignup() {
+    const randomState = Math.floor(100000000 + Math.random() * 900000000);
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/github-auth-token?githubsignup=true&state=${randomState}`;
+}
+
+export function validateSignUp(dispatch, state) {
+    const url =
+        process.env.API_BASE_URL +
+        '/api/v5/nexus/' +
+        (state?.githubCode ? 'validateGithubSignUp' : 'validateEmailSignUp');
+    const payload = {
+        session: state?.session,
+        emailToken: state?.emailToken,
+        githubToken: state?.githubToken,
+        githubCode: state?.githubCode,
+        githubState: state?.githubState,
+        mobileToken: state?.mobileToken,
+        source: state?.source,
+        utm_term: state?.utm_term,
+        utm_medium: state?.utm_medium,
+        utm_source: state?.utm_source,
+        utm_campaign: state?.utm_campaign,
+        utm_content: state?.utm_content,
+        utm_matchtype: state?.utm_matchtype,
+        ad: state?.ad,
+        adposition: state?.adposition,
+        reference: state?.reference,
+    };
+    axios.post(url, payload).then((response) => {
+        if (response?.data?.status === 'success') {
+            dispatch({ type: 'SET_SESSION', payload: { session: response?.data?.sessionDetails?.PHPSESSID } });
+        }
+    });
+}
+
+// export function validateEmailSignUp(dispatch, state) {
+//     const url = process.env.API_BASE_URL + '/api/v5/nexus/validateEmailSignUp';
+//     const payload = {
+//         session: state?.session,
+//         emailToken: state?.emailToken,
+//         mobileToken: state?.mobileToken,
+//         source: state?.source,
+//         utm_term: state?.utm_term,
+//         utm_medium: state?.utm_medium,
+//         utm_source: state?.utm_source,
+//         utm_campaign: state?.utm_campaign,
+//         utm_content: state?.utm_content,
+//         utm_matchtype: state?.utm_matchtype,
+//         ad: state?.ad,
+//         adposition: state?.adposition,
+//         reference: state?.reference,
+//     };
+//     axios
+//         .post(url, payload)
+//         .then((response) => {
+//             if (response?.data?.status === 'success') {
+//                 dispatch({
+//                     type: 'SET_SESSION',
+//                     payload: {
+//                         session: response?.data?.sessionDetails?.PHPSESSID,
+//                         message: 'Email verified successfully.',
+//                     },
+//                 });
+//             }
+//         })
+//         .catch((error) => {
+//             console.log('Error validating GitHub signup:', error);
+//         });
+// }
+
+// export function validateGithubSignUp(dispatch, state) {
+//     console.log('⚡️ ~ :533 ~ validateGithubSignUp ~ state:', state);
+//     const url = process.env.API_BASE_URL + '/api/v5/nexus/validateGithubSignUp';
+//     const payload = {
+//         session: state?.session,
+//         githubToken: state?.githubToken,
+//     };
+// }
+
+export function finalRegistration(dispatch, state) {
+    const url = process.env.API_BASE_URL + '/api/v5/nexus/finalRegister';
+    const payload = {
+        session: state?.session,
+        companyDetails: state?.companyDetails,
+        userDetails: state?.userDetails,
+        acceptInviteForCompanies: state?.acceptInviteForCompanies,
+        rejectInviteForCompanies: state?.rejectInviteForCompanies,
+    };
+    axios
+        .post(url, payload)
+        .then((response) => {
+            if (response?.data?.status === 'success') {
+                dispatch({
+                    type: 'SET_ACTIVE_STEP',
+                    payload: 4,
+                });
+                window.location.href =
+                    process.env.REDIRECT_URL + `?session=${response?.data?.sessionDetails?.PHPSESSID}`;
+            }
+        })
+        .catch((error) => {
+            console.log('Error final registration:', error);
+        });
+}
+
 export function setDetails(type, dispatch, identifier) {
     if (type === 'userDetails') {
         const firstName = identifier.split(' ')[0];
@@ -491,72 +636,11 @@ export function setDetails(type, dispatch, identifier) {
     }
 }
 
-export function validateEmailSignUp(dispatch, state) {
-    const url = process.env.API_BASE_URL + '/api/v5/nexus/validateEmailSignUp';
-    const payload = {
-        session: state?.session,
-        emailToken: state?.emailToken,
-        mobileToken: state?.mobileToken,
-        source: state?.source,
-        utm_term: state?.utm_term,
-        utm_medium: state?.utm_medium,
-        utm_source: state?.utm_source,
-        utm_campaign: state?.utm_campaign,
-        utm_content: state?.utm_content,
-        utm_matchtype: state?.utm_matchtype,
-        ad: state?.ad,
-        adposition: state?.adposition,
-        reference: state?.reference,
-    };
-    axios
-        .post(url, payload)
-        .then((response) => {
-            if (response?.data?.status === 'success') {
-                dispatch({
-                    type: 'SET_SESSION',
-                    payload: {
-                        session: response?.data?.sessionDetails?.PHPSESSID,
-                        message: 'Email verified successfully.',
-                    },
-                });
-            }
-        })
-        .catch((error) => {
-            console.log('Error validating GitHub signup:', error);
-        });
-}
-
-export function finalRegistration(dispatch, state) {
-    const url = process.env.API_BASE_URL + '/api/v5/nexus/finalRegister';
-    const payload = {
-        session: state?.session,
-        companyDetails: state?.companyDetails,
-        userDetails: state?.userDetails,
-        acceptInviteForCompanies: state?.acceptInviteForCompanies,
-        rejectInviteForCompanies: state?.rejectInviteForCompanies,
-    };
-    axios
-        .post(url, payload)
-        .then((response) => {
-            if (response?.data?.status === 'success') {
-                dispatch({
-                    type: 'SET_ACTIVE_STEP',
-                    payload: 4,
-                });
-                window.location.href =
-                    process.env.REDIRECT_URL + `?session=${response?.data?.sessionDetails?.PHPSESSID}`;
-            }
-        })
-        .catch((error) => {
-            console.log('Error final registration:', error);
-        });
-}
-
-export function handleUtmParams(dispatch) {
+export function handleUtmParams(dispatch, urlParams) {
     const utmParams = {};
 
     if (typeof window !== 'undefined') {
-        const urlParams = new URLSearchParams(window.location.search);
+        const urlParams = getURLParams(window.location.search);
 
         // Extract UTM parameters from URL
         const paramNames = [

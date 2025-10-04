@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useSignup, sendOtp, verifyOtp, setDetails, fetchCountries, validateEmailSignUp } from '../SignupUtils';
+import { useSignup, sendOtp, verifyOtp, setDetails, fetchCountries, validateSignUp } from '../SignupUtils';
 import { useEffect, useState, useRef } from 'react';
 import style from './StepTwo.module.scss';
 import { Typeahead } from 'react-bootstrap-typeahead';
@@ -23,9 +23,9 @@ export default function StepTwo() {
     const otpLength = state.widgetData?.otpLength || 6; // Default to 6 if not available
     const [otp, setOtp] = useState(() => new Array(otpLength || 6).fill(''));
     const [selectedCountry, setSelectedCountry] = useState({});
-    console.log('⚡️ ~ :26 ~ StepTwo ~ selectedCountry:', selectedCountry);
     const [continueAllowed, setContinueAllowed] = useState(false);
     const [countries, setCountries] = useState([]);
+
     useEffect(() => {
         if (otpVerified && name && companyName && phone) {
             setContinueAllowed(true);
@@ -44,6 +44,7 @@ export default function StepTwo() {
             setCountries(response.data);
         });
     }, []);
+
     useEffect(() => {
         const fetchCountryFromIP = async () => {
             const localData = await getCountyFromIP();
@@ -160,7 +161,7 @@ export default function StepTwo() {
 
     const handleContinue = () => {
         if (continueAllowed) {
-            validateEmailSignUp(dispatch, state);
+            validateSignUp(dispatch, state);
             // dispatch({ type: 'SET_ACTIVE_STEP', payload: 3 });
         }
     };
@@ -293,21 +294,22 @@ export default function StepTwo() {
                                     <MdCheckCircle className='absolute right-3 top-1/2 transform -translate-y-1/2 text-green-600 text-xl z-10' />
                                 )}
                             </div>
-                            {isLoading ? (
-                                <div className='flex items-center gap-2 text-accent '>
-                                    <div className='loading loading-spinner loading-sm '></div>
-                                    Sending OTP...
-                                </div>
-                            ) : (
-                                <button
-                                    onClick={() => {
-                                        handleSendOtp();
-                                    }}
-                                    className='btn btn-accent font-normal '
-                                >
-                                    Verify
-                                </button>
-                            )}
+                            {!otpVerified &&
+                                (isLoading ? (
+                                    <div className='flex items-center gap-2 text-accent '>
+                                        <div className='loading loading-spinner loading-sm '></div>
+                                        Sending OTP...
+                                    </div>
+                                ) : (
+                                    <button
+                                        onClick={() => {
+                                            handleSendOtp();
+                                        }}
+                                        className='btn btn-accent font-normal '
+                                    >
+                                        Verify
+                                    </button>
+                                ))}
                         </div>
                     </div>
                 )}

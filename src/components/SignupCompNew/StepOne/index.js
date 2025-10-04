@@ -1,10 +1,12 @@
 import Image from 'next/image';
-import { useSignup, sendOtp, verifyOtp } from '../SignupUtils';
+import { useSignup, sendOtp, verifyOtp, handleGithubSignup, setInitialStates } from '../SignupUtils';
 import { useEffect, useState, useRef } from 'react';
 import style from './StepOne.module.scss';
+import getURLParams from '@/utils/getURLParams';
 
-export default function StepOne({ onNext }) {
+export default function StepOne() {
     const { state, dispatch } = useSignup();
+
     const [email, setEmail] = useState('');
     const otpInputRefs = useRef([]);
     const otpLength = state.widgetData?.otpLength || 6; // Default to 6 if not available
@@ -13,6 +15,10 @@ export default function StepOne({ onNext }) {
     // Use global loading state from context
     const isLoading = state.isLoading;
     const otpSent = state.otpSent;
+
+    useEffect(() => {
+        setInitialStates(dispatch, state, getURLParams(window?.location?.search));
+    }, [dispatch]);
 
     useEffect(() => {
         if (otpLength && otpLength !== otp.length) {
@@ -31,6 +37,10 @@ export default function StepOne({ onNext }) {
             otpInputRefs.current[index + 1]?.focus();
         }
     };
+
+    useEffect(() => {
+        console.log('⚡️ ~ :9 ~ StepOne ~ state:', state);
+    }, [state]);
 
     const handleOtpKeyDown = (index, e) => {
         if (e.key === 'Backspace') {
@@ -98,20 +108,31 @@ export default function StepOne({ onNext }) {
     };
 
     const socialIcons = [
+        // {
+        //     id: 'google',
+        //     name: 'Google',
+        //     icon: '/assets/icons/social/google.svg',
+        // },
+        // {
+        //     id: 'facebook',
+        //     name: 'Facebook',
+        //     icon: '/assets/icons/social/facebook-fill.svg',
+        // },
         {
-            id: 'google',
-            name: 'Google',
-            icon: '/assets/icons/social/google.svg',
-        },
-        {
-            id: 'facebook',
-            name: 'Facebook',
-            icon: '/assets/icons/social/facebook-fill.svg',
+            id: 'github',
+            name: 'Github',
+            icon: '/assets/icons/social/github.svg',
         },
     ];
 
     const handleSocialSignup = (id) => {
-        console.log('⚡️ ~ :111 ~ handleSocialSignup ~ id:', id);
+        switch (id) {
+            case 'github':
+                handleGithubSignup();
+                break;
+            default:
+                break;
+        }
     };
 
     return (
@@ -197,7 +218,7 @@ export default function StepOne({ onNext }) {
                     {socialIcons.map((icon) => (
                         <button
                             key={icon.id}
-                            className='btn btn-outline  social-icon'
+                            className='btn btn-outline social-icon'
                             onClick={() => handleSocialSignup(icon.id)}
                         >
                             <Image src={icon.icon} width={24} height={24} alt={icon.name} />

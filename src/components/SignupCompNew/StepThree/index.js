@@ -1,9 +1,8 @@
 import getServices from '@/utils/getServices';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { MdClose, MdEdit, MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from 'react-icons/md';
+import { MdClose, MdEdit, MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import {
-    handleUtmParams,
     setDetails,
     useSignup,
     fetchStatesByCountry,
@@ -49,7 +48,6 @@ export default function StepThree({ pageInfo, data }) {
             });
 
             // Handle UTM params
-            handleUtmParams(dispatch);
 
             // Step 1: Fetch countries from API
             setIsLoadingCountries(true);
@@ -300,7 +298,9 @@ export default function StepThree({ pageInfo, data }) {
                         >
                             <h2 className='text-lg font-medium text-gray-600'>Address (Optional)</h2>
                             <MdOutlineKeyboardArrowDown
-                                className={`text-gray-500 text-2xl transition-all duration-100 ${isAddressOpen ? 'rotate-180' : ''}`}
+                                className={`text-gray-500 text-2xl transition-all duration-100 ${
+                                    isAddressOpen ? 'rotate-180' : ''
+                                }`}
                             />
                         </button>
                         <div className={`flex-col gap-3 ${isAddressOpen ? 'flex' : 'hidden'}`}>
