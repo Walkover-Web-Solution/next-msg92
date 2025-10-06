@@ -5,14 +5,34 @@ import Image from 'next/image';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import CalculatePricingWhatsApp from './CalculatePricingWhatsApp/CalculatePricingWhatsApp';
 import styles from './PricingWhatsApp.module.scss';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
 export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
-    const voiceData = pricingData?.voicePricing;
-    const messageData = pricingData?.messagePricing;
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
     const currentCountry = GetCountryDetails({ shortname: pageInfo?.country, type: 'shortname' });
     const [tabtype, setTabtype] = useState('Messages');
+    const [searchText, setSearchText] = useState('');
+
+    let voiceData = pricingData?.voicePricing;
+
+    const messageData = useMemo(() => {
+        let sorted = pricingData?.messagePricing;
+        const index = sorted?.findIndex((item) => item.country_name === currentCountry?.name);
+        if (index > -1) {
+            const [current] = sorted.splice(index, 1);
+            sorted.unshift(current);
+        }
+        return sorted;
+    }, [pricingData, currentCountry]);
+    const filteredMessageData = useMemo(() => {
+        if (!searchText) return messageData;
+        return messageData.filter((item) => item.country_name.toLowerCase().includes(searchText.toLowerCase()));
+    }, [searchText, messageData]);
+
+    const filteredVoiceData = useMemo(() => {
+        if (!searchText) return voiceData;
+        return voiceData.filter((item) => item.country_name.toLowerCase().includes(searchText.toLowerCase()));
+    }, [searchText, voiceData]);
     return (
         <>
             <div className='flex flex-col gap-3 max-w-full w-full overflow-hidden'>
@@ -79,64 +99,88 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                             </div>
                             <p>{pageData?.tax}</p>
                             {pageData?.adds && <p>{pageData?.adds}</p>}
+                            <input
+                                type='text'
+                                placeholder='Search country...'
+                                value={searchText}
+                                onChange={(e) => setSearchText(e.target.value)}
+                                className='border p-2 rounded mb-4 hover'
+                            />
                         </div>
-
                         {messageData && messageData?.length > 0 && (
-                            <div className={styles?.table_cont}>
-                                <table className={styles?.table}>
-                                    <thead>
-                                        <tr className={`${styles.table_row} font-bold border-b`}>
-                                            <th className='border-r text-left'>Market</th>
-                                            <th className='border-r text-left'>Prefix</th>
-                                            <th className='border-r text-left'>Marketing</th>
-                                            <th className='border-r text-left'>Utility</th>
-                                            <th className='text-left'>Authentication</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {messageData?.map((item, index) => {
-                                            if (currentCountry.name === item.country_name) {
-                                                return (
-                                                    <RowComp
-                                                        item={item}
-                                                        index={index}
-                                                        symbol={symbol}
-                                                        key={`current-${index}`}
-                                                    />
-                                                );
-                                            }
-                                        })}
-                                        {messageData?.map((item, index) => {
-                                            if (item.country_name === 'Default') {
-                                                return (
-                                                    <RowComp
-                                                        item={item}
-                                                        index={index}
-                                                        symbol={symbol}
-                                                        key={`default-${index}`}
-                                                    />
-                                                );
-                                            }
-                                        })}
-                                        {messageData?.map((item, index) => {
-                                            if (
-                                                item?.country_name &&
-                                                currentCountry?.name !== item?.country_name &&
-                                                item.country_name !== 'Default'
-                                            ) {
-                                                return (
-                                                    <RowComp
-                                                        item={item}
-                                                        index={index}
-                                                        symbol={symbol}
-                                                        key={`other-${index}`}
-                                                    />
-                                                );
-                                            }
-                                        })}
-                                    </tbody>
-                                </table>
-                            </div>
+                            // <div className={styles?.table_cont}>
+                            //     <table className={styles?.table}>
+                            //         <thead>
+                            //             <tr className={`${styles.table_row} font-bold border-b`}>
+                            //                 <th className='border-r text-left'>Market</th>
+                            //                 <th className='border-r text-left'>Prefix</th>
+                            //                 <th className='border-r text-left'>Marketing</th>
+                            //                 <th className='border-r text-left'>Utility</th>
+                            //                 <th className='text-left'>Authentication</th>
+                            //             </tr>
+                            //         </thead>
+                            //         <tbody>
+                            //             {messageData?.map((item, index) => {
+                            //                 if (currentCountry.name === item.country_name) {
+                            //                     return (
+                            //                         <RowComp
+                            //                             item={item}
+                            //                             index={index}
+                            //                             symbol={symbol}
+                            //                             key={`current-${index}`}
+                            //                         />
+                            //                     );
+                            //                 }
+                            //             })}
+                            //             {messageData?.map((item, index) => {
+                            //                 if (item.country_name === 'Default') {
+                            //                     return (
+                            //                         <RowComp
+                            //                             item={item}
+                            //                             index={index}
+                            //                             symbol={symbol}
+                            //                             key={`default-${index}`}
+                            //                         />
+                            //                     );
+                            //                 }
+                            //             })}
+                            //             {messageData?.map((item, index) => {
+                            //                 if (
+                            //                     item?.country_name &&
+                            //                     currentCountry?.name !== item?.country_name &&
+                            //                     item.country_name !== 'Default'
+                            //                 ) {
+                            //                     return (
+                            //                         <RowComp
+                            //                             item={item}
+                            //                             index={index}
+                            //                             symbol={symbol}
+                            //                             key={`other-${index}`}
+                            //                         />
+                            //                     );
+                            //                 }
+                            //             })}
+                            //         </tbody>
+                            //     </table>
+                            // </div>
+                            <>
+                                <Table
+                                    data={filteredMessageData}
+                                    tabtype={tabtype}
+                                    tabletype={'messages'}
+                                    symbol={symbol}
+                                    className={tabtype === 'Messages' ? '' : 'hidden'}
+                                />
+                            </>
+                        )}
+                        {voiceData && voiceData?.length > 0 && (
+                            <Table
+                                data={filteredVoiceData}
+                                tabtype={tabtype}
+                                tabletype='voice'
+                                symbol={symbol}
+                                className={tabtype === 'Voice' ? '' : 'hidden'}
+                            />
                         )}
                     </div>
                     <ConnectWithTeam
@@ -160,16 +204,40 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
         </>
     );
 }
+function Table({ data, symbol, className, tabletype }) {
+    const isMessageTable = tabletype === 'messages';
 
-function RowComp({ item, index, symbol }) {
-    const formatRate = (rate) => (!isNaN(parseFloat(rate)) ? `${symbol}${parseFloat(rate).toFixed(5)}` : 'N/A');
     return (
-        <tr className={`${styles.table_row}`}>
-            <td className='border-r'>{item?.country_name}</td>
-            <td className='border-r'>{item?.prefix === 0 ? 'N/A' : item?.prefix}</td>
-            <td className='border-r'>{formatRate(item?.marketing_rate)}</td>
-            <td className='border-r'>{formatRate(item?.utility_rate)}</td>
-            <td className=''>{formatRate(item?.authentication_rate)}</td>
-        </tr>
+        <div className='overflow-y-auto max-h-[600px]'>
+            <table className={`table bg-white rounded w-full  ${tabletype} ${className}`}>
+                <thead className='sticky top-0 bg-white z-10'>
+                    <tr className='font-bold text-[16px] text-black'>
+                        <th className='border-r text-left'>Market</th>
+                        <th className='border-r text-left'>Prefix</th>
+                        {isMessageTable && <th className='border-r text-left'>Marketing</th>}
+                        {isMessageTable && <th className='border-r text-left'>Utility</th>}
+                        {isMessageTable && <th className='text-left'>Authentication</th>}
+                        {!isMessageTable && <th className=''>Charges</th>}
+                    </tr>
+                </thead>
+                <tbody>
+                    {data?.map((item, index) => {
+                        const formatRate = (rate) =>
+                            !isNaN(parseFloat(rate)) ? `${symbol}${parseFloat(rate).toFixed(5)}` : 'N/A';
+
+                        return (
+                            <tr className={`${styles.table_row}`} key={index}>
+                                <td className='border-r'>{item?.country_name}</td>
+                                <td className='border-r'>{item?.prefix === 0 ? 'N/A' : item?.prefix}</td>
+                                {isMessageTable && <td className='border-r'>{formatRate(item?.marketing_rate)}</td>}
+                                {isMessageTable && <td className='border-r'>{formatRate(item?.utility_rate)}</td>}
+                                {isMessageTable && <td className=''>{formatRate(item?.authentication_rate)}</td>}
+                                {!isMessageTable && <td className=''>{item?.charges}</td>}
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+        </div>
     );
 }
