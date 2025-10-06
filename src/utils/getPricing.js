@@ -17,7 +17,12 @@ export default async function getPricing(country, page) {
     } else if (page === 'whatsapp') {
         try {
             const response = await axios.get(`${process.env.WHATSAPP_PRICING_URL}/${currencySymbol}`);
-            return response?.data?.data.sort((a, b) => a.country_name.localeCompare(b.country_name));
+            const messagePricing = response?.data?.data.sort((a, b) => a.country_name.localeCompare(b.country_name));
+            const voicePricing = getWhatsAppVoicePricing(currencySymbol) || [];
+            return {
+                messagePricing: messagePricing || [],
+                voicePricing: voicePricing || [],
+            };
         } catch (error) {
             console.error('There was an error fetching the data!', error);
         }
@@ -72,4 +77,14 @@ export function getSimplifiedPlans(currency, plans) {
     });
 
     return simplifiedPlans || [];
+}
+
+function getWhatsAppVoicePricing(currency) {
+    try {
+        const data = require(`@/data/whatsappVoicePricing.json`);
+        const voicePricing = data[currency?.toLowerCase() || 'usd'];
+        return voicePricing;
+    } catch (error) {
+        console.error('There was an error fetching the data!', error);
+    }
 }

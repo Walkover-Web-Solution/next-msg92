@@ -5,14 +5,38 @@ import Image from 'next/image';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import CalculatePricingWhatsApp from './CalculatePricingWhatsApp/CalculatePricingWhatsApp';
 import styles from './PricingWhatsApp.module.scss';
+import { useState } from 'react';
 
 export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
+    const voiceData = pricingData?.voicePricing;
+    const messageData = pricingData?.messagePricing;
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
     const currentCountry = GetCountryDetails({ shortname: pageInfo?.country, type: 'shortname' });
+    const [tabtype, setTabtype] = useState('Messages');
     return (
         <>
             <div className='flex flex-col gap-3 max-w-full w-full overflow-hidden'>
-                <h1 className='text-2xl md:text-3xl font-semibold capitalize'>WhatsApp Pricing</h1>
+                <h1 className='text-2xl md:text-3xl font-semibold capitalize'>WhatsApppp Pricing</h1>
+                <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
+                    <span
+                        role='tab'
+                        className={`tab ${tabtype === 'Messages' && 'tab-active'}`}
+                        onClick={() => {
+                            setTabtype('Messages');
+                        }}
+                    >
+                        Messages
+                    </span>
+                    <span
+                        role='tab'
+                        className={`tab ${tabtype === 'Voice' && 'tab-active'}`}
+                        onClick={() => {
+                            setTabtype('Voice');
+                        }}
+                    >
+                        Voice
+                    </span>
+                </div>
                 <div className='flex flex-col w-full gap-8'>
                     <div className='flex flex-col-reverse lg:flex-row justify-between w-full sm:p- lg:p-8 sm:rounded h-fit sm:bg-white'>
                         <div className='flex flex-col gap-2 sm:gap-4'>
@@ -42,7 +66,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                         <div className='flex flex-col gap-2'>
                             <div className='flex flex-col md:flex-row w-full justify-between ms:items-center gap-1'>
                                 {pageData?.heading && <h2 className='text-2xl font-bold '>{pageData?.heading} </h2>}
-                                {pricingData && pricingData?.length > 0 && (
+                                {messageData && messageData?.length > 0 && (
                                     <button
                                         onClick={() =>
                                             document.getElementById('calculate_whatsapp_pricing').showModal()
@@ -57,7 +81,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                             {pageData?.adds && <p>{pageData?.adds}</p>}
                         </div>
 
-                        {pricingData && pricingData?.length > 0 && (
+                        {messageData && messageData?.length > 0 && (
                             <div className={styles?.table_cont}>
                                 <table className={styles?.table}>
                                     <thead>
@@ -70,7 +94,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {pricingData?.map((item, index) => {
+                                        {messageData?.map((item, index) => {
                                             if (currentCountry.name === item.country_name) {
                                                 return (
                                                     <RowComp
@@ -82,7 +106,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                                                 );
                                             }
                                         })}
-                                        {pricingData?.map((item, index) => {
+                                        {messageData?.map((item, index) => {
                                             if (item.country_name === 'Default') {
                                                 return (
                                                     <RowComp
@@ -94,7 +118,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                                                 );
                                             }
                                         })}
-                                        {pricingData?.map((item, index) => {
+                                        {messageData?.map((item, index) => {
                                             if (
                                                 item?.country_name &&
                                                 currentCountry?.name !== item?.country_name &&
@@ -123,10 +147,10 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                     />
                 </div>
             </div>
-            {pricingData && pricingData?.length > 0 && (
+            {messageData && messageData?.length > 0 && (
                 <dialog id='calculate_whatsapp_pricing' className='modal'>
                     <CalculatePricingWhatsApp
-                        plans={pricingData}
+                        plans={messageData}
                         currentCountry={currentCountry}
                         currency={currency}
                         symbol={symbol}
