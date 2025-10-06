@@ -8,14 +8,6 @@ import StepThree from '../StepThree';
 function SignupSteps({ pageInfo, data }) {
     const { state, dispatch } = useSignup();
 
-    // To set the step to a specific value
-    const setStep = (stepNumber) => {
-        dispatch({
-            type: 'SET_ACTIVE_STEP',
-            payload: stepNumber,
-        });
-    };
-
     useEffect(() => {
         otpWidgetSetup(
             dispatch,
@@ -31,11 +23,9 @@ function SignupSteps({ pageInfo, data }) {
         <div className='flex h-screen w-full'>
             <div className='h-full w-1/3 min-w-[320px] max-w-full bg-secondary'></div>
             <div className='w-full p-12'>
-                {state.activeStep === 1 && <StepOne pageInfo={pageInfo} onNext={() => setStep(2)} />}
-                {state.activeStep === 2 && (
-                    <StepTwo pageInfo={pageInfo} onNext={() => setStep(3)} onBack={() => setStep(1)} />
-                )}
-                {state.activeStep === 3 && <StepThree pageInfo={pageInfo} onBack={() => setStep(2)} data={data} />}
+                {state.activeStep === 1 && <StepOne pageInfo={pageInfo} />}
+                {state.activeStep === 2 && <StepTwo pageInfo={pageInfo} />}
+                {state.activeStep === 3 && <StepThree pageInfo={pageInfo} />}
             </div>
         </div>
     );
