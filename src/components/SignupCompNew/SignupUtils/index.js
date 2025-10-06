@@ -486,7 +486,7 @@ export function verifyOtp(otp, requestId, notByEmail, dispatch, onSuccess, onErr
 
 export function handleGithubSignup() {
     const randomState = Math.floor(100000000 + Math.random() * 900000000);
-    window.location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/github-auth-token?githubsignup=true&state=${randomState}`;
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&allow_signup=true&scope=user&redirect_uri=${process.env.REDIRECT_URL}/github-auth-token?githubsignup=true&state=${randomState}&absignup=a`;
 }
 
 export function validateSignUp(dispatch, state) {
