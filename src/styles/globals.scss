@@ -153,3 +153,26 @@ input[type='number'] {
         }
     }
 }
+
+.toast {
+    @apply z-[10001] transition-all duration-300;
+    .alert {
+        @apply rounded-lg px-6 py-3 shadow-md border-none text-lg w-fit max-w-[400px];
+        &.alert-danger {
+            @apply text-white;
+            background: linear-gradient(90deg, #ff4d4f 0%, #f53100 100%);
+        }
+        &.alert-success {
+            @apply bg-green-500 text-white;
+        }
+        &.alert-info {
+            @apply bg-blue-500 text-white;
+        }
+    }
+    &.toast-hidded {
+        right: calc(-100% - 12px) !important;
+    }
+    &.toast-shown {
+        right: 12px !important;
+    }
+}

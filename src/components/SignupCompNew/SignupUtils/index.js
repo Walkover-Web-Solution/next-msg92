@@ -10,8 +10,8 @@ const initialState = {
     isLoading: false,
     source: null,
     session: null,
+    error: null,
     otpSent: false,
-    otpSendFailed: false,
     emailIdentifier: null,
     emailRequestId: null,
     emailToken: null,
@@ -450,6 +450,7 @@ export function verifyOtp(otp, requestId, notByEmail, dispatch, onSuccess, onErr
     window.verifyOtp(
         `${otp}`,
         (data) => {
+            console.log('⚡️ ~ :453 ~ verifyOtp ~ data:', data);
             dispatch({ type: 'SET_LOADING', payload: false });
             if (data?.type === 'success') {
                 if (!notByEmail) {
@@ -490,10 +491,22 @@ export function handleGithubSignup() {
 }
 
 export function validateSignUp(dispatch, state) {
+    // Add null/undefined checks to prevent TypeError
+    if (!state || typeof state !== 'object') {
+        console.error('validateSignUp: Invalid state parameter provided');
+        return;
+    }
+
+    if (!dispatch || typeof dispatch !== 'function') {
+        console.error('validateSignUp: Invalid dispatch parameter provided');
+        return;
+    }
+
     const url =
         process.env.API_BASE_URL +
         '/api/v5/nexus/' +
         (state?.githubCode ? 'validateGithubSignUp' : 'validateEmailSignUp');
+
     const payload = {
         session: state?.session,
         emailToken: state?.emailToken,
@@ -512,56 +525,21 @@ export function validateSignUp(dispatch, state) {
         adposition: state?.adposition,
         reference: state?.reference,
     };
-    axios.post(url, payload).then((response) => {
-        if (response?.data?.status === 'success') {
-            dispatch({ type: 'SET_SESSION', payload: { session: response?.data?.sessionDetails?.PHPSESSID } });
-        }
-    });
+
+    axios
+        .post(url, payload)
+        .then((response) => {
+            console.log('⚡️ ~ :517 ~ validateSignUp ~ response:', response);
+            if (response?.data?.status === 'success') {
+                dispatch({ type: 'SET_SESSION', payload: { session: response?.data?.sessionDetails?.PHPSESSID } });
+            }
+        })
+        .catch((error) => {
+            console.error('Error validating signup:', error);
+            // You might want to dispatch an error action here
+            // dispatch({ type: 'SET_SIGNUP_ERROR', payload: error.message });
+        });
 }
-
-// export function validateEmailSignUp(dispatch, state) {
-//     const url = process.env.API_BASE_URL + '/api/v5/nexus/validateEmailSignUp';
-//     const payload = {
-//         session: state?.session,
-//         emailToken: state?.emailToken,
-//         mobileToken: state?.mobileToken,
-//         source: state?.source,
-//         utm_term: state?.utm_term,
-//         utm_medium: state?.utm_medium,
-//         utm_source: state?.utm_source,
-//         utm_campaign: state?.utm_campaign,
-//         utm_content: state?.utm_content,
-//         utm_matchtype: state?.utm_matchtype,
-//         ad: state?.ad,
-//         adposition: state?.adposition,
-//         reference: state?.reference,
-//     };
-//     axios
-//         .post(url, payload)
-//         .then((response) => {
-//             if (response?.data?.status === 'success') {
-//                 dispatch({
-//                     type: 'SET_SESSION',
-//                     payload: {
-//                         session: response?.data?.sessionDetails?.PHPSESSID,
-//                         message: 'Email verified successfully.',
-//                     },
-//                 });
-//             }
-//         })
-//         .catch((error) => {
-//             console.log('Error validating GitHub signup:', error);
-//         });
-// }
-
-// export function validateGithubSignUp(dispatch, state) {
-//     console.log('⚡️ ~ :533 ~ validateGithubSignUp ~ state:', state);
-//     const url = process.env.API_BASE_URL + '/api/v5/nexus/validateGithubSignUp';
-//     const payload = {
-//         session: state?.session,
-//         githubToken: state?.githubToken,
-//     };
-// }
 
 export function finalRegistration(dispatch, state) {
     const url = process.env.API_BASE_URL + '/api/v5/nexus/finalRegister';
