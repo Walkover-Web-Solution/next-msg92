@@ -84,7 +84,16 @@ function reducer(state, action) {
             return { ...state, isLoading: action.payload };
 
         case 'SET_OTP_ERROR':
-            return { ...state, isLoading: false, otpSendFailed: true };
+            return { ...state, isLoading: false, error: 'Failed to send OTP' };
+
+        case 'SET_ERROR':
+            return { ...state, isLoading: false, error: action.payload };
+
+        case 'SET_OTP_VERIFICATION_ERROR':
+            return { ...state, isLoading: false, error: 'OTP verification failed' };
+
+        case 'CLEAR_ERROR':
+            return { ...state, error: null };
 
         case 'SET_EMAIL_OTP_SUCCESS':
             return {
@@ -215,34 +224,51 @@ export function useSignup() {
 }
 
 export function setInitialStates(dispatch, state, urlParams) {
-    const githubSignup = urlParams?.githubsignup;
-    const githubCode = urlParams?.code;
-    const githubState = urlParams?.state;
+    try {
+        if (!dispatch || typeof dispatch !== 'function') {
+            console.error('setInitialStates: Invalid dispatch parameter provided');
+            return;
+        }
 
-    dispatch({
-        type: 'SET_INITIAL_STATES',
-        payload: {
-            ...state,
-            githubSignup: githubSignup,
-            githubCode: githubCode,
-            githubState: githubState,
-            source: urlParams?.source,
-            utm_term: urlParams?.utm_term,
-            utm_medium: urlParams?.utm_medium,
-            utm_source: urlParams?.utm_source,
-            utm_campaign: urlParams?.utm_campaign,
-            utm_content: urlParams?.utm_content,
-            utm_matchtype: urlParams?.utm_matchtype,
-            ad: urlParams?.ad,
-            adposition: urlParams?.adposition,
-            reference: urlParams?.reference,
-        },
-    });
-    if (githubCode && githubState) {
+        if (!state || typeof state !== 'object') {
+            console.error('setInitialStates: Invalid state parameter provided');
+            return;
+        }
+
+        const githubSignup = urlParams?.githubsignup;
+        const githubCode = urlParams?.code;
+        const githubState = urlParams?.state;
+
         dispatch({
-            type: 'SET_ACTIVE_STEP',
-            payload: 2,
+            type: 'SET_INITIAL_STATES',
+            payload: {
+                ...state,
+                githubSignup: githubSignup,
+                githubCode: githubCode,
+                githubState: githubState,
+                source: urlParams?.source,
+                utm_term: urlParams?.utm_term,
+                utm_medium: urlParams?.utm_medium,
+                utm_source: urlParams?.utm_source,
+                utm_campaign: urlParams?.utm_campaign,
+                utm_content: urlParams?.utm_content,
+                utm_matchtype: urlParams?.utm_matchtype,
+                ad: urlParams?.ad,
+                adposition: urlParams?.adposition,
+                reference: urlParams?.reference,
+            },
         });
+        if (githubCode && githubState) {
+            dispatch({
+                type: 'SET_ACTIVE_STEP',
+                payload: 2,
+            });
+        }
+    } catch (error) {
+        console.error('Error in setInitialStates:', error);
+        if (dispatch) {
+            dispatch({ type: 'SET_ERROR', payload: 'Failed to initialize signup state' });
+        }
     }
 }
 
@@ -307,18 +333,27 @@ export function otpWidgetSetup(dispatch, onSuccess, onError) {
                         }
                     } catch (error) {
                         console.error('Error processing widget data:', error);
+                        if (dispatch) {
+                            dispatch({ type: 'SET_ERROR', payload: 'Failed to process widget data' });
+                        }
                         if (onError) onError(error);
                         clearInterval(widgetDataInterval);
                     }
                 }, 1000);
             } catch (error) {
                 console.error('Error initializing OTP widget:', error);
+                if (dispatch) {
+                    dispatch({ type: 'SET_ERROR', payload: 'Failed to initialize OTP widget' });
+                }
                 if (onError) onError(error);
             }
         };
 
         otpWidgetScript.onerror = (error) => {
             console.error('Error loading OTP widget script:', error);
+            if (dispatch) {
+                dispatch({ type: 'SET_ERROR', payload: 'Failed to load OTP widget script' });
+            }
             if (onError) onError(error);
         };
 
@@ -391,14 +426,22 @@ export default function checkSession() {
             body: JSON.stringify(payload),
         };
         fetch(url, requestOptions)
-            .then((response) => response?.json())
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
             .then((result) => {
                 if (result?.status === 'success') {
                     window.location.href = process.env.REDIRECT_URL + `/api/nexusRedirection.php?session=${session}`;
                 }
+            })
+            .catch((error) => {
+                console.error('Error checking session:', error);
             });
     } catch (error) {
-        console.log('No Session Found');
+        console.error('Error in checkSession:', error);
     }
 }
 
@@ -439,8 +482,9 @@ export function sendOtp(identifier, notByEmail, dispatch, showToast = console.er
             }
         },
         (error) => {
-            showToast(error?.message || 'Failed to send OTP');
-            dispatch({ type: 'SET_OTP_ERROR' });
+            const errorMessage = error?.message || 'Failed to send OTP';
+            showToast(errorMessage);
+            dispatch({ type: 'SET_ERROR', payload: errorMessage });
         }
     );
 }
@@ -477,9 +521,10 @@ export function verifyOtp(otp, requestId, notByEmail, dispatch, onSuccess, onErr
             }
         },
         (error) => {
+            const errorMessage = error?.message || 'OTP verification failed';
             dispatch({ type: 'SET_LOADING', payload: false });
-            dispatch({ type: 'SET_OTP_VERIFICATION_ERROR' });
-            onError(error?.message || 'OTP verification failed');
+            dispatch({ type: 'SET_ERROR', payload: errorMessage });
+            onError(errorMessage);
         },
         requestId
     );
@@ -532,12 +577,16 @@ export function validateSignUp(dispatch, state) {
             console.log('⚡️ ~ :517 ~ validateSignUp ~ response:', response);
             if (response?.data?.status === 'success') {
                 dispatch({ type: 'SET_SESSION', payload: { session: response?.data?.sessionDetails?.PHPSESSID } });
+            } else {
+                dispatch({ type: 'SET_ERROR', payload: response?.data?.errors || 'Failed to validate signup' });
             }
         })
         .catch((error) => {
             console.error('Error validating signup:', error);
-            // You might want to dispatch an error action here
-            // dispatch({ type: 'SET_SIGNUP_ERROR', payload: error.message });
+            dispatch({
+                type: 'SET_ERROR',
+                payload: error?.response?.data?.message || error?.message || 'Failed to validate signup',
+            });
         });
 }
 
@@ -563,54 +612,75 @@ export function finalRegistration(dispatch, state) {
             }
         })
         .catch((error) => {
-            console.log('Error final registration:', error);
+            console.error('Error final registration:', error);
+            dispatch({
+                type: 'SET_ERROR',
+                payload: error?.response?.data?.message || error?.message || 'Failed to complete registration',
+            });
         });
 }
 
 export function setDetails(type, dispatch, identifier) {
-    if (type === 'userDetails') {
-        const firstName = identifier.split(' ')[0];
-        const lastName = identifier.split(' ').slice(1).join(' ');
-        dispatch({
-            type: 'SET_USER_DETAILS',
-            payload: {
-                firstName,
-                lastName,
-            },
-        });
-    } else if (type === 'companyName') {
-        dispatch({
-            type: 'SET_COMPANY_NAME',
-            payload: {
-                companyName: identifier,
-            },
-        });
-    } else if (type === 'phone') {
-        dispatch({
-            type: 'SET_MOBILE',
-            payload: {
-                phone: identifier,
-            },
-        });
-    } else if (type === 'services') {
-        dispatch({
-            type: 'SET_SERVICES',
-            payload: {
-                services: identifier,
-            },
-        });
-    } else if (type === 'source') {
-        dispatch({
-            type: 'SET_SOURCE',
-            payload: {
-                source: identifier,
-            },
-        });
-    } else if (type === 'addressDetails') {
-        dispatch({
-            type: 'SET_ADDRESS_DETAILS',
-            payload: identifier,
-        });
+    try {
+        if (!dispatch || typeof dispatch !== 'function') {
+            console.error('setDetails: Invalid dispatch parameter provided');
+            return;
+        }
+
+        if (!type || !identifier) {
+            console.error('setDetails: Missing required parameters');
+            return;
+        }
+
+        if (type === 'userDetails') {
+            const firstName = identifier.split(' ')[0];
+            const lastName = identifier.split(' ').slice(1).join(' ');
+            dispatch({
+                type: 'SET_USER_DETAILS',
+                payload: {
+                    firstName,
+                    lastName,
+                },
+            });
+        } else if (type === 'companyName') {
+            dispatch({
+                type: 'SET_COMPANY_NAME',
+                payload: {
+                    companyName: identifier,
+                },
+            });
+        } else if (type === 'phone') {
+            dispatch({
+                type: 'SET_MOBILE',
+                payload: {
+                    phone: identifier,
+                },
+            });
+        } else if (type === 'services') {
+            dispatch({
+                type: 'SET_SERVICES',
+                payload: {
+                    services: identifier,
+                },
+            });
+        } else if (type === 'source') {
+            dispatch({
+                type: 'SET_SOURCE',
+                payload: {
+                    source: identifier,
+                },
+            });
+        } else if (type === 'addressDetails') {
+            dispatch({
+                type: 'SET_ADDRESS_DETAILS',
+                payload: identifier,
+            });
+        }
+    } catch (error) {
+        console.error('Error in setDetails:', error);
+        if (dispatch) {
+            dispatch({ type: 'SET_ERROR', payload: 'Failed to set user details' });
+        }
     }
 }
 
@@ -654,10 +724,20 @@ export function handleUtmParams(dispatch, urlParams) {
 
 // API functions for location data
 export async function fetchCountries() {
-    const response = await fetch(`${process.env.API_BASE_URL}/api/v5/web/getCountries`, {
-        method: 'GET',
-    });
-    return response.json();
+    try {
+        const response = await fetch(`${process.env.API_BASE_URL}/api/v5/web/getCountries`, {
+            method: 'GET',
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        return response.json();
+    } catch (error) {
+        console.error('Error fetching countries:', error);
+        throw error;
+    }
 }
 
 export async function fetchStatesByCountry(countryId) {

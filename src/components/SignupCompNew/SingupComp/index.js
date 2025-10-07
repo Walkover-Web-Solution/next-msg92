@@ -24,7 +24,7 @@ function SignupSteps({ pageInfo, data }) {
         <div className='flex h-screen w-full'>
             <div className='h-full w-1/3 min-w-[320px] max-w-full bg-secondary'></div>
             <div className='w-full p-12'>
-                <Toast message={state.error} type='danger' />
+                <Toast type='danger' />
                 {state.activeStep === 1 && <StepOne pageInfo={pageInfo} />}
                 {state.activeStep === 2 && <StepTwo pageInfo={pageInfo} />}
                 {state.activeStep === 3 && <StepThree pageInfo={pageInfo} />}
