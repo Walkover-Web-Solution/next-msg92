@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const initialState = {
     //Temporary Data
-    activeStep: 1,
+    activeStep: 3,
     widgetData: null,
     allowedRetry: null,
     isLoading: false,
@@ -41,6 +41,7 @@ const initialState = {
         country: null,
         service: [],
     },
+    invites: [],
     acceptInviteForCompanies: [],
     rejectInviteForCompanies: [],
     utm_term: null,
@@ -577,6 +578,7 @@ export function validateSignUp(dispatch, state) {
             console.log('⚡️ ~ :517 ~ validateSignUp ~ response:', response);
             if (response?.data?.status === 'success') {
                 dispatch({ type: 'SET_SESSION', payload: { session: response?.data?.sessionDetails?.PHPSESSID } });
+                dispatch({ type: 'SET_INVITES', payload: response?.data?.data?.invitations });
             } else {
                 dispatch({ type: 'SET_ERROR', payload: response?.data?.errors || 'Failed to validate signup' });
             }
