@@ -79,7 +79,11 @@
                     ]
                 },
 
-                "img": "/assets/global/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg"
+                "img": "/assets/global/whatsapp/whatsapp-revolutionize-customer-support-with-whatsapp-chatbot.svg",
+                "button": {
+                    "name": "ChatBot",
+                    "link": "/chatbot"
+                }
             },
             {
                 "name": "Click-to-WhatsApp Ads: Drive Engagement with Zero Costs",

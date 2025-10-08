@@ -23,7 +23,8 @@
         "textlocal-alternative",
         "compare",
         "signup",
-        "startups-form"
+        "startups-form",
+        "chatbot"
     ],
     "products": [
         "hello",

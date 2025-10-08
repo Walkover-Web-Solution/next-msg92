@@ -79,8 +79,8 @@
                     ]
                 },
                 "button": {
-                    "name": "Subukan ang WhatsApp Chatbot",
-                    "link": "https://msg91.com/demochatbot"
+                    "name": "ChatBot",
+                    "link": "/chatbot"
                 },
                 "img": "/assets/fil_ph/whatsapp/whatsapp_chatbot.webp"
             },

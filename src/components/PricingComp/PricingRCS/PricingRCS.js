@@ -6,7 +6,7 @@ import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import { InlineWidget } from 'react-calendly';
 import CalculatePricingRCS from './CalculatePricingRCS/CalculatePricingRCS';
 
-export default function PricingRCS({ country, data, pageInfo }) {
+export default function PricingRCS({ country, pricingData, pageData }) {
     const { currency, symbol } = GetCurrencySymbol(country);
     const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
     const [loading, setLoading] = useState(true);
@@ -149,7 +149,7 @@ export default function PricingRCS({ country, data, pageInfo }) {
                             </div>
                         </>
                     )}
-                    <ConnectWithTeam product={'RCS'} data={data?.connectComp} href={'rcs'} isPlan={false} />
+                    <ConnectWithTeam product={'RCS'} pageData={pageData?.connectComp} href={'rcs'} isPlan={false} />
                 </div>
             </div>
 

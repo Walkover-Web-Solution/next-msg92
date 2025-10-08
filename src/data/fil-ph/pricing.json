@@ -1,69 +1,65 @@
 {
-    "HeadComp": {
-        "title": "Pinakamahusay na Cloud Communication Platform para sa Negosyo | MSG91",
-        "description": "Tuklasin ang cloud communication platform ng MSG91 upang maisama ang boses, video, at pagmemensahe sa iyong negosyo. Humiling ng demo at baguhin ang iyong komunikasyon."
+    "products": {
+        "applications": [
+            {
+                "name": "Hello",
+                "slug": "hello",
+                "description": "Contact Center",
+                "icon": "/assets/icons/products/hello.svg"
+            },
+            {
+                "name": "Campaign",
+                "slug": "campaign",
+                "description": "Automation batay sa kaganapan",
+                "icon": "/assets/icons/products/campaign.svg"
+            },
+            {
+                "name": "Segmento",
+                "slug": "segmento",
+                "description": "Pamamahala ng contact",
+                "icon": "/assets/icons/products/segmento.svg"
+            },
+            {
+                "name": "OTP",
+                "slug": "otpwidget",
+                "description": "OTP widget SDK",
+                "icon": "/assets/icons/products/otp.svg"
+            }
+        ],
+        "channels": [
+            {
+                "name": "SMS",
+                "slug": "sms",
+                "icon": "/assets/icons/products/sms.svg"
+            },
+            {
+                "name": "SendOTP",
+                "slug": "otp",
+                "icon": "/assets/icons/products/otp.svg"
+            },
+            {
+                "name": "Email",
+                "slug": "email",
+                "icon": "/assets/icons/products/email.svg"
+            },
+            {
+                "name": "WhatsApp",
+                "slug": "whatsapp",
+                "icon": "/assets/icons/products/whatsapp.svg"
+            },
+            {
+                "name": "Voice",
+                "slug": "voice",
+                "icon": "/assets/icons/products/voice.svg"
+            },
+            {
+                "name": "RCS",
+                "slug": "rcs",
+                "icon": "/assets/icons/products/rcs.svg"
+            }
+        ]
     },
-    "PricingComp": {
-        "products": {
-            "applications": [
-                {
-                    "name": "Hello",
-                    "slug": "hello",
-                    "description": "Contact Center",
-                    "icon": "/assets/icons/products/hello.svg"
-                },
-                {
-                    "name": "Campaign",
-                    "slug": "campaign",
-                    "description": "Automation batay sa kaganapan",
-                    "icon": "/assets/icons/products/campaign.svg"
-                },
-                {
-                    "name": "Segmento",
-                    "slug": "segmento",
-                    "description": "Pamamahala ng contact",
-                    "icon": "/assets/icons/products/segmento.svg"
-                },
-                {
-                    "name": "OTP",
-                    "slug": "otpwidget",
-                    "description": "OTP widget SDK",
-                    "icon": "/assets/icons/products/otp.svg"
-                }
-            ],
-            "channels": [
-                {
-                    "name": "SMS",
-                    "slug": "sms",
-                    "icon": "/assets/icons/products/sms.svg"
-                },
-                {
-                    "name": "SendOTP",
-                    "slug": "otp",
-                    "icon": "/assets/icons/products/otp.svg"
-                },
-                {
-                    "name": "Email",
-                    "slug": "email",
-                    "icon": "/assets/icons/products/email.svg"
-                },
-                {
-                    "name": "WhatsApp",
-                    "slug": "whatsapp",
-                    "icon": "/assets/icons/products/whatsapp.svg"
-                },
-                {
-                    "name": "Voice",
-                    "slug": "voice",
-                    "icon": "/assets/icons/products/voice.svg"
-                },
-                {
-                    "name": "RCS",
-                    "slug": "rcs",
-                    "icon": "/assets/icons/products/rcs.svg"
-                }
-            ]
-        },
+    "pageData": {
         "hello": {
             "HeadComp": {
                 "title": "Presyo ng Hello sa Pilipinas | MSG91-Pilipinas",
