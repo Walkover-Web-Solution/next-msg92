@@ -6,7 +6,7 @@ import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import CalculatePricingWhatsApp from './CalculatePricingWhatsApp/CalculatePricingWhatsApp';
 import styles from './PricingWhatsApp.module.scss';
 import { useState, useMemo, useEffect } from 'react';
-import { MdArrowForward, MdCircle } from 'react-icons/md';
+import { MdArrowForward } from 'react-icons/md';
 
 export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
@@ -29,7 +29,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
     useEffect(() => {
         const handler = setTimeout(() => {
             setDebouncedSearch(searchText);
-        }, 1000);
+        }, 500);
         return () => clearTimeout(handler);
     }, [searchText]);
 
@@ -133,61 +133,6 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                                 className='border p-2 rounded mb-4 w-full max-w-[300px] hover'
                             />
                             {messageData && messageData?.length > 0 && (
-                                // <div className={styles?.table_cont}>
-                                //     <table className={styles?.table}>
-                                //         <thead>
-                                //             <tr className={`${styles.table_row} font-bold border-b`}>
-                                //                 <th className='border-r text-left'>Market</th>
-                                //                 <th className='border-r text-left'>Prefix</th>
-                                //                 <th className='border-r text-left'>Marketing</th>
-                                //                 <th className='border-r text-left'>Utility</th>
-                                //                 <th className='text-left'>Authentication</th>
-                                //             </tr>
-                                //         </thead>
-                                //         <tbody>
-                                //             {messageData?.map((item, index) => {
-                                //                 if (currentCountry.name === item.country_name) {
-                                //                     return (
-                                //                         <RowComp
-                                //                             item={item}
-                                //                             index={index}
-                                //                             symbol={symbol}
-                                //                             key={`current-${index}`}
-                                //                         />
-                                //                     );
-                                //                 }
-                                //             })}
-                                //             {messageData?.map((item, index) => {
-                                //                 if (item.country_name === 'Default') {
-                                //                     return (
-                                //                         <RowComp
-                                //                             item={item}
-                                //                             index={index}
-                                //                             symbol={symbol}
-                                //                             key={`default-${index}`}
-                                //                         />
-                                //                     );
-                                //                 }
-                                //             })}
-                                //             {messageData?.map((item, index) => {
-                                //                 if (
-                                //                     item?.country_name &&
-                                //                     currentCountry?.name !== item?.country_name &&
-                                //                     item.country_name !== 'Default'
-                                //                 ) {
-                                //                     return (
-                                //                         <RowComp
-                                //                             item={item}
-                                //                             index={index}
-                                //                             symbol={symbol}
-                                //                             key={`other-${index}`}
-                                //                         />
-                                //                     );
-                                //                 }
-                                //             })}
-                                //         </tbody>
-                                //     </table>
-                                // </div>
                                 <>
                                     <Table
                                         data={filteredMessageData}
