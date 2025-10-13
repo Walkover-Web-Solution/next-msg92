@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const initialState = {
     //Temporary Data
-    activeStep: 3,
+    activeStep: 1,
     widgetData: null,
     allowedRetry: null,
     isLoading: false,
@@ -449,10 +449,12 @@ export default function checkSession() {
 // OTP sending function for functional components
 export function sendOtp(identifier, notByEmail, dispatch, showToast = console.error) {
     if (!new RegExp(EMAIL_REGEX).test(identifier) && !notByEmail) {
+        dispatch({ type: 'SET_ERROR', payload: 'Invalid email address.' });
         showToast('Invalid email address.');
         return;
     }
     if (!new RegExp(MOBILE_REGEX).test(identifier) && notByEmail) {
+        dispatch({ type: 'SET_ERROR', payload: 'Invalid mobile number.' });
         showToast('Invalid mobile number.');
         return;
     }

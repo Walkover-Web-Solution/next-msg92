@@ -8,6 +8,7 @@ export default function StepOne() {
     const { state, dispatch } = useSignup();
 
     const [email, setEmail] = useState('');
+    const emailInputRef = useRef(null);
     const otpInputRefs = useRef([]);
     const otpLength = state.widgetData?.otpLength || 6; // Default to 6 if not available
     const [otp, setOtp] = useState(() => new Array(otpLength || 6).fill(''));
@@ -68,6 +69,7 @@ export default function StepOne() {
 
     const handleSendOtp = () => {
         if (!email) {
+            dispatch({ type: 'SET_ERROR', payload: 'Please enter email' });
             console.error('Please enter email');
             return;
         }
@@ -106,6 +108,31 @@ export default function StepOne() {
             }
         );
     };
+
+    // Focus on first OTP input when OTP section appears
+    useEffect(() => {
+        if (otpSent && otpInputRefs.current[0]) {
+            otpInputRefs.current[0].focus();
+        }
+    }, [otpSent]);
+
+    // Focus on email input when component first mounts
+    useEffect(() => {
+        setTimeout(() => {
+            if (emailInputRef.current && !otpSent) {
+                emailInputRef.current.focus();
+            }
+        }, 100);
+    }, []);
+
+    // Focus on email input when returning from OTP view
+    useEffect(() => {
+        if (!otpSent && emailInputRef.current) {
+            setTimeout(() => {
+                emailInputRef.current?.focus();
+            }, 100);
+        }
+    }, [otpSent]);
 
     const socialIcons = [
         // {
@@ -189,8 +216,9 @@ export default function StepOne() {
                     <p className='text-gray-500'>Create account using Email ID</p>
                     <div className='flex items-center gap-4'>
                         <input
+                            ref={emailInputRef}
                             maxLength={244}
-                            className='input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] outline-none focus-within:outline-none'
+                            className='input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] outline-none focus-within:outline'
                             name='email'
                             type='email'
                             required

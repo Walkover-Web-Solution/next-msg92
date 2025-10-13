@@ -27,7 +27,7 @@ function SignupSteps({ pageInfo, data }) {
                 <Toast type='danger' />
                 {state.activeStep === 1 && <StepOne pageInfo={pageInfo} />}
                 {state.activeStep === 2 && <StepTwo pageInfo={pageInfo} />}
-                {state.activeStep === 3 && <StepThree pageInfo={pageInfo} />}
+                {state.activeStep === 3 && <StepThree pageInfo={pageInfo} data={data} />}
             </div>
         </div>
     );
