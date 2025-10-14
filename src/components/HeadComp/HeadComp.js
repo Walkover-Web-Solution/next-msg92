@@ -3,7 +3,6 @@ import Script from 'next/script';
 import HreflangTagComp from './HreflangTagComp';
 
 export default function HeadComp({ data, pageInfo }) {
-    console.log('⚡️ ~ :6 ~ HeadComp ~ pageInfo:', pageInfo);
     const isEcommerceStore = pageInfo?.page === 'ecommerce-store';
 
     return (
