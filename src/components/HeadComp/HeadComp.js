@@ -7,17 +7,21 @@ export default function HeadComp({ data, pageInfo }) {
 
     return (
         <>
-            <Script
-                strategy='afterInteractive'
-                dangerouslySetInnerHTML={{
-                    __html: `var helloConfig = {
+            {pageInfo?.page !== 'demochatbot' && (
+                <>
+                    <Script
+                        strategy='afterInteractive'
+                        dangerouslySetInnerHTML={{
+                            __html: `var helloConfig = {
               widgetToken: '${isEcommerceStore ? process.env.ECOMMERCE_WIDGET_TOKEN : process.env.CHAT_WIDGET_TOKEN}',
               hide_launcher: false
             };`,
-                }}
-            />
+                        }}
+                    />
 
-            <Script onload='initChatWidget(helloConfig, 0)' src={`${process.env.CHAT_WIDGET_URL}`} />
+                    <Script onload='initChatWidget(helloConfig, 0)' src={`${process.env.CHAT_WIDGET_URL}`} />
+                </>
+            )}
 
             <Script
                 strategy='afterInteractive'

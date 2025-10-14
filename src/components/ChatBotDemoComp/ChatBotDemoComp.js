@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import style from './ChatBotDemoComp.module.scss';
 import ChatBotDemoPagination from './ChatBotDemoPagination/ChatBotDemoPagination';
+import Script from 'next/script';
 
 export default function ChatBotDemoComp({ templateList, totalPages, currentPage }) {
     const [selectedTemplate, setSelectedTemplate] = useState({});
-    const [iframeLoading, setIframeLoading] = useState(true);
 
     const handlePagination = (page) => {
         const navigateToPage = `/demochatbot?page=${page}`;
@@ -16,9 +16,8 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
     };
 
     const handleTemplateSelect = (template) => {
-        if (!iframeLoading && template !== selectedTemplate) {
+        if (template !== selectedTemplate) {
             setSelectedTemplate(template);
-            setIframeLoading(true);
         }
     };
     const handleTemplateSelectDropDown = (templateValue) => {
@@ -26,10 +25,9 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
             handleGoToNext(currentPage + 1);
         } else if (templateValue === 'gotoprev') {
             handleGoToNext(currentPage - 1);
-        } else if (!iframeLoading) {
+        } else if (templateValue) {
             const selectedTemplateDrop = templateList.find((template) => template?.bot_name === templateValue);
             setSelectedTemplate(selectedTemplateDrop);
-            setIframeLoading(true);
         }
     };
 
@@ -39,41 +37,53 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
         }
     }, [templateList]);
 
-    const chatbotContent = `
-        <!DOCTYPE html>
-        <html lang="en">
-            <head>
-                <meta charset="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            </head>
-            <body>
-                <script>
-                    (function() {
-                        document.cookie = 'hello-widget-uuid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-                        const script = document.createElement('script');
-                        script.type = 'text/javascript';
-                        script.onload = function() {
-                            initChatWidget({
-                                widgetToken: '${selectedTemplate?.token || ''}',
-                                hide_launcher: false,
-                                launch_widget: true,
-                                show_close_button: false,
-                                show_widget_form: false,
-                                hide_upload: true,
-                                bot_type: '${selectedTemplate?.bot_type}',
-                                bot_id: ${selectedTemplate?.bot_id || null},
-                            }, 0);
-                        };
-                        script.src = '${process.env.CHATBOT_TEMPLATE_TEST_URL}';
-                        document.body.appendChild(script);
-                    })();
-                </script>
-            </body>
-        </html>
-    `;
+    useEffect(() => {
+        if (selectedTemplate?.token && window.initChatWidget) {
+            window.initChatWidget(
+                {
+                    widgetToken: selectedTemplate?.token,
+                    hide_launcher: false,
+                    launch_widget: true,
+                    show_close_button: false,
+                    show_widget_form: false,
+                    hide_upload: true,
+                    variables: {
+                        bot_type: selectedTemplate?.bot_type,
+                        bot_id: selectedTemplate?.bot_id,
+                    },
+                    parentId: 'chatbotWrapper',
+                },
+                0
+            );
+        }
+    }, [selectedTemplate]);
 
     return (
         <>
+            {selectedTemplate?.token && (
+                <>
+                    <Script
+                        strategy='afterInteractive'
+                        dangerouslySetInnerHTML={{
+                            __html: `var helloConfig = {
+                  widgetToken: '${selectedTemplate.token}',
+                  hide_launcher: false,
+                  launch_widget: true,
+                  show_close_button: false,
+                  show_widget_form: false,
+                  hide_upload: true,
+                  variables:{
+                    bot_type: '${selectedTemplate?.bot_type}',
+                    bot_id: ${selectedTemplate?.bot_id},
+                    },
+                    parentId: "chatbotWrapper"
+                };`,
+                        }}
+                    />
+
+                    <Script onload='initChatWidget(helloConfig, 0)' src={`${process.env.CHAT_WIDGET_URL}`} />
+                </>
+            )}
             <div className='container flex lg:flex-row flex-col cont_p lg:gap-24 gap-10 justify-between'>
                 <div className='flex flex-col gap-6 lg:w-2/3 w-full'>
                     <div className='flex flex-col gap-3'>
@@ -86,7 +96,7 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
                         </h2>
                     </div>
 
-                    <div className='lg:grid hidden lg:grid-cols-2 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 rounded-lg gap-6'>
+                    <div className='lg:grid hidden 2xl:grid-cols-3 lg:grid-cols-2 xl:grid-cols-2 sm:grid-cols-2 grid-cols-1 rounded-lg gap-6'>
                         {templateList?.length > 0 &&
                             templateList.map((template, index) => (
                                 <div
@@ -142,16 +152,7 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
                         </select>
                     </div>
                 </div>
-                {/* <div className={`${style.chatbotwrapper} chatbotwrapper `}>
-                    {iframeLoading && <div className={'h-full flex items-center justify-center'}>Loading...</div>}
-                    <iframe
-                        style={{ width: '100%', height: '650px', border: 'none' }}
-                        className='lg:max-w-full'
-                        title='Chatbot Frame'
-                        srcDoc={chatbotContent}
-                        onLoad={() => setIframeLoading(false)}
-                    ></iframe>
-                </div> */}
+                <div className={`${style.chatbotwrapper} chatbotwrapper `} id='chatbotWrapper'></div>
             </div>
         </>
     );
