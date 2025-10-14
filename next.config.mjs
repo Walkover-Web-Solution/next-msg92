@@ -39,6 +39,7 @@ const nextConfig = {
         CHAT_WIDGET_TOKEN: getEnvValue('CHAT_WIDGET_TOKEN'),
         ECOMMERCE_WIDGET_TOKEN: getEnvValue('ECOMMERCE_WIDGET_TOKEN'),
         CHAT_WIDGET_URL: getEnvValue('CHAT_WIDGET_URL'),
+        CHATBOT_TEMPLATE_TEST_TOKEN: getEnvValue('CHATBOT_TEMPLATE_TEST_TOKEN'),
     },
 };
 

@@ -3,21 +3,26 @@ import Script from 'next/script';
 import HreflangTagComp from './HreflangTagComp';
 
 export default function HeadComp({ data, pageInfo }) {
+    console.log('⚡️ ~ :6 ~ HeadComp ~ pageInfo:', pageInfo);
     const isEcommerceStore = pageInfo?.page === 'ecommerce-store';
 
     return (
         <>
-            <Script
-                strategy='afterInteractive'
-                dangerouslySetInnerHTML={{
-                    __html: `var helloConfig = {
+            {pageInfo?.page !== 'demochatbot' && (
+                <>
+                    <Script
+                        strategy='afterInteractive'
+                        dangerouslySetInnerHTML={{
+                            __html: `var helloConfig = {
               widgetToken: '${isEcommerceStore ? process.env.ECOMMERCE_WIDGET_TOKEN : process.env.CHAT_WIDGET_TOKEN}',
               hide_launcher: false
             };`,
-                }}
-            />
+                        }}
+                    />
 
-            <Script onload='initChatWidget(helloConfig, 0)' src={`${process.env.CHAT_WIDGET_URL}`} />
+                    <Script onload='initChatWidget(helloConfig, 0)' src={`${process.env.CHAT_WIDGET_URL}`} />
+                </>
+            )}
 
             <Script
                 strategy='afterInteractive'
