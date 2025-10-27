@@ -10,5 +10,6 @@
     overflow: visible;
     position: sticky;
     top: 20px;
-    @apply lg:mt-20 mt-5 sm:border p-3 rounded ;
+    @apply lg:mt-20 mt-5 sm:border p-3 rounded bg-red-50;
+
 }
