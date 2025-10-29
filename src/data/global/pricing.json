@@ -221,12 +221,7 @@
             },
             "addOns": {
                 "heading": "Add-on Services",
-                "content": [
-                    "Call Recording",
-                    "Call Monitoring",
-                    "Analytics",
-                    "Number Masking"
-                ],
+                "content": ["Call Recording", "Call Monitoring", "Analytics", "Number Masking"],
                 "freeText": " All the Add-On Services are <span class='text-green-600'>FREE</span> of cost"
             },
             "rates": [
@@ -301,6 +296,12 @@
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
+            },
+            "whatsappVoice": {
+                "heading": "Limited-Time Offer: Free Inbound Calls & Voice Bot Sessions",
+                "description": "Enjoy free inbound calls and WhatsApp Voice Bot sessions for a limited time! Automate customer interactions, manage festive bookings, and send instant voice updates with ease.",
+                "sub_heading": "Pricing",
+                "content": ["Inbound Calls: $0.01/min", "Voice Bot: $0.10/min"]
             }
         },
         "rcs": {

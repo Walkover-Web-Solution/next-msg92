@@ -224,12 +224,7 @@
             },
             "addOns": {
                 "heading": "Add-on Services",
-                "content": [
-                    "Call Recording",
-                    "Call Monitoring",
-                    "Analytics",
-                    "Number Masking"
-                ],
+                "content": ["Call Recording", "Call Monitoring", "Analytics", "Number Masking"],
                 "freeText": " All the Add-On Services are <span class='text-green-600'>FREE</span> of cost"
             },
             "rates": [
@@ -306,6 +301,12 @@
             "adds": "Zero Whatsapp cloud API pricing for Click to WhatsApp Ads.",
             "connectComp": {
                 "know_more": "Know more about"
+            },
+            "whatsappVoice": {
+                "heading": "Limited-Time Offer: Free Inbound Calls & Voice Bot Sessions",
+                "description": "Enjoy free inbound calls and WhatsApp Voice Bot sessions for a limited time! Automate customer interactions, manage festive bookings, and send instant voice updates with ease.",
+                "sub_heading": "Pricing",
+                "content": ["Inbound Calls: ₹0.5/min", "Voice Bot:₹8/min"]
             }
         },
         "rcs": {
