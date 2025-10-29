@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useSignup, sendOtp, verifyOtp, handleGithubSignup, setInitialStates } from '../SignupUtils';
+import { useSignup, sendOtp, handleGithubSignup, setInitialStates, validateEmailSignup } from '../SignupUtils';
 import { useEffect, useState, useRef } from 'react';
 import style from './StepOne.module.scss';
 import getURLParams from '@/utils/getURLParams';
@@ -82,31 +82,7 @@ export default function StepOne() {
             console.error('Please enter complete OTP');
             return;
         }
-
-        // Only use email request ID for email verification
-        const requestId = state.emailRequestId;
-        if (!requestId) {
-            console.error('No email request ID found. Please resend OTP.');
-            return;
-        }
-
-        verifyOtp(
-            otpValue,
-            requestId,
-            false, // notByEmail - false for email verification
-            dispatch,
-            (data) => {
-                dispatch({ type: 'SET_ACTIVE_STEP', payload: 2 });
-            },
-            (error) => {
-                console.error('Email OTP verification failed:', error);
-                // Clear the OTP inputs on error
-                setOtp(new Array(otpLength).fill(''));
-                if (otpInputRefs.current[0]) {
-                    otpInputRefs.current[0].focus();
-                }
-            }
-        );
+        validateEmailSignup(otpValue, dispatch, state);
     };
 
     // Focus on first OTP input when OTP section appears

@@ -157,7 +157,7 @@ function reducer(state, action) {
             return {
                 ...state,
                 session: action.payload.session,
-                activeStep: 3,
+                activeStep: action.payload.step,
             };
 
         case 'SET_SERVICES':
@@ -492,12 +492,11 @@ export function sendOtp(identifier, notByEmail, dispatch, showToast = console.er
     );
 }
 
-export function verifyOtp(otp, requestId, notByEmail, dispatch, onSuccess, onError = console.error) {
+export function verifyOtp(otp, requestId, notByEmail, dispatch, state, onSuccess, onError = console.error) {
     dispatch({ type: 'SET_LOADING', payload: true });
     window.verifyOtp(
         `${otp}`,
         (data) => {
-            console.log('⚡️ ~ :453 ~ verifyOtp ~ data:', data);
             dispatch({ type: 'SET_LOADING', payload: false });
             if (data?.type === 'success') {
                 if (!notByEmail) {
@@ -579,7 +578,10 @@ export function validateSignUp(dispatch, state) {
         .then((response) => {
             console.log('⚡️ ~ :517 ~ validateSignUp ~ response:', response);
             if (response?.data?.status === 'success') {
-                dispatch({ type: 'SET_SESSION', payload: { session: response?.data?.sessionDetails?.PHPSESSID } });
+                dispatch({
+                    type: 'SET_SESSION',
+                    payload: { session: response?.data?.sessionDetails?.PHPSESSID, step: 3 },
+                });
                 dispatch({ type: 'SET_INVITES', payload: response?.data?.data?.invitations });
             } else {
                 dispatch({ type: 'SET_ERROR', payload: response?.data?.errors || 'Failed to validate signup' });
@@ -802,4 +804,84 @@ export async function fetchCitiesByState(stateId) {
 export function getCountryIdFromName(countryName, countries) {
     const country = countries.find((c) => c.name === countryName);
     return country ? country.shortname : null;
+}
+
+export async function validateEmailSignup(otp, dispatch, state) {
+    const signupState = state || {};
+    const baseUrl = process.env.API_BASE_URL;
+
+    dispatch({ type: 'SET_LOADING', payload: true });
+    dispatch({ type: 'CLEAR_ERROR' });
+
+    try {
+        const verificationData = await new Promise((resolve, reject) => {
+            window.verifyOtp(
+                `${otp}`,
+                (data) => {
+                    if (data?.type === 'success') {
+                        resolve(data);
+                        return;
+                    }
+                    reject(data || { message: 'OTP verification failed' });
+                },
+                (error) => {
+                    reject(error);
+                },
+                signupState?.emailRequestId
+            );
+        });
+
+        const emailToken = verificationData?.message;
+
+        dispatch({
+            type: 'SET_EMAIL_VERIFICATION_SUCCESS',
+            payload: {
+                accessToken: emailToken,
+                message: 'Email verified successfully.',
+            },
+        });
+
+        const payload = {
+            verifyMobileNextStep: 1,
+            session: signupState?.session,
+            emailToken: emailToken,
+            source: signupState?.source,
+            utm_term: signupState?.utm_term,
+            utm_medium: signupState?.utm_medium,
+            utm_source: signupState?.utm_source,
+            utm_campaign: signupState?.utm_campaign,
+            utm_content: signupState?.utm_content,
+            utm_matchtype: signupState?.utm_matchtype,
+            ad: signupState?.ad,
+            adposition: signupState?.adposition,
+            reference: signupState?.reference,
+        };
+
+        const url = `${baseUrl}/api/v5/nexus/validateEmailSignUp`;
+
+        const { data } = await axios.post(url, payload);
+        console.log('🚀 ~ validateEmailSignup ~ data:', data);
+        if (data?.status === 'success') {
+            dispatch({
+                type: 'SET_SESSION',
+                payload: { session: data?.sessionDetails?.PHPSESSID || null, step: 2 },
+            });
+            dispatch({
+                type: 'SET_INVITES',
+                payload: data?.data?.invitations || [],
+            });
+            return data;
+        }
+
+        const apiErrors = data?.errors || 'Failed to validate signup';
+        dispatch({ type: 'SET_ERROR', payload: apiErrors });
+        return null;
+    } catch (error) {
+        console.error('Error validating signup:', error);
+        const otpErrorMessage = error?.response?.data?.message || error?.message || 'Failed to validate signup';
+        dispatch({ type: 'SET_ERROR', payload: otpErrorMessage });
+        return null;
+    } finally {
+        dispatch({ type: 'SET_LOADING', payload: false });
+    }
 }
