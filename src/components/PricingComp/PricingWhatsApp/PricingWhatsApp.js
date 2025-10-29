@@ -6,7 +6,7 @@ import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import CalculatePricingWhatsApp from './CalculatePricingWhatsApp/CalculatePricingWhatsApp';
 import styles from './PricingWhatsApp.module.scss';
 import { useState, useMemo, useEffect } from 'react';
-import { MdArrowForward } from 'react-icons/md';
+import { MdArrowRightAlt } from 'react-icons/md';
 
 export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
@@ -69,27 +69,27 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                     </span>
                 </div>
                 <div className='flex flex-col w-full gap-8'>
-                    <div className='flex flex-col-reverse lg:flex-row justify-between w-full sm:p- lg:p-8 sm:rounded h-fit sm:bg-white'>
-                        {pageData?.whatsappVoice && (
-                            <div className={`${tabtype === 'Voice' ? '' : 'hidden'} flex flex-col gap-1`}>
-                                <h2 className='text-2xl font-bold'> {pageData?.whatsappVoice?.heading} </h2>
-                                <p> {pageData?.whatsappVoice?.description}</p>
-                                <ul>
-                                    {pageData?.whatsappVoice?.content?.map((item, index) => (
-                                        <div className='flex gap-2 ps-3 font-semibold items-center'>
-                                            <MdArrowForward size={10} /> <li key={index}> {item}</li>
-                                        </div>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                        <div className={`flex flex-col gap-2 sm:gap-4 ${tabtype === 'Messages' ? '' : 'hidden'}`}>
+                    <div className='flex lg:flex-row flex-col-reverse bg-white rounded xl:p-16 lg:p-8 p-6 items-center justify-between lg:gap-6 xl:gap-12 gap-4'>
+                        <div className={`${tabtype === 'Voice' ? '' : 'hidden'} flex flex-col gap-1 w-full`}>
+                            <h2 className='text-xl md:text-3xl font-bold'> {pageData?.whatsappVoice?.heading} </h2>
+                            <p className='txt-sm md:text-md text-gray-600'>{pageData?.whatsappVoice?.description}</p>
+                            <ul className='flex flex-col gap-2 mt-2'>
+                                {pageData?.whatsappVoice?.content?.map((item, index) => (
+                                    <div className='flex gap-2 font-semibold items-center'>
+                                        <MdArrowRightAlt size={18} /> <li key={index}> {item}</li>
+                                    </div>
+                                ))}
+                            </ul>
+                        </div>
+                        <div
+                            className={`flex flex-col gap-4 sm:gap-6 w-full md:text-start text-center md:items-start items-center ${tabtype === 'Messages' ? '' : 'hidden'}`}
+                        >
                             <div className='flex flex-col gap-2'>
                                 <h2 className='text-xl md:text-3xl font-semibold'>
-                                    <span className='text-green-600  font-bold text-2xl md:text-4xl'>Zero</span> margin
+                                    <span className='text-green-600 font-bold text-3xl lg:text-6xl'>Zero</span> margin
                                     on meta price.
                                 </h2>
-                                {currentCountry?.name === 'India' && <p className='txt-sm md:text-lg'>GST excluded.</p>}
+                                {currentCountry?.name === 'India' && <p className='txt-sm lg:text-lg'>GST excluded.</p>}
                                 {currentCountry?.name === 'United Kingdom' && (
                                     <p className='txt-sm md:text-lg'>VAT excluded.</p>
                                 )}
@@ -100,9 +100,9 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                         </div>
                         <Image
                             src={'/assets/icons/extras/whatsapp-black.svg'}
-                            className={`w-[140px] h-fit lg:block`}
-                            width={400}
-                            height={400}
+                            className={`xl:max-w-[300px] lg:max-w-[250px] max-w-[200px] min-w-[200px] w-full h-fit`}
+                            width={340}
+                            height={340}
                             alt='whatsapp logo'
                         />
                     </div>
@@ -203,7 +203,7 @@ function Table({ data, symbol, className, tabletype }) {
                                 {isMessageTable && <td className='border-r'>{formatRate(item?.marketing_rate)}</td>}
                                 {isMessageTable && <td className='border-r'>{formatRate(item?.utility_rate)}</td>}
                                 {isMessageTable && <td className=''>{formatRate(item?.authentication_rate)}</td>}
-                                {!isMessageTable && <td className=''>{item?.charges}</td>}
+                                {!isMessageTable && <td className=''>{formatRate(item?.charges)}</td>}
                             </tr>
                         );
                     })}
