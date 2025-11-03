@@ -4,4 +4,5 @@ Disallow: /cgi-bin/
 Sitemap: https://msg91.com/sitemap.xml
 Sitemap: https://msg91.com/sitemap_video.xml
 Sitemap: https://msg91.com/sitemap_images.xml
+Disallow: /us/case-studies/oxebox/feed/
 
