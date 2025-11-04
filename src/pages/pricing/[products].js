@@ -29,7 +29,12 @@ export const getServerSideProps = async (context) => {
     let pageData = getPricingPageData(product);
     let products = getProducts();
 
-    if (!pricingData) {
+    const isProduct =
+        products?.applications?.some((app) => app.slug === product) ||
+        products?.channels?.some((channel) => channel.slug === product) ||
+        products?.services?.some((service) => service.slug === product);
+
+    if (!pricingData || !isProduct) {
         return { notFound: true };
     } else {
         return {
