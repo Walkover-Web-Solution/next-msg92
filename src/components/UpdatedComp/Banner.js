@@ -13,7 +13,15 @@ export default function Banner({ pageInfo, data }) {
                 <div className='cont gap-1 md:gap-2 lg:gap-3 w-full'>
                     {data?.product && (
                         <div className='flex items-center gap-2'>
-                            <Image src={data?.product?.icon} width={40} height={40} alt={data?.product?.name} />
+                            <Image
+                                src={data?.product?.icon}
+                                alt={data?.product?.name + ' icon'}
+                                width={40}
+                                height={40}
+                                loading='lazy'
+                                sizes='40px'
+                                priority
+                            />
                             <span className='font-semibold text-2xl'>{data?.product?.name}</span>
                         </div>
                     )}

@@ -85,9 +85,11 @@ export default function BannerComp({ pageInfo, data }) {
                             key={data?.tagline}
                             className={pageInfo?.page === 'home' ? styles.homeimg : styles.img}
                             src={data?.banner_img}
-                            width={2000}
-                            height={2000}
+                            width={720}
+                            height={720}
                             alt={data?.tagline}
+                            loading='lazy'
+                            sizes='(max-width: 768px) 300px, 600px'
                         />
                     </div>
                 )}
@@ -97,9 +99,11 @@ export default function BannerComp({ pageInfo, data }) {
                             key={data?.tagline}
                             className='w-full'
                             src={data?.banner_img}
-                            width={2000}
-                            height={2000}
+                            width={720}
+                            height={720}
                             alt={data?.tagline}
+                            loading='lazy'
+                            sizes='(max-width: 768px) 300px, 600px'
                         />
                     </div>
                 )}
