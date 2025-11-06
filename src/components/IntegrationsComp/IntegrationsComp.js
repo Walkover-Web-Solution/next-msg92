@@ -56,6 +56,8 @@ export default function IntegrationsComp({ pageInfo, data }) {
                                     src={card?.icon}
                                     alt={card?.name}
                                     className=' h-8 w-fit'
+                                    loading='lazy'
+                                    sizes='(max-width: 768px) 24px, 32px'
                                 />
                                 <h3 className='text-lg font-bold mb-2'>{card?.name}</h3>
                             </div>
@@ -119,7 +121,15 @@ export default function IntegrationsComp({ pageInfo, data }) {
                         <div key={index} className='bg-neutral flex flex-col gap-6 p-4'>
                             <p>{item?.content}</p>
                             <h3>{item?.name}</h3>
-                            <img src={item?.icon} alt={item?.name} className='w-fit h-10' />
+                            <Image
+                                src={item?.icon}
+                                alt={item?.name}
+                                className='w-fit h-10'
+                                width={120}
+                                height={40}
+                                loading='lazy'
+                                sizes='(max-width: 768px) 32px, 40px'
+                            />
                         </div>
                     ))}
                 </div>
@@ -137,7 +147,15 @@ const CardComponent = ({ card, index }) => {
                 className='flex flex-col p-6 gap-4 bg-white rounded-lg border h-full w-full min-h-[460px] '
             >
                 <div className='flex flex-col gap-4'>
-                    <img src={card?.icon} alt={card?.name} className=' h-8 w-fit' />
+                    <Image
+                        src={card?.icon}
+                        alt={card?.name}
+                        className=' h-8 w-fit'
+                        width={120}
+                        height={32}
+                        loading='lazy'
+                        sizes='(max-width: 768px) 24px, 32px'
+                    />
                     <h3 className='text-lg font-bold mb-2'>{card?.name}</h3>
                 </div>
                 <div className=''>
@@ -170,7 +188,15 @@ const CardComponent = ({ card, index }) => {
                 className='flex flex-col p-6 gap-2 bg-white rounded-lg shadow hover:shadow-lg h-full min-h-[560px] sm:min-h-[410px] md:min-h-[620px] lg:min-h-[500px] w-full LinkButtonCard'
             >
                 <div className='flex flex-col items-start justify-center gap-4'>
-                    <Image width={360} height={260} src={card?.icon} alt={card?.name} className=' h-8 w-fit' />
+                    <Image
+                        width={360}
+                        height={260}
+                        src={card?.icon}
+                        alt={card?.name}
+                        className=' h-8 w-fit'
+                        loading='lazy'
+                        sizes='(max-width: 768px) 24px, 32px'
+                    />
                     <h3 className='text-lg font-bold mb-2'>{card?.name}</h3>
                 </div>
                 <p className='mb-auto'>{card?.description}</p>
