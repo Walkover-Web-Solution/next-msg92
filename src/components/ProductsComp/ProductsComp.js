@@ -35,7 +35,7 @@ export default function ProductsComp({ data }) {
                                         src={product?.img}
                                         alt={product?.name}
                                         loading='lazy'
-                                        sizes='(max-width: 640px) 200px, (max-width: 1024px) 200px, (max-width: 1280px) 250px, 260px'
+                                        sizes='(max-width: 768px) 320px, 420px'
                                     />
                                 </div>
                             </a>

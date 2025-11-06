@@ -27,6 +27,7 @@ export default function CompareGridComp({ data }) {
                                         width={40}
                                         height={40}
                                         alt='MSG91'
+                                        loading='lazy'
                                     />
                                 </div>
                                 <span className='text-lg font-medium'>vs</span>
@@ -37,6 +38,7 @@ export default function CompareGridComp({ data }) {
                                         width={40}
                                         height={40}
                                         alt='MSG91'
+                                        loading='lazy'
                                     />
                                 </div>
                             </div>

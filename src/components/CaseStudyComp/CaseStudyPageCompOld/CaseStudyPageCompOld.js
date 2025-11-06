@@ -28,6 +28,7 @@ export default function CaseStudyPageCompOld({ data, pageInfo }) {
                             height={400}
                             alt={data?.slug}
                             className='h-[80px] w-fit'
+                            loading='lazy'
                         />
                         <h1 className='text-4xl font-bold md:w-2/3'>{data?.title}</h1>
                     </div>
