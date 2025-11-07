@@ -18,7 +18,6 @@ export default function Banner({ pageInfo, data }) {
                                 alt={data?.product?.name + ' icon'}
                                 width={40}
                                 height={40}
-                                loading='lazy'
                                 sizes='40px'
                                 priority
                             />
