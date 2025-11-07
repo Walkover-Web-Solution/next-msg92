@@ -61,6 +61,7 @@ export default function MigrateFromTextlocal({ pageInfo, data }) {
                                     height={40}
                                     src={`/assets/icons/products/${product?.slug}.svg`}
                                     alt={product?.name}
+                                    loading='lazy'
                                 />
                                 <h3 className='text-2xl font-semibold'>{product?.title}</h3>
                                 <p className='text-xl text-gray-700 mb-auto'>{product?.description}</p>

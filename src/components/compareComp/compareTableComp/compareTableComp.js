@@ -41,6 +41,7 @@ export default function CompareTableComp({ data }) {
                                         width={360}
                                         height={360}
                                         alt='MSG91'
+                                        loading='lazy'
                                     />
                                 </div>
                             </th>
@@ -52,6 +53,7 @@ export default function CompareTableComp({ data }) {
                                         width={360}
                                         height={360}
                                         alt={data?.name}
+                                        loading='lazy'
                                     />
                                 </div>
                             </th>

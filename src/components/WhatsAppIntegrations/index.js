@@ -11,7 +11,7 @@ export default function WhatsAppIntegrations({ data }) {
             <div className='grid md:grid-cols-2 2xl:grid-cols-3 grid-cols-1 gap-6'>
                 {data?.content.map((item, index) => (
                     <div key={index} className='w-full cont md:p-6 p-3 gap-1 rounded border'>
-                        <Image src={item?.icon} alt={item?.title} width={32} height={32} />
+                        <Image src={item?.icon} alt={item?.title} width={32} height={32} loading='lazy' />
                         <h3 className='font-bold'>{item?.title}</h3>
                         <ul className='cont gap-1'>
                             {item?.highlights.map((hl, i) => (

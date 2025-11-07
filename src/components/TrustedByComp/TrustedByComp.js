@@ -5,7 +5,9 @@ export default function TrustedByComp({ data }) {
         return (
             <>
                 <div
-                    className={`flex flex-col gap-4 ${data?.fullwidth ? 'container cont_p items-center gap-6' : 'gap-4'} `}
+                    className={`flex flex-col gap-4 ${
+                        data?.fullwidth ? 'container cont_p items-center gap-6' : 'gap-4'
+                    } `}
                 >
                     <h2 className={` ${data?.fullwidth ? 'text-3xl font-bold' : 'text-lg'} `}>{data?.heading}</h2>
                     <div className='flex gap-5 flex-wrap items-center'>
@@ -14,8 +16,10 @@ export default function TrustedByComp({ data }) {
                                 key={index}
                                 src={img?.url}
                                 alt={img?.name}
-                                width={100}
-                                height={100}
+                                width={22}
+                                height={22}
+                                loading='lazy'
+                                sizes='22px'
                                 className='h-[22px] w-auto'
                             />
                         ))}

@@ -24,7 +24,15 @@ export default function PricingNav({ products, page }) {
                                     }`}
                                 >
                                     <div className='flex items-center gap-1'>
-                                        <Image src={product?.icon} width={32} height={32} alt={product?.name} />
+                                        <Image
+                                            src={product?.icon}
+                                            width={32}
+                                            height={32}
+                                            alt={product?.name}
+                                            loading='lazy'
+                                            sizes='(max-width: 768px) 30
+                                        px, 32px'
+                                        />
                                         <h3 className='text-lg font-medium'> {product?.name}</h3>
                                     </div>
                                 </a>
@@ -40,7 +48,13 @@ export default function PricingNav({ products, page }) {
                                     }`}
                                 >
                                     <div className='flex items-center gap-1'>
-                                        <Image src={product?.icon} width={32} height={32} alt={product?.name} />
+                                        <Image
+                                            src={product?.icon}
+                                            width={32}
+                                            height={32}
+                                            alt={product?.name}
+                                            loading='lazy'
+                                        />
                                         <h3 className='text-lg font-medium'> {product?.name}</h3>
                                     </div>
                                     {product?.description && <p className='text-sm'>{product?.description}</p>}
@@ -83,7 +97,7 @@ export function ProductButton({ product, page }) {
             className={`flex flex-col px-3 py-2 rounded hover:bg-secondary ${page === product?.slug && 'bg-secondary'}`}
         >
             <div className='flex items-center gap-1'>
-                <Image src={product?.icon} width={32} height={32} alt={product?.name} />
+                <Image src={product?.icon} width={32} height={32} alt={product?.name} loading='lazy' />
                 <h3 className='text-lg font-medium'> {product?.name}</h3>
             </div>
             {product?.description && <p className='text-sm'>{product?.description}</p>}

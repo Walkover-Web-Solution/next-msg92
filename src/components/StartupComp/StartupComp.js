@@ -90,7 +90,15 @@ export default function StartupComp({ pageInfo, data }) {
                                 key={index}
                                 className='bg-white p-6 gap-4 rounded flex flex-col'
                             >
-                                <Image width={30} height={30} src={card.icon} alt={card.tag} className='w-10 h-10' />
+                                <Image
+                                    width={30}
+                                    height={30}
+                                    src={card.icon}
+                                    alt={card.tag}
+                                    className='w-10 h-10'
+                                    loading='lazy'
+                                    sizes='(max-width: 768px) 32px, 40px'
+                                />
                                 <div className='text-lg font-bold'>{card.tag}</div>
                             </a>
                         ))}
