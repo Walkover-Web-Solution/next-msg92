@@ -16,7 +16,14 @@ export default function ChannelsComp({ data }) {
                                 className='flex flex-col gap-4 bg-neutral rounded-lg md:p-8 p-4 hover:shadow-lg LinkButtonCard'
                                 href={channel?.link}
                             >
-                                <Image width={40} height={40} src={channel?.icon} alt={channel?.name} />
+                                <Image
+                                    width={40}
+                                    height={40}
+                                    src={channel?.icon}
+                                    alt={channel?.name}
+                                    loading='lazy'
+                                    sizes='(max-width: 768px) 32px, (max-width: 1024px) 36px, 40px'
+                                />
                                 <h3 className='text-2xl font-semibold'>{channel?.name}</h3>
                                 <p className='text-lg'>{channel?.description}</p>
                                 <LinkText className='link-btn'>{data?.linkText}</LinkText>

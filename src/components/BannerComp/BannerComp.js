@@ -23,7 +23,14 @@ export default function BannerComp({ pageInfo, data }) {
                     <div className='flex flex-col gap-6'>
                         {data?.product && (
                             <div className='flex items-center gap-2'>
-                                <Image src={data?.product?.icon} width={40} height={40} alt={data?.product?.name} />
+                                <Image
+                                    src={data?.product?.icon}
+                                    width={40}
+                                    height={40}
+                                    alt={data?.product?.name}
+                                    loading='lazy'
+                                    sizes='(max-width: 768px) 32px, (max-width: 1024px) 36px, 40px'
+                                />
                                 <span className='font-semibold text-2xl'>{data?.product?.name}</span>
                             </div>
                         )}
@@ -89,7 +96,7 @@ export default function BannerComp({ pageInfo, data }) {
                             height={720}
                             alt={data?.tagline}
                             loading='lazy'
-                            sizes='(max-width: 768px) 300px, 600px'
+                            sizes='(max-width: 768px) 300px, (max-width: 1024px) 500px, (max-width: 1280px) 600px, 720px'
                         />
                     </div>
                 )}
@@ -103,7 +110,7 @@ export default function BannerComp({ pageInfo, data }) {
                             height={720}
                             alt={data?.tagline}
                             loading='lazy'
-                            sizes='(max-width: 768px) 300px, 600px'
+                            sizes='(max-width: 768px) 300px, (max-width: 1024px) 500px, (max-width: 1280px) 600px, 720px'
                         />
                     </div>
                 )}

@@ -51,7 +51,14 @@ export default function DevelopersComp({ pageInfo, data }) {
                     <h2 className='text-4xl font-bold'>{data?.customcode?.heading}</h2>
                     <p className='text-lg'>{data?.customcode?.content}</p>
                 </div>
-                <Image src={data?.customcode?.code} alt='code' width={700} height={700} className='w-1/2' />
+                <Image
+                    src={data?.customcode?.code}
+                    alt='code'
+                    width={700}
+                    height={700}
+                    className='w-1/2'
+                    loading='lazy'
+                />
             </div>
 
             <div className='bg-neutral'>
@@ -67,7 +74,7 @@ export default function DevelopersComp({ pageInfo, data }) {
                                 key={index}
                                 className='bg-primary p-4 rounded flex  items-center sm:w-[260px] w-full gap-2'
                             >
-                                <Image width={40} height={40} src={app.icon} alt={app.name} />
+                                <Image width={40} height={40} src={app.icon} alt={app.name} loading='lazy' />
                                 <div className='flex flex-col '>
                                     <p className='text-sm text-white uppercase'>{app?.text}</p>
                                     <p className=' text-xl text-white'>{app?.name}</p>

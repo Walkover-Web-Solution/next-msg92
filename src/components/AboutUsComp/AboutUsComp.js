@@ -12,6 +12,8 @@ export default function AboutUsComp({ pageInfo, data }) {
                     width={1500}
                     height={495}
                     className=' w-full h-auto rounded-md'
+                    loading='lazy'
+                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1200px'
                 />
             </div>
             <div className='bg-gray'>
@@ -50,6 +52,8 @@ export default function AboutUsComp({ pageInfo, data }) {
                                         alt={item?.name}
                                         width={400}
                                         height={400}
+                                        loading='lazy'
+                                        sizes='(max-width: 768px) 280px, (max-width: 1024px) 320px, 400px'
                                     />
                                     <div>
                                         <h3 className='text-2xl font-bold'>{item?.name}</h3>
@@ -82,6 +86,8 @@ export default function AboutUsComp({ pageInfo, data }) {
                     width={1500}
                     height={495}
                     className=' w-full h-auto'
+                    loading='lazy'
+                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1200px'
                 />
                 <p class='text-xl font-normal'>{data?.teamStrength?.description}</p>
             </div>

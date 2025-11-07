@@ -20,6 +20,7 @@ export default function DemoChatBotComp() {
                                 width={32}
                                 height={32}
                                 alt='WhatsApp Logo'
+                                loading='lazy'
                             />
                             <h2 className='text-xl font-bold'>WhatsApp Bots</h2>
                         </div>
@@ -93,6 +94,7 @@ export default function DemoChatBotComp() {
                                     width={32}
                                     height={32}
                                     alt='Instagram Logo'
+                                    loading='lazy'
                                 />
                                 <h2 className='text-xl font-bold'>Instagram Bots</h2>
                             </div>
@@ -132,7 +134,13 @@ export default function DemoChatBotComp() {
                         </div>
                         <div className='flex flex-col gap-5 items-center'>
                             <div className='flex items-center gap-1 justify-center'>
-                                <Image src={'/assets/brand/favicon.svg'} width={32} height={32} alt='Website Logo' />
+                                <Image
+                                    src={'/assets/brand/favicon.svg'}
+                                    width={32}
+                                    height={32}
+                                    alt='Website Logo'
+                                    loading='lazy'
+                                />
                                 <h2 className='text-xl font-bold'>Website Bots</h2>
                             </div>
                             <div onClick={() => window.chatWidget.open()}>
@@ -153,10 +161,17 @@ export default function DemoChatBotComp() {
                             width={32}
                             height={32}
                             alt='Instagram Logo'
+                            loading='lazy'
                         />
                     </a>
                     <a href='https://x.com/msg91' target='_blank'>
-                        <Image src={'/assets/icons/social/X icon.svg'} width={28} height={28} alt='Twitter Logo' />
+                        <Image
+                            src={'/assets/icons/social/X icon.svg'}
+                            width={28}
+                            height={28}
+                            alt='Twitter Logo'
+                            loading='lazy'
+                        />
                     </a>
                     <a href='https://www.linkedin.com/company/msg91' target='_blank'>
                         <Image
@@ -164,6 +179,7 @@ export default function DemoChatBotComp() {
                             width={28}
                             height={28}
                             alt='LinkedIn Logo'
+                            loading='lazy'
                         />
                     </a>
                 </div>
