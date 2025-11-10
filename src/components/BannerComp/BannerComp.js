@@ -95,7 +95,8 @@ export default function BannerComp({ pageInfo, data }) {
                             width={720}
                             height={720}
                             alt={data?.tagline}
-                            loading='lazy'
+                            priority
+                            fetchPriority='high'
                             sizes='(max-width: 768px) 300px, (max-width: 1024px) 500px, (max-width: 1280px) 600px, 720px'
                         />
                     </div>
@@ -109,7 +110,8 @@ export default function BannerComp({ pageInfo, data }) {
                             width={720}
                             height={720}
                             alt={data?.tagline}
-                            loading='lazy'
+                            priority
+                            fetchPriority='high'
                             sizes='(max-width: 768px) 300px, (max-width: 1024px) 500px, (max-width: 1280px) 600px, 720px'
                         />
                     </div>

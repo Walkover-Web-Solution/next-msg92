@@ -8,7 +8,12 @@ const nextConfig = {
     trailingSlash: false, 
     reactStrictMode: false,
     images: {
-        domains: ['placehold.co'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'placehold.co',
+            },
+        ],
     },
     env: {
         // URLS

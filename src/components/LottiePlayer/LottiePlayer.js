@@ -1,24 +1,17 @@
-import { useEffect, useState } from 'react';
-import Lottie from 'react-lottie';
+import React, { useEffect, useState } from 'react';
+import { useLottie } from 'lottie-react';
 import styles from './LottiePlayer.module.scss';
 
 export default function LottiePlayer({ lottie }) {
     const [animationData, setAnimationData] = useState(null);
+
     useEffect(() => {
         const fetchLottieData = async () => {
             if (lottie) {
                 try {
                     const response = await fetch(lottie);
                     const animationJson = await response.json();
-                    const lottieOptions = {
-                        loop: true,
-                        autoplay: true,
-                        animationData: animationJson,
-                        rendererSettings: {
-                            preserveAspectRatio: 'xMidYMid slice',
-                        },
-                    };
-                    setAnimationData(lottieOptions);
+                    setAnimationData(animationJson);
                 } catch (error) {
                     console.error('Error loading Lottie animation:', error);
                 }
@@ -27,11 +20,18 @@ export default function LottiePlayer({ lottie }) {
 
         fetchLottieData();
     }, [lottie]);
+
+    const options = {
+        animationData: animationData,
+        loop: true,
+        autoplay: true,
+    };
+
+    const { View } = useLottie(options);
+
     if (animationData) {
-        return (
-            <div className={styles.lottie_animation}>
-                <Lottie options={animationData} />
-            </div>
-        );
+        return <div className={styles.lottie_animation}>{View}</div>;
     }
+
+    return null;
 }
