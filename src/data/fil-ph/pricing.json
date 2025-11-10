@@ -224,7 +224,12 @@
             },
             "addOns": {
                 "heading": "Mga Add-on na Serbisyo",
-                "content": ["Pagre-record ng Tawag", "Pagmo-monitor ng Tawag", "Analytics", "Number Masking"],
+                "content": [
+                    "Pagre-record ng Tawag",
+                    "Pagmo-monitor ng Tawag",
+                    "Analytics",
+                    "Number Masking"
+                ],
                 "freeText": " Lahat ng Add-On na Serbisyo ay <span class='text-green-600'>LIBRE</span> ng bayad"
             },
             "rates": [
@@ -301,10 +306,11 @@
                 "know_more": "Alamin pa tungkol sa"
             },
             "whatsappVoice": {
-                "heading": "Limited-Time Offer: Free Inbound Calls & Voice Bot Sessions",
-                "description": "Enjoy free inbound calls and WhatsApp Voice Bot sessions for a limited time! Automate customer interactions, manage festive bookings, and send instant voice updates with ease.",
+                "heading": "Enjoy 100% Free WhatsApp Inbound Calls till December!",
                 "sub_heading": "Pricing",
-                "content": ["Inbound Calls: $0.01/min", "Voice Bot: $0.10/min"]
+                "content": [
+                    "Pricing after December: Inbound Calls: $0.01/min"
+                ]
             }
         },
         "rcs": {

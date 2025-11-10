@@ -69,24 +69,31 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                     </span>
                 </div>
                 <div className='flex flex-col w-full gap-8'>
-                    <div className='flex lg:flex-row flex-col-reverse bg-white rounded xl:p-16 lg:p-8 p-6 items-center justify-between lg:gap-6 xl:gap-12 gap-4'>
-                        <div className={`${tabtype === 'Voice' ? '' : 'hidden'} flex flex-col gap-1 w-full`}>
-                            <h2 className='text-xl md:text-3xl font-bold'> {pageData?.whatsappVoice?.heading} </h2>
-                            <p className='txt-sm md:text-md text-gray-600'>{pageData?.whatsappVoice?.description}</p>
-                            <ul className='flex flex-col gap-2 mt-2'>
-                                {pageData?.whatsappVoice?.content?.map((item, index) => (
-                                    <div className='flex gap-2 font-semibold items-center'>
-                                        <MdArrowRightAlt size={18} /> <li key={index}> {item}</li>
-                                    </div>
-                                ))}
-                            </ul>
+                    <div className='flex lg:flex-row flex-col-reverse bg-white rounded xl:p-8 lg:p-6 p-4 items-center justify-between lg:gap-6 xl:gap-12 gap-4'>
+                        <div className={`${tabtype === 'Voice' ? '' : 'hidden'} flex flex-col gap-4 w-full`}>
+                            <div>
+                                <h2 className='text-xl md:text-3xl font-bold'> {pageData?.whatsappVoice?.heading} </h2>
+                                <ul className='flex flex-col gap-2 '>
+                                    {pageData?.whatsappVoice?.content?.map((item, index) => (
+                                        <div className='flex gap-2 text-gray-600 items-center'>
+                                            <MdArrowRightAlt size={18} /> <li key={index}> {item}</li>
+                                        </div>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <a href={getURL('signup', 'whatsapp')} className='w-fit' target='_blank'>
+                                <button className='btn btn-primary btn-md'>Get Started</button>
+                            </a>
                         </div>
                         <div
-                            className={`flex flex-col gap-4 sm:gap-6 w-full md:text-start text-center md:items-start items-center ${tabtype === 'Messages' ? '' : 'hidden'}`}
+                            className={`flex flex-col gap-4 sm:gap-6 w-full md:text-start text-center md:items-start items-center ${
+                                tabtype === 'Messages' ? '' : 'hidden'
+                            }`}
                         >
                             <div className='flex flex-col gap-2'>
                                 <h2 className='text-xl md:text-3xl font-semibold'>
-                                    <span className='text-green-600 font-bold text-3xl lg:text-6xl'>Zero</span> margin
+                                    <span className='text-green-600 font-bold text-2xl lg:text-4xl'>Zero</span> margin
                                     on meta price.
                                 </h2>
                                 {currentCountry?.name === 'India' && <p className='txt-sm lg:text-lg'>GST excluded.</p>}
@@ -99,10 +106,10 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                             </a>
                         </div>
                         <Image
-                            src={'/assets/icons/extras/whatsapp-black.svg'}
-                            className={`xl:max-w-[300px] lg:max-w-[250px] max-w-[200px] min-w-[200px] w-full h-fit`}
-                            width={340}
-                            height={340}
+                            src={'/assets/icons/products/whatsapp.svg'}
+                            className={`max-w-[200px] min-w-[200px] w-full h-fit`}
+                            width={240}
+                            height={240}
                             alt='whatsapp logo'
                             loading='lazy'
                         />
@@ -125,7 +132,10 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                             <p>{pageData?.tax}</p>
                             {pageData?.adds && <p>{pageData?.adds}</p>}
                         </div>
-                        <div>
+                        <div className='flex flex-col gap-4'>
+                            <h2 className={`text-2xl font-bold ${tabtype === 'Voice' ? '' : 'hidden'}`}>
+                                Outbound Call Pricing
+                            </h2>
                             <input
                                 type='text'
                                 placeholder='Search country...'
