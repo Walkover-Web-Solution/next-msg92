@@ -132,6 +132,8 @@ export default function FeatureComp({ data, pageInfo }) {
                                             className='w-full xl:max-w-[620px] lg:max-w-[500px] max-w-[300px] p-10 '
                                             width={1080}
                                             height={1080}
+                                            loading='lazy'
+                                            sizes='(max-width: 768px) 300px, (max-width: 1024px) 500px, (max-width: 1280px) 620px, 1080px'
                                         />
                                     )}
                                 </div>

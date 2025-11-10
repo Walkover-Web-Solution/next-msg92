@@ -18,6 +18,8 @@ export default function NewHelloComp({ data, pageInfo }) {
                                 width={50}
                                 height={50}
                                 alt={data?.bannerComp?.product?.name}
+                                loading='lazy'
+                                sizes='(max-width: 768px) 40px, 50px'
                             />
                             <span className={styles?.hello}>{data?.bannerComp?.product?.name}</span>
                         </div>
@@ -39,7 +41,14 @@ export default function NewHelloComp({ data, pageInfo }) {
                         <div className='flex flex-wrap gap-4'>
                             {data?.bannerComp?.trustedByComp?.logos.map((logo) => (
                                 <a key={logo.name} href={logo.url} target='_blank'>
-                                    <Image src={logo.url} width={80} height={40} alt={logo.name} />
+                                    <Image
+                                        src={logo.url}
+                                        width={80}
+                                        height={40}
+                                        alt={logo.name}
+                                        loading='lazy'
+                                        sizes='(max-width: 768px) 60px, 80px'
+                                    />
                                 </a>
                             ))}
                         </div>
@@ -51,6 +60,8 @@ export default function NewHelloComp({ data, pageInfo }) {
                     width={500}
                     height={500}
                     alt='Hello Banner'
+                    loading='lazy'
+                    sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px'
                 />
             </div>
 
@@ -84,14 +95,29 @@ export default function NewHelloComp({ data, pageInfo }) {
                                     key={index}
                                 >
                                     <div className='flex flex-col gap-4 lg:w-1/2'>
-                                        <Image src={feature?.icon} width={70} height={70} alt='hello' />
+                                        <Image
+                                            src={feature?.icon}
+                                            width={70}
+                                            height={70}
+                                            alt='hello'
+                                            loading='lazy'
+                                            sizes='(max-width: 768px) 56px, 70px'
+                                        />
                                         <span className='text-2xl font-bold'>{feature?.name}</span>
                                         <div
                                             className='text-lg'
                                             dangerouslySetInnerHTML={{ __html: feature?.content }}
                                         />
                                     </div>
-                                    <Image src={feature?.img} width={400} height={400} className='h-auto' alt='hello' />
+                                    <Image
+                                        src={feature?.img}
+                                        width={400}
+                                        height={400}
+                                        className='h-auto'
+                                        alt='hello'
+                                        loading='lazy'
+                                        sizes='(max-width: 768px) 280px, (max-width: 1024px) 350px, 400px'
+                                    />
                                 </div>
                             );
                         })}

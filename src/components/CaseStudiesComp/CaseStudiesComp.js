@@ -15,10 +15,10 @@ export default function CaseStudiesComp({ data }) {
                                     <a
                                         href={caseStudy?.link}
                                         key={index}
-                                        className={`flex bg-white rounded-lg overflow-hidden hover:shadow-lg LinkButtonCard ${
+                                        className={`flex bg-white rounded-lg overflow-hidden hover:shadow-lg LinkButtonCard col-span-4 xl:col-span-2 row-span-2 ${
                                             index !== 0
-                                                ? 'md:col-span-4 xl:col-span-2 row-span-2 lg:row-span-1 col-span-4 md:flex-row flex flex-col'
-                                                : 'col-span-4 xl:col-span-2 row-span-2  col-span-4 flex flex-col'
+                                                ? 'md:col-span-4 lg:row-span-1 md:flex-row flex-col'
+                                                : 'flex-col'
                                         }`}
                                     >
                                         <div
@@ -40,6 +40,8 @@ export default function CaseStudiesComp({ data }) {
                                                 className='h-[50px] w-auto'
                                                 src={caseStudy?.logo}
                                                 alt={`Logo of ${caseStudy?.description}`}
+                                                loading='lazy'
+                                                sizes='(max-width: 768px) 40px, 50px'
                                             />
                                         </div>
                                         <div

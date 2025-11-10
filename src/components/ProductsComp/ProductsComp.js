@@ -13,7 +13,14 @@ export default function ProductsComp({ data }) {
                             <a href={product?.link} key={index}>
                                 <div className={`${style[product?.name.toLowerCase()]} ${style?.card} LinkButtonCard`}>
                                     <div className='flex flex-col gap-4'>
-                                        <Image width={40} height={40} src={product?.icon} alt={product?.name} />
+                                        <Image
+                                            width={40}
+                                            height={40}
+                                            src={product?.icon}
+                                            alt={product?.name}
+                                            loading='lazy'
+                                            sizes='(max-width: 768px) 32px, (max-width: 1024px) 36px, 40px'
+                                        />
                                         <span className={style.tagline_sm}>{product?.tagline}</span>
                                         <h2 className='text-2xl font-bold'>{product?.name}</h2>
                                         <p className='text-lg'>{product?.description}</p>
@@ -27,6 +34,8 @@ export default function ProductsComp({ data }) {
                                         className='2xl:h-[260px] xl:h-[250px] lg:h-[200px] h-[200px] w-auto sm:ml-auto'
                                         src={product?.img}
                                         alt={product?.name}
+                                        loading='lazy'
+                                        sizes='(max-width: 768px) 320px, 420px'
                                     />
                                 </div>
                             </a>

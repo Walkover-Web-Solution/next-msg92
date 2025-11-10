@@ -21,6 +21,7 @@ export default function FeatureWithBulletComp({ data, index }) {
                         className='w-full h-fit max-w-[500px]'
                         src={data?.img}
                         alt='Voice Bot'
+                        loading='lazy'
                     />
                     <div className='w-full cont gap-6 justify-center '>
                         {data?.content.map((feature, i) => (

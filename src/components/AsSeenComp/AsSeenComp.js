@@ -26,6 +26,7 @@ export default function AsSeenComp({ data }) {
                                             width={1080}
                                             height={400}
                                             alt={icon?.name}
+                                            loading='lazy'
                                         />
                                     </a>
                                 );
@@ -37,6 +38,7 @@ export default function AsSeenComp({ data }) {
                             width={400}
                             height={400}
                             alt='Right'
+                            loading='lazy'
                         />
                     </div>
                 </div>
