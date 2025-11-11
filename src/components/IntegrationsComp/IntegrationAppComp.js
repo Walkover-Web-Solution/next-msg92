@@ -36,7 +36,14 @@ export default function IntegrationAppComp({ data }) {
             >
                 <div className='flex container gap-8 items-center '>
                     <div className='p-4 bg-white rounded'>
-                        <Image className='h-12 w-fit' width={300} height={300} src={data?.nav?.img} alt='tally logo' />
+                        <Image
+                            className='h-12 w-fit'
+                            width={300}
+                            height={300}
+                            src={data?.nav?.img}
+                            alt='tally logo'
+                            loading='lazy'
+                        />
                     </div>
                     <div>
                         <h1 className='text-2xl font-semibold'>{data?.nav?.heading}</h1>

@@ -19,6 +19,8 @@ export default function CompareBannerComp({ data, pageInfo }) {
                             width={40}
                             height={40}
                             alt='MSG91'
+                            loading='lazy'
+                            sizes='(max-width: 640px) 32px, 40px'
                         />
                     </div>
                 </div>
@@ -27,7 +29,15 @@ export default function CompareBannerComp({ data, pageInfo }) {
                     style={{ backgroundColor: data?.color }}
                 >
                     <div className='xl:min-w-20 xl:h-20 sm:min-w-18 sm:h-18 min-w-14 h-14 bg-white flex items-center justify-center rounded-lg'>
-                        <Image src={data?.img} className='sm:h-10 h-8 w-fit' width={40} height={40} alt='MSG91' />
+                        <Image
+                            src={data?.img}
+                            className='sm:h-10 h-8 w-fit'
+                            width={40}
+                            height={40}
+                            alt='MSG91'
+                            loading='lazy'
+                            sizes='(max-width: 640px) 32px, 40px'
+                        />
                     </div>
                 </div>
             </div>

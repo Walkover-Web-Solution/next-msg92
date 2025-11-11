@@ -165,7 +165,7 @@ var options = {
             <div className='container flex items-center flex-col gap-10'>
                 <div className='flex w-full md:items-center flex-col gap-6'>
                     <div className='flex lg:flex-row flex-col md:items-center gap-2'>
-                        <Image width={66} height={66} src={data?.product?.icon} alt='whatsapp logo' />
+                        <Image width={66} height={66} src={data?.product?.icon} alt='whatsapp logo' loading='lazy' />
                         <h1 className='text-5xl font-semibold'>{data?.product?.name}</h1>
                     </div>
                     <p className={style.tagline}>{data?.tagline}</p>
@@ -180,6 +180,7 @@ var options = {
                     className='ms:w-4/5'
                     src={data?.banner_img}
                     alt='Whatsapp link generator'
+                    loading='lazy'
                 />
             </div>
             {data?.steps?.cards?.length > 0 && (

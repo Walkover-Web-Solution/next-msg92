@@ -163,6 +163,8 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         width={480}
                                         height={480}
                                         alt='MSG91 Logo'
+                                        loading='lazy'
+                                        sizes='(max-width: 768px) 96px, 128px'
                                     />
                                 </a>
                             </div>
@@ -174,14 +176,28 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         target='_blank'
                                         className='flex items-center'
                                     >
-                                        <img src='/assets/icons/social/android.svg' alt='Android ' />
+                                        <Image
+                                            src='/assets/icons/social/android.svg'
+                                            alt='Android App'
+                                            width={24}
+                                            height={24}
+                                            loading='lazy'
+                                            sizes='24px'
+                                        />
                                     </a>
                                     <a
                                         href='https://apps.apple.com/in/app/hello-by-msg91/id1635375551'
                                         target='_blank'
                                         className='flex items-center '
                                     >
-                                        <img src='/assets/icons/social/apple.svg' alt='Apple ' />
+                                        <Image
+                                            src='/assets/icons/social/apple.svg'
+                                            alt='Apple App'
+                                            width={24}
+                                            height={24}
+                                            loading='lazy'
+                                            sizes='24px'
+                                        />
                                     </a>
                                 </div>
                             </div>
@@ -193,21 +209,37 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         target='_blank'
                                         className='flex items-center'
                                     >
-                                        <img src='/assets/icons/social/facebook.svg' alt='Facebook ' />
+                                        <Image
+                                            src='/assets/icons/social/facebook.svg'
+                                            alt='Facebook'
+                                            width={24}
+                                            height={24}
+                                            loading='lazy'
+                                            sizes='24px'
+                                        />
                                     </a>
                                     <a
                                         href='https://www.linkedin.com/company/msg91/'
                                         target='_blank'
                                         className='flex items-center '
                                     >
-                                        <img src='/assets/icons/social/linkedin.svg' alt='LinkedIn ' />
+                                        <Image
+                                            src='/assets/icons/social/linkedin.svg'
+                                            alt='LinkedIn'
+                                            width={24}
+                                            height={24}
+                                            loading='lazy'
+                                            sizes='24px'
+                                        />
                                     </a>
                                     <a href='https://x.com/msg91' target='_blank' className='flex items-center '>
-                                        <img
+                                        <Image
                                             src='/assets/icons/social/twitter.svg'
                                             width={25}
                                             height={25}
-                                            alt='Twitter '
+                                            alt='Twitter'
+                                            loading='lazy'
+                                            sizes='25px'
                                         />
                                     </a>
                                     <a
@@ -215,11 +247,13 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         target='_blank'
                                         className='flex items-center '
                                     >
-                                        <img
+                                        <Image
                                             src='/assets/icons/social/youtube.svg'
                                             width={25}
                                             height={25}
-                                            alt='YouTube '
+                                            alt='YouTube'
+                                            loading='lazy'
+                                            sizes='25px'
                                         />
                                     </a>
                                 </div>
@@ -240,6 +274,8 @@ export default function FooterComp({ componentData, pageInfo }) {
                                         width={480}
                                         height={480}
                                         alt='Meta Business Platform'
+                                        loading='lazy'
+                                        sizes='(max-width: 768px) 120px, 160px'
                                     />
                                 </a>
                             </div>

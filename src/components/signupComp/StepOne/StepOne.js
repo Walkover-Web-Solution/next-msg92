@@ -1,7 +1,7 @@
 import React from 'react';
-import { MdChevronRight, MdKeyboardArrowRight } from 'react-icons/md';
+import { MdChevronRight } from 'react-icons/md';
 import { loginWithGitHubAccount } from '@/utils/utilis';
-import Link from 'next/link';
+import Image from 'next/image';
 
 class StepOne extends React.Component {
     signupWithGitHub = () => {
@@ -17,7 +17,7 @@ class StepOne extends React.Component {
                             className='btn bg-white border border-black hover:bg-gray-100 hover:border-black btn-md '
                             onClick={() => this.signupWithGitHub()}
                         >
-                            <img src='/img/icon-github.svg' alt='Github' />
+                            <Image src='/img/icon-github.svg' alt='GitHub' width={26} height={24} loading='lazy' />
                         </button>
                     </div>
 

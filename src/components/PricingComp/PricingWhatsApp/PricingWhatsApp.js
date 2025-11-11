@@ -111,6 +111,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                             width={240}
                             height={240}
                             alt='whatsapp logo'
+                            loading='lazy'
                         />
                     </div>
                     <div className='flex flex-col gap-8 w-full'>

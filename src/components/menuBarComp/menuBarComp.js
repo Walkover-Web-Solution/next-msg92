@@ -70,6 +70,8 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                                             alt={product?.name}
                                                                             width={46}
                                                                             height={46}
+                                                                            loading='lazy'
+                                                                            sizes='(max-width: 768px) 32px, 40px'
                                                                         />
                                                                         <div className='flex flex-col'>
                                                                             <BtnWithHideIco customClasses='text-xl font-semibold'>
@@ -167,6 +169,8 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                                                 alt={product?.name}
                                                                                 width={46}
                                                                                 height={46}
+                                                                                loading='lazy'
+                                                                                sizes='(max-width: 768px) 32px, 40px'
                                                                             />
                                                                             <div className='flex flex-col'>
                                                                                 <BtnWithHideIco customClasses='text-xl font-semibold'>
@@ -209,6 +213,8 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                                     alt={integration?.slug}
                                                                     width={46}
                                                                     height={46}
+                                                                    loading='lazy'
+                                                                    sizes='32px'
                                                                 />
                                                             </div>
                                                             <div className='flex flex-col'>
@@ -309,6 +315,8 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     height={100}
                                     className='h-[40px] w-auto'
                                     alt='MSG91'
+                                    loading='lazy'
+                                    sizes='(max-width: 768px) 120px, 160px'
                                 />
                             </a>
                         </div>
@@ -338,6 +346,8 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     height={100}
                                     className='h-[30px] w-auto'
                                     alt='MSG91'
+                                    loading='lazy'
+                                    sizes='(max-width: 768px) 90px, 120px'
                                 />
                             </a>
                             <button

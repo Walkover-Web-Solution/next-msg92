@@ -481,6 +481,7 @@ export default class SignUp extends React.Component {
                                     height={420}
                                     className='w-32'
                                     alt='msg91-logo'
+                                    loading='lazy'
                                 />
                                 <h1 className='text-2xl font-medium'>{this.props.data.heading}</h1>
                             </div>
