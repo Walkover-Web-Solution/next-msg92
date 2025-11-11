@@ -155,7 +155,10 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                                     className='border p-2 rounded w-full pr-8'
                                 />
                                 {searchText && (
-                                    <button onClick={() => setSearchText('')} className='absolute right-2 top-1/2'>
+                                    <button
+                                        onClick={() => setSearchText('')}
+                                        className='absolute right-2 top-1/2 -translate-y-1/2'
+                                    >
                                         <MdClose size={20} />
                                     </button>
                                 )}
