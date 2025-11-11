@@ -6,7 +6,7 @@ import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import CalculatePricingWhatsApp from './CalculatePricingWhatsApp/CalculatePricingWhatsApp';
 import styles from './PricingWhatsApp.module.scss';
 import { useState, useMemo, useEffect } from 'react';
-import { MdArrowRightAlt } from 'react-icons/md';
+import { MdArrowRightAlt, MdClose } from 'react-icons/md';
 
 export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
@@ -15,10 +15,19 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
     const [searchText, setSearchText] = useState('');
     const [debouncedSearch, setDebouncedSearch] = useState('');
 
-    let voiceData = pricingData?.voicePricing;
     const messageData = useMemo(() => {
-        let sorted = pricingData?.messagePricing;
-        const index = sorted?.findIndex((item) => item.country_name === currentCountry?.name);
+        let sorted = [...(pricingData?.messagePricing || [])];
+        const index = sorted.findIndex((item) => item.country_name === currentCountry?.name);
+        if (index > -1) {
+            const [current] = sorted.splice(index, 1);
+            sorted.unshift(current);
+        }
+        return sorted;
+    }, [pricingData, currentCountry]);
+
+    const voiceData = useMemo(() => {
+        let sorted = [...(pricingData?.voicePricing || [])];
+        const index = sorted.findIndex((item) => item.country_name === currentCountry?.name);
         if (index > -1) {
             const [current] = sorted.splice(index, 1);
             sorted.unshift(current);
@@ -34,58 +43,55 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
     }, [searchText]);
 
     const filteredMessageData = useMemo(() => {
-        if (!debouncedSearch) return pricingData?.messagePricing;
-        return pricingData?.messagePricing.filter((item) =>
-            item.country_name.toLowerCase().includes(debouncedSearch.toLowerCase())
-        );
-    }, [debouncedSearch, pricingData]);
+        if (!debouncedSearch) return messageData;
+        return messageData.filter((item) => item.country_name.toLowerCase().includes(debouncedSearch.toLowerCase()));
+    }, [debouncedSearch, messageData]);
 
     const filteredVoiceData = useMemo(() => {
         if (!debouncedSearch) return voiceData;
-        return voiceData?.filter((item) => item?.country_name?.toLowerCase()?.includes(debouncedSearch.toLowerCase()));
+        return voiceData.filter((item) => item.country_name.toLowerCase().includes(debouncedSearch.toLowerCase()));
     }, [debouncedSearch, voiceData]);
+
     return (
         <>
             <div className='flex flex-col gap-3 max-w-full w-full overflow-hidden'>
                 <h1 className='text-2xl md:text-3xl font-semibold capitalize'>WhatsApp Pricing</h1>
+
                 <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
                     <span
                         role='tab'
                         className={`tab ${tabtype === 'Messages' && 'tab-active'}`}
-                        onClick={() => {
-                            setTabtype('Messages');
-                        }}
+                        onClick={() => setTabtype('Messages')}
                     >
                         Messages
                     </span>
                     <span
                         role='tab'
                         className={`tab ${tabtype === 'Voice' && 'tab-active'}`}
-                        onClick={() => {
-                            setTabtype('Voice');
-                        }}
+                        onClick={() => setTabtype('Voice')}
                     >
                         Voice
                     </span>
                 </div>
+
                 <div className='flex flex-col w-full gap-8'>
                     <div className='flex lg:flex-row flex-col-reverse bg-white rounded xl:p-8 lg:p-6 p-4 items-center justify-between lg:gap-6 xl:gap-12 gap-4'>
                         <div className={`${tabtype === 'Voice' ? '' : 'hidden'} flex flex-col gap-4 w-full`}>
                             <div>
-                                <h2 className='text-xl md:text-3xl font-bold'> {pageData?.whatsappVoice?.heading} </h2>
-                                <ul className='flex flex-col gap-2 '>
+                                <h2 className='text-xl md:text-3xl font-bold'>{pageData?.whatsappVoice?.heading}</h2>
+                                <ul className='flex flex-col gap-2'>
                                     {pageData?.whatsappVoice?.content?.map((item, index) => (
-                                        <div className='flex gap-2 text-gray-600 items-center'>
-                                            <MdArrowRightAlt size={18} /> <li key={index}> {item}</li>
+                                        <div key={index} className='flex gap-2 text-gray-600 items-center'>
+                                            <MdArrowRightAlt size={18} /> <li>{item}</li>
                                         </div>
                                     ))}
                                 </ul>
                             </div>
-
                             <a href={getURL('signup', 'whatsapp')} className='w-fit' target='_blank'>
                                 <button className='btn btn-primary btn-md'>Get Started</button>
                             </a>
                         </div>
+
                         <div
                             className={`flex flex-col gap-4 sm:gap-6 w-full md:text-start text-center md:items-start items-center ${
                                 tabtype === 'Messages' ? '' : 'hidden'
@@ -105,6 +111,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                                 <button className='btn btn-primary btn-md'>Get Started</button>
                             </a>
                         </div>
+
                         <Image
                             src={'/assets/icons/products/whatsapp.svg'}
                             className={`max-w-[200px] min-w-[200px] w-full h-fit`}
@@ -114,10 +121,11 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                             loading='lazy'
                         />
                     </div>
+
                     <div className='flex flex-col gap-8 w-full'>
                         <div className={`flex flex-col gap-2 ${tabtype === 'Messages' ? '' : 'hidden'}`}>
-                            <div className='flex flex-col md:flex-row w-full justify-between ms:items-center gap-1 '>
-                                {pageData?.heading && <h2 className='text-2xl font-bold '>{pageData?.heading} </h2>}
+                            <div className='flex flex-col md:flex-row w-full justify-between ms:items-center gap-1'>
+                                {pageData?.heading && <h2 className='text-2xl font-bold'>{pageData?.heading}</h2>}
                                 {messageData && messageData?.length > 0 && (
                                     <button
                                         onClick={() =>
@@ -132,47 +140,63 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                             <p>{pageData?.tax}</p>
                             {pageData?.adds && <p>{pageData?.adds}</p>}
                         </div>
+
                         <div className='flex flex-col gap-4'>
                             <h2 className={`text-2xl font-bold ${tabtype === 'Voice' ? '' : 'hidden'}`}>
                                 Outbound Call Pricing
                             </h2>
-                            <input
-                                type='text'
-                                placeholder='Search country...'
-                                value={searchText}
-                                onChange={(e) => setSearchText(e.target.value)}
-                                className='border p-2 rounded mb-4 w-full max-w-[300px] hover'
-                            />
-                            {messageData && messageData?.length > 0 && (
-                                <>
-                                    <Table
-                                        data={filteredMessageData}
-                                        tabtype={tabtype}
-                                        tabletype={'messages'}
-                                        symbol={symbol}
-                                        className={tabtype === 'Messages' ? '' : 'hidden'}
-                                    />
-                                </>
-                            )}
-                            {voiceData && voiceData?.length > 0 && (
-                                <Table
-                                    data={filteredVoiceData}
-                                    tabtype={tabtype}
-                                    tabletype='voice'
-                                    symbol={symbol}
-                                    className={tabtype === 'Voice' ? '' : ' hidden'}
+
+                            <div className='relative w-full max-w-[300px] mb-4'>
+                                <input
+                                    type='text'
+                                    placeholder='Search market...'
+                                    value={searchText}
+                                    onChange={(e) => setSearchText(e.target.value)}
+                                    className='border p-2 rounded w-full pr-8'
                                 />
+                                {searchText && (
+                                    <button onClick={() => setSearchText('')} className='absolute right-2 top-1/2'>
+                                        <MdClose size={20} />
+                                    </button>
+                                )}
+                            </div>
+
+                            <Table
+                                data={filteredMessageData}
+                                tabtype={tabtype}
+                                tabletype='messages'
+                                symbol={symbol}
+                                className={`${
+                                    tabtype === 'Messages' && filteredMessageData?.length > 0 ? '' : 'hidden'
+                                }`}
+                            />
+
+                            {tabtype === 'Messages' && filteredMessageData?.length === 0 && (
+                                <p className='text-red-500 text-sm'>No country found. Please check your search.</p>
+                            )}
+
+                            <Table
+                                data={filteredVoiceData}
+                                tabtype={tabtype}
+                                tabletype='voice'
+                                symbol={symbol}
+                                className={`${tabtype === 'Voice' && filteredVoiceData?.length > 0 ? '' : 'hidden'}`}
+                            />
+                            {tabtype === 'Voice' && filteredVoiceData?.length === 0 && (
+                                <p className='text-red-500 text-sm'>No country found. Please check your search.</p>
                             )}
                         </div>
                     </div>
+
                     <ConnectWithTeam
-                        product={'WhatsApp'}
+                        product='WhatsApp'
                         pageData={pageData?.connectComp}
-                        href={'whatsapp'}
+                        href='whatsapp'
                         isPlan={true}
                     />
                 </div>
             </div>
+
             {messageData && messageData?.length > 0 && (
                 <dialog id='calculate_whatsapp_pricing' className='modal'>
                     <CalculatePricingWhatsApp
@@ -186,12 +210,13 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
         </>
     );
 }
+
 function Table({ data, symbol, className, tabletype }) {
     const isMessageTable = tabletype === 'messages';
 
     return (
-        <div className={`overflow-y-scroll h-[700px]  ${className}`}>
-            <table className={`table bg-white rounded w-full  ${tabletype}`}>
+        <div className={`overflow-y-scroll h-[700px] scrollbar-none ${className}`}>
+            <table className={`table bg-white rounded w-full ${tabletype}`}>
                 <thead className='sticky top-0 bg-white z-10'>
                     <tr className='font-bold text-[16px] text-black'>
                         <th className='border-r text-left'>Market</th>
@@ -199,7 +224,7 @@ function Table({ data, symbol, className, tabletype }) {
                         {isMessageTable && <th className='border-r text-left'>Marketing</th>}
                         {isMessageTable && <th className='border-r text-left'>Utility</th>}
                         {isMessageTable && <th className='text-left'>Authentication</th>}
-                        {!isMessageTable && <th className=''>Charges</th>}
+                        {!isMessageTable && <th>Charges (per minute)</th>}
                     </tr>
                 </thead>
                 <tbody>
@@ -213,8 +238,8 @@ function Table({ data, symbol, className, tabletype }) {
                                 <td className='border-r'>{item?.prefix === 0 ? 'N/A' : item?.prefix}</td>
                                 {isMessageTable && <td className='border-r'>{formatRate(item?.marketing_rate)}</td>}
                                 {isMessageTable && <td className='border-r'>{formatRate(item?.utility_rate)}</td>}
-                                {isMessageTable && <td className=''>{formatRate(item?.authentication_rate)}</td>}
-                                {!isMessageTable && <td className=''>{formatRate(item?.charges)}</td>}
+                                {isMessageTable && <td>{formatRate(item?.authentication_rate)}</td>}
+                                {!isMessageTable && <td>{formatRate(item?.charges)}</td>}
                             </tr>
                         );
                     })}
