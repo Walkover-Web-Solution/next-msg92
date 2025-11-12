@@ -7,26 +7,26 @@
     @apply uppercase tracking-widest;
 }
 .hello {
-    background-color: #fdf4e2;
+    background-color: var(--hello-lite-color);
     .tagline_sm {
-        color: #8c5d00;
+        color: var(--hello-dark-color);
     }
 }
 .campaign {
-    background-color: #f6effc;
+    background-color: var(--campaign-lite-color);
     .tagline_sm {
-        color: #aa50f6;
+        color: var(--campaign-dark-color);
     }
 }
 .segmento {
-    background-color: #fceff6;
+    background-color: var(--segmento-lite-color);
     .tagline_sm {
-        color: #80335a;
+        color: var(--segmento-dark-color);
     }
 }
 .otp {
-    background-color: #e2f0ff;
+    background-color: var(--otp-lite-color);
     .tagline_sm {
-        color: #1e75ba;
+        color: var(--otp-dark-color);
     }
 }
