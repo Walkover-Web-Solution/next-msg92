@@ -287,7 +287,7 @@ export default function PricingVoice({ data, country }) {
                                     {data?.addOns?.content.map((item, index) => {
                                         return (
                                             <div key={index} className='flex items-center gap-1'>
-                                                <MdCheck color='#29a653' fontSize={22} /> <p>{item}</p>
+                                                <MdCheck className='text-green-700' fontSize={22} /> <p>{item}</p>
                                             </div>
                                         );
                                     })}
