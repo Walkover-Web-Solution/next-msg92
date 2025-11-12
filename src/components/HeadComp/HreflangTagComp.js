@@ -11,13 +11,13 @@ export default function HreflangTagComp({ pageInfo }) {
 
             <link
                 rel='alternate'
-                hreflang='x-default'
+                hrefLang='x-default'
                 href={`${process.env.BASE_URL}${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
             />
 
             <link
                 rel='alternate'
-                hreflang='en'
+                hrefLang='en'
                 href={`${process.env.BASE_URL}${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
             />
 
@@ -32,7 +32,7 @@ export default function HreflangTagComp({ pageInfo }) {
                         <link
                             key={index}
                             rel='alternate'
-                            hreflang={country.hreflang}
+                            hrefLang={country.hreflang}
                             href={`${process.env.BASE_URL}/${hrefPrefix}${
                                 pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''
                             }`}
