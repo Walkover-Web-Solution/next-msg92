@@ -159,18 +159,15 @@
                     {
                         "question": "Are there any additional charges for using advanced security features, such as Google Captcha validation?",
                         "answer": "While some providers may charge additional fees for features like Google Captcha validation to boost OTP Widget security, we do not impose any additional charges for captcha validation."
-                    }
-                    ,
+                    },
                     {
                         "question": "Can I get a customized pricing plan based on my specific business needs?",
                         "answer": "Many service providers offer customized pricing plans for businesses with unique requirements. Contact the sales team to discuss your needs and explore tailored pricing options."
-                    }
-                    ,
+                    },
                     {
                         "question": "Are there any hidden fees or charges that I should be aware of?",
                         "answer": "No, there are no hidden additional charges for the widget, except for the actual sending of OTPs through any channel. To send OTPs, you simply need to subscribe or add balance to your account"
-                    }
-                    ,
+                    },
                     {
                         "question": "Is there a trial period or demo available for the testing of otp widget ?",
                         "answer": "We do not offer a trial period or demo for testing the widget. However, you can add funds to your wallet with a low amount for testing purposes."
@@ -307,6 +304,13 @@
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
+            },
+            "whatsappVoice": {
+                "heading": "Enjoy 100% Free WhatsApp Inbound Calls till December!",
+                "sub_heading": "Pricing",
+                "content": [
+                    "Pricing after December: Inbound Calls: $0.01/min"
+                ]
             }
         },
         "rcs": {
@@ -318,5 +322,5 @@
                 "know_more": "Know more about"
             }
         }
-}
+    }
 }
