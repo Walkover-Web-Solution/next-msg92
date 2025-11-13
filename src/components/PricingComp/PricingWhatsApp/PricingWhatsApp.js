@@ -52,6 +52,10 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
         return voiceData.filter((item) => item.country_name.toLowerCase().includes(debouncedSearch.toLowerCase()));
     }, [debouncedSearch, voiceData]);
 
+    const noCountryFound =
+        (tabtype === 'Messages' && filteredMessageData?.length === 0) ||
+        (tabtype === 'Voice' && filteredVoiceData?.length === 0);
+
     return (
         <>
             <div className='flex flex-col gap-3 max-w-full w-full overflow-hidden'>
@@ -152,13 +156,22 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                                     placeholder='Search market...'
                                     value={searchText}
                                     onChange={(e) => setSearchText(e.target.value)}
-                                    className='border p-2 rounded w-full pr-8'
+                                    className={`p-2 rounded w-full pr-8 border focus:outline-none ${
+                                        noCountryFound ? 'border-red-500' : 'border-gray-300'
+                                    }`}
                                 />
                                 {searchText && (
-                                    <button onClick={() => setSearchText('')} className='absolute right-2 top-1/2'>
+                                    <button
+                                        onClick={() => setSearchText('')}
+                                        className='absolute right-2 top-5 -translate-y-1/2 '
+                                    >
                                         <MdClose size={20} />
                                     </button>
                                 )}
+                                {(tabtype === 'Messages' && filteredMessageData?.length === 0) ||
+                                (tabtype === 'Voice' && filteredVoiceData?.length === 0) ? (
+                                    <p className='text-sm p-2'>No country found. Please check your search.</p>
+                                ) : null}
                             </div>
 
                             <Table
@@ -171,10 +184,6 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                                 }`}
                             />
 
-                            {tabtype === 'Messages' && filteredMessageData?.length === 0 && (
-                                <p className='text-red-500 text-sm'>No country found. Please check your search.</p>
-                            )}
-
                             <Table
                                 data={filteredVoiceData}
                                 tabtype={tabtype}
@@ -182,9 +191,6 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                                 symbol={symbol}
                                 className={`${tabtype === 'Voice' && filteredVoiceData?.length > 0 ? '' : 'hidden'}`}
                             />
-                            {tabtype === 'Voice' && filteredVoiceData?.length === 0 && (
-                                <p className='text-red-500 text-sm'>No country found. Please check your search.</p>
-                            )}
                         </div>
                     </div>
 
