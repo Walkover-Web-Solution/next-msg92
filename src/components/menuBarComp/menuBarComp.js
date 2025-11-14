@@ -67,7 +67,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                                         <Image
                                                                             className='h-10'
                                                                             src={`/assets/icons/products/${product?.slug}.svg`}
-                                                                            alt={product?.name}
+                                                                            alt={`${product?.name} Icon`}
                                                                             width={46}
                                                                             height={46}
                                                                             loading='lazy'
@@ -166,7 +166,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                                             <Image
                                                                                 className='h-10'
                                                                                 src={`/assets/icons/products/${product?.slug}.svg`}
-                                                                                alt={product?.name}
+                                                                                alt={`${product?.name} Icon`}
                                                                                 width={46}
                                                                                 height={46}
                                                                                 loading='lazy'
@@ -210,7 +210,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                                 <Image
                                                                     className='h-fit w-8'
                                                                     src={integration?.icon || 'https://placehold.co/20'}
-                                                                    alt={integration?.slug}
+                                                                    alt={`${integration?.name} Icon`}
                                                                     width={46}
                                                                     height={46}
                                                                     loading='lazy'
@@ -296,16 +296,18 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             >
                                 {componentData?.integrations}
                             </li>
-                            <a
-                                onMouseEnter={() => {
-                                    setNav('hide');
-                                    setType('products');
-                                }}
-                                className='text-link'
-                                href={pricingPath || '/pricing/sms'}
-                            >
-                                {componentData?.pricing}
-                            </a>
+                            <li>
+                                <a
+                                    onMouseEnter={() => {
+                                        setNav('hide');
+                                        setType('products');
+                                    }}
+                                    className='text-link'
+                                    href={pricingPath || '/pricing/sms'}
+                                >
+                                    {componentData?.pricing}
+                                </a>
+                            </li>
                         </ul>
                         <div className='w-full items-center flex justify-center'>
                             <a href={pageInfo?.country === 'global' ? '/' : `/${pageInfo?.country}`}>
@@ -321,20 +323,20 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             </a>
                         </div>
                         <ul className='w-full flex justify-end gap-6 items-center'>
-                            <a
-                                className='flex items-center h-full justify-center'
-                                href='https://docs.msg91.com/overview'
-                                target='_blank'
-                            >
-                                <li className='text-link'>{componentData?.apidocs}</li>
-                            </a>
-                            <a
-                                className='btn btn-primary btn-sm uppercase'
-                                href={getURL('signup', pageInfo?.page)}
-                                target='_blank'
-                            >
-                                {componentData?.signup_btn}
-                            </a>
+                            <li className='flex items-center h-full justify-center'>
+                                <a href='https://docs.msg91.com/overview' target='_blank' className='text-link'>
+                                    {componentData?.apidocs}
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    className='btn btn-primary btn-sm uppercase'
+                                    href={getURL('signup', pageInfo?.page)}
+                                    target='_blank'
+                                >
+                                    {componentData?.signup_btn}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div className='container z-[1000] flex md:hidden  py-5 '>
