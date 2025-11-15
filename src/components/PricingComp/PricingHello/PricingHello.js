@@ -147,7 +147,7 @@ export default function PricingHello({ data, country }) {
                                                             )}
                                                         </div>
                                                         <div className='gap-1 flex flex-col'>
-                                                            <p className=' text-xl font-semibold text-green-600 capitalize'>
+                                                            <p className=' text-xl font-semibold text-green-800 capitalize'>
                                                                 {amount?.currency?.symbol}
                                                                 {amount?.plan_amount} {tabtype}
                                                             </p>
