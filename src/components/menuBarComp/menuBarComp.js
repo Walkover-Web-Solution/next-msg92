@@ -353,6 +353,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                 />
                             </a>
                             <button
+                                aria-label='Menu Toggle Button'
                                 className='btn btn-icon'
                                 onClick={() => {
                                     handleMiniMenu();

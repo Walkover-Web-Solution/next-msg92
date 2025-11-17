@@ -10,7 +10,7 @@ export default function HeadComp({ data, pageInfo }) {
             {pageInfo?.page !== 'demochatbot' && (
                 <>
                     <Script
-                        strategy='afterInteractive'
+                        strategy='lazyOnload'
                         dangerouslySetInnerHTML={{
                             __html: `var helloConfig = {
               widgetToken: '${isEcommerceStore ? process.env.ECOMMERCE_WIDGET_TOKEN : process.env.CHAT_WIDGET_TOKEN}',
@@ -19,7 +19,11 @@ export default function HeadComp({ data, pageInfo }) {
                         }}
                     />
 
-                    <Script onload='initChatWidget(helloConfig, 0)' src={`${process.env.CHAT_WIDGET_URL}`} />
+                    <Script
+                        strategy='lazyOnload'
+                        onload='initChatWidget(helloConfig, 0)'
+                        src={`${process.env.CHAT_WIDGET_URL}`}
+                    />
                 </>
             )}
 

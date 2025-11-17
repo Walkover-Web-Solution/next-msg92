@@ -4,7 +4,7 @@ import getURL from '@/utils/getURL';
 export default function MagicLinkComp({ data, pageInfo }) {
     return (
         <>
-            <div className='flex lg:flex-row flex-col container py-20 justify-between'>
+            <div className='flex lg:flex-row flex-col container py-20 justify-between min-h-[1000px]'>
                 <div className='flex flex-col gap-6 justify-center'>
                     <div className='flex items-center gap-2'>
                         <img src={data?.product?.icon} alt='Product Icon' />
@@ -17,9 +17,14 @@ export default function MagicLinkComp({ data, pageInfo }) {
                         <button className='btn btn-primary'>{data?.getstarted_btn}</button>
                     </a>
                 </div>
-                <div>
-                    <img src={data?.banner_img} alt='Banner Image' />
-                </div>
+                <Image
+                    width={600}
+                    height={600}
+                    src={data?.banner_img}
+                    alt='Banner Image'
+                    fetchpriority='high'
+                    priority
+                />
             </div>
             <div className='bg-neutral'>
                 <div className='container flex flex-col py-20 gap-6'>

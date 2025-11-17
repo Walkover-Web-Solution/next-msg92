@@ -93,14 +93,14 @@ export default function BannerComp({ pageInfo, data }) {
                     <div className={styles.cont}>
                         <Image
                             key={data?.tagline}
-                            className={pageInfo?.page === 'home' ? styles.homeimg : styles.img}
+                            // className={pageInfo?.page === 'home' ? styles.homeimg : styles.img}
                             src={data?.banner_img}
-                            width={720}
-                            height={720}
+                            width={600} // realistic desktop width
+                            height={600}
                             alt={data?.tagline}
                             priority
                             fetchPriority='high'
-                            sizes='(max-width: 768px) 300px, (max-width: 1024px) 500px, (max-width: 1280px) 600px, 720px'
+                            sizes='(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 100vw'
                         />
                     </div>
                 )}
@@ -108,14 +108,14 @@ export default function BannerComp({ pageInfo, data }) {
                     <div className='lg:w-1/2'>
                         <Image
                             key={data?.tagline}
-                            className='w-full'
+                            className={pageInfo?.page === 'home' ? styles.homeimg : styles.img}
                             src={data?.banner_img}
-                            width={720}
-                            height={720}
+                            width={600} // realistic desktop width
+                            height={600}
                             alt={data?.tagline}
                             priority
                             fetchPriority='high'
-                            sizes='(max-width: 768px) 300px, (max-width: 1024px) 500px, (max-width: 1280px) 600px, 720px'
+                            sizes='(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 100vw'
                         />
                     </div>
                 )}

@@ -63,7 +63,7 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
             {selectedTemplate?.token && (
                 <>
                     <Script
-                        strategy='afterInteractive'
+                        strategy='lazyOnload'
                         dangerouslySetInnerHTML={{
                             __html: `var helloConfig = {
                   widgetToken: '${selectedTemplate.token}',
@@ -81,7 +81,11 @@ export default function ChatBotDemoComp({ templateList, totalPages, currentPage 
                         }}
                     />
 
-                    <Script onload='initChatWidget(helloConfig, 0)' src={`${process.env.CHAT_WIDGET_URL}`} />
+                    <Script
+                        strategy='lazyOnload'
+                        onLoad='initChatWidget(helloConfig, 0)'
+                        src={`${process.env.CHAT_WIDGET_URL}`}
+                    />
                 </>
             )}
             <div className='container flex lg:flex-row flex-col cont_p lg:gap-24 gap-10 justify-between'>

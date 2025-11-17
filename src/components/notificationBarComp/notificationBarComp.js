@@ -161,17 +161,21 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                     )}
 
                     <a
-                        className='text-link flex gap-1 items-center'
                         href={getURL('contact-us', 'contact-us', pageInfo)}
+                        className='text-link flex gap-1 items-center'
+                        aria-label={componentData?.support || 'Contact us'}
                     >
-                        <MdOutlineCall className='text-2xl sm:text-xl' />
+                        <MdOutlineCall className='text-2xl sm:text-xl' aria-hidden='true' focusable='false' />
+                        {/* Visible text only on larger screens */}
                         <span className='hidden sm:block'>{componentData?.support}</span>
                     </a>
+
                     <a
-                        className='text-link flex gap-1 items-center'
                         href={process.env.LOGIN_URL || 'https://control.msg91.com/signin/'}
+                        className='text-link flex gap-1 items-center'
+                        aria-label={componentData?.login || 'Login'}
                     >
-                        <MdLogin className='text-2xl sm:text-xl' />
+                        <MdLogin className='text-2xl sm:text-xl' aria-hidden='true' focusable='false' />
                         <span className='hidden sm:block'>{componentData?.login}</span>
                     </a>
                 </div>

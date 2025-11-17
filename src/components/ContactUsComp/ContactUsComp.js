@@ -9,7 +9,7 @@ export default function ContactUsComp({ data, pageInfo }) {
         <>
             <div className='container flex flex-col cont_gap cont_p'>
                 <h1 className='text-center text-4xl font-semibold'>{data?.heading}</h1>
-                <div className='flex lg:flex-row flex-col gap-12 justify-between mx-40'>
+                <div className='flex lg:flex-row flex-col gap-12 justify-between mx-4 lg:mx-40'>
                     <div className='flex flex-col gap-6 items-center'>
                         <h2 className='text-3xl font-semibold'>{data?.sales?.heading}</h2>
                         <div className='flex flex-col gap-6'>

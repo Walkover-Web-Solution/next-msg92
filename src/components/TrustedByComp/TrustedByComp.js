@@ -10,17 +10,17 @@ export default function TrustedByComp({ data }) {
                     } `}
                 >
                     <h2 className={` ${data?.fullwidth ? 'text-3xl font-bold' : 'text-lg'} `}>{data?.heading}</h2>
-                    <div className='flex gap-5 flex-wrap items-center'>
+                    <div className='flex gap-4 md:gap-5 flex-wrap items-center'>
                         {data?.logos.map((img, index) => (
                             <Image
                                 key={index}
                                 src={img?.url}
                                 alt={img?.name}
-                                width={22}
-                                height={22}
+                                width={15}
+                                height={15}
                                 loading='lazy'
-                                sizes='22px'
-                                className='h-[22px] w-auto'
+                                sizes='15px'
+                                className='md:h-[20px] h-[15px] w-auto'
                             />
                         ))}
                     </div>
