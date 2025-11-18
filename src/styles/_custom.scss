@@ -1,3 +1,35 @@
+// Mixin for themed button styles using slug-based color variables
+@mixin themed-button($slug, $text-color: white) {
+    @apply outline-none border-black shadow-none transition-all duration-500 ease-in-out font-semibold;
+    background-color: var(--#{$slug}-color);
+
+    @if $text-color == white {
+        @apply text-white;
+    } @else if $text-color == black {
+        @apply text-black;
+    }
+
+    &:hover {
+        background-color: var(--#{$slug}-dark-color);
+        @apply text-white outline-none border-black shadow-none transition-all duration-500 ease-in-out;
+    }
+
+    &.btn-outline {
+        @apply bg-transparent;
+        border-color: var(--#{$slug}-dark-color);
+        color: var(--#{$slug}-dark-color);
+
+        &:hover {
+            background-color: var(--#{$slug}-color);
+            @if $text-color == white {
+                @apply text-white;
+            } @else if $text-color == black {
+                @apply text-black;
+            }
+        }
+    }
+}
+
 .container {
     @apply mx-auto px-4 md:px-10;
 }
@@ -78,10 +110,10 @@ body {
         }
     }
     &.btn-hello {
-        @apply bg-[var(--hello-color)] text-black outline-none border-black shadow-none;
-        &.btn-outline {
-            @apply border-[var(--hello-dark-color)] text-[var(--hello-dark-color)] bg-transparent hover:bg-[var(--hello-color)] hover:text-black;
-        }
+        @include themed-button(hello, black);
+    }
+    &.btn-campaign {
+        @include themed-button(campaign, white);
     }
 }
 
@@ -319,10 +351,6 @@ $button-transition-timing: 100ms;
     .blue {
         text-shadow: 4px 4px #26d9d9 !important;
     }
-}
-
-.iti .iti__country-list {
-    // width: 350px !important;
 }
 
 .tooltip.tooltip-modal {

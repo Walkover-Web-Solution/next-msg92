@@ -3,7 +3,7 @@
         "title": "SMS Campaign| MSG91-United States",
         "description": "Streamline your B2B marketing with advanced automation tools and sales funnel builders. Execute drip email campaigns and boost sales with ease."
     },
-    "BannerComp": {
+    "Banner": {
         "slug": "campaign",
         "product": {
             "name": "Start your Campaign",

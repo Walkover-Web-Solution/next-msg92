@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import LottiePlayer from '../LottiePlayer/LottiePlayer';
 import getURL from '@/utils/getURL';
-import { LinkText } from '../UIComponent/Buttons/LinkButton';
+import { LinkButton, LinkText } from '../UIComponent/Buttons/LinkButton';
 import { useState } from 'react';
 import { InlineWidget } from 'react-calendly';
 
@@ -9,8 +9,8 @@ export default function Banner({ pageInfo, data }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <section className='container '>
-            <div className='cont gap-6 flex flex-col lg:flex-row items-center min-h-[75dvh] '>
-                <div className='cont gap-1 md:gap-2 lg:gap-3 w-full'>
+            <div className='cont xl:gap-6 gap-3 flex flex-col lg:flex-row items-center lg:min-h-[75dvh] md:min-h-[60dvh] min-h-fit py-8'>
+                <div className='cont gap-1 md:gap-2 lg:gap-3 lg:w-1/2 w-full'>
                     {data?.product && (
                         <div className='flex items-center gap-2'>
                             <Image
@@ -30,24 +30,23 @@ export default function Banner({ pageInfo, data }) {
                     <h1 className='heading text-primary'>{data?.heading}</h1>
                     <p className='subheading text-gray-600'>{data?.subheading}</p>
                     <div className='flex gap-2'>
-                        <a href={getURL('signup', pageInfo?.page, pageInfo)} target='_blank'>
-                            <button className='btn btn-hello btn-md'>
-                                <LinkText>Get Started</LinkText>
-                            </button>
-                        </a>
-                        {/* <a href='/demochatbot'>
-                            <button className='btn btn-hello btn-outline btn-md'>
-                                <LinkText>Test Chatbot</LinkText>
-                            </button>
-                        </a> */}
+                        <LinkButton
+                            href={getURL('signup', pageInfo?.page, pageInfo)}
+                            target='_blank'
+                            customClasses={`btn btn-${data?.slug} btn-md`}
+                            content={data?.getstarted_btn || 'Get Started'}
+                        />
                         {data?.schedule_meet && (
-                            <button className='btn btn-md btn-hello btn-outline' onClick={() => setIsModalOpen(true)}>
+                            <button
+                                className={`btn btn-${data?.slug} btn-outline btn-md`}
+                                onClick={() => setIsModalOpen(true)}
+                            >
                                 <LinkText>Schedule a Meeting</LinkText>
                             </button>
                         )}
                         {data?.chatbot && (
                             <button
-                                className='btn btn-md btn-hello btn-outline'
+                                className={`btn btn-${data?.slug} btn-outline btn-md`}
                                 onClick={() => {
                                     window.open('https://msg91.com/chatbot', '_blank');
                                 }}
@@ -57,11 +56,10 @@ export default function Banner({ pageInfo, data }) {
                         )}
                     </div>
                 </div>
-                {data?.lottie && !data?.code && (
-                    <div className='w-full '>
-                        <LottiePlayer lottie={data?.lottie} />
-                    </div>
-                )}
+
+                <div className='lg:w-1/2 w-full ratio-square'>
+                    <Graphics data={data} />
+                </div>
             </div>
             {isModalOpen && (
                 <dialog id='schedule_modal' className='modal' open>
@@ -81,4 +79,24 @@ export default function Banner({ pageInfo, data }) {
             )}
         </section>
     );
+}
+
+function Graphics({ data }) {
+    if (data?.lottie) {
+        return <LottiePlayer lottie={data?.lottie} />;
+    } else if (data?.banner_img) {
+        return (
+            <Image
+                className='w-full'
+                key={data?.tagline}
+                src={data?.banner_img}
+                width={600}
+                height={600}
+                alt={data?.tagline}
+                priority
+                fetchPriority='high'
+                sizes='(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 100vw'
+            />
+        );
+    }
 }

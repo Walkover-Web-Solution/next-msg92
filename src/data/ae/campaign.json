@@ -3,7 +3,7 @@
         "title": "SMS Campaign | MSG91-United Arab Emirates",
         "description": "Simplify B2B marketing with advanced automation tools and sales funnel builders. Boost conversions with streamlined drip email campaigns and marketing automation."
     },
-    "BannerComp": {
+    "Banner": {
         "slug": "campaign",
         "product": {
             "name": "Campaign",

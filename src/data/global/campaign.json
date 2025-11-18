@@ -3,7 +3,7 @@
         "title": "SMS Campaign",
         "description": "Streamline B2B marketing with advanced automation tools and sales funnel builders. Simplify drip email campaigns and improve your sales process efficiently."
     },
-    "BannerComp": {
+    "Banner": {
         "slug": "campaign",
         "product": {
             "name": "Create Campaign",
