@@ -7,7 +7,7 @@
         "slug": "knowledgebase",
         "product": {
             "name": "KnowledgeBase",
-            "icon": "/assets/icons/products/Knowledgebase.svg"
+            "icon": "/assets/icons/products/knowledgebase.svg"
         },
         "tagline": "Empower Customers with Self-Service Options",
         "heading": "Knowledge base is the backbone for good customer support",
