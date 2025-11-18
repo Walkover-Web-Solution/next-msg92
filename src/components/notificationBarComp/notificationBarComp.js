@@ -12,7 +12,6 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
     const currentCountry = availableCountries.find((cont) => cont.shortname.toLowerCase() === pageInfo?.country);
     const hidden = componentData?.hide?.includes(pageInfo?.page);
     const [showModal, setShowModal] = useState(false);
-    const [modalMessage, setModalMessage] = useState('');
     function handleCookies(country) {
         if (typeof window !== 'undefined' && country) {
             const cookieName = 'country';
@@ -23,7 +22,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
     if (componentData && !hidden) {
         return (
             <div className='py-3 border border-b flex'>
-                <div className='container flex justify-between items-center'>
+                <div className='container flex justify-between items-center flex-col sm:flex-row gap-2'>
                     <div className='text-sm flex flex-col gap-0'>
                         <span className='text-red-500 rounded-md'>
                             Today, due to Cloudflare outage, MSG91, ChatGPT, Canva and multiple other website
@@ -37,7 +36,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                             for the best possible solution.
                         </span>
                     </div>
-                    <div className=' flex  gap-6 justify-end '>
+                    <div className='flex gap-6 justify-end w-full sm:w-auto'>
                         {currentCountry?.languages && (
                             <div className='dropdown'>
                                 <div tabIndex={0} role='button' className='flex gap-1 items-center '>
