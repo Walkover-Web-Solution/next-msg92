@@ -4,23 +4,12 @@ import styles from './MenuBarComp.module.scss';
 import { BtnWithHideIco, LinkText } from '../UIComponent/Buttons/LinkButton';
 import { useEffect, useState } from 'react';
 import getURL from '@/utils/getURL';
+import getPricingURL from '@/utils/getPricingURL';
 
 export default function MenuBarComp({ componentData, pageInfo }) {
     const [nav, setNav] = useState('hide');
     const [type, setType] = useState('products');
-    // Access cookies country
-    const [pricingPath, setPricingPath] = useState('/pricing/sms');
-    let cookiesCountry = null;
-    if (typeof document !== 'undefined') {
-        const match = document.cookie.match('(^|;)\\s*country\\s*=\\s*([^;]+)');
-        cookiesCountry = match ? match.pop() : null;
-    }
-
-    useEffect(() => {
-        setPricingPath(
-            cookiesCountry && cookiesCountry !== 'global' ? '/' + cookiesCountry + '/pricing/sms' : '/pricing/sms'
-        );
-    }, [cookiesCountry]);
+    const pricingPath = getPricingURL(pageInfo);
 
     useEffect(() => {
         if (nav === 'show') {
@@ -93,7 +82,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     })}
                                 <div className='flex flex-col gap-2 mt-4'>
                                     <a
-                                        href={getURL('pricing', 'sms', pageInfo)}
+                                        href={pricingPath}
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -111,7 +100,6 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         <LinkText customClasses='text-lg'>Integrations</LinkText>
                                     </a>
                                     <a
-                                        className='flex items-center h-full justify-center'
                                         href='https://docs.msg91.com/overview'
                                         target='_blank'
                                         onClick={() => {
