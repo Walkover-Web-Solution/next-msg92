@@ -2,8 +2,7 @@ import { MdCheck, MdClose } from 'react-icons/md';
 import getURL from '@/utils/getURL';
 import CalculateEmailPricing from './calculateEmailPricing/calculateEmailPricing';
 
-export default function PricingEmail({ pricingData, symbol, currency, tabtype, pageInfo }) {
-    console.log('⚡️ ~ :6 ~ PricingEmail ~ tabtype:', tabtype);
+export default function PricingEmail({ pricingData, symbol, currency, tabtype }) {
     return (
         <>
             <div className='grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-6'>
