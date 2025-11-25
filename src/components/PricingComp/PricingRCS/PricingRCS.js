@@ -6,7 +6,7 @@ import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import { InlineWidget } from 'react-calendly';
 import CalculatePricingRCS from './CalculatePricingRCS/CalculatePricingRCS';
 
-export default function PricingRCS({ country, pricingData, pageData }) {
+export default function PricingRCS({ country, pageData }) {
     const { currency, symbol } = GetCurrencySymbol(country);
     const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
     const [loading, setLoading] = useState(true);
