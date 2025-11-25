@@ -40,7 +40,13 @@ export const getServerSideProps = async (context) => {
         return {
             props: {
                 pricingData: pricingData || {},
-                pageInfo: { country: country, product: product },
+                pageInfo: {
+                    country: country,
+                    product: product,
+                    page: product,
+                    baseURL: `pricing/${product}`,
+                    pathURL: `pricing/${product}`,
+                },
                 pageData,
                 commonData,
                 products,
