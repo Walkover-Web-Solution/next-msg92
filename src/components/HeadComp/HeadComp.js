@@ -100,7 +100,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 />
 
                 <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5' />
-                <meta name='google-site-verification' content='RfcBy_Lv1Ao1j0eP8UlMjJ44ik5_1YDKsRQSNFr9jEQ' />
                 {/* Hreflag tags */}
 
                 {process.env.BASE_URL !== 'https://msg91.com' && (
