@@ -57,7 +57,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     name='viewport'
                     content='width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no'
                 />
-                <meta name='google-site-verification' content='RfcBy_Lv1Ao1j0eP8UlMjJ44ik5_1YDKsRQSNFr9jEQ' />
                 {process.env.BASE_URL !== 'https://msg91.com' && (
                     <>
                         <meta name='robots' content='noindex,nofollow' />
