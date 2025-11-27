@@ -41,7 +41,7 @@ export const getServerSideProps = async (context) => {
             props: {
                 pricingData: pricingData || {},
                 pageInfo: {
-                    country: country,
+                    country: 'global',
                     product: product,
                     page: product,
                     baseURL: `pricing/${product}`,
