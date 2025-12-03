@@ -63,6 +63,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                         width={18}
                                         height={18}
                                         alt={currentCountry?.shortname.toLowerCase()}
+                                        loading='lazy'
                                     />
                                 ) : (
                                     <MdOutlineLanguage fontSize={16} />
@@ -86,6 +87,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                                     width={18}
                                                     height={18}
                                                     alt='global'
+                                                    loading='lazy'
                                                 />
                                                 Global
                                             </div>
@@ -99,6 +101,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                                     width={18}
                                                     height={18}
                                                     alt='global'
+                                                    loading='lazy'
                                                 />
                                                 Global
                                             </a>
@@ -123,6 +126,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                                                 width={18}
                                                                 height={18}
                                                                 alt={cont?.name}
+                                                                loading='lazy'
                                                             />
 
                                                             {cont?.name}
@@ -142,6 +146,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                                                                 width={18}
                                                                 height={18}
                                                                 alt={cont?.name}
+                                                                loading='lazy'
                                                             />
 
                                                             {cont?.name}

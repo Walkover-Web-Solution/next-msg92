@@ -13,11 +13,20 @@ export default function Banner({ pageInfo, data }) {
                 <div className='cont gap-1 md:gap-2 lg:gap-3 w-full'>
                     {data?.product && (
                         <div className='flex items-center gap-2'>
-                            <Image src={data?.product?.icon} width={40} height={40} alt={data?.product?.name} />
+                            <Image
+                                src={data?.product?.icon}
+                                alt={data?.product?.name + ' icon'}
+                                width={40}
+                                height={40}
+                                sizes='40px'
+                                priority
+                            />
                             <span className='font-semibold text-2xl'>{data?.product?.name}</span>
                         </div>
                     )}
-                    <p className={`text-lg md:text-xl uppercase tracking-widest text-${data?.slug}`}>{data?.tagline}</p>
+                    <p className={`text-lg md:text-xl uppercase tracking-widest ${data?.slug}_dark_text`}>
+                        {data?.tagline}
+                    </p>
                     <h1 className='heading text-primary'>{data?.heading}</h1>
                     <p className='subheading text-gray-600'>{data?.subheading}</p>
                     <div className='flex gap-2'>

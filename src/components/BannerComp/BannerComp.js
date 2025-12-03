@@ -23,11 +23,21 @@ export default function BannerComp({ pageInfo, data }) {
                     <div className='flex flex-col gap-6'>
                         {data?.product && (
                             <div className='flex items-center gap-2'>
-                                <Image src={data?.product?.icon} width={40} height={40} alt={data?.product?.name} />
+                                <Image
+                                    src={data?.product?.icon}
+                                    width={40}
+                                    height={40}
+                                    alt={data?.product?.name}
+                                    priority
+                                    fetchPriority='high'
+                                    sizes='(max-width: 768px) 32px, (max-width: 1024px) 36px, 40px'
+                                />
                                 <span className='font-semibold text-2xl'>{data?.product?.name}</span>
                             </div>
                         )}
-                        <span className={`text-xl uppercase tracking-widest text-${data?.slug}`}>{data?.tagline}</span>
+                        <span className={`text-xl uppercase tracking-widest ${data?.slug}_dark_text`}>
+                            {data?.tagline}
+                        </span>
                         {data?.product ? (
                             <h1 className={`${data?.slug === 'whatsapp' ? 'whatsapp__' : ''}heading`}>
                                 {data?.heading}
@@ -85,9 +95,12 @@ export default function BannerComp({ pageInfo, data }) {
                             key={data?.tagline}
                             className={pageInfo?.page === 'home' ? styles.homeimg : styles.img}
                             src={data?.banner_img}
-                            width={2000}
-                            height={2000}
+                            width={720}
+                            height={720}
                             alt={data?.tagline}
+                            priority
+                            fetchPriority='high'
+                            sizes='(max-width: 768px) 300px, (max-width: 1024px) 500px, (max-width: 1280px) 600px, 720px'
                         />
                     </div>
                 )}
@@ -97,9 +110,12 @@ export default function BannerComp({ pageInfo, data }) {
                             key={data?.tagline}
                             className='w-full'
                             src={data?.banner_img}
-                            width={2000}
-                            height={2000}
+                            width={720}
+                            height={720}
                             alt={data?.tagline}
+                            priority
+                            fetchPriority='high'
+                            sizes='(max-width: 768px) 300px, (max-width: 1024px) 500px, (max-width: 1280px) 600px, 720px'
                         />
                     </div>
                 )}

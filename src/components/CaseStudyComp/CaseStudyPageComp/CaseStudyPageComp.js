@@ -26,6 +26,7 @@ export default function CaseStudyPageComp({ data, pageInfo }) {
                         height={400}
                         alt={data?.slug}
                         className='lg:h-[60px] h-[40px] w-fit'
+                        loading='lazy'
                     />
                     <h1 className='md:text-4xl text-2xl font-bold'>{data?.title}</h1>
                     {data?.content?.length > 0 && (

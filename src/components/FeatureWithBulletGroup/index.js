@@ -91,6 +91,7 @@ export default function FeatureWithBulletGroup({ data }) {
                                 className={`${styles?.image}`}
                                 src={group?.img}
                                 alt={group?.name}
+                                loading='lazy'
                             />
                         )}
                     </div>

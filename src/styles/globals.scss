@@ -1,9 +1,9 @@
+@use 'import' as *;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 //styles
-@import 'import';
 
 body {
     font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',

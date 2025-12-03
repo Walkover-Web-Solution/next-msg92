@@ -29,13 +29,24 @@ export const getServerSideProps = async (context) => {
     let pageData = getPricingPageData(product);
     let products = getProducts();
 
-    if (!pricingData) {
+    const isProduct =
+        products?.applications?.some((app) => app.slug === product) ||
+        products?.channels?.some((channel) => channel.slug === product) ||
+        products?.services?.some((service) => service.slug === product);
+
+    if (!pricingData || !isProduct) {
         return { notFound: true };
     } else {
         return {
             props: {
                 pricingData: pricingData || {},
-                pageInfo: { country: country, product: product },
+                pageInfo: {
+                    country: 'global',
+                    product: product,
+                    page: product,
+                    baseURL: `pricing/${product}`,
+                    pathURL: `pricing/${product}`,
+                },
                 pageData,
                 commonData,
                 products,
