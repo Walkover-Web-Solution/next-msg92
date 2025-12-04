@@ -118,7 +118,7 @@ export default function PricingHello({ pricingData, symbol, tabtype }) {
                                 </div>
                                 {/* {plan?.extras?.postpaidAllowed && plan?.extras?.showExtra && (
                                                 <CalculateHelloPricing
-                                                    plan={plan}
+                                                    plan={plan}s
                                                     currency={currency}
                                                     symbol={symbol}
                                                     tabtype={tabtype}
