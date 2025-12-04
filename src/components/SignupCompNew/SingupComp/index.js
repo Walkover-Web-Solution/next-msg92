@@ -6,7 +6,7 @@ import StepThree from '../StepThree';
 import Toast from '../SignupUtils/Toast';
 
 // Create a separate component that uses the context
-function SignupSteps({ pageInfo, data }) {
+function SignupSteps({ pageInfo, data, isAbSignup }) {
     const { state, dispatch } = useSignup();
 
     useEffect(() => {
@@ -21,7 +21,7 @@ function SignupSteps({ pageInfo, data }) {
     }, [dispatch]);
 
     return (
-        <div className='flex h-screen w-full'>
+        <div className={`h-screen w-full ${isAbSignup ? 'flex' : 'hidden'}`}>
             <div className='h-full w-1/3 min-w-[320px] max-w-full bg-secondary'></div>
             <div className='w-full p-12'>
                 <Toast type='danger' />
@@ -33,10 +33,10 @@ function SignupSteps({ pageInfo, data }) {
     );
 }
 
-export default function SignupPage({ pageInfo, data }) {
+export default function SignupPage({ pageInfo, data, isAbSignup }) {
     return (
         <SignupProvider>
-            <SignupSteps pageInfo={pageInfo} data={data} />
+            <SignupSteps pageInfo={pageInfo} data={data} isAbSignup={isAbSignup} />
         </SignupProvider>
     );
 }

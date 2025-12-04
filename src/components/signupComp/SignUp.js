@@ -471,7 +471,9 @@ export default class SignUp extends React.Component {
     render() {
         return (
             <>
-                <section className='signup d-flex flex-column flex-md-row-reverse '>
+                <section
+                    className={`signup flex flex-col flex-md-row-reverse ${this.props.isAbSignup ? 'hidden' : 'flex'}`}
+                >
                     <div className='flex md:flex-row flex-col-reverse'>
                         <div className='flex flex-col bg-secondary sm:px-10 px-4 sm:py-20 py-10  gap-8 xl:w-1/4 lg:w-1/3 md:w-1/2 w-full md:min-h-dvh'>
                             <div className='md:flex hidden flex-col  gap-5'>
