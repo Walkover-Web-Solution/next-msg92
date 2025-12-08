@@ -57,7 +57,7 @@ const initialState = {
 
 const MOBILE_REGEX = /^[+]?[0-9]{7,15}$/;
 const EMAIL_REGEX =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\. ,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const OTPRetryModes = {
     Sms: '11',
@@ -304,6 +304,7 @@ export function otpWidgetSetup(dispatch, onSuccess, onError) {
                 const widgetDataInterval = setInterval(() => {
                     try {
                         let widgetData = window.getWidgetData();
+                        console.log(widgetData);
                         if (widgetData) {
                             const allowedRetry = {
                                 email: widgetData?.processes?.find(

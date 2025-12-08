@@ -3,6 +3,7 @@ import { useSignup, sendOtp, handleGithubSignup, setInitialStates, validateEmail
 import { useEffect, useState, useRef } from 'react';
 import style from './StepOne.module.scss';
 import getURLParams from '@/utils/getURLParams';
+import { MdEdit } from 'react-icons/md';
 
 export default function StepOne() {
     const { state, dispatch } = useSignup();
@@ -149,9 +150,12 @@ export default function StepOne() {
             </div>
             {otpSent && otpLength ? (
                 <div className='cont gap-2'>
-                    <p className='text-gray-500'>
-                        OTP sent to <strong>{email}</strong>
-                    </p>
+                    <div className='flex items-center gap-2'>
+                        <p className='text-gray-500'>
+                            OTP sent to <strong>{email}</strong>
+                        </p>
+                        <MdEdit className='text-gray-500 hover:text-accent cursor-pointer' />
+                    </div>
                     <div className='flex  gap-4'>
                         <div className='flex items-center gap-2'>
                             {otp.map((digit, index) => (
@@ -185,6 +189,11 @@ export default function StepOne() {
                                 Verify OTP
                             </button>
                         )}
+                    </div>
+                    <div className='flex items-center text-sm text-gray-500'>
+                        Resend OTP using <span className='ms-1 text-link active-link'>SMS</span>,{' '}
+                        <span className='ms-1 text-link active-link'>Email</span>, or{' '}
+                        <span className='ms-1 text-link active-link'>Voice Call</span>
                     </div>
                 </div>
             ) : (

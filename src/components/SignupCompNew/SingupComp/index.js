@@ -9,6 +9,8 @@ import Toast from '../SignupUtils/Toast';
 function SignupSteps({ pageInfo, data, isAbSignup }) {
     const { state, dispatch } = useSignup();
 
+    console.log(state);
+
     useEffect(() => {
         otpWidgetSetup(
             dispatch,

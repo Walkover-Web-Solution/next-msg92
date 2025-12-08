@@ -1,9 +1,11 @@
 import SignUp from '@/components/signupComp/SignUp';
 import SignupPage from '../SingupComp';
-import getURLParams from '@/utils/getURLParams';
+import { useRouter } from 'next/router';
 
 export default function SignupParentComp({ pageInfo, data, browserPathCase }) {
-    const isAbSignup = getURLParams(browserPathCase)?.absignup === 'a';
+    const router = useRouter();
+    const { absignup } = router.query;
+    const isAbSignup = absignup === 'a';
 
     return (
         <>
