@@ -101,14 +101,7 @@ export default function ContactUsComp({ data, pageInfo }) {
                         >
                             ✕
                         </button>
-                        <InlineWidget
-                            url={
-                                pageInfo?.country != 'in'
-                                    ? 'https://calendly.com/d/y3n-29s-29h'
-                                    : 'https://calendly.com/d/csks-4j4-sy3'
-                            }
-                            styles={{ height: '680px' }}
-                        />
+                        <InlineWidget url='https://calendly.com/d/csks-4j4-sy3' styles={{ height: '680px' }} />
                     </div>
                 </dialog>
             )}
