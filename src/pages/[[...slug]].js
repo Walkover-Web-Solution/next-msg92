@@ -140,14 +140,15 @@ export default function Page({ data, commonData, pageInfo }) {
     return (
         <>
             {pageInfo?.page !== ''}
-            <NotificationBarComp
-                componentData={commonData?.notification}
-                country={pageInfo?.country}
-                pageInfo={pageInfo}
-            />
 
-            <MenuBarComp componentData={commonData?.menu} />
-            <NavigationComp pageInfo={pageInfo} />
+            <NavigationComp
+                pageInfo={pageInfo}
+                componentData={{
+                    menubarData: commonData?.menu,
+                    notificationBarData: commonData?.notification,
+                }}
+                country={pageInfo?.country}
+            />
             {data &&
                 Object.keys(data).map((key) => {
                     const pageData = data[key];
