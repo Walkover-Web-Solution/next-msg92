@@ -4,10 +4,10 @@ import ChannelsComp from '@/components/ChannelsComp/ChannelsComp';
 import FactsComp from '@/components/FactsComp/FactsComp';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import FooterComp from '@/components/FooterComp/FooterComp';
-import MenuBarComp from '@/components/menuBarComp/menuBarComp';
+import MenuBarComp from '@/components/NavigationComp/menuBarComp/menuBarComp';
 import MoreServicesComp from '@/components/MoreServicesComp/MoreServicesComp';
 import NotFoundComp from '@/components/NotFoundComp/NotFoundComp';
-import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
+import NotificationBarComp from '@/components/NavigationComp/notificationBarComp/notificationBarComp';
 import PreFooterComp from '@/components/PreFooterComp/PreFooterComp';
 import ProductsComp from '@/components/ProductsComp/ProductsComp';
 import SEOComp from '@/components/SEOComp/SEOComp';
@@ -62,6 +62,7 @@ import { useRouter } from 'next/router';
 import PreFooterMFTL from '@/components/migrateFromTextlocal/preFooterMFTL/preFooterMFTL';
 import CTAMFTL from '@/components/migrateFromTextlocal/ctaMFTL/ctaMFTL';
 import ChatBotPageComp from '@/components/ChatBotPageComp';
+import NavigationComp from '@/components/NavigationComp';
 
 const Components = {
     BannerComp,
@@ -135,6 +136,7 @@ export default function Page({ data, commonData, pageInfo }) {
             document.cookie = `${cookieName}=${pageInfo.country}; path=/; max-age=3600`; // 1 year
         }
     }
+
     return (
         <>
             {pageInfo?.page !== ''}
@@ -144,7 +146,8 @@ export default function Page({ data, commonData, pageInfo }) {
                 pageInfo={pageInfo}
             />
 
-            <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
+            <MenuBarComp componentData={commonData?.menu} />
+            <NavigationComp pageInfo={pageInfo} />
             {data &&
                 Object.keys(data).map((key) => {
                     const pageData = data[key];

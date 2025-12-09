@@ -13,8 +13,8 @@ import { getTag } from '@/components/Guide/lib/tags';
 import TagButton from '@/components/Guide/tags/TagButton';
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
-import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
-import MenuBarComp from '@/components/menuBarComp/menuBarComp';
+import NotificationBarComp from '@/components/NavigationComp/notificationBarComp/notificationBarComp';
+import MenuBarComp from '@/components/NavigationComp/menuBarComp/menuBarComp';
 import FooterComp from '@/components/FooterComp/FooterComp';
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
@@ -63,7 +63,7 @@ export default function TestPage({
                 country={pageInfo?.country}
                 pageInfo={pageInfo}
             />
-            <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
+            {/* <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} /> */}
             <div className='wrapper container blog-container w-100 max-w-4xl flex flex-col gap-8 py-20'>
                 <button className=' btn btn-md btn-primary' onClick={handleClick}>
                     <MdKeyboardArrowLeft className='text-xl' />

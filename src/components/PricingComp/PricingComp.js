@@ -7,8 +7,8 @@ import PricingRCS from './PricingRCS/PricingRCS';
 import PricingWhatsApp from './PricingWhatsApp/PricingWhatsApp';
 import NotFoundComp from '../NotFoundComp/NotFoundComp';
 import HeadComp from '../HeadComp/HeadComp';
-import NotificationBarComp from '../notificationBarComp/notificationBarComp';
-import MenuBarComp from '../menuBarComp/menuBarComp';
+import NotificationBarComp from '../NavigationComp/notificationBarComp/notificationBarComp';
+import MenuBarComp from '../NavigationComp/menuBarComp/menuBarComp';
 import FooterComp from '../FooterComp/FooterComp';
 import PricingSubscription from './PricingSubscription';
 
