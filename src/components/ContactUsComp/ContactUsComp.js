@@ -1,61 +1,49 @@
 import { useState } from 'react';
 import { InlineWidget } from 'react-calendly';
-import { MdCall, MdOutlineEmail, MdWhatsapp } from 'react-icons/md';
+import { MdCall, MdOutlineEmail, MdWhatsapp, MdOutlineWhatsapp, MdOutlineCall } from 'react-icons/md';
 
 export default function ContactUsComp({ data, pageInfo }) {
     const [isSalesModalOpen, setIsSalesModalOpen] = useState(false);
     const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
+    const [hoverWA, setHoverWA] = useState(false);
+    const [hoverCall, setHoverCall] = useState(false);
 
     const CONTACTS = {
         'gb': {
             email: 'sales@msg91.com',
-            telNumber: ['+44 7418351106'],
-            waNumber: '+44 7418351106',
+            contact: '+44 7418351106',
         },
         'es': {
             email: 'sales@msg91.com',
-            telNumber: ['+44 7418351106'],
-            waNumber: '+44 7418351106',
+            contact: '+44 7418351106',
         },
         'us': {
             email: 'sales@msg91.com',
-            telNumber: ['+44 7418351106'],
-            waNumber: '+44 7418351106',
+            contact: '+44 7418351106',
         },
         'global': {
             email: 'sales@msg91.com',
-            telNumber: ['+44 7418351106'],
-            waNumber: '+44 7418351106',
+            contact: '+44 7418351106',
         },
         'br-pt': {
             email: 'sales@msg91.com',
-            telNumber: ['+44 7418351106'],
-            waNumber: '+44 7418351106',
+            contact: '+44 7418351106',
         },
         'in': {
             email: 'contact@msg91.com',
-            telNumber: ['+65 31595004'],
-            waNumber: '+65 31595004',
+            telNumber: '+65 31595004',
         },
         'sg': {
             email: 'sales@msg91.com',
-            telNumber: ['+65 31595004'],
-            waNumber: '+65 31595004',
+            contact: '+65 31595004',
         },
         'fil-ph': {
             email: 'sales@msg91.com',
-            telNumber: ['+65 31595004'],
-            waNumber: '+65 31595004',
+            contact: '+65 31595004',
         },
         'ae': {
             email: 'sales@msg91.com',
-            telNumber: ['+65 31595004'],
-            waNumber: '+65 31595004',
-        },
-        'default': {
-            email: 'sales@msg91.com',
-            telNumber: ['+65 31595004', '+91 7049088848'],
-            waNumber: '',
+            contact: '+65 31595004',
         },
     };
 
@@ -70,34 +58,61 @@ export default function ContactUsComp({ data, pageInfo }) {
                     <div className='flex flex-col gap-6 items-center'>
                         <h2 className='text-3xl font-semibold'>{data?.sales?.heading}</h2>
                         <div className='flex flex-col gap-6'>
-                            <div className='flex items-center gap-2 text-2xl text-link'>
-                                <MdOutlineEmail className='text-2xl' />
-                                <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
-                            </div>
-
-                            {contacts.waNumber ? (
-                                <div className='flex items-center gap-2 text-2xl text-link'>
-                                    <MdWhatsapp className='text-2xl' />
-                                    <a href={`https://wa.me/${contacts.waNumber.replace('+', '')}`}>
-                                        {contacts.waNumber}
-                                    </a>
-                                </div>
-                            ) : null}
-
-                            {contacts?.telNumber?.length != 0 ? (
-                                contacts?.telNumber?.map((num, idx) => (
-                                    <div key={idx} className='flex items-center gap-2 text-2xl text-link'>
-                                        <MdCall className='text-2xl' />
-                                        <a href={`tel:${num}`}>{num}</a>
+                            {pageInfo?.country != 'in' ? (
+                                <>
+                                    <div className='flex items-center gap-2 text-2xl text-link'>
+                                        <MdOutlineEmail className='text-2xl' />
+                                        <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
                                     </div>
-                                ))
+                                    {contacts.contact && (
+                                        <div className='flex flex-row items-center gap-4 text-2xl'>
+                                            <span>{contacts?.contact}</span>
+
+                                            <a
+                                                href={`https://wa.me/${contacts.contact.replace('+', '')}`}
+                                                onMouseEnter={() => setHoverWA(true)}
+                                                onMouseLeave={() => setHoverWA(false)}
+                                            >
+                                                {hoverWA ? (
+                                                    <MdWhatsapp className='text-2xl text-base-200' />
+                                                ) : (
+                                                    <MdWhatsapp className='text-2xl' />
+                                                )}
+                                            </a>
+
+                                            <a
+                                                href={`tel:${contacts.contact}`}
+                                                onMouseEnter={() => setHoverCall(true)}
+                                                onMouseLeave={() => setHoverCall(false)}
+                                            >
+                                                {hoverCall ? (
+                                                    <MdCall className='text-2xl text-base-200' />
+                                                ) : (
+                                                    <MdCall className='text-2xl' />
+                                                )}
+                                            </a>
+                                        </div>
+                                    )}
+                                </>
                             ) : (
-                                <div className='flex items-center gap-2 text-2xl text-link'>
-                                    <MdCall className='text-2xl' />
-                                    <a href={`tel:${contacts.telNumber}`}>
-                                        {Array.isArray(contacts.telNumber) ? contacts.telNumber[0] : contacts.telNumber}
-                                    </a>
-                                </div>
+                                <>
+                                    <div className='flex items-center gap-2 text-2xl text-link'>
+                                        <MdOutlineEmail />
+                                        <a href='mailto:sales@msg91.com'>sales@msg91.com</a>
+                                    </div>
+                                    {/* <div className='flex items-center gap-2 text-2xl text-link'>
+                                    <MdWhatsapp className='text-2xl' />
+                                    <a href='https://wa.me/917316914352'>+91 73169 14352</a>
+                                </div> */}
+                                    <div className='flex items-center gap-2 text-2xl text-link'>
+                                        <MdCall />
+                                        <a href='tel:+917049088848'>+91 7049088848</a>
+                                    </div>
+                                    <div className='flex items-center gap-2 text-2xl text-link'>
+                                        <MdCall />
+                                        <a href='tel:+918889378605'>+91 8889378605</a>
+                                    </div>
+                                </>
                             )}
                         </div>
                         <button className='btn btn-md btn-primary' onClick={() => setIsSalesModalOpen(true)}>
