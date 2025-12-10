@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { InlineWidget } from 'react-calendly';
-import { MdCall, MdOutlineEmail, MdWhatsapp, MdOutlineWhatsapp, MdOutlineCall } from 'react-icons/md';
+import { MdCall, MdOutlineEmail, MdWhatsapp } from 'react-icons/md';
 
 export default function ContactUsComp({ data, pageInfo }) {
     const [isSalesModalOpen, setIsSalesModalOpen] = useState(false);
@@ -28,10 +28,6 @@ export default function ContactUsComp({ data, pageInfo }) {
         'br-pt': {
             email: 'sales@msg91.com',
             contact: '+44 7418351106',
-        },
-        'in': {
-            email: 'contact@msg91.com',
-            telNumber: '+65 31595004',
         },
         'sg': {
             email: 'sales@msg91.com',
