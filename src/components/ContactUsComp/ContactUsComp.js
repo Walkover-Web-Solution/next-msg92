@@ -43,8 +43,8 @@ export default function ContactUsComp({ data, pageInfo }) {
         },
     };
 
-    const country = (pageInfo?.country || '').toLowerCase();
-    const contacts = CONTACTS[country] || CONTACTS.default;
+    const country = (pageInfo?.country || 'global').toLowerCase();
+    const contacts = CONTACTS[country];
 
     return (
         <>
@@ -60,12 +60,12 @@ export default function ContactUsComp({ data, pageInfo }) {
                                         <MdOutlineEmail className='text-2xl' />
                                         <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
                                     </div>
-                                    {contacts.contact && (
+                                    {contacts?.contact && (
                                         <div className='flex flex-row items-center gap-4 text-2xl'>
                                             <span>{contacts?.contact}</span>
 
                                             <a
-                                                href={`https://wa.me/${contacts.contact.replace('+', '')}`}
+                                                href={`https://wa.me/${contacts?.contact.replace('+', '')}`}
                                                 onMouseEnter={() => setHoverWA(true)}
                                                 onMouseLeave={() => setHoverWA(false)}
                                             >
@@ -77,7 +77,7 @@ export default function ContactUsComp({ data, pageInfo }) {
                                             </a>
 
                                             <a
-                                                href={`tel:${contacts.contact}`}
+                                                href={`tel:${contacts?.contact}`}
                                                 onMouseEnter={() => setHoverCall(true)}
                                                 onMouseLeave={() => setHoverCall(false)}
                                             >
