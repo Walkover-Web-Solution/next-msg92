@@ -5,6 +5,63 @@ import { MdCall, MdOutlineEmail, MdWhatsapp } from 'react-icons/md';
 export default function ContactUsComp({ data, pageInfo }) {
     const [isSalesModalOpen, setIsSalesModalOpen] = useState(false);
     const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
+
+    const CONTACTS = {
+        'gb': {
+            email: 'sales@msg91.com',
+            telNumber: ['+44 7418351106'],
+            waNumber: '+44 7418351106',
+        },
+        'es': {
+            email: 'sales@msg91.com',
+            telNumber: ['+44 7418351106'],
+            waNumber: '+44 7418351106',
+        },
+        'us': {
+            email: 'sales@msg91.com',
+            telNumber: ['+44 7418351106'],
+            waNumber: '+44 7418351106',
+        },
+        'global': {
+            email: 'sales@msg91.com',
+            telNumber: ['+44 7418351106'],
+            waNumber: '+44 7418351106',
+        },
+        'br-pt': {
+            email: 'sales@msg91.com',
+            telNumber: ['+44 7418351106'],
+            waNumber: '+44 7418351106',
+        },
+        'in': {
+            email: 'contact@msg91.com',
+            telNumber: ['+65 31595004'],
+            waNumber: '+65 31595004',
+        },
+        'sg': {
+            email: 'sales@msg91.com',
+            telNumber: ['+65 31595004'],
+            waNumber: '+65 31595004',
+        },
+        'fil-ph': {
+            email: 'sales@msg91.com',
+            telNumber: ['+65 31595004'],
+            waNumber: '+65 31595004',
+        },
+        'ae': {
+            email: 'sales@msg91.com',
+            telNumber: ['+65 31595004'],
+            waNumber: '+65 31595004',
+        },
+        'default': {
+            email: 'sales@msg91.com',
+            telNumber: ['+65 31595004', '+91 7049088848'],
+            waNumber: '',
+        },
+    };
+
+    const country = (pageInfo?.country || '').toLowerCase();
+    const contacts = CONTACTS[country] || CONTACTS.default;
+
     return (
         <>
             <div className='container flex flex-col cont_gap cont_p'>
@@ -13,40 +70,34 @@ export default function ContactUsComp({ data, pageInfo }) {
                     <div className='flex flex-col gap-6 items-center'>
                         <h2 className='text-3xl font-semibold'>{data?.sales?.heading}</h2>
                         <div className='flex flex-col gap-6'>
-                            {pageInfo?.country != 'in' ? (
-                                <>
-                                    <div className='flex items-center gap-2 text-2xl text-link'>
-                                        <MdOutlineEmail className='text-2xl' />
-                                        <a href='mailto:contact@msg91.com'>contact@msg91.com</a>
-                                    </div>
-                                    <div className='flex items-center gap-2 text-2xl text-link'>
-                                        <MdWhatsapp className='text-2xl' />
-                                        <a href='https://wa.me/6531595004'>+65 31595004</a>
-                                    </div>
-                                    <div className='flex items-center gap-2 text-2xl text-link'>
+                            <div className='flex items-center gap-2 text-2xl text-link'>
+                                <MdOutlineEmail className='text-2xl' />
+                                <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
+                            </div>
+
+                            {contacts.waNumber ? (
+                                <div className='flex items-center gap-2 text-2xl text-link'>
+                                    <MdWhatsapp className='text-2xl' />
+                                    <a href={`https://wa.me/${contacts.waNumber.replace('+', '')}`}>
+                                        {contacts.waNumber}
+                                    </a>
+                                </div>
+                            ) : null}
+
+                            {contacts?.telNumber?.length != 0 ? (
+                                contacts?.telNumber?.map((num, idx) => (
+                                    <div key={idx} className='flex items-center gap-2 text-2xl text-link'>
                                         <MdCall className='text-2xl' />
-                                        <a href='tel:+6531595004'>+65 31595004</a>
+                                        <a href={`tel:${num}`}>{num}</a>
                                     </div>
-                                </>
+                                ))
                             ) : (
-                                <>
-                                    <div className='flex items-center gap-2 text-2xl text-link'>
-                                        <MdOutlineEmail />
-                                        <a href='mailto:sales@msg91.com'>sales@msg91.com</a>
-                                    </div>
-                                    {/* <div className='flex items-center gap-2 text-2xl text-link'>
-                                        <MdWhatsapp className='text-2xl' />
-                                        <a href='https://wa.me/917316914352'>+91 73169 14352</a>
-                                    </div> */}
-                                    <div className='flex items-center gap-2 text-2xl text-link'>
-                                        <MdCall />
-                                        <a href='tel:+917049088848'>+91 7049088848</a>
-                                    </div>
-                                    <div className='flex items-center gap-2 text-2xl text-link'>
-                                        <MdCall />
-                                        <a href='tel:+918889378605'>+91 8889378605</a>
-                                    </div>
-                                </>
+                                <div className='flex items-center gap-2 text-2xl text-link'>
+                                    <MdCall className='text-2xl' />
+                                    <a href={`tel:${contacts.telNumber}`}>
+                                        {Array.isArray(contacts.telNumber) ? contacts.telNumber[0] : contacts.telNumber}
+                                    </a>
+                                </div>
                             )}
                         </div>
                         <button className='btn btn-md btn-primary' onClick={() => setIsSalesModalOpen(true)}>
@@ -68,6 +119,10 @@ export default function ContactUsComp({ data, pageInfo }) {
                             <div className='flex items-center gap-2 text-2xl text-link'>
                                 <MdCall />
                                 <a href='tel:+918818888733'>+91 8818888733</a>
+                            </div>
+                            <div className='flex items-center gap-2 text-2xl text-link'>
+                                <MdCall />
+                                <a href='tel:+917316914364'>+91 7316914364</a>
                             </div>
                         </div>
                         <button className='btn btn-md btn-primary' onClick={() => setIsSupportModalOpen(true)}>
