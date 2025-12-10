@@ -308,7 +308,9 @@
             "whatsappVoice": {
                 "heading": "Enjoy 100% Free WhatsApp Inbound Calls till December!",
                 "sub_heading": "Pricing",
-                "content": ["Pricing after December: Inbound Calls: $0.01/min"]
+                "content": [
+                    "Pricing after December: Inbound Calls: $0.01/min"
+                ]
             }
         },
         "rcs": {

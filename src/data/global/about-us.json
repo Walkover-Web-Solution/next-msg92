@@ -3,105 +3,105 @@
         "title": "MSG91 - Our team, culture and happy clients.",
         "description": "Empowering developers with communication APIs. Building modern communication tools and supporting ideas for startups and enterprises globally."
     },
-    "AboutUsComp":{
-        "heading":"About MSG91 Team",
-        "subheading":"We empower developers with communication APIs in addition to  building tools & supporting ideas that run majorly on communication.",
-        "banner_img":"/assets/about_us/walkoverteam.jpg",
-        "offer":{
-            "heading":"Every brand offers its own culture, and this is what we offer you...",
-            "content":[
+    "AboutUsComp": {
+        "heading": " The Minds Powering MSG91",
+        "subheading": " We empower developers with reliable communication APIs and build tools that help businesses create, automate, and scale communication-driven solutions.",
+        "banner_img": "/assets/about_us/Banner_img.svg",
+        "company_values": {
+            "heading": "The Culture That Drives MSG91",
+            "subheading": "Our approach is rooted in continuous innovation, collective growth, customer empathy, and responsible practices.",
+            "cards": [
                 {
-                    "icon": "MdAutoFixHigh",
-                    "description":"Our Magic Wand is Innovations"
+                    "icon": "MdAutoAwesome",
+                    "heading": "Our Magic Wands is Innovations",
+                    "description": "We simplify complex challenges with fresh ideas."
                 },
                 {
-                    "icon": "MdMoving",
-                    "description":"Uplifting each other"
+                    "icon": "MdTrendingUp",
+                    "heading": "Uplifting each other",
+                    "description": "Growth is a shared journey, not an individual race."
                 },
                 {
-                    "icon": "MdPermIdentity",
-                    "description":"Thinking like a Customer"
+                    "icon": "MdOutlineGroup",
+                    "heading": "We Think Like Our Customers",
+                    "description": "User empathy shapes better products."
                 },
                 {
                     "icon": "MdAllInclusive",
-                    "description":"Sustainability is Priority"
+                    "heading": "Sustainability Comes First",
+                    "description": "Long-term impact over short-term wins."
                 }
             ]
         },
-        "team":{
-            "heading":"Our Leadership Team",
-            "description":"The abilities combined with the dedication of our team has resulted in making us the most loved & innovative cloud communication platform.",
-            "content":[
-               
+        "team": {
+            "heading": "Our Leadership Team",
+            "description": "  A blend of expertise, vision, and dedication that drives MSG91 to become a leading an trusted cloud communication platform.",
+            "content": [
                 {
                     "icon": "/assets/about_us/pushpendra_agrawal.jpg",
-                    "name":"Pushpendra Agrawal",
-                    "post":"Founder & Advisor",
-                    "description":"Pushpendra is a serial entrepreneur."
+                    "name": "Pushpendra Agrawal",
+                    "post": "Founder & Advisor",
+                    "description": "Pushpendra is a serial entrepreneur."
                 },
                 {
                     "icon": "/assets/about_us/shubhendra_agrawal.png",
-                    "name":"Founder & CEO",
-                    "post":"Shubhendra Agrawal",
-                    "description":"Shubhendra is an absolute Finance man."
+                    "name": "Shubhendra Agrawal",
+                    "post": "Founder & CEO",
+                    "description": "Shubhendra is an absolute Finance man."
                 },
                 {
                     "icon": "/assets/about_us/ravi_dangi.png",
-                    "name":"Sales",
-                    "post":"Ravi Dangi",
-                    "description":"Mistakenly believed Engineer, he’s a sales buff."
+                    "name": "Sales",
+                    "post": "Ravi Dangi",
+                    "description": "Mistakenly believed Engineer, he’s a sales buff."
                 },
                 {
                     "icon": "/assets/about_us/vipin_sharma.png",
-                    "name":"Technology",
-                    "post":"Vipin Sharma",
-                    "description":"Mostly found in the gym or at the TT table."
-                },
-                {
-                    "icon": "/assets/about_us/alisha_chouhan.png",
-                    "name":"Global Business",
-                    "post":"Alisha Chouhan",
-                    "description":"Works hard, has fun, makes a difference."
+                    "name": "Technology",
+                    "post": "Vipin Sharma",
+                    "description": "Mostly found in the gym or at the TT table."
                 },
                 {
                     "icon": "/assets/about_us/chinmay_daga.png",
-                    "name":"Operations",
-                    "post":"Chinmay Daga",
-                    "description":"The processes & partnerships pro."
+                    "name": "Operations",
+                    "post": "Chinmay Daga",
+                    "description": "The processes & partnerships pro."
                 }
             ]
         },
-        "hiring":{
-            "content":"Striving to fulfil our vision by hiring passionate people who are willing to push their benchmark, and of the industry, as well. Want to join our vision? We’re",
-            "link":"https://walkover.in/careers",
-            "linkText":"Hiring!"
+        "hiring": {
+            "content": "Striving to fulfil our vision by hiring passionate people who are willing to push their benchmark, and of the industry, as well.",
+            "footer" : "Want to join our vision? We’re ,",
+            "link": "https://walkover.in/careers",
+            "linkText": "Hiring!"
         },
-        "teamStrength":{
-            "heading":"Our Team is Our Strength",
-            "description":"The team of Superheroes makes us stand out. There are no supernatural powers, just the will and dedication to serve you helps us in delivering eminence.",
-            "img":"/assets/about_us/team_Image1.svg"
+        "teamStrength": {
+            "heading": "Our Team is Our Strength",
+            "subheading": "The team of Superheroes makes us stand out. There are no supernatural powers, just the will and dedication to serve you helps us in delivering eminence.",
+            "img": "/assets/about_us/Banner_img.svg"
         },
-        "clientSays":{
-            "heading":"We are who , Our Clients say we are",
-            "card":[
+        "clientSays": {
+            "heading": "We are who , Our Clients say we are",
+            "subheading": "Our approach is rooted in continuous innovation, collective growth, customer empathy, and responsible practices.",
+            "cards": [
                 {
-                    "name":"Manan Bajoria",
-                    "icon":"/assets/about_us/ixigo.svg",
-                    "description":"MSG91 has been an extremely reliable communication service for us. Their OTP infra has been instrumental in reducing customer drop-outs. Great support too!",
-                    "post":"ixigo"
+                    "name": "Manan Bajoria",
+                    "icon": "/assets/about_us/ixigo.svg",
+                    "description": "MSG91 has been an extremely reliable communication service for us. Their OTP infra has been instrumental in reducing customer drop-outs. Great support too!",
+                    "post": "Ixigo"
                 },
                 {
-                    "name":"Sushant Khairnar",
-                    "icon":"/assets/about_us/policy_Bazaar.svg",
-                    "description":"You guys have been instrumental in getting our customer connect via SMS trustworthy. Appreciate your technical support services as well. Quite responsive!",
-                    "post":"policybazaar(former)"
+                    "name": "Sushant Khairnar",
+                    "icon": "/assets/about_us/policy_Bazaar.svg",
+                    "description": "You guys have been instrumental in getting our customer connect via SMS trustworthy. Appreciate your technical support services as well. Quite responsive!",
+                    "post": "Policybazaar (former)"
                 },
-               
+
                 {
-                    "name":"Aditya Sriganesh",
-                    "icon":"/assets/about_us/indialends.svg",
-                    "description":"MSG91 has helped us in delivering great customer experience through consistent communication!",
-                    "post":"IndiaLends"
+                    "name": "Aditya Sriganesh",
+                    "icon": "/assets/about_us/indialends.svg",
+                    "description": "MSG91 has helped us in delivering great customer experience through consistent communication!",
+                    "post": "IndiaLends"
                 }
             ]
         }
