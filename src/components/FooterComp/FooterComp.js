@@ -1,24 +1,12 @@
 import getNestedURL from '@/utils/getNestedURL';
+import getPricingURL from '@/utils/getPricingURL';
 import getURL from '@/utils/getURL';
 import Image from 'next/image';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 export default function FooterComp({ componentData, pageInfo }) {
     const hidden = componentData?.hide?.includes(pageInfo?.page);
     const year = new Date().getFullYear();
-    const [pricingPath, setPricingPath] = useState('/pricing/sms');
-    let cookiesCountry = null;
-    if (typeof document !== 'undefined') {
-        const match = document.cookie.match('(^|;)\\s*country\\s*=\\s*([^;]+)');
-        cookiesCountry = match ? match.pop() : null;
-    }
-
-    useEffect(() => {
-        setPricingPath(
-            cookiesCountry && cookiesCountry !== 'global' ? '/' + cookiesCountry + '/pricing/sms' : '/pricing/sms'
-        );
-    }, [cookiesCountry]);
+    const pricingPath = getPricingURL(pageInfo);
 
     if (componentData && !hidden) {
         return (
@@ -92,7 +80,6 @@ export default function FooterComp({ componentData, pageInfo }) {
                                             );
                                         })}
                                     </ul>
-                                    <a className='absolute' href='/pricing/sms'></a>
                                 </div>
                             )}
                             {componentData?.resources?.links.length > 0 && (

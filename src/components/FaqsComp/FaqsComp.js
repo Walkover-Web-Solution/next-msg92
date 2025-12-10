@@ -8,8 +8,13 @@ export default function FaqsComp({ data, notCont }) {
                         {data?.faqs.map((faq, index) => {
                             return (
                                 <div key={index} className='collapse collapse-plus  border-b rounded-none'>
-                                    <input type='radio' name='my-accordion-3' defaultChecked={index === 0} />
-                                    <h3 className='collapse-title text-xl font-medium'>
+                                    <input
+                                        type='radio'
+                                        name='my-accordion-3'
+                                        defaultChecked={index === 0}
+                                        aria-label={faq?.question}
+                                    />
+                                    <h3 className='collapse-title text-xl font-bold'>
                                         <button className='text-start'>{faq?.question}</button>
                                     </h3>
                                     <div className='collapse-content '>

@@ -4,23 +4,12 @@ import styles from './MenuBarComp.module.scss';
 import { BtnWithHideIco, LinkText } from '../UIComponent/Buttons/LinkButton';
 import { useEffect, useState } from 'react';
 import getURL from '@/utils/getURL';
+import getPricingURL from '@/utils/getPricingURL';
 
 export default function MenuBarComp({ componentData, pageInfo }) {
     const [nav, setNav] = useState('hide');
     const [type, setType] = useState('products');
-    // Access cookies country
-    const [pricingPath, setPricingPath] = useState('/pricing/sms');
-    let cookiesCountry = null;
-    if (typeof document !== 'undefined') {
-        const match = document.cookie.match('(^|;)\\s*country\\s*=\\s*([^;]+)');
-        cookiesCountry = match ? match.pop() : null;
-    }
-
-    useEffect(() => {
-        setPricingPath(
-            cookiesCountry && cookiesCountry !== 'global' ? '/' + cookiesCountry + '/pricing/sms' : '/pricing/sms'
-        );
-    }, [cookiesCountry]);
+    const pricingPath = getPricingURL(pageInfo);
 
     useEffect(() => {
         if (nav === 'show') {
@@ -67,7 +56,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                                         <Image
                                                                             className='h-10'
                                                                             src={`/assets/icons/products/${product?.slug}.svg`}
-                                                                            alt={product?.name}
+                                                                            alt={`${product?.name} Icon`}
                                                                             width={46}
                                                                             height={46}
                                                                             loading='lazy'
@@ -93,7 +82,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     })}
                                 <div className='flex flex-col gap-2 mt-4'>
                                     <a
-                                        href={getURL('pricing', 'sms', pageInfo)}
+                                        href={pricingPath}
                                         onClick={() => {
                                             setNav('hide');
                                             setType('products');
@@ -111,7 +100,6 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                         <LinkText customClasses='text-lg'>Integrations</LinkText>
                                     </a>
                                     <a
-                                        className='flex items-center h-full justify-center'
                                         href='https://docs.msg91.com/overview'
                                         target='_blank'
                                         onClick={() => {
@@ -166,7 +154,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                                             <Image
                                                                                 className='h-10'
                                                                                 src={`/assets/icons/products/${product?.slug}.svg`}
-                                                                                alt={product?.name}
+                                                                                alt={`${product?.name} Icon`}
                                                                                 width={46}
                                                                                 height={46}
                                                                                 loading='lazy'
@@ -210,7 +198,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                                 <Image
                                                                     className='h-fit w-8'
                                                                     src={integration?.icon || 'https://placehold.co/20'}
-                                                                    alt={integration?.slug}
+                                                                    alt={`${integration?.name} Icon`}
                                                                     width={46}
                                                                     height={46}
                                                                     loading='lazy'
@@ -296,16 +284,18 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             >
                                 {componentData?.integrations}
                             </li>
-                            <a
-                                onMouseEnter={() => {
-                                    setNav('hide');
-                                    setType('products');
-                                }}
-                                className='text-link'
-                                href={pricingPath || '/pricing/sms'}
-                            >
-                                {componentData?.pricing}
-                            </a>
+                            <li>
+                                <a
+                                    onMouseEnter={() => {
+                                        setNav('hide');
+                                        setType('products');
+                                    }}
+                                    className='text-link'
+                                    href={pricingPath || '/pricing/sms'}
+                                >
+                                    {componentData?.pricing}
+                                </a>
+                            </li>
                         </ul>
                         <div className='w-full items-center flex justify-center'>
                             <a href={pageInfo?.country === 'global' ? '/' : `/${pageInfo?.country}`}>
@@ -321,20 +311,20 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                             </a>
                         </div>
                         <ul className='w-full flex justify-end gap-6 items-center'>
-                            <a
-                                className='flex items-center h-full justify-center'
-                                href='https://docs.msg91.com/overview'
-                                target='_blank'
-                            >
-                                <li className='text-link'>{componentData?.apidocs}</li>
-                            </a>
-                            <a
-                                className='btn btn-primary btn-sm uppercase'
-                                href={getURL('signup', pageInfo?.page)}
-                                target='_blank'
-                            >
-                                {componentData?.signup_btn}
-                            </a>
+                            <li className='flex items-center h-full justify-center'>
+                                <a href='https://docs.msg91.com/overview' target='_blank' className='text-link'>
+                                    {componentData?.apidocs}
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    className='btn btn-primary btn-sm uppercase'
+                                    href={getURL('signup', pageInfo?.page)}
+                                    target='_blank'
+                                >
+                                    {componentData?.signup_btn}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div className='container z-[1000] flex md:hidden  py-5 '>

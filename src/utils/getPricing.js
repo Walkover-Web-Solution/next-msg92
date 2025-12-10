@@ -39,7 +39,7 @@ const msIds = {
 const currency = {
     'in': 'INR',
     'us': 'USD',
-    'uk': 'GBP',
+    'gb': 'GBP',
 };
 
 export function getSimplifiedPlans(currency, plans) {

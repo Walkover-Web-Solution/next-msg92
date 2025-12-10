@@ -2,8 +2,7 @@ import { MdCheck, MdClose } from 'react-icons/md';
 import getURL from '@/utils/getURL';
 import CalculateEmailPricing from './calculateEmailPricing/calculateEmailPricing';
 
-export default function PricingEmail({ pricingData, symbol, currency, tabtype, pageInfo }) {
-    console.log('⚡️ ~ :6 ~ PricingEmail ~ tabtype:', tabtype);
+export default function PricingEmail({ pricingData, symbol, currency, tabtype }) {
     return (
         <>
             <div className='grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-6'>
@@ -31,7 +30,7 @@ export default function PricingEmail({ pricingData, symbol, currency, tabtype, p
                                             </span>
                                         )}
                                     </div>
-                                    <p className=' text-xl font-semibold text-green-600 capitalize'>
+                                    <p className=' text-xl font-semibold text-green-700 capitalize'>
                                         {`${symbol}${plan?.amount?.plan_amount} ${tabtype}`}
                                     </p>
                                 </div>
@@ -40,15 +39,18 @@ export default function PricingEmail({ pricingData, symbol, currency, tabtype, p
                                         plan.name === 'Free' ? ' block xl:hidden ' : ' block '
                                     }`}
                                 ></span>
-                                <a href={getURL('signup', 'email')} target='_blank' className='w-fit'>
-                                    <button
-                                        className={`btn btn-primary  btn-sm ${
+                                {plan.name !== 'Free' && (
+                                    <a
+                                        href={getURL('signup', 'email')}
+                                        target='_blank'
+                                        className={`btn btn-primary btn-sm w-fit ${
                                             plan?.name === 'Basic' ? '' : 'btn-outline'
-                                        } ${plan.name === 'Free' ? ' block xl:hidden ' : ' block '}`}
+                                        } `}
                                     >
                                         Get Started
-                                    </button>
-                                </a>
+                                    </a>
+                                )}
+
                                 {/* included */}
                                 <div className='w-full flex flex-col gap-2'>
                                     <h3 className='font-semibold'>Included</h3>
@@ -103,24 +105,16 @@ export default function PricingEmail({ pricingData, symbol, currency, tabtype, p
                                     )}
                                 </div>
                                 <div className='w-full flex justify-end'>
-                                    <a href={getURL('signup', 'email')} target='_blank' className='w-fit'>
-                                        <button
-                                            className={`btn btn-primary  btn-sm mt-auto ${
-                                                plan?.name === 'Basic' ? '' : 'btn-outline'
-                                            } ${plan.name === 'Free' ? ' xl:block hidden ' : ' hidden '}`}
+                                    {plan.name === 'Free' && (
+                                        <a
+                                            href={getURL('signup', 'email')}
+                                            target='_blank'
+                                            className='btn btn-primary btn-sm w-fit btn-outline'
                                         >
                                             Get Started
-                                        </button>
-                                    </a>
+                                        </a>
+                                    )}
                                 </div>
-                                {plan?.name !== 'Free' && plan?.name !== 'free' && (
-                                    <button
-                                        onClick={() => document.getElementById('calculate_email_pricing').showModal()}
-                                        className='btn btn-accent btn-outline w-fit btn-sm mt-auto'
-                                    >
-                                        Calculate
-                                    </button>
-                                )}
                             </div>
                         );
                     })}
