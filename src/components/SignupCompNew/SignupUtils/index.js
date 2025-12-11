@@ -299,12 +299,31 @@ export function otpWidgetSetup(dispatch, onSuccess, onError) {
                     exposeMethods: true,
                 };
 
-                window.initSendOTP(configuration);
+                if (typeof window.initSendOTP === 'function') {
+                    window.initSendOTP(configuration);
+                } else {
+                    if (onError) onError(new Error('initSendOTP function not available'));
+                    return;
+                }
+
+                let attempts = 0;
+                const maxAttempts = 10; // Maximum 10 seconds
 
                 const widgetDataInterval = setInterval(() => {
                     try {
+                        attempts++;
+
+                        // Check if getWidgetData function exists
+                        if (typeof window.getWidgetData !== 'function') {
+                            if (attempts >= maxAttempts) {
+                                clearInterval(widgetDataInterval);
+                                if (onError) onError(new Error('getWidgetData function not available'));
+                            }
+                            return;
+                        }
+
                         let widgetData = window.getWidgetData();
-                        console.log(widgetData);
+
                         if (widgetData) {
                             const allowedRetry = {
                                 email: widgetData?.processes?.find(
@@ -332,9 +351,11 @@ export function otpWidgetSetup(dispatch, onSuccess, onError) {
                             }
 
                             clearInterval(widgetDataInterval);
+                        } else if (attempts >= maxAttempts) {
+                            clearInterval(widgetDataInterval);
+                            if (onError) onError(new Error('Widget data timeout'));
                         }
                     } catch (error) {
-                        console.error('Error processing widget data:', error);
                         if (dispatch) {
                             dispatch({ type: 'SET_ERROR', payload: 'Failed to process widget data' });
                         }
@@ -343,7 +364,6 @@ export function otpWidgetSetup(dispatch, onSuccess, onError) {
                     }
                 }, 1000);
             } catch (error) {
-                console.error('Error initializing OTP widget:', error);
                 if (dispatch) {
                     dispatch({ type: 'SET_ERROR', payload: 'Failed to initialize OTP widget' });
                 }
@@ -352,7 +372,6 @@ export function otpWidgetSetup(dispatch, onSuccess, onError) {
         };
 
         otpWidgetScript.onerror = (error) => {
-            console.error('Error loading OTP widget script:', error);
             if (dispatch) {
                 dispatch({ type: 'SET_ERROR', payload: 'Failed to load OTP widget script' });
             }
@@ -361,34 +380,64 @@ export function otpWidgetSetup(dispatch, onSuccess, onError) {
 
         head.appendChild(otpWidgetScript);
     } else {
-        // If script already exists, try to get widget data immediately
-        if (window.getWidgetData && dispatch) {
-            const widgetData = window.getWidgetData();
-            if (widgetData) {
-                const allowedRetry = {
-                    email: widgetData?.processes?.find(
-                        (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Email
-                    ),
-                    whatsApp: widgetData?.processes?.find(
-                        (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Whatsapp
-                    ),
-                    voice: widgetData?.processes?.find(
-                        (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Voice
-                    ),
-                    sms: widgetData?.processes?.find(
-                        (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Sms
-                    ),
-                };
+        // Set up polling even for existing scripts since widget might still be initializing
+        let attempts = 0;
+        const maxAttempts = 10; // Maximum 10 seconds
 
-                dispatch({
-                    type: 'SET_WIDGET_DATA',
-                    payload: {
-                        widgetData,
-                        allowedRetry,
-                    },
-                });
+        const widgetDataInterval = setInterval(() => {
+            try {
+                attempts++;
+
+                // Check if getWidgetData function exists
+                if (typeof window.getWidgetData !== 'function') {
+                    if (attempts >= maxAttempts) {
+                        clearInterval(widgetDataInterval);
+                        if (onError) onError(new Error('getWidgetData function not available'));
+                    }
+                    return;
+                }
+
+                let widgetData = window.getWidgetData();
+
+                if (widgetData) {
+                    const allowedRetry = {
+                        email: widgetData?.processes?.find(
+                            (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Email
+                        ),
+                        whatsApp: widgetData?.processes?.find(
+                            (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Whatsapp
+                        ),
+                        voice: widgetData?.processes?.find(
+                            (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Voice
+                        ),
+                        sms: widgetData?.processes?.find(
+                            (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Sms
+                        ),
+                    };
+
+                    if (dispatch) {
+                        dispatch({
+                            type: 'SET_WIDGET_DATA',
+                            payload: {
+                                widgetData,
+                                allowedRetry,
+                            },
+                        });
+                    }
+
+                    clearInterval(widgetDataInterval);
+                } else if (attempts >= maxAttempts) {
+                    clearInterval(widgetDataInterval);
+                    if (onError) onError(new Error('Widget data timeout'));
+                }
+            } catch (error) {
+                if (dispatch) {
+                    dispatch({ type: 'SET_ERROR', payload: 'Failed to process widget data' });
+                }
+                if (onError) onError(error);
+                clearInterval(widgetDataInterval);
             }
-        }
+        }, 1000);
     }
 }
 
@@ -695,7 +744,8 @@ export function handleUtmParams(dispatch, urlParams) {
     const utmParams = {};
 
     if (typeof window !== 'undefined') {
-        const urlParams = getURLParams(window.location.search);
+        // Use the passed urlParams parameter instead of calling getURLParams again
+        const params = urlParams || getURLParams(window.location.search);
 
         // Extract UTM parameters from URL
         const paramNames = [
@@ -711,7 +761,8 @@ export function handleUtmParams(dispatch, urlParams) {
         ];
 
         paramNames.forEach((param) => {
-            const value = urlParams.get(param);
+            // Use bracket notation since params is an object, not URLSearchParams
+            const value = params[param];
             if (value) {
                 utmParams[param] = value;
             }

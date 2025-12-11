@@ -1,5 +1,12 @@
 import { useEffect } from 'react';
-import checkSession, { otpWidgetSetup, SignupProvider, useSignup } from '../SignupUtils';
+import checkSession, {
+    otpWidgetSetup,
+    SignupProvider,
+    useSignup,
+    setInitialStates,
+    handleUtmParams,
+} from '../SignupUtils';
+import getURLParams from '@/utils/getURLParams';
 import StepOne from '../StepOne';
 import StepTwo from '../StepTwo';
 import StepThree from '../StepThree';
@@ -12,13 +19,24 @@ function SignupSteps({ pageInfo, data, isAbSignup }) {
     console.log(state);
 
     useEffect(() => {
+        // Initialize URL parameters and UTM data first
+        if (typeof window !== 'undefined') {
+            const urlParams = getURLParams(window.location.search);
+            setInitialStates(dispatch, state, urlParams);
+            handleUtmParams(dispatch, urlParams);
+        }
+
+        // Setup OTP widget
         otpWidgetSetup(
             dispatch,
-            (data) => {},
+            (data) => {
+                console.log('Widget setup success:', data);
+            },
             (error) => {
                 console.error('Widget initialization failed:', error);
             }
         );
+
         checkSession();
     }, [dispatch]);
 
