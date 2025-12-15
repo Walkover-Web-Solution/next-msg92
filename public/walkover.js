@@ -1,9 +1,3 @@
-/**
- * Sets a cookie with the provided name and value
- * @param {string} name - The name of the cookie
- * @param {string} value - The value to store in the cookie
- * @param {number} days - Optional number of days until the cookie expires
- */
 function setCookie(name, value, days) {
     let expires = '';
     if (days) {
@@ -14,11 +8,6 @@ function setCookie(name, value, days) {
     document.cookie = name + '=' + encodeURIComponent(value) + expires + '; path=/';
 }
 
-/**
- * Gets a cookie value by name
- * @param {string} name - The name of the cookie to retrieve
- * @returns {string|null} - The cookie value or null if not found
- */
 function getCookie(name) {
     const nameEQ = name + '=';
     const ca = document.cookie.split(';');
