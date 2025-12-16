@@ -24,7 +24,7 @@ import IntegrationsComp from '@/components/IntegrationsComp/IntegrationsComp';
 import CaseStudyComp from '@/components/CaseStudyComp/CaseStudyComp';
 import NewHelloComp from '@/components/NewHelloComp/NewHelloComp';
 import TermsComp from '@/components/TermsComp/TermsComp';
-import ContactUsComp from '@/components/ContactUsComp/ContactUsComp';
+import ContactUsComp from '@/components/ContactUs';
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
 import SignUp from '@/components/signupComp/SignUp';
@@ -50,6 +50,7 @@ import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromT
 import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
 import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
+import SignupParentComp from '@/components/SignupCompNew/SignupParentComp';
 
 // New Components
 import Banner from '@/components/UpdatedComp/Banner';
@@ -61,6 +62,7 @@ import specialPages from '@/data/specialPages.json';
 import { useRouter } from 'next/router';
 import PreFooterMFTL from '@/components/migrateFromTextlocal/preFooterMFTL/preFooterMFTL';
 import CTAMFTL from '@/components/migrateFromTextlocal/ctaMFTL/ctaMFTL';
+import SignupPage from '@/components/SignupCompNew/SingupComp';
 import ChatBotPageComp from '@/components/ChatBotPageComp';
 
 const Components = {
@@ -116,8 +118,9 @@ const Components = {
     WhyChooseMSG91,
     WhatsAppIntegrations,
     WhatsAppAccountVerification,
+    SignupPage,
     FeatureWithBulletGroup,
-
+    SignupParentComp,
     // New Components
     Banner,
 };
