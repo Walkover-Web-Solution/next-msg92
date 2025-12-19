@@ -114,6 +114,14 @@ function reducer(state, action) {
                 otpSent: false,
             };
 
+        case 'SET_EMAIL_EDIT':
+            return {
+                ...state,
+                emailRequestId: null,
+                isLoading: false,
+                otpSent: false,
+            };
+
         case 'SET_MOBILE_OTP_SUCCESS':
             return {
                 ...state,
@@ -936,4 +944,8 @@ export async function validateEmailSignup(otp, dispatch, state) {
     } finally {
         dispatch({ type: 'SET_LOADING', payload: false });
     }
+}
+
+export function resetEmailOtp(dispatch) {
+    dispatch({ type: 'SET_EMAIL_EDIT' });
 }

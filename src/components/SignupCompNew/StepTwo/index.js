@@ -25,6 +25,8 @@ export default function StepTwo() {
     const [selectedCountry, setSelectedCountry] = useState({});
     const [continueAllowed, setContinueAllowed] = useState(false);
     const [countries, setCountries] = useState([]);
+    const [timer, setTimer] = useState(30);
+    const [isResendAllowed, setIsResendAllowed] = useState(false);
 
     useEffect(() => {
         if (otpVerified && name && companyName && phone) {
@@ -44,6 +46,13 @@ export default function StepTwo() {
             setCountries(response.data);
         });
     }, []);
+
+    // Start timer when OTP is sent
+    useEffect(() => {
+        if (otpSent && !otpVerified) {
+            handleResendOtp();
+        }
+    }, [otpSent]);
 
     useEffect(() => {
         const fetchCountryFromIP = async () => {
@@ -108,7 +117,27 @@ export default function StepTwo() {
 
         dispatch({ type: 'SET_LOADING', payload: true });
         sendOtp(phoneNumber, true, dispatch);
+        // Timer will start in useEffect when otpSent becomes true
     };
+
+    function handleResendOtp() {
+        setTimer(30);
+        setIsResendAllowed(false);
+
+        const timerId = setInterval(() => {
+            setTimer((prevTime) => {
+                if (prevTime <= 1) {
+                    clearInterval(timerId);
+                    setIsResendAllowed(true);
+                    return 0;
+                } else {
+                    return prevTime - 1;
+                }
+            });
+        }, 1000);
+
+        return () => clearInterval(timerId);
+    }
 
     const handleVerifyOtp = () => {
         const otpValue = otp.join('');
@@ -246,6 +275,44 @@ export default function StepTwo() {
                                         autoComplete='one-time-code'
                                     />
                                 ))}
+                            </div>
+                            <div className='flex items-center text-sm text-gray-500'>
+                                {isResendAllowed ? (
+                                    <>
+                                        Resend OTP using{' '}
+                                        <span
+                                            className='ms-1 text-link active-link cursor-pointer'
+                                            onClick={() => {
+                                                sendOtp(phone, true, dispatch);
+                                                // Timer will start in useEffect when otpSent becomes true
+                                            }}
+                                        >
+                                            SMS
+                                        </span>
+                                        ,{' '}
+                                        <span
+                                            className='ms-1 text-link active-link cursor-pointer'
+                                            onClick={() => {
+                                                // Add WhatsApp OTP functionality here
+                                                // Timer will start in useEffect when otpSent becomes true
+                                            }}
+                                        >
+                                            WhatsApp
+                                        </span>
+                                        , or{' '}
+                                        <span
+                                            className='ms-1 text-link active-link cursor-pointer'
+                                            onClick={() => {
+                                                // Add Voice Call OTP functionality here
+                                                // Timer will start in useEffect when otpSent becomes true
+                                            }}
+                                        >
+                                            Voice Call
+                                        </span>
+                                    </>
+                                ) : (
+                                    <span className='text-gray-400'>Resend OTP in {timer}s</span>
+                                )}
                             </div>
                             {isLoading ? (
                                 <div className='flex items-center gap-2 text-accent '>

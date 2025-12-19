@@ -1,5 +1,12 @@
 import Image from 'next/image';
-import { useSignup, sendOtp, handleGithubSignup, setInitialStates, validateEmailSignup } from '../SignupUtils';
+import {
+    useSignup,
+    sendOtp,
+    handleGithubSignup,
+    setInitialStates,
+    validateEmailSignup,
+    resetEmailOtp,
+} from '../SignupUtils';
 import { useEffect, useState, useRef } from 'react';
 import style from './StepOne.module.scss';
 import getURLParams from '@/utils/getURLParams';
@@ -13,6 +20,8 @@ export default function StepOne() {
     const otpInputRefs = useRef([]);
     const otpLength = state.widgetData?.otpLength || 6; // Default to 6 if not available
     const [otp, setOtp] = useState(() => new Array(otpLength || 6).fill(''));
+    const [timer, setTimer] = useState(30);
+    const [isResendAllowed, setIsResendAllowed] = useState(false);
 
     // Use global loading state from context
     const isLoading = state.isLoading;
@@ -75,6 +84,7 @@ export default function StepOne() {
             return;
         }
         sendOtp(email, false, dispatch);
+        // Timer will start in useEffect when otpSent becomes true
     };
 
     const handleVerifyOtp = () => {
@@ -86,10 +96,16 @@ export default function StepOne() {
         validateEmailSignup(otpValue, dispatch, state);
     };
 
-    // Focus on first OTP input when OTP section appears
+    // Focus on first OTP input when OTP section appears and start timer
     useEffect(() => {
-        if (otpSent && otpInputRefs.current[0]) {
-            otpInputRefs.current[0].focus();
+        if (otpSent) {
+            // Focus on first OTP input
+            if (otpInputRefs.current[0]) {
+                otpInputRefs.current[0].focus();
+            }
+
+            // Start timer when OTP is sent
+            handleResendOtp();
         }
     }, [otpSent]);
 
@@ -139,6 +155,29 @@ export default function StepOne() {
         }
     };
 
+    function handleResendOtp() {
+        setTimer(30);
+        setIsResendAllowed(false);
+
+        const timerId = setInterval(() => {
+            setTimer((prevTime) => {
+                if (prevTime <= 1) {
+                    clearInterval(timerId);
+                    setIsResendAllowed(true);
+                    return 0;
+                } else {
+                    return prevTime - 1;
+                }
+            });
+        }, 1000);
+
+        return () => clearInterval(timerId);
+    }
+
+    function handleEditEmail() {
+        resetEmailOtp(dispatch);
+    }
+
     return (
         <div className='cont cont_gap'>
             <Image width={160} height={80} className='w-fit h-12' src={'/assets/brand/msg91.svg'} alt='MSG91 Logo' />
@@ -154,7 +193,7 @@ export default function StepOne() {
                         <p className='text-gray-500'>
                             OTP sent to <strong>{email}</strong>
                         </p>
-                        <MdEdit className='text-gray-500 hover:text-accent cursor-pointer' />
+                        <MdEdit className='text-gray-500 hover:text-accent cursor-pointer' onClick={handleEditEmail} />
                     </div>
                     <div className='flex  gap-4'>
                         <div className='flex items-center gap-2'>
@@ -190,10 +229,20 @@ export default function StepOne() {
                             </button>
                         )}
                     </div>
-                    <div className='flex items-center text-sm text-gray-500'>
-                        Resend OTP using <span className='ms-1 text-link active-link'>SMS</span>,{' '}
-                        <span className='ms-1 text-link active-link'>Email</span>, or{' '}
-                        <span className='ms-1 text-link active-link'>Voice Call</span>
+                    <div className='flex items-center gap-2'>
+                        {isResendAllowed ? (
+                            <span
+                                className='text-sm text-link active-link cursor-pointer'
+                                onClick={() => {
+                                    sendOtp(email, false, dispatch);
+                                    // Timer will start in useEffect when otpSent becomes true
+                                }}
+                            >
+                                Resend OTP
+                            </span>
+                        ) : (
+                            <span className='text-sm text-gray-400'>Resend OTP in {timer}s</span>
+                        )}
                     </div>
                 </div>
             ) : (
