@@ -14,6 +14,7 @@ import TagButton from '@/components/Guide/tags/TagButton';
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
 import FooterComp from '@/components/FooterComp/FooterComp';
+import NavigationComp from '@/components/NavigationComp';
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 const component = { ReactPlayer };
