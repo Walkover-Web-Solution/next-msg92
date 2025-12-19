@@ -24,7 +24,7 @@ import IntegrationsComp from '@/components/IntegrationsComp/IntegrationsComp';
 import CaseStudyComp from '@/components/CaseStudyComp/CaseStudyComp';
 import NewHelloComp from '@/components/NewHelloComp/NewHelloComp';
 import TermsComp from '@/components/TermsComp/TermsComp';
-import ContactUsComp from '@/components/ContactUsComp/ContactUsComp';
+import ContactUsComp from '@/components/ContactUs';
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
 import SignUp from '@/components/signupComp/SignUp';

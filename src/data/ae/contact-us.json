@@ -5,17 +5,34 @@
     },
     "ContactUsComp": {
         "heading": "Contact Us",
-        "sales": {
-            "heading": "Sales",
-            "email": "sales@msg91.com",
-            "phone": "+917049088848",
-            "phone2": "+918889378605"
-        },
-        "support": {
-            "heading": "Support",
-            "email": "support@msg91.com",
-            "whatsapp": "+918818888733",
-            "phone": "+918818888733"
-        }
+        "subheading": "Choose the best way to reach out, whether for sales inquiries or technical assistance.",
+        "cards": [
+            {
+                "key": "sales",
+                "heading": "Sales",
+                "email": "sales@msg91.com",
+                "calendlyUrl": "https://calendly.com/d/csks-4j4-sy3",
+                "phone": [
+                    {
+                        "number": "+65 31595004",
+                        "whatsapp": true,
+                        "call": true
+                    }
+                ]
+            },
+            {
+                "key": "support",
+                "heading": "Support",
+                "email": "support@msg91.com",
+                "calendlyUrl": "https://calendly.com/d/y3n-29s-29h?hide_gdpr_banner=1",
+                "phone": [
+                    {
+                        "number": "+91 7316914364",
+                        "whatsapp": true,
+                        "call": true
+                    }
+                ]
+            }
+        ]
     }
 }

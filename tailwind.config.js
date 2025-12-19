@@ -25,6 +25,7 @@ module.exports = {
                     hello: '#f2ca55',
                     'base-100': '#FFFFFF',
                     '--rounded-btn': '0.2rem',
+                    'base-200': '#808080',
                 },
             },
         ],
