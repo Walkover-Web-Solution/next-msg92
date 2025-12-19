@@ -4,10 +4,10 @@ import ChannelsComp from '@/components/ChannelsComp/ChannelsComp';
 import FactsComp from '@/components/FactsComp/FactsComp';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import FooterComp from '@/components/FooterComp/FooterComp';
-import MenuBarComp from '@/components/menuBarComp/menuBarComp';
+import MenuBarComp from '@/components/NavigationComp/menuBarComp/menuBarComp';
 import MoreServicesComp from '@/components/MoreServicesComp/MoreServicesComp';
 import NotFoundComp from '@/components/NotFoundComp/NotFoundComp';
-import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
+import NotificationBarComp from '@/components/NavigationComp/notificationBarComp/notificationBarComp';
 import PreFooterComp from '@/components/PreFooterComp/PreFooterComp';
 import ProductsComp from '@/components/ProductsComp/ProductsComp';
 import SEOComp from '@/components/SEOComp/SEOComp';
@@ -64,6 +64,7 @@ import PreFooterMFTL from '@/components/migrateFromTextlocal/preFooterMFTL/preFo
 import CTAMFTL from '@/components/migrateFromTextlocal/ctaMFTL/ctaMFTL';
 import SignupPage from '@/components/SignupCompNew/SingupComp';
 import ChatBotPageComp from '@/components/ChatBotPageComp';
+import NavigationComp from '@/components/NavigationComp';
 
 const Components = {
     BannerComp,
@@ -138,16 +139,19 @@ export default function Page({ data, commonData, pageInfo }) {
             document.cookie = `${cookieName}=${pageInfo.country}; path=/; max-age=3600`; // 1 year
         }
     }
+
     return (
         <>
             {pageInfo?.page !== ''}
-            <NotificationBarComp
-                componentData={commonData?.notification}
-                country={pageInfo?.country}
-                pageInfo={pageInfo}
-            />
 
-            <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
+            <NavigationComp
+                pageInfo={pageInfo}
+                componentData={{
+                    menubarData: commonData?.menu,
+                    notificationBarData: commonData?.notification,
+                }}
+                country={pageInfo?.country}
+            />
             {data &&
                 Object.keys(data).map((key) => {
                     const pageData = data[key];
