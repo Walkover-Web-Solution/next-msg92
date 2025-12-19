@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const initialState = {
     //Temporary Data
-    activeStep: 1,
+    activeStep: 2,
     widgetData: null,
     allowedRetry: null,
     isLoading: false,
