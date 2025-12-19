@@ -3,6 +3,80 @@
         "title": "WhatsApp API for businesses | MSG91-United Arab Emirates",
         "description": "Deliver instant notifications and customer support with MSG91’s WhatsApp API. Connect with your audience in real time through the world’s leading chat platform."
     },
+    "WhyChooseMSG91": {
+        "heading": "Why Choose MSG91 for WhatsApp Business?",
+        "subheading": "MSG91 makes WhatsApp your most powerful communication channel — for marketing, support, sales, and everything in between. Reach customers where they actually respond.",
+        "content": [
+            {
+                "title": "Promotional Bulk WhatsApp Messaging via CSV",
+                "subtitle": "Turn Offers into Orders — Instantly",
+                "description": "Send personalized promotional messages via CSV straight to your customers’ WhatsApp inboxes — where they actually read and click.",
+                "img": "/assets/us/whatsapp/promotional_bulk_whatsapp_messaging_via_csv.json",
+                "highlights": [
+                    "Flash Sales & Limited-Time Discounts",
+                    "New Product Launches",
+                    "Festive & Seasonal Campaigns",
+                    "Win-back & Re-engagement Messages",
+                    "Upsell & Cross-sell Offers"
+                ],
+                "footer": "Reach thousands. Get instant clicks. Drive real sales. No spam folder. Just results.",
+                "schedule_meet": "Talk to Us"
+            },
+            {
+                "title": "Transactional WhatsApp Messaging",
+                "subtitle": "Messages That Matter — Delivered Fast",
+                "description": "Keep customers informed with real-time, automated updates on WhatsApp.",
+                "img": "/assets/us/whatsapp/transactional_whatsapp_messaging.json",
+                "highlights": [
+                    "Order & Payment Notifications",
+                    "OTPs, Login Alerts & Password Resets",
+                    "Appointment, Renewal & Payment Reminders",
+                    "Invoices, Tickets & Documents",
+                    "Delivery Status & Service Updates"
+                ],
+                "footer": "Reliable. Timely. Expected. Exactly what transactional messaging should be.",
+                "schedule_meet": "Book A Demo"
+            },
+            {
+                "title": "Customer Support on WhatsApp",
+                "subtitle": "Support That Feels Like a Conversation",
+                "description": "No more waiting. No more forms. Just real-time reply to your customers via WhatsApp — from bots or human agents.",
+                "img": "/assets/us/whatsapp/customer_support_on_whatsapp.json",
+                "highlights": [
+                    "Smart Chatbots for Instant Replies ",
+                    "Seamless Handoff to Human Agents",
+                    "Inbound Calling on WhatsApp",
+                    "One Unified Inbox for All Chats- Instagram, Emails, Webchat",
+                    "Real-Time Customer Updates"
+                ],
+                "cta": {
+                    "text": "Try WhatsApp Support in Action",
+                    "link": "https://wa.me/917316914306"
+                }
+            }
+        ],
+        "WhatsAppDriveSales": {
+            "heading": "Drive Sales Directly on WhatsApp",
+            "subheading": "Sell Smarter — Where Customers Already Are.",
+            "description": "Showcase products, run ads, take orders — all inside a WhatsApp chat.",
+            "content": [
+                {
+                    "title": "Click-to-WhatsApp Ads",
+                    "description": "Use Instagram & Facebook to drive leads straight to chat."
+                },
+                {
+                    "title": "Make shopping easy on WhatsApp",
+                    "description": "Let customers browse, chat, and order with catalogs and payments."
+                },
+                {
+                    "title": "Customize Sales Journeys via WhatsApp",
+                    "description": "Send bulk offers, upsell intelligently, and close deals faster — all from one panel."
+                }
+            ],
+            "img": "/assets/us/whatsapp/drive_sales_directly_on_whatsapp.json",
+            "schedule_meet": "Book a Meeting"
+        }
+    },
     "BannerComp": {
         "slug": "whatsapp",
         "product": {
