@@ -6,7 +6,7 @@
     "AboutUsComp": {
         "heading": " The Minds Powering MSG91",
         "subheading": " We empower developers with reliable communication APIs and build tools that help businesses create, automate, and scale communication-driven solutions.",
-        "banner_img": "/assets/about_us/Banner_img.svg",
+        "banner_img": "/assets/about_us/walkoverteam.jpeg",
         "company_values": {
             "heading": "The Culture That Drives MSG91",
             "subheading": "Our approach is rooted in continuous innovation, collective growth, customer empathy, and responsible practices.",
@@ -51,34 +51,40 @@
                 },
                 {
                     "icon": "/assets/about_us/ravi_dangi.png",
-                    "name": "Sales",
-                    "post": "Ravi Dangi",
+                    "name": "Ravi Dangi",
+                    "post": "Sales",
                     "description": "Mistakenly believed Engineer, he’s a sales buff."
                 },
                 {
                     "icon": "/assets/about_us/vipin_sharma.png",
-                    "name": "Technology",
-                    "post": "Vipin Sharma",
+                    "name": "Vipin Sharma",
+                    "post": "Technology",
                     "description": "Mostly found in the gym or at the TT table."
                 },
                 {
                     "icon": "/assets/about_us/chinmay_daga.png",
-                    "name": "Operations",
-                    "post": "Chinmay Daga",
+                    "name": "Chinmay Daga",
+                    "post": "Operations",
                     "description": "The processes & partnerships pro."
+                },
+                {
+                    "icon": "/assets/about_us/ashish_yadav.webp",
+                    "name": "Ashish Yadav",
+                    "post": "Chief Design officer",
+                    "description": "The rare mind that dreams in color but thinks in systems."
                 }
             ]
         },
         "hiring": {
             "content": "Striving to fulfil our vision by hiring passionate people who are willing to push their benchmark, and of the industry, as well.",
-            "footer" : "Want to join our vision? We’re ,",
+            "footer": "Want to join our vision? We’re ,",
             "link": "https://walkover.in/careers",
             "linkText": "Hiring!"
         },
         "teamStrength": {
             "heading": "Our Team is Our Strength",
             "subheading": "The team of Superheroes makes us stand out. There are no supernatural powers, just the will and dedication to serve you helps us in delivering eminence.",
-            "img": "/assets/about_us/Banner_img.svg"
+            "img": "/assets/about_us/banner_img.jpg"
         },
         "clientSays": {
             "heading": "We are who , Our Clients say we are",
@@ -96,7 +102,6 @@
                     "description": "You guys have been instrumental in getting our customer connect via SMS trustworthy. Appreciate your technical support services as well. Quite responsive!",
                     "post": "Policybazaar (former)"
                 },
-
                 {
                     "name": "Aditya Sriganesh",
                     "icon": "/assets/about_us/indialends.svg",

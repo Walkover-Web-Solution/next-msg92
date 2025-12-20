@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { MdAllInclusive, MdAutoAwesome, MdGroup, MdOutlineGroup, MdTrendingUp } from 'react-icons/md';
-export default function AboutUsComp({ pageInfo, data }) {
+import { MdAllInclusive, MdAutoAwesome, MdOutlineGroup, MdTrendingUp } from 'react-icons/md';
+export default function AboutUsComp({ data }) {
     return (
         <>
             <section className='container cont_p cont cont_gap items-center text-center'>
@@ -8,8 +8,13 @@ export default function AboutUsComp({ pageInfo, data }) {
                     <h1 className='heading'> {data?.heading}</h1>
                     <p className='text-lg'>{data?.subheading}</p>
                 </div>
-                <div className='flex justify-center items-center'>
-                    <Image width={1200} height={675} src={data?.banner_img} className='img-fluid text-center' />
+                <div className='flex justify-center items-center '>
+                    <Image
+                        width={1200}
+                        height={675}
+                        src={data?.banner_img}
+                        className='img-fluid text-center rounded-lg'
+                    />
                 </div>
             </section>
             {data?.company_values && (
@@ -43,20 +48,20 @@ export default function AboutUsComp({ pageInfo, data }) {
             )}
 
             {data?.team && (
-                <section className='container cont_p items-center cont cont_gap items-center'>
+                <section className='container cont_p items-center cont cont_gap '>
                     <div className='cont justify-center items-center  text-center'>
                         <h2 className='text-3xl font-bold'> {data.team.heading}</h2>
                         <p className='text-lg '>{data.team.description}</p>
 
                         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 cont_gap px-4 py-6'>
                             {data.team.content?.map((item, index) => (
-                                <div key={index} className='border rounded-md p-6 shadow-sm p-6'>
+                                <div key={index} className='border rounded-md p-6 shadow-sm'>
                                     <Image
-                                        width={100}
-                                        height={74}
+                                        width={480}
+                                        height={480}
                                         src={item.icon}
                                         alt={item.name}
-                                        className='w-full h-64 object-cover rounded-lg mb-4 filter grayscale'
+                                        className='w-full min-h-[140px] object-cover rounded mb-4 filter grayscale'
                                     />
 
                                     <h2 className='text-lg font-semibold'>{item.name}</h2>
@@ -72,14 +77,16 @@ export default function AboutUsComp({ pageInfo, data }) {
             )}
 
             {data?.hiring && (
-                <section className='cont_p text-xl text-center text-base-100 bg-accent cont justify-center items-center'>
-                    <p className=' text-center cont_w'>{data?.hiring?.content}</p>
-                    <p className='text-base-100 '>
-                        {data?.hiring?.footer}{' '}
-                        <a href={data?.hiring?.link} className='underline active-link'>
-                            {data?.hiring?.linkText}
-                        </a>
-                    </p>
+                <section className='bg-accent '>
+                    <div className='container cont_p md:text-xl text-center text-base-100 cont justify-center items-center '>
+                        <p className=' text-center cont_w'>{data?.hiring?.content}</p>
+                        <p className='text-base-100 '>
+                            {data?.hiring?.footer}{' '}
+                            <a href={data?.hiring?.link} className='underline active-link'>
+                                {data?.hiring?.linkText}
+                            </a>
+                        </p>
+                    </div>
                 </section>
             )}
 
@@ -94,7 +101,7 @@ export default function AboutUsComp({ pageInfo, data }) {
                             width={1200}
                             height={675}
                             src={data?.teamStrength.img}
-                            className='img-fluid text-center'
+                            className='img-fluid text-center rounded-lg'
                         />
                     </div>
                 </section>
