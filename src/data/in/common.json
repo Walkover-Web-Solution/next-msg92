@@ -417,7 +417,7 @@
         },
         "address": {
             "name": "Walkover Web Solutions Pvt Ltd",
-            "address": "5th Floor, Wing B, LIC Tower, 28-29-30, PU - 03, Scheme No. 54,Indore, Madhya Pradesh, 452011."
+            "address": "5th Floor, Wing B, LIC Tower, 28-29-30,<br/>PU-03, Scheme No. 54,<br/>Indore, Madhya Pradesh, 452011."
         }
     }
 }
