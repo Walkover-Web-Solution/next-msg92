@@ -3,10 +3,7 @@
     "notification": {
         "support": "Contact Us",
         "login": "LOG IN",
-        "hide": [
-            "signup",
-            "singin"
-        ]
+        "hide": ["signup", "singin"]
     },
     "menu": {
         "products": "Products",
@@ -84,7 +81,7 @@
         "integrations": "Integrations",
         "integrations_list": {
             "explore_btn": "Explore More Plugins",
-             "content": [
+            "content": [
                 {
                     "name": "Shopify",
                     "link": "https://apps.shopify.com/msg91",
@@ -196,16 +193,10 @@
         ],
         "apidocs": "API Docs",
         "signup_btn": "Sign Up",
-        "hide": [
-            "signup",
-            "singin"
-        ]
+        "hide": ["signup", "singin"]
     },
     "footer": {
-        "hide": [
-            "signup",
-            "singin"
-        ],
+        "hide": ["signup", "singin"],
         "products": {
             "name": "Our Products",
             "links": [
@@ -247,7 +238,7 @@
                     "name": "Free WhatsApp link generator",
                     "link": "free-whatsapp-link-generator"
                 },
-                 {
+                {
                     "name": "WhatsApp Chatbot",
                     "link": "whatsapp/chatbot"
                 }
@@ -338,7 +329,7 @@
                     "name": "Career",
                     "link": "https://walkover.in/careers"
                 },
-                      {
+                {
                     "name": "Certificates",
                     "link": "certificates"
                 },
@@ -426,6 +417,7 @@
         },
         "address": {
             "name": "Walkover Web Solutions Pvt Ltd",
-            "address": "5th Floor, LIC Tower, AB Rd, opposite Orbit Mall, behind Raghunath Petrol Pump, Vijay Nagar, Scheme No 54, Indore, Madhya Pradesh 452010, India"}
+            "address": "5th Floor, Wing B, LIC Tower,<br/>28-29-30, PU-03, Scheme No. 54,<br/>Indore, Madhya Pradesh, 452011."
         }
     }
+}

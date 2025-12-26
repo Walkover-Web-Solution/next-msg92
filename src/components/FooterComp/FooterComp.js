@@ -246,8 +246,14 @@ export default function FooterComp({ componentData, pageInfo }) {
                                 </div>
                             </div>
                             {componentData?.address?.address && (
-                                <p className=' text-gray-200 text-end'>{componentData?.address?.address}</p>
+                                <p
+                                    className='text-gray-200 text-end'
+                                    dangerouslySetInnerHTML={{
+                                        __html: componentData.address.address,
+                                    }}
+                                />
                             )}
+
                             <div className='flex flex-col gap-4 mt-auto lg:items-end'>
                                 <a
                                     target='_blank'
