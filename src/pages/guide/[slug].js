@@ -13,9 +13,8 @@ import { getTag } from '@/components/Guide/lib/tags';
 import TagButton from '@/components/Guide/tags/TagButton';
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
-import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
-import MenuBarComp from '@/components/menuBarComp/menuBarComp';
 import FooterComp from '@/components/FooterComp/FooterComp';
+import NavigationComp from '@/components/NavigationComp';
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
 const component = { ReactPlayer };
@@ -58,12 +57,14 @@ export default function TestPage({
                 <meta property='og:description' content={description} key='description' />
                 <link rel='canonical' href={`https://msg91.com/guide/${router?.query?.slug}`} />
             </Head>
-            <NotificationBarComp
-                componentData={commonData?.notification}
-                country={pageInfo?.country}
+            <NavigationComp
                 pageInfo={pageInfo}
+                componentData={{
+                    menubarData: commonData?.menu,
+                    notificationBarData: commonData?.notification,
+                }}
+                country={pageInfo?.country}
             />
-            <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
             <div className='wrapper container blog-container w-100 max-w-4xl flex flex-col gap-8 py-20'>
                 <button className=' btn btn-md btn-primary' onClick={handleClick}>
                     <MdKeyboardArrowLeft className='text-xl' />
