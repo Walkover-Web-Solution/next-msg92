@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const initialState = {
     //Temporary Data
-    activeStep: 2,
+    activeStep: 1,
     widgetData: null,
     allowedRetry: null,
     isLoading: false,
@@ -333,20 +333,83 @@ export function otpWidgetSetup(dispatch, onSuccess, onError) {
                         let widgetData = window.getWidgetData();
 
                         if (widgetData) {
-                            const allowedRetry = {
-                                email: widgetData?.processes?.find(
-                                    (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Email
-                                ),
-                                whatsApp: widgetData?.processes?.find(
-                                    (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Whatsapp
-                                ),
-                                voice: widgetData?.processes?.find(
-                                    (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Voice
-                                ),
-                                sms: widgetData?.processes?.find(
-                                    (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Sms
-                                ),
-                            };
+                            // const allowedRetry = {
+                            //     email: widgetData?.processes?.find(
+                            //         (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Email
+                            //     ),
+                            //     whatsApp: widgetData?.processes?.find(
+                            //         (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Whatsapp
+                            //     ),
+                            //     voice: widgetData?.processes?.find(
+                            //         (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Voice
+                            //     ),
+                            //     sms: widgetData?.processes?.find(
+                            //         (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Sms
+                            //     ),
+                            // };
+                            const allowedRetry = {};
+                            const primaryChannelsByProcessVia = {};
+
+                            // First pass: collect all primary processes
+                            for (let i = 0; i < widgetData?.processes?.length; i++) {
+                                const process = widgetData?.processes[i];
+                                const processViaName = process?.processVia?.name?.toLowerCase();
+                                const channelName = process?.channel?.name?.toLowerCase();
+                                const countryCodes = process?.countryCode || [];
+
+                                if (processViaName && channelName && processViaName !== 'retry') {
+                                    if (!allowedRetry[processViaName]) {
+                                        allowedRetry[processViaName] = { 'primary': [], 'secondary': [] };
+                                        primaryChannelsByProcessVia[processViaName] = new Set();
+                                    }
+
+                                    countryCodes.forEach((countryCode) => {
+                                        const channelData = { channel: channelName, country: countryCode };
+                                        primaryChannelsByProcessVia[processViaName].add(channelName);
+
+                                        const existsInPrimary = allowedRetry[processViaName].primary.some(
+                                            (item) => item.channel === channelName && item.country === countryCode
+                                        );
+                                        if (!existsInPrimary) {
+                                            allowedRetry[processViaName].primary.push(channelData);
+                                        }
+
+                                        const existsInSecondary = allowedRetry[processViaName].secondary.some(
+                                            (item) => item.channel === channelName && item.country === countryCode
+                                        );
+                                        if (!existsInSecondary) {
+                                            allowedRetry[processViaName].secondary.push(channelData);
+                                        }
+                                    });
+                                }
+                            }
+
+                            // Second pass: add retry processes to matching processVia
+                            for (let i = 0; i < widgetData?.processes?.length; i++) {
+                                const process = widgetData?.processes[i];
+                                const processViaName = process?.processVia?.name?.toLowerCase();
+                                const channelName = process?.channel?.name?.toLowerCase();
+                                const countryCodes = process?.countryCode || [];
+
+                                if (processViaName === 'retry' && channelName) {
+                                    countryCodes.forEach((countryCode) => {
+                                        const channelData = { channel: channelName, country: countryCode };
+
+                                        for (let key in allowedRetry) {
+                                            if (primaryChannelsByProcessVia[key].has(channelName)) {
+                                                const existsInSecondary = allowedRetry[key].secondary.some(
+                                                    (item) =>
+                                                        item.channel === channelName && item.country === countryCode
+                                                );
+                                                if (!existsInSecondary) {
+                                                    allowedRetry[key].secondary.push(channelData);
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                            console.log('allowedRetry', allowedRetry);
 
                             if (dispatch) {
                                 dispatch({
@@ -408,20 +471,68 @@ export function otpWidgetSetup(dispatch, onSuccess, onError) {
                 let widgetData = window.getWidgetData();
 
                 if (widgetData) {
-                    const allowedRetry = {
-                        email: widgetData?.processes?.find(
-                            (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Email
-                        ),
-                        whatsApp: widgetData?.processes?.find(
-                            (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Whatsapp
-                        ),
-                        voice: widgetData?.processes?.find(
-                            (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Voice
-                        ),
-                        sms: widgetData?.processes?.find(
-                            (e) => e.processVia?.value === '5' && e.channel?.value === OTPRetryModes.Sms
-                        ),
-                    };
+                    const allowedRetry = {};
+                    const primaryChannelsByProcessVia = {};
+
+                    // First pass: collect all primary processes
+                    for (let i = 0; i < widgetData?.processes?.length; i++) {
+                        const process = widgetData?.processes[i];
+                        const processViaName = process?.processVia?.name?.toLowerCase();
+                        const channelName = process?.channel?.name?.toLowerCase();
+                        const countryCodes = process?.countryCode || [];
+
+                        if (processViaName && channelName && processViaName !== 'retry') {
+                            if (!allowedRetry[processViaName]) {
+                                allowedRetry[processViaName] = { 'primary': [], 'secondary': [] };
+                                primaryChannelsByProcessVia[processViaName] = new Set();
+                            }
+
+                            countryCodes.forEach((countryCode) => {
+                                const channelData = { channel: channelName, country: countryCode };
+                                primaryChannelsByProcessVia[processViaName].add(channelName);
+
+                                const existsInPrimary = allowedRetry[processViaName].primary.some(
+                                    (item) => item.channel === channelName && item.country === countryCode
+                                );
+                                if (!existsInPrimary) {
+                                    allowedRetry[processViaName].primary.push(channelData);
+                                }
+
+                                const existsInSecondary = allowedRetry[processViaName].secondary.some(
+                                    (item) => item.channel === channelName && item.country === countryCode
+                                );
+                                if (!existsInSecondary) {
+                                    allowedRetry[processViaName].secondary.push(channelData);
+                                }
+                            });
+                        }
+                    }
+
+                    // Second pass: add retry processes to matching processVia
+                    for (let i = 0; i < widgetData?.processes?.length; i++) {
+                        const process = widgetData?.processes[i];
+                        const processViaName = process?.processVia?.name?.toLowerCase();
+                        const channelName = process?.channel?.name?.toLowerCase();
+                        const countryCodes = process?.countryCode || [];
+
+                        if (processViaName === 'retry' && channelName) {
+                            countryCodes.forEach((countryCode) => {
+                                const channelData = { channel: channelName, country: countryCode };
+
+                                for (let key in allowedRetry) {
+                                    if (primaryChannelsByProcessVia[key].has(channelName)) {
+                                        const existsInSecondary = allowedRetry[key].secondary.some(
+                                            (item) => item.channel === channelName && item.country === countryCode
+                                        );
+                                        if (!existsInSecondary) {
+                                            allowedRetry[key].secondary.push(channelData);
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }
+                    console.log('allowedRetry', allowedRetry);
 
                     if (dispatch) {
                         dispatch({
