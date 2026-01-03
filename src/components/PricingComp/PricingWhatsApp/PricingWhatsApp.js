@@ -9,6 +9,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { MdArrowRightAlt, MdClose } from 'react-icons/md';
 
 export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
+    console.log('🚀 ~ PricingWhatsApp ~ pricingData:', pricingData);
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
     const currentCountry = GetCountryDetails({ shortname: pageInfo?.country, type: 'shortname' });
     const [tabtype, setTabtype] = useState('Messages');

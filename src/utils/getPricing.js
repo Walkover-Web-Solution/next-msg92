@@ -16,9 +16,12 @@ export default async function getPricing(country, page) {
         }
     } else if (page === 'whatsapp') {
         try {
-            const response = await axios.get(`${process.env.WHATSAPP_PRICING_URL}/${currencySymbol}`);
-            const messagePricing = response?.data?.data.sort((a, b) => a.country_name.localeCompare(b.country_name));
-            const voicePricing = getWhatsAppVoicePricing(currencySymbol) || [];
+            const response = await axios.get(
+                `${process.env.SUBSCRIPTION_PRICING_URL}/plans?currency=${currencySymbol}&ms_id=${msId}&dial_plan_info=true`
+            );
+            const messagePricing = getWhatsappmessagePricing(response);
+            const voicePricing = getWhatsAppVoicePricing(currencySymbol);
+
             return {
                 messagePricing: messagePricing || [],
                 voicePricing: voicePricing || [],
@@ -34,6 +37,7 @@ const msIds = {
     'hello': '7',
     'segmento': '2',
     'email': '1',
+    'whatsapp': '5',
 };
 
 const currency = {
@@ -77,6 +81,40 @@ export function getSimplifiedPlans(currency, plans) {
     });
 
     return simplifiedPlans || [];
+}
+
+function getWhatsappmessagePricing(response) {
+    const dialPlanInfoRaw = (response?.data?.data || [])
+        .flatMap((plan) => plan?.plan_services || [])
+        .flatMap((service) => service?.service_credit?.service_credit_rates || [])
+        .flatMap((rate) => rate?.dial_plan_info?.data || []);
+
+    const uniqueEntriesMap = new Map();
+
+    for (const item of dialPlanInfoRaw) {
+        const countryName = item?.country_name?.value ?? item?.country_name;
+        if (!countryName) continue;
+
+        const prefix = item?.prefix?.value ?? item?.prefix ?? null;
+        const uniqueKey = `${countryName}_${prefix}`;
+
+        if (!uniqueEntriesMap.has(uniqueKey)) {
+            const getRate = (field) => {
+                const val = item?.[field]?.value ?? item?.[field];
+                return val === null || val === undefined ? null : val === '0E-10' || val === '0' ? '0' : String(val);
+            };
+            uniqueEntriesMap.set(uniqueKey, {
+                country_name: countryName,
+                prefix: prefix,
+                marketing_rate: getRate('marketing_rate'),
+                utility_rate: getRate('utility_rate'),
+                authentication_rate: getRate('authentication_rate'),
+            });
+        }
+    }
+    return Array.from(uniqueEntriesMap.values()).sort((a, b) =>
+        (a.country_name || '').localeCompare(b.country_name || '')
+    );
 }
 
 function getWhatsAppVoicePricing(currency) {
