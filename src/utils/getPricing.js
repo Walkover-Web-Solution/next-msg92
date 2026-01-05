@@ -1,6 +1,29 @@
 import axios from 'axios';
 import getPlanServices from './getPlanServices';
 
+const PLAN_CONFIG = {
+    unlimitedWa: {
+        displayName: 'unlimitedWa',
+        price: 2,
+        period: ' / Month',
+        features: [
+            '2 months free subscription',
+            "Messages charged at Meta's exact rate",
+            'Built for scale and daily messaging',
+        ],
+    },
+    freeWA: {
+        displayName: 'freeWA',
+        price: 0,
+        period: ' / Month',
+        features: [
+            'Charged only per message sent',
+            'Standard MSG91 message pricing applies',
+            'Built for occasional messaging needs',
+        ],
+    },
+};
+
 export default async function getPricing(country, page) {
     const msId = msIds[page];
     const currencySymbol = currency[country] || 'USD';
@@ -23,8 +46,9 @@ export default async function getPricing(country, page) {
             const voicePricing = getWhatsAppVoicePricing(currencySymbol);
 
             return {
-                messagePricing: messagePricing || { unlimitedWa: [], freeWA: [] },
+                messagePricing: messagePricing || [],
                 voicePricing: voicePricing || [],
+                planConfig: PLAN_CONFIG,
             };
         } catch (error) {
             console.error('There was an error fetching the data!', error);
@@ -85,11 +109,12 @@ export function getSimplifiedPlans(currency, plans) {
 
 function getWhatsappmessagePricing(response) {
     const getValue = (field) => field?.value ?? field ?? null;
-    const maps = { unlimitedWa: new Map(), freeWA: new Map() };
+    const allPricingData = [];
+    const seenKeys = new Set();
     const sortByCountry = (a, b) => (a.country_name || '').localeCompare(b.country_name || '');
 
     for (const plan of response?.data?.data || []) {
-        if (plan?.name !== 'unlimitedWa' && plan?.name !== 'freeWA') continue;
+        if (!plan?.name) continue;
 
         for (const service of plan?.plan_services || []) {
             for (const rate of service?.service_credit?.service_credit_rates || []) {
@@ -97,11 +122,12 @@ function getWhatsappmessagePricing(response) {
                     const countryName = getValue(item.country_name);
                     if (!countryName) continue;
 
-                    const key = `${countryName}_${getValue(item.prefix)}`;
-                    const map = maps[plan.name];
+                    const key = `${plan.name}_${countryName}_${getValue(item.prefix)}`;
 
-                    if (!map.has(key)) {
-                        map.set(key, {
+                    if (!seenKeys.has(key)) {
+                        seenKeys.add(key);
+                        allPricingData.push({
+                            planName: plan.name,
                             country_name: countryName,
                             prefix: getValue(item.prefix),
                             marketing_rate: getValue(item.marketing_rate),
@@ -114,10 +140,7 @@ function getWhatsappmessagePricing(response) {
         }
     }
 
-    return {
-        unlimitedWa: Array.from(maps.unlimitedWa.values()).sort(sortByCountry),
-        freeWA: Array.from(maps.freeWA.values()).sort(sortByCountry),
-    };
+    return allPricingData.sort(sortByCountry);
 }
 
 function getWhatsAppVoicePricing(currency) {

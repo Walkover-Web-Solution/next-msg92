@@ -8,53 +8,20 @@ import styles from './PricingWhatsApp.module.scss';
 import { useState, useMemo, useEffect } from 'react';
 import { MdArrowRightAlt, MdClose } from 'react-icons/md';
 
-// plan configuration for the plan cards - temporary solution
-const PLAN_CONFIG = {
-    unlimitedWa: {
-        displayName: 'unlimitedWa',
-        price: 2,
-        period: ' / Month',
-        features: [
-            '2 months free subscription',
-            "Messages charged at Meta's exact rate",
-            'Built for scale and daily messaging',
-        ],
-    },
-    freeWA: {
-        displayName: 'freeWA',
-        price: 0,
-        period: ' / Month',
-        features: [
-            'Charged only per message sent',
-            'Standard MSG91 message pricing applies',
-            'Built for occasional messaging needs',
-        ],
-    },
-};
-
 export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
+    const PLAN_CONFIG = pricingData?.planConfig || {};
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
     const currentCountry = GetCountryDetails({ shortname: pageInfo?.country, type: 'shortname' });
     const [tabtype, setTabtype] = useState('Messages');
     const [searchText, setSearchText] = useState('');
     const [debouncedSearch, setDebouncedSearch] = useState('');
-    const [planType, setPlanType] = useState(() => {
-        const messagePricing = pricingData?.messagePricing || {};
-        const plans = Object.keys(messagePricing).filter(
-            (planName) => messagePricing[planName]?.length > 0 && PLAN_CONFIG[planName]
-        );
-        return plans[0] || 'unlimitedWa';
-    });
+    const messagePricing = pricingData?.messagePricing || [];
+    const availablePlans = [...new Set(messagePricing.map((item) => item.planName).filter(Boolean))];
 
-    // Get available plans from pricing data
-    const messagePricing = pricingData?.messagePricing || {};
-    const availablePlans = Object.keys(messagePricing).filter(
-        (planName) => messagePricing[planName]?.length > 0 && PLAN_CONFIG[planName]
-    );
+    const [planType, setPlanType] = useState(() => availablePlans[0] || 'unlimitedWa');
 
     const messageData = useMemo(() => {
-        const messagePricing = pricingData?.messagePricing || {};
-        const planData = messagePricing?.[planType] || [];
+        const planData = messagePricing.filter((item) => item.planName === planType);
         let sorted = [...planData];
         const index = sorted.findIndex((item) => item.country_name === currentCountry?.name);
         if (index > -1) {
@@ -62,7 +29,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
             sorted.unshift(current);
         }
         return sorted;
-    }, [pricingData, currentCountry, planType]);
+    }, [messagePricing, currentCountry, planType]);
 
     const voiceData = useMemo(() => {
         let sorted = [...(pricingData?.voicePricing || [])];
@@ -358,7 +325,7 @@ function PlanCard({ title, price, period, features, isSelected, onSelect }) {
 
             <a
                 href={getURL('signup', 'whatsapp')}
-                className='block'
+                className='w-fit block'
                 target='_blank'
                 onClick={(e) => e.stopPropagation()}
             >
