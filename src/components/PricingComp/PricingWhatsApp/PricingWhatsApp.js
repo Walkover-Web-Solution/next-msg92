@@ -8,23 +8,61 @@ import styles from './PricingWhatsApp.module.scss';
 import { useState, useMemo, useEffect } from 'react';
 import { MdArrowRightAlt, MdClose } from 'react-icons/md';
 
+// plan configuration for the plan cards - temporary solution
+const PLAN_CONFIG = {
+    unlimitedWa: {
+        displayName: 'unlimitedWa',
+        price: 2,
+        period: ' / Month',
+        features: [
+            '2 months free subscription',
+            "Messages charged at Meta's exact rate",
+            'Built for scale and daily messaging',
+        ],
+    },
+    freeWA: {
+        displayName: 'freeWA',
+        price: 0,
+        period: ' / Month',
+        features: [
+            'Charged only per message sent',
+            'Standard MSG91 message pricing applies',
+            'Built for occasional messaging needs',
+        ],
+    },
+};
+
 export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
-    console.log('🚀 ~ PricingWhatsApp ~ pricingData:', pricingData);
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
     const currentCountry = GetCountryDetails({ shortname: pageInfo?.country, type: 'shortname' });
     const [tabtype, setTabtype] = useState('Messages');
     const [searchText, setSearchText] = useState('');
     const [debouncedSearch, setDebouncedSearch] = useState('');
+    const [planType, setPlanType] = useState(() => {
+        const messagePricing = pricingData?.messagePricing || {};
+        const plans = Object.keys(messagePricing).filter(
+            (planName) => messagePricing[planName]?.length > 0 && PLAN_CONFIG[planName]
+        );
+        return plans[0] || 'unlimitedWa';
+    });
+
+    // Get available plans from pricing data
+    const messagePricing = pricingData?.messagePricing || {};
+    const availablePlans = Object.keys(messagePricing).filter(
+        (planName) => messagePricing[planName]?.length > 0 && PLAN_CONFIG[planName]
+    );
 
     const messageData = useMemo(() => {
-        let sorted = [...(pricingData?.messagePricing || [])];
+        const messagePricing = pricingData?.messagePricing || {};
+        const planData = messagePricing?.[planType] || [];
+        let sorted = [...planData];
         const index = sorted.findIndex((item) => item.country_name === currentCountry?.name);
         if (index > -1) {
             const [current] = sorted.splice(index, 1);
             sorted.unshift(current);
         }
         return sorted;
-    }, [pricingData, currentCountry]);
+    }, [pricingData, currentCountry, planType]);
 
     const voiceData = useMemo(() => {
         let sorted = [...(pricingData?.voicePricing || [])];
@@ -78,9 +116,37 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                         Voice
                     </span>
                 </div>
-
+                <div
+                    className={`flex flex-col md:flex-row md:gap-4 gap-4 py-4 ${
+                        tabtype === 'Messages' ? '' : 'hidden'
+                    }`}
+                >
+                    {availablePlans.map((planName) => {
+                        const config = PLAN_CONFIG[planName];
+                        if (!config) return null;
+                        return (
+                            <PlanCard
+                                key={planName}
+                                title={config.displayName}
+                                price={`${symbol}${config.price}`}
+                                period={config.period}
+                                features={config.features}
+                                isSelected={planType === planName}
+                                onSelect={() => {
+                                    setPlanType(planName);
+                                    setSearchText('');
+                                }}
+                                symbol={symbol}
+                            />
+                        );
+                    })}
+                </div>
                 <div className='flex flex-col w-full gap-8'>
-                    <div className='flex lg:flex-row flex-col-reverse bg-white rounded xl:p-8 lg:p-6 p-4 items-center justify-between lg:gap-6 xl:gap-12 gap-4'>
+                    <div
+                        className={`flex lg:flex-row flex-col-reverse bg-white rounded xl:p-8 lg:p-6 p-4 items-center justify-between lg:gap-6 xl:gap-12 gap-4 ${
+                            tabtype === 'Messages' ? 'hidden' : ''
+                        }`}
+                    >
                         <div className={`${tabtype === 'Voice' ? '' : 'hidden'} flex flex-col gap-4 w-full`}>
                             <div>
                                 <h2 className='text-xl md:text-3xl font-bold'>{pageData?.whatsappVoice?.heading}</h2>
@@ -176,6 +242,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                             </div>
 
                             <Table
+                                key={`messages-${planType}`}
                                 data={filteredMessageData}
                                 tabtype={tabtype}
                                 tabletype='messages'
@@ -252,6 +319,57 @@ function Table({ data, symbol, className, tabletype }) {
                     })}
                 </tbody>
             </table>
+        </div>
+    );
+}
+
+function PlanCard({ title, price, period, features, isSelected, onSelect }) {
+    return (
+        <div
+            className={`flex flex-col gap-3 bg-base-100 rounded-md border p-6 flex-1 cursor-pointer transition-shadow ${
+                isSelected ? 'border-accent shadow-md' : 'border-gray-300 hover:shadow-md'
+            }`}
+            onClick={onSelect}
+        >
+            <div className='flex justify-between items-center flex-row'>
+                <h3 className='text-lg font-bold'>{title}</h3>
+                <div
+                    className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+                        isSelected ? 'border-accent bg-accent' : 'border-accent bg-white'
+                    }`}
+                >
+                    {isSelected && <div className='w-2 h-2 rounded-full bg-white'></div>}
+                </div>
+            </div>
+
+            <div className='text-2xl text-green-600 font-bold'>
+                <span>{price}</span>
+                <span>{period} </span>
+            </div>
+
+            <ul className='flex flex-col gap-1 font-md'>
+                {features.map((feature, index) => (
+                    <li key={index} className={`flex items-center text-gray-700 ${index === 0 ? 'font-semibold' : ''}`}>
+                        <MdArrowRightAlt size={18} className='text-gray-600' />
+                        <span>{feature}</span>
+                    </li>
+                ))}
+            </ul>
+
+            <a
+                href={getURL('signup', 'whatsapp')}
+                className='block'
+                target='_blank'
+                onClick={(e) => e.stopPropagation()}
+            >
+                <button
+                    className={`rounded px-5 py-2 ${
+                        isSelected ? 'bg-primary text-white' : 'bg-white text-accent border border-accent'
+                    }`}
+                >
+                    Get Started
+                </button>
+            </a>
         </div>
     );
 }

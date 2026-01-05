@@ -23,7 +23,7 @@ export default async function getPricing(country, page) {
             const voicePricing = getWhatsAppVoicePricing(currencySymbol);
 
             return {
-                messagePricing: messagePricing || [],
+                messagePricing: messagePricing || { unlimitedWa: [], freeWA: [] },
                 voicePricing: voicePricing || [],
             };
         } catch (error) {
@@ -84,37 +84,40 @@ export function getSimplifiedPlans(currency, plans) {
 }
 
 function getWhatsappmessagePricing(response) {
-    const dialPlanInfoRaw = (response?.data?.data || [])
-        .flatMap((plan) => plan?.plan_services || [])
-        .flatMap((service) => service?.service_credit?.service_credit_rates || [])
-        .flatMap((rate) => rate?.dial_plan_info?.data || []);
+    const getValue = (field) => field?.value ?? field ?? null;
+    const maps = { unlimitedWa: new Map(), freeWA: new Map() };
+    const sortByCountry = (a, b) => (a.country_name || '').localeCompare(b.country_name || '');
 
-    const uniqueEntriesMap = new Map();
+    for (const plan of response?.data?.data || []) {
+        if (plan?.name !== 'unlimitedWa' && plan?.name !== 'freeWA') continue;
 
-    for (const item of dialPlanInfoRaw) {
-        const countryName = item?.country_name?.value ?? item?.country_name;
-        if (!countryName) continue;
+        for (const service of plan?.plan_services || []) {
+            for (const rate of service?.service_credit?.service_credit_rates || []) {
+                for (const item of rate?.dial_plan_info?.data || []) {
+                    const countryName = getValue(item.country_name);
+                    if (!countryName) continue;
 
-        const prefix = item?.prefix?.value ?? item?.prefix ?? null;
-        const uniqueKey = `${countryName}_${prefix}`;
+                    const key = `${countryName}_${getValue(item.prefix)}`;
+                    const map = maps[plan.name];
 
-        if (!uniqueEntriesMap.has(uniqueKey)) {
-            const getRate = (field) => {
-                const val = item?.[field]?.value ?? item?.[field];
-                return val === null || val === undefined ? null : val === '0E-10' || val === '0' ? '0' : String(val);
-            };
-            uniqueEntriesMap.set(uniqueKey, {
-                country_name: countryName,
-                prefix: prefix,
-                marketing_rate: getRate('marketing_rate'),
-                utility_rate: getRate('utility_rate'),
-                authentication_rate: getRate('authentication_rate'),
-            });
+                    if (!map.has(key)) {
+                        map.set(key, {
+                            country_name: countryName,
+                            prefix: getValue(item.prefix),
+                            marketing_rate: getValue(item.marketing_rate),
+                            utility_rate: getValue(item.utility_rate),
+                            authentication_rate: getValue(item.authentication_rate),
+                        });
+                    }
+                }
+            }
         }
     }
-    return Array.from(uniqueEntriesMap.values()).sort((a, b) =>
-        (a.country_name || '').localeCompare(b.country_name || '')
-    );
+
+    return {
+        unlimitedWa: Array.from(maps.unlimitedWa.values()).sort(sortByCountry),
+        freeWA: Array.from(maps.freeWA.values()).sort(sortByCountry),
+    };
 }
 
 function getWhatsAppVoicePricing(currency) {
