@@ -11,10 +11,6 @@ export default function Index({ posts, pagination, commonData, pageInfo }) {
         <>
             <Head>
                 <title>MSG91 Guide</title>
-                <meta
-                    name='description'
-                    content='Explore the latest insights and updates on MSG91 for smarter, faster communication strategies. Stay informed and optimize your messaging efficiently today.'
-                />
             </Head>
             <NavigationComp
                 pageInfo={pageInfo}
