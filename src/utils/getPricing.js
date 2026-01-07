@@ -1,28 +1,50 @@
 import axios from 'axios';
 import getPlanServices from './getPlanServices';
 
-const PLAN_CONFIG = {
-    unlimitedWa: {
-        displayName: 'unlimitedWa',
-        price: 2,
-        period: ' / Month',
-        features: [
-            '2 months free subscription',
-            "Messages charged at Meta's exact rate",
-            'Built for scale and daily messaging',
-        ],
-    },
-    freeWA: {
-        displayName: 'freeWA',
-        price: 0,
-        period: ' / Month',
-        features: [
-            'Charged only per message sent',
-            'Standard MSG91 message pricing applies',
-            'Built for occasional messaging needs',
-        ],
-    },
+const ALLOWED_PLANS = ['Quantum', 'Titan'];
+const DEFAULT_FEATURES = {
+    Quantum: [
+        'Charged only per message sent',
+        'Standard MSG91 message pricing applies',
+        'Built for occasional messaging needs',
+    ],
+    Titan: [
+        '2 months free subscription',
+        "Messages charged at Meta's exact rate",
+        'Built for scale and daily messaging',
+    ],
 };
+
+function buildPlanConfig(plans, currencySymbol, periodType = 'monthly') {
+    const config = {};
+    const period = periodType.toLowerCase();
+    const periodMap = {
+        monthly: { search: 'monthly', display: ' / Month' },
+        yearly: { search: 'yearly', display: ' / Year' },
+    };
+    const periodConfig = periodMap[period] || periodMap.monthly;
+
+    plans?.forEach((plan) => {
+        if (!plan?.name || !ALLOWED_PLANS.includes(plan.name)) return;
+
+        const planAmounts = plan?.plan_amounts?.filter((amount) => amount?.currency?.short_name === currencySymbol);
+
+        if (!planAmounts?.length) return;
+
+        const planAmount =
+            planAmounts.find((amount) => amount?.plan_type?.name?.toLowerCase() === periodConfig.search) ||
+            planAmounts[0];
+
+        config[plan.name] = {
+            displayName: plan.name,
+            price: planAmount?.plan_amount || 0,
+            period: periodConfig.display,
+            features: DEFAULT_FEATURES[plan.name] || DEFAULT_FEATURES.Quantum,
+        };
+    });
+
+    return config;
+}
 
 export default async function getPricing(country, page) {
     const msId = msIds[page];
@@ -44,11 +66,11 @@ export default async function getPricing(country, page) {
             );
             const messagePricing = getWhatsappmessagePricing(response);
             const voicePricing = getWhatsAppVoicePricing(currencySymbol);
-
+            const dynamicPlanConfig = buildPlanConfig(response.data.data, currencySymbol);
             return {
                 messagePricing: messagePricing || [],
                 voicePricing: voicePricing || [],
-                planConfig: PLAN_CONFIG,
+                planConfig: dynamicPlanConfig,
             };
         } catch (error) {
             console.error('There was an error fetching the data!', error);
