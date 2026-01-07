@@ -79,6 +79,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <title>{data?.title}</title>
                 <meta name='description' content={data?.description} />
                 <meta property='og:title' content={data?.title} />
+                <meta name='keywords' content={data?.keywords} />
                 <meta property='og:description' content={data?.description} />
                 <meta property='og:image' content={'/assets/brand/favicon.svg'} />
                 <link rel='icon' href='/assets/brand/favicon.svg' />

@@ -1,7 +1,8 @@
 {
     "HeadComp": {
         "title": "ShortUrl",
-        "description": "Stand out with branded links that drive clicks and improve conversions. Customize, track, and manage short URLs with ease for smarter marketing."
+        "description": "Stand out with branded links that drive clicks and improve conversions. Customize, track, and manage short URLs with ease for smarter marketing.",
+        "keywords": "URL Shortener"
     },
     "BannerComp": {
         "slug": "shorturl",

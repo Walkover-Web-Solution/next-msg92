@@ -1,7 +1,8 @@
 {
     "HeadComp": {
         "title": "Create a Whatsapp link | Free Whatsapp Link generator",
-        "description": "Create WhatsApp links and QR codes for seamless website integration. Let customers chat instantly with a simple and intuitive widget."
+        "description": "Create WhatsApp links and QR codes for seamless website integration. Let customers chat instantly with a simple and intuitive widget.",
+        "keywords": "Free Whatsapp Link Generator"
     },
     "WhatsappLinkComp": {
         "slug": "free-whatsapp-link-generator",

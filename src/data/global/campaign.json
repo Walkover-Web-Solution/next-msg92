@@ -1,7 +1,8 @@
 {
     "HeadComp": {
-        "title": "SMS Campaign",
-        "description": "Streamline B2B marketing with advanced automation tools and sales funnel builders. Simplify drip email campaigns and improve your sales process efficiently."
+        "title": "SMS Campaign & Text Message Marketing Platform | MSG91",
+        "description": "Drive engagement using MSG91's SMS campaign & text message marketing platform to reach customers instantly. Launch your campaigns now.",
+        "keywords": "text message marketing"
     },
     "BannerComp": {
         "slug": "campaign",
@@ -10,7 +11,7 @@
             "icon": "/assets/icons/products/campaign.svg"
         },
         "tagline": "Event Base automation",
-        "heading": "Connect conversations across Channels and tools.",
+        "heading": "SMS Campaign & Text Message Marketing Platform",
         "subheading": "Deliver personalized, engaging and seamless experiences",
         "banner_img": "/assets/global/campaign/campaign.png",
         "getstarted_btn": "Get Started for Free",

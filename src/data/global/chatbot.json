@@ -1,9 +1,11 @@
 {
     "HeadComp": {
-        "title": "Automate Customer Support with AI Chatbot | WhatsApp, Voice, Multichannel | MSG91",
-        "description": "Deploy a conversational AI assistant with MSG91 — support on WhatsApp, Instagram, Web & Voice. Get 24/7 automated, multilingual chatbots with no-code setup and CRM integrations. Start free today!"
+        "title": "Conversational AI Chatbot for Customer Service | MSG91",
+        "description": "Boost service efficiency with MSG91's conversational AI chatbot for customer service. Automate responses and improve support instantly.",
+        "keywords": "Automate Customer Conversation with AI Chatbot"
     },
     "ChatBotPageComp": {
+        "heading": "Conversational AI Chatbot for Customer Service",
         "voiceSupport": {
             "heading": "Omnichannel Conversational AI",
             "subHeading": "Modern customers expect you to meet them wherever they are. With MSG91 Chatbot, deploy your conversational AI assistant across more platforms than ever for seamless customer service:",
