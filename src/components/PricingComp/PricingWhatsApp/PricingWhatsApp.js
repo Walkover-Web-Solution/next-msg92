@@ -317,9 +317,9 @@ function Table({ data, symbol, className, tabletype }) {
 function PlanCard({ title, price, period, features, isSelected, onSelect, IsMultiPlan = false }) {
     return (
         <div
-            className={`flex flex-col gap-3 bg-base-100 rounded-md border p-6 flex-1 cursor-pointer ${
+            className={`flex flex-col gap-3 bg-base-100 rounded border p-6 flex-1 cursor-pointer ${
                 !IsMultiPlan
-                    ? 'border-gray-300 shadow-md'
+                    ? 'border-gray-300'
                     : isSelected
                       ? 'border-accent shadow-md'
                       : 'border-gray-300 hover:shadow-md'
