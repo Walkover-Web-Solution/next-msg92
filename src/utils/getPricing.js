@@ -1,8 +1,8 @@
 import axios from 'axios';
 import getPlanServices from './getPlanServices';
 
-const ALLOWED_PLANS = ['Quantum', 'Titan'];
-const DEFAULT_FEATURES = {
+const allowedPlans = ['Quantum', 'Titan'];
+const defaultFeatures = {
     Quantum: [
         'Charged only per message sent',
         'Standard MSG91 message pricing applies',
@@ -25,7 +25,7 @@ function buildPlanConfig(plans, currencySymbol, periodType = 'monthly') {
     const periodConfig = periodMap[period] || periodMap.monthly;
 
     plans?.forEach((plan) => {
-        if (!plan?.name || !ALLOWED_PLANS.includes(plan.name)) return;
+        if (!plan?.name || !allowedPlans.includes(plan.name)) return;
 
         const planAmounts = plan?.plan_amounts?.filter((amount) => amount?.currency?.short_name === currencySymbol);
 
@@ -39,7 +39,7 @@ function buildPlanConfig(plans, currencySymbol, periodType = 'monthly') {
             displayName: plan.name,
             price: planAmount?.plan_amount || 0,
             period: periodConfig.display,
-            features: DEFAULT_FEATURES[plan.name] || DEFAULT_FEATURES.Quantum,
+            features: defaultFeatures[plan.name] || defaultFeatures.Quantum,
         };
     });
 
@@ -64,7 +64,7 @@ export default async function getPricing(country, page) {
             const response = await axios.get(
                 `${process.env.SUBSCRIPTION_PRICING_URL}/plans?currency=${currencySymbol}&ms_id=${msId}&dial_plan_info=true`
             );
-            const messagePricing = getWhatsappmessagePricing(response);
+            const messagePricing = getWhatsAppMessagePricing(response);
             const voicePricing = getWhatsAppVoicePricing(currencySymbol);
             const dynamicPlanConfig = buildPlanConfig(response.data.data, currencySymbol);
             return {
@@ -129,7 +129,7 @@ export function getSimplifiedPlans(currency, plans) {
     return simplifiedPlans || [];
 }
 
-function getWhatsappmessagePricing(response) {
+function getWhatsAppMessagePricing(response) {
     const getValue = (field) => field?.value ?? field ?? null;
     const allPricingData = [];
     const seenKeys = new Set();

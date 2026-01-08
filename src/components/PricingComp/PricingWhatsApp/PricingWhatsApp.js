@@ -9,7 +9,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { MdArrowRightAlt, MdClose } from 'react-icons/md';
 
 export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
-    const PLAN_CONFIG = pricingData?.planConfig || {};
+    const planConfig = pricingData?.planConfig || {};
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
     const currentCountry = GetCountryDetails({ shortname: pageInfo?.country, type: 'shortname' });
     const [tabtype, setTabtype] = useState('Messages');
@@ -102,7 +102,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                         }`}
                     >
                         {availablePlans.map((planName) => {
-                            const config = PLAN_CONFIG[planName];
+                            const config = planConfig[planName];
                             if (!config) return null;
                             return (
                                 <PlanCard
@@ -112,6 +112,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                                     period={config.period}
                                     features={config.features}
                                     isSelected={planType === planName}
+                                    IsMultiPlan={Object.keys(planConfig).length > 1}
                                     onSelect={() => {
                                         setPlanType(planName);
                                         setSearchText('');
@@ -181,7 +182,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                     {!isMessagePricingEmpty && (
                         <div className='flex flex-col gap-8 w-full'>
                             <div className={`flex flex-col gap-2 ${tabtype === 'Messages' ? '' : 'hidden'}`}>
-                                <div className='flex flex-col md:flex-row w-full justify-between ms:items-center gap-1'>
+                                <div className='flex flex-col justify-between gap-1'>
                                     {pageData?.heading && <h2 className='text-2xl font-bold'>{pageData?.heading}</h2>}
                                     {messageData && messageData?.length > 0 && (
                                         <button
@@ -243,7 +244,9 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                                     tabtype={tabtype}
                                     tabletype='voice'
                                     symbol={symbol}
-                                    className={`${tabtype === 'Voice' && filteredVoiceData?.length > 0 ? '' : 'hidden'}`}
+                                    className={`${
+                                        tabtype === 'Voice' && filteredVoiceData?.length > 0 ? '' : 'hidden'
+                                    }`}
                                 />
                             </div>
                         </div>
@@ -277,7 +280,7 @@ function Table({ data, symbol, className, tabletype }) {
     const isMessageTable = tabletype === 'messages';
 
     return (
-        <div className={`overflow-y-scroll h-[700px] scrollbar-none ${className}`}>
+        <div className={`overflow-y-scroll max-h-[700px] scrollbar-none ${className}`}>
             <table className={`table bg-white rounded w-full ${tabletype}`}>
                 <thead className='sticky top-0 bg-white z-10'>
                     <tr className='font-bold text-[16px] text-black'>
@@ -311,23 +314,31 @@ function Table({ data, symbol, className, tabletype }) {
     );
 }
 
-function PlanCard({ title, price, period, features, isSelected, onSelect }) {
+function PlanCard({ title, price, period, features, isSelected, onSelect, IsMultiPlan = false }) {
     return (
         <div
-            className={`flex flex-col gap-3 bg-base-100 rounded-md border p-6 flex-1 cursor-pointer transition-shadow ${
-                isSelected ? 'border-accent shadow-md' : 'border-gray-300 hover:shadow-md'
+            className={`flex flex-col gap-3 bg-base-100 rounded-md border p-6 flex-1 cursor-pointer ${
+                !IsMultiPlan
+                    ? 'border-gray-300 shadow-md'
+                    : isSelected
+                      ? 'border-accent shadow-md'
+                      : 'border-gray-300 hover:shadow-md'
             }`}
             onClick={onSelect}
         >
             <div className='flex justify-between items-center flex-row'>
                 <h3 className='text-lg font-bold'>{title}</h3>
-                <div
-                    className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                        isSelected ? 'border-accent bg-accent' : 'border-accent bg-white'
-                    }`}
-                >
-                    {isSelected && <div className='w-2 h-2 rounded-full bg-white'></div>}
-                </div>
+                {IsMultiPlan && (
+                    <>
+                        <div
+                            className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
+                                isSelected ? 'border-accent bg-accent' : 'border-accent bg-white'
+                            }`}
+                        >
+                            {isSelected && <div className='w-2 h-2 rounded-full bg-white'></div>}
+                        </div>
+                    </>
+                )}
             </div>
 
             <div className='text-2xl text-green-600 font-bold'>
@@ -337,8 +348,11 @@ function PlanCard({ title, price, period, features, isSelected, onSelect }) {
 
             <ul className='flex flex-col gap-1 font-md'>
                 {features.map((feature, index) => (
-                    <li key={index} className={`flex items-center text-gray-700 ${index === 0 ? 'font-semibold' : ''}`}>
-                        <MdArrowRightAlt size={18} className='text-gray-600' />
+                    <li
+                        key={`${feature}-${index}`}
+                        className={`flex text-gray-700 gap-2 ${index === 0 ? 'font-semibold' : ''}`}
+                    >
+                        <MdArrowRightAlt size={18} className='text-gray-600 mt-1' />
                         <span>{feature}</span>
                     </li>
                 ))}
