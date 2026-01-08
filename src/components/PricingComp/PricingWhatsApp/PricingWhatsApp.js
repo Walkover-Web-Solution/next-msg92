@@ -18,7 +18,10 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
     const messagePricing = pricingData?.messagePricing || [];
     const availablePlans = [...new Set(messagePricing.map((item) => item.planName).filter(Boolean))];
 
-    const [planType, setPlanType] = useState(() => availablePlans[0] || 'unlimitedWa');
+    const [planType, setPlanType] = useState(() => {
+        const titanPlan = availablePlans.find((plan) => plan === 'Titan');
+        return titanPlan || availablePlans[0] || 'Titan';
+    });
 
     const messageData = useMemo(() => {
         const planData = messagePricing.filter((item) => item.planName === planType);
@@ -62,52 +65,63 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
         (tabtype === 'Messages' && filteredMessageData?.length === 0) ||
         (tabtype === 'Voice' && filteredVoiceData?.length === 0);
 
+    const isMessagePricingEmpty = tabtype === 'Messages' && (!messagePricing || messagePricing.length === 0);
     return (
         <>
             <div className='flex flex-col gap-3 max-w-full w-full overflow-hidden'>
                 <h1 className='text-2xl md:text-3xl font-semibold capitalize'>WhatsApp Pricing</h1>
 
-                <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
-                    <span
+                <div role='tablist' className='flex gap-0 bg-gray-100 rounded-lg p-1 w-fit'>
+                    <button
                         role='tab'
-                        className={`tab ${tabtype === 'Messages' && 'tab-active'}`}
+                        className={`px-6 py-2 rounded-md font-medium transition-all duration-200 ${
+                            tabtype === 'Messages'
+                                ? 'bg-white text-gray-900 shadow-sm'
+                                : 'text-gray-600 hover:text-gray-900'
+                        }`}
                         onClick={() => setTabtype('Messages')}
                     >
                         Messages
-                    </span>
-                    <span
+                    </button>
+                    <button
                         role='tab'
-                        className={`tab ${tabtype === 'Voice' && 'tab-active'}`}
+                        className={`px-6 py-2 rounded-md font-medium transition-all duration-200 ${
+                            tabtype === 'Voice'
+                                ? 'bg-white text-gray-900 shadow-sm'
+                                : 'text-gray-600 hover:text-gray-900'
+                        }`}
                         onClick={() => setTabtype('Voice')}
                     >
                         Voice
-                    </span>
+                    </button>
                 </div>
-                <div
-                    className={`flex flex-col md:flex-row md:gap-4 gap-4 py-4 ${
-                        tabtype === 'Messages' ? '' : 'hidden'
-                    }`}
-                >
-                    {availablePlans.map((planName) => {
-                        const config = PLAN_CONFIG[planName];
-                        if (!config) return null;
-                        return (
-                            <PlanCard
-                                key={planName}
-                                title={config.displayName}
-                                price={`${symbol}${config.price}`}
-                                period={config.period}
-                                features={config.features}
-                                isSelected={planType === planName}
-                                onSelect={() => {
-                                    setPlanType(planName);
-                                    setSearchText('');
-                                }}
-                                symbol={symbol}
-                            />
-                        );
-                    })}
-                </div>
+                {!isMessagePricingEmpty && (
+                    <div
+                        className={`flex flex-col lg:flex-row md:gap-4 gap-4 py-4 ${
+                            tabtype === 'Messages' ? '' : 'hidden'
+                        }`}
+                    >
+                        {availablePlans.map((planName) => {
+                            const config = PLAN_CONFIG[planName];
+                            if (!config) return null;
+                            return (
+                                <PlanCard
+                                    key={planName}
+                                    title={config.displayName}
+                                    price={`${symbol}${config.price}`}
+                                    period={config.period}
+                                    features={config.features}
+                                    isSelected={planType === planName}
+                                    onSelect={() => {
+                                        setPlanType(planName);
+                                        setSearchText('');
+                                    }}
+                                    symbol={symbol}
+                                />
+                            );
+                        })}
+                    </div>
+                )}
                 <div className='flex flex-col w-full gap-8'>
                     <div
                         className={`flex lg:flex-row flex-col-reverse bg-white rounded xl:p-8 lg:p-6 p-4 items-center justify-between lg:gap-6 xl:gap-12 gap-4 ${
@@ -130,25 +144,29 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                             </a>
                         </div>
 
-                        <div
-                            className={`flex flex-col gap-4 sm:gap-6 w-full md:text-start text-center md:items-start items-center ${
-                                tabtype === 'Messages' ? '' : 'hidden'
-                            }`}
-                        >
-                            <div className='flex flex-col gap-2'>
-                                <h2 className='text-xl md:text-3xl font-semibold'>
-                                    <span className='text-green-600 font-bold text-2xl lg:text-4xl'>Zero</span> margin
-                                    on meta price.
-                                </h2>
-                                {currentCountry?.name === 'India' && <p className='txt-sm lg:text-lg'>GST excluded.</p>}
-                                {currentCountry?.name === 'United Kingdom' && (
-                                    <p className='txt-sm md:text-lg'>VAT excluded.</p>
-                                )}
+                        {!isMessagePricingEmpty && (
+                            <div
+                                className={`flex flex-col gap-4 sm:gap-6 w-full md:text-start text-center md:items-start items-center ${
+                                    tabtype === 'Messages' ? '' : 'hidden'
+                                }`}
+                            >
+                                <div className='flex flex-col gap-2'>
+                                    <h2 className='text-xl md:text-3xl font-semibold'>
+                                        <span className='text-green-600 font-bold text-2xl lg:text-4xl'>Zero</span>{' '}
+                                        margin on meta price.
+                                    </h2>
+                                    {currentCountry?.name === 'India' && (
+                                        <p className='txt-sm lg:text-lg'>GST excluded.</p>
+                                    )}
+                                    {currentCountry?.name === 'United Kingdom' && (
+                                        <p className='txt-sm md:text-lg'>VAT excluded.</p>
+                                    )}
+                                </div>
+                                <a href={getURL('signup', 'whatsapp')} className='w-fit' target='_blank'>
+                                    <button className='btn btn-primary btn-md'>Get Started</button>
+                                </a>
                             </div>
-                            <a href={getURL('signup', 'whatsapp')} className='w-fit' target='_blank'>
-                                <button className='btn btn-primary btn-md'>Get Started</button>
-                            </a>
-                        </div>
+                        )}
 
                         <Image
                             src={'/assets/icons/products/whatsapp.svg'}
@@ -160,81 +178,84 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                         />
                     </div>
 
-                    <div className='flex flex-col gap-8 w-full'>
-                        <div className={`flex flex-col gap-2 ${tabtype === 'Messages' ? '' : 'hidden'}`}>
-                            <div className='flex flex-col md:flex-row w-full justify-between ms:items-center gap-1'>
-                                {pageData?.heading && <h2 className='text-2xl font-bold'>{pageData?.heading}</h2>}
-                                {messageData && messageData?.length > 0 && (
-                                    <button
-                                        onClick={() =>
-                                            document.getElementById('calculate_whatsapp_pricing').showModal()
-                                        }
-                                        className='btn btn-accent btn-outline w-fit btn-sm ms-auto'
-                                    >
-                                        Calculate
-                                    </button>
-                                )}
+                    {!isMessagePricingEmpty && (
+                        <div className='flex flex-col gap-8 w-full'>
+                            <div className={`flex flex-col gap-2 ${tabtype === 'Messages' ? '' : 'hidden'}`}>
+                                <div className='flex flex-col md:flex-row w-full justify-between ms:items-center gap-1'>
+                                    {pageData?.heading && <h2 className='text-2xl font-bold'>{pageData?.heading}</h2>}
+                                    {messageData && messageData?.length > 0 && (
+                                        <button
+                                            onClick={() =>
+                                                document.getElementById('calculate_whatsapp_pricing').showModal()
+                                            }
+                                            className='btn btn-accent btn-outline w-fit btn-sm ms-auto'
+                                        >
+                                            Calculate
+                                        </button>
+                                    )}
+                                </div>
+                                <p>{pageData?.tax}</p>
+                                {pageData?.adds && <p>{pageData?.adds}</p>}
                             </div>
-                            <p>{pageData?.tax}</p>
-                            {pageData?.adds && <p>{pageData?.adds}</p>}
-                        </div>
 
-                        <div className='flex flex-col gap-4'>
-                            <h2 className={`text-2xl font-bold ${tabtype === 'Voice' ? '' : 'hidden'}`}>
-                                Outbound Call Pricing
-                            </h2>
+                            <div className='flex flex-col gap-4'>
+                                <h2 className={`text-2xl font-bold ${tabtype === 'Voice' ? '' : 'hidden'}`}>
+                                    Outbound Call Pricing
+                                </h2>
 
-                            <div className='relative w-full max-w-[300px] mb-4'>
-                                <input
-                                    type='text'
-                                    placeholder='Search market...'
-                                    value={searchText}
-                                    onChange={(e) => setSearchText(e.target.value)}
-                                    className={`p-2 rounded w-full pr-8 border focus:outline-none ${
-                                        noCountryFound ? 'border-red-500' : 'border-gray-300'
+                                <div className='relative w-full max-w-[300px] mb-4'>
+                                    <input
+                                        type='text'
+                                        placeholder='Search market...'
+                                        value={searchText}
+                                        onChange={(e) => setSearchText(e.target.value)}
+                                        className={`p-2 rounded w-full pr-8 border focus:outline-none ${
+                                            noCountryFound ? 'border-red-500' : 'border-gray-300'
+                                        }`}
+                                    />
+                                    {searchText && (
+                                        <button
+                                            onClick={() => setSearchText('')}
+                                            className='absolute right-2 top-5 -translate-y-1/2 '
+                                        >
+                                            <MdClose size={20} />
+                                        </button>
+                                    )}
+                                    {(tabtype === 'Messages' && filteredMessageData?.length === 0) ||
+                                    (tabtype === 'Voice' && filteredVoiceData?.length === 0) ? (
+                                        <p className='text-sm p-2'>No country found. Please check your search.</p>
+                                    ) : null}
+                                </div>
+
+                                <Table
+                                    key={`messages-${planType}`}
+                                    data={filteredMessageData}
+                                    tabtype={tabtype}
+                                    tabletype='messages'
+                                    symbol={symbol}
+                                    className={`${
+                                        tabtype === 'Messages' && filteredMessageData?.length > 0 ? '' : 'hidden'
                                     }`}
                                 />
-                                {searchText && (
-                                    <button
-                                        onClick={() => setSearchText('')}
-                                        className='absolute right-2 top-5 -translate-y-1/2 '
-                                    >
-                                        <MdClose size={20} />
-                                    </button>
-                                )}
-                                {(tabtype === 'Messages' && filteredMessageData?.length === 0) ||
-                                (tabtype === 'Voice' && filteredVoiceData?.length === 0) ? (
-                                    <p className='text-sm p-2'>No country found. Please check your search.</p>
-                                ) : null}
+
+                                <Table
+                                    data={filteredVoiceData}
+                                    tabtype={tabtype}
+                                    tabletype='voice'
+                                    symbol={symbol}
+                                    className={`${tabtype === 'Voice' && filteredVoiceData?.length > 0 ? '' : 'hidden'}`}
+                                />
                             </div>
-
-                            <Table
-                                key={`messages-${planType}`}
-                                data={filteredMessageData}
-                                tabtype={tabtype}
-                                tabletype='messages'
-                                symbol={symbol}
-                                className={`${
-                                    tabtype === 'Messages' && filteredMessageData?.length > 0 ? '' : 'hidden'
-                                }`}
-                            />
-
-                            <Table
-                                data={filteredVoiceData}
-                                tabtype={tabtype}
-                                tabletype='voice'
-                                symbol={symbol}
-                                className={`${tabtype === 'Voice' && filteredVoiceData?.length > 0 ? '' : 'hidden'}`}
-                            />
                         </div>
+                    )}
+                    <div className={`${!isMessagePricingEmpty ? '' : 'p-5'}`}>
+                        <ConnectWithTeam
+                            product='WhatsApp'
+                            pageData={pageData?.connectComp}
+                            href='whatsapp'
+                            isPlan={true}
+                        />
                     </div>
-
-                    <ConnectWithTeam
-                        product='WhatsApp'
-                        pageData={pageData?.connectComp}
-                        href='whatsapp'
-                        isPlan={true}
-                    />
                 </div>
             </div>
 
@@ -330,8 +351,10 @@ function PlanCard({ title, price, period, features, isSelected, onSelect }) {
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
-                    className={`rounded px-5 py-2 ${
-                        isSelected ? 'bg-primary text-white' : 'bg-white text-accent border border-accent'
+                    className={`rounded px-5 py-2 transition-all duration-200 ${
+                        isSelected
+                            ? 'bg-primary text-white hover:bg-gray-700 hover:shadow-md'
+                            : 'bg-white text-accent border border-accent hover:bg-accent hover:text-white hover:border-accent'
                     }`}
                 >
                     Get Started

@@ -162,7 +162,7 @@ function getWhatsappmessagePricing(response) {
         }
     }
 
-    return allPricingData.sort(sortByCountry);
+    return allPricingData.sort(sortByCountry) || [];
 }
 
 function getWhatsAppVoicePricing(currency) {
