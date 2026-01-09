@@ -194,8 +194,6 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                                         </button>
                                     )}
                                 </div>
-                                <p>{pageData?.tax}</p>
-                                {pageData?.adds && <p>{pageData?.adds}</p>}
                             </div>
 
                             <div className='flex flex-col gap-4'>

@@ -4,12 +4,12 @@ import getPlanServices from './getPlanServices';
 const allowedPlans = ['Quantum', 'Titan'];
 const defaultFeatures = {
     Quantum: [
-        'Pay only for WhatsApp messages — no rental chargest',
+        'No rental charges - Pay only for WhatsApp messages',
         'Marked-up per-message pricing',
         'Best for occasional users',
     ],
     Titan: [
-        '2 months free subscription',
+        '2 months subscription free - Pay only for WhatsApp messages.',
         "WhatsApp Messages charged at Meta's exact rate",
         'Best for regular and high volume senders',
     ],
