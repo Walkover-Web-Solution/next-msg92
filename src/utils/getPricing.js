@@ -2,18 +2,6 @@ import axios from 'axios';
 import getPlanServices from './getPlanServices';
 
 const allowedPlans = ['Quantum', 'Titan'];
-const defaultFeatures = {
-    Quantum: [
-        'No rental charges - Pay only for WhatsApp messages',
-        'Marked-up per-message pricing',
-        'Best for occasional users',
-    ],
-    Titan: [
-        '2 months subscription free - Pay only for WhatsApp messages.',
-        "WhatsApp Messages charged at Meta's exact rate",
-        'Best for regular and high volume senders',
-    ],
-};
 
 /**
  * Builds plan configuration for Quantum and Titan plans only
@@ -23,6 +11,40 @@ const defaultFeatures = {
  * @returns {Object} - Configuration object with plan details
  */
 function buildPlanConfig(plans, currencySymbol, periodType = 'monthly') {
+    const defaultFeatures = {
+        Quantum: [
+            'Pay only for WhatsApp messages.',
+            "WhatsApp Messages charged at Meta's exact rate",
+            'Best for regular and high volume senders',
+        ],
+        Titan: [
+            'No rental charges - Pay only for WhatsApp messages',
+            'Marked-up per-message pricing',
+            'Best for occasional users',
+        ],
+    };
+    const handleFeatures = (plan) => {
+        if (plan.name === 'Quantum') {
+            const discount = plan?.plan_amounts?.find(
+                (amount) => amount?.plan_type?.name?.toLowerCase() === 'monthly'
+            )?.applied_discounts;
+            if (discount?.length) {
+                const discountValue = discount[0]?.value;
+                const discountDuration = discount[0]?.duration;
+
+                if (discountValue === 100 && discountDuration) {
+                    defaultFeatures.Quantum[0] = `${discountDuration} months subscription free - Pay only for WhatsApp messages`;
+                } else {
+                    defaultFeatures.Quantum[0] = 'Pay only for WhatsApp messages';
+                }
+            }
+
+            return defaultFeatures.Quantum;
+        } else {
+            return defaultFeatures.Titan;
+        }
+    };
+
     const config = {};
     const period = periodType.toLowerCase();
     const periodMap = {
@@ -46,7 +68,7 @@ function buildPlanConfig(plans, currencySymbol, periodType = 'monthly') {
             displayName: plan.name,
             price: planAmount?.plan_amount || 0,
             period: periodConfig.display,
-            features: defaultFeatures[plan.name] || defaultFeatures.Quantum,
+            features: handleFeatures(plan),
         };
     });
 
