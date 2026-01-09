@@ -1,10 +1,12 @@
 import GetCurrencySymbol from '@/utils/getCurrencySymbol';
 import GetCountryDetails from '@/utils/getCurrentCountry';
 import getURL from '@/utils/getURL';
+import { sortByCurrentCountry, filterBySearch } from '@/utils/pricingUtils';
 import Image from 'next/image';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import CalculatePricingWhatsApp from './CalculatePricingWhatsApp/CalculatePricingWhatsApp';
-import styles from './PricingWhatsApp.module.scss';
+import PricingTable from './PricingTable/PricingTable';
+import PricingPlanCard from './PricingPlanCard/PricingPlanCard';
 import { useState, useMemo, useEffect } from 'react';
 import { MdArrowRightAlt, MdClose } from 'react-icons/md';
 
@@ -16,32 +18,22 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
     const [searchText, setSearchText] = useState('');
     const [debouncedSearch, setDebouncedSearch] = useState('');
     const messagePricing = pricingData?.messagePricing || [];
-    const availablePlans = [...new Set(messagePricing.map((item) => item.planName).filter(Boolean))];
+    const availablePlans = messagePricing.filter((plan) => plan?.country_data?.length > 0).map((plan) => plan.planName);
 
-    const [planType, setPlanType] = useState(() => {
-        const titanPlan = availablePlans.find((plan) => plan === 'Titan');
-        return titanPlan || availablePlans[0] || 'Titan';
-    });
+    const [planType, setPlanType] = useState(availablePlans[0]);
 
-    const messageData = useMemo(() => {
-        const planData = messagePricing.filter((item) => item.planName === planType);
-        let sorted = [...planData];
-        const index = sorted.findIndex((item) => item.country_name === currentCountry?.name);
-        if (index > -1) {
-            const [current] = sorted.splice(index, 1);
-            sorted.unshift(current);
-        }
-        return sorted;
-    }, [messagePricing, currentCountry, planType]);
+    const messageDataByPlan = useMemo(() => {
+        const dataByPlan = {};
+        messagePricing.forEach((plan) => {
+            if (plan?.planName && plan?.country_data?.length) {
+                dataByPlan[plan.planName] = sortByCurrentCountry(plan.country_data, currentCountry);
+            }
+        });
+        return dataByPlan;
+    }, [messagePricing, currentCountry]);
 
     const voiceData = useMemo(() => {
-        let sorted = [...(pricingData?.voicePricing || [])];
-        const index = sorted.findIndex((item) => item.country_name === currentCountry?.name);
-        if (index > -1) {
-            const [current] = sorted.splice(index, 1);
-            sorted.unshift(current);
-        }
-        return sorted;
+        return sortByCurrentCountry(pricingData?.voicePricing || [], currentCountry);
     }, [pricingData, currentCountry]);
 
     useEffect(() => {
@@ -51,21 +43,24 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
         return () => clearTimeout(handler);
     }, [searchText]);
 
-    const filteredMessageData = useMemo(() => {
-        if (!debouncedSearch) return messageData;
-        return messageData.filter((item) => item.country_name.toLowerCase().includes(debouncedSearch.toLowerCase()));
-    }, [debouncedSearch, messageData]);
+    const filteredMessageDataByPlan = useMemo(() => {
+        const filtered = {};
+        availablePlans.forEach((planName) => {
+            filtered[planName] = filterBySearch(messageDataByPlan[planName] || [], debouncedSearch);
+        });
+        return filtered;
+    }, [debouncedSearch, messageDataByPlan, availablePlans]);
 
     const filteredVoiceData = useMemo(() => {
-        if (!debouncedSearch) return voiceData;
-        return voiceData.filter((item) => item.country_name.toLowerCase().includes(debouncedSearch.toLowerCase()));
+        return filterBySearch(voiceData, debouncedSearch);
     }, [debouncedSearch, voiceData]);
 
+    const filteredMessageData = filteredMessageDataByPlan[planType] || [];
+    const messageData = messageDataByPlan[planType] || [];
+    const isMessagePricingEmpty = tabtype === 'Messages' && availablePlans.length === 0;
     const noCountryFound =
         (tabtype === 'Messages' && filteredMessageData?.length === 0) ||
         (tabtype === 'Voice' && filteredVoiceData?.length === 0);
-
-    const isMessagePricingEmpty = tabtype === 'Messages' && (!messagePricing || messagePricing.length === 0);
     return (
         <>
             <div className='flex flex-col gap-3 max-w-full w-full overflow-hidden'>
@@ -101,20 +96,24 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                             tabtype === 'Messages' ? '' : 'hidden'
                         }`}
                     >
-                        {availablePlans.map((planName) => {
-                            const config = planConfig[planName];
-                            if (!config) return null;
+                        {messagePricing.map((plan) => {
+                            if (!plan?.planName || !plan?.country_data?.length) return null;
+
+                            // Use amount from the plan object
+                            const planAmount = plan.amount?.plan_amount || 0;
+                            const planPeriod = plan.amount?.plan_type === 'yearly' ? ' / Year' : ' / Month';
+
                             return (
-                                <PlanCard
-                                    key={planName}
-                                    title={config.displayName}
-                                    price={`${symbol}${config.price}`}
-                                    period={config.period}
-                                    features={config.features}
-                                    isSelected={planType === planName}
-                                    IsMultiPlan={Object.keys(planConfig).length > 1}
+                                <PricingPlanCard
+                                    key={plan.planName}
+                                    title={plan.planName}
+                                    price={`${symbol}${planAmount}`}
+                                    period={planPeriod}
+                                    features={plan.description || []}
+                                    isSelected={planType === plan.planName}
+                                    IsMultiPlan={messagePricing.length > 1}
                                     onSelect={() => {
-                                        setPlanType(planName);
+                                        setPlanType(plan.planName);
                                         setSearchText('');
                                     }}
                                     symbol={symbol}
@@ -228,18 +227,24 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                                     ) : null}
                                 </div>
 
-                                <Table
-                                    key={`messages-${planType}`}
-                                    data={filteredMessageData}
-                                    tabtype={tabtype}
-                                    tabletype='messages'
-                                    symbol={symbol}
-                                    className={`${
-                                        tabtype === 'Messages' && filteredMessageData?.length > 0 ? '' : 'hidden'
-                                    }`}
-                                />
+                                {availablePlans?.map((planName) => (
+                                    <PricingTable
+                                        key={`messages-${planName}`}
+                                        data={filteredMessageDataByPlan[planName] || []}
+                                        tabtype={tabtype}
+                                        tabletype='messages'
+                                        symbol={symbol}
+                                        className={`${
+                                            tabtype === 'Messages' &&
+                                            planType === planName &&
+                                            filteredMessageDataByPlan[planName]?.length > 0
+                                                ? ''
+                                                : 'hidden'
+                                        }`}
+                                    />
+                                ))}
 
-                                <Table
+                                <PricingTable
                                     data={filteredVoiceData}
                                     tabtype={tabtype}
                                     tabletype='voice'
@@ -273,107 +278,5 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                 </dialog>
             )}
         </>
-    );
-}
-
-function Table({ data, symbol, className, tabletype }) {
-    const isMessageTable = tabletype === 'messages';
-
-    return (
-        <div className={`overflow-y-scroll max-h-[700px] scrollbar-none ${className}`}>
-            <table className={`table bg-white rounded w-full ${tabletype}`}>
-                <thead className='sticky top-0 bg-white z-10'>
-                    <tr className='font-bold text-[16px] text-black'>
-                        <th className='border-r text-left'>Market</th>
-                        <th className='border-r text-left'>Prefix</th>
-                        {isMessageTable && <th className='border-r text-left'>Marketing</th>}
-                        {isMessageTable && <th className='border-r text-left'>Utility</th>}
-                        {isMessageTable && <th className='text-left'>Authentication</th>}
-                        {!isMessageTable && <th>Charges (per minute)</th>}
-                    </tr>
-                </thead>
-                <tbody>
-                    {data?.map((item, index) => {
-                        const formatRate = (rate) =>
-                            !isNaN(parseFloat(rate)) ? `${symbol}${parseFloat(rate).toFixed(5)}` : 'N/A';
-
-                        return (
-                            <tr className={`${styles.table_row}`} key={index}>
-                                <td className='border-r'>{item?.country_name}</td>
-                                <td className='border-r'>{item?.prefix === 0 ? 'N/A' : item?.prefix}</td>
-                                {isMessageTable && <td className='border-r'>{formatRate(item?.marketing_rate)}</td>}
-                                {isMessageTable && <td className='border-r'>{formatRate(item?.utility_rate)}</td>}
-                                {isMessageTable && <td>{formatRate(item?.authentication_rate)}</td>}
-                                {!isMessageTable && <td>{formatRate(item?.charges)}</td>}
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        </div>
-    );
-}
-
-function PlanCard({ title, price, period, features, isSelected, onSelect, IsMultiPlan = false }) {
-    return (
-        <div
-            className={`flex flex-col gap-3 bg-base-100 rounded border p-6 flex-1 cursor-pointer ${
-                !IsMultiPlan
-                    ? 'border-gray-300'
-                    : isSelected
-                      ? 'border-accent shadow-md'
-                      : 'border-gray-300 hover:shadow-md'
-            }`}
-            onClick={onSelect}
-        >
-            <div className='flex justify-between items-center flex-row'>
-                <h3 className='text-lg font-bold'>{title}</h3>
-                {IsMultiPlan && (
-                    <>
-                        <div
-                            className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                                isSelected ? 'border-accent bg-accent' : 'border-accent bg-white'
-                            }`}
-                        >
-                            {isSelected && <div className='w-2 h-2 rounded-full bg-white'></div>}
-                        </div>
-                    </>
-                )}
-            </div>
-
-            <div className='text-2xl text-green-600 font-bold'>
-                <span>{price}</span>
-                <span>{period} </span>
-            </div>
-
-            <ul className='flex flex-col gap-1 font-md'>
-                {features.map((feature, index) => (
-                    <li
-                        key={`${feature}-${index}`}
-                        className={`flex text-gray-700 gap-2 ${index === 0 ? 'font-semibold' : ''}`}
-                    >
-                        <MdArrowRightAlt size={18} className='text-gray-600 mt-1' />
-                        <span>{feature}</span>
-                    </li>
-                ))}
-            </ul>
-
-            <a
-                href={getURL('signup', 'whatsapp')}
-                className='w-fit block'
-                target='_blank'
-                onClick={(e) => e.stopPropagation()}
-            >
-                <button
-                    className={`rounded px-5 py-2 transition-all duration-200 ${
-                        isSelected
-                            ? 'bg-primary text-white hover:bg-gray-700 hover:shadow-md'
-                            : 'bg-white text-accent border border-accent hover:bg-accent hover:text-white hover:border-accent'
-                    }`}
-                >
-                    Get Started
-                </button>
-            </a>
-        </div>
     );
 }
