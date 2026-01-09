@@ -4,14 +4,14 @@ import getPlanServices from './getPlanServices';
 const allowedPlans = ['Quantum', 'Titan'];
 const defaultFeatures = {
     Quantum: [
-        'Charged only per message sent',
-        'Standard MSG91 message pricing applies',
-        'Built for occasional messaging needs',
+        'Pay only for WhatsApp messages — no rental chargest',
+        'Marked-up per-message pricing',
+        'Best for occasional users',
     ],
     Titan: [
         '2 months free subscription',
-        "Messages charged at Meta's exact rate",
-        'Built for scale and daily messaging',
+        "WhatsApp Messages charged at Meta's exact rate",
+        'Best for regular and high volume senders',
     ],
 };
 
