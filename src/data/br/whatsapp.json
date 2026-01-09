@@ -1,7 +1,8 @@
 {
     "HeadComp": {
         "title": "WhatsApp API for businesses in Brazil | MSG91",
-        "description": "Send notifications and provide customer support using MSG91’s WhatsApp API. Connect with customers on their preferred chat platform seamlessly."
+        "description": "Send notifications and provide customer support using MSG91's WhatsApp API. Connect with customers on their preferred chat platform seamlessly.",
+        "keywords": "WhatsApp API For Businesses"
     },
     "BannerComp": {
         "slug": "whatsapp",

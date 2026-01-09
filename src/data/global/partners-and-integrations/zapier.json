@@ -1,12 +1,13 @@
 {
     "HeadComp": {
-        "title": "WhatsApp Zapier Integration - Integrate with MSG91",
-        "description": "Connect WhatsApp with 5,000+ apps using MSG91’s Zapier integration. Automate workflows, send messages, and streamline business communication effortlessly."
+        "title": "Zapier Integration - Connect Zapier with MSG91",
+        "description": "Automate workflows using MSG91's Zapier integration and connectors for efficient app connectivity. Start integrating with MSG91 now.",
+        "keywords": "WhatsApp Zapier Integration"
     },
     "IntegrationAppComp": {
         "slug": "zapier",
         "nav": {
-            "heading": "Zapier Integration",
+            "heading": "Zapier Integration and Connectors",
             "subheading": "Streamline Your Engagement Workflows",
             "img": "/assets/integrations/zapier.svg"
         },
