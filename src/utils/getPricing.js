@@ -15,6 +15,13 @@ const defaultFeatures = {
     ],
 };
 
+/**
+ * Builds plan configuration for Quantum and Titan plans only
+ * @param {Array} plans - Array of plan objects from API
+ * @param {string} currencySymbol - Currency symbol (e.g., 'USD', 'INR')
+ * @param {string} periodType - Period type ('monthly' or 'yearly')
+ * @returns {Object} - Configuration object with plan details
+ */
 function buildPlanConfig(plans, currencySymbol, periodType = 'monthly') {
     const config = {};
     const period = periodType.toLowerCase();
@@ -64,9 +71,18 @@ export default async function getPricing(country, page) {
             const response = await axios.get(
                 `${process.env.SUBSCRIPTION_PRICING_URL}/plans?currency=${currencySymbol}&ms_id=${msId}&dial_plan_info=true`
             );
-            const messagePricing = getWhatsAppMessagePricing(response);
+            const messagePricingByPlan = getWhatsAppMessagePricing(response);
             const voicePricing = getWhatsAppVoicePricing(currencySymbol);
             const dynamicPlanConfig = buildPlanConfig(response.data.data, currencySymbol);
+
+            // Combine message pricing with plan config into structured format
+            const messagePricing = simplifiedMessagePricingWithConfig(
+                messagePricingByPlan,
+                dynamicPlanConfig,
+                response.data.data,
+                currencySymbol
+            );
+
             return {
                 messagePricing: messagePricing || [],
                 voicePricing: voicePricing || [],
@@ -129,15 +145,23 @@ export function getSimplifiedPlans(currency, plans) {
     return simplifiedPlans || [];
 }
 
+/**
+ * Extracts WhatsApp message pricing data for Quantum and Titan plans
+ * @param {Object} response - API response containing plan data
+ * @returns {Object} - Object with plan names as keys and arrays of country pricing data as values
+ */
 function getWhatsAppMessagePricing(response) {
+    const allowedPlans = ['Quantum', 'Titan'];
     const getValue = (field) => field?.value ?? field ?? null;
-    const allPricingData = [];
+    const pricingDataByPlan = {};
     const seenKeys = new Set();
     const sortByCountry = (a, b) => (a.country_name || '').localeCompare(b.country_name || '');
 
     for (const plan of response?.data?.data || []) {
-        if (!plan?.name) continue;
-
+        if (!plan?.name || !allowedPlans.includes(plan.name)) continue;
+        if (!pricingDataByPlan[plan.name]) {
+            pricingDataByPlan[plan.name] = [];
+        }
         for (const service of plan?.plan_services || []) {
             for (const rate of service?.service_credit?.service_credit_rates || []) {
                 for (const item of rate?.dial_plan_info?.data || []) {
@@ -145,24 +169,60 @@ function getWhatsAppMessagePricing(response) {
                     if (!countryName) continue;
 
                     const key = `${plan.name}_${countryName}_${getValue(item.prefix)}`;
+                    if (seenKeys.has(key)) continue;
 
-                    if (!seenKeys.has(key)) {
-                        seenKeys.add(key);
-                        allPricingData.push({
-                            planName: plan.name,
-                            country_name: countryName,
-                            prefix: getValue(item.prefix),
-                            marketing_rate: getValue(item.marketing_rate),
-                            utility_rate: getValue(item.utility_rate),
-                            authentication_rate: getValue(item.authentication_rate),
-                        });
-                    }
+                    seenKeys.add(key);
+                    pricingDataByPlan[plan.name].push({
+                        country_name: countryName,
+                        prefix: getValue(item.prefix),
+                        marketing_rate: getValue(item.marketing_rate),
+                        utility_rate: getValue(item.utility_rate),
+                        authentication_rate: getValue(item.authentication_rate),
+                    });
                 }
             }
         }
     }
 
-    return allPricingData.sort(sortByCountry) || [];
+    Object.values(pricingDataByPlan).forEach((data) => data.sort(sortByCountry));
+    return pricingDataByPlan;
+}
+
+/**
+ * Combines message pricing data with plan configuration
+ * @param {Object} messagePricingByPlan - Object with plan names as keys and country data arrays as values
+ * @param {Object} planConfig - Plan configuration object from buildPlanConfig
+ * @param {Array} plans - Original plan array from API
+ * @param {string} currencySymbol - Currency symbol (e.g., 'USD', 'INR')
+ * @returns {Array} - Array of plan objects
+ */
+function simplifiedMessagePricingWithConfig(messagePricingByPlan, planConfig, plans, currencySymbol) {
+    const ALLOWED_PLANS = ['Quantum', 'Titan'];
+    const simplifiedPlans = [];
+
+    for (const plan of plans || []) {
+        if (!plan?.name || !ALLOWED_PLANS.includes(plan.name)) continue;
+        if (!messagePricingByPlan[plan.name]?.length) continue;
+
+        const planAmounts = plan?.plan_amounts?.filter((amount) => amount?.currency?.short_name === currencySymbol);
+        if (!planAmounts?.length) continue;
+
+        const monthlyAmount =
+            planAmounts.find((amount) => amount?.plan_type?.name?.toLowerCase() === 'monthly') || planAmounts[0];
+
+        const config = planConfig[plan.name];
+        simplifiedPlans.push({
+            planName: plan.name,
+            amount: {
+                plan_amount: monthlyAmount?.plan_amount || 0,
+                plan_type: monthlyAmount?.plan_type?.name || 'monthly',
+            },
+            description: config?.features || defaultFeatures[plan.name] || defaultFeatures.Quantum,
+            country_data: messagePricingByPlan[plan.name],
+        });
+    }
+
+    return simplifiedPlans;
 }
 
 function getWhatsAppVoicePricing(currency) {
