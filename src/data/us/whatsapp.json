@@ -1,7 +1,8 @@
 {
     "HeadComp": {
         "title": "WhatsApp API For Businesses - WhatsApp Enterprise Solution",
-        "description": "Leverage MSG91’s WhatsApp Business API to automate conversations, send real-time updates, and build powerful enterprise-grade customer engagement solutions."
+        "description": "Leverage MSG91's WhatsApp Business API to automate conversations, send real-time updates, and build powerful enterprise-grade customer engagement solutions.",
+        "keywords": "WhatsApp API For Businesses"
     },
     "BannerComp": {
         "slug": "whatsapp",

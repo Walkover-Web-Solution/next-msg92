@@ -1,7 +1,8 @@
 {
   "HeadComp": {
     "title": "Send OTP | OTP Service Providers - Get OTP On Mobile Number",
-    "description": "Secure your platform with MSG91’s OTP SMS API. Enable reliable and fast two-factor authentication for seamless user experiences."
+    "description": "Secure your platform with MSG91's OTP SMS API. Enable reliable and fast two-factor authentication for seamless user experiences.",
+    "keywords": "OTP Service Providers"
   },
   "BannerComp": {
     "slug": "otp",

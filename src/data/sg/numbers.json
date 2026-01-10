@@ -1,7 +1,8 @@
 {
     "HeadComp": {
         "title": "Numbers API for business | MSG91-Singapore",
-        "description": "Engage better with Long Codes for receiving, replying, and customizing SMS. Personalize your communication and build stronger customer relationships."
+        "description": "Engage better with Long Codes for receiving, replying, and customizing SMS. Personalize your communication and build stronger customer relationships.",
+        "keywords": "Numbers API for Business"
     },
     "BannerComp": {
         "slug": "numbers",

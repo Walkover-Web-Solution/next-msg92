@@ -1,7 +1,8 @@
 {
     "HeadComp": {
         "title": "Numbers API for business | MSG91-United States",
-        "description": "Leverage Long Codes for receiving, replying, and customizing SMS. Build better engagement and communication with personalized messaging."
+        "description": "Leverage Long Codes for receiving, replying, and customizing SMS. Build better engagement and communication with personalized messaging.",
+        "keywords": "Numbers API for Business"
     },
     "BannerComp": {
         "slug": "numbers",

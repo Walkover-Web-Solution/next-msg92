@@ -1,7 +1,8 @@
 {
     "HeadComp": {
         "title": "Chat Bot WhatsApp for Business - WhatsApp Chatbot Integration",
-        "description": "Integrate a smart WhatsApp chatbot to automate support, boost engagement, & increase sales. Streamline your business communication with powerful solutions."
+        "description": "Integrate a smart WhatsApp chatbot to automate support, boost engagement, & increase sales. Streamline your business communication with powerful solutions.",
+        "keywords": "Chat Bot WhatsApp for Business"
     },
     "ChatBotComp": {
         "slug": "whatsapp/chatbot",

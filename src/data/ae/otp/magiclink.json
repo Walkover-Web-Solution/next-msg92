@@ -1,7 +1,8 @@
 {
     "HeadComp": {
         "title": "MSG91 OTP Magic Link - Reliable & Secure User Access",
-        "description": "Simplify authentication processes with MSG91 OTP Magic Link. Offer one-click secure access, optimizing user experience and driving higher conversions."
+        "description": "Simplify authentication processes with MSG91 OTP Magic Link. Offer one-click secure access, optimizing user experience and driving higher conversions.",
+        "keywords": "OTP Magic Link"
     },
     "MagicLinkComp": {
              "link": "otp/magiclink",

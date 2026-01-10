@@ -1,7 +1,8 @@
 {
     "HeadComp": {
         "title": "Transactional SMS | Transactional SMS Provider - MSG91-Singapore",
-        "description": "Simplify business communication with MSG91’s transactional SMS API. Deliver reliable and fast messages to enhance customer satisfaction"
+        "description": "Simplify business communication with MSG91's transactional SMS API. Deliver reliable and fast messages to enhance customer satisfaction",
+        "keywords": "SMS Message API"
     },
     "BannerComp": {
         "slug": "sms",
