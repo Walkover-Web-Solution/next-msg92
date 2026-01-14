@@ -4,12 +4,12 @@ import getURL from '@/utils/getURL';
 export default function PricingPlanCard({ title, price, period, features, isSelected, onSelect, IsMultiPlan = false }) {
     return (
         <div
-            className={`flex flex-col gap-3 bg-base-100 rounded border p-6 flex-1 cursor-pointer ${
+            className={`flex flex-col gap-3 bg-base-100 rounded p-6 flex-1  ${
                 !IsMultiPlan
-                    ? 'border-gray-300 hover:shadow-none'
+                    ? ' hover:shadow-none '
                     : isSelected
-                      ? 'border-accent'
-                      : 'border-gray-300 hover:shadow-md'
+                      ? 'border-accent border cursor-pointer'
+                      : ' hover:shadow-md border-gray-300 border cursor-pointer'
             }`}
             onClick={onSelect}
         >

@@ -3,6 +3,19 @@ import getPlanServices from './getPlanServices';
 
 const allowedPlans = ['Quantum', 'Titan'];
 
+const defaultFeatures = {
+    Quantum: [
+        'Pay only for WhatsApp messages.',
+        "WhatsApp Messages charged at Meta's exact rate",
+        'Best for regular and high volume senders',
+    ],
+    Titan: [
+        'No rental charges - Pay only for WhatsApp messages',
+        'Marked-up per-message pricing',
+        'Best for occasional users',
+    ],
+};
+
 /**
  * Builds plan configuration for Quantum and Titan plans only
  * @param {Array} plans - Array of plan objects from API
@@ -11,18 +24,6 @@ const allowedPlans = ['Quantum', 'Titan'];
  * @returns {Object} - Configuration object with plan details
  */
 function buildPlanConfig(plans, currencySymbol, periodType = 'monthly') {
-    const defaultFeatures = {
-        Quantum: [
-            'Pay only for WhatsApp messages.',
-            "WhatsApp Messages charged at Meta's exact rate",
-            'Best for regular and high volume senders',
-        ],
-        Titan: [
-            'No rental charges - Pay only for WhatsApp messages',
-            'Marked-up per-message pricing',
-            'Best for occasional users',
-        ],
-    };
     const handleFeatures = (plan) => {
         if (plan.name === 'Quantum') {
             const discount = plan?.plan_amounts?.find(
@@ -33,15 +34,16 @@ function buildPlanConfig(plans, currencySymbol, periodType = 'monthly') {
                 const discountDuration = discount[0]?.duration;
 
                 if (discountValue === 100 && discountDuration) {
-                    defaultFeatures.Quantum[0] = `${discountDuration} months subscription free - Pay only for WhatsApp messages`;
-                } else {
-                    defaultFeatures.Quantum[0] = 'Pay only for WhatsApp messages';
+                    return [
+                        `${discountDuration} months subscription free - Pay only for WhatsApp messages`,
+                        ...defaultFeatures.Quantum.slice(1),
+                    ];
                 }
             }
 
-            return defaultFeatures.Quantum;
+            return [...defaultFeatures.Quantum];
         } else {
-            return defaultFeatures.Titan;
+            return [...defaultFeatures.Titan];
         }
     };
 
@@ -86,7 +88,8 @@ export default async function getPricing(country, page) {
 
             return getSimplifiedPlans(currencySymbol, response.data.data);
         } catch (error) {
-            throw new Error('Some error on server: ' + error.message);
+            console.error('Error fetching pricing data:', error);
+            return [];
         }
     } else if (page === 'whatsapp') {
         try {
@@ -111,7 +114,12 @@ export default async function getPricing(country, page) {
                 planConfig: dynamicPlanConfig,
             };
         } catch (error) {
-            console.error('There was an error fetching the data!', error);
+            console.error('Error fetching WhatsApp pricing data:', error);
+            return {
+                messagePricing: [],
+                voicePricing: [],
+                planConfig: {},
+            };
         }
     } else {
         return {};
@@ -173,7 +181,6 @@ export function getSimplifiedPlans(currency, plans) {
  * @returns {Object} - Object with plan names as keys and arrays of country pricing data as values
  */
 function getWhatsAppMessagePricing(response) {
-    const allowedPlans = ['Quantum', 'Titan'];
     const getValue = (field) => field?.value ?? field ?? null;
     const pricingDataByPlan = {};
     const seenKeys = new Set();
@@ -219,11 +226,10 @@ function getWhatsAppMessagePricing(response) {
  * @returns {Array} - Array of plan objects
  */
 function simplifiedMessagePricingWithConfig(messagePricingByPlan, planConfig, plans, currencySymbol) {
-    const ALLOWED_PLANS = ['Quantum', 'Titan'];
     const simplifiedPlans = [];
 
     for (const plan of plans || []) {
-        if (!plan?.name || !ALLOWED_PLANS.includes(plan.name)) continue;
+        if (!plan?.name || !allowedPlans.includes(plan.name)) continue;
         if (!messagePricingByPlan[plan.name]?.length) continue;
 
         const planAmounts = plan?.plan_amounts?.filter((amount) => amount?.currency?.short_name === currencySymbol);
@@ -239,7 +245,7 @@ function simplifiedMessagePricingWithConfig(messagePricingByPlan, planConfig, pl
                 plan_amount: monthlyAmount?.plan_amount || 0,
                 plan_type: monthlyAmount?.plan_type?.name || 'monthly',
             },
-            description: config?.features || defaultFeatures[plan.name] || defaultFeatures.Quantum,
+            description: config?.features || [...defaultFeatures.Quantum],
             country_data: messagePricingByPlan[plan.name],
         });
     }
@@ -251,8 +257,9 @@ function getWhatsAppVoicePricing(currency) {
     try {
         const data = require(`@/data/whatsappVoicePricing.json`);
         const voicePricing = data[currency?.toLowerCase() || 'usd'];
-        return voicePricing;
+        return voicePricing || [];
     } catch (error) {
-        console.error('There was an error fetching the data!', error);
+        console.error('Error fetching WhatsApp voice pricing data:', error);
+        return [];
     }
 }
