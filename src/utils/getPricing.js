@@ -5,14 +5,14 @@ const allowedPlans = ['Quantum', 'Titan'];
 
 const defaultFeatures = {
     Quantum: [
-        'Pay only for WhatsApp messages.',
-        "WhatsApp Messages charged at Meta's exact rate",
-        'Best for regular and high volume senders',
-    ],
-    Titan: [
         'No rental charges - Pay only for WhatsApp messages',
         'Marked-up per-message pricing',
         'Best for occasional users',
+    ],
+    Titan: [
+        'Pay only for WhatsApp messages.',
+        "WhatsApp Messages charged at Meta's exact rate",
+        'Best for regular and high volume senders',
     ],
 };
 
@@ -25,7 +25,7 @@ const defaultFeatures = {
  */
 function buildPlanConfig(plans, currencySymbol, periodType = 'monthly') {
     const handleFeatures = (plan) => {
-        if (plan.name === 'Quantum') {
+        if (plan.name === 'Titan') {
             const discount = plan?.plan_amounts?.find(
                 (amount) => amount?.plan_type?.name?.toLowerCase() === 'monthly'
             )?.applied_discounts;
@@ -99,6 +99,7 @@ export default async function getPricing(country, page) {
             const messagePricingByPlan = getWhatsAppMessagePricing(response);
             const voicePricing = getWhatsAppVoicePricing(currencySymbol);
             const dynamicPlanConfig = buildPlanConfig(response.data.data, currencySymbol);
+            console.log('⚡️ ~ :102 ~ getPricing ~ dynamicPlanConfig:', dynamicPlanConfig);
 
             // Combine message pricing with plan config into structured format
             const messagePricing = simplifiedMessagePricingWithConfig(
