@@ -13,7 +13,7 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
                 data={{
                     'title': 'Demo Chatbot - MSG91',
                     'description':
-                        "Explore the capabilities of the MSG91 Demo Chatbot. See how AI-powered chatbots can streamline customer interactions, provide instant responses, and enhance user experience. Try the demo to understand the seamless integration and advanced features offered by MSG91's chatbot solutions. ",
+                        'Experience AI chatbots in action with MSG91. Start chatting and automate customer support, improve communciation and streamline workflows today.',
                 }}
             />
             <NavigationComp

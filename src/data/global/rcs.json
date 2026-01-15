@@ -1,7 +1,8 @@
 {
     "HeadComp": {
-        "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91",
-        "description": "Transform customer engagement with Rich Communication Services (RCS). Utilize advanced messaging features to deliver effective communication."
+        "title": "Rich Communication Services (RCS) for Business Messaging | MSG91",
+        "description": "Enhance messaging with MSG91's rich communication services for business messaging and better customer engagement. Explore MSG91 now.",
+        "keywords": "Rich Communication Services (RCS)"
     },
     "BannerComp": {
         "slug": "rcs",
@@ -11,7 +12,7 @@
         },
         "code": true,
         "tagline": "Rich Communication Services",
-        "heading": "Engage customers in their SMS inbox by delivering rich and interactive messages using RCS",
+        "heading": "Rich Communication Services for Business Messaging",
         "subheading": "RCS is an integrated messaging channel that enables businesses to engage with customers through rich, immersive two-way conversations",
         "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",
