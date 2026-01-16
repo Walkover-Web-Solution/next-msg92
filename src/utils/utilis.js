@@ -23,6 +23,10 @@ export function getQueryStringFromObject(object) {
 }
 
 export function getCookie(cookieName) {
+    // Check if we're in a browser environment (SSR-safe)
+    if (typeof document === 'undefined') {
+        return null;
+    }
     var name = cookieName + '=';
     var decodedCookie = decodeURIComponent(document.cookie);
     var cookieArray = decodedCookie.split(';');
