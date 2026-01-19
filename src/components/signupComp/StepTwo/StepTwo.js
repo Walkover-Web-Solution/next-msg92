@@ -332,9 +332,12 @@ class StepTwo extends React.Component {
                                     className='input border-gray-300 focus:outline-none w-full focus:border-accent h-10'
                                     type='text'
                                     placeholder='Other'
+                                    value={this.state.sourceValue || ''}
+                                    onChange={(e) => {
+                                        this.setState({ sourceValue: e.target.value });
+                                    }}
                                     onBlur={(e) => {
                                         this.handleSourceChange(e);
-                                        this.setState({ sourceValue: e.target.value });
                                     }}
                                 />
                             )}
