@@ -79,6 +79,9 @@ blog1.msg91.com/  https://msg91.com/guide
 # msg91.com/wp-content/uploads/2020/07/msg91_logo.svg
 /in/about-us/ /about-us
 /us/transactional-sms/ /us/sms
+/us/pricing/1000 /us/pricing/sms
+/us/pricing/knowledgebase /us/pricing/sms
+/us/pricing/shorturl /us/shorturl
 # msg91.com/blog/wp-content/uploads/2018/09/Cityfone_Reg_Advertorial_Aug2018_Main.jpg
 # msg91.com/us/case-studies/tag/crm
 support.msg91.com/users/41006711-sagarvaishnav/filters/comments /
@@ -1373,3 +1376,4 @@ https://guide.msg91.com/steps-for-dlt-process-registration/msg91.com/contact-us/
 /us/programmable-flow /us/ 301
 /us/startups-form /us/ 301
 /us/pricing/sms](https:/msg91.com/pricing/sms) /us/pricing/sms 301
+/us/voice/voice-redesign-template-change /help/voice/voice-redesign-template-change
