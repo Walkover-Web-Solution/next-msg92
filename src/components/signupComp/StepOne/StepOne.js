@@ -8,9 +8,10 @@ class StepOne extends React.Component {
         loginWithGitHubAccount(false);
     };
     getLoginUrlWithParams = () => {
-        if (typeof window === 'undefined') return 'https://control.msg91.com/signin/';
+        const baseUrl = process.env.LOGIN_URL || 'https://control.msg91.com/signin/';
+        if (typeof window === 'undefined') return baseUrl;
         const params = window.location.search;
-        return 'https://control.msg91.com/signin/' + (params || '');
+        return baseUrl + (params || '');
     };
     render() {
         const loginUrl = this.getLoginUrlWithParams();
@@ -39,7 +40,7 @@ class StepOne extends React.Component {
                         </button>
                         <p>
                             If you already have an account,{' '}
-                            <a className='text-link active-link' href={loginUrl}>
+                            <a className='text-link active-link' href={loginUrl || 'https://control.msg91.com/signin/'}>
                                 Login
                             </a>
                         </p>
