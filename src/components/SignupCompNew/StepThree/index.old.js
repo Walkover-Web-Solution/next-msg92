@@ -1,49 +1,118 @@
 import getServices from '@/utils/getServices';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { MdClose, MdOutlineKeyboardArrowDown } from 'react-icons/md';
-import { setDetails, useSignup, finalRegistration } from '../SignupUtils';
+import { MdClose, MdEdit, MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import {
+    setDetails,
+    useSignup,
+    fetchStatesByCountry,
+    fetchCitiesByState,
+    fetchCountries,
+    finalRegistration,
+} from '../SignupUtils';
+import getCountyFromIP from '@/utils/getCountyFromIP';
 import { Typeahead } from 'react-bootstrap-typeahead';
-import { useCountrySelector } from '../hooks/useCountrySelector';
 
 export default function StepThree({ pageInfo, data }) {
     const { state, dispatch } = useSignup();
     const [services, setServices] = useState({});
-    const [selectedServices, setSelectedServices] = useState([]);
-    const [source, setSource] = useState(state?.source || '');
+    const [slectedServices, setSlectedServices] = useState([]);
+    const [source, setSource] = useState(state?.source);
+
+    // Address form state
     const [address, setAddress] = useState(state?.companyDetails?.address || '');
     const [postalCode, setPostalCode] = useState(state?.companyDetails?.zipcode || '');
-    const [isAddressOpen, setIsAddressOpen] = useState(false);
+    const [country, setCountry] = useState(state?.companyDetails?.country || 'India');
+    const [selectedState, setSelectedState] = useState(state?.companyDetails?.state || '');
+    const [city, setCity] = useState(state?.companyDetails?.city || '');
 
-    const {
-        countries,
-        stateOptions,
-        cityOptions,
-        selectedCountry,
-        selectedState,
-        selectedCity,
-        selectedCountryId,
-        selectedStateId,
-        isLoadingCountries,
-        isLoadingStates,
-        isLoadingCities,
-        handleCountryChange,
-        handleStateChange,
-        handleCityChange,
-        setSelectedCountry,
-    } = useCountrySelector(true);
+    // Typeahead states
+    const [dataFromIP, setDataFromIP] = useState(null);
+    const [countries, setCountries] = useState([]);
+    const [stateOptions, setStateOptions] = useState([]);
+    const [cityOptions, setCityOptions] = useState([]);
+    const [isLoadingCountries, setIsLoadingCountries] = useState(false);
+    const [isLoadingStates, setIsLoadingStates] = useState(false);
+    const [isLoadingCities, setIsLoadingCities] = useState(false);
+    const [selectedCountryId, setSelectedCountryId] = useState(null);
+    const [selectedStateId, setSelectedStateId] = useState(null);
+    const [selectedCountry, setSelectedCountry] = useState({});
+    const [isAddressOpen, setIsAddressOpen] = useState(false);
 
     useEffect(() => {
         const initializeData = async () => {
-            const servicesData = await getServices();
-            setServices(servicesData.data.data);
+            // Get services data
+            const servicesData = getServices();
+            servicesData.then((response) => {
+                setServices(response.data.data);
+            });
+
+            // Handle UTM params
+
+            // Step 1: Fetch countries from API
+            setIsLoadingCountries(true);
+            try {
+                const countriesResponse = await fetchCountries();
+                const countriesData = countriesResponse.data || [];
+                setCountries(countriesData);
+
+                // Step 2: Get country from IP
+                const ipData = await getCountyFromIP();
+                const detectedCountryCode = ipData.countryCode?.toLowerCase();
+                setDataFromIP(ipData);
+
+                // Step 3: Match and select country
+                if (detectedCountryCode && countriesData.length > 0) {
+                    const matchedCountry = countriesData.find(
+                        (c) => c.shortName?.toLowerCase() === detectedCountryCode
+                    );
+
+                    if (matchedCountry) {
+                        setSelectedCountry(matchedCountry);
+                        setCountry(matchedCountry.name);
+                        setSelectedCountryId(matchedCountry.id);
+
+                        // Step 4: Fetch states by country
+                        await handleFetchStates(matchedCountry.id);
+                    }
+                } else if (country && countriesData.length > 0) {
+                    // Fallback: Initialize selected country if country is already set
+                    const foundCountry = countriesData.find((c) => c.name === country);
+                    if (foundCountry) {
+                        setSelectedCountry(foundCountry);
+                        setSelectedCountryId(foundCountry.id);
+                    }
+                }
+            } catch (error) {
+                console.error('Error initializing countries:', error);
+                // Fallback to default country
+                if (country && countries.length > 0) {
+                    const foundCountry = countries.find((c) => c.name === country);
+                    if (foundCountry) {
+                        setSelectedCountry(foundCountry);
+                        setSelectedCountryId(foundCountry.id);
+                    }
+                }
+            } finally {
+                setIsLoadingCountries(false);
+            }
         };
+
         initializeData();
     }, []);
 
     useEffect(() => {
-        setDetails('services', dispatch, selectedServices);
-    }, [selectedServices]);
+        if (dataFromIP) {
+            const state = stateOptions.find((state) => state.name === dataFromIP?.stateProv);
+            setSelectedState(state?.name);
+            setSelectedStateId(state?.id);
+            handleFetchCities(state?.id);
+        }
+    }, [dataFromIP, stateOptions]);
+
+    useEffect(() => {
+        setDetails('services', dispatch, slectedServices);
+    }, [slectedServices]);
 
     useEffect(() => {
         setDetails('source', dispatch, source);
@@ -53,19 +122,53 @@ export default function StepThree({ pageInfo, data }) {
         setDetails('addressDetails', dispatch, {
             address,
             zipcode: postalCode,
-            country: selectedCountry?.name,
+            country,
             state: selectedState,
-            city: selectedCity,
+            city,
             countryId: selectedCountryId,
             stateId: selectedStateId,
         });
-    }, [address, postalCode, selectedCountry, selectedState, selectedCity, selectedCountryId, selectedStateId]);
+    }, [address, postalCode, country, selectedState, city, selectedCountryId, selectedStateId]);
+
+    // Fetch states based on country using SignupUtils API
+    const handleFetchStates = async (countryId) => {
+        if (!countryId) return;
+
+        setIsLoadingStates(true);
+        try {
+            const states = await fetchStatesByCountry(countryId);
+            setSelectedState(state?.name);
+            setSelectedStateId(state?.id);
+            setStateOptions(states);
+        } catch (error) {
+            console.error('Error fetching states:', error);
+            setStateOptions([]);
+        } finally {
+            setIsLoadingStates(false);
+        }
+    };
+
+    // Fetch cities based on state using SignupUtils API
+    const handleFetchCities = async (stateId) => {
+        if (!stateId) return;
+
+        setIsLoadingCities(true);
+        try {
+            const cities = await fetchCitiesByState(stateId);
+            setCityOptions(cities);
+        } catch (error) {
+            console.error('Error fetching cities:', error);
+            setCityOptions([]);
+        } finally {
+            setIsLoadingCities(false);
+        }
+    };
 
     function handleServiceClick(key) {
-        if (selectedServices.includes(key)) {
-            setSelectedServices(selectedServices.filter((item) => item !== key));
+        if (slectedServices.includes(key)) {
+            setSlectedServices(slectedServices.filter((item) => item !== key));
         } else {
-            setSelectedServices([...selectedServices, key]);
+            setSlectedServices([...slectedServices, key]);
         }
     }
 
@@ -73,8 +176,69 @@ export default function StepThree({ pageInfo, data }) {
         setSource(value);
     }
 
+    // Handle country selection
+    const handleCountryChange = (selected) => {
+        if (selected && selected.length > 0) {
+            const countryOption = selected[0];
+            setSelectedCountry(countryOption);
+            setCountry(countryOption.name);
+            setSelectedCountryId(countryOption.id);
+
+            // Reset dependent fields
+            setSelectedState('');
+            setSelectedStateId(null);
+            setCity('');
+            setStateOptions([]);
+            setCityOptions([]);
+
+            // Fetch states
+            handleFetchStates(countryOption.id);
+        } else {
+            // Clear all fields
+            setSelectedCountry({});
+            setCountry('');
+            setSelectedCountryId(null);
+            setSelectedState('');
+            setSelectedStateId(null);
+            setCity('');
+            setStateOptions([]);
+            setCityOptions([]);
+        }
+    };
+
+    // Handle state selection
+    const handleStateChange = (selected) => {
+        if (selected && selected.length > 0) {
+            const stateOption = selected[0];
+            setSelectedState(stateOption.name);
+            setSelectedStateId(stateOption.id);
+
+            // Reset city
+            setCity('');
+            setCityOptions([]);
+
+            // Fetch cities
+            handleFetchCities(stateOption.id);
+        } else {
+            setSelectedState('');
+            setSelectedStateId(null);
+            setCity('');
+            setCityOptions([]);
+        }
+    };
+
+    // Handle city selection
+    const handleCityChange = (selected) => {
+        if (selected && selected.length > 0) {
+            setCity(selected[0].name);
+        } else {
+            setCity('');
+        }
+    };
+
+    // Handle Final Registration
     const handleFinalRegistration = () => {
-        finalRegistration(dispatch, state);
+        finalRegistration(dispatch);
     };
 
     return (
@@ -96,14 +260,14 @@ export default function StepThree({ pageInfo, data }) {
                                         onClick={() => handleServiceClick(key)}
                                         key={key}
                                         className={`border w-fit ps-2 pe-1 py-1 rounded text-sm flex items-center gap-1 cursor-pointer ${
-                                            selectedServices.includes(key)
+                                            slectedServices.includes(key)
                                                 ? 'bg-green-50 hover:bg-green-100'
                                                 : 'hover:bg-green-50'
                                         }`}
                                     >
                                         <span className='text-gray-600'>{value}</span>
-                                        {selectedServices.includes(key) && (
-                                            <button aria-label={`Remove ${value}`}>
+                                        {slectedServices.includes(key) && (
+                                            <button>
                                                 <MdClose />
                                             </button>
                                         )}
@@ -116,14 +280,10 @@ export default function StepThree({ pageInfo, data }) {
                         <select
                             className='select select-bordered w-full min-w-[320px] max-w-[420px]'
                             onChange={(e) => handleSourceChange(e.target.value)}
-                            value={source || ''}
-                            aria-label='Source'
                         >
                             <option value=''>Select</option>
-                            {Object.entries(data?.source || {}).map(([key, value]) => (
-                                <option key={key} value={key}>
-                                    {value}
-                                </option>
+                            {Object.entries(data?.source).map(([key, value]) => (
+                                <option value={key}>{value}</option>
                             ))}
                         </select>
                     </div>
@@ -135,8 +295,6 @@ export default function StepThree({ pageInfo, data }) {
                         <button
                             className='flex items-center gap-2 cursor-pointer w-fit'
                             onClick={() => setIsAddressOpen(!isAddressOpen)}
-                            aria-expanded={isAddressOpen}
-                            aria-label='Toggle address section'
                         >
                             <h2 className='text-lg font-medium text-gray-600'>Address (Optional)</h2>
                             <MdOutlineKeyboardArrowDown
@@ -154,7 +312,6 @@ export default function StepThree({ pageInfo, data }) {
                                     placeholder='405 - 406, Capt. C. S. Naidu Arcade, Old Palasia'
                                     value={address}
                                     onChange={(e) => setAddress(e.target.value)}
-                                    aria-label='Address'
                                 />
                             </div>
                             <div className='flex gap-3'>
@@ -166,7 +323,6 @@ export default function StepThree({ pageInfo, data }) {
                                         placeholder='452009'
                                         value={postalCode}
                                         onChange={(e) => setPostalCode(e.target.value)}
-                                        aria-label='Postal code'
                                     />
                                 </div>
                                 <div className='flex flex-col gap-1 w-full'>
@@ -204,7 +360,6 @@ export default function StepThree({ pageInfo, data }) {
                                         onChange={handleStateChange}
                                         options={stateOptions}
                                         selected={stateOptions.filter((option) => option.name === selectedState)}
-                                        disabled={!selectedCountryId || isLoadingStates}
                                         inputProps={{
                                             autoComplete: 'off',
                                             className: 'input input-bordered w-full',
@@ -215,7 +370,7 @@ export default function StepThree({ pageInfo, data }) {
                                     <label className='text-sm text-gray-600'>City</label>
                                     <Typeahead
                                         className={`country-list w-full ${
-                                            !selectedStateId || isLoadingCities ? 'cursor-not-allowed' : ''
+                                            !selectedCountryId || isLoadingStates ? 'cursor-not-allowed' : ''
                                         }`}
                                         id='city'
                                         placeholder={
@@ -224,8 +379,7 @@ export default function StepThree({ pageInfo, data }) {
                                         labelKey='name'
                                         onChange={handleCityChange}
                                         options={cityOptions}
-                                        selected={cityOptions.filter((option) => option.name === selectedCity)}
-                                        disabled={!selectedStateId || isLoadingCities}
+                                        selected={cityOptions.filter((option) => option.name === city)}
                                         inputProps={{
                                             autoComplete: 'off',
                                             className: 'input input-bordered w-full',
