@@ -73,7 +73,7 @@
                         "Resend Voucher or Invoice Manually via Email or WhatsApp",
                         "Manual Sending of Ledgers"
                     ],
-                    "icon": "/assets/integration_partner/Tally.png",
+                    "icon": "/assets/integration_partner/Tally.svg",
                     "link": "https://msg91.com/help/integration-guides/integrate-tally-with-msg91"
                 },
                 {
@@ -143,7 +143,7 @@
                 {
                     "name": "​UnitedSol",
                     "title": "Shopify OTP Login Extension:",
-                    "icon": "/assets/integration_partner/unitedsol.png",
+                    "icon": "/assets/integration_partner/unitedsol.svg",
                     "description": "Enhance authentication on Shopify, WooCommerce, Magento with the OTP Login with Phone app, enabling customers to securely log in and sign up using their phone numbers and email. ",
                     "channels": [
                         {
@@ -163,25 +163,25 @@
                 {
                     "name": "Binary",
                     "description": "Binary Web Solutions is a leading Shopify development company and e-commerce experts in India. They provide a range of services including migration from other marketplaces to Shopify, store management and custom integrations.",
-                    "icon": "/assets/integration_partner/binary.png",
+                    "icon": "/assets/integration_partner/binary.svg",
                     "link": "https://binaryic.com/"
                 },
                 {
                     "name": "Flits",
                     "description": "Flits helps you maximize customer retention and drive repeat purchases with a powerful, all-in-one Shopify loyalty program. Lower acquisition cost and strengthen your brand.",
-                    "icon": "/assets/integration_partner/flits.png",
+                    "icon": "/assets/integration_partner/flits.svg",
                     "link": "https://apps.shopify.com/flits"
                 },
                 {
                     "name": "Dotpe/Rista",
                     "description": "Seamlessly connect front and back-of-house operations, make supply-chain efficient, optimize costs, and grow your business with native direct-ordering and marketing. Rista does it all, and makes your guest experience exceptional.",
-                    "icon": "/assets/integration_partner/rista.png",
+                    "icon": "/assets/integration_partner/rista.svg",
                     "link": "https://ristaapps.com/"
                 },
                 {
                     "name": "Fudr",
                     "description": "Fudr is a SaaS based app builder that help restaurant chains launch their private-label app on top of their existing POS system.",
-                    "icon": "/assets/integration_partner/fudr.png",
+                    "icon": "/assets/integration_partner/fudr.svg",
                     "link": "https://business.fudr.in/"
                 },
                 {
@@ -193,7 +193,7 @@
                 {
                     "name": "AppBrew",
                     "description": "Appbrew empowers Shopify brands to launch high-conversion mobile apps with ease. Trusted by over 100 brands and backed by Accel, we deliver exceptional mobile experiences that drive growth and engagement",
-                    "icon": "/assets/integration_partner/appbrew.png",
+                    "icon": "/assets/integration_partner/appbrew.svg",
                     "link": "https://appbrew.com/"
                 }
             ]
@@ -233,7 +233,7 @@
                 {
                     "name": "Prateek Agrawal",
                     "content": "Our long standing Partnership with MSG91 has been very successful. The quality of services and support MSG91 provides is excellent. We have been treated with a positive response every single time.",
-                    "icon": "/assets/integration_partner/weeky.png"
+                    "icon": "/assets/integration_partner/weeky.svg"
                 }
             ]
         }
