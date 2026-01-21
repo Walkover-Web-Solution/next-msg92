@@ -7,7 +7,7 @@ import { fetchStatesByCountry, fetchCitiesByState, useSignup } from '../SignupUt
  * @returns {Object} Country selector state and handlers
  */
 export function useCountrySelector() {
-    const { state } = useSignup();
+    const { state, dispatch } = useSignup();
     const countries = state.countries || [];
 
     const [stateOptions, setStateOptions] = useState([]);
@@ -23,6 +23,22 @@ export function useCountrySelector() {
     const [isLoadingCountries, setIsLoadingCountries] = useState(false);
     const [isLoadingStates, setIsLoadingStates] = useState(false);
     const [isLoadingCities, setIsLoadingCities] = useState(false);
+
+    // Sync state and city from global companyDetails when auto-populated
+    useEffect(() => {
+        const companyDetails = state.companyDetails;
+
+        // Sync state if it exists in companyDetails but not in local state
+        if (companyDetails?.state && !selectedState) {
+            setSelectedState(companyDetails.state);
+            setSelectedStateId(companyDetails.stateId);
+        }
+
+        // Sync city if it exists in companyDetails but not in local state
+        if (companyDetails?.city && !selectedCity) {
+            setSelectedCity(companyDetails.city);
+        }
+    }, [state.companyDetails, selectedState, selectedCity]);
 
     const handleCountryChange = async (selected) => {
         if (selected && selected.length > 0) {
@@ -53,6 +69,17 @@ export function useCountrySelector() {
             setSelectedCity('');
             setCityOptions([]);
 
+            // Update companyDetails in global state
+            dispatch({
+                type: 'SET_COMPANY_DETAILS',
+                payload: {
+                    state: stateOption.name,
+                    stateId: stateOption.id,
+                    city: null,
+                    cityId: null,
+                },
+            });
+
             if (stateOption.id) {
                 await loadCities(stateOption.id);
             }
@@ -66,7 +93,17 @@ export function useCountrySelector() {
 
     const handleCityChange = (selected) => {
         if (selected && selected.length > 0) {
-            setSelectedCity(selected[0].name);
+            const cityOption = selected[0];
+            setSelectedCity(cityOption.name);
+
+            // Update companyDetails in global state
+            dispatch({
+                type: 'SET_COMPANY_DETAILS',
+                payload: {
+                    city: cityOption.name,
+                    cityId: cityOption.id,
+                },
+            });
         } else {
             setSelectedCity('');
         }

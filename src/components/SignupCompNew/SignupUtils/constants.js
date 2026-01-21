@@ -67,4 +67,6 @@ export const initialState = {
     reference: null,
     countries: null,
     selectedCountry: null,
+    geoAutoPopulated: false,
+    ipData: null,
 };

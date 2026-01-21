@@ -5,6 +5,7 @@ import { MdClose, MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { setDetails, useSignup, finalRegistration } from '../SignupUtils';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import { useCountrySelector } from '../hooks/useCountrySelector';
+import { fetchCountries, autoPopulateFromIP } from '../SignupUtils/apiUtils';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 export default function StepThree({ pageInfo, data }) {
@@ -41,6 +42,34 @@ export default function StepThree({ pageInfo, data }) {
         };
         initializeData();
     }, []);
+
+    useEffect(() => {
+        const fetchDataIfNeeded = async () => {
+            if (state.geoAutoPopulated) return;
+            // Fallback: If user navigates directly to StepThree, fetch countries and auto-populate
+            if (!state.countries) {
+                const countriesData = await fetchCountries(dispatch);
+                // After countries are fetched, auto-populate from IP
+                if (countriesData?.length > 0) {
+                    // Pass existing ipData if available to avoid redundant API call
+                    await autoPopulateFromIP(dispatch, countriesData, state.ipData);
+                    dispatch({ type: 'SET_GEO_AUTO_POPULATED', payload: true });
+                }
+            } else if (!state.ipData && !state.selectedCountry) {
+                // If countries exist but no IP data and no country selected, run auto-populate
+                await autoPopulateFromIP(dispatch, state.countries, state.ipData);
+                dispatch({ type: 'SET_GEO_AUTO_POPULATED', payload: true });
+            }
+        };
+
+        fetchDataIfNeeded();
+    }, [dispatch, state.countries, state.geoAutoPopulated, state.ipData, state.selectedCountry]);
+
+    useEffect(() => {
+        if (state.selectedCountry && state.selectedCountry.id !== selectedCountry?.id) {
+            setSelectedCountry(state.selectedCountry);
+        }
+    }, [state.selectedCountry]);
 
     useEffect(() => {
         setDetails('services', dispatch, selectedServices);
@@ -269,6 +298,20 @@ export default function StepThree({ pageInfo, data }) {
                     color: #9ca3af !important;
                     cursor: not-allowed !important;
                     opacity: 0.6 !important;
+                }
+                .country-list .rbt-menu,
+                .rbt-menu {
+                    max-height: 300px !important;
+                    overflow-y: auto !important;
+                }
+                .country-list div[style*='position: absolute'] {
+                    max-height: 300px !important;
+                    overflow-y: auto !important;
+                }
+                .rbt-menu .dropdown-item {
+                    padding: 0.5rem 1rem !important;
+                    line-height: 1.5 !important;
+                    min-height: 40px !important;
                 }
             `}</style>
         </div>

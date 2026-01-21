@@ -190,6 +190,16 @@ export function reducer(state, action) {
                     countryId: action.payload?.id || null,
                 },
             };
+        case 'SET_GEO_AUTO_POPULATED':
+            return {
+                ...state,
+                geoAutoPopulated: action.payload,
+            };
+        case 'SET_IP_DATA':
+            return {
+                ...state,
+                ipData: action.payload,
+            };
         case 'RESET':
             return initialState;
         default:

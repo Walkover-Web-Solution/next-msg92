@@ -216,11 +216,10 @@ export function finalRegistration(dispatch, state) {
 }
 
 /**
- * Fetch countries list and auto-detect user's country from IP
+ * Fetch countries from API
  * @param {Function} dispatch - Redux dispatch function
- * @param {boolean} autoDetect - Whether to auto-detect country from IP (default: true)
  */
-export async function fetchCountries(dispatch, autoDetect = true) {
+export async function fetchCountries(dispatch) {
     try {
         const response = await fetch(`${process.env.API_BASE_URL}/api/v5/web/getCountries`, {
             method: 'GET',
@@ -238,30 +237,88 @@ export async function fetchCountries(dispatch, autoDetect = true) {
             payload: countriesData,
         });
 
-        // Auto-detect country from IP
-        if (autoDetect && countriesData.length > 0) {
-            try {
-                const ipData = await getCountyFromIP();
-                const detectedCountryCode = ipData?.countryCode?.toLowerCase();
-
-                if (detectedCountryCode) {
-                    const matchedCountry = countriesData.find(
-                        (c) => c.shortName?.toLowerCase() === detectedCountryCode
-                    );
-
-                    if (matchedCountry) {
-                        dispatch({
-                            type: 'SET_SELECTED_COUNTRY',
-                            payload: matchedCountry,
-                        });
-                    }
-                }
-            } catch (ipError) {}
-        }
-
-        return data;
+        return countriesData;
     } catch (error) {
         throw error;
+    }
+}
+
+/**
+ * Auto-populate country, state, and city based on IP geolocation
+ * This function runs sequentially: fetch IP → select country → fetch states → select state → fetch cities → select city
+ * @param {Function} dispatch - Redux dispatch function
+ * @param {Array} countries - Array of countries
+ * @param {Object} existingIpData - Existing IP data from state (optional)
+ */
+export async function autoPopulateFromIP(dispatch, countries, existingIpData = null) {
+    try {
+        // Step 1: Use existing IP data or fetch new
+        let ipData = existingIpData;
+
+        if (!ipData) {
+            ipData = await getCountyFromIP();
+
+            // Store IP data in state
+            dispatch({
+                type: 'SET_IP_DATA',
+                payload: ipData,
+            });
+        }
+
+        if (!ipData?.countryCode || !countries?.length) return;
+
+        // Step 2: Find and select country
+        const matchedCountry = countries.find((c) => c.shortName?.toLowerCase() === ipData.countryCode.toLowerCase());
+
+        if (!matchedCountry) return;
+
+        dispatch({
+            type: 'SET_SELECTED_COUNTRY',
+            payload: matchedCountry,
+        });
+
+        // Step 3: Fetch states for the selected country
+        if (!matchedCountry.id) return;
+
+        const states = await fetchStatesByCountry(matchedCountry.id);
+
+        if (!ipData.stateProv || !states?.length) return;
+
+        // Step 4: Find and select state
+        const matchedState = states.find((s) => s.name?.toLowerCase() === ipData.stateProv.toLowerCase());
+
+        if (!matchedState) return;
+
+        dispatch({
+            type: 'SET_COMPANY_DETAILS',
+            payload: {
+                state: matchedState.name,
+                stateId: matchedState.id,
+            },
+        });
+
+        // Step 5: Fetch cities for the selected state
+        if (!matchedState.id) return;
+
+        const cities = await fetchCitiesByState(matchedState.id);
+
+        if (!ipData.city || !cities?.length) return;
+
+        // Step 6: Find and select city
+        const cityName = ipData.city.split('(')[0].trim();
+        const matchedCity = cities.find((c) => c.name?.toLowerCase() === cityName.toLowerCase());
+
+        if (!matchedCity) return;
+
+        dispatch({
+            type: 'SET_COMPANY_DETAILS',
+            payload: {
+                city: matchedCity.name,
+                cityId: matchedCity.id,
+            },
+        });
+    } catch (error) {
+        // Silently fail if IP detection doesn't work
     }
 }
 

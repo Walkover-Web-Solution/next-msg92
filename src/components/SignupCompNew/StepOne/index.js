@@ -5,13 +5,14 @@ import { MdEdit } from 'react-icons/md';
 import OTPInput from '../components/OTPInput';
 import ResendOTP from '../components/ResendOTP';
 import FormInput from '../components/FormInput';
-import { fetchCountries } from '../SignupUtils/apiUtils';
+import { fetchCountries, autoPopulateFromIP } from '../SignupUtils/apiUtils';
 
 export default function StepOne() {
     const { state, dispatch } = useSignup();
     const [email, setEmail] = useState('');
     const emailInputRef = useRef(null);
     const otpInputRef = useRef(null);
+    const geoInitRef = useRef(false);
 
     const otpLength = state.widgetData?.otpLength || 6;
     const isLoading = state.isLoading;
@@ -21,10 +22,39 @@ export default function StepOne() {
     // Get available retry channels (email usually has only one)
     const secondaryChannels = state?.allowedRetry?.email?.secondary || [];
     useEffect(() => {
-        if (!countries) {
-            fetchCountries(dispatch);
-        }
-    }, [countries]);
+        const initializeCountriesAndAutoPopulate = async () => {
+            if (state.geoAutoPopulated) return;
+            if (geoInitRef.current) return;
+
+            // Scenario 1: Countries not fetched yet
+            if (!countries) {
+                geoInitRef.current = true;
+                try {
+                    const countriesData = await fetchCountries(dispatch);
+                    if (countriesData?.length > 0) {
+                        await autoPopulateFromIP(dispatch, countriesData, state.ipData);
+                        dispatch({ type: 'SET_GEO_AUTO_POPULATED', payload: true });
+                    }
+                } finally {
+                    geoInitRef.current = false;
+                }
+                return;
+            }
+
+            // Scenario 2: Countries exist but geo data not populated yet
+            if (!state.ipData && !state.selectedCountry) {
+                geoInitRef.current = true;
+                try {
+                    await autoPopulateFromIP(dispatch, countries, state.ipData);
+                    dispatch({ type: 'SET_GEO_AUTO_POPULATED', payload: true });
+                } finally {
+                    geoInitRef.current = false;
+                }
+            }
+        };
+
+        initializeCountriesAndAutoPopulate();
+    }, [countries, dispatch, state.geoAutoPopulated, state.ipData, state.selectedCountry]);
     useEffect(() => {
         if (!otpSent && emailInputRef.current) {
             setTimeout(() => {
