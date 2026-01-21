@@ -36,7 +36,7 @@ export function useOTPInput(otpLength = 6, autoFocus = false) {
         }
     };
 
-    const handleOtpKeyDown = (index, e) => {
+    const handleOtpKeyDown = (index, e, onEnter) => {
         if (e.key === 'Backspace') {
             if (otp[index] === '' && index > 0) {
                 otpInputRefs.current[index - 1]?.focus();
@@ -44,6 +44,11 @@ export function useOTPInput(otpLength = 6, autoFocus = false) {
                 const newOtp = [...otp];
                 newOtp[index] = '';
                 setOtp(newOtp);
+            }
+        } else if (e.key === 'Enter') {
+            // Trigger verification on Enter key if OTP is complete
+            if (index === otpLength - 1 && isOtpComplete() && onEnter) {
+                onEnter();
             }
         } else if (e.key === 'v' && (e.ctrlKey || e.metaKey)) {
             e.preventDefault();

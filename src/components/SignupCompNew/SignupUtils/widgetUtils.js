@@ -96,7 +96,6 @@ export function pollForWidgetData(dispatch, onError) {
 
             if (widgetData) {
                 const allowedRetry = processWidgetData(widgetData);
-                console.log('allowedRetry', allowedRetry);
 
                 if (dispatch) {
                     dispatch({

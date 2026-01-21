@@ -16,7 +16,7 @@ export const WIDGET_POLLING_CONFIG = {
 
 export const initialState = {
     //Temporary Data
-    activeStep: 2,
+    activeStep: 3,
     widgetData: null,
     allowedRetry: null,
     isLoading: false,
@@ -66,4 +66,5 @@ export const initialState = {
     adposition: null,
     reference: null,
     countries: null,
+    selectedCountry: null,
 };

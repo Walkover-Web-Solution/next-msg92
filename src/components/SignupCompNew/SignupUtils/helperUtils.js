@@ -9,12 +9,10 @@ import getURLParams from '@/utils/getURLParams';
 export function setInitialStates(dispatch, state, urlParams) {
     try {
         if (!dispatch || typeof dispatch !== 'function') {
-            console.error('setInitialStates: Invalid dispatch parameter provided');
             return;
         }
 
         if (!state || typeof state !== 'object') {
-            console.error('setInitialStates: Invalid state parameter provided');
             return;
         }
 
@@ -48,7 +46,6 @@ export function setInitialStates(dispatch, state, urlParams) {
             });
         }
     } catch (error) {
-        console.error('Error in setInitialStates:', error);
         if (dispatch) {
             dispatch({ type: 'SET_ERROR', payload: 'Failed to initialize signup state' });
         }
@@ -72,12 +69,10 @@ export function handleGithubSignup() {
 export function setDetails(type, dispatch, identifier) {
     try {
         if (!dispatch || typeof dispatch !== 'function') {
-            console.error('setDetails: Invalid dispatch parameter provided');
             return;
         }
 
         if (!type || !identifier) {
-            console.error('setDetails: Missing required parameters');
             return;
         }
 
@@ -126,7 +121,6 @@ export function setDetails(type, dispatch, identifier) {
             });
         }
     } catch (error) {
-        console.error('Error in setDetails:', error);
         if (dispatch) {
             dispatch({ type: 'SET_ERROR', payload: 'Failed to set user details' });
         }

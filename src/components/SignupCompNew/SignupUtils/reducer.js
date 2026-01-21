@@ -127,6 +127,15 @@ export function reducer(state, action) {
                 source: action.payload.source,
             };
 
+        case 'SET_COMPANY_DETAILS':
+            return {
+                ...state,
+                companyDetails: {
+                    ...state.companyDetails,
+                    ...action.payload,
+                },
+            };
+
         case 'SET_ADDRESS_DETAILS':
             return {
                 ...state,
@@ -167,7 +176,19 @@ export function reducer(state, action) {
         case 'SET_COUNTRIES':
             return {
                 ...state,
-                countries: action.payload || null,
+                countries: Array.isArray(action.payload)
+                    ? action.payload
+                    : action.payload?.data || action.payload || null,
+            };
+        case 'SET_SELECTED_COUNTRY':
+            return {
+                ...state,
+                selectedCountry: action.payload,
+                companyDetails: {
+                    ...state.companyDetails,
+                    country: action.payload?.name || null,
+                    countryId: action.payload?.id || null,
+                },
             };
         case 'RESET':
             return initialState;

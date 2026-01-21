@@ -1,17 +1,20 @@
 import Image from 'next/image';
 import { useSignup, sendOtp, verifyOtp, setDetails, validateSignUp, resetPhoneOtp } from '../SignupUtils';
-import { useEffect, useState } from 'react';
+import { getAvailableOtpMethods } from '../SignupUtils/otpUtils';
+import { useEffect, useState, useRef, useMemo } from 'react';
 import { MdEdit } from 'react-icons/md';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import OTPInput from '../components/OTPInput';
 import ResendOTP from '../components/ResendOTP';
 import PhoneInput from '../components/PhoneInput';
 import FormInput from '../components/FormInput';
-import RetryComp from '../SignupUtils/RetryComp';
 import { useCountrySelector } from '../hooks/useCountrySelector';
+import { fetchCountries } from '../SignupUtils/apiUtils';
 
 export default function StepTwo() {
     const { state, dispatch } = useSignup();
+    const otpInputRef = useRef(null);
+    const typeaheadRef = useRef(null);
 
     const isLoading = state.isLoading;
     const otpSent = state.otpSent;
@@ -24,11 +27,48 @@ export default function StepTwo() {
     );
     const [companyName, setCompanyName] = useState(state.companyDetails?.companyName || '');
     const [phone, setPhone] = useState(mobileIdentifier || '');
+    const [phoneCountry, setPhoneCountry] = useState(null);
     const [continueAllowed, setContinueAllowed] = useState(false);
 
     const otpLength = state.widgetData?.otpLength || 6;
 
-    const { countries, selectedCountry, setSelectedCountry } = useCountrySelector(true);
+    const primaryChannels = useMemo(
+        () => getAvailableOtpMethods(state?.allowedRetry?.mobile?.primary, phoneCountry),
+        [state?.allowedRetry?.mobile?.primary, phoneCountry]
+    );
+
+    const secondaryChannels = useMemo(
+        () => getAvailableOtpMethods(state?.allowedRetry?.mobile?.secondary, phoneCountry),
+        [state?.allowedRetry?.mobile?.secondary, phoneCountry]
+    );
+
+    const {
+        countries,
+        selectedCountry: localSelectedCountry,
+        setSelectedCountry: setLocalSelectedCountry,
+    } = useCountrySelector();
+
+    // Use root state selectedCountry if available, otherwise use local
+    const selectedCountry = state.selectedCountry || localSelectedCountry;
+
+    // Fetch countries if not already loaded
+    useEffect(() => {
+        if (!state.countries) {
+            fetchCountries(dispatch);
+        }
+    }, [state.countries]);
+
+    // Sync local selectedCountry with root state
+    useEffect(() => {
+        if (state.selectedCountry && state.selectedCountry.id !== localSelectedCountry?.id) {
+            setLocalSelectedCountry(state.selectedCountry);
+            // Manually update Typeahead when state changes
+            if (typeaheadRef.current && state.selectedCountry) {
+                typeaheadRef.current.clear();
+                typeaheadRef.current.setState({ selected: [state.selectedCountry] });
+            }
+        }
+    }, [state.selectedCountry]);
 
     useEffect(() => {
         if (otpVerified && name && companyName && phone) {
@@ -37,19 +77,27 @@ export default function StepTwo() {
     }, [otpVerified, name, companyName, phone]);
 
     const handleSendOtp = () => {
-        const rawInput = phone.trim();
+        const phoneNumber = phone?.trim();
 
-        if (!rawInput) {
+        if (!phoneNumber) {
             dispatch({ type: 'SET_ERROR', payload: 'Please enter a phone number' });
             return;
         }
 
-        let phoneNumber = rawInput;
-        if (selectedCountry?.countryCode && !rawInput.startsWith('+')) {
-            phoneNumber = `${selectedCountry.countryCode}${rawInput}`;
+        // Phone is already in E.164 format from react-phone-number-input (e.g., +919876543210)
+        sendOtp(phoneNumber, true, dispatch);
+    };
+
+    const handleResendWithChannel = (channel) => {
+        const phoneNumber = phone?.trim();
+
+        if (!phoneNumber) {
+            dispatch({ type: 'SET_ERROR', payload: 'Please enter a phone number' });
+            return;
         }
 
-        sendOtp(phoneNumber, true, dispatch);
+        // Phone is already in E.164 format from react-phone-number-input (e.g., +919876543210)
+        sendOtp(phoneNumber, true, dispatch, channel);
     };
 
     const handleVerifyOtp = (otpValue) => {
@@ -59,19 +107,34 @@ export default function StepTwo() {
             return;
         }
 
-        const onSuccess = (data) => {
-            console.log('OTP verification successful:', data);
-        };
+        const onSuccess = (data) => {};
 
-        const onError = (error) => {
-            console.error('OTP verification failed:', error);
-        };
+        const onError = (error) => {};
 
         verifyOtp(otpValue, requestId, true, dispatch, state, onSuccess, onError);
     };
 
     const handleOnSelect = (item) => {
-        setSelectedCountry(item[0]);
+        if (item.length === 0) {
+            // User cleared the selection
+            dispatch({
+                type: 'SET_SELECTED_COUNTRY',
+                payload: null,
+            });
+            setLocalSelectedCountry(null);
+            return;
+        }
+
+        const country = item[0];
+        if (country) {
+            // Update root state
+            dispatch({
+                type: 'SET_SELECTED_COUNTRY',
+                payload: country,
+            });
+            // Also update local state for immediate UI update
+            setLocalSelectedCountry(country);
+        }
     };
 
     const handleDetailsBlur = (type) => {
@@ -130,14 +193,16 @@ export default function StepTwo() {
                 <div className='cont gap-1'>
                     <p className='text-gray-500'>Country</p>
                     <Typeahead
+                        ref={typeaheadRef}
                         className='country-list w-full min-w-[320px] max-w-[420px]'
                         id='country'
                         placeholder='Country'
                         labelKey='name'
                         onChange={handleOnSelect}
                         options={countries}
-                        selected={selectedCountry && selectedCountry.name ? [selectedCountry] : []}
                         defaultSelected={selectedCountry && selectedCountry.name ? [selectedCountry] : []}
+                        emptyLabel='No countries found'
+                        selectHintOnEnter
                         inputProps={{
                             autoComplete: 'off',
                         }}
@@ -159,8 +224,11 @@ export default function StepTwo() {
                         </div>
                         <div className='flex gap-4'>
                             <OTPInput
+                                ref={otpInputRef}
                                 length={otpLength}
                                 onComplete={handleVerifyOtp}
+                                onVerify={handleVerifyOtp}
+                                showVerifyButton={true}
                                 autoFocus={true}
                                 disabled={isLoading}
                             />
@@ -171,17 +239,25 @@ export default function StepTwo() {
                                 </div>
                             )}
                         </div>
-                        <RetryComp type='mobile' identifier={mobileIdentifier} />
+                        <ResendOTP
+                            onResend={handleSendOtp}
+                            onResendWithChannel={handleResendWithChannel}
+                            onReset={() => otpInputRef.current?.resetOtp()}
+                            secondaryChannels={secondaryChannels}
+                            initialTime={30}
+                            autoStart={true}
+                        />
                     </div>
                 ) : (
                     <div className='cont gap-2'>
                         <p className='text-gray-500'>Phone Number</p>
                         <div className='flex items-center gap-4'>
                             <PhoneInput
-                                selectedCountry={selectedCountry}
                                 value={phone}
                                 onChange={setPhone}
+                                onCountryChange={setPhoneCountry}
                                 onBlur={() => handleDetailsBlur('phone')}
+                                defaultCountry={selectedCountry}
                                 verified={otpVerified}
                                 placeholder='9876543210'
                             />

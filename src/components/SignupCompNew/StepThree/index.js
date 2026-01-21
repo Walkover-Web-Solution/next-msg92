@@ -5,6 +5,7 @@ import { MdClose, MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { setDetails, useSignup, finalRegistration } from '../SignupUtils';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import { useCountrySelector } from '../hooks/useCountrySelector';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 export default function StepThree({ pageInfo, data }) {
     const { state, dispatch } = useSignup();
@@ -31,7 +32,7 @@ export default function StepThree({ pageInfo, data }) {
         handleStateChange,
         handleCityChange,
         setSelectedCountry,
-    } = useCountrySelector(true);
+    } = useCountrySelector();
 
     useEffect(() => {
         const initializeData = async () => {
@@ -248,6 +249,28 @@ export default function StepThree({ pageInfo, data }) {
                     Next
                 </button>
             </div>
+            <style jsx global>{`
+                .rbt-input-main:disabled,
+                .rbt-input-main[disabled] {
+                    background-color: #f3f4f6 !important;
+                    color: #9ca3af !important;
+                    cursor: not-allowed !important;
+                    opacity: 0.6 !important;
+                }
+                .rbt.disabled .rbt-input-main,
+                .rbt[disabled] .rbt-input-main {
+                    background-color: #f3f4f6 !important;
+                    color: #9ca3af !important;
+                    cursor: not-allowed !important;
+                    opacity: 0.6 !important;
+                }
+                .country-list.cursor-not-allowed .rbt-input-main {
+                    background-color: #f3f4f6 !important;
+                    color: #9ca3af !important;
+                    cursor: not-allowed !important;
+                    opacity: 0.6 !important;
+                }
+            `}</style>
         </div>
     );
 }

@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
-import { fetchCountries, fetchStatesByCountry, fetchCitiesByState } from '../SignupUtils';
-import getCountyFromIP from '@/utils/getCountyFromIP';
+import { fetchStatesByCountry, fetchCitiesByState, useSignup } from '../SignupUtils';
 
 /**
  * Custom hook for managing country, state, and city selection
- * @param {boolean} autoDetectCountry - Whether to auto-detect country from IP
+ * Uses countries from global state (already fetched in StepOne)
  * @returns {Object} Country selector state and handlers
  */
-export function useCountrySelector(autoDetectCountry = true) {
-    const [countries, setCountries] = useState([]);
+export function useCountrySelector() {
+    const { state } = useSignup();
+    const countries = state.countries || [];
+
     const [stateOptions, setStateOptions] = useState([]);
     const [cityOptions, setCityOptions] = useState([]);
 
@@ -22,38 +23,6 @@ export function useCountrySelector(autoDetectCountry = true) {
     const [isLoadingCountries, setIsLoadingCountries] = useState(false);
     const [isLoadingStates, setIsLoadingStates] = useState(false);
     const [isLoadingCities, setIsLoadingCities] = useState(false);
-
-    useEffect(() => {
-        const initializeCountries = async () => {
-            setIsLoadingCountries(true);
-            try {
-                const response = await fetchCountries();
-                const countriesData = response.data || [];
-                setCountries(countriesData);
-
-                if (autoDetectCountry && countriesData.length > 0) {
-                    const ipData = await getCountyFromIP();
-                    const detectedCountryCode = ipData?.countryCode?.toLowerCase();
-
-                    if (detectedCountryCode) {
-                        const matchedCountry = countriesData.find(
-                            (c) => c.shortName?.toLowerCase() === detectedCountryCode
-                        );
-
-                        if (matchedCountry) {
-                            await handleCountryChange([matchedCountry]);
-                        }
-                    }
-                }
-            } catch (error) {
-                console.error('Error initializing countries:', error);
-            } finally {
-                setIsLoadingCountries(false);
-            }
-        };
-
-        initializeCountries();
-    }, [autoDetectCountry]);
 
     const handleCountryChange = async (selected) => {
         if (selected && selected.length > 0) {
@@ -111,7 +80,6 @@ export function useCountrySelector(autoDetectCountry = true) {
             const states = await fetchStatesByCountry(countryId);
             setStateOptions(states);
         } catch (error) {
-            console.error('Error fetching states:', error);
             setStateOptions([]);
         } finally {
             setIsLoadingStates(false);
@@ -126,7 +94,6 @@ export function useCountrySelector(autoDetectCountry = true) {
             const cities = await fetchCitiesByState(stateId);
             setCityOptions(cities);
         } catch (error) {
-            console.error('Error fetching cities:', error);
             setCityOptions([]);
         } finally {
             setIsLoadingCities(false);

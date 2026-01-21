@@ -16,8 +16,6 @@ import Toast from '../SignupUtils/Toast';
 function SignupSteps({ pageInfo, data, isAbSignup }) {
     const { state, dispatch } = useSignup();
 
-    console.log(state);
-
     useEffect(() => {
         // Initialize URL parameters and UTM data first
         if (typeof window !== 'undefined') {
@@ -27,22 +25,14 @@ function SignupSteps({ pageInfo, data, isAbSignup }) {
         }
 
         // Setup OTP widget
-        otpWidgetSetup(
-            dispatch,
-            (data) => {
-                console.log('Widget setup success:', data);
-            },
-            (error) => {
-                console.error('Widget initialization failed:', error);
-            }
-        );
+        otpWidgetSetup(dispatch);
 
         checkSession();
     }, [dispatch]);
 
     return (
-        <div className={`h-screen w-full ${isAbSignup ? 'flex' : 'hidden'}`}>
-            <div className='h-full w-1/3 min-w-[320px] max-w-full bg-secondary'></div>
+        <div className={`h-screen w-full lg:flex-row flex-col-reverse ${isAbSignup ? 'flex' : 'hidden'}`}>
+            <div className='h-full lg:w-1/3 w-full min-w-[320px] max-w-full bg-secondary'></div>
             <div className='w-full p-12'>
                 <Toast type='danger' />
                 {state.activeStep === 1 && <StepOne pageInfo={pageInfo} />}

@@ -5,16 +5,26 @@ import { MdEdit } from 'react-icons/md';
 import OTPInput from '../components/OTPInput';
 import ResendOTP from '../components/ResendOTP';
 import FormInput from '../components/FormInput';
+import { fetchCountries } from '../SignupUtils/apiUtils';
 
 export default function StepOne() {
     const { state, dispatch } = useSignup();
     const [email, setEmail] = useState('');
     const emailInputRef = useRef(null);
+    const otpInputRef = useRef(null);
 
     const otpLength = state.widgetData?.otpLength || 6;
     const isLoading = state.isLoading;
     const otpSent = state.otpSent;
+    const countries = state.countries;
 
+    // Get available retry channels (email usually has only one)
+    const secondaryChannels = state?.allowedRetry?.email?.secondary || [];
+    useEffect(() => {
+        if (!countries) {
+            fetchCountries(dispatch);
+        }
+    }, [countries]);
     useEffect(() => {
         if (!otpSent && emailInputRef.current) {
             setTimeout(() => {
@@ -81,8 +91,11 @@ export default function StepOne() {
                     </div>
                     <div className='flex gap-4'>
                         <OTPInput
+                            ref={otpInputRef}
                             length={otpLength}
                             onComplete={handleVerifyOtp}
+                            onVerify={handleVerifyOtp}
+                            showVerifyButton={true}
                             autoFocus={true}
                             disabled={isLoading}
                         />
@@ -93,7 +106,13 @@ export default function StepOne() {
                             </div>
                         )}
                     </div>
-                    <ResendOTP onResend={handleResendOtp} initialTime={30} autoStart={true} />
+                    <ResendOTP
+                        onResend={handleResendOtp}
+                        onReset={() => otpInputRef.current?.resetOtp()}
+                        secondaryChannels={secondaryChannels}
+                        initialTime={30}
+                        autoStart={true}
+                    />
                 </div>
             ) : (
                 <div className='cont gap-2'>

@@ -5,9 +5,18 @@ import { EMAIL_REGEX, MOBILE_REGEX } from './constants';
  * @param {string} identifier - Email or mobile number
  * @param {boolean} notByEmail - Whether it's mobile (true) or email (false)
  * @param {Function} dispatch - Redux dispatch function
+ * @param {string} channel - Optional channel for retry (e.g., 'sms', 'voice', 'whatsapp')
  * @param {Function} showToast - Toast notification function
  */
-export function sendOtp(identifier, notByEmail, dispatch, showToast = console.error) {
+// Filter OTP methods: prioritize country-specific, fallback to default (country: 0)
+export function getAvailableOtpMethods(methods, phoneCountry) {
+    if (!methods?.length) return [];
+    const code = phoneCountry ? parseInt(phoneCountry.countryCode) : null;
+    const countrySpecific = code ? methods.filter((m) => m.country === code) : [];
+    return countrySpecific.length > 0 ? countrySpecific : methods.filter((m) => m.country === 0);
+}
+
+export function sendOtp(identifier, notByEmail, dispatch, channel = null, showToast = () => {}) {
     if (!new RegExp(EMAIL_REGEX).test(identifier) && !notByEmail) {
         dispatch({ type: 'SET_ERROR', payload: 'Invalid email address.' });
         showToast('Invalid email address.');
@@ -21,8 +30,11 @@ export function sendOtp(identifier, notByEmail, dispatch, showToast = console.er
 
     dispatch({ type: 'SET_LOADING', payload: true });
 
+    // If channel is specified, use it for retry
+    const sendOtpArgs = channel ? [identifier, channel] : [identifier];
+
     window.sendOtp(
-        identifier,
+        ...sendOtpArgs,
         (data) => {
             if (notByEmail) {
                 dispatch({
@@ -62,7 +74,7 @@ export function sendOtp(identifier, notByEmail, dispatch, showToast = console.er
  * @param {Function} onSuccess - Success callback
  * @param {Function} onError - Error callback
  */
-export function verifyOtp(otp, requestId, notByEmail, dispatch, state, onSuccess, onError = console.error) {
+export function verifyOtp(otp, requestId, notByEmail, dispatch, state, onSuccess, onError = () => {}) {
     dispatch({ type: 'SET_LOADING', payload: true });
     window.verifyOtp(
         `${otp}`,

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import getCountyFromIP from '@/utils/getCountyFromIP';
 
 /**
  * Check if user has an active session
@@ -31,12 +32,8 @@ export default function checkSession() {
                     window.location.href = process.env.REDIRECT_URL + `/api/nexusRedirection.php?session=${session}`;
                 }
             })
-            .catch((error) => {
-                console.error('Error checking session:', error);
-            });
-    } catch (error) {
-        console.error('Error in checkSession:', error);
-    }
+            .catch((error) => {});
+    } catch (error) {}
 }
 
 /**
@@ -47,12 +44,10 @@ export default function checkSession() {
 export function validateSignUp(dispatch, state) {
     // Add null/undefined checks to prevent TypeError
     if (!state || typeof state !== 'object') {
-        console.error('validateSignUp: Invalid state parameter provided');
         return;
     }
 
     if (!dispatch || typeof dispatch !== 'function') {
-        console.error('validateSignUp: Invalid dispatch parameter provided');
         return;
     }
 
@@ -83,7 +78,6 @@ export function validateSignUp(dispatch, state) {
     axios
         .post(url, payload)
         .then((response) => {
-            console.log('⚡️ ~ :517 ~ validateSignUp ~ response:', response);
             if (response?.data?.status === 'success') {
                 dispatch({
                     type: 'SET_SESSION',
@@ -95,7 +89,6 @@ export function validateSignUp(dispatch, state) {
             }
         })
         .catch((error) => {
-            console.error('Error validating signup:', error);
             dispatch({
                 type: 'SET_ERROR',
                 payload: error?.response?.data?.message || error?.message || 'Failed to validate signup',
@@ -164,7 +157,6 @@ export async function validateEmailSignup(otp, dispatch, state) {
         const url = `${baseUrl}/api/v5/nexus/validateEmailSignUp`;
 
         const { data } = await axios.post(url, payload);
-        console.log('🚀 ~ validateEmailSignup ~ data:', data);
         if (data?.status === 'success') {
             dispatch({
                 type: 'SET_SESSION',
@@ -181,7 +173,6 @@ export async function validateEmailSignup(otp, dispatch, state) {
         dispatch({ type: 'SET_ERROR', payload: apiErrors });
         return null;
     } catch (error) {
-        console.error('Error validating signup:', error);
         const otpErrorMessage = error?.response?.data?.message || error?.message || 'Failed to validate signup';
         dispatch({ type: 'SET_ERROR', payload: otpErrorMessage });
         return null;
@@ -217,7 +208,6 @@ export function finalRegistration(dispatch, state) {
             }
         })
         .catch((error) => {
-            console.error('Error final registration:', error);
             dispatch({
                 type: 'SET_ERROR',
                 payload: error?.response?.data?.message || error?.message || 'Failed to complete registration',
@@ -226,10 +216,11 @@ export function finalRegistration(dispatch, state) {
 }
 
 /**
- * Fetch countries list
+ * Fetch countries list and auto-detect user's country from IP
  * @param {Function} dispatch - Redux dispatch function
+ * @param {boolean} autoDetect - Whether to auto-detect country from IP (default: true)
  */
-export async function fetchCountries(dispatch) {
+export async function fetchCountries(dispatch, autoDetect = true) {
     try {
         const response = await fetch(`${process.env.API_BASE_URL}/api/v5/web/getCountries`, {
             method: 'GET',
@@ -240,12 +231,36 @@ export async function fetchCountries(dispatch) {
         }
 
         const data = await response.json();
+        const countriesData = data?.data || [];
+
         dispatch({
             type: 'SET_COUNTRIES',
-            payload: data,
+            payload: countriesData,
         });
+
+        // Auto-detect country from IP
+        if (autoDetect && countriesData.length > 0) {
+            try {
+                const ipData = await getCountyFromIP();
+                const detectedCountryCode = ipData?.countryCode?.toLowerCase();
+
+                if (detectedCountryCode) {
+                    const matchedCountry = countriesData.find(
+                        (c) => c.shortName?.toLowerCase() === detectedCountryCode
+                    );
+
+                    if (matchedCountry) {
+                        dispatch({
+                            type: 'SET_SELECTED_COUNTRY',
+                            payload: matchedCountry,
+                        });
+                    }
+                }
+            } catch (ipError) {}
+        }
+
+        return data;
     } catch (error) {
-        console.error('Error fetching countries:', error);
         throw error;
     }
 }
@@ -277,7 +292,6 @@ export async function fetchStatesByCountry(countryId) {
             name: state.name,
         }));
     } catch (error) {
-        console.error('Error fetching states:', error);
         throw error;
     }
 }
@@ -309,7 +323,6 @@ export async function fetchCitiesByState(stateId) {
             name: city.name,
         }));
     } catch (error) {
-        console.error('Error fetching cities:', error);
         throw error;
     }
 }
