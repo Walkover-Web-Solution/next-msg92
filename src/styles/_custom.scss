@@ -324,9 +324,6 @@ $button-transition-timing: 100ms;
     }
 }
 
-.iti .iti__country-list {
-    // width: 350px !important;
-}
 
 .tooltip.tooltip-modal {
     &:before {
@@ -336,4 +333,8 @@ $button-transition-timing: 100ms;
 
 :root:has(:is(.modal-open, .modal:target, .modal-toggle:checked + .modal, .modal[open])):has(.modal-scrollable) {
     overflow: scroll !important;
+}
+
+.input, select{
+    @apply focus:!outline-none;
 }

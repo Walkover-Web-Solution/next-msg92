@@ -8,11 +8,30 @@ import { useCountrySelector } from '../hooks/useCountrySelector';
 import { fetchCountries, autoPopulateFromIP } from '../SignupUtils/apiUtils';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 
-export default function StepThree({ pageInfo, data }) {
+export default function StepThree({ data }) {
     const { state, dispatch } = useSignup();
+    console.log('⚡️ ~ :13 ~ StepThree ~ state:', state);
+    const sourceOptions = data?.source || {};
+    const optionKeys = Object.keys(sourceOptions);
+    const storedSource = state?.source || state?.utm_source || '';
+
+    const getInitialSource = () => {
+        if (!storedSource) return '';
+        return optionKeys.includes(storedSource) ? storedSource : 'other';
+    };
+
+    const getInitialOtherSource = () => {
+        if (!storedSource) return '';
+        return optionKeys.includes(storedSource) ? '' : storedSource;
+    };
+
     const [services, setServices] = useState({});
-    const [selectedServices, setSelectedServices] = useState([]);
-    const [source, setSource] = useState(state?.source || '');
+    const initialServices = Array.isArray(state?.companyDetails?.service)
+        ? [...new Set(state.companyDetails.service)]
+        : [];
+    const [selectedServices, setSelectedServices] = useState(initialServices);
+    const [source, setSource] = useState(() => getInitialSource());
+    const [otherSource, setOtherSource] = useState(() => getInitialOtherSource());
     const [address, setAddress] = useState(state?.companyDetails?.address || '');
     const [postalCode, setPostalCode] = useState(state?.companyDetails?.zipcode || '');
     const [isAddressOpen, setIsAddressOpen] = useState(false);
@@ -44,6 +63,17 @@ export default function StepThree({ pageInfo, data }) {
     }, []);
 
     useEffect(() => {
+        if (storedSource && optionKeys.length > 0 && !source) {
+            if (optionKeys.includes(storedSource)) {
+                setSource(storedSource);
+            } else {
+                setSource('other');
+                setOtherSource(storedSource);
+            }
+        }
+    }, [storedSource, optionKeys.length]);
+
+    useEffect(() => {
         const fetchDataIfNeeded = async () => {
             if (state.geoAutoPopulated) return;
             // Fallback: If user navigates directly to StepThree, fetch countries and auto-populate
@@ -73,11 +103,14 @@ export default function StepThree({ pageInfo, data }) {
 
     useEffect(() => {
         setDetails('services', dispatch, selectedServices);
-    }, [selectedServices]);
+    }, [dispatch, selectedServices]);
 
     useEffect(() => {
-        setDetails('source', dispatch, source);
-    }, [source]);
+        const finalSource = source === 'other' ? otherSource : source;
+        if (finalSource) {
+            setDetails('source', dispatch, finalSource);
+        }
+    }, [dispatch, otherSource, source]);
 
     useEffect(() => {
         setDetails('addressDetails', dispatch, {
@@ -101,6 +134,9 @@ export default function StepThree({ pageInfo, data }) {
 
     function handleSourceChange(value) {
         setSource(value);
+        if (value !== 'other') {
+            setOtherSource('');
+        }
     }
 
     const handleFinalRegistration = () => {
@@ -156,6 +192,16 @@ export default function StepThree({ pageInfo, data }) {
                                 </option>
                             ))}
                         </select>
+                        {source === 'other' && (
+                            <input
+                                className='input input-bordered w-full min-w-[320px] max-w-[420px]'
+                                type='text'
+                                placeholder='Please specify'
+                                value={otherSource}
+                                onChange={(e) => setOtherSource(e.target.value)}
+                                aria-label='Other source'
+                            />
+                        )}
                     </div>
                 </div>
             </div>

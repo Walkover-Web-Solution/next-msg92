@@ -9,12 +9,10 @@ import ResendOTP from '../components/ResendOTP';
 import PhoneInput from '../components/PhoneInput';
 import FormInput from '../components/FormInput';
 import { useCountrySelector } from '../hooks/useCountrySelector';
-import { fetchCountries } from '../SignupUtils/apiUtils';
 
 export default function StepTwo() {
     const { state, dispatch } = useSignup();
     const otpInputRef = useRef(null);
-    const typeaheadRef = useRef(null);
 
     const isLoading = state.isLoading;
     const otpSent = state.otpSent;
@@ -51,22 +49,10 @@ export default function StepTwo() {
     // Use root state selectedCountry if available, otherwise use local
     const selectedCountry = state.selectedCountry || localSelectedCountry;
 
-    // Fetch countries if not already loaded
-    useEffect(() => {
-        if (!state.countries) {
-            fetchCountries(dispatch);
-        }
-    }, [state.countries]);
-
     // Sync local selectedCountry with root state
     useEffect(() => {
         if (state.selectedCountry && state.selectedCountry.id !== localSelectedCountry?.id) {
             setLocalSelectedCountry(state.selectedCountry);
-            // Manually update Typeahead when state changes
-            if (typeaheadRef.current && state.selectedCountry) {
-                typeaheadRef.current.clear();
-                typeaheadRef.current.setState({ selected: [state.selectedCountry] });
-            }
         }
     }, [state.selectedCountry]);
 
@@ -193,14 +179,13 @@ export default function StepTwo() {
                 <div className='cont gap-1'>
                     <p className='text-gray-500'>Country</p>
                     <Typeahead
-                        ref={typeaheadRef}
                         className='country-list w-full min-w-[320px] max-w-[420px]'
                         id='country'
                         placeholder='Country'
                         labelKey='name'
                         onChange={handleOnSelect}
                         options={countries}
-                        defaultSelected={selectedCountry && selectedCountry.name ? [selectedCountry] : []}
+                        selected={selectedCountry && selectedCountry.name ? [selectedCountry] : []}
                         emptyLabel='No countries found'
                         selectHintOnEnter
                         inputProps={{
