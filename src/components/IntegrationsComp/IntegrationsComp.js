@@ -124,11 +124,10 @@ export default function IntegrationsComp({ pageInfo, data }) {
                             <Image
                                 src={item?.icon}
                                 alt={item?.name}
-                                className='w-fit h-10'
-                                width={120}
-                                height={40}
-                                loading='lazy'
-                                sizes='(max-width: 768px) 32px, 40px'
+                                width={1200}
+                                height={375}
+                                sizes='128px'
+                                className='w-[128px] h-auto'
                             />
                         </div>
                     ))}
