@@ -2,6 +2,19 @@ import React from 'react';
 import { MdChevronRight } from 'react-icons/md';
 import { loginWithGitHubAccount } from '@/utils/utilis';
 import Image from 'next/image';
+import { getCookie } from '@/utils/utilis';
+
+function getLoginUrlWithQuery() {
+    if (typeof window === 'undefined') {
+        return process.env.LOGIN_URL || 'https://control.msg91.com/signin/';
+    }
+    const baseUrl = process.env.LOGIN_URL || 'https://control.msg91.com/signin/';
+    const msg91Query = getCookie('msg91_query');
+    if (!msg91Query) return baseUrl;
+    const queryString = msg91Query.startsWith('?') ? msg91Query.substring(1) : msg91Query;
+    const separator = baseUrl.includes('?') ? '&' : '?';
+    return `${baseUrl}${separator}${queryString}`;
+}
 
 class StepOne extends React.Component {
     signupWithGitHub = () => {
@@ -33,10 +46,7 @@ class StepOne extends React.Component {
                         </button>
                         <p>
                             If you already have an account,{' '}
-                            <a
-                                className='text-link active-link'
-                                href={process.env.LOGIN_URL || 'https://control.msg91.com/signin/'}
-                            >
+                            <a className='text-link active-link' href={getLoginUrlWithQuery()}>
                                 Login
                             </a>
                         </p>

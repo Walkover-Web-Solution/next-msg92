@@ -5,12 +5,19 @@ import Image from 'next/image';
 import getURL from '@/utils/getURL';
 import { useRouter } from 'next/router';
 import specialPages from '@/data/specialPages.json';
+import { useMemo } from 'react';
+import { appendMsg91QueryToUrl } from '@/components/SignupCompNew/SignupUtils/cookieUtils';
 
 export default function NotificationBarComp({ componentData, pageInfo }) {
     const router = useRouter();
     const visibility = specialPages?.global?.some((page) => router.asPath.startsWith(`/${page}`));
     const currentCountry = availableCountries.find((cont) => cont.shortname.toLowerCase() === pageInfo?.country);
     const hidden = componentData?.hide?.includes(pageInfo?.page);
+
+    const loginUrl = useMemo(() => {
+        const baseUrl = process.env.LOGIN_URL || 'https://control.msg91.com/signin/';
+        return appendMsg91QueryToUrl(baseUrl);
+    }, []);
 
     function handleCookies(country) {
         if (typeof window !== 'undefined' && country) {
@@ -167,10 +174,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
                         <MdOutlineCall className='text-2xl sm:text-xl' />
                         <span className='hidden sm:block'>{componentData?.support}</span>
                     </a>
-                    <a
-                        className='text-link flex gap-1 items-center'
-                        href={process.env.LOGIN_URL || 'https://control.msg91.com/signin/'}
-                    >
+                    <a className='text-link flex gap-1 items-center' href={loginUrl}>
                         <MdLogin className='text-2xl sm:text-xl' />
                         <span className='hidden sm:block'>{componentData?.login}</span>
                     </a>

@@ -125,7 +125,6 @@ export function reducer(state, action) {
             return {
                 ...state,
                 source: action.payload.source,
-                utm_source: action.payload.source,
             };
 
         case 'SET_COMPANY_DETAILS':

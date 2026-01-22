@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import { useSignup, sendOtp, handleGithubSignup, validateEmailSignup, resetEmailOtp } from '../SignupUtils';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
 import { MdEdit } from 'react-icons/md';
 import OTPInput from '../components/OTPInput';
 import ResendOTP from '../components/ResendOTP';
 import FormInput from '../components/FormInput';
 import { fetchCountries, autoPopulateFromIP } from '../SignupUtils/apiUtils';
+import { appendMsg91QueryToUrl } from '../SignupUtils/cookieUtils';
 
 export default function StepOne() {
     const { state, dispatch } = useSignup();
@@ -21,6 +22,9 @@ export default function StepOne() {
 
     // Get available retry channels (email usually has only one)
     const secondaryChannels = state?.allowedRetry?.email?.secondary || [];
+
+    // Compute login URL with msg91_query parameters
+    const loginUrl = useMemo(() => appendMsg91QueryToUrl('/login'), []);
     useEffect(() => {
         const initializeCountriesAndAutoPopulate = async () => {
             if (state.geoAutoPopulated) return;
@@ -103,7 +107,7 @@ export default function StepOne() {
             <div className='cont gap-2'>
                 <h1 className='text-2xl text-primary'>Create an Account</h1>
                 <p className='text-sm text-gray-500'>
-                    Already have an account? <a href='/login'>Login</a>
+                    Already have an account? <a href={loginUrl}>Login</a>
                 </p>
             </div>
 

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import getCountyFromIP from '@/utils/getCountyFromIP';
+import { appendMsg91QueryToUrl } from './cookieUtils';
 
 /**
  * Check if user has an active session
@@ -29,7 +30,8 @@ export default function checkSession() {
             })
             .then((result) => {
                 if (result?.status === 'success') {
-                    window.location.href = process.env.REDIRECT_URL + `/api/nexusRedirection.php?session=${session}`;
+                    const baseUrl = process.env.REDIRECT_URL + `/api/nexusRedirection.php?session=${session}`;
+                    window.location.href = appendMsg91QueryToUrl(baseUrl);
                 }
             })
             .catch((error) => {});
@@ -203,8 +205,8 @@ export function finalRegistration(dispatch, state) {
                     type: 'SET_ACTIVE_STEP',
                     payload: 4,
                 });
-                window.location.href =
-                    process.env.REDIRECT_URL + `?session=${response?.data?.sessionDetails?.PHPSESSID}`;
+                const baseUrl = process.env.REDIRECT_URL + `?session=${response?.data?.sessionDetails?.PHPSESSID}`;
+                window.location.href = appendMsg91QueryToUrl(baseUrl);
             }
         })
         .catch((error) => {

@@ -20,6 +20,9 @@ export function setInitialStates(dispatch, state, urlParams) {
         const githubCode = urlParams?.code;
         const githubState = urlParams?.state;
 
+        // Handle source: if source exists in URL use it, otherwise fallback to utm_source
+        const sourceValue = urlParams?.source || urlParams?.utm_source || '';
+
         dispatch({
             type: 'SET_INITIAL_STATES',
             payload: {
@@ -27,7 +30,7 @@ export function setInitialStates(dispatch, state, urlParams) {
                 githubSignup: githubSignup,
                 githubCode: githubCode,
                 githubState: githubState,
-                source: urlParams?.source,
+                source: sourceValue,
                 utm_term: urlParams?.utm_term,
                 utm_medium: urlParams?.utm_medium,
                 utm_source: urlParams?.utm_source,

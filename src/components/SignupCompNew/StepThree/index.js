@@ -6,14 +6,14 @@ import { setDetails, useSignup, finalRegistration } from '../SignupUtils';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import { useCountrySelector } from '../hooks/useCountrySelector';
 import { fetchCountries, autoPopulateFromIP } from '../SignupUtils/apiUtils';
+import { updateSourceInCookie } from '../SignupUtils/cookieUtils';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 export default function StepThree({ data }) {
     const { state, dispatch } = useSignup();
-    console.log('⚡️ ~ :13 ~ StepThree ~ state:', state);
     const sourceOptions = data?.source || {};
     const optionKeys = Object.keys(sourceOptions);
-    const storedSource = state?.source || state?.utm_source || '';
+    const storedSource = state?.source || '';
 
     const getInitialSource = () => {
         if (!storedSource) return '';
@@ -109,6 +109,7 @@ export default function StepThree({ data }) {
         const finalSource = source === 'other' ? otherSource : source;
         if (finalSource) {
             setDetails('source', dispatch, finalSource);
+            updateSourceInCookie(finalSource);
         }
     }, [dispatch, otherSource, source]);
 
