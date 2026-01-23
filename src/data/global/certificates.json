@@ -1,4 +1,4 @@
-{
+    {
     "HeadComp": {
         "title": "MSG91's Industry Certifications: Enhancing Secure Communication",
         "description": "Discover MSG91's range of industry certifications that affirm our dedication to secure, reliable messaging services. Explore how our ISO, CASA, and other certifications build trust with global businesses."
@@ -69,6 +69,11 @@
                     "name": "System Audit Report",
                     "image": "/assets/certificates/sar.png",
                     "url": "https://msg91.com/pdf/sar.pdf"
+                },
+                {
+                    "name": "GST Certificate",
+                    "image": "/assets/certificates/gst.png",
+                    "url": "https://msg91.com/pdf/gst.pdf"
                 }
             ]
         }
