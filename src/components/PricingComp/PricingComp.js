@@ -13,6 +13,7 @@ import FooterComp from '../FooterComp/FooterComp';
 import PricingSubscription from './PricingSubscription';
 
 export default function PricingComp({ pricingData, pageInfo, pageData, products, commonData, country }) {
+    console.log('🚀 ~ PricingComp ~ commonData:', commonData);
     if (pricingData) {
         return (
             <>
@@ -23,7 +24,7 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                     pageInfo={{ country: country, page: 'pricing' }}
                 />
 
-                <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
+                {/* <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} /> */}
                 <div className='bg-neutral py-3'>
                     <div className='container md:my-10 my-4 flex md:gap-12 gap-6 md:flex-row flex-col '>
                         <PricingNav products={products} page={pageInfo?.product} />
@@ -62,7 +63,7 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                         )}
                     </div>
                 </div>
-                <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} />
+                {/* <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} /> */}
             </>
         );
     } else {

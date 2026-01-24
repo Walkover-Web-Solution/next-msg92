@@ -19,6 +19,7 @@ export const getServerSideProps = async (context) => {
     const country = context?.params?.country || 'global';
     const product = context?.params?.products;
     const commonData = getCommonCompData(country);
+    console.log('🚀 ~ getServerSideProps ~ commonData:', commonData);
 
     let pricingData;
     try {

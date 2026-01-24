@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import { InlineWidget } from 'react-calendly';
 import CalculatePricingRCS from './CalculatePricingRCS/CalculatePricingRCS';
+import ComparePlans from '../ComparePlans/ComparePlans';
 
 export default function PricingRCS({ country, pageData }) {
     const { currency, symbol } = GetCurrencySymbol(country);
@@ -150,6 +151,7 @@ export default function PricingRCS({ country, pageData }) {
                         </>
                     )}
                     <ConnectWithTeam product={'RCS'} pageData={pageData?.connectComp} href={'rcs'} isPlan={false} />
+                    <ComparePlans />
                 </div>
             </div>
 
