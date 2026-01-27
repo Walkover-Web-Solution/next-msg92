@@ -147,17 +147,16 @@ export default function Page({ data, commonData, pageInfo }) {
             <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
             {data &&
                 Object.keys(data).map((key) => {
-                    const pageData = data[key];
-                    var Component = Components[key];
+                    const sectionData = data[key];
+                    const Component = Components[key];
                     if (!Component) {
                         console.error(`Component "${key}" is undefined. Check your imports and component exports.`);
                         return;
                     }
-
                     return (
                         <Component
                             key={`section-${key}`}
-                            data={pageData}
+                            data={sectionData}
                             pageInfo={pageInfo}
                             browserPathCase={browserPathCase}
                         />

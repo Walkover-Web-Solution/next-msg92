@@ -85,12 +85,22 @@ export default function ComparePlans() {
 
                 {/* Table */}
                 <div ref={tableRef} className='overflow-x-auto rounded-xl border border-gray-200 bg-white'>
-                    <table className='min-w-[900px] w-full border-collapse text-sm'>
+                    <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                         <thead className='bg-gray-50'>
-                            <tr>
-                                <th className='px-4 py-4 text-left font-medium text-gray-500'>FEATURES</th>
+                            <tr className='border-b border-gray-200'>
+                                <th
+                                    className='w-[210px] px-4 py-4 text-left font-medium text-gray-500 
+               sticky left-0 bg-gray-50 z-20 
+               border-r border-gray-200'
+                                >
+                                    FEATURES
+                                </th>
+
                                 {plans.map((plan) => (
-                                    <th key={plan} className='px-4 py-4 text-center font-semibold text-gray-900'>
+                                    <th
+                                        key={plan}
+                                        className='w-[180px] px-4 py-4 text-center font-semibold text-gray-900 border-l border-gray-200'
+                                    >
                                         {plan}
                                     </th>
                                 ))}
@@ -99,11 +109,27 @@ export default function ComparePlans() {
 
                         <tbody>
                             {data.map((row, rowIndex) => (
-                                <tr key={row.label} className={rowIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                                    <td className='px-4 py-4 text-gray-600 whitespace-nowrap'>{row.label}</td>
+                                <tr
+                                    key={row.label}
+                                    className={`border-b border-gray-200 ${
+                                        rowIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                                    }`}
+                                >
+                                    {/* Feature column */}
+                                    <td
+                                        className='w-[210px] px-4 py-4 text-gray-600 whitespace-nowrap 
+               sticky left-0 bg-inherit z-20 
+               border-r border-gray-200'
+                                    >
+                                        {row.label}
+                                    </td>
 
+                                    {/* Plan columns */}
                                     {row.values.map((value, idx) => (
-                                        <td key={idx} className='px-4 py-4 text-center'>
+                                        <td
+                                            key={idx}
+                                            className='w-[180px] px-4 py-4 text-center border-l border-gray-200'
+                                        >
                                             {row.isPrice ? (
                                                 <span className='font-semibold text-green-600'>{value}</span>
                                             ) : value ? (

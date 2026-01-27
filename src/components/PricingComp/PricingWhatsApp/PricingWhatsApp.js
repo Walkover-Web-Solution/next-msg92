@@ -1,4 +1,4 @@
-import GetCurrencySymbol from '@/utils/getCurrencySymbol';
+import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
 import GetCountryDetails from '@/utils/getCurrentCountry';
 import getURL from '@/utils/getURL';
 import Image from 'next/image';

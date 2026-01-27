@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default async function getSubscriptions(currency, msId) {
+export default async function getSubscriptionsFromSimplified(currency, msId) {
     if (currency && msId) {
         try {
             const response = await axios.get(

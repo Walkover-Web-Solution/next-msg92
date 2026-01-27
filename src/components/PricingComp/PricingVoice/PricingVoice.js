@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { MdCheck } from 'react-icons/md';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
-import GetCurrencySymbol from '@/utils/getCurrencySymbol';
+import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
 import axios from 'axios';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import getURL from '@/utils/getURL';

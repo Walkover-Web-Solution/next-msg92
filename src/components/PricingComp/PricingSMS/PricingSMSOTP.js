@@ -5,7 +5,7 @@ import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import countries from '@/data/countries.json';
 import { Typeahead } from 'react-bootstrap-typeahead';
-import GetCurrencySymbol from '@/utils/getCurrencySymbol';
+import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
 import GetCountryDetails from '@/utils/getCurrentCountry';
 import getURL from '@/utils/getURL';
 

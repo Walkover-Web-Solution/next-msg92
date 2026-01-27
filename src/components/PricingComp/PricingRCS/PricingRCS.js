@@ -1,4 +1,4 @@
-import GetCurrencySymbol from '@/utils/getCurrencySymbol';
+import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
 import GetCountryDetails from '@/utils/getCurrentCountry';
 import axios from 'axios';
 import { useEffect, useState } from 'react';

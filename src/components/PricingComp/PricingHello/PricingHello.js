@@ -1,12 +1,12 @@
-import getSubscriptions from '@/utils/getSubscription';
+import getSubscriptions from '@/utils/pricing/getSubscription';
 import { useState, useEffect, useCallback } from 'react';
 import { MdCheck, MdClose } from 'react-icons/md';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
-import GetCurrencySymbol from '@/utils/getCurrencySymbol';
+import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
 import getURL from '@/utils/getURL';
 import CalculateHelloPricing from './calculateHelloPricing';
-import getPlanServices from '@/utils/getPlanServices';
+import getPlanServices from '@/utils/pricing/getPlanServices';
 
 export default function PricingHello({ data, country }) {
     const { currency, symbol } = GetCurrencySymbol(country);

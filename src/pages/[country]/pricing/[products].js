@@ -1,6 +1,6 @@
 import PricingComp from '@/components/PricingComp/PricingComp';
 import getCommonCompData from '@/utils/getCommonCompData';
-import getPricing from '@/utils/getPricing';
+import getPricing from '@/utils/pricing/getPricing';
 
 export default function PricingCountryPage({ pricingData, pageInfo, pageData, commonData, products, country }) {
     return (
