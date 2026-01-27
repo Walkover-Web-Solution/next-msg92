@@ -1,22 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
-const RATE_DATA = [
-    { country: 'Singapore', code: '+65', currency: 'INR', rate: '₹1.20' },
-    { country: 'France', code: '+33', currency: 'INR', rate: '₹1.90' },
-    { country: 'Japan', code: '+81', currency: 'INR', rate: '₹2.50' },
-    { country: 'Brazil', code: '+55', currency: 'INR', rate: '₹1.10' },
-    { country: 'China', code: '+86', currency: 'INR', rate: '₹1.50' },
-    { country: 'South Africa', code: '+27', currency: 'INR', rate: '₹2.10' },
-    { country: 'Russia', code: '+7', currency: 'INR', rate: '₹3.00' },
-    { country: 'Italy', code: '+39', currency: 'INR', rate: '₹1.85' },
-    { country: 'Spain', code: '+34', currency: 'INR', rate: '₹1.75' },
-    { country: 'Netherlands', code: '+31', currency: 'INR', rate: '₹1.95' },
-];
-
-export default function DialPlan() {
+export default function DialPlan({ pricingData, symbol }) {
     const [search, setSearch] = useState('');
 
-    const filteredRates = RATE_DATA.filter((item) => item.country.toLowerCase().includes(search.toLowerCase()));
+    const { headers, data, planName } = useMemo(() => {
+        if (!Array.isArray(pricingData) || pricingData.length === 0) {
+            return { headers: [], data: [], planName: null };
+        }
+        const planWithDial = pricingData.find((p) => p?.dial_plan?.data?.length > 0) ?? pricingData[0];
+        const dp = planWithDial?.dial_plan ?? { headers: [], data: [] };
+        let headers = Array.isArray(dp.headers) ? dp.headers : [];
+        const data = Array.isArray(dp.data) ? dp.data : [];
+        if (headers.length === 0 && data.length > 0 && typeof data[0] === 'object' && data[0] !== null) {
+            headers = Object.keys(data[0]);
+        }
+        const name = planWithDial?.slug
+            ? String(planWithDial.slug).charAt(0).toUpperCase() + String(planWithDial.slug).slice(1)
+            : null;
+        return { headers, data, planName: name };
+    }, [pricingData]);
+    const searchLower = search.trim().toLowerCase();
+    const filteredData = useMemo(() => {
+        if (!searchLower || !data?.length) return data ?? [];
+        const firstKey =
+            headers?.[0] ?? (typeof data[0] === 'object' && data[0] !== null ? Object.keys(data[0])[0] : null);
+        if (!firstKey) return data;
+        return data.filter((row) => {
+            const val = Array.isArray(row) ? row[0] : row[firstKey];
+            return String(val ?? '')
+                .toLowerCase()
+                .includes(searchLower);
+        });
+    }, [data, headers, searchLower]);
+
+    if (!data?.length) return null;
+
+    const colCount = headers?.length || (data[0] && typeof data[0] === 'object' ? Object.keys(data[0]).length : 0);
 
     return (
         <section className='w-full my-16'>
@@ -31,14 +50,16 @@ export default function DialPlan() {
                 <div className='mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
                     <div>
                         <h3 className='text-lg font-semibold text-gray-900'>Dialplan Rates</h3>
-                        <p className='text-sm text-gray-600'>
-                            Showing rates for <span className='font-medium text-blue-600'>Alpha</span> plan
-                        </p>
+                        {planName && (
+                            <p className='text-sm text-gray-600'>
+                                Showing rates for <span className='font-medium text-blue-600'>{planName}</span> plan
+                            </p>
+                        )}
                     </div>
                     <div className='relative w-full sm:w-64'>
                         <input
                             type='text'
-                            placeholder='Search country...'
+                            placeholder='Search...'
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                             className='w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500'
@@ -50,27 +71,42 @@ export default function DialPlan() {
                         <table className='w-full border-collapse text-sm'>
                             <thead className='sticky top-0 bg-gray-50 z-10'>
                                 <tr className='border-b border-gray-200'>
-                                    <th className='px-4 py-3 text-left font-medium text-gray-500'>COUNTRY</th>
-                                    <th className='px-4 py-3 text-left font-medium text-gray-500'>CODE</th>
-                                    <th className='px-4 py-3 text-left font-medium text-gray-500'>CURRENCY</th>
-                                    <th className='px-4 py-3 text-left font-medium text-gray-500'>RATE (PER UNIT)</th>
+                                    {(headers.length ? headers : colCount ? ['—'] : []).map((h, i) => (
+                                        <th key={i} className='px-4 py-3 text-left font-medium text-gray-500'>
+                                            {typeof h === 'string' ? h.toUpperCase() : h}
+                                        </th>
+                                    ))}
                                 </tr>
                             </thead>
-
                             <tbody>
-                                {filteredRates.map((item, idx) => (
+                                {filteredData.map((row, idx) => (
                                     <tr key={idx} className='border-b border-gray-200 last:border-b-0'>
-                                        <td className='px-4 py-3 text-gray-900'>{item.country}</td>
-                                        <td className='px-4 py-3 text-gray-600'>{item.code}</td>
-                                        <td className='px-4 py-3 text-gray-600'>{item.currency}</td>
-                                        <td className='px-4 py-3 font-medium text-green-600'>{item.rate}</td>
+                                        {Array.isArray(row)
+                                            ? row.map((cell, i) => (
+                                                  <td
+                                                      key={i}
+                                                      className={`px-4 py-3 ${i === row.length - 1 ? 'font-medium text-green-600' : 'text-gray-600'}`}
+                                                  >
+                                                      {cell}
+                                                  </td>
+                                              ))
+                                            : Object.values(row).map((cell, i) => (
+                                                  <td
+                                                      key={i}
+                                                      className={`px-4 py-3 ${i === Object.keys(row).length - 1 ? 'font-medium text-green-600' : 'text-gray-600'}`}
+                                                  >
+                                                      {cell}
+                                                  </td>
+                                              ))}
                                     </tr>
                                 ))}
-
-                                {filteredRates.length === 0 && (
+                                {filteredData.length === 0 && (
                                     <tr>
-                                        <td colSpan={4} className='px-4 py-6 text-center text-sm text-gray-500'>
-                                            No countries found
+                                        <td
+                                            colSpan={colCount || 4}
+                                            className='px-4 py-6 text-center text-sm text-gray-500'
+                                        >
+                                            No results found
                                         </td>
                                     </tr>
                                 )}

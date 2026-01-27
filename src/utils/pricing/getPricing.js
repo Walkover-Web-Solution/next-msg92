@@ -1,8 +1,6 @@
 import axios from 'axios';
 import getPlanServices from './getPlanServices';
 
-const products = ['segmento', 'email', 'hello', 'rcs'];
-
 export default async function getPricing(country, page) {
     const msId = msIds[page];
     const currencySymbol = currency[country] || 'USD';
@@ -33,6 +31,7 @@ export default async function getPricing(country, page) {
         return {};
     }
 }
+const products = ['segmento', 'email', 'hello', 'rcs'];
 const msIds = {
     'hello': '7',
     'segmento': '2',
@@ -77,10 +76,9 @@ export function getSimplifiedPlans(currency, plans) {
                 headers: plan?.dial_plan?.headers ?? [],
                 data: plan?.dial_plan?.data ?? [],
             },
+            extras: getPlanServices(plan, currency),
         });
     });
-
-    console.log('🚀 ~ getSimplifiedPlans ~ simplifiedPlans:', simplifiedPlans);
     return simplifiedPlans;
 }
 

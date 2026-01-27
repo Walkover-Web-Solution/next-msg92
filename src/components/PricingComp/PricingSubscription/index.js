@@ -5,18 +5,18 @@ import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
 import PlanToggle from '../PlanToggle/PlanToggle';
 import PricingPlans from '../PricingPlans/PricingPlans';
 import DialPlan from '../DialPlan/DialPlan';
+import ComparePlans from '../ComparePlans/ComparePlans';
 
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {
-    console.log('🚀 ~ PricingSubscription ~ pricingData:', pricingData);
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
     const [hasYearly, setHasYearly] = useState(false);
 
     useEffect(() => {
-        const yearlyPlan = Array.isArray(pricingData)
-            ? pricingData.find((plan) => plan?.amount?.plan_type === 'Yearly')
-            : undefined;
-        setHasYearly(!!yearlyPlan);
+        const hasYearlyPlans = Array.isArray(pricingData)
+            ? pricingData.some((plan) => plan?.amount?.yearly != null)
+            : false;
+        setHasYearly(!!hasYearlyPlans);
     }, [pricingData]);
 
     return (
@@ -25,9 +25,9 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                 <h1 className='text-2xl font-semibold capitalize'>{`${pageInfo?.product} Pricing`}</h1>
                 <div className='flex flex-col w-full gap-6'>
                     <PlanToggle tabtype={tabtype} setTabtype={setTabtype} hasYearly={hasYearly} />
-                    <PricingPlans />
-                    <DialPlan />
-                    {/* <ComparePlans pricingData={pricingData} pageInfo={pageInfo} tabtype={tabtype} /> */}
+                    <PricingPlans pricingData={pricingData} tabtype={tabtype} symbol={symbol} />
+                    <DialPlan pricingData={pricingData} symbol={symbol} />
+                    <ComparePlans pricingData={pricingData} symbol={symbol} tabtype={tabtype} />
                     <ConnectWithTeam
                         product={pageInfo?.product}
                         href={pageInfo?.product}

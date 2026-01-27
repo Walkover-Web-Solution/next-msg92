@@ -1,43 +1,20 @@
-import { useRef } from 'react';
+import { useRef, useMemo } from 'react';
 import { MdCheck, MdClose, MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
-const plans = ['Starter', 'Basic', 'Alpha', 'Beta', 'Gamma', 'Omega', 'Enterprise'];
+function formatPrice(symbol, amount) {
+    if (amount == null) return '—';
+    const num = Number(amount);
+    if (Number.isNaN(num)) return '—';
+    return `${symbol}${num.toLocaleString()}`;
+}
 
-const data = [
-    {
-        label: 'Price',
-        values: ['₹2,000', '₹4,600', '₹7,500', '₹12,000', '₹20,000', '₹35,000', 'Custom'],
-        isPrice: true,
-    },
+function capitalizeSlug(slug) {
+    if (!slug) return 'Plan';
+    const s = String(slug);
+    return s.charAt(0).toUpperCase() + s.slice(1);
+}
 
-    { label: 'Dialplan Access', values: [false, false, true, true, true, true, true] },
-    { label: 'SMTP Relay', values: [true, true, true, true, true, true, true] },
-    { label: 'HTTP API', values: [true, true, true, true, true, true, true] },
-    { label: 'Real-time Logs', values: [true, true, true, true, true, true, true] },
-    { label: 'Sub-accounts', values: [true, true, true, true, true, true, true] },
-    { label: 'Template Engine', values: [true, true, true, true, true, true, true] },
-
-    { label: 'Webhooks', values: [false, true, true, true, true, true, true] },
-    { label: 'Dedicated IP', values: [false, true, true, true, true, true, true] },
-
-    { label: 'A/B Testing', values: [false, false, true, true, true, true, true] },
-    { label: 'Suppression Management', values: [false, false, true, true, true, true, true] },
-
-    { label: '24/7 Support', values: [false, false, false, true, true, true, true] },
-    { label: 'Single Sign-On (SSO)', values: [false, false, false, true, true, true, true] },
-
-    { label: 'Custom Data Retention', values: [false, false, false, false, true, true, true] },
-    { label: 'Priority Sending', values: [false, false, false, false, true, true, true] },
-
-    // 🔥 Added advanced / enterprise-grade rows
-    { label: 'Dedicated Account Manager', values: [false, false, false, false, true, true, true] },
-    { label: 'SLA Uptime Guarantee', values: [false, false, false, false, true, true, true] },
-    { label: 'Custom Integrations', values: [false, false, false, false, false, true, true] },
-    { label: 'Onboarding & Training', values: [false, false, false, false, false, true, true] },
-    { label: 'Security & Compliance Review', values: [false, false, false, false, false, true, true] },
-];
-
-export default function ComparePlans() {
+export default function ComparePlans({ pricingData, symbol, tabtype }) {
     const tableRef = useRef(null);
 
     const scrollLeft = () => {
@@ -48,10 +25,48 @@ export default function ComparePlans() {
         tableRef.current?.scrollBy({ left: 300, behavior: 'smooth' });
     };
 
+    const { planNames, rows } = useMemo(() => {
+        if (!Array.isArray(pricingData) || pricingData.length === 0) {
+            return { planNames: [], rows: [] };
+        }
+        const sym = symbol ?? '₹';
+        const isMonthly = tabtype === 'Monthly';
+
+        const planNames = pricingData.map((p) => capitalizeSlug(p?.slug));
+
+        const priceValues = pricingData.map((p) =>
+            formatPrice(sym, isMonthly ? p?.amount?.monthly : p?.amount?.yearly)
+        );
+
+        const seen = new Set();
+        const featureNames = [];
+        pricingData.forEach((p) => {
+            (p?.plan_features ?? []).forEach((f) => {
+                const name = f?.name?.trim();
+                if (name && !seen.has(name)) {
+                    seen.add(name);
+                    featureNames.push(name);
+                }
+            });
+        });
+
+        const featureRows = featureNames.map((label) => ({
+            label,
+            values: pricingData.map(
+                (plan) => plan?.plan_features?.find((f) => f?.name === label)?.is_included ?? false
+            ),
+        }));
+
+        const rows = [{ label: 'Price', values: priceValues, isPrice: true }, ...featureRows];
+
+        return { planNames, rows };
+    }, [pricingData, symbol, tabtype]);
+
+    if (planNames.length === 0 || rows.length === 0) return null;
+
     return (
-        <section className='w-full px-4 sm:px-6 lg:px-8 my-16'>
+        <section className='w-full my-16'>
             <div className='mx-auto max-w-7xl'>
-                {/* Heading */}
                 <div className='mb-8 max-w-3xl'>
                     <h2 className='text-2xl sm:text-3xl font-semibold text-gray-900'>Detailed Feature Comparison</h2>
                     <p className='mt-2 text-sm sm:text-base text-gray-600'>
@@ -60,10 +75,8 @@ export default function ComparePlans() {
                     </p>
                 </div>
 
-                {/* Compare header + arrows */}
                 <div className='mb-4 flex items-center justify-between'>
                     <h3 className='text-lg font-semibold text-gray-900'>Compare Plans</h3>
-
                     <div className='flex items-center gap-2'>
                         <button
                             onClick={scrollLeft}
@@ -72,7 +85,6 @@ export default function ComparePlans() {
                         >
                             <MdChevronLeft className='text-lg' />
                         </button>
-
                         <button
                             onClick={scrollRight}
                             aria-label='Scroll right'
@@ -83,48 +95,32 @@ export default function ComparePlans() {
                     </div>
                 </div>
 
-                {/* Table */}
                 <div ref={tableRef} className='overflow-x-auto rounded-xl border border-gray-200 bg-white'>
                     <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                         <thead className='bg-gray-50'>
                             <tr className='border-b border-gray-200'>
-                                <th
-                                    className='w-[210px] px-4 py-4 text-left font-medium text-gray-500 
-               sticky left-0 bg-gray-50 z-20 
-               border-r border-gray-200'
-                                >
+                                <th className='w-[210px] px-4 py-4 text-left font-medium text-gray-500 sticky left-0 bg-gray-50 z-20 border-r border-gray-200'>
                                     FEATURES
                                 </th>
-
-                                {plans.map((plan) => (
+                                {planNames.map((name, i) => (
                                     <th
-                                        key={plan}
+                                        key={i}
                                         className='w-[180px] px-4 py-4 text-center font-semibold text-gray-900 border-l border-gray-200'
                                     >
-                                        {plan}
+                                        {name}
                                     </th>
                                 ))}
                             </tr>
                         </thead>
-
                         <tbody>
-                            {data.map((row, rowIndex) => (
+                            {rows.map((row, rowIndex) => (
                                 <tr
                                     key={row.label}
-                                    className={`border-b border-gray-200 ${
-                                        rowIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'
-                                    }`}
+                                    className={`border-b border-gray-200 ${rowIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
                                 >
-                                    {/* Feature column */}
-                                    <td
-                                        className='w-[210px] px-4 py-4 text-gray-600 whitespace-nowrap 
-               sticky left-0 bg-inherit z-20 
-               border-r border-gray-200'
-                                    >
+                                    <td className='w-[210px] px-4 py-4 text-gray-600 whitespace-nowrap sticky left-0 bg-inherit z-20 border-r border-gray-200'>
                                         {row.label}
                                     </td>
-
-                                    {/* Plan columns */}
                                     {row.values.map((value, idx) => (
                                         <td
                                             key={idx}
