@@ -1,7 +1,8 @@
 {
     "HeadComp": {
         "title": "Customer knowledgebase platform by MSG91-Singapore",
-        "description": "Empower customers with a centralized knowledge base. Provide instant answers to queries about your products and services for improved satisfaction."
+        "description": "Empower customers with a centralized knowledge base. Provide instant answers to queries about your products and services for improved satisfaction.",
+        "keywords": "Customer KnowledgeBase Platform"
     },
     "BannerComp": {
         "slug": "knowledgebase",

@@ -1,7 +1,8 @@
 {
     "HeadComp": {
         "title": "Transactional Email Services in Brazil | Email Api Provider - MSG91",
-        "description": "Our best email api integration for application-driven emails gives you an easy way to automate your sending based on user actions. Send, receive, and track emails with MSG91's best email api service."
+        "description": "Our best email api integration for application-driven emails gives you an easy way to automate your sending based on user actions. Send, receive, and track emails with MSG91's best email api service.",
+        "keywords": "Email Marketing Platform"
     },
     "BannerComp": {
         "slug": "email",
