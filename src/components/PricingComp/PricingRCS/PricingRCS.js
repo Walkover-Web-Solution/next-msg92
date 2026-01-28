@@ -151,7 +151,6 @@ export default function PricingRCS({ country, pageData }) {
                         </>
                     )}
                     <ConnectWithTeam product={'RCS'} pageData={pageData?.connectComp} href={'rcs'} isPlan={false} />
-                    <ComparePlans />
                 </div>
             </div>
 

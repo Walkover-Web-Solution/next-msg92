@@ -11,7 +11,6 @@ import FooterComp from '../FooterComp/FooterComp';
 import PricingSubscription from './PricingSubscription';
 
 export default function PricingComp({ pricingData, pageInfo, pageData, products, commonData, country }) {
-    console.log('🚀 ~ PricingComp ~ commonData:', commonData);
     if (pricingData) {
         return (
             <>

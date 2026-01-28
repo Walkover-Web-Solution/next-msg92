@@ -1,12 +1,14 @@
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useEffect } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import PricingPlanCard from './PricingPlanCard/PricingPlanCard';
+
+const FIXED_LOCALE = 'en-US';
 
 function formatPrice(symbol, amount) {
     if (amount == null) return '—';
     const num = Number(amount);
     if (Number.isNaN(num)) return '—';
-    return `${symbol}${num.toLocaleString()}`;
+    return `${symbol}${num.toLocaleString(FIXED_LOCALE)}`;
 }
 
 function simplifiedPlanToCard(plan, tabtype, symbol) {
@@ -18,7 +20,7 @@ function simplifiedPlanToCard(plan, tabtype, symbol) {
         plan?.extras?.servicesList?.map((s) =>
             s.free_credits === -1
                 ? `Unlimited ${s.servicename}`
-                : `${s.free_credits?.toLocaleString() ?? ''} ${s.servicename}`
+                : `${Number(s.free_credits).toLocaleString(FIXED_LOCALE)} ${s.servicename}`
         ) ?? [];
 
     const features =
@@ -30,6 +32,8 @@ function simplifiedPlanToCard(plan, tabtype, symbol) {
 
     const title = plan?.slug ? String(plan.slug).charAt(0).toUpperCase() + String(plan.slug).slice(1) : 'Plan';
 
+    const hasDialPlan = plan?.dial_plan?.data?.length > 0;
+
     return {
         slug: plan?.slug,
         title,
@@ -38,13 +42,14 @@ function simplifiedPlanToCard(plan, tabtype, symbol) {
         ctaText: 'Get Started',
         showLink: true,
         linkText: 'View Calling Rates',
+        hasDialPlan,
         included,
         features,
         extra,
     };
 }
 
-export default function PricingPlans({ pricingData, tabtype, symbol }) {
+export default function PricingPlans({ pricingData, tabtype, symbol, setScrollApi }) {
     const scrollRef = useRef(null);
 
     const scrollLeft = () => {
@@ -54,6 +59,16 @@ export default function PricingPlans({ pricingData, tabtype, symbol }) {
     const scrollRight = () => {
         scrollRef.current?.scrollBy({ left: 320, behavior: 'smooth' });
     };
+
+    // 👇 expose controls to parent
+    useEffect(() => {
+        if (setScrollApi) {
+            setScrollApi({
+                scrollLeft,
+                scrollRight,
+            });
+        }
+    }, [setScrollApi]);
 
     const cards = useMemo(() => {
         if (!Array.isArray(pricingData) || pricingData.length === 0) return [];
@@ -65,27 +80,8 @@ export default function PricingPlans({ pricingData, tabtype, symbol }) {
     if (cards.length === 0) return null;
 
     return (
-        <section className='w-full my-16'>
+        <section className='w-full py-4'>
             <div className='mx-auto max-w-7xl'>
-                <div className='mb-6 flex items-center justify-between'>
-                    <div className='flex items-center gap-2'>
-                        <button
-                            onClick={scrollLeft}
-                            className='flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-600 hover:bg-gray-100'
-                            aria-label='Scroll left'
-                        >
-                            <MdChevronLeft />
-                        </button>
-                        <button
-                            onClick={scrollRight}
-                            className='flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-600 hover:bg-gray-100'
-                            aria-label='Scroll right'
-                        >
-                            <MdChevronRight />
-                        </button>
-                    </div>
-                </div>
-
                 <div ref={scrollRef} className='flex gap-6 overflow-x-auto pb-4 scroll-smooth'>
                     {cards.map((card, index) => (
                         <PricingPlanCard key={card.slug ?? `card-${index}`} planData={card} />
@@ -94,7 +90,13 @@ export default function PricingPlans({ pricingData, tabtype, symbol }) {
 
                 <div className='mt-6 flex items-center justify-between text-sm'>
                     <button className='text-blue-600 hover:underline'>Calculate pricing</button>
-                    <button className='text-blue-600 hover:underline'>Compare all features ↓</button>
+                    <button
+                        type='button'
+                        onClick={() => document.getElementById('compare-plans')?.scrollIntoView({ behavior: 'smooth' })}
+                        className='text-blue-600 hover:underline'
+                    >
+                        Compare all features ↓
+                    </button>
                 </div>
             </div>
         </section>

@@ -11,6 +11,7 @@ export default function PricingPlanCard({ planData }) {
         ctaText = 'Get Started',
         showLink = true,
         linkText = 'View Calling Rates',
+        hasDialPlan = false,
         included = [],
         features = [],
         extra = [],
@@ -36,8 +37,8 @@ export default function PricingPlanCard({ planData }) {
                 </button>
             </div>
 
-            {/* Optional link */}
-            {showLink && (
+            {/* Optional link – only when dial_plan exists */}
+            {showLink && hasDialPlan && (
                 <div className='my-2'>
                     <button className='text-sm text-blue-600 hover:underline'>{linkText}</button>
                 </div>

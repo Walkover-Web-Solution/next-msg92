@@ -28,7 +28,7 @@ export default function CalculatePricingSegmento({ plans, currency, symbol, tabt
                                 value={contactsInput}
                                 type='number'
                                 placeholder='Enter No. of Contacts'
-                                className='input  input-bordered w-full max-w-xs'
+                                className='input input-bordered w-full max-w-xs'
                                 onChange={(e) => setContactsInput(e.target.value)}
                                 onKeyPress={(e) => {
                                     if (e.key === 'Enter') {

@@ -1,19 +1,6 @@
 import { useRef, useMemo } from 'react';
 import { MdCheck, MdClose, MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
-function formatPrice(symbol, amount) {
-    if (amount == null) return '—';
-    const num = Number(amount);
-    if (Number.isNaN(num)) return '—';
-    return `${symbol}${num.toLocaleString()}`;
-}
-
-function capitalizeSlug(slug) {
-    if (!slug) return 'Plan';
-    const s = String(slug);
-    return s.charAt(0).toUpperCase() + s.slice(1);
-}
-
 export default function ComparePlans({ pricingData, symbol, tabtype }) {
     const tableRef = useRef(null);
 
@@ -65,17 +52,17 @@ export default function ComparePlans({ pricingData, symbol, tabtype }) {
     if (planNames.length === 0 || rows.length === 0) return null;
 
     return (
-        <section className='w-full my-16'>
+        <section id='compare-plans' className='w-full py-6'>
             <div className='mx-auto max-w-7xl'>
-                <div className='mb-8 max-w-3xl'>
+                <div className='flex flex-col py-4'>
                     <h2 className='text-2xl sm:text-3xl font-semibold text-gray-900'>Detailed Feature Comparison</h2>
-                    <p className='mt-2 text-sm sm:text-base text-gray-600'>
+                    <p className='text-sm sm:text-base text-gray-600'>
                         Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities,
                         we have the right set of tools for your growth.
                     </p>
                 </div>
 
-                <div className='mb-4 flex items-center justify-between'>
+                <div className='flex py-4 items-center justify-between'>
                     <h3 className='text-lg font-semibold text-gray-900'>Compare Plans</h3>
                     <div className='flex items-center gap-2'>
                         <button
@@ -114,10 +101,7 @@ export default function ComparePlans({ pricingData, symbol, tabtype }) {
                         </thead>
                         <tbody>
                             {rows.map((row, rowIndex) => (
-                                <tr
-                                    key={row.label}
-                                    className={`border-b border-gray-200 ${rowIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
-                                >
+                                <tr key={row.label} className={`border-b border-gray-200 bg-white`}>
                                     <td className='w-[210px] px-4 py-4 text-gray-600 whitespace-nowrap sticky left-0 bg-inherit z-20 border-r border-gray-200'>
                                         {row.label}
                                     </td>
@@ -143,4 +127,19 @@ export default function ComparePlans({ pricingData, symbol, tabtype }) {
             </div>
         </section>
     );
+}
+
+const FIXED_LOCALE = 'en-US';
+
+function formatPrice(symbol, amount) {
+    if (amount == null) return '—';
+    const num = Number(amount);
+    if (Number.isNaN(num)) return '—';
+    return `${symbol}${num.toLocaleString(FIXED_LOCALE)}`;
+}
+
+function capitalizeSlug(slug) {
+    if (!slug) return 'Plan';
+    const s = String(slug);
+    return s.charAt(0).toUpperCase() + s.slice(1);
 }

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 export default function CalculateHelloPricing({ plan, currency, symbol, tabtype = 'Monthly' }) {
+    console.log('🚀 ~ CalculateHelloPricing ~ plan:', plan);
     const [isCalculationModalOpen, setIsCalculationModalOpen] = useState(false);
     const [serviceUsageMap, setServiceUsageMap] = useState({});
     const [usage, setUsage] = useState({});
