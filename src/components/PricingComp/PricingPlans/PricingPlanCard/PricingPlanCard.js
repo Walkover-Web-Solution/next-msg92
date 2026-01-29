@@ -1,9 +1,7 @@
 import React from 'react';
 import { MdCheck, MdClose, MdChevronRight } from 'react-icons/md';
 
-const MAX_FEATURES_IN_CARD = 5;
-
-export default function PricingPlanCard({ planData }) {
+export default function PricingPlanCard({ planData, isSelected = false, onSelect, onViewCallingRates }) {
     const {
         title,
         price,
@@ -17,34 +15,55 @@ export default function PricingPlanCard({ planData }) {
         extra = [],
     } = planData ?? {};
 
-    const featuresToShow = Array.isArray(features) ? features.slice(0, MAX_FEATURES_IN_CARD) : [];
+    const featuresToShow = Array.isArray(features) ? features.slice(0, 5) : [];
+
+    const handleCardSelect = () => {
+        if (onSelect) onSelect();
+    };
 
     return (
-        <div className='min-w-[300px] rounded-xl border border-gray-200 bg-white px-6 py-6 sm:px-7 sm:py-7'>
-            {/* Title */}
+        <div
+            role='button'
+            tabIndex={0}
+            onClick={handleCardSelect}
+            onKeyDown={(e) => e.key === 'Enter' && handleCardSelect()}
+            className={`min-w-[300px] rounded-xl border bg-white px-6 py-6 sm:px-7 sm:py-7 transition-colors cursor-pointer ${
+                isSelected ? 'border-blue-500 ring-2 ring-blue-200' : 'border-gray-200'
+            }`}
+        >
             <h3 className='text-lg font-semibold text-gray-900'>{title}</h3>
 
-            {/* Price */}
             <div className='my-2'>
                 <span className='text-2xl font-bold text-green-600'>{price}</span>
                 <span className='ml-1 text-sm text-gray-500'>{period}</span>
             </div>
 
             {/* CTA */}
-            <div className='my-4'>
-                <button className='w-full rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50'>
+            <div className='my-4' onClick={(e) => e.stopPropagation()}>
+                <button
+                    type='button'
+                    className='w-full rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50'
+                >
                     {ctaText}
                 </button>
             </div>
 
-            {/* Optional link – only when dial_plan exists */}
             {showLink && hasDialPlan && (
                 <div className='my-2'>
-                    <button className='text-sm text-blue-600 hover:underline'>{linkText}</button>
+                    <button
+                        type='button'
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            if (onViewCallingRates) onViewCallingRates(planData?.slug);
+                            else onSelect?.();
+                        }}
+                        className='text-sm text-blue-600 hover:underline'
+                    >
+                        {linkText}
+                    </button>
                 </div>
             )}
 
-            {/* Included */}
             {Array.isArray(included) && included.length > 0 && (
                 <Section title='Included'>
                     {included.map((item, idx) => (
@@ -55,7 +74,6 @@ export default function PricingPlanCard({ planData }) {
                 </Section>
             )}
 
-            {/* Features – only first 5 */}
             {featuresToShow.length > 0 && (
                 <Section title='Features'>
                     {featuresToShow.map((item, idx) => {
@@ -76,7 +94,6 @@ export default function PricingPlanCard({ planData }) {
                 </Section>
             )}
 
-            {/* Extra */}
             {Array.isArray(extra) && extra.length > 0 && (
                 <Section title='Extra @'>
                     {extra.map((item, idx) => (

@@ -49,7 +49,15 @@ function simplifiedPlanToCard(plan, tabtype, symbol) {
     };
 }
 
-export default function PricingPlans({ pricingData, tabtype, symbol, setScrollApi }) {
+export default function PricingPlans({
+    pricingData,
+    tabtype,
+    symbol,
+    setScrollApi,
+    selectedPlanSlug,
+    onSelectPlan,
+    onViewCallingRates,
+}) {
     const scrollRef = useRef(null);
 
     const scrollLeft = () => {
@@ -81,10 +89,16 @@ export default function PricingPlans({ pricingData, tabtype, symbol, setScrollAp
 
     return (
         <section className='w-full py-4'>
-            <div className='mx-auto max-w-7xl'>
+            <div className='max-w-7xl'>
                 <div ref={scrollRef} className='flex gap-6 overflow-x-auto pb-4 scroll-smooth'>
                     {cards.map((card, index) => (
-                        <PricingPlanCard key={card.slug ?? `card-${index}`} planData={card} />
+                        <PricingPlanCard
+                            key={card.slug ?? `card-${index}`}
+                            planData={card}
+                            isSelected={card.slug === selectedPlanSlug}
+                            onSelect={() => onSelectPlan?.(card.slug)}
+                            onViewCallingRates={onViewCallingRates}
+                        />
                     ))}
                 </div>
 

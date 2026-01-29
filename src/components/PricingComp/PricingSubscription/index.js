@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
@@ -9,11 +9,17 @@ import ComparePlans from '../ComparePlans/ComparePlans';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {
-    console.log('🚀 ~ PricingSubscription ~ pricingData:', pricingData);
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
     const [hasYearly, setHasYearly] = useState(false);
     const [scrollApi, setScrollApi] = useState(null);
+    const [selectedPlanSlug, setSelectedPlanSlug] = useState(null);
+    const dialPlanRef = useRef(null);
+
+    const onViewCallingRates = useCallback((slug) => {
+        setSelectedPlanSlug(slug);
+        dialPlanRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, []);
 
     useEffect(() => {
         const hasYearlyPlans = Array.isArray(pricingData)
@@ -21,6 +27,15 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
             : false;
         setHasYearly(!!hasYearlyPlans);
     }, [pricingData]);
+
+    // Default selected plan when pricingData loads, or when current selection is no longer in the list
+    useEffect(() => {
+        if (!Array.isArray(pricingData) || pricingData.length === 0) return;
+        const selectionStillValid = selectedPlanSlug != null && pricingData.some((p) => p?.slug === selectedPlanSlug);
+        if (selectionStillValid) return;
+        const firstWithDial = pricingData.find((p) => p?.dial_plan?.data?.length > 0) ?? pricingData[0];
+        setSelectedPlanSlug(firstWithDial?.slug ?? null);
+    }, [pricingData, selectedPlanSlug]);
 
     return (
         <>
@@ -54,8 +69,13 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         tabtype={tabtype}
                         symbol={symbol}
                         setScrollApi={setScrollApi}
+                        selectedPlanSlug={selectedPlanSlug}
+                        onSelectPlan={setSelectedPlanSlug}
+                        onViewCallingRates={onViewCallingRates}
                     />
-                    <DialPlan pricingData={pricingData} symbol={symbol} />
+                    <div ref={dialPlanRef}>
+                        <DialPlan pricingData={pricingData} symbol={symbol} selectedPlanSlug={selectedPlanSlug} />
+                    </div>
                     <ComparePlans pricingData={pricingData} symbol={symbol} tabtype={tabtype} />
                     <ConnectWithTeam
                         product={pageInfo?.product}

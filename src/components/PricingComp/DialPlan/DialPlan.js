@@ -1,41 +1,45 @@
-import React, { useState, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
-export default function DialPlan({ pricingData, symbol }) {
+export default function DialPlan({ pricingData, selectedPlanSlug }) {
     const [search, setSearch] = useState('');
 
-    const { headers, data, planName } = useMemo(() => {
+    useEffect(() => {
+        setSearch('');
+    }, [selectedPlanSlug]);
+
+    const { columns, data, planName } = useMemo(() => {
         if (!Array.isArray(pricingData) || pricingData.length === 0) {
-            return { headers: [], data: [], planName: null };
+            return { columns: [], data: [], planName: null };
         }
-        const planWithDial = pricingData.find((p) => p?.dial_plan?.data?.length > 0) ?? pricingData[0];
-        const dp = planWithDial?.dial_plan ?? { headers: [], data: [] };
-        let headers = Array.isArray(dp.headers) ? dp.headers : [];
-        const data = Array.isArray(dp.data) ? dp.data : [];
-        if (headers.length === 0 && data.length > 0 && typeof data[0] === 'object' && data[0] !== null) {
-            headers = Object.keys(data[0]);
-        }
-        const name = planWithDial?.slug
-            ? String(planWithDial.slug).charAt(0).toUpperCase() + String(planWithDial.slug).slice(1)
-            : null;
-        return { headers, data, planName: name };
-    }, [pricingData]);
-    const searchLower = search.trim().toLowerCase();
+
+        const selectedPlan =
+            pricingData.find((p) => p.slug === selectedPlanSlug) ||
+            pricingData.find((p) => p?.dial_plan?.data?.length) ||
+            pricingData[0];
+
+        const dialPlan = selectedPlan?.dial_plan || {};
+
+        return {
+            columns: dialPlan.columns || [],
+            data: dialPlan.data || [],
+            planName: selectedPlan?.slug ?? null,
+        };
+    }, [pricingData, selectedPlanSlug]);
+
     const filteredData = useMemo(() => {
-        if (!searchLower || !data?.length) return data ?? [];
-        const firstKey =
-            headers?.[0] ?? (typeof data[0] === 'object' && data[0] !== null ? Object.keys(data[0])[0] : null);
+        if (!search || !data.length) return data;
+
+        const firstKey = columns[0]?.key;
         if (!firstKey) return data;
-        return data.filter((row) => {
-            const val = Array.isArray(row) ? row[0] : row[firstKey];
-            return String(val ?? '')
+
+        return data.filter((row) =>
+            String(row[firstKey] ?? '')
                 .toLowerCase()
-                .includes(searchLower);
-        });
-    }, [data, headers, searchLower]);
+                .includes(search.toLowerCase())
+        );
+    }, [data, columns, search]);
 
-    if (!data?.length) return null;
-
-    const colCount = headers?.length || (data[0] && typeof data[0] === 'object' ? Object.keys(data[0]).length : 0);
+    if (!data.length || !columns.length) return null;
 
     return (
         <section className='w-full my-16'>
@@ -43,10 +47,10 @@ export default function DialPlan({ pricingData, symbol }) {
                 <div className='mb-8'>
                     <h2 className='text-2xl font-semibold text-gray-900'>Global Calling Rates</h2>
                     <p className='mt-2 text-sm text-gray-600'>
-                        Experience premium voice quality with our competitive international calling rates. Connect with
-                        customers worldwide without breaking the bank.
+                        Competitive international calling rates across countries.
                     </p>
                 </div>
+
                 <div className='mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
                     <div>
                         <h3 className='text-lg font-semibold text-gray-900'>Dialplan Rates</h3>
@@ -56,56 +60,46 @@ export default function DialPlan({ pricingData, symbol }) {
                             </p>
                         )}
                     </div>
-                    <div className='relative w-full sm:w-64'>
-                        <input
-                            type='text'
-                            placeholder='Search...'
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                            className='w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500'
-                        />
-                    </div>
+
+                    <input
+                        type='text'
+                        placeholder='Search country...'
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        className='w-full sm:w-64 rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500'
+                    />
                 </div>
+
                 <div className='rounded-xl border border-gray-200 bg-white'>
-                    <div className='max-h-[420px] overflow-y-scroll scrollbar-none'>
-                        <table className='w-full border-collapse text-sm'>
+                    <div className='max-h-[420px] overflow-x-auto overflow-y-auto'>
+                        <table className='min-w-max w-full border-collapse text-sm'>
                             <thead className='sticky top-0 bg-gray-50 z-10'>
                                 <tr className='border-b border-gray-200'>
-                                    {(headers.length ? headers : colCount ? ['—'] : []).map((h, i) => (
-                                        <th key={i} className='px-4 py-3 text-left font-medium text-gray-500'>
-                                            {typeof h === 'string' ? h.toUpperCase() : h}
+                                    {columns.map((col) => (
+                                        <th
+                                            key={col.key}
+                                            className='px-4 py-3 text-left font-medium text-gray-500 uppercase whitespace-nowrap text-xs tracking-wide'
+                                        >
+                                            {col.label}
                                         </th>
                                     ))}
                                 </tr>
                             </thead>
+
                             <tbody>
                                 {filteredData.map((row, idx) => (
                                     <tr key={idx} className='border-b border-gray-200 last:border-b-0'>
-                                        {Array.isArray(row)
-                                            ? row.map((cell, i) => (
-                                                  <td
-                                                      key={i}
-                                                      className={`px-4 py-3 ${i === row.length - 1 ? 'font-medium text-green-600' : 'text-gray-600'}`}
-                                                  >
-                                                      {cell}
-                                                  </td>
-                                              ))
-                                            : Object.values(row).map((cell, i) => (
-                                                  <td
-                                                      key={i}
-                                                      className={`px-4 py-3 ${i === Object.keys(row).length - 1 ? 'font-medium text-green-600' : 'text-gray-600'}`}
-                                                  >
-                                                      {cell}
-                                                  </td>
-                                              ))}
+                                        {columns.map((col) => (
+                                            <td key={col.key} className='px-4 py-3 text-gray-600 whitespace-nowrap'>
+                                                {row[col.key]}
+                                            </td>
+                                        ))}
                                     </tr>
                                 ))}
+
                                 {filteredData.length === 0 && (
                                     <tr>
-                                        <td
-                                            colSpan={colCount || 4}
-                                            className='px-4 py-6 text-center text-sm text-gray-500'
-                                        >
+                                        <td colSpan={columns.length} className='px-4 py-6 text-center text-gray-500'>
                                             No results found
                                         </td>
                                     </tr>

@@ -29,7 +29,7 @@ export default function ComparePlans({ pricingData, symbol, tabtype }) {
         const featureNames = [];
         pricingData.forEach((p) => {
             (p?.plan_features ?? []).forEach((f) => {
-                const name = f?.name?.trim();
+                const name = (f?.userFriendlyName ?? f?.name ?? f?.key ?? '')?.toString?.()?.trim() || '';
                 if (name && !seen.has(name)) {
                     seen.add(name);
                     featureNames.push(name);
@@ -37,10 +37,12 @@ export default function ComparePlans({ pricingData, symbol, tabtype }) {
             });
         });
 
+        const featureLabel = (f) => (f?.userFriendlyName ?? f?.name ?? f?.key ?? '')?.toString?.()?.trim() || '';
+        const isIncluded = (f) => f?.feature?.is_included ?? f?.is_included ?? false;
         const featureRows = featureNames.map((label) => ({
             label,
             values: pricingData.map(
-                (plan) => plan?.plan_features?.find((f) => f?.name === label)?.is_included ?? false
+                (plan) => isIncluded(plan?.plan_features?.find((f) => featureLabel(f) === label) ?? {}) ?? false
             ),
         }));
 
@@ -49,11 +51,12 @@ export default function ComparePlans({ pricingData, symbol, tabtype }) {
         return { planNames, rows };
     }, [pricingData, symbol, tabtype]);
 
-    if (planNames.length === 0 || rows.length === 0) return null;
+    const hasFeatures = rows.length > 1;
+    if (planNames.length === 0 || !hasFeatures) return null;
 
     return (
         <section id='compare-plans' className='w-full py-6'>
-            <div className='mx-auto max-w-7xl'>
+            <div className='max-w-7xl'>
                 <div className='flex flex-col py-4'>
                     <h2 className='text-2xl sm:text-3xl font-semibold text-gray-900'>Detailed Feature Comparison</h2>
                     <p className='text-sm sm:text-base text-gray-600'>
@@ -103,7 +106,9 @@ export default function ComparePlans({ pricingData, symbol, tabtype }) {
                             {rows.map((row, rowIndex) => (
                                 <tr key={row.label} className={`border-b border-gray-200 bg-white`}>
                                     <td className='w-[210px] px-4 py-4 text-gray-600 whitespace-nowrap sticky left-0 bg-inherit z-20 border-r border-gray-200'>
-                                        {row.label}
+                                        {typeof row.label === 'object'
+                                            ? String(row.label?.userFriendlyName ?? row.label?.key ?? '')
+                                            : row.label}
                                     </td>
                                     {row.values.map((value, idx) => (
                                         <td

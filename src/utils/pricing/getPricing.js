@@ -1,93 +1,157 @@
 import axios from 'axios';
 import getPlanServices from './getPlanServices';
 
-export default async function getPricing(country, page) {
+const subscriptionProducts = ['segmento', 'email', 'hello', 'rcs'];
+
+const msIds = {
+    hello: '7',
+    segmento: '2',
+    email: '1',
+    rcs: '9',
+    whatsapp: '5',
+};
+
+const currencyByCountry = {
+    in: 'INR',
+    us: 'USD',
+    gb: 'GBP',
+};
+
+export default async function getPricing(countryCode, page) {
     const msId = msIds[page];
-    const currencySymbol = currency[country] || 'USD';
-    if (products.includes(page)) {
-        try {
-            const response = await axios.get(
-                `${process.env.SUBSCRIPTION_PRICING_URL}/plans?currency=${currencySymbol}&ms_id=${msId}`
-            );
-            return getSimplifiedPlans(currencySymbol, response.data.data);
-        } catch (error) {
-            throw new Error('Some error on server: ' + error.message);
+    if (!msId) return {};
+
+    const currency = currencyByCountry[countryCode] || 'USD';
+
+    try {
+        const plans = await fetchPlans(currency, msId);
+        const simplifiedPlans = simplifyPlans(plans, currency);
+
+        if (subscriptionProducts.includes(page)) {
+            return simplifiedPlans;
         }
-    } else if (page === 'whatsapp') {
-        try {
-            const response = await axios.get(`${process.env.SUBSCRIPTION_PRICING_URL}/${currencySymbol}&ms_id=${msId}`);
-            const messagePricing =
-                response?.data?.data.sort((a, b) => a.country_name.localeCompare(b.country_name)) || [];
-            const voicePricing = getWhatsAppVoicePricing(currencySymbol) || [];
-            return {
-                messagePricing,
-                voicePricing,
-            };
-        } catch (error) {
-            console.error('There was an error fetching the data!', error);
-            return {};
+
+        if (page === 'whatsapp') {
+            const voicePricing = getWhatsAppVoicePricing(currency);
+            return mergeWhatsAppPricing(simplifiedPlans, voicePricing);
         }
-    } else {
+
         return {};
+    } catch (error) {
+        throw new Error(`Pricing fetch failed: ${error.message}`);
     }
 }
-const products = ['segmento', 'email', 'hello', 'rcs'];
-const msIds = {
-    'hello': '7',
-    'segmento': '2',
-    'email': '1',
-    'rcs': '9',
-    'whatsapp': '5',
-};
 
-const currency = {
-    'in': 'INR',
-    'us': 'USD',
-    'gb': 'GBP',
-};
+/* -------------------------------------------------------------------------- */
+/*                                    API                                     */
+/* -------------------------------------------------------------------------- */
 
-export function getSimplifiedPlans(currency, plans) {
-    const simplifiedPlans = [];
+async function fetchPlans(currency, msId) {
+    const { data } = await axios.get(`${process.env.SUBSCRIPTION_PRICING_URL}/plans`, {
+        params: {
+            currency,
+            ms_id: msId,
+            dial_plan_info: true,
+        },
+    });
 
-    plans?.forEach((plan) => {
-        const planAmounts = plan?.plan_amounts?.filter((amount) => amount?.currency?.short_name === currency);
-        if (!planAmounts?.length) return;
+    return data?.data || [];
+}
 
-        const monthlyAmount = planAmounts.find((a) => a?.plan_type?.name === 'Monthly')?.plan_amount;
-        const yearlyAmount = planAmounts.find((a) => a?.plan_type?.name === 'Yearly')?.plan_amount;
+function extractDialPlan(plan) {
+    const rate = plan?.plan_services
+        ?.flatMap((service) => service?.service_credit?.service_credit_rates || [])
+        ?.find((rate) => rate?.dial_plan_info);
 
-        simplifiedPlans.push({
-            slug: plan?.slug ?? (plan?.name || '').toLowerCase().replace(/\s+/g, '-'),
+    if (!rate?.dial_plan_info) {
+        return { columns: [], data: [] };
+    }
+
+    const { headers = [], data = [] } = rate.dial_plan_info;
+
+    return {
+        columns: headers.map((h) => ({
+            key: h.key,
+            label: h.userFriendlyName || h.key,
+        })),
+        data: data.map((row) => Object.fromEntries(Object.entries(row).map(([key, cell]) => [key, cell?.value ?? '']))),
+    };
+}
+
+function simplifyPlans(plans = [], currency) {
+    return plans.map((plan) => {
+        const amounts = plan?.plan_amounts?.filter((a) => a?.currency?.short_name === currency) || [];
+
+        const getAmount = (type) => amounts.find((a) => a?.plan_type?.name === type)?.plan_amount ?? null;
+
+        return {
+            slug: plan?.slug,
+
             amount: {
-                monthly: monthlyAmount ?? null,
-                yearly: yearlyAmount ?? null,
+                monthly: getAmount('Monthly'),
+                yearly: getAmount('Yearly'),
             },
+
             discount: {
                 type_id: plan?.discount?.type_id ?? 2,
                 value: plan?.discount?.value ?? 0,
                 duration: plan?.discount?.duration ?? 'monthly',
             },
+
             plan_features: (plan?.plan_features || []).map((feature) => ({
-                name: feature?.feature?.name ?? '',
-                is_visible: feature?.is_visible ?? true,
-                is_included: feature?.feature?.is_included ?? false,
+                name: feature?.feature?.name ?? feature?.userFriendlyName ?? feature?.key ?? '',
+                is_visible: feature?.hide === true ? false : (feature?.is_visible ?? true),
+                is_included: feature?.feature?.is_included ?? feature?.is_included ?? false,
             })),
-            dial_plan: {
-                headers: plan?.dial_plan?.headers ?? [],
-                data: plan?.dial_plan?.data ?? [],
-            },
+
+            dial_plan: extractDialPlan(plan),
             extras: getPlanServices(plan, currency),
-        });
+        };
     });
-    return simplifiedPlans;
 }
 
 function getWhatsAppVoicePricing(currency) {
     try {
-        const data = require(`@/data/whatsappVoicePricing.json`);
-        const voicePricing = data[currency?.toLowerCase() || 'usd'];
-        return voicePricing;
-    } catch (error) {
-        console.error('There was an error fetching the data!', error);
+        const data = require('@/data/whatsappVoicePricing.json');
+        return data[currency.toLowerCase()] || [];
+    } catch {
+        return [];
     }
+}
+
+function buildDialPlanFromVoicePricing(pricing = []) {
+    if (!pricing.length) return null;
+
+    return {
+        columns: Object.keys(pricing[0]).map((key) => ({
+            key,
+            label: key,
+        })),
+        data: pricing.map((row) => ({ ...row })),
+    };
+}
+
+function mergeWhatsAppPricing(messagePlans = [], voicePricing = []) {
+    const voiceDialPlan = buildDialPlanFromVoicePricing(voicePricing);
+    if (!voiceDialPlan) return messagePlans;
+
+    if (!messagePlans.length) {
+        return [
+            {
+                slug: 'whatsapp-voice',
+                amount: { monthly: null, yearly: null },
+                discount: { type_id: 2, value: 0, duration: 'monthly' },
+                plan_features: [],
+                dial_plan: voiceDialPlan,
+                extras: { servicesList: [] },
+            },
+        ];
+    }
+
+    messagePlans[0] = {
+        ...messagePlans[0],
+        dial_plan: voiceDialPlan,
+    };
+
+    return messagePlans;
 }
