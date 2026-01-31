@@ -1,48 +1,37 @@
-import axios from 'axios';
+import getDialPlan from './getDialPlan';
+import getPlanServices from './getPlanServices';
 
-export default async function getSubscriptionsFromSimplified(currency, msId) {
-    if (currency && msId) {
-        try {
-            const response = await axios.get(
-                `${process.env.SUBSCRIPTION_PRICING_URL}/plans?currency=${currency}&ms_id=${msId}`
-            );
-            return getSimplifiedPlans(currency, response.data.data);
-        } catch (error) {
-            throw new Error('Some error on server: ' + error.message);
-        }
-    }
-}
-export function getSimplifiedPlans(currency, plans) {
-    let simplifiedPlans = [];
-    simplifiedPlans = plans?.map((plan) => ({
-        'name': plan?.name,
-        'amount': plan?.plan_amounts
-            ?.filter((amount) => amount?.currency?.short_name === currency)
-            ?.map((amount) => amount?.plan_amount),
+/**
+ * Converts raw API plans into a simplified shape for the UI (amounts, discount, features, dial_plan, extras).
+ *
+ * @param {Array<object>} [plans=[]] - Raw plan objects from the subscription API.
+ * @param {string} currency - Currency code used to filter plan_amounts (e.g. 'INR', 'USD').
+ * @returns {Array<object>} Simplified plans with slug, amount { monthly, yearly }, discount, plan_features, dial_plan, and extras.
+ */
+export default function getSimplifiedPlans(plans = [], currency) {
+    return plans.map((plan) => {
+        const amounts = plan?.plan_amounts?.filter((a) => a?.currency?.short_name === currency) ?? [];
 
-        'included': plan?.plan_services?.map((service) => ({
-            'service_name': service?.service_credit?.service?.name,
-            'amount':
-                service?.service_credit?.service_credit_rates?.find((rate) => rate?.currency?.short_name === currency)
-                    ?.free_credits || 0,
-        })),
-        'features': plan?.plan_features
-            ?.filter((feature) => feature?.is_visible || !feature?.feature?.is_included)
-            ?.map((feature) => ({
-                'name': feature?.feature?.name,
-                'is_included': feature?.is_visible && feature?.feature?.is_included ? true : false,
+        const getAmount = (type) => amounts.find((a) => a?.plan_type?.name === type)?.plan_amount ?? null;
+
+        return {
+            slug: plan?.slug,
+            amount: {
+                monthly: getAmount('Monthly'),
+                yearly: getAmount('Yearly'),
+            },
+            discount: {
+                type_id: plan?.discount?.type_id ?? 2,
+                value: plan?.discount?.value ?? 0,
+                duration: plan?.discount?.duration ?? 'monthly',
+            },
+            plan_features: (plan?.plan_features ?? []).map((feature) => ({
+                name: feature?.feature?.name ?? feature?.userFriendlyName ?? feature?.key ?? '',
+                is_visible: feature?.hide === true ? false : (feature?.is_visible ?? true),
+                is_included: feature?.feature?.is_included ?? feature?.is_included ?? false,
             })),
-        'extras': plan?.plan_services?.map((service) => ({
-            'service_name': service?.service_credit?.service?.name,
-            'rate':
-                service?.service_credit?.service_credit_rates?.find((rate) => rate?.currency?.short_name === currency)
-                    ?.follow_up_rate || 0,
-            'chunk':
-                service?.service_credit?.service_credit_rates?.find((rate) => rate?.currency?.short_name === currency)
-                    ?.chunk_size || 1,
-            'postpaid_allowed': plan.postpaid_allowed || false,
-        })),
-        'postpaid_allowed': plan.postpaid_allowed || false,
-    }));
-    return simplifiedPlans || [];
+            dial_plan: getDialPlan(plan),
+            extras: getPlanServices(plan, currency),
+        };
+    });
 }
