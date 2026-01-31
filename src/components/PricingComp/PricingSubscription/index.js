@@ -40,7 +40,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
     return (
         <>
             <div className='flex flex-col gap-4 w-full'>
-                <h1 className='text-2xl md:text-3xl font-bold capitalize '>{`${pageInfo?.product} Pricing`}</h1>
+                <h1 className='text-2xl md:text-3xl font-bold capitalize '>{pageData?.heading}</h1>
                 <div className='flex flex-col w-full gap-6'>
                     <div className='flex items-center justify-between gap-4'>
                         <PlanToggle tabtype={tabtype} setTabtype={setTabtype} hasYearly={hasYearly} />
@@ -72,11 +72,22 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         selectedPlanSlug={selectedPlanSlug}
                         onSelectPlan={setSelectedPlanSlug}
                         onViewCallingRates={onViewCallingRates}
+                        pageData={pageData?.pricingPlans}
                     />
                     <div ref={dialPlanRef}>
-                        <DialPlan pricingData={pricingData} symbol={symbol} selectedPlanSlug={selectedPlanSlug} />
+                        <DialPlan
+                            pricingData={pricingData}
+                            symbol={symbol}
+                            selectedPlanSlug={selectedPlanSlug}
+                            pageData={pageData?.dialPlan}
+                        />
                     </div>
-                    <ComparePlans pricingData={pricingData} symbol={symbol} tabtype={tabtype} />
+                    <ComparePlans
+                        pricingData={pricingData}
+                        symbol={symbol}
+                        tabtype={tabtype}
+                        pageData={pageData?.comparePlans}
+                    />
                     <ConnectWithTeam
                         product={pageInfo?.product}
                         href={pageInfo?.product}

@@ -11,7 +11,7 @@ function formatPrice(symbol, amount) {
     return `${symbol}${num.toLocaleString(FIXED_LOCALE)}`;
 }
 
-function simplifiedPlanToCard(plan, tabtype, symbol) {
+function simplifiedPlanToCard(plan, tabtype, symbol, plansPageData) {
     const isMonthly = tabtype === 'Monthly';
     const amount = isMonthly ? plan?.amount?.monthly : plan?.amount?.yearly;
     const period = isMonthly ? 'Monthly' : 'Yearly';
@@ -39,9 +39,9 @@ function simplifiedPlanToCard(plan, tabtype, symbol) {
         title,
         price: formatPrice(symbol, amount),
         period,
-        ctaText: 'Get Started',
+        ctaText: plansPageData?.ctaText,
         showLink: true,
-        linkText: 'View Calling Rates',
+        linkText: plansPageData?.viewCallingRatesText,
         hasDialPlan,
         included,
         features,
@@ -57,6 +57,7 @@ export default function PricingPlans({
     selectedPlanSlug,
     onSelectPlan,
     onViewCallingRates,
+    pageData,
 }) {
     const scrollRef = useRef(null);
 
@@ -82,8 +83,8 @@ export default function PricingPlans({
         if (!Array.isArray(pricingData) || pricingData.length === 0) return [];
         const sym = symbol ?? '₹';
         const tab = tabtype ?? 'Monthly';
-        return pricingData.map((plan) => simplifiedPlanToCard(plan, tab, sym));
-    }, [pricingData, tabtype, symbol]);
+        return pricingData.map((plan) => simplifiedPlanToCard(plan, tab, sym, pageData));
+    }, [pricingData, tabtype, symbol, pageData]);
 
     if (cards.length === 0) return null;
 
@@ -103,13 +104,13 @@ export default function PricingPlans({
                 </div>
 
                 <div className='mt-6 flex items-center justify-between text-sm'>
-                    <button className='text-blue-600 hover:underline'>Calculate pricing</button>
+                    <button className='text-blue-600 hover:underline'>{pageData?.calculatePricingText}</button>
                     <button
                         type='button'
                         onClick={() => document.getElementById('compare-plans')?.scrollIntoView({ behavior: 'smooth' })}
                         className='text-blue-600 hover:underline'
                     >
-                        Compare all features ↓
+                        {pageData?.compareAllFeaturesText}
                     </button>
                 </div>
             </div>

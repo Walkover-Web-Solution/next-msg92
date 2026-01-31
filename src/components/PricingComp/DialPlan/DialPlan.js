@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 
-export default function DialPlan({ pricingData, selectedPlanSlug }) {
+export default function DialPlan({ pricingData, selectedPlanSlug, pageData }) {
     const [search, setSearch] = useState('');
 
     useEffect(() => {
@@ -45,25 +45,25 @@ export default function DialPlan({ pricingData, selectedPlanSlug }) {
         <section className='w-full my-16'>
             <div className='mx-auto'>
                 <div className='mb-8'>
-                    <h2 className='text-2xl font-semibold text-gray-900'>Global Calling Rates</h2>
-                    <p className='mt-2 text-sm text-gray-600'>
-                        Competitive international calling rates across countries.
-                    </p>
+                    <h2 className='text-2xl font-semibold text-gray-900'>{pageData?.heading}</h2>
+                    <p className='mt-2 text-sm text-gray-600'>{pageData?.description}</p>
                 </div>
 
                 <div className='mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
                     <div>
-                        <h3 className='text-lg font-semibold text-gray-900'>Dialplan Rates</h3>
+                        <h3 className='text-lg font-semibold text-gray-900'>{pageData?.dialplanRatesHeading}</h3>
                         {planName && (
                             <p className='text-sm text-gray-600'>
-                                Showing rates for <span className='font-medium text-blue-600'>{planName}</span> plan
+                                {pageData?.showingRatesFor}{' '}
+                                <span className='font-medium text-blue-600'>{planName}</span>{' '}
+                                {pageData?.planLabelSuffix}
                             </p>
                         )}
                     </div>
 
                     <input
                         type='text'
-                        placeholder='Search country...'
+                        placeholder={pageData?.searchPlaceholder}
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                         className='w-full sm:w-64 rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500'
@@ -100,7 +100,7 @@ export default function DialPlan({ pricingData, selectedPlanSlug }) {
                                 {filteredData.length === 0 && (
                                     <tr>
                                         <td colSpan={columns.length} className='px-4 py-6 text-center text-gray-500'>
-                                            No results found
+                                            {pageData?.noResults}
                                         </td>
                                     </tr>
                                 )}

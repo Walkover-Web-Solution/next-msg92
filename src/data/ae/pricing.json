@@ -65,6 +65,28 @@
                 "title": "Hello Pricing in United Arab Emirates | MSG91-United Arab Emirates",
                 "description": "Avail cutting-edge services such as transactional Hello, communication APIs, and more at competitive prices. Discover the pricing today."
             },
+            "heading": "Hello Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Calling Rates",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "heading": "Global Calling Rates",
+                "description": "Competitive international calling rates across countries.",
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
                 "sales_btn": "Talk to Sales",
@@ -117,6 +139,28 @@
             "HeadComp": {
                 "title": "Segmento Pricing in United Arab Emirates | MSG91-United Arab Emirates",
                 "description": "Avail cutting-edge services such as transactional Segmento, communication APIs, and more at competitive prices. Discover the pricing today."
+            },
+            "heading": "Segmento Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Calling Rates",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "heading": "Global Calling Rates",
+                "description": "Competitive international calling rates across countries.",
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "get_started": "Get Started",
             "connectComp": {
@@ -179,6 +223,28 @@
             "HeadComp": {
                 "title": "Email Pricing in United Arab Emirates | MSG91-United Arab Emirates",
                 "description": "Avail cutting-edge services such as transactional Email, communication APIs, and more at competitive prices. Discover the pricing today."
+            },
+            "heading": "Email Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Calling Rates",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "heading": "Global Calling Rates",
+                "description": "Competitive international calling rates across countries.",
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
@@ -300,6 +366,28 @@
                 "title": "WhatsApp Pricing in United Arab Emirates | MSG91-United Arab Emirates",
                 "description": "Avail cutting-edge services such as transactional WhatsApp, communication APIs, and more at competitive prices. Discover the pricing today."
             },
+            "heading": "WhatsApp Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Calling Rates",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "heading": "Global Calling Rates",
+                "description": "Competitive international calling rates across countries.",
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",
@@ -315,6 +403,28 @@
             "HeadComp": {
                 "title": "RCS Pricing in United Arab Emirates | MSG91-United Arab Emirates",
                 "description": "Avail cutting-edge services such as transactional RCS, communication APIs, and more at competitive prices. Discover the pricing today."
+            },
+            "heading": "RCS Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Calling Rates",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "heading": "Global Calling Rates",
+                "description": "Competitive international calling rates across countries.",
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
                 "know_more": "Know more about"

@@ -65,6 +65,28 @@
                 "title": "Presyo ng Hello sa Pilipinas | MSG91-Pilipinas",
                 "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional Hello, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
             },
+            "heading": "Hello Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Calling Rates",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "heading": "Global Calling Rates",
+                "description": "Competitive international calling rates across countries.",
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "connectComp": {
                 "content": "Makipag-ugnayan sa aming team para sa isang personalisadong plano na akma sa iyong pangangailangan.",
                 "sales_btn": "Makipag-usap sa Sales",
@@ -117,6 +139,28 @@
             "HeadComp": {
                 "title": "Presyo ng Segmento sa Pilipinas | MSG91-Pilipinas",
                 "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional Segmento, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
+            },
+            "heading": "Segmento Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Calling Rates",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "heading": "Global Calling Rates",
+                "description": "Competitive international calling rates across countries.",
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "get_started": "Magsimula",
             "connectComp": {
@@ -179,6 +223,28 @@
             "HeadComp": {
                 "title": "Presyo ng Email sa Pilipinas | MSG91-Pilipinas",
                 "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional Email, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
+            },
+            "heading": "Email Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Calling Rates",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "heading": "Global Calling Rates",
+                "description": "Competitive international calling rates across countries.",
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
                 "content": "Makipag-ugnayan sa aming team para sa isang personalisadong plano na akma sa iyong pangangailangan.",
@@ -300,6 +366,28 @@
                 "title": "Presyo ng WhatsApp sa Pilipinas | MSG91-Pilipinas",
                 "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional WhatsApp, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
             },
+            "heading": "WhatsApp Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Calling Rates",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "heading": "Global Calling Rates",
+                "description": "Competitive international calling rates across countries.",
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "connectComp": {
                 "content": "Makipag-ugnayan sa aming team para sa presyo.",
                 "sales_btn": "Makipag-usap sa Sales",
@@ -317,6 +405,28 @@
             "HeadComp": {
                 "title": "Presyo ng RCS sa Pilipinas | MSG91-Pilipinas",
                 "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional RCS, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
+            },
+            "heading": "RCS Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Calling Rates",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "heading": "Global Calling Rates",
+                "description": "Competitive international calling rates across countries.",
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
                 "know_more": "Alamin pa tungkol sa"

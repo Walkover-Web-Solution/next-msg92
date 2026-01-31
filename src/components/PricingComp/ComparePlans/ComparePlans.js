@@ -1,7 +1,7 @@
 import { useRef, useMemo } from 'react';
 import { MdCheck, MdClose, MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
-export default function ComparePlans({ pricingData, symbol, tabtype }) {
+export default function ComparePlans({ pricingData, symbol, tabtype, pageData }) {
     const tableRef = useRef(null);
 
     const scrollLeft = () => {
@@ -58,15 +58,12 @@ export default function ComparePlans({ pricingData, symbol, tabtype }) {
         <section id='compare-plans' className='w-full py-6'>
             <div className='max-w-7xl'>
                 <div className='flex flex-col py-4'>
-                    <h2 className='text-2xl sm:text-3xl font-semibold text-gray-900'>Detailed Feature Comparison</h2>
-                    <p className='text-sm sm:text-base text-gray-600'>
-                        Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities,
-                        we have the right set of tools for your growth.
-                    </p>
+                    <h2 className='text-2xl sm:text-3xl font-semibold text-gray-900'>{pageData?.heading}</h2>
+                    <p className='text-sm sm:text-base text-gray-600'>{pageData?.description}</p>
                 </div>
 
                 <div className='flex py-4 items-center justify-between'>
-                    <h3 className='text-lg font-semibold text-gray-900'>Compare Plans</h3>
+                    <h3 className='text-lg font-semibold text-gray-900'>{pageData?.comparePlansHeading}</h3>
                     <div className='flex items-center gap-2'>
                         <button
                             onClick={scrollLeft}
@@ -90,7 +87,7 @@ export default function ComparePlans({ pricingData, symbol, tabtype }) {
                         <thead className='bg-gray-50'>
                             <tr className='border-b border-gray-200'>
                                 <th className='w-[210px] px-4 py-4 text-left font-medium text-gray-500 sticky left-0 bg-gray-50 z-20 border-r border-gray-200'>
-                                    FEATURES
+                                    {pageData?.featuresColumnLabel}
                                 </th>
                                 {planNames.map((name, i) => (
                                     <th
