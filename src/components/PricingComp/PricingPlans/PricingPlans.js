@@ -2,53 +2,6 @@ import { useRef, useMemo, useEffect } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import PricingPlanCard from './PricingPlanCard/PricingPlanCard';
 
-const FIXED_LOCALE = 'en-US';
-
-function formatPrice(symbol, amount) {
-    if (amount == null) return '—';
-    const num = Number(amount);
-    if (Number.isNaN(num)) return '—';
-    return `${symbol}${num.toLocaleString(FIXED_LOCALE)}`;
-}
-
-function simplifiedPlanToCard(plan, tabtype, symbol, plansPageData) {
-    const isMonthly = tabtype === 'Monthly';
-    const amount = isMonthly ? plan?.amount?.monthly : plan?.amount?.yearly;
-    const period = isMonthly ? 'Monthly' : 'Yearly';
-
-    const included =
-        plan?.extras?.servicesList?.map((s) =>
-            s.free_credits === -1
-                ? `Unlimited ${s.servicename}`
-                : `${Number(s.free_credits).toLocaleString(FIXED_LOCALE)} ${s.servicename}`
-        ) ?? [];
-
-    const features =
-        plan?.plan_features?.filter((f) => f.is_visible).map((f) => ({ name: f.name, is_included: f.is_included })) ??
-        [];
-
-    const extra =
-        plan?.extras?.servicesList?.map((s) => `${formatPrice(symbol, s.follow_up_rate)} / ${s.servicename}`) ?? [];
-
-    const title = plan?.slug ? String(plan.slug).charAt(0).toUpperCase() + String(plan.slug).slice(1) : 'Plan';
-
-    const hasDialPlan = plan?.dial_plan?.data?.length > 0;
-
-    return {
-        slug: plan?.slug,
-        title,
-        price: formatPrice(symbol, amount),
-        period,
-        ctaText: plansPageData?.ctaText,
-        showLink: true,
-        linkText: plansPageData?.viewCallingRatesText,
-        hasDialPlan,
-        included,
-        features,
-        extra,
-    };
-}
-
 export default function PricingPlans({
     pricingData,
     tabtype,
@@ -57,6 +10,7 @@ export default function PricingPlans({
     selectedPlanSlug,
     onSelectPlan,
     onViewCallingRates,
+    onCalculateClick,
     pageData,
 }) {
     const scrollRef = useRef(null);
@@ -69,7 +23,6 @@ export default function PricingPlans({
         scrollRef.current?.scrollBy({ left: 320, behavior: 'smooth' });
     };
 
-    // 👇 expose controls to parent
     useEffect(() => {
         if (setScrollApi) {
             setScrollApi({
@@ -81,17 +34,24 @@ export default function PricingPlans({
 
     const cards = useMemo(() => {
         if (!Array.isArray(pricingData) || pricingData.length === 0) return [];
-        const sym = symbol ?? '₹';
-        const tab = tabtype ?? 'Monthly';
-        return pricingData.map((plan) => simplifiedPlanToCard(plan, tab, sym, pageData));
+        return pricingData.map((plan) => simplifiedPlanToCard(plan, tabtype, symbol, pageData));
     }, [pricingData, tabtype, symbol, pageData]);
+
+    const hasFeatures = useMemo(
+        () =>
+            Array.isArray(pricingData) &&
+            pricingData.some(
+                (plan) => (plan?.plan_features?.filter((feature) => feature?.is_visible)?.length ?? 0) > 0
+            ),
+        [pricingData]
+    );
 
     if (cards.length === 0) return null;
 
     return (
         <section className='w-full py-4'>
-            <div className='max-w-7xl'>
-                <div ref={scrollRef} className='flex gap-6 overflow-x-auto pb-4 scroll-smooth'>
+            <div className='mx-auto max-w-7xl'>
+                <div ref={scrollRef} className='flex gap-6 overflow-x-auto pb-4 scroll-smooth w-full'>
                     {cards.map((card, index) => (
                         <PricingPlanCard
                             key={card.slug ?? `card-${index}`}
@@ -102,18 +62,76 @@ export default function PricingPlans({
                         />
                     ))}
                 </div>
-
-                <div className='mt-6 flex items-center justify-between text-sm'>
-                    <button className='text-blue-600 hover:underline'>{pageData?.calculatePricingText}</button>
+            </div>
+            <div className='mt-6 flex items-center justify-between text-sm'>
+                <button
+                    type='button'
+                    onClick={() => onCalculateClick?.()}
+                    className='text-blue-600 font-medium hover:underline'
+                >
+                    {pageData?.calculatePricingText}
+                </button>
+                {hasFeatures && (
                     <button
                         type='button'
                         onClick={() => document.getElementById('compare-plans')?.scrollIntoView({ behavior: 'smooth' })}
-                        className='text-blue-600 hover:underline'
+                        className='text-blue-600 font-medium hover:underline'
                     >
                         {pageData?.compareAllFeaturesText}
                     </button>
-                </div>
+                )}
             </div>
         </section>
     );
+}
+
+function simplifiedPlanToCard(plan, tabtype, symbol, plansPageData) {
+    const isMonthly = tabtype === 'Monthly';
+    const amount = isMonthly ? plan?.amount?.monthly : plan?.amount?.yearly;
+    const period = isMonthly ? 'Monthly' : 'Yearly';
+
+    const included =
+        plan?.included?.map((service) => {
+            const isUnlimited = service?.amount === -1 || service?.amount === '-1';
+            return isUnlimited
+                ? `Unlimited ${service?.service_name}`
+                : `${Number(service?.amount)} ${service?.service_name}/month`;
+        }) ?? [];
+
+    const extra =
+        plan?.extras?.servicesList
+            ?.filter((service) => service?.free_credits !== -1 && service?.free_credits !== '-1')
+            ?.map((service) => {
+                const rate = service?.follow_up_rate;
+                const name = service?.servicename;
+                const showRate = rate && plan?.extras?.postpaidAllowed;
+                return showRate
+                    ? { label: `${symbol}${rate}/${name}/month`, isNoExtra: false }
+                    : { label: `No extra ${name}`, isNoExtra: true };
+            }) ?? [];
+
+    const features =
+        plan?.plan_features
+            ?.filter((feature) => feature.is_visible)
+            .map((feature) => ({ name: feature.name, is_included: feature.is_included })) ?? [];
+
+    const title = plan?.slug ? String(plan.slug).charAt(0).toUpperCase() + String(plan.slug).slice(1) : 'Plan';
+
+    const hasDialPlan = plan?.dial_plan?.data?.length > 0;
+
+    const planCard = {
+        slug: plan?.slug,
+        title,
+        price: `${symbol}${amount}`,
+        period,
+        ctaText: plansPageData?.ctaText,
+        showLink: true,
+        linkText: plansPageData?.viewCallingRatesText,
+        hasDialPlan,
+        included,
+        features,
+        extra,
+    };
+
+    return planCard;
 }

@@ -6,9 +6,13 @@ import PlanToggle from '../PlanToggle/PlanToggle';
 import PricingPlans from '../PricingPlans/PricingPlans';
 import DialPlan from '../DialPlan/DialPlan';
 import ComparePlans from '../ComparePlans/ComparePlans';
+import CalculatePricingModal from './CalculatePricingModal/CalculatePricingModal';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
+const CALCULATE_PRICING_MODAL_ID = 'calculate-pricing-modal';
+
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {
+    console.log('🚀 ~ PricingSubscription ~ pricingData:', pricingData);
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
     const [hasYearly, setHasYearly] = useState(false);
@@ -19,6 +23,14 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
     const onViewCallingRates = useCallback((slug) => {
         setSelectedPlanSlug(slug);
         dialPlanRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, []);
+
+    const onOpenCalculateModal = useCallback(() => {
+        document.getElementById(CALCULATE_PRICING_MODAL_ID)?.showModal();
+    }, []);
+
+    const onCloseCalculateModal = useCallback(() => {
+        document.getElementById(CALCULATE_PRICING_MODAL_ID)?.close();
     }, []);
 
     useEffect(() => {
@@ -72,6 +84,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         selectedPlanSlug={selectedPlanSlug}
                         onSelectPlan={setSelectedPlanSlug}
                         onViewCallingRates={onViewCallingRates}
+                        onCalculateClick={onOpenCalculateModal}
                         pageData={pageData?.pricingPlans}
                     />
                     <div ref={dialPlanRef}>
@@ -97,6 +110,16 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                     <FaqsComp data={pageData?.faqComp} notCont={true} />
                 </div>
             </div>
+
+            <dialog id={CALCULATE_PRICING_MODAL_ID} className='modal'>
+                <CalculatePricingModal
+                    plans={pricingData}
+                    symbol={symbol}
+                    tabtype={tabtype}
+                    currency={currency}
+                    onClose={onCloseCalculateModal}
+                />
+            </dialog>
         </>
     );
 }

@@ -42,71 +42,68 @@ export default function DialPlan({ pricingData, selectedPlanSlug, pageData }) {
     if (!data.length || !columns.length) return null;
 
     return (
-        <section className='w-full my-16'>
-            <div className='mx-auto'>
-                <div className='mb-8'>
-                    <h2 className='text-2xl font-semibold text-gray-900'>{pageData?.heading}</h2>
-                    <p className='mt-2 text-sm text-gray-600'>{pageData?.description}</p>
+        <section className='w-full py-4 flex flex-col gap-6'>
+            <div className='flex flex-col'>
+                <h2 className='text-2xl font-semibold'>{pageData?.heading}</h2>
+                <p className='text-md text-gray-600'>{pageData?.description}</p>
+            </div>
+
+            <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
+                <div>
+                    <h3 className='text-xl font-semibold'>{pageData?.dialplanRatesHeading}</h3>
+                    {planName && (
+                        <p className='text-md'>
+                            {pageData?.showingRatesFor} <span className='font-medium text-blue-600'>{planName}</span>{' '}
+                            {pageData?.planLabelSuffix}
+                        </p>
+                    )}
                 </div>
 
-                <div className='mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
-                    <div>
-                        <h3 className='text-lg font-semibold text-gray-900'>{pageData?.dialplanRatesHeading}</h3>
-                        {planName && (
-                            <p className='text-sm text-gray-600'>
-                                {pageData?.showingRatesFor}{' '}
-                                <span className='font-medium text-blue-600'>{planName}</span>{' '}
-                                {pageData?.planLabelSuffix}
-                            </p>
-                        )}
-                    </div>
+                <input
+                    type='text'
+                    placeholder={pageData?.searchPlaceholder}
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    className='w-full sm:w-64 rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500'
+                />
+            </div>
 
-                    <input
-                        type='text'
-                        placeholder={pageData?.searchPlaceholder}
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        className='w-full sm:w-64 rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500'
-                    />
-                </div>
+            <div className='rounded border border-gray-200 bg-white max-w-7xl '>
+                <div className='max-h-[420px] overflow-x-auto overflow-y-auto'>
+                    <table className='min-w-max w-full border-collapse text-sm'>
+                        <thead className='sticky top-0 bg-gray-50 z-10'>
+                            <tr className='border-b border-gray-200'>
+                                {columns.map((col) => (
+                                    <th
+                                        key={col.key}
+                                        className='px-4 py-3 text-left font-medium  w-[140px] text-xs tracking-wide'
+                                    >
+                                        {col.label}
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
 
-                <div className='rounded-xl border border-gray-200 bg-white'>
-                    <div className='max-h-[420px] overflow-x-auto overflow-y-auto'>
-                        <table className='min-w-max w-full border-collapse text-sm'>
-                            <thead className='sticky top-0 bg-gray-50 z-10'>
-                                <tr className='border-b border-gray-200'>
+                        <tbody>
+                            {filteredData.map((row, idx) => (
+                                <tr key={idx} className='border-b border-gray-200 last:border-b-0'>
                                     {columns.map((col) => (
-                                        <th
-                                            key={col.key}
-                                            className='px-4 py-3 text-left font-medium text-gray-500 uppercase whitespace-nowrap text-xs tracking-wide'
-                                        >
-                                            {col.label}
-                                        </th>
+                                        <td key={col.key} className='px-4 py-3 text-gray-600 whitespace-nowrap'>
+                                            {row[col.key]}
+                                        </td>
                                     ))}
                                 </tr>
-                            </thead>
+                            ))}
 
-                            <tbody>
-                                {filteredData.map((row, idx) => (
-                                    <tr key={idx} className='border-b border-gray-200 last:border-b-0'>
-                                        {columns.map((col) => (
-                                            <td key={col.key} className='px-4 py-3 text-gray-600 whitespace-nowrap'>
-                                                {row[col.key]}
-                                            </td>
-                                        ))}
-                                    </tr>
-                                ))}
-
-                                {filteredData.length === 0 && (
-                                    <tr>
-                                        <td colSpan={columns.length} className='px-4 py-6 text-center text-gray-500'>
-                                            {pageData?.noResults}
-                                        </td>
-                                    </tr>
-                                )}
-                            </tbody>
-                        </table>
-                    </div>
+                            {filteredData.length === 0 && (
+                                <tr>
+                                    <td colSpan={columns.length} className='px-4 py-6 text-center text-gray-500'>
+                                        {pageData?.noResults}
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
