@@ -27,9 +27,10 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
 
         const seen = new Set();
         const featureNames = [];
-        pricingData.forEach((p) => {
-            (p?.plan_features ?? []).forEach((f) => {
-                const name = (f?.userFriendlyName ?? f?.name ?? f?.key ?? '')?.toString?.()?.trim() || '';
+        pricingData.forEach((plan) => {
+            (plan?.plan_features ?? []).forEach((feature) => {
+                const name =
+                    (feature?.userFriendlyName ?? feature?.name ?? feature?.key ?? '')?.toString?.()?.trim() || '';
                 if (name && !seen.has(name)) {
                     seen.add(name);
                     featureNames.push(name);
@@ -37,12 +38,14 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
             });
         });
 
-        const featureLabel = (f) => (f?.userFriendlyName ?? f?.name ?? f?.key ?? '')?.toString?.()?.trim() || '';
-        const isIncluded = (f) => f?.feature?.is_included ?? f?.is_included ?? false;
+        const featureLabel = (feature) =>
+            (feature?.userFriendlyName ?? feature?.name ?? feature?.key ?? '')?.toString?.()?.trim() || '';
+        const isIncluded = (feature) => feature?.feature?.is_included ?? feature?.is_included ?? false;
         const featureRows = featureNames.map((label) => ({
             label,
             values: pricingData.map(
-                (plan) => isIncluded(plan?.plan_features?.find((f) => featureLabel(f) === label) ?? {}) ?? false
+                (plan) =>
+                    isIncluded(plan?.plan_features?.find((feature) => featureLabel(feature) === label) ?? {}) ?? false
             ),
         }));
 

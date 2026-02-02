@@ -68,7 +68,7 @@
             "heading": "Hello Pricing",
             "pricingPlans": {
                 "ctaText": "Get Started",
-                "viewCallingRatesText": "View Calling Rates",
+                "viewCallingRatesText": "View dial plan",
                 "calculatePricingText": "Calculate pricing",
                 "compareAllFeaturesText": "Compare all features ↓"
             },
@@ -142,7 +142,7 @@
             "heading": "Segmento Pricing",
             "pricingPlans": {
                 "ctaText": "Get Started",
-                "viewCallingRatesText": "View Calling Rates",
+                "viewCallingRatesText": "View dial plan",
                 "calculatePricingText": "Calculate pricing",
                 "compareAllFeaturesText": "Compare all features ↓"
             },
@@ -222,7 +222,7 @@
             "heading": "Email Pricing",
             "pricingPlans": {
                 "ctaText": "Get Started",
-                "viewCallingRatesText": "View Calling Rates",
+                "viewCallingRatesText": "View dial plan",
                 "calculatePricingText": "Calculate pricing",
                 "compareAllFeaturesText": "Compare all features ↓"
             },
@@ -364,7 +364,7 @@
             "heading": "WhatsApp Pricing",
             "pricingPlans": {
                 "ctaText": "Get Started",
-                "viewCallingRatesText": "View Calling Rates",
+                "viewCallingRatesText": "View dial plan",
                 "calculatePricingText": "Calculate pricing",
                 "compareAllFeaturesText": "Compare all features ↓"
             },
@@ -397,7 +397,7 @@
             "heading": "RCS Pricing",
             "pricingPlans": {
                 "ctaText": "Get Started",
-                "viewCallingRatesText": "View Calling Rates",
+                "viewCallingRatesText": "View dial plan",
                 "calculatePricingText": "Calculate pricing",
                 "compareAllFeaturesText": "Compare all features ↓"
             },

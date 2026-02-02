@@ -1,5 +1,4 @@
 import { useRef, useMemo, useEffect } from 'react';
-
 import PricingPlanCard from './PricingPlanCard/PricingPlanCard';
 
 export default function PricingPlans({
@@ -16,11 +15,11 @@ export default function PricingPlans({
     const scrollRef = useRef(null);
 
     const scrollLeft = () => {
-        scrollRef.current?.scrollBy({ left: -320, behavior: 'smooth' });
+        scrollRef.current?.scrollBy({ left: -376, behavior: 'smooth' });
     };
 
     const scrollRight = () => {
-        scrollRef.current?.scrollBy({ left: 320, behavior: 'smooth' });
+        scrollRef.current?.scrollBy({ left: 376, behavior: 'smooth' });
     };
 
     useEffect(() => {
@@ -93,9 +92,11 @@ function simplifiedPlanToCard(plan, tabtype, symbol, plansPageData) {
     const included =
         plan?.included?.map((service) => {
             const isUnlimited = service?.amount === -1 || service?.amount === '-1';
-            return isUnlimited
+            const displayText = isUnlimited
                 ? `Unlimited ${service?.service_name}`
                 : `${Number(service?.amount)} ${service?.service_name}/month`;
+            const hasDialPlan = Boolean(service?.dial_plan?.data?.length > 0);
+            return { displayText, hasDialPlan, service_name: service?.service_name };
         }) ?? [];
 
     const extra =
@@ -117,7 +118,7 @@ function simplifiedPlanToCard(plan, tabtype, symbol, plansPageData) {
 
     const title = plan?.slug ? String(plan.slug).charAt(0).toUpperCase() + String(plan.slug).slice(1) : 'Plan';
 
-    const hasDialPlan = plan?.dial_plan?.data?.length > 0;
+    const hasDialPlan = plan?.included?.some((item) => item?.dial_plan?.data?.length > 0) ?? false;
 
     const planCard = {
         slug: plan?.slug,

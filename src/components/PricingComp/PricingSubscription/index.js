@@ -9,8 +9,6 @@ import ComparePlans from '../ComparePlans/ComparePlans';
 import CalculatePricingModal from './CalculatePricingModal/CalculatePricingModal';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
-const CALCULATE_PRICING_MODAL_ID = 'calculate-pricing-modal';
-
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
@@ -18,6 +16,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
     const [scrollApi, setScrollApi] = useState();
     const [selectedPlanSlug, setSelectedPlanSlug] = useState(null);
     const dialPlanRef = useRef(null);
+    const calculateModalRef = useRef(null);
 
     const onViewCallingRates = useCallback((slug) => {
         setSelectedPlanSlug(slug);
@@ -25,11 +24,11 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
     }, []);
 
     const onOpenCalculateModal = useCallback(() => {
-        document.getElementById(CALCULATE_PRICING_MODAL_ID)?.showModal();
+        calculateModalRef.current?.showModal();
     }, []);
 
     const onCloseCalculateModal = useCallback(() => {
-        document.getElementById(CALCULATE_PRICING_MODAL_ID)?.close();
+        calculateModalRef.current?.close();
     }, []);
 
     useEffect(() => {
@@ -44,7 +43,9 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
         if (!Array.isArray(pricingData) || pricingData.length === 0) return;
         const selectionStillValid = selectedPlanSlug != null && pricingData.some((p) => p?.slug === selectedPlanSlug);
         if (selectionStillValid) return;
-        const firstWithDial = pricingData.find((p) => p?.dial_plan?.data?.length > 0) ?? pricingData[0];
+        const firstWithDial =
+            pricingData.find((plan) => plan?.included?.some((item) => item?.dial_plan?.data?.length > 0)) ||
+            pricingData[0];
         setSelectedPlanSlug(firstWithDial?.slug ?? null);
     }, [pricingData, selectedPlanSlug]);
 
@@ -113,7 +114,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                 </div>
             </div>
 
-            <dialog id={CALCULATE_PRICING_MODAL_ID} className='modal'>
+            <dialog ref={calculateModalRef} className='modal'>
                 <CalculatePricingModal
                     plans={pricingData}
                     symbol={symbol}

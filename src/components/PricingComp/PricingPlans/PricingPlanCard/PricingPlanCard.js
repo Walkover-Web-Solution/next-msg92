@@ -13,7 +13,7 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
             tabIndex={0}
             onClick={handleCardSelect}
             onKeyDown={(e) => e.key === 'Enter' && handleCardSelect()}
-            className={`min-w-[300px] rounded border min-h-full bg-white px-6 py-6 sm:px-7 sm:py-7 cursor-pointer ${
+            className={`min-w-[360px] max-w-[360px] rounded border min-h-full bg-white px-6 py-6 sm:px-7 sm:py-7 cursor-pointer ${
                 isSelected ? 'border-black border-2' : 'border-gray-200'
             }`}
         >
@@ -30,31 +30,40 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
                 </button>
             </div>
 
-            <div className='my-2 min-h-[1.5rem]'>
-                {planData?.showLink !== false && planData?.hasDialPlan ? (
-                    <button
-                        type='button'
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            if (onViewCallingRates) onViewCallingRates(planData?.slug);
-                            else onSelect?.();
-                        }}
-                        className='text-sm text-blue-600 font-medium hover:underline'
-                    >
-                        {planData?.linkText ?? 'View Calling Rates'}
-                    </button>
-                ) : null}
-            </div>
-
             {Array.isArray(planData?.included) && planData.included.length > 0 && (
                 <div className='my-2'>
                     <h4 className='mb-1 text-sm font-semibold text-gray-900'>Included</h4>
-                    <div className=''>
-                        {planData.included.map((item, idx) => (
-                            <p key={idx} className='text-sm text-gray-600'>
-                                {item}
-                            </p>
-                        ))}
+                    <div className='flex flex-col'>
+                        {planData.included.map((item, idx) => {
+                            const displayText =
+                                typeof item === 'object' && item != null
+                                    ? (item.displayText ?? item.service_name ?? '')
+                                    : String(item);
+                            const hasDialPlan = typeof item === 'object' && item != null && item.hasDialPlan === true;
+                            return (
+                                <div key={idx} className='flex flex-nowrap items-center gap-2 text-sm'>
+                                    <span className='text-gray-600 truncate shrink-0'>{displayText}</span>
+                                    {hasDialPlan && (
+                                        <>
+                                            <span className='text-gray-400 shrink-0' aria-hidden>
+                                                ·
+                                            </span>
+                                            <button
+                                                type='button'
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    if (onViewCallingRates) onViewCallingRates(planData?.slug);
+                                                    else onSelect?.();
+                                                }}
+                                                className='text-blue-600 font-medium hover:underline shrink-0 whitespace-nowrap'
+                                            >
+                                                {planData?.linkText}
+                                            </button>
+                                        </>
+                                    )}
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             )}
