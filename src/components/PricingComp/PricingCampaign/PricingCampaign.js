@@ -35,7 +35,12 @@ export default function PricingCampaign({ pageData }) {
                         </a>
                     </div>
                 </div>
-                <ConnectWithTeam href={'campaign'} pageData={pageData?.connectComp} product={'Campaign'} />
+                <ConnectWithTeam
+                    href={'campaign'}
+                    pageData={pageData?.connectComp}
+                    product={'Campaign'}
+                    isPlan={true}
+                />
             </div>
         </div>
     );

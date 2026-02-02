@@ -128,9 +128,8 @@
                 "line_two": "Costs will apply for every 1,000 API calls, with final pricing to be announced shortly."
             },
             "get_started": "Get Started",
-            "connectComp": {
+         "connectComp": {
                 "content": "Campaign usage is free.",
-                "content2": "Channel wise pricing will be applicable for sending message.",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }
@@ -177,7 +176,6 @@
             "get_started": "Get Started",
             "connectComp": {
                 "content": "OTP widget/SDK usage is free.",
-                "content2": "Channel wise pricing will be applicable for sending message.",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             },
@@ -353,7 +351,7 @@
                 "description": "Avail robust and powerful services like transactional OTP, communication APIs, and more at competitive prices. Check out the pricing now."
             },
             "connectComp": {
-                "content": "Connect with our team for a personalized plan to meet your needs.",
+                "content": "OTP widget/SDK usage is free.",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }
@@ -419,6 +417,8 @@
                 "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
+                "content": "Connect with our team for Pricing .",
+                "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }
         }

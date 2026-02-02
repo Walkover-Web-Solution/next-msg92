@@ -27,15 +27,15 @@ export default function DialPlan({ pricingData, selectedPlanSlug, pageData }) {
     }, [pricingData, selectedPlanSlug]);
 
     const filteredData = useMemo(() => {
-        if (!search || !data.length) return data;
+        if (!search?.trim() || !data.length) return data;
 
-        const firstKey = columns[0]?.key;
-        if (!firstKey) return data;
-
+        const searchLower = search.trim().toLowerCase();
         return data.filter((row) =>
-            String(row[firstKey] ?? '')
-                .toLowerCase()
-                .includes(search.toLowerCase())
+            columns.some((col) =>
+                String(row[col.key] ?? '')
+                    .toLowerCase()
+                    .includes(searchLower)
+            )
         );
     }, [data, columns, search]);
 
@@ -44,13 +44,13 @@ export default function DialPlan({ pricingData, selectedPlanSlug, pageData }) {
     return (
         <section className='w-full py-4 flex flex-col gap-6'>
             <div className='flex flex-col'>
-                <h2 className='text-2xl font-semibold'>{pageData?.heading}</h2>
+                <h2 className='text-2xl sm:text-3xl font-semibold'>{pageData?.heading}</h2>
                 <p className='text-md text-gray-600'>{pageData?.description}</p>
             </div>
 
             <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
                 <div>
-                    <h3 className='text-xl font-semibold'>{pageData?.dialplanRatesHeading}</h3>
+                    <h3 className='text-lg sm:text-xl font-semibold'>{pageData?.dialplanRatesHeading}</h3>
                     {planName && (
                         <p className='text-md'>
                             {pageData?.showingRatesFor} <span className='font-medium text-blue-600'>{planName}</span>{' '}
@@ -69,41 +69,65 @@ export default function DialPlan({ pricingData, selectedPlanSlug, pageData }) {
             </div>
 
             <div className='rounded border border-gray-200 bg-white max-w-7xl '>
-                <div className='max-h-[420px] overflow-x-auto overflow-y-auto'>
-                    <table className='min-w-max w-full border-collapse text-sm'>
-                        <thead className='sticky top-0 bg-gray-50 z-10'>
-                            <tr className='border-b border-gray-200'>
-                                {columns.map((col) => (
-                                    <th
-                                        key={col.key}
-                                        className='px-4 py-3 text-left font-medium  w-[140px] text-xs tracking-wide'
-                                    >
-                                        {col.label}
-                                    </th>
-                                ))}
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            {filteredData.map((row, idx) => (
-                                <tr key={idx} className='border-b border-gray-200 last:border-b-0'>
+                <div className='w-full overflow-x-auto'>
+                    <div className='max-h-[400px] overflow-y-auto border border-gray-300 rounded  '>
+                        <table className='min-w-full border-collapse text-sm'>
+                            <thead className='sticky top-0 z-10 bg-gray-100'>
+                                <tr>
                                     {columns.map((col) => (
-                                        <td key={col.key} className='px-4 py-3 text-gray-600 whitespace-nowrap'>
-                                            {row[col.key]}
-                                        </td>
+                                        <th
+                                            key={col.key}
+                                            className='
+                px-4 py-3 
+                text-left text-xs font-semibold tracking-wide
+                border-b border-r border-gray-300
+                whitespace-nowrap
+              '
+                                        >
+                                            {col.label}
+                                        </th>
                                     ))}
                                 </tr>
-                            ))}
+                            </thead>
 
-                            {filteredData.length === 0 && (
-                                <tr>
-                                    <td colSpan={columns.length} className='px-4 py-6 text-center text-gray-500'>
-                                        {pageData?.noResults}
-                                    </td>
-                                </tr>
-                            )}
-                        </tbody>
-                    </table>
+                            <tbody className='bg-white'>
+                                {filteredData.map((row, idx) => (
+                                    <tr
+                                        key={idx}
+                                        className='
+
+              border-b border-gray-200 last:border-b-0
+            '
+                                    >
+                                        {columns.map((col) => (
+                                            <td
+                                                key={col.key}
+                                                className='
+                  px-4 py-3 
+                  text-gray-700
+                  whitespace-nowrap
+                  border-r border-gray-100 last:border-r-0
+                '
+                                            >
+                                                {row[col.key] ?? '-'}
+                                            </td>
+                                        ))}
+                                    </tr>
+                                ))}
+
+                                {filteredData.length === 0 && (
+                                    <tr>
+                                        <td
+                                            colSpan={columns.length}
+                                            className='px-4 py-6 text-center text-sm text-gray-500'
+                                        >
+                                            {pageData?.noResults}
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>

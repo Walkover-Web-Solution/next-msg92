@@ -1,56 +1,6 @@
 import { useState, useMemo } from 'react';
 import contvertToLocal from '@/utils/convertToLocal';
-
-const FIXED_LOCALE = 'en-US';
-
-function formatPrice(symbol, amount) {
-    if (amount == null) return '—';
-    const num = Number(amount);
-    if (Number.isNaN(num)) return '—';
-    return `${symbol}${num.toLocaleString(FIXED_LOCALE)}`;
-}
-
-function getUniqueServiceNames(plans) {
-    const names = new Set();
-    for (const plan of plans ?? []) {
-        for (const s of plan?.extras?.servicesList ?? []) {
-            if (s?.servicename) names.add(s.servicename);
-        }
-    }
-    return Array.from(names);
-}
-
-function computePlanTotal(plan, tabtype, usageByService) {
-    const isMonthly = tabtype === 'Monthly';
-    const base = isMonthly ? plan?.amount?.monthly : plan?.amount?.yearly;
-    const baseNum = Number(base);
-    const validBase = Number.isNaN(baseNum) ? 0 : baseNum;
-
-    const servicesList = plan?.extras?.servicesList ?? [];
-    const overages = {};
-    let overageSum = 0;
-
-    for (const s of servicesList) {
-        const name = s?.servicename;
-        if (!name) continue;
-
-        const free = s?.free_credits;
-        const rate = Number(s?.follow_up_rate) || 0;
-        const usage = Number(usageByService[name]) || 0;
-
-        let overage = 0;
-        if (free !== -1 && free !== '-1') {
-            const included = Number(free) || 0;
-            const extra = Math.max(0, usage - included);
-            overage = extra * rate;
-        }
-
-        overages[name] = overage;
-        overageSum += overage;
-    }
-
-    return { base: validBase, overages, total: validBase + overageSum };
-}
+import { MdClose } from 'react-icons/md';
 
 export default function CalculatePricingModal({ plans, symbol, tabtype, currency, onClose }) {
     const serviceNames = useMemo(() => getUniqueServiceNames(plans), [plans]);
@@ -61,19 +11,35 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
         return init;
     });
     const [isCalculate, setIsCalculate] = useState(false);
+    const [validationError, setValidationError] = useState('');
 
     const handleUsageChange = (servicename, value) => {
         setUsageByService((prev) => ({ ...prev, [servicename]: value }));
+        setValidationError('');
+    };
+
+    const isUsageComplete = () =>
+        serviceNames.length > 0 &&
+        serviceNames.every((name) => {
+            const value = usageByService[name];
+            return value != null && String(value).trim() !== '';
+        });
+
+    const handleCalculate = () => {
+        if (!isUsageComplete()) {
+            setValidationError('Please fill in all usage fields.');
+            return;
+        }
+        setValidationError('');
+        setIsCalculate(true);
     };
 
     const usageAsNumbers = useMemo(() => {
-        const out = {};
+        const normalizedUsageByService = {};
         for (const name of serviceNames) {
-            const v = usageByService[name];
-            const n = v === '' ? 0 : Number(v);
-            out[name] = Number.isNaN(n) ? 0 : Math.max(0, n);
+            normalizedUsageByService[name] = Math.max(0, Number(usageByService[name]));
         }
-        return out;
+        return normalizedUsageByService;
     }, [serviceNames, usageByService]);
 
     const results = useMemo(() => {
@@ -93,60 +59,62 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
             return init;
         });
         setIsCalculate(false);
+        setValidationError('');
         onClose?.();
     };
 
-    const hasServices = serviceNames.length > 0;
-
     return (
-        <div className='modal-box max-w-[900px] max-h-[90vh] overflow-y-auto p-6 space-y-6'>
-            {/* Close */}
+        <div className='modal-box max-w-[900px] max-h-[90vh] overflow-y-auto p-6 flex flex-col gap-6'>
             <button
                 type='button'
                 onClick={handleClose}
-                className='absolute right-3 top-3 rounded-md p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition'
+                className='btn btn-md btn-circle btn-ghost absolute right-2 top-2'
                 aria-label='Close'
             >
-                ✕
+                <MdClose className='' />
             </button>
 
-            {/* Header */}
-            <div className='space-y-1'>
-                <h3 className='text-lg font-semibold text-gray-900'>Calculate pricing</h3>
-                <p className='text-sm text-gray-500'>Enter your expected usage to compare plan costs.</p>
+            <div className='flex flex-col'>
+                <h3 className='text-lg sm:text-2xl font-semibold'>Calculate pricing</h3>
+                <p className='text-md'>Enter your expected usage to compare plan costs.</p>
             </div>
 
-            {/* Usage inputs */}
-            {hasServices ? (
+            {serviceNames.length > 0 ? (
                 <div className='flex flex-wrap gap-4 items-end'>
                     {serviceNames.map((name) => (
                         <label key={name} className='flex flex-col gap-1 w-full max-w-[200px]'>
-                            <span className='text-xs font-medium text-gray-600'>{name}</span>
+                            <span className='text-xs font-medium'>{name}</span>
                             <input
                                 type='number'
                                 min={0}
                                 placeholder='Usage'
                                 value={usageByService[name] ?? ''}
                                 onChange={(e) => handleUsageChange(name, e.target.value)}
-                                className='
-                                    input input-bordered
-                                    h-9
-                                    text-sm
-                                    focus:outline-none
-                                '
+                                className={`
+                                    input input-bordered h-9 text-sm focus:outline-none
+                                    ${validationError && (!usageByService[name] || String(usageByService[name]).trim() === '') ? 'input-error' : ''}
+                                `}
+                                aria-invalid={
+                                    validationError &&
+                                    (!usageByService[name] || String(usageByService[name]).trim() === '')
+                                }
                             />
                         </label>
                     ))}
 
-                    <button type='button' onClick={() => setIsCalculate(true)} className='btn btn-primary h-9 px-6'>
+                    <button type='button' onClick={handleCalculate} className='btn btn-primary btn-sm my-1'>
                         Calculate
                     </button>
+                    {validationError && (
+                        <p className='text-sm text-error w-full' role='alert'>
+                            {validationError}
+                        </p>
+                    )}
                 </div>
             ) : (
                 <p className='text-sm text-gray-500'>No usage-based services in the current plans.</p>
             )}
 
-            {/* Results */}
             {isCalculate && results.length > 0 && (
                 <div className='space-y-3'>
                     <h4 className='text-sm font-semibold text-gray-700'>Plan comparison</h4>
@@ -155,55 +123,125 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                         <table className='w-full text-sm'>
                             <thead className='bg-gray-50'>
                                 <tr className='border-b border-gray-200'>
-                                    <th className='px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase whitespace-nowrap'>
+                                    <th className='px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
                                         Plan
                                     </th>
-                                    <th className='px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase whitespace-nowrap'>
+                                    <th className='px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
                                         Base
+                                    </th>
+                                    <th className='px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
+                                        Included
                                     </th>
                                     {serviceNames.map((name) => (
                                         <th
                                             key={name}
-                                            className='px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase whitespace-nowrap'
+                                            className='px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'
                                         >
                                             Extra {name}
                                         </th>
                                     ))}
-                                    <th className='px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase whitespace-nowrap'>
+                                    <th className='px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
+                                        Calculation
+                                    </th>
+                                    <th className='px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
                                         Total
                                     </th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                {results.map((r) => (
-                                    <tr
-                                        key={r.slug}
-                                        className='border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition'
-                                    >
-                                        <td className='px-4 py-3 text-gray-700'>{r.title}</td>
-                                        <td className='px-4 py-3 text-gray-700'>{formatPrice(symbol, r.base)}</td>
-                                        {serviceNames.map((name) => (
-                                            <td key={name} className='px-4 py-3 text-gray-700'>
-                                                {formatPrice(symbol, r.overages[name] ?? 0)}
+                                {results?.length > 0 &&
+                                    results.map((result) => (
+                                        <tr key={result.slug} className='border-b border-gray-100 last:border-b-0'>
+                                            <td className='px-4 py-3 text-gray-700'>{result.title}</td>
+                                            <td className='px-4 py-3 text-gray-700'>
+                                                {formatPrice(symbol, result?.base)}
                                             </td>
-                                        ))}
-                                        <td className='px-4 py-3 font-semibold text-green-600 whitespace-nowrap'>
-                                            {symbol}
-                                            {contvertToLocal(r.total ?? 0, currency)}
-                                        </td>
-                                    </tr>
-                                ))}
+                                            <td className='px-4 py-3 text-gray-600 align-top'>
+                                                <div className='flex flex-col gap-0.5'>
+                                                    {serviceNames.map((name) => (
+                                                        <span key={name} className='text-xs'>
+                                                            {name}:{' '}
+                                                            {result?.includedByService?.[name] == null
+                                                                ? 'Unlimited'
+                                                                : result?.includedByService?.[name]}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </td>
+                                            {serviceNames.map((name) => (
+                                                <td key={name} className='px-4 py-3 text-gray-700'>
+                                                    {formatPrice(symbol, result?.overages?.[name])}
+                                                </td>
+                                            ))}
+                                            <td className='px-4 py-3 text-gray-600 align-top'>
+                                                <div className='flex flex-col gap-1 text-xs'>
+                                                    {serviceNames.map((name) => {
+                                                        const calc = result?.calculationByService?.[name];
+                                                        if (!calc) return null;
+                                                        const { extra, rate, overage } = calc;
+                                                        const formula = `${extra} × ${rate} = ${overage}`;
+                                                        return (
+                                                            <span key={name}>
+                                                                {name}: {formula}
+                                                            </span>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </td>
+                                            <td className='px-4 py-3 font-semibold text-green-600 whitespace-nowrap'>
+                                                {symbol}
+                                                {contvertToLocal(result?.total)}
+                                            </td>
+                                        </tr>
+                                    ))}
                             </tbody>
                         </table>
                     </div>
-
-                    <p className='text-xs text-gray-500'>
-                        {currency === 'INR' && '+18% GST may apply.'}
-                        {currency === 'GBP' && 'VAT may apply.'}
-                    </p>
                 </div>
             )}
         </div>
     );
+}
+
+function formatPrice(symbol, amount) {
+    if (amount == null) return '—';
+    const num = Number(amount);
+    if (Number.isNaN(num)) return '—';
+    return `${symbol}${num.toLocaleString('en-US')}`;
+}
+
+function getUniqueServiceNames(plans) {
+    const names = new Set();
+    for (const plan of plans) {
+        for (const service of plan?.extras?.servicesList) {
+            if (service?.servicename) names.add(service.servicename);
+        }
+    }
+    return Array.from(names);
+}
+
+function computePlanTotal(plan, tabtype, usageByService) {
+    const validBase = Number(tabtype === 'Monthly' ? plan?.amount?.monthly : plan?.amount?.yearly) || 0;
+    const overages = {},
+        includedByService = {},
+        calculationByService = {};
+    let totalExtraCharges = 0;
+
+    for (const service of plan?.extras?.servicesList) {
+        const name = service?.servicename;
+        if (!name) continue;
+        const free = service?.free_credits,
+            isUnlimited = free === -1;
+        const included = isUnlimited ? null : Number(free);
+        includedByService[name] = included;
+        const usage = Number(usageByService[name]);
+        const extra = isUnlimited ? 0 : Math.max(0, usage - included);
+        const rate = Number(service?.follow_up_rate);
+        const overage = extra * rate;
+        overages[name] = overage;
+        calculationByService[name] = { extra, rate, overage };
+        totalExtraCharges += overage;
+    }
+    return { base: validBase, overages, includedByService, calculationByService, total: validBase + totalExtraCharges };
 }

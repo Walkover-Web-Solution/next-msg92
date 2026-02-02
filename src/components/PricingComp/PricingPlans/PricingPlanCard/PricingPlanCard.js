@@ -13,7 +13,7 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
             tabIndex={0}
             onClick={handleCardSelect}
             onKeyDown={(e) => e.key === 'Enter' && handleCardSelect()}
-            className={`min-w-[300px] rounded border bg-white px-6 py-6 sm:px-7 sm:py-7 cursor-pointer ${
+            className={`min-w-[300px] rounded border min-h-full bg-white px-6 py-6 sm:px-7 sm:py-7 cursor-pointer ${
                 isSelected ? 'border-black border-2' : 'border-gray-200'
             }`}
         >
@@ -30,18 +30,20 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
                 </button>
             </div>
 
-            <div className={`my-2 ${planData?.showLink !== false && planData?.hasDialPlan ? '' : 'hidden'}`}>
-                <button
-                    type='button'
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        if (onViewCallingRates) onViewCallingRates(planData?.slug);
-                        else onSelect?.();
-                    }}
-                    className='text-sm text-blue-600 font-medium hover:underline'
-                >
-                    {planData?.linkText ?? 'View Calling Rates'}
-                </button>
+            <div className='my-2 min-h-[1.5rem]'>
+                {planData?.showLink !== false && planData?.hasDialPlan ? (
+                    <button
+                        type='button'
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            if (onViewCallingRates) onViewCallingRates(planData?.slug);
+                            else onSelect?.();
+                        }}
+                        className='text-sm text-blue-600 font-medium hover:underline'
+                    >
+                        {planData?.linkText ?? 'View Calling Rates'}
+                    </button>
+                ) : null}
             </div>
 
             {Array.isArray(planData?.included) && planData.included.length > 0 && (

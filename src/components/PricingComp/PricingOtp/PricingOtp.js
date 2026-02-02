@@ -22,7 +22,12 @@ export default function PricingOtp({ pageData }) {
                         </button>
                     </a>
                 </div>
-                <ConnectWithTeam pageData={pageData?.connectComp} product={'OTP widget/SDK'} href={'otp'} />
+                <ConnectWithTeam
+                    pageData={pageData?.connectComp}
+                    product={'OTP widget/SDK'}
+                    href={'otp'}
+                    isPlan={true}
+                />
                 <FaqsComp data={pageData?.faqComp} notCont={true} />
             </div>
         </div>

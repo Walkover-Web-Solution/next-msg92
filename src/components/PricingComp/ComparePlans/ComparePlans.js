@@ -58,8 +58,8 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
         <section id='compare-plans' className='w-full py-6'>
             <div className='max-w-7xl'>
                 <div className='flex flex-col py-4'>
-                    <h2 className='text-2xl sm:text-3xl font-semibold text-gray-900'>{pageData?.heading}</h2>
-                    <p className='text-sm sm:text-base text-gray-600'>{pageData?.description}</p>
+                    <h2 className='text-2xl sm:text-3xl font-semibold'>{pageData?.heading}</h2>
+                    <p className='text-md text-gray-600'>{pageData?.description}</p>
                 </div>
 
                 <div className='flex py-4 items-center justify-between'>
@@ -86,13 +86,13 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
                     <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                         <thead className='bg-gray-50'>
                             <tr className='border-b border-gray-200'>
-                                <th className='w-[210px] px-4 py-4 text-left font-medium text-gray-500 sticky left-0 bg-gray-50 z-20 border-r border-gray-200'>
+                                <th className='w-[200px] px-4 py-4 text-left font-medium text-gray-500 sticky left-0 bg-gray-50 z-20 border-r border-gray-200'>
                                     {pageData?.featuresColumnLabel}
                                 </th>
                                 {planNames.map((name, i) => (
                                     <th
                                         key={i}
-                                        className='w-[180px] px-4 py-4 text-center font-semibold text-gray-900 border-l border-gray-200'
+                                        className='w-[150px] px-4 py-4 text-center font-semibold text-gray-900 border-l border-gray-200'
                                     >
                                         {name}
                                     </th>

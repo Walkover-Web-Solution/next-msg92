@@ -49,15 +49,14 @@ export default function ConnectWithTeam({ product, isPlan, pageData, href, per }
             </div>
 
             {isSalesModalOpen && (
-                <dialog open className='fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4'>
-                    <div className='relative w-full max-w-3xl rounded-xl bg-white px-6 py-6 shadow-lg'>
+                <dialog id='sales_modal' className='modal' open>
+                    <div className='modal-box'>
                         <button
                             onClick={() => setIsSalesModalOpen(false)}
-                            className='absolute right-3 top-3 rounded-full px-2 py-1 text-gray-500 hover:bg-gray-100'
+                            className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'
                         >
                             ✕
                         </button>
-
                         <InlineWidget url='https://calendly.com/d/y3n-29s-29h' styles={{ height: '680px' }} />
                     </div>
                 </dialog>

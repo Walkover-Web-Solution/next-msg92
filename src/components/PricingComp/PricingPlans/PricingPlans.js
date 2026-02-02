@@ -1,5 +1,5 @@
 import { useRef, useMemo, useEffect } from 'react';
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+
 import PricingPlanCard from './PricingPlanCard/PricingPlanCard';
 
 export default function PricingPlans({

@@ -9,6 +9,7 @@ import NotificationBarComp from '../notificationBarComp/notificationBarComp';
 import MenuBarComp from '../menuBarComp/menuBarComp';
 import FooterComp from '../FooterComp/FooterComp';
 import PricingSubscription from './PricingSubscription';
+import ConnectWithTeam from './ConnectWithTeam/ConnectWithTeam';
 
 export default function PricingComp({ pricingData, pageInfo, pageData, products, commonData, country }) {
     if (pricingData) {
@@ -50,6 +51,7 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                         {pageInfo?.product === 'voice' && <PricingVoice data={pageData} country={pageInfo?.country} />}
                     </div>
                 </div>
+
                 <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} />
             </>
         );

@@ -12,11 +12,10 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 const CALCULATE_PRICING_MODAL_ID = 'calculate-pricing-modal';
 
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {
-    console.log('🚀 ~ PricingSubscription ~ pricingData:', pricingData);
     const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
     const [hasYearly, setHasYearly] = useState(false);
-    const [scrollApi, setScrollApi] = useState(null);
+    const [scrollApi, setScrollApi] = useState();
     const [selectedPlanSlug, setSelectedPlanSlug] = useState(null);
     const dialPlanRef = useRef(null);
 
@@ -56,24 +55,25 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                 <div className='flex flex-col w-full gap-6'>
                     <div className='flex items-center justify-between gap-4'>
                         <PlanToggle tabtype={tabtype} setTabtype={setTabtype} hasYearly={hasYearly} />
+                        {scrollApi && (
+                            <div className='flex items-center gap-2'>
+                                <button
+                                    onClick={() => scrollApi.scrollLeft()}
+                                    className='flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-600 hover:bg-gray-100'
+                                    aria-label='Scroll left'
+                                >
+                                    <MdChevronLeft />
+                                </button>
 
-                        <div className='flex items-center gap-2'>
-                            <button
-                                onClick={() => scrollApi?.scrollLeft()}
-                                className='flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-600 hover:bg-gray-100'
-                                aria-label='Scroll left'
-                            >
-                                <MdChevronLeft />
-                            </button>
-
-                            <button
-                                onClick={() => scrollApi?.scrollRight()}
-                                className='flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-600 hover:bg-gray-100'
-                                aria-label='Scroll right'
-                            >
-                                <MdChevronRight />
-                            </button>
-                        </div>
+                                <button
+                                    onClick={() => scrollApi.scrollRight()}
+                                    className='flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-600 hover:bg-gray-100'
+                                    aria-label='Scroll right'
+                                >
+                                    <MdChevronRight />
+                                </button>
+                            </div>
+                        )}
                     </div>
 
                     <PricingPlans
@@ -101,12 +101,14 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         tabtype={tabtype}
                         pageData={pageData?.comparePlans}
                     />
-                    <ConnectWithTeam
-                        product={pageInfo?.product}
-                        href={pageInfo?.product}
-                        pageData={pageData?.connectComp}
-                        isPlan={true}
-                    />
+                    {pageData?.connectComp && (
+                        <ConnectWithTeam
+                            product={pageInfo?.product}
+                            href={pageInfo?.product}
+                            pageData={pageData?.connectComp}
+                            isPlan={true}
+                        />
+                    )}
                     <FaqsComp data={pageData?.faqComp} notCont={true} />
                 </div>
             </div>
