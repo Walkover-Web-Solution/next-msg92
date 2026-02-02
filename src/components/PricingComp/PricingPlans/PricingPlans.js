@@ -11,6 +11,7 @@ export default function PricingPlans({
     onViewCallingRates,
     onCalculateClick,
     pageData,
+    product,
 }) {
     const scrollRef = useRef(null);
 
@@ -58,6 +59,7 @@ export default function PricingPlans({
                             isSelected={card.slug === selectedPlanSlug}
                             onSelect={() => onSelectPlan?.(card.slug)}
                             onViewCallingRates={onViewCallingRates}
+                            product={product}
                         />
                     ))}
                 </div>

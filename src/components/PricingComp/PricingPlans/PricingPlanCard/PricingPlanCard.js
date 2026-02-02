@@ -1,7 +1,8 @@
 import React from 'react';
 import { MdCheck, MdClose, MdChevronRight } from 'react-icons/md';
+import getURL from '@/utils/getURL';
 
-export default function PricingPlanCard({ planData, isSelected = false, onSelect, onViewCallingRates }) {
+export default function PricingPlanCard({ planData, isSelected = false, onSelect, onViewCallingRates, product }) {
     const featuresToShow = Array.isArray(planData?.features) && planData?.features?.slice(0, 5);
     const handleCardSelect = () => {
         if (onSelect) onSelect();
@@ -25,23 +26,28 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
             </div>
 
             <div className='my-2' onClick={(e) => e.stopPropagation()}>
-                <button type='button' className='w-full btn btn-primary btn-sm btn-outline'>
-                    {planData?.ctaText ?? 'Get Started'}
-                </button>
+                <a
+                    href={getURL('signup', product)}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='w-full btn btn-primary btn-sm btn-outline block text-center'
+                >
+                    {planData?.ctaText}
+                </a>
             </div>
 
             {Array.isArray(planData?.included) && planData.included.length > 0 && (
                 <div className='my-2'>
                     <h4 className='mb-1 text-sm font-semibold text-gray-900'>Included</h4>
                     <div className='flex flex-col'>
-                        {planData.included.map((item, idx) => {
+                        {planData.included.map((item, index) => {
                             const displayText =
                                 typeof item === 'object' && item != null
                                     ? (item.displayText ?? item.service_name ?? '')
                                     : String(item);
                             const hasDialPlan = typeof item === 'object' && item != null && item.hasDialPlan === true;
                             return (
-                                <div key={idx} className='flex flex-nowrap items-center gap-2 text-sm'>
+                                <div key={index} className='flex flex-nowrap items-center gap-2 text-sm'>
                                     <span className='text-gray-600 truncate shrink-0'>{displayText}</span>
                                     {hasDialPlan && (
                                         <>
@@ -72,12 +78,12 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
                 <div className='my-2'>
                     <h4 className='mb-1 text-sm font-semibold text-gray-900'>Features</h4>
                     <div className=''>
-                        {featuresToShow.map((item, idx) => {
+                        {featuresToShow.map((item, index) => {
                             const text = typeof item === 'string' ? item : (item?.name ?? '');
                             const isIncluded = typeof item === 'object' && item != null ? item.is_included : true;
 
                             return (
-                                <div key={idx} className='flex items-center gap-2 text-sm text-gray-600'>
+                                <div key={index} className='flex items-center gap-2 text-sm text-gray-600'>
                                     {isIncluded === 0 || isIncluded === false ? (
                                         <MdClose className='shrink-0 text-red-500' />
                                     ) : (
@@ -95,12 +101,12 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
                 <div className='my-2 flex flex-col gap-1'>
                     <h4 className='text-sm font-semibold text-gray-900'>Extra @</h4>
                     <div className=''>
-                        {planData.extra.map((item, idx) => {
+                        {planData.extra.map((item, index) => {
                             const isObject = typeof item === 'object' && item != null && 'label' in item;
                             const label = isObject ? item.label : typeof item === 'string' ? item : String(item);
                             const isNoExtra = isObject ? item.isNoExtra : false;
                             return (
-                                <div key={idx} className='flex items-center gap-2 text-sm text-gray-600'>
+                                <div key={index} className='flex items-center gap-2 text-sm text-gray-600'>
                                     {isNoExtra ? (
                                         <MdClose className='shrink-0 text-red-500' />
                                     ) : (

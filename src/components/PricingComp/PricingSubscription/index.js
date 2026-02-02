@@ -87,6 +87,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         onViewCallingRates={onViewCallingRates}
                         onCalculateClick={onOpenCalculateModal}
                         pageData={pageData?.pricingPlans}
+                        product={pageInfo?.product}
                     />
                     <div ref={dialPlanRef}>
                         <DialPlan

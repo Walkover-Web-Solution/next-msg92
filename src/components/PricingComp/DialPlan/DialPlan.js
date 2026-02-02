@@ -89,8 +89,11 @@ export default function DialPlan({ pricingData, selectedPlanSlug, pageData }) {
                                                 </tr>
                                             </thead>
                                             <tbody className='bg-white'>
-                                                {filteredData.map((row, idx) => (
-                                                    <tr key={idx} className='border-b border-gray-200 last:border-b-0'>
+                                                {filteredData.map((row, index) => (
+                                                    <tr
+                                                        key={index}
+                                                        className='border-b border-gray-200 last:border-b-0'
+                                                    >
                                                         {columns.map((col) => (
                                                             <td
                                                                 key={col.key}

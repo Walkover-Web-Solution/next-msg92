@@ -16,13 +16,13 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
         if (!Array.isArray(pricingData) || pricingData.length === 0) {
             return { planNames: [], rows: [] };
         }
-        const sym = symbol ?? '₹';
+        const currencySymbol = symbol;
         const isMonthly = tabtype === 'Monthly';
 
-        const planNames = pricingData.map((p) => capitalizeSlug(p?.slug));
+        const planNames = pricingData.map((plan) => plan?.slug ?? 'Plan');
 
-        const priceValues = pricingData.map((p) =>
-            formatPrice(sym, isMonthly ? p?.amount?.monthly : p?.amount?.yearly)
+        const priceValues = pricingData.map((plan) =>
+            formatPrice(currencySymbol, isMonthly ? plan?.amount?.monthly : plan?.amount?.yearly)
         );
 
         const seen = new Set();
@@ -92,10 +92,10 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
                                 <th className='w-[200px] px-4 py-4 text-left font-medium text-gray-500 sticky left-0 bg-gray-50 z-20 border-r border-gray-200'>
                                     {pageData?.featuresColumnLabel}
                                 </th>
-                                {planNames.map((name, i) => (
+                                {planNames.map((name, index) => (
                                     <th
-                                        key={i}
-                                        className='w-[150px] px-4 py-4 text-center font-semibold text-gray-900 border-l border-gray-200'
+                                        key={index}
+                                        className='w-[150px] px-4 py-4 text-center font-semibold text-gray-900 border-l border-gray-200 capitalize'
                                     >
                                         {name}
                                     </th>
@@ -110,9 +110,9 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
                                             ? String(row.label?.userFriendlyName ?? row.label?.key ?? '')
                                             : row.label}
                                     </td>
-                                    {row.values.map((value, idx) => (
+                                    {row.values.map((value, index) => (
                                         <td
-                                            key={idx}
+                                            key={index}
                                             className='w-[180px] px-4 py-4 text-center border-l border-gray-200'
                                         >
                                             {row.isPrice ? (
@@ -134,17 +134,9 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
     );
 }
 
-const FIXED_LOCALE = 'en-US';
-
 function formatPrice(symbol, amount) {
     if (amount == null) return '—';
     const num = Number(amount);
     if (Number.isNaN(num)) return '—';
-    return `${symbol}${num.toLocaleString(FIXED_LOCALE)}`;
-}
-
-function capitalizeSlug(slug) {
-    if (!slug) return 'Plan';
-    const s = String(slug);
-    return s.charAt(0).toUpperCase() + s.slice(1);
+    return `${symbol}${num.toLocaleString('en-US')}`;
 }
