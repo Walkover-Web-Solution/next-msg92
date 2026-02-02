@@ -25,12 +25,12 @@ function useDebouncedValue(value, delay) {
 
 function filterRowsBySearch(data, columns, searchTerm) {
     if (!searchTerm?.trim() || !data?.length) return data;
-    const q = searchTerm.trim().toLowerCase();
+    const query = searchTerm.trim().toLowerCase();
     const colKeys = columns.map((c) => c.key);
     return data.filter((row) => {
-        for (let i = 0; i < colKeys.length; i++) {
-            const v = String(row[colKeys[i]] ?? '').toLowerCase();
-            if (v.includes(q)) return true;
+        for (let index = 0; index < colKeys.length; index++) {
+            const value = String(row[colKeys[index]] ?? '').toLowerCase();
+            if (value.includes(query)) return true;
         }
         return false;
     });
@@ -42,16 +42,16 @@ const DialPlanTable = React.memo(function DialPlanTable({ service_name, columns,
             {service_name && <h4 className='text-base font-semibold text-gray-800'>{service_name}</h4>}
             <div className='rounded border border-gray-200 bg-white max-w-7xl'>
                 <div className='w-full overflow-x-auto'>
-                    <div className='max-h-[400px] overflow-y-auto border border-gray-300 rounded'>
+                    <div className='max-h-[600px] overflow-y-auto border border-gray-300 rounded'>
                         <table className='min-w-full border-collapse text-sm'>
                             <thead className='sticky top-0 z-10 bg-gray-100'>
                                 <tr>
-                                    {columns.map((col) => (
+                                    {columns.map((column) => (
                                         <th
-                                            key={col.key}
+                                            key={column.key}
                                             className='px-4 py-3 text-left text-xs font-semibold tracking-wide border-b border-r border-gray-300 whitespace-nowrap'
                                         >
-                                            {col.label}
+                                            {column.label}
                                         </th>
                                     ))}
                                 </tr>

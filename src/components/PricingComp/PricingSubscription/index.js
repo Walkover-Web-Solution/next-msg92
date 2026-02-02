@@ -15,13 +15,20 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
     const [hasYearly, setHasYearly] = useState(false);
     const [scrollApi, setScrollApi] = useState();
     const [selectedPlanSlug, setSelectedPlanSlug] = useState(null);
+    const [showDialPlan, setShowDialPlan] = useState(false);
     const dialPlanRef = useRef(null);
     const calculateModalRef = useRef(null);
 
     const onViewCallingRates = useCallback((slug) => {
         setSelectedPlanSlug(slug);
-        dialPlanRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setShowDialPlan(true);
     }, []);
+
+    useEffect(() => {
+        if (showDialPlan) {
+            dialPlanRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, [showDialPlan]);
 
     const onOpenCalculateModal = useCallback(() => {
         calculateModalRef.current?.showModal();
@@ -37,17 +44,6 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
             : false;
         setHasYearly(!!hasYearlyPlans);
     }, [pricingData]);
-
-    // Default selected plan when pricingData loads, or when current selection is no longer in the list
-    useEffect(() => {
-        if (!Array.isArray(pricingData) || pricingData.length === 0) return;
-        const selectionStillValid = selectedPlanSlug != null && pricingData.some((p) => p?.slug === selectedPlanSlug);
-        if (selectionStillValid) return;
-        const firstWithDial =
-            pricingData.find((plan) => plan?.included?.some((item) => item?.dial_plan?.data?.length > 0)) ||
-            pricingData[0];
-        setSelectedPlanSlug(firstWithDial?.slug ?? null);
-    }, [pricingData, selectedPlanSlug]);
 
     return (
         <>
@@ -82,21 +78,23 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         tabtype={tabtype}
                         symbol={symbol}
                         setScrollApi={setScrollApi}
-                        selectedPlanSlug={selectedPlanSlug}
-                        onSelectPlan={setSelectedPlanSlug}
+                        selectedPlanSlug={null}
+                        onSelectPlan={() => {}}
                         onViewCallingRates={onViewCallingRates}
                         onCalculateClick={onOpenCalculateModal}
                         pageData={pageData?.pricingPlans}
                         product={pageInfo?.product}
                     />
-                    <div ref={dialPlanRef}>
-                        <DialPlan
-                            pricingData={pricingData}
-                            symbol={symbol}
-                            selectedPlanSlug={selectedPlanSlug}
-                            pageData={pageData?.dialPlan}
-                        />
-                    </div>
+                    {showDialPlan && (
+                        <div ref={dialPlanRef}>
+                            <DialPlan
+                                pricingData={pricingData}
+                                symbol={symbol}
+                                selectedPlanSlug={selectedPlanSlug}
+                                pageData={pageData?.dialPlan}
+                            />
+                        </div>
+                    )}
                     <ComparePlans
                         pricingData={pricingData}
                         symbol={symbol}
