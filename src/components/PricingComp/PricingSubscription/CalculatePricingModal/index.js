@@ -191,7 +191,9 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                                             </td>
                                             <td className='px-4 py-3 font-semibold text-green-600 whitespace-nowrap'>
                                                 {symbol}
-                                                {contvertToLocal(result?.total)}
+                                                {result?.total != null && !Number.isNaN(Number(result?.total))
+                                                    ? contvertToLocal(result.total)
+                                                    : '—'}
                                             </td>
                                         </tr>
                                     ))}

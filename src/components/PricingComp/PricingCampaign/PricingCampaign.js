@@ -1,5 +1,5 @@
 import getURL from '@/utils/getURL';
-import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
+import ConnectWithTeam from '../ConnectWithTeam';
 
 export default function PricingCampaign({ pageData }) {
     return (

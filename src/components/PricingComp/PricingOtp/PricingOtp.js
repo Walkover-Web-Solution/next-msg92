@@ -1,5 +1,5 @@
 import getURL from '@/utils/getURL';
-import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
+import ConnectWithTeam from '../ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 
 export default function PricingOtp({ pageData }) {

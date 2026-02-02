@@ -2,10 +2,10 @@ import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
 import GetCountryDetails from '@/utils/getCurrentCountry';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
+import ConnectWithTeam from '../ConnectWithTeam';
 import { InlineWidget } from 'react-calendly';
 import CalculatePricingRCS from './CalculatePricingRCS/CalculatePricingRCS';
-import ComparePlans from '../ComparePlans/ComparePlans';
+import ComparePlans from '../ComparePlans';
 
 export default function PricingRCS({ country, pageData }) {
     const { currency, symbol } = GetCurrencySymbol(country);

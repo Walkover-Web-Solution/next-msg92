@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { MdCheck } from 'react-icons/md';
-import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
+import ConnectWithTeam from '../ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
 import axios from 'axios';

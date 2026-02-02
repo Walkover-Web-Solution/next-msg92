@@ -1,5 +1,5 @@
 import { useRef, useMemo, useEffect } from 'react';
-import PricingPlanCard from './PricingPlanCard/PricingPlanCard';
+import PricingPlanCard from './PricingPlanCard';
 
 export default function PricingPlans({
     pricingData,
@@ -122,10 +122,13 @@ function simplifiedPlanToCard(plan, tabtype, symbol, plansPageData) {
 
     const hasDialPlan = plan?.included?.some((item) => item?.dial_plan?.data?.length > 0) ?? false;
 
+    const price =
+        amount != null && !Number.isNaN(Number(amount)) ? `${symbol}${Number(amount).toLocaleString('en-US')}` : '—';
+
     const planCard = {
         slug: plan?.slug,
         title,
-        price: `${symbol}${amount}`,
+        price,
         period,
         ctaText: plansPageData?.ctaText,
         showLink: true,

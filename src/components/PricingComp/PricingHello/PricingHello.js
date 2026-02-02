@@ -1,7 +1,7 @@
 import getSubscriptions from '@/utils/pricing/getSubscription';
 import { useState, useEffect, useCallback } from 'react';
 import { MdCheck, MdClose } from 'react-icons/md';
-import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
+import ConnectWithTeam from '../ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
 import getURL from '@/utils/getURL';

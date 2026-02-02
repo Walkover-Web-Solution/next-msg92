@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
+import ConnectWithTeam from '../ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
-import PlanToggle from '../PlanToggle/PlanToggle';
-import PricingPlans from '../PricingPlans/PricingPlans';
-import DialPlan from '../DialPlan/DialPlan';
-import ComparePlans from '../ComparePlans/ComparePlans';
-import CalculatePricingModal from './CalculatePricingModal/CalculatePricingModal';
+import PlanToggle from '../PlanToggle';
+import PricingPlans from '../PricingPlans';
+import DialPlan from '../DialPlan';
+import ComparePlans from '../ComparePlans';
+import CalculatePricingModal from './CalculatePricingModal';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {

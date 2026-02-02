@@ -14,7 +14,7 @@ import SEOComp from '@/components/SEOComp/SEOComp';
 import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
 import HeadComp from '@/components/HeadComp/HeadComp';
 import FeatureComp from '@/components/FeatureComp/FeatureComp';
-import PricingComp from '@/components/PricingComp/PricingComp';
+import PricingComp from '@/components/PricingComp';
 import AboutUsComp from '@/components/AboutUsComp/AboutUsComp';
 import DevelopersComp from '@/components/DevelopersComp/DevelopersComp';
 import StartupComp from '@/components/StartupComp/StartupComp';

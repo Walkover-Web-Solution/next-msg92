@@ -1,4 +1,4 @@
-import PricingComp from '@/components/PricingComp/PricingComp';
+import PricingComp from '@/components/PricingComp';
 import getCommonCompData from '@/utils/getCommonCompData';
 import getPricing from '@/utils/pricing/getPricing';
 

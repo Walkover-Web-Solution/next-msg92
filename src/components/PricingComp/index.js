@@ -9,7 +9,7 @@ import NotificationBarComp from '../notificationBarComp/notificationBarComp';
 import MenuBarComp from '../menuBarComp/menuBarComp';
 import FooterComp from '../FooterComp/FooterComp';
 import PricingSubscription from './PricingSubscription';
-import ConnectWithTeam from './ConnectWithTeam/ConnectWithTeam';
+import ConnectWithTeam from './ConnectWithTeam';
 
 export default function PricingComp({ pricingData, pageInfo, pageData, products, commonData, country }) {
     if (pricingData) {

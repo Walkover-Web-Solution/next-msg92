@@ -68,13 +68,13 @@
             "heading": "Hello Pricing",
             "pricingPlans": {
                 "ctaText": "Get Started",
-                "viewCallingRatesText": "View dial plan",
+                "viewCallingRatesText": "View Dial Plan",
                 "calculatePricingText": "Calculate pricing",
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                "heading": "Global Calling Rates",
-                "description": "Competitive international calling rates across countries.",
+                
+                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -142,13 +142,13 @@
             "heading": "Segmento Pricing",
             "pricingPlans": {
                 "ctaText": "Get Started",
-                "viewCallingRatesText": "View dial plan",
+                "viewCallingRatesText": "View Dial Plan",
                 "calculatePricingText": "Calculate pricing",
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                "heading": "Global Calling Rates",
-                "description": "Competitive international calling rates across countries.",
+                
+                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -222,13 +222,13 @@
             "heading": "Email Pricing",
             "pricingPlans": {
                 "ctaText": "Get Started",
-                "viewCallingRatesText": "View dial plan",
+                "viewCallingRatesText": "View Dial Plan",
                 "calculatePricingText": "Calculate pricing",
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                "heading": "Global Calling Rates",
-                "description": "Competitive international calling rates across countries.",
+                
+                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -364,13 +364,13 @@
             "heading": "WhatsApp Pricing",
             "pricingPlans": {
                 "ctaText": "Get Started",
-                "viewCallingRatesText": "View dial plan",
+                "viewCallingRatesText": "View Dial Plan",
                 "calculatePricingText": "Calculate pricing",
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                "heading": "Global Calling Rates",
-                "description": "Competitive international calling rates across countries.",
+                
+                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -397,13 +397,13 @@
             "heading": "RCS Pricing",
             "pricingPlans": {
                 "ctaText": "Get Started",
-                "viewCallingRatesText": "View dial plan",
+                "viewCallingRatesText": "View Dial Plan",
                 "calculatePricingText": "Calculate pricing",
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                "heading": "Global Calling Rates",
-                "description": "Competitive international calling rates across countries.",
+                
+                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
