@@ -65,6 +65,28 @@
                 "title": "Hello Pricing in India | MSG91-India",
                 "description": "Avail robust and powerful services in India like transactional Hello, communication APIs and more at affordable prices. Check out the pricing now."
             },
+            "heading": "Hello Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
                 "sales_btn": "Talk to Sales",
@@ -117,6 +139,28 @@
             "HeadComp": {
                 "title": "Segmento Pricing in India | MSG91-India",
                 "description": "Avail robust and powerful services in India like transactional Segmento, communication APIs and more at affordable prices. Check out the pricing now."
+            },
+            "heading": "Segmento Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "get_started": "Get Started",
             "connectComp": {
@@ -179,6 +223,28 @@
             "HeadComp": {
                 "title": "Email Pricing in India | MSG91-India",
                 "description": "Avail robust and powerful services in India like transactional Email, communication APIs and more at affordable prices. Check out the pricing now."
+            },
+            "heading": "Email Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
@@ -301,26 +367,62 @@
                 "title": " WhatsApp Business API Pricing (2025) | WhatsApp Cloud API Cost",
                 "description": "WhatsApp API pricing varies with plans, including WhatsApp Business API price,  Whatsapp cloud API pricing. Check out the Latest Whatsapp API Cost now."
             },
-            "heading": "Whatsapp API Pricing",
+            "heading": "WhatsApp Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "tax": "Since we do not impose any service charge, GST will be applied to WhatsApp API pricing",
             "adds": "Zero Whatsapp cloud API pricing for Click to WhatsApp Ads.",
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
-            },
-            "whatsappVoice": {
-                "heading": "Enjoy 100% Free WhatsApp Inbound Calls till December!",
-                "sub_heading": "Pricing",
-                "content": [
-                    "Pricing after December: Inbound Calls: ₹0.5/min"
-                ]
             }
         },
         "rcs": {
             "HeadComp": {
                 "title": "RCS Message Pricing in India | MSG91-India",
                 "description": "RCS Messaging now available in India at most affordable prices. Learn How to send RCS Messages on android and iphone using Transactional RCS APIs and more"
+            },
+            "heading": "RCS Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
                 "know_more": "Know more about"

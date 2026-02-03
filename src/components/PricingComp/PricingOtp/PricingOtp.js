@@ -1,5 +1,5 @@
 import getURL from '@/utils/getURL';
-import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
+import ConnectWithTeam from '../ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 
 export default function PricingOtp({ pageData }) {
@@ -22,7 +22,12 @@ export default function PricingOtp({ pageData }) {
                         </button>
                     </a>
                 </div>
-                <ConnectWithTeam pageData={pageData?.connectComp} product={'OTP widget/SDK'} href={'otp'} />
+                <ConnectWithTeam
+                    pageData={pageData?.connectComp}
+                    product={'OTP widget/SDK'}
+                    href={'otp'}
+                    isPlan={true}
+                />
                 <FaqsComp data={pageData?.faqComp} notCont={true} />
             </div>
         </div>

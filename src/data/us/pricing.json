@@ -65,6 +65,28 @@
                 "title": "Hello Pricing in United States | MSG91-United States",
                 "description": "Access robust and reliable services such as transactional Hello, communication APIs, and more at affordable prices. Explore the pricing today."
             },
+            "heading": "Hello Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
                 "sales_btn": "Talk to Sales",
@@ -117,6 +139,28 @@
             "HeadComp": {
                 "title": "Segmento Pricing in United States | MSG91-United States",
                 "description": "Access robust and reliable services such as transactional Segmento, communication APIs, and more at affordable prices. Explore the pricing today."
+            },
+            "heading": "Segmento Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "get_started": "Get Started",
             "connectComp": {
@@ -179,6 +223,28 @@
             "HeadComp": {
                 "title": "Email Pricing in United States | MSG91-United States",
                 "description": "Access robust and reliable services such as transactional Email, communication APIs, and more at affordable prices. Explore the pricing today."
+            },
+            "heading": "Email Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
@@ -300,23 +366,60 @@
                 "title": "WhatsApp Pricing - WhatsApp Business Account Cost",
                 "description": "Explore transparent WhatsApp Business API pricing with MSG91. Compare message rates, choose the right plan, and scale your communication cost-effectively."
             },
+            "heading": "WhatsApp Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
-            },
-            "whatsappVoice": {
-                "heading": "Enjoy 100% Free WhatsApp Inbound Calls till December!",
-                "sub_heading": "Pricing",
-                "content": [
-                    "Pricing after December: Inbound Calls: $0.01/min"
-                ]
             }
         },
         "rcs": {
             "HeadComp": {
                 "title": "RCS Messaging Cost - Rich Communication Services Cost",
                 "description": "Explore transparent RCS messaging costs with MSG91. Leverage Rich Communication Services to deliver interactive, branded messages and enhance user engagement."
+            },
+            "heading": "RCS Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
                 "know_more": "Know more about"

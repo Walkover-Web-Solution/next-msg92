@@ -65,6 +65,28 @@
                 "title": "Hello Pricing | MSG91",
                 "description": "Avail robust and powerful services like transactional Hello, communication APIs, and more at competitive prices. Check out the pricing now."
             },
+            "heading": "Hello Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
                 "sales_btn": "Talk to Sales",
@@ -106,9 +128,8 @@
                 "line_two": "Costs will apply for every 1,000 API calls, with final pricing to be announced shortly."
             },
             "get_started": "Get Started",
-            "connectComp": {
+         "connectComp": {
                 "content": "Campaign usage is free.",
-                "content2": "Channel wise pricing will be applicable for sending message.",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }
@@ -117,6 +138,28 @@
             "HeadComp": {
                 "title": "Segmento Pricing | MSG91",
                 "description": "Avail robust and powerful services like transactional Segmento, communication APIs, and more at competitive prices. Check out the pricing now."
+            },
+            "heading": "Segmento Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "get_started": "Get Started",
             "connectComp": {
@@ -133,7 +176,6 @@
             "get_started": "Get Started",
             "connectComp": {
                 "content": "OTP widget/SDK usage is free.",
-                "content2": "Channel wise pricing will be applicable for sending message.",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             },
@@ -176,6 +218,28 @@
             "HeadComp": {
                 "title": "Email Pricing | MSG91",
                 "description": "Avail robust and powerful services like transactional Email, communication APIs, and more at competitive prices. Check out the pricing now."
+            },
+            "heading": "Email Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
@@ -287,7 +351,7 @@
                 "description": "Avail robust and powerful services like transactional OTP, communication APIs, and more at competitive prices. Check out the pricing now."
             },
             "connectComp": {
-                "content": "Connect with our team for a personalized plan to meet your needs.",
+                "content": "OTP widget/SDK usage is free.",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }
@@ -297,17 +361,32 @@
                 "title": "WhatsApp Pricing | MSG91",
                 "description": "Avail robust and powerful services like transactional WhatsApp, communication APIs, and more at competitive prices. Check out the pricing now."
             },
+            "heading": "WhatsApp Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
-            },
-            "whatsappVoice": {
-                "heading": "Enjoy 100% Free WhatsApp Inbound Calls till December!",
-                "sub_heading": "Pricing",
-                "content": [
-                    "Pricing after December: Inbound Calls: $0.01/min"
-                ]
             }
         },
         "rcs": {
@@ -315,7 +394,31 @@
                 "title": "RCS Pricing | MSG91",
                 "description": "Avail robust and powerful services like transactional RCS, communication APIs, and more at competitive prices. Check out the pricing now."
             },
+            "heading": "RCS Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                
+                
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "connectComp": {
+                "content": "Connect with our team for Pricing .",
+                "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }
         }

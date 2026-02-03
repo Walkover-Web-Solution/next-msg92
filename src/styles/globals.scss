@@ -34,57 +34,6 @@ body {
         }
     }
 }
-.country-list {
-    div {
-        @apply w-full;
-        input {
-            padding: 12px 12px !important ;
-            @apply border rounded  text-[16px] w-full;
-            &::placeholder {
-                @apply text-[16px] text-gray-500;
-            }
-        }
-    }
-    .rbt-menu {
-        @apply bg-white shadow-lg mt-2 rounded;
-        display: flex !important;
-        a {
-            &.active {
-                @apply bg-secondary;
-            }
-            @apply hover:bg-secondary text-[16px] rounded
-            px-3 py-2;
-        }
-    }
-    .rbt-highlight-text {
-        @apply bg-secondary;
-    }
-}
-.country-list-phone {
-    div {
-        @apply w-full;
-        input {
-            @apply rounded  text-[16px] w-8;
-            &::placeholder {
-                @apply text-[14px] text-gray-500;
-            }
-        }
-    }
-    .rbt-menu {
-        @apply bg-white shadow-lg mt-2 rounded w-24;
-        display: flex !important;
-        a {
-            &.active {
-                @apply bg-secondary;
-            }
-            @apply hover:bg-secondary text-[16px] rounded
-            px-3 py-2;
-        }
-    }
-    .rbt-highlight-text {
-        @apply bg-secondary;
-    }
-}
 .rbt-menu {
     @apply w-fit bg-white flex flex-col z-10;
 }
@@ -138,18 +87,20 @@ input[type='number'] {
     background: linear-gradient(90deg, var(--zapier) 11%, rgba(242, 242, 243, 0.91995) 11%, #f2f2f3 100%);
 }
 
-.test_Dev {
+.test_Dev{
+    
 }
-#__next {
+#__next{
+
     overflow-x: hidden;
 }
 .clint-input-container {
     .iti--allow-dropdown {
         &:has(.iti--allow-dropdown) {
             margin-bottom: 0;
-            > .iti__flag-container {
+           > .iti__flag-container {
                 display: none;
             }
         }
-    }
+    }   
 }

@@ -1,6 +1,5 @@
 import '@/styles/globals.scss';
 import 'react-toastify/dist/ReactToastify.css';
-import 'intl-tel-input/build/css/intlTelInput.css';
 import { ToastContainer } from 'react-toastify';
 import handleBrawserCookies from '@/utils/setCookies';
 import { useRouter } from 'next/router';

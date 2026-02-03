@@ -1,8 +1,7 @@
 {
     "HeadComp": {
-        "title": "Free WhatsApp Link Generator - Create WhatsApp Link & QR Codes | MSG91",
-        "description": "Generate free WhatsApp links quickly using MSG91's convenient WhatsApp link generator for seamless customer connections. Try it today.",
-        "keywords": "Whatsapp Link Generator"
+        "title": "Create a Whatsapp link | Free Whatsapp Link generator",
+        "description": "Create WhatsApp links and QR codes for seamless website integration. Enable instant customer chats with a simple and user-friendly tool."
     },
     "WhatsappLinkComp": {
         "slug": "free-whatsapp-link-generator",
@@ -11,7 +10,7 @@
             "icon": "/assets/icons/products/whatsapp.svg"
         },
         "tagline": "Generate WhatsApp click to chat QR code/Widget/Link",
-        "heading": "Free WhatsApp Link Generator",
+        "heading": "Simple tool to create WhatsApp click to chat QR code/Widget/Link for your website or landing pages.",
         "banner_img": "/assets/global/whatsapp-link/banner.png",
         "getstarted_btn": "Generate",
         "steps": {

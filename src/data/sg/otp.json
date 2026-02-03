@@ -1,8 +1,7 @@
 {
   "HeadComp": {
     "title": "Send OTP | OTP Service Providers -MSG91-Singapore",
-    "description": "Secure your platform with MSG91's OTP SMS API. Implement fast and reliable two-factor authentication to enhance user trust and security.",
-    "keywords": "OTP Service Providers"
+    "description": "Secure your platform with MSG91’s OTP SMS API. Implement fast and reliable two-factor authentication to enhance user trust and security."
   },
   "BannerComp": {
     "slug": "otp",

@@ -1,8 +1,7 @@
 {
     "HeadComp": {
-        "title": "Customer Data Segmentation Tools & Software | MSG91",
-        "description": "Segment your audience efficiently with MSG91's customer data segmentation tools & software. Optimize marketing with precision today.",
-        "keywords": "Customer Segmentation Software"
+        "title": "Customer Segmentation Software | MSG91",
+        "description": "Create personalized customer journeys with automated data segmentation. Execute targeted campaigns with precision and achieve better results."
     },
     "BannerComp": {
         "slug": "segmento",
@@ -11,7 +10,7 @@
             "icon": "/assets/icons/products/segmento.svg"
         },
         "tagline": "target based marketing",
-        "heading": "Customer Data Segmentation Tools & Software",
+        "heading": "Personalize customer journeys with Data segmentation.",
         "subheading": "Segment people based on their demographics, behaviour, interests and other characteristics.",
         "banner_img": "/assets/global/segmento/segmento.svg",
         "getstarted_btn": "Get Started For Free",

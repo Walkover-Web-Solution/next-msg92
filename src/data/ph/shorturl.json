@@ -1,8 +1,7 @@
 {
     "HeadComp": {
         "title": "ShortUrl",
-        "description": "Create branded short links to improve conversions and track performance. Customize and manage smart URLs to optimize your marketing efforts.",
-        "keywords": "URL Shortener"
+        "description": "Create branded short links to improve conversions and track performance. Customize and manage smart URLs to optimize your marketing efforts."
     },
     "BannerComp": {
         "slug": "shorturl",
