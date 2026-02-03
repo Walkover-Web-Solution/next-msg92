@@ -18,16 +18,18 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
         }
         const currencySymbol = symbol;
         const isMonthly = tabtype === 'Monthly';
+        const hasAmountForTab = (plan) => (isMonthly ? plan?.amount?.monthly != null : plan?.amount?.yearly != null);
+        const plansForTab = pricingData.filter(hasAmountForTab);
 
-        const planNames = pricingData.map((plan) => plan?.slug ?? 'Plan');
+        const planNames = plansForTab.map((plan) => plan?.name ?? plan?.slug ?? 'Plan');
 
-        const priceValues = pricingData.map((plan) =>
+        const priceValues = plansForTab.map((plan) =>
             formatPrice(currencySymbol, isMonthly ? plan?.amount?.monthly : plan?.amount?.yearly)
         );
 
         const seen = new Set();
         const featureNames = [];
-        pricingData.forEach((plan) => {
+        plansForTab.forEach((plan) => {
             (plan?.plan_features ?? []).forEach((feature) => {
                 const name =
                     (feature?.userFriendlyName ?? feature?.name ?? feature?.key ?? '')?.toString?.()?.trim() || '';
@@ -43,7 +45,7 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
         const isIncluded = (feature) => feature?.feature?.is_included ?? feature?.is_included ?? false;
         const featureRows = featureNames.map((label) => ({
             label,
-            values: pricingData.map(
+            values: plansForTab.map(
                 (plan) =>
                     isIncluded(plan?.plan_features?.find((feature) => featureLabel(feature) === label) ?? {}) ?? false
             ),
@@ -60,32 +62,27 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
     return (
         <section id='compare-plans' className='w-full py-6'>
             <div className='max-w-7xl'>
-                <div className='flex flex-col py-4'>
-                    <h2 className='text-2xl sm:text-3xl font-semibold'>{pageData?.heading}</h2>
-                    <p className='text-md text-gray-600'>{pageData?.description}</p>
-                </div>
-
                 <div className='flex py-4 items-center justify-between'>
-                    <h3 className='text-lg font-semibold text-gray-900'>{pageData?.comparePlansHeading}</h3>
+                    <h3 className='text-2xl font-semibold text-gray-900'>{pageData?.comparePlansHeading}</h3>
                     <div className='flex items-center gap-2'>
                         <button
                             onClick={scrollLeft}
                             aria-label='Scroll left'
-                            className='flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100'
+                            className='flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100'
                         >
-                            <MdChevronLeft className='text-lg' />
+                            <MdChevronLeft className='text-xl' />
                         </button>
                         <button
                             onClick={scrollRight}
                             aria-label='Scroll right'
-                            className='flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100'
+                            className='flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100'
                         >
                             <MdChevronRight className='text-lg' />
                         </button>
                     </div>
                 </div>
 
-                <div ref={tableRef} className='overflow-x-auto rounded-xl border border-gray-200 bg-white'>
+                <div ref={tableRef} className='overflow-x-auto rounded border border-gray-200 bg-white'>
                     <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                         <thead className='bg-gray-50'>
                             <tr className='border-b border-gray-200'>

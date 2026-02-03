@@ -33,6 +33,7 @@ export default function getSimplifiedPlans(plans = [], currency) {
 
         return {
             slug: plan?.slug,
+            name: plan?.name,
             amount: {
                 monthly: getAmount('Monthly'),
                 yearly: getAmount('Yearly'),

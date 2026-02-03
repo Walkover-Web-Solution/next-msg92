@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import ConnectWithTeam from '../ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
@@ -45,6 +45,15 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
         setHasYearly(!!hasYearlyPlans);
     }, [pricingData]);
 
+    const plansCountForTab = useMemo(() => {
+        if (!Array.isArray(pricingData)) return 0;
+        const hasAmountForTab = (plan) =>
+            tabtype === 'Monthly' ? plan?.amount?.monthly != null : plan?.amount?.yearly != null;
+        return pricingData.filter(hasAmountForTab).length;
+    }, [pricingData, tabtype]);
+
+    const showScrollArrows = scrollApi && plansCountForTab > 3;
+
     return (
         <>
             <div className='flex flex-col gap-4 w-full'>
@@ -52,7 +61,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                 <div className='flex flex-col w-full gap-6'>
                     <div className='flex items-center justify-between gap-4'>
                         <PlanToggle tabtype={tabtype} setTabtype={setTabtype} hasYearly={hasYearly} />
-                        {scrollApi && (
+                        {showScrollArrows && (
                             <div className='flex items-center gap-2'>
                                 <button
                                     onClick={() => scrollApi.scrollLeft()}

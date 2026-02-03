@@ -22,15 +22,15 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
 
             <div className='flex items-center gap-1'>
                 <span className=' text-2xl font-semibold text-green-700'>{planData?.price}</span>
-                <span className='text-md text-gray-500 mt-1'>/{planData?.period}</span>
+                {planData?.price !== 'Free' && <span className='text-md text-gray-500 mt-1'>{planData?.period}</span>}
             </div>
 
-            <div className='my-2' onClick={(e) => e.stopPropagation()}>
+            <div className='py-2' onClick={(e) => e.stopPropagation()}>
                 <a
                     href={getURL('signup', product)}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='w-full btn btn-primary btn-sm btn-outline block text-center'
+                    className='w-full btn btn-primary btn-sm btn-outline text-center'
                 >
                     {planData?.ctaText}
                 </a>
@@ -61,7 +61,7 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
                                                     if (onViewCallingRates) onViewCallingRates(planData?.slug);
                                                     else onSelect?.();
                                                 }}
-                                                className='text-blue-600 font-medium hover:underline shrink-0 whitespace-nowrap'
+                                                className='link link-active-link font-medium text-blue-600 shrink-0 whitespace-nowrap'
                                             >
                                                 {planData?.linkText}
                                             </button>

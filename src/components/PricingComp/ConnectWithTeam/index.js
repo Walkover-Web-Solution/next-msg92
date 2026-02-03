@@ -16,7 +16,7 @@ export default function ConnectWithTeam({ product, isPlan, pageData, href, per }
                     {`${pageData?.know_more} ${product}`}
                 </a>
             </div>
-            <div className='w-full rounded-2xl border border-gray-200 bg-white px-8 py-8 shadow-sm'>
+            <div className='w-full rounded border border-gray-200 bg-white px-8 py-8'>
                 <div className='flex flex-col gap-6 sm:gap-8'>
                     {isPlan && (
                         <>

@@ -16,11 +16,11 @@ export default function PricingPlans({
     const scrollRef = useRef(null);
 
     const scrollLeft = () => {
-        scrollRef.current?.scrollBy({ left: -376, behavior: 'smooth' });
+        scrollRef.current?.scrollBy({ left: -752, behavior: 'smooth' });
     };
 
     const scrollRight = () => {
-        scrollRef.current?.scrollBy({ left: 376, behavior: 'smooth' });
+        scrollRef.current?.scrollBy({ left: 752, behavior: 'smooth' });
     };
 
     useEffect(() => {
@@ -34,7 +34,10 @@ export default function PricingPlans({
 
     const cards = useMemo(() => {
         if (!Array.isArray(pricingData) || pricingData.length === 0) return [];
-        return pricingData.map((plan) => simplifiedPlanToCard(plan, tabtype, symbol, pageData));
+        const hasAmountForTab = (plan) =>
+            tabtype === 'Monthly' ? plan?.amount?.monthly != null : plan?.amount?.yearly != null;
+        const plansForTab = pricingData.filter(hasAmountForTab);
+        return plansForTab.map((plan) => simplifiedPlanToCard(plan, tabtype, symbol, pageData));
     }, [pricingData, tabtype, symbol, pageData]);
 
     const hasFeatures = useMemo(
@@ -54,10 +57,10 @@ export default function PricingPlans({
                 <div ref={scrollRef} className='flex gap-6 overflow-x-auto pb-4 scroll-smooth w-full'>
                     {cards.map((card, index) => (
                         <PricingPlanCard
-                            key={card.slug ?? `card-${index}`}
+                            key={card.title ?? card.slug ?? `card-${index}`}
                             planData={card}
                             isSelected={card.slug === selectedPlanSlug}
-                            onSelect={() => onSelectPlan?.(card.slug)}
+                            onSelect={() => onSelectPlan?.(card.title)}
                             onViewCallingRates={onViewCallingRates}
                             product={product}
                         />
@@ -118,12 +121,17 @@ function simplifiedPlanToCard(plan, tabtype, symbol, plansPageData) {
             ?.filter((feature) => feature.is_visible)
             .map((feature) => ({ name: feature.name, is_included: feature.is_included })) ?? [];
 
-    const title = plan?.slug ? String(plan.slug).charAt(0).toUpperCase() + String(plan.slug).slice(1) : 'Plan';
+    const title =
+        plan?.name ?? (plan?.slug ? String(plan.slug).charAt(0).toUpperCase() + String(plan.slug).slice(1) : 'Plan');
 
     const hasDialPlan = plan?.included?.some((item) => item?.dial_plan?.data?.length > 0) ?? false;
 
     const price =
-        amount != null && !Number.isNaN(Number(amount)) ? `${symbol}${Number(amount).toLocaleString('en-US')}` : '—';
+        amount != null && !Number.isNaN(Number(amount))
+            ? Number(amount) === 0
+                ? 'Free'
+                : `${symbol}${Number(amount).toLocaleString('en-US')}`
+            : '';
 
     const planCard = {
         slug: plan?.slug,

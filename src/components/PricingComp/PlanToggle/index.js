@@ -2,7 +2,7 @@ export default function PlanToggle({ tabtype, setTabtype, hasYearly }) {
     if (!hasYearly) return null;
 
     return (
-        <div className='inline-flex w-fit rounded-lg bg-white p-1'>
+        <div className='inline-flex w-fit rounded bg-white p-1'>
             <button
                 type='button'
                 onClick={() => setTabtype('Monthly')}

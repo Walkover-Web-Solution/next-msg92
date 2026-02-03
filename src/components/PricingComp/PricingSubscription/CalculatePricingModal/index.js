@@ -44,10 +44,13 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
 
     const results = useMemo(() => {
         if (!Array.isArray(plans) || plans.length === 0) return [];
-        return plans.map((plan) => ({
+        const hasAmountForTab = (plan) =>
+            tabtype === 'Monthly' ? plan?.amount?.monthly != null : plan?.amount?.yearly != null;
+        const plansForTab = plans.filter(hasAmountForTab);
+        return plansForTab.map((plan) => ({
             plan,
             slug: plan?.slug,
-            title: plan?.slug ? plan.slug.charAt(0).toUpperCase() + plan.slug.slice(1) : 'Plan',
+            title: plan?.name ?? (plan?.slug ? plan.slug.charAt(0).toUpperCase() + plan.slug.slice(1) : 'Plan'),
             ...computePlanTotal(plan, tabtype, usageAsNumbers),
         }));
     }, [plans, tabtype, usageAsNumbers]);
@@ -120,30 +123,27 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                     <h4 className='text-sm font-semibold text-gray-700'>Plan comparison</h4>
 
                     <div className='overflow-x-auto rounded-lg border border-gray-200 bg-white'>
-                        <table className='w-full text-sm'>
+                        <table className='w-full min-w-[600px] table-fixed text-sm'>
                             <thead className='bg-gray-50'>
                                 <tr className='border-b border-gray-200'>
-                                    <th className='px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
+                                    <th className='w-[140px] min-w-[140px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
                                         Plan
                                     </th>
-                                    <th className='px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
+                                    <th className='w-[80px] min-w-[80px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
                                         Base
                                     </th>
-                                    <th className='px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
+                                    <th className='w-[160px] min-w-[160px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
                                         Included
                                     </th>
                                     {serviceNames.map((name) => (
                                         <th
                                             key={name}
-                                            className='px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'
+                                            className='w-[140px] min-w-[140px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'
                                         >
                                             Extra {name}
                                         </th>
                                     ))}
-                                    <th className='px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
-                                        Calculation
-                                    </th>
-                                    <th className='px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
+                                    <th className='w-[100px] min-w-[100px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
                                         Total
                                     </th>
                                 </tr>
@@ -153,11 +153,16 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                                 {results?.length > 0 &&
                                     results.map((result) => (
                                         <tr key={result.slug} className='border-b border-gray-100 last:border-b-0'>
-                                            <td className='px-4 py-3 text-gray-700'>{result.title}</td>
-                                            <td className='px-4 py-3 text-gray-700'>
+                                            <td
+                                                className='w-[140px] min-w-[140px] px-4 py-3 text-gray-700 truncate'
+                                                title={result.title}
+                                            >
+                                                {result.title}
+                                            </td>
+                                            <td className='w-[80px] min-w-[80px] px-4 py-3 text-gray-700'>
                                                 {formatPrice(symbol, result?.base)}
                                             </td>
-                                            <td className='px-4 py-3 text-gray-600 align-top'>
+                                            <td className='w-[160px] min-w-[160px] px-4 py-3 text-gray-600 align-top'>
                                                 <div className='flex flex-col gap-0.5'>
                                                     {serviceNames.map((name) => (
                                                         <span key={name} className='text-xs'>
@@ -169,27 +174,38 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                                                     ))}
                                                 </div>
                                             </td>
-                                            {serviceNames.map((name) => (
-                                                <td key={name} className='px-4 py-3 text-gray-700'>
-                                                    {formatPrice(symbol, result?.overages?.[name])}
-                                                </td>
-                                            ))}
-                                            <td className='px-4 py-3 text-gray-600 align-top'>
-                                                <div className='flex flex-col gap-1 text-xs'>
-                                                    {serviceNames.map((name) => {
-                                                        const calc = result?.calculationByService?.[name];
-                                                        if (!calc) return null;
-                                                        const { extra, rate, overage } = calc;
-                                                        const formula = `${extra} × ${rate} = ${overage}`;
-                                                        return (
-                                                            <span key={name}>
-                                                                {name}: {formula}
-                                                            </span>
-                                                        );
-                                                    })}
-                                                </div>
-                                            </td>
-                                            <td className='px-4 py-3 font-semibold text-green-600 whitespace-nowrap'>
+                                            {serviceNames.map((name) => {
+                                                const calculation = result?.calculationByService?.[name];
+                                                const isIncluded = calculation?.isIncluded === true;
+                                                const formula =
+                                                    calculation != null && !isIncluded && calculation.overage > 0
+                                                        ? `${calculation.extra} × ${calculation.rate} = ${calculation.overage}`
+                                                        : null;
+                                                return (
+                                                    <td
+                                                        key={name}
+                                                        className='w-[140px] min-w-[140px] px-4 py-3 text-gray-700 align-top'
+                                                    >
+                                                        <div className='flex flex-col gap-0.5'>
+                                                            {isIncluded ? (
+                                                                <span className='text-gray-500'>Included</span>
+                                                            ) : (
+                                                                <>
+                                                                    <span>
+                                                                        {formatPrice(symbol, result?.overages?.[name])}
+                                                                    </span>
+                                                                    {formula != null && (
+                                                                        <span className='text-xs text-gray-500'>
+                                                                            {formula}
+                                                                        </span>
+                                                                    )}
+                                                                </>
+                                                            )}
+                                                        </div>
+                                                    </td>
+                                                );
+                                            })}
+                                            <td className='w-[100px] min-w-[100px] px-4 py-3 font-semibold text-green-600 whitespace-nowrap'>
                                                 {symbol}
                                                 {result?.total != null && !Number.isNaN(Number(result?.total))
                                                     ? contvertToLocal(result.total)
@@ -210,6 +226,7 @@ function formatPrice(symbol, amount) {
     if (amount == null) return '—';
     const num = Number(amount);
     if (Number.isNaN(num)) return '—';
+    if (num === 0 || Object.is(num, -0)) return `${symbol}0`;
     return `${symbol}${num.toLocaleString('en-US')}`;
 }
 
@@ -234,15 +251,22 @@ function computePlanTotal(plan, tabtype, usageByService) {
         const name = service?.servicename;
         if (!name) continue;
         const free = service?.free_credits,
-            isUnlimited = free === -1;
+            isUnlimited = free === -1 || free === '-1';
         const included = isUnlimited ? null : Number(free);
         includedByService[name] = included;
         const usage = Number(usageByService[name]);
         const extra = isUnlimited ? 0 : Math.max(0, usage - included);
-        const rate = Number(service?.follow_up_rate);
-        const overage = extra * rate;
+        const rawRate = service?.follow_up_rate;
+        const rate = Number(rawRate);
+        const isNoExtraRate = rate === -1;
+        const overage = isNoExtraRate ? 0 : extra * rate;
         overages[name] = overage;
-        calculationByService[name] = { extra, rate, overage };
+        calculationByService[name] = {
+            extra,
+            rate: isNoExtraRate ? 0 : rate,
+            overage,
+            isIncluded: isNoExtraRate,
+        };
         totalExtraCharges += overage;
     }
     return { base: validBase, overages, includedByService, calculationByService, total: validBase + totalExtraCharges };

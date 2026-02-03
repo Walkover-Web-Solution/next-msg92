@@ -116,7 +116,7 @@ export default function DialPlan({ pricingData, selectedPlanSlug, pageData }) {
 
         return {
             dialPlans: plans,
-            planName: selectedPlan?.slug ?? null,
+            planName: selectedPlan?.name ?? selectedPlan?.slug ?? null,
         };
     }, [pricingData, selectedPlanSlug]);
 
