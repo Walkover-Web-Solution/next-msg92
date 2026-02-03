@@ -1,0 +1,65 @@
+/* Custom styles for intl-tel-input to match DaisyUI input styling */
+.phoneInputContainer :global(.iti) {
+    width: 100%;
+}
+
+.phoneInputContainer :global(.iti__country-list) {
+    z-index: 1000;
+    border-radius: 0.5rem;
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.phoneInputContainer :global(.iti__country-list .iti__country) {
+    padding: 8px 12px;
+}
+
+.phoneInputContainer :global(.iti__country-list .iti__country:hover) {
+    background-color: #f3f4f6;
+}
+
+.phoneInputContainer :global(.iti__country-list .iti__country.iti__highlight) {
+    background-color: #e5e7eb;
+}
+
+.phoneInputContainer :global(.iti__flag-container) {
+    padding: 0 8px;
+}
+
+.phoneInputContainer :global(.iti__selected-flag:hover) {
+    background-color: transparent;
+}
+
+.phoneInputContainer :global(.iti__arrow) {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #6b7280;
+}
+
+.phoneInputContainer :global(.iti__arrow--up) {
+    border-top: none;
+    border-bottom: 4px solid #6b7280;
+}
+
+/* Ensure the input maintains DaisyUI styling */
+.phoneInputContainer :global(.iti input[type='tel']) {
+    padding-left: 44px !important;
+}
+
+.phoneInputContainer :global(.iti__selected-flag) {
+    padding: 0 8px 0 12px;
+    border-right: 1px solid #e5e7eb;
+    width: 52px;
+}
+
+.phoneInputContainer :global(.iti__selected-dial-code) {
+    display: none !important;
+}
+.phoneInputContainer :global(.iti__search-input) {
+    min-height: 44px !important;
+}
+
+.phoneInputContainer :global(.iti__dropdown-content) {
+    max-width: 320px;
+}

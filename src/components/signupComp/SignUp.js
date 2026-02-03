@@ -492,7 +492,7 @@ export default class SignUp extends React.Component {
                                     alt='msg91-logo'
                                     loading='lazy'
                                 />
-                                <h1 className='text-2xl font-medium'>{this.props.data.heading}</h1>
+                                <h2 className='text-2xl font-medium'>{this.props.data.heading}</h2>
                             </div>
                             <div className='flex flex-col gap-5'>
                                 <h2 className='text-xl'>{this.props.data.subheading}</h2>

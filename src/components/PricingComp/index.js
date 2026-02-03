@@ -5,24 +5,23 @@ import PricingSMSOTP from './PricingSMS/PricingSMSOTP';
 import PricingVoice from './PricingVoice/PricingVoice';
 import NotFoundComp from '../NotFoundComp/NotFoundComp';
 import HeadComp from '../HeadComp/HeadComp';
-import NotificationBarComp from '../notificationBarComp/notificationBarComp';
-import MenuBarComp from '../menuBarComp/menuBarComp';
 import FooterComp from '../FooterComp/FooterComp';
 import PricingSubscription from './PricingSubscription';
-import ConnectWithTeam from './ConnectWithTeam';
+import NavigationComp from '../NavigationComp';
 
 export default function PricingComp({ pricingData, pageInfo, pageData, products, commonData, country }) {
     if (pricingData) {
         return (
             <>
                 <HeadComp data={pageData?.HeadComp} pageInfo={pageInfo} />
-                <NotificationBarComp
-                    componentData={commonData?.notification}
+                <NavigationComp
+                    pageInfo={pageInfo}
+                    componentData={{
+                        menubarData: commonData?.menu,
+                        notificationBarData: commonData?.notification,
+                    }}
                     country={pageInfo?.country}
-                    pageInfo={{ country: country, page: 'pricing' }}
                 />
-
-                <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
                 <div className='bg-neutral py-3'>
                     <div className='container md:my-10 my-4 flex md:gap-12 gap-6 md:flex-row flex-col '>
                         <PricingNav products={products} page={pageInfo?.product} />

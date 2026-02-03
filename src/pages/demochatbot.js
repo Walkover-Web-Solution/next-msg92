@@ -1,8 +1,7 @@
 import ChatBotDemoComp from '@/components/ChatBotDemoComp/ChatBotDemoComp';
 import FooterComp from '@/components/FooterComp/FooterComp';
 import HeadComp from '@/components/HeadComp/HeadComp';
-import MenuBarComp from '@/components/menuBarComp/menuBarComp';
-import NotificationBarComp from '@/components/notificationBarComp/notificationBarComp';
+import NavigationComp from '@/components/NavigationComp';
 import PreFooterComp from '@/components/PreFooterComp/PreFooterComp';
 import getBotTemplates from '@/utils/getBotTemplates';
 
@@ -14,209 +13,209 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
                 data={{
                     'title': 'Demo Chatbot - MSG91',
                     'description':
-                        "Explore the capabilities of the MSG91 Demo Chatbot. See how AI-powered chatbots can streamline customer interactions, provide instant responses, and enhance user experience. Try the demo to understand the seamless integration and advanced features offered by MSG91's chatbot solutions. ",
+                        'Experience AI chatbots in action with MSG91. Start chatting and automate customer support, improve communciation and streamline workflows today.',
                 }}
             />
-            <NotificationBarComp
-                componentData={{
-                    'support': 'Contact',
-                    'login': 'Login',
-                    'hide': ['signup', 'singin'],
-                }}
+            <NavigationComp
                 pageInfo={pageInfo}
-            />
-            <MenuBarComp
                 componentData={{
-                    'products': 'Products',
-                    'products_list': [
-                        {
-                            'name': 'Applications',
-                            'products': [
-                                {
-                                    'name': 'Hello',
-                                    'slug': 'hello',
-                                    'description': 'Ticketing and Chat',
-                                },
-                                {
-                                    'name': 'Campaign',
-                                    'slug': 'campaign',
-                                    'description': 'Event-based Automation',
-                                },
-                                {
-                                    'name': 'Segment',
-                                    'slug': 'segmento',
-                                    'description': 'Contact Management',
-                                },
-                                {
-                                    'name': 'OTP',
-                                    'slug': 'otp',
-                                    'description': 'Simplified OTP Platform',
-                                },
-                            ],
-                        },
-                        {
-                            'name': 'Channels',
-                            'products': [
-                                {
-                                    'name': 'SMS',
-                                    'slug': 'sms',
-                                },
-                                {
-                                    'name': 'RCS',
-                                    'slug': 'rcs',
-                                },
-                                {
-                                    'name': 'Email',
-                                    'slug': 'email',
-                                },
-                                {
-                                    'name': 'WhatsApp',
-                                    'slug': 'whatsapp',
-                                },
-                                {
-                                    'name': 'Voice',
-                                    'slug': 'voice',
-                                },
-                                {
-                                    'name': 'Numbers',
-                                    'slug': 'numbers',
-                                },
-                            ],
-                        },
-                        {
-                            'name': 'Utilities',
-                            'products': [
-                                {
-                                    'name': 'URL Shortener',
-                                    'slug': 'shorturl',
-                                    'description': 'Customize and Track URLs',
-                                },
-                                {
-                                    'name': 'KnowledgeBase',
-                                    'slug': 'knowledgebase',
-                                    'description': 'Manage Help Documents and Guides',
-                                },
-                            ],
-                        },
-                    ],
-                    'integrations': 'Integrations',
-                    'integrations_list': {
-                        'explore_btn': 'Explore More Plugins',
-                        'content': [
+                    menubarData: {
+                        'support': 'Contact',
+                        'login': 'Login',
+                        'hide': ['signup', 'singin'],
+                    },
+                    notificationBarData: {
+                        'products': 'Products',
+                        'products_list': [
                             {
-                                'slug': 'shopify',
-                                'name': 'Shopify',
-                                'link': 'https://apps.shopify.com/msg91',
+                                'name': 'Applications',
+                                'products': [
+                                    {
+                                        'name': 'Hello',
+                                        'slug': 'hello',
+                                        'description': 'Ticketing and Chat',
+                                    },
+                                    {
+                                        'name': 'Campaign',
+                                        'slug': 'campaign',
+                                        'description': 'Event-based Automation',
+                                    },
+                                    {
+                                        'name': 'Segment',
+                                        'slug': 'segmento',
+                                        'description': 'Contact Management',
+                                    },
+                                    {
+                                        'name': 'OTP',
+                                        'slug': 'otp',
+                                        'description': 'Simplified OTP Platform',
+                                    },
+                                ],
                             },
                             {
-                                'slug': 'tally',
-                                'name': 'Tally',
-                                'link': 'https://msg91.com/partners-and-integrations/tally',
+                                'name': 'Channels',
+                                'products': [
+                                    {
+                                        'name': 'SMS',
+                                        'slug': 'sms',
+                                    },
+                                    {
+                                        'name': 'RCS',
+                                        'slug': 'rcs',
+                                    },
+                                    {
+                                        'name': 'Email',
+                                        'slug': 'email',
+                                    },
+                                    {
+                                        'name': 'WhatsApp',
+                                        'slug': 'whatsapp',
+                                    },
+                                    {
+                                        'name': 'Voice',
+                                        'slug': 'voice',
+                                    },
+                                    {
+                                        'name': 'Numbers',
+                                        'slug': 'numbers',
+                                    },
+                                ],
                             },
                             {
-                                'slug': 'zapier',
-                                'name': 'Zapier',
-                                'link': 'https://msg91.com/partners-and-integrations/zapier',
-                            },
-                            {
-                                'slug': 'freshworks',
-                                'name': 'Freshworks',
-                                'link': 'https://msg91.com/partners-and-integrations/freshworks',
-                            },
-                            {
-                                'slug': 'firebase',
-                                'name': 'Firebase',
-                                'link': 'https://msg91.com/partners-and-integrations/firebase',
-                            },
-                            {
-                                'slug': 'hubspot',
-                                'name': 'HubSpot',
-                                'link': 'https://msg91.com/partners-and-integrations/hubspot',
-                            },
-                            {
-                                'slug': 'googlesheets',
-                                'name': 'Google Sheets',
-                                'link': 'https://msg91.com/help/how-to-send-sms-and-email-from-google-spreadsheet',
+                                'name': 'Utilities',
+                                'products': [
+                                    {
+                                        'name': 'URL Shortener',
+                                        'slug': 'shorturl',
+                                        'description': 'Customize and Track URLs',
+                                    },
+                                    {
+                                        'name': 'KnowledgeBase',
+                                        'slug': 'knowledgebase',
+                                        'description': 'Manage Help Documents and Guides',
+                                    },
+                                ],
                             },
                         ],
+                        'integrations': 'Integrations',
+                        'integrations_list': {
+                            'explore_btn': 'Explore More Plugins',
+                            'content': [
+                                {
+                                    'slug': 'shopify',
+                                    'name': 'Shopify',
+                                    'link': 'https://apps.shopify.com/msg91',
+                                },
+                                {
+                                    'slug': 'tally',
+                                    'name': 'Tally',
+                                    'link': 'https://msg91.com/partners-and-integrations/tally',
+                                },
+                                {
+                                    'slug': 'zapier',
+                                    'name': 'Zapier',
+                                    'link': 'https://msg91.com/partners-and-integrations/zapier',
+                                },
+                                {
+                                    'slug': 'freshworks',
+                                    'name': 'Freshworks',
+                                    'link': 'https://msg91.com/partners-and-integrations/freshworks',
+                                },
+                                {
+                                    'slug': 'firebase',
+                                    'name': 'Firebase',
+                                    'link': 'https://msg91.com/partners-and-integrations/firebase',
+                                },
+                                {
+                                    'slug': 'hubspot',
+                                    'name': 'HubSpot',
+                                    'link': 'https://msg91.com/partners-and-integrations/hubspot',
+                                },
+                                {
+                                    'slug': 'googlesheets',
+                                    'name': 'Google Sheets',
+                                    'link': 'https://msg91.com/help/how-to-send-sms-and-email-from-google-spreadsheet',
+                                },
+                            ],
+                        },
+                        'pricing': 'Pricing',
+                        'pricing_list': [
+                            {
+                                'name': 'Applications',
+                                'products': [
+                                    {
+                                        'name': 'Hello',
+                                        'slug': 'hello',
+                                        'description': 'Contact Center',
+                                    },
+                                    {
+                                        'name': 'Campaign',
+                                        'slug': 'campaign',
+                                        'description': 'Event-based Automation',
+                                    },
+                                    {
+                                        'name': 'Segmento',
+                                        'slug': 'segmento',
+                                        'description': 'Contact Management',
+                                    },
+                                    {
+                                        'name': 'OTP',
+                                        'slug': 'otpwidget',
+                                        'description': ' OTP widget SDK',
+                                    },
+                                ],
+                            },
+                            {
+                                'name': 'Channels',
+                                'products': [
+                                    {
+                                        'name': 'SMS',
+                                        'slug': 'sms',
+                                    },
+                                    {
+                                        'name': 'SendOTP',
+                                        'slug': 'otp',
+                                    },
+                                    {
+                                        'name': 'Email',
+                                        'slug': 'email',
+                                    },
+                                    {
+                                        'name': 'WhatsApp',
+                                        'slug': 'whatsapp',
+                                    },
+                                    {
+                                        'name': 'Voice',
+                                        'slug': 'voice',
+                                    },
+                                    {
+                                        'name': 'RCS',
+                                        'slug': 'rcs',
+                                    },
+                                ],
+                            },
+                            {
+                                'name': 'Utilities',
+                                'products': [
+                                    {
+                                        'name': 'URL Shortener',
+                                        'slug': 'shorturl',
+                                        'description': 'Customize and Track URLs',
+                                    },
+                                    {
+                                        'name': 'KnowledgeBase',
+                                        'slug': 'knowledgebase',
+                                        'description': 'Manage Help Documents and Guides',
+                                    },
+                                ],
+                            },
+                        ],
+                        'apidocs': 'API Docs',
+                        'signup_btn': 'Sign Up',
+                        'hide': ['signup', 'singin'],
                     },
-                    'pricing': 'Pricing',
-                    'pricing_list': [
-                        {
-                            'name': 'Applications',
-                            'products': [
-                                {
-                                    'name': 'Hello',
-                                    'slug': 'hello',
-                                    'description': 'Contact Center',
-                                },
-                                {
-                                    'name': 'Campaign',
-                                    'slug': 'campaign',
-                                    'description': 'Event-based Automation',
-                                },
-                                {
-                                    'name': 'Segmento',
-                                    'slug': 'segmento',
-                                    'description': 'Contact Management',
-                                },
-                                {
-                                    'name': 'OTP',
-                                    'slug': 'otpwidget',
-                                    'description': ' OTP widget SDK',
-                                },
-                            ],
-                        },
-                        {
-                            'name': 'Channels',
-                            'products': [
-                                {
-                                    'name': 'SMS',
-                                    'slug': 'sms',
-                                },
-                                {
-                                    'name': 'SendOTP',
-                                    'slug': 'otp',
-                                },
-                                {
-                                    'name': 'Email',
-                                    'slug': 'email',
-                                },
-                                {
-                                    'name': 'WhatsApp',
-                                    'slug': 'whatsapp',
-                                },
-                                {
-                                    'name': 'Voice',
-                                    'slug': 'voice',
-                                },
-                                {
-                                    'name': 'RCS',
-                                    'slug': 'rcs',
-                                },
-                            ],
-                        },
-                        {
-                            'name': 'Utilities',
-                            'products': [
-                                {
-                                    'name': 'URL Shortener',
-                                    'slug': 'shorturl',
-                                    'description': 'Customize and Track URLs',
-                                },
-                                {
-                                    'name': 'KnowledgeBase',
-                                    'slug': 'knowledgebase',
-                                    'description': 'Manage Help Documents and Guides',
-                                },
-                            ],
-                        },
-                    ],
-                    'apidocs': 'API Docs',
-                    'signup_btn': 'Sign Up',
-                    'hide': ['signup', 'singin'],
                 }}
-                pageInfo={pageInfo}
+                country={pageInfo?.country}
             />
             <ChatBotDemoComp
                 pageInfo={pageInfo}

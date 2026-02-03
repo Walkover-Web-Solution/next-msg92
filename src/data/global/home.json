@@ -1,12 +1,13 @@
 {
     "HeadComp": {
-        "title": "Best Cloud Communication Platform for Businesses | MSG91",
-        "description": "MSG91 provides seamless communication solutions with SMS APIs, email APIs, voice call APIs, and more to improve business efficiency."
+        "title": "Cloud Communication Platform Solutions for Your Business | MSG91",
+        "description": "MSG91 offers top-tier cloud communication platform solutions to streamline your messaging and engagement strategies. Explore MSG91 for reliable communication.",
+        "keywords": "Cloud Communication Platform"
     },
     "BannerComp": {
         "slug": "home",
         "tagline": "customer solution platform",
-        "heading": "Connect with your customers via multiple channels",
+        "heading": "Top-Tier Cloud Communication Platform Solutions",
         "subheading": "Secure and robust APIs for WhatsApp, SMS, RCS, Email, Voice, Authentication and more",
         "banner_img": "/assets/global/index/banner.webp",
         "getstarted_btn": "Get Started",
