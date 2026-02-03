@@ -1,8 +1,7 @@
 {
     "HeadComp": {
-        "title": "AI-Powered Customer Support Platform | MSG91",
-        "description": "Enhance support with MSG91's AI-powered customer support platform for faster, smarter customer interactions. Get started with MSG91 today.",
-        "keywords": "Customer Support Platform"
+        "title": "Customer Support Platform for your Business by MSG91",
+        "description": "HELLO is a robust omnichannel platform designed to enhance customer support. Leverage data-driven insights to deliver exceptional service experiences."
     },
     "Banner": {
         "slug": "hello",
@@ -11,7 +10,7 @@
             "icon": "/assets/icons/products/hello.svg"
         },
         "tagline": "Customer Support Software",
-        "heading": "AI-Powered Customer Support Platform",
+        "heading": "AI-Powered Contact Center",
         "subheading": "Never lose sight of what’s important. Don’t just solve tickets, build customer relationships",
         "lottie": "/assets/global/hello/new_webp/hello_hero.json",
         "getstarted_btn": "Get Started",

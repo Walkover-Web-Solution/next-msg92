@@ -1,8 +1,7 @@
 {
     "HeadComp": {
         "title": "SMS Message API - bulk SMS Service Provider",
-        "description": "Send fast, reliable messages with MSG91's SMS API. Power your business with bulk SMS services, smart automation, and global delivery at scale.",
-        "keywords": "SMS Message API"
+        "description": "Send fast, reliable messages with MSG91’s SMS API. Power your business with bulk SMS services, smart automation, and global delivery at scale."
     },
     "BannerComp": {
         "slug": "sms",

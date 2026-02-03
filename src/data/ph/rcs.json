@@ -1,8 +1,7 @@
- { "HeadComp": {
+{ "HeadComp": {
     "title": "RCS: Enhanced, Branded, and Interactive Experiences - MSG91 - Philippines",
-    "description":"Elevate customer engagement with Rich Communication Services (RCS). Utilize advanced messaging features to enhance your communication and grow your business.",
-    "keywords": "RCS Text Message"
-  },
+    "description":"Elevate customer engagement with Rich Communication Services (RCS). Utilize advanced messaging features to enhance your communication and grow your business."
+  }, 
          "BannerComp": {
           "slug": "rcs",
           "product": {

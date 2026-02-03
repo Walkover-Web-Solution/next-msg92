@@ -1,8 +1,7 @@
 {
     "HeadComp": {
-        "title": "Global SMS API Service Provider | MSG91",
-        "description": "Send messages globally with MSG91's reliable global SMS API service provider for seamless business communication. Start sending with MSG91 today.",
-        "keywords": "Transactional SMS Provider"
+        "title": "Transactional SMS | Transactional SMS Provider -MSG91",
+        "description": "Simplify communication with MSG91’s transactional SMS API. Deliver reliable and fast messages to enhance customer satisfaction."
     },
     "BannerComp": {
         "slug": "sms",
@@ -12,7 +11,7 @@
         },
         "code": true,
         "tagline": "Next level messaging",
-        "heading": "Global SMS API Service Provider",
+        "heading": "Engage your customers globally with quick, scalable and customizable messages",
         "subheading": "Integrate our developer-friendly APIs to send and receive text messages. Our distributed carrier network and intelligent routing ensure highest delivery and lowest latency.",
         "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",

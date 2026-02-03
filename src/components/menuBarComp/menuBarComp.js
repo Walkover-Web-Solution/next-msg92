@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { MdMenu } from 'react-icons/md';
 import styles from './MenuBarComp.module.scss';
-import { BtnWithHideIco, LinkText } from '../../UIComponent/Buttons/LinkButton';
+import { BtnWithHideIco, LinkText } from '../UIComponent/Buttons/LinkButton';
 import { useEffect, useState } from 'react';
 import getURL from '@/utils/getURL';
 import getPricingURL from '@/utils/pricing/getPricingURL';
@@ -31,7 +31,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
     if (componentData && !hidden) {
         return (
             <>
-                <div className={`${styles.minicont} nav-${nav}`}>
+                <div className={`${styles.minicont} nav-${nav}  `}>
                     <div className={`${styles.navigation} container pt-28 w-full flex`}>
                         <div className='flex  overflow-scroll flex-col scrollbar-none pb-4 gap-12 h-full min-w-full'>
                             <div className='flex flex-col h-fit w-full '>
