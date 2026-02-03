@@ -48,7 +48,6 @@ export default class SignUp extends React.Component {
 
     componentDidMount = () => {
         this.msg91Query = getCookie('msg91_query');
-        console.log('Value:', this.msg91Query);
 
         if (this.msg91Query) {
             const queryParams = this.msg91Query.startsWith('?')
