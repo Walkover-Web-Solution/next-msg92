@@ -39,7 +39,6 @@ function filterRowsBySearch(data, columns, searchTerm) {
 const DialPlanTable = React.memo(function DialPlanTable({ service_name, columns, data, noResultsText }) {
     return (
         <div className='flex flex-col gap-2'>
-            {service_name && <h4 className='text-base font-semibold text-gray-800'>{service_name}</h4>}
             <div className='rounded border border-gray-200 bg-white max-w-7xl'>
                 <div className='w-full overflow-x-auto'>
                     <div className='max-h-[600px] overflow-y-auto border border-gray-300 rounded'>
@@ -96,9 +95,9 @@ export default function DialPlan({ pricingData, selectedPlanSlug, pageData }) {
         setSearch('');
     }, [selectedPlanSlug]);
 
-    const { dialPlans, planName } = useMemo(() => {
+    const { dialPlans, serviceName, planName } = useMemo(() => {
         if (!Array.isArray(pricingData) || pricingData.length === 0) {
-            return { dialPlans: [], planName: null };
+            return { dialPlans: [], serviceName: null, planName: null };
         }
 
         const selectedPlan =
@@ -114,8 +113,17 @@ export default function DialPlan({ pricingData, selectedPlanSlug, pageData }) {
                 data: item.dial_plan.data,
             }));
 
+        const serviceName =
+            plans.length === 1
+                ? plans[0]?.service_name
+                : plans
+                      .map((p) => p?.service_name)
+                      .filter(Boolean)
+                      .join(', ') || null;
+
         return {
             dialPlans: plans,
+            serviceName,
             planName: selectedPlan?.name ?? selectedPlan?.slug ?? null,
         };
     }, [pricingData, selectedPlanSlug]);
@@ -135,10 +143,10 @@ export default function DialPlan({ pricingData, selectedPlanSlug, pageData }) {
             <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
                 <div>
                     <h3 className='text-lg sm:text-xl font-semibold'>{pageData?.dialplanRatesHeading}</h3>
-                    {planName && (
+                    {serviceName && (
                         <p className='text-md'>
-                            {pageData?.showingRatesFor} <span className='font-medium text-blue-600'>{planName}</span>{' '}
-                            {pageData?.planLabelSuffix}
+                            {pageData?.showingRatesFor} <span className='font-medium text-blue-600'>{serviceName}</span>{' '}
+                            for <span className='font-medium'>{`( ${planName} )`}</span>
                         </p>
                     )}
                 </div>
