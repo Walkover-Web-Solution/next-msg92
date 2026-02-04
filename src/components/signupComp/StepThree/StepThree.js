@@ -264,12 +264,13 @@ class StepThree extends React.Component {
     };
 
     validatePincode = () => {
-        const { pincode } = this.state.formData;
+        const { pincode, countryName } = this.state.formData;
         const pincodeRegex = /^[0-9 A-Z a-z -]{4,11}$/;
-        if (!pincode) {
+        const isIndia = countryName?.toLowerCase()?.includes('india');
+        if (isIndia && !pincode?.trim()) {
             return 'Pincode is required';
         }
-        if (!pincodeRegex.test(pincode)) {
+        if (pincode?.trim() && !pincodeRegex.test(pincode.trim())) {
             return 'Pincode must be a valid';
         }
         return '';
@@ -591,7 +592,11 @@ class StepThree extends React.Component {
                                             className={`input input-bordered h-10 w-full ${
                                                 this.state.formErrorData.pincodeError ? 'input-error-display' : ''
                                             }`}
-                                            placeholder='Pincode*'
+                                            placeholder={
+                                                this.state.formData.countryName?.toLowerCase()?.includes('india')
+                                                    ? 'Pincode*'
+                                                    : 'Pincode (optional)'
+                                            }
                                             name='pincode'
                                             value={this.state.formData.pincode}
                                             onChange={this.handleInputChange}
