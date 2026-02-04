@@ -82,7 +82,7 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
                     </div>
                 </div>
 
-                <div ref={tableRef} className='overflow-x-auto rounded border border-gray-200 bg-white'>
+                <div ref={tableRef} className='h-[600px] overflow-x-auto rounded border border-gray-200 bg-white'>
                     <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                         <thead className='bg-gray-50'>
                             <tr className='border-b border-gray-200'>
