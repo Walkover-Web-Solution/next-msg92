@@ -422,7 +422,9 @@
                 "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
-                "know_more": "Alamin pa tungkol sa"
+                "content": "Connect with our team for Pricing .",
+                "sales_btn": "Talk to Sales",
+                "know_more": "Know more about"
             }
         }
     }

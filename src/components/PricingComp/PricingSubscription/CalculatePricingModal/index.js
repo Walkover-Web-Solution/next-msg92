@@ -3,14 +3,13 @@ import contvertToLocal from '@/utils/convertToLocal';
 import { MdClose } from 'react-icons/md';
 
 export default function CalculatePricingModal({ plans, symbol, tabtype, currency, onClose }) {
-    const serviceNames = useMemo(() => getUniqueServiceNames(plans), [plans]);
+    const visibleServiceNames = useMemo(() => getServiceNamesInAllPlans(plans), [plans]);
 
     const [usageByService, setUsageByService] = useState(() => {
         const init = {};
-        for (const name of serviceNames) init[name] = '';
+        for (const name of visibleServiceNames) init[name] = '';
         return init;
     });
-    const [isCalculate, setIsCalculate] = useState(false);
     const [validationError, setValidationError] = useState('');
 
     const handleUsageChange = (servicename, value) => {
@@ -18,29 +17,31 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
         setValidationError('');
     };
 
-    const isUsageComplete = () =>
-        serviceNames.length > 0 &&
-        serviceNames.every((name) => {
-            const value = usageByService[name];
-            return value != null && String(value).trim() !== '';
-        });
+    const hasAnyFilledField = useMemo(
+        () =>
+            visibleServiceNames.some((name) => {
+                const value = usageByService[name];
+                return value != null && String(value).trim() !== '';
+            }),
+        [visibleServiceNames, usageByService]
+    );
 
-    const handleCalculate = () => {
-        if (!isUsageComplete()) {
-            setValidationError('Please fill in all usage fields.');
-            return;
-        }
-        setValidationError('');
-        setIsCalculate(true);
-    };
+    const filledServiceNames = useMemo(
+        () =>
+            visibleServiceNames.filter((name) => {
+                const value = usageByService[name];
+                return value != null && String(value).trim() !== '';
+            }),
+        [visibleServiceNames, usageByService]
+    );
 
     const usageAsNumbers = useMemo(() => {
         const normalizedUsageByService = {};
-        for (const name of serviceNames) {
+        for (const name of visibleServiceNames) {
             normalizedUsageByService[name] = Math.max(0, Number(usageByService[name]));
         }
         return normalizedUsageByService;
-    }, [serviceNames, usageByService]);
+    }, [visibleServiceNames, usageByService]);
 
     const results = useMemo(() => {
         if (!Array.isArray(plans) || plans.length === 0) return [];
@@ -58,10 +59,9 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
     const handleClose = () => {
         setUsageByService(() => {
             const init = {};
-            for (const name of serviceNames) init[name] = '';
+            for (const name of visibleServiceNames) init[name] = '';
             return init;
         });
-        setIsCalculate(false);
         setValidationError('');
         onClose?.();
     };
@@ -82,9 +82,9 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                 <p className='text-md'>Enter your expected usage to compare plan costs.</p>
             </div>
 
-            {serviceNames.length > 0 ? (
+            {visibleServiceNames.length > 0 ? (
                 <div className='flex flex-wrap gap-4 items-end'>
-                    {serviceNames.map((name) => (
+                    {visibleServiceNames.map((name) => (
                         <label key={name} className='flex flex-col gap-1 w-full max-w-[200px]'>
                             <span className='text-xs font-medium'>{name}</span>
                             <input
@@ -105,9 +105,6 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                         </label>
                     ))}
 
-                    <button type='button' onClick={handleCalculate} className='btn btn-primary btn-sm my-1'>
-                        Calculate
-                    </button>
                     {validationError && (
                         <p className='text-sm text-error w-full' role='alert'>
                             {validationError}
@@ -118,7 +115,7 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                 <p className='text-sm text-gray-500'>No usage-based services in the current plans.</p>
             )}
 
-            {isCalculate && results.length > 0 && (
+            {hasAnyFilledField && results.length > 0 && (
                 <div className='space-y-3'>
                     <h4 className='text-sm font-semibold text-gray-700'>Plan comparison</h4>
 
@@ -130,12 +127,12 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                                         Plan
                                     </th>
                                     <th className='w-[80px] min-w-[80px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
-                                        Base
+                                        Plan Amount
                                     </th>
                                     <th className='w-[160px] min-w-[160px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
                                         Included
                                     </th>
-                                    {serviceNames.map((name) => (
+                                    {filledServiceNames.map((name) => (
                                         <th
                                             key={name}
                                             className='w-[140px] min-w-[140px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'
@@ -164,31 +161,53 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                                             </td>
                                             <td className='w-[160px] min-w-[160px] px-4 py-3 text-gray-600 align-top'>
                                                 <div className='flex flex-col gap-0.5'>
-                                                    {serviceNames.map((name) => (
-                                                        <span key={name} className='text-xs'>
-                                                            {name}:{' '}
-                                                            {result?.includedByService?.[name] == null
-                                                                ? 'Unlimited'
-                                                                : result?.includedByService?.[name]}
-                                                        </span>
-                                                    ))}
+                                                    {filledServiceNames
+                                                        .filter((name) => result?.calculationByService?.[name] != null)
+                                                        .map((name) => (
+                                                            <span key={name} className='text-xs'>
+                                                                {name}:{' '}
+                                                                {result?.includedByService?.[name] == null
+                                                                    ? 'Unlimited'
+                                                                    : result?.includedByService?.[name]}
+                                                            </span>
+                                                        ))}
                                                 </div>
                                             </td>
-                                            {serviceNames.map((name) => {
+                                            {filledServiceNames.map((name) => {
                                                 const calculation = result?.calculationByService?.[name];
-                                                const isIncluded = calculation?.isIncluded === true;
-                                                const formula =
-                                                    calculation != null && !isIncluded && calculation.overage > 0
-                                                        ? `${calculation.extra} × ${calculation.rate} = ${calculation.overage}`
-                                                        : null;
+                                                const inPlan = calculation != null;
+                                                const isUnlimitedIncluded = result?.includedByService?.[name] == null;
+                                                const includedCount = result?.includedByService?.[name];
+                                                const isWithinLimit =
+                                                    inPlan && !isUnlimitedIncluded && calculation?.extra === 0;
+                                                const hasOverageCharge =
+                                                    calculation != null &&
+                                                    !calculation?.isIncluded &&
+                                                    calculation.overage > 0;
+                                                const formula = hasOverageCharge
+                                                    ? `${calculation.extra} × ${calculation.rate} = ${calculation.overage}`
+                                                    : null;
                                                 return (
                                                     <td
                                                         key={name}
                                                         className='w-[140px] min-w-[140px] px-4 py-3 text-gray-700 align-top'
                                                     >
                                                         <div className='flex flex-col gap-0.5'>
-                                                            {isIncluded ? (
-                                                                <span className='text-gray-500'>Included</span>
+                                                            {!inPlan ? (
+                                                                <span className='text-gray-500'>
+                                                                    Not included in the plan
+                                                                </span>
+                                                            ) : isUnlimitedIncluded ? (
+                                                                <span className='text-gray-600'>Unlimited</span>
+                                                            ) : isWithinLimit ? (
+                                                                <div className='flex flex-col gap-0.5'>
+                                                                    <span className='text-gray-600'>
+                                                                        {formatPrice(symbol, 0)}
+                                                                    </span>
+                                                                    <span className='text-xs text-gray-500'>
+                                                                        Included ({includedCount})
+                                                                    </span>
+                                                                </div>
                                                             ) : (
                                                                 <>
                                                                     <span>
@@ -238,6 +257,14 @@ function getUniqueServiceNames(plans) {
         }
     }
     return Array.from(names);
+}
+
+function getServiceNamesInAllPlans(plans) {
+    const allNames = getUniqueServiceNames(plans);
+    if (allNames.length === 0) return [];
+    return allNames.filter((name) =>
+        plans.every((plan) => plan?.extras?.servicesList?.some((service) => service?.servicename === name))
+    );
 }
 
 function computePlanTotal(plan, tabtype, usageByService) {
