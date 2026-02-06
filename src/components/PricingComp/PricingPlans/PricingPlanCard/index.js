@@ -20,9 +20,17 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
         >
             <h3 className=' text-2xl font-semibold'>{planData?.title}</h3>
 
-            <div className='flex items-center gap-1'>
-                <span className=' text-2xl font-semibold text-green-700'>{planData?.price}</span>
-                {planData?.price !== 'Free' && <span className='text-md text-gray-500 mt-1'>{planData?.period}</span>}
+            <div className='flex flex-col gap-0.5'>
+                <div className='flex items-center gap-1 flex-wrap'>
+                    {planData?.originalPrice != null && (
+                        <span className='text-xl font-medium text-gray-500 line-through'>{planData.originalPrice}</span>
+                    )}
+                    <span className='text-2xl font-semibold text-green-700'>{planData?.price}</span>
+                    {planData?.price !== 'Free' && (
+                        <span className='text-md text-gray-500 mt-1'>{planData?.period}</span>
+                    )}
+                </div>
+                <span className='text-sm text-gray-600 min-h-[20px] block'>{planData?.discountLabel ?? '\u00A0'}</span>
             </div>
 
             <div className='py-2' onClick={(e) => e.stopPropagation()}>

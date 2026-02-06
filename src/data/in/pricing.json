@@ -425,6 +425,8 @@
                 "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
+                "content": "Connect with our team for Pricing .",
+                "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }
         }

@@ -113,7 +113,10 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
                                             className='w-[180px] px-4 py-4 text-center border-l border-gray-200'
                                         >
                                             {row.isPrice ? (
-                                                <span className='font-semibold text-green-600'>{value}</span>
+                                                <span className='font-semibold text-green-600'>
+                                                    {value}
+                                                    {tabtype === 'Monthly' ? '/month' : '/year'}
+                                                </span>
                                             ) : value ? (
                                                 <MdCheck className='mx-auto text-green-600 text-lg' />
                                             ) : (
