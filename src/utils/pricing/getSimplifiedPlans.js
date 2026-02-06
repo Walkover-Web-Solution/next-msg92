@@ -9,9 +9,9 @@ import getPlanServices from './getPlanServices';
  */
 export default function getSimplifiedPlans(plans = [], currency) {
     return plans.map((plan) => {
-        const amounts = plan?.plan_amounts?.filter((a) => a?.currency?.short_name === currency) ?? [];
+        const amounts = plan?.plan_amounts?.filter((amount) => amount?.currency?.short_name === currency) ?? [];
 
-        const getAmount = (type) => amounts.find((a) => a?.plan_type?.name === type)?.plan_amount ?? null;
+        const getAmount = (type) => amounts.find((amount) => amount?.plan_type?.name === type)?.plan_amount ?? null;
 
         const included = (plan?.plan_services ?? []).map((service) => {
             const ratesForCurrency =
@@ -39,11 +39,7 @@ export default function getSimplifiedPlans(plans = [], currency) {
                 yearly: getAmount('Yearly'),
             },
             included,
-            discount: {
-                type_id: plan?.discount?.type_id ?? 2,
-                value: plan?.discount?.value ?? 0,
-                duration: plan?.discount?.duration ?? 'monthly',
-            },
+            discount: getSimplifiedDiscount(plan?.plan_amounts?.[0]?.applied_discounts),
             plan_features: (plan?.plan_features ?? []).map((feature) => ({
                 name: feature?.feature?.name ?? feature?.userFriendlyName ?? feature?.key ?? '',
                 is_visible: feature?.hide === true ? false : (feature?.is_visible ?? true),
@@ -52,6 +48,20 @@ export default function getSimplifiedPlans(plans = [], currency) {
             extras: getPlanServices(plan, currency),
         };
     });
+}
+
+/**
+ * Builds simplified discount from applied_discounts array (uses first discount).
+ */
+function getSimplifiedDiscount(appliedDiscounts) {
+    const discount = appliedDiscounts?.[0];
+    if (!discount) return null;
+    return {
+        type_id: discount.discount_type_id,
+        value: discount.value,
+        duration: discount.duration,
+        action: discount.discount_type?.action,
+    };
 }
 
 /**

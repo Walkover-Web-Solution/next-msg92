@@ -89,6 +89,53 @@ export default function PricingPlans({
     );
 }
 
+/**
+ * Computes final price and discount label from plan amount and discount.
+ * type_id 1 = fixed amount off, type_id 2 = percentage off.
+ * Returns { originalPrice, price, discountLabel, hasDiscount } (price strings for display).
+ */
+function getDiscountPriceAndLabel(amount, discount, symbol) {
+    const numAmount = amount != null && !Number.isNaN(Number(amount)) ? Number(amount) : 0;
+    const originalPrice = numAmount === 0 ? 'Free' : `${symbol}${numAmount.toLocaleString('en-US')}`;
+
+    if (!discount || discount.value == null || numAmount <= 0) {
+        return { originalPrice, price: originalPrice, discountLabel: null, hasDiscount: false };
+    }
+
+    const typeId = discount.type_id;
+    const value = Number(discount.value);
+    const duration = discount.duration ?? 0;
+
+    let finalAmount;
+    let discountLabel;
+
+    if (typeId === 1) {
+        // Fixed amount off
+        finalAmount = Math.max(0, numAmount - value);
+        discountLabel = `${symbol}${value.toLocaleString('en-US')} for ${duration} month${duration !== 1 ? 's' : ''}`;
+    } else if (typeId === 2) {
+        // Percentage off
+        if (value >= 100) {
+            finalAmount = 0;
+            discountLabel = `100% off for ${duration} month${duration !== 1 ? 's' : ''}`;
+        } else {
+            finalAmount = Math.max(0, numAmount * (1 - value / 100));
+            discountLabel = `${value}% off for ${duration} month${duration !== 1 ? 's' : ''}`;
+        }
+    } else {
+        return { originalPrice, price: originalPrice, discountLabel: null, hasDiscount: false };
+    }
+
+    const isFree = finalAmount <= 0;
+    const price = isFree ? 'Free' : `${symbol}${finalAmount.toLocaleString('en-US')}`;
+    return {
+        originalPrice: numAmount === 0 ? null : originalPrice,
+        price,
+        discountLabel,
+        hasDiscount: true,
+    };
+}
+
 function simplifiedPlanToCard(plan, tabtype, symbol, plansPageData) {
     const isMonthly = tabtype === 'Monthly';
     const amount = isMonthly ? plan?.amount?.monthly : plan?.amount?.yearly;
@@ -126,17 +173,18 @@ function simplifiedPlanToCard(plan, tabtype, symbol, plansPageData) {
 
     const hasDialPlan = plan?.included?.some((item) => item?.dial_plan?.data?.length > 0) ?? false;
 
-    const price =
-        amount != null && !Number.isNaN(Number(amount))
-            ? Number(amount) === 0
-                ? 'Free'
-                : `${symbol}${Number(amount).toLocaleString('en-US')}`
-            : '';
+    const { originalPrice, price, discountLabel, hasDiscount } = getDiscountPriceAndLabel(
+        amount,
+        plan?.discount,
+        symbol
+    );
 
     const planCard = {
         slug: plan?.slug,
         title,
         price,
+        originalPrice: hasDiscount ? originalPrice : null,
+        discountLabel: hasDiscount ? discountLabel : null,
         period,
         ctaText: plansPageData?.ctaText,
         showLink: true,
