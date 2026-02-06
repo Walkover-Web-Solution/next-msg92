@@ -420,25 +420,27 @@ export default class SignUp extends React.Component {
     finalSubmit = (data, createCompany) => {
         const url = process.env.API_BASE_URL + '/api/v5/nexus/finalRegister';
         this.setState({ thirdStepData: { ...data, acceptInviteForCompanies: [], rejectInviteForCompanies: [] } });
+        const isIndia = data?.countryName?.toLowerCase()?.includes('india');
+        const companyDetails = createCompany
+            ? {
+                  industry: data?.industryType,
+                  state: data?.stateName,
+                  cityId: data?.cityId || '0',
+                  customCity: data?.otherCity,
+                  country: data?.countryName,
+                  city: data?.city === 'other' ? '' : data?.city,
+                  zipcode: isIndia ? (data?.pincode ?? '') : (data?.pincode?.trim() ?? ''),
+                  address: data?.address,
+                  gstNo: data?.gstNumber,
+                  countryId: data?.country,
+                  stateId: data?.stateProvince,
+                  companyName: data?.companyName,
+                  service: data?.serviceNeeded,
+                  vatNo: data?.vatNumber,
+              }
+            : {};
         const payload = {
-            'companyDetails': createCompany
-                ? {
-                      'industry': data?.industryType,
-                      'state': data?.stateName,
-                      'cityId': data?.cityId || '0',
-                      'customCity': data?.otherCity,
-                      'country': data?.countryName,
-                      'city': data?.city === 'other' ? '' : data?.city,
-                      'zipcode': data?.pincode,
-                      'address': data?.address,
-                      'gstNo': data?.gstNumber,
-                      'countryId': data?.country,
-                      'stateId': data?.stateProvince,
-                      'companyName': data?.companyName,
-                      'service': data?.serviceNeeded,
-                      'vatNo': data?.vatNumber,
-                  }
-                : {},
+            companyDetails,
             'userDetails': {
                 'firstName': data?.firstName,
                 'lastName': data?.lastName,
