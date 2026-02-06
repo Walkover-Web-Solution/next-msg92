@@ -13,11 +13,9 @@ export default function handleBrawserCookies() {
     useEffect(() => {
         const search = window.location.search;
         if (search.includes('utm_')) {
-            setCookie('msg91_query', search.replace(/service=\w+&?/, ''), 30);
+            setCookie('msg91_query', search.replace(/service=\w+&?/, ''), 30); // If utm exists
         } else if (plugin) {
-            setCookie('msg91_query', `?utm_campaign=tigerplugin&utm_source=${plugin}&utm_medium=website`, 30);
-        } else if (!getCookie('msg91_query')) {
-            setCookie('msg91_query', '?utm_source=msg91Website&source=msg91', 30);
+            setCookie('msg91_query', `?utm_campaign=tigerplugin&utm_source=${plugin}&utm_medium=website`, 30); //By Hardik
         }
         setUtm();
     }, []);
