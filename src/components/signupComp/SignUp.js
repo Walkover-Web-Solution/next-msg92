@@ -11,7 +11,7 @@ import StepThree from './StepThree/StepThree';
 import { useRouter } from 'next/router';
 import { preconnect } from 'react-dom';
 
-const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
+let SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 
 const OTPRetryModes = {
     Sms: '11',
@@ -29,7 +29,7 @@ export default class SignUp extends React.Component {
         this.sendOtp = this.sendOtp.bind(this);
         this.retryOtp = this.retryOtp.bind(this);
         this.verifyOtp = this.verifyOtp.bind(this);
-
+        this.msg91Query = null;
         var queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
 
         this.state = {
@@ -47,6 +47,15 @@ export default class SignUp extends React.Component {
     }
 
     componentDidMount = () => {
+        this.msg91Query = getCookie('msg91_query');
+
+        if (this.msg91Query) {
+            const queryParams = this.msg91Query.startsWith('?')
+                ? this.msg91Query.replace('?', '&')
+                : '&' + this.msg91Query;
+            SUCCESS_REDIRECTION_URL += queryParams;
+        }
+
         this.otpWidgetSetup();
         const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
         this.setState({ activeStep: queryParams?.code ? 2 : 1 });
