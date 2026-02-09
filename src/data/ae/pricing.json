@@ -300,6 +300,10 @@
                 "title": "WhatsApp Pricing in United Arab Emirates | MSG91-United Arab Emirates",
                 "description": "Avail cutting-edge services such as transactional WhatsApp, communication APIs, and more at competitive prices. Discover the pricing today."
             },
+            "whatsappMessages": {
+                "heading": "<h2 class='text-xl md:text-3xl font-bold'>Up to <span class='text-green-600 font-bold text-2xl lg:text-3xl'>10% Lower</span> Than Meta Pricing.</h2>",
+                "sub_heading": "Clear pricing. No markup. Built for growing businesses."
+            },
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",
@@ -308,7 +312,9 @@
             "whatsappVoice": {
                 "heading": "Enjoy 100% Free WhatsApp Inbound Calls till December!",
                 "sub_heading": "Pricing",
-                "content": ["Pricing after December: Inbound Calls: $0.10/min"]
+                "content": [
+                    "Pricing after December: Inbound Calls: $0.10/min"
+                ]
             }
         },
         "rcs": {
