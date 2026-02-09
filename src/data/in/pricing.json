@@ -73,8 +73,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -148,8 +146,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -232,8 +228,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -375,8 +369,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -389,12 +381,23 @@
                 "comparePlansHeading": "Compare Plans",
                 "featuresColumnLabel": "FEATURES"
             },
+            "whatsappMessages": {
+                "heading": "<h2 class='text-xl md:text-3xl font-bold'><span class='text-green-600 font-bold'>Zero</span> margin on meta price.</h2>",
+                "sub_heading": "GST excluded."
+            },
             "tax": "Since we do not impose any service charge, GST will be applied to WhatsApp API pricing",
             "adds": "Zero Whatsapp cloud API pricing for Click to WhatsApp Ads.",
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
+            },
+            "whatsappVoice": {
+                "heading": "Enjoy 100% Free WhatsApp Inbound Calls till December!",
+                "sub_heading": "Pricing",
+                "content": [
+                    "Pricing after December: Inbound Calls: ₹0.5/min"
+                ]
             }
         },
         "rcs": {
@@ -410,8 +413,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",

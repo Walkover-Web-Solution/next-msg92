@@ -73,8 +73,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -148,8 +146,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -232,8 +228,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -374,8 +368,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -387,6 +379,17 @@
                 "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
                 "comparePlansHeading": "Compare Plans",
                 "featuresColumnLabel": "FEATURES"
+            },
+            "whatsappMessages": {
+                "heading": "<h2 class='text-xl md:text-3xl font-bold'>Até <span class='text-green-600 font-bold text-2xl lg:text-3xl'>10% Mais Baixo</span> Que os Preços da Meta.</h2>",
+                "sub_heading": "Preços previsíveis. Sem markup. Feito para crescimento a longo prazo."
+            },
+            "whatsappVoice": {
+                "heading": "Aproveite 100% de Chamadas de Entrada do WhatsApp Gratuitas até Dezembro!",
+                "sub_heading": "Preços",
+                "content": [
+                    "Preços após Dezembro: Chamadas de Entrada: $0.01/min"
+                ]
             },
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
@@ -407,8 +410,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
