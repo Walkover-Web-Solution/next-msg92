@@ -102,13 +102,24 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                             }`}
                         >
                             <div className='flex flex-col gap-2'>
-                                <h2 className='text-xl md:text-3xl font-semibold'>
-                                    <span className='text-green-600 font-bold text-2xl lg:text-4xl'>Zero</span> margin
-                                    on meta price.
-                                </h2>
-                                {currentCountry?.name === 'India' && <p className='txt-sm lg:text-lg'>GST excluded.</p>}
+                                <div
+                                    className='text-xl md:text-3xl font-bold'
+                                    dangerouslySetInnerHTML={{
+                                        __html:
+                                            pageData?.whatsappMessages?.heading ||
+                                            "<h2 class='text-xl md:text-3xl font-bold'>Lower Than Meta Pricing. <span class='text-green-600 font-bold text-2xl lg:text-3xl'>Guaranteed</span></h2>",
+                                    }}
+                                />
+
+                                {/* {currentCountry?.name === 'India' && <p className='txt-sm lg:text-lg'>GST excluded.</p>}
                                 {currentCountry?.name === 'United Kingdom' && (
                                     <p className='txt-sm md:text-lg'>VAT excluded.</p>
+                                )} */}
+                                {pageData?.whatsappMessages?.sub_heading && (
+                                    <p className='txt-sm md:text-lg'>
+                                        {pageData?.whatsappMessages?.sub_heading ||
+                                            'Clear, consistent rates you can rely on'}
+                                    </p>
                                 )}
                             </div>
                             <a href={getURL('signup', 'whatsapp')} className='w-fit' target='_blank'>

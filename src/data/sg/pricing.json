@@ -300,6 +300,10 @@
                 "title": "WhatsApp Pricing in Singapore | MSG91-Singapore",
                 "description": "Leverage powerful and robust services, including transactional WhatsApp, communication APIs, and more, at competitive prices. Explore the pricing today."
             },
+            "whatsappMessages": {
+                "heading": "<h2 class='text-xl md:text-3xl font-bold'>Up to <span class='text-green-600 font-bold text-2xl lg:text-3xl'>10% Lower</span> Than Meta Pricing.</h2>",
+                "sub_heading": "Simple, predictable pricing with built-in savings."
+            },
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",
