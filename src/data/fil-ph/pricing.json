@@ -300,6 +300,10 @@
                 "title": "Presyo ng WhatsApp sa Pilipinas | MSG91-Pilipinas",
                 "description": "Mararanasan mo ang maaasahan at makapangyarihang mga serbisyo tulad ng transactional WhatsApp, communication APIs, at iba pa, na inaalok sa magagandang presyo. Tingnan ang presyo ngayon."
             },
+            "whatsappMessages": {
+                "heading": "<h2 class='text-xl md:text-3xl font-bold'>Mas Mababa sa Presyo ng Meta. <span class='text-green-600 font-bold text-2xl lg:text-3xl'>Garantisado</span></h2>",
+                "sub_heading": "Walang dagdag na singil. Walang nakatagong bayad. Mas magandang presyo lamang."
+            },
             "connectComp": {
                 "content": "Makipag-ugnayan sa aming team para sa presyo.",
                 "sales_btn": "Makipag-usap sa Sales",

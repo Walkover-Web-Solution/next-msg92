@@ -300,6 +300,10 @@
                 "title": "WhatsApp Pricing in United Kingdom | MSG91-United Kingdom",
                 "description": "Discover powerful services like transactional WhatsApp, communication APIs, and more, all at competitive prices. Check out the pricing now."
             },
+            "whatsappMessages": {
+                "heading": "<h2 class='text-xl md:text-3xl font-bold'>Up to 10% Lower Than Meta Pricing.</h2>",
+                "sub_heading": "Simple, predictable pricing with built-in savings."
+            },
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",
