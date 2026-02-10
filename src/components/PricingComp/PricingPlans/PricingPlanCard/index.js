@@ -54,6 +54,7 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
                                     ? (item.displayText ?? item.service_name ?? '')
                                     : String(item);
                             const hasDialPlan = typeof item === 'object' && item != null && item.hasDialPlan === true;
+                            const serviceName = typeof item === 'object' && item != null ? item.service_name : null;
                             return (
                                 <div key={index} className='flex flex-nowrap items-center gap-2 text-sm'>
                                     <span className='text-gray-600 truncate shrink-0'>{displayText}</span>
@@ -66,7 +67,8 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
                                                 type='button'
                                                 onClick={(e) => {
                                                     e.stopPropagation();
-                                                    if (onViewCallingRates) onViewCallingRates(planData?.slug);
+                                                    if (onViewCallingRates)
+                                                        onViewCallingRates(planData?.slug, serviceName);
                                                     else onSelect?.();
                                                 }}
                                                 className='link link-active-link font-medium text-blue-600 shrink-0 whitespace-nowrap'
