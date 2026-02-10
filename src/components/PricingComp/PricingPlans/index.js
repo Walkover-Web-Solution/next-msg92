@@ -38,8 +38,8 @@ export default function PricingPlans({
         const hasAmountForTab = (plan) =>
             tabtype === 'Monthly' ? plan?.amount?.monthly != null : plan?.amount?.yearly != null;
         const plansForTab = pricingData.filter(hasAmountForTab);
-        return plansForTab.map((plan) => simplifiedPlanToCard(plan, tabtype, pageData));
-    }, [pricingData, tabtype, pageData]);
+        return plansForTab.map((plan) => simplifiedPlanToCard(plan, tabtype, pageData, symbol));
+    }, [pricingData, tabtype, pageData, symbol]);
 
     const hasFeatures = useMemo(
         () =>
@@ -108,7 +108,7 @@ function transformIncludedServices(plan) {
     });
 }
 
-function transformExtraServices(plan) {
+function transformExtraServices(plan, symbol) {
     const postpaidAllowed = plan?.postpaidAllowed;
 
     return (plan?.services ?? [])
@@ -122,7 +122,7 @@ function transformExtraServices(plan) {
             const serviceName = service?.serviceName;
             const showRate = followUpRate && postpaidAllowed;
             return showRate
-                ? { label: `${followUpRate}/${serviceName}/month`, isNoExtra: false }
+                ? { label: `${symbol}${followUpRate}/${serviceName}/month`, isNoExtra: false }
                 : { label: `No extra ${serviceName}`, isNoExtra: true };
         });
 }
@@ -151,7 +151,7 @@ function getPlanTitle(plan) {
     return 'Plan';
 }
 
-function simplifiedPlanToCard(plan, tabtype, plansPageData) {
+function simplifiedPlanToCard(plan, tabtype, plansPageData, symbol) {
     const isMonthly = tabtype === 'Monthly';
     const period = isMonthly ? 'Monthly' : 'Yearly';
 
@@ -159,7 +159,7 @@ function simplifiedPlanToCard(plan, tabtype, plansPageData) {
     const pricing = isMonthly ? plan?.pricing?.monthly : plan?.pricing?.yearly;
 
     const included = transformIncludedServices(plan);
-    const extra = transformExtraServices(plan);
+    const extra = transformExtraServices(plan, symbol);
     const features = transformFeatures(plan);
     const title = getPlanTitle(plan);
     const hasDialPlan =
