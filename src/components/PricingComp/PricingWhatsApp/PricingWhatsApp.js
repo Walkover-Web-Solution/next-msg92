@@ -61,7 +61,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
             <div className='flex flex-col gap-3 max-w-full w-full overflow-hidden'>
                 <h1 className='text-2xl md:text-3xl font-semibold capitalize'>WhatsApp Pricing</h1>
 
-                <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
+                {/* <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
                     <span
                         role='tab'
                         className={`tab ${tabtype === 'Messages' && 'tab-active'}`}
@@ -76,7 +76,7 @@ export default function PricingWhatsApp({ pricingData, pageData, pageInfo }) {
                     >
                         Voice
                     </span>
-                </div>
+                </div> */}
 
                 <div className='flex flex-col w-full gap-8'>
                     <div className='flex lg:flex-row flex-col-reverse bg-white rounded xl:p-8 lg:p-6 p-4 items-center justify-between lg:gap-6 xl:gap-12 gap-4'>
