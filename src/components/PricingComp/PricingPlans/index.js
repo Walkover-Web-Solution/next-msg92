@@ -1,13 +1,14 @@
 import { useRef, useMemo, useEffect } from 'react';
 import PricingPlanCard from './PricingPlanCard';
 
+const SCROLL_DISTANCE = 752;
+const EMPTY_ARRAY = [];
+
 export default function PricingPlans({
     pricingData,
     tabtype,
     symbol,
     setScrollApi,
-    selectedPlanSlug,
-    onSelectPlan,
     onViewCallingRates,
     onCalculateClick,
     pageData,
@@ -16,11 +17,11 @@ export default function PricingPlans({
     const scrollRef = useRef(null);
 
     const scrollLeft = () => {
-        scrollRef.current?.scrollBy({ left: -752, behavior: 'smooth' });
+        scrollRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' });
     };
 
     const scrollRight = () => {
-        scrollRef.current?.scrollBy({ left: 752, behavior: 'smooth' });
+        scrollRef.current?.scrollBy({ left: SCROLL_DISTANCE, behavior: 'smooth' });
     };
 
     useEffect(() => {
@@ -33,12 +34,12 @@ export default function PricingPlans({
     }, [setScrollApi]);
 
     const cards = useMemo(() => {
-        if (!Array.isArray(pricingData) || pricingData.length === 0) return [];
+        if (!Array.isArray(pricingData) || pricingData.length === 0) return EMPTY_ARRAY;
         const hasAmountForTab = (plan) =>
             tabtype === 'Monthly' ? plan?.amount?.monthly != null : plan?.amount?.yearly != null;
         const plansForTab = pricingData.filter(hasAmountForTab);
-        return plansForTab.map((plan) => simplifiedPlanToCard(plan, tabtype, symbol, pageData));
-    }, [pricingData, tabtype, symbol, pageData]);
+        return plansForTab.map((plan) => simplifiedPlanToCard(plan, tabtype, pageData, symbol));
+    }, [pricingData, tabtype, pageData, symbol]);
 
     const hasFeatures = useMemo(
         () =>
@@ -55,16 +56,17 @@ export default function PricingPlans({
         <section className='w-full py-4'>
             <div className='mx-auto max-w-7xl'>
                 <div ref={scrollRef} className='flex gap-6 overflow-x-auto pb-4 scroll-smooth w-full'>
-                    {cards.map((card, index) => (
-                        <PricingPlanCard
-                            key={card.title ?? card.slug ?? `card-${index}`}
-                            planData={card}
-                            isSelected={card.slug === selectedPlanSlug}
-                            onSelect={() => onSelectPlan?.(card.title)}
-                            onViewCallingRates={onViewCallingRates}
-                            product={product}
-                        />
-                    ))}
+                    {cards.map((card, index) => {
+                        const cardKey = card.slug ?? card.title ?? `card-${index}`;
+                        return (
+                            <PricingPlanCard
+                                key={cardKey}
+                                planData={card}
+                                onViewCallingRates={onViewCallingRates}
+                                product={product}
+                            />
+                        );
+                    })}
                 </div>
             </div>
             <div className='mt-6 flex items-center justify-between text-sm'>
@@ -89,102 +91,89 @@ export default function PricingPlans({
     );
 }
 
-/**
- * Computes final price and discount label from plan amount and discount.
- * type_id 1 = fixed amount off, type_id 2 = percentage off.
- * Returns { originalPrice, price, discountLabel, hasDiscount } (price strings for display).
- */
-function getDiscountPriceAndLabel(amount, discount, symbol) {
-    const numAmount = amount != null && !Number.isNaN(Number(amount)) ? Number(amount) : 0;
-    const originalPrice = numAmount === 0 ? 'Free' : `${symbol}${numAmount.toLocaleString('en-US')}`;
-
-    if (!discount || discount.value == null || numAmount <= 0) {
-        return { originalPrice, price: originalPrice, discountLabel: null, hasDiscount: false };
-    }
-
-    const typeId = discount.type_id;
-    const value = Number(discount.value);
-    const duration = discount.duration ?? 0;
-
-    let finalAmount;
-    let discountLabel;
-
-    if (typeId === 1) {
-        // Fixed amount off
-        finalAmount = Math.max(0, numAmount - value);
-        discountLabel = `${symbol}${value.toLocaleString('en-US')} for ${duration} month${duration !== 1 ? 's' : ''}`;
-    } else if (typeId === 2) {
-        // Percentage off
-        if (value >= 100) {
-            finalAmount = 0;
-            discountLabel = `100% off for ${duration} month${duration !== 1 ? 's' : ''}`;
-        } else {
-            finalAmount = Math.max(0, numAmount * (1 - value / 100));
-            discountLabel = `${value}% off for ${duration} month${duration !== 1 ? 's' : ''}`;
-        }
-    } else {
-        return { originalPrice, price: originalPrice, discountLabel: null, hasDiscount: false };
-    }
-
-    const isFree = finalAmount <= 0;
-    const price = isFree ? 'Free' : `${symbol}${finalAmount.toLocaleString('en-US')}`;
-    return {
-        originalPrice: numAmount === 0 ? null : originalPrice,
-        price,
-        discountLabel,
-        hasDiscount: true,
-    };
+function formatServiceDisplayText(serviceName, included) {
+    const isUnlimited = included === -1 || included === '-1';
+    return isUnlimited ? `Unlimited ${serviceName}` : `${Number(included)} ${serviceName}/month`;
 }
 
-function simplifiedPlanToCard(plan, tabtype, symbol, plansPageData) {
+function transformIncludedServices(plan) {
+    return (plan?.services ?? []).map((service) => {
+        const dialPlan = service?.dialplan;
+        const serviceName = service?.serviceName;
+        return {
+            displayText: formatServiceDisplayText(serviceName, service.included),
+            hasDialPlan: Boolean(dialPlan?.data?.length > 0),
+            service_name: serviceName,
+        };
+    });
+}
+
+function transformExtraServices(plan, symbol) {
+    const postpaidAllowed = plan?.postpaidAllowed;
+
+    return (plan?.services ?? [])
+        .filter((service) => {
+            const freeCredits = service?.included;
+            const hasDialPlan = service?.dialplan != null;
+            return !hasDialPlan && freeCredits !== -1 && freeCredits !== '-1';
+        })
+        .map((service) => {
+            const followUpRate = service?.extra;
+            const serviceName = service?.serviceName;
+            const showRate = followUpRate && postpaidAllowed;
+            return showRate
+                ? { label: `${symbol}${followUpRate}/${serviceName}/month`, isNoExtra: false }
+                : { label: `No extra ${serviceName}`, isNoExtra: true };
+        });
+}
+
+function transformFeatures(plan) {
+    const planFeatures = plan?.plan_features;
+    if (!planFeatures) return [];
+
+    return planFeatures
+        .filter((feature) => {
+            const isVisible = feature.is_visible;
+            return isVisible;
+        })
+        .map((feature) => {
+            const featureName = feature.name;
+            const isIncluded = feature.is_included;
+            return { name: featureName, is_included: isIncluded };
+        });
+}
+
+function getPlanTitle(plan) {
+    if (plan?.name) return plan.name;
+    if (plan?.slug) {
+        return String(plan.slug).charAt(0).toUpperCase() + String(plan.slug).slice(1);
+    }
+    return 'Plan';
+}
+
+function simplifiedPlanToCard(plan, tabtype, plansPageData, symbol) {
     const isMonthly = tabtype === 'Monthly';
-    const amount = isMonthly ? plan?.amount?.monthly : plan?.amount?.yearly;
     const period = isMonthly ? 'Monthly' : 'Yearly';
 
-    const included =
-        plan?.included?.map((service) => {
-            const isUnlimited = service?.amount === -1 || service?.amount === '-1';
-            const displayText = isUnlimited
-                ? `Unlimited ${service?.service_name}`
-                : `${Number(service?.amount)} ${service?.service_name}/month`;
-            const hasDialPlan = Boolean(service?.dial_plan?.data?.length > 0);
-            return { displayText, hasDialPlan, service_name: service?.service_name };
-        }) ?? [];
+    // Get pre-computed pricing for the selected tab
+    const pricing = isMonthly ? plan?.pricing?.monthly : plan?.pricing?.yearly;
 
-    const extra =
-        plan?.extras?.servicesList
-            ?.filter((service) => service?.free_credits !== -1 && service?.free_credits !== '-1')
-            ?.map((service) => {
-                const rate = service?.follow_up_rate;
-                const name = service?.servicename;
-                const showRate = rate && plan?.extras?.postpaidAllowed;
-                return showRate
-                    ? { label: `${symbol}${rate}/${name}/month`, isNoExtra: false }
-                    : { label: `No extra ${name}`, isNoExtra: true };
-            }) ?? [];
+    const included = transformIncludedServices(plan);
+    const extra = transformExtraServices(plan, symbol);
+    const features = transformFeatures(plan);
+    const title = getPlanTitle(plan);
+    const hasDialPlan =
+        plan?.services?.some((service) => {
+            const dialPlan = service?.dialplan;
+            return dialPlan?.data?.length > 0;
+        }) ?? false;
 
-    const features =
-        plan?.plan_features
-            ?.filter((feature) => feature.is_visible)
-            .map((feature) => ({ name: feature.name, is_included: feature.is_included })) ?? [];
-
-    const title =
-        plan?.name ?? (plan?.slug ? String(plan.slug).charAt(0).toUpperCase() + String(plan.slug).slice(1) : 'Plan');
-
-    const hasDialPlan = plan?.included?.some((item) => item?.dial_plan?.data?.length > 0) ?? false;
-
-    const { originalPrice, price, discountLabel, hasDiscount } = getDiscountPriceAndLabel(
-        amount,
-        plan?.discount,
-        symbol
-    );
-
-    const planCard = {
+    return {
         slug: plan?.slug,
         title,
-        price,
-        originalPrice: hasDiscount ? originalPrice : null,
-        discountLabel: hasDiscount ? discountLabel : null,
+        price: pricing?.price ?? 'Free',
+        originalPrice: pricing?.originalPrice ?? null,
+        discountLabel: pricing?.discountLabel ?? null,
         period,
         ctaText: plansPageData?.ctaText,
         showLink: true,
@@ -194,6 +183,4 @@ function simplifiedPlanToCard(plan, tabtype, symbol, plansPageData) {
         features,
         extra,
     };
-
-    return planCard;
 }

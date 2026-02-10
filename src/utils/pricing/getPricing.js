@@ -17,6 +17,20 @@ const currencyByCountry = {
     gb: 'GBP',
 };
 
+/** @type {Record<string, string>} Map of currency codes to symbols. */
+const currencySymbols = {
+    INR: '₹',
+    USD: '$',
+    GBP: '£',
+};
+
+/** @type {Record<string, string>} Map of country codes to locales for number formatting. */
+const localeByCountry = {
+    in: 'en-IN',
+    us: 'en-US',
+    gb: 'en-GB',
+};
+
 /**
  * Fetches and returns simplified pricing plans for a given country and product page.
  *
@@ -30,10 +44,12 @@ export default async function getPricing(countryCode, page) {
     if (!msId) return {};
 
     const currency = currencyByCountry[countryCode] || 'USD';
+    const symbol = currencySymbols[currency] || '$';
+    const locale = localeByCountry[countryCode] || 'en-US';
 
     try {
         const plans = await fetchPlans(currency, msId);
-        return getSimplifiedPlans(plans, currency);
+        return getSimplifiedPlans(plans, currency, symbol, locale);
     } catch (error) {
         throw new Error(`Pricing fetch failed: ${error.message}`);
     }
