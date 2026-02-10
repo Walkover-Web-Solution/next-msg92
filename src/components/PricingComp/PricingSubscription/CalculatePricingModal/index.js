@@ -7,11 +7,12 @@ const UNLIMITED_CREDIT_VALUE = -1;
 const UNLIMITED_CREDIT_STRING = '-1';
 
 const INPUT_MIN = 0;
-const INPUT_MAX = 100000000;
+const INPUT_MAX = 9999999999;
 const DEFAULT_FALLBACK_VALUE = 10000;
 
 const SERVICE_DEFAULTS = {
     'Inbox': 5,
+    'Email Validations': 5000,
 };
 
 export default function CalculatePricingModal({ plans, symbol, tabtype, currency, locale = 'en-US', onClose }) {
@@ -30,16 +31,11 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
 
         const numValue = Number(value);
 
-        // Validate and enforce min/max limits
-        if (!Number.isNaN(numValue)) {
-            if (numValue < INPUT_MIN) {
-                setUsageByService((prev) => ({ ...prev, [serviceName]: INPUT_MIN }));
-            } else if (numValue > INPUT_MAX) {
-                setUsageByService((prev) => ({ ...prev, [serviceName]: INPUT_MAX }));
-            } else {
-                setUsageByService((prev) => ({ ...prev, [serviceName]: value }));
-            }
+        // Only update if value is within valid range - don't allow typing beyond max
+        if (!Number.isNaN(numValue) && numValue >= INPUT_MIN && numValue <= INPUT_MAX) {
+            setUsageByService((prev) => ({ ...prev, [serviceName]: value }));
         }
+        // If value exceeds limits, don't update state (prevents typing beyond max)
 
         setValidationError('');
     }, []);
