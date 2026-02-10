@@ -38,13 +38,12 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
         setSelectedPlanSlug(slug);
         setSelectedServiceName(serviceName || null);
         setShowDialPlan(true);
-    }, []);
 
-    useEffect(() => {
-        if (showDialPlan) {
+        // Scroll after state update
+        setTimeout(() => {
             dialPlanRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }, [showDialPlan]);
+        }, 150);
+    }, []);
 
     const onOpenCalculateModal = useCallback(() => {
         calculateModalRef.current?.showModal();
@@ -100,8 +99,6 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         tabtype={tabtype}
                         symbol={symbol}
                         setScrollApi={setScrollApi}
-                        selectedPlanSlug={null}
-                        onSelectPlan={() => {}}
                         onViewCallingRates={onViewCallingRates}
                         onCalculateClick={onOpenCalculateModal}
                         pageData={pageData?.pricingPlans}

@@ -2,22 +2,11 @@ import React from 'react';
 import { MdCheck, MdClose, MdChevronRight } from 'react-icons/md';
 import getURL from '@/utils/getURL';
 
-export default function PricingPlanCard({ planData, isSelected = false, onSelect, onViewCallingRates, product }) {
+export default function PricingPlanCard({ planData, onViewCallingRates, product }) {
     const featuresToShow = Array.isArray(planData?.features) && planData?.features?.slice(0, 5);
-    const handleCardSelect = () => {
-        if (onSelect) onSelect();
-    };
 
     return (
-        <div
-            role='button'
-            tabIndex={0}
-            onClick={handleCardSelect}
-            onKeyDown={(e) => e.key === 'Enter' && handleCardSelect()}
-            className={`min-w-[360px] max-w-[360px] rounded border min-h-full bg-white px-6 py-6 sm:px-7 sm:py-7 cursor-pointer ${
-                isSelected ? 'border-black border-2' : 'border-gray-200'
-            }`}
-        >
+        <div className='min-w-[360px] max-w-[360px] rounded border border-gray-200 min-h-full bg-white px-6 py-6 sm:px-7 sm:py-7'>
             <h3 className=' text-2xl font-semibold'>{planData?.title}</h3>
 
             <div className='flex flex-col gap-0.5'>
@@ -33,7 +22,7 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
                 <span className='text-sm text-gray-600 min-h-[20px] block'>{planData?.discountLabel ?? '\u00A0'}</span>
             </div>
 
-            <div className='py-2' onClick={(e) => e.stopPropagation()}>
+            <div className='py-2'>
                 <a
                     href={getURL('signup', product)}
                     target='_blank'
@@ -59,23 +48,15 @@ export default function PricingPlanCard({ planData, isSelected = false, onSelect
                                 <div key={index} className='flex flex-nowrap items-center gap-2 text-sm'>
                                     <span className='text-gray-600 truncate shrink-0'>{displayText}</span>
                                     {hasDialPlan && (
-                                        <>
-                                            <span className='text-gray-400 shrink-0' aria-hidden>
-                                                ·
-                                            </span>
-                                            <button
-                                                type='button'
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    if (onViewCallingRates)
-                                                        onViewCallingRates(planData?.slug, serviceName);
-                                                    else onSelect?.();
-                                                }}
-                                                className='link link-active-link font-medium text-blue-600 shrink-0 whitespace-nowrap'
-                                            >
-                                                {planData?.linkText}
-                                            </button>
-                                        </>
+                                        <button
+                                            type='button'
+                                            onClick={() => {
+                                                if (onViewCallingRates) onViewCallingRates(planData?.slug, serviceName);
+                                            }}
+                                            className='text-link active-link text-xs font-medium'
+                                        >
+                                            {planData?.linkText}
+                                        </button>
                                     )}
                                 </div>
                             );

@@ -9,8 +9,6 @@ export default function PricingPlans({
     tabtype,
     symbol,
     setScrollApi,
-    selectedPlanSlug,
-    onSelectPlan,
     onViewCallingRates,
     onCalculateClick,
     pageData,
@@ -64,8 +62,6 @@ export default function PricingPlans({
                             <PricingPlanCard
                                 key={cardKey}
                                 planData={card}
-                                isSelected={card.slug === selectedPlanSlug}
-                                onSelect={() => onSelectPlan?.(card.title)}
                                 onViewCallingRates={onViewCallingRates}
                                 product={product}
                             />
