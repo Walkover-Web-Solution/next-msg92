@@ -73,8 +73,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -128,7 +126,7 @@
                 "line_two": "Costs will apply for every 1,000 API calls, with final pricing to be announced shortly."
             },
             "get_started": "Get Started",
-         "connectComp": {
+            "connectComp": {
                 "content": "Campaign usage is free.",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
@@ -147,8 +145,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -227,8 +223,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -369,8 +363,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
@@ -382,6 +374,10 @@
                 "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
                 "comparePlansHeading": "Compare Plans",
                 "featuresColumnLabel": "FEATURES"
+            },
+            "whatsappMessages": {
+                "heading": "<h2 class='text-xl md:text-3xl font-bold'>Lower Than Meta Pricing. <span class='text-green-600 font-bold text-2xl lg:text-3xl'>Guaranteed</span></h2>",
+                "sub_heading": "No markups. No hidden costs. Just better pricing."
             },
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
@@ -402,8 +398,6 @@
                 "compareAllFeaturesText": "Compare all features ↓"
             },
             "dialPlan": {
-                
-                
                 "dialplanRatesHeading": "Dialplan Rates",
                 "showingRatesFor": "Showing rates for",
                 "planLabelSuffix": "plan",
