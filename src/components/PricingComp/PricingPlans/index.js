@@ -38,8 +38,8 @@ export default function PricingPlans({
         const hasAmountForTab = (plan) =>
             tabtype === 'Monthly' ? plan?.amount?.monthly != null : plan?.amount?.yearly != null;
         const plansForTab = pricingData.filter(hasAmountForTab);
-        return plansForTab.map((plan) => simplifiedPlanToCard(plan, tabtype, symbol, pageData));
-    }, [pricingData, tabtype, symbol, pageData]);
+        return plansForTab.map((plan) => simplifiedPlanToCard(plan, tabtype, pageData));
+    }, [pricingData, tabtype, pageData]);
 
     const hasFeatures = useMemo(
         () =>
@@ -91,105 +91,40 @@ export default function PricingPlans({
     );
 }
 
-function formatPrice(symbol, amount) {
-    if (amount === 0) return 'Free';
-    return `${symbol}${amount.toLocaleString('en-US')}`;
-}
-
-function calculateDiscountedAmount(numAmount, discount) {
-    const typeId = discount.type_id;
-    const discountValue = Number(discount.value);
-
-    if (typeId === 1) {
-        return Math.max(0, numAmount - discountValue);
-    }
-
-    if (typeId === 2) {
-        return discountValue >= 100 ? 0 : Math.max(0, numAmount * (1 - discountValue / 100));
-    }
-
-    return numAmount;
-}
-
-function getDiscountLabel(discount, symbol) {
-    const typeId = discount.type_id;
-    const discountValue = Number(discount.value);
-    const discountDuration = discount.duration ?? 0;
-    const monthText = `month${discountDuration !== 1 ? 's' : ''}`;
-
-    if (typeId === 1) {
-        return `${symbol}${discountValue.toLocaleString('en-US')} for ${discountDuration} ${monthText}`;
-    }
-
-    if (typeId === 2) {
-        const percentage = discountValue >= 100 ? 100 : discountValue;
-        return `${percentage}% off for ${discountDuration} ${monthText}`;
-    }
-
-    return null;
-}
-
-function getDiscountPriceAndLabel(amount, discount, symbol) {
-    const numAmount = amount != null && !Number.isNaN(Number(amount)) ? Number(amount) : 0;
-    const originalPrice = formatPrice(symbol, numAmount);
-
-    if (!discount || discount.value == null || numAmount <= 0) {
-        return { originalPrice, price: originalPrice, discountLabel: null, hasDiscount: false };
-    }
-
-    const finalAmount = calculateDiscountedAmount(numAmount, discount);
-    const discountLabel = getDiscountLabel(discount, symbol);
-
-    if (!discountLabel) {
-        return { originalPrice, price: originalPrice, discountLabel: null, hasDiscount: false };
-    }
-
-    return {
-        originalPrice: numAmount === 0 ? null : originalPrice,
-        price: formatPrice(symbol, finalAmount),
-        discountLabel,
-        hasDiscount: true,
-    };
-}
-
-function formatServiceDisplayText(service) {
-    const serviceAmount = service?.amount;
-    const serviceName = service?.service_name;
-    const isUnlimited = serviceAmount === -1 || serviceAmount === '-1';
-    return isUnlimited ? `Unlimited ${serviceName}` : `${Number(serviceAmount)} ${serviceName}/month`;
+function formatServiceDisplayText(serviceName, included) {
+    const isUnlimited = included === -1 || included === '-1';
+    return isUnlimited ? `Unlimited ${serviceName}` : `${Number(included)} ${serviceName}/month`;
 }
 
 function transformIncludedServices(plan) {
-    return (plan?.included ?? []).map((service) => {
-        const dialPlan = service?.dial_plan;
-        const serviceName = service?.service_name;
+    return (plan?.services ?? []).map((service) => {
+        const dialPlan = service?.dialplan;
+        const serviceName = service?.serviceName;
         return {
-            displayText: formatServiceDisplayText(service),
+            displayText: formatServiceDisplayText(serviceName, service.included),
             hasDialPlan: Boolean(dialPlan?.data?.length > 0),
             service_name: serviceName,
         };
     });
 }
 
-function transformExtraServices(plan, symbol) {
-    const servicesList = plan?.extras?.servicesList;
-    const postpaidAllowed = plan?.extras?.postpaidAllowed;
+function transformExtraServices(plan) {
+    const postpaidAllowed = plan?.postpaidAllowed;
 
-    return (
-        servicesList
-            ?.filter((service) => {
-                const freeCredits = service?.free_credits;
-                return freeCredits !== -1 && freeCredits !== '-1';
-            })
-            ?.map((service) => {
-                const followUpRate = service?.follow_up_rate;
-                const serviceName = service?.servicename;
-                const showRate = followUpRate && postpaidAllowed;
-                return showRate
-                    ? { label: `${symbol}${followUpRate}/${serviceName}/month`, isNoExtra: false }
-                    : { label: `No extra ${serviceName}`, isNoExtra: true };
-            }) ?? []
-    );
+    return (plan?.services ?? [])
+        .filter((service) => {
+            const freeCredits = service?.included;
+            const hasDialPlan = service?.dialplan != null;
+            return !hasDialPlan && freeCredits !== -1 && freeCredits !== '-1';
+        })
+        .map((service) => {
+            const followUpRate = service?.extra;
+            const serviceName = service?.serviceName;
+            const showRate = followUpRate && postpaidAllowed;
+            return showRate
+                ? { label: `${followUpRate}/${serviceName}/month`, isNoExtra: false }
+                : { label: `No extra ${serviceName}`, isNoExtra: true };
+        });
 }
 
 function transformFeatures(plan) {
@@ -216,34 +151,29 @@ function getPlanTitle(plan) {
     return 'Plan';
 }
 
-function simplifiedPlanToCard(plan, tabtype, symbol, plansPageData) {
+function simplifiedPlanToCard(plan, tabtype, plansPageData) {
     const isMonthly = tabtype === 'Monthly';
-    const planAmount = plan?.amount;
-    const amount = isMonthly ? planAmount?.monthly : planAmount?.yearly;
     const period = isMonthly ? 'Monthly' : 'Yearly';
 
+    // Get pre-computed pricing for the selected tab
+    const pricing = isMonthly ? plan?.pricing?.monthly : plan?.pricing?.yearly;
+
     const included = transformIncludedServices(plan);
-    const extra = transformExtraServices(plan, symbol);
+    const extra = transformExtraServices(plan);
     const features = transformFeatures(plan);
     const title = getPlanTitle(plan);
     const hasDialPlan =
-        plan?.included?.some((item) => {
-            const dialPlan = item?.dial_plan;
+        plan?.services?.some((service) => {
+            const dialPlan = service?.dialplan;
             return dialPlan?.data?.length > 0;
         }) ?? false;
-
-    const { originalPrice, price, discountLabel, hasDiscount } = getDiscountPriceAndLabel(
-        amount,
-        plan?.discount,
-        symbol
-    );
 
     return {
         slug: plan?.slug,
         title,
-        price,
-        originalPrice: hasDiscount ? originalPrice : null,
-        discountLabel: hasDiscount ? discountLabel : null,
+        price: pricing?.price ?? 'Free',
+        originalPrice: pricing?.originalPrice ?? null,
+        discountLabel: pricing?.discountLabel ?? null,
         period,
         ctaText: plansPageData?.ctaText,
         showLink: true,

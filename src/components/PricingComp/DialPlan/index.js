@@ -65,8 +65,8 @@ function findSelectedPlan(pricingData, selectedPlanSlug) {
     return (
         pricingData.find((plan) => plan.slug === selectedPlanSlug) ||
         pricingData.find((plan) =>
-            plan?.included?.some((item) => {
-                const dialPlan = item?.dial_plan;
+            plan?.services?.some((service) => {
+                const dialPlan = service?.dialplan;
                 return dialPlan?.data?.length > 0;
             })
         ) ||
@@ -75,16 +75,16 @@ function findSelectedPlan(pricingData, selectedPlanSlug) {
 }
 
 function extractDialPlans(selectedPlan) {
-    return (selectedPlan.included ?? [])
-        .filter((item) => {
-            const dialPlan = item?.dial_plan;
+    return (selectedPlan.services ?? [])
+        .filter((service) => {
+            const dialPlan = service?.dialplan;
             const hasColumns = dialPlan?.columns?.length > 0;
             const hasData = dialPlan?.data?.length > 0;
             return hasColumns && hasData;
         })
-        .map((item) => {
-            const dialPlan = item.dial_plan;
-            const serviceName = item.service_name;
+        .map((service) => {
+            const dialPlan = service.dialplan;
+            const serviceName = service.serviceName;
             return {
                 serviceName,
                 columns: dialPlan.columns,

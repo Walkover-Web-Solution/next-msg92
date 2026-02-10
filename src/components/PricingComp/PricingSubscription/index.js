@@ -24,7 +24,7 @@ function getPlansCountForTab(pricingData, tabtype) {
 }
 
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {
-    const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
+    const { symbol, currency, locale } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
     const [hasYearly, setHasYearly] = useState(false);
     const [scrollApi, setScrollApi] = useState();
@@ -138,6 +138,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                     symbol={symbol}
                     tabtype={tabtype}
                     currency={currency}
+                    locale={locale}
                     onClose={onCloseCalculateModal}
                 />
             </dialog>

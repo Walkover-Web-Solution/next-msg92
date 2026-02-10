@@ -4,11 +4,11 @@ import { MdCheck, MdClose, MdChevronLeft, MdChevronRight } from 'react-icons/md'
 const SCROLL_DISTANCE = 300;
 const EMPTY_ARRAY = [];
 
-function formatPrice(symbol, amount) {
+function formatPrice(symbol, amount, locale = 'en-US') {
     if (amount == null) return '—';
     const num = Number(amount);
     if (Number.isNaN(num)) return '—';
-    return `${symbol}${num.toLocaleString('en-US')}`;
+    return `${symbol}${num.toLocaleString(locale)}`;
 }
 
 function getFeatureLabel(feature) {
@@ -86,16 +86,23 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
             const planSlug = plan?.slug;
             return planName ?? planSlug ?? 'Plan';
         });
+
+        // Use pre-computed discounted pricing
         const priceValues = plansForTab.map((plan) => {
-            const planAmount = plan?.amount;
-            const amount = isMonthly ? planAmount?.monthly : planAmount?.yearly;
-            return formatPrice(symbol, amount);
+            const pricing = isMonthly ? plan?.pricing?.monthly : plan?.pricing?.yearly;
+            return pricing?.price ?? '—';
+        });
+
+        // Get discount labels for display
+        const discountLabels = plansForTab.map((plan) => {
+            const pricing = isMonthly ? plan?.pricing?.monthly : plan?.pricing?.yearly;
+            return pricing?.discountLabel ?? null;
         });
 
         const uniqueFeatureNames = extractUniqueFeatureNames(plansForTab);
         const featureRows = buildFeatureRows(uniqueFeatureNames, plansForTab);
 
-        const priceRow = { label: 'Price', values: priceValues, isPrice: true };
+        const priceRow = { label: 'Price', values: priceValues, discountLabels, isPrice: true };
         const rows = [priceRow, ...featureRows];
 
         return { planNames, rows };
@@ -158,10 +165,17 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
                                             className='w-[180px] px-4 py-4 text-center border-l border-gray-200'
                                         >
                                             {row.isPrice ? (
-                                                <span className='font-semibold text-green-600'>
-                                                    {value}
-                                                    {tabtype === 'Monthly' ? '/month' : '/year'}
-                                                </span>
+                                                <div className='flex flex-col gap-0.5'>
+                                                    <span className='font-semibold text-green-600'>
+                                                        {value}
+                                                        {tabtype === 'Monthly' ? '/month' : '/year'}
+                                                    </span>
+                                                    {row.discountLabels?.[index] && (
+                                                        <span className='text-xs text-gray-500'>
+                                                            {row.discountLabels[index]}
+                                                        </span>
+                                                    )}
+                                                </div>
                                             ) : value ? (
                                                 <MdCheck className='mx-auto text-green-600 text-lg' />
                                             ) : (

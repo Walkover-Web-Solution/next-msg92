@@ -14,7 +14,7 @@ const SERVICE_DEFAULTS = {
     'Inbox': 5,
 };
 
-export default function CalculatePricingModal({ plans, symbol, tabtype, currency, onClose }) {
+export default function CalculatePricingModal({ plans, symbol, tabtype, currency, locale = 'en-US', onClose }) {
     const visibleServiceNames = useMemo(() => getServiceNamesInAllPlans(plans), [plans]);
 
     const [usageByService, setUsageByService] = useState(() => initializeUsageState(visibleServiceNames));
@@ -171,7 +171,7 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                                                     {result.title}
                                                 </td>
                                                 <td className='w-[180px] min-w-[180px] px-4 py-3 text-gray-700'>
-                                                    {formatPrice(symbol, result?.base)}
+                                                    {formatPrice(symbol, result?.base, locale)}
                                                 </td>
                                                 <td className='w-[160px] min-w-[160px] px-4 py-3 text-gray-600 align-top'>
                                                     <div className='flex flex-col gap-0.5'>
@@ -196,10 +196,10 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                                                     </div>
                                                 </td>
                                                 {filledServiceNames.map((serviceName) =>
-                                                    renderExtraServiceCell(serviceName, result, symbol)
+                                                    renderExtraServiceCell(serviceName, result, symbol, locale)
                                                 )}
                                                 <td className='w-[180px] min-w-[100px] px-4 py-3 font-semibold text-green-600 whitespace-nowrap'>
-                                                    {formatTotalPrice(symbol, result?.total)}
+                                                    {formatTotalPrice(symbol, result?.total, locale)}
                                                 </td>
                                             </tr>
                                         );
@@ -253,25 +253,23 @@ function getPlanTitle(plan) {
     return 'Plan';
 }
 
-function formatPrice(symbol, amount) {
-    if (amount == null) return '—';
-    const numAmount = Number(amount);
-    if (Number.isNaN(numAmount) || !Number.isFinite(numAmount)) return '—';
+function formatPrice(symbol, numAmount, locale = 'en-US') {
+    if (numAmount == null || Number.isNaN(numAmount)) return `${symbol}0`;
     if (numAmount === 0 || Object.is(numAmount, -0)) return `${symbol}0`;
     // Round to 2 decimal places for currency
     const rounded = Math.round(numAmount * 100) / 100;
-    return `${symbol}${rounded.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    return `${symbol}${rounded.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
-function formatTotalPrice(symbol, total) {
+function formatTotalPrice(symbol, total, locale = 'en-US') {
     const numTotal = Number(total);
     if (total == null || Number.isNaN(numTotal) || !Number.isFinite(numTotal)) return '—';
     // Round to 2 decimal places before converting to local
     const rounded = Math.round(numTotal * 100) / 100;
-    return `${symbol}${contvertToLocal(rounded)}`;
+    return `${symbol}${rounded.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
-function renderExtraServiceCell(serviceName, result, symbol) {
+function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
     const calculation = result?.calculationByService?.[serviceName];
     const inPlan = calculation != null;
     const isUnlimitedIncluded = result?.includedByService?.[serviceName] == null;
@@ -282,7 +280,7 @@ function renderExtraServiceCell(serviceName, result, symbol) {
 
     // Format formula with proper number formatting
     const formula = hasOverageCharge
-        ? `${calculation.extra.toLocaleString('en-US')} × ${symbol}${calculation.rate.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} = ${symbol}${Math.round(calculation.overage * 100) / 100}`
+        ? `${calculation.extra.toLocaleString(locale)} × ${symbol}${calculation.rate.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} = ${symbol}${Math.round(calculation.overage * 100) / 100}`
         : null;
 
     return (
@@ -294,14 +292,14 @@ function renderExtraServiceCell(serviceName, result, symbol) {
                     <span className='text-gray-600 text-xs'>Unlimited</span>
                 ) : isWithinLimit ? (
                     <div className='flex flex-col gap-0.5'>
-                        <span className='text-gray-600 text-xs'>{formatPrice(symbol, 0)}</span>
+                        <span className='text-gray-600 text-xs'>{formatPrice(symbol, 0, locale)}</span>
                         <span className='text-xs text-gray-500'>Included ({includedCount})</span>
                     </div>
                 ) : isExtraNotAllowed ? (
                     <span className='text-gray-500 text-xs'>Not allowed</span>
                 ) : (
                     <>
-                        <span className='text-xs'>{formatPrice(symbol, result?.overages?.[serviceName])}</span>
+                        <span className='text-xs'>{formatPrice(symbol, result?.overages?.[serviceName], locale)}</span>
                         {formula && <span className='text-xs text-gray-500'>{formula}</span>}
                     </>
                 )}
@@ -313,9 +311,9 @@ function renderExtraServiceCell(serviceName, result, symbol) {
 function getUniqueServiceNames(plans) {
     const serviceNames = new Set();
     for (const plan of plans) {
-        const servicesList = plan?.extras?.servicesList ?? [];
+        const servicesList = plan?.services ?? [];
         for (const service of servicesList) {
-            const serviceName = service?.servicename;
+            const serviceName = service?.serviceName;
             if (serviceName) {
                 serviceNames.add(serviceName);
             }
@@ -339,21 +337,26 @@ function isUnlimitedCredit(freeCredits) {
 
 function computePlanTotal(plan, tabtype, usageByService) {
     const isMonthly = tabtype === 'Monthly';
-    const planAmount = plan?.amount;
-    const baseAmount = Number(isMonthly ? planAmount?.monthly : planAmount?.yearly) || 0;
+
+    // Use discounted pricing as base amount
+    const pricing = isMonthly ? plan?.pricing?.monthly : plan?.pricing?.yearly;
+    const priceString = pricing?.price ?? 'Free';
+
+    // Extract numeric value from formatted price (e.g., "₹800" -> 800)
+    const baseAmount = priceString === 'Free' ? 0 : parseFloat(priceString.replace(/[^0-9.-]+/g, '')) || 0;
 
     const overages = {};
     const includedByService = {};
     const calculationByService = {};
     let totalExtraCharges = 0;
 
-    const servicesList = plan?.extras?.servicesList ?? [];
+    const servicesList = plan?.services ?? [];
 
     for (const service of servicesList) {
-        const serviceName = service?.servicename;
+        const serviceName = service?.serviceName;
         if (!serviceName) continue;
 
-        const freeCredits = service?.free_credits;
+        const freeCredits = service?.included;
         const isUnlimited = isUnlimitedCredit(freeCredits);
         const includedAmount = isUnlimited ? null : Math.max(0, Number(freeCredits) || 0);
 
@@ -362,7 +365,7 @@ function computePlanTotal(plan, tabtype, usageByService) {
         const usageAmount = Math.max(0, Number(usageByService[serviceName]) || 0);
         const extraUsage = isUnlimited ? 0 : Math.max(0, usageAmount - (includedAmount || 0));
 
-        const followUpRate = service?.follow_up_rate;
+        const followUpRate = service?.extra;
         const rateValue = Number(followUpRate);
 
         // Check for invalid rate (null, NaN, -1, or negative)
