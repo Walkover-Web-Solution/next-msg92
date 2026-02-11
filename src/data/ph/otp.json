@@ -1,7 +1,8 @@
 {
   "HeadComp": {
     "title": "Send OTP | OTP Service Providers -MSG91-Philippines",
-    "description": "Secure your platform with MSG91’s OTP SMS API. Easily implement two-factor authentication for reliable and seamless customer security."
+    "description": "Secure your platform with MSG91's OTP SMS API. Easily implement two-factor authentication for reliable and seamless customer security.",
+    "keywords": "OTP Service Providers"
   },
   "BannerComp": {
     "slug": "otp",

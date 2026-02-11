@@ -1,7 +1,8 @@
 {
   "HeadComp": {
-    "title": "Send OTP | OTP Service Providers - MSG91",
-    "description": "Secure your platform with MSG91’s OTP SMS API. Implement reliable two-factor authentication to ensure user trust and safety."
+    "title": "OTP Service Providers - Get OTP On Mobile Number | MSG91",
+    "description": "Secure your transactions with MSG91's reliable OTP service providers for instant verification. Try MSG91's OTP reliable solutions now.",
+    "keywords": "OTP Service Providers"
   },
   "BannerComp": {
     "slug": "otp",
@@ -10,7 +11,7 @@
       "icon": "/assets/icons/products/otp.svg"
     },
     "tagline": "Instant Secure Verification",
-    "heading": "Effortless OTP Verification Across Channels",
+    "heading": "OTP Service Providers",
     "subheading": "Integrate our OTP Widget to verify users instantly via SMS, WhatsApp, email, and more — no code hassles, just secure and seamless multi-channel authentication.",
     "banner_img": "/assets/global/otp/banner.webp",
     "not_absolute":"true",
