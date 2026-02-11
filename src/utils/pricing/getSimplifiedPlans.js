@@ -8,58 +8,65 @@
  * @returns {Array<object>} Simplified plans with slug, amount, discount, plan_features, extras, included (each item may have dial_plan: { columns, data }).
  */
 export default function getSimplifiedPlans(plans = [], currency, symbol = '', locale = 'en-US') {
-    return plans.map((plan) => {
-        const amounts = plan?.plan_amounts?.filter((amount) => amount?.currency?.short_name === currency) ?? [];
+    return plans
+        .filter((plan) => {
+            // Exclude plans with empty or null plan_amounts
+            const planAmounts = plan?.plan_amounts;
+            return planAmounts != null && Array.isArray(planAmounts) && planAmounts.length > 0;
+        })
+        .map((plan) => {
+            const amounts = plan?.plan_amounts?.filter((amount) => amount?.currency?.short_name === currency) ?? [];
 
-        const getAmount = (type) => amounts.find((amount) => amount?.plan_type?.name === type)?.plan_amount ?? null;
+            const getAmount = (type) => amounts.find((amount) => amount?.plan_type?.name === type)?.plan_amount ?? null;
 
-        // Build unified services array with all service information
-        const services = (plan?.plan_services ?? []).map((service) => {
-            const ratesForCurrency =
-                service?.service_credit?.service_credit_rates?.filter((r) => r?.currency?.short_name === currency) ??
-                [];
-            const rate = ratesForCurrency[0];
-            const rateWithDialPlan = ratesForCurrency.find((r) => r?.dial_plan_info);
-            const dialplan =
-                rateWithDialPlan?.dial_plan_info != null
-                    ? normalizeDialPlanInfo(rateWithDialPlan.dial_plan_info)
-                    : null;
+            // Build unified services array with all service information
+            const services = (plan?.plan_services ?? []).map((service) => {
+                const ratesForCurrency =
+                    service?.service_credit?.service_credit_rates?.filter(
+                        (r) => r?.currency?.short_name === currency
+                    ) ?? [];
+                const rate = ratesForCurrency[0];
+                const rateWithDialPlan = ratesForCurrency.find((r) => r?.dial_plan_info);
+                const dialplan =
+                    rateWithDialPlan?.dial_plan_info != null
+                        ? normalizeDialPlanInfo(rateWithDialPlan.dial_plan_info)
+                        : null;
+
+                return {
+                    serviceName: service?.service_credit?.service?.name ?? '',
+                    included: rate?.free_credits ?? 0,
+                    extra: rate?.follow_up_rate ?? null,
+                    dialplan,
+                };
+            });
+
+            const monthlyAmount = getAmount('Monthly');
+            const yearlyAmount = getAmount('Yearly');
+            const discount = getSimplifiedDiscount(plan?.plan_amounts?.[0]?.applied_discounts);
+
+            // Pre-compute pricing with discount for both monthly and yearly
+            const pricing = {
+                monthly: computePricing(monthlyAmount, discount, symbol, locale),
+                yearly: computePricing(yearlyAmount, discount, symbol, locale),
+            };
 
             return {
-                serviceName: service?.service_credit?.service?.name ?? '',
-                included: rate?.free_credits ?? 0,
-                extra: rate?.follow_up_rate ?? null,
-                dialplan,
+                slug: plan?.slug,
+                name: plan?.name,
+                amount: {
+                    monthly: monthlyAmount,
+                    yearly: yearlyAmount,
+                },
+                pricing,
+                services,
+                plan_features: (plan?.plan_features ?? []).map((feature) => ({
+                    name: feature?.feature?.name ?? feature?.userFriendlyName ?? feature?.key ?? '',
+                    is_visible: feature?.hide === true ? false : (feature?.is_visible ?? true),
+                    is_included: feature?.feature?.is_included ?? feature?.is_included ?? false,
+                })),
+                postpaidAllowed: plan.postpaid_allowed,
             };
         });
-
-        const monthlyAmount = getAmount('Monthly');
-        const yearlyAmount = getAmount('Yearly');
-        const discount = getSimplifiedDiscount(plan?.plan_amounts?.[0]?.applied_discounts);
-
-        // Pre-compute pricing with discount for both monthly and yearly
-        const pricing = {
-            monthly: computePricing(monthlyAmount, discount, symbol, locale),
-            yearly: computePricing(yearlyAmount, discount, symbol, locale),
-        };
-
-        return {
-            slug: plan?.slug,
-            name: plan?.name,
-            amount: {
-                monthly: monthlyAmount,
-                yearly: yearlyAmount,
-            },
-            pricing,
-            services,
-            plan_features: (plan?.plan_features ?? []).map((feature) => ({
-                name: feature?.feature?.name ?? feature?.userFriendlyName ?? feature?.key ?? '',
-                is_visible: feature?.hide === true ? false : (feature?.is_visible ?? true),
-                is_included: feature?.feature?.is_included ?? feature?.is_included ?? false,
-            })),
-            postpaidAllowed: plan.postpaid_allowed,
-        };
-    });
 }
 
 /**
