@@ -70,18 +70,14 @@ export default function PricingPlans({
                 </div>
             </div>
             <div className='mt-6 flex items-center justify-between text-sm'>
-                <button
-                    type='button'
-                    onClick={() => onCalculateClick?.()}
-                    className='text-blue-600 font-medium hover:underline'
-                >
+                <button type='button' onClick={() => onCalculateClick?.()} className='text-link active-link'>
                     {pageData?.calculatePricingText}
                 </button>
                 {hasFeatures && (
                     <button
                         type='button'
                         onClick={() => document.getElementById('compare-plans')?.scrollIntoView({ behavior: 'smooth' })}
-                        className='text-blue-600 font-medium hover:underline'
+                        className='text-link active-link'
                     >
                         {pageData?.compareAllFeaturesText}
                     </button>

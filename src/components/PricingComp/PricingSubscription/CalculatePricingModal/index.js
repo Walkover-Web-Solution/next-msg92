@@ -8,14 +8,17 @@ const UNLIMITED_CREDIT_STRING = '-1';
 
 const INPUT_MIN = 0;
 const INPUT_MAX = 9999999999;
-const DEFAULT_FALLBACK_VALUE = 10000;
+const DEFAULT_FALLBACK_VALUE = 100;
 
 const SERVICE_DEFAULTS = {
     'Inbox': 5,
-    'Email Validations': 5000,
+    'Tickets': 100000,
+    'Emails': 100000,
+    'Email Validations': 50000,
+    'Contacts': 100000,
 };
 
-export default function CalculatePricingModal({ plans, symbol, tabtype, currency, locale = 'en-US', onClose }) {
+export default function CalculatePricingModal({ plans, symbol, tabtype, locale = 'en-US', onClose }) {
     const visibleServiceNames = useMemo(() => getServiceNamesInAllPlans(plans), [plans]);
 
     const [usageByService, setUsageByService] = useState(() => initializeUsageState(visibleServiceNames));
@@ -88,6 +91,7 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                         const defaultValue = SERVICE_DEFAULTS[serviceName] ?? DEFAULT_FALLBACK_VALUE;
                         const inputValue = usageByService[serviceName] ?? DEFAULT_FALLBACK_VALUE;
                         const hasError = validationError && !isFieldFilled(inputValue);
+
                         return (
                             <label key={serviceName} className='flex flex-col gap-1 w-full max-w-[200px]'>
                                 <span className='text-xs font-medium'>{serviceName}</span>
@@ -171,12 +175,19 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                                                 </td>
                                                 <td className='w-[160px] min-w-[160px] px-4 py-3 text-gray-600 align-top'>
                                                     <div className='flex flex-col gap-0.5'>
-                                                        {filledServiceNames
-                                                            .filter(
+                                                        {(() => {
+                                                            const includedServices = filledServiceNames.filter(
                                                                 (serviceName) =>
                                                                     result?.calculationByService?.[serviceName] != null
-                                                            )
-                                                            .map((serviceName) => {
+                                                            );
+
+                                                            if (includedServices.length === 0) {
+                                                                return (
+                                                                    <span className='text-xs text-gray-500'>--</span>
+                                                                );
+                                                            }
+
+                                                            return includedServices.map((serviceName) => {
                                                                 const includedAmount =
                                                                     result?.includedByService?.[serviceName];
                                                                 const displayText =
@@ -185,10 +196,11 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, currency
                                                                         : includedAmount;
                                                                 return (
                                                                     <span key={serviceName} className='text-xs'>
-                                                                        {serviceName}: {displayText}
+                                                                        {displayText} {serviceName}
                                                                     </span>
                                                                 );
-                                                            })}
+                                                            });
+                                                        })()}
                                                     </div>
                                                 </td>
                                                 {filledServiceNames.map((serviceName) =>
@@ -274,9 +286,9 @@ function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
     const isExtraNotAllowed = inPlan && calculation?.isIncluded && calculation?.extra > 0;
     const hasOverageCharge = calculation != null && !calculation?.isIncluded && calculation.overage > 0;
 
-    // Format formula with proper number formatting
+    // Format formula with proper number formatting (without final amount to avoid duplication)
     const formula = hasOverageCharge
-        ? `${calculation.extra.toLocaleString(locale)} × ${symbol}${calculation.rate.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} = ${symbol}${Math.round(calculation.overage * 100) / 100}`
+        ? `${calculation.extra.toLocaleString(locale)} × ${symbol}${calculation.rate.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
         : null;
 
     return (
@@ -287,10 +299,9 @@ function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
                 ) : isUnlimitedIncluded ? (
                     <span className='text-gray-600 text-xs'>Unlimited</span>
                 ) : isWithinLimit ? (
-                    <div className='flex flex-col gap-0.5'>
-                        <span className='text-gray-600 text-xs'>{formatPrice(symbol, 0, locale)}</span>
-                        <span className='text-xs text-gray-500'>Included ({includedCount})</span>
-                    </div>
+                    <span className='text-gray-600 text-xs'>
+                        {formatPrice(symbol, 0, locale)} <span className='text-xs text-gray-500'>(Included)</span>
+                    </span>
                 ) : isExtraNotAllowed ? (
                     <span className='text-gray-500 text-xs'>Not allowed</span>
                 ) : (
@@ -310,7 +321,9 @@ function getUniqueServiceNames(plans) {
         const servicesList = plan?.services ?? [];
         for (const service of servicesList) {
             const serviceName = service?.serviceName;
-            if (serviceName) {
+            const hasDialPlan = service?.dialplan != null && service?.dialplan?.data?.length > 0;
+            // Only include services WITHOUT dial plans (they have their own Dial Plan section)
+            if (serviceName && !hasDialPlan) {
                 serviceNames.add(serviceName);
             }
         }
@@ -322,9 +335,85 @@ function getServiceNamesInAllPlans(plans) {
     const allServiceNames = getUniqueServiceNames(plans);
     if (allServiceNames.length === 0) return EMPTY_ARRAY;
 
-    // Return all unique services (not just those in ALL plans)
-    // This allows users to compare even if services differ between plans
+    // Return only services WITHOUT dial plans
+    // Services with dial plans have their own dedicated Dial Plan section with country-specific pricing
+    // This keeps the calculation modal simple with only follow-up rate services
     return allServiceNames;
+}
+
+function getAllCountriesFromDialPlans(plans) {
+    const allCountries = new Set();
+
+    for (const plan of plans) {
+        const servicesList = plan?.services ?? [];
+        for (const service of servicesList) {
+            const dialplan = service?.dialplan;
+            if (dialplan?.data?.length > 0 && dialplan?.columns?.length > 0) {
+                const countryColumn = dialplan.columns.find(
+                    (col) =>
+                        col.key === 'country_name' ||
+                        col.key === 'country' ||
+                        col.key === 'Country' ||
+                        col.key === 'Country Name' ||
+                        col.label?.toLowerCase().includes('country')
+                );
+
+                if (countryColumn) {
+                    dialplan.data.forEach((row) => {
+                        const country = row[countryColumn.key];
+                        if (country) allCountries.add(country);
+                    });
+                }
+            }
+        }
+    }
+
+    return Array.from(allCountries).sort();
+}
+
+function getDialPlanForService(plans, serviceName) {
+    // Find first plan that has dialplan for this service
+    for (const plan of plans) {
+        const service = plan?.services?.find((s) => s?.serviceName === serviceName);
+        const dialplan = service?.dialplan;
+
+        if (dialplan?.data?.length > 0 && dialplan?.columns?.length > 0) {
+            // Extract unique countries from dialplan data
+            // Try multiple possible column names for country
+            const countryColumn = dialplan.columns.find(
+                (col) =>
+                    col.key === 'country_name' ||
+                    col.key === 'country' ||
+                    col.key === 'Country' ||
+                    col.key === 'Country Name' ||
+                    col.label?.toLowerCase().includes('country')
+            );
+
+            // Try multiple possible column names for rate
+            const rateColumn = dialplan.columns.find(
+                (col) =>
+                    col.key === 'rate' ||
+                    col.key === 'price' ||
+                    col.key === 'cost' ||
+                    col.key === 'Rate' ||
+                    col.key === 'Price' ||
+                    col.label?.toLowerCase().includes('rate') ||
+                    col.label?.toLowerCase().includes('price')
+            );
+
+            if (countryColumn && rateColumn) {
+                const countries = dialplan.data.map((row) => row[countryColumn.key]).filter(Boolean);
+                return {
+                    columns: dialplan.columns,
+                    data: dialplan.data,
+                    countries: [...new Set(countries)],
+                    countryKey: countryColumn.key,
+                    rateKey: rateColumn.key,
+                };
+            }
+        }
+    }
+    return null;
 }
 
 function isUnlimitedCredit(freeCredits) {
@@ -352,6 +441,10 @@ function computePlanTotal(plan, tabtype, usageByService) {
         const serviceName = service?.serviceName;
         if (!serviceName) continue;
 
+        // Skip services with dial plans (they're handled in the Dial Plan section)
+        const hasDialPlan = service?.dialplan != null && service?.dialplan?.data?.length > 0;
+        if (hasDialPlan) continue;
+
         const freeCredits = service?.included;
         const isUnlimited = isUnlimitedCredit(freeCredits);
         const includedAmount = isUnlimited ? null : Math.max(0, Number(freeCredits) || 0);
@@ -361,10 +454,9 @@ function computePlanTotal(plan, tabtype, usageByService) {
         const usageAmount = Math.max(0, Number(usageByService[serviceName]) || 0);
         const extraUsage = isUnlimited ? 0 : Math.max(0, usageAmount - (includedAmount || 0));
 
+        // Use follow-up rate for services without dialplan
         const followUpRate = service?.extra;
         const rateValue = Number(followUpRate);
-
-        // Check for invalid rate (null, NaN, -1, or negative)
         const hasNoExtraRate =
             followUpRate == null || Number.isNaN(rateValue) || rateValue === UNLIMITED_CREDIT_VALUE || rateValue < 0;
         const validRate = hasNoExtraRate ? 0 : Math.max(0, rateValue);
