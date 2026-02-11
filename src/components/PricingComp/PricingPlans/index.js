@@ -50,6 +50,36 @@ export default function PricingPlans({
         [pricingData]
     );
 
+    const shouldShowCalculateButton = useMemo(() => {
+        if (!Array.isArray(pricingData) || pricingData.length === 0) return false;
+
+        // Check if all services across all plans have dialplan
+        const allServicesHaveDialPlan = pricingData.every((plan) => {
+            const services = plan?.services ?? [];
+            if (services.length === 0) return true; // No services means no calculation needed
+            return services.every((service) => {
+                const dialPlan = service?.dialplan;
+                return dialPlan != null && dialPlan?.data?.length > 0;
+            });
+        });
+
+        // If all services have dialplan, no need for calculate button
+        if (allServicesHaveDialPlan) return false;
+
+        // Check if any plan has extra services (services without dialplan and not unlimited)
+        const hasAnyExtraServices = pricingData.some((plan) => {
+            const services = plan?.services ?? [];
+            return services.some((service) => {
+                const freeCredits = service?.included;
+                const hasDialPlan = service?.dialplan != null && service?.dialplan?.data?.length > 0;
+                // Service is calculable if it doesn't have dialplan and is not unlimited
+                return !hasDialPlan && freeCredits !== -1 && freeCredits !== '-1';
+            });
+        });
+
+        return hasAnyExtraServices;
+    }, [pricingData]);
+
     if (cards.length === 0) return null;
 
     return (
@@ -69,20 +99,26 @@ export default function PricingPlans({
                     })}
                 </div>
             </div>
-            <div className='mt-6 flex items-center justify-between text-sm'>
-                <button type='button' onClick={() => onCalculateClick?.()} className='text-link active-link'>
-                    {pageData?.calculatePricingText}
-                </button>
-                {hasFeatures && (
-                    <button
-                        type='button'
-                        onClick={() => document.getElementById('compare-plans')?.scrollIntoView({ behavior: 'smooth' })}
-                        className='text-link active-link'
-                    >
-                        {pageData?.compareAllFeaturesText}
-                    </button>
-                )}
-            </div>
+            {(shouldShowCalculateButton || hasFeatures) && (
+                <div className='mt-6 flex items-center justify-between text-sm'>
+                    {shouldShowCalculateButton && (
+                        <button type='button' onClick={() => onCalculateClick?.()} className='text-link active-link'>
+                            {pageData?.calculatePricingText}
+                        </button>
+                    )}
+                    {hasFeatures && (
+                        <button
+                            type='button'
+                            onClick={() =>
+                                document.getElementById('compare-plans')?.scrollIntoView({ behavior: 'smooth' })
+                            }
+                            className='text-link active-link'
+                        >
+                            {pageData?.compareAllFeaturesText}
+                        </button>
+                    )}
+                </div>
+            )}
         </section>
     );
 }
