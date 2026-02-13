@@ -84,19 +84,21 @@ export default function PricingPlans({
 
     return (
         <section className='w-full py-4'>
-            <div className='mx-auto max-w-7xl'>
-                <div ref={scrollRef} className='flex gap-6 overflow-x-auto pb-4 scroll-smooth w-full'>
-                    {cards.map((card, index) => {
-                        const cardKey = card.slug ?? card.title ?? `card-${index}`;
-                        return (
-                            <PricingPlanCard
-                                key={cardKey}
-                                planData={card}
-                                onViewCallingRates={onViewCallingRates}
-                                product={product}
-                            />
-                        );
-                    })}
+            <div className='w-full overflow-hidden'>
+                <div ref={scrollRef} className='overflow-x-auto scroll-smooth '>
+                    <div className='flex gap-6 pb-4 w-fit'>
+                        {cards.map((card, index) => {
+                            const cardKey = card.slug ?? card.title ?? `card-${index}`;
+                            return (
+                                <PricingPlanCard
+                                    key={cardKey}
+                                    planData={card}
+                                    onViewCallingRates={onViewCallingRates}
+                                    product={product}
+                                />
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
             {(shouldShowCalculateButton || hasFeatures) && (
