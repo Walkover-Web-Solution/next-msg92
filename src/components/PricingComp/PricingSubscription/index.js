@@ -66,7 +66,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
 
     return (
         <>
-            <div className='flex flex-col gap-4 w-full'>
+            <div className='flex flex-col gap-4 w-full overflow-hidden'>
                 <h1 className='text-2xl md:text-3xl font-bold capitalize '>{pageData?.heading}</h1>
                 <div className='flex flex-col w-full gap-6'>
                     <div className='flex items-center justify-between gap-4'>

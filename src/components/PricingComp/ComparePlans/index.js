@@ -136,11 +136,15 @@ export default function ComparePlans({ pricingData, symbol, tabtype, pageData })
                     </div>
                 </div>
 
-                <div ref={tableRef} className='h-[600px] overflow-x-auto rounded border border-gray-200 bg-white'>
+                <div
+                    ref={tableRef}
+                    className='overflow-x-auto overflow-y-auto rounded border border-gray-200 bg-white'
+                    style={{ maxHeight: '600px' }}
+                >
                     <table className='table-fixed min-w-max w-full border-collapse text-sm'>
-                        <thead className='bg-gray-50'>
+                        <thead className='bg-gray-50 sticky top-0 z-30'>
                             <tr className='border-b border-gray-200'>
-                                <th className='w-[200px] px-4 py-4 text-left font-medium text-gray-500 sticky left-0 bg-gray-50 z-20 border-r border-gray-200'>
+                                <th className='w-[200px] px-4 py-4 text-left font-medium text-gray-500 sticky left-0 bg-gray-50 z-40 border-r border-gray-200'>
                                     {pageData?.featuresColumnLabel}
                                 </th>
                                 {planNames.map((name, index) => (

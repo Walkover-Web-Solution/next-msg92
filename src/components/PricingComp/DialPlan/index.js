@@ -98,11 +98,11 @@ const DialPlanTable = React.memo(function DialPlanTable({ columns, data, noResul
 
     return (
         <div className='flex flex-col gap-2'>
-            <div className='rounded border border-gray-200 bg-white max-w-7xl'>
+            <div className='max-w-7xl'>
                 <div className='w-full overflow-x-auto'>
                     <div
                         style={{ maxHeight: MAX_TABLE_HEIGHT }}
-                        className='overflow-y-auto border border-gray-300 rounded'
+                        className='overflow-y-auto border border-gray-200 rounded'
                     >
                         <table className='min-w-full border-collapse text-sm'>
                             <thead className='sticky top-0 z-10 bg-gray-100'>
