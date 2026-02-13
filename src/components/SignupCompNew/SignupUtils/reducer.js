@@ -43,6 +43,7 @@ export function reducer(state, action) {
             return {
                 ...state,
                 emailToken: action.payload.accessToken,
+                emailVerified: true,
                 isLoading: false,
                 activeStep: 2,
                 otpSent: false,
@@ -52,6 +53,16 @@ export function reducer(state, action) {
             return {
                 ...state,
                 emailRequestId: null,
+                isLoading: false,
+                otpSent: false,
+            };
+
+        case 'SET_EMAIL_EDIT_FROM_VERIFIED':
+            return {
+                ...state,
+                emailRequestId: null,
+                emailToken: null,
+                emailVerified: false,
                 isLoading: false,
                 otpSent: false,
             };

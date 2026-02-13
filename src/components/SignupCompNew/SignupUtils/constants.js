@@ -27,6 +27,7 @@ export const initialState = {
     emailIdentifier: null,
     emailRequestId: null,
     emailToken: null,
+    emailVerified: false,
 
     githubCode: null,
     githubState: null,

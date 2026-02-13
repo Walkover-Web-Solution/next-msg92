@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useSignup, sendOtp, handleGithubSignup, validateEmailSignup, resetEmailOtp } from '../SignupUtils';
 import { useEffect, useState, useRef, useMemo } from 'react';
-import { MdEdit } from 'react-icons/md';
+import { MdCheckCircle, MdEdit } from 'react-icons/md';
 import OTPInput from '../components/OTPInput';
 import ResendOTP from '../components/ResendOTP';
 import FormInput from '../components/FormInput';
@@ -10,7 +10,7 @@ import { appendMsg91QueryToUrl } from '../SignupUtils/cookieUtils';
 
 export default function StepOne() {
     const { state, dispatch } = useSignup();
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = useState(state.emailIdentifier || '');
     const emailInputRef = useRef(null);
     const otpInputRef = useRef(null);
     const geoInitRef = useRef(false);
@@ -18,6 +18,7 @@ export default function StepOne() {
     const otpLength = state.widgetData?.otpLength || 6;
     const isLoading = state.isLoading;
     const otpSent = state.otpSent;
+    const emailVerified = state.emailVerified;
     const countries = state.countries;
 
     // Get available retry channels (email usually has only one)
@@ -83,6 +84,10 @@ export default function StepOne() {
         resetEmailOtp(dispatch);
     };
 
+    const handleEditVerifiedEmail = () => {
+        dispatch({ type: 'SET_EMAIL_EDIT_FROM_VERIFIED' });
+    };
+
     const handleResendOtp = () => {
         sendOtp(email, false, dispatch);
     };
@@ -111,7 +116,28 @@ export default function StepOne() {
                 </p>
             </div>
 
-            {otpSent && otpLength ? (
+            {emailVerified ? (
+                <div className='cont gap-2'>
+                    <p className='text-gray-500'>Email Address</p>
+                    <div className='flex items-center gap-4'>
+                        <div className='flex items-center gap-2 input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] bg-success/10 border-success'>
+                            <span className='text-base flex-1'>{email}</span>
+                            <span className='flex items-center gap-1 text-success text-sm font-medium'>
+                                <MdCheckCircle className='text-lg' aria-label='Email verified' />
+                                Verified
+                            </span>
+                        </div>
+                        <button
+                            onClick={handleEditVerifiedEmail}
+                            className='btn btn-outline btn-sm'
+                            aria-label='Edit email'
+                        >
+                            <MdEdit className='text-lg' />
+                            Edit
+                        </button>
+                    </div>
+                </div>
+            ) : otpSent && otpLength ? (
                 <div className='cont gap-2'>
                     <div className='flex items-end gap-2'>
                         <p className='text-gray-500'>

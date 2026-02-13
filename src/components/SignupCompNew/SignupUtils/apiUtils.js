@@ -121,10 +121,12 @@ export async function validateEmailSignup(otp, dispatch, state) {
                         resolve(data);
                         return;
                     }
-                    reject(data || { message: 'OTP verification failed' });
+                    const errorMsg = data?.message || data?.error || 'OTP verification failed';
+                    reject({ message: errorMsg });
                 },
                 (error) => {
-                    reject(error);
+                    const errorMsg = error?.message || error?.error || error || 'OTP verification failed';
+                    reject({ message: errorMsg });
                 },
                 signupState?.emailRequestId
             );
@@ -171,11 +173,15 @@ export async function validateEmailSignup(otp, dispatch, state) {
             return data;
         }
 
-        const apiErrors = data?.errors || 'Failed to validate signup';
+        const apiErrors = data?.message || data?.error || data?.errors || 'Failed to validate signup';
         dispatch({ type: 'SET_ERROR', payload: apiErrors });
         return null;
     } catch (error) {
-        const otpErrorMessage = error?.response?.data?.message || error?.message || 'Failed to validate signup';
+        const otpErrorMessage =
+            error?.response?.data?.message ||
+            error?.response?.data?.error ||
+            error?.message ||
+            'Failed to validate signup';
         dispatch({ type: 'SET_ERROR', payload: otpErrorMessage });
         return null;
     } finally {

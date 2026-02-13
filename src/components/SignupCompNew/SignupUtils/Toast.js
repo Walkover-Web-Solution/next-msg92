@@ -7,7 +7,7 @@ import { MdClose, MdError, MdCheckCircle, MdInfo, MdWarning } from 'react-icons/
  * @param {string} type - Toast type (danger, success, info, warning)
  * @param {number} duration - Auto-dismiss duration in ms (default 5000)
  */
-export default function Toast({ type = 'danger', duration = 5000 }) {
+export default function Toast({ type = 'danger', duration = 10000 }) {
     const { state, dispatch } = useSignup();
 
     useEffect(() => {
