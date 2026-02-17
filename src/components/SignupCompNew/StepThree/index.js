@@ -144,6 +144,16 @@ export default function StepThree({ data }) {
         finalRegistration(dispatch, state);
     };
 
+    // Validation: Check if service and source are selected
+    const isFormValid = () => {
+        const hasService = selectedServices.length > 0;
+        const finalSource = source === 'other' ? otherSource.trim() : source;
+        const hasSource = finalSource !== '';
+        return hasService && hasSource;
+    };
+
+    const canProceed = isFormValid();
+
     return (
         <div className='cont cont_gap'>
             <Image width={160} height={80} className='w-fit h-12' src={'/assets/brand/msg91.svg'} alt='MSG91 Logo' />
@@ -162,7 +172,7 @@ export default function StepThree({ data }) {
                                     <div
                                         onClick={() => handleServiceClick(key)}
                                         key={key}
-                                        className={`border w-fit ps-2 pe-1 py-1 rounded text-sm flex items-center gap-1 cursor-pointer ${
+                                        className={`border w-fit px-2 py-1 rounded text-sm flex items-center gap-1 cursor-pointer ${
                                             selectedServices.includes(key)
                                                 ? 'bg-green-50 hover:bg-green-100'
                                                 : 'hover:bg-green-50'
@@ -318,11 +328,23 @@ export default function StepThree({ data }) {
                 <button
                     className='btn btn-primary btn-outline btn-md'
                     onClick={() => dispatch({ type: 'SET_ACTIVE_STEP', payload: 2 })}
+                    disabled={state.isLoading}
                 >
                     Back
                 </button>
-                <button className='btn btn-accent btn-md' onClick={handleFinalRegistration}>
-                    Next
+                <button
+                    className='btn btn-accent btn-md'
+                    onClick={handleFinalRegistration}
+                    disabled={!canProceed || state.isLoading}
+                >
+                    {state.isLoading ? (
+                        <>
+                            <span className='loading loading-spinner loading-sm'></span>
+                            Processing...
+                        </>
+                    ) : (
+                        'Next'
+                    )}
                 </button>
             </div>
             <style jsx global>{`

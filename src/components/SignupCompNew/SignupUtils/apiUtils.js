@@ -203,6 +203,11 @@ export function finalRegistration(dispatch, state) {
         acceptInviteForCompanies: state?.acceptInviteForCompanies,
         rejectInviteForCompanies: state?.rejectInviteForCompanies,
     };
+
+    // Set loading state
+    dispatch({ type: 'SET_LOADING', payload: true });
+    dispatch({ type: 'CLEAR_ERROR' });
+
     axios
         .post(url, payload)
         .then((response) => {
@@ -213,13 +218,29 @@ export function finalRegistration(dispatch, state) {
                 });
                 const baseUrl = process.env.REDIRECT_URL + `?session=${response?.data?.sessionDetails?.PHPSESSID}`;
                 window.location.href = appendMsg91QueryToUrl(baseUrl);
+            } else {
+                // Handle non-success response
+                const errorMessage =
+                    response?.data?.message ||
+                    response?.data?.error ||
+                    response?.data?.errors ||
+                    'Registration failed. Please try again.';
+
+                dispatch({ type: 'SET_ERROR', payload: errorMessage });
+                dispatch({ type: 'SET_LOADING', payload: false });
             }
         })
         .catch((error) => {
-            dispatch({
-                type: 'SET_ERROR',
-                payload: error?.response?.data?.message || error?.message || 'Failed to complete registration',
-            });
+            // Extract error message from various possible locations
+            const errorMessage =
+                error?.response?.data?.message ||
+                error?.response?.data?.error ||
+                error?.response?.data?.errors ||
+                error?.message ||
+                'Failed to complete registration. Please try again.';
+
+            dispatch({ type: 'SET_ERROR', payload: errorMessage });
+            dispatch({ type: 'SET_LOADING', payload: false });
         });
 }
 
@@ -244,7 +265,6 @@ export async function fetchCountries(dispatch) {
             type: 'SET_COUNTRIES',
             payload: countriesData,
         });
-
         return countriesData;
     } catch (error) {
         throw error;

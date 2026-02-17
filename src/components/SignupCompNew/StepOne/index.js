@@ -4,7 +4,6 @@ import { useEffect, useState, useRef, useMemo } from 'react';
 import { MdCheckCircle, MdEdit } from 'react-icons/md';
 import OTPInput from '../components/OTPInput';
 import ResendOTP from '../components/ResendOTP';
-import FormInput from '../components/FormInput';
 import { fetchCountries, autoPopulateFromIP } from '../SignupUtils/apiUtils';
 import { appendMsg91QueryToUrl } from '../SignupUtils/cookieUtils';
 
@@ -112,28 +111,37 @@ export default function StepOne() {
             <div className='cont gap-2'>
                 <h1 className='text-2xl text-primary'>Create an Account</h1>
                 <p className='text-sm text-gray-500'>
-                    Already have an account? <a href={loginUrl}>Login</a>
+                    Already have an account?{' '}
+                    <a className='text-link active-link' href={loginUrl}>
+                        Login
+                    </a>
                 </p>
             </div>
 
             {emailVerified ? (
                 <div className='cont gap-2'>
                     <p className='text-gray-500'>Email Address</p>
-                    <div className='flex items-center gap-4'>
-                        <div className='flex items-center gap-2 input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] bg-success/10 border-success'>
-                            <span className='text-base flex-1'>{email}</span>
-                            <span className='flex items-center gap-1 text-success text-sm font-medium'>
-                                <MdCheckCircle className='text-lg' aria-label='Email verified' />
-                                Verified
-                            </span>
-                        </div>
+                    <div className='flex items-center gap-2 input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] bg-success/10 border-success'>
+                        <span className='text-base flex-1'>{email}</span>
+                        <span className='flex items-center gap-1 text-success text-sm font-medium'>
+                            <MdCheckCircle className='text-lg' aria-label='Email verified' />
+                            Verified
+                        </span>
+                    </div>
+                    <div className='flex items-center gap-4 mt-4'>
                         <button
                             onClick={handleEditVerifiedEmail}
-                            className='btn btn-outline btn-sm'
+                            className='btn btn-primary btn-outline btn-md'
                             aria-label='Edit email'
                         >
                             <MdEdit className='text-lg' />
                             Edit
+                        </button>
+                        <button
+                            onClick={() => dispatch({ type: 'SET_ACTIVE_STEP', payload: 2 })}
+                            className='btn btn-accent btn-md'
+                        >
+                            Continue
                         </button>
                     </div>
                 </div>
