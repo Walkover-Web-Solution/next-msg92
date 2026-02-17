@@ -1,9 +1,5 @@
 import React, { useEffect, useMemo, useState, useRef, useCallback } from 'react';
-
-const DEBOUNCE_DELAY = 400;
-const SEARCHABLE_FIELDS = ['country_name', 'prefix'];
-const MAX_TABLE_HEIGHT = '600px';
-const EMPTY_ARRAY = [];
+import { DEBOUNCE_DELAY, SEARCHABLE_FIELDS, MAX_TABLE_HEIGHT, EMPTY_ARRAY } from '../constants';
 
 function useDebouncedValue(value, delay) {
     const [debouncedValue, setDebouncedValue] = useState(value);
@@ -221,7 +217,7 @@ export default function DialPlan({ pricingData, selectedPlanSlug, selectedServic
                     {planName && activeService && (
                         <p className='text-md'>
                             {pageData?.showingRatesFor}{' '}
-                            <span className='font-medium text-blue-600'>
+                            <span className='font-bold'>
                                 {activeService} ({planName})
                             </span>{' '}
                         </p>
@@ -234,7 +230,7 @@ export default function DialPlan({ pricingData, selectedPlanSlug, selectedServic
                         placeholder={pageData?.searchPlaceholder}
                         value={search}
                         onChange={handleSearchChange}
-                        className='w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500'
+                        className='w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:ring-1'
                         autoComplete='off'
                         aria-label='Search dial plan rates'
                     />
