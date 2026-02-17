@@ -23,16 +23,6 @@ export default function ConnectWithTeam({ product, isPlan, pageData, href, per }
 
     return (
         <div className='w-full flex flex-col justify-start items-start gap-5'>
-            <div>
-                <a
-                    href={getURL('product', href)}
-                    className='inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:underline capitalize'
-                >
-                    <MdLaunch className='text-base' />
-                    {`${knowMoreText} ${product}`}
-                </a>
-            </div>
-
             <div className='w-full rounded border border-gray-200 bg-white px-8 py-8'>
                 <div className='flex flex-col gap-6 sm:gap-8'>
                     {isPlan && (
@@ -54,7 +44,15 @@ export default function ConnectWithTeam({ product, isPlan, pageData, href, per }
                     )}
                 </div>
             </div>
-
+            <div>
+                <a
+                    href={getURL('product', href)}
+                    className='inline-flex items-center gap-2 text-sm font-medium text-link active-link capitalize'
+                >
+                    <MdLaunch className='text-base' />
+                    {`${knowMoreText} ${product}`}
+                </a>
+            </div>
             {isSalesModalOpen && (
                 <dialog id='sales_modal' className='modal' open>
                     <div className='modal-box'>

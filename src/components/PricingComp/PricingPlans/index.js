@@ -1,12 +1,14 @@
-import { useRef, useMemo, useEffect } from 'react';
-import PricingPlanCard from './PricingPlanCard';
-
-const SCROLL_DISTANCE = 752;
-const EMPTY_ARRAY = [];
+import { useRef, useMemo, useEffect, useCallback, useState } from 'react';
+import { MdCheck, MdChevronLeft, MdChevronRight, MdClose } from 'react-icons/md';
+import { SCROLL_DISTANCE, EMPTY_ARRAY, MIN_PLANS_FOR_SCROLL } from '../constants';
+import { checkHasYearlyPlans, getPlansCountForTab } from '../PricingSubscription/utils/helpers';
+import getURL from '@/utils/getURL';
+import { formatServiceDisplayText } from './utils/transformers';
 
 export default function PricingPlans({
     pricingData,
     tabtype,
+    setTabtype,
     symbol,
     setScrollApi,
     onViewCallingRates,
@@ -15,31 +17,50 @@ export default function PricingPlans({
     product,
 }) {
     const scrollRef = useRef(null);
+    const [scrollApi, setScrollApiInternal] = useState(null);
+    const [hasYearly, setHasYearly] = useState(false);
 
-    const scrollLeft = () => {
+    const scrollLeft = useCallback(() => {
         scrollRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' });
-    };
+    }, []);
 
-    const scrollRight = () => {
+    const scrollRight = useCallback(() => {
         scrollRef.current?.scrollBy({ left: SCROLL_DISTANCE, behavior: 'smooth' });
-    };
+    }, []);
+
+    // Check if pricing data has yearly plans
+    useEffect(() => {
+        const hasYearlyPlans = checkHasYearlyPlans(pricingData);
+        setHasYearly(hasYearlyPlans);
+    }, [pricingData]);
+
+    // Calculate plans count for current tab
+    const plansCountForTab = useMemo(() => {
+        return getPlansCountForTab(pricingData, tabtype);
+    }, [pricingData, tabtype]);
+
+    // Determine if scroll arrows should be shown
+    const showScrollArrows = scrollApi && plansCountForTab > MIN_PLANS_FOR_SCROLL;
 
     useEffect(() => {
-        if (setScrollApi) {
-            setScrollApi({
-                scrollLeft,
-                scrollRight,
-            });
-        }
-    }, [setScrollApi]);
+        const api = {
+            scrollLeft,
+            scrollRight,
+        };
+        setScrollApiInternal(api);
 
-    const cards = useMemo(() => {
+        // Also expose to parent if needed
+        if (setScrollApi) {
+            setScrollApi(api);
+        }
+    }, [setScrollApi, scrollLeft, scrollRight]);
+
+    const plans = useMemo(() => {
         if (!Array.isArray(pricingData) || pricingData.length === 0) return EMPTY_ARRAY;
         const hasAmountForTab = (plan) =>
             tabtype === 'Monthly' ? plan?.amount?.monthly != null : plan?.amount?.yearly != null;
-        const plansForTab = pricingData.filter(hasAmountForTab);
-        return plansForTab.map((plan) => simplifiedPlanToCard(plan, tabtype, pageData, symbol));
-    }, [pricingData, tabtype, pageData, symbol]);
+        return pricingData.filter(hasAmountForTab);
+    }, [pricingData, tabtype]);
 
     const hasFeatures = useMemo(
         () =>
@@ -80,19 +101,48 @@ export default function PricingPlans({
         return hasAnyExtraServices;
     }, [pricingData]);
 
-    if (cards.length === 0) return null;
+    if (plans.length === 0) return null;
 
     return (
         <section className='w-full py-4'>
+            <div className='flex items-center justify-between gap-4 mb-4'>
+                <div>
+                    <PlanToggle tabtype={tabtype} setTabtype={setTabtype} hasYearly={hasYearly} />
+                </div>
+                {showScrollArrows && (
+                    <div className='flex items-center gap-2'>
+                        <button
+                            type='button'
+                            onClick={scrollLeft}
+                            className='flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-600 hover:bg-gray-100'
+                            aria-label='Scroll left to view previous pricing plans'
+                        >
+                            <MdChevronLeft aria-hidden='true' />
+                        </button>
+
+                        <button
+                            type='button'
+                            onClick={scrollRight}
+                            className='flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-gray-600 hover:bg-gray-100'
+                            aria-label='Scroll right to view more pricing plans'
+                        >
+                            <MdChevronRight aria-hidden='true' />
+                        </button>
+                    </div>
+                )}
+            </div>
             <div className='w-full overflow-hidden'>
                 <div ref={scrollRef} className='overflow-x-auto scroll-smooth '>
                     <div className='flex gap-6 pb-4 w-fit'>
-                        {cards.map((card, index) => {
-                            const cardKey = card.slug ?? card.title ?? `card-${index}`;
+                        {plans.map((plan, index) => {
+                            const planKey = plan.slug ?? plan.name ?? `plan-${index}`;
                             return (
-                                <PricingPlanCard
-                                    key={cardKey}
-                                    planData={card}
+                                <PlanCard
+                                    key={planKey}
+                                    plan={plan}
+                                    tabtype={tabtype}
+                                    symbol={symbol}
+                                    pageData={pageData}
                                     onViewCallingRates={onViewCallingRates}
                                     product={product}
                                 />
@@ -125,96 +175,200 @@ export default function PricingPlans({
     );
 }
 
-function formatServiceDisplayText(serviceName, included) {
-    const isUnlimited = included === -1 || included === '-1';
-    return isUnlimited ? `Unlimited ${serviceName}` : `${Number(included)} ${serviceName}/month`;
+function PlanToggle({ tabtype, setTabtype, hasYearly }) {
+    const PLAN_TYPES = {
+        MONTHLY: 'Monthly',
+        YEARLY: 'Yearly',
+    };
+    if (!hasYearly) return null;
+
+    const isMonthly = tabtype === PLAN_TYPES.MONTHLY;
+    const isYearly = tabtype === PLAN_TYPES.YEARLY;
+
+    const getButtonClassName = (isActive) => {
+        const baseClasses = 'px-4 py-2 text-sm font-medium rounded transition';
+        const activeClass = isActive ? 'bg-secondary' : '';
+        return `${baseClasses} ${activeClass}`;
+    };
+
+    return (
+        <div className='inline-flex w-fit rounded bg-white p-1'>
+            <button
+                type='button'
+                onClick={() => setTabtype(PLAN_TYPES.MONTHLY)}
+                className={getButtonClassName(isMonthly)}
+                aria-pressed={isMonthly}
+            >
+                {PLAN_TYPES.MONTHLY}
+            </button>
+            <button
+                type='button'
+                onClick={() => setTabtype(PLAN_TYPES.YEARLY)}
+                className={getButtonClassName(isYearly)}
+                aria-pressed={isYearly}
+            >
+                {PLAN_TYPES.YEARLY}
+            </button>
+        </div>
+    );
 }
 
-function transformIncludedServices(plan) {
-    return (plan?.services ?? []).map((service) => {
-        const dialPlan = service?.dialplan;
-        const serviceName = service?.serviceName;
-        return {
-            displayText: formatServiceDisplayText(serviceName, service.included),
-            hasDialPlan: Boolean(dialPlan?.data?.length > 0),
-            service_name: serviceName,
-        };
-    });
-}
-
-function transformExtraServices(plan, symbol) {
-    const postpaidAllowed = plan?.postpaidAllowed;
-
-    return (plan?.services ?? [])
-        .filter((service) => {
-            const freeCredits = service?.included;
-            const hasDialPlan = service?.dialplan != null;
-            return !hasDialPlan && freeCredits !== -1 && freeCredits !== '-1';
-        })
-        .map((service) => {
-            const followUpRate = service?.extra;
-            const serviceName = service?.serviceName;
-            const showRate = followUpRate && postpaidAllowed;
-            return showRate
-                ? { label: `${symbol}${followUpRate}/${serviceName}/month`, isNoExtra: false }
-                : { label: `No extra ${serviceName}`, isNoExtra: true };
-        });
-}
-
-function transformFeatures(plan) {
-    const planFeatures = plan?.plan_features;
-    if (!planFeatures) return [];
-
-    return planFeatures
-        .filter((feature) => {
-            const isVisible = feature.is_visible;
-            return isVisible;
-        })
-        .map((feature) => {
-            const featureName = feature.name;
-            const isIncluded = feature.is_included;
-            return { name: featureName, is_included: isIncluded };
-        });
-}
-
-function getPlanTitle(plan) {
-    if (plan?.name) return plan.name;
-    if (plan?.slug) {
-        return String(plan.slug).charAt(0).toUpperCase() + String(plan.slug).slice(1);
-    }
-    return 'Plan';
-}
-
-function simplifiedPlanToCard(plan, tabtype, plansPageData, symbol) {
+function PlanCard({ plan, tabtype, symbol, pageData, onViewCallingRates, product }) {
+    // Extract pricing based on tab type
     const isMonthly = tabtype === 'Monthly';
+    const pricing = isMonthly ? plan?.pricing?.monthly : plan?.pricing?.yearly;
+    const price = pricing?.price ?? 'Free';
+    const originalPrice = pricing?.originalPrice ?? null;
+    const discountLabel = pricing?.discountLabel ?? null;
     const period = isMonthly ? 'Monthly' : 'Yearly';
 
-    // Get pre-computed pricing for the selected tab
-    const pricing = isMonthly ? plan?.pricing?.monthly : plan?.pricing?.yearly;
+    // Get plan title
+    const title =
+        plan?.name || (plan?.slug ? String(plan.slug).charAt(0).toUpperCase() + String(plan.slug).slice(1) : 'Plan');
 
-    const included = transformIncludedServices(plan);
-    const extra = transformExtraServices(plan, symbol);
-    const features = transformFeatures(plan);
-    const title = getPlanTitle(plan);
-    const hasDialPlan =
-        plan?.services?.some((service) => {
-            const dialPlan = service?.dialplan;
-            return dialPlan?.data?.length > 0;
-        }) ?? false;
+    // Get visible features (limit to 5)
+    const visibleFeatures = plan?.plan_features?.filter((f) => f?.is_visible)?.slice(0, 5) ?? [];
 
-    return {
-        slug: plan?.slug,
-        title,
-        price: pricing?.price ?? 'Free',
-        originalPrice: pricing?.originalPrice ?? null,
-        discountLabel: pricing?.discountLabel ?? null,
-        period,
-        ctaText: plansPageData?.ctaText,
-        showLink: true,
-        linkText: plansPageData?.viewCallingRatesText,
-        hasDialPlan,
-        included,
-        features,
-        extra,
-    };
+    // Get services for included section
+    const services = plan?.services ?? [];
+
+    function renderIncludedItem(service, index, symbol) {
+        const serviceName = service?.serviceName;
+        const included = service?.included;
+        const hasDialPlan = service?.dialplan?.data?.length > 0;
+
+        // Determine display text based on scenario
+        let displayText;
+        let secondaryText;
+        if (included === -1 || included === '-1') {
+            displayText = `Unlimited ${serviceName}`;
+        } else if (included === 0 && hasDialPlan) {
+            displayText = `${serviceName}`;
+            secondaryText = '(Usage Based Pricing)';
+        } else if (included != 0 && hasDialPlan) {
+            displayText = `${symbol}${Number(included)} ${serviceName} Credits`;
+        } else {
+            displayText = `${Number(included)} ${serviceName}/month`;
+        }
+        return (
+            <div key={index} className='flex flex-nowrap items-center gap-2 text-sm'>
+                <span className='text-gray-600 truncate shrink-0'>
+                    {displayText} {secondaryText && <span className='text-xs text-gray-500'>{secondaryText}</span>}
+                </span>
+
+                {hasDialPlan && (
+                    <button
+                        type='button'
+                        onClick={() => {
+                            if (onViewCallingRates) onViewCallingRates(plan?.slug, serviceName);
+                        }}
+                        className='text-link active-link text-xs font-medium'
+                    >
+                        {pageData?.viewCallingRatesText}
+                    </button>
+                )}
+            </div>
+        );
+    }
+
+    return (
+        <div className='min-w-[360px] max-w-[360px] rounded border border-gray-200 min-h-full bg-white px-6 py-6 sm:px-7 sm:py-7'>
+            <h3 className=' text-2xl font-semibold'>{title}</h3>
+
+            <div className='flex flex-col gap-0.5'>
+                <div className='flex items-center gap-1 flex-wrap'>
+                    {originalPrice != null && (
+                        <span className='text-xl font-medium text-gray-500 line-through'>{originalPrice}</span>
+                    )}
+                    <span className='text-2xl font-semibold text-green-700'>{price}</span>
+                    {price !== 'Free' && <span className='text-md text-gray-500 mt-1'>{period}</span>}
+                </div>
+                <span className='text-sm text-gray-600 min-h-[20px] block'>{discountLabel ?? '\u00A0'}</span>
+            </div>
+
+            <div className='py-2'>
+                <a
+                    href={getURL('signup', product)}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='w-full btn btn-primary btn-sm btn-outline text-center'
+                >
+                    {pageData?.ctaText}
+                </a>
+            </div>
+
+            {services.length > 0 && (
+                <div className='my-2'>
+                    <h4 className='mb-1 text-sm font-semibold text-gray-900'>Included</h4>
+                    <div className='flex flex-col'>
+                        {services.map((service, index) => renderIncludedItem(service, index, symbol))}
+                    </div>
+                </div>
+            )}
+
+            {visibleFeatures.length > 0 && (
+                <div className='my-2'>
+                    <h4 className='mb-1 text-sm font-semibold text-gray-900'>Features</h4>
+                    <div className=''>
+                        {visibleFeatures.map((feature, index) => {
+                            const featureName = feature?.name ?? '';
+                            const isIncluded = feature?.is_included;
+
+                            return (
+                                <div key={index} className='flex items-center gap-2 text-sm text-gray-600'>
+                                    {isIncluded === 0 || isIncluded === false ? (
+                                        <MdClose className='shrink-0 text-red-500' />
+                                    ) : (
+                                        <MdCheck className='shrink-0 text-green-600' />
+                                    )}
+                                    <span>{featureName}</span>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            )}
+
+            {(() => {
+                // Calculate extra services (services without dial plan and not unlimited)
+                const extraServices = services.filter((service) => {
+                    const freeCredits = service?.included;
+                    const hasDialPlan = service?.dialplan != null;
+                    return !hasDialPlan && freeCredits !== -1 && freeCredits !== '-1';
+                });
+
+                if (extraServices.length === 0) return null;
+
+                const postpaidAllowed = plan?.postpaidAllowed;
+
+                return (
+                    <div className='my-2 flex flex-col gap-1'>
+                        <h4 className='text-sm font-semibold text-gray-900'>Extra @</h4>
+                        <div className=''>
+                            {extraServices.map((service, index) => {
+                                const followUpRate = service?.extra;
+                                const serviceName = service?.serviceName;
+                                const showRate = followUpRate && postpaidAllowed;
+                                const label = showRate
+                                    ? `${symbol}${followUpRate}/${serviceName}/month`
+                                    : `No extra ${serviceName}`;
+                                const isNoExtra = !showRate;
+
+                                return (
+                                    <div key={index} className='flex items-center gap-2 text-sm text-gray-600'>
+                                        {isNoExtra ? (
+                                            <MdClose className='shrink-0 text-red-500' />
+                                        ) : (
+                                            <MdCheck className='shrink-0 text-green-600' />
+                                        )}
+                                        <span>{label}</span>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                );
+            })()}
+        </div>
+    );
 }
