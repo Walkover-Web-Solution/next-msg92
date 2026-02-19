@@ -106,8 +106,8 @@ export async function getStaticPaths() {
         fallback: false,
     };
 }
-export async function getStaticProps(slug) {
-    const slugData = slug.params.slug;
+export async function getStaticProps({ params }) {
+    const slugData = params.slug;
     const source = fs.readFileSync(slugToPostContent[slugData]?.fullPath, 'utf8');
     const pageInfo = getPageInfo({ slug: ['global', 'guide'] });
     const commonData = getCommonCompData(pageInfo?.country);
