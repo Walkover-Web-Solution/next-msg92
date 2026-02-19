@@ -1,10 +1,10 @@
 import getURL from '@/utils/getURL';
-import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
+import ConnectWithTeam from '../ConnectWithTeam';
 
 export default function PricingCampaign({ pageData }) {
     return (
         <div className='flex flex-col gap-4 w-full'>
-            <h1 className='text-2xl md:text-3xl font-bold capitalize '>Campaign Pricing </h1>
+            <h1 className='text-2xl md:text-3xl font-bold capitalize'>Campaign Pricing </h1>
             <div className='flex flex-col w-full gap-8'>
                 <div className='flex xl:flex-row flex-col w-full gap-8'>
                     <div className='flex flex-col w-full md:gap-5 gap-3 h-full md:p-8 p-4 bg-white rounded'>
@@ -35,7 +35,12 @@ export default function PricingCampaign({ pageData }) {
                         </a>
                     </div>
                 </div>
-                <ConnectWithTeam href={'campaign'} pageData={pageData?.connectComp} product={'Campaign'} />
+                <ConnectWithTeam
+                    href={'campaign'}
+                    pageData={pageData?.connectComp}
+                    product={'Campaign'}
+                    isPlan={true}
+                />
             </div>
         </div>
     );
