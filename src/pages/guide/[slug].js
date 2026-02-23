@@ -22,11 +22,7 @@ const component = { ReactPlayer };
 
 const slugToPostContent = ((postContents) => {
     let hash = {};
-    let fullPath = {};
-    postContents.map((data) => {
-        fullPath = data.fullPath;
-    });
-    postContents?.forEach((it) => (hash[it.slug] = it));
+    postContents?.forEach((it) => (hash[it.staticPath] = it));
     return hash;
 })(fetchPostContent());
 export default function TestPage({
