@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export async function GetSmsOtpPricing(amountArray, currency, origin, destination) {
     try {
         const fetchRequests = amountArray.map(async (amount) => {

@@ -3,14 +3,13 @@ import PricingCampaign from './PricingCampaign/PricingCampaign';
 import PricingOtp from './PricingOtp/PricingOtp';
 import PricingSMSOTP from './PricingSMS/PricingSMSOTP';
 import PricingVoice from './PricingVoice/PricingVoice';
-import PricingRCS from './PricingRCS/PricingRCS';
-import PricingWhatsApp from './PricingWhatsApp/PricingWhatsApp';
 import NotFoundComp from '../NotFoundComp/NotFoundComp';
 import HeadComp from '../HeadComp/HeadComp';
 import NotificationBarComp from '../notificationBarComp/notificationBarComp';
 import MenuBarComp from '../menuBarComp/menuBarComp';
 import FooterComp from '../FooterComp/FooterComp';
 import PricingSubscription from './PricingSubscription';
+import ConnectWithTeam from './ConnectWithTeam';
 
 export default function PricingComp({ pricingData, pageInfo, pageData, products, commonData, country }) {
     if (pricingData) {
@@ -30,10 +29,13 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
 
                         {pageInfo?.product === 'campaign' && <PricingCampaign pageData={pageData} />}
 
-                        {(pageInfo?.product === 'hello' ||
-                            pageInfo?.product === 'segmento' ||
-                            pageInfo?.product === 'email') && (
-                            <PricingSubscription pricingData={pricingData} pageData={pageData} pageInfo={pageInfo} />
+                        {['hello', 'segmento', 'email', 'rcs', 'whatsapp'].includes(pageInfo?.product) && (
+                            <PricingSubscription
+                                pricingData={pricingData}
+                                pageData={pageData}
+                                pageInfo={pageInfo}
+                                country={country}
+                            />
                         )}
 
                         {pageInfo?.product === 'otpwidget' && <PricingOtp pageData={pageData} />}
@@ -46,22 +48,10 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                             <PricingSMSOTP data={pageData} type={'otp'} country={pageInfo?.country} />
                         )}
 
-                        {pageInfo?.product === 'whatsapp' && (
-                            <PricingWhatsApp pricingData={pricingData} pageData={pageData} pageInfo={pageInfo} />
-                        )}
-
                         {pageInfo?.product === 'voice' && <PricingVoice data={pageData} country={pageInfo?.country} />}
-
-                        {pageInfo?.product === 'rcs' && (
-                            <PricingRCS
-                                pricingData={pricingData}
-                                pageData={pageData}
-                                country={pageInfo?.country}
-                                pageInfo={pageInfo}
-                            />
-                        )}
                     </div>
                 </div>
+
                 <FooterComp componentData={commonData?.footer} pageInfo={pageInfo} />
             </>
         );

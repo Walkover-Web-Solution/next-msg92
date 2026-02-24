@@ -4,7 +4,7 @@ import styles from './MenuBarComp.module.scss';
 import { BtnWithHideIco, LinkText } from '../UIComponent/Buttons/LinkButton';
 import { useEffect, useState } from 'react';
 import getURL from '@/utils/getURL';
-import getPricingURL from '@/utils/getPricingURL';
+import getPricingURL from '@/utils/pricing/getPricingURL';
 
 export default function MenuBarComp({ componentData, pageInfo }) {
     const [nav, setNav] = useState('hide');
