@@ -108,7 +108,7 @@ export default function PricingCards({
                             locale={locale}
                             isFeatured={index === FEATURED_INDEX}
                             colorClass={PLAN_TITLE_COLORS[index] ?? 'text-gray-500'}
-                            onViewRateCard={(serviceName) => onViewRateCard?.(plan?.name, serviceName)}
+                            onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
                         />
                     ))}
                 </div>
@@ -304,7 +304,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, colorClass, onVie
                             <span className='text-gray-700 text-sm'>{service?.name}</span>
                             <button
                                 type='button'
-                                onClick={() => onViewRateCard?.(service?.name, service?.name)}
+                                onClick={() => onViewRateCard?.(service?.name)}
                                 className='text-link active-link'
                             >
                                 As Per Dial Plan

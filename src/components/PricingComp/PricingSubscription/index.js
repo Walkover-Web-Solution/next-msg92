@@ -10,14 +10,12 @@ import PricingCards from './PricingCards';
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {
     const { symbol, currency, locale } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
-    const [selectedPlanSlug, setSelectedPlanSlug] = useState(null);
     const [selectedServiceName, setSelectedServiceName] = useState(null);
     const [showDialPlan, setShowDialPlan] = useState(false);
     const dialPlanRef = useRef(null);
     const calculateModalRef = useRef(null);
 
-    const onViewRateCard = useCallback((planName, serviceName) => {
-        setSelectedPlanSlug(planName);
+    const onViewRateCard = useCallback((serviceName) => {
         setSelectedServiceName(serviceName || null);
         setShowDialPlan(true);
 
