@@ -57,36 +57,20 @@ function filterRowsBySearch(data, columns, searchTerm) {
     return data.filter((row) => matchesSearchQuery(row, searchableKeys, query));
 }
 
-function findSelectedPlan(pricingData, selectedPlanSlug) {
-    return (
-        pricingData.find((plan) => plan.slug === selectedPlanSlug) ||
-        pricingData.find((plan) =>
-            plan?.services?.some((service) => {
-                const dialPlan = service?.dialplan;
-                return dialPlan?.data?.length > 0;
-            })
-        ) ||
-        pricingData[0]
-    );
-}
-
-function extractDialPlans(selectedPlan) {
-    return (selectedPlan.services ?? [])
-        .filter((service) => {
-            const dialPlan = service?.dialplan;
-            const hasColumns = dialPlan?.columns?.length > 0;
-            const hasData = dialPlan?.data?.length > 0;
-            return hasColumns && hasData;
-        })
-        .map((service) => {
-            const dialPlan = service.dialplan;
-            const serviceName = service.serviceName;
-            return {
-                serviceName,
-                columns: dialPlan.columns,
-                data: dialPlan.data,
-            };
-        });
+function extractAllDialPlans(pricingData) {
+    const seen = new Set();
+    const result = [];
+    for (const plan of pricingData) {
+        for (const service of plan?.services ?? []) {
+            const dialPlan = service?.dialPlan;
+            const serviceName = service?.serviceName ?? service?.name;
+            if (serviceName && !seen.has(serviceName) && dialPlan?.columns?.length > 0 && dialPlan?.data?.length > 0) {
+                seen.add(serviceName);
+                result.push({ serviceName, columns: dialPlan.columns, data: dialPlan.data });
+            }
+        }
+    }
+    return result;
 }
 
 const DialPlanTable = React.memo(function DialPlanTable({ columns, data, noResultsText }) {
@@ -149,53 +133,25 @@ const DialPlanTable = React.memo(function DialPlanTable({ columns, data, noResul
     );
 });
 
-export default function DialPlan({ pricingData, selectedPlanSlug, selectedServiceName, pageData }) {
+export default function DialPlan({ pricingData, selectedServiceName, pageData }) {
     const [search, setSearch] = useState('');
-    const [activeService, setActiveService] = useState(selectedServiceName || '');
+    const [activeService, setActiveService] = useState('');
     const debouncedSearch = useDebouncedValue(search, DEBOUNCE_DELAY);
 
+    const dialPlans = useMemo(() => {
+        if (!Array.isArray(pricingData) || pricingData.length === 0) return EMPTY_ARRAY;
+        return extractAllDialPlans(pricingData);
+    }, [pricingData]);
+
+    // Default to selectedServiceName if present in dialPlans, else first dialPlan service found
     useEffect(() => {
+        if (dialPlans.length === 0) return;
+        const serviceNames = dialPlans.map((d) => d.serviceName);
+        const preferred =
+            selectedServiceName && serviceNames.includes(selectedServiceName) ? selectedServiceName : serviceNames[0];
+        setActiveService(preferred);
         setSearch('');
-    }, [selectedPlanSlug]);
-
-    useEffect(() => {
-        if (selectedServiceName) {
-            setActiveService(selectedServiceName);
-        }
-    }, [selectedServiceName]);
-
-    const { dialPlans, planName } = useMemo(() => {
-        if (!Array.isArray(pricingData) || pricingData.length === 0) {
-            return { dialPlans: EMPTY_ARRAY, planName: null };
-        }
-
-        const selectedPlan = findSelectedPlan(pricingData, selectedPlanSlug);
-
-        if (!selectedPlan) {
-            return { dialPlans: EMPTY_ARRAY, planName: null };
-        }
-
-        const plans = extractDialPlans(selectedPlan);
-
-        const serviceName =
-            plans.length === 1
-                ? plans[0]?.service_name
-                : plans
-                      .map((p) => p?.service_name)
-                      .filter(Boolean)
-                      .join(', ') || null;
-
-        return {
-            dialPlans: plans,
-            planName: selectedPlan.name ?? selectedPlan.slug ?? null,
-        };
-    }, [pricingData, selectedPlanSlug]);
-
-    useEffect(() => {
-        if (dialPlans.length > 0 && !activeService) {
-            setActiveService(dialPlans[0].serviceName);
-        }
-    }, [dialPlans, activeService]);
+    }, [dialPlans, selectedServiceName]);
 
     const filteredDataByPlan = useMemo(() => {
         return dialPlans.map((dialPlan) => filterRowsBySearch(dialPlan.data, dialPlan.columns, debouncedSearch));
@@ -209,17 +165,18 @@ export default function DialPlan({ pricingData, selectedPlanSlug, selectedServic
         return null;
     }
 
+    const activeIndex = dialPlans.findIndex((d) => d.serviceName === activeService);
+    const activeDialPlan = dialPlans[activeIndex] ?? dialPlans[0];
+    const activeData = filteredDataByPlan[activeIndex] ?? filteredDataByPlan[0] ?? [];
+
     return (
         <section className='w-full py-4 flex flex-col gap-6'>
             <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
                 <div>
                     <h3 className='text-lg sm:text-xl font-semibold'>{pageData?.dialplanRatesHeading}</h3>
-                    {planName && activeService && (
+                    {activeDialPlan?.serviceName && (
                         <p className='text-md'>
-                            {pageData?.showingRatesFor}{' '}
-                            <span className='font-bold'>
-                                {activeService} ({planName})
-                            </span>{' '}
+                            {pageData?.showingRatesFor} <span className='font-bold'>{activeDialPlan.serviceName}</span>
                         </p>
                     )}
                 </div>
@@ -237,24 +194,27 @@ export default function DialPlan({ pricingData, selectedPlanSlug, selectedServic
                 </div>
             </div>
 
-            <div className='flex flex-col gap-8'>
-                {dialPlans.map((dialPlan, planIndex) => {
-                    const isActive = activeService === dialPlan.serviceName;
-                    return (
-                        <div
-                            key={dialPlan.serviceName ?? `plan-${planIndex}`}
-                            className={isActive ? 'block' : 'hidden'}
-                            aria-hidden={!isActive}
+            {dialPlans.length > 1 && (
+                <div className='inline-flex w-fit rounded border border-gray-200 bg-white p-1'>
+                    {dialPlans.map((dp) => (
+                        <button
+                            key={dp.serviceName}
+                            type='button'
+                            onClick={() => {
+                                setActiveService(dp.serviceName);
+                                setSearch('');
+                            }}
+                            className={`px-4 py-1.5 text-sm font-medium rounded transition ${activeService === dp.serviceName ? 'bg-gray-900 text-white' : 'text-gray-600 hover:text-gray-900'}`}
                         >
-                            <DialPlanTable
-                                columns={dialPlan.columns}
-                                data={filteredDataByPlan[planIndex] ?? []}
-                                noResultsText={pageData?.noResults}
-                            />
-                        </div>
-                    );
-                })}
-            </div>
+                            {dp.serviceName}
+                        </button>
+                    ))}
+                </div>
+            )}
+
+            {activeDialPlan && (
+                <DialPlanTable columns={activeDialPlan.columns} data={activeData} noResultsText={pageData?.noResults} />
+            )}
         </section>
     );
 }
