@@ -1,5 +1,4 @@
 import { useState, useMemo, useCallback } from 'react';
-import contvertToLocal from '@/utils/convertToLocal';
 import { MdClose } from 'react-icons/md';
 
 const EMPTY_ARRAY = [];
@@ -19,33 +18,25 @@ const SERVICE_DEFAULTS = {
 };
 
 export default function CalculatePricingModal({ plans, symbol, tabtype, locale = 'en-US', onClose }) {
-    const visibleServiceNames = useMemo(() => getServiceNamesInAllPlans(plans), [plans]);
+    const plansForTab = useMemo(() => getPlansForTab(plans, tabtype), [plans, tabtype]);
+
+    const visibleServiceNames = useMemo(() => getServiceNamesInAllPlans(plansForTab), [plansForTab]);
 
     const [usageByService, setUsageByService] = useState(() => initializeUsageState(visibleServiceNames));
     const [validationError, setValidationError] = useState('');
 
     const handleUsageChange = useCallback((serviceName, value) => {
-        // Allow empty string for clearing the input
         if (value === '') {
             setUsageByService((prev) => ({ ...prev, [serviceName]: value }));
             setValidationError('');
             return;
         }
-
         const numValue = Number(value);
-
-        // Only update if value is within valid range - don't allow typing beyond max
         if (!Number.isNaN(numValue) && numValue >= INPUT_MIN && numValue <= INPUT_MAX) {
             setUsageByService((prev) => ({ ...prev, [serviceName]: value }));
         }
-        // If value exceeds limits, don't update state (prevents typing beyond max)
-
         setValidationError('');
     }, []);
-
-    const hasAnyFilledField = useMemo(() => visibleServiceNames.length > 0, [visibleServiceNames]);
-
-    const filledServiceNames = useMemo(() => visibleServiceNames, [visibleServiceNames]);
 
     const usageAsNumbers = useMemo(
         () => normalizeUsageToNumbers(visibleServiceNames, usageByService),
@@ -53,15 +44,13 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
     );
 
     const results = useMemo(() => {
-        if (!Array.isArray(plans) || plans.length === 0) return EMPTY_ARRAY;
-        const plansForTab = getPlansForTab(plans, tabtype);
+        if (!Array.isArray(plansForTab) || plansForTab.length === 0) return EMPTY_ARRAY;
         return plansForTab.map((plan) => ({
             plan,
-            slug: plan?.slug,
             title: getPlanTitle(plan),
             ...computePlanTotal(plan, tabtype, usageAsNumbers),
         }));
-    }, [plans, tabtype, usageAsNumbers]);
+    }, [plansForTab, tabtype, usageAsNumbers]);
 
     const handleClose = useCallback(() => {
         setUsageByService(initializeUsageState(visibleServiceNames));
@@ -127,7 +116,7 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                 <p className='text-sm text-gray-500'>No usage-based services in the current plans.</p>
             )}
 
-            {hasAnyFilledField && results.length > 0 && (
+            {visibleServiceNames.length > 0 && results.length > 0 && (
                 <div className='space-y-3'>
                     <h4 className='text-sm font-semibold text-gray-700'>Plan comparison</h4>
 
@@ -144,7 +133,7 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                     <th className='w-[180px] min-w-[160px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
                                         Included
                                     </th>
-                                    {filledServiceNames.map((serviceName) => (
+                                    {visibleServiceNames.map((serviceName) => (
                                         <th
                                             key={serviceName}
                                             className='w-[180px] min-w-[180px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'
@@ -161,7 +150,7 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                             <tbody>
                                 {results.length > 0 &&
                                     results.map((result) => {
-                                        const rowKey = result.slug ?? result.title ?? 'unknown';
+                                        const rowKey = result.title ?? 'unknown';
                                         return (
                                             <tr key={rowKey} className='border-b border-gray-100 last:border-b-0'>
                                                 <td
@@ -171,12 +160,19 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                                     {result.title}
                                                 </td>
                                                 <td className='w-[180px] min-w-[180px] px-4 py-3 text-gray-700'>
-                                                    {formatPrice(symbol, result?.base, locale)}
+                                                    <div className='flex flex-col gap-0.5'>
+                                                        {result?.originalAmount != null && (
+                                                            <span className='text-xs text-gray-400 line-through'>
+                                                                {formatPrice(symbol, result.originalAmount, locale)}
+                                                            </span>
+                                                        )}
+                                                        <span>{formatPrice(symbol, result?.base, locale)}</span>
+                                                    </div>
                                                 </td>
                                                 <td className='w-[160px] min-w-[160px] px-4 py-3 text-gray-600 align-top'>
                                                     <div className='flex flex-col gap-0.5'>
                                                         {(() => {
-                                                            const includedServices = filledServiceNames.filter(
+                                                            const includedServices = visibleServiceNames.filter(
                                                                 (serviceName) =>
                                                                     result?.calculationByService?.[serviceName] != null
                                                             );
@@ -203,7 +199,7 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                                         })()}
                                                     </div>
                                                 </td>
-                                                {filledServiceNames.map((serviceName) =>
+                                                {visibleServiceNames.map((serviceName) =>
                                                     renderExtraServiceCell(serviceName, result, symbol, locale)
                                                 )}
                                                 <td className='w-[180px] min-w-[100px] px-4 py-3 font-semibold text-green-600 whitespace-nowrap'>
@@ -246,11 +242,7 @@ function normalizeUsageToNumbers(serviceNames, usageByService) {
 }
 
 function getPlansForTab(plans, tabtype) {
-    const isMonthly = tabtype === 'Monthly';
-    return plans.filter((plan) => {
-        const planAmount = plan?.amount;
-        return isMonthly ? planAmount?.monthly != null : planAmount?.yearly != null;
-    });
+    return plans.filter((plan) => plan?.type === tabtype);
 }
 
 function getPlanTitle(plan) {
@@ -320,9 +312,8 @@ function getUniqueServiceNames(plans) {
     for (const plan of plans) {
         const servicesList = plan?.services ?? [];
         for (const service of servicesList) {
-            const serviceName = service?.serviceName;
-            const hasDialPlan = service?.dialplan != null && service?.dialplan?.data?.length > 0;
-            // Only include services WITHOUT dial plans (they have their own Dial Plan section)
+            const serviceName = service?.name;
+            const hasDialPlan = service?.dialPlan != null && service?.dialPlan?.data?.length > 0;
             if (serviceName && !hasDialPlan) {
                 serviceNames.add(serviceName);
             }
@@ -347,7 +338,7 @@ function getAllCountriesFromDialPlans(plans) {
     for (const plan of plans) {
         const servicesList = plan?.services ?? [];
         for (const service of servicesList) {
-            const dialplan = service?.dialplan;
+            const dialplan = service?.dialPlan;
             if (dialplan?.data?.length > 0 && dialplan?.columns?.length > 0) {
                 const countryColumn = dialplan.columns.find(
                     (col) =>
@@ -372,10 +363,9 @@ function getAllCountriesFromDialPlans(plans) {
 }
 
 function getDialPlanForService(plans, serviceName) {
-    // Find first plan that has dialplan for this service
     for (const plan of plans) {
-        const service = plan?.services?.find((s) => s?.serviceName === serviceName);
-        const dialplan = service?.dialplan;
+        const service = plan?.services?.find((s) => s?.name === serviceName);
+        const dialplan = service?.dialPlan;
 
         if (dialplan?.data?.length > 0 && dialplan?.columns?.length > 0) {
             // Extract unique countries from dialplan data
@@ -420,15 +410,21 @@ function isUnlimitedCredit(freeCredits) {
     return freeCredits === UNLIMITED_CREDIT_VALUE || freeCredits === UNLIMITED_CREDIT_STRING;
 }
 
+function getDiscountedBase(amount, discounts) {
+    if (!amount || !discounts || discounts.length === 0) return Number(amount) || 0;
+    const discount = discounts[0];
+    const typeId = discount?.discount_type_id ?? discount?.type_id;
+    const value = Number(discount?.value ?? 0);
+    const numAmount = Number(amount);
+    if (typeId === 1) return Math.max(0, numAmount - value);
+    if (typeId === 2) return value >= 100 ? 0 : Math.max(0, numAmount * (1 - value / 100));
+    return numAmount;
+}
+
 function computePlanTotal(plan, tabtype, usageByService) {
-    const isMonthly = tabtype === 'Monthly';
-
-    // Use discounted pricing as base amount
-    const pricing = isMonthly ? plan?.pricing?.monthly : plan?.pricing?.yearly;
-    const priceString = pricing?.price ?? 'Free';
-
-    // Extract numeric value from formatted price (e.g., "₹800" -> 800)
-    const baseAmount = priceString === 'Free' ? 0 : parseFloat(priceString.replace(/[^0-9.-]+/g, '')) || 0;
+    const rawAmount = Number(plan?.amount) || 0;
+    const baseAmount = getDiscountedBase(plan?.amount, plan?.discount);
+    const originalAmount = baseAmount < rawAmount ? rawAmount : null;
 
     const overages = {};
     const includedByService = {};
@@ -438,14 +434,13 @@ function computePlanTotal(plan, tabtype, usageByService) {
     const servicesList = plan?.services ?? [];
 
     for (const service of servicesList) {
-        const serviceName = service?.serviceName;
+        const serviceName = service?.name;
         if (!serviceName) continue;
 
-        // Skip services with dial plans (they're handled in the Dial Plan section)
-        const hasDialPlan = service?.dialplan != null && service?.dialplan?.data?.length > 0;
+        const hasDialPlan = service?.dialPlan != null && service?.dialPlan?.data?.length > 0;
         if (hasDialPlan) continue;
 
-        const freeCredits = service?.included;
+        const freeCredits = service?.freeCredit;
         const isUnlimited = isUnlimitedCredit(freeCredits);
         const includedAmount = isUnlimited ? null : Math.max(0, Number(freeCredits) || 0);
 
@@ -454,14 +449,12 @@ function computePlanTotal(plan, tabtype, usageByService) {
         const usageAmount = Math.max(0, Number(usageByService[serviceName]) || 0);
         const extraUsage = isUnlimited ? 0 : Math.max(0, usageAmount - (includedAmount || 0));
 
-        // Use follow-up rate for services without dialplan
-        const followUpRate = service?.extra;
+        const followUpRate = service?.followUpRate;
         const rateValue = Number(followUpRate);
         const hasNoExtraRate =
             followUpRate == null || Number.isNaN(rateValue) || rateValue === UNLIMITED_CREDIT_VALUE || rateValue < 0;
         const validRate = hasNoExtraRate ? 0 : Math.max(0, rateValue);
 
-        // Calculate overage with proper rounding
         const rawOverageCharge = extraUsage * validRate;
         const overageCharge = Math.round(rawOverageCharge * 100) / 100;
 
@@ -476,11 +469,11 @@ function computePlanTotal(plan, tabtype, usageByService) {
         totalExtraCharges += overageCharge;
     }
 
-    // Round total to 2 decimal places
     const total = Math.round((baseAmount + totalExtraCharges) * 100) / 100;
 
     return {
         base: baseAmount,
+        originalAmount,
         overages,
         includedByService,
         calculationByService,
