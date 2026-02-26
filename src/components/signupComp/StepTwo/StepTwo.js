@@ -221,7 +221,7 @@ class StepTwo extends React.Component {
                                 </div>
                             </div>
                             <span className='text-[12px] w-full text-gray-700'>
-                                <span className='font-bold'>Node:</span> We recommend signing up using your private
+                                <span className='font-bold'>Note:</span> We recommend signing up using your private
                                 domain to get quick assistance.
                             </span>
                         </div>
