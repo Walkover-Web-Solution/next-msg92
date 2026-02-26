@@ -118,104 +118,112 @@ class StepTwo extends React.Component {
                             </div>
                         </div>
 
-                        <div className='w-full flex flex-col gap-2 '>
-                            <label htmlFor='email'>Verify email</label>
-                            <div className='flex xl:flex-row flex-col gap-10'>
-                                <div className='flex sm:flex-row flex-col items-start w-fit gap-4'>
-                                    <div className='flex flex-col items-start gap-6 w-[300px]  '>
-                                        <div className='flex gap-2 items-center w-full '>
-                                            {this.props?.signupByGitHub ? (
-                                                <div className='flex items-center gap-2'>
-                                                    Email Verified{' '}
-                                                    <MdCheckCircle className='ico-green text-green-600' />
-                                                </div>
-                                            ) : (
-                                                <div className='w-full flex flex-col'>
-                                                    <input
-                                                        className={`input focus:outline-none w-full focus:border-accent h-10 ${
-                                                            this.state.emailInputValue.length >= 255
-                                                                ? 'border-red-500'
-                                                                : 'border-gray-300'
-                                                        }`}
-                                                        type='email'
-                                                        id='emailIdentifier'
-                                                        placeholder='Email Address*'
-                                                        defaultValue={this.state.emailIdentifier}
-                                                        onInput={(e) => {
-                                                            this.setState({ emailInputValue: e.target.value });
-                                                            this.props.identifierChange(false);
-                                                        }}
-                                                        disabled={this.props?.emailAccessToken || isLoading}
-                                                        maxLength={255}
-                                                    />
-                                                    <span className='text-[10px] h-2 text-red-500'>
-                                                        {this.state.emailInputValue.length >= 255 &&
-                                                            'Maximum Email Length: 255'}
-                                                    </span>
-                                                </div>
-                                            )}
-                                            <span>
-                                                {this.props?.emailAccessToken && (
-                                                    <MdCheckCircle className='text-green-600' />
+                        <div className='w-full flex flex-col gap-0 '>
+                            <label htmlFor='email' className='pb-2'>
+                                Verify email
+                            </label>
+                            <div className='w-full flex flex-col gap-2 '>
+                                <div className='flex xl:flex-row flex-col gap-10'>
+                                    <div className='flex sm:flex-row flex-col items-start w-fit gap-4'>
+                                        <div className='flex flex-col items-start gap-6 w-[300px]  '>
+                                            <div className='flex gap-2 items-center w-full '>
+                                                {this.props?.signupByGitHub ? (
+                                                    <div className='flex items-center gap-2'>
+                                                        Email Verified{' '}
+                                                        <MdCheckCircle className='ico-green text-green-600' />
+                                                    </div>
+                                                ) : (
+                                                    <div className='w-full flex flex-col'>
+                                                        <input
+                                                            className={`input focus:outline-none w-full focus:border-accent h-10 ${
+                                                                this.state.emailInputValue.length >= 255
+                                                                    ? 'border-red-500'
+                                                                    : 'border-gray-300'
+                                                            }`}
+                                                            type='email'
+                                                            id='emailIdentifier'
+                                                            placeholder='Email Address*'
+                                                            defaultValue={this.state.emailIdentifier}
+                                                            onInput={(e) => {
+                                                                this.setState({ emailInputValue: e.target.value });
+                                                                this.props.identifierChange(false);
+                                                            }}
+                                                            disabled={this.props?.emailAccessToken || isLoading}
+                                                            maxLength={255}
+                                                        />
+                                                        <span className='text-[10px] h-2 text-red-500'>
+                                                            {this.state.emailInputValue.length >= 255 &&
+                                                                'Maximum Email Length: 255'}
+                                                        </span>
+                                                    </div>
                                                 )}
-                                            </span>
+                                                <span>
+                                                    {this.props?.emailAccessToken && (
+                                                        <MdCheckCircle className='text-green-600' />
+                                                    )}
+                                                </span>
+                                            </div>
+                                            {this.props?.emailIdentifier &&
+                                            this.props?.emailSuccessMessage &&
+                                            !this.props?.emailAccessToken ? (
+                                                <p className='text-sm text-success'>
+                                                    {this.props?.emailSuccessMessage} {this.props?.emailIdentifier}.
+                                                </p>
+                                            ) : null}
                                         </div>
-                                        {this.props?.emailIdentifier &&
-                                        this.props?.emailSuccessMessage &&
-                                        !this.props?.emailAccessToken ? (
-                                            <p className='text-sm text-success'>
-                                                {this.props?.emailSuccessMessage} {this.props?.emailIdentifier}.
-                                            </p>
-                                        ) : null}
+
+                                        {this.props?.emailAccessToken || this.props?.signupByGitHub ? (
+                                            <button
+                                                disabled={isLoading}
+                                                className='btn btn-accent btn-otp'
+                                                onClick={(e) => this.props.identifierChange(false)}
+                                            >
+                                                Change{this.props?.signupByGitHub ? '' : '/Re-verify'} Email
+                                            </button>
+                                        ) : (
+                                            <button
+                                                className='btn btn-accent btn-otp btn-outline'
+                                                onClick={() =>
+                                                    this.props.sendOtp(
+                                                        document.getElementById('emailIdentifier').value,
+                                                        false
+                                                    )
+                                                }
+                                                disabled={this.props?.isLoading || isLoading}
+                                            >
+                                                Get OTP
+                                            </button>
+                                        )}
                                     </div>
 
-                                    {this.props?.emailAccessToken || this.props?.signupByGitHub ? (
-                                        <button
-                                            disabled={isLoading}
-                                            className='btn btn-accent btn-otp'
-                                            onClick={(e) => this.props.identifierChange(false)}
-                                        >
-                                            Change{this.props?.signupByGitHub ? '' : '/Re-verify'} Email
-                                        </button>
-                                    ) : (
-                                        <button
-                                            className='btn btn-accent btn-otp btn-outline'
-                                            onClick={() =>
-                                                this.props.sendOtp(
-                                                    document.getElementById('emailIdentifier').value,
-                                                    false
-                                                )
-                                            }
-                                            disabled={this.props?.isLoading || isLoading}
-                                        >
-                                            Get OTP
-                                        </button>
-                                    )}
+                                    {this.props?.emailIdentifier && !this.props?.emailAccessToken ? (
+                                        <>
+                                            <div className='xl:block hidden  h-fill w-[1px] bg-gray-100'></div>
+                                            <div className='flex flex-col gap-4'>
+                                                <Otpinput
+                                                    tag='email'
+                                                    verifyOtp={this.props.verifyOtp}
+                                                    otpLength={this.props.widgetData?.otpLength}
+                                                    requestId={this.props.emailRequestId}
+                                                    notByEmail={false}
+                                                />
+                                                {this.props?.hideEmailRetry ? null : (
+                                                    <RetryOtp
+                                                        allowedRetry={this.props.allowedRetry}
+                                                        OTPRetryModes={this.props.OTPRetryModes}
+                                                        retryOtp={this.props.retryOtp}
+                                                        emailRequestId={this.props.emailRequestId}
+                                                    ></RetryOtp>
+                                                )}
+                                            </div>
+                                        </>
+                                    ) : null}
                                 </div>
-
-                                {this.props?.emailIdentifier && !this.props?.emailAccessToken ? (
-                                    <>
-                                        <div className='xl:block hidden  h-fill w-[1px] bg-gray-100'></div>
-                                        <div className='flex flex-col gap-4'>
-                                            <Otpinput
-                                                tag='email'
-                                                verifyOtp={this.props.verifyOtp}
-                                                otpLength={this.props.widgetData?.otpLength}
-                                                requestId={this.props.emailRequestId}
-                                                notByEmail={false}
-                                            />
-                                            {this.props?.hideEmailRetry ? null : (
-                                                <RetryOtp
-                                                    allowedRetry={this.props.allowedRetry}
-                                                    OTPRetryModes={this.props.OTPRetryModes}
-                                                    retryOtp={this.props.retryOtp}
-                                                    emailRequestId={this.props.emailRequestId}
-                                                ></RetryOtp>
-                                            )}
-                                        </div>
-                                    </>
-                                ) : null}
                             </div>
+                            <span className='text-[12px] w-full text-gray-700'>
+                                <span className='font-bold'>Node:</span> We recommend signing up using your private
+                                domain to get quick assistance.
+                            </span>
                         </div>
                         <div className='w-full flex flex-col gap-2 clint-input-container'>
                             <label htmlFor='contact'>Verify Mobile number</label>
