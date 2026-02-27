@@ -519,7 +519,7 @@ class StepThree extends React.Component {
                                                     }));
                                                     setSharedCookie(
                                                         'interested_services',
-                                                        value.map((obj) => obj.label).join(','),
+                                                        JSON.stringify(value.map((obj) => obj.label)),
                                                         30
                                                     );
                                                 }}
