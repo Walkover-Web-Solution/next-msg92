@@ -300,6 +300,10 @@
                 "title": "WhatsApp Business API Pricing (2025) | MSG91",
                 "description": "Enjoy robust and efficient services, including transactional WhatsApp, communication APIs, and more at affordable prices. Check the pricing today."
             },
+            "whatsappMessages": {
+                "heading": "<h2 class='text-xl md:text-3xl font-bold'>Up to <span class='text-green-600 font-bold text-2xl lg:text-3xl'>10% Lower</span> Than Meta Pricing.</h2>",
+                "sub_heading": "Predictable pricing. No markup. Built for long-term growth."
+            },
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",
@@ -308,7 +312,9 @@
             "whatsappVoice": {
                 "heading": "Enjoy 100% Free WhatsApp Inbound Calls till December!",
                 "sub_heading": "Pricing",
-                "content": ["Pricing after December: Inbound Calls: $0.01/min"]
+                "content": [
+                    "Pricing after December: Inbound Calls: $0.01/min"
+                ]
             }
         },
         "rcs": {

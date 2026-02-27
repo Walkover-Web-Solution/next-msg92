@@ -300,6 +300,10 @@
                 "title": "WhatsApp Pricing in Spain | MSG91-Spain",
                 "description": "Benefit from reliable and effective services like transactional WhatsApp, communication APIs, and more, all at affordable rates. Check out the pricing now."
             },
+            "whatsappMessages": {
+                "heading": "<h2 class='text-xl md:text-3xl font-bold'>Up to <span class='text-green-600 font-bold text-2xl lg:text-3xl'>10% Lower</span> Than Meta Pricing.</h2>",
+                "sub_heading": "Predictable pricing. No markup. Built for long-term growth."
+            },
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",

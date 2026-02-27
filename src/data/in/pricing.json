@@ -301,6 +301,10 @@
                 "title": " WhatsApp Business API Pricing (2025) | WhatsApp Cloud API Cost",
                 "description": "WhatsApp API pricing varies with plans, including WhatsApp Business API price,  Whatsapp cloud API pricing. Check out the Latest Whatsapp API Cost now."
             },
+            "whatsappMessages": {
+                "heading": "<h2 class='text-xl md:text-3xl font-bold'><span class='text-green-600 font-bold'>Zero</span> margin on meta price.</h2>",
+                "sub_heading": "GST excluded."
+            },
             "heading": "Whatsapp API Pricing",
             "tax": "Since we do not impose any service charge, GST will be applied to WhatsApp API pricing",
             "adds": "Zero Whatsapp cloud API pricing for Click to WhatsApp Ads.",
@@ -312,7 +316,9 @@
             "whatsappVoice": {
                 "heading": "Enjoy 100% Free WhatsApp Inbound Calls till December!",
                 "sub_heading": "Pricing",
-                "content": ["Pricing after December: Inbound Calls: ₹0.5/min"]
+                "content": [
+                    "Pricing after December: Inbound Calls: ₹0.5/min"
+                ]
             }
         },
         "rcs": {
