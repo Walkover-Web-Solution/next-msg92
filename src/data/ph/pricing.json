@@ -300,6 +300,10 @@
                 "title": "WhatsApp Pricing in Philippines | MSG91-Philippines",
                 "description": "Experience reliable and powerful services such as transactional WhatsApp, communication APIs, and more, offered at great prices. View the pricing now."
             },
+            "whatsappMessages": {
+                "heading": "<h2 class='text-xl md:text-3xl font-bold'>Lower Than Meta Pricing. <span class='text-green-600 font-bold text-2xl lg:text-3xl'>Guaranteed</span></h2>",
+                "sub_heading": "No markups. No hidden costs. Just better pricing."
+            },
             "connectComp": {
                 "content": "Connect with our team for Pricing .",
                 "sales_btn": "Talk to Sales",

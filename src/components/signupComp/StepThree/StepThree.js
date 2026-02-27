@@ -60,10 +60,11 @@ class StepThree extends React.Component {
 
     handleInputChange = (event) => {
         const { name, value, type, checked } = event.target;
+        const sanitizedValue = name === 'pincode' ? value.replace(/\s/g, '') : value;
         this.setState((prevState) => ({
             formData: {
                 ...prevState.formData,
-                [name]: type === 'checkbox' ? checked : value,
+                [name]: type === 'checkbox' ? checked : sanitizedValue,
             },
         }));
     };
@@ -264,14 +265,16 @@ class StepThree extends React.Component {
     };
 
     validatePincode = () => {
-        const { pincode } = this.state.formData;
-        const pincodeRegex = /^[0-9 A-Z a-z -]{4,11}$/;
-        if (!pincode) {
-            return 'Pincode is required';
+        const { pincode, countryName } = this.state.formData;
+        const isIndia = countryName?.toLowerCase()?.includes('india');
+
+        if (isIndia) {
+            if (!pincode) return 'Pincode is required';
+            if (!/^\d{6}$/.test(pincode)) return 'Pincode must be a valid 6-digit number';
+            return '';
         }
-        if (!pincodeRegex.test(pincode)) {
-            return 'Pincode must be a valid';
-        }
+
+        if (pincode && !/^[A-Za-z0-9-]{3,10}$/.test(pincode)) return 'Pincode must be a valid alphanumeric value';
         return '';
     };
 
@@ -591,7 +594,11 @@ class StepThree extends React.Component {
                                             className={`input input-bordered h-10 w-full ${
                                                 this.state.formErrorData.pincodeError ? 'input-error-display' : ''
                                             }`}
-                                            placeholder='Pincode*'
+                                            placeholder={
+                                                this.state.formData.countryName?.toLowerCase()?.includes('india')
+                                                    ? 'Pincode*'
+                                                    : 'Pincode (optional)'
+                                            }
                                             name='pincode'
                                             value={this.state.formData.pincode}
                                             onChange={this.handleInputChange}
