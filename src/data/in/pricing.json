@@ -388,7 +388,7 @@
             "tax": "Since we do not impose any service charge, GST will be applied to WhatsApp API pricing",
             "adds": "Zero Whatsapp cloud API pricing for Click to WhatsApp Ads.",
             "connectComp": {
-                "content": "Connect with our team for Pricing .",
+                "content": "Connect with our team for Personalized Pricing .",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             },
@@ -426,7 +426,7 @@
                 "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
-                "content": "Connect with our team for Pricing .",
+                "content": "Connect with our team for Personalized Pricing .",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }

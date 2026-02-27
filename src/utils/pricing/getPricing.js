@@ -1,5 +1,5 @@
 import axios from 'axios';
-import getSimplifiedPlans from './getSimplifiedPlans';
+import handlePlanStructure from './handlePlanStructure';
 
 /** @type {Record<string, string>} Map of product page slugs to subscription API ms_id values. */
 const msIds = {
@@ -17,6 +17,20 @@ const currencyByCountry = {
     gb: 'GBP',
 };
 
+/** @type {Record<string, string>} Map of currency codes to symbols. */
+const currencySymbols = {
+    INR: '₹',
+    USD: '$',
+    GBP: '£',
+};
+
+/** @type {Record<string, string>} Map of country codes to locales for number formatting. */
+const localeByCountry = {
+    in: 'en-IN',
+    us: 'en-US',
+    gb: 'en-GB',
+};
+
 /**
  * Fetches and returns simplified pricing plans for a given country and product page.
  *
@@ -25,15 +39,16 @@ const currencyByCountry = {
  * @returns {Promise<Array<object>|object>} Array of simplified plan objects (slug, amount, discount, plan_features, dial_plan, extras), or empty object `{}` if page has no msId.
  * @throws {Error} When the pricing API request fails.
  */
-export default async function getPricing(countryCode, page) {
+export default async function getPricing2(countryCode, page) {
     const msId = msIds[page];
     if (!msId) return {};
 
     const currency = currencyByCountry[countryCode] || 'USD';
 
     try {
-        const plans = await fetchPlans(currency, msId);
-        return getSimplifiedPlans(plans, currency);
+        const plans = await getSubscriptions(currency, msId);
+        const structuredPlans = handlePlanStructure(plans, currency);
+        return structuredPlans;
     } catch (error) {
         throw new Error(`Pricing fetch failed: ${error.message}`);
     }
@@ -46,14 +61,13 @@ export default async function getPricing(countryCode, page) {
  * @param {string} msId - Product ms_id used by the subscription API.
  * @returns {Promise<Array<object>>} Raw plan objects from the API, or empty array if no data.
  */
-async function fetchPlans(currency, msId) {
-    const { data } = await axios.get(`${process.env.SUBSCRIPTION_PRICING_URL}/plans`, {
+async function getSubscriptions(currency, msId) {
+    const data = await axios.get(`${process.env.SUBSCRIPTION_PRICING_URL}/plans`, {
         params: {
             currency,
             ms_id: msId,
             dial_plan_info: true,
         },
     });
-
-    return data?.data ?? [];
+    return data?.data?.data || [];
 }
