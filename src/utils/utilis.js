@@ -50,6 +50,36 @@ export function setCookie(name, value, days) {
     document.cookie = name + '=' + cookieValue + '; path=/';
 }
 
+export function getUtmFromCookies() {
+    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    const result = {};
+    utmKeys.forEach((key) => {
+        const value = getCookie(key);
+        if (value) result[key] = value;
+    });
+    return result;
+}
+
+export function setSharedCookie(name, value, days = 30) {
+    if (typeof document === 'undefined') return;
+    const expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + days);
+
+    const isLocalhost = window.location.hostname === 'localhost';
+    const cookieParts = [
+        `${name}=${encodeURIComponent(value)}`,
+        `expires=${expirationDate.toUTCString()}`,
+        'path=/',
+        'SameSite=Lax',
+    ];
+    if (!isLocalhost) {
+        cookieParts.push('domain=.msg91.com');
+        cookieParts.push('Secure');
+    }
+
+    document.cookie = cookieParts.join('; ');
+}
+
 export function loginWithGitHubAccount(loginProcess) {
     let state = Math.floor(100000000 + Math.random() * 900000000);
     let otherParams = loginProcess ? `githublogin=true` : `githubsignup=true`;

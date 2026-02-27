@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { setSharedCookie } from '@/utils/utilis';
 import {
     MdKeyboardArrowRight,
     MdKeyboardArrowLeft,
@@ -295,6 +296,7 @@ class StepThree extends React.Component {
     };
 
     finalSubmit = () => {
+        setSharedCookie('signup_date', new Date().toISOString().split('T')[0], 30);
         const errors = {
             firstNameError: this.validateFirstName() || this.validateMinMax('firstName', 'First Name', null, 50),
             lastNameError: this.validateLastName() || this.validateMinMax('lastName', 'Last Name', null, 50),
@@ -515,6 +517,11 @@ class StepThree extends React.Component {
                                                             serviceNeeded: value.map((obj) => obj.value),
                                                         },
                                                     }));
+                                                    setSharedCookie(
+                                                        'interested_services',
+                                                        value.map((obj) => obj.label).join(','),
+                                                        30
+                                                    );
                                                 }}
                                                 placeholder='Select Service Needed*'
                                                 options={
