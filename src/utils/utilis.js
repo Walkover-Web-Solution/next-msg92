@@ -51,11 +51,11 @@ export function setCookie(name, value, days) {
 }
 
 export function getUtmFromCookies() {
-    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    if (typeof document === 'undefined') return {};
     const result = {};
-    utmKeys.forEach((key) => {
-        const value = getCookie(key);
-        if (value) result[key] = value;
+    document.cookie.split(';').forEach((cookie) => {
+        const [key, value] = cookie.trim().split('=');
+        if (key?.startsWith('utm_') && value) result[key] = decodeURIComponent(value);
     });
     return result;
 }

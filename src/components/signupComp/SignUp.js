@@ -57,11 +57,9 @@ export default class SignUp extends React.Component {
 
         this.otpWidgetSetup();
 
-        const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
         const urlParams = new URLSearchParams(window.location.search);
-        utmKeys.forEach((key) => {
-            const value = urlParams.get(key);
-            if (value) setSharedCookie(key, value, 30);
+        urlParams.forEach((value, key) => {
+            if (key.startsWith('utm_')) setSharedCookie(key, value, 30);
         });
 
         const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
