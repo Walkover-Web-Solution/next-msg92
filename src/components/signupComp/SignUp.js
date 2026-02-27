@@ -429,7 +429,7 @@ export default class SignUp extends React.Component {
                   customCity: data?.otherCity,
                   country: data?.countryName,
                   city: data?.city === 'other' ? '' : data?.city,
-                  zipcode: isIndia ? (data?.pincode ?? '') : (data?.pincode?.trim() ?? ''),
+                  zipcode: data?.pincode ?? '',
                   address: data?.address,
                   gstNo: data?.gstNumber,
                   countryId: data?.country,
