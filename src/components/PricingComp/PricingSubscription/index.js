@@ -1,86 +1,114 @@
-import { useState, useEffect } from 'react';
-import ConnectWithTeam from '../ConnectWithTeam/ConnectWithTeam';
+import { useState, useRef, useCallback, useMemo } from 'react';
+import ConnectWithTeam from '../ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
-import GetCurrencySymbol from '@/utils/getCurrencySymbol';
-import PricingHello from './PricingHello';
-import PricingSegmento from './PricingSegmento';
-import PricingEmail from './PricingEmail';
+import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
+import DialPlan from '../DialPlan';
+import ComparePlans from '../ComparePlans';
+import CalculatePricingModal from './CalculatePricingModal';
+import PricingCards from './PricingCards';
 
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {
-    const { symbol, currency } = GetCurrencySymbol(pageInfo?.country);
+    const { symbol, currency, locale } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
-    const [hasyYarly, setHasYearly] = useState(false);
+    const [selectedServiceName, setSelectedServiceName] = useState(null);
+    const [showDialPlan, setShowDialPlan] = useState(false);
+    const dialPlanRef = useRef(null);
+    const calculateModalRef = useRef(null);
 
-    useEffect(() => {
-        const yearlyPlan = pricingData?.find((plan) => plan.amount.plan_type === 'Yearly');
-        if (yearlyPlan) {
-            setHasYearly(true);
-        }
-    }, [pricingData]);
+    const onViewRateCard = useCallback((serviceName) => {
+        setSelectedServiceName(serviceName || null);
+        setShowDialPlan(true);
+
+        setTimeout(() => {
+            dialPlanRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+    }, []);
+
+    // Normalize pricingData from handlePlanStructure shape to DialPlan-compatible shape
+    const dialPlanData = Array.isArray(pricingData)
+        ? pricingData.map((plan) => ({
+              ...plan,
+              slug: plan?.name,
+              services: (plan?.services ?? []).map((s) => ({
+                  ...s,
+                  serviceName: s?.name,
+              })),
+          }))
+        : [];
+
+    const onOpenCalculateModal = useCallback(() => {
+        calculateModalRef.current?.showModal();
+    }, []);
+
+    const onCloseCalculateModal = useCallback(() => {
+        calculateModalRef.current?.close();
+    }, []);
+
+    const hasCalculableServices = useMemo(() => {
+        if (!Array.isArray(pricingData)) return false;
+        return pricingData
+            .filter((p) => p?.type === tabtype)
+            .some((plan) =>
+                (plan?.services ?? []).some((s) => {
+                    const hasDialPlan = s?.dialPlan != null && s.dialPlan?.data?.length > 0;
+                    return !hasDialPlan;
+                })
+            );
+    }, [pricingData, tabtype]);
 
     return (
         <>
-            <div className='flex flex-col gap-3 w-full'>
-                <h1 className='text-2xl font-semibold capitalize'>{`${pageInfo?.product} Pricing`}</h1>
+            <div className='flex flex-col gap-4 w-full overflow-hidden'>
+                <h1 className='text-2xl md:text-3xl font-bold capitalize '>{pageData?.heading}</h1>
                 <div className='flex flex-col w-full gap-6'>
-                    {hasyYarly && (
-                        <div role='tablist' className='tabs tabs-boxed p-0 w-fit'>
-                            <span
-                                role='tab'
-                                className={`tab ${tabtype === 'Monthly' && 'tab-active'}`}
-                                onClick={() => {
-                                    setTabtype('Monthly');
-                                }}
-                            >
-                                Monthly
-                            </span>
-                            <span
-                                role='tab'
-                                className={`tab ${tabtype === 'Yearly' && 'tab-active'}`}
-                                onClick={() => {
-                                    setTabtype('Yearly');
-                                }}
-                            >
-                                Yearly (20% off)
-                            </span>
+                    <PricingCards
+                        pricingData={pricingData}
+                        symbol={symbol}
+                        currency={currency}
+                        locale={locale}
+                        onViewRateCard={onViewRateCard}
+                        onCalculateClick={hasCalculableServices ? onOpenCalculateModal : undefined}
+                        tabtype={tabtype}
+                        setTabtype={setTabtype}
+                    />
+                    {showDialPlan && (
+                        <div ref={dialPlanRef}>
+                            <DialPlan
+                                pricingData={dialPlanData}
+                                selectedServiceName={selectedServiceName}
+                                pageData={pageData?.dialPlan}
+                            />
                         </div>
                     )}
-                    {pageInfo?.product === 'hello' && (
-                        <PricingHello pricingData={pricingData} symbol={symbol} tabtype={tabtype} />
-                    )}
-                    {pageInfo?.product === 'segmento' && (
-                        <PricingSegmento
-                            pricingData={pricingData}
-                            symbol={symbol}
-                            tabtype={tabtype}
-                            pageInfo={pageInfo}
-                        />
-                    )}
-                    {pageInfo?.product === 'email' && (
-                        <PricingEmail
-                            pricingData={pricingData}
-                            symbol={symbol}
-                            currency={currency}
-                            tabtype={tabtype}
-                            pageInfo={pageInfo}
-                        />
-                    )}
-
-                    {pageInfo?.country === 'in' || pageInfo?.country === 'gb' ? (
-                        <p className='text-gray-500 '>
-                            {`*Prices are exclusive of ${pageInfo?.country === 'in' ? '18% GST' : 'VAT'}`}
-                        </p>
-                    ) : null}
-
-                    <ConnectWithTeam
-                        product={pageInfo?.product}
-                        href={pageInfo?.product}
-                        pageData={pageData?.connectComp}
-                        isPlan={true}
+                    <ComparePlans
+                        pricingData={pricingData}
+                        symbol={symbol}
+                        locale={locale}
+                        tabtype={tabtype}
+                        pageData={pageData?.comparePlans}
                     />
+                    {pageData?.connectComp && (
+                        <ConnectWithTeam
+                            product={pageInfo?.product}
+                            href={pageInfo?.product}
+                            pageData={pageData?.connectComp}
+                            isPlan={true}
+                        />
+                    )}
                     <FaqsComp data={pageData?.faqComp} notCont={true} />
                 </div>
             </div>
+
+            <dialog ref={calculateModalRef} className='modal'>
+                <CalculatePricingModal
+                    plans={pricingData}
+                    symbol={symbol}
+                    tabtype={tabtype}
+                    currency={currency}
+                    locale={locale}
+                    onClose={onCloseCalculateModal}
+                />
+            </dialog>
         </>
     );
 }

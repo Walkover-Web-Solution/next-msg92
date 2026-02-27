@@ -1,13 +1,12 @@
 {
     "HeadComp": {
-        "title": "Tally Integration - Connect Tally with MSG91",
-        "description": "Integrate accounting effortlessly with MSG91's Tally integration and connectors for smooth business operations. Connect Tally with MSG91 today.",
-        "keywords": "Tally Zapier Integration"
+        "title": "Tally Intergration | Experience Tally Prime - MSG91",
+        "description": "Automate invoice delivery via WhatsApp and Email, ensuring timely communication. Effortlessly send SMS and Voice messages for voucher creations and updations with MSG91 Tally Prime Plugin"
     },
     "IntegrationAppComp": {
         "slug": "tally",
         "nav": {
-            "heading": "Tally Integration and Connectors",
+            "heading": "Tally Integration",
             "subheading": "Send invoices and recover dues",
             "img": "/assets/integrations/tally.svg"
         },

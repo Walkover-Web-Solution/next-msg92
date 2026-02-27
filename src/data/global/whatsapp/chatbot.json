@@ -1,8 +1,7 @@
 {
     "HeadComp": {
-        "title": "AI-Powered WhatsApp Chatbot - Automate Customer Messaging | MSG91",
-        "description": "Enhance conversations using MSG91's AI-powered WhatsApp chatbot for instant, intelligent customer support online. Deploy your chatbot today.",
-        "keywords": "Whatsapp with Chatbot"
+        "title": "Whatsapp with Chatbot | MSG91",
+        "description": "Maximize your business potential with WhatsApp: Automate processes, boost sales, and enhance efficiency with a powerful WhatsApp chatbot. Transform your strategy for success today!"
     },
     "ChatBotComp": {
         "slug": "whatsapp/chatbot",
@@ -11,7 +10,7 @@
             "icon": "/assets/icons/products/whatsapp.svg"
         },
         "tagline": "DOMINATE POPULAR PLATFORMS",
-        "heading": "AI-Powered WhatsApp Chatbot",
+        "heading": "Transform Automation and Sales on WhatsApp",
         "subheading": "Enhance sales, streamline responses, and effortlessly reconnect with your contacts.",
         "banner_img": "/assets/chatbot/banner.png",
         "getstarted_btn": "Get Started",

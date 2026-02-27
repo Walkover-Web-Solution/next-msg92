@@ -1,8 +1,7 @@
 {
     "HeadComp": {
-        "title": "Transactional Email API Service | MSG91",
-        "description": "Ensure timely notifications with MSG91's transactional email API service for reliable email delivery. Send emails efficiently with MSG91 today.",
-        "keywords": "email api"
+        "title": "Transactional Email | Transactional Email API - MSG91",
+        "description": "Deliver secure and reliable transactional emails with MSG91’s easy-to-integrate Transactional Email API. Enhance communication effortlessly for any business."
     },
     "BannerComp": {
         "slug": "email",
@@ -11,7 +10,7 @@
             "icon": "/assets/icons/products/email.svg"
         },
         "tagline": " smarter email strategy",
-        "heading": "Transactional Email API Service",
+        "heading": "Seamless & Secure Email Delivery",
         "subheading": "Keep your communications uninterrupted with an advanced email automation system—fast, reliable, and built for precision.",
         "banner_img": "/assets/global/email/mobile-optimized-email-templates-for-perfect-display.svg",
         "not_absolute": true,

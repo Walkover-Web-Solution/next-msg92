@@ -1,8 +1,7 @@
 {
     "HeadComp": {
-        "title": "Programmable Voice Call API - IVR, Direct Call & Monitoring | MSG91",
-        "description": "Make programmable voice calls easily with MSG91's powerful voice call API for seamless communication. Start integrating with MSG91 today.",
-        "keywords": "Voice Call API"
+        "title": "Voice API for your Business | Voice Call API | MSG91",
+        "description": "Connect with customers using MSG91’s voice call APIs. Use virtual phone numbers and advanced voice features to build meaningful interactions."
     },
     "BannerComp": {
         "slug": "voice",
@@ -12,7 +11,7 @@
         },
         "code": true,
         "tagline": "connect with confidence",
-        "heading": "Programmable Voice Call API",
+        "heading": "Boost customer engagement and build trust",
         "subheading": "Start real-time conversations with crystal clear audio, low latency and deeper insights.",
         "banner_img": "/assets/global/hello/banner.webp",
         "getstarted_btn": "Get Started",

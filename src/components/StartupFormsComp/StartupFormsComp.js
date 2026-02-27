@@ -1,7 +1,6 @@
 export default function StartupFormsComp() {
     return (
         <>
-            <h1 className='text-center py-5 heading'>Startup Form</h1>
             <div className='h-[1800px]'>
                 <script async src='https://tally.so/widgets/embed.js'></script>
                 {/* <iframe className="airtable-embed" src="https://tally.so/r/wkdrdM" frameborder="0" onmousewheel="" width="100%" height="760px"></iframe> */}

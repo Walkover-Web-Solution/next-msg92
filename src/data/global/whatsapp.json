@@ -1,8 +1,7 @@
 {
     "HeadComp": {
-        "title": "WhatsApp Businesses API | MSG91",
-        "description": "Connect smarter with MSG91's WhatsApp Business API for automated messaging and better customer engagement. Integrate with MSG91 now.",
-        "keywords": "WhatsApp API for businesses"
+        "title": "WhatsApp API for businesses | MSG91",
+        "description": "Deliver instant notifications and seamless customer support with MSG91’s WhatsApp API. Engage your audience on their preferred chat platform."
     },
     "BannerComp": {
         "slug": "whatsapp",
@@ -11,7 +10,7 @@
             "icon": "/assets/icons/products/whatsapp.svg"
         },
         "tagline": "WhatsApp Messaging Revolution",
-        "heading": "WhatsApp Businesses API",
+        "heading": "Seamless Global messaging and communications.",
         "subheading": "Use Developer Friendly API to ensure smooth, real-time communication with your customers globally, enhancing engagement and satisfaction.",
         "lottie": "/assets/lotties/global-whatsapp.json",
         "getstarted_btn": "Get Started",

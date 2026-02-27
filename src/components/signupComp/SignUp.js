@@ -3,7 +3,7 @@ import { MdCheck, MdDone } from 'react-icons/md';
 
 import { toast } from 'react-toastify';
 import { MdCheckCircle } from 'react-icons/md';
-import { getCookie, getQueryParamsDeatils, setCookie } from '@/utils/utilis';
+import { getCookie, getQueryParamsDeatils, setCookie, getUtmFromCookies, setSharedCookie } from '@/utils/utilis';
 import Image from 'next/image';
 import StepOne from './StepOne/StepOne';
 import StepTwo from './StepTwo/StepTwo';
@@ -48,7 +48,6 @@ export default class SignUp extends React.Component {
 
     componentDidMount = () => {
         this.msg91Query = getCookie('msg91_query');
-
         if (this.msg91Query) {
             const queryParams = this.msg91Query.startsWith('?')
                 ? this.msg91Query.replace('?', '&')
@@ -57,6 +56,12 @@ export default class SignUp extends React.Component {
         }
 
         this.otpWidgetSetup();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.forEach((value, key) => {
+            if (key.startsWith('utm_')) setSharedCookie(key, value, 30);
+        });
+
         const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
         this.setState({ activeStep: queryParams?.code ? 2 : 1 });
         if (queryParams?.service) {
@@ -74,7 +79,13 @@ export default class SignUp extends React.Component {
                 .then((response) => response?.json())
                 .then((result) => {
                     if (result?.status === 'success') {
-                        location.href = SUCCESS_REDIRECTION_URL?.replace(':session', payload.session);
+                        let redirectUrl = SUCCESS_REDIRECTION_URL?.replace(':session', payload.session);
+                        const signupDate = getCookie('signup_date');
+                        const interestedServices = getCookie('interested_services');
+                        if (signupDate) redirectUrl += `&signup_date=${encodeURIComponent(signupDate)}`;
+                        if (interestedServices)
+                            redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
+                        location.href = redirectUrl;
                     }
                 });
         } catch (error) {
@@ -375,10 +386,16 @@ export default class SignUp extends React.Component {
                         this.setStep(3);
                     } else if (result?.data?.data?.nextStep === 'loginIntoExistingAccount') {
                         this.setState({ isLoading: true });
-                        location.href = SUCCESS_REDIRECTION_URL?.replace(
+                        let redirectUrl = SUCCESS_REDIRECTION_URL?.replace(
                             ':session',
                             result?.data?.sessionDetails?.PHPSESSID
                         );
+                        const signupDate = getCookie('signup_date');
+                        const interestedServices = getCookie('interested_services');
+                        if (signupDate) redirectUrl += `&signup_date=${encodeURIComponent(signupDate)}`;
+                        if (interestedServices)
+                            redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
+                        location.href = redirectUrl;
                     } else if (result?.data?.data?.nextStep === 'hasInvitations') {
                         this.setState({ invitations: result?.data?.data?.invitations });
                         this.setStep(3);
@@ -464,10 +481,16 @@ export default class SignUp extends React.Component {
                 if (result?.status === 'success') {
                     this.setStep(4);
                     setTimeout(() => {
-                        location.href = SUCCESS_REDIRECTION_URL?.replace(
+                        let redirectUrl = SUCCESS_REDIRECTION_URL?.replace(
                             ':session',
                             result?.data?.sessionDetails?.PHPSESSID
                         );
+                        const signupDate = getCookie('signup_date');
+                        const interestedServices = getCookie('interested_services');
+                        if (signupDate) redirectUrl += `&signup_date=${encodeURIComponent(signupDate)}`;
+                        if (interestedServices)
+                            redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
+                        location.href = redirectUrl;
                     }, 10);
                 } else if (result?.hasError) {
                     toast.error(result?.errors?.[0] ?? result?.errors);
@@ -494,7 +517,7 @@ export default class SignUp extends React.Component {
                                     alt='msg91-logo'
                                     loading='lazy'
                                 />
-                                <h2 className='text-2xl font-medium'>{this.props.data.heading}</h2>
+                                <h1 className='text-2xl font-medium'>{this.props.data.heading}</h1>
                             </div>
                             <div className='flex flex-col gap-5'>
                                 <h2 className='text-xl'>{this.props.data.subheading}</h2>

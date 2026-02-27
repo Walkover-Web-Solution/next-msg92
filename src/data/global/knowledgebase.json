@@ -1,8 +1,7 @@
 {
     "HeadComp": {
-        "title": "Knowledge Base Software Solutions - Create Your Own Knowledge Base | MSG91",
-        "description": "MSG91 offers advanced knowledge base software solutions to organize and share information efficiently. Build your knowledge hub now.",
-        "keywords": "knowledge base software"
+        "title": "Customer knowledgebase platform by MSG91",
+        "description": "Offer customers a centralized knowledge base for quick answers to queries about your products and services. Enhance satisfaction with self-service tools."
     },
     "BannerComp": {
         "slug": "knowledgebase",
@@ -11,7 +10,7 @@
             "icon": "/assets/icons/products/knowledgebase.svg"
         },
         "tagline": "Empower Customers with Self-Service Options",
-        "heading": "Knowledge Base Software Solutions",
+        "heading": "Knowledge base is the backbone for good customer support",
         "subheading": "Get all essential features of knowledge base software at nominal price",
         "banner_img": "/assets/global/knowledgebase/knowledgebase.svg",
         "getstarted_btn": "Get Started FREE forever",

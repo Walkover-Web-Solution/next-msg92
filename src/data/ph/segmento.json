@@ -1,8 +1,7 @@
- { "HeadComp": {
+{ "HeadComp": {
   "title": "Customer Segmentation Software | MSG91-Philippines",
-  "description": "Automate customer segmentation based on behavior, demographics, and interests. Personalize journeys and execute targeted campaigns to drive better results.",
-  "keywords": "Customer Segmentation Software"
-},
+  "description": "Automate customer segmentation based on behavior, demographics, and interests. Personalize journeys and execute targeted campaigns to drive better results."
+}, 
        "BannerComp": {
         "slug": "segmento",
         "product": {

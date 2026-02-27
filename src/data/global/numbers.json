@@ -1,8 +1,7 @@
 {
     "HeadComp": {
-        "title": "Numbers API Services for Business | MSG91",
-        "description": "Manage numbers efficiently using MSG91's numbers API services for business growth and smooth operations. Explore MSG91 services now.",
-        "keywords": "Numbers API"
+        "title": "Numbers API for business | MSG91",
+        "description": "Engage better with Long Codes for receiving, replying, and customizing SMS. Deliver personalized communication and improve customer relationships."
     },
     "BannerComp": {
         "slug": "numbers",
@@ -11,7 +10,7 @@
             "icon": "/assets/icons/products/numbers.svg"
         },
         "tagline": "Unlock the Power of Virtual Numbers",
-        "heading": "Numbers API Services for Business",
+        "heading": "Receive, Reply, and Customize SMS with Long Codes, for Ultimate Engagement and Communication!",
         "banner_img": "/assets/global/numbers/banner.svg",
         "getstarted_btn": "Get Started",
         "trustedByComp": {

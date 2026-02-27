@@ -1,4 +1,4 @@
-import getPricingURL from '@/utils/getPricingURL';
+import getPricingURL from '@/utils/pricing/getPricingURL';
 import getURL from '@/utils/getURL';
 import { useState } from 'react';
 import { InlineWidget } from 'react-calendly';

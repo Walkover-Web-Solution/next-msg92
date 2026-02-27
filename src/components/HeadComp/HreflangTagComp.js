@@ -15,12 +15,11 @@ export default function HreflangTagComp({ pageInfo }) {
                 href={`${process.env.BASE_URL}${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
             />
 
-            {/* causing redirection errors */}
-            {/* <link
+            <link
                 rel='alternate'
                 hrefLang='en'
                 href={`${process.env.BASE_URL}${pageInfo?.baseURL ? '/' + pageInfo.baseURL : ''}`}
-            /> */}
+            />
 
             {countryData.map((country, index) => {
                 const isGlobalPage = specialPages?.global.includes(pageInfo?.page);

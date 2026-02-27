@@ -10,7 +10,7 @@ export default function ChatBotPageComp({ data, pageInfo }) {
         <>
             <section className='container cont cont_gap cont_p'>
                 <div className='flex flex-col gap-1'>
-                    <h1 className='heading'>{data?.heading || 'Automate Customer Conversation with AI Chatbot'}</h1>
+                    <h1 className='heading'>Automate Customer Conversation with AI Chatbot</h1>
                     <p className='subheading'>
                         Deliver human-like support on WhatsApp, Instagram, and web—without the effort. Just plug, play,
                         and personalize.

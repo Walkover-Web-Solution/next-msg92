@@ -1,8 +1,7 @@
 {
     "HeadComp": {
-        "title": "OTP Magic Link Service Providers - Get Passwordless Authentication OTP | MSG91",
-        "description": "Simplify logins using MSG91's OTP magic link service providers for seamless, secure access. Enable frictionless authentication today.",
-        "keywords": "OTP Magic Link"
+        "title": "MSG91 OTP Magic Link - Secure & Easy User Authentication",
+        "description": "Enable smooth user sign-ups with MSG91 OTP Magic Link. Secure, one-click access eliminates manual OTPs, improving experiences and boosting conversions."
     },
     "MagicLinkComp": {
              "link": "otp/magiclink",
@@ -12,7 +11,7 @@
             "icon": "/assets/icons/products/otp.svg"
         },
         "tagline": "Effortless Access, Instant Authentication",
-        "heading": "OTP Magic Link Service Providers",
+        "heading": "Authenticate Seamlessly with Magic Link",
         "subheading": "Authenticating users is now easier and faster. Just send a single link, and your users can verify themselves instantly.",
         "banner_img": "/assets/magiclink/magic-link-banner.svg",
         "getstarted_btn": "Get Started",

@@ -1,8 +1,7 @@
 {
     "HeadComp": {
-        "title": "URL Shortener - Create Branded Short Links | MSG91",
-        "description": "Create branded short links easily with MSG91's powerful URL shortener for enhanced tracking and marketing impact. Start shortening with MSG91 today.",
-        "keywords": "URL Shortener"
+        "title": "ShortUrl",
+        "description": "Stand out with branded short links that drive clicks and improve conversions. Customize, track, and manage smart URLs for smarter marketing."
     },
     "BannerComp": {
         "slug": "shorturl",
@@ -11,7 +10,7 @@
             "icon": "/assets/icons/products/shorturl.svg"
         },
         "tagline": "Simplify your links",
-        "heading": "Create Branded Short Links with URL Shortener",
+        "heading": "Customise, share and track smart links",
         "subheading": "Optimise your complex links to create short, cleaner links that are easier to share..",
         "banner_img": "/assets/global/shorturl/shorturl.svg",
         "getstarted_btn": "Get Started for Free",

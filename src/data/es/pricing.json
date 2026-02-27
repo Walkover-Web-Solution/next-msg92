@@ -65,6 +65,26 @@
                 "title": "Hello Pricing in Spain | MSG91-Spain",
                 "description": "Benefit from reliable and effective services like transactional Hello, communication APIs, and more, all at affordable rates. Check out the pricing now."
             },
+            "heading": "Hello Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
                 "sales_btn": "Talk to Sales",
@@ -117,6 +137,26 @@
             "HeadComp": {
                 "title": "Segmento Pricing in Spain | MSG91-Spain",
                 "description": "Benefit from reliable and effective services like transactional Segmento, communication APIs, and more, all at affordable rates. Check out the pricing now."
+            },
+            "heading": "Segmento Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "get_started": "Get Started",
             "connectComp": {
@@ -179,6 +219,26 @@
             "HeadComp": {
                 "title": "Email Pricing in Spain | MSG91-Spain",
                 "description": "Benefit from reliable and effective services like transactional Email, communication APIs, and more, all at affordable rates. Check out the pricing now."
+            },
+            "heading": "Email Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
             },
             "connectComp": {
                 "content": "Connect with our team for a personalized plan to meet your needs.",
@@ -300,21 +360,34 @@
                 "title": "WhatsApp Pricing in Spain | MSG91-Spain",
                 "description": "Benefit from reliable and effective services like transactional WhatsApp, communication APIs, and more, all at affordable rates. Check out the pricing now."
             },
+            "heading": "WhatsApp Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "whatsappMessages": {
                 "heading": "<h2 class='text-xl md:text-3xl font-bold'>Up to <span class='text-green-600 font-bold text-2xl lg:text-3xl'>10% Lower</span> Than Meta Pricing.</h2>",
                 "sub_heading": "Predictable pricing. No markup. Built for long-term growth."
             },
             "connectComp": {
-                "content": "Connect with our team for Pricing .",
+                "content": "Connect with our team for Personalized Pricing .",
                 "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
-            },
-            "whatsappVoice": {
-                "heading": "Enjoy 100% Free WhatsApp Inbound Calls till December!",
-                "sub_heading": "Pricing",
-                "content": [
-                    "Pricing after December: Inbound Calls: $0.01/min"
-                ]
             }
         },
         "rcs": {
@@ -322,7 +395,29 @@
                 "title": "RCS Pricing in Spain | MSG91-Spain",
                 "description": "Benefit from reliable and effective services like transactional RCS, communication APIs, and more, all at affordable rates. Check out the pricing now."
             },
+            "heading": "RCS Pricing",
+            "pricingPlans": {
+                "ctaText": "Get Started",
+                "viewCallingRatesText": "View Dial Plan",
+                "calculatePricingText": "Calculate pricing",
+                "compareAllFeaturesText": "Compare all features ↓"
+            },
+            "dialPlan": {
+                "dialplanRatesHeading": "Dialplan Rates",
+                "showingRatesFor": "Showing rates for",
+                "planLabelSuffix": "plan",
+                "searchPlaceholder": "Search country...",
+                "noResults": "No results found"
+            },
+            "comparePlans": {
+                "heading": "Detailed Feature Comparison",
+                "description": "Dive deep into what each plan offers. From startup essentials to enterprise-grade capabilities, we have the right set of tools for your growth.",
+                "comparePlansHeading": "Compare Plans",
+                "featuresColumnLabel": "FEATURES"
+            },
             "connectComp": {
+                "content": "Connect with our team for Personalized Pricing .",
+                "sales_btn": "Talk to Sales",
                 "know_more": "Know more about"
             }
         }
