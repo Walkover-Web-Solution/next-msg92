@@ -1,5 +1,8 @@
 import React, { useEffect, useMemo, useState, useRef, useCallback } from 'react';
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { DEBOUNCE_DELAY, SEARCHABLE_FIELDS, MAX_TABLE_HEIGHT, EMPTY_ARRAY } from '../constants';
+
+const SCROLL_DISTANCE = 300;
 
 function useDebouncedValue(value, delay) {
     const [debouncedValue, setDebouncedValue] = useState(value);
@@ -73,60 +76,109 @@ function extractAllDialPlans(pricingData) {
     return result;
 }
 
-const DialPlanTable = React.memo(function DialPlanTable({ columns, data, noResultsText }) {
+const DialPlanTable = React.memo(function DialPlanTable({
+    columns,
+    data,
+    noResultsText,
+    search,
+    onSearchChange,
+    searchPlaceholder,
+}) {
     const hasData = data.length > 0;
+    const tableRef = useRef(null);
+
+    const scrollLeft = () => tableRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' });
+    const scrollRight = () => tableRef.current?.scrollBy({ left: SCROLL_DISTANCE, behavior: 'smooth' });
 
     return (
-        <div className='flex flex-col gap-2'>
-            <div className='max-w-7xl'>
-                <div className='w-full overflow-x-auto'>
-                    <div
-                        style={{ maxHeight: MAX_TABLE_HEIGHT }}
-                        className='overflow-y-auto border border-gray-200 rounded'
+        <div className='flex flex-col gap-3'>
+            <div className='flex items-center justify-between gap-4'>
+                <input
+                    type='text'
+                    placeholder={searchPlaceholder}
+                    value={search}
+                    onChange={onSearchChange}
+                    className='w-full max-w-xs rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-indigo-400 transition-colors'
+                    autoComplete='off'
+                    aria-label='Search dial plan rates'
+                />
+                <div className='flex items-center gap-2'>
+                    <button
+                        type='button'
+                        onClick={scrollLeft}
+                        aria-label='Scroll left'
+                        className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                     >
-                        <table className='min-w-full border-collapse text-sm'>
-                            <thead className='sticky top-0 z-10 bg-gray-100'>
+                        <MdChevronLeft size={18} />
+                    </button>
+                    <button
+                        type='button'
+                        onClick={scrollRight}
+                        aria-label='Scroll right'
+                        className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
+                    >
+                        <MdChevronRight size={18} />
+                    </button>
+                </div>
+            </div>
+            <div className='w-full overflow-x-auto'>
+                <div
+                    style={{ maxHeight: MAX_TABLE_HEIGHT }}
+                    className='overflow-y-auto rounded-xl border border-slate-200 bg-white'
+                    ref={tableRef}
+                >
+                    <table className='table-fixed min-w-max w-full border-collapse text-sm'>
+                        <thead className='sticky top-0 z-30 bg-slate-50'>
+                            <tr className='border-b border-slate-200'>
+                                {columns.map((column, colIndex) => (
+                                    <th
+                                        key={column.key}
+                                        className={`px-5 py-3.5 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap border-r border-slate-200 last:border-r-0 ${
+                                            colIndex === 0 ? 'sticky left-0 bg-slate-50 z-40' : ''
+                                        }`}
+                                    >
+                                        {column.label}
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {hasData ? (
+                                data.map((row, index) => {
+                                    const rowKey = row.id ?? row.country_name ?? `row-${index}`;
+                                    const rowBg = index % 2 === 0 ? 'bg-white' : 'bg-slate-50/50';
+                                    return (
+                                        <tr
+                                            key={rowKey}
+                                            className={`border-b border-slate-100 last:border-b-0 ${rowBg}`}
+                                        >
+                                            {columns.map((col, colIndex) => (
+                                                <td
+                                                    key={col.key}
+                                                    className={`px-5 py-3 text-sm text-slate-600 border-r border-slate-100 last:border-r-0 ${
+                                                        colIndex === 0
+                                                            ? `sticky left-0 ${rowBg} z-20 font-medium text-slate-700 whitespace-nowrap`
+                                                            : ''
+                                                    }`}
+                                                >
+                                                    {row[col.key] ?? '-'}
+                                                </td>
+                                            ))}
+                                        </tr>
+                                    );
+                                })
+                            ) : (
                                 <tr>
-                                    {columns.map((column) => (
-                                        <th
-                                            key={column.key}
-                                            className='px-4 py-3 text-left text-xs font-semibold tracking-wide border-b border-r border-gray-300 whitespace-nowrap'
-                                        >
-                                            {column.label}
-                                        </th>
-                                    ))}
+                                    <td
+                                        colSpan={columns.length}
+                                        className='px-5 py-8 text-center text-sm text-slate-400'
+                                    >
+                                        {noResultsText}
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody className='bg-white'>
-                                {hasData ? (
-                                    data.map((row, index) => {
-                                        const rowKey = row.id ?? row.country_name ?? `row-${index}`;
-                                        return (
-                                            <tr key={rowKey} className='border-b border-gray-200 last:border-b-0'>
-                                                {columns.map((col) => (
-                                                    <td
-                                                        key={col.key}
-                                                        className='px-4 py-3 text-gray-700 whitespace-nowrap border-r border-gray-100 last:border-r-0'
-                                                    >
-                                                        {row[col.key] ?? '-'}
-                                                    </td>
-                                                ))}
-                                            </tr>
-                                        );
-                                    })
-                                ) : (
-                                    <tr>
-                                        <td
-                                            colSpan={columns.length}
-                                            className='px-4 py-6 text-center text-sm text-gray-500'
-                                        >
-                                            {noResultsText}
-                                        </td>
-                                    </tr>
-                                )}
-                            </tbody>
-                        </table>
-                    </div>
+                            )}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -170,32 +222,20 @@ export default function DialPlan({ pricingData, selectedServiceName, pageData })
     const activeData = filteredDataByPlan[activeIndex] ?? filteredDataByPlan[0] ?? [];
 
     return (
-        <section className='w-full py-4 flex flex-col gap-6'>
+        <section className='w-full py-4 flex flex-col gap-4'>
             <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
                 <div>
-                    <h3 className='text-lg sm:text-xl font-semibold'>{pageData?.dialplanRatesHeading}</h3>
+                    <h3 className='text-2xl font-semibold text-slate-900'>{pageData?.dialplanRatesHeading}</h3>
                     {activeDialPlan?.serviceName && (
-                        <p className='text-md'>
-                            {pageData?.showingRatesFor} <span className='font-bold'>{activeDialPlan.serviceName}</span>
+                        <p className='text-sm text-slate-500 mt-1'>
+                            {pageData?.showingRatesFor}{' '}
+                            <span className='font-semibold text-slate-700'>{activeDialPlan.serviceName}</span>
                         </p>
                     )}
                 </div>
-
-                <div className='w-full sm:w-64'>
-                    <input
-                        type='text'
-                        placeholder={pageData?.searchPlaceholder}
-                        value={search}
-                        onChange={handleSearchChange}
-                        className='w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:ring-1'
-                        autoComplete='off'
-                        aria-label='Search dial plan rates'
-                    />
-                </div>
             </div>
-
             {dialPlans.length > 1 && (
-                <div className='inline-flex w-fit rounded border border-gray-200 bg-white p-1'>
+                <div className='inline-flex w-fit rounded-lg border border-slate-200 bg-white overflow-hidden'>
                     {dialPlans.map((dp) => (
                         <button
                             key={dp.serviceName}
@@ -204,7 +244,11 @@ export default function DialPlan({ pricingData, selectedServiceName, pageData })
                                 setActiveService(dp.serviceName);
                                 setSearch('');
                             }}
-                            className={`px-4 py-1.5 text-sm font-medium rounded transition ${activeService === dp.serviceName ? 'bg-gray-900 text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                            className={`px-4 py-2 text-sm font-medium transition-colors ${
+                                activeService === dp.serviceName
+                                    ? 'bg-indigo-600 text-white'
+                                    : 'text-indigo-600 hover:bg-indigo-50'
+                            }`}
                         >
                             {dp.serviceName}
                         </button>
@@ -213,7 +257,14 @@ export default function DialPlan({ pricingData, selectedServiceName, pageData })
             )}
 
             {activeDialPlan && (
-                <DialPlanTable columns={activeDialPlan.columns} data={activeData} noResultsText={pageData?.noResults} />
+                <DialPlanTable
+                    columns={activeDialPlan.columns}
+                    data={activeData}
+                    noResultsText={pageData?.noResults}
+                    search={search}
+                    onSearchChange={handleSearchChange}
+                    searchPlaceholder={pageData?.searchPlaceholder}
+                />
             )}
         </section>
     );

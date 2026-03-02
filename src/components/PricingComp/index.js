@@ -12,6 +12,7 @@ import PricingSubscription from './PricingSubscription';
 import ConnectWithTeam from './ConnectWithTeam';
 
 export default function PricingComp({ pricingData, pageInfo, pageData, products, commonData, country }) {
+    console.log('⚡️ ~ :15 ~ PricingComp ~ pricingData:', pricingData);
     if (pricingData) {
         return (
             <>

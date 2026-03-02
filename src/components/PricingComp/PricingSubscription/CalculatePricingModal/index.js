@@ -69,21 +69,22 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                 <MdClose aria-hidden='true' />
             </button>
 
-            <div className='flex flex-col'>
-                <h3 className='text-lg sm:text-2xl font-semibold'>Calculate pricing</h3>
-                <p className='text-md'>Enter your expected usage to compare plan costs.</p>
+            <div className='flex flex-col gap-1'>
+                <h3 className='text-xl font-semibold text-slate-900'>Calculate pricing</h3>
+                <p className='text-sm text-slate-500'>Enter your expected usage to compare plan costs.</p>
             </div>
 
             {visibleServiceNames.length > 0 ? (
                 <div className='flex flex-wrap gap-4 items-end'>
                     {visibleServiceNames.map((serviceName) => {
-                        const defaultValue = SERVICE_DEFAULTS[serviceName] ?? DEFAULT_FALLBACK_VALUE;
                         const inputValue = usageByService[serviceName] ?? DEFAULT_FALLBACK_VALUE;
                         const hasError = validationError && !isFieldFilled(inputValue);
 
                         return (
-                            <label key={serviceName} className='flex flex-col gap-1 w-full max-w-[200px]'>
-                                <span className='text-xs font-medium'>{serviceName}</span>
+                            <label key={serviceName} className='flex flex-col gap-1.5 w-full max-w-[200px]'>
+                                <span className='text-xs font-semibold text-slate-400 uppercase tracking-wider'>
+                                    {serviceName}
+                                </span>
                                 <input
                                     type='number'
                                     min={INPUT_MIN}
@@ -98,7 +99,7 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                             e.preventDefault();
                                         }
                                     }}
-                                    className={`input input-bordered h-9 text-sm focus:outline-none ${hasError ? 'input-error' : ''}`}
+                                    className={`input input-bordered h-9 text-sm focus:outline-none rounded-lg border-slate-200 focus:border-indigo-400 ${hasError ? 'border-red-400' : ''}`}
                                     aria-invalid={hasError}
                                     aria-label={`Enter usage for ${serviceName}`}
                                 />
@@ -107,107 +108,110 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                     })}
 
                     {validationError && (
-                        <p className='text-sm text-error w-full' role='alert'>
+                        <p className='text-sm text-red-500 w-full' role='alert'>
                             {validationError}
                         </p>
                     )}
                 </div>
             ) : (
-                <p className='text-sm text-gray-500'>No usage-based services in the current plans.</p>
+                <p className='text-sm text-slate-400'>No usage-based services in the current plans.</p>
             )}
 
             {visibleServiceNames.length > 0 && results.length > 0 && (
-                <div className='space-y-3'>
-                    <h4 className='text-sm font-semibold text-gray-700'>Plan comparison</h4>
+                <div className='flex flex-col gap-3'>
+                    <p className='text-xs font-semibold text-slate-400 uppercase tracking-wider'>Plan comparison</p>
 
-                    <div className='overflow-x-auto rounded-lg border border-gray-200 bg-white'>
+                    <div className='overflow-x-auto rounded-xl border border-slate-200 bg-white'>
                         <table className='w-full min-w-[600px] table-fixed text-sm'>
-                            <thead className='bg-gray-50'>
-                                <tr className='border-b border-gray-200'>
-                                    <th className='w-[180px] min-w-[180px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
+                            <thead className='bg-slate-50'>
+                                <tr className='border-b border-slate-200'>
+                                    <th className='w-[180px] min-w-[180px] px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap'>
                                         Plan
                                     </th>
-                                    <th className='w-[180px] min-w-[180px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
+                                    <th className='w-[180px] min-w-[180px] px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap'>
                                         Plan Amount
                                     </th>
-                                    <th className='w-[180px] min-w-[160px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
+                                    <th className='w-[180px] min-w-[160px] px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap'>
                                         Included
                                     </th>
                                     {visibleServiceNames.map((serviceName) => (
                                         <th
                                             key={serviceName}
-                                            className='w-[180px] min-w-[180px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'
+                                            className='w-[180px] min-w-[180px] px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap'
                                         >
                                             Extra {serviceName}
                                         </th>
                                     ))}
-                                    <th className='w-[180px] min-w-[180px] px-4 py-3 text-left text-xs font-semibold whitespace-nowrap'>
+                                    <th className='w-[180px] min-w-[180px] px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap'>
                                         Total
                                     </th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                {results.length > 0 &&
-                                    results.map((result) => {
-                                        const rowKey = result.title ?? 'unknown';
-                                        return (
-                                            <tr key={rowKey} className='border-b border-gray-100 last:border-b-0'>
-                                                <td
-                                                    className='w-[180px] min-w-[180px] px-4 py-3 text-gray-700 truncate'
-                                                    title={result.title}
-                                                >
-                                                    {result.title}
-                                                </td>
-                                                <td className='w-[180px] min-w-[180px] px-4 py-3 text-gray-700'>
-                                                    <div className='flex flex-col gap-0.5'>
-                                                        {result?.originalAmount != null && (
-                                                            <span className='text-xs text-gray-400 line-through'>
-                                                                {formatPrice(symbol, result.originalAmount, locale)}
-                                                            </span>
-                                                        )}
-                                                        <span>{formatPrice(symbol, result?.base, locale)}</span>
-                                                    </div>
-                                                </td>
-                                                <td className='w-[160px] min-w-[160px] px-4 py-3 text-gray-600 align-top'>
-                                                    <div className='flex flex-col gap-0.5'>
-                                                        {(() => {
-                                                            const includedServices = visibleServiceNames.filter(
-                                                                (serviceName) =>
-                                                                    result?.calculationByService?.[serviceName] != null
+                                {results.map((result, resultIndex) => {
+                                    const rowKey = result.title ?? 'unknown';
+                                    return (
+                                        <tr
+                                            key={rowKey}
+                                            className={`border-b border-slate-100 last:border-b-0 ${resultIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}
+                                        >
+                                            <td
+                                                className='w-[180px] min-w-[180px] px-4 py-3 text-sm font-medium text-slate-900 truncate'
+                                                title={result.title}
+                                            >
+                                                {result.title}
+                                            </td>
+                                            <td className='w-[180px] min-w-[180px] px-4 py-3 text-slate-700'>
+                                                <div className='flex flex-col gap-0.5'>
+                                                    {result?.originalAmount != null && (
+                                                        <span className='text-xs text-slate-400 line-through'>
+                                                            {formatPrice(symbol, result.originalAmount, locale)}
+                                                        </span>
+                                                    )}
+                                                    <span className='font-semibold text-slate-900'>
+                                                        {formatPrice(symbol, result?.base, locale)}
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td className='w-[160px] min-w-[160px] px-4 py-3 text-slate-600 align-top'>
+                                                <div className='flex flex-col gap-0.5'>
+                                                    {(() => {
+                                                        const includedServices = visibleServiceNames.filter(
+                                                            (serviceName) =>
+                                                                result?.calculationByService?.[serviceName] != null
+                                                        );
+
+                                                        if (includedServices.length === 0) {
+                                                            return <span className='text-xs text-slate-400'>--</span>;
+                                                        }
+
+                                                        return includedServices.map((serviceName) => {
+                                                            const includedAmount =
+                                                                result?.includedByService?.[serviceName];
+                                                            const displayText =
+                                                                includedAmount == null ? 'Unlimited' : includedAmount;
+                                                            return (
+                                                                <span
+                                                                    key={serviceName}
+                                                                    className='text-xs text-slate-600'
+                                                                >
+                                                                    {displayText} {serviceName}
+                                                                </span>
                                                             );
-
-                                                            if (includedServices.length === 0) {
-                                                                return (
-                                                                    <span className='text-xs text-gray-500'>--</span>
-                                                                );
-                                                            }
-
-                                                            return includedServices.map((serviceName) => {
-                                                                const includedAmount =
-                                                                    result?.includedByService?.[serviceName];
-                                                                const displayText =
-                                                                    includedAmount == null
-                                                                        ? 'Unlimited'
-                                                                        : includedAmount;
-                                                                return (
-                                                                    <span key={serviceName} className='text-xs'>
-                                                                        {displayText} {serviceName}
-                                                                    </span>
-                                                                );
-                                                            });
-                                                        })()}
-                                                    </div>
-                                                </td>
-                                                {visibleServiceNames.map((serviceName) =>
-                                                    renderExtraServiceCell(serviceName, result, symbol, locale)
-                                                )}
-                                                <td className='w-[180px] min-w-[100px] px-4 py-3 font-semibold text-green-600 whitespace-nowrap'>
-                                                    {formatTotalPrice(symbol, result?.total, locale)}
-                                                </td>
-                                            </tr>
-                                        );
-                                    })}
+                                                        });
+                                                    })()}
+                                                </div>
+                                            </td>
+                                            {visibleServiceNames.map((serviceName) =>
+                                                renderExtraServiceCell(serviceName, result, symbol, locale)
+                                            )}
+                                            <td className='w-[180px] min-w-[100px] px-4 py-3 font-bold text-indigo-600 whitespace-nowrap'>
+                                                {formatTotalPrice(symbol, result?.total, locale)}
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
                             </tbody>
                         </table>
                     </div>

@@ -1,5 +1,5 @@
 import { useRef, useMemo } from 'react';
-import { MdCheck, MdClose, MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { MdCheckCircleOutline, MdCancel, MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 const SCROLL_DISTANCE = 300;
 const EMPTY_ARRAY = [];
@@ -94,42 +94,42 @@ export default function ComparePlans({ pricingData, symbol, locale, tabtype, pag
         <section id='compare-plans' className='w-full py-6'>
             <div className='max-w-7xl'>
                 <div className='flex py-4 items-center justify-between'>
-                    <h3 className='text-2xl font-semibold text-gray-900'>{pageData?.comparePlansHeading}</h3>
+                    <h3 className='text-2xl font-semibold text-slate-900'>{pageData?.comparePlansHeading}</h3>
                     <div className='flex items-center gap-2'>
                         <button
                             type='button'
                             onClick={scrollLeft}
                             aria-label='Scroll left to view previous plans'
-                            className='flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100'
+                            className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                         >
-                            <MdChevronLeft className='text-xl' aria-hidden='true' />
+                            <MdChevronLeft size={18} aria-hidden='true' />
                         </button>
                         <button
                             type='button'
                             onClick={scrollRight}
                             aria-label='Scroll right to view more plans'
-                            className='flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100'
+                            className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                         >
-                            <MdChevronRight className='text-lg' aria-hidden='true' />
+                            <MdChevronRight size={18} aria-hidden='true' />
                         </button>
                     </div>
                 </div>
 
                 <div
                     ref={tableRef}
-                    className='overflow-x-auto overflow-y-auto rounded border border-gray-200 bg-white'
+                    className='overflow-x-auto overflow-y-auto rounded-xl border border-slate-200 bg-white'
                     style={{ maxHeight: '600px' }}
                 >
                     <table className='table-fixed min-w-max w-full border-collapse text-sm'>
-                        <thead className='bg-gray-50 sticky top-0 z-30'>
-                            <tr className='border-b border-gray-200'>
-                                <th className='w-[200px] px-4 py-4 text-left font-medium text-gray-500 sticky left-0 bg-gray-50 z-40 border-r border-gray-200'>
+                        <thead className='bg-slate-50 sticky top-0 z-30'>
+                            <tr className='border-b border-slate-200'>
+                                <th className='w-[200px] px-5 py-4 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider sticky left-0 bg-slate-50 z-40 border-r border-slate-200'>
                                     {pageData?.featuresColumnLabel}
                                 </th>
                                 {planNames.map((name, index) => (
                                     <th
                                         key={index}
-                                        className='w-[150px] px-4 py-4 text-center font-semibold text-gray-900 border-l border-gray-200 capitalize'
+                                        className='w-[160px] px-5 py-4 text-center text-sm font-semibold text-slate-900 border-l border-slate-200 capitalize'
                                     >
                                         {name}
                                     </th>
@@ -137,39 +137,42 @@ export default function ComparePlans({ pricingData, symbol, locale, tabtype, pag
                             </tr>
                         </thead>
                         <tbody>
-                            {rows.map((row) => (
-                                <tr key={row.label} className={`border-b border-gray-200 bg-white`}>
-                                    <td className='w-[210px] px-4 py-4 text-gray-600 whitespace-nowrap sticky left-0 bg-inherit z-20 border-r border-gray-200'>
+                            {rows.map((row, rowIndex) => (
+                                <tr
+                                    key={row.label}
+                                    className={`border-b border-slate-100 last:border-b-0 ${rowIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}
+                                >
+                                    <td className='w-[210px] px-5 py-3.5 text-sm text-slate-600 whitespace-nowrap sticky left-0 bg-inherit z-20 border-r border-slate-100'>
                                         {row.label}
                                     </td>
                                     {row.values.map((value, index) => (
                                         <td
                                             key={index}
-                                            className='w-[180px] px-4 py-4 text-center border-l border-gray-200'
+                                            className='w-[160px] px-5 py-3.5 text-center border-l border-slate-100'
                                         >
                                             {row.isPrice ? (
                                                 <div className='flex flex-col items-center gap-0.5'>
                                                     {value.original && (
-                                                        <span className='text-xs text-gray-400 line-through'>
+                                                        <span className='text-xs text-slate-400 line-through'>
                                                             {value.original}
                                                         </span>
                                                     )}
-                                                    <span className='font-semibold text-gray-900'>
+                                                    <span className='font-bold text-slate-900'>
                                                         {value.display}
-                                                        <span className='text-xs font-normal text-gray-400'>
-                                                            /{tabtype === 'Monthly' ? 'month' : 'year'}
+                                                        <span className='text-xs font-normal text-slate-400 ml-0.5'>
+                                                            /{tabtype === 'Monthly' ? 'mo' : 'yr'}
                                                         </span>
                                                     </span>
                                                     {value.label && (
-                                                        <span className='text-[10px] text-green-600'>
+                                                        <span className='text-[10px] font-medium text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-md'>
                                                             {value.label}
                                                         </span>
                                                     )}
                                                 </div>
                                             ) : value ? (
-                                                <MdCheck className='mx-auto text-green-600 text-lg' />
+                                                <MdCheckCircleOutline className='mx-auto text-indigo-600' size={18} />
                                             ) : (
-                                                <MdClose className='mx-auto text-red-500 text-lg' />
+                                                <MdCancel className='mx-auto text-slate-300' size={18} />
                                             )}
                                         </td>
                                     ))}
