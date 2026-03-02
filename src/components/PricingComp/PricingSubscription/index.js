@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback, useMemo } from 'react';
+import { useState, useRef, useCallback, useMemo, useEffect } from 'react';
 import ConnectWithTeam from '../ConnectWithTeam';
 import FaqsComp from '@/components/FaqsComp/FaqsComp';
 import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
@@ -11,9 +11,42 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
     const { symbol, currency, locale } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
     const [selectedServiceName, setSelectedServiceName] = useState(null);
-    const [showDialPlan, setShowDialPlan] = useState(false);
+    const [showDialPlan, setShowDialPlan] = useState(true);
     const dialPlanRef = useRef(null);
     const calculateModalRef = useRef(null);
+    const pricingWrapperRef = useRef(null);
+
+    const onTabChange = useCallback((tab) => {
+        setTabtype(tab);
+        if (!pricingWrapperRef.current) return;
+        const wrapper = pricingWrapperRef.current;
+
+        // Toggle tabpanel visibility
+        wrapper.querySelectorAll('[data-tabpanel]').forEach((el) => {
+            el.classList.toggle('hidden', el.dataset.tabpanel !== tab);
+        });
+
+        // Toggle active tab button styles
+        wrapper.querySelectorAll('[data-tab-btn]').forEach((btn) => {
+            const isActive = btn.dataset.tabBtn === tab;
+            btn.classList.toggle('bg-indigo-600', isActive);
+            btn.classList.toggle('text-white', isActive);
+            btn.classList.toggle('text-indigo-600', !isActive);
+            btn.classList.toggle('hover:bg-indigo-50', !isActive);
+        });
+    }, []);
+
+    // Set initial active styles on tab buttons after mount
+    useEffect(() => {
+        if (!pricingWrapperRef.current) return;
+        pricingWrapperRef.current.querySelectorAll('[data-tab-btn]').forEach((btn) => {
+            const isActive = btn.dataset.tabBtn === 'Monthly';
+            btn.classList.toggle('bg-indigo-600', isActive);
+            btn.classList.toggle('text-white', isActive);
+            btn.classList.toggle('text-indigo-600', !isActive);
+            btn.classList.toggle('hover:bg-indigo-50', !isActive);
+        });
+    }, []);
 
     const onViewRateCard = useCallback((serviceName) => {
         setSelectedServiceName(serviceName || null);
@@ -58,7 +91,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
 
     return (
         <>
-            <div className='flex flex-col gap-4 w-full overflow-hidden'>
+            <div className='flex flex-col gap-4 w-full overflow-hidden' ref={pricingWrapperRef}>
                 <h1 className='text-2xl md:text-3xl font-bold capitalize '>{pageData?.heading}</h1>
                 <div className='flex flex-col w-full gap-6'>
                     <PricingCards
@@ -68,8 +101,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         locale={locale}
                         onViewRateCard={onViewRateCard}
                         onCalculateClick={hasCalculableServices ? onOpenCalculateModal : undefined}
-                        tabtype={tabtype}
-                        setTabtype={setTabtype}
+                        onTabChange={onTabChange}
                     />
                     {showDialPlan && (
                         <div ref={dialPlanRef}>
@@ -84,7 +116,6 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         pricingData={pricingData}
                         symbol={symbol}
                         locale={locale}
-                        tabtype={tabtype}
                         pageData={pageData?.comparePlans}
                     />
                     {pageData?.connectComp && (

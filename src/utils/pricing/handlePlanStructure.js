@@ -37,6 +37,7 @@ function handleServices(services, currency) {
             followUpRate: rate?.follow_up_rate || null,
             dialPlan,
             chunkSize: rate?.chunk_size || 1,
+            postPaidAllowed: rate?.postpaid_allowed ?? null,
         };
     });
 }
