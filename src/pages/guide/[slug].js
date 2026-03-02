@@ -22,11 +22,7 @@ const component = { ReactPlayer };
 
 const slugToPostContent = ((postContents) => {
     let hash = {};
-    let fullPath = {};
-    postContents.map((data) => {
-        fullPath = data.fullPath;
-    });
-    postContents?.forEach((it) => (hash[it.slug] = it));
+    postContents?.forEach((it) => (hash[it.staticPath] = it));
     return hash;
 })(fetchPostContent());
 export default function TestPage({
@@ -106,8 +102,8 @@ export async function getStaticPaths() {
         fallback: false,
     };
 }
-export async function getStaticProps(slug) {
-    const slugData = slug.params.slug;
+export async function getStaticProps({ params }) {
+    const slugData = params.slug;
     const source = fs.readFileSync(slugToPostContent[slugData]?.fullPath, 'utf8');
     const pageInfo = getPageInfo({ slug: ['global', 'guide'] });
     const commonData = getCommonCompData(pageInfo?.country);
