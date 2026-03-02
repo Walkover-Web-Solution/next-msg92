@@ -1,7 +1,5 @@
-import { useState, useMemo, useRef, useCallback } from 'react';
+import { useMemo, useRef, useCallback, useState } from 'react';
 import {
-    MdArrowDownward,
-    MdCheck,
     MdChevronLeft,
     MdChevronRight,
     MdInfoOutline,
@@ -14,52 +12,41 @@ const FEATURED_INDEX = 3;
 
 const SCROLL_DISTANCE = 360;
 
-export default function PricingCards({
-    pricingData,
-    symbol,
-    locale,
-    onViewRateCard,
-    onCalculateClick,
-    tabtype: tabtypeProp,
-    setTabtype: setTabtypeProp,
-}) {
-    console.log('⚡️ ~ :17 ~ PricingCards ~ pricingData:', pricingData);
-    const [localTabtype, setLocalTabtype] = useState('Monthly');
-    const tabtype = tabtypeProp ?? localTabtype;
-    const setTabtype = setTabtypeProp ?? setLocalTabtype;
-    const scrollRef = useRef(null);
+export default function PricingCards({ pricingData, symbol, locale, onViewRateCard, onCalculateClick, onTabChange }) {
+    const monthlyScrollRef = useRef(null);
+    const yearlyScrollRef = useRef(null);
+    const [activeTab, setActiveTab] = useState('Monthly');
+
+    const activeScrollRef = activeTab === 'Yearly' ? yearlyScrollRef : monthlyScrollRef;
 
     const scrollLeft = useCallback(() => {
-        scrollRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' });
-    }, []);
+        activeScrollRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' });
+    }, [activeScrollRef]);
 
     const scrollRight = useCallback(() => {
-        scrollRef.current?.scrollBy({ left: SCROLL_DISTANCE, behavior: 'smooth' });
-    }, []);
+        activeScrollRef.current?.scrollBy({ left: SCROLL_DISTANCE, behavior: 'smooth' });
+    }, [activeScrollRef]);
 
-    const plans = useMemo(() => {
-        if (!Array.isArray(pricingData) || pricingData.length === 0) return [];
-        return pricingData.filter((p) => p?.type === tabtype);
-    }, [pricingData, tabtype]);
+    const { monthlyPlans, yearlyPlans, hasYearly } = useMemo(() => {
+        if (!Array.isArray(pricingData) || pricingData.length === 0)
+            return { monthlyPlans: [], yearlyPlans: [], hasYearly: false };
+        const monthly = pricingData.filter((p) => p?.type === 'Monthly');
+        const yearly = pricingData.filter((p) => p?.type === 'Yearly');
+        return {
+            monthlyPlans: monthly,
+            yearlyPlans: yearly,
+            hasYearly: monthly.length > 0 && yearly.length > 0,
+        };
+    }, [pricingData]);
 
-    const hasYearly = useMemo(
-        () =>
-            Array.isArray(pricingData) &&
-            pricingData.some((p) => p?.type === 'Yearly') &&
-            pricingData.some((p) => p?.type === 'Monthly'),
+    const hasFeatures = useMemo(
+        () => Array.isArray(pricingData) && pricingData.some((p) => (p?.features ?? []).some((f) => f?.included)),
         [pricingData]
     );
 
-    const hasFeatures = useMemo(
-        () =>
-            Array.isArray(pricingData) &&
-            pricingData.some((p) => p?.type === tabtype && (p?.features ?? []).some((f) => f?.included)),
-        [pricingData, tabtype]
-    );
+    if (!monthlyPlans.length && !yearlyPlans.length) return null;
 
-    if (!plans.length) return null;
-
-    const showArrows = plans.length > 2;
+    const showArrows = Math.max(monthlyPlans.length, yearlyPlans.length) > 2;
 
     return (
         <div className='flex flex-col gap-6'>
@@ -70,10 +57,12 @@ export default function PricingCards({
                             <button
                                 key={t}
                                 type='button'
-                                onClick={() => setTabtype(t)}
-                                className={`px-4 py-2 text-sm font-medium transition-colors ${
-                                    tabtype === t ? 'bg-indigo-600 text-white' : 'text-indigo-600 hover:bg-indigo-50'
-                                }`}
+                                data-tab-btn={t}
+                                onClick={() => {
+                                    setActiveTab(t);
+                                    onTabChange?.(t);
+                                }}
+                                className={`px-4 py-2 text-sm font-medium transition-colors tab-btn-${t.toLowerCase()}`}
                             >
                                 {t}
                             </button>
@@ -105,16 +94,17 @@ export default function PricingCards({
                 )}
             </div>
 
-            <div className='w-full'>
+            {/* Monthly plans — visible by default */}
+            <div data-tabpanel='Monthly' className='w-full'>
                 <div
-                    ref={scrollRef}
-                    className='flex items-stretch h-full gap-6 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+                    ref={monthlyScrollRef}
+                    className='flex items-stretch h-full gap-6 overflow-x-auto scroll-smooth pt-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
                 >
-                    {plans.map((plan, index) => (
+                    {monthlyPlans.map((plan, index) => (
                         <PlanCard
                             key={plan?.name ?? index}
                             plan={plan}
-                            tabtype={tabtype}
+                            tabtype='Monthly'
                             symbol={symbol}
                             locale={locale}
                             isFeatured={index === FEATURED_INDEX}
@@ -123,6 +113,29 @@ export default function PricingCards({
                     ))}
                 </div>
             </div>
+
+            {/* Yearly plans — hidden by default, shown when tab switches */}
+            {yearlyPlans.length > 0 && (
+                <div data-tabpanel='Yearly' className='w-full hidden'>
+                    <div
+                        ref={yearlyScrollRef}
+                        className='flex items-stretch h-full gap-6 overflow-x-auto scroll-smooth pt-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+                    >
+                        {yearlyPlans.map((plan, index) => (
+                            <PlanCard
+                                key={plan?.name ?? index}
+                                plan={plan}
+                                tabtype='Yearly'
+                                symbol={symbol}
+                                locale={locale}
+                                isFeatured={index === FEATURED_INDEX}
+                                onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
+                            />
+                        ))}
+                    </div>
+                </div>
+            )}
+
             <div className='flex items-center justify-between'>
                 {onCalculateClick && (
                     <button

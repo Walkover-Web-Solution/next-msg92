@@ -64,12 +64,13 @@ function extractAllDialPlans(pricingData) {
     const seen = new Set();
     const result = [];
     for (const plan of pricingData) {
+        const planName = plan?.name ?? plan?.slug ?? '';
         for (const service of plan?.services ?? []) {
             const dialPlan = service?.dialPlan;
             const serviceName = service?.serviceName ?? service?.name;
             if (serviceName && !seen.has(serviceName) && dialPlan?.columns?.length > 0 && dialPlan?.data?.length > 0) {
                 seen.add(serviceName);
-                result.push({ serviceName, columns: dialPlan.columns, data: dialPlan.data });
+                result.push({ serviceName, planName, columns: dialPlan.columns, data: dialPlan.data });
             }
         }
     }
@@ -187,7 +188,6 @@ const DialPlanTable = React.memo(function DialPlanTable({
 
 export default function DialPlan({ pricingData, selectedServiceName, pageData }) {
     const [search, setSearch] = useState('');
-    const [activeService, setActiveService] = useState('');
     const debouncedSearch = useDebouncedValue(search, DEBOUNCE_DELAY);
 
     const dialPlans = useMemo(() => {
@@ -195,19 +195,13 @@ export default function DialPlan({ pricingData, selectedServiceName, pageData })
         return extractAllDialPlans(pricingData);
     }, [pricingData]);
 
-    // Default to selectedServiceName if present in dialPlans, else first dialPlan service found
-    useEffect(() => {
-        if (dialPlans.length === 0) return;
-        const serviceNames = dialPlans.map((d) => d.serviceName);
-        const preferred =
-            selectedServiceName && serviceNames.includes(selectedServiceName) ? selectedServiceName : serviceNames[0];
-        setActiveService(preferred);
-        setSearch('');
-    }, [dialPlans, selectedServiceName]);
-
     const filteredDataByPlan = useMemo(() => {
         return dialPlans.map((dialPlan) => filterRowsBySearch(dialPlan.data, dialPlan.columns, debouncedSearch));
     }, [dialPlans, debouncedSearch]);
+
+    useEffect(() => {
+        setSearch('');
+    }, [selectedServiceName]);
 
     const handleSearchChange = useCallback((e) => {
         setSearch(e.target.value);
@@ -217,55 +211,35 @@ export default function DialPlan({ pricingData, selectedServiceName, pageData })
         return null;
     }
 
-    const activeIndex = dialPlans.findIndex((d) => d.serviceName === activeService);
-    const activeDialPlan = dialPlans[activeIndex] ?? dialPlans[0];
-    const activeData = filteredDataByPlan[activeIndex] ?? filteredDataByPlan[0] ?? [];
+    const normalizedSelected = selectedServiceName?.trim().toLowerCase();
+    const activeIndex = normalizedSelected
+        ? dialPlans.findIndex((d) => d.serviceName?.trim().toLowerCase() === normalizedSelected)
+        : -1;
+    const activePlan = dialPlans[activeIndex >= 0 ? activeIndex : 0];
+    const activeData = filteredDataByPlan[activeIndex >= 0 ? activeIndex : 0] ?? [];
 
     return (
         <section className='w-full py-4 flex flex-col gap-4'>
             <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
                 <div>
                     <h3 className='text-2xl font-semibold text-slate-900'>{pageData?.dialplanRatesHeading}</h3>
-                    {activeDialPlan?.serviceName && (
+                    {activePlan?.serviceName && (
                         <p className='text-sm text-slate-500 mt-1'>
                             {pageData?.showingRatesFor}{' '}
-                            <span className='font-semibold text-slate-700'>{activeDialPlan.serviceName}</span>
+                            <span className='font-semibold text-slate-700'>{activePlan.serviceName}</span>
                         </p>
                     )}
                 </div>
             </div>
-            {dialPlans.length > 1 && (
-                <div className='inline-flex w-fit rounded-lg border border-slate-200 bg-white overflow-hidden'>
-                    {dialPlans.map((dp) => (
-                        <button
-                            key={dp.serviceName}
-                            type='button'
-                            onClick={() => {
-                                setActiveService(dp.serviceName);
-                                setSearch('');
-                            }}
-                            className={`px-4 py-2 text-sm font-medium transition-colors ${
-                                activeService === dp.serviceName
-                                    ? 'bg-indigo-600 text-white'
-                                    : 'text-indigo-600 hover:bg-indigo-50'
-                            }`}
-                        >
-                            {dp.serviceName}
-                        </button>
-                    ))}
-                </div>
-            )}
 
-            {activeDialPlan && (
-                <DialPlanTable
-                    columns={activeDialPlan.columns}
-                    data={activeData}
-                    noResultsText={pageData?.noResults}
-                    search={search}
-                    onSearchChange={handleSearchChange}
-                    searchPlaceholder={pageData?.searchPlaceholder}
-                />
-            )}
+            <DialPlanTable
+                columns={activePlan.columns}
+                data={activeData}
+                noResultsText={pageData?.noResults}
+                search={search}
+                onSearchChange={handleSearchChange}
+                searchPlaceholder={pageData?.searchPlaceholder}
+            />
         </section>
     );
 }
