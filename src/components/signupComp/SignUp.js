@@ -85,6 +85,10 @@ export default class SignUp extends React.Component {
                         if (signupDate) redirectUrl += `&signup_date=${encodeURIComponent(signupDate)}`;
                         if (interestedServices)
                             redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
+                        Object.entries(getUtmFromCookies()).forEach(([key, value]) => {
+                            if (key?.startsWith('utm_') && value)
+                                redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+                        });
                         location.href = redirectUrl;
                     }
                 });
@@ -395,6 +399,10 @@ export default class SignUp extends React.Component {
                         if (signupDate) redirectUrl += `&signup_date=${encodeURIComponent(signupDate)}`;
                         if (interestedServices)
                             redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
+                        Object.entries(getUtmFromCookies()).forEach(([key, value]) => {
+                            if (key?.startsWith('utm_') && value)
+                                redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+                        });
                         location.href = redirectUrl;
                     } else if (result?.data?.data?.nextStep === 'hasInvitations') {
                         this.setState({ invitations: result?.data?.data?.invitations });
@@ -488,6 +496,10 @@ export default class SignUp extends React.Component {
                         if (signupDate) redirectUrl += `&signup_date=${encodeURIComponent(signupDate)}`;
                         if (interestedServices)
                             redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
+                        Object.entries(getUtmFromCookies()).forEach(([key, value]) => {
+                            if (key?.startsWith('utm_') && value)
+                                redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+                        });
                         location.href = redirectUrl;
                     }, 10);
                 } else if (result?.hasError) {
