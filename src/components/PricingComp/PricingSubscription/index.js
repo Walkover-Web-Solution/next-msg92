@@ -102,6 +102,13 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         onViewRateCard={onViewRateCard}
                         onCalculateClick={hasCalculableServices ? onOpenCalculateModal : undefined}
                         onTabChange={onTabChange}
+                        pageInfo={pageInfo}
+                    />
+                    <ComparePlans
+                        pricingData={pricingData}
+                        symbol={symbol}
+                        locale={locale}
+                        pageData={pageData?.comparePlans}
                     />
                     {showDialPlan && (
                         <div ref={dialPlanRef}>
@@ -112,12 +119,6 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                             />
                         </div>
                     )}
-                    <ComparePlans
-                        pricingData={pricingData}
-                        symbol={symbol}
-                        locale={locale}
-                        pageData={pageData?.comparePlans}
-                    />
                     {pageData?.connectComp && (
                         <ConnectWithTeam
                             product={pageInfo?.product}

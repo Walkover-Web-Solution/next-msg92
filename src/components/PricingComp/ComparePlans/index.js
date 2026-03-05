@@ -32,11 +32,7 @@ function getDiscountLabel(discount, symbol, locale) {
 
 function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel }) {
     return (
-        <div
-            ref={tableRef}
-            className='overflow-x-auto overflow-y-auto rounded-xl border border-slate-200 bg-white'
-            style={{ maxHeight: '600px' }}
-        >
+        <div ref={tableRef} className='overflow-x-auto overflow-y-auto rounded-xl border border-slate-200 bg-white'>
             <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                 <thead className='bg-slate-50 sticky top-0 z-30'>
                     <tr className='border-b border-slate-200'>

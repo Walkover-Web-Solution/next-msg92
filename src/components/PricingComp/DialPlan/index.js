@@ -123,11 +123,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
                 </div>
             </div>
             <div className='w-full overflow-x-auto'>
-                <div
-                    style={{ maxHeight: MAX_TABLE_HEIGHT }}
-                    className='overflow-y-auto rounded-xl border border-slate-200 bg-white'
-                    ref={tableRef}
-                >
+                <div className='overflow-y-auto rounded-xl border border-slate-200 bg-white' ref={tableRef}>
                     <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                         <thead className='sticky top-0 z-30 bg-slate-50'>
                             <tr className='border-b border-slate-200'>

@@ -1,3 +1,4 @@
+import getURL from '@/utils/getURL';
 import { useMemo, useRef, useCallback, useState } from 'react';
 import {
     MdChevronLeft,
@@ -12,7 +13,15 @@ const FEATURED_INDEX = 3;
 
 const SCROLL_DISTANCE = 360;
 
-export default function PricingCards({ pricingData, symbol, locale, onViewRateCard, onCalculateClick, onTabChange }) {
+export default function PricingCards({
+    pricingData,
+    symbol,
+    locale,
+    onViewRateCard,
+    onCalculateClick,
+    onTabChange,
+    pageInfo,
+}) {
     const monthlyScrollRef = useRef(null);
     const yearlyScrollRef = useRef(null);
     const [activeTab, setActiveTab] = useState('Monthly');
@@ -109,6 +118,7 @@ export default function PricingCards({ pricingData, symbol, locale, onViewRateCa
                             locale={locale}
                             isFeatured={index === FEATURED_INDEX}
                             onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
+                            pageInfo={pageInfo}
                         />
                     ))}
                 </div>
@@ -130,6 +140,7 @@ export default function PricingCards({ pricingData, symbol, locale, onViewRateCa
                                 locale={locale}
                                 isFeatured={index === FEATURED_INDEX}
                                 onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
+                                pageInfo={pageInfo}
                             />
                         ))}
                     </div>
@@ -203,7 +214,7 @@ function getDiscountedAmount(amount, discounts) {
     return null;
 }
 
-function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard }) {
+function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, pageInfo }) {
     const amount = plan?.amount;
     const discountedAmount = getDiscountedAmount(amount, plan?.discount);
     const displayPrice =
@@ -282,7 +293,8 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard })
             </div>
 
             {/* CTA */}
-            <button
+            <a
+                href={getURL('signup', pageInfo?.page, pageInfo)}
                 type='button'
                 className={`w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all mb-6 flex items-center justify-center gap-2
                     ${
@@ -292,7 +304,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard })
                     }`}
             >
                 Get started <MdArrowForward size={16} />
-            </button>
+            </a>
 
             {/* Divider */}
             <div className='h-px bg-slate-200 w-full mb-6' />
