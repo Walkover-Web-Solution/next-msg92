@@ -36,7 +36,7 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
             <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                 <thead className='bg-slate-50 sticky top-0 z-30'>
                     <tr className='border-b border-slate-200'>
-                        <th className='w-[200px] px-5 py-4 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider sticky left-0 bg-slate-50 z-40 border-r border-slate-200'>
+                        <th className='w-[280px] px-5 py-4 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider sticky left-0 bg-slate-50 z-40 border-r border-slate-200'>
                             {featuresColumnLabel}
                         </th>
                         {planNames.map((name, index) => (
