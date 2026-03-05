@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState, useRef, useCallback } from 'react'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { DEBOUNCE_DELAY, SEARCHABLE_FIELDS, MAX_TABLE_HEIGHT, EMPTY_ARRAY } from '../constants';
 
-const SCROLL_DISTANCE = 300;
+const SCROLL_DISTANCE = 400;
 
 function useDebouncedValue(value, delay) {
     const [debouncedValue, setDebouncedValue] = useState(value);
@@ -123,18 +123,14 @@ const DialPlanTable = React.memo(function DialPlanTable({
                 </div>
             </div>
             <div className='w-full overflow-x-auto'>
-                <div
-                    style={{ maxHeight: MAX_TABLE_HEIGHT }}
-                    className='overflow-y-auto rounded-xl border border-slate-200 bg-white'
-                    ref={tableRef}
-                >
+                <div className='overflow-y-auto rounded-xl border border-slate-200 bg-white' ref={tableRef}>
                     <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                         <thead className='sticky top-0 z-30 bg-slate-50'>
                             <tr className='border-b border-slate-200'>
                                 {columns.map((column, colIndex) => (
                                     <th
                                         key={column.key}
-                                        className={`px-5 py-3.5 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap border-r border-slate-200 last:border-r-0 ${
+                                        className={`w-[210px] px-5 py-3.5 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap border-r border-slate-200 last:border-r-0 ${
                                             colIndex === 0 ? 'sticky left-0 bg-slate-50 z-40' : ''
                                         }`}
                                     >
