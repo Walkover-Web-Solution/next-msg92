@@ -145,10 +145,10 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                     return (
                                         <tr
                                             key={rowKey}
-                                            className={`border-b border-slate-100 last:border-b-0 ${resultIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}
+                                            className={`border-b border-slate-100 last:border-b-0 ${resultIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}
                                         >
                                             <td
-                                                className={`w-[180px] min-w-[180px] px-4 py-3 text-sm font-medium text-slate-900 truncate sticky left-0 z-10 lg:static lg:z-auto ${resultIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}
+                                                className={`w-[180px] min-w-[180px] px-4 py-3 text-sm font-medium text-slate-900 truncate sticky left-0 z-10 lg:static lg:z-auto ${resultIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}
                                                 title={result.title}
                                             >
                                                 {result.title}
@@ -277,7 +277,7 @@ function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
     const extraChunks = calculation?.extraChunks ?? calculation?.extra ?? 0;
     const tooltipText =
         chunkSize > 1
-            ? `${extraChunks.toLocaleString(locale)} chunks × ${symbol}${calculation?.rate?.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} (chunk = ${chunkSize} units)`
+            ? `${extraChunks.toLocaleString(locale)} Chunks × ${symbol}${calculation?.rate?.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} (Chunk = ${chunkSize} Units)`
             : `${extraChunks.toLocaleString(locale)} × ${symbol}${calculation?.rate?.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
     return (
@@ -302,9 +302,9 @@ function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
                             <span className='flex items-center gap-1 text-xs text-gray-500'>
                                 {extraChunks.toLocaleString(locale)}
                                 {chunkSize > 1 && (
-                                    <span className='relative group cursor-help'>
+                                    <span className='relative group cursor-pointer'>
                                         <MdInfoOutline size={12} className='text-slate-400' />
-                                        <span className='absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-max max-w-[200px] rounded-md bg-slate-800 px-2 py-1 text-[11px] text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-normal text-center'>
+                                        <span className='absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-max max-w-[200px] rounded-md bg-slate-800 px-2 py-1 text-[11px] text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-normal text-center '>
                                             {tooltipText}
                                         </span>
                                     </span>

@@ -88,7 +88,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
     symbol,
 }) {
     const hasData = data.length > 0;
-    const visibleColumns = columns.filter((col) => col.key !== 'prefix');
+    const visibleColumns = columns.filter((col) => col.key !== 'prefix' && col.key !== 'country_prefix');
     const tableRef = useRef(null);
 
     const scrollLeft = () => tableRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' });
@@ -113,7 +113,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
                         aria-label='Scroll left'
                         className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                     >
-                        <MdChevronLeft size={18} />
+                        <MdChevronLeft size={20} />
                     </button>
                     <button
                         type='button'
@@ -121,7 +121,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
                         aria-label='Scroll right'
                         className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                     >
-                        <MdChevronRight size={18} />
+                        <MdChevronRight size={20} />
                     </button>
                 </div>
             </div>
@@ -161,8 +161,9 @@ const DialPlanTable = React.memo(function DialPlanTable({
                                                             : ''
                                                     }`}
                                                 >
-                                                    {col.key === 'country_name' && row['prefix']
-                                                        ? `${row[col.key] ?? '-'} (${row['prefix']})`
+                                                    {col.key === 'country_name' &&
+                                                    (row['prefix'] || row['country_prefix'])
+                                                        ? `${row[col.key] ?? '-'} (${row['prefix'] ?? row['country_prefix']})`
                                                         : (() => {
                                                               const val = row[col.key];
                                                               if (
@@ -173,7 +174,8 @@ const DialPlanTable = React.memo(function DialPlanTable({
                                                               )
                                                                   return val ?? '-';
                                                               const num = Number(val);
-                                                              return !Number.isNaN(num) && symbol
+                                                              const isIdCol = col.key.toLowerCase().includes('id');
+                                                              return !Number.isNaN(num) && symbol && !isIdCol
                                                                   ? `${symbol}${val}`
                                                                   : val;
                                                           })()}

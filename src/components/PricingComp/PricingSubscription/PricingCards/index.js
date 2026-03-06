@@ -7,6 +7,7 @@ import {
     MdArrowForward,
     MdCheckCircleOutline,
     MdCancel,
+    MdLaunch,
 } from 'react-icons/md';
 
 const FEATURED_INDEX = 3;
@@ -68,7 +69,8 @@ export default function PricingCards({
                     if (s?.freeCredit != null && s?.freeCredit !== 0) flags.hasQuota = true;
                     const rate = s?.followUpRate;
                     const hasRate = rate != null && Number(rate) > 0;
-                    if (!hasRate && !(s?.freeCredit === -1 || s?.freeCredit === '-1')) flags.hasNotAllowed = true;
+                    const isUnlimited = s?.freeCredit === -1 || s?.freeCredit === '-1';
+                    if ((!hasRate || !s?.postPaidAllowed) && !isUnlimited) flags.hasNotAllowed = true;
                 }
             }
         }
@@ -111,7 +113,7 @@ export default function PricingCards({
                             aria-label='Scroll left'
                             className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                         >
-                            <MdChevronLeft size={16} />
+                            <MdChevronLeft size={20} />
                         </button>
                         <button
                             type='button'
@@ -119,7 +121,7 @@ export default function PricingCards({
                             aria-label='Scroll right'
                             className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                         >
-                            <MdChevronRight size={16} />
+                            <MdChevronRight size={20} />
                         </button>
                     </div>
                 )}
@@ -171,22 +173,24 @@ export default function PricingCards({
 
             <div className='flex items-center justify-between'>
                 {onCalculateClick && (
-                    <button
+                    <span
                         type='button'
                         onClick={onCalculateClick}
-                        className='text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors'
+                        className='inline-flex items-center gap-2 text-sm font-medium text-link active-link capitalize'
                     >
+                        <MdLaunch className='text-base' />
                         Calculate Price
-                    </button>
+                    </span>
                 )}
                 {hasFeatures && (
-                    <button
+                    <span
                         type='button'
                         onClick={() => document.getElementById('compare-plans')?.scrollIntoView({ behavior: 'smooth' })}
-                        className='text-sm font-medium flex items-center gap-1 text-indigo-600 hover:text-indigo-700 transition-colors'
+                        className='inline-flex items-center gap-2 text-sm font-medium text-link active-link capitalize'
                     >
-                        View all features <MdChevronRight size={14} />
-                    </button>
+                        <MdLaunch className='text-base' />
+                        View all features
+                    </span>
                 )}
             </div>
 
@@ -357,7 +361,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                 const displayQty = isUnlimited
                                     ? 'Unlimited'
                                     : qty != null
-                                      ? `${Number(qty).toLocaleString(locale || 'en-IN')} / mo`
+                                      ? `${Number(qty).toLocaleString(locale || 'en-IN')} / month`
                                       : '—';
                                 return (
                                     <div key={i} className='flex justify-between items-center'>
@@ -392,22 +396,24 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                             <span className='text-sm font-bold text-slate-900'>
                                                 {isUnlimited
                                                     ? 'Unlimited'
-                                                    : `${symbol}${Number(walletCredit).toLocaleString(locale || 'en-IN')}`}
+                                                    : `${symbol}${Number(walletCredit).toLocaleString(locale || 'en-IN')} / month`}
                                             </span>
                                             {!isUnlimited && (
-                                                <button
-                                                    type='button'
-                                                    title='Click to view Rate Card'
-                                                    onClick={() =>
-                                                        onViewRateCard?.({
-                                                            serviceName: service?.name,
-                                                            planName: plan?.name,
-                                                        })
-                                                    }
-                                                    className='text-slate-400 hover:text-indigo-600 transition-colors'
-                                                >
-                                                    <MdInfoOutline size={13} />
-                                                </button>
+                                                <span className='relative group cursor-pointer'>
+                                                    <MdInfoOutline
+                                                        size={13}
+                                                        className='text-slate-400 hover:text-indigo-600 transition-colors'
+                                                        onClick={() =>
+                                                            onViewRateCard?.({
+                                                                serviceName: service?.name,
+                                                                planName: plan?.name,
+                                                            })
+                                                        }
+                                                    />
+                                                    <span className='absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-max max-w-[200px] rounded-md bg-slate-800 px-2 py-1 text-[11px] text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-normal text-center'>
+                                                        Click to view Rate Card
+                                                    </span>
+                                                </span>
                                             )}
                                         </div>
                                     </div>
@@ -428,14 +434,17 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                 const rate = service?.followUpRate;
                                 const chunkSize = service?.chunkSize ?? 1;
                                 const hasRate = rate != null && Number(rate) > 0;
+                                const isNotAllowed = !service?.postPaidAllowed || !hasRate;
                                 const unitLabel = chunkSize > 1 ? `${chunkSize} units` : 'unit';
                                 return (
                                     <div key={i} className='flex justify-between text-sm'>
                                         <span className='text-slate-600'>{service?.name}</span>
                                         <span
-                                            className={`font-medium ${hasRate ? 'text-slate-900' : 'text-slate-400'}`}
+                                            className={`font-medium ${!isNotAllowed ? 'text-slate-900' : 'text-slate-400'}`}
                                         >
-                                            {hasRate ? `${symbol}${Number(rate)} / ${unitLabel}` : 'Not allowed'}
+                                            {!isNotAllowed
+                                                ? `${symbol}${Number(rate)} / ${unitLabel} / month`
+                                                : 'Not allowed'}
                                         </span>
                                     </div>
                                 );

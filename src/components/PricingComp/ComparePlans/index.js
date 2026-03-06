@@ -187,7 +187,7 @@ export default function ComparePlans({ pricingData, symbol, locale, pageData }) 
                             aria-label='Scroll left to view previous plans'
                             className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                         >
-                            <MdChevronLeft size={18} aria-hidden='true' />
+                            <MdChevronLeft size={20} aria-hidden='true' />
                         </button>
                         <button
                             type='button'
@@ -195,7 +195,7 @@ export default function ComparePlans({ pricingData, symbol, locale, pageData }) 
                             aria-label='Scroll right to view more plans'
                             className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                         >
-                            <MdChevronRight size={18} aria-hidden='true' />
+                            <MdChevronRight size={20} aria-hidden='true' />
                         </button>
                     </div>
                 </div>
