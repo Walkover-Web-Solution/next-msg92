@@ -86,6 +86,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
     searchPlaceholder,
 }) {
     const hasData = data.length > 0;
+    const visibleColumns = columns.filter((col) => col.key !== 'prefix');
     const tableRef = useRef(null);
 
     const scrollLeft = () => tableRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' });
@@ -127,14 +128,14 @@ const DialPlanTable = React.memo(function DialPlanTable({
                     <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                         <thead className='sticky top-0 z-30 bg-slate-50'>
                             <tr className='border-b border-slate-200'>
-                                {columns.map((column, colIndex) => (
+                                {visibleColumns.map((column, colIndex) => (
                                     <th
                                         key={column.key}
-                                        className={`w-[210px] px-5 py-3.5 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap border-r border-slate-200 last:border-r-0 ${
-                                            colIndex === 0 ? 'sticky left-0 bg-slate-50 z-40' : ''
+                                        className={`min-w-[130px] px-3 py-2 text-left text-[10px] md:text-[12px] leading-3 md:leading-4 font-medium text-slate-400 border-r border-slate-200 last:border-r-0 ${
+                                            colIndex === 0 ? 'w-[140px] sticky left-0 bg-slate-50 z-40' : ''
                                         }`}
                                     >
-                                        {column.label}
+                                        {column?.label}
                                     </th>
                                 ))}
                             </tr>
@@ -143,22 +144,24 @@ const DialPlanTable = React.memo(function DialPlanTable({
                             {hasData ? (
                                 data.map((row, index) => {
                                     const rowKey = row.id ?? row.country_name ?? `row-${index}`;
-                                    const rowBg = index % 2 === 0 ? 'bg-white' : 'bg-slate-50/50';
+                                    const rowBg = index % 2 === 0 ? 'bg-white' : 'bg-slate-50';
                                     return (
                                         <tr
                                             key={rowKey}
                                             className={`border-b border-slate-100 last:border-b-0 ${rowBg}`}
                                         >
-                                            {columns.map((col, colIndex) => (
+                                            {visibleColumns.map((col, colIndex) => (
                                                 <td
                                                     key={col.key}
-                                                    className={`px-5 py-3 text-sm text-slate-600 border-r border-slate-100 last:border-r-0 ${
+                                                    className={`px-3 py-2 text-xs text-slate-600 border-r border-slate-100 last:border-r-0 ${
                                                         colIndex === 0
-                                                            ? `sticky left-0 ${rowBg} z-20 font-medium text-slate-700 whitespace-nowrap`
+                                                            ? `sticky left-0 ${rowBg} z-20 font-medium text-slate-700 border-r`
                                                             : ''
                                                     }`}
                                                 >
-                                                    {row[col.key] ?? '-'}
+                                                    {col.key === 'country_name' && row['prefix']
+                                                        ? `${row[col.key] ?? '-'} (${row['prefix']})`
+                                                        : (row[col.key] ?? '-')}
                                                 </td>
                                             ))}
                                         </tr>
@@ -167,7 +170,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
                             ) : (
                                 <tr>
                                     <td
-                                        colSpan={columns.length}
+                                        colSpan={visibleColumns.length}
                                         className='px-5 py-8 text-center text-sm text-slate-400'
                                     >
                                         {noResultsText}
@@ -223,6 +226,11 @@ export default function DialPlan({ pricingData, selectedServiceName, pageData })
                         <p className='text-sm text-slate-500 mt-1'>
                             {pageData?.showingRatesFor}{' '}
                             <span className='font-semibold text-slate-700'>{activePlan.serviceName}</span>
+                            {activePlan?.planName && (
+                                <>
+                                    <span className='font-semibold text-slate-700'> ({activePlan.planName})</span>
+                                </>
+                            )}
                         </p>
                     )}
                 </div>

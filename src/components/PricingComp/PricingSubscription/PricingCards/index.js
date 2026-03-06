@@ -22,6 +22,7 @@ export default function PricingCards({
     onTabChange,
     pageInfo,
 }) {
+    console.log('⚡️ ~ :25 ~ PricingCards ~ pricingData:', pricingData);
     const monthlyScrollRef = useRef(null);
     const yearlyScrollRef = useRef(null);
     const [activeTab, setActiveTab] = useState('Monthly');
@@ -193,8 +194,13 @@ export default function PricingCards({
 }
 
 function getBadgeLabel(service) {
-    const name = (service?.name || '').toLowerCase();
-    if (name.includes('sms') || name.includes('whatsapp') || name.includes('wallet')) return 'WALLET';
+    if (
+        service?.dialPlan != null &&
+        service.dialPlan?.data?.length > 0 &&
+        service?.freeCredit != null &&
+        Number(service.freeCredit) > 0
+    )
+        return 'WALLET';
     return 'QUOTA';
 }
 
@@ -235,7 +241,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
     const dialPlanServicesNoCredit = services.filter(
         (s) => hasDialPlan(s) && !(s?.freeCredit != null && Number(s?.freeCredit) > 0)
     );
-    const extraServices = services.filter((s) => !hasDialPlan(s));
+    const extraServices = services.filter((s) => !hasDialPlan(s) && !(s?.freeCredit === -1 || s?.freeCredit === '-1'));
 
     const isFree = displayPrice === 'Free';
 
@@ -280,10 +286,10 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                     ) : (
                         <span className='text-4xl font-bold text-slate-900 tracking-tight'>{displayPrice}</span>
                     )}
-                    <span className='text-slate-500 font-medium'>{tabtype === 'Monthly' ? '/mo' : '/yr'}</span>
+                    <span className='text-slate-500 font-medium'>{tabtype === 'Monthly' ? '/month' : '/year'}</span>
                 </div>
                 <div className='flex items-center gap-2 text-sm min-h-[24px]'>
-                    {originalPrice && <span className='text-slate-400 line-through'>{originalPrice}</span>}
+                    {originalPrice && <span className='text-slate-400 text-base line-through'>{originalPrice}</span>}
                     {saveLabel && (
                         <span className='text-emerald-600 font-medium bg-emerald-50 px-2 py-0.5 rounded-md'>
                             {saveLabel}
@@ -295,6 +301,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
             {/* CTA */}
             <a
                 href={getURL('signup', pageInfo?.page, pageInfo)}
+                target='_blank'
                 type='button'
                 className={`w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all mb-6 flex items-center justify-center gap-2
                     ${
@@ -382,6 +389,22 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                             Extra (after included finishes)
                         </p>
                         <div className='flex flex-col gap-2.5'>
+                            {extraServices.map((service, i) => {
+                                const rate = service?.followUpRate;
+                                const chunkSize = service?.chunkSize ?? 1;
+                                const hasRate = rate != null && Number(rate) > 0;
+                                const unitLabel = chunkSize > 1 ? `${chunkSize} units` : 'unit';
+                                return (
+                                    <div key={i} className='flex justify-between text-sm'>
+                                        <span className='text-slate-600'>{service?.name}</span>
+                                        <span
+                                            className={`font-medium ${hasRate ? 'text-slate-900' : 'text-slate-400'}`}
+                                        >
+                                            {hasRate ? `${symbol}${Number(rate)} / ${unitLabel}` : 'Not allowed'}
+                                        </span>
+                                    </div>
+                                );
+                            })}
                             {[...dialPlanServicesWithCredit, ...dialPlanServicesNoCredit].map((service, i) => {
                                 const hasWalletCredit = service?.freeCredit != null && Number(service.freeCredit) > 0;
                                 const isDemoOnly = hasWalletCredit && !service?.postPaidAllowed;
@@ -402,20 +425,6 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                                 </button>
                                             </span>
                                         )}
-                                    </div>
-                                );
-                            })}
-                            {extraServices.map((service, i) => {
-                                const rate = service?.followUpRate;
-                                const hasRate = rate != null && Number(rate) > 0;
-                                return (
-                                    <div key={i} className='flex justify-between text-sm'>
-                                        <span className='text-slate-600'>{service?.name}</span>
-                                        <span
-                                            className={`font-medium ${hasRate ? 'text-slate-900' : 'text-slate-400'}`}
-                                        >
-                                            {hasRate ? `${symbol}${Number(rate)} / unit` : 'Not allowed'}
-                                        </span>
                                     </div>
                                 );
                             })}
