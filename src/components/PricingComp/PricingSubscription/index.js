@@ -116,6 +116,7 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                                 pricingData={dialPlanData}
                                 selectedServiceName={selectedServiceName}
                                 pageData={pageData?.dialPlan}
+                                symbol={symbol}
                             />
                         </div>
                     )}
