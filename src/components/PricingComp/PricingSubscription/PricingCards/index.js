@@ -54,6 +54,27 @@ export default function PricingCards({
         [pricingData]
     );
 
+    const legendFlags = useMemo(() => {
+        const flags = { hasWallet: false, hasQuota: false, hasNotAllowed: false, hasDemoOnly: false };
+        if (!Array.isArray(pricingData)) return flags;
+        for (const plan of pricingData) {
+            for (const s of plan?.services ?? []) {
+                const hasDP = s?.dialPlan != null && s.dialPlan?.data?.length > 0;
+                if (hasDP) {
+                    const hasCredit = s?.freeCredit != null && Number(s.freeCredit) > 0;
+                    if (hasCredit && !s?.postPaidAllowed) flags.hasDemoOnly = true;
+                    if (hasCredit) flags.hasWallet = true;
+                } else {
+                    if (s?.freeCredit != null && s?.freeCredit !== 0) flags.hasQuota = true;
+                    const rate = s?.followUpRate;
+                    const hasRate = rate != null && Number(rate) > 0;
+                    if (!hasRate && !(s?.freeCredit === -1 || s?.freeCredit === '-1')) flags.hasNotAllowed = true;
+                }
+            }
+        }
+        return flags;
+    }, [pricingData]);
+
     if (!monthlyPlans.length && !yearlyPlans.length) return null;
 
     const showArrows = Math.max(monthlyPlans.length, yearlyPlans.length) > 2;
@@ -169,26 +190,39 @@ export default function PricingCards({
                 )}
             </div>
 
-            <div className='rounded-lg p-5 border bg-indigo-50/50 border-indigo-100'>
-                <div className='flex flex-col gap-1.5 text-sm text-slate-600'>
-                    <p>
-                        <span className='font-medium text-gray-900'>Wallet</span> — amount-based credit deducted per
-                        Rate Card; top-up required once exhausted.
-                    </p>
-                    <p>
-                        <span className='font-medium text-gray-900'>Quota</span> — volume-based usage per month; extra
-                        rate applies after quota finishes.
-                    </p>
-                    <p>
-                        <span className='font-medium text-gray-900'>Not allowed</span> — extra usage not permitted on
-                        this plan; upgrade required.
-                    </p>
-                    <p>
-                        <span className='font-medium text-gray-900'>Demo only</span> — service available for testing
-                        only; postpaid usage not enabled on this plan.
-                    </p>
+            {(legendFlags.hasWallet ||
+                legendFlags.hasQuota ||
+                legendFlags.hasNotAllowed ||
+                legendFlags.hasDemoOnly) && (
+                <div className='rounded-lg p-4 border bg-indigo-50/50 border-indigo-100'>
+                    <div className='flex flex-col gap-1.5 text-xs text-slate-600'>
+                        {legendFlags.hasWallet && (
+                            <p>
+                                <span className='font-medium text-gray-900'>Wallet</span> — amount-based credit deducted
+                                per Rate Card; top-up required once exhausted.
+                            </p>
+                        )}
+                        {legendFlags.hasQuota && (
+                            <p>
+                                <span className='font-medium text-gray-900'>Quota</span> — volume-based usage per month;
+                                extra rate applies after quota finishes.
+                            </p>
+                        )}
+                        {legendFlags.hasNotAllowed && (
+                            <p>
+                                <span className='font-medium text-gray-900'>Not allowed</span> — extra usage not
+                                permitted on this plan; upgrade required.
+                            </p>
+                        )}
+                        {legendFlags.hasDemoOnly && (
+                            <p>
+                                <span className='font-medium text-gray-900'>Demo only</span> — service available for
+                                testing only; postpaid usage not enabled on this plan.
+                            </p>
+                        )}
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 }

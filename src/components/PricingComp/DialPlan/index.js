@@ -84,6 +84,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
     search,
     onSearchChange,
     searchPlaceholder,
+    symbol,
 }) {
     const hasData = data.length > 0;
     const visibleColumns = columns.filter((col) => col.key !== 'prefix');
@@ -161,7 +162,20 @@ const DialPlanTable = React.memo(function DialPlanTable({
                                                 >
                                                     {col.key === 'country_name' && row['prefix']
                                                         ? `${row[col.key] ?? '-'} (${row['prefix']})`
-                                                        : (row[col.key] ?? '-')}
+                                                        : (() => {
+                                                              const val = row[col.key];
+                                                              if (
+                                                                  col.key === 'country_name' ||
+                                                                  val == null ||
+                                                                  val === '' ||
+                                                                  val === '-'
+                                                              )
+                                                                  return val ?? '-';
+                                                              const num = Number(val);
+                                                              return !Number.isNaN(num) && symbol
+                                                                  ? `${symbol}${val}`
+                                                                  : val;
+                                                          })()}
                                                 </td>
                                             ))}
                                         </tr>
@@ -185,7 +199,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
     );
 });
 
-export default function DialPlan({ pricingData, selectedServiceName, pageData }) {
+export default function DialPlan({ pricingData, selectedServiceName, pageData, symbol }) {
     const [search, setSearch] = useState('');
     const debouncedSearch = useDebouncedValue(search, DEBOUNCE_DELAY);
 
@@ -243,6 +257,7 @@ export default function DialPlan({ pricingData, selectedServiceName, pageData })
                 search={search}
                 onSearchChange={handleSearchChange}
                 searchPlaceholder={pageData?.searchPlaceholder}
+                symbol={symbol}
             />
         </section>
     );
