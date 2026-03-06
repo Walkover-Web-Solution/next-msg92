@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from 'react';
-import { MdClose } from 'react-icons/md';
+import { MdClose, MdInfoOutline } from 'react-icons/md';
 
 const EMPTY_ARRAY = [];
 const UNLIMITED_CREDIT_VALUE = -1;
@@ -124,27 +124,18 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                     <div className='overflow-x-auto rounded-xl border border-slate-200 bg-white'>
                         <table className='w-full min-w-[600px] table-fixed text-sm'>
                             <thead className='bg-slate-50'>
-                                <tr className='border-b border-slate-200'>
-                                    <th className='w-[180px] min-w-[180px] px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap'>
+                                <tr className='border-b border-slate-200 text-left text-xs font-medium text-slate-400 whitespace-wrap'>
+                                    <th className='w-[180px] min-w-[180px] px-4 py-3 sticky left-0 bg-slate-50 z-10 lg:static lg:bg-transparent lg:z-auto'>
                                         Plan
                                     </th>
-                                    <th className='w-[180px] min-w-[180px] px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap'>
-                                        Plan Amount
-                                    </th>
-                                    <th className='w-[180px] min-w-[160px] px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap'>
-                                        Included
-                                    </th>
+                                    <th className='w-[180px] min-w-[180px] px-4 py-3 '>Plan Amount</th>
+                                    <th className='w-[180px] min-w-[160px] px-4 py-3 '>Included</th>
                                     {visibleServiceNames.map((serviceName) => (
-                                        <th
-                                            key={serviceName}
-                                            className='w-[180px] min-w-[180px] px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap'
-                                        >
+                                        <th key={serviceName} className='w-[180px] min-w-[180px] px-4 py-3 '>
                                             Extra {serviceName}
                                         </th>
                                     ))}
-                                    <th className='w-[180px] min-w-[180px] px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap'>
-                                        Total
-                                    </th>
+                                    <th className='w-[180px] min-w-[180px] px-4 py-3 '>Total</th>
                                 </tr>
                             </thead>
 
@@ -157,7 +148,7 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                             className={`border-b border-slate-100 last:border-b-0 ${resultIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}
                                         >
                                             <td
-                                                className='w-[180px] min-w-[180px] px-4 py-3 text-sm font-medium text-slate-900 truncate'
+                                                className={`w-[180px] min-w-[180px] px-4 py-3 text-sm font-medium text-slate-900 truncate sticky left-0 z-10 lg:static lg:z-auto ${resultIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}
                                                 title={result.title}
                                             >
                                                 {result.title}
@@ -282,10 +273,12 @@ function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
     const isExtraNotAllowed = inPlan && calculation?.isIncluded && calculation?.extra > 0;
     const hasOverageCharge = calculation != null && !calculation?.isIncluded && calculation.overage > 0;
 
-    // Format formula with proper number formatting (without final amount to avoid duplication)
-    const formula = hasOverageCharge
-        ? `${calculation.extra.toLocaleString(locale)} × ${symbol}${calculation.rate.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-        : null;
+    const chunkSize = calculation?.chunkSize ?? 1;
+    const extraChunks = calculation?.extraChunks ?? calculation?.extra ?? 0;
+    const tooltipText =
+        chunkSize > 1
+            ? `${extraChunks.toLocaleString(locale)} chunks × ${symbol}${calculation?.rate?.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} (chunk = ${chunkSize} units)`
+            : `${extraChunks.toLocaleString(locale)} × ${symbol}${calculation?.rate?.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
     return (
         <td key={serviceName} className='w-[140px] min-w-[140px] px-4 py-3 text-gray-700 align-top'>
@@ -302,8 +295,27 @@ function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
                     <span className='text-gray-500 text-xs'>Not allowed</span>
                 ) : (
                     <>
-                        <span className='text-xs'>{formatPrice(symbol, result?.overages?.[serviceName], locale)}</span>
-                        {formula && <span className='text-xs text-gray-500'>{formula}</span>}
+                        <span className='text-xs font-medium'>
+                            {formatPrice(symbol, result?.overages?.[serviceName], locale)}
+                        </span>
+                        {hasOverageCharge && (
+                            <span className='flex items-center gap-1 text-xs text-gray-500'>
+                                {extraChunks.toLocaleString(locale)}
+                                {chunkSize > 1 && (
+                                    <span className='relative group cursor-help'>
+                                        <MdInfoOutline size={12} className='text-slate-400' />
+                                        <span className='absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-max max-w-[200px] rounded-md bg-slate-800 px-2 py-1 text-[11px] text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-normal text-center'>
+                                            {tooltipText}
+                                        </span>
+                                    </span>
+                                )}
+                                × {symbol}
+                                {calculation?.rate?.toLocaleString(locale, {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2,
+                                })}
+                            </span>
+                        )}
                     </>
                 )}
             </div>
@@ -445,6 +457,7 @@ function computePlanTotal(plan, tabtype, usageByService) {
         if (hasDialPlan) continue;
 
         const freeCredits = service?.freeCredit;
+        const chunkSize = Math.max(1, Number(service?.chunkSize) || 1);
         const isUnlimited = isUnlimitedCredit(freeCredits);
         const includedAmount = isUnlimited ? null : Math.max(0, Number(freeCredits) || 0);
 
@@ -459,12 +472,15 @@ function computePlanTotal(plan, tabtype, usageByService) {
             followUpRate == null || Number.isNaN(rateValue) || rateValue === UNLIMITED_CREDIT_VALUE || rateValue < 0;
         const validRate = hasNoExtraRate ? 0 : Math.max(0, rateValue);
 
-        const rawOverageCharge = extraUsage * validRate;
+        const extraChunks = chunkSize > 1 ? Math.ceil(extraUsage / chunkSize) : extraUsage;
+        const rawOverageCharge = extraChunks * validRate;
         const overageCharge = Math.round(rawOverageCharge * 100) / 100;
 
         overages[serviceName] = overageCharge;
         calculationByService[serviceName] = {
             extra: extraUsage,
+            extraChunks,
+            chunkSize,
             rate: validRate,
             overage: overageCharge,
             isIncluded: hasNoExtraRate,

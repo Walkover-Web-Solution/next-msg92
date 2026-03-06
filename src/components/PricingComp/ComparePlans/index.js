@@ -36,13 +36,13 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
             <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                 <thead className='bg-slate-50 sticky top-0 z-30'>
                     <tr className='border-b border-slate-200'>
-                        <th className='w-[280px] px-5 py-4 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider sticky left-0 bg-slate-50 z-40 border-r border-slate-200'>
+                        <th className='w-[140px] px-3 py-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider sticky left-0 bg-slate-50 z-40 border-r border-slate-200'>
                             {featuresColumnLabel}
                         </th>
                         {planNames.map((name, index) => (
                             <th
                                 key={index}
-                                className='w-[160px] px-5 py-4 text-center text-sm font-semibold text-slate-900 border-l border-slate-200 capitalize'
+                                className='w-[160px] px-3 py-2 text-center text-sm font-semibold text-slate-900 border-l border-slate-200 capitalize'
                             >
                                 {name}
                             </th>
@@ -53,13 +53,13 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
                     {rows.map((row, rowIndex) => (
                         <tr
                             key={row.label}
-                            className={`border-b border-slate-100 last:border-b-0 ${rowIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}
+                            className={`border-b border-slate-100 last:border-b-0 ${rowIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}
                         >
-                            <td className='w-[210px] px-5 py-3.5 text-sm text-slate-600 whitespace-nowrap sticky left-0 bg-inherit z-20 border-r border-slate-100'>
+                            <td className='min-w-[160px] px-3 py-2 text-xs text-slate-600 sticky left-0 bg-inherit z-20 border-r border-slate-100'>
                                 {row.label}
                             </td>
                             {row.values.map((value, index) => (
-                                <td key={index} className='w-[160px] px-5 py-3.5 text-center border-l border-slate-100'>
+                                <td key={index} className='w-[160px] px-3 py-2 text-center border-l border-slate-100'>
                                     {row.isPrice ? (
                                         <div className='flex flex-col items-center gap-0.5'>
                                             {value.original && (
@@ -70,7 +70,7 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
                                             <span className='font-bold text-slate-900'>
                                                 {value.display}
                                                 <span className='text-xs font-normal text-slate-400 ml-0.5'>
-                                                    /{tabtype === 'Monthly' ? 'mo' : 'yr'}
+                                                    /{tabtype === 'Monthly' ? 'month' : 'year'}
                                                 </span>
                                             </span>
                                             {value.label && (
@@ -82,7 +82,7 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
                                     ) : value ? (
                                         <MdCheckCircleOutline className='mx-auto text-indigo-600' size={18} />
                                     ) : (
-                                        <MdCancel className='mx-auto text-slate-300' size={18} />
+                                        <MdCancel className='mx-auto text-red-300' size={18} />
                                     )}
                                 </td>
                             ))}
