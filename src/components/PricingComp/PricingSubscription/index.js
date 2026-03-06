@@ -48,8 +48,8 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
         });
     }, []);
 
-    const onViewRateCard = useCallback((serviceName) => {
-        setSelectedServiceName(serviceName || null);
+    const onViewRateCard = useCallback((selection) => {
+        setSelectedServiceName(selection || null);
         setShowDialPlan(true);
 
         setTimeout(() => {
@@ -114,7 +114,14 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
                         <div ref={dialPlanRef}>
                             <DialPlan
                                 pricingData={dialPlanData}
-                                selectedServiceName={selectedServiceName}
+                                selectedServiceName={
+                                    typeof selectedServiceName === 'object'
+                                        ? selectedServiceName?.serviceName
+                                        : selectedServiceName
+                                }
+                                selectedPlanName={
+                                    typeof selectedServiceName === 'object' ? selectedServiceName?.planName : null
+                                }
                                 pageData={pageData?.dialPlan}
                                 symbol={symbol}
                             />

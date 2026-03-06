@@ -223,6 +223,10 @@ export default function PricingCards({
                     </div>
                 </div>
             )}
+
+            {pageInfo?.country === 'in' && (
+                <p className='text-xs text-slate-400'>* All prices are exclusive of 18% GST.</p>
+            )}
         </div>
     );
 }
@@ -269,11 +273,17 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
     const hasDialPlan = (s) => s?.dialPlan != null && s.dialPlan?.data?.length > 0;
 
     const includedServices = services.filter((s) => s?.freeCredit != null && s?.freeCredit !== 0 && !hasDialPlan(s));
+    const isUnlimitedFreeCredit = (fc) => fc === -1 || fc === '-1';
     const dialPlanServicesWithCredit = services.filter(
-        (s) => hasDialPlan(s) && s?.freeCredit != null && Number(s?.freeCredit) > 0
+        (s) =>
+            hasDialPlan(s) &&
+            s?.freeCredit != null &&
+            (Number(s?.freeCredit) > 0 || isUnlimitedFreeCredit(s?.freeCredit))
     );
     const dialPlanServicesNoCredit = services.filter(
-        (s) => hasDialPlan(s) && !(s?.freeCredit != null && Number(s?.freeCredit) > 0)
+        (s) =>
+            hasDialPlan(s) &&
+            !(s?.freeCredit != null && (Number(s?.freeCredit) > 0 || isUnlimitedFreeCredit(s?.freeCredit)))
     );
     const extraServices = services.filter((s) => !hasDialPlan(s) && !(s?.freeCredit === -1 || s?.freeCredit === '-1'));
 
@@ -297,23 +307,10 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
     const visibleFeatures = features.slice(0, 5);
 
     return (
-        <div
-            className={`relative h-full flex flex-col p-6 rounded-xl transition-all duration-300 bg-white min-w-[350px] w-[350px]
-                ${isFeatured ? 'border-2 border-indigo-600 z-10' : 'border border-slate-200 hover:border-indigo-300'}`}
-        >
-            {isFeatured && (
-                <div className='absolute top-0 right-0 -mt-3 -mr-3'>
-                    <span className='inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-indigo-600 text-white'>
-                        Most Popular
-                    </span>
-                </div>
-            )}
-
+        <div className='relative h-full flex flex-col p-6 rounded-xl transition-all duration-300 bg-white min-w-[350px] w-[350px] border border-slate-200 hover:border-indigo-300'>
             {/* Header */}
             <div className='mb-6'>
-                <h3 className={`text-base font-semibold mb-2 ${isFeatured ? 'text-indigo-600' : 'text-slate-900'}`}>
-                    {plan?.name || 'Plan'}
-                </h3>
+                <h3 className='text-base font-semibold mb-2 text-slate-900'>{plan?.name || 'Plan'}</h3>
                 <div className='flex items-baseline gap-1 mb-3'>
                     {isFree ? (
                         <span className='text-4xl font-bold text-slate-900 tracking-tight'>{symbol}0</span>
@@ -337,12 +334,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                 href={getURL('signup', pageInfo?.page, pageInfo)}
                 target='_blank'
                 type='button'
-                className={`w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all mb-6 flex items-center justify-center gap-2
-                    ${
-                        isFeatured
-                            ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                            : 'bg-white text-slate-900 border-2 border-slate-200 hover:border-indigo-600 hover:bg-slate-50'
-                    }`}
+                className='w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all mb-6 flex items-center justify-center gap-2 bg-white text-slate-900 border-2 border-slate-200 hover:border-indigo-600 hover:bg-slate-50'
             >
                 Get started <MdArrowForward size={16} />
             </a>
@@ -387,6 +379,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                             })}
                             {dialPlanServicesWithCredit.map((service, i) => {
                                 const walletCredit = service?.freeCredit;
+                                const isUnlimited = isUnlimitedFreeCredit(walletCredit);
                                 return (
                                     <div key={`dp-${i}`} className='flex justify-between items-center'>
                                         <div className='flex items-center gap-2'>
@@ -397,17 +390,25 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                         </div>
                                         <div className='flex items-center gap-1'>
                                             <span className='text-sm font-bold text-slate-900'>
-                                                {symbol}
-                                                {Number(walletCredit).toLocaleString(locale || 'en-IN')}
+                                                {isUnlimited
+                                                    ? 'Unlimited'
+                                                    : `${symbol}${Number(walletCredit).toLocaleString(locale || 'en-IN')}`}
                                             </span>
-                                            <button
-                                                type='button'
-                                                title='Click to view Rate Card'
-                                                onClick={() => onViewRateCard?.(service?.name)}
-                                                className='text-slate-400 hover:text-indigo-600 transition-colors'
-                                            >
-                                                <MdInfoOutline size={13} />
-                                            </button>
+                                            {!isUnlimited && (
+                                                <button
+                                                    type='button'
+                                                    title='Click to view Rate Card'
+                                                    onClick={() =>
+                                                        onViewRateCard?.({
+                                                            serviceName: service?.name,
+                                                            planName: plan?.name,
+                                                        })
+                                                    }
+                                                    className='text-slate-400 hover:text-indigo-600 transition-colors'
+                                                >
+                                                    <MdInfoOutline size={13} />
+                                                </button>
+                                            )}
                                         </div>
                                     </div>
                                 );
@@ -452,7 +453,12 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                                 <span className='font-medium text-slate-900'>As per rate card</span>
                                                 <button
                                                     type='button'
-                                                    onClick={() => onViewRateCard?.(service?.name)}
+                                                    onClick={() =>
+                                                        onViewRateCard?.({
+                                                            serviceName: service?.name,
+                                                            planName: plan?.name,
+                                                        })
+                                                    }
                                                     className='text-indigo-600 hover:text-indigo-800 font-medium text-xs transition-colors'
                                                 >
                                                     view
