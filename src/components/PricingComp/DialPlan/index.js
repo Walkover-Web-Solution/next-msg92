@@ -68,8 +68,9 @@ function extractAllDialPlans(pricingData) {
         for (const service of plan?.services ?? []) {
             const dialPlan = service?.dialPlan;
             const serviceName = service?.serviceName ?? service?.name;
-            if (serviceName && !seen.has(serviceName) && dialPlan?.columns?.length > 0 && dialPlan?.data?.length > 0) {
-                seen.add(serviceName);
+            const key = `${serviceName}||${planName}`;
+            if (serviceName && !seen.has(key) && dialPlan?.columns?.length > 0 && dialPlan?.data?.length > 0) {
+                seen.add(key);
                 result.push({ serviceName, planName, columns: dialPlan.columns, data: dialPlan.data });
             }
         }
@@ -199,7 +200,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
     );
 });
 
-export default function DialPlan({ pricingData, selectedServiceName, pageData, symbol }) {
+export default function DialPlan({ pricingData, selectedServiceName, selectedPlanName, pageData, symbol }) {
     const [search, setSearch] = useState('');
     const debouncedSearch = useDebouncedValue(search, DEBOUNCE_DELAY);
 
@@ -225,11 +226,17 @@ export default function DialPlan({ pricingData, selectedServiceName, pageData, s
     }
 
     const normalizedSelected = selectedServiceName?.trim().toLowerCase();
+    const normalizedPlan = selectedPlanName?.trim().toLowerCase();
     const activeIndex = normalizedSelected
-        ? dialPlans.findIndex((d) => d.serviceName?.trim().toLowerCase() === normalizedSelected)
+        ? dialPlans.findIndex((d) => {
+              const nameMatch = d.serviceName?.trim().toLowerCase() === normalizedSelected;
+              if (!normalizedPlan) return nameMatch;
+              return nameMatch && d.planName?.trim().toLowerCase() === normalizedPlan;
+          })
         : -1;
-    const activePlan = dialPlans[activeIndex >= 0 ? activeIndex : 0];
-    const activeData = filteredDataByPlan[activeIndex >= 0 ? activeIndex : 0] ?? [];
+    const defaultIndex = dialPlans.length - 1;
+    const activePlan = dialPlans[activeIndex >= 0 ? activeIndex : defaultIndex];
+    const activeData = filteredDataByPlan[activeIndex >= 0 ? activeIndex : defaultIndex] ?? [];
 
     return (
         <section className='w-full py-4 flex flex-col gap-4'>
