@@ -14,7 +14,7 @@ import SEOComp from '@/components/SEOComp/SEOComp';
 import TrustedByComp from '@/components/TrustedByComp/TrustedByComp';
 import HeadComp from '@/components/HeadComp/HeadComp';
 import FeatureComp from '@/components/FeatureComp/FeatureComp';
-import PricingComp from '@/components/PricingComp/PricingComp';
+import PricingComp from '@/components/PricingComp';
 import AboutUsComp from '@/components/AboutUsComp/AboutUsComp';
 import DevelopersComp from '@/components/DevelopersComp/DevelopersComp';
 import StartupComp from '@/components/StartupComp/StartupComp';
@@ -50,7 +50,6 @@ import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromT
 import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
 import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
-import SignupParentComp from '@/components/SignupCompNew/SignupParentComp';
 
 // New Components
 import Banner from '@/components/UpdatedComp/Banner';
@@ -62,7 +61,6 @@ import specialPages from '@/data/specialPages.json';
 import { useRouter } from 'next/router';
 import PreFooterMFTL from '@/components/migrateFromTextlocal/preFooterMFTL/preFooterMFTL';
 import CTAMFTL from '@/components/migrateFromTextlocal/ctaMFTL/ctaMFTL';
-import SignupPage from '@/components/SignupCompNew/SingupComp';
 import ChatBotPageComp from '@/components/ChatBotPageComp';
 
 const Components = {
@@ -118,9 +116,8 @@ const Components = {
     WhyChooseMSG91,
     WhatsAppIntegrations,
     WhatsAppAccountVerification,
-    SignupPage,
     FeatureWithBulletGroup,
-    SignupParentComp,
+
     // New Components
     Banner,
 };
@@ -156,7 +153,6 @@ export default function Page({ data, commonData, pageInfo }) {
                         console.error(`Component "${key}" is undefined. Check your imports and component exports.`);
                         return;
                     }
-
                     return (
                         <Component
                             key={`section-${key}`}
