@@ -106,7 +106,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
                     autoComplete='off'
                     aria-label='Search dial plan rates'
                 />
-                <div className='flex items-center gap-2'>
+                <div className='hidden sm:flex items-center gap-2'>
                     <button
                         type='button'
                         onClick={scrollLeft}
@@ -134,7 +134,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
                                     <th
                                         key={column.key}
                                         className={`min-w-[130px] px-3 py-2 text-left text-[10px] md:text-[12px] leading-3 md:leading-4 font-medium text-slate-400 border-r border-slate-200 last:border-r-0 ${
-                                            colIndex === 0 ? 'w-[140px] sticky left-0 bg-slate-50 z-40' : ''
+                                            colIndex === 0 ? 'min-w-[140px] sticky left-0 bg-slate-50 z-40' : ''
                                         }`}
                                     >
                                         {column?.label}
