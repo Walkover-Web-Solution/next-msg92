@@ -121,7 +121,78 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                 <div className='flex flex-col gap-3'>
                     <p className='text-xs font-semibold text-slate-400 uppercase tracking-wider'>Plan comparison</p>
 
-                    <div className='overflow-x-auto rounded-xl border border-slate-200 bg-white'>
+                    {/* Mobile card view */}
+                    <div className='flex flex-col gap-3 sm:hidden'>
+                        {results.map((result) => (
+                            <div
+                                key={result.title}
+                                className='rounded-xl border border-slate-200 bg-white p-4 flex flex-col gap-3'
+                            >
+                                <div className='flex items-center justify-between'>
+                                    <span className='font-semibold text-slate-900'>{result.title}</span>
+                                    <span className='font-bold text-indigo-600'>
+                                        {formatTotalPrice(symbol, result?.total, locale)}
+                                    </span>
+                                </div>
+                                <div className='grid grid-cols-2 gap-3'>
+                                    <div className='flex flex-col gap-1'>
+                                        <span className='text-[10px] font-semibold text-slate-400 uppercase tracking-wider'>
+                                            Included
+                                        </span>
+                                        {visibleServiceNames
+                                            .filter((s) => result?.calculationByService?.[s] != null)
+                                            .map((serviceName) => {
+                                                const includedAmount = result?.includedByService?.[serviceName];
+                                                const displayText =
+                                                    includedAmount == null
+                                                        ? 'Unlimited'
+                                                        : Number(includedAmount).toLocaleString(locale, {
+                                                              notation: 'standard',
+                                                          });
+                                                return (
+                                                    <span
+                                                        key={serviceName}
+                                                        className='text-xs text-slate-700 font-medium'
+                                                    >
+                                                        {displayText} {serviceName}
+                                                    </span>
+                                                );
+                                            })}
+                                    </div>
+                                    <div className='flex flex-col gap-1'>
+                                        <span className='text-[10px] font-semibold text-slate-400 uppercase tracking-wider'>
+                                            Extra Cost
+                                        </span>
+                                        {visibleServiceNames.map((serviceName) => {
+                                            const calculation = result?.calculationByService?.[serviceName];
+                                            if (!calculation) return null;
+                                            const isUnlimited = result?.includedByService?.[serviceName] == null;
+                                            const isWithin = !isUnlimited && calculation.extra === 0;
+                                            const isNotAllowed = calculation.isIncluded && calculation.extra > 0;
+                                            let valueText;
+                                            if (isUnlimited) valueText = 'Unlimited';
+                                            else if (isWithin) valueText = formatPrice(symbol, 0, locale);
+                                            else if (isNotAllowed) valueText = 'Not allowed';
+                                            else
+                                                valueText = formatPrice(
+                                                    symbol,
+                                                    result?.overages?.[serviceName],
+                                                    locale
+                                                );
+                                            return (
+                                                <span key={serviceName} className='text-xs text-slate-700'>
+                                                    {serviceName}: {valueText}
+                                                </span>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Desktop table view */}
+                    <div className='hidden sm:block overflow-x-auto rounded-xl border border-slate-200 bg-white'>
                         <table className='w-full min-w-[600px] table-fixed text-sm'>
                             <thead className='bg-slate-50'>
                                 <tr className='border-b border-slate-200 text-left text-xs font-medium text-slate-400 whitespace-wrap'>
