@@ -319,19 +319,19 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
         <div className='relative flex flex-col p-6 md:rounded-xl rounded-md transition-all duration-300 bg-white min-w-[280px] w-[280px] md:min-w-[350px] md:w-[350px] border border-slate-200 hover:border-indigo-300'>
             {/* Header */}
             <div className={`mb-3 ${hasDiscount ? 'md:min-h-[156px] min-h-[130px]' : ''}`}>
-                <h3 className='text-xl font-bold text-slate-900 mb-3'>{plan?.name || 'Plan'}</h3>
+                <h3 className='text-2xl font-semibold text-slate-900 mb-3'>{plan?.name || 'Plan'}</h3>
                 {saveLabel && (
                     <div className='mb-3'>
-                        <span className='inline-block border border-orange-400 text-orange-500 font-semibold text-xs px-3 py-1 rounded-full'>
+                        <span className='inline-block border border-blue-400 text-blue-600 bg-blue-50 font-semibold text-xs px-3 py-1 rounded-full'>
                             {saveLabel}
                         </span>
                     </div>
                 )}
                 <div className='flex items-baseline gap-2 mb-1'>
                     {isFree ? (
-                        <span className='text-3xl md:text-4xl font-bold tracking-tight'>{symbol}0</span>
+                        <span className='text-2xl md:text-3xl font-semibold tracking-tight'>{symbol}0</span>
                     ) : (
-                        <span className='text-3xl md:text-4xl font-bold tracking-tight'>{displayPrice}</span>
+                        <span className='text-2xl md:text-3xl font-semibold tracking-tight'>{displayPrice}</span>
                     )}
                     <span className='text-slate-500 font-medium text-xs md:text-sm'>
                         {discountDuration > 0
@@ -342,16 +342,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                     </span>
                 </div>
                 {originalPrice && (
-                    <div className='flex items-center gap-2 mt-1'>
-                        <span className='text-slate-400 text-xs md:text-sm font-medium line-through'>
-                            {originalPrice}/{tabtype === 'Monthly' ? 'month' : 'year'}
-                        </span>
-                        {discountDuration > 0 && (
-                            <span className='text-slate-700 font-bold text-xs md:text-sm'>
-                                Then {originalPrice}/month
-                            </span>
-                        )}
-                    </div>
+                    <span className='text-slate-700 font-bold text-xs md:text-sm'>Then {originalPrice}/month</span>
                 )}
             </div>
 
