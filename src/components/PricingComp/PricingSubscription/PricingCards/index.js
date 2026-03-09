@@ -329,11 +329,9 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                 )}
                 <div className='flex items-baseline gap-2 mb-1'>
                     {isFree ? (
-                        <span className='text-2xl md:text-4xl font-bold text-green-600 tracking-tight'>{symbol}0</span>
+                        <span className='text-3xl md:text-4xl font-bold tracking-tight'>{symbol}0</span>
                     ) : (
-                        <span className='text-3xl md:text-4xl font-bold text-green-600 tracking-tight'>
-                            {displayPrice}
-                        </span>
+                        <span className='text-3xl md:text-4xl font-bold tracking-tight'>{displayPrice}</span>
                     )}
                     <span className='text-slate-500 font-medium text-xs md:text-sm'>
                         {discountDuration > 0
