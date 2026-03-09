@@ -61,35 +61,25 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
                                 <td key={index} className='w-[160px] px-3 py-2 text-center border-l border-slate-100'>
                                     {row.isPrice ? (
                                         <div className='flex flex-col h-full items-center gap-0.5'>
-                                            <span className='text-base font-bold text-slate-900'>
-                                                {value.display}
-                                                <span className='text-xs font-normal text-slate-400 ml-0.5'>
-                                                    /{tabtype === 'Monthly' ? 'mo' : 'yr'}
-                                                </span>
-                                            </span>
+                                            <span className='text-base font-bold text-slate-900'>{value.display}</span>
                                             {value.original && (
-                                                <span className='text-xs text-slate-400 line-through'>
-                                                    {value.original}
-                                                </span>
-                                            )}
-
-                                            {value.label && (
-                                                <span className='text-[10px] font-medium text-emerald-600 text-center'>
-                                                    {value.label.split(' for ').map((part, i) => (
-                                                        <span key={i}>
-                                                            {i > 0 ? (
-                                                                <>
-                                                                    <br />
-                                                                    for {part}
-                                                                </>
-                                                            ) : (
-                                                                part
-                                                            )}
+                                                <span className='text-xs text-slate-500 flex flex-col items-center'>
+                                                    <span>{value.original}</span>
+                                                    {value.duration > 0 && (
+                                                        <span>
+                                                            after {value.duration} month
+                                                            {value.duration !== 1 ? 's' : ''}
                                                         </span>
-                                                    ))}
+                                                    )}
                                                 </span>
                                             )}
                                         </div>
+                                    ) : row.isDiscount ? (
+                                        <span
+                                            className={`text-xs font-medium ${value === '—' ? 'text-slate-400' : 'text-emerald-600'}`}
+                                        >
+                                            {value}
+                                        </span>
                                     ) : row.isService ? (
                                         <span
                                             className={`text-xs font-medium ${value === '—' ? 'text-slate-400' : 'text-slate-700'}`}
@@ -111,7 +101,7 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
     );
 }
 
-function buildTableData(pricingData, tabtype, symbol, locale) {
+function buildTableData(pricingData, tabtype, symbol, locale, tabtypeLabel) {
     if (!Array.isArray(pricingData) || pricingData.length === 0) return null;
     const plans = pricingData.filter((p) => p?.type === tabtype);
     if (plans.length === 0) return null;
@@ -148,7 +138,7 @@ function buildTableData(pricingData, tabtype, symbol, locale) {
     });
 
     const serviceRows = serviceNames.map((name) => ({
-        label: name,
+        label: `${name} (${tabtypeLabel ?? tabtype})`,
         isService: true,
         values: plans.map((plan) => {
             const s = (plan?.services ?? []).find((sv) => sv?.name === name);
@@ -156,8 +146,7 @@ function buildTableData(pricingData, tabtype, symbol, locale) {
             const credit = s?.freeCredit;
             const isUnlimited = credit === -1 || credit === '-1';
             if (isUnlimited) return 'Unlimited';
-            if (credit != null && Number(credit) > 0)
-                return `${Number(credit).toLocaleString(locale || 'en-IN')} / month`;
+            if (credit != null && Number(credit) > 0) return `${Number(credit).toLocaleString(locale || 'en-IN')}`;
             return '—';
         }),
     }));
@@ -165,7 +154,7 @@ function buildTableData(pricingData, tabtype, symbol, locale) {
     if (featureRows.length === 0) return null;
 
     const priceRow = {
-        label: 'Price',
+        label: `Price (${tabtypeLabel ?? tabtype})`,
         isPrice: true,
         values: plans.map((plan) => {
             const discountedAmt = getDiscountedAmount(plan?.amount, plan?.discount);
@@ -174,12 +163,74 @@ function buildTableData(pricingData, tabtype, symbol, locale) {
                     ? formatAmount(discountedAmt, symbol, locale)
                     : formatAmount(plan?.amount, symbol, locale);
             const original = discountedAmt != null ? formatAmount(plan?.amount, symbol, locale) : null;
-            const label = getDiscountLabel(plan?.discount?.[0], symbol, locale);
-            return { display, original, label };
+            const duration = plan?.discount?.[0]?.duration ?? 0;
+            return { display, original, duration };
         }),
     };
 
-    return { planNames, rows: [priceRow, ...serviceRows, ...featureRows] };
+    const contactServiceName = serviceNames[0] ?? null;
+    const isContactService = contactServiceName && /contact/i.test(contactServiceName);
+    const hasPerContact =
+        isContactService &&
+        plans.some((plan) => {
+            const s = (plan?.services ?? []).find((sv) => sv?.name === contactServiceName);
+            const credit = s?.freeCredit;
+            return credit != null && Number(credit) > 0 && Number(plan?.amount) > 0;
+        });
+
+    const perContactRow = hasPerContact
+        ? {
+              label: `Price per ${contactServiceName?.replace(/s$/i, '')}`,
+              isService: true,
+              values: plans.map((plan) => {
+                  const s = (plan?.services ?? []).find((sv) => sv?.name === contactServiceName);
+                  const credit = s?.freeCredit;
+                  const amount = Number(plan?.amount);
+                  const contacts = Number(credit);
+                  if (!credit || contacts <= 0 || amount <= 0) return '—';
+                  const perContact = amount / contacts;
+                  return `${symbol}${perContact.toLocaleString(locale || 'en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+              }),
+          }
+        : null;
+
+    const extraRateRows = serviceNames.map((name) => {
+        const hasRate = plans.some((plan) => {
+            const s = (plan?.services ?? []).find((sv) => sv?.name === name);
+            const rate = s?.followUpRate;
+            return rate != null && Number(rate) > 0 && s?.postPaidAllowed !== false;
+        });
+        if (!hasRate) return null;
+        return {
+            label: `Extra ${name}`,
+            isService: true,
+            values: plans.map((plan) => {
+                const s = (plan?.services ?? []).find((sv) => sv?.name === name);
+                if (!s) return '—';
+                const rate = s?.followUpRate;
+                const chunkSize = s?.chunkSize ?? 1;
+                const hasRate = rate != null && Number(rate) > 0;
+                const isNotAllowed = !s?.postPaidAllowed || !hasRate;
+                if (isNotAllowed) return 'Not allowed';
+                const unitLabel = chunkSize > 1 ? `${chunkSize} units` : 'unit';
+                return `${symbol}${Number(rate).toLocaleString(locale || 'en-IN', { maximumFractionDigits: 4 })} / ${unitLabel}`;
+            }),
+        };
+    });
+
+    const serviceRowsWithExtras = serviceRows.reduce((acc, row, i) => {
+        acc.push(row);
+        const serviceName = serviceNames[i];
+        if (serviceName === contactServiceName && perContactRow) {
+            acc.push(perContactRow);
+        }
+        const extraRow = extraRateRows[i];
+        if (extraRow) acc.push(extraRow);
+        return acc;
+    }, []);
+
+    const rows = [priceRow, ...serviceRowsWithExtras, ...featureRows];
+    return { planNames, rows };
 }
 
 export default function ComparePlans({ pricingData, symbol, locale, pageData }) {
@@ -193,8 +244,8 @@ export default function ComparePlans({ pricingData, symbol, locale, pageData }) 
 
     const { monthlyData, yearlyData } = useMemo(
         () => ({
-            monthlyData: buildTableData(pricingData, 'Monthly', symbol, locale),
-            yearlyData: buildTableData(pricingData, 'Yearly', symbol, locale),
+            monthlyData: buildTableData(pricingData, 'Monthly', symbol, locale, 'Monthly'),
+            yearlyData: buildTableData(pricingData, 'Yearly', symbol, locale, 'Yearly'),
         }),
         [pricingData, symbol, locale]
     );

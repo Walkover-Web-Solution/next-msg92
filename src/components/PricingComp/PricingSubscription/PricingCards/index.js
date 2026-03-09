@@ -133,7 +133,7 @@ export default function PricingCards({
             <div data-tabpanel='Monthly' className='w-full'>
                 <div
                     ref={monthlyScrollRef}
-                    className='flex items-stretch h-full gap-6 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+                    className='flex items-stretch h-full gap-3 md:gap-4 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
                 >
                     {monthlyPlans.map((plan, index) => (
                         <PlanCard
@@ -156,7 +156,7 @@ export default function PricingCards({
                 <div data-tabpanel='Yearly' className='w-full hidden'>
                     <div
                         ref={yearlyScrollRef}
-                        className='flex items-stretch h-full gap-6 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+                        className='flex items-stretch h-full gap-3 md:gap-4 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
                     >
                         {yearlyPlans.map((plan, index) => (
                             <PlanCard
@@ -304,9 +304,9 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
         const typeId = discount?.discount_type_id ?? discount?.type_id;
         const value = Number(discount?.value ?? 0);
         const durationText =
-            discountDuration > 0 ? ` for ${discountDuration} month${discountDuration !== 1 ? 's' : ''}` : '';
-        if (typeId === 1) return `Save ${symbol}${value.toLocaleString(locale || 'en-IN')}${durationText}`;
-        if (typeId === 2) return `Save ${value >= 100 ? 100 : value}%${durationText}`;
+            discountDuration > 0 ? ` for first ${discountDuration} month${discountDuration !== 1 ? 's' : ''}` : '';
+        if (typeId === 1) return `${symbol}${value.toLocaleString(locale || 'en-IN')} off${durationText}`;
+        if (typeId === 2) return `${value >= 100 ? 100 : value}% off${durationText}`;
         return null;
     })();
 
@@ -316,34 +316,33 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
     const visibleFeatures = features.slice(0, 5);
 
     return (
-        <div className='relative flex flex-col p-6 rounded-xl transition-all duration-300 bg-white min-w-[280px] w-[280px] md:min-w-[350px] md:w-[350px] border border-slate-200 hover:border-indigo-300'>
+        <div className='relative flex flex-col p-6 md:rounded-xl rounded-md transition-all duration-300 bg-white min-w-[280px] w-[280px] md:min-w-[350px] md:w-[350px] border border-slate-200 hover:border-indigo-300'>
             {/* Header */}
-            <div className={`mb-3 ${hasDiscount ? 'min-h-[156px]' : ''}`}>
-                <h3 className='text-lg font-bold text-slate-900 mb-3'>{plan?.name || 'Plan'}</h3>
-                <div className='flex items-baseline gap-1 mb-3'>
-                    {isFree ? (
-                        <span className='text-4xl font-bold text-slate-900 tracking-tight'>{symbol}0</span>
-                    ) : (
-                        <span className='text-4xl font-bold text-slate-900 tracking-tight'>{displayPrice}</span>
-                    )}
-                    <span className='text-slate-500 font-medium'>{tabtype === 'Monthly' ? '/month' : '/year'}</span>
-                </div>
-                {(originalPrice || saveLabel) && (
-                    <div className='flex items-center gap-2 mb-1'>
-                        {originalPrice && (
-                            <span className='text-slate-400 text-lg font-semibold line-through'>{originalPrice}</span>
-                        )}
-                        {saveLabel && (
-                            <span className='text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded-md text-sm'>
-                                {saveLabel}
-                            </span>
-                        )}
+            <div className={`mb-3 ${hasDiscount ? 'md:min-h-[156px] min-h-[130px]' : ''}`}>
+                <h3 className='text-2xl font-semibold text-slate-900 mb-3'>{plan?.name || 'Plan'}</h3>
+                {saveLabel && (
+                    <div className='mb-3'>
+                        <span className='inline-block border border-blue-400 text-blue-600 bg-blue-50 font-semibold text-xs px-3 py-1 rounded-full'>
+                            {saveLabel}
+                        </span>
                     </div>
                 )}
-                {originalPrice && discountDuration > 0 && (
-                    <p className='text-slate-500 text-sm italic mb-3'>
-                        Next: {originalPrice} /mo after {discountDuration} month{discountDuration !== 1 ? 's' : ''}
-                    </p>
+                <div className='flex items-baseline gap-2 mb-1'>
+                    {isFree ? (
+                        <span className='text-2xl md:text-3xl font-semibold tracking-tight'>{symbol}0</span>
+                    ) : (
+                        <span className='text-2xl md:text-3xl font-semibold tracking-tight'>{displayPrice}</span>
+                    )}
+                    <span className='text-slate-500 font-medium text-xs md:text-sm'>
+                        {discountDuration > 0
+                            ? `/ month for first ${discountDuration} month${discountDuration !== 1 ? 's' : ''}`
+                            : tabtype === 'Monthly'
+                              ? '/month'
+                              : '/year'}
+                    </span>
+                </div>
+                {originalPrice && (
+                    <span className='text-slate-700 font-bold text-xs md:text-sm'>Then {originalPrice}/month</span>
                 )}
             </div>
 
