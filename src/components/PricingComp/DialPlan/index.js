@@ -45,19 +45,30 @@ function matchesSearchQuery(row, searchableKeys, query) {
     });
 }
 
+function deduplicateRows(data) {
+    const seen = new Set();
+    return data.filter((row) => {
+        const key = `${row.country_name ?? ''}||${row.prefix ?? ''}||${row.country_prefix ?? ''}`;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+    });
+}
+
 function filterRowsBySearch(data, columns, searchTerm) {
-    if (!searchTerm?.trim() || !data?.length) {
-        return data;
+    const deduped = deduplicateRows(data);
+    if (!searchTerm?.trim() || !deduped?.length) {
+        return deduped;
     }
 
     const query = searchTerm.trim().toLowerCase();
     const searchableKeys = getSearchableKeys(columns);
 
     if (searchableKeys.length === 0) {
-        return data;
+        return deduped;
     }
 
-    return data.filter((row) => matchesSearchQuery(row, searchableKeys, query));
+    return deduped.filter((row) => matchesSearchQuery(row, searchableKeys, query));
 }
 
 function extractAllDialPlans(pricingData) {
@@ -145,7 +156,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
                         <tbody>
                             {hasData ? (
                                 data.map((row, index) => {
-                                    const rowKey = row.id ?? row.country_name ?? `row-${index}`;
+                                    const rowKey = `row-${index}`;
                                     const rowBg = index % 2 === 0 ? 'bg-white' : 'bg-slate-50';
                                     return (
                                         <tr

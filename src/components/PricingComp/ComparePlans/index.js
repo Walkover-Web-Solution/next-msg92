@@ -162,7 +162,7 @@ function buildTableData(pricingData, tabtype, symbol, locale) {
         }),
     }));
 
-    if (featureRows.length === 0 && serviceRows.length === 0) return null;
+    if (featureRows.length === 0) return null;
 
     const priceRow = {
         label: 'Price',

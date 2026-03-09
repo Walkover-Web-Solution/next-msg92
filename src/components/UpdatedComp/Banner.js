@@ -29,7 +29,7 @@ export default function Banner({ pageInfo, data }) {
                     </p>
                     <h1 className='heading text-primary'>{data?.heading}</h1>
                     <p className='subheading text-gray-600'>{data?.subheading}</p>
-                    <div className='flex gap-2'>
+                    <div className='flex gap-2 flex-wrap'>
                         <a href={getURL('signup', pageInfo?.page, pageInfo)} target='_blank'>
                             <button className='btn btn-hello btn-md'>
                                 <LinkText>Get Started</LinkText>
