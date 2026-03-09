@@ -106,10 +106,6 @@
                         "answer": "But in case you already have used the assigned inboxes you can always purchase a new inbox in basic and premium plan for rupees 500 each. In case of a free plan you won't be able to purchase new inboxes. You have to upgrade the plan if you want the extra inbox."
                     },
                     {
-                        "question": "How to subscribe to your Hello Plan?",
-                        "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
-                    },
-                    {
                         "question": "Can I customize the Hello Plan?",
                         "answer": "In the Hello panel, click on the subscription tab, that is available on the left corner. It will open the page of the current plan and also the option to purchase a new plan. Click on that and you will be able to select from monthly and yearly options. You can directly subscribe to the plan from the website itself. There go to hello service and click on get started, and fill the necessary details and subscribe to the plan."
                     }
@@ -205,7 +201,7 @@
                         "answer": "Many service providers offer customized pricing plans for businesses with unique requirements. Contact the sales team to discuss your needs and explore tailored pricing options."
                     },
                     {
-                        "question": "Are there any hidden fees or charges that I should be aware of? dsd",
+                        "question": "Are there any hidden fees or charges that I should be aware of?",
                         "answer": ":No, there are no hidden additional charges for the widget, except for the actual sending of OTPs through any channel. To send OTPs, you simply need to subscribe or add balance to your account"
                     },
                     {

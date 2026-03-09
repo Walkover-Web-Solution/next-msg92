@@ -178,94 +178,96 @@ export default function PricingVoice({ data, country }) {
                         </div>
                         {country === 'in' && <p className='text-lg'>GST excluded.</p>}
                         {country === 'gb' && <p className='text-lg'>VAT excluded.</p>}
-                        <table className='table bg-white rounded w-full'>
-                            <thead>
-                                <tr className='font-bold text-[16px] text-black '>
-                                    <th className='w-[300px] border-r p-4'>Recipient’s Network</th>
-                                    <th className='border-r p-4'>Local rates</th>
-                                    <th className='p-4'>International rates</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {plans &&
-                                    plans.map((item, index) => {
-                                        return (
-                                            <tr className='border-none text-[16px]' key={index}>
-                                                <td className='border-r p-4'>{item?.network}</td>
-                                                <td className='border-r p-4'>
-                                                    {' '}
-                                                    {item?.local_rates_min && (
-                                                        <>
-                                                            {symbol}
-                                                            {item?.local_rates_min}
-                                                        </>
-                                                    )}
-                                                    {item?.local_rates_min !== item?.local_rates_max && (
-                                                        <>
-                                                            {' '}
-                                                            -{' '}
-                                                            {item?.local_rates_max && (
-                                                                <>
-                                                                    {symbol}
-                                                                    {item?.local_rates_max}
-                                                                </>
-                                                            )}
-                                                        </>
-                                                    )}
-                                                    {!item?.local_rates_min && !item?.local_rates_max && <>N/A</>}
-                                                </td>
-                                                <td className='p-4'>
-                                                    {' '}
-                                                    {item?.international_rates_min && (
-                                                        <>
-                                                            {symbol}
-                                                            {item?.international_rates_min}
-                                                        </>
-                                                    )}
-                                                    {item?.international_rates_min !==
-                                                        item?.international_rates_max && (
-                                                        <>
-                                                            {' '}
-                                                            -{' '}
-                                                            {item?.international_rates_max && (
-                                                                <>
-                                                                    {symbol}
-                                                                    {item?.international_rates_max}
-                                                                </>
-                                                            )}
-                                                        </>
-                                                    )}
-                                                    {!item?.international_rates_min &&
-                                                        !item?.international_rates_max && <>N/A</>}
-                                                </td>
-                                            </tr>
-                                        );
-                                    })}
-                                {loading
-                                    ? Array.from({ length: 5 }).map((_, index) => {
-                                          return (
-                                              <tr className='border-none text-[16px]' key={index}>
-                                                  <td className='border-r p-4'>
-                                                      <div className='skeleton w-2/3 h-[24px]'></div>
-                                                  </td>
-                                                  <td className='border-r p-4'>
-                                                      <div className='skeleton w-1/3 h-[24px]'></div>
-                                                  </td>
-                                                  <td className='p-4'>
-                                                      <div className='skeleton w-1/3 h-[24px]'></div>
-                                                  </td>
+                        <div className='overflow-x-auto w-full'>
+                            <table className='table bg-white rounded w-full min-w-[500px]'>
+                                <thead>
+                                    <tr className='font-bold text-[16px] text-black '>
+                                        <th className='w-[300px] border-r p-4'>Recipient’s Network</th>
+                                        <th className='border-r p-4'>Local rates</th>
+                                        <th className='p-4'>International rates</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {plans &&
+                                        plans.map((item, index) => {
+                                            return (
+                                                <tr className='border-none text-[16px]' key={index}>
+                                                    <td className='border-r p-4'>{item?.network}</td>
+                                                    <td className='border-r p-4'>
+                                                        {' '}
+                                                        {item?.local_rates_min && (
+                                                            <>
+                                                                {symbol}
+                                                                {item?.local_rates_min}
+                                                            </>
+                                                        )}
+                                                        {item?.local_rates_min !== item?.local_rates_max && (
+                                                            <>
+                                                                {' '}
+                                                                -{' '}
+                                                                {item?.local_rates_max && (
+                                                                    <>
+                                                                        {symbol}
+                                                                        {item?.local_rates_max}
+                                                                    </>
+                                                                )}
+                                                            </>
+                                                        )}
+                                                        {!item?.local_rates_min && !item?.local_rates_max && <>N/A</>}
+                                                    </td>
+                                                    <td className='p-4'>
+                                                        {' '}
+                                                        {item?.international_rates_min && (
+                                                            <>
+                                                                {symbol}
+                                                                {item?.international_rates_min}
+                                                            </>
+                                                        )}
+                                                        {item?.international_rates_min !==
+                                                            item?.international_rates_max && (
+                                                            <>
+                                                                {' '}
+                                                                -{' '}
+                                                                {item?.international_rates_max && (
+                                                                    <>
+                                                                        {symbol}
+                                                                        {item?.international_rates_max}
+                                                                    </>
+                                                                )}
+                                                            </>
+                                                        )}
+                                                        {!item?.international_rates_min &&
+                                                            !item?.international_rates_max && <>N/A</>}
+                                                    </td>
+                                                </tr>
+                                            );
+                                        })}
+                                    {loading
+                                        ? Array.from({ length: 5 }).map((_, index) => {
+                                              return (
+                                                  <tr className='border-none text-[16px]' key={index}>
+                                                      <td className='border-r p-4'>
+                                                          <div className='skeleton w-2/3 h-[24px] bg-slate-100 rounded-sm'></div>
+                                                      </td>
+                                                      <td className='border-r p-4'>
+                                                          <div className='skeleton w-1/3 h-[24px] bg-slate-100 rounded-sm'></div>
+                                                      </td>
+                                                      <td className='p-4'>
+                                                          <div className='skeleton w-1/3 h-[24px] bg-slate-100 rounded-sm'></div>
+                                                      </td>
+                                                  </tr>
+                                              );
+                                          })
+                                        : plans?.length === 0 && (
+                                              <tr className='border-none text-[16px]'>
+                                                  <td className='border-r p-4'>-</td>
+                                                  <td className='border-r p-4'>-</td>
+                                                  <td className='p-4'>-</td>
                                               </tr>
-                                          );
-                                      })
-                                    : plans?.length === 0 && (
-                                          <tr className='border-none text-[16px]'>
-                                              <td className='border-r p-4'>-</td>
-                                              <td className='border-r p-4'>-</td>
-                                              <td className='p-4'>-</td>
-                                          </tr>
-                                      )}
-                            </tbody>
-                        </table>
+                                          )}
+                                </tbody>
+                            </table>
+                        </div>
                         {data?.exportData && (
                             <p className='font-medium'>
                                 {data?.exportData?.content}
