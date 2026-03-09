@@ -7,6 +7,7 @@ import {
     MdArrowForward,
     MdCheckCircleOutline,
     MdCancel,
+    MdLaunch,
 } from 'react-icons/md';
 
 const FEATURED_INDEX = 3;
@@ -22,7 +23,6 @@ export default function PricingCards({
     onTabChange,
     pageInfo,
 }) {
-    console.log('⚡️ ~ :25 ~ PricingCards ~ pricingData:', pricingData);
     const monthlyScrollRef = useRef(null);
     const yearlyScrollRef = useRef(null);
     const [activeTab, setActiveTab] = useState('Monthly');
@@ -49,6 +49,9 @@ export default function PricingCards({
         };
     }, [pricingData]);
 
+    const monthlyHasDiscount = useMemo(() => monthlyPlans.some((p) => p?.discount?.length > 0), [monthlyPlans]);
+    const yearlyHasDiscount = useMemo(() => yearlyPlans.some((p) => p?.discount?.length > 0), [yearlyPlans]);
+
     const hasFeatures = useMemo(
         () => Array.isArray(pricingData) && pricingData.some((p) => (p?.features ?? []).some((f) => f?.included)),
         [pricingData]
@@ -68,7 +71,8 @@ export default function PricingCards({
                     if (s?.freeCredit != null && s?.freeCredit !== 0) flags.hasQuota = true;
                     const rate = s?.followUpRate;
                     const hasRate = rate != null && Number(rate) > 0;
-                    if (!hasRate && !(s?.freeCredit === -1 || s?.freeCredit === '-1')) flags.hasNotAllowed = true;
+                    const isUnlimited = s?.freeCredit === -1 || s?.freeCredit === '-1';
+                    if ((!hasRate || !s?.postPaidAllowed) && !isUnlimited) flags.hasNotAllowed = true;
                 }
             }
         }
@@ -80,7 +84,7 @@ export default function PricingCards({
     const showArrows = Math.max(monthlyPlans.length, yearlyPlans.length) > 2;
 
     return (
-        <div className='flex flex-col gap-6'>
+        <div className='flex flex-col gap-3'>
             <div className='flex items-center justify-between gap-4'>
                 {hasYearly ? (
                     <div className='inline-flex w-fit rounded-lg border border-slate-200 bg-white overflow-hidden'>
@@ -104,14 +108,14 @@ export default function PricingCards({
                 )}
 
                 {showArrows && (
-                    <div className='flex items-center gap-2'>
+                    <div className='hidden sm:flex items-center gap-2'>
                         <button
                             type='button'
                             onClick={scrollLeft}
                             aria-label='Scroll left'
                             className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                         >
-                            <MdChevronLeft size={16} />
+                            <MdChevronLeft size={20} />
                         </button>
                         <button
                             type='button'
@@ -119,7 +123,7 @@ export default function PricingCards({
                             aria-label='Scroll right'
                             className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                         >
-                            <MdChevronRight size={16} />
+                            <MdChevronRight size={20} />
                         </button>
                     </div>
                 )}
@@ -129,7 +133,7 @@ export default function PricingCards({
             <div data-tabpanel='Monthly' className='w-full'>
                 <div
                     ref={monthlyScrollRef}
-                    className='flex items-stretch h-full gap-6 overflow-x-auto scroll-smooth pt-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+                    className='flex items-stretch h-full gap-6 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
                 >
                     {monthlyPlans.map((plan, index) => (
                         <PlanCard
@@ -141,6 +145,7 @@ export default function PricingCards({
                             isFeatured={index === FEATURED_INDEX}
                             onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
                             pageInfo={pageInfo}
+                            hasDiscount={monthlyHasDiscount}
                         />
                     ))}
                 </div>
@@ -151,7 +156,7 @@ export default function PricingCards({
                 <div data-tabpanel='Yearly' className='w-full hidden'>
                     <div
                         ref={yearlyScrollRef}
-                        className='flex items-stretch h-full gap-6 overflow-x-auto scroll-smooth pt-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+                        className='flex items-stretch h-full gap-6 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
                     >
                         {yearlyPlans.map((plan, index) => (
                             <PlanCard
@@ -163,6 +168,7 @@ export default function PricingCards({
                                 isFeatured={index === FEATURED_INDEX}
                                 onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
                                 pageInfo={pageInfo}
+                                hasDiscount={yearlyHasDiscount}
                             />
                         ))}
                     </div>
@@ -171,22 +177,24 @@ export default function PricingCards({
 
             <div className='flex items-center justify-between'>
                 {onCalculateClick && (
-                    <button
+                    <span
                         type='button'
                         onClick={onCalculateClick}
-                        className='text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors'
+                        className='inline-flex items-center gap-2 text-sm font-medium text-link active-link capitalize'
                     >
+                        <MdLaunch className='text-base' />
                         Calculate Price
-                    </button>
+                    </span>
                 )}
                 {hasFeatures && (
-                    <button
+                    <span
                         type='button'
                         onClick={() => document.getElementById('compare-plans')?.scrollIntoView({ behavior: 'smooth' })}
-                        className='text-sm font-medium flex items-center gap-1 text-indigo-600 hover:text-indigo-700 transition-colors'
+                        className='inline-flex items-center gap-2 text-sm font-medium text-link active-link capitalize'
                     >
-                        View all features <MdChevronRight size={14} />
-                    </button>
+                        <MdLaunch className='text-base' />
+                        View all features
+                    </span>
                 )}
             </div>
 
@@ -258,7 +266,7 @@ function getDiscountedAmount(amount, discounts) {
     return null;
 }
 
-function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, pageInfo }) {
+function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, pageInfo, hasDiscount }) {
     const amount = plan?.amount;
     const discountedAmount = getDiscountedAmount(amount, plan?.discount);
     const displayPrice =
@@ -289,13 +297,14 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
 
     const isFree = displayPrice === 'Free';
 
+    const discountDuration = plan?.discount?.[0]?.duration ?? 0;
     const saveLabel = (() => {
         const discount = plan?.discount?.[0];
         if (!discount) return null;
         const typeId = discount?.discount_type_id ?? discount?.type_id;
         const value = Number(discount?.value ?? 0);
-        const duration = discount?.duration ?? 0;
-        const durationText = duration > 0 ? ` for ${duration} month${duration !== 1 ? 's' : ''}` : '';
+        const durationText =
+            discountDuration > 0 ? ` for ${discountDuration} month${discountDuration !== 1 ? 's' : ''}` : '';
         if (typeId === 1) return `Save ${symbol}${value.toLocaleString(locale || 'en-IN')}${durationText}`;
         if (typeId === 2) return `Save ${value >= 100 ? 100 : value}%${durationText}`;
         return null;
@@ -307,10 +316,10 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
     const visibleFeatures = features.slice(0, 5);
 
     return (
-        <div className='relative h-full flex flex-col p-6 rounded-xl transition-all duration-300 bg-white min-w-[350px] w-[350px] border border-slate-200 hover:border-indigo-300'>
+        <div className='relative flex flex-col p-6 rounded-xl transition-all duration-300 bg-white min-w-[280px] w-[280px] md:min-w-[350px] md:w-[350px] border border-slate-200 hover:border-indigo-300'>
             {/* Header */}
-            <div className='mb-6'>
-                <h3 className='text-base font-semibold mb-2 text-slate-900'>{plan?.name || 'Plan'}</h3>
+            <div className={`mb-3 ${hasDiscount ? 'min-h-[156px]' : ''}`}>
+                <h3 className='text-lg font-bold text-slate-900 mb-3'>{plan?.name || 'Plan'}</h3>
                 <div className='flex items-baseline gap-1 mb-3'>
                     {isFree ? (
                         <span className='text-4xl font-bold text-slate-900 tracking-tight'>{symbol}0</span>
@@ -319,14 +328,23 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                     )}
                     <span className='text-slate-500 font-medium'>{tabtype === 'Monthly' ? '/month' : '/year'}</span>
                 </div>
-                <div className='flex items-center gap-2 text-sm min-h-[24px]'>
-                    {originalPrice && <span className='text-slate-400 text-base line-through'>{originalPrice}</span>}
-                    {saveLabel && (
-                        <span className='text-emerald-600 font-medium bg-emerald-50 px-2 py-0.5 rounded-md'>
-                            {saveLabel}
-                        </span>
-                    )}
-                </div>
+                {(originalPrice || saveLabel) && (
+                    <div className='flex items-center gap-2 mb-1'>
+                        {originalPrice && (
+                            <span className='text-slate-400 text-lg font-semibold line-through'>{originalPrice}</span>
+                        )}
+                        {saveLabel && (
+                            <span className='text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded-md text-sm'>
+                                {saveLabel}
+                            </span>
+                        )}
+                    </div>
+                )}
+                {originalPrice && discountDuration > 0 && (
+                    <p className='text-slate-500 text-sm italic mb-3'>
+                        Next: {originalPrice} /mo after {discountDuration} month{discountDuration !== 1 ? 's' : ''}
+                    </p>
+                )}
             </div>
 
             {/* CTA */}
@@ -357,7 +375,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                 const displayQty = isUnlimited
                                     ? 'Unlimited'
                                     : qty != null
-                                      ? `${Number(qty).toLocaleString(locale || 'en-IN')} / mo`
+                                      ? `${Number(qty).toLocaleString(locale || 'en-IN')} / month`
                                       : '—';
                                 return (
                                     <div key={i} className='flex justify-between items-center'>
@@ -392,22 +410,24 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                             <span className='text-sm font-bold text-slate-900'>
                                                 {isUnlimited
                                                     ? 'Unlimited'
-                                                    : `${symbol}${Number(walletCredit).toLocaleString(locale || 'en-IN')}`}
+                                                    : `${symbol}${Number(walletCredit).toLocaleString(locale || 'en-IN')} / month`}
                                             </span>
                                             {!isUnlimited && (
-                                                <button
-                                                    type='button'
-                                                    title='Click to view Rate Card'
-                                                    onClick={() =>
-                                                        onViewRateCard?.({
-                                                            serviceName: service?.name,
-                                                            planName: plan?.name,
-                                                        })
-                                                    }
-                                                    className='text-slate-400 hover:text-indigo-600 transition-colors'
-                                                >
-                                                    <MdInfoOutline size={13} />
-                                                </button>
+                                                <span className='relative group cursor-pointer'>
+                                                    <MdInfoOutline
+                                                        size={13}
+                                                        className='text-slate-400 hover:text-indigo-600 transition-colors'
+                                                        onClick={() =>
+                                                            onViewRateCard?.({
+                                                                serviceName: service?.name,
+                                                                planName: plan?.name,
+                                                            })
+                                                        }
+                                                    />
+                                                    <span className='absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-max max-w-[200px] rounded-md bg-slate-800 px-2 py-1 text-[11px] text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-normal text-center'>
+                                                        Click to view Rate Card
+                                                    </span>
+                                                </span>
                                             )}
                                         </div>
                                     </div>
@@ -428,14 +448,17 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                 const rate = service?.followUpRate;
                                 const chunkSize = service?.chunkSize ?? 1;
                                 const hasRate = rate != null && Number(rate) > 0;
+                                const isNotAllowed = !service?.postPaidAllowed || !hasRate;
                                 const unitLabel = chunkSize > 1 ? `${chunkSize} units` : 'unit';
                                 return (
                                     <div key={i} className='flex justify-between text-sm'>
                                         <span className='text-slate-600'>{service?.name}</span>
                                         <span
-                                            className={`font-medium ${hasRate ? 'text-slate-900' : 'text-slate-400'}`}
+                                            className={`font-medium ${!isNotAllowed ? 'text-slate-900' : 'text-slate-400'}`}
                                         >
-                                            {hasRate ? `${symbol}${Number(rate)} / ${unitLabel}` : 'Not allowed'}
+                                            {!isNotAllowed
+                                                ? `${symbol}${Number(rate)} / ${unitLabel} / month`
+                                                : 'Not allowed'}
                                         </span>
                                     </div>
                                 );

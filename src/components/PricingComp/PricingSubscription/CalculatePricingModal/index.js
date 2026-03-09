@@ -121,7 +121,78 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                 <div className='flex flex-col gap-3'>
                     <p className='text-xs font-semibold text-slate-400 uppercase tracking-wider'>Plan comparison</p>
 
-                    <div className='overflow-x-auto rounded-xl border border-slate-200 bg-white'>
+                    {/* Mobile card view */}
+                    <div className='flex flex-col gap-3 sm:hidden'>
+                        {results.map((result) => (
+                            <div
+                                key={result.title}
+                                className='rounded-xl border border-slate-200 bg-white p-4 flex flex-col gap-3'
+                            >
+                                <div className='flex items-center justify-between'>
+                                    <span className='font-semibold text-slate-900'>{result.title}</span>
+                                    <span className='font-bold text-indigo-600'>
+                                        {formatTotalPrice(symbol, result?.total, locale)}
+                                    </span>
+                                </div>
+                                <div className='grid grid-cols-2 gap-3'>
+                                    <div className='flex flex-col gap-1'>
+                                        <span className='text-[10px] font-semibold text-slate-400 uppercase tracking-wider'>
+                                            Included
+                                        </span>
+                                        {visibleServiceNames
+                                            .filter((s) => result?.calculationByService?.[s] != null)
+                                            .map((serviceName) => {
+                                                const includedAmount = result?.includedByService?.[serviceName];
+                                                const displayText =
+                                                    includedAmount == null
+                                                        ? 'Unlimited'
+                                                        : Number(includedAmount).toLocaleString(locale, {
+                                                              notation: 'standard',
+                                                          });
+                                                return (
+                                                    <span
+                                                        key={serviceName}
+                                                        className='text-xs text-slate-700 font-medium'
+                                                    >
+                                                        {displayText} {serviceName}
+                                                    </span>
+                                                );
+                                            })}
+                                    </div>
+                                    <div className='flex flex-col gap-1'>
+                                        <span className='text-[10px] font-semibold text-slate-400 uppercase tracking-wider'>
+                                            Extra Cost
+                                        </span>
+                                        {visibleServiceNames.map((serviceName) => {
+                                            const calculation = result?.calculationByService?.[serviceName];
+                                            if (!calculation) return null;
+                                            const isUnlimited = result?.includedByService?.[serviceName] == null;
+                                            const isWithin = !isUnlimited && calculation.extra === 0;
+                                            const isNotAllowed = calculation.isIncluded && calculation.extra > 0;
+                                            let valueText;
+                                            if (isUnlimited) valueText = 'Unlimited';
+                                            else if (isWithin) valueText = formatPrice(symbol, 0, locale);
+                                            else if (isNotAllowed) valueText = 'Not allowed';
+                                            else
+                                                valueText = formatPrice(
+                                                    symbol,
+                                                    result?.overages?.[serviceName],
+                                                    locale
+                                                );
+                                            return (
+                                                <span key={serviceName} className='text-xs text-slate-700'>
+                                                    {serviceName}: {valueText}
+                                                </span>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Desktop table view */}
+                    <div className='hidden sm:block overflow-x-auto rounded-xl border border-slate-200 bg-white'>
                         <table className='w-full min-w-[600px] table-fixed text-sm'>
                             <thead className='bg-slate-50'>
                                 <tr className='border-b border-slate-200 text-left text-xs font-medium text-slate-400 whitespace-wrap'>
@@ -145,10 +216,10 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                     return (
                                         <tr
                                             key={rowKey}
-                                            className={`border-b border-slate-100 last:border-b-0 ${resultIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}
+                                            className={`border-b border-slate-100 last:border-b-0 ${resultIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}
                                         >
                                             <td
-                                                className={`w-[180px] min-w-[180px] px-4 py-3 text-sm font-medium text-slate-900 truncate sticky left-0 z-10 lg:static lg:z-auto ${resultIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}
+                                                className={`w-[180px] min-w-[180px] px-4 py-3 text-sm font-medium text-slate-900 truncate sticky left-0 z-10 lg:static lg:z-auto ${resultIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}
                                                 title={result.title}
                                             >
                                                 {result.title}
@@ -181,7 +252,11 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                                             const includedAmount =
                                                                 result?.includedByService?.[serviceName];
                                                             const displayText =
-                                                                includedAmount == null ? 'Unlimited' : includedAmount;
+                                                                includedAmount == null
+                                                                    ? 'Unlimited'
+                                                                    : Number(includedAmount).toLocaleString(locale, {
+                                                                          notation: 'standard',
+                                                                      });
                                                             return (
                                                                 <span
                                                                     key={serviceName}
@@ -251,17 +326,14 @@ function getPlanTitle(plan) {
 function formatPrice(symbol, numAmount, locale = 'en-US') {
     if (numAmount == null || Number.isNaN(numAmount)) return `${symbol}0`;
     if (numAmount === 0 || Object.is(numAmount, -0)) return `${symbol}0`;
-    // Round to 2 decimal places for currency
-    const rounded = Math.round(numAmount * 100) / 100;
-    return `${symbol}${rounded.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    return `${symbol}${numAmount.toLocaleString(locale, { notation: 'standard', minimumFractionDigits: 3, maximumFractionDigits: 3 })}`;
 }
 
 function formatTotalPrice(symbol, total, locale = 'en-US') {
     const numTotal = Number(total);
     if (total == null || Number.isNaN(numTotal) || !Number.isFinite(numTotal)) return '—';
     // Round to 2 decimal places before converting to local
-    const rounded = Math.round(numTotal * 100) / 100;
-    return `${symbol}${rounded.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    return `${symbol}${numTotal.toLocaleString(locale, { notation: 'standard', minimumFractionDigits: 3, maximumFractionDigits: 3 })}`;
 }
 
 function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
@@ -277,8 +349,8 @@ function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
     const extraChunks = calculation?.extraChunks ?? calculation?.extra ?? 0;
     const tooltipText =
         chunkSize > 1
-            ? `${extraChunks.toLocaleString(locale)} chunks × ${symbol}${calculation?.rate?.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} (chunk = ${chunkSize} units)`
-            : `${extraChunks.toLocaleString(locale)} × ${symbol}${calculation?.rate?.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            ? `${extraChunks.toLocaleString(locale, { notation: 'standard' })} Chunks × ${symbol}${calculation?.rate?.toLocaleString(locale, { notation: 'standard' })} (Chunk = ${chunkSize} Units)`
+            : `${extraChunks.toLocaleString(locale, { notation: 'standard' })} × ${symbol}${calculation?.rate?.toLocaleString(locale, { notation: 'standard' })}`;
 
     return (
         <td key={serviceName} className='w-[140px] min-w-[140px] px-4 py-3 text-gray-700 align-top'>
@@ -300,19 +372,18 @@ function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
                         </span>
                         {hasOverageCharge && (
                             <span className='flex items-center gap-1 text-xs text-gray-500'>
-                                {extraChunks.toLocaleString(locale)}
+                                {extraChunks.toLocaleString(locale, { notation: 'standard' })}
                                 {chunkSize > 1 && (
-                                    <span className='relative group cursor-help'>
+                                    <span className='relative group cursor-pointer'>
                                         <MdInfoOutline size={12} className='text-slate-400' />
-                                        <span className='absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-max max-w-[200px] rounded-md bg-slate-800 px-2 py-1 text-[11px] text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-normal text-center'>
+                                        <span className='absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-max max-w-[200px] rounded-md bg-slate-800 px-2 py-1 text-[11px] text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-normal text-center '>
                                             {tooltipText}
                                         </span>
                                     </span>
                                 )}
                                 × {symbol}
                                 {calculation?.rate?.toLocaleString(locale, {
-                                    minimumFractionDigits: 2,
-                                    maximumFractionDigits: 2,
+                                    notation: 'standard',
                                 })}
                             </span>
                         )}
@@ -468,13 +539,17 @@ function computePlanTotal(plan, tabtype, usageByService) {
 
         const followUpRate = service?.followUpRate;
         const rateValue = Number(followUpRate);
+        const isNotAllowed = service?.postPaidAllowed === false;
         const hasNoExtraRate =
-            followUpRate == null || Number.isNaN(rateValue) || rateValue === UNLIMITED_CREDIT_VALUE || rateValue < 0;
+            isNotAllowed ||
+            followUpRate == null ||
+            Number.isNaN(rateValue) ||
+            rateValue === UNLIMITED_CREDIT_VALUE ||
+            rateValue < 0;
         const validRate = hasNoExtraRate ? 0 : Math.max(0, rateValue);
 
         const extraChunks = chunkSize > 1 ? Math.ceil(extraUsage / chunkSize) : extraUsage;
-        const rawOverageCharge = extraChunks * validRate;
-        const overageCharge = Math.round(rawOverageCharge * 100) / 100;
+        const overageCharge = extraChunks * validRate;
 
         overages[serviceName] = overageCharge;
         calculationByService[serviceName] = {
@@ -489,7 +564,7 @@ function computePlanTotal(plan, tabtype, usageByService) {
         totalExtraCharges += overageCharge;
     }
 
-    const total = Math.round((baseAmount + totalExtraCharges) * 100) / 100;
+    const total = baseAmount + totalExtraCharges;
 
     return {
         base: baseAmount,

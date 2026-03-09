@@ -45,19 +45,30 @@ function matchesSearchQuery(row, searchableKeys, query) {
     });
 }
 
+function deduplicateRows(data) {
+    const seen = new Set();
+    return data.filter((row) => {
+        const key = `${row.country_name ?? ''}||${row.prefix ?? ''}||${row.country_prefix ?? ''}`;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+    });
+}
+
 function filterRowsBySearch(data, columns, searchTerm) {
-    if (!searchTerm?.trim() || !data?.length) {
-        return data;
+    const deduped = deduplicateRows(data);
+    if (!searchTerm?.trim() || !deduped?.length) {
+        return deduped;
     }
 
     const query = searchTerm.trim().toLowerCase();
     const searchableKeys = getSearchableKeys(columns);
 
     if (searchableKeys.length === 0) {
-        return data;
+        return deduped;
     }
 
-    return data.filter((row) => matchesSearchQuery(row, searchableKeys, query));
+    return deduped.filter((row) => matchesSearchQuery(row, searchableKeys, query));
 }
 
 function extractAllDialPlans(pricingData) {
@@ -88,7 +99,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
     symbol,
 }) {
     const hasData = data.length > 0;
-    const visibleColumns = columns.filter((col) => col.key !== 'prefix');
+    const visibleColumns = columns.filter((col) => col.key !== 'prefix' && col.key !== 'country_prefix');
     const tableRef = useRef(null);
 
     const scrollLeft = () => tableRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' });
@@ -106,14 +117,14 @@ const DialPlanTable = React.memo(function DialPlanTable({
                     autoComplete='off'
                     aria-label='Search dial plan rates'
                 />
-                <div className='flex items-center gap-2'>
+                <div className='hidden sm:flex items-center gap-2'>
                     <button
                         type='button'
                         onClick={scrollLeft}
                         aria-label='Scroll left'
                         className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                     >
-                        <MdChevronLeft size={18} />
+                        <MdChevronLeft size={20} />
                     </button>
                     <button
                         type='button'
@@ -121,7 +132,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
                         aria-label='Scroll right'
                         className='w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors'
                     >
-                        <MdChevronRight size={18} />
+                        <MdChevronRight size={20} />
                     </button>
                 </div>
             </div>
@@ -134,7 +145,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
                                     <th
                                         key={column.key}
                                         className={`min-w-[130px] px-3 py-2 text-left text-[10px] md:text-[12px] leading-3 md:leading-4 font-medium text-slate-400 border-r border-slate-200 last:border-r-0 ${
-                                            colIndex === 0 ? 'w-[140px] sticky left-0 bg-slate-50 z-40' : ''
+                                            colIndex === 0 ? 'min-w-[140px] sticky left-0 bg-slate-50 z-40' : ''
                                         }`}
                                     >
                                         {column?.label}
@@ -145,7 +156,7 @@ const DialPlanTable = React.memo(function DialPlanTable({
                         <tbody>
                             {hasData ? (
                                 data.map((row, index) => {
-                                    const rowKey = row.id ?? row.country_name ?? `row-${index}`;
+                                    const rowKey = `row-${index}`;
                                     const rowBg = index % 2 === 0 ? 'bg-white' : 'bg-slate-50';
                                     return (
                                         <tr
@@ -161,8 +172,9 @@ const DialPlanTable = React.memo(function DialPlanTable({
                                                             : ''
                                                     }`}
                                                 >
-                                                    {col.key === 'country_name' && row['prefix']
-                                                        ? `${row[col.key] ?? '-'} (${row['prefix']})`
+                                                    {col.key === 'country_name' &&
+                                                    (row['prefix'] || row['country_prefix'])
+                                                        ? `${row[col.key] ?? '-'} (${row['prefix'] ?? row['country_prefix']})`
                                                         : (() => {
                                                               const val = row[col.key];
                                                               if (
@@ -173,7 +185,8 @@ const DialPlanTable = React.memo(function DialPlanTable({
                                                               )
                                                                   return val ?? '-';
                                                               const num = Number(val);
-                                                              return !Number.isNaN(num) && symbol
+                                                              const isIdCol = col.key.toLowerCase().includes('id');
+                                                              return !Number.isNaN(num) && symbol && !isIdCol
                                                                   ? `${symbol}${val}`
                                                                   : val;
                                                           })()}
