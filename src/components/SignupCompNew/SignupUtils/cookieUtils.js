@@ -1,13 +1,17 @@
 import { getCookie, setCookie } from '@/utils/utilis';
 
 /**
- * Update the source parameter in msg91_query cookie
+ * Update the source parameter in the browser URL and msg91_query cookie
  * @param {string} newSource - New source value to update
  */
-export function updateSourceInCookie(newSource) {
+export function updateSourceInUrlAndCookie(newSource) {
     if (typeof window === 'undefined') return;
 
     try {
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.set('source', newSource);
+        window.history.replaceState(null, '', currentUrl.toString());
+
         const currentCookie = getCookie('msg91_query');
 
         if (!currentCookie) {
@@ -27,7 +31,7 @@ export function updateSourceInCookie(newSource) {
         const updatedQuery = '?' + params.toString();
         setCookie('msg91_query', updatedQuery, 30);
     } catch (error) {
-        console.error('Failed to update source in cookie:', error);
+        console.error('Failed to update source in URL and cookie:', error);
     }
 }
 

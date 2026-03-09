@@ -11,6 +11,7 @@ import StepOne from '../StepOne';
 import StepTwo from '../StepTwo';
 import StepThree from '../StepThree';
 import Toast from '../SignupUtils/Toast';
+import Sidebar from '../Sidebar';
 
 // Create a separate component that uses the context
 function SignupSteps({ pageInfo, data, isAbSignup }) {
@@ -31,9 +32,9 @@ function SignupSteps({ pageInfo, data, isAbSignup }) {
     }, [dispatch]);
 
     return (
-        <div className={`h-screen w-full lg:flex-row flex-col-reverse ${isAbSignup ? 'flex' : 'hidden'}`}>
-            <div className='h-full lg:w-1/3 w-full min-w-[320px] max-w-full bg-secondary'></div>
-            <div className='w-full p-12'>
+        <div className={`h-screen w-full lg:flex-row flex-col ${isAbSignup ? 'flex' : 'hidden'}`}>
+            <Sidebar />
+            <div className='w-full h-full overflow-y-auto p-6 sm:p-12'>
                 <Toast type='danger' />
                 {state.activeStep === 1 && <StepOne pageInfo={pageInfo} />}
                 {state.activeStep === 2 && <StepTwo pageInfo={pageInfo} />}

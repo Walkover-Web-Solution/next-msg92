@@ -6,7 +6,7 @@ import { setDetails, useSignup, finalRegistration } from '../SignupUtils';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import { useCountrySelector } from '../hooks/useCountrySelector';
 import { fetchCountries, autoPopulateFromIP } from '../SignupUtils/apiUtils';
-import { updateSourceInCookie } from '../SignupUtils/cookieUtils';
+import { updateSourceInUrlAndCookie } from '../SignupUtils/cookieUtils';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 export default function StepThree({ data }) {
@@ -109,7 +109,7 @@ export default function StepThree({ data }) {
         const finalSource = source === 'other' ? otherSource : source;
         if (finalSource) {
             setDetails('source', dispatch, finalSource);
-            updateSourceInCookie(finalSource);
+            updateSourceInUrlAndCookie(finalSource);
         }
     }, [dispatch, otherSource, source]);
 
@@ -165,7 +165,7 @@ export default function StepThree({ data }) {
                 <p>Tell us a bit more about yourself to personalize your journey.</p>
                 <div className='cont gap-3'>
                     <div className='cont gap-1'>
-                        <h2 className='text-lg font-medium text-gray-600'>Which service are you interested in?</h2>
+                        <h2 className='text-lg font-medium text-gray-700'>Which service are you interested in?</h2>
                         <div className='flex flex-wrap gap-2'>
                             {Object.entries(services).length > 0 &&
                                 Object.entries(services).map(([key, value]) => (
@@ -174,11 +174,11 @@ export default function StepThree({ data }) {
                                         key={key}
                                         className={`border w-fit px-2 py-1 rounded text-sm flex items-center gap-1 cursor-pointer ${
                                             selectedServices.includes(key)
-                                                ? 'bg-green-50 hover:bg-green-100'
+                                                ? 'bg-green-100 hover:bg-green-100'
                                                 : 'hover:bg-green-50'
                                         }`}
                                     >
-                                        <span className='text-gray-600'>{value}</span>
+                                        <span className='text-gray-700'>{value}</span>
                                         {selectedServices.includes(key) && (
                                             <button aria-label={`Remove ${value}`}>
                                                 <MdClose />
@@ -189,7 +189,7 @@ export default function StepThree({ data }) {
                         </div>
                     </div>
                     <div className='cont gap-1'>
-                        <h2 className='text-lg font-medium text-gray-600'>Where did you hear about us?</h2>
+                        <h2 className='text-lg font-medium text-gray-700'>Where did you hear about us?</h2>
                         <select
                             className='select select-bordered w-full min-w-[320px] max-w-[420px]'
                             onChange={(e) => handleSourceChange(e.target.value)}
@@ -225,7 +225,7 @@ export default function StepThree({ data }) {
                             aria-expanded={isAddressOpen}
                             aria-label='Toggle address section'
                         >
-                            <h2 className='text-lg font-medium text-gray-600'>Address (Optional)</h2>
+                            <h2 className='text-lg font-medium text-gray-700'>Address (Optional)</h2>
                             <MdOutlineKeyboardArrowDown
                                 className={`text-gray-500 text-2xl transition-all duration-100 ${
                                     isAddressOpen ? 'rotate-180' : ''
@@ -234,7 +234,7 @@ export default function StepThree({ data }) {
                         </button>
                         <div className={`flex-col gap-3 ${isAddressOpen ? 'flex' : 'hidden'}`}>
                             <div className='flex flex-col gap-1 w-full'>
-                                <label className='text-sm text-gray-600'>House / Building / Apartment</label>
+                                <label className='text-sm text-gray-700'>House / Building / Apartment</label>
                                 <input
                                     className='input input-bordered w-full'
                                     type='text'
@@ -246,7 +246,7 @@ export default function StepThree({ data }) {
                             </div>
                             <div className='flex gap-3'>
                                 <div className='flex flex-col gap-1 w-full'>
-                                    <label className='text-sm text-gray-600'>Postal Code</label>
+                                    <label className='text-sm text-gray-700'>Postal Code</label>
                                     <input
                                         className='input input-bordered w-full'
                                         type='text'
@@ -257,7 +257,7 @@ export default function StepThree({ data }) {
                                     />
                                 </div>
                                 <div className='flex flex-col gap-1 w-full'>
-                                    <label className='text-sm text-gray-600'>Country</label>
+                                    <label className='text-sm text-gray-700'>Country</label>
                                     <Typeahead
                                         className='country-list w-full'
                                         id='country'
@@ -278,7 +278,7 @@ export default function StepThree({ data }) {
                             </div>
                             <div className='flex gap-3'>
                                 <div className='flex flex-col gap-1 w-full'>
-                                    <label className='text-sm text-gray-600'>State</label>
+                                    <label className='text-sm text-gray-700'>State</label>
                                     <Typeahead
                                         className={`country-list w-full ${
                                             !selectedCountryId || isLoadingStates ? 'cursor-not-allowed' : ''
@@ -299,7 +299,7 @@ export default function StepThree({ data }) {
                                     />
                                 </div>
                                 <div className='flex flex-col gap-1 w-full'>
-                                    <label className='text-sm text-gray-600'>City</label>
+                                    <label className='text-sm text-gray-700'>City</label>
                                     <Typeahead
                                         className={`country-list w-full ${
                                             !selectedStateId || isLoadingCities ? 'cursor-not-allowed' : ''

@@ -93,6 +93,16 @@ export function reducer(state, action) {
                 otpSent: false,
             };
 
+        case 'SET_PHONE_EDIT_FROM_VERIFIED':
+            return {
+                ...state,
+                mobileRequestId: null,
+                mobileToken: null,
+                mobileOtpVerified: false,
+                isLoading: false,
+                otpSent: false,
+            };
+
         case 'SET_USER_DETAILS':
             return {
                 ...state,

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import getCountyFromIP from '@/utils/getCountyFromIP';
 import { appendMsg91QueryToUrl } from './cookieUtils';
+import { getCookie } from '@/utils/utilis';
 
 /**
  * Check if user has an active session
@@ -53,47 +54,62 @@ export function validateSignUp(dispatch, state) {
         return;
     }
 
-    const url =
-        process.env.API_BASE_URL +
-        '/api/v5/nexus/' +
-        (state?.githubCode ? 'validateGithubSignUp' : 'validateEmailSignUp');
+    const isGithubFlow = state?.githubCode;
+    let url = process.env.API_BASE_URL + '/api/v5/nexus/validateEmailSignUp';
+
+    const utmObj = Object.fromEntries(
+        getCookie('msg91_query')
+            ?.replace('?', '')
+            ?.split('&')
+            ?.map((val) => val.split('=')) ?? []
+    );
 
     const payload = {
-        session: state?.session,
-        emailToken: state?.emailToken,
-        githubToken: state?.githubToken,
-        githubCode: state?.githubCode,
-        githubState: state?.githubState,
+        session: getCookie('sessionId'),
         mobileToken: state?.mobileToken,
+        ...utmObj,
         source: state?.source,
-        utm_term: state?.utm_term,
-        utm_medium: state?.utm_medium,
-        utm_source: state?.utm_source,
-        utm_campaign: state?.utm_campaign,
-        utm_content: state?.utm_content,
-        utm_matchtype: state?.utm_matchtype,
         ad: state?.ad,
         adposition: state?.adposition,
         reference: state?.reference,
     };
 
-    axios
-        .post(url, payload)
-        .then((response) => {
-            if (response?.data?.status === 'success') {
+    if (isGithubFlow) {
+        payload.code = state.githubCode;
+        payload.state = state.githubState;
+        url = process.env.API_BASE_URL + '/api/v5/nexus/validateGithubSignUp';
+    } else {
+        payload.emailToken = state?.emailToken;
+    }
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+    };
+
+    fetch(url, requestOptions)
+        .then((response) => response?.json())
+        .then((result) => {
+            if (result?.status === 'success') {
                 dispatch({
                     type: 'SET_SESSION',
-                    payload: { session: response?.data?.sessionDetails?.PHPSESSID, step: 3 },
+                    payload: { session: result?.data?.sessionDetails?.PHPSESSID, step: 3 },
                 });
-                dispatch({ type: 'SET_INVITES', payload: response?.data?.data?.invitations });
+                dispatch({ type: 'SET_INVITES', payload: result?.data?.data?.invitations });
+            } else if (result?.hasError) {
+                dispatch({
+                    type: 'SET_ERROR',
+                    payload: result?.errors?.[0] ?? result?.errors ?? 'Failed to validate signup',
+                });
             } else {
-                dispatch({ type: 'SET_ERROR', payload: response?.data?.errors || 'Failed to validate signup' });
+                dispatch({ type: 'SET_ERROR', payload: result?.errors || 'Failed to validate signup' });
             }
         })
         .catch((error) => {
             dispatch({
                 type: 'SET_ERROR',
-                payload: error?.response?.data?.message || error?.message || 'Failed to validate signup',
+                payload: error?.message || 'Failed to validate signup',
             });
         });
 }
@@ -107,7 +123,6 @@ export function validateSignUp(dispatch, state) {
  */
 export async function validateEmailSignup(otp, dispatch, state) {
     const signupState = state || {};
-    const baseUrl = process.env.API_BASE_URL;
 
     dispatch({ type: 'SET_LOADING', payload: true });
     dispatch({ type: 'CLEAR_ERROR' });
@@ -142,46 +157,9 @@ export async function validateEmailSignup(otp, dispatch, state) {
             },
         });
 
-        const payload = {
-            verifyMobileNextStep: 1,
-            session: signupState?.session,
-            emailToken: emailToken,
-            source: signupState?.source,
-            utm_term: signupState?.utm_term,
-            utm_medium: signupState?.utm_medium,
-            utm_source: signupState?.utm_source,
-            utm_campaign: signupState?.utm_campaign,
-            utm_content: signupState?.utm_content,
-            utm_matchtype: signupState?.utm_matchtype,
-            ad: signupState?.ad,
-            adposition: signupState?.adposition,
-            reference: signupState?.reference,
-        };
-
-        const url = `${baseUrl}/api/v5/nexus/validateEmailSignUp`;
-
-        const { data } = await axios.post(url, payload);
-        if (data?.status === 'success') {
-            dispatch({
-                type: 'SET_SESSION',
-                payload: { session: data?.sessionDetails?.PHPSESSID || null, step: 2 },
-            });
-            dispatch({
-                type: 'SET_INVITES',
-                payload: data?.data?.invitations || [],
-            });
-            return data;
-        }
-
-        const apiErrors = data?.message || data?.error || data?.errors || 'Failed to validate signup';
-        dispatch({ type: 'SET_ERROR', payload: apiErrors });
-        return null;
+        return verificationData;
     } catch (error) {
-        const otpErrorMessage =
-            error?.response?.data?.message ||
-            error?.response?.data?.error ||
-            error?.message ||
-            'Failed to validate signup';
+        const otpErrorMessage = error?.message || 'OTP verification failed';
         dispatch({ type: 'SET_ERROR', payload: otpErrorMessage });
         return null;
     } finally {
@@ -202,6 +180,7 @@ export function finalRegistration(dispatch, state) {
         userDetails: state?.userDetails,
         acceptInviteForCompanies: state?.acceptInviteForCompanies,
         rejectInviteForCompanies: state?.rejectInviteForCompanies,
+        source: state?.source,
     };
 
     // Set loading state

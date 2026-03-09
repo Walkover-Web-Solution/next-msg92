@@ -143,6 +143,11 @@ export default function StepTwo() {
         resetPhoneOtp(dispatch);
     };
 
+    const handleEditVerifiedPhone = () => {
+        dispatch({ type: 'SET_PHONE_EDIT_FROM_VERIFIED' });
+        setContinueAllowed(false);
+    };
+
     const handleResendOtp = () => {
         handleSendOtp();
     };
@@ -246,17 +251,22 @@ export default function StepTwo() {
                                 verified={otpVerified}
                                 placeholder='9876543210'
                             />
-                            {!otpVerified &&
-                                (isLoading ? (
-                                    <div className='flex items-center gap-2 text-accent'>
-                                        <div className='loading loading-spinner loading-sm'></div>
-                                        Sending OTP...
-                                    </div>
-                                ) : (
-                                    <button onClick={handleSendOtp} className='btn btn-accent font-normal'>
-                                        Verify
-                                    </button>
-                                ))}
+                            {otpVerified ? (
+                                <MdEdit
+                                    className='text-gray-500 hover:text-accent cursor-pointer text-xl'
+                                    onClick={handleEditVerifiedPhone}
+                                    aria-label='Edit phone number'
+                                />
+                            ) : isLoading ? (
+                                <div className='flex items-center gap-2 text-accent'>
+                                    <div className='loading loading-spinner loading-sm'></div>
+                                    Sending OTP...
+                                </div>
+                            ) : (
+                                <button onClick={handleSendOtp} className='btn btn-accent font-normal'>
+                                    Verify
+                                </button>
+                            )}
                         </div>
                     </div>
                 )}
