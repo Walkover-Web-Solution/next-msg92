@@ -231,9 +231,37 @@ export default function CalculatePricingModal({ plans, symbol, tabtype, locale =
                                                             {formatPrice(symbol, result.originalAmount, locale)}
                                                         </span>
                                                     )}
-                                                    <span className='font-semibold text-slate-900'>
-                                                        {formatPrice(symbol, result?.base, locale)}
-                                                    </span>
+                                                    <div className='flex items-center gap-1'>
+                                                        <span className='font-semibold text-slate-900'>
+                                                            {formatPrice(symbol, result?.base, locale)}
+                                                        </span>
+                                                        {result?.plan?.discount?.[0] &&
+                                                            (() => {
+                                                                const d = result.plan.discount[0];
+                                                                const typeId = d?.discount_type_id ?? d?.type_id;
+                                                                const value = Number(d?.value ?? 0);
+                                                                const duration = d?.duration ?? 0;
+                                                                const discountText =
+                                                                    typeId === 2
+                                                                        ? `${value >= 100 ? 100 : value}% off`
+                                                                        : `${symbol}${value} off`;
+                                                                const durationText =
+                                                                    duration > 0
+                                                                        ? ` for ${duration} month${duration !== 1 ? 's' : ''}`
+                                                                        : '';
+                                                                return (
+                                                                    <span className='relative group cursor-pointer'>
+                                                                        <MdInfoOutline
+                                                                            size={14}
+                                                                            className='text-slate-400'
+                                                                        />
+                                                                        <span className='absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-max max-w-[200px] rounded-md bg-slate-800 px-2 py-1 text-[11px] text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-normal text-center'>
+                                                                            {`${discountText}${durationText}`}
+                                                                        </span>
+                                                                    </span>
+                                                                );
+                                                            })()}
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td className='w-[160px] min-w-[160px] px-4 py-3 text-slate-600 align-top'>
@@ -326,14 +354,14 @@ function getPlanTitle(plan) {
 function formatPrice(symbol, numAmount, locale = 'en-US') {
     if (numAmount == null || Number.isNaN(numAmount)) return `${symbol}0`;
     if (numAmount === 0 || Object.is(numAmount, -0)) return `${symbol}0`;
-    return `${symbol}${numAmount.toLocaleString(locale, { notation: 'standard', minimumFractionDigits: 3, maximumFractionDigits: 3 })}`;
+    return `${symbol}${numAmount.toLocaleString(locale, { notation: 'standard', maximumFractionDigits: 3 })}`;
 }
 
 function formatTotalPrice(symbol, total, locale = 'en-US') {
     const numTotal = Number(total);
     if (total == null || Number.isNaN(numTotal) || !Number.isFinite(numTotal)) return '—';
     // Round to 2 decimal places before converting to local
-    return `${symbol}${numTotal.toLocaleString(locale, { notation: 'standard', minimumFractionDigits: 3, maximumFractionDigits: 3 })}`;
+    return `${symbol}${numTotal.toLocaleString(locale, { notation: 'standard', maximumFractionDigits: 3 })}`;
 }
 
 function renderExtraServiceCell(serviceName, result, symbol, locale = 'en-US') {
