@@ -212,7 +212,8 @@ function buildTableData(pricingData, tabtype, symbol, locale, tabtypeLabel) {
                 const hasRate = rate != null && Number(rate) > 0;
                 const isNotAllowed = !s?.postPaidAllowed || !hasRate;
                 if (isNotAllowed) return 'Not allowed';
-                const unitLabel = chunkSize > 1 ? `${chunkSize} units` : 'unit';
+                const singularName = name.replace(/s$/i, '');
+                const unitLabel = chunkSize > 1 ? `${chunkSize} ${singularName}s` : singularName;
                 return `${symbol}${Number(rate).toLocaleString(locale || 'en-IN', { maximumFractionDigits: 4 })} / ${unitLabel}`;
             }),
         };
