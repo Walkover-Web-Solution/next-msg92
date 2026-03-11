@@ -31,14 +31,7 @@ export default function NotificationBarComp({ componentData, pageInfo }) {
         return (
             <div className='py-3 border border-b flex'>
                 <div className='container flex items-center gap-2 justify-between  flex-col md:flex-row'>
-                    <span className='text-red-500 flex items-center gap-1'>
-                        {' '}
-                        <MdWarning className='hidden md:block' />{' '}
-                        <span className='text-sm'>
-                            We are currently experiencing a service disruption with login. Our engineering team is
-                            actively working on resolving the issue.
-                        </span>
-                    </span>
+                    <span className='text-red-500 flex items-center gap-1'></span>
                     <div className='flex  gap-6 justify-end w-full md:w-auto'>
                         {currentCountry?.languages && (
                             <div className='dropdown'>
