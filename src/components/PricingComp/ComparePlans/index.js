@@ -1,5 +1,5 @@
 import { useRef, useMemo, useState, useEffect } from 'react';
-import { MdCheckCircleOutline, MdCancel, MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { MdCheck, MdClose, MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 const SCROLL_DISTANCE = 300;
 
@@ -72,7 +72,6 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
                                                     {value.original}
                                                 </span>
                                             )}
-
                                             {value.label && (
                                                 <span className='text-[10px] font-medium text-emerald-600 text-center'>
                                                     {value.label.split(' for ').map((part, i) => (
@@ -90,6 +89,12 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
                                                 </span>
                                             )}
                                         </div>
+                                    ) : row.isDiscount ? (
+                                        <span
+                                            className={`text-xs font-medium ${value === '—' ? 'text-slate-400' : 'text-emerald-600'}`}
+                                        >
+                                            {value}
+                                        </span>
                                     ) : row.isService ? (
                                         <span
                                             className={`text-xs font-medium ${value === '—' ? 'text-slate-400' : 'text-slate-700'}`}
@@ -97,9 +102,9 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
                                             {value}
                                         </span>
                                     ) : value ? (
-                                        <MdCheckCircleOutline className='mx-auto text-indigo-600' size={18} />
+                                        <MdCheck className='mx-auto text-indigo-600' size={18} />
                                     ) : (
-                                        <MdCancel className='mx-auto text-red-300' size={18} />
+                                        <MdClose className='mx-auto text-slate-300' size={18} />
                                     )}
                                 </td>
                             ))}
@@ -179,7 +184,8 @@ function buildTableData(pricingData, tabtype, symbol, locale) {
         }),
     };
 
-    return { planNames, rows: [priceRow, ...serviceRows, ...featureRows] };
+    const rows = [priceRow, ...serviceRows, ...featureRows];
+    return { planNames, rows };
 }
 
 export default function ComparePlans({ pricingData, symbol, locale, pageData }) {
