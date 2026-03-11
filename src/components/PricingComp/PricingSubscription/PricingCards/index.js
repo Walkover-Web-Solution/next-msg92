@@ -10,7 +10,13 @@ import {
     MdLaunch,
 } from 'react-icons/md';
 
-const FEATURED_INDEX = 3;
+const FEATURED_PLAN_MAP = {
+    hello: 'Premium',
+    segmento: 'Cruiser',
+    email: 'Basic',
+    whatsapp: 'Quantum',
+    rcs: 'Build',
+};
 
 const SCROLL_DISTANCE = 360;
 
@@ -22,12 +28,22 @@ export default function PricingCards({
     onCalculateClick,
     onTabChange,
     pageInfo,
+    heading,
 }) {
+    const featuredPlanName = FEATURED_PLAN_MAP[pageInfo?.product] ?? null;
     const monthlyScrollRef = useRef(null);
     const yearlyScrollRef = useRef(null);
     const [activeTab, setActiveTab] = useState('Monthly');
+    const [monthlyShowFade, setMonthlyShowFade] = useState(false);
+    const [yearlyShowFade, setYearlyShowFade] = useState(false);
 
     const activeScrollRef = activeTab === 'Yearly' ? yearlyScrollRef : monthlyScrollRef;
+
+    const checkFade = useCallback((el, setFade) => {
+        if (!el) return;
+        const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+        setFade(!atEnd && el.scrollWidth > el.clientWidth);
+    }, []);
 
     const scrollLeft = useCallback(() => {
         activeScrollRef.current?.scrollBy({ left: -SCROLL_DISTANCE, behavior: 'smooth' });
@@ -79,36 +95,44 @@ export default function PricingCards({
         return flags;
     }, [pricingData]);
 
+    const { useEffect } = require('react');
+
+    useEffect(() => {
+        const el = monthlyScrollRef.current;
+        if (!el) return;
+        const handler = () => checkFade(el, setMonthlyShowFade);
+        handler();
+        el.addEventListener('scroll', handler);
+        window.addEventListener('resize', handler);
+        return () => {
+            el.removeEventListener('scroll', handler);
+            window.removeEventListener('resize', handler);
+        };
+    }, [monthlyPlans, checkFade]);
+
+    useEffect(() => {
+        const el = yearlyScrollRef.current;
+        if (!el) return;
+        const handler = () => checkFade(el, setYearlyShowFade);
+        handler();
+        el.addEventListener('scroll', handler);
+        window.addEventListener('resize', handler);
+        return () => {
+            el.removeEventListener('scroll', handler);
+            window.removeEventListener('resize', handler);
+        };
+    }, [yearlyPlans, checkFade]);
+
     if (!monthlyPlans.length && !yearlyPlans.length) return null;
 
-    const showArrows = Math.max(monthlyPlans.length, yearlyPlans.length) > 2;
+    const showArrows = activeTab === 'Yearly' ? yearlyShowFade : monthlyShowFade;
 
     return (
         <div className='flex flex-col gap-3'>
             <div className='flex items-center justify-between gap-4'>
-                {hasYearly ? (
-                    <div className='inline-flex w-fit rounded-lg border border-slate-200 bg-white overflow-hidden'>
-                        {['Monthly', 'Yearly'].map((t) => (
-                            <button
-                                key={t}
-                                type='button'
-                                data-tab-btn={t}
-                                onClick={() => {
-                                    setActiveTab(t);
-                                    onTabChange?.(t);
-                                }}
-                                className={`px-4 py-2 text-sm font-medium transition-colors tab-btn-${t.toLowerCase()}`}
-                            >
-                                {t}
-                            </button>
-                        ))}
-                    </div>
-                ) : (
-                    <div />
-                )}
-
+                <h1 className='text-2xl md:text-3xl font-bold capitalize'>{heading}</h1>
                 {showArrows && (
-                    <div className='hidden sm:flex items-center gap-2'>
+                    <div className='hidden sm:flex items-center gap-2 shrink-0'>
                         <button
                             type='button'
                             onClick={scrollLeft}
@@ -128,9 +152,27 @@ export default function PricingCards({
                     </div>
                 )}
             </div>
+            {hasYearly && (
+                <div className='inline-flex w-fit rounded-lg border border-slate-200 bg-white overflow-hidden'>
+                    {['Monthly', 'Yearly'].map((t) => (
+                        <button
+                            key={t}
+                            type='button'
+                            data-tab-btn={t}
+                            onClick={() => {
+                                setActiveTab(t);
+                                onTabChange?.(t);
+                            }}
+                            className={`px-4 py-2 text-sm font-medium transition-colors tab-btn-${t.toLowerCase()}`}
+                        >
+                            {t}
+                        </button>
+                    ))}
+                </div>
+            )}
 
             {/* Monthly plans — visible by default */}
-            <div data-tabpanel='Monthly' className='w-full'>
+            <div data-tabpanel='Monthly' className='w-full relative'>
                 <div
                     ref={monthlyScrollRef}
                     className='flex items-stretch h-full gap-3 md:gap-4 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden py-5'
@@ -142,21 +184,27 @@ export default function PricingCards({
                             tabtype='Monthly'
                             symbol={symbol}
                             locale={locale}
-                            isFeatured={index === FEATURED_INDEX}
+                            isFeatured={
+                                featuredPlanName != null && plan?.name?.toLowerCase() === featuredPlanName.toLowerCase()
+                            }
                             onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
                             pageInfo={pageInfo}
                             hasDiscount={monthlyHasDiscount}
+                            isOverflow={monthlyShowFade}
                         />
                     ))}
                 </div>
+                {monthlyShowFade && (
+                    <div className='hidden sm:block pointer-events-none absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-white to-transparent' />
+                )}
             </div>
 
             {/* Yearly plans — hidden by default, shown when tab switches */}
             {yearlyPlans.length > 0 && (
-                <div data-tabpanel='Yearly' className='w-full hidden'>
+                <div data-tabpanel='Yearly' className='w-full hidden relative'>
                     <div
                         ref={yearlyScrollRef}
-                        className='flex items-stretch h-full gap-3 md:gap-4 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+                        className='flex items-stretch h-full gap-3 md:gap-4 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden py-5'
                     >
                         {yearlyPlans.map((plan, index) => (
                             <PlanCard
@@ -165,13 +213,20 @@ export default function PricingCards({
                                 tabtype='Yearly'
                                 symbol={symbol}
                                 locale={locale}
-                                isFeatured={index === FEATURED_INDEX}
+                                isFeatured={
+                                    featuredPlanName != null &&
+                                    plan?.name?.toLowerCase() === featuredPlanName.toLowerCase()
+                                }
                                 onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
                                 pageInfo={pageInfo}
                                 hasDiscount={yearlyHasDiscount}
+                                isOverflow={yearlyShowFade}
                             />
                         ))}
                     </div>
+                    {yearlyShowFade && (
+                        <div className='hidden sm:block pointer-events-none absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-white to-transparent' />
+                    )}
                 </div>
             )}
 
@@ -266,7 +321,7 @@ function getDiscountedAmount(amount, discounts) {
     return null;
 }
 
-function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, pageInfo, hasDiscount }) {
+function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, pageInfo, hasDiscount, isOverflow }) {
     const amount = plan?.amount;
     const discountedAmount = getDiscountedAmount(amount, plan?.discount);
     const displayPrice =
@@ -317,7 +372,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
 
     return (
         <div
-            className={`relative flex flex-col p-6 rounded-2xl transition-all duration-300 min-w-[260px] w-[260px] md:min-w-[300px] md:w-[300px] ${isFeatured ? 'bg-indigo-50 border-2 border-indigo-300 shadow-lg shadow-indigo-100' : 'bg-white border border-slate-200 hover:shadow-lg hover:border-indigo-200'}`}
+            className={`group relative flex flex-col p-6 rounded-2xl transition-all duration-300 ${isOverflow ? 'min-w-[280px] w-[280px] md:min-w-[290px] md:w-[290px]' : 'flex-1 min-w-[290px] max-w-[320px]'} ${isFeatured ? 'bg-white border-2 border-indigo-300 shadow-lg shadow-indigo-100' : 'bg-white border border-slate-200 hover:shadow-md hover:border-slate-300'}`}
         >
             {/* Header */}
             <div className={`mb-5 ${hasDiscount ? 'min-h-[148px]' : 'min-h-[108px]'}`}>
@@ -349,7 +404,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                 href={getURL('signup', pageInfo?.page, pageInfo)}
                 target='_blank'
                 type='button'
-                className='w-full py-2.5 px-4 rounded-xl font-semibold text-sm text-center transition-all mb-5 block bg-indigo-600 text-white hover:bg-indigo-700'
+                className={`w-full py-2.5 px-4 rounded-xl font-semibold text-sm text-center transition-all mb-5 block ${isFeatured ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-indigo-50 text-indigo-600 border border-indigo-200 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600'}`}
             >
                 Get started
             </a>

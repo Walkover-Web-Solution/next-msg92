@@ -23,11 +23,11 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                 />
 
                 <MenuBarComp componentData={commonData?.menu} pageInfo={pageInfo} />
-                <div className='bg-neutral'>
+                <div className='bg-white'>
                     <div className='container'>
                         <PricingNav products={products} page={pageInfo?.product} />
                     </div>
-                    <div className='container py-6 flex flex-col gap-6'>
+                    <div className='container py-8 flex flex-col gap-8'>
                         {pageInfo?.product === 'campaign' && <PricingCampaign pageData={pageData} />}
 
                         {['hello', 'segmento', 'email', 'rcs', 'whatsapp'].includes(pageInfo?.product) && (

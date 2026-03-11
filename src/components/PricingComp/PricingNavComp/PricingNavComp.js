@@ -1,6 +1,5 @@
 import getURL from '@/utils/getURL';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function PricingNav({ products, page }) {
     const allProducts = [...(products?.applications ?? []), ...(products?.channels ?? [])];
@@ -8,27 +7,27 @@ export default function PricingNav({ products, page }) {
     if (!allProducts.length) return null;
 
     return (
-        <div className='w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden py-3'>
-            <div className='inline-flex items-center bg-white rounded-xl p-2 min-w-max'>
+        <div className='w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'>
+            <div className='flex items-center gap-1 min-w-max border-b border-slate-100'>
                 {allProducts.map((product, index) => {
                     const isActive = page === product?.slug;
                     return (
                         <a
                             key={index}
                             href={getURL('pricing', product?.slug)}
-                            className={`flex items-center gap-1 px-4 py-2 rounded rounded-br-none rounded-bl-none text-md font-medium whitespace-nowrap transition-all ${
+                            className={`flex items-center gap-1.5 px-3 py-3 text-sm font-medium whitespace-nowrap border-b-2 -mb-px transition-all ${
                                 isActive
-                                    ? 'bg-indigo-50 text-indigo-600'
-                                    : 'text-slate-500 hover:text-slate-600 hover:bg-slate-50'
+                                    ? 'border-indigo-500 text-indigo-600'
+                                    : 'border-transparent text-slate-400 hover:text-slate-700 hover:border-slate-300'
                             }`}
                         >
                             <Image
                                 src={product?.icon}
-                                width={22}
-                                height={22}
+                                width={16}
+                                height={16}
                                 alt={`${product?.name} icon`}
                                 loading='lazy'
-                                sizes='22px'
+                                sizes='16px'
                             />
                             {product?.name}
                         </a>
