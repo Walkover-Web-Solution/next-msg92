@@ -1,5 +1,5 @@
 import { useRef, useMemo, useState, useEffect } from 'react';
-import { MdCheckCircleOutline, MdCancel, MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { MdCheck, MdClose, MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 const SCROLL_DISTANCE = 300;
 
@@ -102,9 +102,9 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
                                             {value}
                                         </span>
                                     ) : value ? (
-                                        <MdCheckCircleOutline className='mx-auto text-indigo-600' size={18} />
+                                        <MdCheck className='mx-auto text-indigo-600' size={18} />
                                     ) : (
-                                        <MdCancel className='mx-auto text-red-300' size={18} />
+                                        <MdClose className='mx-auto text-slate-300' size={18} />
                                     )}
                                 </td>
                             ))}

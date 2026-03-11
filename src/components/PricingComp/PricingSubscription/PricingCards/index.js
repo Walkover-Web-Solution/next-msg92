@@ -5,8 +5,8 @@ import {
     MdChevronRight,
     MdInfoOutline,
     MdArrowForward,
-    MdCheckCircleOutline,
-    MdCancel,
+    MdCheck,
+    MdClose,
     MdLaunch,
 } from 'react-icons/md';
 
@@ -372,7 +372,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
 
     return (
         <div
-            className={`group relative flex flex-col p-6 rounded-2xl transition-all duration-300 ${isOverflow ? 'min-w-[280px] w-[280px] md:min-w-[290px] md:w-[290px]' : 'flex-1 min-w-[290px] max-w-[320px]'} ${isFeatured ? 'bg-white border-2 border-indigo-300 shadow-lg shadow-indigo-100' : 'bg-white border border-slate-200 hover:shadow-md hover:border-slate-300'}`}
+            className={`group relative flex flex-col p-6 rounded-2xl transition-all duration-300 ${isOverflow ? 'min-w-[280px] w-[280px] md:min-w-[290px] md:w-[290px]' : 'flex-1 min-w-[290px] max-w-[320px]'} ${isFeatured ? 'bg-indigo-50 border-2 border-indigo-300 shadow-lg shadow-indigo-100' : 'bg-white border border-slate-200 hover:shadow-md hover:border-slate-300'}`}
         >
             {/* Header */}
             <div className={`mb-5 ${hasDiscount ? 'min-h-[148px]' : 'min-h-[108px]'}`}>
@@ -431,7 +431,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                       : null;
                                 return (
                                     <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
-                                        <MdCheckCircleOutline size={15} className='text-indigo-400 shrink-0 mt-0.5' />
+                                        <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
                                         {displayQty ? `${displayQty} ${service?.name}` : service?.name}
                                     </li>
                                 );
@@ -441,7 +441,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                 const isUnlimited = isUnlimitedFreeCredit(walletCredit);
                                 return (
                                     <li key={`dp-${i}`} className='flex items-start gap-2 text-sm text-slate-600'>
-                                        <MdCheckCircleOutline size={15} className='text-indigo-400 shrink-0 mt-0.5' />
+                                        <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
                                         <span className='flex items-center gap-1'>
                                             {isUnlimited
                                                 ? `Unlimited ${service?.name}`
@@ -481,7 +481,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                 const unitLabel = chunkSize > 1 ? `${chunkSize} units` : 'unit';
                                 return (
                                     <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
-                                        <MdCheckCircleOutline size={15} className='text-indigo-400 shrink-0 mt-0.5' />
+                                        <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
                                         {isNotAllowed
                                             ? `${service?.name}: Not allowed`
                                             : `${service?.name}: ${symbol}${Number(rate)} / ${unitLabel} / month`}
@@ -493,7 +493,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                 const isDemoOnly = hasWalletCredit && !service?.postPaidAllowed;
                                 return (
                                     <li key={`dp-extra-${i}`} className='flex items-start gap-2 text-sm text-slate-600'>
-                                        <MdCheckCircleOutline size={15} className='text-indigo-400 shrink-0 mt-0.5' />
+                                        <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
                                         <span className='flex items-center gap-1'>
                                             {service?.name}:{' '}
                                             {isDemoOnly ? (
@@ -533,9 +533,9 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                             {visibleFeatures.map((feature, i) => (
                                 <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
                                     {feature?.included ? (
-                                        <MdCheckCircleOutline size={15} className='text-indigo-400 shrink-0 mt-0.5' />
+                                        <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
                                     ) : (
-                                        <MdCancel size={15} className='text-slate-300 shrink-0 mt-0.5' />
+                                        <MdClose size={15} className='text-slate-300 shrink-0 mt-0.5' />
                                     )}
                                     {feature?.name}
                                 </li>
