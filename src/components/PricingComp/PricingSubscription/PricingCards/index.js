@@ -133,7 +133,7 @@ export default function PricingCards({
             <div data-tabpanel='Monthly' className='w-full'>
                 <div
                     ref={monthlyScrollRef}
-                    className='flex items-stretch h-full gap-3 md:gap-4 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+                    className='flex items-stretch h-full gap-3 md:gap-4 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden py-5'
                 >
                     {monthlyPlans.map((plan, index) => (
                         <PlanCard
@@ -316,34 +316,32 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
     const visibleFeatures = features.slice(0, 5);
 
     return (
-        <div className='relative flex flex-col p-6 md:rounded-xl rounded-md transition-all duration-300 bg-white min-w-[280px] w-[280px] md:min-w-[350px] md:w-[350px] border border-slate-200 hover:border-indigo-300'>
+        <div
+            className={`relative flex flex-col p-6 rounded-2xl transition-all duration-300 min-w-[260px] w-[260px] md:min-w-[300px] md:w-[300px] ${isFeatured ? 'bg-indigo-50 border-2 border-indigo-300 shadow-lg shadow-indigo-100' : 'bg-white border border-slate-200 hover:shadow-lg hover:border-indigo-200'}`}
+        >
             {/* Header */}
-            <div className={`mb-3 ${hasDiscount ? 'md:min-h-[156px] min-h-[130px]' : ''}`}>
-                <h3 className='text-2xl font-semibold text-slate-900 mb-3'>{plan?.name || 'Plan'}</h3>
+            <div className={`mb-5 ${hasDiscount ? 'min-h-[148px]' : 'min-h-[108px]'}`}>
+                <h3 className='text-lg font-bold mb-3 text-slate-900'>{plan?.name || 'Plan'}</h3>
                 {saveLabel && (
-                    <div className='mb-3'>
-                        <span className='inline-block border border-blue-400 text-blue-600 bg-blue-50 font-semibold text-xs px-3 py-1 rounded-full'>
-                            {saveLabel}
-                        </span>
-                    </div>
+                    <span
+                        className={`inline-block mb-3 text-xs font-semibold px-2.5 py-1 rounded-full border ${isFeatured ? 'border-indigo-400 text-indigo-700 bg-indigo-100' : 'border-blue-300 text-blue-600 bg-blue-50'}`}
+                    >
+                        {saveLabel}
+                    </span>
                 )}
-                <div className='flex items-baseline gap-2 mb-1'>
-                    {isFree ? (
-                        <span className='text-2xl md:text-3xl font-semibold tracking-tight'>{symbol}0</span>
-                    ) : (
-                        <span className='text-2xl md:text-3xl font-semibold tracking-tight'>{displayPrice}</span>
-                    )}
-                    <span className='text-slate-500 font-medium text-xs md:text-sm'>
+                <div className='flex items-baseline gap-1.5 mb-1'>
+                    <span className='text-4xl font-extrabold tracking-tight text-slate-900'>
+                        {isFree ? `${symbol}0` : displayPrice}
+                    </span>
+                    <span className='text-sm font-medium text-slate-400'>
                         {discountDuration > 0
-                            ? `/ month for first ${discountDuration} month${discountDuration !== 1 ? 's' : ''}`
+                            ? `/ mo for ${discountDuration}mo`
                             : tabtype === 'Monthly'
-                              ? '/month'
-                              : '/year'}
+                              ? '/ month'
+                              : '/ year'}
                     </span>
                 </div>
-                {originalPrice && (
-                    <span className='text-slate-700 font-bold text-xs md:text-sm'>Then {originalPrice}/month</span>
-                )}
+                {originalPrice && <p className='text-xs mt-0.5 text-slate-400'>Then {originalPrice}/month</p>}
             </div>
 
             {/* CTA */}
@@ -351,98 +349,75 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                 href={getURL('signup', pageInfo?.page, pageInfo)}
                 target='_blank'
                 type='button'
-                className='w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all mb-6 flex items-center justify-center gap-2 bg-white text-slate-900 border-2 border-slate-200 hover:border-indigo-600 hover:bg-slate-50'
+                className='w-full py-2.5 px-4 rounded-xl font-semibold text-sm text-center transition-all mb-5 block bg-indigo-600 text-white hover:bg-indigo-700'
             >
-                Get started <MdArrowForward size={16} />
+                Get started
             </a>
 
             {/* Divider */}
-            <div className='h-px bg-slate-200 w-full mb-6' />
+            <div className='h-px w-full mb-4 bg-slate-100' />
 
             {/* Content */}
-            <div className='flex-1 flex flex-col gap-6'>
-                {/* Included */}
+            <div className='flex-1 flex flex-col gap-4'>
+                {/* Included services */}
                 {hasIncluded && (
                     <div>
-                        <p className='text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3'>Included</p>
-                        <div className='flex flex-col gap-3'>
+                        <p className='text-[11px] font-semibold uppercase tracking-wider mb-2 text-slate-400'>
+                            Included
+                        </p>
+                        <ul className='flex flex-col gap-1.5'>
                             {includedServices.map((service, i) => {
-                                const badge = getBadgeLabel(service);
-                                const isWallet = badge === 'WALLET';
                                 const qty = service?.freeCredit;
                                 const isUnlimited = qty === -1 || qty === '-1';
                                 const displayQty = isUnlimited
                                     ? 'Unlimited'
                                     : qty != null
                                       ? `${Number(qty).toLocaleString(locale || 'en-IN')} / month`
-                                      : '—';
+                                      : null;
                                 return (
-                                    <div key={i} className='flex justify-between items-center'>
-                                        <div className='flex items-center gap-2'>
-                                            <span className='text-sm text-slate-600'>{service?.name}</span>
-                                            <span
-                                                className={`text-[10px] font-medium px-2 py-0.5 rounded-md ${
-                                                    isWallet
-                                                        ? 'bg-emerald-50 text-emerald-700'
-                                                        : 'bg-blue-50 text-blue-700'
-                                                }`}
-                                            >
-                                                {isWallet ? 'wallet' : 'quota'}
-                                            </span>
-                                        </div>
-                                        <span className='text-sm font-bold text-slate-900'>{displayQty}</span>
-                                    </div>
+                                    <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
+                                        <MdCheckCircleOutline size={15} className='text-indigo-400 shrink-0 mt-0.5' />
+                                        {displayQty ? `${displayQty} ${service?.name}` : service?.name}
+                                    </li>
                                 );
                             })}
                             {dialPlanServicesWithCredit.map((service, i) => {
                                 const walletCredit = service?.freeCredit;
                                 const isUnlimited = isUnlimitedFreeCredit(walletCredit);
                                 return (
-                                    <div key={`dp-${i}`} className='flex justify-between items-center'>
-                                        <div className='flex items-center gap-2'>
-                                            <span className='text-sm text-slate-600'>{service?.name}</span>
-                                            <span className='text-[10px] font-medium px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700'>
-                                                wallet
-                                            </span>
-                                        </div>
-                                        <div className='flex items-center gap-1'>
-                                            <span className='text-sm font-bold text-slate-900'>
-                                                {isUnlimited
-                                                    ? 'Unlimited'
-                                                    : `${symbol}${Number(walletCredit).toLocaleString(locale || 'en-IN')} / month`}
-                                            </span>
+                                    <li key={`dp-${i}`} className='flex items-start gap-2 text-sm text-slate-600'>
+                                        <MdCheckCircleOutline size={15} className='text-indigo-400 shrink-0 mt-0.5' />
+                                        <span className='flex items-center gap-1'>
+                                            {isUnlimited
+                                                ? `Unlimited ${service?.name}`
+                                                : `${symbol}${Number(walletCredit).toLocaleString(locale || 'en-IN')} ${service?.name} wallet`}
                                             {!isUnlimited && (
-                                                <span className='relative group cursor-pointer'>
-                                                    <MdInfoOutline
-                                                        size={13}
-                                                        className='text-slate-400 hover:text-indigo-600 transition-colors'
-                                                        onClick={() =>
-                                                            onViewRateCard?.({
-                                                                serviceName: service?.name,
-                                                                planName: plan?.name,
-                                                            })
-                                                        }
-                                                    />
-                                                    <span className='absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 w-max max-w-[200px] rounded-md bg-slate-800 px-2 py-1 text-[11px] text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-normal text-center'>
-                                                        Click to view Rate Card
-                                                    </span>
-                                                </span>
+                                                <MdInfoOutline
+                                                    size={13}
+                                                    className='text-slate-400 hover:text-indigo-600 cursor-pointer transition-colors'
+                                                    onClick={() =>
+                                                        onViewRateCard?.({
+                                                            serviceName: service?.name,
+                                                            planName: plan?.name,
+                                                        })
+                                                    }
+                                                />
                                             )}
-                                        </div>
-                                    </div>
+                                        </span>
+                                    </li>
                                 );
                             })}
-                        </div>
+                        </ul>
                     </div>
                 )}
 
                 {/* Overage */}
                 {hasOverage && (
                     <div>
-                        <p className='text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3'>
-                            Extra (after included finishes)
+                        <p className='text-[11px] font-semibold uppercase tracking-wider mb-2 text-slate-400'>
+                            Extra charges
                         </p>
-                        <div className='flex flex-col gap-2.5'>
+                        <ul className='flex flex-col gap-1.5'>
                             {extraServices.map((service, i) => {
                                 const rate = service?.followUpRate;
                                 const chunkSize = service?.chunkSize ?? 1;
@@ -450,61 +425,62 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                                 const isNotAllowed = !service?.postPaidAllowed || !hasRate;
                                 const unitLabel = chunkSize > 1 ? `${chunkSize} units` : 'unit';
                                 return (
-                                    <div key={i} className='flex justify-between text-sm'>
-                                        <span className='text-slate-600'>{service?.name}</span>
-                                        <span
-                                            className={`font-medium ${!isNotAllowed ? 'text-slate-900' : 'text-slate-400'}`}
-                                        >
-                                            {!isNotAllowed
-                                                ? `${symbol}${Number(rate)} / ${unitLabel} / month`
-                                                : 'Not allowed'}
-                                        </span>
-                                    </div>
+                                    <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
+                                        <MdCheckCircleOutline size={15} className='text-indigo-400 shrink-0 mt-0.5' />
+                                        {isNotAllowed
+                                            ? `${service?.name}: Not allowed`
+                                            : `${service?.name}: ${symbol}${Number(rate)} / ${unitLabel} / month`}
+                                    </li>
                                 );
                             })}
                             {[...dialPlanServicesWithCredit, ...dialPlanServicesNoCredit].map((service, i) => {
                                 const hasWalletCredit = service?.freeCredit != null && Number(service.freeCredit) > 0;
                                 const isDemoOnly = hasWalletCredit && !service?.postPaidAllowed;
                                 return (
-                                    <div key={`dp-extra-${i}`} className='flex justify-between text-sm'>
-                                        <span className='text-slate-600'>{service?.name}</span>
-                                        {isDemoOnly ? (
-                                            <span className='font-medium text-slate-400'>Demo only</span>
-                                        ) : (
-                                            <span className='flex items-center gap-1'>
-                                                <span className='font-medium text-slate-900'>As per rate card</span>
-                                                <button
-                                                    type='button'
-                                                    onClick={() =>
-                                                        onViewRateCard?.({
-                                                            serviceName: service?.name,
-                                                            planName: plan?.name,
-                                                        })
-                                                    }
-                                                    className='text-indigo-600 hover:text-indigo-800 font-medium text-xs transition-colors'
-                                                >
-                                                    view
-                                                </button>
-                                            </span>
-                                        )}
-                                    </div>
+                                    <li key={`dp-extra-${i}`} className='flex items-start gap-2 text-sm text-slate-600'>
+                                        <MdCheckCircleOutline size={15} className='text-indigo-400 shrink-0 mt-0.5' />
+                                        <span className='flex items-center gap-1'>
+                                            {service?.name}:{' '}
+                                            {isDemoOnly ? (
+                                                'Demo only'
+                                            ) : (
+                                                <>
+                                                    As per rate card
+                                                    <button
+                                                        type='button'
+                                                        onClick={() =>
+                                                            onViewRateCard?.({
+                                                                serviceName: service?.name,
+                                                                planName: plan?.name,
+                                                            })
+                                                        }
+                                                        className='font-medium text-xs text-indigo-600 hover:text-indigo-800 transition-colors'
+                                                    >
+                                                        view
+                                                    </button>
+                                                </>
+                                            )}
+                                        </span>
+                                    </li>
                                 );
                             })}
-                        </div>
+                        </ul>
                     </div>
                 )}
 
-                {/* Capabilities */}
+                {/* Features */}
                 {visibleFeatures.length > 0 && (
                     <div>
-                        <p className='text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3'>Features</p>
-                        <ul className='flex flex-col gap-2.5'>
+                        <p className='text-[11px] font-semibold uppercase tracking-wider mb-2 text-slate-400'>
+                            Features
+                        </p>
+                        <ul className='flex flex-col gap-1.5'>
                             {visibleFeatures.map((feature, i) => (
-                                <li key={i} className='flex items-center gap-2.5 text-sm text-slate-600'>
+                                <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
                                     {feature?.included ? (
-                                        <MdCheckCircleOutline size={16} className='text-indigo-600 shrink-0' />
+                                        <MdCheckCircleOutline size={15} className='text-indigo-400 shrink-0 mt-0.5' />
                                     ) : (
-                                        <MdCancel size={16} className='text-slate-300 shrink-0' />
+                                        <MdCancel size={15} className='text-slate-300 shrink-0 mt-0.5' />
                                     )}
                                     {feature?.name}
                                 </li>
