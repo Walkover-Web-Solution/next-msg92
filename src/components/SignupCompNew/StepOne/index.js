@@ -95,7 +95,7 @@ export default function StepOne() {
         {
             id: 'github',
             name: 'Github',
-            icon: '/assets/icons/social/github.svg',
+            icon: '/assets/icons/extras/github.svg',
         },
     ];
 
@@ -219,7 +219,7 @@ export default function StepOne() {
                     {socialIcons.map((icon) => (
                         <button
                             key={icon.id}
-                            className='btn btn-outline social-icon'
+                            className='btn bg-white border border-black hover:bg-gray-100 hover:border-black'
                             onClick={() => handleSocialSignup(icon.id)}
                             aria-label={`Sign up with ${icon.name}`}
                         >
