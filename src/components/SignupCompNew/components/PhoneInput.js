@@ -55,22 +55,24 @@ export default function PhoneInput({
     };
 
     return (
-        <div className='w-full min-w-[320px] max-w-[420px] relative'>
-            <PhoneInputWithCountry
-                defaultCountry={internalCountry}
-                value={value}
-                onChange={handlePhoneChange}
-                onBlur={onBlur}
-                disabled={disabled || verified}
-                placeholder={placeholder}
-                className={`phone-input-wrapper ${verified ? 'verified' : ''}`}
-            />
-            {verified && (
-                <MdCheckCircle
-                    className='absolute right-3 top-1/2 transform -translate-y-1/2 text-green-600 text-xl z-10'
-                    aria-label='Phone verified'
+        <div className='flex-1 min-w-0 max-w-[420px]'>
+            <div className='relative'>
+                <PhoneInputWithCountry
+                    defaultCountry={internalCountry}
+                    value={value}
+                    onChange={handlePhoneChange}
+                    onBlur={onBlur}
+                    disabled={disabled || verified}
+                    placeholder={placeholder}
+                    className={`phone-input-wrapper ${verified ? 'verified' : ''}`}
                 />
-            )}
+                {verified && (
+                    <MdCheckCircle
+                        className='absolute right-3 top-1/2 transform -translate-y-1/2 text-green-600 text-xl z-10'
+                        aria-label='Phone verified'
+                    />
+                )}
+            </div>
             <style jsx>{`
                 :global(.phone-input-wrapper) {
                     position: relative;
@@ -92,6 +94,8 @@ export default function PhoneInput({
                     display: flex;
                     align-items: center;
                     gap: 0.25rem;
+                    position: relative;
+                    z-index: 999;
                 }
                 :global(.phone-input-wrapper .PhoneInputCountryIcon) {
                     width: 1.5rem;

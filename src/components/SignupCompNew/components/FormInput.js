@@ -28,7 +28,7 @@ export default function FormInput({
             {label && <p className='text-gray-500'>{label}</p>}
             <input
                 maxLength={maxLength}
-                className={`input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] outline-none focus-within:outline-none ${className}`}
+                className={`input input-bordered text-base p-3 h-fit w-full max-w-[420px] outline-none focus-within:outline-none ${className}`}
                 name={name}
                 type={type}
                 required={required}

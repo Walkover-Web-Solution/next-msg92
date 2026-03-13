@@ -184,7 +184,7 @@ export default function StepTwo() {
                 <div className='cont gap-1'>
                     <p className='text-gray-500'>Country</p>
                     <Typeahead
-                        className='country-list w-full min-w-[320px] max-w-[420px]'
+                        className='country-list w-full max-w-[420px]'
                         id='country'
                         placeholder='Country'
                         labelKey='name'

@@ -19,6 +19,7 @@ export function useCountrySelector() {
 
     const [selectedCountryId, setSelectedCountryId] = useState(null);
     const [selectedStateId, setSelectedStateId] = useState(null);
+    const [selectedCityId, setSelectedCityId] = useState(null);
 
     const [isLoadingCountries, setIsLoadingCountries] = useState(false);
     const [isLoadingStates, setIsLoadingStates] = useState(false);
@@ -38,7 +39,10 @@ export function useCountrySelector() {
         if (companyDetails?.city && !selectedCity) {
             setSelectedCity(companyDetails.city);
         }
-    }, [state.companyDetails, selectedState, selectedCity]);
+        if (companyDetails?.cityId && !selectedCityId) {
+            setSelectedCityId(companyDetails.cityId);
+        }
+    }, [state.companyDetails, selectedState, selectedCity, selectedCityId]);
 
     const handleCountryChange = async (selected) => {
         if (selected && selected.length > 0) {
@@ -49,6 +53,7 @@ export function useCountrySelector() {
             setSelectedState('');
             setSelectedStateId(null);
             setSelectedCity('');
+            setSelectedCityId(null);
             setStateOptions([]);
             setCityOptions([]);
 
@@ -67,6 +72,7 @@ export function useCountrySelector() {
             setSelectedStateId(stateOption.id);
 
             setSelectedCity('');
+            setSelectedCityId(null);
             setCityOptions([]);
 
             // Update companyDetails in global state
@@ -87,6 +93,7 @@ export function useCountrySelector() {
             setSelectedState('');
             setSelectedStateId(null);
             setSelectedCity('');
+            setSelectedCityId(null);
             setCityOptions([]);
         }
     };
@@ -95,6 +102,7 @@ export function useCountrySelector() {
         if (selected && selected.length > 0) {
             const cityOption = selected[0];
             setSelectedCity(cityOption.name);
+            setSelectedCityId(cityOption.id);
 
             // Update companyDetails in global state
             dispatch({
@@ -106,6 +114,7 @@ export function useCountrySelector() {
             });
         } else {
             setSelectedCity('');
+            setSelectedCityId(null);
         }
     };
 
@@ -143,6 +152,7 @@ export function useCountrySelector() {
         setSelectedState('');
         setSelectedStateId(null);
         setSelectedCity('');
+        setSelectedCityId(null);
         setStateOptions([]);
         setCityOptions([]);
     };
@@ -156,6 +166,7 @@ export function useCountrySelector() {
         selectedCity,
         selectedCountryId,
         selectedStateId,
+        selectedCityId,
         isLoadingCountries,
         isLoadingStates,
         isLoadingCities,

@@ -3,16 +3,24 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { MdClose, MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { setDetails, useSignup, finalRegistration } from '../SignupUtils';
-import { Typeahead } from 'react-bootstrap-typeahead';
 import { useCountrySelector } from '../hooks/useCountrySelector';
 import { fetchCountries, autoPopulateFromIP } from '../SignupUtils/apiUtils';
 import { updateSourceInUrlAndCookie } from '../SignupUtils/cookieUtils';
-import 'react-bootstrap-typeahead/css/Typeahead.css';
+
+const sourceData = [
+    { value: 'search_engine', label: 'Search engine (Google, Bing, Yahoo, etc)' },
+    { value: 'recommended_by_friend', label: 'Recommended by friend or colleague' },
+    { value: 'social_media', label: 'Social Media' },
+    { value: 'blog', label: 'Blog or Publication' },
+    { value: 'advertisement', label: 'Advertisement' },
+    { value: 'event', label: 'Event' },
+    { value: 'tiedelhincr', label: 'TiEDelhiNCR' },
+    { value: 'other', label: 'Other' },
+];
 
 export default function StepThree({ data }) {
     const { state, dispatch } = useSignup();
-    const sourceOptions = data?.source || {};
-    const optionKeys = Object.keys(sourceOptions);
+    const optionKeys = sourceData.map((opt) => opt.value);
     const storedSource = state?.source || '';
 
     const getInitialSource = () => {
@@ -45,6 +53,7 @@ export default function StepThree({ data }) {
         selectedCity,
         selectedCountryId,
         selectedStateId,
+        selectedCityId,
         isLoadingCountries,
         isLoadingStates,
         isLoadingCities,
@@ -122,8 +131,18 @@ export default function StepThree({ data }) {
             city: selectedCity,
             countryId: selectedCountryId,
             stateId: selectedStateId,
+            cityId: selectedCityId,
         });
-    }, [address, postalCode, selectedCountry, selectedState, selectedCity, selectedCountryId, selectedStateId]);
+    }, [
+        address,
+        postalCode,
+        selectedCountry,
+        selectedState,
+        selectedCity,
+        selectedCountryId,
+        selectedStateId,
+        selectedCityId,
+    ]);
 
     function handleServiceClick(key) {
         if (selectedServices.includes(key)) {
@@ -153,7 +172,6 @@ export default function StepThree({ data }) {
     };
 
     const canProceed = isFormValid();
-
     return (
         <div className='cont cont_gap'>
             <Image width={160} height={80} className='w-fit h-12' src={'/assets/brand/msg91.svg'} alt='MSG91 Logo' />
@@ -191,21 +209,21 @@ export default function StepThree({ data }) {
                     <div className='cont gap-1'>
                         <h2 className='text-lg font-medium text-gray-700'>Where did you hear about us?</h2>
                         <select
-                            className='select select-bordered w-full min-w-[320px] max-w-[420px]'
+                            className='select select-bordered w-full max-w-[420px]'
                             onChange={(e) => handleSourceChange(e.target.value)}
                             value={source || ''}
                             aria-label='Source'
                         >
                             <option value=''>Select</option>
-                            {Object.entries(data?.source || {}).map(([key, value]) => (
-                                <option key={key} value={key}>
-                                    {value}
+                            {sourceData.map((opt) => (
+                                <option key={opt.value} value={opt.value}>
+                                    {opt.label}
                                 </option>
                             ))}
                         </select>
                         {source === 'other' && (
                             <input
-                                className='input input-bordered w-full min-w-[320px] max-w-[420px]'
+                                className='input input-bordered w-full max-w-[420px]'
                                 type='text'
                                 placeholder='Please specify'
                                 value={otherSource}
@@ -232,7 +250,7 @@ export default function StepThree({ data }) {
                                 }`}
                             />
                         </button>
-                        <div className={`flex-col gap-3 ${isAddressOpen ? 'flex' : 'hidden'}`}>
+                        <div className={`flex-col gap-3 overflow-hidden ${isAddressOpen ? 'flex' : 'hidden'}`}>
                             <div className='flex flex-col gap-1 w-full'>
                                 <label className='text-sm text-gray-700'>House / Building / Apartment</label>
                                 <input
@@ -244,8 +262,8 @@ export default function StepThree({ data }) {
                                     aria-label='Address'
                                 />
                             </div>
-                            <div className='flex gap-3'>
-                                <div className='flex flex-col gap-1 w-full'>
+                            <div className='flex flex-col sm:flex-row gap-3 min-w-0'>
+                                <div className='flex flex-col gap-1 w-full min-w-0'>
                                     <label className='text-sm text-gray-700'>Postal Code</label>
                                     <input
                                         className='input input-bordered w-full'
@@ -256,68 +274,77 @@ export default function StepThree({ data }) {
                                         aria-label='Postal code'
                                     />
                                 </div>
-                                <div className='flex flex-col gap-1 w-full'>
+                                <div className='flex flex-col gap-1 w-full min-w-0'>
                                     <label className='text-sm text-gray-700'>Country</label>
-                                    <Typeahead
-                                        className='country-list w-full'
-                                        id='country'
-                                        placeholder={
-                                            isLoadingCountries ? 'Loading countries...' : 'Search and select country...'
-                                        }
-                                        labelKey='name'
-                                        onChange={handleCountryChange}
-                                        options={countries}
-                                        selected={selectedCountry && selectedCountry.name ? [selectedCountry] : []}
-                                        disabled={isLoadingCountries}
-                                        inputProps={{
-                                            autoComplete: 'off',
-                                            className: 'input input-bordered w-full',
+                                    <select
+                                        className='select select-bordered w-full min-w-0 '
+                                        value={String(selectedCountryId ?? '')}
+                                        onChange={(e) => {
+                                            const country = countries.find((c) => String(c.id) === e.target.value);
+                                            handleCountryChange(country ? [country] : []);
                                         }}
-                                    />
+                                        disabled={isLoadingCountries}
+                                        aria-label='Country'
+                                    >
+                                        <option value='' disabled>
+                                            {isLoadingCountries ? 'Loading countries...' : 'Select Country'}
+                                        </option>
+                                        {countries.map((country) => (
+                                            <option key={country.id} value={String(country.id)}>
+                                                {country.name}
+                                            </option>
+                                        ))}
+                                    </select>
                                 </div>
                             </div>
-                            <div className='flex gap-3'>
-                                <div className='flex flex-col gap-1 w-full'>
+                            <div className='flex flex-col sm:flex-row gap-3 min-w-0'>
+                                <div className='flex flex-col gap-1 w-full min-w-0'>
                                     <label className='text-sm text-gray-700'>State</label>
-                                    <Typeahead
-                                        className={`country-list w-full ${
-                                            !selectedCountryId || isLoadingStates ? 'cursor-not-allowed' : ''
-                                        }`}
-                                        id='state'
-                                        placeholder={
-                                            isLoadingStates ? 'Loading states...' : 'Search and select state...'
-                                        }
-                                        labelKey='name'
-                                        onChange={handleStateChange}
-                                        options={stateOptions}
-                                        selected={stateOptions.filter((option) => option.name === selectedState)}
+                                    <select
+                                        className='select select-bordered w-full min-w-0'
+                                        value={String(selectedStateId ?? '')}
+                                        onChange={(e) => {
+                                            const stateOpt = stateOptions.find(
+                                                (state) => String(state.id) === e.target.value
+                                            );
+                                            handleStateChange(stateOpt ? [stateOpt] : []);
+                                        }}
                                         disabled={!selectedCountryId || isLoadingStates}
-                                        inputProps={{
-                                            autoComplete: 'off',
-                                            className: 'input input-bordered w-full',
-                                        }}
-                                    />
+                                        aria-label='State'
+                                    >
+                                        <option value='' disabled>
+                                            {isLoadingStates ? 'Loading states...' : 'Select State'}
+                                        </option>
+                                        {stateOptions.map((state) => (
+                                            <option key={state.id} value={String(state.id)}>
+                                                {state.name}
+                                            </option>
+                                        ))}
+                                    </select>
                                 </div>
-                                <div className='flex flex-col gap-1 w-full'>
+                                <div className='flex flex-col gap-1 w-full min-w-0'>
                                     <label className='text-sm text-gray-700'>City</label>
-                                    <Typeahead
-                                        className={`country-list w-full ${
-                                            !selectedStateId || isLoadingCities ? 'cursor-not-allowed' : ''
-                                        }`}
-                                        id='city'
-                                        placeholder={
-                                            isLoadingCities ? 'Loading cities...' : 'Search and select city...'
-                                        }
-                                        labelKey='name'
-                                        onChange={handleCityChange}
-                                        options={cityOptions}
-                                        selected={cityOptions.filter((option) => option.name === selectedCity)}
-                                        disabled={!selectedStateId || isLoadingCities}
-                                        inputProps={{
-                                            autoComplete: 'off',
-                                            className: 'input input-bordered w-full',
+                                    <select
+                                        className='select select-bordered w-full min-w-0'
+                                        value={String(selectedCityId ?? '')}
+                                        onChange={(e) => {
+                                            const cityOpt = cityOptions.find(
+                                                (city) => String(city.id) === e.target.value
+                                            );
+                                            handleCityChange(cityOpt ? [cityOpt] : []);
                                         }}
-                                    />
+                                        disabled={!selectedStateId || isLoadingCities}
+                                        aria-label='City'
+                                    >
+                                        <option value='' disabled>
+                                            {isLoadingCities ? 'Loading cities...' : 'Select City'}
+                                        </option>
+                                        {cityOptions.map((city) => (
+                                            <option key={city.id} value={String(city.id)}>
+                                                {city.name}
+                                            </option>
+                                        ))}
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -347,42 +374,6 @@ export default function StepThree({ data }) {
                     )}
                 </button>
             </div>
-            <style jsx global>{`
-                .rbt-input-main:disabled,
-                .rbt-input-main[disabled] {
-                    background-color: #f3f4f6 !important;
-                    color: #9ca3af !important;
-                    cursor: not-allowed !important;
-                    opacity: 0.6 !important;
-                }
-                .rbt.disabled .rbt-input-main,
-                .rbt[disabled] .rbt-input-main {
-                    background-color: #f3f4f6 !important;
-                    color: #9ca3af !important;
-                    cursor: not-allowed !important;
-                    opacity: 0.6 !important;
-                }
-                .country-list.cursor-not-allowed .rbt-input-main {
-                    background-color: #f3f4f6 !important;
-                    color: #9ca3af !important;
-                    cursor: not-allowed !important;
-                    opacity: 0.6 !important;
-                }
-                .country-list .rbt-menu,
-                .rbt-menu {
-                    max-height: 300px !important;
-                    overflow-y: auto !important;
-                }
-                .country-list div[style*='position: absolute'] {
-                    max-height: 300px !important;
-                    overflow-y: auto !important;
-                }
-                .rbt-menu .dropdown-item {
-                    padding: 0.5rem 1rem !important;
-                    line-height: 1.5 !important;
-                    min-height: 40px !important;
-                }
-            `}</style>
         </div>
     );
 }

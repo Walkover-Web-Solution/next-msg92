@@ -34,7 +34,7 @@ function SignupSteps({ pageInfo, data, isAbSignup }) {
     return (
         <div className={`h-screen w-full lg:flex-row flex-col ${isAbSignup ? 'flex' : 'hidden'}`}>
             <Sidebar />
-            <div className='w-full h-full overflow-y-auto p-6 sm:p-12'>
+            <div className='w-full h-full overflow-y-auto overflow-x-hidden p-4 sm:p-12'>
                 <Toast type='danger' />
                 {state.activeStep === 1 && <StepOne pageInfo={pageInfo} />}
                 {state.activeStep === 2 && <StepTwo pageInfo={pageInfo} />}
