@@ -91,52 +91,50 @@ export default function PricingSubscription({ pageData, pricingData, pageInfo })
 
     return (
         <>
-            <div className='flex flex-col gap-4 w-full overflow-hidden' ref={pricingWrapperRef}>
-                <h1 className='text-2xl md:text-3xl font-bold capitalize '>{pageData?.heading}</h1>
-                <div className='flex flex-col w-full gap-6'>
-                    <PricingCards
-                        pricingData={pricingData}
-                        symbol={symbol}
-                        currency={currency}
-                        locale={locale}
-                        onViewRateCard={onViewRateCard}
-                        onCalculateClick={hasCalculableServices ? onOpenCalculateModal : undefined}
-                        onTabChange={onTabChange}
-                        pageInfo={pageInfo}
-                    />
-                    <ComparePlans
-                        pricingData={pricingData}
-                        symbol={symbol}
-                        locale={locale}
-                        pageData={pageData?.comparePlans}
-                    />
-                    {showDialPlan && (
-                        <div ref={dialPlanRef}>
-                            <DialPlan
-                                pricingData={dialPlanData}
-                                selectedServiceName={
-                                    typeof selectedServiceName === 'object'
-                                        ? selectedServiceName?.serviceName
-                                        : selectedServiceName
-                                }
-                                selectedPlanName={
-                                    typeof selectedServiceName === 'object' ? selectedServiceName?.planName : null
-                                }
-                                pageData={pageData?.dialPlan}
-                                symbol={symbol}
-                            />
-                        </div>
-                    )}
-                    {pageData?.connectComp && (
-                        <ConnectWithTeam
-                            product={pageInfo?.product}
-                            href={pageInfo?.product}
-                            pageData={pageData?.connectComp}
-                            isPlan={true}
+            <div className='flex flex-col gap-6 w-full overflow-hidden' ref={pricingWrapperRef}>
+                <PricingCards
+                    pricingData={pricingData}
+                    symbol={symbol}
+                    currency={currency}
+                    locale={locale}
+                    onViewRateCard={onViewRateCard}
+                    onCalculateClick={hasCalculableServices ? onOpenCalculateModal : undefined}
+                    onTabChange={onTabChange}
+                    pageInfo={pageInfo}
+                    heading={pageData?.heading}
+                />
+                <ComparePlans
+                    pricingData={pricingData}
+                    symbol={symbol}
+                    locale={locale}
+                    pageData={pageData?.comparePlans}
+                />
+                {showDialPlan && (
+                    <div ref={dialPlanRef}>
+                        <DialPlan
+                            pricingData={dialPlanData}
+                            selectedServiceName={
+                                typeof selectedServiceName === 'object'
+                                    ? selectedServiceName?.serviceName
+                                    : selectedServiceName
+                            }
+                            selectedPlanName={
+                                typeof selectedServiceName === 'object' ? selectedServiceName?.planName : null
+                            }
+                            pageData={pageData?.dialPlan}
+                            symbol={symbol}
                         />
-                    )}
-                    <FaqsComp data={pageData?.faqComp} notCont={true} />
-                </div>
+                    </div>
+                )}
+                {pageData?.connectComp && (
+                    <ConnectWithTeam
+                        product={pageInfo?.product}
+                        href={pageInfo?.product}
+                        pageData={pageData?.connectComp}
+                        isPlan={true}
+                    />
+                )}
+                <FaqsComp data={pageData?.faqComp} notCont={true} />
             </div>
 
             <dialog ref={calculateModalRef} className='modal'>

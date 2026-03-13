@@ -1,90 +1,61 @@
+'use client';
+
 import getURL from '@/utils/getURL';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function PricingNav({ products, page }) {
+    const allProducts = [...(products?.applications ?? []), ...(products?.channels ?? [])];
+    const activeProduct = allProducts.find((p) => p?.slug === page);
+
+    if (!allProducts.length) return null;
+
     return (
         <>
-            <div className='flex w-full justify-start md:hidden '>
-                <div className='dropdown marker:hidden cursor-pointer bg-white w-52 rounded '>
-                    <div tabIndex={0} role='button' className='px-3 py-2 capitalize'>
-                        {page}
-                    </div>
-                    <ul
-                        tabIndex={0}
-                        className='flex flex-col gap-2 menu dropdown-content bg-white rounded z-[9999] w-full p-1 shadow'
-                    >
-                        {products?.applications.map((product, index) => {
-                            return (
-                                <a
-                                    key={index}
-                                    href={getURL('pricing', product?.slug)}
-                                    className={`flex flex-col px-3 py-2 rounded hover:bg-secondary ${
-                                        page === product?.slug && 'bg-secondary'
-                                    }`}
-                                >
-                                    <div className='flex items-center gap-1'>
-                                        <Image
-                                            src={product?.icon}
-                                            width={32}
-                                            height={32}
-                                            alt={`${product?.name} icon`}
-                                            loading='lazy'
-                                            sizes='(max-width: 768px) 30px, 32px'
-                                        />
-                                        <h3 className='text-lg font-medium'> {product?.name}</h3>
-                                    </div>
-                                </a>
-                            );
-                        })}
-                        {products?.channels.map((product, index) => {
-                            return (
-                                <a
-                                    key={index}
-                                    href={getURL('pricing', product?.slug)}
-                                    className={`flex flex-col px-3 py-2 rounded hover:bg-secondary ${
-                                        page === product?.slug && 'bg-secondary'
-                                    }`}
-                                >
-                                    <div className='flex items-center gap-1'>
-                                        <Image
-                                            src={product?.icon}
-                                            width={32}
-                                            height={32}
-                                            alt={`${product?.name} icon`}
-                                            loading='lazy'
-                                            sizes='(max-width: 768px) 30px, 32px'
-                                        />
-                                        <h3 className='text-lg font-medium'> {product?.name}</h3>
-                                    </div>
-                                    {product?.description && <p className='text-sm'>{product?.description}</p>}
-                                </a>
-                            );
-                        })}
-                    </ul>
-                </div>
+            {/* Mobile: native select */}
+            <div className='md:hidden py-3 max-w-[300px]'>
+                <select
+                    defaultValue={page ?? ''}
+                    onChange={(e) => {
+                        window.location.href = `/pricing/${e.target.value}`;
+                    }}
+                    className='w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 shadow-sm appearance-none'
+                >
+                    {allProducts.map((product, index) => (
+                        <option key={index} value={product?.slug}>
+                            {product?.name}
+                        </option>
+                    ))}
+                </select>
             </div>
-            <div className='md:flex hidden flex-col gap-3 min-w-[210px]'>
-                <h2>Applications</h2>
-                <ul className='flex flex-col gap-2'>
-                    {products?.applications.map((product, index) => {
+
+            {/* Desktop: horizontal tabs */}
+            <div className='hidden md:block w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'>
+                <div className='flex items-center gap-1 min-w-max border-b border-slate-100'>
+                    {allProducts.map((product, index) => {
+                        const isActive = page === product?.slug;
                         return (
-                            <li key={index}>
-                                <ProductButton product={product} page={page} />
-                            </li>
+                            <a
+                                key={index}
+                                href={getURL('pricing', product?.slug)}
+                                className={`flex items-center gap-1.5 px-3 py-3 text-sm whitespace-nowrap border-b-2 -mb-px transition-all ${
+                                    isActive
+                                        ? 'border-indigo-500 text-indigo-600 font-medium'
+                                        : 'border-transparent text-base hover:border-slate-200'
+                                }`}
+                            >
+                                <Image
+                                    src={product?.icon}
+                                    width={16}
+                                    height={16}
+                                    alt={`${product?.name} icon`}
+                                    loading='lazy'
+                                    sizes='16px'
+                                />
+                                {product?.name}
+                            </a>
                         );
                     })}
-                </ul>
-                <h2>Channels</h2>
-                <ul className='flex flex-col gap-2'>
-                    {products?.channels.map((product, index) => {
-                        return (
-                            <li key={index}>
-                                <ProductButton product={product} page={page} />
-                            </li>
-                        );
-                    })}
-                </ul>
+                </div>
             </div>
         </>
     );

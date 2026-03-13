@@ -1,10 +1,9 @@
 import { useRef, useMemo, useState, useEffect } from 'react';
-import { MdCheckCircleOutline, MdCancel, MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { MdCheck, MdClose, MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 const SCROLL_DISTANCE = 300;
 
 function formatAmount(amount, symbol, locale) {
-    if (!amount || Number(amount) === 0) return 'Free';
     return `${symbol}${Number(amount).toLocaleString(locale || 'en-IN')}`;
 }
 
@@ -36,13 +35,13 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
             <table className='table-fixed min-w-max w-full border-collapse text-sm'>
                 <thead className='bg-slate-50 sticky top-0 z-30'>
                     <tr className='border-b border-slate-200'>
-                        <th className='w-[140px] px-3 py-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider sticky left-0 bg-slate-50 z-40 border-r border-slate-200'>
+                        <th className='w-[130px] px-3 py-2 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider sticky left-0 bg-slate-50 z-40 border-r border-slate-200'>
                             {featuresColumnLabel}
                         </th>
                         {planNames.map((name, index) => (
                             <th
                                 key={index}
-                                className='w-[160px] px-3 py-2 text-center text-sm font-semibold text-slate-900 border-l border-slate-200 capitalize'
+                                className='w-[100px] px-3 py-2 text-center text-sm font-semibold text-slate-900 border-l border-slate-200 capitalize'
                             >
                                 {name}
                             </th>
@@ -55,34 +54,57 @@ function CompareTable({ tableRef, planNames, rows, tabtype, featuresColumnLabel 
                             key={row.label}
                             className={`border-b border-slate-100 last:border-b-0 ${rowIndex % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}
                         >
-                            <td className='min-w-[160px] px-3 py-2 text-xs text-slate-600 sticky left-0 bg-inherit z-20 border-r border-slate-100'>
+                            <td className='min-w-[160px] px-3 py-2 text-xs text-slate-700 font-semibold sticky left-0 bg-inherit z-20 border-r border-slate-100'>
                                 {row.label}
                             </td>
                             {row.values.map((value, index) => (
                                 <td key={index} className='w-[160px] px-3 py-2 text-center border-l border-slate-100'>
                                     {row.isPrice ? (
-                                        <div className='flex flex-col items-center gap-0.5'>
+                                        <div className='flex flex-col h-full items-center gap-0.5'>
+                                            <span className='text-base font-bold text-slate-900'>
+                                                {value.display}
+                                                <span className='text-xs font-normal text-slate-400 ml-0.5'>
+                                                    /{tabtype === 'Monthly' ? 'mo' : 'yr'}
+                                                </span>
+                                            </span>
                                             {value.original && (
                                                 <span className='text-xs text-slate-400 line-through'>
                                                     {value.original}
                                                 </span>
                                             )}
-                                            <span className='font-bold text-slate-900'>
-                                                {value.display}
-                                                <span className='text-xs font-normal text-slate-400 ml-0.5'>
-                                                    /{tabtype === 'Monthly' ? 'month' : 'year'}
-                                                </span>
-                                            </span>
                                             {value.label && (
-                                                <span className='text-[10px] font-medium text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-md'>
-                                                    {value.label}
+                                                <span className='text-[10px] font-medium text-emerald-600 text-center'>
+                                                    {value.label.split(' for ').map((part, i) => (
+                                                        <span key={i}>
+                                                            {i > 0 ? (
+                                                                <>
+                                                                    <br />
+                                                                    for {part}
+                                                                </>
+                                                            ) : (
+                                                                part
+                                                            )}
+                                                        </span>
+                                                    ))}
                                                 </span>
                                             )}
                                         </div>
+                                    ) : row.isDiscount ? (
+                                        <span
+                                            className={`text-xs font-medium ${value === '—' ? 'text-slate-400' : 'text-emerald-600'}`}
+                                        >
+                                            {value}
+                                        </span>
+                                    ) : row.isService ? (
+                                        <span
+                                            className={`text-xs font-medium ${value === '—' ? 'text-slate-400' : 'text-slate-700'}`}
+                                        >
+                                            {value}
+                                        </span>
                                     ) : value ? (
-                                        <MdCheckCircleOutline className='mx-auto text-indigo-600' size={18} />
+                                        <MdCheck className='mx-auto text-indigo-600' size={18} />
                                     ) : (
-                                        <MdCancel className='mx-auto text-red-300' size={18} />
+                                        <MdClose className='mx-auto text-slate-300' size={18} />
                                     )}
                                 </td>
                             ))}
@@ -119,6 +141,32 @@ function buildTableData(pricingData, tabtype, symbol, locale) {
         }),
     }));
 
+    const seenServices = new Set();
+    const serviceNames = [];
+    plans.forEach((plan) => {
+        (plan?.services ?? []).forEach((s) => {
+            if (s?.name && !seenServices.has(s.name)) {
+                seenServices.add(s.name);
+                serviceNames.push(s.name);
+            }
+        });
+    });
+
+    const serviceRows = serviceNames.map((name) => ({
+        label: name,
+        isService: true,
+        values: plans.map((plan) => {
+            const s = (plan?.services ?? []).find((sv) => sv?.name === name);
+            if (!s) return '—';
+            const credit = s?.freeCredit;
+            const isUnlimited = credit === -1 || credit === '-1';
+            if (isUnlimited) return 'Unlimited';
+            if (credit != null && Number(credit) > 0)
+                return `${Number(credit).toLocaleString(locale || 'en-IN')} / month`;
+            return '—';
+        }),
+    }));
+
     if (featureRows.length === 0) return null;
 
     const priceRow = {
@@ -136,7 +184,8 @@ function buildTableData(pricingData, tabtype, symbol, locale) {
         }),
     };
 
-    return { planNames, rows: [priceRow, ...featureRows] };
+    const rows = [priceRow, ...serviceRows, ...featureRows];
+    return { planNames, rows };
 }
 
 export default function ComparePlans({ pricingData, symbol, locale, pageData }) {
@@ -176,11 +225,11 @@ export default function ComparePlans({ pricingData, symbol, locale, pageData }) 
     if (!monthlyData && !yearlyData) return null;
 
     return (
-        <section id='compare-plans' className='w-full py-6'>
+        <section id='compare-plans' className='w-full'>
             <div className='max-w-7xl'>
                 <div className='flex py-4 items-center justify-between'>
                     <h3 className='text-2xl font-semibold text-slate-900'>{pageData?.comparePlansHeading}</h3>
-                    <div className='flex items-center gap-2'>
+                    <div className='hidden sm:flex items-center gap-2'>
                         <button
                             type='button'
                             onClick={scrollLeft}
