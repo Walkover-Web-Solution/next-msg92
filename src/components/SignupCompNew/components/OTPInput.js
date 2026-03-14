@@ -48,7 +48,7 @@ const OTPInput = forwardRef(
         };
 
         return (
-            <div className='flex items-center gap-2' role='group' aria-label='OTP Input'>
+            <div className='flex flex-wrap items-center gap-2' role='group' aria-label='OTP Input'>
                 {otp.map((digit, index) => (
                     <input
                         key={index}

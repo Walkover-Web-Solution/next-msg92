@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { useSignup, sendOtp, verifyOtp, setDetails, validateSignUp, resetPhoneOtp } from '../SignupUtils';
 import { getAvailableOtpMethods } from '../SignupUtils/otpUtils';
+import { fetchCountries } from '../SignupUtils/apiUtils';
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { MdEdit } from 'react-icons/md';
-import { Typeahead } from 'react-bootstrap-typeahead';
 import OTPInput from '../components/OTPInput';
 import ResendOTP from '../components/ResendOTP';
 import PhoneInput from '../components/PhoneInput';
@@ -48,6 +48,13 @@ export default function StepTwo() {
 
     // Use root state selectedCountry if available, otherwise use local
     const selectedCountry = state.selectedCountry || localSelectedCountry;
+
+    // Fallback: fetch countries if not already loaded (e.g. direct navigation to this step)
+    useEffect(() => {
+        if (!state.countries) {
+            fetchCountries(dispatch);
+        }
+    }, []);
 
     // Sync local selectedCountry with root state
     useEffect(() => {
@@ -100,27 +107,10 @@ export default function StepTwo() {
         verifyOtp(otpValue, requestId, true, dispatch, state, onSuccess, onError);
     };
 
-    const handleOnSelect = (item) => {
-        if (item.length === 0) {
-            // User cleared the selection
-            dispatch({
-                type: 'SET_SELECTED_COUNTRY',
-                payload: null,
-            });
-            setLocalSelectedCountry(null);
-            return;
-        }
-
-        const country = item[0];
-        if (country) {
-            // Update root state
-            dispatch({
-                type: 'SET_SELECTED_COUNTRY',
-                payload: country,
-            });
-            // Also update local state for immediate UI update
-            setLocalSelectedCountry(country);
-        }
+    const handleOnSelect = (e) => {
+        const country = countries.find((c) => String(c.id) === e.target.value);
+        dispatch({ type: 'SET_SELECTED_COUNTRY', payload: country || null });
+        setLocalSelectedCountry(country || null);
     };
 
     const handleDetailsBlur = (type) => {
@@ -183,20 +173,18 @@ export default function StepTwo() {
 
                 <div className='cont gap-1'>
                     <p className='text-gray-500'>Country</p>
-                    <Typeahead
-                        className='country-list w-full max-w-[420px]'
-                        id='country'
-                        placeholder='Country'
-                        labelKey='name'
+                    <select
+                        className='select select-bordered text-base w-full max-w-[420px] outline-none focus-within:outline-none'
+                        value={selectedCountry?.id || ''}
                         onChange={handleOnSelect}
-                        options={countries}
-                        selected={selectedCountry && selectedCountry.name ? [selectedCountry] : []}
-                        emptyLabel='No countries found'
-                        selectHintOnEnter
-                        inputProps={{
-                            autoComplete: 'off',
-                        }}
-                    />
+                    >
+                        <option value=''>Select Country</option>
+                        {countries?.map((country) => (
+                            <option key={country.id} value={country.id}>
+                                {country.name}
+                            </option>
+                        ))}
+                    </select>
                 </div>
 
                 {otpSent && otpLength ? (

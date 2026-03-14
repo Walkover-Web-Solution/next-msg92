@@ -106,10 +106,16 @@ export default function StepOne() {
     };
 
     return (
-        <div className='cont cont_gap'>
-            <Image width={160} height={80} className='w-fit h-12' src={'/assets/brand/msg91.svg'} alt='MSG91 Logo' />
-            <div className='cont gap-2'>
-                <h1 className='text-2xl text-primary'>Create an Account</h1>
+        <div className='cont cont_gap w-full max-w-[500px]'>
+            <Image
+                width={160}
+                height={80}
+                className='w-fit h-10 sm:h-12'
+                src={'/assets/brand/msg91.svg'}
+                alt='MSG91 Logo'
+            />
+            <div className='cont gap-1'>
+                <h1 className='text-xl sm:text-2xl text-primary'>Create an Account</h1>
                 <p className='text-sm text-gray-500'>
                     Already have an account?{' '}
                     <a className='text-link active-link' href={loginUrl}>
@@ -121,14 +127,14 @@ export default function StepOne() {
             {emailVerified ? (
                 <div className='cont gap-2'>
                     <p className='text-gray-500'>Email Address</p>
-                    <div className='flex items-center gap-2 input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] bg-success/10 border-success'>
-                        <span className='text-base flex-1'>{email}</span>
-                        <span className='flex items-center gap-1 text-success text-sm font-medium'>
-                            <MdCheckCircle className='text-lg' aria-label='Email verified' />
+                    <div className='flex items-center gap-2 input input-bordered text-base p-3 h-fit w-full max-w-[420px] bg-success/10 border-success'>
+                        <span className='text-sm sm:text-base flex-1 truncate'>{email}</span>
+                        <span className='flex items-center gap-1 text-success text-xs sm:text-sm font-medium shrink-0'>
+                            <MdCheckCircle className='text-base sm:text-lg' aria-label='Email verified' />
                             Verified
                         </span>
                     </div>
-                    <div className='flex items-center gap-4 mt-4'>
+                    <div className='flex items-center gap-3 mt-3'>
                         <button
                             onClick={handleEditVerifiedEmail}
                             className='btn btn-primary btn-outline btn-md'
@@ -146,18 +152,18 @@ export default function StepOne() {
                     </div>
                 </div>
             ) : otpSent && otpLength ? (
-                <div className='cont gap-2'>
-                    <div className='flex items-end gap-2'>
-                        <p className='text-gray-500'>
-                            OTP sent to <strong>{email}</strong>
+                <div className='cont gap-3'>
+                    <div className='flex items-center gap-2 flex-wrap'>
+                        <p className='text-gray-500 text-sm sm:text-base'>
+                            OTP sent to <strong className='break-all'>{email}</strong>
                         </p>
                         <MdEdit
-                            className='text-gray-500 hover:text-accent cursor-pointer mb-1'
+                            className='text-gray-500 hover:text-accent cursor-pointer shrink-0'
                             onClick={handleEditEmail}
                             aria-label='Edit email'
                         />
                     </div>
-                    <div className='flex gap-4'>
+                    <div className='flex flex-wrap items-center gap-4'>
                         <OTPInput
                             ref={otpInputRef}
                             length={otpLength}
@@ -168,7 +174,7 @@ export default function StepOne() {
                             disabled={isLoading}
                         />
                         {isLoading && (
-                            <div className='flex items-center gap-2 text-accent'>
+                            <div className='flex items-center gap-2 text-accent text-sm'>
                                 <div className='loading loading-spinner loading-sm'></div>
                                 Verifying OTP...
                             </div>
@@ -184,12 +190,12 @@ export default function StepOne() {
                 </div>
             ) : (
                 <div className='cont gap-2'>
-                    <p className='text-gray-500'>Create account using Email ID</p>
-                    <div className='flex items-center gap-4'>
+                    <p className='text-gray-500 text-sm sm:text-base'>Create account using Email ID</p>
+                    <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-3'>
                         <input
                             ref={emailInputRef}
                             maxLength={244}
-                            className='input input-bordered text-base p-3 h-fit w-full min-w-[320px] max-w-[420px] outline-none focus-within:outline'
+                            className='input input-bordered text-base p-3 h-fit w-full max-w-[420px] outline-none focus-within:outline'
                             name='email'
                             type='email'
                             required
@@ -197,15 +203,16 @@ export default function StepOne() {
                             pattern='^[^\s@]+@[^\s@]+\.[^\s@]+$'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            onKeyDown={(e) => e.key === 'Enter' && handleSendOtp()}
                             aria-label='Email address'
                         />
                         {isLoading ? (
-                            <div className='flex items-center gap-2 text-accent'>
+                            <div className='flex items-center justify-center gap-2 text-accent'>
                                 <div className='loading loading-spinner loading-sm'></div>
                                 Sending OTP...
                             </div>
                         ) : (
-                            <button onClick={handleSendOtp} className='btn btn-accent font-normal'>
+                            <button onClick={handleSendOtp} className='btn btn-accent font-normal w-full sm:w-auto'>
                                 Create Account
                             </button>
                         )}

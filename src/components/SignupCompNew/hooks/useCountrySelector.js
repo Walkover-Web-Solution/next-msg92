@@ -44,6 +44,23 @@ export function useCountrySelector() {
         }
     }, [state.companyDetails, selectedState, selectedCity, selectedCityId]);
 
+    useEffect(() => {
+        if (selectedCountry?.id) {
+            if (selectedCountry.id !== selectedCountryId) {
+                setSelectedCountryId(selectedCountry.id);
+            }
+            if (stateOptions.length === 0) {
+                loadStates(selectedCountry.id);
+            }
+        }
+    }, [selectedCountry?.id]);
+
+    useEffect(() => {
+        if (selectedStateId && cityOptions.length === 0) {
+            loadCities(selectedStateId);
+        }
+    }, [selectedStateId]);
+
     const handleCountryChange = async (selected) => {
         if (selected && selected.length > 0) {
             const countryOption = selected[0];
