@@ -36,6 +36,7 @@ export default function PricingCards({
     const [activeTab, setActiveTab] = useState('Monthly');
     const [monthlyShowFade, setMonthlyShowFade] = useState(false);
     const [yearlyShowFade, setYearlyShowFade] = useState(false);
+    const [selectedPlanName, setSelectedPlanName] = useState(featuredPlanName);
 
     const activeScrollRef = activeTab === 'Yearly' ? yearlyScrollRef : monthlyScrollRef;
 
@@ -184,9 +185,9 @@ export default function PricingCards({
                             tabtype='Monthly'
                             symbol={symbol}
                             locale={locale}
-                            isFeatured={
-                                featuredPlanName != null && plan?.name?.toLowerCase() === featuredPlanName.toLowerCase()
-                            }
+                            isFeatured={false}
+                            isSelected={selectedPlanName === plan?.name}
+                            onSelect={() => setSelectedPlanName(plan?.name)}
                             onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
                             pageInfo={pageInfo}
                             hasDiscount={monthlyHasDiscount}
@@ -213,10 +214,8 @@ export default function PricingCards({
                                 tabtype='Yearly'
                                 symbol={symbol}
                                 locale={locale}
-                                isFeatured={
-                                    featuredPlanName != null &&
-                                    plan?.name?.toLowerCase() === featuredPlanName.toLowerCase()
-                                }
+                                isSelected={selectedPlanName === plan?.name}
+                                onSelect={() => setSelectedPlanName(plan?.name)}
                                 onViewRateCard={(serviceName) => onViewRateCard?.(serviceName)}
                                 pageInfo={pageInfo}
                                 hasDiscount={yearlyHasDiscount}
@@ -321,7 +320,19 @@ function getDiscountedAmount(amount, discounts) {
     return null;
 }
 
-function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, pageInfo, hasDiscount, isOverflow }) {
+function PlanCard({
+    plan,
+    tabtype,
+    symbol,
+    locale,
+    isFeatured,
+    isSelected,
+    onSelect,
+    onViewRateCard,
+    pageInfo,
+    hasDiscount,
+    isOverflow,
+}) {
     const amount = plan?.amount;
     const discountedAmount = getDiscountedAmount(amount, plan?.discount);
     const displayPrice =
@@ -375,18 +386,19 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
     return (
         <div
             onClick={() => {
+                onSelect?.();
                 if (firstDialPlanService) {
                     onViewRateCard?.({ serviceName: firstDialPlanService.name, planName: plan?.name });
                 }
             }}
-            className={`group relative flex flex-col p-6 rounded-2xl transition-all duration-300 ${firstDialPlanService ? 'cursor-pointer' : ''} ${isOverflow ? 'min-w-[280px] w-[280px] md:min-w-[290px] md:w-[290px]' : 'flex-1 min-w-[290px] max-w-[320px]'} ${isFeatured ? 'bg-indigo-50 border-2 border-indigo-300 shadow-lg shadow-indigo-100' : 'bg-white border border-slate-200 hover:shadow-md hover:border-slate-300'}`}
+            className={`group relative flex flex-col p-6 rounded-2xl transition-all duration-300 cursor-pointer ${isOverflow ? 'min-w-[280px] w-[280px] md:min-w-[290px] md:w-[290px]' : 'flex-1 min-w-[290px] max-w-[320px]'} ${isSelected ? 'bg-indigo-50 border-2 border-indigo-300 shadow-lg shadow-indigo-100' : 'bg-white border border-slate-200 hover:shadow-md hover:border-slate-300'}`}
         >
             {/* Header */}
             <div className={`mb-5 ${hasDiscount ? 'min-h-[148px]' : 'min-h-[108px]'}`}>
                 <h3 className='text-lg font-bold mb-3 text-slate-900'>{plan?.name || 'Plan'}</h3>
                 {saveLabel && (
                     <span
-                        className={`inline-block mb-3 text-xs font-semibold px-2.5 py-1 rounded-full border ${isFeatured ? 'border-indigo-400 text-indigo-700 bg-indigo-100' : 'border-blue-300 text-blue-600 bg-blue-50'}`}
+                        className={`inline-block mb-3 text-xs font-semibold px-2.5 py-1 rounded-full border ${isSelected ? 'border-indigo-400 text-indigo-700 bg-indigo-100' : 'border-blue-300 text-blue-600 bg-blue-50'}`}
                     >
                         {saveLabel}
                     </span>
@@ -412,7 +424,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                 target='_blank'
                 type='button'
                 onClick={(e) => e.stopPropagation()}
-                className={`w-full py-2.5 px-4 rounded-xl font-semibold text-sm text-center transition-all mb-5 block ${isFeatured ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-indigo-50 text-indigo-600 border border-indigo-200 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600'}`}
+                className={`w-full py-2.5 px-4 rounded-xl font-semibold text-sm text-center transition-all mb-5 block ${isSelected ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-indigo-50 text-indigo-600 border border-indigo-200 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600'}`}
             >
                 Get started
             </a>
