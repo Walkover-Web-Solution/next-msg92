@@ -10,7 +10,7 @@ import {
     MdLaunch,
 } from 'react-icons/md';
 
-const FEATURED_PLAN_MAP = {
+export const FEATURED_PLAN_MAP = {
     hello: 'Basic',
     segmento: 'Cruiser',
     email: 'Basic',
