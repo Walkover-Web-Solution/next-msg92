@@ -10,21 +10,24 @@ import GetCountryDetails from '@/utils/getCurrentCountry';
 import countries from '@/data/countries.json';
 import CalculateVoicePricing from './CalculateVoicePricing/CalculateVoicePricing';
 
-export default function PricingVoice({ data, country }) {
-    const [countryData, setCountryData] = useState([]);
+export default function PricingVoice({ data, country, initialData }) {
+    console.log('⚡️ ~ :14 ~ PricingVoice ~ initialData:', initialData);
+    const [countryData, setCountryData] = useState(initialData?.countryData || []);
     const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
-    const [selectedCountry, setSelectedCountry] = useState(currentCountry?.name);
-    const [plans, setPlans] = useState();
-    const [loading, setLoading] = useState(true);
+    const [selectedCountry, setSelectedCountry] = useState(initialData?.selectedCountry || null);
+    const [plans, setPlans] = useState(initialData?.plans);
+    const [loading, setLoading] = useState(!initialData?.plans);
     const [error, setError] = useState();
-    const [dialPlan, setDialPlan] = useState();
+    const [dialPlan, setDialPlan] = useState(initialData?.dialPlanId);
     const [loadingExport, setLoadingExport] = useState(false);
-    const [currency, setCurrency] = useState();
-    const [symbol, setSymbol] = useState();
+    const [currency, setCurrency] = useState(initialData?.currency);
+    const [symbol, setSymbol] = useState(initialData?.symbol);
 
-    //fetch Counties
+    // Fetch country list only when SSR did not provide it
     useEffect(() => {
-        fetchCountryData();
+        if (!initialData?.countryData?.length) {
+            fetchCountryData();
+        }
     }, []);
 
     const fetchCountryData = async () => {
@@ -41,70 +44,48 @@ export default function PricingVoice({ data, country }) {
         }
     };
 
+    // When countryData loads on the client (non-SSR path), find + load data for the default country
     useEffect(() => {
-        if (countryData?.length > 0) {
-            setSelectedCountry(
-                countryData?.find(
-                    (item) => item?.country_code?.toLowerCase() === currentCountry?.shortname?.toLowerCase()
-                )
+        if (countryData?.length > 0 && !initialData?.selectedCountry) {
+            const found = countryData.find(
+                (item) => item?.country_code?.toLowerCase() === currentCountry?.shortname?.toLowerCase()
             );
+            if (found) {
+                setSelectedCountry(found);
+                loadDataForCountry(found);
+            } else {
+                setLoading(false);
+            }
         }
     }, [countryData]);
 
-    // Set Currency Symbol
-    useEffect(() => {
-        if (selectedCountry && selectedCountry?.id) {
-            const { currency, symbol } = GetCurrencySymbol(selectedCountry?.country_code);
-            setCurrency(currency === 'INR' ? 'INR' : 'USD');
-            setSymbol(currency === 'INR' ? '₹' : '$');
-        }
-    }, [selectedCountry]);
-
-    useEffect(() => {
-        if (currency) {
-            fetchDialPlan(currency);
-        }
-    }, [currency]);
-
-    //fetch dialPlan
-    const fetchDialPlan = async (currency) => {
-        try {
-            const response = await fetch(`${process.env.VOICE_API_URL}/public/dialplanPricing/?currency=${currency}`);
-            if (response.ok) {
-                const data = await response.json();
-
-                setDialPlan(data?.data.dialplan_id);
-            } else {
-                throw new Error('Currently we only have plan for India(91)');
-            }
-        } catch (error) {
-            setError(error.message);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    // fetch Plans
-    useEffect(() => {
-        if (selectedCountry && selectedCountry?.id && dialPlan) {
-            fetchData(selectedCountry?.id, dialPlan);
-        }
-    }, [dialPlan, selectedCountry]);
-
-    const fetchData = async (selectedCountry, dialPlan) => {
+    // Fetch currency + dialPlan + plans for a given country object (used on country change)
+    const loadDataForCountry = async (countryObj) => {
+        if (!countryObj?.id) return;
         setLoading(true);
         try {
-            const response = await fetch(
-                `${process.env.VOICE_API_URL}/public/pricing/?cid=${selectedCountry}&dialplan_id=${dialPlan}`
+            const { currency: rawCurrency } = GetCurrencySymbol(countryObj?.country_code);
+            const newCurrency = rawCurrency === 'INR' ? 'INR' : 'USD';
+            const newSymbol = newCurrency === 'INR' ? '₹' : '$';
+            setCurrency(newCurrency);
+            setSymbol(newSymbol);
+
+            const dialPlanRes = await fetch(
+                `${process.env.VOICE_API_URL}/public/dialplanPricing/?currency=${newCurrency}`
             );
-            if (response.ok) {
-                const data = await response.json();
-                setPlans(data?.data);
-            } else {
-                throw new Error('Currently we only have plan for India(91)');
-            }
-        } catch (error) {
-            setError(error.message);
+            if (!dialPlanRes.ok) throw new Error('Currently we only have plan for India(91)');
+            const dialPlanData = await dialPlanRes.json();
+            const newDialPlanId = dialPlanData?.data?.dialplan_id;
+            setDialPlan(newDialPlanId);
+
+            const pricingRes = await fetch(
+                `${process.env.VOICE_API_URL}/public/pricing/?cid=${countryObj.id}&dialplan_id=${newDialPlanId}`
+            );
+            if (!pricingRes.ok) throw new Error('Currently we only have plan for India(91)');
+            const pricingData = await pricingRes.json();
+            setPlans(pricingData?.data);
+        } catch (err) {
+            setError(err.message);
         } finally {
             setLoading(false);
         }
@@ -133,7 +114,11 @@ export default function PricingVoice({ data, country }) {
 
     //Auto complete functions
     const handleOnSelect = (item) => {
-        setSelectedCountry(item[0]);
+        const newCountry = item[0];
+        setSelectedCountry(newCountry);
+        if (newCountry?.id) {
+            loadDataForCountry(newCountry);
+        }
     };
 
     return (
@@ -219,15 +204,10 @@ export default function PricingVoice({ data, country }) {
                                                         <td className='px-4 py-2.5 text-xs text-slate-600 border-r border-slate-100'>
                                                             {item?.local_rates_min ? (
                                                                 <>
-                                                                    {symbol}
-                                                                    {item?.local_rates_min}
+                                                                    {`${symbol}${item?.local_rates_min}`}
                                                                     {item?.local_rates_min !== item?.local_rates_max &&
                                                                         item?.local_rates_max && (
-                                                                            <>
-                                                                                {' '}
-                                                                                &ndash; {symbol}
-                                                                                {item?.local_rates_max}
-                                                                            </>
+                                                                            <>{` ${symbol}${item?.local_rates_max}`}</>
                                                                         )}
                                                                 </>
                                                             ) : (
@@ -237,16 +217,11 @@ export default function PricingVoice({ data, country }) {
                                                         <td className='px-4 py-2.5 text-xs text-slate-600'>
                                                             {item?.international_rates_min ? (
                                                                 <>
-                                                                    {symbol}
-                                                                    {item?.international_rates_min}
+                                                                    {`${symbol}${item?.international_rates_min}`}
                                                                     {item?.international_rates_min !==
                                                                         item?.international_rates_max &&
                                                                         item?.international_rates_max && (
-                                                                            <>
-                                                                                {' '}
-                                                                                &ndash; {symbol}
-                                                                                {item?.international_rates_max}
-                                                                            </>
+                                                                            <>{` ${symbol}${item?.international_rates_max}`}</>
                                                                         )}
                                                                 </>
                                                             ) : (

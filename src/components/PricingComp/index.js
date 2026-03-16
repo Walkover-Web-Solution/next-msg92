@@ -49,7 +49,9 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                             <PricingSMSOTP data={pageData} type={'otp'} country={pageInfo?.country} />
                         )}
 
-                        {pageInfo?.product === 'voice' && <PricingVoice data={pageData} country={pageInfo?.country} />}
+                        {pageInfo?.product === 'voice' && (
+                            <PricingVoice data={pageData} country={pageInfo?.country} initialData={pricingData} />
+                        )}
                     </div>
                 </div>
 

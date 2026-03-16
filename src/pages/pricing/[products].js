@@ -1,6 +1,7 @@
 import PricingComp from '@/components/PricingComp';
 import getCommonCompData from '@/utils/getCommonCompData';
 import getPricing from '@/utils/pricing/getPricing';
+import getVoicePricing from '@/utils/pricing/getVoicePricing';
 
 export default function PricingCountryPage({ pricingData, pageInfo, pageData, commonData, products, country }) {
     return (
@@ -22,7 +23,11 @@ export const getServerSideProps = async (context) => {
 
     let pricingData;
     try {
-        pricingData = await getPricing(country, product);
+        if (product === 'voice') {
+            pricingData = await getVoicePricing(country);
+        } else {
+            pricingData = await getPricing(country, product);
+        }
     } catch (error) {
         console.log(error);
     }
