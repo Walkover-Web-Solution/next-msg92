@@ -11,10 +11,10 @@ import {
 } from 'react-icons/md';
 
 const FEATURED_PLAN_MAP = {
-    hello: 'Premium',
+    hello: 'Basic',
     segmento: 'Cruiser',
     email: 'Basic',
-    whatsapp: 'Quantum',
+    whatsapp: 'Titan',
     rcs: 'Build',
 };
 
@@ -370,9 +370,16 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
         extraServices.length > 0 || dialPlanServicesNoCredit.length > 0 || dialPlanServicesWithCredit.length > 0;
     const visibleFeatures = features.slice(0, 5);
 
+    const firstDialPlanService = services.find((s) => hasDialPlan(s));
+
     return (
         <div
-            className={`group relative flex flex-col p-6 rounded-2xl transition-all duration-300 ${isOverflow ? 'min-w-[280px] w-[280px] md:min-w-[290px] md:w-[290px]' : 'flex-1 min-w-[290px] max-w-[320px]'} ${isFeatured ? 'bg-indigo-50 border-2 border-indigo-300 shadow-lg shadow-indigo-100' : 'bg-white border border-slate-200 hover:shadow-md hover:border-slate-300'}`}
+            onClick={() => {
+                if (firstDialPlanService) {
+                    onViewRateCard?.({ serviceName: firstDialPlanService.name, planName: plan?.name });
+                }
+            }}
+            className={`group relative flex flex-col p-6 rounded-2xl transition-all duration-300 ${firstDialPlanService ? 'cursor-pointer' : ''} ${isOverflow ? 'min-w-[280px] w-[280px] md:min-w-[290px] md:w-[290px]' : 'flex-1 min-w-[290px] max-w-[320px]'} ${isFeatured ? 'bg-indigo-50 border-2 border-indigo-300 shadow-lg shadow-indigo-100' : 'bg-white border border-slate-200 hover:shadow-md hover:border-slate-300'}`}
         >
             {/* Header */}
             <div className={`mb-5 ${hasDiscount ? 'min-h-[148px]' : 'min-h-[108px]'}`}>
@@ -404,6 +411,7 @@ function PlanCard({ plan, tabtype, symbol, locale, isFeatured, onViewRateCard, p
                 href={getURL('signup', pageInfo?.page, pageInfo)}
                 target='_blank'
                 type='button'
+                onClick={(e) => e.stopPropagation()}
                 className={`w-full py-2.5 px-4 rounded-xl font-semibold text-sm text-center transition-all mb-5 block ${isFeatured ? 'bg-indigo-600 text-white hover:bg-indigo-700' : 'bg-indigo-50 text-indigo-600 border border-indigo-200 group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600'}`}
             >
                 Get started
