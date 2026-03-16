@@ -5,12 +5,24 @@ import GetCurrencySymbol from '@/utils/pricing/getCurrencySymbol';
 import DialPlan from '../DialPlan';
 import ComparePlans from '../ComparePlans';
 import CalculatePricingModal from './CalculatePricingModal';
-import PricingCards from './PricingCards';
+import PricingCards, { FEATURED_PLAN_MAP } from './PricingCards';
 
 export default function PricingSubscription({ pageData, pricingData, pageInfo }) {
     const { symbol, currency, locale } = GetCurrencySymbol(pageInfo?.country);
     const [tabtype, setTabtype] = useState('Monthly');
-    const [selectedServiceName, setSelectedServiceName] = useState(null);
+    const [selectedServiceName, setSelectedServiceName] = useState(() => {
+        const featuredPlanName = FEATURED_PLAN_MAP[pageInfo?.product] ?? null;
+        if (!featuredPlanName || !Array.isArray(pricingData)) return null;
+        const featuredPlan = pricingData.find(
+            (p) => p?.name?.toLowerCase() === featuredPlanName.toLowerCase() && p?.type === 'Monthly'
+        );
+        if (!featuredPlan) return null;
+        const firstDialPlanService = (featuredPlan?.services ?? []).find(
+            (s) => s?.dialPlan != null && s.dialPlan?.data?.length > 0
+        );
+        if (!firstDialPlanService) return null;
+        return { serviceName: firstDialPlanService.name, planName: featuredPlan.name };
+    });
     const [showDialPlan, setShowDialPlan] = useState(true);
     const dialPlanRef = useRef(null);
     const calculateModalRef = useRef(null);
