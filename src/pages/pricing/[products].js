@@ -2,6 +2,7 @@ import PricingComp from '@/components/PricingComp';
 import getCommonCompData from '@/utils/getCommonCompData';
 import getPricing from '@/utils/pricing/getPricing';
 import getVoicePricing from '@/utils/pricing/getVoicePricing';
+import getSmsOtpPricing from '@/utils/pricing/getSmsOtpPricing';
 
 export default function PricingCountryPage({ pricingData, pageInfo, pageData, commonData, products, country }) {
     return (
@@ -25,6 +26,8 @@ export const getServerSideProps = async (context) => {
     try {
         if (product === 'voice') {
             pricingData = await getVoicePricing(country);
+        } else if (product === 'sms' || product === 'otp') {
+            pricingData = await getSmsOtpPricing(country);
         } else {
             pricingData = await getPricing(country, product);
         }
