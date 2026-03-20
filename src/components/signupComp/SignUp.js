@@ -59,7 +59,7 @@ export default class SignUp extends React.Component {
 
         const urlParams = new URLSearchParams(window.location.search);
         urlParams.forEach((value, key) => {
-            if (key.startsWith('utm_')) setSharedCookie(key, value, 30);
+            if (key.startsWith('utm_')) setSharedCookie(key, value, 1);
         });
 
         const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);

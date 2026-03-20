@@ -60,7 +60,7 @@ export function getUtmFromCookies() {
     return result;
 }
 
-export function setSharedCookie(name, value, days = 30) {
+export function setSharedCookie(name, value, days = 1) {
     if (typeof document === 'undefined') return;
     const expirationDate = new Date();
     expirationDate.setDate(expirationDate.getDate() + days);
