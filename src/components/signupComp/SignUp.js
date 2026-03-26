@@ -59,7 +59,7 @@ export default class SignUp extends React.Component {
 
         const urlParams = new URLSearchParams(window.location.search);
         urlParams.forEach((value, key) => {
-            if (key.startsWith('utm_')) setSharedCookie(key, value, 1);
+            setSharedCookie(key, value, 1);
         });
 
         const queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
@@ -86,8 +86,7 @@ export default class SignUp extends React.Component {
                         if (interestedServices)
                             redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
                         Object.entries(getUtmFromCookies()).forEach(([key, value]) => {
-                            if (key?.startsWith('utm_') && value)
-                                redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+                            if (value) redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
                         });
                         location.href = redirectUrl;
                     }
@@ -400,8 +399,7 @@ export default class SignUp extends React.Component {
                         if (interestedServices)
                             redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
                         Object.entries(getUtmFromCookies()).forEach(([key, value]) => {
-                            if (key?.startsWith('utm_') && value)
-                                redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+                            if (value) redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
                         });
                         location.href = redirectUrl;
                     } else if (result?.data?.data?.nextStep === 'hasInvitations') {
@@ -499,8 +497,7 @@ export default class SignUp extends React.Component {
                         if (interestedServices)
                             redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
                         Object.entries(getUtmFromCookies()).forEach(([key, value]) => {
-                            if (key?.startsWith('utm_') && value)
-                                redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+                            if (value) redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
                         });
                         location.href = redirectUrl;
                     }, 10);
