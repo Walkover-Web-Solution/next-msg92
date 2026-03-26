@@ -55,7 +55,7 @@ export function getUtmFromCookies() {
     const result = {};
     document.cookie.split(';').forEach((cookie) => {
         const [key, value] = cookie.trim().split('=');
-        if (key?.startsWith('utm_') && value) result[key] = decodeURIComponent(value);
+        if (key && value) result[key] = decodeURIComponent(value);
     });
     return result;
 }
