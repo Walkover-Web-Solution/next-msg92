@@ -1,9 +1,10 @@
 import GoogleLoginButton from '@/components/signupComp/utils/GoogleLogin';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import React from 'react';
-import { MdCall, MdEmail } from 'react-icons/md';
+import { MdCall, MdEmail, MdCheck } from 'react-icons/md';
 import { getQueryParamsDeatils, setCookie, getCookie, loginWithGitHubAccount } from '@/utils/utilis';
 import { toast } from 'react-toastify';
+import Image from 'next/image';
 
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 
@@ -146,15 +147,48 @@ class logIn extends React.Component {
     render() {
         return (
             <>
-                <section className='min-h-screen flex flex-col md:flex-row-reverse text-gray-700 text-base'>
-                    <div className='flex-grow md:flex-grow p-6 md:p-20 md:pt-20'>
-                        <div className='max-w-[460px] flex gap-4 flex-col'>
-                            <div className='block md:hidden'>
-                                <img src='/images/msgOriginalsvg.png' alt='MSG91' className='w-[99.2px]' />
-                            </div>
-                            <h1 className='text-2xl font-bold heading'>Welcome back!</h1>
-                            <div className='grid gap-3'>
-                                <span className='text-base text-gray-700'>Login with</span>
+                <section className='signin flex flex-col-reverse md:flex-row'>
+                    <div className='flex flex-col bg-secondary sm:px-10 px-4 sm:py-20 py-10 gap-8 xl:w-1/4 lg:w-1/3 md:w-1/2 w-full md:min-h-screen'>
+                        <div className='md:flex hidden flex-col gap-5'>
+                            <Image
+                                src={'/assets/brand/msg91.svg'}
+                                width={420}
+                                height={420}
+                                className='w-32'
+                                alt='msg91-logo'
+                                loading='lazy'
+                            />
+                            <h1 className='text-2xl font-medium'>Signup to avail a complete suite of MSG91 products</h1>
+                        </div>
+                        <div className='flex flex-col gap-5'>
+                            <h2 className='text-xl'>What can you build with MSG91?</h2>
+                            <ul className='flex flex-col gap-3'>
+                                <li className='flex items-center gap-2'>
+                                    <MdCheck fontSize={20} className='text-accent' /> Programmable SMS
+                                </li>
+                                <li className='flex items-center gap-2'>
+                                    <MdCheck fontSize={20} className='text-accent' /> Customer Contact Center
+                                </li>
+                                <li className='flex items-center gap-2'>
+                                    <MdCheck fontSize={20} className='text-accent' /> Virtual Number
+                                </li>
+                                <li className='flex items-center gap-2'>
+                                    <MdCheck fontSize={20} className='text-accent' /> Automated user segmentation
+                                </li>
+                                <li className='flex items-center gap-2'>
+                                    <MdCheck fontSize={20} className='text-accent' /> OTP Initiate verification
+                                </li>
+                            </ul>
+                        </div>
+                        <p className='text-lg'>Trusted by 30000+ startups and enterprises</p>
+                    </div>
+
+                    <div className='lg:px-20 sm:px-10 px-4 sm:py-20 py-10 flex flex-col gap-12 w-full'>
+                        <h1 className='text-2xl font-semibold'>Welcome back!</h1>
+
+                        <div className='flex flex-col gap-6 max-w-[600px]'>
+                            <div className='flex flex-col gap-3'>
+                                <span className='text-base text-gray-700'>Are you a developer?</span>
                                 <div className='flex gap-3 flex-wrap'>
                                     <GoogleOAuthProvider clientId={`${process.env.GOOGLE_CLIENT_ID}`}>
                                         <GoogleLoginButton
@@ -166,20 +200,20 @@ class logIn extends React.Component {
                                         onClick={() => this.loginWithOutlook()}
                                         className='social-btn border border-primary rounded flex justify-center items-center w-10 h-10'
                                     >
-                                        <img src='/img/microsoft-svg.svg' className='w-6' />
+                                        <img src='/img/microsoft-svg.svg' className='w-6' alt='Microsoft' />
                                     </button>
                                     <button
                                         onClick={() => this.loginWithZoho()}
                                         className='social-btn zogo-btn border border-alert rounded flex justify-center items-center w-10 h-10'
                                     >
-                                        <img src='/img/icon-zogo.svg' className='w-4' />
+                                        <img src='/img/icon-zogo.svg' className='w-4' alt='Zoho' />
                                     </button>
-
-                                    <a href={undefined} onClick={() => this.loginWithGitHub()}>
-                                        <button className='social-btn git-btn border border-black rounded flex justify-center items-center w-10 h-10'>
-                                            <img src='/img/icon-github.svg' className='w-6' />
-                                        </button>
-                                    </a>
+                                    <button
+                                        onClick={() => this.loginWithGitHub()}
+                                        className='social-btn git-btn border border-black rounded flex justify-center items-center w-10 h-10'
+                                    >
+                                        <img src='/img/icon-github.svg' className='w-6' alt='GitHub' />
+                                    </button>
                                 </div>
                             </div>
 
@@ -187,50 +221,47 @@ class logIn extends React.Component {
                                 or<span className='step-one__break__line'></span>
                             </span>
 
-                            <button
-                                className='btn btn-dark-o text-base w-fit md:w-fit max-md:w-full'
-                                onClick={() => this.initOTPWidget(true)}
-                            >
-                                Login with OTP
+                            <button className='btn btn-md btn-primary' onClick={() => this.initOTPWidget(true)}>
+                                Sign up with Email
                             </button>
-                            <p className=''>
-                                Trouble logging in ?{' '}
+
+                            <p className='text-base'>
+                                If you already have an account,{' '}
+                                <a href='/signin' className='text-link active-link'>
+                                    Login
+                                </a>
+                            </p>
+
+                            <p className='text-base'>
+                                Trouble logging in?{' '}
                                 <span
                                     onClick={this.setShowContactonLogin}
-                                    className='text-primary cursor-pointer hover:underline'
+                                    className='text-link active-link cursor-pointer'
                                 >
                                     Click here
                                 </span>
                             </p>
-                            <div className={`grid gap-2 ${this.state.showContactonLogin ? 'block' : 'hidden'}`}>
-                                <div className='flex items-center gap-2'>
-                                    <MdCall />
-                                    <a className='text-primary cursor-pointer hover:underline' href='/contact-us'>
-                                        Talk to an Expert
-                                    </a>
-                                </div>
-                                <div className='flex items-center gap-2'>
-                                    <MdEmail />
-                                    <a
-                                        className='text-primary cursor-pointer hover:underline'
-                                        href='mailto:support@msg91.com'
-                                    >
-                                        support@msg91.com
-                                    </a>
-                                </div>
-                            </div>
 
-                            <a href='/signup' className='text-primary cursor-pointer hover:underline'>
-                                Create new account
-                            </a>
+                            {this.state.showContactonLogin && (
+                                <div className='flex flex-col gap-2'>
+                                    <div className='flex items-center gap-2'>
+                                        <MdCall />
+                                        <a className='text-link active-link' href='/contact-us'>
+                                            Talk to an Expert
+                                        </a>
+                                    </div>
+                                    <div className='flex items-center gap-2'>
+                                        <MdEmail />
+                                        <a
+                                            className='text-link active-link cursor-pointer'
+                                            href='mailto:support@msg91.com'
+                                        >
+                                            support@msg91.com
+                                        </a>
+                                    </div>
+                                </div>
+                            )}
                         </div>
-                    </div>
-                    <div className='hidden md:block relative p-6 md:px-10 md:pt-20 bg-primary-light w-full md:w-[420px] overflow-hidden'>
-                        <img src='/images/msgOriginalsvg.png' className='w-[124px]' />
-                        <img
-                            src='/img/tie/login-page-left-section-banner.svg'
-                            className='absolute left-[-1px] top-[156px] w-full'
-                        />
                     </div>
                 </section>
             </>
