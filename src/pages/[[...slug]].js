@@ -27,7 +27,7 @@ import TermsComp from '@/components/TermsComp/TermsComp';
 import ContactUsComp from '@/components/ContactUs';
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
-import SignUp from '@/components/signupComp/SignUp';
+import SignupParentComp from '@/components/SignupCompNew/SignupParentComp';
 import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
 import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
@@ -91,7 +91,7 @@ const Components = {
     NewHelloComp,
     TermsComp,
     ContactUsComp,
-    SignUp,
+    SignUp: SignupParentComp,
     ChatBotComp,
     MagicLinkComp,
     WhatsappLinkComp,
