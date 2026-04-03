@@ -5,6 +5,7 @@ import MobileInputComponent from '../utils/MobileInputComponent';
 import { toast } from 'react-toastify';
 import RetryOtp from '../utils/RetryOTP';
 import { getCookie, setCookie } from '@/utils/utilis';
+import GmailWarningModal from '../utils/GmailWarningModal';
 
 var smsIdentifier = '';
 var mobileInvalid = false;
@@ -18,6 +19,8 @@ class StepTwo extends React.Component {
             smsIdentifier: props.smsIdentifierBackup || '',
             sourceValue: '',
             optionValue: '',
+            showGmailModal: false,
+            pendingEmail: null,
         };
         smsIdentifier = this.state.smsIdentifier;
 
@@ -97,6 +100,19 @@ class StepTwo extends React.Component {
             this.props?.isLoading;
         return (
             <>
+                {this.state.showGmailModal && (
+                    <GmailWarningModal
+                        email={this.state.pendingEmail}
+                        onUpdate={() => {
+                            this.setState({ showGmailModal: false, pendingEmail: null });
+                            setTimeout(() => document.getElementById('emailIdentifier')?.focus(), 50);
+                        }}
+                        onContinue={() => {
+                            this.setState({ showGmailModal: false });
+                            this.props.sendOtp(this.state.pendingEmail, false);
+                        }}
+                    />
+                )}
                 <div className='flex flex-col gap-12'>
                     <div className='signup flex flex-col gap-8 w-full'>
                         <div className='flex sm:flex-row flex-col sm:items-center gap-4'>
@@ -183,12 +199,15 @@ class StepTwo extends React.Component {
                                         ) : (
                                             <button
                                                 className='btn btn-accent btn-otp btn-outline'
-                                                onClick={() =>
-                                                    this.props.sendOtp(
-                                                        document.getElementById('emailIdentifier').value,
-                                                        false
-                                                    )
-                                                }
+                                                onClick={() => {
+                                                    const email = document.getElementById('emailIdentifier').value;
+                                                    const isGmail = /^[^@]+@gmail\.com$/i.test(email.trim());
+                                                    if (isGmail) {
+                                                        this.setState({ showGmailModal: true, pendingEmail: email });
+                                                    } else {
+                                                        this.props.sendOtp(email, false);
+                                                    }
+                                                }}
                                                 disabled={this.props?.isLoading || isLoading}
                                             >
                                                 Get OTP
