@@ -53,8 +53,9 @@ export default function BannerComp({ pageInfo, data }) {
                     <div className='flex flex-col md:flex-row gap-6'>
                         {data?.getstarted_btn && (
                             <a
-                                href={getURL('signup', pageInfo?.page, pageInfo)}
+                                href={data?.getstarted_btn_url || getURL('signup', pageInfo?.page, pageInfo)}
                                 target='_blank'
+                                rel='noopener noreferrer'
                                 className='btn btn-primary btn-md'
                             >
                                 {data?.getstarted_btn}
