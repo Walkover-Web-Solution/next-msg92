@@ -39,8 +39,8 @@
             ]
         },
         "supercharge": {
-            "content": "Create custom triggers and actions that initiate messaging and increase engagement based on specific events or conditions in connected applications.<br/><br/>Send order alerts and recover abandoned checkouts via WhatsApp / SMS Create customer journeys with multi-channel communication Update customers on critical events- New Signups, Payment Confirmation, Send Invoice PDF",
-            "img": "/assets/integrations/graphics/zapeir-graphics.svg"
+            "content": "Create custom triggers and actions that initiate messaging and increase engagement based on specific events or conditions in connected applications.<br/><br/>Send order alerts and recover abandoned checkouts via SMS Create customer journeys with multi-channel communication Update customers on critical events- New Signups, Payment Confirmation, Send Invoice PDF",
+            "img": "/assets/integrations/graphics/firebase-integrations.svg"
         },
         "get_plugin": {
             "content": "Get the MSG91 Firebase plugin",
