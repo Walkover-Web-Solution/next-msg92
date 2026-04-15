@@ -1,6 +1,18 @@
+import { useEffect } from 'react';
 import { MdMailOutline, MdClose, MdVerified } from 'react-icons/md';
 
 export default function GmailWarningModal({ email, onUpdate, onContinue }) {
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === 'Escape') {
+                onContinue();
+            }
+        };
+
+        document.addEventListener('keydown', handleEscape);
+        return () => document.removeEventListener('keydown', handleEscape);
+    }, [onContinue]);
+
     return (
         <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4'>
             <div className='bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden'>
