@@ -48,13 +48,24 @@ export default function BannerComp({ pageInfo, data }) {
                         <p className={`${data?.slug === 'whatsapp' ? 'whatsapp__subheading' : 'subheading'}`}>
                             {data?.subheading}
                         </p>
+                        {data?.highlights && (
+                            <ul className='flex flex-col gap-2'>
+                                {data.highlights.map((item, i) => (
+                                    <li key={i} className='flex items-start gap-2 text-base'>
+                                        <span className={`${data?.slug}_dark_text mt-0.5`}>&#10004;</span>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </div>
 
                     <div className='flex flex-col md:flex-row gap-6'>
                         {data?.getstarted_btn && (
                             <a
-                                href={getURL('signup', pageInfo?.page, pageInfo)}
+                                href={data?.getstarted_btn_link || getURL('signup', pageInfo?.page, pageInfo)}
                                 target='_blank'
+                                rel={data?.getstarted_btn_link ? 'noopener noreferrer' : undefined}
                                 className='btn btn-primary btn-md'
                             >
                                 {data?.getstarted_btn}

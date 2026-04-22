@@ -29,7 +29,7 @@
     },
     "tawk_analytics": {
         "name": "Analytics",
-        "msg91": "30 days"
+        "msg91": "30 Days"
     },
     "tawk_widget_customization": {
         "name": "Widget Customization",
@@ -41,7 +41,7 @@
     },
     "tawk_omni_channel_presence": {
         "name": "Omni Channel presence",
-        "msg91": "Yes — centralize Email, SMS, Live Chat, Facebook Messenger, Instagram, Twitter, WhatsApp, and more in one inbox with chatbots, knowledge base, and saved replies."
+        "msg91": "Yes"
     },
     "tawk_live_chat_web_sdk": {
         "name": "Live chat Web SDK",
@@ -53,15 +53,15 @@
     },
     "tawk_draft_scenarios": {
         "name": "Draft scenarios",
-        "msg91": "Yes — experience chatbot workflow in draft mode."
+        "msg91": "Yes"
     },
     "tawk_input_fields": {
         "name": "Input fields",
-        "msg91": "Yes — form and capture leads from chatbot."
+        "msg91": "Yes"
     },
     "tawk_keyword_intents": {
         "name": "Keyword Intents",
-        "msg91": "Yes — trigger the chatbot based on keyword intents."
+        "msg91": "Yes"
     },
     "tawk_tags": {
         "name": "Tags",
@@ -69,7 +69,7 @@
     },
     "tawk_user_activity": {
         "name": "User Activity",
-        "msg91": "Yes — see user activity on your website."
+        "msg91": "Yes"
     },
     "pricing": {
         "name": "Pricing",
