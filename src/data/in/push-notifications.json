@@ -1,0 +1,144 @@
+{
+  "HeadComp": {
+    "title": "",
+    "description": "Reach your users even when they are not on your website. MSG91 Push Notifications help businesses send real-time alerts directly to user devices, driving engagement, recovering lost conversions, and increasing customer retention.From abandoned cart reminders to real-time order updates and flash sale alerts, deliver the right message at the right moment and bring users back with a single click."
+  },
+  "BannerComp": {
+    "slug": "push-notifications",
+    "product": {
+      "name": "Push Notifications",
+      "icon": "/assets/icons/products/push-notifications.svg"
+    },
+    "tagline": "Engage Users Instantly",
+    "heading": "Web & Mobile Push Notifications That Instantly Bring Users Back",
+    "subheading": "Reach your users even when they are not on your website. MSG91 Push Notifications help businesses send real-time alerts directly to user devices, driving engagement, recovering lost conversions, and increasing customer retention.",
+    "highlights": [
+      "Send notifications directly to browsers and mobile devices",
+      "Re-engage users instantly without email or phone numbers",
+      "Automate campaigns based on user behavior",
+      "Increase traffic, conversions, and user retention"
+    ],
+    "not_absolute": "true",
+    "getstarted_btn": "Start Engaging Your Users Instantly"
+  },
+  "GridFeatureComp": {
+    "heading": "Powerful Push Notification Features Designed for Growth",
+    "features": [
+      {
+        "name": "Behavior-Triggered Notifications",
+        "content": "Automatically send push notifications when users perform specific actions such as browsing products, abandoning carts, or visiting key pages. Engage users at the exact moment they are most likely to respond.",
+        "icon": "/assets/global/push-notifications/icons/behavior-triggered.svg"
+      },
+      {
+        "name": "Dynamic User Segmentation",
+        "content": "Segment users based on activity, preferences, location, or engagement patterns to send highly relevant notifications. Reach the right audience with personalized messages that increase click-through rates.",
+        "icon": "/assets/global/push-notifications/icons/user-segmentation.svg"
+      },
+      {
+        "name": "Automated Drip Campaigns",
+        "content": "Create automated notification sequences that nurture users over time and guide them toward conversion. Turn casual visitors into loyal customers through consistent engagement.",
+        "icon": "/assets/global/push-notifications/icons/drip-campaigns.svg"
+      },
+      {
+        "name": "Personalization",
+        "content": "Customize notifications using user attributes and behavior insights. Deliver relevant offers, product recommendations, and reminders tailored to each user.",
+        "icon": "/assets/global/push-notifications/icons/personalization.svg"
+      },
+      {
+        "name": "A/B Testing",
+        "content": "Experiment with different headlines, messages, and delivery times to discover what performs best. Optimize campaigns through data-driven insights.",
+        "icon": "/assets/global/push-notifications/icons/ab-testing.svg"
+      },
+      {
+        "name": "Advanced Analytics",
+        "content": "Track notification performance including clicks and engagement rates. Gain actionable insights to continuously refine and improve your push notification strategy.",
+        "icon": "/assets/global/push-notifications/icons/analytics.svg"
+      },
+      {
+        "name": "Mobile & Web Push Notifications",
+        "content": "Reach users across browsers and mobile devices including Android and iOS apps. Maintain consistent engagement across every platform your users interact with.",
+        "icon": "/assets/global/push-notifications/icons/mobile-web-push.svg"
+      },
+      {
+        "name": "Offline Notification Delivery",
+        "content": "Ensure notifications are delivered even when users are temporarily offline and appear once they reconnect. Never miss an opportunity to re-engage your audience.",
+        "icon": "/assets/global/push-notifications/icons/offline-delivery.svg"
+      },
+      {
+        "name": "Secure & Privacy Compliant",
+        "content": "Built with privacy and security in mind, MSG91 Push Notifications support compliance with modern data protection regulations. Maintain trust while scaling your communication.",
+        "icon": "/assets/global/push-notifications/icons/security-compliance.svg"
+      }
+    ]
+  },
+  "FeatureWithBulletGroup": {
+    "heading": "Industry Use Cases",
+    "iconColor": "text-push-notifications",
+    "features": [
+      {
+        "name": "Push Notifications for eCommerce",
+        "content": "Increase conversions and recover lost sales with intelligent push notifications designed for online stores. Push notifications help eCommerce businesses bring customers back and complete purchases faster.",
+        "img": "/assets/global/push-notifications/usecase-ecommerce.webp",
+        "more_content": {
+          "features": [
+            "Abandoned cart reminders that recover lost revenue",
+            "Price drop alerts that trigger immediate purchases",
+            "Back-in-stock notifications for popular products",
+            "Flash sale announcements to create urgency",
+            "Product recommendations based on browsing behavior"
+          ]
+        }
+      },
+      {
+        "name": "Push Notifications for Fintech",
+        "content": "Fintech platforms rely on real-time communication to keep users informed and secure. Instant notifications improve user trust and platform engagement.",
+        "img": "/assets/global/push-notifications/usecase-fintech.webp",
+        "more_content": {
+          "features": [
+            "Payment confirmation notifications",
+            "Transaction alerts and account updates",
+            "Fraud detection and security alerts",
+            "Investment or portfolio updates",
+            "Bill payment reminders"
+          ]
+        }
+      },
+      {
+        "name": "Push Notifications for SaaS Platforms",
+        "content": "SaaS products use push notifications to drive product adoption and user engagement. Push notifications help SaaS companies retain users and increase product adoption.",
+        "img": "/assets/global/push-notifications/usecase-saas.webp",
+        "more_content": {
+          "features": [
+            "Feature launch notifications",
+            "Trial expiration reminders",
+            "Account activity alerts",
+            "Onboarding guidance notifications",
+            "Subscription renewal reminders"
+          ]
+        }
+      }
+    ]
+  },
+  "PreFooterComp": {
+    "content": "Start Engaging Your Users With Push Notifications Today",
+    "buttons": {
+      "contactSales": {
+        "text": "Contact sales",
+        "link": "/contact-us"
+      },
+      "pricing": {
+        "text": "Pricing",
+        "link": "/pricing/"
+      },
+      "getStarted": {
+        "text": "Get started",
+        "link": "https://control.msg91.com/signup/"
+      }
+    }
+  },
+  "SEOComp": {
+    "heading": "What Are Push Notifications?",
+    "description": "Push notifications are real-time alerts sent directly to a user's device through browsers or mobile applications. These notifications allow businesses to communicate instantly with users even when they are not actively using the website or app.",
+    "data": "<p style=\"text-align: justify;\"><span style=\"color: rgb(0, 0, 0);\">Businesses use push notification platforms to send alerts such as promotional offers, product updates, reminders, and transactional notifications.</span></p><p>&nbsp;</p><p style=\"text-align: justify;\"><span style=\"color: rgb(0, 0, 0);\">MSG91 provides a scalable push notification platform that enables businesses to deliver timely, personalized messages to users across multiple devices.</span></p>"
+  }
+}
