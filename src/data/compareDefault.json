@@ -1,4 +1,76 @@
 {
+    "tawk_unlimited_agents": {
+        "name": "Unlimited Agents",
+        "msg91": "Yes"
+    },
+    "tawk_video_voice_calls": {
+        "name": "Video & Voice Calls",
+        "msg91": "Yes"
+    },
+    "tawk_chat_summarization": {
+        "name": "Chat Summarization",
+        "msg91": "Yes"
+    },
+    "tawk_real_time_translation": {
+        "name": "Real-time Translation",
+        "msg91": "Yes"
+    },
+    "tawk_branding_removal": {
+        "name": "Branding Removal",
+        "msg91": "On higher plan"
+    },
+    "tawk_saved_replies": {
+        "name": "Saved Replies",
+        "msg91": "Yes"
+    },
+    "tawk_unlimited_tickets": {
+        "name": "Unlimited Tickets",
+        "msg91": "Yes (1 Web Inbox)"
+    },
+    "tawk_analytics": {
+        "name": "Analytics",
+        "msg91": "30 Days"
+    },
+    "tawk_widget_customization": {
+        "name": "Widget Customization",
+        "msg91": "Advanced"
+    },
+    "tawk_widget_calling": {
+        "name": "Widget Calling",
+        "msg91": "Yes"
+    },
+    "tawk_omni_channel_presence": {
+        "name": "Omni Channel presence",
+        "msg91": "Yes"
+    },
+    "tawk_live_chat_web_sdk": {
+        "name": "Live chat Web SDK",
+        "msg91": "Yes"
+    },
+    "tawk_chatbot_builder": {
+        "name": "Chatbot builder",
+        "msg91": "Yes"
+    },
+    "tawk_draft_scenarios": {
+        "name": "Draft scenarios",
+        "msg91": "Yes"
+    },
+    "tawk_input_fields": {
+        "name": "Input fields",
+        "msg91": "Yes"
+    },
+    "tawk_keyword_intents": {
+        "name": "Keyword Intents",
+        "msg91": "Yes"
+    },
+    "tawk_tags": {
+        "name": "Tags",
+        "msg91": "Yes"
+    },
+    "tawk_user_activity": {
+        "name": "User Activity",
+        "msg91": "Yes"
+    },
     "pricing": {
         "name": "Pricing",
         "msg91": "Zero margin on Meta pricing"

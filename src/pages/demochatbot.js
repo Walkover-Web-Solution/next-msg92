@@ -116,7 +116,7 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
                             {
                                 'slug': 'zapier',
                                 'name': 'Zapier',
-                                'link': 'https://msg91.com/partners-and-integrations/zapier',
+                                'link': 'https://zapier.com/apps/msg91/integrations',
                             },
                             {
                                 'slug': 'freshworks',
@@ -126,7 +126,7 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
                             {
                                 'slug': 'firebase',
                                 'name': 'Firebase',
-                                'link': 'https://msg91.com/partners-and-integrations/firebase',
+                                'link': 'https://extensions.dev/extensions/msg91/msg91-send-msg',
                             },
                             {
                                 'slug': 'hubspot',

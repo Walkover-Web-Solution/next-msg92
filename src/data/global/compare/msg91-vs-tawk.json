@@ -1,0 +1,65 @@
+{
+    "HeadComp": {
+        "title": "Tawk.to vs MSG91 | Compare Live Chat & Omnichannel Platforms",
+        "description": "Compare MSG91 Hello (Live Chat) and tawk.to for agents, video and voice, AI features, widget customization, chatbots, and omnichannel support — so you can choose the right platform for your business."
+    },
+    "CompareBannerComp": {
+        "heading": "MSG91 vs Tawk.to",
+        "subheading": "MSG91 and Tawk.to both help businesses connect with customers, but they serve very different needs. While Tawk.to focuses on providing a simple and free live chat solution for websites, MSG91 offers a complete omnichannel communication platform that goes beyond chat — enabling businesses to engage customers across WhatsApp, SMS, Email, Voice, and more. For businesses that only need basic website chat, Tawk.to can be a starting point. However, for those looking to automate conversations, manage multi-channel communication, and drive conversions through structured engagement, MSG91 provides a more scalable and comprehensive solution.",
+        "img": "/assets/compare/tawk/tawk-icon.png",
+        "color": "#03B585"
+    },
+    "CompareTableComp": {
+        "type": "global",
+        "heading": "Comparison Summary: MSG91 vs Tawk.to",
+        "name": "tawk.to",
+        "img": "/assets/compare/tawk/tawk-logo.png",
+        "content": [
+            {
+                "name": "MSG91",
+                "des": "MSG91 is a full-stack communication platform designed to manage the entire customer journey — from lead capture to conversion and support. It combines WhatsApp, SMS, Email, Voice, and chat into a single system with advanced automation, chatbot capabilities, CRM integrations, and campaign management. This enables businesses to respond instantly, automate follow-ups, and improve customer engagement at scale."
+            },
+            {
+                "name": "Tawk.to",
+                "des": "Tawk.to, on the other hand, is primarily a live chat tool focused on website-based conversations. It is useful for real-time interaction with visitors but lacks deeper automation, multi-channel capabilities, and structured engagement workflows required for scaling customer communication. For growing businesses, the difference lies in capability — while Tawk.to helps you chat with visitors, MSG91 helps you convert, engage, and retain customers across the entire lifecycle."
+            }
+        ],
+        "features": {
+            "tawk_unlimited_agents": "Yes",
+            "tawk_video_voice_calls": "Paid Add-on ($29 - $49/mo)",
+            "tawk_chat_summarization": "Paid AI Add-on ($29/mo)",
+            "tawk_real_time_translation": "Paid AI Add-on ($29/mo)",
+            "tawk_branding_removal": "Paid Add-on ($29 - $39/mo)",
+            "tawk_saved_replies": "Yes",
+            "tawk_unlimited_tickets": "Yes",
+            "tawk_analytics": "Included for unlimited period",
+            "tawk_widget_customization": "Basic (Advanced is paid)",
+            "tawk_widget_calling": "No",
+            "tawk_omni_channel_presence": "No",
+            "tawk_live_chat_web_sdk": "No",
+            "tawk_chatbot_builder": "No",
+            "tawk_draft_scenarios": "No",
+            "tawk_input_fields": "No",
+            "tawk_keyword_intents": "No",
+            "tawk_tags": "Yes",
+            "tawk_user_activity": "No"
+        }
+    },
+    "PreFooterComp": {
+        "content": "Start building your ideal customer engagement experience",
+        "buttons": {
+            "contactSales": {
+                "text": "Contact sales",
+                "link": "/contact-us"
+            },
+            "pricing": {
+                "text": "Pricing",
+                "link": "/pricing/"
+            },
+            "getStarted": {
+                "text": "Get started",
+                "link": "https://control.msg91.com/signup/"
+            }
+        }
+    }
+}

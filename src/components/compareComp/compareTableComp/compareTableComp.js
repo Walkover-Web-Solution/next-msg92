@@ -18,7 +18,7 @@ export default function CompareTableComp({ data }) {
         <div className='container cont cont_p gap-12'>
             <div className='cont gap-4'>
                 <h2 className='md:text-3xl text-2xl font-bold'>{data?.heading}</h2>
-                <di className='cont gap-1'>
+                <div className='cont gap-1'>
                     {data?.content?.map((comp, index) => {
                         return (
                             <p key={index} className='md:text-lg text-base'>
@@ -26,7 +26,7 @@ export default function CompareTableComp({ data }) {
                             </p>
                         );
                     })}
-                </di>
+                </div>
             </div>
             <div className='hidden md:block overflow-x-auto rounded-lg border-b  bg-base-100 max-w-[1200px] mx-auto'>
                 <table className='table min-w-[676px] '>
@@ -47,13 +47,12 @@ export default function CompareTableComp({ data }) {
                             </th>
                             <th className='w-1/3 py-8 text-black '>
                                 <div className='flex items-start justify-start h-full '>
-                                    <Image
+                                    <img
                                         src={data?.img}
-                                        className='md:h-8 w-fit h-4'
-                                        width={360}
-                                        height={360}
-                                        alt={data?.name}
+                                        className='md:h-8 w-fit h-4 object-contain object-left'
+                                        alt={data?.name || ''}
                                         loading='lazy'
+                                        decoding='async'
                                     />
                                 </div>
                             </th>
@@ -87,6 +86,9 @@ export default function CompareTableComp({ data }) {
             <div className='md:hidden flex flex-col gap-4'>
                 {Object.keys(features).map((featureKey, index) => {
                     const feature = features[featureKey];
+                    if (!data?.features[featureKey]) {
+                        return null;
+                    }
                     return (
                         <div key={index} className='border rounded p-4 cont gap-2'>
                             <h3 className='font-bold text-accent'>{feature?.name}</h3>

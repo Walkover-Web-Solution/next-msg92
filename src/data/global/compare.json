@@ -65,6 +65,12 @@
                 "link": "compare/msg91-vs-messagebird",
                 "img": "/assets/compare/messagebird/messagebird-icon.svg",
                 "bg_gredient": "linear-gradient(135deg, rgba(47, 154, 239, 0.15) -5.04%, rgba(0, 0, 0, 0.10) 107.23%)"
+            },
+            {
+                "name": "MSG91 vs Tawk.to",
+                "link": "compare/msg91-vs-tawk",
+                "img": "/assets/compare/tawk/tawk-icon.png",
+                "bg_gredient": "linear-gradient(100deg, rgba(47, 154, 239, 0.10) -5.04%, rgba(67, 177, 73, 0.10) 107.23%)"
             }
         ]
     },
