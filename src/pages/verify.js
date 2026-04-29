@@ -7,6 +7,7 @@ const contactus = () => {
     useEffect(() => {
         var configuration = {
             referenceId: '117230n1717247196665b1cdc48cc2',
+            theme: 'light',
             success: (data) => {
                 // get verified token in response
                 console.log('success response', data);
@@ -41,7 +42,7 @@ const contactus = () => {
                 </div>
             )}
             {!isToken && (
-                <div className='container d-flex h-100 justify-content-center align-items-center col-xs-12 col-sm-10 col-md-10 mx-auto'>
+                <div className='flex flex-col h-dvh justify-center items-center'>
                     <div id='117230n1717247196665b1cdc48cc2'></div>
                 </div>
             )}
