@@ -51,6 +51,14 @@ import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
 import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
 import GridFeatureComp from '@/components/GridFeatureComp/GridFeatureComp';
+import Hero from '@/components/IntegrationComp/Hero/Hero';
+import ProblemSolution from '@/components/IntegrationComp/ProblemSolution/ProblemSolution';
+import Benefits from '@/components/IntegrationComp/Benefits/Benefits';
+import Features from '@/components/IntegrationComp/Features/Features';
+import UseCases from '@/components/IntegrationComp/UseCases/UseCases';
+import HowItWorks from '@/components/IntegrationComp/HowItWorks/HowItWorks';
+import CTA from '@/components/IntegrationComp/CTA/CTA';
+import SEOFooter from '@/components/IntegrationComp/SEOFooter/SEOFooter';
 
 // New Components
 import Banner from '@/components/UpdatedComp/Banner';
@@ -99,6 +107,23 @@ const Components = {
     ThankYouComp,
     StartupFormsComp,
     IntegrationAppComp,
+    Hero,
+    ProblemSolution,
+    Benefits,
+    Features,
+    UseCases,
+    HowItWorks,
+    CTA,
+    SEOFooter,
+    IntegrationBanner: Hero,
+    IntegrationResponseSection: ProblemSolution,
+    IntegrationInstantReplySection: Benefits,
+    IntegrationInstantReplySectionComparison: Benefits,
+    IntegrationFeatureBulletSection: Features,
+    IntegrationSolutionsGrid: UseCases,
+    IntegrationStepsStrip: HowItWorks,
+    IntegrationCtaBand: CTA,
+    IntegrationSeoFooter: SEOFooter,
     CaseStudyPageCompOld,
     ChatBotDemoComp,
     AsSeenComp,
