@@ -1,0 +1,186 @@
+/* IntegrationComp section themes (BEM --theme modifiers). */
+
+/* Hero/Hero.js */
+.banner {
+    &--shopify {
+        .banner_content {
+            @apply bg-shopifyBanner-content;
+        }
+        .banner_visual {
+            @apply bg-shopifyBanner-visual;
+        }
+        .banner_heading {
+            @apply text-shopifyBanner-heading;
+        }
+        .banner_heading-accent {
+            @apply text-shopifyBanner-headingAccent;
+        }
+        .banner_body {
+            @apply text-shopifyBanner-body;
+        }
+        .banner_btn-primary {
+            @apply border border-shopifyBanner-primary bg-shopifyBanner-primary text-shopifyBanner-primaryFg hover:opacity-90;
+        }
+        .banner_btn-secondary {
+            @apply border-2 border-shopifyBanner-secondaryBorder bg-shopifyBanner-secondaryBg text-shopifyBanner-secondaryFg hover:opacity-90;
+        }
+    }
+}
+
+/* ProblemSolution/ProblemSolution.js */
+.response {
+    &--shopify {
+        .response_heading {
+            @apply text-shopifyBanner-heading;
+        }
+        .response_heading-accent {
+            @apply text-shopifyBanner-headingAccent;
+        }
+        .response_intro {
+            @apply text-shopifyBanner-body;
+        }
+        .response_item-title {
+            @apply font-bold text-shopifyBanner-heading;
+        }
+        .response_item-body {
+            @apply text-shopifyBanner-body;
+        }
+        .response_media {
+            @apply bg-gray-200;
+        }
+    }
+}
+
+/* Benefits/Benefits.js */
+.benefits {
+    &--shopify {
+        @apply bg-shopifyBanner-content;
+
+        .benefits_heading {
+            @apply text-shopifyBanner-heading;
+        }
+        .benefits_heading-accent {
+            @apply text-shopifyBanner-headingAccent;
+        }
+        .benefits_intro {
+            @apply text-shopifyBanner-headingAccent/80;
+        }
+        .benefits_graphic {
+            @apply border-2 border-dashed border-shopifyBanner-primary/45 bg-white/40;
+        }
+        .benefits_graphic-label {
+            @apply font-medium text-shopifyBanner-headingAccent;
+        }
+    }
+}
+
+/* Features/Features.js */
+.features {
+    &--shopify {
+        .features_heading {
+            @apply text-shopifyBanner-heading;
+        }
+        .features_heading-accent {
+            @apply text-shopifyBanner-headingAccent;
+        }
+        .features_intro {
+            @apply text-shopifyBanner-body;
+        }
+        .features_item-title {
+            @apply text-left font-bold text-shopifyBanner-heading;
+        }
+        .features_item-subtitle {
+            @apply text-left font-semibold text-shopifyBanner-headingAccent;
+        }
+        .features_item-body {
+            @apply text-left text-shopifyBanner-body;
+        }
+        .features_item-list {
+            @apply text-left text-shopifyBanner-body;
+        }
+    }
+}
+
+/* UseCases/UseCases.js */
+.solutions-grid {
+    &--shopify {
+        .solutions-grid_heading {
+            @apply text-shopifyBanner-heading;
+        }
+        .solutions-grid_heading-accent {
+            @apply text-shopifyBanner-headingAccent;
+        }
+        .solutions-grid_intro {
+            @apply text-shopifyBanner-body;
+        }
+        .solutions-grid_card-title {
+            @apply text-shopifyBanner-heading;
+        }
+        .solutions-grid_card-body {
+            @apply text-shopifyBanner-body;
+        }
+    }
+}
+
+/* HowItWorks/HowItWorks.js */
+.how-it-works {
+    &--shopify {
+        .how-it-works_heading {
+            @apply text-white;
+        }
+        .how-it-works_heading-accent {
+            @apply text-shopifyBanner-content;
+        }
+        .how-it-works_intro {
+            @apply text-white/80;
+        }
+        .how-it-works_badge {
+            @apply bg-shopifyBanner-content text-shopifyBanner-visual;
+        }
+        .how-it-works_step-title {
+            @apply font-bold text-white;
+        }
+        .how-it-works_step-desc {
+            @apply text-white/75;
+        }
+    }
+}
+
+/* CTA/CTA.js */
+.cta {
+    &--shopify {
+        @apply bg-shopifyBanner-content;
+
+        .cta_heading {
+            @apply text-shopifyBanner-heading;
+        }
+        .cta_intro {
+            @apply text-shopifyBanner-body;
+        }
+        .cta_btn-primary {
+            @apply inline-flex cursor-pointer items-center justify-center rounded-md border border-shopifyBanner-visual bg-shopifyBanner-visual px-5 py-2.5 text-center text-base font-semibold text-white no-underline transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-shopifyBanner-visual focus-visible:ring-offset-2;
+        }
+        .cta_btn-secondary {
+            @apply inline-flex cursor-pointer items-center justify-center rounded-md border-2 border-shopifyBanner-visual bg-white/50 px-5 py-2.5 text-center text-base font-semibold text-shopifyBanner-visual no-underline transition-colors hover:bg-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-shopifyBanner-visual focus-visible:ring-offset-2;
+        }
+    }
+}
+
+/* SEOFooter/SEOFooter.js */
+.seo-footer {
+    &--shopify {
+        @apply bg-white;
+
+        .seo-footer_heading {
+            @apply text-neutral-900;
+        }
+
+        .seo-footer_body {
+            @apply text-neutral-600;
+        }
+
+        .seo-footer_toggle {
+            @apply text-shopifyBanner-visual;
+        }
+    }
+}
