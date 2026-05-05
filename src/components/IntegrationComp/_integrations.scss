@@ -3,12 +3,6 @@
 /* Hero/Hero.js */
 .banner {
     &--shopify {
-        .banner_content {
-            @apply bg-shopifyBanner-content;
-        }
-        .banner_visual {
-            @apply bg-shopifyBanner-visual;
-        }
         .banner_heading {
             @apply text-shopifyBanner-heading;
         }
@@ -65,8 +59,8 @@
         .benefits_intro {
             @apply text-shopifyBanner-headingAccent/80;
         }
-        .benefits_graphic {
-            @apply border-2 border-dashed border-shopifyBanner-primary/45 bg-white/40;
+        .benefits_graphic:has(.benefits_graphic-label) {
+            @apply min-h-[18rem] border-2 border-dashed border-shopifyBanner-primary/45 bg-white/40;
         }
         .benefits_graphic-label {
             @apply font-medium text-shopifyBanner-headingAccent;

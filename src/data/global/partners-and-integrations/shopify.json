@@ -32,7 +32,10 @@
                 "target": "_blank"
             }
         ],
-        "visual": {}
+        "visual": {
+            "video": "/assets/integrations/shopify/Banner.webm",
+            "video_alt": "MSG91 Shopify integration overview"
+        }
     },
     "ProblemSolution": {
         "theme": "shopify",
@@ -80,8 +83,18 @@
             }
         ],
         "subheading": "See what changes when every customer gets an instant reply across every channel.",
-     
-        "media": {}
+        "media": {
+            "video": "/assets/integrations/shopify/omnichannel.webm",
+            "video_alt": "Before vs after: instant replies across every channel with MSG91",
+            "video": "/assets/integrations/shopify/omnichannel.webm",
+            "video_alt": "Before vs after: instant replies across every channel with MSG91",
+            "video": "/assets/integrations/shopify/omnichannel.webm",
+            "video_alt": "Before vs after: instant replies across every channel with MSG91",
+            "video": "/assets/integrations/shopify/omnichannel.webm",
+            "video_alt": "Before vs after: instant replies across every channel with MSG91",
+            "image": "/assets/integrations/shopify/Solution.svg",
+            "alt": "Before vs after Shopify support flow with MSG91"
+        }
     },
     "Features": {
         "theme": "shopify",
@@ -101,6 +114,8 @@
                 "name": "Instant AI Chatbot",
                 "subtitle": "Replies instantly · Answers product queries · Guides purchase",
                 "content": "Pre-built Shopify bots for FAQs, real-time order tracking, cart recovery, and product queries. Trained on your catalog so every answer is accurate and on-brand.",
+                "video": "/assets/integrations/shopify/interactive-chat-bot.webm",
+                "video_alt": "Interactive AI chatbot answering product queries and guiding Shopify purchases",
                 "more_content": {
                     "features": [
                         "Ready-to-use bots for FAQs, tracking, cart recovery",
@@ -114,6 +129,8 @@
                 "name": "Interactive Voice Bot",
                 "subtitle": "Customers speak · Faster interaction · Better engagement",
                 "content": "Customers speak naturally instead of typing. The voice bot resolves common queries like order tracking, refund policies, and store hours — and routes complex issues to your team with full context.",
+                "video": "/assets/integrations/shopify/instant-handoff-to-human.webm",
+                "video_alt": "Voice bot resolving queries and handing off to human agents with context",
                 "more_content": {
                     "features": [
                         "Natural voice experience across storefront and phone",
@@ -126,6 +143,8 @@
                 "name": "One engine. Every channel.",
                 "subtitle": "Unified inbox · Single knowledge base · All platforms synced",
                 "content": "Manage Shopify storefront, WhatsApp, Instagram, and Facebook from one dashboard. Train your bot once and deliver consistent answers everywhere. Connect channels in minutes.",
+                "video": "/assets/integrations/shopify/omnichannel.webm",
+                "video_alt": "Omnichannel inbox linking Shopify and messaging channels",
                 "more_content": {
                     "features": [
                         "Unified inbox for all conversations",
@@ -139,6 +158,8 @@
                 "name": "24/7 availability",
                 "subtitle": "Customers shop anytime · Your bot responds every time",
                 "content": "Never miss an after-hours sale. Your chatbot and voice bot handle every inquiry around the clock and hand off to humans during business hours.",
+                "video": "/assets/integrations/shopify/24:7-availablity.webm",
+                "video_alt": "24/7 AI chatbot and voice support for Shopify customers",
                 "more_content": {
                     "features": [
                         "Always-on coverage — nights, weekends, holidays",

@@ -1,12 +1,13 @@
-import { useId, useState } from 'react';
+import { useState } from 'react';
+
+const toggleClasses =
+    'seo-footer_toggle text-left text-base font-semibold underline underline-offset-2 transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-shopifyBanner-visual focus-visible:ring-offset-2';
 
 export default function SEOFooter({ data }) {
     const [expanded, setExpanded] = useState(false);
-    const panelId = useId();
-    const moreParagraphs = Array.isArray(data?.more_paragraphs) ? data.more_paragraphs : [];
 
     return (
-        <section className={`seo-footer seo-footer--${data.theme} w-full`} aria-label={data?.heading || undefined}>
+        <section className={`seo-footer seo-footer--${data.theme} w-full`}>
             <div className='container cont cont_p'>
                 <div className='mx-auto max-w-4xl py-12 md:py-16'>
                     {data?.heading && (
@@ -18,37 +19,35 @@ export default function SEOFooter({ data }) {
                         <p className='seo-footer_body mb-6 text-justify text-base leading-relaxed'>{data.intro}</p>
                     )}
 
-                    {moreParagraphs.length > 0 && (
+                    {(data?.more_paragraphs ?? []).length > 0 && (
                         <>
                             {!expanded && (
                                 <button
                                     type='button'
-                                    className='seo-footer_toggle text-left text-base font-semibold underline underline-offset-2 transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-shopifyBanner-visual focus-visible:ring-offset-2'
-                                    aria-expanded={expanded}
-                                    aria-controls={panelId}
+                                    className={toggleClasses}
+                                    aria-expanded={false}
+                                    aria-controls='seo-footer-more'
                                     onClick={() => setExpanded(true)}
                                 >
-                                    {data?.read_more_label || 'Read more'}
+                                    {data?.read_more_label ?? 'Read more'}
                                 </button>
                             )}
-
-                            <div id={panelId} hidden={!expanded} className='seo-footer_more mt-6 space-y-6'>
-                                {moreParagraphs.map((text, index) => (
+                            <div id='seo-footer-more' hidden={!expanded} className='seo-footer_more mt-6 space-y-6'>
+                                {(data?.more_paragraphs ?? []).map((text, index) => (
                                     <p key={index} className='seo-footer_body text-justify text-base leading-relaxed'>
                                         {text}
                                     </p>
                                 ))}
                             </div>
-
                             {expanded && (
                                 <button
                                     type='button'
-                                    className='seo-footer_toggle mt-8 text-left text-base font-semibold underline underline-offset-2 transition-opacity hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-shopifyBanner-visual focus-visible:ring-offset-2'
-                                    aria-expanded={expanded}
-                                    aria-controls={panelId}
+                                    className={`${toggleClasses} mt-8`}
+                                    aria-expanded={true}
+                                    aria-controls='seo-footer-more'
                                     onClick={() => setExpanded(false)}
                                 >
-                                    {data?.read_less_label || 'Read less'}
+                                    {data?.read_less_label ?? 'Read less'}
                                 </button>
                             )}
                         </>
