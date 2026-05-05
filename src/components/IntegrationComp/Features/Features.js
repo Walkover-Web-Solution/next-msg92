@@ -7,7 +7,7 @@ export default function Features({ data }) {
 
     return (
         <div className={`features features--${data.theme}`}>
-            <div className='container cont gap-12 py-10'>
+            <div className='container cont gap-12 py-16'>
                 {(data.heading_segments?.length > 0 || data.heading) && (
                     <div className='cont items-center py-2 text-center'>
                         {data.heading_segments?.length > 0 ? (
@@ -49,23 +49,19 @@ export default function Features({ data }) {
                                 </ul>
                             )}
                         </div>
-                        {group?.lottie ? (
+                        {group?.video && (
                             <div className={styles.image}>
-                                <LottiePlayer lottie={group.lottie} />
+                                <video
+                                    className='h-auto w-full rounded-md object-cover'
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    aria-label={group.video_alt}
+                                >
+                                    <source src={group.video} type='video/webm' />
+                                </video>
                             </div>
-                        ) : group?.img ? (
-                            <Image
-                                width={720}
-                                height={720}
-                                className={styles.image}
-                                src={group.img}
-                                alt={group?.name || ''}
-                                loading='lazy'
-                            />
-                        ) : (
-                            <div
-                                className={`${styles.image} flex min-h-[14rem] items-center justify-center rounded-3xl border-2 border-dashed border-shopifyBanner-primary/40 bg-shopifyBanner-content/50 px-4 py-8 text-center md:min-h-[18rem]`}
-                            ></div>
                         )}
                     </div>
                 ))}

@@ -3,9 +3,9 @@ export default function HowItWorks({ data }) {
 
     return (
         <section className={`how-it-works--${data.theme} bg-shopifyBanner-visual`}>
-            <div className='container cont cont_p flex flex-col items-center gap-10 text-center md:gap-14'>
+            <div className='container cont cont_p flex flex-col items-center gap-10 text-center'>
                 {(data.heading_segments?.length > 0 || data.heading) && (
-                    <div className='cont cont_gap max-w-3xl items-center'>
+                    <div className='cont py-5 items-center'>
                         {data.heading_segments?.length > 0 ? (
                             <h2 className='heading'>
                                 {data.heading_segments.map((part, index) => (
@@ -26,9 +26,9 @@ export default function HowItWorks({ data }) {
                     </div>
                 )}
 
-                <div className='grid w-full grid-cols-1 gap-10 md:grid-cols-3'>
+                <div className='grid grid-cols-1 gap-10 md:grid-cols-3 py-5'>
                     {data.steps.map((step, index) => (
-                        <div key={index} className='cont cont_gap items-center'>
+                        <div key={index} className='cont gap-3 items-center border p-6 rounded-md'>
                             <div className='how-it-works_badge flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold'>
                                 {step.step ?? index + 1}
                             </div>
