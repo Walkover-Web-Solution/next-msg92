@@ -50,7 +50,10 @@
             }
         ],
         "subheading": "Most Shopify stores think growth comes from more ads and better creatives. But the real bottleneck is customers ask a question, get silence, and leave.",
-        "media": {},
+        "media": {
+            "image": "/assets/integrations/shopify/problem-sol.svg",
+            "alt": "Illustration of Shopify stores losing sales from slow or missing customer responses"
+        },
         "items": [
             {
                 "title": "Unanswered queries lose sales",
