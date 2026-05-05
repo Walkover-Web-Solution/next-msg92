@@ -1,0 +1,24 @@
+.marquee {
+    display: flex;
+    width: max-content;
+    animation: helloBrTestimonialsMarquee 48s linear infinite;
+}
+
+.marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes helloBrTestimonialsMarquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee {
+        animation: none;
+    }
+}
