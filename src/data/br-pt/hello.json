@@ -13,7 +13,9 @@
         "heading": "Atendimento ao cliente|que transforma|seu negócio",
         "description": "Plataforma completa de suporte omnicanal com IA. Gerencie todos os seus canais — WhatsApp, Instagram, e-mail e muito mais — em uma caixa de entrada inteligente. Simples, sem complicações.",
         "getstarted_btn": "Começar grátis",
+        "getstarted_btn_link": "/signup",
         "specialist_btn": "Fale com um especialista",
+        "specialist_btn_link": "https://calendly.com/hello-shared-inbox/hello-meeting",
         "chatbot": "Chatbot"
     },
     "Features": {
@@ -52,7 +54,7 @@
             },
             {
                 "eyebrow": "VOZ COM IA",
-                "title": "IA de voz inteligente que entende seus clientes e acaba com atrasos no suporte",
+                "title": "IA de voz que entende seus clientes e acaba com os atrasos no suporte",
                 "description": "Potencialize seu contact center com um sistema de voz sempre ativo que entende os clientes, conduz as conversas e mantém sua operação fluindo — sem adicionar complexidade.",
                 "bullets": [
                     "Conversas naturais ",

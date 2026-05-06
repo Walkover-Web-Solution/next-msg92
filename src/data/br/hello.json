@@ -14,7 +14,9 @@
         "description": "Complete omnichannel support platform with AI. Manage all your support channels — WhatsApp, Instagram, Email, and more — in a single smart inbox. Simple, without complications.",
         "lottie": "/assets/global/hello/new_webp/hello_hero.json",
         "getstarted_btn": "Start Free Now",
+        "getstarted_btn_link": "/signup",
         "specialist_btn": "Talk to a Specialist",
+        "specialist_btn_link": "https://calendly.com/hello-shared-inbox/hello-meeting",
         "chatbot": "Chatbot"
     },
     "Features": {
@@ -53,7 +55,7 @@
             },
             {
                 "eyebrow": "VOICE AI",
-                "title": "Intelligent Voice AI That Understands Your Customers and Ends Support Delays",
+                "title": "Voice AI That Understands Your Customers and Ends Support Delays",
                 "description": "Empower your contact center with an always-on voice system that understands customers, manages conversations, and keeps your operations running smoothly—without adding complexity.",
                 "bullets": [
                     "Natural Conversations ",
