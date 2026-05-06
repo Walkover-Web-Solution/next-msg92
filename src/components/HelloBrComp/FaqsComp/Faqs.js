@@ -13,66 +13,62 @@ export default function Faqs({ data }) {
                 <div className='cont mx-auto max-w-3xl'>
                     <header className='mb-10 text-center md:mb-12'>
                         {label && (
-                            <p className='mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-indigo-600'>
+                            <p className='py-2 text-xs font-semibold uppercase tracking-[0.25em] text-indigo-600'>
                                 {label}
                             </p>
                         )}
                         {heading && (
-                            <h2 className='text-3xl font-bold tracking-tight text-gray-900 md:text-4xl'>{heading}</h2>
+                            <h2 className='py-3 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl'>
+                                {heading}
+                            </h2>
                         )}
                     </header>
 
                     <ul className='flex flex-col gap-4'>
-                        {items.map((item, index) => {
-                            const isOpen = openIndex === index;
-                            const panelId = `hello-faq-panel-${index}`;
-                            const triggerId = `hello-faq-trigger-${index}`;
-
-                            return (
-                                <li key={index}>
-                                    <div
-                                        className={`rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-shadow md:p-6 ${
-                                            isOpen ? 'shadow-md ring-1 ring-indigo-100' : ''
-                                        }`}
-                                    >
-                                        <div className='flex items-start justify-between gap-4'>
-                                            <h3 className='text-left text-base font-bold leading-snug text-gray-900 md:text-lg'>
-                                                {item.question}
-                                            </h3>
-                                            <button
-                                                type='button'
-                                                id={triggerId}
-                                                className='flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-indigo-700 transition hover:bg-indigo-200'
-                                                aria-expanded={isOpen}
-                                                aria-controls={panelId}
-                                                aria-label={
-                                                    isOpen
-                                                        ? `Close answer: ${item.question}`
-                                                        : `Open answer: ${item.question}`
-                                                }
-                                                onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                                            >
-                                                {isOpen ? (
-                                                    <MdClose className='h-5 w-5' aria-hidden />
-                                                ) : (
-                                                    <MdAdd className='h-5 w-5' aria-hidden />
-                                                )}
-                                            </button>
-                                        </div>
-                                        {isOpen && item.answer && (
-                                            <div
-                                                id={panelId}
-                                                role='region'
-                                                aria-labelledby={triggerId}
-                                                className='mt-4 border-t border-indigo-100 pt-4 text-left text-base leading-relaxed text-gray-600'
-                                            >
-                                                {item.answer}
-                                            </div>
-                                        )}
+                        {items.map((item, index) => (
+                            <li key={index}>
+                                <div
+                                    className={`rounded-xl border border-gray-200 bg-white p-5 md:p-6 ${
+                                        openIndex === index ? 'ring-1 ring-indigo-100' : ''
+                                    }`}
+                                >
+                                    <div className='flex items-start justify-between gap-4'>
+                                        <h3 className='text-left text-base font-bold text-gray-900 md:text-lg'>
+                                            {item.question}
+                                        </h3>
+                                        <button
+                                            type='button'
+                                            id={`hello-faq-trigger-${index}`}
+                                            className='flex h-9 w-9 items-center justify-center rounded-full bg-indigo-100 text-indigo-700 hover:bg-indigo-200'
+                                            aria-expanded={openIndex === index}
+                                            aria-controls={`hello-faq-panel-${index}`}
+                                            aria-label={
+                                                openIndex === index
+                                                    ? `Close answer: ${item.question}`
+                                                    : `Open answer: ${item.question}`
+                                            }
+                                            onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
+                                        >
+                                            {openIndex === index ? (
+                                                <MdClose className='h-5 w-5' aria-hidden />
+                                            ) : (
+                                                <MdAdd className='h-5 w-5' aria-hidden />
+                                            )}
+                                        </button>
                                     </div>
-                                </li>
-                            );
-                        })}
+                                    {openIndex === index && item.answer && (
+                                        <div
+                                            id={`hello-faq-panel-${index}`}
+                                            role='region'
+                                            aria-labelledby={`hello-faq-trigger-${index}`}
+                                            className='mt-4 border-t border-indigo-100 pt-4 text-left text-base text-gray-600'
+                                        >
+                                            {item.answer}
+                                        </div>
+                                    )}
+                                </div>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>
