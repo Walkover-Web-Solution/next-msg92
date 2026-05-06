@@ -50,9 +50,16 @@ import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromT
 import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
 import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
-
-// New Components
 import Banner from '@/components/UpdatedComp/Banner';
+import HelloBanner from '@/components/HelloBrComp/BannerComp/Banner';
+import Features from '@/components/HelloBrComp/FeaturesComp/Features';
+import RoiStats from '@/components/HelloBrComp/StatsComp/RoiStats';
+import Security from '@/components/HelloBrComp/SecurityComp/SecurityCompliance';
+import Steps from '@/components/HelloBrComp/StepsComp/StepsSetup';
+import Testimonials from '@/components/HelloBrComp/TestimonialsComp/Testimonials';
+import FooterCta from '@/components/HelloBrComp/FooterCtaComp/FooterCta';
+import Faqs from '@/components/HelloBrComp/FaqsComp/Faqs';
+import Pricing from '@/components/HelloBrComp/PricingComp/Pricing';
 
 /* files */
 import specialPages from '@/data/specialPages.json';
@@ -120,6 +127,14 @@ const Components = {
 
     // New Components
     Banner,
+    Features,
+    RoiStats,
+    Security,
+    Steps,
+    Testimonials,
+    FooterCta,
+    Faqs,
+    Pricing,
 };
 
 export default function Page({ data, commonData, pageInfo }) {
@@ -149,6 +164,13 @@ export default function Page({ data, commonData, pageInfo }) {
                 Object.keys(data).map((key) => {
                     const pageData = data[key];
                     var Component = Components[key];
+                    if (
+                        key === 'Banner' &&
+                        pageInfo?.page === 'hello' &&
+                        (pageInfo?.country === 'br' || pageInfo?.country === 'br-pt')
+                    ) {
+                        Component = HelloBanner;
+                    }
                     if (!Component) {
                         console.error(`Component "${key}" is undefined. Check your imports and component exports.`);
                         return;
@@ -195,13 +217,30 @@ export const getStaticProps = async (context) => {
         return {
             notFound: true,
         };
-    } else {
-        return {
-            props: {
-                data: data || {},
-                commonData: commonData || {},
-                pageInfo,
-            },
-        };
     }
+
+    const helloBrCountries = ['br', 'br-pt'];
+    if (data?.Pricing && pageInfo?.page === 'hello' && helloBrCountries.includes(pageInfo?.country)) {
+        try {
+            const getPricing = (await import('@/utils/pricing/getPricing')).default;
+            const rows = await getPricing(pageInfo.country, 'hello');
+            if (Array.isArray(rows) && rows.length > 0) {
+                data.Pricing = {
+                    ...data.Pricing,
+                    initialPricingData: rows,
+                    initialCurrency: 'USD',
+                };
+            }
+        } catch (e) {
+            console.error('Pricing: getPricing failed', e);
+        }
+    }
+
+    return {
+        props: {
+            data: data || {},
+            commonData: commonData || {},
+            pageInfo,
+        },
+    };
 };
