@@ -41,7 +41,12 @@
         "theme": "shopify",
         "heading_segments": [
             {
-                "text": "You don't have a traffic problem. You have a ",
+                "text": "You don't have a traffic problem.",
+                "accent": false,
+                "block": true
+            },
+            {
+                "text": "You have a ",
                 "accent": false
             },
             {
@@ -49,7 +54,6 @@
                 "accent": true
             }
         ],
-        "subheading": "Most Shopify stores think growth comes from more ads and better creatives. But the real bottleneck is customers ask a question, get silence, and leave.",
         "media": {
             "image": "/assets/integrations/shopify/problem-sol.svg",
             "alt": "Illustration of Shopify stores losing sales from slow or missing customer responses"
@@ -72,32 +76,6 @@
                 "description": "Storefront, WhatsApp, Instagram, Facebook — your team juggles platforms while responses lag and context is lost."
             }
         ]
-    },
-    "Benefits": {
-        "theme": "shopify",
-        "heading_segments": [
-            {
-                "text": "Before vs after ",
-                "accent": false
-            },
-            {
-                "text": "MSG91",
-                "accent": true
-            }
-        ],
-        "subheading": "See what changes when every customer gets an instant reply across every channel.",
-        "media": {
-            "video": "/assets/integrations/shopify/omnichannel.webm",
-            "video_alt": "Before vs after: instant replies across every channel with MSG91",
-            "video": "/assets/integrations/shopify/omnichannel.webm",
-            "video_alt": "Before vs after: instant replies across every channel with MSG91",
-            "video": "/assets/integrations/shopify/omnichannel.webm",
-            "video_alt": "Before vs after: instant replies across every channel with MSG91",
-            "video": "/assets/integrations/shopify/omnichannel.webm",
-            "video_alt": "Before vs after: instant replies across every channel with MSG91",
-            "image": "/assets/integrations/shopify/Solution.svg",
-            "alt": "Before vs after Shopify support flow with MSG91"
-        }
     },
     "Features": {
         "theme": "shopify",
@@ -173,7 +151,32 @@
             }
         ]
     },
-  
+    "Benefits": {
+        "theme": "shopify",
+        "heading_segments": [
+            {
+                "text": "Before vs after ",
+                "accent": false
+            },
+            {
+                "text": "MSG91",
+                "accent": true
+            }
+        ],
+        "subheading": "See what changes when every customer gets an instant reply across every channel.",
+        "media": {
+            "video": "/assets/integrations/shopify/omnichannel.webm",
+            "video_alt": "Before vs after: instant replies across every channel with MSG91",
+            "video": "/assets/integrations/shopify/omnichannel.webm",
+            "video_alt": "Before vs after: instant replies across every channel with MSG91",
+            "video": "/assets/integrations/shopify/omnichannel.webm",
+            "video_alt": "Before vs after: instant replies across every channel with MSG91",
+            "video": "/assets/integrations/shopify/omnichannel.webm",
+            "video_alt": "Before vs after: instant replies across every channel with MSG91",
+            "image": "/assets/integrations/shopify/Solution.svg",
+            "alt": "Before vs after Shopify support flow with MSG91"
+        }
+    },
     "UseCases": {
         "theme": "shopify",
         "heading_segments": [
@@ -235,18 +238,19 @@
         "steps": [
             {
                 "step": 1,
-                "title": "Install the App",
-                "description": "One-click installation from the Shopify App Store"
+                "title": "Install the MSG91 App",
+                "description": "One-click installation from the Shopify App Store",
+                "link": "https://apps.shopify.com/msg91"
             },
             {
                 "step": 2,
-                "title": "Connect Channels",
-                "description": "Link WhatsApp, Instagram, and Facebook in a few clicks"
+                "title": "Connect Channel and Enable Chatbot",
+                "description": "Connect your WhatsApp channel and enable the chatbot to start handling support and sales conversations."
             },
             {
                 "step": 3,
                 "title": "Go Live",
-                "description": "Pre-built flows for FAQs, tracking, and cart recovery activate instantly"
+                "description": "Prebuilt Shopify bots built to handle customer conversations across support and sales"
             }
         ]
     },
