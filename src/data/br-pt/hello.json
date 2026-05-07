@@ -161,7 +161,6 @@
         "currencyBrlLabel": "BRL",
         "billingMonthlyLabel": "Mensal",
         "billingYearlyLabel": "Anual",
-        "yearlyDiscountHint": "(-20%)",
         "fullPricingPath": "pricing/hello",
         "comparePlansLabel": "Calcule o preço e compare todos os recursos na página de preços Hello",
         "planCopy": {

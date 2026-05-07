@@ -162,7 +162,6 @@
         "currencyBrlLabel": "BRL",
         "billingMonthlyLabel": "Monthly",
         "billingYearlyLabel": "Yearly",
-        "yearlyDiscountHint": "(-20%)",
         "fullPricingPath": "pricing/hello",
         "comparePlansLabel": "Calculate price & compare all features on the Hello pricing page",
         "planCopy": {
@@ -221,36 +220,28 @@
         "heading": "Frequently Asked Questions",
         "items": [
             {
-                "question": "What is an omnichannel customer support platform?",
-                "answer": "An omnichannel customer support platform unifies all customer communication channels — such as WhatsApp, Instagram, email, chat and phone — into a single interface. Hello offers this with integrated AI, allowing your team to handle more customers with less effort while maintaining the full history of each conversation."
+                "question": "We already use a WhatsApp Business App; why do we need a unified platform like MSG91?",
+                "answer": "The standard WhatsApp App is built for 1-to-1 chats, but it doesn't allow for Automation or Scalability. Once you start getting more than 10 leads a day, manual replies become impossible. MSG91’s Unified Platform allows multiple agents to handle one WhatsApp number, automates the qualification of leads, and ensures that if a customer doesn't respond on WhatsApp, a Failover SMS is sent automatically. It turns a \"chat app\" into a professional Revenue Engine."
             },
             {
-                "question": "How does the WhatsApp Business API integration work?",
-                "answer": "Hello connects through the official WhatsApp Business Platform. You verify your business, choose or bring your number, and manage templates, opt-ins and conversations from Hello’s inbox — with delivery and quality metrics built in. Our team helps you go live without juggling multiple tools."
+                "question": "How does the \"Pay-As-You-Go\" pricing model benefit my travel agency during the off-season?",
+                "answer": "Unlike expensive software that charges you a heavy monthly subscription regardless of your sales, MSG91 works on a consumption basis. During the busy Peak Season, you pay for the high volume of successful bookings you handle. During the off-season, your costs drop naturally as your volume decreases. This ensures your Communication Infrastructure is always affordable and never a burden on your overheads."
             },
             {
-                "question": "Is Hello compliant with the LGPD (Brazil's data protection law)?",
-                "answer": "Yes. Hello is built with privacy and compliance in mind, including controls aligned with LGPD requirements. A Data Processing Agreement (DPA) is available in Portuguese, and you can work with our team on data residency, retention and export questions for your use case."
+                "question": "Can I automate my entire booking journey, from inquiry to post-trip feedback?",
+                "answer": "Yes! Using our No-Code Flow Builder, you can design a High-Conversion Travel Funnel. You can set it to: greet a new lead instantly on WhatsApp; send a professional Email itinerary after the call; trigger a Payment Link via SMS when they are ready to book; and send an automated Post-Trip \"Welcome Home\" message to collect Google Reviews. This ensures a Seamless Customer Journey without your team having to lift a finger for repetitive tasks."
             },
             {
-                "question": "Can I automate customer service with AI?",
-                "answer": "Yes. You can deploy no-code chatbots, use AI-suggested replies for agents, automate routing and tagging, and scale with voice and workflow tools — so repetitive questions are handled instantly while humans focus on complex cases."
+                "question": "How difficult is it to integrate MSG91 with our existing website or Travel CRM?",
+                "answer": "Integration is straightforward and \"Developer-Friendly.\" We provide robust APIs and Webhooks that connect with almost all major Travel CRMs and website builders. If you don't have a tech team, our Onboarding Experts provide step-by-step documentation and support to ensure your Lead Capture Automation is up and running within a few days."
             },
             {
-                "question": "What's the difference between Hello and a traditional ticketing system?",
-                "answer": "Traditional ticketing is often channel-siloed and ticket-centric. Hello is conversation-centric: every channel feeds one timeline per customer, with AI, automation and analytics on top — so context never gets lost when someone switches from WhatsApp to email or chat."
+                "question": "Will using automated messages affect the personal touch my clients expect?",
+                "answer": "Actually, it enhances it. By automating \"routine\" messages—like sending receipts, flight updates, or visa checklists—you ensure your clients are never ignored. This gives your travel agents more time to have high-quality, personalized consultations for complex itineraries. Automation handles the Infrastructure, while you provide the Empathy and Expertise."
             },
             {
-                "question": "How does BRL pricing work?",
-                "answer": "Plans and usage can be quoted and billed in Brazilian Reais (BRL) for Brazil-based teams, with clear limits for agents, channels and tickets. Contact sales for a tailored quote, volume tiers and contract options that match your operation."
-            },
-            {
-                "question": "Does Hello offer support in Portuguese?",
-                "answer": "Yes. Product materials, contracts and customer success touchpoints are available in Portuguese for Brazil, and you can reach our team in your language for onboarding and ongoing support."
-            },
-            {
-                "question": "How long does it take to implement Hello?",
-                "answer": "Many teams connect their first channels in hours. Full rollout — agents trained, automations live, WhatsApp approved — typically ranges from a few days to a couple of weeks depending on channels, templates and internal approvals."
+                "question": "What is the benefit of using RCS (Rich Business Messaging) over a normal SMS?",
+                "answer": "RCS is the next generation of texting. It allows you to send high-resolution images of hotels, carousel sliders of different packages, and \"Book Now\" buttons directly inside the default messaging app of a phone. For an Indian travel agency, this is a massive Competitive Advantage, as it makes your brand look premium and makes it incredibly easy for the customer to take action."
             }
         ]
     },
