@@ -1,29 +1,64 @@
 import GoogleLoginButton from '@/components/signupComp/utils/GoogleLogin';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import { MdCall, MdEmail, MdCheck } from 'react-icons/md';
 import { getQueryParamsDeatils, setCookie, getCookie, loginWithGitHubAccount } from '@/utils/utilis';
+import {
+    MULTIPLE_ACCOUNTS_MESSAGE,
+    handleMobileWidgetFailure,
+    isMultipleAccountsError,
+    otpWidgetSetup,
+    waitForInitSendOTP,
+} from '@/utils/otpSigninWidget';
 import { toast } from 'react-toastify';
 import Image from 'next/image';
 
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
+const EMAIL_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/emailLogin';
+const MOBILE_LOGIN_URL = process.env.API_BASE_URL + '/api/ui-api/nexus/mobileLogin';
 
-class logIn extends React.Component {
-    constructor(props) {
-        super(props);
+const DEFAULT_MOBILE_WIDGET_ID = '36637966444d303234343937';
 
-        this.state = {
-            loginInProgress: false,
-            showContactonLogin: false,
+export default function SignIn() {
+    const router = useRouter();
+    const [showContactonLogin, setShowContactonLogin] = useState(false);
+
+    const hitLoginAPI = useCallback((url, payload, showError = true) => {
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
         };
-    }
+        fetch(url, requestOptions)
+            .then((response) => response.json())
+            .then((result) => {
+                const sessionId = result?.data?.sessionDetails?.PHPSESSID;
+                if (sessionId) {
+                    setCookie('sessionId', sessionId, 30);
+                }
+                if (!result?.hasError) {
+                    location.href = SUCCESS_REDIRECTION_URL?.replace(':session', sessionId);
+                } else if (showError) {
+                    const errMsg = result?.errors?.[0] ?? result?.errors;
+                    if (isMultipleAccountsError({ message: errMsg, errors: result?.errors })) {
+                        toast.error(MULTIPLE_ACCOUNTS_MESSAGE);
+                    } else {
+                        toast.error(errMsg);
+                    }
+                }
+            })
+            .catch((err) => console.error(err));
+    }, []);
 
-    componentDidMount() {
-        let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
+    useEffect(() => {
+        if (!router.isReady) return;
+
+        const queryParams = getQueryParamsDeatils(router.asPath);
 
         if (queryParams?.githublogin === 'true') {
             const url = process.env.API_BASE_URL + '/api/v5/nexus/githubLogin';
-            this.hitLoginAPI(url, {
+            hitLoginAPI(url, {
                 code: queryParams?.code,
                 state: queryParams?.state,
                 redirectUrl: process.env.REDIRECT_URL,
@@ -37,19 +72,20 @@ class logIn extends React.Component {
             delete request['accounts-server'];
 
             const url = process.env.API_BASE_URL + '/api/v5/nexus/zohoLogin';
-            this.hitLoginAPI(url, {
+            hitLoginAPI(url, {
                 ...request,
                 redirectUrl: process.env.REDIRECT_URL + '/signin?loginWithZoho=true',
             });
         } else if (queryParams?.loginWithOutlook?.includes('true')) {
             const url = process.env.API_BASE_URL + '/api/v5/nexus/outlookLogin';
-            this.hitLoginAPI(url, {
+            hitLoginAPI(url, {
                 code: queryParams?.code,
                 redirectUrl: process.env.REDIRECT_URL + '/outlook-token',
             });
         } else {
-            this.otpWidgetSetup();
+            otpWidgetSetup();
         }
+
         try {
             const url = process.env.API_BASE_URL + '/api/v5/nexus/checkSession';
             const payload = { session: getCookie('sessionId') };
@@ -68,204 +104,205 @@ class logIn extends React.Component {
         } catch (error) {
             console.log('No Session Found');
         }
-    }
+    }, [router.isReady, router.asPath, hitLoginAPI]);
 
-    otpWidgetSetup = () => {
-        const head = document.getElementsByTagName('head')[0];
-        const currentTimestamp = new Date().getTime();
-        const otpWidgetScript = document.createElement('script');
-        otpWidgetScript.type = 'text/javascript';
-        otpWidgetScript.src = `${process.env.WIDGET_SCRIPT}?v=${currentTimestamp}`;
-        otpWidgetScript.onload = () => {};
-        head.appendChild(otpWidgetScript);
-    };
-
-    initOTPWidget() {
+    const initOTPWidget = useCallback(() => {
         const configuration = {
             widgetId: process.env.OTP_WIDGET_TOKEN,
             tokenAuth: process.env.WIDGET_AUTH_TOKEN,
             hideMethod: 'mobile',
             success: (data) => {
                 try {
-                    const url = process.env.API_BASE_URL + '/api/v5/nexus/emailLogin';
-                    this.hitLoginAPI(url, { code: data.message });
+                    hitLoginAPI(EMAIL_LOGIN_URL, { code: data.message });
                 } catch (error) {
                     console.log(error);
                 }
             },
         };
-        window.initSendOTP(configuration);
-    }
+        waitForInitSendOTP()
+            .then(() => window.initSendOTP(configuration))
+            .catch((err) => {
+                console.error(err);
+                toast.error('Verification widget failed to load. Please refresh and try again.');
+            });
+    }, [hitLoginAPI]);
 
-    loginWithZoho() {
+    const initMobileOTPWidget = useCallback(() => {
+        const mobileToken = process.env.OTP_WIDGET_TOKEN_MOBILE || DEFAULT_MOBILE_WIDGET_ID;
+        const configuration = {
+            widgetId: mobileToken,
+            tokenAuth: process.env.WIDGET_AUTH_TOKEN,
+            hideMethod: 'email',
+            success: (data) => {
+                try {
+                    hitLoginAPI(MOBILE_LOGIN_URL, { code: data.message });
+                } catch (error) {
+                    console.log(error);
+                }
+            },
+            failure: handleMobileWidgetFailure,
+        };
+        waitForInitSendOTP()
+            .then(() => window.initSendOTP(configuration))
+            .catch((err) => {
+                console.error(err);
+                toast.error('Verification widget failed to load. Please refresh and try again.');
+            });
+    }, [hitLoginAPI]);
+
+    const loginWithZoho = () => {
         location.href = `https://accounts.zoho.com/oauth/v2/auth?response_type=code&client_id=${process.env.ZOHO_CLIENT_ID}&scope=aaaserver.profile.READ&redirect_uri=${process.env.REDIRECT_URL}/signin?loginWithZoho=true`;
-    }
+    };
 
-    loginWithGitHub = () => {
+    const loginWithGitHub = () => {
         loginWithGitHubAccount(true);
     };
 
-    googleLogin = (response) => {
+    const googleLogin = (response) => {
         if (response) {
             const url = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
-            this.hitLoginAPI(url, { code: response.code, redirectUrl: process.env.REDIRECT_URL });
+            hitLoginAPI(url, { code: response.code, redirectUrl: process.env.REDIRECT_URL });
         }
     };
 
-    loginWithOutlook() {
+    const loginWithOutlook = () => {
         location.href = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&client_id=${process.env.MSAL_CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}/outlook-token&scope=User.Read`;
-    }
-
-    hitLoginAPI(url, payload, showError = true) {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-        };
-        fetch(url, requestOptions)
-            .then((response) => response.json())
-            .then((result) => {
-                const sessionId = result?.data?.sessionDetails?.PHPSESSID;
-                if (sessionId) {
-                    setCookie('sessionId', sessionId, 30);
-                }
-                if (!result?.hasError) {
-                    location.href = SUCCESS_REDIRECTION_URL?.replace(':session', sessionId);
-                } else if (showError) {
-                    toast.error(result?.errors?.[0] ?? result?.errors);
-                }
-            })
-            .catch((err) => console.error(err));
-    }
-
-    setShowContactonLogin = () => {
-        this.setState((prevState) => ({
-            showContactonLogin: !prevState.showContactonLogin,
-        }));
     };
 
-    render() {
-        return (
-            <>
-                <section className='signin flex flex-col-reverse md:flex-row'>
-                    <div className='flex flex-col bg-secondary sm:px-10 px-4 sm:py-20 py-10 gap-8 xl:w-1/4 lg:w-1/3 md:w-1/2 w-full md:min-h-screen'>
-                        <div className='md:flex hidden flex-col gap-5'>
-                            <Image
-                                src={'/assets/brand/msg91.svg'}
-                                width={420}
-                                height={420}
-                                className='w-32'
-                                alt='msg91-logo'
-                                loading='lazy'
-                            />
-                            <h1 className='text-2xl font-medium'>Signup to avail a complete suite of MSG91 products</h1>
-                        </div>
-                        <div className='flex flex-col gap-5'>
-                            <h2 className='text-xl'>What can you build with MSG91?</h2>
-                            <ul className='flex flex-col gap-3'>
-                                <li className='flex items-center gap-2'>
-                                    <MdCheck fontSize={20} className='text-accent' /> Programmable SMS
-                                </li>
-                                <li className='flex items-center gap-2'>
-                                    <MdCheck fontSize={20} className='text-accent' /> Customer Contact Center
-                                </li>
-                                <li className='flex items-center gap-2'>
-                                    <MdCheck fontSize={20} className='text-accent' /> Virtual Number
-                                </li>
-                                <li className='flex items-center gap-2'>
-                                    <MdCheck fontSize={20} className='text-accent' /> Automated user segmentation
-                                </li>
-                                <li className='flex items-center gap-2'>
-                                    <MdCheck fontSize={20} className='text-accent' /> OTP Initiate verification
-                                </li>
-                            </ul>
-                        </div>
-                        <p className='text-lg'>Trusted by 30000+ startups and enterprises</p>
+    const toggleShowContactOnLogin = () => {
+        setShowContactonLogin((prev) => !prev);
+    };
+
+    return (
+        <>
+            <section className='signin flex flex-col-reverse md:flex-row'>
+                <div className='flex flex-col bg-secondary sm:px-10 px-4 sm:py-20 py-10 gap-8 xl:w-1/4 lg:w-1/3 md:w-1/2 w-full md:min-h-screen'>
+                    <div className='md:flex hidden flex-col gap-5'>
+                        <Image
+                            src={'/assets/brand/msg91.svg'}
+                            width={420}
+                            height={420}
+                            className='w-32'
+                            alt='msg91-logo'
+                            loading='lazy'
+                        />
+                        <h1 className='text-2xl font-medium'>Signup to avail a complete suite of MSG91 products</h1>
                     </div>
+                    <div className='flex flex-col gap-5'>
+                        <h2 className='text-xl'>What can you build with MSG91?</h2>
+                        <ul className='flex flex-col gap-3'>
+                            <li className='flex items-center gap-2'>
+                                <MdCheck fontSize={20} className='text-accent' /> Programmable SMS
+                            </li>
+                            <li className='flex items-center gap-2'>
+                                <MdCheck fontSize={20} className='text-accent' /> Customer Contact Center
+                            </li>
+                            <li className='flex items-center gap-2'>
+                                <MdCheck fontSize={20} className='text-accent' /> Virtual Number
+                            </li>
+                            <li className='flex items-center gap-2'>
+                                <MdCheck fontSize={20} className='text-accent' /> Automated user segmentation
+                            </li>
+                            <li className='flex items-center gap-2'>
+                                <MdCheck fontSize={20} className='text-accent' /> OTP Initiate verification
+                            </li>
+                        </ul>
+                    </div>
+                    <p className='text-lg'>Trusted by 30000+ startups and enterprises</p>
+                </div>
 
-                    <div className='lg:px-20 sm:px-10 px-4 sm:py-20 py-10 flex flex-col gap-12 w-full'>
-                        <h1 className='text-2xl font-semibold'>Welcome back!</h1>
+                <div className='lg:px-20 sm:px-10 px-4 sm:py-20 py-10 flex flex-col gap-12 w-full'>
+                    <h1 className='text-2xl font-semibold'>Welcome back!</h1>
 
-                        <div className='flex flex-col gap-6 max-w-[600px]'>
-                            <div className='flex flex-col gap-3'>
-                                <span className='text-base text-gray-700'>Are you a developer?</span>
-                                <div className='flex gap-3 flex-wrap'>
-                                    <GoogleOAuthProvider clientId={`${process.env.GOOGLE_CLIENT_ID}`}>
-                                        <GoogleLoginButton
-                                            googleLoginResponse={this.googleLogin}
-                                            className='google-login'
-                                        />
-                                    </GoogleOAuthProvider>
-                                    <button
-                                        onClick={() => this.loginWithOutlook()}
-                                        className='social-btn border border-primary rounded flex justify-center items-center w-10 h-10'
-                                    >
-                                        <img src='/img/microsoft-svg.svg' className='w-6' alt='Microsoft' />
-                                    </button>
-                                    <button
-                                        onClick={() => this.loginWithZoho()}
-                                        className='social-btn zogo-btn border border-alert rounded flex justify-center items-center w-10 h-10'
-                                    >
-                                        <img src='/img/icon-zogo.svg' className='w-4' alt='Zoho' />
-                                    </button>
-                                    <button
-                                        onClick={() => this.loginWithGitHub()}
-                                        className='social-btn git-btn border border-black rounded flex justify-center items-center w-10 h-10'
-                                    >
-                                        <img src='/img/icon-github.svg' className='w-6' alt='GitHub' />
-                                    </button>
+                    <div className='flex flex-col gap-6 max-w-[600px]'>
+                        <div className='flex flex-col gap-3'>
+                            <span className='text-base text-gray-700'>Are you a developer?</span>
+                            <div className='flex gap-3 flex-wrap'>
+                                <GoogleOAuthProvider clientId={`${process.env.GOOGLE_CLIENT_ID}`}>
+                                    <GoogleLoginButton googleLoginResponse={googleLogin} className='google-login' />
+                                </GoogleOAuthProvider>
+                                <button
+                                    type='button'
+                                    onClick={() => loginWithOutlook()}
+                                    className='social-btn border border-primary rounded flex justify-center items-center w-10 h-10'
+                                >
+                                    <img src='/img/microsoft-svg.svg' className='w-6' alt='Microsoft' />
+                                </button>
+                                <button
+                                    type='button'
+                                    onClick={() => loginWithZoho()}
+                                    className='social-btn zogo-btn border border-alert rounded flex justify-center items-center w-10 h-10'
+                                >
+                                    <img src='/img/icon-zogo.svg' className='w-4' alt='Zoho' />
+                                </button>
+                                <button
+                                    type='button'
+                                    onClick={() => loginWithGitHub()}
+                                    className='social-btn git-btn border border-black rounded flex justify-center items-center w-10 h-10'
+                                >
+                                    <img src='/img/icon-github.svg' className='w-6' alt='GitHub' />
+                                </button>
+                            </div>
+                        </div>
+
+                        <span className='step-one__break text-base flex items-center gap-3'>
+                            or<span className='step-one__break__line'></span>
+                        </span>
+
+                        <div className='flex flex-col gap-3 sm:flex-row sm:flex-wrap'>
+                            <button type='button' className='btn btn-md btn-primary' onClick={() => initOTPWidget()}>
+                                Login with Email
+                            </button>
+                            <button
+                                type='button'
+                                className='btn btn-md btn-primary btn-outline'
+                                onClick={() => initMobileOTPWidget()}
+                            >
+                                Login with Mobile
+                            </button>
+                        </div>
+
+                        <p className='text-base'>
+                            If you already have an account,{' '}
+                            <a href='/signin' className='text-link active-link'>
+                                Login
+                            </a>
+                        </p>
+
+                        <p className='text-base'>
+                            Trouble logging in?{' '}
+                            <span
+                                onClick={toggleShowContactOnLogin}
+                                className='text-link active-link cursor-pointer'
+                                role='button'
+                                tabIndex={0}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') toggleShowContactOnLogin();
+                                }}
+                            >
+                                Click here
+                            </span>
+                        </p>
+
+                        {showContactonLogin && (
+                            <div className='flex flex-col gap-2'>
+                                <div className='flex items-center gap-2'>
+                                    <MdCall />
+                                    <a className='text-link active-link' href='/contact-us'>
+                                        Talk to an Expert
+                                    </a>
+                                </div>
+                                <div className='flex items-center gap-2'>
+                                    <MdEmail />
+                                    <a className='text-link active-link cursor-pointer' href='mailto:support@msg91.com'>
+                                        support@msg91.com
+                                    </a>
                                 </div>
                             </div>
-
-                            <span className='step-one__break text-base flex items-center gap-3'>
-                                or<span className='step-one__break__line'></span>
-                            </span>
-
-                            <button className='btn btn-md btn-primary' onClick={() => this.initOTPWidget(true)}>
-                                Sign up with Email
-                            </button>
-
-                            <p className='text-base'>
-                                If you already have an account,{' '}
-                                <a href='/signin' className='text-link active-link'>
-                                    Login
-                                </a>
-                            </p>
-
-                            <p className='text-base'>
-                                Trouble logging in?{' '}
-                                <span
-                                    onClick={this.setShowContactonLogin}
-                                    className='text-link active-link cursor-pointer'
-                                >
-                                    Click here
-                                </span>
-                            </p>
-
-                            {this.state.showContactonLogin && (
-                                <div className='flex flex-col gap-2'>
-                                    <div className='flex items-center gap-2'>
-                                        <MdCall />
-                                        <a className='text-link active-link' href='/contact-us'>
-                                            Talk to an Expert
-                                        </a>
-                                    </div>
-                                    <div className='flex items-center gap-2'>
-                                        <MdEmail />
-                                        <a
-                                            className='text-link active-link cursor-pointer'
-                                            href='mailto:support@msg91.com'
-                                        >
-                                            support@msg91.com
-                                        </a>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
+                        )}
                     </div>
-                </section>
-            </>
-        );
-    }
+                </div>
+            </section>
+        </>
+    );
 }
-export default logIn;
