@@ -15,8 +15,8 @@ export default function ProblemSolution({ data }) {
                 {data?.subheading && <p className='response_intro subheading'>{data.subheading}</p>}
             </div>
 
-            <div className='grid grid-cols-1 gap-8 lg:grid-cols-[2fr_1fr] lg:items-stretch lg:gap-12'>
-                <div className='response_media min-h-[16rem] min-w-0 overflow-hidden rounded-lg lg:min-h-[22rem]'>
+            <div className='grid grid-cols-1 gap-8 lg:grid-cols-[2fr_1fr] lg:items-start lg:gap-12'>
+                <div className='response_media min-w-0 rounded-lg'>
                     {data?.media?.lottie && (
                         <div className='h-full w-full p-4'>
                             <LottiePlayer lottie={data.media.lottie} />
@@ -28,7 +28,7 @@ export default function ProblemSolution({ data }) {
                             alt={data.media.alt}
                             width={960}
                             height={540}
-                            className='h-full w-full object-cover'
+                            className='h-auto w-full object-contain'
                         />
                     )}
                 </div>

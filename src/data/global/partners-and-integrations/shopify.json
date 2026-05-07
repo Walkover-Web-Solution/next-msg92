@@ -23,12 +23,12 @@
         "buttons": [
             {
                 "label": "Get Started",
-                "url": "/signup",
+                "url": "https://apps.shopify.com/msg91",
                 "target": "_blank"
             },
             {
                 "label": "Book a Demo",
-                "url": "https://calendly.com/hello-shared-inbox/hello-meeting",
+                "url": "https://calendly.com/kiwi-msg91/shopify-meeting",
                 "target": "_blank"
             }
         ],
@@ -257,12 +257,12 @@
         "buttons": [
             {
                 "label": "Get Started",
-                "url": "/signup",
+                "url": "https://apps.shopify.com/msg91",
                 "target": "_blank"
             },
             {
                 "label": "Book a Demo",
-                "url": "https://calendly.com/hello-shared-inbox/hello-meeting",
+                "url": "https://calendly.com/kiwi-msg91/shopify-meeting",
                 "target": "_blank"
             }
         ]
