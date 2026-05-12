@@ -8,7 +8,13 @@ export default function Hero({ data }) {
                 <div className='banner_content flex flex-1 flex-col justify-center gap-4 p-6'>
                     {data?.logo?.src && (
                         <div className='flex items-center gap-2'>
-                            <Image src={data.logo.src} alt={data.logo.alt} width={140} height={40} className='h-9' />
+                            <Image
+                                src={data.logo.src}
+                                alt={data.logo.alt}
+                                width={200}
+                                height={100}
+                                className='h-12 w-auto sm:h-14'
+                            />
                         </div>
                     )}
 

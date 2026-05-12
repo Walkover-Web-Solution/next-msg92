@@ -34,6 +34,16 @@ export default function HowItWorks({ data }) {
                             </div>
                             <h3 className='how-it-works_step-title text-xl'>{step.title}</h3>
                             <p className='how-it-works_step-desc text-lg'>{step.description}</p>
+                            {step.link && (
+                                <a
+                                    href={step.link}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className='how-it-works_step-desc break-all rounded-md px-3 py-1.5 text-lg underline'
+                                >
+                                    {step.link}
+                                </a>
+                            )}
                         </div>
                     ))}
                 </div>
