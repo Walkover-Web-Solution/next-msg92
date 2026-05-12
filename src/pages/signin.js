@@ -15,10 +15,8 @@ import { toast } from 'react-toastify';
 import Image from 'next/image';
 
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
+const MOBILE_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/mobileLogin';
 const EMAIL_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/emailLogin';
-const MOBILE_LOGIN_URL = process.env.API_BASE_URL + '/api/ui-api/nexus/mobileLogin';
-
-const DEFAULT_MOBILE_WIDGET_ID = '36637966444d303234343937';
 
 export default function SignIn() {
     const router = useRouter();
@@ -46,6 +44,52 @@ export default function SignIn() {
                     } else {
                         toast.error(errMsg);
                     }
+                }
+            })
+            .catch((err) => console.error(err));
+    }, []);
+
+    const hitOtpCodeLogin = useCallback((code) => {
+        const handleLoginResponse = (response, result) => {
+            if (!result) return false;
+            const sessionId = result?.data?.sessionDetails?.PHPSESSID;
+            if (sessionId) {
+                setCookie('sessionId', sessionId, 30);
+            }
+            if (!response.ok || result?.hasError) {
+                return false;
+            }
+            location.href = SUCCESS_REDIRECTION_URL?.replace(':session', sessionId);
+            return true;
+        };
+        const fetchLogin = (url) =>
+            fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ code }),
+            }).then(async (response) => {
+                try {
+                    return { response, result: await response.json() };
+                } catch {
+                    return { response, result: null };
+                }
+            });
+
+        fetchLogin(MOBILE_LOGIN_URL)
+            .then(({ response, result }) => {
+                if (handleLoginResponse(response, result)) return;
+                return fetchLogin(EMAIL_LOGIN_URL);
+            })
+            .then((second) => {
+                if (!second) return;
+                const { response: r2, result: res2 } = second;
+                if (handleLoginResponse(r2, res2)) return;
+                const final = res2;
+                const errMsg = final?.errors?.[0] ?? final?.errors;
+                if (isMultipleAccountsError({ message: errMsg, errors: final?.errors })) {
+                    toast.error(MULTIPLE_ACCOUNTS_MESSAGE);
+                } else {
+                    toast.error(errMsg ?? 'Login failed');
                 }
             })
             .catch((err) => console.error(err));
@@ -106,36 +150,15 @@ export default function SignIn() {
         }
     }, [router.isReady, router.asPath, hitLoginAPI]);
 
-    const initOTPWidget = useCallback(() => {
+    const initLoginWithOTP = useCallback(() => {
+        const widgetId = process.env.OTP_WIDGET_TOKEN_LOGIN;
         const configuration = {
-            widgetId: process.env.OTP_WIDGET_TOKEN,
+            widgetId,
             tokenAuth: process.env.WIDGET_AUTH_TOKEN,
-            hideMethod: 'mobile',
-            success: (data) => {
-                try {
-                    hitLoginAPI(EMAIL_LOGIN_URL, { code: data.message });
-                } catch (error) {
-                    console.log(error);
-                }
-            },
-        };
-        waitForInitSendOTP()
-            .then(() => window.initSendOTP(configuration))
-            .catch((err) => {
-                console.error(err);
-                toast.error('Verification widget failed to load. Please refresh and try again.');
-            });
-    }, [hitLoginAPI]);
 
-    const initMobileOTPWidget = useCallback(() => {
-        const mobileToken = process.env.OTP_WIDGET_TOKEN_MOBILE || DEFAULT_MOBILE_WIDGET_ID;
-        const configuration = {
-            widgetId: mobileToken,
-            tokenAuth: process.env.WIDGET_AUTH_TOKEN,
-            hideMethod: 'email',
             success: (data) => {
                 try {
-                    hitLoginAPI(MOBILE_LOGIN_URL, { code: data.message });
+                    hitOtpCodeLogin(data.message);
                 } catch (error) {
                     console.log(error);
                 }
@@ -148,7 +171,7 @@ export default function SignIn() {
                 console.error(err);
                 toast.error('Verification widget failed to load. Please refresh and try again.');
             });
-    }, [hitLoginAPI]);
+    }, [hitOtpCodeLogin]);
 
     const loginWithZoho = () => {
         location.href = `https://accounts.zoho.com/oauth/v2/auth?response_type=code&client_id=${process.env.ZOHO_CLIENT_ID}&scope=aaaserver.profile.READ&redirect_uri=${process.env.REDIRECT_URL}/signin?loginWithZoho=true`;
@@ -159,10 +182,8 @@ export default function SignIn() {
     };
 
     const googleLogin = (response) => {
-        if (response) {
-            const url = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
-            hitLoginAPI(url, { code: response.code, redirectUrl: process.env.REDIRECT_URL });
-        }
+        const url = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
+        hitLoginAPI(url, { code: response.code, redirectUrl: process.env.REDIRECT_URL });
     };
 
     const loginWithOutlook = () => {
@@ -219,27 +240,15 @@ export default function SignIn() {
                             <span className='text-base text-gray-700'>Are you a developer?</span>
                             <div className='flex gap-3 flex-wrap'>
                                 <GoogleOAuthProvider clientId={`${process.env.GOOGLE_CLIENT_ID}`}>
-                                    <GoogleLoginButton googleLoginResponse={googleLogin} className='google-login' />
+                                    <GoogleLoginButton googleLoginResponse={googleLogin} />
                                 </GoogleOAuthProvider>
-                                <button
-                                    type='button'
-                                    onClick={() => loginWithOutlook()}
-                                    className='social-btn border border-primary rounded flex justify-center items-center w-10 h-10'
-                                >
+                                <button type='button' onClick={() => loginWithOutlook()} className=''>
                                     <img src='/img/microsoft-svg.svg' className='w-6' alt='Microsoft' />
                                 </button>
-                                <button
-                                    type='button'
-                                    onClick={() => loginWithZoho()}
-                                    className='social-btn zogo-btn border border-alert rounded flex justify-center items-center w-10 h-10'
-                                >
+                                <button type='button' onClick={() => loginWithZoho()} className=''>
                                     <img src='/img/icon-zogo.svg' className='w-4' alt='Zoho' />
                                 </button>
-                                <button
-                                    type='button'
-                                    onClick={() => loginWithGitHub()}
-                                    className='social-btn git-btn border border-black rounded flex justify-center items-center w-10 h-10'
-                                >
+                                <button type='button' onClick={() => loginWithGitHub()} className=''>
                                     <img src='/img/icon-github.svg' className='w-6' alt='GitHub' />
                                 </button>
                             </div>
@@ -250,15 +259,8 @@ export default function SignIn() {
                         </span>
 
                         <div className='flex flex-col gap-3 sm:flex-row sm:flex-wrap'>
-                            <button type='button' className='btn btn-md btn-primary' onClick={() => initOTPWidget()}>
-                                Login with Email
-                            </button>
-                            <button
-                                type='button'
-                                className='btn btn-md btn-primary btn-outline'
-                                onClick={() => initMobileOTPWidget()}
-                            >
-                                Login with Mobile
+                            <button type='button' className='btn btn-md btn-primary' onClick={() => initLoginWithOTP()}>
+                                Login with OTP
                             </button>
                         </div>
 
