@@ -94,29 +94,30 @@
             {
                 "name": "Instant AI Chatbot",
                 "subtitle": "Replies instantly · Answers product queries · Guides purchase",
-                "content": "Pre-built Shopify bots for FAQs, real-time order tracking, cart recovery, and product queries. Trained on your catalog so every answer is accurate and on-brand.",
+                "content": "AI-powered Shopify assistant designed to guide customers from discovery to checkout. Trained on your store data so every response is contextual, accurate, and aligned with your brand.",
                 "video": "/assets/integrations/shopify/interactive-chat-bot.webm",
                 "video_alt": "Interactive AI chatbot answering product queries and guiding Shopify purchases",
                 "more_content": {
                     "features": [
-                        "Ready-to-use bots for FAQs, tracking, cart recovery",
-                        "Proactive nudges for size, stock, and discounts",
-                        "1-click add-to-cart actions from the chat",
-                        "Seamless handoff to human agents"
+                        "Ready-to-deploy Shopify-native bots for product discovery, cart recovery, order tracking, and customer queries",
+                        "Smart nudges for size selection, stock availability, offers, and purchase decisions",
+                        "Auto-discount application to reduce hesitation and speed up checkout",
+                        "Direct add-to-cart and checkout guidance from within the chat",
+                        "Seamless handoff to human agents when needed"
                     ]
                 }
             },
             {
-                "name": "Interactive Voice Bot",
-                "subtitle": "Customers speak · Faster interaction · Better engagement",
-                "content": "Customers speak naturally instead of typing. The voice bot resolves common queries like order tracking, refund policies, and store hours — and routes complex issues to your team with full context.",
+                "name": "AI Voice Bot for Shopify",
+                "subtitle": "Natural conversations · Instant resolution · Effortless human handoff",
+                "content": "Customers speak naturally instead of typing, and the voice bot handles queries in real time — from product discovery to order updates — while keeping the conversation smooth and contextual.",
                 "video": "/assets/integrations/shopify/instant-handoff-to-human.webm",
                 "video_alt": "Voice bot resolving queries and handing off to human agents with context",
                 "more_content": {
                     "features": [
                         "Natural voice experience across storefront and phone",
-                        "Instant resolution for routine queries",
-                        "Smart routing to human agents for complex issues"
+                        "Instant resolution for product queries, order tracking, policies, and more",
+                        "Intelligent handoff to human agents with full conversation context, whenever needed"
                     ]
                 }
             },
@@ -138,7 +139,7 @@
             {
                 "name": "24/7 availability",
                 "subtitle": "Customers shop anytime · Your bot responds every time",
-                "content": "Never miss an after-hours sale. Your chatbot and voice bot handle every inquiry around the clock and hand off to humans during business hours.",
+                "content": "Never miss an after-hours sale. Your chatbot and voice bot handle every inquiry around the clock and hand off to humans whenever your customer wants to connect to a human.",
                 "video": "/assets/integrations/shopify/24:7-availablity.webm",
                 "video_alt": "24/7 AI chatbot and voice support for Shopify customers",
                 "more_content": {
@@ -165,15 +166,7 @@
         ],
         "subheading": "See what changes when every customer gets an instant reply across every channel.",
         "media": {
-            "video": "/assets/integrations/shopify/omnichannel.webm",
-            "video_alt": "Before vs after: instant replies across every channel with MSG91",
-            "video": "/assets/integrations/shopify/omnichannel.webm",
-            "video_alt": "Before vs after: instant replies across every channel with MSG91",
-            "video": "/assets/integrations/shopify/omnichannel.webm",
-            "video_alt": "Before vs after: instant replies across every channel with MSG91",
-            "video": "/assets/integrations/shopify/omnichannel.webm",
-            "video_alt": "Before vs after: instant replies across every channel with MSG91",
-            "image": "/assets/integrations/shopify/Solution.svg",
+            "image": "/assets/integrations/shopify/solution.png",
             "alt": "Before vs after Shopify support flow with MSG91"
         }
     },
