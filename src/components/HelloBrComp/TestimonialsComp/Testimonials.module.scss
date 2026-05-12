@@ -1,0 +1,39 @@
+.track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    transform: translateZ(0);
+}
+
+.segment {
+    display: flex;
+    flex-shrink: 0;
+    gap: 1.5rem;
+}
+
+.track[data-marquee-ready='true'] {
+    animation-name: helloBrTestimonialsMarquee;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+    will-change: transform;
+}
+
+.track[data-marquee-ready='true']:hover {
+    animation-play-state: paused;
+}
+
+@keyframes helloBrTestimonialsMarquee {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(calc(-1 * var(--marquee-shift, 0px)), 0, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .track {
+        animation: none !important;
+    }
+}
