@@ -106,7 +106,7 @@ export default function demochatbot({ pageInfo, templateList, totalPages, curren
                             {
                                 'slug': 'shopify',
                                 'name': 'Shopify',
-                                'link': 'https://apps.shopify.com/msg91',
+                                'link': '/partners-and-integrations/shopify',
                             },
                             {
                                 'slug': 'tally',
