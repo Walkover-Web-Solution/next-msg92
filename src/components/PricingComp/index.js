@@ -42,14 +42,26 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                         {pageInfo?.product === 'otpwidget' && <PricingOtp pageData={pageData} />}
 
                         {pageInfo?.product === 'sms' && (
-                            <PricingSMSOTP data={pageData} type={'sms'} country={pageInfo?.country} />
+                            <PricingSMSOTP
+                                data={pageData}
+                                type={'sms'}
+                                country={pageInfo?.country}
+                                initialData={pricingData}
+                            />
                         )}
 
                         {pageInfo?.product === 'otp' && (
-                            <PricingSMSOTP data={pageData} type={'otp'} country={pageInfo?.country} />
+                            <PricingSMSOTP
+                                data={pageData}
+                                type={'otp'}
+                                country={pageInfo?.country}
+                                initialData={pricingData}
+                            />
                         )}
 
-                        {pageInfo?.product === 'voice' && <PricingVoice data={pageData} country={pageInfo?.country} />}
+                        {pageInfo?.product === 'voice' && (
+                            <PricingVoice data={pageData} country={pageInfo?.country} initialData={pricingData} />
+                        )}
                     </div>
                 </div>
 

@@ -12,8 +12,8 @@ export default function handleBrawserCookies() {
 
     useEffect(() => {
         const search = window.location.search;
-        if (search.includes('utm_')) {
-            setCookie('msg91_query', search.replace(/service=\w+&?/, ''), 30); // If utm exists
+        if (search) {
+            setCookie('msg91_query', search, 30);
         } else if (plugin) {
             setCookie('msg91_query', `?utm_campaign=tigerplugin&utm_source=${plugin}&utm_medium=website`, 30); //By Hardik
         }

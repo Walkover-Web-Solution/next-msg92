@@ -10,21 +10,24 @@ import GetCountryDetails from '@/utils/getCurrentCountry';
 import countries from '@/data/countries.json';
 import CalculateVoicePricing from './CalculateVoicePricing/CalculateVoicePricing';
 
-export default function PricingVoice({ data, country }) {
-    const [countryData, setCountryData] = useState([]);
+export default function PricingVoice({ data, country, initialData }) {
+    console.log('⚡️ ~ :14 ~ PricingVoice ~ initialData:', initialData);
+    const [countryData, setCountryData] = useState(initialData?.countryData || []);
     const currentCountry = GetCountryDetails({ shortname: country, type: 'shortname' });
-    const [selectedCountry, setSelectedCountry] = useState(currentCountry?.name);
-    const [plans, setPlans] = useState();
-    const [loading, setLoading] = useState(true);
+    const [selectedCountry, setSelectedCountry] = useState(initialData?.selectedCountry || null);
+    const [plans, setPlans] = useState(initialData?.plans);
+    const [loading, setLoading] = useState(!initialData?.plans);
     const [error, setError] = useState();
-    const [dialPlan, setDialPlan] = useState();
+    const [dialPlan, setDialPlan] = useState(initialData?.dialPlanId);
     const [loadingExport, setLoadingExport] = useState(false);
-    const [currency, setCurrency] = useState();
-    const [symbol, setSymbol] = useState();
+    const [currency, setCurrency] = useState(initialData?.currency);
+    const [symbol, setSymbol] = useState(initialData?.symbol);
 
-    //fetch Counties
+    // Fetch country list only when SSR did not provide it
     useEffect(() => {
-        fetchCountryData();
+        if (!initialData?.countryData?.length) {
+            fetchCountryData();
+        }
     }, []);
 
     const fetchCountryData = async () => {
@@ -41,70 +44,48 @@ export default function PricingVoice({ data, country }) {
         }
     };
 
+    // When countryData loads on the client (non-SSR path), find + load data for the default country
     useEffect(() => {
-        if (countryData?.length > 0) {
-            setSelectedCountry(
-                countryData?.find(
-                    (item) => item?.country_code?.toLowerCase() === currentCountry?.shortname?.toLowerCase()
-                )
+        if (countryData?.length > 0 && !initialData?.selectedCountry) {
+            const found = countryData.find(
+                (item) => item?.country_code?.toLowerCase() === currentCountry?.shortname?.toLowerCase()
             );
+            if (found) {
+                setSelectedCountry(found);
+                loadDataForCountry(found);
+            } else {
+                setLoading(false);
+            }
         }
     }, [countryData]);
 
-    // Set Currency Symbol
-    useEffect(() => {
-        if (selectedCountry && selectedCountry?.id) {
-            const { currency, symbol } = GetCurrencySymbol(selectedCountry?.country_code);
-            setCurrency(currency === 'INR' ? 'INR' : 'USD');
-            setSymbol(currency === 'INR' ? '₹' : '$');
-        }
-    }, [selectedCountry]);
-
-    useEffect(() => {
-        if (currency) {
-            fetchDialPlan(currency);
-        }
-    }, [currency]);
-
-    //fetch dialPlan
-    const fetchDialPlan = async (currency) => {
-        try {
-            const response = await fetch(`${process.env.VOICE_API_URL}/public/dialplanPricing/?currency=${currency}`);
-            if (response.ok) {
-                const data = await response.json();
-
-                setDialPlan(data?.data.dialplan_id);
-            } else {
-                throw new Error('Currently we only have plan for India(91)');
-            }
-        } catch (error) {
-            setError(error.message);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    // fetch Plans
-    useEffect(() => {
-        if (selectedCountry && selectedCountry?.id && dialPlan) {
-            fetchData(selectedCountry?.id, dialPlan);
-        }
-    }, [dialPlan, selectedCountry]);
-
-    const fetchData = async (selectedCountry, dialPlan) => {
+    // Fetch currency + dialPlan + plans for a given country object (used on country change)
+    const loadDataForCountry = async (countryObj) => {
+        if (!countryObj?.id) return;
         setLoading(true);
         try {
-            const response = await fetch(
-                `${process.env.VOICE_API_URL}/public/pricing/?cid=${selectedCountry}&dialplan_id=${dialPlan}`
+            const { currency: rawCurrency } = GetCurrencySymbol(countryObj?.country_code);
+            const newCurrency = rawCurrency === 'INR' ? 'INR' : 'USD';
+            const newSymbol = newCurrency === 'INR' ? '₹' : '$';
+            setCurrency(newCurrency);
+            setSymbol(newSymbol);
+
+            const dialPlanRes = await fetch(
+                `${process.env.VOICE_API_URL}/public/dialplanPricing/?currency=${newCurrency}`
             );
-            if (response.ok) {
-                const data = await response.json();
-                setPlans(data?.data);
-            } else {
-                throw new Error('Currently we only have plan for India(91)');
-            }
-        } catch (error) {
-            setError(error.message);
+            if (!dialPlanRes.ok) throw new Error('Currently we only have plan for India(91)');
+            const dialPlanData = await dialPlanRes.json();
+            const newDialPlanId = dialPlanData?.data?.dialplan_id;
+            setDialPlan(newDialPlanId);
+
+            const pricingRes = await fetch(
+                `${process.env.VOICE_API_URL}/public/pricing/?cid=${countryObj.id}&dialplan_id=${newDialPlanId}`
+            );
+            if (!pricingRes.ok) throw new Error('Currently we only have plan for India(91)');
+            const pricingData = await pricingRes.json();
+            setPlans(pricingData?.data);
+        } catch (err) {
+            setError(err.message);
         } finally {
             setLoading(false);
         }
@@ -133,17 +114,20 @@ export default function PricingVoice({ data, country }) {
 
     //Auto complete functions
     const handleOnSelect = (item) => {
-        setSelectedCountry(item[0]);
+        const newCountry = item[0];
+        setSelectedCountry(newCountry);
+        if (newCountry?.id) {
+            loadDataForCountry(newCountry);
+        }
     };
 
     return (
         <>
-            <div className='flex flex-col gap-3 w-full'>
-                <div className='flex items-center gap-4'>
-                    <h1 className='text-3xl font-semibold capitalize '>Voice Pricing </h1>
-                </div>
+            <div className='flex flex-col gap-6 w-full'>
+                <h1 className='text-2xl md:text-3xl font-bold capitalize'>Voice Pricing</h1>
 
-                <div className='w-full flex flex-col gap-10'>
+                <div className='w-full flex flex-col gap-8'>
+                    {/* Country selector + rates table */}
                     <div className='w-full flex flex-col gap-4'>
                         {countryData.length > 0 && (
                             <div className='w-[300px] z-50'>
@@ -165,156 +149,184 @@ export default function PricingVoice({ data, country }) {
                                 />
                             </div>
                         )}
-                        <div className='flex items-center gap-4'>
-                            <h2 className='text-xl font-semibold'>{data?.heading}</h2>{' '}
+
+                        <div className='flex items-center justify-between gap-4'>
+                            <div className='flex items-center gap-3'>
+                                {data?.heading && (
+                                    <h2 className='text-base font-semibold text-slate-700'>{data?.heading}</h2>
+                                )}
+                                {(country === 'in' || country === 'gb') && (
+                                    <span className='text-xs text-slate-400 font-medium'>
+                                        {country === 'in' ? '(GST excluded)' : '(VAT excluded)'}
+                                    </span>
+                                )}
+                            </div>
                             {plans && (
                                 <button
                                     onClick={() => document.getElementById('calculate_voice_pricing').showModal()}
-                                    className='btn btn-accent btn-outline w-fit btn-sm'
+                                    className='py-2 px-4 rounded-xl border border-indigo-200 text-indigo-600 text-sm font-semibold bg-indigo-50 hover:bg-indigo-100 transition-colors'
                                 >
                                     Calculate
                                 </button>
                             )}
                         </div>
-                        {country === 'in' && <p className='text-lg'>GST excluded.</p>}
-                        {country === 'gb' && <p className='text-lg'>VAT excluded.</p>}
-                        <div className='overflow-x-auto w-full'>
-                            <table className='table bg-white rounded w-full min-w-[500px]'>
-                                <thead>
-                                    <tr className='font-bold text-[16px] text-black '>
-                                        <th className='w-[300px] border-r p-4'>Recipient’s Network</th>
-                                        <th className='border-r p-4'>Local rates</th>
-                                        <th className='p-4'>International rates</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {plans &&
-                                        plans.map((item, index) => {
-                                            return (
-                                                <tr className='border-none text-[16px]' key={index}>
-                                                    <td className='border-r p-4'>{item?.network}</td>
-                                                    <td className='border-r p-4'>
-                                                        {' '}
-                                                        {item?.local_rates_min && (
-                                                            <>
-                                                                {symbol}
-                                                                {item?.local_rates_min}
-                                                            </>
-                                                        )}
-                                                        {item?.local_rates_min !== item?.local_rates_max && (
-                                                            <>
-                                                                {' '}
-                                                                -{' '}
-                                                                {item?.local_rates_max && (
-                                                                    <>
-                                                                        {symbol}
-                                                                        {item?.local_rates_max}
-                                                                    </>
-                                                                )}
-                                                            </>
-                                                        )}
-                                                        {!item?.local_rates_min && !item?.local_rates_max && <>N/A</>}
+
+                        <div className='w-full overflow-x-auto'>
+                            <div className='overflow-y-auto rounded-xl border border-slate-200 bg-white'>
+                                <table className='table-fixed min-w-max w-full border-collapse text-sm'>
+                                    <thead className='sticky top-0 z-30 bg-slate-50'>
+                                        <tr className='border-b border-slate-200'>
+                                            <th className='min-w-[200px] px-4 py-3 text-left text-[11px] font-semibold text-slate-400 uppercase tracking-wider sticky left-0 bg-slate-50 z-40 border-r border-slate-200'>
+                                                Recipient&apos;s Network
+                                            </th>
+                                            <th className='min-w-[150px] px-4 py-3 text-left text-[11px] font-semibold text-slate-400 uppercase tracking-wider border-r border-slate-200'>
+                                                Local Rates
+                                            </th>
+                                            <th className='min-w-[150px] px-4 py-3 text-left text-[11px] font-semibold text-slate-400 uppercase tracking-wider'>
+                                                International Rates
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {plans &&
+                                            plans.map((item, index) => {
+                                                const rowBg = index % 2 === 0 ? 'bg-white' : 'bg-slate-50';
+                                                return (
+                                                    <tr
+                                                        key={index}
+                                                        className={`border-b border-slate-100 last:border-b-0 ${rowBg}`}
+                                                    >
+                                                        <td
+                                                            className={`px-4 py-2.5 text-xs font-medium text-slate-700 sticky left-0 ${rowBg} z-20 border-r border-slate-100`}
+                                                        >
+                                                            {item?.network}
+                                                        </td>
+                                                        <td className='px-4 py-2.5 text-xs text-slate-600 border-r border-slate-100'>
+                                                            {item?.local_rates_min ? (
+                                                                <>
+                                                                    {`${symbol}${item?.local_rates_min}`}
+                                                                    {item?.local_rates_min !== item?.local_rates_max &&
+                                                                        item?.local_rates_max && (
+                                                                            <>{` ${symbol}${item?.local_rates_max}`}</>
+                                                                        )}
+                                                                </>
+                                                            ) : (
+                                                                'N/A'
+                                                            )}
+                                                        </td>
+                                                        <td className='px-4 py-2.5 text-xs text-slate-600'>
+                                                            {item?.international_rates_min ? (
+                                                                <>
+                                                                    {`${symbol}${item?.international_rates_min}`}
+                                                                    {item?.international_rates_min !==
+                                                                        item?.international_rates_max &&
+                                                                        item?.international_rates_max && (
+                                                                            <>{` ${symbol}${item?.international_rates_max}`}</>
+                                                                        )}
+                                                                </>
+                                                            ) : (
+                                                                'N/A'
+                                                            )}
+                                                        </td>
+                                                    </tr>
+                                                );
+                                            })}
+                                        {loading &&
+                                            Array.from({ length: 5 }).map((_, index) => (
+                                                <tr
+                                                    key={index}
+                                                    className={`border-b border-slate-100 ${index % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}
+                                                >
+                                                    <td className='px-4 py-2.5 sticky left-0 bg-inherit border-r border-slate-100'>
+                                                        <div className='h-4 w-2/3 bg-slate-100 rounded animate-pulse' />
                                                     </td>
-                                                    <td className='p-4'>
-                                                        {' '}
-                                                        {item?.international_rates_min && (
-                                                            <>
-                                                                {symbol}
-                                                                {item?.international_rates_min}
-                                                            </>
-                                                        )}
-                                                        {item?.international_rates_min !==
-                                                            item?.international_rates_max && (
-                                                            <>
-                                                                {' '}
-                                                                -{' '}
-                                                                {item?.international_rates_max && (
-                                                                    <>
-                                                                        {symbol}
-                                                                        {item?.international_rates_max}
-                                                                    </>
-                                                                )}
-                                                            </>
-                                                        )}
-                                                        {!item?.international_rates_min &&
-                                                            !item?.international_rates_max && <>N/A</>}
+                                                    <td className='px-4 py-2.5 border-r border-slate-100'>
+                                                        <div className='h-4 w-1/3 bg-slate-100 rounded animate-pulse' />
+                                                    </td>
+                                                    <td className='px-4 py-2.5'>
+                                                        <div className='h-4 w-1/3 bg-slate-100 rounded animate-pulse' />
                                                     </td>
                                                 </tr>
-                                            );
-                                        })}
-                                    {loading
-                                        ? Array.from({ length: 5 }).map((_, index) => {
-                                              return (
-                                                  <tr className='border-none text-[16px]' key={index}>
-                                                      <td className='border-r p-4'>
-                                                          <div className='skeleton w-2/3 h-[24px] bg-slate-100 rounded-sm'></div>
-                                                      </td>
-                                                      <td className='border-r p-4'>
-                                                          <div className='skeleton w-1/3 h-[24px] bg-slate-100 rounded-sm'></div>
-                                                      </td>
-                                                      <td className='p-4'>
-                                                          <div className='skeleton w-1/3 h-[24px] bg-slate-100 rounded-sm'></div>
-                                                      </td>
-                                                  </tr>
-                                              );
-                                          })
-                                        : plans?.length === 0 && (
-                                              <tr className='border-none text-[16px]'>
-                                                  <td className='border-r p-4'>-</td>
-                                                  <td className='border-r p-4'>-</td>
-                                                  <td className='p-4'>-</td>
-                                              </tr>
-                                          )}
-                                </tbody>
-                            </table>
+                                            ))}
+                                        {!loading && plans?.length === 0 && (
+                                            <tr>
+                                                <td
+                                                    colSpan={3}
+                                                    className='px-4 py-8 text-center text-sm text-slate-400'
+                                                >
+                                                    No plans available for this country.
+                                                </td>
+                                            </tr>
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
+
                         {data?.exportData && (
-                            <p className='font-medium'>
+                            <p className='text-sm text-slate-600'>
                                 {data?.exportData?.content}
                                 {loadingExport ? (
-                                    <span className='active-link'>{data?.exportData?.waiting}</span>
+                                    <span className='text-indigo-400 ml-1'>{data?.exportData?.waiting}</span>
                                 ) : (
-                                    <span onClick={exportPricing} className='text-link active-link'>
+                                    <span
+                                        onClick={exportPricing}
+                                        className='text-indigo-600 font-medium cursor-pointer hover:text-indigo-800 ml-1 transition-colors'
+                                    >
                                         {data?.exportData?.export}
                                     </span>
                                 )}
                             </p>
                         )}
                     </div>
-                    <div className='w-full flex flex-col gap-4 p-8 bg-white rounded'>
-                        {data?.addOns?.content && data?.addOns?.content.length > 0 && (
-                            <>
-                                <h2 className='text-lg font-semibold'>{data?.addOns?.heading || 'Add-on services'}</h2>
-                                <div className='grid grid-cols-2 gap-4'>
-                                    {data?.addOns?.content.map((item, index) => {
-                                        return (
-                                            <div key={index} className='flex items-center gap-1'>
-                                                <MdCheck className='text-green-700' fontSize={22} /> <p>{item}</p>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            </>
-                        )}
 
-                        <div className='text-lg' dangerouslySetInnerHTML={{ __html: data?.addOns?.freeText }}></div>
-                    </div>
-                    <a href={getURL('signup', 'voice')} target='_blank'>
-                        <button className='btn btn-primary btn-md'>Get started</button>
+                    {/* Add-ons card */}
+                    {(data?.addOns?.content?.length > 0 || data?.addOns?.freeText) && (
+                        <div className='w-full flex flex-col gap-4 p-6 bg-white rounded-2xl border border-slate-200'>
+                            {data?.addOns?.content?.length > 0 && (
+                                <>
+                                    <h2 className='text-base font-semibold text-slate-900'>
+                                        {data?.addOns?.heading || 'Add-on services'}
+                                    </h2>
+                                    <div className='grid grid-cols-1 sm:grid-cols-2 gap-2.5'>
+                                        {data?.addOns?.content.map((item, index) => (
+                                            <div key={index} className='flex items-center gap-2 text-sm text-slate-600'>
+                                                <MdCheck size={15} className='text-indigo-400 shrink-0' />
+                                                <span>{item}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </>
+                            )}
+                            {data?.addOns?.freeText && (
+                                <div
+                                    className='text-sm text-slate-600'
+                                    dangerouslySetInnerHTML={{ __html: data?.addOns?.freeText }}
+                                />
+                            )}
+                        </div>
+                    )}
+
+                    {/* CTA */}
+                    <a
+                        href={getURL('signup', 'voice')}
+                        target='_blank'
+                        className='w-fit py-2.5 px-6 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors'
+                    >
+                        Get started
                     </a>
 
-                    <div className='flex flex-col gap-4'>
-                        {data?.rates &&
-                            data?.rates.length > 0 &&
-                            data?.rates.map((rate, index) => {
-                                return (
-                                    <p key={index}>
-                                        <strong>{rate?.heading}: </strong>
-                                        {rate?.content}
-                                    </p>
-                                );
-                            })}
-                    </div>
+                    {/* Rate notes */}
+                    {data?.rates?.length > 0 && (
+                        <div className='flex flex-col gap-2'>
+                            {data.rates.map((rate, index) => (
+                                <p key={index} className='text-sm text-slate-600'>
+                                    <span className='font-semibold text-slate-800'>{rate?.heading}: </span>
+                                    {rate?.content}
+                                </p>
+                            ))}
+                        </div>
+                    )}
 
                     <ConnectWithTeam product={'Voice'} pageData={data?.connectComp} href={'voice'} isPlan={true} />
                     <FaqsComp data={data?.faqComp} notCont={true} />
