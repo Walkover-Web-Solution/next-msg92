@@ -73,7 +73,7 @@ export default function TestPage({
                     <h1 className='text-4xl font-bold'>{title}</h1>
                     {thumbnailImage !== '' && <img className='' src={thumbnailImage} alt={author} />}
                 </div>
-                <div className='body flex flex-col blog-body-cont text-gray-900'>
+                <div className='body leading-normal flex flex-col gap-1 text-lg blog-body-cont text-gray-900'>
                     <MDXRemote {...source} components={component} />
                 </div>
                 <ul className={'flex flex-wrap gap-2'}>
