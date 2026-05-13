@@ -139,10 +139,13 @@ export default function IntegrationAppComp({ data }) {
                         Get The Plugin
                     </a>
                 </div>
-                <div className=' flex justify-between cont_gap items-center p-20'>
-                    <p className='text-2xl' dangerouslySetInnerHTML={{ __html: data?.supercharge?.content }}></p>
-                    <img src={data?.supercharge?.img} alt='tally-graphics image' />
-                </div>
+                {data?.supercharge?.content && (
+                    <div className=' flex justify-between cont_gap items-center p-20'>
+                        <p className='text-2xl' dangerouslySetInnerHTML={{ __html: data?.supercharge?.content }}></p>
+                        <img src={data?.supercharge?.img} alt='tally-graphics image' />
+                    </div>
+                )}
+
                 <div className='flex flex-col cont_gap cont_p'>
                     <h2 className='text-4xl font-bold'>{data?.offers?.heading}</h2>
                     <div className='flex flex-col gap-8'>
