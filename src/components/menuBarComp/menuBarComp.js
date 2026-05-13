@@ -189,7 +189,9 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                                     <a
                                                         key={index}
                                                         href={integration?.link}
-                                                        {...(integration?.link?.startsWith('https://msg91.com')
+                                                        //check before mergining isha
+                                                        {...(integration?.link?.startsWith('https://msg91.com') ||
+                                                        integration?.link?.startsWith('/')
                                                             ? {}
                                                             : { target: '_blank', rel: 'noopener noreferrer' })}
                                                     >
