@@ -89,6 +89,7 @@ const nextConfig = {
 
         // Widget Config
         OTP_WIDGET_TOKEN: getEnvValue('OTP_WIDGET_TOKEN'),
+        OTP_WIDGET_TOKEN_LOGIN: getEnvValue('OTP_WIDGET_TOKEN_LOGIN'),
         WIDGET_AUTH_TOKEN: getEnvValue('WIDGET_AUTH_TOKEN'),
         WIDGET_SCRIPT: getEnvValue('WIDGET_SCRIPT'),
 
