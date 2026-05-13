@@ -31,7 +31,7 @@ export default function SignIn() {
                 if (sessionId) {
                     setCookie('sessionId', sessionId, 30);
                 }
-                if (!result?.hasError) {
+                if (!result?.hasError && sessionId) {
                     location.href = SUCCESS_REDIRECTION_URL?.replace(':session', sessionId);
                 } else if (showError) {
                     const errMsg = result?.errors?.[0] ?? result?.errors;
@@ -98,7 +98,7 @@ export default function SignIn() {
         } catch (error) {
             console.log('No Session Found');
         }
-    }, [router.isReady, router.asPath, hitLoginAPI]);
+    }, [router.isReady, hitLoginAPI]);
 
     const initLoginWithOTP = useCallback(() => {
         const widgetId = process.env.OTP_WIDGET_TOKEN_LOGIN;
@@ -154,7 +154,7 @@ export default function SignIn() {
                             alt='msg91-logo'
                             loading='lazy'
                         />
-                        <h1 className='text-2xl font-medium'>Signup to avail a complete suite of MSG91 products</h1>
+                        <h1 className='text-2xl font-medium'>Signin to avail a complete suite of MSG91 products</h1>
                     </div>
                     <div className='flex flex-col gap-5'>
                         <h2 className='text-xl'>What can you build with MSG91?</h2>
