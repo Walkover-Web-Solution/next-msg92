@@ -125,7 +125,11 @@ export default function StepTwo() {
 
     const handleContinue = () => {
         if (continueAllowed) {
-            validateSignUp(dispatch, state);
+            if (state.session) {
+                dispatch({ type: 'SET_ACTIVE_STEP', payload: 3 });
+            } else {
+                validateSignUp(dispatch, state);
+            }
         }
     };
 

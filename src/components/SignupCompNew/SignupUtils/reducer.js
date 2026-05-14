@@ -124,7 +124,7 @@ export function reducer(state, action) {
         case 'SET_MOBILE':
             return {
                 ...state,
-                mobileIdentifier: action.payload.mobile,
+                mobileIdentifier: action.payload.mobile ?? action.payload.phone,
             };
 
         case 'SET_SESSION':

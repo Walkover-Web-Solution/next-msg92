@@ -100,7 +100,7 @@ export function setDetails(type, dispatch, identifier) {
             dispatch({
                 type: 'SET_MOBILE',
                 payload: {
-                    phone: identifier,
+                    mobile: identifier,
                 },
             });
         } else if (type === 'services') {

@@ -18,14 +18,14 @@ function SignupSteps({ pageInfo, data, isAbSignup }) {
     const { state, dispatch } = useSignup();
 
     useEffect(() => {
-        // Initialize URL parameters and UTM data first
         if (typeof window !== 'undefined') {
             const urlParams = getURLParams(window.location.search);
-            setInitialStates(dispatch, state, urlParams);
+            if (!state.emailVerified && !state.mobileOtpVerified) {
+                setInitialStates(dispatch, state, urlParams);
+            }
             handleUtmParams(dispatch, urlParams);
         }
 
-        // Setup OTP widget
         otpWidgetSetup(dispatch);
 
         checkSession();

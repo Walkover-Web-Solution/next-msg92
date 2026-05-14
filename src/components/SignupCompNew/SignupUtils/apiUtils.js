@@ -1,7 +1,25 @@
 import axios from 'axios';
 import getCountyFromIP from '@/utils/getCountyFromIP';
 import { appendMsg91QueryToUrl } from './cookieUtils';
-import { getCookie } from '@/utils/utilis';
+import { getCookie, setCookie, getUtmFromCookies } from '@/utils/utilis';
+
+/**
+ * `validateEmailSignUp` ties to the browser PHP session. Stale `PHPSESSID` / `sessionId`
+ * cookies (leftover login or abandoned signup) cause misleading API errors like "Invalid email"
+ * even when `emailToken` / `mobileToken` are new — the server reads the session from cookies.
+ */
+function clearStaleSignupSessionCookies() {
+    if (typeof document === 'undefined') return;
+    const expire = 'Thu, 01 Jan 1970 00:00:00 GMT';
+    for (const name of ['sessionId', 'PHPSESSID']) {
+        document.cookie = `${name}=; expires=${expire}; path=/`;
+    }
+}
+
+function appendUseV2SignupQuery(endpoint) {
+    const sep = endpoint.includes('?') ? '&' : '?';
+    return `${endpoint}${sep}useV2signup=true`;
+}
 
 /**
  * Check if user has an active session
@@ -57,22 +75,31 @@ export function validateSignUp(dispatch, state) {
     const isGithubFlow = state?.githubCode;
     let url = process.env.API_BASE_URL + '/api/v5/nexus/validateEmailSignUp';
 
-    const utmObj = Object.fromEntries(
+    const utmRaw = Object.fromEntries(
         getCookie('msg91_query')
             ?.replace('?', '')
             ?.split('&')
             ?.map((val) => val.split('=')) ?? []
     );
 
+    // msg91_query mirrors full location.search; it can include `session` from post-login redirects.
+    // Those keys must never overwrite signup-only fields or the API can return misleading errors (e.g. "Invalid email").
+    const SIGNUP_PAYLOAD_KEYS = new Set(['session', 'mobileToken', 'emailToken', 'useV2signup', 'code', 'state']);
+    const utmObj = Object.fromEntries(Object.entries(utmRaw).filter(([key]) => !SIGNUP_PAYLOAD_KEYS.has(key)));
+
     const payload = {
-        session: getCookie('sessionId'),
-        mobileToken: state?.mobileToken,
         ...utmObj,
-        source: state?.source,
-        ad: state?.ad,
-        adposition: state?.adposition,
-        reference: state?.reference,
+        mobileToken: state?.mobileToken,
+        useV2signup: 'true',
+        source: state?.source || utmObj.source,
+        ad: state?.ad ?? utmObj.ad,
+        adposition: state?.adposition ?? utmObj.adposition,
+        reference: state?.reference ?? utmObj.reference,
     };
+
+    if (state?.session) {
+        payload.session = state.session;
+    }
 
     if (isGithubFlow) {
         payload.code = state.githubCode;
@@ -81,6 +108,12 @@ export function validateSignUp(dispatch, state) {
     } else {
         payload.emailToken = state?.emailToken;
     }
+
+    if (!state?.session) {
+        clearStaleSignupSessionCookies();
+    }
+
+    url = appendUseV2SignupQuery(url);
 
     const requestOptions = {
         method: 'POST',
@@ -92,9 +125,13 @@ export function validateSignUp(dispatch, state) {
         .then((response) => response?.json())
         .then((result) => {
             if (result?.status === 'success') {
+                const sid = result?.data?.sessionDetails?.PHPSESSID;
+                if (sid && typeof document !== 'undefined') {
+                    setCookie('sessionId', sid, 30);
+                }
                 dispatch({
                     type: 'SET_SESSION',
-                    payload: { session: result?.data?.sessionDetails?.PHPSESSID, step: 3 },
+                    payload: { session: sid, step: 3 },
                 });
                 dispatch({ type: 'SET_INVITES', payload: result?.data?.data?.invitations });
             } else if (result?.hasError) {
@@ -172,15 +209,42 @@ export async function validateEmailSignup(otp, dispatch, state) {
  * @param {Function} dispatch - Redux dispatch function
  * @param {Object} state - Current state
  */
+function normalizeCompanyDetailsForFinalRegister(details) {
+    if (!details || typeof details !== 'object') return details;
+    const next = { ...details };
+    if (next.countryId != null && next.countryId !== '') {
+        next.countryId = String(next.countryId);
+    }
+    if (next.cityId != null && next.cityId !== '') {
+        next.cityId = String(next.cityId);
+    }
+    if (next.stateId != null && next.stateId !== '') {
+        next.stateId = Number(next.stateId);
+    }
+    return next;
+}
+
+function extractFinalRegisterSessionId(apiBody) {
+    if (!apiBody || typeof apiBody !== 'object') return null;
+    const sid =
+        apiBody?.sessionDetails?.PHPSESSID ||
+        apiBody?.data?.sessionDetails?.PHPSESSID ||
+        apiBody?.data?.data?.sessionDetails?.PHPSESSID ||
+        null;
+    return sid && String(sid) !== 'undefined' ? String(sid) : null;
+}
+
 export function finalRegistration(dispatch, state) {
-    const url = process.env.API_BASE_URL + '/api/v5/nexus/finalRegister';
+    const url = appendUseV2SignupQuery(process.env.API_BASE_URL + '/api/v5/nexus/finalRegister');
+    const session = state?.session || getCookie('sessionId');
     const payload = {
-        session: state?.session,
-        companyDetails: state?.companyDetails,
+        session,
+        companyDetails: normalizeCompanyDetailsForFinalRegister(state?.companyDetails),
         userDetails: state?.userDetails,
-        acceptInviteForCompanies: state?.acceptInviteForCompanies,
-        rejectInviteForCompanies: state?.rejectInviteForCompanies,
+        acceptInviteForCompanies: state?.acceptInviteForCompanies ?? [],
+        rejectInviteForCompanies: state?.rejectInviteForCompanies ?? [],
         source: state?.source,
+        useV2signup: 'true',
     };
 
     // Set loading state
@@ -188,15 +252,49 @@ export function finalRegistration(dispatch, state) {
     dispatch({ type: 'CLEAR_ERROR' });
 
     axios
-        .post(url, payload)
+        .post(url, payload, { withCredentials: true })
         .then((response) => {
             if (response?.data?.status === 'success') {
                 dispatch({
                     type: 'SET_ACTIVE_STEP',
                     payload: 4,
                 });
-                const baseUrl = process.env.REDIRECT_URL + `?session=${response?.data?.sessionDetails?.PHPSESSID}`;
-                window.location.href = appendMsg91QueryToUrl(baseUrl);
+                const sid = extractFinalRegisterSessionId(response.data) || state?.session || getCookie('sessionId');
+                if (!sid) {
+                    dispatch({
+                        type: 'SET_ERROR',
+                        payload: 'Missing session after registration. Please sign in from the login page.',
+                    });
+                    dispatch({ type: 'SET_LOADING', payload: false });
+                    return;
+                }
+                setCookie('sessionId', sid, 30);
+
+                // Same target as legacy SignUp.js `SUCCESS_REDIRECTION_URL` (not marketing `REDIRECT_URL`).
+                let successRedirectionUrl =
+                    (process.env.API_BASE_URL || '') + '/api/nexusRedirection.php?session=:session';
+                const msg91Query = getCookie('msg91_query');
+                if (msg91Query) {
+                    const queryParams = msg91Query.startsWith('?') ? msg91Query.replace('?', '&') : '&' + msg91Query;
+                    successRedirectionUrl += queryParams;
+                }
+                let redirectUrl = successRedirectionUrl.replace(':session', encodeURIComponent(sid));
+
+                const signupDate = getCookie('signup_date');
+                const interestedServices = getCookie('interested_services');
+                if (signupDate) {
+                    redirectUrl += `&signup_date=${encodeURIComponent(signupDate)}`;
+                }
+                if (interestedServices) {
+                    redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
+                }
+                Object.entries(getUtmFromCookies()).forEach(([key, value]) => {
+                    if (value) {
+                        redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+                    }
+                });
+
+                window.location.href = redirectUrl;
             } else {
                 // Handle non-success response
                 const errorMessage =
