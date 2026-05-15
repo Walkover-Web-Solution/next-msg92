@@ -4,24 +4,6 @@ import { appendMsg91QueryToUrl } from './cookieUtils';
 import { getCookie, setCookie, getUtmFromCookies } from '@/utils/utilis';
 
 /**
- * `validateEmailSignUp` ties to the browser PHP session. Stale `PHPSESSID` / `sessionId`
- * cookies (leftover login or abandoned signup) cause misleading API errors like "Invalid email"
- * even when `emailToken` / `mobileToken` are new — the server reads the session from cookies.
- */
-function clearStaleSignupSessionCookies() {
-    if (typeof document === 'undefined') return;
-    const expire = 'Thu, 01 Jan 1970 00:00:00 GMT';
-    for (const name of ['sessionId', 'PHPSESSID']) {
-        document.cookie = `${name}=; expires=${expire}; path=/`;
-    }
-}
-
-function appendUseV2SignupQuery(endpoint) {
-    const sep = endpoint.includes('?') ? '&' : '?';
-    return `${endpoint}${sep}useV2signup=true`;
-}
-
-/**
  * Check if user has an active session
  */
 export default function checkSession() {
@@ -152,6 +134,24 @@ export function validateSignUp(dispatch, state) {
 }
 
 /**
+ * `validateEmailSignUp` ties to the browser PHP session. Stale `PHPSESSID` / `sessionId`
+ * cookies (leftover login or abandoned signup) cause misleading API errors like "Invalid email"
+ * even when `emailToken` / `mobileToken` are new — the server reads the session from cookies.
+ */
+function clearStaleSignupSessionCookies() {
+    if (typeof document === 'undefined') return;
+    const expire = 'Thu, 01 Jan 1970 00:00:00 GMT';
+    for (const name of ['sessionId', 'PHPSESSID']) {
+        document.cookie = `${name}=; expires=${expire}; path=/`;
+    }
+}
+
+function appendUseV2SignupQuery(endpoint) {
+    const sep = endpoint.includes('?') ? '&' : '?';
+    return `${endpoint}${sep}useV2signup=true`;
+}
+
+/**
  * Validate email signup with OTP
  * @param {string} otp - OTP code
  * @param {Function} dispatch - Redux dispatch function
@@ -271,8 +271,7 @@ export function finalRegistration(dispatch, state) {
                 setCookie('sessionId', sid, 30);
 
                 // Same target as legacy SignUp.js `SUCCESS_REDIRECTION_URL` (not marketing `REDIRECT_URL`).
-                let successRedirectionUrl =
-                    (process.env.API_BASE_URL || '') + '/api/nexusRedirection.php?session=:session';
+                let successRedirectionUrl = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
                 const msg91Query = getCookie('msg91_query');
                 if (msg91Query) {
                     const queryParams = msg91Query.startsWith('?') ? msg91Query.replace('?', '&') : '&' + msg91Query;

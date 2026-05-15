@@ -10,7 +10,7 @@ const FEATURES = [
 
 export default function Sidebar() {
     return (
-        <div className='hidden lg:flex h-full overflow-y-auto w-1/3 min-w-[320px] max-w-full bg-secondary flex-col justify-start p-12 sticky top-0'>
+        <div className='flex w-full shrink-0 flex-col justify-start bg-secondary p-6 sm:p-12 lg:sticky lg:top-0 lg:h-screen lg:w-1/3 lg:min-w-[320px] lg:overflow-y-auto'>
             <h2 className='text-2xl text-primary font-semibold mb-6'>
                 Signup to avail a complete suite of MSG91 products
             </h2>

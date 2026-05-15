@@ -14,17 +14,11 @@ export default function StepTwo() {
     const { state, dispatch } = useSignup();
     const otpInputRef = useRef(null);
 
-    const isLoading = state.isLoading;
-    const otpSent = state.otpSent;
-    const otpVerified = state.mobileOtpVerified;
-    const mobileIdentifier = state.mobileIdentifier;
-    const userDetails = state.userDetails;
-
     const [name, setName] = useState(
-        userDetails?.firstName ? `${userDetails.firstName} ${userDetails.lastName || ''}`.trim() : ''
+        state.userDetails?.firstName ? `${state.userDetails.firstName} ${state.userDetails.lastName || ''}`.trim() : ''
     );
     const [companyName, setCompanyName] = useState(state.companyDetails?.companyName || '');
-    const [phone, setPhone] = useState(mobileIdentifier || '');
+    const [phone, setPhone] = useState(state.mobileIdentifier || '');
     const [phoneCountry, setPhoneCountry] = useState(null);
     const [continueAllowed, setContinueAllowed] = useState(false);
 
@@ -64,10 +58,10 @@ export default function StepTwo() {
     }, [state.selectedCountry]);
 
     useEffect(() => {
-        if (otpVerified && name && companyName && phone) {
+        if (state.mobileOtpVerified && name && companyName && phone) {
             setContinueAllowed(true);
         }
-    }, [otpVerified, name, companyName, phone]);
+    }, [state.mobileOtpVerified, name, companyName, phone]);
 
     const handleSendOtp = () => {
         const phoneNumber = phone?.trim();
@@ -191,7 +185,7 @@ export default function StepTwo() {
                     </select>
                 </div>
 
-                {otpSent && otpLength ? (
+                {state.otpSent && otpLength ? (
                     <div className='cont gap-3'>
                         <p className='text-gray-500'></p>
                         <div className='flex items-end gap-2'>
@@ -212,9 +206,9 @@ export default function StepTwo() {
                                 onVerify={handleVerifyOtp}
                                 showVerifyButton={true}
                                 autoFocus={true}
-                                disabled={isLoading}
+                                disabled={state.isLoading}
                             />
-                            {isLoading && (
+                            {state.isLoading && (
                                 <div className='flex items-center gap-2 text-accent'>
                                     <div className='loading loading-spinner loading-sm'></div>
                                     Verifying OTP...
@@ -240,16 +234,16 @@ export default function StepTwo() {
                                 onCountryChange={setPhoneCountry}
                                 onBlur={() => handleDetailsBlur('phone')}
                                 defaultCountry={selectedCountry}
-                                verified={otpVerified}
+                                verified={state.mobileOtpVerified}
                                 placeholder='9876543210'
                             />
-                            {otpVerified ? (
+                            {state.mobileOtpVerified ? (
                                 <MdEdit
                                     className='text-gray-500 hover:text-accent cursor-pointer text-xl'
                                     onClick={handleEditVerifiedPhone}
                                     aria-label='Edit phone number'
                                 />
-                            ) : isLoading ? (
+                            ) : state.isLoading ? (
                                 <div className='flex items-center gap-2 text-accent'>
                                     <div className='loading loading-spinner loading-sm'></div>
                                     Sending OTP...

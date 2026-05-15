@@ -1,5 +1,5 @@
 import SignUp from '@/components/signupComp/SignUp';
-import SignupPage from '../SingupComp';
+import SignupPage from '../SignupComp';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 

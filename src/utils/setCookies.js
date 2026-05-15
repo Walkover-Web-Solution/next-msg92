@@ -18,5 +18,5 @@ export default function handleBrawserCookies() {
             setCookie('msg91_query', `?utm_campaign=tigerplugin&utm_source=${plugin}&utm_medium=website`, 30); //By Hardik
         }
         setUtm();
-    }, [browserPath]);
+    }, []);
 }
