@@ -6,10 +6,13 @@ import OTPInput from '../components/OTPInput';
 import ResendOTP from '../components/ResendOTP';
 import { fetchCountries, autoPopulateFromIP } from '../SignupUtils/apiUtils';
 import { appendMsg91QueryToUrl } from '../SignupUtils/cookieUtils';
+import GmailWarningModal from '@/components/signupComp/utils/GmailWarningModal';
 
 export default function StepOne() {
     const { state, dispatch } = useSignup();
     const [email, setEmail] = useState(state.emailIdentifier || '');
+    const [showGmailModal, setShowGmailModal] = useState(false);
+    const [pendingEmail, setPendingEmail] = useState(null);
     const emailInputRef = useRef(null);
     const otpInputRef = useRef(null);
     const geoInitRef = useRef(false);
@@ -68,11 +71,30 @@ export default function StepOne() {
     }, [otpSent]);
 
     const handleSendOtp = () => {
-        if (!email) {
+        if (!email?.trim()) {
             dispatch({ type: 'SET_ERROR', payload: 'Please enter email' });
             return;
         }
-        sendOtp(email, false, dispatch);
+        const trimmed = email.trim();
+        if (/^[^@]+@gmail\.com$/i.test(trimmed)) {
+            setPendingEmail(trimmed);
+            setShowGmailModal(true);
+            return;
+        }
+        sendOtp(trimmed, false, dispatch);
+    };
+
+    const handleGmailModalUpdate = () => {
+        setShowGmailModal(false);
+        setPendingEmail(null);
+        setTimeout(() => emailInputRef.current?.focus(), 50);
+    };
+
+    const handleGmailModalContinue = () => {
+        const toSend = pendingEmail ?? email.trim();
+        setShowGmailModal(false);
+        setPendingEmail(null);
+        sendOtp(toSend, false, dispatch);
     };
 
     const handleVerifyOtp = (otpValue) => {
@@ -107,6 +129,13 @@ export default function StepOne() {
 
     return (
         <div className='cont cont_gap w-full max-w-[500px]'>
+            {showGmailModal && (
+                <GmailWarningModal
+                    email={pendingEmail}
+                    onUpdate={handleGmailModalUpdate}
+                    onContinue={handleGmailModalContinue}
+                />
+            )}
             <Image
                 width={160}
                 height={80}
@@ -219,6 +248,11 @@ export default function StepOne() {
                     </div>
                 </div>
             )}
+
+            <p className='text-[12px] w-full text-gray-700'>
+                <span className='font-bold'>Note:</span> We recommend signing up using your private domain to get quick
+                assistance.
+            </p>
 
             <div className='cont gap-3'>
                 <p className='text-sm text-gray-500'>Or continue with</p>

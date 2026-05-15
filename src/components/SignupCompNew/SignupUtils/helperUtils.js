@@ -1,4 +1,5 @@
 import getURLParams from '@/utils/getURLParams';
+import { getCookie } from '@/utils/utilis';
 
 /**
  * Set initial states from URL parameters
@@ -20,8 +21,15 @@ export function setInitialStates(dispatch, state, urlParams) {
         const githubCode = urlParams?.code;
         const githubState = urlParams?.state;
 
-        // Handle source: if source exists in URL use it, otherwise fallback to utm_source
-        const sourceValue = urlParams?.source || urlParams?.utm_source || '';
+        // Handle source: URL first, then utm_source; if absent, read msg91_query cookie (set from location.search in _app)
+        let sourceValue = urlParams?.source || urlParams?.utm_source || '';
+        if (!sourceValue && typeof window !== 'undefined') {
+            const msg91Query = getCookie('msg91_query');
+            if (msg91Query) {
+                const fromCookie = getURLParams(msg91Query);
+                sourceValue = fromCookie?.source || fromCookie?.utm_source || '';
+            }
+        }
 
         dispatch({
             type: 'SET_INITIAL_STATES',
@@ -40,6 +48,7 @@ export function setInitialStates(dispatch, state, urlParams) {
                 ad: urlParams?.ad,
                 adposition: urlParams?.adposition,
                 reference: urlParams?.reference,
+                activeStep: 1,
             },
         });
         if (githubCode && githubState) {

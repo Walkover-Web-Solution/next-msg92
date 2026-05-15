@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { setSharedCookie } from '@/utils/utilis';
 import checkSession, {
     otpWidgetSetup,
     SignupProvider,
@@ -16,6 +18,15 @@ import Sidebar from '../Sidebar';
 // Create a separate component that uses the context
 function SignupSteps({ pageInfo, data, isAbSignup }) {
     const { state, dispatch } = useSignup();
+    const router = useRouter();
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const sharedParams = new URLSearchParams(window.location.search);
+        sharedParams.forEach((value, key) => {
+            setSharedCookie(key, value, 1);
+        });
+    }, [router.asPath]);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
