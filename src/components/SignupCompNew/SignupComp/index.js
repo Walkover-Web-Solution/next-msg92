@@ -35,7 +35,6 @@ function SignupSteps({ pageInfo, data, isAbSignup }) {
                 setInitialStates(dispatch, state, urlParams);
             }
             handleUtmParams(dispatch, urlParams);
-            src / components / SignupCompNew / hooks / useTimer.js;
         }
 
         otpWidgetSetup(dispatch);
