@@ -1,13 +1,22 @@
 export default function handlePlanStructure(plans, currency) {
-    const structuredPlans = plans.flatMap((plan) =>
-        (plan?.plan_amounts || []).map((plan_amount) => ({
-            name: plan?.name || null,
-            amount: plan_amount?.plan_amount || null,
-            type: plan_amount?.plan_type?.name || null,
-            discount: plan_amount?.applied_discounts || [],
-            services: handleServices(plan?.plan_services || [], currency),
-            features: handleFeatures(plan?.plan_features || []),
-        }))
+    const sourcePlans =
+        currency === 'AED'
+            ? (plans || []).filter(
+                  (plan) => Array.isArray(plan?.valid_currencies) && plan.valid_currencies.includes('AED')
+              )
+            : plans || [];
+
+    const structuredPlans = sourcePlans.flatMap((plan) =>
+        (plan?.plan_amounts || [])
+            .filter((plan_amount) => plan_amount?.currency?.short_name === currency)
+            .map((plan_amount) => ({
+                name: plan?.name || null,
+                amount: plan_amount?.plan_amount ?? null,
+                type: plan_amount?.plan_type?.name || null,
+                discount: plan_amount?.applied_discounts || [],
+                services: handleServices(plan?.plan_services || [], currency),
+                features: handleFeatures(plan?.plan_features || []),
+            }))
     );
     return structuredPlans;
 }
