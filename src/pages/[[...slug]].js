@@ -64,6 +64,7 @@ import SEOFooter from '@/components/IntegrationComp/SEOFooter/SEOFooter';
 import Banner from '@/components/UpdatedComp/Banner';
 import HelloBanner from '@/components/HelloBrComp/BannerComp/Banner';
 import HelloBrFeatures from '@/components/HelloBrComp/FeaturesComp/Features';
+import HelloBrChallenges from '@/components/HelloBrComp/ChallengesComp/Challenges';
 import RoiStats from '@/components/HelloBrComp/StatsComp/RoiStats';
 import Security from '@/components/HelloBrComp/SecurityComp/SecurityCompliance';
 import Steps from '@/components/HelloBrComp/StepsComp/StepsSetup';
@@ -155,6 +156,7 @@ const Components = {
     GridFeatureComp,
 
     // New Components
+    Challenges: HelloBrChallenges,
     Banner,
     RoiStats,
     Security,
