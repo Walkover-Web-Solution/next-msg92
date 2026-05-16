@@ -13,6 +13,8 @@
         "heading": "Customer Support|That Transforms|Your Business",
         "description": "Complete omnichannel support platform with AI. Manage all your support channels — WhatsApp, Instagram, Email, and more — in a single smart inbox. Simple, without complications.",
         "lottie": "/assets/global/hello/new_webp/hello_hero.json",
+        "video": "/assets/hello-br/br-eng/dashboard.webm",
+        "videoAlt": "Hello dashboard and inbox preview",
         "getstarted_btn": "Start Free Now",
         "getstarted_btn_link": "/signup",
         "specialist_btn": "Talk to a Specialist",
@@ -36,7 +38,8 @@
                 "ctaLabel": "See all channels",
                 "ctaHref": "/hello",
                 "image": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp",
-                "imageAlt": "Team hands together representing unified support"
+                "imageAlt": "Team hands together representing unified support",
+                "video": "/assets/hello-br/br-eng/omni-channel.webm"
             },
             {
                 "eyebrow": "ARTIFICIAL INTELLIGENCE",
@@ -51,7 +54,8 @@
                 "ctaLabel": "Explore automations",
                 "ctaHref": "/hello",
                 "image": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp",
-                "imageAlt": "Team collaborating with laptops"
+                "imageAlt": "Team collaborating with laptops",
+                "video": "/assets/hello-br/br-eng/intelligent-ai.webm"
             },
             {
                 "eyebrow": "VOICE AI",
@@ -66,7 +70,7 @@
                 ],
                 "ctaLabel": "Explore voice AI",
                 "ctaHref": "/hello",
-                "image": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp",
+                "image": "/assets/hello-br/br-eng/voice.jpg",
                 "imageAlt": "Voice and call support experience powered by AI"
             },
             {
@@ -82,7 +86,8 @@
                 "ctaLabel": "View analytics",
                 "ctaHref": "/hello",
                 "image": "/assets/global/hello/new_webp/analytics.webp",
-                "imageAlt": "Analytics and reporting on mobile"
+                "imageAlt": "Analytics and reporting on mobile",
+                "video": "/assets/hello-br/br-eng/Analytics.webm"
             }
         ]
     },
@@ -116,6 +121,8 @@
     "Security": {
         "label": "ENTERPRISE SECURITY",
         "heading": "Enterprise-Grade Security & Compliance",
+        "video": "/assets/hello-br/br-eng/challenges.webm",
+        "videoAlt": "Enterprise security and compliance challenges addressed by Hello",
         "items": [
             {
                 "icon": "lock",
