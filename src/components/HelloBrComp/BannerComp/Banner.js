@@ -2,10 +2,14 @@ import React from 'react';
 import { MdFlashOn, MdOutlineChatBubbleOutline } from 'react-icons/md';
 
 export default function Banner({ data }) {
+    const videoWrapperClass = data?.video
+        ? 'relative flex w-full items-center justify-center'
+        : 'relative flex min-h-64 w-full items-center justify-center overflow-hidden rounded-3xl border border-white/50 bg-slate-200 shadow-xl lg:min-h-80';
+
     return (
         <section className='container cont_p'>
-            <div className='cont py-10 grid grid-cols-1 gap-10 lg:grid-cols-2'>
-                <div className='cont gap-4'>
+            <div className='cont py-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-2'>
+                <div className='cont justify-center gap-4'>
                     <h1 className='heading text-gray-900'>{renderHeading(data?.heading)}</h1>
                     <p className='subheading text-gray-600'>{data?.description}</p>
 
@@ -31,14 +35,7 @@ export default function Banner({ data }) {
                     </div>
                 </div>
 
-                <div
-                    className={
-                        data?.video
-                            ? 'relative w-full'
-                            : 'relative min-h-64 w-full overflow-hidden rounded-3xl border border-white/50 bg-slate-200 shadow-xl lg:min-h-80'
-                    }
-                    aria-hidden={data?.video ? undefined : 'true'}
-                >
+                <div className={videoWrapperClass} aria-hidden={data?.video ? undefined : 'true'}>
                     {data?.video ? (
                         <video
                             className='block h-auto w-full object-contain'
