@@ -118,13 +118,35 @@ export default function StepTwo() {
     };
 
     const handleContinue = () => {
-        if (continueAllowed) {
-            if (state.session) {
-                dispatch({ type: 'SET_ACTIVE_STEP', payload: 3 });
-            } else {
-                validateSignUp(dispatch, state);
-            }
+        if (!continueAllowed) return;
+
+        if (state.signupByGitHub && !state.githubCode) {
+            dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
+            return;
         }
+
+        if (state.session) {
+            dispatch({ type: 'SET_ACTIVE_STEP', payload: 3 });
+        } else {
+            validateSignUp(dispatch, state);
+        }
+    };
+
+    const clearGithubUrlParams = () => {
+        if (typeof window === 'undefined') return;
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.delete('githubsignup');
+        currentUrl.searchParams.delete('code');
+        currentUrl.searchParams.delete('state');
+        window.history.replaceState(null, '', currentUrl.toString());
+    };
+
+    const handleBack = () => {
+        if (state.signupByGitHub) {
+            dispatch({ type: 'RESET_GITHUB_SIGNUP' });
+            clearGithubUrlParams();
+        }
+        dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
     };
 
     const handleEditPhone = () => {
@@ -145,6 +167,7 @@ export default function StepTwo() {
             <Image width={160} height={80} className='w-fit h-12' src={'/assets/brand/msg91.svg'} alt='MSG91 Logo' />
             <div className='cont gap-2'>
                 <h1 className='text-2xl text-primary'>Personal Details</h1>
+                {state.signupByGitHub && <p className='text-sm text-success'>Email verified via GitHub</p>}
             </div>
             <div className='cont gap-3'>
                 <FormInput
@@ -258,12 +281,7 @@ export default function StepTwo() {
                 )}
             </div>
             <div className='flex gap-4'>
-                <button
-                    className='btn btn-primary btn-outline btn-md'
-                    onClick={() => {
-                        dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
-                    }}
-                >
+                <button className='btn btn-primary btn-outline btn-md' onClick={handleBack}>
                     Back
                 </button>
                 <button onClick={handleContinue} className='btn btn-accent btn-md' disabled={!continueAllowed}>

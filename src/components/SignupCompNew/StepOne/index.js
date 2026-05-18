@@ -70,6 +70,12 @@ export default function StepOne() {
         }
     }, [otpSent]);
 
+    useEffect(() => {
+        if (state.signupByGitHub && state.githubCode && state.activeStep === 1) {
+            dispatch({ type: 'SET_ACTIVE_STEP', payload: 2 });
+        }
+    }, [state.signupByGitHub, state.githubCode, state.activeStep, dispatch]);
+
     const handleSendOtp = () => {
         if (!email?.trim()) {
             dispatch({ type: 'SET_ERROR', payload: 'Please enter email' });

@@ -31,7 +31,9 @@ function SignupSteps({ pageInfo, data, isAbSignup }) {
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const urlParams = getURLParams(window.location.search);
-            if (!state.emailVerified && !state.mobileOtpVerified) {
+            const isGithubReturn =
+                urlParams?.code && (urlParams?.githubsignup === true || urlParams?.githubsignup === 'true');
+            if (isGithubReturn || (!state.emailVerified && !state.mobileOtpVerified)) {
                 setInitialStates(dispatch, state, urlParams);
             }
             handleUtmParams(dispatch, urlParams);
