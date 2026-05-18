@@ -54,7 +54,18 @@ export function validateSignUp(dispatch, state) {
         return;
     }
 
-    const isGithubFlow = state?.githubCode;
+    const isGithubFlow = state?.githubCode && state?.signupByGitHub;
+
+    if (!state?.mobileToken) {
+        dispatch({ type: 'SET_ERROR', payload: 'Email and Mobile should be verified.' });
+        return;
+    }
+
+    if (!isGithubFlow && !state?.emailToken) {
+        dispatch({ type: 'SET_ERROR', payload: 'Email and Mobile should be verified.' });
+        return;
+    }
+
     let url = process.env.API_BASE_URL + '/api/v5/nexus/validateEmailSignUp';
 
     const utmRaw = Object.fromEntries(
@@ -79,20 +90,22 @@ export function validateSignUp(dispatch, state) {
         reference: state?.reference ?? utmObj.reference,
     };
 
-    if (state?.session) {
-        payload.session = state.session;
-    }
-
     if (isGithubFlow) {
         payload.code = state.githubCode;
         payload.state = state.githubState;
         url = process.env.API_BASE_URL + '/api/v5/nexus/validateGithubSignUp';
+        const sessionFromCookie = getCookie('sessionId');
+        if (sessionFromCookie) {
+            payload.session = sessionFromCookie;
+        }
     } else {
         payload.emailToken = state?.emailToken;
-    }
-
-    if (!state?.session) {
-        clearStaleSignupSessionCookies();
+        if (state?.session) {
+            payload.session = state.session;
+        }
+        if (!state?.session) {
+            clearStaleSignupSessionCookies();
+        }
     }
 
     url = appendUseV2SignupQuery(url);
@@ -108,9 +121,43 @@ export function validateSignUp(dispatch, state) {
         .then((result) => {
             if (result?.status === 'success') {
                 const sid = result?.data?.sessionDetails?.PHPSESSID;
+                const nextStep = result?.data?.data?.nextStep;
+
                 if (sid && typeof document !== 'undefined') {
                     setCookie('sessionId', sid, 30);
                 }
+
+                if (nextStep === 'loginIntoExistingAccount' && sid) {
+                    let redirectUrl =
+                        process.env.API_BASE_URL + '/api/nexusRedirection.php?session=' + encodeURIComponent(sid);
+                    const msg91Query = getCookie('msg91_query');
+                    if (msg91Query) {
+                        const queryParams = msg91Query.startsWith('?')
+                            ? msg91Query.replace('?', '&')
+                            : '&' + msg91Query;
+                        redirectUrl += queryParams;
+                    }
+                    const signupDate = getCookie('signup_date');
+                    const interestedServices = getCookie('interested_services');
+                    if (signupDate) {
+                        redirectUrl += `&signup_date=${encodeURIComponent(signupDate)}`;
+                    }
+                    if (interestedServices) {
+                        redirectUrl += `&interested_services=${encodeURIComponent(interestedServices)}`;
+                    }
+                    Object.entries(getUtmFromCookies()).forEach(([key, value]) => {
+                        if (value) {
+                            redirectUrl += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+                        }
+                    });
+                    window.location.href = redirectUrl;
+                    return;
+                }
+
+                if (isGithubFlow) {
+                    dispatch({ type: 'RESET_GITHUB_SIGNUP' });
+                }
+
                 dispatch({
                     type: 'SET_SESSION',
                     payload: { session: sid, step: 3 },
@@ -121,6 +168,10 @@ export function validateSignUp(dispatch, state) {
                     type: 'SET_ERROR',
                     payload: result?.errors?.[0] ?? result?.errors ?? 'Failed to validate signup',
                 });
+                if (isGithubFlow) {
+                    dispatch({ type: 'RESET_GITHUB_SIGNUP' });
+                    dispatch({ type: 'SET_ACTIVE_STEP', payload: 1 });
+                }
             } else {
                 dispatch({ type: 'SET_ERROR', payload: result?.errors || 'Failed to validate signup' });
             }
