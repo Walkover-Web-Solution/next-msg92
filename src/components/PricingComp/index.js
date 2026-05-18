@@ -1,6 +1,5 @@
 import PricingNav from './PricingNavComp/PricingNavComp';
 import PricingCampaign from './PricingCampaign/PricingCampaign';
-import PricingOtp from './PricingOtp/PricingOtp';
 import PricingSMSOTP from './PricingSMS/PricingSMSOTP';
 import PricingVoice from './PricingVoice/PricingVoice';
 import NotFoundComp from '../NotFoundComp/NotFoundComp';
@@ -30,7 +29,7 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                     <div className='container py-8 flex flex-col gap-8'>
                         {pageInfo?.product === 'campaign' && <PricingCampaign pageData={pageData} />}
 
-                        {['hello', 'segmento', 'email', 'rcs', 'whatsapp'].includes(pageInfo?.product) && (
+                        {['hello', 'segmento', 'email', 'rcs', 'whatsapp', 'otpwidget'].includes(pageInfo?.product) && (
                             <PricingSubscription
                                 pricingData={pricingData}
                                 pageData={pageData}
@@ -38,8 +37,6 @@ export default function PricingComp({ pricingData, pageInfo, pageData, products,
                                 country={country}
                             />
                         )}
-
-                        {pageInfo?.product === 'otpwidget' && <PricingOtp pageData={pageData} />}
 
                         {pageInfo?.product === 'sms' && (
                             <PricingSMSOTP

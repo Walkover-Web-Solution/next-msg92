@@ -8,6 +8,7 @@ const msIds = {
     email: '1',
     rcs: '9',
     whatsapp: '5',
+    otpwidget: '8',
 };
 
 /** @type {Record<string, string>} Map of country codes to currency short names. */
@@ -38,7 +39,7 @@ const localeByCountry = {
  * Fetches and returns simplified pricing plans for a given country and product page.
  *
  * @param {string} countryCode - Two-letter country code (e.g. 'in', 'us', 'gb', 'ae').
- * @param {string} page - Product page slug (e.g. 'hello', 'segmento', 'email', 'rcs', 'whatsapp').
+ * @param {string} page - Product page slug (e.g. 'hello', 'segmento', 'email', 'rcs', 'whatsapp', 'otpwidget').
  * @returns {Promise<Array<object>|object>} Array of simplified plan objects (slug, amount, discount, plan_features, dial_plan, extras), or empty object `{}` if page has no msId.
  * @throws {Error} When the pricing API request fails.
  */
