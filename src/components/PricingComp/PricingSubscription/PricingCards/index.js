@@ -309,6 +309,56 @@ function formatAmount(amount, symbol, locale) {
     return `${symbol}${Number(amount).toLocaleString(locale || 'en-IN')}`;
 }
 
+function formatUnitPrice(rate, symbol, locale) {
+    const n = Number(rate);
+    if (Number.isNaN(n)) return `${symbol}0`;
+    const options = n >= 1 ? { maximumFractionDigits: 2 } : { minimumFractionDigits: 2, maximumFractionDigits: 6 };
+    return `${symbol}${n.toLocaleString(locale || 'en-IN', options)}`;
+}
+
+function getAllowanceSectionLabel(base, tabtype) {
+    return tabtype === 'Yearly' ? `${base} (Monthly)` : base;
+}
+
+/** Included quota lines, e.g. "2,000 contacts" — no "/ month" (yearly cards use section heading instead) */
+function formatIncludedAllowance(service, locale) {
+    const name = service?.name?.trim();
+    const qty = service?.freeCredit;
+    const isUnlimited = qty === -1 || qty === '-1';
+    if (isUnlimited) return `Unlimited ${name}`;
+    if (qty != null && Number(qty) !== 0) {
+        const count = Number(qty).toLocaleString(locale || 'en-IN');
+        return `${count} ${name}`;
+    }
+    return name;
+}
+
+/** Wallet / dial-plan included credit, e.g. "د.إ500 RCS wallet" */
+function formatWalletAllowance(service, symbol, locale, isUnlimited) {
+    const name = service?.name?.trim();
+    if (isUnlimited) return `Unlimited ${name} wallet`;
+    const credit = Number(service?.freeCredit).toLocaleString(locale || 'en-IN');
+    return `${symbol}${credit} ${name} wallet`;
+}
+
+/** Overage / per-use lines, e.g. "Contacts — د.إ25 per 1,000" */
+function formatExtraCharge(service, symbol, locale) {
+    const name = service?.name?.trim();
+    const rate = service?.followUpRate;
+    const chunkSize = Number(service?.chunkSize ?? 1) || 1;
+    const hasRate = rate != null && Number(rate) > 0;
+    const isNotAllowed = !service?.postPaidAllowed || !hasRate;
+
+    if (isNotAllowed) return `${name} — not available on this plan`;
+
+    const price = formatUnitPrice(rate, symbol, locale);
+    if (chunkSize > 1) {
+        const bundle = chunkSize.toLocaleString(locale || 'en-IN');
+        return `${name} — ${price} per ${bundle}`;
+    }
+    return `${name} — ${price} per unit`;
+}
+
 function getDiscountedAmount(amount, discounts) {
     if (!amount || !discounts || discounts.length === 0) return null;
     const discount = discounts[0];
@@ -438,24 +488,15 @@ function PlanCard({
                 {hasIncluded && (
                     <div>
                         <p className='text-[11px] font-semibold uppercase tracking-wider mb-2 text-slate-400'>
-                            Included
+                            {getAllowanceSectionLabel('Included', tabtype)}
                         </p>
                         <ul className='flex flex-col gap-1.5'>
-                            {includedServices.map((service, i) => {
-                                const qty = service?.freeCredit;
-                                const isUnlimited = qty === -1 || qty === '-1';
-                                const displayQty = isUnlimited
-                                    ? 'Unlimited'
-                                    : qty != null
-                                      ? `${Number(qty).toLocaleString(locale || 'en-IN')} / month`
-                                      : null;
-                                return (
-                                    <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
-                                        <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
-                                        {displayQty ? `${displayQty} ${service?.name}` : service?.name}
-                                    </li>
-                                );
-                            })}
+                            {includedServices.map((service, i) => (
+                                <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
+                                    <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
+                                    <span>{formatIncludedAllowance(service, locale)}</span>
+                                </li>
+                            ))}
                             {dialPlanServicesWithCredit.map((service, i) => {
                                 const walletCredit = service?.freeCredit;
                                 const isUnlimited = isUnlimitedFreeCredit(walletCredit);
@@ -463,9 +504,7 @@ function PlanCard({
                                     <li key={`dp-${i}`} className='flex items-start gap-2 text-sm text-slate-600'>
                                         <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
                                         <span className='flex items-center gap-1'>
-                                            {isUnlimited
-                                                ? `Unlimited ${service?.name}`
-                                                : `${symbol}${Number(walletCredit).toLocaleString(locale || 'en-IN')} ${service?.name} wallet`}
+                                            {formatWalletAllowance(service, symbol, locale, isUnlimited)}
                                             {!isUnlimited && (
                                                 <MdInfoOutline
                                                     size={13}
@@ -490,37 +529,27 @@ function PlanCard({
                 {hasOverage && (
                     <div>
                         <p className='text-[11px] font-semibold uppercase tracking-wider mb-2 text-slate-400'>
-                            Extra charges
+                            {getAllowanceSectionLabel('Extra charges', tabtype)}
                         </p>
                         <ul className='flex flex-col gap-1.5'>
-                            {extraServices.map((service, i) => {
-                                const rate = service?.followUpRate;
-                                const chunkSize = service?.chunkSize ?? 1;
-                                const hasRate = rate != null && Number(rate) > 0;
-                                const isNotAllowed = !service?.postPaidAllowed || !hasRate;
-                                const unitLabel = chunkSize > 1 ? `${chunkSize} units` : 'unit';
-                                return (
-                                    <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
-                                        <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
-                                        {isNotAllowed
-                                            ? `${service?.name}: Not allowed`
-                                            : `${service?.name}: ${symbol}${Number(rate)} / ${unitLabel} / month`}
-                                    </li>
-                                );
-                            })}
+                            {extraServices.map((service, i) => (
+                                <li key={i} className='flex items-start gap-2 text-sm text-slate-600'>
+                                    <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
+                                    <span>{formatExtraCharge(service, symbol, locale)}</span>
+                                </li>
+                            ))}
                             {[...dialPlanServicesWithCredit, ...dialPlanServicesNoCredit].map((service, i) => {
                                 const hasWalletCredit = service?.freeCredit != null && Number(service.freeCredit) > 0;
                                 const isDemoOnly = hasWalletCredit && !service?.postPaidAllowed;
                                 return (
                                     <li key={`dp-extra-${i}`} className='flex items-start gap-2 text-sm text-slate-600'>
                                         <MdCheck size={15} className='text-indigo-400 shrink-0 mt-0.5' />
-                                        <span className='flex items-center gap-1'>
-                                            {service?.name}:{' '}
+                                        <span className='flex flex-wrap items-center gap-x-1 gap-y-0.5'>
                                             {isDemoOnly ? (
-                                                'Demo only'
+                                                <>{service?.name?.trim()} — demo only</>
                                             ) : (
                                                 <>
-                                                    As per rate card
+                                                    {service?.name?.trim()} — billed per rate card
                                                     <button
                                                         type='button'
                                                         onClick={() =>
@@ -531,7 +560,7 @@ function PlanCard({
                                                         }
                                                         className='font-medium text-xs text-indigo-600 hover:text-indigo-800 transition-colors'
                                                     >
-                                                        view
+                                                        View rates
                                                     </button>
                                                 </>
                                             )}
