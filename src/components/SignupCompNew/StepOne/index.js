@@ -151,12 +151,14 @@ export default function StepOne() {
             />
             <div className='cont gap-1'>
                 <h1 className='text-xl sm:text-2xl text-primary'>Create an Account</h1>
+
                 <p className='text-sm text-gray-500'>
                     Already have an account?{' '}
                     <a className='text-link active-link' href={loginUrl}>
                         Login
                     </a>
                 </p>
+                <p className='text-sm text-gray-500'>Verify your email to secure and activate your account</p>
             </div>
 
             {emailVerified ? (

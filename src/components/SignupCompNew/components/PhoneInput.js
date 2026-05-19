@@ -2,6 +2,7 @@ import { MdCheckCircle } from 'react-icons/md';
 import { useState, useEffect, useMemo } from 'react';
 import PhoneInputWithCountry from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
+import PhoneCountrySearchSelect from './PhoneCountrySearchSelect';
 
 /**
  * Phone Input Component with Country Code Selector
@@ -25,14 +26,20 @@ export default function PhoneInput({
     disabled = false,
     placeholder = 'Enter phone number',
 }) {
-    const [internalCountry, setInternalCountry] = useState(defaultCountry?.shortName || 'IN');
+    const resolveCountryCode = (country) => {
+        if (!country) return 'IN';
+        if (typeof country === 'string') return country.toUpperCase();
+        return country.shortName?.toUpperCase() || 'IN';
+    };
+
+    const [internalCountry, setInternalCountry] = useState(() => resolveCountryCode(defaultCountry));
 
     // Update internal country when defaultCountry changes (from parent)
     useEffect(() => {
-        if (defaultCountry?.shortName && !verified) {
-            setInternalCountry(defaultCountry.shortName);
+        if (!verified && defaultCountry) {
+            setInternalCountry(resolveCountryCode(defaultCountry));
         }
-    }, [defaultCountry?.shortName, verified]);
+    }, [defaultCountry, verified]);
 
     // Extract country code from phone number
     const phoneCountryCode = useMemo(() => {
@@ -64,6 +71,7 @@ export default function PhoneInput({
                     onBlur={onBlur}
                     disabled={disabled || verified}
                     placeholder={placeholder}
+                    countrySelectComponent={PhoneCountrySearchSelect}
                     className={`phone-input-wrapper ${verified ? 'verified' : ''}`}
                 />
                 {verified && (
@@ -106,10 +114,7 @@ export default function PhoneInput({
                     box-shadow: none !important;
                 }
                 :global(.phone-input-wrapper .PhoneInputCountrySelectArrow) {
-                    display: block;
-                    opacity: 0.5;
-                    width: 0.5rem;
-                    height: 0.5rem;
+                    display: none;
                 }
                 :global(.phone-input-wrapper .PhoneInputInput) {
                     flex: 1;
