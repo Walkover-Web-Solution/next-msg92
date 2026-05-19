@@ -27,7 +27,7 @@ import TermsComp from '@/components/TermsComp/TermsComp';
 import ContactUsComp from '@/components/ContactUs';
 import getPageInfo from '@/utils/getPageInfo';
 import getCommonCompData from '@/utils/getCommonCompData';
-import SignUp from '@/components/signupComp/SignUp';
+import SignupParentComp from '@/components/SignupCompNew/SignupParentComp';
 import ChatBotComp from '@/components/ChatBotComp/ChatBotComp';
 import MagicLinkComp from '@/components/MagicLinkComp/MagicLinkComp';
 import WhatsappLinkComp from '@/components/WhatsappLinkComp/WhatsappLinkComp';
@@ -50,7 +50,6 @@ import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromT
 import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
 import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
-import GridFeatureComp from '@/components/GridFeatureComp/GridFeatureComp';
 import Hero from '@/components/IntegrationComp/Hero/Hero';
 import ProblemSolution from '@/components/IntegrationComp/ProblemSolution/ProblemSolution';
 import Benefits from '@/components/IntegrationComp/Benefits/Benefits';
@@ -110,7 +109,7 @@ const Components = {
     NewHelloComp,
     TermsComp,
     ContactUsComp,
-    SignUp,
+    SignUp: SignupParentComp,
     ChatBotComp,
     MagicLinkComp,
     WhatsappLinkComp,
@@ -153,7 +152,6 @@ const Components = {
     WhatsAppIntegrations,
     WhatsAppAccountVerification,
     FeatureWithBulletGroup,
-    GridFeatureComp,
 
     // New Components
     Challenges: HelloBrChallenges,

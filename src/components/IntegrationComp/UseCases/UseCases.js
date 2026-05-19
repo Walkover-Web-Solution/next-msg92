@@ -30,18 +30,21 @@ export default function UseCases({ data }) {
 
                 <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8'>
                     {data.items.map((item, index) => (
-                        <article key={index} className='solutions-grid_card cont gap-3 rounded-md border p-6'>
-                            <div className='flex items-start justify-start'>
+                        <article
+                            key={index}
+                            className='solutions-grid_card cont gap-3 rounded-md border border-slate-200 bg-slate-50 p-6'
+                        >
+                            <div className='flex h-16 w-16 items-center justify-center rounded-lg bg-indigo-50 p-2 shadow-sm ring-1 ring-indigo-100'>
                                 {item.icon?.startsWith('/') ? (
                                     <Image
                                         src={item.icon}
                                         alt={item.title ? `${item.title} icon` : ''}
-                                        width={40}
-                                        height={40}
-                                        className='object-contain object-left'
+                                        width={56}
+                                        height={56}
+                                        className='h-12 w-12 object-contain'
                                     />
                                 ) : (
-                                    <span className='text-2xl' role='img'>
+                                    <span className='text-3xl leading-none md:text-4xl' role='img'>
                                         {item.icon}
                                     </span>
                                 )}
