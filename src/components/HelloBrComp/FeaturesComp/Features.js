@@ -77,7 +77,7 @@ export default function Features({ data }) {
                                         >
                                             {row.video ? (
                                                 <video
-                                                    className='aspect-[4/3] w-full rounded-3xl object-cover shadow-lg shadow-indigo-950/5'
+                                                    className='aspect-[4/3] w-full rounded-3xl object-cover'
                                                     autoPlay
                                                     muted
                                                     loop
