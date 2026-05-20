@@ -15,7 +15,6 @@ import { toast } from 'react-toastify';
 import Image from 'next/image';
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 const MOBILE_EMAIL_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/mobileEmailLogin';
-const GOOGLE_SIGNIN_REDIRECT_URL = process.env.REDIRECT_URL + '/signin?loginWithGoogle=true';
 
 export default function SignIn() {
     const router = useRouter();
@@ -77,12 +76,6 @@ export default function SignIn() {
                 code: queryParams?.code,
                 redirectUrl: process.env.REDIRECT_URL + '/outlook-token',
             });
-        } else if (queryParams?.loginWithGoogle?.includes('true') && queryParams?.code) {
-            const url = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
-            hitLoginAPI(url, {
-                code: queryParams?.code,
-                redirectUrl: GOOGLE_SIGNIN_REDIRECT_URL,
-            });
         } else {
             otpWidgetSetup();
         }
@@ -105,7 +98,7 @@ export default function SignIn() {
         } catch (error) {
             console.log('No Session Found');
         }
-    }, [router.isReady, router.asPath, hitLoginAPI]);
+    }, [router.isReady, hitLoginAPI]);
 
     const initLoginWithOTP = useCallback(() => {
         const widgetId = process.env.OTP_WIDGET_TOKEN_LOGIN;
@@ -138,14 +131,10 @@ export default function SignIn() {
     };
 
     const googleLogin = (response) => {
-        if (!response?.code) {
-            if (response?.error) {
-                toast.error(response.error_description || 'Google sign-in failed. Please try again.');
-            }
-            return;
+        if (response) {
+            const url = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
+            hitLoginAPI(url, { code: response.code, redirectUrl: process.env.REDIRECT_URL });
         }
-        const url = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
-        hitLoginAPI(url, { code: response.code, redirectUrl: GOOGLE_SIGNIN_REDIRECT_URL });
     };
 
     const loginWithOutlook = () => {
