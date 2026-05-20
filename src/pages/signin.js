@@ -15,6 +15,7 @@ import { toast } from 'react-toastify';
 import Image from 'next/image';
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 const MOBILE_EMAIL_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/mobileEmailLogin';
+const GOOGLE_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
 
 export default function SignIn() {
     const router = useRouter();
@@ -130,12 +131,24 @@ export default function SignIn() {
         loginWithGitHubAccount(true);
     };
 
-    const googleLogin = (response) => {
-        if (response) {
-            const url = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
-            hitLoginAPI(url, { code: response.code, redirectUrl: process.env.REDIRECT_URL });
-        }
-    };
+    const handleGoogleError = useCallback((error) => {
+        console.error('Google sign-in failed:', error);
+        toast.error('Google sign-in failed. Please try again.');
+    }, []);
+
+    const googleLogin = useCallback(
+        (response, redirectUri) => {
+            if (!response?.code) {
+                console.error('Google sign-in: no auth code in response', response);
+                toast.error('Google sign-in did not return a code. Please try again.');
+                return;
+            }
+            const redirectUrl =
+                redirectUri ?? (typeof window !== 'undefined' ? window.location.origin : process.env.REDIRECT_URL);
+            hitLoginAPI(GOOGLE_LOGIN_URL, { code: response.code, redirectUrl });
+        },
+        [hitLoginAPI]
+    );
 
     const loginWithOutlook = () => {
         location.href = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&client_id=${process.env.MSAL_CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}/outlook-token&scope=User.Read`;
@@ -199,7 +212,10 @@ export default function SignIn() {
                             <div className='flex flex-wrap gap-3'>
                                 <div className='flex h-11 w-11 shrink-0 overflow-hidden rounded-lg border border-slate-300 bg-white transition hover:bg-slate-50'>
                                     <GoogleOAuthProvider clientId={`${process.env.GOOGLE_CLIENT_ID}`}>
-                                        <GoogleLoginButton googleLoginResponse={googleLogin} />
+                                        <GoogleLoginButton
+                                            googleLoginResponse={googleLogin}
+                                            onGoogleError={handleGoogleError}
+                                        />
                                     </GoogleOAuthProvider>
                                 </div>
                                 <button
