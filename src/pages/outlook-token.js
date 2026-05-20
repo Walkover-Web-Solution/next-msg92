@@ -7,7 +7,7 @@ class githubToken extends React.Component {
     }
 
     componentDidMount() {
-        let queryParams = getQueryParamsDeatils(this.props?.browserPathCase);
+        const queryParams = getQueryParamsDeatils(window.location.href);
         if (queryParams) {
             let queryValue = getQueryStringFromObject(queryParams);
             location.href = `${process.env.REDIRECT_URL}/signin?loginWithOutlook=true&${queryValue}`;
