@@ -11,11 +11,13 @@
         },
         "tagline": "Customer Support Software",
         "heading": "Customer Support|That Transforms|Your Business",
-        "description": "Complete omnichannel support platform with AI. Manage all your support channels — WhatsApp, Instagram, Email, and more — in a single smart inbox. Simple, without complications.",
+        "description": "Complete omnichannel platform with AI. Manage all your channels — WhatsApp, Instagram, Email, Webchat, RCS, Voice Calls and more — in a single smart inbox. Simple, without complications.",
         "lottie": "/assets/global/hello/new_webp/hello_hero.json",
-        "getstarted_btn": "Start Free Now",
-        "getstarted_btn_link": "/signup",
-        "specialist_btn": "Talk to a Specialist",
+        "video": "/assets/hello-br/br-eng/dashboard.webm",
+        "videoAlt": "Hello dashboard and inbox preview",
+        "getstarted_btn": "Get Started",
+        "getstarted_btn_link": "https://msg91.com/signup",
+        "specialist_btn": "Schedule a demo",
         "specialist_btn_link": "https://calendly.com/hello-shared-inbox/hello-meeting",
         "chatbot": "Chatbot"
     },
@@ -25,18 +27,17 @@
         "rows": [
             {
                 "eyebrow": "OMNICHANNEL",
-                "title": "True Omnichannel Support",
-                "description": "Your customers are already on multiple channels. With Hello, you manage everything in one smart inbox — no tab switching, no lost context, no frustration.",
+                "title": "True Omnichannel: Scale Every Conversation into Revenue",
+                "description": "As your business grows, scattered chats lead to broken workflows. Don't just respond—grow. Hello unifies your entire customer journey into a single, high-performance command center.",
                 "bullets": [
-                    "Official WhatsApp Business API",
-                    "Instagram Direct + Facebook Messenger",
-                    "Email, Live Chat, SMS, Voice — all in one place",
+                    "WhatsApp, Email, Voice Calls, RCS, WebChat & all social channels — unified in one inbox",
+                    "One-click conversation assignment & prioritization",
+                    "Smart search, filtering & conversation tagging",
                     "Unified customer history across all channels"
                 ],
-                "ctaLabel": "See all channels",
-                "ctaHref": "/hello",
                 "image": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp",
-                "imageAlt": "Team hands together representing unified support"
+                "imageAlt": "Team hands together representing unified support",
+                "video": "/assets/hello-br/br-eng/omni-channel.webm"
             },
             {
                 "eyebrow": "ARTIFICIAL INTELLIGENCE",
@@ -48,25 +49,22 @@
                     "AI Voice Agent and automated IVR",
                     "Automatic translation in 100+ languages"
                 ],
-                "ctaLabel": "Explore automations",
-                "ctaHref": "/hello",
                 "image": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp",
-                "imageAlt": "Team collaborating with laptops"
+                "imageAlt": "Team collaborating with laptops",
+                "video": "/assets/hello-br/br-eng/intelligent-ai.webm"
             },
             {
                 "eyebrow": "VOICE AI",
-                "title": "Voice AI That Understands Your Customers and Ends Support Delays",
+                "title": "Voice AI That Understands Customers and Ends Support Delays",
                 "description": "Empower your contact center with an always-on voice system that understands customers, manages conversations, and keeps your operations running smoothly—without adding complexity.",
                 "bullets": [
-                    "Natural Conversations ",
-                    "Automated Call Handling ",
-                    "Instant Responses ",
-                    "Context-Aware Interactions ",
-                    "Multi-Language Support "
+                    "Natural Conversations",
+                    "Automated Call Handling",
+                    "Instant Responses",
+                    "Context-Aware Interactions",
+                    "Multi-Language Support"
                 ],
-                "ctaLabel": "Explore voice AI",
-                "ctaHref": "/hello",
-                "image": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp",
+                "image": "/assets/hello-br/br-eng/voice.png",
                 "imageAlt": "Voice and call support experience powered by AI"
             },
             {
@@ -76,15 +74,34 @@
                 "bullets": [
                     "Real-time dashboard",
                     "Performance reports by agent and channel",
-                    "SLA tracking and automatic alerts",
-                    "LGPD-compliant data export"
+                    "Analyse operations — identify issues and growth opportunities",
+                    "Analyze AI resolution performance across all chats"
                 ],
-                "ctaLabel": "View analytics",
-                "ctaHref": "/hello",
                 "image": "/assets/global/hello/new_webp/analytics.webp",
-                "imageAlt": "Analytics and reporting on mobile"
+                "imageAlt": "Analytics and reporting on mobile",
+                "video": "/assets/hello-br/br-eng/Analytics.webm"
+            },
+            {
+                "eyebrow": "MOBILE",
+                "title": "Work Without Limits—Wherever You Are",
+                "description": "Mobile App That Puts Customer Conversations in Your Pocket. Never miss a customer, even on the go. With Hello's fully featured mobile app (iOS and Android), your team receives instant notifications, replies to chats, assigns cases, and can even start calls—all with the security and reliability of your main platform.",
+                "bullets": [
+                    "Real-time push alerts for every new customer message",
+                    "Access full feature set—chat, calls, assignment, histories—anywhere",
+                    "Secure and reliable, built for mobile workforces",
+                    "Perfect for traveling reps, remote agents, and business owners on the move"
+                ],
+                "image": "/assets/global/hello/new_webp/mobile.webp",
+                "imageAlt": "Hello mobile app for customer support on iOS and Android",
+                "video": "/assets/hello-br/br-eng/work-smarter.webm"
             }
         ]
+    },
+    "Challenges": {
+        "label": "Challenges",
+        "heading": "Turn challenges into ideas",
+        "video": "/assets/hello-br/br-eng/challenges.webm",
+        "videoAlt": "Turn customer support challenges into ideas with Hello"
     },
     "RoiStats": {
         "label": "Metrics",
@@ -134,6 +151,7 @@
             }
         ]
     },
+
     "Steps": {
         "label": "SIMPLE SETUP",
         "heading": "Up and Running in 3 Steps",
@@ -152,7 +170,8 @@
                 "description": "Monitor, optimize and grow with real-time data. Add agents at any time."
             }
         ],
-        "ctaLabel": "Start Free Setup"
+        "ctaLabel": "Get Started",
+        "ctaHref": "https://msg91.com/signup"
     },
     "Pricing": {
         "label": "PRICING PLANS",
@@ -162,7 +181,6 @@
         "currencyBrlLabel": "BRL",
         "billingMonthlyLabel": "Monthly",
         "billingYearlyLabel": "Yearly",
-        "yearlyDiscountHint": "(-20%)",
         "fullPricingPath": "pricing/hello",
         "comparePlansLabel": "Calculate price & compare all features on the Hello pricing page",
         "planCopy": {
@@ -189,68 +207,26 @@
             }
         }
     },
-    "Testimonials": {
-        "label": "TESTIMONIALS",
-        "heading": "Trusted by|Industry Leaders",
-        "items": [
-            {
-                "quote": "AI automation allowed us to double team capacity without hiring more people. ROI in less than 60 days.",
-                "name": "Rafael Costa",
-                "role": "CEO",
-                "initials": "RC",
-                "avatar": "emerald"
-            },
-            {
-                "quote": "LGPD compliance was a decisive factor. Having the DPA in Portuguese and local support was a huge differentiator.",
-                "name": "Juliana Santos",
-                "role": "IT Manager",
-                "initials": "JS",
-                "avatar": "orange"
-            },
-            {
-                "quote": "We migrated from another system in 48 hours. The Hello team support was exceptional throughout the entire process.",
-                "name": "Carlos Mendes",
-                "role": "COO",
-                "initials": "CM",
-                "avatar": "blue"
-            }
-        ]
-    },
+   
     "Faqs": {
         "label": "FAQ",
         "heading": "Frequently Asked Questions",
         "items": [
             {
                 "question": "What is an omnichannel customer support platform?",
-                "answer": "An omnichannel customer support platform unifies all customer communication channels — such as WhatsApp, Instagram, email, chat and phone — into a single interface. Hello offers this with integrated AI, allowing your team to handle more customers with less effort while maintaining the full history of each conversation."
+                "answer": "An omnichannel customer support platform unifies all customer communication channels — such as WhatsApp, Instagram, email, Webchat, voice calls, Facebook, and Twitter — into a single interface. Hello offers this with integrated AI, allowing your team to handle more customers with less effort while maintaining the full history of each conversation."
             },
             {
                 "question": "How does the WhatsApp Business API integration work?",
-                "answer": "Hello connects through the official WhatsApp Business Platform. You verify your business, choose or bring your number, and manage templates, opt-ins and conversations from Hello’s inbox — with delivery and quality metrics built in. Our team helps you go live without juggling multiple tools."
-            },
-            {
-                "question": "Is Hello compliant with the LGPD (Brazil's data protection law)?",
-                "answer": "Yes. Hello is built with privacy and compliance in mind, including controls aligned with LGPD requirements. A Data Processing Agreement (DPA) is available in Portuguese, and you can work with our team on data residency, retention and export questions for your use case."
+                "answer": "Hello connects through the official WhatsApp Business API. You verify your business, choose or bring your number, and manage conversations from Hello's inbox — with delivery and quality metrics built in. Our team helps you go live without juggling multiple tools."
             },
             {
                 "question": "Can I automate customer service with AI?",
-                "answer": "Yes. You can deploy no-code chatbots, use AI-suggested replies for agents, automate routing and tagging, and scale with voice and workflow tools — so repetitive questions are handled instantly while humans focus on complex cases."
-            },
-            {
-                "question": "What's the difference between Hello and a traditional ticketing system?",
-                "answer": "Traditional ticketing is often channel-siloed and ticket-centric. Hello is conversation-centric: every channel feeds one timeline per customer, with AI, automation and analytics on top — so context never gets lost when someone switches from WhatsApp to email or chat."
-            },
-            {
-                "question": "How does BRL pricing work?",
-                "answer": "Plans and usage can be quoted and billed in Brazilian Reais (BRL) for Brazil-based teams, with clear limits for agents, channels and tickets. Contact sales for a tailored quote, volume tiers and contract options that match your operation."
-            },
-            {
-                "question": "Does Hello offer support in Portuguese?",
-                "answer": "Yes. Product materials, contracts and customer success touchpoints are available in Portuguese for Brazil, and you can reach our team in your language for onboarding and ongoing support."
+                "answer": "Yes. With Hello, you can deploy no-code chatbots, use AI-suggested replies for agents, automate routing and tagging, and scale with voice and workflow tools — so repetitive questions are handled instantly while humans focus on complex cases."
             },
             {
                 "question": "How long does it take to implement Hello?",
-                "answer": "Many teams connect their first channels in hours. Full rollout — agents trained, automations live, WhatsApp approved — typically ranges from a few days to a couple of weeks depending on channels, templates and internal approvals."
+                "answer": "Many teams connect their first channels in hours. Full rollout — agents trained, automations live, WhatsApp approved — typically ranges from a few days, depending on channels, templates, and internal approvals."
             }
         ]
     },
@@ -258,9 +234,9 @@
         "label": "START TODAY",
         "heading": "See the Platform in Action",
         "description": "Schedule a free demo and see how Hello transforms your company's customer support in minutes.",
-        "primaryLabel": "Schedule Free Demo",
-        "primaryHref": "/contact-us",
-        "secondaryLabel": "Migrate for Free",
-        "secondaryHref": "/textlocal-alternative"
+        "primaryLabel": "Get Started",
+        "primaryHref": "https://msg91.com/signup",
+        "secondaryLabel": "Schedule a demo",
+        "secondaryHref": "https://calendly.com/hello-shared-inbox/hello-meeting"
     }
 }

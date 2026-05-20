@@ -71,16 +71,30 @@ export default function Features({ data }) {
                                         )}
                                     </div>
 
-                                    {row.image && (
+                                    {(row.video || row.image) && (
                                         <div
                                             className={`w-full ${reverseOnLg ? 'lg:order-1 lg:justify-self-end lg:pe-8 xl:pe-12' : 'lg:justify-self-start lg:ps-8 xl:ps-12'}`}
                                         >
-                                            <img
-                                                src={row.image}
-                                                alt={row.imageAlt || ''}
-                                                className='aspect-[4/3] w-full rounded-3xl object-cover shadow-lg shadow-indigo-950/5'
-                                                loading='lazy'
-                                            />
+                                            {row.video ? (
+                                                <video
+                                                    className='aspect-[4/3] w-full rounded-3xl object-cover'
+                                                    autoPlay
+                                                    muted
+                                                    loop
+                                                    playsInline
+                                                    poster={row.image}
+                                                    aria-label={row.imageAlt || ''}
+                                                >
+                                                    <source src={row.video} type='video/webm' />
+                                                </video>
+                                            ) : (
+                                                <img
+                                                    src={row.image}
+                                                    alt={row.imageAlt || ''}
+                                                    className='aspect-[4/3] w-full rounded-3xl object-cover shadow-lg shadow-indigo-950/5'
+                                                    loading='lazy'
+                                                />
+                                            )}
                                         </div>
                                     )}
                                 </article>
