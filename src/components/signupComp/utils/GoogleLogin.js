@@ -1,18 +1,11 @@
 import React from 'react';
 import { useGoogleLogin } from '@react-oauth/google';
-import { toast } from 'react-toastify';
-
-const GOOGLE_SIGNIN_REDIRECT_URI = `${process.env.REDIRECT_URL}/signin?loginWithGoogle=true`;
 
 const GoogleLoginButton = (props) => {
     const login = useGoogleLogin({
-        onSuccess: (tokenResponse) => props.googleLoginResponse?.(tokenResponse),
-        onError: () => toast.error('Google sign-in was cancelled or failed. Please try again.'),
-        onNonOAuthError: () =>
-            toast.error('Google sign-in could not open. Please try again or disable popup blockers.'),
+        onSuccess: (tokenResponse) => props.googleLoginResponse(tokenResponse),
         flow: 'auth-code',
-        ux_mode: 'redirect',
-        redirect_uri: GOOGLE_SIGNIN_REDIRECT_URI,
+        redirect_uri: process.env.REDIRECT_URL,
         access_type: 'offline',
     });
 

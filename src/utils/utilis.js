@@ -4,11 +4,8 @@ export function getQueryParamsDeatils(url) {
         let paramsKeyValue = params.split('&');
         let userData = {};
         for (let keyValue of paramsKeyValue) {
-            const separatorIndex = keyValue.indexOf('=');
-            if (separatorIndex === -1) continue;
-            const key = keyValue.slice(0, separatorIndex);
-            const value = keyValue.slice(separatorIndex + 1);
-            userData[key] = decodeURIComponent(value.replace(/\+/g, ' '));
+            let data = keyValue.split('=');
+            userData[data[0]] = data[1];
         }
         return userData;
     }
