@@ -1,11 +1,19 @@
 import React from 'react';
 import { useGoogleLogin } from '@react-oauth/google';
 
+const getGoogleOAuthRedirectUri = () =>
+    typeof window !== 'undefined' ? window.location.origin : process.env.REDIRECT_URL;
+
 const GoogleLoginButton = (props) => {
+    const redirectUri = props.redirectUri ?? getGoogleOAuthRedirectUri();
+
     const login = useGoogleLogin({
-        onSuccess: (tokenResponse) => props.googleLoginResponse(tokenResponse),
+        onSuccess: (tokenResponse) => props.googleLoginResponse(tokenResponse, redirectUri),
+        onError: (error) => props.onGoogleError?.(error),
+        onNonOAuthError: (error) => props.onGoogleError?.(error),
         flow: 'auth-code',
-        redirect_uri: process.env.REDIRECT_URL,
+        ux_mode: 'popup',
+        redirect_uri: redirectUri,
         access_type: 'offline',
     });
 

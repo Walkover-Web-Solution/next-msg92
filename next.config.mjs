@@ -24,10 +24,10 @@ const securityHeaders = [
         value: 'nosniff',
     },
 
-    // 4️⃣ Isolation and data protection between origins
+    // 4️⃣ Required for Google OAuth popup (useGoogleLogin) to return auth code to parent window
     {
         key: 'Cross-Origin-Opener-Policy',
-        value: 'same-origin',
+        value: 'same-origin-allow-popups',
     },
     {
         key: 'Cross-Origin-Resource-Policy',
