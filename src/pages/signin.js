@@ -16,6 +16,11 @@ import Image from 'next/image';
 const SUCCESS_REDIRECTION_URL = process.env.API_BASE_URL + '/api/nexusRedirection.php?session=:session';
 const MOBILE_EMAIL_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/mobileEmailLogin';
 const GOOGLE_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/googleLogin';
+const GITHUB_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/githubLogin';
+const ZOHO_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/zohoLogin';
+const OUTLOOK_LOGIN_URL = process.env.API_BASE_URL + '/api/v5/nexus/outlookLogin';
+const ZOHO_SIGNIN_REDIRECT_URL = `${process.env.REDIRECT_URL}/signin?loginWithZoho=true`;
+const OUTLOOK_SIGNIN_REDIRECT_URL = `${process.env.REDIRECT_URL}/outlook-token`;
 
 export default function SignIn() {
     const router = useRouter();
@@ -52,30 +57,27 @@ export default function SignIn() {
         const queryParams = getQueryParamsDeatils(router.asPath);
 
         if (queryParams?.githublogin === 'true') {
-            const url = process.env.API_BASE_URL + '/api/v5/nexus/githubLogin';
-            hitLoginAPI(url, {
+            hitLoginAPI(GITHUB_LOGIN_URL, {
                 code: queryParams?.code,
                 state: queryParams?.state,
-                redirectUrl: process.env.REDIRECT_URL,
             });
         } else if (queryParams?.loginWithZoho?.includes('true')) {
-            const request = {
-                ...queryParams,
-                accountsServer: decodeURIComponent(queryParams['accounts-server'] || ''),
-            };
-            delete request.loginWithZoho;
-            delete request['accounts-server'];
-
-            const url = process.env.API_BASE_URL + '/api/v5/nexus/zohoLogin';
-            hitLoginAPI(url, {
-                ...request,
-                redirectUrl: process.env.REDIRECT_URL + '/signin?loginWithZoho=true',
-            });
-        } else if (queryParams?.loginWithOutlook?.includes('true')) {
-            const url = process.env.API_BASE_URL + '/api/v5/nexus/outlookLogin';
-            hitLoginAPI(url, {
+            const accountsServer = queryParams['accounts-server']
+                ? decodeURIComponent(queryParams['accounts-server'])
+                : '';
+            const zohoPayload = {
                 code: queryParams?.code,
-                redirectUrl: process.env.REDIRECT_URL + '/outlook-token',
+                location: queryParams?.location,
+                redirectUrl: ZOHO_SIGNIN_REDIRECT_URL,
+            };
+            if (accountsServer) {
+                zohoPayload.accountsServer = accountsServer;
+            }
+            hitLoginAPI(ZOHO_LOGIN_URL, zohoPayload);
+        } else if (queryParams?.loginWithOutlook?.includes('true')) {
+            hitLoginAPI(OUTLOOK_LOGIN_URL, {
+                code: queryParams?.code,
+                redirectUrl: OUTLOOK_SIGNIN_REDIRECT_URL,
             });
         } else {
             otpWidgetSetup();
@@ -124,7 +126,7 @@ export default function SignIn() {
     }, [hitLoginAPI]);
 
     const loginWithZoho = () => {
-        location.href = `https://accounts.zoho.com/oauth/v2/auth?response_type=code&client_id=${process.env.ZOHO_CLIENT_ID}&scope=aaaserver.profile.READ&redirect_uri=${process.env.REDIRECT_URL}/signin?loginWithZoho=true`;
+        location.href = `https://accounts.zoho.com/oauth/v2/auth?response_type=code&client_id=${process.env.ZOHO_CLIENT_ID}&scope=aaaserver.profile.READ&redirect_uri=${encodeURIComponent(ZOHO_SIGNIN_REDIRECT_URL)}`;
     };
 
     const loginWithGitHub = () => {
@@ -151,7 +153,7 @@ export default function SignIn() {
     );
 
     const loginWithOutlook = () => {
-        location.href = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&client_id=${process.env.MSAL_CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}/outlook-token&scope=User.Read`;
+        location.href = `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&client_id=${process.env.MSAL_CLIENT_ID}&redirect_uri=${encodeURIComponent(OUTLOOK_SIGNIN_REDIRECT_URL)}&scope=User.Read`;
     };
 
     return (
