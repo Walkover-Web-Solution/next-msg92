@@ -2,7 +2,7 @@ import GoogleLoginButton from '@/components/signupComp/utils/GoogleLogin';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import React, { useCallback, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { MdCheck, MdHelpOutline } from 'react-icons/md';
+import { MdHelpOutline } from 'react-icons/md';
 import { getQueryParamsDeatils, setCookie, getCookie, loginWithGitHubAccount } from '@/utils/utilis';
 import {
     getErrorMessage,
@@ -153,39 +153,29 @@ export default function SignIn() {
     return (
         <>
             <section className='signin flex flex-col-reverse md:flex-row md:items-start'>
-                <div className='flex w-full flex-col gap-8 bg-secondary px-4 py-10 sm:px-10 sm:py-16 md:min-h-screen md:w-1/2 md:py-20 lg:w-1/3 xl:w-1/4'>
-                    <div className='hidden flex-col gap-5 md:flex'>
+                <div className='flex w-full flex-col gap-8 bg-secondary px-2 py-10 sm:px-10 sm:py-16 md:min-h-screen md:w-1/2 md:py-20 lg:w-1/3 xl:w-1/4'>
+                    <div className='flex flex-col gap-6'>
                         <Image
                             src={'/assets/brand/msg91.svg'}
                             width={420}
                             height={420}
-                            className='block h-auto w-32 shrink-0'
+                            className='hidden h-auto w-32 shrink-0 md:block'
                             alt='msg91-logo'
                             loading='lazy'
                         />
-                        <h1 className='text-2xl font-medium'>Signin to avail a complete suite of MSG91 products</h1>
-                    </div>
-                    <div className='flex flex-col gap-5'>
-                        <h2 className='text-xl'>What can you build with MSG91?</h2>
-                        <ul className='flex flex-col gap-3'>
-                            <li className='flex items-center gap-2'>
-                                <MdCheck fontSize={20} className='text-accent' /> Programmable SMS
-                            </li>
-                            <li className='flex items-center gap-2'>
-                                <MdCheck fontSize={20} className='text-accent' /> Customer Contact Center
-                            </li>
-                            <li className='flex items-center gap-2'>
-                                <MdCheck fontSize={20} className='text-accent' /> Virtual Number
-                            </li>
-                            <li className='flex items-center gap-2'>
-                                <MdCheck fontSize={20} className='text-accent' /> Automated user segmentation
-                            </li>
-                            <li className='flex items-center gap-2'>
-                                <MdCheck fontSize={20} className='text-accent' /> OTP Initiate verification
-                            </li>
+                        <h1 className='hidden text-2xl font-medium md:block'>
+                            Signin to avail a complete suite of MSG91 products
+                        </h1>
+                        <ul className='list-disc space-y-3 pl-1 text-sm marker:text-accent'>
+                            <li>Engage users across SMS, WhatsApp, Email, Voice & RCS</li>
+                            <li>Automate journeys with Campaign & Segmento</li>
+                            <li>AI-powered support with Hello Ticketing</li>
+                            <li>Personalize communication using real-time segmentation</li>
+                            <li>Increase retention, engagement & revenue from one platform</li>
+                            <li>APIs built for scale, reliability & speed</li>
                         </ul>
+                        <p className='m-0 text-lg'>Trusted by 30000+ startups and enterprises</p>
                     </div>
-                    <p className='text-lg'>Trusted by 30000+ startups and enterprises</p>
                 </div>
 
                 <div className='flex w-full flex-col px-4 py-14 sm:px-10 sm:py-16 md:py-24 lg:px-22'>
