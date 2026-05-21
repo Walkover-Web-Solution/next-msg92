@@ -5,9 +5,8 @@ import { useRouter } from 'next/router';
 import { MdCheck, MdHelpOutline } from 'react-icons/md';
 import { getQueryParamsDeatils, setCookie, getCookie, loginWithGitHubAccount } from '@/utils/utilis';
 import {
-    MULTIPLE_ACCOUNTS_MESSAGE,
+    getErrorMessage,
     handleMobileWidgetFailure,
-    isMultipleAccountsError,
     otpWidgetSetup,
     waitForInitSendOTP,
 } from '@/utils/otpSigninWidget';
@@ -40,12 +39,7 @@ export default function SignIn() {
                 if (!result?.hasError && sessionId) {
                     location.href = SUCCESS_REDIRECTION_URL?.replace(':session', sessionId);
                 } else if (showError) {
-                    const errMsg = result?.errors?.[0] ?? result?.errors;
-                    if (isMultipleAccountsError({ message: errMsg, errors: result?.errors })) {
-                        toast.error(MULTIPLE_ACCOUNTS_MESSAGE);
-                    } else {
-                        toast.error(errMsg);
-                    }
+                    toast.error(getErrorMessage(result?.errors));
                 }
             })
             .catch((err) => console.error(err));
