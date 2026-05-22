@@ -4,12 +4,6 @@
         "description": "Somos a principal plataforma de atendimento ao cliente em nuvem. Conheça o melhor software de atendimento no Brasil para engajar clientes de forma proativa e responder a todas as dúvidas com a MSG91."
     },
     "Banner": {
-        "slug": "hello",
-        "product": {
-            "name": "Hello",
-            "icon": "/assets/icons/products/hello.svg"
-        },
-        "tagline": "Software de suporte ao cliente",
         "heading": "Atendimento ao cliente|que transforma|seu negócio",
         "description": "Plataforma omnicanal completa com IA. Gerencie todos os seus canais — WhatsApp, Instagram, e-mail, Webchat, RCS, chamadas de voz e muito mais — em uma caixa de entrada inteligente. Simples, sem complicações.",
         "video": "/assets/hello-br/br-pt/dashboard.webm",
@@ -17,8 +11,7 @@
         "getstarted_btn": "Começar agora",
         "getstarted_btn_link": "https://web.msg91.com/signup",
         "specialist_btn": "Agendar uma demo",
-        "specialist_btn_link": "https://calendly.com/hello-shared-inbox/hello-meeting",
-        "chatbot": "Chatbot"
+        "specialist_btn_link": "https://calendly.com/hello-shared-inbox/hello-meeting"
     },
     "Features": {
         "label": "RECURSOS",
@@ -34,9 +27,8 @@
                     "Busca inteligente, filtros e etiquetas de conversa",
                     "Histórico unificado do cliente em todos os canais"
                 ],
-                "image": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp",
-                "imageAlt": "Equipe unida representando suporte omnicanal",
-                "video": "/assets/hello-br/br-pt/omni-channel.webm"
+                "video": "/assets/hello-br/br-pt/omni-channel.webm",
+                "videoAlt": "Equipe unida representando suporte omnicanal"
             },
             {
                 "eyebrow": "INTELIGÊNCIA ARTIFICIAL",
@@ -48,9 +40,8 @@
                     "Agente de voz com IA e URA automatizada",
                     "Tradução automática em mais de 100 idiomas"
                 ],
-                "image": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp",
-                "imageAlt": "Equipe colaborando com notebooks",
-                "video": "/assets/hello-br/br-pt/intelligent-ai.webm"
+                "video": "/assets/hello-br/br-pt/intelligent-ai.webm",
+                "videoAlt": "Equipe colaborando com notebooks"
             },
             {
                 "eyebrow": "VOZ COM IA",
@@ -76,9 +67,8 @@
                     "Analise operações — identifique problemas e oportunidades de crescimento",
                     "Analise o desempenho de resolução da IA em todos os chats"
                 ],
-                "image": "/assets/global/hello/new_webp/analytics.webp",
-                "imageAlt": "Analytics em dispositivo móvel",
-                "video": "/assets/hello-br/br-pt/Analytics.webm"
+                "video": "/assets/hello-br/br-pt/Analytics.webm",
+                "videoAlt": "Analytics em dispositivo móvel"
             },
             {
                 "eyebrow": "MOBILE",
@@ -90,9 +80,8 @@
                     "Seguro e confiável, feito para equipes em campo",
                     "Ideal para representantes em viagem, agentes remotos e donos de negócio em movimento"
                 ],
-                "image": "/assets/global/hello/new_webp/mobile.webp",
-                "imageAlt": "Aplicativo móvel Hello para suporte ao cliente em iOS e Android",
-                "video": "/assets/hello-br/br-pt/work-smarted.webm"
+                "video": "/assets/hello-br/br-pt/work-smarted.webm",
+                "videoAlt": "Aplicativo móvel Hello para suporte ao cliente em iOS e Android"
             }
         ]
     },

@@ -16,9 +16,9 @@ export default function Challenges({ data }) {
                 </header>
 
                 {data?.video && (
-                    <div className='mx-auto mt-8 w-full max-w-4xl px-2 sm:max-w-5xl md:mt-10'>
+                    <div className='mx-auto mt-8 w-full px-4 md:mt-10'>
                         <video
-                            className='block h-auto w-full max-h-[min(52vh,520px)] object-contain'
+                            className='block h-auto w-full object-contain'
                             autoPlay
                             muted
                             loop
