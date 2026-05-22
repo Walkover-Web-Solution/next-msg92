@@ -50,9 +50,17 @@ import MigrateFromTextlocal from '@/components/migrateFromTextlocal/migrateFromT
 import WhatsAppIntegrations from '@/components/WhatsAppIntegrations';
 import WhatsAppAccountVerification from '@/components/WhatsAppAccountVerification';
 import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
+import Hero from '@/components/IntegrationComp/Hero/Hero';
+import ProblemSolution from '@/components/IntegrationComp/ProblemSolution/ProblemSolution';
+import Benefits from '@/components/IntegrationComp/Benefits/Benefits';
+import IntegrationFeatures from '@/components/IntegrationComp/Features/Features';
+import UseCases from '@/components/IntegrationComp/UseCases/UseCases';
+import HowItWorks from '@/components/IntegrationComp/HowItWorks/HowItWorks';
+import CTA from '@/components/IntegrationComp/CTA/CTA';
+import SEOFooter from '@/components/IntegrationComp/SEOFooter/SEOFooter';
 import Banner from '@/components/UpdatedComp/Banner';
 import HelloBanner from '@/components/HelloBrComp/BannerComp/Banner';
-import Features from '@/components/HelloBrComp/FeaturesComp/Features';
+import HelloBrFeatures from '@/components/HelloBrComp/FeaturesComp/Features';
 import HelloBrChallenges from '@/components/HelloBrComp/ChallengesComp/Challenges';
 import RoiStats from '@/components/HelloBrComp/StatsComp/RoiStats';
 import Security from '@/components/HelloBrComp/SecurityComp/SecurityCompliance';
@@ -106,6 +114,23 @@ const Components = {
     ThankYouComp,
     StartupFormsComp,
     IntegrationAppComp,
+    Hero,
+    ProblemSolution,
+    Benefits,
+    Features: IntegrationFeatures,
+    UseCases,
+    HowItWorks,
+    CTA,
+    SEOFooter,
+    IntegrationBanner: Hero,
+    IntegrationResponseSection: ProblemSolution,
+    IntegrationInstantReplySection: Benefits,
+    IntegrationInstantReplySectionComparison: Benefits,
+    IntegrationFeatureBulletSection: IntegrationFeatures,
+    IntegrationSolutionsGrid: UseCases,
+    IntegrationStepsStrip: HowItWorks,
+    IntegrationCtaBand: CTA,
+    IntegrationSeoFooter: SEOFooter,
     CaseStudyPageCompOld,
     ChatBotDemoComp,
     AsSeenComp,
@@ -129,7 +154,6 @@ const Components = {
     // New Components
     Challenges: HelloBrChallenges,
     Banner,
-    Features,
     RoiStats,
     Security,
     Steps,
@@ -172,6 +196,13 @@ export default function Page({ data, commonData, pageInfo }) {
                         (pageInfo?.country === 'br' || pageInfo?.country === 'br-pt')
                     ) {
                         Component = HelloBanner;
+                    }
+                    if (
+                        key === 'Features' &&
+                        pageInfo?.page === 'hello' &&
+                        (pageInfo?.country === 'br' || pageInfo?.country === 'br-pt')
+                    ) {
+                        Component = HelloBrFeatures;
                     }
                     if (!Component) {
                         console.error(`Component "${key}" is undefined. Check your imports and component exports.`);

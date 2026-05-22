@@ -1,0 +1,287 @@
+{
+    "HeadComp": {
+        "title": "Shopify Integration | MSG91",
+        "description": "Connect MSG91 with Shopify for AI chatbot, voice, and omnichannel automation so every customer gets an instant reply, 24/7."
+    },
+    "Hero": {
+        "theme": "shopify",
+        "logo": {
+            "src": "/img/integrations/shopify-logo.svg",
+            "alt": "Shopify"
+        },
+        "heading_segments": [
+            {
+                "text": "Go Live in 5 Minutes. Or Keep Losing Customers ",
+                "accent": false
+            },
+            {
+                "text": "Every Day.",
+                "accent": true
+            }
+        ],
+        "subheading": "Every unanswered question on your Shopify store is a lost sale. MSG91 gives you AI chatbot, voice bot, and omnichannel automation So every customer gets an instant reply, 24/7.",
+        "buttons": [
+            {
+                "label": "Get Started",
+                "url": "https://apps.shopify.com/msg91",
+                "target": "_blank"
+            },
+            {
+                "label": "Book a Demo",
+                "url": "https://calendly.com/kiwi-msg91/shopify-meeting",
+                "target": "_blank"
+            }
+        ],
+        "visual": {
+            "video": "/assets/integrations/shopify/Banner.webm",
+            "video_alt": "MSG91 Shopify integration overview"
+        }
+    },
+    "ProblemSolution": {
+        "theme": "shopify",
+        "heading_segments": [
+            {
+                "text": "You don't have a traffic problem.",
+                "accent": false,
+                "block": true
+            },
+            {
+                "text": "You have a ",
+                "accent": false
+            },
+            {
+                "text": "response problem.",
+                "accent": true
+            }
+        ],
+        "media": {
+            "image": "/assets/integrations/shopify/problem-sol.svg",
+            "alt": "Illustration of Shopify stores losing sales from slow or missing customer responses"
+        },
+        "items": [
+            {
+                "title": "Unanswered queries lose sales",
+                "description": "“Is this COD?” “What’s the delivery time?” — these questions need instant answers. When they don’t get one, buyers leave without a trace."
+            },
+            {
+                "title": "Carts abandoned at checkout",
+                "description": "A small hesitation with no one to help turns a ready buyer into an abandoned cart. The friction isn’t price — it’s silence."
+            },
+            {
+                "title": "Support limited to business hours",
+                "description": "Your team covers 8-10 hours. Customers browse at midnight, weekends, and holidays — with zero coverage when they need it most."
+            },
+            {
+                "title": "Messages scattered across channels",
+                "description": "Storefront, WhatsApp, Instagram, Facebook — your team juggles platforms while responses lag and context is lost."
+            }
+        ]
+    },
+    "Features": {
+        "theme": "shopify",
+        "heading_segments": [
+            {
+                "text": "MSG91 Shopify Support & ",
+                "accent": false
+            },
+            {
+                "text": "Conversion Engine",
+                "accent": true
+            }
+        ],
+        "subheading": "Turn support questions into sales — automatically. Instant replies reduce drop-offs and improve retention.",
+        "features": [
+            {
+                "name": "Instant AI Chatbot",
+                "subtitle": "Replies instantly · Answers product queries · Guides purchase",
+                "content": "AI-powered Shopify assistant designed to guide customers from discovery to checkout. Trained on your store data so every response is contextual, accurate, and aligned with your brand.",
+                "video": "/assets/integrations/shopify/interactive-chat-bot.webm",
+                "video_alt": "Interactive AI chatbot answering product queries and guiding Shopify purchases",
+                "more_content": {
+                    "features": [
+                        "Ready-to-deploy Shopify-native bots for product discovery, cart recovery, order tracking, and customer queries",
+                        "Smart nudges for size selection, stock availability, offers, and purchase decisions",
+                        "Auto-discount application to reduce hesitation and speed up checkout",
+                        "Direct add-to-cart and checkout guidance from within the chat",
+                        "Seamless handoff to human agents when needed"
+                    ]
+                }
+            },
+            {
+                "name": "AI Voice Bot for Shopify",
+                "subtitle": "Natural conversations · Instant resolution · Effortless human handoff",
+                "content": "Customers speak naturally instead of typing, and the voice bot handles queries in real time — from product discovery to order updates — while keeping the conversation smooth and contextual.",
+                "video": "/assets/integrations/shopify/instant-handoff-to-human.webm",
+                "video_alt": "Voice bot resolving queries and handing off to human agents with context",
+                "more_content": {
+                    "features": [
+                        "Natural voice experience across storefront and phone",
+                        "Instant resolution for product queries, order tracking, policies, and more",
+                        "Intelligent handoff to human agents with full conversation context, whenever needed"
+                    ]
+                }
+            },
+            {
+                "name": "One engine. Every channel.",
+                "subtitle": "Unified inbox · Single knowledge base · All platforms synced",
+                "content": "Manage Shopify storefront, WhatsApp, Instagram, and Facebook from one dashboard. Train your bot once and deliver consistent answers everywhere. Connect channels in minutes.",
+                "video": "/assets/integrations/shopify/omnichannel.webm",
+                "video_alt": "Omnichannel inbox linking Shopify and messaging channels",
+                "more_content": {
+                    "features": [
+                        "Unified inbox for all conversations",
+                        "Single knowledge base powers every channel",
+                        "One setup — all platforms in sync",
+                        "40–60% reduction in support workload"
+                    ]
+                }
+            },
+            {
+                "name": "24/7 availability",
+                "subtitle": "Customers shop anytime · Your bot responds every time",
+                "content": "Never miss an after-hours sale. Your chatbot and voice bot handle every inquiry around the clock and hand off to humans whenever your customer wants to connect to a human.",
+                "video": "/assets/integrations/shopify/24:7-availablity.webm",
+                "video_alt": "24/7 AI chatbot and voice support for Shopify customers",
+                "more_content": {
+                    "features": [
+                        "Always-on coverage — nights, weekends, holidays",
+                        "Instant handoff to human agents during work hours",
+                        "Global shoppers served in every timezone"
+                    ]
+                }
+            }
+        ]
+    },
+    "Benefits": {
+        "theme": "shopify",
+        "heading_segments": [
+            {
+                "text": "Before vs after ",
+                "accent": false
+            },
+            {
+                "text": "MSG91",
+                "accent": true
+            }
+        ],
+        "subheading": "See what changes when every customer gets an instant reply across every channel.",
+        "media": {
+            "image": "/assets/integrations/shopify/solution.png",
+            "alt": "Before vs after Shopify support flow with MSG91"
+        }
+    },
+    "UseCases": {
+        "theme": "shopify",
+        "heading_segments": [
+            {
+                "text": "Real problems. ",
+                "accent": false
+            },
+            {
+                "text": "Instant fixes.",
+                "accent": true
+            }
+        ],
+        "items": [
+            {
+                "icon": "🛒",
+                "title": "Abandoned Cart Recovery",
+                "description": "Automated WhatsApp follow-ups with product reminders and nudges. Recover revenue from customers who hesitated at checkout."
+            },
+            {
+                "icon": "📦",
+                "title": "Instant Order Tracking",
+                "description": "Automated real-time tracking replies eliminate 'Where is my order?' tickets — freeing 40–60% of support load."
+            },
+            {
+                "icon": "✅",
+                "title": "COD Order Confirmation",
+                "description": "Verify COD orders via WhatsApp before dispatch. Smart prepaid nudges reduce RTO losses and improve delivery success."
+            },
+            {
+                "icon": "💬",
+                "title": "Product Query Resolution",
+                "description": "Size, stock, COD eligibility, shipping timelines — answered instantly by AI trained on your catalog."
+            },
+            {
+                "icon": "🔄",
+                "title": "Customer Re-engagement",
+                "description": "WhatsApp follow-ups, order updates, and smart campaigns keep customers returning instead of silently churning."
+            },
+            {
+                "icon": "🎤",
+                "title": "Voice-First Commerce",
+                "description": "Voice bots let customers ask naturally, get instant answers, and move to purchase faster than typing."
+            }
+        ]
+    },
+    "HowItWorks": {
+        "theme": "shopify",
+        "heading_segments": [
+            {
+                "text": "Live in 5 minutes. ",
+                "accent": false
+            },
+            {
+                "text": "Not 5 weeks.",
+                "accent": true
+            }
+        ],
+        "subheading": "No developer required. Plug-and-play Shopify app — connect, configure, convert.",
+        "steps": [
+            {
+                "step": 1,
+                "title": "Install the MSG91 App",
+                "description": "One-click installation from the Shopify App Store",
+                "link": "https://apps.shopify.com/msg91"
+            },
+            {
+                "step": 2,
+                "title": "Connect Channel and Enable Chatbot",
+                "description": "Connect your WhatsApp channel and enable the chatbot to start handling support and sales conversations."
+            },
+            {
+                "step": 3,
+                "title": "Go Live",
+                "description": "Prebuilt Shopify bots built to handle customer conversations across support and sales"
+            }
+        ]
+    },
+    "CTA": {
+        "theme": "shopify",
+        "heading": "Every delayed reply is a missed sale.",
+        "subheading": "You're already getting customers. Now start converting them. Go live in 5 minutes.",
+        "buttons": [
+            {
+                "label": "Get Started",
+                "url": "https://apps.shopify.com/msg91",
+                "target": "_blank"
+            },
+            {
+                "label": "Book a Demo",
+                "url": "https://calendly.com/kiwi-msg91/shopify-meeting",
+                "target": "_blank"
+            }
+        ]
+    },
+    "SEOFooter": {
+        "theme": "shopify",
+        "heading": "Shopify Automation with MSG91",
+        "intro": "Shopify automation is becoming essential for modern eCommerce businesses that want to scale efficiently without increasing operational complexity. With increasing competition, Shopify store owners are constantly searching for the best Shopify automation tools that can help them improve conversions, reduce manual work, and enhance customer experience. MSG91 offers a complete Shopify automation platform that combines AI chatbot, WhatsApp chatbot for Shopify, voice bot, and omnichannel automation in one system. This allows businesses to automate customer conversations, streamline workflows, and improve response time instantly. Whether it is handling product queries, guiding users through checkout, or sending real-time updates, Shopify automation ensures that no customer interaction is missed. Businesses using Shopify chatbot solutions see higher engagement, better retention, and improved sales outcomes. MSG91 is designed specifically for Shopify stores, making it one of the most reliable and scalable solutions available today. It integrates seamlessly with your Shopify store and works across WhatsApp, Instagram, Facebook, and website chat. This unified approach ensures that all conversations are managed efficiently. With the rise of conversational commerce, Shopify automation is no longer optional. It is a necessity for growth. MSG91 helps Shopify businesses achieve this with ease, speed, and affordability.",
+        "read_more_label": "Read more",
+        "read_less_label": "Read less",
+        "more_paragraphs": [
+            "A Shopify chatbot plays a critical role in improving customer support and driving conversions. Customers visiting an online store often have questions that need immediate answers. If these queries are not resolved instantly, the chances of losing that customer increase significantly. This is where an AI-powered Shopify chatbot becomes valuable. MSG91 provides one of the best Shopify chatbot solutions that can respond instantly to customer queries, recommend products, and guide users through the purchase journey. Unlike traditional support systems, a chatbot does not depend on human availability. It works 24/7, ensuring that customers always receive a response. This improves user experience and builds trust. Shopify chatbot integration also helps reduce support costs by automating repetitive queries. Businesses can handle higher volumes of customer interactions without increasing team size. Additionally, chatbots can be customized based on business requirements, making them highly flexible. MSG91's chatbot is specifically built for Shopify, allowing it to understand product catalogs, variants, and customer intent effectively. This makes it more powerful than generic chatbot solutions.",
+            "WhatsApp chatbot for Shopify is one of the most effective ways to engage customers and increase conversions. WhatsApp has become a primary communication channel for users, making it an ideal platform for businesses to interact with customers. MSG91 enables Shopify stores to integrate WhatsApp chatbot functionality, allowing them to automate conversations and engage users in real time. With WhatsApp automation, businesses can send abandoned cart reminders, order updates, promotional campaigns, and personalized messages. This helps in improving customer retention and reducing churn rate. Unlike email or SMS, WhatsApp messages have significantly higher open and response rates. This makes it a powerful channel for driving engagement and sales. MSG91's WhatsApp chatbot is designed to handle both support and marketing use cases, making it a complete solution. Businesses can manage campaigns, track performance, and optimize communication strategies easily. By integrating WhatsApp chatbot with Shopify, brands can create seamless customer journeys and improve overall experience.",
+            "Shopify store chatbot solutions are transforming how businesses interact with customers online. Traditional support systems rely heavily on human agents, which can lead to delays and inconsistencies. A Shopify store chatbot eliminates these issues by providing instant, accurate, and consistent responses. MSG91's Shopify chatbot is designed to work directly on the storefront, allowing customers to interact without leaving the website. This improves engagement and reduces drop-offs. The chatbot can answer product-related questions, assist with navigation, and guide users to checkout. It also helps in collecting customer data and insights, which can be used for personalization and marketing. By automating customer interactions, businesses can focus on strategic growth instead of operational tasks. Shopify store chatbot integration also improves scalability, allowing businesses to handle increased traffic without additional resources. MSG91 provides a reliable and efficient solution that enhances both support and sales processes.",
+            "Shopify automation tools are essential for improving operational efficiency and customer experience. Businesses that rely on manual processes often face challenges such as delayed responses, high support costs, and inconsistent communication. Automation solves these problems by streamlining workflows and ensuring timely interactions. MSG91 offers a comprehensive Shopify automation tool that integrates chatbot, voice bot, and WhatsApp automation into a single platform. This allows businesses to automate tasks such as customer support, order updates, cart recovery, and marketing campaigns. By using automation, businesses can reduce manual effort and focus on growth. Shopify automation also helps in improving accuracy and consistency, which are critical for customer satisfaction. MSG91's platform is designed to be user-friendly and scalable, making it suitable for businesses of all sizes. It provides advanced features while maintaining simplicity, ensuring that users can easily adopt and implement automation strategies.",
+            "Shopify automation in 5 minutes is a key advantage for businesses looking for quick implementation. Many automation tools require complex setup processes, developer support, and long onboarding times. This creates barriers for small and medium businesses. MSG91 removes these barriers by offering a plug-and-play Shopify automation solution that can be set up in minutes. Businesses can install the plugin, connect their channels, and start automation without any technical expertise. This ease of use makes MSG91 one of the most accessible Shopify automation platforms. Quick setup also ensures faster return on investment, as businesses can start benefiting from automation immediately. By reducing the time and effort required for implementation, MSG91 enables businesses to focus on delivering value to their customers. This makes it an ideal solution for growing Shopify brands.",
+            "AI chatbot for Shopify is redefining customer support and engagement. Artificial intelligence enables chatbots to understand user intent, process queries, and provide relevant responses. MSG91's AI chatbot is designed to deliver human-like interactions, making conversations more natural and effective. It can handle complex queries, provide recommendations, and maintain context throughout the interaction. This improves user experience and increases the likelihood of conversion. AI chatbots also learn from interactions, becoming more efficient over time. This continuous improvement ensures that businesses can provide better support without additional resources. By integrating AI chatbot with Shopify, businesses can create intelligent and responsive customer journeys. MSG91's solution leverages advanced technology to deliver high performance and reliability.",
+            "Voice bot for Shopify is an emerging trend in eCommerce automation. As user behavior evolves, more customers prefer voice interactions over typing. Voice bots provide a faster and more convenient way to communicate, reducing friction in the buying process. MSG91 offers a voice bot solution that integrates with Shopify, allowing customers to interact using voice commands. This enhances accessibility and improves engagement. Voice bots can handle queries, provide information, and guide users through the purchase journey. They also support multiple languages, making them suitable for global audiences. By adopting voice bot technology, businesses can stay ahead of the competition and provide innovative customer experiences. MSG91's voice bot is designed to work seamlessly with chatbot and other automation tools, creating a unified system.",
+            "Shopify customer support automation is crucial for managing high volumes of queries efficiently. As businesses grow, the number of customer interactions increases, making it difficult to maintain quality support. Automation helps in handling repetitive queries, reducing response time, and improving consistency. MSG91 provides a robust customer support automation system that integrates with Shopify and other channels. It ensures that customers receive instant responses and accurate information. This improves satisfaction and builds trust. Automated support also reduces the workload on human agents, allowing them to focus on complex issues. By implementing customer support automation, businesses can achieve scalability and efficiency. MSG91's platform is designed to deliver reliable and effective support solutions.",
+            "Shopify automation platform solutions like MSG91 help businesses increase retention and reduce churn rate. Customer retention is a key factor in long-term growth, and automation plays a significant role in achieving it. By maintaining continuous communication with customers, businesses can build strong relationships and encourage repeat purchases. MSG91 enables automated follow-ups, personalized messages, and targeted campaigns that keep customers engaged. This improves retention and reduces the likelihood of churn. Automation also allows businesses to analyze customer behavior and optimize strategies accordingly. By leveraging data and insights, businesses can deliver more relevant experiences. MSG91 provides tools that support retention strategies effectively, making it a valuable platform for Shopify businesses.",
+            "Affordable Shopify automation is important for businesses that want to scale without increasing costs. Many automation solutions are expensive and complex, making them inaccessible for small and medium businesses. MSG91 offers an affordable Shopify automation platform that provides advanced features at a reasonable cost. This allows businesses to access powerful tools without significant investment. By reducing operational costs and improving efficiency, MSG91 helps businesses achieve better ROI. The platform is designed to be scalable, ensuring that it can grow with the business. Affordable pricing combined with high performance makes MSG91 an ideal choice for Shopify automation.",
+            "MSG91 Shopify integration is designed to provide a seamless and efficient experience for businesses. It connects directly with Shopify stores and integrates with various communication channels. This ensures that all customer interactions are managed from a single platform. By using MSG91, businesses can automate their entire communication process, from support to marketing. This improves efficiency and enhances customer experience. Shopify integration also allows businesses to leverage advanced features such as analytics, reporting, and automation workflows. MSG91 provides a comprehensive solution that meets the needs of modern eCommerce businesses. By choosing MSG91, Shopify store owners can optimize their operations, improve engagement, and achieve sustainable growth."
+        ]
+    }
+}
