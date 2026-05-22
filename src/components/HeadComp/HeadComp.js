@@ -7,7 +7,7 @@ export default function HeadComp({ data, pageInfo }) {
 
     return (
         <>
-            {pageInfo?.page !== 'demochatbot' && (
+            {pageInfo?.page !== 'demochatbot' && pageInfo?.page !== 'contact-us' && (
                 <>
                     <Script
                         strategy='afterInteractive'
