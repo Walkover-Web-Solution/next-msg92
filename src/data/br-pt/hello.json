@@ -4,8 +4,8 @@
         "description": "Somos a principal plataforma de atendimento ao cliente em nuvem. Conheça o melhor software de atendimento no Brasil para engajar clientes de forma proativa e responder a todas as dúvidas com a MSG91."
     },
     "Banner": {
-        "heading": "Atendimento ao cliente|que transforma|seu negócio",
-        "description": "Plataforma omnicanal completa com IA. Gerencie todos os seus canais — WhatsApp, Instagram, e-mail, Webchat, RCS, chamadas de voz e muito mais — em uma caixa de entrada inteligente. Simples, sem complicações.",
+        "heading": "Software de Suporte ao Cliente para equipes modernas",
+        "description": "A Hello ajuda empresas a gerenciar todos os canais em um único software de suporte ao cliente. Nosso software de suporte ao cliente utiliza IA para automatizar respostas, reduzir tempo de atendimento e melhorar a experiência do cliente.",
         "video": "/assets/hello-br/br-pt/dashboard.webm",
         "videoAlt": "Prévia do painel e da caixa de entrada Hello",
         "getstarted_btn": "Começar agora",
@@ -60,7 +60,7 @@
             {
                 "eyebrow": "ANÁLISES",
                 "title": "Analytics e relatórios avançados",
-                "description": "Decisões com dados reais. Monitore desempenho, identifique gargalos e otimize o suporte com painéis em tempo real e relatórios personalizáveis.",
+                "description": "Decisões com dados reais. Monitore o desempenho, identifique gargalos e otimize o suporte com seu software de atendimento ao cliente em tempo real.",
                 "bullets": [
                     "Painel em tempo real",
                     "Relatórios por agente e canal",
@@ -94,7 +94,7 @@
     "RoiStats": {
         "label": "Métricas",
         "heading": "Maximize o ROI com a Hello",
-        "subheading": "Empresas que usam a Hello relatam resultados mensuráveis em menos de 30 dias.",
+        "subheading": "Empresas que usam nosso software de suporte ao cliente relatam melhorias já nas primeiras semanas.",
         "stats": [
             {
                 "value": "65%",
@@ -199,27 +199,39 @@
         "heading": "Perguntas frequentes",
         "items": [
             {
-                "question": "O que é uma plataforma de suporte ao cliente omnicanal?",
-                "answer": "Uma plataforma de suporte omnicanal unifica todos os canais de comunicação com o cliente — como WhatsApp, Instagram, e-mail, Webchat, chamadas de voz, Facebook e Twitter — em uma única interface. A Hello oferece isso com IA integrada, permitindo que sua equipe atenda mais clientes com menos esforço, mantendo o histórico completo de cada conversa."
+                "question": "O que é um software de suporte ao cliente e como ele ajuda empresas no Brasil?",
+                "answer": "O software de suporte ao cliente ajuda empresas a gerenciar conversas com clientes em canais como WhatsApp, Instagram, e-mail, webchat e redes sociais em uma única plataforma. Para empresas no Brasil, onde os clientes esperam respostas rápidas e personalizadas, um software de suporte como a Hello ajuda a reduzir o tempo de resposta, automatizar consultas repetitivas, organizar conversas e melhorar a satisfação do cliente — sem aumentar a carga de trabalho da equipe."
             },
             {
-                "question": "Como funciona a integração com a API do WhatsApp Business?",
-                "answer": "A Hello conecta-se pela API oficial do WhatsApp Business. Você verifica sua empresa, escolhe ou traz seu número e gerencia as conversas na caixa de entrada da Hello — com métricas de entrega e qualidade integradas. Nossa equipe ajuda você a entrar no ar sem precisar alternar entre várias ferramentas."
+                "question": "Como o atendimento ao cliente omnicanal melhora a experiência do cliente?",
+                "answer": "Omnicanal significa que sua equipe pode gerenciar todas as redes de comunicação em uma única tela centralizada. No Brasil, os clientes entram em contato com empresas por uma grande variedade de plataformas — do WhatsApp e DMs do Instagram ao Facebook Messenger, e-mail e chat ao vivo. Em vez de obrigar seus agentes a alternar constantemente entre abas, abrir vários aplicativos ou perder mensagens em ferramentas separadas, a Hello reúne todos os canais em uma caixa de entrada inteligente. Isso reduz drasticamente o tempo de resposta, evita que mensagens se percam e permite que sua equipe gerencie alto volume de atendimento em um só lugar."
             },
             {
-                "question": "Posso automatizar o atendimento ao cliente com IA?",
-                "answer": "Sim. Com a Hello, você pode implantar chatbots sem código, usar respostas sugeridas por IA para agentes, automatizar roteamento e etiquetas e escalar com ferramentas de voz e fluxos de trabalho — para que perguntas repetitivas sejam resolvidas na hora enquanto os humanos focam nos casos complexos."
+                "question": "Quais recursos as empresas devem buscar em um software de suporte ao cliente?",
+                "answer": "As empresas devem buscar recursos como: caixa de entrada omnicanal unificada, integração com WhatsApp e Instagram, automação com chatbot de IA, caixa de entrada compartilhada da equipe, análises e relatórios em tempo real, fluxos de automação, histórico de conversas com clientes, acessibilidade mobile, integrações oficiais com a Meta e configuração fácil sem código. Esses recursos ajudam as equipes a responder mais rápido, automatizar o suporte e escalar a comunicação com clientes de forma eficiente."
             },
             {
-                "question": "Quanto tempo leva para implementar a Hello?",
-                "answer": "Muitas equipes conectam os primeiros canais em poucas horas. A implantação completa — agentes treinados, automações no ar, WhatsApp aprovado — costuma levar de alguns dias, dependendo dos canais, modelos e aprovações internas."
+                "question": "Por que mais empresas no Brasil estão adotando software de suporte ao cliente com IA?",
+                "answer": "Mais empresas no Brasil estão adotando software de suporte ao cliente com IA porque os clientes agora esperam respostas instantâneas a qualquer hora do dia. A IA ajuda a automatizar perguntas repetitivas, qualificar leads, rotear conversas e oferecer suporte 24/7 sem precisar de grandes equipes de atendimento. Isso reduz custos operacionais e melhora a velocidade de resposta e a experiência do cliente."
+            },
+            {
+                "question": "A Hello é adequada para empresas em crescimento e equipes remotas no Brasil?",
+                "answer": "Sim. A Hello foi desenvolvida para startups, PMEs, empresas em crescimento e equipes distribuídas que gerenciam comunicação com clientes em vários canais. As equipes podem colaborar de qualquer lugar usando uma caixa de entrada compartilhada, atribuir conversas internamente, automatizar fluxos de trabalho e acompanhar interações com clientes em tempo real — o que a torna ideal para empresas em rápido crescimento no Brasil."
+            },
+            {
+                "question": "Quais são os benefícios de usar uma plataforma de engajamento do cliente?",
+                "answer": "Uma plataforma de engajamento do cliente ajuda empresas a centralizar a comunicação, automatizar respostas, melhorar relacionamentos com clientes e aumentar conversões. Em vez de gerenciar ferramentas separadas para WhatsApp, Instagram, e-mail e suporte, as empresas podem gerenciar tudo em um só lugar, oferecendo experiências mais rápidas e personalizadas."
+            },
+            {
+                "question": "A Hello oferece preços flexíveis para empresas no Brasil?",
+                "answer": "Sim. A Hello oferece opções de preços flexíveis para empresas de diferentes tamanhos e volumes de comunicação. Seja uma pequena empresa começando com automação de atendimento ou uma empresa maior que gerencia alto volume de conversas, a Hello oferece planos escaláveis que crescem junto com as necessidades do seu negócio."
             }
         ]
     },
     "FooterCta": {
         "label": "COMECE HOJE",
-        "heading": "Veja a plataforma em ação",
-        "description": "Agende uma demonstração gratuita e veja como a Hello transforma o suporte da sua empresa em minutos.",
+        "heading": "Veja como a Hello simplifica o suporte ao cliente",
+        "description": "Descubra como nossa plataforma de engajamento do cliente ajuda empresas a responder mais rápido e atender melhor.",
         "primaryLabel": "Começar agora",
         "primaryHref": "https://web.msg91.com/signup",
         "secondaryLabel": "Agendar uma demo",
