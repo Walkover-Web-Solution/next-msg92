@@ -4,22 +4,14 @@
         "description": "We are the leading cloud customer service platform. Check out the best customer service software in Brazil to proactively engage customers and answer all customer queries with MSG91."
     },
     "Banner": {
-        "slug": "hello",
-        "product": {
-            "name": "Hello",
-            "icon": "/assets/icons/products/hello.svg"
-        },
-        "tagline": "Customer Support Software",
         "heading": "Customer Support|That Transforms|Your Business",
         "description": "Complete omnichannel platform with AI. Manage all your channels — WhatsApp, Instagram, Email, Webchat, RCS, Voice Calls and more — in a single smart inbox. Simple, without complications.",
-        "lottie": "/assets/global/hello/new_webp/hello_hero.json",
         "video": "/assets/hello-br/br-eng/dashboard.webm",
         "videoAlt": "Hello dashboard and inbox preview",
         "getstarted_btn": "Get Started",
         "getstarted_btn_link": "https://msg91.com/signup",
         "specialist_btn": "Schedule a demo",
-        "specialist_btn_link": "https://calendly.com/hello-shared-inbox/hello-meeting",
-        "chatbot": "Chatbot"
+        "specialist_btn_link": "https://calendly.com/hello-shared-inbox/hello-meeting"
     },
     "Features": {
         "label": "FEATURES",
@@ -35,9 +27,8 @@
                     "Smart search, filtering & conversation tagging",
                     "Unified customer history across all channels"
                 ],
-                "image": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp",
-                "imageAlt": "Team hands together representing unified support",
-                "video": "/assets/hello-br/br-eng/omni-channel.webm"
+                "video": "/assets/hello-br/br-eng/omni-channel.webm",
+                "videoAlt": "Team hands together representing unified support"
             },
             {
                 "eyebrow": "ARTIFICIAL INTELLIGENCE",
@@ -49,9 +40,8 @@
                     "AI Voice Agent and automated IVR",
                     "Automatic translation in 100+ languages"
                 ],
-                "image": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp",
-                "imageAlt": "Team collaborating with laptops",
-                "video": "/assets/hello-br/br-eng/intelligent-ai.webm"
+                "video": "/assets/hello-br/br-eng/intelligent-ai.webm",
+                "videoAlt": "Team collaborating with laptops"
             },
             {
                 "eyebrow": "VOICE AI",
@@ -77,9 +67,8 @@
                     "Analyse operations — identify issues and growth opportunities",
                     "Analyze AI resolution performance across all chats"
                 ],
-                "image": "/assets/global/hello/new_webp/analytics.webp",
-                "imageAlt": "Analytics and reporting on mobile",
-                "video": "/assets/hello-br/br-eng/Analytics.webm"
+                "video": "/assets/hello-br/br-eng/Analytics.webm",
+                "videoAlt": "Analytics and reporting on mobile"
             },
             {
                 "eyebrow": "MOBILE",
@@ -91,9 +80,8 @@
                     "Secure and reliable, built for mobile workforces",
                     "Perfect for traveling reps, remote agents, and business owners on the move"
                 ],
-                "image": "/assets/global/hello/new_webp/mobile.webp",
-                "imageAlt": "Hello mobile app for customer support on iOS and Android",
-                "video": "/assets/hello-br/br-eng/work-smarter.webm"
+                "video": "/assets/hello-br/br-eng/work-smarter.webm",
+                "videoAlt": "Hello mobile app for customer support on iOS and Android"
             }
         ]
     },
