@@ -4,19 +4,14 @@
         "description": "Somos a principal plataforma de atendimento ao cliente em nuvem. Conheça o melhor software de atendimento no Brasil para engajar clientes de forma proativa e responder a todas as dúvidas com a MSG91."
     },
     "Banner": {
-        "slug": "hello",
-        "product": {
-            "name": "Hello",
-            "icon": "/assets/icons/products/hello.svg"
-        },
-        "tagline": "Software de suporte ao cliente",
         "heading": "Atendimento ao cliente|que transforma|seu negócio",
-        "description": "Plataforma completa de suporte omnicanal com IA. Gerencie todos os seus canais — WhatsApp, Instagram, e-mail e muito mais — em uma caixa de entrada inteligente. Simples, sem complicações.",
-        "getstarted_btn": "Começar grátis",
-        "getstarted_btn_link": "/signup",
-        "specialist_btn": "Fale com um especialista",
-        "specialist_btn_link": "https://calendly.com/hello-shared-inbox/hello-meeting",
-        "chatbot": "Chatbot"
+        "description": "Plataforma omnicanal completa com IA. Gerencie todos os seus canais — WhatsApp, Instagram, e-mail, Webchat, RCS, chamadas de voz e muito mais — em uma caixa de entrada inteligente. Simples, sem complicações.",
+        "video": "/assets/hello-br/br-pt/dashboard.webm",
+        "videoAlt": "Prévia do painel e da caixa de entrada Hello",
+        "getstarted_btn": "Começar agora",
+        "getstarted_btn_link": "https://web.msg91.com/signup",
+        "specialist_btn": "Agendar uma demo",
+        "specialist_btn_link": "https://calendly.com/hello-shared-inbox/hello-meeting"
     },
     "Features": {
         "label": "RECURSOS",
@@ -24,18 +19,16 @@
         "rows": [
             {
                 "eyebrow": "OMNICANAL",
-                "title": "Suporte omnicanal de verdade",
-                "description": "Seus clientes já estão em vários canais. Com a Hello, você gerencia tudo em uma caixa de entrada inteligente — sem troca de abas, sem contexto perdido, sem frustração.",
+                "title": "Omnicanal de verdade: transforme cada conversa em receita",
+                "description": "À medida que seu negócio cresce, conversas espalhadas geram fluxos de trabalho quebrados. Não apenas responda — cresça. A Hello unifica toda a jornada do cliente em um único centro de comando de alto desempenho.",
                 "bullets": [
-                    "API oficial do WhatsApp Business",
-                    "Instagram Direct + Facebook Messenger",
-                    "E-mail, chat ao vivo, SMS e voz — tudo em um só lugar",
+                    "WhatsApp, e-mail, chamadas de voz, RCS, WebChat e todas as redes sociais — unificados em uma caixa de entrada",
+                    "Atribuição e priorização de conversas em um clique",
+                    "Busca inteligente, filtros e etiquetas de conversa",
                     "Histórico unificado do cliente em todos os canais"
                 ],
-                "ctaLabel": "Ver todos os canais",
-                "ctaHref": "/hello",
-                "image": "/assets/global/hello/new_webp/unify_every_conversation_empower_every_team.webp",
-                "imageAlt": "Equipe unida representando suporte omnicanal"
+                "video": "/assets/hello-br/br-pt/omni-channel.webm",
+                "videoAlt": "Equipe unida representando suporte omnicanal"
             },
             {
                 "eyebrow": "INTELIGÊNCIA ARTIFICIAL",
@@ -47,25 +40,21 @@
                     "Agente de voz com IA e URA automatizada",
                     "Tradução automática em mais de 100 idiomas"
                 ],
-                "ctaLabel": "Explorar automações",
-                "ctaHref": "/hello",
-                "image": "/assets/global/hello/new_webp/connect_engage_and_convert_instantly.webp",
-                "imageAlt": "Equipe colaborando com notebooks"
+                "video": "/assets/hello-br/br-pt/intelligent-ai.webm",
+                "videoAlt": "Equipe colaborando com notebooks"
             },
             {
                 "eyebrow": "VOZ COM IA",
-                "title": "IA de voz que entende seus clientes e acaba com os atrasos no suporte",
+                "title": "IA de voz que entende clientes e acaba com os atrasos no suporte",
                 "description": "Potencialize seu contact center com um sistema de voz sempre ativo que entende os clientes, conduz as conversas e mantém sua operação fluindo — sem adicionar complexidade.",
                 "bullets": [
-                    "Conversas naturais ",
-                    "Atendimento automático de chamadas ",
-                    "Respostas instantâneas ",
-                    "Interações com contexto ",
-                    "Suporte multilíngue "
+                    "Conversas naturais",
+                    "Atendimento automático de chamadas",
+                    "Respostas instantâneas",
+                    "Interações com contexto",
+                    "Suporte multilíngue"
                 ],
-                "ctaLabel": "Conheça a IA de voz",
-                "ctaHref": "/hello",
-                "image": "/assets/global/hello/new_webp/handle_even_the_toughest_calls_with_ease.webp",
+                "image": "/assets/hello-br/br-pt/voice.png",
                 "imageAlt": "Experiência de voz e chamadas com suporte por IA"
             },
             {
@@ -75,15 +64,32 @@
                 "bullets": [
                     "Painel em tempo real",
                     "Relatórios por agente e canal",
-                    "SLA com alertas automáticos",
-                    "Exportação de dados em conformidade com a LGPD"
+                    "Analise operações — identifique problemas e oportunidades de crescimento",
+                    "Analise o desempenho de resolução da IA em todos os chats"
                 ],
-                "ctaLabel": "Ver analytics",
-                "ctaHref": "/hello",
-                "image": "/assets/global/hello/new_webp/analytics.webp",
-                "imageAlt": "Analytics em dispositivo móvel"
+                "video": "/assets/hello-br/br-pt/Analytics.webm",
+                "videoAlt": "Analytics em dispositivo móvel"
+            },
+            {
+                "eyebrow": "MOBILE",
+                "title": "Trabalhe sem limites—onde quer que esteja",
+                "description": "Aplicativo móvel que coloca as conversas com clientes no seu bolso. Nunca perca um cliente, mesmo em movimento. Com o aplicativo completo da Hello (iOS e Android), sua equipe recebe notificações instantâneas, responde chats, atribui casos e até inicia chamadas — com a segurança e a confiabilidade da plataforma principal.",
+                "bullets": [
+                    "Alertas push em tempo real para cada nova mensagem do cliente",
+                    "Acesso ao conjunto completo de recursos — chat, chamadas, atribuição e históricos — em qualquer lugar",
+                    "Seguro e confiável, feito para equipes em campo",
+                    "Ideal para representantes em viagem, agentes remotos e donos de negócio em movimento"
+                ],
+                "video": "/assets/hello-br/br-pt/work-smarted.webm",
+                "videoAlt": "Aplicativo móvel Hello para suporte ao cliente em iOS e Android"
             }
         ]
+    },
+    "Challenges": {
+        "label": "Desafios",
+        "heading": "Transforme desafios em ideias",
+        "video": "/assets/hello-br/br-pt/challenges.webm",
+        "videoAlt": "Transforme desafios do suporte ao cliente em ideias com a Hello"
     },
     "RoiStats": {
         "label": "Métricas",
@@ -151,7 +157,8 @@
                 "description": "Monitore, otimize e cresça com dados em tempo real. Adicione agentes quando quiser."
             }
         ],
-        "ctaLabel": "Começar configuração grátis"
+        "ctaLabel": "Começar agora",
+        "ctaHref": "https://web.msg91.com/signup"
     },
     "Pricing": {
         "label": "PLANOS E PREÇOS",
@@ -161,7 +168,6 @@
         "currencyBrlLabel": "BRL",
         "billingMonthlyLabel": "Mensal",
         "billingYearlyLabel": "Anual",
-        "yearlyDiscountHint": "(-20%)",
         "fullPricingPath": "pricing/hello",
         "comparePlansLabel": "Calcule o preço e compare todos os recursos na página de preços Hello",
         "planCopy": {
@@ -188,68 +194,25 @@
             }
         }
     },
-    "Testimonials": {
-        "label": "DEPOIMENTOS",
-        "heading": "Confiança de|líderes do setor",
-        "items": [
-            {
-                "quote": "A automação com IA nos permitiu dobrar a capacidade da equipe sem contratar mais pessoas. ROI em menos de 60 dias.",
-                "name": "Rafael Costa",
-                "role": "CEO",
-                "initials": "RC",
-                "avatar": "emerald"
-            },
-            {
-                "quote": "A conformidade com a LGPD foi decisiva. Ter o DPA em português e suporte local foi um grande diferencial.",
-                "name": "Juliana Santos",
-                "role": "Gerente de TI",
-                "initials": "JS",
-                "avatar": "orange"
-            },
-            {
-                "quote": "Migramos de outro sistema em 48 horas. O suporte da equipe Hello foi excepcional em todo o processo.",
-                "name": "Carlos Mendes",
-                "role": "COO",
-                "initials": "CM",
-                "avatar": "blue"
-            }
-        ]
-    },
     "Faqs": {
         "label": "FAQ",
         "heading": "Perguntas frequentes",
         "items": [
             {
                 "question": "O que é uma plataforma de suporte ao cliente omnicanal?",
-                "answer": "Uma plataforma omnicanal reúne todos os canais — WhatsApp, Instagram, e-mail, chat e telefone — em uma única interface. A Hello faz isso com IA integrada, para sua equipe atender mais clientes com menos esforço e com histórico completo de cada conversa."
+                "answer": "Uma plataforma de suporte omnicanal unifica todos os canais de comunicação com o cliente — como WhatsApp, Instagram, e-mail, Webchat, chamadas de voz, Facebook e Twitter — em uma única interface. A Hello oferece isso com IA integrada, permitindo que sua equipe atenda mais clientes com menos esforço, mantendo o histórico completo de cada conversa."
             },
             {
                 "question": "Como funciona a integração com a API do WhatsApp Business?",
-                "answer": "A Hello conecta-se à API oficial do WhatsApp Business. Você verifica a empresa, escolhe ou mantém o número e gerencia modelos, opt-ins e conversas na caixa de entrada da Hello — com métricas de entrega e qualidade. Nosso time ajuda a colocar tudo no ar sem dispersar ferramentas."
+                "answer": "A Hello conecta-se pela API oficial do WhatsApp Business. Você verifica sua empresa, escolhe ou traz seu número e gerencia as conversas na caixa de entrada da Hello — com métricas de entrega e qualidade integradas. Nossa equipe ajuda você a entrar no ar sem precisar alternar entre várias ferramentas."
             },
             {
-                "question": "A Hello está em conformidade com a LGPD?",
-                "answer": "Sim. A Hello foi pensada com privacidade e conformidade, incluindo controles alinhados à LGPD. Há DPA (acordo de tratamento de dados) em português, e você pode alinhar com nosso time questões de retenção, exportação e uso de dados para o seu cenário."
-            },
-            {
-                "question": "Posso automatizar o atendimento com IA?",
-                "answer": "Sim. Você pode usar chatbots sem código, respostas sugeridas por IA para agentes, automação de roteamento e etiquetas, além de fluxos de voz — para dúvidas repetitivas serem resolvidas na hora enquanto humanos cuidam dos casos complexos."
-            },
-            {
-                "question": "Qual a diferença entre Hello e um sistema tradicional de tickets?",
-                "answer": "Sistemas tradicionais costumam ser centrados em ticket e canais isolados. A Hello é centrada na conversa: todos os canais alimentam uma linha do tempo por cliente, com IA, automação e analytics — o contexto não se perde quando alguém sai do WhatsApp e vai para o e-mail."
-            },
-            {
-                "question": "Como funciona o preço em BRL?",
-                "answer": "Planos e uso podem ser cotados e faturados em reais (BRL) para operações no Brasil, com limites claros de agentes, canais e tickets. Fale com vendas para cotação, faixas de volume e contrato adequados ao seu tamanho."
-            },
-            {
-                "question": "A Hello oferece suporte em português?",
-                "answer": "Sim. Materiais, contratos e o time de sucesso do cliente estão disponíveis em português para o Brasil, e você pode falar conosco no seu idioma no onboarding e no dia a dia."
+                "question": "Posso automatizar o atendimento ao cliente com IA?",
+                "answer": "Sim. Com a Hello, você pode implantar chatbots sem código, usar respostas sugeridas por IA para agentes, automatizar roteamento e etiquetas e escalar com ferramentas de voz e fluxos de trabalho — para que perguntas repetitivas sejam resolvidas na hora enquanto os humanos focam nos casos complexos."
             },
             {
                 "question": "Quanto tempo leva para implementar a Hello?",
-                "answer": "Muitas equipes conectam os primeiros canais em poucas horas. A implantação completa — agentes treinados, automações no ar, WhatsApp aprovado — costuma levar de alguns dias a algumas semanas, conforme canais, modelos e aprovações internas."
+                "answer": "Muitas equipes conectam os primeiros canais em poucas horas. A implantação completa — agentes treinados, automações no ar, WhatsApp aprovado — costuma levar de alguns dias, dependendo dos canais, modelos e aprovações internas."
             }
         ]
     },
@@ -257,9 +220,9 @@
         "label": "COMECE HOJE",
         "heading": "Veja a plataforma em ação",
         "description": "Agende uma demonstração gratuita e veja como a Hello transforma o suporte da sua empresa em minutos.",
-        "primaryLabel": "Agendar demo grátis",
-        "primaryHref": "/contact-us",
-        "secondaryLabel": "Migrar grátis",
-        "secondaryHref": "/textlocal-alternative"
+        "primaryLabel": "Começar agora",
+        "primaryHref": "https://web.msg91.com/signup",
+        "secondaryLabel": "Agendar uma demo",
+        "secondaryHref": "https://calendly.com/hello-shared-inbox/hello-meeting"
     }
 }

@@ -1,12 +1,8 @@
 import React, { Fragment } from 'react';
-import getURL from '@/utils/getURL';
 
-export default function StepsSetup({ data, pageInfo }) {
-    const { label, heading, subheading, steps = [], ctaLabel, ctaHref, ctaLink } = data ?? {};
+export default function StepsSetup({ data }) {
+    const { label, heading, subheading, steps = [], ctaLabel, ctaHref, secondaryLabel, secondaryHref } = data ?? {};
     if (!steps.length) return null;
-
-    const href = ctaHref || ctaLink || getURL('signup', pageInfo?.page, pageInfo);
-    const external = /^https?:\/\//i.test(href);
 
     return (
         <section className='bg-slate-50'>
@@ -56,10 +52,10 @@ export default function StepsSetup({ data, pageInfo }) {
                         ))}
                     </div>
 
-                    {ctaLabel && (
-                        <div className='mt-12 flex justify-center lg:mt-16'>
+                    {ctaLabel && ctaHref ? (
+                        <div className='mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap lg:mt-16'>
                             <a
-                                href={href}
+                                href={ctaHref}
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 className='inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-8 py-4 text-base font-bold text-white hover:bg-indigo-700'
@@ -67,8 +63,19 @@ export default function StepsSetup({ data, pageInfo }) {
                                 {ctaLabel}
                                 <span aria-hidden>→</span>
                             </a>
+                            {secondaryLabel && secondaryHref ? (
+                                <a
+                                    href={secondaryHref}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className='inline-flex items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-white px-8 py-4 text-base font-bold text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50'
+                                >
+                                    {secondaryLabel}
+                                    <span aria-hidden>→</span>
+                                </a>
+                            ) : null}
                         </div>
-                    )}
+                    ) : null}
                 </div>
             </div>
         </section>

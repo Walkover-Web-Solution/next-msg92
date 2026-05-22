@@ -53,6 +53,7 @@ import FeatureWithBulletGroup from '@/components/FeatureWithBulletGroup';
 import Banner from '@/components/UpdatedComp/Banner';
 import HelloBanner from '@/components/HelloBrComp/BannerComp/Banner';
 import Features from '@/components/HelloBrComp/FeaturesComp/Features';
+import HelloBrChallenges from '@/components/HelloBrComp/ChallengesComp/Challenges';
 import RoiStats from '@/components/HelloBrComp/StatsComp/RoiStats';
 import Security from '@/components/HelloBrComp/SecurityComp/SecurityCompliance';
 import Steps from '@/components/HelloBrComp/StepsComp/StepsSetup';
@@ -126,6 +127,7 @@ const Components = {
     FeatureWithBulletGroup,
 
     // New Components
+    Challenges: HelloBrChallenges,
     Banner,
     Features,
     RoiStats,

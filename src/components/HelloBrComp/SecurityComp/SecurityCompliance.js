@@ -8,7 +8,7 @@ const icons = {
 };
 
 export default function SecurityCompliance({ data }) {
-    const { label, heading, items = [] } = data ?? {};
+    const { label, heading, items = [], video, videoAlt, videoPoster } = data ?? {};
     if (!items.length) return null;
 
     return (
@@ -23,6 +23,22 @@ export default function SecurityCompliance({ data }) {
                         )}
                         {heading && <h2 className='text-4xl font-bold text-gray-900'>{heading}</h2>}
                     </header>
+
+                    {video && (
+                        <div className='mx-auto w-full max-w-5xl py-10'>
+                            <video
+                                className='aspect-[16/9] w-full rounded-3xl object-cover shadow-lg shadow-indigo-950/5'
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                poster={videoPoster}
+                                aria-label={videoAlt || ''}
+                            >
+                                <source src={video} type='video/webm' />
+                            </video>
+                        </div>
+                    )}
 
                     <ul className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 py-16'>
                         {items.map((item, i) => (
