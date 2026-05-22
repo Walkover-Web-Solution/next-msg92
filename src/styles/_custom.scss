@@ -334,3 +334,36 @@ $button-transition-timing: 100ms;
 :root:has(:is(.modal-open, .modal:target, .modal-toggle:checked + .modal, .modal[open])):has(.modal-scrollable) {
     overflow: scroll !important;
 }
+
+.contact-chat-widget {
+    width: 100%;
+
+    > * {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    @media (max-width: 1023px) {
+        position: relative;
+        overflow: hidden;
+        contain: layout paint;
+
+        > * {
+            position: relative !important;
+            inset: auto !important;
+            height: 100% !important;
+            max-height: 500px !important;
+        }
+
+        iframe {
+            height: 100% !important;
+            max-height: 500px !important;
+        }
+    }
+}
