@@ -1,5 +1,5 @@
 import getURLParams from '@/utils/getURLParams';
-import { getCookie, loginWithGitHubAccount, setSharedCookie } from '@/utils/utilis';
+import { getCookie, loginWithGitHubAccount, persistAbSignupFlag, isAbSignupActive } from '@/utils/utilis';
 
 /**
  * Set initial states from URL parameters
@@ -58,7 +58,7 @@ export function setInitialStates(dispatch, state, urlParams) {
                 currentUrl.searchParams.delete('githubsignup');
                 currentUrl.searchParams.delete('code');
                 currentUrl.searchParams.delete('state');
-                if (getCookie('absignup') === 'a' && !currentUrl.searchParams.get('absignup')) {
+                if (isAbSignupActive() && !currentUrl.searchParams.get('absignup')) {
                     currentUrl.searchParams.set('absignup', 'a');
                 }
                 window.history.replaceState(null, '', currentUrl.toString());
@@ -80,7 +80,7 @@ export function setInitialStates(dispatch, state, urlParams) {
  */
 export function handleGithubSignup() {
     if (typeof window !== 'undefined') {
-        setSharedCookie('absignup', 'a', 7);
+        persistAbSignupFlag(7);
     }
     loginWithGitHubAccount(false);
 }
