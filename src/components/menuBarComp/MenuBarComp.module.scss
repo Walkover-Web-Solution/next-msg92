@@ -1,6 +1,6 @@
 .overlay {
     background: rgba(0, 0, 0, 0.2);
-    @apply fixed hidden md:flex top-0 left-0 z-[996] h-dvh w-dvw;
+    @apply fixed hidden md:flex top-0 left-0 z-[996] h-dvh w-dvw cursor-pointer pointer-events-auto;
 }
 
 .background {
@@ -9,7 +9,7 @@
 }
 
 .cont {
-    @apply fixed hidden md:flex top-0 z-[999] h-dvh w-dvw items-center justify-center overflow-hidden;
+    @apply fixed hidden md:flex top-0 z-[999] h-dvh w-dvw items-center justify-center overflow-hidden pointer-events-none;
     transition: all 0.2s;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .menuPanel {
-    @apply lg:w-3/5 xl:w-1/2 w-3/4 pe-3 flex flex-col h-dvh min-h-0;
+    @apply lg:w-3/5 xl:w-1/2 w-3/4 pe-3 flex flex-col h-dvh min-h-0 pointer-events-auto;
 }
 
 .menuScroll {
