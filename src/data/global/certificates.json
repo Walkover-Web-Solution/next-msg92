@@ -35,7 +35,11 @@
         "certificates": {
             "heading": "Certificates",
             "cards": [
-                {
+                {"name": "TAC Security",
+                    "image": "/assets/certificates/tac-security.png",
+                    "url": "pdf/tac-security.pdf"
+                },
+                { 
                     "name": "CASA",
                     "image": "/assets/certificates/certificate_casa.png",
                     "url": "https://msg91.com/pdf/casa.pdf"
