@@ -126,7 +126,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                 </div>
                 <div className={`${styles.cont} nav-${nav}  `}>
                     <div className={`${styles.navigation} container flex`}>
-                        <div className=' lg:w-3/5  xl:w-1/2 w-3/4 pe-3 '>
+                        <div className={styles.menuPanel}>
                             {type === 'products' && (
                                 <div className='mt-32 grid grid-cols-2 gap-12 h-fit '>
                                     {componentData?.products_list?.length > 0 &&
@@ -235,23 +235,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                                     </div>
                                 </div>
                             )}
-                            {nav === 'show' && (
-                                <div
-                                    className='w-full'
-                                    onMouseEnter={() => {
-                                        setNav('hide');
-                                        setType('products');
-                                    }}
-                                ></div>
-                            )}
                         </div>
-                        <div
-                            className='lg:w-2/5 xl:w-1/2 w-1/4 h-dvh'
-                            onMouseEnter={() => {
-                                setNav('hide');
-                                setType('products');
-                            }}
-                        ></div>
                     </div>
                 </div>
                 <div className={`${styles.background} nav-${nav}`}></div>

@@ -9,8 +9,12 @@
 }
 
 .cont {
-    @apply fixed hidden md:flex top-0 z-[999] h-dvh w-dvw  items-center justify-center;
+    @apply fixed hidden md:flex top-0 z-[999] h-dvh w-dvw items-center justify-center pointer-events-none;
     transition: all 0.2s;
+}
+
+.menuPanel {
+    @apply pointer-events-auto lg:w-3/5 xl:w-1/2 w-3/4 pe-3;
 }
 .minicont {
     @apply fixed md:hidden bg-white flex top-0 z-[999] h-dvh w-dvw  items-center justify-center;
