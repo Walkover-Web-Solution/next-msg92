@@ -247,8 +247,7 @@ export default function MenuBarComp({ componentData, pageInfo }) {
                 <div className={`${styles.background} nav-${nav}`}></div>
                 {nav === 'show' && (
                     <div
-                        role='presentation'
-                        onClick={() => {
+                        onMouseEnter={() => {
                             setNav('hide');
                             setType('products');
                         }}
